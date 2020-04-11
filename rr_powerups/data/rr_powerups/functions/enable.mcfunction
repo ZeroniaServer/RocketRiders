@@ -1,0 +1,1 @@
+tag @e[tag=Selection] add powerupsEnabled

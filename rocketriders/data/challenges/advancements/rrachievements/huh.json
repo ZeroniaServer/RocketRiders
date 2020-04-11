@@ -1,0 +1,27 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Huh?",
+            "color": "green"
+        },
+        "description": {
+            "text": "Wait what?",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:player_head",
+			"nbt": "{SkullOwner:MHF_Chicken}"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "challenges:rrachievements/root"
+}

@@ -1,0 +1,4 @@
+title @s[scores={HasPlat=1..},tag=!fullHotbar] actionbar {"text":"Canopy already obtained.","color":"aqua"}
+title @s[scores={HasPlat=0},tag=!fullHotbar] actionbar {"text":"Canopy obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasPlat=0},tag=!fullHotbar] ender_pearl{CustomModelData:1,display:{Name:'[{"text":"Deploy: ","color":"light_purple","bold":"true"},{"text":"Canopy","color":"gold","bold":"true"}]'}} 1
+give @s[team=Blue,scores={HasPlat=0},tag=!fullHotbar] ender_pearl{CustomModelData:1,display:{Name:'[{"text":"Deploy: ","color":"light_purple","bold":"true"},{"text":"Canopy","color":"blue","bold":"true"}]'}} 1

@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Pacifist",
+            "color": "green"
+        },
+        "description": {
+            "text": "Do not kill anyone. REWARD: +20 XP",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:shield"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "challenges:rrachievements/root"
+}

@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "I wasn't done with you yet!",
+            "color": "green"
+        },
+        "description": {
+            "text": "Kill someone within 15 seconds after he killed you. REWARD: Angry villager arrow trail",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:iron_sword"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "challenges:rrachievements/root"
+}

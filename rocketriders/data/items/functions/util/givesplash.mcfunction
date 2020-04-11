@@ -1,0 +1,4 @@
+title @s[scores={HasSplash=1..},tag=!fullHotbar] actionbar {"text":"Splash already obtained.","color":"aqua"}
+title @s[scores={HasSplash=0},tag=!fullHotbar] actionbar {"text":"Splash obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasSplash=0},tag=!fullHotbar] splash_potion{Potion:'minecraft:water',display:{Name:'[{"text":"Deploy: ","color":"light_purple","bold":"true"},{"text":"Splash","color":"gold","bold":"true"}]'},HideFlags:63} 1
+give @s[team=Blue,scores={HasSplash=0},tag=!fullHotbar] splash_potion{Potion:'minecraft:water',display:{Name:'[{"text":"Deploy: ","color":"light_purple","bold":"true"},{"text":"Splash","color":"blue","bold":"true"}]'},HideFlags:63} 1

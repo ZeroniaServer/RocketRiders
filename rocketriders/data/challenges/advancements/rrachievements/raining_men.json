@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "It's raining men!",
+            "color": "green"
+        },
+        "description": {
+            "text": "Fall in the void 30 times in 1 game. REWARD: +30 XP",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:elytra"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "challenges:rrachievements/root"
+}

@@ -1,0 +1,2 @@
+tellraw @s [{"text":"Normal mode:","color":"green","bold":"true"}]
+tellraw @s [{"text":"Normal mode is the default mode for Rocket Riders. In this mode, two teams fight against each other using a wide variety of missiles and defensive items. The goal is to destroy the enemy base and blow up the portal behind it while protecting your own.","color":"dark_purple","italic":"true"}]

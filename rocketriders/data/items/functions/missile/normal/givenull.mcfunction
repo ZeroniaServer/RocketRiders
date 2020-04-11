@@ -1,0 +1,4 @@
+title @s[scores={HasNull=1..},tag=!fullHotbar] actionbar {"text":"Chronullifier already obtained.","color":"aqua"}
+title @s[scores={HasNull=0},tag=!fullHotbar] actionbar {"text":"Chronullifier obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasNull=0},tag=!fullHotbar] phantom_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"green","bold":"true"},{"text":"Chronullifier","color":"gold","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','yellowmissile','YellowNull'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
+give @s[team=Blue,scores={HasNull=0},tag=!fullHotbar] phantom_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"green","bold":"true"},{"text":"Chronullifier","color":"blue","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueNull'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1

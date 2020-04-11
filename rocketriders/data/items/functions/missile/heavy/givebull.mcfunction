@@ -1,0 +1,4 @@
+title @s[scores={HasBullet=1..},tag=!fullHotbar] actionbar {"text":"Bullet already obtained.","color":"aqua"}
+title @s[scores={HasBullet=0},tag=!fullHotbar] actionbar {"text":"Bullet obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasBullet=0},tag=!fullHotbar] skeleton_horse_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"dark_red","bold":"true"},{"text":"Bullet","color":"gold","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','yellowmissile','YellowBull'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
+give @s[team=Blue,scores={HasBullet=0},tag=!fullHotbar] skeleton_horse_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"dark_red","bold":"true"},{"text":"Bullet","color":"blue","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueBull'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1

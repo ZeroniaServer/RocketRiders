@@ -1,0 +1,4 @@
+title @s[scores={HasBlade=1..},tag=!fullHotbar] actionbar {"text":"Blade already obtained.","color":"aqua"}
+title @s[scores={HasBlade=0},tag=!fullHotbar] actionbar {"text":"Blade obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasBlade=0},tag=!fullHotbar] husk_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"green","bold":"true"},{"text":"Blade","color":"gold","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','yellowmissile','YellowBlade'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
+give @s[team=Blue,scores={HasBlade=0},tag=!fullHotbar] husk_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"green","bold":"true"},{"text":"Blade","color":"blue","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueBlade'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1

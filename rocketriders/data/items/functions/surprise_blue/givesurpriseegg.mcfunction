@@ -1,0 +1,2 @@
+title @s[tag=!fullHotbar] actionbar {"text":"Surprise Egg obtained.","color":"aqua"}
+give @s[team=Blue,tag=!fullHotbar] squid_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"light_purple","bold":"true"},{"text":"Surprise Egg","color":"blue","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueSurprise','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1

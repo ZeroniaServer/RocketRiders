@@ -1,0 +1,2 @@
+tellraw @s [{"text":"Crusade mode:","color":"green","bold":"true"}]
+tellraw @s [{"text":"In this mode, two teams fight against each other using missiles, but each team has three Nexus structures to defend. Inside the Nexus structures there are crystals, which opponents can damage using missiles, fireballs, or arrows. Once the two Nexuses on the sides of the base are destroyed, the main Nexus will open up. The goal is to destroy the main Nexus of the enemy team.","color":"dark_purple","italic":"true"}]

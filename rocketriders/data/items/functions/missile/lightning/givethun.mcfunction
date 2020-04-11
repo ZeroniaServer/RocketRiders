@@ -1,0 +1,4 @@
+title @s[scores={HasBolt=1..},tag=!fullHotbar] actionbar {"text":"Thunderbolt already obtained.","color":"aqua"}
+title @s[scores={HasBolt=0},tag=!fullHotbar] actionbar {"text":"Thunderbolt obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasBolt=0},tag=!fullHotbar] vex_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"yellow","bold":"true"},{"text":"Thunderbolt","color":"gold","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','yellowmissile','YellowBolt'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
+give @s[team=Blue,scores={HasBolt=0},tag=!fullHotbar] vex_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"yellow","bold":"true"},{"text":"Thunderbolt","color":"blue","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','yellowmissile','BlueBolt'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1

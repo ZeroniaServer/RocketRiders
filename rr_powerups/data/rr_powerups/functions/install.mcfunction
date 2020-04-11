@@ -1,0 +1,2 @@
+execute unless entity @e[tag=rr_powerups,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_powerups"],Marker:1b}
+execute if entity @e[tag=rr_powerups,limit=1] run tellraw @s {"text":"Powerups mode installed.","color":"green","bold":"true"}

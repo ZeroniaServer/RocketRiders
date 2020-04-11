@@ -1,0 +1,2 @@
+function arenaclear:baseplacement
+function rr_powerups:arenaclear/detailplacement

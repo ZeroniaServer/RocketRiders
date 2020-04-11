@@ -1,0 +1,1 @@
+execute as @a[scores={dealtDamage=1..}] at @s if entity @a[scores={tookDamage=1..},distance=..8] run 

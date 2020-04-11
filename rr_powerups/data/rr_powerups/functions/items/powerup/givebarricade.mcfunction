@@ -1,0 +1,7 @@
+title @s[team=Blue,scores={HasBarricade=1..},tag=!fullHotbar] actionbar {"text":"Barricade already obtained.","color":"aqua"}
+title @s[team=Blue,scores={HasBarricade=0},tag=!fullHotbar] actionbar {"text":"Barricade obtained.","color":"aqua"}
+give @s[team=Blue,scores={HasBarricade=0},tag=!fullHotbar] pufferfish_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"dark_purple","bold":"true"},{"text":"Barricade","color":"blue","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['BlueBarr'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 4
+
+title @s[team=Yellow,scores={HasBarricade=1..},tag=!fullHotbar] actionbar {"text":"Barricade already obtained.","color":"aqua"}
+title @s[team=Yellow,scores={HasBarricade=0},tag=!fullHotbar] actionbar {"text":"Barricade obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasBarricade=0},tag=!fullHotbar] pufferfish_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"dark_purple","bold":"true"},{"text":"Barricade","color":"gold","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['YellowBarr'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 4

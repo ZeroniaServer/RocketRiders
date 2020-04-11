@@ -1,0 +1,4 @@
+title @s[scores={HasCata=1..},tag=!fullHotbar] actionbar {"text":"Catapult already obtained.","color":"aqua"}
+title @s[scores={HasCata=0},tag=!fullHotbar] actionbar {"text":"Catapult obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasCata=0},tag=!fullHotbar] cave_spider_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"green","bold":"true"},{"text":"Catapult","color":"gold","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','yellowmissile','YellowCata'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
+give @s[team=Blue,scores={HasCata=0},tag=!fullHotbar] cave_spider_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"green","bold":"true"},{"text":"Catapult","color":"blue","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueCata'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1

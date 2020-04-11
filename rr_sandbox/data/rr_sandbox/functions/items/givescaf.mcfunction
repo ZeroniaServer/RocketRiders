@@ -1,0 +1,2 @@
+execute as @a[team=Blue] run summon item 12 64 -66 {Tags:["SBitem"],Item:{id:"minecraft:scaffolding",Count:32b}}
+execute as @a[team=Yellow] run summon item 12 64 66 {Tags:["SBitem"],Item:{id:"minecraft:scaffolding",Count:32b}}

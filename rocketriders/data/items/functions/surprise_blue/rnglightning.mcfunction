@@ -1,0 +1,5 @@
+execute if entity @e[tag=Selection,tag=rngHur] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["surpriseBlueHur","surpriseBlue2"]}
+execute if entity @e[tag=Selection,tag=rngThun] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["surpriseBlueBolt","surpriseBlue2"]}
+tag @e[tag=surpriseBlue2,sort=random,limit=1,distance=..1] add rngSelected
+execute if entity @e[tag=rngSelected,tag=surpriseBlueHur] at @s run summon squid ~ ~ ~ {Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueHur','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}
+execute if entity @e[tag=rngSelected,tag=surpriseBlueBolt] at @s run summon squid ~ ~ ~ {Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueBolt','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}

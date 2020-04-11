@@ -1,0 +1,1 @@
+tag @e[tag=bluejoinpad,tag=CancelJoin] remove CancelJoin

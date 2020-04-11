@@ -1,0 +1,4 @@
+title @s[scores={HasGemi=1..},tag=!fullHotbar] actionbar {"text":"Gemini already obtained.","color":"aqua"}
+title @s[scores={HasGemi=0},tag=!fullHotbar] actionbar {"text":"Gemini obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasGemi=0},tag=!fullHotbar] fox_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"green","bold":"true"},{"text":"Gemini","color":"gold","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','yellowmissile','YellowGemi'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
+give @s[team=Blue,scores={HasGemi=0},tag=!fullHotbar] fox_spawn_egg{display:{Name:'[{"text":"Deploy: ","color":"green","bold":"true"},{"text":"Gemini","color":"blue","bold":"true"}]'},EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueGemi'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1

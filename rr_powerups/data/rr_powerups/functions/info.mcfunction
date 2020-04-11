@@ -1,0 +1,2 @@
+tellraw @s [{"text":"Powerups mode:","color":"green","bold":"true"}]
+tellraw @s [{"text":"Powerups mode is almost the same as the Normal mode, but with some extra elements: In the center of the play area, there is a Powerup Platform which you can stand on for 10 seconds to capture. Once your team captures the Powerup Platform, you will gain a Powerup every 45 seconds. Powerups include special arrows with effects, short-usage elytra, the super fast Hypersonic missile, a trident, smoke bombs, fire charges, and so much more!","color":"dark_purple","italic":"true"}]

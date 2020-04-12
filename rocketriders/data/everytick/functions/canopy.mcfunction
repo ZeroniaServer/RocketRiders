@@ -68,12 +68,12 @@ execute as @e[scores={testplat=10}] at @s store result score @e[tag=YellowPlatfo
 execute as @e[scores={testplat=10}] at @s store result score @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players get @s pearlOwnerUUIDL
 kill @e[scores={testplat=10..}]
 #the teleport window for players on canopies is 7 consecutive ticks. this is to ensure that falling players arrive on the canopy safely and to reduce lag-induced oddities with canopies.
-execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..7},limit=1,distance=2..,sort=arbitrary] pearlOwnerUUIDL at @e[tag=YellowPlatform,scores={PlatTime=1..7},limit=1,distance=2..,sort=arbitrary] run tp @s ~ ~2.9 ~
-execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..7},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 10 100 true
+execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..20},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=YellowPlatform,scores={PlatTime=1..20},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~3.4 ~0.5 run tp @s ~ ~ ~
+execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..20},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
 #after 7 ticks the canopy gives up
-execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slow_falling
-scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=8}] pearlOwnerUUIDL
-scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=8}] pearlOwnerUUIDM
+#execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=21},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slowness
+scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=21}] pearlOwnerUUIDL
+scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=21}] pearlOwnerUUIDM
 
 #blue canopy
 execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1] add BluePlat
@@ -102,12 +102,12 @@ execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatfor
 execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players get @s pearlOwnerUUIDL
 kill @e[scores={testplat2=10..}]
 #the teleport window for players on canopies is 7 consecutive ticks. this is to ensure that falling players arrive on the canopy safely and to reduce lag-induced oddities with canopies.
-execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..7},limit=1,distance=2..,sort=arbitrary] pearlOwnerUUIDL at @e[tag=BluePlatform,scores={PlatTime=1..7},limit=1,distance=2..,sort=arbitrary] run tp @s ~ ~2.9 ~
-execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..7},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 10 100 true
+execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..20},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=BluePlatform,scores={PlatTime=1..20},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~3.4 ~0.5 run tp @s ~ ~ ~
+execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..20},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
 #after 7 ticks the canopy gives up
-execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slow_falling
-scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=8}] pearlOwnerUUIDL
-scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=8}] pearlOwnerUUIDM
+#execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slowness
+scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=21}] pearlOwnerUUIDL
+scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=21}] pearlOwnerUUIDM
 
 #FirePoof
 execute as @e[scores={PlatTime=3..400}] at @s if block ~ ~-1 ~ fire run tag @s add FirePoof

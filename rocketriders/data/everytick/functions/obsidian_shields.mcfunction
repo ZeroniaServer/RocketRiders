@@ -96,21 +96,27 @@ execute if score obShield obshieldTick matches 2 run scoreboard players set obSh
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 
 #new obsidian shield break
-execute as @e[tag=blueobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane run scoreboard players set @s breakobshield 1
-execute as @e[tag=yellowobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane run scoreboard players set @s breakobshield 1
+execute as @e[tag=blueobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:obsidian run scoreboard players set @s breakobshield 1
+execute as @e[tag=yellowobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:obsidian run scoreboard players set @s breakobshield 1
 execute as @e[scores={breakobshield=1}] at @s run playsound entity.zombie.break_wooden_door player @a ~ ~ ~ 2 0.7
 execute as @e[scores={breakobshield=1}] at @s run setblock ~ ~ ~ minecraft:magenta_stained_glass_pane[west=true,east=true]
 execute as @e[scores={breakobshield=1}] run scoreboard players set @e[scores={breakobshield=1}] breakobshield 2
 execute as @e[scores={breakobshield=2}] at @s run particle block obsidian ~ ~ ~ 1 1 0.4 0.1 5
-execute as @e[scores={breakobshield=2}] at @s unless block ~ ~ ~ minecraft:magenta_stained_glass_pane run scoreboard players set @s breakobshield 3
+execute as @e[scores={breakobshield=2}] at @s unless block ~ ~ ~ minecraft:magenta_stained_glass_pane unless block ~ ~ ~ minecraft:obsidian run scoreboard players set @s breakobshield 3
 execute as @e[scores={breakobshield=3}] at @s run playsound entity.zombie.break_wooden_door player @a ~ ~ ~ 2 0.6
 execute as @e[scores={breakobshield=3}] at @s run setblock ~ ~ ~ minecraft:pink_stained_glass_pane[west=true,east=true]
 execute as @e[scores={breakobshield=3}] at @s run scoreboard players set @s breakobshield 4
 execute as @e[scores={breakobshield=4}] at @s run particle block obsidian ~ ~ ~ 1 1 0 0.1 25
-execute as @e[scores={breakobshield=4}] at @s unless block ~ ~ ~ minecraft:pink_stained_glass_pane run scoreboard players set @s breakobshield 5
+execute as @e[scores={breakobshield=4}] at @s unless block ~ ~ ~ minecraft:pink_stained_glass_pane unless block ~ ~ ~ minecraft:obsidian run scoreboard players set @s breakobshield 5
 execute as @e[scores={breakobshield=5}] at @s run playsound entity.zombie.break_wooden_door player @a ~ ~ ~ 2 0.5
 execute as @e[scores={breakobshield=5..}] run scoreboard players add @s breakobshield 1
 execute as @e[scores={breakobshield=20}] at @s run function everytick:obsidian_shield_break
+
+#hotfix for replacing obsidian spawned by adjacent obsidian shield
+execute as @e[tag=blueobsidianshield,scores={breakobshield=..0}] at @s if block ~ ~ ~ obsidian run setblock ~ ~ ~ purple_stained_glass_pane[west=true,east=true]
+execute as @e[tag=yellowobsidianshield,scores={breakobshield=..0}] at @s if block ~ ~ ~ obsidian run setblock ~ ~ ~ purple_stained_glass_pane[west=true,east=true]
+execute as @e[scores={breakobshield=2}] at @s if block ~ ~ ~ obsidian run setblock ~ ~ ~ magenta_stained_glass_pane[west=true,east=true]
+execute as @e[scores={breakobshield=4}] at @s if block ~ ~ ~ obsidian run setblock ~ ~ ~ pink_stained_glass_pane[west=true,east=true]
 
 #hotfix for obsidian shields to break duped stained glass
 execute as @e[scores={breakobshield=0..}] at @s positioned ~ ~ ~-1 if block ~ ~ ~ #custom:obshieldreplace unless entity @e[scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5] run setblock ~ ~ ~ air destroy

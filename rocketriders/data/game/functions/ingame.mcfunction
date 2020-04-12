@@ -7,6 +7,10 @@ execute if entity @a[scores={actionbardelay=50..}] run scoreboard players reset 
 scoreboard players add @a[team=Yellow] jumps 0
 scoreboard players add @a[team=Blue] jumps 0
 
+#hotfix for lobby arrows
+clear @a[team=Yellow] arrow{Lobby:1b}
+clear @a[team=Blue] arrow{Lobby:1b}
+
 #prevent players from going above the arena
 execute as @a unless entity @s[team=!Yellow,team=!Blue] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 

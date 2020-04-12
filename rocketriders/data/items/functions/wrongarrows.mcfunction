@@ -1,5 +1,6 @@
 #specific arrow counts
-execute store result score @s HasArrows run clear @s arrow{display:{Name:"{\"text\":\"Arrow\",\"color\":\"light_purple\",\"italic\":\"true\",\"bold\":\"true\"}"}} 0
+execute if entity @e[tag=Selection,tag=!GameStarted] store result score @s HasArrows run clear @s arrow{display:{Name:"{\"text\":\"Arrow\",\"color\":\"light_purple\",\"italic\":\"true\",\"bold\":\"true\"}"},Lobby:1b} 0
+execute if entity @e[tag=Selection,tag=GameStarted] store result score @s HasArrows run clear @s arrow{display:{Name:"{\"text\":\"Arrow\",\"color\":\"light_purple\",\"italic\":\"true\",\"bold\":\"true\"}"}} 0
 
 execute store result score @s HasLeviArrow run clear @s tipped_arrow{display:{Name:"{\"text\":\"Levitation Arrow\",\"color\":\"dark_purple\",\"italic\":\"true\",\"bold\":\"true\"}"},CustomPotionEffects:[{Id:25b,Amplifier:0b,Duration:100,ShowParticles:1b}],CustomPotionColor:11793919,HideFlags:63} 0
 

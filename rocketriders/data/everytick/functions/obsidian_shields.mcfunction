@@ -1,6 +1,10 @@
 #blue obsidian shield
-execute as @e[type=enderman,tag=BlueObshield] at @s run summon fireball ~ ~1 ~ {Tags:["blueobfireball","obfireball"],direction:[0.0,0.0,0.0],ExplosionPower:0}
-execute as @e[type=enderman,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1 ~ {Tags:["blueobfireball","obfireball"],direction:[0.0,0.0,0.0],ExplosionPower:0}
+execute as @e[type=enderman,tag=BlueObshield] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Tags:["ObFireballAS"],Passengers:[{id:fireball,Tags:["blueobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}]}
+execute as @e[type=enderman,tag=BlueObshield] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Tags:["ObFireballAS"],Passengers:[{id:dragon_fireball,Tags:["blueobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}]}
+tag @e[type=fireball,tag=blueobfireball,nbt={direction:[0.0,0.0,0.0]},tag=!StillOb] add StillOb
+execute as @e[type=fireball,tag=blueobfireball,tag=!StillOb,tag=NoMotionD] at @s run kill @e[tag=ObFireballAS,distance=..2,limit=2,sort=nearest]
+execute as @e[type=fireball,tag=blueobfireball,tag=!StillOb,tag=NoMotionD] at @s run tag @s remove NoMotionD
+
 scoreboard players set @e[type=fireball,tag=blueobfireball] obmove 1
 scoreboard players set @e[type=fireball,tag=blueobfireball,nbt={power:[0.0,0.0,0.0]}] obmove 0
 scoreboard players add @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] obshieldtime 1
@@ -43,11 +47,20 @@ tp @e[tag=BlueObshield] ~ ~-250 ~
 kill @e[tag=BlueObshield]
 
 #yellow obsidian shield
-execute as @e[type=enderman,tag=YellowObshield] at @s run summon fireball ~ ~1 ~ {Tags:["yellowobfireball","obfireball"],direction:[0.0,0.0,0.0],ExplosionPower:0}
-execute as @e[type=enderman,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1 ~ {Tags:["yellowobfireball","obfireball"],direction:[0.0,0.0,0.0],ExplosionPower:0}
+execute as @e[type=enderman,tag=YellowObshield] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Tags:["ObFireballAS"],Passengers:[{id:fireball,Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}]}
+execute as @e[type=enderman,tag=YellowObshield] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Tags:["ObFireballAS"],Passengers:[{id:dragon_fireball,Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}]}
+tag @e[type=fireball,tag=yellowobfireball,nbt={direction:[0.0,0.0,0.0]},tag=!StillOb] add StillOb
+execute as @e[type=fireball,tag=yellowobfireball,tag=!StillOb,tag=NoMotionD] at @s run kill @e[tag=ObFireballAS,distance=..2,limit=2,sort=nearest]
+execute as @e[type=fireball,tag=yellowobfireball,tag=!StillOb,tag=NoMotionD] at @s run tag @s remove NoMotionD
+
 scoreboard players set @e[type=fireball,tag=yellowobfireball] obmove 1
 scoreboard players set @e[type=fireball,tag=yellowobfireball,nbt={power:[0.0,0.0,0.0]}] obmove 0
 scoreboard players add @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] obshieldtime 1
+
+tag @e[tag=StillOb] remove StillOb
+
+
+
 #storing movement data
 execute as @e[type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] direction[0] double 0.000001 run data get entity @s direction[0] 1000000
 execute as @e[type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] direction[1] double 0.000001 run data get entity @s direction[1] 1000000

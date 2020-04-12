@@ -22,6 +22,8 @@ kill @e[tag=Vortex]
 kill @e[type=chicken]
 kill @e[type=tnt]
 kill @e[tag=obfireball]
+kill @e[tag=FireballAS]
+kill @e[tag=ObFireballAS]
 
 execute as @e[tag=blueobsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[tag=yellowobsidianshield] at @s run function everytick:obsidian_shield_break

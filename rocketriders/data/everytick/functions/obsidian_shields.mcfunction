@@ -47,8 +47,8 @@ tp @e[tag=BlueObshield] ~ ~-250 ~
 kill @e[tag=BlueObshield]
 
 #yellow obsidian shield
-execute as @e[type=enderman,tag=YellowObshield] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Tags:["ObFireballAS"],Passengers:[{id:fireball,Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}]}
-execute as @e[type=enderman,tag=YellowObshield] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Tags:["ObFireballAS"],Passengers:[{id:dragon_fireball,Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}]}
+execute as @e[type=enderman,tag=YellowObshield] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Silent:1b,Tags:["ObFireballAS"],Passengers:[{id:fireball,Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}]}
+execute as @e[type=enderman,tag=YellowObshield] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Silent:1b,Tags:["ObFireballAS"],Passengers:[{id:dragon_fireball,Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}]}
 tag @e[type=fireball,tag=yellowobfireball,nbt={direction:[0.0,0.0,0.0]},tag=!StillOb] add StillOb
 execute as @e[type=fireball,tag=yellowobfireball,tag=!StillOb,tag=NoMotionD] at @s run kill @e[tag=ObFireballAS,distance=..2,limit=2,sort=nearest]
 execute as @e[type=fireball,tag=yellowobfireball,tag=!StillOb,tag=NoMotionD] at @s run tag @s remove NoMotionD

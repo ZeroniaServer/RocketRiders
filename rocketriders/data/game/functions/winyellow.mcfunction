@@ -22,9 +22,6 @@ title @a title ["",{"text":"Team Yellow Won!","color":"yellow","bold":true}]
 title @a[team=Blue] subtitle ["",{"text":"Better luck next time!","color":"red","bold":true}]
 title @a[team=Yellow] subtitle ["",{"text":"Take some time to celebrate!","color":"green","bold":true}]
 
-#Calculate bonus XP for yellow and XP loss for blue
-scoreboard players set @a[team=Yellow] bonusXP 20
-tag @a[team=Yellow] add CalculateWin
 
 #Reset spawn scores
 scoreboard players set @a AuxSpawned 0

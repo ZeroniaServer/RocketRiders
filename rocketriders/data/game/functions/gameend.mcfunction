@@ -1,12 +1,9 @@
 #After game ends
 scoreboard players add @s endtimer 1
 tag @s remove GameStarted
-execute as @s[scores={endtimer=1..450}] run function leveling:calculate
-execute as @s[scores={endtimer=1..450}] as @a[team=Blue] run function everytick:level_actionbar
-execute as @s[scores={endtimer=1..450}] as @a[team=Yellow] run function everytick:level_actionbar
-execute as @s[scores={endtimer=1}] run tag @e[tag=yellowjoinpad] add CancelJoin
-execute as @s[scores={endtimer=1}] run tag @e[tag=bluejoinpad] add CancelJoin
-execute as @s[scores={endtimer=1}] run tag @e[tag=specjoinpad] add CancelJoin
+execute as @s[scores={endtimer=1..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
+execute as @s[scores={endtimer=1..100}] run tag @e[tag=bluejoinpad] add CancelJoin
+execute as @s[scores={endtimer=1..100}] run tag @e[tag=specjoinpad] add CancelJoin
 execute as @s[scores={endtimer=250}] run tag @a[team=Blue] add WasInBlue
 execute as @s[scores={endtimer=250}] run tag @a[team=Yellow] add WasInYellow
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Blue]

@@ -13,5 +13,5 @@ execute as @a[scores={LobbyWarp=5}] at @s run tp @s -80 201 78 90 0
 #Sound and effects
 execute as @a[scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted player @s ~ ~ ~ 1 2
 execute as @a[scores={LobbyWarp=1..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[scores={LobbyWarp=1..}] at @s run particle flash ~ ~1 ~ 0 0 0 0.1 1 force @s
+execute as @a[scores={LobbyWarp=1..}] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
 scoreboard players reset @a[scores={LobbyWarp=1..}] LobbyWarp

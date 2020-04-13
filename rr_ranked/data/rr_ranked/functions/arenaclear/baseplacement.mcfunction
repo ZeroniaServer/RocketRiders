@@ -1,0 +1,2 @@
+function arenaclear:baseplacement
+function arenaclear:detailplacement

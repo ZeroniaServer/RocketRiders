@@ -1,12 +1,12 @@
 #Hypersonic
-execute as @e[tag=BlueHyper] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-7,posZ:5,name:"minecraft:hypersonic_blue"}
-execute as @e[tag=BlueHyper] at @s run function items:structureblock
+execute as @e[tag=BlueHyper] at @s run setblock ~-1 ~-9 ~5 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:hypersonic_blue"}
+execute as @e[tag=BlueHyper] at @s positioned ~-1 ~-9 ~5 run function items:structureblock
 execute as @e[tag=BlueHyper] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
 execute as @e[tag=BlueHyper] at @s run tp @s ~ ~-200 ~
 kill @e[tag=BlueHyper]
 
-execute as @e[tag=YellowHyper] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-7,posZ:-13,name:"minecraft:hypersonic_yellow"}
-execute as @e[tag=YellowHyper] at @s run function items:structureblock
+execute as @e[tag=YellowHyper] at @s run setblock ~-1 ~-9 ~-13 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:hypersonic_yellow"}
+execute as @e[tag=YellowHyper] at @s positioned ~-1 ~-9 ~-13 run function items:structureblock
 execute as @e[tag=YellowHyper] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
 execute as @e[tag=YellowHyper] at @s run tp @s ~ ~-200 ~
 kill @e[tag=YellowHyper]

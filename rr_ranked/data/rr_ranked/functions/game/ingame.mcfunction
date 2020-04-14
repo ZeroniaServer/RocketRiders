@@ -17,6 +17,6 @@ execute if block 11 38 74 air if block 13 38 74 air run function rr_ranked:game/
 execute if block 13 38 74 air unless block 11 38 74 air run function rr_ranked:game/winblue
 execute if block 11 38 74 air unless block 13 38 74 air run function rr_ranked:game/winblue
 
-execute if block 13 38 -74 air if block 11 38 -74 run function rr_ranked:game:winyellow
-execute if block 11 38 -74 air unless block 13 38 -74 air run function rr_ranked:game:winyellow
-execute if block 13 38 -74 air unless block 11 38 -74 run function rr_ranked:game:winyellow
+execute if block 13 38 -74 air if block 11 38 -74 air run function rr_ranked:game/winyellow
+execute if block 11 38 -74 air unless block 13 38 -74 air run function rr_ranked:game/winyellow
+execute if block 13 38 -74 air unless block 11 38 -74 air run function rr_ranked:game/winyellow

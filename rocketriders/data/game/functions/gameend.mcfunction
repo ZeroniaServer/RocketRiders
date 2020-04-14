@@ -1,6 +1,7 @@
 #After game ends
 scoreboard players add @s endtimer 1
 tag @s remove GameStarted
+execute as @s[scores={endtimer=1..100}] run tag @e[tag=EditedSettings] remove EditedSettings
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=bluejoinpad] add CancelJoin
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=specjoinpad] add CancelJoin

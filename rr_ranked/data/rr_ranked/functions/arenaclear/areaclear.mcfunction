@@ -7,5 +7,5 @@ clear @a[team=Yellow]
 
 scoreboard players set @e[tag=Selection] RandomItem 0
 
-execute as @a[team=Blue] run function game:gearblue
-execute as @a[team=Yellow] run function game:gearyellow
+execute as @a[team=Blue] run function rr_ranked:game/givegear
+execute as @a[team=Yellow] run function rr_ranked:game/givegear

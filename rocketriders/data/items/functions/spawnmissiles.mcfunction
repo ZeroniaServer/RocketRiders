@@ -114,7 +114,6 @@ execute as @e[tag=YellowCata] at @s run setblock ~-1 ~-8 ~-14 structure_block[mo
 execute as @e[tag=YellowCata] at @s positioned ~-1 ~-8 ~-14 run function items:poststructureblock
 execute as @e[tag=YellowCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,SmartClearAECcata],Duration:2000000000}
 
-
 #Citadel
 execute as @e[tag=BlueCitadel] at @s positioned ~-1 ~-8 ~4 run function items:prestructureblock
 execute as @e[tag=BlueCitadel] at @s run setblock ~-1 ~-8 ~4 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:citadel_blue"}

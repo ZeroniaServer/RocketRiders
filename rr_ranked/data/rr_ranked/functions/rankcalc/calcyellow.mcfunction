@@ -23,7 +23,7 @@ scoreboard players set RankResult XP 80
 #CurrentBlue / 50
 scoreboard players operation CurrentBlue XP /= 50 XP
 
-execute if entity @a[team=Yellow,limit=1] run scoreboard players operation CurrentBlue XP /= @s RankScore
+execute if entity @a[team=Yellow,limit=1] run scoreboard players operation CurrentBlue XP *= @s RankScore
 
 #RankResult+CurrentBlue = new RankResult
 scoreboard players operation RankResult XP += CurrentBlue XP

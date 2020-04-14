@@ -1,6 +1,12 @@
 #updating xp values
 execute store result score @s xp_level run scoreboard players get @s XP
 execute store result score @s xp_progress run scoreboard players get @s XP
+
+#setting progress bar appropriately
+scoreboard players set @e[tag=Selection,limit=1] xp_mod 300
+# this is what you multiply xp_mod by to get 100 - 300 * 1 / 3
+scoreboard players set @e[tag=Selection,limit=1] xp_mult 1
+scoreboard players set @e[tag=Selection,limit=1] xp_div 3
 scoreboard players operation @s xp_progress %= @e[tag=Selection,limit=1] xp_mod
 scoreboard players operation @s xp_progress *= @e[tag=Selection,limit=1] xp_mult
 scoreboard players operation @s xp_progress /= @e[tag=Selection,limit=1] xp_div

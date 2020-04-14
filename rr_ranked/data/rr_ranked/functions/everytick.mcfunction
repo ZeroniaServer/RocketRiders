@@ -26,8 +26,8 @@ execute as @a[team=Lobby] run function rr_ranked:rankdisplay
 
 #Lock joinpads when a game started or when a team already has someone in it
 
-execute as @e[tag=EditedSettings] if entity @a[team=Blue] run tag @e[tag=bluejoinpad] add CancelJoin
-execute as @e[tag=EditedSettings] if entity @a[team=Yellow] run tag @e[tag=yellowjoinpad] add CancelJoin
-execute as @e[tag=EditedSettings] unless entity @a[team=Blue] run tag @e[tag=bluejoinpad] remove CancelJoin
-execute as @e[tag=EditedSettings] unless entity @a[team=Yellow] run tag @e[tag=yellowjoinpad] remove CancelJoin
-execute as @e[tag=EditedSettings] unless entity @a[team=Blue] unless entity @a[team=Yellow] run tag @e[tag=Selection] remove Countdown
+execute as @e[tag=EditedSettings,tag=rankedEnabled] if entity @a[team=Blue] run tag @e[tag=bluejoinpad] add CancelJoin
+execute as @e[tag=EditedSettings,tag=rankedEnabled] if entity @a[team=Yellow] run tag @e[tag=yellowjoinpad] add CancelJoin
+execute as @e[tag=EditedSettings,tag=rankedEnabled] unless entity @a[team=Blue] run tag @e[tag=bluejoinpad] remove CancelJoin
+execute as @e[tag=EditedSettings,tag=rankedEnabled] unless entity @a[team=Yellow] run tag @e[tag=yellowjoinpad] remove CancelJoin
+execute as @e[tag=EditedSettings,tag=rankedEnabled] unless entity @a[team=Blue] unless entity @a[team=Yellow] run tag @e[tag=Selection] remove Countdown

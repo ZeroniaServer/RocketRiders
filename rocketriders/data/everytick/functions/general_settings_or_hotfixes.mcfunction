@@ -15,7 +15,7 @@ scoreboard players set @a[scores={firstJoined=0}] firstJoined 1
 
 #auto update xp bar
 execute as @a store result score @s xp_bar run xp query @s levels
-execute as @a unless score @s xp_bar = @s XP run function leveling:update_xp_bar
+execute as @a unless score @s xp_bar = @s XP run function everytick:update_xp_bar
 
 #dummy vortex (lobby)
 execute as @e[tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a

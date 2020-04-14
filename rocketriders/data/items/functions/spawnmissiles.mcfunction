@@ -79,7 +79,7 @@ execute as @e[tag=YellowSlash] at @s run setblock ~-1 ~-9 ~-15 structure_block[m
 execute as @e[tag=YellowSlash] at @s positioned ~-1 ~-9 ~-15 run function items:structureblock
 
 #Catapult
-execute as @e[tag=BlueCata] at @s run setblock ~-1 ~-8 ~3 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:catapult_blue"}
+execute as @e[tag=BlueCata] at @s run setblock ~-1 ~-8 ~-3 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:catapult_blue"}
 execute as @e[tag=BlueCata] at @s positioned ~-1 ~-8 ~-3 run function items:structureblock
 execute as @e[tag=BlueCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,SmartClearAECcata],Duration:2000000000}
 execute as @e[tag=YellowCata] at @s run setblock ~-1 ~-8 ~-14 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:catapult_yellow"}

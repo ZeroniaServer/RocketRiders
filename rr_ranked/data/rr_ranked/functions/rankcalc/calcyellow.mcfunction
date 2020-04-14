@@ -58,7 +58,7 @@ scoreboard players operation @a[team=Blue,limit=1] XP += Buffer XP
 #Reset all scores (optimization)
 scoreboard players reset 3 XP
 scoreboard players reset 5 XP
-scoreboard players reset 10 XPLoss XP
+scoreboard players reset XPLoss XP
 scoreboard players reset 50 XP
 scoreboard players reset XPLoss XP
 scoreboard players reset CurrentBlue XP

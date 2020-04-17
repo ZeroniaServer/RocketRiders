@@ -6,14 +6,6 @@ execute as @e[tag=YellowAux] at @s positioned ~-1 ~-10 ~-14 run function items:p
 execute as @e[tag=YellowAux] at @s run setblock ~-1 ~-10 ~-14 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:auxiliary_yellow"}
 execute as @e[tag=YellowAux] at @s positioned ~-1 ~-10 ~-14 run function items:poststructureblock
 
-#Bullet
-execute as @e[tag=BlueBull] at @s positioned ~-1 ~-8 ~4 run function items:prestructureblock
-execute as @e[tag=BlueBull] at @s run setblock ~-1 ~-8 ~4 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:bullet_blue"}
-execute as @e[tag=BlueBull] at @s positioned ~-1 ~-8 ~4 run function items:poststructureblock
-execute as @e[tag=YellowBull] at @s positioned ~-1 ~-8 ~-18 run function items:prestructureblock
-execute as @e[tag=YellowBull] at @s run setblock ~-1 ~-8 ~-18 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:bullet_yellow"}
-execute as @e[tag=YellowBull] at @s positioned ~-1 ~-8 ~-18 run function items:poststructureblock
-
 #TomaTwo
 execute as @e[tag=BlueToma] at @s positioned ~-1 ~-7 ~4 run function items:prestructureblock
 execute as @e[tag=BlueToma] at @s run setblock ~-1 ~-7 ~4 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:tomatwo_blue"}
@@ -130,28 +122,25 @@ execute as @e[tag=YellowGemi] at @s positioned ~-1 ~-7 ~-13 run function items:p
 execute as @e[tag=YellowGemi] at @s run setblock ~-1 ~-7 ~-13 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:gemini_yellow"}
 execute as @e[tag=YellowGemi] at @s positioned ~-1 ~-7 ~-13 run function items:poststructureblock
 
-#Missile prep (except Surprise Egg and Hypersonic)
-execute as @e[tag=bluemissile,tag=!BlueCata,tag=!surprising,tag=!BlueSurprise,tag=!BlueHyper] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
-execute as @e[tag=yellowmissile,tag=!YellowCata,tag=!surprising,tag=!YellowSurprise,tag=!YellowHyper] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
-execute as @e[tag=missile,tag=!surprising,tag=!BlueHyper,tag=!YellowHyper] run tp @s ~ ~-200 ~
-kill @e[tag=missile,tag=!surprising,tag=!BlueHyper,tag=!YellowHyper]
+#Missile prep (except Surprise Egg and Catapult)
+execute as @e[tag=bluemissile,tag=!BlueCata,tag=!surprising,tag=!BlueSurprise] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
+execute as @e[tag=yellowmissile,tag=!YellowCata,tag=!surprising,tag=!YellowSurprise] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
+execute as @e[tag=missile,tag=!surprising] run tp @s ~ ~-200 ~
+kill @e[tag=missile,tag=!surprising]
 
 #Surprise Egg
-#Blue
 execute as @e[tag=BlueSurprise] at @s run function items:surprise_blue/rng
 execute as @e[tag=BlueSurpriseNormal] at @s run function items:surprise_blue/rngnormal
 execute as @e[tag=BlueSurpriseHeavy] at @s run function items:surprise_blue/rngheavy
 execute as @e[tag=BlueSurpriseLightning] at @s run function items:surprise_blue/rnglightning
 
-#Yellow
 execute as @e[tag=YellowSurprise] at @s run function items:surprise_yellow/rng
 execute as @e[tag=YellowSurpriseNormal] at @s run function items:surprise_yellow/rngnormal
 execute as @e[tag=YellowSurpriseHeavy] at @s run function items:surprise_yellow/rngheavy
 execute as @e[tag=YellowSurpriseLightning] at @s run function items:surprise_yellow/rnglightning
 
-scoreboard players add @e[tag=surprising] surpriseTime 1
-
 #Surprise Egg prep
+scoreboard players add @e[tag=surprising] surpriseTime 1
 execute as @e[tag=bluemissile,tag=!BlueCata,tag=surprising,tag=!BlueSurprise,scores={surpriseTime=2}] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
 execute as @e[tag=yellowmissile,tag=!YellowCata,tag=surprising,tag=!YellowSurprise,scores={surpriseTime=2}] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
 execute as @e[tag=missile,tag=surprising,scores={surpriseTime=2..}] run tp @s ~ ~-200 ~
@@ -164,7 +153,6 @@ tp @e[tag=BlueNovaSpawner] ~ ~-200 ~
 kill @e[tag=BlueNovaSpawner]
 tp @e[tag=YellowNovaSpawner] ~ ~-200 ~
 kill @e[tag=YellowNovaSpawner]
-
 
 #Fireball
 execute as @e[tag=BlueFireball] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Silent:1b,Tags:["FireballAS"],Passengers:[{id:fireball,Tags:["NormalFireball","NoMotion"],ExplosionPower:1,direction:[0.0,0.0,0.0]}]}

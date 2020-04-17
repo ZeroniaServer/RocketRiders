@@ -73,9 +73,9 @@ execute as @e[tag=YellowBlade] at @s run setblock ~-1 ~-7 ~-18 structure_block[m
 execute as @e[tag=YellowBlade] at @s positioned ~-1 ~-7 ~-18 run function items:poststructureblock
 
 #Rifter
-execute as @e[tag=BlueRift] at @s positioned ~-1 ~-7 ~9 run function items:prestructureblock
-execute as @e[tag=BlueRift] at @s run setblock ~-1 ~-7 ~9 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:rifter_blue"}
-execute as @e[tag=BlueRift] at @s positioned ~-1 ~-7 ~9 run function items:poststructureblock
+execute as @e[tag=BlueRift] at @s positioned ~-1 ~-7 ~3 run function items:prestructureblock
+execute as @e[tag=BlueRift] at @s run setblock ~-1 ~-7 ~3 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:rifter_blue"}
+execute as @e[tag=BlueRift] at @s positioned ~-1 ~-7 ~3 run function items:poststructureblock
 execute as @e[tag=YellowRift] at @s positioned ~-1 ~-7 ~-16 run function items:prestructureblock
 execute as @e[tag=YellowRift] at @s run setblock ~-1 ~-7 ~-16 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:rifter_yellow"}
 execute as @e[tag=YellowRift] at @s positioned ~-1 ~-7 ~-16 run function items:poststructureblock

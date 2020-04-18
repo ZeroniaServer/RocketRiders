@@ -5,7 +5,7 @@ function challenges:aftergame
 #Win stuff
 tag @e[tag=Selection] add GameEnd
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
-give @a[team=Yellow] firework_rocket{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}} 5
+give @a[team=Yellow] firework_rocket{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]},CanPlaceOn:["#custom:missileblocks","#custom:basereplace"],HideFlags:50} 5
 tp @a[team=Blue] 12 64 -66 0 0
 tp @a[team=Yellow] 12 64 66 180 0
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s slowness

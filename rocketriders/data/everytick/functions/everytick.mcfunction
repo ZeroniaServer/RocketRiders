@@ -7,6 +7,8 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:wrong
 function everytick:bookwarp
 function everytick:cancel_utility
 function everytick:leave_game
+function everytick:player_portal
+function items:antidupe
 function everytick:score_reset
 function everytick:general_settings_or_hotfixes
 function custom:joinpad_enddimension

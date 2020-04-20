@@ -22,6 +22,7 @@ execute as @a store result score @s HasGemi run clear @s fox_spawn_egg 0
 execute as @a store result score @s HasNova run clear @s tropical_fish_spawn_egg 0
 execute as @a store result score @s HasVortex run clear @s egg 0
 execute as @a store result score @s HasSplash run clear @s splash_potion{Potion:"minecraft:water"} 0
+execute as @a store result score @s HasFirework run clear @s firework_rocket 0
 
 execute as @a[scores={HasAux=2..}] run clear @s mooshroom_spawn_egg 1
 execute as @a[scores={HasToma=2..}] run clear @s creeper_spawn_egg 1

@@ -1,3 +1,6 @@
+#void falling
+execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-200,dy=180,scores={ThrowPlat=..0}] run function game:void
+
 #lobby players no fall damage (credit: PingiPuck)
 scoreboard players add @a LeaveGame 0
 tag @a[scores={LeaveGame=0},nbt={FallDistance:0.0f}] add NotFalling

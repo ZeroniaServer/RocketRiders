@@ -16,11 +16,8 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] at @s in overworld if en
 
 #general everytick commands
 function challenges:gain
-function items:antidupe
 function items:spawnmissiles
 function everytick:achievement_gain
-function everytick:player_portal
-execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-200,dy=200,scores={ThrowPlat=..0}] run function game:void
 function everytick:shields
 function everytick:vortex
 function everytick:obsidian_shields

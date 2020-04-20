@@ -1,6 +1,10 @@
 #After game ends
 scoreboard players add @s endtimer 1
 tag @s remove GameStarted
+execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
+execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
+#hotfix for extra fireworks
+execute as @s[scores={endtimer=1..450}] run clear @a[scores={HasFirework=6..}] firework_rocket 1
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=EditedSettings] remove EditedSettings
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=bluejoinpad] add CancelJoin

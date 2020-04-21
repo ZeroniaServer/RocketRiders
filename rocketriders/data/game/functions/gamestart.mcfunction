@@ -9,7 +9,7 @@ execute as @e[tag=Selection,tag=!GameStarted] run tp @a[tag=JoinBlue] -95 202 60
 execute as @e[tag=Selection,tag=!GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
 execute as @e[tag=Selection,tag=!GameStarted] run effect give @a[tag=JoinBlue] resistance 1000000 255 true
 execute as @e[tag=Selection,tag=GameStarted] run tp @a[tag=JoinBlue] 12 64 -66 0 0
-execute as @e[tag=Selection,tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival however, I'm afraid.","color":"aqua"}]
+execute as @e[tag=Selection,tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
 execute as @e[tag=Selection,tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
 execute as @e[tag=Selection,tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
 #tag @a remove JoinBlue
@@ -31,7 +31,7 @@ execute as @e[tag=Selection,tag=!GameStarted] run tp @a[tag=JoinYellow] -95 202 
 execute as @e[tag=Selection,tag=!GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
 execute as @e[tag=Selection,tag=!GameStarted] run effect give @a[tag=JoinYellow] resistance 1000000 255 true
 execute as @e[tag=Selection,tag=GameStarted] run tp @a[tag=JoinYellow] 12 64 66 180 0
-execute as @e[tag=Selection,tag=GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival however, I'm afraid.","color":"yellow"}]
+execute as @e[tag=Selection,tag=GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
 execute as @e[tag=Selection,tag=GameStarted] run gamemode survival @a[tag=JoinYellow]
 execute as @e[tag=Selection,tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
 #tag @a remove JoinYellow

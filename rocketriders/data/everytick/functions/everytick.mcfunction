@@ -9,6 +9,8 @@ function everytick:bookwarp
 function everytick:cancel_utility
 function everytick:player_portal
 function items:antidupe
+#TEMPORARY - clear old advancements
+function challenges:clearold
 function everytick:score_reset
 function everytick:general_settings_or_hotfixes
 function custom:joinpad_enddimension

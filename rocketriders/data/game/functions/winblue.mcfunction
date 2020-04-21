@@ -22,25 +22,3 @@ execute as @a[team=Yellow] at @s run playsound minecraft:entity.wither.spawn mas
 title @a title ["",{"text":"Team Blue Won!","color":"blue","bold":true}]
 title @a[team=Yellow] subtitle ["",{"text":"Better luck next time!","color":"red","bold":true}]
 title @a[team=Blue] subtitle ["",{"text":"Take some time to celebrate!","color":"green","bold":true}]
-
-#Reset spawn scores
-scoreboard players set @a AuxSpawned 0
-scoreboard players set @a AntsSpawned 0
-scoreboard players set @a BladeSpawned 0
-scoreboard players set @a BulletSpawned 0
-scoreboard players set @a CataSpawned 0
-scoreboard players set @a CitaSpawned 0
-scoreboard players set @a FireballSpawned 0
-scoreboard players set @a GemiSpawned 0
-scoreboard players set @a GuardSpawned 0
-scoreboard players set @a HurSpawned 0
-scoreboard players set @a HyperSpawned 0
-scoreboard players set @a JugbSpawned 0
-scoreboard players set @a NullSpawned 0
-scoreboard players set @a RifterSpawned 0
-scoreboard players set @a SlashSpawned 0
-scoreboard players set @a ThunSpawned 0
-scoreboard players set @a TomaSpawned 0
-scoreboard players set @a WarSpawned 0
-scoreboard players set @a FellVoid 0
-scoreboard players set @a jumps 0

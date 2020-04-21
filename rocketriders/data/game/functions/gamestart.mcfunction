@@ -12,6 +12,7 @@ execute as @e[tag=Selection,tag=GameStarted] run tp @a[tag=JoinBlue] 12 64 -66 0
 execute as @e[tag=Selection,tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
 execute as @e[tag=Selection,tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
 execute as @e[tag=Selection,tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
+execute as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #tag @a remove JoinBlue
 
 execute as @e[tag=Selection,scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
@@ -34,6 +35,7 @@ execute as @e[tag=Selection,tag=GameStarted] run tp @a[tag=JoinYellow] 12 64 66 
 execute as @e[tag=Selection,tag=GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
 execute as @e[tag=Selection,tag=GameStarted] run gamemode survival @a[tag=JoinYellow]
 execute as @e[tag=Selection,tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
+execute as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #tag @a remove JoinYellow
 
 execute as @e[tag=Selection,scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
@@ -49,6 +51,7 @@ execute as @a[tag=LeaveTeams,team=Blue] run tellraw @a ["",{"selector":"@s"},{"t
 team join Lobby @a[tag=LeaveTeams]
 clear @a[tag=LeaveTeams]
 tp @a[tag=LeaveTeams] -43 211 78 0 90
+execute as @a[tag=LeaveTeams] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 tag @a remove LeaveTeams
 
 #Joinpad + Leavepad Spectator
@@ -62,14 +65,17 @@ team join Spectator @a[tag=JoinSpec]
 clear @a[tag=JoinSpec]
 tellraw @a[tag=JoinSpec] ["",{"text":"If you want to leave spectator mode, fly into the green particle cluster in the center of the arena.","color":"yellow","bold":"true"}]
 tp @a[tag=JoinSpec] 12 100 0.5 90 90
+execute as @a[tag=JoinSpec] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 execute as @a[tag=JoinSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
 gamemode spectator @a[tag=JoinSpec]
 tag @a remove JoinSpec
 tp @a[tag=AlreadySpec] 12 100 0.5 90 90
+execute as @a[tag=AlreadySpec] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 tag @a remove AlreadySpec
 execute as @e[tag=LeaveSpec] at @s run particle dust 2 1 0 1 ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[team=Spectator]
 execute as @e[tag=LeaveSpec] at @s run tag @a[team=Spectator,distance=..2] add LeaveSpectator
 tp @a[tag=LeaveSpectator] -43 211 78 90 0
+execute as @a[tag=LeaveSpectator] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 gamemode adventure @a[tag=LeaveSpectator]
 execute as @a[tag=LeaveSpectator] run tellraw @a ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
 team join Lobby @a[tag=LeaveSpectator]

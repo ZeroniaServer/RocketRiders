@@ -48,7 +48,9 @@ execute as @e[tag=Selection,scores={TopDeco=2}] run setblock 24 64 -61 structure
 execute as @e[tag=Selection,scores={TopDeco=2}] run setblock -6 65 -61 redstone_block
 execute as @e[tag=Selection,scores={TopDeco=2}] run setblock 24 65 -61 redstone_block
 
-
+#Portal glass pane rims
+execute as @e[tag=Selection,scores={PortalDeco=1}] run fill -11 59 74 35 36 74 yellow_stained_glass_pane[east=true,west=true] replace air
+execute as @e[tag=Selection,scores={PortalDeco=1}] run fill -11 59 -74 35 36 -74 blue_stained_glass_pane[east=true,west=true] replace air
 
 #Obsidian placement
 fill 11 63 -65 13 63 -66 obsidian

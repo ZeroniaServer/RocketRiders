@@ -64,6 +64,9 @@ execute as @e[scores={BottomDeco=1}] run data merge block -57 191 78 {Text1: "{\
 execute as @e[scores={BottomDeco=0}] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Decoration:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] BottomDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 #execute as @e[scores={BottomDeco=0}] run fill -45 190 64 -41 194 72 air
 
+#PORTAL DECORATION -- TODO (update display commands)
+execute as @e[scores={PortalDeco=1}] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Decoration:\",\"color\":\"dark_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"Glass Rim\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @e[scores={PortalDeco=0}] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Decoration:\",\"color\":\"dark_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
 #RESTORE DEFAULTS
 data merge block -57 193 78 {Text2:"{\"text\":\"Restore Defaults\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add RestoreDefault\"}}",Text3:"{\"text\":\" \",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
@@ -77,12 +80,14 @@ execute as @e[scores={TopDeco=3..}] run scoreboard players set @s TopDeco 0
 execute as @e[scores={TopCorner=2..}] run scoreboard players set @s TopCorner 0
 execute as @e[scores={MiddleDeco=2..}] run scoreboard players set @s MiddleDeco 0
 execute as @e[scores={BottomDeco=2..}] run scoreboard players set @s BottomDeco 0
+execute as @e[scores={PortalDeco=2..}] run scoreboard players set @s PortalDeco 0
 
 #RESTORE DEFAULTS -- TODO (update display commands)
 scoreboard players set @e[tag=RestoreDefault] TopDeco 1
 scoreboard players set @e[tag=RestoreDefault] TopCorner 1
 scoreboard players set @e[tag=RestoreDefault] MiddleDeco 1
 scoreboard players set @e[tag=RestoreDefault] BottomDeco 1
+scoreboard players set @e[tag=RestoreDefault] PortalDeco 1
 #execute as @e[tag=RestoreDefault] run fill -45 190 64 -41 194 72 air
 #execute as @e[tag=RestoreDefault] run fill -45 191 74 -37 199 82 air
 #execute as @e[tag=RestoreDefault] run fill -45 190 84 -41 194 92 air

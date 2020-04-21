@@ -11,12 +11,11 @@ tag @e[tag=Selection,tag=!rngShield,tag=!rngArrows,tag=!rngVortex,tag=!rngObshie
 #All of these would reenable categories automatically if any item from a category is selected while the category is disabled.
 #However, the problem is that this means players cannot disable categories while still keeping any items in the category selected.
 #At that point category signs would not be an option, more just a status indicator. Kinda goes against the point of the selection area.
-##execute as @e[tag=Selection,!rngNormal] unless entity @s[tag=!rngToma,tag=!rngBlade,tag=!rngAnt,tag=!rngCata,tag=!rngSlash,tag=!rngRift,tag=!rngNull,tag=!rngEguard,tag=!rngCitadel,tag=!rngGemi] run tag @s add rngNormal
-##execute as @e[tag=Selection,!rngLightning] unless entity @s[tag=!rngHur,tag=!rngThun] run tag @s add rngLightning
-##execute as @e[tag=Selection,!rngHeavy] unless entity @s[tag=!rngWar,tag=!rngJbuster,tag=!rngBull,tag=!rngAux] run tag @s add rngHeavy
-##execute as @e[tag=Selection,!rngMissile] unless entity @s[tag=!rngNormal,tag=!rngLightning,tag=!rngHeavy] run tag @s add rngMissile
-##execute as @e[tag=Selection,!rngUtil] unless entity @s[tag=!rngShield,tag=!rngArrows,tag=!rngVortex,tag=!rngObshield,tag=!rngSplash,tag=!rngCanopy,tag=!rngFireball,tag=!rngNova] run tag @s add rngUtil
-
+#execute as @e[tag=Selection,!rngNormal] unless entity @s[tag=!rngToma,tag=!rngBlade,tag=!rngAnt,tag=!rngCata,tag=!rngSlash,tag=!rngRift,tag=!rngNull,tag=!rngEguard,tag=!rngCitadel,tag=!rngGemi] run tag @s add rngNormal
+#execute as @e[tag=Selection,!rngLightning] unless entity @s[tag=!rngHur,tag=!rngThun] run tag @s add rngLightning
+#execute as @e[tag=Selection,!rngHeavy] unless entity @s[tag=!rngWar,tag=!rngJbuster,tag=!rngBull,tag=!rngAux] run tag @s add rngHeavy
+#execute as @e[tag=Selection,!rngMissile] unless entity @s[tag=!rngNormal,tag=!rngLightning,tag=!rngHeavy] run tag @s add rngMissile
+#execute as @e[tag=Selection,!rngUtil] unless entity @s[tag=!rngShield,tag=!rngArrows,tag=!rngVortex,tag=!rngObshield,tag=!rngSplash,tag=!rngCanopy,tag=!rngFireball,tag=!rngNova] run tag @s add rngUtil
 
 execute as @e[tag=RNGheavy] unless entity @s[tag=RNGmissile] run scoreboard players set @e[tag=RNGrocket2] RNGselect 1
 execute as @e[tag=RNGlightning] unless entity @s[tag=RNGmissile] run scoreboard players set @e[tag=RNGrocket3] RNGselect 1

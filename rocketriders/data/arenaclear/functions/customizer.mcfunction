@@ -88,6 +88,10 @@ scoreboard players set @e[tag=RestoreDefault] BottomDeco 1
 #execute as @e[tag=RestoreDefault] run fill -45 190 84 -41 194 92 air
 tag @e[tag=RestoreDefault] remove RestoreDefault
 
+#GAME OPTIONS
+#missile pierce prevention
+execute as @e[tag=Selection,tag=doPrevention] run data merge block -70 193 79 {Text1:"{\"text\":\"Pierce Prevention\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove doPrevention\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
+execute as @e[tag=Selection,tag=!doPrevention] run data merge block -70 193 79 {Text1:"{\"text\":\"Pierce Prevention\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doPrevention\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 
 #ENABLE DISABLE ENTIRE CATEGORIES
 #all missiles

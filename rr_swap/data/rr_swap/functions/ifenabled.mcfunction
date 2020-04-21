@@ -10,7 +10,7 @@ execute if entity @s[tag=GameEnd] run function rr_swap:game/gameend
 function everytick:saberfix
 function everytick:no_drop
 function everytick:team_balance
-function rr_swap:items/spawnitems
+# function rr_swap:items/spawnitems
 
 #reset
 execute if entity @e[tag=PlacerClear] run function rr_swap:arenaclear/baseplacement

@@ -3,28 +3,74 @@ execute as @e[scores={PlatTime=1..50}] at @s run particle block spruce_leaves ~ 
 execute as @e[scores={PlatTime=1}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
 execute as @e[scores={PlatTime=5}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
 execute as @e[scores={PlatTime=10}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
-execute as @e[scores={PlatTime=10}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-1,name:"minecraft:canopy1"}
+
+
+execute as @e[scores={PlatTime=5}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-1,name:"minecraft:canopy1"}
+execute as @e[scores={PlatTime=5}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=5}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=10}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-2,name:"minecraft:canopy2"}
 execute as @e[scores={PlatTime=10}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
 execute as @e[scores={PlatTime=10}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+
 execute as @e[scores={PlatTime=15}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 execute as @e[scores={PlatTime=20}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 execute as @e[scores={PlatTime=25}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
-execute as @e[scores={PlatTime=25}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-1,name:"minecraft:canopy2"}
+
+
+execute as @e[scores={PlatTime=15}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-3,name:"minecraft:canopy3"}
+execute as @e[scores={PlatTime=15}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=15}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=20}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy4"}
+execute as @e[scores={PlatTime=20}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=20}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=25}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy5"}
 execute as @e[scores={PlatTime=25}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
 execute as @e[scores={PlatTime=25}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=30}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy6"}
+execute as @e[scores={PlatTime=30}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=30}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=35}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy7"}
+execute as @e[scores={PlatTime=35}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=35}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=40}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy8"}
+execute as @e[scores={PlatTime=40}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=40}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=45}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy9"}
+execute as @e[scores={PlatTime=45}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=45}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=50}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy10"}
+execute as @e[scores={PlatTime=50}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=50}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=55}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy11"}
+execute as @e[scores={PlatTime=55}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=55}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+execute as @e[scores={PlatTime=56}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy12"}
+execute as @e[scores={PlatTime=56}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=56}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=56}] at @s run particle block spruce_leaves ~ ~2 ~ 1 1 1 1 300
+
 execute as @e[scores={PlatTime=25}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 execute as @e[scores={PlatTime=30}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 execute as @e[scores={PlatTime=35}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 execute as @e[scores={PlatTime=40}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
-execute as @e[scores={PlatTime=40}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:0,posZ:-2,name:"minecraft:canopy3"}
-execute as @e[scores={PlatTime=40}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=40}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+
 execute as @e[scores={PlatTime=45}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0.6
 execute as @e[scores={PlatTime=50}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0.6
 execute as @e[scores={PlatTime=55}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0
-execute as @e[scores={PlatTime=55}] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy4"}
-execute as @e[scores={PlatTime=55}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=55}] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+
+
 execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
 execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
 execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance=1] replace jungle_leaves
@@ -59,7 +105,7 @@ execute as @e[scores={testplat=9..10}] at @s if entity @s[x=-10,y=36,z=-75,dx=44
 execute as @e[scores={testplat=10}] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:yellowcanopy1"}
 execute as @e[scores={testplat=10}] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat=10}] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
-execute as @e[scores={testplat=10}] at @s run playsound ui.stone_cutter.take_result player @a ~ ~ ~ 2 2
+execute as @e[scores={testplat=10}] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0
 execute as @e[scores={testplat=10}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
 execute as @e[scores={testplat=10}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["YellowPlatform"]}
 execute as @e[scores={testplat=10}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["Platform"]}
@@ -68,9 +114,10 @@ execute as @e[scores={testplat=10}] at @s store result score @e[tag=YellowPlatfo
 execute as @e[scores={testplat=10}] at @s store result score @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players get @s pearlOwnerUUIDL
 kill @e[scores={testplat=10..}]
 #the teleport window for players on canopies is 2 seconds. this is to ensure that falling players arrive on the canopy safely and to reduce lag-induced oddities with canopies.
-execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2.1 ~0.5 run tp @s ~ ~ ~
+execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2.4 ~0.5 run tp @s ~ ~ ~
 execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 1 100 true
-execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
+execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s levitation 1 0 true
+execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..15},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
 #after 2 seconds the canopy gives up
 execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slow_falling
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUIDL
@@ -93,7 +140,7 @@ execute as @e[scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=-75,dx=4
 execute as @e[scores={testplat2=10}] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
 execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
-execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run playsound ui.stone_cutter.take_result player @a ~ ~ ~ 2 2
+execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0
 execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
 execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run playsound block.grass.place player @a ~ ~ ~ 2 0
 execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["BluePlatform"]}
@@ -103,27 +150,28 @@ execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatfor
 execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players get @s pearlOwnerUUIDL
 kill @e[scores={testplat2=10..}]
 #the teleport window for players on canopies is 2 seconds. this is to ensure that falling players arrive on the canopy safely and to reduce lag-induced oddities with canopies.
-execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2.1 ~0.5 run tp @s ~ ~ ~
+execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2.4 ~0.5 run tp @s ~ ~ ~
 execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..20},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 1 100 true
-execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
+execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..20},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s levitation 1 0 true
+execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..15},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
 #after 2 seconds the canopy gives up
 execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slow_falling
 scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUIDL
 scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUIDM
 
 #FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~ ~-1 ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~ ~ ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~1 ~ ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~-1 ~ ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~ ~ ~1 fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~ ~ ~-1 fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~ ~1 ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~1 ~1 ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~-1 ~1 ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~ ~1 ~1 fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~ ~1 ~-1 fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..400}] at @s if block ~ ~2 ~ fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~ ~-1 ~ fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~ ~ ~ fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~1 ~ ~ fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~-1 ~ ~ fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~ ~ ~1 fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~ ~ ~-1 fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~ ~1 ~ fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~1 ~1 ~ fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~-1 ~1 ~ fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~ ~1 ~1 fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~ ~1 ~-1 fire run tag @s add FirePoof
+execute as @e[scores={PlatTime=3..300}] at @s if block ~ ~2 ~ fire run tag @s add FirePoof
 execute as @e[tag=FirePoof] at @s run playsound entity.blaze.shoot player @a ~ ~ ~ 2 0
 execute as @e[tag=FirePoof] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 2
 execute as @e[tag=FirePoof] at @s run fill ~ ~ ~ ~ ~1 ~ air destroy
@@ -142,26 +190,35 @@ execute as @e[scores={PlatTime=4..}] at @s unless block ~ ~ ~ oak_wood run score
 #execute as @e[tag=YellowPlatform,scores={PlatTime=1..1}] at @s run summon shulker ~ ~1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Glowing:1b,Team:"Yellow",NoAI:1b,AttachFace:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:1000000,ShowParticles:0b}]}
 #execute as @e[tag=BluePlatform,scores={PlatTime=1..1}] at @s run summon shulker ~ ~1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Glowing:1b,Team:"Blue",NoAI:1b,AttachFace:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:1000000,ShowParticles:0b}]}
 #execute as @e[scores={PlatTime=400..}] at @s run tp @e[type=shulker,distance=..4,sort=nearest] ~ ~-1000 ~
-execute as @e[scores={PlatTime=320..}] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a
-execute as @e[scores={PlatTime=340..340}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0
-execute as @e[scores={PlatTime=350..350}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0.6
-execute as @e[scores={PlatTime=360..360}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0.8
-execute as @e[scores={PlatTime=370..370}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
-execute as @e[scores={PlatTime=380..380}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1.5
-execute as @e[scores={PlatTime=400..}] at @s if block ~ ~ ~ oak_wood run setblock ~ ~ ~ air destroy
-execute as @e[scores={PlatTime=400..}] at @s if block ~ ~1 ~ oak_wood run setblock ~ ~1 ~ air destroy
-execute as @e[scores={PlatTime=400..}] at @s if block ~1 ~1 ~ #minecraft:banners run setblock ~1 ~1 ~ air destroy
-execute as @e[scores={PlatTime=400..}] at @s if block ~-1 ~1 ~ #minecraft:banners run setblock ~-1 ~1 ~ air destroy
-execute as @e[scores={PlatTime=400..}] at @s if block ~ ~1 ~1 #minecraft:banners run setblock ~ ~1 ~1 air destroy
-execute as @e[scores={PlatTime=400..}] at @s if block ~ ~1 ~-1 #minecraft:banners run setblock ~ ~1 ~-1 air destroy
+execute as @e[scores={PlatTime=220..}] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a
+execute as @e[scores={PlatTime=220}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0
+execute as @e[scores={PlatTime=225}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0
+execute as @e[scores={PlatTime=230}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0
+execute as @e[scores={PlatTime=235}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0
+execute as @e[scores={PlatTime=240}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0.4
+execute as @e[scores={PlatTime=245}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0.5
+execute as @e[scores={PlatTime=250}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0.6
+execute as @e[scores={PlatTime=255}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0.7
+execute as @e[scores={PlatTime=260}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0.8
+execute as @e[scores={PlatTime=265}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0.9
+execute as @e[scores={PlatTime=270}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
+execute as @e[scores={PlatTime=275}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1.2
+execute as @e[scores={PlatTime=280}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1.5
+execute as @e[scores={PlatTime=300}] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 100 force @a
+execute as @e[scores={PlatTime=300..}] at @s if block ~ ~ ~ oak_wood run setblock ~ ~ ~ air destroy
+execute as @e[scores={PlatTime=300..}] at @s if block ~ ~1 ~ oak_wood run setblock ~ ~1 ~ air destroy
+execute as @e[scores={PlatTime=300..}] at @s if block ~1 ~1 ~ #minecraft:banners run setblock ~1 ~1 ~ air destroy
+execute as @e[scores={PlatTime=300..}] at @s if block ~-1 ~1 ~ #minecraft:banners run setblock ~-1 ~1 ~ air destroy
+execute as @e[scores={PlatTime=300..}] at @s if block ~ ~1 ~1 #minecraft:banners run setblock ~ ~1 ~1 air destroy
+execute as @e[scores={PlatTime=300..}] at @s if block ~ ~1 ~-1 #minecraft:banners run setblock ~ ~1 ~-1 air destroy
 
 #hotfix for a bug where breaking the banners and pushing the log blocks in a canopy allows you to cheat the autodecay system
-execute as @e[scores={PlatTime=400..}] at @s run scoreboard players set @e[tag=Platform,limit=1,sort=nearest] canopyExtraLogs 1
+execute as @e[scores={PlatTime=300..}] at @s run scoreboard players set @e[tag=Platform,limit=1,sort=nearest] canopyExtraLogs 1
 scoreboard players add @e[tag=Platform,scores={canopyExtraLogs=1..}] canopyExtraLogs 1
 execute as @e[tag=Platform,scores={canopyExtraLogs=4..}] at @s run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 air replace oak_wood
 scoreboard players reset @e[tag=Platform,scores={canopyExtraLogs=4..}] canopyExtraLogs
 
-kill @e[scores={PlatTime=400..}]
+kill @e[scores={PlatTime=300..}]
 
 #fire arrow logs
 execute as @e[tag=!FireArrow,type=arrow,nbt={inGround:1b}] at @s if block ~ ~-1 ~ oak_wood run setblock ~ ~.5 ~ fire

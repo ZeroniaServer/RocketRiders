@@ -19,7 +19,7 @@ execute as @a store result score @s HasHyper run clear @s turtle_spawn_egg 0
 execute as @a store result score @s HasCata run clear @s cave_spider_spawn_egg 0
 execute as @a store result score @s HasCitadel run clear @s wandering_trader_spawn_egg 0
 execute as @a store result score @s HasGemi run clear @s fox_spawn_egg 0
-execute as @a store result score @s HasNova run clear @s tropical_fish_spawn_egg 0
+execute as @a store result score @s HasNova run clear @s crossbow 0
 execute as @a store result score @s HasVortex run clear @s egg 0
 execute as @a store result score @s HasSplash run clear @s splash_potion{Potion:"minecraft:water"} 0
 
@@ -44,7 +44,7 @@ execute as @a[scores={HasHyper=2..}] run clear @s turtle_spawn_egg 1
 execute as @a[scores={HasCata=2..}] run clear @s cave_spider_spawn_egg 1
 execute as @a[scores={HasCitadel=2..}] run clear @s wandering_trader_spawn_egg 1
 execute as @a[scores={HasGemi=2..}] run clear @s fox_spawn_egg 1
-execute as @a[scores={HasNova=2..}] run clear @s tropical_fish_spawn_egg 1
+execute as @a[scores={HasNova=2..}] run clear @s crossbow 1
 execute as @a[scores={HasVortex=2..}] run clear @s egg 1
 execute as @a[scores={HasSplash=2..}] run clear @s splash_potion{Potion:"minecraft:water"} 1
 

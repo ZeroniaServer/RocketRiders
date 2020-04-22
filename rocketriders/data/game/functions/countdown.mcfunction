@@ -35,7 +35,7 @@ execute as @s[scores={count=580}] at @a run playsound block.note_block.hat maste
 execute as @s[scores={count=600}] run title @a title ["",{"text":"Game Started!","color":"dark_green","bold":true}]
 execute as @s[scores={count=600}] run title @a subtitle ["",{"text":"GL & HF!","color":"green","bold":true}]
 execute as @s[scores={count=600}] at @a run playsound block.note_block.hat master @a ~ ~ ~ 100 0
-execute as @s[scores={count=600}] run tp @a[team=Yellow] 12 64 66 -180 0 
+execute as @s[scores={count=600}] run tp @a[team=Yellow] 12 64 66 -180 0
 execute as @s[scores={count=600}] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={count=600}] run clear @a[team=Blue] arrow
 execute as @s[scores={count=600}] run clear @a[team=Yellow] arrow
@@ -45,6 +45,8 @@ execute as @s[scores={count=600}] run effect give @a[team=Blue] fire_resistance 
 execute as @s[scores={count=600}] run effect give @a[team=Yellow] fire_resistance 10 100 true
 execute as @s[scores={count=600}] run gamemode survival @a[team=Yellow]
 execute as @s[scores={count=600}] run gamemode survival @a[team=Blue]
+execute as @s[scores={count=600}] run tellraw @a[team=Blue] [{"text":"Drop your ","color":"blue","italic":"true"},{"text":"Shooting Saber ","color":"aqua","bold":"true","italic":"false"},{"text":"to leave the match.","color":"blue","italic":"true"}]
+execute as @s[scores={count=600}] run tellraw @a[team=Yellow] [{"text":"Drop your ","color":"gold","italic":"true"},{"text":"Shooting Saber ","color":"yellow","bold":"true","italic":"false"},{"text":"to leave the match.","color":"gold","italic":"true"}]
 execute as @s[scores={count=600},tag=!GameEnd] run tag @a remove CalculateWin
 execute as @s[scores={count=600},tag=!GameEnd] run tag @a remove CalculateLoss
 execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

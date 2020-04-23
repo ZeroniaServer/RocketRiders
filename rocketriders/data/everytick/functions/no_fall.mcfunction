@@ -3,6 +3,6 @@ scoreboard players add @a LeaveGame 0
 tag @a[scores={LeaveGame=0},nbt={FallDistance:0.0f}] add NotFalling
 scoreboard players set @a[tag=NotFalling] Falling 0
 scoreboard players set @a[gamemode=!adventure] Falling 0
-execute as @a[tag=NotFalling] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..2] run effect clear @s jump_boost
-effect give @a[gamemode=adventure,scores={Falling=4..}] jump_boost 1 255 true
+execute as @a[tag=NotFalling,team=Lobby] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..2] run effect clear @s jump_boost
+execute if entity @e[tag=Selection,tag=GameStarted] run effect give @a[gamemode=adventure,scores={Falling=4..}] jump_boost 1 255 true
 tag @a[tag=NotFalling] remove NotFalling

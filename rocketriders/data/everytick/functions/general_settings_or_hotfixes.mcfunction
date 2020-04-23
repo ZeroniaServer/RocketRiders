@@ -1,15 +1,6 @@
 #void falling
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-200,dy=180,scores={ThrowPlat=..0}] run function game:void
 
-#lobby players no fall damage (credit: PingiPuck)
-scoreboard players add @a LeaveGame 0
-tag @a[scores={LeaveGame=0},nbt={FallDistance:0.0f}] add NotFalling
-scoreboard players set @a[tag=NotFalling] Falling 0
-scoreboard players set @a[gamemode=!adventure] Falling 0
-execute as @a[tag=NotFalling] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..2] run effect clear @s jump_boost
-execute if entity @e[tag=Selection,tag=GameStarted] run effect give @a[gamemode=adventure,scores={Falling=4..}] jump_boost 1 255 true
-tag @a[tag=NotFalling] remove NotFalling
-
 #hotfix to identify new players and make them not take fall damage
 #anyone with a firstJoined score of 0 is a new player
 scoreboard players add @a firstJoined 0

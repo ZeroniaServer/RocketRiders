@@ -8,7 +8,7 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:wrong
 function everytick:bookwarp
 function everytick:cancel_utility
 function everytick:player_portal
-function items:antidupe
+execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:antidupe
 #TEMPORARY - clear old advancements
 function challenges:clearold
 execute as @a[team=Lobby] run function everytick:score_reset

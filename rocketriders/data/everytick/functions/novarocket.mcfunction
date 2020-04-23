@@ -22,8 +22,8 @@ execute as @e[tag=YellowNova] at @s run particle minecraft:falling_dust gold_blo
 
 
 ##Yellow
-execute as @e[tag=YellowNova,scores={novatimer=1..29}] at @s run tag @a[team=Blue,distance=..3,limit=1,sort=nearest] add YellowNovaAttach
-execute as @e[tag=YellowNova,scores={novatimer=1..}] at @s if entity @a[team=Blue,distance=..3,limit=1,sort=nearest] run kill @s
+execute as @e[tag=YellowNova,scores={novatimer=..29}] at @s run tag @a[team=Blue,distance=..3,limit=1,sort=nearest] add YellowNovaAttach
+execute as @e[tag=YellowNova] at @s if entity @a[team=Blue,tag=YellowNovaAttach,distance=..3,limit=1,sort=nearest] run kill @s
 
 #Static
 execute as @e[tag=YellowNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:1,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
@@ -35,7 +35,7 @@ scoreboard players add @a[tag=YellowNovaAttach] novattach 1
 execute as @a[tag=YellowNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch player @a ~ ~ ~ 2 1.2
 execute as @a[tag=YellowNovaAttach,scores={novattach=1}] run replaceitem entity @s armor.head firework_rocket
 execute as @a[tag=YellowNovaAttach,scores={novattach=1}] run effect give @s levitation 1 40 true
-execute as @a[tag=YellowNovaAttach,scores={novattach=5}] run effect clear @s levitation
+execute as @a[tag=YellowNovaAttach,scores={novattach=5..}] run effect clear @s levitation
 execute as @a[tag=YellowNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
 execute as @a[tag=YellowNovaAttach,scores={novattach=5..}] at @s run tp @s ^-0.2 ^0.15 ^0.1
 execute as @a[tag=YellowNovaAttach,scores={novattach=10..}] at @s run replaceitem entity @s armor.head air
@@ -45,8 +45,8 @@ execute as @a[tag=YellowNovaAttach] run tag @s[scores={novattach=10..}] remove Y
 
 
 ##Blue
-execute as @e[tag=BlueNova,scores={novatimer=1..29}] at @s run tag @a[team=Yellow,distance=..1,limit=1,sort=nearest] add BlueNovaAttach
-execute as @e[tag=BlueNova,scores={novatimer=1..}] at @s if entity @a[team=Yellow,distance=..1,limit=1,sort=nearest] run kill @s
+execute as @e[tag=BlueNova,scores={novatimer=..29}] at @s run tag @a[team=Yellow,distance=..3,limit=1,sort=nearest] add BlueNovaAttach
+execute as @e[tag=BlueNova] at @s if entity @a[team=Blue,tag=BlueNovaAttach,distance=..3,limit=1,sort=nearest] run kill @s
 
 #Static
 execute as @e[tag=BlueNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:1,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
@@ -59,7 +59,7 @@ execute as @a[tag=BlueNovaAttach,scores={novattach=1}] at @s run playsound minec
 execute as @a[tag=BlueNovaAttach,scores={novattach=1}] at @s run tp @s ~ ~ ~ 0 -90
 execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run replaceitem entity @s armor.head firework_rocket
 execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levitation 1 40 true
-execute as @a[tag=BlueNovaAttach,scores={novattach=5}] run effect give @s levitation
+execute as @a[tag=BlueNovaAttach,scores={novattach=5..}] run effect clear @s levitation
 execute as @a[tag=BlueNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
 execute as @a[tag=BlueNovaAttach,scores={novattach=5..}] at @s run tp @s ^-0.2 ^0.15 ^0.1
 execute as @a[tag=BlueNovaAttach,scores={novattach=10..}] at @s run replaceitem entity @s armor.head air

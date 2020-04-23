@@ -1,5 +1,5 @@
 #void falling
-execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-200,dy=180,scores={ThrowPlat=..0}] run function game:void
+execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
 
 #hotfix to identify new players and make them not take fall damage
 #anyone with a firstJoined score of 0 is a new player

@@ -12,6 +12,7 @@ scoreboard players set @s GuardSpawned 0
 scoreboard players set @s HurSpawned 0
 scoreboard players set @s HyperSpawned 0
 scoreboard players set @s JugbSpawned 0
+scoreboard players set @s LifterSpawned 0
 scoreboard players set @s NullSpawned 0
 scoreboard players set @s RifterSpawned 0
 scoreboard players set @s SlashSpawned 0

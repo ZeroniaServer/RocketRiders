@@ -133,6 +133,15 @@ execute as @s[tag=YellowGemi] at @s store result score @s GemiSpawned run scoreb
 execute as @s[tag=YellowGemi] at @s if score @s GemiSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] GemiSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackGemini
 execute as @s[tag=YellowGemi] at @s if score @s GemiSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] GemiSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
 
+#Lifter
+execute as @s[tag=BlueLift] at @s store result score @s LifterSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] LifterSpawned
+execute as @s[tag=BlueLift] at @s if score @s LifterSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] LifterSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackLift
+execute as @s[tag=BlueLift] at @s if score @s LifterSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] LifterSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+
+execute as @s[tag=YellowLift] at @s store result score @s LifterSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] LifterSpawned
+execute as @s[tag=YellowLift] at @s if score @s LifterSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] LifterSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackLift
+execute as @s[tag=YellowLift] at @s if score @s LifterSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] LifterSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
+
 #Hypersonic
 execute as @s[tag=BlueHyper] at @s store result score @s HyperSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] HyperSpawned
 execute as @s[tag=BlueHyper] at @s if score @s HyperSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] HyperSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackHyper

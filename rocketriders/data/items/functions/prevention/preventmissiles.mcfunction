@@ -88,17 +88,23 @@ execute as @e[tag=BlueGemi,tag=!UnableMissile] at @s positioned ~-1 160 ~4 run f
 execute as @e[tag=YellowGemi,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~-13 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~9 ~ 160 ~ filtered #custom:portalblocks force
 execute as @e[tag=YellowGemi,tag=!UnableMissile] at @s positioned ~-1 160 ~-13 run fill ~ ~ ~ ~2 ~1 ~9 air replace #custom:portalblocks
 
+#Lifter
+execute as @e[tag=BlueLift,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~6 ~ 160 ~ filtered #custom:portalblocks force
+execute as @e[tag=BlueLift,tag=!UnableMissile] at @s positioned ~-1 160 ~4 run fill ~ ~ ~ ~2 ~2 ~6 air replace #custom:portalblocks
+execute as @e[tag=YellowLift,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~-10 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~6 ~ 160 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowLift,tag=!UnableMissile] at @s positioned ~-1 160 ~-10 run fill ~ ~ ~ ~2 ~2 ~6 air replace #custom:portalblocks
+
 #Hypersonic
-execute as @e[tag=BlueHyper] at @s positioned ~-1 ~-7 ~5 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~8 ~ 160 ~ filtered #custom:portalblocks force
-execute as @e[tag=BlueHyper] at @s positioned ~-1 160 ~5 run fill ~ ~ ~ ~2 ~2 ~8 air replace #custom:portalblocks
-execute as @e[tag=YellowHyper] at @s positioned ~-1 ~-7 ~-13 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~8 ~ 160 ~ filtered #custom:portalblocks force
-execute as @e[tag=YellowHyper] at @s positioned ~-1 160 ~-13 run fill ~ ~ ~ ~2 ~2 ~8 air replace #custom:portalblocks
+execute as @e[tag=BlueHyper,tag=!UnableMissile] at @s positioned ~-1 ~-7 ~5 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~8 ~ 160 ~ filtered #custom:portalblocks force
+execute as @e[tag=BlueHyper,tag=!UnableMissile] at @s positioned ~-1 160 ~5 run fill ~ ~ ~ ~2 ~2 ~8 air replace #custom:portalblocks
+execute as @e[tag=YellowHyper,tag=!UnableMissile] at @s positioned ~-1 ~-7 ~-13 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~8 ~ 160 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowHyper,tag=!UnableMissile] at @s positioned ~-1 160 ~-13 run fill ~ ~ ~ ~2 ~2 ~8 air replace #custom:portalblocks
 
 #Bullet
-execute as @e[tag=BlueBull] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~14 ~ 160 ~ filtered #custom:portalblocks force
-execute as @e[tag=BlueBull] at @s positioned ~-1 160 ~4 run fill ~ ~ ~ ~2 ~2 ~14 air replace #custom:portalblocks
-execute as @e[tag=YellowBull] at @s positioned ~-1 ~-6 ~-18 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~14 ~ 160 ~ filtered #custom:portalblocks force
-execute as @e[tag=YellowBull] at @s positioned ~-1 160 ~-18 run fill ~ ~ ~ ~2 ~2 ~14 air replace #custom:portalblocks
+execute as @e[tag=BlueBull,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~14 ~ 160 ~ filtered #custom:portalblocks force
+execute as @e[tag=BlueBull,tag=!UnableMissile] at @s positioned ~-1 160 ~4 run fill ~ ~ ~ ~2 ~2 ~14 air replace #custom:portalblocks
+execute as @e[tag=YellowBull,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-18 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~14 ~ 160 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowBull,tag=!UnableMissile] at @s positioned ~-1 160 ~-18 run fill ~ ~ ~ ~2 ~2 ~14 air replace #custom:portalblocks
 
 #All missiles
 tag @e[tag=missile,scores={Unable=1..}] add UnableMissile

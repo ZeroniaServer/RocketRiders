@@ -103,6 +103,13 @@ scoreboard players remove @a[tag=BackGemini] GemiSpawned 1
 tag @a[tag=BackGemini] remove fullHotbar
 execute as @a[tag=BackGemini] run function items:missile/normal/givegemi
 
+#Lifter
+execute as @a[tag=BackLift] run clear @s dolphin_spawn_egg
+scoreboard players set @a[tag=BackLift] HasLift 0
+scoreboard players remove @a[tag=BackLift] LifterSpawned 1
+tag @a[tag=BackLift] remove fullHotbar
+execute as @a[tag=BackLift] run function items:missile/normal/givelift
+
 #Hypersonic
 execute as @a[tag=BackHyper] run clear @s turtle_spawn_egg
 scoreboard players set @a[tag=BackHyper] HasHyper 0
@@ -135,5 +142,6 @@ tag @a remove BackSlash
 tag @a remove BackCata
 tag @a remove BackCitadel
 tag @a remove BackGemini
+tag @a remove BackLift
 tag @a remove BackHyper
 tag @a remove BackBullet

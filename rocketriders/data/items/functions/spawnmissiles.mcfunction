@@ -125,6 +125,14 @@ execute as @e[tag=YellowGemi] at @s positioned ~-1 ~-7 ~-13 run function items:p
 execute as @e[tag=YellowGemi] at @s run setblock ~-1 ~-7 ~-13 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:gemini_yellow"}
 execute as @e[tag=YellowGemi] at @s positioned ~-1 ~-7 ~-13 run function items:poststructureblock
 
+#Lifter
+execute as @e[tag=BlueLift] at @s positioned ~-1 ~-7 ~4 run function items:prestructureblock
+execute as @e[tag=BlueLift] at @s run setblock ~-1 ~-7 ~4 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:lifter_blue"}
+execute as @e[tag=BlueLift] at @s positioned ~-1 ~-7 ~4 run function items:poststructureblock
+execute as @e[tag=YellowLift] at @s positioned ~-1 ~-7 ~-10 run function items:prestructureblock
+execute as @e[tag=YellowLift] at @s run setblock ~-1 ~-7 ~-10 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:lifter_yellow"}
+execute as @e[tag=YellowLift] at @s positioned ~-1 ~-7 ~-10 run function items:poststructureblock
+
 #Hypersonic
 execute as @e[tag=BlueHyper] at @s positioned ~-1 ~-9 ~5 run function items:prestructureblock
 execute as @e[tag=BlueHyper] at @s run setblock ~-1 ~-9 ~5 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:hypersonic_blue"}
@@ -140,16 +148,6 @@ execute as @e[tag=BlueBull] at @s positioned ~-1 ~-8 ~4 run function items:posts
 execute as @e[tag=YellowBull] at @s positioned ~-1 ~-8 ~-18 run function items:prestructureblock
 execute as @e[tag=YellowBull] at @s run setblock ~-1 ~-8 ~-18 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:bullet_yellow"}
 execute as @e[tag=YellowBull] at @s positioned ~-1 ~-8 ~-18 run function items:poststructureblock
-
-#Lifter
-execute as @e[tag=BlueLift] at @s positioned ~-1 ~-7 ~4 run function items:prestructureblock
-execute as @e[tag=BlueLift] at @s run setblock ~-1 ~-7 ~4 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:lifter_blue"}
-execute as @e[tag=BlueLift] at @s positioned ~-1 ~-7 ~4 run function items:poststructureblock
-execute as @e[tag=YellowLift] at @s positioned ~-1 ~-7 ~-9 run function items:prestructureblock
-execute as @e[tag=YellowLift] at @s run setblock ~-1 ~-7 ~-9 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:lifter_yellow"}
-execute as @e[tag=YellowLift] at @s positioned ~-1 ~-7 ~-9 run function items:poststructureblock
-
-
 
 #Missile prep (except Surprise Egg and Catapult)
 execute as @e[tag=bluemissile,tag=!BlueCata,tag=!surprising,tag=!BlueSurprise] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}

@@ -93,7 +93,7 @@ execute as @s[tag=BlueJug] at @s store result score @s JugbSpawned run scoreboar
 execute as @s[tag=BlueJug] at @s if score @s JugbSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] JugbSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackJug
 execute as @s[tag=BlueJug] at @s if score @s JugbSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] JugbSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
 
-execute as @s[tag=YellowJug] at @s store result score @s JugSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] JugSpawned
+execute as @s[tag=YellowJug] at @s store result score @s JugbSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] JugbSpawned
 execute as @s[tag=YellowJug] at @s if score @s JugbSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] JugbSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackJug
 execute as @s[tag=YellowJug] at @s if score @s JugbSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] JugbSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
 

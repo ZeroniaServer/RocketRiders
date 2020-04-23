@@ -1,3 +1,8 @@
+#Pacifist
+advancement grant @a[tag=!CompletedPacifist,team=Yellow,scores={kills=..0}] only challenges:rrachievements/pacifist
+scoreboard players add @a[tag=!CompletedPacifist,team=Yellow,scores={kills=..0}] XP 20
+tag @a[tag=!CompletedPacifist,team=Yellow,scores={kills=..0}] add CompletedPacifist
+
 #Swiss Cheese
 execute as @e[tag=YellowHole1] at @s if block ~ ~ ~ air as @e[tag=YellowHole2] at @s if block ~ ~ ~ air as @e[tag=YellowHole3] at @s if block ~ ~ ~ air as @e[tag=YellowHole4] at @s if block ~ ~ ~ air as @e[tag=YellowHole5] at @s if block ~ ~ ~ air as @e[tag=YellowHole6] at @s if block ~ ~ ~ air run advancement grant @a[team=Yellow,tag=!CompletedCheese] only challenges:rrachievements/swiss_cheese
 execute as @e[tag=YellowHole1] at @s if block ~ ~ ~ air as @e[tag=YellowHole2] at @s if block ~ ~ ~ air as @e[tag=YellowHole3] at @s if block ~ ~ ~ air as @e[tag=YellowHole4] at @s if block ~ ~ ~ air as @e[tag=YellowHole5] at @s if block ~ ~ ~ air as @e[tag=YellowHole6] at @s if block ~ ~ ~ air run scoreboard players add @a[team=Yellow,tag=!CompletedCheese] XP 75

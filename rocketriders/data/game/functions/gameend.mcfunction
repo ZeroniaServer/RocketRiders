@@ -6,27 +6,7 @@ execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
 execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false
-#Reset spawn scores/other stats
-execute as @s[scores={endtimer=1}] run scoreboard players set @a AuxSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a AntsSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a BladeSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a BulletSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a CataSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a CitaSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a FireballSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a GemiSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a GuardSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a HurSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a HyperSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a JugbSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a NullSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a RifterSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a SlashSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a ThunSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a TomaSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a WarSpawned 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a FellVoid 0
-execute as @s[scores={endtimer=1}] run scoreboard players set @a jumps 0
+execute as @s[scores={endtimer=1}] as @a run function everytick:score_reset
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=EditedSettings] remove EditedSettings
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=bluejoinpad] add CancelJoin

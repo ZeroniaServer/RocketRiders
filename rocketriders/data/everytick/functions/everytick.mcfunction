@@ -1,5 +1,5 @@
-function game:gamestart
 function everytick:leave_game
+function game:gamestart
 execute as @e[tag=GameStarted] at @s run function game:ingame
 function everytick:regen_system
 execute if entity @e[tag=Selection,scores={setvision=1..}] run effect give @a night_vision 1000000 100 true
@@ -11,7 +11,7 @@ function everytick:player_portal
 function items:antidupe
 #TEMPORARY - clear old advancements
 function challenges:clearold
-function everytick:score_reset
+execute as @a[team=Lobby] run function everytick:score_reset
 function everytick:general_settings_or_hotfixes
 function custom:joinpad_enddimension
 function everytick:infobar

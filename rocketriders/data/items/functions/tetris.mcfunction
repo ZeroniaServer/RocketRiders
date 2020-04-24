@@ -1,4 +1,4 @@
-#hook in with game customizer
+#game customizer compatibility
 tag @e[tag=Selection,tag=!rngAnt] add givenAnt
 tag @e[tag=Selection,tag=!rngBlade] add givenBlade
 tag @e[tag=Selection,tag=!rngCata] add givenCata

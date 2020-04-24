@@ -3,12 +3,12 @@ function game:leavemidgame
 
 #Item RNG and spawnpoints
 scoreboard players add @e[tag=Selection] RandomItem 1
-execute if entity @e[scores={RandomItem=400..}] run function items:rng
+execute if entity @e[scores={RandomItem=300..}] run function items:rng
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
 tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
-execute as @e[scores={RandomItem=400..}] as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
-execute as @e[scores={RandomItem=400..}] as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
-scoreboard players reset @e[scores={RandomItem=400..}] RandomItem
+execute as @e[scores={RandomItem=300..}] as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
+execute as @e[scores={RandomItem=300..}] as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+scoreboard players reset @e[scores={RandomItem=300..}] RandomItem
 spawnpoint @a[team=Blue] 12 64 -66
 spawnpoint @a[team=Yellow] 12 64 66
 

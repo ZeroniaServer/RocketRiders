@@ -2,6 +2,7 @@
 function game:leavemidgame
 
 #Item RNG and spawnpoints
+function items:tetris
 scoreboard players add @e[tag=Selection] RandomItem 1
 execute if entity @e[scores={RandomItem=300..}] run function items:rng
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar

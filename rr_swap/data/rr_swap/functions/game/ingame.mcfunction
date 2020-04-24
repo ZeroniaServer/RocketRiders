@@ -6,6 +6,7 @@ function rr_swap:items/antidupe
 function rr_swap:items/spawnitems
 
 #Item RNG and spawnpoints
+function items:tetris
 scoreboard players add @e[tag=Selection] RandomItem 1
 execute as @e[scores={RandomItem=400..}] run function items:rng
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar

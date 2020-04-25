@@ -1,9 +1,27 @@
-#more efficient method but doesn't support moving as well (needs individual aecs)
-execute as @e[tag=captureMiddle,scores={capturePoint=0}] as @e[tag=PlatBlock] at @s unless blocks ~ ~ ~ ~ ~ ~ ~38 ~179 ~54 all run clone ~38 ~179 ~54 ~38 ~179 ~54 ~ ~ ~
-execute as @e[tag=captureMiddle,scores={capturePoint=1}] as @e[tag=PlatBlock] at @s unless blocks ~ ~ ~ ~ ~ ~ ~52 ~179 ~54 all run clone ~52 ~179 ~54 ~52 ~179 ~54 ~ ~ ~
-execute as @e[tag=captureMiddle,scores={capturePoint=2}] as @e[tag=PlatBlock] at @s unless blocks ~ ~ ~ ~ ~ ~ ~24 ~179 ~54 all run clone ~24 ~179 ~54 ~24 ~179 ~54 ~ ~ ~
+#obsidian rim
+fill ~6 ~-1 ~-1 ~6 ~-1 ~1 obsidian
+fill ~-6 ~-1 ~-1 ~-6 ~-1 ~1 obsidian
+fill ~-1 ~-1 ~6 ~1 ~-1 ~6 obsidian
+fill ~-1 ~-1 ~-6 ~1 ~-1 ~-6 obsidian
+fill ~-5 ~-1 ~2 ~-5 ~-1 ~3 obsidian
+fill ~-5 ~-1 ~-2 ~-5 ~-1 ~-3 obsidian
+fill ~5 ~-1 ~2 ~5 ~-1 ~3 obsidian
+fill ~5 ~-1 ~-2 ~5 ~-1 ~-3 obsidian
+fill ~-2 ~-1 ~5 ~-3 ~-1 ~5 obsidian
+fill ~-2 ~-1 ~-5 ~-3 ~-1 ~-5 obsidian
+fill ~2 ~-1 ~5 ~3 ~-1 ~5 obsidian
+fill ~2 ~-1 ~-5 ~3 ~-1 ~-5 obsidian
+setblock ~4 ~-1 ~4 obsidian
+setblock ~-4 ~-1 ~4 obsidian
+setblock ~-4 ~-1 ~-4 obsidian
+setblock ~4 ~-1 ~-4 obsidian
 
-#less efficient method but supports moving easier (doesn't need invididual aecs) --unupdated
-#execute as @e[tag=captureMiddle,scores={capturePoint=0}] at @s unless blocks ~-6 ~-1 ~-6 ~6 ~-1 ~6 39 232 48 all run clone 39 232 48 51 232 60 ~-6 ~-1 ~-6 masked normal
-#execute as @e[tag=captureMiddle,scores={capturePoint=1}] at @s unless blocks ~-6 ~-1 ~-6 ~6 ~-1 ~6 53 232 48 all run clone 53 232 48 65 232 60 ~-6 ~-1 ~-6 masked normal
-#execute as @e[tag=captureMiddle,scores={capturePoint=2}] at @s unless blocks ~-6 ~-1 ~-6 ~6 ~-1 ~6 25 232 48 all run clone 25 232 48 37 232 60 ~-6 ~-1 ~-6 masked normal
+#purpur stairs
+setblock ~-1 ~-1 ~ purpur_stairs[facing=west]
+setblock ~1 ~-1 ~ purpur_stairs[facing=east]
+setblock ~ ~-1 ~-1 purpur_stairs[facing=north]
+setblock ~ ~-1 ~1 purpur_stairs[facing=south]
+
+execute as @s[scores={capturePoint=0}] at @s run function rr_powerups:everytick/uncaptured_platform
+execute as @s[scores={capturePoint=1}] at @s run function rr_powerups:everytick/blue_platform
+execute as @s[scores={capturePoint=2}] at @s run function rr_powerups:everytick/yellow_platform

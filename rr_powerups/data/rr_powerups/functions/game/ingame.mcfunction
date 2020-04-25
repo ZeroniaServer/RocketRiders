@@ -4,7 +4,6 @@ function game:leavemidgame
 #general
 function rr_powerups:items/antidupe
 function rr_powerups:items/spawnitems
-function rr_powerups:everytick/powerup_platform
 function rr_powerups:everytick/smoke_bomb
 function rr_powerups:everytick/lava_splash
 function rr_powerups:everytick/cancel_utility
@@ -22,13 +21,16 @@ spawnpoint @a[team=Blue] 12 64 -66
 spawnpoint @a[team=Yellow] 12 64 66
 
 #powerup RNG and spawnpoints
-scoreboard players add @e[tag=Selection] powerupcount 1
+execute if entity @e[tag=captureMiddle,scores={capturePoint=1..}] run scoreboard players add @e[tag=Selection] powerupcount 1
+execute if entity @e[tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @e[tag=Selection] powerupcount 0
 execute as @e[scores={powerupcount=20}] run scoreboard players remove @s PowerupDisplay 1
 execute as @e[scores={powerupcount=20}] run scoreboard players reset @s powerupcount
-
+execute if entity @e[scores={capturePoint=0}] run scoreboard players set @e[tag=Selection] PowerupDisplay 30
+execute as @e[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=1}] as @e[type=player,team=Blue,tag=onCapturePoint] run tp @s 12 64 -66 0 0
+execute as @e[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=2}] as @e[type=player,team=Yellow,tag=onCapturePoint] run tp @s 12 64 66 -180 0
 execute as @e[scores={PowerupDisplay=..0}] run tag @a add DelayActionbar
 execute as @e[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
-scoreboard players set @e[tag=Selection,scores={PowerupDisplay=..0}] PowerupDisplay 45
+scoreboard players set @e[tag=Selection,scores={PowerupDisplay=..0}] PowerupDisplay 30
 
 #win
 execute if block 13 38 74 air run function rr_powerups:game/winblue
@@ -46,15 +48,13 @@ execute as @e[tag=captureMiddle] at @s as @e[type=player,tag=onCapturePoint,dist
 execute as @e[type=player,tag=onCapturePoint] at @s unless entity @s[y=54,dy=1] unless entity @e[tag=captureMiddle,distance=..7.1,limit=1] run tag @s remove onCapturePoint
 
 execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle] captureBlue 1
-execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players remove @e[tag=captureMiddle] captureYellow 1
 execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run tag @e[tag=captureMiddle] remove contested
 
 execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle] captureYellow 1
-execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players remove @e[tag=captureMiddle] captureBlue 1
 execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run tag @e[tag=captureMiddle] remove contested
 
-scoreboard players set @e[tag=captureMiddle,scores={captureBlue=200..}] capturePoint 1
-scoreboard players set @e[tag=captureMiddle,scores={captureYellow=200..}] capturePoint 2
+scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureBlue=100..}] capturePoint 1
+scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureYellow=100..}] capturePoint 2
 
 execute if entity @a[team=Yellow,tag=onCapturePoint] if entity @a[team=Blue,tag=onCapturePoint] run tag @e[tag=captureMiddle] add contested
 scoreboard players set @e[tag=contested] capturePoint 0
@@ -62,27 +62,32 @@ scoreboard players remove @e[tag=contested] captureYellow 1
 scoreboard players remove @e[tag=contested] captureBlue 1
 
 execute as @e[tag=captureMiddle] unless entity @a[tag=onCapturePoint] run scoreboard players set @s capturePoint 0
-execute as @e[tag=captureMiddle] unless entity @a[tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
-execute as @e[tag=captureMiddle] unless entity @a[tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
+execute as @e[tag=captureMiddle] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
+execute as @e[tag=captureMiddle] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
+execute as @e[tag=captureMiddle,scores={captureYellow=..99,captureBlue=..99}] run scoreboard players set @s capturePoint 0
+
+execute as @e[tag=captureMiddle] at @s run function rr_powerups:everytick/powerup_platform
 
 #max scores and min scores
 scoreboard players set @e[tag=captureMiddle,scores={captureYellow=..0}] captureYellow 0
-scoreboard players set @e[tag=captureMiddle,scores={captureYellow=200..}] captureYellow 200
+scoreboard players set @e[tag=captureMiddle,scores={captureYellow=100..}] captureYellow 100
 scoreboard players set @e[tag=captureMiddle,scores={captureBlue=..0}] captureBlue 0
-scoreboard players set @e[tag=captureMiddle,scores={captureBlue=200..}] captureBlue 200
+scoreboard players set @e[tag=captureMiddle,scores={captureBlue=100..}] captureBlue 100
 
 #bossbar
-bossbar set rr_powerups:blue_capture_progress players @a[team=Blue]
-bossbar set rr_powerups:yellow_capture_progress players @a[team=Yellow]
+bossbar set rr_powerups:blue_capture_progress style progress
+bossbar set rr_powerups:yellow_capture_progress style progress
+bossbar set rr_powerups:blue_capture_progress players @a[team=!Lobby]
+bossbar set rr_powerups:yellow_capture_progress players @a[team=!Lobby]
 
 execute store result bossbar rr_powerups:blue_capture_progress value run scoreboard players get @e[tag=captureMiddle,limit=1] captureBlue
 execute store result bossbar rr_powerups:yellow_capture_progress value run scoreboard players get @e[tag=captureMiddle,limit=1] captureYellow
 
-execute if score @e[tag=captureMiddle,limit=1] capturePoint matches 1 run bossbar set rr_powerups:blue_capture_progress name [{"text":"Point Captured!","color":"blue","bold":"true"}]
-execute unless score @e[tag=captureMiddle,limit=1] capturePoint matches 1 run bossbar set rr_powerups:blue_capture_progress name [{"text":"Capture Progress","color":"blue","bold":"true"}]
+execute if score @e[tag=captureMiddle,limit=1] capturePoint matches 1 run bossbar set rr_powerups:blue_capture_progress name [{"text":"Blue Point Captured!","color":"blue","bold":"true"}]
+execute unless score @e[tag=captureMiddle,limit=1] capturePoint matches 1 run bossbar set rr_powerups:blue_capture_progress name [{"text":"Blue Capture Progress","color":"blue","bold":"true"}]
 
-execute if score @e[tag=captureMiddle,limit=1] capturePoint matches 2 run bossbar set rr_powerups:yellow_capture_progress name [{"text":"Point Captured!","color":"gold","bold":"true"}]
-execute unless score @e[tag=captureMiddle,limit=1] capturePoint matches 2 run bossbar set rr_powerups:yellow_capture_progress name [{"text":"Capture Progress","color":"gold","bold":"true"}]
+execute if score @e[tag=captureMiddle,limit=1] capturePoint matches 2 run bossbar set rr_powerups:yellow_capture_progress name [{"text":"Yellow Point Captured!","color":"gold","bold":"true"}]
+execute unless score @e[tag=captureMiddle,limit=1] capturePoint matches 2 run bossbar set rr_powerups:yellow_capture_progress name [{"text":"Yellow Capture Progress","color":"gold","bold":"true"}]
 
 #broken elytra replacing
 execute as @a[team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b,tag:{Damage:431}}]}] run tag @s add BreakEly
@@ -140,8 +145,8 @@ execute as @a[team=Blue,nbt={SelectedItem:{id:"minecraft:trident",tag:{Enchantme
 execute as @a[team=Blue] unless entity @s[nbt={SelectedItem:{id:"minecraft:trident"}}] run scoreboard players reset @s tridentSlot
 
 #actionbar
-title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"green"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"dark_green"},{"text":" seconds!","color":"green"}]
-title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"green"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"dark_green"},{"text":" seconds!","color":"green"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=1}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" seconds!","color":"blue","bold":"true"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=2}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" seconds!","color":"yellow","bold":"true"}]
 
 #barricades autokill
 execute as @e[tag=BlueBarricade] at @s unless block ~ ~ ~ blue_stained_glass run kill @s

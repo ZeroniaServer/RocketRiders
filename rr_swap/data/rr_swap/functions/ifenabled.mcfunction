@@ -14,4 +14,5 @@ function everytick:team_balance
 
 #reset
 execute if entity @e[tag=PlacerClear] run function rr_swap:arenaclear/baseplacement
+execute if entity @e[tag=PlacerClear] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Swap Mode is enabled.","color":"dark_green","bold":"true"}
 tag @e[tag=PlacerClear] add BasePlaced

@@ -11,6 +11,7 @@ function everytick:saberfix
 function everytick:no_drop
 function everytick:team_balance
 
-#arenaclear
+#reset
 execute if entity @e[tag=PlacerClear] run function rr_ranked:arenaclear/baseplacement
+execute if entity @e[tag=PlacerClear] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Ranked Mode is enabled.","color":"dark_green","bold":"true"}
 tag @e[tag=PlacerClear] add BasePlaced

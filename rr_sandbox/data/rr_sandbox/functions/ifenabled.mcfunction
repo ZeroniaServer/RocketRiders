@@ -11,6 +11,7 @@ function rr_sandbox:everytick/pickaxefix
 function everytick:no_drop
 function everytick:team_balance
 
-#arenaclear
+#reset
 execute if entity @e[tag=PlacerClear] run function rr_sandbox:arenaclear/baseplacement
+execute if entity @e[tag=PlacerClear] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Sandbox Mode is enabled.","color":"dark_green","bold":"true"}
 kill @e[tag=PlacerClear]

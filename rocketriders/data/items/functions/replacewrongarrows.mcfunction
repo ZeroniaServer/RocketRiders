@@ -11,7 +11,7 @@ scoreboard players remove @s[scores={allSlowArrow=1..,wrongSlowArrow=1..}] allSl
 give @s[scores={allBlindArrow=1..,wrongBlindArrow=1..}] tipped_arrow{display:{Name:"{\"text\":\"Blindness Arrow\",\"color\":\"dark_purple\",\"italic\":\"true\",\"bold\":\"true\"}"},CustomPotionEffects:[{Id:15b,Amplifier:0b,Duration:200,ShowParticles:1b}],CustomPotionColor:3158064,HideFlags:63} 1
 scoreboard players remove @s[scores={allBlindArrow=1..,wrongBlindArrow=1..}] allBlindArrow 1
 
-give @s[scores={allPoisArrow=1..,wrongPoisArrow=1..}] tipped_arrow{display:{Name:"{\"text\":\"Poison Arrow\",\"color\":\"dark_purple\",\"italic\":\"true\",\"bold\":\"true\"}"},Potion:"minecraft:long_poison",HideFlags:63} 1
-scoreboard players remove @s[scores={allPoisArrow=1..,wrongPoisArrow=1..}] allPoisArrow 1
+give @s[scores={allWitherArrow=1..,wrongWitherArrow=1..}] tipped_arrow{display:{Name:"{\"text\":\"Wither Arrow\",\"color\":\"dark_purple\",\"italic\":\"true\",\"bold\":\"true\"}"},CustomPotionEffects:[{Id:20b,Amplifier:0b,Duration:100,ShowParticles:1b}],CustomPotionColor:8421504} 1
+scoreboard players remove @s[scores={allWitherArrow=1..,wrongWitherArrow=1..}] allWitherArrow 1
 
-execute unless entity @s[scores={allArrow=0,allLeviArrow=0,allSlowArrow=0,allBlindArrow=0,allPoisArrow=0}] run function items:replacewrongarrows
+execute unless entity @s[scores={allArrow=0,allLeviArrow=0,allSlowArrow=0,allBlindArrow=0,allWitherArrow=0}] run function items:replacewrongarrows

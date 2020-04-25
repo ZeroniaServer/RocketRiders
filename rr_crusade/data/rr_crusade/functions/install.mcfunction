@@ -1,4 +1,4 @@
-execute unless entity @e[tag=rr_crusade,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_crusade"],Marker:1b}
+execute unless entity @e[tag=rr_crusade,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_crusade"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b}
 scoreboard objectives add nexushealth dummy
 scoreboard objectives add givecanopy dummy
 execute unless entity @e[type=area_effect_cloud,tag=BlueNexusA,limit=1] run summon area_effect_cloud -10 84 -32 {Tags:["BlueNexusA"],Duration:2000000000}

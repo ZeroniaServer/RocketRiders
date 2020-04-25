@@ -1,4 +1,4 @@
-execute unless entity @e[tag=rr_swap,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_swap"],Marker:1b}
+execute unless entity @e[tag=rr_swap,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_swap"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b}
 
 scoreboard objectives add swapside dummy
 execute unless entity @e[tag=RNGSwap1,limit=1] run summon area_effect_cloud ~ ~ ~ {Tags:["RNGSwap1","RNGSwap"]}

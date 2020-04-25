@@ -1,4 +1,4 @@
-execute unless entity @e[tag=rr_sandbox,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_sandbox"],Marker:1b}
+execute unless entity @e[tag=rr_sandbox,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_sandbox"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b}
 scoreboard objectives add sandboxRandom dummy
 scoreboard objectives add SBplaceSlime minecraft.used:minecraft.slime_block
 scoreboard objectives add SBplaceRS minecraft.used:minecraft.redstone_block

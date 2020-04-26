@@ -25,3 +25,9 @@ setblock ~ ~-1 ~1 purpur_stairs[facing=south]
 execute as @s[scores={capturePoint=0}] at @s run function rr_powerups:everytick/uncaptured_platform
 execute as @s[scores={capturePoint=1}] at @s run function rr_powerups:everytick/blue_platform
 execute as @s[scores={capturePoint=2}] at @s run function rr_powerups:everytick/yellow_platform
+
+#antidupe blocks
+fill ~-1 ~-2 ~-5 ~1 ~-2 ~5 air
+fill ~-5 ~-2 ~-1 ~5 ~-2 ~1 air
+fill ~-3 ~-2 ~-4 ~3 ~-2 ~4 air
+fill ~-4 ~-2 ~-3 ~4 ~-2 ~3 air

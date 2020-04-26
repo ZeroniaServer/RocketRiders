@@ -2,9 +2,9 @@
 execute as @e[tag=Selection] if score @s SetGamemode > maxID gamemodeID run scoreboard players set @s SetGamemode 1
 
 #ACTIVATE AND DEACTIVATE MISSILES WITH CATEGORIES
-tag @e[tag=Selection,tag=!rngToma,tag=!rngBlade,tag=!rngAnt,tag=!rngCata,tag=!rngSlash,tag=!rngRift,tag=!rngNull,tag=!rngEguard,tag=!rngCitadel,tag=!rngGemi] remove rngNormal
+tag @e[tag=Selection,tag=!rngToma,tag=!rngBlade,tag=!rngAnt,tag=!rngCata,tag=!rngLift,tag=!rngSlash,tag=!rngNull,tag=!rngEguard,tag=!rngCitadel,tag=!rngGemi] remove rngNormal
 tag @e[tag=Selection,tag=!rngHur,tag=!rngThun] remove rngLightning
-tag @e[tag=Selection,tag=!rngWar,tag=!rngJbuster,tag=!rngBull,tag=!rngAux] remove rngHeavy
+tag @e[tag=Selection,tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] remove rngHeavy
 tag @e[tag=Selection,tag=!rngNormal,tag=!rngLightning,tag=!rngHeavy] remove rngMissile
 tag @e[tag=Selection,tag=!rngShield,tag=!rngArrows,tag=!rngVortex,tag=!rngObshield,tag=!rngSplash,tag=!rngCanopy,tag=!rngFireball,tag=!rngNova] remove rngUtil
 

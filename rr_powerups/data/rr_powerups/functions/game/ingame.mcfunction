@@ -61,7 +61,9 @@ scoreboard players set @e[tag=contested] capturePoint 0
 scoreboard players remove @e[tag=contested] captureYellow 1
 scoreboard players remove @e[tag=contested] captureBlue 1
 
-#execute as @e[tag=!contested,scores={captureBlue=1..}] run function rr_powerups:game/fancyblue
+execute as @e[tag=captureMiddle,tag=!contested,scores={captureBlue=1..}] if score @s captureBlue >= @s captureYellow run function rr_powerups:game/fancyblue
+execute as @e[tag=captureMiddle,tag=!contested,scores={captureYellow=1..}] if score @s captureYellow >= @s captureBlue run function rr_powerups:game/fancyyellow
+
 
 execute as @e[tag=captureMiddle] unless entity @a[tag=onCapturePoint] run scoreboard players set @s capturePoint 0
 execute as @e[tag=captureMiddle] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1

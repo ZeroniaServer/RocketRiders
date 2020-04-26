@@ -32,5 +32,3 @@ tag @s remove givenFireballTwice
 tag @s remove givenShield
 tag @s remove givenShieldTwice
 tag @s remove givenAllUtil
-
-msg @a[team=Developer] Tetris RNG complete. Resetting.

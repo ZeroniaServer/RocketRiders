@@ -5,6 +5,7 @@ scoreboard objectives add HasWitherArrow dummy
 scoreboard objectives add allWitherArrow dummy
 scoreboard objectives add wrongWitherArrow dummy
 scoreboard objectives add DealtDamage minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add NovaShot minecraft.used:minecraft.crossbow
 scoreboard objectives remove HasChorusFruit
 scoreboard objectives remove HasSmokeBomb
 scoreboard objectives remove HasBarricade

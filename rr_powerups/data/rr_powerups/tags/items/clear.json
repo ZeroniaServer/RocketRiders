@@ -1,17 +1,13 @@
 {
 	"values": [
-	
+
 		"minecraft:turtle_spawn_egg",
 
-		"minecraft:pufferfish_spawn_egg",
-
-		"minecraft:fire_charge",
+		"minecraft:skeleton_horse_spawn_egg",
 
 		"minecraft:trident",
 
-		"minecraft:stone_pickaxe",
+		"minecraft:elytra"
 
-		"minecraft:chorus_fruit"
-		
 	]
 }

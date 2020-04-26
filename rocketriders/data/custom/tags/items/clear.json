@@ -1,6 +1,6 @@
 {
 	"values": [
-		
+
 		"minecraft:creeper_spawn_egg",
 
 		"minecraft:enderman_spawn_egg",
@@ -37,8 +37,6 @@
 
 		"minecraft:phantom_spawn_egg",
 
-		"minecraft:skeleton_horse_spawn_egg",
-
 		"minecraft:drowned_spawn_egg",
 
 		"minecraft:cave_spider_spawn_egg",
@@ -50,10 +48,10 @@
 		"minecraft:crossbow",
 
 		"minecraft:squid_spawn_egg",
-		
+
 		"minecraft:dolphin_spawn_egg",
 
 		"minecraft:cod_spawn_egg"
-		
+
 	]
 }

@@ -105,8 +105,8 @@ tag @a[tag=BreakEly] remove BreakEly
 clear @a[team=Blue,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damage:250}}]}] trident 1
 clear @a[team=Yellow,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damage:250}}]}] trident 1
 
-#yellow trident auto riptide
-execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_everytick:auto_riptide
+#trident auto riptide
+execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide
 
 #actionbar
 execute if entity @e[tag=captureMiddle,scores={capturePoint=1}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" seconds!","color":"blue","bold":"true"}]

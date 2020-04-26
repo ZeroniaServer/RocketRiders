@@ -110,6 +110,9 @@ clear @a[team=Yellow,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damag
 #trident auto riptide
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide
 
+#slap fish
+execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/slap_fish
+
 #actionbar
 execute if entity @e[tag=captureMiddle,scores={capturePoint=1}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" seconds!","color":"blue","bold":"true"}]
 execute if entity @e[tag=captureMiddle,scores={capturePoint=2}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" seconds!","color":"yellow","bold":"true"}]

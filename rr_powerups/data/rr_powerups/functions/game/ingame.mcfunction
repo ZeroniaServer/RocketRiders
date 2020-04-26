@@ -47,13 +47,13 @@ execute as @e[tag=captureMiddle] at @s as @e[type=player,team=Yellow,distance=..
 execute as @e[tag=captureMiddle] at @s as @e[type=player,tag=onCapturePoint,distance=..5.5] at @s if entity @s[y=53,dy=0.5] if block ~ ~-1 ~ air run tp @s ~ ~0.5 ~
 execute as @e[type=player,tag=onCapturePoint] at @s unless entity @s[y=54,dy=1] unless entity @e[tag=captureMiddle,distance=..7.1,limit=1] run tag @s remove onCapturePoint
 
-execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle] captureBlue 1
+execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle,scores={captureYellow=0}] captureBlue 1
 execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run tag @e[tag=captureMiddle] remove contested
 
-execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle] captureYellow 1
+execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle,scores={captureBlue=0}] captureYellow 1
 execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run tag @e[tag=captureMiddle] remove contested
 
-scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureBlue=100..}] capturePoint 1
+scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureBlue=100..,}] capturePoint 1
 scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureYellow=100..}] capturePoint 2
 
 execute if entity @a[team=Yellow,tag=onCapturePoint] if entity @a[team=Blue,tag=onCapturePoint] run tag @e[tag=captureMiddle] add contested

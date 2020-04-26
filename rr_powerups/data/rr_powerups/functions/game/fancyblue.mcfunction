@@ -34,7 +34,8 @@ execute as @s[scores={captureBlue=75..}] unless entity @s[tag=contested] run par
 execute as @s[scores={captureBlue=75..}] unless entity @s[tag=contested] run particle minecraft:dust 0 0 1 1 17 54 3 0 0 0 0.1 2 force
 execute as @s[scores={captureBlue=75..}] unless entity @s[tag=contested] run particle minecraft:dust 0 0 1 1 15 54 5 0 0 0 0.1 2 force
 
-execute as @s[scores={captureBlue=99}] at @s unless entity @s[tag=contested] run playsound minecraft:block.beacon.activate player @a ~ ~ ~ 1 1.2
+execute as @s[scores={captureBlue=99}] at @s unless entity @s[tag=contested] if entity @a[team=Blue,tag=onCapturePoint] run playsound minecraft:block.beacon.activate player @a ~ ~ ~ 1 1.2
+execute as @s[scores={captureBlue=99}] at @s unless entity @s[tag=contested] unless entity @a[team=Blue,tag=onCapturePoint] run playsound minecraft:block.beacon.deactivate player @a ~ ~ ~ 1 1.2
 execute as @s[scores={captureBlue=99..}] unless entity @s[tag=contested] run particle minecraft:dust 0 0 1 1 16 54 -4 0 0.6 0 0 2 force
 execute as @s[scores={captureBlue=99..}] unless entity @s[tag=contested] run particle minecraft:dust 0 0 1 1 16 54 4 0 0.6 0 0 2 force
 execute as @s[scores={captureBlue=99..}] unless entity @s[tag=contested] run particle minecraft:dust 0 0 1 1 8 54 4 0 0.6 0 0 2 force

@@ -1,4 +1,4 @@
-setblock ~ ~-1 ~ redstone_lamp
+setblock ~ ~-1 ~ redstone_lamp[lit=true]
 
 fill ~-2 ~-1 ~ ~-4 ~-1 ~ bone_block[axis=x]
 fill ~2 ~-1 ~ ~4 ~-1 ~ bone_block[axis=x]

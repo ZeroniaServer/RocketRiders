@@ -5,7 +5,6 @@ scoreboard objectives add HasWitherArrow dummy
 scoreboard objectives add allWitherArrow dummy
 scoreboard objectives add wrongWitherArrow dummy
 scoreboard objectives add DealtDamage minecraft.custom:minecraft.damage_dealt
-scoreboard objectives add NovaShot minecraft.used:minecraft.crossbow
 scoreboard objectives remove HasChorusFruit
 scoreboard objectives remove HasSmokeBomb
 scoreboard objectives remove HasBarricade
@@ -25,3 +24,5 @@ data merge entity @e[tag=rr_normal,limit=1] {Invisible:1b,Invulnerable:1b,Custom
 data merge entity @e[tag=rr_swap,limit=1] {Invisible:1b,Invulnerable:1b,CustomNameVisible:0b}
 data merge entity @e[tag=rr_sandbox,limit=1] {Invisible:1b,Invulnerable:1b,CustomNameVisible:0b}
 data merge entity @e[tag=rr_ranked,limit=1] {Invisible:1b,Invulnerable:1b,CustomNameVisible:0b}
+scoreboard objectives remove NovaShot
+scoreboard objectives add NovaShot minecraft.broken:minecraft.crossbow

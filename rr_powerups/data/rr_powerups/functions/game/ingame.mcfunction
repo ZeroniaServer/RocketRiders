@@ -116,6 +116,13 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups
 #slap fish
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/slap_fish
 
+#infinity saber
+execute as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] if entity @s[nbt={SelectedItem:{id:"minecraft:bow"}},scores={death=0}] run enchant @s minecraft:infinity 1
+execute as @a[tag=Infinity] if entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
+execute as @a[tag=Infinity,scores={death=1..}] unless entity @s[team=!Yellow,team=!Blue] run clear @s bow
+execute as @a[tag=Infinity,scores={death=1..}] unless entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
+scoreboard players set @a[scores={death=1..}] death 0
+
 #actionbar
 execute if entity @e[tag=captureMiddle,scores={capturePoint=1}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" seconds!","color":"blue","bold":"true"}]
 execute if entity @e[tag=captureMiddle,scores={capturePoint=2}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" seconds!","color":"yellow","bold":"true"}]

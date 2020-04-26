@@ -4,6 +4,7 @@ tellraw @a ["",{"selector":"@s"},{"text":" fell out of the world"}]
 #non-spectators statistics
 scoreboard players add @s[team=!Spectator] FellVoid 1
 scoreboard players add @s[team=!Spectator] deaths 1
+scoreboard players add @s[team=!Spectator] death 1
 
 #non-spectators lose all effects and get immunity effects
 effect clear @s[team=!Spectator]
@@ -19,7 +20,7 @@ effect clear @s[scores={voidNoFallCount=5}] slow_falling
 scoreboard players reset @s[scores={voidNoFallCount=5}] voidNoFallCount
 
 #teleport non-spectators
-tp @s[team=Blue] 12 64 -66 0 0 
+tp @s[team=Blue] 12 64 -66 0 0
 tp @s[team=Yellow] 12 64 66 -180 0
 
 #teleport spectators

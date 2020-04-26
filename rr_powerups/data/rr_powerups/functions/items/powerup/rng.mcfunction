@@ -1,6 +1,7 @@
 summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngBull","rng2"]}
 summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngElytra","rng2"]}
 summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngHyper","rng2"]}
+summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngInfinity","rng2"]}
 summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngLavaSplash","rng2"]}
 summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngSlapFish","rng2"]}
 summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngTotem","rng2"]}
@@ -12,6 +13,8 @@ execute as @e[tag=rngSelected,tag=rngElytra] as @e[scores={capturePoint=1}] as @
 execute as @e[tag=rngSelected,tag=rngElytra] as @e[scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/giveelytra
 execute as @e[tag=rngSelected,tag=rngHyper] as @e[scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/givehyper
 execute as @e[tag=rngSelected,tag=rngHyper] as @e[scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/givehyper
+execute as @e[tag=rngSelected,tag=rngInfinity] as @e[scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/giveinfinity
+execute as @e[tag=rngSelected,tag=rngInfinity] as @e[scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/giveinfinity
 execute as @e[tag=rngSelected,tag=rngLavaSplash] as @e[scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/givelavasplash
 execute as @e[tag=rngSelected,tag=rngLavaSplash] as @e[scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/givelavasplash
 execute as @e[tag=rngSelected,tag=rngSlapFish] as @e[scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/giveslapfish
@@ -28,6 +31,8 @@ execute as @e[tag=rngSelected,tag=rngElytra] as @e[scores={capturePoint=1}] run 
 execute as @e[tag=rngSelected,tag=rngElytra] as @e[scores={capturePoint=2}] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"Elytra","color":"dark_purple","bold":"true","italic":"true"}]
 execute as @e[tag=rngSelected,tag=rngHyper] as @e[scores={capturePoint=1}] run tellraw @a[team=!Lobby] [{"text":"Blue received: ","color":"aqua","bold":"true"},{"text":"[Superspeed] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Hypersonic","color":"blue","italic":"true"}]
 execute as @e[tag=rngSelected,tag=rngHyper] as @e[scores={capturePoint=2}] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"[Superspeed] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Hypersonic","color":"gold","italic":"true"}]
+execute as @e[tag=rngSelected,tag=rngInfinity] as @e[scores={capturePoint=1}] run tellraw @a[team=!Lobby] [{"text":"Blue received: ","color":"aqua","bold":"true"},{"text":"Infinity Sabers","color":"dark_purple","bold":"true","italic":"true"},{"text":" (Expires upon death)","color":"gray","italic":"true","bold":"false"}]
+execute as @e[tag=rngSelected,tag=rngInfinity] as @e[scores={capturePoint=2}] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"Infinity Sabers","color":"dark_purple","bold":"true","italic":"true"},{"text":" (Expires upon death)","color":"gray","italic":"true","bold":"false"}]
 execute as @e[tag=rngSelected,tag=rngLavaSplash] as @e[scores={capturePoint=1}] run tellraw @a[team=!Lobby] [{"text":"Blue received: ","color":"aqua","bold":"true"},{"text":"[Utility] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Lava Splash","color":"blue","italic":"true"}]
 execute as @e[tag=rngSelected,tag=rngLavaSplash] as @e[scores={capturePoint=2}] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"[Utility] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Lava Splash","color":"gold","italic":"true"}]
 execute as @e[tag=rngSelected,tag=rngSlapFish] as @e[scores={capturePoint=1}] run tellraw @a[team=!Lobby] [{"text":"Blue received: ","color":"aqua","bold":"true"},{"text":"Slap Fish","color":"dark_purple","bold":"true","italic":"true"}]

@@ -1,5 +1,6 @@
 scoreboard objectives add HasSlapFish dummy
 scoreboard objectives add HasTotem dummy
+scoreboard objectives add HasFirework dummy
 scoreboard objectives add HasWitherArrow dummy
 scoreboard objectives add allWitherArrow dummy
 scoreboard objectives add wrongWitherArrow dummy
@@ -11,6 +12,7 @@ scoreboard objectives remove HasFire
 scoreboard objectives remove HasPoisArrow
 scoreboard objectives remove allPoisArrow
 scoreboard objectives remove wrongPoisArrow
+scoreboard objectives remove HasFireworks
 kill @e[tag=PlatBlock]
 bossbar remove rr_powerups:blue_capture_progress
 bossbar remove rr_powerups:yellow_capture_progress

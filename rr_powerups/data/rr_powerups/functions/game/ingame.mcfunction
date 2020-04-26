@@ -89,8 +89,8 @@ execute as @e[tag=captureMiddle] if score @s captureYellow >= @s captureBlue sto
 execute as @e[tag=captureMiddle] if score @s captureYellow >= @s captureBlue run bossbar set rr_powerups:capture_progress color yellow
 execute as @e[tag=captureMiddle] if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress color white
 
-execute as @e[tag=captureMiddle,limit=1] if score @s capturePoint matches 0 if score @s captureBlue >= @s captureYellow if score @s captureBlue matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Capture Progress","color":"blue","bold":"true"}]
-execute as @e[tag=captureMiddle,limit=1] if score @s capturePoint matches 0 if score @s captureYellow >= @s captureBlue if score @s captureYellow matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Capture Progress","color":"yellow","bold":"true"}]
+execute as @e[tag=captureMiddle,limit=1] if score @s capturePoint matches 0 if score @s captureBlue >= @s captureYellow if score @s captureBlue matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Blue Capturing...","color":"blue","bold":"true"}]
+execute as @e[tag=captureMiddle,limit=1] if score @s capturePoint matches 0 if score @s captureYellow >= @s captureBlue if score @s captureYellow matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Capturing...","color":"yellow","bold":"true"}]
 execute as @e[tag=captureMiddle,limit=1] if score @s capturePoint matches 0 if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress name [{"text":"Capture Progress","color":"white","bold":"true"}]
 
 execute as @e[tag=captureMiddle,limit=1] if score @s capturePoint matches 1 run bossbar set rr_powerups:capture_progress name [{"text":"Blue Captured!","color":"blue","bold":"true"}]

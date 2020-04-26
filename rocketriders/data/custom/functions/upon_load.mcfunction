@@ -1,4 +1,5 @@
 scoreboard objectives add HasSlapFish dummy
+scoreboard objectives add HasTotem dummy
 scoreboard objectives add HasWitherArrow dummy
 scoreboard objectives add allWitherArrow dummy
 scoreboard objectives add wrongWitherArrow dummy

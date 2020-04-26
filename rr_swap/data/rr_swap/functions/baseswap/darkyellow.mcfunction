@@ -1,4 +1,9 @@
+tag @s remove SwappingSides
 scoreboard players set SwapSide swapside 0
+scoreboard players set SwapPlatform swapside 0
+
+fill 15 50 -3 9 54 3 air destroy
+kill @s
 
 fill -14 34 -56 38 63 -52 light_blue_stained_glass replace minecraft:blue_stained_glass
 fill -14 34 -57 38 63 -61 white_stained_glass replace minecraft:black_stained_glass

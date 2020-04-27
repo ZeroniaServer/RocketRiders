@@ -12,7 +12,7 @@ clear @a[team=Yellow] arrow{Lobby:1b}
 clear @a[team=Blue] arrow{Lobby:1b}
 
 #prevent players from going above the arena
-execute as @a unless entity @s[team=!Yellow,team=!Blue] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
+execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @s[tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
 #general everytick commands
 function challenges:gain

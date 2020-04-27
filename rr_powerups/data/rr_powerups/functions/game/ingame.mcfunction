@@ -53,6 +53,8 @@ execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,
 execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle,scores={captureBlue=0},tag=!contested] captureYellow 1
 execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run tag @e[tag=captureMiddle] remove contested
 
+execute unless entity @a[tag=onCapturePoint] run tag @e[tag=captureMiddle] remove contested
+
 scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureBlue=100..,}] capturePoint 1
 scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureYellow=100..}] capturePoint 2
 

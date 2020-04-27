@@ -25,7 +25,8 @@ execute if entity @e[tag=captureMiddle,scores={capturePoint=1..}] run scoreboard
 execute if entity @e[tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @e[tag=Selection] powerupcount 0
 execute as @e[scores={powerupcount=20}] run scoreboard players remove @s PowerupDisplay 1
 execute as @e[scores={powerupcount=20}] run scoreboard players reset @s powerupcount
-execute if entity @e[scores={capturePoint=0}] run scoreboard players set @e[tag=Selection] PowerupDisplay 30
+execute if entity @e[scores={capturePoint=0},tag=!contested] run scoreboard players set @e[tag=Selection] PowerupDisplay 30
+execute if entity @e[scores={capturePoint=0,captureBlue=0,captureYellow=0},tag=contested] run scoreboard players set @e[tag=Selection] PowerupDisplay 30
 # execute as @e[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=1}] as @e[type=player,team=Blue,tag=onCapturePoint] run tp @s 12 64 -66 0 0
 # execute as @e[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=2}] as @e[type=player,team=Yellow,tag=onCapturePoint] run tp @s 12 64 66 -180 0
 execute as @e[scores={PowerupDisplay=..0}] run tag @a add DelayActionbar

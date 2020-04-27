@@ -37,8 +37,6 @@ execute as @s[scores={count=600}] run title @a subtitle ["",{"text":"GL & HF!","
 execute as @s[scores={count=600}] at @a run playsound block.note_block.hat master @a ~ ~ ~ 100 0
 execute as @s[scores={count=600}] run tp @a[team=Yellow] 12 64 66 -180 0
 execute as @s[scores={count=600}] run tp @a[team=Blue] 12 64 -66 0 0
-execute as @s[scores={count=600}] run clear @a[team=Blue] arrow
-execute as @s[scores={count=600}] run clear @a[team=Yellow] arrow
 execute as @s[scores={count=600}] run effect clear @a[team=Blue] resistance
 execute as @s[scores={count=600}] run effect clear @a[team=Yellow] resistance
 execute as @s[scores={count=600}] run effect give @a[team=Blue] fire_resistance 10 100 true

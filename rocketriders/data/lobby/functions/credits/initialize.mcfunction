@@ -2,9 +2,9 @@ kill @e[tag=creditsAS]
 
 
 #Developers
-summon armor_stand -49 216 79 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","YZEROCredits"],Rotation:[8f],Pose:{Head:[352f,5f,0f],LeftLeg:[25f,0f,0f],RightLeg:[334f,0f,0f],LeftArm:[319f,0f,0f],RightArm:[214f,73f,0f]}}
-summon armor_stand -49 216 78 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","EvtemaCredits"]}
-summon armor_stand -49 216 77 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","ChronosCredits"],Pose:{Head:[352f,0f,0f],LeftArm:[256f,35f,0f],RightArm:[250f,347f,0f]}}
+summon armor_stand -49 216 79 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","devcycle","YZEROCredits"],Rotation:[8f],Pose:{Head:[352f,5f,0f],LeftLeg:[25f,0f,0f],RightLeg:[334f,0f,0f],LeftArm:[319f,0f,0f],RightArm:[214f,73f,0f]}}
+summon armor_stand -49 216 78 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","devcycle","SelectedDev","EvtemaCredits"]}
+summon armor_stand -49 216 77 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","devcycle","ChronosCredits"],Pose:{Head:[352f,0f,0f],LeftArm:[256f,35f,0f],RightArm:[250f,347f,0f]}}
 
 replaceitem entity @e[tag=EvtemaCredits] armor.head player_head{SkullOwner:Evtema3}
 replaceitem entity @e[tag=EvtemaCredits] weapon.mainhand slime_ball
@@ -29,8 +29,8 @@ replaceitem entity @e[tag=ChronosCredits] armor.feet diamond_boots
 
 
 #Builders
-summon armor_stand -51 211 81 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","BuilderCreditsAS","HugoCredits"]}
-summon armor_stand -51 211 75 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","BuilderCreditsAS","BardCredits"]}
+summon armor_stand -51 211 81 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","HugoCredits"]}
+summon armor_stand -51 211 75 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","BardCredits"]}
 
 
 #oh boy, all individual testers.
@@ -108,7 +108,7 @@ replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS] arm
 
 
 execute as @e[tag=creditsAS] at @s run tp @s ~ ~ ~ 90 0
-execute as @e[tag=devCreditsAS] at @s run tp @s ~ ~ ~ -90 0
+execute as @e[tag=devCreditsAS] at @s run tp @s ~ ~ ~ 90 0
 
 
 

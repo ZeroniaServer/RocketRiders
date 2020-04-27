@@ -18,3 +18,6 @@ function everytick:infobar
 execute as @e[tag=GameEnd] run function game:gameend
 kill @e[tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[tag=Selection] unless entity @s[tag=EditedSelections] run function arenaclear:customizer
+
+#lobby credits
+function lobby:credits/cycle

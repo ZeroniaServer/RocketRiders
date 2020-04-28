@@ -5,7 +5,7 @@ execute if entity @e[tag=Selection,tag=rngCitadel] at @s run summon area_effect_
 execute if entity @e[tag=Selection,tag=rngEguard] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["surpriseBlueEguard","surpriseBlue2"]}
 execute if entity @e[tag=Selection,tag=rngGemi] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["surpriseBlueGemi","surpriseBlue2"]}
 execute if entity @e[tag=Selection,tag=rngNull] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["surpriseBlueNull","surpriseBlue2"]}
-execute if entity @e[tag=Selection,tag=rngRift] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["surpriseBlueRift","surpriseBlue2"]}
+execute if entity @e[tag=Selection,tag=rngLift] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["surpriseBlueLift","surpriseBlue2"]}
 execute if entity @e[tag=Selection,tag=rngSlash] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["surpriseBlueSlash","surpriseBlue2"]}
 execute if entity @e[tag=Selection,tag=rngToma] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["surpriseBlueToma","surpriseBlue2"]}
 tag @e[tag=surpriseBlue2,sort=random,limit=1,distance=..1] add rngSelected
@@ -16,6 +16,6 @@ execute if entity @e[tag=rngSelected,tag=surpriseBlueCitadel] at @s run summon s
 execute if entity @e[tag=rngSelected,tag=surpriseBlueEguard] at @s run summon squid ~ ~ ~ {Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueGuard','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}
 execute if entity @e[tag=rngSelected,tag=surpriseBlueGemi] at @s run summon squid ~ ~ ~ {Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueGemi','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}
 execute if entity @e[tag=rngSelected,tag=surpriseBlueNull] at @s run summon squid ~ ~ ~ {Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueNull','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}
-execute if entity @e[tag=rngSelected,tag=surpriseBlueRift] at @s run summon squid ~ ~ ~ {Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueRift','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}
+execute if entity @e[tag=rngSelected,tag=surpriseBlueLift] at @s run summon squid ~ ~ ~ {Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueLift','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}
 execute if entity @e[tag=rngSelected,tag=surpriseBlueSlash] at @s run summon squid ~ ~ ~ {Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueSlash','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}
 execute if entity @e[tag=rngSelected,tag=surpriseBlueToma] at @s run summon squid ~ ~ ~ {Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueToma','surprising'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}

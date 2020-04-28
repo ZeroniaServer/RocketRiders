@@ -97,12 +97,23 @@ scoreboard players set @e[tag=RestoreDefault] PortalDeco 1
 tag @e[tag=RestoreDefault] remove RestoreDefault
 
 
-#GAME OPTIONS
+##GAME OPTIONS
 #missile pierce prevention
 execute as @e[tag=Selection,tag=doPrevention] run data merge block -70 193 79 {Text1:"{\"text\":\"Pierce Prevention\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove doPrevention\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 execute as @e[tag=Selection,tag=!doPrevention] run data merge block -70 193 79 {Text1:"{\"text\":\"Pierce Prevention\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doPrevention\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 
-#ENABLE DISABLE ENTIRE CATEGORIES
+#suprise egg game modifier
+execute as @e[tag=Selection,tag=doSurprise] run data merge block -70 191 79 {Text1:"{\"text\":\"Surprise Eggs\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove doSurprise\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
+execute as @e[tag=Selection,tag=!doSurprise] run data merge block -70 191 79 {Text1:"{\"text\":\"Surprise Eggs\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doSurprise\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
+
+
+
+
+
+
+
+
+##ENABLE DISABLE ENTIRE CATEGORIES
 #all missiles
 execute as @e[tag=Selection,tag=rngMissile] run data merge block -69 192 82 {Text1:"{\"text\":\"Any Missiles\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove rngMissile\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 execute as @e[tag=Selection,tag=!rngMissile] run data merge block -69 192 82 {Text1:"{\"text\":\"Any Missiles\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add rngMissile\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}

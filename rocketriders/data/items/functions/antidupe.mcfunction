@@ -23,6 +23,8 @@ execute store result score @s HasLift run clear @s dolphin_spawn_egg 0
 execute store result score @s HasNova run clear @s crossbow 0
 execute store result score @s HasVortex run clear @s egg 0
 execute store result score @s HasSplash run clear @s splash_potion{Potion:"minecraft:water"} 0
+execute store result score @s[team=Blue] HasSurprise run clear @s squid_spawn_egg 0
+execute store result score @s[team=Yellow] HasSurprise run clear @s cod_spawn_egg 0
 
 clear @s[scores={HasAux=2..}] mooshroom_spawn_egg 1
 clear @s[scores={HasToma=2..}] creeper_spawn_egg 1
@@ -46,6 +48,8 @@ clear @s[scores={HasCata=2..}] cave_spider_spawn_egg 1
 clear @s[scores={HasCitadel=2..}] wandering_trader_spawn_egg 1
 clear @s[scores={HasGemi=2..}] fox_spawn_egg 1
 clear @s[scores={HasLift=2..}] dolphin_spawn_egg 1
+clear @s[team=Blue,scores={HasSurprise=4..}] squid_spawn_egg 1
+clear @s[team=Yellow,scores={HasSurprise=4..}] cod_spawn_egg 1
 clear @s[scores={HasNova=2..}] crossbow 1
 clear @s[scores={HasVortex=2..}] egg 1
 clear @s[scores={HasSplash=2..}] splash_potion{Potion:"minecraft:water"} 1

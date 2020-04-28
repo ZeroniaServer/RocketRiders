@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Hard challenges.",
+            "color": "green"
+        },
+        "description": {
+            "text": "The difficult challenges of Rocket Riders.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:red_concrete"
+        },
+        "frame": "challenge",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "location": {
+            "trigger": "minecraft:location"
+        }
+    },
+    "parent": "achievements:rr_challenges/root"
+}

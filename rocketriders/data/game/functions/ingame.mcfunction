@@ -15,7 +15,7 @@ clear @a[team=Blue] arrow{Lobby:1b}
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @s[tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
 #general everytick commands
-function challenges:gain
+function achievements:gain
 function items:spawnmissiles
 function everytick:achievement_gain
 function everytick:shields

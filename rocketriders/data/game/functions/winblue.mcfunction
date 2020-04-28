@@ -1,6 +1,6 @@
 #Advancements
-function challenges:aftergameblue
-function challenges:aftergame
+function achievements:aftergameblue
+function achievements:aftergame
 
 #Win stuff
 tag @e[tag=Selection] add GameEnd

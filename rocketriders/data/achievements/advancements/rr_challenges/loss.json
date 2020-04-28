@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "| || || |_",
+            "color": "green"
+        },
+        "description": {
+            "text": "Lose a game after having a 10 game win streak",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:ghast_tear"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/hard"
+}

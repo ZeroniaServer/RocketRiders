@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "I'm helping!",
+            "color": "green"
+        },
+        "description": {
+            "text": "Let your team win a game, but never fire a single missile yourself.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:red_bed"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/easy"
+}

@@ -1,0 +1,8 @@
+function achievements:firewithin
+function achievements:getofflawn
+function achievements:graverevenge
+function achievements:huh
+function achievements:rainingmen
+function achievements:uphere
+function achievements:ballet
+function achievements:commited

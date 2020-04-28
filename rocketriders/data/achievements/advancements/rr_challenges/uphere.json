@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "I can see my house from here!",
+            "color": "green"
+        },
+        "description": {
+            "text": "Get launched high in the sky by a Nova Rocket.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:firework_rocket"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/easy"
+}

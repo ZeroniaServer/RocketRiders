@@ -4,4 +4,8 @@ scoreboard objectives remove XP
 scoreboard objectives add XP dummy
 scoreboard objectives add RankScore dummy
 scoreboard players set 0 XP 0
+scoreboard objectives add Forfeit dummy
+scoreboard objectives add ForfeitWin dummy
+scoreboard objectives add ForfeitLoss dummy
+scoreboard objectives add ForfeitTimeout dummy
 execute if entity @e[tag=rr_ranked,limit=1] run tellraw @s {"text":"Ranked 1v1 mode installed.","color":"green","bold":"true"}

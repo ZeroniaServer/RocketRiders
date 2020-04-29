@@ -5,6 +5,10 @@ function game:leavemidgame
 function rr_swap:items/antidupe
 function rr_swap:items/spawnitems
 
+#custom util items
+execute if entity @e[tag=Selection,tag=swapEnabled] run function rr_swap:items/icbm
+execute if entity @e[tag=Selection,tag=swapEnabled] run function rr_swap:items/cluster
+
 #Item RNG and spawnpoints
 function items:tetris
 scoreboard players add @e[tag=Selection] RandomItem 1

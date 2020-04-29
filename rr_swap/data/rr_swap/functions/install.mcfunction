@@ -11,4 +11,9 @@ execute unless entity @e[tag=RNGSwap7,limit=1] run summon area_effect_cloud ~ ~ 
 execute unless entity @e[tag=RNGSwap8,limit=1] run summon area_effect_cloud ~ ~ ~ {Tags:["RNGSwap8","RNGSwap"]}
 execute unless entity @e[tag=RNGSwap9,limit=1] run summon area_effect_cloud ~ ~ ~ {Tags:["RNGSwap9","RNGSwap"]}
 
+bossbar add swap ["",{"text":"Swap Progress","bold":true,"color":"white"}]
+bossbar set minecraft:swap color white
+bossbar set minecraft:swap style notched_10
+bossbar set minecraft:swap max 10
+
 execute if entity @e[tag=rr_swap,limit=1] run tellraw @s {"text":"Swap mode installed.","color":"green","bold":"true"}

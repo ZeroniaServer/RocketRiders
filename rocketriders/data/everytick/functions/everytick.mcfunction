@@ -9,8 +9,6 @@ function everytick:bookwarp
 function everytick:cancel_utility
 function everytick:player_portal
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:antidupe
-#TEMPORARY - clear old advancements
-function challenges:clearold
 execute as @a[team=Lobby] run function everytick:score_reset
 function everytick:general_settings_or_hotfixes
 function custom:joinpad_enddimension
@@ -20,4 +18,4 @@ kill @e[tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[tag=Selection] unless entity @s[tag=EditedSelections] run function arenaclear:customizer
 
 #lobby credits
-function lobby:credits/cycle
+execute unless entity @e[tag=Selection,tag=GameStarted] run function lobby:credits/cycle

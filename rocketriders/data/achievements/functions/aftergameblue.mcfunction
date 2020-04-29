@@ -19,9 +19,6 @@ scoreboard players add @a[team=Blue] WinStreak 1
 execute as @a[team=Yellow,scores={WinStreak=10..}] run advancement grant @s only achievements:rr_challenges/loss
 scoreboard players reset @a[team=Yellow] WinStreak
 
-#Ballet Dancer
-execute as @a[team=Blue,tag=!FailedBallet] run advancement grant @s only achievements:rr_challenges/ballet
-
 
 #Dues ex machina
 scoreboard players set Machina Machina 1

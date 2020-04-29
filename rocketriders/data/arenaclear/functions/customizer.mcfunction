@@ -23,48 +23,62 @@ execute as @e[tag=RNGnormal] unless entity @s[tag=RNGmissile] run scoreboard pla
 execute as @e[tag=RNGutilstart] unless entity @s[tag=RNG] run scoreboard players set @e[tag=RNGutil] RNGselect 1
 
 
-#TOP DECORATION -- TODO (update display commands)
+#TOP DECORATION
 execute as @e[scores={TopDeco=1}] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"Arch\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-#execute as @e[scores={TopDeco=1}] run data merge block -45 190 74 {mode:"LOAD",name:"minecraft:archpreview",showboundingbox:0b}
-#execute as @e[scores={TopDeco=1}] run setblock -45 190 73 redstone_block
-#execute as @e[scores={TopDeco=1}] run setblock -45 190 73 air
+execute as @e[scores={TopDeco=1}] run fill -40 197 64 -44 206 92 air
+execute as @e[scores={TopDeco=1}] run setblock -48 197 74 minecraft:structure_block{mode:"LOAD",name:"minecraft:archpreview",showboundingbox:0b}
+execute as @e[scores={TopDeco=1}] run setblock -48 198 74 minecraft:redstone_block
+execute as @e[scores={TopDeco=1}] run setblock -48 197 74 minecraft:air
 
 execute as @e[scores={TopDeco=2}] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"Towers\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-#execute as @e[scores={TopDeco=2}] run data merge block -45 190 74 {mode:"LOAD",name:"minecraft:towerpreview",showboundingbox:0b}
-#execute as @e[scores={TopDeco=2}] run setblock -45 190 73 redstone_block
-#execute as @e[scores={TopDeco=2}] run setblock -45 190 73 air
+execute as @e[scores={TopDeco=2}] run fill -40 197 64 -44 206 92 air
+execute as @e[scores={TopDeco=2}] run setblock -44 197 65 structure_block{mode:"LOAD",name:"minecraft:towerpreview",showboundingbox:0b}
+execute as @e[scores={TopDeco=2}] run setblock -44 198 65 redstone_block
+execute as @e[scores={TopDeco=2}] run setblock -44 197 65 air
+execute as @e[scores={TopDeco=2}] run setblock -44 197 87 structure_block{mode:"LOAD",name:"minecraft:towerpreview",showboundingbox:0b}
+execute as @e[scores={TopDeco=2}] run setblock -44 198 87 redstone_block
+execute as @e[scores={TopDeco=2}] run setblock -44 197 87 air
 
 execute as @e[scores={TopDeco=0}] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-#execute as @e[scores={TopDeco=0}] run fill -45 191 74 -37 202 82 air
+execute as @e[scores={TopDeco=0}] run fill -40 197 64 -44 206 92 air
 
 
-#TOP SIDES -- TODO (add display commands)
+#TOP SIDES
 execute as @e[scores={TopCorner=1}] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopCorner 1\"}}",Text2: "{\"text\":\"Platform\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @e[scores={TopCorner=1}] run setblock -50 194 71 structure_block{mode:"LOAD",name:"minecraft:topplatform_preview",showboundingbox:0b}
+execute as @e[scores={TopCorner=1}] run setblock -50 195 71 redstone_block
+execute as @e[scores={TopCorner=1}] run setblock -50 194 71 air
+execute as @e[scores={TopCorner=1}] run setblock -50 194 81 structure_block{mode:"LOAD",name:"minecraft:topplatform_preview",showboundingbox:0b}
+execute as @e[scores={TopCorner=1}] run setblock -50 195 81 redstone_block
+execute as @e[scores={TopCorner=1}] run setblock -50 194 81 air
 
 execute as @e[scores={TopCorner=0}] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopCorner 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @e[scores={TopCorner=0}] run fill -55 194 92 -45 196 64 air
 
-
-#MIDDLE DECORATION -- TODO (update display commands)
+#MIDDLE DECORATION
 execute as @e[scores={MiddleDeco=1}] run data merge block -58 193 85 {Text1: "{\"text\":\"Middle Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] MiddleDeco 1\"}}",Text2: "{\"text\":\"Slime Pads\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-#execute as @e[scores={MiddleDeco=1}] run data merge block -45 189 84 {mode:"LOAD",name:"minecraft:slimepadpreview",showboundingbox:0b}
-#execute as @e[scores={MiddleDeco=1}] run setblock -45 189 83 redstone_block
-#execute as @e[scores={MiddleDeco=1}] run setblock -45 189 83 air
+execute as @e[scores={MiddleDeco=1}] run setblock -49 190 65 structure_block{mode:"LOAD",name:"minecraft:midslimepad_preview",showboundingbox:0b}
+execute as @e[scores={MiddleDeco=1}] run setblock -49 191 65 redstone_block
+execute as @e[scores={MiddleDeco=1}] run setblock -49 190 65 air
+execute as @e[scores={MiddleDeco=1}] run setblock -49 190 85 structure_block{mode:"LOAD",name:"minecraft:midslimepad_preview",showboundingbox:0b}
+execute as @e[scores={MiddleDeco=1}] run setblock -49 191 85 redstone_block
+execute as @e[scores={MiddleDeco=1}] run setblock -49 190 85 air
 
 execute as @e[scores={MiddleDeco=0}] run data merge block -58 193 85 {Text1: "{\"text\":\"Middle Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] MiddleDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-#execute as @e[scores={MiddleDeco=0}] run fill -45 190 84 -41 194 92 air
+execute as @e[scores={MiddleDeco=0}] run fill -51 190 92 -45 191 64 air
 
 
-#BOTTOM DECORATION -- TODO (update display commands)
+#BOTTOM DECORATION
 execute as @e[scores={BottomDeco=1}] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] BottomDeco 1\"}}",Text2: "{\"text\":\"Slime Pad\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-#execute as @e[scores={BottomDeco=1}] run data merge block -45 189 64 {mode:"LOAD",name:"minecraft:slimepadpreview",showboundingbox:0b}
-#execute as @e[scores={BottomDeco=1}] run setblock -45 189 63 redstone_block
-#execute as @e[scores={BottomDeco=1}] run setblock -45 189 63 air
+execute as @e[scores={BottomDeco=1}] run setblock -49 186 75 structure_block{mode:"LOAD",name:"minecraft:bottomslimepad_preview",showboundingbox:0b}
+execute as @e[scores={BottomDeco=1}] run setblock -49 187 75 redstone_block
+execute as @e[scores={BottomDeco=1}] run setblock -49 186 75 air
 
 execute as @e[scores={BottomDeco=0}] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] BottomDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-#execute as @e[scores={BottomDeco=0}] run fill -45 190 64 -41 194 72 air
+execute as @e[scores={BottomDeco=0}] run fill -45 189 82 -51 185 74 air
 
 
-#PORTAL DECORATION -- TODO (update display commands)
+#PORTAL DECORATION
 execute as @e[scores={PortalDeco=1}] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"Glass Rim\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 execute as @e[scores={PortalDeco=0}] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
@@ -91,9 +105,6 @@ scoreboard players set @e[tag=RestoreDefault] TopCorner 1
 scoreboard players set @e[tag=RestoreDefault] MiddleDeco 1
 scoreboard players set @e[tag=RestoreDefault] BottomDeco 1
 scoreboard players set @e[tag=RestoreDefault] PortalDeco 1
-#execute as @e[tag=RestoreDefault] run fill -45 190 64 -41 194 72 air
-#execute as @e[tag=RestoreDefault] run fill -45 191 74 -37 199 82 air
-#execute as @e[tag=RestoreDefault] run fill -45 190 84 -41 194 92 air
 tag @e[tag=RestoreDefault] remove RestoreDefault
 
 

@@ -11,3 +11,10 @@ tag @a remove JoinYellow
 
 #Start Game
 scoreboard players set @s[scores={count=1..}] RandomItem 398
+
+
+tag @a[team=Blue] add InRanked
+tag @a[team=Yellow] add InRanked
+
+execute as @a[team=Blue] run function rr_ranked:forfeit/calculate
+execute as @a[team=Yellow] run function rr_ranked:forfeit/calculate

@@ -2,12 +2,12 @@
 execute if entity @e[tag=Selection,tag=doPrevention] run function items:prevention/preventmissiles
 
 #Auxiliary
-execute as @e[tag=BlueAux] at @s positioned ~-1 ~-10 ~4 run function items:prestructureblock
-execute as @e[tag=BlueAux] at @s run setblock ~-1 ~-10 ~4 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:auxiliary_blue"}
-execute as @e[tag=BlueAux] at @s positioned ~-1 ~-10 ~4 run function items:poststructureblock
-execute as @e[tag=YellowAux] at @s positioned ~-1 ~-10 ~-14 run function items:prestructureblock
-execute as @e[tag=YellowAux] at @s run setblock ~-1 ~-10 ~-14 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:auxiliary_yellow"}
-execute as @e[tag=YellowAux] at @s positioned ~-1 ~-10 ~-14 run function items:poststructureblock
+execute as @e[tag=BlueAux] at @s positioned ~-1 ~-9 ~4 run function items:prestructureblock
+execute as @e[tag=BlueAux] at @s run setblock ~-1 ~-9 ~4 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:auxiliary_blue"}
+execute as @e[tag=BlueAux] at @s positioned ~-1 ~-9 ~4 run function items:poststructureblock
+execute as @e[tag=YellowAux] at @s positioned ~-1 ~-9 ~-14 run function items:prestructureblock
+execute as @e[tag=YellowAux] at @s run setblock ~-1 ~-9 ~-14 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:auxiliary_yellow"}
+execute as @e[tag=YellowAux] at @s positioned ~-1 ~-9 ~-14 run function items:poststructureblock
 
 #TomaTwo
 execute as @e[tag=BlueToma] at @s positioned ~-1 ~-7 ~4 run function items:prestructureblock

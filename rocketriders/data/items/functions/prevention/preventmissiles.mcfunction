@@ -1,7 +1,7 @@
 #Auxiliary
-execute as @e[tag=BlueAux,tag=!UnableMissile] at @s positioned ~-1 ~-8 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~3 ~10 ~ 160 ~ filtered #custom:portalblocks force
+execute as @e[tag=BlueAux,tag=!UnableMissile] at @s positioned ~-1 ~-7 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~3 ~10 ~ 160 ~ filtered #custom:portalblocks force
 execute as @e[tag=BlueAux,tag=!UnableMissile] at @s positioned ~-1 160 ~4 run fill ~ ~ ~ ~2 ~3 ~10 air replace #custom:portalblocks
-execute as @e[tag=YellowAux,tag=!UnableMissile] at @s positioned ~-1 ~-8 ~-14 store result score @s Unable run clone ~ ~ ~ ~2 ~3 ~10 ~ 160 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowAux,tag=!UnableMissile] at @s positioned ~-1 ~-7 ~-14 store result score @s Unable run clone ~ ~ ~ ~2 ~3 ~10 ~ 160 ~ filtered #custom:portalblocks force
 execute as @e[tag=YellowAux,tag=!UnableMissile] at @s positioned ~-1 160 ~-14 run fill ~ ~ ~ ~2 ~3 ~10 air replace #custom:portalblocks
 
 #TomaTwo

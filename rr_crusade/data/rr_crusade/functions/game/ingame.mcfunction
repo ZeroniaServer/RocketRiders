@@ -12,7 +12,7 @@ tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
 tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
 execute as @e[scores={RandomItem=400..}] as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
 execute as @e[scores={RandomItem=400..}] as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
-scoreboard players reset @e[scores={RandomItem=400..}] RandomItem
+scoreboard players reset @e[scores={RandomItem=300..}] RandomItem
 spawnpoint @a[team=Blue] 12 64 -66
 spawnpoint @a[team=Yellow] 12 64 66
 

@@ -43,6 +43,11 @@ execute as @s[scores={count=600}] run effect give @a[team=Blue] fire_resistance 
 execute as @s[scores={count=600}] run effect give @a[team=Yellow] fire_resistance 10 100 true
 execute as @s[scores={count=600}] run gamemode survival @a[team=Yellow]
 execute as @s[scores={count=600}] run gamemode survival @a[team=Blue]
+#hotfix for being able to keep charging bow from queue
+execute as @s[scores={count=600}] run clear @a[team=Blue] bow
+execute as @s[scores={count=600}] as @a[team=Blue] run function game:saberblue
+execute as @s[scores={count=600}] run clear @a[team=Yellow] bow
+execute as @s[scores={count=600}] as @a[team=Yellow] run function game:saberyellow
 execute as @s[scores={count=600}] run tellraw @a[team=Blue] [{"text":"Drop your ","color":"blue","italic":"true"},{"text":"Shooting Saber ","color":"aqua","bold":"true","italic":"false"},{"text":"to leave the match.","color":"blue","italic":"true"}]
 execute as @s[scores={count=600}] run tellraw @a[team=Yellow] [{"text":"Drop your ","color":"gold","italic":"true"},{"text":"Shooting Saber ","color":"yellow","bold":"true","italic":"false"},{"text":"to leave the match.","color":"gold","italic":"true"}]
 execute as @s[scores={count=600},tag=!GameEnd] run tag @a remove CalculateWin

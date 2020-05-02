@@ -10,7 +10,7 @@ tag @a remove JoinBlue
 tag @a remove JoinYellow
 
 #Start Game
-scoreboard players set @s[scores={count=1..}] RandomItem 398
+scoreboard players set @s[scores={count=1..}] RandomItem 298
 
 
 tag @a[team=Blue] add InRanked

@@ -4,7 +4,7 @@ tag @e[tag=Selection,tag=!GameStarted] remove CriteriaTrue
 #Joinpad Blue
 execute as @e[tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=bluejoinpad,tag=CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
-execute as @e[tag=Selection,scores={largerTeam=-1..0}] as @e[tag=bluejoinpad] at @s run tag @a[distance=..1,team=Lobby] add JoinBlue
+execute as @e[tag=Selection,scores={largerTeam=-1..0}] as @e[tag=bluejoinpad] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
 execute as @e[tag=bluejoinpad,tag=CancelJoin] at @a run tag @a remove JoinBlue
 team join Blue @a[tag=JoinBlue]
 clear @a[tag=JoinBlue]
@@ -31,7 +31,7 @@ execute as @e[tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lobby] remove 
 #Joinpad Yellow
 execute as @e[tag=yellowjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=yellowjoinpad,tag=CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
-execute as @e[tag=Selection,scores={largerTeam=0..1}] as @e[tag=yellowjoinpad] at @s run tag @a[distance=..1,team=Lobby] add JoinYellow
+execute as @e[tag=Selection,scores={largerTeam=0..1}] as @e[tag=yellowjoinpad] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
 execute as @e[tag=yellowjoinpad,tag=CancelJoin] run tag @a remove JoinYellow
 team join Yellow @a[tag=JoinYellow]
 clear @a[tag=JoinYellow]
@@ -68,7 +68,7 @@ tag @a remove LeaveTeams
 #Joinpad + Leavepad Spectator
 execute as @e[tag=specjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:gray_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=specjoinpad,tag=CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
-execute as @e[tag=specjoinpad,tag=!CancelJoin] at @s run tag @a[team=!Spectator,distance=..1] add JoinSpec
+execute as @e[tag=specjoinpad,tag=!CancelJoin] at @s run tag @p[team=!Spectator,distance=..1] add JoinSpec
 execute as @e[tag=specjoinpad,tag=CancelJoin] run tag @a remove JoinSpec
 execute as @e[tag=specjoinpad] at @s run tag @a[team=Spectator,distance=..1] add AlreadySpec
 execute as @e[tag=specjoinpad,tag=CancelJoin] run tag @a remove AlreadySpec

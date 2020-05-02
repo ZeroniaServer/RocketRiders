@@ -1,5 +1,5 @@
 #Immortal
-advancement grant @a[scores={deaths=..0}] only achievements:rr_challenges/immortal
+execute as @a[scores={deaths=..0}] unless entity @s[team=!Blue,team=!Yellow] run advancement grant @s only achievements:rr_challenges/immortal
 
 #Ballet Dancer
 execute as @a[team=Blue,tag=!FailedBallet] run advancement grant @s only achievements:rr_challenges/ballet

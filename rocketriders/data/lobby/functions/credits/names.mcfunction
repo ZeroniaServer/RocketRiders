@@ -57,10 +57,10 @@ execute as @e[tag=LekroCredits,scores={CreditCycle=1}] at @s run summon area_eff
 
 #devs
 execute as @e[tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"YZEROgame","color":"green"}'}
-execute as @e[tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game creator.","color":"green"}'}
+execute as @e[tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game Creator.","color":"green"}'}
 
 execute as @e[tag=EvtemaCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Evtema3","color":"red"}'}
-execute as @e[tag=EvtemaCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game creator.","color":"red"}'}
+execute as @e[tag=EvtemaCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game Creator.","color":"red"}'}
 
 execute as @e[tag=ChronosCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Chronos22Gamer","color":"blue"}'}
 execute as @e[tag=ChronosCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Missile Design.","color":"blue"}'}

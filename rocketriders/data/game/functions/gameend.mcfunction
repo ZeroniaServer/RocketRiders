@@ -20,7 +20,7 @@ execute as @s[scores={endtimer=570}] run team join Spectator @a[team=Yellow]
 execute as @s[scores={endtimer=570}] run gamemode adventure @a[team=!Developer,team=!Lobby]
 execute as @s[scores={endtimer=570}] run tp @a[team=Spectator,tag=!WasInBlue,tag=!WasInYellow] -43 211 78 90 0
 execute as @s[scores={endtimer=570}] run tp @a[tag=WasInYellow] -36 211 96.0 90 0
-execute as @s[scores={endtimer=570}] run tp @a[tag=WasInBlue] -36 211 60.0 90 0
+execute as @s[scores={endtimer=570}] run tp @a[tag=WasInBlue] -36 211 61.0 90 0
 execute as @s[scores={endtimer=570}] run tag @a[tag=WasInYellow] remove WasInYellow
 execute as @s[scores={endtimer=570}] run tag @a[tag=WasInBlue] remove WasInBlue
 execute as @s[scores={endtimer=570}] run team join Lobby @a[team=Spectator]

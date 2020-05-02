@@ -14,7 +14,7 @@ execute as @e[tag=Selection,tag=!GameStarted] run tellraw @a[tag=JoinBlue] {"tex
 execute as @e[tag=Selection,tag=!GameStarted] run effect give @a[tag=JoinBlue] resistance 1000000 255 true
 execute as @e[tag=Selection,tag=GameStarted] run tp @a[tag=JoinBlue] 12 64 -66 0 0
 execute as @e[tag=Selection,tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
-execute as @e[tag=Selection,tag=GameStarted] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"blue","italic":"true"},{"text":"Shooting Saber ","color":"aqua","bold":"true","italic":"false"},{"text":"to leave the match.","color":"blue","italic":"true"}]
+execute as @e[tag=Selection,tag=GameStarted] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
 execute as @e[tag=Selection,tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
 execute as @e[tag=Selection,tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
 execute as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~

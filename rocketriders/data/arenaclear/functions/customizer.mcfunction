@@ -121,6 +121,10 @@ execute as @e[tag=Selection,tag=!doSurprise] run data merge block -70 191 79 {Te
 execute as @e[tag=Selection,tag=doHotbarLimit] run data merge block -70 193 77 {Text1:"{\"text\":\"Hotbar Limit\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove doHotbarLimit\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 execute as @e[tag=Selection,tag=!doHotbarLimit] run data merge block -70 193 77 {Text1:"{\"text\":\"Hotbar Limit\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doHotbarLimit\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 
+#item stacking
+execute as @e[tag=Selection,tag=doStacking] run data merge block -70 191 77 {Text1:"{\"text\":\"Item Stacking\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove doStacking\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
+execute as @e[tag=Selection,tag=!doStacking] run data merge block -70 191 77 {Text1:"{\"text\":\"Item Stacking\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doStacking\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
+
 
 ##ENABLE DISABLE ENTIRE CATEGORIES
 #all missiles

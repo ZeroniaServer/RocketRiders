@@ -53,7 +53,3 @@ clear @s[team=Yellow,scores={HasSurprise=4..}] cod_spawn_egg 1
 clear @s[scores={HasNova=2..}] crossbow 1
 clear @s[scores={HasVortex=2..}] egg 1
 clear @s[scores={HasSplash=2..}] splash_potion{Potion:"minecraft:water"} 1
-
-#inventory limiter
-scoreboard players set @s invCount 0
-execute if entity @e[tag=Selection,tag=doHotbarLimit] run function items:invcount

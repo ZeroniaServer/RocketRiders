@@ -13,4 +13,4 @@ execute if entity @e[tag=Selection,tag=rngMissile] if entity @s[tag=doSurprise] 
 tag @e[tag=rngSU,sort=random,limit=1] add rngSUSelected
 
 execute as @e[tag=rngSUSelected,tag=rngSurprise] run execute as @a[team=Blue] run function items:surprise_blue/givesurpriseegg
-execute as @e[tag=rngSUSelected,tag=rngSurprise] run execute as @a[team=Blue] run function items:surprise_yellow/givesurpriseegg
+execute as @e[tag=rngSUSelected,tag=rngSurprise] run execute as @a[team=Yellow] run function items:surprise_yellow/givesurpriseegg

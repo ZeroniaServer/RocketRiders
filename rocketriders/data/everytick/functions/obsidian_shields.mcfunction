@@ -31,19 +31,19 @@ execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s
 execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s run playsound minecraft:block.end_portal_frame.fill player @a ~ ~ ~ 2 0
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=3}] at @s run playsound minecraft:block.end_portal_frame.fill player @a ~ ~ ~ 2 0
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldblue"}
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ obsidian
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 2 2
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run playsound minecraft:item.shield.block player @a ~ ~ ~ 2 0
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon area_effect_cloud ~ ~ ~ {Tags:["blueobsidianshield"],Duration:2000000000}
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run scoreboard players set @e[tag=blueobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
-kill @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5..}]
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=4}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=4}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=4}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=4}] at @s run playsound minecraft:block.end_portal_frame.fill player @a ~ ~ ~ 2 0
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=7}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldblue"}
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=7}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=7}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=7}] at @s run setblock ~ ~-1 ~ obsidian
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=7}] at @s run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 2 2
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=7}] at @s run playsound minecraft:item.shield.block player @a ~ ~ ~ 2 0
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=7}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon area_effect_cloud ~ ~ ~ {Tags:["blueobsidianshield"],Duration:2000000000}
+execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=7}] at @s run scoreboard players set @e[tag=blueobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
+kill @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=7..}]
 tp @e[tag=BlueObshield] ~ ~-250 ~
 kill @e[tag=BlueObshield]
 
@@ -92,6 +92,7 @@ execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=4}] at 
 execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=7}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldyellow"}
 execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=7}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=7}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=7}] at @s run setblock ~ ~-1 ~ obsidian
 execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=7}] at @s run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 2 2
 execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=7}] at @s run playsound minecraft:item.shield.block player @a ~ ~ ~ 2 0
 execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=7}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon area_effect_cloud ~ ~ ~ {Tags:["yellowobsidianshield"],Duration:2000000000}

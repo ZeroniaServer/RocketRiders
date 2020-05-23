@@ -5,3 +5,5 @@ give @s[team=Blue,scores={HasCitadel=0},tag=!fullHotbar] wandering_trader_spawn_
 
 
 tag @e[tag=Selection] add givenCita
+
+tag @e[tag=Bot] add BotHasCita

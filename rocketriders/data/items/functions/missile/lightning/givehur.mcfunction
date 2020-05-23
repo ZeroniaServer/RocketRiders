@@ -4,3 +4,5 @@ give @s[team=Yellow,scores={HasHur=0},tag=!fullHotbar] drowned_spawn_egg{display
 give @s[team=Blue,scores={HasHur=0},tag=!fullHotbar] drowned_spawn_egg{display:{Name:'[{"text":"[Lightning] ","color":"yellow","bold":"true"},{"text":"Hurricane","color":"blue","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"18","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"Rubix_One","color":"gray"}','{"text":" ","color":"gray"}','{"text":"The Hurricane is a lightning-speed missile.","color":"gray"}','{"text":"Fittingly, it flies faster than most missiles.","color":"gray"}','{"text":"It might be harder to get on this one.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['missile','bluemissile','BlueHur']}} 1
 
 tag @e[tag=Selection] add givenHur
+
+tag @e[tag=Bot] add BotHasHur

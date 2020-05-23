@@ -4,3 +4,5 @@ give @s[team=Yellow,scores={HasGemi=0},tag=!fullHotbar] fox_spawn_egg{display:{N
 give @s[team=Blue,scores={HasGemi=0},tag=!fullHotbar] fox_spawn_egg{display:{Name:'[{"text":"[Normal] ","color":"green","bold":"true"},{"text":"Gemini","color":"blue","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"4","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"Evtema3 & Samnrad","color":"gray"}','{"text":" ","color":"gray"}','{"text":"The Gemini is a twin missile, in that","color":"gray"}','{"text":"if one side is stopped, the other","color":"gray"}','{"text":"side of the missile will keep going.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['missile','bluemissile','BlueGemi']}} 1
 
 tag @e[tag=Selection] add givenGemi
+
+tag @e[tag=Bot] add BotHasGemi

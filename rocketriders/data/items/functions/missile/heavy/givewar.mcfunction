@@ -4,3 +4,5 @@ give @s[team=Yellow,scores={HasWar=0},tag=!fullHotbar] silverfish_spawn_egg{disp
 give @s[team=Blue,scores={HasWar=0},tag=!fullHotbar] silverfish_spawn_egg{display:{Name:'[{"text":"[Heavy] ","color":"dark_red","bold":"true"},{"text":"Warhead","color":"blue","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"25","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"Rubix_One","color":"gray"}','{"text":" ","color":"gray"}','{"text":"The Warhead is a Juggernaut-style missile.","color":"gray"}','{"text":"When the Warhead hits a wall, the piston on","color":"gray"}','{"text":"top of it will cover up the trigger TNT.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['missile','bluemissile','BlueWar']}} 1
 
 tag @e[tag=Selection] add givenWar
+
+tag @e[tag=Bot] add BotHasWar

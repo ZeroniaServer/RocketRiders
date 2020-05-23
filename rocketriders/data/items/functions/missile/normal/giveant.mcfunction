@@ -4,3 +4,5 @@ give @s[team=Yellow,scores={HasAnt=0},tag=!fullHotbar] bat_spawn_egg{display:{Na
 give @s[team=Blue,scores={HasAnt=0},tag=!fullHotbar] bat_spawn_egg{display:{Name:'[{"text":"[Normal] ","color":"green","bold":"true"},{"text":"A.N.T.","color":"blue","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"2","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"Evtema3","color":"gray"}','{"text":" ","color":"gray"}','{"text":"The A.N.T stands for Almost No TNT.","color":"gray"}','{"text":"It is the smallest functional missile","color":"gray"}','{"text":"ever made using only 2 TNT blocks.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Duration:100,Radius:0f,RadiusPerTick:-1f,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueAnt'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
 
 tag @e[tag=Selection] add givenAnt
+
+tag @e[tag=Bot] add BotHasAnt

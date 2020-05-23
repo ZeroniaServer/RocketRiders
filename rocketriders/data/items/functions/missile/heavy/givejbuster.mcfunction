@@ -4,3 +4,5 @@ give @s[team=Yellow,scores={HasJug=0},tag=!fullHotbar] zombie_horse_spawn_egg{di
 give @s[team=Blue,scores={HasJug=0},tag=!fullHotbar] zombie_horse_spawn_egg{display:{Name:'[{"text":"[Heavy] ","color":"dark_red","bold":"true"},{"text":"Juggerbuster","color":"blue","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"30","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"Chronos22Gamer","color":"gray"}','{"text":" ","color":"gray"}','{"text":"This is a Juggernaut-Shieldbuster hybrid.","color":"gray"}','{"text":"This missile has the power of a Juggernaut","color":"gray"}','{"text":"plus the ability to bust through a shield.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Duration:100,Radius:0f,RadiusPerTick:-1f,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueJug'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
 
 tag @e[tag=Selection] add givenJbust
+
+tag @e[tag=Bot] add BotHasJug

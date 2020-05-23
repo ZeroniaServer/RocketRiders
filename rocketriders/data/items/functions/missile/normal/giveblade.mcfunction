@@ -4,3 +4,5 @@ give @s[team=Yellow,scores={HasBlade=0},tag=!fullHotbar] husk_spawn_egg{display:
 give @s[team=Blue,scores={HasBlade=0},tag=!fullHotbar] husk_spawn_egg{display:{Name:'[{"text":"[Normal] ","color":"green","bold":"true"},{"text":"Blade","color":"blue","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"14","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"Rubix_One","color":"gray"}','{"text":" ","color":"gray"}','{"text":"The Blade is a sword-shaped missile.","color":"gray"}','{"text":"Breaking the slime block on the side","color":"gray"}','{"text":"will drop down 3 bomber TNT below it.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Duration:100,Radius:0f,RadiusPerTick:-1f,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueBlade'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
 
 tag @e[tag=Selection] add givenBlade
+
+tag @e[tag=Bot] add BotHasBlade

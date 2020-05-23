@@ -4,3 +4,5 @@ give @s[team=Yellow,scores={HasAux=0},tag=!fullHotbar] mooshroom_spawn_egg{displ
 give @s[team=Blue,scores={HasAux=0},tag=!fullHotbar] mooshroom_spawn_egg{display:{Name:'[{"text":"[Heavy] ","color":"dark_red","bold":"true"},{"text":"Auxiliary","color":"blue","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"24","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"Evtema3","color":"gray"}','{"text":" ","color":"gray"}','{"text":"The Auxiliary is a heavy missile.","color":"gray"}','{"text":"This missile has 6 triggers in it,","color":"gray"}','{"text":"making it risky to defuse.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Duration:100,Radius:0f,RadiusPerTick:-1f,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:['missile','bluemissile','BlueAux'],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}} 1
 
 tag @e[tag=Selection] add givenAux
+
+tag @e[tag=Bot] add BotHasAux

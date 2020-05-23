@@ -4,7 +4,6 @@ function game:leavemidgame
 #general
 execute as @a unless entity @s[team=!Blue,team=!Yellow] if entity @e[tag=Selection,tag=!doStacking] run function rr_powerups:items/antidupe
 execute as @a unless entity @s[team=!Blue,team=!Yellow] if entity @e[tag=Selection,tag=doStacking] run function rr_powerups:items/antiantidupe
-function rr_powerups:items/spawnitems
 function rr_powerups:everytick/smoke_bomb
 function rr_powerups:everytick/lava_splash
 function rr_powerups:everytick/cancel_utility

@@ -137,12 +137,12 @@ execute as @e[tag=YellowLift] at @s run setblock ~-1 ~-7 ~-10 structure_block[mo
 execute as @e[tag=YellowLift] at @s positioned ~-1 ~-7 ~-10 run function items:poststructureblock
 
 #Hypersonic
-execute as @e[tag=BlueHyper] at @s positioned ~-1 ~-9 ~5 run function items:prestructureblock
-execute as @e[tag=BlueHyper] at @s run setblock ~-1 ~-9 ~5 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:hypersonic_blue"}
-execute as @e[tag=BlueHyper] at @s positioned ~-1 ~-9 ~5 run function items:poststructureblock
-execute as @e[tag=YellowHyper] at @s positioned ~-1 ~-9 ~-13 run function items:prestructureblock
-execute as @e[tag=YellowHyper] at @s run setblock ~-1 ~-9 ~-13 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:hypersonic_yellow"}
-execute as @e[tag=YellowHyper] at @s positioned ~-1 ~-9 ~-13 run function items:poststructureblock
+execute as @e[tag=BlueHyper] at @s positioned ~-1 ~-8 ~5 run function items:prestructureblock
+execute as @e[tag=BlueHyper] at @s run setblock ~-1 ~-8 ~5 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:hypersonic_blue"}
+execute as @e[tag=BlueHyper] at @s positioned ~-1 ~-8 ~5 run function items:poststructureblock
+execute as @e[tag=YellowHyper] at @s positioned ~-1 ~-8 ~-13 run function items:prestructureblock
+execute as @e[tag=YellowHyper] at @s run setblock ~-1 ~-8 ~-13 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:hypersonic_yellow"}
+execute as @e[tag=YellowHyper] at @s positioned ~-1 ~-8 ~-13 run function items:poststructureblock
 
 #Bullet
 execute as @e[tag=BlueBull] at @s positioned ~-1 ~-8 ~4 run function items:prestructureblock
@@ -175,20 +175,10 @@ execute as @e[tag=yellowmissile,tag=!YellowCata,tag=surprising,tag=!YellowSurpri
 execute as @e[tag=missile,tag=surprising,scores={surpriseTime=2..}] run tp @s ~ ~-200 ~
 kill @e[tag=missile,tag=surprising,scores={surpriseTime=2..}]
 
-#Nova Rocket
-execute as @e[tag=BlueNovaSpawner] at @s run summon armor_stand ~ ~ ~ {Tags:["BlueNova"],NoGravity:1,Marker:1,Invisible:1,Invulnerable:1}
-execute as @e[tag=YellowNovaSpawner] at @s run summon armor_stand ~ ~ ~ {Tags:["YellowNova"],NoGravity:1,Marker:1,Invisible:1,Invulnerable:1}
-tp @e[tag=BlueNovaSpawner] ~ ~-200 ~
-kill @e[tag=BlueNovaSpawner]
-tp @e[tag=YellowNovaSpawner] ~ ~-200 ~
-kill @e[tag=YellowNovaSpawner]
-
 #Fireball
 execute as @e[tag=BlueFireball] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Silent:1b,Tags:["FireballAS"],Passengers:[{id:fireball,Tags:["NormalFireball","NoMotion"],ExplosionPower:1,direction:[0.0,0.0,0.0]}]}
-tp @e[tag=BlueFireball] ~ ~-200 ~
 kill @e[tag=BlueFireball]
 execute as @e[tag=YellowFireball] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Silent:1b,Tags:["FireballAS"],Passengers:[{id:fireball,Tags:["NormalFireball","NoMotion"],ExplosionPower:1,direction:[0.0,0.0,0.0]}]}
-tp @e[tag=YellowFireball] ~ ~-200 ~
 kill @e[tag=YellowFireball]
 tag @e[type=fireball,tag=NormalFireball,nbt={direction:[0.0,0.0,0.0]},tag=!Still] add Still
 execute as @e[type=fireball,tag=!Still] at @s[tag=NormalFireball] run particle flame ~ ~1 ~ 0 0 0 0.1 10 force @a

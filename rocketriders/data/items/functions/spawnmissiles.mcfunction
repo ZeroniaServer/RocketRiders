@@ -1,6 +1,9 @@
 #Prevention
 execute if entity @e[tag=Selection,tag=doPrevention] run function items:prevention/preventmissiles
 
+execute as @e[tag=bluemissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
+execute as @e[tag=yellowmissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
+
 #Auxiliary
 execute as @e[tag=BlueAux] at @s positioned ~-1 ~-9 ~4 run function items:prestructureblock
 execute as @e[tag=BlueAux] at @s run setblock ~-1 ~-9 ~4 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:auxiliary_blue"}
@@ -152,7 +155,6 @@ execute as @e[tag=YellowBull] at @s positioned ~-1 ~-8 ~-18 run function items:p
 #Missile prep (except Surprise Egg and Catapult)
 execute as @e[tag=bluemissile,tag=!BlueCata,tag=!surprising,tag=!BlueSurprise] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
 execute as @e[tag=yellowmissile,tag=!YellowCata,tag=!surprising,tag=!YellowSurprise] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
-execute as @e[tag=missile,tag=!surprising] run tp @s ~ ~-200 ~
 kill @e[tag=missile,tag=!surprising]
 
 #Surprise Egg

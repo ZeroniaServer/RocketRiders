@@ -5,3 +5,5 @@ give @s[team=Blue,scores={HasArrows=0},tag=!fullHotbar] arrow{display:{Name:'{"t
 
 tag @e[tag=Selection,tag=givenArrows] add givenArrowsTwice
 tag @e[tag=Selection] add givenArrows
+
+scoreboard players set @e[tag=Bot] botarrowitems 4

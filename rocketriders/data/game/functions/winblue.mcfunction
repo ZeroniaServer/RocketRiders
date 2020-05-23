@@ -2,6 +2,9 @@
 function achievements:aftergameblue
 function achievements:aftergame
 
+#Kill bots
+kill @e[tag=Bot]
+
 #Win stuff
 tag @e[tag=Selection] add GameEnd
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear

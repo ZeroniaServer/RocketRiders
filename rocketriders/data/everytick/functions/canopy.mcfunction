@@ -115,9 +115,9 @@ execute as @e[scores={testplat=10}] at @s store result score @e[tag=YellowPlatfo
 kill @e[scores={testplat=10..}]
 #the teleport window for players on canopies is 2 seconds. this is to ensure that falling players arrive on the canopy safely and to reduce lag-induced oddities with canopies.
 execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
-execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 1 100 true
-execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s jump_boost 2 128 true
-execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
+execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 1 100 true
+execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s jump_boost 2 128 true
+execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
 #after 2 seconds the canopy gives up
 execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slow_falling
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUIDL
@@ -151,9 +151,9 @@ execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatfor
 kill @e[scores={testplat2=10..}]
 #the teleport window for players on canopies is 2 seconds. this is to ensure that falling players arrive on the canopy safely and to reduce lag-induced oddities with canopies.
 execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
-execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 1 100 true
-execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s jump_boost 2 128 true
-execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
+execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 1 100 true
+execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s jump_boost 2 128 true
+execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
 #after 2 seconds the canopy gives up
 execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slow_falling
 scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUIDL

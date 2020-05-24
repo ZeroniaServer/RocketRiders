@@ -1,8 +1,9 @@
-#death message
-tellraw @a ["",{"selector":"@s"},{"text":" fell out of the world"}]
+#death message (hackfix: works for crossers too)
+execute if entity @s[tag=!crosser] run tellraw @a ["",{"selector":"@s"},{"text":" fell out of the world"}]
+execute if entity @s[tag=crosser] run tellraw @a ["",{"selector":"@s"},{"text":" tried to leave their base"}]
 
 #non-spectators statistics
-scoreboard players add @s[team=!Spectator] FellVoid 1
+scoreboard players add @s[team=!Spectator,tag=!crosser] FellVoid 1
 scoreboard players add @s[team=!Spectator] deaths 1
 scoreboard players add @s[team=!Spectator] death 1
 

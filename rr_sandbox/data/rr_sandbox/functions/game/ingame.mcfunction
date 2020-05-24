@@ -33,23 +33,6 @@ scoreboard players reset @e[scores={RandomItem=400..}] RandomItem
 spawnpoint @a[team=Blue] 12 64 -66
 spawnpoint @a[team=Yellow] 12 64 66
 
-#kill crossers
-execute as @a[team=Blue] at @s if entity @s[z=-36,dz=220] run tag @s add crosser
-execute as @a[team=Yellow] at @s if entity @s[z=-184,dz=220] run tag @s add crosser
-execute as @a[tag=crosser] run tellraw @a ["",{"selector":"@s"},{"text":" tried to cross to the other base"}]
-effect give @a[tag=crosser] resistance 1 100 true
-effect give @a[tag=crosser] instant_health 1 100 true
-effect give @a[tag=crosser] fire_resistance 4 100 true
-#remove fall damage (superfluous)
-#scoreboard players set @a[tag=crosser] crossNoFallCount 0
-#effect give @a[scores={crossNoFallCount=0}] slow_falling 1 1 true
-#scoreboard players add @a[scores={crossNoFallCount=0..4}] crossNoFallCount 1
-#effect clear @a[scores={crossNoFallCount=5}] slow_falling
-#scoreboard players reset @a[scores={crossNoFallCount=5}] crossNoFallCount
-tp @a[team=Blue,tag=crosser] 12 64 -66 0 0 
-tp @a[team=Yellow,tag=crosser] 12 64 66 -180 0
-tag @a remove crosser
-
 #smart clear stuff
 execute as @a[team=Yellow] unless entity @s[scores={SBplaceSlime=0,SBplaceRS=0,SBplacePiston=0,SBplaceSPiston=0,SBplaceObs=0,SBplaceTNT=0,SBplaceBGlass=0,SBplaceYGlass=0,SBplaceBGlaze=0,SBplaceYGlaze=0,SBplaceBCon=0,SBplaceYCon=0}] at @s unless entity @e[tag=SmartClearAECyellow,limit=1,sort=nearest,distance=..6] run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECyellow"]}
 execute as @a[team=Blue] unless entity @s[scores={SBplaceSlime=0,SBplaceRS=0,SBplacePiston=0,SBplaceSPiston=0,SBplaceObs=0,SBplaceTNT=0,SBplaceBGlass=0,SBplaceYGlass=0,SBplaceBGlaze=0,SBplaceYGlaze=0,SBplaceBCon=0,SBplaceYCon=0}] at @s unless entity @e[tag=SmartClearAECblue,limit=1,sort=nearest,distance=..6] run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECblue"]}

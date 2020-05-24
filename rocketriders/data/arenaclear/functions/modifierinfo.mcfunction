@@ -1,7 +1,7 @@
-execute if entity @e[tag=Selection,scores={modifierID=0}] run tellraw @s {"text":"Instamine: TBD"}
-execute if entity @e[tag=Selection,scores={modifierID=1}] run tellraw @s {"text":"No Fall: TBD"}
-execute if entity @e[tag=Selection,scores={modifierID=2}] run tellraw @s {"text":"Explosive: TBD"}
-execute if entity @e[tag=Selection,scores={modifierID=3}] run tellraw @s {"text":"Rocket Residers: TBD"}
-execute if entity @e[tag=Selection,scores={modifierID=4}] run tellraw @s {"text":"Sonar: TBD"}
-execute if entity @e[tag=Selection,scores={modifierID=5}] run tellraw @s {"text":"Molerat: TBD"}
+execute if entity @e[tag=Selection,scores={modifierID=0}] run tellraw @s [{"text":"Instamine:","color":"aqua","bold":"true"},{"text":" Players receive Haste 255 and can mine (most) blocks instantly.","color":"white","bold":"false"}]
+execute if entity @e[tag=Selection,scores={modifierID=1}] run tellraw @s [{"text":"No Fall:","color":"aqua","bold":"true"},{"text":" Players are immune to fall damage.","color":"white","bold":"false"}]
+execute if entity @e[tag=Selection,scores={modifierID=2}] run tellraw @s [{"text":"Explosive:","color":"aqua","bold":"true"},{"text":" TNT, Fireballs, Nova Propellants, and the Vortex all do more explosion damage.","color":"white","bold":"false"}]
+execute if entity @e[tag=Selection,scores={modifierID=3}] run tellraw @s [{"text":"Rocket Residers:","color":"aqua","bold":"true"},{"text":" Players cannot leave their bases.","color":"white","bold":"false"}]
+execute if entity @e[tag=Selection,scores={modifierID=4}] run tellraw @s [{"text":"Sonar:","color":"aqua","bold":"true"},{"text":" Players receive night vision and blindness so they cannot see blocks. Other players and projectiles have glowing.","color":"white","bold":"false"}]
+execute if entity @e[tag=Selection,scores={modifierID=5}] run tellraw @s [{"text":"Molerat:","color":"aqua","bold":"true"},{"text":" A big block of glass spawns in the center of the map, which players must break through to damage the other base.","color":"white","bold":"false"}]
 tag @s remove modifierInfo

@@ -1,4 +1,5 @@
 #leavegame
+effect clear @a[scores={LeaveGame=1..}]
 team join Lobby @a[scores={LeaveGame=1..}]
 gamemode adventure @a[scores={LeaveGame=1..}]
 spawnpoint @a[scores={LeaveGame=1..}] -43 211 78

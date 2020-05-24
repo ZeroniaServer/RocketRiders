@@ -4,6 +4,8 @@ tag @s remove GameStarted
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
 execute as @s[scores={endtimer=1}] run effect clear @a haste
+execute as @s[scores={endtimer=1}] run effect clear @a blindness
+execute as @s[scores={endtimer=1}] run effect clear @a glowing
 execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false

@@ -12,5 +12,5 @@ function everytick:no_drop
 
 #reset
 execute if entity @e[tag=PlacerClear] run function rr_pve:arenaclear/baseplacement
-execute if entity @e[tag=PlacerClear] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"PVE Mode is enabled.","color":"dark_green","bold":"true"}
+execute if entity @e[tag=PlacerClear] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"PVE Mode is enabled.","color":"light_purple","bold":"true"}
 tag @e[tag=PlacerClear] add BasePlaced

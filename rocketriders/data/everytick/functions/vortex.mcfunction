@@ -65,7 +65,8 @@ execute as @e[scores={vortexBoom=10..}] at @s run scoreboard players set @e[tag=
 execute as @e[scores={vortexBoom=10..}] at @s run scoreboard players set @e[tag=VortexYellow,distance=..6] vortexBoom 10
 execute as @e[tag=VortexItemYellow] at @s unless entity @e[tag=VortexYellow,distance=..2,limit=1,sort=nearest] run kill @s
 execute as @e[tag=VortexItemBlue] at @s unless entity @e[tag=VortexBlue,distance=..2,limit=1,sort=nearest] run kill @s
-execute as @e[scores={vortexBoom=10..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:3,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:["BlueAnt"],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @e[tag=Selection,tag=!Explosive] as @e[scores={vortexBoom=10..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:3,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:["BlueAnt"],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @e[tag=Selection,tag=Explosive] as @e[scores={vortexBoom=10..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:5,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,Tags:["BlueAnt"],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
 execute as @e[scores={vortexBoom=10..}] at @s run kill @s
 
 #Feathered vortex (lmao)

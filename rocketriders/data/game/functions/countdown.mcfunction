@@ -56,8 +56,8 @@ execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
 #hotfix for bug where jumping in queue rooms disqualifies you from ground bound
 execute as @s[scores={count=600}] run scoreboard players set @a[team=Yellow] jumps 0
 execute as @s[scores={count=600}] run scoreboard players set @a[team=Blue] jumps 0
-#enabling damage gamerules
-execute as @s[scores={count=600}] run gamerule fallDamage true
+#enabling damage gamerules (considers modifiers)
+execute as @s[scores={count=600},tag=!NoFall] run gamerule fallDamage true
 execute as @s[scores={count=600}] run gamerule drowningDamage true
 execute as @s[scores={count=600}] run gamerule fireDamage true
 scoreboard players set @s[tag=GameStarted] count 0

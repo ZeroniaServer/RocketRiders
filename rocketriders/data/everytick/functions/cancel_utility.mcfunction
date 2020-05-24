@@ -1,7 +1,7 @@
 #disable fireballs near portals
 execute as @e[type=fireball,tag=!obfireball] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
 execute as @e[type=fireball,tag=!obfireball] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
-execute as @e[type=fireball,tag=!obfireball] at @s unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:1}
+execute as @e[type=fireball,tag=!obfireball] at @s unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] if entity @e[tag=Selection,tag=!Explosive] run data merge entity @s {ExplosionPower:1}
 
 #kill novarockets near portals
 execute as @e[scores={novatimer=1..}] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run kill @s

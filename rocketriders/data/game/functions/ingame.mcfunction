@@ -26,6 +26,7 @@ function everytick:splash
 function everytick:novarocket
 function everytick:clear_spawnblocks
 function everytick:no_fall
+function everytick:modifiers
 
 #spawntrap hotfix
 execute unless block 12 63 -66 obsidian run setblock 12 63 -66 obsidian

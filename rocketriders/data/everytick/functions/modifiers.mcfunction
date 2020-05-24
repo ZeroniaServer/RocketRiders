@@ -21,3 +21,4 @@ execute if entity @s[tag=Sonar] as @e[type=ender_pearl] run data merge entity @s
 execute if entity @s[tag=Sonar] as @e[type=tnt] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[tag=VortexItemBlue] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[tag=VortexItemYellow] run data merge entity @s {Glowing:1b}
+execute if entity @s[tag=Sonar] as @e[tag=Bot] run data merge entity @s {Glowing:1b}

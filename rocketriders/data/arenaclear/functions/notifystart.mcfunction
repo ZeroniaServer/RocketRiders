@@ -1,4 +1,4 @@
-tellraw @s {"text":"The game is ready to play!","color":"green","bold":"true"}
+tellraw @s {"text":"The game is ready to play!","color":"dark_green","bold":"true"}
 
 #Active modifiers
 execute if entity @e[tag=Selection,tag=Instamine] run tellraw @s {"text":"Instamine is enabled.","color":"aqua","bold":"true"}

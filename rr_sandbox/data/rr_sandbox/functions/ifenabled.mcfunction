@@ -14,4 +14,4 @@ function everytick:team_balance
 #reset
 execute if entity @e[tag=PlacerClear] run function rr_sandbox:arenaclear/baseplacement
 execute if entity @e[tag=PlacerClear] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Sandbox Mode is enabled.","color":"light_purple","bold":"true"}
-kill @e[tag=PlacerClear]
+tag @e[tag=PlacerClear] add BasePlaced

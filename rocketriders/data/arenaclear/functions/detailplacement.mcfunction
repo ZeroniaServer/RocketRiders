@@ -1,56 +1,56 @@
 #Normal map - Structureblocks Yellow Base
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock 24 49 47 structure_block{mode:"LOAD",name:"yellow_cornerhole"}
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock -8 49 47 structure_block{mode:"LOAD",name:"yellow_cornerhole"}
-execute as @e[tag=Selection,scores={BottomDeco=1}] run setblock 8 39 47 structure_block{mode:"LOAD",name:"yellow_cornerhole"}
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 17 59 46 structure_block{mode:"LOAD",name:"yellow_topplatform"}
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 1 59 46 structure_block{mode:"LOAD",name:"yellow_topplatform"}
-execute as @e[tag=Selection,scores={TopDeco=1}] run setblock 2 64 54 structure_block{mode:"LOAD",name:"yellow_arch"}
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock 24 50 47 redstone_block
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock -8 50 47 redstone_block
-execute as @e[tag=Selection,scores={BottomDeco=1}] run setblock 8 40 47 redstone_block
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 17 60 46 redstone_block
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 1 60 46 redstone_block
-execute as @e[tag=Selection,scores={TopDeco=1}] run setblock 2 65 54 redstone_block
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock 24 49 47 air
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock -8 49 47 air
-execute as @e[tag=Selection,scores={BottomDeco=1}] run setblock 8 39 47 air
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 17 58 46 air
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 1 58 46 air
-execute as @e[tag=Selection,scores={TopDeco=1}] run setblock 2 63 54 yellow_stained_glass
+execute as @s[scores={MiddleDeco=1}] run setblock 24 49 47 structure_block{mode:"LOAD",name:"yellow_cornerhole"}
+execute as @s[scores={MiddleDeco=1}] run setblock -8 49 47 structure_block{mode:"LOAD",name:"yellow_cornerhole"}
+execute as @s[scores={BottomDeco=1}] run setblock 8 39 47 structure_block{mode:"LOAD",name:"yellow_cornerhole"}
+execute as @s[scores={TopCorner=1}] run setblock 17 59 46 structure_block{mode:"LOAD",name:"yellow_topplatform"}
+execute as @s[scores={TopCorner=1}] run setblock 1 59 46 structure_block{mode:"LOAD",name:"yellow_topplatform"}
+execute as @s[scores={TopDeco=1}] run setblock 2 64 54 structure_block{mode:"LOAD",name:"yellow_arch"}
+execute as @s[scores={MiddleDeco=1}] run setblock 24 50 47 redstone_block
+execute as @s[scores={MiddleDeco=1}] run setblock -8 50 47 redstone_block
+execute as @s[scores={BottomDeco=1}] run setblock 8 40 47 redstone_block
+execute as @s[scores={TopCorner=1}] run setblock 17 60 46 redstone_block
+execute as @s[scores={TopCorner=1}] run setblock 1 60 46 redstone_block
+execute as @s[scores={TopDeco=1}] run setblock 2 65 54 redstone_block
+execute as @s[scores={MiddleDeco=1}] run setblock 24 49 47 air
+execute as @s[scores={MiddleDeco=1}] run setblock -8 49 47 air
+execute as @s[scores={BottomDeco=1}] run setblock 8 39 47 air
+execute as @s[scores={TopCorner=1}] run setblock 17 58 46 air
+execute as @s[scores={TopCorner=1}] run setblock 1 58 46 air
+execute as @s[scores={TopDeco=1}] run setblock 2 63 54 yellow_stained_glass
 
 #Normal map - Structureblocks Blue Base
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock 24 49 -55 structure_block{mode:"LOAD",name:"blue_cornerhole"}
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock -8 49 -55 structure_block{mode:"LOAD",name:"blue_cornerhole"}
-execute as @e[tag=Selection,scores={BottomDeco=1}] run setblock 8 39 -55 structure_block{mode:"LOAD",name:"blue_cornerhole"}
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 17 59 -54 structure_block{mode:"LOAD",name:"blue_topplatform"}
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 1 59 -54 structure_block{mode:"LOAD",name:"blue_topplatform"}
-execute as @e[tag=Selection,scores={TopDeco=1}] run setblock 2 64 -58 structure_block{mode:"LOAD",name:"blue_arch"}
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock 24 50 -55 redstone_block
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock -8 50 -55 redstone_block
-execute as @e[tag=Selection,scores={BottomDeco=1}] run setblock 8 40 -55 redstone_block
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 17 60 -54 redstone_block
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 1 60 -54 redstone_block
-execute as @e[tag=Selection,scores={TopDeco=1}] run setblock 2 65 -58 redstone_block
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock 24 49 -55 blue_stained_glass
-execute as @e[tag=Selection,scores={MiddleDeco=1}] run setblock -8 49 -55 blue_stained_glass
-execute as @e[tag=Selection,scores={BottomDeco=1}] run setblock 8 39 -55 blue_stained_glass
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 17 59 -54 blue_stained_glass
-execute as @e[tag=Selection,scores={TopCorner=1}] run setblock 1 59 -54 blue_stained_glass
-execute as @e[tag=Selection,scores={TopDeco=1}] run setblock 2 64 -58 air
+execute as @s[scores={MiddleDeco=1}] run setblock 24 49 -55 structure_block{mode:"LOAD",name:"blue_cornerhole"}
+execute as @s[scores={MiddleDeco=1}] run setblock -8 49 -55 structure_block{mode:"LOAD",name:"blue_cornerhole"}
+execute as @s[scores={BottomDeco=1}] run setblock 8 39 -55 structure_block{mode:"LOAD",name:"blue_cornerhole"}
+execute as @s[scores={TopCorner=1}] run setblock 17 59 -54 structure_block{mode:"LOAD",name:"blue_topplatform"}
+execute as @s[scores={TopCorner=1}] run setblock 1 59 -54 structure_block{mode:"LOAD",name:"blue_topplatform"}
+execute as @s[scores={TopDeco=1}] run setblock 2 64 -58 structure_block{mode:"LOAD",name:"blue_arch"}
+execute as @s[scores={MiddleDeco=1}] run setblock 24 50 -55 redstone_block
+execute as @s[scores={MiddleDeco=1}] run setblock -8 50 -55 redstone_block
+execute as @s[scores={BottomDeco=1}] run setblock 8 40 -55 redstone_block
+execute as @s[scores={TopCorner=1}] run setblock 17 60 -54 redstone_block
+execute as @s[scores={TopCorner=1}] run setblock 1 60 -54 redstone_block
+execute as @s[scores={TopDeco=1}] run setblock 2 65 -58 redstone_block
+execute as @s[scores={MiddleDeco=1}] run setblock 24 49 -55 blue_stained_glass
+execute as @s[scores={MiddleDeco=1}] run setblock -8 49 -55 blue_stained_glass
+execute as @s[scores={BottomDeco=1}] run setblock 8 39 -55 blue_stained_glass
+execute as @s[scores={TopCorner=1}] run setblock 17 59 -54 blue_stained_glass
+execute as @s[scores={TopCorner=1}] run setblock 1 59 -54 blue_stained_glass
+execute as @s[scores={TopDeco=1}] run setblock 2 64 -58 air
 
 #Vicous base design - structure blocks yellow base
-execute as @e[tag=Selection,scores={TopDeco=2}] run setblock 24 64 55 structure_block{mode:"LOAD",name:"yellow_archertower"}
-execute as @e[tag=Selection,scores={TopDeco=2}] run setblock -6 64 55 structure_block{mode:"LOAD",name:"yellow_archertower"}
-execute as @e[tag=Selection,scores={TopDeco=2}] run setblock 24 65 55 redstone_block
-execute as @e[tag=Selection,scores={TopDeco=2}] run setblock -6 65 55 redstone_block
-execute as @e[tag=Selection,scores={TopDeco=2}] run setblock -6 64 -61 structure_block{mode:"LOAD",name:"blue_archertower"}
-execute as @e[tag=Selection,scores={TopDeco=2}] run setblock 24 64 -61 structure_block{mode:"LOAD",name:"blue_archertower"}
-execute as @e[tag=Selection,scores={TopDeco=2}] run setblock -6 65 -61 redstone_block
-execute as @e[tag=Selection,scores={TopDeco=2}] run setblock 24 65 -61 redstone_block
+execute as @s[scores={TopDeco=2}] run setblock 24 64 55 structure_block{mode:"LOAD",name:"yellow_archertower"}
+execute as @s[scores={TopDeco=2}] run setblock -6 64 55 structure_block{mode:"LOAD",name:"yellow_archertower"}
+execute as @s[scores={TopDeco=2}] run setblock 24 65 55 redstone_block
+execute as @s[scores={TopDeco=2}] run setblock -6 65 55 redstone_block
+execute as @s[scores={TopDeco=2}] run setblock -6 64 -61 structure_block{mode:"LOAD",name:"blue_archertower"}
+execute as @s[scores={TopDeco=2}] run setblock 24 64 -61 structure_block{mode:"LOAD",name:"blue_archertower"}
+execute as @s[scores={TopDeco=2}] run setblock -6 65 -61 redstone_block
+execute as @s[scores={TopDeco=2}] run setblock 24 65 -61 redstone_block
 
 #Portal glass pane rims
-execute as @e[tag=Selection,scores={PortalDeco=1}] run fill -11 59 74 35 36 74 yellow_stained_glass_pane[east=true,west=true] replace air
-execute as @e[tag=Selection,scores={PortalDeco=1}] run fill -11 59 -74 35 36 -74 blue_stained_glass_pane[east=true,west=true] replace air
+execute as @s[scores={PortalDeco=1}] run fill -11 59 74 35 36 74 yellow_stained_glass_pane[east=true,west=true] replace air
+execute as @s[scores={PortalDeco=1}] run fill -11 59 -74 35 36 -74 blue_stained_glass_pane[east=true,west=true] replace air
 
 #Obsidian placement
 fill 11 63 -65 13 63 -66 obsidian

@@ -1,7 +1,7 @@
 function everytick:leave_game
-function game:gamestart
+execute as @e[tag=Selection] run function game:gamestart
 execute as @e[tag=GameStarted] at @s run function game:ingame
-function everytick:regen_system
+execute as @e[tag=Selection] run function everytick:regen_system
 execute if entity @e[tag=Selection,scores={setvision=1..}] run effect give @a night_vision 1000000 100 true
 effect give @a saturation 1000000 0 true
 function everytick:bookwarp
@@ -16,7 +16,7 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selecti
 execute as @a[team=Lobby] run function everytick:score_reset
 function everytick:general_settings_or_hotfixes
 function custom:joinpad_enddimension
-function everytick:infobar
+execute as @e[tag=Selection] run function everytick:infobar
 execute as @e[tag=GameEnd] run function game:gameend
 kill @e[tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[tag=Selection] unless entity @s[tag=EditedSelections] run function arenaclear:customizer

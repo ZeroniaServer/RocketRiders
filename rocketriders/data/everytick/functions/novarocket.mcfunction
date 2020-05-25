@@ -20,8 +20,8 @@ execute as @e[tag=BlueNova] at @s if entity @e[tag=YellowPlatform,distance=..3,l
 execute as @e[tag=YellowNova] at @s if entity @e[tag=BluePlatform,distance=..3,limit=1] run tag @s add CanopyIsGone
 execute as @e[tag=CanopyIsGone,tag=YellowNova] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}}
 execute as @e[tag=CanopyIsGone,tag=BlueNova] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2651799,6719955]}]}}}}
-execute if entity @e[tag=Selection,tag=!Explosive] as @e[tag=CanopyIsGone] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:5,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
-execute if entity @e[tag=Selection,tag=Explosive] as @e[tag=CanopyIsGone] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:10,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=!Explosive] as @e[tag=CanopyIsGone] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:5,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=Explosive] as @e[tag=CanopyIsGone] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:10,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
 kill @e[tag=CanopyIsGone]
 
 ##Set effects
@@ -39,8 +39,8 @@ execute as @e[tag=yellownovatracker,scores={novatimer=30..}] at @s unless entity
 
 
 #Static
-execute if entity @e[tag=Selection,tag=!Explosive] as @e[tag=YellowNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
-execute if entity @e[tag=Selection,tag=Explosive] as @e[tag=YellowNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:5,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=!Explosive] as @e[tag=YellowNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=Explosive] as @e[tag=YellowNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:5,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
 execute as @e[tag=YellowNova,scores={novatimer=30..}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:4,Flicker:0,Trail:0,Colors:[I;14602026,15435844]}]}}}}
 kill @e[tag=YellowNova,scores={novatimer=30..}]
 
@@ -51,8 +51,8 @@ execute as @a[tag=YellowNovaAttach,scores={novattach=1}] run effect give @s levi
 execute as @a[tag=YellowNovaAttach,scores={novattach=6..}] run effect clear @s levitation
 execute as @a[tag=YellowNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
 execute as @a[tag=YellowNovaAttach,scores={novattach=5..}] at @s run tp @s ^-0.2 ^0.15 ^0.1
-execute if entity @e[tag=Selection,tag=!Explosive] as @a[tag=YellowNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:0,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
-execute if entity @e[tag=Selection,tag=Explosive] as @a[tag=YellowNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=!Explosive] as @a[tag=YellowNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:0,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=Explosive] as @a[tag=YellowNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
 execute as @a[tag=YellowNovaAttach,scores={novattach=15..}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:4,Flicker:0,Trail:0,Colors:[I;14602026,15435844]}]}}}}
 execute as @a[tag=YellowNovaAttach] run tag @s[scores={novattach=15..}] remove YellowNovaAttach
 
@@ -63,8 +63,8 @@ execute as @e[tag=bluenovatracker,scores={novatimer=..29}] at @s unless entity @
 execute as @e[tag=bluenovatracker,scores={novatimer=30..}] at @s unless entity @e[tag=BlueNova,distance=..3,limit=1,sort=nearest] run kill @s
 
 #Static
-execute if entity @e[tag=Selection,tag=!Explosive] as @e[tag=BlueNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
-execute if entity @e[tag=Selection,tag=Explosive] as @e[tag=BlueNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:5,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=!Explosive] as @e[tag=BlueNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=Explosive] as @e[tag=BlueNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:5,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
 execute as @e[tag=BlueNova,scores={novatimer=30..}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:4,Flicker:0,Trail:0,Colors:[I;2651799,6719955]}]}}}}
 kill @e[tag=BlueNova,scores={novatimer=30..}]
 
@@ -75,11 +75,13 @@ execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levita
 execute as @a[tag=BlueNovaAttach,scores={novattach=6..}] run effect clear @s levitation
 execute as @a[tag=BlueNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
 execute as @a[tag=BlueNovaAttach,scores={novattach=5..}] at @s run tp @s ^-0.2 ^0.15 ^0.1
-execute if entity @e[tag=Selection,tag=!Explosive] as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:0,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
-execute if entity @e[tag=Selection,tag=Explosive] as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=!Explosive] as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:0,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
+execute if entity @s[tag=Explosive] as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:2000,ShowParticles:0b}]}}
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:4,Flicker:0,Trail:0,Colors:[I;2651799,6719955]}]}}}}
 execute as @a[tag=BlueNovaAttach] run tag @s[scores={novattach=15..}] remove BlueNovaAttach
 
+#Reset
 scoreboard players reset @a[scores={novattach=15..}] novattach
-scoreboard players reset @a[team=Lobby] novattach
-scoreboard players reset @a[team=Developer] novattach
+scoreboard players reset @a[team=!Yellow,team=!Blue] novattach
+tag @a[team=!Yellow,team=!Blue] remove BlueNovaAttach
+tag @a[team=!Yellow,team=!Blue] remove YellowNovaAttach

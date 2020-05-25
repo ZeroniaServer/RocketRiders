@@ -1,5 +1,5 @@
 #Prevention
-execute if entity @e[tag=Selection,tag=doPrevention] run function items:prevention/preventmissiles
+execute if entity @s[tag=doPrevention] run function items:prevention/preventmissiles
 
 execute as @e[tag=bluemissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 execute as @e[tag=yellowmissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
@@ -172,7 +172,6 @@ execute as @e[tag=YellowSurpriseLightning] at @s run function items:surprise_yel
 scoreboard players add @e[tag=surprising] surpriseTime 1
 execute as @e[tag=bluemissile,tag=!BlueCata,tag=surprising,tag=!BlueSurprise,scores={surpriseTime=2}] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
 execute as @e[tag=yellowmissile,tag=!YellowCata,tag=surprising,tag=!YellowSurprise,scores={surpriseTime=2}] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
-execute as @e[tag=missile,tag=surprising,scores={surpriseTime=2..}] run tp @s ~ ~-200 ~
 kill @e[tag=missile,tag=surprising,scores={surpriseTime=2..}]
 
 #Fireball

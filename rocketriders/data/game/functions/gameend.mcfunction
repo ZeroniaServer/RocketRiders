@@ -34,7 +34,7 @@ execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
 execute as @s[scores={endtimer=570}] run tag @a remove FailedBallet
 execute as @s[scores={endtimer=570}] at @s run data merge entity @e[tag=AnnounceChanges,limit=1] {CustomNameVisible:1}
-execute as @s[scores={endtimer=570}] run tag @e[tag=Selection] remove EditedSettings
+execute as @s[scores={endtimer=570}] run tag @s remove EditedSettings
 execute as @s[scores={endtimer=570}] run fill -57 201 84 -70 201 72 air replace barrier
 tag @s[scores={endtimer=1..}] remove GameStarted
 tag @s[scores={endtimer=570..}] remove GameEnd

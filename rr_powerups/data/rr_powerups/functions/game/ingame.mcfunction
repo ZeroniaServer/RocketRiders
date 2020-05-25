@@ -18,16 +18,16 @@ spawnpoint @a[team=Yellow] 12 64 66
 execute if entity @s[tag=Minute] run function items:minutemix
 
 #powerup RNG and spawnpoints
-execute if entity @e[tag=captureMiddle,scores={capturePoint=1..}] run scoreboard players add @e[tag=Selection] powerupcount 1
-execute if entity @e[tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @e[tag=Selection] powerupcount 0
-execute as @e[scores={powerupcount=20}] run scoreboard players remove @s PowerupDisplay 1
-execute as @e[scores={powerupcount=20}] run scoreboard players reset @s powerupcount
-execute if entity @e[scores={capturePoint=0,captureBlue=0,captureYellow=0}] run scoreboard players set @e[tag=Selection] PowerupDisplay 30
+execute if entity @e[tag=captureMiddle,scores={capturePoint=1..}] run scoreboard players add @s powerupcount 1
+execute if entity @e[tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s powerupcount 0
+execute as @s[scores={powerupcount=20}] run scoreboard players remove @s PowerupDisplay 1
+execute as @s[scores={powerupcount=20}] run scoreboard players reset @s powerupcount
+execute if entity @e[scores={capturePoint=0,captureBlue=0,captureYellow=0}] run scoreboard players set @s PowerupDisplay 30
 # execute as @e[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=1}] as @e[type=player,team=Blue,tag=onCapturePoint] run tp @s 12 64 -66 0 0
 # execute as @e[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=2}] as @e[type=player,team=Yellow,tag=onCapturePoint] run tp @s 12 64 66 -180 0
-execute as @e[scores={PowerupDisplay=..0}] run tag @a add DelayActionbar
-execute as @e[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
-scoreboard players set @e[tag=Selection,scores={PowerupDisplay=..0}] PowerupDisplay 30
+execute as @s[scores={PowerupDisplay=..0}] run tag @a add DelayActionbar
+execute as @s[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
+scoreboard players set @s[scores={PowerupDisplay=..0}] PowerupDisplay 30
 
 #win
 execute if block 13 38 74 air run function rr_powerups:game/winblue
@@ -123,10 +123,10 @@ execute as @a[tag=Infinity,scores={death=1..}] unless entity @s[team=!Yellow,tea
 scoreboard players set @a[scores={death=1..}] death 0
 
 #actionbar
-execute if entity @e[tag=captureMiddle,scores={capturePoint=1}] if entity @e[tag=Selection,scores={PowerupDisplay=2..}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" seconds!","color":"blue","bold":"true"}]
-execute if entity @e[tag=captureMiddle,scores={capturePoint=1}] if entity @e[tag=Selection,scores={PowerupDisplay=..1}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" second!","color":"blue","bold":"true"}]
-execute if entity @e[tag=captureMiddle,scores={capturePoint=2}] if entity @e[tag=Selection,scores={PowerupDisplay=2..}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" seconds!","color":"yellow","bold":"true"}]
-execute if entity @e[tag=captureMiddle,scores={capturePoint=2}] if entity @e[tag=Selection,scores={PowerupDisplay=..1}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" second!","color":"yellow","bold":"true"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=2..}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" seconds!","color":"blue","bold":"true"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=..1}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" second!","color":"blue","bold":"true"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=2..}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" seconds!","color":"yellow","bold":"true"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=..1}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" second!","color":"yellow","bold":"true"}]
 
 #barricades autokill
 execute as @e[tag=BlueBarricade] at @s unless block ~ ~ ~ blue_stained_glass run kill @s

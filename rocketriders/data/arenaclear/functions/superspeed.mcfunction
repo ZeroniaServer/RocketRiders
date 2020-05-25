@@ -7,7 +7,7 @@ execute as @e[tag=ArenaClearBlue] at @s run tp @s ~ ~ ~1
 execute as @e[tag=ArenaClearYellow] at @s run tp @s ~ ~ ~-1
 execute as @e[tag=SmartClearAECsplash] at @s run fill ~-12 ~ ~-12 ~12 ~ ~12 air replace #custom:splashblocks
 execute as @e[tag=SmartClearAECsplash] at @s run tp @s ~ ~-1 ~
-execute if entity @e[tag=ArenaClearChecker,scores={ClearArena=..349}] run tag @e[tag=Selection] remove Countdown
+execute if entity @e[tag=ArenaClearChecker,scores={ClearArena=..349}] run tag @s remove Countdown
 execute if entity @e[tag=ArenaClearChecker,scores={ClearArena=..349}] run function arenaclear:superspeed
 
 tag @e[tag=ArenaClearChecker,scores={ClearArena=350..}] add PlacerClear

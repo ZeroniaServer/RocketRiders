@@ -1,4 +1,4 @@
-tag @e[tag=Selection] add EditedSettings
+tag @s add EditedSettings
 execute as @e[tag=SmartClearAECblue,tag=!SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue"],Duration:360}
 execute as @e[tag=SmartClearAECblue,tag=SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue","ArenaClearCata"],Duration:360}
 summon area_effect_cloud 11 63 6 {Tags:["ArenaClearChecker"],Duration:360}
@@ -7,7 +7,7 @@ execute as @e[tag=SmartClearAECyellow,tag=SmartClearAECcata] at @s run summon ar
 
 function items:tetrisreset
 
-tag @e[tag=Selection] remove GameStarted
+tag @s remove GameStarted
 fill 23 64 54 1 71 58 air
 fill 1 64 -54 23 71 -58 air
 fill 32 63 -51 -9 37 -45 air

@@ -1,58 +1,58 @@
 #Prevent remnants of ranked mode
-tag @e[tag=Selection,tag=!GameStarted] remove CriteriaTrue
+tag @s[tag=!GameStarted] remove CriteriaTrue
 
 #Joinpad Blue
 execute as @e[tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=bluejoinpad,tag=CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
-execute as @e[tag=Selection,scores={largerTeam=-1..0}] as @e[tag=bluejoinpad] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
+execute as @s[scores={largerTeam=-1..0}] as @e[tag=bluejoinpad] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
 execute as @e[tag=bluejoinpad,tag=CancelJoin] at @a run tag @a remove JoinBlue
 team join Blue @a[tag=JoinBlue]
 clear @a[tag=JoinBlue]
-execute as @e[tag=Selection,tag=!GameStarted] run tp @a[tag=JoinBlue] -95 202 60 0 0
-execute as @e[tag=Selection,tag=!GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
-execute as @e[tag=Selection,tag=!GameStarted] run tellraw @a[tag=JoinBlue] {"text":"Fall off the base to return to the lobby.","color":"blue","italic":"true"}
-execute as @e[tag=Selection,tag=!GameStarted] run effect give @a[tag=JoinBlue] resistance 1000000 255 true
-execute as @e[tag=Selection,tag=GameStarted] run tp @a[tag=JoinBlue] 12 64 -66 0 0
-execute as @e[tag=Selection,tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
-execute as @e[tag=Selection,tag=GameStarted] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
-execute as @e[tag=Selection,tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
-execute as @e[tag=Selection,tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
+execute as @s[tag=!GameStarted] run tp @a[tag=JoinBlue] -95 202 60 0 0
+execute as @s[tag=!GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
+execute as @s[tag=!GameStarted] run tellraw @a[tag=JoinBlue] {"text":"Fall off the base to return to the lobby.","color":"blue","italic":"true"}
+execute as @s[tag=!GameStarted] run effect give @a[tag=JoinBlue] resistance 1000000 255 true
+execute as @s[tag=GameStarted] run tp @a[tag=JoinBlue] 12 64 -66 0 0
+execute as @s[tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
+execute as @s[tag=GameStarted] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
+execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
+execute as @s[tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
 execute as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial
 execute as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","bold":false,"color":"blue"},{"keybind":"key.advancements","bold":false,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","bold":false,"color":"blue"}]
 #tag @a remove JoinBlue
 
-execute as @e[tag=Selection,scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
-execute as @e[tag=Selection,scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":"true"},{"text":" instead.","color":"yellow","bold":false}]
-execute as @e[tag=Selection,scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
-execute as @e[tag=Selection,scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
+execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
+execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":"true"},{"text":" instead.","color":"yellow","bold":false}]
+execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
+execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
 execute as @e[tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinBlue
 
 #Joinpad Yellow
 execute as @e[tag=yellowjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=yellowjoinpad,tag=CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
-execute as @e[tag=Selection,scores={largerTeam=0..1}] as @e[tag=yellowjoinpad] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
+execute as @s[scores={largerTeam=0..1}] as @e[tag=yellowjoinpad] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
 execute as @e[tag=yellowjoinpad,tag=CancelJoin] run tag @a remove JoinYellow
 team join Yellow @a[tag=JoinYellow]
 clear @a[tag=JoinYellow]
-execute as @e[tag=Selection,tag=!GameStarted] run tp @a[tag=JoinYellow] -95 202 96 180 0
-execute as @e[tag=Selection,tag=!GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
-execute as @e[tag=Selection,tag=!GameStarted] run tellraw @a[tag=JoinYellow] {"text":"Fall off the base to return to the lobby.","color":"gold","italic":"true"}
-execute as @e[tag=Selection,tag=!GameStarted] run effect give @a[tag=JoinYellow] resistance 1000000 255 true
-execute as @e[tag=Selection,tag=GameStarted] run tp @a[tag=JoinYellow] 12 64 66 180 0
-execute as @e[tag=Selection,tag=GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
-execute as @e[tag=Selection,tag=GameStarted] run tellraw @a[tag=JoinYellow] [{"text":"Drop your ","color":"gold","italic":"true"},{"text":"Shooting Saber ","color":"yellow","bold":"true","italic":"false"},{"text":"to leave the match.","color":"gold","italic":"true"}]
-execute as @e[tag=Selection,tag=GameStarted] run gamemode survival @a[tag=JoinYellow]
-execute as @e[tag=Selection,tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
+execute as @s[tag=!GameStarted] run tp @a[tag=JoinYellow] -95 202 96 180 0
+execute as @s[tag=!GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
+execute as @s[tag=!GameStarted] run tellraw @a[tag=JoinYellow] {"text":"Fall off the base to return to the lobby.","color":"gold","italic":"true"}
+execute as @s[tag=!GameStarted] run effect give @a[tag=JoinYellow] resistance 1000000 255 true
+execute as @s[tag=GameStarted] run tp @a[tag=JoinYellow] 12 64 66 180 0
+execute as @s[tag=GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
+execute as @s[tag=GameStarted] run tellraw @a[tag=JoinYellow] [{"text":"Drop your ","color":"gold","italic":"true"},{"text":"Shooting Saber ","color":"yellow","bold":"true","italic":"false"},{"text":"to leave the match.","color":"gold","italic":"true"}]
+execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinYellow]
+execute as @s[tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
 execute as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial
 execute as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","bold":false,"color":"gold"},{"keybind":"key.advancements","bold":false,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","bold":false,"color":"gold"}]
 #tag @a remove JoinYellow
 
-execute as @e[tag=Selection,scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
-execute as @e[tag=Selection,scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":"true"},{"text":" instead.","color":"aqua","bold":false}]
-execute as @e[tag=Selection,scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
-execute as @e[tag=Selection,scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
+execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
+execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":"true"},{"text":" instead.","color":"aqua","bold":false}]
+execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
+execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
 execute as @e[tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinYellow
 
 #Leave Pad
@@ -93,5 +93,5 @@ team join Lobby @a[tag=LeaveSpectator]
 tag @a remove LeaveSpectator
 
 #Start Game
-execute unless entity @e[tag=GameEnd] as @a[team=Blue] as @a[team=Yellow] run tag @e[tag=Selection,tag=!GameStarted] add Countdown
-execute as @e[tag=Countdown] run function game:countdown
+execute unless entity @s[tag=GameEnd] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
+execute as @s[tag=Countdown] run function game:countdown

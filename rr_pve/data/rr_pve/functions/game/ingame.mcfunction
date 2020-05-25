@@ -5,16 +5,20 @@ function game:leavemidgame
 function rr_pve:items/antidupe
 function rr_pve:items/spawnitems
 
-#spread missiles to random locations
-function rr_pve:game/spreadmissiles
+#Item RNG and spawnpoints
+function items:tetris
+scoreboard players add @e[tag=Selection] RandomItem 1
+execute if entity @e[scores={RandomItem=300..}] run function items:rng
+tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
+tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
+execute as @e[scores={RandomItem=300..}] as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
+execute as @e[scores={RandomItem=300..}] as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+scoreboard players reset @e[scores={RandomItem=300..}] RandomItem
+spawnpoint @a[team=Blue] 12 64 -66
+spawnpoint @a[team=Yellow] 12 64 66
 
-#wavecounter
-scoreboard players add @e[tag=Selection] waveTimer 1
 
-#waves
-function rr_pve:game/wave1
-function rr_pve:game/wave2
-function rr_pve:game/wave3
+execute unless entity @e[tag=Bot] run function rr_pve:game/prepbots
 
 #win
 execute if block 13 38 74 air run function game:winblue

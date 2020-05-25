@@ -4,21 +4,16 @@ function game:leavemidgame
 #general
 function rr_pve:items/antidupe
 function rr_pve:items/spawnitems
+execute unless entity @e[tag=Bot] run function rr_pve:game/prepbots
 
 #Item RNG and spawnpoints
 function items:tetris
-scoreboard players add @e[tag=Selection] RandomItem 1
-execute if entity @e[scores={RandomItem=300..}] run function items:rng
-tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
-tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
-execute as @e[scores={RandomItem=300..}] as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
-execute as @e[scores={RandomItem=300..}] as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
-scoreboard players reset @e[scores={RandomItem=300..}] RandomItem
+scoreboard players add @s RandomItem 1
+execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
+execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem
 spawnpoint @a[team=Blue] 12 64 -66
 spawnpoint @a[team=Yellow] 12 64 66
-
-
-execute unless entity @e[tag=Bot] run function rr_pve:game/prepbots
+execute if entity @s[tag=Minute] run function items:minutemix
 
 #win
 execute if block 13 38 74 air run function game:winblue

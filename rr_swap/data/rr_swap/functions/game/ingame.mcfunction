@@ -6,20 +6,17 @@ function rr_swap:items/antidupe
 function rr_swap:items/spawnitems
 
 #custom util items
-execute if entity @e[tag=Selection,tag=swapEnabled] run function rr_swap:items/icbm
-execute if entity @e[tag=Selection,tag=swapEnabled] run function rr_swap:items/cluster
+function rr_swap:items/icbm
+function rr_swap:items/cluster
 
 #Item RNG and spawnpoints
 function items:tetris
-scoreboard players add @e[tag=Selection] RandomItem 1
-execute as @e[scores={RandomItem=300..}] run function rr_swap:items/rng
-tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
-tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
-execute as @e[scores={RandomItem=300..}] as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
-execute as @e[scores={RandomItem=300..}] as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
-scoreboard players reset @e[scores={RandomItem=300..}] RandomItem
+scoreboard players add @s RandomItem 1
+execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_swap:items/giverandom
+execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem
 spawnpoint @a[team=Blue] 12 64 -66
 spawnpoint @a[team=Yellow] 12 64 66
+execute if entity @s[tag=Minute] run function rr_swap:items/minutemix
 
 #player armor
 function rr_swap:baseswap/gear

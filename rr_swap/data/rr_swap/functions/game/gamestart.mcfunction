@@ -9,6 +9,10 @@ function game:saberyellow
 tag @a remove JoinBlue
 tag @a remove JoinYellow
 
+#Start Game
+scoreboard players set @s[scores={count=1..}] RandomItem -2
+scoreboard players operation @s[scores={count=1..}] RandomItem += @s[scores={count=1..}] MaxItemTime
+
 #Countdown
 ##Create Nexuses
 execute as @s[scores={count=598}] run summon area_effect_cloud ~ ~ ~ {Tags:["RNGSwap","DarkBlue"],Duration:1000}

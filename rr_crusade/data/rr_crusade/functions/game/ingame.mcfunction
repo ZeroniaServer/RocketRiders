@@ -6,15 +6,13 @@ function rr_crusade:items/antidupe
 function rr_crusade:items/spawnitems
 
 #Item RNG and spawnpoints
-scoreboard players add @e[tag=Selection] RandomItem 1
-execute as @e[scores={RandomItem=400..}] run function items:rng
-tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
-tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
-execute as @e[scores={RandomItem=400..}] as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
-execute as @e[scores={RandomItem=400..}] as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
-scoreboard players reset @e[scores={RandomItem=300..}] RandomItem
+function items:tetris
+scoreboard players add @s RandomItem 1
+execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
+execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem
 spawnpoint @a[team=Blue] 12 64 -66
 spawnpoint @a[team=Yellow] 12 64 66
+execute if entity @s[tag=Minute] run function items:minutemix
 
 #Give canopies every 5 seconds
 scoreboard players add @e[tag=Selection] givecanopy 1

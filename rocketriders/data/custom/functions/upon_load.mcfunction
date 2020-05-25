@@ -4,3 +4,4 @@ scoreboard objectives add doStacking dummy
 scoreboard players add @e[tag=Selection] doStacking 0
 tag @e[tag=Selection] remove doStacking
 scoreboard objectives add HasFlag dummy
+scoreboard objectives add MaxItemTime dummy

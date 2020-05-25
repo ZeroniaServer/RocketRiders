@@ -1,9 +1,9 @@
 tag @s remove BOTCONTROL
 scoreboard players add @s BOTwalks 1
-execute as @s[scores={BOTwalks=1}] at @s unless block ~ ~-1 ~-1 air unless block ~ ~-1 ~-2 air run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalk","BotNorth"]}
-execute as @s[scores={BOTwalks=1}] at @s unless block ~ ~-1 ~1 air unless block ~ ~-1 ~2 air run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalk","BotSouth"]}
-execute as @s[scores={BOTwalks=1}] at @s unless block ~-1 ~-1 ~ air unless block ~-2 ~-1 ~ air run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalk","BotWest"]}
-execute as @s[scores={BOTwalks=1}] at @s unless block ~1 ~-1 ~ air unless block ~2 ~-1 ~ air run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalk","BotEast"]}
+execute as @s[scores={BOTwalks=1}] at @s unless block ~ ~-1 ~-1 air unless block ~ ~-1 ~-2 air if block ~ ~ ~-1 air if block ~ ~1 ~-2 air run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalk","BotNorth"]}
+execute as @s[scores={BOTwalks=1}] at @s unless block ~ ~-1 ~1 air unless block ~ ~-1 ~2 air if block ~ ~ ~1 air if block ~ ~1 ~2 air run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalk","BotSouth"]}
+execute as @s[scores={BOTwalks=1}] at @s unless block ~-1 ~-1 ~ air unless block ~-2 ~-1 ~ air if block ~-1 ~ ~ air if block ~-2 ~1 ~ air run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalk","BotWest"]}
+execute as @s[scores={BOTwalks=1}] at @s unless block ~1 ~-1 ~ air unless block ~2 ~-1 ~ air if block ~1 ~ ~ air if block ~2 ~1 ~ air run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalk","BotEast"]}
 execute as @s[scores={BOTwalks=1}] at @s run tag @e[tag=BotWalk,limit=1,sort=random,distance=..1] add SelectedBotwalk
 
 execute as @s[scores={BOTwalks=1}] at @s if entity @e[tag=SelectedBotwalk,tag=BotNorth,limit=1,sort=nearest,distance=..1] run tag @s add BotwalkNorth

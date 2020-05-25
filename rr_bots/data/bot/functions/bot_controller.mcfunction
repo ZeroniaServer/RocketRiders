@@ -20,6 +20,9 @@ execute as @e[tag=Bot,scores={botarrowitems=1..}] run tag @s add BotHasArrows
 execute as @e[tag=BotHasArrows] unless entity @s[scores={botarrowitems=1..}] run tag @s remove BotHasArrows
 
 
+execute as @e[tag=Bot] at @s if entity @s[y=-2000,dy=1980] run function bot:movement/voidfall
+
+
 
 
 
@@ -29,11 +32,12 @@ scoreboard players add @e[tag=Bot] botcontrol 1
 
 execute as @e[tag=Bot,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,scores={botcontrol=1..}] at @s run tag @s add BOTCONTROL
 
-execute as @e[tag=BOTCONTROL] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
-execute as @e[tag=BOTCONTROL] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
-execute as @e[tag=BOTCONTROL] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
-execute as @e[tag=BOTCONTROL] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
-execute as @e[tag=BOTCONTROL] at @s if entity @s[tag=BotHasMissile] unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotMissile"],Duration:2}
+execute as @e[tag=BOTCONTROL,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
+execute as @e[tag=BOTCONTROL,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
+execute as @e[tag=BOTCONTROL,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
+execute as @e[tag=BOTCONTROL,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
+execute as @e[tag=BOTCONTROL,tag=!BotRider,tag=BlueBot] at @s if block ~ ~-3 ~4 air if entity @s[tag=BotHasMissile] unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotMissile"],Duration:2}
+execute as @e[tag=BOTCONTROL,tag=!BotRider,tag=YellowBot] at @s if block ~ ~-3 ~-4 air if entity @s[tag=BotHasMissile] unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotMissile"],Duration:2}
 execute as @e[tag=BOTCONTROL,tag=BlueBot,tag=BotHasArrows] at @s if entity @a[team=Yellow,distance=5..45,limit=1] run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotArrow"],Duration:2}
 execute as @e[tag=BOTCONTROL,tag=YellowBot,tag=BotHasArrows] at @s if entity @a[team=Blue,distance=5..45,limit=1] run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotArrow"],Duration:2}
 execute as @e[tag=BOTCONTROL] at @s run tag @e[tag=BOTAIRNG,limit=1,sort=random,distance=..2] add SelectedBOTAI
@@ -51,10 +55,11 @@ scoreboard players reset @e[tag=BotMissiles] botcontrol
 
 
 scoreboard players reset @e[tag=!BotMissiles] botmisspawn
-
+scoreboard players reset @e[tag=Bot,tag=!BotRider] botriding
 
 execute as @e[tag=BotWalks] at @s run function bot:movement/walkrandom
 execute as @e[tag=BotArrows] at @s run function bot:attacks/bot_shoot_arrow
 execute as @e[tag=BotMissiles] at @s run function bot:missile/bot_spawnmissile
+execute as @e[tag=BotRider] at @s run function bot:movement/rider/main
 
 tag @e[tag=Bot] remove BotHasMissile

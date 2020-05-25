@@ -6,3 +6,4 @@ scoreboard objectives add botarrow dummy
 scoreboard objectives add botarrowitems dummy
 scoreboard objectives add calcbotarrow dummy
 scoreboard objectives add botmisspawn dummy
+scoreboard objectives add botriding dummy

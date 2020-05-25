@@ -35,3 +35,5 @@ scoreboard players add @s[nbt={Inventory:[{Slot:33b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:34b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:35b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:-106b}]}] invCount 1
+tag @s[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
+tag @s[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand

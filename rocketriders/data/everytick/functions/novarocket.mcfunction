@@ -75,8 +75,8 @@ execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levita
 execute as @a[tag=BlueNovaAttach,scores={novattach=6..}] run effect clear @s levitation
 execute as @a[tag=BlueNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
 execute as @a[tag=BlueNovaAttach,scores={novattach=5..}] at @s run tp @s ^-0.2 ^0.15 ^0.1
-execute if entity @s[tag=!Explosive] as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:0,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive] as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,EntityTag:{Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=!Explosive] as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:4,Flicker:0,Trail:0,Colors:[I;2651799,6719955]}]}}}}
 execute as @a[tag=BlueNovaAttach] run tag @s[scores={novattach=15..}] remove BlueNovaAttach
 

@@ -52,15 +52,6 @@ replaceitem entity @a[team=Lobby,scores={XP=1501..}] armor.feet leather_boots{di
 execute as @a[team=Lobby] store result score @s HasNavBook run clear @s written_book 0
 clear @a[team=Lobby,scores={HasNavBook=2..}] written_book
 
-
-#ineffective uuid method; leaving it here in case it actually comes in handy at some point which it probably never will
-#execute as @a store result score @s playerUUIDM run data get entity @s UUIDMost 0.00000000023283064365386962890625
-#execute as @a store result score @s playerUUIDL run data get entity @s UUIDLeast 0.00000000023283064365386962890625
-#execute as @e[type=item] store result score @s itemThrowerUUIDM run data get entity @s Thrower.M 0.00000000023283064365386962890625
-#execute as @e[type=item] store result score @s itemThrowerUUIDL run data get entity @s Thrower.L 0.00000000023283064365386962890625
-#execute as @e[type=item] at @s if score @s itemThrowerUUIDM = @p playerUUIDM if score @s itemThrowerUUIDL = @p playerUUIDL run tp @s @p
-#execute as @e[type=item] at @s if score @s itemThrowerUUIDM = @p playerUUIDM if score @s itemThrowerUUIDL = @p playerUUIDL run data merge entity @s {PickupDelay:0s}
-
 #lobby player spawnpoint set
 spawnpoint @a[team=Lobby] -43 211 78
 

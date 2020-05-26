@@ -12,6 +12,6 @@ function everytick:no_drop
 function everytick:team_balance
 
 #reset
-execute if entity @e[tag=PlacerClear] run function rr_normal:arenaclear/baseplacement
-execute if entity @e[tag=PlacerClear] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Normal Mode is enabled.","color":"light_purple","bold":"true"}
-tag @e[tag=PlacerClear] add BasePlaced
+execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_normal:arenaclear/baseplacement
+execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Normal Mode is enabled.","color":"light_purple","bold":"true"}
+tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced

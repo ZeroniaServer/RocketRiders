@@ -10,9 +10,8 @@ execute if entity @s[tag=GameEnd] run function rr_swap:game/gameend
 function everytick:saberfix
 function everytick:no_drop
 function everytick:team_balance
-# function rr_swap:items/spawnitems
 
 #reset
-execute if entity @e[tag=PlacerClear] run function rr_swap:arenaclear/baseplacement
-execute if entity @e[tag=PlacerClear] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Swap Mode is enabled.","color":"light_purple","bold":"true"}
-tag @e[tag=PlacerClear] add BasePlaced
+execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_swap:arenaclear/baseplacement
+execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Swap Mode is enabled.","color":"light_purple","bold":"true"}
+tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced

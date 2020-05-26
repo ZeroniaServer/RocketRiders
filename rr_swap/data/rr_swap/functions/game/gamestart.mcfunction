@@ -10,7 +10,7 @@ tag @a remove JoinBlue
 tag @a remove JoinYellow
 
 #Start Game
-scoreboard players set @s[scores={count=1..}] RandomItem -2
+scoreboard players set @s[scores={count=1..}] RandomItem -3
 scoreboard players operation @s[scores={count=1..}] RandomItem += @s[scores={count=1..}] MaxItemTime
 
 #Countdown

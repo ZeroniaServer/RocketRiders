@@ -19,6 +19,9 @@ fill 23 64 54 32 84 62 air
 fill -11 59 -74 35 36 -74 air
 fill -11 59 74 35 36 74 air
 
+#Molerat
+execute if entity @s[tag=!Molerat] run fill -12 36 -12 36 61 12 air
+
 kill @e[type=fireball]
 kill @e[type=snowball]
 kill @e[type=arrow]

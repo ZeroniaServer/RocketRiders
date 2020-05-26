@@ -3,7 +3,7 @@ execute if entity @s[tag=Instamine] as @a unless entity @s[team=!Yellow,team=!Bl
 execute if entity @s[tag=Instamine] run effect clear @a[team=!Yellow,team=!Blue] haste
 
 #Explosive
-execute if entity @s[tag=Explosive] as @e[type=tnt,nbt={Fuse:1s}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"TNT\"}",ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @e[type=tnt,nbt={Fuse:1s}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"TNT\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=Explosive] run kill @e[type=tnt,nbt={Fuse:1s}]
 execute if entity @s[tag=Explosive] as @e[type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
 

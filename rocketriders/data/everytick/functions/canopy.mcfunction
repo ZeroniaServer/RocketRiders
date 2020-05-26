@@ -76,11 +76,6 @@ execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leav
 execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance=1] replace jungle_leaves
 execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
 
-#add throwplat 0 and countdown so void fall stuff doesn't break
-scoreboard players add @a ThrowPlat 0
-scoreboard players add @a[scores={ThrowPlat=1..16}] ThrowPlat 1
-scoreboard players set @a[scores={ThrowPlat=17..}] ThrowPlat 0
-
 #uuid storage
 execute as @a store result score @s playerUUIDM run data get entity @s UUIDMost 0.00000000023283064365386962890625
 execute as @a store result score @s playerUUIDL run data get entity @s UUIDLeast 0.00000000023283064365386962890625

@@ -1,6 +1,11 @@
 #void falling
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
 
+#add throwplat 0 and countdown so void fall stuff doesn't break
+scoreboard players add @a ThrowPlat 0
+scoreboard players add @a[scores={ThrowPlat=1..16}] ThrowPlat 1
+scoreboard players set @a[scores={ThrowPlat=17..}] ThrowPlat 0
+
 #hotfix to identify new players and make them not take fall damage
 #anyone with a firstJoined score of 0 is a new player
 scoreboard players add @a firstJoined 0

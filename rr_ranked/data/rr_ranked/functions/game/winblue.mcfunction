@@ -22,7 +22,6 @@ function rr_ranked:arenaclear/areaclear
 tag @e[tag=Selection] remove TimeOut
 scoreboard players reset @e[tag=Selection] ForfeitTimeout
 
-execute as @a[team=Blue,scores={RoundsWon=2..}] run say fuck this system dude
 execute as @a[team=Blue,scores={RoundsWon=2..}] run tag @a[team=Blue] remove InRanked
 execute as @a[team=Blue,scores={RoundsWon=2..}] run scoreboard players reset @a[team=Blue] ForfeitLoss
 execute as @a[team=Blue,scores={RoundsWon=2..}] run function game:winblue

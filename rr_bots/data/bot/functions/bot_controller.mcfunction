@@ -50,14 +50,17 @@ scoreboard players add @e[tag=Bot] botcontrol 1
 execute as @e[tag=Bot,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider,scores={botcontrol=1..}] at @s run tag @s add BOTCONTROL
 
 #RNG
-execute as @e[tag=BOTCONTROL,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BotRNG"]}
+execute as @e[tag=BlueBot,tag=BOTCONTROL,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BotRNG","BlueRNG"]}
+execute as @e[tag=YellowBot,tag=BOTCONTROL,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BotRNG","YellowRNG"]}
 scoreboard players set @e[tag=BotRNG] BotRNGmax 10
 execute as @e[tag=BotRNG] store result score @s BotRNG run data get entity @s UUIDMost 0.00000000023283064365386962890625
 execute as @e[tag=BotRNG] store result score @s BotRNG run scoreboard players operation @s BotRNG %= @s BotRNGmax
 
-execute as @e[tag=BotRNG,scores={BotRNG=0..6}] at @s run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotWalks
-execute as @e[tag=BotRNG,scores={BotRNG=7..8}] at @s run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotArrows
-execute as @e[tag=BotRNG,scores={BotRNG=9..10}] at @s run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotMissiles
+execute as @e[tag=BotRNG,scores={BotRNG=0..3}] at @s run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotWalks
+execute as @e[tag=BotRNG,tag=BlueRNG,scores={BotRNG=4..7}] at @s if entity @a[team=Yellow,distance=5..45] run tag @e[tag=BotHasArrows,distance=..2,limit=1,sort=nearest] add BotArrows
+execute as @e[tag=BotRNG,tag=YellowRNG,scores={BotRNG=4..7}] at @s if entity @a[team=Blue,distance=5..45] run tag @e[tag=BotHasArrows,distance=..2,limit=1,sort=nearest] add BotArrows
+execute as @e[tag=BotRNG,tag=BlueRNG,scores={BotRNG=8..10}] at @s if block ~ ~-3 ~4 air if entity @e[tag=BotHasMissile,distance=..2,limit=1] run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotMissiles
+execute as @e[tag=BotRNG,tag=YellowRNG,scores={BotRNG=8..10}] at @s if block ~ ~-3 ~-4 air if entity @e[tag=BotHasMissile,distance=..2,limit=1] run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotMissiles
 
 kill @e[tag=BotRNG]
 

@@ -6,9 +6,9 @@ execute as @e[tag=rngSelected,tag=rngMissile] run function items:missile/rng
 execute as @e[tag=rngSelected,tag=rngUtil] run function items:util/rng
 
 
-execute if entity @e[tag=Selection,tag=rngMissile] if entity @s[tag=doSurprise] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngSurprise","rngSU"]}
-execute if entity @e[tag=Selection,tag=rngMissile] if entity @s[tag=doSurprise] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngNoSurprise","rngSU"]}
-execute if entity @e[tag=Selection,tag=rngMissile] if entity @s[tag=doSurprise] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngNoSurprise","rngSU"]}
+execute if entity @e[tag=Selection,tag=rngMissile] if entity @s[tag=SurpriseEgg] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngSurprise","rngSU"]}
+execute if entity @e[tag=Selection,tag=rngMissile] if entity @s[tag=SurpriseEgg] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngNoSurprise","rngSU"]}
+execute if entity @e[tag=Selection,tag=rngMissile] if entity @s[tag=SurpriseEgg] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngNoSurprise","rngSU"]}
 
 tag @e[tag=rngSU,sort=random,limit=1] add rngSUSelected
 

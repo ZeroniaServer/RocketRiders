@@ -105,10 +105,6 @@ tag @s[tag=RestoreDefault] remove RestoreDefault
 execute as @s[tag=doPrevention] run data merge block -70 193 79 {Text1:"{\"text\":\"Pierce Prevention\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove doPrevention\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 execute as @s[tag=!doPrevention] run data merge block -70 193 79 {Text1:"{\"text\":\"Pierce Prevention\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doPrevention\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 
-#suprise egg game modifier
-execute as @s[tag=doSurprise] run data merge block -70 191 79 {Text1:"{\"text\":\"Surprise Eggs\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove doSurprise\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
-execute as @s[tag=!doSurprise] run data merge block -70 191 79 {Text1:"{\"text\":\"Surprise Eggs\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doSurprise\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
-
 #hotbar limit
 execute as @s[tag=doHotbarLimit] run data merge block -70 193 77 {Text1:"{\"text\":\"Hotbar Limit\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove doHotbarLimit\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 execute as @s[tag=!doHotbarLimit] run data merge block -70 193 77 {Text1:"{\"text\":\"Hotbar Limit\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doHotbarLimit\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
@@ -119,6 +115,8 @@ execute as @s[scores={doStacking=1}] run data merge block -70 191 77 {Text1:"{\"
 execute as @s[scores={doStacking=2}] run data merge block -70 191 77 {Text1:"{\"text\":\"Item Stacking\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] doStacking 1\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
 scoreboard players set @s[scores={doStacking=3..}] doStacking 0
 
+
+##GAME MODIFIERS
 function arenaclear:modifierselect
 
 ##ENABLE DISABLE ENTIRE CATEGORIES

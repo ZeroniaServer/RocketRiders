@@ -3,11 +3,11 @@ execute if entity @s[team=!Yellow,team=!Blue,team=!Spectator] run scoreboard pla
 scoreboard players set @s MaxItemSec 0
 
 #lower limit is 5 seconds
-execute if entity @e[tag=Selection,scores={MaxItemSec=..4}] run tellraw @s {"text":"You can't make item delay too low!","color":"red","italic":"true"}
+execute if entity @e[tag=Selection,scores={MaxItemSec=..4}] run tellraw @s {"text":"You cannot make item delay too low","color":"red"}
 scoreboard players set @e[tag=Selection,scores={MaxItemSec=..4}] MaxItemSec 5
 
 #upper limit is 120 seconds
-execute if entity @e[tag=Selection,scores={MaxItemSec=121..}] run tellraw @s {"text":"You can't make item delay too high!","color":"red","italic":"true"}
+execute if entity @e[tag=Selection,scores={MaxItemSec=121..}] run tellraw @s {"text":"You cannot make item delay too high","color":"red"}
 scoreboard players set @e[tag=Selection,scores={MaxItemSec=121..}] MaxItemSec 120
 
 #set new time

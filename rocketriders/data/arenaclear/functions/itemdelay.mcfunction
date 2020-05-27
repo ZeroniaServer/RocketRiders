@@ -1,6 +1,5 @@
 #add new time
 execute if entity @s[team=!Yellow,team=!Blue,team=!Spectator] run scoreboard players operation @e[tag=Selection,tag=!EditedSettings] MaxItemSec += @s MaxItemSec
-scoreboard players set @s MaxItemSec 0
 
 #lower limit is 5 seconds
 execute if entity @e[tag=Selection,scores={MaxItemSec=..4}] run tellraw @s {"text":"You cannot make item delay too low","color":"red"}

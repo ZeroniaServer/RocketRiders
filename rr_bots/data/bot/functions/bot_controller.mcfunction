@@ -47,23 +47,21 @@ execute as @e[tag=Bot,scores={BotHP=-1000..0}] run function bot:movement/die
 
 scoreboard players add @e[tag=Bot] botcontrol 1
 
-execute as @e[tag=Bot,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,scores={botcontrol=1..}] at @s run tag @s add BOTCONTROL
+execute as @e[tag=Bot,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider,scores={botcontrol=1..}] at @s run tag @s add BOTCONTROL
 
-execute as @e[tag=BOTCONTROL,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
-execute as @e[tag=BOTCONTROL,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
-execute as @e[tag=BOTCONTROL,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
-execute as @e[tag=BOTCONTROL,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotWalk"],Duration:2}
-execute as @e[tag=BOTCONTROL,tag=!BotRider,tag=BlueBot] at @s if block ~ ~-3 ~4 air if entity @s[tag=BotHasMissile] unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotMissile"],Duration:2}
-execute as @e[tag=BOTCONTROL,tag=!BotRider,tag=YellowBot] at @s if block ~ ~-3 ~-4 air if entity @s[tag=BotHasMissile] unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotMissile"],Duration:2}
-execute as @e[tag=BOTCONTROL,tag=BlueBot,tag=BotHasArrows] at @s if entity @e[team=Yellow,distance=5..45,limit=1] run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotArrow"],Duration:2}
-execute as @e[tag=BOTCONTROL,tag=YellowBot,tag=BotHasArrows] at @s if entity @e[team=Blue,distance=5..45,limit=1] run summon area_effect_cloud ~ ~ ~ {Tags:["BOTAIRNG","BotArrow"],Duration:2}
-execute as @e[tag=BOTCONTROL] at @s run tag @e[tag=BOTAIRNG,limit=1,sort=random,distance=..2] add SelectedBOTAI
+#RNG
+execute as @e[tag=BOTCONTROL,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BotRNG"]}
+scoreboard players set @e[tag=BotRNG] BotRNGmax 10
+execute as @e[tag=BotRNG] store result score @s BotRNG run data get entity @s UUIDMost 0.00000000023283064365386962890625
+execute as @e[tag=BotRNG] store result score @s BotRNG run scoreboard players operation @s BotRNG %= @s BotRNGmax
 
-execute as @e[tag=BOTCONTROL] at @s if entity @e[tag=SelectedBOTAI,tag=BotWalk,distance=..2,limit=1] run tag @s add BotWalks
-execute as @e[tag=BOTCONTROL] at @s if entity @e[tag=SelectedBOTAI,tag=BotArrow,distance=..2,limit=1] run tag @s add BotArrows
-execute as @e[tag=BOTCONTROL] at @s if entity @e[tag=SelectedBOTAI,tag=BotMissile,distance=..2,limit=1] run tag @s add BotMissiles
+execute as @e[tag=BotRNG,scores={BotRNG=0..6}] at @s run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotWalks
+execute as @e[tag=BotRNG,scores={BotRNG=7..8}] at @s run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotArrows
+execute as @e[tag=BotRNG,scores={BotRNG=9..10}] at @s run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotMissiles
 
-kill @e[tag=BotAIRNG]
+kill @e[tag=BotRNG]
+
+
 
 scoreboard players reset @e[tag=BOTCONTROL] botcontrol
 scoreboard players reset @e[tag=BotWalks] botcontrol
@@ -75,8 +73,10 @@ scoreboard players reset @e[tag=!BotMissiles] botmisspawn
 scoreboard players reset @e[tag=Bot,tag=!BotRider] botriding
 
 execute as @e[tag=BotWalks] at @s run function bot:movement/walkrandom
-execute as @e[tag=BotArrows] at @s run function bot:attacks/bot_shoot_arrow
-execute as @e[tag=BotMissiles] at @s run function bot:missile/bot_spawnmissile
+execute as @e[tag=BotArrows,scores={botarrowitems=1..}] at @s run function bot:attacks/bot_shoot_arrow
+execute as @e[tag=BotArrows] at @s unless entity @s[scores={botarrowitems=1..}] run tag @s remove BotArrows
+execute as @e[tag=BotMissiles,tag=BotHasMissile] at @s run function bot:missile/bot_spawnmissile
+execute as @e[tag=BotMissiles,tag=!BotHasMissile] at @s run tag @s remove BotMissiles
 execute as @e[tag=BotRider] at @s run function bot:movement/rider/main
 
 tag @e[tag=Bot] remove BotHasMissile

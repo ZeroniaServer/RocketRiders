@@ -9,3 +9,6 @@ scoreboard objectives add botmisspawn dummy
 scoreboard objectives add botriding dummy
 scoreboard objectives add BotHP dummy
 scoreboard objectives add BotDamageTaken dummy
+
+scoreboard objectives add BotRNG dummy
+scoreboard objectives add BotRNGmax dummy

@@ -20,8 +20,6 @@ tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced
 execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Blue] add ForfeitWon
 execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Yellow] add ForfeitWon
 execute as @s[scores={ForfeitTimeout=1200..}] as @a[tag=ForfeitWon] run function rr_ranked:forfeit/giveprize
-execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[team=Blue,tag=InRanked] remove InRanked
-execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[team=Yellow,tag=InRanked] remove InRanked
 scoreboard players reset @a[tag=!InRanked] ForfeitWin
 scoreboard players reset @a[tag=!InRanked] ForfeitLoss
 tag @s[scores={ForfeitTimeout=1200..}] remove TimeOut

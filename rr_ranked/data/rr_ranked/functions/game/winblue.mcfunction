@@ -18,9 +18,6 @@ execute if entity @a[team=Yellow,scores={RoundsWon=1}] if entity @a[team=Blue,sc
 execute unless entity @a[team=Blue,scores={RoundsWon=2..}] run function arenaclear:areaclear
 execute unless entity @a[team=Blue,scores={RoundsWon=2..}] run function rr_ranked:arenaclear/areaclear
 
-tag @e[tag=Selection] remove TimeOut
-scoreboard players reset @e[tag=Selection] ForfeitTimeout
-
 execute as @a[team=Blue,scores={RoundsWon=2..}] run tag @a[team=Blue] remove InRanked
 execute as @a[team=Blue,scores={RoundsWon=2..}] run scoreboard players reset @a[team=Blue] ForfeitLoss
 execute as @a[team=Blue,scores={RoundsWon=2..}] as @e[tag=Selection] run function game:winblue

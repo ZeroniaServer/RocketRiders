@@ -8,11 +8,9 @@ execute as @e[tag=Selection,tag=rankedLast] run function rr_ranked:iflast
 tag @a[team=Lobby] remove WonARound
 scoreboard players reset @a[team=Lobby] RoundsWon
 
-#give new players XP
+#XP/rank stuff
 execute as @a if score @s XP <= 0 XP run scoreboard players set @s XP 0
 execute as @a unless score @s XP >= 0 XP run scoreboard players set @s XP 100
-
-#set everyone's RankScore
 scoreboard players set @a[scores={XP=..300}] RankScore 6
 scoreboard players set @a[scores={XP=301..600}] RankScore 5
 scoreboard players set @a[scores={XP=601..900}] RankScore 4

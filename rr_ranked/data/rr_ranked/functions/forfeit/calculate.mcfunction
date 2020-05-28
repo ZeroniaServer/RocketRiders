@@ -13,8 +13,6 @@ function rr_ranked:forfeit/quickstore_b
 function rr_ranked:forfeit/calcyellow
 function rr_ranked:forfeit/quickstore_y
 
-
-
 scoreboard players operation @a[team=Yellow] ForfeitLoss = YellowLoss Forfeit
 scoreboard players operation @a[team=Blue] ForfeitLoss = BlueLoss Forfeit
 scoreboard players operation @a[team=Yellow] ForfeitWin = YellowWin Forfeit

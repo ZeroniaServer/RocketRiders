@@ -15,3 +15,15 @@ function everytick:team_balance
 execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_ranked:arenaclear/baseplacement
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Ranked Mode is enabled.","color":"light_purple","bold":"true"}
 tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced
+
+#forfeit prize/loss
+execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Blue] add ForfeitWon
+execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Yellow] add ForfeitWon
+execute as @s[scores={ForfeitTimeout=1200..}] as @a[tag=ForfeitWon] run function rr_ranked:forfeit/giveprize
+execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[team=Blue,tag=InRanked] remove InRanked
+execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[team=Yellow,tag=InRanked] remove InRanked
+scoreboard players reset @a[tag=!InRanked] ForfeitWin
+scoreboard players reset @a[tag=!InRanked] ForfeitLoss
+tag @s[scores={ForfeitTimeout=1200..}] remove TimeOut
+scoreboard players reset @s[scores={ForfeitTimeout=1200..}] ForfeitTimeout
+execute unless entity @s[tag=GameStarted] as @a[team=!Blue,team=!Yellow,tag=InRanked] run function rr_ranked:forfeit/giveloss

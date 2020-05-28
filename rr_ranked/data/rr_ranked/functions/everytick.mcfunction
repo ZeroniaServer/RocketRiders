@@ -4,10 +4,6 @@ execute if score @e[tag=Selection,tag=!rankedEnabled,limit=1] SetGamemode = @e[t
 execute as @e[tag=Selection,tag=rankedEnabled] run function rr_ranked:ifenabled
 execute as @e[tag=Selection,tag=rankedLast] run function rr_ranked:iflast
 
-#reset lobby
-tag @a[team=Lobby] remove WonARound
-scoreboard players reset @a[team=Lobby] RoundsWon
-
 #XP/rank stuff
 execute as @a if score @s XP <= 0 XP run scoreboard players set @s XP 0
 execute as @a unless score @s XP >= 0 XP run scoreboard players set @s XP 100

@@ -16,6 +16,9 @@ execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_ranked:arenacl
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Ranked Mode is enabled.","color":"light_purple","bold":"true"}
 tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced
 
+#fake game end
+execute as @s[tag=FakeGameEnd] run function rr_ranked:game/fakegameend
+
 #forfeit prize/loss
 execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Blue] add ForfeitWon
 execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Yellow] add ForfeitWon

@@ -1,25 +1,18 @@
 #Blue team round wins
-tag @e[tag=Selection] add CriteriaTrue
-
+tag @s add CriteriaTrue
 kill @e[type=tnt]
-
-execute unless entity @a[team=Blue,scores={RoundsWon=1..}] run scoreboard players set @a[team=Blue] RoundsWon 1
-execute if entity @a[team=Blue,tag=WonARound,scores={RoundsWon=1..}] run scoreboard players set @a[team=Blue] RoundsWon 2
-tag @a[team=Blue,scores={RoundsWon=1..}] add WonARound
+scoreboard players add Blue RoundsWon 1
 
 effect give @a[team=Blue] instant_health 1 100
 effect give @a[team=Yellow] instant_health 1 100
 
+execute as @a[team=Blue] at @s run stopsound @s
+execute as @a[team=Yellow] at @s run stopsound @s
 execute as @a at @s run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 100 0
-title @a title ["",{"text":"Team Blue","bold":true,"color":"blue"},{"text":" scored!","bold":true,"color":"green"}]
-execute if entity @a[team=Blue,scores={RoundsWon=1}] unless entity @a[team=Yellow,scores={RoundsWon=1..}] run title @a subtitle ["",{"text":"1","bold":true,"color":"blue"},{"text":" - ","bold":true,"color":"green"},{"text":"0","bold":true,"color":"gold"}]
-execute if entity @a[team=Yellow,scores={RoundsWon=1}] if entity @a[team=Blue,scores={RoundsWon=1}] run title @a subtitle ["",{"text":"1","bold":true,"color":"blue"},{"text":" - ","bold":true,"color":"green"},{"text":"1","bold":true,"color":"gold"}]
+title @a title [{"text":"Team Blue","bold":true,"color":"blue"},{"text":" scored!","bold":true,"color":"green"}]
+title @a subtitle [{"score":{"name":"Blue","objective":"RoundsWon"},"bold":true,"color":"blue"},{"text":" - ","bold":true,"color":"green"},{"score":{"name":"Yellow","objective":"RoundsWon"},"bold":true,"color":"gold"}]
 
-execute unless entity @a[team=Blue,scores={RoundsWon=2..}] run function arenaclear:areaclear
-execute unless entity @a[team=Blue,scores={RoundsWon=2..}] run function rr_ranked:arenaclear/areaclear
+execute unless score Blue RoundsWon matches 2.. run tag @s add FakeGameEnd
 
-execute as @a[team=Blue,scores={RoundsWon=2..}] run tag @a[team=Blue] remove InRanked
-execute as @a[team=Blue,scores={RoundsWon=2..}] run scoreboard players reset @a[team=Blue] ForfeitLoss
-execute as @a[team=Blue,scores={RoundsWon=2..}] as @e[tag=Selection] run function game:winblue
-execute as @a[team=Blue,scores={RoundsWon=2..}] run function rr_ranked:rankcalc/calcblue
-execute as @a[team=Blue,scores={RoundsWon=2..}] run scoreboard players reset @a RoundsWon
+execute if score Blue RoundsWon matches 2.. run function game:winblue
+execute if score Blue RoundsWon matches 2.. run function rr_ranked:rankcalc/calcblue

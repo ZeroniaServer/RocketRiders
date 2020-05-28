@@ -12,3 +12,4 @@ scoreboard players add @e[tag=Selection] MaxItemSec 0
 scoreboard players set @e[tag=Selection,scores={MaxItemSec=..0}] MaxItemSec 15
 scoreboard players set 20 MaxItemSec 20
 tag @e[tag=Selection] remove doSurprise
+scoreboard objectives add fakeendtimer dummy

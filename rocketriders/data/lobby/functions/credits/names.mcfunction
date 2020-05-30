@@ -35,6 +35,7 @@ execute as @e[tag=CarlCredits,scores={CreditCycle=1}] at @s run summon area_effe
 execute as @e[tag=StoneCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Stone","color":"green"}'}
 execute as @e[tag=TuijCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Tuijpe","color":"green"}'}
 execute as @e[tag=JagCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Jagdoe","color":"green"}'}
+execute as @e[tag=RoboCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"iRobo","color":"green"}'}
 execute as @e[tag=GroundCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Ground","color":"green"}'}
 execute as @e[tag=FunnyCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"funnybird5","color":"green"}'}
 execute as @e[tag=ChopperCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Chopper2112","color":"green"}'}
@@ -46,6 +47,7 @@ execute as @e[tag=EraCredits,scores={CreditCycle=1}] at @s run summon area_effec
 execute as @e[tag=CagCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"CAG2","color":"green"}'}
 execute as @e[tag=LlewCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Llewv","color":"green"}'}
 execute as @e[tag=LekroCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Lekro","color":"green"}'}
+execute as @e[tag=HrapCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Hraponssi","color":"green"}'}
 
 
 

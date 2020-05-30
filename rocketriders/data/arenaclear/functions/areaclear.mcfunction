@@ -20,7 +20,13 @@ fill -11 59 -74 35 36 -74 air
 fill -11 59 74 35 36 74 air
 
 #Molerat
-execute if entity @s[tag=!Molerat] run fill -12 36 -12 36 61 12 air
+execute if entity @s[tag=!Molerat,tag=WasMolerat] run fill -21 70 30 -10 27 -30 air replace glass
+execute if entity @s[tag=!Molerat,tag=WasMolerat] run fill -9 70 30 1 27 -30 air replace glass
+execute if entity @s[tag=!Molerat,tag=WasMolerat] run fill 2 70 30 12 27 -30 air replace glass
+execute if entity @s[tag=!Molerat,tag=WasMolerat] run fill 13 70 30 23 27 -30 air replace glass
+execute if entity @s[tag=!Molerat,tag=WasMolerat] run fill 24 70 30 34 27 -30 air replace glass
+execute if entity @s[tag=!Molerat,tag=WasMolerat] run fill 35 70 30 45 27 -30 air replace glass
+tag @s[tag=!Molerat,tag=WasMolerat] remove WasMolerat
 
 kill @e[type=fireball]
 kill @e[type=snowball]

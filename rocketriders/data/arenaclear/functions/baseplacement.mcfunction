@@ -36,4 +36,9 @@ fill 13 38 74 11 38 74 fire replace air
 fill 11 38 74 11 38 74 fire replace air
 
 #Molerat
-execute if entity @s[tag=Molerat] run fill -12 36 -12 36 61 12 glass replace air
+execute if entity @s[tag=Molerat] run fill -21 70 30 -10 27 -30 glass replace air
+execute if entity @s[tag=Molerat] run fill -9 70 30 1 27 -30 glass replace air
+execute if entity @s[tag=Molerat] run fill 2 70 30 12 27 -30 glass replace air
+execute if entity @s[tag=Molerat] run fill 13 70 30 23 27 -30 glass replace air
+execute if entity @s[tag=Molerat] run fill 24 70 30 34 27 -30 glass replace air
+execute if entity @s[tag=Molerat] run fill 35 70 30 45 27 -30 glass replace air

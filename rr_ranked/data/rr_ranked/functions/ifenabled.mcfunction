@@ -16,6 +16,13 @@ execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_ranked:arenacl
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] {"text":"Ranked Mode is enabled.","color":"light_purple","bold":"true"}
 tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced
 
+#lock joinpads
+execute as @s[tag=EditedSettings] if entity @a[team=Blue] run function game:cancelblue
+execute as @s[tag=EditedSettings] if entity @a[team=Yellow] run function game:cancelyellow
+execute as @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:uncancelblue
+execute as @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:uncancelyellow
+execute as @s[tag=EditedSettings] unless entity @a[team=Blue] unless entity @a[team=Yellow] run tag @s remove Countdown
+
 #fake game end
 execute as @s[tag=FakeGameEnd] run function rr_ranked:game/fakegameend
 

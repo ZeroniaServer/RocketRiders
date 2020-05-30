@@ -19,7 +19,7 @@ execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
 execute as @s[tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
 execute as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial
-execute as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","bold":false,"color":"blue"},{"keybind":"key.advancements","bold":false,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","bold":false,"color":"blue"}]
+execute as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":"true","color":"blue"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"blue"}]
 #tag @a remove JoinBlue
 
 execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
@@ -46,7 +46,7 @@ execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinYellow]
 execute as @s[tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
 execute as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial
-execute as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","bold":false,"color":"gold"},{"keybind":"key.advancements","bold":false,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","bold":false,"color":"gold"}]
+execute as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":"true","color":"gold"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"gold"}]
 #tag @a remove JoinYellow
 
 execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]

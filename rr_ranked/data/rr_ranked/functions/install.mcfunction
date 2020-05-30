@@ -9,4 +9,4 @@ scoreboard objectives add ForfeitWin dummy
 scoreboard objectives add ForfeitLoss dummy
 scoreboard objectives add ForfeitTimeout dummy
 scoreboard objectives add fakeendtimer dummy
-execute if entity @e[tag=rr_ranked,limit=1] run tellraw @s {"text":"Ranked 1v1 mode installed.","color":"green","bold":"true"}
+execute if entity @e[tag=rr_ranked,limit=1] run tellraw @s {"text":"Ranked 1v1 Mode installed.","color":"green","bold":"true"}

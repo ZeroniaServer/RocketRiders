@@ -16,4 +16,4 @@ scoreboard objectives add SBplaceScaf minecraft.used:minecraft.scaffolding
 scoreboard objectives add SBplaceObser minecraft.used:minecraft.observer
 scoreboard objectives add dropPickaxe minecraft.dropped:minecraft.diamond_pickaxe
 scoreboard objectives add HasDiaPickaxe dummy
-execute if entity @e[tag=rr_sandbox,limit=1] run tellraw @s {"text":"Sandbox mode installed.","color":"green","bold":"true"}
+execute if entity @e[tag=rr_sandbox,limit=1] run tellraw @s {"text":"Sandbox Mode installed.","color":"green","bold":"true"}

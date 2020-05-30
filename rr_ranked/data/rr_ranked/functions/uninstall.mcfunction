@@ -7,4 +7,4 @@ scoreboard objectives remove ForfeitWin
 scoreboard objectives remove ForfeitLoss
 scoreboard objectives remove ForfeitTimeout
 scoreboard objectives remove fakeendtimer
-execute unless entity @e[tag=ranked,limit=1] run tellraw @s {"text":"Ranked 1v1 mode uninstalled.","color":"red","bold":"true"}
+execute unless entity @e[tag=ranked,limit=1] run tellraw @s {"text":"Ranked 1v1 Mode uninstalled.","color":"red","bold":"true"}

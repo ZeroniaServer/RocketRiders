@@ -7,4 +7,4 @@ execute unless entity @e[type=area_effect_cloud,tag=BlueNexusC,limit=1] run summ
 execute unless entity @e[type=area_effect_cloud,tag=YellowNexusA,limit=1] run summon area_effect_cloud 34 84 32 {Tags:["YellowNexusA"],Duration:2000000000}
 execute unless entity @e[type=area_effect_cloud,tag=YellowNexusB,limit=1] run summon area_effect_cloud -10 84 32 {Tags:["YellowNexusB"],Duration:2000000000}
 execute unless entity @e[type=area_effect_cloud,tag=YellowNexusC,limit=1] run summon area_effect_cloud 12 94 63 {Tags:["YellowNexusC"],Duration:2000000000}
-execute if entity @e[tag=rr_crusade,limit=1] run tellraw @s {"text":"Crusade mode installed.","color":"green","bold":"true"}
+execute if entity @e[tag=rr_crusade,limit=1] run tellraw @s {"text":"Crusade Mode installed.","color":"green","bold":"true"}

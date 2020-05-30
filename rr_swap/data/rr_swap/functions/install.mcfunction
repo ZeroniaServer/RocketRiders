@@ -16,4 +16,4 @@ bossbar set minecraft:swap color white
 bossbar set minecraft:swap style notched_10
 bossbar set minecraft:swap max 10
 
-execute if entity @e[tag=rr_swap,limit=1] run tellraw @s {"text":"Swap mode installed.","color":"green","bold":"true"}
+execute if entity @e[tag=rr_swap,limit=1] run tellraw @s {"text":"Swap Mode installed.","color":"green","bold":"true"}

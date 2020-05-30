@@ -18,4 +18,4 @@ scoreboard objectives remove SBplaceObser
 scoreboard objectives remove dropPickaxe
 scoreboard objectives remove HasDiaPickaxe
 scoreboard players reset * gamemodeID
-execute unless entity @e[tag=rr_sandbox,limit=1] run tellraw @s {"text":"Sandbox mode uninstalled.","color":"red","bold":"true"}
+execute unless entity @e[tag=rr_sandbox,limit=1] run tellraw @s {"text":"Sandbox Mode uninstalled.","color":"red","bold":"true"}

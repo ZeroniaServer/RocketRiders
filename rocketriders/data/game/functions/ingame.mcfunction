@@ -21,13 +21,14 @@ function everytick:no_fall
 function everytick:modifiers
 
 #missile/util specific commands (optimized to only run when necessary)
-execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=missile] run tag @s add runspawnmissiles
-execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=surprising] run tag @s add runspawnmissiles
-execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=BlueFireball] run tag @s add runspawnmissiles
-execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=YellowFireball] run tag @s add runspawnmissiles
-execute unless entity @s[tag=runspawnmissiles] if entity @e[type=fireball] run tag @s add runspawnmissiles
-execute if entity @s[tag=runspawnmissiles] run function items:spawnmissiles
-tag @s[tag=runspawnmissiles] remove runspawnmissiles
+# execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=missile] run tag @s add runspawnmissiles
+# execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=surprising] run tag @s add runspawnmissiles
+# execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=BlueFireball] run tag @s add runspawnmissiles
+# execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=YellowFireball] run tag @s add runspawnmissiles
+# execute unless entity @s[tag=runspawnmissiles] if entity @e[type=fireball] run tag @s add runspawnmissiles
+# execute if entity @s[tag=runspawnmissiles] run function items:spawnmissiles
+# tag @s[tag=runspawnmissiles] remove runspawnmissiles
+function items:spawnmissiles
 
 execute unless entity @s[tag=runshields] if entity @e[type=snowball] run tag @s add runshields
 execute unless entity @s[tag=runshields] if entity @e[tag=YellowShield] run tag @s add runshields

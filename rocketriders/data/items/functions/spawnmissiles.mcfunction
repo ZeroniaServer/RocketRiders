@@ -4,6 +4,17 @@ execute if entity @s[tag=doPrevention] run function items:prevention/preventmiss
 execute as @e[tag=bluemissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 execute as @e[tag=yellowmissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 
+#Surprise Egg
+execute as @e[tag=BlueSurprise] at @s run function items:surprise_blue/rng
+execute as @e[tag=BlueSurpriseNormal] at @s run function items:surprise_blue/rngnormal
+execute as @e[tag=BlueSurpriseHeavy] at @s run function items:surprise_blue/rngheavy
+execute as @e[tag=BlueSurpriseLightning] at @s run function items:surprise_blue/rnglightning
+
+execute as @e[tag=YellowSurprise] at @s run function items:surprise_yellow/rng
+execute as @e[tag=YellowSurpriseNormal] at @s run function items:surprise_yellow/rngnormal
+execute as @e[tag=YellowSurpriseHeavy] at @s run function items:surprise_yellow/rngheavy
+execute as @e[tag=YellowSurpriseLightning] at @s run function items:surprise_yellow/rnglightning
+
 #Auxiliary
 execute as @e[tag=BlueAux] at @s positioned ~-1 ~-9 ~4 run function items:prestructureblock
 execute as @e[tag=BlueAux] at @s run setblock ~-1 ~-9 ~4 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:auxiliary_blue"}
@@ -152,27 +163,10 @@ execute as @e[tag=YellowBull] at @s positioned ~-1 ~-8 ~-18 run function items:p
 execute as @e[tag=YellowBull] at @s run setblock ~-1 ~-8 ~-18 structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0,name:"minecraft:bullet_yellow"}
 execute as @e[tag=YellowBull] at @s positioned ~-1 ~-8 ~-18 run function items:poststructureblock
 
-#Missile prep (except Surprise Egg and Catapult)
-execute as @e[tag=bluemissile,tag=!BlueCata,tag=!surprising,tag=!BlueSurprise] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
-execute as @e[tag=yellowmissile,tag=!YellowCata,tag=!surprising,tag=!YellowSurprise] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
-kill @e[tag=missile,tag=!surprising]
-
-#Surprise Egg
-execute as @e[tag=BlueSurprise] at @s run function items:surprise_blue/rng
-execute as @e[tag=BlueSurpriseNormal] at @s run function items:surprise_blue/rngnormal
-execute as @e[tag=BlueSurpriseHeavy] at @s run function items:surprise_blue/rngheavy
-execute as @e[tag=BlueSurpriseLightning] at @s run function items:surprise_blue/rnglightning
-
-execute as @e[tag=YellowSurprise] at @s run function items:surprise_yellow/rng
-execute as @e[tag=YellowSurpriseNormal] at @s run function items:surprise_yellow/rngnormal
-execute as @e[tag=YellowSurpriseHeavy] at @s run function items:surprise_yellow/rngheavy
-execute as @e[tag=YellowSurpriseLightning] at @s run function items:surprise_yellow/rnglightning
-
-#Surprise Egg prep
-scoreboard players add @e[tag=surprising] surpriseTime 1
-execute as @e[tag=bluemissile,tag=!BlueCata,tag=surprising,tag=!BlueSurprise,scores={surpriseTime=2}] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
-execute as @e[tag=yellowmissile,tag=!YellowCata,tag=surprising,tag=!YellowSurprise,scores={surpriseTime=2}] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
-kill @e[tag=missile,tag=surprising,scores={surpriseTime=2..}]
+#Missile prep (except Catapult)
+execute as @e[tag=bluemissile,tag=!BlueCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
+execute as @e[tag=yellowmissile,tag=!YellowCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
+kill @e[tag=missile]
 
 #Fireball
 execute as @e[tag=BlueFireball] at @s run summon armor_stand ~ ~1 ~ {NoGravity:1b,Marker:1b,Invulnerable:1b,Invisible:1b,Silent:1b,Tags:["FireballAS"],Passengers:[{id:fireball,Tags:["NormalFireball","NoMotion"],ExplosionPower:1,direction:[0.0,0.0,0.0]}]}

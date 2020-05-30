@@ -1,3 +1,7 @@
+#full offhand check
+tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
+tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand
+
 #void falling
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
 

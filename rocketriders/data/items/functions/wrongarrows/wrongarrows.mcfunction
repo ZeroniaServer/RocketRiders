@@ -31,4 +31,4 @@ execute store result score @s wrongWitherArrow run clear @s tipped_arrow{CustomP
 scoreboard players operation @s wrongWitherArrow -= @s HasWitherArrow
 
 #begin clearing wrong arrows
-execute unless entity @s[scores={wrongArrow=0,wrongLeviArrow=0,wrongSlowArrow=0,wrongBlindArrow=0,wrongWitherArrow=0}] run function items:clearwrongarrows
+execute unless entity @s[scores={wrongArrow=0,wrongLeviArrow=0,wrongSlowArrow=0,wrongBlindArrow=0,wrongWitherArrow=0}] run function items:wrongarrows/cleararrows

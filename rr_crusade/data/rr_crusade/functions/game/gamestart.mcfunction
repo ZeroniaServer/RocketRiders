@@ -31,5 +31,3 @@ execute as @s[scores={count=1}] run scoreboard players set @e[tag=YellowNexusC] 
 execute as @s[scores={count=1}] run scoreboard players set @e[tag=BlueNexusA] nexushealth 15
 execute as @s[scores={count=1}] run scoreboard players set @e[tag=BlueNexusB] nexushealth 15
 execute as @s[scores={count=1}] run scoreboard players set @e[tag=BlueNexusC] nexushealth 20
-scoreboard players set @s[scores={count=1..}] RandomItem -3
-scoreboard players operation @s[scores={count=1..}] RandomItem += @s[scores={count=1..}] MaxItemTime

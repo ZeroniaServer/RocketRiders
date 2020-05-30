@@ -8,7 +8,7 @@ function everytick:bookwarp
 function everytick:cancel_utility
 function everytick:player_portal
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,scores={doStacking=0..1}] run function items:antidupe
-execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:wrongarrows
+execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:wrongarrows/wrongarrows
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,scores={doStacking=1}] run scoreboard players set @s HasArrows 0
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,scores={doStacking=2}] run function items:antiantidupe
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s invCount 0

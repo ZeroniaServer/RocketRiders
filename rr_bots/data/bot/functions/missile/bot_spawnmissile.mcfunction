@@ -20,8 +20,8 @@ execute as @s[tag=BotHasBolt,scores={botmisspawn=1}] at @s unless entity @e[tag=
 execute as @s[tag=BotHasWar,scores={botmisspawn=1}] at @s unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["BMRNGWar","BMRNG"],Duration:1}
 execute as @s[scores={botmisspawn=1}] at @s run tag @e[tag=BMRNG,distance=..1,limit=1,sort=random] add SelectedBMRNG
 
-
-execute as @s[scores={botmisspawn=1}] at @s unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["RideRNG","RideTrue"],Duration:1}
+#remove comment once bot riding is resolved - Y0
+#execute as @s[scores={botmisspawn=1}] at @s unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["RideRNG","RideTrue"],Duration:1}
 execute as @s[scores={botmisspawn=1}] at @s unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["RideRNG","RideFalse"],Duration:1}
 execute as @s[scores={botmisspawn=1}] at @s run tag @e[tag=RideRNG,distance=..1,limit=1,sort=random] add SelectedRide
 
@@ -43,6 +43,9 @@ execute as @s[scores={botmisspawn=1}] at @s if entity @e[tag=SelectedBMRNG,tag=B
 execute as @s[scores={botmisspawn=1}] at @s if entity @e[tag=SelectedBMRNG,tag=BMRNGWar,distance=..1,limit=1] run tag @s add BotWarSpawn
 
 execute as @s[scores={botmisspawn=1}] at @s if entity @e[tag=SelectedRide,tag=RideTrue,distance=..1,limit=1] run tag @s add BotRider
+
+#remove comment and the tag remove command command under here once bot riding is resolved - Y0
+tag @e[tag=BotRider] remove BotRider
 
 kill @e[tag=RideRNG]
 kill @e[tag=BMRNG]

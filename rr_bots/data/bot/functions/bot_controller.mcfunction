@@ -23,8 +23,8 @@ execute as @e[tag=BotHasArrows] unless entity @s[scores={botarrowitems=1..}] run
 execute as @e[tag=Bot] at @s if entity @s[y=-2000,dy=1980] run function bot:movement/voidfall
 
 
-execute as @e[tag=Bot] at @s unless entity @e[tag=BotHPZombie,distance=..3,limit=1] if entity @a[distance=..50,limit=1] run scoreboard players remove @s BotHP 1
-execute as @e[tag=Bot] at @s unless entity @e[tag=BotHPZombie,distance=..3,limit=1] if entity @a[distance=..50,limit=1] run summon zombie ~ ~ ~ {Tags:["BotHPZombie"],NoGravity:1b,NoAI:1b,Silent:1b}
+execute as @e[tag=Bot] at @s unless entity @e[tag=BotHPZombie,distance=..3,limit=1] if entity @a[team=!Spectator,distance=..50,limit=1] run scoreboard players remove @s BotHP 1
+execute as @e[tag=Bot] at @s unless entity @e[tag=BotHPZombie,distance=..3,limit=1] if entity @a[team=!Spectator,distance=..50,limit=1] run summon zombie ~ ~ ~ {Tags:["BotHPZombie"],NoGravity:1b,NoAI:1b,Silent:1b}
 
 execute as @e[tag=Bot] at @s if entity @e[tag=BotHPZombie,distance=..3,limit=1] run tp @e[tag=BotHPZombie,distance=..2,limit=1] @s
 

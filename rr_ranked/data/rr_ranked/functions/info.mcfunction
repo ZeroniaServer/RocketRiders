@@ -1,2 +1,2 @@
-tellraw @s [{"text":"Ranked Mode:","color":"light_purple","bold":"true"}]
-tellraw @s [{"text":"Ranked Mode is a mode where players play for rank points. This mode uses it's own ruleset. You play 1v1 matches for three rounds, and the player who wins two rounds wins the whole game, along with some rank points (the loser may take a hit, however). Ascend the ranks and make your way to the top! Certain items may be enabled/disabled for this mode.","color":"white","italic":"true"}]
+tellraw @s [{"text":"Ranked 1v1 Mode:","color":"light_purple","bold":"true"}]
+tellraw @s [{"text":"Ranked 1v1 Mode is a mode where players play for rank points. This mode uses its own ruleset. You play 1v1 matches for three rounds, and the player who wins two rounds wins the whole game, along with some rank points (the loser may take a hit, however). Ascend the ranks and make your way to the top! Certain items may be enabled/disabled for this mode.","color":"white","italic":"true"}]

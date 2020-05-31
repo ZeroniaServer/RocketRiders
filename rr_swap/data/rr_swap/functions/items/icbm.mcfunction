@@ -13,13 +13,13 @@ execute as @e[tag=ICBMtracker] at @s if entity @e[tag=ICBM,distance=..3,limit=1]
 
 tag @e[tag=ICBM,scores={ICBMtime=30..}] add ICBMTriggered
 
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~ ~
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~ ~0.1
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~ ~-0.1
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~0.1 ~ ~
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~-0.1 ~ ~
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~0.1 ~
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~-0.1 ~
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~ ~ {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~ ~0.1 {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~ ~-0.1 {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~0.1 ~ ~ {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~-0.1 ~ ~ {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~0.1 ~ {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~-0.1 ~ {Fuse:1s}
 tag @e[tag=ICBMTriggered] add ICBMdone
 kill @e[tag=ICBMTriggered]
 

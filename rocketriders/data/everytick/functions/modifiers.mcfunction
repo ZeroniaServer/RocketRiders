@@ -22,6 +22,7 @@ execute if entity @s[tag=Sonar] as @e[type=tnt] run data merge entity @s {Glowin
 execute if entity @s[tag=Sonar] as @e[type=item] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[tag=VortexItemBlue] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[tag=VortexItemYellow] run data merge entity @s {Glowing:1b}
+execute if entity @s[tag=Sonar] as @e[tag=VortexItemFeathered] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[tag=Bot] run data merge entity @s {Glowing:1b}
 
 #Rocket Residers (anti-crossing behavior)

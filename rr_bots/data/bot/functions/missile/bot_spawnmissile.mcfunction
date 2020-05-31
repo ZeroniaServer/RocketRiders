@@ -1,4 +1,4 @@
-execute as @s at @s if entity @e[scores={botmisspawn=1..},distance=2..6] run scoreboard players set @s botmisspawn 41
+execute as @s at @s if entity @e[scores={botmisspawn=1..},distance=2..6] run scoreboard players set @s botmisspawn 61
 
 scoreboard players add @s botmisspawn 1
 
@@ -20,8 +20,7 @@ execute as @s[tag=BotHasBolt,scores={botmisspawn=1}] at @s unless entity @e[tag=
 execute as @s[tag=BotHasWar,scores={botmisspawn=1}] at @s unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["BMRNGWar","BMRNG"],Duration:1}
 execute as @s[scores={botmisspawn=1}] at @s run tag @e[tag=BMRNG,distance=..1,limit=1,sort=random] add SelectedBMRNG
 
-#remove comment once bot riding is resolved - Y0
-#execute as @s[scores={botmisspawn=1}] at @s unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["RideRNG","RideTrue"],Duration:1}
+execute as @s[scores={botmisspawn=1}] at @s unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["RideRNG","RideTrue"],Duration:1}
 execute as @s[scores={botmisspawn=1}] at @s unless entity @e[tag=RecentBotspawn,distance=..7] run summon area_effect_cloud ~ ~ ~ {Tags:["RideRNG","RideFalse"],Duration:1}
 execute as @s[scores={botmisspawn=1}] at @s run tag @e[tag=RideRNG,distance=..1,limit=1,sort=random] add SelectedRide
 
@@ -43,9 +42,6 @@ execute as @s[scores={botmisspawn=1}] at @s if entity @e[tag=SelectedBMRNG,tag=B
 execute as @s[scores={botmisspawn=1}] at @s if entity @e[tag=SelectedBMRNG,tag=BMRNGWar,distance=..1,limit=1] run tag @s add BotWarSpawn
 
 execute as @s[scores={botmisspawn=1}] at @s if entity @e[tag=SelectedRide,tag=RideTrue,distance=..1,limit=1] run tag @s add BotRider
-
-#remove comment and the tag remove command command under here once bot riding is resolved - Y0
-tag @e[tag=BotRider] remove BotRider
 
 kill @e[tag=RideRNG]
 kill @e[tag=BMRNG]
@@ -124,8 +120,8 @@ execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotSlashSpawn,scores={botmissp
 execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotBoltSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function bot:missile/spawns/thunderbolt
 execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotWarSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function bot:missile/spawns/warhead
 
-
-
+execute as @s[tag=YellowBot,tag=BotRider,scores={botmisspawn=60..}] at @s unless entity @s[dz=-1000,z=52] run tag @s remove BotRider
+execute as @s[tag=BlueBot,tag=BotRider,scores={botmisspawn=60..}] at @s unless entity @s[dz=1000,z=-50] run tag @s remove BotRider
 
 
 
@@ -174,5 +170,5 @@ tag @e[tag=!BotHasSlash,scores={botmisspawn=40..}] remove BotSlashSpawn
 tag @e[tag=!BotHasBolt,scores={botmisspawn=40..}] remove BotBoltSpawn
 tag @e[tag=!BotHasWar,scores={botmisspawn=40..}] remove BotWarSpawn
 
-tag @e[tag=!BotHasWar,scores={botmisspawn=40..}] remove DoneSpawning
-tag @e[scores={botmisspawn=40..}] remove BotMissiles
+tag @e[scores={botmisspawn=60..}] remove DoneSpawning
+tag @e[scores={botmisspawn=60..}] remove BotMissiles

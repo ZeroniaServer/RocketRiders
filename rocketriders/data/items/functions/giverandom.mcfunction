@@ -1,5 +1,3 @@
-tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
-tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
 function items:rng
 function items:tetris
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar

@@ -1,5 +1,4 @@
-kill @e[tag=VortexFeathered]
-kill @e[tag=VortexItemFeathered]
+kill @e[type=chicken]
 
 tag @e[tag=BlueVortex] add ICBM
 tag @e[tag=BlueVortex] remove BlueVortex

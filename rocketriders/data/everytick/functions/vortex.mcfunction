@@ -70,7 +70,7 @@ execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10..}] at @s run su
 execute as @e[scores={vortexBoom=10..}] at @s run kill @s
 
 #Feathered vortex (lmao)
-execute as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
+execute unless entity @s[tag=swapEnabled] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
 execute as @e[tag=SummonFeathered] at @s run playsound entity.chicken.hurt player @a ~ ~ ~ 2 0
 execute as @e[tag=SummonFeathered] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {CustomName:"{\"text\":\"a Chicken Vortex\"}",Tags:["Vortex","VortexItemFeathered"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"5afc469d-e748-4932-b5db-6fc9e013f608",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE2YjhlOTgzODljNTQxYmIzNjQ1Mzg1MGJjYmQxZjdiYzVhNTdkYTYyZGNjNTA1MDYwNDA5NzM3ZWM1YjcyYSJ9fX0="}]}}}}]}
 execute as @e[tag=SummonFeathered] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexFeathered"],Duration:2000000000}

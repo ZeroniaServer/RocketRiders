@@ -10,7 +10,6 @@ function rr_swap:items/icbm
 function rr_swap:items/cluster
 
 #Item RNG and spawnpoints
-function items:tetris
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_swap:items/giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem

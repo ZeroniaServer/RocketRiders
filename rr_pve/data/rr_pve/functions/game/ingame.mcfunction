@@ -7,7 +7,6 @@ function rr_pve:items/spawnitems
 execute unless entity @e[tag=Bot] run function rr_pve:game/prepbots
 
 #Item RNG and spawnpoints
-function items:tetris
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem

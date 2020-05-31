@@ -9,7 +9,6 @@ function rr_powerups:everytick/lava_splash
 function rr_powerups:everytick/cancel_utility
 
 #item RNG and spawnpoints
-function items:tetris
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem

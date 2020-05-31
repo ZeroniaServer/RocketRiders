@@ -2,7 +2,6 @@
 function game:leavemidgame
 
 #Item RNG and spawnpoints
-function items:tetris
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem

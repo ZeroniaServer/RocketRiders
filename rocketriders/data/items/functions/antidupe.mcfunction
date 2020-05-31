@@ -22,7 +22,7 @@ execute store result score @s HasGemi run clear @s fox_spawn_egg 0
 execute store result score @s HasLift run clear @s dolphin_spawn_egg 0
 execute store result score @s HasNova run clear @s crossbow 0
 execute store result score @s HasVortex run clear @s egg 0
-execute store result score @s HasSplash run clear @s splash_potion{Potion:"minecraft:water"} 0
+execute store result score @s HasSplash run clear @s lingering_potion{Potion:"minecraft:water"} 0
 execute store result score @s[team=Blue] HasSurprise run clear @s squid_spawn_egg 0
 execute store result score @s[team=Yellow] HasSurprise run clear @s cod_spawn_egg 0
 

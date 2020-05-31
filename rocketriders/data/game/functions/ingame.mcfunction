@@ -63,11 +63,6 @@ execute unless entity @s[tag=runcanopy] if entity @e[tag=Platform] run tag @s ad
 execute if entity @s[tag=runcanopy] run function everytick:canopy
 tag @s[tag=runcanopy] remove runcanopy
 
-execute unless entity @s[tag=runsplash] if entity @e[type=potion] run tag @s add runsplash
-execute unless entity @s[tag=runsplash] if entity @e[tag=splash] run tag @s add runsplash
-execute if entity @s[tag=runsplash] run function everytick:splash
-tag @s[tag=runsplash] remove runsplash
-
 execute unless entity @s[tag=runnovarocket] if entity @e[type=firework_rocket] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @e[tag=BlueNova] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @e[tag=YellowNova] run tag @s add runnovarocket
@@ -76,6 +71,8 @@ execute unless entity @s[tag=runnovarocket] if entity @e[tag=BlueNovaAttach] run
 execute unless entity @s[tag=runnovarocket] if entity @e[tag=YellowNovaAttach] run tag @s add runnovarocket
 execute if entity @s[tag=runnovarocket] run function everytick:novarocket
 tag @s[tag=runnovarocket] remove runnovarocket
+
+function everytick:splash
 
 #spawntrap hotfix
 execute unless block 12 63 -66 obsidian run setblock 12 63 -66 obsidian

@@ -1,6 +1,7 @@
 #After game ends
 scoreboard players add @s endtimer 1
 tag @s remove GameStarted
+execute as @s[scores={endtimer=1}] run tag @a remove SummonPlat
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
 execute as @s[scores={endtimer=1}] run effect clear @a haste
@@ -10,6 +11,8 @@ execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false
 execute as @s[scores={endtimer=1}] as @a run function everytick:score_reset
+execute as @s[scores={endtimer=1..2}] run tp @a[team=Blue] 12 64 -66 0 0
+execute as @s[scores={endtimer=1..2}] run tp @a[team=Yellow] 12 64 66 180 0
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=EditedSettings] remove EditedSettings
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
 execute as @s[scores={endtimer=1..100}] run tag @e[tag=bluejoinpad] add CancelJoin
@@ -28,7 +31,6 @@ execute as @s[scores={endtimer=570}] run tag @a[tag=WasInYellow] remove WasInYel
 execute as @s[scores={endtimer=570}] run tag @a[tag=WasInBlue] remove WasInBlue
 execute as @s[scores={endtimer=570}] run team join Lobby @a[team=Spectator]
 execute as @s[scores={endtimer=570}] run spawnpoint @a[team=!Developer] -43 211 78
-execute as @s[scores={endtimer=570}] run tag @a remove SummonPlat
 execute as @s[scores={endtimer=570}] run clear @a[team=!Lobby,team=!Developer]
 execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0

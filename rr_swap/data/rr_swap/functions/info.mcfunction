@@ -1,2 +1,2 @@
 tellraw @s [{"text":"Swap Mode:","color":"light_purple","bold":"true"}]
-tellraw @s [{"text":"Swap is a strange gamemode. Teams start with a 'dark side' or a 'light side', and capturing the point in the middle will swap around the sides. Items may do different things depending on the side they're on, or maybe you get different missiles... Who knows..","color":"white","italic":"true"}]
+tellraw @s [{"text":"Swap is a strange gamemode. Teams start with a 'dark side' or a 'light side', every minute the game will swap around the sides. Items may do different things depending on the side they're on, and you get different missiles on different sides.","color":"white","italic":"true"}]

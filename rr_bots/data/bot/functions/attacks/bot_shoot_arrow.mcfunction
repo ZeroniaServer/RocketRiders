@@ -18,8 +18,8 @@ execute as @e[tag=BotFireArrow,scores={botarrow=10}] at @s anchored eyes positio
 
 execute as @s at @s run function bot:animations/shootanim
 
-tag @e[scores={botarrow=10..}] remove BotFireArrow
-tag @e[scores={botarrow=10..}] remove BotArrows
-tag @e[scores={botarrow=10..}] remove BOTCONTROL
-scoreboard players remove @e[scores={botarrow=10..}] botarrowitems 1
-scoreboard players reset @e[scores={botarrow=10..}] botarrow
+tag @e[scores={botarrow=30}] remove BotFireArrow
+tag @e[scores={botarrow=30}] remove BotArrows
+tag @e[scores={botarrow=30}] remove BOTCONTROL
+scoreboard players remove @e[scores={botarrow=30}] botarrowitems 1
+scoreboard players reset @e[scores={botarrow=30..}] botarrow

@@ -1,3 +1,5 @@
+scoreboard objectives setdisplay sidebar RoundsWon
+
 #leave midgame
 function game:leavemidgame
 

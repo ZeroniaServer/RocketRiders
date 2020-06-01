@@ -1,0 +1,6 @@
+title @s[scores={HasVortex=1..},tag=!fullHotbar] actionbar {"text":"ICBM already obtained.","color":"aqua"}
+title @s[scores={HasVortex=0},tag=!fullHotbar] actionbar {"text":"ICBM obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasVortex=0},tag=!fullHotbar] egg{CustomModelData:1,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"ICBM","color":"gold","bold":"true"}]',Lore:['{"text":"Made by:","color":"gray"}','{"text":"YZEROgame","color":"gray"}','{"text":" ","color":"gray"}','{"text":"An intercontinental ballistic missile.","color":"gray"}','{"text":"Blows up upon impact.","color":"gray"}']}} 1
+give @s[team=Blue,scores={HasVortex=0},tag=!fullHotbar] egg{CustomModelData:1,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"ICBM","color":"blue","bold":"true"}]',Lore:['{"text":"Made by:","color":"gray"}','{"text":"YZEROgame","color":"gray"}','{"text":" ","color":"gray"}','{"text":"An intercontinental ballistic missile.","color":"gray"}','{"text":"Blows up upon impact.","color":"gray"}']}} 1
+
+tag @e[tag=Selection] add givenICBM

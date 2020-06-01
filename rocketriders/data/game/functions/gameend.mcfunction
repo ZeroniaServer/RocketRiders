@@ -1,7 +1,9 @@
 #After game ends
 scoreboard players add @s endtimer 1
-tag @s remove GameStarted
-tag @s remove gaveFirstItem
+tag @s[scores={endtimer=1}] remove GameStarted
+tag @s[scores={endtimer=1}] remove gaveFirstItem
+scoreboard players operation @s[scores={endtimer=1}] MaxItemTime = @s[scores={endtimer=1}] MaxItemSec
+scoreboard players operation @s[scores={endtimer=1}] MaxItemTime *= 20 MaxItemSec
 execute as @s[scores={endtimer=1}] run tag @a remove SummonPlat
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]

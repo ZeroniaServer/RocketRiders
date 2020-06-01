@@ -11,3 +11,6 @@ execute if entity @s[tag=rngMissile,tag=SurpriseEgg] run summon area_effect_clou
 tag @e[tag=rngSU,sort=random,limit=1] add rngSUSelected
 execute as @e[tag=rngSUSelected,tag=rngSurprise] as @a[team=Blue,tag=!fullHotbar] run function items:surprise_blue/givesurpriseegg
 execute as @e[tag=rngSUSelected,tag=rngSurprise] as @a[team=Yellow,tag=!fullHotbar] run function items:surprise_yellow/givesurpriseegg
+
+#wind down
+scoreboard players remove @s[tag=WindDown,scores={MaxItemTime=22..}] MaxItemTime 2

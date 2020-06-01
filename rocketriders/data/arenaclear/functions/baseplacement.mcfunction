@@ -36,9 +36,37 @@ fill 13 38 74 11 38 74 fire replace air
 fill 11 38 74 11 38 74 fire replace air
 
 #Molerat
+execute if entity @s[tag=Molerat] run fill -21 26 30 -10 0 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill -9 26 30 1 0 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 2 26 30 12 0 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 13 26 30 23 0 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 24 26 30 34 0 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 35 26 30 45 0 -30 light_gray_stained_glass replace air
+
 execute if entity @s[tag=Molerat] run fill -21 70 30 -10 27 -30 light_gray_stained_glass replace air
 execute if entity @s[tag=Molerat] run fill -9 70 30 1 27 -30 light_gray_stained_glass replace air
 execute if entity @s[tag=Molerat] run fill 2 70 30 12 27 -30 light_gray_stained_glass replace air
 execute if entity @s[tag=Molerat] run fill 13 70 30 23 27 -30 light_gray_stained_glass replace air
 execute if entity @s[tag=Molerat] run fill 24 70 30 34 27 -30 light_gray_stained_glass replace air
 execute if entity @s[tag=Molerat] run fill 35 70 30 45 27 -30 light_gray_stained_glass replace air
+
+execute if entity @s[tag=Molerat] run fill -21 114 30 -10 71 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill -9 114 30 1 71 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 2 114 30 12 71 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 13 114 30 23 71 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 24 114 30 34 71 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 35 114 30 45 71 -30 light_gray_stained_glass replace air
+
+execute if entity @s[tag=Molerat] run fill -21 158 30 -10 115 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill -9 158 30 1 115 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 2 158 30 12 115 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 13 158 30 23 115 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 24 158 30 34 115 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 35 158 30 45 115 -30 light_gray_stained_glass replace air
+
+execute if entity @s[tag=Molerat] run fill -21 180 30 -10 159 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill -9 180 30 1 159 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 2 180 30 12 159 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 13 180 30 23 159 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 24 180 30 34 159 -30 light_gray_stained_glass replace air
+execute if entity @s[tag=Molerat] run fill 35 180 30 45 159 -30 light_gray_stained_glass replace air

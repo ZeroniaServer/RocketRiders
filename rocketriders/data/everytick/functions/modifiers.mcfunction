@@ -10,6 +10,7 @@ execute if entity @s[tag=Explosive] as @e[type=fireball,tag=NormalFireball] run 
 #Sonar
 execute if entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue] run effect give @s blindness 1000000 255 true
 execute if entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue] run effect give @s glowing 1000000 1 true
+execute if entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue] run effect give @s speed 1000000 2 true
 execute if entity @s[tag=Sonar] as @e[type=arrow] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[type=snowball] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[type=egg] run data merge entity @s {Glowing:1b}

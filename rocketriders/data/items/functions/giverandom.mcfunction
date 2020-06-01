@@ -1,5 +1,6 @@
 function items:rng
 function items:tetris
+tag @s add gaveFirstItem
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
 execute as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
 

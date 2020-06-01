@@ -32,3 +32,8 @@ tag @s remove givenFireballTwice
 tag @s remove givenShield
 tag @s remove givenShieldTwice
 tag @s remove givenAllUtil
+
+#hotfix for minute mix giving duplicate items
+execute as @s[tag=Minute] run tag @s add givenArrows
+execute as @s[tag=Minute] run tag @s add givenFireball
+execute as @s[tag=Minute] run tag @s add givenShield

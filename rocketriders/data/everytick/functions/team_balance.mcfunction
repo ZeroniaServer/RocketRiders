@@ -1,8 +1,3 @@
-#commands
-execute store result score @s yellowsCount run execute if entity @a[team=Yellow]
-
-execute store result score @s bluesCount run execute if entity @a[team=Blue]
-
 scoreboard players operation @s largerTeamCount = @s yellowsCount
 scoreboard players operation @s largerTeamCount > @s bluesCount
 

@@ -7,7 +7,7 @@ scoreboard players set 800 swapside 800
 execute if entity @e[tag=swapplatform] run bossbar set minecraft:swap players @a[team=!Lobby]
 
 execute if score SwapPlatform swapside >= 1100 swapside run kill @e[tag=swapplatform]
-execute if score SwapPlatform swapside >= 1100 swapside run execute unless entity @e[tag=swapplatform,limit=1] run summon area_effect_cloud 12 55 0 {Tags:[swapplatform],Duration:2000000000}
+execute if score SwapPlatform swapside >= 1100 swapside unless entity @e[tag=swapplatform,limit=1] run summon area_effect_cloud 12 55 0 {Tags:[swapplatform],Duration:2000000000}
 execute if score SwapPlatform swapside >= 1100 swapside run scoreboard players set BossbarB swapside 0
 execute if score SwapPlatform swapside >= 1100 swapside run scoreboard players set BossbarA swapside 0
 execute if score SwapPlatform swapside >= 1100 swapside run scoreboard players reset SwapPlatform swapside
@@ -18,8 +18,8 @@ execute if score BossbarA swapside >= 20 swapside run scoreboard players reset B
 execute store result bossbar minecraft:swap value run scoreboard players get BossbarB swapside
 execute if score BossbarB swapside >= 10 swapside run tag @e[tag=swapplatform] add SwappingSides
 
-execute if score SwapSide swapside matches 0 run execute as @e[tag=SwappingSides] run function rr_swap:baseswap/lightyellow
-execute if score SwapSide swapside matches 1 run execute as @e[tag=SwappingSides] run function rr_swap:baseswap/darkyellow
+execute if score SwapSide swapside matches 0 as @e[tag=SwappingSides] run function rr_swap:baseswap/lightyellow
+execute if score SwapSide swapside matches 1 as @e[tag=SwappingSides] run function rr_swap:baseswap/darkyellow
 
 
 

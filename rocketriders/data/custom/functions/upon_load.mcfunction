@@ -10,3 +10,4 @@ fill -69 193 75 -69 193 74 birch_wall_sign[facing=east]
 fill -70 193 75 -70 193 74 gray_stained_glass
 setblock -71 193 75 light_blue_concrete
 setblock -71 193 74 purple_concrete
+execute as @e[tag=LeaveSpec] at @s run tp @s ~ 95 ~

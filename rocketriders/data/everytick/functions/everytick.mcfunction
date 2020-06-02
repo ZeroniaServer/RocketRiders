@@ -1,5 +1,5 @@
 function everytick:leave_game
-function everytick:general_settings_or_hotfixes
+execute as @e[tag=Selection] run function everytick:general_settings_or_hotfixes
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s invCount 0
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,tag=doHotbarLimit] run function items:invcount
 execute as @e[tag=Selection] run function game:gamestart

@@ -28,4 +28,7 @@ execute if score SwapSide swapside matches 0 run fill -14 34 -62 38 63 -66 minec
 # execute if score SwapSide swapside matches 0 run fill -14 63 57 38 34 61 minecraft:black_stained_glass replace minecraft:orange_stained_glass
 execute if score SwapSide swapside matches 0 run fill 38 34 62 -14 63 66 minecraft:black_concrete replace minecraft:white_stained_glass
 
-bossbar set minecraft:swap players none
+bossbar set rr_swap:swap_progress players none
+scoreboard players set SwapPlatform swapside 0
+scoreboard players set BossbarA swapside 0
+scoreboard players set BossbarB swapside 0

@@ -1,8 +1,7 @@
 tag @s remove SwappingSides
 scoreboard players set SwapSide swapside 1
 scoreboard players set SwapPlatform swapside 0
-
-kill @s
+scoreboard players set BossbarA swapside 0
 
 fill -14 34 -56 38 63 -52 blue_stained_glass replace minecraft:light_blue_stained_glass
 fill -14 34 -57 38 63 -61 black_stained_glass replace minecraft:white_stained_glass

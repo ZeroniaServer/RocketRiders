@@ -25,7 +25,6 @@ execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=missile] run tag
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=surprising] run tag @s add runspawnmissiles
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=BlueFireball] run tag @s add runspawnmissiles
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=YellowFireball] run tag @s add runspawnmissiles
-execute unless entity @s[tag=runspawnmissiles] if entity @e[type=fireball] run tag @s add runspawnmissiles
 execute if entity @s[tag=runspawnmissiles] run function items:spawnmissiles
 tag @s[tag=runspawnmissiles] remove runspawnmissiles
 
@@ -71,6 +70,12 @@ execute unless entity @s[tag=runnovarocket] if entity @e[tag=BlueNovaAttach] run
 execute unless entity @s[tag=runnovarocket] if entity @e[tag=YellowNovaAttach] run tag @s add runnovarocket
 execute if entity @s[tag=runnovarocket] run function everytick:novarocket
 tag @s[tag=runnovarocket] remove runnovarocket
+
+execute unless entity @s[tag=runfireball] if entity @e[type=fireball,tag=!obfireball] run tag @s add runfireball
+execute unless entity @s[tag=runfireball] if entity @e[tag=BlueFireball] run tag @s add runfireball
+execute unless entity @s[tag=runfireball] if entity @e[tag=YellowFireball] run tag @s add runfireball
+execute if entity @s[tag=runfireball] run function everytick:fireball
+tag @s[tag=runfireball] remove runfireball
 
 function everytick:splash
 

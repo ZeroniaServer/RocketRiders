@@ -1,6 +1,9 @@
 #Prevention
 execute if entity @s[tag=doPrevention] run function items:prevention/preventmissiles
 
+#Roof cancelling (overworld only)
+execute in overworld as @e[tag=missile] at @s run kill @s[y=181,dy=100]
+
 execute as @e[tag=bluemissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 execute as @e[tag=yellowmissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 

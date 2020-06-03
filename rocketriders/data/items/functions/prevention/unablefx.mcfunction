@@ -4,8 +4,8 @@ execute as @s[tag=BlueAux] at @s if score @s AuxSpawned = @a[team=Blue,sort=near
 execute as @s[tag=BlueAux] at @s if score @s AuxSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] AuxSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
 
 execute as @s[tag=YellowAux] at @s store result score @s AuxSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] AuxSpawned
-execute as @s[tag=YellowAux] at @s if score @s AuxSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] TomaSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackAux
-execute as @s[tag=YellowAux] at @s if score @s AuxSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] TomaSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute as @s[tag=YellowAux] at @s if score @s AuxSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] AuxSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackAux
+execute as @s[tag=YellowAux] at @s if score @s AuxSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] AuxSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
 
 #TomaTwo
 execute as @s[tag=BlueToma] at @s store result score @s TomaSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] TomaSpawned

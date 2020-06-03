@@ -82,9 +82,7 @@ kill @e[tag=YellowPlatform]
 kill @e[tag=BluePlatform]
 
 kill @e[tag=BlueNova]
-kill @e[tag=BlueNovaAttach]
 kill @e[tag=YellowNova]
-kill @e[tag=YellowNovaAttach]
 
 function arenaclear:superspeed
 

@@ -23,8 +23,6 @@ function everytick:modifiers
 #missile/util specific commands (optimized to only run when necessary)
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=missile] run tag @s add runspawnmissiles
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=surprising] run tag @s add runspawnmissiles
-execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=BlueFireball] run tag @s add runspawnmissiles
-execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=YellowFireball] run tag @s add runspawnmissiles
 execute if entity @s[tag=runspawnmissiles] run function items:spawnmissiles
 tag @s[tag=runspawnmissiles] remove runspawnmissiles
 

@@ -1,2 +1,4 @@
 execute as @a[team=!Lobby,team=!Spectator,team=!Developer] at @s if entity @s[z=170,dz=180] run advancement grant @s only achievements:rr_challenges/committed
 execute as @a[team=!Lobby,team=!Spectator,team=!Developer] at @s if entity @s[z=-350,dz=180] run advancement grant @s only achievements:rr_challenges/committed
+execute as @a[team=!Lobby,team=!Spectator,team=!Developer] at @s if entity @s[x=160,dx=180] run advancement grant @s only achievements:rr_challenges/committed
+execute as @a[team=!Lobby,team=!Spectator,team=!Developer] at @s if entity @s[x=-340,dx=180] run advancement grant @s only achievements:rr_challenges/committed

@@ -23,3 +23,6 @@ execute as @e[tag=Selection] unless entity @s[tag=EditedSelections] run function
 
 #lobby credits
 execute unless entity @e[tag=Selection,tag=GameStarted] run function lobby:credits/cycle
+
+#Ties
+execute as @e[tag=SuddenDeath] run function game:suddendeath

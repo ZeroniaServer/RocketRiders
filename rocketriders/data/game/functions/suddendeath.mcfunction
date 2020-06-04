@@ -1,0 +1,48 @@
+execute as @s[scores={SDtime=1}] run execute as @a run stopsound @s master minecraft:ui.toast.challenge_complete
+execute as @s[scores={SDtime=1}] run execute as @a run stopsound @s master minecraft:entity.wither.spawn
+
+scoreboard players reset @s endtimer
+
+scoreboard players add @s SDtime 1
+execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Blue] 12 64 -66 0 0
+execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Yellow] 12 64 66 180 0
+execute as @s[scores={SDtime=1}] at @s run scoreboard players set 2 MaxItemSec 2
+execute as @s[scores={SDtime=1}] at @s run replaceitem entity @a armor.head air
+execute as @s[scores={SDtime=1}] at @s run clear @a firework_rocket
+execute as @s[scores={SDtime=1}] at @s run effect give @a blindness 1 100 true
+execute as @s[scores={SDtime=4}] at @s run effect clear @a blindness
+execute as @s[scores={SDtime=1}] at @s run tag @s remove GameEnd
+execute as @s[scores={SDtime=1}] run gamemode survival @a[team=Blue]
+execute as @s[scores={SDtime=1}] run gamemode survival @a[team=Yellow]
+execute as @s[scores={SDtime=5}] run execute as @a[team=!Lobby] at @s run playsound minecraft:event.raid.horn player @s ~ ~ ~ 100 1.1
+execute as @s[scores={SDtime=10}] run execute as @a[team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door player @s ~ ~ ~ 100 1.3
+execute as @s[scores={SDtime=1}] run tag @s add GameStarted
+execute as @s[scores={SDtime=1}] run worldborder warning distance 1000000
+execute as @s[scores={SDtime=1}] run tag @s remove BlueWon
+execute as @s[scores={SDtime=1}] run tag @s remove YellowWon
+scoreboard players operation @s[scores={SDtime=1}] MaxItemTime /= 2 MaxItemSec
+
+fill -9 38 -74 11 57 -74 minecraft:nether_portal
+fill 13 38 -74 33 57 -74 minecraft:nether_portal
+fill -9 38 74 11 57 74 minecraft:nether_portal
+fill 13 57 74 33 38 74 minecraft:nether_portal
+
+
+
+execute as @s[scores={SDtime=1}] run title @a title ["",{"text":"It's a Tie!","color":"gray","bold":true}]
+execute as @s[scores={SDtime=1..5}] run title @a subtitle ["",{"text":"","bold":true,"color":"red"},{"text":"SUDDEN DEATH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=6}] run title @a subtitle ["",{"text":"S","bold":true,"color":"red"},{"text":"UDDEN DEATH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=7}] run title @a subtitle ["",{"text":"SU","bold":true,"color":"red"},{"text":"DDEN DEATH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=8}] run title @a subtitle ["",{"text":"SUD","bold":true,"color":"red"},{"text":"DEN DEATH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=9}] run title @a subtitle ["",{"text":"SUDD","bold":true,"color":"red"},{"text":"EN DEATH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=10}] run title @a subtitle ["",{"text":"SUDDE","bold":true,"color":"red"},{"text":"N DEATH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=11}] run title @a subtitle ["",{"text":"SUDDEN","bold":true,"color":"red"},{"text":" DEATH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=12}] run title @a subtitle ["",{"text":"SUDDEN D","bold":true,"color":"red"},{"text":"EATH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=13}] run title @a subtitle ["",{"text":"SUDDEN DE","bold":true,"color":"red"},{"text":"ATH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=14}] run title @a subtitle ["",{"text":"SUDDEN DEA","bold":true,"color":"red"},{"text":"TH","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=15}] run title @a subtitle ["",{"text":"SUDDEN DEAT","bold":true,"color":"red"},{"text":"H","bold":true,"color":"white"}]
+execute as @s[scores={SDtime=16}] run title @a subtitle ["",{"text":"SUDDEN DEATH","bold":true,"color":"red"}]
+
+execute as @s[scores={SDtime=16..}] run tag @s remove SuddenDeath
+execute as @s[scores={SDtime=16..}] run scoreboard players reset 2 MaxItemSec
+execute as @s[scores={SDtime=16..}] run scoreboard players reset @s SDtime

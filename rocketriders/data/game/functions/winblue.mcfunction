@@ -7,6 +7,7 @@ kill @e[tag=Bot]
 
 #Win stuff
 tag @s add GameEnd
+tag @s add BlueWon
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
 execute as @a store result score @s HasFirework run clear @s firework_rocket 0
 give @a[team=Blue,scores={HasFirework=0}] firework_rocket{display:{Name:'{"text":"Celebratory Fireworks","color":"blue","bold":"true","italic":"false"}'},Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]},CanPlaceOn:["#custom:missileblocks","#custom:basereplace"],HideFlags:50} 5

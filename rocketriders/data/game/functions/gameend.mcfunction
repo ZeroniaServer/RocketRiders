@@ -25,11 +25,11 @@ execute as @s[scores={endtimer=81..100}] run tag @e[tag=bluejoinpad] add CancelJ
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=specjoinpad] add CancelJoin
 
 #This is the system for ties.
-execute as @s[tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
-execute as @s[tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
-execute as @s[tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 74 nether_portal run tag @s add SuddenDeath
-execute as @s[tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 74 nether_portal run tag @s add SuddenDeath
-execute as @s[tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] run tag @s add SuddenDeath
+execute as @s[tag=!rankedEnabled,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
+execute as @s[tag=!rankedEnabled,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
+execute as @s[tag=!rankedEnabled,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 74 nether_portal run tag @s add SuddenDeath
+execute as @s[tag=!rankedEnabled,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 74 nether_portal run tag @s add SuddenDeath
+execute as @s[tag=!rankedEnabled,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] run tag @s add SuddenDeath
 
 
 execute as @s[scores={endtimer=250}] run tag @a[team=Blue] add WasInBlue

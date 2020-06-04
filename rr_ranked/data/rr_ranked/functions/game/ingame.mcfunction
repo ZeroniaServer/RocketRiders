@@ -12,13 +12,13 @@ spawnpoint @a[team=Yellow] 12 64 66
 execute if entity @s[tag=Minute] run function items:minutemix
 
 #win
-execute unless entity @s[tag=CriteriaTrue] if block 13 38 -74 air if block 11 38 -74 air run setblock 11 38 -74 obsidian
-execute unless entity @s[tag=CriteriaTrue] if block 11 38 -74 air unless block 13 38 -74 air run function rr_ranked:game/winyellow
-execute unless entity @s[tag=CriteriaTrue] if block 13 38 -74 air unless block 11 38 -74 air run function rr_ranked:game/winyellow
+execute unless entity @s[tag=CriteriaTrue] unless block 13 38 -74 nether_portal if block 11 38 -74 air run setblock 11 38 -74 obsidian
+execute unless entity @s[tag=CriteriaTrue] unless block 11 38 -74 nether_portal unless block 13 38 -74 air run function rr_ranked:game/winyellow
+execute unless entity @s[tag=CriteriaTrue] unless block 13 38 -74 nether_portal unless block 11 38 -74 air run function rr_ranked:game/winyellow
 
-execute unless entity @s[tag=CriteriaTrue] if block 13 38 74 air if block 11 38 74 air run setblock 11 38 74 obsidian
-execute unless entity @s[tag=CriteriaTrue] if block 13 38 74 air unless block 11 38 74 air run function rr_ranked:game/winblue
-execute unless entity @s[tag=CriteriaTrue] if block 11 38 74 air unless block 13 38 74 air run function rr_ranked:game/winblue
+execute unless entity @s[tag=CriteriaTrue] unless block 13 38 74 nether_portal if block 11 38 74 air run setblock 11 38 74 obsidian
+execute unless entity @s[tag=CriteriaTrue] unless block 13 38 74 nether_portal unless block 11 38 74 air run function rr_ranked:game/winblue
+execute unless entity @s[tag=CriteriaTrue] unless block 11 38 74 nether_portal unless block 13 38 74 air run function rr_ranked:game/winblue
 
 #arena clear cheesing
 execute if entity @e[tag=PlacerClear] run tag @s remove CriteriaTrue

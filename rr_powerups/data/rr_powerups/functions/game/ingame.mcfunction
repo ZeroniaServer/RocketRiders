@@ -29,11 +29,11 @@ execute as @s[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
 scoreboard players set @s[scores={PowerupDisplay=..0}] PowerupDisplay 30
 
 #win
-execute if block 13 38 74 air run function rr_powerups:game/winblue
-execute if block 11 38 74 air run function rr_powerups:game/winblue
+execute unless block 13 38 74 nether_portal run function rr_powerups:game/winblue
+execute unless block 11 38 74 nether_portal run function rr_powerups:game/winblue
 
-execute if block 13 38 -74 air run function rr_powerups:game/winyellow
-execute if block 11 38 -74 air run function rr_powerups:game/winyellow
+execute unless block 13 38 -74 nether_portal run function rr_powerups:game/winyellow
+execute unless block 11 38 -74 nether_portal run function rr_powerups:game/winyellow
 
 #capture the point (+ optional gamemode stuff)
 tag @a[tag=onCapturePoint] remove onCapturePoint

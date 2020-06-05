@@ -1,2 +1,3 @@
-title @s[tag=!fullHotbar] actionbar {"text":"Surprise Egg obtained.","color":"aqua"}
-give @s[team=Yellow,tag=!fullHotbar] cod_spawn_egg{display:{Name:'[{"text":"[???] ","color":"light_purple","bold":"true"},{"text":"Surprise Egg","color":"gold","bold":"true"}]',Lore:['{"text":"Wonder what it spawns?","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['YellowSurprise','surprising']}} 1
+title @s[scores={HasSurprise=3..},tag=!fullHotbar] actionbar {"text":"Surprise Egg already obtained.","color":"aqua"}
+title @s[scores={HasSurprise=..2},tag=!fullHotbar] actionbar {"text":"Surprise Egg obtained.","color":"aqua"}
+give @s[team=Yellow,scores={HasSurprise=..2},tag=!fullHotbar] cod_spawn_egg{display:{Name:'[{"text":"[???] ","color":"light_purple","bold":"true"},{"text":"Surprise Egg","color":"gold","bold":"true"}]',Lore:['{"text":"Wonder what it spawns?","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['YellowSurprise','surprising']}} 1

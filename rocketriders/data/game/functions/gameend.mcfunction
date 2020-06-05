@@ -23,10 +23,6 @@ execute as @s[scores={endtimer=81..100}] run tag @s[tag=EditedSettings] remove E
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=bluejoinpad] add CancelJoin
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=specjoinpad] add CancelJoin
-tag @s[scores={endtimer=81..100}] remove BlueWon
-tag @s[scores={endtimer=81..100}] remove YellowWon
-tag @s[scores={endtimer=81..100}] remove BlueWonFirst
-tag @s[scores={endtimer=81..100}] remove YellowWonFirst
 
 #This is the system for ties.
 execute as @s[tag=doTying,tag=!rankedEnabled,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
@@ -54,12 +50,12 @@ execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
 execute as @s[scores={endtimer=570}] run tag @a remove FailedBallet
 execute as @s[scores={endtimer=570}] run data merge entity @e[tag=AnnounceChanges,limit=1] {CustomNameVisible:1}
-execute as @s[scores={endtimer=570}] run tag @s remove EditedSettings
 execute as @s[scores={endtimer=570}] run fill -57 201 84 -70 201 72 air replace barrier
-tag @s[scores={endtimer=1..}] remove GameStarted
 execute as @s[scores={count=570..}] at @s run bossbar set rr:startgame color white
 tag @s[scores={endtimer=570..}] remove BlueWon
 tag @s[scores={endtimer=570..}] remove YellowWon
+tag @s[scores={endtimer=570..}] remove BlueWonFirst
+tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
 tag @s[scores={endtimer=570..}] remove GameEnd
 scoreboard players set @s[scores={endtimer=570..}] endtimer 0

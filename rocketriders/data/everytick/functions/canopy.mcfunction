@@ -1,3 +1,7 @@
+#Canopy quick deploy when near the base of it's own team color - Not working, disabled until further notice. 
+#scoreboard players add @e[tag=BluePlatform,z=-67,dz=26] PlatTime 3
+#scoreboard players add @e[tag=YellowPlatform,z=67,dz=-26] PlatTime 3
+
 #Canopy slow deploy.
 execute as @e[scores={PlatTime=1..50}] at @s run particle block spruce_leaves ~ ~ ~ 1 0 1 0.1 10
 execute as @e[scores={PlatTime=1}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
@@ -141,6 +145,7 @@ execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run playsound block.gras
 execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["BluePlatform"]}
 execute as @e[scores={testplat2=10}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["Platform"]}
 scoreboard players add @e[tag=BluePlatform] PlatTime 1
+
 execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDM run scoreboard players get @s pearlOwnerUUIDM
 execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players get @s pearlOwnerUUIDL
 kill @e[scores={testplat2=10..}]

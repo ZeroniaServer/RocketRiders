@@ -5,8 +5,9 @@ execute as @e[tag=Selection,tag=rankedEnabled] run function rr_ranked:ifenabled
 execute as @e[tag=Selection,tag=rankedLast] run function rr_ranked:iflast
 
 #XP/rank stuff
-execute as @a if score @s XP <= 0 XP run scoreboard players set @s XP 0
-execute as @a unless score @s XP >= 0 XP run scoreboard players set @s XP 100
+execute as @a if score @s XP matches ..0 run scoreboard players set @s XP 0
+execute as @a store success score @s HasXP run scoreboard players get @s XP
+execute as @a if score @s HasXP matches 0 run scoreboard players set @s XP 100
 scoreboard players set @a[scores={XP=..300}] RankScore 6
 scoreboard players set @a[scores={XP=301..600}] RankScore 5
 scoreboard players set @a[scores={XP=601..900}] RankScore 4

@@ -15,9 +15,6 @@ execute as @s[scores={fakeendtimer=1}] run effect clear @a haste
 execute as @s[scores={fakeendtimer=1}] run effect clear @a blindness
 execute as @s[scores={fakeendtimer=1}] run effect clear @a glowing
 execute as @s[scores={fakeendtimer=1}] run effect clear @a speed
-execute as @s[scores={fakeendtimer=1}] run gamerule fallDamage false
-execute as @s[scores={fakeendtimer=1}] run gamerule drowningDamage false
-execute as @s[scores={fakeendtimer=1}] run gamerule fireDamage false
 execute as @s[scores={fakeendtimer=1}] as @a run function everytick:score_reset
 execute as @s[scores={fakeendtimer=320}] run scoreboard players set @a kills 0
 execute as @s[scores={fakeendtimer=320}] run scoreboard players set @a deaths 0

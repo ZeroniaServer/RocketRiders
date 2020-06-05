@@ -54,6 +54,7 @@ execute as @s[scores={endtimer=570}] run data merge entity @e[tag=AnnounceChange
 execute as @s[scores={endtimer=570}] run tag @s remove EditedSettings
 execute as @s[scores={endtimer=570}] run fill -57 201 84 -70 201 72 air replace barrier
 tag @s[scores={endtimer=1..}] remove GameStarted
+execute as @s[scores={count=570..}] at @s run bossbar set rr:startgame color white
 tag @s[scores={endtimer=570..}] remove BlueWon
 tag @s[scores={endtimer=570..}] remove YellowWon
 tag @s[scores={endtimer=570..}] remove SuddenDeath

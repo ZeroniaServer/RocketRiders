@@ -19,10 +19,14 @@ execute as @s[scores={endtimer=1}] run gamerule fireDamage false
 execute as @s[scores={endtimer=1}] as @a run function everytick:score_reset
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Yellow] 12 64 66 180 0
-execute as @s[scores={endtimer=81..100}] run tag @e[tag=EditedSettings] remove EditedSettings
+execute as @s[scores={endtimer=81..100}] run tag @s[tag=EditedSettings] remove EditedSettings
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=bluejoinpad] add CancelJoin
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=specjoinpad] add CancelJoin
+tag @s[scores={endtimer=81..100}] remove BlueWon
+tag @s[scores={endtimer=81..100}] remove YellowWon
+tag @s[scores={endtimer=81..100}] remove BlueWonFirst
+tag @s[scores={endtimer=81..100}] remove YellowWonFirst
 
 #This is the system for ties.
 execute as @s[tag=doTying,tag=!rankedEnabled,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath

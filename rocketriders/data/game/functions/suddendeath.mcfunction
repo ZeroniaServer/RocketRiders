@@ -22,6 +22,10 @@ execute as @s[scores={SDtime=1}] run tag @s add GameStarted
 execute as @s[scores={SDtime=1}] run worldborder warning distance 1000000
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWon
+execute as @s[scores={SDtime=1},tag=BlueWonFirst] run advancement grant @a[team=Blue] only achievements:rr_challenges/premature
+execute as @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
+execute as @s[scores={SDtime=1},tag=YellowWonFirst] run advancement grant @a[team=Yellow] only achievements:rr_challenges/premature
+execute as @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
 scoreboard players operation @s[scores={SDtime=1,MaxItemTime=2..}] MaxItemTime /= 2 MaxItemSec
 execute as @s[scores={SDtime=1}] run scoreboard players set @s RandomItem -3
 execute as @s[scores={SDtime=1}] run scoreboard players operation @s RandomItem += @s MaxItemTime

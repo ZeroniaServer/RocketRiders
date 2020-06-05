@@ -35,11 +35,10 @@ execute as @s[tag=doTying,tag=!rankedEnabled,tag=YellowWon,tag=!BlueWon,tag=!Sud
 execute as @s[tag=doTying,tag=!rankedEnabled,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 74 nether_portal run tag @s add SuddenDeath
 execute as @s[tag=doTying,tag=!rankedEnabled,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] run tag @s add SuddenDeath
 
-
-execute as @s[scores={endtimer=250}] run tag @a[team=Blue] add WasInBlue
-execute as @s[scores={endtimer=250}] run tag @a[team=Yellow] add WasInYellow
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Blue]
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Yellow]
+execute as @s[scores={endtimer=570}] run tag @a[team=Blue] add WasInBlue
+execute as @s[scores={endtimer=570}] run tag @a[team=Yellow] add WasInYellow
 execute as @s[scores={endtimer=570}] run team join Spectator @a[team=Blue]
 execute as @s[scores={endtimer=570}] run team join Spectator @a[team=Yellow]
 execute as @s[scores={endtimer=570}] run gamemode adventure @a[team=!Developer,team=!Lobby]

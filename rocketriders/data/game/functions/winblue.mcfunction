@@ -16,7 +16,7 @@ execute as @a store result score @s HasFlag run clear @s #banners 0
 replaceitem entity @a[team=Yellow,scores={HasFlag=0}] armor.head yellow_banner{display:{Name:'{"text":"Flag of Shameful Loss","color":"yellow","bold":"true","italic":"false"}'},BlockEntityTag:{Base:14,Patterns:[{Pattern:hh,Color:0},{Pattern:hhb,Color:0},{Pattern:ls,Color:14},{Pattern:bs,Color:14},{Pattern:ls,Color:0},{Pattern:bs,Color:0},{Pattern:rs,Color:0},{Pattern:tl,Color:0}]},Enchantments:[{id:binding_curse,lvl:1}],HideFlags:39} 1
 
 #Bangladesh flag for Ev, remove when we're near release.
-execute as Evtema3 if entity @s[team=Yellow] run replaceitem entity @s armor.head green_banner{display:{Name:'{"text":"Flag of Many Warcrimes","color":"red","bold":"true","italic":"false"}'},BlockEntityTag:{Base:2,Patterns:[{Pattern:mc,Color:14}]},Enchantments:[{id:binding_curse,lvl:1}],HideFlags:39} 1
+execute as Evtema3 if entity @s[team=Yellow] run replaceitem entity @s armor.head green_banner{display:{Name:'{"text":"Flag of Many War Crimes","color":"red","bold":"true","italic":"false"}'},BlockEntityTag:{Base:2,Patterns:[{Pattern:mc,Color:14}]},Enchantments:[{id:binding_curse,lvl:1}],HideFlags:39} 1
 
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s slowness
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s levitation

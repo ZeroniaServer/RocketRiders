@@ -25,3 +25,6 @@ execute store result score Yellow Machina run clone 38 63 66 -14 34 66 48 46 -1 
 execute if score Yellow Machina >= Machina Machina run advancement grant @a[team=Yellow] only achievements:rr_challenges/machina
 scoreboard players reset Yellow Machina
 scoreboard players reset Machina Machina
+
+#One is the Loneliest Number
+execute if score @s yellowsCount matches 1 if score @s bluesCount matches 2.. run advancement grant @a[team=Yellow] only achievements:rr_challenges/loneliest

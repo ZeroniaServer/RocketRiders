@@ -1,0 +1,2 @@
+execute as @a unless entity @s[team=!Blue,team=!Yellow] if entity @s[scores={kills=50..},tag=!CompletedSoul] run advancement grant @s only achievements:rr_challenges/soul_collector
+execute as @a unless entity @s[team=!Blue,team=!Yellow] if entity @s[scores={kills=50..},tag=!CompletedSoul] run tag @s add CompletedSoul

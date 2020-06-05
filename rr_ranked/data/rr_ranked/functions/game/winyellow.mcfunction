@@ -2,6 +2,7 @@
 tag @s add CriteriaTrue
 kill @e[type=tnt]
 scoreboard players add Yellow RoundsWon 1
+function rr_ranked:forced_settings
 
 effect give @a[team=Blue] instant_health 1 100
 effect give @a[team=Yellow] instant_health 1 100

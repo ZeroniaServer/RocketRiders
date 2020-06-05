@@ -13,7 +13,7 @@ execute as @e[tag=RandomSplash,scores={RNGscore=2}] run title @a subtitle ["",{"
 execute as @e[tag=RandomSplash,scores={RNGscore=3}] run title @a subtitle ["",{"text":"commandblock fish piston","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=4}] run title @a subtitle ["",{"text":"5 years of ","color":"green"},{"text":"non-stop","strikethrough":true,"color":"green"},{"text":" development!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=5}] run title @a subtitle ["",{"text":"Removed ","color":"green"},{"text":"test","obfuscated":true,"color":"red"},{"text":" from the cancelyellow function.","color":"green"}]
-execute as @e[tag=RandomSplash,scores={RNGscore=6}] run title @a subtitle ["",{"text":"Let the warcrimes begin...","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=6}] run title @a subtitle ["",{"text":"Let the war begin...","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=7}] run title @a subtitle ["",{"text":"commandblock fish piston","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=8}] run title @a subtitle ["",{"text":"EC","color":"dark_green"},{"text":"W","color":"dark_red"},{"text":"IB","color":"dark_green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=9}] run title @a subtitle ["",{"text":"Battle when?","color":"green"}]

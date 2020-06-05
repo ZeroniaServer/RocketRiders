@@ -27,8 +27,8 @@ execute if entity @s[tag=Sonar] as @e[tag=VortexItemFeathered] run data merge en
 execute if entity @s[tag=Sonar] as @e[tag=Bot] run data merge entity @s {Glowing:1b}
 
 #Rocket Residers (anti-crossing behavior)
-execute if entity @s[tag=Residers] as @a[team=Blue] at @s if entity @s[z=-36,dz=220] run tag @s add crosser
-execute if entity @s[tag=Residers] as @a[team=Yellow] at @s if entity @s[z=-184,dz=220] run tag @s add crosser
+execute if entity @s[tag=Residers,tag=!ResidersOff] as @a[team=Blue] at @s if entity @s[z=-36,dz=220] run tag @s add crosser
+execute if entity @s[tag=Residers,tag=!ResidersOff] as @a[team=Yellow] at @s if entity @s[z=-184,dz=220] run tag @s add crosser
 #hotfix for canopy teleports
 execute as @a[team=Yellow,tag=crosser] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL
 execute as @a[team=Blue,tag=crosser] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL

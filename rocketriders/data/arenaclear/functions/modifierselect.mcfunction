@@ -48,7 +48,6 @@ execute as @s[scores={modifierID=8},tag=WindDown,tag=!Minute] run data merge blo
 execute as @s[scores={modifierID=8},tag=!WindDown,tag=!Minute] run data merge block -69 191 75 {Text1: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add WindDown\"}}",Text2: "{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"Enabled Wind Down Modifier!\\\",\\\"color\\\":\\\"green\\\",\\\"bold\\\":\\\"true\\\"}\"}}"}
 execute as @s[scores={modifierID=8},tag=Minute] run data merge block -69 191 75 {Text1: "{\"text\":\"\"}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"Wind Down Modifier is incompatible with Minute Mix modifier.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}"}
 
-
 #Reset/Info
 scoreboard players set @s[scores={modifierID=9}] modifierID 0
 execute as @a[tag=modifierInfo] run function arenaclear:modifierinfo

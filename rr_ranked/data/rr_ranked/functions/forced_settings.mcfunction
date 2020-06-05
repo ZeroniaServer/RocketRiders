@@ -1,62 +1,62 @@
 #New dawn arena preset
-scoreboard players set @e[tag=Selection] TopDeco 1
-scoreboard players set @e[tag=Selection] MiddleDeco 1
-scoreboard players set @e[tag=Selection] TopCorner 1
-scoreboard players set @e[tag=Selection] BottomDeco 1
+scoreboard players set @s TopDeco 1
+scoreboard players set @s MiddleDeco 1
+scoreboard players set @s TopCorner 1
+scoreboard players set @s BottomDeco 1
 
-tag @e[tag=Selection] add rngMissile
-tag @e[tag=Selection] add rngNormal
-tag @e[tag=Selection] add rngLightning
-tag @e[tag=Selection] add rngUtil
-tag @e[tag=Selection] add rngHeavy
+tag @s add rngMissile
+tag @s add rngNormal
+tag @s add rngLightning
+tag @s add rngUtil
+tag @s add rngHeavy
 
-tag @e[tag=Selection] add rngToma
-tag @e[tag=Selection] add rngAux
-tag @e[tag=Selection] add rngBlade
-tag @e[tag=Selection] add rngEguard
-tag @e[tag=Selection] add rngSlash
-tag @e[tag=Selection] add rngWar
-tag @e[tag=Selection] add rngLift
-tag @e[tag=Selection] add rngThun
-tag @e[tag=Selection] add rngHur
-tag @e[tag=Selection] add rngNull
-tag @e[tag=Selection] add rngCata
-tag @e[tag=Selection] add rngCitadel
+tag @s add rngToma
+tag @s add rngAux
+tag @s add rngBlade
+tag @s add rngEguard
+tag @s add rngSlash
+tag @s add rngWar
+tag @s add rngLift
+tag @s add rngThun
+tag @s add rngHur
+tag @s add rngNull
+tag @s add rngCata
+tag @s add rngCitadel
 
 #Util
-tag @e[tag=Selection] add rngArrows
-tag @e[tag=Selection] add rngFireball
-tag @e[tag=Selection] add rngShield
-tag @e[tag=Selection] add rngObshield
-tag @e[tag=Selection] add rngVortex
-tag @e[tag=Selection] add rngSplash
-tag @e[tag=Selection] add rngNova
-tag @e[tag=Selection] add rngCanopy
+tag @s add rngArrows
+tag @s add rngFireball
+tag @s add rngShield
+tag @s add rngObshield
+tag @s add rngVortex
+tag @s add rngSplash
+tag @s add rngNova
+tag @s add rngCanopy
 
 #Deactivated items
-tag @e[tag=Selection] remove rngAnt
-tag @e[tag=Selection] remove rngGemi
-tag @e[tag=Selection] remove rngJbuster
-tag @e[tag=Selection] remove rngRift
+tag @s remove rngAnt
+tag @s remove rngGemi
+tag @s remove rngJbuster
+tag @s remove rngRift
 
 #Item giving time
-scoreboard players set @e[tag=Selection] MaxItemSec 15
+scoreboard players set @s MaxItemSec 15
 
 #Disable modifiers
-tag @e[tag=Selection] remove Molerat
-tag @e[tag=Selection] remove Instamine
-tag @e[tag=Selection] remove NoFall
-tag @e[tag=Selection] remove Explosive
-tag @e[tag=Selection] remove Residers
-tag @e[tag=Selection] remove Sonar
-tag @e[tag=Selection] remove SurpriseEgg
-tag @e[tag=Selection] remove Minute
+tag @s remove Molerat
+tag @s remove Instamine
+tag @s remove NoFall
+tag @s remove Explosive
+tag @s remove Residers
+tag @s remove Sonar
+tag @s remove SurpriseEgg
+tag @s remove Minute
 
 #Add needed settings and modifiers
-tag @e[tag=Selection] add WindDown
-tag @e[tag=Selection] add doPrevention
-tag @e[tag=Selection] add doHotbarLimit
-scoreboard players set @e[tag=Selection] doStacking 0
+tag @s add WindDown
+tag @s add doPrevention
+tag @s add doHotbarLimit
+scoreboard players set @s doStacking 0
 
 
 
@@ -71,11 +71,11 @@ summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Shield","RShieldRNG"]}
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Obshield","RShieldRNG"]}
 tag @e[tag=RShieldRNG,limit=1,sort=random] add SelRRNG
 #    normal shield selected
-execute as @e[tag=Shield,tag=SelRRNG] run tag @e[tag=Selection] add rngShield
-execute as @e[tag=Shield,tag=SelRRNG] run tag @e[tag=Selection] remove rngObshield
+execute if entity @e[tag=Shield,tag=SelRRNG] run tag @s add rngShield
+execute if entity @e[tag=Shield,tag=SelRRNG] run tag @s remove rngObshield
 #    obshield selected
-execute as @e[tag=Obshield,tag=SelRRNG] run tag @e[tag=Selection] add rngObshield
-execute as @e[tag=Obshield,tag=SelRRNG] run tag @e[tag=Selection] remove rngShield
+execute if entity @e[tag=Obshield,tag=SelRRNG] run tag @s add rngObshield
+execute if entity @e[tag=Obshield,tag=SelRRNG] run tag @s remove rngShield
 
 
 ### 1 lightning type.
@@ -83,11 +83,11 @@ summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Hurricane","RLightningRNG"]}
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Thunderbolt","RLightingRNG"]}
 tag @e[tag=RLightningRNG,limit=1,sort=random] add SelRRNG
 #    hurricane shield selected
-execute as @e[tag=Hurricane,tag=SelRRNG] run tag @e[tag=Selection] add rngHur
-execute as @e[tag=Hurricane,tag=SelRRNG] run tag @e[tag=Selection] remove rngThun
+execute if entity @e[tag=Hurricane,tag=SelRRNG] run tag @s add rngHur
+execute if entity @e[tag=Hurricane,tag=SelRRNG] run tag @s remove rngThun
 #    thunderbolt selected
-execute as @e[tag=Thunderbolt,tag=SelRRNG] run tag @e[tag=Selection] add rngThun
-execute as @e[tag=Thunderbolt,tag=SelRRNG] run tag @e[tag=Selection] remove rngHur
+execute if entity @e[tag=Thunderbolt,tag=SelRRNG] run tag @s add rngThun
+execute if entity @e[tag=Thunderbolt,tag=SelRRNG] run tag @s remove rngHur
 
 
 ### 1 projectile type.
@@ -95,11 +95,11 @@ summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Fireball","RProjecRNG"]}
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Nova","RProjecRNG"]}
 tag @e[tag=RProjecRNG,limit=1,sort=random] add SelRRNG
 #    normal shield selected
-execute as @e[tag=Fireball,tag=SelRRNG] run tag @e[tag=Selection] add rngFireball
-execute as @e[tag=Fireball,tag=SelRRNG] run tag @e[tag=Selection] remove rngNova
+execute if entity @e[tag=Fireball,tag=SelRRNG] run tag @s add rngFireball
+execute if entity @e[tag=Fireball,tag=SelRRNG] run tag @s remove rngNova
 #    obshield selected
-execute as @e[tag=Nova,tag=SelRRNG] run tag @e[tag=Selection] add rngNova
-execute as @e[tag=Nova,tag=SelRRNG] run tag @e[tag=Selection] remove rngFireball
+execute if entity @e[tag=Nova,tag=SelRRNG] run tag @s add rngNova
+execute if entity @e[tag=Nova,tag=SelRRNG] run tag @s remove rngFireball
 
 
 ### 5/10 non-lightning missiles
@@ -116,16 +116,16 @@ summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Warhead","RMisRNG"]}
 
 tag @e[tag=RMisRNG,tag=!SelRRNG,limit=5,sort=random] add SelRRNG
 
-execute as @e[tag=SelRRNG,tag=TomaTwo] run tag @e[tag=Selection] remove rngToma
-execute as @e[tag=SelRRNG,tag=Auxiliary] run tag @e[tag=Selection] remove rngAux
-execute as @e[tag=SelRRNG,tag=Blade] run tag @e[tag=Selection] remove rngBlade
-execute as @e[tag=SelRRNG,tag=Catapult] run tag @e[tag=Selection] remove rngCata
-execute as @e[tag=SelRRNG,tag=Slasher] run tag @e[tag=Selection] remove rngSlash
-execute as @e[tag=SelRRNG,tag=Guard] run tag @e[tag=Selection] remove rngEguard
-execute as @e[tag=SelRRNG,tag=Lifter] run tag @e[tag=Selection] remove rngLift
-execute as @e[tag=SelRRNG,tag=Nullifier] run tag @e[tag=Selection] remove rngNull
-execute as @e[tag=SelRRNG,tag=Citadel] run tag @e[tag=Selection] remove rngCitadel
-execute as @e[tag=SelRRNG,tag=Warhead] run tag @e[tag=Selection] remove rngWar
+execute if entity @e[tag=SelRRNG,tag=TomaTwo] run tag @s remove rngToma
+execute if entity @e[tag=SelRRNG,tag=Auxiliary] run tag @s remove rngAux
+execute if entity @e[tag=SelRRNG,tag=Blade] run tag @s remove rngBlade
+execute if entity @e[tag=SelRRNG,tag=Catapult] run tag @s remove rngCata
+execute if entity @e[tag=SelRRNG,tag=Slasher] run tag @s remove rngSlash
+execute if entity @e[tag=SelRRNG,tag=Guard] run tag @s remove rngEguard
+execute if entity @e[tag=SelRRNG,tag=Lifter] run tag @s remove rngLift
+execute if entity @e[tag=SelRRNG,tag=Nullifier] run tag @s remove rngNull
+execute if entity @e[tag=SelRRNG,tag=Citadel] run tag @s remove rngCitadel
+execute if entity @e[tag=SelRRNG,tag=Warhead] run tag @s remove rngWar
 
 
 kill @e[tag=RankedRNG]

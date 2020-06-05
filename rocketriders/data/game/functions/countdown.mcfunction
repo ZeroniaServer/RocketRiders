@@ -76,8 +76,7 @@ execute as @s[scores={count=580}] at @s run execute as @a at @s run playsound bl
 execute as @s[scores={count=600}] run bossbar set rr:startgame value 30
 execute as @s[scores={count=600}] unless entity @s[tag=rankedEnabled] run bossbar set rr:startgame name ["",{"text":"A match is currently in progress. Feel free to join in!","color":"dark_green"}]
 execute as @s[scores={count=600}] if entity @s[tag=rankedEnabled] run bossbar set rr:startgame name ["",{"text":"A 1v1 ranked match is currently in progress!","color":"dark_red"}]
-execute as @s[scores={count=600}] run title @a title ["",{"text":"Game Started!","color":"dark_green","bold":true}]
-execute as @s[scores={count=600}] run title @a subtitle ["",{"text":"GL & HF!","color":"green","bold":true}]
+execute as @s[scores={count=600}] run function game:randomsplash
 execute as @s[scores={count=600}] at @a run playsound entity.generic.explode master @a ~ ~ ~ 100 1.2
 execute as @s[scores={count=600}] run tp @a[team=Yellow] 12 64 66 -180 0
 execute as @s[scores={count=600}] run tp @a[team=Blue] 12 64 -66 0 0

@@ -104,6 +104,10 @@ tag @a[tag=ItemDelayChange] remove ItemDelayChange
 execute as @a[team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run function arenaclear:itemdelay
 scoreboard players set @a MaxItemSec 0
 
+#tie/sudden death
+execute as @s[tag=doTying] run data merge block -70 191 78 {Text1:"{\"text\":\"Tie/Sudden Death\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove doTying\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
+execute as @s[tag=!doTying] run data merge block -70 191 78 {Text1:"{\"text\":\"Tie/Sudden Death\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doTying\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}"}
+
 ##GAME MODIFIERS
 function arenaclear:modifierselect
 

@@ -7,8 +7,10 @@ scoreboard players add @s SDtime 1
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Yellow] 12 64 66 180 0
 execute as @s[scores={SDtime=1}] at @s run scoreboard players set 2 MaxItemSec 2
+execute as @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute as @s[scores={SDtime=1}] at @s run replaceitem entity @a armor.head air
 execute as @s[scores={SDtime=1}] at @s run clear @a firework_rocket
+execute as @s[scores={SDtime=1}] at @s run effect clear @a resistance
 execute as @s[scores={SDtime=1}] at @s run effect give @a blindness 1 100 true
 execute as @s[scores={SDtime=4}] at @s run effect clear @a blindness
 execute as @s[scores={SDtime=1}] at @s run tag @s remove GameEnd
@@ -20,14 +22,25 @@ execute as @s[scores={SDtime=1}] run tag @s add GameStarted
 execute as @s[scores={SDtime=1}] run worldborder warning distance 1000000
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWon
-scoreboard players operation @s[scores={SDtime=1}] MaxItemTime /= 2 MaxItemSec
+scoreboard players operation @s[scores={SDtime=1,MaxItemTime=2..}] MaxItemTime /= 2 MaxItemSec
+execute as @s[scores={SDtime=1}] run scoreboard players set @s RandomItem -3
+execute as @s[scores={SDtime=1}] run scoreboard players operation @s RandomItem += @s MaxItemTime
+execute as @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute] RandomItem 1197
 
+fill -10 58 74 34 58 74 minecraft:obsidian replace #custom:basereplace
+fill 34 58 74 34 37 74 minecraft:obsidian replace #custom:basereplace
+fill 34 37 74 -10 37 74 minecraft:obsidian replace #custom:basereplace
+fill 12 37 74 12 58 74 minecraft:obsidian replace #custom:basereplace
+fill -10 37 74 -10 58 74 minecraft:obsidian replace #custom:basereplace
+fill 34 58 -74 -10 58 -74 minecraft:obsidian replace #custom:basereplace
+fill -10 58 -74 -10 37 -74 minecraft:obsidian replace #custom:basereplace
+fill -10 37 -74 34 37 -74 minecraft:obsidian replace #custom:basereplace
+fill 12 37 -74 12 58 -74 minecraft:obsidian replace #custom:basereplace
+fill 34 37 -74 34 58 -74 minecraft:obsidian replace #custom:basereplace
 fill -9 38 -74 11 57 -74 minecraft:nether_portal
 fill 13 38 -74 33 57 -74 minecraft:nether_portal
 fill -9 38 74 11 57 74 minecraft:nether_portal
 fill 13 57 74 33 38 74 minecraft:nether_portal
-
-
 
 execute as @s[scores={SDtime=1}] run title @a title ["",{"text":"It's a Tie!","color":"gray","bold":true}]
 execute as @s[scores={SDtime=1..5}] run title @a subtitle ["",{"text":"","bold":true,"color":"red"},{"text":"SUDDEN DEATH","bold":true,"color":"white"}]

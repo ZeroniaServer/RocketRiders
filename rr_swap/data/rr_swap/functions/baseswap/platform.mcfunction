@@ -13,6 +13,6 @@ execute if score BossbarA swapside matches 20.. if score BossbarB swapside match
 execute if score BossbarA swapside matches 20.. if score BossbarB swapside matches 9 as @a[team=!Lobby] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
 execute if score BossbarA swapside matches 20.. run scoreboard players set BossbarA swapside 0
 execute store result bossbar rr_swap:swap_progress value run scoreboard players get BossbarB swapside
-execute as @e[tag=SwappingSides] as @a[team=!Lobby] at @s run playsound entity.zombie_villager.converted player @s ~ ~ ~ 1 1.2
+execute if entity @e[tag=SwappingSides] as @a[team=!Lobby] at @s run playsound entity.zombie_villager.converted player @s ~ ~ ~ 1 1.2
 execute if score SwapSide swapside matches 0 as @e[tag=SwappingSides] run function rr_swap:baseswap/lightyellow
 execute if score SwapSide swapside matches 1 as @e[tag=SwappingSides] run function rr_swap:baseswap/darkyellow

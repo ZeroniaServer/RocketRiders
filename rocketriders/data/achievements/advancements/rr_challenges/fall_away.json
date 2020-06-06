@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "So Close, yet so Fall Away",
+            "color": "green"
+        },
+        "description": {
+            "text": "Fall on/into the enemy team's portal and die.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:sand"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/easy"
+}

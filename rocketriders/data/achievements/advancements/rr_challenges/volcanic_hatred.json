@@ -1,0 +1,27 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Volcanic Hatred",
+            "color": "green"
+        },
+        "description": {
+            "text": "Kill someone with a Lava Splash in Powerups Mode.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:lingering_potion",
+            "nbt": "{Potion:'minecraft:awkward',CustomPotionColor:16747545,HideFlags:63,Enchantments:[{id:'minecraft:unbreaking',lvl:1s}]}"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/hard"
+}

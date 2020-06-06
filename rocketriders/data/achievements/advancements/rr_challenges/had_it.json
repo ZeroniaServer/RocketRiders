@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "I Swear I Had It",
+            "color": "green"
+        },
+        "description": {
+            "text": "Lose the game while you are near the enemy base.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:phantom_membrane"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/easy"
+}

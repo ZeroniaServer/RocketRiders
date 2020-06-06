@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "A Whole New World",
+            "color": "green"
+        },
+        "description": {
+            "text": "Ride a missile with another player above Y=160.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:red_carpet"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/hard"
+}

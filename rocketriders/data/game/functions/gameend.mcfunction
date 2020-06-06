@@ -3,8 +3,7 @@ scoreboard players add @s endtimer 1
 tag @s[scores={endtimer=1}] remove GameStarted
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
-scoreboard players operation @s[scores={endtimer=81}] MaxItemTime = @s[scores={endtimer=81}] MaxItemSec
-scoreboard players operation @s[scores={endtimer=81}] MaxItemTime *= 20 MaxItemSec
+scoreboard players set @s[scores={endtimer=1}] gametime 0
 execute as @s[scores={endtimer=1..80}] run worldborder warning distance 0
 execute as @s[scores={endtimer=1}] run tag @a remove SummonPlat
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
@@ -51,6 +50,8 @@ execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
 execute as @s[scores={endtimer=570}] run tag @a remove FailedBallet
 execute as @s[scores={endtimer=570}] run data merge entity @e[tag=AnnounceChanges,limit=1] {CustomNameVisible:1}
 execute as @s[scores={endtimer=570}] run fill -57 201 84 -70 201 72 air replace barrier
+scoreboard players operation @s[scores={endtimer=570}] MaxItemTime = @s[scores={endtimer=570}] MaxItemSec
+scoreboard players operation @s[scores={endtimer=570}] MaxItemTime *= 20 MaxItemSec
 execute as @s[scores={count=570..}] at @s run bossbar set rr:startgame color white
 tag @s[scores={endtimer=570..}] remove BlueWon
 tag @s[scores={endtimer=570..}] remove YellowWon

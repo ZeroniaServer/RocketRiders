@@ -5,8 +5,11 @@ advancement grant @a[team=Yellow,scores={kills=..0}] only achievements:rr_challe
 scoreboard players set SwissCheese SwissCheese 11500
 execute store result score Yellow SwissCheese run clone 38 34 52 -14 63 66 -48 46 -1 filtered air
 execute if score Yellow SwissCheese >= SwissCheese SwissCheese run advancement grant @a[team=Yellow] only achievements:rr_challenges/swiss_cheese
-scoreboard players reset Yellow SwissCheese
 scoreboard players reset SwissCheese SwissCheese
+
+#Simple and Clean
+execute if score Yellow SwissCheese matches 0..54 if score @s gametime matches ..2400 run advancement grant @a[team=Yellow] only achievements:rr_challenges/simple_and_clean
+scoreboard players reset Yellow SwissCheese
 
 #Ground Bound
 execute as @a[team=Yellow,scores={jumps=..0}] at @s if entity @e[tag=YellowSpawnZone,distance=..50,limit=1] run advancement grant @s only achievements:rr_challenges/groundbound
@@ -28,3 +31,6 @@ scoreboard players reset Machina Machina
 
 #One is the Loneliest Number
 execute if score @s yellowsCount matches 1 if score @s bluesCount matches 2.. run advancement grant @a[team=Yellow] only achievements:rr_challenges/loneliest
+
+#Forsaken
+execute if score @s yellowsCount < @s origYCount run advancement grant @a[team=Yellow] only achievements:rr_challenges/forsaken

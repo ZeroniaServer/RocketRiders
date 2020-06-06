@@ -8,4 +8,6 @@ tp @a[scores={LeaveGame=1..}] -43 211 78 90 0
 execute as @a[scores={LeaveGame=1..,LeaveMidgame=1}] at @s run playsound entity.enderman.teleport player @s ~ ~ ~ 1 1
 scoreboard players set @a[scores={LeaveGame=1..}] LeaveMidgame 0
 scoreboard players set @a[team=!Yellow,team=!Blue] LeaveMidgame 0
+tag @a[scores={LeaveGame=1..}] remove YellowNovaAttach
+tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
 scoreboard players reset @a[scores={LeaveGame=1..}] LeaveGame

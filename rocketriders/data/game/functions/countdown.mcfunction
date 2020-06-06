@@ -103,5 +103,7 @@ execute as @s[scores={count=600}] run scoreboard players set @a[team=Blue] jumps
 execute as @s[scores={count=600},tag=!NoFall] run gamerule fallDamage true
 execute as @s[scores={count=600}] run gamerule drowningDamage true
 execute as @s[scores={count=600}] run gamerule fireDamage true
+execute as @s[scores={count=600}] run scoreboard players operation @s origBCount = @s bluesCount
+execute as @s[scores={count=600}] run scoreboard players operation @s origYCount = @s yellowsCount
 scoreboard players set @s[tag=GameStarted] count 0
 tag @s[tag=GameStarted] remove Countdown

@@ -6,6 +6,7 @@ execute as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:cle
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s
 tag @e[tag=Selection] remove GameStarted
 tag @e[tag=Selection] remove gaveFirstItem
+scoreboard players set @e[tag=Selection] gametime 0
 worldborder warning distance 0
 gamerule fallDamage false
 gamerule drowningDamage false

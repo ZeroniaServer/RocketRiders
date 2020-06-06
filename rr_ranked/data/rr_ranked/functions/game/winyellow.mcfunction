@@ -1,4 +1,7 @@
 #Blue team round wins
+execute unless score Yellow RoundsWon matches 2.. run function achievements:aftergameyellow
+execute unless score Yellow RoundsWon matches 2.. run function achievements:aftergame
+
 tag @s add CriteriaTrue
 scoreboard players add Yellow RoundsWon 1
 function rr_ranked:forced_settings

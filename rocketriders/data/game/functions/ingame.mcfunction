@@ -14,6 +14,9 @@ clear @a[team=Blue] arrow{Lobby:1b}
 #prevent players from going above the arena
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @s[tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
+#game time
+scoreboard players add @s gametime 1
+
 #general everytick commands
 function achievements:gain
 function everytick:clear_spawnblocks

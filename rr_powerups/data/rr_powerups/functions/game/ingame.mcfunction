@@ -28,6 +28,12 @@ execute as @s[scores={PowerupDisplay=..0}] run tag @a add DelayActionbar
 execute as @s[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
 scoreboard players set @s[scores={PowerupDisplay=..0}] PowerupDisplay 30
 
+#tracking for lockdown achievement
+execute as @e[tag=captureMiddle,scores={capturePoint=1,bCapturedTime=..1200}] run scoreboard players add @s bCapturedTime 1
+execute as @e[tag=captureMiddle,scores={capturePoint=2,yCapturedTime=..1200}] run scoreboard players add @s yCapturedTime 1
+execute as @e[tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s bCapturedTime 0
+execute as @e[tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s yCapturedTime 0
+
 #win
 execute unless block 13 38 74 nether_portal run function rr_powerups:game/winblue
 execute unless block 11 38 74 nether_portal run function rr_powerups:game/winblue

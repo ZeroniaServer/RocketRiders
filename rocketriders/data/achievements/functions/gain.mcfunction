@@ -1,8 +1,11 @@
 function achievements:firewithin
 function achievements:getofflawn
 function achievements:graverevenge
+function achievements:underthesea
 function achievements:rainingmen
 function achievements:uphere
 function achievements:ballet
 function achievements:committed
 function achievements:soulcollector
+function achievements:blocksintobits
+function achievements:newworld

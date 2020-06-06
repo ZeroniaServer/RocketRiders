@@ -2,15 +2,15 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "A Whole New World...",
+            "text": "Blocks into Bits",
             "color": "green"
         },
         "description": {
-            "text": "Ride a missile with another teammate at or above Y=160.",
+            "text": "Kill 500 players (all-time) by hitting them directly with a fireball.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:red_carpet"
+            "item": "minecraft:fire_charge"
         },
         "frame": "challenge",
         "show_toast": true,

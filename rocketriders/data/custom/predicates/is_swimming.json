@@ -2,7 +2,7 @@
   "condition": "minecraft:entity_properties",
   "predicate": {
     "flags": {
-      "is_sprinting": true
+      "is_swimming": true
     }
   },
   "entity":"this"

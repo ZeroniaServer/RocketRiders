@@ -1,0 +1,39 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "fireballkill",
+            "color": "green"
+        },
+        "description": {
+            "text": "fireballkill",
+            "color": "dark_green"
+        },
+        "icon": {
+          "item": "minecraft:stone"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+      "fireballkill": {
+          "trigger": "minecraft:player_killed_entity",
+          "conditions": {
+              "entity": {
+                  "type": "minecraft:player"
+              },
+              "killing_blow": {
+                  "is_projectile": true,
+                  "direct_entity": {
+                      "type": "minecraft:fireball"
+                  }
+              }
+          }
+      }
+    },
+    "rewards": {
+        "function": "achievements:fireballkill"
+    }
+}

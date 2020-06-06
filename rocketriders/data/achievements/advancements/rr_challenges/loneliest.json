@@ -10,7 +10,8 @@
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:dragon_egg"
+            "item": "minecraft:white_banner",
+            "nbt": "{BlockEntityTag:{Base:0,Patterns:[{Pattern:cs,Color:15},{Pattern:tl,Color:15},{Pattern:cbo,Color:0},{Pattern:bs,Color:15},{Pattern:bo,Color:0}]}}"
         },
         "frame": "challenge",
         "show_toast": true,

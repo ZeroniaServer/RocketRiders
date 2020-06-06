@@ -35,4 +35,4 @@ scoreboard players reset @a[tag=!InRanked] ForfeitWin
 scoreboard players reset @a[tag=!InRanked] ForfeitLoss
 tag @s[scores={ForfeitTimeout=1200..}] remove TimeOut
 scoreboard players reset @s[scores={ForfeitTimeout=1200..}] ForfeitTimeout
-execute unless entity @s[tag=GameStarted] as @a[team=!Blue,team=!Yellow,tag=InRanked] run function rr_ranked:forfeit/giveloss
+execute if entity @s[tag=GameStarted] as @a[team=!Blue,team=!Yellow,tag=InRanked] run function rr_ranked:forfeit/giveloss

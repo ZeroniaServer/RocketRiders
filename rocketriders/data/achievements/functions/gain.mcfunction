@@ -10,4 +10,10 @@ function achievements:soulcollector
 function achievements:blocksintobits
 function achievements:newworld
 function achievements:lockdown
+function achievements:volcanichatred
+function achievements:volcanichatred
 function achievements:traveler
+function achievements:fallaway
+
+#necessary for death check
+execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players operation @s PlayerDeaths = @s deaths

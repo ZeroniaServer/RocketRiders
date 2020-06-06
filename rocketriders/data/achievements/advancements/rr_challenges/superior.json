@@ -13,7 +13,7 @@
           "item": "minecraft:player_head",
           "nbt": "{SkullOwner:Cam}"
         },
-        "frame": "goal",
+        "frame": "task",
         "show_toast": true,
         "announce_to_chat": true,
         "hidden": false

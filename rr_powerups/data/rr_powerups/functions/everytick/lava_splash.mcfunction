@@ -16,5 +16,10 @@ execute if score lavasplash splashtick matches 2 run scoreboard players set lava
 
 execute as @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:1,Id:23b,Amplifier:0b}],Potion:"minecraft:awkward"}] run data merge entity @s {Radius:0,Tags:["lavasplash","lavasplash_alone"]}
 execute as @e[tag=lavasplash_alone] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava[level=8] replace #custom:splashreplace
-execute as @e[tag=lavasplash_alone] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECsplash"]}
+execute as @e[tag=lavasplash_alone] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECsplash","lavasplashclear"]}
+# execute as @e[tag=lavasplash_alone] at @s run data modify entity @e[tag=lavasplashclear,limit=1,sort=nearest] OwnerUUIDLeast set from @s OwnerUUIDLeast
+# execute as @e[tag=lavasplash_alone] at @s run data modify entity @e[tag=lavasplashclear,limit=1,sort=nearest] OwnerUUIDMost set from @s OwnerUUIDMost
+execute as @e[tag=lavasplashclear] at @s if entity @e[tag=lavasplash_alone,limit=1,sort=nearest,distance=..1] store result score @s splashOwnerUUIDL run data get entity @e[tag=lavasplash_alone,limit=1,sort=nearest,distance=..1] OwnerUUIDLeast 0.00000000023283064365386962890625
 kill @e[tag=lavasplash_alone]
+execute as @e[tag=lavasplashclear,nbt={Age:300}] at @s unless block ~ ~ ~ lava run scoreboard players reset @s splashOwnerUUIDL
+execute as @e[tag=lavasplashclear,nbt={Age:300}] at @s unless block ~ ~ ~ lava run tag @s remove lavasplashclear

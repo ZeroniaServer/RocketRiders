@@ -7,3 +7,4 @@ scoreboard objectives add origYCount dummy
 scoreboard objectives add origBCount dummy
 scoreboard objectives add HasMissiles dummy
 scoreboard objectives add PlayerDeaths dummy
+scoreboard objectives add splashOwnerUUIDL dummy

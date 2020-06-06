@@ -11,7 +11,7 @@
         },
         "icon": {
             "item": "minecraft:player_head",
-			"nbt": "{SkullOwner:MHF_Chicken}"
+			      "nbt": "{SkullOwner:MHF_Chicken}"
         },
         "frame": "challenge",
         "show_toast": true,

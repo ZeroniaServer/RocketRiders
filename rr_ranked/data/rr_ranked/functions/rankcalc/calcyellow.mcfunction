@@ -27,7 +27,7 @@ scoreboard players set RankResult XP 80
 scoreboard players operation CurrentBlue XP /= 50 XP
 
 #CurrentBlue * YellowRankScore
-execute if entity @a[team=Yellow,limit=1] run scoreboard players operation CurrentBlue XP *= @s RankScore
+execute if entity @a[team=Yellow,limit=1] run scoreboard players operation CurrentBlue XP *= @a[team=Yellow,limit=1] RankScore
 
 #RankResult+CurrentBlue = new RankResult
 scoreboard players operation RankResult XP += CurrentBlue XP
@@ -37,7 +37,7 @@ scoreboard players operation @a[team=Yellow,limit=1] XP += RankResult XP
 scoreboard players operation NetYellow XP += RankResult XP
 
 #Announce new Yellow XP
-execute as @a[team=Yellow] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"text":"+","bold":true,"color":"dark_green"},{"score":{"name":"NetYellow","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
+execute as @a[team=Yellow,limit=1] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"text":"+","bold":true,"color":"dark_green"},{"score":{"name":"NetYellow","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 
 ##LOSS
 #Set LossXP to RankResult
@@ -51,7 +51,7 @@ scoreboard players operation LossXP XP /= 10 XP
 
 #Subtract the LossXP score from the Blue player
 scoreboard players operation @a[team=Blue,limit=1] XP -= LossXP XP
-scoreboard players operation NetBlue -= LossXP XP
+scoreboard players operation NetBlue XP -= LossXP XP
 
 #Set Buffer to current Yellow XP
 scoreboard players operation Buffer XP = @a[team=Yellow,limit=1] XP
@@ -64,10 +64,10 @@ scoreboard players operation Buffer XP /= 600 XP
 
 #Add the Buffer score to the Blue player
 scoreboard players operation @a[team=Blue,limit=1] XP += Buffer XP
-scoreboard players operation NetBlue += Buffer XP
+scoreboard players operation NetBlue XP += Buffer XP
 
 #Announce new Blue XP
-execute as @a[team=Blue] run tellraw @a ["",{"selector":"@s","color":"red"},{"text":" lost ","color":"red"},{"text":"-","bold":true,"color":"dark_red"},{"score":{"name":"NetBlue","objective":"XP"},"bold":true,"color":"dark_red"},{"text":", making their XP a total of: ","color":"red"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
+execute as @a[team=Blue,limit=1] run tellraw @a ["",{"selector":"@s","color":"red"},{"text":" lost ","color":"red"},{"score":{"name":"NetBlue","objective":"XP"},"bold":true,"color":"dark_red"},{"text":", making their XP a total of: ","color":"red"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 
 #Reset all scores (optimization)
 scoreboard players reset 3 XP

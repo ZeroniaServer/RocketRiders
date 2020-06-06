@@ -27,7 +27,7 @@ scoreboard players set RankResult XP 80
 scoreboard players operation CurrentYellow XP /= 50 XP
 
 #CurrentYellow * YellowRankScore
-execute if entity @a[team=Blue,limit=1] run scoreboard players operation CurrentYellow XP *= @s RankScore
+execute if entity @a[team=Blue,limit=1] run scoreboard players operation CurrentYellow XP *= @a[team=Blue,limit=1] RankScore
 
 #RankResult+CurrentYellow = new RankResult
 scoreboard players operation RankResult XP += CurrentYellow XP
@@ -37,7 +37,7 @@ scoreboard players operation @a[team=Blue,limit=1] XP += RankResult XP
 scoreboard players operation NetBlue XP += RankResult XP
 
 #Announce new Blue XP
-execute as @a[team=Blue] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"text":"+","bold":true,"color":"dark_green"},{"score":{"name":"NetBlue","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
+execute as @a[team=Blue,limit=1] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"text":"+","bold":true,"color":"dark_green"},{"score":{"name":"NetBlue","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 
 ##LOSS
 #Set LossXP to RankResult
@@ -67,7 +67,7 @@ scoreboard players operation @a[team=Yellow,limit=1] XP += Buffer XP
 scoreboard players operation NetYellow XP += Buffer XP
 
 #Announce new Yellow XP
-execute as @a[team=Yellow] run tellraw @a ["",{"selector":"@s","color":"red"},{"text":" lost ","color":"red"},{"text":"-","bold":true,"color":"dark_red"},{"score":{"name":"NetYellow","objective":"XP"},"bold":true,"color":"dark_red"},{"text":", making their XP a total of: ","color":"red"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
+execute as @a[team=Yellow,limit=1] run tellraw @a ["",{"selector":"@s","color":"red"},{"text":" lost ","color":"red"},{"score":{"name":"NetYellow","objective":"XP"},"bold":true,"color":"dark_red"},{"text":", making their XP a total of: ","color":"red"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 
 #Reset all scores (optimization)
 scoreboard players reset 3 XP

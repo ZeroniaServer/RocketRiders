@@ -49,8 +49,8 @@ execute as @e[tag=VortexYellow,scores={vortexBoom=1..}] at @s if entity @a[team=
 execute as @e[tag=VortexYellow,scores={vortexBoom=1..}] at @s if entity @a[team=Blue,distance=..6] run tp @e[tag=VortexItemYellow,distance=..3,limit=1,sort=nearest] @s
 execute as @e[tag=VortexYellow,scores={vortexBoom=1..}] at @s if entity @a[team=Blue,distance=..6] run tp @e[tag=VortexItemYellow,distance=..3,limit=1,sort=nearest] ~ ~-2 ~
 
-execute as @a[team=Blue] at @s run scoreboard players add @e[tag=VortexYellow,distance=..3] vortexBoom 1
-execute as @a[team=Yellow] at @s run scoreboard players add @e[tag=VortexBlue,distance=..3] vortexBoom 1
+execute as @a[team=Blue] at @s run scoreboard players add @e[tag=VortexYellow,distance=..3,tag=!chained] vortexBoom 1
+execute as @a[team=Yellow] at @s run scoreboard players add @e[tag=VortexBlue,distance=..3,tag=!chained] vortexBoom 1
 execute as @e[tag=VortexYellow,scores={vortexBoom=1..}] at @s run data merge entity @e[tag=VortexItemYellow,sort=nearest,limit=1] {Tags:["Vortex","VortexItemYellow"],Invisible:1b,Invulnerable:1b,Marker:1b,NoGravity:1,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}]}
 execute as @e[tag=VortexBlue,scores={vortexBoom=1..}] at @s run data merge entity @e[tag=VortexItemBlue,sort=nearest,limit=1] {Tags:["Vortex","VortexItemBlue"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}]}
 execute as @e[scores={vortexBoom=1..1}] at @s run playsound entity.shulker.hurt_closed player @a ~ ~ ~ 1 0
@@ -61,13 +61,17 @@ execute as @e[type=arrow] at @s run scoreboard players set @e[tag=VortexBlue,dis
 execute as @e[type=arrow] at @s run scoreboard players set @e[tag=VortexYellow,distance=..2] vortexBoom 10
 execute as @e[type=tnt] at @s run scoreboard players set @e[tag=VortexBlue,distance=..5] vortexBoom 10
 execute as @e[type=tnt] at @s run scoreboard players set @e[tag=VortexYellow,distance=..5] vortexBoom 10
-execute as @e[scores={vortexBoom=10..}] at @s run scoreboard players set @e[tag=VortexBlue,distance=..6] vortexBoom 10
-execute as @e[scores={vortexBoom=10..}] at @s run scoreboard players set @e[tag=VortexYellow,distance=..6] vortexBoom 10
+execute as @e[scores={vortexBoom=10..},limit=1,tag=!chained] at @s run scoreboard players add @e[tag=VortexBlue,limit=4,tag=!chained,distance=1..8] vortexBoom 20
+execute as @e[scores={vortexBoom=11..},limit=1,tag=!chained] at @s run tag @e[tag=VortexBlue,limit=4,tag=!chained,distance=1..8] add chained
+execute as @e[scores={vortexBoom=10..},limit=1,tag=!chained] at @s run scoreboard players add @e[tag=VortexYellow,limit=4,tag=!chained,distance=1..8] vortexBoom 20
+execute as @e[scores={vortexBoom=11..},limit=1,tag=!chained] at @s run tag @e[tag=VortexYellow,limit=4,tag=!chained,distance=1..8] add chained
+scoreboard players remove @e[tag=VortexBlue,scores={vortexBoom=11..}] vortexBoom 1
+scoreboard players remove @e[tag=VortexYellow,scores={vortexBoom=11..}] vortexBoom 1
 execute as @e[tag=VortexItemYellow] at @s unless entity @e[tag=VortexYellow,distance=..2,limit=1,sort=nearest] run kill @s
 execute as @e[tag=VortexItemBlue] at @s unless entity @e[tag=VortexBlue,distance=..2,limit=1,sort=nearest] run kill @s
-execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @e[scores={vortexBoom=10..}] at @s run kill @s
+execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @e[scores={vortexBoom=10}] at @s run kill @s
 
 #Feathered vortex (lmao)
 execute unless entity @s[tag=swapEnabled] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered

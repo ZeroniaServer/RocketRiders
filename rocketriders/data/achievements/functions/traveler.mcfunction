@@ -1,4 +1,8 @@
 #traveler
+tag @a[tag=beenOnBlue,tag=beenOnYellow] add beenOnBoth
+tag @a[tag=beenOnBoth] remove beenOnBlue
+tag @a[tag=beenOnBoth] remove beenOnYellow
+tag @a[tag=beenOnBoth] remove beenOnBoth
 execute as @a[team=Yellow] at @s if entity @s[z=-74,dz=28] run tag @s add beenOnBlue
 execute as @a[team=Blue,tag=beenOnYellow] at @s if entity @s[z=-74,dz=28] run tag @s add beenOnBlue
 execute as @a[team=Blue] at @s if entity @s[z=46,dz=28] run tag @s add beenOnYellow

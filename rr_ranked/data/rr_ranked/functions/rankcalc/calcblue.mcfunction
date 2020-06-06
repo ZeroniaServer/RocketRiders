@@ -37,7 +37,7 @@ scoreboard players operation @a[team=Blue,limit=1] XP += RankResult XP
 scoreboard players operation NetBlue XP += RankResult XP
 
 #Announce new Blue XP
-execute as @a[team=Blue,limit=1] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"text":"+","bold":true,"color":"dark_green"},{"score":{"name":"NetBlue","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
+execute as @a[team=Blue,limit=1] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"score":{"name":"NetBlue","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 
 ##LOSS
 #Set LossXP to RankResult
@@ -51,7 +51,7 @@ scoreboard players operation LossXP XP /= 10 XP
 
 #Subtract the LossXP score from the Yellow player
 scoreboard players operation @a[team=Yellow,limit=1] XP -= LossXP XP
-scoreboard players operation NetYellow XP -= LossXP XP
+scoreboard players operation NetYellow XP += LossXP XP
 
 #Set Buffer to current Blue XP
 scoreboard players operation Buffer XP = @a[team=Blue,limit=1] XP
@@ -64,7 +64,7 @@ scoreboard players operation Buffer XP /= 600 XP
 
 #Add the Buffer score to the Yellow player
 scoreboard players operation @a[team=Yellow,limit=1] XP += Buffer XP
-scoreboard players operation NetYellow XP += Buffer XP
+scoreboard players operation NetYellow XP -= Buffer XP
 
 #Announce new Yellow XP
 execute as @a[team=Yellow,limit=1] run tellraw @a ["",{"selector":"@s","color":"red"},{"text":" lost ","color":"red"},{"score":{"name":"NetYellow","objective":"XP"},"bold":true,"color":"dark_red"},{"text":", making their XP a total of: ","color":"red"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]

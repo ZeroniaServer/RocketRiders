@@ -8,3 +8,6 @@ execute as @a[team=Yellow,tag=!FailedBallet] run advancement grant @s only achie
 scoreboard players reset @a jumping
 scoreboard players reset @a timeSinceJump
 scoreboard players reset @a PlayerDeaths
+tag @a remove beenOnBlue
+tag @a remove beenOnYellow
+tag @a remove beenOnBoth

@@ -1,6 +1,6 @@
-#Canopy quick deploy when near the base of it's own team color - Not working, disabled until further notice. 
-#scoreboard players add @e[tag=BluePlatform,z=-67,dz=26] PlatTime 3
-#scoreboard players add @e[tag=YellowPlatform,z=67,dz=-26] PlatTime 3
+#Canopy quick deploy when near the base of it's own team color
+execute as @a[team=Yellow] at @s if entity @s[z=38,dz=36] run scoreboard players add @e[tag=YellowPlatform,limit=1,sort=nearest,distance=..2,scores={PlatTime=..57}] PlatTime 1
+execute as @a[team=Blue] at @s if entity @s[z=-74,dz=36] run scoreboard players add @e[tag=BluePlatform,limit=1,sort=nearest,distance=..2,scores={PlatTime=..57}] PlatTime 1
 
 #Canopy slow deploy.
 execute as @e[scores={PlatTime=1..50}] at @s run particle block spruce_leaves ~ ~ ~ 1 0 1 0.1 10
@@ -75,10 +75,10 @@ execute as @e[scores={PlatTime=50}] at @s run playsound block.grass.break master
 execute as @e[scores={PlatTime=55}] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0
 
 
-execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
-execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
-execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance=1] replace jungle_leaves
-execute as @e[scores={PlatTime=57}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
+execute as @e[scores={PlatTime=58}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
+execute as @e[scores={PlatTime=58}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
+execute as @e[scores={PlatTime=58}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance=1] replace jungle_leaves
+execute as @e[scores={PlatTime=58}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
 
 #uuid storage
 execute as @a store result score @s playerUUIDM run data get entity @s UUIDMost 0.00000000023283064365386962890625

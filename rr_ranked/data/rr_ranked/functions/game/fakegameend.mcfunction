@@ -18,7 +18,9 @@ execute as @s[scores={fakeendtimer=1}] run effect clear @a speed
 execute as @s[scores={fakeendtimer=1}] as @a run function everytick:score_reset
 execute as @s[scores={fakeendtimer=320}] run scoreboard players set @a kills 0
 execute as @s[scores={fakeendtimer=320}] run scoreboard players set @a deaths 0
+execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnBlue
+execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnYellow
+execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnBoth
 execute as @s[scores={fakeendtimer=320}] run function rr_ranked:arenaclear/areaclear
 tag @s[scores={fakeendtimer=320..}] remove FakeGameEnd
 scoreboard players set @s[scores={fakeendtimer=320..}] fakeendtimer 0
-

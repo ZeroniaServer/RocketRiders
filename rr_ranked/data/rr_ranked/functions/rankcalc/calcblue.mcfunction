@@ -56,7 +56,7 @@ scoreboard players operation Buffer XP /= 600 XP
 
 #Add the Buffer score to the Yellow player
 scoreboard players operation @a[team=Yellow,limit=1] XP += Buffer XP
-execute as @a[team=Blue] run /execute as YZEROgame run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"text":"+","bold":true,"color":"dark_green"},{"score":{"name":"Buffer","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
+execute as @a[team=Blue] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"text":"+","bold":true,"color":"dark_green"},{"score":{"name":"Buffer","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 
 #Reset all scores (optimization)
 scoreboard players reset 3 XP

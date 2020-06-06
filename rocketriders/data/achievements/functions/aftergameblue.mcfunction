@@ -34,3 +34,8 @@ execute if score @s bluesCount matches 1 if score @s yellowsCount matches 2.. ru
 
 #Forsaken
 execute if score @s bluesCount < @s origBCount run advancement grant @a[team=Blue] only achievements:rr_challenges/forsaken
+
+#I Swear I Had It
+execute as @a[team=Yellow] store result score @s HasMissiles run clear @s #custom:missile 0
+execute as @a[team=Yellow,scores={HasMissiles=1..}] at @s if entity @s[z=-74,dz=28] run advancement grant @s only achievements:rr_challenges/had_it
+scoreboard players reset @a[team=Yellow] HasMissiles

@@ -5,3 +5,5 @@ scoreboard objectives add bCapturedTime dummy
 scoreboard objectives add gametime dummy
 scoreboard objectives add origYCount dummy
 scoreboard objectives add origBCount dummy
+scoreboard objectives add HasMissiles dummy
+scoreboard objectives add PlayerDeaths dummy

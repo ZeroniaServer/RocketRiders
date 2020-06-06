@@ -6,7 +6,7 @@
             "color": "green"
         },
         "description": {
-            "text": "Lose the game while you are near the enemy base.",
+            "text": "Lose the game while you are near the enemy base with a missile in your inventory.",
             "color": "dark_green"
         },
         "icon": {

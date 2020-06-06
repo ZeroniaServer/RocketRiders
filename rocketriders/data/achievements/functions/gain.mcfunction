@@ -10,3 +10,4 @@ function achievements:soulcollector
 function achievements:blocksintobits
 function achievements:newworld
 function achievements:lockdown
+function achievements:traveler

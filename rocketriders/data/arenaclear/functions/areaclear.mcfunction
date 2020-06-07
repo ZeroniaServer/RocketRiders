@@ -87,7 +87,6 @@ kill @e[tag=YellowNova]
 
 function arenaclear:superspeed
 
-data merge entity @e[tag=AnnounceChanges,limit=1] {CustomNameVisible:0}
 execute as @e[tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0
 fill -57 201 84 -70 201 72 barrier replace air
 fill 6 53 -6 18 53 6 air

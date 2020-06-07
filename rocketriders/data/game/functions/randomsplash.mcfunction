@@ -2,7 +2,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[tag=RandomSplash] RNGmax 36
+scoreboard players set @e[tag=RandomSplash] RNGmax 44
 
 execute as @e[tag=RandomSplash] store result score @s RNGscore run data get entity @s UUIDMost 0.00000000023283064365386962890625
 execute as @e[tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -45,4 +45,12 @@ execute as @e[tag=RandomSplash,scores={RNGscore=32}] run title @a subtitle ["",{
 execute as @e[tag=RandomSplash,scores={RNGscore=33}] run title @a subtitle ["",{"text":"Exception in server tick loop","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=34}] run title @a subtitle ["",{"text":"Been devin' since 1.11!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=35}] run title @a subtitle ["",{"text":"Muscle ELO","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=36}] run title @a subtitle ["",{"text":"If you have to ask, it's a feature!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=37}] run title @a subtitle ["",{"text":"3 billion devices use Java!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=38}] run title @a subtitle ["",{"text":"java.lang.NullPointerException: null","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=39}] run title @a subtitle ["",{"text":"Canopies are broken again!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=40}] run title @a subtitle ["",{"text":"go to bed YZERO","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=41}] run title @a subtitle ["",{"text":"chronos bad","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=42}] run title @a subtitle ["",{"text":"gg america","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=43}] run title @a subtitle ["",{"text":"I am a Rider!","color":"green"}]
 kill @e[tag=RandomSplash]

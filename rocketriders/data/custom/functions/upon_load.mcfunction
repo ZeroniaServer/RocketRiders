@@ -1,12 +1,1 @@
-scoreboard objectives add HasXP dummy
-scoreboard objectives add fireballkill dummy
-scoreboard objectives add yCapturedTime dummy
-scoreboard objectives add bCapturedTime dummy
-scoreboard objectives add gametime dummy
-scoreboard objectives add origYCount dummy
-scoreboard objectives add origBCount dummy
-scoreboard objectives add HasMissiles dummy
-scoreboard objectives add PlayerDeaths dummy
-scoreboard objectives add splashOwnerUUIDL dummy
-scoreboard objectives add gravShot dummy
-scoreboard objectives add vortexChain dummy
+kill @e[tag=AnnounceChanges]

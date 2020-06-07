@@ -1,3 +1,3 @@
 #fall away
-execute as @a[team=Blue,scores={FallDistance=1..}] at @s if entity @s[z=74,dz=0,y=36,dy=24] if score @s PlayerDeaths < @s deaths run advancement grant @s only achievements:rr_challenges/fall_away
-execute as @a[team=Yellow,scores={FallDistance=1..}] at @s if entity @s[z=-74,dz=0,y=36,dy=24] if score @s PlayerDeaths < @s deaths run advancement grant @s only achievements:rr_challenges/fall_away
+execute as @a[team=Blue,scores={FallDistance=1..}] at @s if entity @s[x=-15,dx=24,y=33,dy=37,z=74,dz=0] if score @s PlayerDeaths < @s deaths run advancement grant @s only achievements:rr_challenges/fall_away
+execute as @a[team=Yellow,scores={FallDistance=1..}] at @s if entity @s[x=-15,dx=24,y=33,dy=37,z=-74,dz=0] if score @s PlayerDeaths < @s deaths run advancement grant @s only achievements:rr_challenges/fall_away

@@ -2,20 +2,20 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Veteran",
+            "text": "Gravitational Shootout",
             "color": "green"
         },
         "description": {
-            "text": "Use every missile and utility at least once.",
+            "text": "Shoot five players while falling in one game.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:book"
+            "item": "minecraft:arrow"
         },
-        "frame": "goal",
+        "frame": "challenge",
         "show_toast": true,
         "announce_to_chat": true,
-        "hidden": true
+        "hidden": false
     },
     "criteria": {
         "impossible": {

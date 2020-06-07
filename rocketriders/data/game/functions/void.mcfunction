@@ -27,4 +27,4 @@ tp @s[team=Yellow] 12 64 66 -180 0
 #teleport spectators
 tp @s[team=Spectator] 12 200 0.5 90 90
 
-execute as @s[team=!Spectator] run function game:putoutfire
+execute as @s[team=!Spectator,predicate=custom:is_on_fire] at @s run function game:putoutfire

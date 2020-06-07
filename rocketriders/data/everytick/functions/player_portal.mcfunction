@@ -11,14 +11,6 @@ effect give @a[team=Blue,tag=portalKill] instant_health 1 100 true
 effect give @a[team=Yellow,tag=portalKill] instant_health 1 100 true
 effect give @a[team=Blue,tag=portalKill] fire_resistance 2 100 true
 effect give @a[team=Yellow,tag=portalKill] fire_resistance 2 100 true
-#effect clear @a[team=Blue,tag=portalKill] levitation
-#effect clear @a[team=Yellow,tag=portalKill] levitation
-#effect clear @a[team=Blue,tag=portalKill] slowness
-#effect clear @a[team=Yellow,tag=portalKill] slowness
-#effect clear @a[team=Blue,tag=portalKill] blindness
-#effect clear @a[team=Yellow,tag=portalKill] blindness
-#effect clear @a[team=Blue,tag=portalKill] poison
-#effect clear @a[team=Yellow,tag=portalKill] poison
 scoreboard players add @a[team=Blue,tag=portalKill] deaths 1
 scoreboard players add @a[team=Yellow,tag=portalKill] deaths 1
 scoreboard players add @a[team=Blue,tag=portalKill] death 1
@@ -34,8 +26,8 @@ effect clear @a[scores={voidNoFallCount=5}] slow_falling
 scoreboard players reset @a[scores={voidNoFallCount=5}] voidNoFallCount
 tp @a[team=Blue,tag=portalKill] 12 64 -66 0 0
 tp @a[team=Yellow,tag=portalKill] 12 64 66 -180 0
-execute as @a[team=Blue,tag=portalKill] run function game:putoutfire
-execute as @a[team=Yellow,tag=portalKill] run function game:putoutfire
+execute as @a[team=Blue,tag=portalKill,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute as @a[team=Yellow,tag=portalKill,predicate=custom:is_on_fire] at @s run function game:putoutfire
 tag @a[team=Blue,tag=portalKill] remove portalKill
 tag @a[team=Yellow,tag=portalKill] remove portalKill
 execute as @a[team=!Blue,team=!Yellow,tag=portalKill] run kill @s

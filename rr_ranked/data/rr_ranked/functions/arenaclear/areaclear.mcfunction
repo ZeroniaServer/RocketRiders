@@ -53,6 +53,8 @@ tag @s add GameStarted
 
 tp @a[team=Blue] 12 64 -66 0 0
 tp @a[team=Yellow] 12 64 66 180 0
+execute as @a[team=Blue,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute as @a[team=Yellow,predicate=custom:is_on_fire] at @s run function game:putoutfire
 clear @a[team=Blue]
 clear @a[team=Yellow]
 gamemode survival @a[team=Blue]

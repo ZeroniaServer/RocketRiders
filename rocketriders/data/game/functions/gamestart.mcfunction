@@ -81,6 +81,7 @@ execute as @a[tag=LeaveTeams,team=Blue] run tellraw @a ["",{"selector":"@s"},{"t
 team join Lobby @a[tag=LeaveTeams]
 clear @a[tag=LeaveTeams]
 tp @a[tag=LeaveTeams] -43 211 78 0 90
+execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @a[tag=LeaveTeams] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 tag @a remove LeaveTeams
 

@@ -15,7 +15,8 @@ execute if score lavasplash splashtick matches 2 as @e[type=potion,tag=lavasplas
 execute if score lavasplash splashtick matches 2 run scoreboard players set lavasplash splashtick 0
 
 execute as @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:1,Id:23b,Amplifier:0b}],Potion:"minecraft:awkward"}] run data merge entity @s {Radius:0,Tags:["lavasplash","lavasplash_alone"]}
-execute as @e[tag=lavasplash_alone] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava[level=8] replace #custom:splashreplace
+execute if entity @s[tag=!SplashStreams] as @e[tag=lavasplash_alone] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava[level=8] replace #custom:splashreplace
+execute if entity @s[tag=SplashStreams] as @e[tag=lavasplash_alone] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava replace #custom:splashreplace
 execute as @e[tag=lavasplash_alone] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECsplash","lavasplashclear"]}
 # execute as @e[tag=lavasplash_alone] at @s run data modify entity @e[tag=lavasplashclear,limit=1,sort=nearest] OwnerUUIDLeast set from @s OwnerUUIDLeast
 # execute as @e[tag=lavasplash_alone] at @s run data modify entity @e[tag=lavasplashclear,limit=1,sort=nearest] OwnerUUIDMost set from @s OwnerUUIDMost

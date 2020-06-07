@@ -7,3 +7,4 @@ tag @s remove Molerat
 tag @s remove Minute
 tag @s remove SurpriseEgg
 tag @s remove WindDown
+tag @s remove SplashStreams

@@ -34,6 +34,8 @@ effect clear @a[scores={voidNoFallCount=5}] slow_falling
 scoreboard players reset @a[scores={voidNoFallCount=5}] voidNoFallCount
 tp @a[team=Blue,tag=portalKill] 12 64 -66 0 0
 tp @a[team=Yellow,tag=portalKill] 12 64 66 -180 0
+execute as @a[team=Blue,tag=portalKill] run function game:putoutfire
+execute as @a[team=Yellow,tag=portalKill] run function game:putoutfire
 tag @a[team=Blue,tag=portalKill] remove portalKill
 tag @a[team=Yellow,tag=portalKill] remove portalKill
 execute as @a[team=!Blue,team=!Yellow,tag=portalKill] run kill @s

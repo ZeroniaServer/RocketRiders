@@ -10,6 +10,7 @@ effect give @a saturation 1000000 0 true
 function everytick:bookwarp
 function everytick:cancel_utility
 function everytick:player_portal
+execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,scores={doStacking=0..1}] run function items:antidupe
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:wrongarrows/wrongarrows
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,scores={doStacking=1}] run scoreboard players set @s HasArrows 0

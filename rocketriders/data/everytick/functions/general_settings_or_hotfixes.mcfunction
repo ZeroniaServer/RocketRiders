@@ -13,9 +13,6 @@ tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
 tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
 
-#void falling
-execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
-
 #add throwplat 0 and countdown so void fall stuff doesn't break
 scoreboard players add @a ThrowPlat 0
 scoreboard players add @a[scores={ThrowPlat=1..16}] ThrowPlat 1

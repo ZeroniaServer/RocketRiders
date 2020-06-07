@@ -5,7 +5,8 @@ execute as @a[scores={LobbyWarp=2}] at @s run tp @s -64 202 78 90 0
 execute as @a[scores={LobbyWarp=3}] at @s run tp @s -78 204 64 135 0
 execute as @a[scores={LobbyWarp=4}] at @s run tp @s -78 204 92 45 0
 execute as @a[scores={LobbyWarp=5}] at @s run tp @s -80 201 78 90 0
-
+execute as @a[scores={LobbyWarp=6}] at @s run tp @s 11 204 78 -90 60
+execute as @a[scores={LobbyWarp=7}] at @s run msg @s Coming soonTM
 
 
 

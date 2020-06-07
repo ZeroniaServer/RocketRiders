@@ -1,9 +1,10 @@
 #Advancements
-function achievements:aftergameblue
-function achievements:aftergame
+execute unless entity @s[tag=noAchievements] run function achievements:aftergameblue
+execute unless entity @s[tag=noAchievements] run function achievements:aftergame
+tag @s remove noAchievements
 
 #Kill bots
-kill @e[tag=Bot]
+execute if entity @e[tag=Bot] run kill @e[tag=Bot]
 
 #Win stuff
 tag @s add GameEnd

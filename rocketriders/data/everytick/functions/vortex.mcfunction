@@ -55,31 +55,30 @@ tag @e[tag=Vortex,scores={vortexBoom=1}] add origin
 execute as @e[tag=Vortex] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add origin
 execute as @e[type=arrow] at @s run tag @e[tag=Vortex,distance=..2,limit=1] add origin
 execute as @e[type=tnt] at @s run tag @e[tag=Vortex,distance=..5,limit=1] add origin
-execute as @e[tag=origin] at @s run function everytick:vortex_chain
-scoreboard players set @e[tag=origin,scores={vortexBoom=0}] vortexBoom 10
 execute as @e[tag=VortexItemYellow] at @s unless entity @e[tag=VortexYellow,distance=..2,limit=1,sort=nearest] run kill @s
 execute as @e[tag=VortexItemBlue] at @s unless entity @e[tag=VortexBlue,distance=..2,limit=1,sort=nearest] run kill @s
-execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @e[scores={vortexBoom=10}] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
-execute as @e[scores={vortexBoom=10}] at @s run kill @s
-
-#Vortex chaining
-scoreboard players add @e[tag=chained] vortexChain 1
-execute as @e[tag=chained,scores={vortexChain=4..}] at @s run function everytick:vortex_chain
 
 #Feathered vortex (lmao)
-execute unless entity @s[tag=swapEnabled] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
+execute unless entity @s[tag=featheredOff] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
 execute as @e[tag=SummonFeathered] at @s run playsound entity.chicken.hurt player @a ~ ~ ~ 2 0
 execute as @e[tag=SummonFeathered] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {CustomName:"{\"text\":\"a Chicken Vortex\"}",Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"5afc469d-e748-4932-b5db-6fc9e013f608",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE2YjhlOTgzODljNTQxYmIzNjQ1Mzg1MGJjYmQxZjdiYzVhNTdkYTYyZGNjNTA1MDYwNDA5NzM3ZWM1YjcyYSJ9fX0="}]}}}}]}
 execute as @e[tag=SummonFeathered] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexFeathered"],Duration:2000000000}
-execute as @e[tag=VortexFeathered] at @s run particle dust 1 1 1 1 ~ ~ ~ 0.5 0.5 0 0 10 force @a
-execute as @e[tag=VortexItemFeathered] at @s run tp @s ~ ~ ~ ~15 ~
-execute as @e[tag=VortexFeathered] at @s if entity @a[team=!Spectator,distance=..3] run advancement grant @a[team=!Spectator,distance=..3] only achievements:rr_challenges/huh
-execute if entity @s[tag=!Explosive] as @e[tag=VortexFeathered] at @s if entity @a[team=!Spectator,distance=..3] run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:3,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b}
-execute if entity @s[tag=Explosive] as @e[tag=VortexFeathered] at @s if entity @a[team=!Spectator,distance=..3] run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:5,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b}
-execute as @e[tag=VortexFeathered] at @s if entity @a[team=!Spectator,distance=..3] run kill @e[tag=VortexItemFeathered,distance=..3,limit=1]
-execute as @e[tag=VortexFeathered] at @s if entity @a[team=!Spectator,distance=..3] run kill @e[tag=VortexFeathered,distance=..3,limit=1]
-execute as @e[tag=VortexItemFeathered] at @s unless entity @e[tag=VortexFeathered,distance=..2,limit=1,sort=nearest] run kill @s
 execute as @e[tag=SummonFeathered] at @s run tp @s ~ ~-250 ~
 kill @e[tag=SummonFeathered]
+execute as @e[tag=VortexFeathered] at @s run particle dust 1 1 1 1 ~ ~ ~ 0.5 0.5 0 0 10 force @a
+execute as @e[tag=VortexItemFeathered] at @s run tp @s ~ ~ ~ ~15 ~
+execute as @e[tag=VortexFeathered] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/huh
+execute as @e[tag=VortexFeathered] at @s if entity @a[team=!Spectator,distance=..3] run tag @s add origin
+execute as @e[tag=VortexItemFeathered] at @s unless entity @e[tag=VortexFeathered,distance=..2,limit=1,sort=nearest] run kill @s
+
+#Vortex chaining/explosion
+execute as @e[tag=origin] at @s run function everytick:vortex_chain
+scoreboard players set @e[tag=origin,scores={vortexBoom=0}] vortexBoom 10
+scoreboard players add @e[tag=chained] vortexChain 1
+execute as @e[tag=chained,scores={vortexChain=4..}] at @s run function everytick:vortex_chain
+execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:3,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:5,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @e[scores={vortexBoom=10}] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
+execute as @e[scores={vortexBoom=10}] at @s run kill @s

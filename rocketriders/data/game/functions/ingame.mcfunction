@@ -39,6 +39,7 @@ tag @s[tag=runshields] remove runshields
 
 execute unless entity @s[tag=runvortex] if entity @e[type=egg] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[tag=Vortex] run tag @s add runvortex
+execute unless entity @s[tag=runvortex] if entity @e[tag=VortexItem] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[type=chicken] run tag @s add runvortex
 execute if entity @s[tag=runvortex] run function everytick:vortex
 tag @s[tag=runvortex] remove runvortex

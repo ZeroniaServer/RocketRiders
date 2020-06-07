@@ -9,3 +9,4 @@ scoreboard objectives add HasMissiles dummy
 scoreboard objectives add PlayerDeaths dummy
 scoreboard objectives add splashOwnerUUIDL dummy
 scoreboard objectives add gravShot dummy
+scoreboard objectives add vortexChain dummy

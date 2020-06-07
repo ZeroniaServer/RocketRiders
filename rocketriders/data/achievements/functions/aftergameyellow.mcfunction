@@ -8,7 +8,7 @@ execute if score Yellow SwissCheese >= SwissCheese SwissCheese run advancement g
 scoreboard players reset SwissCheese SwissCheese
 
 #Simple and Clean
-execute if score Yellow SwissCheese matches 0..54 if score @s gametime matches ..2400 run advancement grant @a[team=Yellow] only achievements:rr_challenges/simple_and_clean
+execute if score Yellow SwissCheese matches 0 if score @s gametime matches ..2400 run advancement grant @a[team=Yellow] only achievements:rr_challenges/simple_and_clean
 scoreboard players reset Yellow SwissCheese
 
 #Ground Bound

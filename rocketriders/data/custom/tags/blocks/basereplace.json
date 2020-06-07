@@ -70,6 +70,10 @@
 
 "minecraft:air",
 
+"minecraft:void_air",
+
+"minecraft:cave_air",
+
 "minecraft:water",
 
 "minecraft:lava",

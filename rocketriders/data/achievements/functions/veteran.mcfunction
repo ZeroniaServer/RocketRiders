@@ -24,7 +24,7 @@ execute as @a[tag=!CompletedVeteran] if score @s ObshieldSpawned matches 1.. run
 execute as @a[tag=!CompletedVeteran] if score @s ThrowPlat matches 1.. run tag @s add CanopySpawned
 execute as @a[tag=!CompletedVeteran] if score @s ThrowShield matches 1.. run tag @s add ShieldSpawned
 execute as @a[tag=!CompletedVeteran] if score @s ThrowSplash matches 1.. run tag @s add SplashSpawned
-execute as @a[tag=!CompletedVeteran] if score @s ThrowVortex matches 1.. run tag @s add SplashSpawned
+execute as @a[tag=!CompletedVeteran] if score @s ThrowVortex matches 1.. run tag @s add VortexSpawned
 execute as @a[tag=!CompletedVeteran] if score @s NovaShot matches 1.. run tag @s add NovaSpawned
 execute as @a[tag=!CompletedVeteran] if score @s BowShot matches 1.. run tag @s add ArrowSpawned
 

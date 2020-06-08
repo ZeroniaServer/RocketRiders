@@ -22,6 +22,6 @@ tag @s remove ObshieldSpawned
 tag @s remove CanopySpawned
 tag @s remove ShieldSpawned
 tag @s remove SplashSpawned
-tag @s remove SplashSpawned
+tag @s remove VortexSpawned
 tag @s remove NovaSpawned
 tag @s remove ArrowSpawned

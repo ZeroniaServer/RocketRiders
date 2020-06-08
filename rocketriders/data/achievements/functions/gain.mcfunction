@@ -21,7 +21,9 @@ function achievements:gravitationalshootout
 function achievements:veteran
 
 #necessary for death check
-execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players operation @s PlayerDeaths = @s deaths
+execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s PlayerDeaths < @s deaths run scoreboard players add @s deathCooldown 1
+execute as @a[scores={deathCooldown=2..}] run scoreboard players operation @s PlayerDeaths = @s deaths
+execute as @a[scores={deathCooldown=2..}] if score @s PlayerDeaths = @s deaths run scoreboard players reset @s deathCooldown
 
 #necessary for fall distance check (again)
 execute as @a[team=Blue] at @s if entity @s[nbt={FallDistance:0.0f}] run scoreboard players reset @s FallDistance

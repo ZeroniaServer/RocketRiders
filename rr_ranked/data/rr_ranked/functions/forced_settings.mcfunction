@@ -92,8 +92,7 @@ execute if entity @e[tag=Thunderbolt,tag=SelRRNG] run tag @s remove rngHur
 
 ### 1 projectile type.
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Fireball","RProjecRNG"]}
-#Novas disabled in ranked due to broken behaviour. Remove commentline once resolved.
-#summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Nova","RProjecRNG"]}
+summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Nova","RProjecRNG"]}
 tag @e[tag=RProjecRNG,limit=1,sort=random] add SelRRNG
 #    normal shield selected
 execute if entity @e[tag=Fireball,tag=SelRRNG] run tag @s add rngFireball

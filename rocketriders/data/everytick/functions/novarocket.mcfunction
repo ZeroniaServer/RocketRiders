@@ -27,8 +27,8 @@ scoreboard players reset @a[scores={NovaShot=1..}] NovaShot
 ##Goodbye canopy
 execute as @e[tag=BlueNova] at @s if entity @e[tag=YellowPlatform,distance=..3,limit=1] run tag @s add CanopyIsGone
 execute as @e[tag=YellowNova] at @s if entity @e[tag=BluePlatform,distance=..3,limit=1] run tag @s add CanopyIsGone
-execute as @e[tag=CanopyIsGone,tag=YellowNova] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}}
-execute as @e[tag=CanopyIsGone,tag=BlueNova] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2651799,6719955]}]}}}}
+execute as @e[tag=CanopyIsGone,tag=YellowNova] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}}
+execute as @e[tag=CanopyIsGone,tag=BlueNova] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]}}}}
 execute if entity @s[tag=!Explosive] as @e[tag=CanopyIsGone] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=Explosive] as @e[tag=CanopyIsGone] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 kill @e[tag=CanopyIsGone]
@@ -46,6 +46,7 @@ execute if entity @s[tag=Explosive] as @e[tag=yellownovatracker] at @s unless en
 execute as @e[tag=yellownovatracker] at @s unless entity @e[tag=YellowNova,distance=..3,limit=1,sort=nearest] run kill @s
 
 #Static
+execute as @e[tag=YellowNova,scores={novatimer=30..}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}}
 kill @e[tag=YellowNova,scores={novatimer=30..}]
 
 #Attach
@@ -66,7 +67,7 @@ execute as @e[tag=bluenovatracker] at @s unless entity @e[tag=BlueNova,distance=
 
 
 #Static
-execute as @e[tag=BlueNova,scores={novatimer=30..}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:4,Flicker:0,Trail:0,Colors:[I;2651799,6719955]}]}}}}
+execute as @e[tag=BlueNova,scores={novatimer=30..}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]}}}}
 kill @e[tag=BlueNova,scores={novatimer=30..}]
 
 #Attach

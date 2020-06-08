@@ -1,0 +1,35 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+      "title": {
+          "text": "firework_shot",
+          "color": "green"
+      },
+      "description": {
+          "text": "firework_shot",
+          "color": "dark_green"
+      },
+      "icon": {
+        "item": "minecraft:stone"
+      },
+      "frame": "task",
+      "show_toast": false,
+      "announce_to_chat": false,
+      "hidden": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "is_projectile": "true"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+      "function": "everytick:novashot"
+  }
+}

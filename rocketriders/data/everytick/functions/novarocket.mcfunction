@@ -1,5 +1,13 @@
-execute as @a[team=Blue,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..4,limit=1,tag=!YellowNovarocket,tag=!BlueNovarocket] add BlueNova
-execute as @a[team=Yellow,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..4,limit=1,tag=!YellowNovarocket,tag=!BlueNovarocket] add YellowNova
+execute as @a[team=Blue,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..4,limit=1,tag=!YellowNova,tag=!BlueNova] add BlueNova
+execute as @a[team=Yellow,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..4,limit=1,tag=!YellowNova,tag=!BlueNova] add YellowNova
+
+execute as @a[team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s add NovaNear
+execute as @a[team=Yellow] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add NovaNear
+scoreboard players add @s[tag=NovaNear] NovaNear 1
+execute as @a[team=Blue,tag=NovaNear,scores={NovaNear=2..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s remove NovaNear
+execute as @a[team=Blue,tag=!NovaNear,scores={NovaNear=2..}] run scoreboard players reset @s NovaNear
+execute as @a[team=Yellow,tag=NovaNear,scores={NovaNear=2..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s remove NovaNear
+execute as @a[team=Yellow,tag=!NovaNear,scores={NovaNear=2..}] run scoreboard players reset @s NovaNear
 
 scoreboard players add @e[tag=BlueNova] novaTimer 0
 scoreboard players add @e[tag=YellowNova] novatimer 0
@@ -32,12 +40,7 @@ execute as @e[tag=YellowNova] at @s run particle minecraft:falling_dust gold_blo
 
 
 ##Yellow
-execute as @e[tag=YellowNova,scores={novatimer=..29}] at @s positioned ^ ^2.5 ^ run tag @a[tag=!YellowNovaAttach,team=Blue,distance=..3,limit=1,sort=nearest] add YellowNovaAttach
-execute as @e[tag=YellowNova,scores={novatimer=..29}] at @s if entity @a[team=Blue,tag=YellowNovaAttach,distance=..3,limit=1,sort=nearest] run kill @s
-execute as @e[tag=yellownovatracker,scores={novatimer=29..32}] at @s unless entity @e[tag=YellowNova,distance=..3,limit=1,sort=nearest] run tag @a[tag=!YellowNovaAttach,team=Blue,distance=..5,limit=1,sort=nearest] add YellowNovaAttach
-execute as @e[tag=yellownovatracker,scores={novatimer=29..32}] at @s unless entity @e[tag=YellowNova,distance=..3,limit=1,sort=nearest] run tp @s ^ ^2 ^
-execute as @e[tag=yellownovatracker,scores={novatimer=32..}] at @s unless entity @e[tag=YellowNova,distance=..3,limit=1,sort=nearest] run kill @s
-execute as @e[tag=yellownovatracker] at @s if entity @a[tag=YellowNovaAttach,team=Blue,distance=..5,limit=1,sort=nearest] run kill @s
+execute as @e[tag=yellownovatracker] at @s unless entity @e[tag=YellowNova,distance=..3,limit=1,sort=nearest] run kill @s
 
 #Static
 execute if entity @s[tag=!Explosive] as @e[tag=YellowNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
@@ -58,12 +61,7 @@ execute as @a[tag=YellowNovaAttach,scores={novattach=15..}] at @s run summon fir
 execute as @a[tag=YellowNovaAttach] run tag @s[scores={novattach=15..}] remove YellowNovaAttach
 
 ##Blue
-execute as @e[tag=BlueNova,scores={novatimer=..29}] at @s positioned ^ ^2.5 ^ run tag @a[tag=!BlueNovaAttach,team=Yellow,distance=..3,limit=1,sort=nearest] add BlueNovaAttach
-execute as @e[tag=BlueNova,scores={novatimer=..29}] at @s if entity @a[team=Yellow,tag=BlueNovaAttach,distance=..3,limit=1,sort=nearest] run kill @s
-execute as @e[tag=bluenovatracker,scores={novatimer=29..32}] at @s unless entity @e[tag=BlueNova,distance=..3,limit=1,sort=nearest] run tag @a[tag=!BlueNovaAttach,team=Yellow,distance=..5,limit=1,sort=nearest] add BlueNovaAttach
-execute as @e[tag=bluenovatracker,scores={novatimer=29..32}] at @s unless entity @e[tag=BlueNova,distance=..3,limit=1,sort=nearest] run tp @s ^ ^2 ^
-execute as @e[tag=bluenovatracker,scores={novatimer=32..}] at @s unless entity @e[tag=BlueNova,distance=..3,limit=1,sort=nearest] run kill @s
-execute as @e[tag=bluenovatracker] at @s if entity @a[tag=BlueNovaAttach,team=Yellow,distance=..5,limit=1,sort=nearest] run kill @s
+execute as @e[tag=bluenovatracker] at @s unless entity @e[tag=BlueNova,distance=..3,limit=1,sort=nearest] run kill @s
 
 #Static
 execute if entity @s[tag=!Explosive] as @e[tag=BlueNova,scores={novatimer=30..}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Propellant\"}",ExplosionRadius:2,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}

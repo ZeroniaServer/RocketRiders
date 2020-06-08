@@ -83,7 +83,7 @@ summon armor_stand -52 211 102 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePla
 summon armor_stand -52 211 103 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","CagCredits"]}
 summon armor_stand -52 211 104 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","LlewCredits"]}
 summon armor_stand -52 211 105 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","LekroCredits"]}
-summon armor_stand -52 211 106 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","HrapCredits"]}
+summon armor_stand -52 211 106 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","UnWinCredits"]}
 
 
 
@@ -147,7 +147,7 @@ replaceitem entity @e[tag=ProzanCredits] armor.head player_head{SkullOwner:_Proz
 replaceitem entity @e[tag=ToulCredits] armor.head player_head{SkullOwner:Toul_}
 replaceitem entity @e[tag=IndigoCredits] armor.head player_head{SkullOwner:IndigoLaser}
 replaceitem entity @e[tag=BeardedCredits] armor.head player_head{SkullOwner:BeardedDragon15}
-replaceitem entity @e[tag=HrapCredits] armor.head player_head{SkullOwner:Hraponssi}
+replaceitem entity @e[tag=UnWinCredits] armor.head player_head{SkullOwner:UnWin}
 replaceitem entity @e[tag=LexCredits] armor.head player_head{SkullOwner:Lexbrine}
 replaceitem entity @e[tag=KadesCredits] armor.head player_head{SkullOwner:kades_}
 replaceitem entity @e[tag=DanielCredits] armor.head player_head{SkullOwner:Daniel_}

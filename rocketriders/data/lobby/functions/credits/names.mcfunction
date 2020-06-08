@@ -47,7 +47,7 @@ execute as @e[tag=EraCredits,scores={CreditCycle=1}] at @s run summon area_effec
 execute as @e[tag=CagCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"CAG2","color":"green"}'}
 execute as @e[tag=LlewCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Llewv","color":"green"}'}
 execute as @e[tag=LekroCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Lekro","color":"green"}'}
-execute as @e[tag=HrapCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Hraponssi","color":"green"}'}
+execute as @e[tag=UnWinCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"UnWin","color":"green"}'}
 
 
 

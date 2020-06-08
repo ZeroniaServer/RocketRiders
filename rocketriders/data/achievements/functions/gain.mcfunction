@@ -18,6 +18,7 @@ function achievements:volcanichatred
 function achievements:traveler
 function achievements:fallaway
 function achievements:gravitationalshootout
+function achievements:veteran
 
 #necessary for death check
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players operation @s PlayerDeaths = @s deaths

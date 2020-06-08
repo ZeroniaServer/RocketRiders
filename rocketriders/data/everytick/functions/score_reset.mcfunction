@@ -3,6 +3,7 @@ scoreboard players set @s jumps 0
 scoreboard players set @s AuxSpawned 0
 scoreboard players set @s AntsSpawned 0
 scoreboard players set @s BladeSpawned 0
+scoreboard players set @s BowShot 0
 scoreboard players set @s BulletSpawned 0
 scoreboard players set @s CataSpawned 0
 scoreboard players set @s CitaSpawned 0
@@ -14,6 +15,7 @@ scoreboard players set @s HyperSpawned 0
 scoreboard players set @s JugbSpawned 0
 scoreboard players set @s LifterSpawned 0
 scoreboard players set @s NullSpawned 0
+scoreboard players set @s ObshieldSpawned 0
 scoreboard players set @s RifterSpawned 0
 scoreboard players set @s SlashSpawned 0
 scoreboard players set @s ThunSpawned 0

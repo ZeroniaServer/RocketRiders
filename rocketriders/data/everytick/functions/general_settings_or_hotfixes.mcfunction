@@ -86,23 +86,10 @@ scoreboard players add @a GuardSpawned 0
 scoreboard players add @a HurSpawned 0
 scoreboard players add @a HyperSpawned 0
 scoreboard players add @a JugbSpawned 0
+scoreboard players add @a LifterSpawned 0
 scoreboard players add @a NullSpawned 0
 scoreboard players add @a RifterSpawned 0
 scoreboard players add @a SlashSpawned 0
 scoreboard players add @a ThunSpawned 0
 scoreboard players add @a TomaSpawned 0
 scoreboard players add @a WarSpawned 0
-
-#sandbox mode reset statistics
-scoreboard players reset @a SBplaceSlime
-scoreboard players reset @a SBplaceRS
-scoreboard players reset @a SBplacePiston
-scoreboard players reset @a SBplaceSPiston
-scoreboard players reset @a SBplaceObs
-scoreboard players reset @a SBplaceTNT
-scoreboard players reset @a SBplaceBGlass
-scoreboard players reset @a SBplaceYGlass
-scoreboard players reset @a SBplaceBGlaze
-scoreboard players reset @a SBplaceYGlaze
-scoreboard players reset @a SBplaceBCon
-scoreboard players reset @a SBplaceYCon

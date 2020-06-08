@@ -13,3 +13,5 @@ scoreboard players reset @a gravShot
 tag @a remove beenOnBlue
 tag @a remove beenOnYellow
 tag @a remove beenOnBoth
+scoreboard players set @s origBCount 0
+scoreboard players set @s origYCount 0

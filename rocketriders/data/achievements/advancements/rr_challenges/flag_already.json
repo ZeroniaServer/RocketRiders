@@ -1,0 +1,27 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Just Give Me That Flag Already",
+            "color": "green"
+        },
+        "description": {
+            "text": "Get killed on your own base.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:black_banner",
+            "nbt": "{BlockEntityTag:{Base:15,Patterns:[{Pattern:hh,Color:0},{Pattern:hhb,Color:0},{Pattern:ls,Color:15},{Pattern:bs,Color:15},{Pattern:ls,Color:0},{Pattern:bs,Color:0},{Pattern:rs,Color:0},{Pattern:tl,Color:0}]}}"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/easy"
+}

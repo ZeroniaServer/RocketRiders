@@ -7,3 +7,4 @@ scoreboard objectives add BowShot minecraft.used:minecraft.bow
 scoreboard objectives add deathCooldown dummy
 scoreboard objectives add regifts dummy
 scoreboard objectives add useful dummy
+scoreboard objectives add notBackwards dummy

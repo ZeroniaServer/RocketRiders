@@ -17,5 +17,8 @@ execute if score splash splashtick matches 2 run scoreboard players set splash s
 execute as @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:1,Id:23b,Amplifier:0b}],Potion:"minecraft:water"}] run data merge entity @s {Radius:0,Tags:["splash","splash_alone"]}
 execute if entity @s[tag=!SplashStreams] as @e[tag=splash_alone] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 water[level=8] replace #custom:splashreplace
 execute if entity @s[tag=SplashStreams] as @e[tag=splash_alone] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 water replace #custom:splashreplace
-execute as @e[tag=splash_alone] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECsplash"]}
+execute as @e[tag=splash_alone] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECsplash","splashclear"]}
+execute as @e[tag=splashclear] at @s if entity @e[tag=splash_alone,limit=1,sort=nearest,distance=..1] store result score @s splashOwnerUUIDL run data get entity @e[tag=splash_alone,limit=1,sort=nearest,distance=..1] OwnerUUIDLeast 0.00000000023283064365386962890625
 kill @e[tag=splash_alone]
+execute as @e[tag=splashclear,nbt={Age:300}] at @s unless block ~ ~ ~ water run scoreboard players reset @s splashOwnerUUIDL
+execute as @e[tag=splashclear,nbt={Age:300}] at @s unless block ~ ~ ~ water run tag @s remove splashclear

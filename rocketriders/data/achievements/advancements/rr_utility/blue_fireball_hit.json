@@ -1,0 +1,22 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "criteria": {
+      "fireball_hit": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+              "damage": {
+                "type": {
+                  "is_projectile": true,
+                  "direct_entity": {
+                    "type": "minecraft:fireball",
+                    "nbt": "{Tags:['NormalFireball','FireballYellow']}"
+                  }
+                }
+              }
+          }
+      }
+    },
+    "rewards": {
+        "function": "achievements:regifting_blue"
+    }
+}

@@ -19,6 +19,7 @@ function achievements:traveler
 function achievements:fallaway
 function achievements:gravitationalshootout
 function achievements:veteran
+function achievements:useful
 
 #necessary for death check
 scoreboard players add @a PlayerDeaths 0

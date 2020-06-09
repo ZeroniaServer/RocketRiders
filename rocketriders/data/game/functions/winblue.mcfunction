@@ -1,6 +1,7 @@
 #Advancements
 execute unless entity @s[tag=noAchievements] run function achievements:aftergameblue
 execute unless entity @s[tag=noAchievements] run function achievements:aftergame
+function achievements:scoresreset
 tag @s remove noAchievements
 
 #Kill bots

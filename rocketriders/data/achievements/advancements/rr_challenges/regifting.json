@@ -2,17 +2,18 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "| || || |_",
+            "text": "Regifting",
             "color": "green"
         },
         "description": {
-            "text": "Lose a game after having a 10 game win streak.",
+            "text": "Return an enemy fireball back to the enemy team five times in one game.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:ghast_tear"
+            "item": "minecraft:player_head",
+            "nbt": "{SkullOwner:{Id:\"3212ddeb-1d6e-4114-8d2b-d23f6f3a43dc\",Properties:{textures:[{Value:\"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDhhZmI0MzE1NzVjZjc5NGYxYThkYWIzNjAyMjc4MzgwZmY5ODg2YWUyY2Q0ZmU3MWFiYTM3YzFhOTQ1M2JjOSJ9fX0=\"}]}}}"
         },
-        "frame": "task",
+        "frame": "challenge",
         "show_toast": true,
         "announce_to_chat": true,
         "hidden": false

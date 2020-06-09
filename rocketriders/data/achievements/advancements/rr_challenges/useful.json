@@ -2,17 +2,18 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "| || || |_",
+            "text": "They're Useful!",
             "color": "green"
         },
         "description": {
-            "text": "Lose a game after having a 10 game win streak.",
+            "text": "Prevent 20 explosions (all-time) using the Splash utility item.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:ghast_tear"
+            "item": "minecraft:lingering_potion",
+            "nbt": "{Potion:'minecraft:water'}"
         },
-        "frame": "task",
+        "frame": "challenge",
         "show_toast": true,
         "announce_to_chat": true,
         "hidden": false

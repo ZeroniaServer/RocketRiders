@@ -1,0 +1,4 @@
+#they're useful
+execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=splashclear,limit=1,sort=arbitrary] splashOwnerUUIDL at @e[tag=splashclear,limit=1,sort=arbitrary] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~ ~ ~ water run scoreboard players add @s useful 1
+execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=splashclear,limit=1,sort=arbitrary] splashOwnerUUIDL at @e[tag=splashclear,limit=1,sort=arbitrary] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~ ~ ~ water run scoreboard players add @s useful 1
+advancement grant @a[scores={useful=20..}] only achievements:rr_challenges/useful

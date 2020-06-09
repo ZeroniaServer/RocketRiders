@@ -99,6 +99,6 @@ execute as @e[tag=YellowBull] at @s run tp @s ~-1 ~-8 ~-18
 
 #Missile prep
 execute as @e[tag=missile] at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn
-execute as @e[tag=missile,tag=portalSpawn] at @s run tp @s ~ ~3 ~
+execute as @e[tag=missile,tag=portalSpawn] at @s run tp @s ~ ~4 ~
 execute as @e[tag=missile] at @s run function items:structureblock
 kill @e[tag=missile]

@@ -17,11 +17,9 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:wrong
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,scores={doStacking=1}] run scoreboard players set @s HasArrows 0
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,scores={doStacking=2}] run function items:antiantidupe
 execute as @a[team=Lobby] run function everytick:score_reset
-function custom:joinpad_enddimension
-execute as @e[tag=Selection] run function everytick:infobar
 execute as @e[tag=GameEnd] run function game:gameend
 kill @e[tag=PlacerClear,tag=Cleared,tag=BasePlaced]
-execute as @e[tag=Selection] unless entity @s[tag=EditedSelections] run function arenaclear:customizer
+execute as @e[tag=Selection] unless entity @s[tag=EditedSettings] run function arenaclear:customizer
 
 #lobby credits
 execute unless entity @e[tag=Selection,tag=GameStarted] run function lobby:credits/cycle

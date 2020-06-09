@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Moonwalker",
+            "color": "green"
+        },
+        "description": {
+            "text": "Walk backwards for the entire game.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:end_stone"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/hard"
+}

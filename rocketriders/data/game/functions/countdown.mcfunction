@@ -105,5 +105,6 @@ execute as @s[scores={count=600}] run gamerule drowningDamage true
 execute as @s[scores={count=600}] run gamerule fireDamage true
 execute as @s[scores={count=600}] run scoreboard players operation @s origBCount = @s bluesCount
 execute as @s[scores={count=600}] run scoreboard players operation @s origYCount = @s yellowsCount
+execute as @s[scores={count=600}] run function lobby:credits/restart
 scoreboard players set @s[tag=GameStarted] count 0
 tag @s[tag=GameStarted] remove Countdown

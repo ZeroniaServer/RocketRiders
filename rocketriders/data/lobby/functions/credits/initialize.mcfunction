@@ -1,6 +1,5 @@
 kill @e[tag=creditsAS]
 
-
 #Developers
 summon armor_stand -49 216 79 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","devcycle","YZEROCredits"],Rotation:[8f],Pose:{Head:[352f,5f,0f],LeftLeg:[25f,0f,0f],RightLeg:[334f,0f,0f],LeftArm:[319f,0f,0f],RightArm:[214f,73f,0f]}}
 summon armor_stand -49 216 78 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","devcycle","SelectedDev","EvtemaCredits"]}
@@ -19,19 +18,15 @@ replaceitem entity @e[tag=YZEROCredits] armor.chest leather_chestplate{display:{
 replaceitem entity @e[tag=YZEROCredits] armor.legs leather_leggings{display:{color:2368548}}
 replaceitem entity @e[tag=YZEROCredits] armor.feet leather_boots{display:{color:10682368}}
 
-
 replaceitem entity @e[tag=ChronosCredits] armor.head player_head{SkullOwner:Chronos22Gamer}
 replaceitem entity @e[tag=ChronosCredits] weapon.mainhand bow
 replaceitem entity @e[tag=ChronosCredits] armor.chest iron_chestplate
 replaceitem entity @e[tag=ChronosCredits] armor.legs iron_leggings
 replaceitem entity @e[tag=ChronosCredits] armor.feet diamond_boots
 
-
-
 #Builders
 summon armor_stand -51 211 81 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","HugoCredits"]}
 summon armor_stand -51 211 75 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","BardCredits"]}
-
 
 #oh boy, all individual testers.
 summon armor_stand -51 211 74 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","KurCredits"]}
@@ -85,16 +80,6 @@ summon armor_stand -52 211 104 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePla
 summon armor_stand -52 211 105 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","LekroCredits"]}
 summon armor_stand -52 211 106 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","UnWinCredits"]}
 
-
-
-
-
-
-
-
-
-
-
 #pose and armor
 replaceitem entity @e[tag=BuilderCreditsAS] armor.chest leather_chestplate{display:{color:16770835}}
 replaceitem entity @e[tag=BuilderCreditsAS] armor.legs leather_leggings{display:{color:16770835}}
@@ -104,14 +89,8 @@ replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS] arm
 replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS] armor.legs leather_leggings{display:{color:65397}}
 replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS] armor.feet leather_boots{display:{color:13784063}}
 
-
-
 execute as @e[tag=creditsAS] at @s run tp @s ~ ~ ~ 90 0
 execute as @e[tag=devCreditsAS] at @s run tp @s ~ ~ ~ 90 0
-
-
-
-
 
 #Skulls
 replaceitem entity @e[tag=BardCredits] armor.head player_head{SkullOwner:Bardonius}

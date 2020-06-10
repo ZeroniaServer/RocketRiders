@@ -49,12 +49,6 @@ execute as @e[tag=LlewCredits,scores={CreditCycle=1}] at @s run summon area_effe
 execute as @e[tag=LekroCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Lekro","color":"green"}'}
 execute as @e[tag=UnWinCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"UnWin","color":"green"}'}
 
-
-
-
-
-
-
 #devs
 execute as @e[tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"YZEROgame","color":"green"}'}
 execute as @e[tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game Creator","color":"green"}'}

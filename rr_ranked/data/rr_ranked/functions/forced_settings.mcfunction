@@ -1,4 +1,4 @@
-#New dawn arena preset
+#New Dawn arena preset
 scoreboard players set @s TopDeco 1
 scoreboard players set @s MiddleDeco 1
 scoreboard players set @s TopCorner 1
@@ -58,49 +58,63 @@ tag @s add doPrevention
 tag @s add doHotbarLimit
 scoreboard players set @s doStacking 0
 
-
-
-####################################################
-#The lines right here make it so
-#11 items are selected. Ty Llewv for the suggestion.
+###################################################
+#The lines below make it so 12 items are selected.#
+#       Thanks to Llewv for the suggestion!       #
 ####################################################
 
+execute if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"Active Items: ","color":"gray","bold":"false"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"In Ranked 1v1 Mode, a set of items is chosen automatically each round.","color":"white"}]}}]
+
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple","bold":"false"}]
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Canopy","color":"light_purple","bold":"false"}]
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Splash","color":"light_purple","bold":"false"}]
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Vortex","color":"light_purple","bold":"false"}]
 
 ### 1 shield type.
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Shield","RShieldRNG"]}
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Obshield","RShieldRNG"]}
 tag @e[tag=RShieldRNG,limit=1,sort=random] add SelRRNG
-#    normal shield selected
+
+#normal shield selected
 execute if entity @e[tag=Shield,tag=SelRRNG] run tag @s add rngShield
 execute if entity @e[tag=Shield,tag=SelRRNG] run tag @s remove rngObshield
-#    obshield selected
+execute if entity @e[tag=Shield,tag=SelRRNG] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Shield","color":"light_purple","bold":"false"}]
+
+#obshield selected
 execute if entity @e[tag=Obshield,tag=SelRRNG] run tag @s add rngObshield
 execute if entity @e[tag=Obshield,tag=SelRRNG] run tag @s remove rngShield
-
-
-### 1 lightning type.
-summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Hurricane","RLightningRNG"]}
-summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Thunderbolt","RLightingRNG"]}
-tag @e[tag=RLightningRNG,limit=1,sort=random] add SelRRNG
-#    hurricane shield selected
-execute if entity @e[tag=Hurricane,tag=SelRRNG] run tag @s add rngHur
-execute if entity @e[tag=Hurricane,tag=SelRRNG] run tag @s remove rngThun
-#    thunderbolt selected
-execute if entity @e[tag=Thunderbolt,tag=SelRRNG] run tag @s add rngThun
-execute if entity @e[tag=Thunderbolt,tag=SelRRNG] run tag @s remove rngHur
-
+execute if entity @e[tag=Obshield,tag=SelRRNG] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Obsidian Shield","color":"light_purple","bold":"false"}]
 
 ### 1 projectile type.
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Fireball","RProjecRNG"]}
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Nova","RProjecRNG"]}
 tag @e[tag=RProjecRNG,limit=1,sort=random] add SelRRNG
-#    normal shield selected
+
+#fireball selected
 execute if entity @e[tag=Fireball,tag=SelRRNG] run tag @s add rngFireball
 execute if entity @e[tag=Fireball,tag=SelRRNG] run tag @s remove rngNova
-#    obshield selected
+execute if entity @e[tag=Fireball,tag=SelRRNG] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Fireball","color":"light_purple","bold":"false"}]
+
+#nova propellant selected
 execute if entity @e[tag=Nova,tag=SelRRNG] run tag @s add rngNova
 execute if entity @e[tag=Nova,tag=SelRRNG] run tag @s remove rngFireball
+execute if entity @e[tag=Nova,tag=SelRRNG] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Nova Propellant","color":"light_purple","bold":"false"}]
 
+### 1 lightning type.
+summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Hurricane","RLightningRNG"]}
+summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Thunderbolt","RLightingRNG"]}
+tag @e[tag=RLightningRNG,limit=1,sort=random] add SelRRNG
+
+#hurricane selected
+execute if entity @e[tag=Hurricane,tag=SelRRNG] run tag @s add rngHur
+execute if entity @e[tag=Hurricane,tag=SelRRNG] run tag @s remove rngThun
+execute if entity @e[tag=Hurricane,tag=SelRRNG] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Hurricane","color":"gold","bold":"false"}]
+
+#thunderbolt selected
+execute if entity @e[tag=Thunderbolt,tag=SelRRNG] run tag @s add rngThun
+execute if entity @e[tag=Thunderbolt,tag=SelRRNG] run tag @s remove rngHur
+execute if entity @e[tag=Thunderbolt,tag=SelRRNG] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Thunderbolt","color":"gold","bold":"false"}]
 
 ### 5/10 non-lightning missiles
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","TomaTwo","RMisRNG"]}
@@ -127,5 +141,15 @@ execute if entity @e[tag=SelRRNG,tag=Nullifier] run tag @s remove rngNull
 execute if entity @e[tag=SelRRNG,tag=Citadel] run tag @s remove rngCitadel
 execute if entity @e[tag=SelRRNG,tag=Warhead] run tag @s remove rngWar
 
+execute if entity @e[tag=Selection,tag=rngToma] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Tomatwo","color":"green","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngBlade] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Blade","color":"green","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngCata] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Catapult","color":"green","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngSlash] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Slasher","color":"green","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngEguard] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Elder Guardian","color":"green","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngLift] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Lifter","color":"green","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngNull] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Nullifier","color":"green","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngCitadel] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Citadel","color":"green","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngAux] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Auxiliary","color":"red","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngWar] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Warhead","color":"red","bold":"false"}]
 
 kill @e[tag=RankedRNG]

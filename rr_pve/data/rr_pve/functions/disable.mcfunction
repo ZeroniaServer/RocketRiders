@@ -1,3 +1,3 @@
 tag @e[tag=Selection] remove pveEnabled
 tag @e[tag=Selection] remove tyingOff
-tag @e[tag=Selection] remove switchGamemodes
+tag @e[tag=Selection] add switchGamemodes

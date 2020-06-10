@@ -12,6 +12,7 @@ function everytick:no_drop
 
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_pve:arenaclear/baseplacement
+execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"PVE ","color":"light_purple"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"PVE Mode is a singleplayer/co-op mode where the players play against artificially intelligent bots, defending against a lot of incoming missiles and riders. Bots can do most things that you can do, and maybe even do it better than you! This is a great gamemode for warming up to playing against human players, or for if you just don't have any friends around and still want to play the game.","color":"white"}]}}]
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run function arenaclear:notifymodifiers
 tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced

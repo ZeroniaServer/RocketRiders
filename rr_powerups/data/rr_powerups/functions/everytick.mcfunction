@@ -1,5 +1,5 @@
 execute as @e[tag=rr_powerups] run function gamemodes:updateid
-execute if score @e[tag=Selection,tag=!powerupsEnabled,limit=1] SetGamemode = @e[tag=rr_powerups,limit=1] gamemodeID run function rr_powerups:enable
+execute if score @e[tag=Selection,tag=!powerupsEnabled,tag=switchGamemodes,limit=1] SetGamemode = @e[tag=rr_powerups,limit=1] gamemodeID run function rr_powerups:enable
 execute as @e[tag=Selection,tag=powerupsEnabled] run function rr_powerups:ifenabled
 execute as @e[tag=Selection,tag=powerupsLast] run function rr_powerups:iflast
 

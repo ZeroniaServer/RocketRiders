@@ -13,6 +13,7 @@ function everytick:team_balance
 
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_swap:arenaclear/baseplacement
+execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[team=Lobby] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Swap ","color":"light_purple"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"Swap is a strange gamemode. Teams start with a 'dark side' or a 'light side', every minute the game will swap around the sides. Items may do different things depending on the side they're on, and you get different missiles on different sides.","color":"white"}]}}]
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run function arenaclear:notifymodifiers
 tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced

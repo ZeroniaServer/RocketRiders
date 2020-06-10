@@ -1,6 +1,6 @@
 #management
 execute as @e[tag=rr_ranked] run function gamemodes:updateid
-execute if score @e[tag=Selection,tag=!rankedEnabled,limit=1] SetGamemode = @e[tag=rr_ranked,limit=1] gamemodeID run function rr_ranked:enable
+execute if score @e[tag=Selection,tag=!rankedEnabled,tag=switchGamemodes,limit=1] SetGamemode = @e[tag=rr_ranked,limit=1] gamemodeID run function rr_ranked:enable
 execute as @e[tag=Selection,tag=rankedEnabled] run function rr_ranked:ifenabled
 execute as @e[tag=Selection,tag=rankedLast] run function rr_ranked:iflast
 

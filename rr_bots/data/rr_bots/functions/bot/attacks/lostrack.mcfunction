@@ -21,6 +21,6 @@ kill @s[scores={BotHP=451..}]
 
 execute as @s[tag=LOSTrackerYellow,tag=!DeniedLOS] at @s if entity @e[team=Blue,limit=1,sort=nearest,distance=..5] run tag @s add BotSpotted
 
-execute as @s[tag=!DeniedLOS] at @s unless block ~ ~ ~ air run function bot:attacks/lostrack
+execute as @s[tag=!DeniedLOS] at @s unless block ~ ~ ~ air run function rr_bots:bot/attacks/lostrack
 execute as @s at @s unless block ~ ~ ~ air run tag @s add DeniedLOS
 kill @s[tag=DeniedLOS]

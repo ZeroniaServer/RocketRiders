@@ -23,7 +23,7 @@ execute as @e[tag=BotHasArrows] unless entity @s[scores={botarrowitems=1..}] run
 scoreboard players add @e[tag=BArrow] BotHP 1
 kill @e[tag=BArrow,scores={BotHP=50..}]
 
-execute as @e[tag=Bot] at @s if entity @s[y=-2000,dy=1980] run function bot:movement/voidfall
+execute as @e[tag=Bot] at @s if entity @s[y=-2000,dy=1980] run function rr_bots:bot/movement/voidfall
 
 
 execute as @e[tag=Bot] at @s unless entity @e[tag=BotHPZombie,distance=..3,limit=1] if entity @a[team=!Spectator,distance=..45,limit=1] run scoreboard players remove @s BotHP 1
@@ -43,7 +43,7 @@ execute as @e[tag=BotHPZombie] unless entity @s[nbt={Health:20.0f}] at @s if ent
 
 
 
-execute as @e[tag=Bot,scores={BotHP=-1000..0}] run function bot:movement/die
+execute as @e[tag=Bot,scores={BotHP=-1000..0}] run function rr_bots:bot/movement/die
 
 
 
@@ -78,11 +78,11 @@ scoreboard players reset @e[tag=BotMissiles] botcontrol
 scoreboard players reset @e[tag=!BotMissiles] botmisspawn
 scoreboard players reset @e[tag=Bot,tag=!BotRider] botriding
 
-execute as @e[tag=BotWalks] at @s run function bot:movement/walkrandom
-execute as @e[tag=BotArrows,scores={botarrowitems=1..}] at @s run function bot:attacks/bot_shoot_arrow
+execute as @e[tag=BotWalks] at @s run function rr_bots:bot/movement/walkrandom
+execute as @e[tag=BotArrows,scores={botarrowitems=1..}] at @s run function rr_bots:bot/attacks/bot_shoot_arrow
 execute as @e[tag=BotArrows] at @s unless entity @s[scores={botarrowitems=1..}] run tag @s remove BotArrows
-execute as @e[tag=BotMissiles,tag=BotHasMissile] at @s run function bot:missile/bot_spawnmissile
+execute as @e[tag=BotMissiles,tag=BotHasMissile] at @s run function rr_bots:bot/missile/bot_spawnmissile
 execute as @e[tag=BotMissiles,tag=!BotHasMissile] at @s run tag @s remove BotMissiles
-execute as @e[tag=BotRider] at @s run function bot:movement/rider/main
+execute as @e[tag=BotRider] at @s run function rr_bots:bot/movement/rider/main
 
 tag @e[tag=Bot] remove BotHasMissile

@@ -8,15 +8,15 @@ execute as @s[tag=YellowBot,scores={botarrow=1}] at @s run summon area_effect_cl
 execute as @s[scores={botarrow=1}] at @s run playsound minecraft:item.armor.equip_generic player @a ~ ~ ~ 0.5 1
 execute as @s[scores={botarrow=1}] at @s run tp @e[tag=LOSTracker,distance=..1,limit=1,sort=nearest] @s
 execute as @s[scores={botarrow=1}] at @s run tp @e[tag=LOSTracker,distance=..1,limit=1,sort=nearest] ~ ~1.5 ~
-execute as @e[tag=LOSTracker] at @s run function bot:attacks/lostrack
+execute as @e[tag=LOSTracker] at @s run function rr_bots:bot/attacks/lostrack
 execute as @e[tag=BotFireArrow,scores={botarrow=10}] at @s run playsound minecraft:entity.skeleton.shoot player @a ~ ~ ~ 1 1
 
 
 
 
-execute as @e[tag=BotFireArrow,scores={botarrow=10}] at @s anchored eyes positioned ^ ^ ^ run function bot:attacks/arrowfly1
+execute as @e[tag=BotFireArrow,scores={botarrow=10}] at @s anchored eyes positioned ^ ^ ^ run function rr_bots:bot/attacks/arrowfly1
 
-execute as @s at @s run function bot:animations/shootanim
+execute as @s at @s run function rr_bots:bot/animations/shootanim
 
 tag @e[scores={botarrow=10..}] remove BotFireArrow
 tag @e[scores={botarrow=10..}] remove BotArrows

@@ -15,4 +15,4 @@ execute as @s[tag=LOSTrackerYellow,tag=!BotSpotted] at @s if entity @a[team=Blue
 
 execute as @s[tag=LOSTrackerYellow] at @s if entity @e[team=Blue,limit=1,sort=nearest,distance=..5] run tag @s add BotSpotted
 
-execute as @s at @s run function bot:attacks/lostrack
+execute as @s at @s run function rr_bots:bot/attacks/lostrack

@@ -2,6 +2,8 @@
 clone ~ ~ ~ ~ ~-1 ~ ~ 254 ~ replace
 setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0}
 execute if entity @s[tag=portalSpawn] run data modify block ~ ~ ~ posY set value -2
+execute if entity @s[tag=portalSpawn2] run data modify block ~ ~ ~ posZ set value -8
+execute if entity @s[tag=portalSpawn3] run data modify block ~ ~ ~ posZ set value 8
 
 #Auxiliary
 execute if entity @s[tag=BlueAux] run data merge block ~ ~ ~ {name:"auxiliary_blue"}

@@ -15,3 +15,4 @@ tag @a remove JoinYellow
 scoreboard players set @s[scores={count=1..}] sandboxRandom 78
 execute as @s[scores={count=1..}] run gamerule doTileDrops true
 execute as @s[scores={count=1..600}] run scoreboard players set @a dropPickaxe 0
+execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

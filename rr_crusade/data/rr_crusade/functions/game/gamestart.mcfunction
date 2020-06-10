@@ -31,3 +31,6 @@ execute as @s[scores={count=1}] run scoreboard players set @e[tag=YellowNexusC] 
 execute as @s[scores={count=1}] run scoreboard players set @e[tag=BlueNexusA] nexushealth 15
 execute as @s[scores={count=1}] run scoreboard players set @e[tag=BlueNexusB] nexushealth 15
 execute as @s[scores={count=1}] run scoreboard players set @e[tag=BlueNexusC] nexushealth 20
+
+#Start Game
+execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

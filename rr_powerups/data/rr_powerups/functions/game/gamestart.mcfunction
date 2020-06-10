@@ -16,3 +16,4 @@ scoreboard players set @s[scores={count=1..}] PowerupDisplay 45
 execute as @s[scores={count=1..}] run scoreboard players set @e[tag=captureMiddle] captureYellow 0
 execute as @s[scores={count=1..}] run scoreboard players set @e[tag=captureMiddle] captureBlue 0
 execute as @s[scores={count=1..}] run scoreboard players set @e[tag=captureMiddle] capturePoint 0
+execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

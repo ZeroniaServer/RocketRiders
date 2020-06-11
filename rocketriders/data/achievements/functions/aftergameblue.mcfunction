@@ -22,12 +22,10 @@ scoreboard players add @a[team=Blue] WinStreak 1
 execute as @a[team=Yellow,scores={WinStreak=10..}] run advancement grant @s only achievements:rr_challenges/loss
 scoreboard players reset @a[team=Yellow] WinStreak
 
-#Dues Ex Machina
-scoreboard players set Machina Machina 1
-execute store result score Blue Machina run clone 38 34 -66 -14 63 -66 48 46 -1 filtered air
-execute if score Blue Machina >= Machina Machina run advancement grant @a[team=Blue] only achievements:rr_challenges/machina
-scoreboard players reset Blue Machina
-scoreboard players reset Machina Machina
+#Deus Ex Machina
+summon armor_stand 38 63 -66 {Tags:["machinacheck"],NoGravity:1b,Invisible:1b}
+scoreboard players add @e[tag=machinacheck] Machina 0
+execute as @e[tag=machinacheck] at @s run function achievements:machinacheckblue
 
 #One is the Loneliest Number
 execute if score @s bluesCount matches 1 if score @s yellowsCount matches 2.. run advancement grant @a[team=Blue] only achievements:rr_challenges/loneliest

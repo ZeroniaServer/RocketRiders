@@ -1,5 +1,5 @@
-title @s[scores={HasTippedArrows=..3},tag=!fullHotbar] actionbar {"text":"Tipped Arrows already obtained.","color":"light_purple"}
-title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Slowness Arrows obtained.","color":"light_purple"}
+title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Tipped Arrows already obtained.","color":"light_purple"}
+title @s[scores={HasTippedArrows=..3},tag=!fullHotbar] actionbar {"text":"Slowness Arrows obtained.","color":"light_purple"}
 give @s[scores={HasTippedArrows=0},tag=!fullHotbar,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Slowness Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:2b,Amplifier:1b,Duration:200,ShowParticles:1b}],CustomPotionColor:5596802,HideFlags:63} 4
 give @s[scores={HasTippedArrows=1},tag=!fullHotbar,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Slowness Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:2b,Amplifier:1b,Duration:200,ShowParticles:1b}],CustomPotionColor:5596802,HideFlags:63} 3
 give @s[scores={HasTippedArrows=2},tag=!fullHotbar,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Slowness Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:2b,Amplifier:1b,Duration:200,ShowParticles:1b}],CustomPotionColor:5596802,HideFlags:63} 2

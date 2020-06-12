@@ -10,8 +10,8 @@ spawnpoint @a[team=Yellow] 12 64 66
 execute if entity @s[tag=Minute] run function items:minutemix
 
 #win
-execute unless block 13 38 74 nether_portal run function game:winblue
-execute unless block 11 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon] unless block 13 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon] unless block 11 38 74 nether_portal run function game:winblue
 
-execute unless block 11 38 -74 nether_portal run function game:winyellow
-execute unless block 13 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon] unless block 11 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon] unless block 13 38 -74 nether_portal run function game:winyellow

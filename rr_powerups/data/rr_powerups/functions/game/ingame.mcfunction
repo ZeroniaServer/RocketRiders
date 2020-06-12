@@ -35,11 +35,11 @@ execute as @e[tag=captureMiddle,scores={capturePoint=0}] run scoreboard players 
 execute as @e[tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s yCapturedTime 0
 
 #win
-execute unless block 13 38 74 nether_portal run function rr_powerups:game/winblue
-execute unless block 11 38 74 nether_portal run function rr_powerups:game/winblue
+execute if entity @s[tag=!BlueWon] unless block 13 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon] unless block 11 38 74 nether_portal run function game:winblue
 
-execute unless block 13 38 -74 nether_portal run function rr_powerups:game/winyellow
-execute unless block 11 38 -74 nether_portal run function rr_powerups:game/winyellow
+execute if entity @s[tag=!YellowWon] unless block 11 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon] unless block 13 38 -74 nether_portal run function game:winyellow
 
 #capture the point (+ optional gamemode stuff)
 tag @a[tag=onCapturePoint] remove onCapturePoint

@@ -12,13 +12,11 @@ spawnpoint @a[team=Yellow] 12 64 66
 execute if entity @s[tag=Minute] run function items:minutemix
 
 #win
-execute unless entity @s[tag=CriteriaTrue] unless block 13 38 -74 nether_portal if block 11 38 -74 air run setblock 11 38 -74 obsidian
-execute unless entity @s[tag=CriteriaTrue] unless block 11 38 -74 nether_portal unless block 13 38 -74 air run function rr_ranked:game/winyellow
-execute unless entity @s[tag=CriteriaTrue] unless block 13 38 -74 nether_portal unless block 11 38 -74 air run function rr_ranked:game/winyellow
+execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] unless block 11 38 -74 nether_portal run function rr_ranked:game/winyellow
+execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] unless block 13 38 -74 nether_portal run function rr_ranked:game/winyellow
 
-execute unless entity @s[tag=CriteriaTrue] unless block 13 38 74 nether_portal if block 11 38 74 air run setblock 11 38 74 obsidian
-execute unless entity @s[tag=CriteriaTrue] unless block 13 38 74 nether_portal unless block 11 38 74 air run function rr_ranked:game/winblue
-execute unless entity @s[tag=CriteriaTrue] unless block 11 38 74 nether_portal unless block 13 38 74 air run function rr_ranked:game/winblue
+execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 13 38 74 nether_portal run function rr_ranked:game/winblue
+execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 11 38 74 nether_portal run function rr_ranked:game/winblue
 
 #arena clear cheesing
 execute if entity @e[tag=PlacerClear] run tag @s remove CriteriaTrue
@@ -30,8 +28,8 @@ scoreboard players add Yellow RoundsWon 0
 
 ##forfeit
 #initial condition
-execute unless score Blue RoundsWon matches 2.. unless score Yellow RoundsWon matches 2.. if entity @a[team=Yellow] unless entity @a[team=Blue] run tag @s add TimeOut
-execute unless score Blue RoundsWon matches 2.. unless score Yellow RoundsWon matches 2.. unless entity @a[team=Yellow] if entity @a[team=Blue] run tag @s add TimeOut
+# execute unless score Blue RoundsWon matches 2.. unless score Yellow RoundsWon matches 2.. if entity @a[team=Yellow] unless entity @a[team=Blue] run tag @s add TimeOut
+# execute unless score Blue RoundsWon matches 2.. unless score Yellow RoundsWon matches 2.. unless entity @a[team=Yellow] if entity @a[team=Blue] run tag @s add TimeOut
 
 #adds original player back
 execute as @a[tag=InRanked,team=!Blue,team=!Yellow,limit=1] unless entity @a[team=Blue] run function game:joinblue

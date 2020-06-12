@@ -56,7 +56,7 @@ tag @s remove Minute
 tag @s add WindDown
 tag @s add doPrevention
 tag @s add doHotbarLimit
-scoreboard players set @s doStacking 0
+tag @s remove doStacking
 
 ###################################################
 #The lines below make it so 12 items are selected.#

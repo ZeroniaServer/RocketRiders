@@ -8,5 +8,4 @@ scoreboard players operation $TORAGE MiddleDeco = @s MiddleDeco
 scoreboard players operation $TORAGE BottomDeco = @s BottomDeco
 scoreboard players operation $TORAGE PortalDeco = @s PortalDeco
 
-scoreboard players operation $TORAGE doStacking = @s doStacking
 scoreboard players operation $TORAGE MaxItemSec = @s MaxItemSec

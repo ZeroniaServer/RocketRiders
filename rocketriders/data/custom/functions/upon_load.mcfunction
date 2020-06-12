@@ -8,3 +8,4 @@ scoreboard objectives add deathCooldown dummy
 scoreboard objectives add regifts dummy
 scoreboard objectives add useful dummy
 scoreboard objectives add notBackwards dummy
+scoreboard objectives remove doStacking

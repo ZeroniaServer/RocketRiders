@@ -72,7 +72,7 @@ execute as @s[scores={count=580}] at @s run bossbar set rr:startgame name ["",{"
 execute as @s[scores={count=580}] at @s run bossbar set rr:startgame value 1
 execute as @s[scores={count=580}] at @s run execute as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.9
 
-execute as @s[scores={count=599..}] as @a unless entity @s[team=!Yellow,team=!Blue] run function game:putoutfire
+execute as @s[scores={count=599..}] as @a unless entity @s[team=!Yellow,team=!Blue] if entity @s[predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @s[tag=GameStarted,tag=!bossbarOverride] run bossbar set rr:startgame name ["",{"text":"A match is currently in progress. Feel free to join in!","color":"dark_green"}]
 execute as @s[tag=GameStarted] run bossbar set rr:startgame value 30
 execute as @s[tag=GameStarted] run function game:randomsplash

@@ -1,6 +1,8 @@
 execute as @s[scores={SDtime=1}] run execute as @a run stopsound @s master minecraft:ui.toast.challenge_complete
 execute as @s[scores={SDtime=1}] run execute as @a run stopsound @s master minecraft:entity.wither.spawn
 
+execute as @s[scores={SDtime=1..15}] run kill @e[type=tnt]
+
 scoreboard players reset @s endtimer
 
 scoreboard players add @s SDtime 1

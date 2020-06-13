@@ -1,0 +1,32 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "You Shouldn't Bee Here!",
+            "color": "green"
+        },
+        "description": {
+            "text": "Get killed by a Bee.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:player_head",
+            "nbt": "{SkullOwner:MHF_Bee}"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "bee_kill": {
+            "trigger": "minecraft:entity_killed_player",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:bee"
+                }
+            }
+        }
+    },
+    "parent": "achievements:rr_challenges/easy"
+}

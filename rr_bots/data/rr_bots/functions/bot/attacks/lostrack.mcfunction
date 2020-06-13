@@ -1,4 +1,5 @@
 scoreboard players add @s BotHP 1
+
 execute as @s[tag=!Returned,tag=!DeniedLOS] at @s if entity @e[tag=BotArrows,distance=..4,limit=1,sort=nearest] run tag @e[tag=BotArrows,distance=..4,limit=1,sort=nearest] add BotFireArrow
 execute as @s[tag=BotSpotted,tag=!DeniedLOS] at @s if entity @e[tag=BotArrows,distance=..4,limit=1,sort=nearest] run tag @s add Returned
 execute as @s[tag=BotSpotted,tag=!DeniedLOS] at @s if entity @e[tag=BotArrows,distance=..4,limit=1,sort=nearest] run kill @s

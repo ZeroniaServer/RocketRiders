@@ -103,25 +103,29 @@ execute as @s[tag=BlueBot,tag=!DoneSpawning,tag=BotWarSpawn,scores={botmisspawn=
 
 
 # Bot spawning - Yellow
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotTomaSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/tomatwo
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotAuxSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/auxiliary
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotBladeSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/blade
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotAntSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/ant
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotCataSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/catapult
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotCitaSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/citadel
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotNullSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/chronul
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/elderguard
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGemiSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/gemini
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotHurSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/hurricane
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotJugSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/jbust
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotLiftSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/lifter
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotRiftSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/rifter
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotSlashSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/slasher
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotBoltSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/thunderbolt
-execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotWarSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/warhead
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotTomaSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/tomatwo
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotAuxSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/auxiliary
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotBladeSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/blade
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotAntSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/ant
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotCataSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/catapult
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotCitaSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/citadel
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotNullSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/chronul
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/elderguard
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGemiSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/gemini
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotHurSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/hurricane
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotJugSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/jbust
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotLiftSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/lifter
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotRiftSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/rifter
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotSlashSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/slasher
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotBoltSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/thunderbolt
+execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotWarSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 #rr_bots:botmissile unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/warhead
 
-execute as @s[tag=YellowBot,tag=BotRider,scores={botmisspawn=60..}] at @s unless entity @s[dz=-1000,z=52] run tag @s remove BotRider
-execute as @s[tag=BlueBot,tag=BotRider,scores={botmisspawn=60..}] at @s unless entity @s[dz=1000,z=-50] run tag @s remove BotRider
+execute as @s[tag=YellowBot,tag=BotRider,scores={botmisspawn=60..}] at @s unless entity @s[dz=-1000,z=45] run tag @s remove BotRider
+execute as @s[tag=BlueBot,tag=BotRider,scores={botmisspawn=60..}] at @s unless entity @s[dz=1000,z=-45] run tag @s remove BotRider
+
+#bots that reach the enemy base can't ride missiles, gives them nuking potential.
+execute as @s[tag=YellowBot,tag=BotRider] at @s unless entity @s[dz=1000,z=45] run tag @s remove BotRider
+execute as @s[tag=BlueBot,tag=BotRider] at @s unless entity @s[dz=-1000,z=-45] run tag @s remove BotRider
 
 
 

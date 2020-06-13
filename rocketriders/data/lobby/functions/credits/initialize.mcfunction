@@ -67,9 +67,10 @@ summon armor_stand -52 211 53 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlat
 summon armor_stand -52 211 52 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","TuijCredits"]}
 summon armor_stand -52 211 51 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","JagCredits"]}
 summon armor_stand -52 211 50 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","RoboCredits"]}
+summon armor_stand -52 211 49 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","UniverseCredits"]}
 summon armor_stand -52 211 95 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","GroundCredits"]}
 summon armor_stand -52 211 96 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","FunnyCredits"]}
-summon armor_stand -52 211 97 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","ChopperCredits"]}
+summon armor_stand -52 211 97 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","MosesCredits"]}
 summon armor_stand -52 211 98 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","ZoruaCredits"]}
 summon armor_stand -52 211 99 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","LizzeCredits"]}
 summon armor_stand -52 211 100 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","TNTCredits"]}
@@ -79,6 +80,7 @@ summon armor_stand -52 211 103 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePla
 summon armor_stand -52 211 104 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","LlewCredits"]}
 summon armor_stand -52 211 105 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","LekroCredits"]}
 summon armor_stand -52 211 106 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","UnWinCredits"]}
+summon armor_stand -52 211 107 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","CalverinCredits"]}
 
 #pose and armor
 replaceitem entity @e[tag=BuilderCreditsAS] armor.chest leather_chestplate{display:{color:16770835}}
@@ -136,7 +138,9 @@ replaceitem entity @e[tag=TuijCredits] armor.head player_head{SkullOwner:Tuijpe}
 replaceitem entity @e[tag=JagCredits] armor.head player_head{SkullOwner:Jagdoe}
 replaceitem entity @e[tag=GroundCredits] armor.head player_head{SkullOwner:Ground}
 replaceitem entity @e[tag=FunnyCredits] armor.head player_head{SkullOwner:funnybird5}
-replaceitem entity @e[tag=ChopperCredits] armor.head player_head{SkullOwner:Chopper2112}
+replaceitem entity @e[tag=MosesCredits] armor.head player_head{SkullOwner:Moses25}
+replaceitem entity @e[tag=UniverseCredits] armor.head player_head{SkullOwner:UniverseCZ}
+replaceitem entity @e[tag=CalverinCredits] armor.head player_head{SkullOwner:Calverin}
 replaceitem entity @e[tag=RoboCredits] armor.head player_head{SkullOwner:iRobo}
 replaceitem entity @e[tag=ZoruaCredits] armor.head player_head{SkullOwner:zorua162}
 replaceitem entity @e[tag=LizzeCredits] armor.head player_head{SkullOwner:Lizzem}
@@ -150,4 +154,4 @@ replaceitem entity @e[tag=LekroCredits] armor.head player_head{SkullOwner:Lekro}
 scoreboard objectives add CreditCycle dummy
 tag @e[tag=creditsAS] remove SelectedCredit
 
-tag @e[tag=LekroCredits] add SelectedCredit
+tag @e[tag=CalverinCredits] add SelectedCredit

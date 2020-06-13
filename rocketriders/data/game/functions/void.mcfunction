@@ -6,6 +6,7 @@ execute if entity @s[tag=crosser] run tellraw @a ["",{"selector":"@s"},{"text":"
 scoreboard players add @s[team=!Spectator,tag=!crosser] FellVoid 1
 scoreboard players add @s[team=!Spectator] deaths 1
 scoreboard players add @s[team=!Spectator] death 1
+scoreboard players add @s[team=!Spectator] respawn 1
 
 #non-spectators lose all effects and get immunity effects
 effect clear @s[team=!Spectator]

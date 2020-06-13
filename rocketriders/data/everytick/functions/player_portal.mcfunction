@@ -15,6 +15,8 @@ scoreboard players add @a[team=Blue,tag=portalKill] deaths 1
 scoreboard players add @a[team=Yellow,tag=portalKill] deaths 1
 scoreboard players add @a[team=Blue,tag=portalKill] death 1
 scoreboard players add @a[team=Yellow,tag=portalKill] death 1
+scoreboard players add @a[team=Blue,tag=portalKill] respawn 1
+scoreboard players add @a[team=Yellow,tag=portalKill] respawn 1
 tag @a[team=Blue,tag=portalKill] remove SummonPlat
 tag @a[team=Yellow,tag=portalKill] remove SummonPlat
 #no fall damage

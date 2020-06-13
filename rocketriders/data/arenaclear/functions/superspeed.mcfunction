@@ -1,8 +1,8 @@
 scoreboard players add @e[tag=ArenaClearChecker] ClearArena 1
-execute as @e[tag=ArenaClearBlue] at @s run fill ~3 ~-1 ~-2 ~-3 ~8 ~ air replace #custom:missileblocks
-execute as @e[tag=ArenaClearBlue,tag=ArenaClearCata] at @s run fill ~3 ~8 ~-2 ~-3 ~12 ~ air replace #custom:missileblocks
-execute as @e[tag=ArenaClearYellow] at @s run fill ~3 ~-1 ~-2 ~-3 ~8 ~ air replace #custom:missileblocks
-execute as @e[tag=ArenaClearYellow,tag=ArenaClearCata] at @s run fill ~3 ~8 ~-2 ~-3 ~12 ~ air replace #custom:missileblocks
+execute as @e[tag=ArenaClearBlue] at @s run fill ~3 ~-2 ~-4 ~-3 ~8 ~4 air replace #custom:missileblocks
+execute as @e[tag=ArenaClearBlue,tag=ArenaClearCata] at @s run fill ~3 ~8 ~-4 ~-3 ~12 ~4 air replace #custom:missileblocks
+execute as @e[tag=ArenaClearYellow] at @s run fill ~3 ~-2 ~-4 ~-3 ~8 ~4 air replace #custom:missileblocks
+execute as @e[tag=ArenaClearYellow,tag=ArenaClearCata] at @s run fill ~3 ~8 ~-4 ~-3 ~12 ~4 air replace #custom:missileblocks
 execute as @e[tag=ArenaClearBlue] at @s run tp @s ~ ~ ~1
 execute as @e[tag=ArenaClearYellow] at @s run tp @s ~ ~ ~-1
 execute as @e[tag=SmartClearAECsplash] at @s run fill ~-12 ~ ~-12 ~12 ~ ~12 air replace #custom:splashblocks

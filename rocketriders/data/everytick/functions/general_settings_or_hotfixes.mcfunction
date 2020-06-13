@@ -4,18 +4,6 @@ function lobby:missiledisplay/placedisp
 #kill dragon's breath
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 
-#Traveler achievement resetting
-tag @a[tag=beenOnBlue,tag=beenOnYellow] add beenOnBoth
-tag @a[tag=beenOnBoth] remove beenOnBlue
-tag @a[tag=beenOnBoth] remove beenOnYellow
-tag @a[team=!Yellow,team=!Blue] remove beenOnBlue
-tag @a[team=!Yellow,team=!Blue] remove beenOnYellow
-tag @a[team=!Yellow,team=!Blue] remove beenOnBoth
-tag @a[gamemode=!survival] remove beenOnBlue
-tag @a[gamemode=!survival] remove beenOnYellow
-tag @a[gamemode=!survival] remove beenOnBoth
-tag @a[tag=beenOnBoth] remove beenOnBoth
-
 #full offhand check
 tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
 tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand

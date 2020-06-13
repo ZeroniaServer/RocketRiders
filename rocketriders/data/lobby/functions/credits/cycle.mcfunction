@@ -24,7 +24,7 @@ execute as @e[tag=SelectedCredit,scores={CreditCycle=60..}] run tag @s remove Se
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..}] run scoreboard players reset @s CreditCycle
 
 execute as @e[tag=OldSelectedCredit] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit] run scoreboard players reset @e[tag=creditsAS] CreditCycle
-execute as @e[tag=OldSelectedCredit] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit] run tag @e[tag=UnwinCredits] add SelectedCredit
+execute as @e[tag=OldSelectedCredit] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit] run tag @e[tag=CalverinCredits] add SelectedCredit
 execute as @e[tag=OldSelectedCredit] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit] run tag @e[tag=OldSelectedCredit] remove OldSelectedCredit
 
 scoreboard players add @e[tag=SelectedDev] CreditCycle 1

@@ -1,23 +1,13 @@
-#detect movement blue
-execute as @a[team=Blue,tag=!FailedBallet] run scoreboard players add @s timeSinceJump 1
-execute as @a[team=Blue,tag=!FailedBallet,scores={jumping=1..}] run scoreboard players reset @s timeSinceJump
-execute as @a[team=Blue,tag=!FailedBallet,scores={jumping=1..}] run scoreboard players reset @s jumping
-execute as @a[team=Blue,scores={timeSinceJump=30..}] run tag @s add FailedBallet
-scoreboard players reset @a[team=Blue,tag=FailedBallet] timeSinceJump
+##ballet dancer
+#jump detection
+execute as @a[tag=!FailedBallet] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players add @s timeSinceJump 1
+execute as @a[tag=!FailedBallet,scores={jumping=1..}] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s timeSinceJump
+execute as @a[tag=!FailedBallet,scores={jumping=1..}] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s jumping
+execute as @a[scores={timeSinceJump=30..}] unless entity @s[team=!Blue,team=!Yellow] run tag @s add FailedBallet
+execute as @a[tag=FailedBallet] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s timeSinceJump
 
-execute as @a[team=Blue,tag=!FailedBallet] run scoreboard players add @s movement 1
-execute as @a[team=Blue,tag=!FailedBallet,predicate=custom:is_sprinting] run scoreboard players reset @s movement
-execute as @a[team=Blue,scores={movement=15..}] run tag @s add FailedBallet
-scoreboard players reset @a[team=Blue,tag=FailedBallet] movement
-
-#detect movement yellow
-execute as @a[team=Yellow,tag=!FailedBallet] run scoreboard players add @s timeSinceJump 1
-execute as @a[team=Yellow,tag=!FailedBallet,scores={jumping=1..}] run scoreboard players reset @s timeSinceJump
-execute as @a[team=Yellow,tag=!FailedBallet,scores={jumping=1..}] run scoreboard players reset @s jumping
-execute as @a[team=Yellow,tag=!FailedBallet,scores={timeSinceJump=30..}] run tag @s add FailedBallet
-scoreboard players reset @a[team=Yellow,tag=FailedBallet] timeSinceJump
-
-execute as @a[team=Yellow,tag=!FailedBallet] run scoreboard players add @s movement 1
-execute as @a[team=Yellow,tag=!FailedBallet,predicate=custom:is_sprinting] run scoreboard players reset @s movement
-execute as @a[team=Yellow,scores={movement=15..}] run tag @s add FailedBallet
-scoreboard players reset @a[team=Yellow,tag=FailedBallet] movement
+#sprint detection
+execute as @a[tag=!FailedBallet] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players add @s movement 1
+execute as @a[tag=!FailedBallet,predicate=custom:is_sprinting] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s movement
+execute as @a[scores={movement=15..}] unless entity @s[team=!Blue,team=!Yellow] run tag @s add FailedBallet
+execute as @a[tag=FailedBallet] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s movement

@@ -108,7 +108,7 @@ execute as @e[tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setbloc
 
 
 
-#Sounds and particles for the shields
+#Sounds and particles for the shield animation
 execute as @e[tag=animBshield,scores={BeeShieldTime=1}] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 1.3
 execute as @e[tag=animBshield,scores={BeeShieldTime=3}] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 1.2
 execute as @e[tag=animBshield,scores={BeeShieldTime=5}] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 1
@@ -131,4 +131,4 @@ execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20}] at @s run summon a
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run kill @s
 
 #kill bees
-kill @e[type=bee,nbt={Anger:0s}]
+kill @e[type=bee,nbt={Anger:0}]

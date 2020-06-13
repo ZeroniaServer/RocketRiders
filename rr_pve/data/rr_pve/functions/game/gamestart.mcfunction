@@ -6,7 +6,7 @@ execute as @s[scores={count=1}] positioned -95 202 94 run function rr_bots:bot/s
 execute as @s[scores={count=1}] positioned -95 202 94 run function rr_bots:bot/spawns/bot_spawn_yellow
 execute as @s[scores={count=1}] positioned -95 202 94 run function rr_bots:bot/spawns/bot_spawn_yellow
 execute as @s[scores={count=1}] positioned -95 202 94 run function rr_bots:bot/spawns/bot_spawn_yellow
-scoreboard players set @e[tag=Bot] botarrowitems 20
+execute as @s[scores={count=1}] run scoreboard players set @e[tag=Bot] botarrowitems 20
 
 #Items
 function game:gearblue

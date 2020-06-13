@@ -96,10 +96,10 @@ execute if entity @e[tag=Fireball,tag=SelRRNG] run tag @s add rngFireball
 execute if entity @e[tag=Fireball,tag=SelRRNG] run tag @s remove rngNova
 execute if entity @e[tag=Fireball,tag=SelRRNG] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Fireball","color":"light_purple","bold":"false"}]
 
-#nova propellant selected
+#nova rocket selected
 execute if entity @e[tag=Nova,tag=SelRRNG] run tag @s add rngNova
 execute if entity @e[tag=Nova,tag=SelRRNG] run tag @s remove rngFireball
-execute if entity @e[tag=Nova,tag=SelRRNG] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Nova Propellant","color":"light_purple","bold":"false"}]
+execute if entity @e[tag=Nova,tag=SelRRNG] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Nova Rocket","color":"light_purple","bold":"false"}]
 
 ### 1 lightning type.
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Hurricane","RLightningRNG"]}

@@ -24,5 +24,3 @@ execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnBlue
 execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnYellow
 execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnBoth
 execute as @s[scores={fakeendtimer=320}] run function rr_ranked:arenaclear/areaclear
-tag @s[scores={fakeendtimer=320..}] remove FakeGameEnd
-scoreboard players set @s[scores={fakeendtimer=320..}] fakeendtimer 0

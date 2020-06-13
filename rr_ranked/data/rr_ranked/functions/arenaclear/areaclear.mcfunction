@@ -1,3 +1,6 @@
+tag @s remove FakeGameEnd
+scoreboard players set @s fakeendtimer 0
+
 execute as @e[tag=SmartClearAECblue,tag=!SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue"],Duration:360}
 execute as @e[tag=SmartClearAECblue,tag=SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue","ArenaClearCata"],Duration:360}
 summon area_effect_cloud 11 63 6 {Tags:["ArenaClearChecker"],Duration:360}

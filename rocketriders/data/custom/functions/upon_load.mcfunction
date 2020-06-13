@@ -9,3 +9,6 @@ scoreboard objectives add regifts dummy
 scoreboard objectives add useful dummy
 scoreboard objectives add notBackwards dummy
 scoreboard objectives remove doStacking
+scoreboard objectives add HasBeeShield dummy
+scoreboard objectives add DrinkHoney minecraft.used:minecraft.honey_bottle
+scoreboard objectives add BeeShieldTime dummy

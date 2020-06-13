@@ -6,5 +6,5 @@ execute as @a[team=Blue,tag=!FailedBallet] run advancement grant @s only achieve
 execute as @a[team=Yellow,tag=!FailedBallet] run advancement grant @s only achievements:rr_challenges/ballet
 
 #Moonwalker
-execute as @a[team=Blue,tag=!FailedMoon] run advancement grant @s only achievements:rr_challenges/moonwalker
-execute as @a[team=Yellow,tag=!FailedMoon] run advancement grant @s only achievements:rr_challenges/moonwalker
+execute as @a[team=Blue,tag=!FailedMoon,tag=firstMoved] run advancement grant @s only achievements:rr_challenges/moonwalker
+execute as @a[team=Yellow,tag=!FailedMoon,tag=firstMoved] run advancement grant @s only achievements:rr_challenges/moonwalker

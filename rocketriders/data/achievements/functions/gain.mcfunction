@@ -33,8 +33,8 @@ execute as @a[tag=onBlue] unless score @s deathCooldown matches 1.. at @s unless
 execute as @a[tag=onYellow] unless score @s deathCooldown matches 1.. at @s unless entity @s[x=-15,dx=54,y=33,dy=37,z=46,dz=28] run tag @s remove onYellow
 
 #necessary for death check (again)
-execute as @a[scores={deathCooldown=2..}] run scoreboard players operation @s PlayerDeaths = @s deaths
-execute as @a[scores={deathCooldown=2..}] if score @s PlayerDeaths = @s deaths run scoreboard players reset @s deathCooldown
+execute as @a[scores={deathCooldown=4..}] run scoreboard players operation @s PlayerDeaths = @s deaths
+execute as @a[scores={deathCooldown=4..}] if score @s PlayerDeaths = @s deaths run scoreboard players reset @s deathCooldown
 
 #necessary for fall distance check (again)
 execute as @a[team=Blue] at @s if entity @s[nbt={FallDistance:0.0f}] run scoreboard players reset @s FallDistance

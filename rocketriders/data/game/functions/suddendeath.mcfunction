@@ -1,11 +1,12 @@
-execute as @s[scores={SDtime=1}] run execute as @a run stopsound @s master minecraft:ui.toast.challenge_complete
-execute as @s[scores={SDtime=1}] run execute as @a run stopsound @s master minecraft:entity.wither.spawn
+execute as @s[scores={SDtime=1}] as @a run stopsound @s master minecraft:ui.toast.challenge_complete
+execute as @s[scores={SDtime=1}] as @a run stopsound @s master minecraft:entity.wither.spawn
 
 execute as @s[scores={SDtime=1..15}] run kill @e[type=tnt]
 
 scoreboard players reset @s endtimer
 
 scoreboard players add @s SDtime 1
+execute as @s[scores={SDtime=1}] run bossbar set rr:startgame name ["",{"text":"A match is currently in Sudden Death. Feel free to join in!","color":"dark_red"}]
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Yellow] 12 64 66 180 0
 execute as @s[scores={SDtime=1}] at @s run scoreboard players set 2 MaxItemSec 2
@@ -18,7 +19,7 @@ execute as @s[scores={SDtime=4}] at @s run effect clear @a blindness
 execute as @s[scores={SDtime=1}] at @s run tag @s remove GameEnd
 execute as @s[scores={SDtime=1}] run gamemode survival @a[team=Blue]
 execute as @s[scores={SDtime=1}] run gamemode survival @a[team=Yellow]
-execute as @s[scores={SDtime=10}] run execute as @a[team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door player @s ~ ~ ~ 100 1.3
+execute as @s[scores={SDtime=10}] as @a[team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door player @s ~ ~ ~ 100 1.3
 execute as @s[scores={SDtime=1}] run tag @s add GameStarted
 execute as @s[scores={SDtime=1}] run worldborder warning distance 1000000
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWon

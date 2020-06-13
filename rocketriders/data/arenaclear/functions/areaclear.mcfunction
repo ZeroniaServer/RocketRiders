@@ -64,12 +64,14 @@ kill @e[tag=Vortex]
 kill @e[tag=VortexItem]
 kill @e[type=chicken]
 kill @e[type=tnt]
+kill @e[type=dragon_fireball]
 kill @e[tag=obfireball]
 kill @e[tag=FireballAS]
 kill @e[tag=ObFireballAS]
 kill @e[tag=blueobalone]
 kill @e[tag=yellowobalone]
 kill @e[tag=splash]
+kill @e[type=item]
 
 execute as @e[tag=blueobsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[tag=yellowobsidianshield] at @s run function everytick:obsidian_shield_break

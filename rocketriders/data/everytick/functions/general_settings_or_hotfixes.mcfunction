@@ -1,6 +1,9 @@
 #Missile Display area
 function lobby:missiledisplay/placedisp
 
+#kill dragon's breath
+kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
+
 #Traveler achievement resetting
 tag @a[tag=beenOnBlue,tag=beenOnYellow] add beenOnBoth
 tag @a[tag=beenOnBoth] remove beenOnBlue

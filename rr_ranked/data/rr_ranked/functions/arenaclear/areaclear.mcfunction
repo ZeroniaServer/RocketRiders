@@ -27,13 +27,17 @@ kill @e[type=fireball]
 kill @e[type=snowball]
 kill @e[type=arrow]
 kill @e[tag=Vortex]
+kill @e[tag=VortexItem]
 kill @e[type=chicken]
 kill @e[type=tnt]
+kill @e[type=dragon_fireball]
 kill @e[tag=obfireball]
 kill @e[tag=FireballAS]
 kill @e[tag=ObFireballAS]
 kill @e[tag=blueobalone]
 kill @e[tag=yellowobalone]
+kill @e[tag=splash]
+kill @e[type=item]
 
 execute as @e[tag=blueobsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[tag=yellowobsidianshield] at @s run function everytick:obsidian_shield_break
@@ -50,9 +54,6 @@ kill @e[tag=BlueNova]
 kill @e[tag=YellowNova]
 
 function arenaclear:superspeed
-function rr_ranked:arenaclear/baseplacement
-
-tag @s add GameStarted
 
 tp @a[team=Blue] 12 64 -66 0 0
 tp @a[team=Yellow] 12 64 66 180 0
@@ -63,7 +64,7 @@ clear @a[team=Yellow]
 gamemode survival @a[team=Blue]
 gamemode survival @a[team=Yellow]
 
-scoreboard players set @s RandomItem -4
+scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 
 execute as @a[team=Blue] run function rr_ranked:game/givegear

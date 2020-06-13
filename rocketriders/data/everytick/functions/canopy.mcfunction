@@ -205,6 +205,11 @@ execute as @e[scores={PlatTime=270}] at @s run playsound block.wood.break player
 execute as @e[scores={PlatTime=275}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1.2
 execute as @e[scores={PlatTime=280}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1.5
 execute as @e[scores={PlatTime=300}] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 100 force @a
+#hotfix for persistent leaves
+execute as @e[scores={PlatTime=300..}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
+execute as @e[scores={PlatTime=300..}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
+execute as @e[scores={PlatTime=300..}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance=1] replace jungle_leaves
+execute as @e[scores={PlatTime=300..}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
 execute as @e[scores={PlatTime=300..}] at @s if block ~ ~ ~ oak_wood run setblock ~ ~ ~ air destroy
 execute as @e[scores={PlatTime=300..}] at @s if block ~ ~1 ~ oak_wood run setblock ~ ~1 ~ air destroy
 execute as @e[scores={PlatTime=300..}] at @s if block ~1 ~1 ~ #minecraft:banners run setblock ~1 ~1 ~ air destroy

@@ -5,7 +5,7 @@ clear @a[team=Yellow] #custom:clear
 tag @s[scores={fakeendtimer=1}] remove gaveFirstItem
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime = @s[scores={fakeendtimer=1}] MaxItemSec
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime *= 20 MaxItemSec
-scoreboard players set @s RandomItem -4
+scoreboard players set @s RandomItem -3
 execute as @s[scores={fakeendtimer=1}] run tag @a remove SummonPlat
 execute as @s[scores={fakeendtimer=1}] run gamemode spectator @a[team=Blue]
 execute as @s[scores={fakeendtimer=1}] run gamemode spectator @a[team=Yellow]

@@ -13,5 +13,6 @@ tag @a remove onBlue
 tag @a remove onYellow
 tag @a remove FailedMoon
 tag @a remove FailedBallet
+tag @a remove firstMoved
 scoreboard players set @s origBCount 0
 scoreboard players set @s origYCount 0

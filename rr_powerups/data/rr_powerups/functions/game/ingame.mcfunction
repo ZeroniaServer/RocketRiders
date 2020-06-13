@@ -133,6 +133,6 @@ execute if entity @e[tag=captureMiddle,scores={capturePoint=1}] if entity @s[sco
 execute if entity @e[tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=2..}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" seconds!","color":"yellow","bold":"true"}]
 execute if entity @e[tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=..1}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" second!","color":"yellow","bold":"true"}]
 
-#barricades autokill
-execute as @e[tag=BlueBarricade] at @s unless block ~ ~ ~ blue_stained_glass run kill @s
-execute as @e[tag=YellowBarricade] at @s unless block ~ ~ ~ yellow_stained_glass run kill @s
+#custom prevention message
+execute if entity @s[tag=customPrevention] as @a[tag=MissiMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals or the Powerup Platform.","color":"red"}]
+execute if entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG

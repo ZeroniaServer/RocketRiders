@@ -125,8 +125,8 @@ tag @a[tag=BackBullet] remove fullHotbar
 execute as @a[tag=BackBullet] run function rr_powerups:items/powerup/givebull
 
 #Tag removal & unable message
-execute as @a[tag=MissiMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals.","color":"red"}]
-tag @a remove MissiMSG
+execute unless entity @s[tag=customPrevention] as @a[tag=MissiMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals.","color":"red"}]
+execute unless entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG
 tag @a remove BackAux
 tag @a remove BackToma
 tag @a remove BackNull

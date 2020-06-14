@@ -2,6 +2,8 @@ execute as @s[scores={SDtime=1}] as @a run stopsound @s master minecraft:ui.toas
 execute as @s[scores={SDtime=1}] as @a run stopsound @s master minecraft:entity.wither.spawn
 
 execute as @s[scores={SDtime=1..15}] run kill @e[type=tnt]
+execute as @s[scores={SDtime=1..15}] run kill @e[type=tnt_minecart]
+execute as @s[scores={SDtime=1..15}] run kill @e[type=creeper]
 
 scoreboard players reset @s endtimer
 

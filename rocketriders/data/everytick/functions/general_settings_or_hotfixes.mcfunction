@@ -85,9 +85,11 @@ tag @a[tag=unDevTeleporting] remove unDevTeleporting
 scoreboard players add @a AuxSpawned 0
 scoreboard players add @a AntsSpawned 0
 scoreboard players add @a BladeSpawned 0
+scoreboard players add @a BroadSpawned 0
 scoreboard players add @a BulletSpawned 0
 scoreboard players add @a CataSpawned 0
 scoreboard players add @a CitaSpawned 0
+scoreboard players add @a DuplexSpawned 0
 scoreboard players add @a GemiSpawned 0
 scoreboard players add @a GuardSpawned 0
 scoreboard players add @a HurSpawned 0

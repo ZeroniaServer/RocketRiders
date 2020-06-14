@@ -51,7 +51,11 @@
 
 		"minecraft:dolphin_spawn_egg",
 
-		"minecraft:cod_spawn_egg"
+		"minecraft:cod_spawn_egg",
+
+		"minecraft:parrot_spawn_egg",
+
+		"minecraft:magma_cube_spawn_egg"
 
 	]
 }

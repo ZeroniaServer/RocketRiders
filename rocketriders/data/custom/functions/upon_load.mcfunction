@@ -1,2 +1,4 @@
 scoreboard objectives add HasDuplex dummy
-scoreboard objetives add DuplexSpawned
+scoreboard objectives add DuplexSpawned minecraft.used:minecraft.parrot_spawn_egg
+scoreboard objectives add HasBroad dummy
+scoreboard objectives add BroadSpawned minecraft.used:minecraft.magma_cube_spawn_egg

@@ -4,6 +4,7 @@ tag @s remove BladeSpawned
 tag @s remove BulletSpawned
 tag @s remove CataSpawned
 tag @s remove CitaSpawned
+tag @s remove DuplexSpawned
 tag @s remove GemiSpawned
 tag @s remove GuardSpawned
 tag @s remove HurSpawned

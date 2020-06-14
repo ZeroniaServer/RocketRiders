@@ -4,6 +4,7 @@ tag @s remove givenSlowArr
 tag @s remove givenWitherArr
 tag @s remove givenAllTipped
 
+tag @s remove givenDuplex
 tag @s remove givenBee
 tag @s remove givenBull
 tag @s remove givenElytra

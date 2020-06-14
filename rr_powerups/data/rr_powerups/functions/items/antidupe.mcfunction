@@ -5,6 +5,7 @@ execute store result score @s HasSlapFish run clear @s cooked_salmon 0
 execute store result score @s HasTotem run clear @s totem_of_undying 0
 execute store result score @s HasTippedArrows run clear @s tipped_arrow 0
 execute store result score @s HasBeeShield run clear @s honey_bottle 0
+execute store result score @s HasDuplex run clear @s parrot_spawn_egg 0
 
 clear @s[scores={HasLavaSplash=2..}] splash_potion{Potion:"minecraft:awkward"} 1
 clear @s[scores={HasTrident=2..}] trident 1

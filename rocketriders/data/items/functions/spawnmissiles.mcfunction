@@ -97,6 +97,9 @@ execute as @e[tag=YellowHyper] at @s run tp @s ~-1 ~-8 ~-13
 execute as @e[tag=BlueBull] at @s run tp @s ~-1 ~-8 ~4
 execute as @e[tag=YellowBull] at @s run tp @s ~-1 ~-8 ~-18
 
+execute as @e[tag=BlueDuplex] at @s run tp @s ~-1 ~-8 ~4
+execute as @e[tag=YellowDuplex] at @s run tp @s ~-1 ~-8 ~18
+
 #Missile prep
 execute as @e[tag=missile] at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn
 execute as @e[tag=missile] at @s if block ~ ~-1 ~ #custom:portalblocks run tag @s add portalSpawn

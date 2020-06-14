@@ -60,6 +60,7 @@ execute unless entity @a[tag=onCapturePoint] run tag @e[tag=captureMiddle] remov
 scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureBlue=100..,}] capturePoint 1
 scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureYellow=100..}] capturePoint 2
 
+execute if entity @a[team=Yellow,tag=onCapturePoint] if entity @a[team=Blue,tag=onCapturePoint] if entity @e[tag=captureMiddle,tag=!contested] run function rr_powerups:items/tetrisreset
 execute if entity @a[team=Yellow,tag=onCapturePoint] if entity @a[team=Blue,tag=onCapturePoint] run tag @e[tag=captureMiddle] add contested
 scoreboard players set @e[tag=contested] capturePoint 0
 scoreboard players remove @e[tag=contested] captureBlue 1

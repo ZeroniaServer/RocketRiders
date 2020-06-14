@@ -1,3 +1,4 @@
 title @s[scores={HasTotem=1..},tag=!fullHotbar] actionbar {"text":"Totem of Undying already obtained.","color":"light_purple"}
 title @s[scores={HasTotem=0},tag=!fullHotbar] actionbar {"text":"Totem of Undying obtained.","color":"light_purple"}
 give @s[scores={HasTotem=0},tag=!fullHotbar] totem_of_undying{display:{Name:'{"text":"Totem of Undying","color":"dark_purple","bold":true,"italic":true}',Lore:['{"text":"Hold to survive certain death.","color":"gray"}','{"text":"Only good for one use.","color":"gray"}','{"text":"(Does not include void deaths.)","color":"gray"}']},Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7} 1
+tag @e[tag=Selection] add givenTotem

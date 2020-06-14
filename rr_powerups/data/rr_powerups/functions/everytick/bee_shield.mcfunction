@@ -130,5 +130,9 @@ kill @e[tag=animBshield,scores={BeeShieldTime=32..}]
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:200000000,Tags:["BeeShield"]}
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run kill @s
 
+#glowing bees
+execute as @e[type=bee] run effect give @s glowing 1000000 255 true
+
 #kill bees
 kill @e[type=bee,nbt={Anger:0}]
+kill @e[type=bee,nbt={HasStung:1b}]

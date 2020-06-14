@@ -1,14 +1,14 @@
 #moonwalker
 
 ##check displacement
-execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] store result score @s dx run data get entity @s Pos[0] 400
-execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] store result score @s dz run data get entity @s Pos[2] 400
-execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players operation @s dx -= @s x
-execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players operation @s dz -= @s z
+execute as @a unless entity @s[team=!Blue,team=!Yellow] store result score @s dx run data get entity @s Pos[0] 400
+execute as @a unless entity @s[team=!Blue,team=!Yellow] store result score @s dz run data get entity @s Pos[2] 400
+execute as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players operation @s dx -= @s x
+execute as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players operation @s dz -= @s z
+execute as @a unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] run tag @s add firstMoved
 
 ##movement/rotation checks
 #regular walking
-execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] run tag @s add firstMoved
 execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] run scoreboard players add @s notBackwards 1
 execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] if entity @s[predicate=!custom:is_sprinting,predicate=!custom:is_sneaking,scores={dx=-33..33,dz=..-34},y_rotation=-22.5..22.5] run scoreboard players set @s notBackwards 0
 execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] if entity @s[predicate=!custom:is_sprinting,predicate=!custom:is_sneaking,scores={dx=34..,dz=..-34},y_rotation=22.5..67.5] run scoreboard players set @s notBackwards 0

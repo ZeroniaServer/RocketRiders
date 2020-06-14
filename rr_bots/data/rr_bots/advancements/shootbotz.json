@@ -1,0 +1,17 @@
+{
+  "rewards": {
+    "function": "rr_bots:hitdetect/plingsound"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {},
+        "entity": {
+          "type": "minecraft:zombie",
+          "nbt": "{Tags:[\"BotHPZombie\"]}"
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,13 @@
+#Repeating settings
+tag @s[scores={RepeatSettings=2..}] add Repeat
+execute if entity @s[tag=Repeat] run schedule function arenaclear:notifyrepeat 3t append
+scoreboard players remove @s[scores={RepeatSettings=1..}] RepeatSettings 1
+#notify start if first game has been played (already notifies from sign in mod room)
+execute if entity @s[tag=Repeat,tag=firstGameRepeated] unless entity @s[tag=!rngMissile,tag=!rngUtil] as @a[team=Lobby] at @s run function arenaclear:notifystart
+tag @s[scores={RepeatSettings=1..},tag=Repeat] add firstGameRepeated
+tag @s[scores={RepeatSettings=0}] remove Repeat
+tag @s[tag=!Repeat] remove firstGameRepeated
+
 tag @s add EditedSettings
 execute as @e[tag=SmartClearAECblue,tag=!SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue"],Duration:360}
 execute as @e[tag=SmartClearAECblue,tag=SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue","ArenaClearCata"],Duration:360}

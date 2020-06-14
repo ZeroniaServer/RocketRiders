@@ -67,30 +67,47 @@ execute as @s[scores={PortalDeco=0},tag=!settingsLocked] run data merge block -5
 
 execute as @s[tag=settingsLocked] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
-##RESTORE ALL DEFAULTS
-execute as @s[tag=!settingsLocked] run data merge block -57 193 78 {Text2:"{\"text\":\"Restore Default\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add RestoreDefault\"}}",Text3:"{\"text\":\"Details\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-execute as @s[tag=settingsLocked] run data merge block -57 193 78 {Text2:"{\"text\":\"Restore Default\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This action cannot be performed in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text3:"{\"text\":\"Details\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-data merge block -69 193 74 {Text2:"{\"text\":\"Restore Default\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players operation @e[tag=Selection] SetGamemode = @e[tag=rr_normal] gamemodeID\"}}",Text3:"{\"text\":\"Gamemode\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-execute as @s[tag=!settingsLocked] run data merge block -69 193 75 {Text2:"{\"text\":\"Restore Default\",\"color\":\"aqua\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:disablemodifiers\"}}",Text3:"{\"text\":\"Modifiers\",\"color\":\"aqua\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-execute as @s[tag=settingsLocked] run data merge block -69 193 75 {Text2:"{\"text\":\"Restore Default\",\"color\":\"aqua\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This action cannot be performed in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text3:"{\"text\":\"Modifiers\",\"color\":\"aqua\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-
-#CONFIRM CURRENT
-data merge block -70 192 78 {Text2:"{\"text\":\"Confirm\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] unless entity @e[tag=Selection,tag=!rngMissile,tag=!rngUtil] as @e[tag=Selection] run function arenaclear:areaclear\"}}",Text3:"{\"text\":\"Changes\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] if entity @e[tag=Selection,tag=!rngMissile,tag=!rngUtil] run tellraw @s {\\\"text\\\":\\\"You must have at least one item category enabled to start the game\\\",\\\"color\\\":\\\"red\\\"}\"}}",Text4:"{\"text\":\" \",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] unless entity @e[tag=Selection,tag=!rngMissile,tag=!rngUtil] as @a[team=Lobby] at @s run function arenaclear:notifystart\"}}"}
-
-#RESET SCORES
+#RESET DETAIL SCORES
 scoreboard players set @s[scores={TopDeco=3..}] TopDeco 0
 scoreboard players set @s[scores={TopCorner=2..}] TopCorner 0
 scoreboard players set @s[scores={MiddleDeco=2..}] MiddleDeco 0
 scoreboard players set @s[scores={BottomDeco=2..}] BottomDeco 0
 scoreboard players set @s[scores={PortalDeco=2..}] PortalDeco 0
 
-#RESTORE DEFAULTS
+##RESTORE ALL DEFAULTS
+execute as @s[tag=!settingsLocked] run data merge block -57 193 78 {Text2:"{\"text\":\"Restore Default\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add RestoreDefault\"}}",Text3:"{\"text\":\"Details\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @s[tag=settingsLocked] run data merge block -57 193 78 {Text2:"{\"text\":\"Restore Default\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This action cannot be performed in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text3:"{\"text\":\"Details\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+data merge block -69 193 74 {Text2:"{\"text\":\"Restore Default\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players operation @e[tag=Selection] SetGamemode = @e[tag=rr_normal] gamemodeID\"}}",Text3:"{\"text\":\"Gamemode\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @s[tag=!settingsLocked] run data merge block -69 193 75 {Text2:"{\"text\":\"Restore Default\",\"color\":\"aqua\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:disablemodifiers\"}}",Text3:"{\"text\":\"Modifiers\",\"color\":\"aqua\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @s[tag=settingsLocked] run data merge block -69 193 75 {Text2:"{\"text\":\"Restore Default\",\"color\":\"aqua\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This action cannot be performed in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text3:"{\"text\":\"Modifiers\",\"color\":\"aqua\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @s[tag=!settingsLocked] run data merge block -70 192 77 {Text2:"{\"text\":\"Restore Default\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add DefaultOptions\"}}",Text3:"{\"text\":\"Options\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @s[tag=settingsLocked] run data merge block -70 192 77 {Text2:"{\"text\":\"Restore Default\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This action cannot be performed in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text3:"{\"text\":\"Options\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+
+#CONFIRM CURRENT
+data merge block -70 192 78 {Text2:"{\"text\":\"Confirm\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] unless entity @e[tag=Selection,tag=!rngMissile,tag=!rngUtil] as @e[tag=Selection] run function arenaclear:areaclear\"}}",Text3:"{\"text\":\"Changes\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] if entity @e[tag=Selection,tag=!rngMissile,tag=!rngUtil] run tellraw @s {\\\"text\\\":\\\"You must have at least one item category enabled to start the game\\\",\\\"color\\\":\\\"red\\\"}\"}}",Text4:"{\"text\":\" \",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] unless entity @e[tag=Selection,tag=!rngMissile,tag=!rngUtil] as @a[team=Lobby] at @s run function arenaclear:notifystart\"}}"}
+
+#REPEAT SETTINGS
+scoreboard players set @s[scores={RepeatSettings=0}] RepeatSettings 1
+scoreboard players set @s[scores={RepeatSettings=5..}] RepeatSettings 1
+data merge block -70 192 79 {Text1:"{\"text\":\"Repeat Settings\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] RepeatSettings 1\"}}",Text2:"[{\"score\":{\"name\":\"@e[tag=Selection,limit=1]\",\"objective\":\"RepeatSettings\"},\"color\":\"black\",\"bold\":true},{\"text\":\"x\",\"color\":\"black\",\"bold\":\"false\"}]",Text4: "{\"text\":\"(Click to adjust)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+
+#RESTORE DEFAULT DETAILS
 scoreboard players set @s[tag=RestoreDefault] TopDeco 1
 scoreboard players set @s[tag=RestoreDefault] TopCorner 1
 scoreboard players set @s[tag=RestoreDefault] MiddleDeco 1
 scoreboard players set @s[tag=RestoreDefault] BottomDeco 1
 scoreboard players set @s[tag=RestoreDefault] PortalDeco 1
 tag @s[tag=RestoreDefault] remove RestoreDefault
+
+#RESTORE DEFAULT OPTIONS
+tag @s[tag=DefaultOptions] add doPrevention
+tag @s[tag=DefaultOptions] add doTying
+tag @s[tag=DefaultOptions] add doHotbarLimit
+tag @s[tag=DefaultOptions] remove doStacking
+scoreboard players set @s[tag=DefaultOptions] MaxItemSec 15
+scoreboard players set @s[tag=DefaultOptions] RepeatSettings 1
+tag @s[tag=DefaultOptions] remove DefaultOptions
+
 
 ##GAME OPTIONS
 #missile pierce prevention

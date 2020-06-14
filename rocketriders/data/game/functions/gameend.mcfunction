@@ -61,4 +61,8 @@ tag @s[scores={endtimer=570..}] remove BlueWonFirst
 tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
 tag @s[scores={endtimer=570..}] remove GameEnd
+
+#REPEAT SETTINGS
+execute if entity @s[scores={endtimer=570..},tag=Repeat] unless entity @s[tag=!rngMissile,tag=!rngUtil] run function arenaclear:areaclear
+
 scoreboard players set @s[scores={endtimer=570..}] endtimer 0

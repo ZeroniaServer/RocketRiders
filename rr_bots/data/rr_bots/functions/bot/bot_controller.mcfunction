@@ -46,6 +46,10 @@ execute as @e[tag=BotHPZombie] unless entity @s[nbt={Health:20.0f}] at @s if ent
 execute as @e[tag=Bot,scores={BotHP=-1000..0}] run function rr_bots:bot/movement/die
 
 
+#prevent that bot riding bug
+execute as @e[tag=YellowBot,tag=BotRider,scores={botriding=60..}] at @s if predicate rr_bots:rider_yellowbot run tag @s remove BotRider
+execute as @e[tag=BlueBot,tag=BotRider,scores={botriding=60..}] at @s if predicate rr_bots:rider_bluebot run tag @s remove BotRider
+
 
 
 scoreboard players add @e[tag=Bot] botcontrol 1

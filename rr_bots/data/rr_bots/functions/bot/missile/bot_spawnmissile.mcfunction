@@ -120,10 +120,6 @@ execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotSlashSpawn,scores={botmissp
 execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotBoltSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/thunderbolt
 execute as @s[tag=YellowBot,tag=!DoneSpawning,tag=BotWarSpawn,scores={botmisspawn=40}] at @s if block ~ ~-3 ~-4 air unless entity @e[tag=RecentBotspawn,distance=..7] run function rr_bots:bot/missile/spawns/warhead
 
-execute as @s[tag=YellowBot,tag=BotRider,scores={botmisspawn=60..}] at @s unless entity @s[dz=-948,z=52] run tag @s remove BotRider
-execute as @s[tag=BlueBot,tag=BotRider,scores={botmisspawn=60..}] at @s unless entity @s[dz=948,z=-52] run tag @s remove BotRider
-
-
 
 
 

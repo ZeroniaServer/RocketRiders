@@ -55,7 +55,11 @@
 
 		"minecraft:parrot_spawn_egg",
 
-		"minecraft:magma_cube_spawn_egg"
+		"minecraft:magma_cube_spawn_egg",
+
+		"minecraft:skeleton_horse_spawn_egg",
+
+		"minecraft:turtle_spawn_egg"
 
 	]
 }

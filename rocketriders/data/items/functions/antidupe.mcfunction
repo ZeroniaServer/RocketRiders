@@ -20,6 +20,8 @@ execute store result score @s HasCata run clear @s cave_spider_spawn_egg 0
 execute store result score @s HasCitadel run clear @s wandering_trader_spawn_egg 0
 execute store result score @s HasGemi run clear @s fox_spawn_egg 0
 execute store result score @s HasLift run clear @s dolphin_spawn_egg 0
+execute store result score @s HasDuplex run clear @s parrot_spawn_egg 0
+execute store result score @s HasBroad run clear @s magma_cube_spawn_egg 0
 execute store result score @s HasNova run clear @s crossbow 0
 execute store result score @s HasVortex run clear @s egg 0
 execute store result score @s HasSplash run clear @s lingering_potion{Potion:"minecraft:water"} 0
@@ -48,6 +50,8 @@ clear @s[scores={HasCata=2..}] cave_spider_spawn_egg 1
 clear @s[scores={HasCitadel=2..}] wandering_trader_spawn_egg 1
 clear @s[scores={HasGemi=2..}] fox_spawn_egg 1
 clear @s[scores={HasLift=2..}] dolphin_spawn_egg 1
+clear @s[scores={HasDuplex=2..}] parrot_spawn_egg 1
+clear @s[scores={HasBroad=2..}] magma_cube_spawn_egg 1
 clear @s[team=Blue,scores={HasSurprise=4..}] squid_spawn_egg 1
 clear @s[team=Yellow,scores={HasSurprise=4..}] cod_spawn_egg 1
 clear @s[scores={HasNova=2..}] crossbow 1

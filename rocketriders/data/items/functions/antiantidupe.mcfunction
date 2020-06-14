@@ -20,6 +20,8 @@ scoreboard players set @s HasCata 0
 scoreboard players set @s HasCitadel 0
 scoreboard players set @s HasGemi 0
 scoreboard players set @s HasLift 0
+scoreboard players set @s HasDuplex 0
+scoreboard players set @s HasBroad 0
 scoreboard players set @s HasNova 0
 scoreboard players set @s HasVortex 0
 scoreboard players set @s HasSplash 0

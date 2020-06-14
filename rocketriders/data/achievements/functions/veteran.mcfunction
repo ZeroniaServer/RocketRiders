@@ -2,7 +2,9 @@
 execute as @a[tag=!CompletedVeteran] if score @s AuxSpawned matches 1.. run tag @s add AuxSpawned
 execute as @a[tag=!CompletedVeteran] if score @s AntsSpawned matches 1.. run tag @s add AntsSpawned
 execute as @a[tag=!CompletedVeteran] if score @s BladeSpawned matches 1.. run tag @s add BladeSpawned
+execute as @a[tag=!CompletedVeteran] if score @s BroadSpawned matches 1.. run tag @s add BroadSpawned
 execute as @a[tag=!CompletedVeteran] if score @s BulletSpawned matches 1.. run tag @s add BulletSpawned
+execute as @a[tag=!CompletedVeteran] if score @s DuplexSpawned matches 1.. run tag @s add DuplexSpawned
 execute as @a[tag=!CompletedVeteran] if score @s CataSpawned matches 1.. run tag @s add CataSpawned
 execute as @a[tag=!CompletedVeteran] if score @s CitaSpawned matches 1.. run tag @s add CitaSpawned
 execute as @a[tag=!CompletedVeteran] if score @s GemiSpawned matches 1.. run tag @s add GemiSpawned
@@ -29,6 +31,6 @@ execute as @a[tag=!CompletedVeteran] if score @s NovaShot matches 1.. run tag @s
 execute as @a[tag=!CompletedVeteran] if score @s BowShot matches 1.. run tag @s add ArrowSpawned
 
 #Final check
-tag @a[tag=!CompletedVeteran,tag=AuxSpawned,tag=AntsSpawned,tag=BladeSpawned,tag=BulletSpawned,tag=CataSpawned,tag=CitaSpawned,tag=GemiSpawned,tag=GuardSpawned,tag=HurSpawned,tag=HyperSpawned,tag=JugbSpawned,tag=LifterSpawned,tag=NullSpawned,tag=RifterSpawned,tag=SlashSpawned,tag=ThunSpawned,tag=TomaSpawned,tag=WarSpawned,tag=FireballSpawned,tag=ObshieldSpawned,tag=CanopySpawned,tag=ShieldSpawned,tag=SplashSpawned,tag=VortexSpawned,tag=NovaSpawned,tag=ArrowSpawned] add CompletedVeteran
+tag @a[tag=!CompletedVeteran,tag=AuxSpawned,tag=AntsSpawned,tag=BladeSpawned,tag=BroadSpawned,tag=BulletSpawned,tag=CataSpawned,tag=CitaSpawned,tag=DuplexSpawned,tag=GemiSpawned,tag=GuardSpawned,tag=HurSpawned,tag=HyperSpawned,tag=JugbSpawned,tag=LifterSpawned,tag=NullSpawned,tag=RifterSpawned,tag=SlashSpawned,tag=ThunSpawned,tag=TomaSpawned,tag=WarSpawned,tag=FireballSpawned,tag=ObshieldSpawned,tag=CanopySpawned,tag=ShieldSpawned,tag=SplashSpawned,tag=VortexSpawned,tag=NovaSpawned,tag=ArrowSpawned] add CompletedVeteran
 advancement grant @a[tag=CompletedVeteran] only achievements:rr_challenges/veteran
 execute as @a[tag=CompletedVeteran] run function achievements:veteranreset

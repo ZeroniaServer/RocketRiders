@@ -2,7 +2,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[tag=RandomSplash] RNGmax 45
+scoreboard players set @e[tag=RandomSplash] RNGmax 48
 
 execute as @e[tag=RandomSplash] store result score @s RNGscore run data get entity @s UUIDMost 0.00000000023283064365386962890625
 execute as @e[tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -54,4 +54,8 @@ execute as @e[tag=RandomSplash,scores={RNGscore=41}] run title @a subtitle ["",{
 execute as @e[tag=RandomSplash,scores={RNGscore=42}] run title @a subtitle ["",{"text":"gg america","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=43}] run title @a subtitle ["",{"text":"I am a Rider!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=44}] run title @a subtitle ["",{"text":"There is no game. Tomato","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=45}] run title @a subtitle ["",{"text":"Error 404: Splash message not found.","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=46}] run title @a subtitle ["",{"text":"Shield stackers beware!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=47}] run title @a subtitle ["",{"text":"Splash messages are useful!","color":"green"}]
+
 kill @e[tag=RandomSplash]

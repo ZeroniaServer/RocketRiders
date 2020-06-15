@@ -112,7 +112,7 @@ scoreboard players set @s[scores={TopDeco=4..}] TopDeco 0
 scoreboard players set @s[scores={TopCorner=3..}] TopCorner 0
 scoreboard players set @s[scores={MiddleDeco=3..}] MiddleDeco 0
 scoreboard players set @s[scores={BottomDeco=3..}] BottomDeco 0
-scoreboard players set @s[scores={PortalDeco=3..}] PortalDeco 0
+scoreboard players set @s[scores={PortalDeco=2..}] PortalDeco 0
 
 ##RESTORE ALL DEFAULTS
 execute as @s[tag=!settingsLocked] run data merge block -57 193 78 {Text2:"{\"text\":\"Restore Default\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add RestoreDefault\"}}",Text3:"{\"text\":\"Details\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}

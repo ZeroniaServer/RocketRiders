@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "clay_ball"
+    },
+    "title": {
+            "text": "Clay Pigeon",
+            "color": "green"
+        },
+    "description": {
+            "text": "Kill a levitating player.",
+            "color": "dark_green"
+        },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "achievements:rr_challenges/hard",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:player",
+          "effects": {
+            "levitation": {}
+          }
+        },
+        "killing_blow": {
+          "is_projectile": true,
+          "direct_entity": {
+            "type": "minecraft:arrow"
+          }
+        }
+      }
+    }
+  }
+}

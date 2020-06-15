@@ -18,7 +18,7 @@ replaceitem entity @e[tag=YZEROCredits] armor.chest leather_chestplate{display:{
 replaceitem entity @e[tag=YZEROCredits] armor.legs leather_leggings{display:{color:2368548}}
 replaceitem entity @e[tag=YZEROCredits] armor.feet leather_boots{display:{color:10682368}}
 
-replaceitem entity @e[tag=ChronosCredits] armor.head player_head{SkullOwner:Chronos22Gamer}
+replaceitem entity @e[tag=ChronosCredits] armor.head player_head{SkullOwner:Chornos}
 replaceitem entity @e[tag=ChronosCredits] weapon.mainhand bow
 replaceitem entity @e[tag=ChronosCredits] armor.chest iron_chestplate
 replaceitem entity @e[tag=ChronosCredits] armor.legs iron_leggings

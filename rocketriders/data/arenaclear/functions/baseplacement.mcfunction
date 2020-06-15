@@ -1,3 +1,12 @@
+#Clear decorations
+fill -14 64 -66 38 80 -52 air
+fill 38 48 -51 -14 63 -28 air
+fill -14 33 -51 38 48 -31 air
+
+fill 38 64 52 -14 80 66 air
+fill -14 48 51 38 63 28 air
+fill 38 33 51 -14 47 29 air
+
 #Set Yellow Base
 fill -14 34 52 38 63 56 minecraft:yellow_stained_glass replace #custom:basereplace
 fill 38 63 57 -14 34 61 minecraft:orange_stained_glass replace #custom:basereplace

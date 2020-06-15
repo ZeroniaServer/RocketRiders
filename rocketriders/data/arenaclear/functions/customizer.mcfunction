@@ -17,6 +17,10 @@ execute as @s[scores={TopDeco=2}] run setblock -44 197 87 structure_block{mode:"
 execute as @s[scores={TopDeco=2}] run setblock -44 198 87 redstone_block
 execute as @s[scores={TopDeco=2}] run setblock -44 197 87 air
 
+execute as @s[scores={TopDeco=3},tag=!settingsLocked] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"Spikes\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
+execute as @s[scores={TopDeco=3}] run fill -40 197 64 -44 206 92 air
+#Will need to add previews later. -Y0
+
 execute as @s[scores={TopDeco=0},tag=!settingsLocked] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 execute as @s[scores={TopDeco=0}] run fill -40 197 64 -44 206 92 air
 
@@ -45,6 +49,12 @@ execute as @s[scores={MiddleDeco=1}] run setblock -49 190 85 structure_block{mod
 execute as @s[scores={MiddleDeco=1}] run setblock -49 191 85 redstone_block
 execute as @s[scores={MiddleDeco=1}] run setblock -49 190 85 air
 
+execute as @s[scores={MiddleDeco=2},tag=!settingsLocked] run data merge block -58 193 85 {Text1: "{\"text\":\"Middle Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] MiddleDeco 1\"}}",Text2: "{\"text\":\"Spikes\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
+execute as @s[scores={MiddleDeco=2}] run fill -51 190 92 -45 191 64 air
+execute as @s[scores={MiddleDeco=2}] run scoreboard players set @s TopCorner 0
+execute as @s[scores={MiddleDeco=2}] run data merge block -58 194 72 {Text1: "{\"text\":\"Middle Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\" \"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\" \"}}",Text4:"{\"text\":\" \",\"color\":\"gray\",\"italic\":\"true\"}"}
+#Will add preview structure later -Y0
+
 execute as @s[scores={MiddleDeco=0},tag=!settingsLocked] run data merge block -58 193 85 {Text1: "{\"text\":\"Middle Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] MiddleDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 execute as @s[scores={MiddleDeco=0}] run fill -51 190 92 -45 191 64 air
 
@@ -55,6 +65,10 @@ execute as @s[scores={BottomDeco=1},tag=!settingsLocked] run data merge block -5
 execute as @s[scores={BottomDeco=1}] run setblock -49 186 75 structure_block{mode:"LOAD",name:"minecraft:bottomslimepad_preview",showboundingbox:0b}
 execute as @s[scores={BottomDeco=1}] run setblock -49 187 75 redstone_block
 execute as @s[scores={BottomDeco=1}] run setblock -49 186 75 air
+
+execute as @s[scores={BottomDeco=2},tag=!settingsLocked] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] BottomDeco 1\"}}",Text2: "{\"text\":\"Spikes\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
+execute as @s[scores={BottomDeco=2}] run fill -45 189 82 -51 185 74 air
+#Will add preview structures later -Y0
 
 execute as @s[scores={BottomDeco=0},tag=!settingsLocked] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] BottomDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 execute as @s[scores={BottomDeco=0}] run fill -45 189 82 -51 185 74 air
@@ -68,11 +82,11 @@ execute as @s[scores={PortalDeco=0},tag=!settingsLocked] run data merge block -5
 execute as @s[tag=settingsLocked] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
 #RESET DETAIL SCORES
-scoreboard players set @s[scores={TopDeco=3..}] TopDeco 0
+scoreboard players set @s[scores={TopDeco=4..}] TopDeco 0
 scoreboard players set @s[scores={TopCorner=2..}] TopCorner 0
-scoreboard players set @s[scores={MiddleDeco=2..}] MiddleDeco 0
-scoreboard players set @s[scores={BottomDeco=2..}] BottomDeco 0
-scoreboard players set @s[scores={PortalDeco=2..}] PortalDeco 0
+scoreboard players set @s[scores={MiddleDeco=3..}] MiddleDeco 0
+scoreboard players set @s[scores={BottomDeco=3..}] BottomDeco 0
+scoreboard players set @s[scores={PortalDeco=3..}] PortalDeco 0
 
 ##RESTORE ALL DEFAULTS
 execute as @s[tag=!settingsLocked] run data merge block -57 193 78 {Text2:"{\"text\":\"Restore Default\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add RestoreDefault\"}}",Text3:"{\"text\":\"Details\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}

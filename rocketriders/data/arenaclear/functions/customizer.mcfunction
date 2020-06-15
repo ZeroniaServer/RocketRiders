@@ -1,9 +1,12 @@
 #GAMEMODE SELECTION
 execute if score @s SetGamemode > maxID gamemodeID run scoreboard players set @s SetGamemode 1
 
+fill -45 196 92 -55 185 64 air
+fill -45 196 92 -55 185 64 air
 fill -55 185 92 -40 206 64 air replace minecraft:orange_stained_glass
 fill -55 185 92 -40 206 64 air replace minecraft:lime_stained_glass
 fill -55 185 92 -40 206 64 air replace minecraft:pink_stained_glass
+fill -40 196 92 -44 185 64 minecraft:white_stained_glass
 
 #TOP DECORATION
 execute as @s[scores={TopDeco=1},tag=!settingsLocked] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"Arch\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
@@ -37,6 +40,22 @@ execute as @s[scores={TopCorner=1}] run setblock -50 194 81 structure_block{mode
 execute as @s[scores={TopCorner=1}] run setblock -50 195 81 redstone_block
 execute as @s[scores={TopCorner=1}] run setblock -50 194 81 air
 
+
+execute as @s[scores={TopCorner=2},tag=!settingsLocked] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] MiddleDeco 1\"}}",Text2: "{\"text\":\"Layered\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
+execute as @s[scores={TopCorner=2}] run scoreboard players set @s MiddleDeco 0
+execute as @s[scores={TopCorner=2}] run data merge block -58 193 85 {Text1: "{\"text\":\"Middle Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not compatible with other selected details.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @s[scores={TopCorner=2}] run scoreboard players set @s BottomDeco 0
+execute as @s[scores={TopCorner=2}] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not compatible with other selected details.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+
+
+execute as @s[scores={TopCorner=2}] run fill -44 196 64 -43 196 92 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -45 185 92 -45 192 64 minecraft:white_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -46 185 92 -46 189 64 minecraft:white_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -47 185 92 -47 185 64 minecraft:white_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -45 193 92 -45 193 64 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -46 190 92 -46 190 64 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -47 186 92 -47 186 64 minecraft:black_stained_glass
+
 execute as @s[scores={TopCorner=0},tag=!settingsLocked] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopCorner 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 
 execute as @s[tag=settingsLocked] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
@@ -52,7 +71,7 @@ execute as @s[scores={MiddleDeco=1}] run setblock -49 190 85 air
 
 execute as @s[scores={MiddleDeco=2},tag=!settingsLocked] run data merge block -58 193 85 {Text1: "{\"text\":\"Middle Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] MiddleDeco 1\"}}",Text2: "{\"text\":\"Spikes\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 execute as @s[scores={MiddleDeco=2}] run scoreboard players set @s TopCorner 0
-execute as @s[scores={MiddleDeco=2}] run data merge block -58 194 72 {Text1: "{\"text\":\"Middle Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not compatible with other selected details.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+execute as @s[scores={MiddleDeco=2}] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not compatible with other selected details.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 execute as @s[scores={MiddleDeco=2}] run setblock -54 191 66 structure_block{mode:"LOAD",name:"minecraft:spike_mid_preview",showboundingbox:0b}
 execute as @s[scores={MiddleDeco=2}] run setblock -54 192 66 redstone_block
 execute as @s[scores={MiddleDeco=2}] run setblock -54 191 66 air
@@ -84,7 +103,7 @@ execute as @s[tag=settingsLocked] run data merge block -58 192 72 {Text1: "{\"te
 
 #RESET DETAIL SCORES
 scoreboard players set @s[scores={TopDeco=4..}] TopDeco 0
-scoreboard players set @s[scores={TopCorner=2..}] TopCorner 0
+scoreboard players set @s[scores={TopCorner=3..}] TopCorner 0
 scoreboard players set @s[scores={MiddleDeco=3..}] MiddleDeco 0
 scoreboard players set @s[scores={BottomDeco=3..}] BottomDeco 0
 scoreboard players set @s[scores={PortalDeco=3..}] PortalDeco 0

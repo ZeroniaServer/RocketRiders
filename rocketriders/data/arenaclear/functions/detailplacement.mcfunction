@@ -82,9 +82,22 @@ execute as @s[scores={BottomDeco=2}] run setblock 8 34 -51 structure_block{mode:
 execute as @s[scores={BottomDeco=2}] run setblock 8 35 -51 redstone_block
 execute as @s[scores={BottomDeco=2}] run setblock 8 34 -51 air
 
+#Layered - Blue and Yellow
+execute as @s[scores={TopCorner=2}] run fill 38 34 -49 -14 40 -51 minecraft:blue_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -14 41 -50 38 48 -51 minecraft:blue_stained_glass
+execute as @s[scores={TopCorner=2}] run fill 38 49 -51 -14 56 -51 minecraft:blue_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -14 63 -55 38 63 -52 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill 38 41 -49 -14 41 -49 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill 38 57 -51 -14 57 -51 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -14 49 -50 38 49 -50 minecraft:black_stained_glass
 
-
-
+execute as @s[scores={TopCorner=2}] run fill 38 34 49 -14 40 51 minecraft:yellow_stained_glass
+execute as @s[scores={TopCorner=2}] run fill 38 41 50 -14 48 51 minecraft:yellow_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -14 49 51 38 56 51 minecraft:yellow_stained_glass
+execute as @s[scores={TopCorner=2}] run fill 38 63 55 -14 63 52 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -14 57 51 38 57 51 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill 38 49 50 -14 49 50 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -14 41 49 38 41 49 minecraft:black_stained_glass
 
 
 #Portal glass pane rims

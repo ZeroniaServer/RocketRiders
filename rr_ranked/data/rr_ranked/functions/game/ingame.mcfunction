@@ -23,13 +23,13 @@ execute if entity @e[tag=PlacerClear] run tag @s remove CriteriaTrue
 tag @e[tag=PlacerClear] add BasePlaced
 tag @e[tag=PlacerClear] add Cleared
 
-scoreboard players add Blue RoundsWon 0
-scoreboard players add Yellow RoundsWon 0
+scoreboard players add Blue: RoundsWon 0
+scoreboard players add Yellow: RoundsWon 0
 
 ##forfeit
 #initial condition
-execute unless score Blue RoundsWon matches 2.. unless score Yellow RoundsWon matches 2.. if entity @a[team=Yellow] unless entity @a[team=Blue] run tag @s add TimeOut
-execute unless score Blue RoundsWon matches 2.. unless score Yellow RoundsWon matches 2.. unless entity @a[team=Yellow] if entity @a[team=Blue] run tag @s add TimeOut
+execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. if entity @a[team=Yellow] unless entity @a[team=Blue] run tag @s add TimeOut
+execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[team=Yellow] if entity @a[team=Blue] run tag @s add TimeOut
 
 #adds original player back
 execute as @a[tag=InRanked,team=!Blue,team=!Yellow,limit=1] unless entity @a[team=Blue] run function game:joinblue
@@ -49,7 +49,7 @@ execute as @s[tag=TimeOut] if entity @a[team=Blue] if entity @a[team=Yellow] run
 scoreboard players reset @s[tag=!TimeOut] ForfeitTimeout
 
 #force win
-execute as @s[scores={ForfeitTimeout=1200..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run scoreboard players set Blue RoundsWon 2
+execute as @s[scores={ForfeitTimeout=1200..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run scoreboard players set Blue: RoundsWon 2
 execute as @s[scores={ForfeitTimeout=1200..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run function rr_ranked:game/winblue
-execute as @s[scores={ForfeitTimeout=1200..}] unless entity @a[team=Blue] if entity @a[team=Yellow] run scoreboard players set Yellow RoundsWon 2
+execute as @s[scores={ForfeitTimeout=1200..}] unless entity @a[team=Blue] if entity @a[team=Yellow] run scoreboard players set Yellow: RoundsWon 2
 execute as @s[scores={ForfeitTimeout=1200..}] unless entity @a[team=Blue] if entity @a[team=Yellow] run function rr_ranked:game/winyellow

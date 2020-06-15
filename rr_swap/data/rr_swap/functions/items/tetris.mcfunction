@@ -18,8 +18,8 @@ tag @s remove givenArrowsTwice
 tag @s remove givenFireballTwice
 tag @s remove givenShieldTwice
 
-tag @s[tag=givenAux,tag=givenWar,tag=givenBull] add givenAllHeavy
-tag @s[tag=givenHur,tag=givenBolt,tag=givenHyper] add givenAllLightning
+tag @s[tag=givenAux,tag=givenWar,tag=givenBull,tag=givenDuplex] add givenAllHeavy
+tag @s[tag=givenHur,tag=givenBolt,tag=givenHyper,tag=givenBroad] add givenAllLightning
 tag @s[tag=givenICBM,tag=givenShield] add givenAllDUtil
 tag @s[tag=givenFireball,tag=givenObshield] add givenAllLUtil
 

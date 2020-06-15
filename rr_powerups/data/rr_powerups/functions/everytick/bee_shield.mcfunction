@@ -130,6 +130,10 @@ kill @e[tag=animBshield,scores={BeeShieldTime=32..}]
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:200000000,Tags:["BeeShield"]}
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run kill @s
 
+#bees teams
+team join Blue @e[type=bee,tag=BlueBee]
+team join Yellow @e[type=bee,tag=YellowBee]
+
 #glowing bees
 execute as @e[type=bee] run effect give @s glowing 1000000 255 true
 

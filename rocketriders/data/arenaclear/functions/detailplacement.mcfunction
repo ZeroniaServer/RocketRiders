@@ -81,6 +81,7 @@ execute as @s[scores={MiddleDeco=2}] run setblock -14 50 -51 air
 execute as @s[scores={BottomDeco=2}] run setblock 8 34 -51 structure_block{mode:"LOAD",name:"blue_spikebottom"}
 execute as @s[scores={BottomDeco=2}] run setblock 8 35 -51 redstone_block
 execute as @s[scores={BottomDeco=2}] run setblock 8 34 -51 air
+execute as @s[scores={BottomDeco=2}] run setblock -10 64 -59 air
 
 #Layered - Blue and Yellow
 execute as @s[scores={TopCorner=2}] run fill 38 34 -49 -14 40 -51 minecraft:blue_stained_glass

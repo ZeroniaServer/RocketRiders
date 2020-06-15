@@ -4,6 +4,7 @@ scoreboard players set SwapPlatform swapside 0
 scoreboard players set BossbarA swapside 0
 
 fill -14 34 -56 38 63 -52 blue_stained_glass replace minecraft:light_blue_stained_glass
+execute if entity @s[scores={TopCorner=2}] run fill -14 34 -51 38 63 -49 blue_stained_glass replace minecraft:light_blue_stained_glass
 fill -14 34 -57 38 63 -61 black_stained_glass replace minecraft:white_stained_glass
 fill 38 34 -66 -14 63 -62 black_concrete replace minecraft:white_concrete
 

@@ -81,6 +81,10 @@ execute if entity @s[tag=YellowBull] run data merge block ~ ~ ~ {name:"bullet_ye
 execute if entity @s[tag=BlueDuplex] run data merge block ~ ~ ~ {name:"duplex_blue",ignoreEntities:0b}
 execute if entity @s[tag=YellowDuplex] run data merge block ~ ~ ~ {name:"duplex_yellow",ignoreEntities:0b}
 
+#Broadsword
+execute if entity @s[tag=BlueBroad] run data merge block ~ ~ ~ {name:"broadsword_blue",ignoreEntities:0b}
+execute if entity @s[tag=YellowBroad] run data merge block ~ ~ ~ {name:"broadsword_yellow",ignoreEntities:0b}
+
 #After structure block placed
 setblock ~ ~-1 ~ observer[powered=true,facing=down]
 setblock ~ ~-1 ~ observer[powered=true,facing=down]

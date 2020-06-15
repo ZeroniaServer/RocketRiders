@@ -124,6 +124,20 @@ scoreboard players remove @a[tag=BackBullet] BulletSpawned 1
 tag @a[tag=BackBullet] remove fullHotbar
 execute as @a[tag=BackBullet] run function rr_powerups:items/powerup/givebull
 
+#Duplex
+execute as @a[tag=BackDuplex] run clear @s parrot_spawn_egg
+scoreboard players set @a[tag=BackDuplex] HasDuplex 0
+scoreboard players remove @a[tag=BackDuplex] DuplexSpawned 1
+tag @a[tag=BackDuplex] remove fullHotbar
+execute as @a[tag=BackDuplex] run function rr_powerups:items/powerup/giveduplex
+
+#Broadsword
+execute as @a[tag=BackBroad] run clear @s magma_cube_spawn_egg
+scoreboard players set @a[tag=BackBroad] HasBroad 0
+scoreboard players remove @a[tag=BackBroad] BroadSpawned 1
+tag @a[tag=BackBroad] remove fullHotbar
+execute as @a[tag=BackBroad] run function rr_powerups:items/powerup/givebroad
+
 #Tag removal & unable message
 execute unless entity @s[tag=customPrevention] as @a[tag=MissiMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals.","color":"red"}]
 execute unless entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG
@@ -145,3 +159,5 @@ tag @a remove BackGemini
 tag @a remove BackLift
 tag @a remove BackHyper
 tag @a remove BackBullet
+tag @a remove BackDuplex
+tag @a remove BackBroad

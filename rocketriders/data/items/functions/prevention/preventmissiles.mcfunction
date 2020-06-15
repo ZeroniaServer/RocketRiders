@@ -106,6 +106,18 @@ execute as @e[tag=BlueBull,tag=!UnableMissile] at @s positioned ~-1 175 ~4 run f
 execute as @e[tag=YellowBull,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-18 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~14 ~ 175 ~ filtered #custom:portalblocks force
 execute as @e[tag=YellowBull,tag=!UnableMissile] at @s positioned ~-1 175 ~-18 run fill ~ ~ ~ ~2 ~2 ~14 air replace #custom:portalblocks
 
+#Duplex
+execute as @e[tag=BlueDuplex,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~17 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=BlueDuplex,tag=!UnableMissile] at @s positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~17 air replace #custom:portalblocks
+execute as @e[tag=YellowDuplex,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-22 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~17 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowDuplex,tag=!UnableMissile] at @s positioned ~-1 175 ~-22 run fill ~ ~ ~ ~2 ~2 ~17 air replace #custom:portalblocks
+
+#Broadsword
+execute as @e[tag=BlueBroad,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~5 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~11 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=BlueBroad,tag=!UnableMissile] at @s positioned ~-1 175 ~5 run fill ~ ~ ~ ~2 ~2 ~11 air replace #custom:portalblocks
+execute as @e[tag=YellowBroad,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-16 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~11 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowBroad,tag=!UnableMissile] at @s positioned ~-1 175 ~-16 run fill ~ ~ ~ ~2 ~2 ~11 air replace #custom:portalblocks
+
 #All missiles
 tag @e[tag=missile,scores={Unable=1..}] add UnableMissile
 scoreboard players reset * Unable

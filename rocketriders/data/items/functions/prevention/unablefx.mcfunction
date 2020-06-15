@@ -160,6 +160,24 @@ execute as @s[tag=YellowBull] at @s store result score @s BulletSpawned run scor
 execute as @s[tag=YellowBull] at @s if score @s BulletSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BulletSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackBullet
 execute as @s[tag=YellowBull] at @s if score @s BulletSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BulletSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
 
+#Duplex
+execute as @s[tag=BlueDuplex] at @s store result score @s DuplexSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] DuplexSpawned
+execute as @s[tag=BlueDuplex] at @s if score @s DuplexSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] DuplexSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackDuplex
+execute as @s[tag=BlueDuplex] at @s if score @s DuplexSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] DuplexSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+
+execute as @s[tag=YellowDuplex] at @s store result score @s DuplexSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] DuplexSpawned
+execute as @s[tag=YellowDuplex] at @s if score @s DuplexSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] DuplexSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackDuplex
+execute as @s[tag=YellowDuplex] at @s if score @s DuplexSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] DuplexSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
+
+#Broadsword
+execute as @s[tag=BlueBroad] at @s store result score @s BroadSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] BroadSpawned
+execute as @s[tag=BlueBroad] at @s if score @s BroadSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackBroad
+execute as @s[tag=BlueBroad] at @s if score @s BroadSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+
+execute as @s[tag=YellowBroad] at @s store result score @s BroadSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] BroadSpawned
+execute as @s[tag=YellowBroad] at @s if score @s BroadSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackBroad
+execute as @s[tag=YellowBroad] at @s if score @s BroadSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
+
 #All missiles
 tp @s ~ ~-300 ~
 kill @s

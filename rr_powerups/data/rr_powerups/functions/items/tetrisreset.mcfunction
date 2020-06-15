@@ -6,6 +6,7 @@ tag @s remove givenAllTipped
 
 tag @s remove givenDuplex
 tag @s remove givenBee
+tag @s remove givenBroad
 tag @s remove givenBull
 tag @s remove givenElytra
 tag @s remove givenHyper

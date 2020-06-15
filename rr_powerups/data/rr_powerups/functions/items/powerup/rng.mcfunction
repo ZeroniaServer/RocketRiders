@@ -7,6 +7,8 @@ execute if entity @s[tag=!givenFish] run summon area_effect_cloud 0 0 0 {Radius:
 execute if entity @s[tag=!givenTotem] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngTotem","rng2"]}
 execute if entity @s[tag=!givenTrident] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngTrident","rng2"]}
 execute if entity @s[tag=!givenBee] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngBeeShield","rng2"]}
+execute if entity @s[tag=!givenDuplex] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngDuplex","rng2"]}
+execute if entity @s[tag=!givenBroad] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngBroad","rng2"]}
 tag @e[tag=rng2,sort=random,limit=1] add rngSelected
 execute as @e[tag=rngSelected,tag=rngBull] as @e[scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/givebull
 execute as @e[tag=rngSelected,tag=rngBull] as @e[scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/givebull
@@ -26,6 +28,10 @@ execute as @e[tag=rngSelected,tag=rngTrident] as @e[scores={capturePoint=1}] as 
 execute as @e[tag=rngSelected,tag=rngTrident] as @e[scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/givetrident
 execute as @e[tag=rngSelected,tag=rngBeeShield] as @e[scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/givebeeshield
 execute as @e[tag=rngSelected,tag=rngBeeShield] as @e[scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/givebeeshield
+execute as @e[tag=rngSelected,tag=rngDuplex] as @e[scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/giveduplex
+execute as @e[tag=rngSelected,tag=rngDuplex] as @e[scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/giveduplex
+execute as @e[tag=rngSelected,tag=rngBroad] as @e[scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/givebroad
+execute as @e[tag=rngSelected,tag=rngBroad] as @e[scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/givebroad
 
 #item announcements
 execute as @e[tag=rngSelected,tag=rngBull] as @e[scores={capturePoint=1}] run tellraw @a[team=!Lobby] [{"text":"Blue received: ","color":"aqua","bold":"true"},{"text":"[Superheavy] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Bullet","color":"blue","italic":"true"}]
@@ -46,3 +52,7 @@ execute as @e[tag=rngSelected,tag=rngTrident] as @e[scores={capturePoint=1}] run
 execute as @e[tag=rngSelected,tag=rngTrident] as @e[scores={capturePoint=2}] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"Trident","color":"dark_purple","bold":"true","italic":"true"}]
 execute as @e[tag=rngSelected,tag=rngBeeShield] as @e[scores={capturePoint=1}] run tellraw @a[team=!Lobby] [{"text":"Blue received: ","color":"aqua","bold":"true"},{"text":"[Utility] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Bee Shield","color":"blue","italic":"true"}]
 execute as @e[tag=rngSelected,tag=rngBeeShield] as @e[scores={capturePoint=2}] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"[Utility] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Bee Shield","color":"gold","italic":"true"}]
+execute as @e[tag=rngSelected,tag=rngDuplex] as @e[scores={capturePoint=1}] run tellraw @a[team=!Lobby] [{"text":"Blue received: ","color":"aqua","bold":"true"},{"text":"[Breacher] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Duplex","color":"blue","italic":"true"}]
+execute as @e[tag=rngSelected,tag=rngDuplex] as @e[scores={capturePoint=2}] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"[Breacher] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Duplex","color":"gold","italic":"true"}]
+execute as @e[tag=rngSelected,tag=rngBroad] as @e[scores={capturePoint=1}] run tellraw @a[team=!Lobby] [{"text":"Blue received: ","color":"aqua","bold":"true"},{"text":"[Bomber] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Broadsword","color":"blue","italic":"true"}]
+execute as @e[tag=rngSelected,tag=rngBroad] as @e[scores={capturePoint=2}] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"[Bomber] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Broadsword","color":"gold","italic":"true"}]

@@ -30,7 +30,7 @@ execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless 
 execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] if entity @s[predicate=custom:is_sneaking,scores={dx=..-11,dz=..-11},y_rotation=292.5..107.5] run scoreboard players set @s notBackwards 0
 
 ##fail condition
-execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] if score @s notBackwards matches 10.. run tag @s add FailedMoon
+execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] if score @s notBackwards matches 5.. run tag @s add FailedMoon
 #if player sprints, they're not walking backwards
 execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] if entity @s[predicate=custom:is_sprinting] run tag @s add FailedMoon
 scoreboard players reset @a[tag=FailedMoon] notBackwards

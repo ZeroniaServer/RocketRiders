@@ -1,11 +1,9 @@
 #game customizer compatibility
 tag @s[tag=!rngAux] add givenAux
 tag @s[tag=!rngWar] add givenWar
-tag @s[tag=!rngHeavy] add givenAllHeavy
 
 tag @s[tag=!rngHur] add givenHur
 tag @s[tag=!rngThun] add givenBolt
-tag @s[tag=!rngLightning] add givenAllLightning
 
 tag @s[tag=!rngArrows] add givenArrows
 tag @s[tag=!rngFireball] add givenFireball

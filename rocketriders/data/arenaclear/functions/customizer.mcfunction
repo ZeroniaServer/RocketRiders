@@ -48,10 +48,10 @@ execute as @s[scores={TopCorner=2}] run scoreboard players set @s BottomDeco 0
 execute as @s[scores={TopCorner=2}] run fill -44 196 64 -43 196 92 minecraft:black_stained_glass
 execute as @s[scores={TopCorner=2}] run fill -45 185 92 -45 192 64 minecraft:white_stained_glass
 execute as @s[scores={TopCorner=2}] run fill -46 185 92 -46 189 64 minecraft:white_stained_glass
-execute as @s[scores={TopCorner=2}] run fill -47 185 92 -47 185 64 minecraft:white_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -47 185 92 -47 186 64 minecraft:white_stained_glass
 execute as @s[scores={TopCorner=2}] run fill -45 193 92 -45 193 64 minecraft:black_stained_glass
 execute as @s[scores={TopCorner=2}] run fill -46 190 92 -46 190 64 minecraft:black_stained_glass
-execute as @s[scores={TopCorner=2}] run fill -47 186 92 -47 186 64 minecraft:black_stained_glass
+execute as @s[scores={TopCorner=2}] run fill -47 187 92 -47 187 64 minecraft:black_stained_glass
 
 execute as @s[scores={TopCorner=0},tag=!settingsLocked] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopCorner 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 

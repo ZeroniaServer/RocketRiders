@@ -70,10 +70,11 @@ execute as @e[tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remov
 #Leave Pad
 execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=185,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
 execute as @a[tag=LeaveTeams,team=Yellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
+tp @a[tag=LeaveTeams,team=Yellow] -78 204 92 45 0
 execute as @a[tag=LeaveTeams,team=Blue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
+tp @a[tag=LeaveTeams,team=Blue] -78 204 64 135 0
 team join Lobby @a[tag=LeaveTeams]
 clear @a[tag=LeaveTeams]
-tp @a[tag=LeaveTeams] -43 211 78 0 90
 execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @a[tag=LeaveTeams] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 tag @a remove LeaveTeams

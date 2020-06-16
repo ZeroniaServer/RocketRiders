@@ -68,8 +68,10 @@ execute unless entity @s[tag=runnovarocket] if entity @e[type=firework_rocket] r
 execute unless entity @s[tag=runnovarocket] if entity @e[tag=BlueNova] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @e[tag=YellowNova] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @e[tag=novatracker] run tag @s add runnovarocket
-execute unless entity @s[tag=runnovarocket] if entity @e[tag=BlueNovaAttach] run tag @s add runnovarocket
-execute unless entity @s[tag=runnovarocket] if entity @e[tag=YellowNovaAttach] run tag @s add runnovarocket
+execute unless entity @s[tag=runnovarocket] if entity @a[tag=BlueNovaAttach] run tag @s add runnovarocket
+execute unless entity @s[tag=runnovarocket] if entity @a[tag=YellowNovaAttach] run tag @s add runnovarocket
+execute unless entity @s[tag=runnovarocket] if entity @a[tag=BlueNovaNear] run tag @s add runnovarocket
+execute unless entity @s[tag=runnovarocket] if entity @a[tag=YellowNovaNear] run tag @s add runnovarocket
 execute if entity @s[tag=runnovarocket] run function everytick:novarocket
 tag @s[tag=runnovarocket] remove runnovarocket
 

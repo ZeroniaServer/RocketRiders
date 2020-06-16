@@ -19,6 +19,8 @@ scoreboard players add @a[team=Blue,tag=portalKill] respawn 1
 scoreboard players add @a[team=Yellow,tag=portalKill] respawn 1
 tag @a[team=Blue,tag=portalKill] remove SummonPlat
 tag @a[team=Yellow,tag=portalKill] remove SummonPlat
+tag @a[team=Blue,tag=portalKill] remove YellowNovaNear
+tag @a[team=Yellow,tag=portalKill] remove BlueNovaNear
 #no fall damage
 scoreboard players set @a[team=Blue,tag=portalKill] voidNoFallCount 0
 scoreboard players set @a[team=Yellow,tag=portalKill] voidNoFallCount 0

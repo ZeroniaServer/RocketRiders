@@ -19,6 +19,7 @@ execute if entity @s[tag=Sonar] as @e[type=fireball] run data merge entity @s {G
 execute if entity @s[tag=Sonar] as @e[type=dragon_fireball] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[type=potion] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[type=tnt] run data merge entity @s {Glowing:1b}
+execute if entity @s[tag=Sonar] as @e[type=tnt_minecart] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[type=item] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[tag=VortexItemBlue] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[tag=VortexItemYellow] run data merge entity @s {Glowing:1b}

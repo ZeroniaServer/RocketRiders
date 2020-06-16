@@ -19,8 +19,9 @@ execute as @s[scores={SDtime=1}] at @s run effect clear @a resistance
 execute as @s[scores={SDtime=1}] at @s run effect give @a blindness 1 100 true
 execute as @s[scores={SDtime=4}] at @s run effect clear @a blindness
 execute as @s[scores={SDtime=1}] at @s run tag @s remove GameEnd
-execute as @s[scores={SDtime=1}] run gamemode survival @a[team=Blue]
-execute as @s[scores={SDtime=1}] run gamemode survival @a[team=Yellow]
+execute as @s[scores={SDtime=1}] run function achievements:scoresreset
+execute as @s[scores={SDtime=2}] run gamemode survival @a[team=Blue]
+execute as @s[scores={SDtime=2}] run gamemode survival @a[team=Yellow]
 execute as @s[scores={SDtime=10}] as @a[team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door player @s ~ ~ ~ 100 1.3
 execute as @s[scores={SDtime=1}] run tag @s add GameStarted
 execute as @s[scores={SDtime=1}] run worldborder warning distance 1000000

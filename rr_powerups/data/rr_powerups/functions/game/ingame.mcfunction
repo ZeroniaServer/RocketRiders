@@ -26,7 +26,7 @@ execute if entity @e[scores={capturePoint=0,captureBlue=0,captureYellow=0}] run 
 # execute as @e[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=2}] as @e[type=player,team=Yellow,tag=onCapturePoint] run tp @s 12 64 66 -180 0
 execute as @s[scores={PowerupDisplay=..0}] run tag @a add DelayActionbar
 execute as @s[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
-scoreboard players set @s[scores={PowerupDisplay=..0}] PowerupDisplay 30
+scoreboard players set @s[scores={PowerupDisplay=..0}] PowerupDisplay 20
 
 #tracking for lockdown achievement
 execute as @e[tag=captureMiddle,scores={capturePoint=1,bCapturedTime=..1200}] run scoreboard players add @s bCapturedTime 1

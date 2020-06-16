@@ -115,28 +115,28 @@ execute as @a[tag=BackHyper] run clear @s turtle_spawn_egg
 scoreboard players set @a[tag=BackHyper] HasHyper 0
 scoreboard players remove @a[tag=BackHyper] HyperSpawned 1
 tag @a[tag=BackHyper] remove fullHotbar
-execute as @a[tag=BackHyper] run function rr_powerups:items/powerup/givehyper
+execute as @a[tag=BackHyper] run function items:missile/special/givehyper
 
 #Bullet
 execute as @a[tag=BackBullet] run clear @s skeleton_horse_spawn_egg
 scoreboard players set @a[tag=BackBullet] HasBullet 0
 scoreboard players remove @a[tag=BackBullet] BulletSpawned 1
 tag @a[tag=BackBullet] remove fullHotbar
-execute as @a[tag=BackBullet] run function rr_powerups:items/powerup/givebull
+execute as @a[tag=BackBullet] run function items:missile/special/givebull
 
 #Duplex
 execute as @a[tag=BackDuplex] run clear @s parrot_spawn_egg
 scoreboard players set @a[tag=BackDuplex] HasDuplex 0
 scoreboard players remove @a[tag=BackDuplex] DuplexSpawned 1
 tag @a[tag=BackDuplex] remove fullHotbar
-execute as @a[tag=BackDuplex] run function rr_powerups:items/powerup/giveduplex
+execute as @a[tag=BackDuplex] run function items:missile/special/giveduplex
 
 #Broadsword
 execute as @a[tag=BackBroad] run clear @s magma_cube_spawn_egg
 scoreboard players set @a[tag=BackBroad] HasBroad 0
 scoreboard players remove @a[tag=BackBroad] BroadSpawned 1
 tag @a[tag=BackBroad] remove fullHotbar
-execute as @a[tag=BackBroad] run function rr_powerups:items/powerup/givebroad
+execute as @a[tag=BackBroad] run function items:missile/special/givebroad
 
 #Tag removal & unable message
 execute unless entity @s[tag=customPrevention] as @a[tag=MissiMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals.","color":"red"}]

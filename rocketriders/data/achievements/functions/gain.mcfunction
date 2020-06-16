@@ -21,6 +21,7 @@ function achievements:gravitationalshootout
 function achievements:veteran
 function achievements:useful
 function achievements:moonwalker
+function achievements:sabotage
 
 #necessary for death check
 scoreboard players add @a PlayerDeaths 0

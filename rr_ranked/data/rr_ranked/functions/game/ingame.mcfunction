@@ -26,6 +26,9 @@ tag @e[tag=PlacerClear] add Cleared
 scoreboard players add Blue: RoundsWon 0
 scoreboard players add Yellow: RoundsWon 0
 
+team join Blue Blue:
+team join Yellow Yellow:
+
 ##forfeit
 #initial condition
 execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. if entity @a[team=Yellow] unless entity @a[team=Blue] run tag @s add TimeOut

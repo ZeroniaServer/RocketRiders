@@ -22,3 +22,5 @@ execute if block 12 203 78 minecraft:lectern{Page:17} run function lobby:missile
 execute if block 12 203 78 minecraft:lectern{Page:18} run function lobby:missiledisplay/missile/jbuster
 execute if block 12 203 78 minecraft:lectern{Page:19} run function lobby:missiledisplay/missile/hypersonic
 execute if block 12 203 78 minecraft:lectern{Page:20} run function lobby:missiledisplay/missile/bullet
+execute if block 12 203 78 minecraft:lectern{Page:21} run function lobby:missiledisplay/missile/duplex
+execute if block 12 203 78 minecraft:lectern{Page:22} run function lobby:missiledisplay/missile/broadsword

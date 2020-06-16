@@ -13,7 +13,7 @@ execute store result score @s RNGscore run scoreboard players get @e[tag=RandomS
 execute as @e[tag=RandomSplash,scores={RNGscore=0..1}] run title @a subtitle ["",{"text":"GL HF!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=2}] run title @a subtitle ["",{"text":"SpaceX, but sideways!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=3}] run title @a subtitle ["",{"text":"command block fish piston","color":"green"}]
-execute as @e[tag=RandomSplash,scores={RNGscore=4}] run title @a subtitle ["",{"text":"4 years of ","color":"green"},{"text":"non-stop","strikethrough":true,"color":"green"},{"text":" development!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=4}] run title @a subtitle ["",{"text":"3 years of ","color":"green"},{"text":"non-stop","strikethrough":true,"color":"green"},{"text":" development!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=5}] run title @a subtitle ["",{"text":"Removed ","color":"green"},{"text":"test","obfuscated":true,"color":"red"},{"text":" from the cancelyellow function.","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=6}] run title @a subtitle ["",{"text":"Let the war begin...","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=7}] run title @a subtitle ["",{"text":"bruh moment","color":"green"}]

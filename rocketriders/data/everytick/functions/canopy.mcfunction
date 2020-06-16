@@ -1,3 +1,7 @@
+#Canopy forgets you if you die
+execute as @a[team=Yellow,scores={respawn=1..}] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL
+execute as @a[team=Blue,scores={respawn=1..}] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL
+
 #Canopy quick deploy when near the base of it's own team color
 execute as @e[tag=BluePlatform,scores={PlatTime=..57}] at @s if predicate custom:canopy_nearblue run scoreboard players add @s PlatTime 3
 execute as @e[tag=YellowPlatform,scores={PlatTime=..57}] at @s if predicate custom:canopy_nearyellow run scoreboard players add @s PlatTime 3
@@ -88,7 +92,7 @@ execute as @e[type=ender_pearl] store result score @s pearlOwnerUUIDL run data g
 #effect give @a[scores={ThrowPlat=1..}] resistance 1 100 true
 
 #yellow canopy
-execute as @a[team=Yellow,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1] add YellowPlat
+execute as @a[team=Yellow,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,tag=!BluePlat,tag=!YellowPlat] add YellowPlat
 execute as @e[tag=YellowPlat] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=YellowPlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=YellowPlat] at @s run scoreboard players add @s testplat 1
@@ -123,7 +127,7 @@ scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerU
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUIDM
 
 #blue canopy
-execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1] add BluePlat
+execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,tag=!BluePlat,tag=!YellowPlat] add BluePlat
 execute as @e[tag=BluePlat] at @s run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=BluePlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=BluePlat] at @s run scoreboard players add @s testplat2 1

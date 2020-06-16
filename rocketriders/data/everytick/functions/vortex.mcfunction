@@ -1,6 +1,6 @@
 #VortexTag
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1] add YellowVortex
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1] add BlueVortex
+execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,tag=!YellowVortex,tag=!BlueVortex] add YellowVortex
+execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,tag=!YellowVortex,tag=!BlueVortex] add BlueVortex
 scoreboard players reset @a ThrowVortex
 
 #Vortex
@@ -61,7 +61,7 @@ execute as @e[tag=VortexItemBlue] at @s unless entity @e[tag=VortexBlue,distance
 #Feathered vortex (lmao)
 execute unless entity @s[tag=featheredOff] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
 execute as @e[tag=SummonFeathered] at @s run playsound entity.chicken.hurt player @a ~ ~ ~ 2 0
-execute as @e[tag=SummonFeathered] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {CustomName:"{\"text\":\"a Chicken Vortex\"}",Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:"5afc469d-e748-4932-b5db-6fc9e013f608",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE2YjhlOTgzODljNTQxYmIzNjQ1Mzg1MGJjYmQxZjdiYzVhNTdkYTYyZGNjNTA1MDYwNDA5NzM3ZWM1YjcyYSJ9fX0="}]}}}}]}
+execute as @e[tag=SummonFeathered] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {CustomName:"{\"text\":\"a Chicken Vortex\"}",Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
 execute as @e[tag=SummonFeathered] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexFeathered"],Duration:2000000000}
 execute as @e[tag=SummonFeathered] at @s run tp @s ~ ~-250 ~
 kill @e[tag=SummonFeathered]

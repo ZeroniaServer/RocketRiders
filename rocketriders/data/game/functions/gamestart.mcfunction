@@ -15,14 +15,10 @@ execute as @s[scores={endtimer=1..}] run bossbar set rr:startgame name ["",{"tex
 execute as @s[tag=!EditedSettings] run bossbar set rr:startgame value 30
 execute as @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a
 
-#Prevent remnants of ranked mode
-tag @s[tag=!GameStarted] remove CriteriaTrue
-
 #Joinpad Blue
 execute as @e[tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=bluejoinpad,tag=CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
-execute as @s[scores={largerTeam=-1..0}] as @e[tag=bluejoinpad] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
-execute as @e[tag=bluejoinpad,tag=CancelJoin] at @a run tag @a remove JoinBlue
+execute as @s[scores={largerTeam=-1..0}] as @e[tag=bluejoinpad,tag=!CancelJoin] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
 team join Blue @a[tag=JoinBlue]
 clear @a[tag=JoinBlue]
 execute as @s[tag=!GameStarted] run tp @a[tag=JoinBlue] -95 202 60 0 0
@@ -48,8 +44,7 @@ execute as @e[tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lobby] remove 
 #Joinpad Yellow
 execute as @e[tag=yellowjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=yellowjoinpad,tag=CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
-execute as @s[scores={largerTeam=0..1}] as @e[tag=yellowjoinpad] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
-execute as @e[tag=yellowjoinpad,tag=CancelJoin] run tag @a remove JoinYellow
+execute as @s[scores={largerTeam=0..1}] as @e[tag=yellowjoinpad,tag=!CancelJoin] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
 team join Yellow @a[tag=JoinYellow]
 clear @a[tag=JoinYellow]
 execute as @s[tag=!GameStarted] run tp @a[tag=JoinYellow] -95 202 96 180 0

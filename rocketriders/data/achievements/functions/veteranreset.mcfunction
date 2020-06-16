@@ -1,6 +1,7 @@
 tag @s remove AuxSpawned
 tag @s remove AntsSpawned
 tag @s remove BladeSpawned
+tag @s remove BroadSpawned
 tag @s remove BulletSpawned
 tag @s remove CataSpawned
 tag @s remove CitaSpawned

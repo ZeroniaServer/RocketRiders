@@ -3,6 +3,13 @@ scoreboard objectives setdisplay sidebar RoundsWon
 #leave midgame
 function game:leavemidgame
 
+#tracking players and locking joinpads
+tag @a[team=Blue] add InRanked
+tag @a[team=Yellow] add InRanked
+
+function game:cancelyellow
+function game:cancelblue
+
 #Item RNG and spawnpoints
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom

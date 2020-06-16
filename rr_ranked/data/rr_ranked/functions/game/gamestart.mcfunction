@@ -9,12 +9,9 @@ function game:saberyellow
 tag @a remove JoinBlue
 tag @a remove JoinYellow
 
-#Start Game
-tag @a[team=Blue] add InRanked
-tag @a[team=Yellow] add InRanked
-
-execute as @a[team=Blue] run function rr_ranked:forfeit/calculate
-execute as @a[team=Yellow] run function rr_ranked:forfeit/calculate
+#Forfeit calculate
+execute as @s[scores={count=600}] as @a[team=Blue] run function rr_ranked:forfeit/calculate
+execute as @s[scores={count=600}] as @a[team=Yellow] run function rr_ranked:forfeit/calculate
 
 #Bossbar
 tag @s[scores={count=1..}] add bossbarOverride

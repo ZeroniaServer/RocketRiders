@@ -10,6 +10,7 @@ execute if entity @s[tag=GameEnd] run function rr_ranked:game/gameend
 function everytick:saberfix
 function everytick:no_drop
 function everytick:team_balance
+tag @s[tag=!GameStarted] remove CriteriaTrue
 
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_ranked:arenaclear/baseplacement
@@ -21,8 +22,8 @@ tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced
 #lock joinpads
 execute as @s[tag=EditedSettings] if entity @a[team=Blue] run function game:cancelblue
 execute as @s[tag=EditedSettings] if entity @a[team=Yellow] run function game:cancelyellow
-execute as @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:uncancelblue
-execute as @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:uncancelyellow
+execute as @s[tag=EditedSettings,tag=!GameStarted] unless entity @a[team=Blue] run function game:uncancelblue
+execute as @s[tag=EditedSettings,tag=!GameStarted] unless entity @a[team=Yellow] run function game:uncancelyellow
 execute as @s[tag=EditedSettings] unless entity @a[team=Blue] unless entity @a[team=Yellow] run tag @s remove Countdown
 
 #fake game end
@@ -36,4 +37,4 @@ scoreboard players reset @a[tag=!InRanked] ForfeitWin
 scoreboard players reset @a[tag=!InRanked] ForfeitLoss
 tag @s[scores={ForfeitTimeout=1200..}] remove TimeOut
 scoreboard players reset @s[scores={ForfeitTimeout=1200..}] ForfeitTimeout
-execute if entity @s[tag=GameStarted] as @a[team=!Blue,team=!Yellow,tag=InRanked] run function rr_ranked:forfeit/giveloss
+execute if entity @s[tag=!GameStarted] as @a[team=!Blue,team=!Yellow,tag=InRanked] run function rr_ranked:forfeit/giveloss

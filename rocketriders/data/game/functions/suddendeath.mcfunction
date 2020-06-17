@@ -1,6 +1,8 @@
 execute as @s[scores={SDtime=1}] as @a run stopsound @s master minecraft:ui.toast.challenge_complete
 execute as @s[scores={SDtime=1}] as @a run stopsound @s master minecraft:entity.wither.spawn
 
+execute as @s[scores={SDtime=1..15}] run tag @a remove Winner
+execute as @s[scores={SDtime=1..15}] run tag @a remove Loser
 execute as @s[scores={SDtime=1..15}] run kill @e[type=tnt]
 execute as @s[scores={SDtime=1..15}] run kill @e[type=tnt_minecart]
 execute as @s[scores={SDtime=1..15}] run kill @e[type=creeper]

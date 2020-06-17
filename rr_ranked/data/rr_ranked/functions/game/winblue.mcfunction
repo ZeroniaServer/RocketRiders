@@ -1,4 +1,6 @@
 #Blue: team round wins
+tag @a[team=Blue] add Winner
+tag @a[team=Yellow] add Loser
 tag @s add BlueWon
 tag @s add CriteriaTrue
 scoreboard players add Blue: RoundsWon 1

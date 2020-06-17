@@ -8,6 +8,7 @@ scoreboard players set @e[tag=captureMiddle] captureBlue 0
 scoreboard players set @e[tag=captureMiddle] captureYellow 0
 scoreboard players set @e[tag=captureMiddle] capturePoint 0
 tag @a remove Infinity
+tag @a remove HoldingSlapFish
 execute as @s[scores={endtimer=1..}] run bossbar set rr_powerups:capture_progress players none
 execute as @s[scores={endtimer=1..}] run scoreboard players set @e[tag=captureMiddle] capturePoint 0
 tag @s add powerupsLast

@@ -24,5 +24,3 @@ execute as @e[tag=RandomWinSplash,scores={RNGscore=15}] run title @a[tag=Winner]
 execute as @e[tag=RandomWinSplash,scores={RNGscore=16}] run title @a[tag=Winner] subtitle ["",{"text":"Victory Royale!","color":"green"}]
 execute as @e[tag=RandomWinSplash,scores={RNGscore=17}] run title @a[tag=Winner] subtitle ["",{"text":"We got them good!","color":"green"}]
 kill @e[tag=RandomWinSplash]
-
-tag @a remove Winner

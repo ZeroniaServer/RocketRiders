@@ -14,6 +14,7 @@ tag @s[tag=!GameStarted] remove CriteriaTrue
 
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_ranked:arenaclear/baseplacement
+execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a at @s run function arenaclear:notifystart
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Ranked 1v1 ","color":"red"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"Ranked 1v1 Mode is a mode where players play for rank points. This mode uses its own ruleset. You play 1v1 matches for three rounds, and the player who wins two rounds wins the whole game, along with some rank points (the loser may take a hit, however). Ascend the ranks and make your way to the top! All settings are overridden in this gamemode, and a set of items is chosen automatically each round.","color":"white"}]}}]
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run function arenaclear:notifymodifiers

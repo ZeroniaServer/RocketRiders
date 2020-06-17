@@ -92,6 +92,7 @@ scoreboard players add @a AuxSpawned 0
 scoreboard players add @a AntsSpawned 0
 scoreboard players add @a BladeSpawned 0
 scoreboard players add @a BroadSpawned 0
+scoreboard players add @a BSurpriseSpawned 0
 scoreboard players add @a BulletSpawned 0
 scoreboard players add @a CataSpawned 0
 scoreboard players add @a CitaSpawned 0
@@ -108,3 +109,4 @@ scoreboard players add @a SlashSpawned 0
 scoreboard players add @a ThunSpawned 0
 scoreboard players add @a TomaSpawned 0
 scoreboard players add @a WarSpawned 0
+scoreboard players add @a YSurpriseSpawned 0

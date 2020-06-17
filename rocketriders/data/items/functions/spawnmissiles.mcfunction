@@ -1,3 +1,14 @@
+#Surprise Egg
+execute as @e[tag=BlueSurprise] at @s run function items:surprise_blue/rng
+execute as @e[tag=BlueSurpriseNormal] at @s run function items:surprise_blue/rngnormal
+execute as @e[tag=BlueSurpriseHeavy] at @s run function items:surprise_blue/rngheavy
+execute as @e[tag=BlueSurpriseLightning] at @s run function items:surprise_blue/rnglightning
+
+execute as @e[tag=YellowSurprise] at @s run function items:surprise_yellow/rng
+execute as @e[tag=YellowSurpriseNormal] at @s run function items:surprise_yellow/rngnormal
+execute as @e[tag=YellowSurpriseHeavy] at @s run function items:surprise_yellow/rngheavy
+execute as @e[tag=YellowSurpriseLightning] at @s run function items:surprise_yellow/rnglightning
+
 #Prevention
 execute if entity @s[tag=doPrevention] run function items:prevention/preventmissiles
 
@@ -13,17 +24,6 @@ execute as @e[tag=bluemissile,tag=!BlueCata] at @s run summon area_effect_cloud 
 execute as @e[tag=yellowmissile,tag=!YellowCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
 execute as @e[tag=BlueCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,SmartClearAECcata],Duration:2000000000}
 execute as @e[tag=YellowCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,SmartClearAECcata],Duration:2000000000}
-
-#Surprise Egg
-execute as @e[tag=BlueSurprise] at @s run function items:surprise_blue/rng
-execute as @e[tag=BlueSurpriseNormal] at @s run function items:surprise_blue/rngnormal
-execute as @e[tag=BlueSurpriseHeavy] at @s run function items:surprise_blue/rngheavy
-execute as @e[tag=BlueSurpriseLightning] at @s run function items:surprise_blue/rnglightning
-
-execute as @e[tag=YellowSurprise] at @s run function items:surprise_yellow/rng
-execute as @e[tag=YellowSurpriseNormal] at @s run function items:surprise_yellow/rngnormal
-execute as @e[tag=YellowSurpriseHeavy] at @s run function items:surprise_yellow/rngheavy
-execute as @e[tag=YellowSurpriseLightning] at @s run function items:surprise_yellow/rnglightning
 
 #Auxiliary
 execute as @e[tag=BlueAux] at @s run tp @s ~-1 ~-9 ~4

@@ -12,7 +12,7 @@ execute as @e[tag=RandomLossSplash,scores={RNGscore=0..3}] run title @a[tag=Lose
 execute as @e[tag=RandomLossSplash,scores={RNGscore=4}] run title @a[tag=Loser] subtitle ["",{"text":"At least we have a cool flag now?","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=5}] run title @a[tag=Loser] subtitle ["",{"text":"Exceeded missile deployment limit.","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=6}] run title @a[tag=Loser] subtitle ["",{"text":"Huh, I swear I saw portals there before.","color":"red"}]
-execute as @e[tag=RandomLossSplash,scores={RNGscore=7}] run title @a[tag=Loser] subtitle ["",{"text":"The enemy cheated, our defense was impregnable!","color":"red"}]
+execute as @e[tag=RandomLossSplash,scores={RNGscore=7}] run title @a[tag=Loser] subtitle ["",{"text":"I call hacks!","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=8}] run title @a[tag=Loser] subtitle ["",{"text":"At least you tried...","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=9}] run title @a[tag=Loser] subtitle ["",{"text":"So close...","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=10}] run title @a[tag=Loser] subtitle ["",{"text":"Your enemy was just having a really good day.","color":"red"}]

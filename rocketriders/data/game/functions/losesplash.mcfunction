@@ -25,5 +25,6 @@ execute as @e[tag=RandomLossSplash,scores={RNGscore=16}] run title @a[tag=Loser]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=17}] run title @a[tag=Loser] subtitle ["",{"text":"That Bullet punched straight through our wall!","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=18}] run title @a[tag=Loser] subtitle ["",{"text":"Splashes weren't useful...","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=19}] run title @a[tag=Loser] subtitle ["",{"text":"oops","color":"red"}]
+execute as @e[tag=RandomLossSplash,scores={RNGscore=20}] run title @a[tag=Loser] subtitle ["",{"text":"Dreams were crushed.","color":"red"}]
 
 kill @e[tag=RandomLossSplash]

@@ -8,5 +8,6 @@ execute if entity @e[tag=Selection,scores={modifierID=6}] run tellraw @s [{"text
 execute if entity @e[tag=Selection,scores={modifierID=7}] run tellraw @s [{"text":"Surprise Eggs:","color":"aqua","bold":"true"},{"text":" Players have a chance to receive a special spawn egg that can spawn a random missile.","color":"white","bold":"false","italic":"true"}]
 execute if entity @e[tag=Selection,scores={modifierID=8}] run tellraw @s [{"text":"Wind Down:","color":"aqua","bold":"true"},{"text":" After every item given, the time between receiving items decreases, intensifying the game as it continues.","color":"white","bold":"false","italic":"true"}]
 execute if entity @e[tag=Selection,scores={modifierID=9}] run tellraw @s [{"text":"Splash Streams:","color":"aqua","bold":"true"},{"text":" Liquids placed by Splash bottles are permanent.","color":"white","bold":"false","italic":"true"}]
-
+tellraw @s [{"text":""}]
+tellraw @s [{"text":""}]
 tag @s remove modifierInfo

@@ -2,7 +2,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[tag=RandomSplash] RNGmax 49
+scoreboard players set @e[tag=RandomSplash] RNGmax 55
 
 execute as @e[tag=RandomSplash] store result score @s RNGscore run data get entity @s UUIDMost 0.00000000023283064365386962890625
 execute as @e[tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -58,6 +58,12 @@ execute as @e[tag=RandomSplash,scores={RNGscore=45}] run title @a subtitle ["",{
 execute as @e[tag=RandomSplash,scores={RNGscore=46}] run title @a subtitle ["",{"text":"Shield stackers beware!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=47}] run title @a subtitle ["",{"text":"Splash messages are useful!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=48}] run title @a subtitle ["",{"text":"Loot boxes disabled.","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=49}] run title @a subtitle ["",{"text":"RIP utility only.","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=50}] run title @a subtitle ["",{"text":"Lobby breach is not supported.","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=51}] run title @a subtitle ["",{"text":"Another splash because we ran out of ideas.","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=52}] run title @a subtitle ["",{"text":"spicy.","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=53}] run title @a subtitle ["",{"text":"LEEEEEEEEEERRROOOOY JJJEEEEENNNNKKIINNNSSSS!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=54}] run title @a subtitle ["",{"text":"The ","color":"green"},{"text":"Hypersonic ","bold":true,"color":"dark_purple"},{"text":"is too fast for your nonsense.","color":"green"}]
 
 
 kill @e[tag=RandomSplash]

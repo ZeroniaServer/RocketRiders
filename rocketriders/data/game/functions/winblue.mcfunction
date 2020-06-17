@@ -29,6 +29,10 @@ execute as @a[team=Blue] at @s run stopsound @s
 execute as @a[team=Yellow] at @s run stopsound @s
 execute as @a[team=Blue] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
 execute as @a[team=Yellow] at @s run playsound minecraft:entity.wither.spawn master @a[team=Yellow] ~ ~ ~ 100 2
-title @a title ["",{"text":"Team Blue Won!","color":"blue","bold":true}]
-title @a[team=Yellow] subtitle ["",{"text":"Better luck next time!","color":"red","bold":true}]
-title @a[team=Blue] subtitle ["",{"text":"Take some time to celebrate!","color":"green","bold":true}]
+title @a title ["",{"text":"Team Blue Won!","color":"blue","bold":false}]
+
+#Splashes
+tag @a[team=Blue] add Winner
+tag @a[team=Yellow] add Loser
+execute as @a[tag=Winner,limit=1,sort=random] run function game:winsplash
+execute as @a[tag=Loser,limit=1,sort=random] run function game:losesplash

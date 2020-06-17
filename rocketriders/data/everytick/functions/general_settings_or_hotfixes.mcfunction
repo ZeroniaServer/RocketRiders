@@ -14,6 +14,10 @@ execute as @a[team=Yellow,gamemode=!spectator] at @s run particle minecraft:dust
 execute as @e[team=BlueBot] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
 execute as @e[team=YellowBot] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
 
+#Remove splash tags for lobby players. Just a failsave.
+tag @a[team=!Blue,team=!Yellow] remove Winner
+tag @a[team=!Blue,team=!Yellow] remove Loser
+
 #full hotbar check
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
 tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar

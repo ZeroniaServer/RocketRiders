@@ -33,9 +33,6 @@ tag @e[tag=PlacerClear] add Cleared
 scoreboard players add Blue: RoundsWon 0
 scoreboard players add Yellow: RoundsWon 0
 
-team join Blue Blue:
-team join Yellow Yellow:
-
 ##forfeit
 #initial condition
 execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. if entity @a[team=Yellow] unless entity @a[team=Blue] run tag @s add TimeOut
@@ -52,11 +49,13 @@ execute as @s[tag=TimeOut] run clear @a[team=Yellow] #custom:clear
 execute as @s[tag=TimeOut] run clear @a[team=Blue] #custom:clear
 execute as @s[tag=TimeOut] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[tag=TimeOut] run tp @a[team=Yellow] 12 64 66 180 0
+tag @s[tag=TimeOut] add noAchievements
 scoreboard players set @s[tag=TimeOut] RandomItem -3
 execute as @s[scores={ForfeitTimeout=1}] run tellraw @a ["",{"text":"[TIMEOUT] ","bold":true,"color":"dark_red"},{"text":"Someone left the ranked match! They have 1 minute to rejoin.","color":"red"}]
 execute as @s[tag=TimeOut] if entity @a[team=Blue] if entity @a[team=Yellow] run scoreboard players operation @s RandomItem += @s MaxItemTime
 execute as @s[tag=TimeOut] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s remove TimeOut
 scoreboard players reset @s[tag=!TimeOut] ForfeitTimeout
+tag @s[tag=!TimeOut] remove noAchievements
 
 #force win
 execute as @s[scores={ForfeitTimeout=1200..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run scoreboard players set Blue: RoundsWon 2

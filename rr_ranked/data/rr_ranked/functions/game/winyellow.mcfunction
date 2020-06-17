@@ -17,6 +17,5 @@ execute unless score Yellow: RoundsWon matches 2.. run title @a title [{"text":"
 execute unless score Yellow: RoundsWon matches 2.. run title @a subtitle [{"score":{"name":"Yellow:","objective":"RoundsWon"},"bold":true,"color":"gold"},{"text":" - ","bold":true,"color":"green"},{"score":{"name":"Blue:","objective":"RoundsWon"},"bold":true,"color":"blue"}]
 execute unless score Yellow: RoundsWon matches 2.. run tag @s add FakeGameEnd
 
-execute if score Yellow: RoundsWon matches 2.. run tag @s[scores={ForfeitTimeout=1200..}] add noAchievements
 execute if score Yellow: RoundsWon matches 2.. run function game:winyellow
 execute if score Yellow: RoundsWon matches 2.. run function rr_ranked:rankcalc/calcyellow

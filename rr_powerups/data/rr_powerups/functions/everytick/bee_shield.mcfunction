@@ -132,7 +132,9 @@ execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run kill @s
 
 #bees teams
 team join Blue @e[type=bee,tag=BlueBee]
+tag @e[type=bee,tag=BlueBee] remove BlueBee
 team join Yellow @e[type=bee,tag=YellowBee]
+tag @e[type=bee,tag=YellowBee] remove YellowBee
 
 #glowing bees
 execute as @e[type=bee] run effect give @s glowing 1000000 255 true

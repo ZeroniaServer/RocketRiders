@@ -25,10 +25,8 @@ execute as @s[scores={TopDeco=2}] run setblock 24 65 55 redstone_block
 execute as @s[scores={TopDeco=2}] run setblock -6 65 55 redstone_block
 
 #Spikes preset - Yellow
-execute as @s[scores={TopDeco=3}] run setblock -10 64 54 structure_block{mode:"LOAD",name:"yellow_spiketop_right"}
-execute as @s[scores={TopDeco=3}] run setblock 22 64 54 structure_block{mode:"LOAD",name:"yellow_spiketop_left"}
-execute as @s[scores={TopDeco=3}] run setblock -10 65 54 redstone_block
-execute as @s[scores={TopDeco=3}] run setblock 22 65 54 redstone_block
+execute as @s[scores={TopDeco=3}] run setblock -2 64 48 structure_block{mode:"LOAD",name:"yellow_spiketop"}
+execute as @s[scores={TopDeco=3}] run setblock -2 65 48 redstone_block
 execute as @s[scores={MiddleDeco=2}] run setblock -14 50 29 structure_block{mode:"LOAD",name:"yellow_spikemid_right"}
 execute as @s[scores={MiddleDeco=2}] run setblock 18 50 29 structure_block{mode:"LOAD",name:"yellow_spikemid_left"}
 execute as @s[scores={MiddleDeco=2}] run setblock -14 51 29 redstone_block

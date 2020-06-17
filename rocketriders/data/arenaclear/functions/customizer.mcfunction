@@ -23,9 +23,9 @@ execute as @s[scores={TopDeco=2}] run setblock -44 198 87 redstone_block
 execute as @s[scores={TopDeco=2}] run setblock -44 197 87 air
 
 execute as @s[scores={TopDeco=3},tag=!settingsLocked] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"Spikes\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
-execute as @s[scores={TopDeco=3}] run setblock -43 197 71 structure_block{mode:"LOAD",name:"minecraft:spike_top_preview",showboundingbox:0b}
-execute as @s[scores={TopDeco=3}] run setblock -43 198 71 redstone_block
-execute as @s[scores={TopDeco=3}] run setblock -43 197 71 air
+execute as @s[scores={TopDeco=3}] run setblock -45 197 71 structure_block{mode:"LOAD",name:"minecraft:spike_top_preview",showboundingbox:0b}
+execute as @s[scores={TopDeco=3}] run setblock -45 198 71 redstone_block
+execute as @s[scores={TopDeco=3}] run setblock -45 197 71 air
 
 execute as @s[scores={TopDeco=0},tag=!settingsLocked] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 

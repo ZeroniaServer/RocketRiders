@@ -62,8 +62,8 @@ execute as @e[tag=RandomSplash,scores={RNGscore=49}] run title @a subtitle ["",{
 execute as @e[tag=RandomSplash,scores={RNGscore=50}] run title @a subtitle ["",{"text":"Lobby breach is not supported.","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=51}] run title @a subtitle ["",{"text":"Another splash because we ran out of ideas.","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=52}] run title @a subtitle ["",{"text":"spicy.","color":"green"}]
-execute as @e[tag=RandomSplash,scores={RNGscore=53}] run title @a subtitle ["",{"text":"LEEEEEEEEEERRROOOOY JJJEEEEENNNNKKIINNNSSSS!","color":"green"}]
-execute as @e[tag=RandomSplash,scores={RNGscore=54}] run title @a subtitle ["",{"text":"The ","color":"green"},{"text":"Hypersonic ","bold":true,"color":"dark_purple"},{"text":"is too fast for your nonsense.","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=53}] run title @a subtitle ["",{"text":"LEEEEEERRROOOOY JJJEEEEENNNNKKIINNNSSSS!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=54}] run title @a subtitle ["",{"text":"The ","color":"green"},{"text":"Hypersonic ","color":"dark_purple"},{"text":"is too fast for your nonsense.","color":"green"}]
 
 
 kill @e[tag=RandomSplash]

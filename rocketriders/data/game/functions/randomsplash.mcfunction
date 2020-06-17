@@ -65,5 +65,7 @@ execute as @e[tag=RandomSplash,scores={RNGscore=52}] run title @a subtitle ["",{
 execute as @e[tag=RandomSplash,scores={RNGscore=53}] run title @a subtitle ["",{"text":"LEEEEEERRROOOOY JJJEEEEENNNNKKIINNNSSSS!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=54}] run title @a subtitle ["",{"text":"The ","color":"green"},{"text":"Hypersonic ","color":"dark_purple"},{"text":"is too fast for your nonsense.","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=55}] run title @a subtitle ["",{"text":"Ready for battle!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=56}] run title @a subtitle ["",{"text":"Penguins can fly!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=57}] run title @a subtitle ["",{"text":"//replace slime_block honey_block","color":"green"}]
 
 kill @e[tag=RandomSplash]

@@ -17,8 +17,8 @@ fill 30 64 -61 24 84 -54 air
 fill 0 64 -55 -7 84 -62 air
 fill -7 64 55 1 84 62 air
 fill 23 64 54 32 84 62 air
-fill -11 59 -74 35 36 -74 air
-fill -11 59 74 35 36 74 air
+fill -11 59 -73 35 36 -75 air
+fill -11 59 73 35 36 75 air
 
 #Molerat
 execute if entity @s[tag=!Molerat] run fill -12 36 -12 36 61 12 air

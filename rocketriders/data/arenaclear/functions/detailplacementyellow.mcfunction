@@ -48,5 +48,7 @@ execute as @s[scores={TopCorner=2}] run fill -14 57 51 38 57 51 minecraft:black_
 execute as @s[scores={TopCorner=2}] run fill 38 49 50 -14 49 50 minecraft:black_stained_glass
 execute as @s[scores={TopCorner=2}] run fill -14 41 49 38 41 49 minecraft:black_stained_glass
 
-#Portal glass pane rims - Yellow
+#Portal detail - Yellow
 execute as @s[scores={PortalDeco=1}] run fill -11 59 74 35 36 74 yellow_stained_glass_pane[east=true,west=true] replace air
+execute as @s[scores={PortalDeco=2}] run fill -11 59 73 35 36 75 yellow_stained_glass replace air
+execute as @s[scores={PortalDeco=3}] run fill -11 59 73 35 36 75 end_stone replace air

@@ -102,6 +102,8 @@ execute as @s[scores={TopCorner=2}] run data merge block -57 191 78 {Text1: "{\"
 execute as @s[tag=settingsLocked] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
 #PORTAL DECORATION
+execute as @s[scores={PortalDeco=3},tag=!settingsLocked] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"End Stone Cover\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
+execute as @s[scores={PortalDeco=2},tag=!settingsLocked] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"Glass Cover\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 execute as @s[scores={PortalDeco=1},tag=!settingsLocked] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"Glass Rim\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 execute as @s[scores={PortalDeco=0},tag=!settingsLocked] run data merge block -58 192 72 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\"}"}
 
@@ -112,7 +114,7 @@ scoreboard players set @s[scores={TopDeco=4..}] TopDeco 0
 scoreboard players set @s[scores={TopCorner=3..}] TopCorner 0
 scoreboard players set @s[scores={MiddleDeco=3..}] MiddleDeco 0
 scoreboard players set @s[scores={BottomDeco=3..}] BottomDeco 0
-scoreboard players set @s[scores={PortalDeco=2..}] PortalDeco 0
+scoreboard players set @s[scores={PortalDeco=4..}] PortalDeco 0
 
 ##RESTORE ALL DEFAULTS
 execute as @s[tag=!settingsLocked] run data merge block -57 193 78 {Text2:"{\"text\":\"Restore Default\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add RestoreDefault\"}}",Text3:"{\"text\":\"Details\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}

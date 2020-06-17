@@ -1,1 +1,0 @@
-function arenaclear:detailplacement

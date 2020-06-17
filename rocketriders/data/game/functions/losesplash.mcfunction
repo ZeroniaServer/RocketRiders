@@ -1,6 +1,6 @@
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomLossSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[tag=RandomLossSplash] RNGmax 20
+scoreboard players set @e[tag=RandomLossSplash] RNGmax 21
 
 execute as @e[tag=RandomLossSplash] store result score @s RNGscore run data get entity @s UUIDMost 0.00000000023283064365386962890625
 execute as @e[tag=RandomLossSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax

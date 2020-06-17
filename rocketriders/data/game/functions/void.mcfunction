@@ -2,9 +2,6 @@
 execute if entity @s[tag=!crosser] run tellraw @a ["",{"selector":"@s"},{"text":" fell out of the world"}]
 execute if entity @s[tag=crosser] run tellraw @a ["",{"selector":"@s"},{"text":" tried to leave their base"}]
 
-tag @s remove YellowNovaNear
-tag @s remove BlueNovaNear
-
 #non-spectators statistics
 scoreboard players add @s[team=!Spectator,tag=!crosser] FellVoid 1
 scoreboard players add @s[team=!Spectator] deaths 1

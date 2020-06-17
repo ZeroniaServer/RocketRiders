@@ -1,3 +1,9 @@
+#hotfix: remove nova tags for dead players
+tag @a[scores={respawn=1..}] remove YellowNovaNear
+tag @a[scores={respawn=1..}] remove YellowNovaAttach
+tag @a[scores={respawn=1..}] remove BlueNovaNear
+tag @a[scores={respawn=1..}] remove BlueNovaAttach
+
 execute as @a[team=Blue,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..4,limit=1,tag=!YellowNova,tag=!BlueNova] add BlueNova
 execute as @a[team=Yellow,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..4,limit=1,tag=!YellowNova,tag=!BlueNova] add YellowNova
 

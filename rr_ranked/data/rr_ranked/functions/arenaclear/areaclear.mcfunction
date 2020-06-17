@@ -9,14 +9,10 @@ execute as @e[tag=SmartClearAECyellow,tag=SmartClearAECcata] at @s run summon ar
 
 function items:tetrisreset
 
-fill 23 64 54 1 71 58 air
-fill 1 64 -54 23 71 -58 air
+fill -14 84 66 38 64 48 air
+fill -14 84 -66 38 64 -48 air
 fill 32 63 -51 -9 37 -45 air
 fill -9 63 51 33 38 46 air
-fill 30 64 -61 24 84 -54 air
-fill 0 64 -55 -7 84 -62 air
-fill -7 64 55 1 84 62 air
-fill 23 64 54 32 84 62 air
 fill -11 59 -73 35 36 -75 air
 fill -11 59 73 35 36 75 air
 

@@ -23,7 +23,7 @@ execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s slow
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s levitation
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s poison
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s blindness
-execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 13 100 true
+execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 20 100 true
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
 execute as @a[team=Blue] at @s run stopsound @s
 execute as @a[team=Yellow] at @s run stopsound @s

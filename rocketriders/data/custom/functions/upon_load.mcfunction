@@ -1,11 +1,2 @@
-scoreboard objectives remove pearlOwnerUUIDM
-scoreboard objectives remove pearlOwnerUUIDL
-scoreboard objectives remove playerUUIDL
-scoreboard objectives remove playerUUIDM
-scoreboard objectives remove splashOwnerUUIDM
-scoreboard objectives remove splashOwnerUUIDL
-
-scoreboard objectives add pearlOwnerUUID dummy
-scoreboard objectives add playerUUID dummy
-scoreboard objectives add splashOwnerUUID dummy
-scoreboard objectives add refreshsigns dummy
+scoreboard objectives add ShowTip dummy
+scoreboard objectives add GamesPlayed dummy

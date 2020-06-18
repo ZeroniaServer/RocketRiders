@@ -7,6 +7,9 @@ function lobby:missiledisplay/placedisp
 #kill dragon's breath
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 
+#Handy tips for newcomers.
+function everytick:tips/tip
+
 #full offhand check
 tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
 tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand

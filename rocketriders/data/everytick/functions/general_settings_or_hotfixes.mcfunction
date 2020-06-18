@@ -39,7 +39,7 @@ execute as @a unless score @s xp_bar = @s XP run function everytick:update_xp_ba
 
 #dummy vortex (lobby)
 execute as @e[tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
-execute as @e[tag=VortexDummy] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @e[tag=VortexDummy] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @e[tag=VortexItemDummy] at @s unless entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~15 ~
 execute as @e[tag=VortexItemDummy] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]
 

@@ -85,21 +85,13 @@ execute as @e[scores={PlatTime=58}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leav
 execute as @e[scores={PlatTime=58}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
 
 #uuid storage
-execute as @a store result score @s playerUUIDM run data get entity @s UUIDMost 0.00000000023283064365386962890625
-execute as @a store result score @s playerUUIDL run data get entity @s UUIDLeast 0.00000000023283064365386962890625
-execute as @e[type=ender_pearl] store result score @s pearlOwnerUUIDM run data get entity @s owner.M 0.00000000023283064365386962890625
-execute as @e[type=ender_pearl] store result score @s pearlOwnerUUIDL run data get entity @s owner.L 0.00000000023283064365386962890625
-#effect give @a[scores={ThrowPlat=1..}] resistance 1 100 true
+execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data get entity @s Owner[0]
 
 #yellow canopy
 execute as @a[team=Yellow,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,tag=!BluePlat,tag=!YellowPlat] add YellowPlat
 execute as @e[tag=YellowPlat] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=YellowPlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=YellowPlat] at @s run scoreboard players add @s testplat 1
-#next 3 commands account for obstructed canopies (DISABLED UNTIL FURTHER NOTICE)
-#execute as @e[scores={testplat=..9}] at @s unless block ^ ^ ^1 air run scoreboard players set @s testplat 10
-#execute as @e[scores={testplat=..9}] at @s unless block ^ ^1 ^1 air run scoreboard players set @s testplat 10
-#execute as @e[scores={testplat=..9}] at @s unless block ^ ^1 ^1 air run scoreboard players set @s testplat 10
 #next 4 commands disable yellow canopies inside of portals
 execute as @e[scores={testplat=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat 1
 execute as @e[scores={testplat=9..10}] at @s if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat 2
@@ -113,28 +105,22 @@ execute as @e[scores={testplat=10}] at @s run playsound block.wood.break player 
 execute as @e[scores={testplat=10}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["YellowPlatform"]}
 execute as @e[scores={testplat=10}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["Platform"]}
 scoreboard players add @e[tag=YellowPlatform] PlatTime 1
-execute as @e[scores={testplat=10}] at @s store result score @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDM run scoreboard players get @s pearlOwnerUUIDM
-execute as @e[scores={testplat=10}] at @s store result score @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players get @s pearlOwnerUUIDL
+execute as @e[scores={testplat=10}] at @s store result score @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat=10..}]
 #the teleport window for players on canopies is 2 seconds. this is to ensure that falling players arrive on the canopy safely and to reduce lag-induced oddities with canopies.
-execute as @a[team=Yellow] if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
-execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 1 100 true
-execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s jump_boost 2 128 true
-execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
+execute as @a[team=Yellow] if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUID at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
+execute as @a[team=Yellow] at @s if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s slow_falling 1 100 true
+execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s jump_boost 2 128 true
+execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s slowness 2 255 true
 #after 2 seconds the canopy gives up
-execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slow_falling
-scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUIDL
-scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUIDM
+execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUID run effect clear @s slow_falling
+scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUID
 
 #blue canopy
 execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,tag=!BluePlat,tag=!YellowPlat] add BluePlat
 execute as @e[tag=BluePlat] at @s run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=BluePlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=BluePlat] at @s run scoreboard players add @s testplat2 1
-#next 3 commands account for obstructed canopies (DISABLED UNTIL FURTHER NOTICE)
-#execute as @e[scores={testplat2=..9}] at @s unless block ^ ^ ^1 air run scoreboard players set @s testplat2 10
-#execute as @e[scores={testplat2=..9}] at @s unless block ^ ^1 ^1 air run scoreboard players set @s testplat2 10
-#execute as @e[scores={testplat2=..9}] at @s unless block ^ ^1 ^1 air run scoreboard players set @s testplat2 10
 #next 4 commands disable blue canopies inside of portals
 execute as @e[scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
 execute as @e[scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
@@ -150,18 +136,16 @@ execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run summon area_effect_c
 execute as @e[scores={testplat2=10}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["Platform"]}
 scoreboard players add @e[tag=BluePlatform] PlatTime 1
 
-execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDM run scoreboard players get @s pearlOwnerUUIDM
-execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players get @s pearlOwnerUUIDL
+execute as @e[scores={testplat2=10}] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat2=10..}]
 #the teleport window for players on canopies is 2 seconds. this is to ensure that falling players arrive on the canopy safely and to reduce lag-induced oddities with canopies.
-execute as @a[team=Blue] if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUIDL at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
-execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slow_falling 1 100 true
-execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s jump_boost 2 128 true
-execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUIDL run effect give @s slowness 2 255 true
+execute as @a[team=Blue] if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] pearlOwnerUUID at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
+execute as @a[team=Blue] at @s if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s slow_falling 1 100 true
+execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s jump_boost 2 128 true
+execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s slowness 2 255 true
 #after 2 seconds the canopy gives up
-execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUIDL run effect clear @s slow_falling
-scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUIDL
-scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUIDM
+execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUID run effect clear @s slow_falling
+scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUID
 
 #FirePoof
 execute as @e[scores={PlatTime=3..300}] at @s if block ~ ~-1 ~ fire run tag @s add FirePoof
@@ -186,14 +170,8 @@ execute as @e[tag=FirePoof] at @s run particle explosion_emitter ~ ~ ~ 2 0 2 0.1
 kill @e[tag=FirePoof]
 
 #Platform durations
-#old command; unreliable
-#execute as @e[scores={PlatTime=2..2}] at @s run tp @p[team=!Developer,team=!Lobby,team=!Spectator] ~ ~3 ~
 execute as @e[scores={PlatTime=4..}] at @s unless block ~ ~1 ~ oak_wood run scoreboard players set @s PlatTime 400
 execute as @e[scores={PlatTime=4..}] at @s unless block ~ ~ ~ oak_wood run scoreboard players set @s PlatTime 400
-#for glowing shulkers in platforms, uncomment these
-#execute as @e[tag=YellowPlatform,scores={PlatTime=1..1}] at @s run summon shulker ~ ~1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Glowing:1b,Team:"Yellow",NoAI:1b,AttachFace:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:1000000,ShowParticles:0b}]}
-#execute as @e[tag=BluePlatform,scores={PlatTime=1..1}] at @s run summon shulker ~ ~1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Glowing:1b,Team:"Blue",NoAI:1b,AttachFace:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:1000000,ShowParticles:0b}]}
-#execute as @e[scores={PlatTime=400..}] at @s run tp @e[type=shulker,distance=..4,sort=nearest] ~ ~-1000 ~
 execute as @e[scores={PlatTime=220..}] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a
 execute as @e[scores={PlatTime=220}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0
 execute as @e[scores={PlatTime=225}] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0

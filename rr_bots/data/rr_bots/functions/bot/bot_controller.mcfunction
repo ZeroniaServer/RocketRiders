@@ -60,7 +60,7 @@ execute as @e[tag=Bot,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRide
 execute as @e[tag=BlueBot,tag=BOTCONTROL,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BotRNG","BlueRNG"]}
 execute as @e[tag=YellowBot,tag=BOTCONTROL,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BotRNG","YellowRNG"]}
 scoreboard players set @e[tag=BotRNG] BotRNGmax 10
-execute as @e[tag=BotRNG] store result score @s BotRNG run data get entity @s UUIDMost 0.00000000023283064365386962890625
+execute as @e[tag=BotRNG] store result score @s BotRNG run data get entity @s UUID[0]
 execute as @e[tag=BotRNG] store result score @s BotRNG run scoreboard players operation @s BotRNG %= @s BotRNGmax
 
 execute as @e[tag=BotRNG,scores={BotRNG=0..3}] at @s run tag @e[tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotWalks

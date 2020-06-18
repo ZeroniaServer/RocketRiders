@@ -6,3 +6,4 @@ tag @s add rngHeavy
 function arenaclear:enableheavy
 tag @s add rngUtil
 function arenaclear:enableutil
+execute as @e[tag=Selection] run function arenaclear:refreshsigns

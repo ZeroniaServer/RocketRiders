@@ -5,7 +5,7 @@ scoreboard players add @s BOTwalks 1
 #RNG
 execute as @s[scores={BOTwalks=1}] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalkRNG"]}
 scoreboard players set @e[tag=BotWalkRNG] BotRNGmax 23
-execute as @e[tag=BotWalkRNG] store result score @s BotRNG run data get entity @s UUIDMost 0.00000000023283064365386962890625
+execute as @e[tag=BotWalkRNG] store result score @s BotRNG run data get entity @s UUID[0]
 execute as @e[tag=BotWalkRNG] store result score @s BotRNG run scoreboard players operation @s BotRNG %= @s BotRNGmax
 
 execute as @e[tag=BotWalkRNG,scores={BotRNG=0..5}] at @s unless block ~ ~-1 ~-1 air unless block ~ ~-1 ~-2 air if block ~ ~ ~-1 air if block ~ ~1 ~-2 air run tag @e[scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkNorth

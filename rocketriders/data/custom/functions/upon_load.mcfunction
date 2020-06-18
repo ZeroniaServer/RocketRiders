@@ -1,5 +1,10 @@
-scoreboard objectives add minedTNT minecraft.mined:minecraft.tnt
-tag @a remove NovaNear
-gamerule doEntityDrops false
-scoreboard objectives add BSurpriseSpawned minecraft.used:minecraft.squid_spawn_egg
-scoreboard objectives add YSurpriseSpawned minecraft.used:minecraft.cod_spawn_egg
+scoreboard objectives remove pearlOwnerUUIDM
+scoreboard objectives remove pearlOwnerUUIDL
+scoreboard objectives remove playerUUIDL
+scoreboard objectives remove playerUUIDM
+scoreboard objectives remove splashOwnerUUIDM
+scoreboard objectives remove splashOwnerUUIDL
+
+scoreboard objectives add pearlOwnerUUID dummy
+scoreboard objectives add playerUUID dummy
+scoreboard objectives add splashOwnerUUID dummy

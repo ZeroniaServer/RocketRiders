@@ -1,5 +1,4 @@
-#TODO replace with shroomlight
-setblock ~ ~-1 ~ glowstone
+setblock ~ ~-1 ~ shroomlight
 
 fill ~-2 ~-1 ~ ~-4 ~-1 ~ honeycomb_block
 fill ~2 ~-1 ~ ~4 ~-1 ~ honeycomb_block

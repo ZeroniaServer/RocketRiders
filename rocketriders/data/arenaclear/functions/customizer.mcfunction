@@ -1,6 +1,7 @@
 #GAMEMODE SELECTION
 execute if score @s SetGamemode > maxID gamemodeID run scoreboard players set @s SetGamemode 1
 
+
 ####TOP DECORATION####
 ##New Dawn arch
 execute as @s[scores={TopDeco=1},tag=!settingsLocked] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"Arch\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshcustomizer\"}}"}
@@ -13,6 +14,7 @@ execute as @s[scores={TopDeco=0},tag=!settingsLocked] run data merge block -57 1
 ##Locked
 execute as @s[tag=settingsLocked] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
+
 ####TOP SIDES####
 ##New Dawn Platforms
 execute as @s[scores={TopCorner=1},tag=!settingsLocked] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopCorner 1\"}}",Text2: "{\"text\":\"Platform\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshcustomizer\"}}"}
@@ -20,6 +22,7 @@ execute as @s[scores={TopCorner=1},tag=!settingsLocked] run data merge block -58
 execute as @s[scores={TopCorner=2},tag=!settingsLocked] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopCorner 1\"}}",Text2: "{\"text\":\"Layered\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshcustomizer\"}}"}
 ##Locked
 execute as @s[scores={TopCorner=0},tag=!settingsLocked] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopCorner 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshcustomizer\"}}"}
+
 
 ####MIDDLE DECORATION
 ##New Dawn Slimepads
@@ -34,8 +37,6 @@ execute as @s[scores={TopCorner=2}] run data merge block -58 193 85 {Text1: "{\"
 execute as @s[tag=settingsLocked] run data merge block -58 193 85 {Text1: "{\"text\":\"Middle Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
 
-
-
 ####BOTTOM DECORATION####
 ##New Dawn Slimepads
 execute as @s[scores={BottomDeco=1},tag=!settingsLocked] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] BottomDeco 1\"}}",Text2: "{\"text\":\"Slime Pad\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshcustomizer\"}}"}
@@ -47,8 +48,6 @@ execute as @s[scores={BottomDeco=0},tag=!settingsLocked] run data merge block -5
 execute as @s[scores={TopCorner=2}] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not compatible with other selected details.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 ##Locked
 execute as @s[tag=settingsLocked] run data merge block -57 191 78 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
-
-
 
 
 ####PORTAL DECORATION####
@@ -70,6 +69,7 @@ scoreboard players set @s[scores={MiddleDeco=3..}] MiddleDeco 0
 scoreboard players set @s[scores={BottomDeco=3..}] BottomDeco 0
 scoreboard players set @s[scores={PortalDeco=4..}] PortalDeco 0
 
+
 ##RESTORE ALL DEFAULTS
 execute as @s[tag=!settingsLocked] run data merge block -57 193 78 {Text2:"{\"text\":\"Restore Default\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add RestoreDefault\"}}",Text3:"{\"text\":\"Details\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 execute as @s[tag=settingsLocked] run data merge block -57 193 78 {Text2:"{\"text\":\"Restore Default\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This action cannot be performed in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text3:"{\"text\":\"Details\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
@@ -81,13 +81,16 @@ execute as @s[tag=settingsLocked] run data merge block -70 192 77 {Text2:"{\"tex
 execute as @s[tag=!settingsLocked] run data merge block -69 192 82 {Text1:"{\"text\":\"\"}",Text2:"{\"text\":\"Restore Default\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:enableitems\"}}",Text3:"{\"text\":\"Items\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] refreshsigns 1\"}}"}
 execute as @s[tag=settingsLocked] run data merge block -69 192 82 {Text1:"{\"text\":\"\"}",Text2:"{\"text\":\"Restore Default\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This action cannot be performed in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text3:"{\"text\":\"Items\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
+
 ##CONFIRM CURRENT
 data merge block -70 192 78 {Text1:"{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text2:"{\"text\":\"Confirm\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] unless entity @e[tag=Selection,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] as @e[tag=Selection] run function arenaclear:areaclear\"}}",Text3:"{\"text\":\"Changes\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] if entity @e[tag=Selection,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] run tellraw @s {\\\"text\\\":\\\"You must have at least one Missile enabled to start the game\\\",\\\"color\\\":\\\"red\\\"}\"}}",Text4:"{\"text\":\"\"}"}
+
 
 ##REPEAT SETTINGS
 scoreboard players set @s[scores={RepeatSettings=0}] RepeatSettings 1
 scoreboard players set @s[scores={RepeatSettings=5..}] RepeatSettings 1
 data merge block -70 192 79 {Text1:"{\"text\":\"Repeat Settings\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] RepeatSettings 1\"}}",Text2:"[{\"score\":{\"name\":\"@e[tag=Selection,limit=1]\",\"objective\":\"RepeatSettings\"},\"color\":\"black\",\"bold\":true},{\"text\":\"x\",\"color\":\"black\",\"bold\":\"false\"}]",Text4: "{\"text\":\"(Click to adjust)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+
 
 ##RESTORE DEFAULT DETAILS
 scoreboard players set @s[tag=RestoreDefault] TopDeco 1
@@ -98,6 +101,7 @@ scoreboard players set @s[tag=RestoreDefault] PortalDeco 1
 execute as @s[tag=RestoreDefault] run function arenaclear:refreshcustomizer
 tag @s[tag=RestoreDefault] remove RestoreDefault
 
+
 ##RESTORE DEFAULT OPTIONS
 tag @s[tag=DefaultOptions] add doPrevention
 tag @s[tag=DefaultOptions] add doTying
@@ -106,6 +110,7 @@ tag @s[tag=DefaultOptions] remove doStacking
 scoreboard players set @s[tag=DefaultOptions] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions] RepeatSettings 1
 tag @s[tag=DefaultOptions] remove DefaultOptions
+
 
 ##GAME OPTIONS
 #missile pierce prevention
@@ -130,7 +135,9 @@ execute as @s[tag=!settingsLocked] run data merge block -70 191 79 {Text1:"{\"te
 execute as @s[tag=settingsLocked] run data merge block -70 191 79 {Text1:"{\"text\":\"Item Delay\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2:"[{\"score\":{\"name\":\"@e[tag=Selection,limit=1]\",\"objective\":\"MaxItemSec\"},\"color\":\"black\",\"bold\":true},{\"text\":\" seconds\",\"color\":\"black\",\"bold\":\"false\"}]",Text4: "{\"text\":\"(Click to adjust)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 tellraw @a[team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] [{"text":"Item Delay: ","bold":true,"color":"white"},{"text":"[+5] ","color":"green","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 5"}},{"text":"[+4] ","color":"green","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 4"}},{"text":"[+3] ","color":"green","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 3"}},{"text":"[+2] ","color":"green","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 2"}},{"text":"[+1] ","color":"green","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 1"}},{"text":"[-1] ","color":"red","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -1"}},{"text":"[-2] ","color":"red","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -2"}},{"text":"[-3] ","color":"red","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -3"}},{"text":"[-4] ","color":"red","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -4"}},{"text":"[-5] ","color":"red","bold":"false","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -5"}}]
 tag @a[tag=ItemDelayChange] remove ItemDelayChange
-execute as @a[team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run function arenaclear:itemdelay
+execute if entity @s[tag=!itemDelayOff] as @a[team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run function arenaclear:itemdelay
+execute if entity @s[tag=itemDelayOff] as @a[team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run tellraw @s [{"text":"This setting is not adjustable in this gamemode.","color":"dark_gray","italic":"true"}]
+
 scoreboard players set @a MaxItemSec 0
 
 #tie/sudden death
@@ -139,8 +146,10 @@ execute as @s[tag=!doTying,tag=!tyingOff,tag=!settingsLocked] run data merge blo
 execute as @s[tag=tyingOff,tag=!settingsLocked] run data merge block -70 193 77 {Text1:"{\"text\":\"Tie/Sudden Death\",\"color\":\"white\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"Tying/Sudden Death is incompatible with this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2:"{\"text\":\"Locked\",\"color\":\"white\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 execute as @s[tag=settingsLocked] run data merge block -70 193 77 {Text1:"{\"text\":\"Tie/Sudden Death\",\"color\":\"white\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2:"{\"text\":\"Locked\",\"color\":\"white\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
+
 ##GAME MODIFIERS
 function arenaclear:modifierselect
+
 
 ##ENABLE DISABLE ENTIRE CATEGORIES
 #ACTIVATE AND DEACTIVATE MISSILES WITH CATEGORIES
@@ -168,10 +177,6 @@ execute as @s[tag=settingsLocked] run data merge block -69 191 81 {Text1:"{\"tex
 execute as @s[tag=rngUtil,tag=!settingsLocked] run data merge block -69 193 81 {Text1:"{\"text\":\"Utility Items\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove rngUtil\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3:"{\"text\":\" \",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] refreshsigns 1\"}}"}
 execute as @s[tag=!rngUtil,tag=!settingsLocked] run data merge block -69 193 81 {Text1:"{\"text\":\"Utility Items\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add rngUtil\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection,tag=!rngShield,tag=!rngArrows,tag=!rngVortex,tag=!rngObshield,tag=!rngSplash,tag=!rngCanopy,tag=!rngFireball,tag=!rngNova] run function arenaclear:enableutil\"}}",Text4:"{\"text\":\" \",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] refreshsigns 1\"}}"}
 execute as @s[tag=settingsLocked] run data merge block -69 193 81 {Text1:"{\"text\":\"Utility Items\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2:"{\"text\":\"Locked\",\"color\":\"white\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3:"{\"text\":\" \",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] refreshsigns 1\"}}"}
-
-
-
-
 
 
 ##ROCKET RNG

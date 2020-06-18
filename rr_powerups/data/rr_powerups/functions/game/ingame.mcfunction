@@ -4,7 +4,15 @@ function game:leavemidgame
 #general
 execute as @a unless entity @s[team=!Blue,team=!Yellow] if entity @e[tag=Selection,tag=!doStacking] run function rr_powerups:items/antidupe
 execute as @a unless entity @s[team=!Blue,team=!Yellow] if entity @e[tag=Selection,tag=doStacking] run function rr_powerups:items/antiantidupe
-function rr_powerups:everytick/bee_shield
+
+#utility functions
+execute if entity @a[scores={DrinkHoney=1..}] run tag @s add runbeeshields
+execute if entity @e[tag=BeeShieldDisplay] run tag @s add runbeeshields
+execute if entity @e[tag=animBshield] run tag @s add runbeeshields
+execute if entity @e[type=bee] run tag @s add runbeeshields
+execute as @s[tag=runbeeshields] run function rr_powerups:everytick/bee_shield
+tag @s remove runbeeshields
+
 function rr_powerups:everytick/lava_splash
 function rr_powerups:everytick/cancel_utility
 
@@ -116,7 +124,7 @@ clear @a[team=Blue,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damage:
 clear @a[team=Yellow,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damage:250}}]}] trident 1
 
 #trident auto riptide
-execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide
+execute as @a[nbt={SelectedItem:{id:"minecraft:trident"}}] unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide
 
 #slap fish
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/slap_fish

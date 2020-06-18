@@ -51,7 +51,7 @@ execute as @s[tag=TimeOut] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[tag=TimeOut] run tp @a[team=Yellow] 12 64 66 180 0
 tag @s[tag=TimeOut] add noAchievements
 scoreboard players set @s[tag=TimeOut] RandomItem -3
-execute as @s[scores={ForfeitTimeout=1}] run tellraw @a ["",{"text":"[TIMEOUT] ","bold":true,"color":"dark_red"},{"text":"Someone left the ranked match! They have 1 minute to rejoin.","color":"red"}]
+execute as @s[scores={ForfeitTimeout=1}] run tellraw @a ["",{"text":"[TIMEOUT] ","bold":true,"color":"dark_red"},{"text":"Someone left the duel! They have 1 minute to rejoin, otherwise the game will end.","color":"red"}]
 execute as @s[tag=TimeOut] if entity @a[team=Blue] if entity @a[team=Yellow] run scoreboard players operation @s RandomItem += @s MaxItemTime
 execute as @s[tag=TimeOut] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s remove TimeOut
 scoreboard players reset @s[tag=!TimeOut] ForfeitTimeout

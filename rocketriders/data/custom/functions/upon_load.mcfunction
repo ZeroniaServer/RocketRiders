@@ -8,3 +8,4 @@ scoreboard objectives remove splashOwnerUUIDL
 scoreboard objectives add pearlOwnerUUID dummy
 scoreboard objectives add playerUUID dummy
 scoreboard objectives add splashOwnerUUID dummy
+scoreboard objectives add refreshsigns dummy

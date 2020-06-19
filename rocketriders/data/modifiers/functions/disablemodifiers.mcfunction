@@ -8,3 +8,5 @@ tag @s remove Minute
 tag @s remove SurpriseEgg
 tag @s remove WindDown
 tag @s remove SplashStreams
+tag @s remove SpamClick
+tag @s remove NinjaJump

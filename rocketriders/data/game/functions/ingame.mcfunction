@@ -21,7 +21,7 @@ scoreboard players add @s gametime 1
 function achievements:gain
 function everytick:clear_spawnblocks
 function everytick:no_fall
-function everytick:modifiers
+function modifiers:modifiers
 
 #missile/util specific commands (optimized to only run when necessary)
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=missile] run tag @s add runspawnmissiles

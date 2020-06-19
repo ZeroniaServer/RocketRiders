@@ -42,14 +42,7 @@ tag @s remove rngRift
 scoreboard players set @s MaxItemSec 15
 
 #Disable modifiers
-tag @s remove Molerat
-tag @s remove Instamine
-tag @s remove NoFall
-tag @s remove Explosive
-tag @s remove Residers
-tag @s remove Sonar
-tag @s remove SurpriseEgg
-tag @s remove Minute
+function modifiers:disablemodifiers
 
 #Add needed settings and modifiers
 tag @s add WindDown

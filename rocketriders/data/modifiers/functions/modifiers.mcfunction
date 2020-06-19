@@ -35,3 +35,12 @@ execute as @a[team=Blue,tag=crosser] at @s if score @s playerUUIDL = @e[tag=Blue
 #hackfix: works for crossers too
 execute as @a[tag=crosser] run function game:void
 tag @a remove crosser
+
+#Spam Click
+execute if entity @s[tag=SpamClick] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.attack_speed base set 1000
+execute if entity @s[tag=SpamClick] as @a[team=Lobby] run attribute @s minecraft:generic.attack_speed base set 4
+execute if entity @s[tag=!SpamClick] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.attack_speed base set 4
+
+#Ninja Jump
+execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s speed 1000000 3 true
+execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s jump_boost 1000000 3 true

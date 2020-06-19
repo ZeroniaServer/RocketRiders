@@ -16,5 +16,5 @@ execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_normal:arenacl
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a at @s run function arenaclear:notifystart
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Normal ","color":"light_purple"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"Normal Mode is the default mode for Rocket Riders. In this mode, two teams fight against each other using a wide variety of missiles and defensive items. The goal is to destroy the enemy base and blow up the portal behind it while protecting your own.","color":"white"}]}}]
-execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run function arenaclear:notifymodifiers
+execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run function modifiers:notifymodifiers
 tag @e[tag=PlacerClear,tag=Cleared] add BasePlaced

@@ -8,10 +8,7 @@ execute as @s[scores={endtimer=1..80}] run worldborder warning distance 0
 execute as @s[scores={endtimer=1}] run tag @a remove SummonPlat
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
-execute as @s[scores={endtimer=1}] run effect clear @a haste
-execute as @s[scores={endtimer=1}] run effect clear @a blindness
-execute as @s[scores={endtimer=1}] run effect clear @a glowing
-execute as @s[scores={endtimer=1}] run effect clear @a speed
+execute as @s[scores={endtimer=1}] run effect clear @a
 execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false
@@ -51,6 +48,7 @@ execute as @s[scores={endtimer=570}] run tag @a[tag=WasInBlue] remove WasInBlue
 execute as @s[scores={endtimer=570}] run team join Lobby @a[team=Spectator]
 execute as @s[scores={endtimer=570}] run spawnpoint @a[team=!Developer] -43 211 78
 execute as @s[scores={endtimer=570}] run clear @a[team=!Lobby,team=!Developer]
+execute as @s[scores={endtimer=570},tag=SpamClick] as @a run attribute @s minecraft:generic.attack_speed base set 4
 execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
 execute as @s[scores={endtimer=570}] run fill -57 201 84 -70 201 72 air replace barrier

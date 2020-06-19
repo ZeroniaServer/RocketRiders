@@ -9,11 +9,7 @@ execute as @e[tag=Selection,tag=!Tip4,scores={ShowTip=900}] run summon area_effe
 execute as @e[tag=Selection,tag=!Tip5,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip5"]}
 execute as @e[tag=Selection,tag=!Tip6,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip6"]}
 execute as @e[tag=Selection,tag=!Tip7,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip7"]}
-execute as @e[tag=Selection,tag=!Tip8,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip8"]}
-execute as @e[tag=Selection,tag=!Tip9,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip9"]}
-execute as @e[tag=Selection,tag=!Tip10,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip10"]}
-execute as @e[tag=Selection,tag=!Tip11,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip11"]}
-execute as @e[tag=Selection,tag=!Tip12,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip12"]}
+execute as @e[tag=Selection,tag=!Tip8,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip7"]}
 
 tag @e[tag=HandyTip,limit=1,sort=random] add SelectedTip
 
@@ -48,7 +44,7 @@ execute as @e[tag=SelectedTip,tag=Tip9] run tag @e[tag=Selection] add Tip9
 execute as @e[tag=SelectedTip,tag=Tip10] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Competetive item settings are generated in every round of the 1v1 Duels gamemode.","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip10] run tag @e[tag=Selection] add Tip10
 
-execute as @e[tag=SelectedTip,tag=Tip11] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Item names have their category such as Normal, Lightning, Heavy or Utility in front of their names. Be careful with what you spawn at what time.","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip11] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Items have their category (such as Normal, Lightning, Heavy or Utility) in front of their names. Be careful with what you spawn at what time.","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip11] run tag @e[tag=Selection] add Tip11
 
 execute as @e[tag=SelectedTip,tag=Tip12] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Lightning category missiles are way faster than regular missiles.","color":"gray"}]

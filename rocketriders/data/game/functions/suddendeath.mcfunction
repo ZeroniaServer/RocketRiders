@@ -69,8 +69,8 @@ execute as @s[scores={SDtime=12}] run title @a subtitle ["",{"text":"SUDDEN D","
 execute as @s[scores={SDtime=13}] run title @a subtitle ["",{"text":"SUDDEN DE","bold":true,"color":"red"},{"text":"ATH","bold":true,"color":"white"}]
 execute as @s[scores={SDtime=14}] run title @a subtitle ["",{"text":"SUDDEN DEA","bold":true,"color":"red"},{"text":"TH","bold":true,"color":"white"}]
 execute as @s[scores={SDtime=15}] run title @a subtitle ["",{"text":"SUDDEN DEAT","bold":true,"color":"red"},{"text":"H","bold":true,"color":"white"}]
-execute as @s[scores={SDtime=16}] run title @a subtitle ["",{"text":"SUDDEN DEATH","bold":true,"color":"red"}]
+execute as @s[scores={SDtime=16..}] run title @a subtitle ["",{"text":"SUDDEN DEATH","bold":true,"color":"red"}]
 
-execute as @s[scores={SDtime=16..}] run tag @s remove SuddenDeath
-execute as @s[scores={SDtime=16..}] run scoreboard players reset 2 MaxItemSec
-execute as @s[scores={SDtime=16..}] run scoreboard players reset @s SDtime
+execute as @s[scores={SDtime=20..}] run tag @s remove SuddenDeath
+execute as @s[scores={SDtime=20..}] run scoreboard players reset 2 MaxItemSec
+execute as @s[scores={SDtime=20..}] run scoreboard players reset @s SDtime

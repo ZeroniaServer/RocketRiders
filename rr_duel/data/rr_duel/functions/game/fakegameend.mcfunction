@@ -25,4 +25,4 @@ execute as @s[scores={fakeendtimer=320}] run tag @s remove YellowWon
 execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnBlue
 execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnYellow
 execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnBoth
-execute as @s[scores={fakeendtimer=320}] run function rr_ranked:arenaclear/areaclear
+execute as @s[scores={fakeendtimer=320}] run function rr_duel:arenaclear/areaclear

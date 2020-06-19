@@ -63,5 +63,5 @@ gamemode survival @a[team=Yellow]
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 
-execute as @a[team=Blue] run function rr_ranked:game/givegear
-execute as @a[team=Yellow] run function rr_ranked:game/givegear
+execute as @a[team=Blue] run function game:givegear
+execute as @a[team=Yellow] run function game:givegear

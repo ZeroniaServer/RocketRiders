@@ -20,4 +20,4 @@ execute unless score Yellow: RoundsWon matches 2.. run title @a subtitle [{"scor
 execute unless score Yellow: RoundsWon matches 2.. run tag @s add FakeGameEnd
 
 execute if score Yellow: RoundsWon matches 2.. run function game:winyellow
-execute if score Yellow: RoundsWon matches 2.. run function rr_ranked:rankcalc/calcyellow
+execute if score Yellow: RoundsWon matches 2.. run function rr_duel:rankcalc/calcyellow

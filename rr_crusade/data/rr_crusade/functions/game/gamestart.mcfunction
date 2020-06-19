@@ -1,8 +1,8 @@
 #Items
-function game:gearblue
+execute as @a[tag=JoinBlue] run function game:givegear
 function game:saberblue
 
-function game:gearyellow
+execute as @a[tag=JoinYellow] run function game:givegear
 function game:saberyellow
 
 #Tag Removal

@@ -1,3 +1,3 @@
-function rr_ranked:forced_settings
+function rr_duel:forced_settings
 function arenaclear:baseplacement
 function arenaclear:detailplacement

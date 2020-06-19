@@ -4,6 +4,9 @@ execute as @a store result score @s playerUUID run data get entity @s UUID[0]
 #Missile Display area
 function lobby:missiledisplay/placedisp
 
+#Tutorial Advancements
+function tutorial:advantriggers
+
 #kill dragon's breath
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 

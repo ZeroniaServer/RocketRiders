@@ -1,0 +1,3 @@
+tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"Tutorial","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Welcome to Rocket Riders, ","color":"gray"},{"selector":"@s","color":"light_purple"},{"text":"! You will receive tutorial messages by exploring the lobby and by playing the game.","color":"gray"}]
+execute as @s at @s run playsound minecraft:block.note_block.iron_xylophone player @s ~ ~ ~ 0.5 2
+tellraw @s ["",{"text":"Press ","italic":true,"color":"light_purple"},{"keybind":"key.advancements","bold":true,"italic":true,"color":"dark_purple"},{"text":" to view (tutorial) advancements.","italic":true,"color":"light_purple"}]

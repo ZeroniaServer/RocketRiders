@@ -1,0 +1,2 @@
+tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"Tutorial","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Spawneggs will spawn missiles, spawn them and jump on them to ride them to the enemy base and destroy their portals! Missiles have different categories such as Normal, Heavy and Lightning. Make sure you learn how to defuse missiles by watching what TNT and slime blocks can be broken without breaking the missile. Good luck!","color":"gray"}]
+execute as @s at @s run playsound minecraft:block.note_block.iron_xylophone player @s ~ ~ ~ 0.5 2

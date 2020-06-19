@@ -12,8 +12,11 @@ tag @a[scores={LeaveGame=1..}] remove YellowNovaAttach
 tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
 
 #Hardcore compatibility
+execute as @a[tag=hardcoreKilled] at @s run tp @s ~ ~ ~ 90 0
+tag @a[tag=hardcoreKilled] remove hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
 execute as @s[tag=GameStarted,tag=Hardcore] as @a[scores={LeaveGame=1..}] run kill @s
+execute as @s[tag=GameStarted,tag=Hardcore] as @a[scores={LeaveGame=1..}] run tag @s add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 
 scoreboard players reset @a[scores={LeaveGame=1..}] LeaveGame

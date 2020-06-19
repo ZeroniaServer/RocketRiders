@@ -13,8 +13,8 @@ function everytick:team_balance
 tag @s[tag=!GameStarted] remove CriteriaTrue
 
 #reset
-execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_duel:arenaclear/baseplacement
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a at @s run function arenaclear:notifystart
+execute if entity @e[tag=PlacerClear,tag=Cleared] run function rr_duel:arenaclear/baseplacement
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"1v1 Duel","color":"red"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"1v1 Duel is a competetive mode where players play for custom \"YZELO\" XP points. This mode uses its own ruleset. You play 1v1 matches for three rounds, and the player who wins two rounds wins the whole game, along with some XP points (the loser may take a hit, however). Ascend the ranks and make your way to the top! All settings are overridden in this gamemode, and a set of items is chosen automatically each round.","color":"white"}]}}]
 execute if entity @e[tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run function modifiers:notifymodifiers

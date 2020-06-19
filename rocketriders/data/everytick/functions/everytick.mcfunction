@@ -1,3 +1,4 @@
+function everytick:new_player
 function everytick:leave_game
 execute as @e[tag=Selection] run function everytick:general_settings_or_hotfixes
 execute as @e[tag=Selection] run function everytick:team_count

@@ -36,18 +36,6 @@ scoreboard players add @a ThrowPlat 0
 scoreboard players add @a[scores={ThrowPlat=1..16}] ThrowPlat 1
 scoreboard players set @a[scores={ThrowPlat=17..}] ThrowPlat 0
 
-#welcome/handle new players - anyone with a firstJoined score of 0 is a new player
-scoreboard players add @a firstJoined 0
-scoreboard players set @a[scores={firstJoined=0}] LeaveGame 1
-title @a[scores={firstJoined=0}] title [{"text":"Welcome to","color":"white","bold":"true"}]
-title @a[scores={firstJoined=0}] subtitle [{"text":"Rocket ","color":"blue","bold":"true"},{"text":"Riders","color":"gold","bold":"true"},{"text":"!","color":"white","bold":"true"}]
-#TODO add more title text? idk
-scoreboard players add @a[scores={firstJoined=0}] firstJoined 1
-
-#auto update xp bar
-execute as @a store result score @s xp_bar run xp query @s levels
-execute as @a unless score @s xp_bar = @s XP run function everytick:update_xp_bar
-
 #dummy vortex (lobby)
 execute as @e[tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @e[tag=VortexDummy] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a

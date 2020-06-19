@@ -9,7 +9,11 @@ execute as @e[tag=Selection,tag=!Tip4,scores={ShowTip=900}] run summon area_effe
 execute as @e[tag=Selection,tag=!Tip5,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip5"]}
 execute as @e[tag=Selection,tag=!Tip6,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip6"]}
 execute as @e[tag=Selection,tag=!Tip7,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip7"]}
-execute as @e[tag=Selection,tag=!Tip8,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip7"]}
+execute as @e[tag=Selection,tag=!Tip8,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip8"]}
+execute as @e[tag=Selection,tag=!Tip9,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip9"]}
+execute as @e[tag=Selection,tag=!Tip10,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip10"]}
+execute as @e[tag=Selection,tag=!Tip11,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip11"]}
+execute as @e[tag=Selection,tag=!Tip12,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip12"]}
 
 tag @e[tag=HandyTip,limit=1,sort=random] add SelectedTip
 

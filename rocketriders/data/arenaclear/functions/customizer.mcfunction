@@ -2,6 +2,20 @@
 execute if score @s SetGamemode > maxID gamemodeID run scoreboard players set @s SetGamemode 1
 
 
+#Arrow pointing down into the lobby
+particle dust 1 0 1 2 -64 215.3 78 0 1.5 0 0 5 force
+particle dust 1 0 1 2 -64 212 78.8 0 0 0 0 5 force
+particle dust 1 0 1 2 -64 212 78.2 0 0 0 0 5 force
+particle dust 1 0 1 2 -64 212.5 77.8 0 0 0 0 5 force
+particle dust 1 0 1 2 -64 212.5 79.2 0 0 0 0 5 force
+particle dust 1 0 1 2 -64 213 77.45 0 0 0 0 5 force
+particle dust 1 0 1 2 -64 213 79.5 0 0 0 0 5 force
+particle dust 1 0 1 2 -64 213.5 77.1 0 0 0 0 5 force
+particle dust 1 0 1 2 -64 213.5 79.9 0 0 0 0 5 force
+particle dust 1 0 1 2 -64 211.6 78 0 0 0 0 5 force
+
+
+
 ####TOP DECORATION####
 ##New Dawn arch
 execute as @s[scores={TopDeco=1},tag=!settingsLocked] run data merge block -57 195 78 {Text1: "{\"text\":\"Top Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] TopDeco 1\"}}",Text2: "{\"text\":\"Arch\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshcustomizer\"}}"}

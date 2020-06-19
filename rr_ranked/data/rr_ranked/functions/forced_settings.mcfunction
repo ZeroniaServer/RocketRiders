@@ -95,7 +95,7 @@ execute if entity @e[tag=Nova,tag=SelRRNG] run tellraw @a ["",{"text":"| ","colo
 
 ### 1 lightning type.
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Hurricane","RLightningRNG"]}
-summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Thunderbolt","RLightingRNG"]}
+summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Thunderbolt","RLightningRNG"]}
 tag @e[tag=RLightningRNG,limit=1,sort=random] add SelRRNG
 
 #hurricane selected

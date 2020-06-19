@@ -30,8 +30,8 @@ execute as @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=BlueWon,tag=!SuddenDea
 
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Blue]
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Yellow]
-execute as @s[scores={endtimer=250}] run scoreboard players add @a[team=Blue] GamesPlayed 1
-execute as @s[scores={endtimer=250}] run scoreboard players add @a[team=Yellow] GamesPlayed 1
+execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] GamesPlayed 1
+execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Yellow] GamesPlayed 1
 execute as @s[scores={endtimer=570}] run function achievements:scoresreset
 execute as @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute as @s[scores={endtimer=570},tag=SpamClick] as @a run attribute @s minecraft:generic.attack_speed base set 4

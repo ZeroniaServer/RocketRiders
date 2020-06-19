@@ -8,7 +8,8 @@ execute as @s[scores={endtimer=1..80}] run worldborder warning distance 0
 execute as @s[scores={endtimer=1}] run tag @a remove SummonPlat
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
-execute as @s[scores={endtimer=1}] run effect clear @a
+execute as @s[scores={endtimer=1}] run effect clear @a[team=Blue]
+execute as @s[scores={endtimer=1}] run effect clear @a[team=Yellow]
 execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false

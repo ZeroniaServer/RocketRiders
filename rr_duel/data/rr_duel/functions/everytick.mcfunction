@@ -5,9 +5,8 @@ execute as @e[tag=Selection,tag=duelEnabled] run function rr_duel:ifenabled
 execute as @e[tag=Selection,tag=duelLast] run function rr_duel:iflast
 
 #XP/rank stuff
+scoreboard players add @a XP 0
 execute as @a if score @s XP matches ..0 run scoreboard players set @s XP 0
-execute as @a store success score @s HasXP run scoreboard players get @s XP
-execute as @a if score @s HasXP matches 0 run scoreboard players set @s XP 100
 scoreboard players set @a[scores={XP=..100}] RankScore 6
 scoreboard players set @a[scores={XP=101..400}] RankScore 5
 scoreboard players set @a[scores={XP=401..700}] RankScore 4

@@ -1,8 +1,18 @@
 #Runs individual detail placement functions depending on initial tags
-execute as @s[tag=!noDetailBlue] run function arenaclear:detailplacementblue
-execute as @s[tag=!noDetailYellow] run function arenaclear:detailplacementyellow
+execute as @s[tag=!Hardcore,tag=!noDetailBlue] run function arenaclear:detailplacementblue
+execute as @s[tag=!Hardcore,tag=!noDetailYellow] run function arenaclear:detailplacementyellow
 tag @s remove noDetailBlue
 tag @s remove noDetailYellow
+
+#Portal detail - Blue
+execute as @s[scores={PortalDeco=1}] run fill -11 59 -74 35 36 -74 blue_stained_glass_pane[east=true,west=true] replace air
+execute as @s[scores={PortalDeco=2}] run fill -11 59 -73 35 36 -75 blue_stained_glass replace air
+execute as @s[scores={PortalDeco=3}] run fill -11 59 -73 35 36 -75 end_stone replace air
+
+#Portal detail - Yellow
+execute as @s[scores={PortalDeco=1}] run fill -11 59 74 35 36 74 yellow_stained_glass_pane[east=true,west=true] replace air
+execute as @s[scores={PortalDeco=2}] run fill -11 59 73 35 36 75 yellow_stained_glass replace air
+execute as @s[scores={PortalDeco=3}] run fill -11 59 73 35 36 75 end_stone replace air
 
 #Obsidian placement - Blue and Yellow
 fill 14 63 66 10 63 66 minecraft:obsidian

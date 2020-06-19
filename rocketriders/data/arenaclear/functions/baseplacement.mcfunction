@@ -79,3 +79,9 @@ execute if entity @s[tag=Molerat] run fill 2 174 30 12 159 -30 light_gray_staine
 execute if entity @s[tag=Molerat] run fill 13 174 30 23 159 -30 light_gray_stained_glass replace air
 execute if entity @s[tag=Molerat] run fill 24 174 30 34 159 -30 light_gray_stained_glass replace air
 execute if entity @s[tag=Molerat] run fill 35 174 30 45 159 -30 light_gray_stained_glass replace air
+
+#Hardcore
+execute if entity @s[tag=Hardcore] run fill 38 63 65 -14 34 52 air
+execute if entity @s[tag=Hardcore] run fill -14 63 66 38 34 66 yellow_stained_glass
+execute if entity @s[tag=Hardcore] run fill 38 63 -65 -14 34 -52 air
+execute if entity @s[tag=Hardcore] run fill -14 63 -66 38 34 -66 blue_stained_glass

@@ -34,6 +34,12 @@ execute as @s[scores={endtimer=250}] run scoreboard players add @a[team=Blue] Ga
 execute as @s[scores={endtimer=250}] run scoreboard players add @a[team=Yellow] GamesPlayed 1
 execute as @s[scores={endtimer=570}] run function achievements:scoresreset
 execute as @s[scores={endtimer=570}] run tag @s remove noAchievements
+execute as @s[scores={endtimer=570},tag=SpamClick] as @a run attribute @s minecraft:generic.attack_speed base set 4
+execute as @s[scores={endtimer=570},tag=Hardcore] as @a run attribute @s minecraft:generic.max_health base set 20.0
+execute as @s[scores={endtimer=570},tag=Hardcore] run gamerule showDeathMessages false
+execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Blue] run kill @s
+execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Yellow] run kill @s
+execute as @s[scores={endtimer=570},tag=Hardcore] run gamerule showDeathMessages true
 execute as @s[scores={endtimer=570}] run tag @a[team=Blue] add WasInBlue
 execute as @s[scores={endtimer=570}] run tag @a[team=Yellow] add WasInYellow
 execute as @s[scores={endtimer=570}] run team join Spectator @a[team=Blue]
@@ -49,7 +55,6 @@ execute as @s[scores={endtimer=570}] run tag @a[tag=WasInBlue] remove WasInBlue
 execute as @s[scores={endtimer=570}] run team join Lobby @a[team=Spectator]
 execute as @s[scores={endtimer=570}] run spawnpoint @a[team=!Developer] -43 211 78
 execute as @s[scores={endtimer=570}] run clear @a[team=!Lobby,team=!Developer]
-execute as @s[scores={endtimer=570},tag=SpamClick] as @a run attribute @s minecraft:generic.attack_speed base set 4
 execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
 execute as @s[scores={endtimer=570}] run fill -57 201 84 -70 201 72 air replace barrier

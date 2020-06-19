@@ -101,6 +101,9 @@ execute as @s[tag=GameStarted] run scoreboard players set @a[team=Blue] jumps 0
 execute as @s[tag=GameStarted,tag=!NoFall] run gamerule fallDamage true
 execute as @s[tag=GameStarted] run gamerule drowningDamage true
 execute as @s[tag=GameStarted] run gamerule fireDamage true
+execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
+execute as @s[tag=GameStarted,tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run kill @s
+execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @s[tag=GameStarted] run scoreboard players operation @s origBCount = @s bluesCount
 execute as @s[tag=GameStarted] run scoreboard players operation @s origYCount = @s yellowsCount
 execute as @s[tag=GameStarted] run function lobby:credits/restart

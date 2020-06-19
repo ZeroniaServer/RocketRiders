@@ -11,7 +11,7 @@ function tutorial:advantriggers
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 
 #Handy tips for newcomers.
-function everytick:tips/tip
+function everytick:tip
 
 #full offhand check
 tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand

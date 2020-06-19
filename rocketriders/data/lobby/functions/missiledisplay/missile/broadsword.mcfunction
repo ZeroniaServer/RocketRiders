@@ -1,5 +1,5 @@
 data merge entity @e[tag=NameDisp,limit=1] {CustomName:'{"text":"Broadsword","color":"dark_purple"}'}
-data merge entity @e[tag=TNTDisp,limit=1] {CustomName:'[{"text":"TNT Count: ","color":"dark_green"},{"text":"22","color":"light_purple"}]'}
+data merge entity @e[tag=TNTDisp,limit=1] {CustomName:'[{"text":"TNT Count: ","color":"dark_green"},{"text":"23","color":"light_purple"}]'}
 data merge entity @e[tag=SpeedDisp,limit=1] {CustomName:'[{"text":"Speed: ","color":"dark_green"},{"text":"3.3m/s","color":"light_purple"}]'}
 
 playsound minecraft:entity.generic.explode player @a 19 204 78 0.5 1.75

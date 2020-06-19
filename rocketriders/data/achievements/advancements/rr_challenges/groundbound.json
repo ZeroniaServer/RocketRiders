@@ -22,5 +22,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "achievements:rr_challenges/hard"
+    "parent": "achievements:rr_challenges/ballet"
 }

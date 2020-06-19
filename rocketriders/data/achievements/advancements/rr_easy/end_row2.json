@@ -6,13 +6,13 @@
             "color": "green"
         },
         "description": {
-            "text": "These challenges should be relatively easy to get.",
+            "text": "The Easy difficulty challenges for Rocket Riders.",
             "color": "dark_green"
         },
         "icon": {
             "item": "minecraft:lime_concrete"
         },
-        "frame": "challenge",
+        "frame": "task",
         "show_toast": false,
         "announce_to_chat": false,
         "hidden": false
@@ -22,5 +22,5 @@
             "trigger": "minecraft:location"
         }
     },
-    "parent": "achievements:rr_challenges/root"
+    "parent": "achievements:rr_challenges/machina"
 }

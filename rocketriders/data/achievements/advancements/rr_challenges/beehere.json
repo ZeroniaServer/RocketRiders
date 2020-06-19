@@ -28,5 +28,5 @@
             }
         }
     },
-    "parent": "achievements:rr_challenges/easy"
+    "parent": "achievements:rr_challenges/flag_already"
 }

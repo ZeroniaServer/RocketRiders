@@ -23,5 +23,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "achievements:rr_challenges/easy"
+    "parent": "achievements:rr_challenges/get_off_lawn"
 }

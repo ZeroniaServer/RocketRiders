@@ -2,26 +2,25 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Superior Players",
+            "text": "Easy Challenges",
             "color": "green"
         },
         "description": {
-            "text": "Lose to the bots in PVE mode.",
+            "text": "The Easy difficulty challenges for Rocket Riders.",
             "color": "dark_green"
         },
         "icon": {
-          "item": "minecraft:player_head",
-          "nbt": "{SkullOwner:Cam}"
+            "item": "minecraft:lime_concrete"
         },
         "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": true,
+        "show_toast": false,
+        "announce_to_chat": false,
         "hidden": false
     },
     "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
+        "location": {
+            "trigger": "minecraft:location"
         }
     },
-    "parent": "achievements:rr_challenges/helping"
+    "parent": "achievements:rr_challenges/had_it"
 }

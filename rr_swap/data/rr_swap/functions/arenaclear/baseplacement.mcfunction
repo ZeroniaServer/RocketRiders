@@ -33,3 +33,4 @@ bossbar set rr_swap:swap_progress players none
 scoreboard players set SwapPlatform swapside 0
 scoreboard players set BossbarA swapside 0
 scoreboard players set BossbarB swapside 0
+scoreboard players set QuickSwap swapside 0

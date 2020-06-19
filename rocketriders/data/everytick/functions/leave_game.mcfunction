@@ -10,4 +10,10 @@ scoreboard players set @a[scores={LeaveGame=1..}] LeaveMidgame 0
 scoreboard players set @a[team=!Yellow,team=!Blue] LeaveMidgame 0
 tag @a[scores={LeaveGame=1..}] remove YellowNovaAttach
 tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
+
+#Hardcore compatibility
+execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
+execute as @s[tag=GameStarted,tag=Hardcore] as @a[scores={LeaveGame=1..}] run kill @s
+execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
+
 scoreboard players reset @a[scores={LeaveGame=1..}] LeaveGame

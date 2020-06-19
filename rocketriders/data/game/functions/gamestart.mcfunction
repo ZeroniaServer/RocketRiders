@@ -30,6 +30,10 @@ execute as @s[tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector
 execute as @s[tag=GameStarted] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
 execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
 execute as @s[tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
+#Hardcore compatibility
+execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
+execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinBlue] run kill @s
+execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial
 execute as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":"true","color":"blue"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"blue"}]
@@ -56,6 +60,10 @@ execute as @s[tag=GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"select
 execute as @s[tag=GameStarted] run tellraw @a[tag=JoinYellow] [{"text":"Drop your ","color":"gold","italic":"true"},{"text":"Shooting Saber ","color":"yellow","bold":"true","italic":"false"},{"text":"to leave the match.","color":"gold","italic":"true"}]
 execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinYellow]
 execute as @s[tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
+#Hardcore compatibility
+execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
+execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinYellow] run kill @s
+execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial
 execute as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":"true","color":"gold"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"gold"}]

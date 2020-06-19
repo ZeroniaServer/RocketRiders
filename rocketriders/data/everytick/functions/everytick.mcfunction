@@ -1,5 +1,5 @@
 function everytick:new_player
-function everytick:leave_game
+execute as @e[tag=Selection] run function everytick:leave_game
 execute as @e[tag=Selection] run function everytick:general_settings_or_hotfixes
 execute as @e[tag=Selection] run function everytick:team_count
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s invCount 0

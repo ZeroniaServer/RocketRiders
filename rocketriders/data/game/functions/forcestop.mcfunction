@@ -1,4 +1,3 @@
-kill @e[tag=Bot]
 execute unless entity @e[tag=Selection,tag=noAchievements] run function achievements:aftergame
 
 tag @e[tag=Selection] add GameEnd

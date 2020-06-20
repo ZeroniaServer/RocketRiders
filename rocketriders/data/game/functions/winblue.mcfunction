@@ -2,9 +2,6 @@
 execute unless entity @s[tag=noAchievements] run function achievements:aftergameblue
 execute unless entity @s[tag=noAchievements] run function achievements:aftergame
 
-#Kill bots
-execute if entity @e[tag=Bot] run kill @e[tag=Bot]
-
 #Win stuff
 tag @s add GameEnd
 tag @s add BlueWon

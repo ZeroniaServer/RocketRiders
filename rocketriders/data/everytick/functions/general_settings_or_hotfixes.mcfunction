@@ -42,9 +42,6 @@ execute as @e[tag=VortexDummy] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0
 execute as @e[tag=VortexItemDummy] at @s unless entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~15 ~
 execute as @e[tag=VortexItemDummy] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]
 
-#enable trigger
-scoreboard players enable @a LobbyWarp
-
 #lobby players no items besides a book and boots
 replaceitem entity @a[team=Lobby] hotbar.0 air
 replaceitem entity @a[team=Lobby] hotbar.1 air

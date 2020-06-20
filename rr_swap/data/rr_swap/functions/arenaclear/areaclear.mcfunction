@@ -1,5 +1,5 @@
 #remove join cancel from joinpads
 tag @e[tag=CancelJoin] remove CancelJoin
 
-function rr_swap:items/darktetrisreset
-function rr_swap:items/lighttetrisreset
+execute as @e[tag=Selection] run function rr_swap:items/darktetrisreset
+execute as @e[tag=Selection] run function rr_swap:items/lighttetrisreset

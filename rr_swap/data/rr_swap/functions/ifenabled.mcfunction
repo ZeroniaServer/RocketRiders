@@ -1,3 +1,18 @@
+#special item disabling
+tag @e[tag=Selection] add normalLocked
+tag @e[tag=Selection,tag=rngNormal] add normalWasOn
+tag @e[tag=Selection,tag=rngSplash] add splashWasOn
+tag @e[tag=Selection] remove rngSplash
+tag @e[tag=Selection,tag=rngCanopy] add canopyWasOn
+tag @e[tag=Selection] remove rngCanopy
+tag @e[tag=Selection,tag=rngNova] add novaWasOn
+tag @e[tag=Selection] remove rngNova
+tag @e[tag=Selection,tag=rngRift] add riftWasOn
+tag @e[tag=Selection] remove rngRift
+tag @e[tag=Selection,tag=rngJbuster] add jbusterWasOn
+tag @e[tag=Selection] remove rngJbuster
+execute unless entity @s[tag=EditedSettings] run function rr_swap:arenaclear/customizer
+
 #management
 execute unless score @s SetGamemode = @e[tag=rr_swap,limit=1] gamemodeID run function rr_swap:disable
 data merge block -69 192 74 {Text1: '{"text":"Gamemode:","color":"dark_purple","clickEvent":{"action":"run_command","value":"scoreboard players add @e[tag=Selection] SetGamemode 1"}}',Text2: '{"text":"Swap","color":"light_purple","clickEvent":{"action":"run_command","value":"playsound ui.button.click player @a ~ ~ ~ 1 1"}}',Text4:'{"text":"(Click for next)","color":"gray","italic":"true","clickEvent":{"action":"run_command","value":"scoreboard players add @e[tag=Selection] refreshsigns 1"}}'}

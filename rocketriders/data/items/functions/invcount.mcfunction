@@ -35,3 +35,4 @@ scoreboard players add @s[nbt={Inventory:[{Slot:33b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:34b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:35b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:-106b}]}] invCount 1
+execute at @s if entity @e[type=item,limit=1,distance=..2] run scoreboard players add @s invCount 1

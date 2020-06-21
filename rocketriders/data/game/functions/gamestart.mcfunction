@@ -114,6 +114,5 @@ execute as @a[tag=LeaveSpectator] run tellraw @a ["",{"selector":"@s"},{"text":"
 team join Lobby @a[tag=LeaveSpectator]
 tag @a remove LeaveSpectator
 
-#Start Game
-execute unless entity @s[tag=GameEnd] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
+#Countdown
 execute as @s[tag=Countdown] run function game:countdown

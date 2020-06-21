@@ -16,7 +16,8 @@ function game:saberblue
 tag @a remove JoinBlue
 tag @a remove JoinYellow
 
-#Start Game
-execute unless entity @s[tag=GameEnd] if entity @a[team=Blue] run tag @s[tag=!GameStarted] add Countdown
+#Countdown
+execute as @s[tag=EditedSettings] if entity @a[team=Blue] run tag @s[tag=!GameStarted] add Countdown
+execute as @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
 execute as @s[scores={count=590..600},tag=!GameEnd] run kill @e[tag=Bot]
 execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

@@ -26,7 +26,6 @@ execute as @s[tag=EditedSettings] if entity @a[team=Blue] run function game:canc
 execute as @s[tag=EditedSettings] if entity @a[team=Yellow] run function game:cancelyellow
 execute as @s[tag=EditedSettings,tag=!GameStarted] unless entity @a[team=Blue] run function game:uncancelblue
 execute as @s[tag=EditedSettings,tag=!GameStarted] unless entity @a[team=Yellow] run function game:uncancelyellow
-execute as @s[tag=EditedSettings] unless entity @a[team=Blue] unless entity @a[team=Yellow] run tag @s remove Countdown
 
 #fake game end
 execute as @s[tag=FakeGameEnd] run function rr_duel:game/fakegameend

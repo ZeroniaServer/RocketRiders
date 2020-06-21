@@ -110,4 +110,5 @@ execute as @s[tag=GameStarted] run function lobby:credits/restart
 execute as @s[tag=GameStarted] run kill @e[type=arrow]
 scoreboard players set @s[tag=GameStarted] count 0
 tag @s[tag=GameStarted] remove bossbarOverride
+tag @s[tag=GameStarted] remove forceCountdown
 tag @s[tag=GameStarted] remove Countdown

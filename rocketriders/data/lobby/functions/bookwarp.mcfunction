@@ -1,5 +1,6 @@
 #Enable trigger
-scoreboard players enable @a LobbyWarp
+scoreboard players enable @a[team=Lobby] LobbyWarp
+scoreboard players set @a[team=!Lobby] LobbyWarp -1
 
 #Teleports
 execute as @a[scores={LobbyWarp=1}] at @s run tp @s -43 211 78 90 0

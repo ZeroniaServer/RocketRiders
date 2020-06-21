@@ -13,6 +13,10 @@ kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 #Handy tips for newcomers.
 function everytick:tip
 
+#Launch from modification room
+execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
+execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..1] run effect clear @s jump_boost
+
 #full offhand check
 tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
 tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand

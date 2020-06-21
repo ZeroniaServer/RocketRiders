@@ -2,7 +2,6 @@
 tag @s[scores={RepeatSettings=2..}] add Repeat
 execute if entity @s[tag=Repeat] run schedule function arenaclear:notifyrepeat 3t append
 scoreboard players remove @s[scores={RepeatSettings=1..}] RepeatSettings 1
-#notify start if first game has been played (already notifies from sign in mod room)
 tag @s[scores={RepeatSettings=0}] remove Repeat
 
 tag @s add EditedSettings

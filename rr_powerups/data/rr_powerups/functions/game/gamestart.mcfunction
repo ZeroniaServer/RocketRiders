@@ -9,7 +9,10 @@ function game:saberyellow
 tag @a remove JoinBlue
 tag @a remove JoinYellow
 
-#Start Game
+#Countdown
+execute as @s[tag=EditedSettings] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
+execute as @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
+execute as @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:restartcountdown
 execute as @s[scores={count=1}] at @e[tag=captureMiddle] run fill 6 -1 6 -6 -1 -6 air
 scoreboard players reset @s[scores={count=1..}] powerupcount
 scoreboard players set @s[scores={count=1..}] PowerupDisplay 45

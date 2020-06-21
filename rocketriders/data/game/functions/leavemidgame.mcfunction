@@ -1,4 +1,5 @@
 scoreboard players enable @a LeaveMidgame
+execute as @a[team=!Blue,team=!Yellow] run trigger LeaveMidgame set -1
 tellraw @a[team=Blue,scores={dropBow=1..}] [{"text":"Are you sure you want to leave the match? ","color":"blue"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
 tellraw @a[team=Yellow,scores={dropBow=1..}] [{"text":"Are you sure you want to leave the match? ","color":"gold"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
 scoreboard players set @a[scores={dropBow=1..}] dropBow 0

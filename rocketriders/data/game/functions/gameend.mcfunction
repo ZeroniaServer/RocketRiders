@@ -6,6 +6,7 @@ tag @s[scores={endtimer=1}] remove gaveFirstItem
 scoreboard players set @s[scores={endtimer=1}] gametime 0
 execute as @s[scores={endtimer=1..80}] run worldborder warning distance 0
 execute as @s[scores={endtimer=1}] run tag @a remove SummonPlat
+execute as @s[scores={endtimer=1}] as @a run trigger LeaveMidgame set -1
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
 execute as @s[scores={endtimer=1}] run effect clear @a[team=Blue]

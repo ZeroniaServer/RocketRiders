@@ -1,2 +1,2 @@
 tag @s[tag=!forceCountdown] remove Countdown
-scoreboard players reset @s[tag=!forceCountdown] count
+scoreboard players set @s[tag=!forceCountdown] count 0

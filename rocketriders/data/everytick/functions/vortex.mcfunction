@@ -38,11 +38,11 @@ execute as @e[tag=VortexItemBlue] at @s if entity @e[tag=VortexBlue,sort=nearest
 execute as @e[tag=VortexItemYellow] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2] if entity @a[team=Blue,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Blue,distance=..6]
 
 #target
-execute as @e[tag=VortexBlue,scores={vortexBoom=1..}] at @s if entity @a[team=Yellow,distance=..6] run tp @s ^ ^ ^.05 facing entity @p[team=Yellow,distance=..6]
+execute as @e[tag=VortexBlue,scores={vortexBoom=1..}] at @s if entity @a[team=Yellow,distance=..6] run tp @s ^ ^ ^.1 facing entity @p[team=Yellow,distance=..7]
 execute as @e[tag=VortexBlue,scores={vortexBoom=1..}] at @s if entity @a[team=Yellow,distance=..6] run tp @e[tag=VortexItemBlue,distance=..3,limit=1,sort=nearest] @s
 execute as @e[tag=VortexBlue,scores={vortexBoom=1..}] at @s if entity @a[team=Yellow,distance=..6] run tp @e[tag=VortexItemBlue,distance=..3,limit=1,sort=nearest] ~ ~-2 ~
 
-execute as @e[tag=VortexYellow,scores={vortexBoom=1..}] at @s if entity @a[team=Blue,distance=..6] run tp @s ^ ^ ^.05 facing entity @p[team=Blue,distance=..6]
+execute as @e[tag=VortexYellow,scores={vortexBoom=1..}] at @s if entity @a[team=Blue,distance=..6] run tp @s ^ ^ ^.1 facing entity @p[team=Blue,distance=..7]
 execute as @e[tag=VortexYellow,scores={vortexBoom=1..}] at @s if entity @a[team=Blue,distance=..6] run tp @e[tag=VortexItemYellow,distance=..3,limit=1,sort=nearest] @s
 execute as @e[tag=VortexYellow,scores={vortexBoom=1..}] at @s if entity @a[team=Blue,distance=..6] run tp @e[tag=VortexItemYellow,distance=..3,limit=1,sort=nearest] ~ ~-2 ~
 

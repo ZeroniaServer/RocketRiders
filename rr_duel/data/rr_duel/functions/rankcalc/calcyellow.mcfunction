@@ -66,6 +66,9 @@ scoreboard players operation Buffer XP /= 600 XP
 scoreboard players operation @a[team=Blue,limit=1] XP += Buffer XP
 scoreboard players operation NetBlue XP -= Buffer XP
 
+#Adjust Blue XP to above 0
+scoreboard players set @a[team=Blue,scores={XP=..0},limit=1] XP 0
+
 #Announce new Blue XP
 execute as @a[team=Blue,limit=1] run tellraw @a ["",{"selector":"@s","color":"red"},{"text":" lost ","color":"red"},{"score":{"name":"NetBlue","objective":"XP"},"bold":true,"color":"dark_red"},{"text":", making their XP a total of: ","color":"red"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 

@@ -52,6 +52,7 @@ execute as @e[tag=VortexYellow,scores={vortexBoom=1..}] at @s run data merge ent
 execute as @e[tag=VortexBlue,scores={vortexBoom=1..}] at @s run data merge entity @e[tag=VortexItemBlue,sort=nearest,limit=1] {Tags:["VortexItem","VortexItemBlue"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}]}
 execute as @e[scores={vortexBoom=1}] at @s run playsound entity.shulker.hurt_closed player @a ~ ~ ~ 1 0
 tag @e[tag=Vortex,scores={vortexBoom=1}] add origin
+scoreboard players set @e[tag=Vortex,scores={vortexBoom=1}] vortexBoom 2
 execute as @e[tag=Vortex] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add origin
 execute as @e[type=arrow] at @s run tag @e[tag=Vortex,distance=..2,limit=1] add origin
 execute as @e[type=tnt] at @s run tag @e[tag=Vortex,distance=..5,limit=1] add origin

@@ -121,6 +121,7 @@ tag @s[tag=DefaultOptions] add doPrevention
 tag @s[tag=DefaultOptions] add doTying
 tag @s[tag=DefaultOptions] add doHotbarLimit
 tag @s[tag=DefaultOptions] remove doStacking
+tag @s[tag=DefaultOptions] remove distantParticles
 scoreboard players set @s[tag=DefaultOptions] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions] RepeatSettings 1
 execute as @s[tag=DefaultOptions] run function arenaclear:refreshoptionssigns
@@ -167,6 +168,10 @@ execute as @s[tag=doTying,tag=!tyingOff,tag=!settingsLocked] run data merge bloc
 execute as @s[tag=!doTying,tag=!tyingOff,tag=!settingsLocked] run data merge block -70 193 77 {Text1:"{\"text\":\"Tie/Sudden Death\",\"color\":\"white\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] add doTying\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshoptionssigns\"}}"}
 execute as @s[tag=tyingOff,tag=!settingsLocked] run data merge block -70 193 77 {Text1:"{\"text\":\"Tie/Sudden Death\",\"color\":\"white\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"Tying/Sudden Death is incompatible with this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2:"{\"text\":\"Locked\",\"color\":\"white\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 execute as @s[tag=settingsLocked] run data merge block -70 193 77 {Text1:"{\"text\":\"Tie/Sudden Death\",\"color\":\"white\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2:"{\"text\":\"Locked\",\"color\":\"white\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
+
+#distant particles
+execute as @s[scores={distantParticles=1}] run data merge block -70 193 78 {Text1:"{\"text\":\"Distant Particles\",\"color\":\"white\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players set @e[tag=Selection] distantParticles 0\"}}",Text2:"{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshoptionssigns\"}}"}
+execute as @s[scores={distantParticles=0}] run data merge block -70 193 78 {Text1:"{\"text\":\"Distant Particles\",\"color\":\"white\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players set @e[tag=Selection] distantParticles 1\"}}",Text2:"{\"text\":\"Disabled\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshoptionssigns\"}}"}
 
 ##WORLD SETTINGS
 #player credits

@@ -28,10 +28,10 @@ tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
 tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand
 
 #Screw minehut render distance
-execute as @a[team=Blue,gamemode=!spectator] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
-execute as @a[team=Yellow,gamemode=!spectator] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
-execute as @e[team=BlueBot] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
-execute as @e[team=YellowBot] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
+execute as @s[tag=distanceParticles] as @a[team=Blue,gamemode=!spectator] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
+execute as @s[tag=distanceParticles] as @a[team=Yellow,gamemode=!spectator] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
+execute as @s[tag=distanceParticles] as @e[team=BlueBot] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
+execute as @s[tag=distanceParticles] as @e[team=YellowBot] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
 
 #Remove splash tags for lobby players. Just a failsave.
 tag @a[team=!Blue,team=!Yellow] remove Winner

@@ -1,9 +1,3 @@
-#New Dawn arena preset
-scoreboard players set @s TopDeco 1
-scoreboard players set @s MiddleDeco 1
-scoreboard players set @s TopCorner 1
-scoreboard players set @s BottomDeco 1
-
 tag @s add rngNormal
 tag @s add rngLightning
 tag @s add rngUtil

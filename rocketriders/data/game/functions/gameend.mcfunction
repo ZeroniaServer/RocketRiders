@@ -4,6 +4,7 @@ tag @s[scores={endtimer=1}] remove GameStarted
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
 scoreboard players set @s[scores={endtimer=1}] gametime 0
+execute as @s[scores={endtimer=1..100}] run effect give @a night_vision 1000000 100 true
 execute as @s[scores={endtimer=1..80}] run worldborder warning distance 0
 execute as @s[scores={endtimer=1}] run tag @a remove SummonPlat
 execute as @s[scores={endtimer=1}] as @a run trigger LeaveMidgame set -1

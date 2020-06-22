@@ -1,6 +1,6 @@
 #Canopy forgets you if you die
-execute as @a[team=Yellow,scores={respawn=1..}] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL
-execute as @a[team=Blue,scores={respawn=1..}] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL run scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUIDL
+execute as @a[team=Yellow,scores={respawn=1..}] at @s if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
+execute as @a[team=Blue,scores={respawn=1..}] at @s if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID run scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
 
 #Canopy quick deploy when near the base of it's own team color
 execute as @e[tag=BluePlatform,scores={PlatTime=..57}] at @s if predicate custom:canopy_nearblue run scoreboard players add @s PlatTime 3

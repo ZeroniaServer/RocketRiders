@@ -7,7 +7,7 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selecti
 execute as @e[tag=Selection] run function game:gamestart
 execute as @e[tag=GameStarted] at @s run function game:ingame
 execute as @e[tag=Selection] run function everytick:regen_system
-execute if entity @e[tag=Selection,scores={setvision=1..}] run effect give @a night_vision 1000000 100 true
+effect give @a[team=Lobby] night_vision 1000000 100 true
 effect give @a saturation 1000000 0 true
 function lobby:bookwarp
 execute as @a[scores={displayinfo=1..}] run function lobby:displayinfo

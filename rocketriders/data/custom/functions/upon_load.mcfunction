@@ -1,0 +1,2 @@
+scoreboard objectives add daytime trigger
+scoreboard objectives remove setvision

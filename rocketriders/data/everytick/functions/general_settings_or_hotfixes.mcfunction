@@ -13,9 +13,11 @@ kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 #Handy tips for newcomers.
 function everytick:tip
 
-#proper MaxItemSec trigger
+#proper triggers
 execute as @a[team=!Lobby] run trigger MaxItemSec set 0
 execute as @s[tag=EditedSettings] as @a run trigger MaxItemSec set 0
+execute as @a[team=!Lobby] run trigger daytime set 0
+execute as @s[tag=EditedSettings] as @a run trigger daytime set 0
 
 #Launch from modification room
 execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true

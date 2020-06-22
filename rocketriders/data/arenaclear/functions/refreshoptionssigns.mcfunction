@@ -1,3 +1,4 @@
+##GAME OPTIONS
 #missile pierce prevention
 execute as @s[tag=doPrevention,tag=!settingsLocked] run setblock -70 193 79 warped_wall_sign[facing=east]
 execute as @s[tag=!doPrevention,tag=!settingsLocked] run setblock -70 193 79 crimson_wall_sign[facing=east]
@@ -18,3 +19,8 @@ execute as @s[tag=doTying,tag=!tyingOff,tag=!settingsLocked] run setblock -70 19
 execute as @s[tag=!doTying,tag=!tyingOff,tag=!settingsLocked] run setblock -70 193 77 crimson_wall_sign[facing=east]
 execute as @s[tag=tyingOff,tag=!settingsLocked] run setblock -70 193 77 crimson_wall_sign[facing=east]
 execute as @s[tag=settingsLocked] run setblock -70 193 77 crimson_wall_sign[facing=east]
+
+##WORLD OPTIONS
+#player credits
+execute as @s[tag=!noPlayerCredits] run setblock -69 191 73 warped_wall_sign[facing=east]
+execute as @s[tag=noPlayerCredits] run setblock -69 191 73 crimson_wall_sign[facing=east]

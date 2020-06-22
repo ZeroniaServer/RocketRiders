@@ -19,7 +19,7 @@ execute as @s[scores={endtimer=1..80}] as @a unless entity @s[team=!Blue,team=!Y
 execute as @s[scores={endtimer=1}] as @a run function everytick:score_reset
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Yellow] 12 64 66 180 0
-execute as @s[scores={endtimer=81..100}] run tag @s[tag=EditedSettings] remove EditedSettings
+execute as @s[scores={endtimer=1..100}] run tag @s[tag=EditedSettings] remove EditedSettings
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=bluejoinpad] add CancelJoin
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=specjoinpad] add CancelJoin

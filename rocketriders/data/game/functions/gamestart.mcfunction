@@ -33,6 +33,7 @@ execute as @s[tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
 #Hardcore compatibility
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
 execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinBlue] run kill @s
+execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinBlue] add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial
@@ -63,6 +64,7 @@ execute as @s[tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
 #Hardcore compatibility
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
 execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinYellow] run kill @s
+execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinYellow] add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial

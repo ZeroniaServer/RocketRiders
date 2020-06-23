@@ -108,6 +108,7 @@ execute as @s[tag=GameStarted] run scoreboard players operation @s origBCount = 
 execute as @s[tag=GameStarted] run scoreboard players operation @s origYCount = @s yellowsCount
 execute as @s[tag=GameStarted] run function lobby:credits/restart
 execute as @s[tag=GameStarted] run kill @e[type=arrow]
+execute as @s[tag=GameStarted] as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow
 scoreboard players set @s[tag=GameStarted] count 0
 tag @s[tag=GameStarted] remove bossbarOverride
 tag @s[tag=GameStarted] remove forceCountdown

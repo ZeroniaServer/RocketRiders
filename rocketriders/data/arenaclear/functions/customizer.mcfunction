@@ -376,5 +376,5 @@ execute as @s[tag=settingsLocked] run data merge block -67 192 82 {Text1:"{\"tex
 
 #refresh signs
 execute as @s[scores={refreshsigns=3..}] run function arenaclear:refreshsigns
-scoreboard players reset @s[scores={refreshsigns=3..}] refreshsigns
+scoreboard players set @s[scores={refreshsigns=3..}] refreshsigns 0
 scoreboard players add @s[scores={refreshsigns=1..}] refreshsigns 1

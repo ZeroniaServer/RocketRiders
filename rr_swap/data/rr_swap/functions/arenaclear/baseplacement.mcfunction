@@ -21,7 +21,7 @@ execute if score SwapSide swapside matches 1 run fill 38 34 62 -14 63 66 minecra
 
 #0 = darkyellow
 execute if score SwapSide swapside matches 0 run fill -14 34 -52 38 63 -56 minecraft:light_blue_stained_glass replace minecraft:blue_stained_glass
-execute if score SwapSide swapside matches 0 if entity @s[scores={TopCorner=2}] run fill -14 34 -51 38 63 -49 minecraft:light_blue_stained_glass replace minecraft:blue_stained_glass
+execute if score SwapSide swapside matches 0 if entity @s[scores={MiddleDeco=3}] run fill -14 34 -51 38 63 -49 minecraft:light_blue_stained_glass replace minecraft:blue_stained_glass
 execute if score SwapSide swapside matches 0 run fill 38 34 -61 -14 63 -57 minecraft:white_stained_glass replace minecraft:cyan_stained_glass
 execute if score SwapSide swapside matches 0 run fill -14 34 -62 38 63 -66 minecraft:white_concrete replace minecraft:white_stained_glass
 

@@ -18,6 +18,7 @@ execute as @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute as @s[scores={SDtime=1}] at @s run replaceitem entity @a armor.head air
 execute as @s[scores={SDtime=1}] at @s run clear @a firework_rocket
 execute as @s[scores={SDtime=1}] at @s run effect clear @a resistance
+execute as @s[scores={SDtime=1}] at @s run effect clear @a regeneration
 execute as @s[scores={SDtime=1}] at @s run effect give @a blindness 1 100 true
 execute as @s[scores={SDtime=4}] at @s run effect clear @a blindness
 execute as @s[scores={SDtime=1}] at @s run tag @s remove GameEnd

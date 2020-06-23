@@ -16,6 +16,7 @@ execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false
 execute as @s[scores={endtimer=1..80}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 20 100 true
+execute as @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
 execute as @s[scores={endtimer=1}] as @a run function everytick:score_reset
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Yellow] 12 64 66 180 0

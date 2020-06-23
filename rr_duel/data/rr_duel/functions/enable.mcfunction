@@ -7,6 +7,10 @@ tag @e[tag=Selection] add tyingOff
 tag @e[tag=Selection] add itemDelayOff
 tag @e[tag=Selection] add settingsLocked
 
+#Item giving time
+scoreboard players set @e[tag=Selection] MaxItemSec 15
+scoreboard players set @e[tag=Selection] MaxItemTime 300
+
 #Blank arena preset
 scoreboard players set @e[tag=Selection] TopDeco 0
 scoreboard players set @e[tag=Selection] MiddleDeco 0

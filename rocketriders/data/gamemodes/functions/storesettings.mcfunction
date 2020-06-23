@@ -9,3 +9,4 @@ scoreboard players operation $TORAGE BottomDeco = @s BottomDeco
 scoreboard players operation $TORAGE PortalDeco = @s PortalDeco
 
 scoreboard players operation $TORAGE MaxItemSec = @s MaxItemSec
+scoreboard players operation $TORAGE MaxItemTime = @s MaxItemTime

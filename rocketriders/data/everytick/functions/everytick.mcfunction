@@ -20,7 +20,7 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selecti
 execute as @a[team=Lobby] run function everytick:score_reset
 execute as @e[tag=GameEnd] run function game:gameend
 kill @e[tag=PlacerClear,tag=Cleared,tag=BasePlaced]
-execute as @e[tag=Selection] unless entity @s[tag=EditedSettings] run function arenaclear:customizer
+execute as @e[tag=Selection,tag=!GameEnd] unless entity @s[tag=EditedSettings] run function arenaclear:customizer
 
 #lobby credits
 execute unless entity @e[tag=Selection,tag=GameStarted] run function lobby:credits/cycle

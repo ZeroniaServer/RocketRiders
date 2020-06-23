@@ -3,23 +3,23 @@ scoreboard players add @s endtimer 1
 tag @s[scores={endtimer=1}] remove GameStarted
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
-scoreboard players set @s[scores={endtimer=1}] gametime 0
-execute as @s[scores={endtimer=1..100}] run effect give @a night_vision 1000000 100 true
+execute as @s[scores={endtimer=1}] run effect clear @a[team=Blue]
+execute as @s[scores={endtimer=1}] run effect clear @a[team=Yellow]
+execute as @s[scores={endtimer=1..}] run effect give @a night_vision 1000000 100 true
 execute as @s[scores={endtimer=1..80}] run worldborder warning distance 0
 execute as @s[scores={endtimer=1}] run tag @a remove SummonPlat
 execute as @s[scores={endtimer=1}] as @a run trigger LeaveMidgame set -1
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
-execute as @s[scores={endtimer=1}] run effect clear @a[team=Blue]
-execute as @s[scores={endtimer=1}] run effect clear @a[team=Yellow]
 execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false
 execute as @s[scores={endtimer=1..80}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 20 100 true
 execute as @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
-execute as @s[scores={endtimer=1}] as @a run function everytick:score_reset
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Yellow] 12 64 66 180 0
+execute as @s[scores={endtimer=81}] as @a run function everytick:score_reset
+scoreboard players set @s[scores={endtimer=81}] gametime 0
 execute as @s[scores={endtimer=1..100}] run tag @s[tag=EditedSettings] remove EditedSettings
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
 execute as @s[scores={endtimer=81..100}] run tag @e[tag=bluejoinpad] add CancelJoin

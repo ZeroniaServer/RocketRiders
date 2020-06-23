@@ -32,9 +32,6 @@ tag @s remove rngGemi
 tag @s remove rngJbuster
 tag @s remove rngRift
 
-#Item giving time
-scoreboard players set @s MaxItemSec 15
-
 #Disable modifiers
 function modifiers:disablemodifiers
 

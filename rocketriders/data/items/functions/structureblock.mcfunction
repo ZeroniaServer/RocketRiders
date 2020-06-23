@@ -9,7 +9,7 @@ execute if entity @s[tag=portalSpawn3] run data modify block ~ ~ ~ posZ set valu
 execute if entity @s[tag=BlueAux] run data merge block ~ ~ ~ {name:"auxiliary_blue"}
 execute if entity @s[tag=YellowAux] run data merge block ~ ~ ~ {name:"auxiliary_yellow"}
 
-#Tomatwo
+#TomaTwo
 execute if entity @s[tag=BlueToma] run data merge block ~ ~ ~ {name:"tomatwo_blue"}
 execute if entity @s[tag=YellowToma] run data merge block ~ ~ ~ {name:"tomatwo_yellow"}
 

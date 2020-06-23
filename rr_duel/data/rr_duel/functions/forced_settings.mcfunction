@@ -127,7 +127,7 @@ execute if entity @e[tag=SelRRNG,tag=Nullifier] run tag @s remove rngNull
 execute if entity @e[tag=SelRRNG,tag=Citadel] run tag @s remove rngCitadel
 execute if entity @e[tag=SelRRNG,tag=Warhead] run tag @s remove rngWar
 
-execute if entity @e[tag=Selection,tag=rngToma] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Tomatwo","color":"green","bold":"false"}]
+execute if entity @e[tag=Selection,tag=rngToma] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- TomaTwo","color":"green","bold":"false"}]
 execute if entity @e[tag=Selection,tag=rngBlade] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Blade","color":"green","bold":"false"}]
 execute if entity @e[tag=Selection,tag=rngCata] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Catapult","color":"green","bold":"false"}]
 execute if entity @e[tag=Selection,tag=rngSlash] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Slasher","color":"green","bold":"false"}]

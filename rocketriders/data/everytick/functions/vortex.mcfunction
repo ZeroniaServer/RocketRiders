@@ -1,6 +1,6 @@
 #VortexTag
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..2,tag=!YellowVortex,tag=!BlueVortex] add YellowVortex
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..2,tag=!YellowVortex,tag=!BlueVortex] add BlueVortex
+execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..3,tag=!YellowVortex,tag=!BlueVortex] add YellowVortex
+execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..3,tag=!YellowVortex,tag=!BlueVortex] add BlueVortex
 scoreboard players reset @a ThrowVortex
 
 #Vortex

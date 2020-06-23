@@ -88,7 +88,7 @@ execute as @e[scores={PlatTime=58}] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leave
 execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data get entity @s Owner[0]
 
 #yellow canopy
-execute as @a[team=Yellow,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..2,tag=!BluePlat,tag=!YellowPlat] add YellowPlat
+execute as @a[team=Yellow,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..3,tag=!BluePlat,tag=!YellowPlat] add YellowPlat
 execute as @e[tag=YellowPlat] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=YellowPlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=YellowPlat] at @s run scoreboard players add @s testplat 1
@@ -117,7 +117,7 @@ execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUID
 
 #blue canopy
-execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..2,tag=!BluePlat,tag=!YellowPlat] add BluePlat
+execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..3,tag=!BluePlat,tag=!YellowPlat] add BluePlat
 execute as @e[tag=BluePlat] at @s run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=BluePlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=BluePlat] at @s run scoreboard players add @s testplat2 1

@@ -3,7 +3,7 @@
     "predicate": {
         "position": {
             "z": {
-                "min": 40,
+                "min": 30,
                 "max": 85
             }
         }

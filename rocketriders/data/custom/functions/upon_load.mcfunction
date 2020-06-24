@@ -1,5 +1,5 @@
 setblock -57 191 76 air
-setblock -57 191 78 air
+setblock -57 191 78 polished_blackstone_brick_slab[type=bottom]
 setblock -57 191 80 air
 setblock -56 191 76 barrier
 setblock -56 191 78 barrier

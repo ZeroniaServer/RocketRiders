@@ -1,3 +1,5 @@
+##Detail placement for Blue specifically
+
 #New Dawn - Blue
 execute as @s[scores={MiddleDeco=1}] run setblock 24 49 -55 structure_block{mode:"LOAD",name:"blue_cornerhole"}
 execute as @s[scores={MiddleDeco=1}] run setblock -8 49 -55 structure_block{mode:"LOAD",name:"blue_cornerhole"}
@@ -24,7 +26,7 @@ execute as @s[scores={TopDeco=2}] run setblock 24 64 -61 structure_block{mode:"L
 execute as @s[scores={TopDeco=2}] run setblock -6 65 -61 redstone_block
 execute as @s[scores={TopDeco=2}] run setblock 24 65 -61 redstone_block
 
-#Spikes preset - Blue
+#Spikes - Blue
 execute as @s[scores={TopDeco=3}] run setblock -2 64 -66 structure_block{mode:"LOAD",name:"blue_spiketop"}
 execute as @s[scores={TopDeco=3}] run setblock -2 65 -66 redstone_block
 execute as @s[scores={MiddleDeco=2}] run setblock 7 50 -51 structure_block{mode:"LOAD",name:"blue_spikemid_right"}

@@ -1,3 +1,4 @@
+##Enables all item categories
 tag @s add rngNormal
 function arenaclear:enablenormal
 tag @s add rngLightning

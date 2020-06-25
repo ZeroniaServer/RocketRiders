@@ -1,3 +1,5 @@
+##Notifies players that settings are being repeated for a certain game
+
 #temporarily adds score to show what it was before
 scoreboard players add @e[tag=Selection] RepeatSettings 1
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]

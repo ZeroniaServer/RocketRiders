@@ -1,3 +1,5 @@
+##Prints info about the selected Modifier
+
 execute if entity @e[tag=Selection,scores={modifierID=0}] run tellraw @s [{"text":"Instamine:","color":"aqua","bold":"true"},{"text":" Players receive Haste 255 and can mine (most) blocks instantly.","color":"white","bold":"false","italic":"true"}]
 execute if entity @e[tag=Selection,scores={modifierID=1}] run tellraw @s [{"text":"No Fall:","color":"aqua","bold":"true"},{"text":" Players are immune to fall damage.","color":"white","bold":"false","italic":"true"}]
 execute if entity @e[tag=Selection,scores={modifierID=2}] run tellraw @s [{"text":"Explosive:","color":"aqua","bold":"true"},{"text":" TNT, Fireballs, Nova Rockets, and the Vortex all do more explosion damage.","color":"white","bold":"false","italic":"true"}]

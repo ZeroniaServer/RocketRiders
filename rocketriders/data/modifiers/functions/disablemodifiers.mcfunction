@@ -1,3 +1,5 @@
+##Disables all Modifiers
+
 tag @s remove Instamine
 tag @s remove NoFall
 tag @s remove Explosive

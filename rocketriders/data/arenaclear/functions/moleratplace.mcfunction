@@ -1,4 +1,6 @@
-##MIDDLE
+##Places gray glass from the Molerat modifier
+
+#MIDDLE
 fill -21 26 30 -10 0 -30 light_gray_stained_glass replace air
 fill -9 26 30 1 0 -30 light_gray_stained_glass replace air
 fill 2 26 30 12 0 -30 light_gray_stained_glass replace air
@@ -34,7 +36,7 @@ fill 13 174 30 23 159 -30 light_gray_stained_glass replace air
 fill 24 174 30 34 159 -30 light_gray_stained_glass replace air
 fill 35 174 30 45 159 -30 light_gray_stained_glass replace air
 
-##WEST
+#WEST
 fill -86 26 30 -75 0 -30 light_gray_stained_glass replace air
 fill -74 26 30 -64 0 -30 light_gray_stained_glass replace air
 fill -63 26 30 -53 0 -30 light_gray_stained_glass replace air
@@ -70,7 +72,7 @@ fill -52 174 30 -42 159 -30 light_gray_stained_glass replace air
 fill -41 174 30 -31 159 -30 light_gray_stained_glass replace air
 fill -30 174 30 -20 159 -30 light_gray_stained_glass replace air
 
-##WEST2
+#WEST2
 fill -151 26 30 -140 0 -30 light_gray_stained_glass replace air
 fill -139 26 30 -129 0 -30 light_gray_stained_glass replace air
 fill -128 26 30 -118 0 -30 light_gray_stained_glass replace air
@@ -106,7 +108,7 @@ fill -117 174 30 -107 159 -30 light_gray_stained_glass replace air
 fill -106 174 30 -96 159 -30 light_gray_stained_glass replace air
 fill -95 174 30 -85 159 -30 light_gray_stained_glass replace air
 
-##EAST
+#EAST
 fill 44 26 30 55 0 -30 light_gray_stained_glass replace air
 fill 56 26 30 66 0 -30 light_gray_stained_glass replace air
 fill 67 26 30 77 0 -30 light_gray_stained_glass replace air
@@ -142,7 +144,7 @@ fill 78 174 30 88 159 -30 light_gray_stained_glass replace air
 fill 89 174 30 99 159 -30 light_gray_stained_glass replace air
 fill 100 174 30 110 159 -30 light_gray_stained_glass replace air
 
-##EAST2
+#EAST2
 fill 109 26 30 120 0 -30 light_gray_stained_glass replace air
 fill 121 26 30 131 0 -30 light_gray_stained_glass replace air
 fill 132 26 30 142 0 -30 light_gray_stained_glass replace air

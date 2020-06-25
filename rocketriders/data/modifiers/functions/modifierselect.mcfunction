@@ -1,3 +1,8 @@
+#############################################
+## MODIFIERSELECT: The selection interface ##
+## for Modifiers in the Modification Room  ##
+#############################################
+
 #Instamine
 execute as @s[scores={modifierID=0}] run data merge block -69 192 75 {Text1: "{\"text\":\"Modifier:\",\"color\":\"dark_blue\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] modifierID 1\"}}",Text2: "{\"text\":\"Instamine\",\"color\":\"aqua\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshmodifiersign\"}}",Text4: "{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @s add modifierInfo\"}}"}
 execute as @s[scores={modifierID=0},tag=Instamine,tag=!settingsLocked] run data merge block -69 191 75 {Text1: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tag @e[tag=Selection] remove Instamine\"}}",Text2: "{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3: "{\"text\":\"\"}",Text4: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshmodifiersign\"}}"}

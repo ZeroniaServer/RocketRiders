@@ -1,3 +1,5 @@
+##Refreshes signs for individual items/categories (placing warped/crimson signs)
+
 ##NORMAL MISSILES
 #Normal Category
 execute if entity @s[tag=rngNormal,tag=!settingsLocked] run setblock -69 193 83 warped_wall_sign[facing=east]

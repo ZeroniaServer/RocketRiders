@@ -1,2 +1,3 @@
+##Notify player about playing a game
 tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"Tutorial","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Spawn eggs will spawn missiles; spawn them and jump on the missiles to ride them to the enemy base and destroy their portals! Missiles have different categories such as Normal, Heavy and Lightning. Make sure you learn how to defuse missiles by watching what TNT and slime blocks can be broken without stopping the missile. Good luck!","color":"gray"}]
 execute as @s at @s run playsound minecraft:block.note_block.iron_xylophone player @s ~ ~ ~ 0.5 2

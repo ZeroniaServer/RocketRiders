@@ -1,5 +1,6 @@
-#restore previous settings
-#ONLY RUN WHILE CUSTOMIZER IS OPEN!!!
+##Utility function for restoring previous settings
+##ONLY RUN WHILE CUSTOMIZER IS OPEN!!!
+
 data modify entity @s Tags set from storage rocketriders:storage Tags
 data modify storage rocketriders:storage Tags set value []
 

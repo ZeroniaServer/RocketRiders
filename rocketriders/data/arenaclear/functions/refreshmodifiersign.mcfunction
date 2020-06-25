@@ -1,4 +1,5 @@
-##GAME MODIFIERS
+##Refreshes signs for individual Game Modifiers (warped/crimson)
+
 #Instamine
 execute as @s[scores={modifierID=0},tag=Instamine,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
 execute as @s[scores={modifierID=0},tag=!Instamine,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]

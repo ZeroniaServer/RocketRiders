@@ -1,4 +1,4 @@
-#binary search algorithm to subtract daytime
+##Binary search algorithm to add/subtract daytime
 execute if entity @s[scores={daytime=16384..}] run time add 16384
 execute if entity @s[scores={daytime=16384..}] run scoreboard players remove @s daytime 16384
 

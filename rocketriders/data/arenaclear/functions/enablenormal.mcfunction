@@ -1,3 +1,4 @@
+##Enables all Normal missiles
 tag @s add rngToma
 tag @s add rngBlade
 tag @s add rngAnt

@@ -1,3 +1,8 @@
+#########################################
+## DETAIL PLACEMENT: The core function ##
+## for placing selected Base Details   ##
+#########################################
+
 #Runs individual detail placement functions depending on initial tags
 execute as @s[tag=!Hardcore,tag=!noDetailBlue] run function arenaclear:detailplacementblue
 execute as @s[tag=!Hardcore,tag=!noDetailYellow] run function arenaclear:detailplacementyellow

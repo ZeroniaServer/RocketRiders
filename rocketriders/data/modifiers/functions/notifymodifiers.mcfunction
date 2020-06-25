@@ -1,4 +1,6 @@
-#Active modifiers
+##Notifies all players of active Modifiers
+##Called upon arena clear
+
 tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":"  "}]
 tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Modifiers:","color":"gray"}]
 execute if entity @e[tag=Selection,tag=!Instamine,tag=!NoFall,tag=!Explosive,tag=!Residers,tag=!Sonar,tag=!Molerat,tag=!Minute,tag=!SurpriseEgg,tag=!WindDown,tag=!SplashStreams,tag=!SpamClick,tag=!NinjaJump,tag=!Hardcore] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" None ","color":"aqua"}]

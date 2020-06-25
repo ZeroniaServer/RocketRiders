@@ -1,3 +1,5 @@
+##Detail placement for Yellow specifically
+
 #New Dawn - Yellow
 execute as @s[scores={MiddleDeco=1}] run setblock 24 49 47 structure_block{mode:"LOAD",name:"yellow_cornerhole"}
 execute as @s[scores={MiddleDeco=1}] run setblock -8 49 47 structure_block{mode:"LOAD",name:"yellow_cornerhole"}
@@ -24,7 +26,7 @@ execute as @s[scores={TopDeco=2}] run setblock -6 64 55 structure_block{mode:"LO
 execute as @s[scores={TopDeco=2}] run setblock 24 65 55 redstone_block
 execute as @s[scores={TopDeco=2}] run setblock -6 65 55 redstone_block
 
-#Spikes preset - Yellow
+#Spikes - Yellow
 execute as @s[scores={TopDeco=3}] run setblock -2 64 48 structure_block{mode:"LOAD",name:"yellow_spiketop"}
 execute as @s[scores={TopDeco=3}] run setblock -2 65 48 redstone_block
 execute as @s[scores={MiddleDeco=2}] run setblock -14 50 29 structure_block{mode:"LOAD",name:"yellow_spikemid_right"}

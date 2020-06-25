@@ -1,4 +1,6 @@
-#leavegame
+##Handles players who leave/rejoin the game
+
+#Clearing effects/tags and teleporting to lobby
 effect clear @a[scores={LeaveGame=1..}]
 team join Lobby @a[scores={LeaveGame=1..}]
 gamemode adventure @a[scores={LeaveGame=1..}]
@@ -21,4 +23,5 @@ execute as @s[tag=GameStarted,tag=Hardcore] as @a[scores={LeaveGame=1..}] run ki
 execute as @s[tag=GameStarted,tag=Hardcore] as @a[scores={LeaveGame=1..}] run tag @s add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 
+#Resetting score
 scoreboard players reset @a[scores={LeaveGame=1..}] LeaveGame

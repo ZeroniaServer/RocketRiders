@@ -1,4 +1,5 @@
-#hotfix for losing sabers + to prevent players from combining duplicated sabers to get an unenchanted saber
+##Utility function to make sure all players have Shooting Sabers
+
 execute as @a store result score @s HasSaber run clear @s bow 0
 
 tag @a[team=Blue,scores={HasSaber=0}] add saberlessBlue

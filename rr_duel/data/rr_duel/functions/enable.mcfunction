@@ -17,3 +17,4 @@ scoreboard players set @e[tag=Selection] MiddleDeco 0
 scoreboard players set @e[tag=Selection] TopCorner 0
 scoreboard players set @e[tag=Selection] BottomDeco 0
 scoreboard players set @e[tag=Selection] PortalDeco 0
+execute as @e[tag=Selection] run function arenaclear:refreshcustomizer

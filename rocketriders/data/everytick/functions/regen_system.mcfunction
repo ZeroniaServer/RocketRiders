@@ -1,4 +1,5 @@
-#regen timer
+##Regeneration timer - regenerates health at a customized rate
+
 scoreboard players add @s[scores={regenTimer=0..59}] regenTimer 1
 execute as @s[scores={regenTimer=10}] run gamerule naturalRegeneration true
 execute as @s[scores={regenTimer=20}] run gamerule naturalRegeneration false

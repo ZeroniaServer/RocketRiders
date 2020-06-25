@@ -1,16 +1,25 @@
-#blue obsidian shield
+#####################################################
+## OBSIDIAN SHIELD: A shield made out of obsidian ##
+## Spawns from a Dragon Fireball and breaks when  ##
+## the central glass pane is broken three times   ##
+#####################################################
+
+##Blue Obsidian Shield functionality
+#Spawning in Fireball entities
 execute as @e[tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}
 execute as @e[tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}
+
+#Detecting motion
 tag @e[type=fireball,tag=blueobfireball,nbt={Motion:[0.0,0.0,0.0]},tag=!StillOb] add StillOb
 execute as @e[type=fireball,tag=blueobfireball,tag=!StillOb,tag=NoMotionD] at @s run kill @e[tag=ObFireballAS,distance=..2,limit=2,sort=nearest]
 execute as @e[type=fireball,tag=blueobfireball,tag=!StillOb,tag=NoMotionD] at @s run tag @s remove NoMotionD
-
 scoreboard players set @e[type=fireball,tag=blueobfireball] obmove 1
 scoreboard players set @e[type=fireball,tag=blueobfireball,nbt={power:[0.0,0.0,0.0]}] obmove 0
 scoreboard players add @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] obshieldtime 1
 scoreboard players add @e[type=dragon_fireball,tag=blueobfireball] obshieldtime 0
+tag @e[tag=blueobfireball,tag=StillOb] remove StillOb
 
-#storing movement data
+#Transferring movement data from Fireball to Dragon Fireball
 execute as @e[type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] Motion[0] double 0.000001 run data get entity @s Motion[0] 1000000
 execute as @e[type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] Motion[1] double 0.000001 run data get entity @s Motion[1] 1000000
 execute as @e[type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] Motion[2] double 0.000001 run data get entity @s Motion[2] 1000000
@@ -25,10 +34,11 @@ execute as @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1}] a
 execute as @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=armor_stand,tag=blueobtracker,distance=..2,limit=1,sort=nearest] @s
 tag @e[type=armor_stand,tag=blueobtracker] add blueobalone
 execute as @e[type=armor_stand,tag=blueobtracker,tag=blueobalone] at @s if entity @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove blueobalone
-#next 2 commands disable blue obsidian shields inside of portals
+#Next 2 commands disable Blue Obsidian Shields inside of portals
 execute as @e[type=armor_stand,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute as @e[type=armor_stand,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
 
+#Deploy animation/effects
 scoreboard players add @e[tag=blueobalone] shieldplacement 1
 execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
 execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
@@ -50,21 +60,22 @@ kill @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5..}]
 tp @e[tag=BlueObshield] ~ ~-250 ~
 kill @e[tag=BlueObshield]
 
-#yellow obsidian shield
+##Yellow Obsidian Shield functionality
+#Spawning in Fireball entities
 execute as @e[tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
 execute as @e[tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
+
+#Detecting motion
 tag @e[type=fireball,tag=yellowobfireball,nbt={Motion:[0.0,0.0,0.0]},tag=!StillOb] add StillOb
 execute as @e[type=fireball,tag=yellowobfireball,tag=!StillOb,tag=NoMotionD] at @s run kill @e[tag=ObFireballAS,distance=..2,limit=2,sort=nearest]
 execute as @e[type=fireball,tag=yellowobfireball,tag=!StillOb,tag=NoMotionD] at @s run tag @s remove NoMotionD
-
 scoreboard players set @e[type=fireball,tag=yellowobfireball] obmove 1
 scoreboard players set @e[type=fireball,tag=yellowobfireball,nbt={power:[0.0,0.0,0.0]}] obmove 0
 scoreboard players add @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] obshieldtime 1
 scoreboard players add @e[type=dragon_fireball,tag=yellowobfireball] obshieldtime 0
+tag @e[tag=yellowobfireball,tag=StillOb] remove StillOb
 
-tag @e[tag=StillOb] remove StillOb
-
-#storing movement data
+#Storing movement data
 execute as @e[type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] Motion[0] double 0.000001 run data get entity @s Motion[0] 1000000
 execute as @e[type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] Motion[1] double 0.000001 run data get entity @s Motion[1] 1000000
 execute as @e[type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] Motion[2] double 0.000001 run data get entity @s Motion[2] 1000000
@@ -79,10 +90,11 @@ execute as @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..
 execute as @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=armor_stand,tag=yellowobtracker,distance=..2,limit=1,sort=nearest] @s
 tag @e[type=armor_stand,tag=yellowobtracker] add yellowobalone
 execute as @e[type=armor_stand,tag=yellowobtracker,tag=yellowobalone] at @s if entity @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove yellowobalone
-#next 2 commands disable yellow obsidian shields inside of portals
+#Next 2 commands disable Yellow Obsidian Shields inside of portals
 execute as @e[type=armor_stand,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute as @e[type=armor_stand,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
 
+#Deploy animation/sounds
 scoreboard players add @e[tag=yellowobalone] shieldplacement 1
 execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
 execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
@@ -104,16 +116,17 @@ kill @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5..}]
 tp @e[tag=YellowObshield] ~ ~-250 ~
 kill @e[tag=YellowObshield]
 
-#thanks @Maxaxik for this fix!!! makes animations smoother
+##General Obsidian Shield functionality
+#Thanks @Maxaxik for this fix!!! Makes animations smoother
 scoreboard players add obShield obshieldTick 1
 execute if score obShield obshieldTick matches 1 as @e[type=dragon_fireball] run data merge entity @s {Air:0}
 execute if score obShield obshieldTick matches 2 as @e[type=dragon_fireball] run data merge entity @s {Air:1}
 execute if score obShield obshieldTick matches 2 run scoreboard players set obShield obshieldTick 0
 
-#remove dragon breath
+#Remove dragon breath
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 
-#new obsidian shield break
+#Obsidian Shield Break
 execute as @e[tag=blueobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1
 execute as @e[tag=yellowobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1
 execute as @e[scores={breakobshield=1}] at @s run playsound block.respawn_anchor.deplete player @a ~ ~ ~ 2 1
@@ -130,12 +143,12 @@ execute as @e[scores={breakobshield=5}] at @s run playsound block.respawn_anchor
 execute as @e[scores={breakobshield=5..}] run scoreboard players add @s breakobshield 1
 execute as @e[scores={breakobshield=20}] at @s run function everytick:obsidian_shield_break
 
-#hotfix for replacing obsidian spawned by adjacent obsidian shield
+#Hotfix for replacing obsidian spawned by adjacent Obsidian Shield
 execute as @e[tag=blueobsidianshield,scores={breakobshield=..0}] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ purple_stained_glass_pane[west=true,east=true]
 execute as @e[tag=yellowobsidianshield,scores={breakobshield=..0}] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ purple_stained_glass_pane[west=true,east=true]
 execute as @e[scores={breakobshield=2}] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ magenta_stained_glass_pane[west=true,east=true]
 execute as @e[scores={breakobshield=4}] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ pink_stained_glass_pane[west=true,east=true]
 
-#hotfix for obsidian shields to break duped stained glass
+#Obsidian Shields break duped glass panes
 execute as @e[scores={breakobshield=0..}] at @s positioned ~ ~ ~-1 if block ~ ~ ~ #custom:obshieldreplace unless entity @e[scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5] run setblock ~ ~ ~ air destroy
 execute as @e[scores={breakobshield=0..}] at @s positioned ~ ~ ~1 if block ~ ~ ~ #custom:obshieldreplace unless entity @e[scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5] run setblock ~ ~ ~ air destroy

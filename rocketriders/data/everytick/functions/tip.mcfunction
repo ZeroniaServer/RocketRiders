@@ -1,7 +1,12 @@
+#################################################
+## TIP: Gives newer players useful information ##
+#################################################
+
+#Timer for tips (only active when game is ongoing)
 scoreboard players add @e[tag=Selection,tag=GameStarted] ShowTip 1
 scoreboard players reset @e[tag=Selection,tag=!GameStarted] ShowTip
 
-
+#Chooses a random tip (12 possible)
 execute as @e[tag=Selection,tag=!Tip1,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip1"]}
 execute as @e[tag=Selection,tag=!Tip2,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip2"]}
 execute as @e[tag=Selection,tag=!Tip3,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip3"]}
@@ -14,10 +19,9 @@ execute as @e[tag=Selection,tag=!Tip9,scores={ShowTip=900}] run summon area_effe
 execute as @e[tag=Selection,tag=!Tip10,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip10"]}
 execute as @e[tag=Selection,tag=!Tip11,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip11"]}
 execute as @e[tag=Selection,tag=!Tip12,scores={ShowTip=900}] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip12"]}
-
 tag @e[tag=HandyTip,limit=1,sort=random] add SelectedTip
 
-
+#Announces selected tip to newer players
 execute as @e[tag=SelectedTip,tag=Tip1] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Defusing missiles by breaking slime blocks and TNT is recommended. Try to learn it for all missiles!","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip1] run tag @e[tag=Selection] add Tip1
 
@@ -54,12 +58,12 @@ execute as @e[tag=SelectedTip,tag=Tip11] run tag @e[tag=Selection] add Tip11
 execute as @e[tag=SelectedTip,tag=Tip12] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Lightning category missiles are way faster than regular missiles.","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip12] run tag @e[tag=Selection] add Tip12
 
+#Kills all tip AECs and resets timer
 kill @e[tag=HandyTip]
 scoreboard players reset @e[tag=Selection,scores={ShowTip=900..}] ShowTip
 
-
+#Tetris resetting (makes sure all tips are individually given before they're repeated)
 tag @e[tag=Selection,tag=Tip1,tag=Tip2,tag=Tip3,tag=Tip4,tag=Tip5,tag=Tip6,tag=Tip7,tag=Tip8,tag=Tip9,tag=Tip10,tag=Tip11,tag=Tip12] add GivenAllTips
-
 tag @e[tag=GivenAllTips] remove Tip1
 tag @e[tag=GivenAllTips] remove Tip2
 tag @e[tag=GivenAllTips] remove Tip3

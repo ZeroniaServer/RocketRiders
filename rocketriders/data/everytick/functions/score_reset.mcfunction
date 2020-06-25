@@ -1,4 +1,5 @@
-#set scores to 0
+##Set missile spawning and other statistic scores to 0
+
 scoreboard players set @s jumps 0
 scoreboard players set @s AuxSpawned 0
 scoreboard players set @s AntsSpawned 0

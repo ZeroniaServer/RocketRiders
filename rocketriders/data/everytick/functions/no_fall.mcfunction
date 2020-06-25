@@ -1,4 +1,5 @@
-#lobby players no fall damage (credit: PingiPuck)
+##Utility function to prevent lobby players from taking fall damage (credit: PingiPuck)
+
 scoreboard players add @a LeaveGame 0
 tag @a[scores={LeaveGame=0},nbt={FallDistance:0.0f}] add NotFalling
 scoreboard players set @a[tag=NotFalling] Falling 0

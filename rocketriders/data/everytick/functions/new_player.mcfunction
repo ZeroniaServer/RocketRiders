@@ -1,4 +1,4 @@
-#welcome/handle new players - anyone with a firstJoined score of 0 is a new player
+##Welcome/handle new players (anyone with a firstJoined score of 0 is a new player)
 scoreboard players add @a firstJoined 0
 scoreboard players set @a[scores={firstJoined=0}] LeaveGame 1
 title @a[scores={firstJoined=0}] title [{"text":"Welcome to","color":"white","bold":"true"}]

@@ -1,3 +1,5 @@
+##Missile Display for Warhead
+
 data merge entity @e[tag=NameDisp,limit=1] {CustomName:'{"text":"Warhead","color":"red","bold":"true"}'}
 data merge entity @e[tag=TNTDisp,limit=1] {CustomName:'["",{"text":"TNT Count: ","color":"dark_green","bold":"true"},{"text":"25","color":"white"}]'}
 data merge entity @e[tag=SpeedDisp,limit=1] {CustomName:'["",{"text":"Speed: ","color":"dark_green","bold":"true"},{"text":"1.7m/s","color":"white"}]'}

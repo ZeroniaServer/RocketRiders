@@ -1,3 +1,4 @@
+##Runs at the end of the game to reset any ingame statistics for achievements
 scoreboard players reset @a jumping
 scoreboard players reset @a timeSinceJump
 scoreboard players reset @a PlayerDeaths

@@ -1,7 +1,10 @@
-#set page back to 2 if someone tries to use the arrow to cycle through pages.
+#############################################
+## PLACEDISP: How the Missile Display Area ##
+## operates based on the page of a lectern ##
+#############################################
+
+#Set page back to 2 if someone tries to use the arrow to cycle through pages
 execute if block 12 203 78 minecraft:lectern{Page:2} run data merge block 12 203 78 {Page:1}
-
-
 
 #Display missiles
 execute if block 12 203 78 minecraft:lectern{Page:3} run function lobby:missiledisplay/missile/tomatwo

@@ -1,3 +1,5 @@
+##Displays info about certain utilities/missiles scattered around the lobby
+
 #Obsidian Shield
 tellraw @s[scores={displayinfo=1}] [{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"Obsidian Shield","color":"white"}]
 tellraw @s[scores={displayinfo=1}] {"text":"A shield made out of obsidian. Stops all missiles. Break the central glass 3 times to destroy it.","color":"gray","italic":"true"}

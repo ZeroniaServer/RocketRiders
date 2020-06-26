@@ -1,3 +1,5 @@
+##Missile Display for Lifter
+
 data merge entity @e[tag=NameDisp,limit=1] {CustomName:'{"text":"Lifter","color":"green","bold":"true"}'}
 data merge entity @e[tag=TNTDisp,limit=1] {CustomName:'["",{"text":"TNT Count: ","color":"dark_green","bold":"true"},{"text":"8","color":"white"}]'}
 data merge entity @e[tag=SpeedDisp,limit=1] {CustomName:'["",{"text":"Speed: ","color":"dark_green","bold":"true"},{"text":"2.0m/s","color":"white"}]'}

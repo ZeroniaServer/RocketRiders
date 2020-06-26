@@ -1,3 +1,6 @@
+##Performs a recursive scan through the entire Yellow base for any air blocks
+##Necessary for the Deus Ex Machina achievement
+
 execute if score @s Machina matches ..14 at @s if block ~ ~ ~ air run scoreboard players add @s Machina 1
 execute if score @s Machina matches ..14 at @s if block ~ ~ ~ air run tp @s ~ ~ ~-1
 

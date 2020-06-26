@@ -1,6 +1,13 @@
+##################################################################
+## CYCLE: How each Credits armor stand is displayed in sequence ##
+##################################################################
+
+##Playtesters
 scoreboard players add @e[tag=SelectedCredit] CreditCycle 1
 
+#Position/posing/effects for selected Credits armor stand
 execute as @e[tag=SelectedCredit,scores={CreditCycle=1}] at @s run tp @s ~-2 ~2 ~
+#Poses are randomized
 execute as @e[tag=SelectedCredit,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["LobbyPoseRNG","Pose1"]}
 execute as @e[tag=SelectedCredit,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["LobbyPoseRNG","Pose2"]}
 execute as @e[tag=SelectedCredit,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["LobbyPoseRNG","Pose3"]}
@@ -12,10 +19,12 @@ execute as @e[tag=SelectedCredit] if entity @e[tag=SelLPRNG,tag=Pose2] run funct
 execute as @e[tag=SelectedCredit] if entity @e[tag=SelLPRNG,tag=Pose3] run function lobby:credits/pose3
 execute as @e[tag=SelectedCredit] if entity @e[tag=SelLPRNG,tag=Pose4] run function lobby:credits/pose4
 kill @e[tag=LobbyPoseRNG]
+execute as @e[tag=SelectedCredit] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
 
+#Displays name
 function lobby:credits/names
 
-execute as @e[tag=SelectedCredit] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
+#Selecting an adjacent Credits armor stand
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..}] at @s run tp @s ~2 ~-2 ~
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..}] run tag @s add OldSelectedCredit
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..}] at @s run tag @e[tag=creditsAS,tag=!BuilderCreditsAS,tag=!devCreditsAS,tag=!OldSelectedCredit,tag=!SelectedCredit,limit=1,sort=nearest] add SelectedCredit
@@ -23,11 +32,15 @@ execute as @e[tag=SelectedCredit,scores={CreditCycle=60..}] run function lobby:c
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..}] run tag @s remove SelectedCredit
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..}] run scoreboard players reset @s CreditCycle
 
+#Resetting cycle
 execute as @e[tag=OldSelectedCredit] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit] run scoreboard players reset @e[tag=creditsAS] CreditCycle
 execute as @e[tag=OldSelectedCredit] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit] run tag @e[tag=CalverinCredits] add SelectedCredit
 execute as @e[tag=OldSelectedCredit] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit] run tag @e[tag=OldSelectedCredit] remove OldSelectedCredit
 
+##Developers
 scoreboard players add @e[tag=SelectedDev] CreditCycle 1
+
+#Position/posing/effects
 execute as @e[tag=SelectedDev,scores={CreditCycle=1}] at @s run tp @s -51 215 78
 execute as @e[tag=SelectedDev,scores={CreditCycle=2..79}] at @s run tp @s ~ ~ ~ ~5 ~
 execute as @e[tag=SelectedDev] at @s run particle dust 1 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
@@ -41,6 +54,7 @@ execute as @e[tag=SelectedDev,scores={CreditCycle=80..}] run tag @e[tag=devcycle
 execute as @e[tag=SelectedDev,scores={CreditCycle=80..}] run tag @s remove SelectedDev
 scoreboard players reset @e[tag=OldDevSel] CreditCycle
 
+#Resetting cycle
 execute as @e[tag=OldDevSel] unless entity @e[tag=devcycle,tag=!OldDevSel] run scoreboard players reset @e[tag=devcycle] CreditCycle
 execute as @e[tag=OldDevSel] unless entity @e[tag=devcycle,tag=!OldDevSel] run tag @e[tag=EvtemaCredits] add SelectedDev
 execute as @e[tag=OldDevSel] unless entity @e[tag=devcycle,tag=!OldDevSel] run tag @e[tag=OldDevSel] remove OldDevSel

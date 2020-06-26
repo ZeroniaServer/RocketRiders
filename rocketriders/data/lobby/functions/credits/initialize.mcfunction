@@ -1,3 +1,8 @@
+###############################################################
+## INITIALIZE: Resets the entire set of Credits armor stands ##
+## Operator command used for mass changes to player credits  ##
+###############################################################
+
 kill @e[tag=creditsAS]
 
 #Developers

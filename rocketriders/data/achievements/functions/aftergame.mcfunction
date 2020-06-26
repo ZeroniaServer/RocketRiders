@@ -1,3 +1,4 @@
+##Any achievements to be given after a game ends
 #Immortal
 execute as @a[scores={deaths=..0}] unless entity @s[team=!Blue,team=!Yellow] run advancement grant @s only achievements:rr_challenges/immortal
 

@@ -1,3 +1,8 @@
+##########################################
+## BOOKWARP: Allows players to navigate ##
+## the lobby with their Navigation Book ##
+##########################################
+
 #Enable trigger
 scoreboard players enable @a[team=Lobby] LobbyWarp
 execute as @a[team=!Lobby] run trigger LobbyWarp set -1

@@ -1,3 +1,6 @@
+##Resets player's progress for the Veteran achievement
+##Called upon achievement resets or earning the Veteran achievement
+
 tag @s remove AuxSpawned
 tag @s remove AntsSpawned
 tag @s remove BladeSpawned

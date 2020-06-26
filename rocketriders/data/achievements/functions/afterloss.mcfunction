@@ -1,3 +1,6 @@
+##Any achievements depending on who wins/loses
+##The execution of this function is delayed for the Tie/Sudden Death window.
+
 #| || || |_
 scoreboard players add @a[tag=Winner] WinStreak 1
 execute as @a[scores={WinStreak=10..},tag=Loser] run advancement grant @s only achievements:rr_challenges/loss

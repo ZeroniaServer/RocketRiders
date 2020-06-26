@@ -1,3 +1,6 @@
+##Veteran achievement
+##Checks for a player using every missile/utility in the game
+
 #Missiles
 execute as @a[tag=!CompletedVeteran] if score @s AuxSpawned matches 1.. run tag @s add AuxSpawned
 execute as @a[tag=!CompletedVeteran] if score @s AntsSpawned matches 1.. run tag @s add AntsSpawned

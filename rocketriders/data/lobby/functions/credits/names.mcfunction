@@ -1,3 +1,6 @@
+##Summons nametags for each Credits armor stand displaying player IGN
+
+#Playtesters
 execute as @e[tag=KurCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Kuriku","color":"green"}'}
 execute as @e[tag=RubixCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Rubix_One","color":"green"}'}
 execute as @e[tag=TypCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Typhion","color":"green"}'}
@@ -51,7 +54,7 @@ execute as @e[tag=LekroCredits,scores={CreditCycle=1}] at @s run summon area_eff
 execute as @e[tag=UnWinCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"UnWin","color":"green"}'}
 execute as @e[tag=CalverinCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Calverin","color":"green"}'}
 
-#devs
+#Developers/Builders
 execute as @e[tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"YZEROgame","color":"green"}'}
 execute as @e[tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game Creator","color":"green"}'}
 

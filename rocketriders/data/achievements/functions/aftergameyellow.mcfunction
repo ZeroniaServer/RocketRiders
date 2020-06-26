@@ -1,3 +1,4 @@
+##Any achievements to be given if Yellow wins
 #Pacifist
 advancement grant @a[team=Yellow,scores={kills=..0}] only achievements:rr_challenges/pacifist
 

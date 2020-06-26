@@ -1,4 +1,6 @@
-#they're useful
+##They're Useful achievement
+##Detects if a player successfully uses a Splash to prevent a TNT explosion
+
 execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~.48 ~.48 ~.48 water run tag @s add useful
 execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~-.48 ~.48 ~-.48 water run tag @s add useful
 execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~-.48 ~.48 ~.48 water run tag @s add useful

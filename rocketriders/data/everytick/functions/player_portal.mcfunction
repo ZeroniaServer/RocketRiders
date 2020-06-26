@@ -8,6 +8,8 @@ execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld unless blo
 
 #Necessary effects/tags
 execute as @a[tag=portalKill] run tellraw @a ["",{"selector":"@s"},{"text":" went too close to a Nether Portal"}]
+effect clear @a[tag=portalKill]
+effect give @a[tag=portalKill] night_vision 1000000 100 true
 effect give @a[tag=portalKill] resistance 1 100 true
 effect give @a[tag=portalKill] instant_health 1 100 true
 effect give @a[tag=portalKill] fire_resistance 2 100 true

@@ -1,3 +1,7 @@
+#Full hotbar check
+tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
+tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
+
 function items:rng
 function items:tetris
 tag @s add gaveFirstItem

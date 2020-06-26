@@ -46,21 +46,8 @@ execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Blue] run kill @s
 execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Yellow] run tag @s add hardcoreKilled
 execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Yellow] run kill @s
 execute as @s[scores={endtimer=570},tag=Hardcore] run gamerule showDeathMessages true
-execute as @s[scores={endtimer=570}] run tag @a[team=Blue] add WasInBlue
-execute as @s[scores={endtimer=570}] run tag @a[team=Yellow] add WasInYellow
-execute as @s[scores={endtimer=570}] run team join Spectator @a[team=Blue]
-execute as @s[scores={endtimer=570}] run team join Spectator @a[team=Yellow]
-execute as @s[scores={endtimer=570}] run gamemode adventure @a[team=!Developer,team=!Lobby]
-execute as @s[scores={endtimer=570}] run tp @a[team=Spectator,tag=!WasInBlue,tag=!WasInYellow] -43 211 78 90 0
-execute as @s[scores={endtimer=570}] run tp @a[tag=WasInYellow] -36 211 96.0 90 0
-execute as @s[scores={endtimer=570}] run tp @a[tag=WasInBlue] -36 211 61.0 90 0
-execute as @s[scores={endtimer=570}] as @a[tag=WasInYellow,predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @s[scores={endtimer=570}] as @a[tag=WasInBlue,predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @s[scores={endtimer=570}] run tag @a[tag=WasInYellow] remove WasInYellow
-execute as @s[scores={endtimer=570}] run tag @a[tag=WasInBlue] remove WasInBlue
-execute as @s[scores={endtimer=570}] run team join Lobby @a[team=Spectator]
-execute as @s[scores={endtimer=570}] run spawnpoint @a[team=!Developer] -43 211 78
-execute as @s[scores={endtimer=570}] run clear @a[team=!Lobby,team=!Developer]
+execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] LeaveGame 1
+execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Yellow] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
 execute as @s[scores={endtimer=570}] run fill -57 201 84 -70 201 72 air replace barrier

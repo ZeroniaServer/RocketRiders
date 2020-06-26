@@ -10,6 +10,7 @@ scoreboard players add @s[team=!Spectator] respawn 1
 
 #non-spectators lose all effects and get immunity effects
 effect clear @s[team=!Spectator]
+effect give @s night_vision 1000000 100 true
 effect give @s[team=!Spectator] resistance 1 200 true
 effect give @s[team=!Spectator] instant_health 1 200 true
 effect give @s[team=!Spectator] fire_resistance 4 200 true

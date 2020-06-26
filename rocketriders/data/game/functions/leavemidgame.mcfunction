@@ -1,4 +1,4 @@
-scoreboard players enable @a LeaveMidgame
+execute as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players enable @s LeaveMidgame
 execute as @a[team=!Blue,team=!Yellow] run trigger LeaveMidgame set -1
 tellraw @a[team=Blue,scores={dropBow=1..}] [{"text":"Are you sure you want to leave the match? ","color":"blue"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
 tellraw @a[team=Yellow,scores={dropBow=1..}] [{"text":"Are you sure you want to leave the match? ","color":"gold"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
@@ -7,4 +7,3 @@ execute as @a[team=Blue,scores={LeaveMidgame=1}] run tellraw @a [{"selector":"@s
 scoreboard players set @a[team=Blue,scores={LeaveMidgame=1}] LeaveGame 1
 execute as @a[team=Yellow,scores={LeaveMidgame=1}] run tellraw @a [{"selector":"@s"},{"text":" left the match!","color":"yellow"}]
 scoreboard players set @a[team=Yellow,scores={LeaveMidgame=1}] LeaveGame 1
-tellraw @s[team=!Blue,team=!Yellow,scores={LeaveMidgame=1}] [{"text":"You are not in a match anymore.","color":"green"}]

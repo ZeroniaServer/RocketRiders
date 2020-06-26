@@ -72,9 +72,6 @@ execute as @a[team=Lobby] unless entity @s[nbt={Inventory:[{Slot:4b,id:"minecraf
 execute as @a[team=Lobby] store result score @s HasNavBook run clear @s written_book 0
 clear @a[team=Lobby,scores={HasNavBook=2..}] written_book
 
-#Lobby player spawnpoint set
-spawnpoint @a[team=Lobby] -43 211 78
-
 ##TODO REMOVE
 #TEMP so that kickouts from the end dimension actually display titles and don't screw up horribly
 title @a[tag=kickoutEnd,nbt={Dimension:0}] title ["",{"text":"Access Denied.","color":"red","bold":true}]

@@ -115,5 +115,7 @@ execute as @e[tag=missile,tag=portalSpawn2] at @s run tp @s ~ ~ ~8
 execute as @e[tag=missile,tag=portalSpawn2] at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn3
 execute as @e[tag=missile,tag=portalSpawn2] at @s if block ~ ~-1 ~ #custom:portalblocks run tag @s add portalSpawn3
 execute as @e[tag=missile,tag=portalSpawn3] at @s run tp @s ~ ~ ~-16
+#Void cancelling
+execute as @e[tag=missile] at @s if predicate custom:nearvoid run kill @s
 execute as @e[tag=missile] at @s run function items:structureblock
 kill @e[tag=missile]

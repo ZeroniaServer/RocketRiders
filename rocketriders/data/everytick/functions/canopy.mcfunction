@@ -86,7 +86,7 @@ execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data ge
 
 
 ##Yellow Canopy functionality
-execute as @a[team=Yellow,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..3,tag=!BluePlat,tag=!YellowPlat] add YellowPlat
+execute as @a[team=Yellow,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..5,tag=!BluePlat,tag=!YellowPlat] add YellowPlat
 execute as @e[tag=YellowPlat] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=YellowPlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=YellowPlat] at @s run scoreboard players add @s testplat 1
@@ -95,6 +95,8 @@ execute as @e[scores={testplat=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,
 execute as @e[scores={testplat=9..10}] at @s if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat 2
 execute as @e[scores={testplat=9..10}] at @s if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat 1
 execute as @e[scores={testplat=9..10}] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat 2
+#Disable pearls at y=0 to prevent spawn errors
+execute as @e[scores={testplat=9..10}] at @s if entity @s[y=-100,dy=101] run scoreboard players remove @s testplat 2
 execute as @e[scores={testplat=10}] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:yellowcanopy1"}
 execute as @e[scores={testplat=10}] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat=10}] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
@@ -110,8 +112,8 @@ execute as @a[team=Yellow] if score @s playerUUID = @e[tag=YellowPlatform,scores
 execute as @a[team=Yellow] at @s if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s slow_falling 1 100 true
 execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s jump_boost 2 128 true
 execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s slowness 2 255 true
-#After 2 seconds the canopy gives up
 execute as @a[team=Yellow] at @s if score @s playerUUIDL = @e[tag=YellowPlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUID run effect clear @s slow_falling
+#After 2 seconds the canopy gives up
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUID
 
 
@@ -126,6 +128,8 @@ execute as @e[scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=73,dx=44
 execute as @e[scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
 execute as @e[scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
 execute as @e[scores={testplat2=10}] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
+#Disable pearls at y=0 to prevent spawn errors
+execute as @e[scores={testplat2=9..10}] at @s if entity @s[y=-100,dy=101] run scoreboard players remove @s testplat2 2
 execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[tag=BluePlat,scores={testplat2=10}] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0
@@ -141,8 +145,8 @@ execute as @a[team=Blue] if score @s playerUUID = @e[tag=BluePlatform,scores={Pl
 execute as @a[team=Blue] at @s if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s slow_falling 1 100 true
 execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s jump_boost 2 128 true
 execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run effect give @s slowness 2 255 true
-#After 2 seconds the Canopy gives up
 execute as @a[team=Blue] at @s if score @s playerUUIDL = @e[tag=BluePlatform,scores={PlatTime=8},limit=1,sort=nearest] pearlOwnerUUID run effect clear @s slow_falling
+#After 2 seconds the Canopy gives up
 scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUID
 
 

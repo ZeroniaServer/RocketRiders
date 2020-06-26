@@ -37,6 +37,8 @@ execute as @e[type=armor_stand,tag=blueobtracker,tag=blueobalone] at @s if entit
 #Next 2 commands disable Blue Obsidian Shields inside of portals
 execute as @e[type=armor_stand,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute as @e[type=armor_stand,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
+#Disable Blue Obsidian Shields near void
+execute as @e[type=armor_stand,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
 
 #Deploy animation/effects
 scoreboard players add @e[tag=blueobalone] shieldplacement 1
@@ -93,6 +95,8 @@ execute as @e[type=armor_stand,tag=yellowobtracker,tag=yellowobalone] at @s if e
 #Next 2 commands disable Yellow Obsidian Shields inside of portals
 execute as @e[type=armor_stand,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute as @e[type=armor_stand,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
+#Disable Yellow Obsidian Shields near void
+execute as @e[type=armor_stand,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
 
 #Deploy animation/sounds
 scoreboard players add @e[tag=yellowobalone] shieldplacement 1

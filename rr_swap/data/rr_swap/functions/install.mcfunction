@@ -2,6 +2,7 @@ execute unless entity @e[tag=rr_swap,limit=1] run summon armor_stand 23 216 -18 
 execute unless entity @e[tag=swapplatform,limit=1] run summon area_effect_cloud 12 55 0 {Tags:[swapplatform],Duration:2000000000}
 
 scoreboard objectives add swapside dummy
+scoreboard objectives add Clustertime dummy
 
 bossbar add rr_swap:swap_progress ["",{"text":"Swap Progress","bold":true,"color":"white"}]
 bossbar set rr_swap:swap_progress color white

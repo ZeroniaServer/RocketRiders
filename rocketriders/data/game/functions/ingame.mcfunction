@@ -1,25 +1,30 @@
-#actionbar delay (necessary for certain action bar messages to override others)
+######################################
+## INGAME: Commands for what occurs ##
+## during any game of Rocket Riders ##
+######################################
+
+##Actionbar delay (necessary for certain action bar messages to override others)
 execute if entity @a[tag=DelayActionbar] run scoreboard players add @a[tag=DelayActionbar] actionbardelay 1
 execute if entity @a[scores={actionbardelay=50..}] run tag @a[tag=DelayActionbar,scores={actionbardelay=50..}] remove DelayActionbar
 execute if entity @a[scores={actionbardelay=50..}] run scoreboard players reset @a[scores={actionbardelay=50..}] actionbardelay
 
-#hotfix so groundbound isn't broken
+##Hotfix so Ground Bound achievement isn't broken
 scoreboard players add @a[team=Yellow] jumps 0
 scoreboard players add @a[team=Blue] jumps 0
 
-#prevent players from going above the arena
+##Prevent players from going above the arena
 execute as @a[gamemode=!spectator] unless entity @s[team=!Yellow,team=!Blue] if entity @s[tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
-#game time
+##Game time
 scoreboard players add @s gametime 1
 
-#general everytick commands
+##General everytick commands
 function achievements:gain
 function everytick:clear_spawnblocks
 function everytick:no_fall
 function modifiers:modifiers
 
-#missile/util specific commands (optimized to only run when necessary)
+##Missile/utility-specific commands (optimized to only run when necessary)
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=missile] run tag @s add runspawnmissiles
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=surprising] run tag @s add runspawnmissiles
 execute if entity @s[tag=runspawnmissiles] run function items:spawnmissiles
@@ -79,15 +84,13 @@ tag @s[tag=runfireball] remove runfireball
 
 function everytick:splash
 
-#spawntrap hotfix
+##Spawn trap hotfix
 execute unless block 12 63 -66 obsidian run setblock 12 63 -66 obsidian
 execute unless block 12 63 66 obsidian run setblock 12 63 66 obsidian
 
-#respawn hotfix
+##Respawn hotfix
 execute as @a[team=Yellow,scores={respawn=1..}] at @s if entity @e[tag=YellowSpawnZone,distance=..3] run tp @s ~ ~ ~ 180 0
 execute as @a[team=Blue,scores={respawn=1..}] at @s if entity @e[tag=BlueSpawnZone,distance=..3] run tp @s ~ ~ ~ 0 0
 execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,distance=..6] respawn 0
 execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,distance=..6] respawn 0
-
-#hotfix for yellow team join wrong facing direction
 scoreboard players reset @a[team=!Yellow,team=!Blue] respawn

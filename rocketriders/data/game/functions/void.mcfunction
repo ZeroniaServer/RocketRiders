@@ -1,32 +1,38 @@
-#death message (hackfix: works for crossers too)
-execute if entity @s[tag=!crosser] run tellraw @a ["",{"selector":"@s"},{"text":" fell out of the world"}]
-execute if entity @s[tag=crosser] run tellraw @a ["",{"selector":"@s"},{"text":" tried to leave their base"}]
+##############################################
+## VOID: How players who fall into the void ##
+## are handled by a quick fake-death system ##
+##############################################
 
-#non-spectators statistics
+##Death message for non-Spectator players (hackfix: works for crossers too)
+execute if entity @s[tag=!crosser,team=!Spectator] run tellraw @a ["",{"selector":"@s"},{"text":" fell out of the world"}]
+execute if entity @s[tag=crosser,team=!Spectator] run tellraw @a ["",{"selector":"@s"},{"text":" tried to leave their base"}]
+
+##Record death statistics for non-Spectator players
 scoreboard players add @s[team=!Spectator,tag=!crosser] FellVoid 1
 scoreboard players add @s[team=!Spectator] deaths 1
 scoreboard players add @s[team=!Spectator] death 1
 scoreboard players add @s[team=!Spectator] respawn 1
 
-#non-spectators lose all effects and get immunity effects
+##Non-Spectator players lose all effects and get immunity effects
 effect clear @s[team=!Spectator]
 effect give @s night_vision 1000000 100 true
 effect give @s[team=!Spectator] resistance 1 200 true
 effect give @s[team=!Spectator] instant_health 1 200 true
 effect give @s[team=!Spectator] fire_resistance 4 200 true
 
-#non-spectators get no fall damage
+##Non-Spectator players get no fall damage
 scoreboard players set @s[team=!Spectator] voidNoFallCount 0
 effect give @s[scores={voidNoFallCount=0}] slow_falling 1 1 true
 scoreboard players add @s[scores={voidNoFallCount=0..4}] voidNoFallCount 1
 effect clear @s[scores={voidNoFallCount=5}] slow_falling
 scoreboard players reset @s[scores={voidNoFallCount=5}] voidNoFallCount
 
-#teleport non-spectators
+##Teleport non-Spectators back to base
 tp @s[team=Blue] 12 64 -66 0 0
 tp @s[team=Yellow] 12 64 66 -180 0
 
-#teleport spectators
+##Teleport Spectators back to center
 tp @s[team=Spectator] 12 200 0.5 90 90
 
+##Put out fire, if necessary
 execute as @s[team=!Spectator,predicate=custom:is_on_fire] at @s run function game:putoutfire

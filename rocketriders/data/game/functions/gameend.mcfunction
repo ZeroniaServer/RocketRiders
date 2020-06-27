@@ -1,4 +1,8 @@
-#After game ends
+####################################################
+## GAMEEND: What events occur after the game ends ##
+####################################################
+
+##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
 tag @s[scores={endtimer=1}] remove GameStarted
 tag @s[scores={endtimer=1}] remove SuddenDeath
@@ -18,20 +22,21 @@ execute as @s[scores={endtimer=1..80}] as @a unless entity @s[team=!Blue,team=!Y
 execute as @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Yellow] 12 64 66 180 0
-execute as @s[scores={endtimer=81}] as @a run function everytick:score_reset
-scoreboard players set @s[scores={endtimer=81}] gametime 0
-execute as @s[scores={endtimer=1..100}] run tag @s[tag=EditedSettings] remove EditedSettings
-execute as @s[scores={endtimer=81..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
-execute as @s[scores={endtimer=81..100}] run tag @e[tag=bluejoinpad] add CancelJoin
-execute as @s[scores={endtimer=81..100}] run tag @e[tag=specjoinpad] add CancelJoin
+execute as @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
 
-#This is the system for ties.
+##System for ties
 execute as @s[tag=doTying,tag=!tyingOff,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
 execute as @s[tag=doTying,tag=!tyingOff,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
 execute as @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 74 nether_portal run tag @s add SuddenDeath
 execute as @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 74 nether_portal run tag @s add SuddenDeath
 execute as @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] run tag @s add SuddenDeath
 
+##Post-tie phase and reset
+execute as @s[scores={endtimer=81}] as @a run function everytick:score_reset
+scoreboard players set @s[scores={endtimer=81}] gametime 0
+execute as @s[scores={endtimer=81..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
+execute as @s[scores={endtimer=81..100}] run tag @e[tag=bluejoinpad] add CancelJoin
+execute as @s[scores={endtimer=81..100}] run tag @e[tag=specjoinpad] add CancelJoin
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Blue]
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Yellow]
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] GamesPlayed 1
@@ -62,7 +67,8 @@ tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
 tag @s[scores={endtimer=570..}] remove GameEnd
 
-#REPEAT SETTINGS
+##For repeating settings
 execute if entity @s[scores={endtimer=570..},tag=Repeat] unless entity @s[tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning,tag=!rngUtil] run function arenaclear:areaclear
 
+##Reset end timer
 scoreboard players set @s[scores={endtimer=570..}] endtimer 0

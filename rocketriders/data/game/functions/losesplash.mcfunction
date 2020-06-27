@@ -1,3 +1,5 @@
+##Randomized splash messages for the losers of a game
+
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomLossSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
 scoreboard players set @e[tag=RandomLossSplash] RNGmax 23

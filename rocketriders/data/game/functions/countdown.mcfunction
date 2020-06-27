@@ -1,3 +1,9 @@
+#####################################
+## COUNTDOWN: What events occur in ##
+## the time before the game starts ##
+#####################################
+
+##Timer, bossbar, sound effects
 execute unless entity @s[tag=GameStarted] run scoreboard players add @s[tag=Countdown] count 1
 execute as @s[scores={count=1..600}] run scoreboard players set @a dropBow 0
 execute as @s[scores={count=1..599}] run bossbar set rr:startgame color green
@@ -72,6 +78,7 @@ execute as @s[scores={count=580}] run bossbar set rr:startgame name ["",{"text":
 execute as @s[scores={count=580}] run bossbar set rr:startgame value 1
 execute as @s[scores={count=580}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.9
 
+##Right as game begins
 execute as @s[scores={count=599..}] as @a unless entity @s[team=!Yellow,team=!Blue] if entity @s[predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @s[tag=GameStarted,tag=!bossbarOverride] run bossbar set rr:startgame name ["",{"text":"A match is currently in progress. Feel free to join in!","color":"dark_green"}]
 execute as @s[tag=GameStarted] run bossbar set rr:startgame value 30
@@ -85,19 +92,17 @@ execute as @s[tag=GameStarted] run effect give @a[team=Blue] fire_resistance 10 
 execute as @s[tag=GameStarted] run effect give @a[team=Yellow] fire_resistance 10 100 true
 execute as @s[tag=GameStarted] run gamemode survival @a[team=Yellow]
 execute as @s[tag=GameStarted] run gamemode survival @a[team=Blue]
-#hotfix for being able to keep charging bow from queue
+#Hotfix for being able to keep charging bow from queue
 execute as @s[tag=GameStarted] run clear @a[team=Blue] bow
-execute as @s[tag=GameStarted] as @a[team=Blue] run function game:saberblue
 execute as @s[tag=GameStarted] run clear @a[team=Yellow] bow
-execute as @s[tag=GameStarted] as @a[team=Yellow] run function game:saberyellow
 execute as @s[tag=GameStarted] run tellraw @a[team=Blue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
 execute as @s[tag=GameStarted] run tellraw @a[team=Yellow] [{"text":"Drop your ","color":"gold","italic":"true"},{"text":"Shooting Saber ","color":"yellow","bold":"true","italic":"false"},{"text":"to leave the match.","color":"gold","italic":"true"}]
 execute as @s[tag=GameStarted,tag=!GameEnd] run tag @a remove CalculateWin
 execute as @s[tag=GameStarted,tag=!GameEnd] run tag @a remove CalculateLoss
-#hotfix for bug where jumping in queue rooms disqualifies you from ground bound
+#Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
 execute as @s[tag=GameStarted] run scoreboard players set @a[team=Yellow] jumps 0
 execute as @s[tag=GameStarted] run scoreboard players set @a[team=Blue] jumps 0
-#enabling damage gamerules (considers modifiers)
+#Enabling damage gamerules (considers modifiers)
 execute as @s[tag=GameStarted,tag=!NoFall] run gamerule fallDamage true
 execute as @s[tag=GameStarted] run gamerule drowningDamage true
 execute as @s[tag=GameStarted] run gamerule fireDamage true
@@ -111,5 +116,6 @@ execute as @s[tag=GameStarted] run kill @e[type=arrow]
 execute as @s[tag=GameStarted] as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow
 scoreboard players set @s[tag=GameStarted] count 0
 tag @s[tag=GameStarted] remove bossbarOverride
+#The forceCountdown tag is used to override conditions that would otherwise cancel a countdown
 tag @s[tag=GameStarted] remove forceCountdown
 tag @s[tag=GameStarted] remove Countdown

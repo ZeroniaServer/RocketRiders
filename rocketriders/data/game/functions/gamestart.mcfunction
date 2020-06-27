@@ -1,4 +1,9 @@
-#Game Bossbar
+###################################################
+## GAMESTART: Commands that allow games to start ##
+## and make the Lobby Join/Leave Pads functional ##
+###################################################
+
+##Game Bossbar
 execute as @s[tag=GameStarted] run bossbar set rr:startgame players @a[team=Lobby]
 execute as @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a[team=Lobby]
 execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] run bossbar set rr:startgame color white
@@ -15,7 +20,7 @@ execute as @s[scores={endtimer=1..}] run bossbar set rr:startgame name ["",{"tex
 execute as @s[tag=!EditedSettings] run bossbar set rr:startgame value 30
 execute as @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a
 
-#Joinpad Blue
+##Blue Join Pad
 execute as @e[tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=bluejoinpad,tag=CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @s[scores={largerTeam=-1..0}] as @e[tag=bluejoinpad,tag=!CancelJoin] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue

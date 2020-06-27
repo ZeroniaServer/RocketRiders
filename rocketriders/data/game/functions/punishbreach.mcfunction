@@ -1,3 +1,4 @@
+##Commands run for players who try to breach through to the lobby
 tellraw @a ["",{"selector":"@s"},{"text":" tried to breach the lobby"}]
 effect give @s poison 4 255 true
 tp @s[team=Blue] 12 64 -66 0 0

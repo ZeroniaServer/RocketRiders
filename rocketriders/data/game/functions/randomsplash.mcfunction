@@ -1,3 +1,5 @@
+##Randomized splash messages for when the game begins
+
 title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomSplash"],Duration:2000000000}

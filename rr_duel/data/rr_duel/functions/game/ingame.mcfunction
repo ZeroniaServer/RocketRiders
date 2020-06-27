@@ -39,8 +39,10 @@ execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon 
 execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[team=Yellow] if entity @a[team=Blue] run tag @s add TimeOut
 
 #adds original player back
-execute as @a[tag=InRanked,team=!Blue,team=!Yellow,limit=1] unless entity @a[team=Blue] run function game:joinblue
-execute as @a[tag=InRanked,team=!Blue,team=!Yellow,limit=1] unless entity @a[team=Yellow] run function game:joinyellow
+execute as @a[tag=InRanked,tag=WasInBlue,team=Lobby,limit=1] unless entity @a[team=Blue] run tellraw @s {"text":"You were added back to Blue to finish the 1v1 Duel match.","color":"red","italic":"true"}
+execute as @a[tag=InRanked,tag=WasInBlue,team=Lobby,limit=1] unless entity @a[team=Blue] run function game:joinblue
+execute as @a[tag=InRanked,tag=WasInYellow,team=Lobby,limit=1] unless entity @a[team=Yellow] run tellraw @s {"text":"You were added back to Yellow to finish the 1v1 Duel match.","color":"red","italic":"true"}
+execute as @a[tag=InRanked,tag=WasInYellow,team=Lobby,limit=1] unless entity @a[team=Yellow] run function game:joinyellow
 
 #timeout
 scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1
@@ -51,7 +53,7 @@ execute as @s[tag=TimeOut] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[tag=TimeOut] run tp @a[team=Yellow] 12 64 66 180 0
 tag @s[tag=TimeOut] add noAchievements
 scoreboard players set @s[tag=TimeOut] RandomItem -3
-execute as @s[scores={ForfeitTimeout=1}] run tellraw @a ["",{"text":"[TIMEOUT] ","bold":true,"color":"dark_red"},{"text":"Someone left the duel! They have 1 minute to rejoin, otherwise the game will end.","color":"red"}]
+execute as @s[scores={ForfeitTimeout=1}] run tellraw @a ["",{"text":"[TIMEOUT] ","bold":true,"color":"dark_red"},{"text":"Someone left the 1v1 Duel match! They have 1 minute to rejoin; otherwise, the game will end.","color":"red"}]
 execute as @s[tag=TimeOut] if entity @a[team=Blue] if entity @a[team=Yellow] run scoreboard players operation @s RandomItem += @s MaxItemTime
 execute as @s[tag=TimeOut] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s remove TimeOut
 scoreboard players reset @s[tag=!TimeOut] ForfeitTimeout
@@ -62,3 +64,6 @@ execute as @s[scores={ForfeitTimeout=1200..}] if entity @a[team=Blue] unless ent
 execute as @s[scores={ForfeitTimeout=1200..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run function rr_duel:game/winblue
 execute as @s[scores={ForfeitTimeout=1200..}] unless entity @a[team=Blue] if entity @a[team=Yellow] run scoreboard players set Yellow: RoundsWon 2
 execute as @s[scores={ForfeitTimeout=1200..}] unless entity @a[team=Blue] if entity @a[team=Yellow] run function rr_duel:game/winyellow
+
+##double forfeit
+execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[team=Yellow] unless entity @a[team=Blue] run function game:forcestop

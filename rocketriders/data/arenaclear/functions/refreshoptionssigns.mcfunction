@@ -20,9 +20,10 @@ execute as @s[tag=!doTying,tag=!tyingOff,tag=!settingsLocked] run setblock -70 1
 execute as @s[tag=tyingOff,tag=!settingsLocked] run setblock -70 193 77 crimson_wall_sign[facing=east]
 execute as @s[tag=settingsLocked] run setblock -70 193 77 crimson_wall_sign[facing=east]
 
-#Distant Particles
-execute as @s[scores={distantParticles=1}] run setblock -70 193 78 warped_wall_sign[facing=east]
-execute as @s[scores={distantParticles=0}] run setblock -70 193 78 crimson_wall_sign[facing=east]
+#Fireball Portals
+execute as @s[tag=doFireballPortals,tag=!settingsLocked] run setblock -70 193 78 warped_wall_sign[facing=east]
+execute as @s[tag=!doFireballPortals,tag=!settingsLocked] run setblock -70 193 78 crimson_wall_sign[facing=east]
+execute as @s[tag=settingsLocked] run setblock -70 193 78 crimson_wall_sign[facing=east]
 
 ##WORLD SETTINGS
 #Player Credits

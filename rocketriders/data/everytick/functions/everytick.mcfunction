@@ -25,7 +25,7 @@ execute as @a[team=Lobby] run function everytick:score_reset
 execute unless entity @e[tag=Selection,tag=GameStarted] run function lobby:credits/cycle
 
 #Handling portals/roof with players/utilities
-function everytick:cancel_utility
+execute as @e[tag=Selection] run function everytick:cancel_utility
 function everytick:player_portal
 
 #Antidupe and arrow replacement

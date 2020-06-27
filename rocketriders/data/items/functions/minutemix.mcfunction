@@ -1,4 +1,4 @@
-#Minute Mix
+##Minute Mix Modifier - gives 8 items tick by tick after minute-long intervals
 execute if entity @s[tag=Minute,scores={RandomItem=1201}] run function items:giverandom
 execute if entity @s[tag=Minute,scores={RandomItem=1202}] run function items:giverandom
 execute if entity @s[tag=Minute,scores={RandomItem=1203}] run function items:giverandom

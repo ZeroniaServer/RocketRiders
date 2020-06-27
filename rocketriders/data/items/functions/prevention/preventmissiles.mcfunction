@@ -1,3 +1,9 @@
+#####################################################################
+## PREVENTMISSILES: The main piece of the Pierce Prevention system ##
+## Detects if a missile's placement would obstruct a Nether portal ##
+#####################################################################
+
+##Individual missile detection
 #Auxiliary
 execute as @e[tag=BlueAux,tag=!UnableMissile] at @s positioned ~-1 ~-7 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~3 ~10 ~ 175 ~ filtered #custom:portalblocks force
 execute as @e[tag=BlueAux,tag=!UnableMissile] at @s positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~3 ~10 air replace #custom:portalblocks
@@ -118,10 +124,8 @@ execute as @e[tag=BlueBroad,tag=!UnableMissile] at @s positioned ~-1 175 ~5 run 
 execute as @e[tag=YellowBroad,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-16 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~11 ~ 175 ~ filtered #custom:portalblocks force
 execute as @e[tag=YellowBroad,tag=!UnableMissile] at @s positioned ~-1 175 ~-16 run fill ~ ~ ~ ~2 ~2 ~11 air replace #custom:portalblocks
 
-#All missiles
+##All missiles
 tag @e[tag=missile,scores={Unable=1..}] add UnableMissile
 scoreboard players reset * Unable
 execute as @e[tag=UnableMissile] at @s run function items:prevention/unablefx
-
-#Give item back
 function items:prevention/giveback

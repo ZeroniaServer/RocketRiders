@@ -1,9 +1,9 @@
-##########################################################
-## SUPERSPEED: The core component of Smart Arena Clears ##
-## A recursive function that sweeps through all blocks  ##
-## in a missile/other item's trajectory to remove them  ##
-## in a time/performance-efficient manner (single-tick) ##
-##########################################################
+#############################################################
+## SUPERSPEED: The core component of the SmartClear system ##
+## A recursive function that sweeps through all the blocks ##
+## traveled by missiles/other items to clear out the arena ##
+## in a time/performance-efficient manner (just one tick!) ##
+#############################################################
 
 ##During recursion - Arena Clear in progress
 scoreboard players add @e[tag=ArenaClearChecker] ClearArena 1

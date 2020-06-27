@@ -1,3 +1,8 @@
+###################################
+## INVCOUNT: Counts all occupied ##
+## slots in a player's inventory ##
+###################################
+
 scoreboard players add @s[nbt={Inventory:[{Slot:0b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:1b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:2b}]}] invCount 1
@@ -35,4 +40,5 @@ scoreboard players add @s[nbt={Inventory:[{Slot:33b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:34b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:35b}]}] invCount 1
 scoreboard players add @s[nbt={Inventory:[{Slot:-106b}]}] invCount 1
+#Includes items thrown by the player
 execute at @s if entity @e[type=item,limit=1,distance=..2] run scoreboard players add @s invCount 1

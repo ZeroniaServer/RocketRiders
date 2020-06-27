@@ -1,3 +1,6 @@
+##Anti-antidupe: Makes the game ignore when you already have an item.
+##Used for the Item Stacking game option.
+
 scoreboard players set @s HasAux 0
 scoreboard players set @s HasToma 0
 scoreboard players set @s HasBlade 0

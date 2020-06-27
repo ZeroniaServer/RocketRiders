@@ -1,3 +1,9 @@
+############################################
+## ANTIDUPE: Tracks how many of each item ##
+## the player has and removes extra items ##
+############################################
+
+##Counts how many items using output of /clear @s <item> 0
 execute store result score @s HasAux run clear @s mooshroom_spawn_egg 0
 execute store result score @s HasToma run clear @s creeper_spawn_egg 0
 execute store result score @s HasBlade run clear @s husk_spawn_egg 0
@@ -28,6 +34,7 @@ execute store result score @s HasSplash run clear @s lingering_potion{Potion:"mi
 execute store result score @s[team=Blue] HasSurprise run clear @s squid_spawn_egg 0
 execute store result score @s[team=Yellow] HasSurprise run clear @s cod_spawn_egg 0
 
+##Removes duplicate items based on output of previous check
 clear @s[scores={HasAux=2..}] mooshroom_spawn_egg 1
 clear @s[scores={HasToma=2..}] creeper_spawn_egg 1
 clear @s[scores={HasBlade=2..}] husk_spawn_egg 1

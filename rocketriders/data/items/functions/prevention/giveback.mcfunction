@@ -1,3 +1,6 @@
+##Gives back the appropriate missile when its placement has been prevented
+
+##Individual missiles
 #Auxiliary
 execute as @a[tag=BackAux] run clear @s mooshroom_spawn_egg
 scoreboard players set @a[tag=BackAux] HasAux 0
@@ -138,9 +141,11 @@ scoreboard players remove @a[tag=BackBroad] BroadSpawned 1
 tag @a[tag=BackBroad] remove fullHotbar
 execute as @a[tag=BackBroad] run function items:missile/special/givebroad
 
-#Tag removal & unable message
+##Unable message
 execute unless entity @s[tag=customPrevention] as @a[tag=MissiMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals.","color":"red"}]
 execute unless entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG
+
+##Tag removal
 tag @a remove BackAux
 tag @a remove BackToma
 tag @a remove BackNull

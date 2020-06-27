@@ -1,3 +1,4 @@
+##Gives executor a Blue Surprise Egg
 title @s[scores={HasSurprise=3..},tag=!fullHotbar] actionbar {"text":"Surprise Egg already obtained.","color":"aqua"}
 title @s[scores={HasSurprise=..2},tag=!fullHotbar] actionbar {"text":"Surprise Egg obtained.","color":"aqua"}
 give @s[team=Blue,scores={HasSurprise=..2},tag=!fullHotbar] squid_spawn_egg{display:{Name:'[{"text":"[???] ","color":"light_purple","bold":"true"},{"text":"Surprise Egg","color":"blue","bold":"true"}]',Lore:['{"text":"Wonder what it spawns?","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['BlueSurprise','surprising']}} 1

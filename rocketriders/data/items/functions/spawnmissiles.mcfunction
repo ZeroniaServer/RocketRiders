@@ -1,4 +1,9 @@
-#Surprise Egg
+####################################################
+## SPAWNMISSILES: How all missiles are positioned ##
+## and placed upon spawning them from a spawn egg ##
+####################################################
+
+##Surprise Egg
 execute as @e[tag=BlueSurprise] at @s run function items:surprise_blue/rng
 execute as @e[tag=BlueSurpriseNormal] at @s run function items:surprise_blue/rngnormal
 execute as @e[tag=BlueSurpriseHeavy] at @s run function items:surprise_blue/rngheavy
@@ -9,22 +14,23 @@ execute as @e[tag=YellowSurpriseNormal] at @s run function items:surprise_yellow
 execute as @e[tag=YellowSurpriseHeavy] at @s run function items:surprise_yellow/rngheavy
 execute as @e[tag=YellowSurpriseLightning] at @s run function items:surprise_yellow/rnglightning
 
-#Prevention
+##Pierce Prevention
 execute if entity @s[tag=doPrevention] run function items:prevention/preventmissiles
 
-#Roof cancelling (overworld only)
+##Roof cancelling (overworld only)
 execute in overworld as @e[tag=missile] at @s run kill @s[y=181,dy=100]
 
-#Bot prep
+##Bot preparation (for PVE mode)
 execute as @e[tag=bluemissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 execute as @e[tag=yellowmissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 
-#SmartClear prep
+##SmartClear preparation
 execute as @e[tag=bluemissile,tag=!BlueCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
 execute as @e[tag=yellowmissile,tag=!YellowCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
 execute as @e[tag=BlueCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,SmartClearAECcata],Duration:2000000000}
 execute as @e[tag=YellowCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,SmartClearAECcata],Duration:2000000000}
 
+##Individual missile positioning
 #Auxiliary
 execute as @e[tag=BlueAux] at @s run tp @s ~-1 ~-9 ~4
 execute as @e[tag=YellowAux] at @s run tp @s ~-1 ~-9 ~-14
@@ -105,7 +111,7 @@ execute as @e[tag=YellowDuplex] at @s run tp @s ~-1 ~-8 ~-22
 execute as @e[tag=BlueBroad] at @s run tp @s ~-1 ~-8 ~5
 execute as @e[tag=YellowBroad] at @s run tp @s ~-1 ~-8 ~-16
 
-#Missile prep
+##General missile preparation
 execute as @e[tag=missile] at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn
 execute as @e[tag=missile] at @s if block ~ ~-1 ~ #custom:portalblocks run tag @s add portalSpawn
 execute as @e[tag=missile,tag=portalSpawn] at @s run tp @s ~ ~4 ~

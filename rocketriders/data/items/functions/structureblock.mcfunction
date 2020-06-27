@@ -1,10 +1,16 @@
-#Place structure block
+################################################
+## STRUCTUREBLOCK: How each missile structure ##
+## is actually placed using a Structure Block ##
+################################################
+
+##Place structure block (copies surrounding blocks up)
 clone ~ ~ ~ ~ ~-1 ~ ~ 254 ~ replace
 setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:2,posZ:0}
 execute if entity @s[tag=portalSpawn] run data modify block ~ ~ ~ posY set value -2
 execute if entity @s[tag=portalSpawn2] run data modify block ~ ~ ~ posZ set value -8
 execute if entity @s[tag=portalSpawn3] run data modify block ~ ~ ~ posZ set value 8
 
+##Individual structure names
 #Auxiliary
 execute if entity @s[tag=BlueAux] run data merge block ~ ~ ~ {name:"auxiliary_blue"}
 execute if entity @s[tag=YellowAux] run data merge block ~ ~ ~ {name:"auxiliary_yellow"}
@@ -77,15 +83,15 @@ execute if entity @s[tag=YellowHyper] run data merge block ~ ~ ~ {name:"hyperson
 execute if entity @s[tag=BlueBull] run data merge block ~ ~ ~ {name:"bullet_blue"}
 execute if entity @s[tag=YellowBull] run data merge block ~ ~ ~ {name:"bullet_yellow"}
 
-#Duplex
+#Duplex (ignores entities for TNT minecarts)
 execute if entity @s[tag=BlueDuplex] run data merge block ~ ~ ~ {name:"duplex_blue",ignoreEntities:0b}
 execute if entity @s[tag=YellowDuplex] run data merge block ~ ~ ~ {name:"duplex_yellow",ignoreEntities:0b}
 
 #Broadsword
-execute if entity @s[tag=BlueBroad] run data merge block ~ ~ ~ {name:"broadsword_blue",ignoreEntities:0b}
-execute if entity @s[tag=YellowBroad] run data merge block ~ ~ ~ {name:"broadsword_yellow",ignoreEntities:0b}
+execute if entity @s[tag=BlueBroad] run data merge block ~ ~ ~ {name:"broadsword_blue"}
+execute if entity @s[tag=YellowBroad] run data merge block ~ ~ ~ {name:"broadsword_yellow"}
 
-#After structure block placed
+##After structure block placed (copies surrounding blocks back)
 setblock ~ ~-1 ~ observer[powered=true,facing=down]
 setblock ~ ~-1 ~ observer[powered=true,facing=down]
 clone ~ 255 ~ ~ 254 ~ ~ ~-1 ~ replace move

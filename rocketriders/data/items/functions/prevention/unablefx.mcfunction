@@ -1,3 +1,4 @@
+##Detects the player who likely placed the prevented missile
 #Auxiliary
 execute as @s[tag=BlueAux] at @s store result score @s AuxSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] AuxSpawned
 execute as @s[tag=BlueAux] at @s if score @s AuxSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] AuxSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackAux

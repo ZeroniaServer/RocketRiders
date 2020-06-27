@@ -1,3 +1,5 @@
+##Sub-RNG for Utility Items
+#Choose between each item based on enabled status and Tetris state
 execute if entity @e[tag=Selection,tag=rngArrows,tag=!givenArrowsTwice] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngArrows","rng2"]}
 execute if entity @e[tag=Selection,tag=rngFireball,tag=!givenFireballTwice] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngFireball","rng2"]}
 execute if entity @e[tag=Selection,tag=rngObshield,tag=!givenObshield] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngObshield","rng2"]}
@@ -6,6 +8,8 @@ execute if entity @e[tag=Selection,tag=rngShield,tag=!givenShieldTwice] run summ
 execute if entity @e[tag=Selection,tag=rngSplash,tag=!givenSplash] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngSplash","rng2"]}
 execute if entity @e[tag=Selection,tag=rngVortex,tag=!givenVortex] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngVortex","rng2"]}
 execute if entity @e[tag=Selection,tag=rngNova,tag=!givenNova] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngNova","rng2"]}
+
+#Select item and run appropriate give function
 tag @e[tag=rng2,sort=random,limit=1] add rngSelected
 execute as @e[tag=rngSelected,tag=rngArrows,tag=!givenArrowsTwice] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givearrows
 execute as @e[tag=rngSelected,tag=rngFireball,tag=!givenFireballTwice] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givefireball

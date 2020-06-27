@@ -1,3 +1,5 @@
+##Sub-sub-RNG for Normal Missiles
+#Choose between each missile based on enabled status and Tetris state
 execute if entity @e[tag=Selection,tag=rngAnt,tag=!givenAnt] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngAnt","rng3"]}
 execute if entity @e[tag=Selection,tag=rngLift,tag=!givenLift] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngLift","rng3"]}
 execute if entity @e[tag=Selection,tag=rngBlade,tag=!givenBlade] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngBlade","rng3"]}
@@ -8,6 +10,8 @@ execute if entity @e[tag=Selection,tag=rngSlash,tag=!givenSlash] run summon area
 execute if entity @e[tag=Selection,tag=rngToma,tag=!givenToma] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngToma","rng3"]}
 execute if entity @e[tag=Selection,tag=rngCitadel,tag=!givenCita] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngCitadel","rng3"]}
 execute if entity @e[tag=Selection,tag=rngGemi,tag=!givenGemi] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngGemi","rng3"]}
+
+#Select a missile and run appropriate give function
 tag @e[tag=rng3,sort=random,limit=1] add rngSelected
 execute as @e[tag=rngSelected,tag=rngAnt] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveant
 execute as @e[tag=rngSelected,tag=rngLift] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givelift

@@ -68,6 +68,8 @@ execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run data merge block -57 1
 execute unless entity @s[tag=!settingsLocked,tag=!decosLocked] run data merge block -57 192 80 {Text1: "{\"text\":\"Bottom Detail:\",\"color\":\"#BF4DB8\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this game configuration.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
 ##PORTAL DECORATION
+#Hole in One
+execute as @s[scores={PortalDeco=4},tag=!settingsLocked] run data merge block -58 192 73 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"#5A0079\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"Hole in One\",\"color\":\"#7900A4\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshcustomizer\"}}"}
 #End Stone Cover
 execute as @s[scores={PortalDeco=3},tag=!settingsLocked] run data merge block -58 192 73 {Text1: "{\"text\":\"Portal Detail:\",\"color\":\"#5A0079\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection] PortalDeco 1\"}}",Text2: "{\"text\":\"End Stone Cover\",\"color\":\"#7900A4\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection] run function arenaclear:refreshcustomizer\"}}"}
 #Glass Cover
@@ -84,7 +86,7 @@ scoreboard players set @s[scores={TopDeco=4..}] TopDeco 0
 scoreboard players set @s[scores={TopCorner=2..}] TopCorner 0
 scoreboard players set @s[scores={MiddleDeco=4..}] MiddleDeco 0
 scoreboard players set @s[scores={BottomDeco=3..}] BottomDeco 0
-scoreboard players set @s[scores={PortalDeco=4..}] PortalDeco 0
+scoreboard players set @s[scores={PortalDeco=5..}] PortalDeco 0
 
 ####RESTORE DEFAULTS####
 ##Individual signs

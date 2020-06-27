@@ -13,11 +13,21 @@ tag @s remove noDetailYellow
 execute as @s[scores={PortalDeco=1}] run fill -11 59 -74 35 36 -74 blue_stained_glass_pane[east=true,west=true] replace air
 execute as @s[scores={PortalDeco=2}] run fill -11 59 -73 35 36 -75 blue_stained_glass replace air
 execute as @s[scores={PortalDeco=3}] run fill -11 59 -73 35 36 -75 end_stone replace air
+execute as @s[scores={PortalDeco=4}] run fill -11 59 -73 34 36 -75 obsidian replace air
+execute as @s[scores={PortalDeco=4}] run fill 1 48 -73 1 47 -73 air
+execute as @s[scores={PortalDeco=4}] run fill 1 48 -75 1 47 -75 air
+execute as @s[scores={PortalDeco=4}] run fill 23 48 -73 23 47 -73 air
+execute as @s[scores={PortalDeco=4}] run fill 23 48 -75 23 47 -75 air
 
 #Portal detail - Yellow
 execute as @s[scores={PortalDeco=1}] run fill -11 59 74 35 36 74 yellow_stained_glass_pane[east=true,west=true] replace air
 execute as @s[scores={PortalDeco=2}] run fill -11 59 73 35 36 75 yellow_stained_glass replace air
 execute as @s[scores={PortalDeco=3}] run fill -11 59 73 35 36 75 end_stone replace air
+execute as @s[scores={PortalDeco=4}] run fill -11 59 73 34 36 75 obsidian replace air
+execute as @s[scores={PortalDeco=4}] run fill 1 48 73 1 47 73 air
+execute as @s[scores={PortalDeco=4}] run fill 1 48 75 1 47 75 air
+execute as @s[scores={PortalDeco=4}] run fill 23 48 73 23 47 73 air
+execute as @s[scores={PortalDeco=4}] run fill 23 48 75 23 47 75 air
 
 #Obsidian placement - Blue and Yellow
 fill 14 63 66 10 63 66 minecraft:obsidian

@@ -1,5 +1,4 @@
 execute unless entity @e[tag=rr_swap,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_swap"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b}
-execute unless entity @e[tag=swapplatform,limit=1] run summon area_effect_cloud 12 55 0 {Tags:[swapplatform],Duration:2000000000}
 
 scoreboard objectives add swapside dummy
 scoreboard objectives add Clustertime dummy

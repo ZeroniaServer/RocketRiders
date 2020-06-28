@@ -1,3 +1,5 @@
+kill @e[tag=swapplatform]
+
 tag @e[tag=Selection] remove swapEnabled
 tag @e[tag=Selection] remove SurpriseEggOff
 tag @e[tag=Selection] remove SplashStreamsOff

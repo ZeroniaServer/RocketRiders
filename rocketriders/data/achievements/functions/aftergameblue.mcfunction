@@ -3,8 +3,11 @@
 advancement grant @a[team=Blue,scores={kills=..0}] only achievements:rr_challenges/pacifist
 
 #Swiss Cheese
-scoreboard players set SwissCheese SwissCheese 11500
-execute store result score Blue SwissCheese run clone 38 34 -52 -14 63 -66 -48 46 -1 filtered air
+execute as @s[tag=!Hardcore] run scoreboard players set SwissCheese SwissCheese 11500
+execute as @s[tag=!Hardcore] store result score Blue SwissCheese run clone 38 34 -52 -14 63 -66 -48 46 -1 filtered air
+#Hardcore variant - check less blocks
+execute as @s[tag=Hardcore] run scoreboard players set SwissCheese SwissCheese 766
+execute as @s[tag=Hardcore] store result score Blue SwissCheese run clone 38 34 -66 -14 63 -66 -48 46 -1 filtered air
 execute if score Blue SwissCheese >= SwissCheese SwissCheese run advancement grant @a[team=Blue] only achievements:rr_challenges/swiss_cheese
 scoreboard players reset SwissCheese SwissCheese
 

@@ -12,7 +12,7 @@ effect give @a[scores={LeaveGame=1..}] night_vision 1000000 100 true
 team join Lobby @a[scores={LeaveGame=1..}]
 gamemode adventure @a[scores={LeaveGame=1..}]
 title @a[scores={LeaveGame=1..}] times 10 80 20
-spawnpoint @a[tag=!WasInYellow,tag=!WasInBlue,team=Lobby] -43 211 78
+spawnpoint @a[tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78
 spawnpoint @a[tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96
 spawnpoint @a[tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61
 clear @a[scores={LeaveGame=1..}]
@@ -28,13 +28,13 @@ tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
 
 #Hardcore compatibility
 scoreboard players add @a[tag=hardcoreKilled] hardcoreKilled 1
-execute as @a[tag=hardcoreKilled,scores={hardcoreKilled=4..},team=Lobby] at @s run tp @s ~ ~ ~ 90 0
-execute as @s[tag=Hardcore] unless entity @s[tag=!GameStarted,tag=!GameEnd] as @a[tag=hardcoreKilled,scores={hardcoreKilled=3},team=Lobby] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] at @s run tp @s ~ ~ ~-0.5
-tag @a[tag=hardcoreKilled,scores={hardcoreKilled=4..}] remove hardcoreKilled
+execute as @a[tag=hardcoreKilled,scores={hardcoreKilled=7..},team=Lobby] at @s run tp @s ~ ~ ~ 90 0
+execute as @s[tag=Hardcore] as @a[tag=hardcoreKilled,scores={hardcoreKilled=7..},team=Lobby] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] at @s run tp @s ~ ~ ~-0.5
+tag @a[tag=hardcoreKilled,scores={hardcoreKilled=7..}] remove hardcoreKilled
 scoreboard players reset @a[tag=!hardcoreKilled] hardcoreKilled
 execute as @s[tag=Hardcore] run gamerule showDeathMessages false
-execute as @s[tag=Hardcore] as @a[scores={LeaveGame=1..},tag=!hardcoreKilled] run kill @s
-execute as @s[tag=Hardcore] as @a[scores={LeaveGame=1..}] run tag @s add hardcoreKilled
+execute as @s[tag=Hardcore] as @a[scores={LeaveGame=1..},tag=!hardcoreKilled] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] run kill @s
+execute as @s[tag=Hardcore] as @a[scores={LeaveGame=1..}] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] run tag @s add hardcoreKilled
 execute as @s[tag=Hardcore] run gamerule showDeathMessages true
 
 #Reset

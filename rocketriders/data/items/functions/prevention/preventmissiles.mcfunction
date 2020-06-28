@@ -59,10 +59,10 @@ execute as @e[tag=YellowBlade,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~-18 
 execute as @e[tag=YellowBlade,tag=!UnableMissile] at @s positioned ~-1 175 ~-18 run fill ~ ~ ~ ~2 ~1 ~14 air replace #custom:portalblocks
 
 #Rifter
-execute as @e[tag=BlueRift,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~3 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~13 ~ 175 ~ filtered #custom:portalblocks force
-execute as @e[tag=BlueRift,tag=!UnableMissile] at @s positioned ~-1 175 ~3 run fill ~ ~ ~ ~2 ~1 ~13 air replace #custom:portalblocks
-execute as @e[tag=YellowRift,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~-16 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~13 ~ 175 ~ filtered #custom:portalblocks force
-execute as @e[tag=YellowRift,tag=!UnableMissile] at @s positioned ~-1 175 ~-16 run fill ~ ~ ~ ~2 ~1 ~13 air replace #custom:portalblocks
+execute as @e[tag=BlueRift,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~13 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=BlueRift,tag=!UnableMissile] at @s positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~1 ~13 air replace #custom:portalblocks
+execute as @e[tag=YellowRift,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~-17 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~13 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowRift,tag=!UnableMissile] at @s positioned ~-1 175 ~-17 run fill ~ ~ ~ ~2 ~1 ~13 air replace #custom:portalblocks
 
 #Juggerbuster
 execute as @e[tag=BlueJug,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~16 ~ 175 ~ filtered #custom:portalblocks force

@@ -68,8 +68,8 @@ execute as @e[tag=BlueBlade] at @s run tp @s ~-1 ~-7 ~4
 execute as @e[tag=YellowBlade] at @s run tp @s ~-1 ~-7 ~-18
 
 #Rifter
-execute as @e[tag=BlueRift] at @s run tp @s ~-1 ~-7 ~3
-execute as @e[tag=YellowRift] at @s run tp @s ~-1 ~-7 ~-16
+execute as @e[tag=BlueRift] at @s run tp @s ~-1 ~-7 ~4
+execute as @e[tag=YellowRift] at @s run tp @s ~-1 ~-7 ~-17
 
 #Juggerbuster
 execute as @e[tag=BlueJug] at @s run tp @s ~-1 ~-8 ~4

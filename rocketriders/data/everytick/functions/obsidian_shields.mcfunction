@@ -6,18 +6,15 @@
 
 ##Blue Obsidian Shield functionality
 #Spawning in Fireball entities
-execute as @e[tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}
-execute as @e[tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball","NoMotionD"],ExplosionPower:0,direction:[0.0,0.0,0.0]}
+execute as @e[tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,direction:[0.0,0.0,0.0]}
+execute as @e[tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,direction:[0.0,0.0,0.0]}
 
 #Detecting motion
-tag @e[type=fireball,tag=blueobfireball,nbt={Motion:[0.0,0.0,0.0]},tag=!StillOb] add StillOb
-execute as @e[type=fireball,tag=blueobfireball,tag=!StillOb,tag=NoMotionD] at @s run kill @e[tag=ObFireballAS,distance=..2,limit=2,sort=nearest]
-execute as @e[type=fireball,tag=blueobfireball,tag=!StillOb,tag=NoMotionD] at @s run tag @s remove NoMotionD
-scoreboard players set @e[type=fireball,tag=blueobfireball] obmove 1
-scoreboard players set @e[type=fireball,tag=blueobfireball,nbt={power:[0.0,0.0,0.0]}] obmove 0
+tag @e[type=fireball,tag=blueobfireball] remove StillOb
+tag @e[type=fireball,tag=blueobfireball,nbt={Motion:[0.0,0.0,0.0]}] add StillOb
+scoreboard players add @e[type=fireball,tag=blueobfireball,tag=!StillOb] obmove 1
 scoreboard players add @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] obshieldtime 1
 scoreboard players add @e[type=dragon_fireball,tag=blueobfireball] obshieldtime 0
-tag @e[tag=blueobfireball,tag=StillOb] remove StillOb
 
 #Transferring movement data from Fireball to Dragon Fireball
 execute as @e[type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] Motion[0] double 0.000001 run data get entity @s Motion[0] 1000000
@@ -64,18 +61,15 @@ kill @e[tag=BlueObshield]
 
 ##Yellow Obsidian Shield functionality
 #Spawning in Fireball entities
-execute as @e[tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
-execute as @e[tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball","NoMotionD"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
+execute as @e[tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
+execute as @e[tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
 
 #Detecting motion
-tag @e[type=fireball,tag=yellowobfireball,nbt={Motion:[0.0,0.0,0.0]},tag=!StillOb] add StillOb
-execute as @e[type=fireball,tag=yellowobfireball,tag=!StillOb,tag=NoMotionD] at @s run kill @e[tag=ObFireballAS,distance=..2,limit=2,sort=nearest]
-execute as @e[type=fireball,tag=yellowobfireball,tag=!StillOb,tag=NoMotionD] at @s run tag @s remove NoMotionD
-scoreboard players set @e[type=fireball,tag=yellowobfireball] obmove 1
-scoreboard players set @e[type=fireball,tag=yellowobfireball,nbt={power:[0.0,0.0,0.0]}] obmove 0
+tag @e[type=fireball,tag=yellowobfireball] remove StillOb
+tag @e[type=fireball,tag=yellowobfireball,nbt={Motion:[0.0,0.0,0.0]}] add StillOb
+scoreboard players add @e[type=fireball,tag=yellowobfireball,tag=!StillOb] obmove 1
 scoreboard players add @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] obshieldtime 1
 scoreboard players add @e[type=dragon_fireball,tag=yellowobfireball] obshieldtime 0
-tag @e[tag=yellowobfireball,tag=StillOb] remove StillOb
 
 #Storing movement data
 execute as @e[type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] Motion[0] double 0.000001 run data get entity @s Motion[0] 1000000

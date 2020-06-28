@@ -51,6 +51,7 @@ execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Blue] run kill @s
 execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Yellow] run tag @s add hardcoreKilled
 execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Yellow] run kill @s
 execute as @s[scores={endtimer=570},tag=Hardcore] run gamerule showDeathMessages true
+execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Spectator] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Yellow] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0

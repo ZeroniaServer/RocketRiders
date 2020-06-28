@@ -1,4 +1,6 @@
 ##Refreshes signs for individual Game Modifiers (warped/crimson)
+#Reset counter
+scoreboard players set @s[scores={modifierID=13..}] modifierID 0
 
 #Instamine
 execute as @s[scores={modifierID=0},tag=Instamine,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]

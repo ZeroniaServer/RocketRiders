@@ -84,5 +84,4 @@ tag @s[tag=HardcoreOff] remove Hardcore
 execute as @s[tag=settingsLocked] run data merge block -69 191 75 {Text1: "{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"Modifiers are not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"white\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text3:"{\"text\":\"\"}"}
 
 #Reset/Info
-scoreboard players set @s[scores={modifierID=13..}] modifierID 0
 execute as @a[tag=modifierInfo] run function modifiers:modifierinfo

@@ -1,1 +1,1 @@
-scoreboard objectives remove distanceParticles
+scoreboard objectives remove distantParticles

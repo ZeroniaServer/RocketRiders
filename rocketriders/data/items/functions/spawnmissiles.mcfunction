@@ -23,7 +23,7 @@ execute as @e[tag=missileflip,tag=yellowmissile,tag=wasyellow] run function item
 execute as @e[tag=missileflip,tag=bluemissile,tag=wasblue] run function items:flip/flipblue
 
 ##Pierce Prevention
-execute if entity @s[tag=doPrevention] run function items:prevention/preventmissiles
+execute if entity @s[tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
 
 ##Roof cancelling (overworld only)
 execute in overworld as @e[tag=missile] at @s run kill @s[y=181,dy=100]

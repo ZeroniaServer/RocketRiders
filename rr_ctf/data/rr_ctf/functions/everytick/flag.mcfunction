@@ -100,11 +100,19 @@ execute if score FY2: FlagScore matches 6 run setblock -10 65 64 minecraft:redst
 
 
 #Clear flag etc from people who fall in the void or die
+execute as @a[tag=CarryFY1,scores={deathCooldown=1}] run scoreboard players set FY1: FlagScore 7
+execute as @a[tag=CarryFY2,scores={deathCooldown=1}] run scoreboard players set FY2: FlagScore 7
+execute as @a[tag=CarryFB1,scores={deathCooldown=1}] run scoreboard players set FB1: FlagScore 7
+execute as @a[tag=CarryFB2,scores={deathCooldown=1}] run scoreboard players set FB2: FlagScore 7
 tag @a[tag=CarryFlag,scores={deathCooldown=1}] remove CarryFY1
 tag @a[tag=CarryFlag,scores={deathCooldown=1}] remove CarryFY2
 tag @a[tag=CarryFlag,scores={deathCooldown=1}] remove CarryFB1
 tag @a[tag=CarryFlag,scores={deathCooldown=1}] remove CarryFB2
 
+execute as @a[tag=CarryFY1,predicate=custom:nearvoid] run scoreboard players set FY1: FlagScore 7
+execute as @a[tag=CarryFY2,predicate=custom:nearvoid] run scoreboard players set FY2: FlagScore 7
+execute as @a[tag=CarryFB1,predicate=custom:nearvoid] run scoreboard players set FB1: FlagScore 7
+execute as @a[tag=CarryFB2,predicate=custom:nearvoid] run scoreboard players set FB2: FlagScore 7
 tag @a[tag=CarryFlag,predicate=custom:nearvoid] remove CarryFY1
 tag @a[tag=CarryFlag,predicate=custom:nearvoid] remove CarryFY2
 tag @a[tag=CarryFlag,predicate=custom:nearvoid] remove CarryFB1

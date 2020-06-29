@@ -1,1 +1,1 @@
-scoreboard objectives remove distantParticles
+scoreboard objectives add posZ dummy

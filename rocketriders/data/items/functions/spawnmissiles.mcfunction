@@ -14,6 +14,14 @@ execute as @e[tag=YellowSurpriseNormal] at @s run function items:surprise_yellow
 execute as @e[tag=YellowSurpriseHeavy] at @s run function items:surprise_yellow/rngheavy
 execute as @e[tag=YellowSurpriseLightning] at @s run function items:surprise_yellow/rnglightning
 
+##Flipping Capability
+execute as @e[tag=yellowmissile] at @s if entity @a[team=Yellow,limit=1,sort=nearest,distance=..5,tag=FlipMissile] run tag @s add missileflip
+execute as @e[tag=bluemissile] at @s if entity @a[team=Blue,limit=1,sort=nearest,distance=..5,tag=FlipMissile] run tag @s add missileflip
+tag @e[tag=missileflip,tag=yellowmissile] add wasyellow
+tag @e[tag=missileflip,tag=bluemissile] add wasblue
+execute as @e[tag=missileflip,tag=yellowmissile,tag=wasyellow] run function items:flip/flipyellow
+execute as @e[tag=missileflip,tag=bluemissile,tag=wasblue] run function items:flip/flipblue
+
 ##Pierce Prevention
 execute if entity @s[tag=doPrevention] run function items:prevention/preventmissiles
 
@@ -25,10 +33,12 @@ execute as @e[tag=bluemissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[R
 execute as @e[tag=yellowmissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 
 ##SmartClear preparation
-execute as @e[tag=bluemissile,tag=!BlueCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
-execute as @e[tag=yellowmissile,tag=!YellowCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
+execute as @e[tag=bluemissile,tag=!BlueCata,tag=!BlueDuplex] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
+execute as @e[tag=yellowmissile,tag=!YellowCata,tag=!YellowDuplex] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
 execute as @e[tag=BlueCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,SmartClearAECcata],Duration:2000000000}
 execute as @e[tag=YellowCata] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,SmartClearAECcata],Duration:2000000000}
+execute as @e[tag=BlueDuplex] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,duplexExtraBlue],Duration:2000000000}
+execute as @e[tag=YellowDuplex] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,duplexExtraYellow],Duration:2000000000}
 
 ##Individual missile positioning
 #Auxiliary
@@ -111,7 +121,7 @@ execute as @e[tag=YellowDuplex] at @s run tp @s ~-1 ~-8 ~-22
 execute as @e[tag=BlueBroad] at @s run tp @s ~-1 ~-8 ~5
 execute as @e[tag=YellowBroad] at @s run tp @s ~-1 ~-8 ~-16
 
-##General missile preparation
+##Portal spawn detection
 execute as @e[tag=missile] at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn
 execute as @e[tag=missile] at @s if block ~ ~-1 ~ #custom:portalblocks run tag @s add portalSpawn
 execute as @e[tag=missile,tag=portalSpawn] at @s run tp @s ~ ~4 ~
@@ -121,7 +131,20 @@ execute as @e[tag=missile,tag=portalSpawn2] at @s run tp @s ~ ~ ~8
 execute as @e[tag=missile,tag=portalSpawn2] at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn3
 execute as @e[tag=missile,tag=portalSpawn2] at @s if block ~ ~-1 ~ #custom:portalblocks run tag @s add portalSpawn3
 execute as @e[tag=missile,tag=portalSpawn3] at @s run tp @s ~ ~ ~-16
+
 #Void cancelling
 execute as @e[tag=missile] at @s if predicate custom:nearvoid run kill @s
+
+##Place structure
 execute as @e[tag=missile] at @s run function items:structureblock
+
+#Extra for Duplex
+execute as @e[tag=duplexExtraBlue] at @s run fill ~-2 ~3 ~23 ~-2 ~3 ~23 powered_rail[shape=north_south] replace powered_rail
+execute as @e[tag=duplexExtraBlue] run tag @s remove duplexExtraBlue
+execute as @e[tag=duplexExtraYellow] at @s run fill ~-2 ~3 ~-18 ~-2 ~3 ~-18 powered_rail[shape=north_south] replace powered_rail
+execute as @e[tag=duplexExtraYellow] run tag @s remove duplexExtraYellow
+
+
+
+##Kill entity
 kill @e[tag=missile]

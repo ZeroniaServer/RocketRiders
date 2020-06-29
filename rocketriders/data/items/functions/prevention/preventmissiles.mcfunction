@@ -127,5 +127,6 @@ execute as @e[tag=YellowBroad,tag=!UnableMissile] at @s positioned ~-1 175 ~-16 
 ##All missiles
 tag @e[tag=missile,scores={Unable=1..}] add UnableMissile
 scoreboard players reset * Unable
-execute as @e[tag=UnableMissile] at @s run function items:prevention/unablefx
+execute as @e[tag=UnableMissile,tag=!missileflip] at @s run function items:prevention/unablefx
+execute as @e[tag=UnableMissile,tag=missileflip] at @s run function items:flip/unablefx
 function items:prevention/giveback

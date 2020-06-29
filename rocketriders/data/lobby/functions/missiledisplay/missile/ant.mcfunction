@@ -22,6 +22,6 @@ fill 22 202 69 15 206 87 barrier replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Normal] ","color":"green","bold":"true"},{"text":"A.N.T.","color":"white"}]
-execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The A.N.T. stands for Almost No TNT. It is the smallest functional missile ever made using only two TNT blocks.","color":"gray","italic":"true"}
+execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The A.N.T. stands for Almost No TNT. It is one of the smallest functional missiles, made with only two TNT blocks.","color":"gray","italic":"true"}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: Evtema3)","color":"gray","italic":"true","bold":"false"}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":""}

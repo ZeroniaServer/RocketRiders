@@ -1,0 +1,2 @@
+tellraw @s [{"text":"Capture the Flag Mode:","color":"light_purple","bold":"true"}]
+tellraw @s [{"text":"Capture the Flag is a mode where portals are covered up at the start of a match. In order to be able to destroy the enemy portal you first need to capture a flag in the middle of the map.","color":"white","italic":"true"}]

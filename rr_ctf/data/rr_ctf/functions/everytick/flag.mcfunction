@@ -17,10 +17,13 @@ setblock -10 64 63 minecraft:obsidian
 setblock -10 64 64 bedrock
 
 
-scoreboard players set 29 FlagScore 29
-scoreboard players set 20 FlagScore 20
-scoreboard players set 40 FlagScore 40
-scoreboard players set 0 FlagScore 0
+#Clear behind
+fill -14 64 65 39 74 70 air replace yellow_wool
+fill -14 64 65 39 74 70 air replace oak_fence
+fill -14 64 65 39 74 70 air replace purple_stained_glass
+fill -14 64 -65 39 74 -70 air replace yellow_wool
+fill -14 64 -65 39 74 -70 air replace oak_fence
+fill -14 64 -65 39 74 -70 air replace purple_stained_glass
 
 #Blue, right
 setblock -10 64 -63 minecraft:obsidian
@@ -38,6 +41,11 @@ setblock 35 64 -64 minecraft:obsidian
 setblock 34 64 -63 minecraft:obsidian
 setblock 34 64 -64 minecraft:bedrock
 
+
+scoreboard players set 29 FlagScore 29
+scoreboard players set 20 FlagScore 20
+scoreboard players set 40 FlagScore 40
+scoreboard players set 0 FlagScore 0
 
 
 

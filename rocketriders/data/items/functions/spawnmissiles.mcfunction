@@ -144,7 +144,5 @@ execute as @e[tag=duplexExtraBlue] run tag @s remove duplexExtraBlue
 execute as @e[tag=duplexExtraYellow] at @s run fill ~-2 ~3 ~-18 ~-2 ~3 ~-18 powered_rail[shape=north_south] replace powered_rail
 execute as @e[tag=duplexExtraYellow] run tag @s remove duplexExtraYellow
 
-
-
 ##Kill entity
 kill @e[tag=missile]

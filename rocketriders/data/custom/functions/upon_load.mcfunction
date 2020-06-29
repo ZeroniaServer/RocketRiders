@@ -1,1 +1,1 @@
-scoreboard objectives add posZ dummy
+scoreboard objectives add FlagScore dummy

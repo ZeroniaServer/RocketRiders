@@ -22,6 +22,21 @@ scoreboard players set 20 FlagScore 20
 scoreboard players set 40 FlagScore 40
 scoreboard players set 0 FlagScore 0
 
+#Blue, right
+setblock -10 64 -63 minecraft:obsidian
+setblock -9 64 -64 minecraft:obsidian
+setblock -10 64 -65 minecraft:obsidian
+setblock -11 64 -64 minecraft:obsidian
+setblock -10 64 -64 minecraft:bedrock
+
+
+
+
+
+
+
+
+
 scoreboard players add FlagWave FlagScore 1
 
 #Make flags wave around

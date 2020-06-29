@@ -13,5 +13,5 @@ execute if entity @s[tag=Minute] run function items:minutemix
 execute if score Blue: FlagScore matches 2 run function game:winblue
 execute if score Yellow: FlagScore matches 2 run function game:yellowblue
 
-#powerup platform design
+#flag logic
 execute as @s[tag=GameStarted] run function rr_ctf:everytick/flag

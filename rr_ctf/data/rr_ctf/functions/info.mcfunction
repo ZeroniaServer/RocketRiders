@@ -1,2 +1,2 @@
 tellraw @s [{"text":"Capture the Flag Mode:","color":"light_purple","bold":"true"}]
-tellraw @s [{"text":"Capture the Flag is a mode where portals are covered up at the start of a match. In order to be able to destroy the enemy portal you first need to capture a flag in the middle of the map.","color":"white","italic":"true"}]
+tellraw @s [{"text":"Capture the Flag is a mode where portals are no longer the focus of the game. In order to win, you must capture two flags from the enemy base and return them to your base. The flag holder can spawn missiles in the opposite direction to return to their base with the flag. The first team to capture both flags wins!","color":"white","italic":"true"}]

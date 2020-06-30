@@ -4,7 +4,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[tag=RandomSplash] RNGmax 57
+scoreboard players set @e[tag=RandomSplash] RNGmax 60
 
 execute as @e[tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -70,5 +70,6 @@ execute as @e[tag=RandomSplash,scores={RNGscore=55}] run title @a subtitle ["",{
 execute as @e[tag=RandomSplash,scores={RNGscore=56}] run title @a subtitle ["",{"text":"Penguins can fly!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=57}] run title @a subtitle ["",{"text":"//replace slime_block honey_block","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=58}] run title @a subtitle ["",{"text":"Bottom text","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=59}] run title @a subtitle ["",{"text":"An on-time arrival, fortunately.","color":"green"}]
 
 kill @e[tag=RandomSplash]

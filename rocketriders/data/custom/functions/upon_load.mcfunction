@@ -1,1 +1,1 @@
-scoreboard objectives add FlagScore dummy
+scoreboard objectives add splashtick dummy

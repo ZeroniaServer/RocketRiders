@@ -7,4 +7,5 @@ tag @e[tag=Selection] remove preventionOff
 tag @e[tag=Selection] remove portalDecosOff
 tag @e[tag=Selection,tag=arrowsWasOn] add rngArrows
 tag @e[tag=Selection] remove arrowsWasOn
+tag @e[tag=Selection] remove customSaberMsg
 tag @e[tag=Selection] add switchGamemodes

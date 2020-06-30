@@ -4,7 +4,7 @@ replaceitem entity @a[tag=JoinBlue] hotbar.0 minecraft:diamond_pickaxe{display:{
 replaceitem entity @a[tag=JoinBlue] weapon.offhand minecraft:firework_rocket{display:{Name:"{\"translate\":\"Fireworks\",\"color\":\"blue\",\"bold\":true,\"italic\":false}",Lore:["{\"translate\":\"For propulsion\"}"]},Fireworks:{Flight:3b}} 64
 
 execute as @a[tag=JoinYellow] run function game:givegear
-replaceitem entity @a[tag=JoinYellow] hotbar.0 minecraft:diamond_pickaxe{display:{Name:"{\"translate\":\"Pickaxe\",\"color\":\"yellow\",\"bold\":true,\"italic\":false}",Lore:["{\"translate\":\"A tool used to destroy and obtain blocks\"}"]},HideFlags:7,Unbreakable:1b,Enchantments:[{id:silk_touch,lvl:1}]}
+replaceitem entity @a[tag=JoinYellow] hotbar.0 minecraft:diamond_pickaxe{display:{Name:"{\"translate\":\"Pickaxe\",\"color\":\"gold\",\"bold\":true,\"italic\":false}",Lore:["{\"translate\":\"A tool used to destroy and obtain blocks\"}"]},HideFlags:7,Unbreakable:1b,Enchantments:[{id:silk_touch,lvl:1}]}
 replaceitem entity @a[tag=JoinYellow] weapon.offhand minecraft:firework_rocket{display:{Name:"{\"translate\":\"Fireworks\",\"color\":\"yellow\",\"bold\":true,\"italic\":false}",Lore:["{\"translate\":\"For propulsion\"}"]},Fireworks:{Flight:3b}} 64
 
 #Tag Removal

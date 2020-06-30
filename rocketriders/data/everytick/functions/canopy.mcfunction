@@ -118,7 +118,7 @@ scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerU
 
 
 ##Blue Canopy functionality
-execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..3,tag=!BluePlat,tag=!YellowPlat] add BluePlat
+execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..5,tag=!BluePlat,tag=!YellowPlat] add BluePlat
 execute as @e[tag=BluePlat] at @s run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=BluePlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=BluePlat] at @s run scoreboard players add @s testplat2 1

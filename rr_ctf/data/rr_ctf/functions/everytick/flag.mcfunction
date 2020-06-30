@@ -5,9 +5,7 @@ setblock 34 64 65 minecraft:obsidian
 setblock 33 64 64 minecraft:obsidian
 setblock 34 64 64 bedrock
 fill 34 66 64 34 72 64 oak_fence replace air
-fill -10 66 64 -10 72 64 oak_fence replace air
 fill 34 65 65 34 72 65 air
-
 
 #Yellow, left
 setblock -9 64 64 minecraft:obsidian
@@ -15,7 +13,7 @@ setblock -11 64 64 minecraft:obsidian
 setblock -10 64 65 minecraft:obsidian
 setblock -10 64 63 minecraft:obsidian
 setblock -10 64 64 bedrock
-
+fill -10 66 64 -10 72 64 oak_fence replace air
 
 #Clear behind
 fill -14 64 65 39 74 70 air replace yellow_wool
@@ -25,14 +23,13 @@ fill -14 64 -65 39 74 -70 air replace yellow_wool
 fill -14 64 -65 39 74 -70 air replace oak_fence
 fill -14 64 -65 39 74 -70 air replace purple_stained_glass
 
-#Blue, right
+#Blue, left
 setblock -10 64 -63 minecraft:obsidian
 setblock -9 64 -64 minecraft:obsidian
 setblock -10 64 -65 minecraft:obsidian
 setblock -11 64 -64 minecraft:obsidian
 setblock -10 64 -64 minecraft:bedrock
 fill -10 66 -64 -10 72 -64 minecraft:oak_fence replace air
-fill 34 66 -64 34 72 -64 minecraft:oak_fence replace air
 
 #Blue, right
 setblock 34 64 -65 minecraft:obsidian
@@ -40,18 +37,12 @@ setblock 33 64 -64 minecraft:obsidian
 setblock 35 64 -64 minecraft:obsidian
 setblock 34 64 -63 minecraft:obsidian
 setblock 34 64 -64 minecraft:bedrock
-
+fill 34 66 -64 34 72 -64 minecraft:oak_fence replace air
 
 scoreboard players set 29 FlagScore 29
 scoreboard players set 20 FlagScore 20
 scoreboard players set 40 FlagScore 40
 scoreboard players set 0 FlagScore 0
-
-
-
-
-
-
 
 
 scoreboard players add FlagWave FlagScore 1
@@ -109,6 +100,12 @@ execute if score FY1: FlagScore matches 6 run setblock 34 66 64 minecraft:struct
 execute if score FY1: FlagScore matches 6 run setblock 34 65 64 minecraft:redstone_block
 #END
 
+#Keep placing FY1 once flag lowered
+execute if score FY1: FlagScore matches 0 unless entity @a[tag=CarryFY1] run setblock 34 66 64 yellow_wool
+execute if score FY1: FlagScore matches 0 unless entity @a[tag=CarryFY1] run fill 33 66 65 33 65 65 yellow_wool
+execute if score FY1: FlagScore matches 0 unless entity @a[tag=CarryFY1] run fill 32 66 64 31 65 64 yellow_wool
+execute if score FY1: FlagScore matches 0 unless entity @a[tag=CarryFY1] run setblock 30 65 64 yellow_wool
+
 #Capture Yellow Flag 2 (the flag on yellow's left)
 execute unless block -10 65 64 purple_stained_glass if score FY2: FlagScore > 29 FlagScore run scoreboard players set FY2: FlagScore 29
 execute if score FY2: FlagScore <= 29 FlagScore run setblock -10 65 64 minecraft:white_stained_glass
@@ -137,6 +134,12 @@ execute if score FY2: FlagScore matches 6 run fill -10 64 63 -14 72 64 air repla
 execute if score FY2: FlagScore matches 6 run setblock -10 66 64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"minecraft:yellow_flag2"}
 execute if score FY2: FlagScore matches 6 run setblock -10 65 64 minecraft:redstone_block
 #END
+
+#Keep placing FY2 once flag lowered
+execute if score FY2: FlagScore matches 0 unless entity @a[tag=CarryFY2] run setblock -10 66 64 yellow_wool
+execute if score FY2: FlagScore matches 0 unless entity @a[tag=CarryFY2] run fill -11 66 65 -11 65 65 yellow_wool
+execute if score FY2: FlagScore matches 0 unless entity @a[tag=CarryFY2] run fill -12 66 64 -13 65 64 yellow_wool
+execute if score FY2: FlagScore matches 0 unless entity @a[tag=CarryFY2] run setblock -14 65 64 yellow_wool
 
 #Capture Blue Flag 1 (the flag on blue's right)
 execute unless block -10 65 -64 purple_stained_glass if score FB1: FlagScore > 29 FlagScore run scoreboard players set FB1: FlagScore 29
@@ -167,6 +170,12 @@ execute if score FB1: FlagScore matches 6 run setblock -10 66 -64 minecraft:stru
 execute if score FB1: FlagScore matches 6 run setblock -10 65 -64 minecraft:redstone_block
 #END
 
+#Keep placing FB1 once flag lowered
+execute if score FB1: FlagScore matches 0 unless entity @a[tag=CarryFB1] run setblock -10 66 -64 blue_wool
+execute if score FB1: FlagScore matches 0 unless entity @a[tag=CarryFB1] run fill -11 66 -65 -11 65 -65 blue_wool
+execute if score FB1: FlagScore matches 0 unless entity @a[tag=CarryFB1] run fill -12 66 -64 -13 65 -64 blue_wool
+execute if score FB1: FlagScore matches 0 unless entity @a[tag=CarryFB1] run setblock -14 65 -64 blue_wool
+
 #Capture Blue Flag 2 (the flag on blue's left)
 execute unless block 34 65 -64 purple_stained_glass if score FB2: FlagScore > 29 FlagScore run scoreboard players set FB2: FlagScore 29
 execute if score FB2: FlagScore <= 29 FlagScore run setblock 34 65 -64 minecraft:white_stained_glass
@@ -196,9 +205,11 @@ execute if score FB2: FlagScore matches 6 run setblock 34 66 -64 minecraft:struc
 execute if score FB2: FlagScore matches 6 run setblock 34 65 -64 minecraft:redstone_block
 #END
 
-
-
-
+#Keep placing FB2 once flag lowered
+execute if score FB2: FlagScore matches 0 unless entity @a[tag=CarryFB2] run setblock 34 66 -64 blue_wool
+execute if score FB2: FlagScore matches 0 unless entity @a[tag=CarryFB2] run fill 33 66 -65 33 65 -65 blue_wool
+execute if score FB2: FlagScore matches 0 unless entity @a[tag=CarryFB2] run fill 32 66 -64 31 65 -64 blue_wool
+execute if score FB2: FlagScore matches 0 unless entity @a[tag=CarryFB2] run setblock 30 65 -64 blue_wool
 
 #Clear flag etc from people who fall in the void or die
 execute as @a[tag=CarryFY1,scores={deathCooldown=1}] run scoreboard players set FY1: FlagScore 7
@@ -206,9 +217,9 @@ execute as @a[tag=CarryFY1,scores={deathCooldown=1}] run tellraw @a ["",{"text":
 execute as @a[tag=CarryFY2,scores={deathCooldown=1}] run scoreboard players set FY2: FlagScore 7
 execute as @a[tag=CarryFY2,scores={deathCooldown=1}] run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 execute as @a[tag=CarryFB1,scores={deathCooldown=1}] run scoreboard players set FB1: FlagScore 7
-execute as @a[tag=CarryFB1,scores={deathCooldown=1}] run tellraw @a ["",{"text":"Flag Restored! ","color":"aqua"},{"selector":"@s","color":"gold"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"blue"}]
+execute as @a[tag=CarryFB1,scores={deathCooldown=1}] run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"selector":"@s","color":"gold"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
 execute as @a[tag=CarryFB2,scores={deathCooldown=1}] run scoreboard players set FB2: FlagScore 7
-execute as @a[tag=CarryFB2,scores={deathCooldown=1}] run tellraw @a ["",{"text":"Flag Restored! ","color":"aqua"},{"selector":"@s","color":"gold"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"blue"}]
+execute as @a[tag=CarryFB2,scores={deathCooldown=1}] run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"selector":"@s","color":"gold"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
 tag @a[tag=CarryFlag,scores={deathCooldown=1}] remove CarryFY1
 tag @a[tag=CarryFlag,scores={deathCooldown=1}] remove CarryFY2
 tag @a[tag=CarryFlag,scores={deathCooldown=1}] remove CarryFB1
@@ -220,8 +231,8 @@ execute as @a[tag=CarryFB1,predicate=custom:nearvoid] run scoreboard players set
 execute as @a[tag=CarryFB2,predicate=custom:nearvoid] run scoreboard players set FB2: FlagScore 7
 
 
-execute as @a[tag=CarryFB1,predicate=custom:nearvoid] run tellraw @a ["",{"text":"Flag Restored! ","color":"aqua"},{"selector":"@s","color":"gold"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"blue"}]
-execute as @a[tag=CarryFB2,predicate=custom:nearvoid] run tellraw @a ["",{"text":"Flag Restored! ","color":"aqua"},{"selector":"@s","color":"gold"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"blue"}]
+execute as @a[tag=CarryFB1,predicate=custom:nearvoid] run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"selector":"@s","color":"gold"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
+execute as @a[tag=CarryFB2,predicate=custom:nearvoid] run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"selector":"@s","color":"gold"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
 execute as @a[tag=CarryFY1,predicate=custom:nearvoid] run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 execute as @a[tag=CarryFY2,predicate=custom:nearvoid] run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" died while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 
@@ -231,33 +242,27 @@ tag @a[tag=CarryFlag,predicate=custom:nearvoid] remove CarryFB1
 tag @a[tag=CarryFlag,predicate=custom:nearvoid] remove CarryFB2
 
 
-
 #Deliver Yellow flag at Blue base
 execute as @a[team=Blue,tag=CarryFY1,predicate=rr_ctf:player_bluebase] run scoreboard players add Blue: FlagScore 1
-execute as @a[team=Blue,tag=CarryFY1,predicate=rr_ctf:player_bluebase] run tellraw @a ["",{"selector":"@s","color":"aqua"},{"text":" successfully captured a","color":"blue"},{"text":" Yellow","color":"yellow"},{"text":" flag!","color":"blue"}]
+execute as @a[team=Blue,tag=CarryFY1,predicate=rr_ctf:player_bluebase] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" successfully captured a","color":"aqua"},{"text":" Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
 execute as @a[team=Blue,tag=CarryFY1,predicate=rr_ctf:player_bluebase] run scoreboard players set FY1: FlagScore -1
 execute as @a[team=Blue,tag=CarryFY1,predicate=rr_ctf:player_bluebase] run tag @s remove CarryFY1
 
 execute as @a[team=Blue,tag=CarryFY2,predicate=rr_ctf:player_bluebase] run scoreboard players add Blue: FlagScore 1
-execute as @a[team=Blue,tag=CarryFY2,predicate=rr_ctf:player_bluebase] run tellraw @a ["",{"selector":"@s","color":"aqua"},{"text":" successfully captured a","color":"blue"},{"text":" Yellow","color":"yellow"},{"text":" flag!","color":"blue"}]
+execute as @a[team=Blue,tag=CarryFY2,predicate=rr_ctf:player_bluebase] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" successfully captured a","color":"aqua"},{"text":" Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
 execute as @a[team=Blue,tag=CarryFY2,predicate=rr_ctf:player_bluebase] run scoreboard players set FY2: FlagScore -1
 execute as @a[team=Blue,tag=CarryFY2,predicate=rr_ctf:player_bluebase] run tag @s remove CarryFY2
 
 #Deliver Blue flag at Yellow base
 execute as @a[team=Yellow,tag=CarryFB1,predicate=rr_ctf:player_yellowbase] run scoreboard players add Yellow: FlagScore 1
-execute as @a[team=Yellow,tag=CarryFB1,predicate=rr_ctf:player_yellowbase] run tellraw @a ["",{"selector":"@s","color":"yellow"},{"text":" successfully captured a","color":"gold"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"gold"}]
+execute as @a[team=Yellow,tag=CarryFB1,predicate=rr_ctf:player_yellowbase] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" successfully captured a","color":"yellow"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
 execute as @a[team=Yellow,tag=CarryFB1,predicate=rr_ctf:player_yellowbase] run scoreboard players set FB1: FlagScore -1
 execute as @a[team=Yellow,tag=CarryFB1,predicate=rr_ctf:player_yellowbase] run tag @s remove CarryFB1
 
 execute as @a[team=Yellow,tag=CarryFB2,predicate=rr_ctf:player_yellowbase] run scoreboard players add Yellow: FlagScore 1
-execute as @a[team=Yellow,tag=CarryFB2,predicate=rr_ctf:player_yellowbase] run tellraw @a ["",{"selector":"@s","color":"yellow"},{"text":" successfully captured a","color":"gold"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"gold"}]
+execute as @a[team=Yellow,tag=CarryFB2,predicate=rr_ctf:player_yellowbase] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" successfully captured a","color":"yellow"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
 execute as @a[team=Yellow,tag=CarryFB2,predicate=rr_ctf:player_yellowbase] run scoreboard players set FB2: FlagScore -1
 execute as @a[team=Yellow,tag=CarryFB2,predicate=rr_ctf:player_yellowbase] run tag @s remove CarryFB2
-
-
-
-
-
 
 
 #Add and remove tags and items from players
@@ -288,6 +293,6 @@ execute as @a[tag=CarryFB1,scores={FlagScore=1}] run fill -14 65 -64 -10 66 -65 
 execute as @a[tag=CarryFB2,scores={FlagScore=1}] run replaceitem entity @s armor.head blue_banner{Enchantments:[{id:binding_curse,lvl:1}],HideFlags:7}
 execute as @a[tag=CarryFB2,scores={FlagScore=1}] run fill 30 65 -64 34 66 -65 air replace blue_wool
 execute as @a[tag=CarryFlag,scores={FlagScore=1}] at @s run playsound minecraft:entity.ender_dragon.flap player @a ~ ~ ~ 1 2
-execute as @a[tag=CarryFlag,team=Blue,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"aqua"},{"text":" stole a ","color":"blue"},{"text":"Yellow","color":"yellow"},{"text":" flag!","color":"blue"}]
+execute as @a[tag=CarryFlag,team=Blue,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" stole a ","color":"aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
 execute as @a[tag=CarryFlag,team=Yellow,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" stole a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
 effect give @a[tag=CarryFlag] minecraft:glowing 1 100 true

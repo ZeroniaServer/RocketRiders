@@ -1,3 +1,8 @@
+#disable arrows
+tag @e[tag=Selection,tag=rngArrows] add arrowsWasOn
+tag @e[tag=Selection] remove rngArrows
+execute unless entity @s[tag=EditedSettings] run function rr_ctf:arenaclear/customizer
+
 #management
 execute unless score @s SetGamemode = @e[tag=rr_ctf,limit=1] gamemodeID run function rr_ctf:disable
 data merge block -69 192 74 {Text1: '{"text":"Gamemode:","color":"#6b006b","clickEvent":{"action":"run_command","value":"scoreboard players add @e[tag=Selection,scores={refreshsigns=..0}] SetGamemode 1"}}',Text2: '{"text":"Capture the Flag","color":"light_purple","clickEvent":{"action":"run_command","value":"playsound ui.button.click player @a ~ ~ ~ 1 1"}}',Text4:'{"text":"(Click for next)","color":"gray","italic":"true","clickEvent":{"action":"run_command","value":"scoreboard players add @e[tag=Selection] refreshsigns 1"}}'}
@@ -8,7 +13,7 @@ data merge block -69 191 74 {Text1:'{"text":""}',Text2:'{"color":"light_purple",
 function rr_ctf:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_ctf:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_ctf:game/gameend
-function everytick:saberfix
+function rr_ctf:everytick/pickaxefix
 function everytick:no_drop
 function everytick:team_balance
 

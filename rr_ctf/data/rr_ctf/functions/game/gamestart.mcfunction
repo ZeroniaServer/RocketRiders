@@ -1,9 +1,9 @@
 #Items
 execute as @a[tag=JoinBlue] run function game:givegear
-replaceitem entity @a[tag=JoinBlue] hotbar.0 minecraft:diamond_pickaxe{display:{Name:"{\"translate\":\"Pickaxe\",\"color\":\"blue\",\"bold\":true,\"italic\":false}",Lore:["{\"translate\":\"A tool used to destroy and obtain blocks\"}"]},HideFlags:7,Unbreakable:1b}
+replaceitem entity @a[tag=JoinBlue] hotbar.0 minecraft:diamond_pickaxe{display:{Name:"{\"translate\":\"Pickaxe\",\"color\":\"blue\",\"bold\":true,\"italic\":false}",Lore:["{\"translate\":\"A tool used to destroy and obtain blocks\"}"]},HideFlags:4,Unbreakable:1b,Enchantments:[{id:sharpness,lvl:1}]}
 
 execute as @a[tag=JoinYellow] run function game:givegear
-replaceitem entity @a[tag=JoinYellow] hotbar.0 minecraft:diamond_pickaxe{display:{Name:"{\"translate\":\"Pickaxe\",\"color\":\"gold\",\"bold\":true,\"italic\":false}",Lore:["{\"translate\":\"A tool used to destroy and obtain blocks\"}"]},HideFlags:7,Unbreakable:1b}
+replaceitem entity @a[tag=JoinYellow] hotbar.0 minecraft:diamond_pickaxe{display:{Name:"{\"translate\":\"Pickaxe\",\"color\":\"gold\",\"bold\":true,\"italic\":false}",Lore:["{\"translate\":\"A tool used to destroy and obtain blocks\"}"]},HideFlags:4,Unbreakable:1b,Enchantments:[{id:sharpness,lvl:1}]}
 
 #Notify Join
 execute as @s[tag=GameStarted] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Pickaxe ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]

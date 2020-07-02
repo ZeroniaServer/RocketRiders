@@ -180,6 +180,12 @@ execute as @s[tag=YellowBroad] at @s store result score @s BroadSpawned run scor
 execute as @s[tag=YellowBroad] at @s if score @s BroadSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackBroad
 execute as @s[tag=YellowBroad] at @s if score @s BroadSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
 
+#Special cases
+execute as @s[tag=yellowmissile,tag=void] at @s if entity @a[team=Yellow,sort=nearest,limit=1,distance=..12,tag=MissiMSG] run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12,tag=MissiMSG] add voidMSG
+execute as @s[tag=bluemissile,tag=void] at @s if entity @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] run tag @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] add voidMSG
+execute as @s[tag=yellowmissile,tag=roof] at @s if entity @a[team=Yellow,sort=nearest,limit=1,distance=..12,tag=MissiMSG] run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12,tag=MissiMSG] add roofMSG
+execute as @s[tag=bluemissile,tag=roof] at @s if entity @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] run tag @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] add roofMSG
+
 #All missiles
 tp @s ~ ~-300 ~
 kill @s

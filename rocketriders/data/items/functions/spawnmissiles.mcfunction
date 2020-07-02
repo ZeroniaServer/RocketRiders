@@ -22,11 +22,22 @@ tag @e[tag=missileflip,tag=bluemissile] add wasblue
 execute as @e[tag=missileflip,tag=yellowmissile,tag=wasyellow] run function items:flip/flipyellow
 execute as @e[tag=missileflip,tag=bluemissile,tag=wasblue] run function items:flip/flipblue
 
-##Pierce Prevention
+##Prevention
+#Void
+execute as @e[tag=missile] at @s if predicate custom:nearvoid run tag @s add UnableMissile
+execute as @e[tag=missile] at @s if predicate custom:nearvoid run tag @s add void
+
+#Roof
+execute in overworld as @e[tag=missile] at @s if predicate custom:nearroof run tag @s add UnableMissile
+execute in overworld as @e[tag=missile] at @s if predicate custom:nearroof run tag @s add roof
+
+#Pierce Prevention (Portals)
 execute if entity @s[tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
 
-##Roof cancelling (overworld only)
-execute in overworld as @e[tag=missile] at @s run kill @s[y=181,dy=100]
+#Give back
+execute as @e[tag=UnableMissile,tag=!missileflip] at @s run function items:prevention/unablefx
+execute as @e[tag=UnableMissile,tag=missileflip] at @s run function items:flip/unablefx
+function items:prevention/giveback
 
 ##Bot preparation (for PVE mode)
 execute as @e[tag=bluemissile] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
@@ -131,9 +142,6 @@ execute as @e[tag=missile,tag=portalSpawn2] at @s run tp @s ~ ~ ~8
 execute as @e[tag=missile,tag=portalSpawn2] at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn3
 execute as @e[tag=missile,tag=portalSpawn2] at @s if block ~ ~-1 ~ #custom:portalblocks run tag @s add portalSpawn3
 execute as @e[tag=missile,tag=portalSpawn3] at @s run tp @s ~ ~ ~-16
-
-#Void cancelling
-execute as @e[tag=missile] at @s if predicate custom:nearvoid run kill @s
 
 ##Place structure
 execute as @e[tag=missile] at @s run function items:structureblock

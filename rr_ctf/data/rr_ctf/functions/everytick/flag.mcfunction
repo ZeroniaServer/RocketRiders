@@ -81,7 +81,7 @@ execute if score FY1: FlagScore matches 6 run setblock 34 65 64 redstone_block
 
 #Keep placing FY1 once flag lowered
 execute if score FY1: FlagScore matches 0 unless entity @a[tag=CarryFY1] run setblock 34 66 64 yellow_wool
-execute if score FY1: FlagScore matches 0 unless entity @a[tag=CarryFY1] run fill 33 66 65 33 65 65 yellow_wool
+execute if score FY1: FlagScore matches 0 unless entity @a[tag=CarryFY1] run fill 33 66 63 33 65 63 yellow_wool
 execute if score FY1: FlagScore matches 0 unless entity @a[tag=CarryFY1] run fill 32 66 64 31 65 64 yellow_wool
 execute if score FY1: FlagScore matches 0 unless entity @a[tag=CarryFY1] run setblock 30 65 64 yellow_wool
 
@@ -116,7 +116,7 @@ execute if score FY2: FlagScore matches 6 run setblock -10 65 64 redstone_block
 
 #Keep placing FY2 once flag lowered
 execute if score FY2: FlagScore matches 0 unless entity @a[tag=CarryFY2] run setblock -10 66 64 yellow_wool
-execute if score FY2: FlagScore matches 0 unless entity @a[tag=CarryFY2] run fill -11 66 65 -11 65 65 yellow_wool
+execute if score FY2: FlagScore matches 0 unless entity @a[tag=CarryFY2] run fill -11 66 63 -11 65 63 yellow_wool
 execute if score FY2: FlagScore matches 0 unless entity @a[tag=CarryFY2] run fill -12 66 64 -13 65 64 yellow_wool
 execute if score FY2: FlagScore matches 0 unless entity @a[tag=CarryFY2] run setblock -14 65 64 yellow_wool
 

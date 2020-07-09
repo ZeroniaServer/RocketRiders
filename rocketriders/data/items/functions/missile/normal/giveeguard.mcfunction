@@ -5,5 +5,5 @@ give @s[team=Yellow,scores={HasGuard=0},tag=!fullHotbar] elder_guardian_spawn_eg
 give @s[team=Blue,scores={HasGuard=0},tag=!fullHotbar] elder_guardian_spawn_egg{Team:['Blue'],display:{Name:'[{"text":"[Normal] ","color":"green","bold":"true"},{"text":"Elder Guardian","color":"blue","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"9","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"Rubix_One","color":"gray"}','{"text":" ","color":"gray"}','{"text":"An upgrade from the original Guardian","color":"gray"}','{"text":"in Missile Wars, the Elder Guardian is","color":"gray"}','{"text":"bigger and covers the TNT better.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['missile','bluemissile','BlueGuard']}} 1
 
 #Game tracking
-tag @e[tag=Selection] add givenGuard
-tag @e[tag=Bot] add BotHasGuard
+tag @e[tag=Selection,type=armor_stand] add givenGuard
+tag @e[tag=Bot,type=armor_stand] add BotHasGuard

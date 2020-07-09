@@ -5,4 +5,4 @@ give @s[team=Yellow,scores={HasBroad=0},tag=!fullHotbar] magma_cube_spawn_egg{di
 give @s[team=Blue,scores={HasBroad=0},tag=!fullHotbar] magma_cube_spawn_egg{display:{Name:'[{"text":"[Special] ","color":"dark_purple","bold":"true"},{"text":"Broadsword","color":"blue","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"23","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"IndigoLaser","color":"gray"}','{"text":" ","color":"gray"}','{"text":"The Broadsword is a fast and powerful","color":"gray"}','{"text":"missile that bombs a lot of TNT.","color":"gray"}','{"text":"It\'s like three swords combined!","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['missile','bluemissile','BlueBroad']},Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7} 1
 
 #Game tracking
-tag @e[tag=Selection] add givenBroad
+tag @e[tag=Selection,type=armor_stand] add givenBroad

@@ -5,4 +5,4 @@ give @s[team=Yellow,scores={HasObshield=0},tag=!fullHotbar] enderman_spawn_egg{d
 give @s[team=Blue,scores={HasObshield=0},tag=!fullHotbar] enderman_spawn_egg{display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"Obsidian Shield","color":"blue","bold":"true"}]',Lore:['{"text":"Made by:","color":"gray"}','{"text":"Evtema3","color":"gray"}','{"text":" ","color":"gray"}','{"text":"Spawns a Fireball that you can shoot or punch","color":"gray"}','{"text":"to spawn an Obsidian Shield. Stops all missiles.","color":"gray"}','{"text":"Break the central glass 3 times to destroy it.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['BlueObshield']}} 1
 
 #Game tracking
-tag @e[tag=Selection] add givenObshield
+tag @e[tag=Selection,type=armor_stand] add givenObshield

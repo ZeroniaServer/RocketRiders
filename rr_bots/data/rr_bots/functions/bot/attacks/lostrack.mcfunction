@@ -1,8 +1,8 @@
 scoreboard players add @s BotHP 1
 
-execute as @s[tag=!Returned,tag=!DeniedLOS] at @s if entity @e[tag=BotArrows,distance=..4,limit=1,sort=nearest] run tag @e[tag=BotArrows,distance=..4,limit=1,sort=nearest] add BotFireArrow
-execute as @s[tag=BotSpotted,tag=!DeniedLOS] at @s if entity @e[tag=BotArrows,distance=..4,limit=1,sort=nearest] run tag @s add Returned
-execute as @s[tag=BotSpotted,tag=!DeniedLOS] at @s if entity @e[tag=BotArrows,distance=..4,limit=1,sort=nearest] run kill @s
+execute as @s[tag=!Returned,tag=!DeniedLOS] at @s if entity @e[tag=BotArrows,distance=..4,limit=1,sort=nearest,type=armor_stand] run tag @e[tag=BotArrows,distance=..4,limit=1,sort=nearest,type=armor_stand] add BotFireArrow
+execute as @s[tag=BotSpotted,tag=!DeniedLOS] at @s if entity @e[tag=BotArrows,distance=..4,limit=1,sort=nearest,type=armor_stand] run tag @s add Returned
+execute as @s[tag=BotSpotted,tag=!DeniedLOS] at @s if entity @e[tag=BotArrows,distance=..4,limit=1,sort=nearest,type=armor_stand] run kill @s
 execute as @s[tag=!DeniedLOS] at @s unless block ^ ^ ^0.1 air run kill @s
 
 execute as @s[tag=LOSTrackerBlue,tag=!Returned,tag=!DeniedLOS] at @s unless block ~ ~ ~ air run tag @s add DeniedLOS

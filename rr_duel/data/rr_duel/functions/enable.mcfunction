@@ -1,20 +1,20 @@
-tag @e[tag=Selection] remove switchGamemodes
+tag @e[tag=Selection,type=armor_stand] remove switchGamemodes
 
-execute as @e[tag=Selection] run function gamemodes:storesettings
-tag @e[tag=Selection] add duelEnabled
-tag @e[tag=Selection] add SurpriseEggOff
-tag @e[tag=Selection] add tyingOff
-tag @e[tag=Selection] add itemDelayOff
-tag @e[tag=Selection] add settingsLocked
+execute as @e[tag=Selection,type=armor_stand] run function gamemodes:storesettings
+tag @e[tag=Selection,type=armor_stand] add duelEnabled
+tag @e[tag=Selection,type=armor_stand] add SurpriseEggOff
+tag @e[tag=Selection,type=armor_stand] add tyingOff
+tag @e[tag=Selection,type=armor_stand] add itemDelayOff
+tag @e[tag=Selection,type=armor_stand] add settingsLocked
 
 #Item giving time
-scoreboard players set @e[tag=Selection] MaxItemSec 15
-scoreboard players set @e[tag=Selection] MaxItemTime 300
+scoreboard players set @e[tag=Selection,type=armor_stand] MaxItemSec 15
+scoreboard players set @e[tag=Selection,type=armor_stand] MaxItemTime 300
 
 #Blank arena preset
-scoreboard players set @e[tag=Selection] TopDeco 0
-scoreboard players set @e[tag=Selection] MiddleDeco 0
-scoreboard players set @e[tag=Selection] TopCorner 0
-scoreboard players set @e[tag=Selection] BottomDeco 0
-scoreboard players set @e[tag=Selection] PortalDeco 0
-execute as @e[tag=Selection] run function arenaclear:refreshcustomizer
+scoreboard players set @e[tag=Selection,type=armor_stand] TopDeco 0
+scoreboard players set @e[tag=Selection,type=armor_stand] MiddleDeco 0
+scoreboard players set @e[tag=Selection,type=armor_stand] TopCorner 0
+scoreboard players set @e[tag=Selection,type=armor_stand] BottomDeco 0
+scoreboard players set @e[tag=Selection,type=armor_stand] PortalDeco 0
+execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer

@@ -34,9 +34,9 @@ execute as @s[tag=!ctfEnabled,tag=doTying,tag=!tyingOff,tag=YellowWon,tag=BlueWo
 ##Post-tie phase and reset
 execute as @s[scores={endtimer=81}] as @a run function everytick:score_reset
 scoreboard players set @s[scores={endtimer=81}] gametime 0
-execute as @s[scores={endtimer=81..100}] run tag @e[tag=yellowjoinpad] add CancelJoin
-execute as @s[scores={endtimer=81..100}] run tag @e[tag=bluejoinpad] add CancelJoin
-execute as @s[scores={endtimer=81..100}] run tag @e[tag=specjoinpad] add CancelJoin
+execute as @s[scores={endtimer=81..100}] run tag @e[tag=yellowjoinpad,type=area_effect_cloud] add CancelJoin
+execute as @s[scores={endtimer=81..100}] run tag @e[tag=bluejoinpad,type=area_effect_cloud] add CancelJoin
+execute as @s[scores={endtimer=81..100}] run tag @e[tag=specjoinpad,type=area_effect_cloud] add CancelJoin
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Blue]
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Yellow]
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] GamesPlayed 1

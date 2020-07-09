@@ -4,7 +4,7 @@ function game:leavemidgame
 #general
 function rr_pve:items/antidupe
 function rr_pve:items/spawnitems
-execute unless entity @e[tag=Bot] run function rr_pve:game/prepbots
+execute unless entity @e[tag=Bot,type=armor_stand] run function rr_pve:game/prepbots
 
 #Item RNG and spawnpoints
 scoreboard players add @s RandomItem 1

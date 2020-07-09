@@ -1,9 +1,9 @@
 ##Missile Display for Broadsword
 
-data merge entity @e[tag=NameDisp,limit=1] {CustomName:'{"text":"Broadsword","color":"dark_purple","bold":"true"}'}
-data merge entity @e[tag=TNTDisp,limit=1] {CustomName:'["",{"text":"TNT Count: ","color":"dark_green","bold":"true"},{"text":"23","color":"white"}]'}
-data merge entity @e[tag=SpeedDisp,limit=1] {CustomName:'["",{"text":"Speed: ","color":"dark_green","bold":"true"},{"text":"3.3m/s","color":"white"}]'}
-data merge entity @e[tag=MisDispIF,limit=1] {Item:{id:"minecraft:magma_cube_spawn_egg",tag:{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7},Count:1b}}
+data merge entity @e[tag=NameDisp,limit=1,type=area_effect_cloud] {CustomName:'{"text":"Broadsword","color":"dark_purple","bold":"true"}'}
+data merge entity @e[tag=TNTDisp,limit=1,type=area_effect_cloud] {CustomName:'["",{"text":"TNT Count: ","color":"dark_green","bold":"true"},{"text":"23","color":"white"}]'}
+data merge entity @e[tag=SpeedDisp,limit=1,type=area_effect_cloud] {CustomName:'["",{"text":"Speed: ","color":"dark_green","bold":"true"},{"text":"3.3m/s","color":"white"}]'}
+data merge entity @e[tag=MisDispIF,limit=1,type=item_frame] {Item:{id:"minecraft:magma_cube_spawn_egg",tag:{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7},Count:1b}}
 
 playsound minecraft:entity.generic.explode player @a 19 204 78 0.5 1.75
 particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force

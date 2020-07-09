@@ -22,8 +22,8 @@ execute as @a[team=!Lobby] run trigger daytime set 0
 execute as @s[tag=EditedSettings] as @a run trigger daytime set 0
 
 #Launch pad in Modification Room
-execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
-execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..1] run effect clear @s jump_boost
+execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[tag=modroomGoBack,limit=1,distance=..1,type=area_effect_cloud] run effect give @s jump_boost 1 20 true
+execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..1,type=area_effect_cloud] run effect clear @s jump_boost
 
 #Full offhand check
 tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
@@ -36,8 +36,8 @@ tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
 #Distance particles (counteract low server render distance)
 # execute as @a[team=Blue,gamemode=!spectator] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
 # execute as @a[team=Yellow,gamemode=!spectator] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
-# execute as @e[team=BlueBot] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
-# execute as @e[team=YellowBot] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
+# execute as @e[team=BlueBot,type=armor_stand] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
+# execute as @e[team=YellowBot,type=armor_stand] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
 
 #Remove Splash tags for Lobby players. Just a failsave
 tag @a[team=!Blue,team=!Yellow] remove Winner
@@ -49,10 +49,10 @@ scoreboard players add @a[scores={ThrowPlat=1..16}] ThrowPlat 1
 scoreboard players set @a[scores={ThrowPlat=17..}] ThrowPlat 0
 
 #Decoy Vortex (Lobby)
-execute as @e[tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
-execute as @e[tag=VortexDummy] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
-execute as @e[tag=VortexItemDummy] at @s unless entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~15 ~
-execute as @e[tag=VortexItemDummy] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]
+execute as @e[tag=VortexDummy,type=area_effect_cloud] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @e[tag=VortexDummy,type=area_effect_cloud] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @e[tag=VortexItemDummy,type=armor_stand] at @s unless entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~15 ~
+execute as @e[tag=VortexItemDummy,type=armor_stand] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]
 
 #Lobby players have no items besides a book (and boots, if Duel is present)
 replaceitem entity @a[team=Lobby] hotbar.0 air

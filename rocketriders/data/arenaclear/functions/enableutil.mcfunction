@@ -7,4 +7,4 @@ tag @s add rngSplash
 tag @s add rngCanopy
 tag @s add rngFireball
 tag @s add rngNova
-scoreboard players set @e[tag=Selection] refreshsigns 1
+scoreboard players set @e[tag=Selection,type=armor_stand] refreshsigns 1

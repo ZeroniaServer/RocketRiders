@@ -6,4 +6,4 @@ give @s[team=Blue,scores={HasShield=0},tag=!fullHotbar] snowball{CustomModelData
 
 #Game tracking
 tag @e[tag=Selection,tag=givenShield] add givenShieldTwice
-tag @e[tag=Selection] add givenShield
+tag @e[tag=Selection,type=armor_stand] add givenShield

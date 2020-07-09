@@ -9,4 +9,4 @@ fill 38 63 -61 -14 34 -57 air
 fill -14 34 -62 38 63 -66 air
 
 #remove join cancel from joinpads
-tag @e[tag=CancelJoin] remove CancelJoin
+tag @e[tag=CancelJoin,type=area_effect_cloud] remove CancelJoin

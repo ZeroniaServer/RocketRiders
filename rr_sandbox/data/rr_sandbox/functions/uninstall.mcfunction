@@ -1,5 +1,5 @@
 function rr_sandbox:disable
-execute if entity @e[tag=rr_sandbox,limit=1] run kill @e[tag=rr_sandbox,limit=1]
+execute if entity @e[tag=rr_sandbox,limit=1,type=armor_stand] run kill @e[tag=rr_sandbox,limit=1,type=armor_stand]
 scoreboard objectives remove sandboxRandom
 scoreboard objectives remove SBplaceSlime
 scoreboard objectives remove SBplaceRS
@@ -18,4 +18,4 @@ scoreboard objectives remove SBplaceObser
 scoreboard objectives remove dropPickaxe
 scoreboard objectives remove HasDiaPickaxe
 scoreboard players reset * gamemodeID
-execute unless entity @e[tag=rr_sandbox,limit=1] run tellraw @s {"text":"Sandbox Mode uninstalled.","color":"red","bold":"true"}
+execute unless entity @e[tag=rr_sandbox,limit=1,type=armor_stand] run tellraw @s {"text":"Sandbox Mode uninstalled.","color":"red","bold":"true"}

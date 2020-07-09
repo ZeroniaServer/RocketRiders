@@ -6,4 +6,4 @@ give @s[team=Blue,scores={HasFireball=0},tag=!fullHotbar] blaze_spawn_egg{displa
 
 #Game tracking
 tag @e[tag=Selection,tag=givenFireball] add givenFireballTwice
-tag @e[tag=Selection] add givenFireball
+tag @e[tag=Selection,type=armor_stand] add givenFireball

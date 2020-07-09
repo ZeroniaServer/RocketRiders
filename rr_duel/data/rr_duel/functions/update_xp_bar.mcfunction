@@ -3,16 +3,16 @@ execute store result score @s xp_level run scoreboard players get @s XP
 execute store result score @s xp_progress run scoreboard players get @s XP
 
 #setting progress bar appropriately
-scoreboard players set @e[tag=Selection,limit=1] xp_mod 300
+scoreboard players set @e[tag=Selection,limit=1,type=armor_stand] xp_mod 300
 # this is what you multiply xp_mod by to get 100 - 300 * 1 / 3
-scoreboard players set @e[tag=Selection,limit=1] xp_mult 1
-scoreboard players set @e[tag=Selection,limit=1] xp_div 3
-scoreboard players operation @s xp_progress %= @e[tag=Selection,limit=1] xp_mod
-scoreboard players operation @s xp_progress *= @e[tag=Selection,limit=1] xp_mult
-scoreboard players operation @s xp_progress /= @e[tag=Selection,limit=1] xp_div
+scoreboard players set @e[tag=Selection,limit=1,type=armor_stand] xp_mult 1
+scoreboard players set @e[tag=Selection,limit=1,type=armor_stand] xp_div 3
+scoreboard players operation @s xp_progress %= @e[tag=Selection,limit=1,type=armor_stand] xp_mod
+scoreboard players operation @s xp_progress *= @e[tag=Selection,limit=1,type=armor_stand] xp_mult
+scoreboard players operation @s xp_progress /= @e[tag=Selection,limit=1,type=armor_stand] xp_div
 
 #original system designed by WubbiConcepts: https://www.youtube.com/watch?v=NKaNyEM4VO0
-#updated to 1.14 by Evtema3
+#updated to 1.14+ by Evtema3
 xp add @s[scores={xp_progress=-2147483648..}] -2147483648 levels
 xp add @s[scores={xp_progress=-2147483648..}] 1129 levels
 xp add @s[scores={xp_progress=-2147483648..}] 11 points

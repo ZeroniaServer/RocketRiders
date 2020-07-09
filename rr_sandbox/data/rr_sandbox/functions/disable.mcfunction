@@ -1,2 +1,2 @@
-tag @e[tag=Selection] remove sandboxEnabled
-tag @e[tag=Selection] add switchGamemodes
+tag @e[tag=Selection,type=armor_stand] remove sandboxEnabled
+tag @e[tag=Selection,type=armor_stand] add switchGamemodes

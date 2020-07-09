@@ -1,11 +1,11 @@
 tag @s remove FakeGameEnd
 scoreboard players set @s fakeendtimer 0
 
-execute as @e[tag=SmartClearAECblue,tag=!SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue"],Duration:360}
-execute as @e[tag=SmartClearAECblue,tag=SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue","ArenaClearCata"],Duration:360}
+execute as @e[tag=SmartClearAECblue,tag=!SmartClearAECcata,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue"],Duration:360}
+execute as @e[tag=SmartClearAECblue,tag=SmartClearAECcata,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue","ArenaClearCata"],Duration:360}
+execute as @e[tag=SmartClearAECyellow,tag=!SmartClearAECcata,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearYellow"],Duration:360}
+execute as @e[tag=SmartClearAECyellow,tag=SmartClearAECcata,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearYellow","ArenaClearCata"],Duration:360}
 summon area_effect_cloud 11 63 6 {Tags:["ArenaClearChecker"],Duration:360}
-execute as @e[tag=SmartClearAECyellow,tag=!SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearYellow"],Duration:360}
-execute as @e[tag=SmartClearAECyellow,tag=SmartClearAECcata] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearYellow","ArenaClearCata"],Duration:360}
 
 function items:tetrisreset
 
@@ -22,32 +22,28 @@ execute if entity @s[tag=!Molerat] run fill -12 36 -12 36 61 12 air
 kill @e[type=fireball]
 kill @e[type=snowball]
 kill @e[type=arrow]
-kill @e[tag=Vortex]
-kill @e[tag=VortexItem]
+kill @e[tag=Vortex,type=area_effect_cloud]
+kill @e[tag=VortexItem,type=armor_stand]
 kill @e[type=chicken]
 kill @e[type=tnt]
+kill @e[type=tnt_minecart]
 kill @e[type=dragon_fireball]
 kill @e[tag=obfireball]
-kill @e[tag=FireballAS]
-kill @e[tag=ObFireballAS]
-kill @e[tag=blueobalone]
-kill @e[tag=yellowobalone]
-kill @e[tag=splash]
+kill @e[tag=blueobalone,type=armor_stand]
+kill @e[tag=yellowobalone,type=armor_stand]
+kill @e[tag=splash,type=potion]
 kill @e[type=item]
-
-execute as @e[tag=blueobsidianshield] at @s run function everytick:obsidian_shield_break
-execute as @e[tag=yellowobsidianshield] at @s run function everytick:obsidian_shield_break
-
-execute as @e[tag=ClearShields] at @s run fill ~-3 ~-3 ~ ~3 ~3 ~ air destroy
-kill @e[tag=ClearShields]
-execute as @e[tag=Platform] at @s run fill ~-3 ~ ~-3 ~3 ~ ~3 air replace #minecraft:leaves
-execute as @e[tag=Platform] at @s run fill ~ ~ ~ ~ ~1 ~ air
-kill @e[tag=Platform]
-kill @e[tag=YellowPlatform]
-kill @e[tag=BluePlatform]
-
-kill @e[tag=BlueNova]
-kill @e[tag=YellowNova]
+kill @e[tag=BlueNova,type=firework_rocket]
+kill @e[tag=YellowNova,type=firework_rocket]
+execute as @e[tag=blueobsidianshield,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break
+execute as @e[tag=yellowobsidianshield,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break
+execute as @e[tag=ClearShields,type=area_effect_cloud] at @s run fill ~-3 ~-3 ~ ~3 ~3 ~ air destroy
+kill @e[tag=ClearShields,type=area_effect_cloud]
+execute as @e[tag=Platform,type=area_effect_cloud] at @s run fill ~-3 ~ ~-3 ~3 ~ ~3 air replace #minecraft:leaves
+execute as @e[tag=Platform,type=area_effect_cloud] at @s run fill ~ ~ ~ ~ ~1 ~ air
+kill @e[tag=Platform,type=area_effect_cloud]
+kill @e[tag=YellowPlatform,type=area_effect_cloud]
+kill @e[tag=BluePlatform,type=area_effect_cloud]
 
 function arenaclear:superspeed
 

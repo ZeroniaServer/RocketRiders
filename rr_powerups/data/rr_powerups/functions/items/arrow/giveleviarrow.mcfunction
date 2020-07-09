@@ -8,4 +8,4 @@ replaceitem entity @s[scores={HasTippedArrows=0},tag=!fullHotbar,tag=!fullOffhan
 replaceitem entity @s[scores={HasTippedArrows=1},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand tipped_arrow{display:{Name:'{"text":"Levitation Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:25b,Amplifier:0b,Duration:100,ShowParticles:1b}],CustomPotionColor:11793919,HideFlags:63} 3
 replaceitem entity @s[scores={HasTippedArrows=2},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand tipped_arrow{display:{Name:'{"text":"Levitation Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:25b,Amplifier:0b,Duration:100,ShowParticles:1b}],CustomPotionColor:11793919,HideFlags:63} 2
 replaceitem entity @s[scores={HasTippedArrows=3},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand tipped_arrow{display:{Name:'{"text":"Levitation Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:25b,Amplifier:0b,Duration:100,ShowParticles:1b}],CustomPotionColor:11793919,HideFlags:63} 1
-tag @e[tag=Selection] add givenLeviArr
+tag @e[tag=Selection,type=armor_stand] add givenLeviArr

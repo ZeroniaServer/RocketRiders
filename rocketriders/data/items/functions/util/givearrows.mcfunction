@@ -13,6 +13,6 @@ replaceitem entity @s[scores={HasArrows=2},tag=!fullHotbar,tag=!fullOffhand] wea
 replaceitem entity @s[scores={HasArrows=3},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}} 1
 
 #Game tracking
-tag @e[tag=Selection,tag=givenArrows] add givenArrowsTwice
-tag @e[tag=Selection] add givenArrows
-scoreboard players set @e[tag=Bot] botarrowitems 4
+tag @e[tag=Selection,tag=givenArrows,type=armor_stand] add givenArrowsTwice
+tag @e[tag=Selection,type=armor_stand] add givenArrows
+scoreboard players set @e[tag=Bot,type=armor_stand] botarrowitems 4

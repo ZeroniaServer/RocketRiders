@@ -3,10 +3,10 @@ function arenaclear:baseplacement
 #bases
 summon area_effect_cloud ~ ~ ~ {Tags:["RNGSwap","DarkBlue"],Duration:1000}
 summon area_effect_cloud ~ ~ ~ {Tags:["RNGSwap","DarkYellow"],Duration:1000}
-tag @e[tag=RNGSwap,limit=1,sort=random] add SelectRNGSwap
-execute as @e[tag=DarkBlue,tag=SelectRNGSwap] run scoreboard players set SwapSide swapside 1
-execute as @e[tag=DarkYellow,tag=SelectRNGSwap] run scoreboard players set SwapSide swapside 0
-kill @e[tag=RNGSwap]
+tag @e[tag=RNGSwap,limit=1,sort=random,type=area_effect_cloud] add SelectRNGSwap
+execute as @e[tag=DarkBlue,tag=SelectRNGSwap,type=area_effect_cloud] run scoreboard players set SwapSide swapside 1
+execute as @e[tag=DarkYellow,tag=SelectRNGSwap,type=area_effect_cloud] run scoreboard players set SwapSide swapside 0
+kill @e[tag=RNGSwap,type=area_effect_cloud]
 
 function arenaclear:detailplacement
 

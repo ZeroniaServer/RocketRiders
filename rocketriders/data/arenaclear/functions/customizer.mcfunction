@@ -119,6 +119,7 @@ tag @s[tag=DefaultOptions] add doHotbarLimit
 tag @s[tag=DefaultOptions] remove doStacking
 tag @s[tag=DefaultOptions] remove doFireballPortals
 scoreboard players set @s[tag=DefaultOptions] MaxItemSec 15
+scoreboard players set @s[tag=DefaultOptions] MaxItemTime 300
 scoreboard players set @s[tag=DefaultOptions] RepeatSettings 1
 execute as @s[tag=DefaultOptions] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultOptions] remove DefaultOptions

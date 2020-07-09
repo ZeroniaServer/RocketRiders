@@ -42,10 +42,10 @@ tag @s add doHotbarLimit
 tag @s remove doStacking
 tag @s remove doFireballPortals
 
-###################################################
-#The lines below make it so 12 items are selected.#
-#       Thanks to Llewv for the suggestion!       #
-####################################################
+#######################################################
+## The lines below make it so 12 items are selected. ##
+##        Thanks to Llewv for the suggestion!        ##
+#######################################################
 
 execute if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"Active Items: ","color":"gray","bold":"false"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"In Ranked 1v1 Mode, a set of items is chosen automatically each round.","color":"white"}]}}]

@@ -103,12 +103,12 @@ execute as @e[scores={testplat=10},type=ender_pearl] at @s run setblock ~ ~ ~ ob
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["YellowPlatform"]}
-execute as @e[scores={testplat=10},type=ender_pearl] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["Platform"]}
+execute as @e[scores={testplat=10},type=ender_pearl] at @s run summon area_effect_cloud ~ ~1 ~ {Duration:2000000000,Tags:["Platform"]}
 scoreboard players add @e[tag=YellowPlatform,type=area_effect_cloud] PlatTime 1
 execute as @e[scores={testplat=10},type=ender_pearl] at @s store result score @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat=10..},type=ender_pearl]
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
-execute as @a[team=Yellow] if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] align xyz positioned ~0.5 ~3.5 ~0.5 run tp @s ~ ~ ~
+execute as @a[team=Yellow] if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] at @e[tag=Platform,distance=..1,limit=1,sort=nearest,type=area_effect_cloud] align xyz positioned ~0.5 ~3 ~0.5 run tp @s ~ ~ ~
 execute as @a[team=Yellow] at @s if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slow_falling 2 100 true
 execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s jump_boost 2 128 true
 execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slowness 2 255 true
@@ -136,12 +136,12 @@ execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run pla
 execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
 execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run playsound block.grass.place player @a ~ ~ ~ 2 0
 execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["BluePlatform"]}
-execute as @e[scores={testplat2=10},type=ender_pearl] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["Platform"]}
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s run summon area_effect_cloud ~ ~1 ~ {Duration:2000000000,Tags:["Platform"]}
 scoreboard players add @e[tag=BluePlatform,type=area_effect_cloud] PlatTime 1
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat2=10..},type=ender_pearl]
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
-execute as @a[team=Blue] if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] align xyz positioned ~0.5 ~3.5 ~0.5 run tp @s ~ ~ ~
+execute as @a[team=Blue] if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] at @e[tag=Platform,distance=..1,limit=1,sort=nearest,type=area_effect_cloud] align xyz positioned ~0.5 ~3 ~0.5 run tp @s ~ ~ ~
 execute as @a[team=Blue] at @s if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slow_falling 2 100 true
 execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s jump_boost 2 128 true
 execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slowness 2 255 true
@@ -206,7 +206,7 @@ execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~ ~
 #Hotfix for a bug where breaking the banners and pushing the log blocks in a Canopy allows you to cheat the auto-decay system
 execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s run scoreboard players set @e[tag=Platform,limit=1,sort=nearest,type=area_effect_cloud] canopyExtraLogs 1
 scoreboard players add @e[tag=Platform,scores={canopyExtraLogs=1..},type=area_effect_cloud] canopyExtraLogs 1
-execute as @e[tag=Platform,scores={canopyExtraLogs=4..},type=area_effect_cloud] at @s run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 air replace oak_wood
+execute as @e[tag=Platform,scores={canopyExtraLogs=4..},type=area_effect_cloud] at @s positioned ~ ~-1 ~ run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 air replace oak_wood
 scoreboard players reset @e[tag=Platform,scores={canopyExtraLogs=4..},type=area_effect_cloud] canopyExtraLogs
 
 #Kill entity once Canopy expires

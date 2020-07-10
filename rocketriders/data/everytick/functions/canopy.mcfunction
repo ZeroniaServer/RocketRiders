@@ -137,8 +137,8 @@ execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run set
 execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0
 execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
 execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run playsound block.grass.place player @a ~ ~ ~ 2 0
-execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["BluePlatform"]}
-execute as @e[scores={testplat2=10},type=ender_pearl] at @s run summon area_effect_cloud ~ ~1 ~ {Duration:2000000000,Tags:["Platform"]}
+execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["BluePlatform"]}
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~1 ~ {Duration:2000000000,Tags:["Platform"]}
 scoreboard players add @e[tag=BluePlatform,type=area_effect_cloud] PlatTime 1
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat2=10..},type=ender_pearl]

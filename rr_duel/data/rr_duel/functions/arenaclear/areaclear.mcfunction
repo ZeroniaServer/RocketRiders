@@ -39,8 +39,8 @@ execute as @e[tag=blueobsidianshield,type=area_effect_cloud] at @s run function 
 execute as @e[tag=yellowobsidianshield,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break
 execute as @e[tag=ClearShields,type=area_effect_cloud] at @s run fill ~-3 ~-3 ~ ~3 ~3 ~ air destroy
 kill @e[tag=ClearShields,type=area_effect_cloud]
-execute as @e[tag=Platform,type=area_effect_cloud] at @s positioned ~ ~-1 ~ run fill ~-3 ~ ~-3 ~3 ~ ~3 air replace #minecraft:leaves
-execute as @e[tag=Platform,type=area_effect_cloud] at @s positioned ~ ~-1 ~ run fill ~ ~ ~ ~ ~1 ~ air
+execute as @e[tag=Platform,type=area_effect_cloud] at @s run fill ~-3 ~ ~-3 ~3 ~ ~3 air replace #minecraft:leaves
+execute as @e[tag=Platform,type=area_effect_cloud] at @s run fill ~ ~ ~ ~ ~1 ~ air
 kill @e[tag=Platform,type=area_effect_cloud]
 kill @e[tag=YellowPlatform,type=area_effect_cloud]
 kill @e[tag=BluePlatform,type=area_effect_cloud]

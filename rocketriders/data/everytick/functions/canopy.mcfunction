@@ -109,7 +109,7 @@ execute as @e[scores={testplat=10},type=ender_pearl] at @s store result score @e
 kill @e[scores={testplat=10..},type=ender_pearl]
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
 #Reset the motion before teleporting (thanks to @dragonmaster95 for the suggestion!)
-execute as @a[team=Yellow] if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @s run tp @s @s
+execute as @a[team=Yellow] if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..3},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @s run tp @s @s
 execute as @a[team=Yellow] if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
 execute as @a[team=Yellow] at @s if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slow_falling 2 100 true
 execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s jump_boost 2 128 true
@@ -144,7 +144,7 @@ execute as @e[scores={testplat2=10},type=ender_pearl] at @s store result score @
 kill @e[scores={testplat2=10..},type=ender_pearl]
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
 #Reset the motion before teleporting (thanks to @dragonmaster95 for the suggestion!)
-execute as @a[team=Blue] if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @s run tp @s @s
+execute as @a[team=Blue] if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..3},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @s run tp @s @s
 execute as @a[team=Blue] if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
 execute as @a[team=Blue] at @s if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slow_falling 2 100 true
 execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s jump_boost 2 128 true

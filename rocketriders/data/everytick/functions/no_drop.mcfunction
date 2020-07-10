@@ -1,6 +1,7 @@
 ##Utility function for handling item dropping
 #No item dropping
-execute as @a[team=!Spectator] at @s as @e[type=item,distance=..2] unless entity @s[nbt={Item:{id:"minecraft:bow"}}] unless entity @s[type=item,nbt={Item:{tag:{Dropable:1b}}}] run data modify entity @s Owner set from entity @p[team=!Spectator] UUID
+#Thanks to Cloud Wolf for the tip!
+execute as @a[team=!Spectator] at @s as @e[type=item,distance=..2] unless entity @s[nbt={Item:{id:"minecraft:bow"}}] unless entity @s[type=item,nbt={Item:{tag:{Dropable:1b}}}] run data modify entity @s Owner set from entity @s Thrower
 execute as @a[team=!Spectator] at @s as @e[type=item,distance=..2] unless entity @s[nbt={Item:{id:"minecraft:bow"}}] unless entity @s[type=item,nbt={Item:{tag:{Dropable:1b}}}] at @s run tp @s @p[team=!Spectator]
 execute as @a[team=!Spectator] at @s as @e[type=item,distance=..2] unless entity @s[nbt={Item:{id:"minecraft:bow"}}] unless entity @s[type=item,nbt={Item:{tag:{Dropable:1b}}}] run data merge entity @s {PickupDelay:0s}
 

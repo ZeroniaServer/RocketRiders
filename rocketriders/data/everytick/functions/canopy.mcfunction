@@ -132,13 +132,13 @@ execute as @e[scores={testplat2=9..10},type=ender_pearl] at @s if entity @s[x=-1
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
 #Disable Blue Canopies near void
 execute as @e[scores={testplat2=9..10},type=ender_pearl] at @s if predicate custom:nearvoid run scoreboard players remove @s testplat2 2
-execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
-execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
-execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0
-execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
-execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s run playsound block.grass.place player @a ~ ~ ~ 2 0
-execute as @e[tag=BluePlat,scores={testplat2=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["BluePlatform"]}
-execute as @e[scores={testplat2=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~1 ~ {Duration:2000000000,Tags:["Platform"]}
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s run playsound block.grass.place player @a ~ ~ ~ 2 0
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["BluePlatform"]}
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["Platform"]}
 scoreboard players add @e[tag=BluePlatform,type=area_effect_cloud] PlatTime 1
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat2=10..},type=ender_pearl]

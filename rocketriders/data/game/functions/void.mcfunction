@@ -32,7 +32,7 @@ tp @s[team=Blue] 12 64 -66 0 0
 tp @s[team=Yellow] 12 64 66 -180 0
 
 ##Teleport Spectators back to center
-tp @s[team=Spectator] 12 200 0.5 90 90
+tp @s[team=Spectator] 12 100 0.5 90 90
 
 ##Put out fire, if necessary
 execute as @s[team=!Spectator,predicate=custom:is_on_fire] at @s run function game:putoutfire

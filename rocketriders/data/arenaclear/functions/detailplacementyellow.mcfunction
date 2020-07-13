@@ -29,15 +29,16 @@ execute as @s[scores={TopDeco=2}] run setblock -6 65 55 redstone_block
 #Spikes - Yellow
 execute as @s[scores={TopDeco=3}] run setblock -2 64 48 structure_block{mode:"LOAD",name:"yellow_spiketop"}
 execute as @s[scores={TopDeco=3}] run setblock -2 65 48 redstone_block
+execute as @s[scores={TopDeco=3}] run fill -2 65 48 -2 64 48 air
 execute as @s[scores={MiddleDeco=2}] run setblock -14 50 29 structure_block{mode:"LOAD",name:"yellow_spikemid_right"}
 execute as @s[scores={MiddleDeco=2}] run setblock 18 50 29 structure_block{mode:"LOAD",name:"yellow_spikemid_left"}
 execute as @s[scores={MiddleDeco=2}] run setblock -14 51 29 redstone_block
 execute as @s[scores={MiddleDeco=2}] run setblock 18 51 29 redstone_block
-execute as @s[scores={MiddleDeco=2}] run setblock -14 50 29 air
-execute as @s[scores={MiddleDeco=2}] run setblock 18 50 29 air
+execute as @s[scores={MiddleDeco=2}] run fill -14 50 29 -14 51 29 air
+execute as @s[scores={MiddleDeco=2}] run fill 18 50 29 18 51 29 air
 execute as @s[scores={BottomDeco=2}] run setblock 8 34 30 structure_block{mode:"LOAD",name:"yellow_spikebottom"}
 execute as @s[scores={BottomDeco=2}] run setblock 8 35 30 redstone_block
-execute as @s[scores={BottomDeco=2}] run setblock 8 35 30 air
+execute as @s[scores={BottomDeco=2}] run fill 8 34 30 8 35 30 air
 
 #Layered - Yellow
 execute as @s[scores={MiddleDeco=3}] run fill 38 34 49 -14 40 51 minecraft:yellow_stained_glass

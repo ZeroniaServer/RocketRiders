@@ -21,10 +21,10 @@ execute as @s[scores={TopCorner=1}] run setblock 1 59 -54 blue_stained_glass
 execute as @s[scores={TopDeco=1}] run setblock 2 64 -58 air
 
 #Towers - Blue
-execute as @s[scores={TopDeco=2}] run setblock -6 64 -61 structure_block{mode:"LOAD",name:"blue_archertower"}
-execute as @s[scores={TopDeco=2}] run setblock 24 64 -61 structure_block{mode:"LOAD",name:"blue_archertower"}
-execute as @s[scores={TopDeco=2}] run setblock -6 65 -61 redstone_block
-execute as @s[scores={TopDeco=2}] run setblock 24 65 -61 redstone_block
+execute as @s[scores={TopDeco=2}] run setblock -7 64 -62 structure_block{mode:"LOAD",name:"blue_archertower"}
+execute as @s[scores={TopDeco=2}] run setblock 23 64 -62 structure_block{mode:"LOAD",name:"blue_archertower"}
+execute as @s[scores={TopDeco=2}] run setblock -7 65 -62 redstone_block
+execute as @s[scores={TopDeco=2}] run setblock 23 65 -62 redstone_block
 
 #Spikes - Blue
 execute as @s[scores={TopDeco=3}] run setblock -2 64 -66 structure_block{mode:"LOAD",name:"blue_spiketop"}

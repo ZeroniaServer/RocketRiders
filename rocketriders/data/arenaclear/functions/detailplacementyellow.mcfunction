@@ -21,10 +21,10 @@ execute as @s[scores={TopCorner=1}] run setblock 1 58 46 air
 execute as @s[scores={TopDeco=1}] run setblock 2 63 54 yellow_stained_glass
 
 #Towers - Yellow
-execute as @s[scores={TopDeco=2}] run setblock 24 64 55 structure_block{mode:"LOAD",name:"yellow_archertower"}
-execute as @s[scores={TopDeco=2}] run setblock -6 64 55 structure_block{mode:"LOAD",name:"yellow_archertower"}
-execute as @s[scores={TopDeco=2}] run setblock 24 65 55 redstone_block
-execute as @s[scores={TopDeco=2}] run setblock -6 65 55 redstone_block
+execute as @s[scores={TopDeco=2}] run setblock 23 64 54 structure_block{mode:"LOAD",name:"yellow_archertower"}
+execute as @s[scores={TopDeco=2}] run setblock -7 64 54 structure_block{mode:"LOAD",name:"yellow_archertower"}
+execute as @s[scores={TopDeco=2}] run setblock 23 65 54 redstone_block
+execute as @s[scores={TopDeco=2}] run setblock -7 65 54 redstone_block
 
 #Spikes - Yellow
 execute as @s[scores={TopDeco=3}] run setblock -2 64 48 structure_block{mode:"LOAD",name:"yellow_spiketop"}

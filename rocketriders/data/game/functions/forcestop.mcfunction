@@ -1,6 +1,4 @@
 ##Operator function for forcing a game to end
-execute unless entity @e[tag=Selection,tag=noAchievements,type=armor_stand] if entity @e[tag=Selection,tag=GameStarted,type=armor_stand] run function achievements:aftergame
-
 tag @e[tag=Selection,type=armor_stand] add GameEnd
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s

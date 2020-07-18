@@ -4,7 +4,6 @@
 
 ##Achievements
 execute unless entity @s[tag=noAchievements] run function achievements:aftergameblue
-execute unless entity @s[tag=noAchievements] run function achievements:aftergame
 
 ##Record tags
 tag @s add GameEnd

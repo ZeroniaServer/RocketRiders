@@ -4,7 +4,7 @@
 execute if score @s Machina matches ..14 at @s if block ~ ~ ~ air run scoreboard players add @s Machina 1
 execute if score @s Machina matches ..14 at @s if block ~ ~ ~ air run tp @s ~ ~ ~-1
 
-execute if score @s Machina matches 15 at @s run advancement grant @a[team=Yellow] only achievements:rr_challenges/machina
+execute if score @s Machina matches 15 at @s run tag @a[team=Yellow] add DeusExMachina
 execute if score @s Machina matches 15 run kill @s
 
 execute at @s unless block ~ ~ ~ air run scoreboard players set @s Machina 0

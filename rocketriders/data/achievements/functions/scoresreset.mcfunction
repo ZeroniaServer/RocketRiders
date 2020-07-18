@@ -17,3 +17,10 @@ tag @a remove FailedBallet
 tag @a remove firstMoved
 scoreboard players set @s origBCount 0
 scoreboard players set @s origYCount 0
+tag @a remove SwissCheese
+tag @a remove DeusExMachina
+tag @a remove HadIt
+tag @a remove Loneliest
+tag @a remove Forsaken
+tag @a remove GroundBound
+tag @a remove Immortal

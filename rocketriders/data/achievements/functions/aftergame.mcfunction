@@ -1,9 +1,40 @@
-##Any achievements to be given after a game ends
-#Immortal
-execute as @a[scores={deaths=..0}] unless entity @s[team=!Blue,team=!Yellow] run advancement grant @s only achievements:rr_challenges/immortal
+##Any achievements to be given by the official end of the game.
+##The execution of this function may be delayed for the Tie/Sudden Death window.
+#| || || |_
+scoreboard players add @a[tag=Winner] WinStreak 1
+advancement grant @a[scores={WinStreak=10..},tag=Loser] only achievements:rr_challenges/loss
+scoreboard players reset @a[tag=Loser] WinStreak
 
-#Ballet Dancer
-execute as @a[tag=!FailedBallet,tag=firstMoved] unless entity @s[team=!Blue,team=!Yellow] run advancement grant @s only achievements:rr_challenges/ballet
+#Swiss Cheese (part 2)
+advancement grant @a[tag=SwissCheese,tag=Winner] only achievements:rr_challenges/swiss_cheese
 
-#Moonwalker
-execute as @a[tag=!FailedMoon,tag=firstMoved] unless entity @s[team=!Blue,team=!Yellow] run advancement grant @s only achievements:rr_challenges/moonwalker
+#Deus Ex Machina (part 2)
+advancement grant @a[tag=DeusExMachina,tag=Winner] only achievements:rr_challenges/machina
+
+#I Swear I Had It (part 2)
+advancement grant @a[tag=HadIt,tag=Loser] only achievements:rr_challenges/had_it
+scoreboard players reset @a HasMissiles
+
+#One is the Loneliest Number (part 2)
+advancement grant @a[tag=Loneliest,tag=Winner] only achievements:rr_challenges/loneliest
+
+#Forsaken (part 2)
+advancement grant @a[tag=Forsaken,tag=Winner] only achievements:rr_challenges/forsaken
+
+#Ground Bound (part 2)
+advancement grant @a[tag=GroundBound,tag=Winner] only achievements:rr_challenges/groundbound
+
+#Immortal (part 2) - applies to both winners/losers but only if win/loss still stands
+execute as @a[tag=Immortal] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/immortal
+
+#Ballet Dancer - applies to both winners/losers but only if win/loss still stands
+execute as @a[tag=!FailedBallet,tag=firstMoved] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/ballet
+
+#Moonwalker - applies to both winners/losers but only if win/loss still stands
+execute as @a[tag=!FailedMoon,tag=firstMoved] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/moonwalker
+
+#Pacifist - works since players can't get kills after game end
+advancement grant @a[tag=Winner,scores={kills=..0}] only achievements:rr_challenges/pacifist
+
+#I'm Helping! - works since players can't spawn missiles after game end
+advancement grant @a[tag=Winner,scores={AuxSpawned=0,AntsSpawned=0,BladeSpawned=0,BroadSpawned=0,BSurpriseSpawned=0,BulletSpawned=0,CataSpawned=0,CitaSpawned=0,DuplexSpawned=0,GemiSpawned=0,GuardSpawned=0,HurSpawned=0,HyperSpawned=0,JugbSpawned=0,LifterSpawned=0,NullSpawned=0,RifterSpawned=0,SlashSpawned=0,ThunSpawned=0,TomaSpawned=0,WarSpawned=0,YSurpriseSpawned=0}] only achievements:rr_challenges/helping

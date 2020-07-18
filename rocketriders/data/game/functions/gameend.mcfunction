@@ -24,12 +24,19 @@ execute as @s[scores={endtimer=1..2}] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={endtimer=1..2}] run tp @a[team=Yellow] 12 64 66 180 0
 execute as @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
 
+##Tie actionbar notifications
+execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=1..20}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":"true"},{"text":" seconds","color":"red"}]
+execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=21..40}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"3","color":"dark_red","bold":"true"},{"text":" seconds","color":"red"}]
+execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=41..60}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"2","color":"dark_red","bold":"true"},{"text":" seconds","color":"red"}]
+execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=61..80}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"1","color":"dark_red","bold":"true"},{"text":" second","color":"red"}]
+execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=81}] run title @a[team=!Lobby] actionbar {"text":""}
+
 ##System for ties
-execute as @s[tag=!ctfEnabled,tag=doTying,tag=!tyingOff,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
-execute as @s[tag=!ctfEnabled,tag=doTying,tag=!tyingOff,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
-execute as @s[tag=!ctfEnabled,tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 74 nether_portal run tag @s add SuddenDeath
-execute as @s[tag=!ctfEnabled,tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 74 nether_portal run tag @s add SuddenDeath
-execute as @s[tag=!ctfEnabled,tag=doTying,tag=!tyingOff,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] run tag @s add SuddenDeath
+execute as @s[tag=doTying,tag=!tyingOff,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
+execute as @s[tag=doTying,tag=!tyingOff,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
+execute as @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 13 38 74 nether_portal run tag @s add SuddenDeath
+execute as @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] at @s unless block 11 38 74 nether_portal run tag @s add SuddenDeath
+execute as @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] run tag @s add SuddenDeath
 
 ##Post-tie phase and reset
 execute as @s[scores={endtimer=81}] as @a run function everytick:score_reset

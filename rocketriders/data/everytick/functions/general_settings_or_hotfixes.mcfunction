@@ -16,6 +16,7 @@ function tutorial:advantriggers
 function everytick:tip
 
 #Disable trigger objectives when appropriate
+execute as @a[team=!Blue,team=!Yellow] run trigger LeaveMidgame set -1
 execute as @a[team=!Lobby] run trigger MaxItemSec set 0
 execute as @s[tag=EditedSettings] as @a run trigger MaxItemSec set 0
 execute as @a[team=!Lobby] run trigger daytime set 0

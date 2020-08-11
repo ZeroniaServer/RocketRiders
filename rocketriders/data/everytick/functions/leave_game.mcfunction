@@ -13,9 +13,9 @@ effect give @a[scores={LeaveGame=1..}] night_vision 1000000 100 true
 team join Lobby @a[scores={LeaveGame=1..}]
 gamemode adventure @a[scores={LeaveGame=1..}]
 title @a[scores={LeaveGame=1..}] times 10 80 20
-spawnpoint @a[tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78
-spawnpoint @a[tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96
-spawnpoint @a[tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61
+spawnpoint @a[tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78 90
+spawnpoint @a[tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96 90
+spawnpoint @a[tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61 90
 clear @a[scores={LeaveGame=1..}]
 tp @a[scores={LeaveGame=1..},tag=!WasInYellow,tag=!WasInBlue] -43 211 78 90 0
 tp @a[scores={LeaveGame=1..},tag=WasInYellow] -36 211 96.0 90 0
@@ -29,7 +29,6 @@ tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
 
 #Hardcore compatibility
 scoreboard players add @a[tag=hardcoreKilled] hardcoreKilled 1
-execute as @a[tag=hardcoreKilled,scores={hardcoreKilled=7..},team=Lobby] at @s run tp @s ~ ~ ~ 90 0
 execute as @s[tag=Hardcore] as @a[tag=hardcoreKilled,scores={hardcoreKilled=7..},team=Lobby] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] at @s run tp @s ~ ~ ~-0.5
 tag @a[tag=hardcoreKilled,scores={hardcoreKilled=7..}] remove hardcoreKilled
 scoreboard players reset @a[tag=!hardcoreKilled] hardcoreKilled

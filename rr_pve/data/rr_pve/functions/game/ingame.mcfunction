@@ -10,8 +10,8 @@ execute unless entity @e[tag=Bot,type=armor_stand] run function rr_pve:game/prep
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem
-spawnpoint @a[team=Blue] 12 64 -66
-spawnpoint @a[team=Yellow] 12 64 66
+spawnpoint @a[team=Blue] 12 64 -66 0
+spawnpoint @a[team=Yellow] 12 64 66 -180
 execute if entity @s[tag=Minute] run function items:minutemix
 
 #win

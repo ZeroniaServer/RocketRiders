@@ -36,6 +36,19 @@ execute as @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 194 71 air
 execute as @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 194 81 structure_block{mode:"LOAD",name:"minecraft:topplatform_preview",showboundingbox:0b}
 execute as @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 195 81 redstone_block
 execute as @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 194 81 air
+#Spikes
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 68 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 194 68 redstone_block
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 68 air
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 73 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 194 73 redstone_block
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 73 air
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 81 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 194 81 redstone_block
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 81 air
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 86 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 194 86 redstone_block
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 86 air
 execute as @s[tag=settingsLocked] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
 ##Middle Decorations
@@ -49,16 +62,16 @@ execute as @s[scores={MiddleDeco=1},tag=!decosLocked] run setblock -49 190 85 ai
 #Spikes
 execute as @s[scores={MiddleDeco=2},tag=!decosLocked] run setblock -54 191 67 structure_block{mode:"LOAD",name:"minecraft:spike_mid_preview",showboundingbox:0b}
 execute as @s[scores={MiddleDeco=2},tag=!decosLocked] run setblock -54 192 67 redstone_block
-execute as @s[scores={MiddleDeco=2},tag=!decosLocked] run setblock -54 191 67 air
+execute as @s[scores={MiddleDeco=2},tag=!decosLocked] run fill -54 191 67 -54 192 67 air
 #Layered
 execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run scoreboard players set @s BottomDeco 0
-execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -44 196 64 -43 196 92 minecraft:black_stained_glass
+execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -44 196 64 -43 196 92 minecraft:black_stained_glass replace air
 execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -45 185 92 -45 192 64 minecraft:white_stained_glass
 execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -46 185 92 -46 189 64 minecraft:white_stained_glass
 execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 185 92 -47 186 64 minecraft:white_stained_glass
-execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -45 193 92 -45 193 64 minecraft:black_stained_glass
-execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -46 190 92 -46 190 64 minecraft:black_stained_glass
-execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 187 92 -47 187 64 minecraft:black_stained_glass
+execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -45 193 92 -45 193 64 minecraft:black_stained_glass replace air
+execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -46 190 92 -46 190 64 minecraft:black_stained_glass replace air
+execute as @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 187 92 -47 187 64 minecraft:black_stained_glass replace air
 
 ##Bottom Decorations
 #New Dawn Slimepads

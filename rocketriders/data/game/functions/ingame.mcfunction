@@ -81,9 +81,5 @@ function everytick:splash
 execute unless block 12 63 -66 obsidian run setblock 12 63 -66 obsidian
 execute unless block 12 63 66 obsidian run setblock 12 63 66 obsidian
 
-##Respawn hotfix
-execute as @a[team=Yellow,scores={respawn=1..}] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run tp @s ~ ~ ~ 180 0
-execute as @a[team=Blue,scores={respawn=1..}] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run tp @s ~ ~ ~ 0 0
-execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,distance=..6] respawn 0
-execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,distance=..6] respawn 0
+##Respawn handling
 scoreboard players reset @a[team=!Yellow,team=!Blue] respawn

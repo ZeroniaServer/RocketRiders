@@ -30,6 +30,18 @@ execute as @s[scores={TopDeco=2}] run setblock -7 65 54 redstone_block
 execute as @s[scores={TopDeco=3}] run setblock -2 64 48 structure_block{mode:"LOAD",name:"yellow_spiketop"}
 execute as @s[scores={TopDeco=3}] run setblock -2 65 48 redstone_block
 execute as @s[scores={TopDeco=3}] run fill -2 65 48 -2 64 48 air
+execute as @s[scores={TopCorner=2}] run setblock -7 53 43 structure_block{mode:"LOAD",name:"yellow_spikecorner"}
+execute as @s[scores={TopCorner=2}] run setblock -7 54 43 redstone_block
+execute as @s[scores={TopCorner=2}] run fill -7 53 43 -7 54 43 air
+execute as @s[scores={TopCorner=2}] run setblock 2 53 43 structure_block{mode:"LOAD",name:"yellow_spikecorner"}
+execute as @s[scores={TopCorner=2}] run setblock 2 54 43 redstone_block
+execute as @s[scores={TopCorner=2}] run fill 2 53 43 2 54 43 air
+execute as @s[scores={TopCorner=2}] run setblock 16 53 43 structure_block{mode:"LOAD",name:"yellow_spikecorner"}
+execute as @s[scores={TopCorner=2}] run setblock 16 54 43 redstone_block
+execute as @s[scores={TopCorner=2}] run fill 16 53 43 16 54 43 air
+execute as @s[scores={TopCorner=2}] run setblock 25 53 43 structure_block{mode:"LOAD",name:"yellow_spikecorner"}
+execute as @s[scores={TopCorner=2}] run setblock 25 54 43 redstone_block
+execute as @s[scores={TopCorner=2}] run fill 25 53 43 25 54 43 air
 execute as @s[scores={MiddleDeco=2}] run setblock -14 50 29 structure_block{mode:"LOAD",name:"yellow_spikemid_right"}
 execute as @s[scores={MiddleDeco=2}] run setblock 18 50 29 structure_block{mode:"LOAD",name:"yellow_spikemid_left"}
 execute as @s[scores={MiddleDeco=2}] run setblock -14 51 29 redstone_block

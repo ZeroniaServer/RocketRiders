@@ -82,4 +82,6 @@ execute unless block 12 63 -66 obsidian run setblock 12 63 -66 obsidian
 execute unless block 12 63 66 obsidian run setblock 12 63 66 obsidian
 
 ##Respawn handling
+execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,distance=..6] respawn 0
+execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,distance=..6] respawn 0
 scoreboard players reset @a[team=!Yellow,team=!Blue] respawn

@@ -1,4 +1,5 @@
 ##Binary search algorithm to add/subtract daytime
+
 execute if entity @s[scores={daytime=16384..}] run time add 16384
 execute if entity @s[scores={daytime=16384..}] run scoreboard players remove @s daytime 16384
 
@@ -44,5 +45,5 @@ execute if entity @s[scores={daytime=2..}] run scoreboard players remove @s dayt
 execute if entity @s[scores={daytime=1..}] run time add 1
 execute if entity @s[scores={daytime=1..}] run scoreboard players remove @s daytime 1
 
-#recurs if daytime still > 1
+#Recurs if daytime score still > 1
 execute if entity @s[scores={daytime=1..}] run function arenaclear:daytimeadd

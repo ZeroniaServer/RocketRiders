@@ -37,18 +37,12 @@ execute as @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 194 81 str
 execute as @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 195 81 redstone_block
 execute as @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 194 81 air
 #Spikes
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 68 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 194 68 redstone_block
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 68 air
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 73 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 194 73 redstone_block
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 73 air
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 81 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 194 81 redstone_block
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 81 air
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 86 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 194 86 redstone_block
-execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -48 193 86 air
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 193 68 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 194 68 redstone_block
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run fill -51 193 68 -51 194 68 air
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 193 88 structure_block{mode:"LOAD",mirror:"LEFT_RIGHT",name:"minecraft:spike_side_preview",showboundingbox:0b}
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 194 88 redstone_block
+execute as @s[scores={TopCorner=2},tag=!decosLocked] run fill -51 193 88 -51 194 88 air
 execute as @s[tag=settingsLocked] run data merge block -58 194 72 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"This setting is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":\\\"true\\\"}\"}}",Text2: "{\"text\":\"Locked\",\"color\":\"black\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}"}
 
 ##Middle Decorations

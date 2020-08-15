@@ -1,8 +1,8 @@
 #Items
-execute as @a[tag=JoinBlue] run function game:givegear
+execute as @a[tag=JoinBlue] run function rr_swap:baseswap/gear
 function game:saberblue
 
-execute as @a[tag=JoinYellow] run function game:givegear
+execute as @a[tag=JoinYellow] run function rr_swap:baseswap/gear
 function game:saberyellow
 
 #Tag Removal

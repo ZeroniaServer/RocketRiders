@@ -58,4 +58,17 @@ fill -14 63 -73 38 34 -75 cyan_concrete replace cyan_stained_glass
 fill -14 63 -73 38 34 -75 white_concrete replace white_stained_glass
 fill -14 63 -73 38 34 -75 black_concrete replace black_stained_glass
 
+#Flag placement
 function rr_ctf:arenaclear/flagplacement
+
+#Pregame queue
+fill -89 201 96 -101 195 96 white_concrete
+fill -89 201 94 -101 195 95 orange_concrete
+fill -89 201 91 -101 195 93 yellow_concrete
+setblock -90 202 95 yellow_banner[rotation=8]
+setblock -100 202 95 yellow_banner[rotation=8]
+fill -89 201 60 -101 195 60 white_concrete
+fill -89 201 62 -101 195 61 cyan_concrete
+fill -89 201 65 -101 195 63 blue_concrete
+setblock -100 202 61 blue_banner[rotation=0]
+setblock -90 202 61 blue_banner[rotation=0]

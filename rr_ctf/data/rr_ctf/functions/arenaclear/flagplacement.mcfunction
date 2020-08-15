@@ -1,5 +1,5 @@
-scoreboard players set Blue: FlagScore 0
-scoreboard players set Yellow: FlagScore 0
+scoreboard players set Blue: FlagDisp 0
+scoreboard players set Yellow: FlagDisp 0
 scoreboard players set FY1: FlagScore 30
 scoreboard players set FY2: FlagScore 30
 scoreboard players set FB1: FlagScore 30

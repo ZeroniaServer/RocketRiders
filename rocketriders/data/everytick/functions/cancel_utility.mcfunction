@@ -15,10 +15,10 @@ execute as @e[type=fireball,tag=!obfireball] at @s if entity @s[x=187,dx=180] ru
 execute as @e[type=fireball,tag=!obfireball] at @s if entity @s[x=-342,dx=180] run kill @s
 
 #Kill Nova Rockets near portals
-execute as @e[scores={novatimer=1..},type=firework_rocket] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run kill @s
-execute as @e[scores={novatimer=1..},type=firework_rocket] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run kill @s
-execute as @e[tag=novatracker,type=armor_stand] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run kill @s
-execute as @e[tag=novatracker,type=armor_stand] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run kill @s
+execute unless entity @s[tag=noPortal] as @e[scores={novatimer=1..},type=firework_rocket] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run kill @s
+execute unless entity @s[tag=noPortal] as @e[scores={novatimer=1..},type=firework_rocket] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run kill @s
+execute unless entity @s[tag=noPortal] as @e[tag=novatracker,type=armor_stand] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run kill @s
+execute unless entity @s[tag=noPortal] as @e[tag=novatracker,type=armor_stand] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run kill @s
 
 #Kill everything near/above the roof (overworld only)
 execute in overworld as @e[type=ender_pearl] at @s run kill @s[y=175,dy=100]

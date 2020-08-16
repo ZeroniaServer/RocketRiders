@@ -10,3 +10,4 @@ tag @e[tag=Selection,type=armor_stand] add fbPortalsOff
 tag @e[tag=Selection,type=armor_stand] add preventionOff
 tag @e[tag=Selection,type=armor_stand] add portalDecosOff
 tag @e[tag=Selection,type=armor_stand] add customSaberMsg
+tag @e[tag=Selection,type=armor_stand] add noPortal

@@ -8,4 +8,5 @@ tag @e[tag=Selection,type=armor_stand] remove portalDecosOff
 tag @e[tag=Selection,tag=arrowsWasOn] add rngArrows
 tag @e[tag=Selection,type=armor_stand] remove arrowsWasOn
 tag @e[tag=Selection,type=armor_stand] remove customSaberMsg
+tag @e[tag=Selection,type=armor_stand] remove noPortal
 tag @e[tag=Selection,type=armor_stand] add switchGamemodes

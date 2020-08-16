@@ -206,6 +206,11 @@ execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 run te
 execute unless entity @a[tag=CarryFY1] if score FY1: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 execute unless entity @a[tag=CarryFY2] if score FY2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 
+execute unless entity @a[tag=CarryFB1] if score FB1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
+execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
+execute unless entity @a[tag=CarryFY1] if score FY1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
+execute unless entity @a[tag=CarryFY2] if score FY2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
+
 execute unless entity @a[tag=CarryFB1] if score FB1: FlagScore matches -1 run scoreboard players set FB1: FlagScore 0
 execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 run scoreboard players set FB2: FlagScore 0
 execute unless entity @a[tag=CarryFY1] if score FY1: FlagScore matches -1 run scoreboard players set FY1: FlagScore 0
@@ -217,6 +222,11 @@ execute as @a[tag=CarryFB1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB
 execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB2,team=!Lobby,team=!Spectator] if score FB2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"selector":"@s","color":"gold"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
 execute as @a[tag=CarryFY1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY1,team=!Lobby,team=!Spectator] if score FY1: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 execute as @a[tag=CarryFY2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY2,team=!Lobby,team=!Spectator] if score FY2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
+
+execute as @a[tag=CarryFB1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB1,team=!Lobby,team=!Spectator] if score FB1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
+execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB2,team=!Lobby,team=!Spectator] if score FB2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
+execute as @a[tag=CarryFY1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY1,team=!Lobby,team=!Spectator] if score FY1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
+execute as @a[tag=CarryFY2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY2,team=!Lobby,team=!Spectator] if score FY2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
 
 execute as @a[tag=CarryFB1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB1,team=!Lobby,team=!Spectator] if score FB1: FlagScore matches -1 run scoreboard players set FB1: FlagScore 0
 execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB2,team=!Lobby,team=!Spectator] if score FB2: FlagScore matches -1 run scoreboard players set FB2: FlagScore 0

@@ -3,7 +3,11 @@ tag @e[tag=Selection,type=armor_stand] add GameEnd
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s
 tag @e[tag=Selection,type=armor_stand] remove GameStarted
+tag @e[tag=Selection,type=armor_stand] remove Countdown
+tag @e[tag=Selection,type=armor_stand] remove forceCountdown
+tag @e[tag=Selection,type=armor_stand] remove bossbarOverride
 tag @e[tag=Selection,type=armor_stand] remove gaveFirstItem
+scoreboard players set @e[tag=Selection,type=armor_stand] count 0
 scoreboard players set @e[tag=Selection,type=armor_stand] gametime 0
 worldborder warning distance 0
 gamerule fallDamage false

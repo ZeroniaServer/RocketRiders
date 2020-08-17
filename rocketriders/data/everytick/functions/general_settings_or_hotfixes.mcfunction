@@ -26,9 +26,15 @@ execute as @s[tag=EditedSettings] as @a run trigger daytime set 0
 execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[tag=modroomGoBack,limit=1,distance=..1,type=area_effect_cloud] run effect give @s jump_boost 1 20 true
 execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..1,type=area_effect_cloud] run effect clear @s jump_boost
 
-#lobby players can't enter arena (security)
+#Lobby players can't enter arena (security)
 execute as @a[team=Lobby] at @s if predicate custom:belowroof run tellraw @s [{"text":"You shouldn't be here!","color":"red"}]
 execute as @a[team=Lobby] at @s if predicate custom:belowroof run scoreboard players set @s LeaveGame 1
+
+#Lobby players can't switch out of adventure mode (security)
+execute as @a[team=Lobby,gamemode=!adventure] run gamemode adventure
+
+#Spectators can't switch out of spectator mode (security)
+execute as @a[team=Spectator,gamemode=!spectator] run gamemode spectator
 
 #Full offhand check
 tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand

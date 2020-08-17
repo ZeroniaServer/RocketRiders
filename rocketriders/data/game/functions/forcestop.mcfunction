@@ -19,4 +19,4 @@ tag @e[tag=yellowjoinpad,type=area_effect_cloud] add CancelJoin
 tag @e[tag=bluejoinpad,type=area_effect_cloud] add CancelJoin
 tag @e[tag=specjoinpad,type=area_effect_cloud] add CancelJoin
 
-scoreboard players set @e[tag=Selection,tag=GameEnd,type=armor_stand] endtimer 567
+scoreboard players set @e[tag=Selection,tag=GameEnd,type=armor_stand] endtimer 568

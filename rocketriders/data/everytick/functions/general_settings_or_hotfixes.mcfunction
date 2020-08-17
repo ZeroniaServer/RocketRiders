@@ -48,12 +48,6 @@ tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
 tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
 
-#Distance particles (counteract low server render distance)
-# execute as @a[team=Blue,gamemode=!spectator] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
-# execute as @a[team=Yellow,gamemode=!spectator] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
-# execute as @e[team=BlueBot,type=armor_stand] at @s run particle minecraft:dust 0 0 1 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
-# execute as @e[team=YellowBot,type=armor_stand] at @s run particle minecraft:dust 1 1 0 2 ~ ~1 ~ 0.15 0.5 0.15 0 5 force @a[distance=50..]
-
 #Remove Splash tags for Lobby players. Just a failsave
 tag @a[team=!Blue,team=!Yellow] remove Winner
 tag @a[team=!Blue,team=!Yellow] remove Loser
@@ -86,15 +80,3 @@ execute as @a[team=Lobby] unless entity @s[nbt={Inventory:[{Slot:4b,id:"minecraf
 #Lobby player book anti-dupe
 execute as @a[team=Lobby] store result score @s HasNavBook run clear @s written_book 0
 clear @a[team=Lobby,scores={HasNavBook=2..}] written_book
-
-##TODO REMOVE
-#TEMP so that kickouts from the end dimension actually display titles and don't screw up horribly
-title @a[tag=kickoutEnd,nbt={Dimension:0}] title ["",{"text":"Access Denied.","color":"red","bold":true}]
-title @a[tag=kickoutEnd,nbt={Dimension:0}] subtitle ["",{"text":"You can't enter a staff only area!","color":"dark_red","bold":false}]
-title @a[tag=kickoutEnd,nbt={Dimension:0}] times 5 30 5
-tag @a[tag=kickoutEnd,nbt={Dimension:0}] remove kickoutEnd
-
-#TEMP so that unofficial devs who leave the end are back to adventure mode + lobby
-scoreboard players set @a[tag=unofficialDev,nbt={Dimension:0},tag=!unDevTeleporting] LeaveGame 1
-tag @a[tag=unofficialDev,nbt={Dimension:0},tag=!unDevTeleporting] remove unofficialDev
-tag @a[tag=unDevTeleporting] remove unDevTeleporting

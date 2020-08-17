@@ -36,6 +36,10 @@ execute as @a[team=Lobby,gamemode=!adventure] run gamemode adventure
 #Spectators can't switch out of spectator mode (security)
 execute as @a[team=Spectator,gamemode=!spectator] run gamemode spectator
 
+#Blue/Yellow players can't switch out of adventure mode before game (security)
+execute as @s[tag=!GameStarted] as @a[team=Blue,gamemode=!adventure] run gamemode adventure
+execute as @s[tag=!GameStarted] as @a[team=Yellow,gamemode=!adventure] run gamemode adventure
+
 #Full offhand check
 tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
 tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand

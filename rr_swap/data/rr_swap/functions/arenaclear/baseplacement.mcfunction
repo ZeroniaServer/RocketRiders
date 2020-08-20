@@ -24,15 +24,17 @@ execute if score SwapSide swapside matches 0 run fill -14 34 -62 38 63 -66 white
 execute if score SwapSide swapside matches 0 run fill 38 34 62 -14 63 66 black_concrete replace white_stained_glass
 
 #Pregame queue
-execute if score SwapSide swapside matches 1 run fill -89 201 62 -101 195 61 black_stained_glass
-execute if score SwapSide swapside matches 1 run fill -89 201 60 -101 195 60 black_concrete
-execute if score SwapSide swapside matches 1 run fill -89 201 94 -101 195 95 white_stained_glass
-execute if score SwapSide swapside matches 1 run fill -89 201 96 -101 195 96 white_concrete
+execute if score SwapSide swapside matches 1 run fill -89 201 63 -101 195 62 black_stained_glass
+execute if score SwapSide swapside matches 1 run fill -89 201 60 -101 195 61 black_concrete
+execute if score SwapSide swapside matches 1 run fill -89 201 94 -101 195 93 white_stained_glass
+execute if score SwapSide swapside matches 1 run fill -89 201 95 -101 195 96 white_concrete
+execute if score SwapSide swapside matches 1 run fill -89 201 65 -101 195 64 blue_stained_glass
 
-execute if score SwapSide swapside matches 0 run fill -89 201 65 -101 195 63 light_blue_stained_glass
-execute if score SwapSide swapside matches 0 run fill -89 201 62 -101 195 61 white_stained_glass
-execute if score SwapSide swapside matches 0 run fill -89 201 60 -101 195 60 white_concrete
-execute if score SwapSide swapside matches 0 run fill -89 201 96 -101 195 96 black_concrete
+execute if score SwapSide swapside matches 0 run fill -89 201 65 -101 195 64 light_blue_stained_glass
+execute if score SwapSide swapside matches 0 run fill -89 201 62 -101 195 63 white_stained_glass
+execute if score SwapSide swapside matches 0 run fill -89 201 60 -101 195 61 white_concrete
+execute if score SwapSide swapside matches 0 run fill -89 201 96 -101 195 95 black_concrete
+execute if score SwapSide swapside matches 0 run fill -89 201 94 -101 195 93 orange_stained_glass
 
 #Bossbar prep
 bossbar set rr_swap:swap_progress players none

@@ -61,7 +61,7 @@ execute as @e[tag=YZEROCredits,scores={CreditCycle=1},type=armor_stand] at @s ru
 execute as @e[tag=EvtemaCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Evtema3","color":"red"}'}
 execute as @e[tag=EvtemaCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game Creator","color":"red"}'}
 
-execute as @e[tag=ChronosCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Chronos22Gamer","color":"#0248e9"}'}
+execute as @e[tag=ChronosCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Chronos22","color":"#0248e9"}'}
 execute as @e[tag=ChronosCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Missile Design","color":"#0248e9"}'}
 
 execute as @e[tag=BardCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Bardonius","color":"gold"}'}

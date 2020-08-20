@@ -23,5 +23,5 @@ fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Special] ","color":"dark_purple","bold":"true"},{"text":"Bullet","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Bullet makes all missiles look like an A.N.T. With 45 TNT, 12 of which being triggers, you have to be very careful defusing this one!","color":"gray","italic":"true"}
-execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: Chronos22Gamer & Evtema3)","color":"gray","italic":"true","bold":"false"}
+execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: Chronos22 & Evtema3)","color":"gray","italic":"true","bold":"false"}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":""}

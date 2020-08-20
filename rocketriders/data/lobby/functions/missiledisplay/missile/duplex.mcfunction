@@ -24,5 +24,5 @@ fill 22 202 69 15 206 87 white_glazed_terracotta replace blue_glazed_terracotta
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Special] ","color":"dark_purple","bold":"true"},{"text":"Duplex","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Duplex is like a ShieldBuster but takes a more creative approach. Instead of going through a shield, it will blow it up and keep on flying.","color":"gray","italic":"true"}
-execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: Chronos22Gamer & YZEROgame)","color":"gray","italic":"true","bold":"false"}
+execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: Chronos22 & YZEROgame)","color":"gray","italic":"true","bold":"false"}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":""}

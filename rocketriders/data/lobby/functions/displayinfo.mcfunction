@@ -19,12 +19,12 @@ tellraw @s[scores={displayinfo=4}] {"text":"A glass shield. This is able to stop
 #Chronullifier
 tellraw @s[scores={displayinfo=5}] [{"text":"[Normal] ","color":"green","bold":"true"},{"text":"Chronullifier","color":"white"}]
 tellraw @s[scores={displayinfo=5}] {"text":"The Chronullifer uses a unique observer engine with the same speed as non-observer engines.","color":"gray","italic":"true"}
-tellraw @s[scores={displayinfo=5}] {"text":"(Made by: Chronos22Gamer & YZEROgame)","color":"gray","italic":"true"}
+tellraw @s[scores={displayinfo=5}] {"text":"(Made by: Chronos22 & YZEROgame)","color":"gray","italic":"true"}
 
 #TomaTwo
 tellraw @s[scores={displayinfo=6}] [{"text":"[Normal] ","color":"green","bold":"true"},{"text":"TomaTwo","color":"white"}]
 tellraw @s[scores={displayinfo=6}] {"text":"The TomaTwo is a missile inspired by the Tomahawk from Missile Wars. This missile uses an observer engine.","color":"gray","italic":"true"}
-tellraw @s[scores={displayinfo=6}] {"text":"(Made by: YZEROgame & Chronos22Gamer)","color":"gray","italic":"true"}
+tellraw @s[scores={displayinfo=6}] {"text":"(Made by: YZEROgame & Chronos22)","color":"gray","italic":"true"}
 
 #Catapult
 tellraw @s[scores={displayinfo=7}] [{"text":"[Normal] ","color":"green","bold":"true"},{"text":"Catapult","color":"white"}]

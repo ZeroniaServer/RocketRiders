@@ -8,14 +8,17 @@ execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[ta
 
 ##Checkpoints
 scoreboard players add @a[team=Lobby,tag=inParkour] checkpoint 0
-#TODO ADD MORE
+#TODO ADD MORE CHECKPOINTS
 
 ##Return to checkpoint
 #If you fall on the floor, you return to your last checkpoint automatically
 execute as @a[team=Lobby,tag=inParkour] at @s if block ~ ~-1 ~ black_concrete run tag @s add returnCheckpoint
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] run tellraw @s ["",{"text":"Returned to Checkpoint ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":"true"},{"text":".","color":"dark_green"}]
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0}] run tp @s -31 193 18 0 0
-#TODO ADD MORE
+#TODO ADD MORE CHECKPOINTS
+execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run playsound minecraft:entity.zombie_villager.converted player @s ~ ~ ~ 1 2
+execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] run tag @s remove returnCheckpoint
 
 ##Reset time

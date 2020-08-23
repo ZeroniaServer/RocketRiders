@@ -86,7 +86,7 @@ execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad,type=area_effect_c
 execute as @e[tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinYellow
 
 #Leave Pad
-execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=185,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
+execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
 execute as @a[tag=LeaveTeams,team=Yellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
 tp @a[tag=LeaveTeams,team=Yellow] -78 204 92 45 0
 execute as @a[tag=LeaveTeams,team=Blue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]

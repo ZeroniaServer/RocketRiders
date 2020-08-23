@@ -12,7 +12,7 @@ scoreboard players add @a[team=Lobby,tag=inParkour] checkpoint 0
 
 ##Return to checkpoint
 #If you fall on the floor, you return to your last checkpoint automatically
-execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[y=185,dy=0] run tag @s add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~ ~-1 ~ black_concrete run tag @s add returnCheckpoint
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] run tellraw @s ["",{"text":"Returned to Checkpoint ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":"true"},{"text":".","color":"dark_green"}]
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0}] run tp @s -31 193 18 0 0
 #TODO ADD MORE
@@ -62,8 +62,11 @@ replaceitem entity @a[team=Lobby] weapon.offhand air
 execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[y=200,dy=100] run tellraw @s [{"text":"You left the parkour area, so your parkour run was canceled.","color":"red"}]
 execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[y=200,dy=100] run tag @s remove inParkour
 
-##Safety: Only lobby players in parkour
+##Safety features
+#Only lobby players in parkour mode
 tag @a[team=!Lobby,tag=inParkour] remove inParkour
+#Don't let non-parkour players on floor (warp back to parkour start)
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~ black_concrete run scoreboard players set @s LobbyWarp 7
 
 ##Reset objectives for non-parkour players
 scoreboard players reset @a[team=Lobby,tag=!inParkour] checkpoint

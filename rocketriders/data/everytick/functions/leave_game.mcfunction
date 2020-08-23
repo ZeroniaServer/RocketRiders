@@ -37,5 +37,9 @@ execute as @s[tag=Hardcore] as @a[scores={LeaveGame=1..},tag=!hardcoreKilled] un
 execute as @s[tag=Hardcore] as @a[scores={LeaveGame=1..}] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] run tag @s add hardcoreKilled
 execute as @s[tag=Hardcore] run gamerule showDeathMessages true
 
+#Parkour quit
+execute as @a[scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your parkour run was canceled.","color":"red"}]
+execute as @a[scores={LeaveGame=1..},tag=inParkour] run tag @s remove inParkour
+
 #Reset
 scoreboard players reset @a[scores={LeaveGame=1..}] LeaveGame

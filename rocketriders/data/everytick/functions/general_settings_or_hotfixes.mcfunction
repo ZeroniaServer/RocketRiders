@@ -67,8 +67,8 @@ execute as @e[tag=VortexItemDummy,type=armor_stand] at @s if entity @e[tag=Vorte
 replaceitem entity @a[team=Lobby] hotbar.0 air
 replaceitem entity @a[team=Lobby] hotbar.1 air
 replaceitem entity @a[team=Lobby] hotbar.2 air
-replaceitem entity @a[team=Lobby] hotbar.3 air
-replaceitem entity @a[team=Lobby] hotbar.5 air
+replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.3 air
+replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.5 air
 replaceitem entity @a[team=Lobby] hotbar.6 air
 replaceitem entity @a[team=Lobby] hotbar.7 air
 replaceitem entity @a[team=Lobby] hotbar.8 air

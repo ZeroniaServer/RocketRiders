@@ -14,7 +14,7 @@ execute as @a[scores={LobbyWarp=3}] at @s run tp @s -78 204 64 135 0
 execute as @a[scores={LobbyWarp=4}] at @s run tp @s -78 204 92 45 0
 execute as @a[scores={LobbyWarp=5}] at @s run tp @s -80 201 78 90 0
 execute as @a[scores={LobbyWarp=6}] at @s run tp @s 11 204 78 -90 60
-execute as @a[scores={LobbyWarp=7}] at @s run tp @s -31 193 18 0 0
+execute as @a[scores={LobbyWarp=7}] at @s run tp @s -31 193 16 0 0
 
 #Sound and effects
 execute as @a[scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted player @s ~ ~ ~ 1 2

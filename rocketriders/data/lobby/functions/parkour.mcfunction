@@ -29,9 +29,9 @@ execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard p
 execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourMins = @s parkourMins
 execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourSecs = @s parkourSecs
 #Repeat completion
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s bestParkourTime < @s finalParkourTime run scoreboard players operation @s bestParkourMins = @s parkourMins
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s bestParkourTime < @s finalParkourTime run scoreboard players operation @s bestParkourSecs = @s parkourSecs
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s bestParkourTime < @s finalParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourMins = @s parkourMins
+execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourSecs = @s parkourSecs
+execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
 
 #Remove tags
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s add firstParkour

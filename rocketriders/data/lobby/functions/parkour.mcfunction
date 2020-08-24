@@ -3,19 +3,49 @@
 #######################################################
 
 ##Start parkour
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] run tellraw @s [{"text":"Parkour run started!","color":"dark_green","bold":"true"}]
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] run tag @s add inParkour
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tellraw @s [{"text":"Parkour run started!","color":"dark_green","bold":"true"}]
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s add inParkour
 
 ##Checkpoints
 scoreboard players add @a[team=Lobby,tag=inParkour] checkpoint 0
-#TODO ADD MORE CHECKPOINTS
+execute as @a[team=Lobby,tag=inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC1,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s checkpoint 1
+execute as @a[team=Lobby,tag=inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC2,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s checkpoint 2
+execute as @a[team=Lobby,tag=inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC3,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s checkpoint 3
+
+##End parkour
+execute as @a[team=Lobby,tag=inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourEnd,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s add finishedParkour
+execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=..9,parkourMins=..9}] run tellraw @s ["",{"text":"Parkour run complete! Final time: ","color":"dark_green","bold":"true"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"}]
+execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=10..,parkourMins=..9}] run tellraw @s ["",{"text":"Parkour run complete! Final time: ","color":"dark_green","bold":"true"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"}]
+execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=..9,parkourMins=10..}] run tellraw @s ["",{"text":"Parkour run complete! Final time: ","color":"dark_green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"}]
+execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=10..,parkourMins=10..}] run tellraw @s ["",{"text":"Parkour run complete! Final time: ","color":"dark_green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"}]
+
+#Store best final time
+scoreboard players set $60 finalParkourTime 60
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime = @s parkourMins
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime *= $60 finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime += @s parkourSecs
+#First time completion
+execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourTime = @s finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourMins = @s parkourMins
+execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourSecs = @s parkourSecs
+#Repeat completion
+execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s bestParkourTime < @s finalParkourTime run scoreboard players operation @s bestParkourMins = @s parkourMins
+execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s bestParkourTime < @s finalParkourTime run scoreboard players operation @s bestParkourSecs = @s parkourSecs
+execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s bestParkourTime < @s finalParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
+
+#Remove tags
+execute as @a[team=Lobby,tag=finishedParkour] run tag @s add firstParkour
+execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove inParkour
+execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour
 
 ##Return to checkpoint
 #If you fall on the floor, you return to your last checkpoint automatically
 execute as @a[team=Lobby,tag=inParkour] at @s if block ~ ~-1 ~ black_concrete run tag @s add returnCheckpoint
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] run tellraw @s ["",{"text":"Returned to Checkpoint ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":"true"},{"text":".","color":"dark_green"}]
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0}] run tp @s -31 193 18 0 0
-#TODO ADD MORE CHECKPOINTS
+execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=1}] run tp @s -28 196 68 0 0
+execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=2}] run tp @s -13 199 58 -90 0
+execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=3}] run tp @s -16 199 93 90 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run playsound minecraft:entity.zombie_villager.converted player @s ~ ~ ~ 1 2
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
@@ -44,11 +74,16 @@ execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=..9,parkourMins=10..}
 execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=10..}] run title @s actionbar ["",{"text":"Parkour Timer: ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":"            Checkpoint: ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":"true"}]
 
 ##Inventory controls (offhand and drop)
-#Return to last checkpoint
+#Return to last checkpoint (includes 1 second cooldown)
+scoreboard players add @a[team=Lobby,tag=inParkour] chkpntCooldown 0
 execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:3b,id:"minecraft:clock",Count:1}]}] run replaceitem entity @s hotbar.3 clock{display:{Name:"{\"translate\":\"Return to Last Checkpoint\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}"}} 1
-execute as @a[team=Lobby,tag=inParkour,scores={dropClock=1..}] run tag @s add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={dropClock=1..,chkpntCooldown=0}] run tag @s add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={dropClock=1..,chkpntCooldown=0}] run scoreboard players set @s chkpntCooldown 1
 scoreboard players reset @a dropClock
-execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:clock"}]}] run tag @s add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=0}] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:clock"}]}] run tag @s add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=0}] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:clock"}]}] run scoreboard players set @s chkpntCooldown 1
+scoreboard players add @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=1..19}] chkpntCooldown 1
+scoreboard players set @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
 #Quit parkour
 execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:5b,id:"minecraft:barrier",Count:1}]}] run replaceitem entity @s hotbar.5 barrier{display:{Name:"{\"translate\":\"Quit Parkour\",\"color\":\"red\",\"bold\":true,\"italic\":false}"}} 1
@@ -58,12 +93,12 @@ scoreboard players reset @a dropBarrier
 execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tellraw @s [{"text":"You quit the parkour.","color":"red"}]
 execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tag @s remove inParkour
 
-##Clear offhand (necessary for inventory controls)
+#Clear offhand (necessary for inventory controls)
 replaceitem entity @a[team=Lobby] weapon.offhand air
 
 ##Leave area to quit parkour
-execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[y=200,dy=100] run tellraw @s [{"text":"You left the parkour area, so your parkour run was canceled.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[y=200,dy=100] run tag @s remove inParkour
+execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[y=210,dy=100] run tellraw @s [{"text":"You left the parkour area, so your parkour run was canceled.","color":"red"}]
+execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[y=210,dy=100] run tag @s remove inParkour
 
 ##Safety features
 #Only lobby players in parkour mode
@@ -73,6 +108,8 @@ execute as @a[team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~ black_concrete r
 
 ##Reset objectives for non-parkour players
 scoreboard players reset @a[team=Lobby,tag=!inParkour] checkpoint
+scoreboard players reset @a[team=Lobby,tag=!inParkour] chkpntCooldown
 scoreboard players reset @a[team=Lobby,tag=!inParkour] parkourTimer
 scoreboard players reset @a[team=Lobby,tag=!inParkour] parkourMins
 scoreboard players reset @a[team=Lobby,tag=!inParkour] parkourSecs
+scoreboard players reset @a[team=Lobby,tag=!inParkour] finalParkourTime

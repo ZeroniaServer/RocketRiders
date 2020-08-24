@@ -86,13 +86,13 @@ execute as @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=0}] if entity @s[n
 scoreboard players add @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=1..19}] chkpntCooldown 1
 scoreboard players set @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
-#Quit parkour
+#Quit parkour (doesn't work at start)
 execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:5b,id:"minecraft:barrier",Count:1}]}] run replaceitem entity @s hotbar.5 barrier{display:{Name:"{\"translate\":\"Quit Parkour\",\"color\":\"red\",\"bold\":true,\"italic\":false}"}} 1
-execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tellraw @s [{"text":"You quit the parkour.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tag @s remove inParkour
+execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tellraw @s [{"text":"You quit the parkour.","color":"red"}]
+execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s remove inParkour
 scoreboard players reset @a dropBarrier
-execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tellraw @s [{"text":"You quit the parkour.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tag @s remove inParkour
+execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tellraw @s [{"text":"You quit the parkour.","color":"red"}]
+execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s remove inParkour
 
 #Clear offhand (necessary for inventory controls)
 replaceitem entity @a[team=Lobby] weapon.offhand air

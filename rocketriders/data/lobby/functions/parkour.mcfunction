@@ -63,6 +63,9 @@ execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s final
 execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourSecs = @s parkourSecs
 execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
 
+#Store in leaderboard
+execute as @a[team=Lobby,tag=finishedParkour] if score @e[tag=ParkourTime,limit=1] bestParkourTime < @s finalParkourTime run function lobby:updatelb
+
 #Remove tags
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s add firstParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove inParkour

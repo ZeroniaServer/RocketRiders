@@ -45,7 +45,9 @@ clear @s[scores={HasGuard=2..}] elder_guardian_spawn_egg 1
 clear @s[scores={HasRift=2..}] salmon_spawn_egg 1
 clear @s[scores={HasJug=2..}] zombie_horse_spawn_egg 1
 clear @s[scores={HasShield=2..}] snowball 1
-clear @s[scores={HasPlat=2..}] ender_pearl 1
+#Canopies are an exception for modes that require extra Canopies for travel.
+execute unless entity @e[tag=Selection,type=armor_stand,tag=canopyStack] run clear @s[scores={HasPlat=2..}] ender_pearl 1
+execute if entity @e[tag=Selection,type=armor_stand,tag=canopyStack] run scoreboard players set @s HasPlat 0
 clear @s[scores={HasFireball=2..}] blaze_spawn_egg 1
 clear @s[scores={HasObshield=2..}] enderman_spawn_egg 1
 clear @s[scores={HasBullet=2..}] skeleton_horse_spawn_egg 1

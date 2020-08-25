@@ -3,17 +3,11 @@ function rr_ctf:game/leavemidgame
 
 #item RNG and spawnpoints
 scoreboard players add @s RandomItem 1
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
+execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_ctf:items/giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem
 spawnpoint @a[team=Blue] 12 64 -66 0
 spawnpoint @a[team=Yellow] 12 64 66 -180
-execute if entity @s[tag=Minute] run function items:minutemix
-
-#give canopies every 15 seconds (TODO can be changed)
-scoreboard players add @s givecanopy 1
-execute as @s[scores={givecanopy=300..}] as @a[team=Yellow] run function items:util/givecanopy
-execute as @s[scores={givecanopy=300..}] as @a[team=Blue] run function items:util/givecanopy
-scoreboard players reset @s[scores={givecanopy=300..}] givecanopy
+execute if entity @s[tag=Minute] run function rr_ctf:items/minutemix
 
 #win
 execute if score Blue: FlagDisp matches 2 run function game:winblue

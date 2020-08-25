@@ -1,1 +1,1 @@
-scoreboard objectives add givecanopy dummy
+scoreboard objectives remove givecanopy

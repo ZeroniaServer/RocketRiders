@@ -11,4 +11,5 @@ tag @e[tag=Selection,type=armor_stand,tag=canopyWasOff] remove rngCanopy
 tag @e[tag=Selection,type=armor_stand] remove canopyWasOff
 tag @e[tag=Selection,type=armor_stand] remove customSaberMsg
 tag @e[tag=Selection,type=armor_stand] remove noPortal
+tag @e[tag=Selection,type=armor_stand] remove canopyStack
 tag @e[tag=Selection,type=armor_stand] add switchGamemodes

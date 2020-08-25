@@ -27,7 +27,7 @@ function lobby:parkour/parkour
 
 #Handling portals/roof with players/utilities
 execute as @e[tag=Selection,type=armor_stand] run function everytick:cancel_utility
-function everytick:player_portal
+execute as @e[tag=Selection,type=armor_stand] run function everytick:player_portal
 
 #Antidupe and arrow replacement
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void

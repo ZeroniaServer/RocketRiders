@@ -28,8 +28,8 @@ effect clear @s[scores={voidNoFallCount=5}] slow_falling
 scoreboard players reset @s[scores={voidNoFallCount=5}] voidNoFallCount
 
 ##Teleport non-Spectators back to base
-tp @s[team=Blue] 12 64 -66 0 0
-tp @s[team=Yellow] 12 64 66 -180 0
+execute unless entity @e[tag=Selection,type=armor_stand,tag=customSpawns] run tp @s[team=Blue] 12 64 -66 0 0
+execute unless entity @e[tag=Selection,type=armor_stand,tag=customSpawns] run tp @s[team=Yellow] 12 64 66 -180 0
 
 ##Teleport Spectators back to center
 tp @s[team=Spectator] 12 100 0.5 90 90

@@ -12,10 +12,19 @@ function everytick:saberfix
 function everytick:no_drop
 function everytick:team_balance
 
+#teleport back to base from void
+execute as @a[team=Yellow] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run tp @s 12 64 -66 0 0
+execute as @a[team=Blue] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run tp @s 12 64 66 -180 0
+
+#teleport back to base from portals
+tp @a[team=Yellow,tag=portalKill] 12 64 -66 0 0
+tp @a[team=Blue,tag=portalKill] 12 64 66 -180 0
+tag @a[tag=portalKill] remove portalKill
+
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] run function rr_cursed:arenaclear/baseplacement
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] if entity @s[tag=!GameStarted] as @a at @s run function arenaclear:notifystart
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
-execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Cursed ","color":"light_purple"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"Cursed Mode is as cursed as the name implies. The goal is to break your own portals: you spawn on the opposite base, and your missiles travel back to your base so you can blow it up. The first team to destroy their own portals wins!","color":"white"}]}}]
+execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Cursed ","color":"light_purple"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"Cursed Mode is as cursed as the name implies. You spawn on the enemy base, where you must destroy their portals with whatever items you get (your missiles will spawn in the opposite direction). The first team to destroy the other's portals wins!","color":"white"}]}}]
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] if entity @s[tag=!GameStarted] run function modifiers:notifymodifiers
 tag @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] add BasePlaced

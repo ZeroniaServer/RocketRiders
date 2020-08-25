@@ -3,4 +3,5 @@ scoreboard objectives add HasDiaPickaxe dummy
 scoreboard objectives add dropPickaxe minecraft.dropped:minecraft.diamond_pickaxe
 scoreboard objectives add FlagScore dummy
 scoreboard objectives add FlagDisp dummy {"text":"Flag Count","color":"green","bold":"true"}
+scoreboard objectives add givecanopy dummy
 execute if entity @e[tag=rr_ctf,limit=1,type=armor_stand] run tellraw @s {"text":"Capture the Flag Mode installed.","color":"green","bold":"true"}

@@ -4,5 +4,6 @@ scoreboard objectives remove HasDiaPickaxe
 scoreboard objectives remove dropPickaxe
 scoreboard objectives remove FlagScore
 scoreboard objectives remove FlagDisp
+scoreboard objectives remove givecanopy
 scoreboard players reset * gamemodeID
 execute unless entity @e[tag=rr_ctf,limit=1,type=armor_stand] run tellraw @s {"text":"Capture the Flag Mode uninstalled.","color":"red","bold":"true"}

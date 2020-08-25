@@ -1,6 +1,8 @@
-#disable arrows
+#disable arrows and enable canopies
 tag @s[tag=rngArrows] add arrowsWasOn
 tag @s remove rngArrows
+tag @s[tag=!rngCanopy] add canopyWasOff
+tag @s add rngCanopy
 execute unless entity @s[tag=EditedSettings] run function rr_ctf:arenaclear/customizer
 
 #management

@@ -29,11 +29,11 @@ execute as @e[tag=bluejoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run p
 execute as @s[scores={largerTeam=-1..0}] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
 team join Blue @a[tag=JoinBlue]
 clear @a[tag=JoinBlue]
-execute as @s[tag=!GameStarted] run tp @a[tag=JoinBlue] -95 202 60 0 0
+execute as @s[tag=!GameStarted,tag=!customSpawns] run tp @a[tag=JoinBlue] -95 202 60 0 0
 execute as @s[tag=!GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
 execute as @s[tag=!GameStarted] run tellraw @a[tag=JoinBlue] {"text":"Fall off the base to return to the lobby.","color":"blue","italic":"true"}
 execute as @s[tag=!GameStarted] run effect give @a[tag=JoinBlue] resistance 1000000 255 true
-execute as @s[tag=GameStarted] run tp @a[tag=JoinBlue] 12 64 -66 0 0
+execute as @s[tag=GameStarted,tag=!customSpawns] run tp @a[tag=JoinBlue] 12 64 -66 0 0
 execute as @s[tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
 execute as @s[tag=GameStarted,tag=!customSaberMsg] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
 execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
@@ -43,7 +43,7 @@ execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
 execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinBlue] run kill @s
 execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinBlue] add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
-execute as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
+execute as @s[tag=!customSpawns] as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial
 execute as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":"true","color":"blue"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"blue"}]
 #tag @a remove JoinBlue
@@ -60,11 +60,11 @@ execute as @e[tag=yellowjoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run
 execute as @s[scores={largerTeam=0..1}] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
 team join Yellow @a[tag=JoinYellow]
 clear @a[tag=JoinYellow]
-execute as @s[tag=!GameStarted] run tp @a[tag=JoinYellow] -95 202 96 180 0
+execute as @s[tag=!GameStarted,tag=!customSpawns] run tp @a[tag=JoinYellow] -95 202 96 180 0
 execute as @s[tag=!GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
 execute as @s[tag=!GameStarted] run tellraw @a[tag=JoinYellow] {"text":"Fall off the base to return to the lobby.","color":"gold","italic":"true"}
 execute as @s[tag=!GameStarted] run effect give @a[tag=JoinYellow] resistance 1000000 255 true
-execute as @s[tag=GameStarted] run tp @a[tag=JoinYellow] 12 64 66 180 0
+execute as @s[tag=GameStarted,tag=!customSpawns] run tp @a[tag=JoinYellow] 12 64 66 180 0
 execute as @s[tag=GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
 execute as @s[tag=GameStarted,tag=!customSaberMsg] run tellraw @a[tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":"true"},{"text":"Shooting Saber ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
 execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinYellow]
@@ -74,7 +74,7 @@ execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
 execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinYellow] run kill @s
 execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinYellow] add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
-execute as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
+execute as @s[tag=!customSpawns] as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #achievement keybind tutorial
 execute as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":"true","color":"gold"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"gold"}]
 #tag @a remove JoinYellow

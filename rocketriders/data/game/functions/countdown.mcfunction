@@ -84,8 +84,8 @@ execute as @s[tag=GameStarted,tag=!bossbarOverride] run bossbar set rr:startgame
 execute as @s[tag=GameStarted] run bossbar set rr:startgame value 30
 execute as @s[tag=GameStarted] run function game:randomsplash
 execute as @s[tag=GameStarted] as @a at @s run playsound entity.generic.explode master @s ~ ~ ~ 100 1.2
-execute as @s[tag=GameStarted] run tp @a[team=Yellow] 12 64 66 -180 0
-execute as @s[tag=GameStarted] run tp @a[team=Blue] 12 64 -66 0 0
+execute as @s[tag=GameStarted,tag=!customSpawns] run tp @a[team=Yellow] 12 64 66 -180 0
+execute as @s[tag=GameStarted,tag=!customSpawns] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[tag=GameStarted] run effect clear @a[team=Blue] resistance
 execute as @s[tag=GameStarted] run effect clear @a[team=Yellow] resistance
 execute as @s[tag=GameStarted] run effect give @a[team=Blue] fire_resistance 10 100 true

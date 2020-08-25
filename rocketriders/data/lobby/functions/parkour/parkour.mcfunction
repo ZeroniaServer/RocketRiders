@@ -64,7 +64,7 @@ execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s final
 execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
 
 #Store in leaderboard
-execute as @a[team=Lobby,tag=finishedParkour] if score @e[tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:updatelb
+execute as @a[team=Lobby,tag=finishedParkour] if score @e[tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:parkour/updatelb
 
 #Remove tags
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s add firstParkour
@@ -74,21 +74,22 @@ execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour
 ##Return to checkpoint
 #If you fall on the floor, you return to your last checkpoint automatically
 execute as @a[team=Lobby,tag=inParkour] at @s if block ~ ~-1 ~ black_concrete run tag @s add returnCheckpoint
-execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0}] run tp @s -31 193 18 0 0
+execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0}] run tp @s -31 193 17 0 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=1}] run tp @s -28 196 68 0 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=2}] run tp @s -13 199 58 -90 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=3}] run tp @s -16 199 93 90 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run playsound minecraft:entity.zombie_villager.converted player @s ~ ~ ~ 1 2
-execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] run tag @s remove returnCheckpoint
 
 ##Reset time
-tellraw @a[team=Lobby,tag=inParkour,tag=timeReset] [{"text":"Your time has reset.","color":"green","italic":"true"}]
-scoreboard players reset @a[team=Lobby,tag=inParkour,tag=timeReset] parkourSecs
-scoreboard players reset @a[team=Lobby,tag=inParkour,tag=timeReset] parkourMins
-scoreboard players reset @a[team=Lobby,tag=inParkour,tag=timeReset] parkourTimer
-tag @a[team=Lobby,tag=inParkour,tag=timeReset] remove timeReset
+tag @a[team=Lobby,tag=inParkour,tag=onResetPlate] remove onResetPlate
+execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[x=-31,y=193,z=18,dx=0,dy=0,dz=0] run tag @s add onResetPlate
+tellraw @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] [{"text":"Your time has reset.","color":"green","italic":"true"}]
+scoreboard players reset @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] parkourSecs
+scoreboard players reset @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] parkourMins
+scoreboard players reset @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] parkourTimer
+tag @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] add timeReset
+tag @a[team=Lobby,tag=inParkour,tag=timeReset,tag=!onResetPlate] remove timeReset
 
 ##Scoreboard timer
 scoreboard players add @a[team=Lobby,tag=inParkour] parkourTimer 1
@@ -121,19 +122,15 @@ scoreboard players set @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] c
 #Quit parkour (doesn't work at start)
 execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:5b,id:"minecraft:barrier",Count:1}]}] run replaceitem entity @s hotbar.5 barrier{display:{Name:"{\"translate\":\"Quit Parkour\",\"color\":\"red\",\"bold\":true,\"italic\":false}"}} 1
 execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tellraw @s [{"text":"You quit the parkour.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 1
 execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s remove inParkour
+execute as @a[team=Lobby,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 1
 scoreboard players reset @a dropBarrier
 execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tellraw @s [{"text":"You quit the parkour.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 1
 execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s remove inParkour
+execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 1
 
 #Clear offhand (necessary for inventory controls)
 replaceitem entity @a[team=Lobby] weapon.offhand air
-
-##Leave area to quit parkour
-execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[y=210,dy=100] run tellraw @s [{"text":"You left the parkour area, so your parkour run was canceled.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[y=210,dy=100] run tag @s remove inParkour
 
 ##Safety features
 #Only lobby players in parkour mode

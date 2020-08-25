@@ -23,7 +23,7 @@ function lobby:bookwarp
 execute as @a[scores={displayinfo=1..}] run function lobby:displayinfo
 execute as @a[team=Lobby] run function everytick:score_reset
 execute unless entity @e[tag=Selection,tag=GameStarted,type=armor_stand] run function lobby:credits/cycle
-function lobby:parkour
+function lobby:parkour/parkour
 
 #Handling portals/roof with players/utilities
 execute as @e[tag=Selection,type=armor_stand] run function everytick:cancel_utility

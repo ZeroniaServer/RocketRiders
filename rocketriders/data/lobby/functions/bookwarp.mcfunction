@@ -20,4 +20,10 @@ execute as @a[scores={LobbyWarp=7}] at @s run tp @s -31 193 16 0 0
 execute as @a[scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted player @s ~ ~ ~ 1 2
 execute as @a[scores={LobbyWarp=1..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
 execute as @a[scores={LobbyWarp=1..}] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
+
+#Cancel parkour
+execute as @a[scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used the Navigation Book, so your parkour run was canceled.","color":"red"}]
+execute as @a[scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inParkour
+
+#Reset score
 scoreboard players reset @a[scores={LobbyWarp=1..}] LobbyWarp

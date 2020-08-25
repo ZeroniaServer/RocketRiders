@@ -9,11 +9,11 @@ spawnpoint @a[team=Blue] 12 64 -66 0
 spawnpoint @a[team=Yellow] 12 64 66 -180
 execute if entity @s[tag=Minute] run function items:minutemix
 
-#give canopies every 5 seconds (TODO can be changed)
+#give canopies every 15 seconds (TODO can be changed)
 scoreboard players add @s givecanopy 1
-execute as @s[scores={givecanopy=100..}] as @a[team=Yellow] run function items:util/givecanopy
-execute as @s[scores={givecanopy=100..}] as @a[team=Blue] run function items:util/givecanopy
-scoreboard players reset @s[scores={givecanopy=100..}] givecanopy
+execute as @s[scores={givecanopy=300..}] as @a[team=Yellow] run function items:util/givecanopy
+execute as @s[scores={givecanopy=300..}] as @a[team=Blue] run function items:util/givecanopy
+scoreboard players reset @s[scores={givecanopy=300..}] givecanopy
 
 #win
 execute if score Blue: FlagDisp matches 2 run function game:winblue

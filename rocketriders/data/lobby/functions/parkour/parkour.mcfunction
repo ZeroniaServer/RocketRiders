@@ -23,7 +23,6 @@ execute as @a[team=Lobby,tag=earnCheckpoint] run scoreboard players add @s check
 execute as @a[team=Lobby,tag=earnCheckpoint] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
 execute as @a[team=Lobby,tag=earnCheckpoint] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
 execute as @a[team=Lobby,tag=earnCheckpoint] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[team=Lobby,tag=earnCheckpoint] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
 
 #Tellraw messages
 execute as @a[team=Lobby,tag=earnCheckpoint,scores={parkourSecs=..9,parkourMins=..9}] run tellraw @s ["",{"text":"You've reached Checkpoint ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":"true"},{"text":" in ","color":"dark_green"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
@@ -73,7 +72,7 @@ execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour
 
 ##Return to checkpoint
 #If you fall on the floor, you return to your last checkpoint automatically
-execute as @a[team=Lobby,tag=inParkour] at @s if block ~ ~-1 ~ black_concrete run tag @s add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~ ~-1 ~ black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0}] run tp @s -31 193 17 0 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=1}] run tp @s -28 196 68 0 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=2}] run tp @s -13 199 58 -90 0
@@ -123,11 +122,11 @@ scoreboard players set @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] c
 execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:5b,id:"minecraft:barrier",Count:1}]}] run replaceitem entity @s hotbar.5 barrier{display:{Name:"{\"translate\":\"Quit Parkour\",\"color\":\"red\",\"bold\":true,\"italic\":false}"}} 1
 execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tellraw @s [{"text":"You quit the Parkour.","color":"red"}]
 execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s remove inParkour
-execute as @a[team=Lobby,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 1
+execute as @a[team=Lobby,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 7
 scoreboard players reset @a dropBarrier
 execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tellraw @s [{"text":"You quit the Parkour.","color":"red"}]
 execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s remove inParkour
-execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 1
+execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 7
 
 #Clear offhand (necessary for inventory controls)
 replaceitem entity @a[team=Lobby] weapon.offhand air
@@ -136,7 +135,7 @@ replaceitem entity @a[team=Lobby] weapon.offhand air
 #Only lobby players in parkour mode
 tag @a[team=!Lobby,tag=inParkour] remove inParkour
 #Don't let non-parkour players on floor (warp back to parkour start)
-execute as @a[team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~ black_concrete run scoreboard players set @s LobbyWarp 7
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
 
 ##Reset objectives for non-parkour players
 scoreboard players reset @a[team=Lobby,tag=!inParkour] checkpoint

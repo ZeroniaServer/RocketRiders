@@ -131,6 +131,13 @@ execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft
 #Clear offhand (necessary for inventory controls)
 replaceitem entity @a[team=Lobby] weapon.offhand air
 
+##Invisible players
+effect give @a[team=Lobby,tag=inParkour] invisibility 1000000 255 true
+effect clear @a[team=Lobby,tag=!inParkour] invisibility
+
+##Boots (non-duel mode)
+execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby,tag=inParkour] armor.feet iron_boots{display:{Name:"{\"text\":\"Parkour Boots\",\"color\":\"dark_green\",\"bold\":\"true\",\"italic\":\"false\"}"},Enchantments:[{id:"minecraft:curse_of_binding",lvl:1}],HideFlags:7}
+
 ##Safety features
 #Only lobby players in parkour mode
 tag @a[team=!Lobby,tag=inParkour] remove inParkour

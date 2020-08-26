@@ -1,1 +1,1 @@
-scoreboard objectives remove givecanopy
+team modify Lobby seeFriendlyInvisibles false

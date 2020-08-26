@@ -14,6 +14,7 @@ tag @s[scores={count=1..}] add bossbarOverride
 scoreboard players set @s[scores={count=1}] count 400
 execute as @s[scores={count=400}] run bossbar set rr:startgame name ["",{"text":"The game is starting in ","color":"green"},{"text":"10","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=400}] run bossbar set rr:startgame value 10
+execute as @s[scores={count=400}] run bossbar set rr:startgame max 10
 execute as @s[tag=EditedSettings] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
 execute as @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
 execute as @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:restartcountdown

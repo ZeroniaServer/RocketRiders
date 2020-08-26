@@ -5,6 +5,9 @@
 
 ##Timer, bossbar, sound effects
 execute unless entity @s[tag=GameStarted] run scoreboard players add @s[tag=Countdown] count 1
+#Automatically go to 10 if no (non-parkour) lobby players are on
+execute as @s[scores={count=1..399}] unless entity @a[team=Lobby,tag=!inParkour] run bossbar set rr:startgame max 10
+execute as @s[scores={count=1..399}] unless entity @a[team=Lobby,tag=!inParkour] run scoreboard players set @s count 400
 execute as @s[scores={count=1..600}] run scoreboard players set @a dropBow 0
 execute as @s[scores={count=1..599}] run bossbar set rr:startgame color green
 execute as @s[scores={count=1}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"30","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
@@ -82,6 +85,7 @@ execute as @s[scores={count=580}] as @a at @s run playsound block.note_block.hat
 execute as @s[scores={count=599..}] as @a unless entity @s[team=!Yellow,team=!Blue] if entity @s[predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @s[tag=GameStarted,tag=!bossbarOverride] run bossbar set rr:startgame name ["",{"text":"A match is currently in progress. Feel free to join in!","color":"dark_green"}]
 execute as @s[tag=GameStarted] run bossbar set rr:startgame value 30
+execute as @s[tag=GameStarted] run bossbar set rr:startgame max 30
 execute as @s[tag=GameStarted] run function game:randomsplash
 execute as @s[tag=GameStarted] as @a at @s run playsound entity.generic.explode master @s ~ ~ ~ 100 1.2
 execute as @s[tag=GameStarted,tag=!customSpawns] run tp @a[team=Yellow] 12 64 66 -180 0

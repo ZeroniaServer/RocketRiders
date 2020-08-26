@@ -16,6 +16,8 @@ execute as @a[team=Lobby,tag=startParkour] run tag @s add inParkour
 execute as @a[team=Lobby,tag=startParkour] run tag @s remove startParkour
 
 ##Checkpoints
+scoreboard players add @a[team=Lobby,tag=inParkour] checkpoint 0
+
 #Reach checkpoint
 execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=0}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC1,type=area_effect_cloud,limit=1,distance=..1] run tag @s add earnCheckpoint
 execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=1}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC2,type=area_effect_cloud,limit=1,distance=..1] run tag @s add earnCheckpoint

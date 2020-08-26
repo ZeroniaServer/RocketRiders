@@ -3,20 +3,20 @@
 #######################################################
 
 ##Start parkour
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.75] run tellraw @s [{"text":"Parkour run started!","color":"dark_green","bold":"true"}]
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.75] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.75] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.75] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.75] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.75] run tag @s add inParkour
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] run tellraw @s [{"text":"Parkour run started!","color":"dark_green","bold":"true"}]
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] run tag @s add inParkour
 
 ##Checkpoints
 scoreboard players add @a[team=Lobby,tag=inParkour] checkpoint 0
 
 #Reach checkpoint
-execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=0}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC1,type=area_effect_cloud,limit=1,distance=..0.75] run tag @s add earnCheckpoint
-execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=1}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC2,type=area_effect_cloud,limit=1,distance=..0.75] run tag @s add earnCheckpoint
-execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=2}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC3,type=area_effect_cloud,limit=1,distance=..0.75] run tag @s add earnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=0}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC1,type=area_effect_cloud,limit=1,distance=..1] run tag @s add earnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=1}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC2,type=area_effect_cloud,limit=1,distance=..1] run tag @s add earnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=2}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC3,type=area_effect_cloud,limit=1,distance=..1] run tag @s add earnCheckpoint
 
 #Visual/Sound effects
 execute as @a[team=Lobby,tag=earnCheckpoint] run scoreboard players add @s checkpoint 1
@@ -32,7 +32,7 @@ execute as @a[team=Lobby,tag=earnCheckpoint,scores={parkourSecs=10..,parkourMins
 tag @a[team=Lobby,tag=earnCheckpoint] remove earnCheckpoint
 
 ##End parkour
-execute as @a[team=Lobby,tag=inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourEnd,type=area_effect_cloud,limit=1,distance=..0.75] run tag @s add finishedParkour
+execute as @a[team=Lobby,tag=inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourEnd,type=area_effect_cloud,limit=1,distance=..1] run tag @s add finishedParkour
 execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=..9,parkourMins=..9}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
 execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=10..,parkourMins=..9}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
 execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=..9,parkourMins=10..}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
@@ -65,7 +65,8 @@ execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s final
 #Store in leaderboard
 execute as @a[team=Lobby,tag=finishedParkour] if score @e[tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:parkour/updatelb
 
-#Remove tags
+#Remove tags + give advancement
+execute as @a[team=Lobby,tag=finishedParkour] run advancement grant @s only tutorial:endparkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s add firstParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove inParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour

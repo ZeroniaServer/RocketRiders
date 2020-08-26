@@ -2,15 +2,15 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Missile Display Area",
+            "text": "Complete the Parkour",
             "color": "light_purple"
         },
         "description": {
-            "text": "You've discovered the Missile Display Area.",
+            "text": "You've finished the Parkour!",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:tnt"
+            "item": "minecraft:gold_block"
         },
         "frame": "task",
         "show_toast": true,
@@ -22,8 +22,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "rewards": {
-        "function": "tutorial:misdisp"
-    },
-    "parent": "tutorial:root"
+    "parent": "tutorial:parkour"
 }

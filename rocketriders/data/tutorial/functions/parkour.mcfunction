@@ -1,0 +1,3 @@
+##Notify player about Parkour Area
+tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"Tutorial","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Welcome to the Parkour Area. This is a parkour course beneath the Lobby with four unique sections and checkpoints for each. You can come here and try your best to complete the parkour course, if you ever get bored playing the real game (how could you?). The player with the fastest completion time has their name and time on display. Have fun!","color":"gray"}]
+execute as @s at @s run playsound minecraft:block.note_block.iron_xylophone player @s ~ ~ ~ 0.5 2

@@ -1,9 +1,9 @@
 tag @e[tag=Selection,type=armor_stand] remove switchGamemodes
 tag @e[tag=Selection,type=armor_stand] add ctfEnabled
 tag @e[tag=Selection,type=armor_stand] add ResidersOff
-tag @e[tag=Selection,type=armor_stand] remove Residers
+tag @e[tag=Selection,type=armor_stand,tag=Residers] add ResidersWasOn
 tag @e[tag=Selection,type=armor_stand] add HardcoreOff
-tag @e[tag=Selection,type=armor_stand] remove Hardcore
+tag @e[tag=Selection,type=armor_stand,tag=Hardcore] add HardcoreWasOn
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:unlockdecos
 tag @e[tag=Selection,type=armor_stand] add tyingOff
 tag @e[tag=Selection,type=armor_stand] add fbPortalsOff

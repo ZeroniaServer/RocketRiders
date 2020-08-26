@@ -29,7 +29,7 @@ tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
 
 #Hardcore compatibility
 scoreboard players add @a[tag=hardcoreKilled] hardcoreKilled 1
-execute as @s[tag=Hardcore] as @a[tag=hardcoreKilled,scores={hardcoreKilled=7..},team=Lobby] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] at @s run tp @s ~ ~ ~-0.5
+execute as @s[tag=Hardcore,tag=GameStarted] as @a[tag=hardcoreKilled,scores={hardcoreKilled=7..},team=Lobby] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] at @s run tp @s ~ ~ ~-0.5
 tag @a[tag=hardcoreKilled,scores={hardcoreKilled=7..}] remove hardcoreKilled
 scoreboard players reset @a[tag=!hardcoreKilled] hardcoreKilled
 execute as @s[tag=Hardcore] run gamerule showDeathMessages false

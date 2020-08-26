@@ -2,7 +2,7 @@
 #Pierce Prevention
 execute as @s[tag=doPrevention,tag=!preventionOff,tag=!settingsLocked] run setblock -70 193 79 warped_wall_sign[facing=east]
 execute as @s[tag=!doPrevention,tag=!preventionOff,tag=!settingsLocked] run setblock -70 193 79 crimson_wall_sign[facing=east]
-execute as @s[tag=preventionOff,tag=!settingsLocked] run setblock -70 193 77 crimson_wall_sign[facing=east]
+execute as @s[tag=preventionOff,tag=!settingsLocked] run setblock -70 193 79 crimson_wall_sign[facing=east]
 execute as @s[tag=settingsLocked] run setblock -70 193 79 crimson_wall_sign[facing=east]
 
 #Hotbar Limit
@@ -24,7 +24,7 @@ execute as @s[tag=settingsLocked] run setblock -70 193 77 crimson_wall_sign[faci
 #Fireball Portals
 execute as @s[tag=doFireballPortals,tag=!fbPortalsOff,tag=!settingsLocked] run setblock -70 193 78 warped_wall_sign[facing=east]
 execute as @s[tag=!doFireballPortals,tag=!fbPortalsOff,tag=!settingsLocked] run setblock -70 193 78 crimson_wall_sign[facing=east]
-execute as @s[tag=fbPortalsOff,tag=!settingsLocked] run setblock -70 193 77 crimson_wall_sign[facing=east]
+execute as @s[tag=fbPortalsOff,tag=!settingsLocked] run setblock -70 193 78 crimson_wall_sign[facing=east]
 execute as @s[tag=settingsLocked] run setblock -70 193 78 crimson_wall_sign[facing=east]
 
 ##WORLD SETTINGS

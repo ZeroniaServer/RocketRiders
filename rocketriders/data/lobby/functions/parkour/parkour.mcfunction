@@ -3,12 +3,18 @@
 #######################################################
 
 ##Start parkour
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] run tellraw @s [{"text":"Parkour run started!","color":"dark_green","bold":"true"}]
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] run tag @s add inParkour
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] run tag @s add startParkour
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"Parkour Run Started!","color":"dark_green","bold":"true"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Step on pressure plates to reach ","color":"gray"},{"text":"Checkpoints","color":"dark_green"},{"text":".","color":"gray"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- If you fall on the ground, you go to your last ","color":"gray"},{"text":"Checkpoint","color":"dark_green"},{"text":".","color":"gray"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"gray"},{"text":"Return to Last Checkpoint","color":"aqua","bold":"true"},{"text":".","color":"gray"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the barrier to ","color":"gray"},{"text":"Quit Parkour","color":"red","bold":"true"},{"text":".","color":"gray"}]
+execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
+execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
+execute as @a[team=Lobby,tag=startParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[team=Lobby,tag=startParkour] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
+execute as @a[team=Lobby,tag=startParkour] run tag @s add inParkour
+execute as @a[team=Lobby,tag=startParkour] run tag @s remove startParkour
 
 ##Checkpoints
 scoreboard players add @a[team=Lobby,tag=inParkour] checkpoint 0

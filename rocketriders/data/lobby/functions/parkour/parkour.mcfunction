@@ -5,20 +5,17 @@
 ##Start parkour
 execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1] run tag @s add startParkour
 execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"Parkour Run Started!","color":"dark_green","bold":"true"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Step on pressure plates to reach ","color":"gray"},{"text":"Checkpoints","color":"dark_green"},{"text":".","color":"gray"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- If you fall on the ground, you go to your last ","color":"gray"},{"text":"Checkpoint","color":"dark_green"},{"text":".","color":"gray"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"gray"},{"text":"Return to Last Checkpoint","color":"aqua","bold":"true"},{"text":".","color":"gray"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the barrier to ","color":"gray"},{"text":"Quit Parkour","color":"red","bold":"true"},{"text":".","color":"gray"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Step on pressure plates to reach ","color":"green"},{"text":"Checkpoints","color":"dark_green"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- If you fall on the ground, you go to your last ","color":"green"},{"text":"Checkpoint","color":"dark_green"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"green"},{"text":"Return to Last Checkpoint","color":"aqua","bold":"true"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":"true"},{"text":".","color":"green"}]
 execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
 execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
 execute as @a[team=Lobby,tag=startParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[team=Lobby,tag=startParkour] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
 execute as @a[team=Lobby,tag=startParkour] run tag @s add inParkour
 execute as @a[team=Lobby,tag=startParkour] run tag @s remove startParkour
 
 ##Checkpoints
-scoreboard players add @a[team=Lobby,tag=inParkour] checkpoint 0
-
 #Reach checkpoint
 execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=0}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC1,type=area_effect_cloud,limit=1,distance=..1] run tag @s add earnCheckpoint
 execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=1}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC2,type=area_effect_cloud,limit=1,distance=..1] run tag @s add earnCheckpoint
@@ -49,7 +46,6 @@ execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:enti
 execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.1
 execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:ui.toast.challenge_complete player @s ~ ~ ~ 1 1.3
 execute as @a[team=Lobby,tag=finishedParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[team=Lobby,tag=finishedParkour] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
 
 #Store best final time
 scoreboard players set $60 finalParkourTime 60
@@ -87,16 +83,6 @@ execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=3
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run playsound minecraft:entity.zombie_villager.converted player @s ~ ~ ~ 1 2
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] run tag @s remove returnCheckpoint
 
-##Reset time
-tag @a[team=Lobby,tag=inParkour,tag=onResetPlate] remove onResetPlate
-execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[x=-31,y=193,z=18,dx=0,dy=0,dz=0] run tag @s add onResetPlate
-tellraw @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] [{"text":"Your time has reset.","color":"green","italic":"true"}]
-scoreboard players reset @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] parkourSecs
-scoreboard players reset @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] parkourMins
-scoreboard players reset @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] parkourTimer
-tag @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] add timeReset
-tag @a[team=Lobby,tag=inParkour,tag=timeReset,tag=!onResetPlate] remove timeReset
-
 ##Scoreboard timer
 scoreboard players add @a[team=Lobby,tag=inParkour] parkourTimer 1
 scoreboard players add @a[team=Lobby,tag=inParkour] parkourSecs 0
@@ -105,6 +91,17 @@ scoreboard players add @a[team=Lobby,tag=inParkour,scores={parkourTimer=20}] par
 scoreboard players set @a[team=Lobby,tag=inParkour,scores={parkourTimer=20}] parkourTimer 0
 scoreboard players add @a[team=Lobby,tag=inParkour,scores={parkourSecs=60}] parkourMins 1
 scoreboard players set @a[team=Lobby,tag=inParkour,scores={parkourSecs=60}] parkourSecs 0
+
+##Reset time
+tag @a[team=Lobby,tag=inParkour,tag=onResetPlate] remove onResetPlate
+execute as @a[team=Lobby,tag=inParkour] at @s if entity @s[x=-31,y=193,z=18,dx=0,dy=0,dz=0] run tag @s add onResetPlate
+execute as @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] unless entity @s[scores={parkourSecs=0,parkourMins=0}] run tellraw @s [{"text":"Your time has reset.","color":"dark_green","italic":"true"}]
+scoreboard players reset @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] parkourSecs
+scoreboard players reset @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] parkourMins
+scoreboard players reset @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] parkourTimer
+scoreboard players set @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] checkpoint 0
+tag @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] add timeReset
+tag @a[team=Lobby,tag=inParkour,tag=timeReset,tag=!onResetPlate] remove timeReset
 
 ##Display actionbar
 execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=..9,parkourMins=..9}] run title @s actionbar ["",{"text":"Parkour Timer: ","color":"dark_green"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":"            Checkpoint: ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":"true"}]

@@ -1,1 +1,2 @@
 team modify Lobby seeFriendlyInvisibles false
+scoreboard objectives add dropCompass minecraft.dropped:minecraft.compass

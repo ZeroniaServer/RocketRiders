@@ -71,7 +71,7 @@ replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.3 air
 replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.5 air
 replaceitem entity @a[team=Lobby] hotbar.6 air
 replaceitem entity @a[team=Lobby] hotbar.7 air
-replaceitem entity @a[team=Lobby] hotbar.8 air
+replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.8 air
 replaceitem entity @a[team=Lobby] armor.head air
 replaceitem entity @a[team=Lobby] armor.chest air
 replaceitem entity @a[team=Lobby] armor.legs air

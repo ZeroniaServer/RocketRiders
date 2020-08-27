@@ -12,6 +12,7 @@ kill @e[type=item,nbt={Item:{id:"minecraft:written_book"}}]
 #Kills parkour controls
 kill @e[type=item,nbt={Item:{id:"minecraft:barrier"}}]
 kill @e[type=item,nbt={Item:{id:"minecraft:clock"}}]
+kill @e[type=item,nbt={Item:{id:"minecraft:compass"}}]
 
 #Kills items after a while
 execute as @e[type=item,nbt={Age:300s}] unless entity @s[nbt={Item:{tag:{Dropable:1b}}}] run kill @s

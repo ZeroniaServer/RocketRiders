@@ -8,7 +8,8 @@ execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"Parkour Run 
 execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Step on pressure plates to reach ","color":"green"},{"text":"Checkpoints","color":"dark_green"},{"text":".","color":"green"}]
 execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- If you fall on the ground, you go to your last ","color":"green"},{"text":"Checkpoint","color":"dark_green"},{"text":".","color":"green"}]
 execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- The first pressure plate resets your time.","color":"green"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"green"},{"text":"Return to Last Checkpoint","color":"aqua","bold":"true"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the compass to ","color":"green"},{"text":"Return to Checkpoint","color":"aqua","bold":"true"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"green"},{"text":"Quit to Start","color":"yellow","bold":"true"},{"text":".","color":"green"}]
 execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":"true"},{"text":".","color":"green"}]
 execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
 execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
@@ -114,25 +115,35 @@ execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=10..
 ##Inventory controls (offhand and drop)
 #Return to last checkpoint (includes 1 second cooldown)
 scoreboard players add @a[team=Lobby,tag=inParkour] chkpntCooldown 0
-execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:3b,id:"minecraft:clock",Count:1}]}] run replaceitem entity @s hotbar.3 clock{display:{Name:"{\"translate\":\"Return to Last Checkpoint\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}"}} 1
-execute as @a[team=Lobby,tag=inParkour,scores={dropClock=1..,chkpntCooldown=0}] run tag @s add returnCheckpoint
-execute as @a[team=Lobby,tag=inParkour,scores={dropClock=1..,chkpntCooldown=0}] run scoreboard players set @s chkpntCooldown 1
-scoreboard players reset @a dropClock
-execute as @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=0}] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:clock"}]}] run tag @s add returnCheckpoint
-execute as @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=0}] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:clock"}]}] run scoreboard players set @s chkpntCooldown 1
+execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:3b,id:"minecraft:compass",Count:1}]}] run replaceitem entity @s hotbar.3 compass{display:{Name:"{\"translate\":\"Return to Checkpoint\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}"}} 1
+execute as @a[team=Lobby,tag=inParkour,scores={dropCompass=1..,chkpntCooldown=0}] run tag @s add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={dropCompass=1..,chkpntCooldown=0}] run scoreboard players set @s chkpntCooldown 1
+scoreboard players reset @a dropCompass
+execute as @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=0}] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:compass"}]}] run tag @s add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=0}] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:compass"}]}] run scoreboard players set @s chkpntCooldown 1
 execute as @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=1}] run tellraw @s ["",{"text":"Returned to Checkpoint ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":"true"},{"text":".","color":"dark_green"}]
 scoreboard players add @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=1..19}] chkpntCooldown 1
 scoreboard players set @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
-#Quit parkour (doesn't work at start)
-execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:5b,id:"minecraft:barrier",Count:1}]}] run replaceitem entity @s hotbar.5 barrier{display:{Name:"{\"translate\":\"Quit Parkour\",\"color\":\"red\",\"bold\":true,\"italic\":false}"}} 1
-execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tellraw @s [{"text":"You quit the Parkour.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s remove inParkour
-execute as @a[team=Lobby,scores={dropBarrier=1..}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 7
+#Quit to start
+execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:5b,id:"minecraft:clock",Count:1}]}] run replaceitem entity @s hotbar.5 clock{display:{Name:"{\"translate\":\"Quit to Start\",\"color\":\"yellow\",\"bold\":true,\"italic\":false}"}} 1
+execute as @a[team=Lobby,tag=inParkour,scores={dropClock=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to the start.","color":"red"}]
+execute as @a[team=Lobby,tag=inParkour,scores={dropClock=1..}] run tag @s remove inParkour
+execute as @a[team=Lobby,scores={dropClock=1..}] run scoreboard players set @s LobbyWarp 7
+scoreboard players reset @a dropClock
+execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:clock"}]}] run tellraw @s [{"text":"You quit the Parkour. Returning to the start.","color":"red"}]
+execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:clock"}]}] run tag @s remove inParkour
+execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:clock"}]}] run scoreboard players set @s LobbyWarp 7
+
+#Quit parkour
+execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:8b,id:"minecraft:barrier",Count:1}]}] run replaceitem entity @s hotbar.8 barrier{display:{Name:"{\"translate\":\"Quit Parkour\",\"color\":\"red\",\"bold\":true,\"italic\":false}"}} 1
+execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to Lobby.","color":"red"}]
+execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tag @s remove inParkour
+execute as @a[team=Lobby,scores={dropBarrier=1..}] run scoreboard players set @s LobbyWarp 1
 scoreboard players reset @a dropBarrier
-execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tellraw @s [{"text":"You quit the Parkour.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run tag @s remove inParkour
-execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] at @s positioned ~ ~1 ~ unless entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..0.5] run scoreboard players set @s LobbyWarp 7
+execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tellraw @s [{"text":"You quit the Parkour. Returning to Lobby.","color":"red"}]
+execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tag @s remove inParkour
+execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run scoreboard players set @s LobbyWarp 1
 
 #Clear offhand (necessary for inventory controls)
 replaceitem entity @a[team=Lobby] weapon.offhand air

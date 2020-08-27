@@ -48,6 +48,8 @@ execute as @e[tag=bluemissile,tag=!BlueCata,tag=!BlueDuplex,type=area_effect_clo
 execute as @e[tag=yellowmissile,tag=!YellowCata,tag=!YellowDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
 execute as @e[tag=BlueCata,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,SmartClearAECcata],Duration:2000000000}
 execute as @e[tag=YellowCata,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,SmartClearAECcata],Duration:2000000000}
+execute as @e[tag=BlueLift,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,SmartClearAECcata],Duration:2000000000}
+execute as @e[tag=YellowLift,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,SmartClearAECcata],Duration:2000000000}
 execute as @e[tag=BlueDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,duplexExtraBlue],Duration:2000000000}
 execute as @e[tag=YellowDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,duplexExtraYellow],Duration:2000000000}
 

@@ -21,6 +21,7 @@ execute as @s[tag=!EditedSettings,scores={endtimer=..0}] run bossbar set rr:star
 execute as @s[scores={endtimer=1..}] run bossbar set rr:startgame color red
 execute as @s[scores={endtimer=1..}] run bossbar set rr:startgame name ["",{"text":"A game is currently ending.","color":"red"}]
 execute as @s[tag=!EditedSettings] run bossbar set rr:startgame value 30
+execute as @s[tag=!EditedSettings] run bossbar set rr:startgame max 30
 execute as @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a
 
 ##Blue Join Pad

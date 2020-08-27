@@ -7,10 +7,10 @@
 
 ##During recursion - Arena Clear in progress
 scoreboard players add @e[tag=ArenaClearChecker,type=area_effect_cloud] ClearArena 1
-execute as @e[tag=ArenaClearBlue,type=area_effect_cloud] at @s run fill ~3 ~-2 ~-4 ~-3 ~8 ~4 air replace #custom:missileblocks
-execute as @e[tag=ArenaClearBlue,tag=ArenaClearCata,type=area_effect_cloud] at @s run fill ~3 ~8 ~-4 ~-3 ~12 ~4 air replace #custom:missileblocks
-execute as @e[tag=ArenaClearYellow,type=area_effect_cloud] at @s run fill ~3 ~-2 ~-4 ~-3 ~8 ~4 air replace #custom:missileblocks
-execute as @e[tag=ArenaClearYellow,tag=ArenaClearCata,type=area_effect_cloud] at @s run fill ~3 ~8 ~-4 ~-3 ~12 ~4 air replace #custom:missileblocks
+execute as @e[tag=ArenaClearBlue,type=area_effect_cloud] at @s run fill ~4 ~-4 ~-4 ~-4 ~8 ~4 air replace #custom:missileblocks
+execute as @e[tag=ArenaClearBlue,tag=ArenaClearCata,type=area_effect_cloud] at @s run fill ~4 ~8 ~-4 ~-4 ~12 ~4 air replace #custom:missileblocks
+execute as @e[tag=ArenaClearYellow,type=area_effect_cloud] at @s run fill ~4 ~-4 ~-4 ~-4 ~8 ~4 air replace #custom:missileblocks
+execute as @e[tag=ArenaClearYellow,tag=ArenaClearCata,type=area_effect_cloud] at @s run fill ~4 ~8 ~-4 ~-4 ~12 ~4 air replace #custom:missileblocks
 execute as @e[tag=ArenaClearBlue,type=area_effect_cloud] at @s run tp @s ~ ~ ~1
 execute as @e[tag=ArenaClearYellow,type=area_effect_cloud] at @s run tp @s ~ ~ ~-1
 execute as @e[tag=SmartClearAECsplash,type=area_effect_cloud] at @s run fill ~-12 ~ ~-12 ~12 ~ ~12 air replace #custom:splashblocks

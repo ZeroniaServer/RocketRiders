@@ -27,6 +27,7 @@ kill @e[tag=VortexItem,type=armor_stand]
 kill @e[type=chicken]
 kill @e[type=tnt]
 kill @e[type=tnt_minecart]
+kill @e[type=creeper]
 kill @e[type=dragon_fireball]
 kill @e[tag=obfireball]
 kill @e[tag=blueobalone,type=armor_stand]
@@ -44,6 +45,12 @@ execute as @e[tag=Platform,type=area_effect_cloud] at @s run fill ~ ~ ~ ~ ~1 ~ a
 kill @e[tag=Platform,type=area_effect_cloud]
 kill @e[tag=YellowPlatform,type=area_effect_cloud]
 kill @e[tag=BluePlatform,type=area_effect_cloud]
+kill @e[tag=BlueObshield,type=area_effect_cloud]
+kill @e[tag=YellowObshield,type=area_effect_cloud]
+kill @e[tag=BlueFireball,type=area_effect_cloud]
+kill @e[tag=YellowFireball,type=area_effect_cloud]
+kill @e[tag=missile,type=area_effect_cloud]
+kill @e[tag=surprising,type=area_effect_cloud]
 
 function arenaclear:superspeed
 

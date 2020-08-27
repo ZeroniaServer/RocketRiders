@@ -1,4 +1,4 @@
-##Operator function -- resets parkour leaderboard
+##Operator function -- resets parkour leaderboard/times
 
 setblock -30 196 22 spruce_stairs[half=top,facing=east]
 setblock -29 196 22 spruce_slab
@@ -17,4 +17,10 @@ replaceitem entity @e[tag=ParkourPlayer] armor.chest leather_chestplate{display:
 replaceitem entity @e[tag=ParkourPlayer] armor.legs leather_leggings{display:{color:16772430}}
 replaceitem entity @e[tag=ParkourPlayer] armor.feet leather_boots{display:{color:16772430}}
 
+tag @a remove firstParkour
+scoreboard players reset * bestParkourMins
+scoreboard players reset * bestParkourSecs
+scoreboard players reset * bestParkourDeci
+scoreboard players reset * bestParkourDeci2
+scoreboard players reset * bestParkourTime
 scoreboard players set @e[tag=ParkourTime] bestParkourTime 2000000000

@@ -51,11 +51,22 @@ execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:enti
 execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:ui.toast.challenge_complete player @s ~ ~ ~ 1 1.3
 execute as @a[team=Lobby,tag=finishedParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
-#Store best final time
+#Calculate final time
 scoreboard players set $60 finalParkourTime 60
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime = @s parkourMins
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime *= $60 finalParkourTime
+scoreboard players set $100 finalParkourTime 100
+scoreboard players set $10 finalParkourTime 10
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourMins *= $60 finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourMins *= $100 finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourSecs *= $100 finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourDeci *= $10 finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime = @s parkourDeci2
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime += @s parkourDeci
 execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime += @s parkourSecs
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime += @s parkourMins
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourMins /= $60 finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourMins /= $100 finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourSecs /= $100 finalParkourTime
+execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourDeci /= $10 finalParkourTime
 
 #First time completion
 execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourTime = @s finalParkourTime

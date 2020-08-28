@@ -1,5 +1,5 @@
 #######################################################
-## PARKOUR: The system behind the lobby parkour area ##
+## PARKOUR: The system behind the Lobby Parkour Area ##
 #######################################################
 
 ##Start parkour
@@ -95,6 +95,14 @@ execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour
 ##Return to checkpoint
 #If you fall on the floor, you return to your last checkpoint automatically
 execute as @a[team=Lobby,tag=inParkour] at @s if block ~ ~-1 ~ black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~-0.3 ~-1 ~ black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~0.3 ~-1 ~ black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~ ~-1 ~-0.3 black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~ ~-1 ~0.3 black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~0.3 ~-1 ~0.3 black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~-0.3 ~-1 ~0.3 black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~-0.3 ~-1 ~-0.3 black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
+execute as @a[team=Lobby,tag=inParkour] at @s if block ~0.3 ~-1 ~-0.3 black_concrete run tag @s[y=184,dy=16] add returnCheckpoint
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0}] run tp @s -31 193 17 0 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=1}] run tp @s -28 196 68 0 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=2}] run tp @s -13 199 58 -90 0
@@ -172,18 +180,28 @@ execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft
 #Clear offhand (necessary for inventory controls)
 replaceitem entity @a[team=Lobby] weapon.offhand air
 
-##Invisible players
-effect give @a[team=Lobby,tag=inParkour] invisibility 1000000 255 true
+##Invisible players within range
+execute as @a[team=Lobby,tag=inParkour] at @s if entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect give @s invisibility 1000000 255 true
+execute as @a[team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect clear @s invisibility
 effect clear @a[team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (non-duel mode)
 execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby,tag=inParkour] armor.feet iron_boots{display:{Name:"{\"text\":\"Parkour Boots\",\"color\":\"dark_green\",\"bold\":\"true\",\"italic\":\"false\"}"},Enchantments:[{id:"minecraft:curse_of_binding",lvl:1}],HideFlags:7}
 
 ##Safety features
-#Only lobby players in parkour mode
+#Only lobby players in Parkour mode
+effect clear @a[team=!Lobby,tag=inParkour] invisibility
 tag @a[team=!Lobby,tag=inParkour] remove inParkour
-#Don't let non-parkour players on floor (warp back to parkour start)
+#Don't let non-Parkour players on floor (warp back to parkour start)
 execute as @a[team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+execute as @a[team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
 
 ##Reset objectives for non-parkour players
 scoreboard players reset @a[team=Lobby,tag=!inParkour] checkpoint

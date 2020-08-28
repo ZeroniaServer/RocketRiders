@@ -7,6 +7,7 @@ scoreboard players reset @a FallDistance
 scoreboard players reset @a gravShot
 scoreboard players reset @a regifts
 scoreboard players reset @a notBackwards
+scoreboard players reset @a standStill
 tag @a remove beenOnBlue
 tag @a remove beenOnYellow
 tag @a remove beenOnBoth

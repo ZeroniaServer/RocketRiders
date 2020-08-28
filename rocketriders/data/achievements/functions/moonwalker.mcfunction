@@ -29,10 +29,16 @@ execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless 
 execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] if entity @s[predicate=custom:is_sneaking,scores={dx=..-11,dz=-10..10},y_rotation=247.5..292.5] run scoreboard players set @s notBackwards 0
 execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] if entity @s[predicate=custom:is_sneaking,scores={dx=..-11,dz=..-11},y_rotation=292.5..107.5] run scoreboard players set @s notBackwards 0
 
-#Fail condition - not walking backwards for 5 consecutive ticks or sprinting at any point
-execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] if score @s notBackwards matches 5.. run tag @s add FailedMoon
+#Fail condition - not walking backwards for 10 consecutive ticks or sprinting at any point
+execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] if score @s notBackwards matches 10.. run tag @s add FailedMoon
 execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] if entity @s[predicate=custom:is_sprinting] run tag @s add FailedMoon
 scoreboard players reset @a[tag=FailedMoon] notBackwards
+
+#Fail condition 2 - stay still for too long
+execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] if entity @s[scores={dx=0,dz=0}] run scoreboard players add @s standStill 1
+execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] unless entity @s[scores={dx=0,dz=0}] run scoreboard players set @s standStill 0
+execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] if score @s standStill matches 20.. run tag @s add FailedMoon
+scoreboard players reset @a[tag=FailedMoon] standStill
 
 #Check original position (must happen at end of tick)
 execute as @a[tag=!FailedMoon] unless entity @s[team=!Blue,team=!Yellow] store result score @s x run data get entity @s Pos[0] 400

@@ -72,3 +72,7 @@ fill -89 201 62 -101 195 63 cyan_concrete
 fill -89 201 64 -101 195 65 blue_concrete
 setblock -100 202 61 blue_banner[rotation=0]
 setblock -90 202 61 blue_banner[rotation=0]
+
+#No portals in pregame queue
+fill -89 201 97 -101 195 97 barrier
+fill -89 201 59 -101 195 59 barrier

@@ -23,6 +23,8 @@ execute as @s[scores={SDtime=1}] run tag @e[tag=bluejoinpad,type=area_effect_clo
 execute as @s[scores={SDtime=1}] run tag @e[tag=specjoinpad,type=area_effect_cloud] remove CancelJoin
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Yellow] 12 64 66 180 0
+execute as @s[scores={SDtime=1}] run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
+execute as @s[scores={SDtime=1}] run scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
 execute as @s[scores={SDtime=1}] at @s run scoreboard players set 2 MaxItemSec 2
 execute as @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute as @s[scores={SDtime=1}] at @s run replaceitem entity @a armor.head air

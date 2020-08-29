@@ -25,3 +25,4 @@ tag @a remove Loneliest
 tag @a remove Forsaken
 tag @a remove GroundBound
 tag @a remove Immortal
+tag @a remove probGonnaDie

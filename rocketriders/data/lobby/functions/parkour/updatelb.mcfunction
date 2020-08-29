@@ -12,3 +12,5 @@ execute as @s[scores={parkourSecs=10..,parkourMins=10..}] at @s run data modify 
 execute as @s at @s run data modify entity @e[tag=ParkourTime,type=area_effect_cloud,limit=1] CustomName set from block -31 190 17 Text2
 
 execute as @s at @s run loot replace entity @e[tag=ParkourPlayer,type=armor_stand,limit=1] armor.head 1 loot lobby:parkourhead
+
+tellraw @a ["",{"selector":"@s"},{"text":" now holds the Parkour Record!","color":"dark_green"}]

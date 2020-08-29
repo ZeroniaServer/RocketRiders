@@ -22,7 +22,7 @@ function achievements:newworld
 function achievements:lockdown
 function achievements:volcanichatred
 function achievements:traveler
-function achievements:fallaway
+execute unless entity @s[tag=noPortal] run function achievements:fallaway
 function achievements:gravitationalshootout
 function achievements:veteran
 function achievements:useful

@@ -50,6 +50,7 @@ kill @e[tag=blueobtracker,type=armor_stand]
 kill @e[tag=yellowobtracker,type=armor_stand]
 kill @e[tag=splash,type=potion]
 kill @e[type=item]
+kill @e[type=ender_pearl]
 kill @e[tag=BlueNova,type=firework_rocket]
 kill @e[tag=YellowNova,type=firework_rocket]
 execute as @e[tag=blueobsidianshield,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break

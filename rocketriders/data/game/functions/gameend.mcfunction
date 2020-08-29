@@ -18,6 +18,7 @@ execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
 execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false
+execute as @s[scores={endtimer=1}] run kill @e[type=ender_pearl]
 execute as @s[scores={endtimer=1}] run tag @e[tag=yellowjoinpad,type=area_effect_cloud] add CancelJoin
 execute as @s[scores={endtimer=1}] run tag @e[tag=bluejoinpad,type=area_effect_cloud] add CancelJoin
 execute as @s[scores={endtimer=1}] run tag @e[tag=specjoinpad,type=area_effect_cloud] add CancelJoin

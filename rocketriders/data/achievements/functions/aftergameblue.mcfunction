@@ -1,8 +1,4 @@
 ##Any achievements/conditions to be given if Blue wins
-#Simple and Clean
-execute if score Blue SwissCheese matches 0 if score @s gametime matches ..2400 run advancement grant @a[team=Blue] only achievements:rr_challenges/simple_and_clean
-scoreboard players reset Blue SwissCheese
-
 #Swiss Cheese (part 1)
 execute as @s[tag=!Hardcore] run scoreboard players set SwissCheese SwissCheese 11500
 execute as @s[tag=!Hardcore] store result score Blue SwissCheese run clone 38 34 -52 -14 63 -66 -48 46 -1 filtered air
@@ -12,8 +8,12 @@ execute as @s[tag=Hardcore] store result score Blue SwissCheese run clone 38 34 
 execute if score Blue SwissCheese >= SwissCheese SwissCheese run tag @a[team=Blue] add SwissCheese
 scoreboard players reset SwissCheese SwissCheese
 
+#Simple and Clean
+execute if score Blue SwissCheese matches 0 if score @s gametime matches ..2400 run advancement grant @a[team=Blue] only achievements:rr_challenges/simple_and_clean
+scoreboard players reset Blue SwissCheese
+
 #Deus Ex Machina (part 1)
-summon armor_stand 38 63 -66 {Tags:["machinacheck"],NoGravity:1b,Invisible:1b}
+execute unless entity @s[tag=noPortal] run summon armor_stand 38 63 -66 {Tags:["machinacheck"],NoGravity:1b,Invisible:1b}
 scoreboard players add @e[tag=machinacheck,type=armor_stand] Machina 0
 execute as @e[tag=machinacheck,type=armor_stand] at @s run function achievements:machinacheckblue
 
@@ -30,7 +30,7 @@ tag @a[team=Blue,scores={jumps=..0}] add GroundBound
 tag @a[team=Blue,scores={deaths=..0}] add Immortal
 
 #I Swear I Had It (part 1)
-execute as @a[team=Yellow] store result score @s HasMissiles run clear @s #custom:missile 0
+execute unless entity @s[tag=noPortal] as @a[team=Yellow] store result score @s HasMissiles run clear @s #custom:missile 0
 execute as @a[team=Yellow,scores={HasMissiles=1..}] at @s if entity @s[z=-74,dz=28] run tag @s add HadIt
 
 #All end-game achievements (delay for Sudden Death)

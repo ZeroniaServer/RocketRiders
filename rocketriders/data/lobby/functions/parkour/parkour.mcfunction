@@ -76,7 +76,7 @@ execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard p
 execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourDeci2 = @s parkourDeci2
 
 #Repeat completion
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run tellraw @s [{"text":"That's a new best time!","color":"green","italic":"true"}]
+execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run tellraw @s [{"text":"That's a new personal best time!","color":"green","italic":"true"}]
 execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourMins = @s parkourMins
 execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourSecs = @s parkourSecs
 execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourDeci = @s parkourDeci
@@ -203,12 +203,14 @@ execute as @a[team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~0.3 black_con
 execute as @a[team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
 execute as @a[team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
 
-##Reset objectives for non-parkour players
-scoreboard players reset @a[team=Lobby,tag=!inParkour] checkpoint
-scoreboard players reset @a[team=Lobby,tag=!inParkour] chkpntCooldown
-scoreboard players reset @a[team=Lobby,tag=!inParkour] parkourTimer
-scoreboard players reset @a[team=Lobby,tag=!inParkour] parkourMins
-scoreboard players reset @a[team=Lobby,tag=!inParkour] parkourSecs
-scoreboard players reset @a[team=Lobby,tag=!inParkour] parkourDeci
-scoreboard players reset @a[team=Lobby,tag=!inParkour] parkourDeci2
-scoreboard players reset @a[team=Lobby,tag=!inParkour] finalParkourTime
+##Reset objectives/tags for non-parkour players
+scoreboard players reset @a[tag=!inParkour] checkpoint
+scoreboard players reset @a[tag=!inParkour] chkpntCooldown
+scoreboard players reset @a[tag=!inParkour] parkourTimer
+scoreboard players reset @a[tag=!inParkour] parkourMins
+scoreboard players reset @a[tag=!inParkour] parkourSecs
+scoreboard players reset @a[tag=!inParkour] parkourDeci
+scoreboard players reset @a[tag=!inParkour] parkourDeci2
+scoreboard players reset @a[tag=!inParkour] finalParkourTime
+tag @a[tag=!inParkour] remove onResetPlate
+tag @a[tag=!inParkour] remove timeReset

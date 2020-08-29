@@ -1,0 +1,2 @@
+tellraw @s [{"text":"Chase Mode:","color":"light_purple","bold":"true"}]
+tellraw @s [{"text":"In Chase Mode, everyone is on Blue team, but they must race against each other and prevent each other from reaching Yellow base with their given missiles and utility items. Utilities like the Vortex and the Nova Rocket work against players on the same team, and friendly fire is enabled, so melee and ranged combat with the Shooting Saber is possible. Whoever makes it to Yellow base first wins the game!","color":"white","italic":"true"}]

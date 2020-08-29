@@ -78,8 +78,19 @@ tag @s[tag=runfireball] remove runfireball
 function everytick:splash
 
 ##Spawn trap hotfix
-execute unless block 12 63 -66 obsidian run setblock 12 63 -66 obsidian
-execute unless block 12 63 66 obsidian run setblock 12 63 66 obsidian
+fill 14 63 66 10 63 66 obsidian
+fill 13 63 65 11 63 65 obsidian
+setblock 14 63 66 obsidian
+setblock 10 63 66 obsidian
+setblock 12 63 64 obsidian
+fill 13 65 67 11 65 67 obsidian
+setblock 12 66 67 obsidian
+fill 11 63 -65 13 63 -66 obsidian
+setblock 12 63 -64 obsidian
+setblock 10 63 -66 obsidian
+setblock 14 63 -66 obsidian
+fill 11 65 -67 13 65 -67 obsidian
+setblock 12 66 -67 obsidian
 
 ##Respawn handling
 execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,distance=..6] respawn 0

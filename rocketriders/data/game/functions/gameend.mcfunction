@@ -53,12 +53,6 @@ execute as @s[scores={endtimer=570}] run function achievements:scoresreset
 execute as @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute as @s[scores={endtimer=570},tag=SpamClick] as @a run attribute @s minecraft:generic.attack_speed base set 4
 execute as @s[scores={endtimer=570},tag=Hardcore] as @a run attribute @s minecraft:generic.max_health base set 20.0
-execute as @s[scores={endtimer=570},tag=Hardcore] run gamerule showDeathMessages false
-execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Blue] run tag @s add hardcoreKilled
-execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Blue] run kill @s
-execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Yellow] run tag @s add hardcoreKilled
-execute as @s[scores={endtimer=570},tag=Hardcore] as @a[team=Yellow] run kill @s
-execute as @s[scores={endtimer=570},tag=Hardcore] run gamerule showDeathMessages true
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Spectator] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Yellow] LeaveGame 1

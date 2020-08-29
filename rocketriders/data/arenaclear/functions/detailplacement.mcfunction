@@ -26,13 +26,13 @@ execute as @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 1 48 73 1 47 7
 execute as @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 23 48 73 23 47 73 air
 
 #Obsidian placement - Blue and Yellow
-fill 14 63 66 10 63 66 minecraft:obsidian
+fill 14 63 66 10 63 66 obsidian
 fill 13 63 65 11 63 65 obsidian
-setblock 14 63 66 minecraft:obsidian
-setblock 10 63 66 minecraft:obsidian
-setblock 12 63 64 minecraft:obsidian
+setblock 14 63 66 obsidian
+setblock 10 63 66 obsidian
+setblock 12 63 64 obsidian
 fill 13 65 67 11 65 67 obsidian
-setblock 12 66 67 minecraft:obsidian
+setblock 12 66 67 obsidian
 fill 11 63 -65 13 63 -66 obsidian
 setblock 12 63 -64 obsidian
 setblock 10 63 -66 obsidian

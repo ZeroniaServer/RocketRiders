@@ -4,6 +4,8 @@ tag @e[tag=Selection,type=armor_stand] add tyingOff
 tag @e[tag=Selection,type=armor_stand] add ResidersOff
 tag @e[tag=Selection,type=armor_stand] add fbPortalsOff
 tag @e[tag=Selection,type=armor_stand] add portalDecosOff
+tag @e[tag=Selection,type=armor_stand] add preventionOff
 tag @e[tag=Selection,type=armor_stand] add noPortal
 tag @e[tag=Selection,type=armor_stand] add customEnds
 tag @e[tag=Selection,type=armor_stand] add customBossbar
+tag @e[tag=Selection,type=armor_stand] add leaveYSpawn

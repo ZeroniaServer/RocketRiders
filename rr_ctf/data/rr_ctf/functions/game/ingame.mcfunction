@@ -14,7 +14,7 @@ execute if score Blue: FlagDisp matches 2 run function game:winblue
 execute if score Yellow: FlagDisp matches 2 run function game:winyellow
 
 #flag logic
-execute as @s[tag=GameStarted] run function rr_ctf:everytick/flag
+function rr_ctf:everytick/flag
 scoreboard objectives setdisplay sidebar.team.gold FlagDisp
 scoreboard objectives setdisplay sidebar.team.blue FlagDisp
 scoreboard objectives setdisplay sidebar.team.dark_gray FlagDisp

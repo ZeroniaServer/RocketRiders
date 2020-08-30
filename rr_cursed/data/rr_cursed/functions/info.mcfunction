@@ -1,2 +1,0 @@
-tellraw @s [{"text":"Cursed Mode:","color":"light_purple","bold":"true"}]
-tellraw @s [{"text":"Cursed Mode is as cursed as the name implies. You spawn on the enemy base, where you must destroy their portals with whatever items you get (your missiles will spawn in the opposite direction). The first team to destroy the other's portals wins!","color":"white","italic":"true"}]

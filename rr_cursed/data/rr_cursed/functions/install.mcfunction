@@ -1,2 +1,0 @@
-execute unless entity @e[tag=rr_cursed,limit=1,type=armor_stand] run summon armor_stand 23 216 -18 {Tags:["rr_cursed"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b}
-execute if entity @e[tag=rr_cursed,limit=1,type=armor_stand] run tellraw @s {"text":"Cursed Mode installed.","color":"green","bold":"true"}

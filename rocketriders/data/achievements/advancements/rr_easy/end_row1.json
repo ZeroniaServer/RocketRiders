@@ -22,5 +22,5 @@
             "trigger": "minecraft:location"
         }
     },
-    "parent": "achievements:rr_challenges/superior"
+    "parent": "achievements:rr_challenges/speed"
 }

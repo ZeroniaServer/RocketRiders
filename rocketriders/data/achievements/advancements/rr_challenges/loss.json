@@ -6,7 +6,7 @@
             "color": "green"
         },
         "description": {
-            "text": "Lose a game after having a 10 game win streak.",
+            "text": "Lose a game after having a 10-game win streak.",
             "color": "dark_green"
         },
         "icon": {

@@ -22,6 +22,5 @@
         "impossible": {
             "trigger": "minecraft:impossible"
         }
-    },
-    "parent": "achievements:rr_challenges/helping"
+    }
 }

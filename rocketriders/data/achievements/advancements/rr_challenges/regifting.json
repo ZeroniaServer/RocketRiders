@@ -6,7 +6,7 @@
             "color": "green"
         },
         "description": {
-            "text": "Return an enemy fireball back to the enemy team five times in one game.",
+            "text": "Return an enemy Fireball back to the enemy team five times in one game.",
             "color": "dark_green"
         },
         "icon": {

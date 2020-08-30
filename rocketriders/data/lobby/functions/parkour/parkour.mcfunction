@@ -169,11 +169,11 @@ execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft
 
 #Quit parkour
 execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:8b,id:"minecraft:barrier",Count:1}]}] run replaceitem entity @s hotbar.8 barrier{display:{Name:"{\"translate\":\"Quit Parkour\",\"color\":\"red\",\"bold\":true,\"italic\":false}"}} 1
-execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to Lobby.","color":"red"}]
+execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to the Lobby.","color":"red"}]
 execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tag @s remove inParkour
 execute as @a[team=Lobby,scores={dropBarrier=1..}] run scoreboard players set @s LobbyWarp 1
 scoreboard players reset @a dropBarrier
-execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tellraw @s [{"text":"You quit the Parkour. Returning to Lobby.","color":"red"}]
+execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tellraw @s [{"text":"You quit the Parkour. Returning to the Lobby.","color":"red"}]
 execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tag @s remove inParkour
 execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run scoreboard players set @s LobbyWarp 1
 

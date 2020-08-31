@@ -1,4 +1,4 @@
-##Restores Modification Room to all defaults (part 1)
+##Restores Modification Room to all defaults
 tag @e[tag=rr_normal,type=armor_stand,limit=1] add GlobalDefaults
 scoreboard players operation @s SetGamemode = @e[tag=rr_normal,type=armor_stand,limit=1] gamemodeID
 tag @s add RestoreDefault

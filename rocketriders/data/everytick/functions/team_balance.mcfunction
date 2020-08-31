@@ -3,7 +3,6 @@
 ## differences are minimal for fairness ##
 ##########################################
 
-
 ##Identifies which team is larger to calculate the team difference
 function everytick:team_count
 

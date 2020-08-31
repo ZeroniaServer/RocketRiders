@@ -10,7 +10,6 @@ execute if entity @s[tag=GameStarted] run function rr_sandbox:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_sandbox:game/gameend
 function rr_sandbox:everytick/pickaxefix
 function everytick:no_drop
-function everytick:team_balance
 
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] run function rr_sandbox:arenaclear/baseplacement

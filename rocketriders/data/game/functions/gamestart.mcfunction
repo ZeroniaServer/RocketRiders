@@ -26,8 +26,10 @@ execute as @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run boss
 ##Blue Join Pad
 execute as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=bluejoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
+execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 execute as @s[scores={largerTeam=-1..0}] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
 team join Blue @a[tag=JoinBlue]
+execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinBlue]
 execute as @s[tag=!GameStarted,tag=!customSpawns] run tp @a[tag=JoinBlue] -95 202 60 0 0
 execute as @s[tag=!GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
@@ -57,8 +59,10 @@ execute as @e[tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lobby] remove 
 #Joinpad Yellow
 execute as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=yellowjoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
+execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 execute as @s[scores={largerTeam=0..1}] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
 team join Yellow @a[tag=JoinYellow]
+execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinYellow]
 execute as @s[tag=!GameStarted,tag=!customSpawns] run tp @a[tag=JoinYellow] -95 202 96 180 0
 execute as @s[tag=!GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]

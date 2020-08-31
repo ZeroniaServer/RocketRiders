@@ -5,6 +5,7 @@ tag @s remove NoFall
 tag @s remove Explosive
 tag @s remove Residers
 tag @s remove Sonar
+tag @s[tag=Molerat] add WasMolerat
 tag @s remove Molerat
 tag @s remove Minute
 tag @s remove SurpriseEgg

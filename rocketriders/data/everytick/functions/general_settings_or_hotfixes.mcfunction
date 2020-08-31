@@ -59,6 +59,9 @@ scoreboard players add @a ThrowPlat 0
 scoreboard players add @a[scores={ThrowPlat=1..16}] ThrowPlat 1
 scoreboard players set @a[scores={ThrowPlat=17..}] ThrowPlat 0
 
+#Remove dragon breath
+kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
+
 #Decoy Vortex (Lobby)
 execute as @e[tag=VortexDummy,type=area_effect_cloud] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @e[tag=VortexDummy,type=area_effect_cloud] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a

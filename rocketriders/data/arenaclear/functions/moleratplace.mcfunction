@@ -179,3 +179,6 @@ fill 132 174 30 142 159 -30 light_gray_stained_glass replace air
 fill 143 174 30 153 159 -30 light_gray_stained_glass replace air
 fill 154 174 30 164 159 -30 light_gray_stained_glass replace air
 fill 165 174 30 175 159 -30 light_gray_stained_glass replace air
+
+#Pregame queue
+fill -101 212 69 -89 186 87 light_gray_stained_glass replace air

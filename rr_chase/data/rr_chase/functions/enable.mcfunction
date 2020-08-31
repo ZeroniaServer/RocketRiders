@@ -10,3 +10,5 @@ tag @e[tag=Selection,type=armor_stand] add noPortal
 tag @e[tag=Selection,type=armor_stand] add customEnds
 tag @e[tag=Selection,type=armor_stand] add customBossbar
 tag @e[tag=Selection,type=armor_stand] add leaveYSpawn
+tag @e[tag=Selection,type=armor_stand] add noTeamBalance
+team modify Blue friendlyFire true

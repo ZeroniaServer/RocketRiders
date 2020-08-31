@@ -22,11 +22,15 @@ execute as @s[scores={endtimer=1}] run kill @e[type=ender_pearl]
 execute as @s[scores={endtimer=1}] run tag @e[tag=yellowjoinpad,type=area_effect_cloud] add CancelJoin
 execute as @s[scores={endtimer=1}] run tag @e[tag=bluejoinpad,type=area_effect_cloud] add CancelJoin
 execute as @s[scores={endtimer=1}] run tag @e[tag=specjoinpad,type=area_effect_cloud] add CancelJoin
-execute as @s[scores={endtimer=1..80}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 20 100 true
+execute as @s[scores={endtimer=1..}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 1000000 255 true
 execute as @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
 execute as @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Yellow] 12 64 66 180 0
 execute as @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
+execute as @s[scores={endtimer=1..},tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 2.0
+execute as @s[scores={endtimer=1..},tag=Hardcore] as @a[team=Lobby] run attribute @s minecraft:generic.max_health base set 20.0
+execute as @s[scores={endtimer=1..}] as @e[type=fireball] run data merge entity @s {ExplosionPower:0}
+
 
 ##Tie actionbar notifications
 execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=1..20}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":"true"},{"text":" seconds","color":"red"}]

@@ -2,11 +2,22 @@
 function game:leavemidgame
 
 #Item RNG and spawnpoints
+#Exception for arrows
+tag @s add givenArrows
+tag @s add givenArrowsTwice
 scoreboard players add @s RandomItem 1
+execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[team=Blue] run function items:util/givearrows
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players reset @s RandomItem
 spawnpoint @a[team=Blue] 12 64 -66 0
 execute if entity @s[tag=Minute] run function items:minutemix
+
+#Arrows on death
+execute as @a[team=Blue,scores={death=1..}] run function items:util/givearrows
+scoreboard players set @a[scores={death=1..}] death 0
+
+#Arrow antidupe (works with Item Stacking setting)
+execute as @s[tag=!doStacking] run clear @a[team=Blue,scores={HasArrows=5..}] arrow 1
 
 #Flagpole
 fill 12 64 65 12 71 65 oak_fence replace air

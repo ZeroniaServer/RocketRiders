@@ -11,3 +11,9 @@ fill 38 34 -66 -14 63 -62 black_concrete replace minecraft:white_concrete
 # fill 38 34 52 -14 63 56 yellow_stained_glass replace minecraft:orange_stained_glass
 fill -14 34 61 38 63 57 minecraft:white_stained_glass replace minecraft:orange_stained_glass
 fill 38 34 62 -14 63 66 minecraft:white_concrete replace minecraft:black_concrete
+
+execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 66 38 34 66 white_concrete replace black_concrete
+execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 65 38 34 65 white_stained_glass replace orange_stained_glass
+execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -66 38 34 -66 black_concrete replace white_concrete
+execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -65 38 34 -65 black_stained_glass replace white_stained_glass
+execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -64 38 34 -64 blue_stained_glass replace light_blue_stained_glass

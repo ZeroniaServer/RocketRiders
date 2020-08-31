@@ -10,7 +10,6 @@ execute if entity @s[tag=GameStarted] run function rr_duel:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_duel:game/gameend
 function everytick:saberfix
 function everytick:no_drop
-function everytick:team_balance
 tag @s[tag=!GameStarted] remove CriteriaTrue
 
 #reset

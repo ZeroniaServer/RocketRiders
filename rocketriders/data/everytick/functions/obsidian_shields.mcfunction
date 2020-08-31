@@ -121,9 +121,6 @@ execute if score obShield obshieldTick matches 1 as @e[type=dragon_fireball] run
 execute if score obShield obshieldTick matches 2 as @e[type=dragon_fireball] run data merge entity @s {Air:1}
 execute if score obShield obshieldTick matches 2 run scoreboard players set obShield obshieldTick 0
 
-#Remove dragon breath
-kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
-
 #Obsidian Shield Break
 execute as @e[tag=blueobsidianshield,scores={breakobshield=..0},type=area_effect_cloud] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1
 execute as @e[tag=yellowobsidianshield,scores={breakobshield=..0},type=area_effect_cloud] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1

@@ -54,7 +54,31 @@ fill 11 38 74 11 38 74 fire replace air
 execute if entity @s[tag=Molerat] run function arenaclear:moleratplace
 
 #Hardcore
-execute if entity @s[tag=Hardcore] run fill 38 63 65 -14 34 52 air
-execute if entity @s[tag=Hardcore] run fill -14 63 66 38 34 66 yellow_stained_glass
-execute if entity @s[tag=Hardcore] run fill 38 63 -65 -14 34 -52 air
-execute if entity @s[tag=Hardcore] run fill -14 63 -66 38 34 -66 blue_stained_glass
+execute if entity @s[tag=Hardcore] run fill 38 63 63 -14 34 52 air
+execute if entity @s[tag=Hardcore] run fill -14 63 66 38 34 66 white_stained_glass
+execute if entity @s[tag=Hardcore] run fill -14 63 65 38 34 65 orange_stained_glass
+execute if entity @s[tag=Hardcore] run fill -14 63 64 38 34 64 yellow_stained_glass
+execute if entity @s[tag=Hardcore] run fill 38 63 -63 -14 34 -52 air
+execute if entity @s[tag=Hardcore] run fill -14 63 -66 38 34 -66 white_stained_glass
+execute if entity @s[tag=Hardcore] run fill -14 63 -65 38 34 -65 cyan_stained_glass
+execute if entity @s[tag=Hardcore] run fill -14 63 -64 38 34 -64 blue_stained_glass
+
+#Hardcore pregame queue
+execute if entity @s[tag=Hardcore] run fill -89 201 63 -101 195 65 air
+execute if entity @s[tag=Hardcore] run fill -89 201 93 -101 195 91 air
+execute if entity @s[tag=Hardcore] run fill -89 201 62 -101 195 62 blue_stained_glass
+execute if entity @s[tag=Hardcore] run fill -89 201 61 -101 195 61 cyan_stained_glass
+execute if entity @s[tag=Hardcore] run fill -89 201 60 -101 195 60 white_stained_glass
+execute if entity @s[tag=Hardcore] run fill -89 201 94 -101 195 94 yellow_stained_glass
+execute if entity @s[tag=Hardcore] run fill -89 201 95 -101 195 95 orange_stained_glass
+execute if entity @s[tag=Hardcore] run fill -89 201 96 -101 195 96 white_stained_glass
+tag @s[tag=Hardcore,tag=!WasHardcore] add WasHardcore
+
+#Reset hardcore pregame queue
+execute if entity @s[tag=!Hardcore,tag=WasHardcore] run fill -89 201 96 -101 195 95 white_stained_glass
+execute if entity @s[tag=!Hardcore,tag=WasHardcore] run fill -89 201 94 -101 195 93 orange_stained_glass
+execute if entity @s[tag=!Hardcore,tag=WasHardcore] run fill -89 201 91 -101 195 92 yellow_stained_glass
+execute if entity @s[tag=!Hardcore,tag=WasHardcore] run fill -89 201 60 -101 195 61 white_stained_glass
+execute if entity @s[tag=!Hardcore,tag=WasHardcore] run fill -89 201 62 -101 195 63 cyan_stained_glass
+execute if entity @s[tag=!Hardcore,tag=WasHardcore] run fill -89 201 65 -101 195 64 blue_stained_glass
+execute if entity @s[tag=!Hardcore,tag=WasHardcore] run tag @s remove WasHardcore

@@ -25,7 +25,6 @@ execute if entity @s[tag=GameStarted] run function rr_swap:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_swap:game/gameend
 function everytick:saberfix
 function everytick:no_drop
-function everytick:team_balance
 
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] run function rr_swap:arenaclear/baseplacement

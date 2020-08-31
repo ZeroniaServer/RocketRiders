@@ -22,7 +22,7 @@
             "trigger": "minecraft:impossible"
         }
     },
-	"rewards": {
+	  "rewards": {
         "function": "tutorial:play"
     },
     "parent": "tutorial:wait"

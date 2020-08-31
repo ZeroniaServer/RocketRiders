@@ -1,9 +1,9 @@
 ##Enables all item categories
-tag @s add rngNormal
-function arenaclear:enablenormal
-tag @s add rngLightning
-function arenaclear:enablelightning
-tag @s add rngHeavy
-function arenaclear:enableheavy
-tag @s add rngUtil
-function arenaclear:enableutil
+tag @s[tag=!normalLocked] add rngNormal
+execute as @s[tag=!normalLocked] run function arenaclear:enablenormal
+tag @s[tag=!lightningLocked] add rngLightning
+execute as @s[tag=!lightningLocked] run function function arenaclear:enablelightning
+tag @s[tag=!heavyLocked] add rngHeavy
+execute as @s[tag=!heavyLocked] run function function arenaclear:enableheavy
+tag @s[tag=!utilLocked] add rngUtil
+execute as @s[tag=!utilLocked] run function function arenaclear:enableutil

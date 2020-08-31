@@ -7,4 +7,5 @@ scoreboard objectives remove ForfeitWin
 scoreboard objectives remove ForfeitLoss
 scoreboard objectives remove ForfeitTimeout
 scoreboard objectives remove fakeendtimer
+scoreboard objectives remove Rounds
 execute unless entity @e[tag=rr_duel,limit=1,type=armor_stand] run tellraw @s {"text":"1v1 Duel Mode uninstalled.","color":"red","bold":"true"}

@@ -8,6 +8,8 @@ tag @a[team=Yellow] remove InRanked
 tag @s remove TimeOut
 scoreboard players reset @s ForfeitTimeout
 
+scoreboard players reset @s Rounds
+
 execute as @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.gold
 execute as @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.blue
 execute as @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray

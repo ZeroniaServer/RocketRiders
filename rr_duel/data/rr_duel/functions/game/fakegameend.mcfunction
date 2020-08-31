@@ -25,4 +25,6 @@ execute as @s[scores={fakeendtimer=320}] run tag @s remove YellowWon
 execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnBlue
 execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnYellow
 execute as @s[scores={fakeendtimer=320}] run tag @a remove beenOnBoth
+execute as @s[scores={fakeendtimer=320}] run scoreboard players add @s Rounds 1
+execute as @s[scores={fakeendtimer=320}] run tellraw @a[team=!Lobby] [{"text":"Beginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":"true"},{"text":"."}]
 execute as @s[scores={fakeendtimer=320}] run function rr_duel:arenaclear/areaclear

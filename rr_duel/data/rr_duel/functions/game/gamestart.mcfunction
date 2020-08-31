@@ -24,4 +24,6 @@ execute as @s[scores={count=600}] run team join Blue Blue:
 execute as @s[scores={count=600}] run team join Yellow Yellow:
 execute as @s[scores={count=600}] run bossbar set rr:startgame name ["",{"text":"A 1v1 Duel match is currently in progress!","color":"dark_red"}]
 execute as @s[scores={count=600}] run bossbar set rr:startgame color red
+execute as @s[scores={count=600}] run scoreboard players set @s Rounds 1
+execute as @s[scores={count=600}] run tellraw @a[team=!Lobby] [{"text":"Beginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":"true"},{"text":"."}]
 execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

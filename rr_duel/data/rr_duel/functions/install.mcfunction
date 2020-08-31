@@ -9,4 +9,5 @@ scoreboard objectives add ForfeitWin dummy
 scoreboard objectives add ForfeitLoss dummy
 scoreboard objectives add ForfeitTimeout dummy
 scoreboard objectives add fakeendtimer dummy
+scoreboard objectives add Rounds dummy
 execute if entity @e[tag=rr_duel,limit=1,type=armor_stand] run tellraw @s {"text":"1v1 Duel Mode installed.","color":"green","bold":"true"}

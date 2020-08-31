@@ -3,6 +3,8 @@ tag @s[tag=rngArrows] add arrowsWasOn
 tag @s remove rngArrows
 tag @s[tag=!rngCanopy] add canopyWasOff
 tag @s add rngCanopy
+tag @s[tag=!rngUtil] add utilWasOff
+tag @s add rngUtil
 execute unless entity @s[tag=EditedSettings] run function rr_ctf:arenaclear/customizer
 
 #management

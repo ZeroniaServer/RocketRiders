@@ -1,2 +1,2 @@
-team modify Lobby seeFriendlyInvisibles false
-scoreboard objectives add standStill dummy
+scoreboard objectives add disableTips trigger
+scoreboard objectives add leaveSpec trigger

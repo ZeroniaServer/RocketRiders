@@ -106,7 +106,8 @@ execute as @e[tag=specjoinpad,type=area_effect_cloud] at @s run tag @a[team=Spec
 execute as @e[tag=specjoinpad,tag=CancelJoin,type=area_effect_cloud] run tag @a remove AlreadySpec
 team join Spectator @a[tag=JoinSpec]
 clear @a[tag=JoinSpec]
-tellraw @a[tag=JoinSpec] ["",{"text":"If you want to leave spectator mode, fly into the green particle cluster in the center of the arena.","color":"green","bold":"true"}]
+scoreboard players enable @a[team=Spectator] leaveSpec
+tellraw @a[tag=JoinSpec] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":"true"}]
 tp @a[tag=JoinSpec] 12 100 0.5 90 90
 execute as @a[tag=JoinSpec] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 execute as @a[tag=JoinSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
@@ -117,6 +118,7 @@ execute as @a[tag=AlreadySpec] at @s run playsound entity.enderman.teleport play
 tag @a remove AlreadySpec
 execute as @e[tag=LeaveSpec,type=area_effect_cloud] at @s run particle dust 2 1 0 1 ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[team=Spectator]
 execute as @e[tag=LeaveSpec,type=area_effect_cloud] at @s run tag @a[team=Spectator,distance=..2] add LeaveSpectator
+execute as @a[team=Spectator,scores={leaveSpec=1..}] run tag @s add LeaveSpectator
 tp @a[tag=LeaveSpectator] -43 211 78 90 0
 execute as @a[tag=LeaveSpectator] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 gamemode adventure @a[tag=LeaveSpectator]

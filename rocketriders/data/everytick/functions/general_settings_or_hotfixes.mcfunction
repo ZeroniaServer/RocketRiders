@@ -21,6 +21,8 @@ execute as @a[team=!Lobby] run trigger MaxItemSec set 0
 execute as @s[tag=EditedSettings] as @a run trigger MaxItemSec set 0
 execute as @a[team=!Lobby] run trigger daytime set 0
 execute as @s[tag=EditedSettings] as @a run trigger daytime set 0
+execute as @a[scores={GamesPlayed=10..}] run trigger disableTips set 0
+execute as @a[team=!Spectator] run trigger leaveSpec set 0
 
 #Launch pad in Modification Room
 execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[tag=modroomGoBack,limit=1,distance=..1,type=area_effect_cloud] run effect give @s jump_boost 1 20 true

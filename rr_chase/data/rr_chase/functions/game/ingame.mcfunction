@@ -13,7 +13,7 @@ spawnpoint @a[team=Blue] 12 64 -66 0
 execute if entity @s[tag=Minute] run function items:minutemix
 
 #Arrows on death
-execute as @a[team=Blue,scores={death=1..}] run function items:util/givearrows
+execute as @s[scores={gametime=2..}] as @a[team=Blue,scores={death=1..}] run function items:util/givearrows
 scoreboard players set @a[scores={death=1..}] death 0
 
 #Arrow antidupe (works with Item Stacking setting)

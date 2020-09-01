@@ -39,6 +39,9 @@ execute as @s[scores={SDtime=2}] run gamemode survival @a[team=Blue]
 execute as @s[scores={SDtime=2}] run gamemode survival @a[team=Yellow]
 execute as @s[scores={SDtime=1}] run tag @s add GameStarted
 execute as @s[scores={SDtime=1}] run worldborder warning distance 1000000
+#Fix endgame fireballs
+execute as @s[scores={SDtime=1}] run kill @e[tag=endFireballAEC]
+execute as @s[scores={SDtime=1}] as @e[tag=fireball,tag=endFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1,Invulnerable:0b}
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWon
 #For Premature Celebration achievement

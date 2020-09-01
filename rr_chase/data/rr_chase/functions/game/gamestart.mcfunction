@@ -24,4 +24,4 @@ execute as @s[tag=!GameStarted] as @a[team=Blue] run attribute @s minecraft:gene
 execute as @a[team=!Blue] run attribute @s minecraft:generic.knockback_resistance base set 0.0
 execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
 execute as @s[scores={count=600},tag=!GameEnd] as @a[team=Blue] run attribute @s minecraft:generic.knockback_resistance base set 0.0
-execute as @s[scores={count=600},tag=!GameEnd] as @a[team=Blue] run function items:util/givearrows
+execute as @s[scores={count=600},tag=!GameEnd] as @a[team=Blue] run tag @s remove fullOffhand

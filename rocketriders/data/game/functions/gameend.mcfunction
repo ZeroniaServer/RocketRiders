@@ -29,8 +29,13 @@ execute as @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Yellow] 12 
 execute as @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
 execute as @s[scores={endtimer=1..},tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 2.0
 execute as @s[scores={endtimer=1..},tag=Hardcore] as @a[team=Lobby] run attribute @s minecraft:generic.max_health base set 20.0
-execute as @s[scores={endtimer=1..}] as @e[type=fireball] run data merge entity @s {ExplosionPower:0}
-
+#Fireballs can't be punched (credit: Miolith)
+execute as @s[scores={endtimer=1}] as @e[type=fireball,nbt={Motion:[0.0,0.0,0.0]}] run scoreboard players add @s endFireball 1
+execute as @s[scores={endtimer=1}] as @e[type=fireball,scores={endFireball=1}] at @s run summon area_effect_cloud ~ ~-.375 ~ {NoGravity:1b,CustomNameVisible:0b,Radius:0f,Duration:20000000,Tags:["endFireballAEC","endFireball"],Passengers:[{id:"minecraft:fireball",Tags:["endFireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}]}
+execute as @s[scores={endtimer=1}] as @e[type=fireball,tag=endFireball] at @s run data modify entity @s Tags set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
+execute as @s[scores={endtimer=1}] as @e[type=area_effect_cloud,tag=endFireballAEC] at @s run kill @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1]
+execute as @s[scores={endtimer=1}] as @e[type=area_effect_cloud,tag=endFireballAEC] at @s run tag @e[type=fireball,limit=1,sort=nearest,distance=..1] add endFireball
+execute as @s[scores={endtimer=1..}] as @e[type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
 
 ##Tie actionbar notifications
 execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=1..20}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":"true"},{"text":" seconds","color":"red"}]

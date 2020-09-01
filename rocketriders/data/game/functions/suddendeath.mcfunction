@@ -40,9 +40,14 @@ execute as @s[scores={SDtime=2}] run gamemode survival @a[team=Yellow]
 execute as @s[scores={SDtime=1}] run tag @s add GameStarted
 execute as @s[scores={SDtime=1}] run worldborder warning distance 1000000
 #Fix endgame fireballs
-execute as @s[scores={SDtime=1}] run kill @e[tag=endFireballAEC]
-execute as @s[scores={SDtime=1}] as @e[tag=fireball,tag=endFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
+execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball] run scoreboard players add @s endFireball 1
+execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
+execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Item set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
+execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Tags set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
+execute as @s[scores={SDtime=1}] run kill @e[type=fireball,scores={endFireball=1}]
+execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
 execute as @s[scores={SDtime=1}] run tag @e[tag=fireball] remove endFireball
+execute as @s[scores={SDtime=1}] run kill @e[tag=endFireballAEC]
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWon
 #For Premature Celebration achievement

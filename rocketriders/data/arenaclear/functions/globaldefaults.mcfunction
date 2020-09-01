@@ -1,5 +1,5 @@
 ##Restores Modification Room to all defaults
-tag @e[tag=rr_normal,type=armor_stand,limit=1] add GlobalDefaults
+tag @s add GlobalDefaults
 scoreboard players operation @s SetGamemode = @e[tag=rr_normal,type=armor_stand,limit=1] gamemodeID
 tag @s add RestoreDefault
 execute as @s run function modifiers:disablemodifiers

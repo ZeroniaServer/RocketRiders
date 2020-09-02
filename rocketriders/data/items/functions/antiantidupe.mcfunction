@@ -11,7 +11,8 @@ scoreboard players set @s HasGuard 0
 scoreboard players set @s HasRift 0
 scoreboard players set @s HasJug 0
 scoreboard players set @s HasShield 0
-scoreboard players set @s HasPlat 0
+#Canopies are an exception for modes that require extra Canopies for travel. In this case, you can only have 3 Canopies.
+execute unless @e[tag=Selection,type=armor_stand,tag=canopyStack] run scoreboard players set @s HasPlat 0
 scoreboard players set @s HasFireball 0
 scoreboard players set @s HasObshield 0
 scoreboard players set @s HasBullet 0
@@ -29,4 +30,5 @@ scoreboard players set @s HasNova 0
 scoreboard players set @s HasVortex 0
 scoreboard players set @s HasSplash 0
 scoreboard players set @s HasSurprise 0
-scoreboard players set @s HasArrows 0
+#Arrows are an exception for modes that limit arrows
+execute unless @e[tag=Selection,type=armor_stand,tag=arrowLimit] run scoreboard players set @s HasArrows 0

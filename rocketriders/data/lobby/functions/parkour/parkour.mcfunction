@@ -214,3 +214,7 @@ scoreboard players reset @a[tag=!inParkour] parkourDeci2
 scoreboard players reset @a[tag=!inParkour] finalParkourTime
 tag @a[tag=!inParkour] remove onResetPlate
 tag @a[tag=!inParkour] remove timeReset
+
+##Return to Lobby Pad
+execute as @e[tag=parkourReturn,type=area_effect_cloud] at @s run particle falling_dust minecraft:green_concrete ~ ~-1 ~ 0.5 1 0.5 0.1 5 force @a
+execute as @e[tag=parkourReturn,type=area_effect_cloud] at @s positioned ~ ~-1 ~ as @a[team=Lobby,distance=..2] run trigger LobbyWarp set 1

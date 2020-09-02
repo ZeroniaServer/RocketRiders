@@ -16,8 +16,12 @@ execute if entity @s[tag=Minute] run function items:minutemix
 execute as @s[scores={gametime=2..}] as @a[team=Blue,scores={death=1..}] run function items:util/givearrows
 scoreboard players set @a[scores={death=1..}] death 0
 
-#Arrow antidupe (works with Item Stacking setting)
-execute as @s[tag=!doStacking] run clear @a[team=Blue,scores={HasArrows=5..}] arrow 1
+#Arrow/Canopy antidupe (works regardless of Item Stacking)
+execute as @a[team=Blue] store result score @s HasArrows run clear @s arrow 0
+clear @a[team=Blue,scores={HasArrows=5..}] arrow 1
+
+execute as @a[team=Blue] store result score @s HasPlat run clear @s ender_pearl 0
+clear @a[team=Blue,scores={HasPlat=4..}] ender_pearl 1
 
 #Flagpole
 fill 12 64 65 12 71 65 oak_fence replace air

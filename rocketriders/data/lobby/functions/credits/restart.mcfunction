@@ -35,8 +35,8 @@ tp @e[tag=EonCredits,type=armor_stand] -51 211 65 90 0
 tp @e[tag=JohnCredits,type=armor_stand] -51 211 64 90 0
 tp @e[tag=KaisCredits,type=armor_stand] -51 211 63 90 0
 tp @e[tag=SwagCredits,type=armor_stand] -51 211 62 90 0
-tp @e[tag=SirsCredits,type=armor_stand] -51 211 82 90 0
-tp @e[tag=NyxCredits,type=armor_stand] -51 211 83 90 0
+tp @e[tag=ToulCredits,type=armor_stand] -51 211 82 90 0
+tp @e[tag=LogicCredits,type=armor_stand] -51 211 83 90 0
 tp @e[tag=AlexCredits,type=armor_stand] -51 211 84 90 0
 tp @e[tag=AdamCredits,type=armor_stand] -51 211 85 90 0
 tp @e[tag=SamCredits,type=armor_stand] -51 211 86 90 0
@@ -49,7 +49,7 @@ tp @e[tag=KapaCredits,type=armor_stand] -51 211 92 90 0
 tp @e[tag=SkyCredits,type=armor_stand] -51 211 93 90 0
 tp @e[tag=VicousCredits,type=armor_stand] -51 211 94 90 0
 tp @e[tag=ProzanCredits,type=armor_stand] -52 211 61 90 0
-tp @e[tag=ToulCredits,type=armor_stand] -52 211 60 90 0
+tp @e[tag=SirsCredits,type=armor_stand] -52 211 60 90 0
 tp @e[tag=IndigoCredits,type=armor_stand] -52 211 59 90 0
 tp @e[tag=BeardedCredits,type=armor_stand] -52 211 58 90 0
 tp @e[tag=LexCredits,type=armor_stand] -52 211 57 90 0
@@ -60,7 +60,7 @@ tp @e[tag=StoneCredits,type=armor_stand] -52 211 53 90 0
 tp @e[tag=DevonCredits,type=armor_stand] -52 211 52 90 0
 tp @e[tag=PeasntCredits,type=armor_stand] -52 211 51 90 0
 tp @e[tag=RoboCredits,type=armor_stand] -52 211 50 90 0
-tp @e[tag=UniverseCredits,type=armor_stand] -52 211 49 90 0
+tp @e[tag=BlueSkyCredits,type=armor_stand] -52 211 49 90 0
 tp @e[tag=GroundCredits,type=armor_stand] -52 211 95 90 0
 tp @e[tag=FunnyCredits,type=armor_stand] -52 211 96 90 0
 tp @e[tag=MosesCredits,type=armor_stand] -52 211 97 90 0

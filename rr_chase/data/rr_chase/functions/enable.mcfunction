@@ -11,4 +11,6 @@ tag @e[tag=Selection,type=armor_stand] add customEnds
 tag @e[tag=Selection,type=armor_stand] add customBossbar
 tag @e[tag=Selection,type=armor_stand] add leaveYSpawn
 tag @e[tag=Selection,type=armor_stand] add noTeamBalance
+tag @e[tag=Selection,type=armor_stand] add canopyStack
+tag @e[tag=Selection,type=armor_stand] add arrowLimit
 team modify Blue friendlyFire true

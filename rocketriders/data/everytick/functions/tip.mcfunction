@@ -59,6 +59,7 @@ execute as @e[tag=SelectedTip,tag=Tip12,type=area_effect_cloud] as @a unless ent
 execute as @e[tag=SelectedTip,tag=Tip12,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
 
 #Opt out message
+scoreboard players add @a GamesPlayed 0
 scoreboard players enable @a[scores={GamesPlayed=..9}] disableTips
 execute as @e[tag=SelectedTip,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"Click ","color":"dark_gray","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger disableTips set 1"}},{"text":" to opt out of these messages.","color":"dark_gray","italic":"true"}]
 execute as @a[scores={disableTips=1..}] run tellraw @s [{"text":"You will no longer receive tips.","color":"red"}]

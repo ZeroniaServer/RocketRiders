@@ -1,8 +1,7 @@
 #Leave midgame
 function game:leavemidgame
 
-#Item RNG and spawnpoints
-#Exception for arrows
+#Item RNG (exception for arrows) and spawnpoints
 tag @s add givenArrows
 tag @s add givenArrowsTwice
 scoreboard players add @s RandomItem 1
@@ -48,6 +47,24 @@ execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance
 execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=BlueVortex] remove BlueVortex
 
 #TODO figure out how to do something like that for novas :(
+
+#Bossbar for who's in the lead
+bossbar set rr_chase:lead players @a[team=!Lobby]
+tag @a[team=Blue] remove InLead
+execute positioned 12 64 65 run tag @p[team=Blue,predicate=custom:belowroof,tag=!onBlue] add InLead
+execute if entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"selector":"@p[team=Blue,tag=InLead]","color":"blue","bold":"true"},{"text":" is in the lead!","color":"dark_aqua"}]
+execute unless entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"dark_aqua"}]
+execute unless entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead value 0
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=100..110] run bossbar set rr_chase:lead value 1
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=89..99] run bossbar set rr_chase:lead value 2
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=78..88] run bossbar set rr_chase:lead value 3
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=67..77] run bossbar set rr_chase:lead value 4
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=56..66] run bossbar set rr_chase:lead value 5
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=45..55] run bossbar set rr_chase:lead value 6
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=34..44] run bossbar set rr_chase:lead value 7
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=23..33] run bossbar set rr_chase:lead value 8
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=12..22] run bossbar set rr_chase:lead value 9
+execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=0..11] run bossbar set rr_chase:lead value 10
 
 #Win
 execute positioned 12 64 65 run tag @a[team=Blue,distance=..2,limit=1] add Winner

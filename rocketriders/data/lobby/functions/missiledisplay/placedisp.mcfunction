@@ -3,8 +3,8 @@
 ## operates based on the page of a lectern ##
 #############################################
 
-#Set page back to 2 if someone tries to use the arrow to cycle through pages
-execute if block 12 203 78 minecraft:lectern{Page:2} run data merge block 12 203 78 {Page:1}
+#Set page back to 1 if someone tries to use the arrow to cycle through pages
+execute if block 12 203 78 minecraft:lectern{Page:2} run data merge block 12 203 78 {Page:0}
 
 #Display missiles
 execute if block 12 203 78 minecraft:lectern{Page:3} run function lobby:missiledisplay/missile/tomatwo

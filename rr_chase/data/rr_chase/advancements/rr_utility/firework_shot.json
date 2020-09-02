@@ -1,0 +1,18 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "is_explosion": "true"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+      "function": "rr_chase:game/novashot"
+  }
+}

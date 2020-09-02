@@ -46,7 +46,15 @@ execute if score FlagWave FlagScore matches 40.. run scoreboard players reset Fl
 execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=BlueVortex] add YellowVortex
 execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=BlueVortex] remove BlueVortex
 
-#TODO figure out how to do something like that for novas :(
+#Overwrite vortex particles
+execute as @e[tag=YellowVortex,type=egg] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute as @e[tag=VortexYellow,type=area_effect_cloud] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
+
+#Nova tracking
+execute as @a[team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
+execute as @a[team=Blue] at @s if entity @e[distance=..4,limit=1,tag=bluenovatracker,type=armor_stand] run tag @s add BlueNovaNear
+execute as @a[team=Blue,tag=BlueNovaNear,scores={NovaNear=4..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s remove BlueNovaNear
+execute as @a[team=Blue,tag=!BlueNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
 
 #Bossbar for who's in the lead
 bossbar set rr_chase:lead players @a[team=!Lobby]

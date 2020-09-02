@@ -13,4 +13,6 @@ tag @e[tag=Selection,type=armor_stand] add leaveYSpawn
 tag @e[tag=Selection,type=armor_stand] add noTeamBalance
 tag @e[tag=Selection,type=armor_stand] add canopyStack
 tag @e[tag=Selection,type=armor_stand] add arrowLimit
+tag @e[tag=Selection,type=armor_stand] add custVortParticle
+tag @e[tag=Selection,type=armor_stand] add customNova
 team modify Blue friendlyFire true

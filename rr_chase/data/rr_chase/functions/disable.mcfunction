@@ -18,4 +18,6 @@ tag @e[tag=Selection,type=armor_stand,tag=utilWasOff] remove rngUtil
 tag @e[tag=Selection,type=armor_stand] remove utilWasOff
 tag @e[tag=Selection,type=armor_stand] remove canopyStack
 tag @e[tag=Selection,type=armor_stand] remove arrowLimit
+tag @e[tag=Selection,type=armor_stand] remove custVortParticle
+tag @e[tag=Selection,type=armor_stand] remove customNova
 tag @e[tag=Selection,type=armor_stand] add switchGamemodes

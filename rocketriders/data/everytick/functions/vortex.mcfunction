@@ -12,8 +12,8 @@ scoreboard players reset @a ThrowVortex
 ##Vortex deployment (both teams)
 execute as @e[tag=YellowVortex,type=egg] at @s run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a
 execute as @e[tag=BlueVortex,type=egg] at @s run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a
-execute as @e[tag=YellowVortex,type=egg] at @s run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
-execute as @e[tag=BlueVortex,type=egg] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute as @s[tag=!custVortParticle] as @e[tag=YellowVortex,type=egg] at @s run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute as @s[tag=!custVortParticle] as @e[tag=BlueVortex,type=egg] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 scoreboard players add @e[tag=BlueVortex,type=egg] vortextimer 1
 scoreboard players add @e[tag=YellowVortex,type=egg] vortextimer 1
 execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:block.portal.ambient player @a ~ ~ ~ 2 2
@@ -26,9 +26,9 @@ execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s align x
 execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexBlue"],Duration:2000000000}
 kill @e[scores={vortextimer=20..},type=egg]
 execute as @e[tag=VortexYellow,type=area_effect_cloud] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
-execute as @e[tag=VortexYellow,type=area_effect_cloud] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @s[tag=!custVortParticle] as @e[tag=VortexYellow,type=area_effect_cloud] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @e[tag=VortexBlue,type=area_effect_cloud] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
-execute as @e[tag=VortexBlue,type=area_effect_cloud] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @s[tag=!custVortParticle] as @e[tag=VortexBlue,type=area_effect_cloud] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
 scoreboard players add @e[tag=Vortex,type=area_effect_cloud] vortexBoom 0
 
 ##Spin around (unprimed)

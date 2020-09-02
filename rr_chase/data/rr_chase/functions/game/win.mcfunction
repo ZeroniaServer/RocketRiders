@@ -1,6 +1,5 @@
-# TODO sort out achievements
-# ##Achievements
-# execute unless entity @s[tag=noAchievements] run function achievements:aftergameblue
+##Achievements
+function rr_chase:achievements/aftergame
 
 ##Record tags
 tag @s add GameEnd

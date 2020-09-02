@@ -16,16 +16,16 @@ execute as @a[team=Yellow,scores={NovaShot=1..}] at @s run tag @e[type=firework_
 scoreboard players reset @a[scores={NovaShot=1..}] NovaShot
 
 #Identifies players near enemy Nova Rockets
-execute as @a[team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s add YellowNovaNear
-execute as @a[team=Yellow] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
-execute as @a[team=Blue] at @s if entity @e[distance=..4,limit=1,tag=yellownovatracker,type=armor_stand] run tag @s add YellowNovaNear
-execute as @a[team=Yellow] at @s if entity @e[distance=..4,limit=1,tag=bluenovatracker,type=armor_stand] run tag @s add BlueNovaNear
+execute as @s[tag=!customNova] as @a[team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s add YellowNovaNear
+execute as @s[tag=!customNova] as @a[team=Yellow] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
+execute as @s[tag=!customNova] as @a[team=Blue] at @s if entity @e[distance=..4,limit=1,tag=yellownovatracker,type=armor_stand] run tag @s add YellowNovaNear
+execute as @s[tag=!customNova] as @a[team=Yellow] at @s if entity @e[distance=..4,limit=1,tag=bluenovatracker,type=armor_stand] run tag @s add BlueNovaNear
 scoreboard players add @a[tag=YellowNovaNear] NovaNear 1
 scoreboard players add @a[tag=BlueNovaNear] NovaNear 1
-execute as @a[team=Blue,tag=YellowNovaNear,scores={NovaNear=2..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s remove YellowNovaNear
-execute as @a[team=Blue,tag=!YellowNovaNear,scores={NovaNear=2..}] run scoreboard players reset @s NovaNear
-execute as @a[team=Yellow,tag=BlueNovaNear,scores={NovaNear=2..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s remove BlueNovaNear
-execute as @a[team=Yellow,tag=!BlueNovaNear,scores={NovaNear=2..}] run scoreboard players reset @s NovaNear
+execute as @s[tag=!customNova] as @a[team=Blue,tag=YellowNovaNear,scores={NovaNear=4..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s remove YellowNovaNear
+execute as @s[tag=!customNova] as @a[team=Blue,tag=!YellowNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
+execute as @s[tag=!customNova] as @a[team=Yellow,tag=BlueNovaNear,scores={NovaNear=4..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s remove BlueNovaNear
+execute as @s[tag=!customNova] as @a[team=Yellow,tag=!BlueNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
 
 #Nova Rocket flight and tracker entity
 scoreboard players add @e[tag=BlueNova,type=firework_rocket] novatimer 0

@@ -5,12 +5,13 @@
 ##Start parkour
 execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1.2] run tag @s add startParkour
 execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"Parkour Run Started!","color":"dark_green","bold":"true"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Step on pressure plates to reach ","color":"green"},{"text":"Checkpoints","color":"dark_green"},{"text":".","color":"green"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- If you fall on the ground, you go to your last ","color":"green"},{"text":"Checkpoint","color":"dark_green"},{"text":".","color":"green"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- The first pressure plate resets your time.","color":"green"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the compass to ","color":"green"},{"text":"Return to Checkpoint","color":"aqua","bold":"true"},{"text":".","color":"green"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"green"},{"text":"Quit to Start","color":"yellow","bold":"true"},{"text":".","color":"green"}]
-execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"- Drop/offhand the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":"true"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Step on pressure plates to reach ","color":"green"},{"text":"Checkpoints","color":"dark_green"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- If you fall on the ground, you go to your last ","color":"green"},{"text":"Checkpoint","color":"dark_green"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- The first pressure plate resets your time.","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the compass to ","color":"green"},{"text":"Return to Checkpoint","color":"aqua","bold":"true"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"green"},{"text":"Quit to Start","color":"yellow","bold":"true"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":"true"},{"text":".","color":"green"}]
+execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger hideParkourTips set 1"}},{"text":" to no longer see these instructions.","color":"dark_green","italic":"true"}]
 execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
 execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
 execute as @a[team=Lobby,tag=startParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
@@ -214,6 +215,14 @@ scoreboard players reset @a[tag=!inParkour] parkourDeci2
 scoreboard players reset @a[tag=!inParkour] finalParkourTime
 tag @a[tag=!inParkour] remove onResetPlate
 tag @a[tag=!inParkour] remove timeReset
+
+##Handle hide tips trigger
+scoreboard players enable @a[team=Lobby,tag=!hideParkourTips] hideParkourTips
+execute as @a[team=!Lobby] run trigger hideParkourTips set 0
+execute as @a[team=Lobby,tag=hideParkourTips] run trigger hideParkourTips set 0
+execute as @a[team=Lobby,scores={hideParkourTips=1..}] run tellraw @s [{"text":"You will no longer see Parkour instructions.","color":"red"}]
+execute as @a[team=Lobby,scores={hideParkourTips=1..}] run tag @s add hideParkourTips
+scoreboard players set @a hideParkourTips 0
 
 ##Return to Lobby Pad
 execute as @e[tag=parkourReturn,type=area_effect_cloud] at @s run particle falling_dust minecraft:green_concrete ~ ~-1 ~ 0.5 1 0.5 0.1 5 force @a

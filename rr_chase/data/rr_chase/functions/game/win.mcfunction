@@ -29,5 +29,5 @@ execute as @a[team=Blue,tag=Loser] at @s run playsound minecraft:entity.wither.s
 title @a title ["",{"selector":"@a[team=Blue,tag=Winner,limit=1]","color":"blue"},{"text":" Won!","color":"blue","bold":false}]
 
 ##Splashes
-execute as @a[team=Blue,tag=Winner,limit=1,sort=random] run function game:winsplash
-execute as @a[team=Blue,tag=Loser,limit=1,sort=random] run function game:losesplash
+execute as @a[team=Blue,tag=Winner,limit=1,sort=random] run function rr_chase:game/winsplash
+execute as @a[team=Blue,tag=Loser,limit=1,sort=random] run function rr_chase:game/losesplash

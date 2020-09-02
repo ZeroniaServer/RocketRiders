@@ -1,5 +1,5 @@
 tellraw @s [""]
-tellraw @s ["",{"text":"Capture the Flag Mode:","color":"light_purple","bold":"true"}]
+tellraw @s ["",{"text":"Capture the Flag Mode:","color":"light_purple","bold":"true"},{"text":" There and back again"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Capture both enemy flags","color":"yellow"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Lower flags by breaking magenta glass at flagpoles"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Run near lowered flags to steal them"}]

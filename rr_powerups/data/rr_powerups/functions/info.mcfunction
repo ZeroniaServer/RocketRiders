@@ -1,5 +1,5 @@
 tellraw @s [""]
-tellraw @s ["",{"text":"Powerups Mode:","color":"light_purple","bold":"true"}]
+tellraw @s ["",{"text":"Powerups Mode:","color":"light_purple","bold":"true"},{"text":" Normal Mode, enhanced"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals","color":"yellow"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Specifics:","color":"dark_aqua"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Stand on Powerup Platform for 5 seconds to capture it"}]

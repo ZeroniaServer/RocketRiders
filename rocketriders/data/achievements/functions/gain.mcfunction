@@ -34,10 +34,10 @@ scoreboard players add @a PlayerDeaths 0
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s PlayerDeaths < @s deaths run scoreboard players add @s deathCooldown 1
 
 #Necessary for on base check
-execute as @a unless entity @s[team=!Yellow,team=!Blue] unless score @s PlayerDeaths < @s deaths unless score @s deathCooldown matches 1.. at @s if entity @s[x=-15,dx=54,y=33,dy=37,z=-74,dz=28] run tag @s add onBlue
-execute as @a unless entity @s[team=!Yellow,team=!Blue] unless score @s PlayerDeaths < @s deaths unless score @s deathCooldown matches 1.. at @s if entity @s[x=-15,dx=54,y=33,dy=37,z=46,dz=28] run tag @s add onYellow
-execute as @a[tag=onBlue] unless score @s deathCooldown matches 1.. at @s unless entity @s[x=-15,dx=54,y=33,dy=37,z=-74,dz=28] run tag @s remove onBlue
-execute as @a[tag=onYellow] unless score @s deathCooldown matches 1.. at @s unless entity @s[x=-15,dx=54,y=33,dy=37,z=46,dz=28] run tag @s remove onYellow
+execute as @a unless entity @s[team=!Yellow,team=!Blue] unless score @s PlayerDeaths < @s deaths unless score @s deathCooldown matches 1.. at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
+execute as @a unless entity @s[team=!Yellow,team=!Blue] unless score @s PlayerDeaths < @s deaths unless score @s deathCooldown matches 1.. at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s add onYellow
+execute as @a[tag=onBlue] unless score @s deathCooldown matches 1.. at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s remove onBlue
+execute as @a[tag=onYellow] unless score @s deathCooldown matches 1.. at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s remove onYellow
 
 #Necessary for death check (again)
 execute as @a[scores={deathCooldown=4..}] run scoreboard players operation @s PlayerDeaths = @s deaths

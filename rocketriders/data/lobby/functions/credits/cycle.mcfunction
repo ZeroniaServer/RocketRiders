@@ -25,7 +25,7 @@ execute as @e[tag=SelectedCredit,type=armor_stand] at @s run particle dust 0 1 0
 function lobby:credits/names
 
 #Selecting an adjacent Credits armor stand
-execute as @e[tag=SelectedCredit,scores={CreditCycle=60..},type=armor_stand] at @s run tp @s ~2 ~-2 ~
+execute as @e[tag=SelectedCredit,scores={CreditCycle=60..},type=armor_stand] at @s run function lobby:credits/goback
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..},type=armor_stand] run tag @s add OldSelectedCredit
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..},type=armor_stand] at @s run tag @e[tag=creditsAS,tag=!BuilderCreditsAS,tag=!devCreditsAS,tag=!OldSelectedCredit,tag=!SelectedCredit,limit=1,sort=nearest,type=armor_stand] add SelectedCredit
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..},type=armor_stand] run function lobby:credits/resetpose

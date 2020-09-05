@@ -18,7 +18,7 @@ setblock 18 202 73 redstone_block
 setblock 18 202 73 air
 setblock 18 201 73 blue_concrete_powder
 
-fill 22 202 69 15 206 87 barrier replace air
+fill 22 202 69 15 206 87 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 fill 22 202 69 15 206 87 white_glazed_terracotta replace blue_glazed_terracotta
 

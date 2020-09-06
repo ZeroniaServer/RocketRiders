@@ -1,8 +1,8 @@
 ##Sub-RNG for Missiles
 #Choose between each category
-execute if entity @e[tag=Selection,tag=rngHeavy,tag=!givenAllHeavy,type=armor_stand] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngHeavy","rng2"]}
-execute if entity @e[tag=Selection,tag=rngNormal,tag=!givenAllNormal,type=armor_stand] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngNormal","rng2"]}
-execute if entity @e[tag=Selection,tag=rngLightning,tag=!givenAllLightning,type=armor_stand] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngLightning","rng2"]}
+execute if entity @e[tag=Selection,tag=rngHeavy,tag=!heavyOff,tag=!givenAllHeavy,type=armor_stand] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngHeavy","rng2"]}
+execute if entity @e[tag=Selection,tag=rngNormal,tag=!normalOff,tag=!givenAllNormal,type=armor_stand] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngNormal","rng2"]}
+execute if entity @e[tag=Selection,tag=rngLightning,tag=!lightningOff,tag=!givenAllLightning,type=armor_stand] run summon area_effect_cloud 0 0 0 {Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:["rngLightning","rng2"]}
 
 #Select category and run appropriate sub-sub-RNG function
 tag @e[tag=rng2,sort=random,limit=1,type=area_effect_cloud] add rngSelected

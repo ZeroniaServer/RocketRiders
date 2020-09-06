@@ -1,9 +1,19 @@
 ##Refreshes signs for individual items/categories (placing warped/crimson signs)
 
+##ENABLE/DISABLE ALL CATEGORIES
+tag @s[tag=!rngToma,tag=!rngBlade,tag=!rngAnt,tag=!rngCata,tag=!rngLift,tag=!rngSlash,tag=!rngNull,tag=!rngEguard,tag=!rngCitadel,tag=!rngGemi] add normalOff
+execute unless entity @s[tag=!rngToma,tag=!rngBlade,tag=!rngAnt,tag=!rngCata,tag=!rngLift,tag=!rngSlash,tag=!rngNull,tag=!rngEguard,tag=!rngCitadel,tag=!rngGemi] run tag @s remove normalOff
+tag @s[tag=!rngHur,tag=!rngThun] add lightningOff
+execute unless entity @s[tag=!rngHur,tag=!rngThun] run tag @s remove lightningOff
+tag @s[tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] add heavyOff
+execute unless entity @s[tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] run tag @s remove heavyOff
+tag @s[tag=!rngShield,tag=!rngArrows,tag=!rngVortex,tag=!rngObshield,tag=!rngSplash,tag=!rngCanopy,tag=!rngFireball,tag=!rngNova] add utilOff
+execute unless entity @s[tag=!rngShield,tag=!rngArrows,tag=!rngVortex,tag=!rngObshield,tag=!rngSplash,tag=!rngCanopy,tag=!rngFireball,tag=!rngNova] run tag @s remove utilOff
+
 ##NORMAL MISSILES
 #Normal Category
-execute if entity @s[tag=rngNormal,tag=!settingsLocked] run setblock -69 193 83 warped_wall_sign[facing=east]
-execute unless entity @s[tag=rngNormal,tag=!settingsLocked] run setblock -69 193 83 crimson_wall_sign[facing=east]
+execute if entity @s[tag=rngNormal,tag=!settingsLocked,tag=!normalOff] run setblock -69 193 83 warped_wall_sign[facing=east]
+execute unless entity @s[tag=rngNormal,tag=!settingsLocked,tag=!normalOff] run setblock -69 193 83 crimson_wall_sign[facing=east]
 
 #Toma
 execute if entity @s[tag=rngToma,tag=rngNormal,tag=!settingsLocked] run setblock -67 193 74 warped_wall_sign[facing=south]
@@ -47,8 +57,8 @@ execute unless entity @s[tag=rngGemi,tag=rngNormal,tag=!settingsLocked] run setb
 
 ##LIGHTNING MISSILES
 #Lightning Category
-execute if entity @s[tag=rngLightning,tag=!settingsLocked] run setblock -69 191 83 warped_wall_sign[facing=east]
-execute unless entity @s[tag=rngLightning,tag=!settingsLocked] run setblock -69 191 83 crimson_wall_sign[facing=east]
+execute if entity @s[tag=rngLightning,tag=!settingsLocked,tag=!lightningOff] run setblock -69 191 83 warped_wall_sign[facing=east]
+execute unless entity @s[tag=rngLightning,tag=!settingsLocked,tag=!lightningOff] run setblock -69 191 83 crimson_wall_sign[facing=east]
 
 #Hurricane
 execute if entity @s[tag=rngHur,tag=rngLightning,tag=!settingsLocked] run setblock -62 192 74 warped_wall_sign[facing=south]
@@ -60,8 +70,8 @@ execute unless entity @s[tag=rngThun,tag=rngLightning,tag=!settingsLocked] run s
 
 ##HEAVY MISSILES
 #Heavy Category
-execute if entity @s[tag=rngHeavy,tag=!settingsLocked] run setblock -69 191 81 warped_wall_sign[facing=east]
-execute unless entity @s[tag=rngHeavy,tag=!settingsLocked] run setblock -69 191 81 crimson_wall_sign[facing=east]
+execute if entity @s[tag=rngHeavy,tag=!settingsLocked,tag=!heavyOff] run setblock -69 191 81 warped_wall_sign[facing=east]
+execute unless entity @s[tag=rngHeavy,tag=!settingsLocked,tag=!heavyOff] run setblock -69 191 81 crimson_wall_sign[facing=east]
 
 #Warhead
 execute if entity @s[tag=rngWar,tag=rngHeavy,tag=!settingsLocked] run setblock -62 193 82 warped_wall_sign[facing=north]
@@ -81,8 +91,8 @@ execute unless entity @s[tag=rngAux,tag=rngHeavy,tag=!settingsLocked] run setblo
 
 ##UTILITY ITEMS
 #Utility Category
-execute if entity @s[tag=rngUtil,tag=!settingsLocked] run setblock -69 193 81 warped_wall_sign[facing=east]
-execute unless entity @s[tag=rngUtil,tag=!settingsLocked] run setblock -69 193 81 crimson_wall_sign[facing=east]
+execute if entity @s[tag=rngUtil,tag=!settingsLocked,tag=!utilOff] run setblock -69 193 81 warped_wall_sign[facing=east]
+execute unless entity @s[tag=rngUtil,tag=!settingsLocked,tag=!utilOff] run setblock -69 193 81 crimson_wall_sign[facing=east]
 
 #Arrows
 execute if entity @s[tag=rngArrows,tag=rngUtil,tag=!settingsLocked] run setblock -64 193 82 warped_wall_sign[facing=north]

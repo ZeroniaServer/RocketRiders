@@ -9,4 +9,5 @@ tag @s add rngNull
 tag @s add rngEguard
 tag @s add rngCitadel
 tag @s add rngGemi
+tag @s remove normalOff
 scoreboard players set @e[tag=Selection,type=armor_stand] refreshsigns 1

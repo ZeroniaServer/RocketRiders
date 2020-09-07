@@ -44,14 +44,13 @@ execute as @e[tag=bluemissile,type=area_effect_cloud] at @s run summon area_effe
 execute as @e[tag=yellowmissile,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 
 ##SmartClear preparation
-execute as @e[tag=bluemissile,tag=!BlueCata,tag=!BlueDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue],Duration:2000000000}
-execute as @e[tag=yellowmissile,tag=!YellowCata,tag=!YellowDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow],Duration:2000000000}
-execute as @e[tag=BlueCata,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,SmartClearAECcata],Duration:2000000000}
-execute as @e[tag=YellowCata,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,SmartClearAECcata],Duration:2000000000}
-execute as @e[tag=BlueLift,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,SmartClearAECcata],Duration:2000000000}
-execute as @e[tag=YellowLift,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,SmartClearAECcata],Duration:2000000000}
-execute as @e[tag=BlueDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECblue,duplexExtraBlue],Duration:2000000000}
-execute as @e[tag=YellowDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~2 ~-8 ~-3 {Tags:[SmartClearAECyellow,duplexExtraYellow],Duration:2000000000}
+execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos x append from entity @s Pos[0]
+execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos y append from entity @s Pos[1]
+execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos z append from entity @s Pos[2]
+
+execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos x append from entity @s Pos[0]
+execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos y append from entity @s Pos[1]
+execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos z append from entity @s Pos[2]
 
 ##Individual missile positioning
 #Auxiliary
@@ -126,8 +125,10 @@ execute as @e[tag=YellowHyper,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-
 execute as @e[tag=BlueBull,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~4
 execute as @e[tag=YellowBull,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-18
 
-#Duplex
+#Duplex (+ extra entity)
+execute as @e[tag=BlueDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[duplexExtraBlue],Duration:2000000000}
 execute as @e[tag=BlueDuplex,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~4
+execute as @e[tag=YellowDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[duplexExtraYellow],Duration:2000000000}
 execute as @e[tag=YellowDuplex,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-22
 
 #Broadsword
@@ -149,10 +150,10 @@ execute as @e[tag=missile,tag=portalSpawn3,type=area_effect_cloud] at @s run tp 
 execute as @e[tag=missile,type=area_effect_cloud] at @s run function items:structureblock
 
 #Extra for Duplex
-execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] at @s run fill ~-2 ~3 ~23 ~-2 ~3 ~23 powered_rail[shape=north_south] replace powered_rail
-execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] run tag @s remove duplexExtraBlue
-execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] at @s run fill ~-2 ~3 ~-18 ~-2 ~3 ~-18 powered_rail[shape=north_south] replace powered_rail
-execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] run tag @s remove duplexExtraYellow
+execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] at @s run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
+execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] run kill @s
+execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] at @s run fill ~ ~-5 ~-21 ~ ~-5 ~-21 powered_rail[shape=north_south] replace powered_rail
+execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] run kill @s
 
 ##Kill entity
 kill @e[tag=missile,type=area_effect_cloud]

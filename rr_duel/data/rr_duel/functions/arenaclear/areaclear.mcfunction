@@ -1,10 +1,8 @@
 tag @s remove FakeGameEnd
 scoreboard players set @s fakeendtimer 0
 
-execute as @e[tag=SmartClearAECblue,tag=!SmartClearAECcata,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue"],Duration:360}
-execute as @e[tag=SmartClearAECblue,tag=SmartClearAECcata,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearBlue","ArenaClearCata"],Duration:360}
-execute as @e[tag=SmartClearAECyellow,tag=!SmartClearAECcata,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearYellow"],Duration:360}
-execute as @e[tag=SmartClearAECyellow,tag=SmartClearAECcata,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ArenaClearYellow","ArenaClearCata"],Duration:360}
+function arenaclear:prepareblue
+function arenaclear:prepareyellow
 summon area_effect_cloud 11 63 6 {Tags:["ArenaClearChecker"],Duration:360}
 
 function items:tetrisreset

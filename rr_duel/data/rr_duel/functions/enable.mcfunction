@@ -1,6 +1,7 @@
 tag @e[tag=Selection,type=armor_stand] remove switchGamemodes
 
 execute as @e[tag=Selection,type=armor_stand] run function gamemodes:storesettings
+tag @e[tag=Selection,type=armor_stand] add customBossbar
 tag @e[tag=Selection,type=armor_stand] add duelEnabled
 tag @e[tag=Selection,type=armor_stand] add SurpriseEggOff
 tag @e[tag=Selection,type=armor_stand] add tyingOff

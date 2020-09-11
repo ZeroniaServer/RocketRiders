@@ -6,6 +6,8 @@ tag @e[tag=Selection,type=armor_stand] remove HardcoreOff
 tag @e[tag=Selection,type=armor_stand,tag=HardcoreWasOn] add Hardcore
 execute as @e[tag=Selection,type=armor_stand,tag=HardcoreWasOn] run function arenaclear:lockdecos
 tag @e[tag=Selection,type=armor_stand] remove HardcoreWasOn
+tag @e[tag=Selection,type=armor_stand,tag=DoublePortalWasOn] add DoublePortal
+tag @e[tag=Selection,type=armor_stand] remove DoublePortalWasOn
 tag @e[tag=Selection,type=armor_stand] remove tyingOff
 tag @e[tag=Selection,type=armor_stand] remove fbPortalsOff
 tag @e[tag=Selection,type=armor_stand] remove preventionOff

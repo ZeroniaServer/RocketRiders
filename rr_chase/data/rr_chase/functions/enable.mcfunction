@@ -3,6 +3,7 @@ tag @e[tag=Selection,type=armor_stand] add chaseEnabled
 tag @e[tag=Selection,type=armor_stand] add tyingOff
 tag @e[tag=Selection,type=armor_stand] add ResidersOff
 tag @e[tag=Selection,type=armor_stand,tag=Residers] add ResidersWasOn
+tag @e[tag=Selection,type=armor_stand,tag=DoublePortal] add DoublePortalWasOn
 tag @e[tag=Selection,type=armor_stand] add fbPortalsOff
 tag @e[tag=Selection,type=armor_stand] add portalDecosOff
 tag @e[tag=Selection,type=armor_stand] add preventionOff

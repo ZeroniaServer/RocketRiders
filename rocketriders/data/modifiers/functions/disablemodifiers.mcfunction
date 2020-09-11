@@ -14,4 +14,5 @@ tag @s remove SplashStreams
 tag @s remove SpamClick
 tag @s remove NinjaJump
 tag @s remove Hardcore
+tag @s remove DoublePortal
 function arenaclear:unlockdecos

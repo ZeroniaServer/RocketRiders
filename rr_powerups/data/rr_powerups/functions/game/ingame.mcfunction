@@ -43,11 +43,13 @@ execute as @e[tag=captureMiddle,scores={capturePoint=0},type=area_effect_cloud] 
 execute as @e[tag=captureMiddle,scores={capturePoint=0},type=area_effect_cloud] run scoreboard players set @s yCapturedTime 0
 
 #win
-execute if entity @s[tag=!BlueWon] unless block 13 38 74 nether_portal run function game:winblue
-execute if entity @s[tag=!BlueWon] unless block 11 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 13 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 11 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon,tag=DoublePortal] unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal run function game:winblue
 
-execute if entity @s[tag=!YellowWon] unless block 11 38 -74 nether_portal run function game:winyellow
-execute if entity @s[tag=!YellowWon] unless block 13 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 11 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 13 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon,tag=DoublePortal] unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run function game:winyellow
 
 #capture the point (+ optional gamemode stuff)
 tag @a[tag=onCapturePoint] remove onCapturePoint

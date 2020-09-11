@@ -13,6 +13,7 @@ execute if entity @e[tag=Selection,scores={modifierID=9},type=armor_stand] run t
 execute if entity @e[tag=Selection,scores={modifierID=10},type=armor_stand] run tellraw @s [{"text":"Spam Click:","color":"aqua","bold":"true"},{"text":" Players have no delay between melee attacks on enemies.","color":"white","bold":"false","italic":"true"}]
 execute if entity @e[tag=Selection,scores={modifierID=11},type=armor_stand] run tellraw @s [{"text":"Ninja Jump:","color":"aqua","bold":"true"},{"text":" Players have increased speed and jump height.","color":"white","bold":"false","italic":"true"}]
 execute if entity @e[tag=Selection,scores={modifierID=12},type=armor_stand] run tellraw @s [{"text":"Hardcore:","color":"aqua","bold":"true"},{"text":" Players have one heart of health and bases are three blocks thick.","color":"white","bold":"false","italic":"true"}]
+execute if entity @e[tag=Selection,scores={modifierID=13},type=armor_stand] run tellraw @s [{"text":"Double Portal:","color":"aqua","bold":"true"},{"text":" Both portals must be broken to win the game.","color":"white","bold":"false","italic":"true"}]
 
 tellraw @s [{"text":""}]
 tag @s remove modifierInfo

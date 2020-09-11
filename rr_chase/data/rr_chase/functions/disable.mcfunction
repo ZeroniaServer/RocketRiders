@@ -3,6 +3,8 @@ tag @e[tag=Selection,type=armor_stand] remove tyingOff
 tag @e[tag=Selection,type=armor_stand] remove ResidersOff
 tag @e[tag=Selection,type=armor_stand,tag=ResidersWasOn] add Residers
 tag @e[tag=Selection,type=armor_stand] remove ResidersWasOn
+tag @e[tag=Selection,type=armor_stand,tag=DoublePortalWasOn] add DoublePortal
+tag @e[tag=Selection,type=armor_stand] remove DoublePortalWasOn
 tag @e[tag=Selection,type=armor_stand] remove fbPortalsOff
 tag @e[tag=Selection,type=armor_stand] remove portalDecosOff
 tag @e[tag=Selection,type=armor_stand] remove preventionOff

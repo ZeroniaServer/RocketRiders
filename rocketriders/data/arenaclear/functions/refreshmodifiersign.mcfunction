@@ -1,6 +1,6 @@
 ##Refreshes signs for individual Game Modifiers (warped/crimson)
 #Reset counter
-scoreboard players set @s[scores={modifierID=13..}] modifierID 0
+scoreboard players set @s[scores={modifierID=14..}] modifierID 0
 
 #Instamine
 execute as @s[scores={modifierID=0},tag=Instamine,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
@@ -54,6 +54,10 @@ execute as @s[scores={modifierID=11},tag=!NinjaJump,tag=!settingsLocked] run set
 #Hardcore
 execute as @s[scores={modifierID=12},tag=Hardcore,tag=!HardcoreOff,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
 execute as @s[scores={modifierID=12},tag=!Hardcore,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+
+#Hardcore
+execute as @s[scores={modifierID=13},tag=DoublePortal,tag=!noPortal,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
+execute as @s[scores={modifierID=13},tag=!DoublePortal,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #All locked
 execute as @s[tag=settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]

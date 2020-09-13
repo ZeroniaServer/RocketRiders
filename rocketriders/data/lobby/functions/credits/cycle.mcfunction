@@ -1,6 +1,6 @@
-##################################################################
-## CYCLE: How each Credits armor stand is displayed in sequence ##
-##################################################################
+###########################################################
+## CYCLE: Showcases the Credits armor stands in sequence ##
+###########################################################
 
 ##Playtesters
 scoreboard players add @e[tag=SelectedCredit,type=armor_stand] CreditCycle 1
@@ -32,12 +32,7 @@ execute as @e[tag=SelectedCredit,scores={CreditCycle=60..},type=armor_stand] run
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..},type=armor_stand] run tag @s remove SelectedCredit
 execute as @e[tag=SelectedCredit,scores={CreditCycle=60..},type=armor_stand] run scoreboard players reset @s CreditCycle
 
-#Resetting cycle
-execute as @e[tag=OldSelectedCredit,type=armor_stand] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit,type=armor_stand] run scoreboard players reset @e[tag=creditsAS,type=armor_stand] CreditCycle
-execute as @e[tag=OldSelectedCredit,type=armor_stand] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit,type=armor_stand] run tag @e[tag=CalverinCredits,type=armor_stand] add SelectedCredit
-execute as @e[tag=OldSelectedCredit,type=armor_stand] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit,type=armor_stand] run tag @e[tag=OldSelectedCredit,type=armor_stand] remove OldSelectedCredit
-
-##Developers
+##Developers/Builders
 scoreboard players add @e[tag=SelectedDev,type=armor_stand] CreditCycle 1
 
 #Position/posing/effects
@@ -48,12 +43,16 @@ execute as @e[tag=SelectedDev,tag=YZEROCredits,type=armor_stand] at @s run parti
 execute as @e[tag=SelectedDev,tag=ChronosCredits,type=armor_stand] at @s run particle dust 0 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
 execute as @e[tag=SelectedDev,tag=BardCredits,type=armor_stand] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
 execute as @e[tag=SelectedDev,tag=HugoCredits,type=armor_stand] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
+execute as @e[tag=SelectedDev,tag=TrekCredits,type=armor_stand] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
+execute as @e[tag=SelectedDev,tag=TypCredits,type=armor_stand] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
 execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tag @s add OldDevSel
 execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tp @s[tag=EvtemaCredits] -49 216 78 90 0
 execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tp @s[tag=YZEROCredits] -49 216 79 90 0
 execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tp @s[tag=ChronosCredits] -49 216 77 90 0
 execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tp @s[tag=BardCredits] -51 211 75 90 0
 execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tp @s[tag=HugoCredits] -51 211 81 90 0
+execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tp @s[tag=TrekCredits] -51 211 82 90 0
+execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tp @s[tag=TypCredits] -51 211 74 90 0
 execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tag @e[tag=devcycle,tag=!OldDevSel,limit=1,sort=nearest,type=armor_stand] add SelectedDev
 execute as @e[tag=SelectedDev,scores={CreditCycle=80..},type=armor_stand] run tag @s remove SelectedDev
 scoreboard players reset @e[tag=OldDevSel,type=armor_stand] CreditCycle
@@ -62,3 +61,8 @@ scoreboard players reset @e[tag=OldDevSel,type=armor_stand] CreditCycle
 execute as @e[tag=OldDevSel,type=armor_stand] unless entity @e[tag=devcycle,tag=!OldDevSel,type=armor_stand] run scoreboard players reset @e[tag=devcycle,type=armor_stand] CreditCycle
 execute as @e[tag=OldDevSel,type=armor_stand] unless entity @e[tag=devcycle,tag=!OldDevSel,type=armor_stand] run tag @e[tag=EvtemaCredits,type=armor_stand] add SelectedDev
 execute as @e[tag=OldDevSel,type=armor_stand] unless entity @e[tag=devcycle,tag=!OldDevSel,type=armor_stand] run tag @e[tag=OldDevSel,type=armor_stand] remove OldDevSel
+
+##Switch to next Credits set
+execute as @e[tag=OldSelectedCredit,type=armor_stand] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit,type=armor_stand] run scoreboard players reset @e[tag=creditsAS,type=armor_stand] CreditCycle
+execute as @e[tag=OldSelectedCredit,type=armor_stand] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit,type=armor_stand] if entity @e[tag=Selection,type=armor_stand,scores={creditsSet=0}] run function lobby:credits/initialize2
+execute as @e[tag=OldSelectedCredit,type=armor_stand] unless entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!OldSelectedCredit,type=armor_stand] if entity @e[tag=Selection,type=armor_stand,scores={creditsSet=1}] run function lobby:credits/initialize

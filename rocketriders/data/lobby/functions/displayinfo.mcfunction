@@ -28,7 +28,7 @@ tellraw @s[scores={displayinfo=6}] {"text":"(Made by: YZEROgame & Chronos22)","c
 
 #Catapult
 tellraw @s[scores={displayinfo=7}] [{"text":"[Normal] ","color":"green","bold":"true"},{"text":"Catapult","color":"white"}]
-tellraw @s[scores={displayinfo=7}] {"text":"The Catapult does as its name suggests. Once it contacts a wall, it launches 2 TNT blocks upwards. Watch out!","color":"gray","italic":"true"}
+tellraw @s[scores={displayinfo=7}] {"text":"The Catapult does as its name suggests. Once it contacts a wall, it launches 2 TNT blocks out. You can also launch TNT by breaking the back slime block. Watch out!","color":"gray","italic":"true"}
 tellraw @s[scores={displayinfo=7}] {"text":"(Made by: IndigoLaser)","color":"gray","italic":"true"}
 
 #Hurricane

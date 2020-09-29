@@ -41,7 +41,7 @@ tp @s[tag=AdamCredits,type=armor_stand] -51 211 62 90 0
 tp @s[tag=ToulCredits,type=armor_stand] -51 211 83 90 0
 tp @s[tag=ProzanCredits,type=armor_stand] -51 211 84 90 0
 tp @s[tag=CubeCredits,type=armor_stand] -51 211 85 90 0
-tp @s[tag=SethCredits,type=armor_stand] -51 211 86 90 0
+tp @s[tag=LemonCredits,type=armor_stand] -51 211 86 90 0
 tp @s[tag=LogicCredits,type=armor_stand] -51 211 87 90 0
 tp @s[tag=SamCredits,type=armor_stand] -51 211 88 90 0
 tp @s[tag=FuriousCredits,type=armor_stand] -51 211 89 90 0
@@ -108,7 +108,7 @@ tp @e[tag=RubenCredits,type=armor_stand] -52 211 95 90 0
 tp @e[tag=TacoCredits,type=armor_stand] -52 211 96 90 0
 tp @e[tag=LPCredits,type=armor_stand] -52 211 97 90 0
 tp @e[tag=SkoolCredits,type=armor_stand] -52 211 98 90 0
-tp @e[tag=LemonCredits,type=armor_stand] -52 211 99 90 0
+tp @e[tag=EnatorCredits,type=armor_stand] -52 211 99 90 0
 tp @e[tag=AgroCredits,type=armor_stand] -52 211 100 90 0
 tp @e[tag=NettaCredits,type=armor_stand] -52 211 101 90 0
 tp @e[tag=DangerCredits,type=armor_stand] -52 211 102 90 0

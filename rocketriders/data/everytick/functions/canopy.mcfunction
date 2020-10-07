@@ -9,77 +9,79 @@ execute as @a[team=Yellow,scores={respawn=1..}] at @s if score @s playerUUID = @
 execute as @a[team=Blue,scores={respawn=1..}] at @s if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
 
 #Canopy quick deploy when near the base of its own team color
-execute as @e[tag=BluePlatform,scores={PlatTime=..57},type=area_effect_cloud] at @s if predicate custom:canopy_nearblue run scoreboard players add @s PlatTime 3
-execute as @e[tag=YellowPlatform,scores={PlatTime=..57},type=area_effect_cloud] at @s if predicate custom:canopy_nearyellow run scoreboard players add @s PlatTime 3
+execute as @e[tag=BluePlatform,scores={PlatTime=..57},type=area_effect_cloud,tag=!waterTemp,tag=!animated] at @s if predicate custom:canopy_nearblue run scoreboard players add @s PlatTime 3
+execute as @e[tag=YellowPlatform,scores={PlatTime=..57},type=area_effect_cloud,tag=!waterTemp,tag=!animated] at @s if predicate custom:canopy_nearyellow run scoreboard players add @s PlatTime 3
 
 #Canopy deploy animation/sounds
-execute as @e[scores={PlatTime=1..50},type=area_effect_cloud] at @s run particle block spruce_leaves ~ ~ ~ 1 0 1 0.1 10
-execute as @e[scores={PlatTime=1},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
+execute as @e[scores={PlatTime=1..50},type=area_effect_cloud,tag=!animated] at @s run particle block spruce_leaves ~ ~ ~ 1 0 1 0.1 10
+execute as @e[scores={PlatTime=1},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
 
-execute as @e[scores={PlatTime=5},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-1,name:"minecraft:canopy1"}
-execute as @e[scores={PlatTime=5},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=5},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=5},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
+execute as @e[scores={PlatTime=5},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-1,name:"minecraft:canopy1"}
+execute as @e[scores={PlatTime=5},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=5},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=5},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
 
-execute as @e[scores={PlatTime=10},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-2,name:"minecraft:canopy2"}
-execute as @e[scores={PlatTime=10},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=10},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=10},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
+execute as @e[scores={PlatTime=10},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-2,name:"minecraft:canopy2"}
+execute as @e[scores={PlatTime=10},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=10},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=10},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
 
-execute as @e[scores={PlatTime=15},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-3,name:"minecraft:canopy3"}
-execute as @e[scores={PlatTime=15},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=15},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=15},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
+execute as @e[scores={PlatTime=15},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-3,name:"minecraft:canopy3"}
+execute as @e[scores={PlatTime=15},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=15},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=15},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=20},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy4"}
-execute as @e[scores={PlatTime=20},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=20},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=20},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
+execute as @e[scores={PlatTime=20},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy4"}
+execute as @e[scores={PlatTime=20},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=20},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=20},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=25},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy5"}
-execute as @e[scores={PlatTime=25},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=25},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=25},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
+execute as @e[scores={PlatTime=25},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy5"}
+execute as @e[scores={PlatTime=25},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=25},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=25},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=30},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy6"}
-execute as @e[scores={PlatTime=30},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=30},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=30},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
+execute as @e[scores={PlatTime=30},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy6"}
+execute as @e[scores={PlatTime=30},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=30},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=30},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=35},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy7"}
-execute as @e[scores={PlatTime=35},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=35},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=35},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
+execute as @e[scores={PlatTime=35},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy7"}
+execute as @e[scores={PlatTime=35},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=35},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=35},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=40},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy8"}
-execute as @e[scores={PlatTime=40},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=40},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=40},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
+execute as @e[scores={PlatTime=40},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy8"}
+execute as @e[scores={PlatTime=40},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=40},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=40},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=45},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy9"}
-execute as @e[scores={PlatTime=45},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=45},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=45},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0.6
+execute as @e[scores={PlatTime=45},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy9"}
+execute as @e[scores={PlatTime=45},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=45},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=45},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0.6
 
-execute as @e[scores={PlatTime=50},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy10"}
-execute as @e[scores={PlatTime=50},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=50},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=50},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0.6
+execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy10"}
+execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0.6
 
-execute as @e[scores={PlatTime=55},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy11"}
-execute as @e[scores={PlatTime=55},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=55},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=55},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0
+execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy11"}
+execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0
 
-execute as @e[scores={PlatTime=56},type=area_effect_cloud] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy12"}
-execute as @e[scores={PlatTime=56},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=56},type=area_effect_cloud] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=56},type=area_effect_cloud] at @s run particle block spruce_leaves ~ ~2 ~ 1 1 1 1 300
+execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy12"}
+execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run particle block spruce_leaves ~ ~2 ~ 1 1 1 1 300
 
-execute as @e[scores={PlatTime=58},type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
-execute as @e[scores={PlatTime=58},type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
-execute as @e[scores={PlatTime=58},type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance=1] replace jungle_leaves
-execute as @e[scores={PlatTime=58},type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
+execute as @e[scores={PlatTime=58},type=area_effect_cloud,tag=!animated] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
+execute as @e[scores={PlatTime=58},type=area_effect_cloud,tag=!animated] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
+execute as @e[scores={PlatTime=58},type=area_effect_cloud,tag=!animated] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance=1] replace jungle_leaves
+execute as @e[scores={PlatTime=58},type=area_effect_cloud,tag=!animated] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
+
+tag @e[scores={PlatTime=58..},type=area_effect_cloud] add animated
 
 #Ender Pearl UUID storage - necessary for accurate teleports
 execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data get entity @s Owner[0]
@@ -237,3 +239,25 @@ execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0
 execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] if entity @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof
 execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire replace #minecraft:leaves
 execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire replace oak_log
+
+#Canopy watering (one time use - Splash extends Canopy duration)
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~ water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~ water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~ water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~1 water run tag @s add wateredInit
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run fill ~-1 ~2 ~-1 ~1 ~2 ~1 air replace water
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:block.bamboo_sapling.place block @a ~ ~ ~ 1 0.5
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:block.chorus_flower.grow block @a ~ ~ ~ 1 1
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:entity.player.swim block @a ~ ~ ~ 1 1
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run particle minecraft:falling_water ~ ~1 ~ 5 -1 5 1 600 force @a
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run particle minecraft:happy_villager ~ ~1 ~ 5 -1 5 1 600 force @a
+tag @e[tag=wateredInit,type=area_effect_cloud] add wateredTemp
+scoreboard players remove @e[tag=animated,tag=wateredInit,type=area_effect_cloud] PlatTime 100
+tag @e[tag=animated,tag=wateredInit,type=area_effect_cloud] add watered
+tag @e[tag=watered,type=area_effect_cloud] remove wateredInit
+tag @e[tag=watered,type=area_effect_cloud] remove wateredTemp

@@ -6,7 +6,7 @@
 scoreboard players add @e[tag=Selection,tag=GameStarted,type=armor_stand] ShowTip 1
 scoreboard players reset @e[tag=Selection,tag=!GameStarted,type=armor_stand] ShowTip
 
-#Chooses a random tip (12 possible)
+#Chooses a random tip (20 possible)
 execute as @e[tag=Selection,tag=!Tip1,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip1"]}
 execute as @e[tag=Selection,tag=!Tip2,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip2"]}
 execute as @e[tag=Selection,tag=!Tip3,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip3"]}
@@ -19,22 +19,30 @@ execute as @e[tag=Selection,tag=!Tip9,scores={ShowTip=900},type=armor_stand] run
 execute as @e[tag=Selection,tag=!Tip10,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip10"]}
 execute as @e[tag=Selection,tag=!Tip11,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip11"]}
 execute as @e[tag=Selection,tag=!Tip12,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip12"]}
+execute as @e[tag=Selection,tag=!Tip13,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip13"]}
+execute as @e[tag=Selection,tag=!Tip14,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip14"]}
+execute as @e[tag=Selection,tag=!Tip15,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip15"]}
+execute as @e[tag=Selection,tag=!Tip16,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip16"]}
+execute as @e[tag=Selection,tag=!Tip17,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip17"]}
+execute as @e[tag=Selection,tag=!Tip18,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip18"]}
+execute as @e[tag=Selection,tag=!Tip19,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip19"]}
+execute as @e[tag=Selection,tag=!Tip20,scores={ShowTip=900},type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Duration:5,Tags:["HandyTip","Tip20"]}
 tag @e[tag=HandyTip,limit=1,sort=random,type=area_effect_cloud] add SelectedTip
 
 #Announces selected tip to newer players
-execute as @e[tag=SelectedTip,tag=Tip1,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Defusing missiles by breaking slime blocks and TNT is recommended. Try to learn it for all missiles!","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip1,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Defusing missiles by breaking certain slime blocks and TNT is recommended. Try to learn how to defuse all missiles!","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip1,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip1
 
 execute as @e[tag=SelectedTip,tag=Tip2,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Most Utility items can be used to stop incoming missiles.","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip2,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip2
 
-execute as @e[tag=SelectedTip,tag=Tip3,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You can counter a Canopy by shooting it with Arrows, Fireballs or Nova Rockets.","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip3,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You can counter a Canopy by shooting it with Arrows, Fireballs or Nova Rockets, which either explode the Canopy or set it ablaze!","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip3,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip3
 
 execute as @e[tag=SelectedTip,tag=Tip4,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Obsidian Shields will break after the glass pane in the middle is broken 3 times.","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip4,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip4
 
-execute as @e[tag=SelectedTip,tag=Tip5,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You can use the Splash to prevent TNT from blowing up blocks.","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip5,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You can use the water from the Splash to prevent TNT from blowing up blocks, cancel fall damage, or put out fire.","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip5,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip5
 
 execute as @e[tag=SelectedTip,tag=Tip6,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You can use your Shooting Saber as a melee weapon too!","color":"gray"}]
@@ -49,14 +57,38 @@ execute as @e[tag=SelectedTip,tag=Tip8,type=area_effect_cloud] run tag @e[tag=Se
 execute as @e[tag=SelectedTip,tag=Tip9,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"There are four Special missiles which you can play with in Swap Mode and Powerups Mode. Use them all to earn the Veteran achievement!","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip9,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip9
 
-execute as @e[tag=SelectedTip,tag=Tip10,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Competetive item settings are generated in every round of 1v1 Duel Mode.","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip10,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Competitive item settings are generated in every round of 1v1 Duel Mode.","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip10,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip10
 
 execute as @e[tag=SelectedTip,tag=Tip11,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Items have their category (such as Normal, Lightning, Heavy or Utility) in front of their names. Be careful with what you spawn at what time.","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip11,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip11
 
-execute as @e[tag=SelectedTip,tag=Tip12,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Lightning speed missiles are way faster than regular missiles.","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip12,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Lightning Speed missiles are way faster than other missiles. Great for rush tactics!","color":"gray"}]
 execute as @e[tag=SelectedTip,tag=Tip12,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+
+execute as @e[tag=SelectedTip,tag=Tip13,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Canopy will break itself after 20 seconds. Once the log is broken, the leaves randomly decay.","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip13,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+
+execute as @e[tag=SelectedTip,tag=Tip14,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Throwing a Splash on top of a Canopy will water it, extending its duration from 20 to 25 seconds!","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip14,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+
+execute as @e[tag=SelectedTip,tag=Tip15,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Vortex can identify and drift towards enemy players in a close radius. Rule of thumb: stand clear!","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip15,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+
+execute as @e[tag=SelectedTip,tag=Tip16,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Vortex blows up when enemies get near it, missiles pass through it, or it gets shot by arrows. It can also chain react with another Vortex or TNT explosion.","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip16,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+
+execute as @e[tag=SelectedTip,tag=Tip17,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Powerups Mode, you may receive a Stinging Shield. Drink the honey bottle to deploy it, and shoot/break the TNT in the middle to release the bees!","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip17,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+
+execute as @e[tag=SelectedTip,tag=Tip18,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Powerups Mode, you may receive a Lava Splash. It functions exactly like a normal Splash, but places lava instead... watch out!","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip18,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+
+execute as @e[tag=SelectedTip,tag=Tip19,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Capture the Flag Mode, the flag carrier's missiles travel in the opposite direction so they can return to their base with the flag.","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip19,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+
+execute as @e[tag=SelectedTip,tag=Tip20,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Chase Mode, you can use items like the Nova Rocket and the Vortex to sabotage your teammates! Whoever makes it to the Finish Flag first wins!","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip20,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
 
 #Opt out message
 scoreboard players add @a GamesPlayed 0
@@ -71,7 +103,7 @@ kill @e[tag=HandyTip,type=area_effect_cloud]
 scoreboard players reset @e[tag=Selection,scores={ShowTip=900..},type=armor_stand] ShowTip
 
 #Tetris resetting (makes sure all tips are individually given before they're repeated)
-tag @e[tag=Selection,tag=Tip1,tag=Tip2,tag=Tip3,tag=Tip4,tag=Tip5,tag=Tip6,tag=Tip7,tag=Tip8,tag=Tip9,tag=Tip10,tag=Tip11,tag=Tip12,type=armor_stand] add GivenAllTips
+tag @e[tag=Selection,tag=Tip1,tag=Tip2,tag=Tip3,tag=Tip4,tag=Tip5,tag=Tip6,tag=Tip7,tag=Tip8,tag=Tip9,tag=Tip10,tag=Tip11,tag=Tip12,tag=Tip13,tag=Tip14,tag=Tip15,tag=Tip16,tag=Tip17,tag=Tip18,tag=Tip19,tag=Tip20,type=armor_stand] add GivenAllTips
 tag @e[tag=GivenAllTips,type=armor_stand] remove Tip1
 tag @e[tag=GivenAllTips,type=armor_stand] remove Tip2
 tag @e[tag=GivenAllTips,type=armor_stand] remove Tip3
@@ -84,4 +116,12 @@ tag @e[tag=GivenAllTips,type=armor_stand] remove Tip9
 tag @e[tag=GivenAllTips,type=armor_stand] remove Tip10
 tag @e[tag=GivenAllTips,type=armor_stand] remove Tip11
 tag @e[tag=GivenAllTips,type=armor_stand] remove Tip12
+tag @e[tag=GivenAllTips,type=armor_stand] remove Tip13
+tag @e[tag=GivenAllTips,type=armor_stand] remove Tip14
+tag @e[tag=GivenAllTips,type=armor_stand] remove Tip15
+tag @e[tag=GivenAllTips,type=armor_stand] remove Tip16
+tag @e[tag=GivenAllTips,type=armor_stand] remove Tip17
+tag @e[tag=GivenAllTips,type=armor_stand] remove Tip18
+tag @e[tag=GivenAllTips,type=armor_stand] remove Tip19
+tag @e[tag=GivenAllTips,type=armor_stand] remove Tip20
 tag @e[tag=GivenAllTips,type=armor_stand] remove GivenAllTips

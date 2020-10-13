@@ -250,7 +250,12 @@ execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unle
 execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~-1 water run tag @s add wateredInit
 execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~1 water run tag @s add wateredInit
 execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~1 water run tag @s add wateredInit
-execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run fill ~-1 ~2 ~-1 ~1 ~2 ~1 air replace water
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~1 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~1 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~1 ~1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~1 ~1 water run tag @s add wateredInit
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run setblock ~ ~1 ~ sponge
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run setblock ~ ~1 ~ oak_wood[axis=y]
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:block.bamboo_sapling.place block @a ~ ~ ~ 1 0.5
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:block.chorus_flower.grow block @a ~ ~ ~ 1 1
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:entity.player.swim block @a ~ ~ ~ 1 1

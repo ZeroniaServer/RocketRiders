@@ -46,7 +46,7 @@ execute if entity @s[tag=!Explosive] as @e[tag=CanopyIsGone,tag=YellowNova,type=
 execute if entity @s[tag=Explosive] as @e[tag=CanopyIsGone,tag=YellowNova,type=firework_rocket] at @s as @e[tag=BluePlatform,distance=..5,limit=1,sort=nearest,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Rocket\"}",ExplosionRadius:7,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=!Explosive] as @e[tag=CanopyIsGone,tag=BlueNova,type=firework_rocket] at @s as @e[tag=YellowPlatform,distance=..5,limit=1,sort=nearest,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Rocket\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=Explosive] as @e[tag=CanopyIsGone,tag=BlueNova,type=firework_rocket] at @s as @e[tag=YellowPlatform,distance=..5,limit=1,sort=nearest,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Rocket\"}",ExplosionRadius:7,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-kill @e[tag=CanopyIsGone,type=firework_rocket]
+execute as @s[tag=!customNova] run kill @e[tag=CanopyIsGone,type=firework_rocket]
 
 #Explosion/particle effects
 execute as @e[tag=BlueNova,scores={novatimer=1..10},type=firework_rocket] at @s run data merge entity @s {LifeTime:30,tag:{Fireworks:{Explosions:[{Type:4}]}}}

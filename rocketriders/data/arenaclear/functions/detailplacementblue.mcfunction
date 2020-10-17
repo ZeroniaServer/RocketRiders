@@ -54,3 +54,9 @@ execute as @s[scores={MiddleDeco=3}] run fill -14 63 -55 38 63 -52 minecraft:bla
 execute as @s[scores={MiddleDeco=3}] run fill 38 41 -49 -14 41 -49 minecraft:black_stained_glass replace air
 execute as @s[scores={MiddleDeco=3}] run fill 38 57 -51 -14 57 -51 minecraft:black_stained_glass replace air
 execute as @s[scores={MiddleDeco=3}] run fill -14 49 -50 38 49 -50 minecraft:black_stained_glass replace air
+
+#Cannons - Yellow
+execute as @s[scores={TopCorner=3}] run setblock 18 60 -51 structure_block{mode:"LOAD",name:"minecraft:blue_cannon",showboundingbox:0b,posZ:-4}
+execute as @s[scores={TopCorner=3}] run setblock 18 61 -51 redstone_block
+execute as @s[scores={TopCorner=3}] run setblock 2 60 -51 structure_block{mode:"LOAD",name:"minecraft:blue_cannon",showboundingbox:0b,posZ:-4}
+execute as @s[scores={TopCorner=3}] run setblock 2 61 -51 redstone_block

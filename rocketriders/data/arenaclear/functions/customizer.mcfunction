@@ -44,6 +44,8 @@ execute unless entity @s[tag=!settingsLocked,tag=!decosLocked] run data merge bl
 execute as @s[scores={TopCorner=1},tag=!settingsLocked,tag=!decosLocked] run data merge block -58 192 71 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"#0090B8\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection,type=armor_stand] TopCorner 1\"}}",Text2: "{\"text\":\"Platform\",\"color\":\"#00C8FF\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer\"}}"}
 #Spikes
 execute as @s[scores={TopCorner=2},tag=!settingsLocked,tag=!decosLocked] run data merge block -58 192 71 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"#0090B8\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection,type=armor_stand] TopCorner 1\"}}",Text2: "{\"text\":\"Spikes\",\"color\":\"#00C8FF\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer\"}}"}
+#Cannons
+execute as @s[scores={TopCorner=3},tag=!settingsLocked,tag=!decosLocked] run data merge block -58 192 71 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"#0090B8\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection,type=armor_stand] TopCorner 1\"}}",Text2: "{\"text\":\"Cannons\",\"color\":\"#00C8FF\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer\"}}"}
 #None
 execute as @s[scores={TopCorner=0},tag=!settingsLocked,tag=!decosLocked] run data merge block -58 192 71 {Text1: "{\"text\":\"Top Sides Detail:\",\"color\":\"#0090B8\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"scoreboard players add @e[tag=Selection,type=armor_stand] TopCorner 1\"}}",Text2: "{\"text\":\"None\",\"color\":\"#00C8FF\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text4:"{\"text\":\"(Click for next)\",\"color\":\"gray\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer\"}}"}
 #Locked
@@ -89,7 +91,7 @@ execute unless entity @s[tag=!settingsLocked,tag=!portalDecosOff] run data merge
 
 ##RESET DECORATION SCORES
 scoreboard players set @s[scores={TopDeco=4..}] TopDeco 0
-scoreboard players set @s[scores={TopCorner=3..}] TopCorner 0
+scoreboard players set @s[scores={TopCorner=4..}] TopCorner 0
 scoreboard players set @s[scores={MiddleDeco=4..}] MiddleDeco 0
 scoreboard players set @s[scores={BottomDeco=3..}] BottomDeco 0
 scoreboard players set @s[scores={PortalDeco=5..}] PortalDeco 0

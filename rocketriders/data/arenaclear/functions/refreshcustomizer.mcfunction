@@ -10,6 +10,8 @@ fill -55 185 92 -40 206 64 air replace minecraft:orange_stained_glass
 fill -55 185 92 -40 206 64 air replace minecraft:lime_stained_glass
 fill -55 185 92 -40 206 64 air replace minecraft:pink_stained_glass
 fill -40 196 92 -44 185 64 minecraft:white_stained_glass
+fill -42 197 71 -45 199 75 air
+fill -42 197 81 -45 199 85 air
 
 ##Top Decorations
 #New Dawn Arch
@@ -43,6 +45,13 @@ execute as @s[scores={TopCorner=2},tag=!decosLocked] run fill -51 193 68 -51 194
 execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 193 88 structure_block{mode:"LOAD",mirror:"LEFT_RIGHT",name:"minecraft:spike_side_preview",showboundingbox:0b}
 execute as @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 194 88 redstone_block
 execute as @s[scores={TopCorner=2},tag=!decosLocked] run fill -51 193 88 -51 194 88 air
+#Cannons
+execute as @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 72 structure_block{mode:"LOAD",name:"minecraft:cannon_preview",showboundingbox:0b}
+execute as @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 71 redstone_block
+execute as @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 71 air
+execute as @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 82 structure_block{mode:"LOAD",name:"minecraft:cannon_preview",showboundingbox:0b}
+execute as @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 81 redstone_block
+execute as @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 81 air
 
 ##Middle Decorations
 #New Dawn Slimepads

@@ -93,6 +93,7 @@ fill 11 65 -67 13 65 -67 obsidian
 setblock 12 66 -67 obsidian
 
 ##Respawn handling
+execute as @e[tag=YellowSpawnZone] at @s as @e[type=player,team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0
 execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,distance=..6] respawn 0
 execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,distance=..6] respawn 0
 scoreboard players reset @a[team=!Yellow,team=!Blue] respawn

@@ -259,8 +259,8 @@ execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:block.bamboo_sapling.place block @a ~ ~ ~ 1 0.5
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:block.chorus_flower.grow block @a ~ ~ ~ 1 1
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:entity.player.swim block @a ~ ~ ~ 1 1
-execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run particle minecraft:falling_water ~ ~1 ~ 5 -1 5 1 600 force @a
-execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run particle minecraft:happy_villager ~ ~1 ~ 5 -1 5 1 600 force @a
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run particle minecraft:falling_water ~ ~1 ~ 2 -1 2 1 600 force @a
+execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run particle minecraft:happy_villager ~ ~1 ~ 2 -1 2 1 600 force @a
 tag @e[tag=wateredInit,type=area_effect_cloud] add wateredTemp
 scoreboard players remove @e[tag=animated,tag=wateredInit,type=area_effect_cloud] PlatTime 100
 tag @e[tag=animated,tag=wateredInit,type=area_effect_cloud] add watered

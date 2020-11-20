@@ -129,3 +129,7 @@ execute if entity @e[tag=Thunderbolt,tag=SelRRNG,type=area_effect_cloud] run tel
 execute unless entity @e[tag=Selection,tag=!rngAux,tag=!rngWar,type=armor_stand] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- ","color":"red","bold":"false"},{"selector":"@e[type=area_effect_cloud,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":"false"}]
 
 kill @e[tag=RankedRNG,type=area_effect_cloud]
+
+#Enable/disable heavys
+tag @s[tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] add heavyOff
+execute unless entity @s[tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] run tag @s remove heavyOff

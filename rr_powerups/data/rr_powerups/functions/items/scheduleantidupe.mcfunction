@@ -1,0 +1,2 @@
+execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] as @a unless entity @s[team=!Blue,team=!Yellow] run function rr_powerups:items/antidupe
+execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] as @a unless entity @s[team=!Blue,team=!Yellow] run function items:antidupe

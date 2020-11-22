@@ -18,3 +18,6 @@ execute as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run titl
 
 ##Wind Down modifier - subtract two ticks from Item Delay
 scoreboard players remove @s[tag=WindDown,scores={MaxItemTime=22..}] MaxItemTime 2
+
+##Schedule antidupe
+schedule function items:scheduleantidupe 1t append

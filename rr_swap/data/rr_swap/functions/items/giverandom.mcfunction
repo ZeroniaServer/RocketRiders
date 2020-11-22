@@ -12,3 +12,6 @@ execute as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run titl
 
 #wind down
 scoreboard players remove @s[tag=WindDown,scores={MaxItemTime=22..}] MaxItemTime 2
+
+#schedule antidupe
+schedule function items:scheduleantidupe 1t append

@@ -29,9 +29,10 @@ function lobby:parkour/parkour
 execute as @e[tag=Selection,type=armor_stand] run function everytick:cancel_utility
 execute as @e[tag=Selection,type=armor_stand] run function everytick:player_portal
 
-#Antidupe and arrow replacement
+#Player void
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
-execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] run function items:antidupe
+
+#Wrong arrow counts (TODO OVERHAUL)
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:wrongarrows/wrongarrows
 
 #Game ending and arena clearing

@@ -9,9 +9,3 @@ clear @s[scores={HasTrident=2..}] trident 1
 clear @s[scores={HasSlapFish=2..}] cooked_salmon 1
 clear @s[scores={HasTotem=2..}] totem_of_undying 1
 clear @s[scores={HasBeeShield=2..}] honey_bottle 1
-
-scoreboard players remove @s[scores={HasLavaSplash=2..}] HasLavaSplash 1
-scoreboard players remove @s[scores={HasTrident=2..}] HasTrident 1
-scoreboard players remove @s[scores={HasSlapFish=2..}] HasSlapFish 1
-scoreboard players remove @s[scores={HasTotem=2..}] HasTotem 1
-scoreboard players remove @s[scores={HasBeeShield=2..}] HasBeeShield 1

@@ -66,34 +66,3 @@ clear @s[team=Yellow,scores={HasSurprise=4..}] cod_spawn_egg 1
 clear @s[scores={HasNova=2..}] crossbow 1
 clear @s[scores={HasVortex=2..}] egg 1
 clear @s[scores={HasSplash=2..}] splash_potion{Potion:"minecraft:water"} 1
-
-##Removes score appropriately
-scoreboard players remove @s[scores={HasAux=2..}] HasAux 1
-scoreboard players remove @s[scores={HasToma=2..}] HasToma 1
-scoreboard players remove @s[scores={HasBlade=2..}] HasBlade 1
-scoreboard players remove @s[scores={HasWar=2..}] HasWar 1
-scoreboard players remove @s[scores={HasAnt=2..}] HasAnt 1
-scoreboard players remove @s[scores={HasBolt=2..}] HasBolt 1
-scoreboard players remove @s[scores={HasGuard=2..}] HasGuard 1
-scoreboard players remove @s[scores={HasRift=2..}] HasRift 1
-scoreboard players remove @s[scores={HasJug=2..}] HasJug 1
-scoreboard players remove @s[scores={HasShield=2..}] HasShield 1
-execute if entity @e[tag=Selection,type=armor_stand,tag=canopyStack] run clear @s[scores={HasPlat=4..}] ender_pearl 1
-execute if entity @e[tag=Selection,type=armor_stand,tag=canopyStack] run scoreboard players remove @s[scores={HasPlat=4..}] HasPlat 1
-scoreboard players remove @s[scores={HasFireball=2..}] HasFireball 1
-scoreboard players remove @s[scores={HasObshield=2..}] HasObshield 1
-scoreboard players remove @s[scores={HasBullet=2..}] HasBullet 1
-scoreboard players remove @s[scores={HasNull=2..}] HasNull 1
-scoreboard players remove @s[scores={HasHur=2..}] HasHur 1
-scoreboard players remove @s[scores={HasSlash=2..}] HasSlash 1
-scoreboard players remove @s[scores={HasHyper=2..}] HasHyper 1
-scoreboard players remove @s[scores={HasCata=2..}] HasCata 1
-scoreboard players remove @s[scores={HasCitadel=2..}] HasCitadel 1
-scoreboard players remove @s[scores={HasGemi=2..}] HasGemi 1
-scoreboard players remove @s[scores={HasLift=2..}] HasLift 1
-scoreboard players remove @s[scores={HasDuplex=2..}] HasDuplex 1
-scoreboard players remove @s[scores={HasBroad=2..}] HasBroad 1
-scoreboard players remove @s[scores={HasSurprise=2..}] HasSurprise 1
-scoreboard players remove @s[scores={HasNova=2..}] HasAux 1
-scoreboard players remove @s[scores={HasVortex=2..}] HasAux 1
-scoreboard players remove @s[scores={HasSplash=2..}] HasAux 1

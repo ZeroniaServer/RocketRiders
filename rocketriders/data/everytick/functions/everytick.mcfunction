@@ -33,7 +33,6 @@ execute as @e[tag=Selection,type=armor_stand] run function everytick:player_port
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] run function items:antidupe
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:wrongarrows/wrongarrows
-execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run function items:antiantidupe
 
 #Game ending and arena clearing
 execute as @e[tag=Selection,tag=GameEnd,type=armor_stand] run function game:gameend

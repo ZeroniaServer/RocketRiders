@@ -1,4 +1,9 @@
 ##Gives executor a Nullifier
+#Antidupe check
+execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasNull run clear @s phantom_spawn_egg 0
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasNull 0
+
+#Title/giving
 title @s[scores={HasNull=1..},tag=!fullHotbar] actionbar {"text":"Chronullifier already obtained.","color":"aqua"}
 title @s[scores={HasNull=0},tag=!fullHotbar] actionbar {"text":"Chronullifier obtained.","color":"aqua"}
 give @s[team=Yellow,scores={HasNull=0},tag=!fullHotbar] phantom_spawn_egg{display:{Name:'[{"text":"[Normal] ","color":"green","bold":"true"},{"text":"Chronullifier","color":"gold","bold":"true"}]',Lore:['{"text":"Amount of TNT: ","color":"gray"}','{"text":"13","color":"red"}','{"text":" "}','{"text":"Made by:","color":"gray"}','{"text":"Chronos22 & YZEROgame","color":"gray"}','{"text":" ","color":"gray"}','{"text":"The Chronullifier uses a unique","color":"gray"}','{"text":"observer engine with the same","color":"gray"}','{"text":"speed as non-observer engines.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['missile','yellowmissile','YellowNull']}} 1

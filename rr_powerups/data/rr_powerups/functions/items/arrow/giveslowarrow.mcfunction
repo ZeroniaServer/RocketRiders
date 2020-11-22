@@ -1,3 +1,8 @@
+#Antidupe check
+execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasTippedArrows run clear @s tipped_arrow 0
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasTippedArrows 0
+
+#Title/giving
 title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Tipped Arrows already obtained.","color":"light_purple"}
 title @s[scores={HasTippedArrows=..3},tag=!fullHotbar] actionbar {"text":"Slowness Arrows obtained.","color":"light_purple"}
 give @s[scores={HasTippedArrows=0},tag=!fullHotbar,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Slowness Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:2b,Amplifier:1b,Duration:200,ShowParticles:1b}],CustomPotionColor:5596802,HideFlags:63} 4

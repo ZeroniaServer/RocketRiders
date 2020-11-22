@@ -1,9 +1,8 @@
 #leave midgame
 function game:leavemidgame
 
-#general
+#antidupe
 execute as @a unless entity @s[team=!Blue,team=!Yellow] if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] run function rr_powerups:items/antidupe
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run function rr_powerups:items/antiantidupe
 
 #utility functions
 execute if entity @a[scores={DrinkHoney=1..}] run tag @s add runbeeshields

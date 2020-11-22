@@ -1,4 +1,10 @@
 ##Gives executor Arrows
+#Antidupe check
+execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasArrows run clear @s arrow 0
+#Arrows are an exception for modes that limit arrows
+execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_stand] run scoreboard players set @s HasArrows 0
+
+#Title/giving
 title @s[scores={HasArrows=4..},tag=!fullHotbar] actionbar {"text":"Arrows already obtained.","color":"aqua"}
 title @s[scores={HasArrows=..3},tag=!fullHotbar] actionbar {"text":"Arrows obtained.","color":"aqua"}
 #Tries to give enough arrows to refill up to 4

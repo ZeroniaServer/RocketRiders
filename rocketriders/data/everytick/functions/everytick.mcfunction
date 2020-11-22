@@ -33,7 +33,7 @@ execute as @e[tag=Selection,type=armor_stand] run function everytick:player_port
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
 
 #Arrow pickup
-execute as @e[tag=Selection,type=armor_stand] run function everytick:arrow_pickup
+execute as @e[tag=Selection,type=armor_stand] if entity @e[type=arrow] run function everytick:arrow_pickup
 
 #Game ending and arena clearing
 execute as @e[tag=Selection,tag=GameEnd,type=armor_stand] run function game:gameend

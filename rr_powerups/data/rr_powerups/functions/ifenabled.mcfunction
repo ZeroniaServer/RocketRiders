@@ -10,7 +10,7 @@ execute if entity @s[tag=GameStarted] run function rr_powerups:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_powerups:game/gameend
 function everytick:saberfix
 function everytick:no_drop
-function rr_powerups:everytick/tipped_arrow_pickup
+execute if entity @e[type=arrow] run function rr_powerups:everytick/tipped_arrow_pickup
 
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] run function rr_powerups:arenaclear/baseplacement

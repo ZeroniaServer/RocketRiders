@@ -1,0 +1,11 @@
+scoreboard objectives add arrowtime dummy
+scoreboard objectives remove allArrow
+scoreboard objectives remove allBlindArrow
+scoreboard objectives remove allLeviArrow
+scoreboard objectives remove allSlowArrow
+scoreboard objectives remove allWitherArrow
+scoreboard objectives remove wrongArrow
+scoreboard objectives remove wrongBlindArrow
+scoreboard objectives remove wrongLeviArrow
+scoreboard objectives remove wrongSlowArrow
+scoreboard objectives remove wrongWitherArrow

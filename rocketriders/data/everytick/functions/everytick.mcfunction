@@ -32,8 +32,8 @@ execute as @e[tag=Selection,type=armor_stand] run function everytick:player_port
 #Player void
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
 
-#Wrong arrow counts (TODO OVERHAUL)
-execute as @a unless entity @s[team=!Yellow,team=!Blue] run function items:wrongarrows/wrongarrows
+#Arrow pickup
+execute as @e[tag=Selection,type=armor_stand] run function everytick:arrow_pickup
 
 #Game ending and arena clearing
 execute as @e[tag=Selection,tag=GameEnd,type=armor_stand] run function game:gameend

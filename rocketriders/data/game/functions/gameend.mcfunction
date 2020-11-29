@@ -55,8 +55,8 @@ execute as @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDe
 execute as @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..80}] run tag @s add SuddenDeath
 
 ##Post-tie phase and reset
-execute as @s[scores={endtimer=81}] as @a run function everytick:score_reset
 scoreboard players set @s[scores={endtimer=81}] gametime 0
+execute as @s[scores={endtimer=82}] as @a run function everytick:score_reset
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Blue]
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Yellow]
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] GamesPlayed 1

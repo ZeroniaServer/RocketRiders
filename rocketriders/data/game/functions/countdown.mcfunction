@@ -112,6 +112,7 @@ execute as @s[tag=GameStarted] run gamerule drowningDamage true
 execute as @s[tag=GameStarted] run gamerule fireDamage true
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
 execute as @s[tag=GameStarted,tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run kill @s
+execute as @s[tag=GameStarted,tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players remove @s deaths 1
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @s[tag=GameStarted] run scoreboard players operation @s origBCount = @s bluesCount
 execute as @s[tag=GameStarted] run scoreboard players operation @s origYCount = @s yellowsCount

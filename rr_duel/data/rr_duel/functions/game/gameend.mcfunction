@@ -1,5 +1,6 @@
 clear @a[team=Blue] #custom:clear
 clear @a[team=Yellow] #custom:clear
+execute as @s[scores={endtimer=1}] run function game:endstats
 tag @s add duelLast
 
 tag @a[team=Blue] remove InRanked

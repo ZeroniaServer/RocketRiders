@@ -1,5 +1,6 @@
 clear @a[team=Blue] #custom:clear
 clear @a[team=Yellow] #custom:clear
+execute as @s[scores={endtimer=1}] run function rr_ctf:game/endstats
 tag @a remove FlipMissile
 tag @a remove CarryFlag
 tag @a remove CarryFY1
@@ -12,4 +13,3 @@ execute as @s[scores={endtimer=569..}] run scoreboard objectives setdisplay side
 execute as @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
 execute as @s[scores={endtimer=569..}] run scoreboard players reset * FlagDisp
 tag @s add ctfLast
-say TESTING

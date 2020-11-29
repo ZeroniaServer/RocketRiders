@@ -1,0 +1,24 @@
+##Counts how many missiles the player has spawned
+
+scoreboard players operation @s MissilesSpawned += @s AntsSpawned
+scoreboard players operation @s MissilesSpawned += @s AuxSpawned
+scoreboard players operation @s MissilesSpawned += @s BladeSpawned
+scoreboard players operation @s MissilesSpawned += @s BSurpriseSpawned
+scoreboard players operation @s MissilesSpawned += @s BroadSpawned
+scoreboard players operation @s MissilesSpawned += @s BulletSpawned
+scoreboard players operation @s MissilesSpawned += @s CataSpawned
+scoreboard players operation @s MissilesSpawned += @s CitaSpawned
+scoreboard players operation @s MissilesSpawned += @s DuplexSpawned
+scoreboard players operation @s MissilesSpawned += @s GemiSpawned
+scoreboard players operation @s MissilesSpawned += @s GuardSpawned
+scoreboard players operation @s MissilesSpawned += @s HurSpawned
+scoreboard players operation @s MissilesSpawned += @s HyperSpawned
+scoreboard players operation @s MissilesSpawned += @s JugbSpawned
+scoreboard players operation @s MissilesSpawned += @s LifterSpawned
+scoreboard players operation @s MissilesSpawned += @s NullSpawned
+scoreboard players operation @s MissilesSpawned += @s RifterSpawned
+scoreboard players operation @s MissilesSpawned += @s SlashSpawned
+scoreboard players operation @s MissilesSpawned += @s ThunSpawned
+scoreboard players operation @s MissilesSpawned += @s TomaSpawned
+scoreboard players operation @s MissilesSpawned += @s WarSpawned
+scoreboard players operation @s MissilesSpawned += @s YSurpriseSpawned

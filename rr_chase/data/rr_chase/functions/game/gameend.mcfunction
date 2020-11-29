@@ -1,4 +1,5 @@
 clear @a[team=Blue] #custom:clear
+execute as @s[scores={endtimer=1}] run function rr_chase:game/endstats
 tag @s add chaseLast
 scoreboard players reset * FlagScore
 bossbar set rr_chase:lead players none

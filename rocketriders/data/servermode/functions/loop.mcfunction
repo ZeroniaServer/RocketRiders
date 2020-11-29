@@ -22,19 +22,19 @@ execute as @e[tag=Selection,scores={VoteServerMode=600..}] if score @e[tag=Set4,
 execute as @e[tag=Selection,scores={VoteServerMode=600..}] if score @e[tag=Set1,limit=1] VoteServerMode = @e[tag=Set2,limit=1] VoteServerMode if score @e[tag=Set1,limit=1] VoteServerMode = @e[tag=Set3,limit=1] VoteServerMode if score @e[tag=Set1,limit=1] VoteServerMode = @e[tag=Set4,limit=1] VoteServerMode run tag @e[tag=Set1] add WonVote
 
 # NORMAL MODE SELECTED
-execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=NormalMode] run function rr_normal:enable
+execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=NormalMode] store result score @s SetGamemode run scoreboard players get @e[tag=rr_normal,limit=1] gamemodeID
 
 # POWERUPS MODE SELECTED
-execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=PowerupsMode] run function rr_powerups:enable
+execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=PowerupsMode] store result score @s SetGamemode run scoreboard players get @e[tag=rr_powerups,limit=1] gamemodeID
 
 # SWAP MODE SELECTED
-execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=SwapMode] run function rr_swap:enable
+execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=SwapMode] store result score @s SetGamemode run scoreboard players get @e[tag=rr_swap,limit=1] gamemodeID
 
 # CTF MODE SELECTED
-execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=CTFMode] run function rr_ctf:enable
+execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=CTFMode] store result score @s SetGamemode run scoreboard players get @e[tag=rr_ctf,limit=1] gamemodeID
 
 # CHASE MODE SELECTED
-execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=ChaseMode] run function rr_chase:enable
+execute as @e[tag=Selection,scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=ChaseMode] store result score @s SetGamemode run scoreboard players get @e[tag=rr_chase,limit=1] gamemodeID
 
 
 

@@ -12,3 +12,4 @@ execute as @s[scores={endtimer=569..}] run scoreboard objectives setdisplay side
 execute as @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
 execute as @s[scores={endtimer=569..}] run scoreboard players reset * FlagDisp
 tag @s add ctfLast
+say TESTING

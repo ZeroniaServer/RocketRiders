@@ -63,6 +63,10 @@ scoreboard players set @e[tag=Vortex,scores={vortexBoom=1},type=area_effect_clou
 execute as @e[tag=Vortex,type=area_effect_cloud] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add origin
 execute as @e[type=arrow] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
 execute as @e[type=tnt] at @s run tag @e[tag=Vortex,distance=..5,limit=1,type=area_effect_cloud] add origin
+execute as @e[type=firework_rocket,tag=BlueNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
+execute as @e[type=armor_stand,tag=bluenovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
+execute as @e[type=firework_rocket,tag=YellowNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
+execute as @e[type=armor_stand,tag=yellownovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
 
 ##Kill stray item display entities
 execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @e[tag=VortexYellow,distance=..2,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
@@ -91,4 +95,6 @@ execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=!VortexFeat
 execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:3,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:5,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @e[scores={vortexBoom=10},type=area_effect_cloud] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
+execute as @e[scores={vortexBoom=10},type=area_effect_cloud] at @s run kill @e[type=firework_rocket,tag=BlueNova,distance=..2,limit=1,sort=nearest]
+execute as @e[scores={vortexBoom=10},type=area_effect_cloud] at @s run kill @e[type=firework_rocket,tag=YellowNova,distance=..2,limit=1,sort=nearest]
 execute as @e[scores={vortexBoom=10},type=area_effect_cloud] at @s run kill @s

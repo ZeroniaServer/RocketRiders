@@ -1,4 +1,5 @@
 scoreboard players add @e[tag=Selection] VoteServerMode 1
+scoreboard players add @e[tag=ServerMode] VoteServerMode 0
 
 execute as @a[scores={VoteServerMode=1}] at @s run scoreboard players add @e[tag=ServerMode,tag=Set1] VoteServerMode 1
 execute as @a[scores={VoteServerMode=2}] at @s run scoreboard players add @e[tag=ServerMode,tag=Set2] VoteServerMode 1

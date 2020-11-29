@@ -1,9 +1,6 @@
 # Add tag
 tag @e[tag=Selection] add ServerModeVoting
 
-# Remove voted tag for everyone
-tag @a remove ServerModeVoted
-
 # Kill potentially old entities
 kill @e[tag=ServerMode]
 

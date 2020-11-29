@@ -4,10 +4,10 @@
 ####################################
 
 #SERVER MODE
-execute as @e[tag=Selection,tag=ServerModeVoting] run function servermode:loop
-scoreboard players reset @e[tag=Selection,tag=!ServerModeVoting] VoteServerMode
-execute unless entity @e[tag=Selection,tag=ServerModeVoting] run scoreboard players reset @a VoteServerMode
-execute unless entity @e[tag=Selection,tag=ServerModeVoting] run kill @e[tag=ServerMode]
+execute as @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run function servermode:loop
+scoreboard players reset @e[tag=Selection,tag=!ServerModeVoting,type=armor_stand] VoteServerMode
+execute unless entity @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run scoreboard players reset @a VoteServerMode
+execute unless entity @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run kill @e[tag=ServerMode]
 
 #Handling new/lobby players and miscellaneous stuff (prioritized in tick order)
 function everytick:new_player

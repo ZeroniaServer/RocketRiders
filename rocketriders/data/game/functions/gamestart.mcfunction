@@ -16,7 +16,9 @@ execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBoss
 execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] unless entity @a[team=Blue] unless entity @a[team=Yellow] run bossbar set rr:startgame value 0
 execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] unless entity @a[team=Blue] unless entity @a[team=Yellow] run bossbar set rr:startgame color white
 execute as @s[tag=!EditedSettings,scores={endtimer=..0}] run bossbar set rr:startgame color purple
-execute as @s[tag=!EditedSettings,scores={endtimer=..0}] run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
+execute as @s[tag=!EditedSettings,scores={endtimer=..0}] if entity @e[tag=Selection,scores={servermode=0}] run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
+execute as @s[tag=!EditedSettings,scores={endtimer=..0}] if entity @e[tag=Selection,scores={servermode=1}] run bossbar set rr:startgame name ["",{"text":"Please vote for game settings by clicking in chat!","color":"dark_purple"}]
+execute as @s[tag=!EditedSettings,scores={endtimer=..0}] if entity @e[tag=Selection,scores={servermode=2}] run bossbar set rr:startgame name ["",{"text":"Server is set to Duels 1v1 only!","color":"dark_purple"}]
 execute as @s[scores={endtimer=1..}] run bossbar set rr:startgame color red
 execute as @s[scores={endtimer=1..}] run bossbar set rr:startgame name ["",{"text":"A game is currently ending.","color":"red"}]
 execute as @s[tag=!EditedSettings] run bossbar set rr:startgame value 30

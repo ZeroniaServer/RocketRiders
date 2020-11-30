@@ -6,6 +6,7 @@ execute if entity @s[tag=GlobalDefaults] run tag @e[tag=rr_normal,type=armor_sta
 
 data modify entity @s Tags set from storage rocketriders:storage Tags
 data modify storage rocketriders:storage Tags set value []
+tag @s remove GameEnd
 
 scoreboard players operation @s TopDeco = $TORAGE TopDeco
 scoreboard players operation @s TopCorner = $TORAGE TopCorner

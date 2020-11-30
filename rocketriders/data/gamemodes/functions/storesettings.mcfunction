@@ -1,6 +1,7 @@
 ##Utility function for storing previous settings
 ##ONLY RUN WHILE CUSTOMIZER IS OPEN!!!
 
+tag @s remove GameEnd
 data modify storage rocketriders:storage Tags set from entity @s Tags
 
 scoreboard players operation $TORAGE TopDeco = @s TopDeco

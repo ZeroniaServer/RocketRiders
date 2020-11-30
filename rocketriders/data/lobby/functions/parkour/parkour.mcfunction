@@ -41,56 +41,62 @@ tag @a[team=Lobby,tag=earnCheckpoint] remove earnCheckpoint
 
 ##End parkour
 execute as @a[team=Lobby,tag=inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourEnd,type=area_effect_cloud,limit=1,distance=..1.2] run tag @s add finishedParkour
-execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=..9,parkourMins=..9}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":".","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
-execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=10..,parkourMins=..9}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":".","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
-execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=..9,parkourMins=10..}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":".","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
-execute as @a[team=Lobby,tag=finishedParkour,scores={parkourSecs=10..,parkourMins=10..}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":".","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
+execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=..2}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourEnd,type=area_effect_cloud,limit=1,distance=..1.2] run tag @s add cheatedParkour
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={parkourSecs=..9,parkourMins=..9}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":".","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={parkourSecs=10..,parkourMins=..9}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"text":"0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":".","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={parkourSecs=..9,parkourMins=10..}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":0","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":".","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={parkourSecs=10..,parkourMins=10..}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":".","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
 
 #Visual/Sound effects
-execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
-execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.1
-execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:ui.toast.challenge_complete player @s ~ ~ ~ 1 1.3
-execute as @a[team=Lobby,tag=finishedParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.1
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:ui.toast.challenge_complete player @s ~ ~ ~ 1 1.3
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
 #Calculate final time
-scoreboard players set $60 finalParkourTime 60
-scoreboard players set $100 finalParkourTime 100
-scoreboard players set $10 finalParkourTime 10
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourMins *= $60 finalParkourTime
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourMins *= $100 finalParkourTime
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourSecs *= $100 finalParkourTime
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourDeci *= $10 finalParkourTime
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime = @s parkourDeci2
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime += @s parkourDeci
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime += @s parkourSecs
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s finalParkourTime += @s parkourMins
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourMins /= $60 finalParkourTime
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourMins /= $100 finalParkourTime
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourSecs /= $100 finalParkourTime
-execute as @a[team=Lobby,tag=finishedParkour] run scoreboard players operation @s parkourDeci /= $10 finalParkourTime
+execute as @s[scores={servermode=0}] run scoreboard players set $60 finalParkourTime 60
+execute as @s[scores={servermode=0}] run scoreboard players set $100 finalParkourTime 100
+execute as @s[scores={servermode=0}] run scoreboard players set $10 finalParkourTime 10
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $60 finalParkourTime
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $100 finalParkourTime
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs *= $100 finalParkourTime
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci *= $10 finalParkourTime
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime = @s parkourDeci2
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourDeci
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourSecs
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourMins
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $60 finalParkourTime
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $100 finalParkourTime
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs /= $100 finalParkourTime
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci /= $10 finalParkourTime
 
 #First time completion
-execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourTime = @s finalParkourTime
-execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourMins = @s parkourMins
-execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourSecs = @s parkourSecs
-execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourDeci = @s parkourDeci
-execute as @a[team=Lobby,tag=finishedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourDeci2 = @s parkourDeci2
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourTime = @s finalParkourTime
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourMins = @s parkourMins
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourSecs = @s parkourSecs
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourDeci = @s parkourDeci
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourDeci2 = @s parkourDeci2
 
 #Repeat completion
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run tellraw @s [{"text":"That's a new personal best time!","color":"green","italic":"true"}]
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourMins = @s parkourMins
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourSecs = @s parkourSecs
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourDeci = @s parkourDeci
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourDeci2 = @s parkourDeci2
-execute as @a[team=Lobby,tag=finishedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run tellraw @s [{"text":"That's a new personal best time!","color":"green","italic":"true"}]
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourMins = @s parkourMins
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourSecs = @s parkourSecs
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourDeci = @s parkourDeci
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourDeci2 = @s parkourDeci2
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
 
 #Store in leaderboard
-execute as @a[team=Lobby,tag=finishedParkour] if score @e[tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:parkour/updatelb
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] if score @e[tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:parkour/updatelb
+
+#Notify cheaters
+execute as @a[team=Lobby,tag=cheatedParkour] run tellraw @s ["",{"text":"You skipped a checkpoint, so your Parkour run was invalidated.","color":"red"}]
+execute as @a[team=Lobby,tag=cheatedParkour] at @s run playsound minecraft:block.beacon.deactivate player @s ~ ~ ~ 1 1
 
 #Remove tags + give advancement
-execute as @a[team=Lobby,tag=finishedParkour] run advancement grant @s only tutorial:endparkour
-execute as @a[team=Lobby,tag=finishedParkour] run tag @s add firstParkour
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run advancement grant @s only tutorial:endparkour
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run tag @s add firstParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove inParkour
+execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove cheatedParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour
 
 ##Return to checkpoint
@@ -188,6 +194,7 @@ effect clear @a[team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (non-duel mode)
 execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby,tag=inParkour] armor.feet iron_boots{display:{Name:"{\"text\":\"Parkour Boots\",\"color\":\"dark_green\",\"bold\":\"true\",\"italic\":\"false\"}"},Enchantments:[{id:"minecraft:curse_of_binding",lvl:1}],HideFlags:7}
+execute as @s[tag=noYZELO] run replaceitem entity @a[team=Lobby,tag=inParkour] armor.feet iron_boots{display:{Name:"{\"text\":\"Parkour Boots\",\"color\":\"dark_green\",\"bold\":\"true\",\"italic\":\"false\"}"},Enchantments:[{id:"minecraft:curse_of_binding",lvl:1}],HideFlags:7}
 
 ##Safety features
 #Only lobby players in Parkour mode

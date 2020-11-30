@@ -7,3 +7,5 @@ execute as @a run function achievements:reset
 execute as @e[tag=Selection,type=armor_stand] store result score @s SetGamemode run scoreboard players get @e[tag=rr_duel,limit=1] gamemodeID
 clear @a
 schedule function game:forcestop 2t append
+kill @e[tag=ParkourLB]
+fill -29 196 22 -33 196 22 air

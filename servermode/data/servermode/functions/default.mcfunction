@@ -6,3 +6,4 @@ fill -57 198 84 -70 198 72 air replace blackstone
 execute as @a run function achievements:roots
 clear @a
 function game:forcestop
+function lobby:parkour/parkoursetup

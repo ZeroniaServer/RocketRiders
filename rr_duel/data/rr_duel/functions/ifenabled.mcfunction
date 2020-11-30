@@ -32,9 +32,9 @@ execute as @s[tag=FakeGameEnd] run function rr_duel:game/fakegameend
 #forfeit prize/loss
 execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Blue] add ForfeitWon
 execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Yellow] add ForfeitWon
-execute as @s[scores={ForfeitTimeout=1200..}] as @a[tag=ForfeitWon] run function rr_duel:forfeit/giveprize
+execute as @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] as @a[tag=ForfeitWon] run function rr_duel:forfeit/giveprize
 scoreboard players reset @a[tag=!InRanked] ForfeitWin
 scoreboard players reset @a[tag=!InRanked] ForfeitLoss
 tag @s[scores={ForfeitTimeout=1200..}] remove TimeOut
 scoreboard players reset @s[scores={ForfeitTimeout=1200..}] ForfeitTimeout
-execute if entity @s[tag=!GameStarted] as @a[team=!Blue,team=!Yellow,tag=InRanked] run function rr_duel:forfeit/giveloss
+execute if entity @s[tag=!GameStarted,tag=!noYZELO] as @a[team=!Blue,team=!Yellow,tag=InRanked] run function rr_duel:forfeit/giveloss

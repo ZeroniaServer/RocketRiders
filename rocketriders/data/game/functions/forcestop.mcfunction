@@ -19,4 +19,8 @@ tag @e[tag=yellowjoinpad,type=area_effect_cloud] add CancelJoin
 tag @e[tag=bluejoinpad,type=area_effect_cloud] add CancelJoin
 tag @e[tag=specjoinpad,type=area_effect_cloud] add CancelJoin
 bossbar set rr:startgame max 30
+tag @a remove deathchamp
+tag @a remove flagschamp
+tag @a remove killschamp
+tag @a remove spawnchamp
 scoreboard players set @e[tag=Selection,tag=GameEnd,type=armor_stand] endtimer 568

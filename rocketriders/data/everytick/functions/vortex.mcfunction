@@ -81,7 +81,7 @@ execute as @e[tag=SummonFeathered,type=chicken] at @s run tp @s ~ ~-250 ~
 kill @e[tag=SummonFeathered,type=chicken]
 execute as @e[tag=VortexFeathered,type=area_effect_cloud] at @s run particle dust 1 1 1 1 ~ ~ ~ 0.5 0.5 0 0 10 force @a
 execute as @e[tag=VortexItemFeathered,type=armor_stand] at @s run tp @s ~ ~ ~ ~15 ~
-execute as @e[tag=VortexFeathered,type=area_effect_cloud] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/huh
+execute as @s[scores={servermode=0}] as @e[tag=VortexFeathered,type=area_effect_cloud] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/huh
 execute as @e[tag=VortexFeathered,type=area_effect_cloud] at @s if entity @a[team=!Spectator,distance=..3] run tag @s add origin
 execute as @e[tag=VortexItemFeathered,type=armor_stand] at @s unless entity @e[tag=VortexFeathered,distance=..2,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
 

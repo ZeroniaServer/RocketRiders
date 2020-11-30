@@ -11,7 +11,10 @@ function everytick:pogger_calculation
 tag @a[scores={CmdData=0}] add deathchamp
 
 #Announces who has the most of each score
-execute unless entity @a[tag=!killschamp,tag=!deathchamp] run tellraw @a ["",{"text":"Match Statistics:","color":"dark_green","bold":"true"}]
+scoreboard players add $playercount CmdData 0
+execute if entity @a[tag=killschamp] run scoreboard players add $playercount CmdData 1
+execute if entity @a[tag=deathchamp] run scoreboard players add $playercount CmdData 1
+execute if score $playercount CmdData matches 1.. run tellraw @a ["",{"text":"Match Statistics:","color":"dark_green","bold":"true"}]
 
 execute store result score $playercount CmdData if entity @a[tag=killschamp]
 execute if score $playercount CmdData matches 1 if entity @a[tag=killschamp,scores={kills=2..}] run tellraw @a ["",{"selector":"@a[tag=killschamp]","color":"none","bold":false},{"text":" is that guy that murders people: ","color":"green"},{"score":{"name":"@a[tag=killschamp]","objective":"kills"},"color":"dark_green"},{"text":" kills!","color":"green"}]

@@ -20,8 +20,8 @@
         "background": "minecraft:textures/block/honey_block_top.png"
     },
     "criteria": {
-        "location": {
-            "trigger": "minecraft:location"
+        "impossible": {
+            "trigger": "minecraft:impossible"
         }
     }
 }

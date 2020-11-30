@@ -19,7 +19,7 @@ execute as @a[gamemode=!spectator] unless entity @s[team=!Yellow,team=!Blue] if 
 scoreboard players add @s gametime 1
 
 ##General everytick commands
-function achievements:gain
+execute as @s[scores={servermode=0}] run function achievements:gain
 function everytick:clear_spawnblocks
 function everytick:no_fall
 function modifiers:modifiers

@@ -3,7 +3,7 @@
 ############################################################
 
 ##Achievements
-execute unless entity @s[tag=noAchievements] run function achievements:aftergameyellow
+execute as @s[tag=!noAchievements,scores={servermode=0}] run function achievements:aftergameyellow
 
 ##Record tags
 tag @s add GameEnd

@@ -1,17 +1,16 @@
 scoreboard players add @s VoteServerMode 1
-scoreboard players add @e[tag=ServerMode,tag=Set] VoteServerMode 0
+scoreboard players add @e[tag=ServerMode,tag=Set,type=area_effect_cloud] VoteServerMode 0
 
-execute as @a[scores={VoteServerMode=1}] at @s run scoreboard players add @e[tag=ServerMode,tag=Set1,type=area_effect_cloud] VoteServerMode 1
-execute as @a[scores={VoteServerMode=2}] at @s run scoreboard players add @e[tag=ServerMode,tag=Set2,type=area_effect_cloud] VoteServerMode 1
-execute as @a[scores={VoteServerMode=3}] at @s run scoreboard players add @e[tag=ServerMode,tag=Set3,type=area_effect_cloud] VoteServerMode 1
-execute as @a[scores={VoteServerMode=4}] at @s run scoreboard players add @e[tag=ServerMode,tag=Set4,type=area_effect_cloud] VoteServerMode 1
+execute as @a[scores={VoteServerMode=1}] run scoreboard players add @e[tag=ServerMode,tag=Set1,type=area_effect_cloud] VoteServerMode 1
+execute as @a[scores={VoteServerMode=2}] run scoreboard players add @e[tag=ServerMode,tag=Set2,type=area_effect_cloud] VoteServerMode 1
+execute as @a[scores={VoteServerMode=3}] run scoreboard players add @e[tag=ServerMode,tag=Set3,type=area_effect_cloud] VoteServerMode 1
+execute as @a[scores={VoteServerMode=4}] run scoreboard players add @e[tag=ServerMode,tag=Set4,type=area_effect_cloud] VoteServerMode 1
 
-execute as @a[scores={VoteServerMode=5..}] at @s run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
-execute as @a[scores={VoteServerMode=5..}] at @s run scoreboard players enable @s VoteServerMode
-execute as @a[scores={VoteServerMode=5..}] at @s run scoreboard players set @s VoteServerMode 0
-execute as @a[scores={VoteServerMode=..-1}] at @s run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
-execute as @a[scores={VoteServerMode=..-1}] at @s run scoreboard players enable @s VoteServerMode
-execute as @a[scores={VoteServerMode=..-1}] at @s run scoreboard players set @s VoteServerMode 0
+execute as @a[scores={VoteServerMode=5..}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
+execute as @a[scores={VoteServerMode=5..}] run scoreboard players set @s VoteServerMode 0
+execute as @a[scores={VoteServerMode=..-1}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
+execute as @a[scores={VoteServerMode=..-1}] run scoreboard players set @s VoteServerMode 0
+execute as @a[scores={VoteServerMode=0}] run scoreboard players enable @s VoteServerMode 
 
 execute as @a[scores={VoteServerMode=1..4}] run tellraw @s {"text":"You've successfully voted for game settings! Please wait for the voting time to end.","color":"green"}
 scoreboard players reset @a[scores={VoteServerMode=1..4}] VoteServerMode

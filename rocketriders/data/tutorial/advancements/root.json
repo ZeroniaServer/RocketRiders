@@ -19,8 +19,8 @@
         "background": "minecraft:textures/block/netherite_block.png"
     },
     "criteria": {
-        "Location": {
-            "trigger": "minecraft:location"
+        "impossible": {
+            "trigger": "minecraft:impossible"
         }
     },
     "rewards": {

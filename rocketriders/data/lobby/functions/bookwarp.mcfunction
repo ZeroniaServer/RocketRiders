@@ -9,7 +9,7 @@ execute as @a[team=!Lobby] run trigger LobbyWarp set -1
 
 #Teleports
 execute as @a[scores={LobbyWarp=1}] at @s run tp @s -43 211 78 90 0
-execute as @a[scores={LobbyWarp=2}] at @s run tp @s -64 202 78 90 0
+execute as @s[scores={servermode=0}] as @a[scores={LobbyWarp=2}] at @s run tp @s -64 202 78 90 0
 execute as @a[scores={LobbyWarp=3}] at @s run tp @s -78 204 64 135 0
 execute as @a[scores={LobbyWarp=4}] at @s run tp @s -78 204 92 45 0
 execute as @a[scores={LobbyWarp=5}] at @s run tp @s -80 201 78 90 0
@@ -24,6 +24,9 @@ execute as @a[scores={LobbyWarp=1..}] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 
 #Cancel parkour
 execute as @a[scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used a Lobby Warp, so your Parkour run was canceled.","color":"red"}]
 execute as @a[scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inParkour
+
+#Message about mod room (server mode)
+execute as @e[tag=Selection,type=armor_stand,scores={servermode=1..}] as @a[scores={LobbyWarp=2}] run tellraw @s [{"text":"You cannot access this area.","color":"red"}]
 
 #Reset score
 scoreboard players reset @a[scores={LobbyWarp=1..}] LobbyWarp

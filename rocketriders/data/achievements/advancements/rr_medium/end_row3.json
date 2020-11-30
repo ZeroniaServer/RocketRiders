@@ -18,8 +18,8 @@
         "hidden": false
     },
     "criteria": {
-        "location": {
-            "trigger": "minecraft:location"
+        "impossible": {
+            "trigger": "minecraft:impossible"
         }
     },
     "parent": "achievements:rr_challenges/beehere"

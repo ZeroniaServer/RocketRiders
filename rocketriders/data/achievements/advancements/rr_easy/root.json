@@ -20,8 +20,8 @@
         "background": "minecraft:textures/block/slime_block.png"
     },
     "criteria": {
-        "location": {
-            "trigger": "minecraft:location"
+        "impossible": {
+            "trigger": "minecraft:impossible"
         }
     }
 }

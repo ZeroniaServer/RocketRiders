@@ -41,5 +41,9 @@ execute as @s[tag=Hardcore] run gamerule showDeathMessages true
 execute as @a[scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]
 execute as @a[scores={LeaveGame=1..},tag=inParkour] run tag @s remove inParkour
 
+#Handle achievements with servermode
+execute as @s[scores={servermode=0}] as @a[scores={LeaveGame=1..}] run function achievements:roots
+execute as @s[scores={servermode=1..}] as @a[scores={LeaveGame=1..}] run function achievements:reset
+
 #Reset
 scoreboard players reset @a[scores={LeaveGame=1..}] LeaveGame

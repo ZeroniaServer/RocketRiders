@@ -10,7 +10,7 @@ execute as @a[scores={VoteServerMode=5..}] run tellraw @s {"text":"Invalid vote!
 execute as @a[scores={VoteServerMode=5..}] run scoreboard players set @s VoteServerMode 0
 execute as @a[scores={VoteServerMode=..-1}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
 execute as @a[scores={VoteServerMode=..-1}] run scoreboard players set @s VoteServerMode 0
-execute as @a[scores={VoteServerMode=0}] run scoreboard players enable @s VoteServerMode 
+execute as @a[scores={VoteServerMode=0}] run scoreboard players enable @s VoteServerMode
 
 execute as @a[scores={VoteServerMode=1..4}] run tellraw @s {"text":"You've successfully voted for game settings! Please wait for the voting time to end.","color":"green"}
 scoreboard players reset @a[scores={VoteServerMode=1..4}] VoteServerMode
@@ -86,29 +86,4 @@ execute as @s[scores={VoteServerMode=560}] as @a at @s run playsound block.note_
 execute as @s[scores={VoteServerMode=580}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"1","bold":true,"color":"light_purple"},{"text":" second.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=580}] run bossbar set rr:startgame value 1
 execute as @s[scores={VoteServerMode=580}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.9
-
-# if statement spaghetti for finding out who won the vote
-execute as @s[scores={VoteServerMode=600..}] if score @e[tag=Set1,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set2,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set1,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set3,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set1,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set4,limit=1,type=area_effect_cloud] VoteServerMode run tag @e[tag=Set1,type=area_effect_cloud] add WonVote
-execute as @s[scores={VoteServerMode=600..}] if score @e[tag=Set2,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set1,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set2,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set3,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set2,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set4,limit=1,type=area_effect_cloud] VoteServerMode run tag @e[tag=Set2,type=area_effect_cloud] add WonVote
-execute as @s[scores={VoteServerMode=600..}] if score @e[tag=Set3,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set1,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set3,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set2,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set3,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set4,limit=1,type=area_effect_cloud] VoteServerMode run tag @e[tag=Set3,type=area_effect_cloud] add WonVote
-execute as @s[scores={VoteServerMode=600..}] if score @e[tag=Set4,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set2,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set4,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set3,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set4,limit=1,type=area_effect_cloud] VoteServerMode > @e[tag=Set1,limit=1,type=area_effect_cloud] VoteServerMode run tag @e[tag=Set4,type=area_effect_cloud] add WonVote
-execute as @s[scores={VoteServerMode=600..}] if score @e[tag=Set1,limit=1,type=area_effect_cloud] VoteServerMode = @e[tag=Set2,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set1,limit=1,type=area_effect_cloud] VoteServerMode = @e[tag=Set3,limit=1,type=area_effect_cloud] VoteServerMode if score @e[tag=Set1,limit=1,type=area_effect_cloud] VoteServerMode = @e[tag=Set4,limit=1,type=area_effect_cloud] VoteServerMode run tag @e[tag=Set1,type=area_effect_cloud] add WonVote
-
-# NORMAL MODE SELECTED
-execute as @s[scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=NormalMode,type=area_effect_cloud] store result score @s SetGamemode run scoreboard players get @e[tag=rr_normal,limit=1] gamemodeID
-
-# POWERUPS MODE SELECTED
-execute as @s[scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=PowerupsMode,type=area_effect_cloud] store result score @s SetGamemode run scoreboard players get @e[tag=rr_powerups,limit=1] gamemodeID
-
-# SWAP MODE SELECTED
-execute as @s[scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=SwapMode,type=area_effect_cloud] store result score @s SetGamemode run scoreboard players get @e[tag=rr_swap,limit=1] gamemodeID
-
-# CTF MODE SELECTED
-execute as @s[scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=CTFMode,type=area_effect_cloud] store result score @s SetGamemode run scoreboard players get @e[tag=rr_ctf,limit=1] gamemodeID
-
-# CHASE MODE SELECTED
-execute as @s[scores={VoteServerMode=600..}] if entity @e[tag=WonVote,tag=ChaseMode,type=area_effect_cloud] store result score @s SetGamemode run scoreboard players get @e[tag=rr_chase,limit=1] gamemodeID
-
-# Global
-tag @s[scores={VoteServerMode=600..}] remove ServerModeVoting
-execute as @s[scores={VoteServerMode=600..}] run function arenaclear:areaclear
+execute as @s[scores={VoteServerMode=600..}] run function servermode:finishvote

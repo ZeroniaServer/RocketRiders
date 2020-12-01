@@ -5,10 +5,10 @@ tag @e[tag=Selection] add ServerModeVoting
 kill @e[tag=ServerMode]
 
 # Summon AEC's that will store all set info.
-summon area_effect_cloud -64 191 78 {Tags:["ServerMode","Set1","Set"],Duration:2000000000}
-summon area_effect_cloud -64 191 78 {Tags:["ServerMode","Set2","Set"],Duration:2000000000}
-summon area_effect_cloud -64 191 78 {Tags:["ServerMode","Set3","Set"],Duration:2000000000}
-summon area_effect_cloud -64 191 78 {Tags:["ServerMode","Set4","Set"],Duration:2000000000}
+summon area_effect_cloud -64 191 78 {Tags:["ServerMode","Set1","Set"],Duration:2000000000,CustomName:'{"text":"1","color":"red","bold":"true"}'}
+summon area_effect_cloud -64 191 78 {Tags:["ServerMode","Set2","Set"],Duration:2000000000,CustomName:'{"text":"2","color":"red","bold":"true"}'}
+summon area_effect_cloud -64 191 78 {Tags:["ServerMode","Set3","Set"],Duration:2000000000,CustomName:'{"text":"3","color":"red","bold":"true"}'}
+summon area_effect_cloud -64 191 78 {Tags:["ServerMode","Set4","Set"],Duration:2000000000,CustomName:'{"text":"4","color":"red","bold":"true"}'}
 
 # Summon AEC's for game modes, assign 4 of them to the 4 set entities.
 summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","GameMode","NormalMode"],CustomName:"\"Normal Mode\""}
@@ -57,11 +57,8 @@ tag @e[tag=ServerMode,tag=Maps,limit=1,sort=random,tag=!ServermodeSet1,tag=!Serv
 tag @e[tag=ServerMode,tag=Maps,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet3
 tag @e[tag=ServerMode,tag=Maps,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet4
 
-
-
-
 # Tellraws
-tellraw @a ["",{"text":"Rocket","bold":true,"color":"blue"},{"text":"Riders","bold":true,"color":"gold"},{"text":" - ","color":"dark_gray"},{"text":"Servermode","color":"green","bold":"true"},{"text":"\n"},{"text":"Click to vote for game modes and settings:","color":"green"}]
+tellraw @a ["",{"text":"Rocket","bold":true,"color":"blue"},{"text":"Riders","bold":true,"color":"gold"},{"text":" - ","color":"dark_gray"},{"text":"Server Mode","color":"green","bold":"true"},{"text":"\n"},{"text":"Click to vote for game modes and settings:","color":"green"}]
 tellraw @a ["",{"text":"1","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 1"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 1"}},{"selector":"@e[tag=ServermodeSet1]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 1"}},{"text":"\n"}]
 tellraw @a ["",{"text":"2","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"selector":"@e[tag=ServermodeSet2]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"text":"\n"}]
 tellraw @a ["",{"text":"3","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"selector":"@e[tag=ServermodeSet3]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"text":"\n"}]

@@ -1,6 +1,6 @@
 # finding out what won the vote
 execute as @e[tag=ServerMode,tag=Set,type=area_effect_cloud] store result score @s FinalVote run scoreboard players get @s VoteServerMode
-function servermode:pogger_calculation
+execute if entity @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=1..}] run function servermode:pogger_calculation
 execute store result score $winners VoteServerMode if entity @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=0}]
 
 # majority winner

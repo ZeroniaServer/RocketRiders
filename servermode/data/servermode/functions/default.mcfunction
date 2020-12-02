@@ -7,3 +7,5 @@ execute as @a run function achievements:roots
 clear @a
 function game:forcestop
 function lobby:parkour/parkoursetup
+execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer
+execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshsigns

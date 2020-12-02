@@ -90,3 +90,7 @@ execute as @s[scores={servermode=2}] as @a[team=Lobby] unless entity @s[nbt={Inv
 #Lobby player book anti-dupe
 execute as @a[team=Lobby] store result score @s HasNavBook run clear @s written_book 0
 clear @a[team=Lobby,scores={HasNavBook=2..}] written_book
+
+#Servermode teleport out of modification room
+execute as @e[tag=Selection,type=armor_stand,scores={servermode=1..}] as @a at @s if predicate tutorial:in_modification run tellraw @s ["",{"text":"You shouldn't be here!","color":"red"}]
+execute as @e[tag=Selection,type=armor_stand,scores={servermode=1..}] as @a at @s if predicate tutorial:in_modification run function custom:leave

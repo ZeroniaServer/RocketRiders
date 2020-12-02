@@ -51,7 +51,7 @@ summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Map
 summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","DefaultMap"],CustomName:"\"New Dawn map preset (default)\""}
 summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","SpikesMap"],CustomName:"\"Spikes map preset\""}
 summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","RandomMap"],CustomName:"\"Randomized map\""}
-summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","RandomMap"],CustomName:"\"Randomized map\""}
+summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","EmptyMap"],CustomName:"\"No decorations\""}
 tag @e[tag=ServerMode,tag=Maps,tag=DefaultMap,limit=1] add ServermodeSet1
 tag @e[tag=ServerMode,tag=Maps,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet2
 tag @e[tag=ServerMode,tag=Maps,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet3

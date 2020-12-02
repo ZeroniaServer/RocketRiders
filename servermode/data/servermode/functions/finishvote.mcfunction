@@ -34,9 +34,8 @@ execute if entity @e[tag=WonVote,tag=Set2,type=area_effect_cloud] as @e[tag=Serv
 execute if entity @e[tag=WonVote,tag=Set3,type=area_effect_cloud] as @e[tag=ServermodeSet3,type=area_effect_cloud] run function servermode:selectmap
 execute if entity @e[tag=WonVote,tag=Set4,type=area_effect_cloud] as @e[tag=ServermodeSet4,type=area_effect_cloud] run function servermode:selectmap
 
+# TODO SELECT ITEM SETS
+
 # Global
 tag @s remove ServerModeVoting
 function arenaclear:areaclear
-
-# TODO SELECT ITEM SETS
-execute unless entity @e[tag=WonVote,tag=SwapMode,type=area_effect_cloud] as @e[tag=Selection] run schedule function servermode:forced_settings 2t

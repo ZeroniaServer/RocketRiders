@@ -49,7 +49,6 @@ tag @s remove doFireballPortals
 ##        Thanks to Llewv for the suggestion!        ##
 #######################################################
 
-execute if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"Active Items: ","color":"gray","bold":"false"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"With Server Mode enabled, a set of 12 items is randomly generated for each game.","color":"white"}]}}]
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
 
@@ -95,7 +94,7 @@ execute if entity @e[tag=Hurricane,tag=SelRRNG,type=area_effect_cloud] run tag @
 execute if entity @e[tag=Thunderbolt,tag=SelRRNG,type=area_effect_cloud] run tag @s add rngThun
 execute if entity @e[tag=Thunderbolt,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngHur
 
-### 5/12 non-lightning missiles
+### 5/10 non-lightning missiles
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["ServerRNG","TomaTwo","RMisRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Auxiliary","color":"red"}',Tags:["ServerRNG","Auxiliary","RMisRNG","RHeavyRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Blade","color":"green"}',Tags:["ServerRNG","Blade","RMisRNG"]}
@@ -105,11 +104,7 @@ summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Elder Guardian","color":"gr
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Lifter","color":"green"}',Tags:["ServerRNG","Lifter","RMisRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Chronullifier","color":"green"}',Tags:["ServerRNG","Nullifier","RMisRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Citadel","color":"green"}',Tags:["ServerRNG","Citadel","RMisRNG"]}
-summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"A.N.T","color":"green"}',Tags:["ServerRNG","Ant","RMisRNG"]}
-summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Gemini","color":"green"}',Tags:["ServerRNG","Gemini","RMisRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Warhead","color":"red"}',Tags:["ServerRNG","Warhead","RMisRNG","RHeavyRNG"]}
-summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Juggerbuster","color":"red"}',Tags:["ServerRNG","Juggerbuster","RMisRNG","RHeavyRNG"]}
-summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Rifter","color":"red"}',Tags:["ServerRNG","Rifter","RMisRNG","RHeavyRNG"]}
 
 tag @e[tag=RMisRNG,tag=!SelRRNG,limit=5,sort=random,type=area_effect_cloud] add SelRRNG
 
@@ -123,8 +118,6 @@ execute if entity @e[tag=SelRRNG,tag=Lifter,type=area_effect_cloud] run tag @s a
 execute if entity @e[tag=SelRRNG,tag=Nullifier,type=area_effect_cloud] run tag @s add rngNull
 execute if entity @e[tag=SelRRNG,tag=Citadel,type=area_effect_cloud] run tag @s add rngCitadel
 execute if entity @e[tag=SelRRNG,tag=Warhead,type=area_effect_cloud] run tag @s add rngWar
-execute if entity @e[tag=SelRRNG,tag=Warhead,type=area_effect_cloud] run tag @s add rngRift
-execute if entity @e[tag=SelRRNG,tag=Warhead,type=area_effect_cloud] run tag @s add rngJbuster
 
 #Announce normals
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- ","color":"green","bold":"false"},{"selector":"@e[type=area_effect_cloud,tag=SelRRNG,tag=RMisRNG,tag=!RHeavyRNG]","color":"green","bold":"false"}]
@@ -134,10 +127,10 @@ execute if entity @e[tag=Hurricane,tag=SelRRNG,type=area_effect_cloud] run tellr
 execute if entity @e[tag=Thunderbolt,tag=SelRRNG,type=area_effect_cloud] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Thunderbolt","color":"gold","bold":"false"}]
 
 #Announce heavys (if any)
-execute unless entity @e[tag=Selection,tag=!rngAux,tag=!rngWar,type=armor_stand] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- ","color":"red","bold":"false"},{"selector":"@e[type=area_effect_cloud,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":"false"}]
-
+tag @s[tag=!rngWar,tag=!rngAux] remove rngHeavy
+execute unless entity @e[tag=Selection,tag=!rngHeavy,type=armor_stand] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- ","color":"red","bold":"false"},{"selector":"@e[type=area_effect_cloud,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":"false"}]
+tag @s[tag=!rngWar,tag=!rngAux] add heavyOff
+execute unless entity @s[tag=!rngWar,tag=!rngAux] run tag @s remove heavyOff
 kill @e[tag=ServerRNG,type=area_effect_cloud]
 
-#Enable/disable heavys
-tag @s[tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] add heavyOff
-execute unless entity @s[tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] run tag @s remove heavyOff
+tellraw @a [{"text":""}]

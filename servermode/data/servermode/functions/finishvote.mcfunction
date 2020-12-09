@@ -39,4 +39,4 @@ tag @s remove ServerModeVoting
 function arenaclear:areaclear
 
 # Select forced item sets and match settings
-execute unless entity @e[tag=WonVote,tag=SwapMode,type=area_effect_cloud] as @e[tag=Selection] run schedule function servermode:forced_settings 2t
+execute unless entity @e[tag=WonVote,tag=SwapMode,type=area_effect_cloud] run schedule function servermode:init_forcedsettings 2t

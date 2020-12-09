@@ -28,3 +28,9 @@ execute if score @s largerTeamCount = @s smallerTeamCount run scoreboard players
 execute unless score @s largerTeamCount = @s smallerTeamCount if score @s smallerTeamCount = @s yellowsCount run scoreboard players set @s smallerTeam -1
 execute unless score @s largerTeamCount = @s smallerTeamCount if score @s smallerTeamCount = @s bluesCount run scoreboard players set @s smallerTeam 1
 execute if score @s largerTeamCount = @s smallerTeamCount run scoreboard players set @s smallerTeam 0
+
+##Checking whether teams are full
+execute as @s[tag=!BlueCapOverride] run tag @s remove BlueFull
+execute as @s[tag=!BlueCapOverride] if score @s bluesCount >= @s PlayerCap run tag @s add BlueFull
+execute as @s[tag=!YellowCapOverride] run tag @s remove YellowFull
+execute as @s[tag=!YellowCapOverride] if score @s yellowsCount >= @s PlayerCap run tag @s add YellowFull

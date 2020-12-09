@@ -25,10 +25,11 @@ execute as @s[tag=!EditedSettings] run bossbar set rr:startgame max 30
 execute as @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a
 
 ##Blue Join Pad
-execute as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
+execute as @s[tag=!noTeamBalance] as @s[scores={largerTeam=-1..0},tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
+execute as @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @e[tag=bluejoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
-execute as @s[scores={largerTeam=-1..0}] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
+execute as @s[scores={largerTeam=-1..0},tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
 team join Blue @a[tag=JoinBlue]
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinBlue]
@@ -48,21 +49,28 @@ execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinBlue] run scoreboard p
 execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinBlue] add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @s[tag=!customSpawns] as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
-#achievement keybind tutorial
+#Achievement keybind tutorial
 execute as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":"true","color":"blue"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"blue"}]
-#tag @a remove JoinBlue
 
+#Imbalanced/full team control
 execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
 execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":"true"},{"text":" instead.","color":"yellow","bold":false}]
 execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
 execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad,type=area_effect_cloud] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
+execute as @s[tag=BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Full!","color":"red","bold":true}]
+execute as @s[tag=BlueFull] as @e[tag=bluejoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
+execute as @s[tag=BlueFull,tag=!YellowFull,tag=EditedSettings] as @e[tag=bluejoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":"true"},{"text":" instead.","color":"yellow","bold":false}]
+execute as @s[tag=BlueFull,tag=YellowFull,tag=EditedSettings] as @e[tag=bluejoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":"false"}]
+execute as @s[tag=BlueFull] as @e[tag=bluejoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
+execute as @s[tag=BlueFull] as @e[tag=bluejoinpad,type=area_effect_cloud] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
 execute as @e[tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinBlue
 
-#Joinpad Yellow
-execute as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
+##Yellow Join Pad
+execute as @s[tag=!noTeamBalance] as @s[scores={largerTeam=0..1},tag=!YellowFull] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
+execute as @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @e[tag=yellowjoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
-execute as @s[scores={largerTeam=0..1}] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
+execute as @s[scores={largerTeam=0..1},tag=!YellowFull] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
 team join Yellow @a[tag=JoinYellow]
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinYellow]
@@ -82,17 +90,23 @@ execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinYellow] run scoreboard
 execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinYellow] add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @s[tag=!customSpawns] as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
-#achievement keybind tutorial
+#Achievement keybind tutorial
 execute as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":"true","color":"gold"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"gold"}]
-#tag @a remove JoinYellow
 
+#Imbalanced/full team control
 execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
 execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":"true"},{"text":" instead.","color":"aqua","bold":false}]
 execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
 execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
+execute as @s[tag=YellowFull] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Full!","color":"red","bold":true}]
+execute as @s[tag=YellowFull,tag=EditedSettings] as @e[tag=yellowjoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
+execute as @s[tag=YellowFull,tag=!BlueFull,tag=EditedSettings] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":"true"},{"text":" instead.","color":"aqua","bold":false}]
+execute as @s[tag=YellowFull,tag=BlueFull,tag=EditedSettings] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":"false"}]
+execute as @s[tag=YellowFull] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
+execute as @s[tag=YellowFull] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
 execute as @e[tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinYellow
 
-#Leave Pad
+##Leave Pad
 execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
 execute as @a[tag=LeaveTeams,team=Yellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
 tp @a[tag=LeaveTeams,team=Yellow] -78 204 92 45 0
@@ -104,7 +118,7 @@ execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function gam
 execute as @a[tag=LeaveTeams] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 tag @a remove LeaveTeams
 
-#Joinpad + Leavepad Spectator
+##Joinpad + Leavepad Spectator
 execute as @e[tag=specjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:gray_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[tag=specjoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @e[tag=specjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[team=!Spectator,distance=..1] add JoinSpec
@@ -133,5 +147,5 @@ execute as @a[tag=LeaveSpectator] run tellraw @a ["",{"selector":"@s"},{"text":"
 team join Lobby @a[tag=LeaveSpectator]
 tag @a remove LeaveSpectator
 
-#Countdown
+##Countdown
 execute as @s[tag=Countdown] run function game:countdown

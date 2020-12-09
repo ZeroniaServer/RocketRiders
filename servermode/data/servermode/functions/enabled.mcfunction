@@ -6,4 +6,5 @@ fill -57 198 84 -70 198 72 blackstone replace air
 execute as @a run function achievements:reset
 clear @a
 kill @e[tag=ParkourLB]
+execute as @e[tag=Selection,type=armor_stand] run function lobby:credits/stop
 fill -29 196 22 -33 196 22 air

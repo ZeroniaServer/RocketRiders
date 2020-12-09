@@ -8,4 +8,5 @@ execute as @e[tag=Selection,type=armor_stand] store result score @s SetGamemode 
 clear @a
 schedule function game:forcestop 2t append
 kill @e[tag=ParkourLB]
+function lobby:credits/stop
 fill -29 196 22 -33 196 22 air

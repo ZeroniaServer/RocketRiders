@@ -18,6 +18,9 @@ execute as @a[gamemode=!spectator] unless entity @s[team=!Yellow,team=!Blue] if 
 ##Game time
 scoreboard players add @s gametime 1
 
+##Enable fall damage (considers modifiers)
+execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=4}] run gamerule fallDamage true
+
 ##General everytick commands
 function achievements:gain
 function everytick:clear_spawnblocks

@@ -106,8 +106,7 @@ execute as @s[tag=GameStarted,tag=!GameEnd] run tag @a remove CalculateLoss
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
 execute as @s[tag=GameStarted] run scoreboard players set @a[team=Yellow] jumps 0
 execute as @s[tag=GameStarted] run scoreboard players set @a[team=Blue] jumps 0
-#Enabling damage gamerules (considers modifiers)
-execute as @s[tag=GameStarted,tag=!NoFall] run gamerule fallDamage true
+#Enabling damage gamerules
 execute as @s[tag=GameStarted] run gamerule drowningDamage true
 execute as @s[tag=GameStarted] run gamerule fireDamage true
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false

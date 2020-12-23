@@ -107,10 +107,10 @@ execute as @e[tag=YellowHyper,tag=!UnableMissile,type=area_effect_cloud] at @s p
 execute as @e[tag=YellowHyper,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~-13 run fill ~ ~ ~ ~2 ~2 ~8 air replace #custom:portalblocks
 
 #Bullet
-execute as @e[tag=BlueBull,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~14 ~ 175 ~ filtered #custom:portalblocks force
-execute as @e[tag=BlueBull,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~14 air replace #custom:portalblocks
-execute as @e[tag=YellowBull,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~-18 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~14 ~ 175 ~ filtered #custom:portalblocks force
-execute as @e[tag=YellowBull,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~-18 run fill ~ ~ ~ ~2 ~2 ~14 air replace #custom:portalblocks
+execute as @e[tag=BlueBull,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~12 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=BlueBull,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~12 air replace #custom:portalblocks
+execute as @e[tag=YellowBull,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~-16 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~12 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowBull,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~-16 run fill ~ ~ ~ ~2 ~2 ~12 air replace #custom:portalblocks
 
 #Duplex
 execute as @e[tag=BlueDuplex,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~17 ~ 175 ~ filtered #custom:portalblocks force

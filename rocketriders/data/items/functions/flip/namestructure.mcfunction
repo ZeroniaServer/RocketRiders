@@ -69,8 +69,8 @@ execute if entity @s[tag=BlueHyper] run data merge block ~ ~ ~ {name:"hypersonic
 execute if entity @s[tag=YellowHyper] run data merge block ~ ~ ~ {name:"hypersonic_blue",posX:2,posZ:8}
 
 #Bullet
-execute if entity @s[tag=BlueBull] run data merge block ~ ~ ~ {name:"bullet_yellow",posX:2,posZ:14}
-execute if entity @s[tag=YellowBull] run data merge block ~ ~ ~ {name:"bullet_blue",posX:2,posZ:14}
+execute if entity @s[tag=BlueBull] run data merge block ~ ~ ~ {name:"bullet_yellow",posX:2,posZ:12}
+execute if entity @s[tag=YellowBull] run data merge block ~ ~ ~ {name:"bullet_blue",posX:2,posZ:12}
 
 #Duplex (ignores entities for TNT minecarts)
 execute if entity @s[tag=BlueDuplex] run data merge block ~ ~ ~ {name:"duplex_yellow",ignoreEntities:0b,posX:2,posZ:17}

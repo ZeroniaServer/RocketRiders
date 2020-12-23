@@ -123,7 +123,7 @@ execute as @e[tag=YellowHyper,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-
 
 #Bullet
 execute as @e[tag=BlueBull,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~4
-execute as @e[tag=YellowBull,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-18
+execute as @e[tag=YellowBull,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-16
 
 #Duplex (+ extra entity)
 execute as @e[tag=BlueDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[duplexExtraBlue],Duration:2000000000}

@@ -3,6 +3,9 @@
 ## during any game of Rocket Riders ##
 ######################################
 
+##Stop games if empty (toggle)
+execute as @s[tag=stopIfEmpty,scores={bluesCount=0,yellowsCount=0}] run function game:forcestop
+
 ##Actionbar delay (necessary for certain action bar messages to override others)
 execute if entity @a[tag=DelayActionbar] run scoreboard players add @a[tag=DelayActionbar] actionbardelay 1
 execute if entity @a[scores={actionbardelay=50..}] run tag @a[tag=DelayActionbar,scores={actionbardelay=50..}] remove DelayActionbar

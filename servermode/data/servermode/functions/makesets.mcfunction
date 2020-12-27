@@ -47,21 +47,21 @@ execute as @e[tag=ServermodeSet3,tag=CTFMode] run tag @e[tag=Set3] add CTFMode
 execute as @e[tag=ServermodeSet4,tag=CTFMode] run tag @e[tag=Set4] add CTFMode
 
 # Summon AEC's for base decos, assign 4 of them to the 4 set entities.
-summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","DefaultMap"],CustomName:"\"New Dawn map preset (default)\""}
-summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","DefaultMap"],CustomName:"\"New Dawn map preset (default)\""}
-summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","SpikesMap"],CustomName:"\"Spikes map preset\""}
+summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","DefaultMap"],CustomName:"\"New Dawn map\""}
+summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","DefaultMap"],CustomName:"\"New Dawn map\""}
+summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","SpikesMap"],CustomName:"\"Spikes map\""}
 summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","RandomMap"],CustomName:"\"Randomized map\""}
-summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","EmptyMap"],CustomName:"\"No decorations\""}
+summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Maps","EmptyMap"],CustomName:"\"Empty map\""}
 tag @e[tag=ServerMode,tag=Maps,tag=DefaultMap,limit=1] add ServermodeSet1
 tag @e[tag=ServerMode,tag=Maps,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet2
 tag @e[tag=ServerMode,tag=Maps,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet3
 tag @e[tag=ServerMode,tag=Maps,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet4
 
 # Tellraws
-tellraw @a ["",{"text":"Rocket","bold":true,"color":"blue"},{"text":"Riders","bold":true,"color":"gold"},{"text":" - ","color":"dark_gray"},{"text":"Server Mode","color":"green","bold":"true"},{"text":"\n"},{"text":"Click to vote for gamemodes and maps:","color":"green"}]
-tellraw @a ["",{"text":"1","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 1"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 1"}},{"selector":"@e[tag=ServermodeSet1]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 1"}},{"text":"\n"}]
-tellraw @a ["",{"text":"2","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"selector":"@e[tag=ServermodeSet2]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"text":"\n"}]
-tellraw @a ["",{"text":"3","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"selector":"@e[tag=ServermodeSet3]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"text":"\n"}]
-tellraw @a ["",{"text":"4","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"selector":"@e[tag=ServermodeSet4]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}}]
+tellraw @a ["",{"text":"Rocket ","bold":true,"color":"blue"},{"text":"Riders","bold":true,"color":"gold"},{"text":" - ","color":"dark_gray"},{"text":"Server Mode:","color":"green","bold":"true"},{"text":"\n"},{"text":"Click below to vote for gamemodes and maps:","color":"dark_green"}]
+tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" "},{"text":"1","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 1"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 1"}},{"selector":"@e[tag=ServermodeSet1]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 1"}},{"text":"\n|","bold":true,"color":"dark_gray"}]
+tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" "},{"text":"2","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"selector":"@e[tag=ServermodeSet2]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"text":"\n|","bold":true,"color":"dark_gray"}]
+tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" "},{"text":"3","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"selector":"@e[tag=ServermodeSet3]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"text":"\n|","bold":true,"color":"dark_gray"}]
+tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" "},{"text":"4","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"selector":"@e[tag=ServermodeSet4]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"text":"\n"}]
 
 scoreboard players enable @a VoteServerMode

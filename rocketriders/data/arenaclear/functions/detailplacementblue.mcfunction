@@ -30,10 +30,10 @@ execute as @s[scores={TopDeco=2}] run setblock 23 65 -62 redstone_block
 execute as @s[scores={TopDeco=3}] run setblock -2 64 -66 structure_block{mode:"LOAD",name:"blue_spiketop"}
 execute as @s[scores={TopDeco=3}] run setblock -2 65 -66 redstone_block
 execute as @s[scores={TopDeco=3}] run fill -2 65 -66 -2 64 -66 air
-execute as @s[scores={TopCorner=2}] run setblock -7 56 -53 structure_block{mode:"LOAD",name:"minecraft:blue_spikeside",showboundingbox:0b}
+execute as @s[scores={TopCorner=2}] run setblock -7 56 -53 structure_block{mode:"LOAD",name:"minecraft:blue_spikeside"}
 execute as @s[scores={TopCorner=2}] run setblock -7 57 -53 redstone_block
 execute as @s[scores={TopCorner=2}] run fill -7 56 -53 -7 57 -53 blue_stained_glass
-execute as @s[scores={TopCorner=2}] run setblock 31 56 -53 structure_block{mode:"LOAD",mirror:"FRONT_BACK",name:"minecraft:blue_spikeside",showboundingbox:0b}
+execute as @s[scores={TopCorner=2}] run setblock 31 56 -53 structure_block{mode:"LOAD",mirror:"FRONT_BACK",name:"minecraft:blue_spikeside"}
 execute as @s[scores={TopCorner=2}] run setblock 31 57 -53 redstone_block
 execute as @s[scores={TopCorner=2}] run fill 31 56 -53 31 57 -53 blue_stained_glass
 execute as @s[scores={MiddleDeco=2}] run setblock 7 50 -51 structure_block{mode:"LOAD",name:"blue_spikemid_right"}
@@ -55,8 +55,10 @@ execute as @s[scores={MiddleDeco=3}] run fill 38 41 -49 -14 41 -49 minecraft:bla
 execute as @s[scores={MiddleDeco=3}] run fill 38 57 -51 -14 57 -51 minecraft:black_stained_glass replace air
 execute as @s[scores={MiddleDeco=3}] run fill -14 49 -50 38 49 -50 minecraft:black_stained_glass replace air
 
-#Cannons - Yellow
-execute as @s[scores={TopCorner=3}] run setblock 18 60 -51 structure_block{mode:"LOAD",name:"minecraft:blue_cannon",showboundingbox:0b,posZ:-4}
+#Cannons - Blue
+execute as @s[scores={TopCorner=3}] run setblock 18 60 -51 structure_block{mode:"LOAD",name:"minecraft:blue_cannon",posZ:-4}
 execute as @s[scores={TopCorner=3}] run setblock 18 61 -51 redstone_block
-execute as @s[scores={TopCorner=3}] run setblock 2 60 -51 structure_block{mode:"LOAD",name:"minecraft:blue_cannon",showboundingbox:0b,posZ:-4}
+execute as @s[scores={TopCorner=3}] run setblock 2 60 -51 structure_block{mode:"LOAD",name:"minecraft:blue_cannon",posZ:-4}
 execute as @s[scores={TopCorner=3}] run setblock 2 61 -51 redstone_block
+execute as @s[scores={BottomDeco=3}] run setblock 8 39 -55 structure_block{mode:"LOAD",name:"minecraft:blue_cannon_bottom"}
+execute as @s[scores={BottomDeco=3}] run setblock 8 40 -55 redstone_block

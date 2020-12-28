@@ -84,3 +84,7 @@ execute as @s[scores={BottomDeco=1},tag=!decosLocked] run setblock -49 186 75 ai
 execute as @s[scores={BottomDeco=2},tag=!decosLocked] run setblock -53 185 76 structure_block{mode:"LOAD",name:"minecraft:spike_bottom_preview",showboundingbox:0b}
 execute as @s[scores={BottomDeco=2},tag=!decosLocked] run setblock -53 186 76 redstone_block
 execute as @s[scores={BottomDeco=2},tag=!decosLocked] run setblock -53 185 76 air
+#Cannon
+execute as @s[scores={BottomDeco=3},tag=!decosLocked] run setblock -49 187 75 structure_block{mode:"LOAD",name:"minecraft:bottomcannon_preview",showboundingbox:0b}
+execute as @s[scores={BottomDeco=3},tag=!decosLocked] run setblock -49 188 75 redstone_block
+execute as @s[scores={BottomDeco=3},tag=!decosLocked] run setblock -49 187 75 air

@@ -26,48 +26,48 @@ tp @e[tag=TrekCredits,type=armor_stand] -51 211 82 90 0
 tp @e[tag=TypCredits,type=armor_stand] -51 211 74 90 0
 
 #Reset position - first set
-tp @s[tag=RubixCredits,type=armor_stand] -51 211 73 90 0
-tp @s[tag=KurCredits,type=armor_stand] -51 211 72 90 0
-tp @s[tag=CarsCredits,type=armor_stand] -51 211 71 90 0
-tp @s[tag=MaartCredits,type=armor_stand] -51 211 70 90 0
-tp @s[tag=DrakanCredits,type=armor_stand] -51 211 69 90 0
-tp @s[tag=DarkCredits,type=armor_stand] -51 211 68 90 0
-tp @s[tag=AusCredits,type=armor_stand] -51 211 67 90 0
-tp @s[tag=AlexCredits,type=armor_stand] -51 211 66 90 0
-tp @s[tag=EonCredits,type=armor_stand] -51 211 65 90 0
-tp @s[tag=JohnCredits,type=armor_stand] -51 211 64 90 0
-tp @s[tag=SwagCredits,type=armor_stand] -51 211 63 90 0
-tp @s[tag=AdamCredits,type=armor_stand] -51 211 62 90 0
-tp @s[tag=ToulCredits,type=armor_stand] -51 211 83 90 0
-tp @s[tag=ProzanCredits,type=armor_stand] -51 211 84 90 0
-tp @s[tag=CubeCredits,type=armor_stand] -51 211 85 90 0
-tp @s[tag=LemonCredits,type=armor_stand] -51 211 86 90 0
-tp @s[tag=LogicCredits,type=armor_stand] -51 211 87 90 0
-tp @s[tag=SamCredits,type=armor_stand] -51 211 88 90 0
-tp @s[tag=FuriousCredits,type=armor_stand] -51 211 89 90 0
-tp @s[tag=PinguCredits,type=armor_stand] -51 211 90 90 0
-tp @s[tag=TopazCredits,type=armor_stand] -51 211 91 90 0
-tp @s[tag=HarpCredits,type=armor_stand] -51 211 92 90 0
-tp @s[tag=KapaCredits,type=armor_stand] -51 211 93 90 0
-tp @s[tag=VicousCredits,type=armor_stand] -51 211 94 90 0
-tp @s[tag=SirsCredits,type=armor_stand] -52 211 61 90 0
-tp @s[tag=IndigoCredits,type=armor_stand] -52 211 60 90 0
-tp @s[tag=BeardedCredits,type=armor_stand] -52 211 59 90 0
-tp @s[tag=SammyCredits,type=armor_stand] -52 211 58 90 0
-tp @s[tag=YlvaCredits,type=armor_stand] -52 211 57 90 0
-tp @s[tag=SkytesCredits,type=armor_stand] -52 211 56 90 0
-tp @s[tag=StoneCredits,type=armor_stand] -52 211 55 90 0
-tp @s[tag=DevonCredits,type=armor_stand] -52 211 54 90 0
-tp @s[tag=RoboCredits,type=armor_stand] -52 211 53 90 0
-tp @s[tag=BlueSkyCredits,type=armor_stand] -52 211 52 90 0
-tp @s[tag=GroundCredits,type=armor_stand] -52 211 95 90 0
-tp @s[tag=FunnyCredits,type=armor_stand] -52 211 96 90 0
-tp @s[tag=MosesCredits,type=armor_stand] -52 211 97 90 0
-tp @s[tag=ZoruaCredits,type=armor_stand] -52 211 98 90 0
-tp @s[tag=CagCredits,type=armor_stand] -52 211 99 90 0
-tp @s[tag=LlewCredits,type=armor_stand] -52 211 100 90 0
-tp @s[tag=UnWinCredits,type=armor_stand] -52 211 101 90 0
-tp @s[tag=CalverinCredits,type=armor_stand] -52 211 102 90 0
+tp @e[tag=RubixCredits,type=armor_stand] -51 211 73 90 0
+tp @e[tag=KurCredits,type=armor_stand] -51 211 72 90 0
+tp @e[tag=CarsCredits,type=armor_stand] -51 211 71 90 0
+tp @e[tag=MaartCredits,type=armor_stand] -51 211 70 90 0
+tp @e[tag=DrakanCredits,type=armor_stand] -51 211 69 90 0
+tp @e[tag=DarkCredits,type=armor_stand] -51 211 68 90 0
+tp @e[tag=AusCredits,type=armor_stand] -51 211 67 90 0
+tp @e[tag=AlexCredits,type=armor_stand] -51 211 66 90 0
+tp @e[tag=EonCredits,type=armor_stand] -51 211 65 90 0
+tp @e[tag=JohnCredits,type=armor_stand] -51 211 64 90 0
+tp @e[tag=SwagCredits,type=armor_stand] -51 211 63 90 0
+tp @e[tag=AdamCredits,type=armor_stand] -51 211 62 90 0
+tp @e[tag=ToulCredits,type=armor_stand] -51 211 83 90 0
+tp @e[tag=ProzanCredits,type=armor_stand] -51 211 84 90 0
+tp @e[tag=CubeCredits,type=armor_stand] -51 211 85 90 0
+tp @e[tag=LemonCredits,type=armor_stand] -51 211 86 90 0
+tp @e[tag=LogicCredits,type=armor_stand] -51 211 87 90 0
+tp @e[tag=SamCredits,type=armor_stand] -51 211 88 90 0
+tp @e[tag=FuriousCredits,type=armor_stand] -51 211 89 90 0
+tp @e[tag=PinguCredits,type=armor_stand] -51 211 90 90 0
+tp @e[tag=TopazCredits,type=armor_stand] -51 211 91 90 0
+tp @e[tag=HarpCredits,type=armor_stand] -51 211 92 90 0
+tp @e[tag=KapaCredits,type=armor_stand] -51 211 93 90 0
+tp @e[tag=VicousCredits,type=armor_stand] -51 211 94 90 0
+tp @e[tag=SirsCredits,type=armor_stand] -52 211 61 90 0
+tp @e[tag=IndigoCredits,type=armor_stand] -52 211 60 90 0
+tp @e[tag=BeardedCredits,type=armor_stand] -52 211 59 90 0
+tp @e[tag=SammyCredits,type=armor_stand] -52 211 58 90 0
+tp @e[tag=YlvaCredits,type=armor_stand] -52 211 57 90 0
+tp @e[tag=SkytesCredits,type=armor_stand] -52 211 56 90 0
+tp @e[tag=StoneCredits,type=armor_stand] -52 211 55 90 0
+tp @e[tag=DevonCredits,type=armor_stand] -52 211 54 90 0
+tp @e[tag=RoboCredits,type=armor_stand] -52 211 53 90 0
+tp @e[tag=BlueSkyCredits,type=armor_stand] -52 211 52 90 0
+tp @e[tag=GroundCredits,type=armor_stand] -52 211 95 90 0
+tp @e[tag=FunnyCredits,type=armor_stand] -52 211 96 90 0
+tp @e[tag=MosesCredits,type=armor_stand] -52 211 97 90 0
+tp @e[tag=ZoruaCredits,type=armor_stand] -52 211 98 90 0
+tp @e[tag=CagCredits,type=armor_stand] -52 211 99 90 0
+tp @e[tag=LlewCredits,type=armor_stand] -52 211 100 90 0
+tp @e[tag=UnWinCredits,type=armor_stand] -52 211 101 90 0
+tp @e[tag=CalverinCredits,type=armor_stand] -52 211 102 90 0
 
 #Reset position - second set
 tp @e[tag=KaisCredits,type=armor_stand] -51 211 73 90 0
@@ -112,3 +112,6 @@ tp @e[tag=EnatorCredits,type=armor_stand] -52 211 99 90 0
 tp @e[tag=AgroCredits,type=armor_stand] -52 211 100 90 0
 tp @e[tag=NettaCredits,type=armor_stand] -52 211 101 90 0
 tp @e[tag=DangerCredits,type=armor_stand] -52 211 102 90 0
+
+execute as @e[tag=creditsAS,type=armor_stand] run data merge entity @s {Air:0}
+execute as @e[tag=creditsAS,type=armor_stand] run data merge entity @s {Air:1}

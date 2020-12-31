@@ -1,4 +1,9 @@
+execute if score SwapPlatformSec swapside matches 2.. run bossbar set rr_swap:swap_progress name [{"text":"Swapping in: ","bold":"true"},{"score":{"name":"SwapPlatformSec","objective":"swapside"}},{"text":" seconds"}]
+execute if score SwapPlatformSec swapside matches 1 run bossbar set rr_swap:swap_progress name [{"text":"Swapping in: ","bold":"true"},{"score":{"name":"SwapPlatformSec","objective":"swapside"}},{"text":" second"}]
 scoreboard players add SwapPlatform swapside 1
+scoreboard players add SwapPlatformTick swapside 1
+execute if score SwapPlatformTick swapside matches 20 run scoreboard players remove SwapPlatformSec swapside 1
+execute if score SwapPlatformTick swapside matches 20 run scoreboard players set SwapPlatformTick swapside 0
 
 execute if entity @e[tag=Selection,scores={SDtime=1..},type=armor_stand] run scoreboard players set QuickSwap swapside 1
 
@@ -21,6 +26,9 @@ execute if score BossbarA swapside matches 20.. if score BossbarB swapside match
 execute if score BossbarA swapside matches 20.. if score BossbarB swapside matches 9 as @a[team=!Lobby] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
 execute if score BossbarA swapside matches 20.. run scoreboard players set BossbarA swapside 0
 execute store result bossbar rr_swap:swap_progress value run scoreboard players get BossbarB swapside
+execute if entity @e[tag=SwappingSides,type=area_effect_cloud] if score QuickSwap swapside matches 0 run scoreboard players set SwapPlatformSec swapside 60
+execute if entity @e[tag=SwappingSides,type=area_effect_cloud] if score QuickSwap swapside matches 1 run scoreboard players set SwapPlatformSec swapside 20
+execute if entity @e[tag=SwappingSides,type=area_effect_cloud] run scoreboard players set SwapPlatformTick swapside 0
 execute if entity @e[tag=SwappingSides,type=area_effect_cloud] as @a[team=!Lobby] at @s run playsound entity.zombie_villager.converted player @s ~ ~ ~ 1 1.2
 execute if score SwapSide swapside matches 0 as @e[tag=SwappingSides,type=area_effect_cloud] run function rr_swap:baseswap/lightyellow
 execute if score SwapSide swapside matches 1 as @e[tag=SwappingSides,type=area_effect_cloud] run function rr_swap:baseswap/darkyellow

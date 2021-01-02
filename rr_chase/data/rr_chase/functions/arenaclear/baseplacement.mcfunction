@@ -30,9 +30,9 @@ fill -92 201 95 -92 200 96 air replace white_stained_glass
 fill -92 199 96 -92 199 95 obsidian replace white_stained_glass
 fill -91 201 95 -91 199 96 air replace white_stained_glass
 fill -91 198 96 -91 198 95 obsidian replace white_stained_glass
-fill -90 200 95 -90 198 96 air replace white_stained_glass
+fill -90 201 95 -90 198 96 air replace white_stained_glass
 fill -90 197 96 -90 197 95 obsidian replace white_stained_glass
-fill -89 199 95 -89 198 96 air replace white_stained_glass
+fill -89 200 95 -89 197 96 air replace white_stained_glass
 fill -89 196 96 -89 196 95 obsidian replace white_stained_glass
 fill -97 201 95 -97 201 96 air replace white_stained_glass
 fill -97 200 96 -97 200 95 obsidian replace white_stained_glass
@@ -40,7 +40,7 @@ fill -98 201 95 -98 200 96 air replace white_stained_glass
 fill -98 199 96 -98 199 95 obsidian replace white_stained_glass
 fill -99 201 95 -99 199 96 air replace white_stained_glass
 fill -99 198 96 -99 198 95 obsidian replace white_stained_glass
-fill -100 200 95 -100 198 96 air replace white_stained_glass
+fill -100 201 95 -100 198 96 air replace white_stained_glass
 fill -100 197 96 -100 197 95 obsidian replace white_stained_glass
-fill -101 199 95 -101 197 96 air replace white_stained_glass
+fill -101 200 95 -101 197 96 air replace white_stained_glass
 fill -101 196 96 -101 196 95 obsidian replace white_stained_glass

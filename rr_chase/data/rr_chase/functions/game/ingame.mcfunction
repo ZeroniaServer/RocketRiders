@@ -37,10 +37,10 @@ fill -14 64 64 39 74 58 air replace oak_fence
 scoreboard players add FlagWave FlagScore 1
 
 #Actionbar for who's in the lead (use flagscore for animation timing)
-execute if score FlagWave FlagScore matches 10 positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the finish flag to win!","color":"red","bold":"true"}]
-execute if score FlagWave FlagScore matches 20 positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the finish flag to win!","color":"white","bold":"true"}]
-execute if score FlagWave FlagScore matches 30 positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the finish flag to win!","color":"red","bold":"true"}]
-execute if score FlagWave FlagScore matches 40.. positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the finish flag to win!","color":"white","bold":"true"}]
+execute if score FlagWave FlagScore matches 10 positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the Finish Flag to win!","color":"red","bold":"true"}]
+execute if score FlagWave FlagScore matches 20 positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the Finish Flag to win!","color":"white","bold":"true"}]
+execute if score FlagWave FlagScore matches 30 positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the Finish Flag to win!","color":"red","bold":"true"}]
+execute if score FlagWave FlagScore matches 40.. positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the Finish Flag to win!","color":"white","bold":"true"}]
 
 #Make flag wave around
 execute if score FlagWave FlagScore matches 20 run setblock 12 71 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"finish_flag1"}

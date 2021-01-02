@@ -6,3 +6,4 @@ tag @e[tag=Selection,type=armor_stand] remove decosLocked
 tag @e[tag=Selection,type=armor_stand] add tyingOff
 tag @e[tag=Selection,type=armor_stand] add customBossbar
 tag @e[tag=Selection,type=armor_stand] add noTeamBalance
+tag @e[tag=Selection,type=armor_stand] add onlyBlue

@@ -76,13 +76,12 @@ execute as @e[tag=ControlRoom,type=area_effect_cloud] at @s run tp @a[distance=.
 fill -57 201 84 -70 201 72 barrier replace air
 fill 6 53 -6 18 53 6 air
 
-##Reset team balance stuff
-tag @s remove YellowFull
-tag @s remove YellowCapOverride
-tag @s remove BlueFull
-tag @s remove BlueCapOverride
-
 ##Prepare Item RNG timer for next game
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 scoreboard players set @s[tag=Minute] RandomItem 1197
+
+##Remove Traveler tags
+tag @a remove beenOnYellow
+tag @a remove beenOnBlue
+tag @a remove beenOnBoth

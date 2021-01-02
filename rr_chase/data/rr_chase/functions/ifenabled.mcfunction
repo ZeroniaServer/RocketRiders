@@ -18,6 +18,10 @@ execute if entity @s[tag=GameEnd] run function rr_chase:game/gameend
 function everytick:saberfix
 function everytick:no_drop
 
+#disable yellow
+tag @a remove JoinYellow
+execute as @a[team=Yellow] run function custom:leave
+
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] run function rr_chase:arenaclear/baseplacement
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] if entity @s[tag=!GameStarted] as @a at @s run function arenaclear:notifystart

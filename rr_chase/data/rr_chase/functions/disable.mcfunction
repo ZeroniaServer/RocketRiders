@@ -22,4 +22,5 @@ tag @e[tag=Selection,type=armor_stand] remove canopyStack
 tag @e[tag=Selection,type=armor_stand] remove arrowLimit
 tag @e[tag=Selection,type=armor_stand] remove custVortParticle
 tag @e[tag=Selection,type=armor_stand] remove customNova
+tag @e[tag=Selection,type=armor_stand] remove onlyBlue
 tag @e[tag=Selection,type=armor_stand] add switchGamemodes

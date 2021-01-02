@@ -16,4 +16,5 @@ tag @e[tag=Selection,type=armor_stand] add canopyStack
 tag @e[tag=Selection,type=armor_stand] add arrowLimit
 tag @e[tag=Selection,type=armor_stand] add custVortParticle
 tag @e[tag=Selection,type=armor_stand] add customNova
+tag @e[tag=Selection,type=armor_stand] add onlyBlue
 team modify Blue friendlyFire true

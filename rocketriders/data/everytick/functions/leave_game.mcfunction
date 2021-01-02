@@ -45,5 +45,10 @@ execute as @a[scores={LeaveGame=1..},tag=inParkour] run tag @s remove inParkour
 execute as @s[scores={servermode=0}] as @a[scores={LeaveGame=1..}] run function achievements:roots
 execute as @s[scores={servermode=1..}] as @a[scores={LeaveGame=1..}] run function achievements:reset
 
+#Traveler fix
+tag @a[scores={LeaveGame=1..}] remove beenOnYellow
+tag @a[scores={LeaveGame=1..}] remove beenOnBlue
+tag @a[scores={LeaveGame=1..}] remove beenOnBoth
+
 #Reset
 scoreboard players reset @a[scores={LeaveGame=1..}] LeaveGame

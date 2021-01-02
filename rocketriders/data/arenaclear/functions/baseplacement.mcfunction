@@ -82,3 +82,9 @@ execute if entity @s[tag=!Hardcore,tag=WasHardcore] run fill -89 201 60 -101 195
 execute if entity @s[tag=!Hardcore,tag=WasHardcore] run fill -89 201 62 -101 195 63 cyan_stained_glass
 execute if entity @s[tag=!Hardcore,tag=WasHardcore] run fill -89 201 65 -101 195 64 blue_stained_glass
 execute if entity @s[tag=!Hardcore,tag=WasHardcore] run tag @s remove WasHardcore
+
+##Reset team balance stuff
+tag @s[tag=!onlyBlue] remove YellowFull
+tag @s[tag=!onlyBlue] remove YellowCapOverride
+tag @s remove BlueFull
+tag @s remove BlueCapOverride

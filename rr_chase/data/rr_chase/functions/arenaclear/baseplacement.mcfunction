@@ -44,3 +44,6 @@ fill -100 201 95 -100 198 96 air replace white_stained_glass
 fill -100 197 96 -100 197 95 obsidian replace white_stained_glass
 fill -101 200 95 -101 197 96 air replace white_stained_glass
 fill -101 196 96 -101 196 95 obsidian replace white_stained_glass
+
+#cancel yellow
+function game:cancelyellow

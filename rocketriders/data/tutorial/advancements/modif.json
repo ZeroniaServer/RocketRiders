@@ -25,5 +25,5 @@
     "rewards": {
         "function": "tutorial:modification"
     },
-    "parent": "tutorial:root"
+    "parent": "tutorial:play"
 }

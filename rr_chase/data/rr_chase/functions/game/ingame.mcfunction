@@ -34,8 +34,15 @@ fill -14 64 62 39 74 58 air replace white_wool
 fill -14 64 62 39 74 58 air replace black_wool
 fill -14 64 64 39 74 58 air replace oak_fence
 
-#Make flag wave around
 scoreboard players add FlagWave FlagScore 1
+
+#Actionbar for who's in the lead (use flagscore for animation timing)
+execute if score FlagWave FlagScore matches 10 positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the finish flag to win!","color":"red","bold":"true"}]
+execute if score FlagWave FlagScore matches 20 positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the finish flag to win!","color":"white","bold":"true"}]
+execute if score FlagWave FlagScore matches 30 positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the finish flag to win!","color":"red","bold":"true"}]
+execute if score FlagWave FlagScore matches 40.. positioned 12 64 65 as @p[team=Blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the finish flag to win!","color":"white","bold":"true"}]
+
+#Make flag wave around
 execute if score FlagWave FlagScore matches 20 run setblock 12 71 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"finish_flag1"}
 execute if score FlagWave FlagScore matches 20 run setblock 12 70 64 redstone_block
 execute if score FlagWave FlagScore matches 40.. run setblock 12 71 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"finish_flag2"}
@@ -83,5 +90,6 @@ execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=0..11] ru
 
 #Win
 execute positioned 12 64 65 run tag @a[team=Blue,distance=..2,limit=1] add Winner
+execute as @a[team=Blue,tag=Winner,limit=1] run title @s actionbar {"text":""}
 execute if entity @a[team=Blue,tag=Winner,limit=1] run tag @a[team=Blue,tag=!Winner] add Loser
 execute if entity @a[team=Blue,tag=Winner,limit=1] run function rr_chase:game/win

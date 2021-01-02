@@ -46,3 +46,4 @@ execute if score $playercount CmdData matches 2.. if entity @a[tag=deathchamp,sc
 
 #Resets CmdData score
 scoreboard players reset @a CmdData
+scoreboard players reset $playercount CmdData

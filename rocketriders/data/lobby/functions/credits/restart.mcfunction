@@ -102,8 +102,8 @@ tp @e[tag=MaeplCredits,type=armor_stand] -52 211 57 90 0
 tp @e[tag=HrapCredits,type=armor_stand] -52 211 56 90 0
 tp @e[tag=LimeyCredits,type=armor_stand] -52 211 55 90 0
 tp @e[tag=AnonCredits,type=armor_stand] -52 211 54 90 0
-tp @e[tag=SuperCredits,type=armor_stand] -52 211 53 90 0
-tp @e[tag=ChopperCredits,type=armor_stand] -52 211 52 90 0
+tp @e[tag=MiloCredits,type=armor_stand] -52 211 53 90 0
+tp @e[tag=LouCredits,type=armor_stand] -52 211 52 90 0
 tp @e[tag=RubenCredits,type=armor_stand] -52 211 95 90 0
 tp @e[tag=TacoCredits,type=armor_stand] -52 211 96 90 0
 tp @e[tag=LPCredits,type=armor_stand] -52 211 97 90 0

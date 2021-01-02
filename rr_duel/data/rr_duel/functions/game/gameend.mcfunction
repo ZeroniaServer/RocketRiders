@@ -16,3 +16,4 @@ execute as @s[scores={endtimer=569..}] run scoreboard objectives setdisplay side
 execute as @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
 execute as @s[scores={endtimer=569..}] run scoreboard players reset Blue: RoundsWon
 execute as @s[scores={endtimer=569..}] run scoreboard players reset Yellow: RoundsWon
+execute as @s[scores={endtimer=569..}] run tag @a remove Forfeiter

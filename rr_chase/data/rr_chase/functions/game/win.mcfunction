@@ -1,5 +1,5 @@
 ##Achievements
-execute as @s[scores={servermode=0}] run function rr_chase:achievements/aftergame
+execute as @s[scores={servermode=0},tag=!realms] run function rr_chase:achievements/aftergame
 
 ##Record tags
 tag @s add GameEnd
@@ -12,7 +12,7 @@ replaceitem entity @a[team=Blue,tag=Winner,limit=1] armor.chest elytra{HideFlags
 execute as @a store result score @s HasFlag run clear @s #banners 0
 replaceitem entity @a[team=Blue,tag=Loser,scores={HasFlag=0}] armor.head blue_banner{display:{Name:'{"text":"Flag of Shameful Loss","color":"blue","bold":"true","italic":"false"}'},BlockEntityTag:{Base:11,Patterns:[{Pattern:hh,Color:0},{Pattern:hhb,Color:0},{Pattern:ls,Color:11},{Pattern:bs,Color:11},{Pattern:ls,Color:0},{Pattern:bs,Color:0},{Pattern:rs,Color:0},{Pattern:tl,Color:0}]},Enchantments:[{id:binding_curse,lvl:1}],HideFlags:39} 1
 #I Am Speed achievement for Winner
-execute as @s[scores={servermode=0}] run advancement grant @a[team=Blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
+execute as @s[scores={servermode=0},tag=!realms] run advancement grant @a[team=Blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 
 ##Effects
 execute as @a[team=Blue] run effect clear @s slowness

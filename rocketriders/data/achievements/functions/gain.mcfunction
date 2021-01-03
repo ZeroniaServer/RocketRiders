@@ -8,26 +8,26 @@ execute as @a[team=Blue] at @s unless entity @s[nbt={FallDistance:0.0f}] store r
 execute as @a[team=Yellow] at @s unless entity @s[nbt={FallDistance:0.0f}] store result score @s FallDistance run data get entity @s FallDistance 50
 
 #All achievements
-execute as @s[scores={servermode=0}] run function achievements:firewithin
-execute as @s[scores={servermode=0}] run function achievements:getofflawn
-execute as @s[scores={servermode=0}] run function achievements:graverevenge
-execute as @s[scores={servermode=0}] run function achievements:underthesea
-execute as @s[scores={servermode=0}] run function achievements:rainingmen
-execute as @s[scores={servermode=0}] run function achievements:uphere
-execute as @s[scores={servermode=0}] run function achievements:ballet
-execute as @s[scores={servermode=0}] run function achievements:committed
-execute as @s[scores={servermode=0}] run function achievements:soulcollector
-execute as @s[scores={servermode=0}] run function achievements:blocksintobits
-execute as @s[scores={servermode=0}] run function achievements:newworld
-execute as @s[scores={servermode=0}] run function achievements:lockdown
-execute as @s[scores={servermode=0}] run function achievements:volcanichatred
-execute as @s[scores={servermode=0}] run function achievements:traveler
-execute as @s[scores={servermode=0},tag=!noPortal] run function achievements:fallaway
-execute as @s[scores={servermode=0}] run function achievements:gravitationalshootout
-execute as @s[scores={servermode=0}] run function achievements:veteran
-execute as @s[scores={servermode=0}] run function achievements:useful
-execute as @s[scores={servermode=0}] run function achievements:moonwalker
-execute as @s[scores={servermode=0}] run function achievements:sabotage
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:firewithin
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:getofflawn
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:graverevenge
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:underthesea
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:rainingmen
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:uphere
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:ballet
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:committed
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:soulcollector
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:blocksintobits
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:newworld
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:lockdown
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:volcanichatred
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:traveler
+execute as @s[scores={servermode=0},tag=!noPortal,tag=!realms] run function achievements:fallaway
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:gravitationalshootout
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:veteran
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:useful
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:moonwalker
+execute as @s[scores={servermode=0},tag=!realms] run function achievements:sabotage
 
 #Necessary for death check
 scoreboard players add @a PlayerDeaths 0

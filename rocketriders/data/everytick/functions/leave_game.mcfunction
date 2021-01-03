@@ -42,7 +42,8 @@ execute as @a[scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You
 execute as @a[scores={LeaveGame=1..},tag=inParkour] run tag @s remove inParkour
 
 #Handle achievements with servermode
-execute as @s[scores={servermode=0}] as @a[scores={LeaveGame=1..}] run function achievements:roots
+execute as @s[scores={servermode=0},tag=!realms] as @a[scores={LeaveGame=1..}] run function achievements:roots
+execute as @s[scores={servermode=0},tag=realms] as @a[scores={LeaveGame=1..}] run advancement grant @s only tutorial:root
 execute as @s[scores={servermode=1..}] as @a[scores={LeaveGame=1..}] run function achievements:reset
 
 #Traveler fix

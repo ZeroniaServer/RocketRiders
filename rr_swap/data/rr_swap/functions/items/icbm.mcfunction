@@ -27,5 +27,8 @@ kill @e[tag=ICBMTriggered]
 #Prevents a bug where ICBM markers could keep on flying when there was no egg.
 execute as @e[tag=ICBM,type=egg] at @s unless entity @e[tag=ICBMtracker,distance=..10,limit=1] run kill @s
 
+#Kill baby chickens. We don't do Feathered ICBM's over here.
+kill @e[type=chicken]
+
 #Smoke trail
 execute as @e[tag=ICBM,type=egg] at @s run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force

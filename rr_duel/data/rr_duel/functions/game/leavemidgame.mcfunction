@@ -14,3 +14,9 @@ execute if entity @a[team=Yellow,scores={LeaveMidgame=1}] run tag @s add TimeOut
 execute if entity @a[team=Yellow,scores={LeaveMidgame=1}] run scoreboard players set @s ForfeitTimeout 1200
 execute as @a[team=Yellow,scores={LeaveMidgame=1}] run tag @s add Forfeiter
 execute as @a[team=Yellow,scores={LeaveMidgame=1}] run function custom:leave
+
+#forcewin
+execute as @s[scores={ForfeitTimeout=1200..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run scoreboard players set Blue: RoundsWon 2
+execute as @s[scores={ForfeitTimeout=1200..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run function rr_duel:game/winblue
+execute as @s[scores={ForfeitTimeout=1200..}] unless entity @a[team=Blue] if entity @a[team=Yellow] run scoreboard players set Yellow: RoundsWon 2
+execute as @s[scores={ForfeitTimeout=1200..}] unless entity @a[team=Blue] if entity @a[team=Yellow] run function rr_duel:game/winyellow

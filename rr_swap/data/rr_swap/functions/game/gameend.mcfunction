@@ -7,3 +7,5 @@ scoreboard players set SwapPlatformSec swapside 20
 scoreboard players set SwapPlatformTick swapside 0
 tag @s add swapLast
 bossbar set rr_swap:swap_progress players none
+kill @e[tag=ICBM]
+kill @e[tag=ICBMtracker]

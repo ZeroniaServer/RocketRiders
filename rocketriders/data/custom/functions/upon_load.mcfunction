@@ -1,1 +1,1 @@
-execute unless entity @e[tag=Selection,type=armor_stand,tag=noPlayerCredits] run function lobby:credits/restart
+function lobby:credits/restart

@@ -15,7 +15,7 @@ kill @e[type=item,nbt={Item:{id:"minecraft:clock"}}]
 kill @e[type=item,nbt={Item:{id:"minecraft:compass"}}]
 
 #Kills items after a while
-execute as @e[type=item,nbt={Age:300s}] unless entity @s[nbt={Item:{tag:{Dropable:1b}}}] run kill @s
+execute as @e[type=item,nbt={Age:5s}] unless entity @s[nbt={Item:{tag:{Dropable:1b}}}] run kill @s
 
 #Item blastproof tag
 execute as @e[type=item,nbt={Item:{tag:{Blastproof:1b}}}] run data merge entity @s {Invulnerable:1b}

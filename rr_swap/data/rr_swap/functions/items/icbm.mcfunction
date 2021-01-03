@@ -24,4 +24,8 @@ tag @e[tag=ICBMTriggered,type=area_effect_cloud] add ICBMdone
 execute as @e[tag=ICBMdone,type=area_effect_cloud] at @s run kill @e[tag=ICBM,distance=..3,limit=1,type=egg]
 kill @e[tag=ICBMTriggered]
 
+#Prevents a bug where ICBM markers could keep on flying when there was no egg.
+execute as @e[tag=ICBM,type=egg] at @s unless entity @e[tag=ICBMtracker,distance=..10,limit=1] run kill @s
+
+#Smoke trail
 execute as @e[tag=ICBM,type=egg] at @s run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force

@@ -139,8 +139,8 @@ tag @s[tag=DefaultOptions] remove DefaultOptions
 
 
 ##RESTORE DEFAULT WORLD OPTIONS
-tag @s[tag=DefaultWorld] remove noPlayerCredits
-execute as @s[tag=DefaultWorld] run function lobby:credits/initialize
+tag @s[tag=DefaultWorld] add noPlayerCredits
+execute as @s[tag=DefaultWorld] run function lobby:credits/stop
 execute as @s[tag=DefaultWorld] run function arenaclear:refreshoptionssigns
 execute as @s[tag=DefaultWorld] run time set 12925t
 tag @s[tag=DefaultWorld] remove DefaultWorld

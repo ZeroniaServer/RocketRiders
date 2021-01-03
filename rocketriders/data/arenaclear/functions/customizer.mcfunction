@@ -147,7 +147,7 @@ tag @s[tag=DefaultWorld] remove DefaultWorld
 
 
 ####CONFIRM SETTINGS####
-data merge block -69 190 78 {Text1:"{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text2:"{\"text\":\"Confirm\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] unless entity @e[tag=Selection,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] as @e[tag=Selection,type=armor_stand] run function arenaclear:areaclear\"}}",Text3:"{\"text\":\"Settings\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[tag=CancelJoin,limit=1] if entity @e[tag=Selection,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] run tellraw @s {\\\"text\\\":\\\"You must have at least one Missile enabled to start the game\\\",\\\"color\\\":\\\"red\\\"}\"}}",Text4:"{\"text\":\"\"}"}
+data merge block -69 190 78 {Text1:"{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click player @a ~ ~ ~ 1 1\"}}",Text2:"{\"text\":\"Confirm\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function arenaclear:testvalidclear\"}}",Text4:"{\"text\":\"\"}"}
 
 
 ####REPEAT SETTINGS####

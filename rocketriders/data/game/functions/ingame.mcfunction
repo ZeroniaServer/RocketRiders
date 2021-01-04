@@ -52,10 +52,10 @@ tag @s[tag=runvortex] remove runvortex
 execute unless entity @s[tag=runobshields] if entity @e[tag=obfireball,type=fireball] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[tag=obfireball,type=dragon_fireball] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[tag=BlueObshield,type=area_effect_cloud] run tag @s add runobshields
-execute unless entity @s[tag=runobshields] if entity @e[tag=blueobtracker,type=armor_stand] run tag @s add runobshields
+execute unless entity @s[tag=runobshields] if entity @e[tag=blueobtracker,type=area_effect_cloud] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[tag=blueobsidianshield,type=area_effect_cloud] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[tag=YellowObshield,type=area_effect_cloud] run tag @s add runobshields
-execute unless entity @s[tag=runobshields] if entity @e[tag=yellowobtracker,type=armor_stand] run tag @s add runobshields
+execute unless entity @s[tag=runobshields] if entity @e[tag=yellowobtracker,type=area_effect_cloud] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[tag=yellowobsidianshield,type=area_effect_cloud] run tag @s add runobshields
 execute if entity @s[tag=runobshields] run function everytick:obsidian_shields
 tag @s[tag=runobshields] remove runobshields
@@ -67,7 +67,7 @@ execute if entity @s[tag=runcanopy] run function everytick:canopy
 tag @s[tag=runcanopy] remove runcanopy
 
 execute unless entity @s[tag=runnovarocket] if entity @e[type=firework_rocket] run tag @s add runnovarocket
-execute unless entity @s[tag=runnovarocket] if entity @e[tag=novatracker,type=armor_stand] run tag @s add runnovarocket
+execute unless entity @s[tag=runnovarocket] if entity @e[tag=novatracker,type=area_effect_cloud] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @a[tag=BlueNovaAttach] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @a[tag=YellowNovaAttach] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @a[tag=BlueNovaNear] run tag @s add runnovarocket

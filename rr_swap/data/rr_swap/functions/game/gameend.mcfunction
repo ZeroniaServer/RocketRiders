@@ -10,3 +10,6 @@ bossbar set rr_swap:swap_progress players none
 kill @e[tag=ICBM]
 kill @e[tag=ICBMtracker]
 kill @e[type=chicken]
+scoreboard players reset $highest ICBMID
+scoreboard players reset $tptracker ICBMID
+scoreboard players reset $numeggs ICBMID

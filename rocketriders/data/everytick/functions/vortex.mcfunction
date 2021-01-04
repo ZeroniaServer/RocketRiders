@@ -77,8 +77,9 @@ execute unless entity @s[tag=featheredOff] as @e[type=chicken] unless entity @s[
 execute as @e[tag=SummonFeathered,type=chicken] at @s run playsound entity.chicken.hurt player @a ~ ~ ~ 2 0
 execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {CustomName:"{\"text\":\"a Chicken Vortex\"}",Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
 execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexFeathered"],Duration:2000000000}
-execute as @e[tag=SummonFeathered,type=chicken] at @s run tp @s ~ ~-250 ~
-kill @e[tag=SummonFeathered,type=chicken]
+execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}
+execute as @e[type=chicken] at @s run tp @s ~ ~-250 ~
+kill @e[type=chicken]
 execute as @e[tag=VortexFeathered,type=area_effect_cloud] at @s run particle dust 1 1 1 1 ~ ~ ~ 0.5 0.5 0 0 10 force @a
 execute as @e[tag=VortexItemFeathered,type=armor_stand] at @s run tp @s ~ ~ ~ ~15 ~
 execute as @s[scores={servermode=0}] as @e[tag=VortexFeathered,type=area_effect_cloud] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/huh

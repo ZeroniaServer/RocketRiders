@@ -27,35 +27,35 @@ execute as @e[type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s run sc
 kill @e[type=fireball,tag=blueobfireball,scores={obmove=1..}]
 kill @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=30..}]
 execute as @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=0}] at @s unless entity @e[type=fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] run kill @s
-execute as @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1}] at @s run summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,NoGravity:1b,Marker:1b,Small:1b,DisabledSlots:2039583,Tags:["blueobtracker"]}
-execute as @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=armor_stand,tag=blueobtracker,distance=..2,limit=1,sort=nearest] @s
-tag @e[type=armor_stand,tag=blueobtracker] add blueobalone
-execute as @e[type=armor_stand,tag=blueobtracker,tag=blueobalone] at @s if entity @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove blueobalone
+execute as @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000,Radius:0,Tags:["blueobtracker"]}
+execute as @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=area_effect_cloud,tag=blueobtracker,distance=..2,limit=1,sort=nearest] @s
+tag @e[type=area_effect_cloud,tag=blueobtracker] add blueobalone
+execute as @e[type=area_effect_cloud,tag=blueobtracker,tag=blueobalone] at @s if entity @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove blueobalone
 #Next 2 commands disable Blue Obsidian Shields inside of portals
-execute unless entity @s[tag=noPortal] as @e[type=armor_stand,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
-execute unless entity @s[tag=noPortal] as @e[type=armor_stand,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
+execute unless entity @s[tag=noPortal] as @e[type=area_effect_cloud,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
+execute unless entity @s[tag=noPortal] as @e[type=area_effect_cloud,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
 #Disable Blue Obsidian Shields near void
-execute as @e[type=armor_stand,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
+execute as @e[type=area_effect_cloud,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
 
 #Deploy animation/effects
-scoreboard players add @e[type=armor_stand,tag=blueobalone] shieldplacement 1
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=1}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=3}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldblue"}
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ crying_obsidian
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.set_spawn player @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon area_effect_cloud ~ ~ ~ {Tags:["blueobsidianshield"],Duration:2000000000}
-execute as @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5}] at @s run scoreboard players set @e[tag=blueobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
-kill @e[type=armor_stand,tag=blueobalone,scores={shieldplacement=5..}]
+scoreboard players add @e[type=area_effect_cloud,tag=blueobalone] shieldplacement 1
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=1}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=3}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldblue"}
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ crying_obsidian
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.set_spawn player @a ~ ~ ~ 2 1
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=5}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon area_effect_cloud ~ ~ ~ {Tags:["blueobsidianshield"],Duration:2000000000}
+execute as @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=5}] at @s run scoreboard players set @e[tag=blueobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
+kill @e[type=area_effect_cloud,tag=blueobalone,scores={shieldplacement=5..}]
 tp @e[tag=BlueObshield,type=area_effect_cloud] ~ ~-250 ~
 kill @e[tag=BlueObshield,type=area_effect_cloud]
 
@@ -82,35 +82,35 @@ execute as @e[type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s run 
 kill @e[type=fireball,tag=yellowobfireball,scores={obmove=1..}]
 kill @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=30..}]
 execute as @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=0}] at @s unless entity @e[type=fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] run kill @s
-execute as @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..1}] at @s run summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,NoGravity:1b,Marker:1b,Small:1b,DisabledSlots:2039583,Tags:["yellowobtracker"]}
-execute as @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=armor_stand,tag=yellowobtracker,distance=..2,limit=1,sort=nearest] @s
-tag @e[type=armor_stand,tag=yellowobtracker] add yellowobalone
-execute as @e[type=armor_stand,tag=yellowobtracker,tag=yellowobalone] at @s if entity @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove yellowobalone
+execute as @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..1}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:2000000,Radius:0,Tags:["yellowobtracker"]}
+execute as @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=area_effect_cloud,tag=yellowobtracker,distance=..2,limit=1,sort=nearest] @s
+tag @e[type=area_effect_cloud,tag=yellowobtracker] add yellowobalone
+execute as @e[type=area_effect_cloud,tag=yellowobtracker,tag=yellowobalone] at @s if entity @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove yellowobalone
 #Next 2 commands disable Yellow Obsidian Shields inside of portals
-execute unless entity @s[tag=noPortal] as @e[type=armor_stand,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
-execute unless entity @s[tag=noPortal] as @e[type=armor_stand,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
+execute unless entity @s[tag=noPortal] as @e[type=area_effect_cloud,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
+execute unless entity @s[tag=noPortal] as @e[type=area_effect_cloud,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
 #Disable Yellow Obsidian Shields near void
-execute as @e[type=armor_stand,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
+execute as @e[type=area_effect_cloud,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
 
 #Deploy animation/sounds
-scoreboard players add @e[type=armor_stand,tag=yellowobalone] shieldplacement 1
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=1}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=3}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldyellow"}
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ crying_obsidian
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.set_spawn player @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon area_effect_cloud ~ ~ ~ {Tags:["yellowobsidianshield"],Duration:2000000000}
-execute as @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5}] at @s run scoreboard players set @e[tag=yellowobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
-kill @e[type=armor_stand,tag=yellowobalone,scores={shieldplacement=5..}]
+scoreboard players add @e[type=area_effect_cloud,tag=yellowobalone] shieldplacement 1
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=1}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=3}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldyellow"}
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ crying_obsidian
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.set_spawn player @a ~ ~ ~ 2 1
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.charge player @a ~ ~ ~ 2 1
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=5}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon area_effect_cloud ~ ~ ~ {Tags:["yellowobsidianshield"],Duration:2000000000}
+execute as @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=5}] at @s run scoreboard players set @e[tag=yellowobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
+kill @e[type=area_effect_cloud,tag=yellowobalone,scores={shieldplacement=5..}]
 tp @e[tag=YellowObshield,type=area_effect_cloud] ~ ~-250 ~
 kill @e[tag=YellowObshield,type=area_effect_cloud]
 

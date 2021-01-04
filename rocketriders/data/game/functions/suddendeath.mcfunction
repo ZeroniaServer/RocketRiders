@@ -46,8 +46,8 @@ execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run
 execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Tags set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
 execute as @s[scores={SDtime=1}] run kill @e[type=fireball,scores={endFireball=1}]
 execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
-execute as @s[scores={SDtime=1}] run tag @e[tag=fireball] remove endFireball
-execute as @s[scores={SDtime=1}] run kill @e[tag=endFireballAEC]
+execute as @s[scores={SDtime=1}] run tag @e[type=fireball] remove endFireball
+execute as @s[scores={SDtime=1}] run kill @e[tag=endFireballAEC,type=area_effect_cloud]
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWon
 #For Premature Celebration achievement

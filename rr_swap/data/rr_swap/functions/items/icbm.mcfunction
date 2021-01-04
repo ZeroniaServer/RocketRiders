@@ -1,18 +1,25 @@
-kill @e[type=chicken]
-
+#Identify Vortex eggs as ICBM
 tag @e[tag=BlueVortex,type=egg] add ICBM
 tag @e[tag=BlueVortex,type=egg] remove BlueVortex
 
 tag @e[tag=YellowVortex,type=egg] add ICBM
 tag @e[tag=YellowVortex,type=egg] remove YellowVortex
 
+#Thanks iRobo for the ICBM algorithm!
+#Track ICBMs with IDs and summon trackers recursively
 scoreboard players add @e[tag=ICBM,type=egg] ICBMtime 1
-execute as @e[tag=ICBM,scores={ICBMtime=1},type=egg] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["ICBMtracker"],Duration:15000}
-execute as @e[tag=ICBMtracker,type=area_effect_cloud] at @s unless entity @e[tag=ICBM,distance=..3,limit=1,type=egg] run tag @s add ICBMTriggered
-execute as @e[tag=ICBMtracker,type=area_effect_cloud] at @s if entity @e[tag=ICBM,distance=..3,limit=1,type=egg] run tp @s @e[tag=ICBM,distance=..3,limit=1,sort=nearest,type=egg]
+scoreboard players add @e[tag=ICBM,type=egg] ICBMID 0
+execute as @e[tag=ICBM,scores={ICBMID=0},type=egg] at @s run function rr_swap:items/icbmid
 
-execute as @e[tag=ICBM,scores={ICBMtime=30..},type=egg] at @s run tag @e[tag=ICBMtracker,type=area_effect_cloud,distance=..3,limit=1] add ICBMTriggered
+#Teleport trackers to matching ICBMs recursively + detect trigger conditions
+execute store result score $numeggs ICBMID if entity @e[tag=ICBM,scores={ICBMID=1..},type=egg]
+scoreboard players operation $tptracker ICBMID = $highest ICBMID
+scoreboard players operation $tptracker ICBMID -= $numeggs ICBMID
+function rr_swap:items/tptoicbm
+execute as @e[tag=ICBMtracker,type=area_effect_cloud,tag=!teleported] run tag @s add ICBMTriggered
+tag @e[tag=ICBMtracker,type=area_effect_cloud] remove teleported
 
+#Trigger ICBM
 execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~ ~ {Fuse:1s}
 execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~ ~0.1 {Fuse:1s}
 execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~ ~-0.1 {Fuse:1s}
@@ -21,14 +28,7 @@ execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run 
 execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~0.1 ~ {Fuse:1s}
 execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~-0.1 ~ {Fuse:1s}
 tag @e[tag=ICBMTriggered,type=area_effect_cloud] add ICBMdone
-execute as @e[tag=ICBMdone,type=area_effect_cloud] at @s run kill @e[tag=ICBM,distance=..3,limit=1,type=egg]
 kill @e[tag=ICBMTriggered]
-
-#Prevents a bug where ICBM markers could keep on flying when there was no egg.
-execute as @e[tag=ICBM,type=egg] at @s unless entity @e[tag=ICBMtracker,distance=..10,limit=1] run kill @s
-
-#Kill baby chickens. We don't do Feathered ICBM's over here.
-kill @e[type=chicken]
 
 #Smoke trail
 execute as @e[tag=ICBM,type=egg] at @s run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force

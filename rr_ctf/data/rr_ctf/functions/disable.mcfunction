@@ -21,4 +21,5 @@ tag @e[tag=Selection,type=armor_stand] remove utilWasOff
 tag @e[tag=Selection,type=armor_stand] remove customSaberMsg
 tag @e[tag=Selection,type=armor_stand] remove noPortal
 tag @e[tag=Selection,type=armor_stand] remove canopyStack
+tag @e[tag=Selection,type=armor_stand] remove respawnFlag
 tag @e[tag=Selection,type=armor_stand] add switchGamemodes

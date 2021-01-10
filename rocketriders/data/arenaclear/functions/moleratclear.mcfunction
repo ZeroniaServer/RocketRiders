@@ -181,6 +181,6 @@ fill 154 174 28 164 159 -28 air replace light_gray_stained_glass
 fill 165 174 28 175 159 -28 air replace light_gray_stained_glass
 
 #Pregame queue
-fill -101 212 69 -89 186 87 air replace light_gray_stained_glass
+fill -101 207 69 -89 186 87 air replace light_gray_stained_glass
 
 tag @s remove WasMolerat

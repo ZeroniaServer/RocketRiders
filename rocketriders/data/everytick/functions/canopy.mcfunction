@@ -109,17 +109,12 @@ execute as @e[scores={testplat=10},type=ender_pearl] at @s align xyz positioned 
 scoreboard players add @e[tag=YellowPlatform,type=area_effect_cloud] PlatTime 1
 execute as @e[scores={testplat=10},type=ender_pearl] at @s store result score @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat=10..},type=ender_pearl]
-#The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
-#Reset the motion before teleporting (thanks to @dragonmaster95 for the suggestion!)
-execute as @a[team=Yellow] if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..3},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @s run tp @s @s
-execute as @a[team=Yellow] if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
-execute as @a[team=Yellow] at @s if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slow_falling 2 100 true
-execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..20},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s jump_boost 2 128 true
-execute as @a[team=Yellow] at @s unless predicate custom:canopy_nearyellow if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..20},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slowness 2 255 true
-execute as @a[team=Yellow] at @s if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=41..},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect clear @s slow_falling
-#After 2 seconds the canopy gives up
+#Teleporting happens in another function
+execute if entity @e[tag=YellowPlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpyellow
+tag @e[tag=YellowPlatform,type=area_effect_cloud] remove checkedTP
+tag @a[team=Yellow] remove checkedTP
+#After 2 seconds the Canopy gives up teleporting
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41},type=area_effect_cloud] pearlOwnerUUID
-
 
 ##Blue Canopy functionality
 execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..5,tag=!BluePlat,tag=!YellowPlat] add BluePlat
@@ -144,17 +139,12 @@ execute as @e[scores={testplat2=10},type=ender_pearl] at @s align xyz positioned
 scoreboard players add @e[tag=BluePlatform,type=area_effect_cloud] PlatTime 1
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat2=10..},type=ender_pearl]
-#The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
-#Reset the motion before teleporting (thanks to @dragonmaster95 for the suggestion!)
-execute as @a[team=Blue] if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..3},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @s run tp @s @s
-execute as @a[team=Blue] if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] pearlOwnerUUID at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=arbitrary,type=area_effect_cloud] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
-execute as @a[team=Blue] at @s if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slow_falling 2 100 true
-execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..20},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s jump_boost 2 128 true
-execute as @a[team=Blue] at @s unless predicate custom:canopy_nearblue if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..20},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect give @s slowness 2 255 true
-execute as @a[team=Blue] at @s if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=41..},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run effect clear @s slow_falling
+#Teleporting happens in another function
+execute if entity @e[tag=BluePlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpblue
+tag @e[tag=BluePlatform,type=area_effect_cloud] remove checkedTP
+tag @a[team=Blue] remove checkedTP
 #After 2 seconds the Canopy gives up
 scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41},type=area_effect_cloud] pearlOwnerUUID
-
 
 ##More general Canopy functionalities
 #Fire poofing

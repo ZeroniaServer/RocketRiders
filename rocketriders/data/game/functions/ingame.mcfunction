@@ -28,7 +28,6 @@ execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=4}] run gamerule fall
 function achievements:gain
 function everytick:clear_spawnblocks
 function everytick:no_fall
-function modifiers:modifiers
 
 ##Missile/utility-specific commands (optimized to only run when necessary)
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=missile,type=area_effect_cloud] run tag @s add runspawnmissiles
@@ -64,7 +63,6 @@ execute unless entity @s[tag=runcanopy] if entity @e[type=ender_pearl] run tag @
 execute unless entity @s[tag=runcanopy] if entity @e[tag=YellowPlatform,type=area_effect_cloud] run tag @s add runcanopy
 execute unless entity @s[tag=runcanopy] if entity @e[tag=BluePlatform,type=area_effect_cloud] run tag @s add runcanopy
 execute if entity @s[tag=runcanopy] run function everytick:canopy
-tag @s[tag=runcanopy] remove runcanopy
 
 execute unless entity @s[tag=runnovarocket] if entity @e[type=firework_rocket] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @e[tag=novatracker,type=area_effect_cloud] run tag @s add runnovarocket
@@ -83,6 +81,9 @@ tag @s[tag=runfireball] remove runfireball
 
 function everytick:splash
 
+##Modifiers
+function modifiers:modifiers
+
 ##Spawn trap hotfix
 fill 14 63 66 10 63 66 obsidian
 fill 13 63 65 11 63 65 obsidian
@@ -100,6 +101,9 @@ setblock 12 66 -67 obsidian
 
 ##Respawn handling
 execute as @e[tag=YellowSpawnZone] at @s as @e[type=player,team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0
-execute unless entity @s[tag=respawnFlag] as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,team=Yellow,distance=..6] respawn 0
-execute unless entity @s[tag=respawnFlag] as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,team=Blue,distance=..6] respawn 0
+execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,team=Yellow,distance=..6] respawn 0
+execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,team=Blue,distance=..6] respawn 0
 scoreboard players reset @a[team=!Yellow,team=!Blue] respawn
+
+##Hotfix for Canopy respawns
+tag @s[tag=runcanopy] remove runcanopy

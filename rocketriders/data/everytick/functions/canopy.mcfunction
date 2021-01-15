@@ -4,10 +4,6 @@
 #######################################
 
 ##General Canopy functionality
-#Canopy forgets owner upon death
-execute as @a[team=Yellow,scores={respawn=1..}] at @s if score @s playerUUID = @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
-execute as @a[team=Blue,scores={respawn=1..}] at @s if score @s playerUUID = @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
-
 #Canopy quick deploy when near the base of its own team color
 execute as @e[tag=BluePlatform,scores={PlatTime=..57},type=area_effect_cloud,tag=!waterTemp,tag=!animated] at @s if predicate custom:canopy_nearblue run scoreboard players add @s PlatTime 3
 execute as @e[tag=YellowPlatform,scores={PlatTime=..57},type=area_effect_cloud,tag=!waterTemp,tag=!animated] at @s if predicate custom:canopy_nearyellow run scoreboard players add @s PlatTime 3
@@ -113,6 +109,7 @@ kill @e[scores={testplat=10..},type=ender_pearl]
 execute if entity @e[tag=YellowPlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpyellow
 tag @e[tag=YellowPlatform,type=area_effect_cloud] remove checkedTP
 tag @a[team=Yellow] remove checkedTP
+execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,team=Yellow,distance=..6] respawn 0
 #After 2 seconds the Canopy gives up teleporting
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41},type=area_effect_cloud] pearlOwnerUUID
 
@@ -143,6 +140,7 @@ kill @e[scores={testplat2=10..},type=ender_pearl]
 execute if entity @e[tag=BluePlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpblue
 tag @e[tag=BluePlatform,type=area_effect_cloud] remove checkedTP
 tag @a[team=Blue] remove checkedTP
+execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,team=Blue,distance=..6] respawn 0
 #After 2 seconds the Canopy gives up
 scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41},type=area_effect_cloud] pearlOwnerUUID
 

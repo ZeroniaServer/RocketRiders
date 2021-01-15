@@ -1,8 +1,10 @@
 #Identify Vortex eggs as ICBM
 tag @e[tag=BlueVortex,type=egg] add ICBM
+tag @e[tag=BlueVortex,type=egg] add BlueICBM
 tag @e[tag=BlueVortex,type=egg] remove BlueVortex
 
 tag @e[tag=YellowVortex,type=egg] add ICBM
+tag @e[tag=YellowVortex,type=egg] add YellowICBM
 tag @e[tag=YellowVortex,type=egg] remove YellowVortex
 
 #Thanks iRobo for the ICBM algorithm!

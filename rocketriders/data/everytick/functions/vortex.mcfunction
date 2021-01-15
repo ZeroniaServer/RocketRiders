@@ -16,6 +16,9 @@ execute as @s[tag=!custVortParticle] as @e[tag=YellowVortex,type=egg] at @s run 
 execute as @s[tag=!custVortParticle] as @e[tag=BlueVortex,type=egg] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 scoreboard players add @e[tag=BlueVortex,type=egg] vortextimer 1
 scoreboard players add @e[tag=YellowVortex,type=egg] vortextimer 1
+#Next two commands disable Vortex near own portals
+execute unless entity @s[tag=noPortal] as @e[tag=BlueVortex,type=egg,scores={vortextimer=19..20}] at @s if entity @s[x=-12,y=36,z=-80,dx=48,dy=25,dz=12] run scoreboard players remove @s vortextimer 1
+execute unless entity @s[tag=noPortal] as @e[tag=YellowVortex,type=egg,scores={vortextimer=19..20}] at @s if entity @s[x=-12,y=36,z=68,dx=48,dy=25,dz=12] run scoreboard players remove @s vortextimer 1
 execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:block.portal.ambient player @a ~ ~ ~ 2 2
 execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:entity.shulker.teleport player @a ~ ~ ~ 2 0.8
 execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:block.portal.ambient player @a ~ ~ ~ 2 2

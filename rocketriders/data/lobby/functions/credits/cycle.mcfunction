@@ -19,7 +19,8 @@ execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag
 execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose3,type=area_effect_cloud] run function lobby:credits/pose3
 execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose4,type=area_effect_cloud] run function lobby:credits/pose4
 kill @e[tag=LobbyPoseRNG,type=area_effect_cloud]
-execute as @e[tag=SelectedCredit,type=armor_stand] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
+execute as @e[tag=SelectedCredit,tag=!BlockyCredits,type=armor_stand] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
+execute as @e[tag=SelectedCredit,tag=BlockyCredits,type=armor_stand] at @s run particle dust 1 0 1 2 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
 
 #Displays name
 function lobby:credits/names

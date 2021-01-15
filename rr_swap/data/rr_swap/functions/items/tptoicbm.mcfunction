@@ -7,6 +7,14 @@ execute as @e[tag=ICBMtracker,type=area_effect_cloud,tag=teleportPair] if entity
 execute as @e[tag=ICBMtracker,type=area_effect_cloud,tag=teleportPair] unless entity @e[tag=ICBM,type=egg,tag=teleportPair] run tag @s add ICBMTriggered
 execute as @e[tag=ICBMtracker,type=area_effect_cloud,tag=teleportPair] if entity @e[tag=ICBM,scores={ICBMtime=30..},type=egg,tag=teleportPair] run tag @s add ICBMTriggered
 
+#Next two commands disable ICBM near own portals
+execute as @e[tag=BlueICBM,type=egg,tag=teleportPair] at @s if entity @s[x=-12,y=36,z=-80,dx=48,dy=25,dz=12] run kill @e[tag=ICBMtracker,type=area_effect_cloud,tag=teleportPair]
+execute as @e[tag=YellowICBM,type=egg,tag=teleportPair] at @s if entity @s[x=-12,y=36,z=68,dx=48,dy=25,dz=12] run kill @e[tag=ICBMtracker,type=area_effect_cloud,tag=teleportPair]
+
+#Next two commands disable ICBM near enemy portals with Fireball Portals gamerule off
+execute as @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[tag=ICBM,type=egg] at @s if entity @s[x=-11,y=30,z=71,dx=46,dy=32,dz=6] run kill @e[tag=ICBMtracker,type=area_effect_cloud,tag=teleportPair]
+execute as @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[tag=ICBM,type=egg] at @s if entity @s[x=-11,y=30,z=-77,dx=46,dy=32,dz=6] run kill @e[tag=ICBMtracker,type=area_effect_cloud,tag=teleportPair]
+
 execute as @e[tag=ICBM,type=egg,tag=teleportPair] at @s unless entity @e[tag=ICBMtracker,type=area_effect_cloud,tag=teleportPair] run kill @s
 
 tag @e[tag=ICBMtracker,type=area_effect_cloud] remove teleportPair

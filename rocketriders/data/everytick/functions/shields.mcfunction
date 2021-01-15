@@ -12,8 +12,8 @@ scoreboard players reset @a ThrowShield
 execute as @e[tag=YellowShield,type=snowball] at @s run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 scoreboard players add @e[tag=YellowShield,type=snowball] shieldtest 1
 #Next 2 commands disable Yellow Shields inside of portals
-execute unless entity @s[tag=noPortal] as @e[tag=YellowShield,type=snowball] at @s if entity @s[x=-12,y=36,z=-74,dx=48,dy=25] run scoreboard players remove @s shieldtest 1
-execute unless entity @s[tag=noPortal] as @e[tag=YellowShield,type=snowball] at @s if entity @s[x=-12,y=36,z=74,dx=48,dy=25] run scoreboard players remove @s shieldtest 1
+execute unless entity @s[tag=noPortal] as @e[tag=YellowShield,type=snowball,scores={shieldtest=19..20}] at @s if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] run scoreboard players remove @s shieldtest 1
+execute unless entity @s[tag=noPortal] as @e[tag=YellowShield,type=snowball,scores={shieldtest=19..20}] at @s if entity @s[x=-12,y=33,z=74,dx=48,dy=28] run scoreboard players remove @s shieldtest 1
 #Disable Yellow Shields near void
 execute as @e[tag=YellowShield,type=snowball] at @s if predicate custom:nearvoid run scoreboard players remove @s shieldtest 1
 execute as @e[tag=YellowShield,scores={shieldtest=20},type=snowball] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["PlaceYellowShield"],Duration:25}
@@ -42,8 +42,8 @@ kill @e[tag=YellowShield,scores={shieldtest=20..},type=snowball]
 execute as @e[tag=BlueShield,type=snowball] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 scoreboard players add @e[tag=BlueShield,type=snowball] shieldtest2 1
 #Next 2 commands disable Blue Shields inside of portals
-execute unless entity @s[tag=noPortal] as @e[tag=BlueShield,type=snowball] at @s if entity @s[x=-12,y=36,z=-74,dx=48,dy=25] run scoreboard players remove @s shieldtest2 1
-execute unless entity @s[tag=noPortal] as @e[tag=BlueShield,type=snowball] at @s if entity @s[x=-12,y=36,z=74,dx=48,dy=25] run scoreboard players remove @s shieldtest2 1
+execute unless entity @s[tag=noPortal] as @e[tag=BlueShield,type=snowball,scores={shieldtest2=19..20}] at @s if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] run scoreboard players remove @s shieldtest2 1
+execute unless entity @s[tag=noPortal] as @e[tag=BlueShield,type=snowball,scores={shieldtest2=19..20}] at @s if entity @s[x=-12,y=33,z=74,dx=48,dy=28] run scoreboard players remove @s shieldtest2 1
 #Disable Blue Shields near void
 execute as @e[tag=BlueShield,type=snowball] at @s if predicate custom:nearvoid run scoreboard players remove @s shieldtest2 1
 execute as @e[tag=BlueShield,scores={shieldtest2=20},type=snowball] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["PlaceBlueShield"],Duration:25}

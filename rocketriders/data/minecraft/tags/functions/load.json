@@ -1,6 +1,5 @@
 {
  "values": [
- "custom:upon_load",
- "custom:ck_uponload"
+ "custom:upon_load"
  ]
 }

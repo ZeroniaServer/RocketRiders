@@ -15,7 +15,6 @@ summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","Gam
 summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","GameMode","PowerupsMode"],CustomName:"\"Powerups Mode\""}
 summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","GameMode","SwapMode"],CustomName:"\"Swap Mode\""}
 summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","GameMode","CTFMode"],CustomName:"\"Capture The Flag\""}
-summon area_effect_cloud -64 191 78 {Duration:2000000000,Tags:["ServerMode","GameMode","ChaseMode"],CustomName:"\"Chase Mode\""}
 tag @e[tag=ServerMode,tag=GameMode,tag=NormalMode] add ServermodeSet1
 tag @e[tag=ServerMode,tag=GameMode,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet2
 tag @e[tag=ServerMode,tag=GameMode,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet3
@@ -35,11 +34,6 @@ execute as @e[tag=ServermodeSet1,tag=SwapMode] run tag @e[tag=Set1] add SwapMode
 execute as @e[tag=ServermodeSet2,tag=SwapMode] run tag @e[tag=Set2] add SwapMode
 execute as @e[tag=ServermodeSet3,tag=SwapMode] run tag @e[tag=Set3] add SwapMode
 execute as @e[tag=ServermodeSet4,tag=SwapMode] run tag @e[tag=Set4] add SwapMode
-
-execute as @e[tag=ServermodeSet1,tag=ChaseMode] run tag @e[tag=Set1] add ChaseMode
-execute as @e[tag=ServermodeSet2,tag=ChaseMode] run tag @e[tag=Set2] add ChaseMode
-execute as @e[tag=ServermodeSet3,tag=ChaseMode] run tag @e[tag=Set3] add ChaseMode
-execute as @e[tag=ServermodeSet4,tag=ChaseMode] run tag @e[tag=Set4] add ChaseMode
 
 execute as @e[tag=ServermodeSet1,tag=CTFMode] run tag @e[tag=Set1] add CTFMode
 execute as @e[tag=ServermodeSet2,tag=CTFMode] run tag @e[tag=Set2] add CTFMode

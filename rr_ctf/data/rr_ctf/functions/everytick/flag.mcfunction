@@ -243,5 +243,5 @@ scoreboard players reset @a[team=!Blue,team=!Yellow] FlagScore
 
 #Carry flag
 execute if entity @a[tag=CarryFlag] run function rr_ctf:everytick/carryflag
-execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,distance=..6] respawn 0
-execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,distance=..6] respawn 0
+execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
+execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0

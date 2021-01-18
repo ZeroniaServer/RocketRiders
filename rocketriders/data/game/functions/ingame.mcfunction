@@ -101,8 +101,8 @@ setblock 12 66 -67 obsidian
 
 ##Respawn handling
 execute as @e[tag=YellowSpawnZone] at @s as @e[type=player,team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0
-execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,team=Yellow,distance=..6] respawn 0
-execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,team=Blue,distance=..6] respawn 0
+execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
+execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
 scoreboard players reset @a[team=!Yellow,team=!Blue] respawn
 
 ##Hotfix for Canopy respawns

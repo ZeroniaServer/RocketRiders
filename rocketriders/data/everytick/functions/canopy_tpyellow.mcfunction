@@ -22,6 +22,9 @@ execute as @p[team=Yellow,tag=currentTP,scores={respawn=1..}] run scoreboard pla
 #Canopy forgets owner if crossing in Rocket Residers
 execute if entity @s[tag=Residers] as @p[team=Yellow,tag=currentTP] at @s if entity @s[z=-184,dz=220] run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,type=area_effect_cloud] pearlOwnerUUID
 
+#Canopy forgets owner if shot by Nova Rocket
+execute as @p[team=Yellow,tag=currentTP,scores={novattach=1..}] at @s run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,type=area_effect_cloud] pearlOwnerUUID
+
 #Deselect and remember checked Canopy and player
 tag @p[team=Yellow,tag=currentTP] add checkedTP
 tag @a[team=Yellow,tag=checkedTP] remove currentTP

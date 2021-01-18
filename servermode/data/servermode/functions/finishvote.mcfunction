@@ -10,7 +10,7 @@ execute if score $winners VoteServerMode matches 1 if score @e[tag=ServerMode,ta
 
 # in case of tie, choose random
 execute if score $winners VoteServerMode matches 2.. run tag @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=0},limit=1,sort=random] add WonVote
-execute if score $winners VoteServerMode matches 2.. run tellraw @a ["",{"text":"Due to a tie vote, option ","color":"green"},{"selector":"@e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1]","color":"red","bold":"true"},{"text":" was randomly selected.","color":"green"}]
+execute if score $winners VoteServerMode matches 2.. run tellraw @a ["",{"text":"Due to a tie vote, option ","color":"dark_green"},{"selector":"@e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1]","color":"red","bold":"true"},{"text":" was randomly selected.","color":"dark_green"}]
 scoreboard players reset $winners VoteServerMode
 
 # NORMAL MODE SELECTED
@@ -37,6 +37,7 @@ execute if entity @e[tag=WonVote,tag=Set4,type=area_effect_cloud] as @e[tag=Serv
 # Global
 tag @s remove ServerModeVoting
 function arenaclear:areaclear
+tag @s add EditedSettings
 
 # Select forced item sets and match settings
 execute unless entity @e[tag=WonVote,tag=SwapMode,type=area_effect_cloud] run schedule function servermode:init_forcedsettings 2t

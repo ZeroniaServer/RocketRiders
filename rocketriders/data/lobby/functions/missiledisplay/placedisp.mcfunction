@@ -3,8 +3,16 @@
 ## operates based on the page of a lectern ##
 #############################################
 
+#Cooldown
+execute as @e[tag=DispCooldown] run scoreboard players add $DispCD CmdData 1
+execute if score $DispCD CmdData matches 30 run data merge block 12 203 78 {Page:0}
+execute if score $DispCD CmdData matches 30 run tag @e[tag=Selection] remove DispCooldown
+execute unless entity @e[tag=Selection,tag=DispCooldown] run scoreboard players reset $DispCD CmdData
+
 #Set page back to 1 if someone tries to use the arrow to cycle through pages
-execute if block 12 203 78 minecraft:lectern{Page:2} run data merge block 12 203 78 {Page:0}
+execute if entity @e[tag=DispCooldown] run data merge block 12 203 78 {Page:24}
+execute unless entity @e[tag=Selection,tag=DispCooldown] unless block 12 203 78 minecraft:lectern{Page:0} unless block 12 203 78 minecraft:lectern{Page:1} unless block 12 203 78 minecraft:lectern{Page:2} unless block 12 203 78 minecraft:lectern{Page:23} unless block 12 203 78 minecraft:lectern{Page:24} unless block 12 203 78 minecraft:lectern{Page:25} run tag @e[tag=Selection] add DispCooldown
+execute unless entity @e[tag=Selection,tag=DispCooldown] unless block 12 203 78 minecraft:lectern{Page:0} unless block 12 203 78 minecraft:lectern{Page:1} run data merge block 12 203 78 {Page:0}
 
 #Display missiles
 execute if block 12 203 78 minecraft:lectern{Page:3} run function lobby:missiledisplay/missile/tomatwo

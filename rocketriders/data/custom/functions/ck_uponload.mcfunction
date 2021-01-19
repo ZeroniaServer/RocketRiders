@@ -23,3 +23,5 @@ team modify Spectator friendlyFire false
 team modify Developer friendlyFire false
 
 function servermode:enabled
+
+tag @e[tag=Selection] add ServerRigNormal

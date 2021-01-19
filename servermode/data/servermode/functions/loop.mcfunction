@@ -1,3 +1,9 @@
+#Rig CK's servermode to automatically select normal mode as the first game after a restart/first match.
+execute as @e[tag=ServerRigNormal] run scoreboard players set @e[tag=Set1] VoteServerMode 1000
+execute as @e[tag=ServerRigNormal] run scoreboard players set @s VoteServerMode 600
+
+
+
 scoreboard players add @s VoteServerMode 1
 scoreboard players add @e[tag=ServerMode,tag=Set,type=area_effect_cloud] VoteServerMode 0
 

@@ -45,13 +45,10 @@ execute as @s[tag=RandomMap] run scoreboard players set @e[tag=RandomBottom,type
 execute as @s[tag=RandomMap] as @e[tag=RandomBottom,type=area_effect_cloud] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @s[tag=RandomMap] as @e[tag=RandomBottom,type=area_effect_cloud] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
 execute as @s[tag=RandomMap] run scoreboard players operation @e[tag=Selection,type=armor_stand,limit=1] BottomDeco = @e[tag=RandomBottom,limit=1,type=area_effect_cloud] RNGscore
-#extra precaution - no bottom deco if layered is on
+#Extra precaution - no bottom deco if layered is on
 scoreboard players set @e[tag=Selection,type=armor_stand,limit=1,scores={MiddleDeco=3}] BottomDeco 0
 
-execute as @s[tag=RandomMap] run summon area_effect_cloud ~ ~ ~ {Tags:["RandomPortal","RandomBases"],Duration:2000000000}
-execute as @s[tag=RandomMap] run scoreboard players set @e[tag=RandomPortal,type=area_effect_cloud] RNGmax 5
-execute as @s[tag=RandomMap] as @e[tag=RandomPortal,type=area_effect_cloud] store result score @s RNGscore run data get entity @s UUID[0]
-execute as @s[tag=RandomMap] as @e[tag=RandomPortal,type=area_effect_cloud] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
-execute as @s[tag=RandomMap] run scoreboard players operation @e[tag=Selection,type=armor_stand,limit=1] PortalDeco = @e[tag=RandomPortal,limit=1,type=area_effect_cloud] RNGscore
+#Always use glass rim portals
+scoreboard players set @e[tag=Selection,type=armor_stand,limit=1] PortalDeco 1
 
 kill @e[tag=RandomBases,type=area_effect_cloud]

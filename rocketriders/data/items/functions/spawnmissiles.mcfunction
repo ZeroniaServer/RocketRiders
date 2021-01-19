@@ -131,8 +131,10 @@ execute as @e[tag=BlueDuplex,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~4
 execute as @e[tag=YellowDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[duplexExtraYellow],Duration:2000000000}
 execute as @e[tag=YellowDuplex,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-22
 
-#Broadsword
+#Broadsword (+ extra entity)
+execute as @e[tag=BlueBroad,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[broadExtraBlue],Duration:2000000000}
 execute as @e[tag=BlueBroad,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~5
+execute as @e[tag=YellowBroad,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[broadExtraYellow],Duration:2000000000}
 execute as @e[tag=YellowBroad,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-16
 
 ##Portal spawn detection
@@ -154,6 +156,15 @@ execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] at @s run fill ~ ~-5 ~
 execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] run kill @s
 execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] at @s run fill ~ ~-5 ~-21 ~ ~-5 ~-21 powered_rail[shape=north_south] replace powered_rail
 execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] run kill @s
+
+#Extra for Broadsword
+execute as @e[tag=broadExtraBlue,type=area_effect_cloud] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
+execute as @e[tag=broadExtraBlue,type=area_effect_cloud] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
+execute as @e[tag=broadExtraBlue,type=area_effect_cloud] run kill @s
+# execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
+# execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
+execute as @e[tag=broadExtraYellow,type=area_effect_cloud] run kill @s
+
 
 ##Kill entity
 kill @e[tag=missile,type=area_effect_cloud]

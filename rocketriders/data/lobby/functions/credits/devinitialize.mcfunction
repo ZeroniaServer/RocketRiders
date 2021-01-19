@@ -33,9 +33,14 @@ summon armor_stand -51 211 75 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlat
 summon armor_stand -51 211 82 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","TrekCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 74 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","TypCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 
+replaceitem entity @e[tag=BuilderCreditsAS,type=armor_stand] weapon.mainhand netherite_pickaxe
+
 #Blocky and Toul
 summon armor_stand -51 211 73 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","ExtraCreditsAS","BlockyCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 83 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","ExtraCreditsAS","ToulCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
+
+replaceitem entity @e[tag=ToulCredits,type=armor_stand] weapon.mainhand writable_book
+data merge entity @e[tag=BlockyCredits,type=armor_stand,limit=1] {HandItems:[{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:BlockyCam}}]}
 
 #Pose and armor
 replaceitem entity @e[tag=BuilderCreditsAS,type=armor_stand] armor.chest leather_chestplate{display:{color:16770835}}

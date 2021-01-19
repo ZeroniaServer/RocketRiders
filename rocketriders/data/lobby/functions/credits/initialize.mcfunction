@@ -9,7 +9,6 @@ tag @e[tag=Selection,type=armor_stand,limit=1] remove noPlayerCredits
 scoreboard players set @e[tag=Selection,type=armor_stand,limit=1] creditsSet 0
 
 #First half of testers/helpers
-summon armor_stand -51 211 73 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","RubixCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 72 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","KurCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 71 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","CarsCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 70 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","MaartCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
@@ -21,10 +20,9 @@ summon armor_stand -51 211 65 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlat
 summon armor_stand -51 211 64 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","JohnCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 63 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","SwagCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 62 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","AdamCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
-summon armor_stand -51 211 83 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","ToulCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 84 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","ProzanCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 85 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","CubeCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
-summon armor_stand -51 211 86 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","BlockyCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
+summon armor_stand -51 211 86 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","RubixCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 87 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","LemonCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 88 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","LogicCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -51 211 89 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","SamCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
@@ -43,6 +41,7 @@ summon armor_stand -52 211 55 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlat
 summon armor_stand -52 211 54 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","DevonCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -52 211 53 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","RoboCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -52 211 52 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","BlueSkyCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
+summon armor_stand -52 211 51 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","ImmoCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -52 211 95 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","GroundCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -52 211 96 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","FunnyCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -52 211 97 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","MosesCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
@@ -51,19 +50,15 @@ summon armor_stand -52 211 99 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlat
 summon armor_stand -52 211 100 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","LlewCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -52 211 101 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","UnWinCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 summon armor_stand -52 211 102 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","CalverinCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
+summon armor_stand -52 211 103 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","KaisCredits"],Silent:1b,Rotation:[90.0f, 0.0f]}
 
 #Pose and armor
-replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,type=armor_stand] armor.chest leather_chestplate{display:{color:65397}}
-replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,type=armor_stand] armor.legs leather_leggings{display:{color:65397}}
-replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,type=armor_stand] armor.feet leather_boots{display:{color:13784063}}
-
-#Special armor for Blocky
-replaceitem entity @e[tag=BlockyCredits,type=armor_stand] armor.chest leather_chestplate{display:{color:14061821}}
-replaceitem entity @e[tag=BlockyCredits,type=armor_stand] armor.legs leather_leggings{display:{color:14061821}}
+replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!ExtraCreditsAS,type=armor_stand] armor.chest leather_chestplate{display:{color:65397}}
+replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!ExtraCreditsAS,type=armor_stand] armor.legs leather_leggings{display:{color:65397}}
+replaceitem entity @e[tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!ExtraCreditsAS,type=armor_stand] armor.feet leather_boots{display:{color:13784063}}
 
 #Skulls
 replaceitem entity @e[tag=KurCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-213448148,-517518087,-2052880877,-1732481649],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTEyYTQ1ZDg5ZjAxNTZmNWFiYTQ4NGZkMzUyYTQ4YzRiNGE4MzU1YWZkOWE3NjAxYjg1ZmQxM2EwZjViZWE4NCJ9fX0="}]}}}
-replaceitem entity @e[tag=RubixCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;542358289,-1184218050,-1412888297,1863394856],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTFjMDMwYWY1MzkxMDdjOTcxZjNkMzA0OTU1MDhiYTBjMjJmMjExM2RkZGJiNTM2YzZkNDllMjIxNWQ4ZTFkNSJ9fX0="}]}}}
 replaceitem entity @e[tag=CarsCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;1627204264,-1150138997,-1673728830,-1125281030],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODg5ZWMyYzJlZmJkNTcxMzg1NmNlY2Q2ZDdlMzU3YmU3OWQzOTBjNGY5MjJjNWIzZTA5ZWQzYjhlMWMzMzlmYyJ9fX0="}]}}}
 replaceitem entity @e[tag=MaartCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-1216736971,-670940768,-1711156543,-1539951465],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM5N2MwM2FkMjM2ZjQ3MzU4YjFkMjM3ZmE1MzVkZTkzZDgwMTdhMTVjMmZhNjU0MGIzMWMwNWJlNmZhNjExYiJ9fX0="}]}}}
 replaceitem entity @e[tag=DrakanCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;127269771,-347388940,-1976124858,-1254147693],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2M2U4NTNmNTE0MDM5OTJhYTZlMjdmODgxMjcxZDMzODZjMWUyMWIzYzVlYTQxYTAwOTVkNTc5M2E3NjI2MSJ9fX0="}]}}}
@@ -73,10 +68,9 @@ replaceitem entity @e[tag=EonCredits,type=armor_stand] armor.head player_head{Sk
 replaceitem entity @e[tag=JohnCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;1347534757,1950762203,-1156839595,1810385252],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzcwNTIxY2UyMmRiNWVlODFmZTRlZTRkOGFlNjQ2ZGYxOTcwZGQ4ZmIzY2NmOGQyNDQ1YmQ0ZjRhNjVkMDQ5OSJ9fX0="}]}}}
 replaceitem entity @e[tag=SwagCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-394650431,-32160608,-1731970518,1357450115],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkMjExMGU1YTM4MmE2ZjVhMmQ0ZDAwZTFlNDZkNTkxMWRkYjEwYmQ0N2ZlYTY0NzYzMzFiN2UxMjg1MjU0ZCJ9fX0="}]}}}
 replaceitem entity @e[tag=DarkCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;1512598029,2124304031,-2123395457,-1051642108],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWI4NTkzYTdjNjA2MmEyZjQ5NDJiZmJjMTY4Mjg1OTMzZDIyNWMzYzI3ZjRiOWU1MDBjODNjZjg4MDlmODU0ZCJ9fX0="}]}}}
-replaceitem entity @e[tag=ToulCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-75123510,-141145352,-1780581694,-279058577],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTg3NzlkYTc3MDdkMTI0MTE1MDAzODQ2NjI4MWUyM2EyNzhmMGIxNTM0NDBkODIxN2ZkMGM4NjM3ODlhZWY2OSJ9fX0="}]}}}
 replaceitem entity @e[tag=ProzanCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-801876288,1502234462,-2104772851,-1155668146],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2M2NTU4NWM4NmEzOGZlOTlmZjBjODIyZTkwNjVjMGE3MjRjYzlmZWIwYzE4NGEzMGE2ZDRjZWNhZDEyMWQ5MiJ9fX0="}]}}}
 replaceitem entity @e[tag=CubeCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;425640313,1737115613,-1171620040,-955871708],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFkYWMzYzg2OTlmZjQ5ZjUxNzEyZTNjNzc4N2YwZmY1NDJiYzVkNmU4ZTE1NTE5MGVmOGZjNzQxMmQ0OWFmZCJ9fX0="}]}}}
-replaceitem entity @e[tag=BlockyCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;1792793968,-822065492,-1579448131,-1672258558],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjA2MzU1YWIwZWY4NGI4ZTg1NDk2ZDZlMTllNWU2ZDRhYTg5Mjg4YjI2Y2NkYTUzNzA0OTlmZDdkZWQ3ZmY2MiJ9fX0="}]}}}
+replaceitem entity @e[tag=RubixCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;542358289,-1184218050,-1412888297,1863394856],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTFjMDMwYWY1MzkxMDdjOTcxZjNkMzA0OTU1MDhiYTBjMjJmMjExM2RkZGJiNTM2YzZkNDllMjIxNWQ4ZTFkNSJ9fX0="}]}}}
 replaceitem entity @e[tag=LemonCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;97679797,-47300532,-2020002071,-454799406],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2M5ZDdhNjVmMDVjNWQ0NDUxMzAzZTE5Y2YzMTQxZDQxOWY1MTdmNGY2ZDViYWIxZTZlYmVmMjYzOTc5YmQxNyJ9fX0="}]}}}
 replaceitem entity @e[tag=LogicCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-762156868,1165903661,-1887163775,826307552],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNiNzA0NzE0NDJhMjcwMzY3ZGE5YjFmZDZkZWMzZTJkNDc0NmNjNGVjYWQ1ZWQ2NTE2MjlkOGM3Mzg3NmFhOSJ9fX0="}]}}}
 replaceitem entity @e[tag=SamCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-1145499336,-364164865,-1215735357,-1950804594],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjk1NTAxNjNhYTNiMmE4ZWNlNzVlYWU0YzY5NDgxZTcyZTkyMmNhMWQzMTliNjczOWNlNTRhNTYxMTdhNGI2YSJ9fX0="}]}}}
@@ -99,12 +93,14 @@ replaceitem entity @e[tag=GroundCredits,type=armor_stand] armor.head player_head
 replaceitem entity @e[tag=FunnyCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;1490602184,710364957,-1297625916,1088393637],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjNmYzUzMWE5MDFjZWM5NjI3MzMzOGRlMjYyZmYyOTlkYTU3YWU5YTEzMGVhNjVkY2YyZDUzNDBlZjcxYzMifX19"}]}}}
 replaceitem entity @e[tag=MosesCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;954963977,1350257969,-1084706310,-1628615574],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDdiZTkyMjhmYTZhNWE3Yjg0YTM2MDkzODJlZmY1NmE1MjFiNTQwZTk1ZTM1MzU2ZWU2MzRkMDE5MDA1OGQ0MyJ9fX0="}]}}}
 replaceitem entity @e[tag=BlueSkyCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-1981546630,-1008644641,-1189381887,26051784],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRiZWYyY2M1YTMzM2RkMGEwZmY2NjM1NGZlNzk5MjgwNzNmODVhMDc3ZjM0MTFlYTQwOGY2ZjAyNmRmZTZjZCJ9fX0="}]}}}
+replaceitem entity @e[tag=ImmoCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-1271545506,-871150061,-1474979829,198956731],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmVjYTlhYWUzZTc3Zjc5NzExMDg0OWYwYTBhYmZhNTExMGJhNDU0NmZhZjI4OGQ1ZGJjZDQ5NzdhYTE5NmRlMCJ9fX0="}]}}}
 replaceitem entity @e[tag=CalverinCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-493048438,238569755,-2081740381,1450882223],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTIwZGI5YzFiNDg1YjZhNDE0ZWU4MGFkY2RjNWFlYTkzMjhiMzYyZTJlNjExOWQ0MDVmYTQyNzQ1MGUxMzQ4ZCJ9fX0="}]}}}
 replaceitem entity @e[tag=RoboCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-1752375778,1398554712,-1984963259,1329172426],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzM3YjExM2UxOTRhODM1MTk0ODE1ZDAxYjQ4NmY1MjIxN2UzNTdlYWU2M2E5NzgxMzk0ZDBmYWEzNWNhNWFmZiJ9fX0="}]}}}
 replaceitem entity @e[tag=ZoruaCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;615255622,674120226,-1419628215,1446139650],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWVjYzgwZDQxZjYwN2JmYjQ5YzFiMWE0MjZkZWFhYWRjOTg1NmU3MDU0M2U5MTA4NGMxMGE0NGU1ODM0Mzk5NyJ9fX0="}]}}}
 replaceitem entity @e[tag=CagCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;221051748,-1053081578,-1288252233,-1822947344],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGFiNWJlYWRmMjEyY2I0NzRkY2Y2N2Y4YzVmMzNmNWYwNWZmYTc4YjRjNjllNjBlMjhjZTNjOTYxODRiODg1MSJ9fX0="}]}}}
 replaceitem entity @e[tag=LlewCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;211655507,-1209580195,-2051772806,-1037837861],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjMwNjMxNmFhMTMyMGQxYTMyYWU4ZDllNTEwYzE3MmFiOGE3ZjdiNDkyZjlkNjcwNjFkMzQ1MzVkNTk1ZjJmNCJ9fX0="}]}}}
+replaceitem entity @e[tag=KaisCredits,type=armor_stand] armor.head player_head{SkullOwner:Kaisheng21}
 
 #Selected tags
 tag @e[tag=creditsAS,type=armor_stand] remove SelectedCredit
-tag @e[tag=CalverinCredits,type=armor_stand] add SelectedCredit
+tag @e[tag=KaisCredits,type=armor_stand] add SelectedCredit

@@ -17,13 +17,14 @@ setblock 18 202 73 redstone_block
 setblock 18 202 73 air
 setblock 18 201 73 blue_concrete_powder
 
+#Extra for Broadsword trigger
+setblock 20 204 74 observer[facing=south,powered=true]
+setblock 20 204 73 tnt
+
 fill 22 202 69 15 206 73 moving_piston replace air
 fill 22 202 75 15 206 87 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 fill 22 202 69 15 206 87 white_glazed_terracotta replace blue_glazed_terracotta
-
-#extra stuff for broadsword
-schedule function lobby:missiledisplay/missile/broadsword_extra 5t
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Special] ","color":"dark_purple","bold":"true"},{"text":"Broadsword","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Broadsword is a fast and powerful missile that bombs a lot of TNT. It's like three swords combined!","color":"gray","italic":"true"}

@@ -1,5 +1,5 @@
 ##Enables all Lightning missiles
-tag @s add rngHur
-tag @s add rngThun
-tag @s remove lightningOff
+tag @s[tag=!hurWasOn] add rngHur
+tag @s[tag=!thunWasOn] add rngThun
+tag @s[tag=!lightningWasOn] remove lightningOff
 scoreboard players set @e[tag=Selection,type=armor_stand] refreshsigns 1

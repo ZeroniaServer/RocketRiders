@@ -3,12 +3,11 @@ execute as @e[tag=ServerMode,tag=Set,type=area_effect_cloud] store result score 
 execute if entity @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=1..}] run function servermode:pogger_calculation
 execute store result score $winners VoteServerMode if entity @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=0}]
 
-# majority winner (unless server reload/restart)
-execute unless entity @e[tag=Selection,tag=ServerRigNormal] if score $winners VoteServerMode matches 1 run tag @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=0},limit=1] add WonVote
-execute unless entity @e[tag=Selection,tag=ServerRigNormal] if score $winners VoteServerMode matches 1 if score @e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1] FinalVote matches 1 run tellraw @a ["",{"text":"Option ","color":"dark_green"},{"selector":"@e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1]","color":"red","bold":"true"},{"text":" won with ","color":"dark_green"},{"text":"1","color":"green"},{"text":" vote!","color":"dark_green"}]
-execute unless entity @e[tag=Selection,tag=ServerRigNormal] if score $winners VoteServerMode matches 1 if score @e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1] FinalVote matches 2.. run tellraw @a ["",{"text":"Option ","color":"dark_green"},{"selector":"@e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1]","color":"red","bold":"true"},{"text":" won with ","color":"dark_green"},{"score":{"name":"@e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1]","objective":"FinalVote"},"color":"green"},{"text":" votes!","color":"dark_green"}]
-# server restart/reload announcement
-execute if entity @e[tag=ServerRigNormal] run tellraw @a ["",{"text":"Due to a Server restart or reload, this game will be played in Normal Mode.","color":"dark_green"}]
+# majority winner
+execute if score $winners VoteServerMode matches 1 run tag @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=0},limit=1] add WonVote
+execute if score $winners VoteServerMode matches 1 if score @e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1] FinalVote matches 1 run tellraw @a ["",{"text":"Option ","color":"dark_green"},{"selector":"@e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1]","color":"red","bold":"true"},{"text":" won with ","color":"dark_green"},{"text":"1","color":"green"},{"text":" vote!","color":"dark_green"}]
+execute if score $winners VoteServerMode matches 1 if score @e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1] FinalVote matches 2.. run tellraw @a ["",{"text":"Option ","color":"dark_green"},{"selector":"@e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1]","color":"red","bold":"true"},{"text":" won with ","color":"dark_green"},{"score":{"name":"@e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1]","objective":"FinalVote"},"color":"green"},{"text":" votes!","color":"dark_green"}]
+
 # in case of tie, choose random
 execute if score $winners VoteServerMode matches 2.. run tag @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=0},limit=1,sort=random] add WonVote
 execute if score $winners VoteServerMode matches 2.. run tellraw @a ["",{"text":"Due to a tie vote, option ","color":"dark_green"},{"selector":"@e[tag=ServerMode,tag=Set,type=area_effect_cloud,tag=WonVote,limit=1]","color":"red","bold":"true"},{"text":" was randomly selected.","color":"dark_green"}]
@@ -42,5 +41,3 @@ tag @s add EditedSettings
 
 # Select forced item sets and match settings
 execute unless entity @e[tag=WonVote,tag=SwapMode,type=area_effect_cloud] run schedule function servermode:init_forcedsettings 2t
-
-tag @e[tag=ServerRigNormal] remove ServerRigNormal

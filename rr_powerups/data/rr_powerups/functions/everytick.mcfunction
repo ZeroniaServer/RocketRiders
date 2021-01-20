@@ -1,5 +1,6 @@
 execute as @e[tag=rr_powerups,type=armor_stand] run function gamemodes:updateid
 execute if score @e[tag=Selection,tag=!powerupsEnabled,tag=switchGamemodes,limit=1,type=armor_stand] SetGamemode = @e[tag=rr_powerups,limit=1,type=armor_stand] gamemodeID run function rr_powerups:enable
+execute if score @e[tag=Selection,tag=powerupsEnabled,tag=switchGamemodes,limit=1,type=armor_stand] SetGamemode = @e[tag=rr_powerups,limit=1,type=armor_stand] gamemodeID run tag @e[tag=Selection,type=armor_stand,limit=1] remove switchGamemodes
 execute as @e[tag=Selection,tag=powerupsEnabled,type=armor_stand] run function rr_powerups:ifenabled
 execute as @e[tag=Selection,tag=powerupsLast,type=armor_stand] run function rr_powerups:iflast
 

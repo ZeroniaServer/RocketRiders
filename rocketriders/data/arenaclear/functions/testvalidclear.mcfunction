@@ -10,5 +10,8 @@ execute if entity @e[tag=Selection,type=armor_stand,tag=lightningOff] run scoreb
 execute if score $test ClearArena matches 3.. run tag @s remove validClear
 scoreboard players reset $test ClearArena
 execute as @s[tag=!validClear] run tellraw @s {"text":"You must have at least one Missile enabled to start the game","color":"red"}
-execute as @s[tag=validClear] as @e[tag=Selection,type=armor_stand] run function arenaclear:areaclear
+execute as @s[tag=validClear] as @e[tag=Selection,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled,tag=!needsForceClear] run function arenaclear:areaclear
+execute as @s[tag=validClear] if entity @e[tag=Selection,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled,tag=needsForceClear] run tellraw @s {"text":"Warning: Force clearing arena since previous gamemode was uninstalled. Arena may not be perfectly cleared.","color":"red"}
+execute as @s[tag=validClear] as @e[tag=Selection,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled,tag=needsForceClear] run function arenaclear:forceareaclear
+execute as @s[tag=validClear] unless entity @e[tag=Selection,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] run tellraw @s {"text":"Error: Cannot clear arena because no gamemodes are installed/enabled.","color":"red"}
 tag @s remove validClear

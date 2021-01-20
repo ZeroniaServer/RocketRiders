@@ -18,8 +18,8 @@ execute as @e[tag=Selection,type=armor_stand] run function everytick:general_set
 execute as @e[tag=Selection,type=armor_stand] run function everytick:team_count
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s invCount 0
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[tag=Selection,tag=doHotbarLimit,type=armor_stand] run function items:invcount
-execute as @e[tag=Selection,type=armor_stand] run function game:gamestart
-execute as @e[tag=Selection,tag=GameStarted,type=armor_stand] at @s run function game:ingame
+execute as @e[tag=Selection,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gamestart
+execute as @e[tag=Selection,tag=GameStarted,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
 execute as @e[tag=Selection,type=armor_stand] run function everytick:regen_system
 
 #Night vision/saturation and more lobby functionality
@@ -43,7 +43,10 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if
 execute as @e[tag=Selection,type=armor_stand] if entity @e[type=arrow] run function everytick:arrow_pickup
 
 #Game ending and arena clearing
-execute as @e[tag=Selection,tag=GameEnd,type=armor_stand] run function game:gameend
-execute as @e[tag=Selection,tag=SuddenDeath,type=armor_stand] run function game:suddendeath
+execute as @e[tag=Selection,tag=GameEnd,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gameend
+execute as @e[tag=Selection,tag=SuddenDeath,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
 kill @e[tag=PlacerClear,tag=Cleared,tag=BasePlaced,type=area_effect_cloud]
-execute as @e[tag=Selection,tag=!GameEnd,tag=!EditedSettings,type=armor_stand] run function arenaclear:customizer
+execute as @e[tag=Selection,tag=!GameEnd,tag=!EditedSettings,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
+
+#Gamemode handling
+function gamemodes:disableerror

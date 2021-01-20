@@ -9,7 +9,7 @@ data remove entity @e[tag=MisDispIF,limit=1,type=item_frame] Item.tag.Enchantmen
 playsound minecraft:entity.generic.explode player @a 19 204 78 0.5 1.75
 particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force
 
-data merge block 12 203 78 {Page:0}
+scoreboard players set $prevpage CmdData 0
 
 fill 22 202 69 15 206 87 air
 

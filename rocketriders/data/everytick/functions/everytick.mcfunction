@@ -29,7 +29,8 @@ function lobby:bookwarp
 execute as @a[scores={displayinfo=1..}] run function lobby:displayinfo
 execute as @a[team=Lobby] run function everytick:score_reset
 execute unless entity @e[tag=Selection,tag=GameStarted,type=armor_stand] run function lobby:credits/cycle
-execute as @e[tag=Selection,type=armor_stand] run function lobby:parkour/parkour
+execute as @e[tag=Selection,type=armor_stand,tag=!SMActive] run function lobby:parkour/parkour
+execute as @e[tag=Selection,type=armor_stand,tag=SMActive] run function lobby:parkour/parkourserver
 stopsound @a ambient minecraft:ambient.cave
 
 #Handling portals/roof with players/utilities

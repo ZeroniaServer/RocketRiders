@@ -19,7 +19,6 @@ execute as @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[t
 execute as @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[tag=novatracker,type=area_effect_cloud] at @s if entity @s[x=-11,y=30,z=-77,dx=46,dy=32,dz=6] run kill @s
 
 #Kill everything near/above the roof (overworld only)
-execute in overworld as @e[type=arrow] at @s run kill @s[y=175,dy=100]
 execute in overworld as @e[type=ender_pearl] at @s run kill @s[y=175,dy=100]
 execute in overworld as @e[type=snowball] at @s run kill @s[y=175,dy=100]
 execute in overworld as @e[type=dragon_fireball] at @s run kill @s[y=175,dy=100]

@@ -37,7 +37,7 @@ scoreboard players add @e[tag=SelectedDev,type=armor_stand] CreditCycle 1
 
 #Position/posing/effects
 execute as @e[tag=SelectedDev,scores={CreditCycle=1},type=armor_stand] at @s run tp @s -51 215 78
-execute as @e[tag=SelectedDev,scores={CreditCycle=5..79},type=armor_stand] at @s run tp @s -51 215 78 ~5 ~
+execute as @e[tag=SelectedDev,scores={CreditCycle=6..79},type=armor_stand] at @s run tp @s -51 215 78 ~5 ~
 execute as @e[tag=SelectedDev,tag=EvtemaCredits,type=armor_stand] at @s run particle dust 1 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
 execute as @e[tag=SelectedDev,tag=YZEROCredits,type=armor_stand] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
 execute as @e[tag=SelectedDev,tag=ChronosCredits,type=armor_stand] at @s run particle dust 0 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force

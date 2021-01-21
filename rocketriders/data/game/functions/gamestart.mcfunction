@@ -139,8 +139,10 @@ execute as @e[tag=specjoinpad,tag=CancelJoin,type=area_effect_cloud] run tag @a 
 team join Spectator @a[tag=JoinSpec,gamemode=!spectator]
 clear @a[tag=JoinSpec]
 scoreboard players enable @a[team=Spectator] leaveSpec
-execute unless entity @e[tag=Selection,tag=SMActive] run tellraw @a[tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/tag @s add LeaveTeams"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":"true"}]
-execute if entity @e[tag=Selection,tag=SMActive] run tellraw @a[tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/tag @s add LeaveTeams"}},{"text":" or use /leave to go back to the lobby.","color":"dark_green","italic":"true"}]
+tag @a[scores={LeaveSpec=1..}] add LeaveTeams
+scoreboard players reset @a[team=!Spectator] leaveSpec
+execute unless entity @e[tag=Selection,tag=SMActive] run tellraw @a[tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":"true"}]
+execute if entity @e[tag=Selection,tag=SMActive] run tellraw @a[tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use /leave to go back to the lobby.","color":"dark_green","italic":"true"}]
 tp @a[tag=JoinSpec] 12 100 0.5 90 90
 execute as @a[tag=JoinSpec] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 execute as @a[tag=JoinSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]

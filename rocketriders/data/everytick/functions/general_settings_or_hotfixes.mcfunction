@@ -64,6 +64,10 @@ scoreboard players set @a[scores={ThrowPlat=17..}] ThrowPlat 0
 #Remove dragon breath
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 
+#Keep flowerpots
+execute positioned -36 212 18 unless block ~ ~ ~ potted_blue_orchid run setblock ~ ~ ~ potted_blue_orchid
+execute positioned -37 212 138 unless block ~ ~ ~ potted_dandelion run setblock ~ ~ ~ potted_dandelion
+
 #Decoy Vortex (Lobby)
 execute as @e[tag=VortexDummy,type=area_effect_cloud] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @e[tag=VortexDummy,type=area_effect_cloud] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a

@@ -6,11 +6,11 @@
       "location": {
         "position": {
           "x": {
-            "min": -163,
+            "min": -162,
             "max": 187
           },
           "z": {
-            "min": -175,
+            "min": -174,
             "max": 175
           }
         }

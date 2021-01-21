@@ -5,6 +5,11 @@ execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld unless blo
 execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld unless block 13 38 -74 air if entity @s[x=13,dx=20,y=38,dy=19,z=-74,dz=1] run tag @s add portalKill
 execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld unless block 11 38 74 air if entity @s[x=-9,dx=20,y=38,dy=19,z=74,dz=1] run tag @s add portalKill
 execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld unless block 13 38 74 air if entity @s[x=13,dx=20,y=38,dy=19,z=74,dz=1] run tag @s add portalKill
+execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld if block ~ ~ ~ nether_portal run tag @s add portalKill
+execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld if block ~ ~ ~-0.5 nether_portal run tag @s add portalKill
+execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld if block ~ ~ ~0.5 nether_portal run tag @s add portalKill
+execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld if block ~0.5 ~ ~ nether_portal run tag @s add portalKill
+execute as @a[gamemode=!spectator,team=!Developer] at @s in overworld if block ~-0.5 ~ ~ nether_portal run tag @s add portalKill
 
 #Necessary effects/tags
 execute as @a[tag=portalKill] run tellraw @a ["",{"selector":"@s"},{"text":" went too close to a Nether Portal"}]

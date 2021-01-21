@@ -108,15 +108,19 @@ execute as @e[tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remov
 
 ##Leave Pad
 execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
-execute as @a[tag=LeaveTeams,team=Yellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
-tp @a[tag=LeaveTeams,team=Yellow] -78 204 92 45 0
-execute as @a[tag=LeaveTeams,team=Blue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
-tp @a[tag=LeaveTeams,team=Blue] -78 204 64 135 0
+tag @a[tag=LeaveTeams,team=Yellow] add LeavingYellow
+execute as @a[tag=LeavingYellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
+tag @a[tag=LeaveTeams,team=Blue] add LeavingBlue
+execute as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
 team join Lobby @a[tag=LeaveTeams]
+tp @a[tag=LeavingYellow] -78 204 92 45 0
+tp @a[tag=LeavingBlue] -78 204 64 135 0
 clear @a[tag=LeaveTeams]
 execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @a[tag=LeaveTeams] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 tag @a remove LeaveTeams
+tag @a remove LeavingYellow
+tag @a remove LeavingBlue
 
 ##Joinpad + Leavepad Spectator
 execute as @e[tag=specjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:gray_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
@@ -140,11 +144,11 @@ tag @a remove AlreadySpec
 execute as @e[tag=LeaveSpec,type=area_effect_cloud] at @s run particle dust 2 1 0 1 ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[team=Spectator]
 execute as @e[tag=LeaveSpec,type=area_effect_cloud] at @s run tag @a[team=Spectator,distance=..2] add LeaveSpectator
 execute as @a[team=Spectator,scores={leaveSpec=1..}] run tag @s add LeaveSpectator
+execute as @a[tag=LeaveSpectator] run tellraw @a ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
+team join Lobby @a[tag=LeaveSpectator]
 tp @a[tag=LeaveSpectator] -43 211 78 90 0
 execute as @a[tag=LeaveSpectator] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 gamemode adventure @a[tag=LeaveSpectator]
-execute as @a[tag=LeaveSpectator] run tellraw @a ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
-team join Lobby @a[tag=LeaveSpectator]
 tag @a remove LeaveSpectator
 
 ##Countdown

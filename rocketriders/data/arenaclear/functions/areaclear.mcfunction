@@ -14,7 +14,9 @@ tag @s add EditedSettings
 tag @s remove GameStarted
 
 ##Summon AECs for tracking/block sweeping
+function arenaclear:minifyblue
 function arenaclear:prepareblue
+function arenaclear:minifyyellow
 function arenaclear:prepareyellow
 summon area_effect_cloud 11 63 6 {Tags:["ArenaClearChecker"],Duration:360}
 

@@ -44,13 +44,13 @@ execute as @e[tag=bluemissile,type=area_effect_cloud] at @s run summon area_effe
 execute as @e[tag=yellowmissile,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 
 ##SmartClear preparation
-execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos x append from entity @s Pos[0]
-execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos y append from entity @s Pos[1]
-execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos z append from entity @s Pos[2]
+execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos x prepend from entity @s Pos[0]
+execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos y prepend from entity @s Pos[1]
+execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos z prepend from entity @s Pos[2]
 
-execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos x append from entity @s Pos[0]
-execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos y append from entity @s Pos[1]
-execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos z append from entity @s Pos[2]
+execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos x prepend from entity @s Pos[0]
+execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos y prepend from entity @s Pos[1]
+execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos z prepend from entity @s Pos[2]
 
 ##Individual missile positioning
 #Auxiliary
@@ -151,6 +151,10 @@ execute as @e[tag=missile,tag=portalSpawn3,type=area_effect_cloud] at @s run tp 
 ##Place structure
 execute as @e[tag=missile,type=area_effect_cloud] at @s run function items:structureblock
 
+#Cut down on redundant spawn position entries
+execute as @e[tag=bluemissile,type=area_effect_cloud] run function items:minify/minifyblue
+execute as @e[tag=yellowmissile,type=area_effect_cloud] run function items:minify/minifyyellow
+
 #Extra for Duplex
 execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] at @s run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
 execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] run kill @s
@@ -164,7 +168,6 @@ execute as @e[tag=broadExtraBlue,type=area_effect_cloud] run kill @s
 # execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
 # execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
 execute as @e[tag=broadExtraYellow,type=area_effect_cloud] run kill @s
-
 
 ##Kill entity
 kill @e[tag=missile,type=area_effect_cloud]

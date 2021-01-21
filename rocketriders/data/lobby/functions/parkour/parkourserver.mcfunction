@@ -61,8 +61,8 @@ execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour
 #Restart course
 execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:1b,id:"minecraft:diamond",Count:1}]}] run replaceitem entity @s hotbar.1 diamond{display:{Name:"{\"text\":\"Restart course\",\"color\":\"aqua\",\"italic\":\"false\"}"}} 1
 
-#Return to last checkpoint
-execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:2b,id:"minecraft:emerald",Count:1}]}] run replaceitem entity @s hotbar.2 emerald{display:{Name:"{\"text\":\"Return to last checkpoint\",\"color\":\"green\",\"italic\":\"false\"}]"}} 1
+#Go to last checkpoint
+execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:2b,id:"minecraft:emerald",Count:1}]}] run replaceitem entity @s hotbar.2 emerald{display:{Name:"{\"text\":\"Go to last checkpoint\",\"color\":\"green\",\"italic\":\"false\"}]"}} 1
 
 #Quit parkour
 execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:0b,id:"minecraft:barrier",Count:1}]}] run replaceitem entity @s hotbar.0 barrier{display:{Name:"{\"text\":\"Quit parkour\",\"color\":\"red\",\"italic\":\"false\"}"}} 1

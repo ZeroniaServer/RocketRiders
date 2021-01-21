@@ -7,7 +7,7 @@ scoreboard players set @e[tag=Selection,type=armor_stand,limit=1,scores={serverm
 scoreboard players set @e[tag=Selection,type=armor_stand,limit=1,scores={servermode=1}] PortalDeco 1
 
 tag @e[tag=Selection,type=armor_stand,limit=1,scores={servermode=1}] remove ServerModeVoting
-execute as @e[tag=Selection,type=armor_stand,limit=1,scores={servermode=1}] run function arenaclear:areaclear
+execute as @e[tag=Selection,type=armor_stand,limit=1,scores={servermode=1}] run function arenaclear:forceareaclear
 tag @e[tag=Selection,type=armor_stand,limit=1,scores={servermode=1}] add EditedSettings
 
 execute as @e[tag=Selection,type=armor_stand,limit=1,scores={servermode=1}] run schedule function servermode:init_forcedsettings 2t

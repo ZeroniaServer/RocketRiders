@@ -99,8 +99,10 @@ execute as @s[tag=GameStarted] run gamemode survival @a[team=Blue]
 #Hotfix for being able to keep charging bow from queue
 execute as @s[tag=GameStarted] run clear @a[team=Blue] bow
 execute as @s[tag=GameStarted] run clear @a[team=Yellow] bow
-execute as @s[tag=GameStarted,tag=!customSaberMsg] run tellraw @a[team=Blue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
-execute as @s[tag=GameStarted,tag=!customSaberMsg] run tellraw @a[team=Yellow] [{"text":"Drop your ","color":"yellow","italic":"true"},{"text":"Shooting Saber ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
+execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[team=Blue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
+execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[team=Yellow] [{"text":"Drop your ","color":"yellow","italic":"true"},{"text":"Shooting Saber ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
+execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[team=Blue] [{"text":"Use ","color":"aqua","italic":"true"},{"text":"/leave ","color":"blue","bold":"true","italic":"false"},{"text":"or drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
+execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[team=Yellow] [{"text":"Use ","color":"yellow","italic":"true"},{"text":"/leave ","color":"gold","bold":"true","italic":"false"},{"text":"or drop your ","color":"yellow","italic":"true"},{"text":"Shooting Saber ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
 execute as @s[tag=GameStarted,tag=!GameEnd] run tag @a remove CalculateWin
 execute as @s[tag=GameStarted,tag=!GameEnd] run tag @a remove CalculateLoss
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement

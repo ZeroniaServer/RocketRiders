@@ -108,23 +108,23 @@ execute as @e[tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remov
 
 ##Leave Pad
 execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
-tag @a[tag=LeaveTeams,team=Yellow] add LeavingYellow
-execute as @a[tag=LeavingYellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
-tag @a[tag=LeaveTeams,team=Blue] add LeavingBlue
-execute as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
+execute as @s[tag=!customLeaveHandling] run tag @a[tag=LeaveTeams,team=Yellow] add LeavingYellow
+execute as @s[tag=!customLeaveHandling] as @a[tag=LeavingYellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
+execute as @s[tag=!customLeaveHandling] run tag @a[tag=LeaveTeams,team=Blue] add LeavingBlue
+execute as @s[tag=!customLeaveHandling] as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
 tag @a[tag=LeaveTeams,team=Spectator] add LeavingSpec
 execute as @a[tag=LeavingSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
 tp @a[tag=LeavingYellow] -78 204 92 45 0
 tp @a[tag=LeavingBlue] -78 204 64 135 0
 execute as @a[tag=LeavingSpec] run tp @s @s
 tp @a[tag=LeavingSpec] -43 212 78 90 0
-clear @a[team=!Lobby,tag=LeaveTeams]
-execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @a[team=!Lobby,tag=LeaveTeams] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
-team join Lobby @a[tag=LeaveTeams]
-tag @a remove LeaveTeams
-tag @a remove LeavingYellow
-tag @a remove LeavingBlue
+execute as @s[tag=!customLeaveHandling] run clear @a[team=!Lobby,tag=LeaveTeams]
+execute as @s[tag=!customLeaveHandling] as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute as @s[tag=!customLeaveHandling] as @a[team=!Lobby,tag=LeaveTeams] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
+execute as @s[tag=!customLeaveHandling] run team join Lobby @a[tag=LeaveTeams]
+execute as @s[tag=!customLeaveHandling] run tag @a remove LeaveTeams
+execute as @s[tag=!customLeaveHandling] run tag @a remove LeavingYellow
+execute as @s[tag=!customLeaveHandling] run tag @a remove LeavingBlue
 tag @a remove LeavingSpec
 
 ##Joinpad + Leavepad Spectator

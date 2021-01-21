@@ -83,9 +83,6 @@ execute as @a[team=Lobby,tag=inParkour] at @s if entity @a[team=Lobby,tag=inPark
 execute as @a[team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect clear @s invisibility
 effect clear @a[team=Lobby,tag=!inParkour] invisibility
 
-##Boots
-execute as @s[tag=noYZELO] run replaceitem entity @a[team=Lobby,tag=inParkour] armor.feet iron_boots{display:{Name:"{\"text\":\"Parkour Boots\",\"color\":\"dark_green\",\"bold\":\"true\",\"italic\":\"false\"}"},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:7}
-
 ##Safety features
 #Only lobby players in Parkour mode
 effect clear @a[team=!Lobby,tag=inParkour] invisibility

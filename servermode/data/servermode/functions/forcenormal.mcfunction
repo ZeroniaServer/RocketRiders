@@ -1,4 +1,4 @@
-##Operator function -- run in server mode 1 to set normal mode.
+##Operator function -- run in server mode 1 to set normal mode (slightly buggy)
 execute as @e[tag=Selection,type=armor_stand,limit=1,scores={servermode=1}] store result score @s SetGamemode run scoreboard players get @e[tag=rr_normal,limit=1] gamemodeID
 scoreboard players set @e[tag=Selection,type=armor_stand,limit=1,scores={servermode=1}] TopDeco 1
 scoreboard players set @e[tag=Selection,type=armor_stand,limit=1,scores={servermode=1}] TopCorner 1

@@ -8,6 +8,10 @@ execute as @a[team=Blue,scores={LeaveMidgame=1}] run tellraw @a [{"selector":"@s
 execute as @a[team=Blue,scores={LeaveMidgame=1}] run tag @s add Forfeiter
 execute as @a[team=Yellow,scores={LeaveMidgame=1}] run tellraw @a [{"selector":"@s"},{"text":" forfeited the match!","color":"yellow"}]
 execute as @a[team=Yellow,scores={LeaveMidgame=1}] run tag @s add Forfeiter
+execute as @a[team=Blue,tag=LeaveTeams] run tellraw @a [{"selector":"@s"},{"text":" forfeited the match!","color":"aqua"}]
+execute as @a[team=Blue,tag=LeaveTeams] run tag @s add Forfeiter
+execute as @a[team=Yellow,tag=LeaveTeams] run tellraw @a [{"selector":"@s"},{"text":" forfeited the match!","color":"yellow"}]
+execute as @a[team=Yellow,tag=LeaveTeams] run tag @s add Forfeiter
 
 execute if entity @a[tag=Forfeiter] run tag @s add TimeOut
 execute if entity @a[tag=Forfeiter] run scoreboard players set @s ForfeitTimeout 1200

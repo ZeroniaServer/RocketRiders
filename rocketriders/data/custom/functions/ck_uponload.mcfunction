@@ -26,3 +26,5 @@ tag @e[tag=Selection,type=armor_stand,limit=1] add forcenormal
 function servermode:enabled
 function servermode:forcenormal
 tag @e[tag=Selection,type=armor_stand,limit=1] remove forcenormal
+
+tag @e[tag=Selection] add SMActive

@@ -23,5 +23,5 @@ fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Lightning] ","color":"yellow","bold":"true"},{"text":"Hurricane","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Hurricane is a lightning-speed missile. Fittingly, it flies faster than most missiles. It might be harder to get on this one.","color":"gray","italic":"true"}
-execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: Typhion)","color":"gray","italic":"true","bold":"false"}
+execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: HolyToiletPaper)","color":"gray","italic":"true","bold":"false"}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":""}

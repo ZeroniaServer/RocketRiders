@@ -11,7 +11,7 @@ execute as @e[tag=AlexCredits,scores={CreditCycle=1},type=armor_stand] at @s run
 execute as @e[tag=EonCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"eoneon","color":"green"}'}
 execute as @e[tag=JohnCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"JohnStar128","color":"green"}'}
 execute as @e[tag=KaisCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Kaisheng21","color":"green"}'}
-execute as @e[tag=SwagCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"MaelstromMonarch","color":"green"}'}
+execute as @e[tag=SwagCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"IowaGaming","color":"green"}'}
 execute as @e[tag=RubixCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Rubix_One","color":"green"}'}
 execute as @e[tag=LogicCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"LogicBugs","color":"green"}'}
 execute as @e[tag=CubeCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Cubehamster","color":"green"}'}
@@ -65,7 +65,7 @@ execute as @e[tag=HarpCredits,scores={CreditCycle=1},type=armor_stand] at @s run
 execute as @e[tag=UniverseCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"UniverseCZ","color":"green"}'}
 execute as @e[tag=MichalCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Michal58","color":"green"}'}
 execute as @e[tag=RedstoneCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"redstonejjl","color":"green"}'}
-execute as @e[tag=YankeeCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"NoYankeeNoBrim","color":"green"}'}
+execute as @e[tag=YankeeCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Kekfartlol","color":"green"}'}
 execute as @e[tag=TallCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"TALLPUP","color":"green"}'}
 execute as @e[tag=OceanCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"OceanPiggy","color":"green"}'}
 execute as @e[tag=MaeplCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"Maepl","color":"green"}'}
@@ -105,7 +105,7 @@ execute as @e[tag=HugoCredits,scores={CreditCycle=1},type=armor_stand] at @s run
 execute as @e[tag=TrekCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"TrekStone","color":"gold"}'}
 execute as @e[tag=TrekCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
 
-execute as @e[tag=TypCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Typhion","color":"gold"}'}
+execute as @e[tag=TypCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"HolyToiletPaper","color":"gold"}'}
 execute as @e[tag=TypCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
 
 execute as @e[tag=BlockyCredits,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"BlockyM_","color":"light_purple"}'}

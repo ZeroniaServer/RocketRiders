@@ -77,10 +77,8 @@ execute as @e[tag=VortexItemDummy,type=armor_stand] at @s if entity @e[tag=Vorte
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby] hotbar.0 air
 execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby] hotbar.1 air
-execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby] hotbar.2 air
 execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.0 air
 execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.1 air
-execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.2 air
 execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.3 air
 execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby,tag=!inParkour] hotbar.5 air
 execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby] hotbar.3 air

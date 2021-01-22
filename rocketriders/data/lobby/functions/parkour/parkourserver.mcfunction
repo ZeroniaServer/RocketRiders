@@ -57,31 +57,14 @@ execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove inParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove cheatedParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour
 
-##Inventory controls
-#Restart course
-execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:1b,id:"minecraft:diamond",Count:1}]}] run replaceitem entity @s hotbar.1 diamond{display:{Name:"{\"text\":\"Restart course\",\"color\":\"aqua\",\"italic\":\"false\"}"}} 1
-
-#Go to last checkpoint
-execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:2b,id:"minecraft:emerald",Count:1}]}] run replaceitem entity @s hotbar.2 emerald{display:{Name:"{\"text\":\"Go to last checkpoint\",\"color\":\"green\",\"italic\":\"false\"}]"}} 1
-
-#Quit parkour
-execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:0b,id:"minecraft:barrier",Count:1}]}] run replaceitem entity @s hotbar.0 barrier{display:{Name:"{\"text\":\"Quit parkour\",\"color\":\"red\",\"italic\":\"false\"}"}} 1
-#TODO works for drop/offhand currently, will hopefully change later
-execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to the Lobby.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tag @s remove inParkour
-execute as @a[team=Lobby,scores={dropBarrier=1..}] run scoreboard players set @s LobbyWarp 1
-scoreboard players reset @a dropBarrier
-execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tellraw @s [{"text":"You quit the Parkour. Returning to the Lobby.","color":"red"}]
-execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run tag @s remove inParkour
-execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:barrier"}]}] run scoreboard players set @s LobbyWarp 1
-
-#Clear offhand (necessary for inventory controls)
-replaceitem entity @a[team=Lobby] weapon.offhand air
-
 ##Invisible players within range
 execute as @a[team=Lobby,tag=inParkour] at @s if entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect give @s invisibility 1000000 255 true
 execute as @a[team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect clear @s invisibility
 effect clear @a[team=Lobby,tag=!inParkour] invisibility
+
+##Boots (non-duel mode)
+execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run replaceitem entity @a[team=Lobby,tag=inParkour] armor.feet iron_boots{display:{Name:"{\"text\":\"Parkour Boots\",\"color\":\"dark_green\",\"bold\":\"true\",\"italic\":\"false\"}"},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:7}
+execute as @s[tag=noYZELO] run replaceitem entity @a[team=Lobby,tag=inParkour] armor.feet iron_boots{display:{Name:"{\"text\":\"Parkour Boots\",\"color\":\"dark_green\",\"bold\":\"true\",\"italic\":\"false\"}"},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:7}
 
 ##Safety features
 #Only lobby players in Parkour mode

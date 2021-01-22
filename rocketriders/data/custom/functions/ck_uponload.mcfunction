@@ -23,6 +23,3 @@ team modify Spectator friendlyFire false
 team modify Developer friendlyFire false
 
 function servermode:enabled
-function servermode:forcenormal
-
-tag @e[tag=Selection,type=armor_stand,limit=1] add SMActive

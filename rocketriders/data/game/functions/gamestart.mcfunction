@@ -106,27 +106,6 @@ execute as @s[tag=YellowFull] as @e[tag=yellowjoinpad,type=area_effect_cloud] at
 execute as @s[tag=YellowFull] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
 execute as @e[tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinYellow
 
-##Leave Pad
-execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
-execute as @s[tag=!customLeaveHandling] run tag @a[tag=LeaveTeams,team=Yellow] add LeavingYellow
-execute as @s[tag=!customLeaveHandling] as @a[tag=LeavingYellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
-execute as @s[tag=!customLeaveHandling] run tag @a[tag=LeaveTeams,team=Blue] add LeavingBlue
-execute as @s[tag=!customLeaveHandling] as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
-tag @a[tag=LeaveTeams,team=Spectator] add LeavingSpec
-execute as @a[tag=LeavingSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
-tp @a[tag=LeavingYellow] -78 204 92 45 0
-tp @a[tag=LeavingBlue] -78 204 64 135 0
-execute as @a[tag=LeavingSpec] run tp @s @s
-tp @a[tag=LeavingSpec] -43 212 78 90 0
-execute as @s[tag=!customLeaveHandling] run clear @a[team=!Lobby,tag=LeaveTeams]
-execute as @s[tag=!customLeaveHandling] as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @s[tag=!customLeaveHandling] as @a[team=!Lobby,tag=LeaveTeams] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
-execute as @s[tag=!customLeaveHandling] run team join Lobby @a[tag=LeaveTeams]
-execute as @s[tag=!customLeaveHandling] run tag @a remove LeaveTeams
-execute as @s[tag=!customLeaveHandling] run tag @a remove LeavingYellow
-execute as @s[tag=!customLeaveHandling] run tag @a remove LeavingBlue
-tag @a remove LeavingSpec
-
 ##Joinpad + Leavepad Spectator
 execute if entity @e[tag=Selection,tag=SMActive] if entity @e[tag=specjoinpad,tag=CancelJoin] run execute as @a[tag=JoinSpec] run tellraw @s ["",{"text":"You can not use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 tag @a[gamemode=spectator] remove JoinSpec
@@ -139,7 +118,7 @@ execute as @e[tag=specjoinpad,tag=CancelJoin,type=area_effect_cloud] run tag @a 
 team join Spectator @a[tag=JoinSpec,gamemode=!spectator]
 clear @a[tag=JoinSpec]
 scoreboard players enable @a[team=Spectator] leaveSpec
-tag @a[scores={LeaveSpec=1..}] add LeaveTeams
+tag @a[scores={leaveSpec=1..}] add LeaveTeams
 scoreboard players reset @a[team=!Spectator] leaveSpec
 execute unless entity @e[tag=Selection,tag=SMActive] run tellraw @a[tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":"true"}]
 execute if entity @e[tag=Selection,tag=SMActive] run tellraw @a[tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave ","color":"green"},{"text":"to go back to the lobby.","color":"dark_green","italic":"true"}]
@@ -153,6 +132,29 @@ execute as @a[tag=AlreadySpec] at @s run playsound entity.enderman.teleport play
 tag @a remove AlreadySpec
 execute unless entity @e[tag=Selection,tag=SMActive] as @e[tag=LeaveSpec,type=area_effect_cloud] at @s run particle dust 2 1 0 1 ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[team=Spectator]
 execute unless entity @e[tag=Selection,tag=SMActive] as @e[tag=LeaveSpec,type=area_effect_cloud] at @s run tag @a[team=Spectator,distance=..2] add LeaveTeams
+
+##Leave Pad
+execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
+execute as @s[tag=!customLeaveHandling] run tag @a[tag=LeaveTeams,team=Yellow] add LeavingYellow
+execute as @s[tag=!customLeaveHandling] as @a[tag=LeavingYellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
+execute as @s[tag=!customLeaveHandling] run tag @a[tag=LeaveTeams,team=Blue] add LeavingBlue
+execute as @s[tag=!customLeaveHandling] as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
+tag @a[tag=LeaveTeams,team=Spectator] add LeavingSpec
+execute as @a[tag=LeavingSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
+execute as @a[tag=LeavingSpec] run tp @s @s
+execute as @s[tag=!customLeaveHandling] run clear @a[team=!Lobby,tag=LeaveTeams]
+tag @a[tag=LeaveTeams,team=Lobby] add WasInLobby
+execute as @s[tag=!customLeaveHandling] run team join Lobby @a[tag=LeaveTeams]
+tp @a[tag=LeavingYellow] -78 204 92 45 0
+tp @a[tag=LeavingBlue] -78 204 64 135 0
+tp @a[tag=LeavingSpec] -43 212 78 90 0
+execute as @s[tag=!customLeaveHandling] as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute as @s[tag=!customLeaveHandling] as @a[tag=LeaveTeams,tag=!WasInLobby] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
+execute as @s[tag=!customLeaveHandling] run tag @a remove LeaveTeams
+execute as @s[tag=!customLeaveHandling] run tag @a remove LeavingYellow
+execute as @s[tag=!customLeaveHandling] run tag @a remove LeavingBlue
+tag @a remove LeavingSpec
+tag @a remove WasInLobby
 
 ##Countdown
 execute as @s[tag=Countdown] run function game:countdown

@@ -5,7 +5,13 @@ setblock -29 196 22 spruce_slab
 setblock -31 196 22 gold_block
 setblock -32 196 22 spruce_stairs[half=top,facing=west]
 setblock -33 196 22 spruce_slab
-setblock -31 190 17 warped_wall_sign
+setblock -32 190 17 black_concrete
+setblock -31 190 16 black_concrete
+setblock -31 191 17 black_concrete
+setblock -31 190 18 black_concrete
+setblock -30 190 17 black_concrete
+setblock -31 189 17 black_concrete
+setblock -31 190 17 warped_wall_sign[facing=south]
 
 kill @e[tag=ParkourLB]
 summon armor_stand -31 197 22 {Tags:["ParkourPlayer","ParkourLB"],NoGravity:1b,NoBasePlate:1b,Marker:1b,Invulnerable:1b,NoGravity:1b,ShowArms:1b}

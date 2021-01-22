@@ -1,7 +1,7 @@
 ##Missile Display for Juggerbuster
 
 data merge entity @e[tag=NameDisp,limit=1,type=area_effect_cloud] {CustomName:'{"text":"Juggerbuster","color":"red","bold":"true"}'}
-data merge entity @e[tag=TNTDisp,limit=1,type=area_effect_cloud] {CustomName:'["",{"text":"TNT Count: ","color":"dark_green","bold":"true"},{"text":"33","color":"white"}]'}
+data merge entity @e[tag=TNTDisp,limit=1,type=area_effect_cloud] {CustomName:'["",{"text":"TNT Count: ","color":"dark_green","bold":"true"},{"text":"32","color":"white"}]'}
 data merge entity @e[tag=SpeedDisp,limit=1,type=area_effect_cloud] {CustomName:'["",{"text":"Speed: ","color":"dark_green","bold":"true"},{"text":"1.7m/s","color":"white"}]'}
 data merge entity @e[tag=MisDispIF,limit=1,type=item_frame] {Item:{id:"minecraft:zombie_horse_spawn_egg",Count:1b}}
 data remove entity @e[tag=MisDispIF,limit=1,type=item_frame] Item.tag.Enchantments

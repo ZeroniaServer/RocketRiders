@@ -5,10 +5,10 @@ execute store result score $current redundantX run data get storage rocketriders
 execute store result score $current redundantY run data get storage rocketriders:ymissilepos redundantY[0] 100
 execute store result score $current redundantZ run data get storage rocketriders:ymissilepos redundantZ[0] 100
 
-#Check if positions are equal
-execute if score $this redundantX = $current redundantX if score $this redundantY = $current redundantY if score $this redundantZ = $current redundantZ run tag @s add minify
+#Check if positions are equal or missile is in same path
+execute if score $this redundantX = $current redundantX if score $this redundantY = $current redundantY if score $this redundantZ <= $current redundantZ run tag @s add minify
 
-#If not equal, remove current missile spawn position
+#If above fails, remove current missile spawn position
 execute as @s[tag=!minify] run data remove storage rocketriders:ymissilepos redundantX[0]
 execute as @s[tag=!minify] run data remove storage rocketriders:ymissilepos redundantY[0]
 execute as @s[tag=!minify] run data remove storage rocketriders:ymissilepos redundantZ[0]

@@ -4,6 +4,7 @@
 ####################################
 
 #Server mode
+tag @e[tag=Selection,type=armor_stand,scores={servermode=0}] remove SMActive
 execute as @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run function servermode:loop
 scoreboard players reset @e[tag=Selection,tag=!ServerModeVoting,type=armor_stand] VoteServerMode
 execute unless entity @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run scoreboard players reset @a VoteServerMode

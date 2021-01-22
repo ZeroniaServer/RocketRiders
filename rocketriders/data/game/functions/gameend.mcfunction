@@ -87,7 +87,7 @@ execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
 #Server mode specifics
 execute as @s[scores={endtimer=570}] if entity @s[scores={servermode=0}] run fill -57 201 84 -70 201 72 air replace barrier
-execute as @s[scores={endtimer=570}] if entity @s[scores={servermode=1}] run function servermode:makesets
+execute as @s[scores={endtimer=570}] if entity @s[scores={servermode=1},tag=!forcenormal] run function servermode:makesets
 execute as @s[scores={endtimer=570}] if entity @s[scores={servermode=2}] run function arenaclear:areaclear
 scoreboard players operation @s[scores={endtimer=570}] MaxItemTime = @s[scores={endtimer=570}] MaxItemSec
 scoreboard players operation @s[scores={endtimer=570}] MaxItemTime *= 20 MaxItemSec

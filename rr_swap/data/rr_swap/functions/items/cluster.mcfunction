@@ -9,6 +9,7 @@ execute as @e[tag=ClusterStarter,scores={Clustertime=7},type=fireball] at @s run
 
 execute as @e[tag=ClusterSpawn,type=fireball] at @s if entity @e[tag=ClusterStarter,distance=..5,limit=1,type=fireball] run scoreboard players add @s Clustertime 1
 execute as @e[tag=ClusterSpawn,type=fireball] at @s if entity @e[tag=ClusterStarter,distance=..5,limit=1,type=fireball] run data modify entity @s Motion set from entity @e[tag=ClusterStarter,sort=nearest,limit=1,type=fireball] Motion
+execute as @e[tag=ClusterSpawn,type=fireball] at @s if entity @e[tag=ClusterStarter,distance=..5,limit=1,type=fireball] run data modify entity @s Owner set from entity @e[tag=ClusterStarter,sort=nearest,limit=1,type=fireball] Owner
 execute as @e[tag=ClusterSpawn,type=fireball] at @s unless entity @e[tag=ClusterStarter,distance=..5,limit=1,type=fireball] run scoreboard players remove @s Clustertime 1
 kill @e[tag=ClusterSpawn,scores={Clustertime=-40},type=fireball]
 

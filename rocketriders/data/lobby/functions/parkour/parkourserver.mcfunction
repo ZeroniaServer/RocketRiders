@@ -52,7 +52,8 @@ execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:enti
 execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:ui.toast.challenge_complete player @s ~ ~ ~ 1 1.3
 execute as @a[team=Lobby,tag=finishedParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
-#Remove tags
+#Remove tags and clear inventory
+execute as @a[team=Lobby,tag=finishedParkour] run clear @s
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove inParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove cheatedParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour

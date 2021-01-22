@@ -23,6 +23,7 @@ execute as @a[scores={LobbyWarp=1..}] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 
 
 #Cancel parkour
 execute as @a[scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used a Lobby Warp, so your Parkour run was canceled.","color":"red"}]
+execute as @a[scores={LobbyWarp=1..},tag=inParkour] run clear @s
 execute as @a[scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inParkour
 
 #Message about mod room (server mode)

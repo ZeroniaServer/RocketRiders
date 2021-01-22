@@ -1,5 +1,5 @@
 #leave midgame
-function game:leavemidgame
+execute as @s[tag=!SMActive] run function game:leavemidgame
 
 #utility functions
 execute if entity @a[scores={DrinkHoney=1..}] run tag @s add runbeeshields

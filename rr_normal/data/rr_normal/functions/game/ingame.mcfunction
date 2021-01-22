@@ -1,5 +1,5 @@
 #leave midgame
-function game:leavemidgame
+execute as @s[tag=!SMActive] run function game:leavemidgame
 
 #Item RNG and spawnpoints
 scoreboard players add @s RandomItem 1

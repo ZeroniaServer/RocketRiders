@@ -1,5 +1,5 @@
 #leave midgame
-function game:leavemidgame
+execute as @s[tag=!SMActive] run function game:leavemidgame
 
 #general
 function rr_swap:items/antidupe

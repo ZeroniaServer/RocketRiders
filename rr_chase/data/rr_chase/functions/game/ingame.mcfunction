@@ -1,5 +1,5 @@
 #Leave midgame
-function game:leavemidgame
+execute as @s[tag=!SMActive] run function game:leavemidgame
 
 #Item RNG (exception for arrows) and spawnpoints
 tag @s add givenArrows

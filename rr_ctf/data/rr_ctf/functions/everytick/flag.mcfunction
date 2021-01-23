@@ -5,26 +5,26 @@ fill -10 66 -64 -10 72 -64 oak_fence replace air
 fill 34 66 -64 34 72 -64 oak_fence replace air
 
 #Flag base
-setblock 34 64 63 bedrock
-setblock 35 64 64 bedrock
-setblock 34 64 65 bedrock
-setblock 33 64 64 bedrock
-setblock 34 64 64 bedrock
-setblock -9 64 64 bedrock
-setblock -11 64 64 bedrock
-setblock -10 64 65 bedrock
-setblock -10 64 63 bedrock
-setblock -10 64 64 bedrock
-setblock -10 64 -63 bedrock
-setblock -9 64 -64 bedrock
-setblock -10 64 -65 bedrock
-setblock -11 64 -64 bedrock
-setblock -10 64 -64 bedrock
-setblock 34 64 -65 bedrock
-setblock 33 64 -64 bedrock
-setblock 35 64 -64 bedrock
-setblock 34 64 -63 bedrock
-setblock 34 64 -64 bedrock
+execute positioned 34 64 63 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned 35 64 64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned 34 64 65 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned 33 64 64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned 34 64 64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -9 64 64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -11 64 64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -10 64 65 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -10 64 63 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -10 64 64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -10 64 -63 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -9 64 -64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -10 64 -65 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -11 64 -64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned -10 64 -64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned 34 64 -65 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned 33 64 -64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned 35 64 -64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned 34 64 -63 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
+execute positioned 34 64 -64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
 
 #Clear behind/in front
 fill -14 64 66 39 74 70 air replace yellow_wool
@@ -43,22 +43,22 @@ fill -14 64 -63 39 74 -58 air replace blue_wool
 fill -14 64 -63 39 74 -58 air replace oak_fence
 fill -14 64 -63 39 74 -58 air replace purple_stained_glass
 fill -14 64 -63 39 74 -58 air replace white_stained_glass
-setblock 35 65 -64 air
-setblock 33 65 -64 air
-setblock 34 65 -65 air
-setblock 34 65 -63 air
-setblock -11 65 -64 air
-setblock -9 65 -64 air
-setblock -10 65 -63 air
-setblock -10 65 -65 air
-setblock 35 65 64 air
-setblock 33 65 64 air
-setblock 34 65 65 air
-setblock 34 65 63 air
-setblock -11 65 64 air
-setblock -9 65 64 air
-setblock -10 65 63 air
-setblock -10 65 65 air
+execute positioned 35 65 -64 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned 33 65 -64 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned 34 65 -65 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned 34 65 -63 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned -11 65 -64 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned -9 65 -64 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned -10 65 -63 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned -10 65 -65 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned 35 65 64 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned 33 65 64 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned 34 65 65 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned 34 65 63 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned -11 65 64 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned -9 65 64 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned -10 65 63 unless block ~ ~ ~ air run setblock ~ ~ ~ air
+execute positioned -10 65 65 unless block ~ ~ ~ air run setblock ~ ~ ~ air
 
 #Flag scores
 scoreboard players set 29 FlagScore 29

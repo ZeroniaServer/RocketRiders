@@ -7,6 +7,12 @@
 execute as @a[team=Blue] at @s unless entity @s[nbt={FallDistance:0.0f}] store result score @s FallDistance run data get entity @s FallDistance 50
 execute as @a[team=Yellow] at @s unless entity @s[nbt={FallDistance:0.0f}] store result score @s FallDistance run data get entity @s FallDistance 50
 
+#Necessary for death check
+scoreboard players add @a PlayerDeaths 0
+execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s PlayerDeaths < @s deaths run tag @s add probablyDied
+execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s respawn matches 1.. run tag @s add probablyDied
+scoreboard players add @a[tag=probablyDied] deathCooldown 1
+
 #All achievements
 execute as @s[scores={servermode=0},tag=!realms] run function achievements:firewithin
 execute as @s[scores={servermode=0},tag=!realms] run function achievements:getofflawn
@@ -29,19 +35,18 @@ execute as @s[scores={servermode=0},tag=!realms] run function achievements:usefu
 execute as @s[scores={servermode=0},tag=!realms] run function achievements:moonwalker
 execute as @s[scores={servermode=0},tag=!realms] run function achievements:sabotage
 
-#Necessary for death check
-scoreboard players add @a PlayerDeaths 0
-execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s PlayerDeaths < @s deaths run scoreboard players add @s deathCooldown 1
-
 #Necessary for on base check
-execute as @a unless entity @s[team=!Yellow,team=!Blue] unless score @s PlayerDeaths < @s deaths unless score @s deathCooldown matches 1.. at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
-execute as @a unless entity @s[team=!Yellow,team=!Blue] unless score @s PlayerDeaths < @s deaths unless score @s deathCooldown matches 1.. at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s add onYellow
-execute as @a[tag=onBlue] unless score @s deathCooldown matches 1.. at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s remove onBlue
-execute as @a[tag=onYellow] unless score @s deathCooldown matches 1.. at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s remove onYellow
+execute as @a unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
+execute as @a unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s add onYellow
+execute as @a[tag=onBlue] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s remove onBlue
+execute as @a[tag=onYellow] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s remove onYellow
+tag @a[tag=onBlue,tag=probablyDied] remove onBlue
+tag @a[tag=onYellow,tag=probablyDied] remove onYellow
 
 #Necessary for death check (again)
-execute as @a[scores={deathCooldown=4..}] run scoreboard players operation @s PlayerDeaths = @s deaths
-execute as @a[scores={deathCooldown=4..}] if score @s PlayerDeaths = @s deaths run scoreboard players reset @s deathCooldown
+execute as @a[scores={deathCooldown=5..}] run scoreboard players operation @s PlayerDeaths = @s deaths
+execute as @a[scores={deathCooldown=5..}] run tag @s remove probablyDied
+execute as @a[scores={deathCooldown=5..}] if score @s PlayerDeaths = @s deaths run scoreboard players set @s deathCooldown 0
 
 #Necessary for fall distance check (again)
 execute as @a[team=Blue] at @s if entity @s[nbt={FallDistance:0.0f}] run scoreboard players reset @s FallDistance

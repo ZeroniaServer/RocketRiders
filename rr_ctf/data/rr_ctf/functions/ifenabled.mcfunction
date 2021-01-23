@@ -21,14 +21,14 @@ function rr_ctf:everytick/pickaxefix
 function everytick:no_drop
 
 #pregame
-execute if entity @s[tag=!GameStarted] positioned -90 202 95 unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
-execute if entity @s[tag=!GameStarted] positioned -100 202 95 unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
-execute if entity @s[tag=!GameStarted] positioned -90 202 61 unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
-execute if entity @s[tag=!GameStarted] positioned -100 202 61 unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
-execute if entity @s[tag=!GameStarted] positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute if entity @s[tag=!GameStarted] positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute if entity @s[tag=!GameStarted] positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
-execute if entity @s[tag=!GameStarted] positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -90 202 95 unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
+execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -100 202 95 unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
+execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -90 202 61 unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
+execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -100 202 61 unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
+execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
 
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] run function rr_ctf:arenaclear/baseplacement

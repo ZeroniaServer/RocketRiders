@@ -19,13 +19,8 @@
         "hidden": false
     },
     "criteria": {
-        "bee_kill": {
-            "trigger": "minecraft:entity_killed_player",
-            "conditions": {
-                "entity": {
-                    "type": "minecraft:bee"
-                }
-            }
+        "impossible": {
+            "trigger": "minecraft:impossible"
         }
     },
     "parent": "achievements:rr_challenges/flag_already"

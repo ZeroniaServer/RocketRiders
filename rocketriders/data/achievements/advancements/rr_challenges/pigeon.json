@@ -1,39 +1,26 @@
 {
-  "display": {
-    "icon": {
-      "item": "clay_ball"
-    },
-    "title": {
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
             "text": "Clay Pigeon",
             "color": "green"
         },
-    "description": {
+        "description": {
             "text": "Kill a levitating player.",
             "color": "dark_green"
         },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "parent": "achievements:rr_challenges/lockdown",
-  "criteria": {
-    "requirement": {
-      "trigger": "minecraft:player_killed_entity",
-      "conditions": {
-        "entity": {
-          "type": "minecraft:player",
-          "effects": {
-            "levitation": {}
-          }
+        "icon": {
+            "item": "minecraft:clay_ball"
         },
-        "killing_blow": {
-          "is_projectile": true,
-          "direct_entity": {
-            "type": "minecraft:arrow"
-          }
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
         }
-      }
-    }
-  }
+    },
+    "parent": "achievements:rr_challenges/lockdown"
 }

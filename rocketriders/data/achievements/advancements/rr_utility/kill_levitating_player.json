@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:player",
+          "effects": {
+            "levitation": {}
+          }
+        },
+        "killing_blow": {
+          "is_projectile": true,
+          "direct_entity": {
+            "type": "minecraft:arrow"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+      "function": "achievements:claypigeon"
+  }
+}

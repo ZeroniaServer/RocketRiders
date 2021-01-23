@@ -130,17 +130,18 @@ kill @e[tag=animBshield,scores={BeeShieldTime=32..},type=area_effect_cloud]
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] at @s run summon area_effect_cloud ~ ~ ~ {Duration:200000000,Tags:["BeeShield"]}
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] run kill @s
 
-#bees teams
-team join Blue @e[type=bee,tag=BlueBee]
+#bees teams/float
+execute as @e[type=bee,tag=BlueBee] run team join Blue
+execute as @e[type=bee,tag=BlueBee] run data merge entity @s {Glowing:1b,NoGravity:1b}
 tag @e[type=bee,tag=BlueBee] remove BlueBee
-team join Yellow @e[type=bee,tag=YellowBee]
+execute as @e[type=bee,tag=YellowBee] run team join Yellow
+execute as @e[type=bee,tag=YellowBee] run data merge entity @s {Glowing:1b,NoGravity:1b}
 tag @e[type=bee,tag=YellowBee] remove YellowBee
 
-#glowing bees
-execute as @e[type=bee] run effect give @s glowing 1000000 255 true
-
-#bees are angry and also floaty
-execute as @e[type=bee] run data merge entity @s {AngerTime:100,NoGravity:1b}
+#angry bees
+execute as @e[type=bee,team=Blue] at @s run data modify entity @s AngryAt set from entity @p[team=Yellow] UUID
+execute as @e[type=bee,team=Yellow] at @s run data modify entity @s AngryAt set from entity @p[team=Blue] UUID
+execute as @e[type=bee] run data merge entity @s {AngerTime:1000}
 
 #kill bees that have stung
 kill @e[type=bee,nbt={HasStung:1b}]

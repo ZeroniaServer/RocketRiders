@@ -30,7 +30,6 @@ execute if entity @s[tag=!GameStarted] positioned -100 203 95 unless block ~ ~ ~
 execute if entity @s[tag=!GameStarted] positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
 execute if entity @s[tag=!GameStarted] positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
 
-
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] run function rr_ctf:arenaclear/baseplacement
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] if entity @s[tag=!GameStarted] as @a at @s run function arenaclear:notifystart

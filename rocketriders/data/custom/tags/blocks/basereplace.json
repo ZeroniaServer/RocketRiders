@@ -110,7 +110,9 @@
 
 "minecraft:target",
 
-"minecraft:obsidian"
+"minecraft:obsidian",
+
+"minecraft:bedrock"
 
 ]
 

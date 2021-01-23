@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "bee_kill": {
+            "trigger": "minecraft:entity_killed_player",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:bee"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "achievements:beehere"
+    }
+}

@@ -12,4 +12,4 @@ scoreboard objectives add MineWhiteGlass minecraft.mined:minecraft.white_stained
 scoreboard objectives add MinePurpleGlass minecraft.mined:minecraft.purple_stained_glass
 
 function lobby:credits/restart
-schedule function custom:ck_uponload 20t
+#schedule function custom:ck_uponload 20t

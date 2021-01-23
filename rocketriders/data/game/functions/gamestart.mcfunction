@@ -27,7 +27,6 @@ execute as @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run boss
 ##Blue Join Pad
 execute as @s[tag=!noTeamBalance] as @s[scores={largerTeam=-1..0},tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
-execute as @e[tag=bluejoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 execute as @s[scores={largerTeam=-1..0},tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinBlue
 team join Blue @a[tag=JoinBlue]
@@ -39,7 +38,8 @@ execute as @s[tag=!GameStarted] run tellraw @a[tag=JoinBlue] {"text":"Fall off t
 execute as @s[tag=!GameStarted] run effect give @a[tag=JoinBlue] resistance 1000000 255 true
 execute as @s[tag=GameStarted,tag=!customSpawns] run tp @a[tag=JoinBlue] 12 64 -66 0 0
 execute as @s[tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
-execute as @s[tag=GameStarted,tag=!customSaberMsg] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
+execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
+execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Use ","color":"aqua","italic":"true"},{"text":"/leave ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
 execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
 execute as @s[tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
 #Hardcore compatibility
@@ -68,7 +68,6 @@ execute as @e[tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lobby] remove 
 ##Yellow Join Pad
 execute as @s[tag=!noTeamBalance] as @s[scores={largerTeam=0..1},tag=!YellowFull] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
-execute as @e[tag=yellowjoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 execute as @s[scores={largerTeam=0..1},tag=!YellowFull] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[distance=..1,team=Lobby] add JoinYellow
 team join Yellow @a[tag=JoinYellow]
@@ -80,7 +79,8 @@ execute as @s[tag=!GameStarted] run tellraw @a[tag=JoinYellow] {"text":"Fall off
 execute as @s[tag=!GameStarted] run effect give @a[tag=JoinYellow] resistance 1000000 255 true
 execute as @s[tag=GameStarted,tag=!customSpawns] run tp @a[tag=JoinYellow] 12 64 66 180 0
 execute as @s[tag=GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
-execute as @s[tag=GameStarted,tag=!customSaberMsg] run tellraw @a[tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":"true"},{"text":"Shooting Saber ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
+execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":"true"},{"text":"Shooting Saber ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
+execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":"true"},{"text":"/leave ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
 execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinYellow]
 execute as @s[tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
 #Hardcore compatibility
@@ -110,7 +110,6 @@ execute as @e[tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remov
 execute if entity @e[tag=Selection,tag=SMActive] if entity @e[tag=specjoinpad,tag=CancelJoin] run execute as @a[tag=JoinSpec] run tellraw @s ["",{"text":"You can not use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 tag @a[gamemode=spectator] remove JoinSpec
 execute as @e[tag=specjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:gray_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
-execute as @e[tag=specjoinpad,tag=CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @e[tag=specjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @p[team=!Spectator,distance=..1] add JoinSpec
 execute as @e[tag=specjoinpad,tag=CancelJoin,type=area_effect_cloud] run tag @a remove JoinSpec
 execute as @e[tag=specjoinpad,type=area_effect_cloud] at @s run tag @a[team=Spectator,distance=..1] add AlreadySpec
@@ -158,3 +157,8 @@ tag @a remove WasInLobby
 
 ##Countdown
 execute as @s[tag=Countdown] run function game:countdown
+
+##Barrier particles on a timer
+scoreboard players add $barriers CmdData 1
+execute if score $barriers CmdData matches 81 run scoreboard players set $barriers CmdData 0
+execute if score $barriers CmdData matches 1 as @e[tag=CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a[team=Lobby]

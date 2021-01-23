@@ -67,33 +67,34 @@ execute as @e[tag=SelectedTip,tag=Tip12,type=area_effect_cloud] as @a unless ent
 execute as @e[tag=SelectedTip,tag=Tip12,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
 
 execute as @e[tag=SelectedTip,tag=Tip13,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Canopy will break itself after 20 seconds. Once the log is broken, the leaves randomly decay.","color":"gray"}]
-execute as @e[tag=SelectedTip,tag=Tip13,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+execute as @e[tag=SelectedTip,tag=Tip13,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip13
 
 execute as @e[tag=SelectedTip,tag=Tip14,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Throwing a Splash on top of a Canopy will water it, extending its duration from 20 to 25 seconds!","color":"gray"}]
-execute as @e[tag=SelectedTip,tag=Tip14,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+execute as @e[tag=SelectedTip,tag=Tip14,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip14
 
 execute as @e[tag=SelectedTip,tag=Tip15,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Vortex can identify and drift towards enemy players in a close radius. Rule of thumb: stand clear!","color":"gray"}]
-execute as @e[tag=SelectedTip,tag=Tip15,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+execute as @e[tag=SelectedTip,tag=Tip15,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip15
 
 execute as @e[tag=SelectedTip,tag=Tip16,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Vortex blows up when enemies get near it, missiles pass through it, or it gets shot by arrows. It can also chain react with another Vortex or TNT explosion.","color":"gray"}]
-execute as @e[tag=SelectedTip,tag=Tip16,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+execute as @e[tag=SelectedTip,tag=Tip16,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip16
 
 execute as @e[tag=SelectedTip,tag=Tip17,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Powerups Mode, you may receive a Stinging Shield. Drink the honey bottle to deploy it, and shoot/break the TNT in the middle to release the bees!","color":"gray"}]
-execute as @e[tag=SelectedTip,tag=Tip17,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+execute as @e[tag=SelectedTip,tag=Tip17,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip17
 
 execute as @e[tag=SelectedTip,tag=Tip18,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Powerups Mode, you may receive a Lava Splash. It functions exactly like a normal Splash, but places lava instead... watch out!","color":"gray"}]
-execute as @e[tag=SelectedTip,tag=Tip18,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+execute as @e[tag=SelectedTip,tag=Tip18,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip18
 
 execute as @e[tag=SelectedTip,tag=Tip19,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Capture the Flag Mode, the flag carrier's missiles travel in the opposite direction so they can return to their base with the flag.","color":"gray"}]
-execute as @e[tag=SelectedTip,tag=Tip19,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+execute as @e[tag=SelectedTip,tag=Tip19,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip19
 
-execute as @e[tag=SelectedTip,tag=Tip20,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Chase Mode, you can use items like the Nova Rocket and the Vortex to sabotage your teammates! Whoever makes it to the Finish Flag first wins!","color":"gray"}]
-execute as @e[tag=SelectedTip,tag=Tip20,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip12
+execute as @s[tag=!SMActive] as @e[tag=SelectedTip,tag=Tip20,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Chase Mode, you can use items like the Nova Rocket and the Vortex to sabotage your teammates! Whoever makes it to the Finish Flag first wins!","color":"gray"}]
+execute as @s[tag=SMActive] as @e[tag=SelectedTip,tag=Tip20,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Capture the Flag Mode, you can break purple glass at the enemy flag pole to lower the flag then break or walk up to the white glass to steal it.","color":"gray"}]
+execute as @e[tag=SelectedTip,tag=Tip20,type=area_effect_cloud] run tag @e[tag=Selection,type=armor_stand] add Tip20
 
-#Opt out message
+#Opt out message (disabled on servers)
 scoreboard players add @a GamesPlayed 0
-scoreboard players enable @a[scores={GamesPlayed=..9}] disableTips
-execute as @e[tag=SelectedTip,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger disableTips set 1"}},{"text":" to opt out of these messages.","color":"#888888","italic":"true"}]
+execute as @s[tag=!SMActive] run scoreboard players enable @a[scores={GamesPlayed=..9}] disableTips
+execute as @s[tag=!SMActive] as @e[tag=SelectedTip,type=area_effect_cloud] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger disableTips set 1"}},{"text":" to opt out of these messages.","color":"#888888","italic":"true"}]
 execute as @a[scores={disableTips=1..}] run tellraw @s [{"text":"You will no longer receive tips.","color":"red"}]
 execute as @a[scores={disableTips=1..}] run scoreboard players set @s GamesPlayed 10
 scoreboard players set @a disableTips 0

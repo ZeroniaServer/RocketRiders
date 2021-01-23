@@ -22,6 +22,8 @@ team modify Yellow friendlyFire false
 team modify Spectator friendlyFire false
 team modify Developer friendlyFire false
 
+scoreboard players reset * GamesPlayed
+
 function servermode:enabled
 
 setblock -31 190 17 air

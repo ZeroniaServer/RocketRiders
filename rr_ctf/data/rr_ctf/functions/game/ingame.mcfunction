@@ -18,3 +18,7 @@ function rr_ctf:everytick/flag
 scoreboard objectives setdisplay sidebar.team.gold FlagDisp
 scoreboard objectives setdisplay sidebar.team.blue FlagDisp
 scoreboard objectives setdisplay sidebar.team.dark_gray FlagDisp
+
+#custom prevention message
+execute if entity @s[tag=customPrevention] as @a[tag=MissiMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
+execute if entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG

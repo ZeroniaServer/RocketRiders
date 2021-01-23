@@ -5,6 +5,8 @@ execute unless entity @e[tag=rr_sandbox,limit=1,type=armor_stand] run scoreboard
 execute unless entity @e[tag=rr_sandbox,limit=1,type=armor_stand] run scoreboard objectives remove dropPickaxe
 scoreboard objectives remove FlagScore
 scoreboard objectives remove FlagDisp
+scoreboard objectives remove MineWhiteGlass
+scoreboard objectives remove MinePurpleGlass
 scoreboard players reset * gamemodeID
 execute unless entity @e[tag=rr_ctf,limit=1,type=armor_stand] run tellraw @s {"text":"Capture the Flag Mode uninstalled.","color":"red","bold":"true"}
 execute unless entity @e[tag=rr_ctf,limit=1,type=armor_stand] run tellraw @s {"text":"Click here to disable the Capture the Flag Mode datapack (recommended).","color":"red","underlined":"true","clickEvent":{"action":"run_command","value":"/datapack disable \"file/rr_ctf\""}}

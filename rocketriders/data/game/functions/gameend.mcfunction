@@ -59,8 +59,8 @@ scoreboard players set @s[scores={endtimer=81}] gametime 0
 execute as @s[scores={endtimer=82}] as @a run function everytick:score_reset
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Blue]
 execute as @s[scores={endtimer=250}] run gamemode spectator @a[team=Yellow]
-execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] GamesPlayed 1
-execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Yellow] GamesPlayed 1
+execute as @s[scores={endtimer=570},tag=!SMActive] run scoreboard players add @a[team=Blue] GamesPlayed 1
+execute as @s[scores={endtimer=570},tag=!SMActive] run scoreboard players add @a[team=Yellow] GamesPlayed 1
 execute as @s[scores={endtimer=570}] run function achievements:scoresreset
 execute as @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute as @s[scores={endtimer=570},tag=SpamClick] as @a run attribute @s minecraft:generic.attack_speed base set 4

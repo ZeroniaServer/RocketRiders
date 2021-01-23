@@ -27,7 +27,7 @@ execute as @a[team=Blue] at @s run stopsound @s
 execute as @a[team=Yellow] at @s run stopsound @s
 execute as @a[team=Blue] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
 execute as @a[team=Yellow] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2
-title @a title ["",{"text":"Team Blue Won!","color":"blue","bold":false}]
+title @a[team=!Lobby] title ["",{"text":"Team Blue Won!","color":"blue","bold":false}]
 
 ##Splashes
 tag @a[team=Blue] add Winner

@@ -139,6 +139,8 @@ tag @e[type=bee,tag=YellowBee] remove YellowBee
 #glowing bees
 execute as @e[type=bee] run effect give @s glowing 1000000 255 true
 
-#kill bees
-kill @e[type=bee,nbt={Anger:0}]
+#bees are angry and also floaty
+execute as @e[type=bee] run data merge entity @s {AngerTime:100,NoGravity:1b}
+
+#kill bees that have stung
 kill @e[type=bee,nbt={HasStung:1b}]

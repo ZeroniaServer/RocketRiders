@@ -33,6 +33,7 @@ execute in overworld as @e[tag=missile,type=area_effect_cloud] at @s if predicat
 
 #Pierce Prevention (Portals)
 execute if entity @s[tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
+execute if entity @s[tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
 
 #Give back
 execute as @e[tag=UnableMissile,tag=!missileflip,type=area_effect_cloud] at @s run function items:prevention/unablefx
@@ -165,8 +166,8 @@ execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] run kill @s
 execute as @e[tag=broadExtraBlue,type=area_effect_cloud] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
 execute as @e[tag=broadExtraBlue,type=area_effect_cloud] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
 execute as @e[tag=broadExtraBlue,type=area_effect_cloud] run kill @s
-# execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
-# execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
+execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
+execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
 execute as @e[tag=broadExtraYellow,type=area_effect_cloud] run kill @s
 
 ##Kill entity

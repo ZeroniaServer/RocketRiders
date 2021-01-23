@@ -12,6 +12,8 @@ execute as @e[tag=BlueObshield,type=area_effect_cloud] at @s run summon dragon_f
 #Detecting motion
 tag @e[type=fireball,tag=blueobfireball] remove StillOb
 tag @e[type=fireball,tag=blueobfireball,nbt={Motion:[0.0,0.0,0.0]}] add StillOb
+execute as @e[type=fireball,tag=blueobfireball] store result score @s CmdData run data get entity @s Motion[1] 100
+execute as @e[type=fireball,tag=blueobfireball] unless score @s CmdData matches 0 run tag @s remove StillOb
 scoreboard players add @e[type=fireball,tag=blueobfireball,tag=!StillOb] obmove 1
 scoreboard players add @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] obshieldtime 1
 scoreboard players add @e[type=dragon_fireball,tag=blueobfireball] obshieldtime 0
@@ -67,6 +69,8 @@ execute as @e[tag=YellowObshield,type=area_effect_cloud] at @s run summon dragon
 #Detecting motion
 tag @e[type=fireball,tag=yellowobfireball] remove StillOb
 tag @e[type=fireball,tag=yellowobfireball,nbt={Motion:[0.0,0.0,0.0]}] add StillOb
+execute as @e[type=fireball,tag=yellowobfireball] store result score @s CmdData run data get entity @s Motion[1] 100
+execute as @e[type=fireball,tag=yellowobfireball] unless score @s CmdData matches 0 run tag @s remove StillOb
 scoreboard players add @e[type=fireball,tag=yellowobfireball,tag=!StillOb] obmove 1
 scoreboard players add @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] obshieldtime 1
 scoreboard players add @e[type=dragon_fireball,tag=yellowobfireball] obshieldtime 0

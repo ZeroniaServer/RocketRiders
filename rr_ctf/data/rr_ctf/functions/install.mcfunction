@@ -2,6 +2,8 @@ execute unless entity @e[tag=rr_ctf,limit=1,type=armor_stand] run summon armor_s
 scoreboard objectives add HasPickaxe dummy
 scoreboard objectives add dropPickaxe minecraft.dropped:minecraft.netherite_pickaxe
 scoreboard objectives add FlagScore dummy
+scoreboard objectives add MineWhiteGlass minecraft.mined:minecraft.white_stained_glass
+scoreboard objectives add MinePurpleGlass minecraft.mined:minecraft.purple_stained_glass
 scoreboard objectives add FlagDisp dummy ["",{"text":"Flag Count ","color":"green","bold":"true"},{"text":"/ 2","color":"red"}]
 execute if entity @e[tag=rr_ctf,limit=1,type=armor_stand] run tellraw @s {"text":"Capture the Flag Mode installed.","color":"green","bold":"true"}
 scoreboard players add @e[tag=rr_ctf,limit=1,type=armor_stand] CmdData 1

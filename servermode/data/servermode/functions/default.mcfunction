@@ -9,6 +9,8 @@ fill -57 198 84 -70 198 72 air replace blackstone
 execute as @a run function achievements:roots
 clear @a
 function game:forcestop
+execute as @e[tag=Selection,type=armor_stand,limit=1] store result score @s SetGamemode run scoreboard players get @e[tag=rr_normal,limit=1] gamemodeID
+schedule function arenaclear:forceareaclear 2t append
 function lobby:parkour/parkoursetup
 function lobby:credits/stop
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:globaldefaults

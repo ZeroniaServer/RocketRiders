@@ -26,12 +26,12 @@ execute if entity @e[tag=captureMiddle,scores={capturePoint=1..},type=area_effec
 execute if entity @e[tag=captureMiddle,scores={capturePoint=0},type=area_effect_cloud] run scoreboard players set @s powerupcount 0
 execute as @s[scores={powerupcount=20}] run scoreboard players remove @s PowerupDisplay 1
 execute as @s[scores={powerupcount=20}] run scoreboard players reset @s powerupcount
-execute if entity @e[scores={capturePoint=0,captureBlue=0,captureYellow=0},type=area_effect_cloud] run scoreboard players set @s PowerupDisplay 20
+execute if entity @e[scores={capturePoint=0,captureBlue=0,captureYellow=0},type=area_effect_cloud] run scoreboard players set @s PowerupDisplay 12
 # execute as @s[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=1},type=area_effect_cloud] as @e[type=player,team=Blue,tag=onCapturePoint] run tp @s 12 64 -66 0 0
 # execute as @s[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=2},type=area_effect_cloud] as @e[type=player,team=Yellow,tag=onCapturePoint] run tp @s 12 64 66 -180 0
 execute as @s[scores={PowerupDisplay=..0}] run tag @a add DelayActionbar
 execute as @s[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
-scoreboard players set @s[scores={PowerupDisplay=..0}] PowerupDisplay 20
+scoreboard players set @s[scores={PowerupDisplay=..0}] PowerupDisplay 12
 
 #tracking for lockdown achievement
 execute as @e[tag=captureMiddle,scores={capturePoint=1,bCapturedTime=..1200},type=area_effect_cloud] run scoreboard players add @s bCapturedTime 1
@@ -56,20 +56,19 @@ execute as @e[tag=captureMiddle,type=area_effect_cloud] at @s as @e[type=player,
 execute as @e[tag=captureMiddle,type=area_effect_cloud] at @s as @e[type=player,tag=onCapturePoint,distance=..5.5] at @s if entity @s[y=53,dy=0.5] if block ~ ~-1 ~ air run tp @s ~ ~0.5 ~
 execute as @e[type=player,tag=onCapturePoint] at @s unless entity @s[y=54,dy=1] unless entity @e[tag=captureMiddle,distance=..7.1,limit=1,type=area_effect_cloud] run tag @s remove onCapturePoint
 
-execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle,scores={captureYellow=0},tag=!contested,type=area_effect_cloud] captureBlue 1
+execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle,scores={captureYellow=0},tag=!contested,type=area_effect_cloud] captureBlue 2
 execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run tag @e[tag=captureMiddle,type=area_effect_cloud] remove contested
 
-execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle,scores={captureBlue=0},tag=!contested,type=area_effect_cloud] captureYellow 1
+execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle,scores={captureBlue=0},tag=!contested,type=area_effect_cloud] captureYellow 2
 execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run tag @e[tag=captureMiddle,type=area_effect_cloud] remove contested
 
 execute unless entity @a[tag=onCapturePoint] run tag @e[tag=captureMiddle,type=area_effect_cloud] remove contested
 
-scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureBlue=100..},type=area_effect_cloud] capturePoint 1
-scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureYellow=100..},type=area_effect_cloud] capturePoint 2
+scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureBlue=99..},type=area_effect_cloud] capturePoint 1
+scoreboard players set @e[tag=captureMiddle,tag=!contested,scores={captureYellow=99..},type=area_effect_cloud] capturePoint 2
 
 execute if entity @a[team=Yellow,tag=onCapturePoint] if entity @a[team=Blue,tag=onCapturePoint] if entity @e[tag=captureMiddle,tag=!contested,type=area_effect_cloud] run function rr_powerups:items/tetrisreset
 execute if entity @a[team=Yellow,tag=onCapturePoint] if entity @a[team=Blue,tag=onCapturePoint] run tag @e[tag=captureMiddle,type=area_effect_cloud] add contested
-scoreboard players set @e[tag=contested,type=area_effect_cloud] capturePoint 0
 scoreboard players remove @e[tag=contested,type=area_effect_cloud] captureBlue 1
 scoreboard players remove @e[tag=contested,type=area_effect_cloud] captureYellow 1
 
@@ -77,10 +76,11 @@ execute as @e[tag=captureMiddle,tag=!contested,scores={captureBlue=1..},type=are
 execute as @e[tag=captureMiddle,tag=!contested,scores={captureYellow=1..},type=area_effect_cloud] if score @s captureYellow >= @s captureBlue run function rr_powerups:game/fancyyellow
 execute as @e[tag=captureMiddle,tag=contested,type=area_effect_cloud] run function rr_powerups:game/fancycontested
 
-execute as @e[tag=captureMiddle,type=area_effect_cloud] unless entity @a[tag=onCapturePoint] run scoreboard players set @s capturePoint 0
-execute as @e[tag=captureMiddle,type=area_effect_cloud] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
-execute as @e[tag=captureMiddle,type=area_effect_cloud] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
-execute as @e[tag=captureMiddle,scores={captureYellow=..99,captureBlue=..99},type=area_effect_cloud] run scoreboard players set @s capturePoint 0
+execute as @e[tag=captureMiddle,type=area_effect_cloud,scores={captureBlue=99..}] if entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
+execute as @e[tag=captureMiddle,type=area_effect_cloud,scores={captureYellow=99..}] if entity @a[team=Blue,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
+execute as @e[tag=captureMiddle,type=area_effect_cloud,scores={captureBlue=..99}] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
+execute as @e[tag=captureMiddle,type=area_effect_cloud,scores={captureYellow=..99}] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
+execute as @e[tag=captureMiddle,scores={captureYellow=..0,captureBlue=..0},type=area_effect_cloud] run scoreboard players set @s capturePoint 0
 
 #powerup platform design
 execute as @e[tag=captureMiddle,type=area_effect_cloud] at @s run function rr_powerups:everytick/powerup_platform

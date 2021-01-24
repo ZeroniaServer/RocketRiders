@@ -20,6 +20,7 @@ execute as @a[team=!Blue,team=!Yellow] run trigger LeaveMidgame set -1
 execute as @a[team=!Lobby] run trigger MaxItemSec set 0
 execute as @s[tag=EditedSettings] as @a run trigger MaxItemSec set 0
 execute as @s[scores={servermode=1..}] as @a run trigger MaxItemSec set 0
+execute as @s[tag=EditedSettings] as @a run trigger VoteServerMode set 0
 execute as @a[team=!Lobby] run trigger daytime set 0
 execute as @s[tag=EditedSettings] as @a run trigger daytime set 0
 execute as @s[scores={servermode=1..}] as @a run trigger daytime set 0

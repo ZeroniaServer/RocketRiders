@@ -6,17 +6,15 @@ execute as @a[team=Blue,tag=!checkedTP] if score @s playerUUID = @e[tag=BluePlat
 
 #Reset the motion before/after teleporting (thanks to @dragonmaster95 for the suggestion!)
 execute as @p[team=Blue,tag=currentTP] if entity @e[tag=BluePlatform,scores={PlatTime=1..3},limit=1,tag=currentTP,type=area_effect_cloud] run tp @s @s
-execute as @p[team=Blue,tag=currentTP] if entity @e[tag=BluePlatform,scores={PlatTime=40..41},limit=1,tag=currentTP,type=area_effect_cloud,predicate=!custom:canopy_nearblue] run tp @s @s
+execute as @p[team=Blue,tag=currentTP] if entity @e[tag=BluePlatform,scores={PlatTime=40..41},limit=1,tag=currentTP,type=area_effect_cloud] run tp @s @s
 
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
 #(thanks to Red_Bones for the teleport command format!)
-execute at @e[tag=BluePlatform,scores={PlatTime=1..6},limit=1,tag=currentTP,type=area_effect_cloud,predicate=custom:canopy_nearblue] as @p[team=Blue,tag=currentTP] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
-execute at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,type=area_effect_cloud,predicate=!custom:canopy_nearblue] as @p[team=Blue,tag=currentTP] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
+execute at @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,type=area_effect_cloud] as @p[team=Blue,tag=currentTP] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
 execute as @p[team=Blue,tag=currentTP] at @s if entity @e[tag=BluePlatform,scores={PlatTime=1},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s slow_falling 2 100 true
 execute as @p[team=Blue,tag=currentTP] at @s unless predicate custom:canopy_nearblue if entity @e[tag=BluePlatform,scores={PlatTime=1},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s jump_boost 2 128 true
 execute as @p[team=Blue,tag=currentTP] at @s unless predicate custom:canopy_nearblue if entity @e[tag=BluePlatform,scores={PlatTime=1},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s slowness 2 255 true
-execute as @p[team=Blue,tag=currentTP] at @s if entity @e[tag=BluePlatform,scores={PlatTime=41},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud,predicate=!custom:canopy:near_blue] run effect clear @s slow_falling
-execute as @p[team=Blue,tag=currentTP] at @s if entity @e[tag=BluePlatform,scores={PlatTime=6..},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud,predicate=custom:canopy:near_blue] run effect clear @s slow_falling
+execute as @p[team=Blue,tag=currentTP] at @s if entity @e[tag=BluePlatform,scores={PlatTime=41},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s slow_falling
 
 #Canopy forgets owner upon death
 execute as @p[team=Blue,tag=currentTP,scores={respawn=1..}] at @s run scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,type=area_effect_cloud] pearlOwnerUUID

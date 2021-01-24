@@ -112,7 +112,11 @@
 
 "minecraft:obsidian",
 
-"minecraft:bedrock"
+"minecraft:bedrock",
+
+"minecraft:oak_fence",
+
+"#minecraft:wool"
 
 ]
 

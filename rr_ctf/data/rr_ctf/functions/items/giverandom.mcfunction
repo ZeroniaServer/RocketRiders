@@ -7,23 +7,10 @@
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
 tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
 
-##UUID randomizer - pick canopy or select other item
-#Generate random number
-summon area_effect_cloud ~ ~ ~ {Tags:["CTFRNG"],Duration:2000000000}
-scoreboard players set @e[tag=CTFRNG,type=area_effect_cloud,limit=1] RNGmax 10
-execute as @e[tag=CTFRNG,type=area_effect_cloud,limit=1] store result score @s RNGscore run data get entity @s UUID[0]
-execute as @e[tag=CTFRNG,type=area_effect_cloud,limit=1] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
-
-#Give canopy (20% chance)
-execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=0..1}] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
-
-#Select item (80% chance)
-execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=2..9}] run function items:rng
-execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=2..9}] run function items:tetris
-execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=2..9}] run tag @s add gaveFirstItem
-
-#Kill randomizer
-kill @e[tag=CTFRNG,type=area_effect_cloud,limit=1]
+#Select item
+function rr_ctf:items/rng
+function rr_ctf:items/tetris
+tag @s add gaveFirstItem
 
 ##Actionbar notifications
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar

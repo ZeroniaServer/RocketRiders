@@ -52,4 +52,6 @@ tag @a[scores={LeaveGame=1..}] remove beenOnBlue
 tag @a[scores={LeaveGame=1..}] remove beenOnBoth
 
 #Reset
+scoreboard players reset @a[scores={LeaveGame=1..}] VoteNum
+scoreboard players reset @a[scores={LeaveGame=1..}] VoteServerMode
 scoreboard players reset @a[scores={LeaveGame=1..}] LeaveGame

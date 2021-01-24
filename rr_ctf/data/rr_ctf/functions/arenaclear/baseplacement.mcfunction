@@ -88,6 +88,10 @@ fill -102 202 59 -88 194 59 bedrock replace obsidian
 fill -88 202 98 -102 202 98 bedrock replace barrier
 fill -88 202 98 -102 202 98 bedrock replace barrier
 fill -88 202 58 -102 202 58 bedrock replace barrier
+setblock -90 202 95 purple_stained_glass
+setblock -100 202 95 purple_stained_glass
+setblock -90 202 61 purple_stained_glass
+setblock -100 202 61 purple_stained_glass
 
 #No portals in pregame queue
 fill -89 201 97 -101 195 97 barrier

@@ -35,29 +35,29 @@ execute as @e[tag=VortexBlue,type=area_effect_cloud] at @s run particle minecraf
 execute as @s[tag=!custVortParticle] as @e[tag=VortexBlue,type=area_effect_cloud] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
 scoreboard players add @e[tag=Vortex,type=area_effect_cloud] vortexBoom 0
 
-##Spin around (unprimed)
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,distance=..6] unless score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..3,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~15 ~
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,distance=..6] unless score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..3,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-15 ~
+##Spin around (unprimed0)
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,distance=..7] unless score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..1,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~15 ~
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,distance=..7] unless score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..1,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-15 ~
 
 ##Spin around (primed)
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,distance=..6] if score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..3,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~30 ~
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,distance=..6] if score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..3,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-30 ~
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,distance=..7] if score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..1,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~30 ~
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,distance=..7] if score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..1,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-30 ~
 
 ##Face enemy player
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Yellow,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Yellow,distance=..6]
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Blue,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Blue,distance=..6]
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Yellow,distance=..7] run tp @s ~ ~ ~ facing entity @p[team=Yellow,distance=..7]
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Blue,distance=..7] run tp @s ~ ~ ~ facing entity @p[team=Blue,distance=..7]
 
 ##Drift towards enemy player in close contact
-execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Yellow,distance=..6] run tp @s ^ ^ ^.1 facing entity @p[team=Yellow,distance=..7]
-execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Blue,distance=..6] run tp @s ^ ^ ^.1 facing entity @p[team=Blue,distance=..7]
+execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Yellow,distance=..7] run tp @s ^ ^ ^.125 facing entity @p[team=Yellow,distance=..7]
+execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Blue,distance=..7] run tp @s ^ ^ ^.125 facing entity @p[team=Blue,distance=..7]
 
 #Teleport item to drifting Vortex recursively - thanks iRobo for the algorithm!
 scoreboard players set $count VortexID 1
 execute if entity @e[tag=Vortex,scores={vortexBoom=1..},type=area_effect_cloud] run function everytick:vortextp
 
 ##Other explosion conditions
-execute as @a[team=Blue] at @s run scoreboard players add @e[tag=VortexYellow,distance=..3,type=area_effect_cloud] vortexBoom 1
-execute as @a[team=Yellow] at @s run scoreboard players add @e[tag=VortexBlue,distance=..3,type=area_effect_cloud] vortexBoom 1
+execute as @a[team=Blue] at @s run scoreboard players add @e[tag=VortexYellow,distance=..5,type=area_effect_cloud] vortexBoom 1
+execute as @a[team=Yellow] at @s run scoreboard players add @e[tag=VortexBlue,distance=..5,type=area_effect_cloud] vortexBoom 1
 execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s run data merge entity @e[tag=VortexItemYellow,sort=nearest,limit=1,type=armor_stand] {Tags:["VortexItem","VortexItemYellow"],Invisible:1b,Invulnerable:1b,Marker:1b,NoGravity:1,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}]}
 execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s run data merge entity @e[tag=VortexItemBlue,sort=nearest,limit=1,type=armor_stand] {Tags:["VortexItem","VortexItemBlue"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}]}
 execute as @e[scores={vortexBoom=1},type=area_effect_cloud] at @s run playsound entity.shulker.hurt_closed player @a ~ ~ ~ 1 0
@@ -78,7 +78,7 @@ execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @e[tag=Vo
 ##Feathered vortex (Easter egg)
 execute unless entity @s[tag=featheredOff] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
 execute as @e[tag=SummonFeathered,type=chicken] at @s run playsound entity.chicken.hurt player @a ~ ~ ~ 2 0
-execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {CustomName:"{\"text\":\"a Chicken Vortex\"}",Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
+execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
 execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexFeathered"],Duration:2000000000}
 execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}
 execute as @e[type=chicken] at @s run tp @s ~ ~-250 ~

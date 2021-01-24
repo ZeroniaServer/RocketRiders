@@ -17,3 +17,6 @@ execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 6
 execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -73 38 34 -66 white_concrete replace black_concrete
 execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -65 38 34 -65 white_stained_glass replace black_stained_glass
 execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -64 38 34 -64 light_blue_stained_glass replace blue_stained_glass
+
+function rr_swap:items/darktetrisreset
+function rr_swap:items/lighttetrisreset

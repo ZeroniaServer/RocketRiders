@@ -102,7 +102,11 @@
 
 "minecraft:cyan_concrete",
 
-"minecraft:target"
+"minecraft:target",
+
+"minecraft:oak_fence",
+
+"#minecraft:wool"
 
 ]
 

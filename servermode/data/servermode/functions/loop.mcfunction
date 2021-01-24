@@ -1,19 +1,15 @@
 scoreboard players add @s VoteServerMode 1
 scoreboard players add @e[tag=ServerMode,tag=Set,type=area_effect_cloud] VoteServerMode 0
 
-execute as @a[scores={VoteServerMode=1}] run scoreboard players add @e[tag=ServerMode,tag=Set1,type=area_effect_cloud] VoteServerMode 1
-execute as @a[scores={VoteServerMode=2}] run scoreboard players add @e[tag=ServerMode,tag=Set2,type=area_effect_cloud] VoteServerMode 1
-execute as @a[scores={VoteServerMode=3}] run scoreboard players add @e[tag=ServerMode,tag=Set3,type=area_effect_cloud] VoteServerMode 1
-execute as @a[scores={VoteServerMode=4}] run scoreboard players add @e[tag=ServerMode,tag=Set4,type=area_effect_cloud] VoteServerMode 1
-
 execute as @a[scores={VoteServerMode=5..}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
 execute as @a[scores={VoteServerMode=5..}] run scoreboard players set @s VoteServerMode 0
 execute as @a[scores={VoteServerMode=..-1}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
 execute as @a[scores={VoteServerMode=..-1}] run scoreboard players set @s VoteServerMode 0
-execute as @a[scores={VoteServerMode=0}] run scoreboard players enable @s VoteServerMode
+execute as @a[scores={VoteServerMode=0..}] run scoreboard players enable @s VoteServerMode
 
-execute as @a[scores={VoteServerMode=1..4}] run tellraw @s {"text":"You've successfully voted! Please wait for voting to end.\n","color":"dark_green"}
-scoreboard players reset @a[scores={VoteServerMode=1..4}] VoteServerMode
+execute as @a[scores={VoteServerMode=1..4}] run tellraw @s [{"text":"You've voted for option ","color":"dark_green"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"red","bold":"true"},{"text":"! You may change your vote if you wish, or wait for voting to end.\n","color":"dark_green"}]
+execute as @a[scores={VoteServerMode=1..4}] run scoreboard players operation @s VoteNum = @s VoteServerMode
+execute as @a[scores={VoteServerMode=1..4}] run scoreboard players set @s VoteServerMode 0
 
 #countdown
 execute as @s[scores={VoteServerMode=1}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"30","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]

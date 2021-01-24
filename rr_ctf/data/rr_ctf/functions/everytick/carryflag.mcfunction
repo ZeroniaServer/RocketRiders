@@ -19,6 +19,8 @@ tag @a[tag=CarryFlag,tag=probablyDied] remove CarryFY2
 tag @a[tag=CarryFlag,tag=probablyDied] remove CarryFB1
 tag @a[tag=CarryFlag,tag=probablyDied] remove CarryFB2
 
+tag @a[tag=probablyDied] remove probablyDied
+
 #Deliver Yellow flag at Blue base
 execute as @a[team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] run scoreboard players add Blue: FlagDisp 1
 execute as @a[team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] as @a[team=Blue] at @s run playsound minecraft:block.note_block.bell player @s ~ ~ ~ 1 1.2

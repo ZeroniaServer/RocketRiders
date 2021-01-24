@@ -61,16 +61,22 @@ execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s r
 execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
 execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
 execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0.6
+execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s run fill ~-1 ~ ~-1 ~-1 ~ ~-1 air replace observer
+execute as @e[scores={PlatTime=50},type=area_effect_cloud,tag=!animated] at @s run fill ~-1 ~ ~ ~-1 ~ ~ air replace structure_block
 
 execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy11"}
 execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
 execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
 execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0
+execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run fill ~-1 ~ ~-1 ~-1 ~ ~-1 air replace observer
+execute as @e[scores={PlatTime=55},type=area_effect_cloud,tag=!animated] at @s run fill ~-1 ~ ~ ~-1 ~ ~ air replace structure_block
 
 execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy12"}
 execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
 execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
 execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run particle block spruce_leaves ~ ~2 ~ 1 1 1 1 300
+execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run fill ~-1 ~ ~-1 ~-1 ~ ~-1 air replace observer
+execute as @e[scores={PlatTime=56},type=area_effect_cloud,tag=!animated] at @s run fill ~-1 ~ ~ ~-1 ~ ~ air replace structure_block
 
 execute as @e[scores={PlatTime=58},type=area_effect_cloud,tag=!animated] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
 execute as @e[scores={PlatTime=58},type=area_effect_cloud,tag=!animated] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves

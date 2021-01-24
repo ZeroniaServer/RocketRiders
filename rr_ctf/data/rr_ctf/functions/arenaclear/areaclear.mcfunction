@@ -1,12 +1,6 @@
-#Clear Yellow Base
-fill -14 34 52 38 63 56 air
-fill 38 63 57 -14 34 61 air
-fill -14 34 66 38 63 62 air
-
-#Clear Blue Base
-fill -14 34 -52 38 63 -56 air
-fill 38 63 -61 -14 34 -57 air
-fill -14 34 -62 38 63 -66 air
+#Clear extra bedrock
+fill -15 64 71 39 64 68 air
+fill -15 64 -71 39 64 -68 air
 
 #Reset pregame queue
 execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -89 201 96 -101 195 95 white_stained_glass
@@ -27,6 +21,8 @@ execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -8
 execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -96 201 97 -101 195 97 nether_portal[axis=x]
 execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -102 202 97 -88 194 97 obsidian replace bedrock
 execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -102 202 59 -88 194 59 obsidian replace bedrock
+execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -88 202 98 -102 202 98 barrier
+execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -88 202 58 -102 202 58 barrier
 
 #remove join cancel from joinpads
 tag @e[tag=CancelJoin,type=area_effect_cloud] remove CancelJoin

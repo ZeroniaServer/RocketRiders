@@ -12,7 +12,7 @@ execute unless entity @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] ru
 execute unless entity @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run kill @e[tag=ServerMode]
 
 #Handling new/lobby players and miscellaneous stuff
-function everytick:new_player
+execute as @e[tag=Selection,type=armor_stand] run function everytick:new_player
 execute as @e[tag=Selection,type=armor_stand] run function everytick:leave_game
 execute as @e[tag=Selection,type=armor_stand] run function everytick:general_settings_or_hotfixes
 
@@ -43,6 +43,9 @@ execute as @e[tag=Selection,type=armor_stand,tag=!SMActive] run function everyti
 
 #Player void
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
+scoreboard players add @a[scores={voidNoFallCount=0..}] voidNoFallCount 1
+effect clear @a[scores={voidNoFallCount=2}] slow_falling
+scoreboard players reset @a[scores={voidNoFallCount=2}] voidNoFallCount
 
 #Arrow pickup
 execute as @e[tag=Selection,type=armor_stand] if entity @e[type=arrow] run function everytick:arrow_pickup

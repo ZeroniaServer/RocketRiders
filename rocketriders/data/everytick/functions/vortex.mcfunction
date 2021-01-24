@@ -23,10 +23,11 @@ execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run pla
 execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:entity.shulker.teleport player @a ~ ~ ~ 2 0.8
 execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:block.portal.ambient player @a ~ ~ ~ 2 2
 execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:entity.shulker.teleport player @a ~ ~ ~ 2 0.8
-execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-2 ~ {Tags:["VortexItem","VortexItemYellow"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_pearl",Count:1b}]}
-execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-2 ~ {Tags:["VortexItem","VortexItemBlue"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_pearl",Count:1b}]}
 execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexYellow"],Duration:2000000000}
 execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexBlue"],Duration:2000000000}
+#Track Vortex with IDs and summon armor stands recursively - thanks iRobo for the algorithm!
+scoreboard players add @e[tag=Vortex,type=area_effect_cloud] VortexID 0
+execute as @e[tag=Vortex,tag=!VortexFeathered,scores={VortexID=0},type=area_effect_cloud] at @s run function everytick:vortexid
 kill @e[scores={vortextimer=20..},type=egg]
 execute as @e[tag=VortexYellow,type=area_effect_cloud] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @s[tag=!custVortParticle] as @e[tag=VortexYellow,type=area_effect_cloud] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
@@ -48,12 +49,11 @@ execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=Vort
 
 ##Drift towards enemy player in close contact
 execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Yellow,distance=..6] run tp @s ^ ^ ^.1 facing entity @p[team=Yellow,distance=..7]
-execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Yellow,distance=..6] run tp @e[tag=VortexItemBlue,distance=..3,limit=1,sort=nearest,type=armor_stand] @s
-execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Yellow,distance=..6] run tp @e[tag=VortexItemBlue,distance=..3,limit=1,sort=nearest,type=armor_stand] ~ ~-2 ~
-
 execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Blue,distance=..6] run tp @s ^ ^ ^.1 facing entity @p[team=Blue,distance=..7]
-execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Blue,distance=..6] run tp @e[tag=VortexItemYellow,distance=..3,limit=1,sort=nearest,type=armor_stand] @s
-execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Blue,distance=..6] run tp @e[tag=VortexItemYellow,distance=..3,limit=1,sort=nearest,type=armor_stand] ~ ~-2 ~
+
+#Teleport item to drifting Vortex recursively - thanks iRobo for the algorithm!
+scoreboard players set $count VortexID 1
+execute if entity @e[tag=Vortex,scores={vortexBoom=1..},type=area_effect_cloud] run function everytick:vortextp
 
 ##Other explosion conditions
 execute as @a[team=Blue] at @s run scoreboard players add @e[tag=VortexYellow,distance=..3,type=area_effect_cloud] vortexBoom 1

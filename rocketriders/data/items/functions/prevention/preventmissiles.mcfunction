@@ -49,8 +49,8 @@ execute as @e[tag=YellowGuard,tag=!UnableMissile,type=area_effect_cloud] at @s p
 #A.N.T.
 execute as @e[tag=BlueAnt,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~ ~-7 ~4 store result score @s Unable run clone ~ ~ ~ ~ ~3 ~6 ~ 175 ~ filtered #custom:portalblocks force
 execute as @e[tag=BlueAnt,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~ 175 ~4 run fill ~ ~ ~ ~ ~3 ~6 air replace #custom:portalblocks
-execute as @e[tag=YellowAnt,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~ ~-7 ~-9 store result score @s Unable run clone ~ ~ ~ ~ ~3 ~6 ~ 175 ~ filtered #custom:portalblocks force
-execute as @e[tag=YellowAnt,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~ 175 ~-9 run fill ~ ~ ~ ~ ~3 ~6 air replace #custom:portalblocks
+execute as @e[tag=YellowAnt,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~ ~-7 ~-10 store result score @s Unable run clone ~ ~ ~ ~ ~3 ~6 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowAnt,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~ 175 ~-10 run fill ~ ~ ~ ~ ~3 ~6 air replace #custom:portalblocks
 
 #Blade
 execute as @e[tag=BlueBlade,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-5 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~14 ~ 175 ~ filtered #custom:portalblocks force
@@ -73,8 +73,8 @@ execute as @e[tag=YellowJug,tag=!UnableMissile,type=area_effect_cloud] at @s pos
 #Slasher
 execute as @e[tag=BlueSlash,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-7 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~3 ~12 ~ 175 ~ filtered #custom:portalblocks force
 execute as @e[tag=BlueSlash,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~3 ~12 air replace #custom:portalblocks
-execute as @e[tag=YellowSlash,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-7 ~-15 store result score @s Unable run clone ~ ~ ~ ~2 ~3 ~12 ~ 175 ~ filtered #custom:portalblocks force
-execute as @e[tag=YellowSlash,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~-15 run fill ~ ~ ~ ~2 ~3 ~12 air replace #custom:portalblocks
+execute as @e[tag=YellowSlash,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-7 ~-16 store result score @s Unable run clone ~ ~ ~ ~2 ~3 ~12 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowSlash,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~-16 run fill ~ ~ ~ ~2 ~3 ~12 air replace #custom:portalblocks
 
 #Catapult
 execute as @e[tag=BlueCata,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~3 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~11 ~ 175 ~ filtered #custom:portalblocks force
@@ -85,8 +85,8 @@ execute as @e[tag=YellowCata,tag=!UnableMissile,type=area_effect_cloud] at @s po
 #Citadel
 execute as @e[tag=BlueCitadel,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:portalblocks force
 execute as @e[tag=BlueCitadel,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~9 air replace #custom:portalblocks
-execute as @e[tag=YellowCitadel,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~-14 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:portalblocks force
-execute as @e[tag=YellowCitadel,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~-14 run fill ~ ~ ~ ~2 ~2 ~9 air replace #custom:portalblocks
+execute as @e[tag=YellowCitadel,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~-13 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowCitadel,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~-13 run fill ~ ~ ~ ~2 ~2 ~9 air replace #custom:portalblocks
 
 #Gemini
 execute as @e[tag=BlueGemi,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-5 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~9 ~ 175 ~ filtered #custom:portalblocks force
@@ -115,8 +115,8 @@ execute as @e[tag=YellowBull,tag=!UnableMissile,type=area_effect_cloud] at @s po
 #Duplex
 execute as @e[tag=BlueDuplex,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~17 ~ 175 ~ filtered #custom:portalblocks force
 execute as @e[tag=BlueDuplex,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~17 air replace #custom:portalblocks
-execute as @e[tag=YellowDuplex,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~-22 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~17 ~ 175 ~ filtered #custom:portalblocks force
-execute as @e[tag=YellowDuplex,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~-22 run fill ~ ~ ~ ~2 ~2 ~17 air replace #custom:portalblocks
+execute as @e[tag=YellowDuplex,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~-21 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~17 ~ 175 ~ filtered #custom:portalblocks force
+execute as @e[tag=YellowDuplex,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 175 ~-21 run fill ~ ~ ~ ~2 ~2 ~17 air replace #custom:portalblocks
 
 #Broadsword
 execute as @e[tag=BlueBroad,tag=!UnableMissile,type=area_effect_cloud] at @s positioned ~-1 ~-6 ~5 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~11 ~ 175 ~ filtered #custom:portalblocks force

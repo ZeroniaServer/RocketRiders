@@ -84,7 +84,7 @@ execute as @e[tag=YellowGuard,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-
 
 #A.N.T.
 execute as @e[tag=BlueAnt,type=area_effect_cloud] at @s run tp @s ~ ~-9 ~4
-execute as @e[tag=YellowAnt,type=area_effect_cloud] at @s run tp @s ~ ~-9 ~-9
+execute as @e[tag=YellowAnt,type=area_effect_cloud] at @s run tp @s ~ ~-9 ~-10
 
 #Blade
 execute as @e[tag=BlueBlade,type=area_effect_cloud] at @s run tp @s ~-1 ~-7 ~4
@@ -100,7 +100,7 @@ execute as @e[tag=YellowJug,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-20
 
 #Slasher
 execute as @e[tag=BlueSlash,type=area_effect_cloud] at @s run tp @s ~-1 ~-9 ~4
-execute as @e[tag=YellowSlash,type=area_effect_cloud] at @s run tp @s ~-1 ~-9 ~-15
+execute as @e[tag=YellowSlash,type=area_effect_cloud] at @s run tp @s ~-1 ~-9 ~-16
 
 #Catapult
 execute as @e[tag=BlueCata,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~3
@@ -108,7 +108,7 @@ execute as @e[tag=YellowCata,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-1
 
 #Citadel
 execute as @e[tag=BlueCitadel,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~4
-execute as @e[tag=YellowCitadel,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-14
+execute as @e[tag=YellowCitadel,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-13
 
 #Gemini
 execute as @e[tag=BlueGemi,type=area_effect_cloud] at @s run tp @s ~-1 ~-7 ~4
@@ -130,7 +130,7 @@ execute as @e[tag=YellowBull,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-1
 execute as @e[tag=BlueDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[duplexExtraBlue],Duration:2000000000}
 execute as @e[tag=BlueDuplex,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~4
 execute as @e[tag=YellowDuplex,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[duplexExtraYellow],Duration:2000000000}
-execute as @e[tag=YellowDuplex,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-22
+execute as @e[tag=YellowDuplex,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-21
 
 #Broadsword (+ extra entity)
 execute as @e[tag=BlueBroad,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[broadExtraBlue],Duration:2000000000}
@@ -159,7 +159,7 @@ execute as @e[tag=yellowmissile,type=area_effect_cloud] run function items:minif
 #Extra for Duplex
 execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] at @s run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
 execute as @e[tag=duplexExtraBlue,type=area_effect_cloud] run kill @s
-execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] at @s run fill ~ ~-5 ~-21 ~ ~-5 ~-21 powered_rail[shape=north_south] replace powered_rail
+execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] at @s run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
 execute as @e[tag=duplexExtraYellow,type=area_effect_cloud] run kill @s
 
 #Extra for Broadsword

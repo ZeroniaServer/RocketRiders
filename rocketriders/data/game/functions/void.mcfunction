@@ -23,9 +23,6 @@ effect give @s[team=!Spectator] fire_resistance 4 200 true
 ##Non-Spectator players get no fall damage
 scoreboard players set @s[team=!Spectator] voidNoFallCount 0
 effect give @s[scores={voidNoFallCount=0}] slow_falling 1 1 true
-scoreboard players add @s[scores={voidNoFallCount=0..1}] voidNoFallCount 1
-effect clear @s[scores={voidNoFallCount=2}] slow_falling
-scoreboard players reset @s[scores={voidNoFallCount=2}] voidNoFallCount
 
 ##Teleport non-Spectators back to base
 execute unless entity @e[tag=Selection,type=armor_stand,tag=customSpawns] run tp @s[team=Blue] 12 64 -66 0 0

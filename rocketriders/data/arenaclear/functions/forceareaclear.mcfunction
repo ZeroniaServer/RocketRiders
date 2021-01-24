@@ -10,3 +10,6 @@ execute if entity @e[tag=Selection,tag=!Hardcore,type=armor_stand] run fill -89 
 execute if entity @e[tag=Selection,tag=!Hardcore,type=armor_stand] run fill -89 201 60 -101 195 61 white_stained_glass
 execute if entity @e[tag=Selection,tag=!Hardcore,type=armor_stand] run fill -89 201 62 -101 195 63 cyan_stained_glass
 execute if entity @e[tag=Selection,tag=!Hardcore,type=armor_stand] run fill -89 201 65 -101 195 64 blue_stained_glass
+
+fill -88 202 98 -102 202 98 barrier
+fill -88 202 58 -102 202 58 barrier

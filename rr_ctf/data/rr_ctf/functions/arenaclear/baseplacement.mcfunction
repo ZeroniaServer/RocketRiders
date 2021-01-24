@@ -73,6 +73,8 @@ fill -15 33 -67 39 33 -67 minecraft:bedrock
 fill 39 33 -67 39 64 -67 minecraft:bedrock
 fill 10 64 -67 14 64 -67 obsidian
 fill 10 64 67 14 64 67 obsidian
+fill -15 64 71 39 64 68 bedrock
+fill -15 64 -71 39 64 -68 bedrock
 
 #Pregame queue
 fill -89 201 96 -101 195 95 end_stone
@@ -83,6 +85,9 @@ fill -89 201 62 -101 195 63 cyan_concrete
 fill -89 201 64 -101 195 65 blue_concrete
 fill -102 202 97 -88 194 97 bedrock replace obsidian
 fill -102 202 59 -88 194 59 bedrock replace obsidian
+fill -88 202 98 -102 202 98 bedrock replace barrier
+fill -88 202 98 -102 202 98 bedrock replace barrier
+fill -88 202 58 -102 202 58 bedrock replace barrier
 
 #No portals in pregame queue
 fill -89 201 97 -101 195 97 barrier

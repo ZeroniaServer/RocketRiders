@@ -10,4 +10,7 @@ title @a[scores={firstJoined=0}] subtitle [{"text":"Rocket ","color":"blue","bol
 execute as @s[scores={servermode=0},tag=!realms] as @a[scores={firstJoined=0}] run function achievements:roots
 execute as @s[scores={servermode=0},tag=realms] as @a[scores={firstJoined=0}] run advancement grant @s only tutorial:root
 
+#Welcome message
+execute as @s[tag=SMActive] as @a[scores={firstJoined=0}] run tellraw @s ["",{"text":"Welcome to ","color":"gray"},{"text":"Rocket ","color":"blue"},{"text":"Riders","color":"gold"},{"text":", ","color":"gray"},{"selector":"@s","color":"green"},{"text":"! Use the ","color":"gray"},{"text":"Navigation Book","color":"dark_green"},{"text":" to explore the Lobby. You can join the game with join pads, see missiles in the Missile Display Area, or try the Parkour. Enjoy!","color":"gray"}]
+
 scoreboard players add @a[scores={firstJoined=0}] firstJoined 1

@@ -98,6 +98,9 @@ tag @s[scores={endtimer=570..}] remove YellowWon
 tag @s[scores={endtimer=570..}] remove BlueWonFirst
 tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
+execute as @s[scores={endtimer=570..}] run scoreboard players set $barriers CmdData 0
+execute as @s[scores={endtimer=570..}] run scoreboard players reset $highest VortexID
+execute as @s[scores={endtimer=570..}] run scoreboard players reset $count VortexID
 tag @s[scores={endtimer=570..}] remove GameEnd
 
 ##For repeating settings

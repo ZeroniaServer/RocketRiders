@@ -49,6 +49,8 @@ execute unless entity @s[tag=runvortex] if entity @e[type=chicken] run tag @s ad
 execute if entity @s[tag=runvortex] run function everytick:vortex
 tag @s[tag=runvortex] remove runvortex
 
+execute unless entity @e[tag=Vortex,type=area_effect_cloud] unless entity @e[tag=VortexItem,type=armor_stand] run scoreboard players set $highest VortexID 0
+
 execute unless entity @s[tag=runobshields] if entity @e[tag=obfireball,type=fireball] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[tag=obfireball,type=dragon_fireball] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[tag=BlueObshield,type=area_effect_cloud] run tag @s add runobshields

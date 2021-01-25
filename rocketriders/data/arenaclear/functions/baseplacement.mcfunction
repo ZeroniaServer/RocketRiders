@@ -3,6 +3,9 @@
 ## General function used by other gamemodes ##
 ##############################################
 
+#Clear pregame powerups platform
+fill -92 200 81 -98 200 75 air
+
 #Clear some more decorations
 fill -14 64 -66 38 80 -52 air
 fill 38 48 -51 -14 63 -28 air

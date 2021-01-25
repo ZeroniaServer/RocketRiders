@@ -6,6 +6,11 @@ tag @a[team=Yellow] add WasInYellow
 tag @a[team=Blue] add WasInBlue
 
 #Clearing effects/tags and teleporting to lobby
+tag @a[team=!Blue,team=!Yellow,tag=CarryFlag] remove CarryFlag
+tag @a[team=!Blue,team=!Yellow,tag=CarryFY1] remove CarryFY1
+tag @a[team=!Blue,team=!Yellow,tag=CarryFY2] remove CarryFY2
+tag @a[team=!Blue,team=!Yellow,tag=CarryFB1] remove CarryFB1
+tag @a[team=!Blue,team=!Yellow,tag=CarryFB2] remove CarryFB2
 effect clear @a[scores={LeaveGame=1..}]
 effect give @a[scores={LeaveGame=1..}] regeneration 1 255 true
 effect give @a[scores={LeaveGame=1..}] resistance 1000000 255 true

@@ -19,4 +19,4 @@ execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 6
 execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -64 38 34 -64 blue_stained_glass replace light_blue_stained_glass
 
 #Visual titles and subtitles.
-function rr_swap:baseswap/visuals/1
+schedule function rr_swap:baseswap/visuals/1 5t

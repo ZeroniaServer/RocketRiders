@@ -1,9 +1,7 @@
-title @a times 0 30 2
+execute unless entity @e[tag=Selection,scores={endtimer=1..}] if score SwapSide swapside matches 0 run title @a[team=Yellow] actionbar ["",{"text":"[SWAP]","bold":true,"color":"black"},{"text":" You will now receive ","italic":true,"color":"green"},{"text":"explosive","italic":true,"underlined":true,"color":"black"},{"text":" items.","italic":true,"color":"green"}]
+execute unless entity @e[tag=Selection,scores={endtimer=1..}] if score SwapSide swapside matches 0 run title @a[team=Blue] actionbar ["",{"text":"[SWAP]","bold":true,"color":"white"},{"text":" You will now receive ","italic":true,"color":"green"},{"text":"fast","italic":true,"underlined":true,"color":"white"},{"text":" items.","italic":true,"color":"green"}]
 
-execute unless entity @e[tag=Selection,scores={endtimer=1..}] if score SwapSide swapside matches 0 run title @a[team=Yellow] title {"text":"SWAPPED","underlined":true,"color":"white"}
-execute unless entity @e[tag=Selection,scores={endtimer=1..}] if score SwapSide swapside matches 0 run title @a[team=Blue] title {"text":"SWAPPED","underlined":true,"color":"dark_gray"}
+execute unless entity @e[tag=Selection,scores={endtimer=1..}] if score SwapSide swapside matches 1 run title @a[team=Blue] actionbar ["",{"text":"[SWAP]","bold":true,"color":"black"},{"text":" You will now receive ","italic":true,"color":"green"},{"text":"explosive","italic":true,"underlined":true,"color":"black"},{"text":" items.","italic":true,"color":"green"}]
+execute unless entity @e[tag=Selection,scores={endtimer=1..}] if score SwapSide swapside matches 1 run title @a[team=Yellow] actionbar ["",{"text":"[SWAP]","bold":true,"color":"white"},{"text":" You will now receive ","italic":true,"color":"green"},{"text":"fast","italic":true,"underlined":true,"color":"white"},{"text":" items.","italic":true,"color":"green"}]
 
-execute unless entity @e[tag=Selection,scores={endtimer=1..}] if score SwapSide swapside matches 1 run title @a[team=Blue] title {"text":"SWAPPED","underlined":true,"color":"white"}
-execute unless entity @e[tag=Selection,scores={endtimer=1..}] if score SwapSide swapside matches 1 run title @a[team=Yellow] title {"text":"SWAPPED","underlined":true,"color":"dark_gray"}
-
-schedule function rr_swap:baseswap/visuals/2 1t
+execute as @a[team=!Lobby,team=!Spectator] at @s run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 0

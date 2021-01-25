@@ -14,4 +14,4 @@ scoreboard objectives add VortexID dummy
 scoreboard objectives add VoteNum dummy
 
 function lobby:credits/restart
-#schedule function custom:ck_uponload 20t
+schedule function custom:ck_uponload 20t

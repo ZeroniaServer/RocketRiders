@@ -8,9 +8,6 @@ fill 35 74 68 29 64 61 air replace moving_piston
 fill -9 74 -68 -15 64 -61 air replace moving_piston
 fill 35 74 -68 29 64 -61 air replace moving_piston
 
-##Reset Tetris progress for Item RNG
-function rr_swap:items/tetrisreset
-
 #Reset pregame queue
 execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -89 201 96 -101 195 95 white_stained_glass
 execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -89 201 94 -101 195 93 orange_stained_glass

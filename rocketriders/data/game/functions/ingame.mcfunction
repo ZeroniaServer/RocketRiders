@@ -28,7 +28,7 @@ execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=4}] run gamerule fall
 function achievements:gain
 function everytick:clear_spawnblocks
 function everytick:no_fall
-function everytick:init_kill_carts
+execute if entity @e[type=tnt_minecart] run function everytick:init_kill_carts
 
 ##Missile/utility-specific commands (optimized to only run when necessary)
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=missile,type=area_effect_cloud] run tag @s add runspawnmissiles

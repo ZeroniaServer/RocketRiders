@@ -26,6 +26,8 @@ execute as @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run boss
 
 ##Blue Join Pad
 execute as @s[tag=!EditedSettings] run tag @a remove JoinBlue
+execute as @s[tag=GameEnd] run tag @a remove JoinBlue
+execute as @s[tag=BlueFull] run tag @a remove JoinBlue
 execute as @s[tag=!noTeamBalance] as @s[scores={largerTeam=-1..0},tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
@@ -68,6 +70,8 @@ execute as @e[tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lobby] remove 
 
 ##Yellow Join Pad
 execute as @s[tag=!EditedSettings] run tag @a remove JoinYellow
+execute as @s[tag=GameEnd] run tag @a remove JoinYellow
+execute as @s[tag=YellowFull] run tag @a remove JoinYellow
 execute as @s[tag=!noTeamBalance] as @s[scores={largerTeam=0..1},tag=!YellowFull] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
@@ -110,6 +114,7 @@ execute as @e[tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remov
 
 ##Joinpad + Leavepad Spectator
 execute as @s[tag=!EditedSettings] run tag @a remove JoinSpec
+execute as @s[tag=GameEnd] run tag @a remove JoinSpec
 execute if entity @e[tag=Selection,tag=SMActive] if entity @e[tag=specjoinpad,tag=CancelJoin] run execute as @a[tag=JoinSpec] run tellraw @s ["",{"text":"You can not use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 tag @a[gamemode=spectator] remove JoinSpec
 execute as @e[tag=specjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:gray_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a

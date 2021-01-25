@@ -131,17 +131,22 @@ execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] a
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] run kill @s
 
 #bees teams/float
-execute as @e[type=bee,tag=BlueBee] run team join Blue
-execute as @e[type=bee,tag=BlueBee] run data merge entity @s {Glowing:1b,NoGravity:1b}
-tag @e[type=bee,tag=BlueBee] remove BlueBee
-execute as @e[type=bee,tag=YellowBee] run team join Yellow
-execute as @e[type=bee,tag=YellowBee] run data merge entity @s {Glowing:1b,NoGravity:1b}
-tag @e[type=bee,tag=YellowBee] remove YellowBee
+execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run team join Blue
+execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run data merge entity @s {Glowing:1b,NoGravity:1b}
+tag @e[type=bee,tag=BlueBee] add beeChecked
+execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run team join Yellow
+execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run data merge entity @s {Glowing:1b,NoGravity:1b}
+tag @e[type=bee,tag=YellowBee] add beeChecked
 
 #angry bees
-execute as @e[type=bee,team=Blue] at @s run data modify entity @s AngryAt set from entity @p[team=Yellow] UUID
-execute as @e[type=bee,team=Yellow] at @s run data modify entity @s AngryAt set from entity @p[team=Blue] UUID
-execute as @e[type=bee] run data merge entity @s {AngerTime:1000}
+scoreboard players add $beetime BeeShieldTime 1
+execute if score $beetime BeeShieldTime matches 100 run scoreboard players set $beetime BeeShieldTime 0
+execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=BlueBee] at @s run data modify entity @s AngryAt set from entity @p[team=Yellow] UUID
+execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=YellowBee] at @s run data modify entity @s AngryAt set from entity @p[team=Blue] UUID
+execute if score $beetime BeeShieldTime matches 1 as @e[type=bee] run data merge entity @s {AngerTime:1000}
+
+#bee cap
+
 
 #kill bees that have stung
 kill @e[type=bee,nbt={HasStung:1b}]

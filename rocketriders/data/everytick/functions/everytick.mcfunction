@@ -4,7 +4,7 @@
 ####################################
 
 #Server mode
-tag @e[tag=Selection,type=armor_stand,scores={servermode=0}] remove SMActive
+tag @e[tag=Selection,type=armor_stand,scores={servermode=0},tag=!SMCustom] remove SMActive
 tag @e[tag=Selection,type=armor_stand,scores={servermode=1..}] add SMActive
 execute as @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run function servermode:loop
 scoreboard players reset @e[tag=Selection,tag=!ServerModeVoting,type=armor_stand] VoteServerMode

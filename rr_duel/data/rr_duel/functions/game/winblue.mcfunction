@@ -8,7 +8,7 @@ scoreboard players add Blue: RoundsWon 1
 effect give @a[team=Blue] instant_health 1 100
 effect give @a[team=Yellow] instant_health 1 100
 
-execute unless score Blue: RoundsWon matches 2.. as @s[scores={servermode=0}] run function achievements:aftergameblue
+execute unless score Blue: RoundsWon matches 2.. as @s[scores={servermode=0},tag=!realms] run function achievements:aftergameblue
 execute unless score Blue: RoundsWon matches 2.. run function achievements:scoresreset
 execute unless score Blue: RoundsWon matches 2.. run kill @e[type=tnt]
 execute unless score Blue: RoundsWon matches 2.. as @a[team=Blue] at @s run stopsound @s

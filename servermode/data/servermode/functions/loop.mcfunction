@@ -7,7 +7,8 @@ execute as @a[scores={VoteServerMode=..-1}] run tellraw @s {"text":"Invalid vote
 execute as @a[scores={VoteServerMode=..-1}] run scoreboard players set @s VoteServerMode 0
 execute as @a run scoreboard players enable @s VoteServerMode
 
-execute as @a[scores={VoteServerMode=1..4}] run tellraw @s [{"text":"You've voted for option ","color":"dark_green"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"red","bold":"true"},{"text":"! You may change your vote if you wish, or wait for voting to end.\n","color":"dark_green"}]
+execute as @a[scores={VoteServerMode=1..4}] unless score @s VoteNum = @s VoteServerMode run tellraw @s [{"text":"You've voted for option ","color":"dark_green"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"red","bold":"true"},{"text":"! You may change your vote if you wish, or wait for voting to end.\n","color":"dark_green"}]
+execute as @a[scores={VoteServerMode=1..4}] if score @s VoteNum = @s VoteServerMode run tellraw @s [{"text":"You've already voted for option ","color":"dark_green"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"red","bold":"true"},{"text":".\n","color":"dark_green"}]
 execute as @a[scores={VoteServerMode=1..4}] run scoreboard players operation @s VoteNum = @s VoteServerMode
 execute as @a[scores={VoteServerMode=1..4}] run scoreboard players set @s VoteServerMode 0
 

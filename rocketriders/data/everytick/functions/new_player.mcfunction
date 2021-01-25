@@ -7,7 +7,7 @@ title @a[scores={firstJoined=0}] title [{"text":"Welcome to","color":"white"}]
 title @a[scores={firstJoined=0}] subtitle [{"text":"Rocket ","color":"blue","bold":"true"},{"text":"Riders","color":"gold","bold":"true"},{"text":"!","color":"white","bold":"false"}]
 
 #Handle achievements
-execute as @s[scores={servermode=0},tag=!realms] as @a[scores={firstJoined=0}] run function achievements:roots
+execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[scores={firstJoined=0}] run function achievements:roots
 execute as @s[scores={servermode=0},tag=realms] as @a[scores={firstJoined=0}] run advancement grant @s only tutorial:root
 
 #Welcome message

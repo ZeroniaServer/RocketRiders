@@ -46,6 +46,7 @@ tag @a[tag=onYellow,tag=probablyDied] remove onYellow
 #Necessary for death check (again)
 execute as @a[scores={deathCooldown=5..}] run scoreboard players operation @s PlayerDeaths = @s deaths
 execute as @a[scores={deathCooldown=5..}] run tag @s remove probablyDied
+execute as @a[scores={deathCooldown=5..}] run tag @s remove stopCheckingDeath
 execute as @a[scores={deathCooldown=5..}] if score @s PlayerDeaths = @s deaths run scoreboard players set @s deathCooldown 0
 
 #Necessary for fall distance check (again)

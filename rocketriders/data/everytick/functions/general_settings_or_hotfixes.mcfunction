@@ -10,7 +10,7 @@ execute as @a store result score @s playerUUID run data get entity @s UUID[0]
 function lobby:missiledisplay/placedisp
 
 #Tutorial Advancements
-execute as @s[scores={servermode=0}] run function tutorial:advantriggers
+execute as @s[scores={servermode=0},tag=!SMCustom] run function tutorial:advantriggers
 
 #Handy tips for newcomers
 function everytick:tip

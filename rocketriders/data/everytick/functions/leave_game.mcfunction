@@ -42,8 +42,8 @@ execute as @s[tag=!SMActive] as @a[scores={LeaveGame=1..},tag=inParkour] run tel
 execute as @a[scores={LeaveGame=1..},tag=inParkour] run tag @s remove inParkour
 
 #Handle achievements with servermode
-execute as @s[scores={servermode=0},tag=!realms] as @a[scores={LeaveGame=1..}] run function achievements:roots
-execute as @s[scores={servermode=0},tag=realms] as @a[scores={LeaveGame=1..}] run advancement grant @s only tutorial:root
+execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[scores={LeaveGame=1..}] run function achievements:roots
+execute as @s[scores={servermode=0},tag=realms,tag=!SMCustom] as @a[scores={LeaveGame=1..}] run advancement grant @s only tutorial:root
 execute as @s[scores={servermode=1..}] as @a[scores={LeaveGame=1..}] run function achievements:reset
 
 #Traveler fix

@@ -20,5 +20,7 @@ scoreboard objectives setdisplay sidebar.team.blue FlagDisp
 scoreboard objectives setdisplay sidebar.team.dark_gray FlagDisp
 
 #custom prevention message
-execute if entity @s[tag=customPrevention] as @a[tag=MissiMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
-execute if entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG
+execute as @a[tag=MissiMSG,tag=!voidMSG,tag=!roofMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
+tag @a[tag=MissiMSG] remove MissiMSG
+tag @a[tag=roofMSG] remove roofMSG
+tag @a[tag=voidMSG] remove voidMSG

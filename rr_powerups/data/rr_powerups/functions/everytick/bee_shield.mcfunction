@@ -61,7 +61,6 @@ execute as @e[tag=BBeeShieldDisplay,scores={BeeShieldTime=32},type=area_effect_c
 execute as @e[tag=BBeeShieldDisplay,scores={BeeShieldTime=32},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[tag=BBeeShieldDisplay,scores={BeeShieldTime=32},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 
-
 ##Yellow animation
 execute as @e[tag=YBeeShieldDisplay,scores={BeeShieldTime=1},type=area_effect_cloud] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage1"}
 execute as @e[tag=YBeeShieldDisplay,scores={BeeShieldTime=1},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
@@ -106,8 +105,6 @@ execute as @e[tag=YBeeShieldDisplay,scores={BeeShieldTime=32},type=area_effect_c
 execute as @e[tag=YBeeShieldDisplay,scores={BeeShieldTime=32},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[tag=YBeeShieldDisplay,scores={BeeShieldTime=32},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 
-
-
 #Sounds and particles for the shield animation
 execute as @e[tag=animBshield,scores={BeeShieldTime=1},type=area_effect_cloud] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 1.3
 execute as @e[tag=animBshield,scores={BeeShieldTime=3},type=area_effect_cloud] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 1.2
@@ -130,7 +127,11 @@ kill @e[tag=animBshield,scores={BeeShieldTime=32..},type=area_effect_cloud]
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] at @s run summon area_effect_cloud ~ ~ ~ {Duration:200000000,Tags:["BeeShield"]}
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] run kill @s
 
-#bees teams/float
+#Kill bee shield near void
+execute as @e[type=area_effect_cloud,tag=animBshield] at @s if predicate custom:nearvoid run kill @s
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if predicate custom:nearvoid run kill @s
+
+#Bees teams/float
 execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run data merge entity @s {Team:"Blue",Glowing:1b,NoGravity:1b}
 tag @e[type=bee,tag=BlueBee] add beeChecked
 execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run data merge entity @s {Team:"Yellow",Glowing:1b,NoGravity:1b}

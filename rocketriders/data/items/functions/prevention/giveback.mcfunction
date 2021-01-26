@@ -128,8 +128,8 @@ execute as @a[tag=voidMSG] run tellraw @s ["",{"text":"Unable to spawn missile n
 
 ##Tag removal
 execute unless entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG
-tag @a[tag=roofMSG] remove roofMSG
-tag @a[tag=voidMSG] remove voidMSG
+execute unless entity @s[tag=customPrevention] run tag @a[tag=roofMSG] remove roofMSG
+execute unless entity @s[tag=customPrevention] run tag @a[tag=voidMSG] remove voidMSG
 tag @a remove BackAux
 tag @a remove BackToma
 tag @a remove BackNull

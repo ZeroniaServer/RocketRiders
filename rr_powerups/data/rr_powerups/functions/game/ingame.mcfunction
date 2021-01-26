@@ -143,5 +143,7 @@ execute if entity @e[tag=captureMiddle,scores={capturePoint=2},type=area_effect_
 execute if entity @e[tag=captureMiddle,scores={capturePoint=2},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=..1}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new Powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" second!","color":"yellow","bold":"true"}]
 
 #custom prevention message
-execute if entity @s[tag=customPrevention] as @a[tag=MissiMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals or the Powerup Platform.","color":"red"}]
-execute if entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG
+execute as @a[tag=MissiMSG,tag=!voidMSG,tag=!roofMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals or the Powerup Platform.","color":"red"}]
+tag @a[tag=MissiMSG] remove MissiMSG
+tag @a[tag=roofMSG] remove roofMSG
+tag @a[tag=voidMSG] remove voidMSG

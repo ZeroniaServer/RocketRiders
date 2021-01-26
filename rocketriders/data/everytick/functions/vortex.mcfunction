@@ -72,8 +72,8 @@ execute as @e[type=firework_rocket,tag=YellowNova] at @s run tag @e[tag=Vortex,d
 execute as @e[type=armor_stand,tag=yellownovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
 
 ##Kill stray item display entities
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @e[tag=VortexYellow,distance=..2,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @e[tag=VortexBlue,distance=..2,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @e[tag=VortexYellow,distance=..3,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @e[tag=VortexBlue,distance=..3,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
 
 ##Feathered vortex (Easter egg)
 execute unless entity @s[tag=featheredOff] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered

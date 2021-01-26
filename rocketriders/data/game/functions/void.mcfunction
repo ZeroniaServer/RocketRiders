@@ -3,11 +3,8 @@
 ## are handled by a quick fake-death system ##
 ##############################################
 
-#Remove CTF tags
-tag @s remove CarryFB1
-tag @s remove CarryFB2
-tag @s remove CarryFY1
-tag @s remove CarryFY2
+##Track death internally
+tag @s add probablyDied
 
 ##Death message for non-Spectator players (hackfix: works for crossers too)
 execute if entity @s[tag=!crosser,team=!Spectator] run tellraw @a ["",{"selector":"@s"},{"text":" fell out of the world"}]

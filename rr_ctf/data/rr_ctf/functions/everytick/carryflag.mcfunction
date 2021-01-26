@@ -62,10 +62,10 @@ execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDie
 replaceitem entity @a[tag=CarryFlag,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] armor.head air
 tag @a[tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] remove CarryFlag
 
-tag @a[tag=CarryFlag] add FlipMissile
+tag @a[tag=CarryFlag,tag=!FlipMissile] add FlipMissile
 tag @a[tag=!CarryFlag] remove FlipMissile
 
-scoreboard players add @a[tag=CarryFlag] FlagScore 1
+execute as @a[tag=CarryFlag] unless entity @s[scores={FlagScore=110..}] run scoreboard players add @s FlagScore 1
 scoreboard players reset @a[tag=!CarryFlag] FlagScore
 
 execute as @a[tag=CarryFY1,scores={FlagScore=1}] run replaceitem entity @s armor.head yellow_banner{Enchantments:[{id:binding_curse,lvl:1}],HideFlags:7}
@@ -79,4 +79,5 @@ execute as @a[tag=CarryFB2,scores={FlagScore=1}] run fill 30 65 -64 34 66 -65 ai
 execute as @a[tag=CarryFlag,scores={FlagScore=1}] as @a[team=!Lobby] at @s run playsound entity.ender_dragon.flap player @s ~ ~ ~ 1 2
 execute as @a[tag=CarryFlag,team=Blue,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" stole a ","color":"aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
 execute as @a[tag=CarryFlag,team=Yellow,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" stole a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
-effect give @a[tag=CarryFlag] glowing 1 100 true
+effect give @a[tag=CarryFlag,scores={FlagScore=1}] glowing 1000000 0 true
+effect clear @a[tag=!CarryFlag] minecraft:glowing

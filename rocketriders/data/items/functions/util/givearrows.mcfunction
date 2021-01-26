@@ -17,6 +17,7 @@ replaceitem entity @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand] wea
 replaceitem entity @s[scores={HasArrows=1},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}} 3
 replaceitem entity @s[scores={HasArrows=2},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}} 2
 replaceitem entity @s[scores={HasArrows=3},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}} 1
+execute as @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!fullOffhand] run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 
 #Game tracking
 tag @e[tag=Selection,tag=givenArrows,type=armor_stand] add givenArrowsTwice

@@ -66,8 +66,10 @@ execute as @e[tag=YellowToma,type=area_effect_cloud] at @s run tp @s ~-1 ~-7 ~-1
 execute as @e[tag=BlueNull,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~4
 execute as @e[tag=YellowNull,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-12
 
-#Warhead
+#Warhead (+ extra entity)
+execute as @e[tag=BlueWar,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[warExtraBlue],Duration:2000000000}
 execute as @e[tag=BlueWar,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~4
+execute as @e[tag=YellowWar,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[warExtraYellow],Duration:2000000000}
 execute as @e[tag=YellowWar,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-14
 
 #Thunderbolt
@@ -169,6 +171,12 @@ execute as @e[tag=broadExtraBlue,type=area_effect_cloud] run kill @s
 execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
 execute as @e[tag=broadExtraYellow,type=area_effect_cloud] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
 execute as @e[tag=broadExtraYellow,type=area_effect_cloud] run kill @s
+
+#Extra for Warhead
+execute as @e[tag=warExtraBlue,type=area_effect_cloud] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] replace
+execute as @e[tag=warExtraBlue,type=area_effect_cloud] run kill @s
+execute as @e[tag=warExtraYellow,type=area_effect_cloud] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
+execute as @e[tag=warExtraYellow,type=area_effect_cloud] run kill @s
 
 ##Kill entity
 kill @e[tag=missile,type=area_effect_cloud]

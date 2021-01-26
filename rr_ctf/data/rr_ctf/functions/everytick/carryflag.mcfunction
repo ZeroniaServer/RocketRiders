@@ -60,13 +60,8 @@ execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDie
 execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] run tag @s remove CarryFB2
 
 replaceitem entity @a[tag=CarryFlag,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] armor.head air
-tag @a[tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] remove CarryFlag
-
-tag @a[tag=CarryFlag,tag=!FlipMissile] add FlipMissile
-tag @a[tag=!CarryFlag] remove FlipMissile
 
 execute as @a[tag=CarryFlag] unless entity @s[scores={FlagScore=110..}] run scoreboard players add @s FlagScore 1
-scoreboard players reset @a[tag=!CarryFlag] FlagScore
 
 execute as @a[tag=CarryFY1,scores={FlagScore=1}] run replaceitem entity @s armor.head yellow_banner{Enchantments:[{id:binding_curse,lvl:1}],HideFlags:7}
 execute as @a[tag=CarryFY1,scores={FlagScore=1}] run fill 34 65 63 30 72 64 air replace yellow_wool

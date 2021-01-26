@@ -301,6 +301,12 @@ scoreboard players reset @a MineWhiteGlass
 
 #Carry flag
 execute if entity @a[tag=CarryFlag] run function rr_ctf:everytick/carryflag
+tag @a[tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] remove CarryFlag
+scoreboard players reset @a[tag=!CarryFlag] FlagScore
+
+#Flip missile tags
+tag @a[tag=CarryFlag,tag=!FlipMissile] add FlipMissile
+tag @a[tag=!CarryFlag] remove FlipMissile
 
 #Respawn clears
 execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0

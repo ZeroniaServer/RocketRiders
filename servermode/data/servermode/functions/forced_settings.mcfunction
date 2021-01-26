@@ -22,7 +22,7 @@ tag @s remove rngThun
 tag @s remove rngWar
 
 #Util
-tag @s add rngArrows
+tag @s[tag=!ctfEnabled] add rngArrows
 tag @s add rngFireball
 tag @s add rngShield
 tag @s add rngObshield
@@ -47,7 +47,8 @@ tag @s remove doFireballPortals
 #######################################################
 
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"Active Items: ","color":"gray","bold":"false"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"With Server Mode enabled, a set of 12 items is randomly generated for each game.","color":"white"}]}}]
-tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+execute as @s[tag=!ctfEnabled] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+execute as @s[tag=ctfEnabled] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
 
 ### 1 shield type.
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Shield","color":"light_purple"}',Tags:["ServerRNG","Shield","RShieldRNG","RUtilRNG"]}
@@ -62,18 +63,19 @@ execute if entity @e[tag=Shield,tag=SelRRNG,type=area_effect_cloud] run tag @s r
 execute if entity @e[tag=Obshield,tag=SelRRNG,type=area_effect_cloud] run tag @s add rngObshield
 execute if entity @e[tag=Obshield,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngShield
 
-### 1 projectile type.
+### 1 projectile type (except in CTF)
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Fireball","color":"light_purple"}',Tags:["ServerRNG","Fireball","RProjecRNG","RUtilRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Nova Rocket","color":"light_purple"}',Tags:["ServerRNG","Nova","RProjecRNG","RUtilRNG"]}
-tag @e[tag=RProjecRNG,limit=1,sort=random,type=area_effect_cloud] add SelRRNG
+execute as @s[tag=!ctfEnabled] run tag @e[tag=RProjecRNG,limit=1,sort=random,type=area_effect_cloud] add SelRRNG
+execute as @s[tag=ctfEnabled] run tag @e[tag=RProjecRNG,type=area_effect_cloud] add SelRRNG
 
 #fireball selected
 execute if entity @e[tag=Fireball,tag=SelRRNG,type=area_effect_cloud] run tag @s add rngFireball
-execute if entity @e[tag=Fireball,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngNova
+execute as @s[tag=!ctfEnabled] if entity @e[tag=Fireball,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngNova
 
 #nova rocket selected
 execute if entity @e[tag=Nova,tag=SelRRNG,type=area_effect_cloud] run tag @s add rngNova
-execute if entity @e[tag=Nova,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngFireball
+execute as @s[tag=!ctfEnabled] if entity @e[tag=Nova,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngFireball
 
 #Announce extra utils
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- ","color":"light_purple","bold":"false"},{"selector":"@e[type=area_effect_cloud,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":"false"}]

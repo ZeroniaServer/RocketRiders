@@ -26,9 +26,6 @@ execute positioned 35 64 -64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedro
 execute positioned 34 64 -63 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
 execute positioned 34 64 -64 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
 
-#Fill bedrock
-
-
 #Clear behind/in front
 fill -14 64 66 39 74 70 air replace yellow_wool
 fill -14 64 65 39 74 70 air replace oak_fence

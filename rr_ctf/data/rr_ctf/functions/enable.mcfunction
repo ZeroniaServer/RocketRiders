@@ -15,4 +15,5 @@ tag @e[tag=Selection,type=armor_stand] add customSaberMsg
 tag @e[tag=Selection,type=armor_stand] add noPortal
 tag @e[tag=Selection,type=armor_stand] add canopyStack
 tag @e[tag=Selection,type=armor_stand] add customPrevention
+tag @e[tag=Selection,type=armor_stand] add customObsidian
 tag @e[tag=Selection,type=armor_stand] add respawnFlag

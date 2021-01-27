@@ -24,3 +24,17 @@ execute as @a[tag=MissiMSG,tag=!voidMSG,tag=!roofMSG] run tellraw @s ["",{"text"
 tag @a[tag=MissiMSG] remove MissiMSG
 tag @a[tag=roofMSG] remove roofMSG
 tag @a[tag=voidMSG] remove voidMSG
+
+#fill bedrock
+fill -15 64 67 39 64 67 bedrock
+fill -15 33 67 39 33 67 bedrock
+fill -15 64 -67 39 64 -67 bedrock
+fill -15 33 -67 39 33 -67 bedrock
+fill -15 63 67 -15 34 67 bedrock
+fill 39 63 67 39 34 67 bedrock
+fill -15 63 -67 -15 34 -67 bedrock
+fill 39 63 -67 39 34 -67 bedrock
+fill 10 64 67 14 64 67 obsidian
+fill 10 64 -67 14 64 -67 obsidian
+execute unless blocks 39 64 68 -15 64 71 39 183 68 all run fill 39 64 68 -15 64 71 bedrock
+execute unless blocks 39 64 -68 -15 64 -71 39 183 -68 all run fill 39 64 -68 -15 64 -71 bedrock

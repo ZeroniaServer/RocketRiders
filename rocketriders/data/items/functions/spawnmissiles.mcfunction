@@ -122,7 +122,7 @@ execute as @e[tag=YellowLift,type=area_effect_cloud] at @s run tp @s ~-1 ~-7 ~-1
 
 #Hypersonic
 execute as @e[tag=BlueHyper,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~5
-execute as @e[tag=YellowHyper,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-13
+execute as @e[tag=YellowHyper,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~-14
 
 #Bullet
 execute as @e[tag=BlueBull,type=area_effect_cloud] at @s run tp @s ~-1 ~-8 ~4

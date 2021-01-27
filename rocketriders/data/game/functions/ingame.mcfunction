@@ -102,6 +102,16 @@ setblock 14 63 -66 obsidian
 fill 11 65 -67 13 65 -67 obsidian
 setblock 12 66 -67 obsidian
 
+##Extra obsidian if necessary
+execute as @s[tag=!customObsidian] run fill -15 64 67 39 64 67 obsidian
+execute as @s[tag=!customObsidian] run fill -15 33 67 39 33 67 obsidian
+execute as @s[tag=!customObsidian] run fill -15 64 -67 39 64 -67 obsidian
+execute as @s[tag=!customObsidian] run fill -15 33 -67 39 33 -67 obsidian
+execute as @s[tag=!customObsidian] run fill -15 63 67 -15 34 67 obsidian
+execute as @s[tag=!customObsidian] run fill 39 63 67 39 34 67 obsidian
+execute as @s[tag=!customObsidian] run fill -15 63 -67 -15 34 -67 obsidian
+execute as @s[tag=!customObsidian] run fill 39 63 -67 39 34 -67 obsidian
+
 ##Respawn handling
 execute as @e[tag=YellowSpawnZone] at @s as @a[team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0
 execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0

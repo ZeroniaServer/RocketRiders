@@ -4,7 +4,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[tag=RandomSplash,type=area_effect_cloud] RNGmax 68
+scoreboard players set @e[tag=RandomSplash,type=area_effect_cloud] RNGmax 70
 
 execute as @e[tag=RandomSplash,type=area_effect_cloud] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[tag=RandomSplash,type=area_effect_cloud] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -79,6 +79,7 @@ execute as @e[tag=RandomSplash,scores={RNGscore=64},type=area_effect_cloud] run 
 execute as @e[tag=RandomSplash,scores={RNGscore=65},type=area_effect_cloud] run title @a subtitle ["",{"text":"Getting serious bang for your buck!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=66},type=area_effect_cloud] run title @a subtitle ["",{"text":"Like steroids, but the good kind!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=67},type=area_effect_cloud] run title @a subtitle ["",{"text":"Removed ","color":"green"},{"text":"birch","obfuscated":true,"color":"red"},{"text":" half slab in Lobby.","color":"green"}]
-
+execute as @e[tag=RandomSplash,scores={RNGscore=68},type=area_effect_cloud] run title @a subtitle ["",{"text":"The snack bar has been replenished.","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=69},type=area_effect_cloud] run title @a subtitle ["",{"text":"Rocket","color":"green","strikethrough":"true"},{"text":" Utility Riders","color":"green","strikethrough":"false"}]
 
 kill @e[tag=RandomSplash,type=area_effect_cloud]

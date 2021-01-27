@@ -24,4 +24,5 @@ tag @e[tag=Selection,type=armor_stand] remove noPortal
 tag @e[tag=Selection,type=armor_stand] remove canopyStack
 tag @e[tag=Selection,type=armor_stand] remove respawnFlag
 tag @e[tag=Selection,type=armor_stand] remove customPrevention
+tag @e[tag=Selection,type=armor_stand] remove customObsidian
 tag @e[tag=Selection,type=armor_stand] add switchGamemodes

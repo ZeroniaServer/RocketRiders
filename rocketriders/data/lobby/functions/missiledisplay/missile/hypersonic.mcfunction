@@ -1,7 +1,7 @@
 ##Missile Display for Hypersonic
 
 data merge entity @e[tag=NameDisp,limit=1,type=area_effect_cloud] {CustomName:'{"text":"Hypersonic","color":"dark_purple","bold":"true"}'}
-data merge entity @e[tag=TNTDisp,limit=1,type=area_effect_cloud] {CustomName:'["",{"text":"TNT Count: ","color":"dark_green","bold":"true"},{"text":"4","color":"white"}]'}
+data merge entity @e[tag=TNTDisp,limit=1,type=area_effect_cloud] {CustomName:'["",{"text":"TNT Count: ","color":"dark_green","bold":"true"},{"text":"6","color":"white"}]'}
 data merge entity @e[tag=SpeedDisp,limit=1,type=area_effect_cloud] {CustomName:'["",{"text":"Speed: ","color":"dark_green","bold":"true"},{"text":"4.4m/s","color":"white"}]'}
 data merge entity @e[tag=MisDispIF,limit=1,type=item_frame] {Item:{id:"minecraft:turtle_spawn_egg",tag:{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7},Count:1b}}
 

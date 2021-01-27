@@ -63,13 +63,16 @@ execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at 
 execute as @e[scores={vortexBoom=1},type=area_effect_cloud] at @s run playsound entity.shulker.hurt_closed player @a ~ ~ ~ 1 0
 tag @e[tag=Vortex,scores={vortexBoom=1},type=area_effect_cloud] add origin
 scoreboard players set @e[tag=Vortex,scores={vortexBoom=1},type=area_effect_cloud] vortexBoom 2
-execute as @e[tag=Vortex,type=area_effect_cloud] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add origin
-execute as @e[type=arrow] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
-execute as @e[type=tnt] at @s run tag @e[tag=Vortex,distance=..5,limit=1,type=area_effect_cloud] add origin
-execute as @e[type=firework_rocket,tag=BlueNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
-execute as @e[type=armor_stand,tag=bluenovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
-execute as @e[type=firework_rocket,tag=YellowNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
-execute as @e[type=armor_stand,tag=yellownovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add origin
+execute as @e[tag=Vortex,type=area_effect_cloud] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add originboom
+execute as @e[type=arrow] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
+execute as @e[type=tnt] at @s run tag @e[tag=Vortex,distance=..5,limit=1,type=area_effect_cloud] add originboom
+execute as @e[type=firework_rocket,tag=BlueNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
+execute as @e[type=armor_stand,tag=bluenovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
+execute as @e[type=firework_rocket,tag=YellowNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
+execute as @e[type=armor_stand,tag=yellownovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
+tag @e[tag=Vortex,type=area_effect_cloud,tag=originboom] add origin
+scoreboard players set @e[tag=Vortex,type=area_effect_cloud,tag=originboom] vortexBoom 10
+tag @e[tag=Vortex,type=area_effect_cloud,tag=originboom] remove originboom
 
 ##Kill stray item display entities
 execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @e[tag=VortexYellow,distance=..3,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
@@ -90,7 +93,7 @@ execute as @e[tag=VortexFeathered,type=area_effect_cloud] at @s if entity @a[tea
 execute as @e[tag=VortexItemFeathered,type=armor_stand] at @s unless entity @e[tag=VortexFeathered,distance=..2,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
 
 ##Vortex chaining/explosion (incorporates delay)
-execute as @e[tag=origin,type=area_effect_cloud] at @s run function everytick:vortex_chain
+execute as @e[tag=origin,scores={vortexBoom=3..},type=area_effect_cloud] at @s run function everytick:vortex_chain
 scoreboard players set @e[tag=origin,scores={vortexBoom=0},type=area_effect_cloud] vortexBoom 10
 scoreboard players add @e[tag=chained,type=area_effect_cloud] vortexChain 1
 execute as @e[tag=chained,scores={vortexChain=4..},type=area_effect_cloud] at @s run function everytick:vortex_chain

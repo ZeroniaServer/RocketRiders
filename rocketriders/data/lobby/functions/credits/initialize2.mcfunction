@@ -104,3 +104,6 @@ replaceitem entity @e[tag=EvieCredits,type=armor_stand] armor.head player_head{S
 #Selected tags
 tag @e[tag=creditsAS,type=armor_stand] remove SelectedCredit
 tag @e[tag=EvieCredits,type=armor_stand] add SelectedCredit
+
+#Disable slots
+execute as @e[tag=creditsAS,type=armor_stand] run data merge entity @s {DisabledSlots:4144959}

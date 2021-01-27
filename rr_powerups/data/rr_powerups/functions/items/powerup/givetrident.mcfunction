@@ -1,5 +1,5 @@
 #Antidupe check
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasTrident run clear @s tipped_arrow 0
+execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasTrident run clear @s trident 0
 execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasTrident 0
 
 #Title/giving

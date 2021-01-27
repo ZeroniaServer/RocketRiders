@@ -8,7 +8,7 @@ execute as @a[scores={VoteNum=4}] run scoreboard players add @e[tag=ServerMode,t
 scoreboard players reset @a VoteNum
 
 # finding out what won the vote
-execute as @e[tag=ServerMode,tag=Set,type=area_effect_cloud] store result score @e[tag=Selection,type=armor_stand,limit=1] FinalVote run scoreboard players get @e[tag=Selection,type=armor_stand,limit=1] VoteServerMode
+execute as @e[tag=ServerMode,tag=Set,type=area_effect_cloud] store result score @s FinalVote run scoreboard players get @s VoteServerMode
 execute if entity @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=1..}] run function servermode:pogger_calculation
 execute store result score $winners VoteServerMode if entity @e[tag=ServerMode,tag=Set,type=area_effect_cloud,scores={VoteServerMode=0}]
 

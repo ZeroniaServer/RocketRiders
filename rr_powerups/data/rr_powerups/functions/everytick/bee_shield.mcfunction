@@ -4,7 +4,6 @@ execute as @a[scores={DrinkHoney=1..},team=Blue] at @s run summon armor_stand ~ 
 scoreboard players add @e[tag=BeeShieldDisplay,type=armor_stand] BeeShieldTime 1
 execute as @a[scores={DrinkHoney=1..}] at @s anchored eyes run tp @e[tag=BeeShieldDisplay,scores={BeeShieldTime=1},distance=..4,limit=1,sort=nearest,type=armor_stand] @s
 execute as @a[scores={DrinkHoney=1..}] at @s as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=1},distance=..4,limit=1,sort=nearest,type=armor_stand] at @s run function rr_powerups:everytick/projectile
-clear @a glass_bottle
 scoreboard players reset @a DrinkHoney
 replaceitem entity @e[tag=BeeShieldDisplay,scores={BeeShieldTime=1},type=armor_stand] armor.head honey_block
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s run playsound minecraft:block.honey_block.slide block @a ~ ~ ~ 2 0.8
@@ -132,10 +131,10 @@ execute as @e[type=area_effect_cloud,tag=animBshield] at @s if predicate custom:
 execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if predicate custom:nearvoid run kill @s
 
 #Bees teams/float
-execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run team join @s Blue
+execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run team join Blue
 execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run data merge entity @s {Glowing:1b,NoGravity:1b}
 tag @e[type=bee,tag=BlueBee] add beeChecked
-execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run team join @s Yellow
+execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run team join Yellow
 execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run data merge entity @s {Glowing:1b,NoGravity:1b}
 tag @e[type=bee,tag=YellowBee] add beeChecked
 

@@ -8,6 +8,7 @@ execute if entity @e[tag=animBshield,type=area_effect_cloud] run tag @s add runb
 execute if entity @e[type=bee] run tag @s add runbeeshields
 execute as @s[tag=runbeeshields] run function rr_powerups:everytick/bee_shield
 tag @s remove runbeeshields
+clear @a glass_bottle
 execute if entity @e[type=bee] run function rr_powerups:everytick/init_kill_bees
 
 function rr_powerups:everytick/lava_splash

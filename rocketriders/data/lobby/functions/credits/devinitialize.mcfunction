@@ -62,3 +62,6 @@ replaceitem entity @e[tag=TrekCredits,type=armor_stand] armor.head player_head{S
 replaceitem entity @e[tag=TypCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-1356426805,730483112,-1391175837,-1416409699],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjhkNGJjYzQxM2ZjZGZiMWZmOTc5YWQzMzg3MDZhNWE2NDBjOTk2YWE0YmU5OWUwNzZiODE5ZjFkMzQ3ZTk0OSJ9fX0="}]}}}
 replaceitem entity @e[tag=BlockyCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;421022523,1072909005,-1990128211,621962662],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTE2NDA2YjAwMjY2OTgyZjBiYTU4ZjViMjIxOWI4MGViNGEyMGRmODQ1MTE2NTk1NzE4NzZhYjE2YTM4MTI1MiJ9fX0="}]}}}
 replaceitem entity @e[tag=ToulCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;306683579,646400271,-1510886369,1816201274],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmVlM2VmOWVlMzQ5ZjA2MzgyNTc5NmIwY2Q4ZWZmNmFkNThiNzgzYjEyY2E4YjY4MDM3MWZiZTQyZmZmMjIwMiJ9fX0="}]}}}
+
+#Disable slots
+execute as @e[tag=creditsAS,type=armor_stand] run data merge entity @s {DisabledSlots:4144959}

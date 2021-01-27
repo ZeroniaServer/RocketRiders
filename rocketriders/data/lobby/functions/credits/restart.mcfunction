@@ -117,3 +117,4 @@ tp @e[tag=EvieCredits,type=armor_stand] -52 211 103 90 0
 
 execute as @e[tag=creditsAS,type=armor_stand] run data merge entity @s {Air:0}
 execute as @e[tag=creditsAS,type=armor_stand] run data merge entity @s {Air:1}
+execute as @e[tag=creditsAS,type=armor_stand] run data merge entity @s {DisabledSlots:4144959}

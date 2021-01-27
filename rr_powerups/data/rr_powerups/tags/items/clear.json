@@ -7,7 +7,9 @@
 
 		"minecraft:totem_of_undying",
 
-		"minecraft:honey_bottle"
+		"minecraft:honey_bottle",
+
+		"minecraft:glass_bottle"
 
 	]
 }

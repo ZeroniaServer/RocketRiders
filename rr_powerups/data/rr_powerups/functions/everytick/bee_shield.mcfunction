@@ -132,9 +132,11 @@ execute as @e[type=area_effect_cloud,tag=animBshield] at @s if predicate custom:
 execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if predicate custom:nearvoid run kill @s
 
 #Bees teams/float
-execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run data merge entity @s {Team:"Blue",Glowing:1b,NoGravity:1b}
+execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run team join @s Blue
+execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run data merge entity @s {Glowing:1b,NoGravity:1b}
 tag @e[type=bee,tag=BlueBee] add beeChecked
-execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run data merge entity @s {Team:"Yellow",Glowing:1b,NoGravity:1b}
+execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run team join @s Yellow
+execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run data merge entity @s {Glowing:1b,NoGravity:1b}
 tag @e[type=bee,tag=YellowBee] add beeChecked
 
 #angry bees

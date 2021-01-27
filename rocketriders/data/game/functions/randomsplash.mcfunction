@@ -82,5 +82,5 @@ execute as @e[tag=RandomSplash,scores={RNGscore=67},type=area_effect_cloud] run 
 execute as @e[tag=RandomSplash,scores={RNGscore=68},type=area_effect_cloud] run title @a subtitle ["",{"text":"The snack bar has been replenished.","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=69},type=area_effect_cloud] run title @a subtitle ["",{"text":"Rocket","color":"green","strikethrough":"true"},{"text":" Utility Riders","color":"green","strikethrough":"false"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=70},type=area_effect_cloud] run title @a subtitle ["",{"text":"↑ ↑ ↓ ↓ ← → ← → B A start","color":"green"}]
-=
+
 kill @e[tag=RandomSplash,type=area_effect_cloud]

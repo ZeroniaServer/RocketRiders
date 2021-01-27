@@ -27,6 +27,7 @@ execute as @e[tag=Selection,type=armor_stand,tag=SMActive] run gamerule naturalR
 
 #Night vision/saturation and more lobby functionality
 effect give @a[team=Lobby] night_vision 1000000 100 true
+effect give @a[team=Spectator] night_vision 1000000 100 true
 execute as @e[tag=Selection,type=armor_stand,tag=!SMActive] run effect give @a saturation 1000000 0 true
 execute as @e[tag=Selection,type=armor_stand,tag=SMActive] run effect clear @a saturation
 function lobby:bookwarp
@@ -42,10 +43,11 @@ execute as @e[tag=Selection,type=armor_stand] run function everytick:cancel_util
 execute as @e[tag=Selection,type=armor_stand,tag=!SMActive] run function everytick:player_portal
 
 #Player void
-execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980,scores={ThrowPlat=..0}] run function game:void
-scoreboard players add @a[scores={voidNoFallCount=0..}] voidNoFallCount 1
-effect clear @a[scores={voidNoFallCount=2}] slow_falling
-scoreboard players reset @a[scores={voidNoFallCount=2}] voidNoFallCount
+execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980] unless entity @s[scores={ThrowPlat=1..}] run function game:void
+spawnpoint @a[team=Spectator] 12 100 0 90
+scoreboard players add @a[team=Spectator,scores={FellVoid=1..}] FellVoid 1
+tp @a[team=Spectator,scores={FellVoid=7..}] 12 100 0.5 90 90
+scoreboard players set @a[team=Spectator,scores={FellVoid=7..}] FellVoid 0
 
 #Arrow pickup
 execute as @e[tag=Selection,type=armor_stand] if entity @e[type=arrow] run function everytick:arrow_pickup

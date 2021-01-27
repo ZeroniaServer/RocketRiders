@@ -92,6 +92,8 @@ setblock -90 202 95 purple_stained_glass
 setblock -100 202 95 purple_stained_glass
 setblock -90 202 61 purple_stained_glass
 setblock -100 202 61 purple_stained_glass
+fill -89 203 97 -101 203 97 air
+fill -101 203 59 -89 203 59 air
 
 #No portals in pregame queue
 fill -89 201 97 -101 195 97 barrier

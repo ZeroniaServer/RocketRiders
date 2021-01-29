@@ -36,5 +36,5 @@ fill -15 63 -67 -15 34 -67 bedrock
 fill 39 63 -67 39 34 -67 bedrock
 fill 10 64 67 14 64 67 obsidian
 fill 10 64 -67 14 64 -67 obsidian
-execute unless blocks 39 64 68 -15 64 71 39 183 68 all run fill 39 64 68 -15 64 71 bedrock
-execute unless blocks 39 64 -68 -15 64 -71 39 183 -68 all run fill 39 64 -68 -15 64 -71 bedrock
+execute unless blocks 39 64 68 -15 64 69 39 183 68 all run fill 39 64 68 -15 64 69 bedrock
+execute unless blocks 39 64 -68 -15 64 -69 39 183 -68 all run fill 39 64 -68 -15 64 -69 bedrock

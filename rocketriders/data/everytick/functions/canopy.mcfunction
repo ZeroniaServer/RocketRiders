@@ -102,7 +102,7 @@ execute unless entity @s[tag=noPortal] as @e[scores={testplat=9..10},type=ender_
 execute unless entity @s[tag=noPortal] as @e[scores={testplat=9..10},type=ender_pearl] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat 2
 #Disable Yellow Canopies near void
 execute as @e[scores={testplat=9..10},type=ender_pearl] at @s if predicate custom:nearvoid run scoreboard players remove @s testplat 2
-execute as @e[scores={testplat=10},type=ender_pearl] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:yellowcanopy1"}
+execute as @e[scores={testplat=10},type=ender_pearl,predicate=!custom:nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:yellowcanopy1"}
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0
@@ -130,9 +130,9 @@ execute unless entity @s[tag=noPortal] as @e[scores={testplat2=9..10},type=ender
 execute unless entity @s[tag=noPortal] as @e[scores={testplat2=9..10},type=ender_pearl] at @s if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
 execute unless entity @s[tag=noPortal] as @e[scores={testplat2=9..10},type=ender_pearl] at @s if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
 execute unless entity @s[tag=noPortal] as @e[scores={testplat2=9..10},type=ender_pearl] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
-execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
 #Disable Blue Canopies near void
 execute as @e[scores={testplat2=9..10},type=ender_pearl] at @s if predicate custom:nearvoid run scoreboard players remove @s testplat2 2
+execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0

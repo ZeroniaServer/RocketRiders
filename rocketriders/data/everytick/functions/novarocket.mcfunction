@@ -70,7 +70,8 @@ execute as @a[tag=YellowNovaAttach,scores={novattach=1}] run effect give @s levi
 execute as @a[tag=YellowNovaAttach,scores={novattach=6..}] run effect clear @s levitation
 execute as @a[tag=YellowNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
 execute as @a[tag=YellowNovaAttach] run tag @s[scores={novattach=15..}] remove YellowNovaAttach
-
+tag @a[tag=YellowNovaAttach,tag=probablyDied] remove YellowNovaAttach
+scoreboard players reset @a[tag=!YellowNovaAttach] novattach
 
 ##Blue Nova Rocket Functionality
 #Static
@@ -87,6 +88,8 @@ execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levita
 execute as @a[tag=BlueNovaAttach,scores={novattach=6..}] run effect clear @s levitation
 execute as @a[tag=BlueNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
 execute as @a[tag=BlueNovaAttach] run tag @s[scores={novattach=15..}] remove BlueNovaAttach
+tag @a[tag=BlueNovaAttach,tag=probablyDied] remove YellowNovaAttach
+scoreboard players reset @a[tag=!BlueNovaAttach] novattach
 
 #Attachment reset (both)
 scoreboard players reset @a[scores={novattach=15..}] novattach

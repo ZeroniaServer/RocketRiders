@@ -1,8 +1,8 @@
 #Flagpoles
-fill 34 66 64 34 72 64 oak_fence replace air
-fill -10 66 64 -10 72 64 oak_fence replace air
-fill -10 66 -64 -10 72 -64 oak_fence replace air
-fill 34 66 -64 34 72 -64 oak_fence replace air
+fill 34 66 64 34 71 64 oak_fence replace #custom:basereplace
+fill -10 66 64 -10 71 64 oak_fence replace #custom:basereplace
+fill -10 66 -64 -10 71 -64 oak_fence replace #custom:basereplace
+fill 34 66 -64 34 71 -64 oak_fence replace #custom:basereplace
 
 #Flag base
 execute positioned 34 64 63 unless block ~ ~ ~ bedrock run setblock ~ ~ ~ bedrock
@@ -301,6 +301,14 @@ execute if entity @a[tag=CarryFlag] run function rr_ctf:everytick/carryflag
 tag @a[tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] remove CarryFlag
 scoreboard players reset @a[tag=!CarryFlag] FlagScore
 effect clear @a[tag=!CarryFlag] minecraft:glowing
+execute unless entity @e[type=player,team=Blue,tag=CarryFY1] run bossbar set rr_ctf:fy1 value 0
+execute unless entity @e[type=player,team=Blue,tag=CarryFY1] run bossbar set rr_ctf:fy1 players none
+execute unless entity @e[type=player,team=Blue,tag=CarryFY2] run bossbar set rr_ctf:fy2 value 0
+execute unless entity @e[type=player,team=Blue,tag=CarryFY2] run bossbar set rr_ctf:fy2 players none
+execute unless entity @e[type=player,team=Yellow,tag=CarryFB1] run bossbar set rr_ctf:fb1 value 0
+execute unless entity @e[type=player,team=Yellow,tag=CarryFB1] run bossbar set rr_ctf:fb1 players none
+execute unless entity @e[type=player,team=Yellow,tag=CarryFB2] run bossbar set rr_ctf:fb2 value 0
+execute unless entity @e[type=player,team=Yellow,tag=CarryFB2] run bossbar set rr_ctf:fb2 players none
 
 #Flip missile tags
 tag @a[tag=CarryFlag,tag=!FlipMissile] add FlipMissile

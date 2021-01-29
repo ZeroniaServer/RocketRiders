@@ -30,7 +30,10 @@ execute as @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute as @s[scores={SDtime=1}] at @s run replaceitem entity @a armor.head air
 execute as @s[scores={SDtime=1}] at @s run clear @a firework_rocket
 execute as @s[scores={SDtime=1}] at @s run effect clear @a resistance
+execute as @s[scores={SDtime=1}] at @s run effect clear @a weakness
 execute as @s[scores={SDtime=1}] at @s run effect clear @a regeneration
+execute as @s[scores={SDtime=1},tag=BlueWonFirst] run clear @a[team=Yellow] bow
+execute as @s[scores={SDtime=1},tag=YellowWonFirst] run clear @a[team=Blue] bow
 execute as @s[scores={SDtime=1}] at @s run effect give @a blindness 1 100 true
 execute as @s[scores={SDtime=4}] at @s run effect clear @a blindness
 execute as @s[scores={SDtime=1}] at @s run tag @s remove GameEnd
@@ -51,11 +54,11 @@ execute as @s[scores={SDtime=1}] run kill @e[tag=endFireballAEC,type=area_effect
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWon
 #For Premature Celebration achievement
-execute as @s[scores={SDtime=1,servermode=0},tag=!realms,tag=BlueWonFirst] run advancement grant @a[team=Blue] only achievements:rr_challenges/premature
+execute as @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=BlueWonFirst] run advancement grant @a[team=Blue] only achievements:rr_challenges/premature
 execute as @s[scores={SDtime=1},tag=BlueWonFirst] run replaceitem entity @a[team=Blue] armor.chest leather_chestplate{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:1247871},HideFlags:39,Unbreakable:1,Enchantments:[{id:binding_curse,lvl:1}]}
 execute as @s[scores={SDtime=1},tag=BlueWonFirst] run replaceitem entity @a[team=Yellow] armor.head air
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
-execute as @s[scores={SDtime=1,servermode=0},tag=!realms,tag=YellowWonFirst] run advancement grant @a[team=Yellow] only achievements:rr_challenges/premature
+execute as @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=YellowWonFirst] run advancement grant @a[team=Yellow] only achievements:rr_challenges/premature
 execute as @s[scores={SDtime=1},tag=YellowWonFirst] run replaceitem entity @a[team=Yellow] armor.chest leather_chestplate{display:{Name:'[{"text":"Yellow Chestplate","color":"yellow","bold":true,"italic":false}]',color:16768000},HideFlags:7,Unbreakable:1,Enchantments:[{id:binding_curse,lvl:1}]}
 execute as @s[scores={SDtime=1},tag=YellowWonFirst] run replaceitem entity @a[team=Blue] armor.head air
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWonFirst

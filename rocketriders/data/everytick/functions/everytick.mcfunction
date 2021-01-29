@@ -6,8 +6,10 @@
 #Server mode
 tag @e[tag=Selection,type=armor_stand,scores={servermode=0},tag=!SMCustom] remove SMActive
 tag @e[tag=Selection,type=armor_stand,scores={servermode=1..}] add SMActive
-execute as @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run function servermode:loop
+execute as @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] if entity @a run function servermode:loop
 scoreboard players reset @e[tag=Selection,tag=!ServerModeVoting,type=armor_stand] VoteServerMode
+execute unless entity @a[team=Lobby] run scoreboard players reset @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] VoteServerMode
+execute as @e[tag=Selection,type=armor_stand,scores={servermode=1..}] unless entity @a run function game:forcestop
 execute unless entity @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run scoreboard players reset @a VoteServerMode
 execute unless entity @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run kill @e[tag=ServerMode]
 
@@ -24,6 +26,7 @@ execute as @e[tag=Selection,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesE
 execute as @e[tag=Selection,tag=GameStarted,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
 execute as @e[tag=Selection,type=armor_stand,tag=!SMActive] run function everytick:regen_system
 execute as @e[tag=Selection,type=armor_stand,tag=SMActive] run gamerule naturalRegeneration true
+execute as @e[tag=UnableClear,type=area_effect_cloud] at @s run function items:prevention/clearafter
 
 #Night vision/saturation and more lobby functionality
 effect give @a[team=Lobby] night_vision 1000000 100 true

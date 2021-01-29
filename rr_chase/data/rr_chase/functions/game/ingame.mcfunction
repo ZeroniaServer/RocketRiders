@@ -23,16 +23,16 @@ execute as @a[team=Blue] store result score @s HasPlat run clear @s ender_pearl 
 clear @a[team=Blue,scores={HasPlat=4..}] ender_pearl 1
 
 #Flagpole
-fill 12 64 65 12 71 65 oak_fence replace air
+fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace
 
 #Clear behind/in front
 fill -14 64 66 39 74 70 air replace white_wool
 fill -14 64 66 39 74 70 air replace black_wool
-fill -14 64 66 39 74 70 air replace oak_fence
+fill -14 64 65 39 74 70 air replace oak_fence
 
 fill -14 64 62 39 74 58 air replace white_wool
 fill -14 64 62 39 74 58 air replace black_wool
-fill -14 64 64 39 74 58 air replace oak_fence
+fill -14 64 63 39 74 58 air replace oak_fence
 
 scoreboard players add FlagWave FlagScore 1
 

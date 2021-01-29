@@ -3,6 +3,8 @@
 #######################################################
 
 ##Start parkour
+execute as @a[tag=inParkour,gamemode=!adventure] run gamemode adventure
+
 execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=area_effect_cloud,limit=1,distance=..1.2] run tag @s add keepInventory
 execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
 execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3

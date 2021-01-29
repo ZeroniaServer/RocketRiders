@@ -53,7 +53,7 @@ execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinBlue] add hardcor
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @s[tag=!customSpawns] as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #Achievement keybind tutorial
-execute as @s[scores={servermode=0},tag=!realms] as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":"true","color":"blue"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"blue"}]
+execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":"true","color":"blue"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"blue"}]
 
 #Imbalanced/full team control
 execute as @s[scores={largerTeam=1}] as @e[tag=bluejoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
@@ -97,7 +97,7 @@ execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinYellow] add hardc
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute as @s[tag=!customSpawns] as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 #Achievement keybind tutorial
-execute as @s[scores={servermode=0},tag=!realms] as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":"true","color":"gold"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"gold"}]
+execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":"true","color":"gold"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"gold"}]
 
 #Imbalanced/full team control
 execute as @s[scores={largerTeam=-1}] as @e[tag=yellowjoinpad,type=area_effect_cloud] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]

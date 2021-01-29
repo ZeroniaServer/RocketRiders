@@ -50,4 +50,5 @@ tag @s[tag=givenHur,tag=givenBolt] add givenAllLightning
 tag @s[tag=givenObshield,tag=givenCanopy,tag=givenSplash,tag=givenVortex,tag=givenNova,tag=givenArrowsTwice,tag=givenFireballTwice,tag=givenShieldTwice] add givenAllUtil
 
 ##Condition for Tetris bag resetting
-execute as @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllUtil] run function items:tetrisreset
+execute as @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning] run function items:tetrisresetmissile
+execute as @s[tag=givenAllUtil] run function items:tetrisresetutil

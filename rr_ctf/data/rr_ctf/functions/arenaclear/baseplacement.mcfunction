@@ -73,8 +73,8 @@ fill -15 33 -67 39 33 -67 minecraft:bedrock
 fill 39 33 -67 39 64 -67 minecraft:bedrock
 fill 10 64 -67 14 64 -67 obsidian
 fill 10 64 67 14 64 67 obsidian
-fill -15 64 71 39 64 68 bedrock
-fill -15 64 -71 39 64 -68 bedrock
+fill -15 64 69 39 64 68 bedrock
+fill -15 64 -69 39 64 -68 bedrock
 
 #Pregame queue
 fill -89 201 96 -101 195 95 end_stone

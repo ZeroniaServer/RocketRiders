@@ -50,3 +50,4 @@ tag @e[tag=Selection,type=armor_stand,limit=1] add EditedSettings
 
 # Select forced item sets and match settings
 execute unless entity @e[tag=WonVote,tag=SwapMode,type=area_effect_cloud] run schedule function servermode:init_forcedsettings 2t
+execute if entity @e[tag=WonVote,tag=SwapMode,type=area_effect_cloud] run schedule function servermode:swap_forcedsettings 2t

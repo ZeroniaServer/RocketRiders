@@ -55,7 +55,7 @@ tag @a[tag=onCapturePoint] remove onCapturePoint
 execute as @e[tag=captureMiddle,type=area_effect_cloud] at @s as @e[type=player,team=Blue,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
 execute as @e[tag=captureMiddle,type=area_effect_cloud] at @s as @e[type=player,team=Yellow,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
 #hotfix to prevent players from falling through the platform if they break the blocks beneath them
-execute as @e[tag=captureMiddle,type=area_effect_cloud] at @s as @e[type=player,tag=onCapturePoint,distance=..5.5] at @s if entity @s[y=53,dy=0.5] if block ~ ~-1 ~ air run tp @s ~ ~0.5 ~
+execute as @e[tag=captureMiddle,type=area_effect_cloud] at @s as @e[type=player,tag=onCapturePoint,distance=..5.5] at @s if entity @s[y=53,dy=0.5] if block ~ ~-1 ~ air run tp @s ~ ~0.1 ~
 execute as @e[type=player,tag=onCapturePoint] at @s unless entity @s[y=54,dy=1] unless entity @e[tag=captureMiddle,distance=..7.1,limit=1,type=area_effect_cloud] run tag @s remove onCapturePoint
 
 execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players add @e[tag=captureMiddle,scores={captureYellow=0},tag=!contested,type=area_effect_cloud] captureBlue 2

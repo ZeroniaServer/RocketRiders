@@ -1,4 +1,4 @@
-execute as @e[tag=Selection,type=armor_stand,scores={servermode=2}] run schedule function servermode:default 1t
+# execute as @e[tag=Selection,type=armor_stand,scores={servermode=2}] run schedule function servermode:default 1t
 scoreboard players set @e[tag=Selection,type=armor_stand] servermode 0
 tag @e[tag=Selection,type=armor_stand] remove noYZELO
 tag @e[tag=Selection,type=armor_stand] remove stopIfEmpty

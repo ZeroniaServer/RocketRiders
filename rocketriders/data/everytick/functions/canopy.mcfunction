@@ -118,11 +118,6 @@ execute as @e[tag=YellowPlatform,scores={PlatTime=1},type=area_effect_cloud] run
 execute if entity @e[tag=YellowPlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpyellow
 tag @e[tag=YellowPlatform,type=area_effect_cloud] remove checkedTP
 tag @a[team=Yellow] remove checkedTP
-execute as @a[team=Yellow,tag=!teleported,tag=canopyTP] run effect clear @s slow_falling
-execute as @a[team=Yellow,tag=!teleported,tag=canopyTP] run effect clear @s slowness
-execute as @a[team=Yellow,tag=!teleported,tag=canopyTP] run effect clear @s jump_boost
-tag @a[team=Yellow,tag=!teleported] remove canopyTP
-tag @a[team=Yellow] remove teleported
 execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,distance=..6] respawn 0
 #After 2 seconds the Canopy gives up teleporting
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41},type=area_effect_cloud] pearlOwnerUUID
@@ -157,11 +152,6 @@ execute as @e[tag=BluePlatform,scores={PlatTime=1},type=area_effect_cloud] run s
 execute if entity @e[tag=BluePlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpblue
 tag @e[tag=BluePlatform,type=area_effect_cloud] remove checkedTP
 tag @a[team=Blue] remove checkedTP
-execute as @a[team=Blue,tag=!teleported,tag=canopyTP] run effect clear @s slow_falling
-execute as @a[team=Blue,tag=!teleported,tag=canopyTP] run effect clear @s slowness
-execute as @a[team=Blue,tag=!teleported,tag=canopyTP] run effect clear @s jump_boost
-tag @a[team=Blue,tag=!teleported] remove canopyTP
-tag @a[team=Blue] remove teleported
 execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,distance=..6] respawn 0
 #After 2 seconds the Canopy gives up
 scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41},type=area_effect_cloud] pearlOwnerUUID

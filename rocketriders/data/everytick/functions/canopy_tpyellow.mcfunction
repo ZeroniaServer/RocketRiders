@@ -28,14 +28,21 @@ execute as @p[team=Yellow,tag=currentTP,scores={novattach=1..}] run tag @s remov
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
 #(thanks to Red_Bones for the teleport command format!)
 execute at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,type=area_effect_cloud] as @p[team=Yellow,tag=currentTP,tag=canopyTP] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
-execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] run tag @s add teleported
 execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s slow_falling 2 100 true
 execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s unless predicate custom:canopy_nearyellow if entity @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s jump_boost 2 128 true
 execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s unless predicate custom:canopy_nearyellow if entity @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s slowness 2 255 true
+
+#Remove effects if teleportation period ends
 execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41..},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s slow_falling
 execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41..},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s slowness
 execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41..},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s jump_boost
 execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41..},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run tag @s remove canopyTP
+
+#Remove effects if Canopy dies prematurely
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,tag=killCanopy,limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s slow_falling
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,tag=killCanopy,limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s slowness
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,tag=killCanopy,limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s jump_boost
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,tag=killCanopy,limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run tag @s remove canopyTP
 
 #Deselect and remember checked Canopy and player
 tag @p[team=Yellow,tag=currentTP] add checkedTP

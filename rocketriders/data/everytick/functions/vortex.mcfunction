@@ -56,10 +56,10 @@ execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=Vortex
 execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Blue,distance=..8] run tp @s ~ ~ ~ facing entity @p[team=Blue,distance=..8]
 
 ##Other explosion conditions
-execute as @a[team=Blue] at @s run scoreboard players add @e[tag=VortexYellow,distance=..5,type=area_effect_cloud] vortexBoom 1
-execute as @a[team=Yellow] at @s run scoreboard players add @e[tag=VortexBlue,distance=..5,type=area_effect_cloud] vortexBoom 1
-execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s run data merge entity @e[tag=VortexItemYellow,sort=nearest,limit=1,type=armor_stand] {Tags:["VortexItem","VortexItemYellow"],Invisible:1b,Invulnerable:1b,Marker:1b,NoGravity:1,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}],DisabledSlots:4144959}
-execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s run data merge entity @e[tag=VortexItemBlue,sort=nearest,limit=1,type=armor_stand] {Tags:["VortexItem","VortexItemBlue"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}],DisabledSlots:4144959}
+execute as @a[team=Blue] at @s run scoreboard players add @e[tag=VortexYellow,distance=..5,type=area_effect_cloud,scores={vortexBoom=0}] vortexBoom 1
+execute as @a[team=Blue] at @s run scoreboard players add @e[tag=VortexYellow,distance=..2,type=area_effect_cloud,scores={vortexBoom=1..}] vortexBoom 1
+execute as @a[team=Yellow] at @s run scoreboard players add @e[tag=VortexBlue,distance=..5,type=area_effect_cloud,scores={vortexBoom=0}] vortexBoom 1
+execute as @a[team=Yellow] at @s run scoreboard players add @e[tag=VortexBlue,distance=..2,type=area_effect_cloud,scores={vortexBoom=1..}] vortexBoom 1
 execute as @e[scores={vortexBoom=1},type=area_effect_cloud] at @s run playsound entity.shulker.hurt_closed player @a ~ ~ ~ 1 0
 tag @e[tag=Vortex,scores={vortexBoom=1},type=area_effect_cloud] add origin
 scoreboard players set @e[tag=Vortex,scores={vortexBoom=1},type=area_effect_cloud] vortexBoom 2

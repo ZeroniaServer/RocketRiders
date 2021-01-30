@@ -15,10 +15,10 @@ execute as @e[tag=CTFRNG,type=area_effect_cloud,limit=1] store result score @s R
 execute as @e[tag=CTFRNG,type=area_effect_cloud,limit=1] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
 
 #Give canopy (20% chance)
-execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=0..1}] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
+execute as @s[tag=gaveFirstItem] if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=0..1}] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
 
 #Give fireball/nova (10% chance)
-execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=2}] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givefireball
+execute as @s[tag=gaveFirstItem] if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=2}] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givefireball
 
 #Select item (70% chance)
 execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=3..9}] run function items:rng

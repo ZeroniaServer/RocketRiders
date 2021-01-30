@@ -29,6 +29,8 @@ fill 32 63 -51 -9 37 -45 air
 fill -9 63 51 33 38 46 air
 fill -11 59 -73 35 36 -75 air
 fill -11 59 73 35 36 75 air
+fill -14 13 66 38 33 48 air
+fill -14 13 -66 38 33 -48 air
 
 ##Molerat clearing
 execute if entity @s[tag=!Molerat,tag=WasMolerat] run function arenaclear:moleratclear
@@ -73,6 +75,8 @@ fill -57 201 84 -70 201 72 barrier replace air
 fill 6 53 -6 18 53 6 air
 
 ##Prepare Item RNG timer for next game
+scoreboard players operation @s MaxItemTime = @s MaxItemSec
+scoreboard players operation @s MaxItemTime *= 20 MaxItemSec
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 scoreboard players set @s[tag=Minute] RandomItem 1197

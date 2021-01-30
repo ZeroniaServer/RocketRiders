@@ -10,6 +10,7 @@ execute as @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] if entity @a 
 scoreboard players reset @e[tag=Selection,tag=!ServerModeVoting,type=armor_stand] VoteServerMode
 execute unless entity @a[team=Lobby] run scoreboard players reset @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] VoteServerMode
 execute as @e[tag=Selection,type=armor_stand,scores={servermode=1..}] unless entity @a run function game:forcestop
+execute as @e[tag=Selection,type=armor_stand,scores={servermode=0},tag=SMCustom] unless entity @a run function game:forcestop
 execute unless entity @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run scoreboard players reset @a VoteServerMode
 execute unless entity @e[tag=Selection,tag=ServerModeVoting,type=armor_stand] run kill @e[tag=ServerMode]
 
@@ -47,10 +48,10 @@ execute as @e[tag=Selection,type=armor_stand,tag=!SMActive] run function everyti
 
 #Player void
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980] unless entity @s[scores={ThrowPlat=1..}] run function game:void
-spawnpoint @a[team=Spectator] 12 100 0 90
-scoreboard players add @a[team=Spectator,scores={FellVoid=1..}] FellVoid 1
-tp @a[team=Spectator,scores={FellVoid=7..}] 12 100 0.5 90 90
-scoreboard players set @a[team=Spectator,scores={FellVoid=7..}] FellVoid 0
+effect give @s[scores={voidNoFallCount=0}] slow_falling 1 1 true
+scoreboard players add @s[scores={voidNoFallCount=0..1}] voidNoFallCount 1
+effect clear @s[scores={voidNoFallCount=2}] slow_falling
+scoreboard players reset @s[scores={voidNoFallCount=2}] voidNoFallCount
 
 #Arrow pickup
 execute as @e[tag=Selection,type=armor_stand] if entity @e[type=arrow] run function everytick:arrow_pickup

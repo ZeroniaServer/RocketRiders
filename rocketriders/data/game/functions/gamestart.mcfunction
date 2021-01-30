@@ -28,10 +28,10 @@ execute as @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run boss
 execute as @s[tag=!EditedSettings] run tag @a remove JoinBlue
 execute as @s[tag=GameEnd] run tag @a remove JoinBlue
 execute as @s[tag=BlueFull] run tag @a remove JoinBlue
-execute as @s[tag=!noTeamBalance] as @s[scores={largerTeam=-1..0},tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
+execute as @s[tag=!noTeamBalance,tag=EditedSettings,scores={largerTeam=-1..0},tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
-execute as @s[scores={largerTeam=-1..0},tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinBlue
+execute as @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinBlue
 team join Blue @a[tag=JoinBlue]
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinBlue]
@@ -72,10 +72,10 @@ execute as @e[tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lobby] remove 
 execute as @s[tag=!EditedSettings] run tag @a remove JoinYellow
 execute as @s[tag=GameEnd] run tag @a remove JoinYellow
 execute as @s[tag=YellowFull] run tag @a remove JoinYellow
-execute as @s[tag=!noTeamBalance] as @s[scores={largerTeam=0..1},tag=!YellowFull] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
+execute as @s[tag=!noTeamBalance,tag=EditedSettings,scores={largerTeam=0..1},tag=!YellowFull] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
-execute as @s[scores={largerTeam=0..1},tag=!YellowFull] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinYellow
+execute as @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[tag=yellowjoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinYellow
 team join Yellow @a[tag=JoinYellow]
 execute as @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinYellow]
@@ -142,26 +142,7 @@ execute unless entity @e[tag=Selection,tag=SMActive] as @e[tag=LeaveSpec,type=ar
 
 ##Leave Pad
 execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
-execute as @s[tag=!customLeaveHandling] run tag @a[tag=LeaveTeams,team=Yellow] add LeavingYellow
-execute as @s[tag=!customLeaveHandling] as @a[tag=LeavingYellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
-execute as @s[tag=!customLeaveHandling] run tag @a[tag=LeaveTeams,team=Blue] add LeavingBlue
-execute as @s[tag=!customLeaveHandling] as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
-tag @a[tag=LeaveTeams,team=Spectator] add LeavingSpec
-execute as @a[tag=LeavingSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
-execute as @a[tag=LeavingSpec] run tp @s @s
-execute as @s[tag=!customLeaveHandling] run clear @a[team=!Lobby,tag=LeaveTeams]
-tag @a[tag=LeaveTeams,team=Lobby] add WasInLobby
-execute as @s[tag=!customLeaveHandling] run team join Lobby @a[tag=LeaveTeams]
-execute as @s[tag=!customLeaveHandling] run tp @a[tag=LeavingYellow] -78 204 92 45 0
-execute as @s[tag=!customLeaveHandling] run tp @a[tag=LeavingBlue] -78 204 64 135 0
-execute as @s[tag=!customLeaveHandling] run tp @a[tag=LeavingSpec] -43 212 78 90 0
-execute as @s[tag=!customLeaveHandling] as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @s[tag=!customLeaveHandling] as @a[tag=LeaveTeams,tag=!WasInLobby] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
-execute as @s[tag=!customLeaveHandling] run tag @a remove LeaveTeams
-execute as @s[tag=!customLeaveHandling] run tag @a remove LeavingYellow
-execute as @s[tag=!customLeaveHandling] run tag @a remove LeavingBlue
-tag @a remove LeavingSpec
-tag @a remove WasInLobby
+execute as @s[tag=!customLeaveHandling] run function game:leaveteams
 
 ##Countdown
 execute as @s[tag=Countdown] run function game:countdown

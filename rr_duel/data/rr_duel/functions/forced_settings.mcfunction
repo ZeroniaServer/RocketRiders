@@ -24,32 +24,21 @@ tag @s add rngObshield
 tag @s add rngVortex
 tag @s add rngSplash
 tag @s add rngNova
-tag @s add rngCanopy
 
 #Deactivated items
 tag @s remove rngAnt
 tag @s remove rngGemi
 tag @s remove rngJbuster
 tag @s remove rngRift
-
-#Disable modifiers
-function modifiers:disablemodifiers
-
-#Add needed settings and modifiers
-tag @s add WindDown
-tag @s add doPrevention
-tag @s add doHotbarLimit
-tag @s remove doStacking
-tag @s remove doFireballPortals
+tag @s remove rngCanopy
 
 #######################################################
 ## The lines below make it so 12 items are selected. ##
 ##        Thanks to Llewv for the suggestion!        ##
 #######################################################
 
-execute if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"}]
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"Active Items: ","color":"gray","bold":"false"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"In 1v1 Duel Mode, a set of 12 items is randomly generated for each round.","color":"white"}]}}]
-tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
 
 ### 1 shield type.
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Shield","color":"light_purple"}',Tags:["RankedRNG","Shield","RShieldRNG","RUtilRNG"]}
@@ -64,21 +53,8 @@ execute if entity @e[tag=Shield,tag=SelRRNG,type=area_effect_cloud] run tag @s r
 execute if entity @e[tag=Obshield,tag=SelRRNG,type=area_effect_cloud] run tag @s add rngObshield
 execute if entity @e[tag=Obshield,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngShield
 
-### 1 projectile type.
-summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Fireball","color":"light_purple"}',Tags:["RankedRNG","Fireball","RProjecRNG","RUtilRNG"]}
-summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Nova Rocket","color":"light_purple"}',Tags:["RankedRNG","Nova","RProjecRNG","RUtilRNG"]}
-tag @e[tag=RProjecRNG,limit=1,sort=random,type=area_effect_cloud] add SelRRNG
-
-#fireball selected
-execute if entity @e[tag=Fireball,tag=SelRRNG,type=area_effect_cloud] run tag @s add rngFireball
-execute if entity @e[tag=Fireball,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngNova
-
-#nova rocket selected
-execute if entity @e[tag=Nova,tag=SelRRNG,type=area_effect_cloud] run tag @s add rngNova
-execute if entity @e[tag=Nova,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngFireball
-
 #Announce extra utils
-tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- ","color":"light_purple","bold":"false"},{"selector":"@e[type=area_effect_cloud,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":"false"}]
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Fireball","color":"light_purple","bold":"false"},{"text":", ","color":"gray"},{"text":"Nova Rocket","color":"light_purple","bold":"false"},{"text":", ","color":"gray"},{"selector":"@e[type=area_effect_cloud,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":"false"}]
 
 ### 1 lightning type.
 summon area_effect_cloud ~ ~ ~ {Tags:["RankedRNG","Hurricane","RLightningRNG"]}
@@ -127,6 +103,7 @@ execute if entity @e[tag=Thunderbolt,tag=SelRRNG,type=area_effect_cloud] run tel
 
 #Announce heavys (if any)
 execute unless entity @e[tag=Selection,tag=!rngAux,tag=!rngWar,type=armor_stand] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- ","color":"red","bold":"false"},{"selector":"@e[type=area_effect_cloud,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":"false"}]
+tellraw @a [""]
 
 kill @e[tag=RankedRNG,type=area_effect_cloud]
 

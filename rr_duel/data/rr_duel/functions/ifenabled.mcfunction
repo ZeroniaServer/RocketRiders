@@ -13,20 +13,7 @@ function everytick:no_drop
 tag @s[tag=!GameStarted] remove CriteriaTrue
 
 #leave teams
-tag @a[tag=LeaveTeams,team=Yellow] add LeavingYellow
-execute as @a[tag=LeavingYellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
-tag @a[tag=LeaveTeams,team=Blue] add LeavingBlue
-execute as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
-tp @a[tag=LeavingYellow] -78 204 92 45 0
-tp @a[tag=LeavingBlue] -78 204 64 135 0
-tp @a[tag=LeavingSpec] -43 212 78 90 0
-clear @a[team=!Lobby,tag=LeaveTeams]
-execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @a[team=!Lobby,tag=LeaveTeams] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
-team join Lobby @a[tag=LeaveTeams]
-tag @a remove LeaveTeams
-tag @a remove LeavingYellow
-tag @a remove LeavingBlue
+function game:leaveteams
 
 #reset
 execute if entity @e[tag=PlacerClear,tag=Cleared,type=area_effect_cloud] if entity @s[tag=!GameStarted] as @a at @s run function arenaclear:notifystart

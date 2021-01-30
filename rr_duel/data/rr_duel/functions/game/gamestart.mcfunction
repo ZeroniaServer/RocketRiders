@@ -19,6 +19,7 @@ execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity 
 execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] unless entity @a[team=Blue] unless entity @a[team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"and ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players.","color":"white"}]
 execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] unless entity @a[team=Blue] unless entity @a[team=Yellow] run bossbar set rr:startgame value 0
 execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] unless entity @a[team=Blue] unless entity @a[team=Yellow] run bossbar set rr:startgame color white
+execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame max 30
 
 #Countdown
 tag @s[scores={count=1..}] add bossbarOverride
@@ -41,4 +42,5 @@ execute as @s[scores={count=600}] run bossbar set rr:startgame name ["",{"text":
 execute as @s[scores={count=600}] run bossbar set rr:startgame color red
 execute as @s[scores={count=600}] run scoreboard players set @s Rounds 1
 execute as @s[scores={count=600}] run tellraw @a[team=!Lobby] [{"text":"Beginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":"true"},{"text":"."}]
+execute as @s[scores={count=600}] run function rr_duel:forced_settings
 execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

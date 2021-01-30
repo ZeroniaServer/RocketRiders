@@ -14,6 +14,8 @@ fill 32 63 -51 -9 37 -45 air
 fill -9 63 51 33 38 46 air
 fill -11 59 -73 35 36 -75 air
 fill -11 59 73 35 36 75 air
+fill -14 13 66 38 33 48 air
+fill -14 13 -66 38 33 -48 air
 
 #Molerat
 execute if entity @s[tag=!Molerat] run fill -12 36 -12 36 61 12 air
@@ -59,6 +61,8 @@ clear @a[team=Yellow]
 gamemode survival @a[team=Blue]
 gamemode survival @a[team=Yellow]
 
+scoreboard players operation @s MaxItemTime = @s MaxItemSec
+scoreboard players operation @s MaxItemTime *= 20 MaxItemSec
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 

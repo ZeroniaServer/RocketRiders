@@ -4,7 +4,7 @@
 execute as @e[type=item] unless entity @s[nbt={Item:{id:"minecraft:bow"}}] unless entity @s[type=item,nbt={Item:{tag:{Dropable:1b}}}] run data modify entity @s Owner set from entity @s Thrower
 execute as @e[type=item] unless entity @s[nbt={Item:{id:"minecraft:bow"}}] unless entity @s[type=item,nbt={Item:{tag:{Dropable:1b}}}] store result score @s playerUUID run data get entity @s Thrower[0]
 execute as @e[type=item] unless entity @s[nbt={Item:{id:"minecraft:bow"}}] unless entity @s[type=item,nbt={Item:{tag:{Dropable:1b}}}] run data merge entity @s {PickupDelay:0s}
-execute as @e[type=item] unless entity @s[nbt={Item:{id:"minecraft:bow"}}] unless entity @s[type=item,nbt={Item:{tag:{Dropable:1b}}}] if entity @a[team=!Spectator,tag=!itemChecked] run function everytick:no_drop_loop
+execute as @e[type=item] unless entity @s[nbt={Item:{id:"minecraft:bow"}}] unless entity @s[type=item,nbt={Item:{tag:{Dropable:1b}}}] if entity @a[team=!Spectator,tag=!itemChecked] at @s run function everytick:no_drop_loop
 tag @a remove itemChecked
 
 #Kills sabers (A proper system exists in everytick:saberfix)

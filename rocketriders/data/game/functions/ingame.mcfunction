@@ -29,6 +29,7 @@ function achievements:gain
 function everytick:clear_spawnblocks
 function everytick:no_fall
 execute if entity @e[type=tnt_minecart] run function everytick:init_kill_carts
+execute if entity @e[type=arrow] run function everytick:fire_arrow
 
 ##Missile/utility-specific commands (optimized to only run when necessary)
 execute unless entity @s[tag=runspawnmissiles] if entity @e[tag=missile,type=area_effect_cloud] run tag @s add runspawnmissiles
@@ -75,6 +76,12 @@ execute unless entity @s[tag=runnovarocket] if entity @a[tag=BlueNovaNear] run t
 execute unless entity @s[tag=runnovarocket] if entity @a[tag=YellowNovaNear] run tag @s add runnovarocket
 execute if entity @s[tag=runnovarocket] run function everytick:novarocket
 tag @s[tag=runnovarocket] remove runnovarocket
+#Attachment reset (both)
+scoreboard players reset @a[tag=!YellowNovaAttach,tag=!BlueNovaAttach] novattach
+scoreboard players reset @a[scores={novattach=15..}] novattach
+scoreboard players reset @a[team=!Yellow,team=!Blue] novattach
+tag @a[team=!Yellow,team=!Blue] remove BlueNovaAttach
+tag @a[team=!Yellow,team=!Blue] remove YellowNovaAttach
 
 execute unless entity @s[tag=runfireball] if entity @e[type=fireball,tag=!obfireball] run tag @s add runfireball
 execute unless entity @s[tag=runfireball] if entity @e[tag=BlueFireball,type=area_effect_cloud] run tag @s add runfireball

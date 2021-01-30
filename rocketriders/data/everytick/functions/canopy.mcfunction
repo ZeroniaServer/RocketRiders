@@ -89,7 +89,6 @@ tag @e[scores={PlatTime=58..},type=area_effect_cloud] add animated
 #Ender Pearl UUID storage - necessary for accurate teleports
 execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data get entity @s Owner[0]
 
-
 ##Yellow Canopy functionality
 execute as @a[team=Yellow,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..5,tag=!BluePlat,tag=!YellowPlat] add YellowPlat
 execute as @e[tag=YellowPlat,type=ender_pearl] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
@@ -116,7 +115,12 @@ kill @e[scores={testplat=10..},type=ender_pearl]
 execute if entity @e[tag=YellowPlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpyellow
 tag @e[tag=YellowPlatform,type=area_effect_cloud] remove checkedTP
 tag @a[team=Yellow] remove checkedTP
-execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @e[type=player,team=Yellow,distance=..6] respawn 0
+execute as @a[team=Yellow,tag=!teleported,tag=canopyTP] run effect clear @s slow_falling
+execute as @a[team=Yellow,tag=!teleported,tag=canopyTP] run effect clear @s slowness
+execute as @a[team=Yellow,tag=!teleported,tag=canopyTP] run effect clear @s jump_boost
+tag @a[team=Yellow,tag=!teleported] remove canopyTP
+tag @a[team=Yellow] remove teleported
+execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,distance=..6] respawn 0
 #After 2 seconds the Canopy gives up teleporting
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41},type=area_effect_cloud] pearlOwnerUUID
 
@@ -147,36 +151,47 @@ kill @e[scores={testplat2=10..},type=ender_pearl]
 execute if entity @e[tag=BluePlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpblue
 tag @e[tag=BluePlatform,type=area_effect_cloud] remove checkedTP
 tag @a[team=Blue] remove checkedTP
-execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @e[type=player,team=Blue,distance=..6] respawn 0
+execute as @a[team=Blue,tag=!teleported,tag=canopyTP] run effect clear @s slow_falling
+execute as @a[team=Blue,tag=!teleported,tag=canopyTP] run effect clear @s slowness
+execute as @a[team=Blue,tag=!teleported,tag=canopyTP] run effect clear @s jump_boost
+tag @a[team=Blue,tag=!teleported] remove canopyTP
+tag @a[team=Blue] remove teleported
+execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,distance=..6] respawn 0
 #After 2 seconds the Canopy gives up
 scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41},type=area_effect_cloud] pearlOwnerUUID
 
 ##More general Canopy functionalities
+#Kill Canopy once it expires (includes hotfix for breaking the banners and pushing the log blocks to cheat auto-decay system
+tag @e[scores={PlatTime=300..},type=area_effect_cloud] add killCanopy
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s run scoreboard players add @s canopyExtraLogs 1
+execute as @e[tag=killCanopy,scores={canopyExtraLogs=4..},type=area_effect_cloud] at @s run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 air replace oak_wood
+kill @e[tag=killCanopy,scores={canopyExtraLogs=4..},type=area_effect_cloud]
+
 #Fire poofing
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~-1 ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~ ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~1 ~ ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~-1 ~ ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~ ~1 fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~ ~-1 fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~1 ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~1 ~1 ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~-1 ~1 ~ fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~1 ~1 fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~1 ~-1 fire run tag @s add FirePoof
-execute as @e[scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~2 ~ fire run tag @s add FirePoof
-execute as @e[tag=FirePoof,type=area_effect_cloud] at @s run playsound entity.blaze.shoot player @a ~ ~ ~ 2 0
-execute as @e[tag=FirePoof,type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 2
-execute as @e[tag=FirePoof,type=area_effect_cloud] at @s run fill ~ ~ ~ ~ ~1 ~ air destroy
-execute as @e[tag=FirePoof,type=area_effect_cloud] at @s run fill ~-3 ~2 ~-3 ~3 ~1 ~3 fire replace air
-execute as @e[tag=FirePoof,type=area_effect_cloud] at @s run particle flame ~ ~ ~ 2 0 2 0.15 250 force @a
-execute as @e[tag=FirePoof,type=area_effect_cloud] at @s run particle lava ~ ~ ~ 2 0 2 0.1 20 force @a
-execute as @e[tag=FirePoof,type=area_effect_cloud] at @s run particle explosion_emitter ~ ~ ~ 2 0 2 0.1 1 force @a
-kill @e[tag=FirePoof,type=area_effect_cloud]
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~-1 ~ fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~ ~ fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~1 ~ ~ fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~-1 ~ ~ fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~ ~1 fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~ ~-1 fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~1 ~ fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~1 ~1 ~ fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~-1 ~1 ~ fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~1 ~1 fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~1 ~-1 fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~2 ~ fire run tag @s add FirePoof
+execute as @e[tag=!killCanopy,tag=FirePoof,type=area_effect_cloud] at @s run playsound entity.blaze.shoot player @a ~ ~ ~ 2 0
+execute as @e[tag=!killCanopy,tag=FirePoof,type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 2
+execute as @e[tag=!killCanopy,tag=FirePoof,type=area_effect_cloud] at @s run fill ~ ~ ~ ~ ~1 ~ air destroy
+execute as @e[tag=!killCanopy,tag=FirePoof,type=area_effect_cloud] at @s run fill ~-3 ~2 ~-3 ~3 ~1 ~3 fire replace air
+execute as @e[tag=!killCanopy,tag=FirePoof,type=area_effect_cloud] at @s run particle flame ~ ~ ~ 2 0 2 0.15 250 force @a
+execute as @e[tag=!killCanopy,tag=FirePoof,type=area_effect_cloud] at @s run particle lava ~ ~ ~ 2 0 2 0.1 20 force @a
+execute as @e[tag=!killCanopy,tag=FirePoof,type=area_effect_cloud] at @s run particle explosion_emitter ~ ~ ~ 2 0 2 0.1 1 force @a
+tag @e[tag=FirePoof,type=area_effect_cloud] add killCanopy
 
 #Canopy durations
-execute as @e[scores={PlatTime=4..},type=area_effect_cloud] at @s unless block ~ ~1 ~ oak_wood run scoreboard players set @s PlatTime 400
-execute as @e[scores={PlatTime=4..},type=area_effect_cloud] at @s unless block ~ ~ ~ oak_wood run scoreboard players set @s PlatTime 400
+execute as @e[scores={PlatTime=4..},type=area_effect_cloud] at @s unless block ~ ~1 ~ oak_wood run tag @s add killCanopy
+execute as @e[scores={PlatTime=4..},type=area_effect_cloud] at @s unless block ~ ~ ~ oak_wood run tag @s add killCanopy
 execute as @e[scores={PlatTime=220..},type=area_effect_cloud] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a
 execute as @e[scores={PlatTime=220},type=area_effect_cloud] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0
 execute as @e[scores={PlatTime=225},type=area_effect_cloud] at @s run playsound block.wood.break player @a ~ ~ ~ 2 0
@@ -204,31 +219,6 @@ execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~-1
 execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~ ~1 ~1 #minecraft:banners run setblock ~ ~1 ~1 air destroy
 execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~ ~1 ~-1 #minecraft:banners run setblock ~ ~1 ~-1 air destroy
 
-#Hotfix for a bug where breaking the banners and pushing the log blocks in a Canopy allows you to cheat the auto-decay system
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s run scoreboard players set @e[tag=Platform,limit=1,sort=nearest,type=area_effect_cloud] canopyExtraLogs 1
-scoreboard players add @e[tag=Platform,scores={canopyExtraLogs=1..},type=area_effect_cloud] canopyExtraLogs 1
-execute as @e[tag=Platform,scores={canopyExtraLogs=4..},type=area_effect_cloud] at @s run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 air replace oak_wood
-scoreboard players reset @e[tag=Platform,scores={canopyExtraLogs=4..},type=area_effect_cloud] canopyExtraLogs
-
-#Kill entity once Canopy expires
-kill @e[scores={PlatTime=300..},type=area_effect_cloud]
-
-#Fire arrow logs
-execute as @e[tag=!FireArrow,type=arrow,nbt={inGround:1b}] at @s if block ~ ~-1 ~ oak_wood run setblock ~ ~.5 ~ fire
-execute as @e[tag=!FireArrow,type=arrow,nbt={inGround:1b}] at @s if block ~ ~-1 ~ oak_wood run tag @s add FireArrow
-execute as @e[tag=!FireArrow,type=arrow,nbt={inGround:1b}] at @s if block ~ ~1 ~ oak_wood run setblock ~ ~-.5 ~ fire
-execute as @e[tag=!FireArrow,type=arrow,nbt={inGround:1b}] at @s if block ~ ~1 ~ oak_wood run tag @s add FireArrow
-execute as @e[tag=!FireArrow,type=arrow] at @s if block ^ ^ ^-0.1 oak_wood positioned ^ ^ ^-0.1 run setblock ~ ~-1 ~ fire
-execute as @e[tag=!FireArrow,type=arrow] at @s if block ^ ^ ^-0.1 oak_wood run tag @s add FireArrow
-execute as @e[tag=!FireArrow,type=arrow] at @s if block ^ ^ ^0.1 oak_wood positioned ^ ^ ^0.1 run setblock ~ ~1 ~ fire
-execute as @e[tag=!FireArrow,type=arrow] at @s if block ^ ^ ^0.1 oak_wood run tag @s add FireArrow
-
-#Arrows catch leaves on fire
-execute as @e[tag=!FireArrow,type=arrow] at @s if block ^ ^ ^-0.1 #leaves run setblock ^ ^ ^-0.1 fire
-execute as @e[tag=!FireArrow,type=arrow] at @s if block ^ ^ ^-0.1 #leaves run tag @s add FireArrow
-execute as @e[tag=!FireArrow,type=arrow] at @s if block ^ ^ ^0.1 #leaves run setblock ^ ^ ^0.1 fire
-execute as @e[tag=!FireArrow,type=arrow] at @s if block ^ ^ ^0.1 #leaves run tag @s add FireArrow
-
 #Fireballs poof Canopies
 execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] if entity @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof
 execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] if entity @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof
@@ -236,19 +226,19 @@ execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0
 execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire replace oak_log
 
 #Canopy watering (one time use - Splash extends Canopy duration)
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~ water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~ water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~ water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~-1 water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~1 water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~-1 water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~-1 water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~1 water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~1 water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~1 ~-1 water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~1 ~-1 water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~1 ~1 water run tag @s add wateredInit
-execute as @e[scores={PlatTime=3..400},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~1 ~1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~ water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~ water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~ water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~1 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~1 ~-1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~1 ~1 water run tag @s add wateredInit
+execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~1 ~1 water run tag @s add wateredInit
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run setblock ~ ~1 ~ sponge
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run setblock ~ ~1 ~ oak_wood[axis=y]
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run playsound minecraft:block.bamboo_sapling.place block @a ~ ~ ~ 1 0.5

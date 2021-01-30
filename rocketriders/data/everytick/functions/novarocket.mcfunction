@@ -54,7 +54,6 @@ execute as @e[tag=YellowNova,scores={novatimer=1..10},type=firework_rocket] at @
 execute as @e[tag=BlueNova,type=firework_rocket] at @s run particle minecraft:falling_dust lapis_block ~ ~0.2 ~ 0 0 0 1 2
 execute as @e[tag=YellowNova,type=firework_rocket] at @s run particle minecraft:falling_dust gold_block ~ ~0.2 ~ 0 0 0 1 2
 
-
 ##Yellow Nova Rocket functionality
 #Static
 execute if entity @s[tag=!Explosive] as @e[tag=yellownovatracker,type=area_effect_cloud] at @s unless entity @e[tag=YellowNova,distance=..3,limit=1,sort=nearest,type=firework_rocket] run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Rocket\"}",ExplosionRadius:2,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
@@ -71,7 +70,6 @@ execute as @a[tag=YellowNovaAttach,scores={novattach=6..}] run effect clear @s l
 execute as @a[tag=YellowNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
 execute as @a[tag=YellowNovaAttach] run tag @s[scores={novattach=15..}] remove YellowNovaAttach
 tag @a[tag=YellowNovaAttach,tag=probablyDied] remove YellowNovaAttach
-scoreboard players reset @a[tag=!YellowNovaAttach] novattach
 
 ##Blue Nova Rocket Functionality
 #Static
@@ -89,10 +87,3 @@ execute as @a[tag=BlueNovaAttach,scores={novattach=6..}] run effect clear @s lev
 execute as @a[tag=BlueNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
 execute as @a[tag=BlueNovaAttach] run tag @s[scores={novattach=15..}] remove BlueNovaAttach
 tag @a[tag=BlueNovaAttach,tag=probablyDied] remove YellowNovaAttach
-scoreboard players reset @a[tag=!BlueNovaAttach] novattach
-
-#Attachment reset (both)
-scoreboard players reset @a[scores={novattach=15..}] novattach
-scoreboard players reset @a[team=!Yellow,team=!Blue] novattach
-tag @a[team=!Yellow,team=!Blue] remove BlueNovaAttach
-tag @a[team=!Yellow,team=!Blue] remove YellowNovaAttach

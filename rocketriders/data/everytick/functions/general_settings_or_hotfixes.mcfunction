@@ -15,6 +15,11 @@ execute as @s[scores={servermode=0},tag=!SMCustom] run function tutorial:advantr
 #Handy tips for newcomers
 function everytick:tip
 
+#Canopy teleport remove effects
+execute as @a[team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s slowness
+execute as @a[team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s slow_falling
+execute as @a[team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s jump_boost
+
 #Disable trigger objectives when appropriate
 execute as @a[team=!Blue,team=!Yellow] run trigger LeaveMidgame set -1
 execute as @a[team=!Lobby] run trigger MaxItemSec set 0

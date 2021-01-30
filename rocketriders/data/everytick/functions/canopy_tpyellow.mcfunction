@@ -29,11 +29,13 @@ execute as @p[team=Yellow,tag=currentTP,scores={novattach=1..}] run tag @s remov
 #(thanks to Red_Bones for the teleport command format!)
 execute at @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,type=area_effect_cloud] as @p[team=Yellow,tag=currentTP,tag=canopyTP] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
 execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] run tag @s add teleported
-execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s slow_falling 2 100 true
-execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s unless predicate custom:canopy_nearyellow if entity @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s jump_boost 2 128 true
-execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s unless predicate custom:canopy_nearyellow if entity @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s slowness 2 255 true
-execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s slow_falling
-execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run tag @s remove canopyTP
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s slow_falling 2 100 true
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s unless predicate custom:canopy_nearyellow if entity @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s jump_boost 2 128 true
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s unless predicate custom:canopy_nearyellow if entity @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect give @s slowness 2 255 true
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41..},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s slow_falling
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41..},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s slowness
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41..},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run effect clear @s jump_boost
+execute as @p[team=Yellow,tag=currentTP,tag=canopyTP] at @s if entity @e[tag=YellowPlatform,scores={PlatTime=41..},limit=1,tag=currentTP,sort=nearest,type=area_effect_cloud] run tag @s remove canopyTP
 
 #Deselect and remember checked Canopy and player
 tag @p[team=Yellow,tag=currentTP] add checkedTP

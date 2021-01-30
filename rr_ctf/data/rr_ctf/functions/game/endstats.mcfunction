@@ -1,19 +1,26 @@
 ##Calculates and announces end game statistics (most missiles spawned, most kills, most deaths)
 #Calculates who has the most of each score
+
 tag @a remove flagschamp
 execute as @a run scoreboard players operation @s CmdData = @s FlagsCaptured
-function everytick:pogger_calculation
-tag @a[scores={CmdData=0}] add flagschamp
+tag @a[scores={CmdData=1..}] add maybeflagschamp
+execute if entity @a[tag=maybeflagschamp] run function everytick:pogger_calculation
+tag @a[scores={CmdData=0},tag=maybeflagschamp] add flagschamp
+tag @a remove maybeflagschamp
 
 tag @a remove killschamp
 execute as @a run scoreboard players operation @s CmdData = @s kills
-function everytick:pogger_calculation
-tag @a[scores={CmdData=0}] add killschamp
+tag @a[scores={CmdData=1..}] add maybekillschamp
+execute if entity @a[tag=maybekillschamp] run function everytick:pogger_calculation
+tag @a[scores={CmdData=0},tag=maybekillschamp] add killschamp
+tag @a remove maybekillschamp
 
 tag @a remove deathchamp
 execute as @a run scoreboard players operation @s CmdData = @s deaths
-function everytick:pogger_calculation
-tag @a[scores={CmdData=0}] add deathchamp
+tag @a[scores={CmdData=1..}] add maybedeathchamp
+execute if entity @a[tag=maybedeathchamp] run function everytick:pogger_calculation
+tag @a[scores={CmdData=0},tag=maybedeathchamp] add deathchamp
+tag @a remove maybedeathchamp
 
 #Announces who has the most of each score
 scoreboard players add $playercount CmdData 0

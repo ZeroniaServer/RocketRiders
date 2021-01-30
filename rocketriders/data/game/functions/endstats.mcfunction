@@ -6,18 +6,24 @@ execute as @a[team=Yellow] run function everytick:missile_count
 #Calculates who has the most of each score
 tag @a remove spawnchamp
 execute as @a run scoreboard players operation @s CmdData = @s MissilesSpawned
-execute if entity @a[scores={CmdData=1..}] run function everytick:pogger_calculation
-tag @a[scores={CmdData=0}] add spawnchamp
+tag @a[scores={CmdData=1..}] add maybespawnchamp
+execute if entity @a[tag=maybespawnchamp] run function everytick:pogger_calculation
+tag @a[scores={CmdData=0},tag=maybespawnchamp] add spawnchamp
+tag @a remove maybespawnchamp
 
 tag @a remove killschamp
 execute as @a run scoreboard players operation @s CmdData = @s kills
-execute if entity @a[scores={CmdData=1..}] run function everytick:pogger_calculation
-tag @a[scores={CmdData=0}] add killschamp
+tag @a[scores={CmdData=1..}] add maybekillschamp
+execute if entity @a[tag=maybekillschamp] run function everytick:pogger_calculation
+tag @a[scores={CmdData=0},tag=maybekillschamp] add killschamp
+tag @a remove maybekillschamp
 
 tag @a remove deathchamp
 execute as @a run scoreboard players operation @s CmdData = @s deaths
-execute if entity @a[scores={CmdData=1..}] run function everytick:pogger_calculation
-tag @a[scores={CmdData=0}] add deathchamp
+tag @a[scores={CmdData=1..}] add maybedeathchamp
+execute if entity @a[tag=maybedeathchamp] run function everytick:pogger_calculation
+tag @a[scores={CmdData=0},tag=maybedeathchamp] add deathchamp
+tag @a remove maybedeathchamp
 
 #Announces who has the most of each score
 scoreboard players add $playercount CmdData 0

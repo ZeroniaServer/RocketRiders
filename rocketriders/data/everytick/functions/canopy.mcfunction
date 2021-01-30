@@ -107,10 +107,13 @@ execute as @e[scores={testplat=10},type=ender_pearl] at @s run setblock ~ ~ ~ ob
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run playsound ui.stonecutter.take_result player @a ~ ~ ~ 2 0
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
 execute as @e[scores={testplat=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["YellowPlatform"]}
-execute as @e[scores={testplat=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["Platform"]}
 scoreboard players add @e[tag=YellowPlatform,type=area_effect_cloud] PlatTime 1
 execute as @e[scores={testplat=10},type=ender_pearl] at @s store result score @e[tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat=10..},type=ender_pearl]
+execute as @e[tag=YellowPlatform,scores={PlatTime=1},type=area_effect_cloud] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
+execute as @e[tag=YellowPlatform,scores={PlatTime=1},type=area_effect_cloud] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
+execute as @e[tag=YellowPlatform,scores={PlatTime=1},type=area_effect_cloud] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
+execute as @e[tag=YellowPlatform,scores={PlatTime=1},type=area_effect_cloud] run scoreboard players add @e[tag=Selection,type=armor_stand] canopyCount 1
 #Teleporting happens in another function
 execute if entity @e[tag=YellowPlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpyellow
 tag @e[tag=YellowPlatform,type=area_effect_cloud] remove checkedTP
@@ -143,10 +146,13 @@ execute as @e[scores={testplat2=10},type=ender_pearl] at @s run playsound ui.sto
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s run playsound block.grass.place player @a ~ ~ ~ 2 0
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["BluePlatform"]}
-execute as @e[scores={testplat2=10},type=ender_pearl] at @s align xyz positioned ~0.5 ~ ~0.5 run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["Platform"]}
 scoreboard players add @e[tag=BluePlatform,type=area_effect_cloud] PlatTime 1
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s store result score @e[tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest,type=area_effect_cloud] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[scores={testplat2=10..},type=ender_pearl]
+execute as @e[tag=BluePlatform,scores={PlatTime=1},type=area_effect_cloud] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
+execute as @e[tag=BluePlatform,scores={PlatTime=1},type=area_effect_cloud] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
+execute as @e[tag=BluePlatform,scores={PlatTime=1},type=area_effect_cloud] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
+execute as @e[tag=BluePlatform,scores={PlatTime=1},type=area_effect_cloud] run scoreboard players add @e[tag=Selection,type=armor_stand] canopyCount 1
 #Teleporting happens in another function
 execute if entity @e[tag=BluePlatform,type=area_effect_cloud,scores={PlatTime=..41}] run function everytick:canopy_tpblue
 tag @e[tag=BluePlatform,type=area_effect_cloud] remove checkedTP

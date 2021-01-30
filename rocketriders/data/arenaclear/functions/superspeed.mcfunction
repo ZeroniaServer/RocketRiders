@@ -11,8 +11,9 @@ execute as @e[tag=ArenaClearBlue,type=area_effect_cloud] at @s run fill ~4 ~ ~-4
 execute as @e[tag=ArenaClearYellow,type=area_effect_cloud] at @s run fill ~4 ~ ~-4 ~-4 ~12 ~4 air replace #custom:missileblocks
 execute as @e[tag=ArenaClearBlue,type=area_effect_cloud] at @s run tp @s ~ ~ ~4
 execute as @e[tag=ArenaClearYellow,type=area_effect_cloud] at @s run tp @s ~ ~ ~-4
-execute as @e[tag=SmartClearAECsplash,type=area_effect_cloud] at @s run fill ~-12 ~4 ~-12 ~12 ~-4 ~12 air replace #custom:splashblocks
-execute as @e[tag=SmartClearAECsplash,type=area_effect_cloud] at @s run tp @s ~ ~-4 ~
+execute as @e[tag=SmartClearAECsplash,type=area_effect_cloud] at @s run fill ~-20 ~6 ~-20 ~20 ~-6 ~20 air replace #custom:splashblocks
+execute as @e[tag=SmartClearAECsplash,type=area_effect_cloud] at @s run tp @s ~ ~-2 ~
+
 execute if entity @e[tag=ArenaClearChecker,scores={ClearArena=..89},type=area_effect_cloud] run tag @s remove Countdown
 execute if entity @e[tag=ArenaClearChecker,scores={ClearArena=..89},type=area_effect_cloud] run function arenaclear:superspeed
 

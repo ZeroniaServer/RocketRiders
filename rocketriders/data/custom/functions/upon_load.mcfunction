@@ -32,6 +32,10 @@ scoreboard objectives add MineWhiteGlass minecraft.mined:minecraft.white_stained
 scoreboard objectives add MinePurpleGlass minecraft.mined:minecraft.purple_stained_glass
 scoreboard objectives add VortexID dummy
 scoreboard objectives add VoteNum dummy
+scoreboard objectives add splashCount dummy
+scoreboard objectives add canopyCount dummy
+scoreboard objectives add shieldCount dummy
+scoreboard objectives add beeShieldCount dummy
 
 function lobby:credits/restart
 #schedule function custom:ck_uponload 20t

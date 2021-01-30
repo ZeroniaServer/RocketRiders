@@ -7,7 +7,7 @@ execute as @a[scores={DrinkHoney=1..}] at @s as @e[tag=BeeShieldDisplay,scores={
 scoreboard players reset @a DrinkHoney
 replaceitem entity @e[tag=BeeShieldDisplay,scores={BeeShieldTime=1},type=armor_stand] armor.head honey_block
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s run playsound minecraft:block.honey_block.slide block @a ~ ~ ~ 2 0.8
-execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s run particle minecraft:block honey_block ~ ~ ~ 0 0 0 1 10
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s anchored eyes run particle minecraft:block honey_block ~ ~ ~ 0 0 0 1 10
 
 #placement (animations etc)
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @s[x=-12,y=36,z=-74,dx=48,dy=25] run kill @s
@@ -123,7 +123,10 @@ execute as @e[tag=animBshield,scores={BeeShieldTime=31},type=area_effect_cloud] 
 #Kill animation AEC
 kill @e[tag=animBshield,scores={BeeShieldTime=32..},type=area_effect_cloud]
 
-execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] at @s run summon area_effect_cloud ~ ~ ~ {Duration:200000000,Tags:["BeeShield"]}
+execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] run data modify storage rr_powerups:beeshieldpos x prepend from entity @s Pos[0]
+execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] run data modify storage rr_powerups:beeshieldpos y prepend from entity @s Pos[1]
+execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] run data modify storage rr_powerups:beeshieldpos z prepend from entity @s Pos[2]
+execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] run scoreboard players add @e[tag=Selection,type=armor_stand] beeShieldCount 1
 execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] run kill @s
 
 #Kill bee shield near void

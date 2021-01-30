@@ -14,10 +14,9 @@ tag @s add EditedSettings
 tag @s remove GameStarted
 
 ##Summon AECs for tracking/block sweeping
-function arenaclear:minifyblue
-function arenaclear:prepareblue
-function arenaclear:minifyyellow
-function arenaclear:prepareyellow
+execute as @s[scores={bMissileCount=1..}] run function arenaclear:prepareblue
+execute as @s[scores={yMissileCount=1..}] run function arenaclear:prepareyellow
+execute as @s[scores={splashCount=1..}] run function arenaclear:preparesplash
 summon area_effect_cloud 11 63 6 {Tags:["ArenaClearChecker"],Duration:360}
 
 ##Reset Tetris progress for Item RNG
@@ -54,11 +53,8 @@ kill @e[tag=BlueNova,type=firework_rocket]
 kill @e[tag=YellowNova,type=firework_rocket]
 execute as @e[tag=blueobsidianshield,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break
 execute as @e[tag=yellowobsidianshield,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break
-execute as @e[tag=ClearShields,type=area_effect_cloud] at @s run fill ~-3 ~-3 ~ ~3 ~3 ~ air destroy
-kill @e[tag=ClearShields,type=area_effect_cloud]
-execute as @e[tag=Platform,type=area_effect_cloud] at @s run fill ~-3 ~ ~-3 ~3 ~ ~3 air replace #minecraft:leaves
-execute as @e[tag=Platform,type=area_effect_cloud] at @s run fill ~ ~ ~ ~ ~1 ~ air
-kill @e[tag=Platform,type=area_effect_cloud]
+execute as @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
+execute as @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
 kill @e[tag=YellowPlatform,type=area_effect_cloud]
 kill @e[tag=BluePlatform,type=area_effect_cloud]
 kill @e[tag=BlueObshield,type=area_effect_cloud]

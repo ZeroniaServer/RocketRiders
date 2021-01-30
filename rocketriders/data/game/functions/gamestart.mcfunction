@@ -152,9 +152,9 @@ execute as @a[tag=LeavingSpec] run tp @s @s
 execute as @s[tag=!customLeaveHandling] run clear @a[team=!Lobby,tag=LeaveTeams]
 tag @a[tag=LeaveTeams,team=Lobby] add WasInLobby
 execute as @s[tag=!customLeaveHandling] run team join Lobby @a[tag=LeaveTeams]
-tp @a[tag=LeavingYellow] -78 204 92 45 0
-tp @a[tag=LeavingBlue] -78 204 64 135 0
-tp @a[tag=LeavingSpec] -43 212 78 90 0
+execute as @s[tag=!customLeaveHandling] run tp @a[tag=LeavingYellow] -78 204 92 45 0
+execute as @s[tag=!customLeaveHandling] run tp @a[tag=LeavingBlue] -78 204 64 135 0
+execute as @s[tag=!customLeaveHandling] run tp @a[tag=LeavingSpec] -43 212 78 90 0
 execute as @s[tag=!customLeaveHandling] as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @s[tag=!customLeaveHandling] as @a[tag=LeaveTeams,tag=!WasInLobby] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
 execute as @s[tag=!customLeaveHandling] run tag @a remove LeaveTeams

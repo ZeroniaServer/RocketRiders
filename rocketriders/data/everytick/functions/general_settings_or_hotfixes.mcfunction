@@ -46,14 +46,14 @@ execute as @a[team=Lobby] at @s if predicate custom:belowroof run tellraw @s [{"
 execute as @a[team=Lobby] at @s if predicate custom:belowroof run scoreboard players set @s LeaveGame 1
 
 #Lobby players can't switch out of adventure mode (security)
-execute as @a[team=Lobby,gamemode=!adventure] run gamemode adventure
+execute as @s[scores={servermode=0},tag=!SMCustom] as @a[team=Lobby,gamemode=!adventure] run gamemode adventure
 
 #Spectators can't switch out of spectator mode (security)
-execute as @a[team=Spectator,gamemode=!spectator] run gamemode spectator
+execute as @s[scores={servermode=0},tag=!SMCustom] as @a[team=Spectator,gamemode=!spectator] run gamemode spectator
 
 #Blue/Yellow players can't switch out of adventure mode before game (security)
-execute as @s[tag=!GameStarted,tag=!GameEnd] as @a[team=Blue,gamemode=!adventure] run gamemode adventure
-execute as @s[tag=!GameStarted,tag=!GameEnd] as @a[team=Yellow,gamemode=!adventure] run gamemode adventure
+execute as @s[scores={servermode=0},tag=!SMCustom,tag=!GameStarted,tag=!GameEnd] as @a[team=Blue,gamemode=!adventure] run gamemode adventure
+execute as @s[scores={servermode=0},tag=!SMCustom,tag=!GameStarted,tag=!GameEnd] as @a[team=Yellow,gamemode=!adventure] run gamemode adventure
 
 #Full offhand check
 tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand

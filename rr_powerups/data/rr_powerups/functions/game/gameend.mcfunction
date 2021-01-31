@@ -11,6 +11,7 @@ scoreboard players set @e[tag=captureMiddle,type=area_effect_cloud] yCapturedTim
 scoreboard players set @e[tag=captureMiddle,type=area_effect_cloud] captureBlue 0
 scoreboard players set @e[tag=captureMiddle,type=area_effect_cloud] captureYellow 0
 scoreboard players set @e[tag=captureMiddle,type=area_effect_cloud] capturePoint 0
+execute as @s[scores={endtimer=1}] as @a[tag=Infinity] run clear @s bow
 tag @a remove Infinity
 tag @a remove HoldingSlapFish
 execute as @s[scores={endtimer=1..}] run bossbar set rr_powerups:capture_progress players none

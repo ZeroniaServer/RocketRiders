@@ -26,9 +26,9 @@ tag @a[tag=portalKill] remove SummonPlat
 #No fall damage
 scoreboard players set @a[tag=portalKill] voidNoFallCount 0
 effect give @a[scores={voidNoFallCount=0}] slow_falling 1 1 true
-scoreboard players add @a[scores={voidNoFallCount=0..4}] voidNoFallCount 1
-effect clear @a[scores={voidNoFallCount=5}] slow_falling
-scoreboard players reset @a[scores={voidNoFallCount=5}] voidNoFallCount
+scoreboard players add @a[scores={voidNoFallCount=0..2}] voidNoFallCount 1
+effect clear @a[scores={voidNoFallCount=2}] slow_falling
+scoreboard players reset @a[scores={voidNoFallCount=2}] voidNoFallCount
 
 #Teleport back to spawnpoint
 execute unless entity @s[tag=customSpawns] run tp @a[team=Blue,tag=portalKill] 12 64 -66 0 0

@@ -40,4 +40,4 @@ scoreboard objectives add Volume dummy
 
 function lobby:credits/restart
 function custom:ck_uponload
-schedule function servermode:enabled 20t
+# schedule function servermode:enabled 20t

@@ -6,5 +6,6 @@ title @s[tag=!Infinity] subtitle {"text":"Shoot infinite arrows! Lasts until dea
 give @s[scores={HasArrows=0},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}} 1
 replaceitem entity @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}} 1
 execute as @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
+clear @s[tag=!Infinity] bow
 tag @s[tag=!Infinity] add Infinity
 tag @e[tag=Selection,type=armor_stand] add givenInfinity

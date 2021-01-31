@@ -127,15 +127,19 @@ clear @a[team=Yellow,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damag
 #trident auto riptide
 execute as @a[nbt={SelectedItem:{id:"minecraft:trident"}}] unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide
 
+#trident antidupe
+tag @e[type=trident,nbt={inGround:1b}] add return
+execute as @e[type=trident,tag=return] store result score @s playerUUID run data get entity @s Owner[0]
+execute as @s[tag=!doStacking] as @e[type=trident,tag=return] at @s run function rr_powerups:everytick/trident_antidupe
+tag @a[tag=tridentChecked] remove tridentChecked
+
 #slap fish
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/slap_fish
 
 #infinity saber
-execute as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] if entity @s[nbt={SelectedItem:{id:"minecraft:bow"}},scores={death=0}] run enchant @s minecraft:infinity 1
 execute as @a[tag=Infinity] if entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
-execute as @a[tag=Infinity,scores={death=1..}] unless entity @s[team=!Yellow,team=!Blue] run clear @s bow
-execute as @a[tag=Infinity,scores={death=1..}] unless entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
-scoreboard players set @a[scores={death=1..}] death 0
+execute as @a[tag=Infinity,tag=probablyDied] unless entity @s[team=!Yellow,team=!Blue] run clear @s bow
+execute as @a[tag=Infinity,tag=probablyDied] unless entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
 
 #actionbar
 execute if entity @e[tag=captureMiddle,scores={capturePoint=1},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=2..}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new Powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" seconds!","color":"blue","bold":"true"}]

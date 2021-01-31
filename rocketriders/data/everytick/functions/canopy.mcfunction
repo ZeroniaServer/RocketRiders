@@ -160,6 +160,17 @@ scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=41},type=area_effe
 #Kill Canopy once it expires (includes hotfix for breaking the banners and pushing the log blocks to cheat auto-decay system
 tag @e[scores={PlatTime=300..},type=area_effect_cloud] add killCanopy
 execute as @e[tag=killCanopy,type=area_effect_cloud] at @s run scoreboard players add @s canopyExtraLogs 1
+#Hotfix for persistent leaves
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance=1] replace jungle_leaves
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s if block ~ ~ ~ oak_wood run setblock ~ ~ ~ air destroy
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s if block ~ ~1 ~ oak_wood run setblock ~ ~1 ~ air destroy
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s if block ~1 ~1 ~ #minecraft:banners run setblock ~1 ~1 ~ air destroy
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s if block ~-1 ~1 ~ #minecraft:banners run setblock ~-1 ~1 ~ air destroy
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s if block ~ ~1 ~1 #minecraft:banners run setblock ~ ~1 ~1 air destroy
+execute as @e[tag=killCanopy,type=area_effect_cloud] at @s if block ~ ~1 ~-1 #minecraft:banners run setblock ~ ~1 ~-1 air destroy
 execute as @e[tag=killCanopy,scores={canopyExtraLogs=4..},type=area_effect_cloud] at @s run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 air replace oak_wood
 kill @e[tag=killCanopy,scores={canopyExtraLogs=4..},type=area_effect_cloud]
 
@@ -203,17 +214,6 @@ execute as @e[scores={PlatTime=270},type=area_effect_cloud] at @s run playsound 
 execute as @e[scores={PlatTime=275},type=area_effect_cloud] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1.2
 execute as @e[scores={PlatTime=280},type=area_effect_cloud] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1.5
 execute as @e[scores={PlatTime=300},type=area_effect_cloud] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 100 force @a
-#Hotfix for persistent leaves
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance=1] replace jungle_leaves
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~ ~ ~ oak_wood run setblock ~ ~ ~ air destroy
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~ ~1 ~ oak_wood run setblock ~ ~1 ~ air destroy
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~1 ~1 ~ #minecraft:banners run setblock ~1 ~1 ~ air destroy
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~-1 ~1 ~ #minecraft:banners run setblock ~-1 ~1 ~ air destroy
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~ ~1 ~1 #minecraft:banners run setblock ~ ~1 ~1 air destroy
-execute as @e[scores={PlatTime=300..},type=area_effect_cloud] at @s if block ~ ~1 ~-1 #minecraft:banners run setblock ~ ~1 ~-1 air destroy
 
 #Fireballs poof Canopies
 execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] if entity @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof

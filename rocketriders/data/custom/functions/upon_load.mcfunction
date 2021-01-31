@@ -36,6 +36,7 @@ scoreboard objectives add splashCount dummy
 scoreboard objectives add canopyCount dummy
 scoreboard objectives add shieldCount dummy
 scoreboard objectives add beeShieldCount dummy
+scoreboard objectives add Volume dummy
 
 function lobby:credits/restart
 #schedule function custom:ck_uponload 20t

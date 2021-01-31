@@ -35,14 +35,18 @@ execute in overworld as @e[tag=missile,type=area_effect_cloud] at @s if predicat
 execute if entity @s[tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
 execute if entity @s[tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
 
+#Antigrief
+execute as @e[tag=bluemissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] if entity @e[tag=Selection,type=armor_stand,limit=1,tag=!antigriefOff] run function items:prevention/antigrief
+execute as @e[tag=yellowmissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] if entity @e[tag=Selection,type=armor_stand,limit=1,tag=!antigriefOff] run function items:prevention/antigrief
+
 #Give back
 execute as @e[tag=UnableMissile,tag=!missileflip,type=area_effect_cloud] at @s run function items:prevention/unablefx
 execute as @e[tag=UnableMissile,tag=missileflip,type=area_effect_cloud] at @s run function items:flip/unablefx
 function items:prevention/giveback
 
 ##Bot preparation (for PVE mode)
-execute as @e[tag=bluemissile,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
-execute as @e[tag=yellowmissile,type=area_effect_cloud] at @s run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
+execute as @e[tag=bluemissile,type=area_effect_cloud] at @s if entity @e[tag=Bot,type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
+execute as @e[tag=yellowmissile,type=area_effect_cloud] at @s if entity @e[tag=Bot,type=armor_stand] run summon area_effect_cloud ~ ~ ~ {Tags:[RecentBotspawn],Duration:150}
 
 ##SmartClear preparation
 execute as @e[tag=bluemissile,type=area_effect_cloud] run data modify storage rocketriders:bmissilepos x prepend from entity @s Pos[0]

@@ -1,63 +1,63 @@
-#Clears portal blocks afterwards because for some reason that can't be done in the same tick
+#Clears temporary afterwards because for some reason that can't be done in the same tick
 
-execute as @e[tag=BAux] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~3 ~10 air replace #custom:portalblocks
-execute as @e[tag=YAux] positioned ~-1 175 ~-14 run fill ~ ~ ~ ~2 ~3 ~10 air replace #custom:portalblocks
+execute as @s[tag=BAux] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~3 ~10 air replace
+execute as @s[tag=YAux] positioned ~-1 175 ~-14 run fill ~-5 ~ ~ ~7 ~3 ~10 air replace
 
-execute as @e[tag=BToma] positioned ~-1 175 ~4 run fill ~ ~ ~ ~1 ~1 ~8 air replace #custom:portalblocks
-execute as @e[tag=YToma] positioned ~-1 175 ~-12 run fill ~ ~ ~ ~1 ~1 ~8 air replace #custom:portalblocks
+execute as @s[tag=BToma] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~6 ~1 ~8 air replace
+execute as @s[tag=YToma] positioned ~-1 175 ~-12 run fill ~2 ~ ~ ~6 ~1 ~8 air replace
 
-execute as @e[tag=BNull] positioned ~-1 175 ~4 run fill ~ ~ ~ ~1 ~2 ~8 air replace #custom:portalblocks
-execute as @e[tag=YNull] positioned ~-1 175 ~-12 run fill ~ ~ ~ ~1 ~2 ~8 air replace #custom:portalblocks
+execute as @s[tag=BNull] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~6 ~2 ~8 air replace
+execute as @s[tag=YNull] positioned ~-1 175 ~-12 run fill ~-5 ~ ~ ~6 ~2 ~8 air replace
 
-execute as @e[tag=BWar] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~10 air replace #custom:portalblocks
-execute as @e[tag=YWar] positioned ~-1 175 ~-14 run fill ~ ~ ~ ~2 ~2 ~10 air replace #custom:portalblocks
+execute as @s[tag=BWar] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~2 ~10 air replace
+execute as @s[tag=YWar] positioned ~-1 175 ~-14 run fill ~-5 ~ ~ ~7 ~2 ~10 air replace
 
-execute as @e[tag=BBolt] positioned ~-1 175 ~4 run fill ~ ~ ~ ~1 ~1 ~10 air replace #custom:portalblocks
-execute as @e[tag=YBolt] positioned ~-1 175 ~-14 run fill ~ ~ ~ ~1 ~1 ~10 air replace #custom:portalblocks
+execute as @s[tag=BBolt] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~6 ~1 ~10 air replace
+execute as @s[tag=YBolt] positioned ~-1 175 ~-14 run fill ~-5 ~ ~ ~6 ~1 ~10 air replace
 
-execute as @e[tag=BHur] positioned ~-1 175 ~5 run fill ~ ~ ~ ~2 ~1 ~8 air replace #custom:portalblocks
-execute as @e[tag=YHur] positioned ~-1 175 ~-13 run fill ~ ~ ~ ~2 ~1 ~8 air replace #custom:portalblocks
+execute as @s[tag=BHur] positioned ~-1 175 ~5 run fill ~-5 ~ ~ ~7 ~1 ~8 air replace
+execute as @s[tag=YHur] positioned ~-1 175 ~-13 run fill ~-5 ~ ~ ~7 ~1 ~8 air replace
 
-execute as @e[tag=BGuard] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~10 air replace #custom:portalblocks
-execute as @e[tag=YGuard] positioned ~-1 175 ~-14 run fill ~ ~ ~ ~2 ~2 ~10 air replace #custom:portalblocks
+execute as @s[tag=BGuard] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~2 ~10 air replace
+execute as @s[tag=YGuard] positioned ~-1 175 ~-14 run fill ~-5 ~ ~ ~7 ~2 ~10 air replace
 
-execute as @e[tag=BAnt] positioned ~ 175 ~4 run fill ~ ~ ~ ~ ~3 ~6 air replace #custom:portalblocks
-execute as @e[tag=YAnt] positioned ~ 175 ~-10 run fill ~ ~ ~ ~ ~3 ~6 air replace #custom:portalblocks
+execute as @s[tag=BAnt] positioned ~ 175 ~4 run fill ~-5 ~ ~ ~5 ~3 ~6 air replace
+execute as @s[tag=YAnt] positioned ~ 175 ~-10 run fill ~-5 ~ ~ ~5 ~3 ~6 air replace
 
-execute as @e[tag=BBlade] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~1 ~14 air replace #custom:portalblocks
-execute as @e[tag=YBlade] positioned ~-1 175 ~-18 run fill ~ ~ ~ ~2 ~1 ~14 air replace #custom:portalblocks
+execute as @s[tag=BBlade] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~1 ~14 air replace
+execute as @s[tag=YBlade] positioned ~-1 175 ~-18 run fill ~-5 ~ ~ ~7 ~1 ~14 air replace
 
-execute as @e[tag=BRift] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~1 ~13 air replace #custom:portalblocks
-execute as @e[tag=YRift] positioned ~-1 175 ~-17 run fill ~ ~ ~ ~2 ~1 ~13 air replace #custom:portalblocks
+execute as @s[tag=BRift] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~1 ~13 air replace
+execute as @s[tag=YRift] positioned ~-1 175 ~-17 run fill ~-5 ~ ~ ~7 ~1 ~13 air replace
 
-execute as @e[tag=BJug] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~16 air replace #custom:portalblocks
-execute as @e[tag=YJug] positioned ~-1 175 ~-20 run fill ~ ~ ~ ~2 ~2 ~16 air replace #custom:portalblocks
+execute as @s[tag=BJug] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~2 ~16 air replace
+execute as @s[tag=YJug] positioned ~-1 175 ~-20 run fill ~-5 ~ ~ ~7 ~2 ~16 air replace
 
-execute as @e[tag=BSlash] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~3 ~12 air replace #custom:portalblocks
-execute as @e[tag=YSlash] positioned ~-1 175 ~-16 run fill ~ ~ ~ ~2 ~3 ~12 air replace #custom:portalblocks
+execute as @s[tag=BSlash] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~3 ~12 air replace
+execute as @s[tag=YSlash] positioned ~-1 175 ~-16 run fill ~-5 ~ ~ ~7 ~3 ~12 air replace
 
-execute as @e[tag=BCata] positioned ~-1 175 ~3 run fill ~ ~ ~ ~2 ~2 ~11 air replace #custom:portalblocks
-execute as @e[tag=YCata] positioned ~-1 175 ~-14 run fill ~ ~ ~ ~2 ~2 ~11 air replace #custom:portalblocks
+execute as @s[tag=BCata] positioned ~-1 175 ~3 run fill ~-5 ~ ~ ~7 ~2 ~11 air replace
+execute as @s[tag=YCata] positioned ~-1 175 ~-14 run fill ~-5 ~ ~ ~7 ~2 ~11 air replace
 
-execute as @e[tag=BCitadel] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~9 air replace #custom:portalblocks
-execute as @e[tag=YCitadel] positioned ~-1 175 ~-13 run fill ~ ~ ~ ~2 ~2 ~9 air replace #custom:portalblocks
+execute as @s[tag=BCitadel] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~2 ~9 air replace
+execute as @s[tag=YCitadel] positioned ~-1 175 ~-13 run fill ~-5 ~ ~ ~7 ~2 ~9 air replace
 
-execute as @e[tag=BGemi] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~1 ~9 air replace #custom:portalblocks
-execute as @e[tag=YGemi] positioned ~-1 175 ~-13 run fill ~ ~ ~ ~2 ~1 ~9 air replace #custom:portalblocks
+execute as @s[tag=BGemi] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~1 ~9 air replace
+execute as @s[tag=YGemi] positioned ~-1 175 ~-13 run fill ~-5 ~ ~ ~7 ~1 ~9 air replace
 
-execute as @e[tag=BLift] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~6 air replace #custom:portalblocks
-execute as @e[tag=YLift] positioned ~-1 175 ~-10 run fill ~ ~ ~ ~2 ~2 ~6 air replace #custom:portalblocks
+execute as @s[tag=BLift] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~2 ~6 air replace
+execute as @s[tag=YLift] positioned ~-1 175 ~-10 run fill ~-5 ~ ~ ~7 ~2 ~6 air replace
 
-execute as @e[tag=BHyper] positioned ~-1 175 ~5 run fill ~ ~ ~ ~2 ~2 ~8 air replace #custom:portalblocks
-execute as @e[tag=YHyper] positioned ~-1 175 ~-14 run fill ~ ~ ~ ~2 ~2 ~8 air replace #custom:portalblocks
+execute as @s[tag=BHyper] positioned ~-1 175 ~5 run fill ~-5 ~ ~ ~7 ~2 ~9 air replace
+execute as @s[tag=YHyper] positioned ~-1 175 ~-14 run fill ~-5 ~ ~ ~7 ~2 ~9 air replace
 
-execute as @e[tag=BBull] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~12 air replace #custom:portalblocks
-execute as @e[tag=YBull] positioned ~-1 175 ~-16 run fill ~ ~ ~ ~2 ~2 ~12 air replace #custom:portalblocks
+execute as @s[tag=BBull] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~2 ~12 air replace
+execute as @s[tag=YBull] positioned ~-1 175 ~-16 run fill ~-5 ~ ~ ~7 ~2 ~12 air replace
 
-execute as @e[tag=BDuplex] positioned ~-1 175 ~4 run fill ~ ~ ~ ~2 ~2 ~17 air replace #custom:portalblocks
-execute as @e[tag=YDuplex] positioned ~-1 175 ~-21 run fill ~ ~ ~ ~2 ~2 ~17 air replace #custom:portalblocks
+execute as @s[tag=BDuplex] positioned ~-1 175 ~4 run fill ~-5 ~ ~ ~7 ~2 ~17 air replace
+execute as @s[tag=YDuplex] positioned ~-1 175 ~-21 run fill ~-5 ~ ~ ~7 ~2 ~17 air replace
 
-execute as @s[tag=BBroad] positioned ~-1 175 ~5 run fill ~ ~ ~ ~2 ~2 ~11 air replace #custom:portalblocks
-execute as @e[tag=YBroad] positioned ~-1 175 ~-16 run fill ~ ~ ~ ~2 ~2 ~11 air replace #custom:portalblocks
+execute as @s[tag=BBroad] positioned ~-1 175 ~5 run fill ~-5 ~ ~ ~7 ~2 ~11 air replace
+execute as @s[tag=YBroad] positioned ~-1 175 ~-16 run fill ~-5 ~ ~ ~7 ~2 ~11 air replace
 
 kill @s

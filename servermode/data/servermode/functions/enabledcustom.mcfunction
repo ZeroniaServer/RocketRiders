@@ -22,6 +22,7 @@ function game:forcestop
 execute as @e[tag=Selection,type=armor_stand,limit=1] store result score @s SetGamemode run scoreboard players get @e[tag=rr_normal,limit=1] gamemodeID
 schedule function arenaclear:forceareaclear 2t append
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:globaldefaults
+execute as @e[tag=Selection,type=armor_stand] run function modifiers:disablemodifiers
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshsigns
 tag @e[tag=Selection,type=armor_stand] add SMActive

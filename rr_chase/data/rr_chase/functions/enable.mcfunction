@@ -17,4 +17,5 @@ tag @e[tag=Selection,type=armor_stand] add arrowLimit
 tag @e[tag=Selection,type=armor_stand] add custVortParticle
 tag @e[tag=Selection,type=armor_stand] add customNova
 tag @e[tag=Selection,type=armor_stand] add onlyBlue
+tag @e[tag=Selection,type=armor_stand] add antigriefOff
 team modify Blue friendlyFire true

@@ -15,5 +15,6 @@ schedule function arenaclear:forceareaclear 2t append
 function lobby:parkour/parkoursetup
 function lobby:credits/stop
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:globaldefaults
+execute as @e[tag=Selection,type=armor_stand] run function modifiers:disablemodifiers
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshsigns

@@ -46,8 +46,6 @@ kill @e[type=tnt]
 kill @e[type=tnt_minecart]
 kill @e[type=creeper]
 kill @e[type=dragon_fireball]
-kill @e[tag=blueobtracker,type=area_effect_cloud]
-kill @e[tag=yellowobtracker,type=area_effect_cloud]
 kill @e[tag=splash,type=potion]
 kill @e[type=item]
 kill @e[type=ender_pearl]
@@ -55,6 +53,8 @@ kill @e[tag=BlueNova,type=firework_rocket]
 kill @e[tag=YellowNova,type=firework_rocket]
 execute as @e[tag=blueobsidianshield,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break
 execute as @e[tag=yellowobsidianshield,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break
+execute as @e[tag=blueobtracker,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break
+execute as @e[tag=yellowobtracker,type=area_effect_cloud] at @s run function everytick:obsidian_shield_break
 execute as @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
 execute as @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
 kill @e[tag=YellowPlatform,type=area_effect_cloud]

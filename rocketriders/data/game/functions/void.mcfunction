@@ -13,7 +13,7 @@ scoreboard players add @s[tag=crosser] respawn 1
 kill @s[team=!Spectator,tag=!crosser]
 
 #Handle Spectators
-execute if entity @s[team=Spectator] run tellraw @a ["",{"selector":"@s"},{"text":" fell out of the world"}]
+execute if entity @s[team=Spectator] run tellraw @a ["",{"selector":"@s"},{"translate":"death.attack.outOfWorld"}]
 tp @s[team=Spectator] 12 100 0.5 90 90
 
 #Handle crossers (Rocket Residers)
@@ -25,4 +25,3 @@ scoreboard players set @s[tag=crosser] voidNoFallCount 0
 tp @s[tag=crosser,team=Blue] 12 64 -66 0 0
 tp @s[tag=crosser,team=Yellow] 12 64 66 -180 0
 execute as @s[tag=crosser,predicate=custom:is_on_fire] at @s run function game:putoutfire
-tag @s[tag=crosser] remove crosser

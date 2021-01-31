@@ -39,4 +39,5 @@ scoreboard objectives add beeShieldCount dummy
 scoreboard objectives add Volume dummy
 
 function lobby:credits/restart
-#schedule function custom:ck_uponload 20t
+function custom:ck_uponload
+schedule function servermode:enabled 20t

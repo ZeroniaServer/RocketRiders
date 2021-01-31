@@ -23,13 +23,3 @@ team modify Spectator friendlyFire false
 team modify Developer friendlyFire false
 
 scoreboard players reset * GamesPlayed
-
-function servermode:enabled
-
-setblock -31 190 17 air
-setblock -32 190 17 air
-setblock -31 190 16 air
-setblock -31 191 17 air
-setblock -31 190 18 air
-setblock -30 190 17 air
-setblock -31 189 17 air

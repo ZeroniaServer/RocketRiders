@@ -34,9 +34,6 @@ execute if entity @e[tag=WonVote,tag=SwapMode,type=area_effect_cloud] store resu
 # CTF MODE SELECTED
 execute if entity @e[tag=WonVote,tag=CTFMode,type=area_effect_cloud] store result score @e[tag=Selection,type=armor_stand,limit=1] SetGamemode run scoreboard players get @e[tag=rr_ctf,limit=1] gamemodeID
 
-# CHASE MODE SELECTED
-execute if entity @e[tag=WonVote,tag=ChaseMode,type=area_effect_cloud] store result score @e[tag=Selection,type=armor_stand,limit=1] SetGamemode run scoreboard players get @e[tag=rr_chase,limit=1] gamemodeID
-
 # Select base decorations
 execute if entity @e[tag=WonVote,tag=Set1,type=area_effect_cloud] as @e[tag=ServermodeSet1,type=area_effect_cloud] run function servermode:selectmap
 execute if entity @e[tag=WonVote,tag=Set2,type=area_effect_cloud] as @e[tag=ServermodeSet2,type=area_effect_cloud] run function servermode:selectmap

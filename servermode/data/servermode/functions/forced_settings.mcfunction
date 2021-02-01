@@ -32,7 +32,7 @@ tag @s add rngNova
 tag @s add rngCanopy
 
 #Disable modifiers
-function modifiers:disablemodifiers
+execute as @s[tag=!WindDownForce] run function modifiers:disablemodifiers
 
 #Add needed settings and modifiers
 tag @s add doPrevention

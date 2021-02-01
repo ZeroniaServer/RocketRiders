@@ -78,3 +78,6 @@ execute as @a[tag=CarryFlag,scores={FlagScore=1}] as @a[team=!Lobby] at @s run p
 execute as @a[tag=CarryFlag,team=Blue,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" stole a ","color":"aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
 execute as @a[tag=CarryFlag,team=Yellow,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" stole a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
 effect give @a[tag=CarryFlag,scores={FlagScore=1}] glowing 1000000 0 true
+effect give @a[tag=CarryFlag,scores={FlagScore=1}] resistance 1000000 0 true
+effect give @a[tag=CarryFlag,scores={FlagScore=1}] strength 1000000 0 true
+effect give @a[tag=CarryFlag,scores={FlagScore=1}] absorption 1000000 0 true

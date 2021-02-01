@@ -168,6 +168,6 @@ execute as @s[tag=YellowBroad,tag=!UnableMissile,type=area_effect_cloud] at @s p
 scoreboard players set $1000 Unable 1000
 execute as @s[tag=missile,scores={Unable=1..},type=area_effect_cloud] run scoreboard players operation @s Unable *= $1000 Unable
 execute as @s[tag=missile,scores={Unable=1..},type=area_effect_cloud] run scoreboard players operation @s Unable /= @s Volume
-tag @s[tag=missile,scores={Unable=70..},type=area_effect_cloud] add UnableMissile
-tag @s[tag=missile,scores={Unable=70..},type=area_effect_cloud] add antigrief
+tag @s[tag=missile,scores={Unable=100..},type=area_effect_cloud] add UnableMissile
+tag @s[tag=missile,scores={Unable=100..},type=area_effect_cloud] add antigrief
 scoreboard players reset @s Unable

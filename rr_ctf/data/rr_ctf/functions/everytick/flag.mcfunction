@@ -300,7 +300,10 @@ scoreboard players reset @a MineWhiteGlass
 execute if entity @a[tag=CarryFlag] run function rr_ctf:everytick/carryflag
 tag @a[tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] remove CarryFlag
 scoreboard players reset @a[tag=!CarryFlag] FlagScore
-effect clear @a[tag=!CarryFlag] minecraft:glowing
+execute as @a[tag=!CarryFlag] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s glowing
+execute as @a[tag=!CarryFlag] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s resistance
+execute as @a[tag=!CarryFlag] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s strength
+execute as @a[tag=!CarryFlag] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s absorption
 execute unless entity @e[type=player,team=Blue,tag=CarryFY1] run bossbar set rr_ctf:fy1 value 0
 execute unless entity @e[type=player,team=Blue,tag=CarryFY1] run bossbar set rr_ctf:fy1 players none
 execute unless entity @e[type=player,team=Blue,tag=CarryFY2] run bossbar set rr_ctf:fy2 value 0

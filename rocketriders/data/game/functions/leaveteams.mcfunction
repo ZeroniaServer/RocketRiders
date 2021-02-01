@@ -13,6 +13,8 @@ tp @a[tag=LeavingSpec] -43 212 78 90 0
 clear @a[team=!Lobby,tag=LeaveTeams]
 tag @a[tag=LeaveTeams,team=Lobby] add WasInLobby
 team join Lobby @a[tag=LeaveTeams]
+effect clear @a[tag=LeaveTeams]
+effect give @a[tag=LeaveTeams] night_vision 1000000 255 true
 gamemode adventure @a[tag=LeaveTeams,gamemode=!adventure]
 execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @a[tag=LeaveTeams,tag=!WasInLobby] at @s run playsound entity.enderman.teleport player @s ~ ~ ~

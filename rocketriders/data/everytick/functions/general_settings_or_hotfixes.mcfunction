@@ -49,7 +49,7 @@ execute as @a[team=Lobby] at @s if predicate custom:belowroof run scoreboard pla
 execute as @s[scores={servermode=0},tag=!SMCustom] as @a[team=Lobby,gamemode=!adventure] run gamemode adventure
 
 #Spectators can't switch out of spectator mode (security)
-execute as @s[scores={servermode=0},tag=!SMCustom] as @a[team=Spectator,gamemode=!spectator] run gamemode spectator
+execute as @a[team=Spectator,gamemode=!spectator] run gamemode spectator
 
 #Blue/Yellow players can't switch out of adventure mode before game (security)
 execute as @s[scores={servermode=0},tag=!SMCustom,tag=!GameStarted,tag=!GameEnd] as @a[team=Blue,gamemode=!adventure] run gamemode adventure

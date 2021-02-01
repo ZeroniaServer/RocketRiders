@@ -13,6 +13,7 @@ summon area_effect_cloud ~ ~ ~ {Tags:["CTFRNG"],Duration:1}
 scoreboard players set @e[tag=CTFRNG,type=area_effect_cloud,limit=1] RNGmax 10
 execute as @e[tag=CTFRNG,type=area_effect_cloud,limit=1] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[tag=CTFRNG,type=area_effect_cloud,limit=1] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
+execute as @s[tag=!gaveFirstItem] run scoreboard players set @e[tag=CTFRNG,type=area_effect_cloud,limit=1] RNGscore 3
 
 #Give canopy (20% chance)
 execute as @s[tag=gaveFirstItem] if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=0..1}] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
@@ -23,7 +24,7 @@ execute as @s[tag=gaveFirstItem] if entity @e[tag=CTFRNG,type=area_effect_cloud,
 #Select item (70% chance)
 execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=3..9}] run function items:rng
 execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=3..9}] run function items:tetris
-execute if entity @e[tag=CTFRNG,type=area_effect_cloud,limit=1,scores={RNGscore=3..9}] run tag @s add gaveFirstItem
+tag @s add gaveFirstItem
 
 #Kill randomizer
 kill @e[tag=CTFRNG,type=area_effect_cloud,limit=1]

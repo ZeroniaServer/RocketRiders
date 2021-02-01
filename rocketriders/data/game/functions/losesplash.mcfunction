@@ -2,7 +2,7 @@
 
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomLossSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[tag=RandomLossSplash,type=area_effect_cloud] RNGmax 31
+scoreboard players set @e[tag=RandomLossSplash,type=area_effect_cloud] RNGmax 33
 
 execute as @e[tag=RandomLossSplash,type=area_effect_cloud] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[tag=RandomLossSplash,type=area_effect_cloud] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -38,5 +38,7 @@ execute as @e[tag=RandomLossSplash,scores={RNGscore=27},type=area_effect_cloud] 
 execute as @e[tag=RandomLossSplash,scores={RNGscore=28},type=area_effect_cloud] run title @a[tag=Loser] subtitle ["",{"text":"devs fix game","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=29},type=area_effect_cloud] run title @a[tag=Loser] subtitle ["",{"text":"Did you forget to open the client?","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=30},type=area_effect_cloud] run title @a[tag=Loser] subtitle ["",{"text":"It happens to everyone, buddy :)","color":"red"}]
+execute as @e[tag=RandomLossSplash,scores={RNGscore=31},type=area_effect_cloud] run title @a[tag=Loser] subtitle ["",{"text":"News flash: The other team is not hacking!","color":"red"}]
+execute as @e[tag=RandomLossSplash,scores={RNGscore=32},type=area_effect_cloud] run title @a[tag=Loser] subtitle ["",{"text":"At least you're not buying them a pet!","color":"red"}]
 
 kill @e[tag=RandomLossSplash,type=area_effect_cloud]

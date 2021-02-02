@@ -97,11 +97,11 @@ execute as @e[tag=origin,scores={vortexBoom=3..},type=area_effect_cloud] at @s r
 scoreboard players set @e[tag=origin,scores={vortexBoom=0},type=area_effect_cloud] vortexBoom 10
 scoreboard players add @e[tag=chained,type=area_effect_cloud] vortexChain 1
 execute as @e[tag=chained,scores={vortexChain=4..},type=area_effect_cloud] at @s run function everytick:vortex_chain
-execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10},tag=!VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=!VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:3,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:5,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @e[scores={vortexBoom=10},type=area_effect_cloud] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
-execute as @e[scores={vortexBoom=10},type=area_effect_cloud] at @s run kill @e[type=firework_rocket,tag=BlueNova,distance=..2,limit=1,sort=nearest]
-execute as @e[scores={vortexBoom=10},type=area_effect_cloud] at @s run kill @e[type=firework_rocket,tag=YellowNova,distance=..2,limit=1,sort=nearest]
-execute as @e[scores={vortexBoom=10},type=area_effect_cloud] at @s run kill @s
+execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10..},tag=VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:3,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10..},tag=VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:5,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @e[scores={vortexBoom=10..},type=area_effect_cloud] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
+execute as @e[scores={vortexBoom=10..},type=area_effect_cloud] at @s run kill @e[type=firework_rocket,tag=BlueNova,distance=..2,limit=1,sort=nearest]
+execute as @e[scores={vortexBoom=10..},type=area_effect_cloud] at @s run kill @e[type=firework_rocket,tag=YellowNova,distance=..2,limit=1,sort=nearest]
+execute as @e[scores={vortexBoom=10..},type=area_effect_cloud] at @s run kill @s

@@ -22,6 +22,7 @@ execute as @s[tag=EditedSettings] unless entity @a[team=Yellow] run function gam
 execute as @s[tag=!GameStarted] run scoreboard players set @a dropPickaxe 0
 execute as @s[tag=!GameStarted] run scoreboard players reset @a MineWhiteGlass
 execute as @s[tag=!GameStarted] run scoreboard players reset @a MinePurpleGlass
+execute as @s[scores={count=600},tag=!GameEnd] run clear @a netherite_pickaxe
 execute as @s[scores={count=600},tag=!SMActive] run tellraw @a[team=Blue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Piercing Pickaxe ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
 execute as @s[scores={count=600},tag=!SMActive] run tellraw @a[team=Yellow] [{"text":"Drop your ","color":"yellow","italic":"true"},{"text":"Piercing Pickaxe ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
 execute as @s[scores={count=600},tag=SMActive] run tellraw @a[team=Blue] [{"text":"Use ","color":"aqua","italic":"true"},{"text":"/leave ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]

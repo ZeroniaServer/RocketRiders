@@ -44,5 +44,6 @@ execute as @e[tag=RandomLossSplash,scores={RNGscore=33},type=area_effect_cloud] 
 execute as @e[tag=RandomLossSplash,scores={RNGscore=34},type=area_effect_cloud] run title @a[tag=Loser] subtitle ["",{"text":"What's the strat where you lose?","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=35},type=area_effect_cloud] run title @a[tag=Loser] subtitle ["",{"text":"Pro tip: Try winning.","color":"red"}]
 execute as @e[tag=RandomLossSplash,scores={RNGscore=36},type=area_effect_cloud] run title @a[tag=Loser] subtitle ["",{"text":"ez","color":"red"}]
+execute as @e[tag=RandomLossSplash,scores={RNGscore=37},type=area_effect_cloud] run title @a[tag=Loser] subtitle ["",{"text":"You ever try getting good?","color":"red"}]
 
 kill @e[tag=RandomLossSplash,type=area_effect_cloud]

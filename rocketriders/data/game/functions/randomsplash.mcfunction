@@ -88,6 +88,7 @@ execute as @e[tag=RandomSplash,scores={RNGscore=73},type=area_effect_cloud] run 
 execute as @e[tag=RandomSplash,scores={RNGscore=74},type=area_effect_cloud] run title @a subtitle ["",{"text":"Now Playing: Rick Astley - Never Gonna Give You Up","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=75},type=area_effect_cloud] run title @a subtitle ["",{"text":"Warning: Pro gamers have been detected in the game!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=76},type=area_effect_cloud] run title @a subtitle ["",{"text":"Are your missiles running?","color":"green"}]
-execute as @e[tag=RandomSplash,scores={RNGscore=77},type=area_effect_cloud] run title @a subtitle ["",{"text":"Hold my splash","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=77},type=area_effect_cloud] run title @a subtitle ["",{"text":"Hold my splash!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=78},type=area_effect_cloud] run title @a subtitle ["",{"text":"May the force be with you!","color":"green"}]
 
 kill @e[tag=RandomSplash,type=area_effect_cloud]

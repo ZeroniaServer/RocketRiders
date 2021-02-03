@@ -4,10 +4,10 @@ tag @e[tag=Selection,type=armor_stand] add ResidersOff
 tag @e[tag=Selection,type=armor_stand,tag=Residers] add ResidersWasOn
 tag @e[tag=Selection,type=armor_stand] add HardcoreOff
 tag @e[tag=Selection,type=armor_stand,tag=Hardcore] add HardcoreWasOn
-tag @e[tag=Selection,type=armor_stand,tag=!WindDown] add WindDownWasOff
-tag @e[tag=Selection,type=armor_stand] add WindDown
-tag @e[tag=Selection,type=armor_stand] add WindDownForce
-tag @e[tag=Selection,type=armor_stand,tag=Minute] add MinuteWasOn
+# tag @e[tag=Selection,type=armor_stand,tag=!WindDown] add WindDownWasOff
+# tag @e[tag=Selection,type=armor_stand] add WindDown
+# tag @e[tag=Selection,type=armor_stand] add WindDownForce
+# tag @e[tag=Selection,type=armor_stand,tag=Minute] add MinuteWasOn
 tag @e[tag=Selection,type=armor_stand,tag=DoublePortal] add DoublePortalWasOn
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:unlockdecos
 tag @e[tag=Selection,type=armor_stand] add tyingOff

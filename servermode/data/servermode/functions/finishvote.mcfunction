@@ -40,6 +40,10 @@ execute if entity @e[tag=WonVote,tag=Set2,type=area_effect_cloud] as @e[tag=Serv
 execute if entity @e[tag=WonVote,tag=Set3,type=area_effect_cloud] as @e[tag=ServermodeSet3,type=area_effect_cloud] run function servermode:selectmap
 execute if entity @e[tag=WonVote,tag=Set4,type=area_effect_cloud] as @e[tag=ServermodeSet4,type=area_effect_cloud] run function servermode:selectmap
 
+# Item delay (CTF specific difference)
+execute if entity @e[tag=WonVote,tag=CTFMode,type=area_effect_cloud] run scoreboard players set @e[tag=Selection,type=armor_stand] MaxItemSec 10
+execute unless entity @e[tag=WonVote,tag=CTFMode,type=area_effect_cloud] run scoreboard players set @e[tag=Selection,type=armor_stand] MaxItemSec 15
+
 # Global
 tag @e[tag=Selection,type=armor_stand,limit=1] remove ServerModeVoting
 execute as @e[tag=Selection,type=armor_stand,limit=1] run function arenaclear:areaclear

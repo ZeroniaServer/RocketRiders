@@ -2,7 +2,7 @@
 
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomWinSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[tag=RandomWinSplash,type=area_effect_cloud] RNGmax 30
+scoreboard players set @e[tag=RandomWinSplash,type=area_effect_cloud] RNGmax 31
 
 execute as @e[tag=RandomWinSplash,type=area_effect_cloud] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[tag=RandomWinSplash,type=area_effect_cloud] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -39,5 +39,6 @@ execute as @e[tag=RandomWinSplash,scores={RNGscore=27},type=area_effect_cloud] r
 execute as @e[tag=RandomWinSplash,scores={RNGscore=28},type=area_effect_cloud] run title @a[tag=Winner] subtitle ["",{"text":"Winner winner chicken dinner!","color":"green"}]
 execute as @e[tag=RandomWinSplash,scores={RNGscore=29},type=area_effect_cloud] run title @a[tag=Winner,team=Yellow] subtitle ["",{"text":"Blue was ejected.","color":"green"}]
 execute as @e[tag=RandomWinSplash,scores={RNGscore=29},type=area_effect_cloud] run title @a[tag=Winner,team=Blue] subtitle ["",{"text":"Yellow was ejected.","color":"green"}]
+execute as @e[tag=RandomWinSplash,scores={RNGscore=30},type=area_effect_cloud] run title @a[tag=Winner] subtitle ["",{"text":"Drink the salty tears of your enemies!","color":"green"}]
 
 kill @e[tag=RandomWinSplash,type=area_effect_cloud]

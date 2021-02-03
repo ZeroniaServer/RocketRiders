@@ -8,11 +8,11 @@ execute as @e[tag=Selection,type=armor_stand,tag=HardcoreWasOn] run function are
 tag @e[tag=Selection,type=armor_stand] remove HardcoreWasOn
 tag @e[tag=Selection,type=armor_stand,tag=DoublePortalWasOn] add DoublePortal
 tag @e[tag=Selection,type=armor_stand] remove DoublePortalWasOn
-tag @e[tag=Selection,type=armor_stand,tag=WindDownWasOff] remove WindDown
-tag @e[tag=Selection,type=armor_stand] remove WindDownWasOff
-tag @e[tag=Selection,type=armor_stand] remove WindDownForce
-tag @e[tag=Selection,type=armor_stand,tag=MinuteWasOn] add Minute
-tag @e[tag=Selection,type=armor_stand] remove MinuteWasOn
+# tag @e[tag=Selection,type=armor_stand,tag=WindDownWasOff] remove WindDown
+# tag @e[tag=Selection,type=armor_stand] remove WindDownWasOff
+# tag @e[tag=Selection,type=armor_stand] remove WindDownForce
+# tag @e[tag=Selection,type=armor_stand,tag=MinuteWasOn] add Minute
+# tag @e[tag=Selection,type=armor_stand] remove MinuteWasOn
 tag @e[tag=Selection,type=armor_stand] remove tyingOff
 tag @e[tag=Selection,type=armor_stand] remove fbPortalsOff
 tag @e[tag=Selection,type=armor_stand] remove preventionOff

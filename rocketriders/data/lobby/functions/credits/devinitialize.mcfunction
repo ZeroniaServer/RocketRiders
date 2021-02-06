@@ -13,6 +13,7 @@ replaceitem entity @e[tag=EvtemaCredits,type=armor_stand] weapon.mainhand slime_
 replaceitem entity @e[tag=EvtemaCredits,type=armor_stand] armor.chest leather_chestplate{display:{color:14548992}}
 replaceitem entity @e[tag=EvtemaCredits,type=armor_stand] armor.legs leather_leggings{display:{color:14548992}}
 replaceitem entity @e[tag=EvtemaCredits,type=armor_stand] armor.feet leather_boots{display:{color:7470949}}
+data modify entity @e[tag=EvtemaCredits,type=armor_stand,limit=1] HandItems[1] merge value {id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;2076391720,1485847031,-1498900811,226264565],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vZWR1Y2F0aW9uLm1pbmVjcmFmdC5uZXQvd3AtY29udGVudC91cGxvYWRzL25vdGUtMS5wbmcifX19"}]}}}}
 
 replaceitem entity @e[tag=YZEROCredits,type=armor_stand] armor.head player_head{SkullOwner:{Id:[I;-133639988,-1225243025,-1517505395,-70310304],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE1Y2EyZDE2OWJmMmVjODJmNzEzOWJjZWUxNDYwYjg0ZjJkYjVjNmZiNmMzNmU0NTUzNTA2MTQxYjUyMjA2NSJ9fX0="}]}}}
 replaceitem entity @e[tag=YZEROCredits,type=armor_stand] weapon.mainhand chain_command_block

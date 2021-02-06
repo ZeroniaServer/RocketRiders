@@ -9,6 +9,7 @@ execute as @e[tag=BluePlatform,scores={PlatTime=..57},type=area_effect_cloud,tag
 execute as @e[tag=YellowPlatform,scores={PlatTime=..57},type=area_effect_cloud,tag=!waterTemp,tag=!animated] at @s if predicate custom:canopy_nearyellow run scoreboard players add @s PlatTime 3
 
 #Canopy deploy animation/sounds
+tag @e[scores={PlatTime=1..58},type=area_effect_cloud,tag=killCanopy,tag=!animated] add animated
 execute as @e[scores={PlatTime=1..50},type=area_effect_cloud,tag=!animated] at @s run particle block spruce_leaves ~ ~ ~ 1 0 1 0.1 10
 execute as @e[scores={PlatTime=1},type=area_effect_cloud,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
 
@@ -100,7 +101,7 @@ execute unless entity @s[tag=noPortal] as @e[scores={testplat=9..10},type=ender_
 execute unless entity @s[tag=noPortal] as @e[scores={testplat=9..10},type=ender_pearl] at @s if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat 1
 execute unless entity @s[tag=noPortal] as @e[scores={testplat=9..10},type=ender_pearl] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat 2
 #Disable Yellow Canopies near void
-execute as @e[scores={testplat=9..10},type=ender_pearl] at @s if predicate custom:nearvoid run scoreboard players remove @s testplat 2
+execute as @e[scores={testplat=9..10},type=ender_pearl] at @s if predicate custom:canopy_nearvoid run scoreboard players remove @s testplat 2
 execute as @e[scores={testplat=10},type=ender_pearl,predicate=!custom:nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:yellowcanopy1"}
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
@@ -133,7 +134,7 @@ execute unless entity @s[tag=noPortal] as @e[scores={testplat2=9..10},type=ender
 execute unless entity @s[tag=noPortal] as @e[scores={testplat2=9..10},type=ender_pearl] at @s if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
 execute unless entity @s[tag=noPortal] as @e[scores={testplat2=9..10},type=ender_pearl] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
 #Disable Blue Canopies near void
-execute as @e[scores={testplat2=9..10},type=ender_pearl] at @s if predicate custom:nearvoid run scoreboard players remove @s testplat2 2
+execute as @e[scores={testplat2=9..10},type=ender_pearl] at @s if predicate custom:canopy_nearvoid run scoreboard players remove @s testplat2 2
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat2=10},type=ender_pearl] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
@@ -173,6 +174,35 @@ execute as @e[tag=killCanopy,type=area_effect_cloud] at @s if block ~ ~1 ~1 #min
 execute as @e[tag=killCanopy,type=area_effect_cloud] at @s if block ~ ~1 ~-1 #minecraft:banners run setblock ~ ~1 ~-1 air destroy
 execute as @e[tag=killCanopy,scores={canopyExtraLogs=4..},type=area_effect_cloud] at @s run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 air replace oak_wood
 kill @e[tag=killCanopy,scores={canopyExtraLogs=4..},type=area_effect_cloud]
+
+#Canopy smoke when player on fire is nearby
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if entity @e[type=player,predicate=custom:is_on_fire,distance=..3] run scoreboard players add @s canopySmoke 2
+scoreboard players remove @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1..},type=area_effect_cloud] canopySmoke 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1..},type=area_effect_cloud] at @s unless entity @e[type=player,predicate=custom:is_on_fire,distance=..3] run scoreboard players remove @s canopySmoke 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1..10},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=20},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 100 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21..40},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0.25
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=30},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=30},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=41},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=41..60},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0.5
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=50},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=50},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=61},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=61..80},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0.75
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0.1 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=81},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=81..100},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=90},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=90},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=101},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=101..120},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=110},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 300 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=110},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 2 -1 2 0.01 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=120..},type=area_effect_cloud] run tag @s add FirePoof
 
 #Fire poofing
 execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~-1 ~ fire run tag @s add FirePoof
@@ -214,12 +244,6 @@ execute as @e[scores={PlatTime=270},type=area_effect_cloud] at @s run playsound 
 execute as @e[scores={PlatTime=275},type=area_effect_cloud] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1.2
 execute as @e[scores={PlatTime=280},type=area_effect_cloud] at @s run playsound block.wood.break player @a ~ ~ ~ 2 1.5
 execute as @e[scores={PlatTime=300},type=area_effect_cloud] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 100 force @a
-
-#Fireballs poof Canopies
-execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] if entity @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof
-execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] if entity @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof
-execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire replace #minecraft:leaves
-execute as @e[type=fireball] at @s unless entity @s[nbt={Motion:[0.0d, 0.0d, 0.0d]}] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire replace oak_log
 
 #Canopy watering (one time use - Splash extends Canopy duration)
 execute as @e[scores={PlatTime=3..300},tag=!watered,type=area_effect_cloud] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~ water run tag @s add wateredInit

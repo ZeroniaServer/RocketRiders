@@ -15,3 +15,12 @@ tag @e[type=fireball,tag=NormalFireball,nbt={Motion:[0.0,0.0,0.0]}] add Still
 #Custom team particles for moving Fireball
 execute as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a
 execute as @e[type=fireball,tag=FireballYellow,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a
+
+#Fireballs poof Canopies
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s if entity @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s if entity @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s store result score @s CmdData run fill ~-0.5 ~-0.5 ~-0.5 ~0.5 ~0.5 ~0.5 fire replace #minecraft:leaves
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still,scores={CmdData=1..}] at @s run playsound entity.blaze.shoot player @a ~ ~ ~ 2 1
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s store result score @s CmdData run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire replace oak_log
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still,scores={CmdData=1..}] at @s run playsound entity.blaze.shoot player @a ~ ~ ~ 2 1
+scoreboard players reset @e[type=fireball,tag=NormalFireball] CmdData

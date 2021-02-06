@@ -2,18 +2,18 @@ clear @a[team=Blue] #custom:clear
 clear @a[team=Yellow] #custom:clear
 execute as @s[scores={endtimer=1},tag=BlueWon] run clear @a[team=Yellow] netherite_pickaxe
 execute as @s[scores={endtimer=1},tag=YellowWon] run clear @a[team=Blue] netherite_pickaxe
-execute as @s[scores={endtimer=1}] run function rr_ctf:game/endstats
 execute as @s[scores={endtimer=1..}] run fill -9 74 68 -15 64 61 moving_piston replace air
 execute as @s[scores={endtimer=1..}] run fill 35 74 68 29 64 61 moving_piston replace air
 execute as @s[scores={endtimer=1..}] run fill -9 74 -68 -15 64 -61 moving_piston replace air
 execute as @s[scores={endtimer=1..}] run fill 35 74 -68 29 64 -61 moving_piston replace air
-tag @a remove FlipMissile
-tag @a remove CarryFlag
-tag @a remove CarryFY1
-tag @a remove CarryFY2
-tag @a remove CarryFB1
-tag @a remove CarryFB2
-scoreboard players reset * FlagScore
+execute as @s[scores={endtimer=2}] run function rr_ctf:game/endstats
+execute as @s[scores={endtimer=2..}] run tag @a remove FlipMissile
+execute as @s[scores={endtimer=2..}] run tag @a remove CarryFlag
+execute as @s[scores={endtimer=2..}] run tag @a remove CarryFY1
+execute as @s[scores={endtimer=2..}] run tag @a remove CarryFY2
+execute as @s[scores={endtimer=2..}] run tag @a remove CarryFB1
+execute as @s[scores={endtimer=2..}] run tag @a remove CarryFB2
+execute as @s[scores={endtimer=2..}] run scoreboard players reset * FlagScore
 execute as @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 players none
 execute as @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
 execute as @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 value 0

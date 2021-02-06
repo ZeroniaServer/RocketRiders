@@ -27,6 +27,7 @@ bossbar set rr_ctf:fb2 max 10
 
 fill -10 230 77 -10 230 79 polished_andesite
 setblock -10 231 78 polished_andesite
+data modify entity @e[tag=EvtemaCredits,type=armor_stand,limit=1] HandItems[1] merge value {id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;2076391720,1485847031,-1498900811,226264565],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vZWR1Y2F0aW9uLm1pbmVjcmFmdC5uZXQvd3AtY29udGVudC91cGxvYWRzL25vdGUtMS5wbmcifX19"}]}}}}
 
 scoreboard objectives add MineWhiteGlass minecraft.mined:minecraft.white_stained_glass
 scoreboard objectives add MinePurpleGlass minecraft.mined:minecraft.purple_stained_glass
@@ -37,6 +38,7 @@ scoreboard objectives add canopyCount dummy
 scoreboard objectives add shieldCount dummy
 scoreboard objectives add beeShieldCount dummy
 scoreboard objectives add Volume dummy
+scoreboard objectives add canopySmoke dummy
 
 function lobby:credits/restart
 function custom:ck_uponload

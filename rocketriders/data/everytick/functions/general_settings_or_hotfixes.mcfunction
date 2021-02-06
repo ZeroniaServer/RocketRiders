@@ -69,8 +69,8 @@ tag @a[team=!Blue,team=!Yellow] remove Loser
 
 #For Canopies to continue operating (necessary for void falling)
 scoreboard players add @a ThrowPlat 0
-scoreboard players add @a[scores={ThrowPlat=1..16}] ThrowPlat 1
-scoreboard players set @a[scores={ThrowPlat=17..}] ThrowPlat 0
+scoreboard players add @a[scores={ThrowPlat=1..30}] ThrowPlat 1
+scoreboard players set @a[scores={ThrowPlat=31..}] ThrowPlat 0
 
 #Remove dragon breath
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]

@@ -20,6 +20,7 @@ execute as @s[tag=EditedSettings] if entity @a[team=Blue] if entity @a[team=Yell
 execute as @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
 execute as @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:restartcountdown
 execute as @s[tag=!GameStarted] run scoreboard players set @a dropPickaxe 0
+execute as @s[tag=!GameStarted] run scoreboard players set @s canopyStreak 0
 execute as @s[tag=!GameStarted] run scoreboard players reset @a MineWhiteGlass
 execute as @s[tag=!GameStarted] run scoreboard players reset @a MinePurpleGlass
 execute as @s[scores={count=600},tag=!GameEnd] run clear @a netherite_pickaxe

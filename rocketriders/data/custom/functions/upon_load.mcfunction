@@ -39,6 +39,7 @@ scoreboard objectives add shieldCount dummy
 scoreboard objectives add beeShieldCount dummy
 scoreboard objectives add Volume dummy
 scoreboard objectives add canopySmoke dummy
+scoreboard objectives add canopyStreak dummy
 
 function lobby:credits/restart
 function custom:ck_uponload

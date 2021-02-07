@@ -36,8 +36,8 @@ execute if entity @s[tag=doPrevention,tag=!preventionOff] run function items:pre
 execute if entity @s[tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
 
 #Antigrief (only runs when there is not an enemy player near base)
-execute as @s[tag=!antigriefOff] as @e[tag=bluemissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run function items:prevention/antigrief
-execute as @s[tag=!antigriefOff] as @e[tag=yellowmissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run function items:prevention/antigrief
+execute as @s[tag=!antigriefOff] as @e[tag=bluemissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=17] run function items:prevention/antigrief
+execute as @s[tag=!antigriefOff] as @e[tag=yellowmissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=57,dz=17] run function items:prevention/antigrief
 
 #Give back
 execute as @e[tag=UnableMissile,tag=!missileflip,type=area_effect_cloud] at @s run function items:prevention/unablefx

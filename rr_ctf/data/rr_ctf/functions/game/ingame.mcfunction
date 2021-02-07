@@ -2,6 +2,7 @@
 execute as @s[tag=!SMActive] run function rr_ctf:game/leavemidgame
 
 #item RNG and spawnpoints
+tag @s add givenCanopy
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_ctf:items/giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1

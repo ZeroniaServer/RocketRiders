@@ -7,12 +7,12 @@ execute as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" le
 tag @a[tag=LeaveTeams,team=Spectator] add LeavingSpec
 execute as @a[tag=LeavingSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
 execute as @a[tag=LeavingSpec] run tp @s @s
+tag @a[tag=LeaveTeams,team=Lobby] add WasInLobby
+team join Lobby @a[tag=LeaveTeams]
 tp @a[tag=LeavingYellow] -78 204 92 45 0
 tp @a[tag=LeavingBlue] -78 204 64 135 0
 tp @a[tag=LeavingSpec] -43 212 78 90 0
-clear @a[team=!Lobby,tag=LeaveTeams]
-tag @a[tag=LeaveTeams,team=Lobby] add WasInLobby
-team join Lobby @a[tag=LeaveTeams]
+clear @a[tag=LeaveTeams]
 effect clear @a[tag=LeaveTeams]
 effect give @a[tag=LeaveTeams] night_vision 1000000 255 true
 gamemode adventure @a[tag=LeaveTeams,gamemode=!adventure]

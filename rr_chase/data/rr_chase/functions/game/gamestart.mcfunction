@@ -11,7 +11,8 @@ execute as @s[tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_eff
 execute as @s[tag=BlueFull,tag=EditedSettings] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 
 #Items
-execute as @a[tag=JoinBlue] run function game:givegear
+execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:givegear
 function game:saberblue
 execute as @s[tag=GameStarted] as @a[tag=JoinBlue] run function items:util/givearrows
 

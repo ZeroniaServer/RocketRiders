@@ -87,11 +87,11 @@ execute as @e[scores={PlatTime=58},type=area_effect_cloud,tag=!animated] at @s r
 
 tag @e[scores={PlatTime=58..},type=area_effect_cloud] add animated
 
-#Ender Pearl UUID storage - necessary for accurate teleports
+#Ender Pearl UUID storage and owner detection - necessary for accurate teleports
 execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data get entity @s Owner[0]
+execute as @e[type=ender_pearl,tag=!BluePlat,tag=!YellowPlat] at @s if entity @a[scores={ThrowPlat=1..}] run function everytick:canopy_owner
 
 ##Yellow Canopy functionality
-execute as @a[team=Yellow,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..5,tag=!BluePlat,tag=!YellowPlat] add YellowPlat
 execute as @e[tag=YellowPlat,type=ender_pearl] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=YellowPlat,type=ender_pearl] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=YellowPlat,type=ender_pearl] at @s run scoreboard players add @s testplat 1
@@ -124,7 +124,6 @@ execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yell
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41},type=area_effect_cloud] pearlOwnerUUID
 
 ##Blue Canopy functionality
-execute as @a[team=Blue,scores={ThrowPlat=1..}] at @s run tag @e[type=ender_pearl,sort=nearest,limit=1,distance=..5,tag=!BluePlat,tag=!YellowPlat] add BluePlat
 execute as @e[tag=BluePlat,type=ender_pearl] at @s run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 execute as @e[tag=BluePlat,type=ender_pearl] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
 execute as @e[tag=BluePlat,type=ender_pearl] at @s run scoreboard players add @s testplat2 1

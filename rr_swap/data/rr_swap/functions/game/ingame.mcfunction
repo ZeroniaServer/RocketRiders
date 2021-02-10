@@ -13,7 +13,8 @@ function rr_swap:items/cluster
 function rr_swap:baseswap/platform
 
 #player armor
-function rr_swap:baseswap/gear
+execute as @s[scores={servermode=0},tag=!SMCustom] run function rr_swap:baseswap/gear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] run function servermode:giveswapgear
 
 #Item RNG and spawnpoints
 scoreboard players add @s RandomItem 1

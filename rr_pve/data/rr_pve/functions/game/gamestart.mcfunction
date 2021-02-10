@@ -19,7 +19,8 @@ execute as @s[scores={count=1}] positioned -95 202 94 run function rr_bots:bot/s
 execute as @s[scores={count=1}] run scoreboard players set @e[tag=Bot,type=armor_stand] botarrowitems 20
 
 #Items
-execute as @a[tag=JoinBlue] run function game:givegear
+execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:givegear
 function game:saberblue
 
 #Tag Removal

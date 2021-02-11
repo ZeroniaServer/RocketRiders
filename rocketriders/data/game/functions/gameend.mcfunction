@@ -89,6 +89,7 @@ execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] Le
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Yellow] LeaveGame 1
 execute as @s[scores={endtimer=570}] run tp @a[team=Blue] -36 211 61.0 90 0
 execute as @s[scores={endtimer=570}] run tp @a[team=Yellow] -36 211 96.0 90 0
+execute as @s[scores={endtimer=570}] run tp @a[team=Spectator] -43 211 78 90 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
 #Server mode specifics

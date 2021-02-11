@@ -1,6 +1,8 @@
 ##Gives executor a Shield
 #Antidupe check
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasShield run clear @s snowball 0
+execute store result score @s HasShield run clear @s snowball 0
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players operation @s HasShield %= 16 CmdData
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] as @s[scores={HasShield=1..15},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasShield 0
 
 #Title/giving

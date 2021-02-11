@@ -1,6 +1,8 @@
 ##Gives executor a Canopy
 #Antidupe check - Canopies are an exception for modes that require extra Canopies for travel. In this case, you can only have 3 Canopies.
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasPlat run clear @s ender_pearl 0
+execute store result score @s HasPlat run clear @s ender_pearl 0
+execute if entity @e[tag=Selection,tag=doStacking,tag=!canopyStack,type=armor_stand] run scoreboard players operation @s HasPlat %= 16 CmdData
+execute if entity @e[tag=Selection,tag=doStacking,tag=!canopyStack,type=armor_stand] as @s[scores={HasPlat=1..15},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[tag=Selection,tag=doStacking,tag=!canopyStack,type=armor_stand] run scoreboard players set @s HasPlat 0
 
 #Without Canopy stacking

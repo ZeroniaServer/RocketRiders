@@ -1,6 +1,9 @@
 #Antidupe check
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasTippedArrows run clear @s tipped_arrow 0
+execute store result score @s HasTippedArrows run clear @s tipped_arrow 0
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players operation @s HasTippedArrows %= 64 CmdData
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] as @s[scores={HasTippedArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasTippedArrows 0
+execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] as @s[scores={HasTippedArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving
 title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Tipped Arrows already obtained.","color":"light_purple"}

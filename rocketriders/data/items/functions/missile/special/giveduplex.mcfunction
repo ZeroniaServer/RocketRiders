@@ -1,6 +1,8 @@
 ##Gives executor a Duplex
 #Antidupe check
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasDuplex run clear @s parrot_spawn_egg 0
+execute store result score @s HasDuplex run clear @s parrot_spawn_egg 0
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players operation @s HasDuplex %= 64 CmdData
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] as @s[scores={HasDuplex=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasDuplex 0
 
 #Title/giving

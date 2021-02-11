@@ -1,6 +1,8 @@
 ##Gives executor a TomaTwo
 #Antidupe check
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasToma run clear @s creeper_spawn_egg 0
+execute store result score @s HasToma run clear @s creeper_spawn_egg 0
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players operation @s HasToma %= 64 CmdData
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] as @s[scores={HasToma=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasToma 0
 
 #Title/giving

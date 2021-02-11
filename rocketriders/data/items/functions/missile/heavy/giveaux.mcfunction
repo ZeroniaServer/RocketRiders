@@ -1,6 +1,8 @@
 ##Gives executor an Auxiliary
 #Antidupe check
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasAux run clear @s mooshroom_spawn_egg 0
+execute store result score @s HasAux run clear @s mooshroom_spawn_egg 0
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players operation @s HasAux %= 64 CmdData
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] as @s[scores={HasAux=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasAux 0
 
 #Title/giving

@@ -41,6 +41,9 @@ scoreboard objectives add Volume dummy
 scoreboard objectives add canopySmoke dummy
 scoreboard objectives add canopyStreak dummy
 
+scoreboard players set 64 CmdData 64
+scoreboard players set 16 CmdData 16
+
 function lobby:credits/restart
 function custom:ck_uponload
 # schedule function servermode:enabled 20t

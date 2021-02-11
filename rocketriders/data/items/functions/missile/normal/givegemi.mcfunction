@@ -1,6 +1,8 @@
 ##Gives executor a Gemini
 #Antidupe check
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasGemi run clear @s fox_spawn_egg 0
+execute store result score @s HasGemi run clear @s fox_spawn_egg 0
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players operation @s HasGemi %= 64 CmdData
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] as @s[scores={HasGemi=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasGemi 0
 
 #Title/giving

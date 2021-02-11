@@ -1,6 +1,8 @@
 ##Gives executor a Juggerbuster
 #Antidupe check
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasJug run clear @s zombie_horse_spawn_egg 0
+execute store result score @s HasJug run clear @s zombie_horse_spawn_egg 0
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players operation @s HasJug %= 64 CmdData
+execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] as @s[scores={HasJug=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasJug 0
 
 #Title/giving

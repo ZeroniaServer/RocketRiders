@@ -1,10 +1,10 @@
 ##Gives executor Arrows
-#Antidupe check
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s HasArrows run clear @s arrow 0
-#Arrows are an exception for stacking in modes that limit arrows
+#Antidupe check - Arrows are an exception for stacking in modes that limit arrows.
+execute store result score @s HasArrows run clear @s arrow 0
+execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_stand] run scoreboard players operation @s HasArrows %= 64 CmdData
+execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_stand] as @s[scores={HasArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_stand] run scoreboard players set @s HasArrows 0
-#If player already has a valid amount of arrows then they technically don't have a full hotbar
-execute as @s[scores={HasArrows=1..3},tag=fullHotbar] if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] run tag @s remove fullHotbar
+execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] as @s[scores={HasArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving
 title @s[scores={HasArrows=4..},tag=!fullHotbar] actionbar {"text":"Arrows already obtained.","color":"aqua"}

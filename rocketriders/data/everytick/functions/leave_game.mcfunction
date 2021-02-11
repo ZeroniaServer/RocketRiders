@@ -17,7 +17,6 @@ effect give @a[scores={LeaveGame=1..}] resistance 1000000 255 true
 effect give @a[scores={LeaveGame=1..}] night_vision 1000000 100 true
 team join Lobby @a[scores={LeaveGame=1..},team=!Lobby]
 gamemode adventure @a[scores={LeaveGame=1..},gamemode=!adventure]
-title @a[scores={LeaveGame=1..}] times 10 80 20
 spawnpoint @a[tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78 90
 spawnpoint @a[tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96 90
 spawnpoint @a[tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61 90
@@ -62,6 +61,9 @@ execute as @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[scores={Le
 execute as @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[scores={LeaveGame=1..}] run tellraw @s ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" "},{"text":"2","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"selector":"@e[tag=ServermodeSet2]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 2"}},{"text":"\n|","bold":true,"color":"dark_gray"}]
 execute as @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[scores={LeaveGame=1..}] run tellraw @s ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" "},{"text":"3","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"selector":"@e[tag=ServermodeSet3]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 3"}},{"text":"\n|","bold":true,"color":"dark_gray"}]
 execute as @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[scores={LeaveGame=1..}] run tellraw @s ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" "},{"text":"4","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"selector":"@e[tag=ServermodeSet4]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"text":"\n"}]
+
+#Notify game (if already selected)
+execute as @s[tag=EditedSettings,tag=!switchServermode] run tag @a[scores={LeaveGame=1..}] add informMe
 
 #Reset
 scoreboard players reset @a[scores={LeaveGame=1..}] VoteNum

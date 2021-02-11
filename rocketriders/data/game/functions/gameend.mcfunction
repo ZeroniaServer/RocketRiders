@@ -87,6 +87,8 @@ execute as @s[scores={endtimer=570},tag=Sonar] as @e[tag=Bot,type=armor_stand] r
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Spectator] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Yellow] LeaveGame 1
+execute as @s[scores={endtimer=570}] run tp @a[team=Blue] -36 211 61.0 90 0
+execute as @s[scores={endtimer=570}] run tp @a[team=Yellow] -36 211 96.0 90 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute as @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
 #Server mode specifics
@@ -106,6 +108,7 @@ execute as @s[scores={endtimer=570..}] run scoreboard players reset $count Vorte
 tag @s[scores={endtimer=570..}] remove GameEnd
 
 ##For repeating settings
+tag @s[scores={RepeatSettings=0}] remove Repeat
 execute if entity @s[scores={endtimer=570..},tag=Repeat] unless entity @s[tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning,tag=!rngUtil] run function arenaclear:areaclear
 
 ##Reset end timer

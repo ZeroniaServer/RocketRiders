@@ -1,1 +1,2 @@
-execute as @e[tag=Selection,type=armor_stand,limit=1] run function servermode:forced_settings
+execute as @e[tag=Selection,type=armor_stand,limit=1,tag=!swapEnabled] run function servermode:forced_settings
+execute as @e[tag=Selection,type=armor_stand,limit=1,tag=swapEnabled] as @a run function servermode:swap_forcedsettings

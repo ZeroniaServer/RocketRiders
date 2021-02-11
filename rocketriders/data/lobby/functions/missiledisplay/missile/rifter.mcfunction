@@ -22,6 +22,6 @@ fill 22 202 69 15 206 79 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Heavy] ","color":"red","bold":"true"},{"text":"Rifter","color":"white"}]
-execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Rifter is an observer engine missile with plenty of TNT to blow up a portal.","color":"gray","italic":"true"}
-execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: YZEROgame, 69thAmendment, & Chronos22)","color":"gray","italic":"true","bold":"false"}
+execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Rifter is an observer-engine missile with plenty of TNT to tear a rift in the enemy base.","color":"gray","italic":"true"}
+execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: YZEROgame, Chronos22, & 69thAmendment)","color":"gray","italic":"true","bold":"false"}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":""}

@@ -180,28 +180,28 @@ scoreboard players remove @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke
 execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1..},type=area_effect_cloud] at @s unless entity @e[type=player,predicate=custom:is_on_fire,distance=..3] run scoreboard players remove @s canopySmoke 1
 execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
 execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 100 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=11},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0.25
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 200 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=31},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0.5
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=31},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=41},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=41},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0 200 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=51},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0.75
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=51},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=61},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=61},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0.1 200 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=71},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 1
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=71},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=81},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=81},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 200 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=91},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 1.5
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=91},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=101},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=101},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 300 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=111},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 2
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=111},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 2 -1 2 0.01 200 force
-execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=120..},type=area_effect_cloud] run tag @s add FirePoof
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=7},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0.25
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=14},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=14},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0.5
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=28},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=28},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=35},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 0.75
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=35},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=42},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=42},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0.1 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=49},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=49},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=56},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=56},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=63},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 1.5
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=63},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70},type=area_effect_cloud] at @s run playsound block.campfire.ambient player @a ~ ~ ~ 2 1
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70},type=area_effect_cloud] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 300 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=77},type=area_effect_cloud] at @s run playsound block.fire.ambient player @a ~ ~ ~ 2 2
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=77},type=area_effect_cloud] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 2 -1 2 0.01 200 force
+execute as @e[tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=80..},type=area_effect_cloud] run tag @s add FirePoof
 
 #Fire poofing
 execute as @e[tag=!killCanopy,scores={PlatTime=3..300},type=area_effect_cloud] at @s if block ~ ~-1 ~ fire run tag @s add FirePoof

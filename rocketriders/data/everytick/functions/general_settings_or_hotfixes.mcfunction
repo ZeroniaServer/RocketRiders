@@ -9,11 +9,11 @@ execute as @a store result score @s playerUUID run data get entity @s UUID[0]
 #Missile Display Area
 function lobby:missiledisplay/placedisp
 
-#Tutorial Advancements
+#Tutorial advancements
 execute as @s[scores={servermode=0},tag=!SMCustom] run function tutorial:advantriggers
 
-#Handy tips for newcomers
-execute unless entity @s[scores={servermode=1}] unless entity @s[tag=SMCustom] run function everytick:tip
+#Handy tips for newcomers (disabled on duel servermode)
+execute unless entity @s[scores={servermode=2}] unless entity @s[tag=SMCustom] run function everytick:tip
 
 #Fix weirdness with joinpads
 execute as @s[tag=!EditedSettings] run tag @e[tag=yellowjoinpad,type=area_effect_cloud] add CancelJoin

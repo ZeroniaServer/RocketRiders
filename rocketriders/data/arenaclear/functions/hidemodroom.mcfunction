@@ -1,0 +1,10 @@
+##Hides nametags in Modification Room
+data merge entity @e[tag=modroomItems,limit=1,type=area_effect_cloud] {CustomNameVisible:0b,Age:0}
+data merge entity @e[tag=modroomGamerules,limit=1,type=area_effect_cloud] {CustomNameVisible:0b,Age:0}
+data merge entity @e[tag=modroomCustom,limit=1,type=area_effect_cloud] {CustomNameVisible:0b,Age:0}
+data merge entity @e[tag=modroomNormal,limit=1,type=area_effect_cloud] {CustomNameVisible:0b,Age:0}
+data merge entity @e[tag=modroomHeavy,limit=1,type=area_effect_cloud] {CustomNameVisible:0b,Age:0}
+data merge entity @e[tag=modroomLightning,limit=1,type=area_effect_cloud] {CustomNameVisible:0b,Age:0}
+data merge entity @e[tag=modroomUtility,limit=1,type=area_effect_cloud] {CustomNameVisible:0b,Age:0}
+data merge entity @e[tag=modroomDecos,limit=1,type=area_effect_cloud] {CustomNameVisible:0b,Age:0}
+data merge entity @e[tag=modroomGoBack,limit=1,type=area_effect_cloud] {CustomNameVisible:0b,Age:0}

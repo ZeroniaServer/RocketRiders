@@ -13,6 +13,7 @@ execute as @e[tag=Selection,type=armor_stand,limit=1] store result score @s SetG
 schedule function arenaclear:forceareaclear 2t append
 function lobby:parkour/parkoursetup
 function lobby:credits/stop
+function arenaclear:unhidemodroom
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:globaldefaults
 execute as @e[tag=Selection,type=armor_stand] run function modifiers:disablemodifiers
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer

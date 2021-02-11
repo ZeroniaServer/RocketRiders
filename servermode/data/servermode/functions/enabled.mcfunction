@@ -22,4 +22,5 @@ setblock -31 189 17 air
 execute as @e[tag=Selection,type=armor_stand] run function lobby:credits/stop
 fill -29 196 22 -33 196 22 air
 function game:forcestop
+function arenaclear:hidemodroom
 function servermode:forcenormal

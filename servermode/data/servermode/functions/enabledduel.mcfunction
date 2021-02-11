@@ -22,4 +22,5 @@ setblock -31 190 18 air
 setblock -30 190 17 air
 setblock -31 189 17 air
 function lobby:credits/stop
+function arenaclear:hidemodroom
 fill -29 196 22 -33 196 22 air

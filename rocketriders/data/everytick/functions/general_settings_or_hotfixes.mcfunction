@@ -120,5 +120,6 @@ execute as @a[team=Lobby] store result score @s HasNavBook run clear @s written_
 clear @a[team=Lobby,scores={HasNavBook=2..}] written_book
 
 #Servermode teleport out of modification room
-execute as @e[tag=Selection,type=armor_stand,scores={servermode=1..}] as @a at @s if predicate tutorial:in_modification run tellraw @s ["",{"text":"You shouldn't be here!","color":"red"}]
-execute as @e[tag=Selection,type=armor_stand,scores={servermode=1..}] as @a at @s if predicate tutorial:in_modification run function custom:leave
+execute as @s[scores={servermode=1..}] as @a at @s if predicate tutorial:in_modification run tellraw @s ["",{"text":"You shouldn't be here!","color":"red"}]
+execute as @s[scores={servermode=1..}] as @a[team=!Spectator] at @s if predicate tutorial:in_modification run function custom:leave
+execute as @s[scores={servermode=1..}] as @a[team=Spectator] at @s if predicate tutorial:in_modification run tp @s 12 100 0.5 90 90

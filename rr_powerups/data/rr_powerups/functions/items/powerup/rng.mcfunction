@@ -56,3 +56,7 @@ execute as @e[tag=rngSelected,tag=rngDuplex,type=area_effect_cloud] as @e[scores
 execute as @e[tag=rngSelected,tag=rngDuplex,type=area_effect_cloud] as @e[scores={capturePoint=2},type=area_effect_cloud] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"[Special] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Duplex","color":"gold","italic":"true"}]
 execute as @e[tag=rngSelected,tag=rngBroad,type=area_effect_cloud] as @e[scores={capturePoint=1},type=area_effect_cloud] run tellraw @a[team=!Lobby] [{"text":"Blue received: ","color":"dark_aqua","bold":"true"},{"text":"[Special] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Broadsword","color":"blue","italic":"true"}]
 execute as @e[tag=rngSelected,tag=rngBroad,type=area_effect_cloud] as @e[scores={capturePoint=2},type=area_effect_cloud] run tellraw @a[team=!Lobby] [{"text":"Yellow received: ","color":"yellow","bold":"true"},{"text":"[Special] ","color":"dark_purple","bold":"true","italic":"true"},{"text":"Broadsword","color":"gold","italic":"true"}]
+
+#hotbar full exceptions
+execute if entity @e[tag=rngSelected,tag=rngInfinity,type=area_effect_cloud] run tag @s add noHotbarWarn
+execute if entity @e[tag=rngSelected,tag=rngElytra,type=area_effect_cloud] run tag @s add noHotbarWarn

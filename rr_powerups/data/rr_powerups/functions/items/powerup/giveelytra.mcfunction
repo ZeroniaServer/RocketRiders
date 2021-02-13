@@ -4,6 +4,8 @@ execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboa
 
 #Title/giving
 execute as @s[scores={HasElytra=1..}] run title @s actionbar {"text":"Elytra repaired.","color":"aqua"}
+execute as @s[scores={HasElytra=1..}] run tag @s add DelayActionbar
+execute as @s[scores={HasElytra=1..}] run scoreboard players set @s actionbardelay 0
 execute as @s[scores={HasElytra=1..}] run clear @s elytra
 title @s[scores={HasElytra=0}] title ["",{"text":"Elytra ","color":"dark_purple","italic":"true","bold":"true"},{"text":"obtained.","color":"light_purple"}]
 title @s[scores={HasElytra=0}] subtitle {"text":"Jump in midair to activate. Low durability!","color":"light_purple","italic":"true"}

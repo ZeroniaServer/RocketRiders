@@ -1,6 +1,8 @@
 execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s[tag=!Infinity] HasArrows run clear @s arrow 0
 execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_stand] run scoreboard players set @s[tag=!Infinity] HasArrows 0
 title @s[tag=Infinity] actionbar {"text":"Infinity Saber already obtained.","color":"light_purple"}
+tag @s[tag=Infinity] add DelayActionbar
+scoreboard players set @s[tag=Infinity] actionbardelay 0
 title @s[tag=!Infinity] title ["",{"text":"Infinity Saber ","color":"dark_purple","italic":"true","bold":"true"}]
 title @s[tag=!Infinity] subtitle {"text":"Shoot infinite arrows! Lasts until death.","color":"light_purple","italic":"true"}
 give @s[scores={HasArrows=0},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}} 1

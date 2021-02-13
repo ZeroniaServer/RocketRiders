@@ -29,9 +29,6 @@ execute if entity @e[tag=captureMiddle,scores={capturePoint=0},type=area_effect_
 execute as @s[scores={powerupcount=20}] run scoreboard players remove @s PowerupDisplay 1
 execute as @s[scores={powerupcount=20}] run scoreboard players reset @s powerupcount
 execute if entity @e[scores={capturePoint=0,captureBlue=0,captureYellow=0},type=area_effect_cloud] run scoreboard players set @s PowerupDisplay 12
-# execute as @s[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=1},type=area_effect_cloud] as @e[type=player,team=Blue,tag=onCapturePoint] run tp @s 12 64 -66 0 0
-# execute as @s[scores={PowerupDisplay=..0}] if entity @e[scores={capturePoint=2},type=area_effect_cloud] as @e[type=player,team=Yellow,tag=onCapturePoint] run tp @s 12 64 66 -180 0
-execute as @s[scores={PowerupDisplay=..0}] run tag @a add DelayActionbar
 execute as @s[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
 scoreboard players set @s[scores={PowerupDisplay=..0}] PowerupDisplay 12
 

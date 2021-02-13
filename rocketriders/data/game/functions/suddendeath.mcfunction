@@ -18,9 +18,10 @@ execute as @s[scores={SDtime=1..15}] run kill @e[type=creeper]
 
 ##Preparing for Sudden Death
 execute as @s[scores={SDtime=1}] run bossbar set rr:startgame name ["",{"text":"A match is currently in Sudden Death. Feel free to join in!","color":"dark_red"}]
-execute as @s[scores={SDtime=1}] run tag @e[tag=yellowjoinpad,type=area_effect_cloud] remove CancelJoin
-execute as @s[scores={SDtime=1}] run tag @e[tag=bluejoinpad,type=area_effect_cloud] remove CancelJoin
-execute as @s[scores={SDtime=1}] run tag @e[tag=specjoinpad,type=area_effect_cloud] remove CancelJoin
+execute as @s[scores={SDtime=1..}] run tag @s add EditedSettings
+execute as @s[scores={SDtime=1..}] run tag @e[tag=yellowjoinpad,type=area_effect_cloud] remove CancelJoin
+execute as @s[scores={SDtime=1..}] run tag @e[tag=bluejoinpad,type=area_effect_cloud] remove CancelJoin
+execute as @s[scores={SDtime=1..}] run tag @e[tag=specjoinpad,type=area_effect_cloud] remove CancelJoin
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Yellow] 12 64 66 180 0
 execute as @s[scores={SDtime=1}] run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID

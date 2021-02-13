@@ -6,3 +6,12 @@ execute if entity @e[tag=rngSelected,tag=rngPowerup,type=area_effect_cloud] run 
 execute if entity @e[tag=rngSelected,tag=rngArrow,type=area_effect_cloud] run function rr_powerups:items/arrow/rng
 function rr_powerups:items/tetris
 schedule function rr_powerups:items/scheduleantidupe 1t append
+
+##Actionbar notifications
+execute as @s[tag=!noHotbarWarn] if entity @e[scores={capturePoint=1},type=area_effect_cloud] as @a[team=Blue] run tag @s add DelayActionbar
+execute as @s[tag=!noHotbarWarn] if entity @e[scores={capturePoint=1},type=area_effect_cloud] as @a[team=Blue] run scoreboard players set @s actionbardelay 0
+execute as @s[tag=!noHotbarWarn] if entity @e[scores={capturePoint=1},type=area_effect_cloud] as @a[team=Blue,tag=fullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+execute as @s[tag=!noHotbarWarn] if entity @e[scores={capturePoint=2},type=area_effect_cloud] as @a[team=Yellow] run tag @s add DelayActionbar
+execute as @s[tag=!noHotbarWarn] if entity @e[scores={capturePoint=2},type=area_effect_cloud] as @a[team=Yellow] run scoreboard players set @s actionbardelay 0
+execute as @s[tag=!noHotbarWarn] if entity @e[scores={capturePoint=2},type=area_effect_cloud] as @a[team=Yellow,tag=fullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+tag @s remove noHotbarWarn

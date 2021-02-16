@@ -10,11 +10,17 @@ spawnpoint @a[team=Blue] 12 64 -66 0
 spawnpoint @a[team=Yellow] 12 64 66 -180
 execute if entity @s[tag=Minute] run function rr_ctf:items/minutemix
 
+#endstone regeneration
+execute as @e[tag=airDetectBlue,type=area_effect_cloud] at @s run function rr_ctf:everytick/airdetectblue
+execute as @e[tag=airDetectYellow,type=area_effect_cloud] at @s run function rr_ctf:everytick/airdetectyellow
+
 #flag logic
 function rr_ctf:everytick/flag
 scoreboard objectives setdisplay sidebar.team.gold FlagDisp
 scoreboard objectives setdisplay sidebar.team.blue FlagDisp
 scoreboard objectives setdisplay sidebar.team.dark_gray FlagDisp
+
+execute if score FlagWave FlagScore = 1 FlagScore run say hi
 
 #custom prevention message
 execute as @a[tag=MissiMSG,tag=!voidMSG,tag=!roofMSG,tag=!antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]

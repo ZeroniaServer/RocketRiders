@@ -16,6 +16,8 @@ tag @s remove GameStarted
 execute as @s[scores={bMissileCount=1..}] run function arenaclear:prepareblue
 execute as @s[scores={yMissileCount=1..}] run function arenaclear:prepareyellow
 execute as @s[scores={splashCount=1..}] run function arenaclear:preparesplash
+kill @e[type=area_effect_cloud,tag=checked]
+kill @e[type=area_effect_cloud,tag=checking]
 summon area_effect_cloud 11 63 6 {Tags:["ArenaClearChecker"],Duration:360}
 
 ##Reset Tetris progress for Item RNG

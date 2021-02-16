@@ -4,6 +4,8 @@ scoreboard players set @s fakeendtimer 0
 execute as @s[scores={bMissileCount=1..}] run function arenaclear:prepareblue
 execute as @s[scores={yMissileCount=1..}] run function arenaclear:prepareyellow
 execute as @s[scores={splashCount=1..}] run function arenaclear:preparesplash
+kill @e[type=area_effect_cloud,tag=checked]
+kill @e[type=area_effect_cloud,tag=checking]
 summon area_effect_cloud 11 63 6 {Tags:["ArenaClearChecker"],Duration:360}
 
 function items:tetrisreset

@@ -12,4 +12,4 @@ execute at @s unless block ~ ~ ~ #custom:air run tp @s ~-1 ~ -73
 execute at @s if entity @s[x=-9,dx=0] run tp @s 33 ~-1 -73
 execute at @s if entity @s[y=37,dy=0] run kill @s
 
-execute at @s unless entity @s[x=-15,dx=0] unless entity @s[y=37,dy=0] if score @s Machina matches ..21 run function achievements:machinacheckblue
+execute at @s unless entity @s[x=-9,dx=0] unless entity @s[y=37,dy=0] if score @s Machina matches ..21 run function achievements:machinacheckblue

@@ -16,8 +16,6 @@ tag @s remove GameStarted
 execute as @s[scores={bMissileCount=1..}] run function arenaclear:prepareblue
 execute as @s[scores={yMissileCount=1..}] run function arenaclear:prepareyellow
 execute as @s[scores={splashCount=1..}] run function arenaclear:preparesplash
-kill @e[type=area_effect_cloud,tag=checked]
-kill @e[type=area_effect_cloud,tag=checking]
 summon area_effect_cloud 11 63 6 {Tags:["ArenaClearChecker"],Duration:360}
 
 ##Reset Tetris progress for Item RNG
@@ -69,6 +67,8 @@ kill @e[tag=surprising,type=area_effect_cloud]
 
 ##Begin recursive SmartClear process
 function arenaclear:superspeed
+kill @e[type=area_effect_cloud,tag=checked]
+kill @e[type=area_effect_cloud,tag=checking]
 
 ##Close off Modification Room
 execute as @e[tag=ControlRoom,type=area_effect_cloud] at @s run tp @a[distance=..15] -43 211 78 90 0

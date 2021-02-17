@@ -9,8 +9,8 @@ tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
 execute as @s[scores={endtimer=1}] run effect clear @a[team=Blue]
 execute as @s[scores={endtimer=1}] run effect clear @a[team=Yellow]
-execute as @s[tag=BlueWon,scores={endtimer=1}] run clear @a[team=Yellow] bow
-execute as @s[tag=YellowWon,scores={endtimer=1}] run clear @a[team=Blue] bow
+execute as @s[scores={endtimer=1}] run clear @a[team=Blue] bow
+execute as @s[scores={endtimer=1}] run clear @a[team=Yellow] bow
 execute as @s[tag=BlueWon] run effect give @a[team=Yellow] weakness 100000 255 true
 execute as @s[tag=YellowWon] run effect give @a[team=Blue] weakness 100000 255 true
 execute as @s[scores={endtimer=1..},tag=!Sonar] run effect give @a night_vision 1000000 100 true

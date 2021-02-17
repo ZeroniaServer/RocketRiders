@@ -4,7 +4,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon area_effect_cloud ~ ~ ~ {Tags:["RandomSplash"],Duration:2000000000}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[tag=RandomSplash,type=area_effect_cloud] RNGmax 80
+scoreboard players set @e[tag=RandomSplash,type=area_effect_cloud] RNGmax 81
 
 execute as @e[tag=RandomSplash,type=area_effect_cloud] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[tag=RandomSplash,type=area_effect_cloud] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -91,5 +91,6 @@ execute as @e[tag=RandomSplash,scores={RNGscore=76},type=area_effect_cloud] run 
 execute as @e[tag=RandomSplash,scores={RNGscore=77},type=area_effect_cloud] run title @a subtitle ["",{"text":"Hold my splash!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=78},type=area_effect_cloud] run title @a subtitle ["",{"text":"May the force be with you!","color":"green"}]
 execute as @e[tag=RandomSplash,scores={RNGscore=79},type=area_effect_cloud] run title @a subtitle ["",{"text":"Remember to turn your client on!","color":"green"}]
+execute as @e[tag=RandomSplash,scores={RNGscore=80},type=area_effect_cloud] run title @a subtitle ["",{"text":"Apologies for the incredibly underpowered pickaxes.","color":"green"}]
 
 kill @e[tag=RandomSplash,type=area_effect_cloud]

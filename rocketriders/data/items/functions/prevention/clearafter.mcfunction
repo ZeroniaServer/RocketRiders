@@ -60,5 +60,9 @@ execute as @s[tag=YDuplex] positioned ~-1 175 ~-21 run fill ~-5 ~ ~-5 ~7 ~2 ~22 
 execute as @s[tag=BBroad] positioned ~-1 175 ~5 run fill ~-5 ~ ~-5 ~7 ~2 ~16 air replace
 execute as @s[tag=YBroad] positioned ~-1 175 ~-16 run fill ~-5 ~ ~-5 ~7 ~2 ~16 air replace
 
-kill @s[tag=repeatedClear]
-tag @s add repeatedClear
+kill @s[tag=repeatedClear5]
+tag @s[tag=repeatedClear4] add repeatedClear5
+tag @s[tag=repeatedClear3] add repeatedClear4
+tag @s[tag=repeatedClear2] add repeatedClear3
+tag @s[tag=repeatedClear1] add repeatedClear2
+tag @s add repeatedClear1

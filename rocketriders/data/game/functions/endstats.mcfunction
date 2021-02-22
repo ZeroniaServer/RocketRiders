@@ -30,6 +30,8 @@ scoreboard players add $playercount CmdData 0
 execute if entity @a[tag=spawnchamp] run scoreboard players add $playercount CmdData 1
 execute if entity @a[tag=killschamp] run scoreboard players add $playercount CmdData 1
 execute if entity @a[tag=deathchamp] run scoreboard players add $playercount CmdData 1
+execute as @s[tag=YellowWon] run tellraw @a ["",{"text":"Team Yellow Won!","color":"yellow","bold":"true"}]
+execute as @s[tag=BlueWon] run tellraw @a ["",{"text":"Team Blue Won!","color":"blue","bold":"true"}]
 execute if score $playercount CmdData matches 1.. run tellraw @a ["",{"text":"Match Statistics:","color":"dark_green","bold":"true"}]
 
 execute store result score $playercount CmdData if entity @a[tag=spawnchamp]

@@ -4,8 +4,8 @@
 ######################################
 
 ##Identify snowballs as Shields
-execute as @a[team=Yellow,scores={ThrowShield=1..}] at @s run tag @e[type=snowball,limit=1,sort=nearest,distance=..5,tag=!YellowShield,tag=!BlueShield] add YellowShield
-execute as @a[team=Blue,scores={ThrowShield=1..}] at @s run tag @e[type=snowball,limit=1,sort=nearest,distance=..5,tag=!YellowShield,tag=!BlueShield] add BlueShield
+execute as @a[team=Yellow,scores={ThrowShield=1..}] at @s run tag @e[type=snowball,limit=1,sort=nearest,distance=..5,tag=!YellowShield,tag=!BlueShield,tag=!NullShield] add YellowShield
+execute as @a[team=Blue,scores={ThrowShield=1..}] at @s run tag @e[type=snowball,limit=1,sort=nearest,distance=..5,tag=!YellowShield,tag=!BlueShield,tag=!NullShield] add BlueShield
 scoreboard players reset @a ThrowShield
 
 ##Yellow Shield functionality

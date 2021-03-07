@@ -43,7 +43,7 @@ execute as @s[tag=GameStarted,tag=!customSpawns] run tp @a[tag=JoinBlue] 12 64 -
 execute as @s[tag=GameStarted] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
 execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":"true"},{"text":"Shooting Saber ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
 execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Use ","color":"aqua","italic":"true"},{"text":"/leave ","color":"blue","bold":"true","italic":"false"},{"text":"to leave the match.","color":"aqua","italic":"true"}]
-execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinBlue]
+execute as @s[tag=GameStarted] run gamemode survival @a[team=Blue,gamemode=adventure]
 execute as @s[tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
 #Hardcore compatibility
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
@@ -87,7 +87,7 @@ execute as @s[tag=GameStarted,tag=!customSpawns] run tp @a[tag=JoinYellow] 12 64
 execute as @s[tag=GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
 execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":"true"},{"text":"Shooting Saber ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
 execute as @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":"true"},{"text":"/leave ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
-execute as @s[tag=GameStarted] run gamemode survival @a[tag=JoinYellow]
+execute as @s[tag=GameStarted] run gamemode survival @a[team=Yellow,gamemode=adventure]
 execute as @s[tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
 #Hardcore compatibility
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false

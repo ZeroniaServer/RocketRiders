@@ -13,6 +13,10 @@ execute as @s[tag=GameStarted,tag=SMActive] run tellraw @a[tag=JoinBlue] [{"text
 execute as @s[tag=GameStarted,tag=!SMActive] run tellraw @a[tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":"true"},{"text":"Piercing Pickaxe ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
 execute as @s[tag=GameStarted,tag=SMActive] run tellraw @a[tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":"true"},{"text":"/leave ","color":"gold","bold":"true","italic":"false"},{"text":"to leave the match.","color":"yellow","italic":"true"}]
 
+#Score Removal
+scoreboard players reset @a[tag=JoinBlue] FlagsCaptured
+scoreboard players reset @a[tag=JoinYellow] FlagsCaptured
+
 #Tag Removal
 tag @a remove JoinBlue
 tag @a remove JoinYellow
@@ -25,6 +29,7 @@ execute as @s[tag=!GameStarted] run scoreboard players set @a dropPickaxe 0
 execute as @s[tag=!GameStarted] run scoreboard players set @s canopyStreak 0
 execute as @s[tag=!GameStarted] run scoreboard players reset @a MineWhiteGlass
 execute as @s[tag=!GameStarted] run scoreboard players reset @a MinePurpleGlass
+execute as @s[tag=!GameStarted,tag=!GameEnd] run scoreboard players reset @a FlagsCaptured
 execute as @s[scores={count=600}] run summon area_effect_cloud 38 63 -66 {Tags:["airDetectBlue"],Radius:0,Duration:2000000}
 execute as @s[scores={count=600}] run summon area_effect_cloud 38 63 66 {Tags:["airDetectYellow"],Radius:0,Duration:2000000}
 execute as @s[scores={count=600},tag=!GameEnd] run clear @a netherite_pickaxe

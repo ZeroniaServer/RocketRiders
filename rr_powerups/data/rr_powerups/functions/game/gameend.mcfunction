@@ -14,6 +14,8 @@ scoreboard players set @e[tag=captureMiddle,type=area_effect_cloud] captureYello
 scoreboard players set @e[tag=captureMiddle,type=area_effect_cloud] capturePoint 0
 execute as @s[scores={endtimer=1}] as @a[tag=Infinity] run clear @s bow
 tag @a remove Infinity
+scoreboard players reset $infinity powerupcount
+scoreboard players reset $infinity PowerupDisplay
 tag @a remove HoldingSlapFish
 execute as @s[scores={endtimer=1..}] run bossbar set rr_powerups:capture_progress players none
 execute as @s[scores={endtimer=1..}] run scoreboard players set @e[tag=captureMiddle,type=area_effect_cloud] capturePoint 0

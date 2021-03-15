@@ -252,6 +252,12 @@ tag @e[type=player,tag=CarryFY2] add CarryFlag
 tag @e[type=player,tag=CarryFB1] add CarryFlag
 tag @e[type=player,tag=CarryFB2] add CarryFlag
 
+#Add scores for flag carriers
+scoreboard players add @a[team=Blue] FlagsCaptured 0
+scoreboard players add @a[team=Yellow] FlagsCaptured 0
+scoreboard players reset @a[team=!Blue,team=!Yellow] FlagsCaptured
+scoreboard players set @a[scores={FlagsCaptured=3..}] FlagsCaptured 2
+
 #If flag carrier disconnects completely
 execute unless entity @a[tag=CarryFB1] if score FB1: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
 execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]

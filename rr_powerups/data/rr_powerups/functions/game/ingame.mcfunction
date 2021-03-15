@@ -135,14 +135,21 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups
 
 #infinity saber
 execute as @a[tag=Infinity] if entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
-execute as @a[tag=Infinity,tag=probablyDied] unless entity @s[team=!Yellow,team=!Blue] run clear @s bow
-execute as @a[tag=Infinity,tag=probablyDied] unless entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
+execute if score $infinity PowerupDisplay matches 1.. run scoreboard players add $infinity powerupcount 1
+execute if score $infinity powerupcount matches 20.. if score $infinity PowerupDisplay matches 1.. run scoreboard players remove $infinity PowerupDisplay 1
+execute if score $infinity powerupcount matches 20.. run scoreboard players set $infinity powerupcount 0
+execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.beacon.deactivate player @s ~ ~ ~ 1 1.5
+execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run clear @s bow
+execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar [{"text":"Infinity Saber expired.","color":"red"}]
+execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
+execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
+execute if score $infinity PowerupDisplay matches 0 run function rr_powerups:everytick/saberfix
 
 #actionbar
-execute if entity @e[tag=captureMiddle,scores={capturePoint=1},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=2..}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new Powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" seconds!","color":"blue","bold":"true"}]
-execute if entity @e[tag=captureMiddle,scores={capturePoint=1},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=..1}] run title @a[team=Blue,tag=!DelayActionbar] actionbar ["",{"text":"A new Powerup will be given out in ","color":"blue","bold":"true"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"aqua","bold":"true"},{"text":" second!","color":"blue","bold":"true"}]
-execute if entity @e[tag=captureMiddle,scores={capturePoint=2},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=2..}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new Powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" seconds!","color":"yellow","bold":"true"}]
-execute if entity @e[tag=captureMiddle,scores={capturePoint=2},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=..1}] run title @a[team=Yellow,tag=!DelayActionbar] actionbar ["",{"text":"A new Powerup will be given out in ","color":"yellow","bold":"true"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"gold","bold":"true"},{"text":" second!","color":"yellow","bold":"true"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=1},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=2..}] as @a[team=Blue,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":"true"},{"text":" seconds!","color":"light_purple"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=1},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=..1}] as @a[team=Blue,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":"true"},{"text":" second!","color":"light_purple"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=2},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=2..}] as @a[team=Yellow,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":"true"},{"text":" seconds!","color":"dark_purple"}]
+execute if entity @e[tag=captureMiddle,scores={capturePoint=2},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=..1}] as @a[team=Yellow,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":"true"},{"text":" second!","color":"dark_purple"}]
 
 #custom prevention message
 execute as @a[tag=MissiMSG,tag=!voidMSG,tag=!roofMSG,tag=!antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals or the Powerup Platform.","color":"red"}]

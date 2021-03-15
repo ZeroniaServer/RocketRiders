@@ -20,8 +20,6 @@ scoreboard objectives setdisplay sidebar.team.gold FlagDisp
 scoreboard objectives setdisplay sidebar.team.blue FlagDisp
 scoreboard objectives setdisplay sidebar.team.dark_gray FlagDisp
 
-execute if score FlagWave FlagScore = 1 FlagScore run say hi
-
 #custom prevention message
 execute as @a[tag=MissiMSG,tag=!voidMSG,tag=!roofMSG,tag=!antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
 tag @a[tag=MissiMSG] remove MissiMSG

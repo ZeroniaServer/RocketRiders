@@ -3,6 +3,7 @@ tag @s add rngLightning
 tag @s add rngUtil
 tag @s add rngHeavy
 
+
 tag @s remove rngAnt
 tag @s remove rngGemi
 tag @s remove rngToma
@@ -25,7 +26,7 @@ tag @s add rngShield
 tag @s add rngObshield
 tag @s add rngVortex
 tag @s add rngSplash
-tag @s add rngNova
+#> [NOVA REMOVED DUE TO FEEDBACK FOR NOW] tag @s add rngNova
 #> [CANOPY DISABLED DUE TO FEEDBACK FOR NOW] (I cry) tag @s add rngCanopy
 
 #Deactivated items
@@ -33,6 +34,8 @@ tag @s add rngNova
 #GEMI WAS ADDED tag @s remove rngGemi
 tag @s remove rngJbuster
 tag @s remove rngRift
+tag @s remove rngCanopy
+tag @s remove rngNova
 
 #Disable modifiers
 function modifiers:disablemodifiers
@@ -50,7 +53,7 @@ tag @s remove doFireballPortals
 #######################################################
 
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"Active Items: ","color":"gray","bold":"false"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"In 1v1 Duel Mode, a set of 12 items is randomly generated for each round.","color":"white"}]}}]
-tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Fireball","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"}]
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"}]
 ### 1 shield type.
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Shield","color":"light_purple"}',Tags:["RankedRNG","Shield","RShieldRNG","RUtilRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Obsidian Shield","color":"light_purple"}',Tags:["RankedRNG","Obshield","RShieldRNG","RUtilRNG"]}
@@ -94,8 +97,8 @@ execute if entity @e[tag=Thunderbolt,tag=SelRRNG,type=area_effect_cloud] run tag
 execute if entity @e[tag=Thunderbolt,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngHur
 
 ### 5/10 non-lightning missiles
-summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["RankedRNG","Ant","RMisRNG"]}
-summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["RankedRNG","Gemini","RMisRNG"]}
+summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"A.N.T","color":"green"}',Tags:["RankedRNG","Ant","RMisRNG"]}
+summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Gemini","color":"green"}',Tags:["RankedRNG","Gemini","RMisRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["RankedRNG","TomaTwo","RMisRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Auxiliary","color":"red"}',Tags:["RankedRNG","Auxiliary","RMisRNG","RHeavyRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Blade","color":"green"}',Tags:["RankedRNG","Blade","RMisRNG"]}

@@ -63,7 +63,7 @@ execute as @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[scores={Le
 execute as @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[scores={LeaveGame=1..}] run tellraw @s ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" "},{"text":"4","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"selector":"@e[tag=ServermodeSet4]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"text":"\n"}]
 
 #Notify game (if already selected)
-execute as @s[tag=EditedSettings,tag=!switchServermode] run tag @a[scores={LeaveGame=1..}] add informMe
+execute as @s[tag=!GameEnd,tag=EditedSettings,tag=!switchServermode] run tag @a[scores={LeaveGame=1..}] add informMe
 
 #Reset
 scoreboard players reset @a[scores={LeaveGame=1..}] VoteNum

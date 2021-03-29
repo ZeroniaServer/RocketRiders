@@ -3,6 +3,8 @@ tag @s add rngLightning
 tag @s add rngUtil
 tag @s add rngHeavy
 
+tag @s remove rngAnt
+tag @s remove rngGemi
 tag @s remove rngToma
 tag @s remove rngAux
 tag @s remove rngBlade
@@ -24,11 +26,11 @@ tag @s add rngObshield
 tag @s add rngVortex
 tag @s add rngSplash
 tag @s add rngNova
-tag @s add rngCanopy
+#> [CANOPY DISABLED DUE TO FEEDBACK FOR NOW] (I cry) tag @s add rngCanopy
 
 #Deactivated items
-tag @s remove rngAnt
-tag @s remove rngGemi
+#ANT WAS ADDED tag @s remove rngAnt
+#GEMI WAS ADDED tag @s remove rngGemi
 tag @s remove rngJbuster
 tag @s remove rngRift
 
@@ -48,8 +50,7 @@ tag @s remove doFireballPortals
 #######################################################
 
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"Active Items: ","color":"gray","bold":"false"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"In 1v1 Duel Mode, a set of 12 items is randomly generated for each round.","color":"white"}]}}]
-tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
-
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":"true"},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Fireball","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"}]
 ### 1 shield type.
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Shield","color":"light_purple"}',Tags:["RankedRNG","Shield","RShieldRNG","RUtilRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Obsidian Shield","color":"light_purple"}',Tags:["RankedRNG","Obshield","RShieldRNG","RUtilRNG"]}
@@ -65,7 +66,7 @@ execute if entity @e[tag=Obshield,tag=SelRRNG,type=area_effect_cloud] run tag @s
 
 ### 1 projectile type.
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Fireball","color":"light_purple"}',Tags:["RankedRNG","Fireball","RProjecRNG","RUtilRNG"]}
-summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Nova Rocket","color":"light_purple"}',Tags:["RankedRNG","Nova","RProjecRNG","RUtilRNG"]}
+#> [NOVAROCKET DISABLED DUE TO FEEDBACK FOR NOW] summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Nova Rocket","color":"light_purple"}',Tags:["RankedRNG","Nova","RProjecRNG","RUtilRNG"]}
 tag @e[tag=RProjecRNG,limit=1,sort=random,type=area_effect_cloud] add SelRRNG
 
 #fireball selected
@@ -93,6 +94,8 @@ execute if entity @e[tag=Thunderbolt,tag=SelRRNG,type=area_effect_cloud] run tag
 execute if entity @e[tag=Thunderbolt,tag=SelRRNG,type=area_effect_cloud] run tag @s remove rngHur
 
 ### 5/10 non-lightning missiles
+summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["RankedRNG","Ant","RMisRNG"]}
+summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["RankedRNG","Gemini","RMisRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["RankedRNG","TomaTwo","RMisRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Auxiliary","color":"red"}',Tags:["RankedRNG","Auxiliary","RMisRNG","RHeavyRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Blade","color":"green"}',Tags:["RankedRNG","Blade","RMisRNG"]}
@@ -104,8 +107,10 @@ summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Chronullifier","color":"gre
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Citadel","color":"green"}',Tags:["RankedRNG","Citadel","RMisRNG"]}
 summon area_effect_cloud ~ ~ ~ {CustomName:'{"text":"Warhead","color":"red"}',Tags:["RankedRNG","Warhead","RMisRNG","RHeavyRNG"]}
 
-tag @e[tag=RMisRNG,tag=!SelRRNG,limit=5,sort=random,type=area_effect_cloud] add SelRRNG
+tag @e[tag=RMisRNG,tag=!SelRRNG,limit=6,sort=random,type=area_effect_cloud] add SelRRNG
 
+execute if entity @e[tag=SelRRNG,tag=Ant,type=area_effect_cloud] run tag @s add rngAnt
+execute if entity @e[tag=SelRRNG,tag=Gemini,type=area_effect_cloud] run tag @s add rngGemi
 execute if entity @e[tag=SelRRNG,tag=TomaTwo,type=area_effect_cloud] run tag @s add rngToma
 execute if entity @e[tag=SelRRNG,tag=Auxiliary,type=area_effect_cloud] run tag @s add rngAux
 execute if entity @e[tag=SelRRNG,tag=Blade,type=area_effect_cloud] run tag @s add rngBlade

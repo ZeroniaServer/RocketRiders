@@ -46,4 +46,3 @@ scoreboard players set 16 CmdData 16
 
 function lobby:credits/restart
 function custom:ck_uponload
-# schedule function servermode:enabled 20t

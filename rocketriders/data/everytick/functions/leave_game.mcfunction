@@ -30,7 +30,6 @@ scoreboard players set @a[scores={LeaveGame=1..}] LeaveMidgame 0
 scoreboard players set @a[team=!Yellow,team=!Blue] LeaveMidgame 0
 tag @a[scores={LeaveGame=1..}] remove YellowNovaAttach
 tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
-tag @a[scores={LeaveGame=1..}] remove Forfeiter
 
 #Hardcore compatibility
 scoreboard players add @a[tag=hardcoreKilled] hardcoreKilled 1

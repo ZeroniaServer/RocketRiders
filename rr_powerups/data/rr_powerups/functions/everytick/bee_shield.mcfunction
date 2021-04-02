@@ -133,15 +133,14 @@ execute as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=20},type=armor_stand] r
 execute as @e[type=area_effect_cloud,tag=animBshield] at @s if predicate custom:nearvoid run kill @s
 execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if predicate custom:nearvoid run kill @s
 
-#Bees teams/float
+#Bees teams/angry
 execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run team join Blue
-execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run data merge entity @s {Glowing:1b,NoGravity:1b}
-tag @e[type=bee,tag=BlueBee] add beeChecked
 execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run team join Yellow
-execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run data merge entity @s {Glowing:1b,NoGravity:1b}
-tag @e[type=bee,tag=YellowBee] add beeChecked
+execute as @e[type=bee,tag=!beeChecked] run data merge entity @s {Glowing:1b,NoGravity:1b}
+execute as @e[type=bee,tag=!beeChecked] run data remove entity @s AngryAt
+execute if entity @e[type=bee,tag=!beeChecked] run scoreboard players set $beetime BeeShieldTime 0
+tag @e[type=bee,tag=!beeChecked] add beeChecked
 
-#angry bees
 scoreboard players add $beetime BeeShieldTime 1
 execute if score $beetime BeeShieldTime matches 100 run scoreboard players set $beetime BeeShieldTime 0
 execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=BlueBee] unless data entity @s AngryAt if entity @a[team=Yellow] at @s run summon snowball ~ ~1 ~ {Tags:["NullShield","BeeTick"],Motion:[0.0,-1.0,0.0]}

@@ -36,24 +36,24 @@ execute as @s[tag=!custVortParticle] as @e[tag=VortexBlue,type=area_effect_cloud
 scoreboard players add @e[tag=Vortex,type=area_effect_cloud] vortexBoom 0
 
 ##Spin around (unprimed)
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,gamemode=!spectator,distance=..5] unless score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~15 ~
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,gamemode=!spectator,distance=..5] unless score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-15 ~
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,gamemode=!spectator,distance=..4] unless score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~15 ~
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,gamemode=!spectator,distance=..4] unless score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-15 ~
 
 ##Spin around (primed)
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,gamemode=!spectator,distance=..5] if score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~30 ~
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,gamemode=!spectator,distance=..5] if score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-30 ~
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,gamemode=!spectator,distance=..4] if score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~30 ~
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,gamemode=!spectator,distance=..4] if score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-30 ~
 
 ##Drift towards enemy player in close contact
-execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Yellow,gamemode=!spectator,distance=..5] run tp @s ^ ^ ^.125 facing entity @p[team=Yellow,gamemode=!spectator,distance=..5]
-execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Blue,gamemode=!spectator,distance=..5] run tp @s ^ ^ ^.125 facing entity @p[team=Blue,gamemode=!spectator,distance=..5]
+execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Yellow,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Yellow,gamemode=!spectator,distance=..4]
+execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Blue,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Blue,gamemode=!spectator,distance=..4]
 
 #Teleport item to drifting Vortex recursively - thanks iRobo for the algorithm!
 scoreboard players set $count VortexID 1
 execute if entity @e[tag=Vortex,scores={vortexBoom=1..},type=area_effect_cloud] run function everytick:vortextp
 
 ##Face enemy player
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Yellow,gamemode=!spectator,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Yellow,gamemode=!spectator,distance=..6]
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Blue,gamemode=!spectator,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Blue,gamemode=!spectator,distance=..6]
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Yellow,gamemode=!spectator,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Yellow,gamemode=!spectator,distance=..4]
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Blue,gamemode=!spectator,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Blue,gamemode=!spectator,distance=..4]
 
 ##Other explosion conditions
 execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexYellow,distance=..4,type=area_effect_cloud,scores={vortexBoom=0}] vortexBoom 1

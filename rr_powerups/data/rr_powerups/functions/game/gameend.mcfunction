@@ -19,4 +19,7 @@ scoreboard players reset $infinity PowerupDisplay
 tag @a remove HoldingSlapFish
 execute as @s[scores={endtimer=1..}] run bossbar set rr_powerups:capture_progress players none
 execute as @s[scores={endtimer=1..}] run scoreboard players set @e[tag=captureMiddle,type=area_effect_cloud] capturePoint 0
+execute as @s[scores={endtimer=1..}] run kill @e[type=bee]
+execute as @s[scores={endtimer=569..}] run kill @e[tag=BeeShieldDisplay,type=armor_stand]
+execute as @s[scores={endtimer=569..}] run kill @e[tag=animBshield,type=area_effect_cloud]
 tag @s add powerupsLast

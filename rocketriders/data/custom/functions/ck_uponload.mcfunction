@@ -21,5 +21,3 @@ team modify Blue friendlyFire false
 team modify Yellow friendlyFire false
 team modify Spectator friendlyFire false
 team modify Developer friendlyFire false
-
-scoreboard players reset * GamesPlayed

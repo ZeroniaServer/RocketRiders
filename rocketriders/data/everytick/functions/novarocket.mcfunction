@@ -51,10 +51,10 @@ execute if entity @s[tag=Explosive] as @e[tag=CanopyIsGone,tag=BlueNova,type=fir
 execute as @s[tag=!customNova] run kill @e[tag=CanopyIsGone,type=firework_rocket]
 
 #Nova Rocket collision
-execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=YellowNova,type=firework_rocket,distance=..1.5] run tag @e[tag=YellowNova,type=firework_rocket,distance=..1.5,limit=1] add CollideNova
-execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=YellowNova,type=firework_rocket,distance=..1.5] run tag @s add CollideNova
-execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=YellowNova,type=firework_rocket,distance=..1.5] run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:1,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;4312372],FadeColors:[I;3887386]}]}}}}
-execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=YellowNova,type=firework_rocket,distance=..1.5] run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Rocket Collision\"}",ExplosionRadius:6,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=YellowNova,type=firework_rocket,distance=..2] run tag @e[tag=YellowNova,type=firework_rocket,distance=..2,limit=1] add CollideNova
+execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=YellowNova,type=firework_rocket,distance=..2] run tag @s add CollideNova
+execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=YellowNova,type=firework_rocket,distance=..2] run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:1,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;4312372],FadeColors:[I;3887386]}]}}}}
+execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=YellowNova,type=firework_rocket,distance=..2] run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Nova Rocket Collision\"}",ExplosionRadius:6,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @e[tag=CollideNova] run kill @s
 
 #Explosion/particle effects

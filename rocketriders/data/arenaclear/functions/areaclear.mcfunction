@@ -35,6 +35,7 @@ fill -14 13 -66 38 33 -48 air
 execute if entity @s[tag=!Molerat,tag=WasMolerat] run function arenaclear:moleratclear
 
 ##Kill all necessary entities and clear utility structures
+kill @e[tag=PUCrystalEntity]
 kill @e[type=fireball]
 kill @e[type=snowball]
 kill @e[type=arrow]

@@ -27,3 +27,10 @@ setblock -94 200 78 purpur_slab[type=top]
 setblock -95 200 77 purpur_slab[type=top]
 setblock -96 200 78 purpur_slab[type=top]
 setblock -95 200 78 minecraft:sea_lantern
+
+
+#Pregame crystal platforms
+fill -94 203 57 -96 203 55 minecraft:crying_obsidian
+setblock -95 203 56 minecraft:lodestone
+fill -96 203 99 -94 203 101 minecraft:crying_obsidian
+setblock -95 203 100 minecraft:lodestone

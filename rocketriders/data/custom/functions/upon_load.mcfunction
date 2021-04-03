@@ -40,6 +40,7 @@ scoreboard objectives add beeShieldCount dummy
 scoreboard objectives add Volume dummy
 scoreboard objectives add canopySmoke dummy
 scoreboard objectives add canopyStreak dummy
+scoreboard objectives add PowerupCrystal dummy
 
 scoreboard players set 64 CmdData 64
 scoreboard players set 16 CmdData 16

@@ -3,8 +3,10 @@
 ## General function used by other gamemodes ##
 ##############################################
 
-#Clear pregame powerups platform
+#Clear pregame powerups platform and mini platforms
 fill -92 200 81 -98 200 75 air
+fill -94 203 57 -96 203 55 air
+fill -96 203 99 -94 203 101 air
 
 #Clear some more decorations
 fill -14 64 -66 38 80 -52 air
@@ -13,6 +15,15 @@ fill -14 33 -51 38 48 -31 air
 fill 38 64 52 -14 80 66 air
 fill -14 48 51 38 63 28 air
 fill 38 33 51 -14 47 29 air
+
+#Clear crystal platforms
+scoreboard players reset @e[tag=captureMiddle] captureBlue
+scoreboard players reset @e[tag=captureMiddle] captureYellow
+scoreboard players reset @e[tag=captureMiddle] capturePoint
+fill 13 63 67 10 66 71 air
+fill 13 63 -67 10 66 -71 air
+fill 14 63 67 10 66 71 air
+fill -14 63 67 10 66 -71 air
 
 #Set Yellow Base
 fill -14 34 52 38 63 56 minecraft:yellow_stained_glass replace #custom:basereplace

@@ -94,9 +94,9 @@ scoreboard players set @e[tag=captureMiddle,scores={captureBlue=100..},type=area
 bossbar set rr_powerups:capture_progress style progress
 bossbar set rr_powerups:capture_progress players @a[team=!Lobby]
 
-execute as @e[tag=captureMiddle,type=area_effect_cloud] if score @s captureBlue > @s captureYellow store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureBlue
+execute as @e[tag=captureMiddle,type=area_effect_cloud] if score @s captureBlue >= @s captureYellow store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureBlue
 execute as @e[tag=captureMiddle,tag=!contested,type=area_effect_cloud] if score @s captureBlue > @s captureYellow run bossbar set rr_powerups:capture_progress color blue
-execute as @e[tag=captureMiddle,type=area_effect_cloud] if score @s captureYellow > @s captureBlue store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureYellow
+execute as @e[tag=captureMiddle,type=area_effect_cloud] if score @s captureYellow >= @s captureBlue store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureYellow
 execute as @e[tag=captureMiddle,tag=!contested,type=area_effect_cloud] if score @s captureYellow > @s captureBlue run bossbar set rr_powerups:capture_progress color yellow
 execute as @e[tag=captureMiddle,tag=!contested,type=area_effect_cloud] if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress color white
 execute as @e[tag=captureMiddle,tag=contested,type=area_effect_cloud] run bossbar set rr_powerups:capture_progress color red

@@ -1,4 +1,4 @@
-execute unless entity @e[tag=PUCrystal,limit=1] if entity @e[tag=captureMiddle,scores={captureYellow=98..}] as @a[team=Blue,predicate=rr_powerups:oncrystalblue,limit=1] run scoreboard players add @e[tag=captureMiddle] PowerupCrystal 1
+execute unless entity @e[tag=PUCrystal,limit=1] if entity @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=20..}] as @a[team=Blue,predicate=rr_powerups:oncrystalblue,limit=1] run scoreboard players add @e[tag=captureMiddle] PowerupCrystal 1
 execute if entity @e[tag=captureMiddle,scores={captureYellow=98..}] unless entity @e[tag=captureMiddle,scores={PowerupCrystal=20..}] run scoreboard players add @e[tag=captureMiddle] PowerupCrystal 1
 
 #Destroy platforms when not captured
@@ -55,38 +55,38 @@ execute if entity @e[tag=captureMiddle,scores={captureYellow=98..}] as @e[tag=ca
 execute if entity @e[tag=captureMiddle,scores={captureYellow=98..}] as @e[tag=captureMiddle,scores={PowerupCrystal=19}] run setblock 14 66 -71 minecraft:obsidian
 execute if entity @e[tag=captureMiddle,scores={captureYellow=98..}] as @e[tag=captureMiddle,scores={PowerupCrystal=19}] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
 
-execute if entity @e[tag=captureMiddle,scores={captureYellow=20..,captureYellow=98..}] run fill 11 66 -68 13 66 -70 lodestone
-execute if entity @e[tag=captureMiddle,scores={captureYellow=20..,captureYellow=98..}] if entity @e[tag=PUCrystal] run fill 10 63 -68 14 66 -71 minecraft:obsidian replace crying_obsidian
-execute if entity @e[tag=captureMiddle,scores={captureYellow=20..,captureYellow=98..}] unless entity @e[tag=PUCrystal] run fill 10 63 -68 14 66 -71 minecraft:crying_obsidian replace obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureYellow=98..}] run fill 11 66 -68 13 66 -70 lodestone
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureYellow=98..}] if entity @e[tag=PUCrystal] run fill 10 63 -68 14 66 -71 minecraft:obsidian replace crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureYellow=98..}] unless entity @e[tag=PUCrystal] run fill 10 63 -68 14 66 -71 minecraft:crying_obsidian replace obsidian
 
 ####
 
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=21}] run summon armor_stand 12 65.2 -70 {NoGravity:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=21}] run summon armor_stand 12 65.2 -70 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=21}] positioned 12 66 -69 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 0.8
 
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=25}] run summon armor_stand 11 65.2 -70 {NoGravity:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=25}] run summon armor_stand 13 65.2 -70 {NoGravity:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=25}] run summon armor_stand 11 65.2 -70 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=25}] run summon armor_stand 13 65.2 -70 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=25}] positioned 12 66 -69 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 0.8
 
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=30}] run summon armor_stand 11 65.2 -69 {NoGravity:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=30}] run summon armor_stand 13 65.2 -69 {NoGravity:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=30}] run summon armor_stand 11 65.2 -69 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=30}] run summon armor_stand 13 65.2 -69 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=30}] positioned 12 66 -69 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 0.9
 
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=35}] run summon armor_stand 11 65.2 -68 {NoGravity:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=35}] run summon armor_stand 13 65.2 -68 {NoGravity:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=35}] run summon armor_stand 11 65.2 -68 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=35}] run summon armor_stand 13 65.2 -68 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:glass",Count:1b}]}
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=35}] positioned 12 66 -69 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 1
 
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=40}] run summon armor_stand 12 65.2 -69 {NoGravity:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=40}] run summon armor_stand 12 65.2 -69 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}]}
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=40}] positioned 12 66 -69 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 1.2
 
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=45}] run summon armor_stand 12 65.2 -68 {NoGravity:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:ghast_tear",Count:1b}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=45}] run summon armor_stand 12 65.2 -68 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:ghast_tear",Count:1b}]}
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=45}] positioned 12 66 -69 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 1.4
 
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55}] run particle minecraft:end_rod 12 67 -69 1 0 1 0.1 100
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55}] positioned 12 66 -69 run playsound minecraft:entity.shulker.shoot master @a ~ ~ ~ 1 0.65
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55}] run kill @e[tag=PUCrystalDeco]
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55}] run summon minecraft:armor_stand 12 66.5 -69 {Marker:1b,Invisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["PUCrystalAS","NotSet","PUCrystalEntity"],Passengers:[{id:end_crystal,ShowBottom:0b,Invulnerable:1b,Tags:["NotSet","PUCrystal","PUCrystalEntity"]}]}
-execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55}] run summon area_effect_cloud 12 55 -3 {Tags:["CrystalSpot","NotSet","PUCrystalEntity"],Duration:200}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55}] run summon minecraft:armor_stand 12 66.5 -69 {Marker:1b,Invisible:1b,NoGravity:1b,Silent:1b,Invulnerable:1b,Tags:["PUCrystalAS","NotSet","PUCrystalEntity"],Passengers:[{id:end_crystal,ShowBottom:0b,Invulnerable:1b,Tags:["NotSet","PUCrystal","PUCrystalEntity"]}]}
+execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55}] run summon area_effect_cloud 12 55 0 {Tags:["BlueCrystalSpot","NotSet","PUCrystalEntity"],Duration:400}
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55}] run scoreboard players set @s PowerupCrystal 20
 
 execute as @e[tag=PUCrystalAS] at @s run particle end_rod ~ ~1.15 ~ 0 0 0 0.05 3 force
@@ -96,14 +96,14 @@ execute as @e[tag=PUCrystalAS] at @s run particle dragon_breath ~ ~1.15 ~ 0 0 0 
 
 
 
-execute as @e[tag=CrystalSpot,tag=NotSet] at @s run spreadplayers ~ ~ 0 4 false @s
-execute as @e[tag=CrystalSpot,tag=NotSet] at @s run tp @s ~ 54.5 ~
-tag @e[tag=CrystalSpot,tag=NotSet] remove NotSet
+#execute as @e[tag=BlueCrystalSpot,tag=NotSet] at @s run spreadplayers ~ ~ 0 4 false @s
+execute as @e[tag=BlueCrystalSpot,tag=NotSet] at @s run tp @s ~ 54.5 ~
+tag @e[tag=BlueCrystalSpot,tag=NotSet] remove NotSet
 
-execute as @e[tag=PUCrystalAS,tag=NotSet] at @s run tp @s ^ ^ ^0.5 facing entity @e[tag=CrystalSpot,limit=1,sort=nearest]
+execute as @e[tag=PUCrystalAS,tag=NotSet] at @s run tp @s ^ ^ ^1 facing entity @e[tag=BlueCrystalSpot,limit=1,sort=nearest]
 
-execute as @e[tag=PUCrystalAS,tag=NotSet] at @s if entity @e[tag=CrystalSpot,distance=..2,limit=1] run tag @e[tag=PUCrystal,limit=1,sort=nearest] add Set
-execute as @e[tag=PUCrystalAS,tag=NotSet] at @s if entity @e[tag=CrystalSpot,distance=..2,limit=1] run kill @s
-execute as @e[tag=PUCrystal,tag=Set] at @s run kill @e[tag=CrystalSpot,distance=..2,limit=1]
+execute as @e[tag=PUCrystalAS,tag=NotSet] at @s if entity @e[tag=BlueCrystalSpot,distance=..0.5,limit=1] run tag @e[tag=PUCrystal,limit=1,sort=nearest] add Set
+execute as @e[tag=PUCrystalAS,tag=NotSet] at @s if entity @e[tag=BlueCrystalSpot,distance=..0.5,limit=1] run kill @s
+execute as @e[tag=PUCrystal,tag=Set] at @s run kill @e[tag=BlueCrystalSpot,distance=..0.5,limit=1]
 execute as @e[tag=PUCrystal,tag=Set] at @s run summon end_crystal ~ ~ ~ {ShowBottom:0b,Tags:["PUCrystal","PUCrystalEntity"]}
 kill @e[tag=PUCrystal,tag=Set]

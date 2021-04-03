@@ -4,6 +4,15 @@ execute as @e[tag=Selection,type=armor_stand] run function rr_powerups:items/tet
 #remove endcrystal entities
 kill @e[tag=PUCrystalEntity]
 
+#Clear crystal platforms
+scoreboard players reset @e[tag=captureMiddle] captureBlue
+scoreboard players reset @e[tag=captureMiddle] captureYellow
+scoreboard players reset @e[tag=captureMiddle] capturePoint
+fill 13 63 67 10 66 71 air
+fill 13 63 -67 10 66 -71 air
+fill 14 63 67 10 66 71 air
+fill -14 63 67 10 66 -71 air
+
 #remove stinging shield entities
 execute as @e[tag=Selection,type=armor_stand] run function rr_powerups:arenaclear/preparebeeshield
 scoreboard players reset $beetime BeeShieldTime

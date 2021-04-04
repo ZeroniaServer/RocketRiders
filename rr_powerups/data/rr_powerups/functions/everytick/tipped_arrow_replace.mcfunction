@@ -1,0 +1,7 @@
+#Support function for tipped arrow pickup
+execute as @s[nbt={CustomPotionEffects:[{Id:15b}]}] run replaceitem entity @p[team=!Spectator,distance=..2,tag=!fullOffhand] weapon.offhand tipped_arrow{display:{Name:'{"text":"Blindness Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:15b,Amplifier:0b,Duration:200,ShowParticles:1b}],CustomPotionColor:3158064,HideFlags:63} 1
+execute as @s[nbt={CustomPotionEffects:[{Id:25b}]}] run replaceitem entity @p[team=!Spectator,distance=..2,tag=!fullOffhand] weapon.offhand tipped_arrow{display:{Name:'{"text":"Levitation Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:25b,Amplifier:0b,Duration:100,ShowParticles:1b}],CustomPotionColor:11793919,HideFlags:63} 1
+execute as @s[nbt={CustomPotionEffects:[{Id:2b}]}] run replaceitem entity @p[team=!Spectator,distance=..2,tag=!fullOffhand] weapon.offhand tipped_arrow{display:{Name:'{"text":"Slowness Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:2b,Amplifier:1b,Duration:200,ShowParticles:1b}],CustomPotionColor:5596802,HideFlags:63} 1
+execute as @s[nbt={CustomPotionEffects:[{Id:20b}]}] run replaceitem entity @p[team=!Spectator,distance=..2,tag=!fullOffhand] weapon.offhand tipped_arrow{display:{Name:'{"text":"Wither Arrow","color":"dark_purple","italic":"true","bold":"true"}'},CustomPotionEffects:[{Id:20b,Amplifier:2b,Duration:150,ShowParticles:1b}],CustomPotionColor:4008735,HideFlags:63} 1
+tag @s add given
+tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand

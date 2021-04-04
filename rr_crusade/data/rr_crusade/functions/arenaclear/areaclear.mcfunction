@@ -6,4 +6,4 @@ fill 33 79 -31 35 89 -33 air
 fill 9 89 -60 15 99 -66 air
 
 #remove join cancel from joinpads
-tag @e[tag=CancelJoin,type=area_effect_cloud] remove CancelJoin
+schedule function game:uncancelpads 2t append

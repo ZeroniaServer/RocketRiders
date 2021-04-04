@@ -1,5 +1,5 @@
 #remove join cancel from joinpads
-tag @e[tag=CancelJoin,type=area_effect_cloud] remove CancelJoin
+schedule function game:uncancelpads 2t append
 
 #Reset pregame queue
 execute if entity @e[tag=Selection,tag=!swapEnabled,tag=!Hardcore,type=armor_stand] run fill -89 201 96 -101 195 95 white_stained_glass

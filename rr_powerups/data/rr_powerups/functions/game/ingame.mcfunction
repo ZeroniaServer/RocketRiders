@@ -110,8 +110,8 @@ execute as @e[tag=captureMiddle,tag=!contested,limit=1,type=area_effect_cloud] i
 execute as @e[tag=captureMiddle,tag=!contested,limit=1,type=area_effect_cloud] if score @s capturePoint matches 0 if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress name [{"text":"Capture Progress","color":"white","bold":"true"}]
 execute as @e[tag=captureMiddle,tag=contested,type=area_effect_cloud] run bossbar set rr_powerups:capture_progress name [{"text":"Contested!","color":"dark_red","bold":"true"}]
 
-execute as @e[tag=captureMiddle,limit=1,type=area_effect_cloud] if score @s capturePoint matches 1 run bossbar set rr_powerups:capture_progress name [{"text":"Blue Captured!","color":"blue","bold":"true"}]
-execute as @e[tag=captureMiddle,limit=1,type=area_effect_cloud] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Captured!","color":"yellow","bold":"true"}]
+execute as @e[tag=captureMiddle,tag=!contested,limit=1,type=area_effect_cloud] if score @s capturePoint matches 1 run bossbar set rr_powerups:capture_progress name [{"text":"Blue Captured!","color":"blue","bold":"true"}]
+execute as @e[tag=captureMiddle,tag=!contested,limit=1,type=area_effect_cloud] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Captured!","color":"yellow","bold":"true"}]
 
 #broken elytra replacing
 execute as @a[team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b,tag:{Damage:431}}]}] run tag @s add BreakEly

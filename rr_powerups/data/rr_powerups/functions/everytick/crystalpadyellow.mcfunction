@@ -4,6 +4,7 @@ execute as @e[tag=captureMiddle,scores={captureBlue=98..},type=area_effect_cloud
 #Destroy platforms when not captured
 scoreboard players reset @e[tag=captureMiddle,scores={captureBlue=96},type=area_effect_cloud,limit=1] PowerupCrystal
 execute if entity @e[tag=captureMiddle,scores={captureBlue=96},type=area_effect_cloud,limit=1] run fill 14 63 68 10 66 71 air destroy
+execute if entity @e[tag=captureMiddle,scores={captureBlue=96},type=area_effect_cloud,limit=1] run fill 14 63 67 10 63 67 air destroy
 execute if entity @e[tag=captureMiddle,scores={captureBlue=96},type=area_effect_cloud,limit=1] positioned 12 66 69 run playsound minecraft:block.respawn_anchor.deplete master @a ~ ~ ~ 2 0
 execute if entity @e[tag=captureMiddle,scores={captureBlue=96},type=area_effect_cloud,limit=1] run kill @e[tag=PUCrystalDeco,type=armor_stand]
 
@@ -14,7 +15,7 @@ execute as @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},ty
 #Assemble platform - Yellow
 execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureBlue=98..},type=area_effect_cloud,limit=1] run fill 10 63 68 10 66 68 obsidian
 execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureBlue=98..},type=area_effect_cloud,limit=1] run fill 14 63 68 14 66 68 obsidian
-execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureBlue=98..},type=area_effect_cloud,limit=1] run fill 13 63 68 11 65 68 purple_stained_glass
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureBlue=98..},type=area_effect_cloud,limit=1] run fill 13 63 68 11 65 67 purple_stained_glass replace air
 execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureBlue=98..},type=area_effect_cloud,limit=1] positioned 12 66 69 run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 0
 execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureBlue=98..},type=area_effect_cloud,limit=1] positioned 12 66 69 run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 2
 execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureBlue=98..},type=area_effect_cloud,limit=1] positioned 12 66 69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
@@ -57,8 +58,26 @@ execute as @e[tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},type
 execute as @e[tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},type=area_effect_cloud,limit=1] positioned 12 66 69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
 
 execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] run fill 11 66 68 13 66 70 lodestone
-execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 68 14 66 71 obsidian replace crying_obsidian
-execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 68 14 66 71 crying_obsidian replace obsidian
+
+# TODO CHANGE FOR NEW DESIGN
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run setblock 14 63 67 obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run setblock 10 63 67 obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 68 10 66 68 obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 14 63 68 14 66 68 obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 66 68 10 66 70 obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 14 66 68 14 66 70 obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 66 71 14 66 71 obsidian
+
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run setblock 14 63 67 crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run setblock 10 63 67 crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 68 10 66 68 crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 14 63 68 14 66 68 crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 66 68 10 66 70 crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 14 66 68 14 66 70 crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 66 71 14 66 71 crying_obsidian
+
+# execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 68 14 66 71 obsidian replace crying_obsidian
+# execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 68 14 66 71 crying_obsidian replace obsidian
 
 ####
 

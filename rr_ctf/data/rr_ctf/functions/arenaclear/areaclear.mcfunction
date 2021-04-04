@@ -32,4 +32,4 @@ execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -8
 execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -89 203 97 -101 203 97 barrier
 execute if entity @e[tag=Selection,tag=!ctfEnabled,type=armor_stand] run fill -101 203 59 -89 203 59 barrier
 #remove join cancel from joinpads
-tag @e[tag=CancelJoin,type=area_effect_cloud] remove CancelJoin
+schedule function game:uncancelpads 2t append

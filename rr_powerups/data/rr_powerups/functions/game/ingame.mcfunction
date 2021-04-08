@@ -14,9 +14,21 @@ execute if entity @e[type=bee] run function rr_powerups:everytick/init_kill_bees
 function rr_powerups:everytick/lava_splash
 function rr_powerups:everytick/cancel_utility
 
-#end crystals
+#crystal pads
 function rr_powerups:everytick/crystalpadblue
 function rr_powerups:everytick/crystalpadyellow
+
+#extra stuff for obsidian border
+fill -15 64 67 10 64 67 obsidian
+fill 14 64 67 39 64 67 obsidian
+fill -15 64 -67 10 64 -67 obsidian
+fill 14 64 -67 39 64 -67 obsidian
+fill -15 33 67 39 33 67 obsidian
+fill -15 33 -67 39 33 -67 obsidian
+fill -15 63 67 -15 34 67 obsidian
+fill 39 63 67 39 34 67 obsidian
+fill -15 63 -67 -15 34 -67 obsidian
+fill 39 63 -67 39 34 -67 obsidian
 
 #item RNG and spawnpoints
 scoreboard players add @s RandomItem 1

@@ -2,66 +2,111 @@ execute unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] if entity @e[ta
 execute as @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] unless entity @s[scores={PowerupCrystal=20..}] run scoreboard players add @s PowerupCrystal 1
 
 #Destroy platforms when not captured
+execute if entity @e[tag=captureMiddle,scores={captureYellow=96},type=area_effect_cloud,limit=1] run tp @a[team=Blue,predicate=rr_powerups:oncrystalblue] 12 64 -66 0 0
 execute if entity @e[tag=captureMiddle,scores={captureYellow=96},type=area_effect_cloud,limit=1] run scoreboard players reset @e[tag=captureMiddle,type=area_effect_cloud,limit=1] PowerupCrystal
 execute if entity @e[tag=captureMiddle,scores={captureYellow=96},type=area_effect_cloud,limit=1] run fill 14 63 -68 10 66 -72 air destroy
 execute if entity @e[tag=captureMiddle,scores={captureYellow=96},type=area_effect_cloud,limit=1] run fill 14 63 -67 10 63 -67 air destroy
 execute if entity @e[tag=captureMiddle,scores={captureYellow=96},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.respawn_anchor.deplete master @a ~ ~ ~ 2 0
 execute if entity @e[tag=captureMiddle,scores={captureYellow=96},type=area_effect_cloud,limit=1] run kill @e[tag=PUCrystalDeco,type=armor_stand]
-execute if entity @e[tag=captureMiddle,scores={captureYellow=..96},type=area_effect_cloud,limit=1] run fill 11 65 -67 13 65 -67 obsidian
-execute if entity @e[tag=captureMiddle,scores={captureYellow=..96},type=area_effect_cloud,limit=1] run setblock 12 66 -67 obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=..92},type=area_effect_cloud,limit=1] run setblock 12 66 -67 obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=..94},type=area_effect_cloud,limit=1] run fill 11 65 -67 13 65 -67 obsidian
 execute if entity @e[tag=captureMiddle,scores={captureYellow=..96},type=area_effect_cloud,limit=1] run fill 11 64 -67 13 64 -67 obsidian
 
 #Kill entities if someone left the platform
 execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureYellow=98..},type=area_effect_cloud,limit=1] unless entity @a[team=Blue,predicate=rr_powerups:oncrystalblue,limit=1] run kill @e[tag=PUCrystalDeco,type=armor_stand]
 execute as @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureYellow=98..},type=area_effect_cloud,limit=1] unless entity @a[team=Blue,predicate=rr_powerups:oncrystalblue,limit=1] run scoreboard players set @s PowerupCrystal 20
 
-#Assemble platform - Blue TODO CHANGE FOR NEW DESIGN
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 14 63 -68 14 66 -68 obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 10 63 -68 10 66 -68 obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 11 63 -68 13 65 -67 purple_stained_glass replace air
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 0
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+#Assemble platform - Blue
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 63 -67 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 63 -67 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 63 -67 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 63 -67 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 63 -67 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 11 64 -67 13 64 -67 air destroy
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 0
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=1,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
 #
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=2,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 66 -68 lodestone
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=2,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=3,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 66 -68 lodestone
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=3,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=4,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 66 -68 lodestone
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=4,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 66 -69 obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=6,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 66 -69 lodestone
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=6,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 66 -69 lodestone
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=8,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 66 -69 lodestone
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=8,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=9,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 66 -69 obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=9,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=10,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 66 -70 obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=10,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=11,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 66 -70 lodestone
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=11,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=12,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 66 -70 lodestone
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=12,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 66 -70 lodestone
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=14,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 66 -70 minecraft:obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=14,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=15,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 66 -71 minecraft:obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=15,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=16,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 66 -71 minecraft:obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=16,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=17,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 66 -71 minecraft:obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=17,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=18,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 66 -71 minecraft:obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=18,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=19,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 66 -71 minecraft:obsidian
-# execute as @e[tag=captureMiddle,scores={PowerupCrystal=19,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 66 -69 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=2,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 63 -68 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=2,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 63 -69 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=2,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=3,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 11 65 -67 13 65 -67 air destroy
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=3,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 63 -69 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=3,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 63 -68 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=3,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 63 -68 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=3,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 14 63 -68 14 65 -68 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=3,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 10 63 -68 10 65 -68 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=3,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=4,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 63 -69 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=4,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 12 66 -67 12 66 -67 air destroy
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 63 -69 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 63 -69 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 64 -69 magenta_stained_glass_pane[north=true,south=true]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 65 -69 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 64 -69 magenta_stained_glass_pane[north=true,south=true]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 65 -69 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=5,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=6,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 63 -70 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=6,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 63 -70 end_portal_frame[facing=south]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 63 -70 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 63 -70 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 64 -70 magenta_stained_glass_pane[north=true,south=true]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 65 -70 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 64 -70 magenta_stained_glass_pane[north=true,south=true]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 65 -70 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=7,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=8,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 63 -70 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=8,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=9,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 63 -71 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=9,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 63 -71 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=9,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 64 -71 magenta_stained_glass_pane[north=true,south=true]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=9,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 14 65 -71 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=9,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 64 -71 magenta_stained_glass_pane[north=true,south=true]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=9,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 10 65 -71 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=9,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=10,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=11,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 63 -71 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=11,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 14 63 -72 14 65 -72 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=11,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 10 63 -72 10 65 -72 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=11,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=12,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 63 -71 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=12,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 63 -71 netherite_block
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 63 -72 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 63 -72 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 13 64 -72 magenta_stained_glass_pane[east=true,west=true]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 11 64 -72 magenta_stained_glass_pane[east=true,west=true]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 13 65 -72 13 66 -72 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 11 65 -72 11 66 -72 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=13,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=14,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=15,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=15,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 63 -72 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=15,captureYellow=98..},type=area_effect_cloud,limit=1] run fill 12 64 -72 12 65 -72 magenta_stained_glass_pane[east=true,west=true]
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=15,captureYellow=98..},type=area_effect_cloud,limit=1] run setblock 12 66 -72 obsidian
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=16,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=17,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=18,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=19,captureYellow=98..},type=area_effect_cloud,limit=1] positioned 12 63 -70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
 
 # pad is indestructible
 execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureYellow=98..},type=area_effect_cloud,limit=1] run function rr_powerups:everytick/crystalpadblue_place
+
+# place if crystal is present
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 11 63 -67 11 63 -68 obsidian replace crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 13 63 -67 13 63 -68 obsidian replace crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 14 63 -69 14 63 -71 obsidian replace crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 -69 10 63 -71 obsidian replace crying_obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 13 63 -72 11 63 -72 obsidian replace crying_obsidian
+
+# place unless crystal is present
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 11 63 -67 11 63 -68 crying_obsidian replace obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 13 63 -67 13 63 -68 crying_obsidian replace obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 14 63 -69 14 63 -71 crying_obsidian replace obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 -69 10 63 -71 crying_obsidian replace obsidian
+execute if entity @e[tag=captureMiddle,scores={captureYellow=98..},type=area_effect_cloud,limit=1] unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 13 63 -72 11 63 -72 crying_obsidian replace obsidian
 
 ####
 

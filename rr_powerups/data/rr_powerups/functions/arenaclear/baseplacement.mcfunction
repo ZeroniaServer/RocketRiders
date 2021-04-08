@@ -28,9 +28,27 @@ setblock -95 200 77 purpur_slab[type=top]
 setblock -96 200 78 purpur_slab[type=top]
 setblock -95 200 78 minecraft:sea_lantern
 
-
 #Pregame crystal platforms
-fill -94 203 57 -96 203 55 minecraft:crying_obsidian
-setblock -95 203 56 minecraft:lodestone
-fill -96 203 99 -94 203 101 minecraft:crying_obsidian
-setblock -95 203 100 minecraft:lodestone
+setblock -95 202 59 air
+fill -93 202 58 -93 202 55 obsidian
+fill -97 202 58 -97 202 55 obsidian
+fill -94 202 55 -96 202 55 obsidian
+fill -94 201 58 -96 201 56 crying_obsidian
+fill -95 201 58 -95 201 56 netherite_block
+fill -94 201 57 -96 201 57 netherite_block
+setblock -95 201 57 end_portal_frame[facing=south]
+fill -94 203 59 -96 203 59 air
+fill -97 203 55 -93 205 57 barrier replace air
+fill -94 202 56 -96 204 58 air
+
+setblock -95 202 97 air
+fill -93 202 98 -93 202 101 obsidian
+fill -97 202 98 -97 202 101 obsidian
+fill -94 202 101 -96 202 101 obsidian
+fill -94 201 98 -96 201 100 crying_obsidian
+fill -95 201 98 -95 201 100 netherite_block
+fill -94 201 99 -96 201 99 netherite_block
+setblock -95 201 99 end_portal_frame[facing=north]
+fill -94 203 97 -96 203 97 air
+fill -97 203 101 -93 205 99 barrier replace air
+fill -94 202 100 -96 204 98 air

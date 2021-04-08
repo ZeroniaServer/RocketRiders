@@ -20,17 +20,3 @@ fill 14 64 -71 14 64 -69 magenta_stained_glass_pane[north=true,south=true]
 fill 13 64 -72 11 64 -72 magenta_stained_glass_pane[east=true,west=true]
 setblock 12 65 -72 magenta_stained_glass_pane[east=true,west=true]
 fill 11 64 -67 13 66 -67 air
-
-# place if crystal is present
-execute if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 11 63 -67 11 63 -68 obsidian
-execute if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 13 63 -67 13 63 -68 obsidian
-execute if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 14 63 -69 14 63 -71 obsidian
-execute if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 -69 10 63 -71 obsidian
-execute if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 13 63 -72 11 63 -72 obsidian
-
-# place unless crystal is present
-execute unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 11 63 -67 11 63 -68 crying_obsidian
-execute unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 13 63 -67 13 63 -68 crying_obsidian
-execute unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 14 63 -69 14 63 -71 crying_obsidian
-execute unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 10 63 -69 10 63 -71 crying_obsidian
-execute unless entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 13 63 -72 11 63 -72 crying_obsidian

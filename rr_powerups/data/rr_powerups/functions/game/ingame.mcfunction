@@ -18,6 +18,13 @@ function rr_powerups:everytick/cancel_utility
 function rr_powerups:everytick/crystalpadblue
 function rr_powerups:everytick/crystalpadyellow
 
+#Short-ranged ambient sound for crystals
+scoreboard players add @e[tag=PUCrystal] CmdData 1
+execute as @e[tag=PUCrystal,scores={CmdData=5}] at @s run playsound minecraft:block.beacon.ambient ambient @a ~ ~ ~ 0.45 1.4
+scoreboard players reset @e[tag=PUCrystal,scores={CmdData=20..}] CmdData
+execute unless entity @e[tag=PUCrystal] run stopsound @a ambient minecraft:block.beacon.ambient
+
+
 #extra stuff for obsidian border
 fill -15 64 67 10 64 67 obsidian
 fill 14 64 67 39 64 67 obsidian

@@ -156,6 +156,9 @@ execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1,scores={Poweru
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1,scores={PowerupCrystal=16..30}] at @s run tp @s ~ ~0.15 ~
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s run tp @s ^ ^ ^1 facing entity @e[tag=YellowCrystalSpot,type=area_effect_cloud,limit=1,sort=nearest]
 
+execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=YellowCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1] at @s run playsound minecraft:entity.ender_eye.death master @a ~ ~ ~ 2 0.5
+execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=YellowCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1] at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 2 1.6
+
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=YellowCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1] run tag @e[tag=PUCrystal,type=end_crystal,limit=1,sort=nearest] add Set
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=YellowCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1] run kill @s
 execute as @e[tag=PUCrystal,tag=Set,type=end_crystal,limit=1] at @s run kill @e[tag=YellowCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1]

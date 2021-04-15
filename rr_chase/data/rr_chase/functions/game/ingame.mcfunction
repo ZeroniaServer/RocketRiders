@@ -1,15 +1,17 @@
 #Leave midgame
 execute as @s[tag=!SMActive] run function game:leavemidgame
 
-#Item RNG (exception for arrows) and spawnpoints
+#Item RNG (exception for arrows)
 tag @s add givenArrows
 tag @s add givenArrowsTwice
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[team=Blue] run function items:util/givearrows
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-spawnpoint @a[team=Blue] 12 64 -66 0
 execute if entity @s[tag=Minute] run function items:minutemix
+
+#Spawnpoints
+execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
 
 #Arrows on death
 execute as @s[scores={gametime=2..}] as @a[team=Blue,scores={death=1..}] run function items:util/givearrows

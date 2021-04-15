@@ -140,8 +140,8 @@ execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55},ty
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55},type=area_effect_cloud,limit=1] run summon area_effect_cloud 12 55 0 {Tags:["BlueCrystalSpot","NotSet","PUCrystalEntity"],Duration:400}
 execute as @e[tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55},type=area_effect_cloud,limit=1] run scoreboard players set @s PowerupCrystal 20
 
-execute as @e[tag=PUCrystalAS,type=armor_stand,limit=1] at @s run particle end_rod ~ ~1.15 ~ 0 0 0 0.05 3 force
-execute as @e[tag=PUCrystalAS,type=armor_stand,limit=1] at @s run particle dragon_breath ~ ~1.15 ~ 0 0 0 0 1 force
+execute as @e[tag=PUCrystalAS,type=armor_stand,limit=1] at @s positioned ~ ~.25 ~-3 run particle end_rod ~ ~1.15 ~ 0 0 0 0.05 3 force
+execute as @e[tag=PUCrystalAS,type=armor_stand,limit=1] at @s positioned ~ ~.25 ~-3 run particle dragon_breath ~ ~1.15 ~ 0 0 0 0 1 force
 
 
 
@@ -154,12 +154,16 @@ tag @e[tag=BlueCrystalSpot,tag=NotSet,type=area_effect_cloud,limit=1] remove Not
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] run scoreboard players add @s PowerupCrystal 1
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1,scores={PowerupCrystal=1..15}] at @s run tp @s ~ ~0.25 ~
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1,scores={PowerupCrystal=16..30}] at @s run tp @s ~ ~0.15 ~
-execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s run tp @s ^ ^ ^1 facing entity @e[tag=BlueCrystalSpot,type=area_effect_cloud,limit=1,sort=nearest]
+execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=BlueCrystalSpot,type=area_effect_cloud,limit=1,sort=nearest,distance=10..] run tp @s ^ ^ ^1 facing entity @e[tag=BlueCrystalSpot,type=area_effect_cloud,limit=1,sort=nearest]
+execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=BlueCrystalSpot,type=area_effect_cloud,limit=1,sort=nearest,distance=5..10] run tp @s ^ ^ ^0.75 facing entity @e[tag=BlueCrystalSpot,type=area_effect_cloud,limit=1,sort=nearest]
+execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=BlueCrystalSpot,type=area_effect_cloud,limit=1,sort=nearest,distance=..5] run tp @s ^ ^ ^0.5 facing entity @e[tag=BlueCrystalSpot,type=area_effect_cloud,limit=1,sort=nearest]
 
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=BlueCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1] at @s run playsound minecraft:entity.ender_eye.death master @a ~ ~ ~ 2 0.5
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=BlueCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1] at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 2 1.6
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=BlueCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1] run tag @e[tag=PUCrystal,type=end_crystal,limit=1,sort=nearest] add Set
 execute as @e[tag=PUCrystalAS,tag=NotSet,type=armor_stand,limit=1] at @s if entity @e[tag=BlueCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1] run kill @s
-execute as @e[tag=PUCrystal,tag=Set,type=end_crystal,limit=1] at @s run kill @e[tag=BlueCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1]
-execute as @e[tag=PUCrystal,tag=Set,type=end_crystal,limit=1] at @s run summon end_crystal ~ ~ ~ {ShowBottom:0b,Tags:["PUCrystal","PUCrystalEntity"]}
-kill @e[tag=PUCrystal,tag=Set,type=end_crystal,limit=1]
+scoreboard players add @e[tag=PUCrystal,tag=!PUCrystalPerma,tag=Set,type=end_crystal] PowerupCrystal 1
+execute as @e[tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,type=end_crystal,limit=1,scores={PowerupCrystal=3..}] at @s run kill @e[tag=BlueCrystalSpot,distance=..0.5,type=area_effect_cloud,limit=1]
+execute as @e[tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,type=end_crystal,limit=1,scores={PowerupCrystal=3..}] at @s run particle flash ~ ~ ~ 0 0 0 4 2 force
+execute as @e[tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,type=end_crystal,limit=1,scores={PowerupCrystal=3..}] at @s run summon end_crystal ~ ~ ~ {ShowBottom:0b,Tags:["PUCrystal","PUCrystalEntity","PUCrystalPerma"]}
+kill @e[tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,type=end_crystal,limit=1,scores={PowerupCrystal=3..}]

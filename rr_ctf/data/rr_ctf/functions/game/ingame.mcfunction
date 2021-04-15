@@ -1,14 +1,16 @@
 #leave midgame
 execute as @s[tag=!SMActive] run function rr_ctf:game/leavemidgame
 
-#item RNG and spawnpoints
+#Item RNG
 tag @s add givenCanopy
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_ctf:items/giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-spawnpoint @a[team=Blue] 12 64 -66 0
-spawnpoint @a[team=Yellow] 12 64 66 -180
 execute if entity @s[tag=Minute] run function rr_ctf:items/minutemix
+
+#Spawnpoints
+execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
+execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
 #endstone regeneration
 execute as @e[tag=airDetectBlue,type=area_effect_cloud] at @s run function rr_ctf:everytick/airdetectblue

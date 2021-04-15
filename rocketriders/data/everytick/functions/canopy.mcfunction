@@ -266,7 +266,7 @@ execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run particle minecraft:falling_water ~ ~1 ~ 2 -1 2 1 600 force @a
 execute as @e[tag=wateredInit,tag=!wateredTemp,type=area_effect_cloud] at @s run particle minecraft:happy_villager ~ ~1 ~ 2 -1 2 1 600 force @a
 tag @e[tag=wateredInit,type=area_effect_cloud] add wateredTemp
-scoreboard players remove @e[tag=animated,tag=wateredInit,type=area_effect_cloud] PlatTime 100
+scoreboard players remove @e[tag=animated,tag=wateredInit,type=area_effect_cloud] PlatTime 200
 tag @e[tag=animated,tag=wateredInit,type=area_effect_cloud] add watered
 tag @e[tag=watered,type=area_effect_cloud] remove wateredInit
 tag @e[tag=watered,type=area_effect_cloud] remove wateredTemp

@@ -16,13 +16,15 @@ function rr_swap:baseswap/platform
 execute as @s[scores={servermode=0},tag=!SMCustom] run function rr_swap:baseswap/gear
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] run function servermode:giveswapgear
 
-#Item RNG and spawnpoints
+#Item RNG
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_swap:items/giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-spawnpoint @a[team=Blue] 12 64 -66 0
-spawnpoint @a[team=Yellow] 12 64 66 -180
 execute if entity @s[tag=Minute] run function rr_swap:items/minutemix
+
+#Spawnpoints
+execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
+execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
 #win
 execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 13 38 74 nether_portal run function game:winblue

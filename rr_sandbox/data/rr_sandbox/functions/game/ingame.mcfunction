@@ -30,8 +30,8 @@ execute as @s[scores={RandomItem=400..}] run function items:util/rng
 scoreboard players reset @s[scores={RandomItem=400..}] RandomItem
 
 #spawnpoints
-spawnpoint @a[team=Blue] 12 64 -66 0
-spawnpoint @a[team=Yellow] 12 64 66 -180
+execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
+execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
 #smart clear stuff
 execute as @a[team=Yellow] unless entity @s[scores={SBplaceSlime=0,SBplaceRS=0,SBplacePiston=0,SBplaceSPiston=0,SBplaceObs=0,SBplaceTNT=0,SBplaceBGlass=0,SBplaceYGlass=0,SBplaceBGlaze=0,SBplaceYGlaze=0,SBplaceBCon=0,SBplaceYCon=0}] at @s unless entity @e[tag=SmartClearAECyellow,limit=1,sort=nearest,distance=..6,type=area_effect_cloud] run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECyellow"]}

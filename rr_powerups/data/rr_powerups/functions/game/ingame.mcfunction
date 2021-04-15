@@ -15,8 +15,8 @@ function rr_powerups:everytick/lava_splash
 function rr_powerups:everytick/cancel_utility
 
 #crystal pads
-function rr_powerups:everytick/crystalpadblue
-function rr_powerups:everytick/crystalpadyellow
+execute if entity @e[tag=captureMiddle,scores={captureYellow=1..}] run function rr_powerups:everytick/crystalpadblue
+execute if entity @e[tag=captureMiddle,scores={captureBlue=1..}] run function rr_powerups:everytick/crystalpadyellow
 
 #Short-ranged ambient sound for crystals
 scoreboard players add @e[tag=PUCrystal] CmdData 1
@@ -37,16 +37,18 @@ fill 39 63 67 39 34 67 obsidian
 fill -15 63 -67 -15 34 -67 obsidian
 fill 39 63 -67 39 34 -67 obsidian
 
-#item RNG and spawnpoints
+#Item RNG
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!doStacking] RandomItem matches ..1 as @a unless entity @s[team=!Blue,team=!Yellow] run function item:antidupe
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-spawnpoint @a[team=Blue] 12 64 -66 0
-spawnpoint @a[team=Yellow] 12 64 66 -180
 execute if entity @s[tag=Minute] run function items:minutemix
 
-#powerup RNG and spawnpoints
+#Spawnpoints
+execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
+execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
+
+#powerup RNG
 execute if entity @e[tag=captureMiddle,scores={capturePoint=1..},type=area_effect_cloud] run scoreboard players add @s powerupcount 1
 execute if entity @e[tag=captureMiddle,scores={capturePoint=0},type=area_effect_cloud] run scoreboard players set @s powerupcount 0
 execute as @s[scores={powerupcount=20}] run scoreboard players remove @s PowerupDisplay 1

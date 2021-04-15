@@ -35,9 +35,15 @@ execute in overworld as @e[tag=missile,type=area_effect_cloud] at @s if predicat
 execute if entity @s[tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
 execute if entity @s[tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
 
-#Antigrief (only runs when there is not an enemy player near base)
-execute as @s[tag=!antigriefOff] as @e[tag=bluemissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=17] run function items:prevention/antigrief
-execute as @s[tag=!antigriefOff] as @e[tag=yellowmissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=57,dz=17] run function items:prevention/antigrief
+##Antigrief
+
+#Normal antigrief - starts after 10 seconds
+execute as @s[tag=!antigriefOff,scores={gametime=200..}] as @e[tag=bluemissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=17] run function items:prevention/antigrief
+execute as @s[tag=!antigriefOff,scores={gametime=200..}] as @e[tag=yellowmissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=57,dz=17] run function items:prevention/antigrief
+
+#Stronger antigrief - starts before 10 seconds
+execute as @s[tag=!antigriefOff,scores={gametime=..199}] as @e[tag=bluemissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run function items:prevention/antigrief_10sec
+execute as @s[tag=!antigriefOff,scores={gametime=..199}] as @e[tag=yellowmissile,type=area_effect_cloud] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run function items:prevention/antigrief_10sec
 
 #Give back
 execute as @e[tag=UnableMissile,tag=!missileflip,type=area_effect_cloud] at @s run function items:prevention/unablefx

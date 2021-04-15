@@ -105,8 +105,8 @@ execute as @a[tag=BackBroad] run function items:missile/special/givebroad
 execute unless entity @s[tag=customPrevention] as @a[tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals.","color":"red"}]
 execute as @a[tag=roofMSG] run tellraw @s ["",{"text":"Unable to spawn missile near the roof.","color":"red"}]
 execute as @a[tag=voidMSG] run tellraw @s ["",{"text":"Unable to spawn missile near the void.","color":"red"}]
-execute as @a[tag=antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside own base.","color":"red"}]
-
+execute as @s[tag=!antigriefOff,scores={gametime=200..}] run execute as @a[tag=antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside own base.","color":"red"}]
+execute as @s[tag=!antigriefOff,scores={gametime=..199}] run execute as @a[tag=antigriefMSG] run tellraw @s ["",{"text":"Unable to collide missiles for the first 10 seconds of a game.","color":"red"}]
 ##Tag removal
 execute unless entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG
 execute unless entity @s[tag=customPrevention] run tag @a[tag=roofMSG] remove roofMSG

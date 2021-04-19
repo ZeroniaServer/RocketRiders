@@ -12,6 +12,14 @@ execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s anchored eyes run par
 #placement (animations etc)
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @s[x=-12,y=36,z=-74,dx=48,dy=25] run kill @s
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @s[x=-12,y=36,z=74,dx=48,dy=25] run kill @s
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run particle minecraft:block honey_block ~ ~ ~ 0.5 0.5 0.5 1 100
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.hit block @a ~ ~ ~ 2 1
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.break block @a ~ ~ ~ 2 1
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run particle minecraft:block honey_block ~ ~ ~ 0.5 0.5 0.5 1 100
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.hit block @a ~ ~ ~ 2 1
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.break block @a ~ ~ ~ 2 1
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
 execute as @e[tag=BlueBee,scores={BeeShieldTime=20},type=armor_stand] at @s run summon area_effect_cloud ~ ~3 ~ {Tags:["BBeeShieldDisplay","animBshield"],Duration:2000000000}
 execute as @e[tag=YellowBee,scores={BeeShieldTime=20},type=armor_stand] at @s run summon area_effect_cloud ~ ~3 ~ {Tags:["YBeeShieldDisplay","animBshield"],Duration:2000000000}
 scoreboard players add @e[tag=animBshield,type=area_effect_cloud] BeeShieldTime 1

@@ -13,7 +13,6 @@ scoreboard players add @s[tag=crosser] respawn 1
 kill @s[team=!Spectator,tag=!crosser]
 
 #Handle Spectators
-execute if entity @s[team=Spectator] run tellraw @a ["",{"selector":"@s"},{"translate":"death.attack.outOfWorld"}]
 tp @s[team=Spectator] 12 100 0.5 90 90
 
 #Handle crossers (Rocket Residers)

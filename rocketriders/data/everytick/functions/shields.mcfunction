@@ -16,6 +16,10 @@ execute unless entity @s[tag=noPortal] as @e[tag=YellowShield,type=snowball,scor
 execute unless entity @s[tag=noPortal] as @e[tag=YellowShield,type=snowball,scores={shieldtest=19..20}] at @s if entity @s[x=-12,y=33,z=74,dx=48,dy=28] run scoreboard players remove @s shieldtest 1
 #Disable Yellow Shields near void
 execute as @e[tag=YellowShield,type=snowball] at @s if predicate custom:nearvoid run scoreboard players remove @s shieldtest 1
+#Disable Yellow Shields near spawnpoints
+execute as @e[tag=YellowShield,type=snowball] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run scoreboard players remove @s shieldtest 1
+execute as @e[tag=YellowShield,type=snowball] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run scoreboard players remove @s shieldtest 1
+
 execute as @e[tag=YellowShield,scores={shieldtest=20},type=snowball] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["PlaceYellowShield"],Duration:25}
 scoreboard players add @e[tag=PlaceYellowShield,type=area_effect_cloud] shieldplacement 1
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=1},type=area_effect_cloud] run data modify storage rocketriders:shieldpos x prepend from entity @s Pos[0]
@@ -49,6 +53,9 @@ execute unless entity @s[tag=noPortal] as @e[tag=BlueShield,type=snowball,scores
 execute unless entity @s[tag=noPortal] as @e[tag=BlueShield,type=snowball,scores={shieldtest2=19..20}] at @s if entity @s[x=-12,y=33,z=74,dx=48,dy=28] run scoreboard players remove @s shieldtest2 1
 #Disable Blue Shields near void
 execute as @e[tag=BlueShield,type=snowball] at @s if predicate custom:nearvoid run scoreboard players remove @s shieldtest2 1
+#Disable Blue Shields near spawnpoints
+execute as @e[tag=BlueShield,type=snowball] at @s if entity @e[tag=YellowSpawnZone,distance=..7,type=area_effect_cloud] run scoreboard players remove @s shieldtest2 1
+execute as @e[tag=BlueShield,type=snowball] at @s if entity @e[tag=BlueSpawnZone,distance=..7,type=area_effect_cloud] run scoreboard players remove @s shieldtest2 1
 execute as @e[tag=BlueShield,scores={shieldtest2=20},type=snowball] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["PlaceBlueShield"],Duration:25}
 scoreboard players add @e[tag=PlaceBlueShield,type=area_effect_cloud] shieldplacement 1
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=1},type=area_effect_cloud] run data modify storage rocketriders:shieldpos x prepend from entity @s Pos[0]

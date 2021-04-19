@@ -40,6 +40,9 @@ execute unless entity @s[tag=noPortal] as @e[type=area_effect_cloud,tag=blueobal
 execute unless entity @s[tag=noPortal] as @e[type=area_effect_cloud,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
 #Disable Blue Obsidian Shields near void
 execute as @e[type=area_effect_cloud,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
+#Disable Blue Obsidian Shields near spawnpoints
+execute as @e[type=area_effect_cloud,tag=blueobalone] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
+execute as @e[type=area_effect_cloud,tag=blueobalone] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
 
 #Deploy animation/effects
 scoreboard players add @e[type=area_effect_cloud,tag=blueobalone] shieldplacement 1
@@ -99,6 +102,9 @@ execute unless entity @s[tag=noPortal] as @e[type=area_effect_cloud,tag=yellowob
 execute unless entity @s[tag=noPortal] as @e[type=area_effect_cloud,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
 #Disable Yellow Obsidian Shields near void
 execute as @e[type=area_effect_cloud,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
+#Disable Yellow Obsidian Shields near spawnpoints
+execute as @e[type=area_effect_cloud,tag=yellowobalone] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
+execute as @e[type=area_effect_cloud,tag=yellowobalone] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
 
 #Deploy animation/sounds
 scoreboard players add @e[type=area_effect_cloud,tag=yellowobalone] shieldplacement 1

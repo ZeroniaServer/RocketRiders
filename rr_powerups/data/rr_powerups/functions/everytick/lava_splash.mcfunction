@@ -15,6 +15,9 @@ execute if score lavasplash splashtick matches 2 as @e[type=potion,tag=lavasplas
 execute if score lavasplash splashtick matches 2 run scoreboard players set lavasplash splashtick 0
 
 execute as @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:1,Id:23b,Amplifier:0b}],Potion:"minecraft:awkward"},tag=!lavasplash] run data merge entity @s {Duration:2000000,Radius:0,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Tags:["lavasplash","lavasplash_alone","SmartClearAECsplash"]}
+#Kill if near spawnpoints
+execute as @e[tag=lavasplash_alone,type=area_effect_cloud,tag=!splashMarked] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
+execute as @e[tag=lavasplash_alone,type=area_effect_cloud,tag=!splashMarked] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
 execute if entity @s[tag=!SplashStreams] as @e[tag=lavasplash_alone,type=area_effect_cloud,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava[level=8] replace #custom:splashreplace
 execute if entity @s[tag=SplashStreams] as @e[tag=lavasplash_alone,type=area_effect_cloud,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava replace #custom:splashreplace
 execute as @e[tag=lavasplash_alone,type=area_effect_cloud,tag=!splashMarked] run data modify storage rocketriders:splashpos x prepend from entity @s Pos[0]

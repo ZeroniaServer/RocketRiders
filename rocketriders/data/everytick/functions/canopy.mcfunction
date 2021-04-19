@@ -102,6 +102,9 @@ execute unless entity @s[tag=noPortal] as @e[scores={testplat=9..10},type=ender_
 execute unless entity @s[tag=noPortal] as @e[scores={testplat=9..10},type=ender_pearl] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat 2
 #Disable Yellow Canopies near void
 execute as @e[scores={testplat=9..10},type=ender_pearl] at @s if predicate custom:canopy_nearvoid run scoreboard players remove @s testplat 1
+#Disable Yellow Canopies near spawnpoints
+execute as @e[scores={testplat=9..10},type=ender_pearl] at @s if entity @e[tag=BlueSpawnZone,distance=..7,type=area_effect_cloud] run scoreboard players remove @s testplat 1
+execute as @e[scores={testplat=9..10},type=ender_pearl] at @s if entity @e[tag=YellowSpawnZone,distance=..7,type=area_effect_cloud] run scoreboard players remove @s testplat 1
 execute as @e[scores={testplat=10},type=ender_pearl,predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:yellowcanopy1"}
 execute as @e[scores={testplat=10},type=ender_pearl,predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat=10},type=ender_pearl,predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
@@ -134,6 +137,9 @@ execute unless entity @s[tag=noPortal] as @e[scores={testplat2=9..10},type=ender
 execute unless entity @s[tag=noPortal] as @e[scores={testplat2=9..10},type=ender_pearl] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
 #Disable Blue Canopies near void
 execute as @e[scores={testplat2=9..10},type=ender_pearl] at @s if predicate custom:canopy_nearvoid run scoreboard players remove @s testplat2 1
+#Disable Blue Canopies near spawnpoints
+execute as @e[scores={testplat2=9..10},type=ender_pearl] at @s if entity @e[tag=BlueSpawnZone,distance=..7,type=area_effect_cloud] run scoreboard players remove @s testplat2 1
+execute as @e[scores={testplat2=9..10},type=ender_pearl] at @s if entity @e[tag=YellowSpawnZone,distance=..7,type=area_effect_cloud] run scoreboard players remove @s testplat2 1
 execute as @e[scores={testplat2=10},type=ender_pearl,predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
 execute as @e[scores={testplat2=10},type=ender_pearl,predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[scores={testplat2=10},type=ender_pearl,predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]

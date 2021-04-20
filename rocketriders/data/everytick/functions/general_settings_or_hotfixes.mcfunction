@@ -12,9 +12,6 @@ function lobby:missiledisplay/placedisp
 #Tutorial advancements
 execute as @s[scores={servermode=0},tag=!SMCustom] run function tutorial:advantriggers
 
-#Handy tips for newcomers (disabled on duel servermode)
-execute unless entity @s[scores={servermode=2}] unless entity @s[tag=SMCustom] run function everytick:tip
-
 #Fix weirdness with joinpads
 execute as @s[tag=!EditedSettings] run tag @e[tag=yellowjoinpad,type=area_effect_cloud] add CancelJoin
 execute as @s[tag=!EditedSettings] run tag @e[tag=bluejoinpad,type=area_effect_cloud] add CancelJoin

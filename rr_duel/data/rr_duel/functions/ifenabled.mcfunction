@@ -4,6 +4,9 @@ data merge block -69 192 74 {Text1: '{"text":"Gamemode:","color":"#6b006b","clic
 execute as @s[scores={refreshsigns=1..}] run data merge block -69 192 74 {Text1: '{"text":"Gamemode:","color":"#6b006b"}'}
 data merge block -69 191 74 {Text1:'{"text":""}',Text2:'{"color":"light_purple","clickEvent":{"action":"run_command","value":"execute as @s run function rr_duel:info"},"text":"Gamemode Info"}',Text3:'{"clickEvent":{"action":"run_command","value":"playsound ui.button.click player @a ~ ~ ~ 1 1"},"text":" "}',Text4:'{"text":""}'}
 
+#tips (disabled on duel servermode)
+execute unless entity @s[scores={servermode=2}] unless entity @s[tag=SMCustom] run function rr_duel:tip
+
 #game
 function rr_duel:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_duel:game/ingame

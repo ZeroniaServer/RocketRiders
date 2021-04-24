@@ -291,13 +291,7 @@ execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB
 execute as @a[tag=CarryFY1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY1,team=!Lobby,team=!Spectator] if score FY1: FlagScore matches -1 run scoreboard players set FY1: FlagScore 0
 execute as @a[tag=CarryFY2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY2,team=!Lobby,team=!Spectator] if score FY2: FlagScore matches -1 run scoreboard players set FY2: FlagScore 0
 
-tag @a[team=!Blue,team=!Yellow] remove CarryFY1
-tag @a[team=!Blue,team=!Yellow] remove CarryFY2
-tag @a[team=!Blue,team=!Yellow] remove CarryFB1
-tag @a[team=!Blue,team=!Yellow] remove CarryFB2
-tag @a[team=!Blue,team=!Yellow] remove CarryFlag
-tag @a[team=!Blue,team=!Yellow] remove FlipMissile
-scoreboard players reset @a[team=!Blue,team=!Yellow] FlagScore
+function rr_ctf:everytick/clearflagtags
 
 scoreboard players reset @a MinePurpleGlass
 scoreboard players reset @a MineWhiteGlass
@@ -326,3 +320,9 @@ tag @a[tag=!CarryFlag] remove FlipMissile
 #Respawn clears
 execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
 execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
+
+#Disable vortices near flags
+execute positioned -10 65 -64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1
+execute positioned 34 65 -64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1
+execute positioned -10 65 64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1
+execute positioned 34 65 64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1

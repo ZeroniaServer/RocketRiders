@@ -6,3 +6,4 @@ execute as @e[tag=Selection,tag=duelEnabled,type=armor_stand] run function rr_du
 execute as @e[tag=Selection,tag=duelLast,type=armor_stand] run function rr_duel:iflast
 execute as @e[tag=Selection,tag=!noYZELO,type=armor_stand] if entity @e[tag=rr_duel,type=armor_stand,limit=1] run function rr_duel:xp_ranks
 execute as @e[tag=Selection,tag=noYZELO,type=armor_stand] run xp add @a -2147483648 levels
+execute if entity @s[tag=!GameStarted,tag=!noYZELO] as @a[team=!Blue,team=!Yellow,tag=InRanked] run function rr_duel:forfeit/giveloss

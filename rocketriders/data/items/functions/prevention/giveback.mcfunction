@@ -102,16 +102,19 @@ tag @a[tag=BackBroad] remove fullHotbar
 execute as @a[tag=BackBroad] run function items:missile/special/givebroad
 
 ##Unable message
-execute unless entity @s[tag=customPrevention] as @a[tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals.","color":"red"}]
+tag @a[tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG] add preventionMSG
+execute unless entity @s[tag=customPrevention] as @a[tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or portals.","color":"red"}]
 execute as @a[tag=roofMSG] run tellraw @s ["",{"text":"Unable to spawn missile near the roof.","color":"red"}]
 execute as @a[tag=voidMSG] run tellraw @s ["",{"text":"Unable to spawn missile near the void.","color":"red"}]
 execute as @s[tag=!antigriefOff,scores={gametime=200..}] run execute as @a[tag=antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside own base.","color":"red"}]
 execute as @s[tag=!antigriefOff,scores={gametime=..199}] run execute as @a[tag=antigriefMSG] run tellraw @s ["",{"text":"Unable to collide missiles for the first 10 seconds of a game.","color":"red"}]
+execute as @a[tag=spawnpointMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside team spawnpoint.","color":"red"}]
 ##Tag removal
-execute unless entity @s[tag=customPrevention] run tag @a[tag=MissiMSG] remove MissiMSG
-execute unless entity @s[tag=customPrevention] run tag @a[tag=roofMSG] remove roofMSG
-execute unless entity @s[tag=customPrevention] run tag @a[tag=voidMSG] remove voidMSG
-execute unless entity @s[tag=customPrevention] run tag @a[tag=antigriefMSG] remove antigriefMSG
+execute unless entity @s[tag=customPrevention] run tag @a[tag=preventionMSG] remove preventionMSG
+tag @a[tag=roofMSG] remove roofMSG
+tag @a[tag=voidMSG] remove voidMSG
+tag @a[tag=antigriefMSG] remove antigriefMSG
+tag @a[tag=spawnpointMSG] remove spawnpointMSG
 tag @a remove BackAux
 tag @a remove BackToma
 tag @a remove BackNull

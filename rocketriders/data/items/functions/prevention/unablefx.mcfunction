@@ -187,6 +187,8 @@ execute as @s[tag=yellowmissile,tag=roof] at @s if entity @a[team=Yellow,sort=ne
 execute as @s[tag=bluemissile,tag=roof] at @s if entity @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] run tag @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] add roofMSG
 execute as @s[tag=yellowmissile,tag=antigrief] at @s if entity @a[team=Yellow,sort=nearest,limit=1,distance=..12,tag=MissiMSG] run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12,tag=MissiMSG] add antigriefMSG
 execute as @s[tag=bluemissile,tag=antigrief] at @s if entity @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] run tag @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] add antigriefMSG
+execute as @s[tag=yellowmissile,tag=spawnpoint] at @s if entity @a[team=Yellow,sort=nearest,limit=1,distance=..12,tag=MissiMSG] run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12,tag=MissiMSG] add spawnpointMSG
+execute as @s[tag=bluemissile,tag=spawnpoint] at @s if entity @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] run tag @a[team=Blue,sort=nearest,limit=1,distance=..12,tag=MissiMSG] add spawnpointMSG
 
 #All missiles
 tp @s ~ ~-300 ~

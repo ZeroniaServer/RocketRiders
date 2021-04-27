@@ -92,7 +92,7 @@ execute as @e[tag=captureMiddle,scores={PowerupCrystal=18,captureBlue=98..},type
 execute as @e[tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},type=area_effect_cloud,limit=1] positioned 12 63 70 run playsound minecraft:block.lava.pop master @a ~ ~ ~ 2 2
 
 # pad is indestructible
-execute if entity @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] run function rr_powerups:everytick/crystalpadyellow_place
+execute as @e[tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},type=area_effect_cloud,limit=1] run function rr_powerups:everytick/crystalpadyellow_place
 
 # place if crystal is present
 execute if entity @e[tag=captureMiddle,scores={captureBlue=98..},type=area_effect_cloud,limit=1] if entity @e[tag=PUCrystal,type=end_crystal,limit=1] run fill 11 63 67 11 63 68 obsidian replace crying_obsidian
@@ -132,7 +132,6 @@ execute as @e[tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=40},type
 execute as @e[tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=45},type=area_effect_cloud,limit=1] run setblock 12 63 70 end_portal_frame[facing=north,eye=true]
 execute as @e[tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=45},type=area_effect_cloud,limit=1] positioned 12 64 70 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 1.2
 
-execute as @e[tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=55},type=area_effect_cloud,limit=1] run setblock 12 63 70 end_portal_frame[facing=north,eye=false]
 execute as @e[tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=55},type=area_effect_cloud,limit=1] run particle minecraft:end_rod 12 65 70 1 0 1 0.1 100
 execute as @e[tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=55},type=area_effect_cloud,limit=1] positioned 12 64 70 run playsound minecraft:entity.shulker.shoot master @a ~ ~ ~ 1 0.65
 execute as @e[tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=55},type=area_effect_cloud,limit=1] run kill @e[tag=PUCrystalDeco,type=armor_stand]

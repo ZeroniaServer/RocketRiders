@@ -174,10 +174,3 @@ execute if entity @e[tag=captureMiddle,scores={capturePoint=1},type=area_effect_
 execute if entity @e[tag=captureMiddle,scores={capturePoint=1},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=..1}] as @a[team=Blue,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":"true"},{"text":" second!","color":"light_purple"}]
 execute if entity @e[tag=captureMiddle,scores={capturePoint=2},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=2..}] as @a[team=Yellow,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":"true"},{"text":" seconds!","color":"dark_purple"}]
 execute if entity @e[tag=captureMiddle,scores={capturePoint=2},type=area_effect_cloud] if entity @s[scores={PowerupDisplay=..1}] as @a[team=Yellow,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[tag=Selection,type=armor_stand,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":"true"},{"text":" second!","color":"dark_purple"}]
-
-#custom prevention message
-execute as @a[tag=MissiMSG,tag=!voidMSG,tag=!roofMSG,tag=!antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portals or the Powerup Platform.","color":"red"}]
-tag @a[tag=MissiMSG] remove MissiMSG
-tag @a[tag=roofMSG] remove roofMSG
-tag @a[tag=voidMSG] remove voidMSG
-tag @a[tag=antigriefMSG] remove antigriefMSG

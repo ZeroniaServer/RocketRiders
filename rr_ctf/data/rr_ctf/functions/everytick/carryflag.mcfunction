@@ -77,7 +77,11 @@ execute as @a[tag=CarryFB2,scores={FlagScore=1}] run fill 30 65 -64 34 66 -65 ai
 execute as @a[tag=CarryFlag,scores={FlagScore=1}] as @a[team=!Lobby] at @s run playsound entity.ender_dragon.flap player @s ~ ~ ~ 1 2
 execute as @a[tag=CarryFlag,team=Blue,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" stole a ","color":"aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
 execute as @a[tag=CarryFlag,team=Yellow,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" stole a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
-effect give @a[tag=CarryFlag,scores={FlagScore=1}] glowing 1000000 0 true
+# effect give @a[tag=CarryFlag,scores={FlagScore=1}] glowing 1000000 0 true
 effect give @a[tag=CarryFlag,scores={FlagScore=1}] resistance 1000000 0 true
 effect give @a[tag=CarryFlag,scores={FlagScore=1}] strength 1000000 0 true
 effect give @a[tag=CarryFlag,scores={FlagScore=1}] absorption 1000000 0 true
+
+#particle trails for flag carriers - everyone but you can see it (and no one in lobby)
+execute as @a[tag=CarryFlag,team=Blue] at @s anchored eyes run particle minecraft:dust 0 0 1 1 ~ ~28 ~ 0 10 0 1 100 force @a[team=!Lobby,distance=1..]
+execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecraft:dust 1 1 0 1 ~ ~28 ~ 0 10 0 1 100 force @a[team=!Lobby,distance=1..]

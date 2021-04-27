@@ -24,16 +24,19 @@ execute as @e[tag=missileflip,tag=bluemissile,tag=wasblue,type=area_effect_cloud
 
 ##Prevention
 #Void
-execute as @e[tag=missile,type=area_effect_cloud] at @s if predicate custom:nearvoid run tag @s add UnableMissile
-execute as @e[tag=missile,type=area_effect_cloud] at @s if predicate custom:nearvoid run tag @s add void
+execute as @e[tag=!UnableMissile,tag=missile,type=area_effect_cloud] at @s if predicate custom:nearvoid run tag @s add UnableMissile
+execute as @e[tag=!UnableMissile,tag=missile,type=area_effect_cloud] at @s if predicate custom:nearvoid run tag @s add void
 
 #Roof
-execute in overworld as @e[tag=missile,type=area_effect_cloud] at @s if predicate custom:nearroof run tag @s add UnableMissile
-execute in overworld as @e[tag=missile,type=area_effect_cloud] at @s if predicate custom:nearroof run tag @s add roof
+execute in overworld as @e[tag=!UnableMissile,tag=missile,type=area_effect_cloud] at @s if predicate custom:nearroof run tag @s add UnableMissile
+execute in overworld as @e[tag=!UnableMissile,tag=missile,type=area_effect_cloud] at @s if predicate custom:nearroof run tag @s add roof
 
 #Pierce Prevention (Portals)
 execute if entity @s[tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
 execute if entity @s[tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
+
+#Spawnpoint
+execute as @e[tag=!UnableMissile,tag=missile,type=area_effect_cloud] at @s run function items:prevention/spawnpoint
 
 ##Antigrief
 

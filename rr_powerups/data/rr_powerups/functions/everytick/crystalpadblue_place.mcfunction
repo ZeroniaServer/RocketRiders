@@ -3,7 +3,7 @@ fill 12 63 -67 12 63 -69 netherite_block
 fill 11 63 -69 11 63 -71 netherite_block
 fill 13 63 -69 13 63 -71 netherite_block
 setblock 12 63 -71 netherite_block
-execute unless block 12 63 -70 end_portal_frame run setblock 12 63 -70 end_portal_frame[facing=south]
+execute as @s[scores={PowerupCrystal=..44}] run setblock 12 63 -70 end_portal_frame[facing=south,eye=false]
 setblock 14 63 -67 obsidian
 setblock 10 63 -67 obsidian
 fill 14 63 -68 14 65 -68 obsidian

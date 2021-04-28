@@ -115,6 +115,7 @@ tag @a[tag=roofMSG] remove roofMSG
 tag @a[tag=voidMSG] remove voidMSG
 tag @a[tag=antigriefMSG] remove antigriefMSG
 tag @a[tag=spawnpointMSG] remove spawnpointMSG
+tag @a[tag=MissiMSG] remove MissiMSG
 tag @a remove BackAux
 tag @a remove BackToma
 tag @a remove BackNull

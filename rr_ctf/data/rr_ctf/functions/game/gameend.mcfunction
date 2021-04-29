@@ -15,6 +15,7 @@ execute as @s[scores={endtimer=2..}] run tag @a remove CarryFY1
 execute as @s[scores={endtimer=2..}] run tag @a remove CarryFY2
 execute as @s[scores={endtimer=2..}] run tag @a remove CarryFB1
 execute as @s[scores={endtimer=2..}] run tag @a remove CarryFB2
+execute as @s[scores={endtimer=1..}] run kill @e[tag=FlagParticle,type=area_effect_cloud]
 execute as @s[scores={endtimer=2..}] run scoreboard players reset * FlagScore
 execute as @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 players none
 execute as @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]

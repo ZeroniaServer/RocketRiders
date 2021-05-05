@@ -8,6 +8,7 @@ execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] as @s[score
 
 #Title/giving
 title @s[scores={HasArrows=4..},tag=!fullHotbar,tag=!Infinity] actionbar {"text":"Arrows already obtained.","color":"aqua"}
+execute as @s[scores={HasArrows=4..},tag=!fullHotbar,tag=!Infinity] at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 1
 title @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!Infinity] actionbar {"text":"Arrows obtained.","color":"aqua"}
 title @s[scores={HasArrows=1..},tag=!fullHotbar,tag=Infinity] actionbar {"text":"Arrow already obtained.","color":"aqua"}
 title @s[scores={HasArrows=0},tag=!fullHotbar,tag=Infinity] actionbar {"text":"Arrow obtained.","color":"aqua"}

@@ -3,6 +3,7 @@ execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store resul
 execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasElytra 0
 
 #Title/giving
+execute as @s at @s run playsound minecraft:entity.bat.takeoff player @s ~ ~ ~ 0.2 1
 execute as @s[scores={HasElytra=1..}] run title @s actionbar {"text":"Elytra repaired.","color":"aqua"}
 execute as @s[scores={HasElytra=1..}] run tag @s add DelayActionbar
 execute as @s[scores={HasElytra=1..}] run scoreboard players set @s actionbardelay 0

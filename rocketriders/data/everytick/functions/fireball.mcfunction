@@ -4,13 +4,22 @@
 
 #Summoning the Fireball entity
 execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballBlue"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
+execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use player @s ~ ~ ~ 1 1
+execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.ambient player @s ~ ~ ~ 0.25 1
 kill @e[tag=BlueFireball,type=area_effect_cloud]
 execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballYellow"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
+execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use player @s ~ ~ ~ 1 1
+execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.ambient player @s ~ ~ ~ 0.25 1
 kill @e[tag=YellowFireball,type=area_effect_cloud]
 
 #Detecting Fireball motion
 tag @e[type=fireball,tag=NormalFireball] remove Still
 tag @e[type=fireball,tag=NormalFireball,nbt={Motion:[0.0,0.0,0.0]}] add Still
+
+#Fireball ambient sounds
+scoreboard players add $fireballsound CmdData 1
+execute if score $fireballsound CmdData matches 20.. run scoreboard players set $fireballsound CmdData 0
+execute if score $fireballsound CmdData matches 0 as @e[type=fireball,tag=NormalFireball] at @s as @a[distance=..3] run playsound minecraft:block.fire.ambient block @s ~ ~ ~ 0.5 1 0.1
 
 #Custom team particles for moving Fireball
 execute as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a

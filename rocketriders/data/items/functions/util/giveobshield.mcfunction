@@ -7,6 +7,7 @@ execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboa
 
 #Title/giving
 title @s[scores={HasObshield=1..},tag=!fullHotbar] actionbar {"text":"Obsidian Shield already obtained.","color":"aqua"}
+execute as @s[scores={HasObshield=1..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 1
 title @s[scores={HasObshield=0},tag=!fullHotbar] actionbar {"text":"Obsidian Shield obtained.","color":"aqua"}
 give @s[team=Yellow,scores={HasObshield=0},tag=!fullHotbar] enderman_spawn_egg{display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"Obsidian Shield","color":"gold","bold":"true"}]',Lore:['{"text":"Spawns a Fireball that you can shoot or punch","color":"gray"}','{"text":"to spawn an Obsidian Shield. Stops all missiles.","color":"gray"}','{"text":"Break the central glass 3 times to destroy it.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['YellowObshield']}} 1
 give @s[team=Blue,scores={HasObshield=0},tag=!fullHotbar] enderman_spawn_egg{display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"Obsidian Shield","color":"blue","bold":"true"}]',Lore:['{"text":"Spawns a Fireball that you can shoot or punch","color":"gray"}','{"text":"to spawn an Obsidian Shield. Stops all missiles.","color":"gray"}','{"text":"Break the central glass 3 times to destroy it.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['BlueObshield']}} 1

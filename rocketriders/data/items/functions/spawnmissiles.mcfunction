@@ -66,6 +66,11 @@ execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage 
 execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos y prepend from entity @s Pos[1]
 execute as @e[tag=yellowmissile,type=area_effect_cloud] run data modify storage rocketriders:ymissilepos z prepend from entity @s Pos[2]
 
+##Play sounds
+execute as @e[tag=missile,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:block.slime_block.place player @s ~ ~ ~ 1 1
+execute as @e[tag=missile,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:block.stone.place player @s ~ ~ ~ 1 1
+execute as @e[tag=missile,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use player @s ~ ~ ~ 1 1
+
 ##Individual missile positioning
 #Auxiliary
 execute as @e[tag=BlueAux,type=area_effect_cloud] at @s run tp @s ~-1 ~-9 ~4

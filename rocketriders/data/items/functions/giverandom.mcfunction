@@ -16,6 +16,7 @@ tag @s add gaveFirstItem
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s actionbardelay 0
 execute as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+execute as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 1
 
 ##Wind Down modifier - subtract two ticks from Item Delay
 scoreboard players remove @s[tag=WindDown,scores={MaxItemTime=62..}] MaxItemTime 2

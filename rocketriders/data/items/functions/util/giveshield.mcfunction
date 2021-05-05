@@ -7,6 +7,7 @@ execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboa
 
 #Title/giving
 title @s[scores={HasShield=1..},tag=!fullHotbar] actionbar {"text":"Shield already obtained.","color":"aqua"}
+execute as @s[scores={HasShield=1..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 1
 title @s[scores={HasShield=0},tag=!fullHotbar] actionbar {"text":"Shield obtained.","color":"aqua"}
 give @s[team=Yellow,scores={HasShield=0},tag=!fullHotbar] snowball{CustomModelData:2,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"Shield","color":"gold","bold":"true"}]',Lore:['{"text":"Throw to spawn a glass Shield.","color":"gray"}','{"text":"This is able to stop most missiles.","color":"gray"}']}} 1
 give @s[team=Blue,scores={HasShield=0},tag=!fullHotbar] snowball{CustomModelData:1,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"Shield","color":"blue","bold":"true"}]',Lore:['{"text":"Throw to spawn a glass Shield.","color":"gray"}','{"text":"This is able to stop most missiles.","color":"gray"}']}} 1

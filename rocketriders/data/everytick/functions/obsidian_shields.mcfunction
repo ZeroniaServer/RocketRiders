@@ -8,6 +8,8 @@
 #Spawning in Fireball entities
 execute as @e[tag=BlueObshield,type=area_effect_cloud] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,direction:[0.0,0.0,0.0]}
 execute as @e[tag=BlueObshield,type=area_effect_cloud] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,direction:[0.0,0.0,0.0]}
+execute as @e[tag=BlueObshield,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use player @s ~ ~ ~ 1 1
+execute as @e[tag=BlueObshield,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge player @s ~ ~ ~ 0.25 1
 execute as @e[type=fireball,tag=blueobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;2076391720,1485847031,-1498900811,226264565],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vZWR1Y2F0aW9uLm1pbmVjcmFmdC5uZXQvd3AtY29udGVudC91cGxvYWRzL25vdGUtMS5wbmcifX19"}]}}}}}
 tag @e[type=fireball,tag=blueobfireball,tag=!headreplaced] add headreplaced
 
@@ -70,6 +72,8 @@ kill @e[tag=BlueObshield,type=area_effect_cloud]
 #Spawning in Fireball entities
 execute as @e[tag=YellowObshield,type=area_effect_cloud] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
 execute as @e[tag=YellowObshield,type=area_effect_cloud] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
+execute as @e[tag=YellowObshield,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use player @s ~ ~ ~ 1 1
+execute as @e[tag=YellowObshield,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge player @s ~ ~ ~ 0.25 1
 execute as @e[type=fireball,tag=yellowobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;2076391720,1485847031,-1498900811,226264565],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vZWR1Y2F0aW9uLm1pbmVjcmFmdC5uZXQvd3AtY29udGVudC91cGxvYWRzL25vdGUtMS5wbmcifX19"}]}}}}}
 tag @e[type=fireball,tag=yellowobfireball,tag=!headreplaced] add headreplaced
 

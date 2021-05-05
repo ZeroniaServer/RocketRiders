@@ -5,11 +5,11 @@
 #Summoning the Fireball entity
 execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballBlue"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
 execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use player @s ~ ~ ~ 1 1
-execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.ambient player @s ~ ~ ~ 0.25 1
+execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot player @s ~ ~ ~ 0.5 1.25
 kill @e[tag=BlueFireball,type=area_effect_cloud]
 execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballYellow"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
 execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use player @s ~ ~ ~ 1 1
-execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.ambient player @s ~ ~ ~ 0.25 1
+execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot player @s ~ ~ ~ 0.5 1.25
 kill @e[tag=YellowFireball,type=area_effect_cloud]
 
 #Detecting Fireball motion

@@ -21,7 +21,6 @@ scoreboard players set @e[type=arrow,nbt={inGround:0b}] arrowtime 0
 execute as @e[type=arrow,scores={arrowtime=..9}] run tag @s remove pickup
 
 #Give arrow
-execute as @e[type=arrow,tag=pickup,nbt={inGround:1b},tag=!infinity,limit=1] at @s as @p[team=!Spectator,distance=..2,tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 execute as @a[team=!Spectator,tag=!fullOffhand] at @s as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity,limit=1,distance=..2,sort=nearest] unless data entity @s CustomPotionEffects at @s run function everytick:arrow_replace
 execute as @s[tag=!GameStarted] as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless data entity @s CustomPotionEffects at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'},Lobby:1b}
 execute as @s[tag=GameStarted] as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless data entity @s CustomPotionEffects at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}}

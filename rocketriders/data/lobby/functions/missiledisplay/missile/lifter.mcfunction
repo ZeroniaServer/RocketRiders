@@ -6,7 +6,7 @@ data merge entity @e[tag=SpeedDisp,limit=1,type=area_effect_cloud] {CustomName:'
 data merge entity @e[tag=MisDispIF,limit=1,type=item_frame] {Item:{id:"minecraft:dolphin_spawn_egg",Count:1b}}
 data remove entity @e[tag=MisDispIF,limit=1,type=item_frame] Item.tag.Enchantments
 
-playsound minecraft:entity.generic.explode player @a 19 204 78 0.5 1.75
+playsound minecraft:entity.generic.explode master @a 19 204 78 0.5 1.75
 particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force
 
 scoreboard players set $prevpage CmdData 0

@@ -69,7 +69,7 @@ execute as @e[tag=YellowNexusB,scores={nexushealth=1},type=area_effect_cloud] at
 execute as @e[tag=YellowNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run tellraw @a[team=Yellow] ["",{"text":"Nexus B has been destroyed!","color":"red","bold":true}]
 
 
-execute as @e[tag=BlueNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run playsound entity.lightning_bolt.thunder player @a ~ ~ ~ 4 2
+execute as @e[tag=BlueNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run playsound entity.lightning_bolt.thunder master @a ~ ~ ~ 4 2
 execute as @e[tag=BlueNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run fill ~1 ~7 ~1 ~-1 ~-7 ~-1 air destroy
 execute as @e[tag=BlueNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~ ~-2 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}
 execute as @e[tag=BlueNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~-1 ~-1 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}
@@ -91,7 +91,7 @@ execute as @e[tag=BlueNexusA,scores={nexushealth=1},type=area_effect_cloud] at @
 execute as @e[tag=BlueNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~ ~4 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}
 scoreboard players set @e[tag=BlueNexusA,scores={nexushealth=1},type=area_effect_cloud] nexushealth 0
 #B
-execute as @e[tag=BlueNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run playsound entity.lightning_bolt.thunder player @a ~ ~ ~ 4 2
+execute as @e[tag=BlueNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run playsound entity.lightning_bolt.thunder master @a ~ ~ ~ 4 2
 execute as @e[tag=BlueNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run fill ~1 ~7 ~1 ~-1 ~-7 ~-1 air destroy
 execute as @e[tag=BlueNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~ ~-2 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}
 execute as @e[tag=BlueNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~-1 ~-1 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}
@@ -117,7 +117,7 @@ scoreboard players set @e[tag=BlueNexusB,scores={nexushealth=1},type=area_effect
 
 #Collapse Animation Yellow
 #A
-execute as @e[tag=YellowNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run playsound entity.lightning_bolt.thunder player @a ~ ~ ~ 4 2
+execute as @e[tag=YellowNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run playsound entity.lightning_bolt.thunder master @a ~ ~ ~ 4 2
 execute as @e[tag=YellowNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run fill ~1 ~7 ~1 ~-1 ~-7 ~-1 air destroy
 execute as @e[tag=YellowNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~ ~-2 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}
 execute as @e[tag=YellowNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~-1 ~-1 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}
@@ -139,7 +139,7 @@ execute as @e[tag=YellowNexusA,scores={nexushealth=1},type=area_effect_cloud] at
 execute as @e[tag=YellowNexusA,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~ ~4 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}
 scoreboard players set @e[tag=YellowNexusA,scores={nexushealth=1},type=area_effect_cloud] nexushealth 0
 #B
-execute as @e[tag=YellowNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run playsound entity.lightning_bolt.thunder player @a ~ ~ ~ 4 2
+execute as @e[tag=YellowNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run playsound entity.lightning_bolt.thunder master @a ~ ~ ~ 4 2
 execute as @e[tag=YellowNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run fill ~1 ~7 ~1 ~-1 ~-7 ~-1 air destroy
 execute as @e[tag=YellowNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~ ~-2 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}
 execute as @e[tag=YellowNexusB,scores={nexushealth=1},type=area_effect_cloud] at @s run summon falling_block ~-1 ~-1 ~ {Tags:["FallingNexus"],Time:1,BlockState:{Name:"minecraft:bedrock"}}

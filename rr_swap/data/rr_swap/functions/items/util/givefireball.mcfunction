@@ -6,7 +6,7 @@ execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboa
 
 #Title/giving
 title @s[scores={HasFireball=1..},tag=!fullHotbar] actionbar {"text":"Cluster Fireball already obtained.","color":"aqua"}
-execute as @s[scores={HasFireball=1..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 1
+execute as @s[scores={HasFireball=1..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasFireball=0},tag=!fullHotbar] actionbar {"text":"Cluster Fireball obtained.","color":"aqua"}
 give @s[team=Yellow,scores={HasFireball=0},tag=!fullHotbar] blaze_spawn_egg{display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"Cluster Fireball","color":"gold","bold":"true"}]',Lore:['{"text":"Spawns a cluster of Fireballs. Punch or","color":"gray"}','{"text":"shoot Fireballs to quickly blow up","color":"gray"}','{"text":"missiles, blocks, or enemy players.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['YellowFireball']},Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7} 1
 give @s[team=Blue,scores={HasFireball=0},tag=!fullHotbar] blaze_spawn_egg{display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":"true"},{"text":"Cluster Fireball","color":"blue","bold":"true"}]',Lore:['{"text":"Spawns a cluster of Fireballs. Punch or","color":"gray"}','{"text":"shoot Fireballs to quickly blow up","color":"gray"}','{"text":"missiles, blocks, or players.","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['BlueFireball']},Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7} 1

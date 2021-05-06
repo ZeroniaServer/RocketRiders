@@ -25,7 +25,7 @@ tp @a[scores={LeaveGame=1..},tag=!WasInYellow,tag=!WasInBlue] -43 211 78 90 0
 tp @a[scores={LeaveGame=1..},tag=WasInYellow] -36 211 96.0 90 0
 tp @a[scores={LeaveGame=1..},tag=WasInBlue] -36 211 61.0 90 0
 execute as @a[scores={LeaveGame=1..},predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @a[scores={LeaveGame=1..,LeaveMidgame=1}] at @s run playsound entity.enderman.teleport player @s ~ ~ ~ 1 1
+execute as @a[scores={LeaveGame=1..,LeaveMidgame=1}] at @s run playsound entity.enderman.teleport master @s ~ ~ ~ 1 1
 scoreboard players set @a[scores={LeaveGame=1..}] LeaveMidgame 0
 scoreboard players set @a[team=!Yellow,team=!Blue] LeaveMidgame 0
 tag @a[scores={LeaveGame=1..}] remove YellowNovaAttach

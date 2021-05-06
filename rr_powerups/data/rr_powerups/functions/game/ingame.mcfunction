@@ -20,9 +20,9 @@ execute if entity @e[tag=captureMiddle,scores={captureBlue=1..}] run function rr
 
 #Short-ranged ambient sound for crystals
 scoreboard players add @e[tag=PUCrystal] CmdData 1
-execute as @e[tag=PUCrystal,scores={CmdData=5}] at @s run playsound minecraft:block.beacon.ambient ambient @a ~ ~ ~ 0.45 1.4
+execute as @e[tag=PUCrystal,scores={CmdData=5}] at @s run playsound minecraft:block.beacon.ambient master @a ~ ~ ~ 0.45 1.4
 scoreboard players reset @e[tag=PUCrystal,scores={CmdData=20..}] CmdData
-execute unless entity @e[tag=PUCrystal] run stopsound @a ambient minecraft:block.beacon.ambient
+execute unless entity @e[tag=PUCrystal] run stopsound @a master minecraft:block.beacon.ambient
 
 
 #extra stuff for obsidian border
@@ -162,7 +162,7 @@ execute as @a[tag=Infinity] if entity @s[team=!Yellow,team=!Blue] run tag @s rem
 execute if score $infinity PowerupDisplay matches 1.. run scoreboard players add $infinity powerupcount 1
 execute if score $infinity powerupcount matches 20.. if score $infinity PowerupDisplay matches 1.. run scoreboard players remove $infinity PowerupDisplay 1
 execute if score $infinity powerupcount matches 20.. run scoreboard players set $infinity powerupcount 0
-execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.beacon.deactivate player @s ~ ~ ~ 1 1.5
+execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 1 1.5
 execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run clear @s bow
 execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar [{"text":"Infinity Saber expired.","color":"red"}]
 execute if score $infinity PowerupDisplay matches 0 as @a[tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar

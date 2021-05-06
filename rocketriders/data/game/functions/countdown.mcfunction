@@ -52,34 +52,34 @@ execute as @s[scores={count=380}] run bossbar set rr:startgame name ["",{"text":
 execute as @s[scores={count=380}] run bossbar set rr:startgame value 11
 execute as @s[scores={count=400}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"10","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=400}] run bossbar set rr:startgame value 10
-execute as @s[scores={count=400}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={count=400}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={count=420}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"9","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=420}] run bossbar set rr:startgame value 9
-execute as @s[scores={count=420}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={count=420}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={count=440}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"8","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=440}] run bossbar set rr:startgame value 8
-execute as @s[scores={count=440}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={count=440}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={count=460}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"7","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=460}] run bossbar set rr:startgame value 7
-execute as @s[scores={count=460}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={count=460}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={count=480}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"6","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=480}] run bossbar set rr:startgame value 6
-execute as @s[scores={count=480}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={count=480}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={count=500}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"5","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=500}] run bossbar set rr:startgame value 5
-execute as @s[scores={count=500}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={count=500}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={count=520}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"4","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=520}] run bossbar set rr:startgame value 4
-execute as @s[scores={count=520}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.6
+execute as @s[scores={count=520}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.6
 execute as @s[scores={count=540}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"3","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=540}] run bossbar set rr:startgame value 3
-execute as @s[scores={count=540}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.7
+execute as @s[scores={count=540}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.7
 execute as @s[scores={count=560}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"2","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute as @s[scores={count=560}] run bossbar set rr:startgame value 2
-execute as @s[scores={count=560}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.8
+execute as @s[scores={count=560}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.8
 execute as @s[scores={count=580}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"1","bold":true,"color":"dark_green"},{"text":" second.","color":"green"}]
 execute as @s[scores={count=580}] run bossbar set rr:startgame value 1
-execute as @s[scores={count=580}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.9
+execute as @s[scores={count=580}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
 
 ##Right as game begins
 execute as @s[scores={count=599..}] as @a unless entity @s[team=!Yellow,team=!Blue] if entity @s[predicate=custom:is_on_fire] at @s run function game:putoutfire

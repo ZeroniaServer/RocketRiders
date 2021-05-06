@@ -29,18 +29,18 @@ execute as @e[tag=PlaceYellowShield,scores={shieldplacement=1},type=area_effect_
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:yellowshield1"}
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[tag=PlaceYellowShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run playsound block.glass.break player @a ~ ~ ~ 2 0.6
-execute as @e[tag=PlaceYellowShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run playsound item.shield.break player @a ~ ~ ~ 2 2
+execute as @e[tag=PlaceYellowShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
+execute as @e[tag=PlaceYellowShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:yellowshield2"}
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[tag=PlaceYellowShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run playsound block.glass.break player @a ~ ~ ~ 2 0.6
-execute as @e[tag=PlaceYellowShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run playsound item.shield.break player @a ~ ~ ~ 2 2
+execute as @e[tag=PlaceYellowShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
+execute as @e[tag=PlaceYellowShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-3,posY:-3,posZ:0,name:"minecraft:yellowshield3"}
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[tag=PlaceYellowShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run playsound block.glass.break player @a ~ ~ ~ 2 0
-execute as @e[tag=PlaceYellowShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run playsound item.shield.block player @a ~ ~ ~ 2 0
+execute as @e[tag=PlaceYellowShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0
+execute as @e[tag=PlaceYellowShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run playsound item.shield.block master @a ~ ~ ~ 2 0
 execute as @e[tag=PlaceYellowShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run particle block yellow_stained_glass ~ ~ ~ 1 1 0 0.1 100
 kill @e[tag=PlaceYellowShield,scores={shieldplacement=3..},type=area_effect_cloud]
 kill @e[tag=YellowShield,scores={shieldtest=20..},type=snowball]
@@ -65,18 +65,18 @@ execute as @e[tag=PlaceBlueShield,scores={shieldplacement=1},type=area_effect_cl
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:blueshield1"}
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[tag=PlaceBlueShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run playsound block.glass.break player @a ~ ~ ~ 2 0.6
-execute as @e[tag=PlaceBlueShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run playsound item.shield.break player @a ~ ~ ~ 2 2
+execute as @e[tag=PlaceBlueShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
+execute as @e[tag=PlaceBlueShield,scores={shieldplacement=1},type=area_effect_cloud] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:blueshield2"}
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[tag=PlaceBlueShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run playsound block.glass.break player @a ~ ~ ~ 2 0.6
-execute as @e[tag=PlaceBlueShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run playsound item.shield.break player @a ~ ~ ~ 2 2
+execute as @e[tag=PlaceBlueShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
+execute as @e[tag=PlaceBlueShield,scores={shieldplacement=2},type=area_effect_cloud] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-3,posY:-3,posZ:0,name:"minecraft:blueshield3"}
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[tag=PlaceBlueShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run playsound block.glass.break player @a ~ ~ ~ 2 0
-execute as @e[tag=PlaceBlueShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run playsound item.shield.block player @a ~ ~ ~ 2 0
+execute as @e[tag=PlaceBlueShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0
+execute as @e[tag=PlaceBlueShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run playsound item.shield.block master @a ~ ~ ~ 2 0
 execute as @e[tag=PlaceBlueShield,scores={shieldplacement=3},type=area_effect_cloud] at @s run particle block blue_stained_glass ~ ~ ~ 1 1 0 0.1 100
 kill @e[tag=PlaceBlueShields,scores={shieldplacement=3..},type=area_effect_cloud]
 kill @e[tag=BlueShield,scores={shieldtest2=20..},type=snowball]

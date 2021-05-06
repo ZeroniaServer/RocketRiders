@@ -5,7 +5,7 @@ data merge entity @e[tag=TNTDisp,limit=1,type=area_effect_cloud] {CustomName:'["
 data merge entity @e[tag=SpeedDisp,limit=1,type=area_effect_cloud] {CustomName:'["",{"text":"Speed: ","color":"dark_green","bold":"true"},{"text":"2.0m/s","color":"white"}]'}
 data merge entity @e[tag=MisDispIF,limit=1,type=item_frame] {Item:{id:"minecraft:parrot_spawn_egg",tag:{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7},Count:1b}}
 
-playsound minecraft:entity.generic.explode player @a 19 204 78 0.5 1.75
+playsound minecraft:entity.generic.explode master @a 19 204 78 0.5 1.75
 particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force
 
 scoreboard players set $prevpage CmdData 1

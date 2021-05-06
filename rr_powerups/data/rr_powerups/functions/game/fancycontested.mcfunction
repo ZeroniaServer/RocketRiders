@@ -1,5 +1,5 @@
-execute as @s[scores={captureBlue=99}] at @s run playsound minecraft:block.beacon.deactivate player @a ~ ~ ~ 1 1.2
-execute as @s[scores={captureYellow=99}] at @s run playsound minecraft:block.beacon.deactivate player @a ~ ~ ~ 1 1.2
+execute as @s[scores={captureBlue=99}] at @s run playsound minecraft:block.beacon.deactivate master @a ~ ~ ~ 1 1.2
+execute as @s[scores={captureYellow=99}] at @s run playsound minecraft:block.beacon.deactivate master @a ~ ~ ~ 1 1.2
 
 particle minecraft:dust 1 0 0 2 12 55 -6 0 0.6 0 0 2 force
 particle minecraft:dust 1 0 0 2 18 55 0 0 0.6 0 0 2 force

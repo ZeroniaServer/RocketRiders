@@ -8,6 +8,6 @@ execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] as @s[score
 
 #Title/giving
 title @s[scores={HasSurprise=3..},tag=!fullHotbar] actionbar {"text":"Surprise Egg already obtained.","color":"aqua"}
-execute as @s[scores={HasSurprise=3..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 1
+execute as @s[scores={HasSurprise=3..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasSurprise=..2},tag=!fullHotbar] actionbar {"text":"Surprise Egg obtained.","color":"aqua"}
 give @s[team=Yellow,scores={HasSurprise=..2},tag=!fullHotbar] cod_spawn_egg{display:{Name:'[{"text":"[???] ","color":"light_purple","bold":"true"},{"text":"Surprise Egg","color":"gold","bold":"true"}]',Lore:['{"text":"Wonder what it spawns?","color":"gray"}']},EntityTag:{id:"minecraft:area_effect_cloud",Radius:0f,RadiusPerTick:-1f,Duration:1,Tags:['YellowSurprise','surprising']}} 1

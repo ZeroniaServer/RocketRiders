@@ -29,6 +29,6 @@ execute store result bossbar rr_swap:swap_progress value run scoreboard players 
 execute if entity @e[tag=SwappingSides,type=area_effect_cloud] if score QuickSwap swapside matches 0 run scoreboard players set SwapPlatformSec swapside 60
 execute if entity @e[tag=SwappingSides,type=area_effect_cloud] if score QuickSwap swapside matches 1 run scoreboard players set SwapPlatformSec swapside 20
 execute if entity @e[tag=SwappingSides,type=area_effect_cloud] run scoreboard players set SwapPlatformTick swapside 0
-execute if entity @e[tag=SwappingSides,type=area_effect_cloud] as @a[team=!Lobby] at @s run playsound entity.zombie_villager.converted player @s ~ ~ ~ 1 1.2
+execute if entity @e[tag=SwappingSides,type=area_effect_cloud] as @a[team=!Lobby] at @s run playsound entity.zombie_villager.converted master @s ~ ~ ~ 1 1.2
 execute if score SwapSide swapside matches 0 as @e[tag=SwappingSides,type=area_effect_cloud] run function rr_swap:baseswap/lightyellow
 execute if score SwapSide swapside matches 1 as @e[tag=SwappingSides,type=area_effect_cloud] run function rr_swap:baseswap/darkyellow

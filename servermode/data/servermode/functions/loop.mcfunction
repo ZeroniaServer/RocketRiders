@@ -55,32 +55,32 @@ execute as @s[scores={VoteServerMode=380}] run bossbar set rr:startgame name [""
 execute as @s[scores={VoteServerMode=380}] run bossbar set rr:startgame value 11
 execute as @s[scores={VoteServerMode=400}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"10","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=400}] run bossbar set rr:startgame value 10
-execute as @s[scores={VoteServerMode=400}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={VoteServerMode=400}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={VoteServerMode=420}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"9","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=420}] run bossbar set rr:startgame value 9
-execute as @s[scores={VoteServerMode=420}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={VoteServerMode=420}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={VoteServerMode=440}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"8","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=440}] run bossbar set rr:startgame value 8
-execute as @s[scores={VoteServerMode=440}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={VoteServerMode=440}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={VoteServerMode=460}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"7","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=460}] run bossbar set rr:startgame value 7
-execute as @s[scores={VoteServerMode=460}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={VoteServerMode=460}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={VoteServerMode=480}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"6","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=480}] run bossbar set rr:startgame value 6
-execute as @s[scores={VoteServerMode=480}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={VoteServerMode=480}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={VoteServerMode=500}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"5","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=500}] run bossbar set rr:startgame value 5
-execute as @s[scores={VoteServerMode=500}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.5
+execute as @s[scores={VoteServerMode=500}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute as @s[scores={VoteServerMode=520}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"4","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=520}] run bossbar set rr:startgame value 4
-execute as @s[scores={VoteServerMode=520}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.6
+execute as @s[scores={VoteServerMode=520}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.6
 execute as @s[scores={VoteServerMode=540}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"3","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=540}] run bossbar set rr:startgame value 3
-execute as @s[scores={VoteServerMode=540}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.7
+execute as @s[scores={VoteServerMode=540}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.7
 execute as @s[scores={VoteServerMode=560}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"2","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=560}] run bossbar set rr:startgame value 2
-execute as @s[scores={VoteServerMode=560}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.8
+execute as @s[scores={VoteServerMode=560}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.8
 execute as @s[scores={VoteServerMode=580}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"1","bold":true,"color":"light_purple"},{"text":" second.","color":"dark_purple"}]
 execute as @s[scores={VoteServerMode=580}] run bossbar set rr:startgame value 1
-execute as @s[scores={VoteServerMode=580}] as @a at @s run playsound block.note_block.hat player @s ~ ~ ~ 100 0.9
+execute as @s[scores={VoteServerMode=580}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
 execute as @s[scores={VoteServerMode=600..}] run function servermode:finishvote

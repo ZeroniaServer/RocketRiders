@@ -14,4 +14,4 @@ tag @s[tag=!Infinity] add Infinity
 tag @e[tag=Selection,type=armor_stand] add givenInfinity
 scoreboard players set $infinity PowerupDisplay 30
 scoreboard players set $infinity powerupcount 0
-execute at @s run playsound minecraft:block.beacon.activate player @s ~ ~ ~ 1 1.5
+execute at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 1.5

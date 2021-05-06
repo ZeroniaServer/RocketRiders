@@ -73,7 +73,7 @@ kill @e[tag=YellowNova,scores={novatimer=30..},type=firework_rocket]
 
 #Attach
 scoreboard players add @a[tag=YellowNovaAttach] novattach 1
-execute as @a[tag=YellowNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch player @a ~ ~ ~ 2 1.2
+execute as @a[tag=YellowNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch master @a ~ ~ ~ 2 1.2
 execute as @a[tag=YellowNovaAttach,scores={novattach=1}] run effect give @s levitation 1 60 true
 execute as @a[tag=YellowNovaAttach,scores={novattach=4..}] run effect clear @s levitation
 execute as @a[tag=YellowNovaAttach,scores={novattach=15}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}}
@@ -90,7 +90,7 @@ kill @e[tag=BlueNova,scores={novatimer=30..},type=firework_rocket]
 
 #Attach
 scoreboard players add @a[tag=BlueNovaAttach] novattach 1
-execute as @a[tag=BlueNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch player @a ~ ~ ~ 2 1.2
+execute as @a[tag=BlueNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch master @a ~ ~ ~ 2 1.2
 execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levitation 1 60 true
 execute as @a[tag=BlueNovaAttach,scores={novattach=4..}] run effect clear @s levitation
 execute as @a[tag=BlueNovaAttach,scores={novattach=15}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]}}}}

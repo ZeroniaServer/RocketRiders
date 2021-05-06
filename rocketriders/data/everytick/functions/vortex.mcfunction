@@ -19,10 +19,10 @@ scoreboard players add @e[tag=YellowVortex,type=egg] vortextimer 1
 #Next two commands disable Vortex near own portals
 execute unless entity @s[tag=noPortal] as @e[tag=BlueVortex,type=egg,scores={vortextimer=19..20}] at @s if entity @s[x=-12,y=36,z=-80,dx=48,dy=28,dz=12] run scoreboard players remove @s vortextimer 1
 execute unless entity @s[tag=noPortal] as @e[tag=YellowVortex,type=egg,scores={vortextimer=19..20}] at @s if entity @s[x=-12,y=36,z=68,dx=48,dy=28,dz=12] run scoreboard players remove @s vortextimer 1
-execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:block.portal.ambient player @a ~ ~ ~ 2 2
-execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:entity.shulker.teleport player @a ~ ~ ~ 2 0.8
-execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:block.portal.ambient player @a ~ ~ ~ 2 2
-execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:entity.shulker.teleport player @a ~ ~ ~ 2 0.8
+execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:block.portal.ambient master @a ~ ~ ~ 2 2
+execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:entity.shulker.teleport master @a ~ ~ ~ 2 0.8
+execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:block.portal.ambient master @a ~ ~ ~ 2 2
+execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:entity.shulker.teleport master @a ~ ~ ~ 2 0.8
 execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexYellow"],Duration:2000000000}
 execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexBlue"],Duration:2000000000}
 #Track Vortex with IDs and summon armor stands recursively - thanks iRobo for the algorithm!
@@ -60,7 +60,7 @@ execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e
 execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexYellow,distance=..2,type=area_effect_cloud,scores={vortexBoom=1..}] vortexBoom 1
 execute as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexBlue,distance=..4,type=area_effect_cloud,scores={vortexBoom=0}] vortexBoom 1
 execute as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexBlue,distance=..2,type=area_effect_cloud,scores={vortexBoom=1..}] vortexBoom 1
-execute as @e[scores={vortexBoom=1},type=area_effect_cloud] at @s run playsound entity.shulker.hurt_closed player @a ~ ~ ~ 1 0
+execute as @e[scores={vortexBoom=1},type=area_effect_cloud] at @s run playsound entity.shulker.hurt_closed master @a ~ ~ ~ 1 0
 tag @e[tag=Vortex,scores={vortexBoom=1},type=area_effect_cloud] add origin
 scoreboard players set @e[tag=Vortex,scores={vortexBoom=1},type=area_effect_cloud] vortexBoom 2
 execute as @e[tag=Vortex,type=area_effect_cloud] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add originboom
@@ -80,7 +80,7 @@ execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @e[tag=Vo
 
 ##Feathered vortex (Easter egg)
 execute unless entity @s[tag=featheredOff] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
-execute as @e[tag=SummonFeathered,type=chicken] at @s run playsound entity.chicken.hurt player @a ~ ~ ~ 2 0
+execute as @e[tag=SummonFeathered,type=chicken] at @s run playsound entity.chicken.hurt master @a ~ ~ ~ 2 0
 execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
 execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexFeathered"],Duration:2000000000}
 execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}

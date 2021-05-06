@@ -6,19 +6,19 @@ execute as @a[scores={DrinkHoney=1..}] at @s anchored eyes run tp @e[tag=BeeShie
 execute as @a[scores={DrinkHoney=1..}] at @s as @e[tag=BeeShieldDisplay,scores={BeeShieldTime=1},distance=..4,limit=1,sort=nearest,type=armor_stand] at @s run function rr_powerups:everytick/projectile
 scoreboard players reset @a DrinkHoney
 replaceitem entity @e[tag=BeeShieldDisplay,scores={BeeShieldTime=1},type=armor_stand] armor.head honey_block
-execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s run playsound minecraft:block.honey_block.slide block @a ~ ~ ~ 2 0.8
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s run playsound minecraft:block.honey_block.slide master @a ~ ~ ~ 2 0.8
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s anchored eyes run particle minecraft:block honey_block ~ ~ ~ 0 0 0 1 10
 
 #placement (animations etc)
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @s[x=-12,y=36,z=-74,dx=48,dy=25] run kill @s
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @s[x=-12,y=36,z=74,dx=48,dy=25] run kill @s
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run particle minecraft:block honey_block ~ ~ ~ 0.5 0.5 0.5 1 100
-execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.hit block @a ~ ~ ~ 2 1
-execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.break block @a ~ ~ ~ 2 1
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.hit master @a ~ ~ ~ 2 1
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.break master @a ~ ~ ~ 2 1
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run particle minecraft:block honey_block ~ ~ ~ 0.5 0.5 0.5 1 100
-execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.hit block @a ~ ~ ~ 2 1
-execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.break block @a ~ ~ ~ 2 1
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.hit master @a ~ ~ ~ 2 1
+execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run playsound minecraft:block.honey_block.break master @a ~ ~ ~ 2 1
 execute as @e[tag=BeeShieldDisplay,type=armor_stand] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
 execute as @e[tag=BlueBee,scores={BeeShieldTime=20},type=armor_stand] at @s run summon area_effect_cloud ~ ~3 ~ {Tags:["BBeeShieldDisplay","animBshield"],Duration:2000000000}
 execute as @e[tag=YellowBee,scores={BeeShieldTime=20},type=armor_stand] at @s run summon area_effect_cloud ~ ~3 ~ {Tags:["YBeeShieldDisplay","animBshield"],Duration:2000000000}
@@ -113,18 +113,18 @@ execute as @e[tag=YBeeShieldDisplay,scores={BeeShieldTime=32},type=area_effect_c
 execute as @e[tag=YBeeShieldDisplay,scores={BeeShieldTime=32},type=area_effect_cloud] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 
 #Sounds and particles for the shield animation
-execute as @e[tag=animBshield,scores={BeeShieldTime=1},type=area_effect_cloud] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 1.3
-execute as @e[tag=animBshield,scores={BeeShieldTime=3},type=area_effect_cloud] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 1.2
-execute as @e[tag=animBshield,scores={BeeShieldTime=5},type=area_effect_cloud] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 1
-execute as @e[tag=animBshield,scores={BeeShieldTime=7},type=area_effect_cloud] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 0.9
-execute as @e[tag=animBshield,scores={BeeShieldTime=9},type=area_effect_cloud] at @s run playsound block.beehive.enter player @a ~ ~ ~ 1.5 0.8
-execute as @e[tag=animBshield,scores={BeeShieldTime=21},type=area_effect_cloud] at @s run playsound block.honey_block.break player @a ~ ~ ~ 1.5 0.5
-execute as @e[tag=animBshield,scores={BeeShieldTime=23},type=area_effect_cloud] at @s run playsound block.honey_block.break player @a ~ ~ ~ 1.5 0.6
-execute as @e[tag=animBshield,scores={BeeShieldTime=24},type=area_effect_cloud] at @s run playsound block.honey_block.break player @a ~ ~ ~ 1.5 0.7
-execute as @e[tag=animBshield,scores={BeeShieldTime=26},type=area_effect_cloud] at @s run playsound block.honey_block.break player @a ~ ~ ~ 1.5 0.8
-execute as @e[tag=animBshield,scores={BeeShieldTime=21},type=area_effect_cloud] at @s run playsound block.glass.break player @a ~ ~ ~ 1.5 1.3
-execute as @e[tag=animBshield,scores={BeeShieldTime=23},type=area_effect_cloud] at @s run playsound block.glass.break player @a ~ ~ ~ 1.5 1.2
-execute as @e[tag=animBshield,scores={BeeShieldTime=32},type=area_effect_cloud] at @s run playsound block.grass.break player @a ~ ~ ~ 1.5 0.8
+execute as @e[tag=animBshield,scores={BeeShieldTime=1},type=area_effect_cloud] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 1.3
+execute as @e[tag=animBshield,scores={BeeShieldTime=3},type=area_effect_cloud] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 1.2
+execute as @e[tag=animBshield,scores={BeeShieldTime=5},type=area_effect_cloud] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 1
+execute as @e[tag=animBshield,scores={BeeShieldTime=7},type=area_effect_cloud] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 0.9
+execute as @e[tag=animBshield,scores={BeeShieldTime=9},type=area_effect_cloud] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 0.8
+execute as @e[tag=animBshield,scores={BeeShieldTime=21},type=area_effect_cloud] at @s run playsound block.honey_block.break master @a ~ ~ ~ 1.5 0.5
+execute as @e[tag=animBshield,scores={BeeShieldTime=23},type=area_effect_cloud] at @s run playsound block.honey_block.break master @a ~ ~ ~ 1.5 0.6
+execute as @e[tag=animBshield,scores={BeeShieldTime=24},type=area_effect_cloud] at @s run playsound block.honey_block.break master @a ~ ~ ~ 1.5 0.7
+execute as @e[tag=animBshield,scores={BeeShieldTime=26},type=area_effect_cloud] at @s run playsound block.honey_block.break master @a ~ ~ ~ 1.5 0.8
+execute as @e[tag=animBshield,scores={BeeShieldTime=21},type=area_effect_cloud] at @s run playsound block.glass.break master @a ~ ~ ~ 1.5 1.3
+execute as @e[tag=animBshield,scores={BeeShieldTime=23},type=area_effect_cloud] at @s run playsound block.glass.break master @a ~ ~ ~ 1.5 1.2
+execute as @e[tag=animBshield,scores={BeeShieldTime=32},type=area_effect_cloud] at @s run playsound block.grass.break master @a ~ ~ ~ 1.5 0.8
 execute as @e[tag=animBshield,scores={BeeShieldTime=31},type=area_effect_cloud] at @s run particle block tnt ~ ~-2 ~ 0.2 0.2 0.2 0.2 40 force
 execute as @e[tag=animBshield,scores={BeeShieldTime=31},type=area_effect_cloud] at @s run particle block honey_block ~ ~-2 ~ 1 1.5 0 0.1 200 force
 

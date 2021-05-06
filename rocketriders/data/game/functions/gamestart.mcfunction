@@ -51,7 +51,7 @@ execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinBlue] run kill @s
 execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinBlue] run scoreboard players remove @s deaths 1
 execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinBlue] add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
-execute as @s[tag=!customSpawns] as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
+execute as @s[tag=!customSpawns] as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":"true","color":"blue"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"blue"}]
 
@@ -95,7 +95,7 @@ execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinYellow] run kill @s
 execute as @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinYellow] run scoreboard players remove @s deaths 1
 execute as @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinYellow] add hardcoreKilled
 execute as @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
-execute as @s[tag=!customSpawns] as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
+execute as @s[tag=!customSpawns] as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":"true","color":"gold"},{"keybind":"key.advancements","italic":"true","color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":"true","color":"gold"}]
 
@@ -130,12 +130,12 @@ scoreboard players reset @a[team=!Spectator] leaveSpec
 execute unless entity @e[tag=Selection,tag=SMActive] run tellraw @a[tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":"true"}]
 execute if entity @e[tag=Selection,tag=SMActive] run tellraw @a[tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave ","color":"green"},{"text":"to go back to the lobby.","color":"dark_green","italic":"true"}]
 tp @a[tag=JoinSpec] 12 100 0.5 90 90
-execute as @a[tag=JoinSpec] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
+execute as @a[tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[tag=JoinSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
 gamemode spectator @a[tag=JoinSpec]
 tag @a remove JoinSpec
 tp @a[tag=AlreadySpec] 12 100 0.5 90 90
-execute as @a[tag=AlreadySpec] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
+execute as @a[tag=AlreadySpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a remove AlreadySpec
 execute unless entity @e[tag=Selection,tag=SMActive] as @e[tag=LeaveSpec,type=area_effect_cloud] at @s run particle dust 2 1 0 1 ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[team=Spectator]
 execute unless entity @e[tag=Selection,tag=SMActive] as @e[tag=LeaveSpec,type=area_effect_cloud] at @s run tag @a[team=Spectator,distance=..2] add LeaveTeams

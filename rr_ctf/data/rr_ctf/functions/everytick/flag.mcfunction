@@ -99,7 +99,7 @@ execute positioned 34 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e
 execute positioned 34 65 64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY1: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
 execute if score FY1: FlagScore <= 29 FlagScore run setblock 34 65 64 white_stained_glass
 
-execute positioned 34 65 64 if score FY1: FlagScore <= 29 FlagScore if score FY1: FlagScore > 0 FlagScore run playsound entity.chicken.egg block @a ~ ~ ~ 1 0.8
+execute positioned 34 65 64 if score FY1: FlagScore <= 29 FlagScore if score FY1: FlagScore > 0 FlagScore run playsound entity.chicken.egg master @a ~ ~ ~ 1 0.8
 execute if score FY1: FlagScore <= 29 FlagScore if score FY1: FlagScore > 0 FlagScore run scoreboard players remove FY1: FlagScore 1
 
 execute if score FY1: FlagScore matches 0 positioned 34 65 64 if entity @e[type=player,team=Blue,distance=..3] unless entity @a[tag=CarryFY1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..2,scores={respawn=0},tag=!probablyDied] add CarryFY1
@@ -137,7 +137,7 @@ execute positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @
 execute positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
 execute if score FY2: FlagScore <= 29 FlagScore run setblock -10 65 64 white_stained_glass
 
-execute positioned -10 65 64 if score FY2: FlagScore <= 29 FlagScore if score FY2: FlagScore > 0 FlagScore run playsound entity.chicken.egg block @a ~ ~ ~ 1 0.8
+execute positioned -10 65 64 if score FY2: FlagScore <= 29 FlagScore if score FY2: FlagScore > 0 FlagScore run playsound entity.chicken.egg master @a ~ ~ ~ 1 0.8
 execute if score FY2: FlagScore <= 29 FlagScore if score FY2: FlagScore > 0 FlagScore run scoreboard players remove FY2: FlagScore 1
 
 execute if score FY2: FlagScore matches 0 positioned -10 65 64 if entity @e[type=player,team=Blue,distance=..3] unless entity @a[tag=CarryFY2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..2,scores={respawn=0},tag=!probablyDied] add CarryFY2
@@ -175,7 +175,7 @@ execute positioned -10 65 -64 unless block ~ ~ ~ purple_stained_glass if entity 
 execute positioned -10 65 -64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
 execute if score FB1: FlagScore <= 29 FlagScore run setblock -10 65 -64 white_stained_glass
 
-execute positioned -10 65 -64 if score FB1: FlagScore <= 29 FlagScore if score FB1: FlagScore > 0 FlagScore run playsound entity.chicken.egg block @a ~ ~ ~ 1 0.8
+execute positioned -10 65 -64 if score FB1: FlagScore <= 29 FlagScore if score FB1: FlagScore > 0 FlagScore run playsound entity.chicken.egg master @a ~ ~ ~ 1 0.8
 execute if score FB1: FlagScore <= 29 FlagScore if score FB1: FlagScore > 0 FlagScore run scoreboard players remove FB1: FlagScore 1
 
 execute if score FB1: FlagScore matches 0 positioned -10 65 -64 if entity @e[type=player,team=Yellow,distance=..3] unless entity @a[tag=CarryFB1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..2,scores={respawn=0},tag=!probablyDied] add CarryFB1
@@ -213,7 +213,7 @@ execute positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @
 execute positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
 execute if score FB2: FlagScore <= 29 FlagScore run setblock 34 65 -64 white_stained_glass
 
-execute positioned 34 65 -64 if score FB2: FlagScore <= 29 FlagScore if score FB2: FlagScore > 0 FlagScore run playsound entity.chicken.egg block @a ~ ~ ~ 1 0.8
+execute positioned 34 65 -64 if score FB2: FlagScore <= 29 FlagScore if score FB2: FlagScore > 0 FlagScore run playsound entity.chicken.egg master @a ~ ~ ~ 1 0.8
 execute if score FB2: FlagScore <= 29 FlagScore if score FB2: FlagScore > 0 FlagScore run scoreboard players remove FB2: FlagScore 1
 
 execute if score FB2: FlagScore matches 0 positioned 34 65 -64 if entity @e[type=player,team=Yellow,distance=..3] unless entity @a[tag=CarryFB2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..2,scores={respawn=0},tag=!probablyDied] add CarryFB2
@@ -264,10 +264,10 @@ execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 run te
 execute unless entity @a[tag=CarryFY1] if score FY1: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 execute unless entity @a[tag=CarryFY2] if score FY2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 
-execute unless entity @a[tag=CarryFB1] if score FB1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
-execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
-execute unless entity @a[tag=CarryFY1] if score FY1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
-execute unless entity @a[tag=CarryFY2] if score FY2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
+execute unless entity @a[tag=CarryFB1] if score FB1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
+execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
+execute unless entity @a[tag=CarryFY1] if score FY1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
+execute unless entity @a[tag=CarryFY2] if score FY2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
 
 execute unless entity @a[tag=CarryFB1] if score FB1: FlagScore matches -1 run scoreboard players set FB1: FlagScore 0
 execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 run scoreboard players set FB2: FlagScore 0
@@ -281,10 +281,10 @@ execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB
 execute as @a[tag=CarryFY1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY1,team=!Lobby,team=!Spectator] if score FY1: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 execute as @a[tag=CarryFY2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY2,team=!Lobby,team=!Spectator] if score FY2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
 
-execute as @a[tag=CarryFB1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB1,team=!Lobby,team=!Spectator] if score FB1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
-execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB2,team=!Lobby,team=!Spectator] if score FB2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
-execute as @a[tag=CarryFY1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY1,team=!Lobby,team=!Spectator] if score FY1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
-execute as @a[tag=CarryFY2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY2,team=!Lobby,team=!Spectator] if score FY2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1.7
+execute as @a[tag=CarryFB1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB1,team=!Lobby,team=!Spectator] if score FB1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
+execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB2,team=!Lobby,team=!Spectator] if score FB2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
+execute as @a[tag=CarryFY1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY1,team=!Lobby,team=!Spectator] if score FY1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
+execute as @a[tag=CarryFY2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY2,team=!Lobby,team=!Spectator] if score FY2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
 
 execute as @a[tag=CarryFB1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB1,team=!Lobby,team=!Spectator] if score FB1: FlagScore matches -1 run scoreboard players set FB1: FlagScore 0
 execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB2,team=!Lobby,team=!Spectator] if score FB2: FlagScore matches -1 run scoreboard players set FB2: FlagScore 0

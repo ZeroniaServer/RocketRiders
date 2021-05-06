@@ -13,7 +13,7 @@ execute unless score Blue: RoundsWon matches 2.. run function achievements:score
 execute unless score Blue: RoundsWon matches 2.. run kill @e[type=tnt]
 execute unless score Blue: RoundsWon matches 2.. as @a[team=Blue] at @s run stopsound @s
 execute unless score Blue: RoundsWon matches 2.. as @a[team=Yellow] at @s run stopsound @s
-execute unless score Blue: RoundsWon matches 2.. as @a at @s run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 100 0
+execute unless score Blue: RoundsWon matches 2.. as @a at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 100 0
 execute unless score Blue: RoundsWon matches 2.. run title @a[team=!Lobby] title [{"text":"Team Blue","bold":false,"color":"blue"},{"text":" scored!","bold":false,"color":"green"}]
 execute unless score Blue: RoundsWon matches 2.. run title @a[team=!Lobby] subtitle [{"score":{"name":"Blue:","objective":"RoundsWon"},"bold":true,"color":"blue"},{"text":" - ","bold":true,"color":"green"},{"score":{"name":"Yellow:","objective":"RoundsWon"},"bold":true,"color":"gold"}]
 execute unless score Blue: RoundsWon matches 2.. run tag @s add FakeGameEnd

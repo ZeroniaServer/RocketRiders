@@ -17,7 +17,7 @@ effect clear @a[tag=LeaveTeams]
 effect give @a[tag=LeaveTeams] night_vision 1000000 255 true
 gamemode adventure @a[tag=LeaveTeams,gamemode=!adventure]
 execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @a[tag=LeaveTeams,tag=!WasInLobby] at @s run playsound entity.enderman.teleport player @s ~ ~ ~
+execute as @a[tag=LeaveTeams,tag=!WasInLobby] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a remove LeaveTeams
 tag @a remove LeavingYellow
 tag @a remove LeavingBlue

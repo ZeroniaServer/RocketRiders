@@ -68,7 +68,7 @@ scoreboard players operation @s[scores={SDtime=1,MaxItemTime=2..}] MaxItemTime /
 execute as @s[scores={SDtime=1}] run scoreboard players set @s RandomItem -3
 execute as @s[scores={SDtime=1}] run scoreboard players operation @s RandomItem += @s MaxItemTime
 execute as @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute] RandomItem 1197
-execute as @s[scores={SDtime=10}] as @a[team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door player @s ~ ~ ~ 100 1.3
+execute as @s[scores={SDtime=10}] as @a[team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
 
 ##Places back portals
 fill -10 58 74 34 58 74 minecraft:obsidian replace #custom:basereplace

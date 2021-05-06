@@ -12,8 +12,8 @@ execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [
 execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"green"},{"text":"Quit to Start","color":"yellow","bold":"true"},{"text":".","color":"green"}]
 execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":"true"},{"text":".","color":"green"}]
 execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":"true"},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger hideParkourTips set 1"}},{"text":" to no longer see these instructions.","color":"dark_green","italic":"true"}]
-execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
-execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
+execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
+execute as @a[team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
 execute as @a[team=Lobby,tag=startParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 execute as @a[team=Lobby,tag=startParkour] run tag @s add inParkour
 execute as @a[team=Lobby,tag=startParkour] run tag @s remove startParkour
@@ -28,8 +28,8 @@ execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=2}] at @s positioned ~
 
 #Visual/Sound effects
 execute as @a[team=Lobby,tag=earnCheckpoint] run scoreboard players add @s checkpoint 1
-execute as @a[team=Lobby,tag=earnCheckpoint] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
-execute as @a[team=Lobby,tag=earnCheckpoint] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3
+execute as @a[team=Lobby,tag=earnCheckpoint] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
+execute as @a[team=Lobby,tag=earnCheckpoint] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
 execute as @a[team=Lobby,tag=earnCheckpoint] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
 #Tellraw messages
@@ -48,9 +48,9 @@ execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={parkour
 execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={parkourSecs=10..,parkourMins=10..}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":"true"},{"text":":","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":"true"},{"text":".","color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":"true"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":"true"},{"text":"!","color":"dark_green"}]
 
 #Visual/Sound effects
-execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far player @s ~ ~ ~ 1 1
-execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.1
-execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:ui.toast.challenge_complete player @s ~ ~ ~ 1 1.3
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.1
+execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1.3
 execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
 #Calculate final time
@@ -90,7 +90,7 @@ execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!c
 
 #Notify cheaters
 execute as @a[team=Lobby,tag=cheatedParkour] run tellraw @s ["",{"text":"You skipped a checkpoint, so your Parkour run was invalidated.","color":"red"}]
-execute as @a[team=Lobby,tag=cheatedParkour] at @s run playsound minecraft:block.beacon.deactivate player @s ~ ~ ~ 1 1
+execute as @a[team=Lobby,tag=cheatedParkour] at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 1 1
 
 #Remove tags + give advancement
 execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run advancement grant @s only tutorial:endparkour
@@ -114,7 +114,7 @@ execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=1}] run tp @s -28 196 68 0 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=2}] run tp @s -13 199 58 -90 0
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=3}] run tp @s -16 199 93 90 0
-execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run playsound minecraft:entity.zombie_villager.converted player @s ~ ~ ~ 1 2
+execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run playsound minecraft:entity.zombie_villager.converted master @s ~ ~ ~ 1 2
 execute as @a[team=Lobby,tag=inParkour,tag=returnCheckpoint] run tag @s remove returnCheckpoint
 
 ##Scoreboard timer

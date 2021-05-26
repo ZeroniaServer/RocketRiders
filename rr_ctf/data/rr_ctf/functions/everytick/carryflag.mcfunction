@@ -18,6 +18,7 @@ tag @a[tag=CarryFlag,tag=probablyDied,tag=!stopCheckingDeath] remove CarryFY1
 tag @a[tag=CarryFlag,tag=probablyDied,tag=!stopCheckingDeath] remove CarryFY2
 tag @a[tag=CarryFlag,tag=probablyDied,tag=!stopCheckingDeath] remove CarryFB1
 tag @a[tag=CarryFlag,tag=probablyDied,tag=!stopCheckingDeath] remove CarryFB2
+execute as @a[tag=CarryFlag,tag=probablyDied] run scoreboard players reset @s FlagDeliver
 
 tag @a[tag=probablyDied] add stopCheckingDeath
 
@@ -25,42 +26,50 @@ tag @a[tag=probablyDied] add stopCheckingDeath
 function rr_ctf:everytick/bossbars
 
 #Deliver Yellow flag at Blue base
-execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] run scoreboard players add Blue: FlagDisp 1
-execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] as @a[team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
-execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] as @a[team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
-execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] as @a[team=Yellow] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
-execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" successfully captured a","color":"aqua"},{"text":" Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
-execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] run scoreboard players set FY1: FlagScore -2
-execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
-execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] run tag @s remove CarryFY1
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied] run scoreboard players add @s FlagDeliver 1
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players add Blue: FlagDisp 1
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Yellow] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" successfully captured a","color":"aqua"},{"text":" Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players set FY1: FlagScore -2
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run tag @s remove CarryFY1
+execute as @e[type=player,team=Blue,tag=CarryFY1,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
-execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied] run scoreboard players add Blue: FlagDisp 1
-execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied] as @a[team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
-execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied] as @a[team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
-execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied] as @a[team=Yellow] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
-execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" successfully captured a","color":"aqua"},{"text":" Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
-execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied] run scoreboard players set FY2: FlagScore -2
-execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
-execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied] run tag @s remove CarryFY2
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied] run scoreboard players add @s FlagDeliver 1
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players add Blue: FlagDisp 1
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Yellow] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" successfully captured a","color":"aqua"},{"text":" Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players set FY2: FlagScore -2
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run tag @s remove CarryFY2
+execute as @e[type=player,team=Blue,tag=CarryFY2,tag=onBlue,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
 #Deliver Blue flag at Yellow base
-execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied] run scoreboard players add Yellow: FlagDisp 1
-execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied] as @a[team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
-execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied] as @a[team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
-execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied] as @a[team=Blue] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
-execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" successfully captured a","color":"yellow"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
-execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied] run scoreboard players set FB1: FlagScore -2
-execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
-execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied] run tag @s remove CarryFB1
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied] run scoreboard players add @s FlagDeliver 1
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players add Yellow: FlagDisp 1
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Blue] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" successfully captured a","color":"yellow"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players set FB1: FlagScore -2
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run tag @s remove CarryFB1
+execute as @e[type=player,team=Yellow,tag=CarryFB1,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
-execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] run scoreboard players add Yellow: FlagDisp 1
-execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] as @a[team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
-execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] as @a[team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
-execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] as @a[team=Blue] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
-execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" successfully captured a","color":"yellow"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
-execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] run scoreboard players set FB2: FlagScore -2
-execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
-execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] run tag @s remove CarryFB2
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied] run scoreboard players add @s FlagDeliver 1
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players add Yellow: FlagDisp 1
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] as @a[team=Blue] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" successfully captured a","color":"yellow"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players set FB2: FlagScore -2
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run tag @s remove CarryFB2
+execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
 replaceitem entity @a[tag=CarryFlag,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] armor.head air
 

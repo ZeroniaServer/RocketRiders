@@ -3,8 +3,8 @@ execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_sta
 title @s[tag=Infinity] actionbar [{"text":"Infinity Saber timer reset to ","color":"light_purple"},{"text":"30 seconds.","color":"red"}]
 tag @s[tag=Infinity] add DelayActionbar
 scoreboard players set @s[tag=Infinity] actionbardelay 0
-title @s[tag=!Infinity] title ["",{"text":"Infinity Saber ","color":"dark_purple","italic":"true","bold":"true"}]
-title @s[tag=!Infinity] subtitle [{"text":"Shoot infinite arrows! Lasts for ","color":"light_purple","italic":"true"},{"text":"30 seconds.","color":"red"}]
+title @s[tag=!Infinity] title [{"text":" "}]
+title @s[tag=!Infinity] subtitle ["",{"text":"Infinity Saber:","color":"dark_purple","italic":"true","bold":"true"},{"text":" Lasts for ","color":"light_purple","italic":"true"},{"text":"30 seconds.","color":"red"}]
 execute store result score @s HasArrows run clear @s arrow 0
 give @s[scores={HasArrows=0},tag=fullOffhand] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}} 1
 replaceitem entity @s[scores={HasArrows=0},tag=!fullOffhand] weapon.offhand arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}} 1

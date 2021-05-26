@@ -4,6 +4,7 @@ execute if entity @e[tag=rr_ctf,limit=1,type=armor_stand] run kill @e[tag=rr_ctf
 execute unless entity @e[tag=rr_sandbox,limit=1,type=armor_stand] run scoreboard objectives remove HasPickaxe
 execute unless entity @e[tag=rr_sandbox,limit=1,type=armor_stand] run scoreboard objectives remove dropPickaxe
 scoreboard objectives remove FlagScore
+scoreboard objectives remove FlagDeliver
 scoreboard objectives remove FlagDisp
 scoreboard objectives remove MineWhiteGlass
 scoreboard objectives remove MinePurpleGlass

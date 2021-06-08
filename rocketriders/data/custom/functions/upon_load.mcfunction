@@ -42,6 +42,7 @@ scoreboard objectives add canopySmoke dummy
 scoreboard objectives add canopyStreak dummy
 scoreboard objectives add PowerupCrystal dummy
 scoreboard objectives add FlagDeliver dummy
+scoreboard objectives add informMeLate dummy
 
 scoreboard players set 64 CmdData 64
 scoreboard players set 16 CmdData 16

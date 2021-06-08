@@ -1,15 +1,15 @@
 ##Prepares Stinging Shields to be cleared from global coordinate storage
 #Summon new AEC entity
-summon area_effect_cloud 0 0 0 {Tags:[BeeShield],Duration:2000000000}
+summon marker 0 0 0 {Tags:[BeeShield]}
 
 #Set position from global storage
-execute as @e[type=area_effect_cloud,tag=BeeShield,limit=1] run data modify entity @s Pos[0] set from storage rr_powerups:beeshieldpos x[0]
-execute as @e[type=area_effect_cloud,tag=BeeShield,limit=1] run data modify entity @s Pos[1] set from storage rr_powerups:beeshieldpos y[0]
-execute as @e[type=area_effect_cloud,tag=BeeShield,limit=1] run data modify entity @s Pos[2] set from storage rr_powerups:beeshieldpos z[0]
+execute as @e[type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[0] set from storage rr_powerups:beeshieldpos x[0]
+execute as @e[type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[1] set from storage rr_powerups:beeshieldpos y[0]
+execute as @e[type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[2] set from storage rr_powerups:beeshieldpos z[0]
 
 #Remove necessary blocks
-execute as @e[tag=BeeShield,type=area_effect_cloud,limit=1] at @s run fill ~-2 ~-4 ~ ~2 ~4 ~ air
-kill @e[tag=BeeShield,type=area_effect_cloud,limit=1]
+execute as @e[tag=BeeShield,type=marker,limit=1] at @s run fill ~-2 ~-4 ~ ~2 ~4 ~ air
+kill @e[tag=BeeShield,type=marker,limit=1]
 
 #Remove this set of coordinates in preparation for the next one
 data remove storage rr_powerups:beeshieldpos x[0]

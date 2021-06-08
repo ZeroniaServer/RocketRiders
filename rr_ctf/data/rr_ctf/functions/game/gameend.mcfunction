@@ -1,7 +1,7 @@
 clear @a[team=Blue] #custom:clear
 clear @a[team=Yellow] #custom:clear
-execute as @s[scores={endtimer=1}] run kill @e[tag=airDetectBlue,type=area_effect_cloud]
-execute as @s[scores={endtimer=1}] run kill @e[tag=airDetectYellow,type=area_effect_cloud]
+execute as @s[scores={endtimer=1}] run kill @e[tag=airDetectBlue,type=marker]
+execute as @s[scores={endtimer=1}] run kill @e[tag=airDetectYellow,type=marker]
 execute as @s[scores={endtimer=1},tag=BlueWon] run clear @a[team=Yellow] netherite_pickaxe
 execute as @s[scores={endtimer=1},tag=YellowWon] run clear @a[team=Blue] netherite_pickaxe
 execute as @s[scores={endtimer=1..}] run fill -9 74 68 -15 64 61 moving_piston replace air
@@ -15,7 +15,7 @@ execute as @s[scores={endtimer=2..}] run tag @a remove CarryFY1
 execute as @s[scores={endtimer=2..}] run tag @a remove CarryFY2
 execute as @s[scores={endtimer=2..}] run tag @a remove CarryFB1
 execute as @s[scores={endtimer=2..}] run tag @a remove CarryFB2
-execute as @s[scores={endtimer=1..}] run kill @e[tag=FlagParticle,type=area_effect_cloud]
+execute as @s[scores={endtimer=1..}] run kill @e[tag=FlagParticle,type=marker]
 execute as @s[scores={endtimer=2..}] run scoreboard players reset * FlagScore
 execute as @s[scores={endtimer=2..}] run scoreboard players reset * FlagDeliver
 execute as @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 players none

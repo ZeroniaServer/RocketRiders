@@ -8,17 +8,17 @@ scoreboard players add @e[tag=SelectedCredit,type=armor_stand] CreditCycle 1
 #Position/posing/effects for selected Credits armor stand
 execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run tp @s ~-2 ~2 ~
 #Poses are randomized
-execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["LobbyPoseRNG","Pose1"]}
-execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["LobbyPoseRNG","Pose2"]}
-execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["LobbyPoseRNG","Pose3"]}
-execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["LobbyPoseRNG","Pose4"]}
-execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["LobbyPoseRNG","Pose4"]}
-tag @e[tag=LobbyPoseRNG,limit=1,sort=random,type=area_effect_cloud] add SelLPRNG
-execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose1,type=area_effect_cloud] run function lobby:credits/pose1
-execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose2,type=area_effect_cloud] run function lobby:credits/pose2
-execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose3,type=area_effect_cloud] run function lobby:credits/pose3
-execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose4,type=area_effect_cloud] run function lobby:credits/pose4
-kill @e[tag=LobbyPoseRNG,type=area_effect_cloud]
+execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon marker ~ ~ ~ {Tags:["LobbyPoseRNG","Pose1"]}
+execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon marker ~ ~ ~ {Tags:["LobbyPoseRNG","Pose2"]}
+execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon marker ~ ~ ~ {Tags:["LobbyPoseRNG","Pose3"]}
+execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon marker ~ ~ ~ {Tags:["LobbyPoseRNG","Pose4"]}
+execute as @e[tag=SelectedCredit,scores={CreditCycle=1},type=armor_stand] at @s run summon marker ~ ~ ~ {Tags:["LobbyPoseRNG","Pose4"]}
+tag @e[tag=LobbyPoseRNG,limit=1,sort=random,type=marker] add SelLPRNG
+execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose1,type=marker] run function lobby:credits/pose1
+execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose2,type=marker] run function lobby:credits/pose2
+execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose3,type=marker] run function lobby:credits/pose3
+execute as @e[tag=SelectedCredit,type=armor_stand] if entity @e[tag=SelLPRNG,tag=Pose4,type=marker] run function lobby:credits/pose4
+kill @e[tag=LobbyPoseRNG,type=marker]
 execute as @e[tag=SelectedCredit,type=armor_stand] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 3 force
 
 #Displays name

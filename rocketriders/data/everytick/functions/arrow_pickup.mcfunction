@@ -22,8 +22,8 @@ execute as @e[type=arrow,scores={arrowtime=..9}] run tag @s remove pickup
 
 #Give arrow
 execute as @a[team=!Spectator,tag=!fullOffhand] at @s as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity,limit=1,distance=..2,sort=nearest] unless data entity @s CustomPotionEffects at @s run function everytick:arrow_replace
-execute as @s[tag=!GameStarted] as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless data entity @s CustomPotionEffects at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'},Lobby:1b}
-execute as @s[tag=GameStarted] as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless data entity @s CustomPotionEffects at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":"true","bold":"true"}'}}
+execute as @s[tag=!GameStarted] as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless data entity @s CustomPotionEffects at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'},Lobby:1b}
+execute as @s[tag=GameStarted] as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless data entity @s CustomPotionEffects at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}}
 
 #Schedule arrow for despawn
 scoreboard players set @e[type=arrow,tag=pickup] arrowtime 1199

@@ -63,6 +63,10 @@ fill 11 38 74 11 38 74 air replace fire
 fill 13 38 74 11 38 74 fire replace air
 fill 11 38 74 11 38 74 fire replace air
 
+#Remove fire
+fill 39 64 67 -15 67 67 air replace fire
+fill 39 64 67 -15 67 67 air replace fire
+
 ##Extra stuff for Modifiers
 #Molerat
 execute if entity @s[tag=Molerat] run function arenaclear:moleratplace

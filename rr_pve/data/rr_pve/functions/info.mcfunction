@@ -1,5 +1,5 @@
 tellraw @s [""]
-tellraw @s ["",{"text":"PVE Mode:","color":"light_purple","bold":"true"},{"text":" Singleplayer/co-op gamemode"}]
+tellraw @s ["",{"text":"PVE Mode:","color":"light_purple","bold":true},{"text":" Singleplayer/co-op gamemode"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals","color":"yellow"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Ride missiles to enemy base to destroy portals"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Protect your own team's portals"}]

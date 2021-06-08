@@ -27,7 +27,7 @@ execute as @e[tag=Selection,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesE
 execute as @e[tag=Selection,tag=GameStarted,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
 execute as @e[tag=Selection,type=armor_stand,tag=!SMActive] run function everytick:regen_system
 execute as @e[tag=Selection,type=armor_stand,tag=SMActive] run gamerule naturalRegeneration true
-execute as @e[tag=UnableClear,type=area_effect_cloud] at @s run function items:prevention/clearafter
+execute as @e[tag=UnableClear,type=marker] at @s run function items:prevention/clearafter
 
 #Night vision/saturation and more lobby functionality
 effect give @a[team=Lobby] night_vision 1000000 100 true
@@ -59,7 +59,7 @@ execute as @e[tag=Selection,type=armor_stand] if entity @e[type=arrow] run funct
 #Game ending and arena clearing
 execute as @e[tag=Selection,tag=GameEnd,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gameend
 execute as @e[tag=Selection,tag=SuddenDeath,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
-kill @e[tag=PlacerClear,tag=Cleared,tag=BasePlaced,type=area_effect_cloud]
+kill @e[tag=PlacerClear,tag=Cleared,tag=BasePlaced,type=marker]
 execute as @e[tag=Selection,tag=!GameEnd,tag=!EditedSettings,type=armor_stand,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
 
 #Gamemode handling

@@ -1,2 +1,2 @@
-tellraw @s [{"text":"Crusade Mode:","color":"light_purple","bold":"true"}]
-tellraw @s [{"text":"In Cursade Mode, 2 teams fight using a variety of classes. Each class receives different items. Destroy the 2 knight structures on the sides of the base to expose the king structure at the front of the base. Destroy the king structure to win the game.","color":"white","italic":"true"}]
+tellraw @s [{"text":"Crusade Mode:","color":"light_purple","bold":true}]
+tellraw @s [{"text":"In Cursade Mode, 2 teams fight using a variety of classes. Each class receives different items. Destroy the 2 knight structures on the sides of the base to expose the king structure at the front of the base. Destroy the king structure to win the game.","color":"white","italic":true}]

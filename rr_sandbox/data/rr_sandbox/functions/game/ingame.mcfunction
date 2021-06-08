@@ -34,9 +34,9 @@ execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s
 execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
 #smart clear stuff
-execute as @a[team=Yellow] unless entity @s[scores={SBplaceSlime=0,SBplaceRS=0,SBplacePiston=0,SBplaceSPiston=0,SBplaceObs=0,SBplaceTNT=0,SBplaceBGlass=0,SBplaceYGlass=0,SBplaceBGlaze=0,SBplaceYGlaze=0,SBplaceBCon=0,SBplaceYCon=0}] at @s unless entity @e[tag=SmartClearAECyellow,limit=1,sort=nearest,distance=..6,type=area_effect_cloud] run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECyellow"]}
-execute as @a[team=Blue] unless entity @s[scores={SBplaceSlime=0,SBplaceRS=0,SBplacePiston=0,SBplaceSPiston=0,SBplaceObs=0,SBplaceTNT=0,SBplaceBGlass=0,SBplaceYGlass=0,SBplaceBGlaze=0,SBplaceYGlaze=0,SBplaceBCon=0,SBplaceYCon=0}] at @s unless entity @e[tag=SmartClearAECblue,limit=1,sort=nearest,distance=..6,type=area_effect_cloud] run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearAECblue"]}
-execute as @a unless entity @s[team=!Yellow,team=!Blue] unless entity @s[scores={SBplaceScaf=0}] at @s unless entity @e[tag=SmartClearScaf,limit=1,sort=nearest,distance=..6,type=area_effect_cloud] run summon area_effect_cloud ~ ~ ~ {Duration:2000000000,Tags:["SmartClearScaf"]}
+execute as @a[team=Yellow] unless entity @s[scores={SBplaceSlime=0,SBplaceRS=0,SBplacePiston=0,SBplaceSPiston=0,SBplaceObs=0,SBplaceTNT=0,SBplaceBGlass=0,SBplaceYGlass=0,SBplaceBGlaze=0,SBplaceYGlaze=0,SBplaceBCon=0,SBplaceYCon=0}] at @s unless entity @e[tag=SmartClearAECyellow,limit=1,sort=nearest,distance=..6,type=marker] run summon marker ~ ~ ~ {Tags:["SmartClearAECyellow"]}
+execute as @a[team=Blue] unless entity @s[scores={SBplaceSlime=0,SBplaceRS=0,SBplacePiston=0,SBplaceSPiston=0,SBplaceObs=0,SBplaceTNT=0,SBplaceBGlass=0,SBplaceYGlass=0,SBplaceBGlaze=0,SBplaceYGlaze=0,SBplaceBCon=0,SBplaceYCon=0}] at @s unless entity @e[tag=SmartClearAECblue,limit=1,sort=nearest,distance=..6,type=marker] run summon marker ~ ~ ~ {Tags:["SmartClearAECblue"]}
+execute as @a unless entity @s[team=!Yellow,team=!Blue] unless entity @s[scores={SBplaceScaf=0}] at @s unless entity @e[tag=SmartClearScaf,limit=1,sort=nearest,distance=..6,type=marker] run summon marker ~ ~ ~ {Tags:["SmartClearScaf"]}
 
 #score reset
 scoreboard players set @a SBplaceSlime 0

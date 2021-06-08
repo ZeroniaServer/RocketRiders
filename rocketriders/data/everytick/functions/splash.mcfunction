@@ -19,10 +19,10 @@ execute if score splash splashtick matches 2 as @e[type=potion,tag=splash] run d
 execute if score splash splashtick matches 2 run scoreboard players set splash splashtick 0
 
 ##Placing water upon impact
-execute as @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:1,Id:23b,Amplifier:0b}],Potion:"minecraft:water"},tag=!splash] run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["splash","splash_alone","SmartClearAECsplash"]}
+execute as @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:1,Id:23b,Amplifier:0b}],Potion:"minecraft:water"},tag=!splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["splash","splash_alone","SmartClearAECsplash"]}
 #Kill if near spawnpoints
-execute as @e[tag=splash_alone,type=area_effect_cloud,tag=!splashMarked] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
-execute as @e[tag=splash_alone,type=area_effect_cloud,tag=!splashMarked] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=area_effect_cloud] run kill @s
+execute as @e[tag=splash_alone,type=area_effect_cloud,tag=!splashMarked] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=marker] run kill @s
+execute as @e[tag=splash_alone,type=area_effect_cloud,tag=!splashMarked] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=marker] run kill @s
 execute if entity @s[tag=!SplashStreams] as @e[tag=splash_alone,type=area_effect_cloud,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 water[level=8] replace #custom:splashreplace
 execute if entity @s[tag=SplashStreams] as @e[tag=splash_alone,type=area_effect_cloud,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 water replace #custom:splashreplace
 execute as @e[tag=splash_alone,type=area_effect_cloud,tag=!splashMarked] run data modify storage rocketriders:splashpos x prepend from entity @s Pos[0]

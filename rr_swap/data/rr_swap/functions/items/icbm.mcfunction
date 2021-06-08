@@ -18,18 +18,18 @@ execute store result score $numeggs ICBMID if entity @e[tag=ICBM,scores={ICBMID=
 scoreboard players operation $tptracker ICBMID = $highest ICBMID
 scoreboard players operation $tptracker ICBMID -= $numeggs ICBMID
 function rr_swap:items/tptoicbm
-execute as @e[tag=ICBMtracker,type=area_effect_cloud,tag=!teleported] run tag @s add ICBMTriggered
-tag @e[tag=ICBMtracker,type=area_effect_cloud] remove teleported
+execute as @e[tag=ICBMtracker,type=marker,tag=!teleported] run tag @s add ICBMTriggered
+tag @e[tag=ICBMtracker,type=marker] remove teleported
 
 #Trigger ICBM
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~ ~ {Fuse:1s}
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~ ~0.1 {Fuse:1s}
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~ ~-0.1 {Fuse:1s}
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~0.1 ~ ~ {Fuse:1s}
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~-0.1 ~ ~ {Fuse:1s}
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~0.1 ~ {Fuse:1s}
-execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=area_effect_cloud] at @s run summon tnt ~ ~-0.1 ~ {Fuse:1s}
-tag @e[tag=ICBMTriggered,type=area_effect_cloud] add ICBMdone
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=marker] at @s run summon tnt ~ ~ ~ {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=marker] at @s run summon tnt ~ ~ ~0.1 {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=marker] at @s run summon tnt ~ ~ ~-0.1 {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=marker] at @s run summon tnt ~0.1 ~ ~ {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=marker] at @s run summon tnt ~-0.1 ~ ~ {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=marker] at @s run summon tnt ~ ~0.1 ~ {Fuse:1s}
+execute as @e[tag=ICBMTriggered,tag=!ICBMdone,type=marker] at @s run summon tnt ~ ~-0.1 ~ {Fuse:1s}
+tag @e[tag=ICBMTriggered,type=marker] add ICBMdone
 kill @e[tag=ICBMTriggered]
 
 #Smoke trail

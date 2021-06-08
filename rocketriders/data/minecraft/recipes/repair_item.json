@@ -1,3 +1,10 @@
 {
-  "type": "minecraft:impossible"
+  "type":"crafting_shapeless",
+  "ingredients": [{
+    "item": "minecraft:lime_dye"
+  }],
+  "result": {
+    "item": "minecraft:lime_dye",
+    "count": 1
+  }
 }

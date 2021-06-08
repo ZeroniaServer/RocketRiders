@@ -3,14 +3,14 @@
 #####################################
 
 #Summoning the Fireball entity
-execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballBlue"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
-execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[tag=BlueFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 0.5 1.25
-kill @e[tag=BlueFireball,type=area_effect_cloud]
-execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballYellow"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
-execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[tag=YellowFireball,type=area_effect_cloud] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 0.5 1.25
-kill @e[tag=YellowFireball,type=area_effect_cloud]
+execute as @e[tag=BlueFireball,type=marker] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballBlue"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
+execute as @e[tag=BlueFireball,type=marker] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute as @e[tag=BlueFireball,type=marker] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 0.5 1.25
+kill @e[tag=BlueFireball,type=marker]
+execute as @e[tag=YellowFireball,type=marker] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballYellow"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
+execute as @e[tag=YellowFireball,type=marker] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute as @e[tag=YellowFireball,type=marker] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 0.5 1.25
+kill @e[tag=YellowFireball,type=marker]
 
 #Detecting Fireball motion
 tag @e[type=fireball,tag=NormalFireball] remove Still
@@ -26,8 +26,8 @@ execute as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @
 execute as @e[type=fireball,tag=FireballYellow,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a
 
 #Fireballs poof Canopies
-execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s if entity @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof
-execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s if entity @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] run tag @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=area_effect_cloud] add FirePoof
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s if entity @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=marker] run tag @e[tag=BluePlatform,distance=..1.5,scores={PlatTime=3..400},type=marker] add FirePoof
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s if entity @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=marker] run tag @e[tag=YellowPlatform,distance=..1.5,scores={PlatTime=3..400},type=marker] add FirePoof
 execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s store result score @s CmdData run fill ~-0.5 ~-0.5 ~-0.5 ~0.5 ~0.5 ~0.5 fire replace #minecraft:leaves
 execute as @e[type=fireball,tag=NormalFireball,tag=!Still,scores={CmdData=1..}] at @s run playsound entity.blaze.shoot master @a ~ ~ ~ 2 1
 execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s store result score @s CmdData run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire replace oak_log

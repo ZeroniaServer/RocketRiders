@@ -27,7 +27,7 @@ bossbar set rr_ctf:fb2 color yellow
 bossbar set rr_ctf:fb2 style notched_10
 bossbar set rr_ctf:fb2 max 10
 
-scoreboard objectives add FlagDisp dummy ["",{"text":"Flag Count ","color":"green","bold":"true"},{"text":"/ 2","color":"red"}]
-execute if entity @e[tag=rr_ctf,limit=1,type=armor_stand] run tellraw @s {"text":"Capture the Flag Mode installed.","color":"green","bold":"true"}
+scoreboard objectives add FlagDisp dummy ["",{"text":"Flag Count ","color":"green","bold":true},{"text":"/ 2","color":"red"}]
+execute if entity @e[tag=rr_ctf,limit=1,type=armor_stand] run tellraw @s {"text":"Capture the Flag Mode installed.","color":"green","bold":true}
 scoreboard players add @e[tag=rr_ctf,limit=1,type=armor_stand] CmdData 1
-execute unless entity @e[tag=PlacerClear,type=area_effect_cloud] run function game:forcestop
+execute unless entity @e[tag=PlacerClear,type=marker] run function game:forcestop

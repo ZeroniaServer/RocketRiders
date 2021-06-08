@@ -1,4 +1,4 @@
-kill @e[tag=swapplatform,type=area_effect_cloud]
+kill @e[tag=swapplatform,type=marker]
 
 tag @e[tag=Selection,type=armor_stand] remove swapEnabled
 tag @e[tag=Selection,type=armor_stand] remove SurpriseEggOff

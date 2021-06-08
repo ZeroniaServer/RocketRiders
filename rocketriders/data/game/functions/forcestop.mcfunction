@@ -15,9 +15,9 @@ gamerule drowningDamage false
 gamerule fireDamage false
 execute as @a run function everytick:score_reset
 tag @e[tag=EditedSettings,type=armor_stand] remove EditedSettings
-tag @e[tag=yellowjoinpad,type=area_effect_cloud] add CancelJoin
-tag @e[tag=bluejoinpad,type=area_effect_cloud] add CancelJoin
-tag @e[tag=specjoinpad,type=area_effect_cloud] add CancelJoin
+tag @e[tag=yellowjoinpad,type=marker] add CancelJoin
+tag @e[tag=bluejoinpad,type=marker] add CancelJoin
+tag @e[tag=specjoinpad,type=marker] add CancelJoin
 bossbar set rr:startgame max 30
 tag @a remove deathchamp
 tag @a remove flagschamp

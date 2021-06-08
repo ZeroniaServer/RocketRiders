@@ -10,6 +10,6 @@ bossbar set rr_swap:swap_progress color white
 bossbar set rr_swap:swap_progress style notched_10
 bossbar set rr_swap:swap_progress max 10
 
-execute if entity @e[tag=rr_swap,limit=1,type=armor_stand] run tellraw @s {"text":"Swap Mode installed.","color":"green","bold":"true"}
+execute if entity @e[tag=rr_swap,limit=1,type=armor_stand] run tellraw @s {"text":"Swap Mode installed.","color":"green","bold":true}
 scoreboard players add @e[tag=rr_swap,limit=1,type=armor_stand] CmdData 1
-execute unless entity @e[tag=PlacerClear,type=area_effect_cloud] run function game:forcestop
+execute unless entity @e[tag=PlacerClear,type=marker] run function game:forcestop

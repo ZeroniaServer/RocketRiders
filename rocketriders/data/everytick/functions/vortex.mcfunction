@@ -23,85 +23,85 @@ execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run pla
 execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:entity.shulker.teleport master @a ~ ~ ~ 2 0.8
 execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:block.portal.ambient master @a ~ ~ ~ 2 2
 execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s run playsound minecraft:entity.shulker.teleport master @a ~ ~ ~ 2 0.8
-execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexYellow"],Duration:2000000000}
-execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexBlue"],Duration:2000000000}
+execute as @e[tag=YellowVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon marker ~ ~ ~ {Tags:["Vortex","VortexYellow"]}
+execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s align xyz positioned ~.5 ~ ~.5 run summon marker ~ ~ ~ {Tags:["Vortex","VortexBlue"]}
 #Track Vortex with IDs and summon armor stands recursively - thanks iRobo for the algorithm!
-scoreboard players add @e[tag=Vortex,type=area_effect_cloud] VortexID 0
-execute as @e[tag=Vortex,tag=!VortexFeathered,scores={VortexID=0},type=area_effect_cloud] at @s run function everytick:vortexid
+scoreboard players add @e[tag=Vortex,type=marker] VortexID 0
+execute as @e[tag=Vortex,tag=!VortexFeathered,scores={VortexID=0},type=marker] at @s run function everytick:vortexid
 kill @e[scores={vortextimer=20..},type=egg]
-execute as @e[tag=VortexYellow,type=area_effect_cloud] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
-execute as @s[tag=!custVortParticle] as @e[tag=VortexYellow,type=area_effect_cloud] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
-execute as @e[tag=VortexBlue,type=area_effect_cloud] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
-execute as @s[tag=!custVortParticle] as @e[tag=VortexBlue,type=area_effect_cloud] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
-scoreboard players add @e[tag=Vortex,type=area_effect_cloud] vortexBoom 0
+execute as @e[tag=VortexYellow,type=marker] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @s[tag=!custVortParticle] as @e[tag=VortexYellow,type=marker] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @e[tag=VortexBlue,type=marker] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
+execute as @s[tag=!custVortParticle] as @e[tag=VortexBlue,type=marker] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
+scoreboard players add @e[tag=Vortex,type=marker] vortexBoom 0
 
 ##Spin around (unprimed)
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,gamemode=!spectator,distance=..4] unless score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~15 ~
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,gamemode=!spectator,distance=..4] unless score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-15 ~
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,gamemode=!spectator,distance=..4] unless score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=marker] vortexBoom matches 1.. run tp @s ~ ~ ~ ~15 ~
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,gamemode=!spectator,distance=..4] unless score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=marker] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-15 ~
 
 ##Spin around (primed)
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,gamemode=!spectator,distance=..4] if score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~30 ~
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,gamemode=!spectator,distance=..4] if score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-30 ~
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @a[team=Yellow,gamemode=!spectator,distance=..4] if score @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=marker] vortexBoom matches 1.. run tp @s ~ ~ ~ ~30 ~
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @a[team=Blue,gamemode=!spectator,distance=..4] if score @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=marker] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-30 ~
 
 ##Drift towards enemy player in close contact
-execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Yellow,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Yellow,gamemode=!spectator,distance=..4]
-execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=area_effect_cloud] at @s if entity @a[team=Blue,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Blue,gamemode=!spectator,distance=..4]
+execute as @e[tag=VortexBlue,scores={vortexBoom=1..},type=marker] at @s if entity @a[team=Yellow,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Yellow,gamemode=!spectator,distance=..4]
+execute as @e[tag=VortexYellow,scores={vortexBoom=1..},type=marker] at @s if entity @a[team=Blue,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Blue,gamemode=!spectator,distance=..4]
 
 #Teleport item to drifting Vortex recursively - thanks iRobo for the algorithm!
 scoreboard players set $count VortexID 1
-execute if entity @e[tag=Vortex,scores={vortexBoom=1..},type=area_effect_cloud] run function everytick:vortextp
+execute if entity @e[tag=Vortex,scores={vortexBoom=1..},type=marker] run function everytick:vortextp
 
 ##Face enemy player
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Yellow,gamemode=!spectator,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Yellow,gamemode=!spectator,distance=..4]
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=area_effect_cloud] if entity @a[team=Blue,gamemode=!spectator,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Blue,gamemode=!spectator,distance=..4]
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Yellow,gamemode=!spectator,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Yellow,gamemode=!spectator,distance=..4]
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Blue,gamemode=!spectator,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Blue,gamemode=!spectator,distance=..4]
 
 ##Other explosion conditions
-execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexYellow,distance=..4,type=area_effect_cloud,scores={vortexBoom=0}] vortexBoom 1
-execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexYellow,distance=..2,type=area_effect_cloud,scores={vortexBoom=1..}] vortexBoom 1
-execute as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexBlue,distance=..4,type=area_effect_cloud,scores={vortexBoom=0}] vortexBoom 1
-execute as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexBlue,distance=..2,type=area_effect_cloud,scores={vortexBoom=1..}] vortexBoom 1
-execute as @e[scores={vortexBoom=1},type=area_effect_cloud] at @s run playsound entity.shulker.hurt_closed master @a ~ ~ ~ 1 0
-tag @e[tag=Vortex,scores={vortexBoom=1},type=area_effect_cloud] add origin
-scoreboard players set @e[tag=Vortex,scores={vortexBoom=1},type=area_effect_cloud] vortexBoom 2
-execute as @e[tag=Vortex,type=area_effect_cloud] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add originboom
-execute as @e[type=arrow] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
-execute as @e[type=tnt] at @s run tag @e[tag=Vortex,distance=..5,limit=1,type=area_effect_cloud] add originboom
-execute as @e[type=firework_rocket,tag=BlueNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
-execute as @e[type=armor_stand,tag=bluenovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
-execute as @e[type=firework_rocket,tag=YellowNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
-execute as @e[type=armor_stand,tag=yellownovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=area_effect_cloud] add originboom
-tag @e[tag=Vortex,type=area_effect_cloud,tag=originboom] add origin
-scoreboard players set @e[tag=Vortex,type=area_effect_cloud,tag=originboom] vortexBoom 10
-tag @e[tag=Vortex,type=area_effect_cloud,tag=originboom] remove originboom
+execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexYellow,distance=..4,type=marker,scores={vortexBoom=0}] vortexBoom 1
+execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexYellow,distance=..2,type=marker,scores={vortexBoom=1..}] vortexBoom 1
+execute as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexBlue,distance=..4,type=marker,scores={vortexBoom=0}] vortexBoom 1
+execute as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexBlue,distance=..2,type=marker,scores={vortexBoom=1..}] vortexBoom 1
+execute as @e[scores={vortexBoom=1},type=marker] at @s run playsound entity.shulker.hurt_closed master @a ~ ~ ~ 1 0
+tag @e[tag=Vortex,scores={vortexBoom=1},type=marker] add origin
+scoreboard players set @e[tag=Vortex,scores={vortexBoom=1},type=marker] vortexBoom 2
+execute as @e[tag=Vortex,type=marker] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add originboom
+execute as @e[type=arrow] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
+execute as @e[type=tnt] at @s run tag @e[tag=Vortex,distance=..5,limit=1,type=marker] add originboom
+execute as @e[type=firework_rocket,tag=BlueNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
+execute as @e[type=armor_stand,tag=bluenovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
+execute as @e[type=firework_rocket,tag=YellowNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
+execute as @e[type=armor_stand,tag=yellownovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
+tag @e[tag=Vortex,type=marker,tag=originboom] add origin
+scoreboard players set @e[tag=Vortex,type=marker,tag=originboom] vortexBoom 10
+tag @e[tag=Vortex,type=marker,tag=originboom] remove originboom
 
 ##Kill stray item display entities
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @e[tag=VortexYellow,distance=..3,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @e[tag=VortexBlue,distance=..3,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @e[tag=VortexYellow,distance=..3,limit=1,sort=nearest,type=marker] run kill @s
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @e[tag=VortexBlue,distance=..3,limit=1,sort=nearest,type=marker] run kill @s
 
 ##Feathered vortex (Easter egg)
 execute unless entity @s[tag=featheredOff] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
 execute as @e[tag=SummonFeathered,type=chicken] at @s run playsound entity.chicken.hurt master @a ~ ~ ~ 2 0
-execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,NoGravity:1,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
-execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon area_effect_cloud ~ ~ ~ {Tags:["Vortex","VortexFeathered"],Duration:2000000000}
+execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
+execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon marker ~ ~ ~ {Tags:["Vortex","VortexFeathered"]}
 execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}
 execute as @e[type=chicken] at @s run tp @s ~ ~-250 ~
 kill @e[type=chicken]
-execute as @e[tag=VortexFeathered,type=area_effect_cloud] at @s run particle dust 1 1 1 1 ~ ~ ~ 0.5 0.5 0 0 10 force @a
+execute as @e[tag=VortexFeathered,type=marker] at @s run particle dust 1 1 1 1 ~ ~ ~ 0.5 0.5 0 0 10 force @a
 execute as @e[tag=VortexItemFeathered,type=armor_stand] at @s run tp @s ~ ~ ~ ~15 ~
-execute as @s[scores={servermode=0}] as @e[tag=VortexFeathered,type=area_effect_cloud] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/huh
-execute as @e[tag=VortexFeathered,type=area_effect_cloud] at @s if entity @a[team=!Spectator,distance=..3] run tag @s add origin
-execute as @e[tag=VortexItemFeathered,type=armor_stand] at @s unless entity @e[tag=VortexFeathered,distance=..2,limit=1,sort=nearest,type=area_effect_cloud] run kill @s
+execute as @s[scores={servermode=0}] as @e[tag=VortexFeathered,type=marker] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/huh
+execute as @e[tag=VortexFeathered,type=marker] at @s if entity @a[team=!Spectator,distance=..3] run tag @s add origin
+execute as @e[tag=VortexItemFeathered,type=armor_stand] at @s unless entity @e[tag=VortexFeathered,distance=..2,limit=1,sort=nearest,type=marker] run kill @s
 
 ##Vortex chaining/explosion (incorporates delay)
-execute as @e[tag=origin,scores={vortexBoom=3..},type=area_effect_cloud] at @s run function everytick:vortex_chain
-scoreboard players set @e[tag=origin,scores={vortexBoom=0},type=area_effect_cloud] vortexBoom 10
-scoreboard players add @e[tag=chained,type=area_effect_cloud] vortexChain 1
-execute as @e[tag=chained,scores={vortexChain=4..},type=area_effect_cloud] at @s run function everytick:vortex_chain
-execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:"{\"text\":\"a Vortex\"}",ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10..},tag=VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:3,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10..},tag=VortexFeathered,type=area_effect_cloud] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:5,CustomName:"{\"text\":\"a... Feathery Vortex?\"}",Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @e[scores={vortexBoom=10..},type=area_effect_cloud] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
-execute as @e[scores={vortexBoom=10..},type=area_effect_cloud] at @s run kill @e[type=firework_rocket,tag=BlueNova,distance=..2,limit=1,sort=nearest]
-execute as @e[scores={vortexBoom=10..},type=area_effect_cloud] at @s run kill @e[type=firework_rocket,tag=YellowNova,distance=..2,limit=1,sort=nearest]
-execute as @e[scores={vortexBoom=10..},type=area_effect_cloud] at @s run kill @s
+execute as @e[tag=origin,scores={vortexBoom=3..},type=marker] at @s run function everytick:vortex_chain
+scoreboard players set @e[tag=origin,scores={vortexBoom=0},type=marker] vortexBoom 10
+scoreboard players add @e[tag=chained,type=marker] vortexChain 1
+execute as @e[tag=chained,scores={vortexChain=4..},type=marker] at @s run function everytick:vortex_chain
+execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"a Vortex"}',ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"a Vortex"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10..},tag=VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:3,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10..},tag=VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:5,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @e[scores={vortexBoom=10..},type=marker] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
+execute as @e[scores={vortexBoom=10..},type=marker] at @s run kill @e[type=firework_rocket,tag=BlueNova,distance=..2,limit=1,sort=nearest]
+execute as @e[scores={vortexBoom=10..},type=marker] at @s run kill @e[type=firework_rocket,tag=YellowNova,distance=..2,limit=1,sort=nearest]
+execute as @e[scores={vortexBoom=10..},type=marker] at @s run kill @s

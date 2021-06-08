@@ -1,15 +1,15 @@
 ##Prepares Shields to be cleared from global coordinate storage
 #Summon new AEC entity
-summon area_effect_cloud 0 0 0 {Tags:[ClearShields],Duration:2000000000}
+summon marker 0 0 0 {Tags:[ClearShields]}
 
 #Set position from global storage
-execute as @e[type=area_effect_cloud,tag=ClearShields,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:shieldpos x[0]
-execute as @e[type=area_effect_cloud,tag=ClearShields,limit=1] run data modify entity @s Pos[1] set from storage rocketriders:shieldpos y[0]
-execute as @e[type=area_effect_cloud,tag=ClearShields,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:shieldpos z[0]
+execute as @e[type=marker,tag=ClearShields,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:shieldpos x[0]
+execute as @e[type=marker,tag=ClearShields,limit=1] run data modify entity @s Pos[1] set from storage rocketriders:shieldpos y[0]
+execute as @e[type=marker,tag=ClearShields,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:shieldpos z[0]
 
 #Remove necessary blocks
-execute as @e[tag=ClearShields,type=area_effect_cloud,limit=1] at @s run fill ~-3 ~-3 ~ ~3 ~3 ~ air
-kill @e[tag=ClearShields,type=area_effect_cloud,limit=1]
+execute as @e[tag=ClearShields,type=marker,limit=1] at @s run fill ~-3 ~-3 ~ ~3 ~3 ~ air
+kill @e[tag=ClearShields,type=marker,limit=1]
 
 #Remove this set of coordinates in preparation for the next one
 data remove storage rocketriders:shieldpos x[0]

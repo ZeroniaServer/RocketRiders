@@ -31,9 +31,9 @@ execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless b
 execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 11 38 74 nether_portal run function rr_duel:game/winblue
 
 #arena clear cheesing
-execute if entity @e[tag=PlacerClear,type=area_effect_cloud] run tag @s remove CriteriaTrue
-tag @e[tag=PlacerClear,type=area_effect_cloud] add BasePlaced
-tag @e[tag=PlacerClear,type=area_effect_cloud] add Cleared
+execute if entity @e[tag=PlacerClear,type=marker] run tag @s remove CriteriaTrue
+tag @e[tag=PlacerClear,type=marker] add BasePlaced
+tag @e[tag=PlacerClear,type=marker] add Cleared
 
 scoreboard players add Blue: RoundsWon 0
 scoreboard players add Yellow: RoundsWon 0
@@ -46,9 +46,9 @@ execute as @s[tag=TimeOut] unless entity @s[scores={servermode=0},tag=!SMCustom]
 execute as @s[tag=TimeOut] unless entity @s[scores={servermode=0},tag=!SMCustom] run scoreboard players set @s ForfeitTimeout 1200
 
 #adds original player back (non-servermode)
-execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=InRanked,tag=WasInBlue,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[team=Blue] run tellraw @s {"text":"You were added back to Blue to finish the 1v1 Duel match.","color":"red","italic":"true"}
+execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=InRanked,tag=WasInBlue,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[team=Blue] run tellraw @s {"text":"You were added back to Blue to finish the 1v1 Duel match.","color":"red","italic":true}
 execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=InRanked,tag=WasInBlue,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[team=Blue] run function game:joinblue
-execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=InRanked,tag=WasInYellow,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[team=Yellow] run tellraw @s {"text":"You were added back to Yellow to finish the 1v1 Duel match.","color":"red","italic":"true"}
+execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=InRanked,tag=WasInYellow,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[team=Yellow] run tellraw @s {"text":"You were added back to Yellow to finish the 1v1 Duel match.","color":"red","italic":true}
 execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=InRanked,tag=WasInYellow,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[team=Yellow] run function game:joinyellow
 
 #timeout

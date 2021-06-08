@@ -23,9 +23,9 @@ execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false
 execute as @s[scores={endtimer=1}] run kill @e[type=ender_pearl]
-execute as @s[scores={endtimer=1}] run tag @e[tag=yellowjoinpad,type=area_effect_cloud] add CancelJoin
-execute as @s[scores={endtimer=1}] run tag @e[tag=bluejoinpad,type=area_effect_cloud] add CancelJoin
-execute as @s[scores={endtimer=1}] run tag @e[tag=specjoinpad,type=area_effect_cloud] add CancelJoin
+execute as @s[scores={endtimer=1}] run tag @e[tag=yellowjoinpad,type=marker] add CancelJoin
+execute as @s[scores={endtimer=1}] run tag @e[tag=bluejoinpad,type=marker] add CancelJoin
+execute as @s[scores={endtimer=1}] run tag @e[tag=specjoinpad,type=marker] add CancelJoin
 execute as @s[scores={endtimer=1..}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 1000000 255 true
 execute as @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
 execute as @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Blue] 12 64 -66 0 0
@@ -35,7 +35,7 @@ execute as @s[scores={endtimer=1..},tag=Hardcore] as @a unless entity @s[team=!B
 execute as @s[scores={endtimer=1..},tag=Hardcore] as @a[team=Lobby] run attribute @s minecraft:generic.max_health base set 20.0
 #Fireballs can't be punched (credit: Miolith)
 execute as @s[scores={endtimer=1}] as @e[type=fireball,nbt={Motion:[0.0,0.0,0.0]}] run scoreboard players add @s endFireball 1
-execute as @s[scores={endtimer=1}] as @e[type=fireball,scores={endFireball=1}] at @s run summon area_effect_cloud ~ ~-.375 ~ {NoGravity:1b,CustomNameVisible:0b,Radius:0f,Duration:20000000,Tags:["endFireballAEC","endFireball"],Passengers:[{id:"minecraft:fireball",Tags:["endFireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}]}
+execute as @s[scores={endtimer=1}] as @e[type=fireball,scores={endFireball=1}] at @s run summon area_effect_cloud ~ ~-.375 ~ {Duration:2000000,Radius:0,NoGravity:1b,Tags:["endFireballAEC","endFireball"],Passengers:[{id:"minecraft:fireball",Tags:["endFireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}]}
 execute as @s[scores={endtimer=1}] as @e[type=fireball,tag=endFireball] at @s run data modify entity @s Item set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
 execute as @s[scores={endtimer=1}] as @e[type=fireball,tag=endFireball] at @s run data modify entity @s Tags set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
 execute as @s[scores={endtimer=1}] as @e[type=area_effect_cloud,tag=endFireballAEC] at @s run kill @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1]
@@ -43,10 +43,10 @@ execute as @s[scores={endtimer=1}] as @e[type=area_effect_cloud,tag=endFireballA
 execute as @s[scores={endtimer=1..}] as @e[type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
 
 ##Tie actionbar notifications
-execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=1..20}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":"true"},{"text":" seconds","color":"red"}]
-execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=21..40}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"3","color":"dark_red","bold":"true"},{"text":" seconds","color":"red"}]
-execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=41..60}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"2","color":"dark_red","bold":"true"},{"text":" seconds","color":"red"}]
-execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=61..80}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"1","color":"dark_red","bold":"true"},{"text":" second","color":"red"}]
+execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=1..20}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=21..40}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"3","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=41..60}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"2","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=61..80}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"1","color":"dark_red","bold":true},{"text":" second","color":"red"}]
 execute as @s[tag=doTying,tag=!tyingOff,scores={endtimer=81}] run title @a[team=!Lobby] actionbar {"text":""}
 
 ##System for ties (works with Double Portal modifier)

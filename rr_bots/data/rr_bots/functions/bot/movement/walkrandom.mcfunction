@@ -3,19 +3,19 @@ scoreboard players add @s BOTwalks 1
 
 
 #RNG
-execute as @s[scores={BOTwalks=1}] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["BotWalkRNG"]}
-scoreboard players set @e[tag=BotWalkRNG,type=area_effect_cloud] BotRNGmax 23
-execute as @e[tag=BotWalkRNG,type=area_effect_cloud] store result score @s BotRNG run data get entity @s UUID[0]
-execute as @e[tag=BotWalkRNG,type=area_effect_cloud] store result score @s BotRNG run scoreboard players operation @s BotRNG %= @s BotRNGmax
+execute as @s[scores={BOTwalks=1}] at @s run summon marker ~ ~ ~ {Tags:["BotWalkRNG"]}
+scoreboard players set @e[tag=BotWalkRNG,type=marker] BotRNGmax 23
+execute as @e[tag=BotWalkRNG,type=marker] store result score @s BotRNG run data get entity @s UUID[0]
+execute as @e[tag=BotWalkRNG,type=marker] store result score @s BotRNG run scoreboard players operation @s BotRNG %= @s BotRNGmax
 
-execute as @e[tag=BotWalkRNG,scores={BotRNG=0..5},type=area_effect_cloud] at @s unless block ~ ~-1 ~-1 air unless block ~ ~-1 ~-2 air if block ~ ~ ~-1 air if block ~ ~1 ~-2 air run tag @e[scores={BOTwalks=1},limit=1,sort=nearest,distance=..2,type=armor_stand] add BotwalkNorth
-execute as @e[tag=BotWalkRNG,scores={BotRNG=6..11},type=area_effect_cloud] at @s unless block ~ ~-1 ~1 air unless block ~ ~-1 ~2 air if block ~ ~ ~1 air if block ~ ~1 ~2 air run tag @e[scores={BOTwalks=1},limit=1,sort=nearest,distance=..2,type=armor_stand] add BotwalkSouth
-execute as @e[tag=BotWalkRNG,scores={BotRNG=12..17},type=area_effect_cloud] at @s unless block ~-2 ~-1 ~ air unless block ~-2 ~-1 ~ air if block ~-1 ~ ~ air if block ~-2 ~1 ~ air run tag @e[scores={BOTwalks=1},limit=1,sort=nearest,distance=..2,type=armor_stand] add BotwalkWest
-execute as @e[tag=BotWalkRNG,scores={BotRNG=18..23},type=area_effect_cloud] at @s unless block ~1 ~-1 ~ air unless block ~2 ~-1 ~ air if block ~1 ~ ~ air if block ~2 ~1 ~ air run tag @e[scores={BOTwalks=1},limit=1,sort=nearest,distance=..2,type=armor_stand] add BotwalkEast
+execute as @e[tag=BotWalkRNG,scores={BotRNG=0..5},type=marker] at @s unless block ~ ~-1 ~-1 air unless block ~ ~-1 ~-2 air if block ~ ~ ~-1 air if block ~ ~1 ~-2 air run tag @e[scores={BOTwalks=1},limit=1,sort=nearest,distance=..2,type=armor_stand] add BotwalkNorth
+execute as @e[tag=BotWalkRNG,scores={BotRNG=6..11},type=marker] at @s unless block ~ ~-1 ~1 air unless block ~ ~-1 ~2 air if block ~ ~ ~1 air if block ~ ~1 ~2 air run tag @e[scores={BOTwalks=1},limit=1,sort=nearest,distance=..2,type=armor_stand] add BotwalkSouth
+execute as @e[tag=BotWalkRNG,scores={BotRNG=12..17},type=marker] at @s unless block ~-2 ~-1 ~ air unless block ~-2 ~-1 ~ air if block ~-1 ~ ~ air if block ~-2 ~1 ~ air run tag @e[scores={BOTwalks=1},limit=1,sort=nearest,distance=..2,type=armor_stand] add BotwalkWest
+execute as @e[tag=BotWalkRNG,scores={BotRNG=18..23},type=marker] at @s unless block ~1 ~-1 ~ air unless block ~2 ~-1 ~ air if block ~1 ~ ~ air if block ~2 ~1 ~ air run tag @e[scores={BOTwalks=1},limit=1,sort=nearest,distance=..2,type=armor_stand] add BotwalkEast
 
 execute as @s[tag=BotWalks,scores={BOTwalks=1},tag=!BotwalkNorth,tag=!BotwalkEast,tag=!BotwalkSouth,tag=!BotwalkWest] run scoreboard players reset @s BOTwalks
 
-kill @e[tag=BotWalkRNG,type=area_effect_cloud]
+kill @e[tag=BotWalkRNG,type=marker]
 
 
 

@@ -7,8 +7,8 @@ tag @s remove BlueFull
 scoreboard players set @e[tag=rr_chase,type=armor_stand,limit=1] PlayerCap 2
 scoreboard players operation @e[tag=rr_chase,type=armor_stand,limit=1] PlayerCap *= @s PlayerCap
 execute if score @s bluesCount >= @e[tag=rr_chase,type=armor_stand,limit=1] PlayerCap run tag @s add BlueFull
-execute as @s[tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
-execute as @s[tag=BlueFull,tag=EditedSettings] as @e[tag=bluejoinpad,tag=!CancelJoin,type=area_effect_cloud] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
+execute as @s[tag=!BlueFull] as @e[tag=bluejoinpad,tag=!CancelJoin,type=marker] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
+execute as @s[tag=BlueFull,tag=EditedSettings] as @e[tag=bluejoinpad,tag=!CancelJoin,type=marker] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 
 #Items
 execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear

@@ -71,17 +71,17 @@ execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDie
 execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run tag @s remove CarryFB2
 execute as @e[type=player,team=Yellow,tag=CarryFB2,tag=onYellow,tag=!probablyDied,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
-replaceitem entity @a[tag=CarryFlag,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] armor.head air
+item replace entity @a[tag=CarryFlag,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] armor.head with air
 
 execute as @a[tag=CarryFlag] unless entity @s[scores={FlagScore=110..}] run scoreboard players add @s FlagScore 1
 
-execute as @a[tag=CarryFY1,scores={FlagScore=1}] run replaceitem entity @s armor.head yellow_banner{Enchantments:[{id:binding_curse,lvl:1}],HideFlags:7}
+execute as @a[tag=CarryFY1,scores={FlagScore=1}] run item replace entity @s armor.head with yellow_banner{Enchantments: [{id: "binding_curse", lvl: 1}], HideFlags: 7}
 execute as @a[tag=CarryFY1,scores={FlagScore=1}] run fill 34 65 63 30 72 64 air replace yellow_wool
-execute as @a[tag=CarryFY2,scores={FlagScore=1}] run replaceitem entity @s armor.head yellow_banner{Enchantments:[{id:binding_curse,lvl:1}],HideFlags:7}
+execute as @a[tag=CarryFY2,scores={FlagScore=1}] run item replace entity @s armor.head with yellow_banner{Enchantments: [{id: "binding_curse", lvl: 1}], HideFlags: 7}
 execute as @a[tag=CarryFY2,scores={FlagScore=1}] run fill -10 66 64 -14 65 63 air replace yellow_wool
-execute as @a[tag=CarryFB1,scores={FlagScore=1}] run replaceitem entity @s armor.head blue_banner{Enchantments:[{id:binding_curse,lvl:1}],HideFlags:7}
+execute as @a[tag=CarryFB1,scores={FlagScore=1}] run item replace entity @s armor.head with blue_banner{Enchantments: [{id: "binding_curse", lvl: 1}], HideFlags: 7}
 execute as @a[tag=CarryFB1,scores={FlagScore=1}] run fill -14 65 -64 -10 66 -65 air replace blue_wool
-execute as @a[tag=CarryFB2,scores={FlagScore=1}] run replaceitem entity @s armor.head blue_banner{Enchantments:[{id:binding_curse,lvl:1}],HideFlags:7}
+execute as @a[tag=CarryFB2,scores={FlagScore=1}] run item replace entity @s armor.head with blue_banner{Enchantments: [{id: "binding_curse", lvl: 1}], HideFlags: 7}
 execute as @a[tag=CarryFB2,scores={FlagScore=1}] run fill 30 65 -64 34 66 -65 air replace blue_wool
 execute as @a[tag=CarryFlag,scores={FlagScore=1}] as @a[team=!Lobby] at @s run playsound entity.ender_dragon.flap master @s ~ ~ ~ 1 2
 execute as @a[tag=CarryFlag,team=Blue,scores={FlagScore=1}] at @s run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" stole a ","color":"aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"aqua"}]
@@ -113,8 +113,8 @@ execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecr
 execute as @e[tag=FlagParticleBlue] at @s unless entity @e[tag=CarryFlag,team=Blue,distance=..4,limit=1] run kill @s
 execute as @e[tag=FlagParticleYellow] at @s unless entity @e[tag=CarryFlag,team=Yellow,distance=..4,limit=1] run kill @s
 
-execute as @a[tag=CarryFlag,team=Blue] at @s unless entity @e[tag=FlagParticleBlue,distance=..4,limit=1] run summon area_effect_cloud ~ ~ ~ {Tags:["FlagParticle","FlagParticleBlue"],Duration:2000000000}
-execute as @a[tag=CarryFlag,team=Yellow] at @s unless entity @e[tag=FlagParticleYellow,distance=..4,limit=1] run summon area_effect_cloud ~ ~ ~ {Tags:["FlagParticle","FlagParticleYellow"],Duration:2000000000}
+execute as @a[tag=CarryFlag,team=Blue] at @s unless entity @e[tag=FlagParticleBlue,distance=..4,limit=1] run summon marker ~ ~ ~ {Tags:["FlagParticle","FlagParticleBlue"]}
+execute as @a[tag=CarryFlag,team=Yellow] at @s unless entity @e[tag=FlagParticleYellow,distance=..4,limit=1] run summon marker ~ ~ ~ {Tags:["FlagParticle","FlagParticleYellow"]}
 
 execute as @a[tag=CarryFlag,team=Blue] anchored eyes at @s run tp @e[tag=FlagParticleBlue,limit=1,sort=nearest] ~ ~1 ~
 execute as @a[tag=CarryFlag,team=Yellow] anchored eyes at @s run tp @e[tag=FlagParticleYellow,limit=1,sort=nearest] ~ ~1 ~

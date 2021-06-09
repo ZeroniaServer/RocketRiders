@@ -35,8 +35,8 @@ execute as @a[scores={GamesPlayed=10..}] run trigger disableTips set 0
 execute as @a[team=!Spectator] run trigger leaveSpec set 0
 
 #Launch pad in Modification Room
-execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[tag=modroomGoBack,limit=1,distance=..1,type=marker] run effect give @s jump_boost 1 20 true
-execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..1,type=marker] run effect clear @s jump_boost
+execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[tag=modroomGoBack,limit=1,distance=..1,type=area_effect_cloud] run effect give @s jump_boost 1 20 true
+execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..1,type=area_effect_cloud] run effect clear @s jump_boost
 
 #Lobby players can't enter arena (security)
 execute as @a[team=Lobby] at @s if predicate custom:belowroof run tellraw @s [{"text":"You shouldn't be here!","color":"red"}]

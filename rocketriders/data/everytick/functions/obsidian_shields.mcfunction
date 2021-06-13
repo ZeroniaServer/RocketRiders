@@ -48,23 +48,23 @@ execute as @e[type=marker,tag=blueobalone] at @s if entity @e[tag=YellowSpawnZon
 
 #Deploy animation/effects
 scoreboard players add @e[type=marker,tag=blueobalone] shieldplacement 1
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=1}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=3}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldblue"}
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ crying_obsidian
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.set_spawn master @a ~ ~ ~ 2 1
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=5}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon marker ~ ~ ~ {Tags:["blueobsidianshield"]}
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=5}] at @s run scoreboard players set @e[tag=blueobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
-kill @e[type=marker,tag=blueobalone,scores={shieldplacement=5..}]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=2}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=2}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=4}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=4}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=4}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=4}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldblue"}
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~ ~-1 ~ crying_obsidian
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run playsound minecraft:block.respawn_anchor.set_spawn master @a ~ ~ ~ 2 1
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon marker ~ ~ ~ {Tags:["blueobsidianshield"]}
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run scoreboard players set @e[tag=blueobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
+kill @e[type=marker,tag=blueobalone,scores={shieldplacement=6..}]
 tp @e[tag=BlueObshield,type=marker] ~ ~-250 ~
 kill @e[tag=BlueObshield,type=marker]
 
@@ -112,23 +112,23 @@ execute as @e[type=marker,tag=yellowobalone] at @s if entity @e[tag=YellowSpawnZ
 
 #Deploy animation/sounds
 scoreboard players add @e[type=marker,tag=yellowobalone] shieldplacement 1
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=1}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=3}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldyellow"}
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=5}] at @s run setblock ~ ~-1 ~ crying_obsidian
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.set_spawn master @a ~ ~ ~ 2 1
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=5}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=5}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon marker ~ ~ ~ {Tags:["yellowobsidianshield"]}
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=5}] at @s run scoreboard players set @e[tag=yellowobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
-kill @e[type=marker,tag=yellowobalone,scores={shieldplacement=5..}]
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=2}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield1"}
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=2}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=4}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:obshield2"}
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=4}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=4}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=4}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=6}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:obshieldyellow"}
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=6}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=6}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=6}] at @s run setblock ~ ~-1 ~ crying_obsidian
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=6}] at @s run playsound minecraft:block.respawn_anchor.set_spawn master @a ~ ~ ~ 2 1
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=6}] at @s run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=6}] at @s align xyz positioned ~0.5 ~0.25 ~0.5 run summon marker ~ ~ ~ {Tags:["yellowobsidianshield"]}
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=6}] at @s run scoreboard players set @e[tag=yellowobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
+kill @e[type=marker,tag=yellowobalone,scores={shieldplacement=6..}]
 tp @e[tag=YellowObshield,type=marker] ~ ~-250 ~
 kill @e[tag=YellowObshield,type=marker]
 

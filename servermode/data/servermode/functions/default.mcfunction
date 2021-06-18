@@ -18,3 +18,4 @@ execute as @e[tag=Selection,type=armor_stand] run function arenaclear:globaldefa
 execute as @e[tag=Selection,type=armor_stand] run function modifiers:disablemodifiers
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshsigns
+schedule function servermode:yzelofix 2t append

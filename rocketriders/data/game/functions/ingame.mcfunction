@@ -27,6 +27,10 @@ execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=10}] run gamerule fal
 ##Clear lobby arrows
 execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow{Lobby:1b}
 
+##Spawn egg owner storage
+execute as @a[team=Yellow,predicate=custom:holding_missile] run item modify entity @s weapon.mainhand custom:owner
+execute as @a[team=Blue,predicate=custom:holding_missile] run item modify entity @s weapon.mainhand custom:owner
+
 ##General everytick commands
 function achievements:gain
 function everytick:clear_spawnblocks

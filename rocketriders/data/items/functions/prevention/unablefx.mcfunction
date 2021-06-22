@@ -8,7 +8,7 @@ execute as @s[tag=BlueAux] as @a[team=Blue,sort=nearest,limit=1,distance=..12] i
 execute as @s[tag=YellowAux] as @a[team=Yellow,sort=nearest,limit=1,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackAux
 tag @a[tag=BackAux] add MissiMSG
 
-#GuardTwo
+#TomaTwo
 execute as @s[tag=BlueGuard] as @a[team=Blue,sort=nearest,limit=1,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackGuard
 execute as @s[tag=YellowGuard] as @a[team=Yellow,sort=nearest,limit=1,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackGuard
 tag @a[tag=BackGuard] add MissiMSG

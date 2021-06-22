@@ -9,9 +9,9 @@ execute as @s[tag=YellowAux] as @a[team=Yellow,sort=nearest,limit=1,distance=..1
 tag @a[tag=BackAux] add MissiMSG
 
 #TomaTwo
-execute as @s[tag=BlueGuard] as @a[team=Blue,sort=nearest,limit=1,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackGuard
-execute as @s[tag=YellowGuard] as @a[team=Yellow,sort=nearest,limit=1,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackGuard
-tag @a[tag=BackGuard] add MissiMSG
+execute as @s[tag=BlueToma] as @a[team=Blue,sort=nearest,limit=1,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackToma
+execute as @s[tag=YellowToma] as @a[team=Yellow,sort=nearest,limit=1,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackToma
+tag @a[tag=BackToma] add MissiMSG
 
 #Chronullifier
 execute as @s[tag=BlueNull] as @a[team=Blue,sort=nearest,limit=1,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackNull

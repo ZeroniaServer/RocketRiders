@@ -1,0 +1,84 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:zombie_horse_spawn_egg",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1
+                },
+                {
+                  "function": "minecraft:set_nbt",
+                  "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Juggerbuster\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"32\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"This is a Juggernaut-ShieldBuster hybrid.\",\"color\":\"gray\"}','{\"text\":\"This missile has the power of a Juggernaut\",\"color\":\"gray\"}','{\"text\":\"plus the ability to bust through a shield.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowJug\"]}}"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:zombie_horse_spawn_egg",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1
+                },
+                {
+                  "function": "minecraft:set_nbt",
+                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Juggerbuster\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"32\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"This is a Juggernaut-ShieldBuster hybrid.\",\"color\":\"gray\"}','{\"text\":\"This missile has the power of a Juggernaut\",\"color\":\"gray\"}','{\"text\":\"plus the ability to bust through a shield.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueJug\"]}}"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:copy_nbt",
+          "source": "this",
+          "ops": [
+            {
+              "source": "UUID",
+              "target": "EntityTag.data.UUID",
+              "op": "replace"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

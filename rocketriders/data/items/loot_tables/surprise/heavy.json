@@ -1,0 +1,73 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:cod_spawn_egg",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1
+                },
+                {
+                  "function": "minecraft:set_nbt",
+                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowSurpriseHeavy\",\"surprising\"]}}"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:squid_spawn_egg",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1
+                },
+                {
+                  "function": "minecraft:set_nbt",
+                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"BlueSurpriseHeavy\",\"surprising\"]}}"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:copy_nbt",
+          "source": "this",
+          "ops": [
+            {
+              "source": "UUID",
+              "target": "EntityTag.data.UUID",
+              "op": "replace"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

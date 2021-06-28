@@ -9,5 +9,3 @@ tag @e[tag=surpriseBlue1,sort=random,limit=1,distance=..1,type=marker] add rngSe
 execute if entity @e[tag=surpriseBlueHeavy,tag=rngSelected,type=marker] run function items:surprise_blue/rngheavy
 execute if entity @e[tag=surpriseBlueNormal,tag=rngSelected,type=marker] run function items:surprise_blue/rngnormal
 execute if entity @e[tag=surpriseBlueLightning,tag=rngSelected,type=marker] run function items:surprise_blue/rnglightning
-kill @s[tag=surprising,type=marker]
-kill @e[tag=supriseBlue1,type=marker]

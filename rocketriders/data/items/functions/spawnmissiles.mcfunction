@@ -24,12 +24,12 @@ execute as @e[tag=missileflip,tag=bluemissile,tag=wasblue,type=marker] run funct
 
 ##Prevention
 #Void
-execute as @e[tag=!UnableMissile,tag=missile,type=marker] at @s if predicate custom:nearvoid run tag @s add UnableMissile
 execute as @e[tag=!UnableMissile,tag=missile,type=marker] at @s if predicate custom:nearvoid run tag @s add void
+execute as @e[tag=!UnableMissile,tag=missile,type=marker] at @s if predicate custom:nearvoid run tag @s add UnableMissile
 
 #Roof
-execute in overworld as @e[tag=!UnableMissile,tag=missile,type=marker] at @s if predicate custom:nearroof run tag @s add UnableMissile
 execute in overworld as @e[tag=!UnableMissile,tag=missile,type=marker] at @s if predicate custom:nearroof run tag @s add roof
+execute in overworld as @e[tag=!UnableMissile,tag=missile,type=marker] at @s if predicate custom:nearroof run tag @s add UnableMissile
 
 #Pierce Prevention (Portals)
 execute if entity @s[tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles

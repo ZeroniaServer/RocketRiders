@@ -18,10 +18,13 @@ execute as @s[tag=!EditedSettings] run tag @e[tag=bluejoinpad,type=marker] add C
 execute as @s[tag=!EditedSettings] run tag @e[tag=specjoinpad,type=marker] add CancelJoin
 
 #Utilkill timer
+execute as @e[type=tnt,tag=UtilKilled] at @s run function game:tntutilkill
 scoreboard players add @a[tag=UtilKilled] UKTimer 1
-scoreboard players reset @a[tag=UtilKilled,scores={UKTimer=40..}] KillerUUID
-tag @a[tag=UtilKilled,scores={UKTimer=40..}] remove UtilKilled
-scoreboard players reset @a[scores={UKTimer=40..}] UKTimer
+scoreboard players reset @a[tag=UtilKilled,scores={UKTimer=55..}] KillerUUID
+tag @a[tag=UtilKilled,scores={UKTimer=55..}] remove UtilKilled
+scoreboard players reset @a[scores={UKTimer=55..}] UKTimer
+execute as @e[type=tnt,tag=UtilKilled] at @s run tag @a[distance=..6] add UtilKilled
+execute as @e[type=tnt,tag=UtilKilled] at @s store result score @a[distance=..6] KillerUUID run scoreboard players get @s UUIDTracker
 
 #Canopy teleport remove effects
 execute as @a[team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s slowness

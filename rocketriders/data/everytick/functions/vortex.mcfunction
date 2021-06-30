@@ -85,7 +85,7 @@ tag @e[tag=Vortex,scores={vortexBoom=1},type=marker] add origin
 scoreboard players set @e[tag=Vortex,scores={vortexBoom=1},type=marker] vortexBoom 2
 execute as @e[tag=Vortex,type=marker] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add originboom
 execute as @e[type=arrow] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
-execute as @e[type=tnt] at @s run tag @e[tag=Vortex,distance=..5,limit=1,type=marker] add originboom
+execute as @e[type=tnt,nbt={Fuse:1s}] at @s run tag @e[tag=Vortex,distance=..5,limit=1,type=marker] add originboom
 execute as @e[type=firework_rocket,tag=BlueNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
 execute as @e[type=armor_stand,tag=bluenovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
 execute as @e[type=firework_rocket,tag=YellowNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
@@ -125,6 +125,7 @@ execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=!VortexFeat
 execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=!VortexFeathered,type=marker] at @s run data modify entity @e[type=creeper,limit=1,sort=nearest,distance=..5] CustomName set from entity @s CustomName
 execute as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=marker] at @s run tag @e[type=tnt,distance=..6] add UtilKilled
 execute as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=marker] at @s store result score @e[tag=UtilKilled,type=tnt,distance=..6] UUIDTracker run scoreboard players get @s UUIDTracker
+execute as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=marker] at @s run function game:nametnt
 
 execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:3,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:5,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}

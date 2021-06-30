@@ -3,11 +3,9 @@ clear @a[team=Yellow] #custom:clear
 execute as @s[scores={endtimer=1}] run function game:endstats
 tag @s add duelLast
 
-tag @a[team=Blue] remove InRanked
-tag @a[team=Yellow] remove InRanked
+execute as @s[scores={endtimer=2..}] run tag @a[team=Blue] remove InRanked
+execute as @s[scores={endtimer=2..}] run tag @a[team=Yellow] remove InRanked
 
-tag @s remove TimeOut
-scoreboard players reset @s ForfeitTimeout
 tag @a remove Forfeiter
 
 scoreboard players reset @s Rounds

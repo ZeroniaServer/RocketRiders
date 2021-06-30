@@ -3,8 +3,8 @@ scoreboard objectives add RoundsWon dummy {"text":"Rounds Won","color":"green","
 scoreboard objectives remove XP
 scoreboard objectives add XP dummy
 scoreboard objectives add RankScore dummy
-scoreboard players set 0 XP 0
-scoreboard players set 100 XP 100
+scoreboard players set $0 XP 0
+scoreboard players set $100 XP 100
 scoreboard objectives add Forfeit dummy
 scoreboard objectives add ForfeitWin dummy
 scoreboard objectives add ForfeitLoss dummy

@@ -7,7 +7,7 @@ scoreboard players set @e[tag=Selection,limit=1,type=armor_stand] xp_mod 300
 # this is what you multiply xp_mod by to get 100 - 300 * 1 / 3
 scoreboard players set @e[tag=Selection,limit=1,type=armor_stand] xp_mult 1
 scoreboard players set @e[tag=Selection,limit=1,type=armor_stand] xp_div 3
-scoreboard players operation @s[scores={XP=101..}] xp_progress -= 100 XP
+scoreboard players operation @s[scores={XP=101..}] xp_progress -= $100 XP
 scoreboard players operation @s xp_progress %= @e[tag=Selection,limit=1,type=armor_stand] xp_mod
 scoreboard players operation @s xp_progress *= @e[tag=Selection,limit=1,type=armor_stand] xp_mult
 scoreboard players operation @s[scores={XP=101..}] xp_progress /= @e[tag=Selection,limit=1,type=armor_stand] xp_div

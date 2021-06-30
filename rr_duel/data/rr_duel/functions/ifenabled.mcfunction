@@ -7,6 +7,15 @@ data merge block -69 191 74 {Text1:'{"text":""}',Text2:'{"color":"light_purple",
 #tips (disabled on duel servermode)
 execute unless entity @s[scores={servermode=2}] unless entity @s[tag=SMCustom] run function rr_duel:tip
 
+#forfeit prize/loss
+execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Blue] add ForfeitWon
+execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Yellow] add ForfeitWon
+execute as @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] as @a[tag=ForfeitWon] run function rr_duel:forfeit/giveprize
+scoreboard players reset @a[tag=!InRanked] ForfeitWin
+scoreboard players reset @a[tag=!InRanked] ForfeitLoss
+tag @s[scores={ForfeitTimeout=1200..}] remove TimeOut
+scoreboard players reset @s[scores={ForfeitTimeout=1200..}] ForfeitTimeout
+
 #game
 function rr_duel:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_duel:game/ingame
@@ -46,12 +55,3 @@ execute as @s[tag=EditedSettings,tag=!GameStarted] unless entity @a[team=Yellow]
 
 #fake game end
 execute as @s[tag=FakeGameEnd] run function rr_duel:game/fakegameend
-
-#forfeit prize/loss
-execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Blue] add ForfeitWon
-execute as @s[scores={ForfeitTimeout=1200..}] run tag @a[tag=InRanked,team=Yellow] add ForfeitWon
-execute as @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] as @a[tag=ForfeitWon] run function rr_duel:forfeit/giveprize
-scoreboard players reset @a[tag=!InRanked] ForfeitWin
-scoreboard players reset @a[tag=!InRanked] ForfeitLoss
-tag @s[scores={ForfeitTimeout=1200..}] remove TimeOut
-scoreboard players reset @s[scores={ForfeitTimeout=1200..}] ForfeitTimeout

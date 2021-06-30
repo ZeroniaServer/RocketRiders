@@ -44,6 +44,7 @@ scoreboard objectives add PowerupCrystal dummy
 scoreboard objectives add FlagDeliver dummy
 scoreboard objectives add informMeLate dummy
 scoreboard objectives add UKTimer dummy
+scoreboard players set 100 XP 100
 
 scoreboard players set 64 CmdData 64
 scoreboard players set 16 CmdData 16

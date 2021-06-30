@@ -17,6 +17,12 @@ execute as @s[tag=!EditedSettings] run tag @e[tag=yellowjoinpad,type=marker] add
 execute as @s[tag=!EditedSettings] run tag @e[tag=bluejoinpad,type=marker] add CancelJoin
 execute as @s[tag=!EditedSettings] run tag @e[tag=specjoinpad,type=marker] add CancelJoin
 
+#Utilkill timer
+scoreboard players add @a[tag=UtilKilled] UKTimer 1
+scoreboard players reset @a[tag=UtilKilled,scores={UKTimer=40..}] KillerUUID
+tag @a[tag=UtilKilled,scores={UKTimer=40..}] remove UtilKilled
+scoreboard players reset @a[scores={UKTimer=40..}] UKTimer
+
 #Canopy teleport remove effects
 execute as @a[team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s slowness
 execute as @a[team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s slow_falling

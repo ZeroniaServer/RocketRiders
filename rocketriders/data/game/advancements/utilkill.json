@@ -1,0 +1,18 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:entity_killed_player",
+        "conditions": {
+          "killing_blow": {
+            "is_explosion": true,
+            "direct_entity": {
+              "type": "minecraft:creeper"
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "game:utilkillcheck"
+    }
+  }

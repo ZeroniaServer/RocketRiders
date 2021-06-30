@@ -34,3 +34,7 @@ tag @a[team=Yellow] add Winner
 tag @a[team=Blue] add Loser
 execute as @a[tag=Winner,limit=1,sort=random] run function game:winsplash
 execute as @a[tag=Loser,limit=1,sort=random] run function game:losesplash
+
+##Remove UUID Tracker score
+scoreboard objectives remove UUIDTracker
+scoreboard objectives remove KillerUUID

@@ -81,6 +81,10 @@ execute as @s[scores={count=580}] run bossbar set rr:startgame name ["",{"text":
 execute as @s[scores={count=580}] run bossbar set rr:startgame value 1
 execute as @s[scores={count=580}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
 
+##As the game starts, add a UUIDTracker score
+execute as @s[tag=GameStarted] run scoreboard objectives add UUIDTracker dummy
+execute as @s[tag=GameStarted] run scoreboard objectives add KillerUUID dummy
+
 ##Right as game begins
 execute as @s[scores={count=599..}] as @a unless entity @s[team=!Yellow,team=!Blue] if entity @s[predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @s[tag=GameStarted,tag=!bossbarOverride] run bossbar set rr:startgame name ["",{"text":"A match is currently in progress. Feel free to join in!","color":"dark_green"}]

@@ -65,12 +65,8 @@ execute as @a[team=Blue,tag=BlueNovaNear,scores={NovaNear=4..}] at @s unless ent
 execute as @a[team=Blue,tag=!BlueNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
 
 #Nova Rockets explode same team Canopies
-execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=BluePlatform,distance=..5,limit=1] run tag @s add CanopyIsGone
-execute as @e[tag=CanopyIsGone,tag=BlueNova,type=firework_rocket] at @s as @e[tag=BluePlatform,distance=..5,limit=1,sort=nearest,type=marker] run tag @s add killCanopy
-execute as @e[tag=CanopyIsGone,tag=BlueNova,type=firework_rocket] at @s as @e[tag=BluePlatform,distance=..5,limit=1,sort=nearest,type=marker] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]}}}}
-execute if entity @s[tag=!Explosive] as @e[tag=CanopyIsGone,tag=BlueNova,type=firework_rocket] at @s as @e[tag=BluePlatform,distance=..5,limit=1,sort=nearest,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive] as @e[tag=CanopyIsGone,tag=BlueNova,type=firework_rocket] at @s as @e[tag=BluePlatform,distance=..5,limit=1,sort=nearest,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:7,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-kill @e[tag=CanopyIsGone,type=firework_rocket]
+execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=BluePlatform,distance=..5,limit=1] run tag @s add YellowNova
+execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=BluePlatform,distance=..5,limit=1] run tag @e[tag=bluenovatracker,distance=..5,limit=1,sort=nearest] add yellownovatracker
 
 #Bossbar for who's in the lead
 bossbar set rr_chase:lead players @a[team=!Lobby]

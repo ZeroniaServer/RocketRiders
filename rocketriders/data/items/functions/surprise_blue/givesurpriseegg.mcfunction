@@ -11,4 +11,4 @@ title @s[scores={HasSurprise=3..},tag=!fullHotbar] actionbar {"text":"Surprise E
 execute as @s[scores={HasSurprise=3..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasSurprise=..2},tag=!fullHotbar] actionbar {"text":"Surprise Egg obtained.","color":"aqua"}
 loot give @s[team=Blue,scores={HasSurprise=..2},tag=!fullHotbar] loot items:surprise/all
-playsound minecraft:entity.item.pickup player @s[scores={HasSurprise=..2},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasSurprise=..2},tag=!fullHotbar] ~ ~ ~ 0.25 2

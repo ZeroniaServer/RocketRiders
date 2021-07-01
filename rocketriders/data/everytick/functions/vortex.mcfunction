@@ -91,7 +91,7 @@ execute as @e[type=armor_stand,tag=bluenovatracker] at @s run tag @e[tag=Vortex,
 execute as @e[type=firework_rocket,tag=YellowNova] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
 execute as @e[type=armor_stand,tag=yellownovatracker] at @s run tag @e[tag=Vortex,distance=..2,limit=1,type=marker] add originboom
 tag @e[tag=Vortex,type=marker,tag=originboom] add origin
-scoreboard players set @e[tag=Vortex,type=marker,tag=originboom] vortexBoom 10
+scoreboard players set @e[tag=Vortex,type=marker,tag=originboom,scores={vortexBoom=..9}] vortexBoom 10
 tag @e[tag=Vortex,type=marker,tag=originboom] remove originboom
 
 ##Kill stray item display entities
@@ -134,5 +134,4 @@ execute as @e[scores={vortexBoom=10},type=marker] at @s run kill @e[type=firewor
 execute as @e[scores={vortexBoom=10},type=marker] at @s run kill @e[type=firework_rocket,tag=YellowNova,distance=..2,limit=1,sort=nearest]
 execute as @e[scores={vortexBoom=14..},type=marker] at @s run kill @s
 
-execute as @e[scores={vortexBoom=10},type=marker] at @s run scoreboard players set @s vortexBoom 11
-scoreboard players add @e[scores={vortexBoom=10..}] vortexBoom 1
+scoreboard players add @e[scores={vortexBoom=10..},type=marker] vortexBoom 1

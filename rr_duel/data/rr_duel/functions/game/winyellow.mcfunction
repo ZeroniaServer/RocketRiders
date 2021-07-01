@@ -19,4 +19,4 @@ execute unless score Yellow: RoundsWon matches 2.. run title @a[team=!Lobby] sub
 execute unless score Yellow: RoundsWon matches 2.. run tag @s add FakeGameEnd
 
 execute if score Yellow: RoundsWon matches 2.. run function game:winyellow
-execute as @s[tag=!noYZELO] if score Yellow: RoundsWon matches 2.. run function rr_duel:rankcalc/calcyellow
+execute as @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] if score Yellow: RoundsWon matches 2.. run function rr_duel:rankcalc/calcyellow

@@ -19,4 +19,4 @@ execute unless score Blue: RoundsWon matches 2.. run title @a[team=!Lobby] subti
 execute unless score Blue: RoundsWon matches 2.. run tag @s add FakeGameEnd
 
 execute if score Blue: RoundsWon matches 2.. run function game:winblue
-execute as @s[tag=!noYZELO] if score Blue: RoundsWon matches 2.. run function rr_duel:rankcalc/calcblue
+execute as @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] if score Blue: RoundsWon matches 2.. run function rr_duel:rankcalc/calcblue

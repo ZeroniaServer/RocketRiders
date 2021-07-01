@@ -123,7 +123,6 @@ execute if entity @e[tag=YellowPlatform,type=marker,scores={PlatTime=..41}] run 
 tag @e[tag=YellowPlatform,type=marker] remove checkedTP
 tag @a[team=Yellow] remove checkedTP
 execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,distance=..6] respawn 0
-
 #After 2 seconds the Canopy gives up teleporting
 scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=41},type=marker] pearlOwnerUUID
 

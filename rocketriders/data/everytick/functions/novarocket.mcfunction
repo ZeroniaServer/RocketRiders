@@ -4,11 +4,12 @@
 ######################################################
 
 ##General Nova Rocket functionality
-#Removes necessary tags for dead players
+#Removes Nova Rocket tags for dead players
 tag @a[scores={respawn=1..}] remove YellowNovaNear
 tag @a[scores={respawn=1..}] remove YellowNovaAttach
 tag @a[scores={respawn=1..}] remove BlueNovaNear
 tag @a[scores={respawn=1..}] remove BlueNovaAttach
+scoreboard players reset @a[scores={respawn=1..}] novattach
 
 #Identifies shot Nova Rockets and stores player UUID into their tracker score
 execute as @a[scores={NovaShot=1..}] store result score @s UUIDTracker run data get entity @s UUID[0]

@@ -46,10 +46,10 @@ execute as @e[tag=BlueVortex,scores={vortextimer=20..},type=egg] at @s align xyz
 scoreboard players add @e[tag=Vortex,type=marker] VortexID 0
 execute as @e[tag=Vortex,tag=!VortexFeathered,scores={VortexID=0},type=marker] at @s run function everytick:vortexid
 kill @e[scores={vortextimer=20..},type=egg]
-execute as @e[tag=VortexYellow,type=marker] at @s run particle minecraft:wax_on ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @s[tag=!custVortParticle] as @e[tag=VortexYellow,type=marker] at @s run particle minecraft:wax_on ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @e[tag=VortexYellow,type=marker] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
 execute as @s[tag=!custVortParticle] as @e[tag=VortexYellow,type=marker] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
-execute as @e[tag=VortexBlue,type=marker] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @s[tag=!custVortParticle] as @e[tag=VortexBlue,type=marker] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @e[tag=VortexBlue,type=marker] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
 execute as @s[tag=!custVortParticle] as @e[tag=VortexBlue,type=marker] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
 scoreboard players add @e[tag=Vortex,type=marker] vortexBoom 0

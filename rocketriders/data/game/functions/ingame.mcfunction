@@ -66,11 +66,6 @@ execute unless entity @s[tag=runobshields] if entity @e[tag=yellowobsidianshield
 execute if entity @s[tag=runobshields] run function everytick:obsidian_shields
 tag @s[tag=runobshields] remove runobshields
 
-execute unless entity @s[tag=runcanopy] if entity @e[type=ender_pearl] run tag @s add runcanopy
-execute unless entity @s[tag=runcanopy] if entity @e[tag=YellowPlatform,type=marker] run tag @s add runcanopy
-execute unless entity @s[tag=runcanopy] if entity @e[tag=BluePlatform,type=marker] run tag @s add runcanopy
-execute if entity @s[tag=runcanopy] run function everytick:canopy
-
 execute unless entity @s[tag=runnovarocket] if entity @e[type=firework_rocket] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @e[tag=novatracker,type=marker] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @a[tag=BlueNovaAttach] run tag @s add runnovarocket
@@ -85,6 +80,11 @@ scoreboard players reset @a[scores={novattach=15..}] novattach
 scoreboard players reset @a[team=!Yellow,team=!Blue] novattach
 tag @a[team=!Yellow,team=!Blue] remove BlueNovaAttach
 tag @a[team=!Yellow,team=!Blue] remove YellowNovaAttach
+
+execute unless entity @s[tag=runcanopy] if entity @e[type=ender_pearl] run tag @s add runcanopy
+execute unless entity @s[tag=runcanopy] if entity @e[tag=YellowPlatform,type=marker] run tag @s add runcanopy
+execute unless entity @s[tag=runcanopy] if entity @e[tag=BluePlatform,type=marker] run tag @s add runcanopy
+execute if entity @s[tag=runcanopy] run function everytick:canopy
 
 execute unless entity @s[tag=runfireball] if entity @e[type=fireball,tag=!obfireball] run tag @s add runfireball
 execute unless entity @s[tag=runfireball] if entity @e[tag=BlueFireball,type=marker] run tag @s add runfireball

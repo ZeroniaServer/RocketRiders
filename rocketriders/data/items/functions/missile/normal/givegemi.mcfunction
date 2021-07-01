@@ -10,7 +10,7 @@ title @s[scores={HasGemi=1..},tag=!fullHotbar,tag=!BackGemini] actionbar {"text"
 execute as @s[scores={HasGemi=1..},tag=!fullHotbar,tag=!BackGemini] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasGemi=0},tag=!fullHotbar,tag=!BackGemini] actionbar {"text":"Gemini obtained.","color":"aqua"}
 loot give @s[scores={HasGemi=0},tag=!fullHotbar] loot items:normal/gemini
-playsound minecraft:entity.item.pickup player @s[scores={HasGemi=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasGemi=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackGemini] run tag @e[tag=Selection,type=armor_stand] add givenGemi

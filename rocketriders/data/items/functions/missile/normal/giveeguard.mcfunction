@@ -10,7 +10,7 @@ title @s[scores={HasGuard=1..},tag=!fullHotbar,tag=!BackGuard] actionbar {"text"
 execute as @s[scores={HasGuard=1..},tag=!fullHotbar,tag=!BackGuard] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasGuard=0},tag=!fullHotbar,tag=!BackGuard] actionbar {"text":"Elder Guardian obtained.","color":"aqua"}
 loot give @s[scores={HasGuard=0},tag=!fullHotbar] loot items:normal/eguard
-playsound minecraft:entity.item.pickup player @s[scores={HasGuard=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasGuard=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackGuard] run tag @e[tag=Selection,type=armor_stand] add givenGuard

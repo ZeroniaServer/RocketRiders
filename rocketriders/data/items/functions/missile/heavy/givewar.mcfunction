@@ -10,7 +10,7 @@ title @s[scores={HasWar=1..},tag=!fullHotbar,tag=!BackWar] actionbar {"text":"Wa
 execute as @s[scores={HasWar=1..},tag=!fullHotbar,tag=!BackWar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasWar=0},tag=!fullHotbar,tag=!BackWar] actionbar {"text":"Warhead obtained.","color":"aqua"}
 loot give @s[scores={HasWar=0},tag=!fullHotbar] loot items:heavy/warhead
-playsound minecraft:entity.item.pickup player @s[scores={HasWar=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasWar=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackWar] run tag @e[tag=Selection,type=armor_stand] add givenWar

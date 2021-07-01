@@ -10,7 +10,7 @@ title @s[scores={HasHur=1..},tag=!fullHotbar,tag=!BackHur] actionbar {"text":"Hu
 execute as @s[scores={HasHur=1..},tag=!fullHotbar,tag=!BackHur] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasHur=0},tag=!fullHotbar,tag=!BackHur] actionbar {"text":"Hurricane obtained.","color":"aqua"}
 loot give @s[scores={HasHur=0},tag=!fullHotbar] loot items:lightning/hurricane
-playsound minecraft:entity.item.pickup player @s[scores={HasHur=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasHur=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackHur] run tag @e[tag=Selection,type=armor_stand] add givenHur

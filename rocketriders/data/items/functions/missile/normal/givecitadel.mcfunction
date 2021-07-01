@@ -10,7 +10,7 @@ title @s[scores={HasCitadel=1..},tag=!fullHotbar,tag=!BackCitadel] actionbar {"t
 execute as @s[scores={HasCitadel=1..},tag=!fullHotbar,tag=!BackCitadel] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasCitadel=0},tag=!fullHotbar,tag=!BackCitadel] actionbar {"text":"Citadel obtained.","color":"aqua"}
 loot give @s[scores={HasCitadel=0},tag=!fullHotbar] loot items:normal/chronull
-playsound minecraft:entity.item.pickup player @s[scores={HasCitadel=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasCitadel=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackCitadel] run tag @e[tag=Selection,type=armor_stand] add givenCita

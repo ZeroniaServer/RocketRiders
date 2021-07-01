@@ -124,15 +124,16 @@ execute as @e[tag=BlueNova,scores={novatimer=30..},type=firework_rocket] at @s r
 kill @e[tag=BlueNova,scores={novatimer=33..},type=firework_rocket]
 
 #> Nova lost timer
-execute as @e[tag=NovaLost] at @s run tag @e[type=tnt,distance=..7] add UtilKilled
-scoreboard players add @e[tag=NovaLost] CmdData 1
-execute as @e[tag=NovaLost] at @s store result score @e[type=tnt,distance=..5] UUIDTracker run scoreboard players get @s UUIDTracker
-execute as @e[tag=NovaLost] at @s store result score @e[type=tnt,distance=..5] KillerUUID run scoreboard players get @s UUIDTracker
-kill @e[tag=NovaLost,scores={CmdData=6..}]
+execute as @e[tag=NovaLost,type=marker] at @s run tag @e[type=tnt,distance=..7] add UtilKilled
+scoreboard players add @e[tag=NovaLost,type=marker] CmdData 1
+execute as @e[tag=NovaLost,type=marker] at @s store result score @e[type=tnt,distance=..5] UUIDTracker run scoreboard players get @s UUIDTracker
+execute as @e[tag=NovaLost,type=marker] at @s store result score @e[type=tnt,distance=..5] KillerUUID run scoreboard players get @s UUIDTracker
+execute as @e[tag=NovaLost,type=marker] at @s run function game:nametnt
+execute as @e[tag=NovaLost,type=marker]
+kill @e[tag=NovaLost,type=marker,scores={CmdData=6..}]
 
 #> Add to score for tnt detection
-execute as @e[scores={novatimer=30..}] at @s store result score @e[type=tnt,distance=..6] KillerUUID run scoreboard players get @s UUIDTracker
-execute as @e[scores={novatimer=30..}] at @s run execute as @e[type=tnt,distance=..6] at @s run data modify entity @s CustomName set from entity @e[scores={novatimer=30..},limit=1,sort=nearest,distance=..6] CustomName
+execute as @e[type=firework_rocket,scores={novatimer=30..}] at @s store result score @e[type=tnt,distance=..6] KillerUUID run scoreboard players get @s UUIDTracker
 
 #Attach
 scoreboard players add @a[tag=BlueNovaAttach] novattach 1

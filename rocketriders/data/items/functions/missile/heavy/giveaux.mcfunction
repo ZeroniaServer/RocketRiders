@@ -10,7 +10,7 @@ title @s[scores={HasAux=1..},tag=!fullHotbar,tag=!BackAux] actionbar {"text":"Au
 execute as @s[scores={HasAux=1..},tag=!fullHotbar,tag=!BackAux] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasAux=0},tag=!fullHotbar,tag=!BackAux] actionbar {"text":"Auxiliary obtained.","color":"aqua"}
 loot give @s[scores={HasAux=0},tag=!fullHotbar] loot items:heavy/auxiliary
-playsound minecraft:entity.item.pickup player @s[scores={HasAux=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasAux=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackAux] run tag @e[tag=Selection,type=armor_stand] add givenAux

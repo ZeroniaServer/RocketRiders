@@ -10,7 +10,7 @@ title @s[scores={HasAnt=1..},tag=!fullHotbar,tag=!BackAnt] actionbar {"text":"A.
 execute as @s[scores={HasAnt=1..},tag=!fullHotbar,tag=!BackAnt] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasAnt=0},tag=!fullHotbar,tag=!BackAnt] actionbar {"text":"A.N.T. obtained.","color":"aqua"}
 loot give @s[scores={HasAnt=0},tag=!fullHotbar] loot items:normal/ant
-playsound minecraft:entity.item.pickup player @s[scores={HasAnt=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasAnt=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackAnt] run tag @e[tag=Selection,type=armor_stand] add givenAnt

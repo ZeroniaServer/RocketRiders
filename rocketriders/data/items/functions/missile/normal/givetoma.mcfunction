@@ -10,7 +10,7 @@ title @s[scores={HasToma=1..},tag=!fullHotbar,tag=!BackToma] actionbar {"text":"
 execute as @s[scores={HasToma=1..},tag=!fullHotbar,tag=!BackToma] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasToma=0},tag=!fullHotbar,tag=!BackToma] actionbar {"text":"TomaTwo obtained.","color":"aqua"}
 loot give @s[scores={HasToma=0},tag=!fullHotbar] loot items:normal/tomatwo
-playsound minecraft:entity.item.pickup player @s[scores={HasToma=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasToma=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackToma] run tag @e[tag=Selection,type=armor_stand] add givenToma

@@ -10,7 +10,7 @@ title @s[scores={HasSlash=1..},tag=!fullHotbar,tag=!BackSlash] actionbar {"text"
 execute as @s[scores={HasSlash=1..},tag=!fullHotbar,tag=!BackSlash] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasSlash=0},tag=!fullHotbar,tag=!BackSlash] actionbar {"text":"Slasher obtained.","color":"aqua"}
 loot give @s[scores={HasSlash=0},tag=!fullHotbar] loot items:normal/slasher
-playsound minecraft:entity.item.pickup player @s[scores={HasSlash=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasSlash=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackSlash] run tag @e[tag=Selection,type=armor_stand] add givenSlash

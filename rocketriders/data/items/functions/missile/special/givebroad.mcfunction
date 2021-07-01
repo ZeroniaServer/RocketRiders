@@ -10,7 +10,7 @@ title @s[scores={HasBroad=1..},tag=!fullHotbar,tag=!BackBroad] actionbar {"text"
 execute as @s[scores={HasBroad=1..},tag=!fullHotbar,tag=!BackBroad] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasBroad=0},tag=!fullHotbar,tag=!BackBroad] actionbar {"text":"Broadsword obtained.","color":"light_purple"}
 loot give @s[scores={HasBroad=0},tag=!fullHotbar] loot items:special/broadsword
-playsound minecraft:entity.item.pickup player @s[scores={HasBroad=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasBroad=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackBroad] run tag @e[tag=Selection,type=armor_stand] add givenBroad

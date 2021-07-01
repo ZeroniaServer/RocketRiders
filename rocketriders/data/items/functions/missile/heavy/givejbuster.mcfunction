@@ -10,7 +10,7 @@ title @s[scores={HasJug=1..},tag=!fullHotbar,tag=!BackJug] actionbar {"text":"Ju
 execute as @s[scores={HasJug=1..},tag=!fullHotbar,tag=!BackJug] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasJug=0},tag=!fullHotbar,tag=!BackJug] actionbar {"text":"Juggerbuster obtained.","color":"aqua"}
 loot give @s[scores={HasJug=0},tag=!fullHotbar] loot items:heavy/jbuster
-playsound minecraft:entity.item.pickup player @s[scores={HasJug=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasJug=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackJug] run tag @e[tag=Selection,type=armor_stand] add givenJbust

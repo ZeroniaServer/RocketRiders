@@ -86,8 +86,10 @@ execute positioned -36 212 18 unless block ~ ~ ~ potted_blue_orchid run setblock
 execute positioned -37 212 138 unless block ~ ~ ~ potted_dandelion run setblock ~ ~ ~ potted_dandelion
 
 #Decoy Vortex (Lobby)
-execute as @e[tag=VortexDummy,type=marker] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 3 force @a
-execute as @e[tag=VortexDummy,type=marker] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @e[tag=VortexDummy,type=marker] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
+execute as @e[tag=VortexDummy,type=marker] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
+execute as @e[tag=VortexDummy,type=marker] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
+
 execute as @e[tag=VortexItemDummy,type=armor_stand] at @s unless entity @a[team=Lobby,distance=..4] run tp @s ~ ~ ~ ~15 ~
 execute as @e[tag=VortexItemDummy,type=armor_stand] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Lobby,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..4]
 

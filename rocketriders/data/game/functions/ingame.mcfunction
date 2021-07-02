@@ -50,7 +50,7 @@ execute unless entity @s[tag=runvortex] if entity @e[type=egg] run tag @s add ru
 execute unless entity @s[tag=runvortex] if entity @e[tag=Vortex,type=marker] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[tag=VortexItem,type=armor_stand] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[type=chicken] run tag @s add runvortex
-execute if entity @s[tag=runvortex] run function everytick:vortex
+execute if entity @s[tag=runvortex,tag=!vortexOverride] run function everytick:vortex
 tag @s[tag=runvortex] remove runvortex
 
 execute unless entity @e[tag=Vortex,type=marker] unless entity @e[tag=VortexItem,type=armor_stand] run scoreboard players set $highest VortexID 0

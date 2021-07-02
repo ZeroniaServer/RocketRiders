@@ -3,7 +3,8 @@ kill @e[tag=swapplatform,type=marker]
 tag @e[tag=Selection,type=armor_stand] remove swapEnabled
 tag @e[tag=Selection,type=armor_stand] remove SurpriseEggOff
 tag @e[tag=Selection,type=armor_stand] remove SplashStreamsOff
-tag @e[tag=Selection,type=armor_stand] remove featheredOff
+tag @e[tag=Selection,type=armor_stand] remove vortexOverride
+tag @e[tag=Selection,type=armor_stand] remove respawnFlag
 
 #special item enabling
 tag @e[tag=Selection,type=armor_stand] remove normalLocked

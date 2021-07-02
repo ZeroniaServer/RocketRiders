@@ -11,6 +11,12 @@ tag @a[scores={respawn=1..}] remove BlueNovaNear
 tag @a[scores={respawn=1..}] remove BlueNovaAttach
 scoreboard players reset @a[scores={respawn=1..}] novattach
 
+#Creative mode support
+execute as @a[team=Blue,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
+execute as @a[team=Yellow,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
+scoreboard players reset @a LaunchCrossbow
+clear @a crossbow{Charged:0b,nova:1b}
+
 #Identifies shot Nova Rockets and stores player UUID into their tracker score
 execute as @a[scores={NovaShot=1..}] store result score @s UUIDTracker run data get entity @s UUID[0]
 execute as @a[scores={NovaShot=1..}] at @s run setblock ~ 174 ~ oak_sign
@@ -125,7 +131,7 @@ execute as @e[tag=BlueNova,scores={novatimer=30},type=firework_rocket] at @s run
 execute as @e[tag=BlueNova,scores={novatimer=30..},type=firework_rocket] at @s run tag @e[type=tnt,distance=..7] add UtilKilled
 kill @e[tag=BlueNova,scores={novatimer=33..},type=firework_rocket]
 
-#> Nova lost timer
+#Nova lost timer
 execute as @e[tag=NovaLost,type=marker] at @s run tag @e[type=tnt,distance=..7] add UtilKilled
 scoreboard players add @e[tag=NovaLost,type=marker] CmdData 1
 execute as @e[tag=NovaLost,type=marker] at @s store result score @e[type=tnt,distance=..5] UUIDTracker run scoreboard players get @s UUIDTracker
@@ -134,7 +140,7 @@ execute as @e[tag=NovaLost,type=marker] at @s run function game:nametnt
 execute as @e[tag=NovaLost,type=marker]
 kill @e[tag=NovaLost,type=marker,scores={CmdData=6..}]
 
-#> Add to score for tnt detection
+#Add to score for tnt detection
 execute as @e[type=firework_rocket,scores={novatimer=30..}] at @s store result score @e[type=tnt,distance=..6] KillerUUID run scoreboard players get @s UUIDTracker
 
 #Attach

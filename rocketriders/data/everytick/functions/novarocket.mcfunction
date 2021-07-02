@@ -14,7 +14,6 @@ scoreboard players reset @a[scores={respawn=1..}] novattach
 #Creative mode support
 execute as @a[team=Blue,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
 execute as @a[team=Yellow,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
-scoreboard players reset @a LaunchCrossbow
 clear @a crossbow{Charged:0b,nova:1b}
 
 #Identifies shot Nova Rockets and stores player UUID into their tracker score

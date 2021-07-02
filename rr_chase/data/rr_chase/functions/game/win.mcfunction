@@ -6,6 +6,7 @@ tag @s add GameEnd
 
 ##Celebratory items
 clear @a[team=Blue] #custom:clear
+clear @a[team=Blue] crossbow{nova:1b}
 execute as @a store result score @s HasFirework run clear @s firework_rocket 0
 item replace entity @a[team=Blue,tag=Winner,scores={HasFirework=0},limit=1] hotbar.1 with firework_rocket{display: {Name: '{"text":"Celebratory Fireworks","color":"blue","bold":true,"italic":false}'}, Fireworks: {Flight: 3, Explosions: [{Type: 1, Flicker: 1, Trail: 1, Colors: [I; 2437522, 2651799]}]}, CanPlaceOn: ["#custom:missileblocks", "#custom:basereplace"], HideFlags: 50} 5
 item replace entity @a[team=Blue,tag=Winner,limit=1] armor.chest with elytra{HideFlags: 7, Enchantments: [{id: "binding_curse", lvl: 1}], Unbreakable: 1b, display: {Name: '[{"text":"Elytra","color":"blue","bold":true,"italic":false}]'}} 1

@@ -130,3 +130,6 @@ scoreboard players reset @a[team=!Yellow,team=!Blue] respawn
 
 ##Hotfix for Canopy respawns
 tag @s[tag=runcanopy] remove runcanopy
+
+##Hotfix for crossbows
+scoreboard players reset @a LaunchCrossbow

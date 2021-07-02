@@ -55,7 +55,9 @@ execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=InRanked,tag=WasInY
 scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1
 execute as @s[tag=TimeOut] run kill @e[type=tnt]
 execute as @s[tag=TimeOut] run clear @a[team=Yellow] #custom:clear
+execute as @s[tag=TimeOut] run clear @a[team=Yellow] crossbow{nova:1b}
 execute as @s[tag=TimeOut] run clear @a[team=Blue] #custom:clear
+execute as @s[tag=TimeOut] run clear @a[team=Blue] crossbow{nova:1b}
 execute as @s[tag=TimeOut] run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[tag=TimeOut] run tp @a[team=Yellow] 12 64 66 180 0
 tag @s[tag=TimeOut] add noAchievements

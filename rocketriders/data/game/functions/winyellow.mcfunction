@@ -12,6 +12,7 @@ tag @s add YellowWonFirst
 
 ##Celebratory items
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
+execute as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s crossbow{nova:1b}
 execute as @a store result score @s HasFirework run clear @s firework_rocket 0
 item replace entity @a[team=Yellow,scores={HasFirework=0}] hotbar.1 with firework_rocket{display: {Name: '{"text":"Celebratory Fireworks","color":"gold","bold":true,"italic":false}'}, Fireworks: {Flight: 3, Explosions: [{Type: 1, Flicker: 1, Trail: 1, Colors: [I; 14602026, 15435844]}]}, CanPlaceOn: ["#custom:missileblocks", "#custom:basereplace"], HideFlags: 50} 5
 item replace entity @a[team=Yellow] armor.chest with elytra{HideFlags: 7, Enchantments: [{id: "binding_curse", lvl: 1}], Unbreakable: 1b, display: {Name: '[{"text":"Elytra","color":"gold","bold":true,"italic":false}]'}} 1

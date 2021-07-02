@@ -1,6 +1,8 @@
 clear @a[team=Blue] #custom:clear
-clear @a[team=Yellow] #custom:clear
+clear @a[team=Blue] crossbow{nova:1b}
 clear @a[team=Blue] #rr_powerups:clear
+clear @a[team=Yellow] #custom:clear
+clear @a[team=Yellow] crossbow{nova:1b}
 clear @a[team=Yellow] #rr_powerups:clear
 execute as @e[tag=captureMiddle,type=marker] at @s run function rr_powerups:everytick/powerup_platform
 execute as @s[scores={endtimer=1},tag=YellowWon] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{HideFlags: 7, Unbreakable: 1, display: {color: 1247871}, Enchantments: [{id: "binding_curse", lvl: 1}]} 1

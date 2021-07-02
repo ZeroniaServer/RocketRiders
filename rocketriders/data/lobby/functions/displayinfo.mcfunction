@@ -6,7 +6,7 @@ tellraw @s[scores={displayinfo=1}] {"text":"A shield made out of obsidian. Stops
 
 #Vortex
 tellraw @s[scores={displayinfo=2}] [{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Vortex","color":"white"}]
-tellraw @s[scores={displayinfo=2}] {"text":"A sky-mine. Blows up when enemies get close, missiles pass through it, or it gets shot by projectiles. Can chain react!","color":"gray","italic":true}
+tellraw @s[scores={displayinfo=2}] {"text":"A sky-mine. Blows up when enemies get close, when missiles pass through it, or when it gets shot by projectiles. It also follows enemies!","color":"gray","italic":true}
 
 #Canopy
 tellraw @s[scores={displayinfo=3}] [{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Canopy","color":"white"}]

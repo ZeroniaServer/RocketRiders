@@ -71,8 +71,10 @@ scoreboard players set $count VortexID 1
 execute if entity @e[tag=Vortex,scores={vortexBoom=1..},type=marker] run function everytick:vortextp
 
 ##Face enemy player
-execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Yellow,gamemode=!spectator,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Yellow,gamemode=!spectator,distance=..4]
-execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Blue,gamemode=!spectator,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Blue,gamemode=!spectator,distance=..4]
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Yellow,gamemode=!spectator,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Yellow,gamemode=!spectator,distance=..6]
+execute as @e[tag=VortexItemBlue,type=armor_stand] at @s if entity @e[tag=VortexBlue,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Yellow,gamemode=!spectator,distance=..6] run tp @s ~ ~ ~ ~-180 ~
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Blue,gamemode=!spectator,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Blue,gamemode=!spectator,distance=..6]
+execute as @e[tag=VortexItemYellow,type=armor_stand] at @s if entity @e[tag=VortexYellow,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Blue,gamemode=!spectator,distance=..6] run tp @s ~ ~ ~ ~-180 ~
 
 ##Other explosion conditions
 execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[tag=VortexYellow,distance=..4,type=marker,scores={vortexBoom=0}] vortexBoom 1

@@ -91,7 +91,8 @@ execute as @e[tag=VortexDummy,type=marker] at @s run particle dust 0 0 1 1 ~ ~ ~
 execute as @e[tag=VortexDummy,type=marker] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
 
 execute as @e[tag=VortexItemDummy,type=armor_stand] at @s unless entity @a[team=Lobby,distance=..4] run tp @s ~ ~ ~ ~15 ~
-execute as @e[tag=VortexItemDummy,type=armor_stand] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Lobby,distance=..4] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..4]
+execute as @e[tag=VortexItemDummy,type=armor_stand] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]
+execute as @e[tag=VortexItemDummy,type=armor_stand] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~-180 ~
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active

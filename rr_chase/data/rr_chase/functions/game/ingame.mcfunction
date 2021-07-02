@@ -57,7 +57,6 @@ execute as @e[tag=YellowVortex,type=egg] at @s run particle dust 0 0 1 1 ~ ~ ~ 0
 execute as @e[tag=VortexYellow,type=marker] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
 execute as @e[tag=VortexYellow,type=marker] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
 
-
 #Nova tracking
 execute as @a[team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
 execute as @a[team=Blue] at @s if entity @e[distance=..4,limit=1,tag=bluenovatracker,type=marker] run tag @s add BlueNovaNear

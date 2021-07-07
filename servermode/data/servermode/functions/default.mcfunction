@@ -1,6 +1,4 @@
 scoreboard players set @e[tag=Selection,type=armor_stand] servermode 0
-tag @e[tag=Selection,type=armor_stand] remove noYZELO
-tag @e[tag=Selection,type=armor_stand] remove stopIfEmpty
 tag @e[tag=Selection,type=armor_stand] remove ServerModeVoting
 tag @e[tag=Selection,type=armor_stand] remove realms
 tag @e[tag=Selection,type=armor_stand] remove SMCustom
@@ -18,4 +16,4 @@ execute as @e[tag=Selection,type=armor_stand] run function arenaclear:globaldefa
 execute as @e[tag=Selection,type=armor_stand] run function modifiers:disablemodifiers
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshcustomizer
 execute as @e[tag=Selection,type=armor_stand] run function arenaclear:refreshsigns
-schedule function servermode:yzelofix 2t append
+schedule function servermode:fixduel 2t append

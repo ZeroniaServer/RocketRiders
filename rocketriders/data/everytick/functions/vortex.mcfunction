@@ -112,7 +112,8 @@ execute as @e[tag=FeatherConfirmed,type=chicken] at @s align xyz positioned ~.5 
 execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}
 execute as @e[type=chicken] at @s run tp @s ~ ~-250 ~
 kill @e[type=chicken]
-execute as @e[tag=VortexFeathered,type=marker] at @s run particle dust 1 1 1 1 ~ ~ ~ 0.5 0.5 0 0 10 force @a
+execute as @e[tag=VortexFeathered,type=marker] at @s run particle dust 1 1 1 1 ~ ~0.6 ~ 0.5 0.5 0 0 10 force @a
+execute as @e[tag=VortexFeathered,type=marker] at @s run particle wax_off ~ ~0.6 ~ 0.5 0.5 0 0 1 force @a
 execute as @e[tag=VortexItemFeathered,type=armor_stand] at @s run tp @s ~ ~ ~ ~15 ~
 execute as @s[scores={servermode=0}] as @e[tag=VortexFeathered,type=marker] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/huh
 execute as @e[tag=VortexFeathered,type=marker] at @s if entity @a[team=!Spectator,distance=..3] run tag @s add origin

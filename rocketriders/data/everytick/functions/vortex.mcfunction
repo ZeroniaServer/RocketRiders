@@ -101,10 +101,14 @@ execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @e[tag=
 execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @e[tag=VortexBlue,distance=..3,limit=1,sort=nearest,type=marker] run kill @s
 
 ##Feathered vortex (Easter egg)
-execute unless entity @s[tag=featheredOff] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
-execute as @e[tag=SummonFeathered,type=chicken] at @s run playsound entity.chicken.hurt master @a ~ ~ ~ 2 0
-execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
-execute as @e[tag=SummonFeathered,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon marker ~ ~ ~ {Tags:["Vortex","VortexFeathered"]}
+execute unless entity @s[tag=featheredOff] unless entity @s[tag=duelEnabled] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
+scoreboard players set @e[tag=SummonFeathered] RNGmax 99
+execute as @e[tag=SummonFeathered] store result score @s RNGscore run data get entity @s UUID[0]
+execute as @e[tag=SummonFeathered] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
+tag @e[tag=SummonFeathered,scores={RNGscore=0..49}] add FeatherConfirmed
+execute as @e[tag=FeatherConfirmed,type=chicken] at @s run playsound entity.chicken.hurt master @a ~ ~ ~ 2 0
+execute as @e[tag=FeatherConfirmed,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
+execute as @e[tag=FeatherConfirmed,type=chicken] at @s align xyz positioned ~.5 ~ ~.5 run summon marker ~ ~ ~ {Tags:["Vortex","VortexFeathered"]}
 execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}
 execute as @e[type=chicken] at @s run tp @s ~ ~-250 ~
 kill @e[type=chicken]
@@ -129,8 +133,8 @@ execute as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=marker] at @s r
 execute as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=marker] at @s store result score @e[tag=UtilKilled,type=tnt,distance=..6] UUIDTracker run scoreboard players get @s UUIDTracker
 execute as @e[scores={vortexBoom=10..},tag=!VortexFeathered,type=marker] at @s run function game:nametnt
 
-execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:3,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:5,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=!Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:2,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=Explosive] as @e[scores={vortexBoom=10},tag=VortexFeathered,type=marker] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:4,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @e[scores={vortexBoom=10},type=marker] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
 execute as @e[scores={vortexBoom=10},type=marker] at @s run kill @e[type=firework_rocket,tag=BlueNova,distance=..2,limit=1,sort=nearest]
 execute as @e[scores={vortexBoom=10},type=marker] at @s run kill @e[type=firework_rocket,tag=YellowNova,distance=..2,limit=1,sort=nearest]

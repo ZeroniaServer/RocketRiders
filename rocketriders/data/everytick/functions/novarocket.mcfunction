@@ -60,8 +60,12 @@ scoreboard players add @e[tag=novatracker,type=marker] novatimer 1
 #Nova Rockets explode Canopies
 execute as @a[tag=BlueNovaAttach] at @s if entity @e[tag=YellowPlatform,distance=..3,limit=1] run summon marker ~ ~ ~ {Tags:["bluenovatracker","CanopyIsGone"]}
 execute as @a[tag=YellowNovaAttach] at @s if entity @e[tag=BluePlatform,distance=..3,limit=1] run summon marker ~ ~ ~ {Tags:["yellownovatracker","CanopyIsGone"]}
+execute as @a[tag=BlueNovaAttach] at @s if entity @e[tag=YellowPlatform,distance=..3,limit=1] run tag @e[tag=YellowPlatform,distance=..3,limit=1] add killCanopy
+execute as @a[tag=YellowNovaAttach] at @s if entity @e[tag=BluePlatform,distance=..3,limit=1] run tag @e[tag=BluePlatform,distance=..3,limit=1] add killCanopy
 execute as @e[tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[tag=YellowPlatform,distance=..5,limit=1] run tag @s add CanopyIsGone
 execute as @e[tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[tag=BluePlatform,distance=..5,limit=1] run tag @s add CanopyIsGone
+execute as @e[tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[tag=YellowPlatform,distance=..5,limit=1] run tag @e[tag=YellowPlatform,distance=..5,limit=1] add killCanopy
+execute as @e[tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[tag=BluePlatform,distance=..5,limit=1] run tag @e[tag=BluePlatform,distance=..5,limit=1] add killCanopy
 execute as @e[tag=bluenovatracker,tag=CanopyIsGone,tag=!NovaLost] at @s run kill @e[tag=BlueNova,type=firework_rocket,limit=1,sort=nearest,distance=..5]
 execute as @e[tag=yellownovatracker,tag=CanopyIsGone,tag=!NovaLost] at @s run kill @e[tag=YellowNova,type=firework_rocket,limit=1,sort=nearest,distance=..5]
 execute as @e[tag=CanopyIsGone,tag=yellownovatracker,tag=!NovaLost] at @s as @e[tag=BluePlatform,distance=..5,limit=1,sort=nearest,type=marker] run tag @s add killCanopy

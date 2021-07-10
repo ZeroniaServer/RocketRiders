@@ -1,0 +1,23 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "location": {
+      "fluid": {
+        "tag": "minecraft:water"
+      }
+    },
+    "equipment": {
+      "mainhand": {
+        "items": [
+          "minecraft:trident"
+        ],
+        "enchantments": [
+          {
+            "enchantment": "minecraft:loyalty"
+          }
+        ]
+      }
+    }
+  }
+}

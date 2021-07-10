@@ -146,7 +146,7 @@ clear @a[team=Blue,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damage:
 clear @a[team=Yellow,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damage:250}}]}] trident 1
 
 #trident auto riptide
-execute as @a[nbt={SelectedItem:{id:"minecraft:trident"}}] unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide
+execute as @a[nbt={Inventory:[{id:"minecraft:trident"}]}] unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide
 
 #trident antidupe
 tag @e[type=trident,nbt={inGround:1b}] add return

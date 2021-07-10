@@ -25,6 +25,6 @@ scoreboard players remove @s[scores={bMissileCount=1..}] bMissileCount 1
 execute if entity @s[scores={bMissileCount=1..}] run function arenaclear:prepareblue
 
 #End condition - clear arrays
-execute if entity @s[scores={bMissileCount=0}] run data modify storage rocketriders:bmissilepos x set value []
-execute if entity @s[scores={bMissileCount=0}] run data modify storage rocketriders:bmissilepos y set value []
-execute if entity @s[scores={bMissileCount=0}] run data modify storage rocketriders:bmissilepos z set value []
+execute if entity @s[scores={bMissileCount=0}] run data remove storage rocketriders:bmissilepos x
+execute if entity @s[scores={bMissileCount=0}] run data remove storage rocketriders:bmissilepos y
+execute if entity @s[scores={bMissileCount=0}] run data remove storage rocketriders:bmissilepos z

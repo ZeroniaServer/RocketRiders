@@ -24,6 +24,6 @@ scoreboard players remove @s[scores={canopyCount=1..}] canopyCount 1
 execute if entity @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
 
 #End condition - clear arrays
-execute if entity @s[scores={canopyCount=0}] run data modify storage rocketriders:canopypos x set value []
-execute if entity @s[scores={canopyCount=0}] run data modify storage rocketriders:canopypos y set value []
-execute if entity @s[scores={canopyCount=0}] run data modify storage rocketriders:canopypos z set value []
+execute if entity @s[scores={canopyCount=0}] run data remove storage rocketriders:canopypos x
+execute if entity @s[scores={canopyCount=0}] run data remove storage rocketriders:canopypos y
+execute if entity @s[scores={canopyCount=0}] run data remove storage rocketriders:canopypos z

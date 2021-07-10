@@ -25,6 +25,6 @@ scoreboard players remove @s[scores={splashCount=1..}] splashCount 1
 execute if entity @s[scores={splashCount=1..}] run function arenaclear:preparesplash
 
 #End condition - clear arrays
-execute if entity @s[scores={splashCount=0}] run data modify storage rocketriders:splashpos x set value []
-execute if entity @s[scores={splashCount=0}] run data modify storage rocketriders:splashpos y set value []
-execute if entity @s[scores={splashCount=0}] run data modify storage rocketriders:splashpos z set value []
+execute if entity @s[scores={splashCount=0}] run data remove storage rocketriders:splashpos x
+execute if entity @s[scores={splashCount=0}] run data remove storage rocketriders:splashpos y
+execute if entity @s[scores={splashCount=0}] run data remove storage rocketriders:splashpos z

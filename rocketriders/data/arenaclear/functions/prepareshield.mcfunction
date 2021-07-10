@@ -23,6 +23,6 @@ scoreboard players remove @s[scores={shieldCount=1..}] shieldCount 1
 execute if entity @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
 
 #End condition - clear arrays
-execute if entity @s[scores={shieldCount=0}] run data modify storage rocketriders:shieldpos x set value []
-execute if entity @s[scores={shieldCount=0}] run data modify storage rocketriders:shieldpos y set value []
-execute if entity @s[scores={shieldCount=0}] run data modify storage rocketriders:shieldpos z set value []
+execute if entity @s[scores={shieldCount=0}] run data remove storage rocketriders:shieldpos x
+execute if entity @s[scores={shieldCount=0}] run data remove storage rocketriders:shieldpos y
+execute if entity @s[scores={shieldCount=0}] run data remove storage rocketriders:shieldpos z

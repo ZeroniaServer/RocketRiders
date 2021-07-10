@@ -23,6 +23,6 @@ scoreboard players remove @s[scores={beeShieldCount=1..}] beeShieldCount 1
 execute if entity @s[scores={beeShieldCount=1..}] run function rr_powerups:arenaclear/preparebeeshield
 
 #End condition - clear arrays
-execute if entity @s[scores={beeShieldCount=0}] run data modify storage rr_powerups:beeshieldpos x set value []
-execute if entity @s[scores={beeShieldCount=0}] run data modify storage rr_powerups:beeshieldpos y set value []
-execute if entity @s[scores={beeShieldCount=0}] run data modify storage rr_powerups:beeshieldpos z set value []
+execute if entity @s[scores={beeShieldCount=0}] run data remove storage rr_powerups:beeshieldpos x
+execute if entity @s[scores={beeShieldCount=0}] run data remove storage rr_powerups:beeshieldpos y
+execute if entity @s[scores={beeShieldCount=0}] run data remove storage rr_powerups:beeshieldpos z

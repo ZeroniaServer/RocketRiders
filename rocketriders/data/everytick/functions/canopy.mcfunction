@@ -13,71 +13,66 @@ tag @e[scores={PlatTime=1..58},type=marker,tag=killCanopy,tag=!animated] add ani
 execute as @e[scores={PlatTime=1..50},type=marker,tag=!animated] at @s run particle block spruce_leaves ~ ~ ~ 1 0 1 0.1 10
 execute as @e[scores={PlatTime=1},type=marker,tag=!animated] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
 
-execute as @e[scores={PlatTime=5},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-1,name:"minecraft:canopy1"}
-execute as @e[scores={PlatTime=5},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=5},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=5..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~ ~ ~ oak_wood[axis=y]
+execute as @e[scores={PlatTime=5..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~ ~ ~-1 spruce_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=5..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~ ~ ~1 spruce_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=5},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
 
-execute as @e[scores={PlatTime=10},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-2,name:"minecraft:canopy2"}
-execute as @e[scores={PlatTime=10},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=10},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=10..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~ ~ ~-2 birch_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=10..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~ ~ ~2 birch_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=10},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 2
 
-execute as @e[scores={PlatTime=15},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:0,posY:0,posZ:-3,name:"minecraft:canopy3"}
-execute as @e[scores={PlatTime=15},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=15},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=15..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~ ~ ~-3 jungle_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=15..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~ ~ ~3 jungle_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=15},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=20},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy4"}
-execute as @e[scores={PlatTime=20},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=20},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=20..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~1 ~ ~-1 jungle_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=20..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~1 ~ ~-2 oak_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=20..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~1 jungle_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=20..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~2 oak_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=20},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=25},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy5"}
-execute as @e[scores={PlatTime=25},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=25},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=25..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~1 ~ ~ spruce_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=25..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~2 ~ ~ birch_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=25..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ spruce_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=25..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-2 ~ ~ birch_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=25..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~1 ~ ~-3 oak_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=25..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~3 oak_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=25},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=30},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy6"}
-execute as @e[scores={PlatTime=30},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=30},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=30..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~1 ~ ~1 jungle_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=30..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~2 ~ ~1 oak_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=30..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 jungle_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=30..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-2 ~ ~-1 oak_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=30},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
 
-execute as @e[scores={PlatTime=35},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy7"}
-execute as @e[scores={PlatTime=35},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=35},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=35..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-2 oak_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=35..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~1 ~ ~2 oak_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=35},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
-execute as @e[scores={PlatTime=35},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 jungle_leaves[persistent=false,distance=1]
 
-execute as @e[scores={PlatTime=40},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy8"}
-execute as @e[scores={PlatTime=40},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=40},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=40..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~2 ~ ~-1 oak_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=40..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-2 ~ ~1 oak_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=40},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 1
-execute as @e[scores={PlatTime=40},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 jungle_leaves[persistent=false,distance=1]
 
-execute as @e[scores={PlatTime=45},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy9"}
-execute as @e[scores={PlatTime=45},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=45},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=45..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~2 ~ ~-2 spruce_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=45..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-2 ~ ~2 spruce_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=45},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0.6
-execute as @e[scores={PlatTime=45},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 jungle_leaves[persistent=false,distance=1]
 
-execute as @e[scores={PlatTime=50},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy10"}
-execute as @e[scores={PlatTime=50},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=50},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=50..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~2 ~ ~2 spruce_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=50..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-2 ~ ~-2 spruce_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=50..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~3 ~ ~-1 oak_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=50..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-3 ~ ~1 oak_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=50},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0.6
-execute as @e[scores={PlatTime=50},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 jungle_leaves[persistent=false,distance=1]
 
-execute as @e[scores={PlatTime=55},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy11"}
-execute as @e[scores={PlatTime=55},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=55},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=55..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~1 ~ ~3 oak_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=55..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-3 oak_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=55..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~3 ~ ~ jungle_leaves[persistent=true] replace
+execute as @e[scores={PlatTime=55..},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-3 ~ ~ jungle_leaves[persistent=true] replace
 execute as @e[scores={PlatTime=55},type=marker,tag=!animated,tag=!killCanopy] at @s run playsound block.grass.break master @a ~ ~ ~ 2 0
-execute as @e[scores={PlatTime=55},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 jungle_leaves[persistent=false,distance=1]
 
-execute as @e[scores={PlatTime=56},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:0,posZ:-3,name:"minecraft:canopy12"}
-execute as @e[scores={PlatTime=56},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
-execute as @e[scores={PlatTime=56},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 observer[facing=north,powered=true]
+execute as @e[scores={PlatTime=56},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~3 ~ ~1 oak_leaves[persistent=true]
+execute as @e[scores={PlatTime=56},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-3 ~ ~-1 oak_leaves[persistent=true]
 execute as @e[scores={PlatTime=56},type=marker,tag=!animated,tag=!killCanopy] at @s run particle block spruce_leaves ~ ~2 ~ 1 1 1 1 300
-execute as @e[scores={PlatTime=56},type=marker,tag=!animated,tag=!killCanopy] at @s run setblock ~-1 ~ ~-1 jungle_leaves[persistent=false,distance=1]
 
 execute as @e[scores={PlatTime=58},type=marker,tag=!animated,tag=!killCanopy] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
 execute as @e[scores={PlatTime=58},type=marker,tag=!animated,tag=!killCanopy] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves

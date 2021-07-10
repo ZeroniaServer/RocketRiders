@@ -6,7 +6,7 @@ scoreboard objectives setdisplay sidebar.team.dark_gray RoundsWon
 #leave midgame
 function rr_duel:game/leavemidgame
 
-#tracking players and locking joinpads
+#tracking players and locking join pads
 tag @a[team=Blue] add InRanked
 tag @a[team=Yellow] add InRanked
 

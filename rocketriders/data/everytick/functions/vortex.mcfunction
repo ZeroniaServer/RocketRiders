@@ -101,7 +101,7 @@ execute as @e[tag=VortexItemYellow,type=armor_stand] at @s unless entity @e[tag=
 execute as @e[tag=VortexItemBlue,type=armor_stand] at @s unless entity @e[tag=VortexBlue,distance=..3,limit=1,sort=nearest,type=marker] run kill @s
 
 ##Feathered vortex (Easter egg)
-execute unless entity @s[tag=featheredOff] unless entity @s[tag=duelEnabled] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
+execute unless entity @s[tag=featheredOff] as @e[type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
 scoreboard players set @e[tag=SummonFeathered] RNGmax 99
 execute as @e[tag=SummonFeathered] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[tag=SummonFeathered] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax

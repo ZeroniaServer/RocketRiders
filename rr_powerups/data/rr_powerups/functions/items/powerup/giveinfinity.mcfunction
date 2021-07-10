@@ -7,7 +7,7 @@ title @s[tag=!Infinity] title [{"text":" "}]
 title @s[tag=!Infinity] subtitle ["",{"text":"Infinity Saber:","color":"dark_purple","italic":true,"bold":true},{"text":" Lasts for ","color":"light_purple","italic":true},{"text":"30 seconds.","color":"red"}]
 execute store result score @s HasArrows run clear @s arrow 0
 give @s[scores={HasArrows=0},tag=fullOffhand] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 1
-item replace entity @s[scores={HasArrows=0},tag=!fullOffhand] weapon.offhand with arrow{display: {Name: '{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 1
+item replace entity @s[scores={HasArrows=0},tag=!fullOffhand] weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 1
 execute as @s[scores={HasArrows=0},tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 clear @s[tag=!Infinity] bow
 tag @s[tag=!Infinity] add Infinity

@@ -112,7 +112,7 @@ execute as @s[tag=YellowFull] as @e[tag=yellowjoinpad,type=marker] at @s run tit
 execute as @s[tag=YellowFull] as @e[tag=yellowjoinpad,type=marker] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
 execute as @e[tag=yellowjoinpad,type=marker] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinYellow
 
-##Joinpad + Leavepad Spectator
+##Join pad + Leave pad Spectator
 execute as @s[tag=!EditedSettings] run tag @a remove JoinSpec
 execute as @s[tag=GameEnd] run tag @a remove JoinSpec
 execute if entity @e[tag=Selection,tag=SMActive] if entity @e[tag=specjoinpad,tag=CancelJoin] run execute as @a[tag=JoinSpec] run tellraw @s ["",{"text":"You can not use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]

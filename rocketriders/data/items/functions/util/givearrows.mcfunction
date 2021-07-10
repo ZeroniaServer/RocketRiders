@@ -21,11 +21,11 @@ give @s[scores={HasArrows=3},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arro
 give @s[scores={HasArrows=0},tag=!fullHotbar,tag=fullOffhand,tag=Infinity] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 1
 
 #If possible, places arrows in offhand
-item replace entity @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow{display: {Name: '{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 4
-item replace entity @s[scores={HasArrows=1},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow{display: {Name: '{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 3
-item replace entity @s[scores={HasArrows=2},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow{display: {Name: '{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 2
-item replace entity @s[scores={HasArrows=3},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow{display: {Name: '{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 1
-item replace entity @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=Infinity] weapon.offhand with arrow{display: {Name: '{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 1
+item replace entity @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 4
+item replace entity @s[scores={HasArrows=1},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 3
+item replace entity @s[scores={HasArrows=2},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 2
+item replace entity @s[scores={HasArrows=3},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 1
+item replace entity @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=Infinity] weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 1
 execute as @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 execute as @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 

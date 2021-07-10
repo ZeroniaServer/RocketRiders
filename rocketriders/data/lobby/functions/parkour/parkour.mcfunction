@@ -1,5 +1,5 @@
 #######################################################
-## PARKOUR: The system behind the Lobby Parkour Area ##
+## PARKOUR:The system behind the Lobby Parkour Area ##
 #######################################################
 
 ##Start parkour
@@ -146,15 +146,15 @@ tag @a[team=Lobby,tag=inParkour,tag=!timeReset,tag=onResetPlate] add timeReset
 tag @a[team=Lobby,tag=inParkour,tag=timeReset,tag=!onResetPlate] remove timeReset
 
 ##Display actionbar
-execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=..9,parkourMins=..9}] run title @s actionbar ["",{"text":"Parkour Timer: ","color":"dark_green"},{"text":"0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"            Checkpoint: ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true}]
-execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=..9}] run title @s actionbar ["",{"text":"Parkour Timer: ","color":"dark_green"},{"text":"0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"            Checkpoint: ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true}]
-execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=..9,parkourMins=10..}] run title @s actionbar ["",{"text":"Parkour Timer: ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"            Checkpoint: ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true}]
-execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=10..}] run title @s actionbar ["",{"text":"Parkour Timer: ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"            Checkpoint: ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true}]
+execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=..9,parkourMins=..9}] run title @s actionbar ["",{"text":"Parkour Timer:","color":"dark_green"},{"text":"0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"            Checkpoint:","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true}]
+execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=..9}] run title @s actionbar ["",{"text":"Parkour Timer:","color":"dark_green"},{"text":"0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"            Checkpoint:","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true}]
+execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=..9,parkourMins=10..}] run title @s actionbar ["",{"text":"Parkour Timer:","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"            Checkpoint:","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true}]
+execute as @a[team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=10..}] run title @s actionbar ["",{"text":"Parkour Timer:","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"            Checkpoint:","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true}]
 
 ##Inventory controls (offhand and drop)
 #Return to last checkpoint (includes 1 second cooldown)
 scoreboard players add @a[team=Lobby,tag=inParkour] chkpntCooldown 0
-execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:3b,id:"minecraft:compass",Count:1b}]}] run item replace entity @s hotbar.3 with compass{display: {Name: '[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'}} 1
+execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:3b,id:"minecraft:compass",Count:1b}]}] run item replace entity @s hotbar.3 with compass{display:{Name:'[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'}} 1
 execute as @a[team=Lobby,tag=inParkour,scores={dropCompass=1..,chkpntCooldown=0}] run tag @s add returnCheckpoint
 execute as @a[team=Lobby,tag=inParkour,scores={dropCompass=1..,chkpntCooldown=0}] run scoreboard players set @s chkpntCooldown 1
 scoreboard players reset @a dropCompass
@@ -165,7 +165,7 @@ scoreboard players add @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=1..19}
 scoreboard players set @a[team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
 #Quit to start
-execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:5b,id:"minecraft:clock",Count:1b}]}] run item replace entity @s hotbar.5 with clock{display: {Name: '[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'}} 1
+execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:5b,id:"minecraft:clock",Count:1b}]}] run item replace entity @s hotbar.5 with clock{display:{Name:'[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'}} 1
 execute as @a[team=Lobby,tag=inParkour,scores={dropClock=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to the start.","color":"red"}]
 execute as @a[team=Lobby,tag=inParkour,scores={dropClock=1..}] run tag @s remove inParkour
 execute as @a[team=Lobby,scores={dropClock=1..}] run scoreboard players set @s LobbyWarp 7
@@ -175,7 +175,7 @@ execute as @a[team=Lobby,tag=inParkour] if entity @s[nbt={Inventory:[{Slot:-106b
 execute as @a[team=Lobby] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:clock"}]}] run scoreboard players set @s LobbyWarp 7
 
 #Quit parkour
-execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:8b,id:"minecraft:barrier",Count:1b}]}] run item replace entity @s hotbar.8 with barrier{display: {Name: '[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'}} 1
+execute as @a[team=Lobby,tag=inParkour] unless entity @s[nbt={Inventory:[{Slot:8b,id:"minecraft:barrier",Count:1b}]}] run item replace entity @s hotbar.8 with barrier{display:{Name:'[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'}} 1
 execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to the Lobby.","color":"red"}]
 execute as @a[team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tag @s remove inParkour
 execute as @a[team=Lobby,scores={dropBarrier=1..}] run scoreboard players set @s LobbyWarp 1
@@ -193,8 +193,8 @@ execute as @a[team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,tag=in
 effect clear @a[team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (non-duel mode)
-execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=inParkour] armor.feet with iron_boots{display: {Name: '{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'}, Enchantments: [{id: "minecraft:binding_curse", lvl: 1}], HideFlags: 7}
-execute as @s[tag=noYZELO] run item replace entity @a[team=Lobby,tag=inParkour] armor.feet with iron_boots{display: {Name: '{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'}, Enchantments: [{id: "minecraft:binding_curse", lvl: 1}], HideFlags: 7}
+execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=inParkour] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'}, Enchantments:[{id:"minecraft:binding_curse", lvl:1}], HideFlags:7}
+execute as @s[tag=noYZELO] run item replace entity @a[team=Lobby,tag=inParkour] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'}, Enchantments:[{id:"minecraft:binding_curse", lvl:1}], HideFlags:7}
 
 ##Safety features
 #Only lobby players in Parkour mode

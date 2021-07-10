@@ -5,8 +5,8 @@ clear @a[team=Yellow] #custom:clear
 clear @a[team=Yellow] crossbow{nova:1b}
 clear @a[team=Yellow] #rr_powerups:clear
 execute as @e[tag=captureMiddle,type=marker] at @s run function rr_powerups:everytick/powerup_platform
-execute as @s[scores={endtimer=1},tag=YellowWon] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{HideFlags: 7, Unbreakable: 1, display: {color: 1247871}, Enchantments: [{id: "binding_curse", lvl: 1}]} 1
-execute as @s[scores={endtimer=1},tag=BlueWon] run item replace entity @a[team=Yellow] armor.chest with leather_chestplate{HideFlags: 7, Unbreakable: 1, display: {color: 16768000}, Enchantments: [{id: "binding_curse", lvl: 1}]} 1
+execute as @s[scores={endtimer=1},tag=YellowWon] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{HideFlags:127,Unbreakable:1,display:{color:1247871},Enchantments:[{id:"binding_curse",lvl:1}]} 1
+execute as @s[scores={endtimer=1},tag=BlueWon] run item replace entity @a[team=Yellow] armor.chest with leather_chestplate{HideFlags:127,Unbreakable:1,display:{color:16768000},Enchantments:[{id:"binding_curse",lvl:1}]} 1
 execute as @s[scores={endtimer=81},tag=doTying,tag=!tyingOff] run function game:endstats
 execute as @s[scores={endtimer=1},tag=!doTying] run function game:endstats
 scoreboard players set @e[tag=captureMiddle,type=marker] bCapturedTime 0

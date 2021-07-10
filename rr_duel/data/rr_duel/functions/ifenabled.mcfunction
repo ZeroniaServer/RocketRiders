@@ -1,7 +1,7 @@
 #management
 execute unless score @s SetGamemode = @e[tag=rr_duel,limit=1,type=armor_stand] gamemodeID run function rr_duel:disable
-data merge block -69 192 74 {Text1: '{"text":"Gamemode:","color":"#6b006b","clickEvent":{"action":"run_command","value":"scoreboard players add @e[tag=Selection,scores={refreshsigns=..0},type=armor_stand] SetGamemode 1"}}',Text2: '{"text":"1v1 Duel","color":"red","clickEvent":{"action":"run_command","value":"playsound ui.button.click master @a ~ ~ ~ 1 1"}}',Text4:'{"text":"(Click for next)","color":"gray","italic":true,"clickEvent":{"action":"run_command","value":"scoreboard players add @e[tag=Selection,type=armor_stand] refreshsigns 1"}}'}
-execute as @s[scores={refreshsigns=1..}] run data merge block -69 192 74 {Text1: '{"text":"Gamemode:","color":"#6b006b"}'}
+data merge block -69 192 74 {Text1:'{"text":"Gamemode:","color":"#6b006b","clickEvent":{"action":"run_command","value":"scoreboard players add @e[tag=Selection,scores={refreshsigns=..0},type=armor_stand] SetGamemode 1"}}',Text2:'{"text":"1v1 Duel","color":"red","clickEvent":{"action":"run_command","value":"playsound ui.button.click master @a ~ ~ ~ 1 1"}}',Text4:'{"text":"(Click for next)","color":"gray","italic":true,"clickEvent":{"action":"run_command","value":"scoreboard players add @e[tag=Selection,type=armor_stand] refreshsigns 1"}}'}
+execute as @s[scores={refreshsigns=1..}] run data merge block -69 192 74 {Text1:'{"text":"Gamemode:","color":"#6b006b"}'}
 data merge block -69 191 74 {Text1:'{"text":""}',Text2:'{"color":"light_purple","clickEvent":{"action":"run_command","value":"execute as @s run function rr_duel:info"},"text":"Gamemode Info"}',Text3:'{"clickEvent":{"action":"run_command","value":"playsound ui.button.click master @a ~ ~ ~ 1 1"},"text":" "}',Text4:'{"text":""}'}
 
 #tips (disabled on duel servermode)
@@ -47,7 +47,7 @@ execute if entity @s[tag=GameStarted,tag=!GameEnd] as @a[tag=informMe,tag=!Forfe
 execute if entity @s[tag=EditedSettings,tag=Repeat,tag=!GameEnd] if entity @a[tag=informMe,tag=!Forfeiter] run function gamemodes:informrepeat
 tag @a[tag=informMe] remove informMe
 
-#lock joinpads
+#lock join pads
 execute as @s[tag=EditedSettings] if entity @a[team=Blue] run function game:cancelblue
 execute as @s[tag=EditedSettings] if entity @a[team=Yellow] run function game:cancelyellow
 execute as @s[tag=EditedSettings,tag=!GameStarted] unless entity @a[team=Blue] run function game:uncancelblue

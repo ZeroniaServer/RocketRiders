@@ -10,5 +10,5 @@ execute as @s[scores={HasElytra=1..}] run scoreboard players set @s actionbardel
 execute as @s[scores={HasElytra=1..}] run clear @s elytra
 title @s[scores={HasElytra=0}] title ["",{"text":" "}]
 title @s[scores={HasElytra=0}] subtitle ["",{"text":"Elytra ","color":"dark_purple","italic":true,"bold":true},{"text":"obtained. ","color":"light_purple"},{"text":"Jump to activate!","color":"light_purple","italic":true}]
-item replace entity @s armor.chest with elytra{HideFlags: 4, Enchantments: [{id: "binding_curse", lvl: 1}], Damage: 429, display: {Name: '[{"text":"Elytra","color":"dark_purple","bold":true}]', Lore: ['{"text":"Useful for short flights.","color":"gray"}']}} 1
+item replace entity @s armor.chest with elytra{HideFlags:11,Enchantments:[{id:"binding_curse",lvl:1}],Damage:429,display:{Name:'[{"text":"Elytra","color":"dark_purple","bold":true}]',Lore:['{"text":"Useful for short flights.","color":"gray"}']}} 1
 tag @e[tag=Selection,type=armor_stand] add givenElytra

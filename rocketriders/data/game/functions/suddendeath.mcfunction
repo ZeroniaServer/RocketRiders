@@ -1,5 +1,5 @@
 ####################################
-## SUDDENDEATH: What events occur ##
+## SUDDENDEATH:What events occur ##
 ## when the game results in a tie ##
 ####################################
 
@@ -56,11 +56,11 @@ execute as @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWon
 #For Premature Celebration achievement
 execute as @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=BlueWonFirst] run advancement grant @a[team=Blue] only achievements:rr_challenges/premature
-execute as @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{display: {Name: '[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]', color: 1247871}, HideFlags: 39, Unbreakable: 1, Enchantments: [{id: "binding_curse", lvl: 1}]}
+execute as @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:1247871},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
 execute as @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[team=Yellow] armor.head with air
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
 execute as @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=YellowWonFirst] run advancement grant @a[team=Yellow] only achievements:rr_challenges/premature
-execute as @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[team=Yellow] armor.chest with leather_chestplate{display: {Name: '[{"text":"Yellow Chestplate","color":"yellow","bold":true,"italic":false}]', color: 16768000}, HideFlags: 7, Unbreakable: 1, Enchantments: [{id: "binding_curse", lvl: 1}]}
+execute as @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[team=Yellow] armor.chest with leather_chestplate{display:{Name:'[{"text":"Yellow Chestplate","color":"yellow","bold":true,"italic":false}]',color:16768000},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
 execute as @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[team=Blue] armor.head with air
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
 #Halves the Item Delay (more intense gameplay)

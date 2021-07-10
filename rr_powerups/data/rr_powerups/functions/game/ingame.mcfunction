@@ -137,8 +137,8 @@ execute as @e[tag=captureMiddle,tag=!contested,limit=1,type=marker] if score @s 
 #broken elytra replacing
 execute as @a[team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b,tag:{Damage:431}}]}] run tag @s add BreakEly
 execute as @a[team=Yellow,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b,tag:{Damage:431}}]}] run tag @s add BreakEly
-execute as @a[team=Blue,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{HideFlags: 7, Unbreakable: 1, display: {color: 1247871}, Enchantments: [{id: "binding_curse", lvl: 1}]} 1
-execute as @a[team=Yellow,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{HideFlags: 7, Unbreakable: 1, display: {color: 16768000}, Enchantments: [{id: "binding_curse", lvl: 1}]} 1
+execute as @a[team=Blue,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{HideFlags:127,Unbreakable:1,display:{color:1247871},Enchantments:[{id:"binding_curse",lvl:1}]} 1
+execute as @a[team=Yellow,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{HideFlags:127,Unbreakable:1,display:{color:16768000},Enchantments:[{id:"binding_curse",lvl:1}]} 1
 tag @a[tag=BreakEly] remove BreakEly
 
 #broken trident clearing

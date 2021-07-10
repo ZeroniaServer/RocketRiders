@@ -9,6 +9,7 @@ tag @e[tag=Selection,type=armor_stand] add itemDelayOff
 tag @e[tag=Selection,type=armor_stand] add settingsLocked
 tag @e[tag=Selection,type=armor_stand] add customSaberMsg
 tag @e[tag=Selection,type=armor_stand] add customLeaveHandling
+tag @e[tag=Selection,type=armor_stand] add featheredOff
 
 tag @e[tag=Selection,tag=Molerat,type=armor_stand] add WasMolerat
 tag @e[tag=Selection,tag=Molerat,type=armor_stand] remove Molerat

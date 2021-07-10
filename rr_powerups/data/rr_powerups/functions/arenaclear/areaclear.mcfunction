@@ -28,5 +28,5 @@ execute if entity @e[tag=Selection,type=armor_stand,limit=1,tag=!powerupsEnabled
 execute as @e[tag=Selection,type=armor_stand] run function rr_powerups:arenaclear/preparebeeshield
 scoreboard players reset $beetime BeeShieldTime
 
-#remove join cancel from joinpads
+#remove join cancel from join pads
 schedule function game:uncancelpads 2t append

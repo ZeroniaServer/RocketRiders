@@ -1,5 +1,5 @@
 #######################################################
-## PARKOUR:The system behind the Lobby Parkour Area ##
+## PARKOUR: The system behind the Lobby Parkour Area ##
 #######################################################
 
 ##Start parkour

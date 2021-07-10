@@ -1,5 +1,5 @@
 ####################################
-## SUDDENDEATH:What events occur ##
+## SUDDENDEATH: What events occur ##
 ## when the game results in a tie ##
 ####################################
 

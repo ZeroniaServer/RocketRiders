@@ -12,10 +12,6 @@ function rr_swap:items/cluster
 #platform
 function rr_swap:baseswap/platform
 
-#player armor
-execute as @s[scores={servermode=0},tag=!SMCustom] run function rr_swap:baseswap/gear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] run function servermode:giveswapgear
-
 #Item RNG
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_swap:items/giverandom

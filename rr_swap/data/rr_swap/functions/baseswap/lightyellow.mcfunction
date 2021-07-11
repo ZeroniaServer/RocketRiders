@@ -24,3 +24,7 @@ schedule function rr_swap:baseswap/visuals 60t
 #tetris resets
 execute as @e[tag=Selection,type=armor_stand] run function rr_swap:items/darktetrisreset
 execute as @e[tag=Selection,type=armor_stand] run function rr_swap:items/lighttetrisreset
+
+#armor
+execute as @s[scores={servermode=0},tag=!SMCustom] as @a[team=!Lobby,team=!Spectator] run function rr_swap:baseswap/gear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=!Lobby,team=!Spectator] run function servermode:giveswapgear

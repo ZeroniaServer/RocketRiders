@@ -193,8 +193,8 @@ execute as @a[team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,tag=in
 effect clear @a[team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (non-duel mode)
-execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=inParkour] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'}, Enchantments:[{id:"minecraft:binding_curse", lvl:1}], HideFlags:7}
-execute as @s[tag=noYZELO] run item replace entity @a[team=Lobby,tag=inParkour] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'}, Enchantments:[{id:"minecraft:binding_curse", lvl:1}], HideFlags:7}
+execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:7}
+execute as @s[tag=noYZELO] run item replace entity @a[team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:7}
 
 ##Safety features
 #Only lobby players in Parkour mode

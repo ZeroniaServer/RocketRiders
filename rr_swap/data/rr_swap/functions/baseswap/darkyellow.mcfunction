@@ -24,3 +24,7 @@ schedule function rr_swap:baseswap/visuals 60t
 #tetris resets
 execute as @e[tag=Selection,type=armor_stand] run function rr_swap:items/darktetrisreset
 execute as @e[tag=Selection,type=armor_stand] run function rr_swap:items/lighttetrisreset
+
+#armor
+execute as @a[team=Yellow] run function rr_swap:baseswap/gear
+execute as @a[team=Blue] run function rr_swap:baseswap/gear

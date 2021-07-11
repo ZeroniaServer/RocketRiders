@@ -3,6 +3,8 @@ scoreboard players set SwapSide swapside 1
 scoreboard players set SwapPlatform swapside 0
 scoreboard players set BossbarA swapside 0
 
+function rr_swap:baseswap/observerconvert1
+
 fill -14 34 -56 38 63 -52 blue_stained_glass replace minecraft:light_blue_stained_glass
 execute if entity @e[tag=Selection,scores={MiddleDeco=3},type=armor_stand] run fill -14 34 -51 38 63 -49 blue_stained_glass replace minecraft:light_blue_stained_glass
 fill -14 34 -57 38 63 -61 black_stained_glass replace minecraft:white_stained_glass
@@ -17,6 +19,8 @@ execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 6
 execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -73 38 34 -66 black_concrete replace white_concrete
 execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -65 38 34 -65 black_stained_glass replace white_stained_glass
 execute if entity @e[tag=Selection,tag=Hardcore,type=armor_stand] run fill -14 63 -64 38 34 -64 blue_stained_glass replace light_blue_stained_glass
+
+function rr_swap:baseswap/observerconvert2
 
 #Visual titles and subtitles.
 schedule function rr_swap:baseswap/visuals 60t

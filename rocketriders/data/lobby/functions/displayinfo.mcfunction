@@ -36,5 +36,6 @@ tellraw @s[scores={displayinfo=8}] [{"text":"[Lightning] ","color":"yellow","bol
 tellraw @s[scores={displayinfo=8}] {"text":"The Hurricane is a lightning-speed missile. Fittingly, it flies faster than most missiles. It might be harder to get on this one.","color":"gray","italic":true}
 tellraw @s[scores={displayinfo=8}] {"text":"(Made by: HolyToiletPaper)","color":"gray","italic":true}
 
+playsound ui.button.click master @s ~ ~ ~ 1 1
 tellraw @s {"text":""}
 scoreboard players reset @s displayinfo

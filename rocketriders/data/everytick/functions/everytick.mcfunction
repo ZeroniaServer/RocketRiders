@@ -35,7 +35,9 @@ effect give @a[team=Spectator] night_vision 1000000 100 true
 execute as @e[tag=Selection,type=armor_stand,tag=!SMActive] run effect give @a saturation 1000000 0 true
 execute as @e[tag=Selection,type=armor_stand,tag=SMActive] run effect clear @a saturation
 function lobby:bookwarp
-execute as @a[scores={displayinfo=1..}] run function lobby:displayinfo
+scoreboard players enable @a[team=Lobby] displayinfo
+scoreboard players enable @a[team=Developer] displayinfo
+execute as @a[scores={displayinfo=1..}] at @s run function lobby:displayinfo
 execute as @a[team=Lobby] run function everytick:score_reset
 execute unless entity @e[tag=Selection,tag=GameStarted,type=armor_stand] run function lobby:credits/cycle
 execute as @e[tag=Selection,type=armor_stand,tag=!SMActive] run function lobby:parkour/parkour

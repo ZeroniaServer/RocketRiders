@@ -9,7 +9,7 @@ execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboa
 title @s[scores={HasCitadel=1..},tag=!fullHotbar,tag=!BackCitadel] actionbar {"text":"Citadel already obtained.","color":"aqua"}
 execute as @s[scores={HasCitadel=1..},tag=!fullHotbar,tag=!BackCitadel] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasCitadel=0},tag=!fullHotbar,tag=!BackCitadel] actionbar {"text":"Citadel obtained.","color":"aqua"}
-loot give @s[scores={HasCitadel=0},tag=!fullHotbar] loot items:normal/chronull
+loot give @s[scores={HasCitadel=0},tag=!fullHotbar] loot items:normal/citadel
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasCitadel=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

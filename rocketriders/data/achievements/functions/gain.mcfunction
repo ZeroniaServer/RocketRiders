@@ -44,10 +44,10 @@ tag @a[tag=onBlue,tag=probablyDied] remove onBlue
 tag @a[tag=onYellow,tag=probablyDied] remove onYellow
 
 #Necessary for death check (again)
-execute as @a[scores={deathCooldown=5..}] run scoreboard players operation @s PlayerDeaths = @s deaths
-execute as @a[scores={deathCooldown=5..}] run tag @s remove probablyDied
-execute as @a[scores={deathCooldown=5..}] run tag @s remove stopCheckingDeath
-execute as @a[scores={deathCooldown=5..}] if score @s PlayerDeaths = @s deaths run scoreboard players set @s deathCooldown 0
+execute as @a[scores={deathCooldown=20..}] run scoreboard players operation @s PlayerDeaths = @s deaths
+execute as @a[scores={deathCooldown=20..}] run tag @s remove probablyDied
+execute as @a[scores={deathCooldown=20..}] run tag @s remove stopCheckingDeath
+execute as @a[scores={deathCooldown=20..}] if score @s PlayerDeaths = @s deaths run scoreboard players set @s deathCooldown 0
 
 #Necessary for fall distance check (again)
 execute as @a[team=Blue] at @s if entity @s[nbt={FallDistance:0.0f}] run scoreboard players reset @s FallDistance

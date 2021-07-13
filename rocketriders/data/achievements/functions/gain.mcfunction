@@ -26,12 +26,12 @@ execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achi
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:blocksintobits
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:newworld
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:lockdown
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:volcanichatred
+execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:volcanichatred
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:traveler
 execute as @s[scores={servermode=0},tag=!noPortal,tag=!realms,tag=!SMCustom] run function achievements:fallaway
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:gravitationalshootout
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:veteran
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:useful
+execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] at @s run function achievements:useful
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:moonwalker
 execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:sabotage
 

@@ -1,15 +1,11 @@
 ##They're Useful achievement
 ##Detects if a player successfully uses a Splash to prevent a TNT explosion
 
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~.48 ~.48 ~.48 water run tag @s add useful
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~-.48 ~.48 ~-.48 water run tag @s add useful
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~-.48 ~.48 ~.48 water run tag @s add useful
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~.48 ~.48 ~-.48 water run tag @s add useful
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~.48 ~-.48 ~.48 water run tag @s add useful
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~-.48 ~-.48 ~-.48 water run tag @s add useful
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~-.48 ~-.48 ~.48 water run tag @s add useful
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~.48 ~-.48 ~-.48 water run tag @s add useful
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if score @s playerUUID = @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] splashOwnerUUID at @e[tag=splashclear,limit=1,sort=arbitrary,type=marker] at @e[type=tnt,nbt={Fuse:1s},limit=1,sort=nearest,distance=..7] if block ~ ~ ~ water run tag @s add useful
-scoreboard players add @a[tag=useful] useful 1
-tag @a[tag=useful] remove useful
-advancement grant @a[scores={useful=20..}] only achievements:rr_challenges/useful
+scoreboard players operation $useful playerUUID = @s playerUUID
+execute as @e[tag=splash_alone,type=area_effect_cloud] if score @s splashOwnerUUID = $useful playerUUID run tag @s add currSplash
+execute as @e[tag=currSplash,type=area_effect_cloud] at @s if entity @e[type=tnt,nbt={Fuse:1s},distance=..7,predicate=custom:is_underwater] run tag @s add useful
+execute if entity @e[tag=useful,type=area_effect_cloud] run scoreboard players add @s useful 1
+scoreboard players reset $useful playerUUID
+tag @e[tag=useful,type=area_effect_cloud] remove useful
+tag @e[tag=currSplash,type=area_effect_cloud] remove currSplash
+advancement grant @s[scores={useful=20..}] only achievements:rr_challenges/useful

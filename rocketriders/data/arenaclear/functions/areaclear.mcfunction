@@ -36,7 +36,7 @@ execute if entity @s[tag=!Molerat,tag=WasMolerat] run function arenaclear:molera
 
 ##Kill all necessary entities and clear utility structures
 kill @e[type=fireball]
-kill @e[tag=endFireballAEC,type=marker]
+kill @e[tag=endFireballAEC,type=area_effect_cloud]
 kill @e[type=snowball]
 kill @e[type=arrow]
 kill @e[tag=Vortex,type=marker]

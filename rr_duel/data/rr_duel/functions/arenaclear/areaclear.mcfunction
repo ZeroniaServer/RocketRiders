@@ -21,7 +21,7 @@ fill -14 13 -66 38 33 -48 air
 execute if entity @s[tag=!Molerat] run fill -12 36 -12 36 61 12 air
 
 kill @e[type=fireball]
-kill @e[tag=endFireballAEC,type=marker]
+kill @e[tag=endFireballAEC,type=area_effect_cloud]
 kill @e[type=snowball]
 kill @e[type=arrow]
 kill @e[tag=Vortex,type=marker]

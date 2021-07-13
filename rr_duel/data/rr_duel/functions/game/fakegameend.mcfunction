@@ -9,7 +9,7 @@ scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime = @s[scores
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime *= 20 MaxItemSec
 scoreboard players set @s RandomItem -3
 execute as @s[scores={fakeendtimer=1}] run function game:endstats
-execute as @s[scores={fakeendtimer=1}] run tag @a remove SummonPlat
+execute as @s[scores={fakeendtimer=1}] run tag @a remove nearcanopy
 execute as @s[scores={fakeendtimer=1}] run gamemode spectator @a[team=Blue]
 execute as @s[scores={fakeendtimer=1}] run gamemode spectator @a[team=Yellow]
 execute as @s[scores={fakeendtimer=1..2}] run tp @a[team=Blue] 12 64 -66 0 0

@@ -15,7 +15,7 @@ execute as @s[tag=BlueWon] run effect give @a[team=Yellow] weakness 100000 255 t
 execute as @s[tag=YellowWon] run effect give @a[team=Blue] weakness 100000 255 true
 execute as @s[scores={endtimer=1..},tag=!Sonar] run effect give @a night_vision 1000000 100 true
 execute as @s[scores={endtimer=1..80}] run worldborder warning distance 0
-execute as @s[scores={endtimer=1}] run tag @a remove SummonPlat
+execute as @s[scores={endtimer=1}] run tag @a remove nearcanopy
 execute as @s[scores={endtimer=1}] as @a run trigger LeaveMidgame set -1
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute as @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]

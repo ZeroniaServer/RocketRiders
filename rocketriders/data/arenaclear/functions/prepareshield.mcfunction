@@ -8,8 +8,8 @@ execute as @e[type=marker,tag=ClearShields,limit=1] run data modify entity @s Po
 execute as @e[type=marker,tag=ClearShields,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:shieldpos z[0]
 
 #Remove necessary blocks
-execute as @e[tag=ClearShields,type=marker,limit=1] at @s run fill ~-3 ~-3 ~ ~3 ~3 ~ air
-kill @e[tag=ClearShields,type=marker,limit=1]
+execute as @e[type=marker,tag=ClearShields,limit=1] at @s run fill ~-3 ~-3 ~ ~3 ~3 ~ air
+kill @e[type=marker,tag=ClearShields,limit=1]
 
 #Remove this set of coordinates in preparation for the next one
 data remove storage rocketriders:shieldpos x[0]

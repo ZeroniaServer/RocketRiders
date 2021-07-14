@@ -11,7 +11,7 @@ data remove storage rocketriders:bmissilepos redundantY[0]
 data remove storage rocketriders:bmissilepos redundantZ[0]
 
 #Set missile counts equal for loop condition (offset 1 so it doesn't consider itself)
-scoreboard players operation $minifyblue bMissileCount = @e[tag=Selection,type=armor_stand,limit=1] bMissileCount
+scoreboard players operation $minifyblue bMissileCount = @e[type=armor_stand,tag=Selection,limit=1] bMissileCount
 scoreboard players remove $minifyblue bMissileCount 1
 
 #Start loop to scan for duplicate entries if another missile has been spawned
@@ -24,7 +24,7 @@ execute if score $minifyblue bMissileCount matches 1.. run function items:minify
 execute as @s[tag=minify] run data remove storage rocketriders:bmissilepos x[0]
 execute as @s[tag=minify] run data remove storage rocketriders:bmissilepos y[0]
 execute as @s[tag=minify] run data remove storage rocketriders:bmissilepos z[0]
-execute as @s[tag=minify] run scoreboard players remove @e[tag=Selection,type=armor_stand,limit=1] bMissileCount 1
+execute as @s[tag=minify] run scoreboard players remove @e[type=armor_stand,tag=Selection,limit=1] bMissileCount 1
 tag @s remove minify
 
 #Clean up

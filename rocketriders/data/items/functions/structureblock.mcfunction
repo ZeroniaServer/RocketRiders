@@ -26,5 +26,5 @@ setblock ~ ~-1 ~ observer[powered=true,facing=down]
 clone ~ 255 ~ ~ 254 ~ ~ ~-1 ~ replace move
 
 ##Add 1 to appropriate missile count
-execute if entity @s[tag=bluemissile] run scoreboard players add @e[tag=Selection,type=armor_stand] bMissileCount 1
-execute if entity @s[tag=yellowmissile] run scoreboard players add @e[tag=Selection,type=armor_stand] yMissileCount 1
+execute if entity @s[tag=bluemissile] run scoreboard players add @e[type=armor_stand,tag=Selection] bMissileCount 1
+execute if entity @s[tag=yellowmissile] run scoreboard players add @e[type=armor_stand,tag=Selection] yMissileCount 1

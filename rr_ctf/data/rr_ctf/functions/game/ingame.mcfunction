@@ -13,8 +13,8 @@ execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s
 execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
 #endstone regeneration
-execute as @e[tag=airDetectBlue,type=marker] at @s run function rr_ctf:everytick/airdetectblue
-execute as @e[tag=airDetectYellow,type=marker] at @s run function rr_ctf:everytick/airdetectyellow
+execute as @e[type=marker,tag=airDetectBlue] at @s run function rr_ctf:everytick/airdetectblue
+execute as @e[type=marker,tag=airDetectYellow] at @s run function rr_ctf:everytick/airdetectyellow
 
 #flag logic
 function rr_ctf:everytick/flag

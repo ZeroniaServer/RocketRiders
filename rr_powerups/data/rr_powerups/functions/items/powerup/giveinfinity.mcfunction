@@ -1,5 +1,5 @@
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] store result score @s[tag=!Infinity] HasArrows run clear @s arrow 0
-execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_stand] run scoreboard players set @s[tag=!Infinity] HasArrows 0
+execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] store result score @s[tag=!Infinity] HasArrows run clear @s arrow 0
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] run scoreboard players set @s[tag=!Infinity] HasArrows 0
 title @s[tag=Infinity] actionbar [{"text":"Infinity Saber timer reset to ","color":"light_purple"},{"text":"30 seconds.","color":"red"}]
 tag @s[tag=Infinity] add DelayActionbar
 scoreboard players set @s[tag=Infinity] actionbardelay 0
@@ -11,7 +11,7 @@ item replace entity @s[scores={HasArrows=0},tag=!fullOffhand] weapon.offhand wit
 execute as @s[scores={HasArrows=0},tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 clear @s[tag=!Infinity] bow
 tag @s[tag=!Infinity] add Infinity
-tag @e[tag=Selection,type=armor_stand] add givenInfinity
+tag @e[type=armor_stand,tag=Selection] add givenInfinity
 scoreboard players set $infinity PowerupDisplay 30
 scoreboard players set $infinity powerupcount 0
 execute at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 1.5

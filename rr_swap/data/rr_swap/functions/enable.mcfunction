@@ -1,7 +1,7 @@
-tag @e[tag=Selection,type=armor_stand] remove switchGamemodes
-tag @e[tag=Selection,type=armor_stand] add swapEnabled
+tag @e[type=armor_stand,tag=Selection] remove switchGamemodes
+tag @e[type=armor_stand,tag=Selection] add swapEnabled
 summon marker 12 55 0 {Tags:[swapplatform]}
-tag @e[tag=Selection,type=armor_stand] add SurpriseEggOff
-tag @e[tag=Selection,type=armor_stand] add SplashStreamsOff
-tag @e[tag=Selection,type=armor_stand] add vortexOverride
-tag @e[tag=Selection,type=armor_stand] add respawnFlag
+tag @e[type=armor_stand,tag=Selection] add SurpriseEggOff
+tag @e[type=armor_stand,tag=Selection] add SplashStreamsOff
+tag @e[type=armor_stand,tag=Selection] add vortexOverride
+tag @e[type=armor_stand,tag=Selection] add respawnFlag

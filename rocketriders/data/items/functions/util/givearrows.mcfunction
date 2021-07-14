@@ -1,10 +1,10 @@
 ##Gives executor Arrows
 #Antidupe check - Arrows are an exception for stacking in modes that limit arrows.
 execute store result score @s HasArrows run clear @s arrow 0
-execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_stand] run scoreboard players operation @s HasArrows %= 64 CmdData
-execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_stand] as @s[scores={HasArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[tag=Selection,tag=doStacking,tag=!arrowLimit,type=armor_stand] run scoreboard players set @s HasArrows 0
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] as @s[scores={HasArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] run scoreboard players operation @s HasArrows %= 64 CmdData
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] as @s[scores={HasArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] run scoreboard players set @s HasArrows 0
+execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] as @s[scores={HasArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving
 title @s[scores={HasArrows=4..},tag=!fullHotbar,tag=!Infinity] actionbar {"text":"Arrows already obtained.","color":"aqua"}
@@ -30,6 +30,6 @@ execute as @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!fullOffhand,tag=!Infin
 execute as @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 
 #Game tracking
-tag @e[tag=Selection,tag=givenArrows,type=armor_stand] add givenArrowsTwice
-tag @e[tag=Selection,type=armor_stand] add givenArrows
-scoreboard players set @e[tag=Bot,type=armor_stand] botarrowitems 4
+tag @e[type=armor_stand,tag=Selection,tag=givenArrows] add givenArrowsTwice
+tag @e[type=armor_stand,tag=Selection] add givenArrows
+scoreboard players set @e[type=armor_stand,tag=Bot] botarrowitems 4

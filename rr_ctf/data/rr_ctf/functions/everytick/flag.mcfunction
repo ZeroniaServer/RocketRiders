@@ -318,8 +318,8 @@ tag @a[tag=CarryFlag,tag=!FlipMissile] add FlipMissile
 tag @a[tag=!CarryFlag] remove FlipMissile
 
 #Respawn clears
-execute as @e[tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
-execute as @e[tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
+execute as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
+execute as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
 
 #Disable vortices near flags
 execute positioned -10 65 -64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1

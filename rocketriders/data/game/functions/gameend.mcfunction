@@ -23,9 +23,9 @@ execute as @s[scores={endtimer=1}] run gamerule fallDamage false
 execute as @s[scores={endtimer=1}] run gamerule drowningDamage false
 execute as @s[scores={endtimer=1}] run gamerule fireDamage false
 execute as @s[scores={endtimer=1}] run kill @e[type=ender_pearl]
-execute as @s[scores={endtimer=1}] run tag @e[tag=yellowjoinpad,type=marker] add CancelJoin
-execute as @s[scores={endtimer=1}] run tag @e[tag=bluejoinpad,type=marker] add CancelJoin
-execute as @s[scores={endtimer=1}] run tag @e[tag=specjoinpad,type=marker] add CancelJoin
+execute as @s[scores={endtimer=1}] run tag @e[type=marker,tag=yellowjoinpad] add CancelJoin
+execute as @s[scores={endtimer=1}] run tag @e[type=marker,tag=bluejoinpad] add CancelJoin
+execute as @s[scores={endtimer=1}] run tag @e[type=marker,tag=specjoinpad] add CancelJoin
 execute as @s[scores={endtimer=1..}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 1000000 255 true
 execute as @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
 execute as @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Blue] 12 64 -66 0 0
@@ -80,10 +80,10 @@ execute as @s[scores={endtimer=570},tag=Sonar] as @e[type=potion] run data merge
 execute as @s[scores={endtimer=570},tag=Sonar] as @e[type=tnt] run data merge entity @s {Glowing:0b}
 execute as @s[scores={endtimer=570},tag=Sonar] as @e[type=tnt_minecart] run data merge entity @s {Glowing:0b}
 execute as @s[scores={endtimer=570},tag=Sonar] as @e[type=item] run data merge entity @s {Glowing:0b}
-execute as @s[scores={endtimer=570},tag=Sonar] as @e[tag=VortexItemBlue,type=armor_stand] run data merge entity @s {Glowing:0b}
-execute as @s[scores={endtimer=570},tag=Sonar] as @e[tag=VortexItemYellow,type=armor_stand] run data merge entity @s {Glowing:0b}
-execute as @s[scores={endtimer=570},tag=Sonar] as @e[tag=VortexItemFeathered,type=armor_stand] run data merge entity @s {Glowing:0b}
-execute as @s[scores={endtimer=570},tag=Sonar] as @e[tag=Bot,type=armor_stand] run data merge entity @s {Glowing:0b}
+execute as @s[scores={endtimer=570},tag=Sonar] as @e[type=armor_stand,tag=VortexItemBlue] run data merge entity @s {Glowing:0b}
+execute as @s[scores={endtimer=570},tag=Sonar] as @e[type=armor_stand,tag=VortexItemYellow] run data merge entity @s {Glowing:0b}
+execute as @s[scores={endtimer=570},tag=Sonar] as @e[type=armor_stand,tag=VortexItemFeathered] run data merge entity @s {Glowing:0b}
+execute as @s[scores={endtimer=570},tag=Sonar] as @e[type=armor_stand,tag=Bot] run data merge entity @s {Glowing:0b}
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Spectator] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Blue] LeaveGame 1
 execute as @s[scores={endtimer=570}] run scoreboard players add @a[team=Yellow] LeaveGame 1

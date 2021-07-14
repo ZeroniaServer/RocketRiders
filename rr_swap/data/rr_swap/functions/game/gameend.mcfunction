@@ -9,8 +9,8 @@ scoreboard players set SwapPlatformSec swapside 20
 scoreboard players set SwapPlatformTick swapside 0
 tag @s add swapLast
 bossbar set rr_swap:swap_progress players none
-kill @e[tag=ICBM,type=egg]
-kill @e[tag=ICBMtracker,type=marker]
+kill @e[type=egg,tag=ICBM]
+kill @e[type=marker,tag=ICBMtracker]
 kill @e[type=chicken]
 scoreboard players reset $highest ICBMID
 scoreboard players reset $tptracker ICBMID

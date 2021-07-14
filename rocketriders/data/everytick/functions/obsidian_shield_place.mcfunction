@@ -32,6 +32,8 @@ execute as @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~-1 ~ 
 
 execute as @s[scores={shieldplacement=6}] run playsound minecraft:block.respawn_anchor.set_spawn master @a ~ ~ ~ 2 1
 execute as @s[scores={shieldplacement=6}] run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
-execute as @s[scores={shieldplacement=6}] run summon marker ~ ~ ~ {Tags:["yellowobsidianshield"]}
-execute as @s[scores={shieldplacement=6}] run scoreboard players set @e[tag=yellowobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
+execute as @s[tag=yellowobalone,scores={shieldplacement=6}] run summon marker ~ ~ ~ {Tags:["yellowobsidianshield"]}
+execute as @s[tag=yellowobalone,scores={shieldplacement=6}] run scoreboard players set @e[type=marker,tag=yellowobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
+execute as @s[tag=blueobalone,scores={shieldplacement=6}] run summon marker ~ ~ ~ {Tags:["blueobsidianshield"]}
+execute as @s[tag=blueobalone,scores={shieldplacement=6}] run scoreboard players set @e[type=marker,tag=blueobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
 kill @s[scores={shieldplacement=6..}]

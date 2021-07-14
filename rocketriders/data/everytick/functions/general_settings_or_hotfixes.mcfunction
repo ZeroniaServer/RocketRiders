@@ -13,9 +13,9 @@ function lobby:missiledisplay/placedisp
 execute as @s[scores={servermode=0},tag=!SMCustom] run function tutorial:advantriggers
 
 #Fix weirdness with join pads
-execute as @s[tag=!EditedSettings] run tag @e[tag=yellowjoinpad,type=marker] add CancelJoin
-execute as @s[tag=!EditedSettings] run tag @e[tag=bluejoinpad,type=marker] add CancelJoin
-execute as @s[tag=!EditedSettings] run tag @e[tag=specjoinpad,type=marker] add CancelJoin
+execute as @s[tag=!EditedSettings] run tag @e[type=marker,tag=yellowjoinpad] add CancelJoin
+execute as @s[tag=!EditedSettings] run tag @e[type=marker,tag=bluejoinpad] add CancelJoin
+execute as @s[tag=!EditedSettings] run tag @e[type=marker,tag=specjoinpad] add CancelJoin
 
 #Utilkill timer
 execute as @e[type=tnt,tag=UtilKilled] at @s run function game:tntutilkill
@@ -45,8 +45,8 @@ execute as @a[team=!Spectator] run trigger leaveSpec set 0
 execute as @a[team=!Lobby,team=!Developer] run trigger displayinfo set 0
 
 #Launch pad in Modification Room
-execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[tag=modroomGoBack,limit=1,distance=..1,type=area_effect_cloud] run effect give @s jump_boost 1 20 true
-execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s unless entity @e[tag=modroomGoBack,limit=1,distance=..1,type=area_effect_cloud] run effect clear @s jump_boost
+execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s if entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
+execute as @s[tag=!GameStarted] as @a[team=Lobby] at @s unless entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect clear @s jump_boost
 
 #Lobby easter eggs
 function lobby:secrets/main
@@ -90,40 +90,40 @@ execute positioned -36 212 18 unless block ~ ~ ~ potted_blue_orchid run setblock
 execute positioned -37 212 138 unless block ~ ~ ~ potted_dandelion run setblock ~ ~ ~ potted_dandelion
 
 #Decoy Vortex (Lobby)
-execute as @e[tag=VortexDummy,type=marker] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
-execute as @e[tag=VortexDummy,type=marker] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
-execute as @e[tag=VortexDummy,type=marker] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @e[type=marker,tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
+execute as @e[type=marker,tag=VortexDummy] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
+execute as @e[type=marker,tag=VortexDummy] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
 
-execute as @e[tag=VortexItemDummy,type=armor_stand] at @s unless entity @a[team=Lobby,distance=..4] run tp @s ~ ~ ~ ~15 ~
-execute as @e[tag=VortexItemDummy,type=armor_stand] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]
-execute as @e[tag=VortexItemDummy,type=armor_stand] at @s if entity @e[tag=VortexDummy,sort=nearest,limit=1,distance=..2,type=marker] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~-180 ~
+execute as @e[type=armor_stand,tag=VortexItemDummy] at @s unless entity @a[team=Lobby,distance=..4] run tp @s ~ ~ ~ ~15 ~
+execute as @e[type=armor_stand,tag=VortexItemDummy] at @s if entity @e[type=marker,tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]
+execute as @e[type=armor_stand,tag=VortexItemDummy] at @s if entity @e[type=marker,tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~-180 ~
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active
-execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby] hotbar.0 with air
-execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby] hotbar.1 with air
-execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby] hotbar.2 with air
-execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] hotbar.3 with air
-execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] hotbar.5 with air
-execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby] hotbar.6 with air
-execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby] hotbar.7 with air
-execute as @e[tag=Selection,tag=!SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] hotbar.8 with air
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] hotbar.0 with air
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] hotbar.1 with air
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] hotbar.2 with air
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] hotbar.3 with air
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] hotbar.5 with air
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] hotbar.6 with air
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] hotbar.7 with air
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] hotbar.8 with air
 
 #If servermode is active
-execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
-execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.1 with air
-execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.2 with air
-execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.3 with air
-execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.5 with air
-execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.6 with air
-execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.7 with air
-execute as @e[tag=Selection,tag=SMActive,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.8 with air
+execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
+execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.1 with air
+execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.2 with air
+execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.3 with air
+execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.5 with air
+execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.6 with air
+execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.7 with air
+execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.8 with air
 
 item replace entity @a[team=Lobby] armor.head with air
 item replace entity @a[team=Lobby] armor.chest with air
 item replace entity @a[team=Lobby] armor.legs with air
-execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] armor.feet with air
-execute if entity @e[tag=Selection,tag=noYZELO,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] armor.feet with air
+execute unless entity @e[type=armor_stand,tag=rr_duel,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] armor.feet with air
+execute if entity @e[type=armor_stand,tag=Selection,tag=noYZELO,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] armor.feet with air
 
 #Lobby player books + antidupe
 tag @a[team=Lobby,tag=HasNavBook] remove HasNavBook

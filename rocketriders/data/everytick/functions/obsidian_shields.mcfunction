@@ -6,10 +6,10 @@
 
 ##Blue Obsidian Shield functionality
 #Spawning in Fireball entities
-execute as @e[tag=BlueObshield,type=marker] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
-execute as @e[tag=BlueObshield,type=marker] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
-execute as @e[tag=BlueObshield,type=marker] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[tag=BlueObshield,type=marker] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
+execute as @e[type=marker,tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
+execute as @e[type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
+execute as @e[type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute as @e[type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
 execute as @e[type=fireball,tag=blueobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:air",Count:1b}}
 tag @e[type=fireball,tag=blueobfireball,tag=!headreplaced] add headreplaced
 
@@ -43,22 +43,22 @@ execute unless entity @s[tag=noPortal] as @e[type=marker,tag=blueobalone] at @s 
 #Disable Blue Obsidian Shields near void
 execute as @e[type=marker,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Blue Obsidian Shields near spawnpoints
-execute as @e[type=marker,tag=blueobalone] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=marker] run kill @s
-execute as @e[type=marker,tag=blueobalone] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=marker] run kill @s
+execute as @e[type=marker,tag=blueobalone] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
+execute as @e[type=marker,tag=blueobalone] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
 
 #Place Obsidian Shield
 scoreboard players add @e[type=marker,tag=blueobalone] shieldplacement 1
 execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=1}] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:6,Tags:["tempobshield"],Particle:"block air"}
 execute as @e[type=marker,tag=blueobalone] at @s at @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest] align xyz run function everytick:obsidian_shield_place
-tp @e[tag=BlueObshield,type=marker] ~ ~-250 ~
-kill @e[tag=BlueObshield,type=marker]
+tp @e[type=marker,tag=BlueObshield] ~ ~-250 ~
+kill @e[type=marker,tag=BlueObshield]
 
 ##Yellow Obsidian Shield functionality
 #Spawning in Fireball entities
-execute as @e[tag=YellowObshield,type=marker] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
-execute as @e[tag=YellowObshield,type=marker] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
-execute as @e[tag=YellowObshield,type=marker] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[tag=YellowObshield,type=marker] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
+execute as @e[type=marker,tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
+execute as @e[type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
+execute as @e[type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute as @e[type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
 execute as @e[type=fireball,tag=yellowobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:air",Count:1b}}
 tag @e[type=fireball,tag=yellowobfireball,tag=!headreplaced] add headreplaced
 
@@ -92,15 +92,15 @@ execute unless entity @s[tag=noPortal] as @e[type=marker,tag=yellowobalone] at @
 #Disable Yellow Obsidian Shields near void
 execute as @e[type=marker,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Yellow Obsidian Shields near spawnpoints
-execute as @e[type=marker,tag=yellowobalone] at @s if entity @e[tag=BlueSpawnZone,distance=..3,type=marker] run kill @s
-execute as @e[type=marker,tag=yellowobalone] at @s if entity @e[tag=YellowSpawnZone,distance=..3,type=marker] run kill @s
+execute as @e[type=marker,tag=yellowobalone] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
+execute as @e[type=marker,tag=yellowobalone] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
 
 #Place Obsidian Shield
 scoreboard players add @e[type=marker,tag=yellowobalone] shieldplacement 1
 execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=1}] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:6,Tags:["tempobshield"],Particle:"block air"}
 execute as @e[type=marker,tag=yellowobalone] at @s at @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest] align xyz run function everytick:obsidian_shield_place
-tp @e[tag=YellowObshield,type=marker] ~ ~-250 ~
-kill @e[tag=YellowObshield,type=marker]
+tp @e[type=marker,tag=YellowObshield] ~ ~-250 ~
+kill @e[type=marker,tag=YellowObshield]
 
 ##General Obsidian Shield functionality
 #Thanks @Maxaxik for this fix!!! Makes animations smoother
@@ -110,28 +110,28 @@ execute if score obShield obshieldTick matches 2 as @e[type=dragon_fireball] run
 execute if score obShield obshieldTick matches 2 run scoreboard players set obShield obshieldTick 0
 
 #Obsidian Shield Break
-execute as @e[tag=blueobsidianshield,scores={breakobshield=..0},type=marker] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1
-execute as @e[tag=yellowobsidianshield,scores={breakobshield=..0},type=marker] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1
-execute as @e[scores={breakobshield=1},type=marker] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1
-execute as @e[scores={breakobshield=1},type=marker] at @s run setblock ~ ~ ~ minecraft:magenta_stained_glass_pane[west=true,east=true]
-execute as @e[scores={breakobshield=1},type=marker] run scoreboard players set @e[scores={breakobshield=1}] breakobshield 2
-execute as @e[scores={breakobshield=2},type=marker] at @s run particle block crying_obsidian ~ ~ ~ 1 1 0.4 0.1 5 force @a
-execute as @e[scores={breakobshield=2},type=marker] at @s unless block ~ ~ ~ minecraft:magenta_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 3
-execute as @e[scores={breakobshield=3},type=marker] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1.2
-execute as @e[scores={breakobshield=3},type=marker] at @s run setblock ~ ~ ~ minecraft:pink_stained_glass_pane[west=true,east=true]
-execute as @e[scores={breakobshield=3},type=marker] at @s run scoreboard players set @s breakobshield 4
-execute as @e[scores={breakobshield=4},type=marker] at @s run particle block crying_obsidian ~ ~ ~ 1 1 0 0.1 25 force @a
-execute as @e[scores={breakobshield=4},type=marker] at @s unless block ~ ~ ~ minecraft:pink_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 5
-execute as @e[scores={breakobshield=5},type=marker] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1.4
-execute as @e[scores={breakobshield=5..},type=marker] run scoreboard players add @s breakobshield 1
-execute as @e[scores={breakobshield=20},type=marker] at @s run function everytick:obsidian_shield_break
+execute as @e[type=marker,tag=blueobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1
+execute as @e[type=marker,tag=yellowobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1
+execute as @e[type=marker,scores={breakobshield=1}] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1
+execute as @e[type=marker,scores={breakobshield=1}] at @s run setblock ~ ~ ~ minecraft:magenta_stained_glass_pane[west=true,east=true]
+execute as @e[type=marker,scores={breakobshield=1}] run scoreboard players set @e[type=marker,scores={breakobshield=1}] breakobshield 2
+execute as @e[type=marker,scores={breakobshield=2}] at @s run particle block crying_obsidian ~ ~ ~ 1 1 0.4 0.1 5 force @a
+execute as @e[type=marker,scores={breakobshield=2}] at @s unless block ~ ~ ~ minecraft:magenta_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 3
+execute as @e[type=marker,scores={breakobshield=3}] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1.2
+execute as @e[type=marker,scores={breakobshield=3}] at @s run setblock ~ ~ ~ minecraft:pink_stained_glass_pane[west=true,east=true]
+execute as @e[type=marker,scores={breakobshield=3}] at @s run scoreboard players set @s breakobshield 4
+execute as @e[type=marker,scores={breakobshield=4}] at @s run particle block crying_obsidian ~ ~ ~ 1 1 0 0.1 25 force @a
+execute as @e[type=marker,scores={breakobshield=4}] at @s unless block ~ ~ ~ minecraft:pink_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 5
+execute as @e[type=marker,scores={breakobshield=5}] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1.4
+execute as @e[type=marker,scores={breakobshield=5..}] run scoreboard players add @s breakobshield 1
+execute as @e[type=marker,scores={breakobshield=20}] at @s run function everytick:obsidian_shield_break
 
 #Hotfix for replacing obsidian spawned by adjacent Obsidian Shield
-execute as @e[tag=blueobsidianshield,scores={breakobshield=..0},type=marker] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ purple_stained_glass_pane[west=true,east=true]
-execute as @e[tag=yellowobsidianshield,scores={breakobshield=..0},type=marker] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ purple_stained_glass_pane[west=true,east=true]
-execute as @e[scores={breakobshield=2},type=marker] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ magenta_stained_glass_pane[west=true,east=true]
-execute as @e[scores={breakobshield=4},type=marker] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ pink_stained_glass_pane[west=true,east=true]
+execute as @e[type=marker,tag=blueobsidianshield,scores={breakobshield=..0}] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ purple_stained_glass_pane[west=true,east=true]
+execute as @e[type=marker,tag=yellowobsidianshield,scores={breakobshield=..0}] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ purple_stained_glass_pane[west=true,east=true]
+execute as @e[type=marker,scores={breakobshield=2}] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ magenta_stained_glass_pane[west=true,east=true]
+execute as @e[type=marker,scores={breakobshield=4}] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ pink_stained_glass_pane[west=true,east=true]
 
 #Obsidian Shields break duped glass panes
-execute as @e[scores={breakobshield=0..},type=marker] at @s positioned ~ ~ ~-1 if block ~ ~ ~ #custom:obshieldreplace unless entity @e[scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5,type=marker] run setblock ~ ~ ~ air destroy
-execute as @e[scores={breakobshield=0..},type=marker] at @s positioned ~ ~ ~1 if block ~ ~ ~ #custom:obshieldreplace unless entity @e[scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5,type=marker] run setblock ~ ~ ~ air destroy
+execute as @e[type=marker,scores={breakobshield=0..}] at @s positioned ~ ~ ~-1 if block ~ ~ ~ #custom:obshieldreplace unless entity @e[type=marker,scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5] run setblock ~ ~ ~ air destroy
+execute as @e[type=marker,scores={breakobshield=0..}] at @s positioned ~ ~ ~1 if block ~ ~ ~ #custom:obshieldreplace unless entity @e[type=marker,scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5] run setblock ~ ~ ~ air destroy

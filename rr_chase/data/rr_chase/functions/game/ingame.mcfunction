@@ -53,19 +53,19 @@ execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance
 execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=BlueVortex] remove BlueVortex
 
 #Overwrite vortex particles
-execute as @e[tag=YellowVortex,type=egg] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
-execute as @e[tag=VortexYellow,type=marker] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
-execute as @e[tag=VortexYellow,type=marker] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @e[type=egg,tag=YellowVortex] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute as @e[type=marker,tag=VortexYellow] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
+execute as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
 
 #Nova tracking
 execute as @a[team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
-execute as @a[team=Blue] at @s if entity @e[distance=..4,limit=1,tag=bluenovatracker,type=marker] run tag @s add BlueNovaNear
+execute as @a[team=Blue] at @s if entity @e[type=marker,distance=..4,limit=1,tag=bluenovatracker] run tag @s add BlueNovaNear
 execute as @a[team=Blue,tag=BlueNovaNear,scores={NovaNear=4..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s remove BlueNovaNear
 execute as @a[team=Blue,tag=!BlueNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
 
 #Nova Rockets explode same team Canopies
-execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=BluePlatform,distance=..5,limit=1] run tag @s add YellowNova
-execute as @e[tag=BlueNova,type=firework_rocket] at @s if entity @e[tag=BluePlatform,distance=..5,limit=1] run tag @e[tag=bluenovatracker,distance=..5,limit=1,sort=nearest] add yellownovatracker
+execute as @e[type=firework_rocket,tag=BlueNova] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] run tag @s add YellowNova
+execute as @e[type=firework_rocket,tag=BlueNova] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] run tag @e[type=marker,tag=bluenovatracker,distance=..5,limit=1,sort=nearest] add yellownovatracker
 
 #Bossbar for who's in the lead
 bossbar set rr_chase:lead players @a[team=!Lobby]

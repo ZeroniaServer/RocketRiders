@@ -21,35 +21,35 @@ fill -14 13 -66 38 33 -48 air
 execute if entity @s[tag=!Molerat] run fill -12 36 -12 36 61 12 air
 
 kill @e[type=fireball]
-kill @e[tag=endFireballAEC,type=area_effect_cloud]
+kill @e[type=area_effect_cloud,tag=endFireballAEC]
 kill @e[type=snowball]
 kill @e[type=arrow]
-kill @e[tag=Vortex,type=marker]
-kill @e[tag=VortexItem,type=armor_stand]
+kill @e[type=marker,tag=Vortex]
+kill @e[type=armor_stand,tag=VortexItem]
 kill @e[type=chicken]
 kill @e[type=tnt]
 kill @e[type=tnt_minecart]
 kill @e[type=creeper]
 kill @e[type=dragon_fireball]
-kill @e[tag=blueobtracker,type=armor_stand]
-kill @e[tag=yellowobtracker,type=armor_stand]
-kill @e[tag=splash,type=potion]
+kill @e[type=marker,tag=blueobtracker]
+kill @e[type=marker,tag=yellowobtracker]
+kill @e[type=potion,tag=splash]
 kill @e[type=item]
 kill @e[type=ender_pearl]
-kill @e[tag=BlueNova,type=firework_rocket]
-kill @e[tag=YellowNova,type=firework_rocket]
-execute as @e[tag=blueobsidianshield,type=marker] at @s run function everytick:obsidian_shield_break
-execute as @e[tag=yellowobsidianshield,type=marker] at @s run function everytick:obsidian_shield_break
+kill @e[type=firework_rocket,tag=BlueNova]
+kill @e[type=firework_rocket,tag=YellowNova]
+execute as @e[type=marker,tag=blueobsidianshield] at @s run function everytick:obsidian_shield_break
+execute as @e[type=marker,tag=yellowobsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
 execute as @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
-kill @e[tag=YellowPlatform,type=marker]
-kill @e[tag=BluePlatform,type=marker]
-kill @e[tag=BlueObshield,type=marker]
-kill @e[tag=YellowObshield,type=marker]
-kill @e[tag=BlueFireball,type=marker]
-kill @e[tag=YellowFireball,type=marker]
-kill @e[tag=missile,type=marker]
-kill @e[tag=surprising,type=marker]
+kill @e[type=marker,tag=YellowPlatform]
+kill @e[type=marker,tag=BluePlatform]
+kill @e[type=marker,tag=BlueObshield]
+kill @e[type=marker,tag=YellowObshield]
+kill @e[type=marker,tag=BlueFireball]
+kill @e[type=marker,tag=YellowFireball]
+kill @e[type=marker,tag=missile]
+kill @e[type=marker,tag=surprising]
 
 function arenaclear:superspeed
 kill @e[type=marker,tag=checked]

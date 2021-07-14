@@ -14,8 +14,8 @@ scoreboard players reset Blue SwissCheese
 
 #Deus Ex Machina (part 1)
 execute unless entity @s[tag=noPortal] run summon armor_stand 33 57 -73 {Invisible:1b,Marker:1b,NoGravity:1b,Silent:1b,Tags:["machinacheck"]}
-scoreboard players add @e[tag=machinacheck,type=armor_stand] Machina 0
-execute as @e[tag=machinacheck,type=armor_stand] at @s run function achievements:machinacheckblue
+scoreboard players add @e[type=armor_stand,tag=machinacheck] Machina 0
+execute as @e[type=armor_stand,tag=machinacheck] at @s run function achievements:machinacheckblue
 
 #One is the Loneliest Number (part 1)
 execute if score @s bluesCount matches 1 if score @s yellowsCount matches 2.. run tag @a[team=Blue] add Loneliest

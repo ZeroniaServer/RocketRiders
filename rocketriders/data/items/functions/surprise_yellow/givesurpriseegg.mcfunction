@@ -1,10 +1,10 @@
 ##Gives executor a Yellow Surprise Egg
 #Antidupe check
 execute store result score @s HasSurprise run clear @s cod_spawn_egg 0
-execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players operation @s HasSurprise %= 64 CmdData
-execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] as @s[scores={HasSurprise=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasSurprise 0
-execute if entity @e[tag=Selection,tag=!doStacking,type=armor_stand] as @s[scores={HasSurprise=1..3},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasSurprise %= 64 CmdData
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @s[scores={HasSurprise=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasSurprise 0
+execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] as @s[scores={HasSurprise=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving
 title @s[scores={HasSurprise=3..},tag=!fullHotbar] actionbar {"text":"Surprise Egg already obtained.","color":"aqua"}

@@ -8,8 +8,8 @@ execute as @e[type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[1
 execute as @e[type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[2] set from storage rr_powerups:beeshieldpos z[0]
 
 #Remove necessary blocks
-execute as @e[tag=BeeShield,type=marker,limit=1] at @s run fill ~-2 ~-4 ~ ~2 ~4 ~ air
-kill @e[tag=BeeShield,type=marker,limit=1]
+execute as @e[type=marker,tag=BeeShield,limit=1] at @s run fill ~-2 ~-4 ~ ~2 ~4 ~ air
+kill @e[type=marker,tag=BeeShield,limit=1]
 
 #Remove this set of coordinates in preparation for the next one
 data remove storage rr_powerups:beeshieldpos x[0]

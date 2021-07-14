@@ -1,7 +1,7 @@
 function arenaclear:baseplacement
 execute if entity @s[tag=Molerat] run fill 4 52 -8 20 58 8 air
-scoreboard players set @e[tag=captureMiddle,type=marker] capturePoint 0
-execute as @e[tag=captureMiddle,type=marker] at @s run function rr_powerups:everytick/powerup_platform
+scoreboard players set @e[type=marker,tag=captureMiddle] capturePoint 0
+execute as @e[type=marker,tag=captureMiddle] at @s run function rr_powerups:everytick/powerup_platform
 function arenaclear:detailplacement
 
 #Pregame powerup platform

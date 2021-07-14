@@ -3,7 +3,7 @@
 #######################################################
 
 ##Start parkour
-execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourStart,type=marker,limit=1,distance=..1.2] run tag @s add startParkour
+execute as @a[team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[type=marker,tag=parkourStart,limit=1,distance=..1.2] run tag @s add startParkour
 execute as @a[team=Lobby,tag=startParkour] run tellraw @s [{"text":"Parkour Run Started!","color":"dark_green","bold":true}]
 execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Step on pressure plates to reach ","color":"green"},{"text":"Checkpoints","color":"dark_green"},{"text":".","color":"green"}]
 execute as @a[team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- If you fall on the ground, you go to your last ","color":"green"},{"text":"Checkpoint","color":"dark_green"},{"text":".","color":"green"}]
@@ -22,9 +22,9 @@ execute as @a[team=Lobby,tag=startParkour] run tag @s remove startParkour
 scoreboard players add @a[team=Lobby,tag=inParkour] checkpoint 0
 
 #Reach checkpoint
-execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=0}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC1,type=marker,limit=1,distance=..1.2] run tag @s add earnCheckpoint
-execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=1}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC2,type=marker,limit=1,distance=..1.2] run tag @s add earnCheckpoint
-execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=2}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourC3,type=marker,limit=1,distance=..1.2] run tag @s add earnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=0}] at @s positioned ~ ~1 ~ if entity @e[type=marker,tag=parkourC1,limit=1,distance=..1.2] run tag @s add earnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=1}] at @s positioned ~ ~1 ~ if entity @e[type=marker,tag=parkourC2,limit=1,distance=..1.2] run tag @s add earnCheckpoint
+execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=2}] at @s positioned ~ ~1 ~ if entity @e[type=marker,tag=parkourC3,limit=1,distance=..1.2] run tag @s add earnCheckpoint
 
 #Visual/Sound effects
 execute as @a[team=Lobby,tag=earnCheckpoint] run scoreboard players add @s checkpoint 1
@@ -40,8 +40,8 @@ execute as @a[team=Lobby,tag=earnCheckpoint,scores={parkourSecs=10..,parkourMins
 tag @a[team=Lobby,tag=earnCheckpoint] remove earnCheckpoint
 
 ##End parkour
-execute as @a[team=Lobby,tag=inParkour] at @s positioned ~ ~1 ~ if entity @e[tag=parkourEnd,type=area_effect_cloud,limit=1,distance=..1.2] run tag @s add finishedParkour
-execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=..2}] at @s positioned ~ ~1 ~ if entity @e[tag=parkourEnd,type=area_effect_cloud,limit=1,distance=..1.2] run tag @s add cheatedParkour
+execute as @a[team=Lobby,tag=inParkour] at @s positioned ~ ~1 ~ if entity @e[type=area_effect_cloud,tag=parkourEnd,limit=1,distance=..1.2] run tag @s add finishedParkour
+execute as @a[team=Lobby,tag=inParkour,scores={checkpoint=..2}] at @s positioned ~ ~1 ~ if entity @e[type=area_effect_cloud,tag=parkourEnd,limit=1,distance=..1.2] run tag @s add cheatedParkour
 execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={parkourSecs=..9,parkourMins=..9}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"text":"0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"!","color":"dark_green"}]
 execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={parkourSecs=10..,parkourMins=..9}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"text":"0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"!","color":"dark_green"}]
 execute as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={parkourSecs=..9,parkourMins=10..}] run tellraw @a ["",{"selector":"@s"},{"text":" completed the Parkour in ","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"!","color":"dark_green"}]
@@ -86,7 +86,7 @@ execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!c
 execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
 
 #Store in leaderboard
-execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] if score @e[tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:parkour/updatelb
+execute as @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] if score @e[type=area_effect_cloud,tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:parkour/updatelb
 
 #Notify cheaters
 execute as @a[team=Lobby,tag=cheatedParkour] run tellraw @s ["",{"text":"You skipped a checkpoint, so your Parkour run was invalidated.","color":"red"}]
@@ -193,7 +193,7 @@ execute as @a[team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,tag=in
 effect clear @a[team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (non-duel mode)
-execute unless entity @e[tag=rr_duel,type=armor_stand,limit=1] run item replace entity @a[team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:7}
+execute unless entity @e[type=armor_stand,tag=rr_duel,limit=1] run item replace entity @a[team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:7}
 execute as @s[tag=noYZELO] run item replace entity @a[team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:7}
 
 ##Safety features
@@ -232,5 +232,5 @@ execute as @a[team=Lobby,scores={hideParkourTips=1..}] run tag @s add hideParkou
 scoreboard players set @a hideParkourTips 0
 
 ##Return to Lobby Pad
-execute as @e[tag=parkourReturn,type=area_effect_cloud] at @s run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a
-execute as @e[tag=parkourReturn,type=area_effect_cloud] at @s positioned ~ ~ ~ as @a[team=Lobby,distance=..2] run trigger LobbyWarp set 1
+execute as @e[type=area_effect_cloud,tag=parkourReturn] at @s run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a
+execute as @e[type=area_effect_cloud,tag=parkourReturn] at @s positioned ~ ~ ~ as @a[team=Lobby,distance=..2] run trigger LobbyWarp set 1

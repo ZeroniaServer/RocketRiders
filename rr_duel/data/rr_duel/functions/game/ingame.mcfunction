@@ -31,9 +31,9 @@ execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless b
 execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 11 38 74 nether_portal run function rr_duel:game/winblue
 
 #arena clear cheesing
-execute if entity @e[tag=PlacerClear,type=marker] run tag @s remove CriteriaTrue
-tag @e[tag=PlacerClear,type=marker] add BasePlaced
-tag @e[tag=PlacerClear,type=marker] add Cleared
+execute if entity @e[type=marker,tag=PlacerClear] run tag @s remove CriteriaTrue
+tag @e[type=marker,tag=PlacerClear] add BasePlaced
+tag @e[type=marker,tag=PlacerClear] add Cleared
 
 scoreboard players add Blue: RoundsWon 0
 scoreboard players add Yellow: RoundsWon 0

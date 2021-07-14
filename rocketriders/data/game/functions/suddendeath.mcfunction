@@ -19,13 +19,11 @@ execute as @s[scores={SDtime=1..15}] run kill @e[type=creeper]
 ##Preparing for Sudden Death
 execute as @s[scores={SDtime=1}] run bossbar set rr:startgame name ["",{"text":"A match is currently in Sudden Death. Feel free to join in!","color":"dark_red"}]
 execute as @s[scores={SDtime=1..}] run tag @s add EditedSettings
-execute as @s[scores={SDtime=1..}] run tag @e[tag=yellowjoinpad,type=marker] remove CancelJoin
-execute as @s[scores={SDtime=1..}] run tag @e[tag=bluejoinpad,type=marker] remove CancelJoin
-execute as @s[scores={SDtime=1..}] run tag @e[tag=specjoinpad,type=marker] remove CancelJoin
+execute as @s[scores={SDtime=1..}] run function game:uncancelpads
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Blue] 12 64 -66 0 0
 execute as @s[scores={SDtime=1..2}] at @s run tp @a[team=Yellow] 12 64 66 180 0
-execute as @s[scores={SDtime=1}] run scoreboard players reset @e[tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
-execute as @s[scores={SDtime=1}] run scoreboard players reset @e[tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
+execute as @s[scores={SDtime=1}] run scoreboard players reset @e[type=marker,tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
+execute as @s[scores={SDtime=1}] run scoreboard players reset @e[type=marker,tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
 execute as @s[scores={SDtime=1}] at @s run scoreboard players set 2 MaxItemSec 2
 execute as @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute as @s[scores={SDtime=1}] at @s run item replace entity @a armor.head with air
@@ -51,7 +49,7 @@ execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run
 execute as @s[scores={SDtime=1}] run kill @e[type=fireball,scores={endFireball=1}]
 execute as @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
 execute as @s[scores={SDtime=1}] run tag @e[type=fireball] remove endFireball
-execute as @s[scores={SDtime=1}] run kill @e[tag=endFireballAEC,type=area_effect_cloud]
+execute as @s[scores={SDtime=1}] run kill @e[type=area_effect_cloud,tag=endFireballAEC]
 execute as @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute as @s[scores={SDtime=1}] run tag @s remove YellowWon
 #For Premature Celebration achievement

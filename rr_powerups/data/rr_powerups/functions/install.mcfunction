@@ -1,6 +1,6 @@
-execute unless entity @e[tag=rr_powerups,limit=1,type=armor_stand] run summon armor_stand 23 216 -18 {Tags:["rr_powerups","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:'{"text":"Powerups Mode"}'}
+execute unless entity @e[type=armor_stand,tag=rr_powerups,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_powerups","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:'{"text":"Powerups Mode"}'}
 bossbar add rr_powerups:capture_progress {"text":"Capture Progress","color":"white","bold":true}
 scoreboard objectives add beeShieldCount dummy
-execute if entity @e[tag=rr_powerups,limit=1,type=armor_stand] run tellraw @s {"text":"Powerups Mode installed.","color":"green","bold":true}
-scoreboard players add @e[tag=rr_powerups,limit=1,type=armor_stand] CmdData 1
-execute unless entity @e[tag=PlacerClear,type=marker] run function game:forcestop
+execute if entity @e[type=armor_stand,tag=rr_powerups,limit=1] run tellraw @s {"text":"Powerups Mode installed.","color":"green","bold":true}
+scoreboard players add @e[type=armor_stand,tag=rr_powerups,limit=1] CmdData 1
+execute unless entity @e[type=marker,tag=PlacerClear] run function game:forcestop

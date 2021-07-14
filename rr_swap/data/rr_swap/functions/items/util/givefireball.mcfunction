@@ -1,8 +1,8 @@
 #Antidupe check
 execute store result score @s HasFireball run clear @s blaze_spawn_egg 0
-execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players operation @s HasFireball %= 64 CmdData
-execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] as @s[scores={HasFireball=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[tag=Selection,tag=doStacking,type=armor_stand] run scoreboard players set @s HasFireball 0
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasFireball %= 64 CmdData
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @s[scores={HasFireball=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasFireball 0
 
 #Title/giving
 title @s[scores={HasFireball=1..},tag=!fullHotbar] actionbar {"text":"Cluster Fireball already obtained.","color":"aqua"}
@@ -11,4 +11,4 @@ title @s[scores={HasFireball=0},tag=!fullHotbar] actionbar {"text":"Cluster Fire
 give @s[team=Yellow,scores={HasFireball=0},tag=!fullHotbar] blaze_spawn_egg{CustomModelData:2,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Cluster Fireball","color":"gold","bold":true}]',Lore:['{"text":"Spawns a cluster of Fireballs. Punch or","color":"gray"}','{"text":"shoot Fireballs to quickly blow up","color":"gray"}','{"text":"missiles, blocks, or enemy players.","color":"gray"}']},EntityTag:{id:"minecraft:marker",Tags:["YellowFireball"]},Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:7} 1
 give @s[team=Blue,scores={HasFireball=0},tag=!fullHotbar] blaze_spawn_egg{CustomModelData:2,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Cluster Fireball","color":"blue","bold":true}]',Lore:['{"text":"Spawns a cluster of Fireballs. Punch or","color":"gray"}','{"text":"shoot Fireballs to quickly blow up","color":"gray"}','{"text":"missiles, blocks, or players.","color":"gray"}']},EntityTag:{id:"minecraft:marker",Tags:["BlueFireball"]},Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:7} 1
 
-tag @e[tag=Selection,type=armor_stand] add givenFireball
+tag @e[type=armor_stand,tag=Selection] add givenFireball

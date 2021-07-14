@@ -8,4 +8,4 @@ tag @s[tag=!canopyWasOn] add rngCanopy
 tag @s[tag=!fireballWasOn] add rngFireball
 tag @s[tag=!novaWasOn] add rngNova
 tag @s[tag=!utilWasOn] remove utilOff
-scoreboard players set @e[tag=Selection,type=armor_stand] refreshsigns 1
+scoreboard players set @e[type=armor_stand,tag=Selection] refreshsigns 1

@@ -17,7 +17,7 @@ execute as @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:
 execute as @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:restartcountdown
 scoreboard players reset @s[scores={count=1..}] powerupcount
 scoreboard players set @s[scores={count=1..}] PowerupDisplay 45
-execute as @s[scores={count=1..}] run scoreboard players set @e[tag=captureMiddle,type=marker] captureYellow 0
-execute as @s[scores={count=1..}] run scoreboard players set @e[tag=captureMiddle,type=marker] captureBlue 0
-execute as @s[scores={count=1..}] run scoreboard players set @e[tag=captureMiddle,type=marker] capturePoint 0
+execute as @s[scores={count=1..}] run scoreboard players set @e[type=marker,tag=captureMiddle] captureYellow 0
+execute as @s[scores={count=1..}] run scoreboard players set @e[type=marker,tag=captureMiddle] captureBlue 0
+execute as @s[scores={count=1..}] run scoreboard players set @e[type=marker,tag=captureMiddle] capturePoint 0
 execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

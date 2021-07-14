@@ -1,4 +1,4 @@
 ##Terminates the credits cycle.
-tag @e[tag=Selection,type=armor_stand] add noPlayerCredits
-kill @e[tag=creditsAS,tag=!devcycle,type=armor_stand]
-kill @e[tag=CreditName,type=area_effect_cloud]
+tag @e[type=armor_stand,tag=Selection] add noPlayerCredits
+kill @e[type=armor_stand,tag=creditsAS,tag=!devcycle]
+kill @e[type=area_effect_cloud,tag=CreditName]

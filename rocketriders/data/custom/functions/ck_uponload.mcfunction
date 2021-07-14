@@ -17,7 +17,7 @@ team modify Spectator collisionRule never
 team modify Developer collisionRule never
 
 team modify Lobby friendlyFire false
-execute unless entity @e[tag=Selection,tag=onlyBlue,type=armor_stand] run team modify Blue friendlyFire false
+execute unless entity @e[type=armor_stand,tag=Selection,tag=onlyBlue] run team modify Blue friendlyFire false
 team modify Yellow friendlyFire false
 team modify Spectator friendlyFire false
 team modify Developer friendlyFire false

@@ -1,24 +1,24 @@
-kill @e[tag=swapplatform,type=marker]
+kill @e[type=marker,tag=swapplatform]
 
-tag @e[tag=Selection,type=armor_stand] remove swapEnabled
-tag @e[tag=Selection,type=armor_stand] remove SurpriseEggOff
-tag @e[tag=Selection,type=armor_stand] remove SplashStreamsOff
-tag @e[tag=Selection,type=armor_stand] remove vortexOverride
-tag @e[tag=Selection,type=armor_stand] remove respawnFlag
+tag @e[type=armor_stand,tag=Selection] remove swapEnabled
+tag @e[type=armor_stand,tag=Selection] remove SurpriseEggOff
+tag @e[type=armor_stand,tag=Selection] remove SplashStreamsOff
+tag @e[type=armor_stand,tag=Selection] remove vortexOverride
+tag @e[type=armor_stand,tag=Selection] remove respawnFlag
 
 #special item enabling
-tag @e[tag=Selection,type=armor_stand] remove normalLocked
-tag @e[tag=Selection,tag=normalWasOn,type=armor_stand] add rngNormal
-tag @e[tag=Selection,type=armor_stand] remove normalWasOn
-tag @e[tag=Selection,tag=splashWasOn,type=armor_stand] add rngSplash
-tag @e[tag=Selection,type=armor_stand] remove splashWasOn
-tag @e[tag=Selection,tag=canopyWasOn,type=armor_stand] add rngCanopy
-tag @e[tag=Selection,type=armor_stand] remove canopyWasOn
-tag @e[tag=Selection,tag=novaWasOn,type=armor_stand] add rngNova
-tag @e[tag=Selection,type=armor_stand] remove novaWasOn
-tag @e[tag=Selection,tag=riftWasOn,type=armor_stand] add rngRift
-tag @e[tag=Selection,type=armor_stand] remove riftWasOn
-tag @e[tag=Selection,tag=jbusterWasOn,type=armor_stand] add rngJbuster
-tag @e[tag=Selection,type=armor_stand] remove jbusterWasOn
+tag @e[type=armor_stand,tag=Selection] remove normalLocked
+tag @e[type=armor_stand,tag=Selection,tag=normalWasOn] add rngNormal
+tag @e[type=armor_stand,tag=Selection] remove normalWasOn
+tag @e[type=armor_stand,tag=Selection,tag=splashWasOn] add rngSplash
+tag @e[type=armor_stand,tag=Selection] remove splashWasOn
+tag @e[type=armor_stand,tag=Selection,tag=canopyWasOn] add rngCanopy
+tag @e[type=armor_stand,tag=Selection] remove canopyWasOn
+tag @e[type=armor_stand,tag=Selection,tag=novaWasOn] add rngNova
+tag @e[type=armor_stand,tag=Selection] remove novaWasOn
+tag @e[type=armor_stand,tag=Selection,tag=riftWasOn] add rngRift
+tag @e[type=armor_stand,tag=Selection] remove riftWasOn
+tag @e[type=armor_stand,tag=Selection,tag=jbusterWasOn] add rngJbuster
+tag @e[type=armor_stand,tag=Selection] remove jbusterWasOn
 
-tag @e[tag=Selection,type=armor_stand] add switchGamemodes
+tag @e[type=armor_stand,tag=Selection] add switchGamemodes

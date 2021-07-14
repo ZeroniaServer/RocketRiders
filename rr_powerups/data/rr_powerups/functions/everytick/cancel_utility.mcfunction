@@ -1,1 +1,1 @@
-execute in overworld as @e[tag=BeeShieldDisplay,type=armor_stand] at @s run kill @s[y=175,dy=100]
+execute in overworld as @e[type=armor_stand,tag=BeeShieldDisplay] at @s run kill @s[y=175,dy=100]

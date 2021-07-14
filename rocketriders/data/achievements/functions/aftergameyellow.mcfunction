@@ -3,8 +3,8 @@
 execute as @s[tag=!Hardcore] run scoreboard players set SwissCheese SwissCheese 11500
 execute as @s[tag=!Hardcore] store result score Yellow SwissCheese run clone 38 34 52 -14 63 66 -48 46 -1 filtered air
 #reduce minimum blocks for Hardcore modifier
-execute as @s[tag=Hardcore] run scoreboard players set SwissCheese SwissCheese 766
-execute as @s[tag=Hardcore] store result score Yellow SwissCheese run clone 38 34 66 -14 63 66 -48 46 -1 filtered air
+execute as @s[tag=Hardcore] run scoreboard players set SwissCheese SwissCheese 2298
+execute as @s[tag=Hardcore] store result score Yellow SwissCheese run clone 38 34 66 -14 63 64 -48 46 -1 filtered air
 execute if score Yellow SwissCheese >= SwissCheese SwissCheese run tag @a[team=Yellow] add SwissCheese
 scoreboard players reset SwissCheese SwissCheese
 

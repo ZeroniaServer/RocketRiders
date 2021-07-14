@@ -27,6 +27,9 @@ execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=10}] run gamerule fal
 ##Clear lobby arrows
 execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow{Lobby:1b}
 
+##Remove kills
+execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s kills
+
 ##General everytick commands
 function achievements:gain
 function everytick:clear_spawnblocks

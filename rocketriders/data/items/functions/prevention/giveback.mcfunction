@@ -72,9 +72,9 @@ tag @a[tag=BackCitadel] remove fullHotbar
 execute as @a[tag=BackCitadel] at @s run function items:missile/normal/givecitadel
 
 #Gemini
-scoreboard players remove @a[tag=BackGemini] GemiSpawned 1
-tag @a[tag=BackGemini] remove fullHotbar
-execute as @a[tag=BackGemini] at @s run function items:missile/normal/givegemi
+scoreboard players remove @a[tag=BackGemi] GemiSpawned 1
+tag @a[tag=BackGemi] remove fullHotbar
+execute as @a[tag=BackGemi] at @s run function items:missile/normal/givegemi
 
 #Lifter
 scoreboard players remove @a[tag=BackLift] LifterSpawned 1
@@ -137,7 +137,7 @@ tag @a remove BackJug
 tag @a remove BackSlash
 tag @a remove BackCata
 tag @a remove BackCitadel
-tag @a remove BackGemini
+tag @a remove BackGemi
 tag @a remove BackLift
 tag @a remove BackHyper
 tag @a remove BackBullet

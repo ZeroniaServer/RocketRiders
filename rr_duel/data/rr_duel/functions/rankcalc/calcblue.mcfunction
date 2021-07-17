@@ -98,4 +98,3 @@ scoreboard players reset $Buffer XP
 scoreboard players reset $NetBlue XP
 scoreboard players reset $NetYellow XP
 scoreboard players reset $DiffBlue XP
-scoreboard players reset

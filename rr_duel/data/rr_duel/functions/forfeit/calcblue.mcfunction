@@ -16,7 +16,7 @@ scoreboard players operation $CurrentBlue XP = @a[team=Blue,limit=1] XP
 scoreboard players operation $CurrentYellow XP = @a[team=Yellow,limit=1] XP
 
 #Set rankresult to 80
-scoreboard players set $RankResult XP 80
+scoreboard players set $RankResult XP 20
 
 #CurrentBlue / 50
 scoreboard players operation $CurrentBlue XP /= $50 XP

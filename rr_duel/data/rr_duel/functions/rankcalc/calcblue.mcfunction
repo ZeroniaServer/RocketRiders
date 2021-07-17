@@ -14,11 +14,14 @@ scoreboard players set $Buffer XP 0
 scoreboard players set $NetBlue XP 0
 scoreboard players set $NetYellow XP 0
 
+#Rank change detect part 1
+function rr_duel:rankcalc/rankchange1
+
+##GAIN
 #Take current XP value of blue and yellow player.
 scoreboard players operation $CurrentBlue XP = @a[team=Blue,limit=1] XP
 scoreboard players operation $CurrentYellow XP = @a[team=Yellow,limit=1] XP
 
-##GAIN
 #Set rankresult to 80
 scoreboard players set $RankResult XP 80
 
@@ -78,6 +81,9 @@ scoreboard players set @a[team=Yellow,scores={XP=..-1},limit=1] XP 0
 #Announce new Yellow XP
 execute as @a[team=Yellow,limit=1] run tellraw @a ["",{"selector":"@s","color":"red"},{"text":" lost ","color":"red"},{"score":{"name":"$NetYellow","objective":"XP"},"bold":true,"color":"dark_red"},{"text":", making their XP a total of: ","color":"red"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 
+#Rank change detect part 2
+function rr_duel:rankcalc/rankchange2
+
 #Reset all scores (optimization)
 scoreboard players reset $10 XP
 scoreboard players reset $50 XP
@@ -92,3 +98,4 @@ scoreboard players reset $Buffer XP
 scoreboard players reset $NetBlue XP
 scoreboard players reset $NetYellow XP
 scoreboard players reset $DiffBlue XP
+scoreboard players reset

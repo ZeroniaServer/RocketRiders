@@ -44,5 +44,6 @@ execute as @s[scores={count=600}] run bossbar set rr:startgame name ["",{"text":
 execute as @s[scores={count=600}] run bossbar set rr:startgame color red
 execute as @s[scores={count=600}] run scoreboard players set @s Rounds 1
 execute as @s[scores={count=600}] run tellraw @a[team=!Lobby] [{"text":"Beginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
+execute as @s[scores={count=600}] as @a[team=!Lobby] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
 execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
-execute as @s[scores={count=600}] run function rr_duel:forced_settings 
+execute as @s[scores={count=600}] run function rr_duel:forced_settings

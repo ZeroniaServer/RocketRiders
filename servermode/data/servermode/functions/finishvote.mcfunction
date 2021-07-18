@@ -23,16 +23,16 @@ execute if score $winners VoteServerMode matches 2.. run tellraw @a ["",{"text":
 scoreboard players reset $winners VoteServerMode
 
 # NORMAL MODE SELECTED
-execute if entity @e[type=marker,tag=WonVote,tag=NormalMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=marker,tag=rr_normal,limit=1] gamemodeID
+execute if entity @e[type=marker,tag=WonVote,tag=NormalMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_normal,limit=1] gamemodeID
 
 # POWERUPS MODE SELECTED
-execute if entity @e[type=marker,tag=WonVote,tag=PowerupsMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=marker,tag=rr_powerups,limit=1] gamemodeID
+execute if entity @e[type=marker,tag=WonVote,tag=PowerupsMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_powerups,limit=1] gamemodeID
 
 # SWAP MODE SELECTED
-execute if entity @e[type=marker,tag=WonVote,tag=SwapMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=marker,tag=rr_swap,limit=1] gamemodeID
+execute if entity @e[type=marker,tag=WonVote,tag=SwapMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_swap,limit=1] gamemodeID
 
 # CTF MODE SELECTED
-execute if entity @e[type=marker,tag=WonVote,tag=CTFMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=marker,tag=rr_ctf,limit=1] gamemodeID
+execute if entity @e[type=marker,tag=WonVote,tag=CTFMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_ctf,limit=1] gamemodeID
 
 # Select base decorations
 execute if entity @e[type=marker,tag=WonVote,tag=Set1] as @e[type=marker,tag=ServermodeSet1] run function servermode:selectmap

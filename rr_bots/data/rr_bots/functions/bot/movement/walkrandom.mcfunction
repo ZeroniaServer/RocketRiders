@@ -3,7 +3,7 @@ scoreboard players add @s BOTwalks 1
 
 
 #RNG
-execute as @s[scores={BOTwalks=1}] at @s run summon marker ~ ~ ~ {Tags:["BotWalkRNG"]}
+execute if entity @s[scores={BOTwalks=1}] at @s run summon marker ~ ~ ~ {Tags:["BotWalkRNG"]}
 scoreboard players set @e[type=marker,tag=BotWalkRNG] BotRNGmax 23
 execute as @e[type=marker,tag=BotWalkRNG] store result score @s BotRNG run data get entity @s UUID[0]
 execute as @e[type=marker,tag=BotWalkRNG] store result score @s BotRNG run scoreboard players operation @s BotRNG %= @s BotRNGmax
@@ -13,27 +13,27 @@ execute as @e[type=marker,tag=BotWalkRNG,scores={BotRNG=6..11}] at @s unless blo
 execute as @e[type=marker,tag=BotWalkRNG,scores={BotRNG=12..17}] at @s unless block ~-2 ~-1 ~ air unless block ~-2 ~-1 ~ air if block ~-1 ~ ~ air if block ~-2 ~1 ~ air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkWest
 execute as @e[type=marker,tag=BotWalkRNG,scores={BotRNG=18..23}] at @s unless block ~1 ~-1 ~ air unless block ~2 ~-1 ~ air if block ~1 ~ ~ air if block ~2 ~1 ~ air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkEast
 
-execute as @s[tag=BotWalks,scores={BOTwalks=1},tag=!BotwalkNorth,tag=!BotwalkEast,tag=!BotwalkSouth,tag=!BotwalkWest] run scoreboard players reset @s BOTwalks
+execute if entity @s[tag=BotWalks,scores={BOTwalks=1},tag=!BotwalkNorth,tag=!BotwalkEast,tag=!BotwalkSouth,tag=!BotwalkWest] run scoreboard players reset @s BOTwalks
 
 kill @e[type=marker,tag=BotWalkRNG]
 
 
 
 
-execute as @s[tag=BotwalkNorth,scores={BOTwalks=1}] at @s run tp @s ~ ~ ~ 180 0
-execute as @s[tag=BotwalkSouth,scores={BOTwalks=1}] at @s run tp @s ~ ~ ~ 0 0
-execute as @s[tag=BotwalkWest,scores={BOTwalks=1}] at @s run tp @s ~ ~ ~ 90 0
-execute as @s[tag=BotwalkEast,scores={BOTwalks=1}] at @s run tp @s ~ ~ ~ -90 0
+execute if entity @s[tag=BotwalkNorth,scores={BOTwalks=1}] at @s run tp @s ~ ~ ~ 180 0
+execute if entity @s[tag=BotwalkSouth,scores={BOTwalks=1}] at @s run tp @s ~ ~ ~ 0 0
+execute if entity @s[tag=BotwalkWest,scores={BOTwalks=1}] at @s run tp @s ~ ~ ~ 90 0
+execute if entity @s[tag=BotwalkEast,scores={BOTwalks=1}] at @s run tp @s ~ ~ ~ -90 0
 
-execute as @s[tag=BotwalkSouth,scores={BOTwalks=1..8}] at @s run tp @s ~ ~ ~0.25
-execute as @s[tag=BotwalkNorth,scores={BOTwalks=1..8}] at @s run tp @s ~ ~ ~-0.25
-execute as @s[tag=BotwalkWest,scores={BOTwalks=1..8}] at @s run tp @s ~-0.25 ~ ~
-execute as @s[tag=BotwalkEast,scores={BOTwalks=1..8}] at @s run tp @s ~0.25 ~ ~
+execute if entity @s[tag=BotwalkSouth,scores={BOTwalks=1..8}] at @s run tp @s ~ ~ ~0.25
+execute if entity @s[tag=BotwalkNorth,scores={BOTwalks=1..8}] at @s run tp @s ~ ~ ~-0.25
+execute if entity @s[tag=BotwalkWest,scores={BOTwalks=1..8}] at @s run tp @s ~-0.25 ~ ~
+execute if entity @s[tag=BotwalkEast,scores={BOTwalks=1..8}] at @s run tp @s ~0.25 ~ ~
 
-execute as @s[scores={BOTwalks=1}] at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run playsound minecraft:block.glass.step master @a ~ ~ ~ 0.4 1
-execute as @s[scores={BOTwalks=8}] at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run playsound minecraft:block.glass.step master @a ~ ~ ~ 0.4 1
+execute if entity @s[scores={BOTwalks=1}] at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run playsound minecraft:block.glass.step master @a ~ ~ ~ 0.4 1
+execute if entity @s[scores={BOTwalks=8}] at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run playsound minecraft:block.glass.step master @a ~ ~ ~ 0.4 1
 
-execute as @s at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run function rr_bots:bot/animations/walkanim
+execute at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run function rr_bots:bot/animations/walkanim
 
 tag @s[scores={BOTwalks=8..}] remove BotwalkNorth
 tag @s[scores={BOTwalks=8..}] remove BotwalkSouth

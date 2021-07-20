@@ -21,12 +21,12 @@ function rr_sandbox:items/spawnitems
 
 #item generators
 scoreboard players add @s sandboxRandom 1
-execute as @s[scores={sandboxRandom=80..}] run function rr_sandbox:items/rng
+execute if entity @s[scores={sandboxRandom=80..}] run function rr_sandbox:items/rng
 scoreboard players reset @s[scores={sandboxRandom=80..}] sandboxRandom
 
 #give specific defensive items (TODO exclude canopy?) -- incompatible with item delay
 scoreboard players add @s RandomItem 1
-execute as @s[scores={RandomItem=400..}] run function items:util/rng
+execute if entity @s[scores={RandomItem=400..}] run function items:util/rng
 scoreboard players reset @s[scores={RandomItem=400..}] RandomItem
 
 #spawnpoints

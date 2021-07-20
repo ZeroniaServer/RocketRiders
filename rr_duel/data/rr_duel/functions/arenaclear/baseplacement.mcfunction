@@ -1,4 +1,4 @@
-execute as @s[tag=GameStarted] run function rr_duel:forced_settings
+execute if entity @s[tag=GameStarted] run function rr_duel:forced_settings
 
 #Disable modifiers
 function modifiers:disablemodifiers

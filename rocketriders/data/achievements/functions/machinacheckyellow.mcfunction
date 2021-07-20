@@ -1,6 +1,5 @@
 ##Performs a recursive scan from the Yellow portals to the outer edge of the base for any air blocks
 ##Necessary for the Deus Ex Machina achievement
-
 execute if score @s Machina matches ..21 at @s if block ~ ~ ~ #custom:air run scoreboard players add @s Machina 1
 execute if score @s Machina matches ..21 at @s if block ~ ~ ~ #custom:air run tp @s ~ ~ ~-1
 

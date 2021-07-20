@@ -1,5 +1,4 @@
 ##Counts how many missiles the player has spawned
-
 scoreboard players operation @s MissilesSpawned += @s AntsSpawned
 scoreboard players operation @s MissilesSpawned += @s AuxSpawned
 scoreboard players operation @s MissilesSpawned += @s BladeSpawned

@@ -81,8 +81,8 @@ execute as @e[type=marker,tag=SelectedTip,tag=Tip16] run tag @e[type=armor_stand
 execute as @e[type=marker,tag=SelectedTip,tag=Tip17] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"As the name implies, 1v1 Duel Mode only allows one player on each team. If you're not in the game, feel free to spectate!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip17] run tag @e[type=armor_stand,tag=Selection] add Tip17
 
-execute as @s[tag=!noYZELO] as @e[type=marker,tag=SelectedTip,tag=Tip18] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Winning a 1v1 Duel gives you XP, and the more XP you earn, the higher your rank gets. Each rank comes with its own boots!","color":"gray"}]
-execute as @s[tag=noYZELO] as @e[type=marker,tag=SelectedTip,tag=Tip18] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You might not get a reward for winning a 1v1 Duel, but you do get bragging rights!","color":"gray"}]
+execute if entity @s[tag=!noYZELO] as @e[type=marker,tag=SelectedTip,tag=Tip18] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Winning a 1v1 Duel gives you XP, and the more XP you earn, the higher your rank gets. Each rank comes with its own boots!","color":"gray"}]
+execute if entity @s[tag=noYZELO] as @e[type=marker,tag=SelectedTip,tag=Tip18] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You might not get a reward for winning a 1v1 Duel, but you do get bragging rights!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip18] run tag @e[type=armor_stand,tag=Selection] add Tip18
 
 execute as @e[type=marker,tag=SelectedTip,tag=Tip19] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Obsidian Shields are launched very similarly to Fireballs and place themselves wherever they hit or after 1.5 seconds of flight.","color":"gray"}]
@@ -93,8 +93,8 @@ execute as @e[type=marker,tag=SelectedTip,tag=Tip20] run tag @e[type=armor_stand
 
 #Opt out message (disabled on servers)
 scoreboard players add @a GamesPlayed 0
-execute as @s[tag=!SMActive] run scoreboard players enable @a[scores={GamesPlayed=..9}] disableTips
-execute as @s[tag=!SMActive] as @e[type=marker,tag=SelectedTip] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger disableTips set 1"}},{"text":" to opt out of these messages.","color":"#888888","italic":true}]
+execute if entity @s[tag=!SMActive] run scoreboard players enable @a[scores={GamesPlayed=..9}] disableTips
+execute if entity @s[tag=!SMActive] as @e[type=marker,tag=SelectedTip] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger disableTips set 1"}},{"text":" to opt out of these messages.","color":"#888888","italic":true}]
 execute as @a[scores={disableTips=1..}] run tellraw @s [{"text":"You will no longer receive tips.","color":"red"}]
 execute as @a[scores={disableTips=1..}] run scoreboard players set @s GamesPlayed 10
 scoreboard players set @a disableTips 0

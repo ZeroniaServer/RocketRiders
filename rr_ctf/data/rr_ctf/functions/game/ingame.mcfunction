@@ -1,5 +1,5 @@
 #leave midgame
-execute as @s[tag=!SMActive] run function rr_ctf:game/leavemidgame
+execute if entity @s[tag=!SMActive] run function rr_ctf:game/leavemidgame
 
 #Item RNG
 tag @s add givenCanopy

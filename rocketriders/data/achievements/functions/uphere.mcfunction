@@ -3,5 +3,5 @@
 tag @s[team=Blue,tag=YellowNovaAttach] add TNTNear
 tag @s[team=Yellow,tag=BlueNovaAttach] add TNTNear
 execute if entity @e[type=armor_stand,tag=Selection,tag=onlyBlue] run tag @s[team=Blue,tag=BlueNovaAttach] add TNTNear
-execute as @s[tag=TNTNear] run advancement grant @s only achievements:rr_challenges/uphere
+execute if entity @s[tag=TNTNear] run advancement grant @s only achievements:rr_challenges/uphere
 tag @s[tag=TNTNear] remove TNTNear

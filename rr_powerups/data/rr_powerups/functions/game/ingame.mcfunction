@@ -1,12 +1,12 @@
 #leave midgame
-execute as @s[tag=!SMActive] run function game:leavemidgame
+execute if entity @s[tag=!SMActive] run function game:leavemidgame
 
 #utility functions
 execute if entity @a[scores={DrinkHoney=1..}] run tag @s add runbeeshields
 execute if entity @e[type=armor_stand,tag=BeeShieldDisplay] run tag @s add runbeeshields
 execute if entity @e[type=marker,tag=animBshield] run tag @s add runbeeshields
 execute if entity @e[type=bee] run tag @s add runbeeshields
-execute as @s[tag=runbeeshields] run function rr_powerups:everytick/bee_shield
+execute if entity @s[tag=runbeeshields] run function rr_powerups:everytick/bee_shield
 tag @s remove runbeeshields
 clear @a glass_bottle
 execute if entity @e[type=bee] run function rr_powerups:everytick/init_kill_bees
@@ -51,10 +51,10 @@ execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @
 #powerup RNG
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=1..}] run scoreboard players add @s powerupcount 1
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s powerupcount 0
-execute as @s[scores={powerupcount=20}] run scoreboard players remove @s PowerupDisplay 1
-execute as @s[scores={powerupcount=20}] run scoreboard players reset @s powerupcount
+execute if entity @s[scores={powerupcount=20}] run scoreboard players remove @s PowerupDisplay 1
+execute if entity @s[scores={powerupcount=20}] run scoreboard players reset @s powerupcount
 execute if entity @e[type=marker,scores={capturePoint=0,captureBlue=0,captureYellow=0}] run scoreboard players set @s PowerupDisplay 12
-execute as @s[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
+execute if entity @s[scores={PowerupDisplay=..0}] run function rr_powerups:items/rng
 scoreboard players set @s[scores={PowerupDisplay=..0}] PowerupDisplay 12
 
 #tracking for lockdown achievement
@@ -151,7 +151,7 @@ execute as @a[nbt={Inventory:[{id:"minecraft:trident"}]}] unless entity @s[team=
 #trident antidupe
 tag @e[type=trident,nbt={inGround:1b}] add return
 execute as @e[type=trident,tag=return] store result score @s playerUUID run data get entity @s Owner[0]
-execute as @s[tag=!doStacking] as @e[type=trident,tag=return] at @s run function rr_powerups:everytick/trident_antidupe
+execute if entity @s[tag=!doStacking] as @e[type=trident,tag=return] at @s run function rr_powerups:everytick/trident_antidupe
 tag @a[tag=tridentChecked] remove tridentChecked
 
 #slap fish

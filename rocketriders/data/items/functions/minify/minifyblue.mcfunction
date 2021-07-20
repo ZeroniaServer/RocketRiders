@@ -21,10 +21,10 @@ execute if score $minifyblue bMissileCount matches 1.. store result score $this 
 execute if score $minifyblue bMissileCount matches 1.. run function items:minify/minifyblueloop
 
 #When loop is finished, if duplicate is present, remove last entry
-execute as @s[tag=minify] run data remove storage rocketriders:bmissilepos x[0]
-execute as @s[tag=minify] run data remove storage rocketriders:bmissilepos y[0]
-execute as @s[tag=minify] run data remove storage rocketriders:bmissilepos z[0]
-execute as @s[tag=minify] run scoreboard players remove @e[type=armor_stand,tag=Selection,limit=1] bMissileCount 1
+execute if entity @s[tag=minify] run data remove storage rocketriders:bmissilepos x[0]
+execute if entity @s[tag=minify] run data remove storage rocketriders:bmissilepos y[0]
+execute if entity @s[tag=minify] run data remove storage rocketriders:bmissilepos z[0]
+execute if entity @s[tag=minify] run scoreboard players remove @e[type=armor_stand,tag=Selection,limit=1] bMissileCount 1
 tag @s remove minify
 
 #Clean up

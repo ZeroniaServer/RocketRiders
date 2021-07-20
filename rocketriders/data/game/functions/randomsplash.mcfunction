@@ -1,5 +1,4 @@
 ##Randomized splash messages for when the game begins
-
 title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}

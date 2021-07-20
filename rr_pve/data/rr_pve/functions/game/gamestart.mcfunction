@@ -7,16 +7,16 @@ tag @s remove BlueFull
 scoreboard players set @e[type=armor_stand,tag=rr_pve,limit=1] PlayerCap 2
 scoreboard players operation @e[type=armor_stand,tag=rr_pve,limit=1] PlayerCap *= @s PlayerCap
 execute if score @s bluesCount >= @e[type=armor_stand,tag=rr_pve,limit=1] PlayerCap run tag @s add BlueFull
-execute as @s[tag=!BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
-execute as @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
+execute if entity @s[tag=!BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
+execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 
 #Bots in Pregame Queue
-execute unless entity @e[type=armor_stand,tag=Bot] as @s[tag=Countdown] positioned -95 202 94 run function rr_bots:bot/spawns/bot_spawn_five_yellow
-execute as @s[tag=Countdown] run scoreboard players set @e[type=armor_stand,tag=Bot] botarrowitems 20
-execute as @s[tag=Countdown] run scoreboard players set @e[type=armor_stand,tag=Bot] BotHP 3
+execute unless entity @e[type=armor_stand,tag=Bot] if entity @s[tag=Countdown] positioned -95 202 94 run function rr_bots:bot/spawns/bot_spawn_five_yellow
+execute if entity @s[tag=Countdown] run scoreboard players set @e[type=armor_stand,tag=Bot] botarrowitems 20
+execute if entity @s[tag=Countdown] run scoreboard players set @e[type=armor_stand,tag=Bot] BotHP 3
 
 #Items
-execute as @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:givegear
 function game:saberblue
 
@@ -25,13 +25,13 @@ tag @a remove JoinBlue
 tag @a remove JoinYellow
 
 #Bossbar
-execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players.","color":"white"}]
-execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame value 0
-execute as @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame color white
+execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players.","color":"white"}]
+execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame value 0
+execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame color white
 
 #Countdown
-execute as @s[tag=EditedSettings] if entity @a[team=Blue] run tag @s[tag=!GameStarted] add Countdown
-execute as @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
-execute as @s[tag=EditedSettings] unless entity @a[team=Blue] run kill @e[type=armor_stand,tag=Bot]
-execute as @s[scores={count=590..600},tag=!GameEnd] run kill @e[type=armor_stand,tag=Bot]
-execute as @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
+execute if entity @s[tag=EditedSettings] if entity @a[team=Blue] run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings] unless entity @a[team=Blue] run kill @e[type=armor_stand,tag=Bot]
+execute if entity @s[scores={count=590..600},tag=!GameEnd] run kill @e[type=armor_stand,tag=Bot]
+execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

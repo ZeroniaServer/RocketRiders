@@ -25,8 +25,8 @@ scoreboard players reset @a ThrowVortex
 ##Vortex deployment (both teams)
 execute as @e[type=egg,tag=YellowVortex] at @s run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a
 execute as @e[type=egg,tag=BlueVortex] at @s run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a
-execute as @s[tag=!custVortParticle] as @e[type=egg,tag=YellowVortex] at @s run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
-execute as @s[tag=!custVortParticle] as @e[type=egg,tag=BlueVortex] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=egg,tag=YellowVortex] at @s run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=egg,tag=BlueVortex] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 scoreboard players add @e[type=egg,tag=BlueVortex] vortextimer 1
 scoreboard players add @e[type=egg,tag=YellowVortex] vortextimer 1
 #Next two commands disable Vortex near own portals
@@ -46,12 +46,12 @@ execute as @e[type=egg,tag=BlueVortex,scores={vortextimer=20..}] at @s align xyz
 scoreboard players add @e[type=marker,tag=Vortex] VortexID 0
 execute as @e[type=marker,tag=Vortex,tag=!VortexFeathered,scores={VortexID=0}] at @s run function everytick:vortexid
 kill @e[type=egg,scores={vortextimer=20..}]
-execute as @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:wax_on ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:wax_on ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
-execute as @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
-execute as @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
 execute as @e[type=marker,tag=VortexBlue] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
-execute as @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
 scoreboard players add @e[type=marker,tag=Vortex] vortexBoom 0
 
 ##Spin around (unprimed)
@@ -115,7 +115,7 @@ kill @e[type=chicken]
 execute as @e[type=marker,tag=VortexFeathered] at @s run particle dust 1 1 1 1 ~ ~0.6 ~ 0.5 0.5 0 0 10 force @a
 execute as @e[type=marker,tag=VortexFeathered] at @s run particle wax_off ~ ~0.6 ~ 0.5 0.5 0 0 1 force @a
 execute as @e[type=armor_stand,tag=VortexItemFeathered] at @s run tp @s ~ ~ ~ ~15 ~
-execute as @s[scores={servermode=0}] as @e[type=marker,tag=VortexFeathered] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/huh
+execute if entity @s[scores={servermode=0}] as @e[type=marker,tag=VortexFeathered] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/huh
 execute as @e[type=marker,tag=VortexFeathered] at @s if entity @a[team=!Spectator,distance=..3] run tag @s add origin
 execute as @e[type=armor_stand,tag=VortexItemFeathered] at @s unless entity @e[type=marker,tag=VortexFeathered,distance=..2,limit=1,sort=nearest] run kill @s
 

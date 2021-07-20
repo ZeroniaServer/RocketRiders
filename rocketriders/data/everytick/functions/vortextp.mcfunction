@@ -1,4 +1,4 @@
-#Teleports item armor stand to Vortex area effect cloud
+##Teleports item armor stand to Vortex area effect cloud
 execute as @e[type=armor_stand,tag=VortexItem] if score @s VortexID = $count VortexID run tag @s add teleportPair
 execute as @e[type=marker,tag=Vortex] if score @s VortexID = $count VortexID run tag @s add teleportPair
 

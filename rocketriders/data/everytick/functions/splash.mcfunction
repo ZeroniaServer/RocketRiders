@@ -30,7 +30,7 @@ execute as @e[type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] run dat
 execute as @e[type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos z prepend from entity @s Pos[2]
 execute as @e[type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] run scoreboard players add @e[type=armor_stand,tag=Selection] splashCount 1
 tag @e[type=area_effect_cloud,tag=splash_alone] add splashMarked
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=splash_alone] store result score @s splashOwnerUUID run data get entity @s Owner[0]
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run data merge entity @s {Duration:100}
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run tag @s add markedForDeath
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=splash_alone] store result score @s splashOwnerUUID run data get entity @s Owner[0]
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run data merge entity @s {Duration:100}
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run tag @s add markedForDeath
 execute unless entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run kill @e[type=area_effect_cloud,tag=splash_alone]

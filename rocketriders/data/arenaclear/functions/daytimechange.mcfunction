@@ -7,4 +7,4 @@ time set 0d
 scoreboard players operation @s daytime += %previous daytime
 #Modulo clamps resultant daytime to between 0-24000 ticks
 scoreboard players operation @s daytime %= 24000 daytime
-execute as @s[scores={daytime=1..}] run function arenaclear:daytimeadd
+execute if score @s daytime matches 1.. run function arenaclear:daytimeadd

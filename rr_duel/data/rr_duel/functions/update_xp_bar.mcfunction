@@ -17,7 +17,7 @@ scoreboard players operation @s[scores={XP=101..}] xp_progress /= @e[type=armor_
 xp add @s[scores={xp_progress=-2147483648..}] -2147483648 levels
 xp add @s[scores={xp_progress=-2147483648..}] 1129 levels
 xp add @s[scores={xp_progress=-2147483648..}] 11 points
-execute as @s[scores={xp_progress=-2147483648..}] run scoreboard players operation @s xp_buffer = @s xp_progress
+execute if entity @s[scores={xp_progress=-2147483648..}] run scoreboard players operation @s xp_buffer = @s xp_progress
 scoreboard players set @s[scores={xp_buffer=101..}] xp_buffer 100
 xp add @s[scores={xp_buffer=64..}] 6336 points
 scoreboard players remove @s[scores={xp_buffer=64..}] xp_buffer 64
@@ -33,7 +33,7 @@ xp add @s[scores={xp_buffer=2..}] 198 points
 scoreboard players remove @s[scores={xp_buffer=2..}] xp_buffer 2
 xp add @s[scores={xp_buffer=1..}] 99 points
 xp add @s[scores={xp_progress=-2147483648..}] -1129 levels
-execute as @s[scores={xp_progress=-2147483648..}] run scoreboard players operation @s xp_buffer = @s xp_level
+execute if entity @s[scores={xp_progress=-2147483648..}] run scoreboard players operation @s xp_buffer = @s xp_level
 xp add @s[scores={xp_buffer=1073741824..}] 1073741824 levels
 scoreboard players remove @s[scores={xp_buffer=1073741824..}] xp_buffer 1073741824
 xp add @s[scores={xp_buffer=536870912..}] 536870912 levels

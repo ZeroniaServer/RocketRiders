@@ -26,4 +26,4 @@ effect give @s[tag=crosser] fire_resistance 4 200 true
 scoreboard players set @s[tag=crosser] voidNoFallCount 0
 tp @s[tag=crosser,team=Blue] 12 64 -66 0 0
 tp @s[tag=crosser,team=Yellow] 12 64 66 -180 0
-execute as @s[tag=crosser,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute if entity @s[tag=crosser,predicate=custom:is_on_fire] at @s run function game:putoutfire

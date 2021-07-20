@@ -1,5 +1,4 @@
 ##Utility function for detecting players shot by fireworks (for Nova Rocket)
-
 execute if entity @s[team=Blue,tag=YellowNovaNear] run tag @s add YellowNovaAttach
 execute if entity @s[team=Yellow,tag=BlueNovaNear] run tag @s add BlueNovaAttach
 tag @s[team=Blue,tag=YellowNovaNear] remove YellowNovaNear

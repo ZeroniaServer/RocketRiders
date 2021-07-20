@@ -1,13 +1,13 @@
 ##Ballet Dancer achievement
 #Jump Detection
-execute as @s[tag=!FailedBallet] run scoreboard players add @s timeSinceJump 1
-execute as @s[tag=!FailedBallet,scores={jumping=1..}] run scoreboard players reset @s timeSinceJump
-execute as @s[tag=!FailedBallet,scores={jumping=1..}] run scoreboard players reset @s jumping
-execute as @s[scores={timeSinceJump=40..}] run tag @s add FailedBallet
-execute as @s[tag=FailedBallet] run scoreboard players reset @s timeSinceJump
+scoreboard players add @s[tag=!FailedBallet] timeSinceJump 1
+scoreboard players reset @s[tag=!FailedBallet,scores={jumping=1..}] timeSinceJump
+scoreboard players reset @s[tag=!FailedBallet,scores={jumping=1..}] jumping
+tag @s[scores={timeSinceJump=40..}] add FailedBallet
+scoreboard players reset @s[tag=FailedBallet] timeSinceJump
 
 #Sprint Detection
-execute as @s[tag=!FailedBallet] run scoreboard players add @s movement 1
-execute as @s[tag=!FailedBallet,predicate=custom:is_sprinting] run scoreboard players reset @s movement
-execute as @s[scores={movement=20..}] run tag @s add FailedBallet
-execute as @s[tag=FailedBallet] run scoreboard players reset @s movement
+scoreboard players add @s[tag=!FailedBallet] movement 1
+scoreboard players reset @s[tag=!FailedBallet,predicate=custom:is_sprinting] movement
+tag @s[scores={movement=20..}] add FailedBallet
+scoreboard players reset @s[tag=FailedBallet] movement

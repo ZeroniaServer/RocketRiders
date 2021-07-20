@@ -30,5 +30,5 @@ execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/darktet
 execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/lighttetrisreset
 
 #armor
-execute as @s[scores={servermode=0},tag=!SMCustom] as @a[team=!Lobby,team=!Spectator] run function rr_swap:baseswap/gear
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=!Lobby,team=!Spectator] run function rr_swap:baseswap/gear
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=!Lobby,team=!Spectator] run function servermode:giveswapgear

@@ -3,7 +3,7 @@
 ############################################################
 
 ##Achievements
-execute as @s[tag=!noAchievements,scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:aftergameyellow
+execute if entity @s[tag=!noAchievements,scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:aftergameyellow
 
 ##Record tags
 tag @s add GameEnd
@@ -26,8 +26,8 @@ execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect clear @s blin
 execute as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
 execute as @a[team=Blue] at @s run stopsound @s
 execute as @a[team=Yellow] at @s run stopsound @s
-execute as @s[tag=!BlueWonFirst] as @a[team=Yellow] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
-execute as @s[tag=!BlueWonFirst] as @a[team=Blue] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2
+execute if entity @s[tag=!BlueWonFirst] as @a[team=Yellow] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
+execute if entity @s[tag=!BlueWonFirst] as @a[team=Blue] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2
 title @a[team=!Lobby] title ["",{"text":"Team Yellow Won!","color":"yellow","bold":false}]
 
 ##Splashes

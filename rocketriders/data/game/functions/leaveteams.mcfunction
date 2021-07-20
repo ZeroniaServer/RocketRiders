@@ -1,5 +1,4 @@
 ##Handles players leaving teams
-
 tag @a[tag=LeaveTeams,team=Yellow] add LeavingYellow
 execute as @a[tag=LeavingYellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
 tag @a[tag=LeaveTeams,team=Blue] add LeavingBlue

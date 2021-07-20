@@ -21,7 +21,7 @@ effect give @a[tag=portalKill] fire_resistance 2 100 true
 scoreboard players add @a[tag=portalKill] deaths 1
 scoreboard players add @a[tag=portalKill] death 1
 scoreboard players add @a[tag=portalKill] respawn 1
-execute as @s[tag=GameEnd] run scoreboard players remove @a[tag=portalKill] deaths 1
+execute if entity @s[tag=GameEnd] run scoreboard players remove @a[tag=portalKill] deaths 1
 
 #No fall damage
 scoreboard players set @a[tag=portalKill] voidNoFallCount 0

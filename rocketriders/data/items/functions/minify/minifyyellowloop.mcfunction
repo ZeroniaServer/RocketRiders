@@ -9,10 +9,10 @@ execute store result score $current redundantZ run data get storage rocketriders
 execute if score $this redundantX = $current redundantX if score $this redundantY = $current redundantY if score $this redundantZ <= $current redundantZ run tag @s add minify
 
 #If above fails, remove current missile spawn position
-execute as @s[tag=!minify] run data remove storage rocketriders:ymissilepos redundantX[0]
-execute as @s[tag=!minify] run data remove storage rocketriders:ymissilepos redundantY[0]
-execute as @s[tag=!minify] run data remove storage rocketriders:ymissilepos redundantZ[0]
+execute if entity @s[tag=!minify] run data remove storage rocketriders:ymissilepos redundantX[0]
+execute if entity @s[tag=!minify] run data remove storage rocketriders:ymissilepos redundantY[0]
+execute if entity @s[tag=!minify] run data remove storage rocketriders:ymissilepos redundantZ[0]
 
 #Recursion condition
 scoreboard players remove $minifyyellow yMissileCount 1
-execute as @s[tag=!minify] if score $minifyyellow yMissileCount matches 1.. run function items:minify/minifyyellowloop
+execute if entity @s[tag=!minify] if score $minifyyellow yMissileCount matches 1.. run function items:minify/minifyyellowloop

@@ -1,5 +1,4 @@
 ##Blatantly stolen from Meteor Miners but it works
-
 scoreboard players remove @a CmdData 1
 execute if entity @a[scores={CmdData=1024..}] run scoreboard players remove @a CmdData 1024
 execute if entity @a[scores={CmdData=512..}] run scoreboard players remove @a CmdData 512
@@ -12,5 +11,4 @@ execute if entity @a[scores={CmdData=8..}] run scoreboard players remove @a CmdD
 execute if entity @a[scores={CmdData=4..}] run scoreboard players remove @a CmdData 4
 execute if entity @a[scores={CmdData=2..}] run scoreboard players remove @a CmdData 2
 execute if entity @a[scores={CmdData=1..}] run scoreboard players remove @a CmdData 1
-
 execute if entity @a[scores={CmdData=1..}] run function everytick:pogger_calculation

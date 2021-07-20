@@ -17,8 +17,8 @@ execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @
 
 #Give canopies every 5 seconds
 scoreboard players add @s givecanopy 1
-execute as @s[scores={givecanopy=100..}] as @a[team=Yellow] run function items:util/givecanopy
-execute as @s[scores={givecanopy=100..}] as @a[team=Blue] run function items:util/givecanopy
+execute if entity @s[scores={givecanopy=100..}] as @a[team=Yellow] run function items:util/givecanopy
+execute if entity @s[scores={givecanopy=100..}] as @a[team=Blue] run function items:util/givecanopy
 scoreboard players reset @s[scores={givecanopy=100..}] givecanopy
 
 #Yellow Nexus Health

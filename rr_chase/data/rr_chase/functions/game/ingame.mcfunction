@@ -1,5 +1,5 @@
 #Leave midgame
-execute as @s[tag=!SMActive] run function game:leavemidgame
+execute if entity @s[tag=!SMActive] run function game:leavemidgame
 
 #Item RNG (exception for arrows)
 tag @s add givenArrows
@@ -14,7 +14,7 @@ execute if entity @s[tag=Minute] run function items:minutemix
 execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
 
 #Arrows on death
-execute as @s[scores={gametime=2..}] as @a[team=Blue,scores={death=1..}] run function items:util/givearrows
+execute if entity @s[scores={gametime=2..}] as @a[team=Blue,scores={death=1..}] run function items:util/givearrows
 scoreboard players set @a[scores={death=1..}] death 0
 
 #Arrow/Canopy antidupe (works regardless of Item Stacking)

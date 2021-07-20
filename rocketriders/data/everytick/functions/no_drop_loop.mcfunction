@@ -1,4 +1,4 @@
-#Loops through and tries to teleport item to correct player
+##Loops through and tries to teleport item to correct player
 tag @p[team=!Spectator,tag=!itemChecked] add itemChecking
 execute if score @s playerUUID = @p[tag=itemChecking] playerUUID run tag @s add itemFound
 execute if score @s playerUUID = @p[tag=itemChecking] playerUUID at @p[tag=itemChecking] run tp ~ ~ ~

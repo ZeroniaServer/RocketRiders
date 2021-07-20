@@ -13,9 +13,9 @@ tag @s add EditedSettings
 tag @s remove GameStarted
 
 ##Summon AECs for tracking/block sweeping
-execute as @s[scores={bMissileCount=1..}] run function arenaclear:prepareblue
-execute as @s[scores={yMissileCount=1..}] run function arenaclear:prepareyellow
-execute as @s[scores={splashCount=1..}] run function arenaclear:preparesplash
+execute if score @s bMissileCount matches 1.. run function arenaclear:prepareblue
+execute if score @s yMissileCount matches 1.. run function arenaclear:prepareyellow
+execute if score @s splashCount matches 1.. run function arenaclear:preparesplash
 summon marker 11 63 6 {Tags:["ArenaClearChecker"]}
 
 ##Reset Tetris progress for Item RNG
@@ -55,8 +55,8 @@ execute as @e[type=marker,tag=blueobsidianshield] at @s run function everytick:o
 execute as @e[type=marker,tag=yellowobsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break
 execute as @e[type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break
-execute as @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
-execute as @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
+execute if entity @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
+execute if entity @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
 kill @e[type=marker,tag=YellowPlatform]
 kill @e[type=marker,tag=BluePlatform]
 kill @e[type=marker,tag=BlueObshield]

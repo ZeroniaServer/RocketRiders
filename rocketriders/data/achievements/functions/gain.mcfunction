@@ -14,26 +14,26 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s respawn matc
 scoreboard players add @a[tag=probablyDied] deathCooldown 1
 
 #All achievements
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:firewithin
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:getofflawn
-execute as @s[scores={servermode=0,gametime=3..},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:graverevenge
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:underthesea
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:rainingmen
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:uphere
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:ballet
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:committed
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:soulcollector
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:blocksintobits
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:newworld
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:lockdown
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:volcanichatred
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:traveler
-execute as @s[scores={servermode=0},tag=!noPortal,tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:fallaway
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:gravitationalshootout
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:veteran
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] at @s run function achievements:useful
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:moonwalker
-execute as @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:sabotage
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:firewithin
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:getofflawn
+execute if entity @s[scores={servermode=0,gametime=3..},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:graverevenge
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:underthesea
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:rainingmen
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:uphere
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:ballet
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:committed
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:soulcollector
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:blocksintobits
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:newworld
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:lockdown
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:volcanichatred
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:traveler
+execute if entity @s[scores={servermode=0},tag=!noPortal,tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:fallaway
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:gravitationalshootout
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:veteran
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] at @s run function achievements:useful
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:moonwalker
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:sabotage
 
 #Necessary for on base check
 execute as @a unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue

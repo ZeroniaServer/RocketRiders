@@ -32,7 +32,7 @@ tag @s add rngNova
 tag @s add rngCanopy
 
 #Disable modifiers
-execute as @s[tag=!WindDownForce] run function modifiers:disablemodifiers
+execute if entity @s[tag=!WindDownForce] run function modifiers:disablemodifiers
 
 #Add needed settings and modifiers
 tag @s add doPrevention
@@ -47,8 +47,8 @@ tag @s remove doFireballPortals
 #######################################################
 
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"Active Items: ","color":"gray","bold":false},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"A set of 12 items is randomly generated for each game.","color":"white"}]}}]
-execute as @s[tag=!ctfEnabled] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
-execute as @s[tag=ctfEnabled] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+execute if entity @s[tag=!ctfEnabled] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+execute if entity @s[tag=ctfEnabled] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
 
 ### 1 shield type.
 summon marker ~ ~ ~ {CustomName:'{"text":"Shield","color":"light_purple"}',Tags:["ServerRNG","Shield","RShieldRNG","RUtilRNG"]}
@@ -66,16 +66,16 @@ execute if entity @e[type=marker,tag=Obshield,tag=SelRRNG] run tag @s remove rng
 ### 1 projectile type (except in CTF)
 summon marker ~ ~ ~ {CustomName:'{"text":"Fireball","color":"light_purple"}',Tags:["ServerRNG","Fireball","RProjecRNG","RUtilRNG"]}
 summon marker ~ ~ ~ {CustomName:'{"text":"Nova Rocket","color":"light_purple"}',Tags:["ServerRNG","Nova","RProjecRNG","RUtilRNG"]}
-execute as @s[tag=!ctfEnabled] run tag @e[type=marker,tag=RProjecRNG,limit=1,sort=random] add SelRRNG
-execute as @s[tag=ctfEnabled] run tag @e[type=marker,tag=RProjecRNG] add SelRRNG
+execute if entity @s[tag=!ctfEnabled] run tag @e[type=marker,tag=RProjecRNG,limit=1,sort=random] add SelRRNG
+execute if entity @s[tag=ctfEnabled] run tag @e[type=marker,tag=RProjecRNG] add SelRRNG
 
 #fireball selected
 execute if entity @e[type=marker,tag=Fireball,tag=SelRRNG] run tag @s add rngFireball
-execute as @s[tag=!ctfEnabled] if entity @e[type=marker,tag=Fireball,tag=SelRRNG] run tag @s remove rngNova
+execute if entity @s[tag=!ctfEnabled] if entity @e[type=marker,tag=Fireball,tag=SelRRNG] run tag @s remove rngNova
 
 #nova rocket selected
 execute if entity @e[type=marker,tag=Nova,tag=SelRRNG] run tag @s add rngNova
-execute as @s[tag=!ctfEnabled] if entity @e[type=marker,tag=Nova,tag=SelRRNG] run tag @s remove rngFireball
+execute if entity @s[tag=!ctfEnabled] if entity @e[type=marker,tag=Nova,tag=SelRRNG] run tag @s remove rngFireball
 
 #Announce extra utils
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"light_purple","bold":false},{"selector":"@e[type=marker,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":false}]

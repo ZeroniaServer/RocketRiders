@@ -9,12 +9,12 @@ schedule function rr_powerups:items/scheduleantidupe 1t append
 kill @e[type=marker,tag=rng1]
 
 ##Actionbar notifications
-execute as @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run tag @s add DelayActionbar
-execute as @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run scoreboard players set @s actionbardelay 0
-execute as @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue,tag=fullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
-execute as @s[tag=!noHotbarWarn,tag=!noFullHotbarSound] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue,tag=fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-execute as @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run tag @s add DelayActionbar
-execute as @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run scoreboard players set @s actionbardelay 0
-execute as @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow,tag=fullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
-execute as @s[tag=!noHotbarWarn,tag=!noFullHotbarSound] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow,tag=fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run tag @s add DelayActionbar
+execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run scoreboard players set @s actionbardelay 0
+execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue,tag=fullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+execute if entity @s[tag=!noHotbarWarn,tag=!noFullHotbarSound] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue,tag=fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run tag @s add DelayActionbar
+execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run scoreboard players set @s actionbardelay 0
+execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow,tag=fullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+execute if entity @s[tag=!noHotbarWarn,tag=!noFullHotbarSound] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow,tag=fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 tag @s remove noHotbarWarn

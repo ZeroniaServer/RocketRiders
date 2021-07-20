@@ -1,9 +1,9 @@
 tag @s remove FakeGameEnd
 scoreboard players set @s fakeendtimer 0
 
-execute as @s[scores={bMissileCount=1..}] run function arenaclear:prepareblue
-execute as @s[scores={yMissileCount=1..}] run function arenaclear:prepareyellow
-execute as @s[scores={splashCount=1..}] run function arenaclear:preparesplash
+execute if entity @s[scores={bMissileCount=1..}] run function arenaclear:prepareblue
+execute if entity @s[scores={yMissileCount=1..}] run function arenaclear:prepareyellow
+execute if entity @s[scores={splashCount=1..}] run function arenaclear:preparesplash
 summon marker 11 63 6 {Tags:["ArenaClearChecker"]}
 
 function items:tetrisreset
@@ -40,8 +40,8 @@ kill @e[type=firework_rocket,tag=BlueNova]
 kill @e[type=firework_rocket,tag=YellowNova]
 execute as @e[type=marker,tag=blueobsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[type=marker,tag=yellowobsidianshield] at @s run function everytick:obsidian_shield_break
-execute as @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
-execute as @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
+execute if entity @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
+execute if entity @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
 kill @e[type=marker,tag=YellowPlatform]
 kill @e[type=marker,tag=BluePlatform]
 kill @e[type=marker,tag=BlueObshield]

@@ -4,7 +4,7 @@
 ######################################
 
 ##Stop games if empty (toggle)
-execute as @s[tag=stopIfEmpty,scores={bluesCount=0,yellowsCount=0}] run function game:forcestop
+execute if entity @s[tag=stopIfEmpty,scores={bluesCount=0,yellowsCount=0}] run function game:forcestop
 
 ##Actionbar delay (necessary for certain action bar messages to override others)
 execute if entity @a[tag=DelayActionbar] run scoreboard players add @a[tag=DelayActionbar] actionbardelay 1
@@ -22,13 +22,13 @@ execute as @a[gamemode=!spectator] unless entity @s[team=!Yellow,team=!Blue] if 
 scoreboard players add @s gametime 1
 
 ##Enable fall damage (considers modifiers)
-execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=10}] run gamerule fallDamage true
+execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=10}] run gamerule fallDamage true
 
 ##Clear lobby arrows
-execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow{Lobby:1b}
+execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow{Lobby:1b}
 
 ##Remove kills
-execute as @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s kills
+execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s kills
 
 ##General everytick commands
 function achievements:gain
@@ -111,24 +111,24 @@ fill 13 63 65 11 63 65 obsidian
 setblock 14 63 66 obsidian
 setblock 10 63 66 obsidian
 setblock 12 63 64 obsidian
-execute as @s[tag=!customSpawn] run fill 13 65 67 11 65 67 obsidian
-execute as @s[tag=!customSpawn] run setblock 12 66 67 obsidian
+execute if entity @s[tag=!customSpawn] run fill 13 65 67 11 65 67 obsidian
+execute if entity @s[tag=!customSpawn] run setblock 12 66 67 obsidian
 fill 11 63 -65 13 63 -66 obsidian
 setblock 12 63 -64 obsidian
 setblock 10 63 -66 obsidian
 setblock 14 63 -66 obsidian
-execute as @s[tag=!customSpawn] run fill 11 65 -67 13 65 -67 obsidian
-execute as @s[tag=!customSpawn] run setblock 12 66 -67 obsidian
+execute if entity @s[tag=!customSpawn] run fill 11 65 -67 13 65 -67 obsidian
+execute if entity @s[tag=!customSpawn] run setblock 12 66 -67 obsidian
 
 ##Extra obsidian if necessary
-execute as @s[tag=!customObsidian] run fill -15 64 67 39 64 67 obsidian
-execute as @s[tag=!customObsidian] run fill -15 33 67 39 33 67 obsidian
-execute as @s[tag=!customObsidian] run fill -15 64 -67 39 64 -67 obsidian
-execute as @s[tag=!customObsidian] run fill -15 33 -67 39 33 -67 obsidian
-execute as @s[tag=!customObsidian] run fill -15 63 67 -15 34 67 obsidian
-execute as @s[tag=!customObsidian] run fill 39 63 67 39 34 67 obsidian
-execute as @s[tag=!customObsidian] run fill -15 63 -67 -15 34 -67 obsidian
-execute as @s[tag=!customObsidian] run fill 39 63 -67 39 34 -67 obsidian
+execute if entity @s[tag=!customObsidian] run fill -15 64 67 39 64 67 obsidian
+execute if entity @s[tag=!customObsidian] run fill -15 33 67 39 33 67 obsidian
+execute if entity @s[tag=!customObsidian] run fill -15 64 -67 39 64 -67 obsidian
+execute if entity @s[tag=!customObsidian] run fill -15 33 -67 39 33 -67 obsidian
+execute if entity @s[tag=!customObsidian] run fill -15 63 67 -15 34 67 obsidian
+execute if entity @s[tag=!customObsidian] run fill 39 63 67 39 34 67 obsidian
+execute if entity @s[tag=!customObsidian] run fill -15 63 -67 -15 34 -67 obsidian
+execute if entity @s[tag=!customObsidian] run fill 39 63 -67 39 34 -67 obsidian
 
 ##Respawn handling
 execute as @e[type=marker,tag=YellowSpawnZone] at @s as @a[team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0

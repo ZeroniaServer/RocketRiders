@@ -1,5 +1,4 @@
 ##Randomized splash messages for the winners of a game
-
 summon marker ~ ~ ~ {Tags:["RandomWinSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
 scoreboard players set @e[type=marker,tag=RandomWinSplash] RNGmax 30

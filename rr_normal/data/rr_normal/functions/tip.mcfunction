@@ -54,11 +54,11 @@ execute as @e[type=marker,tag=SelectedTip,tag=Tip7] run tag @e[type=armor_stand,
 execute as @e[type=marker,tag=SelectedTip,tag=Tip8] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If two enemy Nova Rockets collide, they burst into an explosion of green particles.","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip8] run tag @e[type=armor_stand,tag=Selection] add Tip8
 
-execute as @s[tag=!SMActive] as @e[type=marker,tag=SelectedTip,tag=Tip9] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"There are four Special missiles which you can play with in Swap Mode and Powerups Mode. Use them all to earn the Veteran achievement!","color":"gray"}]
-execute as @s[tag=SMActive] as @e[type=marker,tag=SelectedTip,tag=Tip9] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"There are four Special missiles which you can play with in Swap Mode and Powerups Mode exclusively!","color":"gray"}]
+execute if entity @s[tag=!SMActive] as @e[type=marker,tag=SelectedTip,tag=Tip9] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"There are four Special missiles which you can play with in Swap Mode and Powerups Mode. Use them all to earn the Veteran achievement!","color":"gray"}]
+execute if entity @s[tag=SMActive] as @e[type=marker,tag=SelectedTip,tag=Tip9] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"There are four Special missiles which you can play with in Swap Mode and Powerups Mode exclusively!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip9] run tag @e[type=armor_stand,tag=Selection] add Tip9
 
-execute as @s[tag=doTying,tag=!tyingOff] as @e[type=marker,tag=SelectedTip,tag=Tip10] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If both teams' portals break within 5 seconds, a tie occurs and a Sudden Death period begins. Whoever wins that wins the game!","color":"gray"}]
+execute if entity @s[tag=doTying,tag=!tyingOff] as @e[type=marker,tag=SelectedTip,tag=Tip10] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If both teams' portals break within 5 seconds, a tie occurs and a Sudden Death period begins. Whoever wins that wins the game!","color":"gray"}]
 execute unless entity @s[tag=doTying,tag=!tyingOff] as @e[type=marker,tag=SelectedTip,tag=Tip10] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Make sure to break any TNT in or around your base, or else your portal could be at risk of exploding!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip10] run tag @e[type=armor_stand,tag=Selection] add Tip10
 
@@ -94,8 +94,8 @@ execute as @e[type=marker,tag=SelectedTip,tag=Tip20] run tag @e[type=armor_stand
 
 #Opt out message (disabled on servers)
 scoreboard players add @a GamesPlayed 0
-execute as @s[tag=!SMActive] run scoreboard players enable @a[scores={GamesPlayed=..9}] disableTips
-execute as @s[tag=!SMActive] as @e[type=marker,tag=SelectedTip] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger disableTips set 1"}},{"text":" to opt out of these messages.","color":"#888888","italic":true}]
+execute if entity @s[tag=!SMActive] run scoreboard players enable @a[scores={GamesPlayed=..9}] disableTips
+execute if entity @s[tag=!SMActive] as @e[type=marker,tag=SelectedTip] as @a unless entity @s[scores={GamesPlayed=10..}] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger disableTips set 1"}},{"text":" to opt out of these messages.","color":"#888888","italic":true}]
 execute as @a[scores={disableTips=1..}] run tellraw @s [{"text":"You will no longer receive tips.","color":"red"}]
 execute as @a[scores={disableTips=1..}] run scoreboard players set @s GamesPlayed 10
 scoreboard players set @a disableTips 0

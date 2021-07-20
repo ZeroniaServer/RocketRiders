@@ -1,5 +1,5 @@
 #leave midgame
-execute as @s[tag=!SMActive] run function game:leavemidgame
+execute if entity @s[tag=!SMActive] run function game:leavemidgame
 
 #general
 function rr_swap:items/antidupe

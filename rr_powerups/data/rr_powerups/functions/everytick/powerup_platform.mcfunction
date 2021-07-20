@@ -22,10 +22,10 @@ setblock ~1 ~-1 ~ purpur_stairs[facing=east]
 setblock ~ ~-1 ~-1 purpur_stairs[facing=north]
 setblock ~ ~-1 ~1 purpur_stairs[facing=south]
 
-execute as @s[scores={capturePoint=0},tag=!contested] at @s run function rr_powerups:everytick/uncaptured_platform
-execute as @s[scores={capturePoint=1},tag=!contested] at @s run function rr_powerups:everytick/blue_platform
-execute as @s[scores={capturePoint=2},tag=!contested] at @s run function rr_powerups:everytick/yellow_platform
-execute as @s[tag=contested] at @s run function rr_powerups:everytick/contested_platform
+execute if entity @s[scores={capturePoint=0},tag=!contested] at @s run function rr_powerups:everytick/uncaptured_platform
+execute if entity @s[scores={capturePoint=1},tag=!contested] at @s run function rr_powerups:everytick/blue_platform
+execute if entity @s[scores={capturePoint=2},tag=!contested] at @s run function rr_powerups:everytick/yellow_platform
+execute if entity @s[tag=contested] at @s run function rr_powerups:everytick/contested_platform
 
 #antidupe blocks
 fill ~-1 ~-2 ~-5 ~1 ~-2 ~5 air

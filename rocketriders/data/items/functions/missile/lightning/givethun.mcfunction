@@ -10,7 +10,7 @@ title @s[scores={HasBolt=1..},tag=!fullHotbar,tag=!BackBolt] actionbar {"text":"
 execute as @s[scores={HasBolt=1..},tag=!fullHotbar,tag=!BackBolt] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasBolt=0},tag=!fullHotbar,tag=!BackBolt] actionbar {"text":"Thunderbolt obtained.","color":"aqua"}
 loot give @s[scores={HasBolt=0},tag=!fullHotbar] loot items:lightning/thunderbolt
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasThun=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasBolt=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 execute unless entity @s[tag=BackBolt] run tag @e[type=armor_stand,tag=Selection] add givenBolt

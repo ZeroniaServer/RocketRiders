@@ -146,6 +146,7 @@ execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run team join Blue
 execute as @e[type=bee,tag=YellowBee,tag=!beeChecked] run team join Yellow
 execute as @e[type=bee,tag=!beeChecked] run attribute @s minecraft:generic.follow_range base set 100
 execute as @e[type=bee,tag=!beeChecked] run data remove entity @s AngryAt
+execute as @e[type=bee,tag=!beeChecked] run data merge entity @s {PortalCooldown:2147483647}
 execute if entity @e[type=bee,tag=!beeChecked] run scoreboard players set $beetime BeeShieldTime 0
 tag @e[type=bee,tag=!beeChecked] add beeChecked
 execute as @e[type=bee] unless entity @s[nbt={Glowing:1b}] run data merge entity @s {Glowing:1b}

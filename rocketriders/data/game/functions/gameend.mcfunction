@@ -16,6 +16,7 @@ execute if entity @s[tag=YellowWon] run effect give @a[team=Blue] weakness 10000
 execute if entity @s[scores={endtimer=1..},tag=!Sonar] run effect give @a night_vision 1000000 100 true
 execute if entity @s[scores={endtimer=1..80}] run worldborder warning distance 0
 execute if entity @s[scores={endtimer=1}] run tag @a remove nearcanopy
+execute if entity @s[scores={endtimer=1}] run tag @a threwCanopy
 execute if entity @s[scores={endtimer=1}] as @a run trigger LeaveMidgame set -1
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]

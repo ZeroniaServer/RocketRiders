@@ -3,15 +3,21 @@
 #Select unchecked Canopy and player
 tag @e[type=marker,tag=BluePlatform,limit=1,tag=!checkedTP] add currentTP
 execute as @a[team=Blue,tag=!checkedTP] if score @s playerUUID = @e[type=marker,tag=BluePlatform,limit=1,tag=currentTP] pearlOwnerUUID run tag @s add currentTP
+execute as @p[team=Blue,tag=currentTP,tag=!canopyTP] run tag @s remove threwCanopy
 execute as @p[team=Blue,tag=currentTP] run tag @s add canopyTP
 
 #Reset the motion before/after teleporting (thanks to @dragonmaster95 for the suggestion!)
 execute as @p[team=Blue,tag=currentTP] if entity @e[type=marker,tag=BluePlatform,scores={PlatTime=1..3},limit=1,tag=currentTP] run tp @s @s
 execute as @p[team=Blue,tag=currentTP] if entity @e[type=marker,tag=BluePlatform,scores={PlatTime=40..41},limit=1,tag=currentTP] run tp @s @s
 
+#Canopy forgets owner upon throwing new pearl
+execute as @p[team=Blue,tag=currentTP,tag=canopyTP,tag=threwCanopy] at @s run scoreboard players reset @e[type=marker,tag=BluePlatform,scores={PlatTime=1..40},limit=1,tag=currentTP] pearlOwnerUUID
+execute as @p[team=Blue,tag=currentTP,tag=canopyTP,tag=threwCanopy] run tag @s remove canopyTP
+execute as @p[team=Blue,tag=currentTP,tag=threwCanopy] run tag @s remove threwCanopy
+
 #Canopy forgets owner upon death
-execute as @p[team=Blue,tag=currentTP,tag=probablyDied] at @s run scoreboard players reset @e[type=marker,tag=BluePlatform,scores={PlatTime=1..40},limit=1,tag=currentTP] pearlOwnerUUID
-execute as @p[team=Blue,tag=currentTP,tag=probablyDied] run tag @s remove canopyTP
+execute as @p[team=Blue,tag=currentTP,scores={respawn=1..}] at @s run scoreboard players reset @e[type=marker,tag=BluePlatform,scores={PlatTime=1..40},limit=1,tag=currentTP] pearlOwnerUUID
+execute as @p[team=Blue,tag=currentTP,scores={respawn=1..}] run tag @s remove canopyTP
 
 #Canopy forgets owner if crossing in Rocket Residers
 execute if entity @s[tag=Residers] as @p[team=Blue,tag=currentTP] at @s if entity @s[z=-36,dz=220] run scoreboard players reset @e[type=marker,tag=BluePlatform,scores={PlatTime=1..40},limit=1,tag=currentTP] pearlOwnerUUID
@@ -40,6 +46,7 @@ execute as @p[team=Blue,tag=currentTP,tag=canopyTP] at @s if entity @e[type=mark
 execute as @p[team=Blue,tag=currentTP,tag=!canopyTP] run effect clear @s slow_falling
 execute as @p[team=Blue,tag=currentTP,tag=!canopyTP] run effect clear @s slowness
 execute as @p[team=Blue,tag=currentTP,tag=!canopyTP] run effect clear @s jump_boost
+execute as @p[team=Blue,tag=currentTP,tag=!canopyTP] run tag @s remove threwCanopy
 
 #Deselect and remember checked Canopy and player
 tag @p[team=Blue,tag=currentTP] add checkedTP

@@ -84,7 +84,7 @@ tag @e[type=marker,scores={PlatTime=58..}] add animated
 
 #Ender Pearl UUID storage and owner detection - necessary for accurate teleports
 execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data get entity @s Owner[0]
-execute as @e[type=ender_pearl,tag=!BluePlat,tag=!YellowPlat] at @s if entity @a[scores={ThrowPlat=1..}] run function everytick:canopy_owner
+execute as @e[type=ender_pearl,tag=!BluePlat,tag=!YellowPlat] at @s run function everytick:canopy_owner
 
 ##Yellow Canopy functionality
 execute as @e[type=ender_pearl,tag=YellowPlat] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a

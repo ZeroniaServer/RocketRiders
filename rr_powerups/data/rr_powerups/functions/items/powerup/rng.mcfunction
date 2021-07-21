@@ -10,6 +10,18 @@ execute if entity @s[tag=!givenBee] run summon marker 0 0 0 {Tags:["rngBeeShield
 execute if entity @s[tag=!givenDuplex] run summon marker 0 0 0 {Tags:["rngDuplex","rng2"]}
 execute if entity @s[tag=!givenBroad] run summon marker 0 0 0 {Tags:["rngBroad","rng2"]}
 tag @e[type=marker,tag=rng2,sort=random,limit=1] add rngSelected
+
+#> 
+execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=item] if data entity @s {Item:{id:"minecraft:skeleton_spawn_egg"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngHyper] as @e[type=item] if data entity @s {Item:{id:"minecraft:turtle_spawn_egg"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngLavaSplash] as @e[type=item] if data entity @s {Item:{id:"minecraft:lingering_potion"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngSlapFish] as @e[type=item] if data entity @s {Item:{id:"minecraft:cooked_salmon"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngTotem] as @e[type=item] if data entity @s {Item:{id:"minecraft:totem_of_undying"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngTrident] as @e[type=item] if data entity @s {Item:{id:"minecraft:trident"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngBeeShield] as @e[type=item] if data entity @s {Item:{id:"minecraft:honey_bottle"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngDuplex] as @e[type=item] if data entity @s {Item:{id:"minecraft:parrot_spawn_egg"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngBroad] as @e[type=item] if data entity @s {Item:{id:"minecraft:magma_cube_spawn_egg"}} run kill @s
+
 execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function items:missile/special/givebull
 execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run function items:missile/special/givebull
 execute as @e[type=marker,tag=rngSelected,tag=rngElytra] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/giveelytra

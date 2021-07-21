@@ -13,6 +13,8 @@ tp @a[tag=LeavingBlue] -78 204 64 135 0
 tp @a[tag=LeavingSpec] -43 212 78 90 0
 clear @a[tag=LeaveTeams]
 effect clear @a[tag=LeaveTeams]
+effect give @a[tag=LeaveTeams] regeneration 1 255 true
+effect give @a[tag=LeaveTeams] resistance 1000000 255 true
 effect give @a[tag=LeaveTeams] night_vision 1000000 255 true
 gamemode adventure @a[tag=LeaveTeams,gamemode=!adventure]
 execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire

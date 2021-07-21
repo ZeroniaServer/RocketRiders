@@ -17,6 +17,9 @@ execute if entity @s[tag=rngUtil,tag=!utilOff,tag=SurpriseEgg] unless entity @s[
 tag @e[type=marker,tag=rng1,sort=random,limit=1] add rngSelected
 execute as @e[type=marker,tag=rngSelected,tag=rngMissile] run function items:missile/rng
 execute as @e[type=marker,tag=rngSelected,tag=rngUtil] run function items:util/rng
+
+execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @e[type=item] if data entity @s {Item:{id:"minecraft:squid_spawn_egg"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @e[type=item] if data entity @s {Item:{id:"minecraft:cod_spawn_egg"}} run kill @s
 execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Blue,tag=!fullHotbar] run function items:surprise_blue/givesurpriseegg
 execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Yellow,tag=!fullHotbar] run function items:surprise_yellow/givesurpriseegg
 kill @e[type=marker,tag=rng1]

@@ -16,7 +16,7 @@
                 },
                 {
                   "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Slasher\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"69thAmendment\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Slasher is a glass-encased\",\"color\":\"gray\"}','{\"text\":\"missile with not much TNT. It can\",\"color\":\"gray\"}','{\"text\":\"slash straight through shields.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowSlash\"]}}"
+                  "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Slasher\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"69thAmendment\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Slasher is a glass-encased\",\"color\":\"gray\"}','{\"text\":\"missile with not much TNT. It can\",\"color\":\"gray\"}','{\"text\":\"slash straight through Shields.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowSlash\"]}}"
                 }
               ],
               "conditions": [
@@ -50,7 +50,7 @@
                 },
                 {
                   "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Slasher\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"69thAmendment\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Slasher is a glass-encased\",\"color\":\"gray\"}','{\"text\":\"missile with not much TNT. It can\",\"color\":\"gray\"}','{\"text\":\"slash straight through shields.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueSlash\"]}}"
+                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Slasher\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"69thAmendment\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Slasher is a glass-encased\",\"color\":\"gray\"}','{\"text\":\"missile with not much TNT. It can\",\"color\":\"gray\"}','{\"text\":\"slash straight through Shields.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueSlash\"]}}"
                 }
               ],
               "conditions": [

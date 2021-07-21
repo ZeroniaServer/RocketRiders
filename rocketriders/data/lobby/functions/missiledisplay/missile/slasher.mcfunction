@@ -22,6 +22,6 @@ fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 fill 22 202 69 15 206 87 white_glazed_terracotta replace blue_glazed_terracotta
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Normal] ","color":"green","bold":true},{"text":"Slasher","color":"white"}]
-execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Slasher is a glass-encased missile with not much TNT. It can slash straight through shields.","color":"gray","italic":true}
+execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Slasher is a glass-encased missile with not much TNT. It can slash straight through Shields.","color":"gray","italic":true}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: 69thAmendment)","color":"gray","italic":true,"bold":false}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":""}

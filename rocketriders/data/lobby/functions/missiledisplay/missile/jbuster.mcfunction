@@ -21,6 +21,6 @@ fill 22 202 69 15 206 79 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Heavy] ","color":"red","bold":true},{"text":"Juggerbuster","color":"white"}]
-execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"This is a Juggernaut-ShieldBuster hybrid. This missile has the power of a Juggernaut plus the ability to bust through a shield.","color":"gray","italic":true}
+execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"This is a Juggernaut-ShieldBuster hybrid. This missile has the power of a Juggernaut plus the ability to bust through a Shield.","color":"gray","italic":true}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: Chronos22)","color":"gray","italic":true,"bold":false}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":""}

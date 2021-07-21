@@ -122,6 +122,7 @@ execute if entity @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessage
 execute if entity @s[tag=GameStarted] run scoreboard players operation @s origBCount = @s bluesCount
 execute if entity @s[tag=GameStarted] run scoreboard players operation @s origYCount = @s yellowsCount
 execute if entity @s[tag=GameStarted] run function lobby:credits/restart
+execute if entity @s[tag=GameStarted] run gamerule mobGriefing true
 execute if entity @s[tag=GameStarted] run kill @e[type=arrow]
 execute if entity @s[tag=GameStarted] as @a unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow{Lobby:1b}
 scoreboard players set @s[tag=GameStarted] count 0

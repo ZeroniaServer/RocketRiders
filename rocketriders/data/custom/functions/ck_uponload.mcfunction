@@ -1,3 +1,11 @@
+tp @e[type=armor_stand,tag=Selection] 25 184 -6
+tp @e[type=armor_stand,tag=rr_normal] 25 184 -6
+tp @e[type=armor_stand,tag=rr_powerups] 25 184 -6
+tp @e[type=armor_stand,tag=rr_swap] 25 184 -6
+tp @e[type=armor_stand,tag=rr_ctf] 25 184 -6
+tp @e[type=armor_stand,tag=rr_chase] 25 184 -6
+tp @e[type=armor_stand,tag=rr_duel] 25 184 -6
+
 team add Lobby
 team add Blue
 team add Yellow

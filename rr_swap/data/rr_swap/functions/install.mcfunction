@@ -1,4 +1,4 @@
-execute unless entity @e[type=armor_stand,tag=rr_swap,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_swap","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:'{"text":"Swap Mode"}'}
+execute unless entity @e[type=armor_stand,tag=rr_swap,limit=1] run summon armor_stand 25 184 -6 {Tags:["rr_swap","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:'{"text":"Swap Mode"}'}
 
 scoreboard objectives add swapside dummy
 scoreboard objectives add Clustertime dummy

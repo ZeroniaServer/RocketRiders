@@ -92,6 +92,7 @@ execute if entity @s[scores={endtimer=570}] run tp @a[team=Yellow] -36 211 96.0 
 execute if entity @s[scores={endtimer=570}] run tp @a[team=Spectator] -43 211 78 90 0
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a kills 0
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a deaths 0
+execute if entity @s[scores={endtimer=570}] run gamerule mobGriefing false
 #Server mode specifics
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=0}] run fill -57 201 84 -70 201 72 air replace barrier
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=1},tag=!forcenormal] run function servermode:makesets

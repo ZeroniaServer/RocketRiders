@@ -28,55 +28,53 @@
                   }
                 }
               ]
-                }
-              ],
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Yellow"
-                  }
-                }
-              ]
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "team": "Yellow"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dolphin_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1
             },
             {
-              "type": "minecraft:item",
-              "name": "minecraft:dolphin_spawn_egg",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 1
-                },
-                {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Lifter\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"8\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Lifter lifts its warhead\",\"color\":\"gray\"}','{\"text\":\"up by 3 blocks when it hits\",\"color\":\"gray\"}','{\"text\":\"an obstacle.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueLift\"]}}"
-                }
-              ],
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Blue"
-                  }
-                }
-              ]
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Lifter\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"8\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Lifter lifts its warhead\",\"color\":\"gray\"}','{\"text\":\"up by 3 blocks when it hits\",\"color\":\"gray\"}','{\"text\":\"an obstacle.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueLift\"]}}"
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "team": "Blue"
+              }
             }
           ]
         }
-      ],
-      "functions": [
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "function": "minecraft:copy_nbt",
+      "source": "this",
+      "ops": [
         {
-          "function": "minecraft:copy_nbt",
-          "source": "this",
-          "ops": [
-            {
-              "source": "UUID",
-              "target": "EntityTag.data.UUID",
-              "op": "replace"
-            }
-          ]
+          "source": "UUID",
+          "target": "EntityTag.data.UUID",
+          "op": "replace"
         }
       ]
     }

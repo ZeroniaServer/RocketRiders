@@ -1,4 +1,4 @@
-execute unless entity @e[type=armor_stand,tag=rr_duel,limit=1] run summon armor_stand 23 216 -18 {Tags:["rr_duel","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:'{"text":"Duel Mode"}'}
+execute unless entity @e[type=armor_stand,tag=rr_duel,limit=1] run summon armor_stand 25 184 -6 {Tags:["rr_duel","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:'{"text":"Duel Mode"}'}
 scoreboard objectives add RoundsWon dummy {"text":"Rounds Won","color":"green","bold":true}
 scoreboard objectives remove XP
 scoreboard objectives add XP dummy

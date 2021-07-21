@@ -21,6 +21,6 @@ fill 22 202 69 15 206 87 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Lightning] ","color":"yellow","bold":true},{"text":"Thunderbolt","color":"white"}]
-execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Thunderbolt is a lightning-speed missile. Fittingly, it flies faster than most missiles. Breaking too much TNT may stop the missile.","color":"gray","italic":true}
+execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"Breaking too much TNT may stop this missile, but its length and 2x2 form factor make it easier to cruise on to the enemy base.","color":"gray","italic":true}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"(Made by: Rubix_One)","color":"gray","italic":true,"bold":false}
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":""}

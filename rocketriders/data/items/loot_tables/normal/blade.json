@@ -28,55 +28,53 @@
                   }
                 }
               ]
-                }
-              ],
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Yellow"
-                  }
-                }
-              ]
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "team": "Yellow"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:husk_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1
             },
             {
-              "type": "minecraft:item",
-              "name": "minecraft:husk_spawn_egg",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 1
-                },
-                {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Blade\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"15\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Blade is a sword-shaped missile.\",\"color\":\"gray\"}','{\"text\":\"Breaking the slime block on the side\",\"color\":\"gray\"}','{\"text\":\"will drop down 3 bomber TNT below it.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueBlade\"]}}"
-                }
-              ],
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Blue"
-                  }
-                }
-              ]
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Blade\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"15\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Blade is a sword-shaped missile.\",\"color\":\"gray\"}','{\"text\":\"Breaking the slime block on the side\",\"color\":\"gray\"}','{\"text\":\"will drop down 3 bomber TNT below it.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueBlade\"]}}"
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "team": "Blue"
+              }
             }
           ]
         }
-      ],
-      "functions": [
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "function": "minecraft:copy_nbt",
+      "source": "this",
+      "ops": [
         {
-          "function": "minecraft:copy_nbt",
-          "source": "this",
-          "ops": [
-            {
-              "source": "UUID",
-              "target": "EntityTag.data.UUID",
-              "op": "replace"
-            }
-          ]
+          "source": "UUID",
+          "target": "EntityTag.data.UUID",
+          "op": "replace"
         }
       ]
     }

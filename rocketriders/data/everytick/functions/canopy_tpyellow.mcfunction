@@ -6,10 +6,6 @@ execute as @a[team=Yellow,tag=!checkedTP] if score @s playerUUID = @e[type=marke
 execute as @p[team=Yellow,tag=currentTP,tag=!canopyTP] run tag @s remove threwCanopy
 execute as @p[team=Yellow,tag=currentTP] run tag @s add canopyTP
 
-
-say @p[team=Yellow,tag=threwCanopy]
-
-
 #Reset the motion before teleporting (thanks to @dragonmaster95 for the suggestion!)
 execute as @p[team=Yellow,tag=currentTP] if entity @e[type=marker,tag=YellowPlatform,scores={PlatTime=1..3},limit=1,tag=currentTP] run tp @s @s
 execute as @p[team=Yellow,tag=currentTP] if entity @e[type=marker,tag=YellowPlatform,scores={PlatTime=40..41},limit=1,tag=currentTP] run tp @s @s

@@ -69,5 +69,7 @@ scoreboard players operation @s MaxItemTime *= 20 MaxItemSec
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 
-execute as @a[team=Blue] run function game:givegear
-execute as @a[team=Yellow] run function game:givegear
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Blue] run function game:givegear
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Yellow] run function game:givegear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Blue] run function servermode:givegear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Yellow] run function servermode:givegear

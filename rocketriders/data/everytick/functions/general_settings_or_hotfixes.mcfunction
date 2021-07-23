@@ -40,6 +40,7 @@ execute if entity @s[tag=EditedSettings] as @a run trigger VoteServerMode set 0
 execute as @a[team=!Lobby] run trigger daytime set 0
 execute if entity @s[tag=EditedSettings] as @a run trigger daytime set 0
 execute if entity @s[scores={servermode=1..}] as @a run trigger daytime set 0
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a run trigger disableTips set 0
 execute as @a[scores={GamesPlayed=10..}] run trigger disableTips set 0
 execute as @a[team=!Spectator] run trigger leaveSpec set 0
 execute as @a[team=!Lobby,team=!Developer] run trigger displayinfo set 0

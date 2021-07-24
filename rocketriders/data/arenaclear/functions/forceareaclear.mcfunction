@@ -2,7 +2,6 @@
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:areaclear
 tag @e[type=armor_stand,tag=Selection] remove needsForceClear
 tag @e[type=marker,tag=PlacerClear] add Cleared
-schedule function game:uncancelpads 2t append
 tag @e[type=armor_stand,tag=Selection] remove GameEnd
 scoreboard players set @e[type=armor_stand,tag=Selection] endtimer 0
 

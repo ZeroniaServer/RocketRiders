@@ -74,7 +74,6 @@ kill @e[type=marker,tag=checking]
 ##Close off Modification Room
 execute as @e[type=marker,tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0
 fill -57 201 84 -70 201 72 barrier replace air
-fill 6 53 -6 18 53 6 air
 
 ##Prepare Item RNG timer for next game
 scoreboard players operation @s MaxItemTime = @s MaxItemSec
@@ -87,3 +86,6 @@ scoreboard players set @s[tag=Minute] RandomItem 1197
 tag @a remove beenOnYellow
 tag @a remove beenOnBlue
 tag @a remove beenOnBoth
+
+##Remove join cancel from join pads
+schedule function game:uncancelpads 2t append

@@ -20,9 +20,6 @@ execute if entity @s[scores={endtimer=1}] run tag @a remove threwCanopy
 execute if entity @s[scores={endtimer=1}] as @a run trigger LeaveMidgame set -1
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[team=Blue]
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[team=Yellow]
-execute if entity @s[scores={endtimer=1}] run gamerule fallDamage false
-execute if entity @s[scores={endtimer=1}] run gamerule drowningDamage false
-execute if entity @s[scores={endtimer=1}] run gamerule fireDamage false
 execute if entity @s[scores={endtimer=1}] run kill @e[type=ender_pearl]
 execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=yellowjoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=bluejoinpad] add CancelJoin

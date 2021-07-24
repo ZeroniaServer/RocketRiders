@@ -99,6 +99,11 @@ execute as @e[type=armor_stand,tag=VortexItemDummy] at @s unless entity @a[team=
 execute as @e[type=armor_stand,tag=VortexItemDummy] at @s if entity @e[type=marker,tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]
 execute as @e[type=armor_stand,tag=VortexItemDummy] at @s if entity @e[type=marker,tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~-180 ~
 
+#Disable damage gamerules if no game has started
+execute unless entity @s[tag=GameStarted,tag=!GameEnd] run gamerule fallDamage false
+execute unless entity @s[tag=GameStarted,tag=!GameEnd] run gamerule drowningDamage false
+execute unless entity @s[tag=GameStarted,tag=!GameEnd] run gamerule fireDamage false
+
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] hotbar.0 with air

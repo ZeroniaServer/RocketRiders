@@ -11,9 +11,6 @@ tag @e[type=armor_stand,tag=Selection] remove gaveFirstItem
 scoreboard players set @e[type=armor_stand,tag=Selection] count 0
 scoreboard players set @e[type=armor_stand,tag=Selection] gametime 0
 worldborder warning distance 0
-gamerule fallDamage false
-gamerule drowningDamage false
-gamerule fireDamage false
 execute as @a run function everytick:score_reset
 tag @e[type=armor_stand,tag=EditedSettings] remove EditedSettings
 tag @e[type=marker,tag=yellowjoinpad] add CancelJoin

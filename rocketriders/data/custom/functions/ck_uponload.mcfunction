@@ -6,7 +6,6 @@ tp @e[type=armor_stand,tag=rr_ctf] 25 184 -6
 tp @e[type=armor_stand,tag=rr_chase] 25 184 -6
 tp @e[type=armor_stand,tag=rr_duel] 25 184 -6
 
-tag @e[type=armor_stand,tag=Selection] add normalLast
 team add Lobby
 team add Blue
 team add Yellow

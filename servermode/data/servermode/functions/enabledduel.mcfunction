@@ -1,3 +1,4 @@
+execute unless score @e[type=armor_stand,tag=Selection,limit=1] servermode matches 2 run schedule function game:forcestop 2t append
 scoreboard players set @e[type=armor_stand,tag=Selection] servermode 2
 tag @e[type=armor_stand,tag=Selection] add noYZELO
 tag @e[type=armor_stand,tag=Selection] add stopIfEmpty
@@ -11,8 +12,8 @@ fill -57 198 84 -70 198 72 blackstone replace air
 execute as @a run function achievements:reset
 function game:forcestop
 execute as @e[type=armor_stand,tag=Selection] store result score @s SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_duel,limit=1] gamemodeID
+tag @e[type=armor_stand,tag=Selection] add duelLast
 clear @a
-schedule function game:forcestop 2t append
 kill @e[type=armor_stand,tag=ParkourLB]
 kill @e[type=area_effect_cloud,tag=ParkourLB]
 setblock -31 190 17 air

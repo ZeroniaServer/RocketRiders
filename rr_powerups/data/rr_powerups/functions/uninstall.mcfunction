@@ -1,4 +1,5 @@
 tag @e[type=armor_stand,tag=Selection,tag=powerupsLast,limit=1] add needsForceClear
+tag @e[type=armor_stand,tag=Selection,tag=powerupsLast,limit=1] remove powerupsLast
 function rr_powerups:disable
 execute if entity @e[type=armor_stand,tag=rr_powerups,limit=1] run kill @e[type=armor_stand,tag=rr_powerups,limit=1]
 scoreboard players reset * gamemodeID

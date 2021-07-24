@@ -1,4 +1,5 @@
 tag @e[type=armor_stand,tag=Selection,tag=normalLast,limit=1] add needsForceClear
+tag @e[type=armor_stand,tag=Selection,tag=normalLast,limit=1] remove normalLast
 function rr_normal:disable
 execute if entity @e[type=armor_stand,tag=rr_normal,limit=1] run kill @e[type=armor_stand,tag=rr_normal,limit=1]
 scoreboard players reset * gamemodeID

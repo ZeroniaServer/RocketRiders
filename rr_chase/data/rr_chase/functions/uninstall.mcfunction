@@ -1,4 +1,5 @@
 tag @e[type=armor_stand,tag=Selection,tag=chaseLast,limit=1] add needsForceClear
+tag @e[type=armor_stand,tag=Selection,tag=chaseLast,limit=1] remove chaseLast
 function rr_chase:disable
 execute if entity @e[type=armor_stand,tag=rr_chase,limit=1] run kill @e[type=armor_stand,tag=rr_chase,limit=1]
 bossbar remove rr_chase:lead

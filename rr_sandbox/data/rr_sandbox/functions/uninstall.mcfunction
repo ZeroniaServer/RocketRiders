@@ -1,4 +1,5 @@
 tag @e[type=armor_stand,tag=Selection,tag=sandboxLast,limit=1] add needsForceClear
+tag @e[type=armor_stand,tag=Selection,tag=sandboxLast,limit=1] remove sandboxLast
 function rr_sandbox:disable
 execute if entity @e[type=armor_stand,tag=rr_sandbox,limit=1] run kill @e[type=armor_stand,tag=rr_sandbox,limit=1]
 scoreboard objectives remove sandboxRandom

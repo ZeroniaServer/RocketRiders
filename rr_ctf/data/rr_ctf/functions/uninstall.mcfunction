@@ -1,4 +1,5 @@
 tag @e[type=armor_stand,tag=Selection,tag=ctfLast,limit=1] add needsForceClear
+tag @e[type=armor_stand,tag=Selection,tag=ctfLast,limit=1] remove ctfLast
 function rr_ctf:disable
 execute if entity @e[type=armor_stand,tag=rr_ctf,limit=1] run kill @e[type=armor_stand,tag=rr_ctf,limit=1]
 execute unless entity @e[type=armor_stand,tag=rr_sandbox,limit=1] run scoreboard objectives remove HasPickaxe

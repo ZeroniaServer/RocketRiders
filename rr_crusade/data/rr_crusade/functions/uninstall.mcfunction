@@ -1,4 +1,5 @@
 tag @e[type=armor_stand,tag=Selection,tag=crusadeLast,limit=1] add needsForceClear
+tag @e[type=armor_stand,tag=Selection,tag=crusadeLast,limit=1] remove crusadeLast
 function rr_crusade:disable
 execute if entity @e[type=armor_stand,tag=rr_crusade,limit=1] run kill @e[type=armor_stand,tag=rr_crusade,limit=1]
 scoreboard players reset * gamemodeID

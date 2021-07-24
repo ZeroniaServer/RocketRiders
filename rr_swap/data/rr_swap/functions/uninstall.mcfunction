@@ -1,4 +1,5 @@
 tag @e[type=armor_stand,tag=Selection,tag=swapLast,limit=1] add needsForceClear
+tag @e[type=armor_stand,tag=Selection,tag=swapLast,limit=1] remove swapLast
 function rr_swap:disable
 execute if entity @e[type=armor_stand,tag=rr_swap,limit=1] run kill @e[type=armor_stand,tag=rr_swap,limit=1]
 bossbar remove rr_swap:swap_progress

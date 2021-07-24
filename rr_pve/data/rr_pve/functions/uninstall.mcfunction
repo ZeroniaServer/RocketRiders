@@ -1,4 +1,4 @@
-tag @e[type=armor_stand,tag=Selection,tag=pveEnabled,limit=1] add needsForceClear
+tag @e[type=armor_stand,tag=Selection,tag=pveLast,limit=1] add needsForceClear
 function rr_pve:disable
 execute if entity @e[type=armor_stand,tag=rr_pve,limit=1] run kill @e[type=armor_stand,tag=rr_pve,limit=1]
 scoreboard players reset * gamemodeID

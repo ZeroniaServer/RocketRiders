@@ -36,4 +36,3 @@ execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdispl
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.blue
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * FlagDisp
-tag @s add ctfLast

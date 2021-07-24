@@ -24,4 +24,3 @@ execute if entity @s[scores={endtimer=1..}] run scoreboard players set @e[type=m
 execute if entity @s[scores={endtimer=1..}] run kill @e[type=bee]
 execute if entity @s[scores={endtimer=569..}] run kill @e[type=armor_stand,tag=BeeShieldDisplay]
 execute if entity @s[scores={endtimer=569..}] run kill @e[type=marker,tag=animBshield]
-tag @s add powerupsLast

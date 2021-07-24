@@ -21,6 +21,7 @@ execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true}]
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Normal ","color":"light_purple"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"In Sandbox Mode, players on each team receive items every so often to help them construct missiles and fly them out to the enemy base. The goal is still to destroy the enemy base and portal while protecting your own, but this time, you do it with your own missiles. (Note that players may not ride their missiles in this mode in order to prevent bridging.)","color":"white"}]}}]
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a run function modifiers:notifymodifiers
+execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @s add sandboxLast
 tag @e[type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners of active settings

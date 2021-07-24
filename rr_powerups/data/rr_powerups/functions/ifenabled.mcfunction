@@ -22,6 +22,7 @@ execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true}]
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Powerups ","color":"light_purple"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Stand on Powerup Platform for 3 seconds to capture it\n"},{"text":"- The team that controls the Platform gets Powerup Items\n"},{"text":"- The other team can send Crystals to explode the Platform\n"},{"text":"- The Platform becomes contested if both teams are on it\n"},{"text":"Powerup Items:\n","color":"dark_purple"},{"text":"Special Missiles, Tipped Arrows, Stinging Shield, Lava Splash, Trident, Elytra, Totem of Undying, Infinity Saber, Slap Fish"}]}}]
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a run function modifiers:notifymodifiers
+execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @s add powerupsLast
 tag @e[type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners of active settings

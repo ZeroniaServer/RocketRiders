@@ -7,7 +7,6 @@ execute if entity @s[scores={endtimer=1},tag=!doTying] run function game:endstat
 scoreboard players set QuickSwap swapside 0
 scoreboard players set SwapPlatformSec swapside 20
 scoreboard players set SwapPlatformTick swapside 0
-tag @s add swapLast
 bossbar set rr_swap:swap_progress players none
 kill @e[type=egg,tag=ICBM]
 kill @e[type=marker,tag=ICBMtracker]

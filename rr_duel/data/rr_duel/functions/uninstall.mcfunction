@@ -1,4 +1,4 @@
-tag @e[type=armor_stand,tag=Selection,tag=duelEnabled,limit=1] add needsForceClear
+tag @e[type=armor_stand,tag=Selection,tag=duelLast,limit=1] add needsForceClear
 function rr_duel:disable
 execute if entity @e[type=armor_stand,tag=rr_duel,limit=1] run kill @e[type=armor_stand,tag=rr_duel,limit=1]
 scoreboard objectives remove RoundsWon

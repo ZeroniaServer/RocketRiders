@@ -21,6 +21,7 @@ execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true}]
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Crusade ","color":"light_purple"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"In Cursade Mode, 2 teams fight using a variety of classes. Each class receives different items. Destroy the 2 knight structures on the sides of the base to expose the king structure at the front of the base. Destroy the king structure to win the game.","color":"white"}]}}]
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a run function modifiers:notifymodifiers
+execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @s add crusadeLast
 tag @e[type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners of active settings

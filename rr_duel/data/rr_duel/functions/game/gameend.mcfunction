@@ -3,7 +3,6 @@ clear @a[team=Blue] crossbow{nova:1b}
 clear @a[team=Yellow] #custom:clear
 clear @a[team=Yellow] crossbow{nova:1b}
 execute if entity @s[scores={endtimer=1}] run function game:endstats
-tag @s add duelLast
 
 execute if entity @s[scores={endtimer=2..}] run tag @a[team=Blue] remove InRanked
 execute if entity @s[scores={endtimer=2..}] run tag @a[team=Yellow] remove InRanked

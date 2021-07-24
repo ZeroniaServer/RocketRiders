@@ -32,6 +32,6 @@ execute if entity @s[scores={fakeendtimer=320}] run scoreboard players reset $hi
 execute if entity @s[scores={fakeendtimer=320}] run scoreboard players reset $tptracker VortexID
 execute if entity @s[scores={fakeendtimer=320}] run scoreboard players reset $count VortexID
 execute if entity @s[scores={fakeendtimer=320}] run scoreboard players add @s Rounds 1
-execute if entity @s[scores={fakeendtimer=320}] run tellraw @a[team=!Lobby] [{"text":"Beginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
+execute if entity @s[scores={fakeendtimer=320}] run tellraw @a[team=!Lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
 execute if entity @s[scores={fakeendtimer=320}] as @a[team=!Lobby] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
 execute if entity @s[scores={fakeendtimer=320}] run function rr_duel:arenaclear/areaclear

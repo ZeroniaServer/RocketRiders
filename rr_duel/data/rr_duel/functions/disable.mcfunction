@@ -9,4 +9,5 @@ tag @e[type=armor_stand,tag=Selection] remove customBossbar
 tag @e[type=armor_stand,tag=Selection] remove customSaberMsg
 tag @e[type=armor_stand,tag=Selection] remove customLeaveHandling
 tag @e[type=armor_stand,tag=Selection] remove featheredOff
+tag @e[type=armor_stand,tag=Selection] remove customSpawns
 tag @e[type=armor_stand,tag=Selection] add switchGamemodes

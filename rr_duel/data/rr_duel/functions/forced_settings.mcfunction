@@ -136,6 +136,7 @@ execute if entity @e[type=marker,tag=Thunderbolt,tag=SelRRNG] run tellraw @a [""
 execute unless entity @e[type=armor_stand,tag=Selection,tag=!rngAux,tag=!rngWar] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"red","bold":false},{"selector":"@e[type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
 
 kill @e[type=marker,tag=RankedRNG]
+tellraw @a [""]
 
 #Enable/disable heavys
 tag @s[tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] add heavyOff

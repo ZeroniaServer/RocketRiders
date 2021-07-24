@@ -43,7 +43,10 @@ execute if entity @s[scores={count=600}] run team join Yellow Yellow:
 execute if entity @s[scores={count=600}] run bossbar set rr:startgame name ["",{"text":"A 1v1 Duel match is currently in progress!","color":"dark_red"}]
 execute if entity @s[scores={count=600}] run bossbar set rr:startgame color red
 execute if entity @s[scores={count=600}] run scoreboard players set @s Rounds 1
-execute if entity @s[scores={count=600}] run tellraw @a[team=!Lobby] [{"text":"Beginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
-execute if entity @s[scores={count=600}] as @a[team=!Lobby] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
+execute if entity @s[scores={count=600}] run tellraw @a[team=!Lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
+execute if entity @s[scores={count=600}] run tp @a[team=Yellow] 12 64 66 -180 0
+execute if entity @s[scores={count=600}] run tp @a[team=Blue] 12 64 -66 0 0
+execute if entity @s[scores={count=600}] as @a[team=Yellow] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
+execute if entity @s[scores={count=600}] as @a[team=Blue] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
 execute if entity @s[scores={count=600}] run function rr_duel:forced_settings

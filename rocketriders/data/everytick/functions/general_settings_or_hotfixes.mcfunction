@@ -143,3 +143,6 @@ execute if entity @s[scores={servermode=2}] run item replace entity @a[team=Lobb
 execute if entity @s[scores={servermode=1..}] as @a at @s if predicate tutorial:in_modification run tellraw @s ["",{"text":"You shouldn't be here!","color":"red"}]
 execute if entity @s[scores={servermode=1..}] as @a[team=!Spectator] at @s if predicate tutorial:in_modification run function custom:leave
 execute if entity @s[scores={servermode=1..}] as @a[team=Spectator] at @s if predicate tutorial:in_modification run tp @s 12 100 0.5 90 90
+
+#Servermode quick fix for Duel Mode
+tag @s[scores={servermode=2}] add duelLast

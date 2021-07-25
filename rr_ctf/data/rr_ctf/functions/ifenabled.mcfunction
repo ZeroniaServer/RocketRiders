@@ -1,4 +1,4 @@
-#disable arrows and enable canopies
+#disable arrows and enable canopies/fireballs
 tag @s[tag=rngArrows] add arrowsWasOn
 tag @s remove rngArrows
 tag @s[tag=!rngCanopy] add canopyWasOff

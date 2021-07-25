@@ -22,6 +22,8 @@ tag @e[type=armor_stand,tag=Selection,tag=arrowsWasOn] add rngArrows
 tag @e[type=armor_stand,tag=Selection] remove arrowsWasOn
 tag @e[type=armor_stand,tag=Selection,tag=canopyWasOff] remove rngCanopy
 tag @e[type=armor_stand,tag=Selection] remove canopyWasOff
+tag @e[type=armor_stand,tag=Selection,tag=fireballWasOff] remove rngFireball
+tag @e[type=armor_stand,tag=Selection] remove fireballWasOff
 tag @e[type=armor_stand,tag=Selection,tag=utilWasOff] remove rngUtil
 tag @e[type=armor_stand,tag=Selection] remove utilWasOff
 tag @e[type=armor_stand,tag=Selection] remove customSaberMsg

@@ -7,8 +7,10 @@ execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] 
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] run function servermode:givegear
 function game:saberyellow
 
-#Tag Removal
+#Joinpads and Tag Removal
+tp @a[tag=JoinBlue] -95 202 60 0 0
 tag @a remove JoinBlue
+tp @a[tag=JoinYellow] -95 202 96 180 0
 tag @a remove JoinYellow
 
 #Bossbar

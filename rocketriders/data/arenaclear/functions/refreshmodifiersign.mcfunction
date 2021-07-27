@@ -38,6 +38,7 @@ execute if entity @s[scores={modifierID=7},tag=!SurpriseEgg,tag=!settingsLocked]
 execute if entity @s[scores={modifierID=8},tag=WindDown,tag=!Minute,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=8},tag=!WindDown,tag=!Minute,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=8},tag=Minute,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=8},tag=WindDown,tag=WindDownForce] run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #Splash Streams
 execute if entity @s[scores={modifierID=9},tag=SplashStreams,tag=!SplashStreamsOff,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
@@ -60,4 +61,4 @@ execute if entity @s[scores={modifierID=13},tag=DoublePortal,tag=!noPortal,tag=!
 execute if entity @s[scores={modifierID=13},tag=!DoublePortal,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #All locked
-execute if entity @s[tag=settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[tag=settingsLocked] unless entity @s[scores={modifierID=8},tag=WindDownForce] run setblock -69 191 75 crimson_wall_sign[facing=east]

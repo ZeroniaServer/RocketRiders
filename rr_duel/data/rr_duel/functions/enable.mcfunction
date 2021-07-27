@@ -11,6 +11,8 @@ tag @e[type=armor_stand,tag=Selection] add customSaberMsg
 tag @e[type=armor_stand,tag=Selection] add customLeaveHandling
 tag @e[type=armor_stand,tag=Selection] add featheredOff
 tag @e[type=armor_stand,tag=Selection] add customSpawns
+tag @e[type=armor_stand,tag=Selection] add WindDownForce
+tag @e[type=armor_stand,tag=Selection] add WindDown
 
 tag @e[type=armor_stand,tag=Selection,tag=Molerat] add WasMolerat
 tag @e[type=armor_stand,tag=Selection,tag=Molerat] remove Molerat

@@ -14,3 +14,9 @@ execute as @e[type=arrow,tag=!FireArrow] at @s if block ^ ^ ^-0.1 #leaves run se
 execute as @e[type=arrow,tag=!FireArrow] at @s if block ^ ^ ^-0.1 #leaves run tag @s add FireArrow
 execute as @e[type=arrow,tag=!FireArrow] at @s if block ^ ^ ^0.1 #leaves run setblock ^ ^ ^0.1 fire
 execute as @e[type=arrow,tag=!FireArrow] at @s if block ^ ^ ^0.1 #leaves run tag @s add FireArrow
+
+#Banners (Canopy log surrounders)
+execute as @e[type=arrow,tag=!FireArrow] at @s if block ^ ^ ^-0.1 #banners run setblock ^ ^ ^-0.1 fire
+execute as @e[type=arrow,tag=!FireArrow] at @s if block ^ ^ ^-0.1 #banners run tag @s add FireArrow
+execute as @e[type=arrow,tag=!FireArrow] at @s if block ^ ^ ^0.1 #banners run setblock ^ ^ ^0.1 fire
+execute as @e[type=arrow,tag=!FireArrow] at @s if block ^ ^ ^0.1 #banners run tag @s add FireArrow

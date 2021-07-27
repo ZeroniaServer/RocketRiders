@@ -28,8 +28,9 @@ execute as @e[type=fireball,tag=FireballYellow,tag=!Still,tag=NormalFireball] at
 #Fireballs poof Canopies
 execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s if entity @e[type=marker,tag=BluePlatform,distance=..2,scores={PlatTime=3..400}] run tag @e[type=marker,tag=BluePlatform,distance=..2,scores={PlatTime=3..400}] add FirePoof
 execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..2,scores={PlatTime=3..400}] run tag @e[type=marker,tag=YellowPlatform,distance=..2,scores={PlatTime=3..400}] add FirePoof
-execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s store result score @s CmdData run fill ~-0.5 ~-0.5 ~-0.5 ~0.5 ~0.5 ~0.5 fire replace #minecraft:leaves
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s store result score @s CmdData run fill ~-1.4 ~-1.4 ~-1.4 ~1.4 ~1.4 ~1.4 fire replace #minecraft:banners
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s store result score @s CmdData run fill ~-1.4 ~-1.4 ~-1.4 ~1.4 ~1.4 ~1.4 fire replace #minecraft:leaves
 execute as @e[type=fireball,tag=NormalFireball,tag=!Still,scores={CmdData=1..}] at @s run playsound entity.blaze.shoot master @a ~ ~ ~ 2 1
-execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s store result score @s CmdData run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire replace oak_log
+execute as @e[type=fireball,tag=NormalFireball,tag=!Still] at @s store result score @s CmdData run fill ~-1.4 ~-1.4 ~-1.4 ~1.4 ~1.4 ~1.4 fire replace oak_log
 execute as @e[type=fireball,tag=NormalFireball,tag=!Still,scores={CmdData=1..}] at @s run playsound entity.blaze.shoot master @a ~ ~ ~ 2 1
 scoreboard players reset @e[type=fireball,tag=NormalFireball] CmdData

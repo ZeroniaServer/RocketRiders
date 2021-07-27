@@ -4,7 +4,6 @@ clear @a[team=Blue] #rr_powerups:clear
 clear @a[team=Yellow] #custom:clear
 clear @a[team=Yellow] crossbow{nova:1b}
 clear @a[team=Yellow] #rr_powerups:clear
-execute if entity @s[scores={endtimer=1}] run function game:endsabers
 execute as @e[type=marker,tag=captureMiddle] at @s run function rr_powerups:everytick/powerup_platform
 execute if entity @s[scores={endtimer=1},tag=YellowWon] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{HideFlags:127,Unbreakable:1,display:{color:1247871},Enchantments:[{id:"binding_curse",lvl:1}]} 1
 execute if entity @s[scores={endtimer=1},tag=BlueWon] run item replace entity @a[team=Yellow] armor.chest with leather_chestplate{HideFlags:127,Unbreakable:1,display:{color:16768000},Enchantments:[{id:"binding_curse",lvl:1}]} 1

@@ -59,5 +59,6 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=48}] run title @
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=49}] run title @a[tag=Loser] subtitle ["",{"text":"It's coming home!","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=50}] run title @a[tag=Loser] subtitle ["",{"text":"It's coming ","color":"red"},{"text":"h","color":"red","obfuscated":"true"},{"text":"Rome!","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=51}] run title @a[tag=Loser] subtitle ["",{"text":"L","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=52}] run title @a[tag=Loser] subtitle ["",{"text":"The IRS got you!","color":"red"}]
 
 kill @e[type=marker,tag=RandomLossSplash]

@@ -7,3 +7,4 @@ tag @e[type=armor_stand,tag=Selection] add tyingOff
 tag @e[type=armor_stand,tag=Selection] add customBossbar
 tag @e[type=armor_stand,tag=Selection] add noTeamBalance
 tag @e[type=armor_stand,tag=Selection] add onlyBlue
+tag @e[type=armor_stand,tag=Selection] add saberMode

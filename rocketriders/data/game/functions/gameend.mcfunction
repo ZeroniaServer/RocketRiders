@@ -9,8 +9,9 @@ tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
 execute if entity @s[scores={endtimer=1}] run effect clear @a[team=Blue]
 execute if entity @s[scores={endtimer=1}] run effect clear @a[team=Yellow]
-execute if entity @s[scores={endtimer=1}] run clear @a[team=Blue] bow
-execute if entity @s[scores={endtimer=1}] run clear @a[team=Yellow] bow
+execute if entity @s[scores={endtimer=1},tag=saberMode] run clear @a[team=Blue] bow
+execute if entity @s[scores={endtimer=1},tag=saberMode] run clear @a[team=Yellow] bow
+execute if entity @s[scores={endtimer=1},tag=saberMode] run function game:endsabers
 execute if entity @s[tag=BlueWon] run effect give @a[team=Yellow] weakness 100000 255 true
 execute if entity @s[tag=YellowWon] run effect give @a[team=Blue] weakness 100000 255 true
 execute if entity @s[scores={endtimer=1..},tag=!Sonar] run effect give @a night_vision 1000000 100 true

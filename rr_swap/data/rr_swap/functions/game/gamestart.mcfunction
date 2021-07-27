@@ -1,11 +1,9 @@
 #Items
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function rr_swap:baseswap/gear
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:giveswapgear
-execute as @a[tag=JoinBlue] run function game:saberblue
 
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] run function rr_swap:baseswap/gear
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] run function servermode:giveswapgear
-execute as @a[tag=JoinYellow] run function game:saberyellow
 
 #Tag Removal
 tag @a remove JoinBlue

@@ -18,7 +18,7 @@ execute if entity @s[tag=Countdown] run scoreboard players set @e[type=armor_sta
 #Items
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:givegear
-function game:saberblue
+execute as @a[tag=JoinBlue] run function game:saberblue
 
 #Tag Removal
 tag @a remove JoinBlue

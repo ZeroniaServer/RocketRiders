@@ -11,7 +11,6 @@ execute unless entity @s[tag=SMCustom] run function rr_pve:tip
 function rr_pve:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_pve:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_pve:game/gameend
-function everytick:saberfix
 function everytick:no_drop
 
 #reset

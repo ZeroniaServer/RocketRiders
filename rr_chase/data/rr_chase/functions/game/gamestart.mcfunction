@@ -13,7 +13,7 @@ execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=blue
 #Items
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:givegear
-function game:saberblue
+execute as @a[tag=JoinBlue] run function game:saberblue
 execute if entity @s[tag=GameStarted] as @a[tag=JoinBlue] run function items:util/givearrows
 
 #Tag Removal

@@ -12,3 +12,5 @@ tag @s remove doFireballPortals
 
 function arenaclear:baseplacement
 function arenaclear:detailplacement
+
+tag @s add duelLast

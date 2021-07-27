@@ -10,6 +10,7 @@ give @s[scores={HasArrows=0},tag=fullOffhand] arrow{display:{Name:'{"text":"Arro
 item replace entity @s[scores={HasArrows=0},tag=!fullOffhand] weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 1
 execute if entity @s[scores={HasArrows=0},tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 clear @s[tag=!Infinity] bow
+give @s[tag=!Infinity] bow{display:{Name:'{"translate":"Infinity Saber","color":"dark_purple","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks"}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1},{id:"sharpness",lvl:5},{id:"infinity",lvl:1}]}
 tag @s[tag=!Infinity] add Infinity
 tag @e[type=armor_stand,tag=Selection] add givenInfinity
 scoreboard players set $infinity PowerupDisplay 30

@@ -11,7 +11,6 @@ execute unless entity @s[tag=SMCustom] run function rr_sandbox:tip
 function rr_sandbox:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_sandbox:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_sandbox:game/gameend
-function rr_sandbox:everytick/pickaxefix
 function everytick:no_drop
 
 #reset

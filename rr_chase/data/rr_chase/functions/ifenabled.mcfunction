@@ -18,7 +18,6 @@ execute unless entity @s[tag=SMCustom] run function rr_chase:tip
 function rr_chase:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_chase:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_chase:game/gameend
-function everytick:saberfix
 function everytick:no_drop
 
 #disable yellow

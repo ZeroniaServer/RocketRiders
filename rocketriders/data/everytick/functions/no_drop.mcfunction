@@ -1,7 +1,5 @@
 ##Utility function for handling item dropping
 
-#Kills sabers (A proper system exists in everytick:saberfix)
-kill @e[type=item,nbt={Item:{id:"minecraft:bow"}}]
 #Kills books
 kill @e[type=item,nbt={Item:{id:"minecraft:written_book"}}]
 #Kills parkour controls

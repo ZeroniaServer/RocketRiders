@@ -22,7 +22,7 @@ execute unless entity @s[tag=SMCustom] run function rr_ctf:tip
 function rr_ctf:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_ctf:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_ctf:game/gameend
-function rr_ctf:everytick/pickaxefix
+# function rr_ctf:everytick/pickaxefix
 function everytick:no_drop
 
 #pregame

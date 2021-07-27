@@ -11,7 +11,7 @@ execute if entity @s[tag=!givenDuplex] run summon marker 0 0 0 {Tags:["rngDuplex
 execute if entity @s[tag=!givenBroad] run summon marker 0 0 0 {Tags:["rngBroad","rng2"]}
 tag @e[type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 
-#> 
+#>
 execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=item] if data entity @s {Item:{id:"minecraft:skeleton_spawn_egg"}} run kill @s
 execute as @e[type=marker,tag=rngSelected,tag=rngHyper] as @e[type=item] if data entity @s {Item:{id:"minecraft:turtle_spawn_egg"}} run kill @s
 execute as @e[type=marker,tag=rngSelected,tag=rngLavaSplash] as @e[type=item] if data entity @s {Item:{id:"minecraft:lingering_potion"}} run kill @s
@@ -71,7 +71,6 @@ execute as @e[type=marker,tag=rngSelected,tag=rngBroad] as @e[type=marker,scores
 
 #hotbar full exceptions
 execute if entity @e[type=marker,tag=rngSelected,tag=rngInfinity] run tag @s add noHotbarWarn
-execute if entity @e[type=marker,tag=rngSelected,tag=rngInfinity] run function rr_powerups:everytick/saberfix
 execute if entity @e[type=marker,tag=rngSelected,tag=rngElytra] run tag @s add noHotbarWarn
 
 kill @e[type=marker,tag=rng2]

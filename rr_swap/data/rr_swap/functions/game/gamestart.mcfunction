@@ -16,4 +16,6 @@ execute if entity @s[tag=EditedSettings] unless entity @a[team=Yellow] run funct
 execute if entity @s[scores={count=600},tag=!GameEnd] run scoreboard players set QuickSwap swapside 0
 execute if entity @s[scores={count=600},tag=!GameEnd] run scoreboard players set SwapPlatformSec swapside 60
 execute if entity @s[scores={count=600},tag=!GameEnd] run scoreboard players set SwapPlatformTick swapside 0
+execute if entity @s[scores={count=600},tag=!GameEnd] run function rr_swap:items/darktetrisreset
+execute if entity @s[scores={count=600},tag=!GameEnd] run function rr_swap:items/lighttetrisreset
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

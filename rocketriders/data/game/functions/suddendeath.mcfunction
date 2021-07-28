@@ -62,7 +62,8 @@ execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace enti
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[team=Blue] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
 #Halves the Item Delay (more intense gameplay)
-scoreboard players operation @s[scores={SDtime=1,MaxItemTime=2..}] MaxItemTime /= 2 MaxItemSec
+scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /= 2 MaxItemSec
+scoreboard players set @s[scores={SDtime=1,MaxItemTime=..1}] MaxItemTime 2
 execute if entity @s[scores={SDtime=1}] run scoreboard players set @s RandomItem -3
 execute if entity @s[scores={SDtime=1}] run scoreboard players operation @s RandomItem += @s MaxItemTime
 execute if entity @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute] RandomItem 1197

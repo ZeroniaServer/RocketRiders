@@ -85,7 +85,7 @@ execute as @e[type=marker,scores={vortexBoom=1}] at @s run playsound entity.shul
 execute as @e[type=marker,scores={vortexBoom=1}] at @s run playsound minecraft:block.sculk_sensor.clicking master @a ~ ~ ~ 1 1
 tag @e[type=marker,tag=Vortex,scores={vortexBoom=1}] add origin
 scoreboard players set @e[type=marker,tag=Vortex,scores={vortexBoom=1}] vortexBoom 2
-execute as @e[type=marker,tag=Vortex] at @s unless block ~ ~ ~ air unless block ~ ~ ~ nether_portal run tag @s add originboom
+execute as @e[type=marker,tag=Vortex] at @s unless block ~ ~ ~ #custom:air unless block ~ ~ ~ moving_piston unless block ~ ~ ~ nether_portal run tag @s add originboom
 execute as @e[type=arrow] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[type=tnt,nbt={Fuse:1s}] at @s run tag @e[type=marker,tag=Vortex,distance=..5,limit=1] add originboom
 execute as @e[type=firework_rocket,tag=BlueNova] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom

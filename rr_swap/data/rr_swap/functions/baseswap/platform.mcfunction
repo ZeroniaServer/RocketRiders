@@ -5,6 +5,9 @@ scoreboard players add SwapPlatformTick swapside 1
 execute if score SwapPlatformTick swapside matches 20 run scoreboard players remove SwapPlatformSec swapside 1
 execute if score SwapPlatformTick swapside matches 20 run scoreboard players set SwapPlatformTick swapside 0
 
+execute if entity @e[type=armor_stand,tag=Selection,scores={SDtime=1..}] unless score QuickSwap swapside matches 1 run scoreboard players set SwapSide swapside 0
+execute if entity @e[type=armor_stand,tag=Selection,scores={SDtime=1..}] unless score QuickSwap swapside matches 1 run scoreboard players set SwapPlatform swapside 0
+execute if entity @e[type=armor_stand,tag=Selection,scores={SDtime=1..}] unless score QuickSwap swapside matches 1 run scoreboard players set BossbarA swapside 0
 execute if entity @e[type=armor_stand,tag=Selection,scores={SDtime=1..}] run scoreboard players set QuickSwap swapside 1
 
 bossbar set rr_swap:swap_progress players @a[team=!Lobby]

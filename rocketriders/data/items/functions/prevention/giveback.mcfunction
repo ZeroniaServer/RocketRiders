@@ -87,9 +87,9 @@ tag @a[tag=BackHyper] remove fullHotbar
 execute as @a[tag=BackHyper] at @s run function items:missile/special/givehyper
 
 #Bullet
-scoreboard players remove @a[tag=BackBullet] BulletSpawned 1
-tag @a[tag=BackBullet] remove fullHotbar
-execute as @a[tag=BackBullet] at @s run function items:missile/special/givebull
+scoreboard players remove @a[tag=BackBull] BulletSpawned 1
+tag @a[tag=BackBull] remove fullHotbar
+execute as @a[tag=BackBull] at @s run function items:missile/special/givebull
 
 #Duplex
 scoreboard players remove @a[tag=BackDuplex] DuplexSpawned 1
@@ -141,7 +141,7 @@ tag @a remove BackCitadel
 tag @a remove BackGemi
 tag @a remove BackLift
 tag @a remove BackHyper
-tag @a remove BackBullet
+tag @a remove BackBull
 tag @a remove BackDuplex
 tag @a remove BackBroad
 tag @a remove BackSurprise

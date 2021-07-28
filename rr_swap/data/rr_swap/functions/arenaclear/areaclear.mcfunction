@@ -8,3 +8,4 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardco
 
 execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/darktetrisreset
 execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/lighttetrisreset
+scoreboard players reset * swapside

@@ -1,2 +1,0 @@
-execute as @a[team=Blue] run summon item 12 64 -66 {Tags:["SBitem"],Item:{id:"minecraft:firework_rocket",Count:32b,tag:{display:{Name:'{"translate":"Fireworks","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"For propulsion"}']},Fireworks:{Flight:3b}}}}
-execute as @a[team=Yellow] run summon item 12 64 66 {Tags:["SBitem"],Item:{id:"minecraft:firework_rocket",Count:32b,tag:{display:{Name:'{"translate":"Fireworks","color":"yellow","bold":true,"italic":false}',Lore:['{"translate":"For propulsion"}']},Fireworks:{Flight:3b}}}}

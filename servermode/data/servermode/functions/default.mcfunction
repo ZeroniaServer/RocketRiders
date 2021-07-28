@@ -9,7 +9,7 @@ execute as @a run function achievements:roots
 clear @a
 function game:forcestop
 execute as @e[type=armor_stand,tag=Selection,limit=1] store result score @s SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_normal,limit=1] gamemodeID
-schedule function arenaclear:forceareaclear 2t append
+schedule function servermode:forceclear 3t append
 function lobby:parkour/parkoursetup
 function lobby:credits/stop
 function arenaclear:unhidemodroom

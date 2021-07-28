@@ -23,5 +23,9 @@ setblock -31 189 17 air
 execute as @e[type=armor_stand,tag=Selection] run function lobby:credits/stop
 fill -29 196 22 -33 196 22 air
 function game:forcestop
+execute as @e[type=armor_stand,tag=Selection] run function arenaclear:globaldefaults
+execute as @e[type=armor_stand,tag=Selection] run function modifiers:disablemodifiers
+execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshcustomizer
+execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsigns
 function arenaclear:hidemodroom
 function servermode:forcenormal

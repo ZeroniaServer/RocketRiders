@@ -12,7 +12,6 @@ fill -57 198 84 -70 198 72 blackstone replace air
 execute as @a run function achievements:reset
 function game:forcestop
 execute as @e[type=armor_stand,tag=Selection] store result score @s SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_duel,limit=1] gamemodeID
-tag @e[type=armor_stand,tag=Selection] add duelLast
 clear @a
 kill @e[type=armor_stand,tag=ParkourLB]
 kill @e[type=area_effect_cloud,tag=ParkourLB]

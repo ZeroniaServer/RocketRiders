@@ -95,7 +95,7 @@ execute if entity @s[scores={endtimer=570}] run gamerule mobGriefing false
 #Server mode specifics
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=0}] run fill -57 201 84 -70 201 72 air replace barrier
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=1},tag=!forcenormal] run function servermode:makesets
-execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=2}] run function arenaclear:areaclear
+execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=2}] run schedule function servermode:forceclear 3t
 execute if entity @s[scores={endtimer=570..}] run tag @a remove Winner
 execute if entity @s[scores={endtimer=570..}] run tag @a remove Loser
 tag @s[scores={endtimer=570..}] remove BlueWon

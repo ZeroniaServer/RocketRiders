@@ -9,7 +9,6 @@ tag @e[type=armor_stand,tag=Selection,tag=SplashStreamsWasOn] add SplashStreams
 tag @e[type=armor_stand,tag=Selection] remove SplashStreamsWasOn
 tag @e[type=armor_stand,tag=Selection] remove vortexOverride
 tag @e[type=armor_stand,tag=Selection] remove respawnFlag
-tag @e[type=armor_stand,tag=Selection] remove saberMode
 
 #special item enabling
 tag @e[type=armor_stand,tag=Selection] remove normalLocked

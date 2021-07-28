@@ -21,6 +21,9 @@ execute as @a[gamemode=!spectator] unless entity @s[team=!Yellow,team=!Blue] if 
 ##Game time
 scoreboard players add @s gametime 1
 
+##Put out players on fire
+execute if entity @s[tag=GameStarted,scores={gametime=1..2}] as @a unless entity @s[team=!Yellow,team=!Blue] if entity @s[predicate=custom:is_on_fire] at @s run function game:putoutfire
+
 ##Enable fall damage (considers modifiers)
 execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=10}] run gamerule fallDamage true
 

@@ -16,4 +16,5 @@ tag @e[type=armor_stand,tag=Selection] add noPortal
 tag @e[type=armor_stand,tag=Selection] add canopyStack
 tag @e[type=armor_stand,tag=Selection] add customPrevention
 tag @e[type=armor_stand,tag=Selection] add customObsidian
+tag @e[type=armor_stand,tag=Selection] add noSabers
 tag @e[type=armor_stand,tag=Selection] add respawnFlag

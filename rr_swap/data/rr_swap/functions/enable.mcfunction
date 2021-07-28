@@ -7,4 +7,3 @@ tag @e[type=armor_stand,tag=Selection,tag=SplashStreams] add SplashStreamsWasOn
 tag @e[type=armor_stand,tag=Selection] add SplashStreamsOff
 tag @e[type=armor_stand,tag=Selection] add vortexOverride
 tag @e[type=armor_stand,tag=Selection] add respawnFlag
-tag @e[type=armor_stand,tag=Selection] add saberMode

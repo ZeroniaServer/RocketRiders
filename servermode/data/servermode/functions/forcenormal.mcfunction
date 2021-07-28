@@ -8,9 +8,6 @@ scoreboard players set @e[type=armor_stand,tag=Selection,limit=1,scores={serverm
 scoreboard players set @e[type=armor_stand,tag=Selection,limit=1,scores={servermode=1}] BottomDeco 1
 scoreboard players set @e[type=armor_stand,tag=Selection,limit=1,scores={servermode=1}] PortalDeco 1
 tag @e[type=armor_stand,tag=Selection,limit=1,scores={servermode=1}] add normalLast
-tag @e[type=armor_stand,tag=Selection,limit=1,scores={servermode=1}] add normalLast
-tag @e[type=armor_stand,tag=Selection,limit=1,scores={servermode=1}] add saberMode
-
 tag @e[type=armor_stand,tag=Selection,limit=1,scores={servermode=1}] remove ServerModeVoting
 
 execute as @e[type=armor_stand,tag=Selection,limit=1,scores={servermode=1}] run schedule function servermode:forceclear 2t

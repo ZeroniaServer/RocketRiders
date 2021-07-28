@@ -7,5 +7,4 @@ tag @e[type=armor_stand,tag=Selection] remove tyingOff
 tag @e[type=armor_stand,tag=Selection] remove customBossbar
 tag @e[type=armor_stand,tag=Selection] remove noTeamBalance
 tag @e[type=armor_stand,tag=Selection] remove onlyBlue
-tag @e[type=armor_stand,tag=Selection] remove saberMode
 tag @e[type=armor_stand,tag=Selection] add switchGamemodes

@@ -87,6 +87,7 @@ tag @e[type=marker,tag=Vortex,scores={vortexBoom=1}] add origin
 scoreboard players set @e[type=marker,tag=Vortex,scores={vortexBoom=1}] vortexBoom 2
 execute as @e[type=marker,tag=Vortex] at @s unless block ~ ~ ~ #custom:air unless block ~ ~ ~ moving_piston unless block ~ ~ ~ nether_portal run tag @s add originboom
 execute as @e[type=arrow] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
+execute as @e[type=trident] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[type=tnt,nbt={Fuse:1s}] at @s run tag @e[type=marker,tag=Vortex,distance=..5,limit=1] add originboom
 execute as @e[type=firework_rocket,tag=BlueNova] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[type=armor_stand,tag=bluenovatracker] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
@@ -137,6 +138,7 @@ execute as @e[type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s r
 execute if entity @s[tag=!Explosive] as @e[type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:2,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=Explosive] as @e[type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:4,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @e[type=marker,scores={vortexBoom=10}] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
+execute as @e[type=marker,scores={vortexBoom=10}] at @s run kill @e[type=trident,distance=..2,limit=1,sort=nearest]
 execute as @e[type=marker,scores={vortexBoom=10}] at @s run kill @e[type=firework_rocket,tag=BlueNova,distance=..2,limit=1,sort=nearest]
 execute as @e[type=marker,scores={vortexBoom=10}] at @s run kill @e[type=firework_rocket,tag=YellowNova,distance=..2,limit=1,sort=nearest]
 execute as @e[type=marker,scores={vortexBoom=14..}] at @s run kill @s

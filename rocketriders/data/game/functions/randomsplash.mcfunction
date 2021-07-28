@@ -48,7 +48,7 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=34}] run title @a su
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=35}] run title @a subtitle ["",{"text":"Muscle ELO","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=36}] run title @a subtitle ["",{"text":"If you have to ask, it's a feature!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=37}] run title @a subtitle ["",{"text":"3 billion devices use Java!","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=38}] run title @a subtitle ["",{"text":"java.lang.NullPointerException: null","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=38}] run title @a subtitle ["",{"text":"Beginning phase 1...","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=39}] run title @a subtitle ["",{"text":"Canopies are broken again!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=40}] run title @a subtitle ["",{"text":"go to bed YZERO","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=41}] run title @a subtitle ["",{"text":"chronos bad","color":"green"}]

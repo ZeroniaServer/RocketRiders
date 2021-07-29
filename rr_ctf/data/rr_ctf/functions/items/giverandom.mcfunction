@@ -7,6 +7,7 @@
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
 tag @a[tag=!fullHotbar,tag=cursorItem,scores={invCount=8..}] add fullHotbar
 tag @a[tag=fullHotbar,tag=!cursorItem,scores={invCount=..8}] remove fullHotbar
+tag @a[tag=fullHotbar,tag=cursorItem,scores={invCount=..7}] remove fullHotbar
 
 ##UUID randomizer - pick canopy or select other item
 #Generate random number

@@ -7,8 +7,8 @@ execute as @p[team=Blue,tag=currentTP,tag=!canopyTP] run tag @s remove threwCano
 execute as @p[team=Blue,tag=currentTP] run tag @s add canopyTP
 
 #Reset the motion before/after teleporting (thanks to @dragonmaster95 for the suggestion!)
-execute as @p[team=Blue,tag=currentTP] if entity @e[type=marker,tag=BluePlatform,scores={PlatTime=1..3},limit=1,tag=currentTP] run tp @s @s
-execute as @p[team=Blue,tag=currentTP] if entity @e[type=marker,tag=BluePlatform,scores={PlatTime=40..41},limit=1,tag=currentTP] run tp @s @s
+execute as @p[team=Blue,tag=currentTP] if entity @e[type=marker,tag=BluePlatform,scores={PlatTime=1..5},limit=1,tag=currentTP] run tp @s @s
+execute as @p[team=Blue,tag=currentTP] if entity @e[type=marker,tag=BluePlatform,scores={PlatTime=36..41},limit=1,tag=currentTP] run tp @s @s
 
 #Canopy forgets owner upon throwing new pearl
 execute as @p[team=Blue,tag=currentTP,tag=canopyTP,tag=threwCanopy] at @s run scoreboard players reset @e[type=marker,tag=BluePlatform,scores={PlatTime=1..40},limit=1,tag=currentTP] pearlOwnerUUID

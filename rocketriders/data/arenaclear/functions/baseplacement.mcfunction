@@ -3,32 +3,10 @@
 ## General function used by other gamemodes ##
 ##############################################
 
-#Clear pregame powerups platform and mini platforms and castles
-fill -101 195 65 -89 201 64 minecraft:blue_stained_glass
-fill -89 201 63 -101 195 62 minecraft:cyan_stained_glass
-fill -101 201 60 -89 195 61 minecraft:white_stained_glass
-fill -89 195 91 -101 201 92 minecraft:yellow_stained_glass
-fill -101 201 93 -89 195 94 minecraft:orange_stained_glass
-fill -89 201 95 -101 195 96 minecraft:white_stained_glass
-fill -101 195 97 -89 201 97 air
-fill -95 201 97 -95 195 97 minecraft:obsidian
-setblock -96 195 97 fire
-setblock -94 195 97 fire
-fill -89 195 59 -101 201 59 air
-fill -95 195 59 -95 201 59 minecraft:obsidian
-setblock -94 195 59 fire
-setblock -96 195 59 fire
-fill -89 200 72 -101 202 85 air
-
+#Clear pregame powerups platform and mini platforms
 fill -92 200 81 -98 200 75 air
 fill -94 203 57 -96 203 55 air
 fill -96 203 99 -94 203 101 air
-fill -101 202 60 -89 202 96 air
-fill -101 200 85 -99 202 85 air
-fill -91 200 85 -89 202 85 air
-fill -101 200 85 -99 202 84 air
-fill -91 200 85 -89 202 84 air
-fill -89 200 71 -101 201 72 air
 
 #Clear some more decorations
 fill -14 64 -66 38 80 -52 air

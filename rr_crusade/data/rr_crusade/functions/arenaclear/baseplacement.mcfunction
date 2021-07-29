@@ -107,4 +107,4 @@ fill 4 57 -33 4 63 -33 ladder[facing=east]
 
 
 #> Bridges
-function rr_crusade:arenaclearbridgeplacement
+function rr_crusade:arenaclear/bridgeplacement

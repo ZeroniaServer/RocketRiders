@@ -7,6 +7,7 @@
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
 tag @a[tag=!fullHotbar,tag=cursorItem,scores={invCount=8..}] add fullHotbar
 tag @a[tag=fullHotbar,tag=!cursorItem,scores={invCount=..8}] remove fullHotbar
+tag @a[tag=fullHotbar,tag=cursorItem,scores={invCount=..7}] remove fullHotbar
 
 ##Select item
 function items:rng

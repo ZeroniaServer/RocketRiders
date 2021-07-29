@@ -72,7 +72,9 @@ tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand
 
 #Full hotbar check
 tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
-tag @a[tag=fullHotbar,scores={invCount=..8}] remove fullHotbar
+tag @a[tag=!fullHotbar,tag=cursorItem,scores={invCount=8..}] add fullHotbar
+tag @a[tag=fullHotbar,tag=!cursorItem,scores={invCount=..8}] remove fullHotbar
+tag @a[tag=fullHotbar,tag=cursorItem,scores={invCount=..7}] remove fullHotbar
 
 #Remove Splash tags for Lobby players. Just a failsave
 tag @a[team=!Blue,team=!Yellow] remove Winner

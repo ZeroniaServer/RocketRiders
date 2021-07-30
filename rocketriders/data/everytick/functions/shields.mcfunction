@@ -78,5 +78,5 @@ execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s 
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run playsound item.shield.block master @a ~ ~ ~ 2 0
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run particle block blue_stained_glass ~ ~ ~ 1 1 0 0.1 100
-kill @e[type=marker,tag=PlaceBlueShields,scores={shieldplacement=3..}]
+kill @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3..}]
 kill @e[type=snowball,tag=BlueShield,scores={shieldtest2=20..}]

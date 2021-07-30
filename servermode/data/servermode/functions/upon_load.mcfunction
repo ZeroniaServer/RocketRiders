@@ -29,3 +29,5 @@ execute unless entity @e[type=armor_stand,tag=Selection,tag=onlyBlue] run team m
 team modify Yellow friendlyFire false
 team modify Spectator friendlyFire false
 team modify Developer friendlyFire false
+
+gamerule logAdminCommands false

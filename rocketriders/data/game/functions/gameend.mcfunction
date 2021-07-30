@@ -106,6 +106,7 @@ tag @s[scores={endtimer=570..}] remove SuddenDeath
 execute if entity @s[scores={endtimer=570..}] run scoreboard players set $barriers CmdData 0
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset $highest VortexID
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset $count VortexID
+execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * invCount
 tag @s[scores={endtimer=570..}] remove GameEnd
 
 ##For repeating settings

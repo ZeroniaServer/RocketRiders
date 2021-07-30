@@ -13,6 +13,6 @@ scoreboard players remove @s[nbt={Inventory:[{Slot:100b}]}] invCount 1
 execute if entity @e[type=item] run scoreboard players operation $tempuuid playerUUID = @s playerUUID
 execute if entity @e[type=item] as @e[type=item] store result score @s playerUUID run data get entity @s Thrower[0]
 execute if entity @e[type=item] store result score $tempuuid invCount if entity @e[type=item,predicate=custom:matches_uuid]
-execute if entity @e[type=item] run scoreboard players operation @s invCount += $tempitems invCount
+execute if entity @e[type=item] run scoreboard players operation @s invCount += $tempuuid invCount
 scoreboard players reset $tempuuid invCount
 scoreboard players reset $tempuuid playerUUID

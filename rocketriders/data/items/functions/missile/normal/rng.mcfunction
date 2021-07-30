@@ -26,6 +26,8 @@ execute as @e[type=marker,tag=rngSelected,tag=rngToma] as @e[type=item] if data 
 execute as @e[type=marker,tag=rngSelected,tag=rngCitadel] as @e[type=item] if data entity @s {Item:{id:"minecraft:wandering_trader_spawn_egg"}} run function items:deduct
 execute as @e[type=marker,tag=rngSelected,tag=rngGemi] as @e[type=item] if data entity @s {Item:{id:"minecraft:fox_spawn_egg"}} run function items:deduct
 
+function items:full_hotbar
+
 execute as @e[type=marker,tag=rngSelected,tag=rngAnt] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveant
 execute as @e[type=marker,tag=rngSelected,tag=rngLift] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givelift
 execute as @e[type=marker,tag=rngSelected,tag=rngBlade] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveblade

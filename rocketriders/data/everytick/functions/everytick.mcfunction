@@ -21,8 +21,6 @@ execute as @e[type=armor_stand,tag=Selection] run function everytick:general_set
 
 #Team/inventory counting and game-related effects
 execute as @e[type=armor_stand,tag=Selection] run function everytick:team_count
-execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s invCount 0
-execute as @a unless entity @s[team=!Yellow,team=!Blue] if entity @e[type=armor_stand,tag=Selection,tag=doHotbarLimit] run function items:invcount
 execute as @e[type=armor_stand,tag=Selection,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gamestart
 execute as @e[type=armor_stand,tag=Selection,tag=GameStarted,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run function everytick:regen_system

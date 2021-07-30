@@ -3,12 +3,6 @@
 ## the game tries to give out any items ##
 ##########################################
 
-#Full hotbar check
-tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
-tag @a[tag=!fullHotbar,tag=cursorItem,scores={invCount=8..}] add fullHotbar
-tag @a[tag=fullHotbar,tag=!cursorItem,scores={invCount=..8}] remove fullHotbar
-tag @a[tag=fullHotbar,tag=cursorItem,scores={invCount=..7}] remove fullHotbar
-
 ##Select item
 function items:rng
 function items:tetris

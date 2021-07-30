@@ -1,6 +1,10 @@
-#> Disabled, Crusade uses a custom map.
-#function arenaclear:baseplacement
+#> Details disabled. Crusade uses a custom map.
+function arenaclear:baseplacement
 #function arenaclear:detailplacement
+
+#> Remove portals
+fill -11 36 -75 35 59 -73 air
+fill -11 36 73 35 59 75 air
 
 #> Pregame bases
 fill -101 201 65 -89 195 64 deepslate_bricks

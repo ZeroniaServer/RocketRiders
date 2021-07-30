@@ -11,6 +11,10 @@ execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run fu
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
 execute if entity @s[tag=Minute] run function items:minutemix
 
+#custom prevention message
+execute as @a[tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
+tag @a[tag=preventionMSG] remove preventionMSG
+
 #Set banners
 #Yellow A
 execute unless block 0 64 37 minecraft:yellow_banner run setblock 0 64 37 minecraft:yellow_banner[rotation=8]{Patterns:[{Pattern:ms,Color:1},{Pattern:ls,Color:1},{Pattern:rs,Color:1},{Pattern:ts,Color:1},{Pattern:bo,Color:4}]}

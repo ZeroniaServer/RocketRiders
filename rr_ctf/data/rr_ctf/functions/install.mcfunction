@@ -1,5 +1,4 @@
 execute unless entity @e[type=armor_stand,tag=rr_ctf,limit=1] run summon armor_stand 25 184 -6 {Tags:["rr_ctf","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:'{"text":"CTF Mode"}'}
-scoreboard objectives add HasPickaxe dummy
 scoreboard objectives add dropPickaxe minecraft.dropped:minecraft.netherite_pickaxe
 scoreboard objectives add FlagScore dummy
 scoreboard objectives add FlagDeliver dummy

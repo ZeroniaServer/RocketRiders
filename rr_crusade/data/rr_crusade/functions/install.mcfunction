@@ -7,5 +7,11 @@ execute unless entity @e[type=marker,tag=PlacerClear] run function game:forcesto
 scoreboard objectives add crusadekit dummy
 scoreboard objectives add crusadehp dummy
 
-bossbar add rr_crusade:blue
-bossbar add rr_crusade:yellow
+bossbar add rr_crusade:blue {"text":"Total Crystal Health","color":"white"}
+bossbar add rr_crusade:yellow ""
+
+bossbar set rr_crusade:blue color blue
+bossbar set rr_crusade:yellow color yellow
+
+bossbar set rr_crusade:blue max 200
+bossbar set rr_crusade:yellow max 200

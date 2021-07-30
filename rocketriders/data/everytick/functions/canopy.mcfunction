@@ -84,7 +84,7 @@ tag @e[type=marker,scores={PlatTime=58..}] add animated
 
 #Ender Pearl UUID storage and owner detection - necessary for accurate teleports
 execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data get entity @s Owner[0]
-execute as @e[type=ender_pearl,tag=!BluePlat,tag=!YellowPlat] at @s run function everytick:canopy_checkowner
+execute as @e[type=ender_pearl,tag=!BluePlat,tag=!YellowPlat] at @s run function everytick:canopy_owner
 
 ##Yellow Canopy functionality
 execute as @e[type=ender_pearl,tag=YellowPlat] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
@@ -100,7 +100,7 @@ execute as @e[type=ender_pearl,scores={testplat=9..10}] at @s if predicate custo
 #Disable Yellow Canopies near spawnpoints
 execute as @e[type=ender_pearl,scores={testplat=9..10}] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..7] run scoreboard players remove @s testplat 1
 execute as @e[type=ender_pearl,scores={testplat=9..10}] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..7] run scoreboard players remove @s testplat 1
-execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_uponspawn
+execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_threw
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:yellowcanopy1"}
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
@@ -136,7 +136,7 @@ execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if predicate cust
 #Disable Blue Canopies near spawnpoints
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_uponspawn
+execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_threw
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]

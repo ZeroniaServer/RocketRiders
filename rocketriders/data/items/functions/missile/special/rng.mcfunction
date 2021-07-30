@@ -14,6 +14,8 @@ execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=item] if data 
 execute as @e[type=marker,tag=rngSelected,tag=rngDuplex] as @e[type=item] if data entity @s {Item:{id:"minecraft:parrot_spawn_egg"}} run kill @s
 execute as @e[type=marker,tag=rngSelected,tag=rngHyper] as @e[type=item] if data entity @s {Item:{id:"minecraft:turtle_spawn_egg"}} run kill @s
 
+function items:full_hotbar
+
 execute as @e[type=marker,tag=rngSelected,tag=rngBroad] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/special/givebroad
 execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/special/givebull
 execute as @e[type=marker,tag=rngSelected,tag=rngDuplex] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/special/giveduplex

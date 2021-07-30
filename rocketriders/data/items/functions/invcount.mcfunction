@@ -10,4 +10,9 @@ scoreboard players remove @s[nbt={Inventory:[{Slot:102b}]}] invCount 1
 scoreboard players remove @s[nbt={Inventory:[{Slot:101b}]}] invCount 1
 scoreboard players remove @s[nbt={Inventory:[{Slot:100b}]}] invCount 1
 #Includes items thrown by the player
-execute at @s if entity @e[type=item,limit=1,distance=..2] run scoreboard players add @s invCount 1
+execute if entity @e[type=item] run scoreboard players operation $tempuuid playerUUID = @s playerUUID
+execute if entity @e[type=item] as @e[type=item] store result score @s playerUUID run data get entity @s Thrower[0]
+execute if entity @e[type=item] store result score $tempuuid invCount if entity @e[type=item,predicate=custom:matches_uuid]
+execute if entity @e[type=item] run scoreboard players operation @s invCount += $tempuuid invCount
+scoreboard players reset $tempuuid invCount
+scoreboard players reset $tempuuid playerUUID

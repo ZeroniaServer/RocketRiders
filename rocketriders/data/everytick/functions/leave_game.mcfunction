@@ -32,6 +32,7 @@ tag @a[scores={LeaveGame=1..}] remove YellowNovaAttach
 tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
 scoreboard players reset @a[scores={LeaveGame=1..}] novattach
 tag @a[scores={LeaveGame=1..}] remove threwCanopy
+tag @a[scores={LeaveGame=1..}] remove cursorItem
 
 #Hardcore compatibility
 scoreboard players add @a[tag=hardcoreKilled] hardcoreKilled 1

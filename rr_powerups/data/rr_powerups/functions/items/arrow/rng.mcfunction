@@ -10,6 +10,8 @@ execute as @e[type=marker,tag=rngSelected,tag=rngLeviArrow] as @e[type=item] if 
 execute as @e[type=marker,tag=rngSelected,tag=rngWitherArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:20b,Amplifier:0b,Duration:150,ShowParticles:1b}]}}} run function items:deduct
 execute as @e[type=marker,tag=rngSelected,tag=rngSlowArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:2b,Amplifier:0b,Duration:200,ShowParticles:1b}]}}} run function items:deduct
 
+function items:full_hotbar
+
 execute as @e[type=marker,tag=rngSelected,tag=rngBlindArrow] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/arrow/giveblindarrow
 execute as @e[type=marker,tag=rngSelected,tag=rngBlindArrow] as @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/arrow/giveblindarrow
 execute as @e[type=marker,tag=rngSelected,tag=rngLeviArrow] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/arrow/giveleviarrow

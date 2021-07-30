@@ -3,12 +3,6 @@
 ## the game tries to give out any items ##
 ##########################################
 
-#Full hotbar check
-tag @a[tag=!fullHotbar,scores={invCount=9..}] add fullHotbar
-tag @a[tag=!fullHotbar,tag=cursorItem,scores={invCount=8..}] add fullHotbar
-tag @a[tag=fullHotbar,tag=!cursorItem,scores={invCount=..8}] remove fullHotbar
-tag @a[tag=fullHotbar,tag=cursorItem,scores={invCount=..7}] remove fullHotbar
-
 ##UUID randomizer - pick canopy or select other item
 #Generate random number
 summon marker ~ ~ ~ {Tags:["CTFRNG"]}
@@ -19,6 +13,7 @@ execute if entity @s[tag=!gaveFirstItem] run scoreboard players set @e[type=mark
 
 #Give canopy (25% chance) - cannot have a streak greater than 2 canopies in a row
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] as @e[type=item] if data entity @s {Item:{id:"minecraft:ender_pearl"}} run function items:deduct
+execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run function items:full_hotbar
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run scoreboard players add @s canopyStreak 1
 execute if entity @s[tag=canopyStreaked] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run function items:rng

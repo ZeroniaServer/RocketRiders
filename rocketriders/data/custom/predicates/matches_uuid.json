@@ -1,0 +1,29 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": "this",
+    "score": "playerUUID",
+    "scale": 1
+  },
+  "range": {
+    "min": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$tempuuid"
+      },
+      "score": "playerUUID",
+      "scale": 1
+    },
+    "max": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$tempuuid"
+      },
+      "score": "playerUUID",
+      "scale": 1
+    }
+  }
+}

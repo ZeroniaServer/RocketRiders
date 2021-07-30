@@ -22,6 +22,8 @@ execute as @e[type=marker,tag=rngSelected,tag=rngBeeShield] as @e[type=item] if 
 execute as @e[type=marker,tag=rngSelected,tag=rngDuplex] as @e[type=item] if data entity @s {Item:{id:"minecraft:parrot_spawn_egg"}} run function items:deduct
 execute as @e[type=marker,tag=rngSelected,tag=rngBroad] as @e[type=item] if data entity @s {Item:{id:"minecraft:magma_cube_spawn_egg"}} run function items:deduct
 
+function items:full_hotbar
+
 execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function items:missile/special/givebull
 execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run function items:missile/special/givebull
 execute as @e[type=marker,tag=rngSelected,tag=rngElytra] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/giveelytra

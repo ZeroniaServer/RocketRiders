@@ -104,25 +104,4 @@ kill @e[type=marker,tag=HandyTip]
 scoreboard players reset @e[type=armor_stand,tag=Selection,scores={ShowTip=900..}] ShowTip
 
 #Tetris resetting (makes sure all tips are individually given before they're repeated)
-tag @e[type=armor_stand,tag=Selection,tag=Tip1,tag=Tip2,tag=Tip3,tag=Tip4,tag=Tip5,tag=Tip6,tag=Tip7,tag=Tip8,tag=Tip9,tag=Tip10,tag=Tip11,tag=Tip12,tag=Tip13,tag=Tip14,tag=Tip15,tag=Tip16,tag=Tip17,tag=Tip18,tag=Tip19,tag=Tip20] add GivenAllTips
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip1
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip2
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip3
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip4
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip5
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip6
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip7
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip8
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip9
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip10
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip11
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip12
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip13
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip14
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip15
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip16
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip17
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip18
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip19
-tag @e[type=armor_stand,tag=GivenAllTips] remove Tip20
-tag @e[type=armor_stand,tag=GivenAllTips] remove GivenAllTips
+execute as @e[type=armor_stand,tag=Selection,tag=Tip1,tag=Tip2,tag=Tip3,tag=Tip4,tag=Tip5,tag=Tip6,tag=Tip7,tag=Tip8,tag=Tip9,tag=Tip10,tag=Tip11,tag=Tip12,tag=Tip13,tag=Tip14,tag=Tip15,tag=Tip16,tag=Tip17,tag=Tip18,tag=Tip19,tag=Tip20] run function game:tipreset

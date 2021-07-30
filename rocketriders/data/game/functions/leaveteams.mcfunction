@@ -17,6 +17,7 @@ effect give @a[tag=LeaveTeams] regeneration 1 255 true
 effect give @a[tag=LeaveTeams] resistance 1000000 255 true
 effect give @a[tag=LeaveTeams] night_vision 1000000 255 true
 gamemode adventure @a[tag=LeaveTeams,gamemode=!adventure]
+tag @a[tag=LeaveTeams] remove cursorItem
 execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @a[tag=LeaveTeams,tag=!WasInLobby] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a remove LeaveTeams

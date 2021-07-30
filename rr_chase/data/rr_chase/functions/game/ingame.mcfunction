@@ -53,9 +53,9 @@ execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance
 execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=BlueVortex] remove BlueVortex
 
 #Overwrite vortex particles
-execute as @e[type=egg,tag=YellowVortex] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
-execute as @e[type=marker,tag=VortexYellow] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
-execute as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
+execute as @e[type=egg,tag=YellowVortex] at @s run particle dust 0 0 1 1 ~ ~-0.3 ~ 0 0 0 0.1 10 force @a
+execute as @e[type=marker,tag=VortexYellow] at @s run particle dust 0 0 1 1 ~ ~-0.3 ~ 0.5 0.5 0 0 2 force @a
+execute as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:scrape ~ ~-0.3 ~ 0.5 0.5 0 0 3 force @a
 
 #Nova tracking
 execute as @a[team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear

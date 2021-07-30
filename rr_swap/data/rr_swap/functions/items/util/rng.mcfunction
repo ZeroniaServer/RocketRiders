@@ -14,6 +14,7 @@ execute as @e[type=marker,tag=SelectedSwapRNG3,tag=rngArrows] run tag @e[type=ma
 
 execute if score SwapSide swapside matches 1 as @e[type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/darkblueitems
 execute if score SwapSide swapside matches 0 as @e[type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/lightblueitems
+execute as @e[type=marker,tag=SelectedSwapRNG3,tag=rngArrows] as @e[type=item] if data entity @s {Item:{id:"minecraft:arrow"}} run function items:deduct
 execute as @e[type=marker,tag=SelectedSwapRNG3,tag=rngArrows] as @a unless entity @s[team=!Blue,team=!Yellow] run function items:util/givearrows
 
 kill @e[type=marker,tag=swapRNGD]

@@ -15,16 +15,16 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=rngGemi,tag=!givenGemi] 
 tag @e[type=marker,tag=rng3,sort=random,limit=1] add rngSelected
 
 #> Kill items to prevent duplication glitches
-execute as @e[type=marker,tag=rngSelected,tag=rngAnt] as @e[type=item] if data entity @s {Item:{id:"minecraft:bat_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngLift] as @e[type=item] if data entity @s {Item:{id:"minecraft:dolphin_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngBlade] as @e[type=item] if data entity @s {Item:{id:"minecraft:husk_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngCata] as @e[type=item] if data entity @s {Item:{id:"minecraft:cave_spider_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngEguard] as @e[type=item] if data entity @s {Item:{id:"minecraft:elder_guardian_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngNull] as @e[type=item] if data entity @s {Item:{id:"minecraft:phantom_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngSlash] as @e[type=item] if data entity @s {Item:{id:"minecraft:shulker_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngToma] as @e[type=item] if data entity @s {Item:{id:"minecraft:creeper_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngCitadel] as @e[type=item] if data entity @s {Item:{id:"minecraft:wandering_trader_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngGemi] as @e[type=item] if data entity @s {Item:{id:"minecraft:fox_spawn_egg"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngAnt] as @e[type=item] if data entity @s {Item:{id:"minecraft:bat_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngLift] as @e[type=item] if data entity @s {Item:{id:"minecraft:dolphin_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngBlade] as @e[type=item] if data entity @s {Item:{id:"minecraft:husk_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngCata] as @e[type=item] if data entity @s {Item:{id:"minecraft:cave_spider_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngEguard] as @e[type=item] if data entity @s {Item:{id:"minecraft:elder_guardian_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngNull] as @e[type=item] if data entity @s {Item:{id:"minecraft:phantom_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngSlash] as @e[type=item] if data entity @s {Item:{id:"minecraft:shulker_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngToma] as @e[type=item] if data entity @s {Item:{id:"minecraft:creeper_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngCitadel] as @e[type=item] if data entity @s {Item:{id:"minecraft:wandering_trader_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngGemi] as @e[type=item] if data entity @s {Item:{id:"minecraft:fox_spawn_egg"}} run function items:deduct
 
 execute as @e[type=marker,tag=rngSelected,tag=rngAnt] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveant
 execute as @e[type=marker,tag=rngSelected,tag=rngLift] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givelift

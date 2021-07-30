@@ -46,12 +46,12 @@ execute as @e[type=egg,tag=BlueVortex,scores={vortextimer=20..}] at @s align xyz
 scoreboard players add @e[type=marker,tag=Vortex] VortexID 0
 execute as @e[type=marker,tag=Vortex,tag=!VortexFeathered,scores={VortexID=0}] at @s run function everytick:vortexid
 kill @e[type=egg,scores={vortextimer=20..}]
-execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:wax_on ~ ~ ~ 0.5 0.5 0 0 3 force @a
-execute as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
-execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle dust 1 1 0 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
-execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a
-execute as @e[type=marker,tag=VortexBlue] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a
-execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:wax_on ~ ~-0.3 ~ 0.5 0.5 0 0 3 force @a
+execute as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:dragon_breath ~ ~-0.3 ~ 0.5 0.5 0 0 5 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle dust 1 1 0 1 ~ ~-0.3 ~ 0.5 0.5 0 0 2 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle minecraft:scrape ~ ~-0.3 ~ 0.5 0.5 0 0 3 force @a
+execute as @e[type=marker,tag=VortexBlue] at @s run particle minecraft:dragon_breath ~ ~-0.3 ~ 0.5 0.5 0 0 5 force @a
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle dust 0 0 1 1 ~ ~-0.3 ~ 0.5 0.5 0 0 2 force @a
 scoreboard players add @e[type=marker,tag=Vortex] vortexBoom 0
 
 ##Spin around (unprimed)
@@ -108,7 +108,7 @@ execute as @e[type=chicken,tag=SummonFeathered] store result score @s RNGscore r
 execute as @e[type=chicken,tag=SummonFeathered] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
 tag @e[type=chicken,tag=SummonFeathered,scores={RNGscore=0..49}] add FeatherConfirmed
 execute as @e[type=chicken,tag=FeatherConfirmed] at @s run playsound entity.chicken.hurt master @a ~ ~ ~ 2 0
-execute as @e[type=chicken,tag=FeatherConfirmed] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1 ~ {Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
+execute as @e[type=chicken,tag=FeatherConfirmed] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1.2 ~ {Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:MHF_Chicken}}]}
 execute as @e[type=chicken,tag=FeatherConfirmed] at @s align xyz positioned ~.5 ~ ~.5 run summon marker ~ ~ ~ {Tags:["Vortex","VortexFeathered"]}
 execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}
 execute as @e[type=chicken] at @s run tp @s ~ ~-250 ~

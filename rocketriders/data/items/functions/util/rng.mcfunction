@@ -13,14 +13,14 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=rngNova,tag=!givenNova] 
 tag @e[type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 
 #> Kill items to prevent duplication glitches
-execute as @e[type=marker,tag=rngSelected,tag=rngArrows] as @e[type=item] if data entity @s {Item:{id:"minecraft:arrow"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngFireball] as @e[type=item] if data entity @s {Item:{id:"minecraft:blaze_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngObshield] as @e[type=item] if data entity @s {Item:{id:"minecraft:enderman_spawn_egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngCanopy] as @e[type=item] if data entity @s {Item:{id:"minecraft:ender_pearl"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngShield] as @e[type=item] if data entity @s {Item:{id:"minecraft:snowball"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngSplash] as @e[type=item] if data entity @s {Item:{id:"minecraft:lingering_potion"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngVortex] as @e[type=item] if data entity @s {Item:{id:"minecraft:egg"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @e[type=item] if data entity @s {Item:{id:"minecraft:crossbow"}} run kill @s
+execute as @e[type=marker,tag=rngSelected,tag=rngArrows] as @e[type=item] if data entity @s {Item:{id:"minecraft:arrow"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngFireball] as @e[type=item] if data entity @s {Item:{id:"minecraft:blaze_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngObshield] as @e[type=item] if data entity @s {Item:{id:"minecraft:enderman_spawn_egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngCanopy] as @e[type=item] if data entity @s {Item:{id:"minecraft:ender_pearl"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngShield] as @e[type=item] if data entity @s {Item:{id:"minecraft:snowball"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngSplash] as @e[type=item] if data entity @s {Item:{id:"minecraft:lingering_potion",tag:{Potion:"minecraft:water"}}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngVortex] as @e[type=item] if data entity @s {Item:{id:"minecraft:egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @e[type=item] if data entity @s {Item:{id:"minecraft:crossbow",tag:{nova:1b}}} run kill @s
 
 execute as @e[type=marker,tag=rngSelected,tag=rngArrows] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givearrows
 execute as @e[type=marker,tag=rngSelected,tag=rngFireball] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givefireball

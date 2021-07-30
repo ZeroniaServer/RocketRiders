@@ -25,7 +25,8 @@ execute if entity @s[scores={endtimer=1}] run kill @e[type=ender_pearl]
 execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=yellowjoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=bluejoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=specjoinpad] add CancelJoin
-execute if entity @s[scores={endtimer=1..}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 1000000 255 true
+execute if entity @s[scores={endtimer=2..3}] as @a unless entity @s[team=!Blue,team=!Yellow] at @s run function game:putoutfire
+execute if entity @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 1000000 255 true
 execute if entity @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Yellow] 12 64 66 180 0

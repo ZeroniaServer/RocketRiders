@@ -1,1 +1,1 @@
-function lobby:credits/restart
+schedule function lobby:credits/restart 3t append

@@ -66,6 +66,10 @@ execute as @a[team=Spectator,gamemode=!spectator] run gamemode spectator
 execute if entity @s[scores={servermode=0},tag=!SMCustom,tag=!GameStarted,tag=!GameEnd] as @a[team=Blue,gamemode=!adventure] run gamemode adventure
 execute if entity @s[scores={servermode=0},tag=!SMCustom,tag=!GameStarted,tag=!GameEnd] as @a[team=Yellow,gamemode=!adventure] run gamemode adventure
 
+##Full offhand check
+tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
+tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand
+
 #Remove Splash tags for Lobby players. Just a failsave
 tag @a[team=!Blue,team=!Yellow] remove Winner
 tag @a[team=!Blue,team=!Yellow] remove Loser

@@ -18,10 +18,6 @@ scoreboard players add @a[team=Blue] jumps 0
 ##Prevent players from going above the arena
 execute as @a[gamemode=!spectator] unless entity @s[team=!Yellow,team=!Blue] if entity @s[tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
-##Full offhand check
-tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
-tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand
-
 ##Full hotbar check
 function items:full_hotbar
 

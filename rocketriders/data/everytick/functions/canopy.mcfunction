@@ -84,7 +84,7 @@ tag @e[type=marker,scores={PlatTime=58..}] add animated
 
 #Ender Pearl UUID storage and owner detection - necessary for accurate teleports
 execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data get entity @s Owner[0]
-execute as @e[type=ender_pearl,tag=!BluePlat,tag=!YellowPlat] at @s run function everytick:canopy_owner
+execute as @e[type=ender_pearl,tag=!BluePlat,tag=!YellowPlat] at @s run function everytick:canopy_checkowner
 
 ##Yellow Canopy functionality
 execute as @e[type=ender_pearl,tag=YellowPlat] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
@@ -100,6 +100,7 @@ execute as @e[type=ender_pearl,scores={testplat=9..10}] at @s if predicate custo
 #Disable Yellow Canopies near spawnpoints
 execute as @e[type=ender_pearl,scores={testplat=9..10}] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..7] run scoreboard players remove @s testplat 1
 execute as @e[type=ender_pearl,scores={testplat=9..10}] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..7] run scoreboard players remove @s testplat 1
+execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_uponspawn
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:yellowcanopy1"}
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
@@ -135,6 +136,7 @@ execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if predicate cust
 #Disable Blue Canopies near spawnpoints
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
+execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_uponspawn
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
@@ -222,7 +224,7 @@ execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if blo
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run playsound entity.blaze.shoot master @a ~ ~ ~ 2 0
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run playsound block.fire.ambient master @a ~ ~ ~ 2 2
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run fill ~ ~ ~ ~ ~1 ~ air destroy
-execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run fill ~-3 ~2 ~-3 ~3 ~1 ~3 fire replace air
+execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run fill ~-3 ~1 ~-3 ~3 ~1 ~3 fire replace #custom:air
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run particle flame ~ ~ ~ 2 0 2 0.15 250 force @a
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run particle lava ~ ~ ~ 2 0 2 0.1 20 force @a
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run particle explosion_emitter ~ ~ ~ 2 0 2 0.1 1 force @a

@@ -37,6 +37,9 @@ execute store result bossbar rr_crusade:yellow value run scoreboard players get 
 
 execute if score $BlueShield crusadehp matches 1.. if score $CBA crusadehp matches 1.. unless entity @e[type=end_crystal,tag=CrusadeBlueA] run function rr_crusade:game/restorecba
 execute if score $BlueShield crusadehp matches 1.. if score $CBB crusadehp matches 1.. unless entity @e[type=end_crystal,tag=CrusadeBlueB] run function rr_crusade:game/restorecbb
+execute if score $YellowShield crusadehp matches 1.. if score $CYA crusadehp matches 1.. unless entity @e[type=end_crystal,tag=CrusadeYellowA] run function rr_crusade:game/restorecya
+execute if score $YellowShield crusadehp matches 1.. if score $CYB crusadehp matches 1.. unless entity @e[type=end_crystal,tag=CrusadeYellowB] run function rr_crusade:game/restorecyb
 
 #> Win condition
 execute if score $BlueShield crusadehp matches -1000..0 unless block 12 52 -59 nether_portal run function rr_crusade:game/winyellow
+execute if score $YellowShield crusadehp matches -1000..0 unless block 12 52 59 nether_portal run function rr_crusade:game/winblue

@@ -104,6 +104,17 @@ fill -3 63 -34 3 63 -35 bedrock
 fill 2 58 -28 -2 62 -32 minecraft:blue_stained_glass
 fill 4 57 -33 4 63 -33 ladder[facing=east]
 
+#> prepare crystals and health
+scoreboard players set $CYA crusadehealth 100
+scoreboard players set $CYB crusadehealth 100
+execute unless entity @e[type=end_crystal,tag=CrusadeYellowA] run summon end_crystal 0 60 34 {Tags:["CrusadeEntity","CrusadeYellowA"],BeamTarget:{X:12,Y:54,Z:52},ShowBottom:0b}
+execute unless entity @e[type=end_crystal,tag=CrusadeYellowB] run summon end_crystal 24 60 34 {Tags:["CrusadeEntity","CrusadeYellowB"],BeamTarget:{X:12,Y:54,Z:52},ShowBottom:0b}
+
+scoreboard players set $CBA crusadehealth 100
+scoreboard players set $CBB crusadehealth 100
+execute unless entity @e[type=end_crystal,tag=CrusadeBlueA] run summon end_crystal 24 60 -30 {Tags:["CrusadeEntity","CrusadeBlueA"],BeamTarget:{X:12,Y:54,Z:-52},ShowBottom:0b}
+execute unless entity @e[type=end_crystal,tag=CrusadeBlueB] run summon end_crystal 0 60 -30 {Tags:["CrusadeEntity","CrusadeBlueB"],BeamTarget:{X:12,Y:54,Z:-52},ShowBottom:0b}
+
 
 
 #> Bridges

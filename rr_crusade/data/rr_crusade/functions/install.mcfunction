@@ -2,3 +2,10 @@ execute unless entity @e[type=armor_stand,tag=rr_crusade,limit=1] run summon arm
 execute if entity @e[type=armor_stand,tag=rr_crusade,limit=1] run tellraw @s {"text":"Crusade Mode installed.","color":"green","bold":true}
 scoreboard players add @e[type=armor_stand,tag=rr_crusade,limit=1] CmdData 1
 execute unless entity @e[type=marker,tag=PlacerClear] run function game:forcestop
+
+#> Crusade scoreboards
+scoreboard objectives add crusadekit dummy
+scoreboard objectives add crusadehp dummy
+
+bossbar add rr_crusade:blue
+bossbar add rr_crusade:yellow

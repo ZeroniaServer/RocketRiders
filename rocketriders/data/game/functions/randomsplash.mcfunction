@@ -103,5 +103,6 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=89}] run title @a su
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=90}] run title @a subtitle ["",{"text":"We're running out of ideas for these.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=91}] run title @a subtitle ["",{"text":"Does anyone actually play Normal Mode?","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=92}] run title @a subtitle ["",{"text":"Go bed.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=92}] run title @a subtitle ["",{"text":"Not another 1 hour match...","color":"green"}]
 
 kill @e[type=marker,tag=RandomSplash]

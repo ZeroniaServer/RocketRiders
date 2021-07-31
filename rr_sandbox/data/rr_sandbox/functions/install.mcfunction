@@ -15,7 +15,6 @@ scoreboard objectives add SBplaceYCon minecraft.used:minecraft.yellow_concrete
 scoreboard objectives add SBplaceScaf minecraft.used:minecraft.scaffolding
 scoreboard objectives add SBplaceObser minecraft.used:minecraft.observer
 scoreboard objectives add dropPickaxe minecraft.dropped:minecraft.netherite_pickaxe
-scoreboard objectives add HasPickaxe dummy
 execute if entity @e[type=armor_stand,tag=rr_sandbox,limit=1] run tellraw @s {"text":"Sandbox Mode installed.","color":"green","bold":true}
 scoreboard players add @e[type=armor_stand,tag=rr_sandbox,limit=1] CmdData 1
 execute unless entity @e[type=marker,tag=PlacerClear] run function game:forcestop

@@ -18,7 +18,6 @@ scoreboard objectives remove SBplaceBCon
 scoreboard objectives remove SBplaceYCon
 scoreboard objectives remove SBplaceScaf
 scoreboard objectives remove SBplaceObser
-execute unless entity @e[type=armor_stand,tag=rr_ctf,limit=1] run scoreboard objectives remove HasPickaxe
 execute unless entity @e[type=armor_stand,tag=rr_ctf,limit=1] run scoreboard objectives remove dropPickaxe
 scoreboard players reset * gamemodeID
 execute unless entity @e[type=marker,tag=PlacerClear] run function game:forcestop

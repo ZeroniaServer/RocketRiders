@@ -28,7 +28,7 @@ setblock -95 200 77 purpur_slab[type=top]
 setblock -96 200 78 purpur_slab[type=top]
 setblock -95 200 78 minecraft:sea_lantern
 
-#Pregame crystal platforms
+#Pregame crystal crafters
 setblock -95 202 59 air
 fill -93 202 58 -93 202 55 obsidian
 fill -97 202 58 -97 202 55 obsidian

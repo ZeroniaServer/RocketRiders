@@ -8,8 +8,6 @@ If you discover any bugs or have any feature suggestions, please [create an issu
 
 For in-depth information about the game, check out the [Rocket Riders Wiki.](https://zeroniaserver.github.io/RocketRidersWiki/)
 
-Download the map on [Planet Minecraft](https://www.planetminecraft.com/project/rocket-riders/) or play now on [CubeKrowd!](https://cubekrowd.net/)
-
-[Click here for a map installation guide.](https://zeroniaserver.github.io/RocketRidersWiki/installation_guide.html)
+Download the map on [Planet Minecraft](https://www.planetminecraft.com/project/rocket-riders/) (click [here](https://zeroniaserver.github.io/RocketRidersWiki/installation_guide.html) for an installation guide) or play now on [CubeKrowd](https://cubekrowd.net/) (IP: `play.cubekrowd.net`)!
 
 We owe a massive thanks to so many members of the community who contributed their ideas, time, and efforts to make the map as good as it could be over the past 4+ years of development. [Click here for a full credits list!](https://zeroniaserver.github.io/RocketRidersWiki/credits/)

@@ -6,7 +6,7 @@ kill @e[type=armor_stand,tag=PUCrystalEntity]
 kill @e[type=end_crystal,tag=PUCrystalEntity]
 kill @e[type=marker,tag=PUCrystalEntity]
 
-#Clear crystal platforms
+#Clear crystal crafters
 scoreboard players reset @e[type=marker,tag=captureMiddle] captureBlue
 scoreboard players reset @e[type=marker,tag=captureMiddle] captureYellow
 scoreboard players reset @e[type=marker,tag=captureMiddle] capturePoint

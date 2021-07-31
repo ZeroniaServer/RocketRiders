@@ -38,7 +38,7 @@ fill 38 64 52 -14 80 66 air
 fill -14 48 51 38 63 28 air
 fill 38 33 51 -14 47 29 air
 
-#Clear crystal platforms
+#Clear crystal crafters
 scoreboard players reset @e[type=marker,tag=captureMiddle] captureBlue
 scoreboard players reset @e[type=marker,tag=captureMiddle] captureYellow
 scoreboard players reset @e[type=marker,tag=captureMiddle] capturePoint

@@ -10,4 +10,6 @@ For in-depth information about the game, check out the [Rocket Riders Wiki.](htt
 
 Download the map on [Planet Minecraft](https://www.planetminecraft.com/project/rocket-riders/) or play now on [CubeKrowd!](https://cubekrowd.net/)
 
+[Click here for a map installation guide.](https://zeroniaserver.github.io/RocketRidersWiki/installation_guide.html)
+
 We owe a massive thanks to so many members of the community who contributed their ideas, time, and efforts to make the map as good as it could be over the past 4+ years of development. [Click here for a full credits list!](https://zeroniaserver.github.io/RocketRidersWiki/credits/)

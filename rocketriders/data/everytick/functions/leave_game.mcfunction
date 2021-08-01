@@ -26,8 +26,6 @@ tp @a[scores={LeaveGame=1..},tag=WasInYellow] -36 211 96.0 90 0
 tp @a[scores={LeaveGame=1..},tag=WasInBlue] -36 211 61.0 90 0
 execute as @a[scores={LeaveGame=1..},predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @a[scores={LeaveGame=1..,LeaveMidgame=1}] at @s run playsound entity.enderman.teleport master @s ~ ~ ~ 1 1
-scoreboard players set @a[scores={LeaveGame=1..}] LeaveMidgame 0
-scoreboard players set @a[team=!Yellow,team=!Blue] LeaveMidgame 0
 tag @a[scores={LeaveGame=1..}] remove YellowNovaAttach
 tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
 scoreboard players reset @a[scores={LeaveGame=1..}] novattach
@@ -66,7 +64,7 @@ execute if entity @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[sco
 execute if entity @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[scores={LeaveGame=1..}] run tellraw @s ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" "},{"text":"4","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"text":") ","color":"dark_gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"selector":"@e[type=marker,tag=ServermodeSet4]","color":"gray","clickEvent":{"action":"run_command","value":"/trigger VoteServerMode set 4"}},{"text":"\n"}]
 
 #Notify game (if already selected)
-execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!switchServermode] run tag @a[scores={LeaveGame=1..},tag=!informMeLate] add informMe
+execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!switchServermode] run tag @a[scores={LeaveGame=1..,LeaveMidgame=0},tag=!informMeLate] add informMe
 execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!switchServermode] run scoreboard players add @a[scores={informMeLate=1..120}] informMeLate 1
 execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!switchServermode] run scoreboard players add @a[tag=informMeLate] informMeLate 1
 execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!switchServermode] run tag @a[scores={informMeLate=1..}] remove informMeLate
@@ -76,6 +74,8 @@ execute unless entity @s[tag=!GameEnd,tag=EditedSettings,tag=!switchServermode] 
 execute unless entity @s[tag=!GameEnd,tag=EditedSettings,tag=!switchServermode] run scoreboard players reset @a informMeLate
 
 #Reset
+scoreboard players set @a[scores={LeaveGame=1..}] LeaveMidgame 0
+scoreboard players set @a[team=!Yellow,team=!Blue] LeaveMidgame 0
 scoreboard players reset @a[scores={LeaveGame=1..}] VoteNum
 scoreboard players reset @a[scores={LeaveGame=1..}] VoteServerMode
 scoreboard players reset @a[scores={LeaveGame=1..}] LeaveGame

@@ -128,4 +128,11 @@ tag @s[tag=!onlyBlue] remove YellowFull
 tag @s[tag=!onlyBlue] remove YellowCapOverride
 tag @s remove BlueFull
 tag @s remove BlueCapOverride
-scoreboard players set $barriers CmdData 1
+scoreboard players set $barriers CmdData 79
+
+##Stop all sounds
+stopsound @a block
+stopsound @a master
+stopsound @a ambient
+stopsound @a player
+stopsound @a neutral

@@ -89,3 +89,10 @@ tag @a remove beenOnBoth
 
 ##Remove join cancel from join pads
 schedule function game:uncancelpads 2t append
+
+##Stop all sounds
+stopsound @a block
+stopsound @a master
+stopsound @a ambient
+stopsound @a player
+stopsound @a neutral

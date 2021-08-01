@@ -131,8 +131,4 @@ tag @s remove BlueCapOverride
 scoreboard players set $barriers CmdData 79
 
 ##Stop all sounds
-stopsound @a block
-stopsound @a master
-stopsound @a ambient
-stopsound @a player
-stopsound @a neutral
+execute as @a run function everytick:stopsounds

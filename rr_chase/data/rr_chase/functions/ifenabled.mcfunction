@@ -26,6 +26,7 @@ execute as @a[team=Yellow] run function custom:leave
 
 #reset
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] run function rr_chase:arenaclear/baseplacement
+execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @a remove informMe
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a at @s run function arenaclear:notifystart
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true}]
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Chase ","color":"light_purple"},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Touch Finish Flag on Yellow base\n","color":"yellow"},{"text":"- Race against your teammates to Yellow base\n"},{"text":"- Attack your teammates to stop them (friendly fire)\n"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Arrows given upon join/death (four maximum)\n"},{"text":"- Vortex and Nova Rocket both work against teammates\n"},{"text":"- Hold up to two Canopies at a time\n"},{"text":"- Obsidian stairs lead up to Finish Flag\n"},{"text":"- No portals at bases"}]}}]

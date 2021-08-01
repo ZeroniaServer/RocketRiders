@@ -147,7 +147,7 @@ tag @s[tag=DefaultWorld] remove DefaultWorld
 
 
 ####CONFIRM SETTINGS####
-data merge block -69 190 78 {Text1:"{\"text\":\"\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"playsound ui.button.click master @a ~ ~ ~ 1 1\"}}",Text2:"{\"text\":\"Confirm\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function arenaclear:testvalidclear\"}}",Text4:"{\"text\":\"\"}"}
+data merge block -69 190 78 {Text1:"{\"text\":\"\"}",Text2:"{\"text\":\"Confirm\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function arenaclear:testvalidclear\"}}",Text4:"{\"text\":\"\"}"}
 
 
 ####REPEAT SETTINGS####

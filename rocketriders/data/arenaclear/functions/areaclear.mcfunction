@@ -91,8 +91,4 @@ tag @a remove beenOnBoth
 schedule function game:uncancelpads 2t append
 
 ##Stop all sounds
-stopsound @a block
-stopsound @a master
-stopsound @a ambient
-stopsound @a player
-stopsound @a neutral
+execute as @a run function everytick:stopsounds

@@ -33,7 +33,6 @@ scoreboard players reset @a[scores={voidNoFallCount=2}] voidNoFallCount
 #Teleport back to spawnpoint
 execute unless entity @s[tag=customSpawns] run tp @a[team=Blue,tag=portalKill] 12 64 -66 0 0
 execute unless entity @s[tag=customSpawns] run tp @a[team=Yellow,tag=portalKill] 12 64 66 -180 0
-execute as @a[tag=portalKill,predicate=custom:is_on_fire] at @s run function game:putoutfire
 #In case somehow it's a Lobby player in a portal
 execute as @a[team=!Blue,team=!Yellow,tag=portalKill] run kill @s
 execute unless entity @s[tag=customSpawns] run tag @a[tag=portalKill] remove portalKill

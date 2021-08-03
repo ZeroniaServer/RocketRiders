@@ -166,8 +166,8 @@ execute if entity @s[tag=YellowBroad,tag=!UnableMissile] at @s positioned ~-1 ~-
 
 ##All missiles
 scoreboard players set $1000 Unable 1000
-execute if entity @s[tag=missile,scores={Unable=1..}] run scoreboard players operation @s Unable *= $1000 Unable
-execute if entity @s[tag=missile,scores={Unable=1..}] run scoreboard players operation @s Unable /= @s Volume
-tag @s[tag=missile,scores={Unable=70..}] add UnableMissile
-tag @s[tag=missile,scores={Unable=70..}] add antigrief
+execute if entity @s[scores={Unable=1..}] run scoreboard players operation @s Unable *= $1000 Unable
+execute if entity @s[scores={Unable=1..}] run scoreboard players operation @s Unable /= @s Volume
+tag @s[scores={Unable=70..}] add UnableMissile
+tag @s[scores={Unable=70..}] add antigrief
 scoreboard players reset @s Unable

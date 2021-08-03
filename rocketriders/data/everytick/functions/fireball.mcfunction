@@ -3,11 +3,13 @@
 #####################################
 
 #Summoning the Fireball entity
+execute as @e[type=marker,tag=BlueFireball] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[type=marker,tag=BlueFireball] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballBlue"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=BlueFireball] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 execute as @e[type=marker,tag=BlueFireball] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 0.5 1.25
 kill @e[type=marker,tag=BlueFireball]
-execute as @e[type=marker,tag=YellowFireball] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballYellow"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
+execute as @e[type=marker,tag=YellowFireball] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
+execute as @e[type=marker,tag=YellowFireball] at @s align xyz positioned ~0.5 ~ ~0.5 run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballYellow"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=YellowFireball] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 execute as @e[type=marker,tag=YellowFireball] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 0.5 1.25
 kill @e[type=marker,tag=YellowFireball]

@@ -4,6 +4,7 @@
 ####################################
 
 ##Begins timer
+execute if entity @s[scores={SDtime=20..}] run scoreboard players reset @s SDtime
 scoreboard players add @s SDtime 1
 execute if entity @s[scores={SDtime=1}] as @a run stopsound @s master minecraft:ui.toast.challenge_complete
 execute if entity @s[scores={SDtime=1}] as @a run stopsound @s master minecraft:entity.wither.spawn
@@ -17,7 +18,6 @@ execute if entity @s[scores={SDtime=1..15}] run kill @e[type=tnt_minecart]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[type=creeper]
 
 ##Preparing for Sudden Death
-execute if entity @s[scores={SDtime=1}] run bossbar set rr:startgame name ["",{"text":"A match is currently in Sudden Death. Feel free to join in!","color":"dark_red"}]
 execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
 execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[team=Blue] 12 64 -66 0 0
@@ -103,4 +103,3 @@ execute if entity @s[scores={SDtime=16..}] run title @a subtitle ["",{"text":"SU
 ##Resets timer
 execute if entity @s[scores={SDtime=20..}] run tag @s remove SuddenDeath
 execute if entity @s[scores={SDtime=20..}] run scoreboard players reset 2 MaxItemSec
-execute if entity @s[scores={SDtime=20..}] run scoreboard players reset @s SDtime

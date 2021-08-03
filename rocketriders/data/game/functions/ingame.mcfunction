@@ -50,7 +50,7 @@ execute if entity @e[type=arrow] run function everytick:fire_arrow
 ##Missile/utility-specific commands (optimized to only run when necessary)
 execute unless entity @s[tag=runspawnmissiles] if entity @e[type=marker,tag=missile] run tag @s add runspawnmissiles
 execute unless entity @s[tag=runspawnmissiles] if entity @e[type=marker,tag=surprising] run tag @s add runspawnmissiles
-execute if entity @s[tag=runspawnmissiles] run function items:spawnmissiles
+execute if entity @s[tag=runspawnmissiles] as @e[type=marker,tag=missile] at @s run function items:spawnmissiles
 tag @s[tag=runspawnmissiles] remove runspawnmissiles
 
 execute unless entity @s[tag=runshields] if entity @e[type=snowball] run tag @s add runshields

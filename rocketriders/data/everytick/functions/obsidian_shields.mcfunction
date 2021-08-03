@@ -6,6 +6,7 @@
 
 ##Blue Obsidian Shield functionality
 #Spawning in Fireball entities
+execute as @e[type=marker,tag=BlueObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[type=marker,tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
@@ -55,6 +56,7 @@ kill @e[type=marker,tag=BlueObshield]
 
 ##Yellow Obsidian Shield functionality
 #Spawning in Fireball entities
+execute as @e[type=marker,tag=YellowObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[type=marker,tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1

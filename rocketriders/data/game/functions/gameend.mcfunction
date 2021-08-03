@@ -7,6 +7,7 @@ scoreboard players add @s endtimer 1
 tag @s[scores={endtimer=1}] remove GameStarted
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
+scoreboard players reset @s[scores={endtimer=1..}] SDtime
 execute if entity @s[scores={endtimer=1}] run effect clear @a[team=Blue]
 execute if entity @s[scores={endtimer=1}] run effect clear @a[team=Yellow]
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[team=Blue] bow

@@ -9,7 +9,7 @@ execute as @a[scores={ThrowVortex=1..}] store result score @s UUIDTracker run da
 scoreboard players reset @a ThrowVortex
 
 ##Identify egg as a Vortex & apply custom name to the egg
-execute as @e[type=egg] unless data entity @s {Item:{id:{CustomModelData:3}}} run function everytick:vortex_owner
+execute as @e[type=egg] unless data entity @s {Item:{tag:{CustomModelData:3}}} run function everytick:vortex_owner
 
 ##Vortex deployment (both teams)
 execute as @e[type=egg,tag=YellowVortex] at @s run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a

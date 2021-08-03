@@ -18,4 +18,4 @@ execute if entity @s[tag=!noFullHotbarSound] as @a[tag=fullHotbar] unless entity
 scoreboard players remove @s[tag=WindDown,scores={MaxItemTime=62..}] MaxItemTime 2
 
 ##Schedule antidupe
-schedule function items:scheduleantidupe 1t append
+execute unless entity @s[tag=doStacking] run schedule function items:scheduleantidupe 1t append

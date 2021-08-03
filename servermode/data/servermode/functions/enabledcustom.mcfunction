@@ -20,9 +20,9 @@ setblock -30 190 17 air
 setblock -31 189 17 air
 execute as @e[type=armor_stand,tag=Selection] run function lobby:credits/stop
 fill -29 196 22 -33 196 22 air
-function game:forcestop
+schedule function game:forcestop 2t append
 execute as @e[type=armor_stand,tag=Selection,limit=1] store result score @s SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_normal,limit=1] gamemodeID
-schedule function servermode:forceclear 3t append
+# schedule function servermode:forceclear 3t append
 function arenaclear:unhidemodroom
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:globaldefaults
 execute as @e[type=armor_stand,tag=Selection] run function modifiers:disablemodifiers

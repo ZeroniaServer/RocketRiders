@@ -116,7 +116,7 @@ execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=1}] run data modif
 execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
 execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=1}] run scoreboard players add @e[type=armor_stand,tag=Selection] canopyCount 1
 #Teleporting happens in another function
-execute if entity @e[type=marker,tag=YellowPlatform,scores={PlatTime=..41}] run function everytick:canopy_tpyellow
+execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=..41}] run function everytick:canopy_tpyellow
 tag @e[type=marker,tag=YellowPlatform] remove checkedTP
 tag @a[team=Yellow] remove checkedTP
 execute as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,distance=..6] respawn 0
@@ -153,7 +153,7 @@ execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify 
 execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
 execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run scoreboard players add @e[type=armor_stand,tag=Selection] canopyCount 1
 #Teleporting happens in another function
-execute if entity @e[type=marker,tag=BluePlatform,scores={PlatTime=..41}] run function everytick:canopy_tpblue
+execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=..41}] run function everytick:canopy_tpblue
 tag @e[type=marker,tag=BluePlatform] remove checkedTP
 tag @a[team=Blue] remove checkedTP
 execute as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,distance=..6] respawn 0

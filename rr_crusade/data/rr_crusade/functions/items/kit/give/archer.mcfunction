@@ -10,6 +10,7 @@ execute unless entity @s[scores={crusadekit=2}] run item replace entity @s[team=
 execute unless entity @s[scores={crusadekit=2}] run item replace entity @s[team=Yellow] armor.legs with leather_leggings{display:{Name:'[{"text":"Yellow Archer Leggings","color":"gold","bold":true,"italic":false}]',color:16768000},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
 
 execute unless entity @s[scores={crusadekit=2}] run title @s title {"text":"Selected Kit:","color":"green"}
-execute unless entity @s[scores={crusadekit=2}] run title @s subtitle {"text":"Archer","color":"dark_green","bold":true}
+execute unless entity @s[scores={crusadekit=2}] run title @s subtitle {"text":"Archer","color":"red","bold":true}
+execute unless entity @s[scores={crusadekit=2}] as @s at @s run playsound minecraft:item.crossbow.loading_end master @s ~ ~ ~ 1 1
 
 execute unless entity @s[scores={crusadekit=2}] run scoreboard players set @s crusadekit 2

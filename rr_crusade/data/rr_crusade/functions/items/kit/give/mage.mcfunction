@@ -10,6 +10,7 @@ execute unless entity @s[scores={crusadekit=3}] run item replace entity @s[team=
 execute unless entity @s[scores={crusadekit=3}] run item replace entity @s[team=Yellow] armor.legs with leather_leggings{display:{Name:'[{"text":"Yellow Mage Leggings","color":"gold","bold":true,"italic":false}]',color:16768000},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
 
 execute unless entity @s[scores={crusadekit=3}] run title @s title {"text":"Selected Kit:","color":"green"}
-execute unless entity @s[scores={crusadekit=3}] run title @s subtitle {"text":"Mage","color":"dark_green","bold":true}
+execute unless entity @s[scores={crusadekit=3}] run title @s subtitle {"text":"Mage","color":"dark_purple","bold":true}
+execute unless entity @s[scores={crusadekit=3}] as @s at @s run playsound minecraft:entity.illusioner.prepare_mirror master @s ~ ~ ~ 1 2
 
 execute unless entity @s[scores={crusadekit=3}] run scoreboard players set @s crusadekit 3

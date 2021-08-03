@@ -29,7 +29,8 @@ execute store result score @s HasLift run clear @s dolphin_spawn_egg 0
 execute store result score @s HasDuplex run clear @s parrot_spawn_egg 0
 execute store result score @s HasBroad run clear @s magma_cube_spawn_egg 0
 execute store result score @s HasNova run clear @s crossbow{nova:1b} 0
-execute store result score @s HasVortex run clear @s egg 0
+execute store result score @s[team=Yellow] HasVortex run clear @s egg{CustomModelData:2} 0
+execute store result score @s[team=Blue] HasVortex run clear @s egg{CustomModelData:1} 0
 execute store result score @s HasSplash run clear @s lingering_potion{Potion:"minecraft:water"} 0
 execute store result score @s[team=Blue] HasSurprise run clear @s squid_spawn_egg 0
 execute store result score @s[team=Yellow] HasSurprise run clear @s cod_spawn_egg 0

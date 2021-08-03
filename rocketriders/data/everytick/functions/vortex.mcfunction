@@ -4,10 +4,6 @@
 ## projectiles, blocks, or explosions  ##
 #########################################
 
-##Store vortex user UUID's into their UUIDTracker score
-execute as @a[scores={ThrowVortex=1..}] store result score @s UUIDTracker run data get entity @s UUID[0]
-scoreboard players reset @a ThrowVortex
-
 ##Identify egg as a Vortex & apply custom name to the egg
 execute as @e[type=egg] unless data entity @s {Item:{tag:{CustomModelData:3}}} run function everytick:vortex_owner
 

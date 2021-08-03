@@ -14,7 +14,5 @@ execute as @a[scores={crusadechange=1}] run function rr_crusade:items/kit/give/k
 execute as @a[scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
 execute as @a[scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage
 
-function rr_crusade:items/icbm
-
 scoreboard players reset @a[scores={crusadechange=-2147483647..-1}] crusadechange
 scoreboard players reset @a[scores={crusadechange=1..}] crusadechange

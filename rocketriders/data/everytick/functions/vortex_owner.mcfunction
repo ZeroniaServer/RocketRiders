@@ -1,5 +1,6 @@
 ##Identify egg as a Vortex & apply custom name to the egg
 execute store result score $tempuuid playerUUID run data get entity @s Owner[0]
+execute as @a[predicate=custom:matches_uuid] store result score @s UUIDTracker run data get entity @s UUID[0]
 execute as @a[team=Yellow,predicate=custom:matches_uuid] at @s run setblock ~ 174 ~ oak_sign
 execute as @a[team=Blue,predicate=custom:matches_uuid] at @s run setblock ~ 174 ~ oak_sign
 execute as @a[team=Yellow,predicate=custom:matches_uuid] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Yellow,predicate=custom:matches_uuid]"},{"text":"\'s Vortex"}]'}

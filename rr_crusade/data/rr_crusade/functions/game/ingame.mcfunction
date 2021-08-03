@@ -4,6 +4,7 @@ function game:leavemidgame
 #general
 function rr_crusade:items/antidupe
 function rr_crusade:items/spawnitems
+function rr_crusade:items/icbm
 
 #Item RNG
 scoreboard players add @s RandomItem 1

@@ -10,4 +10,5 @@ tag @e[type=armor_stand,tag=Selection] add featheredOff
 tag @e[type=armor_stand,tag=Selection,tag=!doStacking] add stackingWasOff
 tag @e[type=armor_stand,tag=Selection] add doStacking
 tag @e[type=armor_stand,tag=Selection] add stackingOn
+tag @e[type=armor_stand,tag=Selection] add customSaberMsg
 tag @e[type=armor_stand,tag=Selection] add crusadeEnabled

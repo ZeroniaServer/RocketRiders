@@ -1,5 +1,5 @@
 #leave midgame
-function game:leavemidgame
+execute if entity @s[tag=!SMActive] run function rr_crusade:game/leavemidgame
 
 #general
 function rr_crusade:items/antidupe

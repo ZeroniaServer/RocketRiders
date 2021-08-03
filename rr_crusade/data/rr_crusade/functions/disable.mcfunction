@@ -10,4 +10,5 @@ tag @e[type=armor_stand,tag=Selection] remove featheredOff
 tag @e[type=armor_stand,tag=Selection,tag=stackingWasOff] remove doStacking
 tag @e[type=armor_stand,tag=Selection] remove stackingWasOff
 tag @e[type=armor_stand,tag=Selection] remove stackingOn
+tag @e[type=armor_stand,tag=Selection] remove customSaberMsg
 tag @e[type=armor_stand,tag=Selection] add switchGamemodes

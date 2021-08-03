@@ -6,21 +6,10 @@
 
 ##Store vortex user UUID's into their UUIDTracker score
 execute as @a[scores={ThrowVortex=1..}] store result score @s UUIDTracker run data get entity @s UUID[0]
+scoreboard players reset @a ThrowVortex
 
 ##Identify egg as a Vortex & apply custom name to the egg
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run setblock ~ 174 ~ oak_sign
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run setblock ~ 174 ~ oak_sign
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Yellow,scores={ThrowVortex=1..}]"},{"text":"\'s Vortex"}]'}
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Blue,scores={ThrowVortex=1..}]"},{"text":"\'s Vortex"}]'}
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=!YellowVortex,tag=!BlueVortex] add YellowVortex
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s store result score @e[type=egg,tag=YellowVortex,limit=1,distance=..3,sort=nearest] UUIDTracker run scoreboard players get @s UUIDTracker
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run data modify entity @e[type=egg,tag=YellowVortex,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=!YellowVortex,tag=!BlueVortex] add BlueVortex
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s store result score @e[type=egg,tag=BlueVortex,limit=1,distance=..3,sort=nearest] UUIDTracker run scoreboard players get @s UUIDTracker
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run data modify entity @e[type=egg,tag=BlueVortex,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
-scoreboard players reset @a ThrowVortex
+execute as @e[type=egg] unless data entity @s {Item:{id:{CustomModelData:3}}} run function everytick:vortex_owner
 
 ##Vortex deployment (both teams)
 execute as @e[type=egg,tag=YellowVortex] at @s run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a

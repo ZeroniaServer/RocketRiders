@@ -1,4 +1,4 @@
-#Clears temporary afterwards because for some reason that can't be done in the same tick
+#Clears temporary blocks afterwards because for some reason that can't be done in the same tick
 
 execute if entity @s[tag=BAux] positioned ~-1 175 ~4 run fill ~-5 ~ ~-5 ~7 ~3 ~15 air replace
 execute if entity @s[tag=YAux] positioned ~-1 175 ~-14 run fill ~-5 ~ ~-5 ~7 ~3 ~15 air replace

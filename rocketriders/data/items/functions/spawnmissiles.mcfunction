@@ -15,8 +15,10 @@ execute if entity @s[tag=YellowSurpriseHeavy] run function items:surprise_yellow
 execute if entity @s[tag=YellowSurpriseLightning] run function items:surprise_yellow/rnglightning
 
 ##Flipping Capability
-execute if entity @s[tag=yellowmissile] if entity @a[team=Yellow,limit=1,sort=nearest,distance=..5,tag=FlipMissile] run tag @s add missileflip
-execute if entity @s[tag=bluemissile] if entity @a[team=Blue,limit=1,sort=nearest,distance=..5,tag=FlipMissile] run tag @s add missileflip
+execute store result score $tempuuid playerUUID run data get entity @s data.UUID[0]
+execute if entity @s[tag=yellowmissile] if entity @a[team=Yellow,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
+execute if entity @s[tag=bluemissile] if entity @a[team=Blue,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
+scoreboard players reset $tempuuid playerUUID
 tag @s[tag=missileflip,tag=yellowmissile] add wasyellow
 tag @s[tag=missileflip,tag=bluemissile] add wasblue
 execute if entity @s[tag=missileflip,tag=yellowmissile,tag=wasyellow] run function items:flip/flipyellow
@@ -66,9 +68,9 @@ execute if entity @s[tag=yellowmissile] run data modify storage rocketriders:ymi
 execute if entity @s[tag=yellowmissile] run data modify storage rocketriders:ymissilepos z prepend from entity @s Pos[2]
 
 ##Play sounds
-execute if entity @s[tag=!UnableMissile] as @a[distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
-execute if entity @s[tag=!UnableMissile] as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
-execute if entity @s[tag=!UnableMissile] as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 
 ##Individual missile positioning
 #Auxiliary

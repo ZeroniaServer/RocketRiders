@@ -42,12 +42,12 @@ execute if entity @s[tag=!UnableMissile] run function items:prevention/spawnpoin
 
 ##Antigrief
 #Normal antigrief - starts after 10 seconds
-execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile] if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=17] run function items:prevention/antigrief
-execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile] if entity @s[x=-15,dx=54,y=33,dy=40,z=57,dz=17] run function items:prevention/antigrief
+execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile] if entity @s[x=-15,dx=54,y=33,dy=40,z=-76,dz=19] run function items:prevention/antigrief
+execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile] if entity @s[x=-15,dx=54,y=33,dy=40,z=57,dz=19] run function items:prevention/antigrief
 
 #Stronger antigrief - starts before 10 seconds
-execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile] if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run function items:prevention/antigrief_10sec
-execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run function items:prevention/antigrief_10sec
+execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile] if entity @s[x=-15,dx=54,y=33,dy=40,z=-76,dz=30] run function items:prevention/antigrief_10sec
+execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=30] run function items:prevention/antigrief_10sec
 
 #Give back
 execute if entity @s[tag=UnableMissile,tag=!missileflip] run function items:prevention/unablefx

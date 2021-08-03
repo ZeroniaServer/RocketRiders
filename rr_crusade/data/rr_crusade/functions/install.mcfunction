@@ -6,6 +6,7 @@ execute unless entity @e[type=marker,tag=PlacerClear] run function game:forcesto
 #> Crusade scoreboards
 scoreboard objectives add crusadekit dummy
 scoreboard objectives add crusadehp dummy
+scoreboard objectives add crusadechange trigger
 
 bossbar add rr_crusade:blue {"text":"Total Crystal Health","color":"white"}
 bossbar add rr_crusade:yellow ""

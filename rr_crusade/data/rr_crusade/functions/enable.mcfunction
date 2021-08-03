@@ -1,5 +1,6 @@
 tag @e[type=armor_stand,tag=Selection] remove switchGamemodes
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:lockdecos
+tag @e[type=armor_stand,tag=Selection] add noSabers
 tag @e[type=armor_stand,tag=Selection] add portalDecosOff
 tag @e[type=armor_stand,tag=Selection] add tyingOff
 tag @e[type=armor_stand,tag=Selection] add HardcoreOff

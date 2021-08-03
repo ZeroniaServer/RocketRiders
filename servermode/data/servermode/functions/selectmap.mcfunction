@@ -21,6 +21,13 @@ execute if entity @s[tag=EmptyMap] run scoreboard players set @e[type=armor_stan
 execute if entity @s[tag=EmptyMap] run scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] BottomDeco 0
 execute if entity @s[tag=EmptyMap] run scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] PortalDeco 0
 
+#The Castle crusade map (Empty. Base design is forced.)
+#> UNCOMMENT WHEN CRUSADE IS FINISHED
+#execute if entity @s[tag=TheCastle] run scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] TopDeco 0
+#execute if entity @s[tag=TheCastle] run scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] TopCorner 0
+#execute if entity @s[tag=TheCastle] run scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] MiddleDeco 0
+#execute if entity @s[tag=TheCastle] run scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] BottomDeco 0
+#execute if entity @s[tag=TheCastle] run scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] PortalDeco 0
 #Randomized map
 execute if entity @s[tag=RandomMap] run summon marker ~ ~ ~ {Tags:["RandomTop","RandomBases"]}
 execute if entity @s[tag=RandomMap] run scoreboard players set @e[type=marker,tag=RandomTop] RNGmax 3

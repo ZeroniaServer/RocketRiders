@@ -107,9 +107,8 @@ execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nea
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a ~ ~ ~ 2 0
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a ~ ~ ~ 2 1
-execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run summon marker ~ ~ ~ {Tags:["YellowPlatform"]}
+execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run function everytick:canopy_marker
 scoreboard players add @e[type=marker,tag=YellowPlatform] PlatTime 1
-execute as @e[type=ender_pearl,scores={testplat=10}] at @s store result score @e[type=marker,tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[type=ender_pearl,scores={testplat=10..}]
 execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
 execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
@@ -144,9 +143,8 @@ execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_ne
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a ~ ~ ~ 2 0
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a ~ ~ ~ 2 1
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.grass.place master @a ~ ~ ~ 2 0
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run summon marker ~ ~ ~ {Tags:["BluePlatform"]}
+execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run function everytick:canopy_marker
 scoreboard players add @e[type=marker,tag=BluePlatform] PlatTime 1
-execute as @e[type=ender_pearl,scores={testplat2=10}] at @s store result score @e[type=marker,tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[type=ender_pearl,scores={testplat2=10..}]
 execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
 execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]

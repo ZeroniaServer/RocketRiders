@@ -3,6 +3,7 @@ scoreboard players operation $tempuuid playerUUID = @s pearlOwnerUUID
 tag @p[team=Yellow,predicate=custom:matches_uuid] add currentTP
 tag @p[team=Yellow,tag=currentTP,tag=!canopyTP] remove threwCanopy
 tag @p[team=Yellow,tag=currentTP] add canopyTP
+tag @p[team=!Yellow,predicate=custom:matches_uuid] remove canopyTP
 
 #Reset the motion before/after teleporting (thanks to @dragonmaster95 for the suggestion!)
 execute if entity @s[scores={PlatTime=1..5}] as @p[team=Yellow,tag=currentTP] at @s run tp @s @s

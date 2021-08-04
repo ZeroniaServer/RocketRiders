@@ -3,7 +3,7 @@ execute if entity @s[tag=BlueAux] positioned ~-1 175 ~4 run fill ~-5 ~ ~-5 ~7 ~3
 execute if entity @s[tag=YellowAux] positioned ~-1 175 ~-14 run fill ~-5 ~ ~-5 ~7 ~3 ~15 air replace
 
 execute if entity @s[tag=BlueToma] positioned ~-1 175 ~4 run fill ~-5 ~ ~-5 ~6 ~1 ~13 air replace
-execute if entity @s[tag=YellowToma] positioned ~-1 175 ~-12 run fill ~2 ~ ~ ~6 ~1 ~13 air replace
+execute if entity @s[tag=YellowToma] positioned ~-1 175 ~-12 run fill ~5 ~ ~-5 ~6 ~1 ~13 air replace
 
 execute if entity @s[tag=BlueNull] positioned ~-1 175 ~4 run fill ~-5 ~ ~-5 ~6 ~2 ~13 air replace
 execute if entity @s[tag=YellowNull] positioned ~-1 175 ~-12 run fill ~-5 ~ ~-5 ~6 ~2 ~13 air replace

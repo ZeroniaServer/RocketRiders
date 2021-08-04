@@ -1,8 +1,8 @@
 scoreboard players add @s VoteServerMode 1
 scoreboard players add @e[type=marker,tag=ServerMode,tag=Set] VoteServerMode 0
 
-execute as @a[scores={VoteServerMode=5..}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
-execute as @a[scores={VoteServerMode=5..}] run scoreboard players set @s VoteServerMode 0
+execute as @a[scores={VoteServerMode=4..}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
+execute as @a[scores={VoteServerMode=4..}] run scoreboard players set @s VoteServerMode 0
 execute as @a[scores={VoteServerMode=..-1}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
 execute as @a[scores={VoteServerMode=..-1}] run scoreboard players set @s VoteServerMode 0
 execute as @a run scoreboard players enable @s VoteServerMode

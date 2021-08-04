@@ -5,13 +5,13 @@ execute as @e[type=egg] if data entity @s {Item:{tag:{CustomModelData:3}}} run f
 #Track ICBMs with IDs and summon trackers recursively
 scoreboard players add @e[type=egg,tag=ICBM] ICBMtime 1
 scoreboard players add @e[type=egg,tag=ICBM] ICBMID 0
-execute as @e[type=egg,tag=ICBM,scores={ICBMID=0}] at @s run function rr_crusade:items/icbmid
+execute as @e[type=egg,tag=ICBM,scores={ICBMID=0}] at @s run function rr_swap:items/icbmid
 
 #Teleport trackers to matching ICBMs recursively + detect trigger conditions
 execute store result score $numeggs ICBMID if entity @e[type=egg,tag=ICBM,scores={ICBMID=1..}]
 scoreboard players operation $tptracker ICBMID = $highest ICBMID
 scoreboard players operation $tptracker ICBMID -= $numeggs ICBMID
-function rr_crusade:items/tptoicbm
+function rr_swap:items/tptoicbm
 execute as @e[type=marker,tag=ICBMtracker,tag=!teleported] run tag @s add ICBMTriggered
 tag @e[type=marker,tag=ICBMtracker] remove teleported
 

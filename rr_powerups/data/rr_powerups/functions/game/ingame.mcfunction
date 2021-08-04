@@ -54,15 +54,6 @@ execute as @e[type=marker,tag=captureMiddle,scores={capturePoint=2,yCapturedTime
 execute as @e[type=marker,tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s bCapturedTime 0
 execute as @e[type=marker,tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s yCapturedTime 0
 
-#win
-execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 13 38 74 nether_portal run function game:winblue
-execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 11 38 74 nether_portal run function game:winblue
-execute if entity @s[tag=!BlueWon,tag=DoublePortal] unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal run function game:winblue
-
-execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 11 38 -74 nether_portal run function game:winyellow
-execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 13 38 -74 nether_portal run function game:winyellow
-execute if entity @s[tag=!YellowWon,tag=DoublePortal] unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run function game:winyellow
-
 #capture the point (+ optional gamemode stuff)
 tag @a[tag=onCapturePoint] remove onCapturePoint
 execute as @e[type=marker,tag=captureMiddle] at @s as @e[type=player,team=Blue,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
@@ -176,3 +167,12 @@ execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=1}] if e
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=..1}] as @a[team=Blue,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":true},{"text":" second!","color":"light_purple"}]
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=2..}] as @a[team=Yellow,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":true},{"text":" seconds!","color":"dark_purple"}]
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=..1}] as @a[team=Yellow,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":true},{"text":" second!","color":"dark_purple"}]
+
+#win
+execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 13 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 11 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon,tag=DoublePortal] unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal run function game:winblue
+
+execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 11 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 13 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon,tag=DoublePortal] unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run function game:winyellow

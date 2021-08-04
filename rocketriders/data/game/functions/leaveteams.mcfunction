@@ -11,14 +11,14 @@ team join Lobby @a[tag=LeaveTeams]
 tp @a[tag=LeavingYellow] -78 204 92 45 0
 tp @a[tag=LeavingBlue] -78 204 64 135 0
 tp @a[tag=LeavingSpec] -43 212 78 90 0
-clear @a[tag=LeaveTeams]
-effect clear @a[tag=LeaveTeams]
-effect give @a[tag=LeaveTeams] regeneration 1 255 true
-effect give @a[tag=LeaveTeams] resistance 1000000 255 true
-effect give @a[tag=LeaveTeams] night_vision 1000000 255 true
-gamemode adventure @a[tag=LeaveTeams,gamemode=!adventure]
-tag @a[tag=LeaveTeams] remove cursorItem
-execute as @a[tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
+clear @a[tag=!WasInLobby,tag=LeaveTeams]
+effect clear @a[tag=!WasInLobby,tag=LeaveTeams]
+effect give @a[tag=!WasInLobby,tag=LeaveTeams] regeneration 1 255 true
+effect give @a[tag=!WasInLobby,tag=LeaveTeams] resistance 1000000 255 true
+effect give @a[tag=!WasInLobby,tag=LeaveTeams] night_vision 1000000 255 true
+gamemode adventure @a[tag=!WasInLobby,tag=LeaveTeams,gamemode=!adventure]
+tag @a[tag=!WasInLobby,tag=LeaveTeams] remove cursorItem
+execute as @a[tag=!WasInLobby,tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @a[tag=LeaveTeams,tag=!WasInLobby] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a remove LeaveTeams
 tag @a remove LeavingYellow

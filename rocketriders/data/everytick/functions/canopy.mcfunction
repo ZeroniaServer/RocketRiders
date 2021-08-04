@@ -84,7 +84,8 @@ tag @e[type=marker,scores={PlatTime=58..}] add animated
 
 #Ender Pearl UUID storage and owner detection - necessary for accurate teleports
 execute as @e[type=ender_pearl] store result score @s pearlOwnerUUID run data get entity @s Owner[0]
-execute as @e[type=ender_pearl,tag=!BluePlat,tag=!YellowPlat] at @s run function everytick:canopy_owner
+execute as @e[type=ender_pearl,tag=!BluePlat,tag=!YellowPlat] run function everytick:canopy_owner
+execute as @e[type=ender_pearl] run function everytick:canopy_pearl
 
 ##Yellow Canopy functionality
 execute as @e[type=ender_pearl,tag=YellowPlat] at @s run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
@@ -106,16 +107,15 @@ execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nea
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a ~ ~ ~ 2 0
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a ~ ~ ~ 2 1
-execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run summon marker ~ ~ ~ {Tags:["YellowPlatform"]}
+execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run function everytick:canopy_marker
 scoreboard players add @e[type=marker,tag=YellowPlatform] PlatTime 1
-execute as @e[type=ender_pearl,scores={testplat=10}] at @s store result score @e[type=marker,tag=YellowPlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[type=ender_pearl,scores={testplat=10..}]
 execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
 execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
 execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
 execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=1}] run scoreboard players add @e[type=armor_stand,tag=Selection] canopyCount 1
 #Teleporting happens in another function
-execute if entity @e[type=marker,tag=YellowPlatform,scores={PlatTime=..41}] run function everytick:canopy_tpyellow
+execute as @e[type=marker,tag=YellowPlatform,scores={PlatTime=..41}] run function everytick:canopy_tpyellow
 tag @e[type=marker,tag=YellowPlatform] remove checkedTP
 tag @a[team=Yellow] remove checkedTP
 execute as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,distance=..6] respawn 0
@@ -143,16 +143,15 @@ execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_ne
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a ~ ~ ~ 2 0
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a ~ ~ ~ 2 1
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.grass.place master @a ~ ~ ~ 2 0
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run summon marker ~ ~ ~ {Tags:["BluePlatform"]}
+execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run function everytick:canopy_marker
 scoreboard players add @e[type=marker,tag=BluePlatform] PlatTime 1
-execute as @e[type=ender_pearl,scores={testplat2=10}] at @s store result score @e[type=marker,tag=BluePlatform,scores={PlatTime=1},limit=1,sort=nearest] pearlOwnerUUID run scoreboard players get @s pearlOwnerUUID
 kill @e[type=ender_pearl,scores={testplat2=10..}]
 execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
 execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
 execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
 execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run scoreboard players add @e[type=armor_stand,tag=Selection] canopyCount 1
 #Teleporting happens in another function
-execute if entity @e[type=marker,tag=BluePlatform,scores={PlatTime=..41}] run function everytick:canopy_tpblue
+execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=..41}] run function everytick:canopy_tpblue
 tag @e[type=marker,tag=BluePlatform] remove checkedTP
 tag @a[team=Blue] remove checkedTP
 execute as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,distance=..6] respawn 0

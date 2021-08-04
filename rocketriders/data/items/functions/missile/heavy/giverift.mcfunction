@@ -7,7 +7,7 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboa
 
 #Title/giving
 title @s[scores={HasRift=1..},tag=!fullHotbar,tag=!BackRift] actionbar {"text":"Rifter already obtained.","color":"aqua"}
-execute if entity @s[scores={HasRift=1..},tag=!fullHotbar,tag=!HasRift] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+execute if entity @s[scores={HasRift=1..},tag=!fullHotbar,tag=!BackRift] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasRift=0},tag=!fullHotbar,tag=!BackRift] actionbar {"text":"Rifter obtained.","color":"aqua"}
 loot give @s[scores={HasRift=0},tag=!fullHotbar] loot items:heavy/rifter
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasRift=0},tag=!fullHotbar] ~ ~ ~ 0.25 2

@@ -25,5 +25,5 @@
     "rewards": {
         "function": "tutorial:wait"
     },
-    "parent": "tutorial:root"
+    "parent": "tutorial:modif"
 }

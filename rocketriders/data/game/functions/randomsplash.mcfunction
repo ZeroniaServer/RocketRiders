@@ -3,7 +3,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 94
+scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 103
 
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -43,7 +43,7 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=29}] run title @a su
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=30}] run title @a subtitle ["",{"text":"Noob developers.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=31}] run title @a subtitle ["",{"text":"Better than Star Trek, worse than Star Wars!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=32}] run title @a subtitle ["",{"text":"Step 1: Place missile. Step 2: ??? Step 3: Profit.","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=33}] run title @a subtitle ["",{"text":"Exception in server tick loop","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=33}] run title @a subtitle ["",{"text":"Exception in server tick loop (not really lol)","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=34}] run title @a subtitle ["",{"text":"Been devin' since 1.11!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=35}] run title @a subtitle ["",{"text":"Muscle ELO","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=36}] run title @a subtitle ["",{"text":"If you have to ask, it's a feature!","color":"green"}]
@@ -104,5 +104,14 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=90}] run title @a su
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=91}] run title @a subtitle ["",{"text":"Does anyone actually play Normal Mode?","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=92}] run title @a subtitle ["",{"text":"Go bed.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=93}] run title @a subtitle ["",{"text":"Not another 1 hour match...","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=94}] run title @a subtitle ["",{"text":"When release?","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=95}] run title @a subtitle ["",{"text":"SethBling Approved™","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=96}] run title @a subtitle ["",{"text":"A Spanish server called CubeKrowd...","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=97}] run title @a subtitle ["",{"text":"Oh no! Another French invasion!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=98}] run title @a subtitle ["",{"text":"Open source on GitHub!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=99}] run title @a subtitle ["",{"text":"Watch out for ghost blocks!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=100}] run title @a subtitle ["",{"text":"Simon says, \"Kaboom!\"","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=101}] run title @a subtitle ["",{"text":"The Cuban Missile Crisis has begun...","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=102}] run title @a subtitle ["",{"text":"Cold War gone wrong!","color":"green"}]
 
 kill @e[type=marker,tag=RandomSplash]

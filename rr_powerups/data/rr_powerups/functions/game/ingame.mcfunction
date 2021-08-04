@@ -1,17 +1,8 @@
 #leave midgame
 execute if entity @s[tag=!SMActive] run function game:leavemidgame
 
-#utility functions
-execute if entity @a[scores={DrinkHoney=1..}] run tag @s add runbeeshields
-execute if entity @e[type=armor_stand,tag=BeeShieldDisplay] run tag @s add runbeeshields
-execute if entity @e[type=marker,tag=animBshield] run tag @s add runbeeshields
-execute if entity @e[type=bee] run tag @s add runbeeshields
-execute if entity @s[tag=runbeeshields] run function rr_powerups:everytick/bee_shield
-tag @s remove runbeeshields
-clear @a glass_bottle
-execute if entity @e[type=bee] run function rr_powerups:everytick/init_kill_bees
-
-function rr_powerups:everytick/lava_splash
+#spawnables
+function rr_powerups:everytick/spawnables
 function rr_powerups:everytick/cancel_utility
 
 #crystal pads
@@ -62,15 +53,6 @@ execute as @e[type=marker,tag=captureMiddle,scores={capturePoint=1,bCapturedTime
 execute as @e[type=marker,tag=captureMiddle,scores={capturePoint=2,yCapturedTime=..1200}] run scoreboard players add @s yCapturedTime 1
 execute as @e[type=marker,tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s bCapturedTime 0
 execute as @e[type=marker,tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s yCapturedTime 0
-
-#win
-execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 13 38 74 nether_portal run function game:winblue
-execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 11 38 74 nether_portal run function game:winblue
-execute if entity @s[tag=!BlueWon,tag=DoublePortal] unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal run function game:winblue
-
-execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 11 38 -74 nether_portal run function game:winyellow
-execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 13 38 -74 nether_portal run function game:winyellow
-execute if entity @s[tag=!YellowWon,tag=DoublePortal] unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run function game:winyellow
 
 #capture the point (+ optional gamemode stuff)
 tag @a[tag=onCapturePoint] remove onCapturePoint
@@ -135,8 +117,16 @@ execute as @e[type=marker,tag=captureMiddle,tag=!contested,limit=1] if score @s 
 execute as @e[type=marker,tag=captureMiddle,tag=!contested,limit=1] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Captured!","color":"yellow","bold":true}]
 
 #broken elytra replacing
+execute as @a[team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b}]}] at @s if predicate custom:canopy_nearyellow run tag @s add BreakEly
+execute as @a[team=Yellow,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b}]}] at @s if predicate custom:canopy_nearblue run tag @s add BreakEly
+
 execute as @a[team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b,tag:{Damage:431}}]}] run tag @s add BreakEly
 execute as @a[team=Yellow,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b,tag:{Damage:431}}]}] run tag @s add BreakEly
+
+execute as @a[tag=BreakEly] run title @s title ["",{"text":" "}]
+execute as @a[tag=BreakEly] run title @s subtitle ["",{"text":"Elytra ","color":"dark_red","italic":true,"bold":true},{"text":"expired!","color":"red"}]
+execute as @a[tag=BreakEly] at @s run playsound minecraft:entity.item.break master @s ~ ~ ~ 0.6 1
+execute as @a[tag=BreakEly] at @s run playsound minecraft:entity.bat.takeoff master @s ~ ~ ~ 0.4 1.2
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Blue,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:3949738},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Yellow,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{display:{Name:'[{"text":"Yellow Chestplate","color":"gold","bold":true,"italic":false}]',color:16768000},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Blue,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:3949738},HideFlags:127,Unbreakable:1}
@@ -177,3 +167,12 @@ execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=1}] if e
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=..1}] as @a[team=Blue,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":true},{"text":" second!","color":"light_purple"}]
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=2..}] as @a[team=Yellow,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":true},{"text":" seconds!","color":"dark_purple"}]
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=..1}] as @a[team=Yellow,tag=!DelayActionbar,tag=!Infinity] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":true},{"text":" second!","color":"dark_purple"}]
+
+#win
+execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 13 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon,tag=!DoublePortal] unless block 11 38 74 nether_portal run function game:winblue
+execute if entity @s[tag=!BlueWon,tag=DoublePortal] unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal run function game:winblue
+
+execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 11 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon,tag=!DoublePortal] unless block 13 38 -74 nether_portal run function game:winyellow
+execute if entity @s[tag=!YellowWon,tag=DoublePortal] unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run function game:winyellow

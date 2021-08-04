@@ -4,23 +4,8 @@
 ## projectiles, blocks, or explosions  ##
 #########################################
 
-##Store vortex user UUID's into their UUIDTracker score
-execute as @a[scores={ThrowVortex=1..}] store result score @s UUIDTracker run data get entity @s UUID[0]
-
 ##Identify egg as a Vortex & apply custom name to the egg
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run setblock ~ 174 ~ oak_sign
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run setblock ~ 174 ~ oak_sign
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Yellow,scores={ThrowVortex=1..}]"},{"text":"\'s Vortex"}]'}
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Blue,scores={ThrowVortex=1..}]"},{"text":"\'s Vortex"}]'}
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=!YellowVortex,tag=!BlueVortex] add YellowVortex
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s store result score @e[type=egg,tag=YellowVortex,limit=1,distance=..3,sort=nearest] UUIDTracker run scoreboard players get @s UUIDTracker
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run data modify entity @e[type=egg,tag=YellowVortex,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=!YellowVortex,tag=!BlueVortex] add BlueVortex
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s store result score @e[type=egg,tag=BlueVortex,limit=1,distance=..3,sort=nearest] UUIDTracker run scoreboard players get @s UUIDTracker
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run data modify entity @e[type=egg,tag=BlueVortex,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
-execute as @a[team=Yellow,scores={ThrowVortex=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
-execute as @a[team=Blue,scores={ThrowVortex=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
-scoreboard players reset @a ThrowVortex
+execute as @e[type=egg] unless data entity @s {Item:{tag:{CustomModelData:3}}} run function everytick:vortex_owner
 
 ##Vortex deployment (both teams)
 execute as @e[type=egg,tag=YellowVortex] at @s run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a
@@ -63,8 +48,8 @@ execute as @e[type=armor_stand,tag=VortexItemBlue] at @s unless entity @a[team=Y
 execute as @e[type=armor_stand,tag=VortexItemYellow] at @s unless entity @a[team=Blue,gamemode=!spectator,distance=..4] if score @e[type=marker,tag=VortexYellow,sort=nearest,limit=1,distance=..2] vortexBoom matches 1.. run tp @s ~ ~ ~ ~-30 ~
 
 ##Drift towards enemy player in close contact
-execute as @e[type=marker,tag=VortexBlue,scores={vortexBoom=1..}] at @s if entity @a[team=Yellow,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Yellow,gamemode=!spectator,distance=..4]
-execute as @e[type=marker,tag=VortexYellow,scores={vortexBoom=1..}] at @s if entity @a[team=Blue,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Blue,gamemode=!spectator,distance=..4]
+execute if entity @s[tag=!GameEnd] as @e[type=marker,tag=VortexBlue,scores={vortexBoom=1..}] at @s if entity @a[team=Yellow,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Yellow,gamemode=!spectator,distance=..4]
+execute if entity @s[tag=!GameEnd] as @e[type=marker,tag=VortexYellow,scores={vortexBoom=1..}] at @s if entity @a[team=Blue,gamemode=!spectator,distance=..4] run tp @s ^ ^ ^.1 facing entity @p[team=Blue,gamemode=!spectator,distance=..4]
 
 #Teleport item to drifting Vortex recursively - thanks iRobo for the algorithm!
 scoreboard players set $count VortexID 1
@@ -77,10 +62,10 @@ execute as @e[type=armor_stand,tag=VortexItemYellow] at @s if entity @e[type=mar
 execute as @e[type=armor_stand,tag=VortexItemYellow] at @s if entity @e[type=marker,tag=VortexYellow,sort=nearest,limit=1,distance=..2] if entity @a[team=Blue,gamemode=!spectator,distance=..6] run tp @s ~ ~ ~ ~-180 ~
 
 ##Other explosion conditions
-execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[type=marker,tag=VortexYellow,distance=..4,scores={vortexBoom=0}] vortexBoom 1
-execute as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[type=marker,tag=VortexYellow,distance=..2,scores={vortexBoom=1..}] vortexBoom 1
-execute as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[type=marker,tag=VortexBlue,distance=..4,scores={vortexBoom=0}] vortexBoom 1
-execute as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[type=marker,tag=VortexBlue,distance=..2,scores={vortexBoom=1..}] vortexBoom 1
+execute if entity @s[tag=!GameEnd] as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[type=marker,tag=VortexYellow,distance=..4,scores={vortexBoom=0}] vortexBoom 1
+execute if entity @s[tag=!GameEnd] as @a[team=Blue,gamemode=!spectator] at @s run scoreboard players add @e[type=marker,tag=VortexYellow,distance=..2,scores={vortexBoom=1..}] vortexBoom 1
+execute if entity @s[tag=!GameEnd] as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[type=marker,tag=VortexBlue,distance=..4,scores={vortexBoom=0}] vortexBoom 1
+execute if entity @s[tag=!GameEnd] as @a[team=Yellow,gamemode=!spectator] at @s run scoreboard players add @e[type=marker,tag=VortexBlue,distance=..2,scores={vortexBoom=1..}] vortexBoom 1
 execute as @e[type=marker,scores={vortexBoom=1}] at @s run playsound entity.shulker.hurt_closed master @a ~ ~ ~ 0.7 0
 execute as @e[type=marker,scores={vortexBoom=1}] at @s run playsound minecraft:block.sculk_sensor.clicking master @a ~ ~ ~ 1 1
 tag @e[type=marker,tag=Vortex,scores={vortexBoom=1}] add origin

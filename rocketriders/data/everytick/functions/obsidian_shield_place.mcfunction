@@ -36,4 +36,5 @@ execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run summon ma
 execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run scoreboard players set @e[type=marker,tag=yellowobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
 execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run summon marker ~ ~ ~ {Tags:["blueobsidianshield"]}
 execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run scoreboard players set @e[type=marker,tag=blueobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
+execute if entity @s[scores={shieldplacement=6..}] run kill @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest,distance=..1]
 kill @s[scores={shieldplacement=6..}]

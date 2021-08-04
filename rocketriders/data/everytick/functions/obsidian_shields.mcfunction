@@ -6,12 +6,11 @@
 
 ##Blue Obsidian Shield functionality
 #Spawning in Fireball entities
+execute as @e[type=marker,tag=BlueObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[type=marker,tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 execute as @e[type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
-execute as @e[type=fireball,tag=blueobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:air",Count:1b}}
-tag @e[type=fireball,tag=blueobfireball,tag=!headreplaced] add headreplaced
 
 #Detecting motion
 tag @e[type=fireball,tag=blueobfireball] remove StillOb
@@ -48,13 +47,14 @@ execute as @e[type=marker,tag=blueobalone] at @s if entity @e[type=marker,tag=Ye
 
 #Place Obsidian Shield
 scoreboard players add @e[type=marker,tag=blueobalone] shieldplacement 1
-execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=1}] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:6,Tags:["tempobshield"],Particle:"block air"}
-execute as @e[type=marker,tag=blueobalone] at @s at @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest] align xyz run function everytick:obsidian_shield_place
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=1}] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:2000000,Tags:["tempobshield"],Particle:"block air"}
+execute as @e[type=marker,tag=blueobalone] at @s at @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest,distance=..1] align xyz run function everytick:obsidian_shield_place
 tp @e[type=marker,tag=BlueObshield] ~ ~-250 ~
 kill @e[type=marker,tag=BlueObshield]
 
 ##Yellow Obsidian Shield functionality
 #Spawning in Fireball entities
+execute as @e[type=marker,tag=YellowObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[type=marker,tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
@@ -97,8 +97,8 @@ execute as @e[type=marker,tag=yellowobalone] at @s if entity @e[type=marker,tag=
 
 #Place Obsidian Shield
 scoreboard players add @e[type=marker,tag=yellowobalone] shieldplacement 1
-execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=1}] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:6,Tags:["tempobshield"],Particle:"block air"}
-execute as @e[type=marker,tag=yellowobalone] at @s at @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest] align xyz run function everytick:obsidian_shield_place
+execute as @e[type=marker,tag=yellowobalone,scores={shieldplacement=1}] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:2000000,Tags:["tempobshield"],Particle:"block air"}
+execute as @e[type=marker,tag=yellowobalone] at @s at @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest,distance=..1] align xyz run function everytick:obsidian_shield_place
 tp @e[type=marker,tag=YellowObshield] ~ ~-250 ~
 kill @e[type=marker,tag=YellowObshield]
 

@@ -12,6 +12,7 @@ scoreboard players add @a PlayerDeaths 0
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s PlayerDeaths < @s deaths run tag @s add probablyDied
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s respawn matches 1.. run tag @s add probablyDied
 scoreboard players add @a[tag=probablyDied] deathCooldown 1
+execute as @a[tag=probablyDied,predicate=custom:is_on_fire] at @s run function game:putoutfire
 
 #All achievements
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:firewithin

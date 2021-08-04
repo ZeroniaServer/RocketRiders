@@ -34,8 +34,8 @@ execute if entity @s[tag=Sonar] as @e[type=armor_stand,tag=VortexItemFeathered] 
 execute if entity @s[tag=Sonar] as @e[type=armor_stand,tag=Bot] run data merge entity @s {Glowing:1b}
 
 ##Rocket Residers (anti-crossing behavior)
-execute if entity @s[tag=Residers] as @a[team=Blue] at @s if entity @s[z=-36,dz=220] run tag @s add crosser
-execute if entity @s[tag=Residers] as @a[team=Yellow] at @s if entity @s[z=-184,dz=220] run tag @s add crosser
+execute if entity @s[tag=Residers] as @a[team=Blue,predicate=custom:residers] run tag @s add crosser
+execute if entity @s[tag=Residers] as @a[team=Yellow,predicate=custom:residers] run tag @s add crosser
 #Hackfix: void works for crossers too
 execute as @a[tag=crosser] run function game:void
 tag @a remove crosser

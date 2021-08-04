@@ -16,7 +16,7 @@
                 },
                 {
                   "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowSurpriseHeavy\",\"surprising\"]}}"
+                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowSurpriseHeavy\",\"surprising\",\"missile\"]}}"
                 }
               ],
               "conditions": [
@@ -39,7 +39,7 @@
                 },
                 {
                   "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"BlueSurpriseHeavy\",\"surprising\"]}}"
+                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"BlueSurpriseHeavy\",\"surprising\",\"missile\"]}}"
                 }
               ],
               "conditions": [

@@ -1,3 +1,4 @@
+function rr_powerups:everytick/spawnables
 clear @a[team=Blue] #custom:clear
 clear @a[team=Blue] crossbow{nova:1b}
 clear @a[team=Blue] #rr_powerups:clear

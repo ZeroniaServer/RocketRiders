@@ -26,8 +26,8 @@ function items:full_hotbar
 
 execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function items:missile/special/givebull
 execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run function items:missile/special/givebull
-execute as @e[type=marker,tag=rngSelected,tag=rngElytra] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/giveelytra
-execute as @e[type=marker,tag=rngSelected,tag=rngElytra] as @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run function rr_powerups:items/powerup/giveelytra
+execute as @e[type=marker,tag=rngSelected,tag=rngElytra] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] at @s run function rr_powerups:items/powerup/giveelytra
+execute as @e[type=marker,tag=rngSelected,tag=rngElytra] as @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] at @s run function rr_powerups:items/powerup/giveelytra
 execute as @e[type=marker,tag=rngSelected,tag=rngHyper] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function items:missile/special/givehyper
 execute as @e[type=marker,tag=rngSelected,tag=rngHyper] as @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run function items:missile/special/givehyper
 execute as @e[type=marker,tag=rngSelected,tag=rngInfinity] as @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run function rr_powerups:items/powerup/giveinfinity

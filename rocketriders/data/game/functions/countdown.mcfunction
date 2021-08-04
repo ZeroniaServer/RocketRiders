@@ -86,7 +86,6 @@ execute if entity @s[tag=GameStarted] run scoreboard objectives add UUIDTracker 
 execute if entity @s[tag=GameStarted] run scoreboard objectives add KillerUUID dummy
 
 ##Right as game begins
-execute if entity @s[tag=GameStarted,tag=!bossbarOverride] run bossbar set rr:startgame name ["",{"text":"A match is currently in progress. Feel free to join in!","color":"dark_green"}]
 execute if entity @s[tag=GameStarted] run bossbar set rr:startgame value 30
 execute if entity @s[tag=GameStarted] run bossbar set rr:startgame max 30
 execute if entity @s[tag=GameStarted] run function game:randomsplash

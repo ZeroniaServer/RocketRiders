@@ -120,5 +120,6 @@ execute if entity @s[tag=bluemissile,tag=spawnpoint] at @s if entity @a[team=Blu
 
 #All missiles
 tp @s ~ ~-300 ~
-kill @s
+data merge entity @s {Tags:["UnableMissile"]}
 scoreboard players reset $missile playerUUID
+execute as @e[type=marker,tag=UnableClear] at @s run function items:prevention/clearafter

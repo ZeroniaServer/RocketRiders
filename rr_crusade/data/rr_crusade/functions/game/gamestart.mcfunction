@@ -25,4 +25,9 @@ execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[team=Yello
 execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[team=Yellow,scores={crusadekit=2}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[team=Yellow,scores={crusadekit=3}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Fire Wand ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 execute if entity @s[scores={count=600},tag=SMActive] run tellraw @a[team=Yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+#Hotfix for being able to keep charging bow from queue
+execute if entity @s[scores={count=600}] run clear @a[team=Blue,scores={crusadekit=2}] bow
+execute if entity @s[scores={count=600}] run clear @a[team=Yellow,scores={crusadekit=2}] bow
+execute if entity @s[scores={count=600}] as @a[team=Blue,scores={crusadekit=2}] run item replace entity @s hotbar.0 with bow{display:{Name:'{"translate":"Shooting Saber","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for"}','{"translate":"ranged attacks."}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1}]}
+execute if entity @s[scores={count=600}] as @a[team=Yellow,scores={crusadekit=2}] run item replace entity @s hotbar.0 with bow{display:{Name:'{"translate":"Shooting Saber","color":"gold","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for"}','{"translate":"ranged attacks."}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1}]}
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

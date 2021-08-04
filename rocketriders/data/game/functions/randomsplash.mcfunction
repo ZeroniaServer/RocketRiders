@@ -106,7 +106,7 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=92}] run title @a su
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=93}] run title @a subtitle ["",{"text":"Not another 1 hour match...","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=94}] run title @a subtitle ["",{"text":"When release?","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=95}] run title @a subtitle ["",{"text":"SethBling Approved™","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=96}] run title @a subtitle ["",{"text":"A Spanish server...","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=96}] run title @a subtitle ["",{"text":"A Spanish server called CubeKrowd...","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=97}] run title @a subtitle ["",{"text":"Oh no! Another French invasion!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=98}] run title @a subtitle ["",{"text":"Open source on GitHub!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=99}] run title @a subtitle ["",{"text":"Watch out for ghost blocks!","color":"green"}]

@@ -4,6 +4,7 @@
 
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
+function everytick:spawnables
 tag @s[scores={endtimer=1}] remove GameStarted
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem

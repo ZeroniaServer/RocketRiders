@@ -32,7 +32,9 @@ execute if entity @s[scores={SDtime=1}] at @s run effect clear @a resistance
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a weakness
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a regeneration
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run clear @a[team=Yellow] bow
+execute if entity @s[scores={SDtime=1},tag=BlueWonFirst,tag=!noSabers] as @a[team=Yellow] run function game:saberyellow
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run clear @a[team=Blue] bow
+execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] as @a[team=Blue] run function game:saberblue
 execute if entity @s[scores={SDtime=1}] at @s run effect give @a blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] at @s run effect clear @a blindness
 execute if entity @s[scores={SDtime=1}] at @s run tag @s remove GameEnd

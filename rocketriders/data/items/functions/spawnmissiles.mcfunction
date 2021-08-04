@@ -178,24 +178,24 @@ execute if entity @s[tag=bluemissile] run function items:minify/minifyblue
 execute if entity @s[tag=yellowmissile] run function items:minify/minifyyellow
 
 #Extra for Duplex
-execute if entity @s[tag=duplexExtraBlue] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
-execute if entity @s[tag=duplexExtraBlue] run kill @s
-execute if entity @s[tag=duplexExtraYellow] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
-execute if entity @s[tag=duplexExtraYellow] run kill @s
+execute as @e[type=marker,tag=duplexExtraBlue] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
+execute as @e[type=marker,tag=duplexExtraBlue] run kill @s
+execute as @e[type=marker,tag=duplexExtraYellow] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
+execute as @e[type=marker,tag=duplexExtraYellow] run kill @s
 
 #Extra for Broadsword
-execute if entity @s[tag=broadExtraBlue] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
-execute if entity @s[tag=broadExtraBlue] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
-execute if entity @s[tag=broadExtraBlue] run kill @s
-execute if entity @s[tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
-execute if entity @s[tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
-execute if entity @s[tag=broadExtraYellow] run kill @s
+execute as @e[type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
+execute as @e[type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
+execute as @e[type=marker,tag=broadExtraBlue] run kill @s
+execute as @e[type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
+execute as @e[type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
+execute as @e[type=marker,tag=broadExtraYellow] run kill @s
 
 #Extra for Warhead
-execute if entity @s[tag=warExtraBlue] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] replace
-execute if entity @s[tag=warExtraBlue] run kill @s
-execute if entity @s[tag=warExtraYellow] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
-execute if entity @s[tag=warExtraYellow] run kill @s
+execute as @e[type=marker,tag=warExtraBlue] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] replace
+execute as @e[type=marker,tag=warExtraBlue] run kill @s
+execute as @e[type=marker,tag=warExtraYellow] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
+execute as @e[type=marker,tag=warExtraYellow] run kill @s
 
 ##Kill entity
 kill @s

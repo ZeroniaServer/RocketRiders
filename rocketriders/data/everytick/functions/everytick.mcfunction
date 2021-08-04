@@ -25,7 +25,6 @@ execute as @e[type=armor_stand,tag=Selection,tag=!NoModesInstalled,tag=!NoModesE
 execute as @e[type=armor_stand,tag=Selection,tag=GameStarted,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run function everytick:regen_system
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run gamerule naturalRegeneration true
-execute as @e[type=marker,tag=UnableClear] at @s run function items:prevention/clearafter
 
 #Night vision/saturation and more lobby functionality
 effect give @a[team=Lobby] night_vision 1000000 100 true

@@ -43,7 +43,7 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=29}] run title @a su
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=30}] run title @a subtitle ["",{"text":"Noob developers.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=31}] run title @a subtitle ["",{"text":"Better than Star Trek, worse than Star Wars!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=32}] run title @a subtitle ["",{"text":"Step 1: Place missile. Step 2: ??? Step 3: Profit.","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=33}] run title @a subtitle ["",{"text":"Exception in server tick loop","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=33}] run title @a subtitle ["",{"text":"Exception in server tick loop (not really lol)","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=34}] run title @a subtitle ["",{"text":"Been devin' since 1.11!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=35}] run title @a subtitle ["",{"text":"Muscle ELO","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=36}] run title @a subtitle ["",{"text":"If you have to ask, it's a feature!","color":"green"}]

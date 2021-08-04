@@ -1,6 +1,7 @@
 ##Missile/utility-specific commands (optimized to only run when necessary)
 execute unless entity @s[tag=runspawnmissiles] if entity @e[type=marker,tag=missile] run tag @s add runspawnmissiles
 execute unless entity @s[tag=runspawnmissiles] if entity @e[type=marker,tag=surprising] run tag @s add runspawnmissiles
+execute if entity @s[tag=runspawnmissiles] as @e[type=marker,tag=missile] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute if entity @s[tag=runspawnmissiles] as @e[type=marker,tag=missile] at @s run function items:spawnmissiles
 tag @s[tag=runspawnmissiles] remove runspawnmissiles
 

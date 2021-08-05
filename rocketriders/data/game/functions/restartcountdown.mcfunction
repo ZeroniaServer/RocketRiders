@@ -2,3 +2,4 @@
 ##Does not work if the countdown has been forced
 tag @s[tag=!forceCountdown] remove Countdown
 scoreboard players set @s[tag=!forceCountdown] count 0
+bossbar set rr:startgame max 30

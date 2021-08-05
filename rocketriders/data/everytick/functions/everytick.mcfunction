@@ -53,7 +53,7 @@ effect clear @s[scores={voidNoFallCount=2}] slow_falling
 scoreboard players reset @s[scores={voidNoFallCount=2}] voidNoFallCount
 
 #Arrow pickup
-execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!crusadeEnabled] if entity @e[type=arrow] run function everytick:arrow_pickup
+execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!customArrowPickup] if entity @e[type=arrow] run function everytick:arrow_pickup
 
 #Game ending and arena clearing
 execute as @e[type=armor_stand,tag=Selection,tag=GameEnd,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gameend

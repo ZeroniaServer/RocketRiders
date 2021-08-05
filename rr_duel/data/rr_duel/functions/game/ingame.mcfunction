@@ -13,6 +13,13 @@ tag @a[team=Yellow] add InRanked
 function game:cancelyellow
 function game:cancelblue
 
+#handle portal kills/breaches
+tp @a[team=Blue,tag=portalKill] 12 64 -66 0 0
+tp @a[team=Yellow,tag=portalKill] 12 64 66 -180 0
+tag @a[tag=portalKill] remove portalKill
+execute as @a[gamemode=!spectator] if entity @s[team=Blue,tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run tp @s 12 64 -66 0 0
+execute as @a[gamemode=!spectator] if entity @s[team=Yellow,tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run tp @s 12 64 66 -180 0
+
 #Item RNG
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom

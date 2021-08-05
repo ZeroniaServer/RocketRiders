@@ -13,4 +13,8 @@ tag @e[type=armor_stand,tag=Selection] add doStacking
 tag @e[type=armor_stand,tag=Selection] add stackingOn
 tag @e[type=armor_stand,tag=Selection] add customSaberMsg
 tag @e[type=armor_stand,tag=Selection] add customArrowPickup
+tag @e[type=armor_stand,tag=Selection] add MoleratOff
+tag @e[type=armor_stand,tag=Selection,tag=Molerat] add MoleratWasOn
+tag @e[type=armor_stand,tag=Selection,tag=Molerat] add WasMolerat
+tag @e[type=armor_stand,tag=Selection,tag=Molerat] remove Molerat
 tag @e[type=armor_stand,tag=Selection] add crusadeEnabled

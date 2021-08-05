@@ -49,5 +49,6 @@ execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=36}] run title @a
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=37}] run title @a[tag=Winner] subtitle ["",{"text":"Imagine losing","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=38}] run title @a[tag=Winner,team=Yellow] subtitle ["",{"text":"Bet Yellow won, I just know it!","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=38}] run title @a[tag=Winner,team=Blue] subtitle ["",{"text":"Bet Blue won, I just know it!","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=39}] run title @a[tag=Winner] subtitle ["",{"text":"MISSILE WENT BOOM!!!!!","color":"green"}]
 
 kill @e[type=marker,tag=RandomWinSplash]

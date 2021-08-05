@@ -23,8 +23,8 @@ setblock -101 202 62 deepslate_bricks
 fill -101 195 91 -89 201 92 deepslate_bricks
 fill -89 201 93 -89 195 96 deepslate_bricks
 fill -101 195 96 -101 201 91 deepslate_bricks
-fill -102 194 97 -88 202 97 obsidian
-fill -102 202 59 -88 194 59 minecraft:obsidian
+fill -101 195 97 -89 201 97 air
+fill -101 195 59 -89 201 59 air
 setblock -101 202 94 deepslate_bricks
 setblock -101 202 91 deepslate_bricks
 setblock -98 202 91 deepslate_bricks
@@ -40,8 +40,8 @@ fill -99 200 72 -101 202 72 bedrock
 fill -91 200 72 -89 202 72 bedrock
 fill -99 200 73 -101 202 73 blue_stained_glass
 fill -91 200 73 -89 202 73 blue_stained_glass
-fill -94 198 91 -96 200 91 minecraft:crying_obsidian
-fill -96 198 65 -94 200 65 minecraft:crying_obsidian
+fill -94 198 91 -96 200 94 minecraft:crying_obsidian
+fill -96 198 65 -94 200 62 minecraft:crying_obsidian
 
 fill 35 36 75 -11 59 73 air
 fill 36 36 -73 -12 59 -75 air

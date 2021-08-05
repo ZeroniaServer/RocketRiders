@@ -13,6 +13,23 @@ execute if entity @s[tag=GameStarted] run function rr_crusade:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_crusade:game/gameend
 function everytick:no_drop
 
+scoreboard players reset @a[team=!Blue,team=!Yellow] crusadekit
+
+#Arrow pickup
+execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd] if entity @e[type=arrow] run function rr_crusade:game/arrow_pickup
+
+#kits
+scoreboard players enable @a[team=Blue] crusadechange
+scoreboard players enable @a[team=Yellow] crusadechange
+scoreboard players enable @a[team=!Blue,team=!Yellow] crusadechange
+
+execute as @a[scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
+execute as @a[scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
+execute as @a[scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage
+
+scoreboard players reset @a[scores={crusadechange=-2147483647..-1}] crusadechange
+scoreboard players reset @a[scores={crusadechange=1..}] crusadechange
+
 #reset
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] run function rr_crusade:arenaclear/baseplacement
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @a remove informMe

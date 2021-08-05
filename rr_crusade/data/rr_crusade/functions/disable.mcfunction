@@ -12,4 +12,5 @@ tag @e[type=armor_stand,tag=Selection,tag=stackingWasOff] remove doStacking
 tag @e[type=armor_stand,tag=Selection] remove stackingWasOff
 tag @e[type=armor_stand,tag=Selection] remove stackingOn
 tag @e[type=armor_stand,tag=Selection] remove customSaberMsg
+execute as @a run trigger crusadekit set 0
 tag @e[type=armor_stand,tag=Selection] add switchGamemodes

@@ -38,8 +38,10 @@ kill @e[type=item]
 kill @e[type=ender_pearl]
 kill @e[type=firework_rocket,tag=BlueNova]
 kill @e[type=firework_rocket,tag=YellowNova]
-execute as @e[type=marker,tag=blueobsidianshield] at @s run function everytick:obsidian_shield_break
-execute as @e[type=marker,tag=yellowobsidianshield] at @s run function everytick:obsidian_shield_break
+execute as @e[type=marker,tag=obsidianshield] at @s run function everytick:obsidian_shield_break
+execute as @e[type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break
+execute as @e[type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break
+kill @e[type=area_effect_cloud,tag=tempobshield]
 execute if entity @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
 execute if entity @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
 kill @e[type=marker,tag=YellowPlatform]

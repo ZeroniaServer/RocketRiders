@@ -1,3 +1,7 @@
+#Obsiaidn Shield markers
+execute if entity @s[scores={shieldplacement=1}] run summon marker ~ ~ ~ {Tags:["obsidianshield"]}
+execute if entity @s[scores={shieldplacement=1}] run scoreboard players set @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] breakobshield 0
+
 #Obsidian Shield deploy animation + sounds
 execute if entity @s[scores={shieldplacement=2}] run fill ~ ~1 ~ ~ ~-1 ~ crying_obsidian
 execute if entity @s[scores={shieldplacement=2}] run fill ~1 ~ ~ ~-1 ~ ~ crying_obsidian
@@ -30,11 +34,9 @@ execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-
 execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~1 ~ cyan_stained_glass_pane[west=true]
 execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~-1 ~ cyan_stained_glass_pane[west=true]
 
+execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run tag @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] add blueobsidianshield
+execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run tag @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] add yellowobsidianshield
 execute if entity @s[scores={shieldplacement=6}] run playsound minecraft:block.respawn_anchor.set_spawn master @a ~ ~ ~ 2 1
 execute if entity @s[scores={shieldplacement=6}] run playsound minecraft:block.respawn_anchor.charge master @a ~ ~ ~ 2 1
-execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run summon marker ~ ~ ~ {Tags:["yellowobsidianshield"]}
-execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run scoreboard players set @e[type=marker,tag=yellowobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
-execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run summon marker ~ ~ ~ {Tags:["blueobsidianshield"]}
-execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run scoreboard players set @e[type=marker,tag=blueobsidianshield,sort=nearest,limit=1,distance=..3] breakobshield 0
 execute if entity @s[scores={shieldplacement=6..}] run kill @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest,distance=..1]
 kill @s[scores={shieldplacement=6..}]

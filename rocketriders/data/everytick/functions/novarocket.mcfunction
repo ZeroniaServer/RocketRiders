@@ -4,13 +4,6 @@
 ######################################################
 
 ##General Nova Rocket functionality
-#Removes Nova Rocket tags for dead players
-tag @a[scores={respawn=1..}] remove YellowNovaNear
-tag @a[scores={respawn=1..}] remove YellowNovaAttach
-tag @a[scores={respawn=1..}] remove BlueNovaNear
-tag @a[scores={respawn=1..}] remove BlueNovaAttach
-scoreboard players reset @a[scores={respawn=1..}] novattach
-
 #Creative mode support
 execute as @a[team=Blue,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
 execute as @a[team=Yellow,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1

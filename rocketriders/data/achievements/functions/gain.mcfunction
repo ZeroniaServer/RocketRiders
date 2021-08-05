@@ -14,6 +14,13 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s respawn matc
 scoreboard players add @a[tag=probablyDied] deathCooldown 1
 execute as @a[tag=probablyDied,predicate=custom:is_on_fire] at @s run function game:putoutfire
 
+#Removes Nova Rocket tags for dead players
+tag @a[tag=probablyDied] remove YellowNovaNear
+tag @a[tag=probablyDied] remove YellowNovaAttach
+tag @a[tag=probablyDied] remove BlueNovaNear
+tag @a[tag=probablyDied] remove BlueNovaAttach
+scoreboard players reset @a[tag=probablyDied] novattach
+
 #All achievements
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:firewithin
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:getofflawn

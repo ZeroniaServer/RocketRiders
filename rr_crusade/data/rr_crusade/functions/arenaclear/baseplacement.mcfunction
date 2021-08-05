@@ -6,6 +6,9 @@ function arenaclear:baseplacement
 fill -11 36 -75 35 59 -73 air
 fill -11 36 73 35 59 75 air
 
+#> Restore glass when game starts
+scoreboard players set @e[tag=crusadeWall] CmdData 600
+
 #> Pregame bases
 fill -101 201 65 -89 195 64 deepslate_bricks
 fill -101 201 60 -101 195 63 deepslate_bricks
@@ -63,17 +66,14 @@ fill 12 64 57 12 68 57 ladder[facing=south]
 fill -12 64 57 -12 68 57 ladder[facing=south]
 #Objectives
 #Main
-fill 10 52 52 14 56 66 minecraft:crying_obsidian
+fill 20 45 52 4 55 66 minecraft:crying_obsidian
 #A
-fill -3 57 37 3 63 37 bedrock
-fill 3 63 39 -3 63 38 bedrock
-fill 2 62 32 -2 58 36 minecraft:yellow_stained_glass
-fill 4 57 37 4 63 37 ladder[facing=east]
+fill 41 52 -39 35 52 -37 bedrock
+fill 36 47 -39 40 51 -35 minecraft:blue_stained_glass
+
 #B
-fill 21 57 37 27 63 37 bedrock
-fill 27 63 38 21 63 39 bedrock
-fill 26 58 32 22 62 36 minecraft:yellow_stained_glass
-fill 20 57 37 20 63 37 ladder[facing=west]
+fill -11 52 -39 -17 52 -37 bedrock
+fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass
 
 
 #> Blue
@@ -96,30 +96,26 @@ fill 12 64 -57 12 68 -57 ladder[facing=north]
 fill -12 64 -57 -12 68 -57 ladder[facing=north]
 #Objectives
 #Main
-fill 10 56 -66 14 52 -52 minecraft:crying_obsidian
+fill 4 55 -52 20 45 -66 minecraft:crying_obsidian
 #A
-fill 27 57 -33 21 63 -33 bedrock
-fill 21 63 -34 27 63 -35 bedrock
-fill 26 58 -28 22 62 -32 minecraft:blue_stained_glass
-fill 20 57 -33 20 63 -33 ladder[facing=west]
+fill -17 52 39 -11 52 37 bedrock
+fill -12 47 39 -16 51 35 minecraft:yellow_stained_glass
 #B
-fill 3 57 -33 -3 63 -33 bedrock
-fill -3 63 -34 3 63 -35 bedrock
-fill 2 58 -28 -2 62 -32 minecraft:blue_stained_glass
-fill 4 57 -33 4 63 -33 ladder[facing=east]
+fill 35 52 39 41 52 37 bedrock
+fill 40 47 35 36 51 39 minecraft:yellow_stained_glass
 
 #> prepare crystals and health
 scoreboard players set $YellowShield crusadehp 200
 scoreboard players set $CYA crusadehp 100
 scoreboard players set $CYB crusadehp 100
-execute unless entity @e[type=end_crystal,tag=CrusadeYellowA] run summon end_crystal 0 60 34 {Tags:["CrusadeEntity","CrusadeYellowA"],BeamTarget:{X:12,Y:54,Z:52},ShowBottom:0b}
-execute unless entity @e[type=end_crystal,tag=CrusadeYellowB] run summon end_crystal 24 60 34 {Tags:["CrusadeEntity","CrusadeYellowB"],BeamTarget:{X:12,Y:54,Z:52},ShowBottom:0b}
+execute unless entity @e[type=end_crystal,tag=CrusadeYellowA] run summon end_crystal -14 49 37 {Tags:["CrusadeEntity","CrusadeYellowA"],BeamTarget:{X:12,Y:50,Z:52},ShowBottom:0b}
+execute unless entity @e[type=end_crystal,tag=CrusadeYellowB] run summon end_crystal 38 49 37 {Tags:["CrusadeEntity","CrusadeYellowB"],BeamTarget:{X:12,Y:50,Z:52},ShowBottom:0b}
 
 scoreboard players set $BlueShield crusadehp 200
 scoreboard players set $CBA crusadehp 100
 scoreboard players set $CBB crusadehp 100
-execute unless entity @e[type=end_crystal,tag=CrusadeBlueA] run summon end_crystal 24 60 -30 {Tags:["CrusadeEntity","CrusadeBlueA"],BeamTarget:{X:12,Y:54,Z:-52},ShowBottom:0b}
-execute unless entity @e[type=end_crystal,tag=CrusadeBlueB] run summon end_crystal 0 60 -30 {Tags:["CrusadeEntity","CrusadeBlueB"],BeamTarget:{X:12,Y:54,Z:-52},ShowBottom:0b}
+execute unless entity @e[type=end_crystal,tag=CrusadeBlueA] run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],BeamTarget:{X:12,Y:50,Z:-52},ShowBottom:0b}
+execute unless entity @e[type=end_crystal,tag=CrusadeBlueB] run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],BeamTarget:{X:12,Y:50,Z:-52},ShowBottom:0b}
 
 #Set pre-game kit stands
 #blue
@@ -139,6 +135,29 @@ setblock -94 202 93 minecraft:oak_wall_sign[facing=south]{Text1:'{"text":"Select
 #Text
 summon area_effect_cloud -95 204 64 {Duration:2000000000,Tags:["CrusadeEntity","KitMessage"],CustomName:'{"text":"Click a sign to select a kit!"}',CustomNameVisible:1b}
 summon area_effect_cloud -95 204 92 {Duration:2000000000,Tags:["CrusadeEntity","KitMessage"],CustomName:'{"text":"Click a sign to select a kit!"}',CustomNameVisible:1b}
+
+
+# Set in-game kit stands
+#blue
+fill 14 63 -63 14 64 -63 minecraft:obsidian
+summon armor_stand 14 65 -63 {Rotation:[-180f,0f],Tags:["CrusadeEntity","KitSelect","KnightStand","BlueKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Knight","color":"dark_green","bold":"true"}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{RightArm:[321f,0f,0f]}}
+setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}',Text2:'{"text":"Knight","bold":true,"color":"#008805"}'}
+fill 12 63 -62 12 64 -62 minecraft:obsidian
+summon armor_stand 12 65 -62 {Rotation:[-180f,0f],Tags:["CrusadeEntity","KitSelect","ArcherStand","BlueKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Archer","color":"red","bold":"true"}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[0f,0f,353f],RightLeg:[12f,0f,0f],LeftArm:[270f,68f,0f],RightArm:[274f,346f,0f]}}
+setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}',Text2:'{"text":"Archer","bold":true,"color":"#008805"}'}
+fill 10 63 -63 10 64 -63 minecraft:obsidian
+summon armor_stand 10 65 -63 {Rotation:[-180f,0f],Tags:["CrusadeEntity","KitSelect","MageStand","BlueKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Mage","color":"dark_purple","bold":"true"}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[345f,0f,0f],LeftLeg:[323f,0f,0f],RightLeg:[38f,0f,0f],LeftArm:[23f,0f,0f],RightArm:[215f,0f,0f]}}
+setblock 10 64 -64 minecraft:oak_wall_sign[facing=north]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}',Text2:'{"text":"Mage","bold":true,"color":"#008805"}'}
+#yellow
+fill 14 63 63 14 64 63 minecraft:obsidian
+summon armor_stand 10 65 63 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect","KnightStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Knight","color":"dark_green","bold":"true"}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{RightArm:[321f,0f,0f]}}
+setblock 10 64 64 minecraft:oak_wall_sign[facing=south]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}',Text2:'{"text":"Knight","bold":true,"color":"#008805"}'}
+fill 12 63 62 12 64 62 minecraft:obsidian
+summon armor_stand 12 65 62 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect","ArcherStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Archer","color":"red","bold":"true"}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[0f,0f,353f],RightLeg:[12f,0f,0f],LeftArm:[270f,68f,0f],RightArm:[274f,346f,0f]}}
+setblock 12 64 63 minecraft:oak_wall_sign[facing=south]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}',Text2:'{"text":"Archer","bold":true,"color":"#008805"}'}
+fill 10 63 63 10 64 63 minecraft:obsidian
+summon armor_stand 14 65 63 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect","MageStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Mage","color":"dark_purple","bold":"true"}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[345f,0f,0f],LeftLeg:[323f,0f,0f],RightLeg:[38f,0f,0f],LeftArm:[23f,0f,0f],RightArm:[215f,0f,0f]}}
+setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}',Text2:'{"text":"Mage","bold":true,"color":"#008805"}'}
 
 #kit stand items
 execute as @e[tag=KnightStand] run item replace entity @s armor.head with netherite_helmet
@@ -169,4 +188,4 @@ execute as @e[tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet
 execute as @e[tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
 
 #> Bridges
-function rr_crusade:arenaclear/bridgeplacement
+#function rr_crusade:arenaclear/bridgeplacement

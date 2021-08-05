@@ -1,5 +1,6 @@
 tag @e[type=armor_stand,tag=Selection] remove switchGamemodes
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:lockdecos
+execute unless entity @e[type=marker,tag=crusadeWall,limit=1] run summon marker 12.5 54.0 0.0 {Tags:["crusadeWall"]}
 tag @e[type=armor_stand,tag=Selection] add noSabers
 tag @e[type=armor_stand,tag=Selection] add portalDecosOff
 tag @e[type=armor_stand,tag=Selection] add tyingOff

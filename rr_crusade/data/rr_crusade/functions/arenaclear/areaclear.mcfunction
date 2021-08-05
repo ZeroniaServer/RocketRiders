@@ -8,6 +8,15 @@ fill 9 89 -60 15 99 -66 air
 fill 28 57 -28 -3 63 -51 air
 fill -3 57 29 27 63 51 air
 
+fill 41 47 35 35 53 40 air
+fill -11 47 35 -17 53 40 air
+fill -17 47 -34 -11 53 -40 air
+fill 36 47 -35 41 53 -40 air
+fill 21 44 -67 3 56 -67 air
+fill 21 44 67 3 56 67 air
+fill -18 53 6 18 34 -9 air
+fill 19 34 -7 42 53 9 air
+
 ##reset pregame bases
 #restore glass
 execute if entity @e[type=armor_stand,tag=Selection,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 96 -101 195 95 white_stained_glass

@@ -4,6 +4,9 @@
 
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
+scoreboard players reset @e[type=marker,tag=YellowPlatform] pearlOwnerUUID
+scoreboard players reset @e[type=marker,tag=BluePlatform] pearlOwnerUUID
+tag @a remove canopyTP
 function everytick:spawnables
 tag @s[scores={endtimer=1}] remove GameStarted
 tag @s[scores={endtimer=1}] remove SuddenDeath

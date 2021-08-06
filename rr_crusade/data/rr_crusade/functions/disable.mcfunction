@@ -13,5 +13,8 @@ tag @e[type=armor_stand,tag=Selection] remove stackingWasOff
 tag @e[type=armor_stand,tag=Selection] remove stackingOn
 tag @e[type=armor_stand,tag=Selection] remove customSaberMsg
 tag @e[type=armor_stand,tag=Selection] remove customArrowPickup
+tag @e[type=armor_stand,tag=Selection] remove MoleratOff
+tag @e[type=armor_stand,tag=Selection,tag=MoleratWasOn] add Molerat
+tag @e[type=armor_stand,tag=Selection,tag=MoleratWasOn] remove MoleratWasOn
 execute as @a run trigger crusadechange set 0
 tag @e[type=armor_stand,tag=Selection] add switchGamemodes

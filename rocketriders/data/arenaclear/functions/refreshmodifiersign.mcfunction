@@ -25,6 +25,7 @@ execute if entity @s[scores={modifierID=4},tag=!Sonar,tag=!settingsLocked] run s
 #Molerat
 execute if entity @s[scores={modifierID=5},tag=Molerat,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=5},tag=!Molerat,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=5},tag=MoleratOff,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Minute Mix
 execute if entity @s[scores={modifierID=6},tag=Minute,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]

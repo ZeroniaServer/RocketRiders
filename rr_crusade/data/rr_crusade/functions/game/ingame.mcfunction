@@ -4,7 +4,7 @@ execute if entity @s[tag=!SMActive] run function rr_crusade:game/leavemidgame
 #general
 function rr_crusade:items/antidupe
 function rr_crusade:items/spawnitems
-function rr_crusade:items/icbm
+function everytick:icbm
 
 #middle wall
 execute as @e[type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement

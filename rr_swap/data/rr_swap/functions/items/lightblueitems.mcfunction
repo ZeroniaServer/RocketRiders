@@ -5,7 +5,7 @@ execute if entity @s[tag=rngBull] as @a[team=Yellow] run function items:missile/
 execute if entity @s[tag=rngDuplex] as @a[team=Yellow] run function items:missile/special/giveduplex
 execute if entity @s[tag=rngAux] as @a[team=Yellow] run function items:missile/heavy/giveaux
 execute if entity @s[tag=rngWar] as @a[team=Yellow] run function items:missile/heavy/givewar
-execute if entity @s[tag=rngICBM] as @a[team=Yellow] run function rr_swap:items/util/giveicbm
+execute if entity @s[tag=rngICBM] as @a[team=Yellow] run function items:util/giveicbm
 execute if entity @s[tag=rngShield] as @a[team=Yellow] run function items:util/giveshield
 
 #light

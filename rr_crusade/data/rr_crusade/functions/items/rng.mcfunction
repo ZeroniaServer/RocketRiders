@@ -12,7 +12,7 @@ execute as @e[type=marker,tag=KnightRNG,scores={RNGscore=0}] as @a[team=!Lobby,t
 execute as @e[type=marker,tag=KnightRNG,scores={RNGscore=1}] as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] run function items:missile/heavy/givejbuster
 execute as @e[type=marker,tag=KnightRNG,scores={RNGscore=2}] as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] run function items:missile/heavy/givewar
 execute as @e[type=marker,tag=KnightRNG,scores={RNGscore=3}] as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] run function items:missile/heavy/giveaux
-execute as @e[type=marker,tag=KnightRNG,scores={RNGscore=4}] as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] run function items:missile/heavy/giverift
+execute as @e[type=marker,tag=KnightRNG,scores={RNGscore=4}] as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] run function items:missile/normal/giveblade
 execute as @e[type=marker,tag=KnightRNG,scores={RNGscore=5}] as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] run function items:util/giveshield
 execute as @e[type=marker,tag=KnightRNG,scores={RNGscore=6}] as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] run function items:util/giveobshield
 execute as @e[type=marker,tag=KnightRNG,scores={RNGscore=7}] as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] run function rr_crusade:items/util/giveicbm

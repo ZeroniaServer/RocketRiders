@@ -19,8 +19,8 @@ scoreboard players reset @a[team=!Blue,team=!Yellow] crusadekit
 execute as @s[tag=!GameEnd] if entity @e[type=arrow] run function rr_crusade:game/arrow_pickup
 
 #kits
-execute as @e[type=armor_stand,tag=Selection,tag=EditedSettings] run scoreboard players enable @a[team=!Lobby,team=!Developer,team=!Spectator] crusadechange
-
+execute as @e[type=armor_stand,tag=Selection,tag=EditedSettings,tag=!GameEnd] run scoreboard players enable @a[team=!Lobby,team=!Developer,team=!Spectator] crusadechange
+execute as @e[type=armor_stand,tag=Selection,tag=GameEnd] as @a run trigger crusadechange set 0
 execute as @a[scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
 execute as @a[scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
 execute as @a[scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage

@@ -149,6 +149,14 @@ tag @s[tag=DefaultWorld] remove DefaultWorld
 ####CONFIRM SETTINGS####
 data merge block -69 190 78 {Text1:"{\"text\":\"\"}",Text2:"{\"text\":\"Confirm\",\"color\":\"light_purple\",\"bold\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function arenaclear:testvalidclear\"}}",Text4:"{\"text\":\"\"}"}
 
+##MOLERAT WARNING
+execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run tag @a remove MoleratStop
+execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run scoreboard objectives remove moleratConfirm
+execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run tag @a[tag=moleratConfirm] remove moleratConfirm
+execute as @a[scores={moleratConfirm=1..}] run tag @s add moleratConfirm
+execute as @a[scores={moleratConfirm=1..}] run function arenaclear:testvalidclear
+
+
 
 ####REPEAT SETTINGS####
 scoreboard players set @s[scores={RepeatSettings=0}] RepeatSettings 1

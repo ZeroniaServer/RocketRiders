@@ -12,7 +12,6 @@ tag @e[type=armor_stand,tag=Selection] add customEnds
 tag @e[type=armor_stand,tag=Selection] add customBossbar
 tag @e[type=armor_stand,tag=Selection] add leaveYSpawn
 tag @e[type=armor_stand,tag=Selection] add noTeamBalance
-tag @e[type=armor_stand,tag=Selection] add canopyStack
 tag @e[type=armor_stand,tag=Selection] add arrowLimit
 tag @e[type=armor_stand,tag=Selection] add custVortParticle
 tag @e[type=armor_stand,tag=Selection] add customNova

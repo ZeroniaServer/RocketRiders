@@ -18,7 +18,6 @@ tag @e[type=armor_stand,tag=Selection,tag=arrowsWasOff] remove rngArrows
 tag @e[type=armor_stand,tag=Selection] remove arrowsWasOff
 tag @e[type=armor_stand,tag=Selection,tag=utilWasOff] remove rngUtil
 tag @e[type=armor_stand,tag=Selection] remove utilWasOff
-tag @e[type=armor_stand,tag=Selection] remove canopyStack
 tag @e[type=armor_stand,tag=Selection] remove arrowLimit
 tag @e[type=armor_stand,tag=Selection] remove custVortParticle
 tag @e[type=armor_stand,tag=Selection] remove customNova

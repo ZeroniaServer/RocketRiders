@@ -3,7 +3,6 @@ tag @s add rngLightning
 tag @s add rngUtil
 tag @s add rngHeavy
 
-
 tag @s remove rngAnt
 tag @s remove rngGemi
 tag @s remove rngToma
@@ -26,12 +25,8 @@ tag @s add rngShield
 tag @s add rngObshield
 tag @s add rngVortex
 tag @s add rngSplash
-#> [NOVA REMOVED DUE TO FEEDBACK FOR NOW] tag @s add rngNova
-#> [CANOPY DISABLED DUE TO FEEDBACK FOR NOW] (I cry) tag @s add rngCanopy
 
 #Deactivated items
-#ANT WAS ADDED tag @s remove rngAnt
-#GEMI WAS ADDED tag @s remove rngGemi
 tag @s remove rngJbuster
 tag @s remove rngRift
 tag @s remove rngCanopy
@@ -53,7 +48,8 @@ tag @s remove doFireballPortals
 #######################################################
 
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"Active Items: ","color":"gray","bold":false},{"text":"(hover for info)","italic":true,"color":"dark_gray","hoverEvent":{"action":"show_text","value":["",{"text":"In 1v1 Duel Mode, a set of 12 items is randomly generated for each round.","color":"white"}]}}]
-tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"}]
+tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+
 ### 1 shield type.
 summon marker ~ ~ ~ {CustomName:'{"text":"Shield","color":"light_purple"}',Tags:["RankedRNG","Shield","RShieldRNG","RUtilRNG"]}
 summon marker ~ ~ ~ {CustomName:'{"text":"Obsidian Shield","color":"light_purple"}',Tags:["RankedRNG","Obshield","RShieldRNG","RUtilRNG"]}
@@ -67,18 +63,13 @@ execute if entity @e[type=marker,tag=Shield,tag=SelRRNG] run tag @s remove rngOb
 execute if entity @e[type=marker,tag=Obshield,tag=SelRRNG] run tag @s add rngObshield
 execute if entity @e[type=marker,tag=Obshield,tag=SelRRNG] run tag @s remove rngShield
 
-### 1 projectile type.
+### 1 projectile type (only fireballs, novas removed)
 summon marker ~ ~ ~ {CustomName:'{"text":"Fireball","color":"light_purple"}',Tags:["RankedRNG","Fireball","RProjecRNG","RUtilRNG"]}
-#> [NOVAROCKET DISABLED DUE TO FEEDBACK FOR NOW] summon marker ~ ~ ~ {CustomName:'{"text":"Nova Rocket","color":"light_purple"}',Tags:["RankedRNG","Nova","RProjecRNG","RUtilRNG"]}
 tag @e[type=marker,tag=RProjecRNG,limit=1,sort=random] add SelRRNG
 
 #fireball selected
-execute if entity @e[type=marker,tag=Fireball,tag=SelRRNG] run tag @s add rngFireball
-execute if entity @e[type=marker,tag=Fireball,tag=SelRRNG] run tag @s remove rngNova
-
-#nova rocket selected
-execute if entity @e[type=marker,tag=Nova,tag=SelRRNG] run tag @s add rngNova
-execute if entity @e[type=marker,tag=Nova,tag=SelRRNG] run tag @s remove rngFireball
+tag @s add rngFireball
+tag @s remove rngNova
 
 #Announce extra utils
 tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"light_purple","bold":false},{"selector":"@e[type=marker,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":false}]
@@ -96,7 +87,7 @@ execute if entity @e[type=marker,tag=Hurricane,tag=SelRRNG] run tag @s remove rn
 execute if entity @e[type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s add rngThun
 execute if entity @e[type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s remove rngHur
 
-### 5/10 non-lightning missiles
+### 6/10 non-lightning missiles
 summon marker ~ ~ ~ {CustomName:'{"text":"A.N.T","color":"green"}',Tags:["RankedRNG","Ant","RMisRNG"]}
 summon marker ~ ~ ~ {CustomName:'{"text":"Gemini","color":"green"}',Tags:["RankedRNG","Gemini","RMisRNG"]}
 summon marker ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["RankedRNG","TomaTwo","RMisRNG"]}

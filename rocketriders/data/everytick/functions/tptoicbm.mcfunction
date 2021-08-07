@@ -17,4 +17,4 @@ tag @e[type=marker,tag=ICBMtracker] remove teleportPair
 tag @e[type=egg,tag=ICBM] remove teleportPair
 
 scoreboard players add $tptracker ICBMID 1
-execute as @e[type=egg,tag=ICBM] if score @s ICBMID = $tptracker ICBMID as @e[type=armor_stand,tag=Selection,limit=1] run function rr_swap:items/tptoicbm
+execute as @e[type=egg,tag=ICBM] if score @s ICBMID = $tptracker ICBMID as @e[type=armor_stand,tag=Selection,limit=1] run function everytick:tptoicbm

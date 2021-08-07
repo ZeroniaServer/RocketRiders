@@ -1,185 +1,125 @@
 ##Detects the player who likely placed the prevented missile (flipped version)
 
-#Auxiliary
-execute if entity @s[tag=BlueAux] at @s store result score @s AuxSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] AuxSpawned
-execute if entity @s[tag=BlueAux] at @s if score @s AuxSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] AuxSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackAux
-execute if entity @s[tag=BlueAux] at @s if score @s AuxSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] AuxSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
+#UUID match
+execute store result score $missile playerUUID run data get entity @s data.UUID[0]
 
-execute if entity @s[tag=YellowAux] at @s store result score @s AuxSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] AuxSpawned
-execute if entity @s[tag=YellowAux] at @s if score @s AuxSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] AuxSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackAux
-execute if entity @s[tag=YellowAux] at @s if score @s AuxSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] AuxSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+#Auxiliary
+execute if entity @s[tag=BlueAux,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackAux
+execute if entity @s[tag=YellowAux,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackAux
+tag @a[tag=BackAux] add MissiMSG
 
 #TomaTwo
-execute if entity @s[tag=BlueToma] at @s store result score @s TomaSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] TomaSpawned
-execute if entity @s[tag=BlueToma] at @s if score @s TomaSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] TomaSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackToma
-execute if entity @s[tag=BlueToma] at @s if score @s TomaSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] TomaSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowToma] at @s store result score @s TomaSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] TomaSpawned
-execute if entity @s[tag=YellowToma] at @s if score @s TomaSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] TomaSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackToma
-execute if entity @s[tag=YellowToma] at @s if score @s TomaSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] TomaSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueToma,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackToma
+execute if entity @s[tag=YellowToma,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackToma
+tag @a[tag=BackToma] add MissiMSG
 
 #Chronullifier
-execute if entity @s[tag=BlueNull] at @s store result score @s NullSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] NullSpawned
-execute if entity @s[tag=BlueNull] at @s if score @s NullSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] NullSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackNull
-execute if entity @s[tag=BlueNull] at @s if score @s NullSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] NullSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowNull] at @s store result score @s NullSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] NullSpawned
-execute if entity @s[tag=YellowNull] at @s if score @s NullSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] NullSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackNull
-execute if entity @s[tag=YellowNull] at @s if score @s NullSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] NullSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueNull,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackNull
+execute if entity @s[tag=YellowNull,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackNull
+tag @a[tag=BackNull] add MissiMSG
 
 #Warhead
-execute if entity @s[tag=BlueWar] at @s store result score @s WarSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] WarSpawned
-execute if entity @s[tag=BlueWar] at @s if score @s WarSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] WarSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackWar
-execute if entity @s[tag=BlueWar] at @s if score @s WarSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] WarSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowWar] at @s store result score @s WarSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] WarSpawned
-execute if entity @s[tag=YellowWar] at @s if score @s WarSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] WarSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackWar
-execute if entity @s[tag=YellowWar] at @s if score @s WarSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] WarSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueWar,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackWar
+execute if entity @s[tag=YellowWar,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackWar
+tag @a[tag=BackWar] add MissiMSG
 
 #Thunderbolt
-execute if entity @s[tag=BlueBolt] at @s store result score @s ThunSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] ThunSpawned
-execute if entity @s[tag=BlueBolt] at @s if score @s ThunSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] ThunSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackBolt
-execute if entity @s[tag=BlueBolt] at @s if score @s ThunSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] ThunSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowBolt] at @s store result score @s ThunSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] ThunSpawned
-execute if entity @s[tag=YellowBolt] at @s if score @s ThunSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] ThunSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackBolt
-execute if entity @s[tag=YellowBolt] at @s if score @s ThunSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] ThunSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueBolt,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackBolt
+execute if entity @s[tag=YellowBolt,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackBolt
+tag @a[tag=BackBolt] add MissiMSG
 
 #Hurricane
-execute if entity @s[tag=BlueHur] at @s store result score @s HurSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] HurSpawned
-execute if entity @s[tag=BlueHur] at @s if score @s HurSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] HurSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackHur
-execute if entity @s[tag=BlueHur] at @s if score @s HurSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] HurSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowHur] at @s store result score @s HurSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] HurSpawned
-execute if entity @s[tag=YellowHur] at @s if score @s HurSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] HurSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackHur
-execute if entity @s[tag=YellowHur] at @s if score @s HurSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] HurSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueHur,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackHur
+execute if entity @s[tag=YellowHur,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackHur
+tag @a[tag=BackHur] add MissiMSG
 
 #Elder Guardian
-execute if entity @s[tag=BlueGuard] at @s store result score @s GuardSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] GuardSpawned
-execute if entity @s[tag=BlueGuard] at @s if score @s GuardSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] GuardSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackGuard
-execute if entity @s[tag=BlueGuard] at @s if score @s GuardSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] GuardSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowGuard] at @s store result score @s GuardSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] GuardSpawned
-execute if entity @s[tag=YellowGuard] at @s if score @s GuardSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] GuardSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackGuard
-execute if entity @s[tag=YellowGuard] at @s if score @s GuardSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] GuardSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueGuard,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackGuard
+execute if entity @s[tag=YellowGuard,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackGuard
+tag @a[tag=BackGuard] add MissiMSG
 
 #A.N.T.
-execute if entity @s[tag=BlueAnt] at @s store result score @s AntsSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] AntsSpawned
-execute if entity @s[tag=BlueAnt] at @s if score @s AntsSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] AntsSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackAnt
-execute if entity @s[tag=BlueAnt] at @s if score @s AntsSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] AntsSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowAnt] at @s store result score @s AntsSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] AntsSpawned
-execute if entity @s[tag=YellowAnt] at @s if score @s AntsSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] AntsSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackAnt
-execute if entity @s[tag=YellowAnt] at @s if score @s AntsSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] AntsSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueAnt,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackAnt
+execute if entity @s[tag=YellowAnt,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackAnt
+tag @a[tag=BackAnt] add MissiMSG
 
 #Blade
-execute if entity @s[tag=BlueBlade] at @s store result score @s BladeSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] BladeSpawned
-execute if entity @s[tag=BlueBlade] at @s if score @s BladeSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BladeSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackBlade
-execute if entity @s[tag=BlueBlade] at @s if score @s BladeSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BladeSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowBlade] at @s store result score @s BladeSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] BladeSpawned
-execute if entity @s[tag=YellowBlade] at @s if score @s BladeSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] BladeSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackBlade
-execute if entity @s[tag=YellowBlade] at @s if score @s BladeSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] BladeSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueBlade,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackBlade
+execute if entity @s[tag=YellowBlade,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackBlade
+tag @a[tag=BackBlade] add MissiMSG
 
 #Rifter
-execute if entity @s[tag=BlueRift] at @s store result score @s RifterSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] RifterSpawned
-execute if entity @s[tag=BlueRift] at @s if score @s RifterSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] RifterSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackRift
-execute if entity @s[tag=BlueRift] at @s if score @s RifterSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] RifterSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowRift] at @s store result score @s RifterSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] RifterSpawned
-execute if entity @s[tag=YellowRift] at @s if score @s RifterSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] RifterSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackRift
-execute if entity @s[tag=YellowRift] at @s if score @s RifterSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] RifterSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueRift,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackRift
+execute if entity @s[tag=YellowRift,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackRift
+tag @a[tag=BackRift] add MissiMSG
 
 #Juggerbuster
-execute if entity @s[tag=BlueJug] at @s store result score @s JugbSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] JugbSpawned
-execute if entity @s[tag=BlueJug] at @s if score @s JugbSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] JugbSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackJug
-execute if entity @s[tag=BlueJug] at @s if score @s JugbSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] JugbSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowJug] at @s store result score @s JugbSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] JugbSpawned
-execute if entity @s[tag=YellowJug] at @s if score @s JugbSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] JugbSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackJug
-execute if entity @s[tag=YellowJug] at @s if score @s JugbSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] JugbSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueJug,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackJug
+execute if entity @s[tag=YellowJug,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackJug
+tag @a[tag=BackJug] add MissiMSG
 
 #Slasher
-execute if entity @s[tag=BlueSlash] at @s store result score @s SlashSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] SlashSpawned
-execute if entity @s[tag=BlueSlash] at @s if score @s SlashSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] SlashSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackSlash
-execute if entity @s[tag=BlueSlash] at @s if score @s SlashSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] SlashSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowSlash] at @s store result score @s SlashSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] SlashSpawned
-execute if entity @s[tag=YellowSlash] at @s if score @s SlashSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] SlashSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackSlash
-execute if entity @s[tag=YellowSlash] at @s if score @s SlashSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] SlashSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueSlash,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackSlash
+execute if entity @s[tag=YellowSlash,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackSlash
+tag @a[tag=BackSlash] add MissiMSG
 
 #Catapult
-execute if entity @s[tag=BlueCata] at @s store result score @s CataSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] CataSpawned
-execute if entity @s[tag=BlueCata] at @s if score @s CataSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] CataSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackCata
-execute if entity @s[tag=BlueCata] at @s if score @s CataSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] CataSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowCata] at @s store result score @s CataSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] CataSpawned
-execute if entity @s[tag=YellowCata] at @s if score @s CataSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] CataSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackCata
-execute if entity @s[tag=YellowCata] at @s if score @s CataSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] CataSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueCata,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackCata
+execute if entity @s[tag=YellowCata,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackCata
+tag @a[tag=BackCata] add MissiMSG
 
 #Citadel
-execute if entity @s[tag=BlueCitadel] at @s store result score @s CitaSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] CitaSpawned
-execute if entity @s[tag=BlueCitadel] at @s if score @s CitaSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] CitaSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackCitadel
-execute if entity @s[tag=BlueCitadel] at @s if score @s CitaSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] CitaSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowCitadel] at @s store result score @s CitaSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] CitaSpawned
-execute if entity @s[tag=YellowCitadel] at @s if score @s CitaSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] CitaSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackCitadel
-execute if entity @s[tag=YellowCitadel] at @s if score @s CitaSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] CitaSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueCitadel,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackCitadel
+execute if entity @s[tag=YellowCitadel,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackCitadel
+tag @a[tag=BackCitadel] add MissiMSG
 
 #Gemini
-execute if entity @s[tag=BlueGemi] at @s store result score @s GemiSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] GemiSpawned
-execute if entity @s[tag=BlueGemi] at @s if score @s GemiSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] GemiSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackGemini
-execute if entity @s[tag=BlueGemi] at @s if score @s GemiSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] GemiSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowGemi] at @s store result score @s GemiSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] GemiSpawned
-execute if entity @s[tag=YellowGemi] at @s if score @s GemiSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] GemiSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackGemini
-execute if entity @s[tag=YellowGemi] at @s if score @s GemiSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] GemiSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueGemi,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackGemi
+execute if entity @s[tag=YellowGemi,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackGemi
+tag @a[tag=BackGemi] add MissiMSG
 
 #Lifter
-execute if entity @s[tag=BlueLift] at @s store result score @s LifterSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] LifterSpawned
-execute if entity @s[tag=BlueLift] at @s if score @s LifterSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] LifterSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackLift
-execute if entity @s[tag=BlueLift] at @s if score @s LifterSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] LifterSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowLift] at @s store result score @s LifterSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] LifterSpawned
-execute if entity @s[tag=YellowLift] at @s if score @s LifterSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] LifterSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackLift
-execute if entity @s[tag=YellowLift] at @s if score @s LifterSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] LifterSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueLift,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackLift
+execute if entity @s[tag=YellowLift,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackLift
+tag @a[tag=BackLift] add MissiMSG
 
 #Hypersonic
-execute if entity @s[tag=BlueHyper] at @s store result score @s HyperSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] HyperSpawned
-execute if entity @s[tag=BlueHyper] at @s if score @s HyperSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] HyperSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackHyper
-execute if entity @s[tag=BlueHyper] at @s if score @s HyperSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] HyperSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowHyper] at @s store result score @s HyperSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] HyperSpawned
-execute if entity @s[tag=YellowHyper] at @s if score @s HyperSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] HyperSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackHyper
-execute if entity @s[tag=YellowHyper] at @s if score @s HyperSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] HyperSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueHyper,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackHyper
+execute if entity @s[tag=YellowHyper,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackHyper
+tag @a[tag=BackHyper] add MissiMSG
 
 #Bullet
-execute if entity @s[tag=BlueBull] at @s store result score @s BulletSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] BulletSpawned
-execute if entity @s[tag=BlueBull] at @s if score @s BulletSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BulletSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackBullet
-execute if entity @s[tag=BlueBull] at @s if score @s BulletSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BulletSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowBull] at @s store result score @s BulletSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] BulletSpawned
-execute if entity @s[tag=YellowBull] at @s if score @s BulletSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] BulletSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackBullet
-execute if entity @s[tag=YellowBull] at @s if score @s BulletSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] BulletSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueBull,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackBull
+execute if entity @s[tag=YellowBull,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackBull
+tag @a[tag=BackBull] add MissiMSG
 
 #Duplex
-execute if entity @s[tag=BlueDuplex] at @s store result score @s DuplexSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] DuplexSpawned
-execute if entity @s[tag=BlueDuplex] at @s if score @s DuplexSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] DuplexSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackDuplex
-execute if entity @s[tag=BlueDuplex] at @s if score @s DuplexSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] DuplexSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
-
-execute if entity @s[tag=YellowDuplex] at @s store result score @s DuplexSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] DuplexSpawned
-execute if entity @s[tag=YellowDuplex] at @s if score @s DuplexSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] DuplexSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackDuplex
-execute if entity @s[tag=YellowDuplex] at @s if score @s DuplexSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] DuplexSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueDuplex,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackDuplex
+execute if entity @s[tag=YellowDuplex,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackDuplex
+tag @a[tag=BackDuplex] add MissiMSG
 
 #Broadsword
-execute if entity @s[tag=BlueBroad] at @s store result score @s BroadSpawned run scoreboard players get @p[team=Yellow,sort=nearest,limit=1,distance=..12] BroadSpawned
-execute if entity @s[tag=BlueBroad] at @s if score @s BroadSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add BackBroad
-execute if entity @s[tag=BlueBroad] at @s if score @s BroadSpawned = @a[team=Yellow,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Yellow,sort=nearest,limit=1,distance=..12] add MissiMSG
+execute if entity @s[tag=BlueBroad,tag=!surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackBroad
+execute if entity @s[tag=YellowBroad,tag=!surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackBroad
+tag @a[tag=BackBroad] add MissiMSG
 
-execute if entity @s[tag=YellowBroad] at @s store result score @s BroadSpawned run scoreboard players get @p[team=Blue,sort=nearest,limit=1,distance=..12] BroadSpawned
-execute if entity @s[tag=YellowBroad] at @s if score @s BroadSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add BackBroad
-execute if entity @s[tag=YellowBroad] at @s if score @s BroadSpawned = @a[team=Blue,sort=nearest,limit=1,distance=..12] BroadSpawned run tag @a[team=Blue,sort=nearest,limit=1,distance=..12] add MissiMSG
+#Surprise Egg
+execute if entity @s[tag=bluemissile,tag=surp] as @a[team=Yellow,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackSurprise
+execute if entity @s[tag=yellowmissile,tag=surp] as @a[team=Blue,sort=nearest,distance=..12] if score @s playerUUID = $missile playerUUID run tag @s add BackSurprise
+tag @a[tag=BackSurprise] add MissiMSG
+
+#Special cases
+execute if entity @s[tag=yellowmissile,tag=void] at @s if entity @a[team=Blue,sort=nearest,distance=..12,tag=MissiMSG] run tag @a[team=Blue,sort=nearest,distance=..12,tag=MissiMSG] add voidMSG
+execute if entity @s[tag=bluemissile,tag=void] at @s if entity @a[team=Yellow,sort=nearest,distance=..12,tag=MissiMSG] run tag @a[team=Yellow,sort=nearest,distance=..12,tag=MissiMSG] add voidMSG
+execute if entity @s[tag=yellowmissile,tag=roof] at @s if entity @a[team=Blue,sort=nearest,distance=..12,tag=MissiMSG] run tag @a[team=Blue,sort=nearest,distance=..12,tag=MissiMSG] add roofMSG
+execute if entity @s[tag=bluemissile,tag=roof] at @s if entity @a[team=Yellow,sort=nearest,distance=..12,tag=MissiMSG] run tag @a[team=Yellow,sort=nearest,distance=..12,tag=MissiMSG] add roofMSG
+execute if entity @s[tag=yellowmissile,tag=antigrief] at @s if entity @a[team=Blue,sort=nearest,distance=..12,tag=MissiMSG] run tag @a[team=Blue,sort=nearest,distance=..12,tag=MissiMSG] add antigriefMSG
+execute if entity @s[tag=bluemissile,tag=antigrief] at @s if entity @a[team=Yellow,sort=nearest,distance=..12,tag=MissiMSG] run tag @a[team=Yellow,sort=nearest,distance=..12,tag=MissiMSG] add antigriefMSG
+execute if entity @s[tag=yellowmissile,tag=spawnpoint] at @s if entity @a[team=Blue,sort=nearest,distance=..12,tag=MissiMSG] run tag @a[team=Blue,sort=nearest,distance=..12,tag=MissiMSG] add spawnpointMSG
+execute if entity @s[tag=bluemissile,tag=spawnpoint] at @s if entity @a[team=Yellow,sort=nearest,distance=..12,tag=MissiMSG] run tag @a[team=Yellow,sort=nearest,distance=..12,tag=MissiMSG] add spawnpointMSG
 
 #All missiles
 tp @s ~ ~-300 ~
-kill @s
+data merge entity @s {Tags:["UnableMissile"]}
+scoreboard players reset $missile playerUUID
+execute as @e[type=marker,tag=UnableClear] at @s run function items:prevention/clearafter

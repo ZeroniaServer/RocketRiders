@@ -26,8 +26,8 @@ execute if entity @s[tag=missileflip,tag=bluemissile,tag=wasblue] run function i
 
 ##Prevention
 #Void
-execute if entity @s[tag=!UnableMissile] if predicate custom:nearvoid run tag @s add void
-execute if entity @s[tag=!UnableMissile] if predicate custom:nearvoid run tag @s add UnableMissile
+execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearvoid run tag @s add void
+execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearvoid run tag @s add UnableMissile
 
 #Roof
 execute in overworld if entity @s[tag=!UnableMissile] at @s if predicate custom:nearroof run tag @s add roof
@@ -54,7 +54,7 @@ function items:prevention/clearafter
 
 #Give back
 execute if entity @s[tag=UnableMissile,tag=!missileflip] run function items:prevention/unablefx
-execute if entity @s[tag=UnableMissileflip] run function items:flip/unablefx
+execute if entity @s[tag=UnableMissile,tag=missileflip] run function items:flip/unablefx
 execute as @e[type=armor_stand,tag=Selection] run function items:prevention/giveback
 
 ##Bot preparation (for PVE mode)

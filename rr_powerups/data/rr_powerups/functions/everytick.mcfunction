@@ -6,3 +6,6 @@ execute as @e[type=armor_stand,tag=Selection,tag=powerupsLast] run function rr_p
 
 #hotfix to remove onCapturePoint tag from players that can't even be on the capture point in gamemodes other than powerups
 execute as @e[type=armor_stand,tag=Selection,tag=!powerupsEnabled] run tag @a[tag=onCapturePoint] remove onCapturePoint
+
+#hotfix to kill bees in other modes without bees
+execute as @e[type=armor_stand,tag=Selection,tag=!powerupsEnabled,tag=!hasBees] if entity @e[type=bee] run kill @e[type=bee]

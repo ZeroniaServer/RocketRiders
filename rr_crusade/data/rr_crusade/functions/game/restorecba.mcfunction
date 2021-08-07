@@ -6,6 +6,7 @@ execute unless score $CBA crusadehp matches 1.. as @a[team=Yellow] at @s run pla
 execute unless score $CBA crusadehp matches 1.. as @a[team=Blue] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
 execute unless score $CBA crusadehp matches 1.. as @a[team=Blue] at @s run playsound minecraft:block.glass.break master @s ~ ~ ~ 1 0
 
+execute if score $CBA crusadehp matches 1.. positioned 38 49 -37 run kill @a[team=!Spectator,team=!Developer,team=!Lobby,distance=..4]
 execute if score $CBA crusadehp matches 1.. run fill 36 47 -35 40 51 -39 minecraft:blue_stained_glass
 execute if score $CBA crusadehp matches 1.. run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],BeamTarget:{X:12,Y:50,Z:-52},ShowBottom:0b}
 execute if score $CBA crusadehp matches 1.. positioned 38 49 -37 run playsound minecraft:block.glass.break master @a ~ ~ ~ 1 0.8

@@ -3,7 +3,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 105
+scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 109
 
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -115,5 +115,9 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=101}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=102}] run title @a subtitle ["",{"text":"Cold War gone wrong!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=103}] run title @a subtitle ["",{"text":"Never trust the devs!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=104}] run title @a subtitle ["",{"text":"MISSILE GO BOOM!!!!!!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=105}] run title @a subtitle ["",{"text":"免费没有病毒容易FREE MISSILE WAR 导弹战轻松无风险 100% NO VIRUS 免费没有病毒容易","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=106}] run title @a subtitle ["",{"text":"Rockets are out of stock until further notice.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=107}] run title @a subtitle ["",{"text":"Socket Gliders","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=108}] run title @a subtitle ["",{"text":"Shield stacking bad","color":"green"}]
 
 kill @e[type=marker,tag=RandomSplash]

@@ -151,7 +151,8 @@ data merge block -69 190 78 {Text1:"{\"text\":\"\"}",Text2:"{\"text\":\"Confirm\
 
 ##MOLERAT WARNING
 execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run tag @a remove MoleratStop
-execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run scoreboard objectives remove moleratConfirm
+execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] as @a run trigger moleratConfirm set 0
+execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run scoreboard players reset @a moleratConfirm
 execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run tag @a[tag=moleratConfirm] remove moleratConfirm
 execute as @a[scores={moleratConfirm=1..}] run tag @s add moleratConfirm
 execute as @a[scores={moleratConfirm=1..}] run function arenaclear:testvalidclear

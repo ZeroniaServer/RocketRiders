@@ -11,8 +11,8 @@ execute as @e[type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wa
 
 #regenerate glass every 30 seconds
 scoreboard players add @e[type=marker,tag=crusadeWall] CmdData 1
-execute as @e[type=marker,tag=crusadeWall,scores={CmdData=600..}] run function rr_crusade:game/glassplacement
-execute as @e[type=marker,tag=crusadeWall,scores={CmdData=600..}] run scoreboard players set @s CmdData 0
+execute as @e[type=marker,tag=crusadeWall,scores={CmdData=2400..}] run function rr_crusade:game/glassplacement
+execute as @e[type=marker,tag=crusadeWall,scores={CmdData=2400..}] run scoreboard players set @s CmdData 0
 
 #Item RNG
 scoreboard players add @s RandomItem 1

@@ -1,6 +1,6 @@
 ##Overhauls default arrow pickup system to give custom named tipped arrows
 #Pickup conditions
-execute as @e[type=arrow,scores={arrowtime=10..}] if data entity @s CustomPotionEffects at @s if entity @p[team=!Spectator,distance=..2] run tag @s add pickup
+execute as @a[team=!Spectator] at @s as @e[type=arrow,scores={arrowtime=10..},nbt={inGround:1b},limit=1,distance=..2,sort=nearest] if data entity @s CustomPotionEffects run tag @s add pickup
 
 #Give appropriate tipped arrow
 execute as @a[team=!Spectator,tag=!fullOffhand] at @s as @e[type=arrow,tag=pickup,tag=!tippedpickup,limit=1,distance=..2,sort=nearest] if data entity @s CustomPotionEffects at @s run function rr_powerups:everytick/tipped_arrow_replace
@@ -10,4 +10,4 @@ execute as @e[type=arrow,tag=pickup,tag=!tippedpickup,tag=!given,nbt={CustomPoti
 execute as @e[type=arrow,tag=pickup,tag=!tippedpickup,tag=!given,nbt={CustomPotionEffects:[{Id:20b}]}] at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Wither Arrow","color":"dark_purple","italic":true,"bold":true}'},CustomPotionEffects:[{Id:20b,Amplifier:2b,Duration:150,ShowParticles:1b}],CustomPotionColor:4008735,HideFlags:63}
 
 #Hotfix because bad tick order
-execute as @e[type=arrow,scores={arrowtime=10..}] if data entity @s CustomPotionEffects at @s if entity @p[team=!Spectator,distance=..2] run tag @s add tippedpickup
+execute as @a[team=!Spectator] at @s as @e[type=arrow,scores={arrowtime=10..},nbt={inGround:1b},limit=1,distance=..2,sort=nearest] if data entity @s CustomPotionEffects run tag @s add tippedpickup

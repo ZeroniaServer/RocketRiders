@@ -20,13 +20,28 @@ execute as @s[tag=!GameEnd] if entity @e[type=arrow] run function rr_crusade:gam
 
 #kits
 execute as @e[type=armor_stand,tag=Selection,tag=EditedSettings,tag=!GameEnd] run scoreboard players enable @a[team=!Lobby,team=!Developer,team=!Spectator] crusadechange
-execute as @e[type=armor_stand,tag=Selection,tag=GameEnd] as @a run trigger crusadechange set 0
-execute as @a[scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
-execute as @a[scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
-execute as @a[scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage
+execute as @e[type=armor_stand,tag=Selection,tag=GameEnd,tag=!GameStarted] as @a run trigger crusadechange set 0
+execute as @e[type=armor_stand,tag=Selection,tag=GameEnd,tag=GameStarted] as @a[scores={deathCooldown=5}] at @s run trigger crusadechange set 0
+execute unless entity @e[type=armor_stand,tag=Selection,tag=GameStarted] as @a[scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
+execute unless entity @e[type=armor_stand,tag=Selection,tag=GameStarted] as @a[scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
+execute unless entity @e[type=armor_stand,tag=Selection,tag=GameStarted] as @a[scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage
 
-scoreboard players reset @a[scores={crusadechange=-2147483647..-1}] crusadechange
-scoreboard players reset @a[scores={crusadechange=1..}] crusadechange
+
+execute as @e[type=armor_stand,tag=Selection,tag=GameStarted] as @a[tag=!CrusadeNoteKnight,scores={crusadechange=1}] run function rr_crusade:items/kit/notify/knight
+execute as @e[type=armor_stand,tag=Selection,tag=GameStarted] as @a[tag=!CrusadeNoteArcher,scores={crusadechange=2}] run function rr_crusade:items/kit/notify/archer
+execute as @e[type=armor_stand,tag=Selection,tag=GameStarted] as @a[tag=!CrusadeNoteMage,scores={crusadechange=3}] run function rr_crusade:items/kit/notify/mage
+
+execute as @e[type=armor_stand,tag=Selection,tag=!GameStarted] run tag @a remove CrusadeNoteKnight
+execute as @e[type=armor_stand,tag=Selection,tag=!GameStarted] run tag @a remove CrusadeNoteArcher
+execute as @e[type=armor_stand,tag=Selection,tag=!GameStarted] run tag @a remove CrusadeNoteMage
+
+execute if entity @e[type=armor_stand,tag=Selection,tag=GameStarted] as @a[scores={crusadechange=1,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/knight
+execute if entity @e[type=armor_stand,tag=Selection,tag=GameStarted] as @a[scores={crusadechange=2,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/archer
+execute if entity @e[type=armor_stand,tag=Selection,tag=GameStarted] as @a[scores={crusadechange=3,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/mage
+
+execute if entity @e[type=armor_stand,tag=Selection,tag=GameStarted] run scoreboard players reset @a[scores={crusadechange=-2147483647..-1}] crusadechange
+execute unless entity @e[type=armor_stand,tag=Selection,tag=GameStarted] run scoreboard players reset @a[scores={crusadechange=1..}] crusadechange
+execute if entity @e[type=armor_stand,tag=Selection,tag=GameStarted] run scoreboard players reset @a[scores={crusadechange=1..,deathCooldown=5}] crusadechange
 
 #reset
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] run function rr_crusade:arenaclear/baseplacement

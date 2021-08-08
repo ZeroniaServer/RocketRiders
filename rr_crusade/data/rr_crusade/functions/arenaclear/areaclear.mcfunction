@@ -17,6 +17,14 @@ fill 21 44 67 3 56 67 air
 fill -18 53 6 18 34 -9 air
 fill 19 34 -7 42 53 9 air
 
+#ICBM reset
+kill @e[type=egg,tag=ICBM]
+kill @e[type=marker,tag=ICBMtracker]
+kill @e[type=chicken]
+scoreboard players reset $highest ICBMID
+scoreboard players reset $tptracker ICBMID
+scoreboard players reset $numeggs ICBMID
+
 ##reset pregame bases
 #restore glass
 execute if entity @e[type=armor_stand,tag=Selection,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 96 -101 195 95 white_stained_glass

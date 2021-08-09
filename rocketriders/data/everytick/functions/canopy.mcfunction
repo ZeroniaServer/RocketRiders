@@ -220,7 +220,7 @@ execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if blo
 execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~1 ~1 fire run tag @s add FirePoof
 execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~1 ~-1 fire run tag @s add FirePoof
 execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~2 ~ fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run playsound entity.blaze.shoot master @a ~ ~ ~ 2 0
+execute as @e[type=marker,tag=!killCanopy,tag=FirePoof,tag=!LavaPoof] at @s run playsound entity.blaze.shoot master @a ~ ~ ~ 2 0
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run playsound block.fire.ambient master @a ~ ~ ~ 2 2
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run fill ~ ~ ~ ~ ~1 ~ air destroy
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run fill ~-3 ~1 ~-3 ~3 ~1 ~3 fire replace #custom:air

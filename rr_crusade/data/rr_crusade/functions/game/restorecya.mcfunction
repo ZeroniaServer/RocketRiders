@@ -16,8 +16,8 @@ execute if score $CYA crusadehp matches 1.. positioned -14 49 37 run playsound m
 execute if score $CYA crusadehp matches 1.. positioned -14 49 37 run playsound minecraft:block.respawn_anchor.set_spawn master @a ~ ~ ~ 2 2
 
 #> Expose Portals
-execute if score $YellowShield crusadehp matches -1000..0 run tellraw @a[team=Blue] {"text":"Both Yellow Crystals have been destroyed! A portal has been exposed below the Yellow Castle Bridge, destroy it to win!","color":"yellow"}
-execute if score $YellowShield crusadehp matches -1000..0 run tellraw @a[team=Yellow] {"text":"Both of our Crystals have been destroyed! Our portal below the bridge has been exposed, don't let them destroy it!","color":"yellow"}
+execute if score $YellowShield crusadehp matches -1000..0 run tellraw @a[team=Blue] {"text":"Both Yellow Crystals have been destroyed! A portal has been exposed, destroy it to win!","color":"yellow"}
+execute if score $YellowShield crusadehp matches -1000..0 run tellraw @a[team=Yellow] {"text":"Both of our Crystals have been destroyed! Our portal is no longer protected, don't let them destroy it!","color":"yellow"}
 execute if score $YellowShield crusadehp matches -1000..0 run fill 4 45 52 20 55 66 minecraft:yellow_stained_glass
 execute if score $YellowShield crusadehp matches -1000..0 run fill 21 44 67 21 56 67 minecraft:obsidian
 execute if score $YellowShield crusadehp matches -1000..0 run fill 21 56 67 3 56 67 minecraft:obsidian

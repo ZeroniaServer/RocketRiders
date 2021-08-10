@@ -188,6 +188,3 @@ execute as @e[tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs
 execute as @e[tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
 execute as @e[tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
 execute as @e[tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
-
-#> Bridges
-#function rr_crusade:arenaclear/bridgeplacement

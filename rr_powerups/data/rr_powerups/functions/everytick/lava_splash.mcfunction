@@ -16,17 +16,6 @@ execute if score lavasplash splashtick matches 2 run scoreboard players set lava
 
 execute as @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:1,Id:23b,Amplifier:0b}],Potion:"minecraft:awkward"},tag=!lavasplash] run data merge entity @s {Duration:2000000,Radius:0,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Tags:["lavasplash","lavasplash_alone","SmartClearAECsplash"],Particle:"block air"}
 
-#FirePoof canopies
-execute as @e[type=area_effect_cloud,tag=lavasplash_alone] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..3] run tag @e[type=marker,tag=YellowPlatform,distance=..3] add LavaPoof
-execute as @e[type=area_effect_cloud,tag=lavasplash_alone] at @s if entity @e[type=marker,tag=BluePlatform,distance=..3] run tag @e[type=marker,tag=BluePlatform,distance=..3] add LavaPoof
-execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle lava ~ ~1 ~ 2 0.1 2 2 50 force
-execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle minecraft:falling_lava ~ ~-1 ~ 2 1 2 0.1 50 force
-execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 1 1 0.5 40 force
-execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run playsound minecraft:block.lava.pop master @a ~ ~ ~ 1 0.7
-execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run playsound minecraft:block.lava.pop master @a ~ ~ ~ 1 0.9
-execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run playsound minecraft:item.bucket.empty_lava master @a ~ ~ ~ 2 0.8
-execute as @e[type=marker,tag=LavaPoof] run tag @s add FirePoof
-
 #Kill if near spawnpoints
 execute as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
 execute as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s

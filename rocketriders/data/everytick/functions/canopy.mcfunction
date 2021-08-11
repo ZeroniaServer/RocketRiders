@@ -208,18 +208,8 @@ execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=77
 execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=80..}] run tag @s add FirePoof
 
 #Fire poofing
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~-1 ~ fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~ ~ fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~1 ~ ~ fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~-1 ~ ~ fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~ ~1 fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~ ~-1 fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~1 ~ fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~1 ~1 ~ fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~-1 ~1 ~ fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~1 ~1 fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~1 ~-1 fire run tag @s add FirePoof
-execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if block ~ ~2 ~ fire run tag @s add FirePoof
+execute as @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s store result score @s CmdData run clone ~-1 ~-1 ~-1 ~1 ~2 ~1 ~-1 ~-1 ~-1 filtered fire force
+tag @e[type=marker,tag=!killCanopy,scores={PlatTime=3..300,CmdData=1..}] add FirePoof
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof,tag=!LavaPoof] at @s run playsound entity.blaze.shoot master @a ~ ~ ~ 2 0
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run playsound block.fire.ambient master @a ~ ~ ~ 2 2
 execute as @e[type=marker,tag=!killCanopy,tag=FirePoof] at @s run fill ~ ~ ~ ~ ~1 ~ air destroy
@@ -249,20 +239,10 @@ execute as @e[type=marker,scores={PlatTime=280}] at @s run playsound block.wood.
 execute as @e[type=marker,scores={PlatTime=300}] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 100 force @a
 
 #Canopy watering (one time use - Splash extends Canopy duration)
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~ water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~ water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~ water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~-1 water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~ ~2 ~1 water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~-1 water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~-1 water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~2 ~1 water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~2 ~1 water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~1 ~-1 water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~1 ~-1 water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~1 ~1 ~1 water run tag @s add wateredInit
-execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s if block ~-1 ~1 ~1 water run tag @s add wateredInit
+execute as @e[type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s store result score @s CmdData run clone ~-2 ~-1 ~-2 ~2 ~2 ~2 ~-2 ~-1 ~-2 filtered water force
+tag @e[type=marker,scores={PlatTime=3..300,CmdData=1..},tag=!watered] add wateredInit
 execute as @e[type=marker,tag=wateredInit,tag=!wateredTemp] at @s run setblock ~ ~1 ~ sponge
+execute as @e[type=marker,tag=wateredInit,tag=!wateredTemp] at @s run fill ~-2 ~-1 ~-2 ~2 ~2 ~2 air replace water
 execute as @e[type=marker,tag=wateredInit,tag=!wateredTemp] at @s run setblock ~ ~1 ~ oak_wood[axis=y]
 execute as @e[type=marker,tag=wateredInit,tag=!wateredTemp] at @s run playsound minecraft:block.bamboo_sapling.place master @a ~ ~ ~ 1 0.5
 execute as @e[type=marker,tag=wateredInit,tag=!wateredTemp] at @s run playsound minecraft:block.chorus_flower.grow master @a ~ ~ ~ 1 1
@@ -274,3 +254,14 @@ scoreboard players remove @e[type=marker,tag=animated,tag=wateredInit] PlatTime 
 tag @e[type=marker,tag=animated,tag=wateredInit] add watered
 tag @e[type=marker,tag=watered] remove wateredInit
 tag @e[type=marker,tag=watered] remove wateredTemp
+
+#Canopy lava poof
+execute as @e[type=marker,scores={PlatTime=3..300}] at @s store result score @s CmdData run clone ~-3 ~-1 ~-3 ~3 ~2 ~3 ~-3 ~-1 ~-3 filtered lava force
+tag @e[type=marker,scores={PlatTime=3..300,CmdData=1..}] add LavaPoof
+execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle lava ~ ~1 ~ 2 0.1 2 2 50 force
+execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle minecraft:falling_lava ~ ~-1 ~ 2 1 2 0.1 50 force
+execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 1 1 0.5 40 force
+execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run playsound minecraft:block.lava.pop master @a ~ ~ ~ 1 0.7
+execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run playsound minecraft:block.lava.pop master @a ~ ~ ~ 1 0.9
+execute as @e[type=marker,tag=LavaPoof,tag=!FirePoof] at @s run playsound minecraft:item.bucket.empty_lava master @a ~ ~ ~ 2 0.8
+execute as @e[type=marker,tag=LavaPoof] run tag @s add FirePoof

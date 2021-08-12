@@ -51,8 +51,8 @@ scoreboard players add @e[type=firework_rocket,tag=YellowNova] novatimer 1
 scoreboard players add @e[type=marker,tag=novatracker] novatimer 1
 
 #Nova Rockets explode Canopies
-execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[team=Blue,distance=..5] run tag @s add DontExplode
-execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[team=Yellow,distance=..5] run tag @s add DontExplode
+execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[team=Blue,distance=..5] run tag @s add DontExplode
+execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[team=Yellow,distance=..5] run tag @s add DontExplode
 execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[team=Yellow,distance=..4] unless entity @a[team=Blue,distance=..4] run tag @s remove DontExplode
 execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[team=Blue,distance=..4] unless entity @a[team=Yellow,distance=..4] run tag @s remove DontExplode
 execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] unless entity @a[team=Blue,distance=..4] run tag @s remove DontExplode

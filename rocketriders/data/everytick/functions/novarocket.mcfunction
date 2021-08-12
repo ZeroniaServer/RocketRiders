@@ -91,8 +91,8 @@ execute as @e[type=firework_rocket,tag=CollideNova] run kill @s
 #Explosion/particle effects
 execute as @e[type=firework_rocket,tag=BlueNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,tag:{Fireworks:{Explosions:[{Type:4}]}}}
 execute as @e[type=firework_rocket,tag=YellowNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,tag:{Fireworks:{Explosions:[{Type:4}]}}}
-execute as @e[type=firework_rocket,tag=BlueNova] at @s run particle minecraft:falling_dust lapis_block ~ ~0.2 ~ 0 0 0 1 2
-execute as @e[type=firework_rocket,tag=YellowNova] at @s run particle minecraft:falling_dust gold_block ~ ~0.2 ~ 0 0 0 1 2
+execute as @e[type=firework_rocket,tag=BlueNova] at @s run particle minecraft:falling_dust lapis_block ~ ~0.2 ~ 0 0 0 1 2 force @a
+execute as @e[type=firework_rocket,tag=YellowNova] at @s run particle minecraft:falling_dust gold_block ~ ~0.2 ~ 0 0 0 1 2 force @a
 
 ##Yellow Nova Rocket functionality
 #Static

@@ -9,3 +9,11 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardco
 execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/darktetrisreset
 execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/lighttetrisreset
 scoreboard players reset * swapside
+
+#ICBM reset
+kill @e[type=egg,tag=ICBM]
+kill @e[type=marker,tag=ICBMtracker]
+kill @e[type=chicken]
+scoreboard players reset $highest ICBMID
+scoreboard players reset $tptracker ICBMID
+scoreboard players reset $numeggs ICBMID

@@ -3,7 +3,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 109
+scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 112
 
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -119,5 +119,8 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=105}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=106}] run title @a subtitle ["",{"text":"Rockets are out of stock until further notice.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=107}] run title @a subtitle ["",{"text":"Socket Gliders","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=108}] run title @a subtitle ["",{"text":"Shield stacking bad","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=109}] run title @a subtitle ["",{"text":"More combinations than in chess","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=110}] run title @a subtitle ["",{"text":"RR Trial Ended! Buy the game now :D (jk)","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=111}] run title @a subtitle ["",{"text":"Pray to utility gods!","color":"green"}]
 
 kill @e[type=marker,tag=RandomSplash]

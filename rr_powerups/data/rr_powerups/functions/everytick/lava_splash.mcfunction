@@ -15,6 +15,7 @@ execute if score lavasplash splashtick matches 2 as @e[type=potion,tag=lavasplas
 execute if score lavasplash splashtick matches 2 run scoreboard players set lavasplash splashtick 0
 
 execute as @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:1,Id:23b,Amplifier:0b}],Potion:"minecraft:awkward"},tag=!lavasplash] run data merge entity @s {Duration:2000000,Radius:0,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Tags:["lavasplash","lavasplash_alone","SmartClearAECsplash"],Particle:"block air"}
+
 #Kill if near spawnpoints
 execute as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
 execute as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
@@ -25,7 +26,7 @@ execute as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run
 execute as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos z prepend from entity @s Pos[2]
 execute as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run scoreboard players add @e[type=armor_stand,tag=Selection] splashCount 1
 tag @e[type=area_effect_cloud,tag=lavasplash_alone] add splashMarked
-execute if entity @s[type=area_effect_cloud,scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=lavasplash_alone] store result score @s splashOwnerUUID run data get entity @s Owner[0]
-execute if entity @s[type=area_effect_cloud,scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run data merge entity @s {Duration:100}
-execute if entity @s[type=area_effect_cloud,scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run tag @s add markedForDeath
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=lavasplash_alone] store result score @s splashOwnerUUID run data get entity @s Owner[0]
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run data merge entity @s {Duration:100}
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run tag @s add markedForDeath
 execute unless entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run kill @e[type=area_effect_cloud,tag=lavasplash_alone]

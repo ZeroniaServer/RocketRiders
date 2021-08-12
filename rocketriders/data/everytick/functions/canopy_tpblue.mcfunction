@@ -1,6 +1,6 @@
 ##Iterates through all (relevant) Blue Canopies and teleports their owners to them
 scoreboard players operation $tempuuid playerUUID = @s pearlOwnerUUID
-tag @p[team=Blue,predicate=custom:matches_uuid] add currentTP
+tag @p[predicate=custom:matches_uuid] add currentTP
 tag @p[team=Blue,tag=currentTP,tag=!canopyTP] remove threwCanopy
 tag @p[team=Blue,tag=currentTP] add canopyTP
 tag @p[team=!Blue,predicate=custom:matches_uuid] remove canopyTP
@@ -42,11 +42,11 @@ execute if entity @s[scores={PlatTime=41..}] run tag @p[team=Blue,tag=currentTP,
 execute if entity @s[tag=killCanopy] run tag @p[team=Blue,tag=currentTP,tag=canopyTP] remove canopyTP
 
 #Remove effects if player loses canopy TP tag
-effect clear @p[team=Blue,tag=currentTP,tag=!canopyTP] slow_falling
-effect clear @p[team=Blue,tag=currentTP,tag=!canopyTP] slowness
-effect clear @p[team=Blue,tag=currentTP,tag=!canopyTP] jump_boost
-tag @p[team=Blue,tag=currentTP,tag=!canopyTP] remove threwCanopy
+effect clear @p[tag=currentTP,tag=!canopyTP] slow_falling
+effect clear @p[tag=currentTP,tag=!canopyTP] slowness
+effect clear @p[tag=currentTP,tag=!canopyTP] jump_boost
+tag @p[tag=currentTP,tag=!canopyTP] remove threwCanopy
 
 #Reset
-tag @a[team=Blue,tag=currentTP] remove currentTP
+tag @a[tag=currentTP] remove currentTP
 scoreboard players reset $tempuuid playerUUID

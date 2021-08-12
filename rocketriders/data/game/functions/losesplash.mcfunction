@@ -2,7 +2,7 @@
 
 summon marker ~ ~ ~ {Tags:["RandomLossSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 57
+scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 62
 
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -63,7 +63,10 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=52}] run title @
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=53}] run title @a[tag=Loser] subtitle ["",{"text":"Sucks to suck!","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=54}] run title @a[tag=Loser] subtitle ["",{"text":"Imagine winning","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=55}] run title @a[tag=Loser] subtitle ["",{"text":"MISSILE WENT BOOM :(","color":"red"}]
-execute if entity @e[type=armor_stand,tag=Selection,tag=!powerupsEnabled] as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=56}] run title @a[tag=Loser] subtitle ["",{"text":"Not my fault! Definitely bad teammates.","color":"red"}]
-execute if entity @e[type=armor_stand,tag=Selection,tag=powerupsEnabled] as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=56}] run title @a[tag=Loser] subtitle ["",{"text":"I, for one, submit to our new Bee overlords.","color":"red"}]
-
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=56}] run title @a[tag=Loser] subtitle ["",{"text":"Not my fault! Definitely bad teammates.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=57}] run title @a[tag=Loser] subtitle ["",{"text":"I, for one, submit to our new Bee overlords.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=58}] run title @a[tag=Loser] subtitle ["",{"text":"That Wasn't Very Cash Money Of You","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=59}] run title @a[tag=Loser] subtitle ["",{"text":"should've renewed your car's extended warranty","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=60}] run title @a[tag=Loser] subtitle ["",{"text":"Code Red! Evacuate!!!","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=61}] run title @a[tag=Loser] subtitle ["",{"text":"I blame my teammates for my problems","color":"red"}]
 kill @e[type=marker,tag=RandomLossSplash]

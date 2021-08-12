@@ -54,5 +54,4 @@ execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=40}] run title @a
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=41}] run title @a[tag=Winner] subtitle ["",{"text":"Ez carry","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=42}] run title @a[tag=Winner] subtitle ["",{"text":"¯\\_(ツ)_/¯","color":"green"}]
 
-
 kill @e[type=marker,tag=RandomWinSplash]

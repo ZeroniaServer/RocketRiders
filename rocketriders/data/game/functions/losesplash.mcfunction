@@ -69,4 +69,5 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=58}] run title @
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=59}] run title @a[tag=Loser] subtitle ["",{"text":"should've renewed your car's extended warranty","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=60}] run title @a[tag=Loser] subtitle ["",{"text":"Code Red! Evacuate!!!","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=61}] run title @a[tag=Loser] subtitle ["",{"text":"I blame my teammates for my problems","color":"red"}]
+
 kill @e[type=marker,tag=RandomLossSplash]

@@ -1,7 +1,7 @@
 ##Randomized splash messages for the winners of a game
 summon marker ~ ~ ~ {Tags:["RandomWinSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomWinSplash] RNGmax 35
+scoreboard players set @e[type=marker,tag=RandomWinSplash] RNGmax 36
 
 execute as @e[type=marker,tag=RandomWinSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomWinSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -41,5 +41,6 @@ execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=31}] run title @a
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=32}] run title @a[tag=Winner] subtitle ["",{"text":"It's coming ","color":"green"},{"text":"h","color":"green","obfuscated":"true"},{"text":"Rome!","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=33}] run title @a[tag=Winner] subtitle ["",{"text":"Imagine losing","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=34}] run title @a[tag=Winner] subtitle ["",{"text":"Somewhere, Goldy smiles on you.","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=35}] run title @a[tag=Winner] subtitle ["",{"text":"¯\\_(ツ)_/¯","color":"green"}]
 
 kill @e[type=marker,tag=RandomWinSplash]

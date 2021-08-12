@@ -6,8 +6,8 @@ tag @p[team=Blue,tag=currentTP] add canopyTP
 tag @p[team=!Blue,predicate=custom:matches_uuid] remove canopyTP
 
 #Reset the motion before/after teleporting (thanks to @dragonmaster95 for the suggestion!)
-execute if entity @s[scores={PlatTime=1..5}] as @p[team=Blue,tag=currentTP] at @s run tp @s @s
-execute if entity @s[scores={PlatTime=36..41}] as @p[team=Blue,tag=currentTP] at @s run tp @s @s
+execute if entity @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] if entity @s[scores={PlatTime=1..5}] as @p[team=Blue,tag=currentTP] at @s run tp @s @s
+execute if entity @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] if entity @s[scores={PlatTime=36..41}] as @p[team=Blue,tag=currentTP] at @s run tp @s @s
 
 #Canopy forgets owner upon throwing new pearl
 execute if entity @p[team=Blue,tag=currentTP,tag=canopyTP,tag=threwCanopy] run scoreboard players reset @s[scores={PlatTime=1..40}] pearlOwnerUUID

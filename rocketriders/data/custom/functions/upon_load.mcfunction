@@ -1,9 +1,6 @@
 schedule function lobby:credits/restart 3t append
 scoreboard objectives add moleratConfirm trigger
 
-schedule function lobby:credits/restart 3t append
-scoreboard objectives add moleratConfirm trigger
-
 tp @e[type=armor_stand,tag=Selection] 25 184 -6
 tp @e[type=armor_stand,tag=rr_normal] 25 184 -6
 tp @e[type=armor_stand,tag=rr_powerups] 25 184 -6

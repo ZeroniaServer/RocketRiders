@@ -1,6 +1,6 @@
 ##Actions to be performed upon world load
 schedule function lobby:credits/restart 3t append
-scoreboard players set $barriers CmdData 76
+scoreboard players set $barriers CmdData 73
 
 #Pre-1.0.4 compatibility
 scoreboard objectives add moleratConfirm trigger

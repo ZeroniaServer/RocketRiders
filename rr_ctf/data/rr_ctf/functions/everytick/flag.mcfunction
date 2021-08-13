@@ -112,18 +112,24 @@ execute if score FY1: FlagScore matches 26 run setblock 34 70 64 redstone_block
 execute if score FY1: FlagScore matches 22 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 22 run setblock 34 70 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 22 run setblock 34 69 64 redstone_block
+execute if score FY1: FlagScore matches 22 run setblock 34 71 64 oak_fence
 execute if score FY1: FlagScore matches 18 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 18 run setblock 34 69 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 18 run setblock 34 68 64 redstone_block
+execute if score FY1: FlagScore matches 18 run setblock 34 70 64 oak_fence
 execute if score FY1: FlagScore matches 14 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 14 run setblock 34 68 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 14 run setblock 34 67 64 redstone_block
+execute if score FY1: FlagScore matches 14 run setblock 34 69 64 oak_fence
 execute if score FY1: FlagScore matches 10 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 10 run setblock 34 67 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 10 run setblock 34 66 64 redstone_block
+execute if score FY1: FlagScore matches 10 run setblock 34 68 64 oak_fence
 execute if score FY1: FlagScore matches 6 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 6 run setblock 34 66 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 6 run setblock 34 65 64 redstone_block
+execute if score FY1: FlagScore matches 6 run setblock 34 65 64 white_stained_glass
+execute if score FY1: FlagScore matches 6 run setblock 34 67 64 oak_fence
 #END
 
 #Keep placing FY1 once flag lowered
@@ -150,18 +156,24 @@ execute if score FY2: FlagScore matches 26 run setblock -10 70 64 redstone_block
 execute if score FY2: FlagScore matches 22 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 22 run setblock -10 70 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 22 run setblock -10 69 64 redstone_block
+execute if score FY2: FlagScore matches 22 run setblock -10 71 64 oak_fence
 execute if score FY2: FlagScore matches 18 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 18 run setblock -10 69 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 18 run setblock -10 68 64 redstone_block
+execute if score FY2: FlagScore matches 18 run setblock -10 70 64 oak_fence
 execute if score FY2: FlagScore matches 14 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 14 run setblock -10 68 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 14 run setblock -10 67 64 redstone_block
+execute if score FY2: FlagScore matches 14 run setblock -10 69 64 oak_fence
 execute if score FY2: FlagScore matches 10 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 10 run setblock -10 67 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 10 run setblock -10 66 64 redstone_block
+execute if score FY2: FlagScore matches 10 run setblock -10 68 64 oak_fence
 execute if score FY2: FlagScore matches 6 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 6 run setblock -10 66 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 6 run setblock -10 65 64 redstone_block
+execute if score FY2: FlagScore matches 6 run setblock -10 65 64 minecraft:white_stained_glass
+execute if score FY2: FlagScore matches 6 run setblock -10 67 64 oak_fence
 #END
 
 #Keep placing FY2 once flag lowered
@@ -188,18 +200,24 @@ execute if score FB1: FlagScore matches 26 run setblock -10 70 -64 redstone_bloc
 execute if score FB1: FlagScore matches 22 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 22 run setblock -10 70 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 22 run setblock -10 69 -64 redstone_block
+execute if score FB1: FlagScore matches 22 run setblock -10 71 -64 oak_fence
 execute if score FB1: FlagScore matches 18 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 18 run setblock -10 69 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 18 run setblock -10 68 -64 redstone_block
+execute if score FB1: FlagScore matches 18 run setblock -10 70 -64 oak_fence
 execute if score FB1: FlagScore matches 14 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 14 run setblock -10 68 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 14 run setblock -10 67 -64 redstone_block
+execute if score FB1: FlagScore matches 14 run setblock -10 69 -64 oak_fence
 execute if score FB1: FlagScore matches 10 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 10 run setblock -10 67 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 10 run setblock -10 66 -64 redstone_block
+execute if score FB1: FlagScore matches 10 run setblock -10 68 -64 oak_fence
 execute if score FB1: FlagScore matches 6 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 6 run setblock -10 66 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 6 run setblock -10 65 -64 redstone_block
+execute if score FB1: FlagScore matches 6 run setblock -10 65 -64 white_stained_glass
+execute if score FB1: FlagScore matches 6 run setblock -10 67 -64 oak_fence
 #END
 
 #Keep placing FB1 once flag lowered
@@ -226,18 +244,24 @@ execute if score FB2: FlagScore matches 26 run setblock 34 70 -64 redstone_block
 execute if score FB2: FlagScore matches 22 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 22 run setblock 34 70 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 22 run setblock 34 69 -64 redstone_block
+execute if score FB2: FlagScore matches 22 run setblock 34 71 -64 oak_fence
 execute if score FB2: FlagScore matches 18 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 18 run setblock 34 69 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 18 run setblock 34 68 -64 redstone_block
+execute if score FB2: FlagScore matches 18 run setblock 34 70 -64 oak_fence
 execute if score FB2: FlagScore matches 14 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 14 run setblock 34 68 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 14 run setblock 34 67 -64 redstone_block
+execute if score FB2: FlagScore matches 14 run setblock 34 69 -64 oak_fence
 execute if score FB2: FlagScore matches 10 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 10 run setblock 34 67 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 10 run setblock 34 66 -64 redstone_block
+execute if score FB2: FlagScore matches 10 run setblock 34 68 -64 oak_fence
 execute if score FB2: FlagScore matches 6 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 6 run setblock 34 66 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 6 run setblock 34 65 -64 redstone_block
+execute if score FB2: FlagScore matches 6 run setblock 34 65 -64 white_stained_glass
+execute if score FB2: FlagScore matches 6 run setblock 34 67 -64 oak_fence
 #END
 
 #Keep placing FB2 once flag lowered

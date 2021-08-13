@@ -1,14 +1,11 @@
+##Actions to be performed upon world load
 schedule function lobby:credits/restart 3t append
+scoreboard players set $barriers CmdData 76
+
+#Pre-1.0.4 compatibility
 scoreboard objectives add moleratConfirm trigger
 
-tp @e[type=armor_stand,tag=Selection] 25 184 -6
-tp @e[type=armor_stand,tag=rr_normal] 25 184 -6
-tp @e[type=armor_stand,tag=rr_powerups] 25 184 -6
-tp @e[type=armor_stand,tag=rr_swap] 25 184 -6
-tp @e[type=armor_stand,tag=rr_ctf] 25 184 -6
-tp @e[type=armor_stand,tag=rr_chase] 25 184 -6
-tp @e[type=armor_stand,tag=rr_duel] 25 184 -6
-
+#Add teams for Paper compatibility
 team add Lobby
 team add Blue
 team add Yellow
@@ -28,9 +25,10 @@ team modify Spectator collisionRule never
 team modify Developer collisionRule never
 
 team modify Lobby friendlyFire false
-execute unless entity @e[type=armor_stand,tag=Selection,tag=onlyBlue] run team modify Blue friendlyFire false
+execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] run team modify Blue friendlyFire false
 team modify Yellow friendlyFire false
 team modify Spectator friendlyFire false
 team modify Developer friendlyFire false
 
+#Gamerules
 gamerule logAdminCommands false

@@ -11,6 +11,7 @@ scoreboard players reset @e[type=armor_stand,tag=Selection,tag=!ServerModeVoting
 execute unless entity @a[team=Lobby] run scoreboard players reset @e[type=armor_stand,tag=Selection,tag=ServerModeVoting] VoteServerMode
 execute as @e[type=armor_stand,tag=Selection,scores={servermode=1..}] unless entity @a run function game:forcestop
 execute as @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=SMCustom] unless entity @a run function game:forcestop
+execute as @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=SMCustom] unless entity @a run function arenaclear:globaldefaults
 execute unless entity @e[type=armor_stand,tag=Selection,tag=ServerModeVoting] run scoreboard players reset @a VoteServerMode
 execute unless entity @e[type=armor_stand,tag=Selection,tag=ServerModeVoting] run kill @e[type=marker,tag=ServerMode]
 

@@ -1,8 +1,8 @@
 ##RNG starter for selecting a random Yellow missile from Surprise Eggs
 #Choose between each category
-execute if entity @e[type=armor_stand,tag=Selection,tag=rngHeavy] run summon marker ~ ~ ~ {Tags:["surpriseYellowHeavy","surpriseYellow1"]}
-execute if entity @e[type=armor_stand,tag=Selection,tag=rngNormal] run summon marker ~ ~ ~ {Tags:["surpriseYellowNormal","surpriseYellow1"]}
-execute if entity @e[type=armor_stand,tag=Selection,tag=rngLightning] run summon marker ~ ~ ~ {Tags:["surpriseYellowLightning","surpriseYellow1"]}
+execute if entity @e[type=armor_stand,tag=Selection,tag=rngHeavy,tag=!heavyOff] run summon marker ~ ~ ~ {Tags:["surpriseYellowHeavy","surpriseYellow1"]}
+execute if entity @e[type=armor_stand,tag=Selection,tag=rngNormal,tag=!normalOff] run summon marker ~ ~ ~ {Tags:["surpriseYellowNormal","surpriseYellow1"]}
+execute if entity @e[type=armor_stand,tag=Selection,tag=rngLightning,tag=!lightningOff] run summon marker ~ ~ ~ {Tags:["surpriseYellowLightning","surpriseYellow1"]}
 
 #Select category and run appropriate sub-RNG function
 tag @e[type=marker,tag=surpriseYellow1,sort=random,limit=1,distance=..1] add rngSelected

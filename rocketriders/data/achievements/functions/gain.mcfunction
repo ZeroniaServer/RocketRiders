@@ -13,6 +13,8 @@ execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s PlayerDeaths
 execute as @a unless entity @s[team=!Yellow,team=!Blue] if score @s respawn matches 1.. run tag @s add probablyDied
 scoreboard players add @a[tag=probablyDied] deathCooldown 1
 execute as @a[tag=probablyDied,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute as @a[tag=probablyDied] run effect clear @s levitation
+execute as @a[scores={deathCooldown=1}] run tp @s @s
 
 #Removes Nova Rocket tags for dead players
 tag @a[tag=probablyDied] remove YellowNovaNear

@@ -19,10 +19,6 @@ scoreboard players set @a[scores={death=1..}] death 0
 
 #Arrow/Canopy antidupe (works regardless of Item Stacking)
 execute as @a[team=Blue] store result score @s HasArrows run clear @s arrow 0
-clear @a[team=Blue,scores={HasArrows=5..}] arrow 1
-
-execute as @a[team=Blue] store result score @s HasPlat run clear @s ender_pearl 0
-clear @a[team=Blue,scores={HasPlat=4..}] ender_pearl 1
 
 #Flagpole
 fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace

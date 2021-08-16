@@ -1,6 +1,7 @@
-execute if entity @s[scores={ICBMID=0}] run scoreboard players add $highest ICBMID 1
-scoreboard players operation @s[scores={ICBMID=0}] ICBMID = $highest ICBMID
-summon marker ~ ~ ~ {Tags:["ICBMtracker"]}
-scoreboard players operation @e[type=marker,tag=ICBMtracker,limit=1,sort=nearest,distance=..1] ICBMID = $highest ICBMID
-scoreboard players operation @e[type=marker,tag=ICBMtracker,limit=1,sort=nearest,distance=..1] UUIDTracker = @s UUIDTracker
-execute as @e[type=egg,tag=ICBM,scores={ICBMID=0}] at @s run function everytick:icbmid
+##Gives each ICBM egg a unique ID + corresponding tracker marker
+scoreboard players add $highest ICBMID 1
+scoreboard players operation @s ICBMID = $highest ICBMID
+summon marker ~ ~ ~ {Tags:["ICBMtracker","trackerspawn"]}
+scoreboard players operation @e[type=marker,tag=trackerspawn,limit=1] ICBMID = @s ICBMID
+scoreboard players operation @e[type=marker,tag=trackerspawn,limit=1] UUIDTracker = @s UUIDTracker
+tag @e[type=marker,tag=trackerspawn] remove trackerspawn

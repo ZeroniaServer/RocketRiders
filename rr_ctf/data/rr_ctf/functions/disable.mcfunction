@@ -8,7 +8,6 @@ execute as @e[type=armor_stand,tag=Selection,tag=HardcoreWasOn] run function are
 tag @e[type=armor_stand,tag=Selection] remove HardcoreWasOn
 tag @e[type=armor_stand,tag=Selection,tag=DoublePortalWasOn] add DoublePortal
 tag @e[type=armor_stand,tag=Selection] remove DoublePortalWasOn
-tag @e[type=armor_stand,tag=Selection] remove tyingOff
 tag @e[type=armor_stand,tag=Selection] remove fbPortalsOff
 tag @e[type=armor_stand,tag=Selection] remove preventionOff
 tag @e[type=armor_stand,tag=Selection] remove preventionSoft

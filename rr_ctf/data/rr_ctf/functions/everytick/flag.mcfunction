@@ -95,6 +95,10 @@ execute if score FlagWave FlagScore >= 40 FlagScore if score FB2: FlagScore > 29
 execute if score FlagWave FlagScore >= 40 FlagScore run scoreboard players reset FlagWave FlagScore
 
 #Capture Yellow Flag 1 (the flag on yellow's right)
+execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned 34 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY1: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"blue"},{"text":" lowered a ","color":"aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"aqua"},"\n"]
+execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned 34 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY1: FlagScore > 29 FlagScore run tellraw @a[team=Blue] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"blue"},{"text":" lowered a ","color":"green"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"green"},"\n"]
+execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned 34 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY1: FlagScore > 29 FlagScore run tellraw @a[team=Yellow] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"blue"},{"text":" lowered your flag!","color":"red"},"\n"]
+
 execute positioned 34 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY1: FlagScore > 29 FlagScore run scoreboard players set FY1: FlagScore 29
 execute positioned 34 65 64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY1: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
 execute if score FY1: FlagScore <= 29 FlagScore run setblock 34 65 64 white_stained_glass
@@ -112,18 +116,24 @@ execute if score FY1: FlagScore matches 26 run setblock 34 70 64 redstone_block
 execute if score FY1: FlagScore matches 22 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 22 run setblock 34 70 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 22 run setblock 34 69 64 redstone_block
+execute if score FY1: FlagScore matches 22 run setblock 34 71 64 oak_fence
 execute if score FY1: FlagScore matches 18 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 18 run setblock 34 69 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 18 run setblock 34 68 64 redstone_block
+execute if score FY1: FlagScore matches 18 run setblock 34 70 64 oak_fence
 execute if score FY1: FlagScore matches 14 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 14 run setblock 34 68 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 14 run setblock 34 67 64 redstone_block
+execute if score FY1: FlagScore matches 14 run setblock 34 69 64 oak_fence
 execute if score FY1: FlagScore matches 10 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 10 run setblock 34 67 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 10 run setblock 34 66 64 redstone_block
+execute if score FY1: FlagScore matches 10 run setblock 34 68 64 oak_fence
 execute if score FY1: FlagScore matches 6 run fill 34 65 63 30 72 64 air replace yellow_wool
 execute if score FY1: FlagScore matches 6 run setblock 34 66 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY1: FlagScore matches 6 run setblock 34 65 64 redstone_block
+execute if score FY1: FlagScore matches 6 run setblock 34 65 64 white_stained_glass
+execute if score FY1: FlagScore matches 6 run setblock 34 67 64 oak_fence
 #END
 
 #Keep placing FY1 once flag lowered
@@ -133,6 +143,10 @@ execute if score FY1: FlagScore matches 0 run fill 32 66 64 31 65 64 yellow_wool
 execute if score FY1: FlagScore matches 0 run setblock 30 65 64 yellow_wool
 
 #Capture Yellow Flag 2 (the flag on yellow's left)
+execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"blue"},{"text":" lowered a ","color":"aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"aqua"},"\n"]
+execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run tellraw @a[team=Blue] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"blue"},{"text":" lowered a ","color":"green"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"green"},"\n"]
+execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run tellraw @a[team=Yellow] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"blue"},{"text":" lowered your flag!","color":"red"},"\n"]
+
 execute positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run scoreboard players set FY2: FlagScore 29
 execute positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
 execute if score FY2: FlagScore <= 29 FlagScore run setblock -10 65 64 white_stained_glass
@@ -150,18 +164,24 @@ execute if score FY2: FlagScore matches 26 run setblock -10 70 64 redstone_block
 execute if score FY2: FlagScore matches 22 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 22 run setblock -10 70 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 22 run setblock -10 69 64 redstone_block
+execute if score FY2: FlagScore matches 22 run setblock -10 71 64 oak_fence
 execute if score FY2: FlagScore matches 18 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 18 run setblock -10 69 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 18 run setblock -10 68 64 redstone_block
+execute if score FY2: FlagScore matches 18 run setblock -10 70 64 oak_fence
 execute if score FY2: FlagScore matches 14 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 14 run setblock -10 68 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 14 run setblock -10 67 64 redstone_block
+execute if score FY2: FlagScore matches 14 run setblock -10 69 64 oak_fence
 execute if score FY2: FlagScore matches 10 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 10 run setblock -10 67 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 10 run setblock -10 66 64 redstone_block
+execute if score FY2: FlagScore matches 10 run setblock -10 68 64 oak_fence
 execute if score FY2: FlagScore matches 6 run fill -10 64 63 -14 72 64 air replace yellow_wool
 execute if score FY2: FlagScore matches 6 run setblock -10 66 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
 execute if score FY2: FlagScore matches 6 run setblock -10 65 64 redstone_block
+execute if score FY2: FlagScore matches 6 run setblock -10 65 64 minecraft:white_stained_glass
+execute if score FY2: FlagScore matches 6 run setblock -10 67 64 oak_fence
 #END
 
 #Keep placing FY2 once flag lowered
@@ -171,6 +191,10 @@ execute if score FY2: FlagScore matches 0 run fill -12 66 64 -13 65 64 yellow_wo
 execute if score FY2: FlagScore matches 0 run setblock -14 65 64 yellow_wool
 
 #Capture Blue Flag 1 (the flag on blue's right)
+execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned -10 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"},"\n"]
+execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned -10 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run tellraw @a[team=Yellow] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"green"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"green"},"\n"]
+execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned -10 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run tellraw @a[team=Blue] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"gold"},{"text":" lowered your flag!","color":"red"},"\n"]
+
 execute positioned -10 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run scoreboard players set FB1: FlagScore 29
 execute positioned -10 65 -64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
 execute if score FB1: FlagScore <= 29 FlagScore run setblock -10 65 -64 white_stained_glass
@@ -188,18 +212,24 @@ execute if score FB1: FlagScore matches 26 run setblock -10 70 -64 redstone_bloc
 execute if score FB1: FlagScore matches 22 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 22 run setblock -10 70 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 22 run setblock -10 69 -64 redstone_block
+execute if score FB1: FlagScore matches 22 run setblock -10 71 -64 oak_fence
 execute if score FB1: FlagScore matches 18 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 18 run setblock -10 69 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 18 run setblock -10 68 -64 redstone_block
+execute if score FB1: FlagScore matches 18 run setblock -10 70 -64 oak_fence
 execute if score FB1: FlagScore matches 14 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 14 run setblock -10 68 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 14 run setblock -10 67 -64 redstone_block
+execute if score FB1: FlagScore matches 14 run setblock -10 69 -64 oak_fence
 execute if score FB1: FlagScore matches 10 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 10 run setblock -10 67 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 10 run setblock -10 66 -64 redstone_block
+execute if score FB1: FlagScore matches 10 run setblock -10 68 -64 oak_fence
 execute if score FB1: FlagScore matches 6 run fill -10 64 -65 -14 72 -64 air replace blue_wool
 execute if score FB1: FlagScore matches 6 run setblock -10 66 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB1: FlagScore matches 6 run setblock -10 65 -64 redstone_block
+execute if score FB1: FlagScore matches 6 run setblock -10 65 -64 white_stained_glass
+execute if score FB1: FlagScore matches 6 run setblock -10 67 -64 oak_fence
 #END
 
 #Keep placing FB1 once flag lowered
@@ -209,6 +239,10 @@ execute if score FB1: FlagScore matches 0 run fill -12 66 -64 -13 65 -64 blue_wo
 execute if score FB1: FlagScore matches 0 run setblock -14 65 -64 blue_wool
 
 #Capture Blue Flag 2 (the flag on blue's left)
+execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"},"\n"]
+execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run tellraw @a[team=Yellow] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"green"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"green"},"\n"]
+execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run tellraw @a[team=Blue] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"gold"},{"text":" lowered your flag!","color":"red"},"\n"]
+
 execute positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run scoreboard players set FB2: FlagScore 29
 execute positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
 execute if score FB2: FlagScore <= 29 FlagScore run setblock 34 65 -64 white_stained_glass
@@ -226,18 +260,24 @@ execute if score FB2: FlagScore matches 26 run setblock 34 70 -64 redstone_block
 execute if score FB2: FlagScore matches 22 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 22 run setblock 34 70 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 22 run setblock 34 69 -64 redstone_block
+execute if score FB2: FlagScore matches 22 run setblock 34 71 -64 oak_fence
 execute if score FB2: FlagScore matches 18 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 18 run setblock 34 69 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 18 run setblock 34 68 -64 redstone_block
+execute if score FB2: FlagScore matches 18 run setblock 34 70 -64 oak_fence
 execute if score FB2: FlagScore matches 14 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 14 run setblock 34 68 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 14 run setblock 34 67 -64 redstone_block
+execute if score FB2: FlagScore matches 14 run setblock 34 69 -64 oak_fence
 execute if score FB2: FlagScore matches 10 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 10 run setblock 34 67 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 10 run setblock 34 66 -64 redstone_block
+execute if score FB2: FlagScore matches 10 run setblock 34 68 -64 oak_fence
 execute if score FB2: FlagScore matches 6 run fill 30 64 -64 34 72 -65 air replace blue_wool
 execute if score FB2: FlagScore matches 6 run setblock 34 66 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
 execute if score FB2: FlagScore matches 6 run setblock 34 65 -64 redstone_block
+execute if score FB2: FlagScore matches 6 run setblock 34 65 -64 white_stained_glass
+execute if score FB2: FlagScore matches 6 run setblock 34 67 -64 oak_fence
 #END
 
 #Keep placing FB2 once flag lowered
@@ -259,10 +299,10 @@ scoreboard players reset @a[team=!Blue,team=!Yellow] FlagsCaptured
 scoreboard players set @a[scores={FlagsCaptured=3..}] FlagsCaptured 2
 
 #If flag carrier disconnects completely
-execute unless entity @a[tag=CarryFB1] if score FB1: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
-execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
-execute unless entity @a[tag=CarryFY1] if score FY1: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
-execute unless entity @a[tag=CarryFY2] if score FY2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
+execute unless entity @a[tag=CarryFB1] if score FB1: FlagScore matches -1 run tellraw @a ["","\n",{"text":"Flag Restored! ","color":"blue"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"},"\n"]
+execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 run tellraw @a ["","\n",{"text":"Flag Restored! ","color":"blue"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"},"\n"]
+execute unless entity @a[tag=CarryFY1] if score FY1: FlagScore matches -1 run tellraw @a ["","\n",{"text":"Flag Restored! ","color":"gold"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"},"\n"]
+execute unless entity @a[tag=CarryFY2] if score FY2: FlagScore matches -1 run tellraw @a ["","\n",{"text":"Flag Restored! ","color":"gold"},{"text":"A player left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"},"\n"]
 
 execute unless entity @a[tag=CarryFB1] if score FB1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
 execute unless entity @a[tag=CarryFB2] if score FB2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
@@ -276,10 +316,10 @@ execute unless entity @a[tag=CarryFY2] if score FY2: FlagScore matches -1 run sc
 
 #Handle non-players (leaving midgame)
 #Does not apply if there's already another flag carrier (in case of relog)
-execute as @a[tag=CarryFB1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB1,team=!Lobby,team=!Spectator] if score FB1: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"selector":"@s","color":"gold"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
-execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB2,team=!Lobby,team=!Spectator] if score FB2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"blue"},{"selector":"@s","color":"gold"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"}]
-execute as @a[tag=CarryFY1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY1,team=!Lobby,team=!Spectator] if score FY1: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
-execute as @a[tag=CarryFY2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY2,team=!Lobby,team=!Spectator] if score FY2: FlagScore matches -1 run tellraw @a ["",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"}]
+execute as @a[tag=CarryFB1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB1,team=!Lobby,team=!Spectator] if score FB1: FlagScore matches -1 run tellraw @a ["","\n",{"text":"Flag Restored! ","color":"blue"},{"selector":"@s","color":"gold"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"},"\n"]
+execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB2,team=!Lobby,team=!Spectator] if score FB2: FlagScore matches -1 run tellraw @a ["","\n",{"text":"Flag Restored! ","color":"blue"},{"selector":"@s","color":"gold"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"aqua"},"\n"]
+execute as @a[tag=CarryFY1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY1,team=!Lobby,team=!Spectator] if score FY1: FlagScore matches -1 run tellraw @a ["","\n",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"},"\n"]
+execute as @a[tag=CarryFY2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFY2,team=!Lobby,team=!Spectator] if score FY2: FlagScore matches -1 run tellraw @a ["","\n",{"text":"Flag Restored! ","color":"gold"},{"selector":"@s","color":"blue"},{"text":" left the match while carrying a flag so the flag has been placed back at the base.","color":"yellow"},"\n"]
 
 execute as @a[tag=CarryFB1,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB1,team=!Lobby,team=!Spectator] if score FB1: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
 execute as @a[tag=CarryFB2,team=!Blue,team=!Yellow] unless entity @a[tag=CarryFB2,team=!Lobby,team=!Spectator] if score FB2: FlagScore matches -1 as @a[team=!Lobby] at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.7
@@ -334,12 +374,12 @@ execute positioned -10 65 64 as @e[type=snowball,scores={shieldtest=19..20},dist
 execute positioned 34 65 64 as @e[type=snowball,scores={shieldtest=19..20},distance=..5] run scoreboard players remove @s shieldtest 1
 
 #Disable obsidian shields near flags
-execute positioned -10 65 -64 as @e[type=marker,tag=yellowobalone,distance=..3] run kill @s
-execute positioned 34 65 -64 as @e[type=marker,tag=yellowobalone,distance=..3] run kill @s
-execute positioned -10 65 64 as @e[type=marker,tag=yellowobalone,distance=..3] run kill @s
-execute positioned 34 65 64 as @e[type=marker,tag=yellowobalone,distance=..3] run kill @s
+execute positioned -10 65 -64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
+execute positioned 34 65 -64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
+execute positioned -10 65 64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
+execute positioned 34 65 64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
 
-execute positioned -10 65 -64 as @e[type=marker,tag=blueobalone,distance=..3] run kill @s
-execute positioned 34 65 -64 as @e[type=marker,tag=blueobalone,distance=..3] run kill @s
-execute positioned -10 65 64 as @e[type=marker,tag=blueobalone,distance=..3] run kill @s
-execute positioned 34 65 64 as @e[type=marker,tag=blueobalone,distance=..3] run kill @s
+execute positioned -10 65 -64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s
+execute positioned 34 65 -64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s
+execute positioned -10 65 64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s
+execute positioned 34 65 64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s

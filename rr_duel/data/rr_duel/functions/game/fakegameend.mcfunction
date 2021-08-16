@@ -29,7 +29,6 @@ execute if entity @s[scores={fakeendtimer=320}] run tag @a remove beenOnBlue
 execute if entity @s[scores={fakeendtimer=320}] run tag @a remove beenOnYellow
 execute if entity @s[scores={fakeendtimer=320}] run tag @a remove beenOnBoth
 execute if entity @s[scores={fakeendtimer=320}] run scoreboard players reset $highest VortexID
-execute if entity @s[scores={fakeendtimer=320}] run scoreboard players reset $tptracker VortexID
 execute if entity @s[scores={fakeendtimer=320}] run scoreboard players reset $count VortexID
 execute if entity @s[scores={fakeendtimer=320}] run scoreboard players add @s Rounds 1
 execute if entity @s[scores={fakeendtimer=320}] run tellraw @a[team=!Lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]

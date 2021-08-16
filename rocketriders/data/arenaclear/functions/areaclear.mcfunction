@@ -51,6 +51,7 @@ kill @e[type=item]
 kill @e[type=ender_pearl]
 kill @e[type=firework_rocket,tag=BlueNova]
 kill @e[type=firework_rocket,tag=YellowNova]
+kill @e[type=marker,tag=novatracker]
 execute as @e[type=marker,tag=obsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break
 execute as @e[type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break

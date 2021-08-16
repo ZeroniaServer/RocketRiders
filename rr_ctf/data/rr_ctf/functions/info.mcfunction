@@ -8,4 +8,4 @@ tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Specifics:
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Bases made of harder materials; no portals"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Players have Piercing Pickaxes to mine concrete"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Flag carrier's missiles travel back to own base"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Hold up to two Canopies at a time"}]
+tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Hold two Canopies at a time (three in Overtime)"}]

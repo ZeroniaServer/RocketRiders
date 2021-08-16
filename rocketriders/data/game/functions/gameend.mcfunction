@@ -48,21 +48,21 @@ execute if entity @s[scores={endtimer=1}] as @e[type=area_effect_cloud,tag=endFi
 execute if entity @s[scores={endtimer=1..}] as @e[type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
 
 ##Tie actionbar notifications
-execute if entity @s[tag=doTying,tag=!tyingOff,scores={endtimer=1..20}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"5","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,scores={endtimer=21..40}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,scores={endtimer=41..60}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"3","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,scores={endtimer=61..80}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"2","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,scores={endtimer=81..100}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"1","color":"dark_red","bold":true},{"text":" second","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,scores={endtimer=101}] run title @a[team=!Lobby] actionbar {"text":""}
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,scores={endtimer=1..20}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"5","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,scores={endtimer=21..40}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,scores={endtimer=41..60}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"3","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,scores={endtimer=61..80}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"2","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,scores={endtimer=81..100}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"1","color":"dark_red","bold":true},{"text":" second","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,scores={endtimer=101}] run title @a[team=!Lobby] actionbar {"text":""}
 
 ##System for ties (works with Double Portal modifier)
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 13 38 74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,tag=DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..100}] run tag @s add SuddenDeath
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 13 38 74 nether_portal run tag @s add SuddenDeath
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 74 nether_portal run tag @s add SuddenDeath
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,tag=DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal run tag @s add SuddenDeath
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortals,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..100}] run tag @s add SuddenDeath
 
 ##Post-tie phase and reset
 scoreboard players set @s[scores={endtimer=101}] gametime 0

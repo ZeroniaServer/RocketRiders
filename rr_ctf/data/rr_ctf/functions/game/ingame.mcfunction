@@ -16,6 +16,10 @@ execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @
 execute as @e[type=marker,tag=airDetectBlue] at @s run function rr_ctf:everytick/airdetectblue
 execute as @e[type=marker,tag=airDetectYellow] at @s run function rr_ctf:everytick/airdetectyellow
 
+#Overtime sudden death
+execute as @e[type=armor_stand,tag=Selection,scores={gametime=36000}] run tag @s add CTFOvertime
+execute as @e[type=armor_stand,tag=Selection,tag=CTFOvertime] run function rr_ctf:everytick/overtime
+
 #flag logic
 function rr_ctf:everytick/flag
 scoreboard objectives setdisplay sidebar.team.gold FlagDisp

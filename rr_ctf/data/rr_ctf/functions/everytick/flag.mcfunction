@@ -143,9 +143,9 @@ execute if score FY1: FlagScore matches 0 run fill 32 66 64 31 65 64 yellow_wool
 execute if score FY1: FlagScore matches 0 run setblock 30 65 64 yellow_wool
 
 #Capture Yellow Flag 2 (the flag on yellow's left)
-execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY1: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"blue"},{"text":" lowered a ","color":"aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"aqua"},"\n"]
-execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY1: FlagScore > 29 FlagScore run tellraw @a[team=Blue] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"blue"},{"text":" lowered a ","color":"green"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"green"},"\n"]
-execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY1: FlagScore > 29 FlagScore run tellraw @a[team=Yellow] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"blue"},{"text":" lowered your flag!","color":"red"},"\n"]
+execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"blue"},{"text":" lowered a ","color":"aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"aqua"},"\n"]
+execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run tellraw @a[team=Blue] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"blue"},{"text":" lowered a ","color":"green"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"green"},"\n"]
+execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run tellraw @a[team=Yellow] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"blue"},{"text":" lowered your flag!","color":"red"},"\n"]
 
 execute positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run scoreboard players set FY2: FlagScore 29
 execute positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
@@ -239,9 +239,9 @@ execute if score FB1: FlagScore matches 0 run fill -12 66 -64 -13 65 -64 blue_wo
 execute if score FB1: FlagScore matches 0 run setblock -14 65 -64 blue_wool
 
 #Capture Blue Flag 2 (the flag on blue's left)
-execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"},"\n"]
-execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run tellraw @a[team=Yellow] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"green"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"green"},"\n"]
-execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run tellraw @a[team=Blue] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"gold"},{"text":" lowered your flag!","color":"red"},"\n"]
+execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"},"\n"]
+execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run tellraw @a[team=Yellow] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"green"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"green"},"\n"]
+execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run tellraw @a[team=Blue] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"gold"},{"text":" lowered your flag!","color":"red"},"\n"]
 
 execute positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run scoreboard players set FB2: FlagScore 29
 execute positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass unless entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run setblock ~ ~ ~ purple_stained_glass
@@ -374,12 +374,12 @@ execute positioned -10 65 64 as @e[type=snowball,scores={shieldtest=19..20},dist
 execute positioned 34 65 64 as @e[type=snowball,scores={shieldtest=19..20},distance=..5] run scoreboard players remove @s shieldtest 1
 
 #Disable obsidian shields near flags
-execute positioned -10 65 -64 as @e[type=marker,tag=yellowobalone,distance=..3] run kill @s
-execute positioned 34 65 -64 as @e[type=marker,tag=yellowobalone,distance=..3] run kill @s
-execute positioned -10 65 64 as @e[type=marker,tag=yellowobalone,distance=..3] run kill @s
-execute positioned 34 65 64 as @e[type=marker,tag=yellowobalone,distance=..3] run kill @s
+execute positioned -10 65 -64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
+execute positioned 34 65 -64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
+execute positioned -10 65 64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
+execute positioned 34 65 64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
 
-execute positioned -10 65 -64 as @e[type=marker,tag=blueobalone,distance=..3] run kill @s
-execute positioned 34 65 -64 as @e[type=marker,tag=blueobalone,distance=..3] run kill @s
-execute positioned -10 65 64 as @e[type=marker,tag=blueobalone,distance=..3] run kill @s
-execute positioned 34 65 64 as @e[type=marker,tag=blueobalone,distance=..3] run kill @s
+execute positioned -10 65 -64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s
+execute positioned 34 65 -64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s
+execute positioned -10 65 64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s
+execute positioned 34 65 64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s

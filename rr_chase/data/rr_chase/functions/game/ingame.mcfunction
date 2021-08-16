@@ -17,9 +17,6 @@ execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s
 execute if entity @s[scores={gametime=2..}] as @a[team=Blue,scores={death=1..}] run function items:util/givearrows
 scoreboard players set @a[scores={death=1..}] death 0
 
-#Arrow/Canopy antidupe (works regardless of Item Stacking)
-execute as @a[team=Blue] store result score @s HasArrows run clear @s arrow 0
-
 #Flagpole
 fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace
 

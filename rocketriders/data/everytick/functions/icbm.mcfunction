@@ -8,24 +8,11 @@ scoreboard players add @e[type=egg,tag=ICBM] ICBMID 0
 execute as @e[type=egg,tag=ICBM,scores={ICBMID=0}] at @s run function everytick:icbmid
 
 #Teleport trackers to matching ICBMs recursively + detect trigger conditions
-execute store result score $numeggs ICBMID if entity @e[type=egg,tag=ICBM,scores={ICBMID=1..}]
-scoreboard players operation $tptracker ICBMID = $highest ICBMID
-scoreboard players operation $tptracker ICBMID -= $numeggs ICBMID
-function everytick:tptoicbm
-execute as @e[type=marker,tag=ICBMtracker,tag=!teleported] run tag @s add ICBMTriggered
-tag @e[type=marker,tag=ICBMtracker] remove teleported
+execute as @e[type=marker,tag=ICBMtracker] at @s run function everytick:tptoicbm
 
-#Trigger ICBM
-execute as @e[type=marker,tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~ ~ {Fuse:1s,Tags:["UtilKilled"]}
-execute as @e[type=marker,tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~ ~0.1 {Fuse:1s,Tags:["UtilKilled"]}
-execute as @e[type=marker,tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~ ~-0.1 {Fuse:1s,Tags:["UtilKilled"]}
-execute as @e[type=marker,tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~0.1 ~ ~ {Fuse:1s,Tags:["UtilKilled"]}
-execute as @e[type=marker,tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~-0.1 ~ ~ {Fuse:1s,Tags:["UtilKilled"]}
-execute as @e[type=marker,tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~0.1 ~ {Fuse:1s,Tags:["UtilKilled"]}
-execute as @e[type=marker,tag=ICBMTriggered,tag=!ICBMdone] at @s run summon tnt ~ ~-0.1 ~ {Fuse:1s,Tags:["UtilKilled"]}
-execute as @e[type=marker,tag=ICBMTriggered,tag=!ICBMdone] at @s run function game:tntutilkill
-tag @e[type=marker,tag=ICBMTriggered] add ICBMdone
-kill @e[type=marker,tag=ICBMTriggered]
+#Kill eggs that didn't teleport
+kill @e[type=egg,tag=ICBM,tag=!teleported]
+tag @e[type=egg,tag=ICBM] remove teleported
 
 #Smoke trail
 execute as @e[type=egg,tag=ICBM] at @s run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force

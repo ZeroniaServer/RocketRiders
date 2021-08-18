@@ -23,6 +23,9 @@ kill @e[type=marker,tag=ICBMtracker]
 kill @e[type=chicken]
 scoreboard players reset $highest ICBMID
 
+#tetris reset
+execute as @e[type=armor_stand,tag=Selection] run function rr_crusade:items/tetrisreset
+
 ##reset pregame bases
 #restore glass
 execute if entity @e[type=armor_stand,tag=Selection,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 96 -101 195 95 white_stained_glass

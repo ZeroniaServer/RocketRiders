@@ -16,9 +16,10 @@ execute as @e[type=marker,tag=crusadeWall,scores={CmdData=2400..}] run scoreboar
 
 #Item RNG
 scoreboard players add @s RandomItem 1
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_crusade:items/rng
+execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=2}] run function rr_crusade:items/util/givearrows
+execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_crusade:items/giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-execute if entity @s[tag=Minute] run function items:minutemix
+execute if entity @s[tag=Minute] run function rr_crusade:items/minutemix
 
 #custom prevention message
 execute as @a[tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]

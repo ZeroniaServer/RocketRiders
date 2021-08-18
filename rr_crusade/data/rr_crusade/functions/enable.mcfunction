@@ -8,6 +8,7 @@ tag @e[type=armor_stand,tag=Selection] add HardcoreOff
 tag @e[type=armor_stand,tag=Selection] add noPortal
 tag @e[type=armor_stand,tag=Selection] add customPrevention
 tag @e[type=armor_stand,tag=Selection] add featheredOff
+tag @e[type=armor_stand,tag=Selection] add arrowLimit
 tag @e[type=armor_stand,tag=Selection,tag=!doStacking] add stackingWasOff
 tag @e[type=armor_stand,tag=Selection] add doStacking
 tag @e[type=armor_stand,tag=Selection] add stackingOn
@@ -17,4 +18,6 @@ tag @e[type=armor_stand,tag=Selection] add MoleratOff
 tag @e[type=armor_stand,tag=Selection,tag=Molerat] add MoleratWasOn
 tag @e[type=armor_stand,tag=Selection,tag=Molerat] add WasMolerat
 tag @e[type=armor_stand,tag=Selection,tag=Molerat] remove Molerat
+tag @e[type=armor_stand,tag=Selection,tag=SurpriseEgg] add SurpriseEggWasOn
+tag @e[type=armor_stand,tag=Selection] add SurpriseEggOff
 tag @e[type=armor_stand,tag=Selection] add crusadeEnabled

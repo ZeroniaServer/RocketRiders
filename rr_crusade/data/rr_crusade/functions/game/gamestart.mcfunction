@@ -29,4 +29,6 @@ execute if entity @s[scores={count=600}] run clear @a[team=Blue,scores={crusadek
 execute if entity @s[scores={count=600}] run clear @a[team=Yellow,scores={crusadekit=2}] bow
 execute if entity @s[scores={count=600}] as @a[team=Blue,scores={crusadekit=2}] run item replace entity @s hotbar.0 with bow{display:{Name:'{"translate":"Shooting Saber","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1},{id:"sharpness",lvl:4}]}
 execute if entity @s[scores={count=600}] as @a[team=Yellow,scores={crusadekit=2}] run item replace entity @s hotbar.0 with bow{display:{Name:'{"translate":"Shooting Saber","color":"gold","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1},{id:"sharpness",lvl:4}]}
+execute if entity @s[scores={count=600}] as @a[team=Blue,scores={crusadekit=2}] run tag @s remove fullOffhand
+execute if entity @s[scores={count=600}] as @a[team=Yellow,scores={crusadekit=2}] run tag @s remove fullOffhand
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

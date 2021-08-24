@@ -3,7 +3,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 118
+scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 142
 
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -128,5 +128,29 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=114}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=115}] run title @a subtitle ["",{"text":"Updated Canopy - death enabled!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=116}] run title @a subtitle ["",{"text":"Round 1 - FIGHT!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=117}] run title @a subtitle ["",{"text":"It's aesthetically pleasing.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=118}] run title @a subtitle ["",{"text":"Laws of physics definitely apply here!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=119}] run title @a subtitle ["",{"text":"It's dangerous to go alone, take explosives!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=120}] run title @a subtitle ["",{"text":"No more 10 games of CTF in a row!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=121}] run title @a subtitle ["",{"text":"Rock, paper, EXPLOSION!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=122}] run title @a subtitle ["",{"text":"France surrendered already!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=123}] run title @a subtitle ["",{"text":"Chernobyl 2: Electric Boogaloo","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=124}] run title @a subtitle ["",{"text":"Crispy hot grilled smoked extra spicy missile!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=125}] run title @a subtitle ["",{"text":"Is this a nuke? No, this is Patrick!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=126}] run title @a subtitle ["",{"text":"Dream can't speedrun this game!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=127}] run title @a subtitle ["",{"text":"Hey look, I'm on a splash, I'm famous!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=128}] run title @a subtitle ["",{"text":"Mother, I require money for nuclear weapons.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=129}] run title @a subtitle ["",{"text":"Not having fun is illegal.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=130}] run title @a subtitle ["",{"text":"Thank you for playing Rocket Riders!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=131}] run title @a subtitle ["",{"text":"Vite! Vite!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=132}] run title @a subtitle ["",{"text":"utility pain","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=133}] run title @a subtitle ["",{"text":"Rocket surfing!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=134}] run title @a subtitle ["",{"text":"The most dangerous sport!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=135}] run title @a subtitle ["",{"text":"Error 401: Missile forbidden.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=136}] run title @a subtitle ["",{"text":"Go my armada, sail to freedom!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=137}] run title @a subtitle ["",{"text":"Only a small percentage-","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=138}] run title @a subtitle ["",{"text":"you're*","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=139}] run title @a subtitle ["",{"text":"Do we have too many splashes?","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=140}] run title @a subtitle ["",{"text":"Another boring splash! Epic.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=141}] run title @a subtitle ["",{"text":"Time to get hackusated!","color":"green"}]
 
 kill @e[type=marker,tag=RandomSplash]

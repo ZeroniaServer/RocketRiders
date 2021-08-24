@@ -2,7 +2,7 @@
 
 summon marker ~ ~ ~ {Tags:["RandomLossSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 67
+scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 84
 
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -74,5 +74,22 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=63}] run title @
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=64}] run title @a[tag=Loser] subtitle ["",{"text":"Everybody expected this.","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=65}] run title @a[tag=Loser] subtitle ["",{"text":"weel done lad you reyt goosed this one up","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=66}] run title @a[tag=Loser] subtitle ["",{"text":"Mission failed, we'll get 'em next time.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=67}] run title @a[tag=Loser] subtitle ["",{"text":"Not stonks ↓","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=68}] run title @a[tag=Loser] subtitle ["",{"text":"PANIK","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=69}] run title @a[tag=Loser] subtitle ["",{"text":"You died - Score: 7","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=70}] run title @a[tag=Loser] subtitle ["",{"text":"Projectile dysfunction...","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=71}] run title @a[tag=Loser] subtitle ["",{"text":"You put the miss in missile!","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=72}] run title @a[tag=Loser] subtitle ["",{"text":"You're fired!","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=73}] run title @a[tag=Loser] subtitle ["",{"text":"Oops, wrong button.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=74}] run title @a[tag=Loser] subtitle ["",{"text":"Boomer","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=75}] run title @a[tag=Loser] subtitle ["",{"text":"Their gaming toilet was better.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=76}] run title @a[tag=Loser] subtitle ["",{"text":"Are ya winning, son?","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=77}] run title @a[tag=Loser] subtitle ["",{"text":"Pro tip: get gud nub","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=78}] run title @a[tag=Loser] subtitle ["",{"text":"Try again with your client on.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=79}] run title @a[tag=Loser] subtitle ["",{"text":"Couldn't crack the launch codes.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=80}] run title @a[tag=Loser] subtitle ["",{"text":"oof","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=81}] run title @a[tag=Loser] subtitle ["",{"text":"You're a fake and a fraud!","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=82}] run title @a[tag=Loser] subtitle ["",{"text":"Nuclear disintegration!","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=83}] run title @a[tag=Loser] subtitle ["",{"text":"Where were my teammates?","color":"red"}]
 
 kill @e[type=marker,tag=RandomLossSplash]

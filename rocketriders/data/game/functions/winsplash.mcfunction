@@ -2,7 +2,7 @@
 
 summon marker ~ ~ ~ {Tags:["RandomWinSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomWinSplash] RNGmax 46
+scoreboard players set @e[type=marker,tag=RandomWinSplash] RNGmax 56
 
 execute as @e[type=marker,tag=RandomWinSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomWinSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -56,5 +56,15 @@ execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=42}] run title @a
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=43}] run title @a[tag=Winner] subtitle ["",{"text":"Nobody expected this!","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=44}] run title @a[tag=Winner] subtitle ["",{"text":"less go","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=45}] run title @a[tag=Winner] subtitle ["",{"text":"Stonks ↑","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=46}] run title @a[tag=Winner] subtitle ["",{"text":"Kalm","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=47}] run title @a[tag=Winner] subtitle ["",{"text":"Oops, wrong button.","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=48}] run title @a[tag=Winner] subtitle ["",{"text":"We are superior!","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=49}] run title @a[tag=Winner] subtitle ["",{"text":"Alpha missile!","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=50}] run title @a[tag=Winner] subtitle ["",{"text":"In Britain, they call this a chuffing success!","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=51}] run title @a[tag=Winner] subtitle ["",{"text":"We do a little gaming","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=52}] run title @a[tag=Winner] subtitle ["",{"text":"-1 ping","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=53}] run title @a[tag=Winner] subtitle ["",{"text":"Cracked the launch codes B)","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=54}] run title @a[tag=Winner] subtitle ["",{"text":"+100 Rocket Bucks!","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=55}] run title @a[tag=Winner] subtitle ["",{"text":"You got lucky this time...","color":"green"}]
 
 kill @e[type=marker,tag=RandomWinSplash]

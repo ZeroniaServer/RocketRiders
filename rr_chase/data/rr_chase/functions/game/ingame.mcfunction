@@ -14,8 +14,7 @@ execute if entity @s[tag=Minute] run function items:minutemix
 execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
 
 #Arrows on death
-execute if entity @s[scores={gametime=2..}] as @a[team=Blue,scores={death=1..}] run function items:util/givearrows
-scoreboard players set @a[scores={death=1..}] death 0
+execute if entity @s[scores={gametime=2..}] as @a[team=Blue,scores={deathCooldown=1}] run function items:util/givearrows
 
 #Flagpole
 fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace

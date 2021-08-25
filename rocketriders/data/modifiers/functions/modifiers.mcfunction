@@ -15,8 +15,8 @@ execute if entity @s[tag=Explosive] run kill @e[type=tnt,nbt={Fuse:1s}]
 execute if entity @s[tag=Explosive] as @e[type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
 
 ##Sonar
-execute unless entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] run effect give @s night_vision 1000000 100 true
-execute if entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] run effect clear @s night_vision
+execute unless entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue] run effect give @s night_vision 1000000 100 true
+execute if entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue] run effect clear @s night_vision
 execute if entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue] run effect give @s glowing 1000000 1 true
 execute if entity @s[tag=Sonar] as @e[type=arrow] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[type=snowball] run data merge entity @s {Glowing:1b}

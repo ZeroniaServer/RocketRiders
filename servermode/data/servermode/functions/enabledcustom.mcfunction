@@ -1,6 +1,7 @@
 scoreboard players set @e[type=armor_stand,tag=Selection] servermode 0
 tag @e[type=armor_stand,tag=Selection] add stopIfEmpty
 tag @e[type=armor_stand,tag=Selection] add noYZELO
+tag @e[type=armor_stand,tag=Selection] add SplashStreamsOff
 tag @e[type=armor_stand,tag=Selection] remove ServerModeVoting
 tag @e[type=armor_stand,tag=Selection] remove realms
 tag @e[type=armor_stand,tag=Selection] remove Repeat

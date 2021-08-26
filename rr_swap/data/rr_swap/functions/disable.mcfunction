@@ -4,7 +4,7 @@ tag @e[type=armor_stand,tag=Selection] remove swapEnabled
 tag @e[type=armor_stand,tag=Selection] remove SurpriseEggOff
 tag @e[type=armor_stand,tag=Selection,tag=SurpriseEggWasOn] add SurpriseEgg
 tag @e[type=armor_stand,tag=Selection] remove SurpriseEggWasOn
-tag @e[type=armor_stand,tag=Selection] remove SplashStreamsOff
+tag @e[type=armor_stand,tag=Selection,tag=!SMCustom] remove SplashStreamsOff
 tag @e[type=armor_stand,tag=Selection,tag=SplashStreamsWasOn] add SplashStreams
 tag @e[type=armor_stand,tag=Selection] remove SplashStreamsWasOn
 tag @e[type=armor_stand,tag=Selection] remove vortexOverride

@@ -14,9 +14,11 @@ execute as @e[type=fireball,tag=ClusterSpawn] at @s unless entity @e[type=fireba
 kill @e[type=fireball,tag=ClusterSpawn,scores={Clustertime=-40}]
 
 #Proper explosive cluster fireballs
-execute if entity @s[tag=Explosive] as @e[type=fireball,tag=ClusterFireball] run data merge entity @s {ExplosionPower:3}
+execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=fireball,tag=ClusterFireball] run data merge entity @s {ExplosionPower:3}
+execute if entity @s[tag=Explosive,tag=ClutterCollector] as @e[type=fireball,tag=ClusterFireball] run data merge entity @s {ExplosionPower:-3}
 
 #Disable cluster fireballs near portals (depends on Fireball Portals option) - thanks @Cubehamster!!!
-execute if entity @s[tag=!Explosive] as @e[type=fireball,tag=ClusterFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:1}
+execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[type=fireball,tag=ClusterFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:1}
+execute if entity @s[tag=!Explosive,tag=ClutterCollector] as @e[type=fireball,tag=ClusterFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:-1}
 execute if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=fireball,tag=ClusterFireball] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
 execute if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=fireball,tag=ClusterFireball] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}

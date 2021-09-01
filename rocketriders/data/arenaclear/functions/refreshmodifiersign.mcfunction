@@ -62,8 +62,10 @@ execute if entity @s[scores={modifierID=13},tag=DoublePortal,tag=!noPortal,tag=!
 execute if entity @s[scores={modifierID=13},tag=!DoublePortal,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Clutter Collector
-execute if entity @s[scores={modifierID=14},tag=ClutterCollector,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=14},tag=!ClutterCollector,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=14},tag=ClutterCollector,tag=!Residers,tag=!Molerat,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=14},tag=!ClutterCollector,tag=!Residers,tag=!Molerat,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=14},tag=Residers,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=14},tag=Molerat,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #All locked
 execute if entity @s[tag=settingsLocked] unless entity @s[scores={modifierID=8},tag=WindDownForce] run setblock -69 191 75 crimson_wall_sign[facing=east]

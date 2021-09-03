@@ -34,27 +34,24 @@ execute in overworld if entity @s[tag=!UnableMissile] at @s if predicate custom:
 execute in overworld if entity @s[tag=!UnableMissile] at @s if predicate custom:nearroof run tag @s add UnableMissile
 
 #Pierce Prevention (Portals)
-execute if entity @e[type=armor_stand,tag=Selection,tag=doPrevention,tag=!preventionOff] if entity @s[tag=!missileflip] run function items:prevention/preventmissiles
-execute if entity @e[type=armor_stand,tag=Selection,tag=preventionOff,tag=preventionSoft] if entity @s[tag=!missileflip] run function items:prevention/preventmissiles
-execute if entity @e[type=armor_stand,tag=Selection,tag=doPrevention,tag=!preventionOff] if entity @s[tag=missileflip] run function items:flip/preventmissiles
-execute if entity @e[type=armor_stand,tag=Selection,tag=preventionOff,tag=preventionSoft] if entity @s[tag=missileflip] run function items:flip/preventmissiles
+execute if entity @e[type=armor_stand,tag=Selection,tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
+execute if entity @e[type=armor_stand,tag=Selection,tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
 
 #Spawnpoint
-execute if entity @s[tag=!UnableMissile,tag=!missileflip] run function items:prevention/spawnpoint
-execute if entity @s[tag=!UnableMissile,tag=missileflip] run function items:flip/spawnpoint
+execute if entity @s[tag=!UnableMissile] run function items:prevention/spawnpoint
 
 ##Antigrief
 #Normal antigrief - starts after 10 seconds
 execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=29] run function items:prevention/antigrief
 execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=57,dz=29] run function items:prevention/antigrief
-execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=29] run function items:flip/antigrief
-execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=57,dz=29] run function items:flip/antigrief
+execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief
+execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief
 
 #Stronger antigrief - starts before 10 seconds
 execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
 execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
-execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:flip/antigrief_10sec
-execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:flip/antigrief_10sec
+execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
+execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
 
 #Remove clone blocks
 function items:prevention/clearafter

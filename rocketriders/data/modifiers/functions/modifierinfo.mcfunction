@@ -11,8 +11,9 @@ execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=8}] run t
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=9}] run tellraw @s [{"text":"Splash Streams:","color":"aqua","bold":true},{"text":" Liquids placed by Splash bottles are permanent.","color":"white","bold":false,"italic":true}]
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=10}] run tellraw @s [{"text":"Spam Click:","color":"aqua","bold":true},{"text":" Players have no delay between melee attacks on enemies.","color":"white","bold":false,"italic":true}]
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=11}] run tellraw @s [{"text":"Ninja Jump:","color":"aqua","bold":true},{"text":" Players have increased speed and jump height.","color":"white","bold":false,"italic":true}]
-execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=12}] run tellraw @s [{"text":"Hardcore:","color":"aqua","bold":true},{"text":" Players have three hearts of health and bases are three blocks thick.","color":"white","bold":false,"italic":true}]
+execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=12}] run tellraw @s [{"text":"Hardcore:","color":"aqua","bold":true},{"text":" Players have one heart of health and bases are three blocks thick.","color":"white","bold":false,"italic":true}]
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=13}] run tellraw @s [{"text":"Double Portal:","color":"aqua","bold":true},{"text":" Both portals must be broken to win the game.","color":"white","bold":false,"italic":true}]
+execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=14}] run tellraw @s [{"text":"Clutter Collector:","color":"aqua","bold":true},{"text":" Explosions do no block damage between the bases.","color":"white","bold":false,"italic":true}]
 
 tellraw @s [{"text":""}]
 tag @s remove modifierInfo

@@ -8,11 +8,11 @@ execute if entity @s[tag=Instamine] as @a unless entity @s[team=!Yellow,team=!Bl
 execute if entity @s[tag=Instamine] run effect clear @a[team=!Yellow,team=!Blue] haste
 
 ##Explosive
-execute if entity @s[tag=Explosive] as @e[type=tnt,nbt={Fuse:1s}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"]}
-execute if entity @s[tag=Explosive] as @e[type=tnt,nbt={Fuse:1s},tag=UtilKilled] at @s run data modify entity @e[type=creeper,tag=ExplosiveTNT,limit=1,sort=nearest,distance=..1] CustomName set from entity @s CustomName
+execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=tnt,nbt={Fuse:1s}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"]}
+execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=tnt,nbt={Fuse:1s},tag=UtilKilled] at @s run data modify entity @e[type=creeper,tag=ExplosiveTNT,limit=1,sort=nearest,distance=..1] CustomName set from entity @s CustomName
 
-execute if entity @s[tag=Explosive] run kill @e[type=tnt,nbt={Fuse:1s}]
-execute if entity @s[tag=Explosive] as @e[type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
+execute if entity @s[tag=Explosive,tag=!ClutterCollector] run kill @e[type=tnt,nbt={Fuse:1s}]
+execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
 
 ##Sonar
 execute unless entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] run effect give @s night_vision 1000000 100 true
@@ -53,3 +53,13 @@ execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yell
 execute if entity @s[tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 2.0
 execute if entity @s[tag=Hardcore] as @a[team=Lobby] run attribute @s minecraft:generic.max_health base set 20.0
 execute if entity @s[tag=!Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 20.0
+
+#Clutter Collector
+execute if entity @s[tag=ClutterCollector,tag=Explosive] as @e[type=tnt,nbt={Fuse:1s},z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:-5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"]}
+execute if entity @s[tag=ClutterCollector,tag=Explosive] as @e[type=tnt,nbt={Fuse:1s}] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"]}
+execute if entity @s[tag=ClutterCollector,tag=!Explosive] as @e[type=tnt,nbt={Fuse:1s},z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:-3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"]}
+execute if entity @s[tag=ClutterCollector] as @e[type=tnt,nbt={Fuse:1s},tag=UtilKilled] at @s run data modify entity @e[type=creeper,tag=ExplosiveTNT,limit=1,sort=nearest,distance=..1] CustomName set from entity @s CustomName
+execute if entity @s[tag=ClutterCollector,tag=Explosive] run kill @e[type=tnt,nbt={Fuse:1s}]
+execute if entity @s[tag=ClutterCollector,tag=!Explosive] run kill @e[type=tnt,nbt={Fuse:1s},z=-50,dz=100,x=-160,dx=320,y=-20,dy=200]
+execute if entity @s[tag=ClutterCollector,tag=!Explosive] as @e[type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-1}
+execute if entity @s[tag=ClutterCollector,tag=Explosive] as @e[type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-3}

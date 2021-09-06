@@ -50,7 +50,7 @@ execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yell
 execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s jump_boost 1000000 2 true
 
 ##Hardcore
-execute if entity @s[tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 2.0
+execute if entity @s[tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 6.0
 execute if entity @s[tag=Hardcore] as @a[team=Lobby] run attribute @s minecraft:generic.max_health base set 20.0
 execute if entity @s[tag=!Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 20.0
 

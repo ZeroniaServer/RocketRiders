@@ -1,9 +1,4 @@
-tag @s remove givenBlindArr
-tag @s remove givenLeviArr
-tag @s remove givenSlowArr
-tag @s remove givenWitherArr
-tag @s remove givenAllTipped
-
+tag @s remove givenTipped
 tag @s remove givenDuplex
 tag @s remove givenBee
 tag @s remove givenBroad

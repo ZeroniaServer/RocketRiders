@@ -40,6 +40,14 @@ execute if score FlagWave FlagScore matches 40.. run setblock 12 71 64 structure
 execute if score FlagWave FlagScore matches 40.. run setblock 12 70 64 redstone_block
 execute if score FlagWave FlagScore matches 40.. run scoreboard players reset FlagWave FlagScore
 
+#Place stairs
+execute positioned 10 63 66 run function rr_chase:arenaclear/stairleft
+execute positioned 14 63 66 run function rr_chase:arenaclear/stairright
+
+#Custom prevention message
+execute as @a[tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian.","color":"red"}]
+tag @a[tag=preventionMSG] remove preventionMSG
+
 #Util overwrites
 function rr_chase:game/overwrite
 

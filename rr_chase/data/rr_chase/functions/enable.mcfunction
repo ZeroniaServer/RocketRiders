@@ -7,6 +7,8 @@ tag @e[type=armor_stand,tag=Selection,tag=DoublePortal] add DoublePortalWasOn
 tag @e[type=armor_stand,tag=Selection] add fbPortalsOff
 tag @e[type=armor_stand,tag=Selection] add portalDecosOff
 tag @e[type=armor_stand,tag=Selection] add preventionOff
+tag @e[type=armor_stand,tag=Selection] add preventionSoft
+tag @e[type=armor_stand,tag=Selection] add customPrevention
 tag @e[type=armor_stand,tag=Selection] add noPortal
 tag @e[type=armor_stand,tag=Selection] add customEnds
 tag @e[type=armor_stand,tag=Selection] add customBossbar

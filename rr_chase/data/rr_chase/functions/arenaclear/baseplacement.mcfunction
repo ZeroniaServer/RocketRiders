@@ -11,6 +11,8 @@ setblock 12 71 64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,
 setblock 12 70 64 minecraft:redstone_block
 
 #Stair placement
+kill @e[type=marker,tag=chaseStairs]
+summon marker 10 63 66 {Tags:["chaseStairs"]}
 execute positioned 10 63 66 run function rr_chase:arenaclear/stairleft
 execute positioned 14 63 66 run function rr_chase:arenaclear/stairright
 fill 11 63 64 13 63 62 obsidian replace white_stained_glass

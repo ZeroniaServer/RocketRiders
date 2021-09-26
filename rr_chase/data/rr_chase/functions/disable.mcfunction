@@ -8,6 +8,8 @@ tag @e[type=armor_stand,tag=Selection] remove DoublePortalWasOn
 tag @e[type=armor_stand,tag=Selection] remove fbPortalsOff
 tag @e[type=armor_stand,tag=Selection] remove portalDecosOff
 tag @e[type=armor_stand,tag=Selection] remove preventionOff
+tag @e[type=armor_stand,tag=Selection] remove preventionSoft
+tag @e[type=armor_stand,tag=Selection] remove customPrevention
 tag @e[type=armor_stand,tag=Selection] remove noPortal
 tag @e[type=armor_stand,tag=Selection] remove customEnds
 tag @e[type=armor_stand,tag=Selection] remove customBossbar

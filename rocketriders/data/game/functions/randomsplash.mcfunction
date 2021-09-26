@@ -3,7 +3,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 142
+scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 161
 
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -152,5 +152,24 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=138}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=139}] run title @a subtitle ["",{"text":"Do we have too many splashes?","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=140}] run title @a subtitle ["",{"text":"Another boring splash! Epic.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=141}] run title @a subtitle ["",{"text":"Time to get hackusated!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=142}] run title @a subtitle ["",{"text":"GL (not that you'd believe in luck anyway)!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=143}] run title @a subtitle ["",{"text":"KABOOM! From foamtastic!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=144}] run title @a subtitle ["",{"text":"10 signs you're a sigma missile...","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=145}] run title @a subtitle ["",{"text":"Respect your elders!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=146}] run title @a subtitle ["",{"text":"Respect your elders!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=147}] run title @a subtitle ["",{"text":"Shooting Saber? More like Shooting Sa-bruh","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=148}] run title @a subtitle ["",{"text":"Get real and fake simultaneously.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=149}] run title @a subtitle ["",{"text":"elyta go BOOM!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=150}] run title @a subtitle ["",{"text":"Girl, will you be the Rocket to my Riders?","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=151}] run title @a subtitle ["",{"text":"Boarding missile at station 21T.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=152}] run title @a subtitle ["",{"text":"Battle Chunks, coming soon!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=153}] run title @a subtitle ["",{"text":"Zap n' Scrap, coming soon!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=154}] run title @a subtitle ["",{"text":"Planetary Pirates, coming soon!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=155}] run title @a subtitle ["",{"text":"Scatter Wars, coming soon!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=156}] run title @a subtitle ["",{"text":"Error: ETA for Zeronia games overflowed.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=157}] run title @a subtitle ["",{"text":"We're needlessly increasing the code size.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=158}] run title @a subtitle ["",{"text":"As seen on ","color":"green"},{"text":"&&&&&&&&","obfuscated":true,"color":"green"},{"text":"!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=159}] run title @a subtitle ["",{"text":"It's a me, Mario!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=160}] run title @a subtitle ["",{"text":"Starring Chris Pratt as Mario!","color":"green"}]
 
 kill @e[type=marker,tag=RandomSplash]

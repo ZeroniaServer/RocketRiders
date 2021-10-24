@@ -9,7 +9,6 @@ tag @s remove Residers
 tag @s remove ResidersWasOn
 tag @s remove Sonar
 tag @s remove SonarWasOn
-tag @s[tag=Molerat] add WasMolerat
 tag @s remove Molerat
 tag @s remove Minute
 tag @s remove MinuteWasOn

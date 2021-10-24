@@ -5,8 +5,8 @@
 
 ##Repeating settings
 tag @s[scores={RepeatSettings=2..}] add Repeat
-execute if entity @s[tag=Repeat] run schedule function arenaclear:notifyrepeat 3t append
-scoreboard players remove @s[scores={RepeatSettings=1..}] RepeatSettings 1
+execute if entity @s[tag=Repeat,tag=!RepeatForever] run schedule function arenaclear:notifyrepeat 3t append
+scoreboard players remove @s[scores={RepeatSettings=1..},tag=!RepeatForever] RepeatSettings 1
 
 ##Appropriate tags for Arena Clear state
 tag @s add EditedSettings

@@ -117,7 +117,7 @@ execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * inv
 tag @s[scores={endtimer=570..}] remove GameEnd
 
 ##For repeating settings
-tag @s[scores={RepeatSettings=0}] remove Repeat
+tag @s[scores={RepeatSettings=0},tag=!RepeatForever] remove Repeat
 execute if entity @s[scores={endtimer=570..},tag=Repeat] unless entity @s[tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning,tag=!rngUtil] run function arenaclear:areaclear
 
 ##Reset end timer

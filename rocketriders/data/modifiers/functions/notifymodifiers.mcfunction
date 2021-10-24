@@ -9,6 +9,6 @@ execute if entity @s[tag=!Instamine,tag=!NoFall,tag=!Explosive,tag=!Residers,tag
 execute unless entity @s[scores={servermode=1},tag=!WindDownForce] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"}]
 execute unless entity @s[scores={servermode=1},tag=!WindDownForce] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Game Rules","color":"gold","hoverEvent":{"action":"show_text","contents":[{"storage":"rocketriders:gamerules","nbt":"list[]","interpret":true,"separator":{"text":"\n"}}]}},{"text":" (hover for info)","color":"dark_gray","italic":true}]
 
-execute if entity @s[scores={servermode=0},tag=!Repeat] run tellraw @a [{"text":""}]
+execute if entity @s[scores={servermode=0}] unless entity @s[tag=Repeat,tag=!RepeatForever] run tellraw @a [{"text":""}]
 execute if entity @s[scores={servermode=1},tag=WindDownForce] run tellraw @a ["",{"text":"|","bold":true,"color":"dark_gray"}]
 execute if entity @s[scores={servermode=2}] run tellraw @a [{"text":""}]

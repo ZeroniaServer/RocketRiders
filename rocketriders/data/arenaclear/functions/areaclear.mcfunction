@@ -76,6 +76,9 @@ kill @e[type=marker,tag=checking]
 execute as @e[type=marker,tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0
 fill -57 201 84 -70 201 72 barrier replace air
 
+##Generate list of Game Rules
+function arenaclear:gamerulelist
+
 ##Prepare Item RNG timer for next game
 scoreboard players operation @s MaxItemTime = @s MaxItemSec
 scoreboard players operation @s MaxItemTime *= 20 MaxItemSec

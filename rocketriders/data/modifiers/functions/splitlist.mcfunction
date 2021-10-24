@@ -1,4 +1,4 @@
-#Splits entire list of Modifiers into individual lines based on line length
+##Splits entire list of Modifiers into individual lines based on line length
 
 #General variables
 execute store result score $modifiersLeft CmdData run data get storage rocketriders:modifiers list

@@ -1,4 +1,4 @@
-#Generates list of modifiers as JSON text components in storage
+##Generates list of modifiers as JSON text components in storage
 data modify storage rocketriders:modifiers list set value []
 execute if entity @s[tag=Instamine] run data modify storage rocketriders:modifiers list append value '{"text":"Instamine","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"Players receive Haste 255 and can mine (most) blocks instantly.","color":"white"}]}}'
 execute if entity @s[tag=NoFall] run data modify storage rocketriders:modifiers list append value '{"text":"No Fall","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"Players are immune to fall damage.","color":"white"}]}}'

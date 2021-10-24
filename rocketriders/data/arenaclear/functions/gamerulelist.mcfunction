@@ -1,0 +1,13 @@
+##Generates list of game rules as JSON text components
+data modify storage rocketriders:gamerules list set value []
+execute if entity @s[tag=doPrevention,tag=!preventionOff] run data modify storage rocketriders:gamerules list append value '[{"text":"Pierce Prevention: ","color":"white","bold":true},{"text":"Enabled","color":"green"}]'
+execute unless entity @s[tag=doPrevention,tag=!preventionOff] run data modify storage rocketriders:gamerules list append value '[{"text":"Pierce Prevention: ","color":"white","bold":true},{"text":"Disabled","color":"red"}]'
+execute if entity @s[tag=doFireballPortals,tag=!fbPortalsOff] run data modify storage rocketriders:gamerules list append value '[{"text":"Snipe Portals: ","color":"white","bold":true},{"text":"Enabled","color":"green"}]'
+execute unless entity @s[tag=doFireballPortals,tag=!fbPortalsOff] run data modify storage rocketriders:gamerules list append value '[{"text":"Snipe Portals: ","color":"white","bold":true},{"text":"Disabled","color":"red"}]'
+execute if entity @s[tag=doTying,tag=!tyingOff] run data modify storage rocketriders:gamerules list append value '[{"text":"Tying/Sudden Death: ","color":"white","bold":true},{"text":"Enabled","color":"green"}]'
+execute unless entity @s[tag=doTying,tag=!tyingOff] run data modify storage rocketriders:gamerules list append value '[{"text":"Tying/Sudden Death: ","color":"white","bold":true},{"text":"Disabled","color":"red"}]'
+execute if entity @s[tag=doHotbarLimit] run data modify storage rocketriders:gamerules list append value '[{"text":"Hotbar Limit: ","color":"white","bold":true},{"text":"Enabled","color":"green"}]'
+execute unless entity @s[tag=doHotbarLimit] run data modify storage rocketriders:gamerules list append value '[{"text":"Hotbar Limit: ","color":"white","bold":true},{"text":"Disabled","color":"red"}]'
+execute if entity @s[tag=doStacking] run data modify storage rocketriders:gamerules list append value '[{"text":"Item Stacking: ","color":"white","bold":true},{"text":"Enabled","color":"green"}]'
+execute unless entity @s[tag=doStacking] run data modify storage rocketriders:gamerules list append value '[{"text":"Item Stacking: ","color":"white","bold":true},{"text":"Disabled","color":"red"}]'
+data modify storage rocketriders:gamerules list append value '[{"text":"Item Delay: ","color":"white","bold":true},{"score":{"name":"@e[type=armor_stand,tag=Selection,limit=1]","objective":"MaxItemSec"},"color":"gold"},{"text":" seconds","color":"gold","bold":false}]'

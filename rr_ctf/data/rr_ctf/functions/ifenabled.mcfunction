@@ -37,6 +37,8 @@ execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -100 203 61
 
 #reset
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] run function rr_ctf:arenaclear/baseplacement
+execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=doTying,tag=!tyingOff] run data modify storage rocketriders:gamerules list[2] set value '[{"text":"Overtime: ","color":"white","bold":true},{"text":"Enabled","color":"green"}]'
+execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] unless entity @s[tag=doTying,tag=!tyingOff] run data modify storage rocketriders:gamerules list[2] set value '[{"text":"Overtime: ","color":"white","bold":true},{"text":"Disabled","color":"red"}]'
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @a remove informMe
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a at @s run function arenaclear:notifystart
 execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a ["",{"text":"| ","color":"dark_gray","bold":true}]

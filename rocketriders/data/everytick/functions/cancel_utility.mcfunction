@@ -4,20 +4,20 @@
 ####################################
 
 #Disable fireballs near portals (depends on Snipe Portals game rule)
-execute if entity @s[tag=!portalOverride] if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[type=fireball,tag=NormalFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:1}
-execute if entity @s[tag=!portalOverride] if entity @s[tag=!Explosive,tag=ClutterCollector] as @e[type=fireball,tag=NormalFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:-1}
-execute if entity @s[tag=!portalOverride] if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=fireball,tag=NormalFireball] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
-execute if entity @s[tag=!portalOverride] if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=fireball,tag=NormalFireball] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
+execute if entity @s[tag=!noPortal,tag=!Explosive,tag=!ClutterCollector] as @e[type=fireball,tag=NormalFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:1}
+execute if entity @s[tag=!noPortal,tag=!Explosive,tag=ClutterCollector] as @e[type=fireball,tag=NormalFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:-1}
+execute if entity @s[tag=!noPortal,tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=fireball,tag=NormalFireball] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
+execute if entity @s[tag=!noPortal,tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=fireball,tag=NormalFireball] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
 #Exception for own portal
-execute if entity @s[tag=!portalOverride] as @e[type=fireball,tag=FireballYellow] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
-execute if entity @s[tag=!portalOverride] as @e[type=fireball,tag=FireballBlue] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
+execute if entity @s[tag=!noPortal] as @e[type=fireball,tag=FireballYellow] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
+execute if entity @s[tag=!noPortal] as @e[type=fireball,tag=FireballBlue] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
 
 #Kill Nova Rockets near own portals
-execute if entity @s[tag=!portalOverride] unless entity @s[tag=noPortal] as @e[type=marker,tag=yellownovatracker] at @s if entity @s[x=-11,y=30,z=71,dx=46,dy=32,dz=6] run kill @s
-execute if entity @s[tag=!portalOverride] unless entity @s[tag=noPortal] as @e[type=marker,tag=bluenovatracker] at @s if entity @s[x=-11,y=30,z=-77,dx=46,dy=32,dz=6] run kill @s
+execute unless entity @s[tag=noPortal] as @e[type=marker,tag=yellownovatracker] at @s if entity @s[x=-11,y=30,z=71,dx=46,dy=32,dz=6] run kill @s
+execute unless entity @s[tag=noPortal] as @e[type=marker,tag=bluenovatracker] at @s if entity @s[x=-11,y=30,z=-77,dx=46,dy=32,dz=6] run kill @s
 #Kill Nova Rockets near other portals (depends on Snipe Portals game rule)
-execute if entity @s[tag=!portalOverride] if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=marker,tag=novatracker] at @s if entity @s[x=-11,y=30,z=71,dx=46,dy=32,dz=6] run kill @s
-execute if entity @s[tag=!portalOverride] if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=marker,tag=novatracker] at @s if entity @s[x=-11,y=30,z=-77,dx=46,dy=32,dz=6] run kill @s
+execute if entity @s[tag=!doFireballPortals,tag=!noPortal] unless entity @s[tag=fbPortalsOff] as @e[type=marker,tag=novatracker] at @s if entity @s[x=-11,y=30,z=71,dx=46,dy=32,dz=6] run kill @s
+execute if entity @s[tag=!doFireballPortals,tag=!noPortal] unless entity @s[tag=fbPortalsOff] as @e[type=marker,tag=novatracker] at @s if entity @s[x=-11,y=30,z=-77,dx=46,dy=32,dz=6] run kill @s
 
 #Kill everything near/above the roof (overworld only)
 execute in overworld as @e[type=ender_pearl] at @s run kill @s[y=175,dy=100]

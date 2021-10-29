@@ -8,11 +8,11 @@ scoreboard players add @e[type=egg,tag=ICBM] ICBMID 0
 execute as @e[type=egg,tag=ICBM,scores={ICBMID=0}] at @s run function everytick:icbmid
 
 #Teleport trackers to matching ICBMs + detect trigger conditions
-execute unless entity @s[tag=ICBMoverride] as @e[type=marker,tag=ICBMtracker] at @s run function everytick:tptoicbm
+execute unless entity @s[tag=portalOverride] as @e[type=marker,tag=ICBMtracker] at @s run function everytick:tptoicbm
 
 #Kill eggs that didn't teleport
-execute unless entity @s[tag=ICBMoverride] run kill @e[type=egg,tag=ICBM,tag=!teleported]
-execute unless entity @s[tag=ICBMoverride] run tag @e[type=egg,tag=ICBM] remove teleported
+execute unless entity @s[tag=portalOverride] run kill @e[type=egg,tag=ICBM,tag=!teleported]
+execute unless entity @s[tag=portalOverride] run tag @e[type=egg,tag=ICBM] remove teleported
 
 #Smoke trail
 execute as @e[type=egg,tag=ICBM] at @s run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force

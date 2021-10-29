@@ -14,7 +14,6 @@ execute as @e[type=marker,tag=bluenovatracker] at @s if entity @s[x=2,y=37,z=-70
 execute if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=marker,tag=novatracker] at @s if entity @s[x=2,y=37,z=64,dx=20,dy=26,dz=6] run kill @s
 execute if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[type=marker,tag=novatracker] at @s if entity @s[x=2,y=37,z=-70,dx=20,dy=26,dz=6] run kill @s
 
-#> ICBM portal behavior override
 #Teleport trackers to matching ICBMs + detect trigger conditions
 execute as @e[type=marker,tag=ICBMtracker] at @s run function rr_crusade:game/tptoicbm
 

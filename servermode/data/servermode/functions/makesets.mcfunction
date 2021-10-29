@@ -35,9 +35,9 @@ execute as @e[type=marker,tag=ServermodeSet1,tag=CTFMode] run tag @e[type=marker
 execute as @e[type=marker,tag=ServermodeSet2,tag=CTFMode] run tag @e[type=marker,tag=Set2] add CTFMode
 execute as @e[type=marker,tag=ServermodeSet3,tag=CTFMode] run tag @e[type=marker,tag=Set3] add CTFMode
 
-#>execute as @e[type=marker,tag=ServermodeSet1,tag=CrusadeMode] run tag @e[type=marker,tag=Set1] add CrusadeMode
-#>execute as @e[type=marker,tag=ServermodeSet2,tag=CrusadeMode] run tag @e[type=marker,tag=Set2] add CrusadeMode
-#>execute as @e[type=marker,tag=ServermodeSet3,tag=CrusadeMode] run tag @e[type=marker,tag=Set3] add CrusadeMode
+execute as @e[type=marker,tag=ServermodeSet1,tag=CrusadeMode] run tag @e[type=marker,tag=Set1] add CrusadeMode
+execute as @e[type=marker,tag=ServermodeSet2,tag=CrusadeMode] run tag @e[type=marker,tag=Set2] add CrusadeMode
+execute as @e[type=marker,tag=ServermodeSet3,tag=CrusadeMode] run tag @e[type=marker,tag=Set3] add CrusadeMode
 
 # Summon AEC's for base decos, assign 3 of them to the 3 set entities.
 summon marker -64 191 78 {Tags:["ServerMode","Maps","DefaultMap"],CustomName:'"New Dawn map"'}
@@ -45,7 +45,7 @@ summon marker -64 191 78 {Tags:["ServerMode","Maps","DefaultMap"],CustomName:'"N
 summon marker -64 191 78 {Tags:["ServerMode","Maps","SpikesMap"],CustomName:'"Spikes map"'}
 summon marker -64 191 78 {Tags:["ServerMode","Maps","RandomMap"],CustomName:'"Randomized map"'}
 summon marker -64 191 78 {Tags:["ServerMode","Maps","EmptyMap"],CustomName:'"Empty map"'}
-#>summon marker -64 191 78 {Tags:["ServerMode","Maps","TheCastle"],CustomName:'"The Castle"'}
+summon marker -64 191 78 {Tags:["ServerMode","Maps","TheCastle"],CustomName:'"The Castle"'}
 tag @e[type=marker,tag=ServerMode,tag=Maps,tag=DefaultMap,limit=1] add ServermodeSet1
 execute if entity @e[tag=CrusadeMode,tag=ServermodeSet2] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=TheCastle,limit=1] add ServermodeSet2
 execute if entity @e[tag=CrusadeMode,tag=ServermodeSet3] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=TheCastle,limit=1] add ServermodeSet3

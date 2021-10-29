@@ -35,16 +35,16 @@ execute if entity @e[type=marker,tag=WonVote,tag=SwapMode] store result score @e
 execute if entity @e[type=marker,tag=WonVote,tag=CTFMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_ctf,limit=1] gamemodeID
 
 # CRUSADE MODE SELECTED
-#>execute if entity @e[type=marker,tag=WonVote,tag=CrusadeMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID
+execute if entity @e[type=marker,tag=WonVote,tag=CrusadeMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID
 
 # Select base decorations
 execute if entity @e[type=marker,tag=WonVote,tag=Set1] as @e[type=marker,tag=ServermodeSet1] run function servermode:selectmap
 execute if entity @e[type=marker,tag=WonVote,tag=Set2] as @e[type=marker,tag=ServermodeSet2] run function servermode:selectmap
 execute if entity @e[type=marker,tag=WonVote,tag=Set3] as @e[type=marker,tag=ServermodeSet3] run function servermode:selectmap
 
-# Item delay (CTF specific difference)
-execute if entity @e[type=marker,tag=WonVote,tag=CTFMode] run scoreboard players set @e[type=armor_stand,tag=Selection] MaxItemSec 10
-execute unless entity @e[type=marker,tag=WonVote,tag=CTFMode] run scoreboard players set @e[type=armor_stand,tag=Selection] MaxItemSec 15
+# Item delay (CTF/Crusade specific difference)
+execute unless entity @e[type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set @e[type=armor_stand,tag=Selection] MaxItemSec 10
+execute if entity @e[type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set @e[type=armor_stand,tag=Selection] MaxItemSec 15
 
 # Global
 tag @e[type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting

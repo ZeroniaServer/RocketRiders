@@ -20,5 +20,6 @@ tag @e[type=armor_stand,tag=Selection,tag=MoleratWasOn] remove MoleratWasOn
 tag @e[type=armor_stand,tag=Selection] remove SurpriseEggOff
 tag @e[type=armor_stand,tag=Selection,tag=SurpriseEggWasOn] add SurpriseEgg
 tag @e[type=armor_stand,tag=Selection] remove SurpriseEggWasOn
+tag @e[type=armor_stand,tag=Selection] remove ICBMoverride
 execute as @a run trigger crusadechange set 0
 tag @e[type=armor_stand,tag=Selection] add switchGamemodes

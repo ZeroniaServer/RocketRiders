@@ -20,4 +20,5 @@ tag @e[type=armor_stand,tag=Selection,tag=Molerat] add WasMolerat
 tag @e[type=armor_stand,tag=Selection,tag=Molerat] remove Molerat
 tag @e[type=armor_stand,tag=Selection,tag=SurpriseEgg] add SurpriseEggWasOn
 tag @e[type=armor_stand,tag=Selection] add SurpriseEggOff
+tag @e[type=armor_stand,tag=Selection] add ICBMoverride
 tag @e[type=armor_stand,tag=Selection] add crusadeEnabled

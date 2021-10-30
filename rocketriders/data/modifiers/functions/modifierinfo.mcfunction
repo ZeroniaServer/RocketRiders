@@ -31,7 +31,7 @@ execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=6},tag=Mi
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=6},tag=!Minute] run tellraw @s ["",{"text":"Minute Mix","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Surprise Eggs
-execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=7},tag=SurpriseEgg] run tellraw @s ["",{"text":"Surprise Eggs","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players can receive a special spawn egg that spawns a random missile. These can stack up to 3.","color":"gray","italic":true}]
+execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=7},tag=SurpriseEgg] run tellraw @s ["",{"text":"Surprise Eggs","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players can receive a spawn egg that spawns a random missile. These can stack up to 3.","color":"gray","italic":true}]
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=7},tag=!SurpriseEgg] run tellraw @s ["",{"text":"Surprise Eggs","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Wind Down
@@ -61,3 +61,7 @@ execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=13},tag=!
 #Clutter Collector
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=14},tag=ClutterCollector] run tellraw @s ["",{"text":"Clutter Collector","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Explosions do no block damage between the bases.","color":"gray","italic":true}]
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=14},tag=!ClutterCollector] run tellraw @s ["",{"text":"Clutter Collector","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+
+#Chaos
+execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=15},tag=Chaos] run tellraw @s ["",{"text":"Chaos","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Special Missiles are obtainable in regular gameplay.","color":"gray","italic":true}]
+execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=15},tag=!Chaos] run tellraw @s ["",{"text":"Chaos","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]

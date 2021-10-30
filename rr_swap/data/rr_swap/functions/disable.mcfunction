@@ -7,6 +7,9 @@ tag @e[type=armor_stand,tag=Selection] remove SurpriseEggWasOn
 tag @e[type=armor_stand,tag=Selection,tag=!SMCustom] remove SplashStreamsOff
 tag @e[type=armor_stand,tag=Selection,tag=SplashStreamsWasOn] add SplashStreams
 tag @e[type=armor_stand,tag=Selection] remove SplashStreamsWasOn
+tag @e[type=armor_stand,tag=Selection] remove ChaosOff
+tag @e[type=armor_stand,tag=Selection,tag=ChaosWasOn] add Chaos
+tag @e[type=armor_stand,tag=Selection] remove ChaosWasOn
 tag @e[type=armor_stand,tag=Selection] remove vortexOverride
 tag @e[type=armor_stand,tag=Selection] remove respawnFlag
 

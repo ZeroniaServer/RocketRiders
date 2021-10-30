@@ -5,5 +5,7 @@ tag @e[type=armor_stand,tag=Selection,tag=SurpriseEgg] add SurpriseEggWasOn
 tag @e[type=armor_stand,tag=Selection] add SurpriseEggOff
 tag @e[type=armor_stand,tag=Selection,tag=SplashStreams] add SplashStreamsWasOn
 tag @e[type=armor_stand,tag=Selection] add SplashStreamsOff
+tag @e[type=armor_stand,tag=Selection,tag=Chaos] add ChaosWasOn
+tag @e[type=armor_stand,tag=Selection] add ChaosOff
 tag @e[type=armor_stand,tag=Selection] add vortexOverride
 tag @e[type=armor_stand,tag=Selection] add respawnFlag

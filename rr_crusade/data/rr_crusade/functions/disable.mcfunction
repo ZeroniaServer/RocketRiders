@@ -20,6 +20,9 @@ tag @e[type=armor_stand,tag=Selection,tag=MoleratWasOn] remove MoleratWasOn
 tag @e[type=armor_stand,tag=Selection] remove SurpriseEggOff
 tag @e[type=armor_stand,tag=Selection,tag=SurpriseEggWasOn] add SurpriseEgg
 tag @e[type=armor_stand,tag=Selection] remove SurpriseEggWasOn
+tag @e[type=armor_stand,tag=Selection] remove ChaosOff
+tag @e[type=armor_stand,tag=Selection,tag=ChaosWasOn] add Chaos
+tag @e[type=armor_stand,tag=Selection] remove ChaosWasOn
 tag @e[type=armor_stand,tag=Selection] remove portalOverride
 execute as @a run trigger crusadechange set 0
 

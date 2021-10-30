@@ -28,6 +28,13 @@ tag @s remove givenHur
 tag @s remove givenBolt
 tag @s remove givenAllLightning
 
+#Special
+tag @s remove givenBroad
+tag @s remove givenBull
+tag @s remove givenDuplex
+tag @s remove givenHyper
+tag @s remove givenAllSpecial
+
 #Utility
 tag @s remove givenCanopy
 tag @s remove givenNova

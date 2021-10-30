@@ -20,5 +20,7 @@ tag @e[type=armor_stand,tag=Selection,tag=Molerat] add WasMolerat
 tag @e[type=armor_stand,tag=Selection,tag=Molerat] remove Molerat
 tag @e[type=armor_stand,tag=Selection,tag=SurpriseEgg] add SurpriseEggWasOn
 tag @e[type=armor_stand,tag=Selection] add SurpriseEggOff
+tag @e[type=armor_stand,tag=Selection,tag=Chaos] add ChaosWasOn
+tag @e[type=armor_stand,tag=Selection] add ChaosOff
 tag @e[type=armor_stand,tag=Selection] add portalOverride
 tag @e[type=armor_stand,tag=Selection] add crusadeEnabled

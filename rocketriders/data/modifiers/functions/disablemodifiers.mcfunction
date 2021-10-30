@@ -27,4 +27,7 @@ tag @s remove HardcoreWasOn
 tag @s remove DoublePortal
 tag @s remove DoublePortalWasOn
 tag @s remove ClutterCollector
+tag @s remove ClutterCollectorWasOn
+tag @s remove Chaos
+tag @s remove ChaosWasOn
 function arenaclear:unlockdecos

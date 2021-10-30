@@ -8,11 +8,13 @@ execute if entity @s[tag=BlueSurprise] run function items:surprise_blue/rng
 execute if entity @s[tag=BlueSurpriseNormal] run function items:surprise_blue/rngnormal
 execute if entity @s[tag=BlueSurpriseHeavy] run function items:surprise_blue/rngheavy
 execute if entity @s[tag=BlueSurpriseLightning] run function items:surprise_blue/rnglightning
+execute if entity @s[tag=BlueSurpriseSpecial] run function items:surprise_blue/rngspecial
 
 execute if entity @s[tag=YellowSurprise] run function items:surprise_yellow/rng
 execute if entity @s[tag=YellowSurpriseNormal] run function items:surprise_yellow/rngnormal
 execute if entity @s[tag=YellowSurpriseHeavy] run function items:surprise_yellow/rngheavy
 execute if entity @s[tag=YellowSurpriseLightning] run function items:surprise_yellow/rnglightning
+execute if entity @s[tag=YellowSurpriseSpecial] run function items:surprise_yellow/rngspecial
 
 ##Flipping Capability
 execute store result score $tempuuid playerUUID run data get entity @s data.UUID[0]

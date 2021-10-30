@@ -88,9 +88,9 @@ execute as @s[tag=GameEnd,tag=GameStarted] as @a[scores={deathCooldown=5}] at @s
 execute if entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
 execute if entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
 execute if entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[scores={crusadechange=1}] run function servermode:crusadekit/knight
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[scores={crusadechange=2}] run function servermode:crusadekit/archer
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[scores={crusadechange=3}] run function servermode:crusadekit/mage
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[scores={crusadechange=1}] run function servermode:kitcrusade/knight
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[scores={crusadechange=2}] run function servermode:kitcrusade/archer
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[scores={crusadechange=3}] run function servermode:kitcrusade/mage
 
 execute as @s[tag=GameStarted] as @a[tag=!CrusadeNoteKnight,scores={crusadechange=1}] run function rr_crusade:items/kit/notify/knight
 execute as @s[tag=GameStarted] as @a[tag=!CrusadeNoteArcher,scores={crusadechange=2}] run function rr_crusade:items/kit/notify/archer
@@ -103,9 +103,9 @@ execute as @s[tag=!GameStarted] run tag @a remove CrusadeNoteMage
 execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[scores={crusadechange=1,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/knight
 execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[scores={crusadechange=2,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/archer
 execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[scores={crusadechange=3,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/mage
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[scores={crusadechange=1,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function servermode:crusadekit/knight
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[scores={crusadechange=2,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function servermode:crusadekit/archer
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[scores={crusadechange=3,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function servermode:crusadekit/mage
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[scores={crusadechange=1,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function servermode:kitcrusade/knight
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[scores={crusadechange=2,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function servermode:kitcrusade/archer
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[scores={crusadechange=3,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function servermode:kitcrusade/mage
 
 execute if entity @s[tag=GameStarted] run scoreboard players reset @a[scores={crusadechange=-2147483647..-1}] crusadechange
 execute unless entity @s[tag=GameStarted] run scoreboard players reset @a[scores={crusadechange=1..}] crusadechange

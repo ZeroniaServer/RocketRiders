@@ -48,12 +48,12 @@ execute if entity @s[scores={endtimer=1}] as @e[type=area_effect_cloud,tag=endFi
 execute if entity @s[scores={endtimer=1..}] as @e[type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
 
 ##Tie actionbar notifications
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,scores={endtimer=1..20}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"5","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,scores={endtimer=21..40}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,scores={endtimer=41..60}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"3","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,scores={endtimer=61..80}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"2","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,scores={endtimer=81..100}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"1","color":"dark_red","bold":true},{"text":" second","color":"red"}]
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,scores={endtimer=101}] run title @a[team=!Lobby] actionbar {"text":""}
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=!BothWon,scores={endtimer=1..20}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"5","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=!BothWon,scores={endtimer=21..40}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=!BothWon,scores={endtimer=41..60}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"3","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=!BothWon,scores={endtimer=61..80}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"2","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=!BothWon,scores={endtimer=81..100}] run title @a[team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"1","color":"dark_red","bold":true},{"text":" second","color":"red"}]
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=!BothWon,scores={endtimer=101}] run title @a[team=!Lobby] actionbar {"text":""}
 
 ##System for ties (works with Double Portal modifier)
 execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
@@ -110,6 +110,7 @@ tag @s[scores={endtimer=570..}] remove YellowWon
 tag @s[scores={endtimer=570..}] remove BlueWonFirst
 tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
+tag @s[scores={endtimer=570..}] remove BothWon
 execute if entity @s[scores={endtimer=570..}] run scoreboard players set $barriers CmdData 0
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset $highest VortexID
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset $count VortexID

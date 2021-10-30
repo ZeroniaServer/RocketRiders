@@ -14,7 +14,7 @@ summon marker -64 191 78 {Tags:["ServerMode","GameMode","NormalMode"],CustomName
 summon marker -64 191 78 {Tags:["ServerMode","GameMode","PowerupsMode"],CustomName:'"Powerups Mode"'}
 summon marker -64 191 78 {Tags:["ServerMode","GameMode","SwapMode"],CustomName:'"Swap Mode"'}
 summon marker -64 191 78 {Tags:["ServerMode","GameMode","CTFMode"],CustomName:'"Capture The Flag Mode"'}
-#> summon marker -64 191 78 {Tags:["ServerMode","GameMode","CrusadeMode"],CustomName:'"Crusade Mode"'}
+summon marker -64 191 78 {Tags:["ServerMode","GameMode","CrusadeMode"],CustomName:'"Crusade Mode"'}
 tag @e[type=marker,tag=ServerMode,tag=GameMode,tag=NormalMode] add ServermodeSet1
 tag @e[type=marker,tag=ServerMode,tag=GameMode,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet2
 tag @e[type=marker,tag=ServerMode,tag=GameMode,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet3

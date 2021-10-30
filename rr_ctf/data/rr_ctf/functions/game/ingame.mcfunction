@@ -45,5 +45,6 @@ execute unless blocks 39 64 68 -15 64 69 39 183 68 all run fill 39 64 68 -15 64 
 execute unless blocks 39 64 -68 -15 64 -69 39 183 -68 all run fill 39 64 -68 -15 64 -69 bedrock
 
 #win
-execute if score Blue: FlagDisp matches 2 run function game:winblue
-execute if score Yellow: FlagDisp matches 2 run function game:winyellow
+execute if score Blue: FlagDisp matches 2 if score Yellow: FlagDisp matches 2 run function game:winboth
+execute if entity @s[tag=!BothWon] if score Blue: FlagDisp matches 2 run function game:winblue
+execute if entity @s[tag=!BothWon] if score Yellow: FlagDisp matches 2 run function game:winyellow

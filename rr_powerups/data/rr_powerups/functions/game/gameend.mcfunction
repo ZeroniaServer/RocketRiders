@@ -6,10 +6,13 @@ clear @a[team=Yellow] #custom:clear
 clear @a[team=Yellow] crossbow{nova:1b}
 clear @a[team=Yellow] #rr_powerups:clear
 execute as @e[type=marker,tag=captureMiddle] at @s run function rr_powerups:everytick/powerup_platform
-execute if entity @s[scores={endtimer=1},tag=YellowWon] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{HideFlags:127,Unbreakable:1,display:{color:1247871},Enchantments:[{id:"binding_curse",lvl:1}]} 1
-execute if entity @s[scores={endtimer=1},tag=BlueWon] run item replace entity @a[team=Yellow] armor.chest with leather_chestplate{HideFlags:127,Unbreakable:1,display:{color:16768000},Enchantments:[{id:"binding_curse",lvl:1}]} 1
-execute if entity @s[scores={endtimer=101},tag=doTying,tag=!tyingOff] run function game:endstats
-execute if entity @s[scores={endtimer=1},tag=!doTying] run function game:endstats
+execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={endtimer=1},tag=YellowWon] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:1247871},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
+execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={endtimer=1},tag=BlueWon] run item replace entity @a[team=Yellow] armor.chest with leather_chestplate{display:{Name:'[{"text":"Yellow Chestplate","color":"gold","bold":true,"italic":false}]',color:16768000},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={endtimer=1},tag=YellowWon] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:1247871},HideFlags:127,Unbreakable:1}
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={endtimer=1},tag=BlueWon] run item replace entity @a[team=Yellow] armor.chest with leather_chestplate{display:{Name:'[{"text":"Yellow Chestplate","color":"gold","bold":true,"italic":false}]',color:16768000},HideFlags:127,Unbreakable:1}
+execute if entity @s[scores={endtimer=101},tag=doTying,tag=!tyingOff,tag=!BothWon] run function game:endstats
+execute if entity @s[scores={endtimer=1},tag=!doTying,tag=!BothWon] run function game:endstats
+execute if entity @s[scores={endtimer=1},tag=BothWon] run function game:endstats
 scoreboard players set @e[type=marker,tag=captureMiddle] bCapturedTime 0
 scoreboard players set @e[type=marker,tag=captureMiddle] yCapturedTime 0
 scoreboard players set @e[type=marker,tag=captureMiddle] captureBlue 0

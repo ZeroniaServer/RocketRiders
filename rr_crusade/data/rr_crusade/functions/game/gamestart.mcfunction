@@ -1,6 +1,8 @@
 #Set kit to knight upon joining
-execute as @a[tag=JoinBlue] run function rr_crusade:items/kit/give/knight
-execute as @a[tag=JoinYellow] run function rr_crusade:items/kit/give/knight
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function rr_crusade:items/kit/give/knight
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] run function rr_crusade:items/kit/give/knight
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:crusadekit/knight
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] run function servermode:crusadekit/knight
 
 #Notify Join
 execute if entity @s[tag=GameStarted,tag=!SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]

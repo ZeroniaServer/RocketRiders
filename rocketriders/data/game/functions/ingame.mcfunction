@@ -80,12 +80,12 @@ execute if entity @s[tag=!customObsidian] run fill 39 63 -67 39 34 -67 obsidian
 
 ##Respawn handling
 execute as @e[type=marker,tag=YellowSpawnZone] at @s as @a[team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0
-execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
-execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
 execute as @e[type=marker,tag=YellowSpawnZone] at @s as @a[team=Yellow,tag=FellInVoid,distance=..6,scores={respawn=1..}] run scoreboard players add @s FellVoid 1
 execute as @e[type=marker,tag=YellowSpawnZone] at @s as @a[team=Yellow,tag=FellInVoid,distance=..6,scores={respawn=1..}] run tag @s remove FellInVoid
 execute as @e[type=marker,tag=BlueSpawnZone] at @s as @a[team=Blue,tag=FellInVoid,distance=..6,scores={respawn=1..}] run scoreboard players add @s FellVoid 1
 execute as @e[type=marker,tag=BlueSpawnZone] at @s as @a[team=Blue,tag=FellInVoid,distance=..6,scores={respawn=1..}] run tag @s remove FellInVoid
+execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
+execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
 tag @a[team=!Yellow,team=!Blue] remove FellInVoid
 scoreboard players reset @a[team=!Yellow,team=!Blue] respawn
 

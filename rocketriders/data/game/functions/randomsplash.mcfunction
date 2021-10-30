@@ -3,7 +3,7 @@ title @a title ["",{"text":"Game Started!","color":"gray"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 163
+scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 170
 
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -173,5 +173,12 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=159}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=160}] run title @a subtitle ["",{"text":"Starring Chris Pratt as Mario!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=161}] run title @a subtitle ["",{"text":"wanna play rocket riders","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=162}] run title @a subtitle ["",{"text":"Evil Rocket Riders be like:","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=163}] run title @a subtitle ["",{"text":"Press ALT+F4 to get secret nuke missile (/j)","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=164}] run title @a subtitle ["",{"text":"Automagically!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=165}] run title @a subtitle ["",{"text":"Hippopotomonstrosesquipedaliophobia","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=166}] run title @a subtitle ["",{"text":"527 Railgun Error","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=167}] run title @a subtitle ["",{"text":"ok game","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=168}] run title @a subtitle ["",{"text":"100% more defense!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=169}] run title @a subtitle ["",{"text":"Infinite impulse!","color":"green"}]
 
 kill @e[type=marker,tag=RandomSplash]

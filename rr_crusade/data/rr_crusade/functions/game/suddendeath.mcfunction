@@ -33,10 +33,21 @@ execute if entity @s[scores={SDtime=1}] at @s run clear @a firework_rocket
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a resistance
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a weakness
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a regeneration
-execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run clear @a[team=Yellow] bow
-execute if entity @s[scores={SDtime=1},tag=BlueWonFirst,tag=!noSabers] as @a[team=Yellow] run function game:saberyellow
-execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run clear @a[team=Blue] bow
-execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] as @a[team=Blue] run function game:saberblue
+
+execute if entity @s[scores={SDtime=1}] run tag @a[scores={crusadekit=1}] add kitknight
+execute if entity @s[scores={SDtime=1}] run tag @a[scores={crusadekit=2}] add kitarcher
+execute if entity @s[scores={SDtime=1}] run tag @a[scores={crusadekit=3}] add kitmage
+execute if entity @s[scores={SDtime=1}] run scoreboard players reset @a crusadekit
+execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[tag=kitknight] run function rr_crusade:items/kit/give/knight
+execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[tag=kitarcher] run function rr_crusade:items/kit/give/archer
+execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[tag=kitmage] run function rr_crusade:items/kit/give/mage
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[tag=kitknight] run function servermode:kitcrusade/knight
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[tag=kitarcher] run function servermode:kitcrusade/archer
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[tag=kitmage] run function servermode:kitcrusade/mage
+execute if entity @s[scores={SDtime=1}] run tag @a remove kitknight
+execute if entity @s[scores={SDtime=1}] run tag @a remove kitarcher
+execute if entity @s[scores={SDtime=1}] run tag @a remove kitmage
+
 execute if entity @s[scores={SDtime=1}] at @s run effect give @a blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] at @s run effect clear @a blindness
 execute if entity @s[scores={SDtime=1}] at @s run tag @s remove GameEnd
@@ -58,12 +69,8 @@ execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 #For Premature Celebration achievement
 execute if entity @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=BlueWonFirst] run advancement grant @a[team=Blue] only achievements:rr_challenges/premature
-execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:1247871},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
-execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[team=Yellow] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
 execute if entity @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=YellowWonFirst] run advancement grant @a[team=Yellow] only achievements:rr_challenges/premature
-execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[team=Yellow] armor.chest with leather_chestplate{display:{Name:'[{"text":"Yellow Chestplate","color":"yellow","bold":true,"italic":false}]',color:16768000},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
-execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[team=Blue] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
 #Halves the Item Delay (more intense gameplay)
 scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /= 2 MaxItemSec
@@ -74,7 +81,17 @@ execute if entity @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute
 execute if entity @s[scores={SDtime=10}] as @a[team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
 
 ##Places back portals
-execute unless entity @s[tag=noPortal] run function arenaclear:placeportals
+execute if score $YellowShield crusadehp matches -1000..0 run fill 21 44 67 21 56 67 minecraft:obsidian
+execute if score $YellowShield crusadehp matches -1000..0 run fill 21 56 67 3 56 67 minecraft:obsidian
+execute if score $YellowShield crusadehp matches -1000..0 run fill 3 44 67 3 56 67 minecraft:obsidian
+execute if score $YellowShield crusadehp matches -1000..0 run fill 3 44 67 21 44 67 minecraft:obsidian
+execute if score $YellowShield crusadehp matches -1000..0 run fill 20 55 67 4 45 67 minecraft:nether_portal
+
+execute if score $BlueShield crusadehp matches -1000..0 run fill 21 44 -67 21 56 -67 minecraft:obsidian
+execute if score $BlueShield crusadehp matches -1000..0 run fill 21 56 -67 3 56 -67 minecraft:obsidian
+execute if score $BlueShield crusadehp matches -1000..0 run fill 3 56 -67 3 44 -67 minecraft:obsidian
+execute if score $BlueShield crusadehp matches -1000..0 run fill 3 44 -67 21 44 -67 minecraft:obsidian
+execute if score $BlueShield crusadehp matches -1000..0 run fill 4 45 -67 20 55 -67 nether_portal
 
 ##Animated titles
 execute if entity @s[scores={SDtime=1}] run title @a title ["",{"text":"It's a Tie!","color":"gray","bold":true}]

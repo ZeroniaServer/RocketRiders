@@ -3,7 +3,6 @@ execute as @e[type=armor_stand,tag=Selection] run function arenaclear:unlockdeco
 kill @e[tag=crusadeWall]
 tag @e[type=armor_stand,tag=Selection] remove noSabers
 tag @e[type=armor_stand,tag=Selection] remove portalDecosOff
-tag @e[type=armor_stand,tag=Selection] remove tyingOff
 tag @e[type=armor_stand,tag=Selection] remove HardcoreOff
 tag @e[type=armor_stand,tag=Selection] remove noPortal
 tag @e[type=armor_stand,tag=Selection] remove customPrevention
@@ -14,6 +13,7 @@ tag @e[type=armor_stand,tag=Selection] remove stackingWasOff
 tag @e[type=armor_stand,tag=Selection] remove stackingOn
 tag @e[type=armor_stand,tag=Selection] remove customSaberMsg
 tag @e[type=armor_stand,tag=Selection] remove customArrowPickup
+tag @e[type=armor_stand,tag=Selection] remove SuddenDeathCustom
 tag @e[type=armor_stand,tag=Selection] remove MoleratOff
 tag @e[type=armor_stand,tag=Selection,tag=MoleratWasOn] add Molerat
 tag @e[type=armor_stand,tag=Selection,tag=MoleratWasOn] remove MoleratWasOn

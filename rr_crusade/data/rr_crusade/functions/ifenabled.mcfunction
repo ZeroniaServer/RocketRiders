@@ -74,6 +74,7 @@ execute unless entity @s[tag=SMCustom] run function rr_crusade:tip
 function rr_crusade:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_crusade:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_crusade:game/gameend
+execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
 function everytick:no_drop
 
 scoreboard players reset @a[team=!Blue,team=!Yellow] crusadekit

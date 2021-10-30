@@ -1,6 +1,6 @@
-############################################################
-## WINYELLOW: Anything that happens when Yellow team wins ##
-############################################################
+########################################################
+## WINBOTH: Anything that happens when both teams win ##
+########################################################
 
 ##Achievements
 execute if entity @s[tag=!noAchievements,scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:aftergameyellow

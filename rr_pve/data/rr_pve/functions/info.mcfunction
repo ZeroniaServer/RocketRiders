@@ -1,4 +1,3 @@
-tellraw @s [""]
 tellraw @s ["",{"text":"PVE Mode:","color":"light_purple","bold":true},{"text":" Singleplayer/co-op gamemode"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals","color":"yellow"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Ride missiles to enemy base to destroy portals"}]
@@ -7,3 +6,4 @@ tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Specifics:
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Yellow team consists of 12 artificially intelligent Bots"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Bots can spawn and ride missiles to your base"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Bots can fire arrows at you if you're in sight"}]
+tellraw @s [""]

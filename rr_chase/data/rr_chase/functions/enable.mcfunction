@@ -4,6 +4,8 @@ tag @e[type=armor_stand,tag=Selection] add tyingOff
 tag @e[type=armor_stand,tag=Selection] add ResidersOff
 tag @e[type=armor_stand,tag=Selection,tag=Residers] add ResidersWasOn
 tag @e[type=armor_stand,tag=Selection,tag=DoublePortal] add DoublePortalWasOn
+tag @e[type=armor_stand,tag=Selection] add CollisionControlOff
+tag @e[type=armor_stand,tag=Selection,tag=CollisionControl] add CollisionControlWasOn
 tag @e[type=armor_stand,tag=Selection] add fbPortalsOff
 tag @e[type=armor_stand,tag=Selection] add portalDecosOff
 tag @e[type=armor_stand,tag=Selection] add preventionOff

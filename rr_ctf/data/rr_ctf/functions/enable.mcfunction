@@ -4,6 +4,8 @@ tag @e[type=armor_stand,tag=Selection] add ResidersOff
 tag @e[type=armor_stand,tag=Selection,tag=Residers] add ResidersWasOn
 tag @e[type=armor_stand,tag=Selection] add HardcoreOff
 tag @e[type=armor_stand,tag=Selection,tag=Hardcore] add HardcoreWasOn
+tag @e[type=armor_stand,tag=Selection] add CollisionControlOff
+tag @e[type=armor_stand,tag=Selection,tag=CollisionControl] add CollisionControlWasOn
 tag @e[type=armor_stand,tag=Selection,tag=DoublePortal] add DoublePortalWasOn
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:unlockdecos
 tag @e[type=armor_stand,tag=Selection] add fbPortalsOff

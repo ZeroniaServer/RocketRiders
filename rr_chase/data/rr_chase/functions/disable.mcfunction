@@ -5,6 +5,9 @@ tag @e[type=armor_stand,tag=Selection,tag=ResidersWasOn] add Residers
 tag @e[type=armor_stand,tag=Selection] remove ResidersWasOn
 tag @e[type=armor_stand,tag=Selection,tag=DoublePortalWasOn] add DoublePortal
 tag @e[type=armor_stand,tag=Selection] remove DoublePortalWasOn
+tag @e[type=armor_stand,tag=Selection] remove CollisionControlOff
+tag @e[type=armor_stand,tag=Selection,tag=CollisionControlWasOn] add CollisionControl
+tag @e[type=armor_stand,tag=Selection] remove CollisionControlWasOn
 tag @e[type=armor_stand,tag=Selection] remove fbPortalsOff
 tag @e[type=armor_stand,tag=Selection] remove portalDecosOff
 tag @e[type=armor_stand,tag=Selection] remove preventionOff

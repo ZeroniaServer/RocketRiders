@@ -117,6 +117,8 @@ execute if entity @s[tag=yellowmissile,tag=antigrief] at @s if entity @a[team=Ye
 execute if entity @s[tag=bluemissile,tag=antigrief] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add antigriefMSG
 execute if entity @s[tag=yellowmissile,tag=spawnpoint] at @s if entity @a[team=Yellow,tag=MissiMSG] run tag @a[team=Yellow,tag=MissiMSG] add spawnpointMSG
 execute if entity @s[tag=bluemissile,tag=spawnpoint] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add spawnpointMSG
+execute if entity @s[tag=yellowmissile,tag=collisioncontrol] at @s if entity @a[team=Yellow,tag=MissiMSG] run tag @a[team=Yellow,tag=MissiMSG] add collisionMSG
+execute if entity @s[tag=bluemissile,tag=collisioncontrol] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add collisionMSG
 
 #All missiles
 tp @s ~ ~-300 ~

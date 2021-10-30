@@ -109,13 +109,14 @@ execute as @a[team=Blue,tag=BackSurprise] at @s run function items:surprise_blue
 execute as @a[team=Yellow,tag=BackSurprise] at @s run function items:surprise_yellow/givesurpriseegg
 
 ##Unable message
-tag @a[tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG] add preventionMSG
+tag @a[tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG] add preventionMSG
 execute unless entity @s[tag=customPrevention] as @a[tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or portals.","color":"red"}]
 execute as @a[tag=roofMSG] run tellraw @s ["",{"text":"Unable to spawn missile near the roof.","color":"red"}]
 execute as @a[tag=voidMSG] run tellraw @s ["",{"text":"Unable to spawn missile near the void.","color":"red"}]
 execute if entity @s[tag=!antigriefOff,scores={gametime=200..}] as @a[tag=antigriefMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside own base.","color":"red"}]
 execute if entity @s[tag=!antigriefOff,scores={gametime=..199}] as @a[tag=antigriefMSG] run tellraw @s ["",{"text":"Unable to collide missiles for the first 10 seconds of a game.","color":"red"}]
 execute as @a[tag=spawnpointMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside team spawnpoint.","color":"red"}]
+execute as @a[tag=collisionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside enemy base (Collision Control).","color":"red"}]
 
 ##Tag removal
 execute unless entity @s[tag=customPrevention] run tag @a[tag=preventionMSG] remove preventionMSG
@@ -123,6 +124,7 @@ tag @a[tag=roofMSG] remove roofMSG
 tag @a[tag=voidMSG] remove voidMSG
 tag @a[tag=antigriefMSG] remove antigriefMSG
 tag @a[tag=spawnpointMSG] remove spawnpointMSG
+tag @a[tag=collisionMSG] remove collisionMSG
 tag @a[tag=MissiMSG] remove MissiMSG
 tag @a remove BackAux
 tag @a remove BackToma

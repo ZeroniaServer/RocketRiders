@@ -30,4 +30,6 @@ tag @s remove ClutterCollector
 tag @s remove ClutterCollectorWasOn
 tag @s remove Chaos
 tag @s remove ChaosWasOn
+tag @s remove CollisionControl
+tag @s remove CollisionControlWasOn
 function arenaclear:unlockdecos

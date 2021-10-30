@@ -65,3 +65,7 @@ execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=14},tag=!
 #Chaos
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=15},tag=Chaos] run tellraw @s ["",{"text":"Chaos","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Special Missiles are obtainable in regular gameplay.","color":"gray","italic":true}]
 execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=15},tag=!Chaos] run tellraw @s ["",{"text":"Chaos","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+
+#Collision Control
+execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=16},tag=CollisionControl] run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Missiles cannot be spawned inside the enemy base.","color":"gray","italic":true}]
+execute if entity @e[type=armor_stand,tag=Selection,scores={modifierID=16},tag=!CollisionControl] run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]

@@ -1,6 +1,6 @@
 ##Refreshes signs for individual Game Modifiers (warped/crimson)
 #Reset counter
-scoreboard players set @s[scores={modifierID=16..}] modifierID 0
+scoreboard players set @s[scores={modifierID=17..}] modifierID 0
 
 #Instamine
 execute if entity @s[scores={modifierID=0},tag=Instamine,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
@@ -70,6 +70,10 @@ execute if entity @s[scores={modifierID=14},tag=Molerat,tag=!settingsLocked] run
 #Chaos
 execute if entity @s[scores={modifierID=15},tag=Chaos,tag=!ChaosOff,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=15},tag=!Chaos,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+
+#Collision Control
+execute if entity @s[scores={modifierID=16},tag=CollisionControl,tag=!CollisionControlOff,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=16},tag=!CollisionControl,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #All locked
 execute if entity @s[tag=settingsLocked] unless entity @s[scores={modifierID=8},tag=WindDownForce] run setblock -69 191 75 crimson_wall_sign[facing=east]

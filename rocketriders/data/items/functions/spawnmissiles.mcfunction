@@ -55,6 +55,12 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={ga
 execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
 execute if entity @e[type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
 
+#Collision Control - applies to enemy base
+execute if entity @e[type=armor_stand,tag=Selection,tag=CollisionControl] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[type=armor_stand,tag=Selection,tag=CollisionControl] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[type=armor_stand,tag=Selection,tag=CollisionControl] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[type=armor_stand,tag=Selection,tag=CollisionControl] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
+
 #Remove clone blocks
 function items:prevention/clearafter
 

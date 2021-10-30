@@ -71,6 +71,7 @@ execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[team=Blue]
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[team=Yellow]
 execute if entity @s[scores={endtimer=570},tag=!SMActive] run scoreboard players add @a[team=Blue] GamesPlayed 1
 execute if entity @s[scores={endtimer=570},tag=!SMActive] run scoreboard players add @a[team=Yellow] GamesPlayed 1
+execute if entity @s[scores={endtimer=570},tag=!SMActive] run tag @a[scores={GamesPlayed=10..}] add hideTips
 execute if entity @s[scores={endtimer=570}] run function achievements:scoresreset
 execute if entity @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute if entity @s[scores={endtimer=570},tag=SpamClick] as @a run attribute @s minecraft:generic.attack_speed base set 4

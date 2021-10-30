@@ -17,6 +17,9 @@ execute if entity @s[tag=!EditedSettings] run tag @e[type=marker,tag=yellowjoinp
 execute if entity @s[tag=!EditedSettings] run tag @e[type=marker,tag=bluejoinpad] add CancelJoin
 execute if entity @s[tag=!EditedSettings] run tag @e[type=marker,tag=specjoinpad] add CancelJoin
 
+#Hide tips automatically for 10+ games played
+tag @a[scores={GamesPlayed=10..}] add hideTips
+
 #Utilkill timer
 execute as @e[type=tnt,tag=UtilKilled] at @s run function game:tntutilkill
 scoreboard players add @a[tag=UtilKilled] UKTimer 1

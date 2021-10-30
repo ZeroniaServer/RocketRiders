@@ -46,6 +46,9 @@ execute if entity @e[type=marker,tag=WonVote,tag=Set3] as @e[type=marker,tag=Ser
 execute unless entity @e[type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set @e[type=armor_stand,tag=Selection] MaxItemSec 10
 execute if entity @e[type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set @e[type=armor_stand,tag=Selection] MaxItemSec 15
 
+# Item stacking (Crusade specific difference)
+execute if entity @e[type=marker,tag=WonVote,tag=CrusadeMode] run tag @e[type=armor_stand,tag=Selection] add doStacking
+
 # Global
 tag @e[type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 execute as @e[type=armor_stand,tag=Selection,limit=1] run function arenaclear:areaclear

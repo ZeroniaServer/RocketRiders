@@ -59,6 +59,16 @@ fill -16 51 -40 -12 47 -40 light[level=1]
 execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
 execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
+#Suffocate players in gray glass
+execute as @a[tag=!inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run effect give @s poison 1000000 4 true
+execute as @a[tag=!inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run tag @s add inGlass
+execute as @a[tag=inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s unless block ~ ~ ~ light_gray_stained_glass run tag @s add notInGlass
+execute as @a[tag=inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s unless block ~ ~1 ~ light_gray_stained_glass run tag @s add notInGlass
+effect clear @a[tag=notInGlass] poison
+tag @a[tag=notInGlass] remove inGlass
+tag @a remove notInGlass
+tag @a[team=!Blue,team=!Yellow] remove inGlass
+
 #> Kit signs
 execute unless block 14 64 -64 oak_wall_sign run setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}',Text2:'{"text":"Knight","bold":true,"color":"#008805"}'}
 execute unless block 12 64 -63 oak_wall_sign run setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}',Text2:'{"text":"Archer","bold":true,"color":"#008805"}'}

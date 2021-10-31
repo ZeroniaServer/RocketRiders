@@ -90,6 +90,6 @@ execute if score $YellowShield crusadehp matches 1.. if score $CYA crusadehp mat
 execute if score $YellowShield crusadehp matches 1.. if score $CYB crusadehp matches 1.. unless entity @e[type=end_crystal,tag=CrusadeYellowB] run function rr_crusade:game/restorecyb
 
 #> Win condition
-execute if score $BlueShield crusadehp matches -1000..0 unless block 4 45 -67 nether_portal if score $YellowShield crusadehp matches -1000..0 unless block 4 45 67 nether_portal run function rr_crusade:game/winboth
+execute if score $BlueShield crusadehp matches -1000..0 unless block 4 45 -67 nether_portal if score $YellowShield crusadehp matches -1000..0 unless block 4 45 67 nether_portal run function game:winbothcheck
 execute if entity @s[tag=!BothWon] if score $BlueShield crusadehp matches -1000..0 unless block 4 45 -67 nether_portal run function rr_crusade:game/winyellow
 execute if entity @s[tag=!BothWon] if score $YellowShield crusadehp matches -1000..0 unless block 4 45 67 nether_portal run function rr_crusade:game/winblue

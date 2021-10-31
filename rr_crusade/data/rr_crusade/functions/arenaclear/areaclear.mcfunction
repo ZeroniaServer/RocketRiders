@@ -17,6 +17,11 @@ fill 21 44 67 3 56 67 air
 fill -18 53 6 18 34 -9 air
 fill 19 34 -7 42 53 9 air
 
+fill -16 51 -40 -12 47 -40 air
+fill 36 51 -40 40 47 -40 air
+fill -16 51 40 -12 47 40 air
+fill 36 51 40 40 47 40 air
+
 #ICBM reset
 kill @e[type=egg,tag=ICBM]
 kill @e[type=marker,tag=ICBMtracker]

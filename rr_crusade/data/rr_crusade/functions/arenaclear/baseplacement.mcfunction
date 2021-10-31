@@ -72,11 +72,11 @@ fill 20 45 52 4 55 66 minecraft:crying_obsidian
 #A
 fill 41 52 -39 35 52 -37 bedrock
 fill 36 47 -39 40 51 -35 minecraft:blue_stained_glass
-
+fill 36 51 -40 40 47 -40 light[level=1]
 #B
 fill -11 52 -39 -17 52 -37 bedrock
 fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass
-
+fill -16 51 -40 -12 47 -40 light[level=1]
 
 #> Blue
 fill -14 34 -52 38 63 -56 deepslate_bricks
@@ -102,9 +102,11 @@ fill 4 55 -52 20 45 -66 minecraft:crying_obsidian
 #A
 fill -17 52 39 -11 52 37 bedrock
 fill -12 47 39 -16 51 35 minecraft:yellow_stained_glass
+fill -16 51 40 -12 47 40 light[level=1]
 #B
 fill 35 52 39 41 52 37 bedrock
 fill 40 47 35 36 51 39 minecraft:yellow_stained_glass
+fill 36 51 40 40 47 40 light[level=1]
 
 #> prepare crystals and health
 scoreboard players set $YellowShield crusadehp 200

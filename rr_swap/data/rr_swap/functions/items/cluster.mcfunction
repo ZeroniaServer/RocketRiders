@@ -1,4 +1,4 @@
-scoreboard players add @e[type=fireball,tag=NormalFireball,tag=!Still] Clustertime 1
+scoreboard players add @e[type=fireball,tag=NormalFireball,tag=!Still,tag=!endFireball] Clustertime 1
 
 execute as @e[type=fireball,tag=!ClusterSpawn,scores={Clustertime=1}] at @s run tag @s add ClusterStarter
 

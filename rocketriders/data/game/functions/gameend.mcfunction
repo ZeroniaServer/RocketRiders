@@ -19,7 +19,6 @@ execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[team=Yellow
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run function game:endsabers
 execute if entity @s[tag=BlueWon] run effect give @a[team=Yellow] weakness 100000 255 true
 execute if entity @s[tag=YellowWon] run effect give @a[team=Blue] weakness 100000 255 true
-execute if entity @s[scores={endtimer=1..},tag=!Sonar] run effect give @a night_vision 1000000 100 true
 execute if entity @s[scores={endtimer=1..100}] run worldborder warning distance 0
 execute if entity @s[scores={endtimer=1}] run tag @a remove nearcanopy
 execute if entity @s[scores={endtimer=1}] run tag @a remove threwCanopy
@@ -36,8 +35,8 @@ execute if entity @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,t
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Yellow] 12 64 66 180 0
 execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
-execute if entity @s[scores={endtimer=1..},tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 6.0
-execute if entity @s[scores={endtimer=1..},tag=Hardcore] as @a[team=Lobby] run attribute @s minecraft:generic.max_health base set 20.0
+execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
+
 #Fireballs can't be punched (credit: Miolith)
 execute if entity @s[scores={endtimer=1}] as @e[type=fireball,nbt={Motion:[0.0,0.0,0.0]}] run scoreboard players add @s endFireball 1
 execute if entity @s[scores={endtimer=1}] as @e[type=fireball,scores={endFireball=1}] at @s run summon area_effect_cloud ~ ~-.375 ~ {Duration:2000000,Radius:0,NoGravity:1b,Tags:["endFireballAEC","endFireball"],Passengers:[{id:"minecraft:fireball",Tags:["endFireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}]}

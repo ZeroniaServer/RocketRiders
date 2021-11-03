@@ -3,7 +3,7 @@ data modify storage rocketriders:modifiers list set value []
 execute if entity @s[tag=Instamine] run data modify storage rocketriders:modifiers list append value '{"text":"Instamine","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"Players receive Haste 255 and can mine (most) blocks instantly.","color":"white"}]}}'
 execute if entity @s[tag=NoFall] run data modify storage rocketriders:modifiers list append value '{"text":"No Fall","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"Players are immune to fall damage.","color":"white"}]}}'
 execute if entity @s[tag=Explosive] run data modify storage rocketriders:modifiers list append value '{"text":"Explosive","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"TNT, Fireballs, Nova Rockets, and the Vortex all do more explosion damage.","color":"white"}]}}'
-execute if entity @s[tag=Residers] run data modify storage rocketriders:modifiers list append value '{"text":"Residers","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"Players cannot leave their bases.","color":"white"}]}}'
+execute if entity @s[tag=Residers] run data modify storage rocketriders:modifiers list append value '{"text":"Rocket Residers","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"Players cannot leave their bases.","color":"white"}]}}'
 execute if entity @s[tag=Sonar] run data modify storage rocketriders:modifiers list append value '{"text":"Sonar","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"Players lose Night Vision so they cannot see blocks. Other players, projectiles, TNT, and utilities have glowing outlines.","color":"white"}]}}'
 execute if entity @s[tag=Molerat] run data modify storage rocketriders:modifiers list append value '{"text":"Molerat","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"A big block of glass spawns in the center of the map, which players must break through to damage the other base.","color":"white"}]}}'
 execute if entity @s[tag=Minute] run data modify storage rocketriders:modifiers list append value '{"text":"Minute","color":"aqua","hoverEvent":{"action":"show_text","value":["",{"text":"Players receive a new set of 8 items every minute.","color":"white"}]}}'
@@ -23,7 +23,7 @@ data modify storage rocketriders:modifiers length set value []
 execute if entity @s[tag=Instamine] run data modify storage rocketriders:modifiers length append value 9
 execute if entity @s[tag=NoFall] run data modify storage rocketriders:modifiers length append value 7
 execute if entity @s[tag=Explosive] run data modify storage rocketriders:modifiers length append value 9
-execute if entity @s[tag=Residers] run data modify storage rocketriders:modifiers length append value 7
+execute if entity @s[tag=Residers] run data modify storage rocketriders:modifiers length append value 15
 execute if entity @s[tag=Sonar] run data modify storage rocketriders:modifiers length append value 5
 execute if entity @s[tag=Molerat] run data modify storage rocketriders:modifiers length append value 7
 execute if entity @s[tag=Minute] run data modify storage rocketriders:modifiers length append value 6

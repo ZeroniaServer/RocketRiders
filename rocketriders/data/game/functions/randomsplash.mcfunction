@@ -1,5 +1,5 @@
 ##Randomized splash messages for when the game begins
-title @a title ["",{"text":"Game Started!","color":"gray"}]
+title @a title ["",{"text":"Game Started!","color":"aqua"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)

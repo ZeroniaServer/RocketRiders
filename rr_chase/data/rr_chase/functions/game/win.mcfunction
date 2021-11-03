@@ -16,7 +16,6 @@ item replace entity @a[team=Blue,tag=Loser,scores={HasFlag=0}] armor.head with b
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run advancement grant @a[team=Blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 
 ##Effects
-schedule function rr_chase:game/scheduleweak 2t
 execute as @a[team=Blue] run effect clear @s slowness
 execute as @a[team=Blue] run effect clear @s levitation
 execute as @a[team=Blue] run effect clear @s wither

@@ -1,7 +1,6 @@
 execute as @s[tag=duelEnabled] run function gamemodes:restoresettings
 tag @s remove duelEnabled
 tag @s remove settingsLocked
-function arenaclear:refreshcustomizer
 tag @s remove tyingOff
 tag @s remove itemDelayOff
 tag @s remove SurpriseEggOff

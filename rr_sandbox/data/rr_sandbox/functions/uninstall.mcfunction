@@ -1,4 +1,4 @@
-function rr_sandbox:disable
+execute as @e[type=armor_stand,tag=Selection] run function rr_sandbox:disable
 tag @e[type=armor_stand,tag=Selection,tag=sandboxLast,limit=1] add needsForceClear
 execute as @e[type=armor_stand,tag=Selection,tag=sandboxLast,limit=1] run function rr_sandbox:arenaclear/areaclear
 tag @e[type=armor_stand,tag=Selection,tag=sandboxLast,limit=1] remove sandboxLast

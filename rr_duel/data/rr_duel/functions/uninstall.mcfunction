@@ -1,4 +1,4 @@
-function rr_duel:disable
+execute as @e[type=armor_stand,tag=Selection] run function rr_duel:disable
 tag @e[type=armor_stand,tag=Selection,tag=duelLast,limit=1] add needsForceClear
 tag @e[type=armor_stand,tag=Selection,tag=duelLast,limit=1] remove duelLast
 execute if entity @e[type=armor_stand,tag=rr_duel,limit=1] run kill @e[type=armor_stand,tag=rr_duel,limit=1]

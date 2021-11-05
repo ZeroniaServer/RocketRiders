@@ -13,6 +13,6 @@ execute unless entity @e[type=armor_stand,tag=Selection,tag=NoModesEnabled] if e
 execute if entity @e[type=armor_stand,tag=gamemodeAS] unless entity @e[type=armor_stand,tag=gamemodeAS,scores={CmdData=0..1}] run tag @e[type=armor_stand,tag=Selection] add NoModesEnabled
 execute if entity @e[type=armor_stand,tag=gamemodeAS,scores={CmdData=0..1}] run tag @e[type=armor_stand,tag=Selection] remove NoModesEnabled
 
-execute unless entity @e[type=armor_stand,tag=Selection,tag=!NoModesInstalled,tag=!NoModesEnabled] run data merge block -69 192 74 {Text2:'{"text":"Missingno","color":"light_purple","clickEvent":{"action":"run_command","value":"playsound ui.button.click master @a ~ ~ ~ 1 1"}}'}
+execute unless entity @e[type=armor_stand,tag=Selection,tag=!NoModesInstalled,tag=!NoModesEnabled] run data merge block -69 192 74 {Text2:'{"text":"Missingno","color":"light_purple","clickEvent":{"action":"run_command","value":"execute if entity @e[type=armor_stand,tag=Selection,tag=!SignsRefreshed] run playsound ui.button.click master @a ~ ~ ~ 1 1"}}'}
 
 execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,scores={endtimer=1..}] run tag @s add GameEnd

@@ -77,11 +77,3 @@ tellraw @a[team=!Yellow,team=!Blue,team=!Spectator,tag=daytimeChange] [{"text":"
 tag @a[tag=daytimeChange] remove daytimeChange
 execute as @a[team=!Yellow,team=!Blue,team=!Spectator] unless score @s daytime matches 0 run function arenaclear:daytimechange
 scoreboard players set @a daytime 0
-
-####REFRESH SIGNS####
-tag @s[tag=SignsRefreshed,tag=GamemodeRefreshed] remove SignsRefreshed
-tag @s[tag=GamemodeRefreshed] remove GamemodeRefreshed
-execute if entity @s[scores={refreshsigns=3..}] run function arenaclear:refreshsigns
-execute if entity @s[scores={refreshsigns=3..}] run tag @s remove GlobalDefaults
-scoreboard players set @s[scores={refreshsigns=3..}] refreshsigns 0
-scoreboard players add @s[scores={refreshsigns=1..}] refreshsigns 1

@@ -62,6 +62,7 @@ execute as @e[type=armor_stand,tag=Selection,tag=SuddenDeath,tag=!SuddenDeathCus
 execute if entity @e[type=marker,tag=ArenaClearChecker] as @a run function everytick:stopsounds
 kill @e[type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
+execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsignsquery
 
 #Gamemode handling
 function gamemodes:disableerror

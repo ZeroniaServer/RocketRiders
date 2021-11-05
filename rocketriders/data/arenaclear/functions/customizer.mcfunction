@@ -33,22 +33,22 @@ execute if entity @s[tag=RestoreDefault] run function arenaclear:refreshcustomiz
 tag @s[tag=RestoreDefault] remove RestoreDefault
 
 ##RESTORE DEFAULT GAME RULES
-tag @s[tag=DefaultOptions] add doPrevention
-tag @s[tag=DefaultOptions] add doTying
-tag @s[tag=DefaultOptions] add doHotbarLimit
-tag @s[tag=DefaultOptions] remove doStacking
-tag @s[tag=DefaultOptions] remove doFireballPortals
-scoreboard players set @s[tag=DefaultOptions] MaxItemSec 15
-scoreboard players set @s[tag=DefaultOptions] MaxItemTime 300
-scoreboard players set @s[tag=DefaultOptions] RepeatSettings 1
-execute if entity @s[tag=DefaultOptions] run function arenaclear:refreshoptionssigns
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doPrevention
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doTying
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doHotbarLimit
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doStacking
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doFireballPortals
+scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 15
+scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300
+scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] RepeatSettings 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultOptions] remove DefaultOptions
 
 ##RESTORE DEFAULT WORLD OPTIONS
-tag @s[tag=DefaultWorld] add noPlayerCredits
-execute if entity @s[tag=DefaultWorld] run function lobby:credits/stop
-execute if entity @s[tag=DefaultWorld] run time set 12925t
-execute if entity @s[tag=DefaultWorld] run function arenaclear:refreshoptionssigns
+tag @s[tag=DefaultWorld,tag=!GamemodeRefreshed] add noPlayerCredits
+execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function lobby:credits/stop
+execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run time set 12925t
+execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultWorld] remove DefaultWorld
 
 ##MOLERAT WARNING

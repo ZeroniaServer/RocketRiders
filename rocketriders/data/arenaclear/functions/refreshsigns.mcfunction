@@ -1,14 +1,17 @@
 ################################################
 ## REFRESHSIGNS: Core function for refreshing ##
-## customizer signs based on enabled status   ##
+## Modification Room sign text and appearance ##
 ################################################
 
 function arenaclear:refreshmodifiersign
 function arenaclear:refreshoptionssigns
 function arenaclear:refreshitemsigns
 
-#Temporarily blocks usage of Gamemode sign
+#Temporarily block usage of Gamemode sign
 data merge block -69 192 74 {Text1:'{"text":"Gamemode:","color":"#6b006b","clickEvent":{"action":"run_command","value":"scoreboard players add @e[type=armor_stand,tag=Selection,scores={refreshsigns=..0}] SetGamemode 1"}}'}
+
+#Special gamemode sign for no modes installed/enabled
+execute unless entity @s[tag=!NoModesInstalled,tag=!NoModesEnabled] run data merge block -69 192 74 {Text2:'{"text":"Missingno","color":"light_purple","clickEvent":{"action":"run_command","value":"execute if entity @e[type=armor_stand,tag=Selection,tag=!SignsRefreshed] run playsound ui.button.click master @a ~ ~ ~ 1 1"}}'}
 
 #Refresh repeat sign
 scoreboard players set @s[tag=!Repeat,scores={RepeatSettings=0}] RepeatSettings 1

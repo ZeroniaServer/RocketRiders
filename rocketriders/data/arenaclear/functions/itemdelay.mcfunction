@@ -14,5 +14,8 @@ scoreboard players set @e[type=armor_stand,tag=Selection,scores={MaxItemSec=31..
 execute if entity @s[team=!Yellow,team=!Blue,team=!Spectator] run scoreboard players operation @e[type=armor_stand,tag=Selection,tag=!EditedSettings] MaxItemTime = @e[type=armor_stand,tag=Selection,tag=!EditedSettings,limit=1] MaxItemSec
 execute if entity @s[team=!Yellow,team=!Blue,team=!Spectator] run scoreboard players operation @e[type=armor_stand,tag=Selection,tag=!EditedSettings] MaxItemTime *= 20 MaxItemSec
 
+#Refresh options signs
+execute as @e[type=armor_stand,tag=Selection,tag=!EditedSettings] run function arenaclear:refreshoptionssigns
+
 #Invalid access player warning
 execute if entity @e[type=armor_stand,tag=Selection,tag=EditedSettings] run tellraw @s {"text":"You cannot modify item delay now","color":"red"}

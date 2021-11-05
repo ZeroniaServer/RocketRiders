@@ -1,2 +1,2 @@
-tag @e[type=armor_stand,tag=Selection] remove switchGamemodes
-tag @e[type=armor_stand,tag=Selection] add normalEnabled
+tag @s remove switchGamemodes
+tag @s add normalEnabled

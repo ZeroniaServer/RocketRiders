@@ -77,3 +77,8 @@ execute if entity @s[scores={modifierID=16},tag=!CollisionControl,tag=!settingsL
 
 #All locked
 execute if entity @s[tag=settingsLocked] unless entity @s[scores={modifierID=8},tag=WindDownForce] run setblock -69 191 75 crimson_wall_sign[facing=east]
+
+##MODIFIER SELECTION
+function modifiers:modifierselect
+
+tag @s add SignsRefreshed

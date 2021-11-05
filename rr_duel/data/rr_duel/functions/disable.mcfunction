@@ -1,14 +1,14 @@
-execute as @e[type=armor_stand,tag=Selection,tag=duelEnabled] run function gamemodes:restoresettings
-tag @e[type=armor_stand,tag=Selection] remove duelEnabled
-tag @e[type=armor_stand,tag=Selection] remove settingsLocked
-execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshcustomizer
-tag @e[type=armor_stand,tag=Selection] remove tyingOff
-tag @e[type=armor_stand,tag=Selection] remove itemDelayOff
-tag @e[type=armor_stand,tag=Selection] remove SurpriseEggOff
-tag @e[type=armor_stand,tag=Selection] remove customBossbar
-tag @e[type=armor_stand,tag=Selection] remove customSaberMsg
-tag @e[type=armor_stand,tag=Selection] remove customLeaveHandling
-tag @e[type=armor_stand,tag=Selection] remove featheredOff
-tag @e[type=armor_stand,tag=Selection] remove customSpawns
-tag @e[type=armor_stand,tag=Selection] remove WindDownForce
-tag @e[type=armor_stand,tag=Selection] add switchGamemodes
+execute as @s[tag=duelEnabled] run function gamemodes:restoresettings
+tag @s remove duelEnabled
+tag @s remove settingsLocked
+function arenaclear:refreshcustomizer
+tag @s remove tyingOff
+tag @s remove itemDelayOff
+tag @s remove SurpriseEggOff
+tag @s remove customBossbar
+tag @s remove customSaberMsg
+tag @s remove customLeaveHandling
+tag @s remove featheredOff
+tag @s remove customSpawns
+tag @s remove WindDownForce
+tag @s add switchGamemodes

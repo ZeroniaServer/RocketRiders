@@ -1,51 +1,6 @@
-#item disabling/enabling
-tag @s[tag=!rngArrows] add arrowsWasOff
-tag @s add rngArrows
-tag @s[tag=!rngFireball] add fireballWasOff
-tag @s add rngFireball
-tag @s[tag=!rngVortex] add vortexWasOff
-tag @s add rngVortex
-tag @s[tag=!rngShield] add shieldWasOff
-tag @s add rngShield
-tag @s[tag=!rngObshield] add obshieldWasOff
-tag @s add rngObshield
-tag @s[tag=rngSplash] add splashWasOn
-tag @s remove rngSplash
-tag @s[tag=rngCanopy] add canopyWasOn
-tag @s remove rngCanopy
-tag @s[tag=rngNova] add novaWasOn
-tag @s remove rngNova
-tag @s[tag=!rngUtil] add utilWasOff
-tag @s add rngUtil
-
-tag @s[tag=!rngAux] add auxWasOff
-tag @s add rngAux
-tag @s[tag=!rngWar] add warWasOff
-tag @s add rngWar
-tag @s[tag=rngRift] add riftWasOn
-tag @s remove rngRift
-tag @s[tag=rngJbuster] add jbusterWasOn
-tag @s remove rngJbuster
-tag @s[tag=!rngHeavy] add heavyWasOff
-tag @s add rngHeavy
-
-tag @s[tag=!rngHur] add hurWasOff
-tag @s add rngHur
-tag @s[tag=!rngThun] add thunWasOff
-tag @s add rngThun
-tag @s[tag=!rngLightning] add lightningWasOff
-tag @s add rngLightning
-
-tag @s[tag=rngNormal] add normalWasOn
-tag @s add normalLocked
-
-execute unless entity @s[tag=EditedSettings] run function rr_swap:arenaclear/customizer
-
 #management
+execute if entity @s[tag=SignsRefreshed] run function rr_swap:arenaclear/customizer
 execute unless score @s SetGamemode = @e[type=armor_stand,tag=rr_swap,limit=1] gamemodeID run function rr_swap:disable
-data merge block -69 192 74 {Text1:'{"text":"Gamemode:","color":"#6b006b","clickEvent":{"action":"run_command","value":"scoreboard players add @e[type=armor_stand,tag=Selection,scores={refreshsigns=..0}] SetGamemode 1"}}',Text2:'{"text":"Swap","color":"light_purple","clickEvent":{"action":"run_command","value":"playsound ui.button.click master @a ~ ~ ~ 1 1"}}',Text4:'{"text":"(Click for next)","color":"gray","italic":true,"clickEvent":{"action":"run_command","value":"scoreboard players add @e[type=armor_stand,tag=Selection] refreshsigns 1"}}'}
-execute if entity @s[scores={refreshsigns=1..}] run data merge block -69 192 74 {Text1:'{"text":"Gamemode:","color":"#6b006b"}'}
-data merge block -69 191 74 {Text1:'{"text":""}',Text2:'{"color":"light_purple","clickEvent":{"action":"run_command","value":"function rr_swap:info"},"text":"Gamemode Info"}',Text3:'{"clickEvent":{"action":"run_command","value":"playsound ui.button.click master @a ~ ~ ~ 1 1"},"text":" "}',Text4:'{"text":""}'}
 
 #tips
 execute unless entity @s[tag=SMCustom] run function rr_swap:tip

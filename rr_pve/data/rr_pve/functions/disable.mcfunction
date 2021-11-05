@@ -1,10 +1,10 @@
-tag @e[type=armor_stand,tag=Selection] remove pveEnabled
-tag @e[type=armor_stand,tag=Selection] remove HardcoreOff
-tag @e[type=armor_stand,tag=Selection,tag=HardcoreWasOn] add Hardcore
-execute as @e[type=armor_stand,tag=Selection,tag=HardcoreWasOn] run function arenaclear:lockdecos
-tag @e[type=armor_stand,tag=Selection] remove HardcoreWasOn
-tag @e[type=armor_stand,tag=Selection] remove tyingOff
-tag @e[type=armor_stand,tag=Selection] remove customBossbar
-tag @e[type=armor_stand,tag=Selection] remove noTeamBalance
-tag @e[type=armor_stand,tag=Selection] remove onlyBlue
-tag @e[type=armor_stand,tag=Selection] add switchGamemodes
+tag @s remove pveEnabled
+tag @s remove HardcoreOff
+tag @s[tag=HardcoreWasOn] add Hardcore
+execute as @s[tag=HardcoreWasOn] run function arenaclear:lockdecos
+tag @s remove HardcoreWasOn
+tag @s remove tyingOff
+tag @s remove customBossbar
+tag @s remove noTeamBalance
+tag @s remove onlyBlue
+tag @s add switchGamemodes

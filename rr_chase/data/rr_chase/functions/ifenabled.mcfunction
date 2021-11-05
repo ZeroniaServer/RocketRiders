@@ -1,15 +1,6 @@
-#enable arrows
-tag @s[tag=!rngArrows] add arrowsWasOff
-tag @s add rngArrows
-tag @s[tag=!rngUtil] add utilWasOff
-tag @s add rngUtil
-execute unless entity @s[tag=EditedSettings] run function rr_chase:arenaclear/customizer
-
 #management
+execute if entity @s[tag=SignsRefreshed] run function rr_chase:arenaclear/customizer
 execute unless score @s SetGamemode = @e[type=armor_stand,tag=rr_chase,limit=1] gamemodeID run function rr_chase:disable
-data merge block -69 192 74 {Text1:'{"text":"Gamemode:","color":"#6b006b","clickEvent":{"action":"run_command","value":"scoreboard players add @e[type=armor_stand,tag=Selection,scores={refreshsigns=..0}] SetGamemode 1"}}',Text2:'{"text":"Chase","color":"light_purple","clickEvent":{"action":"run_command","value":"playsound ui.button.click master @a ~ ~ ~ 1 1"}}',Text4:'{"text":"(Click for next)","color":"gray","italic":true,"clickEvent":{"action":"run_command","value":"scoreboard players add @e[type=armor_stand,tag=Selection] refreshsigns 1"}}'}
-execute if entity @s[scores={refreshsigns=1..}] run data merge block -69 192 74 {Text1:'{"text":"Gamemode:","color":"#6b006b"}'}
-data merge block -69 191 74 {Text1:'{"text":""}',Text2:'{"color":"light_purple","clickEvent":{"action":"run_command","value":"function rr_chase:info"},"text":"Gamemode Info"}',Text3:'{"clickEvent":{"action":"run_command","value":"playsound ui.button.click master @a ~ ~ ~ 1 1"},"text":" "}',Text4:'{"text":""}'}
 
 #tips
 execute unless entity @s[tag=SMCustom] run function rr_chase:tip

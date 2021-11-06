@@ -33,10 +33,10 @@ execute if entity @s[tag=RestoreDefault] run function arenaclear:refreshcustomiz
 tag @s[tag=RestoreDefault] remove RestoreDefault
 
 ##RESTORE DEFAULT GAME RULES
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doPrevention
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doTying
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!preventionOff] add doPrevention
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!tyingOff] add doTying
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doHotbarLimit
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doStacking
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!stackingOn] remove doStacking
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doFireballPortals
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300

@@ -66,6 +66,7 @@ execute if entity @s[scores={modifierID=14},tag=ClutterCollector,tag=!Residers,t
 execute if entity @s[scores={modifierID=14},tag=!ClutterCollector,tag=!Residers,tag=!Molerat,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=14},tag=Residers,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=14},tag=Molerat,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=14},tag=ClutterCollectorOff] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Chaos
 execute if entity @s[scores={modifierID=15},tag=Chaos,tag=!ChaosOff,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]

@@ -22,6 +22,8 @@ tag @s[tag=SurpriseEgg] add SurpriseEggWasOn
 tag @s add SurpriseEggOff
 tag @s[tag=Chaos] add ChaosWasOn
 tag @s add ChaosOff
+tag @s[tag=ClutterCollector] add ClutterCollectorWasOn
+tag @s add ClutterCollectorOff
 tag @s add portalOverride
 tag @s add crusadeEnabled
 
@@ -71,7 +73,7 @@ tag @s[tag=!rngCata] add cataWasOff
 tag @s add rngCata
 tag @s[tag=!rngCitadel] add citadelWasOff
 tag @s add rngCitadel
-tag @s[tag=rngEguard] add eguardWasOn
+tag @s[tag=rngEguard] add guardWasOn
 tag @s remove rngEguard
 tag @s[tag=!rngGemi] add gemiWasOff
 tag @s add rngGemi

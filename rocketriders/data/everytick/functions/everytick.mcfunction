@@ -64,5 +64,7 @@ kill @e[type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsignsquery
 
-#Gamemode handling
+#Gamemode/reload handling
 function gamemodes:disableerror
+execute if score $reloaded CmdData matches 1..3 run scoreboard players add $reloaded CmdData 1
+execute if score $reloaded CmdData matches 4 run scoreboard players reset $reloaded

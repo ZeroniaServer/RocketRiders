@@ -16,6 +16,7 @@ summon marker 10 63 66 {Tags:["chaseStairs"]}
 execute positioned 10 63 66 run function rr_chase:arenaclear/stairleft
 execute positioned 14 63 66 run function rr_chase:arenaclear/stairright
 fill 11 63 64 13 63 62 obsidian replace white_stained_glass
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill 11 63 64 13 63 62 obsidian replace yellow_stained_glass
 
 #No portals in pregame queue
 fill -89 201 97 -101 195 97 barrier

@@ -8,6 +8,10 @@ scoreboard objectives add moleratConfirm trigger
 scoreboard objectives remove displayinfo
 scoreboard objectives add displayinfo trigger
 
+#Pre-1.1.0 compatibility
+scoreboard objectives remove displayinfo
+scoreboard objectives add displayinfo trigger
+
 #Add teams for Paper compatibility
 team add Lobby
 team add Blue

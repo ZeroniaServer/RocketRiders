@@ -87,29 +87,29 @@ execute as @e[type=armor_stand,tag=EvieCredits,scores={CreditCycle=1}] at @s run
 execute as @e[type=armor_stand,tag=ImmoCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~ ~-1.25 ~ {Tags:["CreditName"],Duration:59,CustomNameVisible:1b,CustomName:'{"text":"ImmortalAxolotl","color":"green"}'}
 
 #Developers/Builders
-execute as @e[type=armor_stand,tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"YZEROgame","color":"green"}'}
-execute as @e[type=armor_stand,tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game Creator","color":"green"}'}
+execute as @e[type=armor_stand,tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"YZEROgame","color":"green"}'}
+execute as @e[type=armor_stand,tag=YZEROCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game Creator","color":"green"}'}
 
-execute as @e[type=armor_stand,tag=EvtemaCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Evtema3","color":"red"}'}
-execute as @e[type=armor_stand,tag=EvtemaCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game Creator","color":"red"}'}
+execute as @e[type=armor_stand,tag=EvtemaCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Evtema3","color":"red"}'}
+execute as @e[type=armor_stand,tag=EvtemaCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Game Creator","color":"red"}'}
 
-execute as @e[type=armor_stand,tag=ChronosCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Chronos22","color":"#0248e9"}'}
-execute as @e[type=armor_stand,tag=ChronosCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Missile Design","color":"#0248e9"}'}
+execute as @e[type=armor_stand,tag=ChronosCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Chronos22","color":"#0248e9"}'}
+execute as @e[type=armor_stand,tag=ChronosCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Missile Design","color":"#0248e9"}'}
 
-execute as @e[type=armor_stand,tag=BardCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Bardonius","color":"gold"}'}
-execute as @e[type=armor_stand,tag=BardCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
+execute as @e[type=armor_stand,tag=BardCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Bardonius","color":"gold"}'}
+execute as @e[type=armor_stand,tag=BardCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
 
-execute as @e[type=armor_stand,tag=HugoCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"hugoatlas","color":"gold"}'}
-execute as @e[type=armor_stand,tag=HugoCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
+execute as @e[type=armor_stand,tag=HugoCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"hugoatlas","color":"gold"}'}
+execute as @e[type=armor_stand,tag=HugoCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
 
-execute as @e[type=armor_stand,tag=TrekCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"TrekStone","color":"gold"}'}
-execute as @e[type=armor_stand,tag=TrekCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
+execute as @e[type=armor_stand,tag=TrekCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"TrekStone","color":"gold"}'}
+execute as @e[type=armor_stand,tag=TrekCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
 
-execute as @e[type=armor_stand,tag=TypCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"HolyToiletPaper","color":"gold"}'}
-execute as @e[type=armor_stand,tag=TypCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
+execute as @e[type=armor_stand,tag=TypCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"HolyToiletPaper","color":"gold"}'}
+execute as @e[type=armor_stand,tag=TypCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Lobby Builder","color":"gold"}'}
 
-execute as @e[type=armor_stand,tag=BlockyCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"BlockyM_","color":"light_purple"}'}
-execute as @e[type=armor_stand,tag=BlockyCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Trailer Maker","color":"light_purple"}'}
+execute as @e[type=armor_stand,tag=BlockyCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"BlockyM_","color":"light_purple"}'}
+execute as @e[type=armor_stand,tag=BlockyCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Trailer Maker","color":"light_purple"}'}
 
-execute as @e[type=armor_stand,tag=ToulCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~ ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Toul_","color":"#FF7B00"}'}
-execute as @e[type=armor_stand,tag=ToulCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-0.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Realms Support","color":"#FF7B00"}'}
+execute as @e[type=armor_stand,tag=ToulCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Toul_","color":"#FF7B00"}'}
+execute as @e[type=armor_stand,tag=ToulCredits,scores={CreditCycle=1}] at @s run summon area_effect_cloud ~-1 ~-1.3 ~ {Tags:["CreditName"],Duration:79,CustomNameVisible:1b,CustomName:'{"text":"Realms Support","color":"#FF7B00"}'}

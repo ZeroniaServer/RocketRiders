@@ -2,7 +2,7 @@
 
 summon marker ~ ~ ~ {Tags:["RandomLossSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 96
+scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 97
 
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -103,5 +103,6 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=92}] run title @
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=93}] run title @a[tag=Loser] subtitle ["",{"text":"r/yesyesyesno","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=94}] run title @a[tag=Loser] subtitle ["",{"text":"Do you even have a license for flying these?","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=95}] run title @a[tag=Loser] subtitle ["",{"text":"Your rocket license has received a strike.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=96}] run title @a[tag=Loser] subtitle ["",{"text":"You sure your insurance will cover that?","color":"red"}]
 
 kill @e[type=marker,tag=RandomLossSplash]

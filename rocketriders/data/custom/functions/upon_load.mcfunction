@@ -1,5 +1,6 @@
 ##Actions to be performed upon world load
 schedule function lobby:credits/restart 3t append
+schedule function lobby:replacesigns 3t append
 scoreboard players set $barriers CmdData 73
 
 #Pre-1.0.4 compatibility

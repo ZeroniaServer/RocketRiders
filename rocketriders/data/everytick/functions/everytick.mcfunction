@@ -65,6 +65,6 @@ execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!EditedSettings,ta
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsignsquery
 
 #Gamemode/reload handling
-function gamemodes:disableerror
+schedule function gamemodes:disableerror 1t append
 execute if score $reloaded CmdData matches 1..3 run scoreboard players add $reloaded CmdData 1
 execute if score $reloaded CmdData matches 4 run scoreboard players reset $reloaded

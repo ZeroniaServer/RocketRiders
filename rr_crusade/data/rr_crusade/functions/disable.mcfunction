@@ -74,8 +74,8 @@ tag @s[tag=cataWasOff] remove rngCata
 tag @s remove cataWasOff
 tag @s[tag=citadelWasOff] remove rngCitadel
 tag @s remove citadelWasOff
-tag @s[tag=eguardWasOn] add rngEguard
-tag @s remove eguardWasOn
+tag @s[tag=guardWasOn] add rngEguard
+tag @s remove guardWasOn
 tag @s[tag=gemiWasOff] remove rngGemi
 tag @s remove gemiWasOff
 tag @s[tag=liftWasOff] remove rngLift

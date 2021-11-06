@@ -190,3 +190,11 @@ execute as @e[tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs
 execute as @e[tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
 execute as @e[tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
 execute as @e[tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
+
+#> Kit stand light blocks
+fill 15 64 -64 13 67 -62 light[level=0] replace air
+fill 13 64 -63 11 67 -61 light[level=0] replace air
+fill 11 64 -64 9 67 -62 light[level=0] replace air
+fill 15 64 64 13 67 62 light[level=0] replace air
+fill 13 64 63 11 67 61 light[level=0] replace air
+fill 11 64 64 9 67 62 light[level=0] replace air

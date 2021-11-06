@@ -22,6 +22,8 @@ tag @s[tag=SurpriseEgg] add SurpriseEggWasOn
 tag @s add SurpriseEggOff
 tag @s[tag=Chaos] add ChaosWasOn
 tag @s add ChaosOff
+tag @s[tag=ClutterCollector] add ClutterCollectorWasOn
+tag @s add ClutterCollectorOff
 tag @s add portalOverride
 tag @s add crusadeEnabled
 

@@ -23,6 +23,8 @@ tag @s remove SurpriseEggWasOn
 tag @s remove ChaosOff
 tag @s[tag=ChaosWasOn] add Chaos
 tag @s remove ChaosWasOn
+tag @s[tag=ClutterCollectorWasOn] add ClutterCollector
+tag @s remove ClutterCollectorOff
 tag @s remove portalOverride
 execute as @a run trigger crusadechange set 0
 

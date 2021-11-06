@@ -6,6 +6,10 @@ scoreboard players set $barriers CmdData 73
 #Pre-1.0.4 compatibility
 scoreboard objectives add moleratConfirm trigger
 
+#Pre-1.1.0 compatibility
+scoreboard objectives remove displayinfo
+scoreboard objectives add displayinfo trigger
+
 #Add teams for Paper compatibility
 team add Lobby
 team add Blue

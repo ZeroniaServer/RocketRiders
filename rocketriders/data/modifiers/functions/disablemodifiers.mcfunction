@@ -9,7 +9,6 @@ tag @s remove Residers
 tag @s remove ResidersWasOn
 tag @s remove Sonar
 tag @s remove SonarWasOn
-tag @s[tag=Molerat] add WasMolerat
 tag @s remove Molerat
 tag @s remove Minute
 tag @s remove MinuteWasOn
@@ -28,4 +27,9 @@ tag @s remove HardcoreWasOn
 tag @s remove DoublePortal
 tag @s remove DoublePortalWasOn
 tag @s remove ClutterCollector
+tag @s remove ClutterCollectorWasOn
+tag @s remove Chaos
+tag @s remove ChaosWasOn
+tag @s remove CollisionControl
+tag @s remove CollisionControlWasOn
 function arenaclear:unlockdecos

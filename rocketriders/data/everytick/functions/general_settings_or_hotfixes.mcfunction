@@ -17,6 +17,9 @@ execute if entity @s[tag=!EditedSettings] run tag @e[type=marker,tag=yellowjoinp
 execute if entity @s[tag=!EditedSettings] run tag @e[type=marker,tag=bluejoinpad] add CancelJoin
 execute if entity @s[tag=!EditedSettings] run tag @e[type=marker,tag=specjoinpad] add CancelJoin
 
+#Hide tips automatically for 10+ games played
+tag @a[scores={GamesPlayed=10..}] add hideTips
+
 #Utilkill timer
 execute as @e[type=tnt,tag=UtilKilled] at @s run function game:tntutilkill
 scoreboard players add @a[tag=UtilKilled] UKTimer 1
@@ -81,6 +84,9 @@ scoreboard players set @a[scores={ThrowPlat=31..}] ThrowPlat 0
 
 #Remove dragon breath
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
+
+#Fill portals before game starts
+execute if entity @s[tag=!noPortal,tag=!GameStarted,tag=!GameEnd,tag=EditedSettings] run function arenaclear:placeportals
 
 #Keep flowerpots
 execute positioned -36 212 18 unless block ~ ~ ~ potted_blue_orchid run setblock ~ ~ ~ potted_blue_orchid

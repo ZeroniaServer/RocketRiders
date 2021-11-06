@@ -44,7 +44,7 @@ stopsound @a ambient minecraft:ambient.cave
 
 #Handling portals/roof with players/utilities
 execute as @e[type=armor_stand,tag=Selection] run function everytick:cancel_utility
-execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run function everytick:player_portal
+execute as @e[type=armor_stand,tag=Selection,scores={servermode=0}] run function everytick:player_portal
 
 #Player void
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980] unless entity @s[scores={ThrowPlat=1..}] run function game:void
@@ -57,11 +57,14 @@ scoreboard players reset @s[scores={voidNoFallCount=2}] voidNoFallCount
 execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!customArrowPickup] if entity @e[type=arrow] run function everytick:arrow_pickup
 
 #Game ending and arena clearing
-execute as @e[type=armor_stand,tag=Selection,tag=GameEnd,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gameend
-execute as @e[type=armor_stand,tag=Selection,tag=SuddenDeath,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
+execute as @e[type=armor_stand,tag=Selection,tag=GameEnd,tag=!NoModesInstalled] run function game:gameend
+execute as @e[type=armor_stand,tag=Selection,tag=SuddenDeath,tag=!SuddenDeathCustom,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
 execute if entity @e[type=marker,tag=ArenaClearChecker] as @a run function everytick:stopsounds
 kill @e[type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
+execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsignsquery
 
-#Gamemode handling
-function gamemodes:disableerror
+#Gamemode/reload handling
+schedule function gamemodes:disableerror 1t append
+execute if score $reloaded CmdData matches 1..3 run scoreboard players add $reloaded CmdData 1
+execute if score $reloaded CmdData matches 4 run scoreboard players reset $reloaded

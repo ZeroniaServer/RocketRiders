@@ -22,6 +22,8 @@ execute as @e[type=marker,tag=rngSelected,tag=rngSplash] as @e[type=item] if dat
 execute as @e[type=marker,tag=rngSelected,tag=rngVortex] as @e[type=item] if data entity @s {Item:{id:"minecraft:egg"}} run function items:deduct
 execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @e[type=item] if data entity @s {Item:{id:"minecraft:crossbow",tag:{nova:1b}}} run kill @s
 
+function items:full_hotbar
+
 execute as @e[type=marker,tag=rngSelected,tag=rngArrows] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givearrows
 execute as @e[type=marker,tag=rngSelected,tag=rngFireball] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givefireball
 execute as @e[type=marker,tag=rngSelected,tag=rngObshield] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveobshield

@@ -28,6 +28,7 @@ execute if entity @s[tag=!EditedSettings] run bossbar set rr:startgame max 30
 execute if entity @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a
 
 ##Blue Join Pad
+execute unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @a[tag=JoinBlue] run function game:joinwarn
 execute if entity @s[tag=!EditedSettings] run tag @a remove JoinBlue
 execute if entity @s[tag=GameEnd] run tag @a remove JoinBlue
 execute if entity @s[tag=BlueFull] run tag @a remove JoinBlue
@@ -73,6 +74,7 @@ execute if entity @s[tag=BlueFull] as @e[type=marker,tag=bluejoinpad] at @s run 
 execute as @e[type=marker,tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinBlue
 
 ##Yellow Join Pad
+execute unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @a[tag=JoinYellow] run function game:joinwarn
 execute if entity @s[tag=!EditedSettings] run tag @a remove JoinYellow
 execute if entity @s[tag=GameEnd] run tag @a remove JoinYellow
 execute if entity @s[tag=YellowFull] run tag @a remove JoinYellow

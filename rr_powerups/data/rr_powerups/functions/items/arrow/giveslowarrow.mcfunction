@@ -18,4 +18,4 @@ item replace entity @s[scores={HasTippedArrows=1},tag=!fullHotbar,tag=!fullOffha
 item replace entity @s[scores={HasTippedArrows=2},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand with tipped_arrow{display:{Name:'{"text":"Slowness Arrow","color":"dark_purple","italic":true,"bold":true}'},CustomPotionEffects:[{Id:2b,Amplifier:1b,Duration:200,ShowParticles:1b}],CustomPotionColor:5596802,HideFlags:63} 2
 item replace entity @s[scores={HasTippedArrows=3},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand with tipped_arrow{display:{Name:'{"text":"Slowness Arrow","color":"dark_purple","italic":true,"bold":true}'},CustomPotionEffects:[{Id:2b,Amplifier:1b,Duration:200,ShowParticles:1b}],CustomPotionColor:5596802,HideFlags:63} 1
 execute if entity @s[scores={HasTippedArrows=..3},tag=!fullHotbar,tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
-tag @e[type=armor_stand,tag=Selection] add givenSlowArr
+tag @e[type=armor_stand,tag=Selection] add givenTipped

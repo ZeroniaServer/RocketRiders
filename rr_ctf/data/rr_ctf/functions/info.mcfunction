@@ -1,4 +1,3 @@
-tellraw @s [""]
 tellraw @s ["",{"text":"Capture the Flag Mode:","color":"light_purple","bold":true},{"text":" There and back again"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Capture both enemy flags","color":"yellow"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Lower flags by breaking purple glass at flagpoles"}]
@@ -9,3 +8,4 @@ tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Bases ma
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Players have Piercing Pickaxes to mine concrete"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Flag carrier's missiles travel back to own base"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Hold two Canopies at a time (three in Overtime)"}]
+tellraw @s [""]

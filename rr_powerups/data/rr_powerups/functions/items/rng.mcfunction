@@ -1,6 +1,6 @@
 execute if entity @s[tag=!givenAllPowerup] run summon marker 0 0 0 {Tags:["rngPowerup","rng1"]}
 execute if entity @s[tag=!givenAllPowerup] run summon marker 0 0 0 {Tags:["rngPowerup","rng1"]}
-execute if entity @s[tag=!givenAllTipped] run summon marker 0 0 0 {Tags:["rngArrow","rng1"]}
+execute if entity @s[tag=!givenTipped] run summon marker 0 0 0 {Tags:["rngArrow","rng1"]}
 tag @e[type=marker,tag=rng1,sort=random,limit=1] add rngSelected
 execute if entity @e[type=marker,tag=rngSelected,tag=rngPowerup] run function rr_powerups:items/powerup/rng
 execute if entity @e[type=marker,tag=rngSelected,tag=rngArrow] run function rr_powerups:items/arrow/rng

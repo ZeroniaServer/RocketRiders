@@ -18,6 +18,8 @@ execute if entity @s[scores={SDtime=1..15}] run kill @e[type=tnt_minecart]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[type=creeper]
 
 ##Preparing for Sudden Death
+execute if entity @s[scores={SDtime=1}] run title @a[team=Blue] actionbar [""]
+execute if entity @s[scores={SDtime=1}] run title @a[team=Yellow] actionbar [""]
 execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
 execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[team=Blue] 12 64 -66 0 0
@@ -54,6 +56,7 @@ execute if entity @s[scores={SDtime=1}] run tag @e[type=fireball] remove endFire
 execute if entity @s[scores={SDtime=1}] run kill @e[type=area_effect_cloud,tag=endFireballAEC]
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
+execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon
 #For Premature Celebration achievement
 execute if entity @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=BlueWonFirst] run advancement grant @a[team=Blue] only achievements:rr_challenges/premature
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[team=Blue] armor.chest with leather_chestplate{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:1247871},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
@@ -72,20 +75,7 @@ execute if entity @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute
 execute if entity @s[scores={SDtime=10}] as @a[team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
 
 ##Places back portals
-fill -10 58 74 34 58 74 minecraft:obsidian replace #custom:basereplace
-fill 34 58 74 34 37 74 minecraft:obsidian replace #custom:basereplace
-fill 34 37 74 -10 37 74 minecraft:obsidian replace #custom:basereplace
-fill 12 37 74 12 58 74 minecraft:obsidian replace #custom:basereplace
-fill -10 37 74 -10 58 74 minecraft:obsidian replace #custom:basereplace
-fill 34 58 -74 -10 58 -74 minecraft:obsidian replace #custom:basereplace
-fill -10 58 -74 -10 37 -74 minecraft:obsidian replace #custom:basereplace
-fill -10 37 -74 34 37 -74 minecraft:obsidian replace #custom:basereplace
-fill 12 37 -74 12 58 -74 minecraft:obsidian replace #custom:basereplace
-fill 34 37 -74 34 58 -74 minecraft:obsidian replace #custom:basereplace
-fill -9 38 -74 11 57 -74 minecraft:nether_portal
-fill 13 38 -74 33 57 -74 minecraft:nether_portal
-fill -9 38 74 11 57 74 minecraft:nether_portal
-fill 13 57 74 33 38 74 minecraft:nether_portal
+execute unless entity @s[tag=noPortal] run function arenaclear:placeportals
 
 ##Animated titles
 execute if entity @s[scores={SDtime=1}] run title @a title ["",{"text":"It's a Tie!","color":"gray","bold":true}]

@@ -1,7 +1,7 @@
-execute if entity @s[tag=!givenBlindArr] run summon marker 0 0 0 {Tags:["rngBlindArrow","rng2"]}
-execute if entity @s[tag=!givenLeviArr] run summon marker 0 0 0 {Tags:["rngLeviArrow","rng2"]}
-execute if entity @s[tag=!givenWitherArr] run summon marker 0 0 0 {Tags:["rngWitherArrow","rng2"]}
-execute if entity @s[tag=!givenSlowArr] run summon marker 0 0 0 {Tags:["rngSlowArrow","rng2"]}
+summon marker 0 0 0 {Tags:["rngBlindArrow","rng2"]}
+summon marker 0 0 0 {Tags:["rngLeviArrow","rng2"]}
+summon marker 0 0 0 {Tags:["rngWitherArrow","rng2"]}
+summon marker 0 0 0 {Tags:["rngSlowArrow","rng2"]}
 tag @e[type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 
 #> Prevent arrow duplication glitches

@@ -8,8 +8,8 @@ execute if entity @s[tag=Hardcore] store result score Yellow SwissCheese run clo
 execute if score Yellow SwissCheese >= SwissCheese SwissCheese run tag @a[team=Yellow] add SwissCheese
 scoreboard players reset SwissCheese SwissCheese
 
-#Simple and Clean
-execute if score Yellow SwissCheese matches 0 if score @s gametime matches ..2400 run advancement grant @a[team=Yellow] only achievements:rr_challenges/simple_and_clean
+#Simple and Clean (part 1)
+execute if score Yellow SwissCheese matches 0 if score @s gametime matches ..2400 run tag @a[team=Yellow] add SimpleAndClean
 scoreboard players reset Yellow SwissCheese
 
 #Deus Ex Machina (part 1)

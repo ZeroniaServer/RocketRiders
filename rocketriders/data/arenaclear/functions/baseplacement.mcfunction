@@ -55,11 +55,6 @@ fill -15 64 67 -15 33 67 minecraft:obsidian replace #custom:basereplace
 fill -15 33 67 39 33 67 minecraft:obsidian replace #custom:basereplace
 fill 39 33 67 39 64 67 minecraft:obsidian replace #custom:basereplace
 fill 39 64 67 -15 64 67 minecraft:obsidian replace #custom:basereplace
-fill -10 58 74 34 58 74 minecraft:obsidian replace #custom:basereplace
-fill 34 58 74 34 37 74 minecraft:obsidian replace #custom:basereplace
-fill 34 37 74 -10 37 74 minecraft:obsidian replace #custom:basereplace
-fill 12 37 74 12 58 74 minecraft:obsidian replace #custom:basereplace
-fill -10 37 74 -10 58 74 minecraft:obsidian replace #custom:basereplace
 
 #Set Blue Base
 fill -14 34 -52 38 63 -56 blue_stained_glass replace #custom:basereplace
@@ -69,21 +64,9 @@ fill 39 64 -67 -15 64 -67 minecraft:obsidian replace #custom:basereplace
 fill -15 64 -67 -15 33 -67 minecraft:obsidian replace #custom:basereplace
 fill -15 33 -67 39 33 -67 minecraft:obsidian replace #custom:basereplace
 fill 39 33 -67 39 64 -67 minecraft:obsidian replace #custom:basereplace
-fill 34 58 -74 -10 58 -74 minecraft:obsidian replace #custom:basereplace
-fill -10 58 -74 -10 37 -74 minecraft:obsidian replace #custom:basereplace
-fill -10 37 -74 34 37 -74 minecraft:obsidian replace #custom:basereplace
-fill 12 37 -74 12 58 -74 minecraft:obsidian replace #custom:basereplace
-fill 34 37 -74 34 58 -74 minecraft:obsidian replace #custom:basereplace
 
 #Set portals
-fill 13 38 -74 11 38 -74 air replace fire
-fill 11 38 -74 11 38 -74 air replace fire
-fill 13 38 -74 11 38 -74 fire replace air
-fill 11 38 -74 11 38 -74 fire replace air
-fill 13 38 74 11 38 74 air replace fire
-fill 11 38 74 11 38 74 air replace fire
-fill 13 38 74 11 38 74 fire replace air
-fill 11 38 74 11 38 74 fire replace air
+execute unless entity @s[tag=noPortal] run function arenaclear:placeportals
 
 #Remove fire
 fill 39 64 67 -15 67 67 air replace fire
@@ -129,6 +112,10 @@ tag @s[tag=!onlyBlue] remove YellowCapOverride
 tag @s remove BlueFull
 tag @s remove BlueCapOverride
 scoreboard players set $barriers CmdData 79
+
+##Remove blocks in front of portals (extra precaution)
+fill -14 63 67 38 34 73 cave_air
+fill -14 63 -67 38 34 -73 cave_air
 
 ##Stop all sounds
 execute as @a run function everytick:stopsounds

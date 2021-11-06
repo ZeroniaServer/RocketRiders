@@ -1,4 +1,3 @@
-tellraw @s [""]
 tellraw @s ["",{"text":"1v1 Duel Mode:","color":"red","bold":true},{"text":" The most competitive gamemode!"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent","color":"yellow"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Specifics:","color":"dark_aqua"}]
@@ -10,3 +9,4 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=noYZELO,limit=1] run tel
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Wind Down modifier is always on (no others are)"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Forced settings: No decorations, no ties, etc."}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]
+tellraw @s [""]

@@ -1,4 +1,4 @@
-function rr_normal:disable
+execute as @e[type=armor_stand,tag=Selection] run function rr_normal:disable
 tag @e[type=armor_stand,tag=Selection,tag=normalLast,limit=1] add needsForceClear
 execute as @e[type=armor_stand,tag=Selection,tag=normalLast,limit=1] run function rr_normal:arenaclear/areaclear
 tag @e[type=armor_stand,tag=Selection,tag=normalLast,limit=1] remove normalLast

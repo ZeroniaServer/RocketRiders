@@ -5,8 +5,8 @@
 
 ##Repeating settings
 tag @s[scores={RepeatSettings=2..}] add Repeat
-execute if entity @s[tag=Repeat] run schedule function arenaclear:notifyrepeat 3t append
-scoreboard players remove @s[scores={RepeatSettings=1..}] RepeatSettings 1
+execute if entity @s[tag=Repeat,tag=!RepeatForever] run schedule function arenaclear:notifyrepeat 3t append
+scoreboard players remove @s[scores={RepeatSettings=1..},tag=!RepeatForever] RepeatSettings 1
 
 ##Appropriate tags for Arena Clear state
 tag @s add EditedSettings
@@ -75,6 +75,9 @@ kill @e[type=marker,tag=checking]
 ##Close off Modification Room
 execute as @e[type=marker,tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0
 fill -57 201 84 -70 201 72 barrier replace air
+
+##Generate list of Game Rules
+function arenaclear:gamerulelist
 
 ##Prepare Item RNG timer for next game
 scoreboard players operation @s MaxItemTime = @s MaxItemSec

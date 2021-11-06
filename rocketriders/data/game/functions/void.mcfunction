@@ -4,7 +4,7 @@
 ##############################################
 
 ##Record death statistics
-scoreboard players add @s[team=!Spectator] FellVoid 1
+tag @s[team=!Spectator] add FellInVoid
 scoreboard players add @s[tag=crosser] deaths 1
 scoreboard players add @s[tag=crosser] death 1
 scoreboard players add @s[tag=crosser] respawn 1

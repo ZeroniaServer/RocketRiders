@@ -1,4 +1,4 @@
-function rr_ctf:disable
+execute as @e[type=armor_stand,tag=Selection] run function rr_ctf:disable
 tag @e[type=armor_stand,tag=Selection,tag=ctfLast,limit=1] add needsForceClear
 execute as @e[type=armor_stand,tag=Selection,tag=ctfLast,limit=1] run function rr_ctf:arenaclear/areaclear
 tag @e[type=armor_stand,tag=Selection,tag=ctfLast,limit=1] remove ctfLast

@@ -1,3 +1,4 @@
-fill ~ ~ ~ ~ ~ ~-4 obsidian replace white_stained_glass
-fill ~ ~1 ~ ~ ~4 ~-4 air replace white_stained_glass
-execute positioned ~-1 ~-1 ~ if block ~ ~ ~ white_stained_glass run function rr_chase:arenaclear/stairleft
+tp @e[type=marker,tag=chaseStairs,limit=1] ~-1 ~-1 ~
+fill ~ ~ ~ ~ ~ ~-4 obsidian
+fill ~ ~1 ~ ~ ~4 ~-4 air
+execute positioned ~-1 ~-1 ~ if entity @e[type=marker,tag=chaseStairs,limit=1,predicate=custom:base_width] run function rr_chase:arenaclear/stairleft

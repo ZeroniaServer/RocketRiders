@@ -1,4 +1,3 @@
-tellraw @s [""]
 tellraw @s ["",{"text":"Powerups Mode:","color":"light_purple","bold":true},{"text":" Normal Mode, enhanced!"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals","color":"yellow"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Specifics:","color":"dark_aqua"}]
@@ -9,3 +8,4 @@ tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- The Plat
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Powerup Items:","color":"dark_purple"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Special Missiles, Tipped Arrows, Stinging Shield, Lava Splash,"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Trident, Elytra, Totem of Undying, Infinity Saber, Slap Fish"}]
+tellraw @s [""]

@@ -8,6 +8,9 @@ scoreboard players reset @a[tag=Loser] WinStreak
 #Swiss Cheese (part 2)
 advancement grant @a[tag=SwissCheese,tag=Winner] only achievements:rr_challenges/swiss_cheese
 
+#Simple And Clean (part 2)
+advancement grant @a[tag=SimpleAndClean,tag=Winner] only achievements:rr_challenges/simple_and_clean
+
 #Deus Ex Machina (part 2)
 advancement grant @a[tag=DeusExMachina,tag=Winner] only achievements:rr_challenges/machina
 

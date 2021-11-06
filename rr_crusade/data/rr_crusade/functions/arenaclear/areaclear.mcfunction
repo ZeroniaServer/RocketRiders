@@ -32,6 +32,10 @@ scoreboard players reset $highest ICBMID
 execute as @e[type=armor_stand,tag=Selection] run function rr_crusade:items/tetrisreset
 
 ##reset pregame bases
+#remove signs
+fill -96 202 93 -94 202 93 air
+fill -96 202 63 -94 202 63 air
+
 #restore glass
 execute if entity @e[type=armor_stand,tag=Selection,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 96 -101 195 95 white_stained_glass
 execute if entity @e[type=armor_stand,tag=Selection,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 94 -101 195 93 orange_stained_glass

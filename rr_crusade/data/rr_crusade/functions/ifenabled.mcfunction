@@ -1,4 +1,5 @@
 #management
+tag @e[type=armor_stand,tag=rr_crusade,limit=1] add enabled
 execute if entity @s[tag=SignsRefreshed] run function rr_crusade:arenaclear/customizer
 execute unless score @s SetGamemode = @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID run function rr_crusade:disable
 

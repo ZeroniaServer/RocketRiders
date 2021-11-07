@@ -48,6 +48,7 @@ execute if entity @e[type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run 
 
 # Item stacking (Crusade specific difference)
 execute if entity @e[type=marker,tag=WonVote,tag=CrusadeMode] run tag @e[type=armor_stand,tag=Selection] add doStacking
+execute unless entity @e[type=marker,tag=WonVote,tag=CrusadeMode] run tag @e[type=armor_stand,tag=Selection] remove doStacking
 
 # Global
 tag @e[type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting

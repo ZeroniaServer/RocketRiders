@@ -38,7 +38,6 @@ execute if entity @s[tag=!WindDownForce] run function modifiers:disablemodifiers
 tag @s add doPrevention
 tag @s add doHotbarLimit
 tag @s add doTying
-tag @s[tag=!crusadeEnabled] remove doStacking
 tag @s remove doFireballPortals
 
 #######################################################

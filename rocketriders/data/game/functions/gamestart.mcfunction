@@ -29,13 +29,14 @@ execute if entity @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] r
 
 ##Blue Join Pad
 execute unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @a[tag=JoinBlue] run function game:joinwarn
+execute if entity @s[tag=JustCleared] run tag @a remove JoinBlue
 execute if entity @s[tag=!EditedSettings] run tag @a remove JoinBlue
 execute if entity @s[tag=GameEnd] run tag @a remove JoinBlue
 execute if entity @s[tag=BlueFull] run tag @a remove JoinBlue
 execute if entity @s[tag=!noTeamBalance,tag=EditedSettings,scores={largerTeam=-1..0},tag=!BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
-execute if entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinBlue
+execute if entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings,tag=!JustCleared] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinBlue
 team join Blue @a[tag=JoinBlue]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinBlue]
@@ -75,13 +76,14 @@ execute as @e[type=marker,tag=bluejoinpad] at @s run tag @a[distance=2..,team=Lo
 
 ##Yellow Join Pad
 execute unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @a[tag=JoinYellow] run function game:joinwarn
+execute if entity @s[tag=JustCleared] run tag @a remove JoinYellow
 execute if entity @s[tag=!EditedSettings] run tag @a remove JoinYellow
 execute if entity @s[tag=GameEnd] run tag @a remove JoinYellow
 execute if entity @s[tag=YellowFull] run tag @a remove JoinYellow
 execute if entity @s[tag=!noTeamBalance,tag=EditedSettings,scores={largerTeam=0..1},tag=!YellowFull] as @e[type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
-execute if entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinYellow
+execute if entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings,tag=!JustCleared] as @e[type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinYellow
 team join Yellow @a[tag=JoinYellow]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinYellow]
@@ -120,12 +122,13 @@ execute if entity @s[tag=YellowFull] as @e[type=marker,tag=yellowjoinpad] at @s 
 execute as @e[type=marker,tag=yellowjoinpad] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinYellow
 
 ##Join pad + Leave pad Spectator
+execute if entity @s[tag=JustCleared] run tag @a remove JoinSpec
 execute if entity @s[tag=!EditedSettings] run tag @a remove JoinSpec
 execute if entity @s[tag=GameEnd] run tag @a remove JoinSpec
 execute if entity @e[type=armor_stand,tag=Selection,tag=SMActive] if entity @e[type=marker,tag=specjoinpad,tag=CancelJoin] as @a[tag=JoinSpec] run tellraw @s ["",{"text":"You can not use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 tag @a[gamemode=spectator] remove JoinSpec
 execute as @e[type=marker,tag=specjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:gray_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
-execute as @e[type=marker,tag=specjoinpad,tag=!CancelJoin] at @s run tag @a[team=!Spectator,distance=..1,limit=1,sort=random] add JoinSpec
+execute as @e[type=marker,tag=specjoinpad,tag=!CancelJoin,tag=!JustCleared] at @s run tag @a[team=!Spectator,distance=..1,limit=1,sort=random] add JoinSpec
 execute as @e[type=marker,tag=specjoinpad,tag=CancelJoin] run tag @a remove JoinSpec
 execute as @e[type=marker,tag=specjoinpad] at @s run tag @a[team=Spectator,distance=..1] add AlreadySpec
 execute as @e[type=marker,tag=specjoinpad,tag=CancelJoin] run tag @a remove AlreadySpec

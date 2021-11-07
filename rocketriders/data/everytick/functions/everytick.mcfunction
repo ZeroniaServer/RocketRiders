@@ -16,7 +16,7 @@ execute unless entity @e[type=armor_stand,tag=Selection,tag=ServerModeVoting] ru
 execute unless entity @e[type=armor_stand,tag=Selection,tag=ServerModeVoting] run kill @e[type=marker,tag=ServerMode]
 execute as @e[type=armor_stand,tag=Selection,tag=SMSwitch] run scoreboard players add $smswitch CmdData 1
 execute if score $smswitch CmdData matches 5.. run tag @e[type=armor_stand,tag=Selection,tag=SMSwitch] remove SMSwitch
-execute unless entity @e[type=armor_stand,tag=Selection,tag=SMSwitch] run scoreboard players reset $smswitch CmdData
+execute as @e[type=armor_stand,tag=Selection] unless entity @s[tag=SMSwitch] run scoreboard players reset $smswitch CmdData
 
 #Handling new/lobby players and miscellaneous stuff
 execute as @e[type=armor_stand,tag=Selection] run function everytick:new_player
@@ -66,6 +66,9 @@ execute if entity @e[type=marker,tag=ArenaClearChecker] as @a run function every
 kill @e[type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsignsquery
+execute as @e[type=armor_stand,tag=Selection,tag=JustCleared] run scoreboard players add $justcleared CmdData 1
+execute if score $justcleared CmdData matches 4.. run tag @e[type=armor_stand,tag=Selection,tag=JustCleared] remove JustCleared
+execute as @e[type=armor_stand,tag=Selection] unless entity @s[tag=JustCleared] run scoreboard players reset $justcleared CmdData
 
 #Gamemode/reload handling
 schedule function gamemodes:disableerror 1t append

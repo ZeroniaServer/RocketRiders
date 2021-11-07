@@ -1,9 +1,10 @@
 #management
 tag @e[type=armor_stand,tag=rr_crusade,limit=1] add enabled
 execute if entity @s[tag=SignsRefreshed] run function rr_crusade:arenaclear/customizer
-execute unless score @s SetGamemode = @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID run function rr_crusade:disable
+execute if score @s SetGamemode = @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID unless entity @s[tag=decosLocked] run scoreboard players add @s refreshsigns 1
+execute if score @s SetGamemode = @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID unless entity @s[tag=decosLocked] run function arenaclear:lockdecos
 
-execute if entity @s[tag=!rngCanopy] run say GAH
+execute unless score @s SetGamemode = @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID run function rr_crusade:disable
 
 #tips
 execute unless entity @s[tag=SMCustom] run function rr_crusade:tip

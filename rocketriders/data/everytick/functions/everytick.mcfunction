@@ -32,7 +32,7 @@ execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run gamerule naturalR
 
 #Night vision/saturation and more lobby functionality
 effect give @a[team=Lobby] night_vision 1000000 100 true
-effect give @a[team=Spectator] night_vision 1000000 100 true
+execute as @e[type=armor_stand,tag=Selection,tag=!Sonar] run effect give @a[team=Spectator] night_vision 1000000 100 true
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run effect give @a saturation 1000000 0 true
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run effect clear @a saturation
 function lobby:bookwarp

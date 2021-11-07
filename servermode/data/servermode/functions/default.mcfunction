@@ -1,3 +1,4 @@
+tag @e[type=armor_stand,tag=Selection] add SMSwitch
 scoreboard players set @e[type=armor_stand,tag=Selection] servermode 0
 tag @e[type=armor_stand,tag=Selection] remove ServerModeVoting
 tag @e[type=armor_stand,tag=Selection] remove realms

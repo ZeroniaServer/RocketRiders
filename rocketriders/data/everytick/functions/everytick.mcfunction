@@ -14,6 +14,9 @@ execute as @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=SMCustom]
 execute as @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=SMCustom] unless entity @a run function arenaclear:globaldefaults
 execute unless entity @e[type=armor_stand,tag=Selection,tag=ServerModeVoting] run scoreboard players reset @a VoteServerMode
 execute unless entity @e[type=armor_stand,tag=Selection,tag=ServerModeVoting] run kill @e[type=marker,tag=ServerMode]
+execute as @e[type=armor_stand,tag=Selection,tag=SMSwitch] run scoreboard players add $smswitch CmdData 1
+execute if score $smswitch CmdData matches 5.. run tag @e[type=armor_stand,tag=Selection,tag=SMSwitch] remove SMSwitch
+execute unless entity @e[type=armor_stand,tag=Selection,tag=SMSwitch] run scoreboard players reset $smswitch CmdData
 
 #Handling new/lobby players and miscellaneous stuff
 execute as @e[type=armor_stand,tag=Selection] run function everytick:new_player

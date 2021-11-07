@@ -1,3 +1,4 @@
+tag @e[type=armor_stand,tag=Selection] add SMSwitch
 execute as @e[type=armor_stand,tag=Selection,scores={servermode=2}] run schedule function servermode:enabled 1t
 tag @e[type=armor_stand,tag=Selection] add switchServermode
 scoreboard players set @e[type=armor_stand,tag=Selection] servermode 1
@@ -13,6 +14,7 @@ execute as @a run function achievements:reset
 clear @a
 kill @e[type=armor_stand,tag=ParkourLB]
 kill @e[type=area_effect_cloud,tag=ParkourLB]
+kill @e[tag=CrusadeEntity]
 setblock -31 190 17 air
 setblock -32 190 17 air
 setblock -31 190 16 air

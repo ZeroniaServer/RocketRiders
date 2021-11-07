@@ -1,3 +1,4 @@
+tag @e[type=armor_stand,tag=Selection] add SMSwitch
 execute unless score @e[type=armor_stand,tag=Selection,limit=1] servermode matches 2 run schedule function game:forcestop 2t append
 scoreboard players set @e[type=armor_stand,tag=Selection] servermode 2
 tag @e[type=armor_stand,tag=Selection] add noYZELO
@@ -15,6 +16,7 @@ execute as @e[type=armor_stand,tag=Selection] store result score @s SetGamemode 
 clear @a
 kill @e[type=armor_stand,tag=ParkourLB]
 kill @e[type=area_effect_cloud,tag=ParkourLB]
+kill @e[tag=CrusadeEntity]
 setblock -31 190 17 air
 setblock -32 190 17 air
 setblock -31 190 16 air

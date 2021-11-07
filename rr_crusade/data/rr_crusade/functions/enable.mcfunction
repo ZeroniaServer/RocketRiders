@@ -5,6 +5,8 @@ tag @s add noSabers
 tag @s add portalDecosOff
 tag @s[tag=Hardcore] add HardcoreWasOn
 tag @s add HardcoreOff
+tag @s[tag=Residers] add ResidersWasOn
+tag @s add ResidersOff
 tag @s add noPortal
 tag @s add customPrevention
 tag @s add featheredOff

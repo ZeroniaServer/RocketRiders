@@ -35,4 +35,4 @@ execute as @e[type=armor_stand,tag=Selection] run function modifiers:disablemodi
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshcustomizer
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsigns
 function arenaclear:hidemodroom
-function servermode:forcenormal
+# function servermode:forcenormal

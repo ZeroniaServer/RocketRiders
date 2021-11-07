@@ -78,5 +78,5 @@ execute as @e[type=armor_stand,tag=Selection] unless entity @s[tag=JustCleared] 
 
 #Gamemode/reload handling
 schedule function gamemodes:disableerror 1t append
-execute if score $reloaded CmdData matches 1..3 run scoreboard players add $reloaded CmdData 1
-execute if score $reloaded CmdData matches 4 run scoreboard players reset $reloaded
+execute if score $reloaded CmdData matches 1..20 run scoreboard players add $reloaded CmdData 1
+execute if score $reloaded CmdData matches 21 run scoreboard players reset $reloaded

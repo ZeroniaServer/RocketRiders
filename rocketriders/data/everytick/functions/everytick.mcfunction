@@ -18,6 +18,12 @@ execute as @e[type=armor_stand,tag=Selection,tag=SMSwitch] run scoreboard player
 execute if score $smswitch CmdData matches 5.. run tag @e[type=armor_stand,tag=Selection,tag=SMSwitch] remove SMSwitch
 execute as @e[type=armor_stand,tag=Selection] unless entity @s[tag=SMSwitch] run scoreboard players reset $smswitch CmdData
 
+#Player tags for plugin interaction
+tag @a[team=Yellow] add OnTeam
+tag @a[team=Blue] add OnTeam
+tag @a[team=Spectator] add OnTeam
+tag @a[team=Lobby] remove OnTeam
+
 #Handling new/lobby players and miscellaneous stuff
 execute as @e[type=armor_stand,tag=Selection] run function everytick:new_player
 execute as @e[type=armor_stand,tag=Selection] run function everytick:leave_game

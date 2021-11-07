@@ -14,6 +14,15 @@ execute as @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=SMCustom]
 execute as @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=SMCustom] unless entity @a run function arenaclear:globaldefaults
 execute unless entity @e[type=armor_stand,tag=Selection,tag=ServerModeVoting] run scoreboard players reset @a VoteServerMode
 execute unless entity @e[type=armor_stand,tag=Selection,tag=ServerModeVoting] run kill @e[type=marker,tag=ServerMode]
+execute as @e[type=armor_stand,tag=Selection,tag=SMSwitch] run scoreboard players add $smswitch CmdData 1
+execute if score $smswitch CmdData matches 5.. run tag @e[type=armor_stand,tag=Selection,tag=SMSwitch] remove SMSwitch
+execute as @e[type=armor_stand,tag=Selection] unless entity @s[tag=SMSwitch] run scoreboard players reset $smswitch CmdData
+
+#Player tags for plugin interaction
+tag @a[team=Yellow] add OnTeam
+tag @a[team=Blue] add OnTeam
+tag @a[team=Spectator] add OnTeam
+tag @a[team=Lobby] remove OnTeam
 
 #Handling new/lobby players and miscellaneous stuff
 execute as @e[type=armor_stand,tag=Selection] run function everytick:new_player
@@ -29,7 +38,7 @@ execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run gamerule naturalR
 
 #Night vision/saturation and more lobby functionality
 effect give @a[team=Lobby] night_vision 1000000 100 true
-effect give @a[team=Spectator] night_vision 1000000 100 true
+execute as @e[type=armor_stand,tag=Selection,tag=!Sonar] run effect give @a[team=Spectator] night_vision 1000000 100 true
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run effect give @a saturation 1000000 0 true
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run effect clear @a saturation
 function lobby:bookwarp
@@ -63,8 +72,11 @@ execute if entity @e[type=marker,tag=ArenaClearChecker] as @a run function every
 kill @e[type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsignsquery
+execute as @e[type=armor_stand,tag=Selection,tag=JustCleared] run scoreboard players add $justcleared CmdData 1
+execute if score $justcleared CmdData matches 4.. run tag @e[type=armor_stand,tag=Selection,tag=JustCleared] remove JustCleared
+execute as @e[type=armor_stand,tag=Selection] unless entity @s[tag=JustCleared] run scoreboard players reset $justcleared CmdData
 
 #Gamemode/reload handling
 schedule function gamemodes:disableerror 1t append
-execute if score $reloaded CmdData matches 1..3 run scoreboard players add $reloaded CmdData 1
-execute if score $reloaded CmdData matches 4 run scoreboard players reset $reloaded
+execute if score $reloaded CmdData matches 1..40 run scoreboard players add $reloaded CmdData 1
+execute if score $reloaded CmdData matches 41 run scoreboard players reset $reloaded

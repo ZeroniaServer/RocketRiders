@@ -33,10 +33,10 @@ execute if entity @s[tag=RestoreDefault] run function arenaclear:refreshcustomiz
 tag @s[tag=RestoreDefault] remove RestoreDefault
 
 ##RESTORE DEFAULT GAME RULES
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doPrevention
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doTying
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!preventionOff] add doPrevention
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!tyingOff] add doTying
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doHotbarLimit
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doStacking
+tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!stackingOn] remove doStacking
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doFireballPortals
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300
@@ -65,8 +65,8 @@ execute if entity @s[scores={servermode=0},tag=Minute] as @a[team=Lobby] run tri
 tellraw @a[team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] ["",{"text":"Item Delay: ","bold":true,"color":"white"},{"text":"How long it takes to give items. Click numbers below to change time.","color":"gray","italic":true}]
 tellraw @a[team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] [{"text":"[-5] ","color":"red","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -5"}},{"text":"[-4] ","color":"red","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -4"}},{"text":"[-3] ","color":"red","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -3"}},{"text":"[-2] ","color":"red","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -2"}},{"text":"[-1] ","color":"red","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set -1"}},{"text":"[+1] ","color":"green","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 1"}},{"text":"[+2] ","color":"green","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 2"}},{"text":"[+3] ","color":"green","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 3"}},{"text":"[+4] ","color":"green","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 4"}},{"text":"[+5]","color":"green","clickEvent":{"action":"run_command","value":"/trigger MaxItemSec set 5"}}]
 tag @a[tag=ItemDelayChange] remove ItemDelayChange
-execute if entity @s[tag=!itemDelayOff] as @a[team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run function arenaclear:itemdelay
-execute if entity @s[tag=itemDelayOff] as @a[team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run tellraw @s [{"text":"Game Rules are not adjustable in this gamemode.","color":"dark_gray","italic":true}]
+execute if entity @s[scores={servermode=0},tag=!itemDelayOff] as @a[team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run function arenaclear:itemdelay
+execute if entity @s[scores={servermode=0},tag=itemDelayOff] as @a[team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run tellraw @s [{"text":"Game Rules are not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 scoreboard players set @a MaxItemSec 0
 
 ##DAYTIME

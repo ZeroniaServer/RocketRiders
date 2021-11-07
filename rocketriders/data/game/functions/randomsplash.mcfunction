@@ -3,7 +3,7 @@ title @a title ["",{"text":"Game Started!","color":"aqua"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 174
+scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 175
 
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -180,9 +180,10 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=166}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=167}] run title @a subtitle ["",{"text":"ok game","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=168}] run title @a subtitle ["",{"text":"100% more defense!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=169}] run title @a subtitle ["",{"text":"Infinite impulse!","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=170}] run title @a subtitle ["",{"text":"v1.1.1, coming soon!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=170}] run title @a subtitle ["",{"text":"Updates coming soon!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=171}] run title @a subtitle ["",{"text":"Rocket Riders Honey Mode, coming soon!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=172}] run title @a subtitle ["",{"text":"r/anotherlowqualitysplash","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=173}] run title @a subtitle ["",{"text":"Holy rocket launcher!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=174}] run title @a subtitle ["",{"text":"This message was added in Version 1.1.0!","color":"green"}]
 
 kill @e[type=marker,tag=RandomSplash]

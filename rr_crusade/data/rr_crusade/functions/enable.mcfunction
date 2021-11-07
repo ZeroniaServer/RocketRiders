@@ -3,7 +3,10 @@ function arenaclear:lockdecos
 execute unless entity @e[type=marker,tag=crusadeWall,limit=1] run summon marker 12.5 54.0 0.0 {Tags:["crusadeWall"]}
 tag @s add noSabers
 tag @s add portalDecosOff
+tag @s[tag=Hardcore] add HardcoreWasOn
 tag @s add HardcoreOff
+tag @s[tag=Residers] add ResidersWasOn
+tag @s add ResidersOff
 tag @s add noPortal
 tag @s add customPrevention
 tag @s add featheredOff

@@ -23,6 +23,7 @@ execute as @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowP
 #Kill if near spawnpoints
 execute as @e[type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
 execute as @e[type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
+execute as @e[type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute if entity @s[tag=!SplashStreams] as @e[type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 water[level=8] replace #custom:splashreplace
 execute if entity @s[tag=SplashStreams] as @e[type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 water replace #custom:splashreplace
 execute as @e[type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos x prepend from entity @s Pos[0]

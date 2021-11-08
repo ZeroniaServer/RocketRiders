@@ -1,6 +1,5 @@
 tag @e[type=armor_stand,tag=Selection] add SMSwitch
 execute as @e[type=armor_stand,tag=Selection,scores={servermode=2}] run schedule function servermode:enabled 1t
-tag @e[type=armor_stand,tag=Selection] add switchServermode
 scoreboard players set @e[type=armor_stand,tag=Selection] servermode 1
 tag @e[type=armor_stand,tag=Selection] add noYZELO
 tag @e[type=armor_stand,tag=Selection] add stopIfEmpty
@@ -35,4 +34,3 @@ execute as @e[type=armor_stand,tag=Selection] run function modifiers:disablemodi
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshcustomizer
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsigns
 function arenaclear:hidemodroom
-# function servermode:forcenormal

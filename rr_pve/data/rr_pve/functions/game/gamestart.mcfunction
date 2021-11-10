@@ -30,7 +30,7 @@ execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless 
 
 #Countdown
 execute if entity @s[tag=EditedSettings] if entity @a[team=Blue] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Blue] run function game:restartcountdown
 execute if entity @s[tag=EditedSettings] unless entity @a[team=Blue] run kill @e[type=armor_stand,tag=Bot]
 execute if entity @s[scores={count=590..600},tag=!GameEnd] run kill @e[type=armor_stand,tag=Bot]
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

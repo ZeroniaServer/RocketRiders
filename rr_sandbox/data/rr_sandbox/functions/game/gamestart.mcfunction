@@ -15,8 +15,8 @@ tag @a remove JoinYellow
 
 #Countdown
 execute if entity @s[tag=EditedSettings] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Yellow] run function game:restartcountdown
 scoreboard players set @s[scores={count=1..}] sandboxRandom 78
 execute if entity @s[scores={count=1..}] run gamerule doTileDrops true
 execute if entity @s[scores={count=1..600}] run scoreboard players set @a dropPickaxe 0

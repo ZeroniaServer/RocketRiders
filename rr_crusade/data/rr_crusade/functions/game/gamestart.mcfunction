@@ -16,8 +16,8 @@ tag @a remove JoinYellow
 
 #Countdown
 execute if entity @s[tag=EditedSettings] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Yellow] run function game:restartcountdown
 execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[team=Blue,scores={crusadekit=1}] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]
 execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[team=Blue,scores={crusadekit=2}] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]
 execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[team=Blue,scores={crusadekit=3}] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Fire Wand ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]

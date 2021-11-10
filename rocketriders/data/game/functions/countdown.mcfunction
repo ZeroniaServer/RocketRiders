@@ -116,6 +116,7 @@ execute if entity @s[tag=GameStarted] run scoreboard players set @a[team=Blue] j
 execute if entity @s[tag=GameStarted] run gamerule drowningDamage true
 execute if entity @s[tag=GameStarted] run gamerule fireDamage true
 execute if entity @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
+execute if entity @s[tag=GameStarted,tag=Hardcore] run bossbar set rr:startgame players @a[team=Lobby]
 execute if entity @s[tag=GameStarted,tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run kill @s
 execute if entity @s[tag=GameStarted,tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players remove @s deaths 1
 execute if entity @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true

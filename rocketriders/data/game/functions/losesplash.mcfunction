@@ -2,7 +2,7 @@
 
 summon marker ~ ~ ~ {Tags:["RandomLossSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 101
+scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 108
 
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -108,5 +108,12 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=97}] run title @
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=98}] run title @a[tag=Loser] subtitle ["",{"text":"That's a lot of damage!","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=99}] run title @a[tag=Loser] subtitle ["",{"text":"Anticheat works, I guess...","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=100}] run title @a[tag=Loser] subtitle ["",{"text":"Lost your great win streak sadge","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=101}] run title @a[tag=Loser] subtitle ["",{"text":"Balancing is hard!","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=102}] run title @a[tag=Loser] subtitle ["",{"text":"uninstalling minecraft","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=103}] run title @a[tag=Loser] subtitle ["",{"text":"Cry about it.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=104}] run title @a[tag=Loser] subtitle ["",{"text":"bruh nawhhhh nah no way bruhhh fr? Bruhhh","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=105}] run title @a[tag=Loser] subtitle ["",{"text":"but the the I when I I but how they do the win I the did well how did the I do","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=106}] run title @a[tag=Loser] subtitle ["",{"text":"ICBM? More like ICU've lost","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=107}] run title @a[tag=Loser] subtitle ["",{"text":"-30,000,000 social credit","color":"red"}]
 
 kill @e[type=marker,tag=RandomLossSplash]

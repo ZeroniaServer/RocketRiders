@@ -142,8 +142,11 @@ execute as @e[type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrys
 execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~3 run particle end_rod ~ ~1.15 ~ 0 0 0 0.05 3 force
 execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~3 run particle dragon_breath ~ ~1.15 ~ 0 0 0 0 1 force
 
-
+execute as @e[type=marker,tag=PUCrystalAS] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @s
 execute as @e[type=marker,tag=YellowCrystalSpot] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @s
+execute as @e[type=marker,tag=YellowCrystalSpot] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @e[tag=PUCrystal]
+execute as @e[tag=PUCrystalAS] unless entity @e[tag=YellowCrystalSpot] run kill @e[tag=PUCrystal]
+execute as @e[tag=PUCrystalAS] unless entity @e[tag=YellowCrystalSpot] run kill @s
 
 
 execute as @e[type=marker,tag=YellowCrystalSpot,tag=NotSet,limit=1] at @s run spreadplayers ~ ~ 0 4 false @s

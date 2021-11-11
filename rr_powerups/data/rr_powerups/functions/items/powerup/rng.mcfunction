@@ -76,3 +76,6 @@ execute if entity @e[type=marker,tag=rngSelected,tag=rngInfinity] run tag @s add
 execute if entity @e[type=marker,tag=rngSelected,tag=rngElytra] run tag @s add noHotbarWarn
 
 kill @e[type=marker,tag=rng2]
+
+execute as @e[type=marker,tag=captureMiddle] at @s run playsound minecraft:block.amethyst_cluster.hit master @a ~ ~ ~ 1 0
+scoreboard players add @e[type=marker,tag=captureMiddle] CmdData 1

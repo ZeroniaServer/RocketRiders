@@ -10,11 +10,8 @@ execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run fu
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
 execute if entity @s[tag=Minute] run function items:minutemix
 
-#Spawnpoints
-execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
-
 #Arrows on death
-execute if entity @s[scores={gametime=2..}] as @a[team=Blue,scores={deathCooldown=1}] run function items:util/givearrows
+execute if entity @s[scores={gametime=2..}] as @a[team=Blue,scores={deathCooldown=1},tag=!hardcoreKilled] run function items:util/givearrows
 
 #Flagpole
 fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace
@@ -52,6 +49,7 @@ tag @a[tag=preventionMSG] remove preventionMSG
 function rr_chase:game/overwrite
 
 #Bossbar for who's in the lead
+bossbar set rr:startgame players @a[team=Lobby]
 bossbar set rr_chase:lead players @a[team=!Lobby]
 tag @a[team=Blue] remove InLead
 execute positioned 12 64 65 run tag @p[team=Blue,predicate=custom:belowroof,tag=!onBlue] add InLead

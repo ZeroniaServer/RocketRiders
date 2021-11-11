@@ -32,8 +32,8 @@ execute if entity @s[scores={count=400}] run bossbar set rr:startgame name ["",{
 execute if entity @s[scores={count=400}] run bossbar set rr:startgame value 10
 execute if entity @s[scores={count=400}] run bossbar set rr:startgame max 10
 execute if entity @s[tag=EditedSettings] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Yellow] run function game:restartcountdown
 execute if entity @s[scores={count=600}] as @a[team=Blue] run function rr_duel:forfeit/calculate
 execute if entity @s[scores={count=600}] as @a[team=Yellow] run function rr_duel:forfeit/calculate
 execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[team=Blue] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"aqua","italic":true}]

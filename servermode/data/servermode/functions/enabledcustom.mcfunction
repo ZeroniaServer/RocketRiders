@@ -1,4 +1,5 @@
 function game:forcestop
+scoreboard players set @e[type=armor_stand,tag=Selection] PlayerCap 6
 tag @e[type=armor_stand,tag=Selection] add SMSwitch
 scoreboard players set @e[type=armor_stand,tag=Selection] servermode 0
 tag @e[type=armor_stand,tag=Selection] add stopIfEmpty

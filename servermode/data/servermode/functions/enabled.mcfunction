@@ -1,4 +1,5 @@
 tag @e[type=armor_stand,tag=Selection] add SMSwitch
+scoreboard players set @e[type=armor_stand,tag=Selection] PlayerCap 6
 execute as @e[type=armor_stand,tag=Selection,scores={servermode=2}] run schedule function servermode:enabled 1t
 scoreboard players set @e[type=armor_stand,tag=Selection] servermode 1
 tag @e[type=armor_stand,tag=Selection] add noYZELO

@@ -35,10 +35,6 @@ execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run fu
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
 execute if entity @s[tag=Minute] run function items:minutemix
 
-#Spawnpoints
-execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
-execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
-
 #powerup RNG
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=1..}] run scoreboard players add @s powerupcount 1
 execute if entity @e[type=marker,tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s powerupcount 0

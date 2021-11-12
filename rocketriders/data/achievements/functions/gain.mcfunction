@@ -45,10 +45,14 @@ execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unle
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:sabotage
 
 #Necessary for on base check
-execute as @a unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
-execute as @a unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s add onYellow
-execute as @a[tag=onBlue] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s remove onBlue
-execute as @a[tag=onYellow] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s remove onYellow
+execute if entity @s[tag=!Hardcore] as @a unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
+execute if entity @s[tag=!Hardcore] as @a unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s add onYellow
+execute if entity @s[tag=!Hardcore] as @a[tag=onBlue] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s remove onBlue
+execute if entity @s[tag=!Hardcore] as @a[tag=onYellow] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s remove onYellow
+execute if entity @s[tag=Hardcore] as @a unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s add onBlue
+execute if entity @s[tag=Hardcore] as @a unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=64,dz=10] run tag @s add onYellow
+execute if entity @s[tag=Hardcore] as @a[tag=onBlue] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s remove onBlue
+execute if entity @s[tag=Hardcore] as @a[tag=onYellow] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=64,dz=10] run tag @s remove onYellow
 tag @a[tag=onBlue,tag=probablyDied] remove onBlue
 tag @a[tag=onYellow,tag=probablyDied] remove onYellow
 

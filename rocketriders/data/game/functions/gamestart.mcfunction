@@ -51,12 +51,6 @@ execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tell
 execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Use ","color":"aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]
 execute if entity @s[tag=GameStarted] run gamemode survival @a[team=Blue,gamemode=adventure]
 execute if entity @s[tag=GameStarted] run effect clear @a[tag=JoinBlue] resistance
-#Hardcore compatibility
-execute if entity @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
-execute if entity @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinBlue] run kill @s
-execute if entity @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinBlue] run scoreboard players remove @s deaths 1
-execute if entity @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinBlue] add hardcoreKilled
-execute if entity @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute if entity @s[tag=!customSpawns] as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
@@ -98,12 +92,6 @@ execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tell
 execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 execute if entity @s[tag=GameStarted] run gamemode survival @a[team=Yellow,gamemode=adventure]
 execute if entity @s[tag=GameStarted] run effect clear @a[tag=JoinYellow] resistance
-#Hardcore compatibility
-execute if entity @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
-execute if entity @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinYellow] run kill @s
-execute if entity @s[tag=GameStarted,tag=Hardcore] as @a[tag=JoinYellow] run scoreboard players remove @s deaths 1
-execute if entity @s[tag=GameStarted,tag=Hardcore] run tag @a[tag=JoinYellow] add hardcoreKilled
-execute if entity @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
 execute if entity @s[tag=!customSpawns] as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]

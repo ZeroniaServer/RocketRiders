@@ -15,6 +15,12 @@ execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] ru
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:givegear
 execute if entity @s[tag=GameStarted] as @a[tag=JoinBlue] run function items:util/givearrows
 
+#Spawnpoints
+execute if entity @s[tag=GameStarted] as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
+
+#Hardcore compatibility
+execute if entity @s[tag=GameStarted,tag=Hardcore] run function modifiers:hardcorekill
+
 #Tag Removal
 tag @a remove JoinBlue
 
@@ -28,9 +34,10 @@ execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless 
 
 #Countdown
 execute if entity @s[tag=EditedSettings] if score @s bluesCount matches 2.. run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings] if score @s bluesCount matches 0..1 run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] if score @s bluesCount matches 0..1 run function game:restartcountdown
 execute if entity @s[tag=!GameStarted] as @a[team=Blue] run attribute @s minecraft:generic.knockback_resistance base set 10000
 execute as @a[team=!Blue] run attribute @s minecraft:generic.knockback_resistance base set 0.0
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
+execute if entity @s[scores={count=600},tag=!GameEnd] run tag @a[team=Blue] add onBlue
 execute if entity @s[scores={count=600},tag=!GameEnd] as @a[team=Blue] run attribute @s minecraft:generic.knockback_resistance base set 0.0
 execute if entity @s[scores={count=600},tag=!GameEnd] as @a[team=Blue] run tag @s remove fullOffhand

@@ -23,8 +23,8 @@ tag @a remove JoinYellow
 
 #Countdown
 execute if entity @s[tag=EditedSettings] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings] unless entity @a[team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings] unless entity @a[team=Yellow] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Yellow] run function game:restartcountdown
 execute if entity @s[tag=!GameStarted] run scoreboard players set @a dropPickaxe 0
 execute if entity @s[tag=!GameStarted] run scoreboard players set @s canopyStreak 0
 execute if entity @s[tag=!GameStarted] run scoreboard players reset @a MineWhiteGlass

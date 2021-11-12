@@ -52,7 +52,9 @@ function rr_chase:game/overwrite
 bossbar set rr:startgame players @a[team=Lobby]
 bossbar set rr_chase:lead players @a[team=!Lobby]
 tag @a[team=Blue] remove InLead
-execute positioned 12 64 65 run tag @p[team=Blue,predicate=custom:belowroof,tag=!onBlue] add InLead
+execute if entity @s[tag=!Hardcore] as @a[team=Blue] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
+execute if entity @s[tag=Hardcore] as @a[team=Blue] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s add onBlue
+execute positioned 12 64 65 run tag @p[team=Blue,predicate=custom:belowroof,tag=!onBlue,scores={deathCooldown=0}] add InLead
 execute if entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"selector":"@p[team=Blue,tag=InLead]","color":"blue","bold":true},{"text":" is in the lead!","color":"dark_aqua"}]
 execute unless entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"dark_aqua"}]
 execute unless entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead value 0

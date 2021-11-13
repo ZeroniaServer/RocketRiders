@@ -1,8 +1,11 @@
+say hi
 #Missile
 tag @s add rngNormal
 tag @s add rngLightning
 tag @s add rngUtil
 tag @s add rngHeavy
+tag @s remove normalOff
+tag @s remove lightningOff
 
 tag @s remove rngAnt
 tag @s remove rngAux

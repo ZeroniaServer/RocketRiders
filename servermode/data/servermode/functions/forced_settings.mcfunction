@@ -1,4 +1,3 @@
-say hi
 #Missile
 tag @s add rngNormal
 tag @s add rngLightning

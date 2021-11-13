@@ -12,6 +12,9 @@ scoreboard objectives add displayinfo trigger
 scoreboard players add $reloaded CmdData 1
 schedule function arenaclear:refreshcheck 3t append
 
+#Fix blackstone slab
+setblock -56 208 76 blackstone_slab
+
 #Add teams for Paper compatibility
 team add Lobby
 team add Blue

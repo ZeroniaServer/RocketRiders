@@ -3,7 +3,6 @@ execute if entity @s[tag=!SMActive] run function game:leavemidgame
 
 #spawnables
 function rr_powerups:everytick/spawnables
-function rr_powerups:everytick/cancel_utility
 
 #crystal pads
 execute if entity @e[type=marker,tag=captureMiddle,scores={captureYellow=1..}] run function rr_powerups:everytick/crystalpadblue

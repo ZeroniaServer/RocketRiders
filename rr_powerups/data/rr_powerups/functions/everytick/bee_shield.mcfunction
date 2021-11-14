@@ -9,17 +9,30 @@ item replace entity @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTi
 execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s run playsound minecraft:block.honey_block.slide master @a ~ ~ ~ 2 0.8
 execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s anchored eyes run particle minecraft:block honey_block ~ ~ ~ 0 0 0 1 10
 
+#kill conditions
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @s[x=-12,y=36,z=-74,dx=48,dy=25] run scoreboard players set @s CmdData -3
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @s[x=-12,y=36,z=74,dx=48,dy=25] run scoreboard players set @s CmdData -3
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run scoreboard players remove @s CmdData 1
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run scoreboard players remove @s CmdData 1
+
+#Kill bee shield near void
+execute as @e[type=marker,tag=animBshield] at @s if predicate custom:nearvoid run kill @s
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if predicate custom:nearvoid run scoreboard players set @s CmdData -3
+
+#Kill bee shield near roof
+execute as @e[type=marker,tag=animBshield] at @s if entity @s[y=175,dy=100] run kill @s
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @s[y=175,dy=100] run scoreboard players set @s CmdData -3
+
+#Kill bee shield outside border
+execute as @e[type=marker,tag=animBshield] at @s unless predicate custom:insideborder run kill @s
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s unless predicate custom:insideborder run scoreboard players set @s CmdData -3
+
+execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run particle minecraft:block honey_block ~ ~ ~ 0.5 0.5 0.5 1 100
+execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run playsound minecraft:block.honey_block.hit master @a ~ ~ ~ 2 1
+execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run playsound minecraft:block.honey_block.break master @a ~ ~ ~ 2 1
+kill @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}]
+
 #placement (animations etc)
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @s[x=-12,y=36,z=-74,dx=48,dy=25] run kill @s
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @s[x=-12,y=36,z=74,dx=48,dy=25] run kill @s
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run particle minecraft:block honey_block ~ ~ ~ 0.5 0.5 0.5 1 100
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run playsound minecraft:block.honey_block.hit master @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run playsound minecraft:block.honey_block.break master @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run particle minecraft:block honey_block ~ ~ ~ 0.5 0.5 0.5 1 100
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run playsound minecraft:block.honey_block.hit master @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run playsound minecraft:block.honey_block.break master @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
 execute as @e[type=armor_stand,tag=BlueBee,scores={BeeShieldTime=20}] at @s run summon marker ~ ~3 ~ {Tags:["BBeeShieldDisplay","animBshield"]}
 execute as @e[type=armor_stand,tag=YellowBee,scores={BeeShieldTime=20}] at @s run summon marker ~ ~3 ~ {Tags:["YBeeShieldDisplay","animBshield"]}
 scoreboard players add @e[type=marker,tag=animBshield] BeeShieldTime 1
@@ -136,10 +149,6 @@ execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] r
 execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run data modify storage rr_powerups:beeshieldpos z prepend from entity @s Pos[2]
 execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run scoreboard players add @e[type=armor_stand,tag=Selection] beeShieldCount 1
 execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run kill @s
-
-#Kill bee shield near void
-execute as @e[type=marker,tag=animBshield] at @s if predicate custom:nearvoid run kill @s
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if predicate custom:nearvoid run kill @s
 
 #Bees teams/angry
 execute as @e[type=bee,tag=BlueBee,tag=!beeChecked] run team join Blue

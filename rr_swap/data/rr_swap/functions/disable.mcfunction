@@ -12,6 +12,7 @@ tag @s[tag=ChaosWasOn] add Chaos
 tag @s remove ChaosWasOn
 tag @s remove vortexOverride
 tag @s remove respawnFlag
+tag @s remove fireballOverride
 
 #item enabling/disabling
 tag @s remove normalLocked

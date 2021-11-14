@@ -1,5 +1,6 @@
 #management
 tag @e[type=armor_stand,tag=rr_swap,limit=1] add enabled
+tag @s add fireballOverride
 execute if entity @s[tag=SignsRefreshed] run function rr_swap:arenaclear/customizer
 execute unless score @s SetGamemode = @e[type=armor_stand,tag=rr_swap,limit=1] gamemodeID run function rr_swap:disable
 

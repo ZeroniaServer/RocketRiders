@@ -38,5 +38,8 @@ execute if entity @s[tag=EditedSettings,tag=Countdown] if score @s bluesCount ma
 execute if entity @s[tag=!GameStarted] as @a[team=Blue] run attribute @s minecraft:generic.knockback_resistance base set 10000
 execute as @a[team=!Blue] run attribute @s minecraft:generic.knockback_resistance base set 0.0
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
+execute if entity @s[scores={count=600},tag=!GameEnd] run tp @a[team=Blue] 12 64 -66 0 0
+execute if entity @s[scores={count=600},tag=!GameEnd] run spawnpoint @a[team=Blue] 12 64 -66 0
+execute if entity @s[scores={count=600},tag=!GameEnd] run tag @a[team=Blue] add onBlue
 execute if entity @s[scores={count=600},tag=!GameEnd] as @a[team=Blue] run attribute @s minecraft:generic.knockback_resistance base set 0.0
 execute if entity @s[scores={count=600},tag=!GameEnd] as @a[team=Blue] run tag @s remove fullOffhand

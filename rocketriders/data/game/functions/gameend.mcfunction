@@ -38,7 +38,8 @@ execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remov
 execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
 
 #Fireballs can't be punched (credit: Miolith)
-execute if entity @s[scores={endtimer=1}] as @e[type=fireball,nbt={Motion:[0.0,0.0,0.0]}] run scoreboard players add @s endFireball 1
+execute if entity @s[scores={endtimer=1}] as @e[type=fireball,tag=Still] run scoreboard players add @s endFireball 1
+execute if entity @s[scores={endtimer=1}] as @e[type=fireball,tag=StillOb] run scoreboard players add @s endFireball 1
 execute if entity @s[scores={endtimer=1}] as @e[type=fireball,scores={endFireball=1}] at @s run summon area_effect_cloud ~ ~-.375 ~ {Duration:2000000,Radius:0,NoGravity:1b,Tags:["endFireballAEC","endFireball"],Passengers:[{id:"minecraft:fireball",Tags:["endFireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}]}
 execute if entity @s[scores={endtimer=1}] as @e[type=fireball,tag=endFireball] at @s run data modify entity @s Item set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
 execute if entity @s[scores={endtimer=1}] as @e[type=fireball,tag=endFireball] at @s run data modify entity @s Tags set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags

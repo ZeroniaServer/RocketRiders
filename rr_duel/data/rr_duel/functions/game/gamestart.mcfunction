@@ -5,12 +5,8 @@ execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] run function game:givegear
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] run function servermode:givegear
 
-#Joinpads and Tag Removal
-tp @a[tag=JoinBlue] -95 202 60 0 0
-execute as @a[tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+#Tag Removal
 tag @a remove JoinBlue
-tp @a[tag=JoinYellow] -95 202 96 180 0
-execute as @a[tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a remove JoinYellow
 
 #Bossbar
@@ -47,8 +43,6 @@ execute if entity @s[scores={count=600}] run bossbar set rr:startgame color red
 execute if entity @s[scores={count=600}] run scoreboard players set @s Rounds 1
 execute if entity @s[scores={count=600}] run tellraw @a[team=!Lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
-execute if entity @s[scores={count=600}] run tp @a[team=Yellow] 12 64 66 -180 0
-execute if entity @s[scores={count=600}] run tp @a[team=Blue] 12 64 -66 0 0
-execute if entity @s[scores={count=600}] as @a[team=Yellow] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
-execute if entity @s[scores={count=600}] as @a[team=Blue] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
+execute if entity @s[scores={gametime=2}] as @a[team=Yellow] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
+execute if entity @s[scores={gametime=2}] as @a[team=Blue] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
 execute if entity @s[scores={count=600}] run function rr_duel:forced_settings

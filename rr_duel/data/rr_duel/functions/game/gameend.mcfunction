@@ -7,7 +7,8 @@ tag @s remove FakeGameEnd
 execute if entity @s[scores={endtimer=1}] run function game:endstats
 execute if entity @s[scores={endtimer=2..}] run tag @a[team=Blue] remove InRanked
 execute if entity @s[scores={endtimer=2..}] run tag @a[team=Yellow] remove InRanked
-
+scoreboard players reset @s ForfeitTimeout
+tag @s remove TimeOut
 tag @a remove Forfeiter
 
 scoreboard players reset @s Rounds

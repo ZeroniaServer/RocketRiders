@@ -8,6 +8,5 @@ tag @s remove customBossbar
 tag @s remove customSaberMsg
 tag @s remove customLeaveHandling
 tag @s remove featheredOff
-tag @s remove customSpawns
 tag @s remove WindDownForce
 tag @s add switchGamemodes

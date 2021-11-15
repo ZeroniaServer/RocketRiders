@@ -383,3 +383,8 @@ execute positioned -10 65 -64 as @e[type=marker,tag=blueobalone,distance=..5] ru
 execute positioned 34 65 -64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s
 execute positioned -10 65 64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s
 execute positioned 34 65 64 as @e[type=marker,tag=blueobalone,distance=..5] run kill @s
+
+execute positioned -10 65 -64 as @e[type=area_effect_cloud,tag=tempobshield,distance=..5] run kill @s
+execute positioned 34 65 -64 as @e[type=area_effect_cloud,tag=tempobshield,distance=..5] run kill @s
+execute positioned -10 65 64 as @e[type=area_effect_cloud,tag=tempobshield,distance=..5] run kill @s
+execute positioned 34 65 64 as @e[type=area_effect_cloud,tag=tempobshield,distance=..5] run kill @s

@@ -70,6 +70,7 @@ execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=12..22] r
 execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=0..11] run bossbar set rr_chase:lead value 10
 
 #Win
+execute positioned 12 64 65 if entity @s[scores={gametime=0..4}] run tp @a[team=Blue,distance=..2] 12 64 -66 0 0
 execute positioned 12 64 65 run tag @a[team=Blue,distance=..2,limit=1] add Winner
 execute as @a[team=Blue,tag=Winner,limit=1] run title @s actionbar {"text":""}
 execute if entity @a[team=Blue,tag=Winner,limit=1] run tag @a[team=Blue,tag=!Winner] add Loser

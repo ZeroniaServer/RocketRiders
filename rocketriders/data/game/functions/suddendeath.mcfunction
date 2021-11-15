@@ -46,14 +46,16 @@ execute if entity @s[scores={SDtime=2}] run gamemode survival @a[team=Yellow]
 execute if entity @s[scores={SDtime=1}] run tag @s add GameStarted
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
 #Fix endgame fireballs
-execute if entity @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball] run scoreboard players add @s endFireball 1
-execute if entity @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
-execute if entity @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Item set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
-execute if entity @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Tags set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
-execute if entity @s[scores={SDtime=1}] run kill @e[type=fireball,scores={endFireball=1}]
-execute if entity @s[scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
-execute if entity @s[scores={SDtime=1}] run tag @e[type=fireball] remove endFireball
-execute if entity @s[scores={SDtime=1}] run kill @e[type=area_effect_cloud,tag=endFireballAEC]
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!specialEndFireball] run scoreboard players add @s endFireball 1
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!specialEndFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Owner set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Owner
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Item set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Tags set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run kill @e[type=fireball,tag=!specialEndFireball,scores={endFireball=1}]
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!specialEndFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run tag @e[type=fireball,tag=!specialEndFireball] remove endFireball
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run tag @e[type=fireball,tag=!specialEndFireball] remove endFireball2
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run kill @e[type=area_effect_cloud,tag=endFireballAEC,tag=!specialEndFireball]
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon

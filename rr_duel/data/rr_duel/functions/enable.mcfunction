@@ -10,7 +10,6 @@ tag @s add settingsLocked
 tag @s add customSaberMsg
 tag @s add customLeaveHandling
 tag @s add featheredOff
-tag @s add customSpawns
 tag @s add WindDownForce
 tag @s add WindDown
 

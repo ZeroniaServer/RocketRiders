@@ -26,8 +26,7 @@ function rr_swap:baseswap/observerconvert2
 schedule function rr_swap:baseswap/visuals 60t
 
 #tetris resets
-execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/darktetrisreset
-execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/lighttetrisreset
+execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/tetrisreset
 
 #armor
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=!Lobby,team=!Spectator] run function rr_swap:baseswap/gear

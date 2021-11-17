@@ -21,5 +21,5 @@ tag @s[tag=givenHur,tag=givenBolt,tag=givenHyper,tag=givenBroad] add givenAllLig
 tag @s[tag=givenICBM,tag=givenShield] add givenAllDUtil
 tag @s[tag=givenFireball,tag=givenObshield] add givenAllLUtil
 
-execute if entity @s[tag=givenAllHeavy,tag=givenAllDUtil] run function rr_swap:items/darktetrisreset
-execute if entity @s[tag=givenAllLightning,tag=givenAllLUtil] run function rr_swap:items/lighttetrisreset
+execute if entity @s[tag=givenAllHeavy,tag=givenAllDUtil] run function rr_swap:items/tetrisreset
+execute if entity @s[tag=givenAllLightning,tag=givenAllLUtil] run function rr_swap:items/tetrisreset

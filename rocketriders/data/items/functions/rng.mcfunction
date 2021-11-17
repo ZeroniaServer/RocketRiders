@@ -18,6 +18,7 @@ execute if entity @s[tag=rngUtil,tag=!utilOff,tag=SurpriseEgg] unless entity @s[
 
 ##Select item and run appropriate sub-RNG function
 tag @e[type=marker,tag=rng1,sort=random,limit=1] add rngSelected
+
 execute as @e[type=marker,tag=rngSelected,tag=rngMissile] run function items:missile/rng
 execute as @e[type=marker,tag=rngSelected,tag=rngUtil] run function items:util/rng
 

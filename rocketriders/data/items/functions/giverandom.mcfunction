@@ -4,6 +4,7 @@
 ##########################################
 
 ##Select item
+function items:tetriscompat
 function items:rng
 function items:tetris
 tag @s add gaveFirstItem

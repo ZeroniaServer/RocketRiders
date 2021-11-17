@@ -4,10 +4,11 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboa
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s[scores={HasTippedArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasTippedArrows 0
 execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] if entity @s[scores={HasTippedArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
+tag @s[tag=hadTippedArrows] remove fullHotbar
 
 #Title/giving
-title @s[scores={HasTippedArrows=4..},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Tipped Arrows already obtained.","color":"light_purple"}
-execute if entity @s[scores={HasTippedArrows=4..},tag=!fullHotbar,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Tipped Arrows already obtained.","color":"light_purple"}
+execute if entity @s[scores={HasTippedArrows=4..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasTippedArrows=..3},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Blindness Arrows obtained.","color":"light_purple"}
 give @s[scores={HasTippedArrows=0},tag=!fullHotbar,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Blindness Arrow","color":"dark_purple","italic":true,"bold":true}'},CustomPotionEffects:[{Id:15b,Amplifier:0b,Duration:200,ShowParticles:1b}],CustomPotionColor:3158064,HideFlags:63} 4
 give @s[scores={HasTippedArrows=1},tag=!fullHotbar,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Blindness Arrow","color":"dark_purple","italic":true,"bold":true}'},CustomPotionEffects:[{Id:15b,Amplifier:0b,Duration:200,ShowParticles:1b}],CustomPotionColor:3158064,HideFlags:63} 3

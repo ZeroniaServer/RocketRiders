@@ -6,9 +6,9 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasWar 0
 
 #Title/giving
-title @s[scores={HasWar=1..},tag=!fullHotbar,tag=!BackWar] actionbar {"text":"Warhead already obtained.","color":"aqua"}
-execute if entity @s[scores={HasWar=1..},tag=!fullHotbar,tag=!BackWar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-title @s[scores={HasWar=0},tag=!fullHotbar,tag=!BackWar] actionbar {"text":"Warhead obtained.","color":"aqua"}
+title @s[scores={HasWar=1..},tag=!fullHotbar,tag=!BackWar,tag=!itemDeducted] actionbar {"text":"Warhead already obtained.","color":"aqua"}
+execute if entity @s[scores={HasWar=1..},tag=!fullHotbar,tag=!BackWar,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+title @s[scores={HasWar=0},tag=!fullHotbar,tag=!BackWar,tag=!itemDeducted] actionbar {"text":"Warhead obtained.","color":"aqua"}
 loot give @s[scores={HasWar=0},tag=!fullHotbar] loot items:heavy/warhead
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasWar=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 

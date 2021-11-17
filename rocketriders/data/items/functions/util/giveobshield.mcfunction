@@ -6,9 +6,9 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasObshield 0
 
 #Title/giving
-title @s[scores={HasObshield=1..},tag=!fullHotbar] actionbar {"text":"Obsidian Shield already obtained.","color":"aqua"}
-execute if entity @s[scores={HasObshield=1..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-title @s[scores={HasObshield=0},tag=!fullHotbar] actionbar {"text":"Obsidian Shield obtained.","color":"aqua"}
+title @s[scores={HasObshield=1..},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Obsidian Shield already obtained.","color":"aqua"}
+execute if entity @s[scores={HasObshield=1..},tag=!fullHotbar,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+title @s[scores={HasObshield=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Obsidian Shield obtained.","color":"aqua"}
 give @s[team=Yellow,scores={HasObshield=0},tag=!fullHotbar] enderman_spawn_egg{CustomModelData:2,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Obsidian Shield","color":"gold","bold":true}]',Lore:['{"text":"Spawns a Fireball that you can shoot or punch","color":"gray"}','{"text":"to spawn an Obsidian Shield. Stops all missiles.","color":"gray"}','{"text":"Break the central glass 3 times to destroy it.","color":"gray"}']},EntityTag:{id:"minecraft:marker",Tags:["YellowObshield"]}} 1
 give @s[team=Blue,scores={HasObshield=0},tag=!fullHotbar] enderman_spawn_egg{CustomModelData:1,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Obsidian Shield","color":"blue","bold":true}]',Lore:['{"text":"Spawns a Fireball that you can shoot or punch","color":"gray"}','{"text":"to spawn an Obsidian Shield. Stops all missiles.","color":"gray"}','{"text":"Break the central glass 3 times to destroy it.","color":"gray"}']},EntityTag:{id:"minecraft:marker",Tags:["BlueObshield"]}} 1
 

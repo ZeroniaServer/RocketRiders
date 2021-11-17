@@ -6,9 +6,9 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasLift 0
 
 #Title/giving
-title @s[scores={HasLift=1..},tag=!fullHotbar,tag=!BackLift] actionbar {"text":"Lifter already obtained.","color":"aqua"}
-execute if entity @s[scores={HasLift=1..},tag=!fullHotbar,tag=!BackLift] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-title @s[scores={HasLift=0},tag=!fullHotbar,tag=!BackLift] actionbar {"text":"Lifter obtained.","color":"aqua"}
+title @s[scores={HasLift=1..},tag=!fullHotbar,tag=!BackLift,tag=!itemDeducted] actionbar {"text":"Lifter already obtained.","color":"aqua"}
+execute if entity @s[scores={HasLift=1..},tag=!fullHotbar,tag=!BackLift,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+title @s[scores={HasLift=0},tag=!fullHotbar,tag=!BackLift,tag=!itemDeducted] actionbar {"text":"Lifter obtained.","color":"aqua"}
 loot give @s[scores={HasLift=0},tag=!fullHotbar] loot items:normal/lifter
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasLift=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 

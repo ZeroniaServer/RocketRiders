@@ -1,5 +1,8 @@
 ##Reduces this item's Count by 1
 execute store result score @s CmdData run data get entity @s Item.Count
+execute store result score $tempuuid playerUUID run data get entity @s Thrower[0]
+tag @a[predicate=custom:matches_uuid] add itemDeducted
+scoreboard players reset $tempuuid playerUUID
 scoreboard players remove @s CmdData 1
 #extra for arrows since they replenish to 4
 scoreboard players remove @s[nbt={Item:{id:"minecraft:arrow"}}] CmdData 3

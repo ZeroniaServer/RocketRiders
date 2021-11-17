@@ -77,8 +77,8 @@ execute if entity @s[tag=YellowSlash,tag=!UnableMissile] at @s positioned ~-1 17
 execute if entity @s[tag=YellowSlash,tag=!UnableMissile] at @s positioned ~-1 ~-7 ~-16 store result score @s Unable run clone ~-1 ~ ~ ~3 ~3 ~12 ~ 175 ~ filtered #custom:missileblocks force
 
 #Catapult
-execute if entity @s[tag=BlueCata,tag=!UnableMissile] at @s positioned ~-1 175 ~3 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~9 void_air
-execute if entity @s[tag=BlueCata,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~3 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~9 ~ 175 ~ filtered #custom:missileblocks force
+execute if entity @s[tag=BlueCata,tag=!UnableMissile] at @s positioned ~-1 175 ~4 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~9 void_air
+execute if entity @s[tag=BlueCata,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~9 ~ 175 ~ filtered #custom:missileblocks force
 execute if entity @s[tag=YellowCata,tag=!UnableMissile] at @s positioned ~-1 175 ~-14 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~9 void_air
 execute if entity @s[tag=YellowCata,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-14 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~9 ~ 175 ~ filtered #custom:missileblocks force
 

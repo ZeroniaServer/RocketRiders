@@ -7,11 +7,11 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLim
 execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] if entity @s[scores={HasArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving
-title @s[scores={HasArrows=4..},tag=!fullHotbar,tag=!Infinity] actionbar {"text":"Arrows already obtained.","color":"aqua"}
+title @s[scores={HasArrows=4..},tag=!fullHotbar,tag=!Infinity,tag=!itemDeducted] actionbar {"text":"Arrows already obtained.","color":"aqua"}
 execute if entity @s[scores={HasArrows=4..},tag=!fullHotbar,tag=!Infinity] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-title @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!Infinity] actionbar {"text":"Arrows obtained.","color":"aqua"}
-title @s[scores={HasArrows=1..},tag=!fullHotbar,tag=Infinity] actionbar {"text":"Arrow already obtained.","color":"aqua"}
-title @s[scores={HasArrows=0},tag=!fullHotbar,tag=Infinity] actionbar {"text":"Arrow obtained.","color":"aqua"}
+title @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!Infinity,tag=!itemDeducted] actionbar {"text":"Arrows obtained.","color":"aqua"}
+title @s[scores={HasArrows=1..},tag=!fullHotbar,tag=Infinity,tag=!itemDeducted] actionbar {"text":"Arrow already obtained.","color":"aqua"}
+title @s[scores={HasArrows=0},tag=!fullHotbar,tag=Infinity,tag=!itemDeducted] actionbar {"text":"Arrow obtained.","color":"aqua"}
 
 #Tries to give enough arrows to refill up to 4
 give @s[scores={HasArrows=0},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 4

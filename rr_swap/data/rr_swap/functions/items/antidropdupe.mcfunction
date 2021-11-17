@@ -11,4 +11,5 @@ execute if entity @s[tag=rngHur] as @e[type=item] if data entity @s {Item:{id:"m
 execute if entity @s[tag=rngThun] as @e[type=item] if data entity @s {Item:{id:"minecraft:vex_spawn_egg"}} run function items:deduct
 execute if entity @s[tag=rngFireball] as @e[type=item] if data entity @s {Item:{id:"minecraft:blaze_spawn_egg"}} run function items:deduct
 execute if entity @s[tag=rngObshield] as @e[type=item] if data entity @s {Item:{id:"minecraft:enderman_spawn_egg"}} run function items:deduct
+execute if entity @s[tag=rngArrows] as @e[type=item] if data entity @s {Item:{id:"minecraft:arrow"}} run function items:deduct
 function items:full_hotbar

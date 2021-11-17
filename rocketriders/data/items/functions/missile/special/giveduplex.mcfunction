@@ -6,9 +6,9 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasDuplex 0
 
 #Title/giving
-title @s[scores={HasDuplex=1..},tag=!fullHotbar,tag=!BackDuplex] actionbar {"text":"Duplex already obtained.","color":"light_purple"}
-execute if entity @s[scores={HasDuplex=1..},tag=!fullHotbar,tag=!BackDuplex] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-title @s[scores={HasDuplex=0},tag=!fullHotbar,tag=!BackDuplex] actionbar {"text":"Duplex obtained.","color":"light_purple"}
+title @s[scores={HasDuplex=1..},tag=!fullHotbar,tag=!BackDuplex,tag=!itemDeducted] actionbar {"text":"Duplex already obtained.","color":"light_purple"}
+execute if entity @s[scores={HasDuplex=1..},tag=!fullHotbar,tag=!BackDuplex,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+title @s[scores={HasDuplex=0},tag=!fullHotbar,tag=!BackDuplex,tag=!itemDeducted] actionbar {"text":"Duplex obtained.","color":"light_purple"}
 loot give @s[scores={HasDuplex=0},tag=!fullHotbar] loot items:special/duplex
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasDuplex=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 

@@ -6,9 +6,9 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasBolt 0
 
 #Title/giving
-title @s[scores={HasBolt=1..},tag=!fullHotbar,tag=!BackBolt] actionbar {"text":"Thunderbolt already obtained.","color":"aqua"}
-execute if entity @s[scores={HasBolt=1..},tag=!fullHotbar,tag=!BackBolt] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-title @s[scores={HasBolt=0},tag=!fullHotbar,tag=!BackBolt] actionbar {"text":"Thunderbolt obtained.","color":"aqua"}
+title @s[scores={HasBolt=1..},tag=!fullHotbar,tag=!BackBolt,tag=!itemDeducted] actionbar {"text":"Thunderbolt already obtained.","color":"aqua"}
+execute if entity @s[scores={HasBolt=1..},tag=!fullHotbar,tag=!BackBolt,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+title @s[scores={HasBolt=0},tag=!fullHotbar,tag=!BackBolt,tag=!itemDeducted] actionbar {"text":"Thunderbolt obtained.","color":"aqua"}
 loot give @s[scores={HasBolt=0},tag=!fullHotbar] loot items:lightning/thunderbolt
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasBolt=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 

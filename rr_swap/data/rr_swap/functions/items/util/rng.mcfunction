@@ -12,6 +12,9 @@ tag @e[type=marker,tag=SelectedSwapRNG2,sort=random,limit=1] add SelectedSwapRNG
 execute as @e[type=marker,tag=SelectedSwapRNG3,tag=rngArrows] run tag @e[type=marker,tag=swapRNGD] remove SelectedSwapRNG2
 execute as @e[type=marker,tag=SelectedSwapRNG3,tag=rngArrows] run tag @e[type=marker,tag=swapRNGL] remove SelectedSwapRNG2
 
+#> Kill items to prevent duplication glitches
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=SelectedSwapRNG2] run function rr_swap:items/antidropdupe
+
 execute if score SwapSide swapside matches 1 as @e[type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/darkblueitems
 execute if score SwapSide swapside matches 0 as @e[type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/lightblueitems
 execute as @e[type=marker,tag=SelectedSwapRNG3,tag=rngArrows] as @e[type=item] if data entity @s {Item:{id:"minecraft:arrow"}} run function items:deduct

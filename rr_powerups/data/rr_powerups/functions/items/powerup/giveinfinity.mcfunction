@@ -1,5 +1,3 @@
-execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] store result score @s[tag=!Infinity] HasArrows run clear @s arrow 0
-execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] run scoreboard players set @s[tag=!Infinity] HasArrows 0
 title @s[tag=Infinity] actionbar [{"text":"Infinity Saber timer reset to ","color":"light_purple"},{"text":"30 seconds.","color":"red"}]
 tag @s[tag=Infinity] add DelayActionbar
 scoreboard players set @s[tag=Infinity] actionbardelay 0

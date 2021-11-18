@@ -1,5 +1,10 @@
+function rr_swap:items/tetris
 function rr_swap:items/rng
 function rr_swap:items/tetris
+execute if entity @s[tag=givenAllHeavy,tag=givenAllDUtil] run function rr_swap:items/tetrisreset
+execute if entity @s[tag=givenAllLightning,tag=givenAllLUtil] run function rr_swap:items/tetrisreset
+execute if entity @s[tag=givenAllLightning,tag=givenAllDUtil] run function rr_swap:items/tetrisreset
+execute if entity @s[tag=givenAllHeavy,tag=givenAllLUtil] run function rr_swap:items/tetrisreset
 tag @s add gaveFirstItem
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
 execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s actionbardelay 0

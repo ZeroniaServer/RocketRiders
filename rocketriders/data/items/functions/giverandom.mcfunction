@@ -3,10 +3,17 @@
 ## the game tries to give out any items ##
 ##########################################
 
+tellraw @a [{"text":"====TICK===="}]
+
 ##Select item
-function items:tetriscompat
+function items:tetris
 function items:rng
 function items:tetris
+
+##Condition for Tetris bag resetting
+execute if entity @s[tag=!Chaos,tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllUtil] run function items:tetrisreset
+execute if entity @s[tag=Chaos,tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial,tag=givenAllUtil] run function items:tetrisreset
+
 tag @s add gaveFirstItem
 
 ##Actionbar notifications

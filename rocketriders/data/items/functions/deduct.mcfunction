@@ -3,12 +3,10 @@ execute store result score @s CmdData run data get entity @s Item.Count
 execute store result score $tempuuid playerUUID run data get entity @s Thrower[0]
 
 #Extra for arrows since they replenish to 4
-execute if entity @s[nbt={Item:{id:"minecraft:arrow"}}] as @a[predicate=custom:matches_uuid] store result score @s HasArrows run clear @s arrow 0
-execute if entity @s[nbt={Item:{id:"minecraft:arrow"}}] run scoreboard players operation $toomany CmdData = @s CmdData
-execute if entity @s[nbt={Item:{id:"minecraft:arrow"}}] as @a[predicate=custom:matches_uuid] run scoreboard players operation $toomany CmdData += @s HasArrows
-execute if entity @s[nbt={Item:{id:"minecraft:arrow"}}] if score $toomany CmdData matches 4.. run tag @a[predicate=custom:matches_uuid] add hadTooMany
-execute if entity @a[predicate=custom:matches_uuid,scores={HasArrows=0}] run scoreboard players remove @s[nbt={Item:{id:"minecraft:arrow"}}] CmdData 4
-execute if entity @a[predicate=custom:matches_uuid,scores={HasArrows=1..3}] run scoreboard players remove @s[nbt={Item:{id:"minecraft:arrow"}}] CmdData 3
+execute if entity @s[nbt={Item:{id:"minecraft:arrow"}}] as @a[predicate=custom:matches_uuid,tag=!itemDeducted] store result score @s HasArrows run clear @s arrow 0
+execute if entity @s[nbt={Item:{id:"minecraft:arrow"}}] if entity @a[predicate=custom:matches_uuid] run scoreboard players operation @p[predicate=custom:matches_uuid] HasArrows += @s CmdData
+execute if entity @s[nbt={Item:{id:"minecraft:arrow"}}] run tag @a[predicate=custom:matches_uuid,scores={HasArrows=3..}] add hadTooMany
+execute if entity @a[predicate=custom:matches_uuid,tag=!itemDeducted,scores={HasArrows=..2}] run scoreboard players remove @s[nbt={Item:{id:"minecraft:arrow"}}] CmdData 4
 
 #Extra for Canopies since they can stack to 2 or 3 in CTF
 execute if entity @e[type=armor_stand,tag=Selection,tag=canopyStack] if entity @s[nbt={Item:{id:"minecraft:ender_pearl"}}] as @a[predicate=custom:matches_uuid,tag=!itemDeducted] store result score @s HasPlat run clear @s ender_pearl 0

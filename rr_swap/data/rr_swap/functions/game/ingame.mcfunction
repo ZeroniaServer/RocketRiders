@@ -2,11 +2,9 @@
 execute if entity @s[tag=!SMActive] run function game:leavemidgame
 
 #general
-function rr_swap:items/antidupe
 function rr_swap:items/spawnitems
 
 #custom util items
-function everytick:icbm
 function rr_swap:items/cluster
 
 #platform

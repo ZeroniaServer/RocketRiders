@@ -29,9 +29,9 @@ execute store result score @s HasLift run clear @s dolphin_spawn_egg 0
 execute store result score @s HasDuplex run clear @s parrot_spawn_egg 0
 execute store result score @s HasBroad run clear @s magma_cube_spawn_egg 0
 execute store result score @s HasNova run clear @s crossbow{nova:1b} 0
-execute store result score @s[team=Yellow] HasVortex run clear @s egg{CustomModelData:2} 0
-execute store result score @s[team=Blue] HasVortex run clear @s egg{CustomModelData:1} 0
+execute store result score @s HasVortex run clear @s egg{icbm:0b} 0
 execute store result score @s HasSplash run clear @s lingering_potion{Potion:"minecraft:water"} 0
+execute store result score @s HasICBM run clear @s egg{icbm:1b} 0
 execute store result score @s[team=Blue] HasSurprise run clear @s squid_spawn_egg 0
 execute store result score @s[team=Yellow] HasSurprise run clear @s cod_spawn_egg 0
 
@@ -65,5 +65,6 @@ clear @s[scores={HasBroad=2..}] magma_cube_spawn_egg 1
 clear @s[team=Blue,scores={HasSurprise=4..}] squid_spawn_egg 1
 clear @s[team=Yellow,scores={HasSurprise=4..}] cod_spawn_egg 1
 clear @s[scores={HasNova=2..}] crossbow 1
-clear @s[scores={HasVortex=2..}] egg 1
+clear @s[scores={HasVortex=2..}] egg{icbm:0b} 1
 clear @s[scores={HasSplash=2..}] splash_potion{Potion:"minecraft:water"} 1
+clear @s[scores={HasICBM=2..}] egg{icbm:1b} 1

@@ -63,3 +63,9 @@ execute if entity @s[tag=runfireball] run function everytick:fireball
 tag @s[tag=runfireball] remove runfireball
 
 function everytick:splash
+
+execute unless entity @s[tag=runicbm] if entity @e[type=egg,nbt={Item:{tag:{icbm:1b}}}] run tag @s add runicbm
+execute unless entity @s[tag=runicbm] if entity @e[type=marker,tag=ICBMtracker] run tag @s add runicbm
+execute unless entity @s[tag=runicbm] if entity @a[scores={respawn=1..},tag=UtilKilled] run tag @s add runicbm
+execute if entity @s[tag=runicbm] run function everytick:icbm
+tag @s[tag=runicbm] remove runicbm

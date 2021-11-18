@@ -3,8 +3,6 @@
 ## the game tries to give out any items ##
 ##########################################
 
-tellraw @a [{"text":"====TICK===="}]
-
 ##Select item
 function items:tetris
 function items:rng

@@ -15,11 +15,7 @@ title @s[tag=hadTooMany,tag=!Infinity,tag=!fullHotbar] actionbar {"text":"Arrows
 execute if entity @s[tag=hadTooMany,tag=!Infinity,tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
 #Infinity arrow
-title @s[scores={HasArrows=1..},tag=!fullHotbar,tag=Infinity,tag=!itemDeducted] actionbar {"text":"Arrow already obtained.","color":"aqua"}
-execute if entity @s[scores={HasArrows=1..},tag=!fullHotbar,tag=Infinity,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasArrows=0},tag=!fullHotbar,tag=Infinity,tag=!itemDeducted] actionbar {"text":"Arrow obtained.","color":"aqua"}
-title @s[tag=itemDeducted,tag=!fullHotbar,tag=Infinity] actionbar {"text":"Arrow already obtained.","color":"aqua"}
-execute if entity @s[tag=itemDeducted,tag=Infinity,tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
 #Tries to give enough arrows to refill up to 4
 give @s[scores={HasArrows=0},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 4

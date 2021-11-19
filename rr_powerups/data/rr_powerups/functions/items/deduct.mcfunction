@@ -7,8 +7,6 @@ execute if entity @e[type=marker,scores={capturePoint=2}] run tag @a[team=Yellow
 #Extra for tipped arrows since they replenish to 4
 execute if entity @s[nbt={Item:{id:"minecraft:tipped_arrow"}}] as @a[tag=correctTeam,tag=!itemDeducted] store result score @s HasTippedArrows run clear @s tipped_arrow 0
 execute if entity @s[nbt={Item:{id:"minecraft:tipped_arrow"}}] if entity @a[tag=correctTeam] run scoreboard players operation @p[tag=correctTeam] HasTippedArrows += @s CmdData
-execute if entity @s[nbt={Item:{id:"minecraft:tipped_arrow"}}] run tag @a[tag=correctTeam,scores={HasTippedArrows=4..}] add hadTooMany
-execute if entity @a[tag=correctTeam,tag=!itemDeducted,scores={HasTippedArrows=..2}] run scoreboard players remove @s[nbt={Item:{id:"minecraft:tipped_arrow"}},tag=selected] CmdData 4
 
 #Actually reducing count
 execute if entity @a[tag=correctTeam] unless entity @s[nbt={Item:{id:"minecraft:tipped_arrow"}}] run scoreboard players remove @s CmdData 1

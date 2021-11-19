@@ -12,6 +12,7 @@ execute as @e[type=marker,tag=CTFRNG,limit=1] store result score @s RNGscore run
 execute if entity @s[tag=!gaveFirstItem] run scoreboard players set @e[type=marker,tag=CTFRNG,limit=1] RNGscore 3
 
 #Give canopy (25% chance) - cannot have a streak greater than 2 canopies in a row
+execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1},tag=!doStacking] run schedule function items:scheduleantidupe 1t append
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] as @e[type=item] if data entity @s {Item:{id:"minecraft:ender_pearl"}} run function items:deduct
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run function items:full_hotbar
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy

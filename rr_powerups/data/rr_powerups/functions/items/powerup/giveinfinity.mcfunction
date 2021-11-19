@@ -11,6 +11,7 @@ execute as @s[tag=needsArrow] store result score @s HasArrows run clear @s arrow
 execute as @s[tag=needsArrow,scores={HasArrows=0}] as @e[type=item,nbt={Item:{id:"minecraft:arrow"}}] run function rr_powerups:items/deductarrow
 tag @s[tag=needsArrow,tag=!itemDeducted,scores={HasArrows=0}] add DelayActionbar
 execute as @s[tag=needsArrow,scores={HasArrows=0}] run function items:util/givearrows
+execute as @s[tag=needsArrow] as @e[type=item,nbt={Item:{id:"minecraft:bow"}}] run function rr_powerups:items/killinfinitysaber
 tag @s remove needsArrow
 tag @e[type=armor_stand,tag=Selection] add givenInfinity
 scoreboard players set $infinity PowerupDisplay 30

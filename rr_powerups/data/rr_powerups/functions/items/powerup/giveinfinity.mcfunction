@@ -9,6 +9,7 @@ tag @s[tag=!Infinity] add needsArrow
 tag @s[tag=needsArrow] add Infinity
 execute as @s[tag=needsArrow] store result score @s HasArrows run clear @s arrow 0
 execute as @s[tag=needsArrow,scores={HasArrows=0}] as @e[type=item,nbt={Item:{id:"minecraft:arrow"}}] run function rr_powerups:items/deductarrow
+tag @s[tag=needsArrow,tag=!itemDeducted,scores={HasArrows=0}] add DelayActionbar
 execute as @s[tag=needsArrow,scores={HasArrows=0}] run function items:util/givearrows
 tag @s remove needsArrow
 tag @e[type=armor_stand,tag=Selection] add givenInfinity

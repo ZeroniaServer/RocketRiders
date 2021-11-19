@@ -11,8 +11,7 @@ execute unless entity @s[tag=runshields] if entity @e[type=marker,tag=PlaceBlueS
 execute if entity @s[tag=runshields] run function everytick:shields
 tag @s[tag=runshields] remove runshields
 
-execute unless entity @s[tag=runvortex] if entity @e[type=egg,nbt={Item:{tag:{CustomModelData:1}}}] run tag @s add runvortex
-execute unless entity @s[tag=runvortex] if entity @e[type=egg,nbt={Item:{tag:{CustomModelData:2}}}] run tag @s add runvortex
+execute unless entity @s[tag=runvortex] if entity @e[type=egg,nbt={Item:{tag:{icbm:0b}}}] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[type=marker,tag=Vortex] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[type=armor_stand,tag=VortexItem] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[type=chicken] run tag @s add runvortex
@@ -64,3 +63,9 @@ execute if entity @s[tag=runfireball] run function everytick:fireball
 tag @s[tag=runfireball] remove runfireball
 
 function everytick:splash
+
+execute unless entity @s[tag=runicbm] if entity @e[type=egg,nbt={Item:{tag:{icbm:1b}}}] run tag @s add runicbm
+execute unless entity @s[tag=runicbm] if entity @e[type=marker,tag=ICBMtracker] run tag @s add runicbm
+execute unless entity @s[tag=runicbm] if entity @a[scores={respawn=1..},tag=UtilKilled] run tag @s add runicbm
+execute if entity @s[tag=runicbm] run function everytick:icbm
+tag @s[tag=runicbm] remove runicbm

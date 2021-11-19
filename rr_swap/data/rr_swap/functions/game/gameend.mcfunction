@@ -1,4 +1,3 @@
-function everytick:icbm
 function rr_swap:items/cluster
 clear @a[team=Blue] #custom:clear
 clear @a[team=Blue] crossbow{nova:1b}

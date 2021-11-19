@@ -16,6 +16,7 @@ execute if entity @s[scores={endtimer=1}] run effect clear @a[team=Blue]
 execute if entity @s[scores={endtimer=1}] run effect clear @a[team=Yellow]
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[team=Blue] bow
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[team=Yellow] bow
+execute if entity @s[scores={endtimer=1},tag=!noSabers] run kill @e[type=item,nbt={Item:{id:"minecraft:bow"}}]
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run function game:endsabers
 execute if entity @s[tag=BlueWon] run effect give @a[team=Yellow] weakness 100000 255 true
 execute if entity @s[tag=YellowWon] run effect give @a[team=Blue] weakness 100000 255 true

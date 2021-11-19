@@ -32,5 +32,4 @@ execute store result entity @s Item.Count byte 1 run scoreboard players get @s C
 tag @a[predicate=custom:matches_uuid] add itemDeducted
 tag @a[predicate=custom:matches_uuid,tag=fullHotbar] add wasFullHotbar
 scoreboard players reset $tempuuid playerUUID
-scoreboard players reset $toomany CmdData
 kill @s[scores={CmdData=..0}]

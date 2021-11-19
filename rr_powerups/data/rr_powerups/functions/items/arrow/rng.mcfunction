@@ -5,10 +5,11 @@ summon marker 0 0 0 {Tags:["rngSlowArrow","rng2"]}
 tag @e[type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 
 #> Prevent arrow duplication glitches
-execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngBlindArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:15b,Amplifier:0b,Duration:200,ShowParticles:1b}]}}} run function items:deduct
-execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngLeviArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:25b,Amplifier:0b,Duration:100,ShowParticles:1b}]}}} run function items:deduct
-execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngWitherArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:20b,Amplifier:0b,Duration:150,ShowParticles:1b}]}}} run function items:deduct
-execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngSlowArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:2b,Amplifier:0b,Duration:200,ShowParticles:1b}]}}} run function items:deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngBlindArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:15b,Amplifier:0b,Duration:200,ShowParticles:1b}]}}} run tag @s add selected
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngLeviArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:25b,Amplifier:0b,Duration:100,ShowParticles:1b}]}}} run tag @s add selected
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngWitherArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:20b,Amplifier:0b,Duration:150,ShowParticles:1b}]}}} run tag @s add selected
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngSlowArrow] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow",tag:{CustomPotionEffects:[{Id:2b,Amplifier:0b,Duration:200,ShowParticles:1b}]}}} run tag @s add selected
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow"}} run function rr_powerups:items/deduct
 
 function items:full_hotbar
 

@@ -33,4 +33,4 @@ execute if entity @s[tag=EditedSettings,tag=Repeat] if entity @a[tag=informMe] r
 tag @a[tag=informMe] remove informMe
 
 #set bossbar max to 100
-bossbar set rr_powerups:capture_progress max 100
+execute unless entity @e[type=marker,tag=captureMiddle,tag=BrokenPlatform] run bossbar set rr_powerups:capture_progress max 100

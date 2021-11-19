@@ -54,8 +54,8 @@ tag @a[tag=onCapturePoint] remove onCapturePoint
 execute as @e[type=marker,tag=captureMiddle] at @s as @e[type=player,team=Blue,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
 execute as @e[type=marker,tag=captureMiddle] at @s as @e[type=player,team=Yellow,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
 #hotfix to prevent players from falling through the platform if they break the blocks beneath them
-execute as @e[type=marker,tag=captureMiddle] at @s as @e[type=player,tag=onCapturePoint,distance=..5.5] at @s if entity @s[y=53,dy=0.5] if block ~ ~-1 ~ air run tp @s ~ ~0.1 ~
-execute as @e[type=player,tag=onCapturePoint] at @s unless entity @s[y=54,dy=1] unless entity @e[type=marker,tag=captureMiddle,distance=..7.1,limit=1] run tag @s remove onCapturePoint
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] at @s as @e[type=player,tag=onCapturePoint,distance=..5.5] at @s if entity @s[y=53,dy=0.5] if block ~ ~-1 ~ air run tp @s ~ ~0.1 ~
+execute as @e[type=player,tag=onCapturePoint] at @s unless entity @s[y=54,dy=1] unless entity @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,distance=..7.1,limit=1] run tag @s remove onCapturePoint
 
 execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players add @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={captureYellow=0},tag=!contested] captureBlue 2
 execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run tag @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] remove contested

@@ -8,7 +8,7 @@ scoreboard players set @e[type=armor_stand,tag=rr_chase,limit=1] PlayerCap 2
 scoreboard players operation @e[type=armor_stand,tag=rr_chase,limit=1] PlayerCap *= @s PlayerCap
 execute if score @s bluesCount >= @e[type=armor_stand,tag=rr_chase,limit=1] PlayerCap run tag @s add BlueFull
 execute if entity @s[tag=!BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
-execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle barrier ~ ~1 ~ 0 0 0 0 1 force @a
+execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a
 
 #Items
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear

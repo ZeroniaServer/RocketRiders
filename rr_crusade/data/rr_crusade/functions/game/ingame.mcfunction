@@ -2,7 +2,6 @@
 execute if entity @s[tag=!SMActive] run function rr_crusade:game/leavemidgame
 
 #general
-function rr_crusade:items/antidupe
 function rr_crusade:items/spawnitems
 function rr_crusade:game/cancel_utility
 function everytick:icbm

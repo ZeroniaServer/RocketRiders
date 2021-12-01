@@ -6,8 +6,7 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardco
 execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 62 -101 195 63 cyan_stained_glass
 execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 65 -101 195 64 blue_stained_glass
 
-execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/darktetrisreset
-execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/lighttetrisreset
+execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/tetrisreset
 scoreboard players reset * swapside
 
 #ICBM reset

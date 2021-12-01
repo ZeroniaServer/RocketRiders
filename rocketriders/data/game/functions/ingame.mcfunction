@@ -15,7 +15,7 @@ execute if entity @a[scores={actionbardelay=50..}] run scoreboard players reset 
 scoreboard players add @a[team=Yellow] jumps 0
 scoreboard players add @a[team=Blue] jumps 0
 
-##Hotfix so Pacifisit achievement isn't broken
+##Hotfix so Pacifist achievement isn't broken
 scoreboard players add @a[team=Yellow] kills 0
 scoreboard players add @a[team=Blue] kills 0
 

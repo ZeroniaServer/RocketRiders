@@ -12,15 +12,15 @@ execute if entity @s[tag=!givenBroad] run summon marker 0 0 0 {Tags:["rngBroad",
 tag @e[type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 
 #> Kill items to prevent duplication glitches
-execute as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=item] if data entity @s {Item:{id:"minecraft:skeleton_horse_spawn_egg"}} run function items:deduct
-execute as @e[type=marker,tag=rngSelected,tag=rngHyper] as @e[type=item] if data entity @s {Item:{id:"minecraft:turtle_spawn_egg"}} run function items:deduct
-execute as @e[type=marker,tag=rngSelected,tag=rngLavaSplash] as @e[type=item] if data entity @s {Item:{id:"minecraft:lingering_potion",tag:{Potion:"minecraft:awkward",CustomPotionColor:16747545}}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngSlapFish] as @e[type=item] if data entity @s {Item:{id:"minecraft:cooked_salmon"}} run function items:deduct
-execute as @e[type=marker,tag=rngSelected,tag=rngTotem] as @e[type=item] if data entity @s {Item:{id:"minecraft:totem_of_undying"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngTrident] as @e[type=item] if data entity @s {Item:{id:"minecraft:trident"}} run kill @s
-execute as @e[type=marker,tag=rngSelected,tag=rngBeeShield] as @e[type=item] if data entity @s {Item:{id:"minecraft:honey_bottle"}} run function items:deduct
-execute as @e[type=marker,tag=rngSelected,tag=rngDuplex] as @e[type=item] if data entity @s {Item:{id:"minecraft:parrot_spawn_egg"}} run function items:deduct
-execute as @e[type=marker,tag=rngSelected,tag=rngBroad] as @e[type=item] if data entity @s {Item:{id:"minecraft:magma_cube_spawn_egg"}} run function items:deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngBull] as @e[type=item] if data entity @s {Item:{id:"minecraft:skeleton_horse_spawn_egg"}} run function rr_powerups:items/deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngHyper] as @e[type=item] if data entity @s {Item:{id:"minecraft:turtle_spawn_egg"}} run function rr_powerups:items/deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngLavaSplash] as @e[type=item] if data entity @s {Item:{id:"minecraft:lingering_potion",tag:{Potion:"minecraft:awkward",CustomPotionColor:16747545}}} run function rr_powerups:items/deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngSlapFish] as @e[type=item] if data entity @s {Item:{id:"minecraft:cooked_salmon"}} run function rr_powerups:items/deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngTotem] as @e[type=item] if data entity @s {Item:{id:"minecraft:totem_of_undying"}} run function rr_powerups:items/deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngTrident] as @e[type=item] if data entity @s {Item:{id:"minecraft:trident"}} run function rr_powerups:items/deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngBeeShield] as @e[type=item] if data entity @s {Item:{id:"minecraft:honey_bottle"}} run function rr_powerups:items/deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngDuplex] as @e[type=item] if data entity @s {Item:{id:"minecraft:parrot_spawn_egg"}} run function rr_powerups:items/deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngBroad] as @e[type=item] if data entity @s {Item:{id:"minecraft:magma_cube_spawn_egg"}} run function rr_powerups:items/deduct
 
 function items:full_hotbar
 

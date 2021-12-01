@@ -19,7 +19,7 @@ execute as @e[type=marker,tag=rngSelected,tag=rngObshield] as @e[type=item] if d
 execute as @e[type=marker,tag=rngSelected,tag=rngCanopy] as @e[type=item] if data entity @s {Item:{id:"minecraft:ender_pearl"}} run function items:deduct
 execute as @e[type=marker,tag=rngSelected,tag=rngShield] as @e[type=item] if data entity @s {Item:{id:"minecraft:snowball"}} run function items:deduct
 execute as @e[type=marker,tag=rngSelected,tag=rngSplash] as @e[type=item] if data entity @s {Item:{id:"minecraft:lingering_potion",tag:{Potion:"minecraft:water"}}} run function items:deduct
-execute as @e[type=marker,tag=rngSelected,tag=rngVortex] as @e[type=item] if data entity @s {Item:{id:"minecraft:egg"}} run function items:deduct
+execute as @e[type=marker,tag=rngSelected,tag=rngVortex] as @e[type=item] if data entity @s {Item:{id:"minecraft:egg",tag:{icbm:0b}}} run function items:deduct
 execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @e[type=item] if data entity @s {Item:{id:"minecraft:crossbow",tag:{nova:1b}}} run kill @s
 
 function items:full_hotbar

@@ -1,5 +1,5 @@
 #Antidupe check
-execute store result score @s HasTippedArrows run clear @s tipped_arrow 0
+execute store result score @s[tag=!itemDeducted] HasTippedArrows run clear @s tipped_arrow 0
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasTippedArrows %= 64 CmdData
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s[scores={HasTippedArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasTippedArrows 0

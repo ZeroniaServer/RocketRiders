@@ -10,6 +10,10 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=rngHur,tag=!givenHur] ru
 execute if entity @e[type=armor_stand,tag=Selection,tag=rngThun,tag=!givenBolt] run summon marker 0 0 0 {Tags:["rngThun","swapRNGL"]}
 tag @e[type=marker,tag=swapRNGL,sort=random,limit=1] add SelectedSwapRNG2
 
+#> Kill items to prevent duplication glitches
+execute if score SwapSide swapside matches 1 unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=SelectedSwapRNG2] run function rr_swap:items/darkblueantidropdupe
+execute if score SwapSide swapside matches 0 unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=SelectedSwapRNG2] run function rr_swap:items/lightblueantidropdupe
+
 execute if score SwapSide swapside matches 1 as @e[type=marker,tag=SelectedSwapRNG2] run function rr_swap:items/darkblueitems
 execute if score SwapSide swapside matches 0 as @e[type=marker,tag=SelectedSwapRNG2] run function rr_swap:items/lightblueitems
 

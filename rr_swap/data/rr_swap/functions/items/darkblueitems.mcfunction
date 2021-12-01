@@ -1,5 +1,3 @@
-function rr_swap:items/antidropdupe
-
 #dark
 execute if entity @s[tag=rngBull] as @a[team=Blue] run function items:missile/special/givebull
 execute if entity @s[tag=rngDuplex] as @a[team=Blue] run function items:missile/special/giveduplex

@@ -1,9 +1,6 @@
 #Antidupe check
-execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] if entity @s[team=Yellow] unless predicate custom:canopy_nearblue store result score @s HasElytra run clear @s elytra 0
-execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s[team=Yellow] unless predicate custom:canopy_nearblue run scoreboard players set @s HasElytra 0
-
-execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] if entity @s[team=Blue] unless predicate custom:canopy_nearyellow store result score @s HasElytra run clear @s elytra 0
-execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s[team=Blue] unless predicate custom:canopy_nearyellow run scoreboard players set @s HasElytra 0
+execute if entity @s[team=Yellow] unless predicate custom:canopy_nearblue store result score @s HasElytra run clear @s elytra 0
+execute if entity @s[team=Blue] unless predicate custom:canopy_nearyellow store result score @s HasElytra run clear @s elytra 0
 
 #Title/giving
 #Yellow

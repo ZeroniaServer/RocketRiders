@@ -12,6 +12,9 @@ scoreboard objectives add displayinfo trigger
 scoreboard players add $reloaded CmdData 1
 schedule function arenaclear:refreshcheck 3t append
 
+#Pre-1.1.4 compatibility
+scoreboard objectives add HasICBM dummy
+
 #Fix blackstone slab
 setblock -56 208 76 blackstone_slab
 

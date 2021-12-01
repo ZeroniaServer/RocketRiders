@@ -13,8 +13,12 @@ execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capture
 execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue] run scoreboard players set @s actionbardelay 0
 execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue,tag=fullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
 execute if entity @s[tag=!noHotbarWarn,tag=!noFullHotbarSound] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue,tag=fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue,tag=wasFullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+execute if entity @s[tag=!noHotbarWarn,tag=!noFullHotbarSound] if entity @e[type=marker,scores={capturePoint=1}] as @a[team=Blue,tag=wasFullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run tag @s add DelayActionbar
 execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow] run scoreboard players set @s actionbardelay 0
 execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow,tag=fullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
 execute if entity @s[tag=!noHotbarWarn,tag=!noFullHotbarSound] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow,tag=fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!noHotbarWarn] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow,tag=wasFullHotbar] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+execute if entity @s[tag=!noHotbarWarn,tag=!noFullHotbarSound] if entity @e[type=marker,scores={capturePoint=2}] as @a[team=Yellow,tag=wasFullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 tag @s remove noHotbarWarn

@@ -82,6 +82,10 @@ scoreboard players add @a ThrowPlat 0
 scoreboard players add @a[scores={ThrowPlat=1..30}] ThrowPlat 1
 scoreboard players set @a[scores={ThrowPlat=31..}] ThrowPlat 0
 
+#Part of hotfix for item deduction/drop dupes
+tag @a[tag=itemDeducted] remove itemDeducted
+tag @a[tag=wasFullHotbar] remove wasFullHotbar
+
 #Remove dragon breath
 kill @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}]
 

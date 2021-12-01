@@ -2,9 +2,9 @@
 execute store result score @s HasArrows run clear @s arrow 0
 
 #Title/giving
-title @s[scores={HasArrows=4..}] actionbar {"text":"Arrows already obtained.","color":"aqua"}
-execute if entity @s[scores={HasArrows=4..}] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-title @s[scores={HasArrows=..3}] actionbar {"text":"Arrows obtained.","color":"aqua"}
+title @s[scores={HasArrows=4..},tag=!itemDeducted] actionbar {"text":"Arrows already obtained.","color":"aqua"}
+execute if entity @s[scores={HasArrows=4..},tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+title @s[scores={HasArrows=..3},tag=!itemDeducted] actionbar {"text":"Arrows obtained.","color":"aqua"}
 
 #Tries to give enough arrows to refill up to 4
 give @s[scores={HasArrows=0},tag=fullOffhand] arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'}} 4

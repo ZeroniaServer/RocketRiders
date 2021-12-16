@@ -23,11 +23,16 @@ execute if entity @s[tag=canopyStreaked,scores={canopyStreak=1..}] if entity @e[
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=2..}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run tag @s add canopyStreaked
 
 #Select item (75% chance)
+execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run function items:tetris
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run function items:rng
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run function items:tetris
 execute if entity @s[scores={canopyStreak=1..}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run scoreboard players remove @s canopyStreak 1
 tag @s add gaveFirstItem
 execute if entity @s[tag=canopyStreaked,scores={canopyStreak=..0}] run tag @s remove canopyStreaked
+
+##Condition for Tetris bag resetting
+execute if entity @s[tag=!Chaos,tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllUtil] run function items:tetrisreset
+execute if entity @s[tag=Chaos,tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial,tag=givenAllUtil] run function items:tetrisreset
 
 #Kill randomizer
 kill @e[type=marker,tag=CTFRNG,limit=1]

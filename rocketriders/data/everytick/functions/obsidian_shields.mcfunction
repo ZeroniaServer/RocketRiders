@@ -36,9 +36,12 @@ execute as @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1}] a
 execute as @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=marker,tag=blueobtracker,distance=..2,limit=1,sort=nearest] @s
 tag @e[type=marker,tag=blueobtracker] add blueobalone
 execute as @e[type=marker,tag=blueobtracker,tag=blueobalone] at @s if entity @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove blueobalone
-#Next 2 commands disable Blue Obsidian Shields inside of portals
+#Disable Blue Obsidian Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute unless entity @s[tag=noPortal] as @e[type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
+#Do the same but for Hole in One
+execute unless entity @s[tag=noPortal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
+execute unless entity @s[tag=noPortal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
 #Disable Blue Obsidian Shields near void
 execute as @e[type=marker,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Blue Obsidian Shields near spawnpoints
@@ -93,9 +96,12 @@ execute as @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..
 execute as @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=marker,tag=yellowobtracker,distance=..2,limit=1,sort=nearest] @s
 tag @e[type=marker,tag=yellowobtracker] add yellowobalone
 execute as @e[type=marker,tag=yellowobtracker,tag=yellowobalone] at @s if entity @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove yellowobalone
-#Next 2 commands disable Yellow Obsidian Shields inside of portals
+#Disable Yellow Obsidian Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute unless entity @s[tag=noPortal] as @e[type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
+#Do the same but for Hole in One
+execute unless entity @s[tag=noPortal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
+execute unless entity @s[tag=noPortal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
 #Disable Yellow Obsidian Shields near void
 execute as @e[type=marker,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Yellow Obsidian Shields near spawnpoints

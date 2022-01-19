@@ -38,7 +38,7 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=28}] run title @
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=29}] run title @a[tag=Loser] subtitle ["",{"text":"Sucks to suck!","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=30}] run title @a[tag=Loser] subtitle ["",{"text":"Imagine winning","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=31}] run title @a[tag=Loser] subtitle ["",{"text":"That Wasn't Very Cash Money Of You","color":"red"}]
-execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=32}] run title @a[tag=Loser] subtitle ["",{"text":"should've renewed your car's extended warranty","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=32}] run title @a[tag=Loser] subtitle ["",{"text":"try renewing your car's extended warranty","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=33}] run title @a[tag=Loser] subtitle ["",{"text":"RNG giveth, RNG taketh away.","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=34}] run title @a[tag=Loser] subtitle ["",{"text":"We will never financially recover from this.","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=35}] run title @a[tag=Loser] subtitle ["",{"text":"Everybody expected this.","color":"red"}]

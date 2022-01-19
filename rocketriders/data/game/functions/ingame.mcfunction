@@ -78,6 +78,11 @@ execute if entity @s[tag=!customObsidian] run fill 39 63 67 39 34 67 obsidian
 execute if entity @s[tag=!customObsidian] run fill -15 63 -67 -15 34 -67 obsidian
 execute if entity @s[tag=!customObsidian] run fill 39 63 -67 39 34 -67 obsidian
 
+#Fix for Hole in One
+execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill -11 59 73 34 36 75 obsidian outline
+execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 1 48 73 1 47 73 air
+execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 23 48 73 23 47 73 air
+
 ##Respawn handling
 execute as @e[type=marker,tag=YellowSpawnZone] at @s as @a[team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0
 execute as @e[type=marker,tag=YellowSpawnZone] at @s as @a[team=Yellow,tag=FellInVoid,distance=..6,scores={respawn=1..}] run scoreboard players add @s FellVoid 1

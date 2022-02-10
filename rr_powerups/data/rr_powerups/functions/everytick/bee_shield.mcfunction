@@ -158,8 +158,6 @@ execute as @e[type=bee,tag=!beeChecked] run data remove entity @s AngryAt
 execute as @e[type=bee,tag=!beeChecked] run data merge entity @s {PortalCooldown:2147483647}
 execute if entity @e[type=bee,tag=!beeChecked] run scoreboard players set $beetime BeeShieldTime 0
 tag @e[type=bee,tag=!beeChecked] add beeChecked
-execute as @e[type=bee] unless entity @s[nbt={Glowing:1b}] run data merge entity @s {Glowing:1b}
-execute as @e[type=bee] unless entity @s[nbt={NoGravity:1b}] run data merge entity @s {NoGravity:1b}
 
 scoreboard players add $beetime BeeShieldTime 1
 execute if score $beetime BeeShieldTime matches 100 run scoreboard players set $beetime BeeShieldTime 0

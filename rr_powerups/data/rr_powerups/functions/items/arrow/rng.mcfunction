@@ -29,3 +29,7 @@ execute as @e[type=marker,tag=rngSelected,tag=rngSlowArrow] as @e[type=marker,sc
 execute as @e[type=marker,tag=rngSelected,tag=rngSlowArrow] as @e[type=marker,scores={capturePoint=2}] run tellraw @a[team=!Lobby] [{"text":"Yellow ","color":"gold","bold":true},{"text":"received: ","color":"yellow","bold":false},{"text":"Slowness Arrows","color":"dark_purple","bold":true,"italic":true}]
 
 kill @e[type=marker,tag=rng2]
+
+execute unless entity @e[tag=PUCrystalPerma] run scoreboard players add @e[tag=captureMiddle,tag=!BrokenPlatform] CmdData 2
+execute unless entity @e[tag=PUCrystalPerma] as @e[tag=captureMiddle,tag=!BrokenPlatform] at @s run playsound minecraft:entity.turtle.egg_crack master @a ~ ~ ~ 0.4 2
+execute unless entity @e[tag=PUCrystalPerma] as @e[tag=captureMiddle,tag=!BrokenPlatform] at @s run playsound minecraft:block.amethyst_block.step master @a ~ ~ ~ 1 1.4

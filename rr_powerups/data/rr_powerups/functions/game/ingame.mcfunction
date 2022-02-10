@@ -73,9 +73,9 @@ execute if entity @a[team=Yellow,tag=onCapturePoint] if entity @a[team=Blue,tag=
 scoreboard players remove @e[type=marker,tag=contested] captureBlue 1
 scoreboard players remove @e[type=marker,tag=contested] captureYellow 1
 
-execute as @e[type=marker,tag=captureMiddle,tag=!contested,scores={captureBlue=1..}] if score @s captureBlue >= @s captureYellow run function rr_powerups:game/fancyblue
-execute as @e[type=marker,tag=captureMiddle,tag=!contested,scores={captureYellow=1..}] if score @s captureYellow >= @s captureBlue run function rr_powerups:game/fancyyellow
-execute as @e[type=marker,tag=captureMiddle,tag=contested] run function rr_powerups:game/fancycontested
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,tag=!contested,scores={captureBlue=1..}] if score @s captureBlue >= @s captureYellow run function rr_powerups:game/fancyblue
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,tag=!contested,scores={captureYellow=1..}] if score @s captureYellow >= @s captureBlue run function rr_powerups:game/fancyyellow
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,tag=contested] run function rr_powerups:game/fancycontested
 
 execute as @e[type=marker,tag=captureMiddle,scores={captureBlue=99..}] if entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=99..}] if entity @a[team=Blue,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1

@@ -1,0 +1,1 @@
+execute unless score $WorldUpdates CmdData matches 120.. run function world_updates:1_2_0/update

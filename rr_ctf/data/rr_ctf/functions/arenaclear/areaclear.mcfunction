@@ -1,3 +1,5 @@
+kill @e[tag=FlagSafety]
+
 #Clear extra bedrock
 fill -15 64 71 39 64 68 air
 fill -15 64 -71 39 64 -68 air

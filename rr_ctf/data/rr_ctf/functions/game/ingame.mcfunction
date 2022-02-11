@@ -8,6 +8,9 @@ execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run fu
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
 execute if entity @s[tag=Minute] run function rr_ctf:items/minutemix
 
+#Safezones
+function rr_ctf:game/flagsafezone
+
 #Spawnpoints
 execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
 execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180

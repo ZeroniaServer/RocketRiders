@@ -69,7 +69,8 @@ scoreboard players set 0 FlagScore 0
 scoreboard players add FlagWave FlagScore 1
 
 #Actionbars for flag carrier
-execute as @a[tag=CarryFlag,tag=!DelayActionbar] run title @s actionbar [{"text":"You stole a flag! Return to your base to capture it!","color":"white","bold":true}]
+execute as @a[tag=CarryFlag,tag=!DelayActionbar,scores={FlagScore=..2}] run title @s actionbar [{"text":"As long as you stay in this circle you won't take damage!","color":"green","bold":true}]
+execute as @a[tag=CarryFlag,tag=!DelayActionbar,scores={FlagScore=3..}] run title @s actionbar [{"text":"You stole a flag! Return to your base to capture it!","color":"white","bold":true}]
 
 #Make flags wave around
 execute if score FlagWave FlagScore matches 20 if score FY1: FlagScore > 29 FlagScore run setblock 34 72 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag1"}
@@ -340,7 +341,7 @@ scoreboard players reset @a MineWhiteGlass
 execute if entity @a[tag=CarryFlag] run function rr_ctf:everytick/carryflag
 tag @a[tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] remove CarryFlag
 scoreboard players reset @a[tag=!CarryFlag] FlagScore
-# execute as @a[tag=!CarryFlag] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s glowing
+execute as @a[tag=!CarryFlag] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s glowing
 execute as @a[tag=!CarryFlag] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s resistance
 execute as @a[tag=!CarryFlag] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s strength
 execute as @a[tag=!CarryFlag] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s absorption

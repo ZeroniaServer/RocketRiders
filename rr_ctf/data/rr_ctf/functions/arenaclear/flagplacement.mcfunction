@@ -42,6 +42,11 @@ setblock -10 64 -65 bedrock
 setblock -11 64 -64 bedrock
 setblock -10 64 -64 bedrock
 fill -10 66 -64 -10 72 -64 minecraft:oak_fence replace air
+summon marker -10 64 -64 {Tags:["FlagSafety","Blue1","Blue"]}
+summon marker 34 64 -64 {Tags:["FlagSafety","Blue2","Blue"]}
+
+summon marker 34 64 64 {Tags:["FlagSafety","Yellow1","Yellow"]}
+summon marker -10 64 64 {Tags:["FlagSafety","Yellow2","Yellow"]}
 
 #Blue, right
 setblock 34 64 -65 bedrock

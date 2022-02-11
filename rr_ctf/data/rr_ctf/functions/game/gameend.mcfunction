@@ -21,6 +21,7 @@ execute if entity @s[scores={endtimer=2..}] run tag @a remove CarryFY2
 execute if entity @s[scores={endtimer=2..}] run tag @a remove CarryFB1
 execute if entity @s[scores={endtimer=2..}] run tag @a remove CarryFB2
 execute if entity @s[scores={endtimer=1..}] run kill @e[type=marker,tag=FlagParticle]
+execute if entity @s[scores={endtimer=1..}] run kill @e[type=marker,tag=FlagSafety]
 execute if entity @s[scores={endtimer=2..}] run scoreboard players reset * FlagScore
 execute if entity @s[scores={endtimer=2..}] run scoreboard players reset * FlagDeliver
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 players none

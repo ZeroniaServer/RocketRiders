@@ -40,8 +40,6 @@ fill -21 185 -100 -25 189 -100 minecraft:structure_void replace air
 setblock -26 184 -100 minecraft:redstone_block
 fill -21 189 -100 -26 184 -100 air
 
-
-
 #> !!!! Necessary update command! Make sure not to leave this one commented out on release !!!!
 tellraw @a {"text":"Successfully applied updates from Rocket Riders 1.2.0","color":"green"}
 #scoreboard players set $WorldVersion CmdData 1200

@@ -4,9 +4,13 @@
 ##########################################
 
 ##Select item
+execute as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add getItem
+tag @s add tetrisTime
 function items:tetris
 function items:rng
 function items:tetris
+tag @a remove getItem
+tag @s remove tetrisTime
 
 ##Condition for Tetris bag resetting
 execute if entity @s[tag=!Chaos,tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllUtil] run function items:tetrisreset

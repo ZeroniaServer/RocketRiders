@@ -16,5 +16,5 @@ loot give @s[scores={HasSlash=0},tag=!fullHotbar] loot items:normal/slasher
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasSlash=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackSlash] run tag @e[type=armor_stand,tag=Selection] add givenSlash
+execute unless entity @s[tag=BackSlash] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenSlash
 execute unless entity @s[tag=BackSlash] run tag @e[type=armor_stand,tag=Bot] add BotHasSlash

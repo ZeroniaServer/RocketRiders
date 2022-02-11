@@ -73,9 +73,10 @@ execute if entity @s[scores={servermode=0},tag=!SMCustom,tag=!GameStarted,tag=!G
 tag @a[nbt=!{Inventory:[{Slot:-106b}]}] remove fullOffhand
 tag @a[nbt={Inventory:[{Slot:-106b}]}] add fullOffhand
 
-#Remove Splash tags for Lobby players. Just a failsave
+#Remove some tags for Lobby players. Just a failsave
 tag @a[team=!Blue,team=!Yellow] remove Winner
 tag @a[team=!Blue,team=!Yellow] remove Loser
+tag @a[team=!Blue,team=!Yellow] remove getItem
 
 #For Canopies to continue operating (necessary for void falling)
 scoreboard players add @a ThrowPlat 0

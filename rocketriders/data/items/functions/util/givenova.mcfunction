@@ -14,4 +14,4 @@ give @s[team=Blue,scores={HasNova=0},tag=!fullHotbar] crossbow{nova:1b,Damage:46
 give @s[team=Yellow,scores={HasNova=0},tag=!fullHotbar] crossbow{nova:1b,Damage:465,ChargedProjectiles:[{id:"minecraft:firework_rocket",Count:1b,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}],Charged:1b,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Nova Rocket","color":"gold","bold":true}]',Lore:['{"text":"Shoots a Nova Rocket where you look.","color":"gray"}','{"text":"Launches players sky-high on impact.","color":"gray"}','{"text":"The arch nemesis of the Canopy!","color":"gray"}']},HideFlags:127}
 
 #Game tracking
-tag @e[type=armor_stand,tag=Selection] add givenNova
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenNova

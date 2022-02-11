@@ -10,4 +10,4 @@ title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Totem of Undying a
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasTotem=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Totem of Undying obtained.","color":"light_purple"}
 give @s[scores={HasTotem=0},tag=!fullHotbar] totem_of_undying{display:{Name:'{"text":"Totem of Undying","color":"dark_purple","bold":true,"italic":true}',Lore:['{"text":"Hold to survive certain death.","color":"gray"}','{"text":"Only good for one use.","color":"gray"}','{"text":"(Does not include void deaths.)","color":"gray"}']},Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7} 1
-tag @e[type=armor_stand,tag=Selection] add givenTotem
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenTotem

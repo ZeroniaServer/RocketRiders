@@ -2,9 +2,13 @@ execute if entity @s[tag=!givenAllPowerup] run summon marker 0 0 0 {Tags:["rngPo
 execute if entity @s[tag=!givenAllPowerup] run summon marker 0 0 0 {Tags:["rngPowerup","rng1"]}
 execute if entity @s[tag=!givenTipped] run summon marker 0 0 0 {Tags:["rngArrow","rng1"]}
 tag @e[type=marker,tag=rng1,sort=random,limit=1] add rngSelected
+execute as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add getItem
+tag @s add tetrisTime
 execute if entity @e[type=marker,tag=rngSelected,tag=rngPowerup] run function rr_powerups:items/powerup/rng
 execute if entity @e[type=marker,tag=rngSelected,tag=rngArrow] run function rr_powerups:items/arrow/rng
 function rr_powerups:items/tetris
+tag @a remove getItem
+tag @s remove tetrisTime
 execute unless entity @s[tag=doStacking] run schedule function items:scheduleantidupe 1t append
 kill @e[type=marker,tag=rng1]
 

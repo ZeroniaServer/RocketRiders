@@ -12,6 +12,6 @@ execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[ty
 
 function items:full_hotbar
 
-execute as @e[type=marker,tag=rngSelected,tag=rngHur] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/lightning/givehur
-execute as @e[type=marker,tag=rngSelected,tag=rngThun] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:missile/lightning/givethun
+execute as @e[type=marker,tag=rngSelected,tag=rngHur] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/lightning/givehur
+execute as @e[type=marker,tag=rngSelected,tag=rngThun] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/lightning/givethun
 kill @e[type=marker,tag=rng3]

@@ -16,5 +16,5 @@ loot give @s[scores={HasCata=0},tag=!fullHotbar] loot items:normal/catapult
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasCata=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackCata] run tag @e[type=armor_stand,tag=Selection] add givenCata
+execute unless entity @s[tag=BackCata] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenCata
 execute unless entity @s[tag=BackCata] run tag @e[type=armor_stand,tag=Bot] add BotHasCata

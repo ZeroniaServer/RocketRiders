@@ -16,5 +16,5 @@ loot give @s[scores={HasBroad=0},tag=!fullHotbar] loot items:special/broadsword
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasBroad=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackBroad] run tag @e[type=armor_stand,tag=Selection] add givenBroad
+execute unless entity @s[tag=BackBroad] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenBroad
 execute unless entity @s[tag=BackBroad] run tag @e[type=armor_stand,tag=Bot] add BotHasBroad

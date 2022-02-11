@@ -16,5 +16,5 @@ give @s[team=Yellow,scores={HasShield=0},tag=!fullHotbar] snowball{CustomModelDa
 give @s[team=Blue,scores={HasShield=0},tag=!fullHotbar] snowball{CustomModelData:1,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Shield","color":"blue","bold":true}]',Lore:['{"text":"Throw to spawn a glass Shield.","color":"gray"}','{"text":"This is able to stop most missiles.","color":"gray"}']}} 1
 
 #Game tracking
-tag @e[type=armor_stand,tag=Selection,tag=givenShield] add givenShieldTwice
-tag @e[type=armor_stand,tag=Selection] add givenShield
+tag @e[type=armor_stand,tag=Selection,tag=givenShield,tag=tetrisTime] add givenShieldTwice
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenShield

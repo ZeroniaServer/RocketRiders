@@ -23,9 +23,13 @@ execute if entity @s[tag=canopyStreaked,scores={canopyStreak=1..}] if entity @e[
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=2..}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run tag @s add canopyStreaked
 
 #Select item (75% chance)
+execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add getItem
+execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run tag @s add tetrisTime
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run function items:tetris
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run function items:rng
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run function items:tetris
+execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run tag @a remove getItem
+execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run tag @s remove tetrisTime
 execute if entity @s[scores={canopyStreak=1..}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run scoreboard players remove @s canopyStreak 1
 tag @s add gaveFirstItem
 execute if entity @s[tag=canopyStreaked,scores={canopyStreak=..0}] run tag @s remove canopyStreaked

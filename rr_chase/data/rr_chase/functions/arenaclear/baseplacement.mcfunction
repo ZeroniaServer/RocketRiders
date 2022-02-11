@@ -5,6 +5,16 @@ function arenaclear:detailplacement
 fill -11 36 -75 35 59 -73 air
 fill -11 36 73 35 59 75 air
 
+#Waiting lobby stuff
+setblock -89 203 71 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;-104960843,799031877,-1461346492,636471740],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0="}]}}}
+setblock -92 204 74 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1360113007,-1973466880,-1569223220,914918317],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYyMzY4NWM2OTdiYTU1ZWRkYTQyNWVjZjFmZWM3MmZlZWI3YmI5ODVjNjUwNmIyY2VmMDcwNTE1ZTRlNTQ5MiJ9fX0="}]}}}
+setblock -94 200 75 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1532111907,970802464,-1472056034,1445216331],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0="}]}}}
+setblock -96 201 71 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1360113007,-1973466880,-1569223220,914918317],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYyMzY4NWM2OTdiYTU1ZWRkYTQyNWVjZjFmZWM3MmZlZWI3YmI5ODVjNjUwNmIyY2VmMDcwNTE1ZTRlNTQ5MiJ9fX0="}]}}}
+setblock -95 203 74 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;-104960843,799031877,-1461346492,636471740],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0="}]}}}
+setblock -98 199 74 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;-104960843,799031877,-1461346492,636471740],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0="}]}}}
+setblock -100 201 78 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1532111907,970802464,-1472056034,1445216331],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0="}]}}}
+
+
 #Flag placement
 fill 12 64 65 12 71 65 oak_fence replace air
 setblock 12 71 64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"minecraft:finish_flag1"}

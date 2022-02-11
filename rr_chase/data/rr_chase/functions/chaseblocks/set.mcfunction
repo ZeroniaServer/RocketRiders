@@ -1,0 +1,8 @@
+execute unless entity @e[tag=ChaseBlock,distance=..7] at @s if entity @s[scores={CmdData=0}] run setblock ~ ~ ~ red_stained_glass
+execute unless entity @e[tag=ChaseBlock,distance=..7] at @s if entity @s[scores={CmdData=1}] run setblock ~ ~ ~ purple_stained_glass
+execute unless entity @e[tag=ChaseBlock,distance=..7] at @s if entity @s[scores={CmdData=2}] run setblock ~ ~ ~ cyan_stained_glass
+
+
+execute unless entity @e[tag=ChaseBlock,distance=..7] at @s if entity @s[scores={CmdData=0}] run summon armor_stand ~ ~-1.25 ~ {Marker:1b,Invisible:1b,Invulnerable:1b,Tags:["ChaseBlock","MissileBlock"],ArmorItems:[{},{},{},{Count:1b,id:"minecraft:player_head",tag:{SkullOwner:MHF_tnt2}}]}
+execute unless entity @e[tag=ChaseBlock,distance=..7] at @s if entity @s[scores={CmdData=1}] run summon armor_stand ~ ~-1.25 ~ {Marker:1b,Invisible:1b,Invulnerable:1b,Tags:["ChaseBlock","UtilBlock"],ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;420496346,704925621,-2097778403,1450691027],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjdkNTdiNWJjOWFiM2Y1M2VjOWNjMmY5NGI3MmMxMzRhY2RlODU1YTY0M2MyNWU1YTI2YzNlMGIyYTYwM2FkZCJ9fX0="}]}}}}]}
+execute unless entity @e[tag=ChaseBlock,distance=..7] at @s if entity @s[scores={CmdData=2}] run summon armor_stand ~ ~-1.25 ~ {Marker:1b,Invisible:1b,Invulnerable:1b,Tags:["ChaseBlock","ArrowBlock"],ArmorItems:[{},{},{},{Count:1b,id:"minecraft:player_head",tag:{SkullOwner:{Id:[I;420734319,-1890433985,-1632698173,2137911659],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzNjM2E5YmRjOGM0MGM0MmQ4NDFkYWViNzFlYTllN2QxYzU0YWIzMWEyM2EyZDkyNjU5MWQ1NTUxNDExN2U1ZCJ9fX0="}]}}}}]}

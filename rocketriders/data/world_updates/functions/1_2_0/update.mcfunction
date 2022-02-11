@@ -1,3 +1,19 @@
+#Pre-1.0.4 compatibility
+scoreboard objectives add moleratConfirm trigger
+
+#Pre-1.1.0 compatibility
+scoreboard objectives remove displayinfo
+scoreboard objectives add displayinfo trigger
+schedule function lobby:replacesigns 3t append
+scoreboard players add $reloaded CmdData 1
+schedule function arenaclear:refreshcheck 3t append
+
+#Pre-1.1.4 compatibility
+scoreboard objectives add HasICBM dummy
+
+#Fix blackstone slab
+setblock -56 208 76 blackstone_slab
+
 #> Update beeshield commands
 #Blue
 setblock -25 184 -100 minecraft:structure_block[mode=save]{ignoreEntities:0b,mode:"SAVE",posX:0,posY:1,posZ:0,sizeX:5,sizeY:5,sizeZ:1,name:"bees_blue_full"}

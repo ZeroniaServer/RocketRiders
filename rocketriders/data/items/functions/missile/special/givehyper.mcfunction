@@ -18,4 +18,4 @@ execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasHy
 
 #Game tracking
 execute unless entity @s[tag=BackHyper] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenHyper
-execute unless entity @s[tag=BackHyper] run tag @e[type=armor_stand,tag=Bot] add BotHasHyper
+execute unless entity @s[tag=BackHyper] run tag @e[type=armor_stand,tag=Bot] add HasHyper

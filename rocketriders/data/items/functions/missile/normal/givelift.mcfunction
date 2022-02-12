@@ -17,4 +17,4 @@ execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasLi
 
 #Game tracking
 execute unless entity @s[tag=BackLift] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenLift
-execute unless entity @s[tag=BackLift] run tag @e[type=armor_stand,tag=Bot] add BotHasLift
+execute unless entity @s[tag=BackLift] run tag @e[type=armor_stand,tag=Bot] add HasLift

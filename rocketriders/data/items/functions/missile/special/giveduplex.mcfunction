@@ -17,4 +17,4 @@ execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasDu
 
 #Game tracking
 execute unless entity @s[tag=BackDuplex] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenDuplex
-execute unless entity @s[tag=BackDuplex] run tag @e[type=armor_stand,tag=Bot] add BotHasDuplex
+execute unless entity @s[tag=BackDuplex] run tag @e[type=armor_stand,tag=Bot] add HasDuplex

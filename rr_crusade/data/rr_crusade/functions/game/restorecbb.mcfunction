@@ -9,7 +9,7 @@ execute unless score $CBB crusadehp matches 1.. as @a[team=Blue] at @s run plays
 execute unless score $CBB crusadehp matches 1.. as @a[team=Blue] at @s run playsound minecraft:block.glass.break master @s ~ ~ ~ 1 0
 
 execute if score $CBB crusadehp matches 1.. run gamerule showDeathMessages false
-execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 run execute as @e[type=player,team=!Spectator,team=!Developer,team=!Lobby,distance=..5] run tellraw @a ["",{"selector":"@s"},{"text":" went too close to an End Crystal","color":"white"}]
+execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 as @e[type=player,team=!Spectator,team=!Developer,team=!Lobby,distance=..5] run tellraw @a ["",{"selector":"@s"},{"text":" went too close to an End Crystal","color":"white"}]
 execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 run kill @a[team=!Spectator,team=!Developer,team=!Lobby,distance=..5]
 execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 run gamerule showDeathMessages true
 execute if score $CBB crusadehp matches 1.. run fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass

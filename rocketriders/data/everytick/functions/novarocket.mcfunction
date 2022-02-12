@@ -165,6 +165,7 @@ execute as @a[tag=BlueNovaAttach,scores={novattach=1}] at @s run playsound minec
 execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levitation 1 70 true
 execute as @a[tag=BlueNovaAttach,scores={novattach=4..}] run effect clear @s levitation
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[tag=YellowPlatform,distance=..7,limit=1,sort=nearest] add killCanopy
+execute if entity @e[tag=Selection,tag=chaseEnabled] as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[tag=BluePlatform,distance=..7,limit=1,sort=nearest] add killCanopy
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~ 3 0
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]}}}}

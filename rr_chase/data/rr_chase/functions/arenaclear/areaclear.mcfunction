@@ -10,6 +10,8 @@ kill @e[type=marker,tag=chaseStairs]
 #Waiting lobby stuff
 fill -88 195 66 -102 211 90 air replace minecraft:player_head
 
+function rr_chase:chaseblocks/killall
+
 #reset pregame queue
 execute if entity @e[type=armor_stand,tag=Selection,tag=!chaseEnabled] run setblock -95 202 95 air
 execute if entity @e[type=armor_stand,tag=Selection,tag=!chaseEnabled,tag=!Hardcore] run fill -89 201 96 -101 195 95 white_stained_glass

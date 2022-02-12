@@ -4,9 +4,9 @@ scoreboard players set @e[tag=ChaseBlockX] RNGmax 52
 summon marker -14 40 -51 {Tags:["ChaseBlockPos","ChaseBlockY"]}
 scoreboard players set @e[tag=ChaseBlockY] RNGmax 20
 summon marker -14 40 -51 {Tags:["ChaseBlockPos","ChaseBlockZ"]}
-scoreboard players set @e[tag=ChaseBlockZ] RNGmax 35
+scoreboard players set @e[tag=ChaseBlockZ] RNGmax 65
 summon marker -14 40 -51 {Tags:["ChaseBlockPos","ChaseBlockType"]}
-scoreboard players set @e[tag=ChaseBlockType] RNGmax 3
+scoreboard players set @e[tag=ChaseBlockType] RNGmax 110
 
 execute as @e[tag=ChaseBlockPos] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[tag=ChaseBlockPos] run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -19,3 +19,6 @@ execute as @e[tag=SpawnChaseBlock] at @s store result score @s CmdData run score
 execute as @e[tag=SpawnChaseBlock] at @s run function rr_chase:chaseblocks/teleport
 
 kill @e[tag=ChaseBlockPos]
+
+scoreboard players remove $ChaseBlocks CmdData 1
+execute if score $ChaseBlocks CmdData matches 1.. run function rr_chase:chaseblocks/spawn

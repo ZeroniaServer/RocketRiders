@@ -55,6 +55,12 @@ fill -21 185 -100 -25 189 -100 minecraft:structure_void replace air
 setblock -26 184 -100 minecraft:redstone_block
 fill -21 189 -100 -26 184 -100 air
 
+#> Chase mode scores
+scoreboard objectives add BreakCBRed minecraft.mined:minecraft.red_stained_glass
+scoreboard objectives add BreakCBCyan minecraft.mined:minecraft.cyan_stained_glass
+scoreboard objectives add BreakCBPurple minecraft.mined:minecraft.purple_stained_glass
+scoreboard objectives add BreakCBTint minecraft.mined:minecraft.tinted_glass
+
 #> !!!! Necessary update command! Make sure not to leave this one commented out on release !!!!
 tellraw @a {"text":"Successfully applied updates from Rocket Riders 1.2.0","color":"green"}
 #scoreboard players set $WorldVersion CmdData 1200

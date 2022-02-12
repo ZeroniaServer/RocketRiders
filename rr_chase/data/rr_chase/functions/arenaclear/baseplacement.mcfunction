@@ -15,6 +15,10 @@ setblock -98 199 74 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;-1049608
 setblock -100 201 78 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1532111907,970802464,-1472056034,1445216331],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0="}]}}}
 
 
+#Chase blocks
+scoreboard players set $ChaseBlocks CmdData 100
+function rr_chase:chaseblocks/spawn
+
 #Flag placement
 fill 12 64 65 12 71 65 oak_fence replace air
 setblock 12 71 64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"minecraft:finish_flag1"}

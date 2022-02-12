@@ -1,6 +1,7 @@
 ##Actions to be performed upon world load
 schedule function lobby:credits/restart 3t append
 scoreboard players set $barriers CmdData 73
+scoreboard players add $reloaded CmdData 1
 
 #Add teams for Paper compatibility
 team add Lobby

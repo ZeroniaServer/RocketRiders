@@ -5,7 +5,6 @@ scoreboard objectives add moleratConfirm trigger
 scoreboard objectives remove displayinfo
 scoreboard objectives add displayinfo trigger
 schedule function lobby:replacesigns 3t append
-scoreboard players add $reloaded CmdData 1
 schedule function arenaclear:refreshcheck 3t append
 
 #Pre-1.1.4 compatibility

@@ -1,16 +1,16 @@
-#Pre-1.0.4 compatibility
+#> Pre-1.0.4 compatibility
 scoreboard objectives add moleratConfirm trigger
 
-#Pre-1.1.0 compatibility
+#> Pre-1.1.0 compatibility
 scoreboard objectives remove displayinfo
 scoreboard objectives add displayinfo trigger
 schedule function lobby:replacesigns 3t append
 schedule function arenaclear:refreshcheck 3t append
 
-#Pre-1.1.4 compatibility
+#> Pre-1.1.4 compatibility
 scoreboard objectives add HasICBM dummy
 
-#Fix blackstone slab
+#> Fix blackstone slab
 setblock -56 208 76 blackstone_slab
 
 #> Update beeshield commands

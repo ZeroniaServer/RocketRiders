@@ -112,6 +112,9 @@ execute if entity @s[tag=GameStarted,tag=!GameEnd] run tag @a remove CalculateLo
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
 execute if entity @s[tag=GameStarted] run scoreboard players set @a[team=Yellow] jumps 0
 execute if entity @s[tag=GameStarted] run scoreboard players set @a[team=Blue] jumps 0
+#Hotfix for improperly triggering achievements
+execute if entity @s[tag=GameStarted] run scoreboard players reset * PlayerKills
+execute if entity @s[tag=GameStarted] run scoreboard players reset * PlayerDeaths
 #Enabling damage gamerules
 execute if entity @s[tag=GameStarted] run gamerule drowningDamage true
 execute if entity @s[tag=GameStarted] run gamerule fireDamage true

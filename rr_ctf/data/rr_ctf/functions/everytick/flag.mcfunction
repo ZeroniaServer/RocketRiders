@@ -144,7 +144,7 @@ execute if score FY1: FlagScore matches 0 run fill 32 66 64 31 65 64 yellow_wool
 execute if score FY1: FlagScore matches 0 run setblock 30 65 64 yellow_wool
 
 #No more funny flag
-execute if score FY1: FlagScore matches 0 run fill 30 71 63 34 72 64 air replace yellow_wool
+execute if score FY1: FlagScore matches 0 run fill 30 67 63 34 72 64 air replace yellow_wool
 
 #Capture Yellow Flag 2 (the flag on yellow's left)
 execute as @e[type=player,team=Blue,scores={MinePurpleGlass=1..}] positioned -10 65 64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Blue,scores={MinePurpleGlass=1..},distance=..7] if score FY2: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"blue"},{"text":" lowered a ","color":"yellow"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"yellow"},"\n"]
@@ -195,7 +195,7 @@ execute if score FY2: FlagScore matches 0 run fill -12 66 64 -13 65 64 yellow_wo
 execute if score FY2: FlagScore matches 0 run setblock -14 65 64 yellow_wool
 
 #No more funny flag
-execute if score FY2: FlagScore matches 0 run fill -10 71 63 -14 72 64 air replace yellow_wool
+execute if score FY2: FlagScore matches 0 run fill -10 67 63 -14 72 64 air replace yellow_wool
 
 #Capture Blue Flag 1 (the flag on blue's right)
 execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned -10 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB1: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"aqua"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"aqua"},"\n"]
@@ -246,7 +246,7 @@ execute if score FB1: FlagScore matches 0 run fill -12 66 -64 -13 65 -64 blue_wo
 execute if score FB1: FlagScore matches 0 run setblock -14 65 -64 blue_wool
 
 #No more funny flag
-execute if score FB1: FlagScore matches 0 run fill -10 71 -65 -14 72 -64 air replace blue_wool
+execute if score FB1: FlagScore matches 0 run fill -10 67 -65 -14 72 -64 air replace blue_wool
 
 #Capture Blue Flag 2 (the flag on blue's left)
 execute as @e[type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore > 29 FlagScore run tellraw @a[team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"aqua"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"aqua"},"\n"]
@@ -297,7 +297,7 @@ execute if score FB2: FlagScore matches 0 run fill 32 66 -64 31 65 -64 blue_wool
 execute if score FB2: FlagScore matches 0 run setblock 30 65 -64 blue_wool
 
 #No more funny flag
-execute if score FB2: FlagScore matches 0 run fill 30 71 -65 34 72 -64 air replace blue_wool
+execute if score FB2: FlagScore matches 0 run fill 30 67 -65 34 72 -64 air replace blue_wool
 
 #Add tags for flag carriers
 tag @e[type=player,team=Blue,tag=CarryFY1] add CarryFlag

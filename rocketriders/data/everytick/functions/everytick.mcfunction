@@ -71,9 +71,10 @@ execute as @e[type=armor_stand,tag=Selection,tag=GameEnd,tag=!NoModesInstalled] 
 execute as @e[type=armor_stand,tag=Selection,tag=SuddenDeath,tag=!SuddenDeathCustom,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
 execute if entity @e[type=marker,tag=ArenaClearChecker] as @a run function everytick:stopsounds
 execute if entity @e[type=marker,tag=ArenaClearChecker,tag=!Cleared,tag=!BacePlaced] run scoreboard players add $acdelay CmdData 1
-execute if score $acdelay CmdData matches 6.. run tellraw @a {"text":"Warning: Force clearing arena since previous gamemode is unknown.","color":"red"}
-execute if score $acdelay CmdData matches 6.. run tag @e[type=armor_stand,tag=Selection] add normalLast
-execute if score $acdelay CmdData matches 6.. run scoreboard players reset $acdelay CmdData
+execute if score $acdelay CmdData matches 3.. run tellraw @a {"text":"Warning: Force clearing arena since previous gamemode is unknown.","color":"red"}
+execute if score $acdelay CmdData matches 3.. run tag @e[type=armor_stand,tag=Selection] add normalLast
+execute if score $acdelay CmdData matches 3.. run scoreboard players reset $acdelay CmdData
+execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced] run scoreboard players reset $acdelay CmdData
 kill @e[type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsignsquery

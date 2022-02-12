@@ -1,8 +1,8 @@
 execute as @e[tag=ChaseBlock] at @s if block ~ ~1.25 ~-1 moving_piston run setblock ~ ~1.25 ~ air destroy
-execute as @e[tag=ChaseBlock] at @s unless block ~1 ~1.25 ~-1 air run setblock ~ ~1.25 ~ air destroy
-execute as @e[tag=ChaseBlock] at @s unless block ~-1 ~1.25 ~-1 air run setblock ~ ~1.25 ~ air destroy
-execute as @e[tag=ChaseBlock] at @s unless block ~ ~2.25 ~-1 air run setblock ~ ~1.25 ~ air destroy
-execute as @e[tag=ChaseBlock] at @s unless block ~ ~0.25 ~-1 air run setblock ~ ~1.25 ~ air destroy
+execute as @e[tag=ChaseBlock] at @s unless block ~1 ~1.25 ~-1 #rr_chase:chaseblockneighbor run setblock ~ ~1.25 ~ air destroy
+execute as @e[tag=ChaseBlock] at @s unless block ~-1 ~1.25 ~-1 #rr_chase:chaseblockneighbor run setblock ~ ~1.25 ~ air destroy
+execute as @e[tag=ChaseBlock] at @s unless block ~ ~2.25 ~-1 #rr_chase:chaseblockneighbor run setblock ~ ~1.25 ~ air destroy
+execute as @e[tag=ChaseBlock] at @s unless block ~ ~0.25 ~-1 #rr_chase:chaseblockneighbor run setblock ~ ~1.25 ~ air destroy
 
 execute as @a[team=Blue] at @s if entity @e[tag=MissileBlock,distance=..3] if block ~ ~-1 ~ red_stained_glass run setblock ~ ~-1 ~ air destroy
 execute as @a[team=Blue] at @s if entity @e[tag=UtilBlock,distance=..3] if block ~ ~-1 ~ purple_stained_glass run setblock ~ ~-1 ~ air destroy

@@ -127,6 +127,7 @@ execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at
 execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ^ ^-0.2 ^0.8 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ^ ^-0.2 ^0.8 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @a[tag=YellowNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
+execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s if entity @e[tag=BluePlatform,tag=killCanopy,distance=..5,limit=1] run scoreboard players set @s novattach 2
 execute as @a[tag=YellowNovaAttach] run tag @s[scores={novattach=15..},nbt={OnGround:1b}] remove YellowNovaAttach
 
 ##Blue Nova Rocket Functionality
@@ -170,4 +171,5 @@ execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ^ ^-0.2 ^0.8 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ^ ^-0.1 ^0.8 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @a[tag=BlueNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force
+execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s if entity @e[tag=YellowPlatform,tag=killCanopy,distance=..5,limit=1] run scoreboard players set @s novattach 2
 execute as @a[tag=BlueNovaAttach] run tag @s[scores={novattach=15..},nbt={OnGround:1b}] remove BlueNovaAttach

@@ -33,3 +33,4 @@ execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s
 execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run scoreboard players set @s novatimer 31
 execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run tag @s add NovaLost
 execute as @e[type=marker,tag=bluenovatracker] at @s unless entity @e[type=firework_rocket,tag=BlueNova,distance=..3,limit=1,sort=nearest] run tag @s add NovaLost
+execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s if entity @e[tag=BluePlatform,tag=killCanopy,distance=..5,limit=1] run scoreboard players set @s novattach 2

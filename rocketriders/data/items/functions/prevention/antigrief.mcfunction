@@ -29,10 +29,10 @@ execute if entity @s[tag=YellowWar,tag=!UnableMissile] at @s positioned ~-1 175 
 execute if entity @s[tag=YellowWar,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-14 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~10 ~ 175 ~ filtered #custom:antigrief force
 
 #Thunderbolt
-execute if entity @s[tag=BlueBolt,tag=!UnableMissile] at @s positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~1 ~10 void_air
-execute if entity @s[tag=BlueBolt,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~10 ~ 175 ~ filtered #custom:antigrief force
-execute if entity @s[tag=YellowBolt,tag=!UnableMissile] at @s positioned ~-1 175 ~-14 store result score @s Volume run fill ~ ~ ~ ~2 ~1 ~10 void_air
-execute if entity @s[tag=YellowBolt,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~-14 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~10 ~ 175 ~ filtered #custom:antigrief force
+execute if entity @s[tag=BlueBolt,tag=!UnableMissile] at @s positioned ~-1 175 ~5 store result score @s Volume run fill ~ ~ ~ ~2 ~1 ~9 void_air
+execute if entity @s[tag=BlueBolt,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~5 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~9 ~ 175 ~ filtered #custom:antigrief force
+execute if entity @s[tag=YellowBolt,tag=!UnableMissile] at @s positioned ~-1 175 ~-14 store result score @s Volume run fill ~ ~ ~ ~2 ~1 ~9 void_air
+execute if entity @s[tag=YellowBolt,tag=!UnableMissile] at @s positioned ~-1 ~-5 ~-14 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~9 ~ 175 ~ filtered #custom:antigrief force
 
 #Hurricane
 execute if entity @s[tag=BlueHur,tag=!UnableMissile] at @s positioned ~-1 175 ~5 store result score @s Volume run fill ~ ~ ~ ~2 ~1 ~8 void_air

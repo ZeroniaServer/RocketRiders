@@ -16,7 +16,7 @@ setblock -100 201 78 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1532111
 
 
 #Chase blocks
-scoreboard players set $ChaseBlocks CmdData 100
+scoreboard players set $ChaseBlocks CmdData 150
 function rr_chase:chaseblocks/spawn
 
 #Flag placement

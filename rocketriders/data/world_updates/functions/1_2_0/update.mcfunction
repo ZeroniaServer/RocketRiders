@@ -60,6 +60,7 @@ scoreboard objectives add BreakCBRed minecraft.mined:minecraft.red_stained_glass
 scoreboard objectives add BreakCBCyan minecraft.mined:minecraft.cyan_stained_glass
 scoreboard objectives add BreakCBPurple minecraft.mined:minecraft.purple_stained_glass
 scoreboard objectives add BreakCBTint minecraft.mined:minecraft.tinted_glass
+scoreboard objectives add ChaseAlarm dummy
 
 #> !!!! Necessary update command! Make sure not to leave this one commented out on release !!!!
 tellraw @a {"text":"Successfully applied updates from Rocket Riders 1.2.0","color":"green"}

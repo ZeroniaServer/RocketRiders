@@ -36,8 +36,8 @@ function rr_chase:chaseblocks/chasecrystal
 # Respawn chase blocks
 scoreboard players set $ChaseBlockCheck CmdData 0
 execute as @e[tag=ChaseBlock] run scoreboard players add $ChaseBlockCheck CmdData 1
-execute if score $ChaseBlockCheck CmdData matches ..80 run scoreboard players set $ChaseBlocks CmdData 20
-execute if score $ChaseBlockCheck CmdData matches ..80 run function rr_chase:chaseblocks/spawn
+execute if score $ChaseBlockCheck CmdData matches ..145 run scoreboard players set $ChaseBlocks CmdData 5
+execute if score $ChaseBlockCheck CmdData matches ..145 run function rr_chase:chaseblocks/spawn
 
 #Make flag wave around
 execute if score FlagWave FlagScore matches 20 run setblock 12 71 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"finish_flag1"}

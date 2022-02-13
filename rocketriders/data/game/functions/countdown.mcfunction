@@ -102,6 +102,7 @@ execute if entity @s[tag=GameStarted] run gamemode survival @a[team=Blue]
 execute if entity @s[tag=GameStarted,tag=!noSabers] run clear @a[team=Blue] bow
 execute if entity @s[tag=GameStarted,tag=!noSabers] run clear @a[team=Yellow] bow
 execute if entity @s[tag=GameStarted,tag=!noSabers] as @a[team=Blue] unless entity @e[type=armor_stand,tag=chaseEnabled] run function game:saberblue
+execute if entity @s[tag=GameStarted,tag=!noSabers] as @a[team=Blue] if entity @e[type=armor_stand,tag=chaseEnabled] run function rr_chase:chasegear/givegear
 execute if entity @s[tag=GameStarted,tag=!noSabers] as @a[team=Yellow] run function game:saberyellow
 execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[team=Blue] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]
 execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]

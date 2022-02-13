@@ -13,23 +13,26 @@ execute if entity @e[tag=ChaseCrystal] run scoreboard players reset @a[tag=InLea
 scoreboard players reset @a[tag=!InLead,scores={ChaseAlarm=1..}] ChaseAlarm
 execute if entity @e[tag=ChaseCrystal] run scoreboard players add @a[tag=InLead]
 
-
 #Flight
 execute as @e[tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[tag=InLead,limit=1,sort=nearest]
 execute as @e[tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.20
+execute as @e[tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
 execute as @e[tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
 execute as @e[tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
 execute as @e[tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[tag=InLead,limit=1,sort=nearest]
 execute as @e[tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.10
+execute as @e[tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
 execute as @e[tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
 execute as @e[tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
 
 execute as @e[tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[tag=InLead,limit=1,sort=nearest]
 execute as @e[tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.20
+execute as @e[tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
 execute as @e[tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
 execute as @e[tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
 execute as @e[tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run tp @s ~ ~ ~ facing entity @a[tag=InLead,limit=1,sort=nearest]
 execute as @e[tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run tp @s ^ ^ ^0.20
+execute as @e[tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run function rr_chase:chaseblocks/shootcrystal
 execute as @e[tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
 execute as @e[tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
 execute as @e[tag=ChaseCrystal] at @s if entity @a[tag=InLead,distance=..2] run tag @s add CrystalComplete

@@ -43,13 +43,13 @@ clear @a[tag=JoinBlue]
 execute if entity @s[tag=!noSabers] as @a[tag=JoinBlue] run function game:saberblue
 execute if entity @s[tag=!GameStarted,tag=!customSpawns] run tp @a[tag=JoinBlue] -95 202 60 0 0
 execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
-execute if entity @s[tag=!GameStarted,tag=chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"dark_red"},{"text":" joined the race!","color":"red"}]
+execute if entity @s[tag=!GameStarted,tag=chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
 execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] run tellraw @a[tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"blue","italic":true}
 execute if entity @s[tag=!GameStarted,tag=chaseEnabled] run tellraw @a[tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"red","italic":true}
 execute if entity @s[tag=!GameStarted] run effect give @a[tag=JoinBlue] resistance 1000000 255 true
 execute if entity @s[tag=GameStarted,tag=!customSpawns] run tp @a[tag=JoinBlue] 12 64 -66 0 0
 execute if entity @s[tag=GameStarted,tag=!chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
-execute if entity @s[tag=GameStarted,tag=chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"dark_red"},{"text":" joined the race! A late arrival, unfortunately.","color":"red"}]
+execute if entity @s[tag=GameStarted,tag=chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
 execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]
 execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Use ","color":"aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]
 execute if entity @s[tag=GameStarted] run gamemode survival @a[team=Blue,gamemode=adventure]

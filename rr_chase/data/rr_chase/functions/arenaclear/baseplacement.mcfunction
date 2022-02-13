@@ -2,8 +2,8 @@ function arenaclear:baseplacement
 function arenaclear:detailplacement
 
 fill 38 34 52 -14 63 56 glass replace yellow_stained_glass
-fill 38 34 -57 -14 63 -61 minecraft:lime_stained_glass replace cyan_stained_glass
-fill -14 34 -52 38 63 -56 minecraft:green_stained_glass replace blue_stained_glass
+fill 38 34 -57 -14 63 -61 minecraft:pink_stained_glass replace cyan_stained_glass
+fill -14 34 -52 38 63 -56 minecraft:red_stained_glass replace blue_stained_glass
 fill 38 34 57 -14 63 61 minecraft:light_gray_stained_glass replace orange_stained_glass
 
 fill 38 34 52 -14 63 56 glass replace yellow_stained_glass
@@ -74,8 +74,8 @@ fill -101 196 96 -101 196 95 obsidian replace white_stained_glass
 team modify Blue color red
 fill -79 204 63 -81 204 61 minecraft:white_concrete replace minecraft:blue_concrete
 fill -79 204 95 -81 204 93 bedrock replace minecraft:yellow_concrete
-fill -101 195 65 -89 201 64 minecraft:green_stained_glass
-fill -89 201 63 -101 195 62 minecraft:lime_stained_glass
+fill -101 195 65 -89 201 64 minecraft:red_stained_glass
+fill -89 201 63 -101 195 62 minecraft:pink_stained_glass
 #pain
 fill -89 200 91 -90 201 92 minecraft:black_stained_glass
 fill -91 200 91 -92 201 92 minecraft:white_stained_glass
@@ -149,17 +149,17 @@ fill -14 63 73 38 34 75 gray_stained_glass replace yellow_stained_glass
 fill -14 63 73 38 34 75 gray_stained_glass replace orange_stained_glass
 
 #Blue Decorations
-fill -14 84 -66 38 63 -48 green_stained_glass replace blue_stained_glass
-fill -14 84 -66 38 63 -48 green_stained_glass replace cyan_stained_glass
+fill -14 84 -66 38 63 -48 red_stained_glass replace blue_stained_glass
+fill -14 84 -66 38 63 -48 red_stained_glass replace cyan_stained_glass
 
-fill 38 63 -55 -14 34 -40 green_stained_glass replace blue_stained_glass
-fill 38 63 -55 -14 34 -40 green_stained_glass replace cyan_stained_glass
+fill 38 63 -55 -14 34 -40 red_stained_glass replace blue_stained_glass
+fill 38 63 -55 -14 34 -40 red_stained_glass replace cyan_stained_glass
 
-fill 38 63 -39 -14 34 -29 green_stained_glass replace blue_stained_glass
-fill 38 63 -39 -14 34 -29 green_stained_glass replace cyan_stained_glass
+fill 38 63 -39 -14 34 -29 red_stained_glass replace blue_stained_glass
+fill 38 63 -39 -14 34 -29 red_stained_glass replace cyan_stained_glass
 
-fill -14 63 -73 38 34 -75 green_stained_glass replace blue_stained_glass
-fill -14 63 -73 38 34 -75 green_stained_glass replace cyan_stained_glass
+fill -14 63 -73 38 34 -75 red_stained_glass replace blue_stained_glass
+fill -14 63 -73 38 34 -75 red_stained_glass replace cyan_stained_glass
 
 
 #cancel yellow

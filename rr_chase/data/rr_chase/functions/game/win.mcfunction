@@ -24,7 +24,7 @@ execute as @a[team=Blue] run effect give @s regeneration 1 255 true
 execute as @a[team=Blue] at @s run stopsound @s
 execute as @a[team=Blue,tag=Winner] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
 execute as @a[team=Blue,tag=Loser] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2
-title @a[team=!Lobby] title ["",{"selector":"@a[team=Blue,tag=Winner,limit=1]","color":"blue"},{"text":" Won!","color":"blue"}]
+title @a[team=!Lobby] title ["",{"selector":"@a[team=Blue,tag=Winner,limit=1]","color":"dark_red"},{"text":" Won!","color":"red"}]
 tellraw @a ["",{"selector":"@a[team=Blue,tag=Winner,limit=1]","color":"blue","bold":true},{"text":" Won!","color":"blue","bold":true}]
 
 ##Splashes

@@ -2,7 +2,8 @@
 tag @a[tag=LeaveTeams,team=Yellow] add LeavingYellow
 execute as @a[tag=LeavingYellow] run tellraw @a ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
 tag @a[tag=LeaveTeams,team=Blue] add LeavingBlue
-execute as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
+execute unless entity @e[type=armor_stand,tag=chaseEnabled] as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
+execute if entity @e[type=armor_stand,tag=chaseEnabled] as @a[tag=LeavingBlue] run tellraw @a ["",{"selector":"@s","color":"dark_red"},{"text":" left the race!","color":"red"}]
 tag @a[tag=LeaveTeams,team=Spectator] add LeavingSpec
 execute as @a[tag=LeavingSpec] run tellraw @a ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
 execute as @a[tag=LeavingSpec] run tp @s @s

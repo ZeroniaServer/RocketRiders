@@ -1,0 +1,7 @@
+summon armor_stand ~ ~ ~ {Silent:1b,DisabledSlots:4144959,Tags:["Bot","Blue","BlueBot","NewBot"],Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,CustomNameVisible:1b,CustomName:'{"text":"[BOT]","color":"blue"}'}
+item replace entity @e[tag=BlueBot,tag=NewBot] armor.head with player_head{display:{Name:"{\"text\":\"Elemental Prototype (Water)\"}"},SkullOwner:{Id:[I;-1925825735,286674216,-1522073039,-1856057337],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQzNzI4NTc5MzEzMWVkNzU1ZjFiMDA5OGYyOWRkNDEzZDY3NjU2YjYyMDg3Mjg5MzU0OTJiNDliMWQwZDRiYSJ9fX0="}]}}}
+item replace entity @e[tag=BlueBot,tag=NewBot] armor.chest with leather_chestplate{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:3949738},HideFlags:127,Unbreakable:1}
+item replace entity @e[tag=BlueBot,tag=NewBot] armor.legs with leather_leggings{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:3949738},HideFlags:127,Unbreakable:1}
+item replace entity @e[tag=BlueBot,tag=NewBot] armor.feet with leather_boots{display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:3949738},HideFlags:127,Unbreakable:1}
+
+execute as @e[tag=BlueBot,tag=NewBot] store result score @s AI_Data run data get entity @s UUID[0]

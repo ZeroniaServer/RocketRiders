@@ -40,7 +40,7 @@ execute if entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings,
 team join Blue @a[tag=JoinBlue]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinBlue]
-execute if entity @s[tag=!noSabers] as @a[tag=JoinBlue] run function game:saberblue
+execute if entity @s[tag=!noSabers] as @a[tag=JoinBlue] unless entity @e[type=armor_stand,tag=chaseEnabled] run function game:saberblue
 execute if entity @s[tag=!GameStarted,tag=!customSpawns] run tp @a[tag=JoinBlue] -95 202 60 0 0
 execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
 execute if entity @s[tag=!GameStarted,tag=chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]

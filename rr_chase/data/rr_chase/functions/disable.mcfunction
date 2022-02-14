@@ -32,4 +32,10 @@ tag @s remove customNova
 tag @s remove customShield
 tag @s remove onlyBlue
 tag @s remove antigriefOff
+
+#haha funny
+tag @e[type=marker,tag=tempyellow] remove bluejoinpad
+tag @e[type=marker,tag=tempyellow] add yellowjoinpad
+tag @e[type=marker,tag=tempyellow] remove tempyellow
+
 tag @s add switchGamemodes

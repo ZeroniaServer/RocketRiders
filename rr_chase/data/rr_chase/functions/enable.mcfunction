@@ -27,6 +27,11 @@ tag @s add onlyBlue
 tag @s add antigriefOff
 team modify Blue friendlyFire true
 
+#haha funny
+tag @e[type=marker,tag=yellowjoinpad] add tempyellow
+tag @e[type=marker,tag=yellowjoinpad] add bluejoinpad
+tag @e[type=marker,tag=yellowjoinpad] remove yellowjoinpad
+
 #enable arrows/utilities
 tag @s[tag=!rngArrows] add arrowsWasOff
 tag @s add rngArrows

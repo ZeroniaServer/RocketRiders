@@ -64,6 +64,7 @@ function rr_chase:game/overwrite
 scoreboard players add @a[team=Blue] deathCooldown 0
 bossbar set rr:startgame players @a[team=Lobby]
 bossbar set rr_chase:lead players @a[team=!Lobby]
+bossbar set rr_chase:lead color red
 tag @a[team=Blue] remove InLead
 execute if entity @s[tag=!Hardcore] as @a[team=Blue] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
 execute if entity @s[tag=Hardcore] as @a[team=Blue] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s add onBlue

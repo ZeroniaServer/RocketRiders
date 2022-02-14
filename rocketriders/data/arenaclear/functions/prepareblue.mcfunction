@@ -7,6 +7,9 @@ execute as @e[type=marker,tag=ArenaClearBlue,tag=!checked,limit=1] run data modi
 execute as @e[type=marker,tag=ArenaClearBlue,tag=!checked,limit=1] run data modify entity @s Pos[1] set from storage rocketriders:bmissilepos y[0]
 execute as @e[type=marker,tag=ArenaClearBlue,tag=!checked,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:bmissilepos z[0]
 
+#Spawn Power-clear entity
+execute as @e[type=marker,tag=ArenaClearBlue,tag=!checked,limit=1] at @s run summon marker ~2 ~-8 ~-3 {Tags:["PowerClearAEC","PowerClearBlue"]}
+
 #Extra offset for superspeed clears
 execute as @e[type=marker,tag=ArenaClearBlue,tag=!checked,limit=1] at @s run tp @s ~2 ~-8 ~-3
 

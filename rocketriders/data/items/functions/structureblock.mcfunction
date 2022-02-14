@@ -25,6 +25,9 @@ setblock ~ ~-1 ~ observer[powered=true,facing=down]
 setblock ~ ~-1 ~ observer[powered=true,facing=down]
 clone ~ 255 ~ ~ 254 ~ ~ ~-1 ~ replace move
 
+##CHASE MODE - Missile color conversion
+execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] at @s positioned ~ ~2 ~ run function rr_chase:game/whitemissile
+
 ##Add 1 to appropriate missile count
 execute if entity @s[tag=bluemissile] run scoreboard players add @e[type=armor_stand,tag=Selection] bMissileCount 1
 execute if entity @s[tag=yellowmissile] run scoreboard players add @e[type=armor_stand,tag=Selection] yMissileCount 1

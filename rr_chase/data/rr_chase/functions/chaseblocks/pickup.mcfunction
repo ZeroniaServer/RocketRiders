@@ -1,15 +1,11 @@
 function rr_chase:chaseblocks/displaynear
+function rr_chase:chaseblocks/destroyunder
 
 execute as @e[tag=ChaseBlock] at @s if block ~ ~ ~-1 moving_piston run setblock ~ ~ ~ air destroy
 execute as @e[tag=ChaseBlock] at @s unless block ~1 ~ ~-1 #rr_chase:chaseblockneighbor run setblock ~ ~ ~ air destroy
 execute as @e[tag=ChaseBlock] at @s unless block ~-1 ~ ~-1 #rr_chase:chaseblockneighbor run setblock ~ ~ ~ air destroy
 execute as @e[tag=ChaseBlock] at @s unless block ~ ~2.25 ~-1 #rr_chase:chaseblockneighbor run setblock ~ ~ ~ air destroy
 execute as @e[tag=ChaseBlock] at @s unless block ~ ~0.25 ~-1 #rr_chase:chaseblockneighbor run setblock ~ ~ ~ air destroy
-
-execute as @a[team=Blue] at @s if entity @e[tag=MissileBlock,distance=..3] if block ~ ~-1 ~ red_stained_glass run setblock ~ ~-1 ~ air destroy
-execute as @a[team=Blue] at @s if entity @e[tag=UtilBlock,distance=..3] if block ~ ~-1 ~ purple_stained_glass run setblock ~ ~-1 ~ air destroy
-execute as @a[team=Blue] at @s if entity @e[tag=ArrowBlock,distance=..3] if block ~ ~-1 ~ cyan_stained_glass run setblock ~ ~-1 ~ air destroy
-execute as @a[team=Blue] at @s if entity @e[tag=CrystalBlock,distance=..3] if block ~ ~-1 ~ tinted_glass run setblock ~ ~-1 ~ air destroy
 
 execute as @e[tag=MissileBlock,tag=!KillChaseblock] at @s unless block ~ ~ ~ red_stained_glass run fill ~1 ~3 ~2 ~-1 ~-1 ~-2 air replace red_stained_glass
 execute as @e[tag=MissileBlock,tag=!KillChaseblock] at @s unless block ~ ~ ~ red_stained_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston
@@ -53,7 +49,8 @@ kill @e[tag=KillChaseblock3]
 execute as @e[tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @s add KillChaseblock3
 scoreboard players reset @a[scores={BreakCBCyan=1..}] BreakCBCyan
 
-execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] run title @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] actionbar {"text":"You're in the lead! You can not shoot crystals at yourself!","bold":true,"color":"red"}
+execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] run title @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] actionbar {"text":"You're in the lead! You can not shoot End Crystals at yourself!","bold":true,"color":"white"}
+execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] run tag @s remove Display
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] run setblock ~ ~ ~ tinted_glass
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass run fill ~ ~ ~3 ~ ~ ~ air replace tinted_glass
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston
@@ -61,7 +58,7 @@ execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ ti
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,distance=..8,scores={BreakCBTint=1..}] run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 1 2
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,distance=..8,scores={BreakCBTint=1..}] run particle minecraft:dragon_breath ~ ~ ~ 0.1 0.1 0.1 0.1 30 force
 
-execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,distance=..8,scores={BreakCBTint=1..}] run summon armor_stand ~ ~1 ~ {Silent:1b,Marker:1b,Invisible:1b,NoGravity:1b,Silent:1b,Invulnerable:1b,Tags:["ChaseCrystal"],Passengers:[{id:"end_crystal",ShowBottom:0b,Invulnerable:1b,Tags:["ChaseCrystal2"]}]}
+execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,distance=..8,scores={BreakCBTint=1..}] run summon armor_stand ~ ~1 ~ {Silent:1b,Marker:1b,Invisible:1b,NoGravity:1b,Silent:1b,Invulnerable:1b,Tags:["ChaseCrystal"],Passengers:[{id:"end_crystal",ShowBottom:0b,Glowing:1b,Invulnerable:1b,Tags:["ChaseCrystal2"]}]}
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,distance=..8,scores={BreakCBTint=1..}] run playsound minecraft:entity.shulker.shoot master @a ~ ~ ~ 1 1.3
 
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass run item replace entity @s armor.head with air

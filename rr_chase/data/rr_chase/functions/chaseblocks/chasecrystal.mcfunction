@@ -1,13 +1,15 @@
 #Alert leaders
 execute if entity @e[tag=ChaseCrystal] run scoreboard players add @a[tag=InLead] ChaseAlarm 1
-execute as @a[tag=InLead,scores={ChaseAlarm=1}] at @s unless entity @e[tag=ChaseCrystal,distance=..15] run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.2 1.5
-execute as @a[tag=InLead,scores={ChaseAlarm=1}] at @s if entity @e[tag=ChaseCrystal,distance=..15] run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.2 2
-execute as @a[tag=InLead,scores={ChaseAlarm=3}] at @s if entity @e[tag=ChaseCrystal,distance=..15] run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.2 2
-execute as @a[tag=InLead,scores={ChaseAlarm=6}] at @s if entity @e[tag=ChaseCrystal,distance=..15] run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.2 2
+execute as @a[tag=InLead,scores={ChaseAlarm=1}] at @s unless entity @e[tag=ChaseCrystal,distance=..14] run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.2 1.4
+execute as @a[tag=InLead,scores={ChaseAlarm=1}] at @s if entity @e[tag=ChaseCrystal,distance=..14] run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.2 1.8
+execute as @a[tag=InLead,scores={ChaseAlarm=3}] at @s if entity @e[tag=ChaseCrystal,distance=..14] run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.2 1.8
+execute as @a[tag=InLead,scores={ChaseAlarm=6}] at @s if entity @e[tag=ChaseCrystal,distance=..14] run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.2 1.8
+execute as @a[tag=InLead] at @s if entity @e[tag=ChaseCrystal,distance=..9] run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.2 2
 execute if entity @e[tag=ChaseCrystal] run title @a[tag=InLead,scores={ChaseAlarm=1}] times 0 20 0
 execute if entity @e[tag=ChaseCrystal] run title @a[tag=InLead,scores={ChaseAlarm=1}] title " "
-execute if entity @e[tag=ChaseCrystal] run title @a[tag=InLead,scores={ChaseAlarm=1}] subtitle ["",{"text":"⚠","color":"red","bold":true},{"text":"End Crystal Incoming!","bold":true,"color":"dark_blue"},{"text":"⚠","color":"red","bold":true}]
-execute if entity @e[tag=ChaseCrystal] run title @a[tag=InLead,scores={ChaseAlarm=5}] subtitle ["",{"text":"⚠","color":"red","bold":true},{"text":"End Crystal Incoming!","bold":true,"color":"blue"},{"text":"⚠","color":"red","bold":true}]
+execute if entity @e[tag=ChaseCrystal] as @a[tag=InLead] at @s if entity @e[tag=ChaseCrystal,distance=10..] unless entity @e[tag=ChaseCrystal,distance=..7] run title @a[tag=InLead,scores={ChaseAlarm=1}] subtitle ["",{"text":"⚠","color":"red","bold":true},{"text":"End Crystal Incoming!","bold":true,"color":"dark_blue"},{"text":"⚠","color":"red","bold":true}]
+execute if entity @e[tag=ChaseCrystal] as @a[tag=InLead] at @s if entity @e[tag=ChaseCrystal,distance=10..] unless entity @e[tag=ChaseCrystal,distance=..7] run title @a[tag=InLead,scores={ChaseAlarm=5}] subtitle ["",{"text":"⚠","color":"red","bold":true},{"text":"End Crystal Incoming!","bold":true,"color":"blue"},{"text":"⚠","color":"red","bold":true}]
+execute if entity @e[tag=ChaseCrystal] as @a[tag=InLead] at @s if entity @e[tag=ChaseCrystal,distance=..9] run title @a[tag=InLead,scores={ChaseAlarm=5}] subtitle ["",{"text":"☠","color":"dark_red","bold":false},{"text":"End Crystal Incoming!","bold":true,"color":"red"},{"text":"☠","color":"dark_red","bold":false}]
 execute unless entity @e[tag=ChaseCrystal] run scoreboard players reset @a[tag=InLead,scores={ChaseAlarm=1..}] ChaseAlarm
 execute if entity @e[tag=ChaseCrystal] run scoreboard players reset @a[tag=InLead,scores={ChaseAlarm=9..}] ChaseAlarm
 scoreboard players reset @a[tag=!InLead,scores={ChaseAlarm=1..}] ChaseAlarm

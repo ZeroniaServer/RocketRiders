@@ -55,6 +55,109 @@ fill -21 185 -100 -25 189 -100 minecraft:structure_void replace air
 setblock -26 184 -100 minecraft:redstone_block
 fill -21 189 -100 -26 184 -100 air
 
+#> Add a new shield for chase
+#stage1
+setblock -49 184 -46 minecraft:structure_block[mode=save]{ignoreEntities:0b,posX:0,mode:"SAVE",posY:1,sizeX:3,posZ:0,name:"whiteshield1",sizeY:3,sizeZ:1}
+setblock -48 186 -46 minecraft:black_stained_glass
+setblock -48 187 -46 minecraft:white_stained_glass
+setblock -48 185 -46 minecraft:white_stained_glass
+setblock -47 186 -46 minecraft:white_stained_glass
+setblock -49 186 -46 minecraft:white_stained_glass
+setblock -47 185 -46 minecraft:gray_stained_glass
+setblock -49 185 -46 minecraft:gray_stained_glass
+setblock -49 187 -46 minecraft:gray_stained_glass
+setblock -47 187 -46 minecraft:gray_stained_glass
+setblock -50 184 -46 redstone_block
+fill -50 184 -46 -47 187 -46 air
+#stage2
+setblock -49 184 -44 minecraft:structure_block[mode=save]{ignoreEntities:0b,posX:0,mode:"SAVE",posY:1,sizeX:5,posZ:0,name:"minecraft:whiteshield2",sizeY:5,sizeZ:1}
+setblock -49 185 -44 minecraft:structure_void
+setblock -48 185 -44 minecraft:black_stained_glass
+setblock -47 185 -44 minecraft:white_stained_glass
+setblock -46 185 -44 minecraft:black_stained_glass
+setblock -45 185 -44 minecraft:structure_void
+setblock -45 186 -44 minecraft:black_stained_glass
+setblock -45 187 -44 minecraft:white_stained_glass
+setblock -45 188 -44 minecraft:black_stained_glass
+setblock -45 189 -44 minecraft:structure_void
+setblock -46 189 -44 minecraft:black_stained_glass
+setblock -47 189 -44 minecraft:white_stained_glass
+setblock -48 189 -44 minecraft:black_stained_glass
+setblock -49 189 -44 minecraft:structure_void
+setblock -49 188 -44 minecraft:black_stained_glass
+setblock -49 187 -44 minecraft:white_stained_glass
+setblock -49 186 -44 minecraft:black_stained_glass
+setblock -46 188 -44 minecraft:gray_stained_glass
+setblock -47 188 -44 minecraft:white_stained_glass
+setblock -48 188 -44 minecraft:gray_stained_glass
+setblock -48 187 -44 minecraft:white_stained_glass
+setblock -47 187 -44 minecraft:black_stained_glass
+setblock -46 187 -44 minecraft:white_stained_glass
+setblock -46 186 -44 minecraft:gray_stained_glass
+setblock -47 186 -44 minecraft:white_stained_glass
+setblock -48 186 -44 minecraft:gray_stained_glass
+setblock -50 184 -44 minecraft:redstone_block
+fill -50 184 -44 -45 189 -44 air
+#stage3
+setblock -49 184 -41 minecraft:structure_block[mode=save]{ignoreEntities:0b,posX:0,mode:"SAVE",posY:1,sizeX:7,posZ:0,name:"whiteshield3",sizeY:7,sizeZ:1}
+setblock -48 185 -41 minecraft:white_stained_glass_pane
+setblock -49 186 -41 minecraft:white_stained_glass_pane
+setblock -49 190 -41 minecraft:white_stained_glass_pane
+setblock -48 191 -41 minecraft:white_stained_glass_pane
+setblock -44 191 -41 minecraft:white_stained_glass_pane
+setblock -43 190 -41 minecraft:white_stained_glass_pane
+setblock -43 186 -41 minecraft:white_stained_glass_pane
+setblock -44 185 -41 minecraft:white_stained_glass_pane
+setblock -43 185 -41 minecraft:structure_void
+setblock -49 185 -41 minecraft:structure_void
+setblock -45 185 -41 minecraft:gray_stained_glass
+setblock -46 185 -41 minecraft:white_stained_glass
+setblock -47 185 -41 minecraft:gray_stained_glass
+setblock -44 186 -41 minecraft:white_stained_glass
+setblock -45 186 -41 minecraft:black_stained_glass
+setblock -46 186 -41 minecraft:white_stained_glass
+setblock -47 186 -41 minecraft:black_stained_glass
+setblock -48 186 -41 minecraft:white_stained_glass
+setblock -43 187 -41 minecraft:gray_stained_glass
+setblock -44 187 -41 minecraft:black_stained_glass
+setblock -45 187 -41 minecraft:gray_stained_glass
+setblock -46 187 -41 minecraft:white_stained_glass
+setblock -47 187 -41 minecraft:gray_stained_glass
+setblock -48 187 -41 minecraft:black_stained_glass
+setblock -49 187 -41 minecraft:gray_stained_glass
+setblock -43 189 -41 minecraft:gray_stained_glass
+setblock -44 189 -41 minecraft:black_stained_glass
+setblock -45 189 -41 minecraft:gray_stained_glass
+setblock -46 189 -41 minecraft:white_stained_glass
+setblock -47 189 -41 minecraft:gray_stained_glass
+setblock -48 189 -41 minecraft:black_stained_glass
+setblock -49 189 -41 minecraft:gray_stained_glass
+setblock -44 190 -41 minecraft:white_stained_glass
+setblock -45 190 -41 minecraft:black_stained_glass
+setblock -46 190 -41 minecraft:white_stained_glass
+setblock -47 190 -41 minecraft:black_stained_glass
+setblock -48 190 -41 minecraft:white_stained_glass
+setblock -45 191 -41 minecraft:gray_stained_glass
+setblock -46 191 -41 minecraft:white_stained_glass
+setblock -47 191 -41 minecraft:gray_stained_glass
+setblock -43 191 -41 minecraft:structure_void
+setblock -49 191 -41 minecraft:structure_void
+fill -43 188 -41 -49 188 -41 minecraft:white_stained_glass
+setblock -46 188 -41 minecraft:black_stained_glass
+setblock -50 184 -41 minecraft:redstone_block
+fill -50 184 -41 -43 191 -41 air
+
+#> Chase canopy
+setblock -43 184 -40 minecraft:structure_block[mode=load]{mode:"SAVE",posY:1,sizeX:3,posZ:0,posX:0,name:"minecraft:whitecanopy1",sizeY:2,sizeZ:3}
+fill -42 185 -39 -42 186 -39 oak_wood
+setblock -42 186 -40 minecraft:white_wall_banner
+setblock -41 186 -39 minecraft:white_wall_banner[facing=east]
+setblock -42 186 -38 minecraft:white_wall_banner[facing=south]
+setblock -43 186 -39 minecraft:white_wall_banner[facing=west]
+fill -43 185 -40 -41 186 -38 minecraft:structure_void replace air
+setblock -44 184 -40 redstone_block
+fill -44 184 -40 -41 186 -38 air
+
 #> Chase mode scores
 scoreboard objectives add BreakCBRed minecraft.mined:minecraft.red_stained_glass
 scoreboard objectives add BreakCBCyan minecraft.mined:minecraft.cyan_stained_glass

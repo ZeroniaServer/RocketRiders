@@ -22,6 +22,7 @@ tag @s add doStacking
 tag @s add stackingOn
 tag @s add custVortParticle
 tag @s add customNova
+tag @s add customShield
 tag @s add onlyBlue
 tag @s add antigriefOff
 team modify Blue friendlyFire true

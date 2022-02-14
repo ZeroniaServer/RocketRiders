@@ -123,40 +123,40 @@ execute as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set 
 scoreboard players reset @e[type=marker,tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUID
 
 ##Blue Canopy functionality
-execute as @e[type=ender_pearl,tag=BluePlat] at @s run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
-execute as @e[type=ender_pearl,tag=BluePlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
-execute as @e[type=ender_pearl,tag=BluePlat] at @s run scoreboard players add @s testplat2 1
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,tag=BluePlat] at @s run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,tag=BluePlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,tag=BluePlat] at @s run scoreboard players add @s testplat2 1
 #Next 4 commands disable Blue Canopies inside of portals
-execute unless entity @s[tag=noPortal] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
-execute unless entity @s[tag=noPortal] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
-execute unless entity @s[tag=noPortal] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
-execute unless entity @s[tag=noPortal] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
+execute if entity @e[tag=Selection,tag=!customShield] unless entity @s[tag=noPortal] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
+execute if entity @e[tag=Selection,tag=!customShield] unless entity @s[tag=noPortal] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
+execute if entity @e[tag=Selection,tag=!customShield] unless entity @s[tag=noPortal] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
+execute if entity @e[tag=Selection,tag=!customShield] unless entity @s[tag=noPortal] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
 #Disable Blue Canopies near void
-execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if predicate custom:canopy_nearvoid run scoreboard players remove @s testplat2 1
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if predicate custom:canopy_nearvoid run scoreboard players remove @s testplat2 1
 #Disable Blue Canopies near spawnpoints
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_threw
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a ~ ~ ~ 2 0
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a ~ ~ ~ 2 1
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.grass.place master @a ~ ~ ~ 2 0
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run function everytick:canopy_marker
-scoreboard players add @e[type=marker,tag=BluePlatform] PlatTime 1
-kill @e[type=ender_pearl,scores={testplat2=10..}]
-execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
-execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
-execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
-execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run scoreboard players add @e[type=armor_stand,tag=Selection] canopyCount 1
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_threw
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a ~ ~ ~ 2 0
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a ~ ~ ~ 2 1
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.grass.place master @a ~ ~ ~ 2 0
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run function everytick:canopy_marker
+execute if entity @e[tag=Selection,tag=!customShield] run scoreboard players add @e[type=marker,tag=BluePlatform] PlatTime 1
+execute if entity @e[tag=Selection,tag=!customShield] run kill @e[type=ender_pearl,scores={testplat2=10..}]
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=marker,tag=BluePlatform,scores={PlatTime=1}] run scoreboard players add @e[type=armor_stand,tag=Selection] canopyCount 1
 #Teleporting happens in another function
-execute as @e[type=marker,tag=BluePlatform,scores={PlatTime=..41}] run function everytick:canopy_tpblue
-tag @e[type=marker,tag=BluePlatform] remove checkedTP
-tag @a[team=Blue] remove checkedTP
-execute as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,distance=..6] respawn 0
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=marker,tag=BluePlatform,scores={PlatTime=..41}] run function everytick:canopy_tpblue
+execute if entity @e[tag=Selection,tag=!customShield] run tag @e[type=marker,tag=BluePlatform] remove checkedTP
+execute if entity @e[tag=Selection,tag=!customShield] run tag @a[team=Blue] remove checkedTP
+execute if entity @e[tag=Selection,tag=!customShield] as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,distance=..6] respawn 0
 #After 2 seconds the Canopy gives up
-scoreboard players reset @e[type=marker,tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUID
+execute if entity @e[tag=Selection,tag=!customShield] run scoreboard players reset @e[type=marker,tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUID
 
 ##More general Canopy functionalities
 #Kill Canopy once it expires or when tnt gets near it (includes hotfix for breaking the banners and pushing the log blocks to cheat auto-decay system

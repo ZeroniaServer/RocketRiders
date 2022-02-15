@@ -2,28 +2,25 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Modification Room",
-            "color": "light_purple"
+            "text": "Easy Challenges",
+            "color": "green"
         },
         "description": {
-            "text": "You've discovered the Modification Room.",
+            "text": "The Easy difficulty challenges for Rocket Riders.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:warped_sign"
+            "item": "minecraft:lime_concrete"
         },
         "frame": "task",
-        "show_toast": true,
+        "show_toast": false,
         "announce_to_chat": false,
         "hidden": false
     },
     "criteria": {
-        "Impossible": {
+        "impossible": {
             "trigger": "minecraft:impossible"
         }
     },
-    "rewards": {
-        "function": "tutorial:modification"
-    },
-    "parent": "tutorial:root"
+    "parent": "achievements:rr_challenges/boomerang"
 }

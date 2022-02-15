@@ -7,6 +7,10 @@ execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run scoreboard players remove @s captureYellow 1
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run scoreboard players remove @s captureBlue 1
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run scoreboard players set @s capturePoint 0
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run tag @a[tag=onCapturePoint] add CheckCry
+scoreboard players add @a[tag=CheckCry] CryAboutIt 1
+tag @a[scores={CryAboutIt=60..}] remove CheckCry
+scoreboard players reset @a[tag=!CheckCry,scores={CryAboutIt=1..}] CryAboutIt
 
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run bossbar set rr_powerups:capture_progress name {"text":"Platform Temporarily Disabled","bold":true,"color":"dark_red"}
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run bossbar set rr_powerups:capture_progress color red

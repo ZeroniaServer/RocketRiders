@@ -38,6 +38,7 @@ execute as @e[tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20]
 execute as @e[tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
 execute as @e[tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
 execute as @e[tag=ChaseCrystal] at @s if entity @a[tag=InLead,distance=..2] run tag @s add CrystalComplete
+execute as @e[tag=CrystalComplete] at @s if score @s ChaseCrystalID = @a[tag=InLead,distance=..3,sort=nearest,limit=1] playerUUID run advancement grant @a[tag=InLead,distance=..3,sort=nearest,limit=1] only achievements:rr_challenges/boomerang 
 execute as @e[tag=CrystalComplete] at @s if entity @a[tag=InLead,distance=..2] as @a[tag=InLead,distance=..3,sort=nearest,limit=1] at @s run summon tnt ~ ~ ~2
 execute as @e[tag=CrystalComplete] at @s if entity @a[tag=InLead,distance=..2] as @a[tag=InLead,distance=..3,sort=nearest,limit=1] at @s run summon tnt ~ ~1 ~2
 execute as @e[tag=CrystalComplete] at @s if entity @a[tag=InLead,distance=..2] as @a[tag=InLead,distance=..3,sort=nearest,limit=1] at @s run summon tnt ~ ~-1 ~2

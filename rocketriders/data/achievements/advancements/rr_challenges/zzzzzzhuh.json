@@ -2,28 +2,26 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "The Tutorial",
-            "color": "light_purple"
+            "text": "Huh?",
+            "color": "green"
         },
         "description": {
-            "text": "Welcome to Rocket Riders!",
+            "text": "Wait what?",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:knowledge_book"
+            "item": "minecraft:player_head",
+			      "nbt": "{SkullOwner:MHF_Chicken}"
         },
-        "frame": "task",
+        "frame": "challenge",
         "show_toast": true,
-        "announce_to_chat": false,
-        "hidden": false,
-        "background": "minecraft:textures/block/netherite_block.png"
+        "announce_to_chat": true,
+        "hidden": true
     },
     "criteria": {
         "impossible": {
             "trigger": "minecraft:impossible"
         }
     },
-    "rewards": {
-        "function": "tutorial:welcome"
-    }
+    "parent": "achievements:rr_zzzhard/root"
 }

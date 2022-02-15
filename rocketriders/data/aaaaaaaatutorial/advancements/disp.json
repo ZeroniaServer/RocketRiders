@@ -2,15 +2,15 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Parkour Area",
+            "text": "Missile Display Area",
             "color": "light_purple"
         },
         "description": {
-            "text": "You've discovered the Parkour Area.",
+            "text": "You've discovered the Missile Display Area.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:iron_boots"
+            "item": "minecraft:tnt"
         },
         "frame": "task",
         "show_toast": true,
@@ -23,7 +23,7 @@
         }
     },
     "rewards": {
-        "function": "tutorial:parkour"
+        "function": "aaaaaaaatutorial:misdisp"
     },
-    "parent": "tutorial:disp"
+    "parent": "aaaaaaaatutorial:root"
 }

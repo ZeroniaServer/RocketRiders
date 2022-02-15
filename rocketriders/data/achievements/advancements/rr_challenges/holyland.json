@@ -2,19 +2,19 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Easy Challenges",
+            "text": "For The Holy Land!",
             "color": "green"
         },
         "description": {
-            "text": "The Easy difficulty challenges for Rocket Riders.",
+            "text": "Lose 5 Crusade Mode games in a row.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:lime_concrete"
+            "item": "minecraft:netherite_helmet"
         },
-        "frame": "task",
-        "show_toast": false,
-        "announce_to_chat": false,
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
         "hidden": false
     },
     "criteria": {
@@ -22,5 +22,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "achievements:rr_challenges/had_it"
+    "parent": "achievements:rr_zzzhard/root"
 }

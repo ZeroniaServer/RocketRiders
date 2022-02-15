@@ -169,6 +169,11 @@ tag @e[type=armor_stand,tag=Selection,tag=chaseEnabled] remove arrowLimit
 execute as @e[type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:enable
 execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled,tag=EditedSettings] run function arenaclear:forceareaclear
 
+#> New Achievement stuff
+scoreboard objectives add HolyLand dummy
+scoreboard objectives add CryAboutIt dummy
+scoreboard objectives add ChaseCrystalID dummy
+
 #> !!!! Necessary update command! Make sure not to leave this one commented out on release !!!!
 tellraw @a {"text":"Successfully applied updates from Rocket Riders 1.2.0","color":"green"}
 #scoreboard players set $WorldVersion CmdData 1200

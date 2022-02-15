@@ -2,25 +2,28 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Easy Challenges",
-            "color": "green"
+            "text": "Play a game",
+            "color": "light_purple"
         },
         "description": {
-            "text": "The Easy difficulty challenges for Rocket Riders.",
+            "text": "Play your first game of Rocket Riders.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:lime_concrete"
+            "item": "minecraft:sticky_piston"
         },
         "frame": "task",
-        "show_toast": false,
+        "show_toast": true,
         "announce_to_chat": false,
         "hidden": false
     },
     "criteria": {
-        "impossible": {
+        "Impossible": {
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "achievements:rr_challenges/machina"
+	  "rewards": {
+        "function": "aaaaaaaatutorial:play"
+    },
+    "parent": "aaaaaaaatutorial:wait"
 }

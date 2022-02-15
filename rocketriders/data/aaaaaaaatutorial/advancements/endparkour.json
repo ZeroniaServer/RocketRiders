@@ -2,25 +2,25 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Easy Challenges",
-            "color": "green"
+            "text": "Complete the Parkour",
+            "color": "light_purple"
         },
         "description": {
-            "text": "The Easy difficulty challenges for Rocket Riders.",
+            "text": "You've finished the Parkour!",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:lime_concrete"
+            "item": "minecraft:gold_block"
         },
         "frame": "task",
-        "show_toast": false,
+        "show_toast": true,
         "announce_to_chat": false,
         "hidden": false
     },
     "criteria": {
-        "impossible": {
+        "Impossible": {
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "achievements:rr_challenges/speed"
+    "parent": "aaaaaaaatutorial:parkour"
 }

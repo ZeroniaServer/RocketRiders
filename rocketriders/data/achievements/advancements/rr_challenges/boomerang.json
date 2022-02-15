@@ -2,28 +2,25 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "And now we wait...",
-            "color": "light_purple"
+            "text": "Cursed Boomerang",
+            "color": "green"
         },
         "description": {
-            "text": "Wait for a game to start.",
+            "text": "Get blown up by your own End Crystal in Chase Mode.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:clock"
+            "item": "minecraft:end_crystal"
         },
-        "frame": "task",
+        "frame": "goal",
         "show_toast": true,
-        "announce_to_chat": false,
+        "announce_to_chat": true,
         "hidden": false
     },
     "criteria": {
-        "Impossible": {
+        "impossible": {
             "trigger": "minecraft:impossible"
         }
     },
-    "rewards": {
-        "function": "tutorial:wait"
-    },
-    "parent": "tutorial:modif"
+    "parent": "achievements:rr_challenges/speed"
 }

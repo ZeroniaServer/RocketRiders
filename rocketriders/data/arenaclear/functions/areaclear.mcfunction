@@ -97,4 +97,4 @@ schedule function game:uncancelpads 2t append
 tag @s add JustCleared
 
 ##Stop all sounds
-execute as @a run function everytick:stopsounds
+#execute as @a run function everytick:stopsounds

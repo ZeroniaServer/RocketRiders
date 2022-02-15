@@ -2,26 +2,25 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Huh?",
+            "text": "Cry About It",
             "color": "green"
         },
         "description": {
-            "text": "Wait what?",
+            "text": "Fall in the void because of the Powerups Platform breaking underneath you.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:player_head",
-			      "nbt": "{SkullOwner:MHF_Chicken}"
+            "item": "minecraft:crying_obsidian"
         },
         "frame": "challenge",
         "show_toast": true,
         "announce_to_chat": true,
-        "hidden": true
+        "hidden": false
     },
     "criteria": {
         "impossible": {
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "achievements:rr_hard/root"
+    "parent": "achievements:rr_challenges/had_it"
 }

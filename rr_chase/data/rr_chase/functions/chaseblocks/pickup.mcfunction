@@ -59,6 +59,8 @@ execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ ti
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,distance=..8,scores={BreakCBTint=1..}] run particle minecraft:dragon_breath ~ ~ ~ 0.1 0.1 0.1 0.1 30 force
 
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,distance=..8,scores={BreakCBTint=1..}] run summon armor_stand ~ ~1 ~ {Silent:1b,Marker:1b,Invisible:1b,NoGravity:1b,Silent:1b,Invulnerable:1b,Tags:["ChaseCrystal"],Passengers:[{id:"end_crystal",ShowBottom:0b,Glowing:1b,Invulnerable:1b,Tags:["ChaseCrystal2"]}]}
+execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,distance=..8,scores={BreakCBTint=1..}] store result score @e[tag=ChaseCrystal,limit=1,sort=nearest,distance=..3] ChaseCrystalID run scoreboard players get @a[team=Blue,distance=..8,scores={BreakCBTint=1..},limit=1] playerUUID
+
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,distance=..8,scores={BreakCBTint=1..}] run playsound minecraft:entity.shulker.shoot master @a ~ ~ ~ 1 1.3
 
 execute as @e[tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass run item replace entity @s armor.head with air

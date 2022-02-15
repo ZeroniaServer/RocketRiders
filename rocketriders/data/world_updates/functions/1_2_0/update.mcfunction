@@ -158,14 +158,17 @@ fill -43 185 -40 -41 186 -38 minecraft:structure_void replace air
 setblock -44 184 -40 redstone_block
 fill -44 184 -40 -41 186 -38 air
 
-#> Chase mode scores
-scoreboard objectives add BreakCBRed minecraft.mined:minecraft.red_stained_glass
-scoreboard objectives add BreakCBCyan minecraft.mined:minecraft.cyan_stained_glass
-scoreboard objectives add BreakCBPurple minecraft.mined:minecraft.purple_stained_glass
-scoreboard objectives add BreakCBTint minecraft.mined:minecraft.tinted_glass
-scoreboard objectives add ChaseAlarm dummy
-scoreboard objectives add ArmorColor dummy
- 
+#> Chase mode
+execute if entity @e[type=armor_stand,tag=rr_chase] run scoreboard objectives add BreakCBRed minecraft.mined:minecraft.red_stained_glass
+execute if entity @e[type=armor_stand,tag=rr_chase] run scoreboard objectives add BreakCBCyan minecraft.mined:minecraft.cyan_stained_glass
+execute if entity @e[type=armor_stand,tag=rr_chase] run scoreboard objectives add BreakCBPurple minecraft.mined:minecraft.purple_stained_glass
+execute if entity @e[type=armor_stand,tag=rr_chase] run scoreboard objectives add BreakCBTint minecraft.mined:minecraft.tinted_glass
+execute if entity @e[type=armor_stand,tag=rr_chase] run scoreboard objectives add ChaseAlarm dummy
+execute if entity @e[type=armor_stand,tag=rr_chase] run scoreboard objectives add ArmorColor dummy
+tag @e[type=armor_stand,tag=Selection,tag=chaseEnabled] remove arrowLimit
+execute as @e[type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:enable
+execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled,tag=EditedSettings] run function arenaclear:forceareaclear
+
 #> !!!! Necessary update command! Make sure not to leave this one commented out on release !!!!
 tellraw @a {"text":"Successfully applied updates from Rocket Riders 1.2.0","color":"green"}
 #scoreboard players set $WorldVersion CmdData 1200

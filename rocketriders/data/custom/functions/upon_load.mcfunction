@@ -32,4 +32,4 @@ team modify Developer friendlyFire false
 gamerule logAdminCommands false
 
 #Check updates
-function world_updates:check_updates
+schedule function world_updates:check_updates 2s replace

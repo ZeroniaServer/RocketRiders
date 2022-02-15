@@ -5,6 +5,12 @@ tag @e[type=armor_stand,tag=Selection,tag=chaseLast,limit=1] remove chaseLast
 execute if entity @e[type=armor_stand,tag=rr_chase,limit=1] run kill @e[type=armor_stand,tag=rr_chase,limit=1]
 bossbar remove rr_chase:lead
 scoreboard players reset * gamemodeID
+scoreboard objectives remove BreakCBRed
+scoreboard objectives remove BreakCBCyan
+scoreboard objectives remove BreakCBPurple
+scoreboard objectives remove BreakCBTint
+scoreboard objectives remove ChaseAlarm
+scoreboard objectives remove ArmorColor
 execute unless entity @e[type=marker,tag=PlacerClear] run function game:forcestop
 execute unless entity @e[type=marker,tag=PlacerClear] run function rr_chase:game/gameend
 execute unless entity @e[type=armor_stand,tag=rr_chase,limit=1] run tellraw @s {"text":"Chase Mode uninstalled.","color":"red","bold":true}

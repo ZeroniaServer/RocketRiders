@@ -10,7 +10,7 @@ scoreboard players add @s[tag=crosser] death 1
 scoreboard players add @s[tag=crosser] respawn 1
 
 ##Cry About It achievement
-execute if entity @s[tag=CheckCry] run advancement grant @s only achievements:rr_challenges/cryaboutit 
+execute if entity @e[tag=Selection,scores={servermode=0},tag=!SMCustom] if entity @s[tag=CheckCry] run advancement grant @s only achievements:rr_challenges/cryaboutit 
 
 ##Become one with the void
 kill @s[team=!Spectator,tag=!crosser]

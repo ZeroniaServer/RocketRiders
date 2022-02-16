@@ -15,7 +15,7 @@ execute as @a run function achievements:reset
 clear @a
 kill @e[type=armor_stand,tag=ParkourLB]
 kill @e[type=area_effect_cloud,tag=ParkourLB]
-kill @e[tag=CrusadeEntity]
+kill @e[type=#custom:crystal,tag=CrusadeEntity]
 setblock -31 190 17 air
 setblock -32 190 17 air
 setblock -31 190 16 air

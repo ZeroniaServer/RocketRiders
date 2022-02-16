@@ -47,10 +47,10 @@ summon marker -64 191 78 {Tags:["ServerMode","Maps","RandomMap"],CustomName:'"Ra
 summon marker -64 191 78 {Tags:["ServerMode","Maps","EmptyMap"],CustomName:'"Empty map"'}
 summon marker -64 191 78 {Tags:["ServerMode","Maps","TheCastle"],CustomName:'"The Castle"'}
 tag @e[type=marker,tag=ServerMode,tag=Maps,tag=DefaultMap,limit=1] add ServermodeSet1
-execute if entity @e[tag=CrusadeMode,tag=ServermodeSet2] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=TheCastle,limit=1] add ServermodeSet2
-execute if entity @e[tag=CrusadeMode,tag=ServermodeSet3] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=TheCastle,limit=1] add ServermodeSet3
-execute unless entity @e[tag=TheCastle,tag=ServermodeSet2] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=!TheCastle,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3] add ServermodeSet2
-execute unless entity @e[tag=TheCastle,tag=ServermodeSet3] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=!TheCastle,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3] add ServermodeSet3
+execute if entity @e[type=marker,tag=CrusadeMode,tag=ServermodeSet2] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=TheCastle,limit=1] add ServermodeSet2
+execute if entity @e[type=marker,tag=CrusadeMode,tag=ServermodeSet3] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=TheCastle,limit=1] add ServermodeSet3
+execute unless entity @e[type=marker,tag=TheCastle,tag=ServermodeSet2] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=!TheCastle,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3] add ServermodeSet2
+execute unless entity @e[type=marker,tag=TheCastle,tag=ServermodeSet3] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=!TheCastle,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3] add ServermodeSet3
 
 # Notify vote
 execute as @a run function servermode:notifyvote

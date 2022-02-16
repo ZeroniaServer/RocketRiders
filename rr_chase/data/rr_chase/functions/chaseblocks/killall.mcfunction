@@ -1,7 +1,7 @@
-execute as @e[tag=ChaseBlock] at @s run setblock ~ ~ ~ air
-kill @e[tag=ChaseBlock]
-kill @e[tag=ChaseDisplay]
-kill @e[tag=ChaseText]
+execute as @e[type=marker,tag=ChaseBlock] at @s run setblock ~ ~ ~ air
+kill @e[type=marker,tag=ChaseBlock]
+kill @e[type=armor_stand,tag=ChaseDisplay]
+kill @e[type=area_effect_cloud,tag=ChaseText]
 
-kill @e[tag=ChaseCrystal]
-kill @e[tag=ChaseCrystal2]
+kill @e[type=armor_stand,tag=ChaseCrystal]
+kill @e[type=end_crystal,tag=ChaseCrystal2]

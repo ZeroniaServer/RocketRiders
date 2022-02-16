@@ -5,7 +5,7 @@
 ## in a time/performance-efficient manner (just one tick!) ##
 #############################################################
 
-execute unless entity @e[tag=PowerClearBlue] unless entity @e[tag=PowerClearYellow] run scoreboard players set @e[tag=PowerClearChecker] ClearArena 91
+execute unless entity @e[type=marker,tag=PowerClearBlue] unless entity @e[type=marker,tag=PowerClearYellow] run scoreboard players set @e[type=marker,tag=PowerClearChecker] ClearArena 91
 
 ##During recursion - Arena Clear in progress
 scoreboard players add @e[type=marker,tag=PowerClearChecker] ClearArena 1
@@ -24,10 +24,10 @@ execute if entity @e[type=marker,tag=PowerClearChecker,scores={ClearArena=..89}]
 
 ##After recursion - complete Power Clear
 tag @e[type=marker,tag=PowerClearChecker,scores={ClearArena=90..}] add PlacerPowerClear
-execute if entity @e[type=marker,tag=PlacerPowerClear] run tag @e[tag=checked] add powerchecked
+execute if entity @e[type=marker,tag=PlacerPowerClear] run tag @e[type=marker,tag=checked] add powerchecked
 execute if entity @e[type=marker,tag=PlacerPowerClear] run fill -2 216 -30 0 216 -30 air
 execute if entity @e[type=marker,tag=PlacerPowerClear] run kill @e[type=marker,tag=PowerClearYellow]
 execute if entity @e[type=marker,tag=PlacerPowerClear] run kill @e[type=marker,tag=PowerClearBlue]
-execute if entity @e[type=marker,tag=PlacerPowerClear] run kill @e[tag=PowerClearAEC]
-execute if entity @e[type=marker,tag=PlacerPowerClear] run kill @e[tag=PowerClearChecker]
-execute if entity @e[type=marker,tag=PlacerPowerClear] run kill @e[tag=PlacerPowerClear]
+execute if entity @e[type=marker,tag=PlacerPowerClear] run kill @e[type=marker,tag=PowerClearAEC]
+execute if entity @e[type=marker,tag=PlacerPowerClear] run kill @e[type=marker,tag=PowerClearChecker]
+execute if entity @e[type=marker,tag=PlacerPowerClear] run kill @e[type=marker,tag=PlacerPowerClear]

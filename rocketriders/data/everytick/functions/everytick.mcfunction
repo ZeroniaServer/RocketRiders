@@ -69,7 +69,7 @@ execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!customArrowPickup
 #Game ending and arena clearing
 execute as @e[type=armor_stand,tag=Selection,tag=GameEnd,tag=!NoModesInstalled] run function game:gameend
 execute as @e[type=armor_stand,tag=Selection,tag=SuddenDeath,tag=!SuddenDeathCustom,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
-execute if entity @e[type=marker,tag=ArenaClearChecker] as @a run function everytick:stopsounds
+# execute if entity @e[type=marker,tag=ArenaClearChecker] as @a run function everytick:stopsounds
 execute if entity @e[type=marker,tag=ArenaClearChecker,tag=!Cleared,tag=!BasePlaced] run scoreboard players add $acdelay CmdData 1
 execute if score $acdelay CmdData matches 47.. run tellraw @a {"text":"Warning: Force clearing arena since previous gamemode is unknown.","color":"red"}
 execute if score $acdelay CmdData matches 47.. run tag @e[type=armor_stand,tag=Selection] add normalLast

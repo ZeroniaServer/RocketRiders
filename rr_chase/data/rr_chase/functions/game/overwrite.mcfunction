@@ -36,17 +36,17 @@ execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s
 execute as @e[type=marker,tag=bluenovatracker] at @s unless entity @e[type=firework_rocket,tag=BlueNova,distance=..3,limit=1,sort=nearest] run tag @s add NovaLost
 
 #Obshields
-execute as @e[tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~1 ~2 ~ white_stained_glass_pane[east=true]
-execute as @e[tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~-1 ~2 ~ white_stained_glass_pane[west=true]
-execute as @e[tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~1 ~-2 ~ white_stained_glass_pane[east=true]
-execute as @e[tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~-1 ~-2 ~ white_stained_glass_pane[west=true]
-execute as @e[tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~-2 ~1 ~ white_stained_glass_pane[east=true]
-execute as @e[tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~-2 ~-1 ~ white_stained_glass_pane[east=true]
-execute as @e[tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~2 ~1 ~ white_stained_glass_pane[west=true]
-execute as @e[tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~2 ~-1 ~ white_stained_glass_pane[west=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~1 ~2 ~ white_stained_glass_pane[east=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~-1 ~2 ~ white_stained_glass_pane[west=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~1 ~-2 ~ white_stained_glass_pane[east=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~-1 ~-2 ~ white_stained_glass_pane[west=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~-2 ~1 ~ white_stained_glass_pane[east=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~-2 ~-1 ~ white_stained_glass_pane[east=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~2 ~1 ~ white_stained_glass_pane[west=true]
+execute as @e[type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~2 ~-1 ~ white_stained_glass_pane[west=true]
 
-execute as @e[scores={shieldplacement=6..}] run kill @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest,distance=..1]
-kill @e[scores={shieldplacement=6..}]
+execute as @e[type=marker,scores={shieldplacement=6..}] run kill @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest,distance=..1]
+kill @e[type=marker,scores={shieldplacement=6..}]
 
 #Shield
 execute as @e[type=snowball,tag=BlueShield] at @s run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a

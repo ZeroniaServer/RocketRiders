@@ -115,8 +115,8 @@ summon marker 36 49 52 {Tags:["ChaseChecker","ChaseChecker1"]}
 summon marker 36 42 52 {Tags:["ChaseChecker","ChaseChecker2"]}
 summon marker 36 35 52 {Tags:["ChaseChecker","ChaseChecker3"]}
 
-execute as @e[tag=ChaseChecker] at @s run function rr_chase:arenaclear/checkerboard
-kill @e[tag=ChaseChecker]
+execute as @e[type=marker,tag=ChaseChecker] at @s run function rr_chase:arenaclear/checkerboard
+kill @e[type=marker,tag=ChaseChecker]
 
 fill 37 63 56 38 57 52 minecraft:black_stained_glass
 fill 38 50 56 37 56 52 minecraft:white_stained_glass

@@ -30,6 +30,6 @@ execute as @e[type=marker,tag=rngSelected,tag=rngSlowArrow] as @e[type=marker,sc
 
 kill @e[type=marker,tag=rng2]
 
-execute unless entity @e[tag=PUCrystalPerma] run scoreboard players add @e[tag=captureMiddle,tag=!BrokenPlatform] CmdData 2
-execute unless entity @e[tag=PUCrystalPerma] as @e[tag=captureMiddle,tag=!BrokenPlatform] at @s run playsound minecraft:entity.turtle.egg_crack master @a ~ ~ ~ 0.4 2
-execute unless entity @e[tag=PUCrystalPerma] as @e[tag=captureMiddle,tag=!BrokenPlatform] at @s run playsound minecraft:block.amethyst_block.step master @a ~ ~ ~ 1 1.4
+execute unless entity @e[type=end_crystal,tag=PUCrystalPerma] run scoreboard players add @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] CmdData 2
+execute unless entity @e[type=end_crystal,tag=PUCrystalPerma] as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] at @s run playsound minecraft:entity.turtle.egg_crack master @a ~ ~ ~ 0.4 2
+execute unless entity @e[type=end_crystal,tag=PUCrystalPerma] as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] at @s run playsound minecraft:block.amethyst_block.step master @a ~ ~ ~ 1 1.4

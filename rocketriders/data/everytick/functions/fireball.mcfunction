@@ -35,8 +35,8 @@ execute as @e[type=fireball,tag=FireballYellow,tag=!Still,tag=NormalFireball] at
 execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=NormalFireball,tag=FireballBlue,tag=!Still] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5] run tag @s add DontPoof
 execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=NormalFireball,tag=FireballYellow,tag=!Still] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5] run tag @s add DontPoof
 
-execute as @e[type=fireball,tag=NormalFireball,tag=FireballBlue,tag=!Still,tag=DontPoof] at @s if entity @e[tag=YellowPlatform,distance=..6] run tag @s remove DontPoof
-execute as @e[type=fireball,tag=NormalFireball,tag=FireballYellow,tag=!Still,tag=DontPoof] at @s if entity @e[tag=BluePlatform,distance=..6] run tag @s remove DontPoof
+execute as @e[type=fireball,tag=NormalFireball,tag=FireballBlue,tag=!Still,tag=DontPoof] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..6] run tag @s remove DontPoof
+execute as @e[type=fireball,tag=NormalFireball,tag=FireballYellow,tag=!Still,tag=DontPoof] at @s if entity @e[type=marker,tag=BluePlatform,distance=..6] run tag @s remove DontPoof
 execute as @e[type=fireball,tag=NormalFireball,tag=FireballBlue,tag=!Still,tag=DontPoof] at @s if entity @a[team=Yellow,distance=..7] run tag @s remove DontPoof
 execute as @e[type=fireball,tag=NormalFireball,tag=FireballYellow,tag=!Still,tag=DontPoof] at @s if entity @a[team=Blue,distance=..7] run tag @s remove DontPoof
 

@@ -128,7 +128,6 @@ execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCr
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=40},limit=1] run summon armor_stand 12 62.2 -69 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:ghast_tear",Count:1b}]}
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=40},limit=1] positioned 12 64 -70 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 1.4
 
-# execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=45},limit=1] run summon armor_stand 12 62.2 -70 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}]}
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=45},limit=1] run setblock 12 63 -70 end_portal_frame[facing=south,eye=true]
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=45},limit=1] positioned 12 64 -70 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 1.2
 
@@ -144,9 +143,8 @@ execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 
 
 execute as @e[type=marker,tag=PUCrystalAS] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @s
 execute as @e[type=marker,tag=BlueCrystalSpot] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @s
-execute as @e[type=marker,tag=BlueCrystalSpot] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @e[tag=PUCrystal]
-execute as @e[tag=PUCrystalAS] unless entity @e[tag=BlueCrystalSpot] run kill @e[tag=PUCrystal]
-execute as @e[tag=PUCrystalAS] unless entity @e[tag=BlueCrystalSpot] run kill @s
+execute as @e[type=armor_stand,tag=PUCrystalAS] unless entity @e[type=marker,tag=BlueCrystalSpot] run kill @e[type=end_crystal,tag=PUCrystal]
+execute as @e[type=armor_stand,tag=PUCrystalAS] unless entity @e[type=marker,tag=BlueCrystalSpot] run kill @s
 
 execute as @e[type=marker,tag=BlueCrystalSpot,tag=NotSet,limit=1] at @s run spreadplayers ~ ~ 0 4 false @s
 execute as @e[type=marker,tag=BlueCrystalSpot,tag=NotSet,limit=1] at @s run tp @s ~ 54.5 ~

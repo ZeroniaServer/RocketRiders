@@ -1,4 +1,4 @@
-kill @e[tag=FlagSafety]
+kill @e[type=marker,tag=FlagSafety]
 
 #Clear extra bedrock
 fill -15 64 71 39 64 68 air

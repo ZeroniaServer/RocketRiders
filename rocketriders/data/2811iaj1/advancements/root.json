@@ -2,28 +2,28 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Play a game",
+            "text": "The Tutorial",
             "color": "light_purple"
         },
         "description": {
-            "text": "Play your first game of Rocket Riders.",
+            "text": "Welcome to Rocket Riders!",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:sticky_piston"
+            "item": "minecraft:knowledge_book"
         },
         "frame": "task",
         "show_toast": true,
         "announce_to_chat": false,
-        "hidden": false
+        "hidden": false,
+        "background": "minecraft:textures/block/netherite_block.png"
     },
     "criteria": {
-        "Impossible": {
+        "impossible": {
             "trigger": "minecraft:impossible"
         }
     },
-	  "rewards": {
-        "function": "aaaaaaaatutorial:play"
-    },
-    "parent": "aaaaaaaatutorial:wait"
+    "rewards": {
+        "function": "2811iaj1:welcome"
+    }
 }

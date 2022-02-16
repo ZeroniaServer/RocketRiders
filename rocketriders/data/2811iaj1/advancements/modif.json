@@ -2,28 +2,28 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "The Tutorial",
+            "text": "Modification Room",
             "color": "light_purple"
         },
         "description": {
-            "text": "Welcome to Rocket Riders!",
+            "text": "You've discovered the Modification Room.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:knowledge_book"
+            "item": "minecraft:warped_sign"
         },
         "frame": "task",
         "show_toast": true,
         "announce_to_chat": false,
-        "hidden": false,
-        "background": "minecraft:textures/block/netherite_block.png"
+        "hidden": false
     },
     "criteria": {
-        "impossible": {
+        "Impossible": {
             "trigger": "minecraft:impossible"
         }
     },
     "rewards": {
-        "function": "aaaaaaaatutorial:welcome"
-    }
+        "function": "2811iaj1:modification"
+    },
+    "parent": "2811iaj1:root"
 }

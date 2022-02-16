@@ -2,15 +2,15 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Complete the Parkour",
+            "text": "Play a game",
             "color": "light_purple"
         },
         "description": {
-            "text": "You've finished the Parkour!",
+            "text": "Play your first game of Rocket Riders.",
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:gold_block"
+            "item": "minecraft:sticky_piston"
         },
         "frame": "task",
         "show_toast": true,
@@ -22,5 +22,8 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "aaaaaaaatutorial:parkour"
+	  "rewards": {
+        "function": "2811iaj1:play"
+    },
+    "parent": "2811iaj1:wait"
 }

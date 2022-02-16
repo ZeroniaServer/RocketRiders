@@ -93,7 +93,7 @@ execute as @a[team=Lobby,tag=cheatedParkour] run tellraw @s ["",{"text":"You ski
 execute as @a[team=Lobby,tag=cheatedParkour] at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 1 1
 
 #Remove tags + give advancement
-execute if entity @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run advancement grant @s only aaaaaaaatutorial:endparkour
+execute if entity @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run advancement grant @s only 2811iaj1:endparkour
 execute if entity @s[scores={servermode=0}] as @a[team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run tag @s add firstParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove inParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove cheatedParkour

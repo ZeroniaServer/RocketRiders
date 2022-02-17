@@ -23,5 +23,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "achievements:rr_medium/root"
+    "parent": "achievements:rr_fffmedium/root"
 }

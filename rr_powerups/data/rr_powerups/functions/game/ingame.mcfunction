@@ -54,14 +54,14 @@ tag @a[tag=onCapturePoint] remove onCapturePoint
 execute as @e[type=marker,tag=captureMiddle] at @s as @e[type=player,team=Blue,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
 execute as @e[type=marker,tag=captureMiddle] at @s as @e[type=player,team=Yellow,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
 #hotfix to prevent players from falling through the platform if they break the blocks beneath them
-execute as @e[type=marker,tag=captureMiddle] at @s as @e[type=player,tag=onCapturePoint,distance=..5.5] at @s if entity @s[y=53,dy=0.5] if block ~ ~-1 ~ air run tp @s ~ ~0.1 ~
-execute as @e[type=player,tag=onCapturePoint] at @s unless entity @s[y=54,dy=1] unless entity @e[type=marker,tag=captureMiddle,distance=..7.1,limit=1] run tag @s remove onCapturePoint
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] at @s as @e[type=player,tag=onCapturePoint,distance=..5.5] at @s if entity @s[y=53,dy=0.5] if block ~ ~-1 ~ air run tp @s ~ ~0.1 ~
+execute as @e[type=player,tag=onCapturePoint] at @s unless entity @s[y=54,dy=1] unless entity @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,distance=..7.1,limit=1] run tag @s remove onCapturePoint
 
-execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players add @e[type=marker,tag=captureMiddle,scores={captureYellow=0},tag=!contested] captureBlue 2
-execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run tag @e[type=marker,tag=captureMiddle] remove contested
+execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players add @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={captureYellow=0},tag=!contested] captureBlue 2
+execute if entity @a[team=Blue,tag=onCapturePoint] unless entity @a[team=Yellow,tag=onCapturePoint] run tag @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] remove contested
 
-execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players add @e[type=marker,tag=captureMiddle,scores={captureBlue=0},tag=!contested] captureYellow 2
-execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run tag @e[type=marker,tag=captureMiddle] remove contested
+execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run scoreboard players add @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={captureBlue=0},tag=!contested] captureYellow 2
+execute if entity @a[team=Yellow,tag=onCapturePoint] unless entity @a[team=Blue,tag=onCapturePoint] run tag @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] remove contested
 
 execute unless entity @a[tag=onCapturePoint] run tag @e[type=marker,tag=captureMiddle] remove contested
 
@@ -73,9 +73,9 @@ execute if entity @a[team=Yellow,tag=onCapturePoint] if entity @a[team=Blue,tag=
 scoreboard players remove @e[type=marker,tag=contested] captureBlue 1
 scoreboard players remove @e[type=marker,tag=contested] captureYellow 1
 
-execute as @e[type=marker,tag=captureMiddle,tag=!contested,scores={captureBlue=1..}] if score @s captureBlue >= @s captureYellow run function rr_powerups:game/fancyblue
-execute as @e[type=marker,tag=captureMiddle,tag=!contested,scores={captureYellow=1..}] if score @s captureYellow >= @s captureBlue run function rr_powerups:game/fancyyellow
-execute as @e[type=marker,tag=captureMiddle,tag=contested] run function rr_powerups:game/fancycontested
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,tag=!contested,scores={captureBlue=1..}] if score @s captureBlue >= @s captureYellow run function rr_powerups:game/fancyblue
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,tag=!contested,scores={captureYellow=1..}] if score @s captureYellow >= @s captureBlue run function rr_powerups:game/fancyyellow
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,tag=contested] run function rr_powerups:game/fancycontested
 
 execute as @e[type=marker,tag=captureMiddle,scores={captureBlue=99..}] if entity @a[team=Yellow,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=99..}] if entity @a[team=Blue,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
@@ -84,7 +84,7 @@ execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=1..99}] unless
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=..0,captureBlue=..0}] run scoreboard players set @s capturePoint 0
 
 #powerup platform design
-execute as @e[type=marker,tag=captureMiddle] at @s run function rr_powerups:everytick/powerup_platform
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] at @s run function rr_powerups:everytick/powerup_platform
 
 #max scores and min scores
 scoreboard players set @e[type=marker,tag=captureMiddle,scores={captureYellow=..0}] captureYellow 0
@@ -92,24 +92,27 @@ scoreboard players set @e[type=marker,tag=captureMiddle,scores={captureYellow=10
 scoreboard players set @e[type=marker,tag=captureMiddle,scores={captureBlue=..0}] captureBlue 0
 scoreboard players set @e[type=marker,tag=captureMiddle,scores={captureBlue=100..}] captureBlue 100
 
+#Deplete powerups platform hp
+function rr_powerups:everytick/platformdeplete
+
 #bossbar
 bossbar set rr_powerups:capture_progress style progress
 bossbar set rr_powerups:capture_progress players @a[team=!Lobby]
 
-execute as @e[type=marker,tag=captureMiddle] if score @s captureBlue >= @s captureYellow store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureBlue
-execute as @e[type=marker,tag=captureMiddle,tag=!contested] if score @s captureBlue > @s captureYellow run bossbar set rr_powerups:capture_progress color blue
-execute as @e[type=marker,tag=captureMiddle] if score @s captureYellow >= @s captureBlue store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureYellow
-execute as @e[type=marker,tag=captureMiddle,tag=!contested] if score @s captureYellow > @s captureBlue run bossbar set rr_powerups:capture_progress color yellow
-execute as @e[type=marker,tag=captureMiddle,tag=!contested] if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress color white
-execute as @e[type=marker,tag=captureMiddle,tag=contested] run bossbar set rr_powerups:capture_progress color red
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] if score @s captureBlue >= @s captureYellow store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureBlue
+execute as @e[type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue > @s captureYellow run bossbar set rr_powerups:capture_progress color blue
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform] if score @s captureYellow >= @s captureBlue store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureYellow
+execute as @e[type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureYellow > @s captureBlue run bossbar set rr_powerups:capture_progress color yellow
+execute as @e[type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress color white
+execute as @e[type=marker,tag=captureMiddle,tag=contested,tag=!BrokenPlatform] run bossbar set rr_powerups:capture_progress color red
 
-execute as @e[type=marker,tag=captureMiddle,tag=!contested,limit=1] if score @s capturePoint matches 0 if score @s captureBlue >= @s captureYellow if score @s captureBlue matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Blue Capturing...","color":"blue","bold":true}]
-execute as @e[type=marker,tag=captureMiddle,tag=!contested,limit=1] if score @s capturePoint matches 0 if score @s captureYellow >= @s captureBlue if score @s captureYellow matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Capturing...","color":"yellow","bold":true}]
-execute as @e[type=marker,tag=captureMiddle,tag=!contested,limit=1] if score @s capturePoint matches 0 if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress name [{"text":"Capture Progress","color":"white","bold":true}]
-execute as @e[type=marker,tag=captureMiddle,tag=contested] run bossbar set rr_powerups:capture_progress name [{"text":"Contested!","color":"dark_red","bold":true}]
+execute as @e[type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 0 if score @s captureBlue >= @s captureYellow if score @s captureBlue matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Blue Capturing...","color":"blue","bold":true}]
+execute as @e[type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 0 if score @s captureYellow >= @s captureBlue if score @s captureYellow matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Capturing...","color":"yellow","bold":true}]
+execute as @e[type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 0 if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress name [{"text":"Capture Progress","color":"white","bold":true}]
+execute as @e[type=marker,tag=captureMiddle,tag=contested,tag=!BrokenPlatform] run bossbar set rr_powerups:capture_progress name [{"text":"Contested!","color":"dark_red","bold":true}]
 
-execute as @e[type=marker,tag=captureMiddle,tag=!contested,limit=1] if score @s capturePoint matches 1 run bossbar set rr_powerups:capture_progress name [{"text":"Blue Captured!","color":"blue","bold":true}]
-execute as @e[type=marker,tag=captureMiddle,tag=!contested,limit=1] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Captured!","color":"yellow","bold":true}]
+execute as @e[type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 1 run bossbar set rr_powerups:capture_progress name [{"text":"Blue Captured!","color":"blue","bold":true}]
+execute as @e[type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Captured!","color":"yellow","bold":true}]
 
 #broken elytra replacing
 execute as @a[team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b}]}] at @s if predicate custom:canopy_nearyellow run tag @s add BreakEly

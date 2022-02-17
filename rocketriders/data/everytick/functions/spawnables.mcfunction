@@ -41,7 +41,7 @@ execute if entity @s[tag=runnovarocket] run function everytick:novarocket
 tag @s[tag=runnovarocket] remove runnovarocket
 #Attachment reset (both)
 scoreboard players reset @a[tag=!YellowNovaAttach,tag=!BlueNovaAttach] novattach
-scoreboard players reset @a[scores={novattach=15..}] novattach
+scoreboard players reset @a[scores={novattach=15..},nbt={OnGround:1b}] novattach
 scoreboard players reset @a[team=!Yellow,team=!Blue] novattach
 tag @a[team=!Yellow,team=!Blue] remove BlueNovaAttach
 tag @a[team=!Yellow,team=!Blue] remove YellowNovaAttach

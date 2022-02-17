@@ -16,5 +16,5 @@ loot give @s[scores={HasBolt=0},tag=!fullHotbar] loot items:lightning/thunderbol
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasBolt=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackBolt] run tag @e[type=armor_stand,tag=Selection] add givenBolt
-execute unless entity @s[tag=BackBolt] run tag @e[type=armor_stand,tag=Bot] add BotHasBolt
+execute unless entity @s[tag=BackBolt] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenBolt
+execute unless entity @s[tag=BackBolt] run tag @e[type=armor_stand,tag=Bot] add HasBolt

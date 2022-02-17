@@ -118,4 +118,4 @@ fill -14 63 67 38 34 73 cave_air
 fill -14 63 -67 38 34 -73 cave_air
 
 ##Stop all sounds
-execute as @a run function everytick:stopsounds
+# execute as @a run function everytick:stopsounds

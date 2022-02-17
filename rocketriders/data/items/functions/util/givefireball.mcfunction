@@ -16,5 +16,5 @@ give @s[team=Yellow,scores={HasFireball=0},tag=!fullHotbar] blaze_spawn_egg{Cust
 give @s[team=Blue,scores={HasFireball=0},tag=!fullHotbar] blaze_spawn_egg{CustomModelData:1,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Fireball","color":"blue","bold":true}]',Lore:['{"text":"Spawns a Fireball. Punch or shoot","color":"gray"}','{"text":"Fireballs to quickly blow up missiles,","color":"gray"}','{"text":"blocks, or players.","color":"gray"}']},EntityTag:{id:"minecraft:marker",Tags:["BlueFireball"]}} 1
 
 #Game tracking
-tag @e[type=armor_stand,tag=Selection,tag=givenFireball] add givenFireballTwice
-tag @e[type=armor_stand,tag=Selection] add givenFireball
+tag @e[type=armor_stand,tag=Selection,tag=givenFireball,tag=tetrisTime] add givenFireballTwice
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenFireball

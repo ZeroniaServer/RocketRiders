@@ -54,9 +54,7 @@ kill @e[type=marker,tag=YellowFireball]
 kill @e[type=marker,tag=missile]
 kill @e[type=marker,tag=surprising]
 
-function arenaclear:superspeed
-kill @e[type=marker,tag=checked]
-kill @e[type=marker,tag=checking]
+function arenaclear:powerclear
 
 tp @a[team=Blue] 12 64 -66 0 0
 tp @a[team=Yellow] 12 64 66 180 0

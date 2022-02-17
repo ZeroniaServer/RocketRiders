@@ -18,9 +18,9 @@ execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[ty
 
 function items:full_hotbar
 
-execute as @e[type=marker,tag=rngSelected,tag=rngGemi] as @a[scores={crusadekit=2}] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givegemi
-execute as @e[type=marker,tag=rngSelected,tag=rngSlash] as @a[scores={crusadekit=2}] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveslash
-execute as @e[type=marker,tag=rngSelected,tag=rngThun] as @a[scores={crusadekit=2}] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/lightning/givethun
-execute as @e[type=marker,tag=rngSelected,tag=rngHur] as @a[scores={crusadekit=2}] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/lightning/givehur
-execute as @e[type=marker,tag=rngSelected,tag=rngBroad] as @a[scores={crusadekit=2}] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/special/givebroad
+execute as @e[type=marker,tag=rngSelected,tag=rngGemi] as @a[scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givegemi
+execute as @e[type=marker,tag=rngSelected,tag=rngSlash] as @a[scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveslash
+execute as @e[type=marker,tag=rngSelected,tag=rngThun] as @a[scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/lightning/givethun
+execute as @e[type=marker,tag=rngSelected,tag=rngHur] as @a[scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/lightning/givehur
+execute as @e[type=marker,tag=rngSelected,tag=rngBroad] as @a[scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/special/givebroad
 kill @e[type=marker,tag=crusadeRNG]

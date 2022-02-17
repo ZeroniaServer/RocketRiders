@@ -16,5 +16,5 @@ loot give @s[scores={HasNull=0},tag=!fullHotbar] loot items:normal/chronull
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasNull=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackNull] run tag @e[type=armor_stand,tag=Selection] add givenNull
-execute unless entity @s[tag=BackNull] run tag @e[type=armor_stand,tag=Bot] add BotHasNull
+execute unless entity @s[tag=BackNull] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenNull
+execute unless entity @s[tag=BackNull] run tag @e[type=armor_stand,tag=Bot] add HasNull

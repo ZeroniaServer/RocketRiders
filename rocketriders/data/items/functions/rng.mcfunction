@@ -22,11 +22,12 @@ tag @e[type=marker,tag=rng1,sort=random,limit=1] add rngSelected
 execute as @e[type=marker,tag=rngSelected,tag=rngMissile] run function items:missile/rng
 execute as @e[type=marker,tag=rngSelected,tag=rngUtil] run function items:util/rng
 
+##If Surprise Egg is picked
 execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @e[type=item] if data entity @s {Item:{id:"minecraft:squid_spawn_egg"}} run function items:deduct
 execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @e[type=item] if data entity @s {Item:{id:"minecraft:cod_spawn_egg"}} run function items:deduct
 
 execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] run function items:full_hotbar
 
-execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Blue] run function items:surprise_blue/givesurpriseegg
-execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Yellow] run function items:surprise_yellow/givesurpriseegg
+execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Blue,tag=getItem] run function items:surprise_blue/givesurpriseegg
+execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Yellow,tag=getItem] run function items:surprise_yellow/givesurpriseegg
 kill @e[type=marker,tag=rng1]

@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Easy Challenges",
+            "color": "green"
+        },
+        "description": {
+            "text": "The Easy difficulty challenges for Rocket Riders.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:lime_concrete"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_challenges/traveler"
+}

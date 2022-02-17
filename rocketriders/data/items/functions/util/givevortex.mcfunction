@@ -16,4 +16,4 @@ give @s[team=Yellow,scores={HasVortex=0},tag=!fullHotbar] egg{icbm:0b,CustomMode
 give @s[team=Blue,scores={HasVortex=0},tag=!fullHotbar] egg{icbm:0b,CustomModelData:1,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Vortex","color":"blue","bold":true}]',Lore:['{"text":"A sky-mine. Blows up when enemies get close,","color":"gray"}','{"text":"when missiles pass through it, or when it gets","color":"gray"}','{"text":"shot by projectiles. It also follows enemies!","color":"gray"}']}} 1
 
 #Game tracking
-tag @e[type=armor_stand,tag=Selection] add givenVortex
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenVortex

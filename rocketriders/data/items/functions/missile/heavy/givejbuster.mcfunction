@@ -16,5 +16,5 @@ loot give @s[scores={HasJug=0},tag=!fullHotbar] loot items:heavy/jbuster
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasJug=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackJug] run tag @e[type=armor_stand,tag=Selection] add givenJbust
-execute unless entity @s[tag=BackJug] run tag @e[type=armor_stand,tag=Bot] add BotHasJug
+execute unless entity @s[tag=BackJug] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenJbust
+execute unless entity @s[tag=BackJug] run tag @e[type=armor_stand,tag=Bot] add HasJug

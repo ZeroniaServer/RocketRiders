@@ -13,7 +13,7 @@ tag @s[tag=needsArrow,tag=!itemDeducted,scores={HasArrows=0}] add DelayActionbar
 execute as @s[tag=needsArrow,scores={HasArrows=0}] run function items:util/givearrows
 execute as @s[tag=needsArrow] as @e[type=item,nbt={Item:{id:"minecraft:bow"}}] run function rr_powerups:items/killinfinitysaber
 tag @s remove needsArrow
-tag @e[type=armor_stand,tag=Selection] add givenInfinity
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenInfinity
 scoreboard players set $infinity PowerupDisplay 30
 scoreboard players set $infinity powerupcount 0
 execute at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 1.5

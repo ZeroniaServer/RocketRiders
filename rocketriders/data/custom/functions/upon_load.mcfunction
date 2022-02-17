@@ -1,22 +1,7 @@
 ##Actions to be performed upon world load
 schedule function lobby:credits/restart 3t append
-schedule function lobby:replacesigns 3t append
 scoreboard players set $barriers CmdData 73
-
-#Pre-1.0.4 compatibility
-scoreboard objectives add moleratConfirm trigger
-
-#Pre-1.1.0 compatibility
-scoreboard objectives remove displayinfo
-scoreboard objectives add displayinfo trigger
 scoreboard players add $reloaded CmdData 1
-schedule function arenaclear:refreshcheck 3t append
-
-#Pre-1.1.4 compatibility
-scoreboard objectives add HasICBM dummy
-
-#Fix blackstone slab
-setblock -56 208 76 blackstone_slab
 
 #Add teams for Paper compatibility
 team add Lobby
@@ -45,3 +30,6 @@ team modify Developer friendlyFire false
 
 #Gamerules
 gamerule logAdminCommands false
+
+#Check updates
+schedule function world_updates:check_updates 2s replace

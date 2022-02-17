@@ -16,12 +16,21 @@ tag @s add customEnds
 tag @s add customBossbar
 tag @s add leaveYSpawn
 tag @s add noTeamBalance
-tag @s add arrowLimit
+# tag @s add arrowLimit
+tag @s[tag=!doStacking] add stackingWasOff
+tag @s add doStacking
+tag @s add stackingOn
 tag @s add custVortParticle
 tag @s add customNova
+tag @s add customShield
 tag @s add onlyBlue
 tag @s add antigriefOff
 team modify Blue friendlyFire true
+
+#haha funny
+tag @e[type=marker,tag=yellowjoinpad] add tempyellow
+tag @e[type=marker,tag=yellowjoinpad] add bluejoinpad
+tag @e[type=marker,tag=yellowjoinpad] remove yellowjoinpad
 
 #enable arrows/utilities
 tag @s[tag=!rngArrows] add arrowsWasOff

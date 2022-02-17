@@ -16,6 +16,7 @@ execute if score @s bMissileCount matches 1.. run function arenaclear:prepareblu
 execute if score @s yMissileCount matches 1.. run function arenaclear:prepareyellow
 execute if score @s splashCount matches 1.. run function arenaclear:preparesplash
 summon marker 11 63 6 {Tags:["ArenaClearChecker"]}
+summon marker 11 63 6 {Tags:["PowerClearChecker"]}
 
 ##Reset Tetris progress for Item RNG
 function items:tetrisreset
@@ -67,9 +68,8 @@ kill @e[type=marker,tag=missile]
 kill @e[type=marker,tag=surprising]
 
 ##Begin recursive SmartClear process
-function arenaclear:superspeed
-kill @e[type=marker,tag=checked]
-kill @e[type=marker,tag=checking]
+function arenaclear:powerclear
+schedule function arenaclear:scheduler 2s
 
 ##Close off Modification Room
 execute as @e[type=marker,tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0
@@ -91,10 +91,10 @@ tag @a remove beenOnBlue
 tag @a remove beenOnBoth
 
 ##Remove join cancel from join pads
-schedule function game:uncancelpads 2t append
+schedule function game:uncancelpads 42t append
 
 ##Add flag that game just cleared (briefly locks joinpads)
 tag @s add JustCleared
 
 ##Stop all sounds
-execute as @a run function everytick:stopsounds
+#execute as @a run function everytick:stopsounds

@@ -14,4 +14,4 @@ give @s[team=Yellow,scores={HasSplash=0},tag=!fullHotbar] lingering_potion{Potio
 give @s[team=Blue,scores={HasSplash=0},tag=!fullHotbar] lingering_potion{Potion:"minecraft:water",display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Splash","color":"blue","bold":true}]',Lore:['{"text":"Spawns a brief water source where it","color":"gray"}','{"text":"lands. Used to restart missiles, reduce","color":"gray"}','{"text":"explosions, or break your fall.","color":"gray"}']},HideFlags:63} 1
 
 #Game tracking
-tag @e[type=armor_stand,tag=Selection] add givenSplash
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenSplash

@@ -120,7 +120,7 @@ kill @e[type=firework_rocket,tag=YellowNova,scores={novatimer=33..}]
 #Attach
 scoreboard players add @a[tag=YellowNovaAttach] novattach 1
 execute as @a[tag=YellowNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch master @a ~ ~ ~ 2 1.2
-execute as @a[tag=YellowNovaAttach,scores={novattach=1}] run effect give @s levitation 1 70 true
+execute as @a[tag=YellowNovaAttach,scores={novattach=1}] run effect give @s levitation 1 60 true
 execute as @a[tag=YellowNovaAttach,scores={novattach=4..}] run effect clear @s levitation
 execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] add killCanopy
 execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
@@ -164,7 +164,7 @@ execute as @e[type=firework_rocket,scores={novatimer=30..}] at @s store result s
 #Attach
 scoreboard players add @a[tag=BlueNovaAttach] novattach 1
 execute as @a[tag=BlueNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch master @a ~ ~ ~ 2 1.2
-execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levitation 1 70 true
+execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levitation 1 60 true
 execute as @a[tag=BlueNovaAttach,scores={novattach=4..}] run effect clear @s levitation
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=YellowPlatform,distance=..7,limit=1,sort=nearest] add killCanopy
 execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] add killCanopy

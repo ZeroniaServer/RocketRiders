@@ -25,3 +25,5 @@ execute if score @s ArmorColor matches 10 run function rr_chase:chasegear/equip/
 execute if score @s ArmorColor matches 11 run function rr_chase:chasegear/equip/banana
 execute if score @s ArmorColor matches 12 run function rr_chase:chasegear/equip/blurple
 execute if score @s ArmorColor matches 13.. run function rr_chase:chasegear/equip/white
+
+execute if entity @e[tag=Selection,tag=!GameStarted] run item replace entity @s weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'},Lobby:1b} 20

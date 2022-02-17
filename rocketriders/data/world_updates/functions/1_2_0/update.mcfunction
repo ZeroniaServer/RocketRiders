@@ -177,6 +177,5 @@ scoreboard objectives add HolyLand dummy
 scoreboard objectives add CryAboutIt dummy
 scoreboard objectives add ChaseCrystalID dummy
 
-#> !!!! Necessary update command! Make sure not to leave this one commented out on release !!!!
 tellraw @a {"text":"Successfully applied updates from Rocket Riders 1.2.0","color":"green"}
-#scoreboard players set $WorldVersion CmdData 1200
+scoreboard players set $WorldVersion CmdData 1200

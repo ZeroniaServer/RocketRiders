@@ -27,6 +27,8 @@ execute as @e[type=armor_stand,tag=Selection,tag=!Tip17,scores={ShowTip=900}] ru
 execute as @e[type=armor_stand,tag=Selection,tag=!Tip18,scores={ShowTip=900}] run summon marker ~ ~ ~ {Tags:["HandyTip","Tip18"]}
 execute as @e[type=armor_stand,tag=Selection,tag=!Tip19,scores={ShowTip=900}] run summon marker ~ ~ ~ {Tags:["HandyTip","Tip19"]}
 execute as @e[type=armor_stand,tag=Selection,tag=!Tip20,scores={ShowTip=900}] run summon marker ~ ~ ~ {Tags:["HandyTip","Tip20"]}
+execute as @e[type=armor_stand,tag=Selection,tag=!Tip21,scores={ShowTip=900}] run summon marker ~ ~ ~ {Tags:["HandyTip","Tip21"]}
+execute as @e[type=armor_stand,tag=Selection,tag=!Tip22,scores={ShowTip=900}] run summon marker ~ ~ ~ {Tags:["HandyTip","Tip22"]}
 tag @e[type=marker,tag=HandyTip,limit=1,sort=random] add SelectedTip
 
 #Announces selected tip to newer players
@@ -90,6 +92,12 @@ execute as @e[type=marker,tag=SelectedTip,tag=Tip19] run tag @e[type=armor_stand
 execute as @e[type=marker,tag=SelectedTip,tag=Tip20] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Chase Mode, you can use items like the Nova Rocket and the Vortex to sabotage your teammates!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip20] run tag @e[type=armor_stand,tag=Selection] add Tip20
 
+execute as @e[type=marker,tag=SelectedTip,tag=Tip21] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Chase Mode, special \"Chase Blocks\" spawn on the map which give you more items or shoot End Crystals when you break them.","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip21] run tag @e[type=armor_stand,tag=Selection] add Tip21
+
+execute as @e[type=marker,tag=SelectedTip,tag=Tip22] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Chase Mode, breaking the End Crystal \"Chase Blocks\" fires an End Crystal at the leader! You can shoot them with arrows to get rid of them.","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip22] run tag @e[type=armor_stand,tag=Selection] add Tip22
+
 #Opt out message (disabled on servers)
 scoreboard players add @a GamesPlayed 0
 execute if entity @s[tag=!SMActive] run scoreboard players enable @a[scores={GamesPlayed=..9}] disableTips
@@ -103,4 +111,4 @@ kill @e[type=marker,tag=HandyTip]
 scoreboard players reset @e[type=armor_stand,tag=Selection,scores={ShowTip=900..}] ShowTip
 
 #Tetris resetting (makes sure all tips are individually given before they're repeated)
-execute as @e[type=armor_stand,tag=Selection,tag=Tip1,tag=Tip2,tag=Tip3,tag=Tip4,tag=Tip5,tag=Tip6,tag=Tip7,tag=Tip8,tag=Tip9,tag=Tip10,tag=Tip11,tag=Tip12,tag=Tip13,tag=Tip14,tag=Tip15,tag=Tip16,tag=Tip17,tag=Tip18,tag=Tip19,tag=Tip20] run function game:tipreset
+execute as @e[type=armor_stand,tag=Selection,tag=Tip1,tag=Tip2,tag=Tip3,tag=Tip4,tag=Tip5,tag=Tip6,tag=Tip7,tag=Tip8,tag=Tip9,tag=Tip10,tag=Tip11,tag=Tip12,tag=Tip13,tag=Tip14,tag=Tip15,tag=Tip16,tag=Tip17,tag=Tip18,tag=Tip19,tag=Tip20,tag=Tip21,tag=Tip22] run function game:tipreset

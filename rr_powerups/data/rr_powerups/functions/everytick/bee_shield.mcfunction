@@ -170,3 +170,8 @@ execute if score $beetime BeeShieldTime matches 3 run kill @e[type=snowball,tag=
 
 #kill bees that have stung
 kill @e[type=bee,nbt={HasStung:1b}]
+
+#kill bees that are in the void
+execute as @e[type=bee,predicate=rr_powerups:bee_void] run data merge entity @s {DeathTime:19s}
+execute as @e[type=bee,predicate=rr_powerups:bee_void] at @s run tp @s ~ -100 ~
+kill @e[type=bee,predicate=rr_powerups:bee_void]

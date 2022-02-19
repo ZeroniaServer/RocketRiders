@@ -17,6 +17,8 @@ execute as @e[type=marker,tag=ChaseBlock,tag=Display] at @s unless entity @a[tea
 
 execute as @e[type=armor_stand,tag=ChaseDisplay] at @s unless block ~ ~1.25 ~ red_stained_glass unless block ~ ~1.25 ~ cyan_stained_glass unless block ~ ~1.25 ~ purple_stained_glass unless block ~ ~1.25 ~ tinted_glass run tag @s add RemoveDisplay
 execute as @e[type=area_effect_cloud,tag=ChaseText] at @s unless block ~ ~-0.5 ~ red_stained_glass unless block ~ ~-0.5 ~ cyan_stained_glass unless block ~ ~-0.5 ~ purple_stained_glass unless block ~ ~-0.5 ~ tinted_glass run tag @s add RemoveDisplay
+tp @e[type=area_effect_cloud,tag=RemoveDisplay] ~ ~-200 ~
+kill @e[type=area_effect_cloud,tag=RemoveDisplay]
 tp @e[type=armor_stand,tag=RemoveDisplay] ~ ~-200 ~
 kill @e[type=armor_stand,tag=RemoveDisplay]
 

@@ -35,18 +35,18 @@ kill @e[type=marker,tag=KillChaseblock2]
 execute as @e[type=marker,tag=UtilBlock,tag=!KillChaseblock2] at @s unless block ~ ~ ~ purple_stained_glass run tag @s add KillChaseblock2
 scoreboard players reset @a[scores={BreakCBPurple=1..}] BreakCBPurple
 
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run fill ~1 ~3 ~2 ~-1 ~-1 ~-2 air replace cyan_stained_glass
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass if entity @a[team=Blue,distance=..8,scores={BreakCBCyan=1..}] run playsound minecraft:item.crossbow.loading_end master @a ~ ~ ~ 1 1.2
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass if entity @a[team=Blue,distance=..8,scores={BreakCBCyan=1..}] run playsound minecraft:block.note_block.bit master @a ~ ~1.5 ~ 1 0.8
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass if entity @a[team=Blue,distance=..8,scores={BreakCBCyan=1..}] run particle dust 3 3 3 1 ~ ~1.5 ~ 0.5 0.5 0.5 0.1 20 force
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @a[team=Blue,sort=nearest,limit=1,distance=..8,scores={BreakCBCyan=1..}] add getItem
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass as @a[team=Blue,tag=getItem,sort=nearest,limit=1,distance=..8,scores={BreakCBCyan=1..}] run function rr_chase:chaseblocks/givearrows
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @a[team=Blue,sort=nearest,limit=1,distance=..8,scores={BreakCBCyan=1..}] remove getItem
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run item replace entity @s armor.head with air
-tp @e[type=marker,type=marker,tag=KillChaseblock3] ~ ~-200 ~
-kill @e[type=marker,type=marker,tag=KillChaseblock3]
-execute as @e[type=marker,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @s add KillChaseblock3
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run fill ~1 ~3 ~2 ~-1 ~-1 ~-2 air replace cyan_stained_glass
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass if entity @a[team=Blue,distance=..8,scores={BreakCBCyan=1..}] run playsound minecraft:item.crossbow.loading_end master @a ~ ~ ~ 1 1.2
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass if entity @a[team=Blue,distance=..8,scores={BreakCBCyan=1..}] run playsound minecraft:block.note_block.bit master @a ~ ~1.5 ~ 1 0.8
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass if entity @a[team=Blue,distance=..8,scores={BreakCBCyan=1..}] run particle dust 3 3 3 1 ~ ~1.5 ~ 0.5 0.5 0.5 0.1 20 force
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @a[team=Blue,sort=nearest,limit=1,distance=..8,scores={BreakCBCyan=1..}] add getItem
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass as @a[team=Blue,tag=getItem,sort=nearest,limit=1,distance=..8,scores={BreakCBCyan=1..}] run function rr_chase:chaseblocks/givearrows
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @a[team=Blue,sort=nearest,limit=1,distance=..8,scores={BreakCBCyan=1..}] remove getItem
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run item replace entity @s armor.head with air
+tp @e[type=marker,tag=KillChaseblock3] ~ ~-200 ~
+kill @e[type=marker,tag=KillChaseblock3]
+execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @s add KillChaseblock3
 scoreboard players reset @a[scores={BreakCBCyan=1..}] BreakCBCyan
 
 execute as @e[type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] run title @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] actionbar {"text":"You're in the lead! You can not shoot End Crystals at yourself!","bold":true,"color":"white"}

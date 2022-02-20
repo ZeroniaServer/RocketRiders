@@ -22,11 +22,6 @@ setblock -95 203 74 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;-1049608
 setblock -98 199 74 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;-104960843,799031877,-1461346492,636471740],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0="}]}}}
 setblock -100 201 78 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1532111907,970802464,-1472056034,1445216331],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0="}]}}}
 
-
-#Chase blocks
-scoreboard players set $ChaseBlocks CmdData 150
-function rr_chase:chaseblocks/spawn
-
 #Flag placement
 fill 12 64 65 12 71 65 oak_fence replace air
 setblock 12 71 64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"minecraft:finish_flag1"}
@@ -161,6 +156,9 @@ fill 38 63 -39 -14 34 -29 pink_stained_glass replace cyan_stained_glass
 fill -14 63 -73 38 34 -75 red_stained_glass replace blue_stained_glass
 fill -14 63 -73 38 34 -75 pink_stained_glass replace cyan_stained_glass
 
+#Chase blocks
+scoreboard players set $ChaseBlocks CmdData 150
+function rr_chase:chaseblocks/spawn
 
 #cancel yellow
 function game:cancelyellow

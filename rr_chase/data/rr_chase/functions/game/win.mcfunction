@@ -26,7 +26,7 @@ execute as @a[team=Blue,tag=Winner] at @s run playsound minecraft:ui.toast.chall
 execute as @a[team=Blue,tag=Loser] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2
 title @a times 10 80 20
 title @a[team=!Lobby] title ["",{"selector":"@a[team=Blue,tag=Winner,limit=1]","color":"dark_red"},{"text":" Won!","color":"red"}]
-tellraw @a ["",{"selector":"@a[team=Blue,tag=Winner,limit=1]","color":"blue","bold":true},{"text":" Won!","color":"blue","bold":true}]
+tellraw @a ["",{"selector":"@a[team=Blue,tag=Winner,limit=1]","color":"dark_red","bold":true},{"text":" Won!","color":"red","bold":true}]
 
 ##Splashes
 execute as @a[team=Blue,tag=Winner,limit=1,sort=random] run function rr_chase:game/winsplash

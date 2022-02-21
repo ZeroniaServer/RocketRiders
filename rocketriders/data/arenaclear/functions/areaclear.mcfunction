@@ -8,7 +8,6 @@ tag @s[scores={RepeatSettings=2..}] add Repeat
 execute if entity @s[tag=Repeat,tag=!RepeatForever] run schedule function arenaclear:notifyrepeat 3t append
 
 ##Appropriate tags for Arena Clear state
-tag @s add EditedSettings
 tag @s remove GameStarted
 
 ##Summon AECs for tracking/block sweeping

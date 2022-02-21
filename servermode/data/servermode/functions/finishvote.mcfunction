@@ -54,7 +54,6 @@ execute unless entity @e[type=marker,tag=WonVote,tag=CrusadeMode] run tag @e[typ
 tag @e[type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 execute as @e[type=armor_stand,tag=Selection,tag=!needsForceClear,limit=1] run function arenaclear:testvalidclear
 execute as @e[type=armor_stand,tag=Selection,tag=needsForceClear,limit=1] run function arenaclear:forceareaclear
-tag @e[type=armor_stand,tag=Selection,limit=1] add EditedSettings
 
 # Select forced item sets and match settings
-schedule function servermode:init_forcedsettings 2t
+schedule function servermode:init_forcedsettings 42t

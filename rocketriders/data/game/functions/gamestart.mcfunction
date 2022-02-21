@@ -10,6 +10,7 @@ execute if entity @s[tag=GameStarted,tag=!bossbarOverride] unless entity @s[tag=
 execute if entity @s[tag=GameStarted,tag=!bossbarOverride,tag=YellowFull,tag=BlueFull] unless score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"The match is full, but feel free to spectate!","color":"dark_green"}]
 execute if entity @s[tag=GameStarted,tag=!bossbarOverride] unless entity @s[tag=YellowFull,tag=BlueFull] if score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"A match is currently in Sudden Death. Feel free to join in!","color":"dark_red"}]
 execute if entity @s[tag=GameStarted,tag=!bossbarOverride,tag=YellowFull,tag=BlueFull] if score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"The match is full, but feel free to spectate!","color":"dark_red"}]
+execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] run bossbar set rr:startgame max 30
 execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"players...","color":"white"}]
 execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run bossbar set rr:startgame color blue
 execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] if entity @a[team=Blue] unless entity @a[team=Yellow] run bossbar set rr:startgame value 15
@@ -23,9 +24,14 @@ execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0..1}] 
 execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0}] run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame color red
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame name ["",{"text":"A game is currently ending.","color":"red"}]
+execute if entity @s[tag=EditedSettings] run scoreboard players set $ClearTime CmdData 0
 execute if entity @s[tag=!EditedSettings,scores={servermode=0}] run bossbar set rr:startgame value 30
-execute if entity @s[tag=!EditedSettings] run bossbar set rr:startgame max 30
 execute if entity @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a
+execute if entity @e[type=marker,tag=ArenaClearChecker] run bossbar set rr:startgame color green
+execute if entity @e[type=marker,tag=ArenaClearChecker] run bossbar set rr:startgame name ["",{"text":"Preparing the arena...","color":"green"}]
+execute if entity @e[type=marker,tag=ArenaClearChecker] run bossbar set rr:startgame max 42
+execute if entity @e[type=marker,tag=ArenaClearChecker] run scoreboard players add $ClearTime CmdData 1
+execute if entity @e[type=marker,tag=ArenaClearChecker] store result bossbar rr:startgame value run scoreboard players get $ClearTime CmdData
 
 ##Blue Join Pad
 execute unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @a[tag=JoinBlue] run function game:joinwarn

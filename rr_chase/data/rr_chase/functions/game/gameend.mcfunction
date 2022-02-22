@@ -9,7 +9,7 @@ execute if entity @s[scores={endtimer=1}] run function rr_chase:game/endstats
 scoreboard players reset * FlagScore
 execute if entity @s[scores={endtimer=1..}] run fill 13 74 68 7 64 61 moving_piston replace air
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_chase:lead players none
-execute if entity @s[scores={endtimer=1..}] run bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"dark_red"}]
+execute if entity @s[scores={endtimer=1..}] run bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"red"}]
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_chase:lead value 0
 execute if entity @s[scores={endtimer=1..10}] run function rr_chase:chaseblocks/killall
 tag @a[team=Blue] remove InLead

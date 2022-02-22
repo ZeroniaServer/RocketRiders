@@ -123,7 +123,7 @@ execute as @e[type=marker,tag=yellowjoinpad] at @s run tag @a[distance=2..,team=
 execute if entity @s[tag=JustCleared] run tag @a remove JoinSpec
 execute if entity @s[tag=!EditedSettings] run tag @a remove JoinSpec
 execute if entity @s[tag=GameEnd] run tag @a remove JoinSpec
-execute if entity @e[type=armor_stand,tag=Selection,tag=SMActive] if entity @e[type=marker,tag=specjoinpad,tag=CancelJoin] as @a[tag=JoinSpec] run tellraw @s ["",{"text":"You can not use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
+execute if entity @e[type=armor_stand,tag=Selection,tag=SMActive] if entity @e[type=marker,tag=specjoinpad,tag=CancelJoin] as @a[tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 tag @a[gamemode=spectator] remove JoinSpec
 execute as @e[type=marker,tag=specjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:gray_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
 execute as @e[type=marker,tag=specjoinpad,tag=!CancelJoin,tag=!JustCleared] at @s run tag @a[team=!Spectator,distance=..1,limit=1,sort=random] add JoinSpec

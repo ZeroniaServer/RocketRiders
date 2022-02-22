@@ -49,7 +49,7 @@ kill @e[type=marker,tag=KillChaseblock3]
 execute as @e[type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @s add KillChaseblock3
 scoreboard players reset @a[scores={BreakCBCyan=1..}] BreakCBCyan
 
-execute as @e[type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] run title @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] actionbar {"text":"You're in the lead! You can not shoot End Crystals at yourself!","bold":true,"color":"white"}
+execute as @e[type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] run title @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] actionbar {"text":"You're in the lead! You cannot shoot End Crystals at yourself!","bold":true,"color":"white"}
 execute as @e[type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] run tag @s remove Display
 execute as @e[type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[team=Blue,tag=InLead,distance=..8,scores={BreakCBTint=1..}] run setblock ~ ~ ~ tinted_glass
 execute as @e[type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass run fill ~ ~ ~3 ~ ~ ~ air replace tinted_glass

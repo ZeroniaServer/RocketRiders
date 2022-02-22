@@ -1,5 +1,5 @@
 #Leave midgame
-execute if entity @s[tag=!SMActive] run function game:leavemidgame
+execute if entity @s[tag=!SMActive] run function rr_chase:game/leavemidgame
 
 #Item RNG (exception for arrows)
 tag @s add givenArrows

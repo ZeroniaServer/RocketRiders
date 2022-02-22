@@ -20,6 +20,10 @@ execute if entity @s[tag=GameStarted] as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,
 #Hardcore compatibility
 execute if entity @s[tag=GameStarted,tag=Hardcore] run function modifiers:hardcorekill
 
+#Notify Join
+execute if entity @s[tag=GameStarted,tag=!SMActive] as @a[tag=JoinBlue] run function rr_chase:chasegear/sabermsg
+execute if entity @s[tag=GameStarted,tag=SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
+
 #Tag Removal
 tag @a remove JoinBlue
 
@@ -36,6 +40,8 @@ execute if entity @s[tag=EditedSettings] if score @s bluesCount matches 2.. run 
 execute if entity @s[tag=EditedSettings,tag=Countdown] if score @s bluesCount matches 0..1 run function game:restartcountdown
 execute if entity @s[tag=!GameStarted] as @a[team=Blue] run attribute @s minecraft:generic.knockback_resistance base set 10000
 execute as @a[team=!Blue] run attribute @s minecraft:generic.knockback_resistance base set 0.0
+execute if entity @s[scores={count=600},tag=!SMActive] as @a[team=Blue] run function rr_chase:chasegear/sabermsg
+execute if entity @s[scores={count=600},tag=SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
 execute if entity @s[scores={count=600},tag=!GameEnd] run tp @a[team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={count=600},tag=!GameEnd] run spawnpoint @a[team=Blue] 12 64 -66 0

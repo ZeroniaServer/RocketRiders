@@ -25,6 +25,7 @@ tag @s add customNova
 tag @s add customShield
 tag @s add onlyBlue
 tag @s add antigriefOff
+tag @s add customSaberMsg
 team modify Blue friendlyFire true
 
 #haha funny

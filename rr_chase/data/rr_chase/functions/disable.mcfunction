@@ -32,6 +32,7 @@ tag @s remove customNova
 tag @s remove customShield
 tag @s remove onlyBlue
 tag @s remove antigriefOff
+tag @s remove customSaberMsg
 
 #haha funny
 tag @e[type=marker,tag=tempyellow] remove bluejoinpad

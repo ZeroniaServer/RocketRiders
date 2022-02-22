@@ -66,7 +66,7 @@ fill -101 200 95 -101 197 96 air replace white_stained_glass
 fill -101 196 96 -101 196 95 obsidian replace white_stained_glass
 
 #Unique bases & Pregame
-team modify Blue color red
+team modify Blue color dark_red
 fill -79 204 63 -81 204 61 minecraft:white_concrete replace minecraft:blue_concrete
 fill -79 204 95 -81 204 93 white_concrete replace minecraft:yellow_concrete
 fill -101 195 65 -89 201 64 minecraft:red_stained_glass

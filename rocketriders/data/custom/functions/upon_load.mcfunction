@@ -11,7 +11,7 @@ team add Spectator
 team add Developer
 
 team modify Lobby color green
-team modify Blue color blue
+execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] run team modify Blue color blue
 team modify Yellow color gold
 team modify Spectator color dark_gray
 team modify Developer color dark_green

@@ -75,6 +75,7 @@ fill 39 64 67 -15 67 67 air replace fire
 ##Extra stuff for Modifiers
 #Molerat
 execute if entity @s[tag=Molerat] run function arenaclear:moleratplace
+execute if entity @s[tag=!Molerat,tag=WasMolerat] run function arenaclear:moleratclear
 
 #Hardcore
 execute if entity @s[tag=Hardcore] run fill 38 63 63 -14 34 52 air
@@ -112,6 +113,8 @@ tag @s[tag=!onlyBlue] remove YellowCapOverride
 tag @s remove BlueFull
 tag @s remove BlueCapOverride
 scoreboard players set $barriers CmdData 79
+
+tag @s add EditedSettings
 
 ##Remove blocks in front of portals (extra precaution)
 fill -14 63 67 38 34 73 cave_air

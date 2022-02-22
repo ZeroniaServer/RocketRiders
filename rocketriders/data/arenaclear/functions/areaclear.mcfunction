@@ -30,9 +30,6 @@ fill -11 59 73 35 36 75 air
 fill -14 13 66 38 33 48 air
 fill -14 13 -66 38 33 -48 air
 
-##Molerat clearing
-execute if entity @s[tag=!Molerat,tag=WasMolerat] run function arenaclear:moleratclear
-
 ##Kill all necessary entities and clear utility structures
 kill @e[type=fireball]
 kill @e[type=area_effect_cloud,tag=endFireballAEC]

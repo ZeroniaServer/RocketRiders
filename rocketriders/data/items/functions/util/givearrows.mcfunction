@@ -29,6 +29,6 @@ execute if entity @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!fullOffhand,tag
 execute if entity @s[scores={HasArrows=0},tag=!fullOffhand,tag=Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 
 #Game tracking
-tag @e[type=armor_stand,tag=Selection,tag=givenArrows] add givenArrowsTwice
-tag @e[type=armor_stand,tag=Selection] add givenArrows
+tag @e[type=armor_stand,tag=Selection,tag=givenArrows,tag=tetrisTime] add givenArrowsTwice
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenArrows
 scoreboard players set @e[type=armor_stand,tag=Bot] botarrowitems 4

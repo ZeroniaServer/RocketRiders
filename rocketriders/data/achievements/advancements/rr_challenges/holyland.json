@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "For The Holy Land!",
+            "color": "green"
+        },
+        "description": {
+            "text": "Lose 5 Crusade Mode games in a row.",
+            "color": "dark_green"
+        },
+        "icon": {
+            "item": "minecraft:netherite_helmet"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "achievements:rr_zzzhard/root"
+}

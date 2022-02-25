@@ -3,7 +3,7 @@ title @a title ["",{"text":"Game Started!","color":"aqua"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 199
+scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 204
 
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -84,13 +84,13 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=70}] run title @a su
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=71}] run title @a subtitle ["",{"text":"[Windows start-up sound]","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=72}] run title @a subtitle ["",{"text":"Pro deploy to make him happy","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=73}] run title @a subtitle ["",{"text":"The plot thickens, the Vortex chickens...","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=74}] run title @a subtitle ["",{"text":"Now Playing: Rick Astley - Never Gonna Give You Up","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=75}] run title @a subtitle ["",{"text":"Warning: Pro gamers have been detected in the game!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=74}] run title @a subtitle ["",{"text":"Now Playing: Never Gonna Give You Up","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=75}] run title @a subtitle ["",{"text":"Warning: Pro gamers have been detected!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=76}] run title @a subtitle ["",{"text":"Are your missiles running?","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=77}] run title @a subtitle ["",{"text":"Hold my splash!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=78}] run title @a subtitle ["",{"text":"May the force be with you!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=79}] run title @a subtitle ["",{"text":"Remember to turn your client on!","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=80}] run title @a subtitle ["",{"text":"Apologies for the incredibly underpowered pickaxes.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=80}] run title @a subtitle ["",{"text":"Apologies for the underpowered pickaxes.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=81}] run title @a subtitle ["",{"text":"Insert pointy end in glass.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=82}] run title @a subtitle ["",{"text":"what the dog doin?","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=83}] run title @a subtitle ["",{"text":"Went through 5,800 or so @e selectors...","color":"green"}]
@@ -156,7 +156,7 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=142}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=143}] run title @a subtitle ["",{"text":"KABOOM! From foamtastic!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=144}] run title @a subtitle ["",{"text":"10 signs you're a sigma missile...","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=145}] run title @a subtitle ["",{"text":"Respect your elders!","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=146}] run title @a subtitle ["",{"text":"Respect your elders!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=146}] run title @a subtitle ["",{"text":"fun fact, cats r better than dogs","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=147}] run title @a subtitle ["",{"text":"Shooting Saber? More like Shooting Sa-bruh","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=148}] run title @a subtitle ["",{"text":"Get real and fake simultaneously.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=149}] run title @a subtitle ["",{"text":"elyta go BOOM!","color":"green"}]
@@ -190,7 +190,7 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=176}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=177}] run title @a subtitle ["",{"text":"*holy music plays*","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=178}] run title @a subtitle ["",{"text":"vote crusade lmao","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=179}] run title @a subtitle ["",{"text":"Let's go!","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=180}] run title @a subtitle ["",{"text":"Our opponents aren't gonna crusade themselves!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=180}] run title @a subtitle ["",{"text":"Our opponents won't crusade themselves!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=181}] run title @a subtitle ["",{"text":"Two Teams. One Rocket.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=182}] run title @a subtitle ["",{"text":"RR defines cringe.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=183}] run title @a subtitle ["",{"text":"No time to explain, get in the rocket!","color":"green"}]
@@ -209,5 +209,10 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=195}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=196}] run title @a subtitle ["",{"text":"RR stands for Realms Reject!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=197}] run title @a subtitle ["",{"text":"Timmy, where'd you get the launch codes from?","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=198}] run title @a subtitle ["",{"text":"No habla español","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=199}] run title @a subtitle ["",{"text":"Schrödinger's Rocket","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=200}] run title @a subtitle ["",{"text":"Shameless missile command clone","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=201}] run title @a subtitle ["",{"text":"I bet 1,000 Rocket Bucks they win.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=202}] run title @a subtitle ["",{"text":"Ignition key not detected.","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=203}] run title @a subtitle ["",{"text":"H: Game Htarting","color":"green"}]
 
 kill @e[type=marker,tag=RandomSplash]

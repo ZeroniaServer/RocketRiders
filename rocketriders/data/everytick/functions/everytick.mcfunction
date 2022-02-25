@@ -69,7 +69,13 @@ execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!customArrowPickup
 #Game ending and arena clearing
 execute as @e[type=armor_stand,tag=Selection,tag=GameEnd,tag=!NoModesInstalled] run function game:gameend
 execute as @e[type=armor_stand,tag=Selection,tag=SuddenDeath,tag=!SuddenDeathCustom,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
-execute if entity @e[type=marker,tag=ArenaClearChecker] as @a run function everytick:stopsounds
+# execute if entity @e[type=marker,tag=ArenaClearChecker] as @a run function everytick:stopsounds
+execute if entity @e[type=marker,tag=ArenaClearChecker,tag=!Cleared,tag=!BasePlaced] run scoreboard players add $acdelay CmdData 1
+execute if score $acdelay CmdData matches 47.. run tellraw @a {"text":"Warning: Force clearing arena since previous gamemode is unknown.","color":"red"}
+execute if score $acdelay CmdData matches 47.. run tag @e[type=armor_stand,tag=Selection] add normalLast
+execute if score $acdelay CmdData matches 47.. run scoreboard players reset $acdelay CmdData
+execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced] run scoreboard players reset $acdelay CmdData
+kill @e[type=marker,tag=PlacerPowerClear]
 kill @e[type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
 execute as @e[type=armor_stand,tag=Selection,tag=!GameEnd,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:refreshsignsquery
@@ -78,6 +84,6 @@ execute if score $justcleared CmdData matches 4.. run tag @e[type=armor_stand,ta
 execute as @e[type=armor_stand,tag=Selection] unless entity @s[tag=JustCleared] run scoreboard players reset $justcleared CmdData
 
 #Gamemode/reload handling
-schedule function gamemodes:disableerror 1t append
-execute if score $reloaded CmdData matches 1..40 run scoreboard players add $reloaded CmdData 1
-execute if score $reloaded CmdData matches 41 run scoreboard players reset $reloaded
+schedule function gamemodes:disableerror 2t append
+execute if score $reloaded CmdData matches 1..100 run scoreboard players add $reloaded CmdData 1
+execute if score $reloaded CmdData matches 101 run scoreboard players reset $reloaded

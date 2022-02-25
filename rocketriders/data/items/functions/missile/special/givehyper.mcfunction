@@ -17,5 +17,5 @@ loot give @s[scores={HasHyper=0},tag=!fullHotbar] loot items:special/hypersonic
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasHyper=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackHyper] run tag @e[type=armor_stand,tag=Selection] add givenHyper
-execute unless entity @s[tag=BackHyper] run tag @e[type=armor_stand,tag=Bot] add BotHasHyper
+execute unless entity @s[tag=BackHyper] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenHyper
+execute unless entity @s[tag=BackHyper] run tag @e[type=armor_stand,tag=Bot] add HasHyper

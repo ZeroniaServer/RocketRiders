@@ -62,34 +62,34 @@ execute if entity @s[tag=doTying,tag=!tyingOff] as @e[type=marker,tag=SelectedTi
 execute unless entity @s[tag=doTying,tag=!tyingOff] as @e[type=marker,tag=SelectedTip,tag=Tip10] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Make sure to break any TNT in or around your base, or else your portal could be at risk of exploding!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip10] run tag @e[type=armor_stand,tag=Selection] add Tip10
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip11] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Items have their category (such as Normal, Lightning, Heavy or Utility) in front of their names. Be careful with what you spawn at what time.","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip11] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Canopy will break itself after 20 seconds. Once the log is broken, the leaves randomly decay.","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip11] run tag @e[type=armor_stand,tag=Selection] add Tip11
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip12] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Lightning Speed missiles are way faster than other missiles. Great for rush tactics!","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip12] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Throwing a Splash on top of a Canopy will water it, extending its duration by 10 seconds!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip12] run tag @e[type=armor_stand,tag=Selection] add Tip12
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip13] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Canopy will break itself after 20 seconds. Once the log is broken, the leaves randomly decay.","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip13] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Vortex can identify and drift towards enemy players in a close radius. Rule of thumb: stand clear!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip13] run tag @e[type=armor_stand,tag=Selection] add Tip13
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip14] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Throwing a Splash on top of a Canopy will water it, extending its duration by 10 seconds!","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip14] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Vortex blows up when enemies get near it, missiles pass through it, or it gets shot by arrows or Nova Rockets. It can also chain-react with nearby Vortex explosions.","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip14] run tag @e[type=armor_stand,tag=Selection] add Tip14
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip15] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Vortex can identify and drift towards enemy players in a close radius. Rule of thumb: stand clear!","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip15] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Powerups Mode, you may obtain a Stinging Shield. Drink the honey bottle to deploy it, and shoot/break the TNT in the middle to release the bees!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip15] run tag @e[type=armor_stand,tag=Selection] add Tip15
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip16] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Vortex blows up when enemies get near it, missiles pass through it, or it gets shot by arrows or Nova Rockets. It can also chain-react with nearby Vortex explosions.","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip16] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Powerups Mode, you may obtain a Lava Splash. It functions exactly like a normal Splash, but places lava instead... watch out!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip16] run tag @e[type=armor_stand,tag=Selection] add Tip16
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip17] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Powerups Mode, you may obtain a Stinging Shield. Drink the honey bottle to deploy it, and shoot/break the TNT in the middle to release the bees!","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip17] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Once you capture the Powerup Platform, it will stay captured even if you leave it until the enemy team steps on top or the Platform breaks.","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip17] run tag @e[type=armor_stand,tag=Selection] add Tip17
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip18] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Powerups Mode, you may obtain a Lava Splash. It functions exactly like a normal Splash, but places lava instead... watch out!","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip18] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If both teams are on the Powerup Platform, the Platform turns red and becomes contested. Whoever remains on top gains control of the Platform.","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip18] run tag @e[type=armor_stand,tag=Selection] add Tip18
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip19] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Once you capture the Powerup Platform, it will stay captured even if you leave it until the enemy team steps on top.","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip19] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"When your enemies control the Powerup Platform, stand on the Crystal Crafter right behind your spawnpoint to shoot End Crystals at the platform!","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip19] run tag @e[type=armor_stand,tag=Selection] add Tip19
 
-execute as @e[type=marker,tag=SelectedTip,tag=Tip20] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If both teams are on the Powerup Platform, the Platform turns red and becomes contested. Whoever remains on top gains control of the Platform.","color":"gray"}]
+execute as @e[type=marker,tag=SelectedTip,tag=Tip20] as @a[tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"The Powerup Platform slowly breaks over time. When an End Crystal is placed on the Platform, this process is sped up significantly.","color":"gray"}]
 execute as @e[type=marker,tag=SelectedTip,tag=Tip20] run tag @e[type=armor_stand,tag=Selection] add Tip20
 
 #Opt out message (disabled on servers)

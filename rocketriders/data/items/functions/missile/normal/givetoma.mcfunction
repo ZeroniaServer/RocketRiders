@@ -16,5 +16,5 @@ loot give @s[scores={HasToma=0},tag=!fullHotbar] loot items:normal/tomatwo
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasToma=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackToma] run tag @e[type=armor_stand,tag=Selection] add givenToma
-execute unless entity @s[tag=BackToma] run tag @e[type=armor_stand,tag=Bot] add BotHasToma
+execute unless entity @s[tag=BackToma] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenToma
+execute unless entity @s[tag=BackToma] run tag @e[type=armor_stand,tag=Bot] add HasToma

@@ -2,9 +2,7 @@
 execute as @e[type=armor_stand,tag=Selection] run function rr_powerups:items/tetrisreset
 
 #remove endcrystal entities
-kill @e[type=armor_stand,tag=PUCrystalEntity]
-kill @e[type=end_crystal,tag=PUCrystalEntity]
-kill @e[type=marker,tag=PUCrystalEntity]
+kill @e[type=#custom:crystal,tag=PUCrystalEntity]
 
 #Clear crystal crafters
 scoreboard players reset @e[type=marker,tag=captureMiddle] captureBlue

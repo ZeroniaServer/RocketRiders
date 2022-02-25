@@ -4,8 +4,12 @@
 ##########################################
 
 ##Select item
+execute as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add getItem
+tag @s add tetrisTime
 function rr_crusade:items/rng
 function rr_crusade:items/tetris
+tag @a remove getItem
+tag @s remove tetrisTime
 tag @s add gaveFirstItem
 
 ##Actionbar notifications

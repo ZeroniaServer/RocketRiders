@@ -128,7 +128,6 @@ execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCr
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=40},limit=1] run summon armor_stand 12 62.2 -69 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:ghast_tear",Count:1b}]}
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=40},limit=1] positioned 12 64 -70 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 1.4
 
-# execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=45},limit=1] run summon armor_stand 12 62.2 -70 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:ender_eye",Count:1b}]}
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=45},limit=1] run setblock 12 63 -70 end_portal_frame[facing=south,eye=true]
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=45},limit=1] positioned 12 64 -70 run playsound minecraft:block.end_portal_frame.fill master @a ~ ~ ~ 2 1.2
 
@@ -139,12 +138,13 @@ execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCr
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55},limit=1] run summon marker 12 55 0 {Tags:["BlueCrystalSpot","NotSet","PUCrystalEntity"]}
 execute as @e[type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55},limit=1] run scoreboard players set @s PowerupCrystal 20
 
-execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~-3 run particle end_rod ~ ~1.15 ~ 0 0 0 0.05 3 force
-execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~-3 run particle dragon_breath ~ ~1.15 ~ 0 0 0 0 1 force
+execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~-3 run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
+execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~-3 run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
 
-
+execute as @e[type=marker,tag=PUCrystalAS] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @s
 execute as @e[type=marker,tag=BlueCrystalSpot] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @s
-
+execute as @e[type=armor_stand,tag=PUCrystalAS] unless entity @e[type=marker,tag=BlueCrystalSpot] run kill @e[type=end_crystal,tag=PUCrystal]
+execute as @e[type=armor_stand,tag=PUCrystalAS] unless entity @e[type=marker,tag=BlueCrystalSpot] run kill @s
 
 execute as @e[type=marker,tag=BlueCrystalSpot,tag=NotSet,limit=1] at @s run spreadplayers ~ ~ 0 4 false @s
 execute as @e[type=marker,tag=BlueCrystalSpot,tag=NotSet,limit=1] at @s run tp @s ~ 54.5 ~
@@ -164,5 +164,5 @@ execute as @e[type=armor_stand,tag=PUCrystalAS,tag=NotSet,limit=1] at @s if enti
 scoreboard players add @e[type=end_crystal,tag=PUCrystal,tag=!PUCrystalPerma,tag=Set] PowerupCrystal 1
 execute as @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run kill @e[type=marker,tag=BlueCrystalSpot,distance=..0.5,limit=1]
 execute as @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run particle flash ~ ~ ~ 0 0 0 4 2 force
-execute as @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run summon end_crystal ~ ~ ~ {ShowBottom:0b,Tags:["PUCrystal","PUCrystalEntity","PUCrystalPerma"]}
+execute as @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run summon end_crystal ~ ~ ~ {Invulnerable:1b,ShowBottom:0b,Tags:["PUCrystal","PUCrystalEntity","PUCrystalPerma"]}
 kill @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}]

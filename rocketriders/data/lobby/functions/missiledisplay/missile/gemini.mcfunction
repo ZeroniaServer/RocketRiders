@@ -20,6 +20,7 @@ setblock 18 201 73 blue_concrete_powder
 fill 22 202 69 15 206 87 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 fill 22 202 69 15 206 87 white_glazed_terracotta replace blue_glazed_terracotta
+fill 22 202 69 15 206 87 birch_fence_gate[facing=south,open=true] replace warped_fence_gate
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Normal] ","color":"green","bold":true},{"text":"Gemini","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Gemini is a twin missile, in that if one side is stopped, the other side of the missile will keep going.","color":"gray","italic":true}

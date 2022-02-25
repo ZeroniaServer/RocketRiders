@@ -16,5 +16,5 @@ loot give @s[scores={HasHur=0},tag=!fullHotbar] loot items:lightning/hurricane
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasHur=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackHur] run tag @e[type=armor_stand,tag=Selection] add givenHur
-execute unless entity @s[tag=BackHur] run tag @e[type=armor_stand,tag=Bot] add BotHasHur
+execute unless entity @s[tag=BackHur] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenHur
+execute unless entity @s[tag=BackHur] run tag @e[type=armor_stand,tag=Bot] add HasHur

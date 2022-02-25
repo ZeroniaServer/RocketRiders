@@ -39,5 +39,5 @@ execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdispl
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.blue
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * FlagDisp
-tag @e[tag=Selection] remove CTFOvertime
-tag @e[tag=Selection] remove CTF3stack
+tag @e[type=armor_stand,tag=Selection] remove CTFOvertime
+tag @e[type=armor_stand,tag=Selection] remove CTF3stack

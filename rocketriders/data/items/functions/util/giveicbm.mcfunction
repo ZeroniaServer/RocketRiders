@@ -14,4 +14,4 @@ title @s[scores={HasICBM=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text"
 give @s[team=Yellow,scores={HasICBM=0},tag=!fullHotbar] egg{icbm:1b,CustomModelData:3,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"ICBM","color":"gold","bold":true}]',Lore:['{"text":"Short for \\"intercontinental ballistic missile\\".","color":"gray"}','{"text":"Blows up upon impact or after short flight.","color":"gray"}']},Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:7} 1
 give @s[team=Blue,scores={HasICBM=0},tag=!fullHotbar] egg{icbm:1b,CustomModelData:3,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"ICBM","color":"blue","bold":true}]',Lore:['{"text":"Short for \\"intercontinental ballistic missile\\".","color":"gray"}','{"text":"Blows up upon impact or after short flight.","color":"gray"}']},Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:7} 1
 
-tag @e[type=armor_stand,tag=Selection] add givenICBM
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenICBM

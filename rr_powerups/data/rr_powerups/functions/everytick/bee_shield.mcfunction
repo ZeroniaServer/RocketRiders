@@ -77,7 +77,7 @@ execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=28}] at @s
 execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage11"}
 execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_full"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"rr_powerups:bees_blue_full"}
 execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 
@@ -121,7 +121,7 @@ execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=28}] at @s
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage11"}
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_full"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"rr_powerups:bees_yellow_full"}
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 
@@ -158,8 +158,6 @@ execute as @e[type=bee,tag=!beeChecked] run data remove entity @s AngryAt
 execute as @e[type=bee,tag=!beeChecked] run data merge entity @s {PortalCooldown:2147483647}
 execute if entity @e[type=bee,tag=!beeChecked] run scoreboard players set $beetime BeeShieldTime 0
 tag @e[type=bee,tag=!beeChecked] add beeChecked
-execute as @e[type=bee] unless entity @s[nbt={Glowing:1b}] run data merge entity @s {Glowing:1b}
-execute as @e[type=bee] unless entity @s[nbt={NoGravity:1b}] run data merge entity @s {NoGravity:1b}
 
 scoreboard players add $beetime BeeShieldTime 1
 execute if score $beetime BeeShieldTime matches 100 run scoreboard players set $beetime BeeShieldTime 0
@@ -172,3 +170,8 @@ execute if score $beetime BeeShieldTime matches 3 run kill @e[type=snowball,tag=
 
 #kill bees that have stung
 kill @e[type=bee,nbt={HasStung:1b}]
+
+#kill bees that are in the void
+execute as @e[type=bee,predicate=rr_powerups:bee_void] run data merge entity @s {DeathTime:19s}
+execute as @e[type=bee,predicate=rr_powerups:bee_void] at @s run tp @s ~ -100 ~
+kill @e[type=bee,predicate=rr_powerups:bee_void]

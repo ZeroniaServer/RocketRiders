@@ -9,7 +9,7 @@ fill -11 36 73 35 59 75 air
 #> Restore glass when game starts
 execute as @e[type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement
 function rr_crusade:game/glassplacement
-scoreboard players set @e[tag=crusadeWall] CmdData 20
+scoreboard players set @e[type=marker,tag=crusadeWall] CmdData 20
 
 #> Pregame bases
 fill -101 201 65 -89 195 64 deepslate_bricks
@@ -164,32 +164,32 @@ summon armor_stand 14 65 63 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect",
 setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}',Text2:'{"text":"Mage","bold":true,"color":"#008805"}'}
 
 #kit stand items
-execute as @e[tag=KnightStand] run item replace entity @s armor.head with netherite_helmet
-execute as @e[tag=KnightStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
-execute as @e[tag=KnightStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
-execute as @e[tag=KnightStand] run item replace entity @s armor.legs with iron_leggings
-execute as @e[tag=KnightStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
-execute as @e[tag=KnightStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
-execute as @e[tag=KnightStand] run item replace entity @s weapon.mainhand with stone_sword
-execute as @e[tag=KnightStand] run item replace entity @s weapon.offhand with shield
+execute as @e[type=armor_stand,tag=KnightStand] run item replace entity @s armor.head with netherite_helmet
+execute as @e[type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
+execute as @e[type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
+execute as @e[type=armor_stand,tag=KnightStand] run item replace entity @s armor.legs with iron_leggings
+execute as @e[type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
+execute as @e[type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
+execute as @e[type=armor_stand,tag=KnightStand] run item replace entity @s weapon.mainhand with stone_sword
+execute as @e[type=armor_stand,tag=KnightStand] run item replace entity @s weapon.offhand with shield
 
-execute as @e[tag=ArcherStand] run item replace entity @s armor.head with chainmail_helmet
-execute as @e[tag=ArcherStand] run item replace entity @s armor.chest with chainmail_chestplate
-execute as @e[tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
-execute as @e[tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
-execute as @e[tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
-execute as @e[tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
-execute as @e[tag=ArcherStand] run item replace entity @s weapon.mainhand with bow
+execute as @e[type=armor_stand,tag=ArcherStand] run item replace entity @s armor.head with chainmail_helmet
+execute as @e[type=armor_stand,tag=ArcherStand] run item replace entity @s armor.chest with chainmail_chestplate
+execute as @e[type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
+execute as @e[type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
+execute as @e[type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
+execute as @e[type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
+execute as @e[type=armor_stand,tag=ArcherStand] run item replace entity @s weapon.mainhand with bow
 
-execute as @e[tag=MageStand,tag=BlueKit] run item replace entity @s armor.head with warped_fence_gate
-execute as @e[tag=MageStand,tag=YellowKit] run item replace entity @s armor.head with birch_fence_gate
-execute as @e[tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
-execute as @e[tag=MageStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
-execute as @e[tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
-execute as @e[tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
-execute as @e[tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
-execute as @e[tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
-execute as @e[tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
+execute as @e[type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.head with warped_fence_gate
+execute as @e[type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.head with birch_fence_gate
+execute as @e[type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
+execute as @e[type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
+execute as @e[type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
+execute as @e[type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
+execute as @e[type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
+execute as @e[type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
+execute as @e[type=armor_stand,tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
 
 #> Kit stand light blocks
 fill 15 64 -64 13 67 -62 light[level=0] replace air

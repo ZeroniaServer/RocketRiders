@@ -22,5 +22,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "achievements:rr_hard/root"
+    "parent": "achievements:rr_zzzhard/root"
 }

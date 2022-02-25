@@ -79,5 +79,6 @@ execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=65}] run title @a
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=66}] run title @a[tag=Winner] subtitle ["",{"text":"RR actually stands for Reject Realms!","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=67}] run title @a[tag=Winner] subtitle ["",{"text":"What is that I hear? Sounds like skill issue.","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=68}] run title @a[tag=Winner] subtitle ["",{"text":"Hey wait, did they grief themselves?","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=69}] run title @a[tag=Winner] subtitle ["",{"text":"Well done, medal is at -224 77 29 (pranked)","color":"green"}]
 
 kill @e[type=marker,tag=RandomWinSplash]

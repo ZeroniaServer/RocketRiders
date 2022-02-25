@@ -16,5 +16,5 @@ loot give @s[scores={HasAux=0},tag=!fullHotbar] loot items:heavy/auxiliary
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasAux=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackAux] run tag @e[type=armor_stand,tag=Selection] add givenAux
-execute unless entity @s[tag=BackAux] run tag @e[type=armor_stand,tag=Bot] add BotHasAux
+execute unless entity @s[tag=BackAux] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenAux
+execute unless entity @s[tag=BackAux] run tag @e[type=armor_stand,tag=Bot] add HasAux

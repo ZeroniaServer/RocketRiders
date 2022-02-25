@@ -16,5 +16,5 @@ loot give @s[scores={HasAnt=0},tag=!fullHotbar] loot items:normal/ant
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasAnt=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackAnt] run tag @e[type=armor_stand,tag=Selection] add givenAnt
-execute unless entity @s[tag=BackAnt] run tag @e[type=armor_stand,tag=Bot] add BotHasAnt
+execute unless entity @s[tag=BackAnt] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenAnt
+execute unless entity @s[tag=BackAnt] run tag @e[type=armor_stand,tag=Bot] add HasAnt

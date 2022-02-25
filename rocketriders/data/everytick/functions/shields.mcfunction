@@ -46,7 +46,7 @@ kill @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=3..}]
 kill @e[type=snowball,tag=YellowShield,scores={shieldtest=20..}]
 
 ##Blue Shield functionality
-execute as @e[type=snowball,tag=BlueShield] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=snowball,tag=BlueShield] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
 scoreboard players add @e[type=snowball,tag=BlueShield] shieldtest2 1
 #Next 2 commands disable Blue Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[type=snowball,tag=BlueShield,scores={shieldtest2=19..20}] at @s if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] run scoreboard players remove @s shieldtest2 1
@@ -62,21 +62,21 @@ execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] run da
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] run data modify storage rocketriders:shieldpos y prepend from entity @s Pos[1]
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] run data modify storage rocketriders:shieldpos z prepend from entity @s Pos[2]
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] run scoreboard players add @e[type=armor_stand,tag=Selection] shieldCount 1
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:blueshield1"}
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:blueshield1"}
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:blueshield2"}
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:blueshield2"}
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-3,posY:-3,posZ:0,name:"minecraft:blueshield3"}
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-3,posY:-3,posZ:0,name:"minecraft:blueshield3"}
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run playsound item.shield.block master @a ~ ~ ~ 2 0
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run particle block blue_stained_glass ~ ~ ~ 1 1 0 0.1 100
-kill @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3..}]
-kill @e[type=snowball,tag=BlueShield,scores={shieldtest2=20..}]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run particle block blue_stained_glass ~ ~ ~ 1 1 0 0.1 100
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] run kill @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3..}]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] run kill @e[type=snowball,tag=BlueShield,scores={shieldtest2=20..}]

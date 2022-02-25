@@ -30,4 +30,4 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=canopyStack,tag=CTF3stac
 execute if entity @e[type=armor_stand,tag=Selection,tag=canopyStack,tag=CTF3stack] run give @s[team=Blue,scores={HasPlat=..2},tag=!fullHotbar] ender_pearl{CustomModelData:1,display:{Name:'[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Canopy","color":"blue","bold":true}]',Lore:['{"text":"The Canopy creates a leaf platform.","color":"gray"}','{"text":"Use it to quickly reposition yourself,","color":"gray"}','{"text":"but don\'t play with fire on it!","color":"gray"}']}} 1
 
 #Game tracking
-tag @e[type=armor_stand,tag=Selection] add givenCanopy
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenCanopy

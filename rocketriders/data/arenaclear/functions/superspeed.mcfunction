@@ -6,6 +6,8 @@
 #############################################################
 
 ##During recursion - Arena Clear in progress
+kill @e[type=marker,tag=PowerClearAEC]
+kill @e[type=marker,tag=PowerClearChecker]
 scoreboard players add @e[type=marker,tag=ArenaClearChecker] ClearArena 1
 execute as @e[type=marker,tag=ArenaClearBlue,scores={ClearArena=1}] at @s run fill ~4 ~ ~-12 ~-4 ~12 ~ air replace #custom:missileblocks
 execute as @e[type=marker,tag=ArenaClearYellow,scores={ClearArena=1}] at @s run fill ~4 ~ ~12 ~-4 ~12 ~ air replace #custom:missileblocks
@@ -29,3 +31,5 @@ execute if entity @e[type=marker,tag=PlacerClear] run fill -2 216 -30 0 216 -30 
 execute if entity @e[type=marker,tag=PlacerClear] run kill @e[type=marker,tag=ArenaClearYellow]
 execute if entity @e[type=marker,tag=PlacerClear] run kill @e[type=marker,tag=ArenaClearBlue]
 execute if entity @e[type=marker,tag=PlacerClear] run kill @e[type=area_effect_cloud,tag=SmartClearAECsplash]
+execute if entity @e[type=marker,tag=PlacerClear] run kill @e[type=marker,tag=checked]
+execute if entity @e[type=marker,tag=PlacerClear] run kill @e[type=marker,tag=checking]

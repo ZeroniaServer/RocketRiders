@@ -31,6 +31,7 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled,tag=EditedS
 scoreboard objectives add HolyLand dummy
 scoreboard objectives add CryAboutIt dummy
 scoreboard objectives add ChaseCrystalID dummy
+execute if entity @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] as @a run function achievements:roots
 
 tellraw @a {"text":"Successfully applied updates from Rocket Riders 1.2.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1200

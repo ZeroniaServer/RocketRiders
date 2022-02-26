@@ -27,11 +27,6 @@ execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame name ["
 execute if entity @s[tag=EditedSettings] run scoreboard players set $ClearTime CmdData 0
 execute if entity @s[tag=!EditedSettings,scores={servermode=0}] run bossbar set rr:startgame value 30
 execute if entity @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a
-execute if entity @e[type=marker,tag=ArenaClearChecker] run bossbar set rr:startgame color green
-execute if entity @e[type=marker,tag=ArenaClearChecker] run bossbar set rr:startgame name ["",{"text":"Preparing the arena...","color":"green"}]
-execute if entity @e[type=marker,tag=ArenaClearChecker] run bossbar set rr:startgame max 42
-execute if entity @e[type=marker,tag=ArenaClearChecker] run scoreboard players add $ClearTime CmdData 1
-execute if entity @e[type=marker,tag=ArenaClearChecker] store result bossbar rr:startgame value run scoreboard players get $ClearTime CmdData
 
 ##Blue Join Pad
 execute unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @a[tag=JoinBlue] run function game:joinwarn

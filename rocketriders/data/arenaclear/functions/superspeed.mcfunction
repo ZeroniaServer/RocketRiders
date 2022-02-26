@@ -6,12 +6,14 @@
 #############################################################
 
 ##During recursion - Arena Clear in progress
-kill @e[type=marker,tag=PowerClearAEC]
-kill @e[type=marker,tag=PowerClearChecker]
 scoreboard players add @e[type=marker,tag=ArenaClearChecker] ClearArena 1
+execute as @e[type=marker,tag=ArenaClearBlue,scores={ClearArena=1}] at @s run fill ~4 ~ ~-12 ~-4 ~12 ~ white_stained_glass replace #custom:piston
 execute as @e[type=marker,tag=ArenaClearBlue,scores={ClearArena=1}] at @s run fill ~4 ~ ~-12 ~-4 ~12 ~ air replace #custom:missileblocks
+execute as @e[type=marker,tag=ArenaClearYellow,scores={ClearArena=1}] at @s run fill ~4 ~ ~12 ~-4 ~12 ~ white_stained_glass replace #custom:piston
 execute as @e[type=marker,tag=ArenaClearYellow,scores={ClearArena=1}] at @s run fill ~4 ~ ~12 ~-4 ~12 ~ air replace #custom:missileblocks
+execute as @e[type=marker,tag=ArenaClearBlue] at @s run fill ~4 ~ ~-4 ~-4 ~12 ~4 white_stained_glass replace #custom:piston
 execute as @e[type=marker,tag=ArenaClearBlue] at @s run fill ~4 ~ ~-4 ~-4 ~12 ~4 air replace #custom:missileblocks
+execute as @e[type=marker,tag=ArenaClearYellow] at @s run fill ~4 ~ ~-4 ~-4 ~12 ~4 white_stained_glass replace #custom:piston
 execute as @e[type=marker,tag=ArenaClearYellow] at @s run fill ~4 ~ ~-4 ~-4 ~12 ~4 air replace #custom:missileblocks
 execute as @e[type=marker,tag=ArenaClearBlue] at @s run tp @s ~ ~ ~4
 execute as @e[type=marker,tag=ArenaClearYellow] at @s run tp @s ~ ~ ~-4

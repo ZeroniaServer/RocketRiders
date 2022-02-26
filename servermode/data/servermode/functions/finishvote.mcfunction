@@ -56,4 +56,4 @@ execute as @e[type=armor_stand,tag=Selection,tag=!needsForceClear,limit=1] run f
 execute as @e[type=armor_stand,tag=Selection,tag=needsForceClear,limit=1] run function arenaclear:forceareaclear
 
 # Select forced item sets and match settings
-schedule function servermode:init_forcedsettings 42t
+schedule function servermode:init_forcedsettings 2t

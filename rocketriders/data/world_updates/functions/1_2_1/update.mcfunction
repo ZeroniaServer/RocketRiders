@@ -1,4 +1,5 @@
 #> Cancel active PowerClear
+execute if entity @e[type=marker,tag=PowerClearAEC] as @e[type=armor_stand,tag=Selection] run function arenaclear:superspeed
 kill @e[type=marker,tag=PowerClearAEC]
 kill @e[type=marker,tag=PowerClearChecker]
 kill @e[type=marker,tag=PlacerPowerClear]

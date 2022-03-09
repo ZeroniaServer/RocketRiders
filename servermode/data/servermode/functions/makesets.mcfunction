@@ -1,3 +1,10 @@
+execute unless score $NormalMode servermode matches 0.. run scoreboard players set $NormalMode servermode 0
+execute unless score $PowerupsMode servermode matches 0.. run scoreboard players set $PowerupsMode servermode 0
+execute unless score $SwapMode servermode matches 0.. run scoreboard players set $SwapMode servermode 0
+execute unless score $CTFMode servermode matches 0.. run scoreboard players set $CTFMode servermode 0
+execute unless score $CrusadeMode servermode matches 0.. run scoreboard players set $CrusadeMode servermode 0
+execute unless score $GameCount servermode matches 0.. run scoreboard players set $GameCount servermode 0
+
 # Add tag
 tag @e[type=armor_stand,tag=Selection] add ServerModeVoting
 
@@ -5,52 +12,38 @@ tag @e[type=armor_stand,tag=Selection] add ServerModeVoting
 kill @e[type=marker,tag=ServerMode]
 
 # Summon AEC's that will store all set info.
-summon marker -64 191 78 {Tags:["ServerMode","Set1","Set"],CustomName:'{"text":"1","color":"red","bold":true}'}
-summon marker -64 191 78 {Tags:["ServerMode","Set2","Set"],CustomName:'{"text":"2","color":"red","bold":true}'}
-summon marker -64 191 78 {Tags:["ServerMode","Set3","Set"],CustomName:'{"text":"3","color":"red","bold":true}'}
+summon marker -64 191 78 {Tags:["ServerMode","Set1","ServermodeSet1","Set","NormalMode"],CustomName:"\"Normal Mode\""}
+summon marker -64 191 78 {Tags:["ServerMode","Set2","ServermodeSet2","Set","PowerupsMode"],CustomName:"\"Powerups Mode\""}
+summon marker -64 191 78 {Tags:["ServerMode","Set3","ServermodeSet3","Set","SwapMode"],CustomName:"\"Swap Mode\""}
+summon marker -64 191 78 {Tags:["ServerMode","Set4","ServermodeSet4","Set","CTFMode"],CustomName:"\"Capture The Flag\""}
+summon marker -64 191 78 {Tags:["ServerMode","Set5","ServermodeSet5","Set","CrusadeMode"],CustomName:"\"Crusade Mode\""}
+function servermode:sneakychase
 
-# Summon AEC's for game modes, assign 3 of them to the 3 set entities.
-summon marker -64 191 78 {Tags:["ServerMode","GameMode","NormalMode"],CustomName:'"Normal Mode"'}
-summon marker -64 191 78 {Tags:["ServerMode","GameMode","PowerupsMode"],CustomName:'"Powerups Mode"'}
-summon marker -64 191 78 {Tags:["ServerMode","GameMode","SwapMode"],CustomName:'"Swap Mode"'}
-summon marker -64 191 78 {Tags:["ServerMode","GameMode","CTFMode"],CustomName:'"Capture The Flag Mode"'}
-summon marker -64 191 78 {Tags:["ServerMode","GameMode","CrusadeMode"],CustomName:'"Crusade Mode"'}
-tag @e[type=marker,tag=ServerMode,tag=GameMode,tag=NormalMode] add ServermodeSet1
-tag @e[type=marker,tag=ServerMode,tag=GameMode,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet2
-tag @e[type=marker,tag=ServerMode,tag=GameMode,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4] add ServermodeSet3
+# Decrease vote options scores in case of low priority.
+execute if score $NormalMode servermode matches 2 run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set1] VoteServerMode 1
+execute if score $PowerupsMode servermode matches 2 run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set2] VoteServerMode 1
+execute if score $SwapMode servermode matches 2 run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set3] VoteServerMode 1
+execute if score $CTFMode servermode matches 2 run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set4] VoteServerMode 1
+execute if score $CrusadeMode servermode matches 2 run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set5] VoteServerMode 1
 
-execute as @e[type=marker,tag=ServermodeSet1,tag=NormalMode] run tag @e[type=marker,tag=Set1] add NormalMode
-execute as @e[type=marker,tag=ServermodeSet2,tag=NormalMode] run tag @e[type=marker,tag=Set2] add NormalMode
-execute as @e[type=marker,tag=ServermodeSet3,tag=NormalMode] run tag @e[type=marker,tag=Set3] add NormalMode
-
-execute as @e[type=marker,tag=ServermodeSet1,tag=PowerupsMode] run tag @e[type=marker,tag=Set1] add PowerupsMode
-execute as @e[type=marker,tag=ServermodeSet2,tag=PowerupsMode] run tag @e[type=marker,tag=Set2] add PowerupsMode
-execute as @e[type=marker,tag=ServermodeSet3,tag=PowerupsMode] run tag @e[type=marker,tag=Set3] add PowerupsMode
-
-execute as @e[type=marker,tag=ServermodeSet1,tag=SwapMode] run tag @e[type=marker,tag=Set1] add SwapMode
-execute as @e[type=marker,tag=ServermodeSet2,tag=SwapMode] run tag @e[type=marker,tag=Set2] add SwapMode
-execute as @e[type=marker,tag=ServermodeSet3,tag=SwapMode] run tag @e[type=marker,tag=Set3] add SwapMode
-
-execute as @e[type=marker,tag=ServermodeSet1,tag=CTFMode] run tag @e[type=marker,tag=Set1] add CTFMode
-execute as @e[type=marker,tag=ServermodeSet2,tag=CTFMode] run tag @e[type=marker,tag=Set2] add CTFMode
-execute as @e[type=marker,tag=ServermodeSet3,tag=CTFMode] run tag @e[type=marker,tag=Set3] add CTFMode
-
-execute as @e[type=marker,tag=ServermodeSet1,tag=CrusadeMode] run tag @e[type=marker,tag=Set1] add CrusadeMode
-execute as @e[type=marker,tag=ServermodeSet2,tag=CrusadeMode] run tag @e[type=marker,tag=Set2] add CrusadeMode
-execute as @e[type=marker,tag=ServermodeSet3,tag=CrusadeMode] run tag @e[type=marker,tag=Set3] add CrusadeMode
+execute if score $NormalMode servermode matches 3.. run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set1] VoteServerMode 3
+execute if score $PowerupsMode servermode matches 3.. run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set2] VoteServerMode 3
+execute if score $SwapMode servermode matches 3.. run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set3] VoteServerMode 3
+execute if score $CTFMode servermode matches 3.. run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set4] VoteServerMode 3
+execute if score $CrusadeMode servermode matches 3.. run scoreboard players remove @e[type=marker,tag=ServerMode,tag=Set5] VoteServerMode 3
 
 # Summon AEC's for base decos, assign 3 of them to the 3 set entities.
-summon marker -64 191 78 {Tags:["ServerMode","Maps","DefaultMap"],CustomName:'"New Dawn map"'}
 summon marker -64 191 78 {Tags:["ServerMode","Maps","DefaultMap"],CustomName:'"New Dawn map"'}
 summon marker -64 191 78 {Tags:["ServerMode","Maps","SpikesMap"],CustomName:'"Spikes map"'}
 summon marker -64 191 78 {Tags:["ServerMode","Maps","RandomMap"],CustomName:'"Randomized map"'}
 summon marker -64 191 78 {Tags:["ServerMode","Maps","EmptyMap"],CustomName:'"Empty map"'}
-summon marker -64 191 78 {Tags:["ServerMode","Maps","TheCastle"],CustomName:'"The Castle"'}
-tag @e[type=marker,tag=ServerMode,tag=Maps,tag=DefaultMap,limit=1] add ServermodeSet1
-execute if entity @e[type=marker,tag=CrusadeMode,tag=ServermodeSet2] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=TheCastle,limit=1] add ServermodeSet2
-execute if entity @e[type=marker,tag=CrusadeMode,tag=ServermodeSet3] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=TheCastle,limit=1] add ServermodeSet3
-execute unless entity @e[type=marker,tag=TheCastle,tag=ServermodeSet2] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=!TheCastle,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3] add ServermodeSet2
-execute unless entity @e[type=marker,tag=TheCastle,tag=ServermodeSet3] run tag @e[type=marker,tag=ServerMode,tag=Maps,tag=!TheCastle,limit=1,sort=random,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3] add ServermodeSet3
+summon marker -64 191 78 {Tags:["ServerMode","Maps","TheCastle","ServermodeSet5"],CustomName:'"The Castle"'}
+
+tag @e[tag=Maps,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4,tag=!ServermodeSet5,tag=!ServermodeSet6,limit=1,sort=random] add ServermodeSet1
+tag @e[tag=Maps,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4,tag=!ServermodeSet5,tag=!ServermodeSet6,limit=1,sort=random] add ServermodeSet2
+tag @e[tag=Maps,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4,tag=!ServermodeSet5,tag=!ServermodeSet6,limit=1,sort=random] add ServermodeSet3
+tag @e[tag=Maps,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4,tag=!ServermodeSet5,tag=!ServermodeSet6,limit=1,sort=random] add ServermodeSet4
+tag @e[tag=Maps,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4,tag=!ServermodeSet5,tag=!ServermodeSet6,limit=1,sort=random] add ServermodeSet5
 
 # Notify vote
 execute as @a run function servermode:notifyvote

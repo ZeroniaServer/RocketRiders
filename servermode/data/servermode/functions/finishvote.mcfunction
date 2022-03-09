@@ -39,7 +39,6 @@ execute if score $winners VoteServerMode matches 2.. run tag @e[type=marker,tag=
 execute if score $winners VoteServerMode matches 2.. run tellraw @a ["",{"text":"There was a tie vote with the following game modes:  ","color":"dark_green"},{"selector":"@e[type=marker,tag=ServerMode,tag=Set,scores={VoteServerMode=0}]","color":"green","bold":true}]
 execute if score $winners VoteServerMode matches 2.. run tellraw @a [{"selector":"@e[type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","color":"gold","bold":true},{"text":" was randomly selected as the winning mode.","color":"dark_green"}]
 scoreboard players reset $winners VoteServerMode
-say @e[tag=WonVote]
 
 # NORMAL MODE SELECTED
 execute if entity @e[type=marker,tag=WonVote,tag=NormalMode] store result score @e[type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_normal,limit=1] gamemodeID

@@ -80,6 +80,7 @@ execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=30}] at @s
 execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"rr_powerups:bees_blue_full"}
 execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ blue_stained_glass_pane[east=true,west=true]
 
 ##Yellow animation
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage1"}
@@ -124,6 +125,7 @@ execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=30}] at @s
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"rr_powerups:bees_yellow_full"}
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ orange_stained_glass_pane[east=true,west=true]
 
 #Sounds and particles for the shield animation
 execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=1}] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 1.3

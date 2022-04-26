@@ -7,15 +7,6 @@ execute unless score @s SetGamemode = @e[type=armor_stand,tag=rr_duel,limit=1] g
 #tips (disabled on duel servermode)
 execute unless entity @s[scores={servermode=2}] unless entity @s[tag=SMCustom] run function rr_duel:tip
 
-#forfeit prize/loss
-execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[tag=InRanked,team=Blue] add ForfeitWon
-execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[tag=InRanked,team=Yellow] add ForfeitWon
-execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] as @a[tag=ForfeitWon] run function rr_duel:forfeit/giveprize
-scoreboard players reset @a[tag=!InRanked] ForfeitWin
-scoreboard players reset @a[tag=!InRanked] ForfeitLoss
-tag @s[scores={ForfeitTimeout=1200..}] remove TimeOut
-scoreboard players reset @s[scores={ForfeitTimeout=1200..}] ForfeitTimeout
-
 #game
 function rr_duel:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_duel:game/ingame

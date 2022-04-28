@@ -54,7 +54,8 @@ stopsound @a ambient minecraft:ambient.cave
 
 #Handling portals/roof with players/utilities
 execute as @e[type=armor_stand,tag=Selection] run function everytick:cancel_utility
-execute as @e[type=armor_stand,tag=Selection,scores={servermode=0}] run function everytick:player_portal
+execute as @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] run function everytick:player_portal
+execute as @e[type=armor_stand,tag=Selection,scores={servermode=0,PortalDeco=4},tag=SMCustom] run function everytick:player_portal
 
 #Player void
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980] unless entity @s[scores={ThrowPlat=1..}] run function game:void

@@ -14,11 +14,11 @@ item replace entity @e[type=armor_stand,tag=EvtemaCredits] armor.chest with leat
 item replace entity @e[type=armor_stand,tag=EvtemaCredits] armor.legs with leather_leggings{display:{color:14548992}}
 item replace entity @e[type=armor_stand,tag=EvtemaCredits] armor.feet with leather_boots{display:{color:7470949}}
 
-item replace entity @e[type=armor_stand,tag=YZEROCredits] armor.head with player_head{SkullOwner:{Id:[I;-133639988,-1225243025,-1517505395,-70310304],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE1Y2EyZDE2OWJmMmVjODJmNzEzOWJjZWUxNDYwYjg0ZjJkYjVjNmZiNmMzNmU0NTUzNTA2MTQxYjUyMjA2NSJ9fX0="}]}}}
+item replace entity @e[type=armor_stand,tag=YZEROCredits] armor.head with player_head{SkullOwner:{Id:[I;-695903554,-1949023048,-2133343279,304983704],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNlZmZjOWJmNWYyYThiMDU4NzcxODc1OTUxMDg1YTU0N2QxYjc1YzJkM2U2YTRhNWEzYWVlMTc1MjNjNzUyZCJ9fX0="}]}}}
 item replace entity @e[type=armor_stand,tag=YZEROCredits] weapon.mainhand with chain_command_block
 item replace entity @e[type=armor_stand,tag=YZEROCredits] weapon.offhand with tropical_fish
-item replace entity @e[type=armor_stand,tag=YZEROCredits] armor.chest with leather_chestplate{display:{color:1184274}}
-item replace entity @e[type=armor_stand,tag=YZEROCredits] armor.legs with leather_leggings{display:{color:2368548}}
+item replace entity @e[type=armor_stand,tag=YZEROCredits] armor.chest with leather_chestplate{display:{color:2631720}}
+item replace entity @e[type=armor_stand,tag=YZEROCredits] armor.legs with leather_leggings{display:{color:2306126}}
 item replace entity @e[type=armor_stand,tag=YZEROCredits] armor.feet with leather_boots{display:{color:10682368}}
 
 item replace entity @e[type=armor_stand,tag=ChronosCredits] armor.head with player_head{SkullOwner:{Id:[I;-518895305,-306034928,-1464755402,-389337087],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzMzZmVlYjhlOTU3MmIwOTZlNTUxZmYwZDAzZGE5YzA0YzNhMzY1Y2E1N2ZmNDIzODY4ZTViOGM5YzMxNDk1NiJ9fX0="}]}}}

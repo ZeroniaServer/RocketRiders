@@ -92,7 +92,7 @@ scoreboard players set @e[type=marker,tag=captureMiddle,scores={captureYellow=10
 scoreboard players set @e[type=marker,tag=captureMiddle,scores={captureBlue=..0}] captureBlue 0
 scoreboard players set @e[type=marker,tag=captureMiddle,scores={captureBlue=100..}] captureBlue 100
 
-#Deplete powerups platform hp
+#Deplete powerup platform hp
 function rr_powerups:everytick/platformdeplete
 
 #bossbar

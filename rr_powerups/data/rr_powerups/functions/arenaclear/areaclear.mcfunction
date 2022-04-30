@@ -13,7 +13,7 @@ fill 14 63 -67 10 66 -72 air
 fill 14 63 67 10 66 72 air
 fill 14 63 -67 10 66 -72 air
 
-#Clear powerups platform
+#Clear powerup platform
 fill 6 53 -6 18 53 6 air
 
 execute if entity @e[type=armor_stand,tag=Selection,limit=1,tag=!powerupsEnabled] run setblock -95 202 59 obsidian

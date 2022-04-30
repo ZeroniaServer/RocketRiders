@@ -1,7 +1,7 @@
 ##Handles players who leave/rejoin the game
 #For placing players where they belong based on team
-tag @a[tag=WasInYellow,tag=!hardcoreKilled] remove WasInYellow
-tag @a[tag=WasInBlue,tag=!hardcoreKilled] remove WasInBlue
+tag @a[tag=WasInYellow] remove WasInYellow
+tag @a[tag=WasInBlue] remove WasInBlue
 tag @a[team=Yellow] add WasInYellow
 tag @a[team=Blue] add WasInBlue
 
@@ -31,16 +31,6 @@ tag @a[scores={LeaveGame=1..}] remove BlueNovaAttach
 scoreboard players reset @a[scores={LeaveGame=1..}] novattach
 tag @a[scores={LeaveGame=1..}] remove threwCanopy
 tag @a[scores={LeaveGame=1..}] remove cursorItem
-
-#Hardcore compatibility
-scoreboard players add @a[tag=hardcoreKilled] hardcoreKilled 1
-execute if entity @s[tag=Hardcore] as @a[tag=hardcoreKilled,scores={hardcoreKilled=7..},team=Lobby] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] at @s run tp @s ~ ~ ~-0.5 90 0
-tag @a[tag=hardcoreKilled,scores={hardcoreKilled=7..}] remove hardcoreKilled
-scoreboard players reset @a[tag=!hardcoreKilled] hardcoreKilled
-execute if entity @s[tag=Hardcore] run gamerule showDeathMessages false
-execute if entity @s[tag=Hardcore] as @a[scores={LeaveGame=1..},tag=!hardcoreKilled] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] run kill @s
-execute if entity @s[tag=Hardcore] as @a[scores={LeaveGame=1..}] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] run tag @s add hardcoreKilled
-execute if entity @s[tag=Hardcore] run gamerule showDeathMessages true
 
 #Parkour quit
 execute if entity @s[tag=!SMActive] as @a[scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]

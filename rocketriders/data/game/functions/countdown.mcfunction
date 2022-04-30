@@ -5,9 +5,9 @@
 
 ##Timer, bossbar, sound effects
 execute unless entity @s[tag=GameStarted] run scoreboard players add @s[tag=Countdown] count 1
-#Automatically go to 10 if no (non-parkour) lobby players are on
-execute if entity @s[scores={count=1..399}] unless entity @a[team=Lobby,tag=!inParkour] run bossbar set rr:startgame max 10
-execute if entity @s[scores={count=1..399}] unless entity @a[team=Lobby,tag=!inParkour] run scoreboard players set @s count 400
+#Automatically go to 10 if no (non-parkour/non-vanished) lobby players are on
+execute if entity @s[scores={count=1..399}] unless entity @a[team=Lobby,tag=!inParkour,tag=!vanished] run bossbar set rr:startgame max 10
+execute if entity @s[scores={count=1..399}] unless entity @a[team=Lobby,tag=!inParkour,tag=!vanished] run scoreboard players set @s count 400
 execute if entity @s[scores={count=1..600}] run scoreboard players set @a dropBow 0
 execute if entity @s[scores={count=1..599}] run bossbar set rr:startgame color green
 execute if entity @s[scores={count=1}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"30","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
@@ -119,11 +119,7 @@ execute if entity @s[tag=GameStarted] run scoreboard players reset * PlayerDeath
 #Enabling damage gamerules
 execute if entity @s[tag=GameStarted] run gamerule drowningDamage true
 execute if entity @s[tag=GameStarted] run gamerule fireDamage true
-execute if entity @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages false
-execute if entity @s[tag=GameStarted,tag=Hardcore] run bossbar set rr:startgame players @a[team=Lobby]
-execute if entity @s[tag=GameStarted,tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run kill @s
-execute if entity @s[tag=GameStarted,tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players remove @s deaths 1
-execute if entity @s[tag=GameStarted,tag=Hardcore] run gamerule showDeathMessages true
+execute if entity @s[tag=GameStarted,tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run function modifiers:hardcoreset
 execute if entity @s[tag=GameStarted] run scoreboard players operation @s origBCount = @s bluesCount
 execute if entity @s[tag=GameStarted] run scoreboard players operation @s origYCount = @s yellowsCount
 execute if entity @s[tag=GameStarted] run function lobby:credits/restart

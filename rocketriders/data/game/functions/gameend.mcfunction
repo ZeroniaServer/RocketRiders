@@ -75,7 +75,6 @@ execute if entity @s[scores={endtimer=570},tag=!SMActive] run scoreboard players
 execute if entity @s[scores={endtimer=570}] run function achievements:scoresreset
 execute if entity @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute if entity @s[scores={endtimer=570},tag=SpamClick] as @a run attribute @s minecraft:generic.attack_speed base set 4
-execute if entity @s[scores={endtimer=570},tag=Hardcore] as @a run attribute @s minecraft:generic.max_health base set 20.0
 #Reverse Sonar glowing
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=arrow] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=snowball] run data merge entity @s {Glowing:0b}

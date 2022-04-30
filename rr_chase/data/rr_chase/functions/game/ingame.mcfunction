@@ -11,7 +11,7 @@ execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run sc
 execute if entity @s[tag=Minute] run function items:minutemix
 
 #Arrows on death - DISABLED AS OF 1.2.0
-# execute if entity @s[scores={gametime=2..}] as @a[team=Blue,scores={deathCooldown=1},tag=!hardcoreKilled] run function items:util/givearrows
+# execute if entity @s[scores={gametime=2..}] as @a[team=Blue,scores={deathCooldown=1}] run function items:util/givearrows
 
 #Flagpole
 fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace

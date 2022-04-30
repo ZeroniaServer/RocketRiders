@@ -50,9 +50,8 @@ execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yell
 execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s jump_boost 1000000 2 true
 
 ##Hardcore
-execute if entity @s[tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 6.0
-execute if entity @s[tag=Hardcore] as @a[team=Lobby] run attribute @s minecraft:generic.max_health base set 20.0
-execute if entity @s[tag=!Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.max_health base set 20.0
+execute if entity @s[tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] if entity @s[scores={nnhealth_max=20}] run function modifiers:hardcoreset
+execute if entity @s[tag=!Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] if entity @s[scores={nnhealth_max=6}] run function modifiers:hardcorereset
 
 #Clutter Collector
 execute if entity @s[tag=ClutterCollector,tag=Explosive,tag=!Hardcore] as @e[type=tnt,nbt={Fuse:1s},z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:-5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"]}

@@ -27,11 +27,6 @@ execute as @e[type=armor_stand,tag=Selection] run function lobby:credits/stop
 fill -29 196 22 -33 196 22 air
 schedule function game:forcestop 2t append
 # schedule function servermode:forceclear 3t append
-execute as @e[type=armor_stand,tag=Selection] if entity @s[tag=Hardcore] run gamerule showDeathMessages false
-execute as @e[type=armor_stand,tag=Selection] if entity @s[tag=Hardcore] as @a[tag=!hardcoreKilled] unless entity @s[tag=!WasInBlue,tag=!WasInYellow] run kill @s
-execute as @e[type=armor_stand,tag=Selection] if entity @s[tag=Hardcore] as @a unless entity @s[tag=!WasInBlue,tag=!WasInYellow] run tag @s add hardcoreKilled
-execute as @e[type=armor_stand,tag=Selection] if entity @s[tag=Hardcore] run gamerule showDeathMessages true
-execute as @a run attribute @s minecraft:generic.max_health base set 20.0
 function arenaclear:unhidemodroom
 execute as @e[type=armor_stand,tag=Selection] run function arenaclear:globaldefaults
 execute as @e[type=armor_stand,tag=Selection] run function modifiers:disablemodifiers

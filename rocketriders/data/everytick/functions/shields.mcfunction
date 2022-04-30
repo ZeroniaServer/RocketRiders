@@ -9,7 +9,7 @@ execute as @a[team=Blue,scores={ThrowShield=1..}] at @s run tag @e[type=snowball
 scoreboard players reset @a ThrowShield
 
 ##Yellow Shield functionality
-execute as @e[type=snowball,tag=YellowShield] at @s run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute as @e[type=snowball,tag=YellowShield] at @s run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
 scoreboard players add @e[type=snowball,tag=YellowShield] shieldtest 1
 #Next 2 commands disable Yellow Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[type=snowball,tag=YellowShield,scores={shieldtest=19..20}] at @s if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] run scoreboard players remove @s shieldtest 1
@@ -46,7 +46,7 @@ kill @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=3..}]
 kill @e[type=snowball,tag=YellowShield,scores={shieldtest=20..}]
 
 ##Blue Shield functionality
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=snowball,tag=BlueShield] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=snowball,tag=BlueShield] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
 scoreboard players add @e[type=snowball,tag=BlueShield] shieldtest2 1
 #Next 2 commands disable Blue Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[type=snowball,tag=BlueShield,scores={shieldtest2=19..20}] at @s if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] run scoreboard players remove @s shieldtest2 1

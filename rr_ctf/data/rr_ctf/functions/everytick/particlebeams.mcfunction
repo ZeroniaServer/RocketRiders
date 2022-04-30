@@ -1,18 +1,18 @@
 #particle trails for flag carriers - everyone but you can see it (and no one in lobby) - Slightly thicker when further away
-execute as @a[tag=CarryFlag,team=Blue] at @s anchored eyes run particle minecraft:dust 0 0 1 1 ~ ~28 ~ 0 10 0 1 100 force @a[team=!Lobby,distance=10..40]
-execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecraft:dust 1 1 0 1 ~ ~28 ~ 0 10 0 1 100 force @a[team=!Lobby,distance=10..40]
+execute as @a[tag=CarryFlag,team=Blue] at @s anchored eyes run particle minecraft:dust 0 0 1 1 ~ ~28 ~ 0 10 0 1 100 force @a[team=!Lobby,distance=10..40,predicate=custom:belowroof]
+execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecraft:dust 1 1 0 1 ~ ~28 ~ 0 10 0 1 100 force @a[team=!Lobby,distance=10..40,predicate=custom:belowroof]
 
 #distant different-colored line
-execute as @a[tag=CarryFlag,team=Blue] at @s anchored eyes run particle minecraft:dust 0 1 1 1 ~ ~3 ~ 0.2 0.5 0.2 1 10 force @a[team=!Lobby,distance=30..]
-execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecraft:dust 1 2 0 1 ~ ~3 ~ 0.2 0.5 0.2 1 10 force @a[team=!Lobby,distance=30..]
+execute as @a[tag=CarryFlag,team=Blue] at @s anchored eyes run particle minecraft:dust 0 1 1 1 ~ ~3 ~ 0.2 0.5 0.2 1 10 force @a[team=!Lobby,distance=30..,predicate=custom:belowroof]
+execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecraft:dust 1 2 0 1 ~ ~3 ~ 0.2 0.5 0.2 1 10 force @a[team=!Lobby,distance=30..,predicate=custom:belowroof]
 
 #distant thicker
-execute as @a[tag=CarryFlag,team=Blue] at @s anchored eyes run particle minecraft:dust 0 0 1 1 ~ ~28 ~ 0.1 10 0.1 1 100 force @a[team=!Lobby,distance=40..80]
-execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecraft:dust 1 1 0 1 ~ ~28 ~ 0.1 10 0.1 1 100 force @a[team=!Lobby,distance=40..80]
+execute as @a[tag=CarryFlag,team=Blue] at @s anchored eyes run particle minecraft:dust 0 0 1 1 ~ ~28 ~ 0.1 10 0.1 1 100 force @a[team=!Lobby,distance=40..80,predicate=custom:belowroof]
+execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecraft:dust 1 1 0 1 ~ ~28 ~ 0.1 10 0.1 1 100 force @a[team=!Lobby,distance=40..80,predicate=custom:belowroof]
 
 #distant thickest
-execute as @a[tag=CarryFlag,team=Blue] at @s anchored eyes run particle minecraft:dust 0 0 1 1 ~ ~28 ~ 0.15 10 0.15 1 100 force @a[team=!Lobby,distance=80..]
-execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecraft:dust 1 1 0 1 ~ ~28 ~ 0.15 10 0.15 1 100 force @a[team=!Lobby,distance=80..]
+execute as @a[tag=CarryFlag,team=Blue] at @s anchored eyes run particle minecraft:dust 0 0 1 1 ~ ~28 ~ 0.15 10 0.15 1 100 force @a[team=!Lobby,distance=80..,predicate=custom:belowroof]
+execute as @a[tag=CarryFlag,team=Yellow] at @s anchored eyes run particle minecraft:dust 1 1 0 1 ~ ~28 ~ 0.15 10 0.15 1 100 force @a[team=!Lobby,distance=80..,predicate=custom:belowroof]
 
 
 #Fancy spinny particles
@@ -34,12 +34,12 @@ execute as @e[type=marker,tag=FlagParticle,tag=FPMoveOpposite] at @s run tp @s ~
 scoreboard players add @e[type=marker,tag=FlagParticle] CmdData 1
 scoreboard players reset @e[type=marker,tag=FlagParticle,scores={CmdData=150..}] CmdData
 
-execute as @e[type=marker,tag=FlagParticleBlue,scores={CmdData=..75}] at @s run particle minecraft:dust 0 0 1 1.5 ^ ^ ^1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..]
-execute as @e[type=marker,tag=FlagParticleYellow,scores={CmdData=..75}] at @s run particle minecraft:dust 1 1 0 1.5 ^ ^ ^1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..]
-execute as @e[type=marker,tag=FlagParticleBlue,scores={CmdData=..75}] at @s run particle minecraft:dust 0 0 1 1.5 ^ ^ ^-1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..]
-execute as @e[type=marker,tag=FlagParticleYellow,scores={CmdData=..75}] at @s run particle minecraft:dust 1 1 0 1.5 ^ ^ ^-1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..]
+execute as @e[type=marker,tag=FlagParticleBlue,scores={CmdData=..75}] at @s run particle minecraft:dust 0 0 1 1.5 ^ ^ ^1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..,predicate=custom:belowroof]
+execute as @e[type=marker,tag=FlagParticleYellow,scores={CmdData=..75}] at @s run particle minecraft:dust 1 1 0 1.5 ^ ^ ^1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..,predicate=custom:belowroof]
+execute as @e[type=marker,tag=FlagParticleBlue,scores={CmdData=..75}] at @s run particle minecraft:dust 0 0 1 1.5 ^ ^ ^-1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..,predicate=custom:belowroof]
+execute as @e[type=marker,tag=FlagParticleYellow,scores={CmdData=..75}] at @s run particle minecraft:dust 1 1 0 1.5 ^ ^ ^-1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..,predicate=custom:belowroof]
 
-execute as @e[type=marker,tag=FlagParticleBlue,scores={CmdData=75..150}] at @s run particle minecraft:dust 0 1 2 1.5 ^ ^ ^1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..]
-execute as @e[type=marker,tag=FlagParticleYellow,scores={CmdData=75..150}] at @s run particle minecraft:dust 1 2 0 1.5 ^ ^ ^1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..]
-execute as @e[type=marker,tag=FlagParticleBlue,scores={CmdData=75..150}] at @s run particle minecraft:dust 0 1 2 1.5 ^ ^ ^-1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..]
-execute as @e[type=marker,tag=FlagParticleYellow,scores={CmdData=75..150}] at @s run particle minecraft:dust 1 2 0 1.5 ^ ^ ^-1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..]
+execute as @e[type=marker,tag=FlagParticleBlue,scores={CmdData=75..150}] at @s run particle minecraft:dust 0 1 2 1.5 ^ ^ ^1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..,predicate=custom:belowroof]
+execute as @e[type=marker,tag=FlagParticleYellow,scores={CmdData=75..150}] at @s run particle minecraft:dust 1 2 0 1.5 ^ ^ ^1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..,predicate=custom:belowroof]
+execute as @e[type=marker,tag=FlagParticleBlue,scores={CmdData=75..150}] at @s run particle minecraft:dust 0 1 2 1.5 ^ ^ ^-1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..,predicate=custom:belowroof]
+execute as @e[type=marker,tag=FlagParticleYellow,scores={CmdData=75..150}] at @s run particle minecraft:dust 1 2 0 1.5 ^ ^ ^-1.2 0 0 0 0 1 force @a[team=!Lobby,distance=2..,predicate=custom:belowroof]

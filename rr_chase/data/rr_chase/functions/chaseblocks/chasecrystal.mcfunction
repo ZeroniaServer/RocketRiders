@@ -19,24 +19,24 @@ execute if entity @e[type=armor_stand,tag=ChaseCrystal] run scoreboard players a
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[tag=InLead,limit=1,sort=nearest]
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.20
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
-execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
-execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
+execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
+execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[tag=InLead,limit=1,sort=nearest]
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.10
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
-execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
-execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
+execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
+execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
 
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[tag=InLead,limit=1,sort=nearest]
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.20
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
-execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
-execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
+execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
+execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run tp @s ~ ~ ~ facing entity @a[tag=InLead,limit=1,sort=nearest]
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run tp @s ^ ^ ^0.20
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run function rr_chase:chaseblocks/shootcrystal
-execute as @e[type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force
-execute as @e[type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force
+execute as @e[type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
+execute as @e[type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s if entity @a[tag=InLead,distance=..2] run tag @s add CrystalComplete
 execute if entity @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] as @e[type=armor_stand,tag=CrystalComplete] at @s if score @s ChaseCrystalID = @a[tag=InLead,distance=..3,sort=nearest,limit=1] playerUUID run advancement grant @a[tag=InLead,distance=..3,sort=nearest,limit=1] only achievements:rr_challenges/boomerang
 execute as @e[type=armor_stand,tag=CrystalComplete] at @s if entity @a[tag=InLead,distance=..2] as @a[tag=InLead,distance=..3,sort=nearest,limit=1] at @s run summon tnt ~ ~ ~2
@@ -50,6 +50,6 @@ execute as @e[type=end_crystal,tag=ChaseCrystal2] at @s unless entity @e[type=ar
 execute as @e[type=armor_stand,tag=ChaseCrystal] unless entity @a[tag=InLead] run scoreboard players set @s CmdData 300
 
 scoreboard players add @e[type=armor_stand,tag=ChaseCrystal] CmdData 1
-execute as @e[type=armor_stand,tag=ChaseCrystal,scores={CmdData=300..}] at @s run particle explosion ~ ~ ~ 0 0 0 0.1 3 force
+execute as @e[type=armor_stand,tag=ChaseCrystal,scores={CmdData=300..}] at @s run particle explosion ~ ~ ~ 0 0 0 0.1 3 force @a[predicate=custom:belowroof]
 execute as @e[type=armor_stand,tag=ChaseCrystal,scores={CmdData=300..}] at @s run kill @e[type=end_crystal,tag=ChaseCrystal2,distance=..4,limit=1,sort=nearest]
 execute as @e[type=armor_stand,tag=ChaseCrystal,scores={CmdData=300..}] run kill @s

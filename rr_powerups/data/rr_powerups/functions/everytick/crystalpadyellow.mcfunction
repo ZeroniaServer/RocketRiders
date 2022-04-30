@@ -138,8 +138,8 @@ execute as @e[type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrys
 execute as @e[type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=55},limit=1] run summon marker 12 55 0 {Tags:["YellowCrystalSpot","NotSet","PUCrystalEntity"]}
 execute as @e[type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=55},limit=1] run scoreboard players set @s PowerupCrystal 20
 
-execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~3 run particle dust 1 0 3 1 ^0.3 ^0.65 ^ 0 0 0 0 3 force
-execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~3 run particle dust 1 0 3 1 ^-0.3 ^0.65 ^ 0 0 0 0 3 force
+execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~3 run particle dust 1 0 3 1 ^0.3 ^0.65 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
+execute as @e[type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~3 run particle dust 1 0 3 1 ^-0.3 ^0.65 ^ 0 0 0 0 3 force @a[predicate=custom:belowroof]
 
 execute as @e[type=marker,tag=PUCrystalAS] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @s
 execute as @e[type=marker,tag=YellowCrystalSpot] unless entity @e[type=end_crystal,tag=PUCrystal] run kill @s
@@ -164,6 +164,6 @@ execute as @e[type=armor_stand,tag=PUCrystalAS,tag=NotSet,limit=1] at @s if enti
 execute as @e[type=armor_stand,tag=PUCrystalAS,tag=NotSet,limit=1] at @s if entity @e[type=marker,tag=YellowCrystalSpot,distance=..0.5,limit=1] run kill @s
 scoreboard players add @e[type=end_crystal,tag=PUCrystal,tag=!PUCrystalPerma,tag=Set] PowerupCrystal 1
 execute as @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run kill @e[type=marker,tag=YellowCrystalSpot,distance=..0.5,limit=1]
-execute as @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run particle flash ~ ~ ~ 0 0 0 4 2 force
+execute as @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run particle flash ~ ~ ~ 0 0 0 4 2 force @a[predicate=custom:belowroof]
 execute as @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run summon end_crystal ~ ~ ~ {Invulnerable:1b,ShowBottom:0b,Tags:["PUCrystal","PUCrystalEntity","PUCrystalPerma"]}
 kill @e[type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}]

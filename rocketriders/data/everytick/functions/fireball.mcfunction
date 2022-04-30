@@ -28,11 +28,11 @@ execute if score $fireballsound CmdData matches 20.. run scoreboard players set 
 execute if score $fireballsound CmdData matches 0 as @e[type=fireball,tag=NormalFireball] at @s as @a[distance=..3] run playsound minecraft:block.fire.ambient master @s ~ ~ ~ 0.5 1 0.1
 
 #Custom team particles for moving Fireball
-execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a
-execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a
-execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle electric_spark ~ ~0.5 ~ 0 0 0 0.05 3 force @a
-execute if entity @e[type=armor_stand,tag=Selection,tag=!chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a
-execute as @e[type=fireball,tag=FireballYellow,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a
+execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a[predicate=custom:belowroof]
+execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a[predicate=custom:belowroof]
+execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle electric_spark ~ ~0.5 ~ 0 0 0 0.05 3 force @a[predicate=custom:belowroof]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a[predicate=custom:belowroof]
+execute as @e[type=fireball,tag=FireballYellow,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a[predicate=custom:belowroof]
 
 #Fireballs poof Canopies
 execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=NormalFireball,tag=FireballBlue,tag=!Still] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5] run tag @s add DontPoof

@@ -13,6 +13,8 @@ tag @s add featheredOff
 tag @s add WindDownForce
 tag @s add WindDown
 
+tag @s[tag=Molerat] add MoleratOff
+tag @s[tag=Molerat] add MoleratWasOn
 tag @s[tag=Molerat] add WasMolerat
 tag @s[tag=Molerat] remove Molerat
 

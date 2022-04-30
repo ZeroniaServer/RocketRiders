@@ -53,7 +53,7 @@ execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run function lobby:p
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run function lobby:parkour/parkourserver
 stopsound @a ambient minecraft:ambient.cave
 
-#NNHealth (credit: NopeName)
+#NNHealth (credit: NOPEname)
 execute if entity @a[tag=!nnhealth_init] run gamerule showDeathMessages false
 execute as @a[tag=!nnhealth_init] run kill @s
 execute if entity @a[tag=!nnhealth_init] run gamerule showDeathMessages true

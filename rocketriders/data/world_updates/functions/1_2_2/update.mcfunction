@@ -1,4 +1,4 @@
-#> Setup NNHealth (credit: NopeName)
+#> Setup NNHealth (credit: NOPEname)
 function nnhealth:setup
 
 #> Update YZERO's armor

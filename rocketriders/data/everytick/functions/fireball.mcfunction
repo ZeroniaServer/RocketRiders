@@ -2,6 +2,23 @@
 ## FIREBALL: A punchable explosive ##
 #####################################
 
+#Void spawn prevention
+execute in overworld as @e[type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
+execute in overworld as @e[type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
+execute in overworld as @e[type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
+execute in overworld as @e[type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
+
+#Roof spawn prevention
+execute in overworld as @e[type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
+execute in overworld as @e[type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
+execute in overworld as @e[type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
+execute in overworld as @e[type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
+
+#Give back if prevented
+execute as @e[type=marker,tag=BlueFireball,tag=UnableSpawn] run function items:prevention/unablefx
+execute as @e[type=marker,tag=YellowFireball,tag=UnableSpawn] run function items:prevention/unablefx
+function items:prevention/giveback
+
 #Summoning the Fireball entity
 execute as @e[type=marker,tag=BlueFireball] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[type=marker,tag=BlueFireball] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballBlue"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
@@ -52,3 +69,6 @@ execute as @e[type=fireball,tag=NormalFireball,tag=!Still,tag=!DontPoof] at @s s
 execute as @e[type=fireball,tag=NormalFireball,tag=!Still,tag=!DontPoof,scores={CmdData=1..}] at @s run playsound entity.blaze.shoot master @a ~ ~ ~ 2 1
 scoreboard players reset @e[type=fireball,tag=NormalFireball] CmdData
 tag @e[type=fireball,tag=DontPoof] remove DontPoof
+
+#Kill near void
+execute as @e[type=fireball] at @s if predicate custom:nearvoid run kill @s

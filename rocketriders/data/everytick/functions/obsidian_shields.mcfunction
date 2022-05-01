@@ -4,6 +4,23 @@
 ## the central glass pane is broken three times   ##
 #####################################################
 
+#Void spawn prevention
+execute in overworld as @e[type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
+execute in overworld as @e[type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
+execute in overworld as @e[type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
+execute in overworld as @e[type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
+
+#Roof spawn prevention
+execute in overworld as @e[type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
+execute in overworld as @e[type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
+execute in overworld as @e[type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
+execute in overworld as @e[type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
+
+#Give back if prevented
+execute as @e[type=marker,tag=BlueObshield,tag=UnableSpawn] run function items:prevention/unablefx
+execute as @e[type=marker,tag=YellowObshield,tag=UnableSpawn] run function items:prevention/unablefx
+function items:prevention/giveback
+
 ##Blue Obsidian Shield functionality
 #Spawning in Fireball entities
 execute as @e[type=marker,tag=BlueObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~

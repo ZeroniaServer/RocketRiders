@@ -41,14 +41,12 @@ execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a un
 execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s kills
 
 ##General everytick commands
+function everytick:spawnables
 function achievements:gain
 function everytick:clear_spawnblocks
 function everytick:no_fall
 execute if entity @e[type=tnt_minecart] run function everytick:init_kill_carts
 execute if entity @e[type=arrow] run function everytick:fire_arrow
-
-##Spawnables
-function everytick:spawnables
 
 ##Modifiers
 function modifiers:modifiers

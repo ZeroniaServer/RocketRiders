@@ -19,6 +19,9 @@ execute if entity @s[tag=Countdown] run scoreboard players set @e[type=armor_sta
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:givegear
 
+#Give first item to anyone who joins within 1st second
+execute if entity @s[tag=GameStarted,scores={gametime=3..20}] run function items:givefirst
+
 #Tag Removal
 tag @a remove JoinBlue
 tag @a remove JoinYellow

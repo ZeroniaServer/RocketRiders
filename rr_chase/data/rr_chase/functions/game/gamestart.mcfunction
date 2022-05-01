@@ -21,6 +21,9 @@ execute if entity @s[tag=GameStarted] as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,
 execute if entity @s[tag=GameStarted,tag=!SMActive] as @a[tag=JoinBlue] run function rr_chase:chasegear/sabermsg
 execute if entity @s[tag=GameStarted,tag=SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
 
+#Give first item to anyone who joins within 1st second
+execute if entity @s[tag=GameStarted,scores={gametime=3..20}] run function items:givefirst
+
 #Tag Removal
 tag @a remove JoinBlue
 

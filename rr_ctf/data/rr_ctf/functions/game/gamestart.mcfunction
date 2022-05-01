@@ -17,6 +17,9 @@ execute if entity @s[tag=GameStarted,tag=SMActive] run tellraw @a[tag=JoinYellow
 scoreboard players reset @a[tag=JoinBlue] FlagsCaptured
 scoreboard players reset @a[tag=JoinYellow] FlagsCaptured
 
+#Give first item to anyone who joins within 1st second
+execute if entity @s[tag=GameStarted,scores={gametime=3..20}] run function items:givefirst
+
 #Tag Removal
 tag @a remove JoinBlue
 tag @a remove JoinYellow

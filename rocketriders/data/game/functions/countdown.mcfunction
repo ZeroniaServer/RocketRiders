@@ -119,7 +119,6 @@ execute if entity @s[tag=GameStarted] run scoreboard players reset * PlayerDeath
 #Enabling damage gamerules
 execute if entity @s[tag=GameStarted] run gamerule drowningDamage true
 execute if entity @s[tag=GameStarted] run gamerule fireDamage true
-execute if entity @s[tag=GameStarted,tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] run function modifiers:hardcoreset
 execute if entity @s[tag=GameStarted] run scoreboard players operation @s origBCount = @s bluesCount
 execute if entity @s[tag=GameStarted] run scoreboard players operation @s origYCount = @s yellowsCount
 execute if entity @s[tag=GameStarted] run function lobby:credits/restart

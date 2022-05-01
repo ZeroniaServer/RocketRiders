@@ -42,6 +42,7 @@ team join Blue @a[tag=JoinBlue]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinBlue]
 execute if entity @s[tag=!noSabers] as @a[tag=JoinBlue] unless entity @e[type=armor_stand,tag=chaseEnabled] run function game:saberblue
+execute if entity @s[tag=!GameStarted,tag=Hardcore] as @a[tag=JoinBlue] run function modifiers:hardcoreset
 execute if entity @s[tag=!GameStarted,tag=!customSpawns] run tp @a[tag=JoinBlue] -95 202 60 0 0
 execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
 execute if entity @s[tag=!GameStarted,tag=chaseEnabled] as @a[tag=JoinBlue] run tellraw @a ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
@@ -87,6 +88,7 @@ team join Yellow @a[tag=JoinYellow]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[tag=JoinYellow]
 execute if entity @s[tag=!noSabers] as @a[tag=JoinYellow] run function game:saberyellow
+execute if entity @s[tag=!GameStarted,tag=Hardcore] as @a[tag=JoinYellow] run function modifiers:hardcoreset
 execute if entity @s[tag=!GameStarted,tag=!customSpawns] run tp @a[tag=JoinYellow] -95 202 96 180 0
 execute if entity @s[tag=!GameStarted] as @a[tag=JoinYellow] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
 execute if entity @s[tag=!GameStarted] run tellraw @a[tag=JoinYellow] {"text":"Fall off the base to return to the Lobby.","color":"gold","italic":true}

@@ -16,7 +16,7 @@ effect give @a[scores={LeaveGame=1..}] regeneration 1 255 true
 effect give @a[scores={LeaveGame=1..}] resistance 1000000 255 true
 effect give @a[scores={LeaveGame=1..}] night_vision 1000000 100 true
 team join Lobby @a[scores={LeaveGame=1..},team=!Lobby]
-gamemode adventure @a[scores={LeaveGame=1..},gamemode=!adventure]
+gamemode adventure @a[scores={LeaveGame=1..}]
 spawnpoint @a[tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78 90
 spawnpoint @a[tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96 90
 spawnpoint @a[tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61 90

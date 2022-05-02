@@ -9,8 +9,9 @@ execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYell
 execute if entity @s[tag=GameStarted] as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
 execute if entity @s[tag=GameStarted] as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
-#Hardcore compatibility
-execute if entity @s[tag=GameStarted,tag=Hardcore] run function modifiers:hardcorekill
+#Give first item to anyone who joins within 1st second
+execute if entity @s[tag=GameStarted,scores={gametime=3..20}] if score SwapSide swapside matches 1 run function rr_swap:items/givefirstdarkblue
+execute if entity @s[tag=GameStarted,scores={gametime=3..20}] if score SwapSide swapside matches 0 run function rr_swap:items/givefirstlightblue
 
 #Tag Removal
 tag @a remove JoinBlue

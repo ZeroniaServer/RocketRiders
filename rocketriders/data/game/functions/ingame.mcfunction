@@ -20,7 +20,7 @@ scoreboard players add @a[team=Yellow] kills 0
 scoreboard players add @a[team=Blue] kills 0
 
 ##Prevent players from going above the arena
-execute as @a[gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow,tag=!hardcoreKilled] unless entity @s[team=!Yellow,team=!Blue] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
+execute as @a[gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow] unless entity @s[team=!Yellow,team=!Blue] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
 ##Full hotbar check
 function items:full_hotbar
@@ -41,14 +41,12 @@ execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a un
 execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s kills
 
 ##General everytick commands
+function everytick:spawnables
 function achievements:gain
 function everytick:clear_spawnblocks
 function everytick:no_fall
 execute if entity @e[type=tnt_minecart] run function everytick:init_kill_carts
 execute if entity @e[type=arrow] run function everytick:fire_arrow
-
-##Spawnables
-function everytick:spawnables
 
 ##Modifiers
 function modifiers:modifiers

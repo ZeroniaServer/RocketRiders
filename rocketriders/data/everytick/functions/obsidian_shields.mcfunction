@@ -4,6 +4,23 @@
 ## the central glass pane is broken three times   ##
 #####################################################
 
+#Void spawn prevention
+execute in overworld as @e[type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
+execute in overworld as @e[type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
+execute in overworld as @e[type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
+execute in overworld as @e[type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
+
+#Roof spawn prevention
+execute in overworld as @e[type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
+execute in overworld as @e[type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
+execute in overworld as @e[type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
+execute in overworld as @e[type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
+
+#Give back if prevented
+execute as @e[type=marker,tag=BlueObshield,tag=UnableSpawn] run function items:prevention/unablefx
+execute as @e[type=marker,tag=YellowObshield,tag=UnableSpawn] run function items:prevention/unablefx
+function items:prevention/giveback
+
 ##Blue Obsidian Shield functionality
 #Spawning in Fireball entities
 execute as @e[type=marker,tag=BlueObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
@@ -128,12 +145,12 @@ execute as @e[type=marker,tag=yellowobsidianshield,scores={breakobshield=..0}] a
 execute as @e[type=marker,scores={breakobshield=1}] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1
 execute as @e[type=marker,scores={breakobshield=1}] at @s run setblock ~ ~ ~ minecraft:magenta_stained_glass_pane[west=true,east=true]
 execute as @e[type=marker,scores={breakobshield=1}] run scoreboard players set @e[type=marker,scores={breakobshield=1}] breakobshield 2
-execute as @e[type=marker,scores={breakobshield=2}] at @s run particle block crying_obsidian ~ ~ ~ 1 1 0.4 0.1 5 force @a
+execute as @e[type=marker,scores={breakobshield=2}] at @s run particle block crying_obsidian ~ ~ ~ 1 1 0.4 0.1 5 force @a[predicate=custom:belowroof]
 execute as @e[type=marker,scores={breakobshield=2}] at @s unless block ~ ~ ~ minecraft:magenta_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 3
 execute as @e[type=marker,scores={breakobshield=3}] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1.2
 execute as @e[type=marker,scores={breakobshield=3}] at @s run setblock ~ ~ ~ minecraft:pink_stained_glass_pane[west=true,east=true]
 execute as @e[type=marker,scores={breakobshield=3}] at @s run scoreboard players set @s breakobshield 4
-execute as @e[type=marker,scores={breakobshield=4}] at @s run particle block crying_obsidian ~ ~ ~ 1 1 0 0.1 25 force @a
+execute as @e[type=marker,scores={breakobshield=4}] at @s run particle block crying_obsidian ~ ~ ~ 1 1 0 0.1 25 force @a[predicate=custom:belowroof]
 execute as @e[type=marker,scores={breakobshield=4}] at @s unless block ~ ~ ~ minecraft:pink_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 5
 execute as @e[type=marker,scores={breakobshield=5}] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1.4
 execute as @e[type=marker,scores={breakobshield=5..}] run scoreboard players add @s breakobshield 1

@@ -10,6 +10,9 @@ execute if entity @s[tag=GameStarted,tag=SMActive] run tellraw @a[tag=JoinBlue] 
 execute if entity @s[tag=GameStarted,tag=!SMActive] run tellraw @a[tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Knight Sword ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 execute if entity @s[tag=GameStarted,tag=SMActive] run tellraw @a[tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 
+#Give first item to anyone who joins within 1st second
+execute if entity @s[tag=GameStarted,scores={gametime=3..20}] run function rr_crusade:items/givefirst
+
 #Tag Removal
 tag @a remove JoinBlue
 tag @a remove JoinYellow

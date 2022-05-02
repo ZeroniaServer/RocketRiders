@@ -7,8 +7,8 @@ tag @s remove BlueFull
 scoreboard players set @e[type=armor_stand,tag=rr_chase,limit=1] PlayerCap 2
 scoreboard players operation @e[type=armor_stand,tag=rr_chase,limit=1] PlayerCap *= @s PlayerCap
 execute if score @s bluesCount >= @e[type=armor_stand,tag=rr_chase,limit=1] PlayerCap run tag @s add BlueFull
-execute if entity @s[tag=!BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle dust 3 3 3 1 ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a
-execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a
+execute if entity @s[tag=!BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle dust 3 3 3 1 ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[predicate=!custom:belowroof]
+execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[predicate=!custom:belowroof]
 
 #Items
 execute as @a[tag=JoinBlue] run function rr_chase:chasegear/givegear
@@ -17,12 +17,12 @@ execute if entity @s[tag=GameStarted] as @a[tag=JoinBlue] run function items:uti
 #Spawnpoints
 execute if entity @s[tag=GameStarted] as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
 
-#Hardcore compatibility
-execute if entity @s[tag=GameStarted,tag=Hardcore] run function modifiers:hardcorekill
-
 #Notify Join
 execute if entity @s[tag=GameStarted,tag=!SMActive] as @a[tag=JoinBlue] run function rr_chase:chasegear/sabermsg
 execute if entity @s[tag=GameStarted,tag=SMActive] run tellraw @a[tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
+
+#Give first item to anyone who joins within 1st second
+execute if entity @s[tag=GameStarted,scores={gametime=3..20}] run function items:givefirst
 
 #Tag Removal
 tag @a remove JoinBlue

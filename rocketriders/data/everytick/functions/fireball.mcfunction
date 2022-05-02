@@ -2,6 +2,23 @@
 ## FIREBALL: A punchable explosive ##
 #####################################
 
+#Void spawn prevention
+execute in overworld as @e[type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
+execute in overworld as @e[type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
+execute in overworld as @e[type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
+execute in overworld as @e[type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
+
+#Roof spawn prevention
+execute in overworld as @e[type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
+execute in overworld as @e[type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
+execute in overworld as @e[type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
+execute in overworld as @e[type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
+
+#Give back if prevented
+execute as @e[type=marker,tag=BlueFireball,tag=UnableSpawn] run function items:prevention/unablefx
+execute as @e[type=marker,tag=YellowFireball,tag=UnableSpawn] run function items:prevention/unablefx
+function items:prevention/giveback
+
 #Summoning the Fireball entity
 execute as @e[type=marker,tag=BlueFireball] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[type=marker,tag=BlueFireball] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballBlue"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
@@ -28,11 +45,11 @@ execute if score $fireballsound CmdData matches 20.. run scoreboard players set 
 execute if score $fireballsound CmdData matches 0 as @e[type=fireball,tag=NormalFireball] at @s as @a[distance=..3] run playsound minecraft:block.fire.ambient master @s ~ ~ ~ 0.5 1 0.1
 
 #Custom team particles for moving Fireball
-execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a
-execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a
-execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle electric_spark ~ ~0.5 ~ 0 0 0 0.05 3 force @a
-execute if entity @e[type=armor_stand,tag=Selection,tag=!chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a
-execute as @e[type=fireball,tag=FireballYellow,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a
+execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a[predicate=custom:belowroof]
+execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a[predicate=custom:belowroof]
+execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle electric_spark ~ ~0.5 ~ 0 0 0 0.05 3 force @a[predicate=custom:belowroof]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!chaseEnabled] as @e[type=fireball,tag=FireballBlue,tag=!Still,tag=NormalFireball] at @s run particle soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a[predicate=custom:belowroof]
+execute as @e[type=fireball,tag=FireballYellow,tag=!Still,tag=NormalFireball] at @s run particle flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a[predicate=custom:belowroof]
 
 #Fireballs poof Canopies
 execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=fireball,tag=NormalFireball,tag=FireballBlue,tag=!Still] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5] run tag @s add DontPoof
@@ -52,3 +69,6 @@ execute as @e[type=fireball,tag=NormalFireball,tag=!Still,tag=!DontPoof] at @s s
 execute as @e[type=fireball,tag=NormalFireball,tag=!Still,tag=!DontPoof,scores={CmdData=1..}] at @s run playsound entity.blaze.shoot master @a ~ ~ ~ 2 1
 scoreboard players reset @e[type=fireball,tag=NormalFireball] CmdData
 tag @e[type=fireball,tag=DontPoof] remove DontPoof
+
+#Kill near void
+execute as @e[type=fireball] at @s if predicate custom:nearvoid run kill @s

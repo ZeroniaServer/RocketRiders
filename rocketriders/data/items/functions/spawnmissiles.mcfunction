@@ -68,6 +68,7 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=CollisionControl,tag=Har
 #Remove clone blocks
 function items:prevention/clearafter
 
+
 #Give back
 execute if entity @s[tag=UnableMissile,tag=!missileflip] run function items:prevention/unablefx
 execute if entity @s[tag=UnableMissile,tag=missileflip] run function items:flip/unablefx

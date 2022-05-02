@@ -15,7 +15,7 @@ execute unless entity @s[tag=portalOverride] run kill @e[type=egg,tag=ICBM,tag=!
 execute unless entity @s[tag=portalOverride] run tag @e[type=egg,tag=ICBM] remove teleported
 
 #Smoke trail
-execute as @e[type=egg,tag=ICBM] at @s run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force
+execute as @e[type=egg,tag=ICBM] at @s run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force @a[predicate=custom:belowroof]
 
 #Kill chickens
 execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}

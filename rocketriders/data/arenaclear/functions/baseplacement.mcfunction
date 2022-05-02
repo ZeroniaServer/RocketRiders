@@ -3,7 +3,7 @@
 ## General function used by other gamemodes ##
 ##############################################
 
-#Clear pregame powerups platform and mini platforms and castles
+#Clear pregame powerup platform and mini platforms and castles
 fill -101 195 65 -89 201 64 minecraft:blue_stained_glass
 fill -89 201 63 -101 195 62 minecraft:cyan_stained_glass
 fill -101 201 60 -89 195 61 minecraft:white_stained_glass

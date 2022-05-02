@@ -108,8 +108,18 @@ tag @a[tag=BackSurprise] remove fullHotbar
 execute as @a[team=Blue,tag=BackSurprise] at @s run function items:surprise_blue/givesurpriseegg
 execute as @a[team=Yellow,tag=BackSurprise] at @s run function items:surprise_yellow/givesurpriseegg
 
+#Fireball
+scoreboard players remove @a[tag=BackFireball] FireballSpawned 1
+tag @a[tag=BackFireball] remove fullHotbar
+execute if entity @s[tag=!fireballOverride] as @a[tag=BackFireball] at @s run function items:util/givefireball
+
+#Obsidian Shield
+scoreboard players remove @a[tag=BackObshield] ObshieldSpawned 1
+tag @a[tag=BackObshield] remove fullHotbar
+execute as @a[tag=BackObshield] at @s run function items:util/giveobshield
+
 ##Unable message
-tag @a[tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG] add preventionMSG
+tag @a[tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG,tag=!roofMSGFB,tag=!voidMSGFB,tag=!roofMSGOS,tag=!voidMSGOS] add preventionMSG
 execute unless entity @s[tag=customPrevention] as @a[tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or portals.","color":"red"}]
 execute as @a[tag=roofMSG] run tellraw @s ["",{"text":"Unable to spawn missile near the roof.","color":"red"}]
 execute as @a[tag=voidMSG] run tellraw @s ["",{"text":"Unable to spawn missile near the void.","color":"red"}]
@@ -117,11 +127,19 @@ execute if entity @s[tag=!antigriefOff,scores={gametime=200..}] as @a[tag=antigr
 execute if entity @s[tag=!antigriefOff,scores={gametime=..199}] as @a[tag=antigriefMSG] run tellraw @s ["",{"text":"Unable to collide missiles for the first 10 seconds of a game.","color":"red"}]
 execute as @a[tag=spawnpointMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside team spawnpoint.","color":"red"}]
 execute as @a[tag=collisionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside enemy base (Collision Control).","color":"red"}]
+execute unless entity @s[tag=fireballOverride] as @a[tag=roofMSGFB] run tellraw @s ["",{"text":"Unable to spawn Fireball near the roof.","color":"red"}]
+execute unless entity @s[tag=fireballOverride] as @a[tag=voidMSGFB] run tellraw @s ["",{"text":"Unable to spawn Fireball near the void.","color":"red"}]
+execute as @a[tag=roofMSGOS] run tellraw @s ["",{"text":"Unable to spawn Obsidian Shield near the roof.","color":"red"}]
+execute as @a[tag=voidMSGOS] run tellraw @s ["",{"text":"Unable to spawn Obsidian Shield near the void.","color":"red"}]
 
 ##Tag removal
 execute unless entity @s[tag=customPrevention] run tag @a[tag=preventionMSG] remove preventionMSG
 tag @a[tag=roofMSG] remove roofMSG
 tag @a[tag=voidMSG] remove voidMSG
+execute unless entity @s[tag=fireballOverride] run tag @a[tag=roofMSGFB] remove roofMSGFB
+execute unless entity @s[tag=fireballOverride] run tag @a[tag=voidMSGFB] remove voidMSGFB
+tag @a[tag=roofMSGOS] remove roofMSGOS
+tag @a[tag=voidMSGOS] remove voidMSGOS
 tag @a[tag=antigriefMSG] remove antigriefMSG
 tag @a[tag=spawnpointMSG] remove spawnpointMSG
 tag @a[tag=collisionMSG] remove collisionMSG
@@ -147,3 +165,5 @@ tag @a remove BackBull
 tag @a remove BackDuplex
 tag @a remove BackBroad
 tag @a remove BackSurprise
+execute unless entity @s[tag=fireballOverride] run tag @a remove BackFireball
+tag @a remove BackObshield

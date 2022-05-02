@@ -133,5 +133,7 @@ tag @s[scores={Unable=100..}] add antigrief
 scoreboard players reset @s Unable
 
 #Extra failsafe for behind the portal spawns
-execute if entity @s[tag=bluemissile,x=-15,dx=54,y=33,dy=40,z=-86,dz=19] run tag @s add UnableMissile
-execute if entity @s[tag=yellowmissile,x=-15,dx=54,y=33,dy=40,z=67,dz=19] run tag @s add UnableMissile
+execute if entity @s[tag=bluemissile,x=-15,dx=54,y=33,dy=40,z=-86,dz=18] run tag @s add UnableMissile
+execute if entity @s[tag=bluemissile,x=-15,dx=54,y=33,dy=40,z=-86,dz=18] run tag @s add antigrief
+execute if entity @s[tag=yellowmissile,x=-15,dx=54,y=33,dy=40,z=68,dz=18] run tag @s add UnableMissile
+execute if entity @s[tag=yellowmissile,x=-15,dx=54,y=33,dy=40,z=68,dz=18] run tag @s add antigrief

@@ -19,7 +19,6 @@ tag @s add customArrowPickup
 tag @s add SuddenDeathCustom
 tag @s add MoleratOff
 tag @s[tag=Molerat] add MoleratWasOn
-tag @s[tag=Molerat] add WasMolerat
 tag @s[tag=Molerat] remove Molerat
 tag @s[tag=SurpriseEgg] add SurpriseEggWasOn
 tag @s add SurpriseEggOff

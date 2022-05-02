@@ -42,6 +42,7 @@ effect give @a[team=Lobby] night_vision 1000000 100 true
 execute as @e[type=armor_stand,tag=Selection,tag=!Sonar] run effect give @a[team=Spectator] night_vision 1000000 100 true
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run effect give @a saturation 1000000 0 true
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run effect clear @a saturation
+execute as @a[team=Lobby,scores={nnhealth_max=6}] run function modifiers:hardcorereset
 function lobby:bookwarp
 scoreboard players enable @a[team=Lobby] displayinfo
 scoreboard players enable @a[team=Developer] displayinfo
@@ -52,9 +53,17 @@ execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run function lobby:p
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run function lobby:parkour/parkourserver
 stopsound @a ambient minecraft:ambient.cave
 
+#NNHealth (credit: NOPEname)
+execute if entity @a[tag=!nnhealth_init] run gamerule showDeathMessages false
+execute as @a[tag=!nnhealth_init] run kill @s
+execute if entity @a[tag=!nnhealth_init] run gamerule showDeathMessages true
+tag @a[tag=!nnhealth_init] add nnhealth_init
+function nnhealth:tick
+
 #Handling portals/roof with players/utilities
 execute as @e[type=armor_stand,tag=Selection] run function everytick:cancel_utility
-execute as @e[type=armor_stand,tag=Selection,scores={servermode=0}] run function everytick:player_portal
+execute as @e[type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] run function everytick:player_portal
+execute as @e[type=armor_stand,tag=Selection,scores={servermode=0,PortalDeco=4},tag=SMCustom] run function everytick:player_portal
 
 #Player void
 execute as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980] unless entity @s[scores={ThrowPlat=1..}] run function game:void

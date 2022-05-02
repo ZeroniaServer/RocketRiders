@@ -108,6 +108,16 @@ execute if entity @s[tag=bluemissile,tag=surp] as @a[team=Blue] if score @s play
 execute if entity @s[tag=yellowmissile,tag=surp] as @a[team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackSurprise
 tag @a[tag=BackSurprise] add MissiMSG
 
+#Fireball
+execute if entity @s[tag=BlueFireball] as @a[team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackFireball
+execute if entity @s[tag=YellowFireball] as @a[team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackFireball
+tag @a[tag=BackFireball] add MissiMSG
+
+#Obsidian Shield
+execute if entity @s[tag=BlueObshield] as @a[team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackObshield
+execute if entity @s[tag=YellowObshield] as @a[team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackObshield
+tag @a[tag=BackObshield] add MissiMSG
+
 #Special cases
 execute if entity @s[tag=yellowmissile,tag=void] at @s if entity @a[team=Yellow,tag=MissiMSG] run tag @a[team=Yellow,tag=MissiMSG] add voidMSG
 execute if entity @s[tag=bluemissile,tag=void] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add voidMSG
@@ -119,9 +129,17 @@ execute if entity @s[tag=yellowmissile,tag=spawnpoint] at @s if entity @a[team=Y
 execute if entity @s[tag=bluemissile,tag=spawnpoint] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add spawnpointMSG
 execute if entity @s[tag=yellowmissile,tag=collisioncontrol] at @s if entity @a[team=Yellow,tag=MissiMSG] run tag @a[team=Yellow,tag=MissiMSG] add collisionMSG
 execute if entity @s[tag=bluemissile,tag=collisioncontrol] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add collisionMSG
+execute if entity @s[tag=YellowFireball,tag=void] at @s if entity @a[team=Yellow,tag=MissiMSG] run tag @a[team=Yellow,tag=MissiMSG] add voidMSGFB
+execute if entity @s[tag=BlueFireball,tag=void] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add voidMSGFB
+execute if entity @s[tag=YellowFireball,tag=roof] at @s if entity @a[team=Yellow,tag=MissiMSG] run tag @a[team=Yellow,tag=MissiMSG] add roofMSGFB
+execute if entity @s[tag=BlueFireball,tag=roof] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add roofMSGFB
+execute if entity @s[tag=YellowObshield,tag=void] at @s if entity @a[team=Yellow,tag=MissiMSG] run tag @a[team=Yellow,tag=MissiMSG] add voidMSGOS
+execute if entity @s[tag=BlueObshield,tag=void] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add voidMSGOS
+execute if entity @s[tag=YellowObshield,tag=roof] at @s if entity @a[team=Yellow,tag=MissiMSG] run tag @a[team=Yellow,tag=MissiMSG] add roofMSGOS
+execute if entity @s[tag=BlueObshield,tag=roof] at @s if entity @a[team=Blue,tag=MissiMSG] run tag @a[team=Blue,tag=MissiMSG] add roofMSGOS
 
 #All missiles
 tp @s ~ ~-300 ~
-data merge entity @s {Tags:["UnableMissile"]}
+data merge entity @s[tag=missile] {Tags:["UnableMissile"]}
 scoreboard players reset $missile playerUUID
 execute as @e[type=marker,tag=UnableClear] at @s run function items:prevention/clearafter

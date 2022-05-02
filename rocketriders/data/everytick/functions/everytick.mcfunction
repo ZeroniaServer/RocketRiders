@@ -55,6 +55,7 @@ stopsound @a ambient minecraft:ambient.cave
 
 #NNHealth (credit: NOPEname)
 execute if entity @a[tag=!nnhealth_init] run gamerule showDeathMessages false
+execute as @a[tag=!nnhealth_init] run scoreboard players set @s nnhealth_max 20
 execute as @a[tag=!nnhealth_init] run kill @s
 execute if entity @a[tag=!nnhealth_init] run gamerule showDeathMessages true
 tag @a[tag=!nnhealth_init] add nnhealth_init

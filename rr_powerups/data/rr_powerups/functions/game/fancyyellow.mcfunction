@@ -1,5 +1,5 @@
 execute if entity @s[scores={captureYellow=2}] unless entity @s[tag=contested] at @s run playsound minecraft:entity.zombie_villager.converted master @a ~ ~ ~ 1 1.2
-execute if entity @s[scores={captureYellow=2..}] unless entity @s[tag=contested] run particle minecraft:dust 1 0.667 0 2 12 55 -6 0 0.6 0 0 2  @a[predicate=custom:belowroof]
+execute if entity @s[scores={captureYellow=2..}] unless entity @s[tag=contested] run particle minecraft:dust 1 0.667 0 2 12 55 -6 0 0.6 0 0 2 force @a[predicate=custom:belowroof]
 execute if entity @s[scores={captureYellow=2..}] unless entity @s[tag=contested] run particle minecraft:dust 1 0.667 0 2 18 55 0 0 0.6 0 0 2 force @a[predicate=custom:belowroof]
 execute if entity @s[scores={captureYellow=2..}] unless entity @s[tag=contested] run particle minecraft:dust 1 0.667 0 2 12 55 6 0 0.6 0 0 2 force @a[predicate=custom:belowroof]
 execute if entity @s[scores={captureYellow=2..}] unless entity @s[tag=contested] run particle minecraft:dust 1 0.667 0 2 6 55 0 0 0.6 0 0 2 force @a[predicate=custom:belowroof]

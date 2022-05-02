@@ -124,12 +124,13 @@ execute as @a[tag=YellowNovaAttach,scores={novattach=1}] run effect give @s levi
 execute as @a[tag=YellowNovaAttach,scores={novattach=4..}] run effect clear @s levitation
 execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] add killCanopy
 execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
+execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~-3 ~-2 ~-3 ~3 ~ ~3 air replace #minecraft:leaves
+execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run particle block oak_leaves ~ ~1 ~ 2 1 2 0.1 100 force @a[predicate=custom:belowroof]
 execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~ 2 0
 execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}}
-execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ^ ^-0.2 ^0.8 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ^ ^-0.2 ^0.8 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~2.5 ~3 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~2.5 ~3 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @a[tag=YellowNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force @a[predicate=custom:belowroof]
-execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s if entity @e[type=marker,tag=BluePlatform,tag=killCanopy,distance=..5,limit=1] run scoreboard players set @s novattach 2
 execute as @a[tag=YellowNovaAttach] run tag @s[scores={novattach=15..},nbt={OnGround:1b}] remove YellowNovaAttach
 
 ##Blue Nova Rocket Functionality
@@ -171,9 +172,7 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @a[tag=
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
 execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~ 3 0
 execute if entity @s[tag=!customNova] as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]}}}}
-execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ^ ^-0.2 ^0.8 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ^ ^-0.1 ^0.8 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~2.5 ~-3 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~2.5 ~-3 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:-10,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @a[tag=BlueNovaAttach,scores={novattach=1..}] at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force @a[predicate=custom:belowroof]
-execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s if entity @e[type=marker,tag=YellowPlatform,tag=killCanopy,distance=..5,limit=1] run scoreboard players set @s novattach 2
-execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s if entity @e[type=marker,tag=BluePlatform,tag=killCanopy,distance=..5,limit=1] run scoreboard players set @s novattach 2
 execute as @a[tag=BlueNovaAttach] run tag @s[scores={novattach=15..},nbt={OnGround:1b}] remove BlueNovaAttach

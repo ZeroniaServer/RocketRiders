@@ -145,6 +145,12 @@ tag @a remove AlreadySpec
 execute unless entity @e[type=armor_stand,tag=Selection,tag=SMActive] as @e[type=marker,tag=LeaveSpec] at @s run particle dust 2 1 0 1 ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[team=Spectator,predicate=custom:belowroof]
 execute unless entity @e[type=armor_stand,tag=Selection,tag=SMActive] as @e[type=marker,tag=LeaveSpec] at @s run tag @a[team=Spectator,distance=..2] add LeaveTeams
 
+#Keep spectators inside arena
+execute as @a[team=Spectator] at @s unless predicate custom:insideborder run tag @s add leftBorder
+tp @a[team=Spectator,tag=leftBorder] 12 100 0.5 90 90
+tellraw @a[team=Spectator,tag=leftBorder] {"text":"Cannot leave world border!","color":"red"}
+tag @a remove leftBorder
+
 ##Leave Pad
 execute as @a[gamemode=!spectator] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
 execute if entity @s[tag=!customLeaveHandling] run function game:leaveteams

@@ -61,11 +61,11 @@ execute as @a[tag=!nnhealth_init] run scoreboard players set @s nnhealth 20
 execute as @a[tag=!nnhealth_init] run kill @s
 execute if entity @a[tag=!nnhealth_init] run gamerule showDeathMessages true
 tag @a[tag=!nnhealth_init] add nnhealth_init
-#hotfix
-scoreboard players add @a nnhealth_max 0
-tag @a[tag=nnhealth_init,team=Lobby,scores={nnhealth_max=..19}] remove nnhealth_init
-
 function nnhealth:tick
+
+#hotfix for players with 0 max health
+scoreboard players add @a nnhealth_max 0
+tag @a[tag=nnhealth_init,scores={nnhealth_max=0}] remove nnhealth_init
 
 #Handling portals/roof with players/utilities
 execute as @e[type=armor_stand,tag=Selection] run function everytick:cancel_utility

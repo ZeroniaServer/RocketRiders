@@ -146,7 +146,7 @@ execute unless entity @e[type=armor_stand,tag=Selection,tag=SMActive] as @e[type
 execute unless entity @e[type=armor_stand,tag=Selection,tag=SMActive] as @e[type=marker,tag=LeaveSpec] at @s run tag @a[team=Spectator,distance=..2] add LeaveTeams
 
 #Keep spectators inside arena
-execute as @a[team=Spectator] at @s unless predicate custom:insideborder run tag @s add leftBorder
+execute as @a[team=Spectator] at @s unless predicate custom:insideborder_lenient run tag @s add leftBorder
 tp @a[team=Spectator,tag=leftBorder] 12 100 0.5 90 90
 tellraw @a[team=Spectator,tag=leftBorder] {"text":"Cannot leave world border!","color":"red"}
 tag @a remove leftBorder

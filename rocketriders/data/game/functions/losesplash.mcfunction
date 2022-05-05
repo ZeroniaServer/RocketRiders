@@ -126,5 +126,6 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=115}] run title 
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=116}] run title @a[tag=Loser] subtitle ["",{"text":"You have received: 1 L","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=117}] run title @a[tag=Loser] subtitle ["",{"text":"Here's your participation trophy!","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=118}] run title @a[tag=Loser] subtitle ["",{"text":"Initiation failed, resetting world...","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=119}] run title @a[tag=Loser] subtitle ["",{"text":"don't worry, that wasn't EZU canon","color":"red"}]
 
 kill @e[type=marker,tag=RandomLossSplash]

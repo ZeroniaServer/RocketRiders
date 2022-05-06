@@ -4,7 +4,6 @@ execute if entity @s[tag=!SMActive] run function rr_crusade:game/leavemidgame
 #general
 function rr_crusade:items/spawnitems
 function rr_crusade:game/cancel_utility
-function everytick:icbm
 
 #middle wall
 execute as @e[type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement

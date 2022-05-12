@@ -12,10 +12,7 @@ scoreboard players set $prevpage CmdData 0
 
 fill 22 202 69 15 206 87 air
 
-setblock 18 201 72 minecraft:structure_block{mode:"LOAD",name:"minecraft:slasher_blue",posY:2}
-setblock 18 202 72 redstone_block
-setblock 18 202 72 air
-setblock 18 201 72 blue_concrete_powder
+place template slasher_blue 18 203 72
 
 fill 22 202 69 15 206 87 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass

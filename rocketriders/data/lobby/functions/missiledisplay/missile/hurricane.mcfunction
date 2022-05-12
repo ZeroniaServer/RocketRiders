@@ -12,10 +12,7 @@ scoreboard players set $prevpage CmdData 1
 
 fill 22 202 69 15 206 87 air
 
-setblock 18 201 74 minecraft:structure_block{mode:"LOAD",name:"minecraft:hurricane_blue",posY:2}
-setblock 18 202 74 redstone_block
-setblock 18 202 74 air
-setblock 18 201 74 blue_concrete_powder
+place template hurricane_blue 18 203 74
 
 fill 22 202 69 15 206 87 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass

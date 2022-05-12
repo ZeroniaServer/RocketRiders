@@ -11,10 +11,7 @@ scoreboard players set $prevpage CmdData 1
 
 fill 22 202 69 15 206 87 air
 
-setblock 18 201 73 minecraft:structure_block{mode:"LOAD",name:"minecraft:broadsword_blue",posY:2}
-setblock 18 202 73 redstone_block
-setblock 18 202 73 air
-setblock 18 201 73 blue_concrete_powder
+place template broadsword_blue 18 203 73
 
 #Extra for Broadsword trigger
 setblock 20 204 74 observer[facing=south,powered=true]

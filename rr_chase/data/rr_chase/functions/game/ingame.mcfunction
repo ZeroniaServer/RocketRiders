@@ -40,10 +40,8 @@ execute if score $ChaseBlockCheck CmdData matches ..145 run scoreboard players s
 execute if score $ChaseBlockCheck CmdData matches ..145 run function rr_chase:chaseblocks/spawn
 
 #Make flag wave around
-execute if score FlagWave FlagScore matches 20 run setblock 12 71 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"finish_flag1"}
-execute if score FlagWave FlagScore matches 20 run setblock 12 70 64 redstone_block
-execute if score FlagWave FlagScore matches 40.. run setblock 12 71 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"finish_flag2"}
-execute if score FlagWave FlagScore matches 40.. run setblock 12 70 64 redstone_block
+execute if score FlagWave FlagScore matches 20 run place template finish_flag1 8 70 63
+execute if score FlagWave FlagScore matches 40.. run place template finish_flag2 8 70 63
 execute if score FlagWave FlagScore matches 40.. run scoreboard players reset FlagWave FlagScore
 
 #Chase Blocks

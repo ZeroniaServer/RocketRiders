@@ -113,6 +113,7 @@ execute unless entity @s[tag=GameStarted,tag=!GameEnd] run gamerule fireDamage f
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] armor.chest with air
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] hotbar.0 with air
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] hotbar.1 with air
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby] hotbar.2 with air
@@ -123,6 +124,7 @@ execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item rep
 execute as @e[type=armor_stand,tag=Selection,tag=!SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour] hotbar.8 with air
 
 #If servermode is active
+execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] armor.chest with air
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.1 with air
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive,limit=1] run item replace entity @a[team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.2 with air

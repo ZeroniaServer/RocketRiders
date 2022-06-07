@@ -72,25 +72,17 @@ scoreboard players add FlagWave FlagScore 1
 execute as @a[tag=CarryFlag,tag=!DelayActionbar] run title @s actionbar [{"text":"You stole a flag! Return to your base to capture it!","color":"white","bold":true}]
 
 #Make flags wave around
-execute if score FlagWave FlagScore matches 20 if score FY1: FlagScore > 29 FlagScore run setblock 34 72 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag1"}
-execute if score FlagWave FlagScore matches 20 if score FY1: FlagScore > 29 FlagScore run setblock 34 71 64 redstone_block
-execute if score FlagWave FlagScore >= 40 FlagScore if score FY1: FlagScore > 29 FlagScore run setblock 34 72 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FlagWave FlagScore >= 40 FlagScore if score FY1: FlagScore > 29 FlagScore run setblock 34 71 64 redstone_block
+execute if score FlagWave FlagScore matches 20 if score FY1: FlagScore > 29 FlagScore run place template yellow_flag1 30 71 63
+execute if score FlagWave FlagScore >= 40 FlagScore if score FY1: FlagScore > 29 FlagScore run place template yellow_flag2 30 71 63
 
-execute if score FlagWave FlagScore matches 20 if score FY2: FlagScore > 29 FlagScore run setblock -10 72 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag1"}
-execute if score FlagWave FlagScore matches 20 if score FY2: FlagScore > 29 FlagScore run setblock -10 71 64 redstone_block
-execute if score FlagWave FlagScore >= 40 FlagScore if score FY2: FlagScore > 29 FlagScore run setblock -10 72 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FlagWave FlagScore >= 40 FlagScore if score FY2: FlagScore > 29 FlagScore run setblock -10 71 64 redstone_block
+execute if score FlagWave FlagScore matches 20 if score FY2: FlagScore > 29 FlagScore run place template yellow_flag1 -10 71 63
+execute if score FlagWave FlagScore >= 40 FlagScore if score FY2: FlagScore > 29 FlagScore run place template yellow_flag2 -10 71 63
 
-execute if score FlagWave FlagScore matches 20 if score FB1: FlagScore > 29 FlagScore run setblock -10 72 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag1"}
-execute if score FlagWave FlagScore matches 20 if score FB1: FlagScore > 29 FlagScore run setblock -10 71 -64 redstone_block
-execute if score FlagWave FlagScore >= 40 FlagScore if score FB1: FlagScore > 29 FlagScore run setblock -10 72 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FlagWave FlagScore >= 40 FlagScore if score FB1: FlagScore > 29 FlagScore run setblock -10 71 -64 redstone_block
+execute if score FlagWave FlagScore matches 20 if score FB1: FlagScore > 29 FlagScore run place template blue_flag1 -10 71 -65
+execute if score FlagWave FlagScore >= 40 FlagScore if score FB1: FlagScore > 29 FlagScore run place template blue_flag2 -10 71 -65
 
-execute if score FlagWave FlagScore matches 20 if score FB2: FlagScore > 29 FlagScore run setblock 34 72 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag1"}
-execute if score FlagWave FlagScore matches 20 if score FB2: FlagScore > 29 FlagScore run setblock 34 71 -64 redstone_block
-execute if score FlagWave FlagScore >= 40 FlagScore if score FB2: FlagScore > 29 FlagScore run setblock 34 72 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FlagWave FlagScore >= 40 FlagScore if score FB2: FlagScore > 29 FlagScore run setblock 34 71 -64 redstone_block
+execute if score FlagWave FlagScore matches 20 if score FB2: FlagScore > 29 FlagScore run place template blue_flag1 30 71 -65
+execute if score FlagWave FlagScore >= 40 FlagScore if score FB2: FlagScore > 29 FlagScore run place template blue_flag2 30 71 -65
 
 execute if score FlagWave FlagScore >= 40 FlagScore run scoreboard players reset FlagWave FlagScore
 
@@ -111,27 +103,21 @@ execute if score FY1: FlagScore matches 0 positioned 34 65 64 if entity @e[type=
 execute if entity @e[type=player,team=Blue,tag=CarryFY1] run scoreboard players set FY1: FlagScore -1
 
 execute if score FY1: FlagScore matches 26 run fill 34 65 63 30 72 64 air replace yellow_wool
-execute if score FY1: FlagScore matches 26 run setblock 34 71 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY1: FlagScore matches 26 run setblock 34 70 64 redstone_block
+execute if score FY1: FlagScore matches 26 run place template yellow_flag2 30 70 63
 execute if score FY1: FlagScore matches 22 run fill 34 65 63 30 72 64 air replace yellow_wool
-execute if score FY1: FlagScore matches 22 run setblock 34 70 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY1: FlagScore matches 22 run setblock 34 69 64 redstone_block
+execute if score FY1: FlagScore matches 22 run place template yellow_flag2 30 69 63
 execute if score FY1: FlagScore matches 22 run setblock 34 71 64 oak_fence
 execute if score FY1: FlagScore matches 18 run fill 34 65 63 30 72 64 air replace yellow_wool
-execute if score FY1: FlagScore matches 18 run setblock 34 69 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY1: FlagScore matches 18 run setblock 34 68 64 redstone_block
+execute if score FY1: FlagScore matches 18 run place template yellow_flag2 30 68 63
 execute if score FY1: FlagScore matches 18 run setblock 34 70 64 oak_fence
 execute if score FY1: FlagScore matches 14 run fill 34 65 63 30 72 64 air replace yellow_wool
-execute if score FY1: FlagScore matches 14 run setblock 34 68 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY1: FlagScore matches 14 run setblock 34 67 64 redstone_block
+execute if score FY1: FlagScore matches 14 run place template yellow_flag2 30 67 63
 execute if score FY1: FlagScore matches 14 run setblock 34 69 64 oak_fence
 execute if score FY1: FlagScore matches 10 run fill 34 65 63 30 72 64 air replace yellow_wool
-execute if score FY1: FlagScore matches 10 run setblock 34 67 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY1: FlagScore matches 10 run setblock 34 66 64 redstone_block
+execute if score FY1: FlagScore matches 10 run place template yellow_flag2 30 66 63
 execute if score FY1: FlagScore matches 10 run setblock 34 68 64 oak_fence
 execute if score FY1: FlagScore matches 6 run fill 34 65 63 30 72 64 air replace yellow_wool
-execute if score FY1: FlagScore matches 6 run setblock 34 66 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY1: FlagScore matches 6 run setblock 34 65 64 redstone_block
+execute if score FY1: FlagScore matches 6 run place template yellow_flag2 30 65 63
 execute if score FY1: FlagScore matches 6 run setblock 34 65 64 white_stained_glass
 execute if score FY1: FlagScore matches 6 run setblock 34 67 64 oak_fence
 #END
@@ -162,27 +148,21 @@ execute if score FY2: FlagScore matches 0 positioned -10 65 64 if entity @e[type
 execute if entity @e[type=player,team=Blue,tag=CarryFY2] run scoreboard players set FY2: FlagScore -1
 
 execute if score FY2: FlagScore matches 26 run fill -10 64 63 -14 72 64 air replace yellow_wool
-execute if score FY2: FlagScore matches 26 run setblock -10 71 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY2: FlagScore matches 26 run setblock -10 70 64 redstone_block
+execute if score FY2: FlagScore matches 26 run place template yellow_flag2 -14 70 63
 execute if score FY2: FlagScore matches 22 run fill -10 64 63 -14 72 64 air replace yellow_wool
-execute if score FY2: FlagScore matches 22 run setblock -10 70 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY2: FlagScore matches 22 run setblock -10 69 64 redstone_block
+execute if score FY2: FlagScore matches 22 run place template yellow_flag2 -14 69 63
 execute if score FY2: FlagScore matches 22 run setblock -10 71 64 oak_fence
 execute if score FY2: FlagScore matches 18 run fill -10 64 63 -14 72 64 air replace yellow_wool
-execute if score FY2: FlagScore matches 18 run setblock -10 69 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY2: FlagScore matches 18 run setblock -10 68 64 redstone_block
+execute if score FY2: FlagScore matches 18 run place template yellow_flag2 -14 68 63
 execute if score FY2: FlagScore matches 18 run setblock -10 70 64 oak_fence
 execute if score FY2: FlagScore matches 14 run fill -10 64 63 -14 72 64 air replace yellow_wool
-execute if score FY2: FlagScore matches 14 run setblock -10 68 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY2: FlagScore matches 14 run setblock -10 67 64 redstone_block
+execute if score FY2: FlagScore matches 14 run place template yellow_flag2 -14 67 63
 execute if score FY2: FlagScore matches 14 run setblock -10 69 64 oak_fence
 execute if score FY2: FlagScore matches 10 run fill -10 64 63 -14 72 64 air replace yellow_wool
-execute if score FY2: FlagScore matches 10 run setblock -10 67 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY2: FlagScore matches 10 run setblock -10 66 64 redstone_block
+execute if score FY2: FlagScore matches 10 run place template yellow_flag2 -14 66 63
 execute if score FY2: FlagScore matches 10 run setblock -10 68 64 oak_fence
 execute if score FY2: FlagScore matches 6 run fill -10 64 63 -14 72 64 air replace yellow_wool
-execute if score FY2: FlagScore matches 6 run setblock -10 66 64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"yellow_flag2"}
-execute if score FY2: FlagScore matches 6 run setblock -10 65 64 redstone_block
+execute if score FY2: FlagScore matches 6 run place template yellow_flag2 -14 65 63
 execute if score FY2: FlagScore matches 6 run setblock -10 65 64 minecraft:white_stained_glass
 execute if score FY2: FlagScore matches 6 run setblock -10 67 64 oak_fence
 #END
@@ -213,27 +193,21 @@ execute if score FB1: FlagScore matches 0 positioned -10 65 -64 if entity @e[typ
 execute if entity @e[type=player,team=Yellow,tag=CarryFB1] run scoreboard players set FB1: FlagScore -1
 
 execute if score FB1: FlagScore matches 26 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 26 run setblock -10 71 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB1: FlagScore matches 26 run setblock -10 70 -64 redstone_block
+execute if score FB1: FlagScore matches 26 run place template blue_flag2 -14 70 -65
 execute if score FB1: FlagScore matches 22 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 22 run setblock -10 70 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB1: FlagScore matches 22 run setblock -10 69 -64 redstone_block
+execute if score FB1: FlagScore matches 22 run place template blue_flag2 -14 69 -65
 execute if score FB1: FlagScore matches 22 run setblock -10 71 -64 oak_fence
 execute if score FB1: FlagScore matches 18 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 18 run setblock -10 69 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB1: FlagScore matches 18 run setblock -10 68 -64 redstone_block
+execute if score FB1: FlagScore matches 18 run place template blue_flag2 -14 68 -65
 execute if score FB1: FlagScore matches 18 run setblock -10 70 -64 oak_fence
 execute if score FB1: FlagScore matches 14 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 14 run setblock -10 68 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB1: FlagScore matches 14 run setblock -10 67 -64 redstone_block
+execute if score FB1: FlagScore matches 14 run place template blue_flag2 -14 67 -65
 execute if score FB1: FlagScore matches 14 run setblock -10 69 -64 oak_fence
 execute if score FB1: FlagScore matches 10 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 10 run setblock -10 67 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB1: FlagScore matches 10 run setblock -10 66 -64 redstone_block
+execute if score FB1: FlagScore matches 10 run place template blue_flag2 -14 66 -65
 execute if score FB1: FlagScore matches 10 run setblock -10 68 -64 oak_fence
 execute if score FB1: FlagScore matches 6 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 6 run setblock -10 66 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB1: FlagScore matches 6 run setblock -10 65 -64 redstone_block
+execute if score FB1: FlagScore matches 6 run place template blue_flag2 -14 65 -65
 execute if score FB1: FlagScore matches 6 run setblock -10 65 -64 white_stained_glass
 execute if score FB1: FlagScore matches 6 run setblock -10 67 -64 oak_fence
 #END
@@ -264,27 +238,21 @@ execute if score FB2: FlagScore matches 0 positioned 34 65 -64 if entity @e[type
 execute if entity @e[type=player,team=Yellow,tag=CarryFB2] run scoreboard players set FB2: FlagScore -1
 
 execute if score FB2: FlagScore matches 26 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 26 run setblock 34 71 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB2: FlagScore matches 26 run setblock 34 70 -64 redstone_block
+execute if score FB2: FlagScore matches 26 run place template blue_flag2 30 70 -65
 execute if score FB2: FlagScore matches 22 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 22 run setblock 34 70 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB2: FlagScore matches 22 run setblock 34 69 -64 redstone_block
+execute if score FB2: FlagScore matches 22 run place template blue_flag2 30 69 -65
 execute if score FB2: FlagScore matches 22 run setblock 34 71 -64 oak_fence
 execute if score FB2: FlagScore matches 18 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 18 run setblock 34 69 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB2: FlagScore matches 18 run setblock 34 68 -64 redstone_block
+execute if score FB2: FlagScore matches 18 run place template blue_flag2 30 68 -65
 execute if score FB2: FlagScore matches 18 run setblock 34 70 -64 oak_fence
 execute if score FB2: FlagScore matches 14 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 14 run setblock 34 68 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB2: FlagScore matches 14 run setblock 34 67 -64 redstone_block
+execute if score FB2: FlagScore matches 14 run place template blue_flag2 30 67 -65
 execute if score FB2: FlagScore matches 14 run setblock 34 69 -64 oak_fence
 execute if score FB2: FlagScore matches 10 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 10 run setblock 34 67 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB2: FlagScore matches 10 run setblock 34 66 -64 redstone_block
+execute if score FB2: FlagScore matches 10 run place template blue_flag2 30 66 -65
 execute if score FB2: FlagScore matches 10 run setblock 34 68 -64 oak_fence
 execute if score FB2: FlagScore matches 6 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 6 run setblock 34 66 -64 structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"blue_flag2"}
-execute if score FB2: FlagScore matches 6 run setblock 34 65 -64 redstone_block
+execute if score FB2: FlagScore matches 6 run place template blue_flag2 30 65 -65
 execute if score FB2: FlagScore matches 6 run setblock 34 65 -64 white_stained_glass
 execute if score FB2: FlagScore matches 6 run setblock 34 67 -64 oak_fence
 #END

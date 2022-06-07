@@ -11,10 +11,7 @@ scoreboard players set $prevpage CmdData 1
 
 fill 22 202 69 15 206 87 air
 
-setblock 18 201 72 minecraft:structure_block{mode:"LOAD",name:"minecraft:bullet_blue",posY:2}
-setblock 18 202 72 redstone_block
-setblock 18 202 72 air
-setblock 18 201 72 blue_concrete_powder
+place template bullet_blue 18 203 72
 
 fill 22 202 69 15 206 73 moving_piston replace air
 fill 22 202 75 15 206 87 moving_piston replace air

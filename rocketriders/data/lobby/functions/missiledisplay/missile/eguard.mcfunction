@@ -12,10 +12,7 @@ scoreboard players set $prevpage CmdData 0
 
 fill 22 202 69 15 206 87 air
 
-setblock 18 201 73 minecraft:structure_block{mode:"LOAD",name:"minecraft:elderguard_blue",posY:2}
-setblock 18 202 73 redstone_block
-setblock 18 202 73 air
-setblock 18 201 73 blue_concrete_powder
+place template elderguard_blue 18 203 73
 
 fill 22 202 69 15 206 87 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass

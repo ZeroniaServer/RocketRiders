@@ -24,8 +24,7 @@ setblock -100 201 78 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1532111
 
 #Flag placement
 fill 12 64 65 12 71 65 oak_fence replace air
-setblock 12 71 64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"minecraft:finish_flag1"}
-setblock 12 70 64 minecraft:redstone_block
+place template finish_flag1 8 70 63
 
 #Stair placement
 kill @e[type=marker,tag=chaseStairs]

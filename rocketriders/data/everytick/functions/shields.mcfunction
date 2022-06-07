@@ -26,19 +26,13 @@ execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] run 
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] run data modify storage rocketriders:shieldpos y prepend from entity @s Pos[1]
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] run data modify storage rocketriders:shieldpos z prepend from entity @s Pos[2]
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] run scoreboard players add @e[type=armor_stand,tag=Selection] shieldCount 1
-execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:yellowshield1"}
-execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] at @s run place template yellowshield1 ~-1 ~-1 ~
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=1}] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
-execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=2}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:yellowshield2"}
-execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=2}] at @s run place template yellowshield2 ~-2 ~-2 ~
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=2}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=2}] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
-execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-3,posY:-3,posZ:0,name:"minecraft:yellowshield3"}
-execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=3}] at @s run place template yellowshield3 ~-3 ~-3 ~
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=3}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=3}] at @s run playsound item.shield.block master @a ~ ~ ~ 2 0
 execute as @e[type=marker,tag=PlaceYellowShield,scores={shieldplacement=3}] at @s run particle block yellow_stained_glass ~ ~ ~ 1 1 0 0.1 100
@@ -62,19 +56,13 @@ execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] run da
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] run data modify storage rocketriders:shieldpos y prepend from entity @s Pos[1]
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] run data modify storage rocketriders:shieldpos z prepend from entity @s Pos[2]
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] run scoreboard players add @e[type=armor_stand,tag=Selection] shieldCount 1
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"minecraft:blueshield1"}
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run place template blueshield1 ~-1 ~-1 ~
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"minecraft:blueshield2"}
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run place template blueshield2 ~-2 ~-2 ~
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0.6
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run playsound item.shield.break master @a ~ ~ ~ 2 2
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-3,posY:-3,posZ:0,name:"minecraft:blueshield3"}
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run place template blueshield3 ~-3 ~-3 ~
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run playsound block.glass.break master @a ~ ~ ~ 2 0
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run playsound item.shield.block master @a ~ ~ ~ 2 0
 execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run particle block blue_stained_glass ~ ~ ~ 1 1 0 0.1 100

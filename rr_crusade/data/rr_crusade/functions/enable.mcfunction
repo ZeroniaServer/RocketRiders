@@ -18,6 +18,7 @@ tag @s add customSaberMsg
 tag @s add customArrowPickup
 tag @s add SuddenDeathCustom
 tag @s add MoleratOff
+tag @s[tag=DoublePortal] add DoublePortalWasOn
 tag @s[tag=Molerat] add MoleratWasOn
 tag @s[tag=Molerat] remove Molerat
 tag @s[tag=SurpriseEgg] add SurpriseEggWasOn

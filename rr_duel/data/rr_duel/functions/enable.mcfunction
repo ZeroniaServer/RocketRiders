@@ -1,6 +1,10 @@
 tag @s remove switchGamemodes
 
+tag @s[tag=Molerat] add MoleratOff
+tag @s[tag=Molerat] add MoleratWasOn
+
 function gamemodes:storesettings
+function modifiers:disablemodifiers
 tag @s add customBossbar
 tag @s add duelEnabled
 tag @s add SurpriseEggOff
@@ -12,11 +16,6 @@ tag @s add customLeaveHandling
 tag @s add featheredOff
 tag @s add WindDownForce
 tag @s add WindDown
-
-tag @s[tag=Molerat] add MoleratOff
-tag @s[tag=Molerat] add MoleratWasOn
-tag @s[tag=Molerat] add WasMolerat
-tag @s[tag=Molerat] remove Molerat
 
 #Item giving time
 scoreboard players set @s MaxItemSec 15

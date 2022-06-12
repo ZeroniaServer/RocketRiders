@@ -16,6 +16,7 @@ execute if entity @s[scores={servermode=0},tag=!SMCustom] run function 2811iaj1:
 execute if entity @s[tag=!EditedSettings] run tag @e[type=marker,tag=yellowjoinpad] add CancelJoin
 execute if entity @s[tag=!EditedSettings] run tag @e[type=marker,tag=bluejoinpad] add CancelJoin
 execute if entity @s[tag=!EditedSettings] run tag @e[type=marker,tag=specjoinpad] add CancelJoin
+execute if entity @s[tag=noTeamBalance] run scoreboard players set @s largerTeam 0
 
 #Hide tips automatically for 10+ games played
 tag @a[scores={GamesPlayed=10..}] add hideTips

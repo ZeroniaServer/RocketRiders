@@ -52,8 +52,12 @@ setblock 34 64 -64 bedrock
 fill 34 66 -64 34 72 -64 minecraft:oak_fence replace air
 
 #Wool
-place template yellow_flag1 30 71 63
-place template yellow_flag1 -14 71 63
+setblock 34 72 64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"minecraft:yellow_flag1"}
+setblock 34 71 64 minecraft:redstone_block
+setblock -10 72 64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"minecraft:yellow_flag1"}
+setblock -10 71 64 redstone_block
 
-place template blue_flag1 -14 71 -65
-place template blue_flag1 30 71 -65
+setblock -10 72 -64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"minecraft:blue_flag1"}
+setblock -10 71 -64 redstone_block
+setblock 34 72 -64 minecraft:structure_block{mode:"LOAD",posX:-4,posY:-1,sizeX:5,posZ:-1,integrity:1.0f,name:"minecraft:blue_flag1"}
+setblock 34 71 -64 redstone_block

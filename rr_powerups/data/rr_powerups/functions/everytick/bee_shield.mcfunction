@@ -38,32 +38,94 @@ execute as @e[type=armor_stand,tag=YellowBee,scores={BeeShieldTime=20}] at @s ru
 scoreboard players add @e[type=marker,tag=animBshield] BeeShieldTime 1
 
 ##Blue animation
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run place template bees_blue_stage1 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run place template bees_blue_stage2 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run place template bees_blue_stage3 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run place template bees_blue_stage4 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run place template bees_blue_stage5 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run place template bees_blue_stage6 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=23}] at @s run place template bees_blue_stage7 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=24}] at @s run place template bees_blue_stage8 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=26}] at @s run place template bees_blue_stage9 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=28}] at @s run place template bees_blue_stage10 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run place template bees_blue_stage11 ~-2 ~-4 ~
-execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run place template rr_powerups:bees_blue_full ~-2 ~-4 ~
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage1"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage2"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage3"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage4"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage5"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage6"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run setblock ~ ~ ~ air
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=23}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage7"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=23}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=23}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=24}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage8"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=24}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=24}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=26}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage9"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=26}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=26}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=28}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage10"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=28}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=28}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_blue_stage11"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"rr_powerups:bees_blue_full"}
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=BBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ blue_stained_glass_pane[east=true,west=true]
 
 ##Yellow animation
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run place template bees_yellow_stage1 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run place template bees_yellow_stage2 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run place template bees_yellow_stage3 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run place template bees_yellow_stage4 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run place template bees_yellow_stage5 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run place template bees_yellow_stage6 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=23}] at @s run place template bees_yellow_stage7 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=24}] at @s run place template bees_yellow_stage8 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=26}] at @s run place template bees_yellow_stage9 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=28}] at @s run place template bees_yellow_stage10 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run place template bees_yellow_stage11 ~-2 ~-4 ~
-execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run place template rr_powerups:bees_yellow_full ~-2 ~-4 ~
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage1"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=1}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage2"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=3}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage3"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=5}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage4"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=7}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage5"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=9}] at @s run fill ~ ~ ~ ~ ~-1 ~ air
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage6"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=21}] at @s run setblock ~ ~ ~ air
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=23}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage7"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=23}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=23}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=24}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage8"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=24}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=24}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=26}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage9"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=26}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=26}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=28}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage10"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=28}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=28}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"minecraft:bees_yellow_stage11"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=30}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-4,posZ:0,name:"rr_powerups:bees_yellow_full"}
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run setblock ~ ~-1 ~ orange_stained_glass_pane[east=true,west=true]
 
 #Sounds and particles for the shield animation
 execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=1}] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 1.3

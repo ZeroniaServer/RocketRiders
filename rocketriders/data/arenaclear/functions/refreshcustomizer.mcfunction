@@ -87,30 +87,56 @@ fill -42 197 81 -45 199 85 air
 
 ##Top Decorations
 #New Dawn Arch
-execute if entity @s[scores={TopDeco=1},tag=!decosLocked] run place template archpreview -48 197 74
+execute if entity @s[scores={TopDeco=1},tag=!decosLocked] run setblock -48 197 74 minecraft:structure_block{mode:"LOAD",name:"minecraft:archpreview",showboundingbox:0b}
+execute if entity @s[scores={TopDeco=1},tag=!decosLocked] run setblock -48 198 74 minecraft:redstone_block
+execute if entity @s[scores={TopDeco=1},tag=!decosLocked] run setblock -48 197 74 minecraft:air
 #Towers
-execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run place template towerpreview -44 197 65
-execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run place template towerpreview -44 197 87
+execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run setblock -44 197 65 structure_block{mode:"LOAD",name:"minecraft:towerpreview",showboundingbox:0b}
+execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run setblock -44 198 65 redstone_block
+execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run setblock -44 197 65 air
+execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run setblock -44 197 87 structure_block{mode:"LOAD",name:"minecraft:towerpreview",showboundingbox:0b}
+execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run setblock -44 198 87 redstone_block
+execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run setblock -44 197 87 air
 #Spikes
-execute if entity @s[scores={TopDeco=3},tag=!decosLocked] run place template spike_top_preview -45 197 71
+execute if entity @s[scores={TopDeco=3},tag=!decosLocked] run setblock -45 197 71 structure_block{mode:"LOAD",name:"minecraft:spike_top_preview",showboundingbox:0b}
+execute if entity @s[scores={TopDeco=3},tag=!decosLocked] run setblock -45 198 71 redstone_block
+execute if entity @s[scores={TopDeco=3},tag=!decosLocked] run setblock -45 197 71 air
 
 ##Top Sides Decorations
 #New Dawn Platforms
-execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run place template topplatform_preview -50 194 71
-execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run place template topplatform_preview -50 194 81
+execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 194 71 structure_block{mode:"LOAD",name:"minecraft:topplatform_preview",showboundingbox:0b}
+execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 195 71 redstone_block
+execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 194 71 air
+execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 194 81 structure_block{mode:"LOAD",name:"minecraft:topplatform_preview",showboundingbox:0b}
+execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 195 81 redstone_block
+execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run setblock -50 194 81 air
 #Spikes
-execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run place template spike_side_preview -51 193 68
-execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run place template spike_side_preview -51 193 88 none left_right
+execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 193 68 structure_block{mode:"LOAD",name:"minecraft:spike_side_preview",showboundingbox:0b}
+execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 194 68 redstone_block
+execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run fill -51 193 68 -51 194 68 air
+execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 193 88 structure_block{mode:"LOAD",mirror:"LEFT_RIGHT",name:"minecraft:spike_side_preview",showboundingbox:0b}
+execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run setblock -51 194 88 redstone_block
+execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run fill -51 193 88 -51 194 88 air
 #Cannons
-execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run place template cannon_preview -45 196 72
-execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run place template cannon_preview -45 196 82
+execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 72 structure_block{mode:"LOAD",name:"minecraft:cannon_preview",showboundingbox:0b}
+execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 71 redstone_block
+execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 71 air
+execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 82 structure_block{mode:"LOAD",name:"minecraft:cannon_preview",showboundingbox:0b}
+execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 81 redstone_block
+execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run setblock -45 196 81 air
 
 ##Middle Decorations
 #New Dawn Slimepads
-execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run place template midslimepad_preview -49 190 65
-execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run place template midslimepad_preview -49 190 85
+execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run setblock -49 190 65 structure_block{mode:"LOAD",name:"minecraft:midslimepad_preview",showboundingbox:0b}
+execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run setblock -49 191 65 redstone_block
+execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run setblock -49 190 65 air
+execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run setblock -49 190 85 structure_block{mode:"LOAD",name:"minecraft:midslimepad_preview",showboundingbox:0b}
+execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run setblock -49 191 85 redstone_block
+execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run setblock -49 190 85 air
 #Spikes
-execute if entity @s[scores={MiddleDeco=2},tag=!decosLocked] run place template spike_mid_preview -54 191 67
+execute if entity @s[scores={MiddleDeco=2},tag=!decosLocked] run setblock -54 191 67 structure_block{mode:"LOAD",name:"minecraft:spike_mid_preview",showboundingbox:0b}
+execute if entity @s[scores={MiddleDeco=2},tag=!decosLocked] run setblock -54 192 67 redstone_block
+execute if entity @s[scores={MiddleDeco=2},tag=!decosLocked] run fill -54 191 67 -54 192 67 air
 #Layered
 execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run scoreboard players set @s BottomDeco 0
 execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -44 196 64 -43 196 92 minecraft:black_stained_glass replace air
@@ -123,8 +149,14 @@ execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 187 92
 
 ##Bottom Decorations
 #New Dawn Slimepads
-execute if entity @s[scores={BottomDeco=1},tag=!decosLocked] run place template bottomslimepad_preview -49 186 75
+execute if entity @s[scores={BottomDeco=1},tag=!decosLocked] run setblock -49 186 75 structure_block{mode:"LOAD",name:"minecraft:bottomslimepad_preview",showboundingbox:0b}
+execute if entity @s[scores={BottomDeco=1},tag=!decosLocked] run setblock -49 187 75 redstone_block
+execute if entity @s[scores={BottomDeco=1},tag=!decosLocked] run setblock -49 186 75 air
 #Spikes
-execute if entity @s[scores={BottomDeco=2},tag=!decosLocked] run place template spike_bottom_preview -53 185 76
+execute if entity @s[scores={BottomDeco=2},tag=!decosLocked] run setblock -53 185 76 structure_block{mode:"LOAD",name:"minecraft:spike_bottom_preview",showboundingbox:0b}
+execute if entity @s[scores={BottomDeco=2},tag=!decosLocked] run setblock -53 186 76 redstone_block
+execute if entity @s[scores={BottomDeco=2},tag=!decosLocked] run setblock -53 185 76 air
 #Cannon
-execute if entity @s[scores={BottomDeco=3},tag=!decosLocked] run place template bottomcannon_preview -49 187 75
+execute if entity @s[scores={BottomDeco=3},tag=!decosLocked] run setblock -49 187 75 structure_block{mode:"LOAD",name:"minecraft:bottomcannon_preview",showboundingbox:0b}
+execute if entity @s[scores={BottomDeco=3},tag=!decosLocked] run setblock -49 188 75 redstone_block
+execute if entity @s[scores={BottomDeco=3},tag=!decosLocked] run setblock -49 187 75 air

@@ -102,7 +102,9 @@ execute as @e[type=ender_pearl,scores={testplat=9..10}] at @s if predicate custo
 execute as @e[type=ender_pearl,scores={testplat=9..10}] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..7] run scoreboard players remove @s testplat 1
 execute as @e[type=ender_pearl,scores={testplat=9..10}] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..7] run scoreboard players remove @s testplat 1
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_threw
-execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run place template yellowcanopy1 ~-1 ~ ~-1
+execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:yellowcanopy1"}
+execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
+execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a ~ ~ ~ 2 0
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a ~ ~ ~ 2 1
 execute as @e[type=ender_pearl,scores={testplat=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run function everytick:canopy_marker
@@ -135,7 +137,9 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[typ
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
 execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_threw
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run place template bluecanopy1 ~-1 ~ ~-1
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"minecraft:bluecanopy1"}
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a ~ ~ ~ 2 0
 execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a ~ ~ ~ 2 1
 execute if entity @e[type=armor_stand,tag=Selection,tag=!customShield] as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.grass.place master @a ~ ~ ~ 2 0

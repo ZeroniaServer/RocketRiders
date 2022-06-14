@@ -12,7 +12,10 @@ scoreboard players set $prevpage CmdData 1
 
 fill 22 202 69 15 206 87 air
 
-place template juggerbuster_blue 18 203 70
+setblock 18 201 70 minecraft:structure_block{mode:"LOAD",name:"minecraft:juggerbuster_blue",posY:2}
+setblock 18 202 70 redstone_block
+setblock 18 202 70 air
+setblock 18 201 70 blue_concrete_powder
 
 fill 22 202 69 15 206 79 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass

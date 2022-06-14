@@ -179,9 +179,19 @@ execute if entity @s[tag=BlueBroad] run tp @s ~-1 ~-8 ~5
 execute if entity @s[tag=YellowBroad] run summon marker ~ ~ ~ {Tags:[broadExtraYellow]}
 execute if entity @s[tag=YellowBroad] run tp @s ~-1 ~-8 ~-16
 
+##Portal spawn detection
+execute at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn
+execute at @s if block ~ ~-1 ~ #custom:portalblocks run tag @s add portalSpawn
+execute if entity @s[tag=portalSpawn] at @s run tp @s ~ ~4 ~
+execute if entity @s[tag=portalSpawn] at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn2
+execute if entity @s[tag=portalSpawn] at @s if block ~ ~-1 ~ #custom:portalblocks run tag @s add portalSpawn2
+execute if entity @s[tag=portalSpawn2] at @s run tp @s ~ ~ ~8
+execute if entity @s[tag=portalSpawn2] at @s if block ~ ~ ~ #custom:portalblocks run tag @s add portalSpawn3
+execute if entity @s[tag=portalSpawn2] at @s if block ~ ~-1 ~ #custom:portalblocks run tag @s add portalSpawn3
+execute if entity @s[tag=portalSpawn3] at @s run tp @s ~ ~ ~-16
+
 ##Place structure
-execute at @s[tag=!missileflip] positioned ~ ~2 ~ run function items:placestructure
-execute at @s[tag=missileflip] positioned ~ ~2 ~ run function items:flip/placestructure
+execute at @s run function items:structureblock
 
 #Cut down on redundant spawn position entries
 execute if entity @s[tag=bluemissile] run function items:minify/minifyblue

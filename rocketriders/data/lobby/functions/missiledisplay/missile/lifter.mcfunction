@@ -12,7 +12,10 @@ scoreboard players set $prevpage CmdData 0
 
 fill 22 202 69 15 206 87 air
 
-place template lifter_blue 18 203 75
+setblock 18 201 75 minecraft:structure_block{mode:"LOAD",name:"minecraft:lifter_blue",posY:2}
+setblock 18 202 75 redstone_block
+setblock 18 202 75 air
+setblock 18 201 75 blue_concrete_powder
 
 fill 22 202 69 15 206 87 moving_piston replace air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass

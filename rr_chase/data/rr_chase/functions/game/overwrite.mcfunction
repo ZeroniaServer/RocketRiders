@@ -50,9 +50,15 @@ kill @e[type=marker,scores={shieldplacement=6..}]
 
 #Shield
 execute as @e[type=snowball,tag=BlueShield] at @s run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run place template rr_chase:whiteshield1 ~-1 ~-1 ~
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run place template rr_chase:whiteshield2 ~-2 ~-2 ~
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run place template rr_chase:whiteshield3 ~-3 ~-3 ~
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:0,name:"rr_chase:whiteshield1"}
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-2,posY:-2,posZ:0,name:"rr_chase:whiteshield2"}
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~ ~ structure_block[mode=load]{mode:"LOAD",posX:-3,posY:-3,posZ:0,name:"rr_chase:whiteshield3"}
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run setblock ~ ~-1 ~ observer[facing=down,powered=true]
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run particle block white_stained_glass ~ ~ ~ 1 1 0 0.1 100
 kill @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3..}]
 kill @e[type=snowball,tag=BlueShield,scores={shieldtest2=20..}]
@@ -72,7 +78,9 @@ execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if predicate cust
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
 execute as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_threw
-execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run place template rr_chase:whitecanopy1 ~-1 ~ ~-1
+execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~1 ~ structure_block[mode=load]{mode:"LOAD",posX:-1,posY:-1,posZ:-1,name:"rr_chase:whitecanopy1"}
+execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
+execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run setblock ~ ~ ~ observer[facing=down,powered=true]
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a ~ ~ ~ 2 0
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a ~ ~ ~ 2 1
 execute as @e[type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.grass.place master @a ~ ~ ~ 2 0

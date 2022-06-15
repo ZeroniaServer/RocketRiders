@@ -102,6 +102,13 @@ fill -99 195 91 -100 195 92 minecraft:black_stained_glass
 fill -101 195 91 -101 195 92 minecraft:white_stained_glass
 fill -89 195 93 -101 201 94 minecraft:light_gray_stained_glass
 
+#Hardcore pregame
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill -89 201 95 -101 195 95 gray_stained_glass
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run clone -89 201 91 -101 195 91 -101 195 94 replace move
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill -89 201 93 -101 195 92 air
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill -101 201 61 -89 195 61 pink_stained_glass
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill -101 201 62 -89 195 62 red_stained_glass
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill -89 201 63 -101 195 65 air
 
 #Yellow Base
 summon marker 36 63 52 {Tags:["ChaseChecker","ChaseChecker1"]}
@@ -109,6 +116,9 @@ summon marker 36 56 52 {Tags:["ChaseChecker","ChaseChecker2"]}
 summon marker 36 49 52 {Tags:["ChaseChecker","ChaseChecker1"]}
 summon marker 36 42 52 {Tags:["ChaseChecker","ChaseChecker2"]}
 summon marker 36 35 52 {Tags:["ChaseChecker","ChaseChecker3"]}
+
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] as @e[type=marker,tag=ChaseChecker] at @s run tp @s ~ ~ 64
+fill 38 63 64 -14 34 64 glass replace yellow_stained_glass
 
 execute as @e[type=marker,tag=ChaseChecker] at @s run function rr_chase:arenaclear/checkerboard
 kill @e[type=marker,tag=ChaseChecker]
@@ -155,6 +165,14 @@ fill 38 63 -39 -14 34 -29 pink_stained_glass replace cyan_stained_glass
 
 fill -14 63 -73 38 34 -75 red_stained_glass replace blue_stained_glass
 fill -14 63 -73 38 34 -75 pink_stained_glass replace cyan_stained_glass
+
+#Hardcore bases
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill -14 63 -65 38 34 -65 pink_stained_glass replace cyan_stained_glass
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill -14 63 -64 38 34 -64 red_stained_glass replace blue_stained_glass
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill -14 63 65 38 34 65 gray_stained_glass replace orange_stained_glass
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run clone 38 63 56 -14 34 56 -14 34 64 masked move
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill 38 63 55 37 34 52 air
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] run fill -13 63 55 -14 34 52 air
 
 #Chase blocks
 scoreboard players set $ChaseBlocks CmdData 150

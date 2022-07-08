@@ -75,11 +75,11 @@ execute as @a[tag=CarryFlag,tag=!DelayActionbar] run title @s actionbar [{"text"
 execute if score FlagWave FlagScore matches 20 if score FY1: FlagScore > 29 FlagScore run place template yellow_flag1 30 71 63
 execute if score FlagWave FlagScore >= 40 FlagScore if score FY1: FlagScore > 29 FlagScore run place template yellow_flag2 30 71 63
 
-execute if score FlagWave FlagScore matches 20 if score FY2: FlagScore > 29 FlagScore run place template yellow_flag1 -10 71 63
-execute if score FlagWave FlagScore >= 40 FlagScore if score FY2: FlagScore > 29 FlagScore run place template yellow_flag2 -10 71 63
+execute if score FlagWave FlagScore matches 20 if score FY2: FlagScore > 29 FlagScore run place template yellow_flag1 -14 71 63
+execute if score FlagWave FlagScore >= 40 FlagScore if score FY2: FlagScore > 29 FlagScore run place template yellow_flag2 -14 71 63
 
-execute if score FlagWave FlagScore matches 20 if score FB1: FlagScore > 29 FlagScore run place template blue_flag1 -10 71 -65
-execute if score FlagWave FlagScore >= 40 FlagScore if score FB1: FlagScore > 29 FlagScore run place template blue_flag2 -10 71 -65
+execute if score FlagWave FlagScore matches 20 if score FB1: FlagScore > 29 FlagScore run place template blue_flag1 -14 71 -65
+execute if score FlagWave FlagScore >= 40 FlagScore if score FB1: FlagScore > 29 FlagScore run place template blue_flag2 -14 71 -65
 
 execute if score FlagWave FlagScore matches 20 if score FB2: FlagScore > 29 FlagScore run place template blue_flag1 30 71 -65
 execute if score FlagWave FlagScore >= 40 FlagScore if score FB2: FlagScore > 29 FlagScore run place template blue_flag2 30 71 -65

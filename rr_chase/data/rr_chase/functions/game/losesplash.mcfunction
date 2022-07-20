@@ -1,7 +1,7 @@
 ##Randomized splash messages for the losers of a game
 summon marker ~ ~ ~ {Tags:["RandomLossSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 90
+scoreboard players set @e[type=marker,tag=RandomLossSplash] RNGmax 92
 
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomLossSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -96,5 +96,7 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=86}] run title @
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=87}] run title @a[tag=Loser] subtitle ["",{"text":"Should've gone to Planetary Cove","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=88}] run title @a[tag=Loser] subtitle ["",{"text":"I've seen a fish play better.","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=89}] run title @a[tag=Loser] subtitle ["",{"text":"Yes Rico, kaboom.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=90}] run title @a[tag=Loser] subtitle ["",{"text":"No victory popcorn for you.","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=91}] run title @a[tag=Loser] subtitle ["",{"text":"L","color":"red"}]
 
 kill @e[type=marker,tag=RandomLossSplash]

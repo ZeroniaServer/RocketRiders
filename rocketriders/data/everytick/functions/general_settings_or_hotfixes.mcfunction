@@ -21,6 +21,10 @@ execute if entity @s[tag=noTeamBalance] run scoreboard players set @s largerTeam
 #Hide tips automatically for 10+ games played
 tag @a[scores={GamesPlayed=10..}] add hideTips
 
+#Particle timer
+scoreboard players add $dust CmdData 1
+execute if score $dust CmdData matches 4.. run scoreboard players set $dust CmdData 1
+
 #Utilkill timer
 execute as @e[type=tnt,tag=UtilKilled] at @s run function game:tntutilkill
 scoreboard players add @a[tag=UtilKilled] UKTimer 1
@@ -99,8 +103,8 @@ execute positioned -36 212 18 unless block ~ ~ ~ potted_blue_orchid run setblock
 execute positioned -37 212 138 unless block ~ ~ ~ potted_dandelion run setblock ~ ~ ~ potted_dandelion
 
 #Decoy Vortex (Lobby)
-execute as @e[type=marker,tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a[predicate=!custom:belowroof]
-execute as @e[type=marker,tag=VortexDummy] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=marker,tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=marker,tag=VortexDummy] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a[predicate=!custom:belowroof]
 execute as @e[type=marker,tag=VortexDummy] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a[predicate=!custom:belowroof]
 
 execute as @e[type=armor_stand,tag=VortexItemDummy] at @s unless entity @a[team=Lobby,distance=..4] run tp @s ~ ~ ~ ~15 ~

@@ -7,8 +7,8 @@ tag @s remove BlueFull
 scoreboard players set @e[type=armor_stand,tag=rr_pve,limit=1] PlayerCap 2
 scoreboard players operation @e[type=armor_stand,tag=rr_pve,limit=1] PlayerCap *= @s PlayerCap
 execute if score @s bluesCount >= @e[type=armor_stand,tag=rr_pve,limit=1] PlayerCap run tag @s add BlueFull
-execute if entity @s[tag=!BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[predicate=!custom:belowroof]
-execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 if entity @s[tag=!BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[predicate=!custom:belowroof]
+execute if score $barriers CmdData matches 1 if entity @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[predicate=!custom:belowroof]
 
 #Bots in Pregame Queue
 execute unless entity @e[type=armor_stand,tag=Bot] if entity @s[tag=Countdown] positioned -95 202 94 run function rr_bots:bot/spawns/bot_spawn_five_yellow

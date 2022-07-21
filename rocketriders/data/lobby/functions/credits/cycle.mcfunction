@@ -19,7 +19,7 @@ execute as @e[type=armor_stand,tag=SelectedCredit] if entity @e[type=marker,tag=
 execute as @e[type=armor_stand,tag=SelectedCredit] if entity @e[type=marker,tag=SelLPRNG,tag=Pose3] run function lobby:credits/pose3
 execute as @e[type=armor_stand,tag=SelectedCredit] if entity @e[type=marker,tag=SelLPRNG,tag=Pose4] run function lobby:credits/pose4
 kill @e[type=marker,tag=LobbyPoseRNG]
-execute as @e[type=armor_stand,tag=SelectedCredit] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedCredit] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
 
 #Displays name
 function lobby:credits/names
@@ -38,15 +38,15 @@ scoreboard players add @e[type=armor_stand,tag=SelectedDev] CreditCycle 1
 #Position/posing/effects
 execute as @e[type=armor_stand,tag=SelectedDev,scores={CreditCycle=1}] at @s run tp @s -51 214 78
 execute as @e[type=armor_stand,tag=SelectedDev,scores={CreditCycle=6..79}] at @s run tp @s -51 214 78 ~5 ~
-execute as @e[type=armor_stand,tag=SelectedDev,tag=EvtemaCredits] at @s run particle dust 1 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
-execute as @e[type=armor_stand,tag=SelectedDev,tag=YZEROCredits] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
-execute as @e[type=armor_stand,tag=SelectedDev,tag=ChronosCredits] at @s run particle dust 0 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
-execute as @e[type=armor_stand,tag=SelectedDev,tag=BardCredits] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
-execute as @e[type=armor_stand,tag=SelectedDev,tag=HugoCredits] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
-execute as @e[type=armor_stand,tag=SelectedDev,tag=TrekCredits] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
-execute as @e[type=armor_stand,tag=SelectedDev,tag=TypCredits] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
-execute as @e[type=armor_stand,tag=SelectedDev,tag=BlockyCredits] at @s run particle dust 1 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
-execute as @e[type=armor_stand,tag=SelectedDev,tag=ToulCredits] at @s run particle dust 1 0.5 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedDev,tag=EvtemaCredits] at @s run particle dust 1 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedDev,tag=YZEROCredits] at @s run particle dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedDev,tag=ChronosCredits] at @s run particle dust 0 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedDev,tag=BardCredits] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedDev,tag=HugoCredits] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedDev,tag=TrekCredits] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedDev,tag=TypCredits] at @s run particle dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedDev,tag=BlockyCredits] at @s run particle dust 1 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[type=armor_stand,tag=SelectedDev,tag=ToulCredits] at @s run particle dust 1 0.5 0 1 ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[predicate=!custom:belowroof]
 execute as @e[type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tag @s add OldDevSel
 execute as @e[type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=EvtemaCredits] -49 216 78 90 0
 execute as @e[type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=YZEROCredits] -49 216 79 90 0

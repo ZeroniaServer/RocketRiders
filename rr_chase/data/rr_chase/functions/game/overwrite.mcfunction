@@ -3,9 +3,9 @@ execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance
 execute as @a[team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=BlueVortex] remove BlueVortex
 
 #Overwrite vortex particles
-execute as @e[type=egg,tag=YellowVortex] at @s run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=VortexYellow] at @s run particle dust 3 3 3 1.5 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:electric_spark ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:belowroof]
+execute as @e[type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1.5 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:electric_spark ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:belowroof]
 
 #Nova tracking
 execute as @a[team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
@@ -48,17 +48,17 @@ execute as @e[type=marker,scores={shieldplacement=6..}] run kill @e[type=area_ef
 kill @e[type=marker,scores={shieldplacement=6..}]
 
 #Shield
-execute as @e[type=snowball,tag=BlueShield] at @s run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
+execute as @e[type=snowball,tag=BlueShield] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run place template rr_chase:whiteshield1 ~-1 ~-1 ~
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run place template rr_chase:whiteshield2 ~-2 ~-2 ~
 execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run place template rr_chase:whiteshield3 ~-3 ~-3 ~
-execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run particle block white_stained_glass ~ ~ ~ 1 1 0 0.1 100
+execute as @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run particle block white_stained_glass ~ ~ ~ 1 1 0 0.1 50
 kill @e[type=marker,tag=PlaceBlueShield,scores={shieldplacement=3..}]
 kill @e[type=snowball,tag=BlueShield,scores={shieldtest2=20..}]
 
 #Canopy
-execute as @e[type=ender_pearl,tag=BluePlat] at @s run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
-execute as @e[type=ender_pearl,tag=BluePlat] at @s run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[predicate=custom:belowroof]
+execute as @e[type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
+execute as @e[type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[predicate=custom:belowroof]
 execute as @e[type=ender_pearl,tag=BluePlat] at @s run scoreboard players add @s testplat2 1
 #Next 4 commands disable Blue Canopies inside of portals
 execute unless entity @s[tag=noPortal] as @e[type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1

@@ -232,5 +232,5 @@ execute as @a[team=Lobby,scores={hideParkourTips=1..}] run tag @s add hideParkou
 scoreboard players set @a hideParkourTips 0
 
 ##Return to Lobby Pad
-execute as @e[type=area_effect_cloud,tag=parkourReturn] at @s run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[predicate=!custom:belowroof]
+execute as @e[type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[predicate=!custom:belowroof]
 execute as @e[type=area_effect_cloud,tag=parkourReturn] at @s positioned ~ ~ ~ as @a[team=Lobby,distance=..2] run trigger LobbyWarp set 1

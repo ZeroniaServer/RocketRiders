@@ -7,7 +7,7 @@ execute as @a[scores={DrinkHoney=1..}] at @s as @e[type=armor_stand,tag=BeeShiel
 scoreboard players reset @a DrinkHoney
 item replace entity @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=1}] armor.head with honey_block
 execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s run playsound minecraft:block.honey_block.slide master @a ~ ~ ~ 2 0.8
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s anchored eyes run particle minecraft:block honey_block ~ ~ ~ 0 0 0 1 10
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s anchored eyes if score $dust CmdData matches 1 run particle minecraft:block honey_block ~ ~ ~ 0 0 0 1 10
 
 #kill conditions
 execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s if entity @s[x=-12,y=36,z=-74,dx=48,dy=25] run scoreboard players set @s CmdData -3

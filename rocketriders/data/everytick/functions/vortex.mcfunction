@@ -8,10 +8,10 @@
 execute as @e[type=egg] unless data entity @s {Item:{tag:{CustomModelData:3}}} run function everytick:vortex_owner
 
 ##Vortex deployment (both teams)
-execute as @e[type=egg,tag=YellowVortex] at @s run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[predicate=custom:belowroof]
-execute as @e[type=egg,tag=BlueVortex] at @s run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[type=egg,tag=YellowVortex] at @s run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[type=egg,tag=BlueVortex] at @s run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
+execute as @e[type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[predicate=custom:belowroof]
+execute as @e[type=egg,tag=BlueVortex] at @s if score $dust CmdData matches 1 run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[type=egg,tag=BlueVortex] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
 scoreboard players add @e[type=egg,tag=BlueVortex] vortextimer 1
 scoreboard players add @e[type=egg,tag=YellowVortex] vortextimer 1
 #Next two commands disable Vortex near own portals
@@ -31,12 +31,12 @@ execute as @e[type=egg,tag=BlueVortex,scores={vortextimer=20..}] at @s align xyz
 scoreboard players add @e[type=marker,tag=Vortex] VortexID 0
 execute as @e[type=marker,tag=Vortex,tag=!VortexFeathered,scores={VortexID=0}] at @s run function everytick:vortexid
 kill @e[type=egg,scores={vortextimer=20..}]
-execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:wax_on ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=VortexYellow] at @s run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s run particle dust 1 1 0 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle minecraft:scrape ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=VortexBlue] at @s run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s run particle dust 0 0 1 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:wax_on ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle minecraft:scrape ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:belowroof]
 scoreboard players add @e[type=marker,tag=Vortex] vortexBoom 0
 
 ##Spin around (unprimed)
@@ -98,8 +98,8 @@ execute as @e[type=chicken,tag=FeatherConfirmed] at @s align xyz positioned ~.5 
 execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}
 execute as @e[type=chicken] at @s run tp @s ~ ~-250 ~
 kill @e[type=chicken]
-execute as @e[type=marker,tag=VortexFeathered] at @s run particle dust 1 1 1 1 ~ ~0.4 ~ 0.5 0.5 0 0 10 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=VortexFeathered] at @s run particle wax_off ~ ~0.4 ~ 0.5 0.5 0 0 1 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,tag=VortexFeathered] at @s if score $dust CmdData matches 1 run particle dust 1 1 1 1 ~ ~0.4 ~ 0.5 0.5 0 0 10 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,tag=VortexFeathered] at @s if score $dust CmdData matches 1 run particle wax_off ~ ~0.4 ~ 0.5 0.5 0 0 1 force @a[predicate=custom:belowroof]
 execute as @e[type=armor_stand,tag=VortexItemFeathered] at @s run tp @s ~ ~ ~ ~15 ~
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @e[type=marker,tag=VortexFeathered] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/zzzzzzhuh
 execute as @e[type=marker,tag=VortexFeathered] at @s if entity @a[team=!Spectator,distance=..3] run tag @s add origin
@@ -113,19 +113,17 @@ execute as @e[type=marker,tag=chained,scores={vortexChain=4..}] at @s run functi
 execute as @e[type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s run tag @a[team=!Spectator,team=!Lobby,distance=..10] add UtilKilled
 execute as @e[type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s store result score @a[tag=UtilKilled,distance=..10] KillerUUID run scoreboard players get @s UUIDTracker
 execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"a Vortex"}',ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=!Explosive,tag=ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"a Vortex"}',ExplosionRadius:-3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=!Explosive] as @e[type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run data modify entity @e[type=creeper,limit=1,sort=nearest,distance=..5] CustomName set from entity @s CustomName
 execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"a Vortex"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive,tag=ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"a Vortex"}',ExplosionRadius:-5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"a Vortex"}',ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=Explosive] as @e[type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run data modify entity @e[type=creeper,limit=1,sort=nearest,distance=..5] CustomName set from entity @s CustomName
 execute as @e[type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s run tag @e[type=tnt,distance=..6] add UtilKilled
 execute as @e[type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s store result score @e[type=tnt,tag=UtilKilled,distance=..6] UUIDTracker run scoreboard players get @s UUIDTracker
 execute as @e[type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s run function game:nametnt
 
 execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:2,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=!Explosive,tag=ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:-2,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:4,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute if entity @s[tag=Explosive,tag=ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:-4,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute if entity @s[tag=ClutterCollector] as @e[type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:0,CustomName:'{"text":"a... Feathery Vortex?"}',Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @e[type=marker,scores={vortexBoom=10}] at @s run kill @e[type=arrow,distance=..2,limit=1,sort=nearest]
 execute as @e[type=marker,scores={vortexBoom=10}] at @s run kill @e[type=trident,distance=..2,limit=1,sort=nearest]
 execute as @e[type=marker,scores={vortexBoom=10}] at @s run kill @e[type=firework_rocket,tag=BlueNova,distance=..2,limit=1,sort=nearest]

@@ -3,7 +3,7 @@ title @a title ["",{"text":"Game Started!","color":"aqua"}]
 
 summon marker ~ ~ ~ {Tags:["RandomSplash"]}
 #If you want to add more splashes just increase this number. (amount of splashes + 1)
-scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 217
+scoreboard players set @e[type=marker,tag=RandomSplash] RNGmax 219
 
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=RandomSplash] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
@@ -227,5 +227,7 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=213}] run title @a s
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=214}] run title @a subtitle ["",{"text":"Don't forget to turn on X-ray!","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=215}] run title @a subtitle ["",{"text":"According to all known laws of aviation...","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=216}] run title @a subtitle ["",{"text":"Need to drop blocks? Use glazed_terracotta!","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=217}] run title @a subtitle ["",{"text":"You are the Murderer- wait wrong game...","color":"green"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=218}] run title @a subtitle ["",{"text":"Now in ","color":"green"},{"text":"c","color":"red"},{"text":"o","color":"gold"},{"text":"l","color":"dark_green"},{"text":"o","color":"blue"},{"text":"r","color":"dark_purple"},{"text":"!","color":"light_purple"}]
 
 kill @e[type=marker,tag=RandomSplash]

@@ -15,5 +15,4 @@ tag @s remove WindDownForce
 tag @s remove MoleratOff
 tag @s[tag=MoleratWasOn] add Molerat
 tag @s[tag=MoleratWasOn] remove MoleratWasOn
-
 tag @s add switchGamemodes

@@ -25,9 +25,9 @@ execute as @a[tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn mis
 tag @a[tag=preventionMSG] remove preventionMSG
 
 #Selected kit particles
-execute as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] at @s at @e[type=armor_stand,tag=KnightStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 5 force @s
-execute as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=2}] at @s at @e[type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 5 force @s
-execute as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=3}] at @s at @e[type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 5 force @s
+execute if score $dust CmdData matches 1 as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] at @s at @e[type=armor_stand,tag=KnightStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=2}] at @s at @e[type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=3}] at @s at @e[type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 
 #Give knights new shields when they respawn
 execute as @a[scores={crusadekit=1,deathCooldown=5}] at @s run clear @s shield
@@ -67,13 +67,25 @@ tag @a[tag=notInGlass] remove inGlass
 tag @a remove notInGlass
 tag @a[team=!Blue,team=!Yellow] remove inGlass
 
-#> Kit signs
+#> Kit signs + obsidian
 execute unless block 14 64 -64 oak_wall_sign run setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}',Text2:'{"text":"Knight","bold":true,"color":"#008805"}'}
 execute unless block 12 64 -63 oak_wall_sign run setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}',Text2:'{"text":"Archer","bold":true,"color":"#008805"}'}
 execute unless block 10 64 -64 oak_wall_sign run setblock 10 64 -64 minecraft:oak_wall_sign[facing=north]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}',Text2:'{"text":"Mage","bold":true,"color":"#008805"}'}
 execute unless block 10 64 64 oak_wall_sign run setblock 10 64 64 minecraft:oak_wall_sign[facing=south]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}',Text2:'{"text":"Knight","bold":true,"color":"#008805"}'}
 execute unless block 12 64 63 oak_wall_sign run setblock 12 64 63 minecraft:oak_wall_sign[facing=south]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}',Text2:'{"text":"Archer","bold":true,"color":"#008805"}'}
 execute unless block 14 64 64 oak_wall_sign run setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}',Text2:'{"text":"Mage","bold":true,"color":"#008805"}'}
+execute unless block 10 64 -63 obsidian run setblock 10 64 -63 obsidian
+execute unless block 12 64 -62 obsidian run setblock 12 64 -62 obsidian
+execute unless block 14 64 -63 obsidian run setblock 14 64 -63 obsidian
+execute unless block 10 63 -63 obsidian run setblock 10 63 -63 obsidian
+execute unless block 12 63 -62 obsidian run setblock 12 63 -62 obsidian
+execute unless block 14 63 -63 obsidian run setblock 14 63 -63 obsidian
+execute unless block 10 64 63 obsidian run setblock 10 64 63 obsidian
+execute unless block 12 64 62 obsidian run setblock 12 64 62 obsidian
+execute unless block 14 64 63 obsidian run setblock 14 64 63 obsidian
+execute unless block 10 63 63 obsidian run setblock 10 63 63 obsidian
+execute unless block 12 63 62 obsidian run setblock 12 63 62 obsidian
+execute unless block 14 63 63 obsidian run setblock 14 63 63 obsidian
 
 #> Crystal health & bossbars
 bossbar set rr_crusade:blue players @a[team=!Lobby]

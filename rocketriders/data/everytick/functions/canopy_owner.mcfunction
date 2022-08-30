@@ -7,6 +7,7 @@ tag @a[predicate=custom:matches_uuid,scores={deathCooldown=1..},tag=tempHotbar] 
 execute as @a[predicate=custom:matches_uuid,scores={deathCooldown=1..}] run function items:util/givecanopy
 tag @a[predicate=custom:matches_uuid,scores={deathCooldown=1..},tag=tempHotbar] add fullHotbar
 tag @a[predicate=custom:matches_uuid,scores={deathCooldown=1..},tag=tempHotbar] remove tempHotbar
+execute if entity @a[predicate=custom:matches_uuid,scores={deathCooldown=1..}] run kill @s
 
 #Tag Canopy appropriately otherwise
 execute if entity @a[team=Yellow,predicate=custom:matches_uuid] run tag @s add YellowPlat

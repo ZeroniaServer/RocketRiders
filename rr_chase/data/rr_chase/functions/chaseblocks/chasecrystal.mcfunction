@@ -13,7 +13,6 @@ execute if entity @e[type=armor_stand,tag=ChaseCrystal] as @a[tag=InLead] at @s 
 execute unless entity @e[type=armor_stand,tag=ChaseCrystal] run scoreboard players reset @a[tag=InLead,scores={ChaseAlarm=1..}] ChaseAlarm
 execute if entity @e[type=armor_stand,tag=ChaseCrystal] run scoreboard players reset @a[tag=InLead,scores={ChaseAlarm=9..}] ChaseAlarm
 scoreboard players reset @a[tag=!InLead,scores={ChaseAlarm=1..}] ChaseAlarm
-execute if entity @e[type=armor_stand,tag=ChaseCrystal] run scoreboard players add @a[tag=InLead]
 
 #Flight
 execute as @e[type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[tag=InLead,limit=1,sort=nearest]

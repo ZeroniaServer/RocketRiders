@@ -4,30 +4,16 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+          "type": "minecraft:item",
+          "name": "minecraft:enderman_spawn_egg",
+          "functions": [
             {
-              "type": "minecraft:item",
-              "name": "minecraft:enderman_spawn_egg",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 1
-                },
-                {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Obsidian Shield\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Spawns a Fireball that you can shoot or punch\",\"color\":\"gray\"}','{\"text\":\"to spawn an Obsidian Shield. Stops all missiles.\",\"color\":\"gray\"}','{\"text\":\"Break the central glass 3 times to destroy it.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowObshield\"]}}"
-                }
-              ],
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Yellow"
-                  }
-                }
-              ]
+              "function": "minecraft:set_count",
+              "count": 1
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Obsidian Shield\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Spawns a Fireball that you can shoot or punch\",\"color\":\"gray\"}','{\"text\":\"to spawn an Obsidian Shield. Stops all missiles.\",\"color\":\"gray\"}','{\"text\":\"Break the central glass 3 times to destroy it.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowObshield\"]}}"
             }
           ],
           "conditions": [

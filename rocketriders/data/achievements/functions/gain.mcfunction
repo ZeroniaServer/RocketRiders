@@ -36,7 +36,7 @@ execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unle
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:newworld
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:lockdown
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:volcanichatred
-execute if entity @s[scores={gametime=5..,servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:traveler
+execute if entity @s[scores={gametime=5..,servermode=0},tag=!realms,tag=!SMCustom,tag=!TimeOut] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:traveler
 execute if entity @s[scores={servermode=0},tag=!noPortal,tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:fallaway
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:gravitationalshootout
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a unless entity @s[team=!Yellow,team=!Blue] run function achievements:veteran

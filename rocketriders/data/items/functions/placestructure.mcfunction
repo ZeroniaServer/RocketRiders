@@ -68,8 +68,8 @@ execute if entity @s[tag=BlueLift] run place template lifter_blue
 execute if entity @s[tag=YellowLift] run place template lifter_yellow
 
 #Hypersonic
-execute if entity @s[tag=BlueHyper] run place template hypersonic_blue
-execute if entity @s[tag=YellowHyper] run place template hypersonic_yellow
+execute if entity @s[tag=BlueHyper] run place template items:hypersonic_blue
+execute if entity @s[tag=YellowHyper] run place template items:hypersonic_yellow
 
 #Bullet
 execute if entity @s[tag=BlueBull] run place template bullet_blue

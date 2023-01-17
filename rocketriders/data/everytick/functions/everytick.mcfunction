@@ -99,6 +99,6 @@ execute if score $justcleared CmdData matches 4.. run tag @e[type=armor_stand,ta
 execute as @e[type=armor_stand,tag=Selection] unless entity @s[tag=JustCleared] run scoreboard players reset $justcleared CmdData
 
 #Gamemode/reload handling
-schedule function gamemodes:disableerror 2t append
+execute if entity @a run function gamemodes:disableerror
 execute if score $reloaded CmdData matches 1..100 run scoreboard players add $reloaded CmdData 1
 execute if score $reloaded CmdData matches 101 run scoreboard players reset $reloaded

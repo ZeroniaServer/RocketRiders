@@ -4,7 +4,7 @@
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "player": {
-          "nbt": "{Tags:['nearcanopy']}"
+          "nbt": "{Tags:[\"nearcanopy\"]}"
         },
         "entity": {
           "type": "minecraft:player"

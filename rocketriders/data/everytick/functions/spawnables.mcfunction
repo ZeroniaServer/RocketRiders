@@ -5,6 +5,8 @@ execute if entity @s[tag=runspawnmissiles] as @e[type=marker,tag=missile] at @s 
 execute if entity @s[tag=runspawnmissiles] as @e[type=marker,tag=missile] at @s run function items:spawnmissiles
 tag @s[tag=runspawnmissiles] remove runspawnmissiles
 
+execute as @e[type=marker,tag=hyperExtra] run function items:hyperextra
+
 execute unless entity @s[tag=runshields] if entity @e[type=snowball] run tag @s add runshields
 execute unless entity @s[tag=runshields] if entity @e[type=marker,tag=PlaceYellowShield] run tag @s add runshields
 execute unless entity @s[tag=runshields] if entity @e[type=marker,tag=PlaceBlueShield] run tag @s add runshields

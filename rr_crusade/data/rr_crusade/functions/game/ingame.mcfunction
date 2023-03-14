@@ -38,7 +38,7 @@ execute as @a[team=Yellow,scores={crusadekit=1,deathCooldown=5}] unless entity @
 #Set banners/light blocks
 #Yellow A
 execute unless block -14 53 38 minecraft:yellow_banner run setblock -14 53 38 minecraft:yellow_banner[rotation=8]{Patterns:[{Pattern:ms,Color:1},{Pattern:ls,Color:1},{Pattern:rs,Color:1},{Pattern:ts,Color:1},{Pattern:bo,Color:4}]}
-execute unless block -14 52 40 minecraft:yellow_wall_banner run setblock -14 52 40 minecraft:yellow_wall_banner[facing=south]{Base:4,Patterns:[{Pattern:ms,Color:1},{Pattern:ls,Color:1},{Pattern:rs,Color:1},{Pattern:ts,Color:1},{Pattern:bo,Color:4}]}
+execute unless block -14 52 40 minecraft:yellow_wall_banner run setblock -14 52 40 minecraft:yellow_wall_banner[facing=south]{Patterns:[{Pattern:ms,Color:1},{Pattern:ls,Color:1},{Pattern:rs,Color:1},{Pattern:ts,Color:1},{Pattern:bo,Color:4}]}
 fill -16 51 40 -12 47 40 light[level=1]
 #Yellow B
 execute unless block 38 53 38 minecraft:yellow_banner run setblock 38 53 38 minecraft:yellow_banner[rotation=8]{Patterns:[{Pattern:rs,Color:1},{Pattern:bs,Color:1},{Pattern:ts,Color:1},{Pattern:cbo,Color:4},{Pattern:ls,Color:1},{Pattern:ms,Color:1},{Pattern:bo,Color:4}]}
@@ -58,7 +58,7 @@ execute as @a[team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s
 execute as @a[team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
 #Suffocate players in gray glass
-execute as @a[tag=!inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run effect give @s poison 1000000 4 true
+execute as @a[tag=!inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run effect give @s poison infinite 4 true
 execute as @a[tag=!inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run tag @s add inGlass
 execute as @a[tag=inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s unless block ~ ~ ~ light_gray_stained_glass run tag @s add notInGlass
 execute as @a[tag=inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s unless block ~ ~1 ~ light_gray_stained_glass run tag @s add notInGlass

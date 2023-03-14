@@ -6,13 +6,18 @@
       "conditions": {
         "damage": {
           "type": {
-            "is_explosion": "true"
+            "tags": [
+              {
+                "id": "minecraft:is_explosion",
+                "expected": true
+              }
+            ]
           }
         }
       }
     }
   },
   "rewards": {
-      "function": "everytick:novashot"
+    "function": "everytick:novashot"
   }
 }

@@ -4,30 +4,16 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+          "type": "minecraft:item",
+          "name": "minecraft:drowned_spawn_egg",
+          "functions": [
             {
-              "type": "minecraft:item",
-              "name": "minecraft:drowned_spawn_egg",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 1
-                },
-                {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Lightning] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Hurricane\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"18\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"3.3m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Hurricane bears much resemblance to the\",\"color\":\"gray\"}','{\"text\":\"Lightning, but with more TNT and a tight design.\",\"color\":\"gray\"}','{\"text\":\"It might be harder to get on this one.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowHur\"]}}"
-                }
-              ],
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Yellow"
-                  }
-                }
-              ]
+              "function": "minecraft:set_count",
+              "count": 1
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Lightning] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Hurricane\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"18\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"3.3m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Hurricane bears much resemblance to the\",\"color\":\"gray\"}','{\"text\":\"Lightning, but with more TNT and a tight design.\",\"color\":\"gray\"}','{\"text\":\"It might be harder to get on this one.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowHur\"]}}"
             }
           ],
           "conditions": [

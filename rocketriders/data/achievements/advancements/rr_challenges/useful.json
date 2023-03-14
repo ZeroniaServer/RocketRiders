@@ -11,7 +11,7 @@
         },
         "icon": {
             "item": "minecraft:lingering_potion",
-            "nbt": "{Potion:'minecraft:water'}"
+            "nbt": "{Potion:\"minecraft:water\"}"
         },
         "frame": "challenge",
         "show_toast": true,

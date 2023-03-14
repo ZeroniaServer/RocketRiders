@@ -15,8 +15,8 @@ tp @a[tag=LeavingSpec] -43 212 78 90 0
 clear @a[tag=!WasInLobby,tag=LeaveTeams]
 effect clear @a[tag=!WasInLobby,tag=LeaveTeams]
 effect give @a[tag=!WasInLobby,tag=LeaveTeams] regeneration 1 255 true
-effect give @a[tag=!WasInLobby,tag=LeaveTeams] resistance 1000000 255 true
-effect give @a[tag=!WasInLobby,tag=LeaveTeams] night_vision 1000000 255 true
+effect give @a[tag=!WasInLobby,tag=LeaveTeams] resistance infinite 255 true
+effect give @a[tag=!WasInLobby,tag=LeaveTeams] night_vision infinite 255 true
 gamemode adventure @a[tag=!WasInLobby,tag=LeaveTeams,gamemode=!adventure]
 tag @a[tag=!WasInLobby,tag=LeaveTeams] remove cursorItem
 execute as @a[tag=!WasInLobby,tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire

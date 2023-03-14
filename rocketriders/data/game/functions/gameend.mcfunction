@@ -18,8 +18,8 @@ execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[team=Blue] 
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[team=Yellow] bow
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run kill @e[type=item,nbt={Item:{id:"minecraft:bow"}}]
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run function game:endsabers
-execute if entity @s[tag=BlueWon] run effect give @a[team=Yellow] weakness 100000 255 true
-execute if entity @s[tag=YellowWon] run effect give @a[team=Blue] weakness 100000 255 true
+execute if entity @s[tag=BlueWon] run effect give @a[team=Yellow] weakness infinite 255 true
+execute if entity @s[tag=YellowWon] run effect give @a[team=Blue] weakness infinite 255 true
 execute if entity @s[scores={endtimer=1..100}] run worldborder warning distance 0
 execute if entity @s[scores={endtimer=1}] run tag @a remove nearcanopy
 execute if entity @s[scores={endtimer=1}] run tag @a remove threwCanopy
@@ -31,7 +31,7 @@ execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=yellowjoinp
 execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=bluejoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=specjoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=2..3}] as @a[predicate=custom:is_on_fire] unless entity @s[team=!Blue,team=!Yellow] at @s run function game:putoutfire
-execute if entity @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance 1000000 255 true
+execute if entity @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance infinite 255 true
 execute if entity @s[scores={endtimer=1..2}] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[team=Yellow] 12 64 66 180 0

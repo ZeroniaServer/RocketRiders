@@ -11,7 +11,7 @@
         },
         "icon": {
             "item": "minecraft:lingering_potion",
-            "nbt": "{Potion:'minecraft:awkward',CustomPotionColor:16747545,HideFlags:63,Enchantments:[{id:'minecraft:unbreaking',lvl:1s}]}"
+            "nbt": "{Potion:\"minecraft:awkward\",CustomPotionColor:16747545,HideFlags:63,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1s}]}"
         },
         "frame": "goal",
         "show_toast": true,

@@ -11,7 +11,7 @@
         },
         "icon": {
             "item": "minecraft:black_banner",
-            "nbt": "{BlockEntityTag:{Base:15,Patterns:[{Pattern:hh,Color:0},{Pattern:hhb,Color:0},{Pattern:ls,Color:15},{Pattern:bs,Color:15},{Pattern:ls,Color:0},{Pattern:bs,Color:0},{Pattern:rs,Color:0},{Pattern:tl,Color:0}]}}"
+            "nbt": "{BlockEntityTag:{Patterns:[{Pattern:hh,Color:0},{Pattern:hhb,Color:0},{Pattern:ls,Color:15},{Pattern:bs,Color:15},{Pattern:ls,Color:0},{Pattern:bs,Color:0},{Pattern:rs,Color:0},{Pattern:tl,Color:0}]}}"
         },
         "frame": "goal",
         "show_toast": true,

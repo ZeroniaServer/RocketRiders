@@ -13,8 +13,8 @@ tag @a[team=!Blue,team=!Yellow,tag=CarryFB1] remove CarryFB1
 tag @a[team=!Blue,team=!Yellow,tag=CarryFB2] remove CarryFB2
 effect clear @a[scores={LeaveGame=1..}]
 effect give @a[scores={LeaveGame=1..}] regeneration 1 255 true
-effect give @a[scores={LeaveGame=1..}] resistance 1000000 255 true
-effect give @a[scores={LeaveGame=1..}] night_vision 1000000 100 true
+effect give @a[scores={LeaveGame=1..}] resistance infinite 255 true
+effect give @a[scores={LeaveGame=1..}] night_vision infinite 100 true
 team join Lobby @a[scores={LeaveGame=1..},team=!Lobby]
 gamemode survival @a[scores={LeaveGame=1..}]
 gamemode adventure @a[scores={LeaveGame=1..}]

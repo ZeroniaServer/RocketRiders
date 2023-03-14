@@ -1,63 +1,33 @@
 {
-	"values": [
-
-		"minecraft:creeper_spawn_egg",
-
-		"minecraft:enderman_spawn_egg",
-
-		"minecraft:shulker_spawn_egg",
-
-		"minecraft:lingering_potion",
-
-		"minecraft:ender_pearl",
-
-		"minecraft:egg",
-
-		"#minecraft:arrows",
-
-		"minecraft:snowball",
-
-		"minecraft:vex_spawn_egg",
-
-		"minecraft:elder_guardian_spawn_egg",
-
-		"minecraft:silverfish_spawn_egg",
-
-		"minecraft:mooshroom_spawn_egg",
-
-		"minecraft:blaze_spawn_egg",
-
-		"minecraft:bat_spawn_egg",
-
-		"minecraft:zombie_horse_spawn_egg",
-
-		"minecraft:salmon_spawn_egg",
-
-		"minecraft:husk_spawn_egg",
-
-		"minecraft:phantom_spawn_egg",
-
-		"minecraft:drowned_spawn_egg",
-
-		"minecraft:cave_spider_spawn_egg",
-
-		"minecraft:wandering_trader_spawn_egg",
-
-		"minecraft:fox_spawn_egg",
-
-		"minecraft:squid_spawn_egg",
-
-		"minecraft:dolphin_spawn_egg",
-
-		"minecraft:cod_spawn_egg",
-
-		"minecraft:parrot_spawn_egg",
-
-		"minecraft:magma_cube_spawn_egg",
-
-		"minecraft:skeleton_horse_spawn_egg",
-
-		"minecraft:turtle_spawn_egg"
-
-	]
+    "values": [
+        "minecraft:creeper_spawn_egg",
+        "minecraft:enderman_spawn_egg",
+        "minecraft:shulker_spawn_egg",
+        "minecraft:lingering_potion",
+        "minecraft:ender_pearl",
+        "minecraft:egg",
+        "#minecraft:arrows",
+        "minecraft:snowball",
+        "minecraft:vex_spawn_egg",
+        "minecraft:elder_guardian_spawn_egg",
+        "minecraft:silverfish_spawn_egg",
+        "minecraft:mooshroom_spawn_egg",
+        "minecraft:blaze_spawn_egg",
+        "minecraft:bat_spawn_egg",
+        "minecraft:zombie_horse_spawn_egg",
+        "minecraft:salmon_spawn_egg",
+        "minecraft:husk_spawn_egg",
+        "minecraft:phantom_spawn_egg",
+        "minecraft:drowned_spawn_egg",
+        "minecraft:cave_spider_spawn_egg",
+        "minecraft:wandering_trader_spawn_egg",
+        "minecraft:fox_spawn_egg",
+        "minecraft:squid_spawn_egg",
+        "minecraft:dolphin_spawn_egg",
+        "minecraft:cod_spawn_egg",
+        "minecraft:parrot_spawn_egg",
+        "minecraft:magma_cube_spawn_egg",
+        "minecraft:skeleton_horse_spawn_egg",
+        "minecraft:turtle_spawn_egg"
+    ]
 }

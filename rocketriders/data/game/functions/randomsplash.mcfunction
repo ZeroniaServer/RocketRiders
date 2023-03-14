@@ -95,7 +95,7 @@ execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=81}] run title @a su
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=82}] run title @a subtitle ["",{"text":"what the dog doin?","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=83}] run title @a subtitle ["",{"text":"Went through 5,800 or so @e selectors...","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=84}] run title @a subtitle ["",{"text":"Featuring more bugs than features!","color":"green"}]
-execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=85}] run title @a subtitle ["",{"text":"X","color":"red","obfuscated":"true"},{"text":"Added jump scare","color":"red"},{"text":"X","color":"red","obfuscated":"true"}]
+execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=85}] run title @a subtitle ["",{"text":"X","color":"red","obfuscated":true},{"text":"Added jump scare","color":"red"},{"text":"X","color":"red","obfuscated":true}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=86}] run title @a subtitle ["",{"text":"Simon says, \"Don't lose!\"","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=87}] run title @a subtitle ["",{"text":"Hypersonic: the Tesla of Rocket Riders.","color":"green"}]
 execute as @e[type=marker,tag=RandomSplash,scores={RNGscore=88}] run title @a subtitle ["",{"text":"What are you doing? Go watch the trailer!","color":"green"}]

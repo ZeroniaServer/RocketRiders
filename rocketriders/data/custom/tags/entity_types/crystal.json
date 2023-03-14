@@ -1,13 +1,8 @@
 {
-	"values": [
-
-		"minecraft:end_crystal",
-
-		"minecraft:marker",
-
-		"minecraft:armor_stand",
-
-		"minecraft:area_effect_cloud"
-
-	]
+    "values": [
+        "minecraft:end_crystal",
+        "minecraft:marker",
+        "minecraft:armor_stand",
+        "minecraft:area_effect_cloud"
+    ]
 }

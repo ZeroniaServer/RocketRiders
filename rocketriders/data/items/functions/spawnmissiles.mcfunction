@@ -159,8 +159,10 @@ execute if entity @s[tag=YellowGemi] run tp @s ~-1 ~-7 ~-13
 execute if entity @s[tag=BlueLift] run tp @s ~-1 ~-7 ~4
 execute if entity @s[tag=YellowLift] run tp @s ~-1 ~-7 ~-10
 
-#Hypersonic
+#Hypersonic (+ extra entity)
+execute if entity @s[tag=BlueHyper] run summon marker ~ ~ ~ {Tags:["hyperExtraBlue","hyperExtra"]}
 execute if entity @s[tag=BlueHyper] run tp @s ~-1 ~-8 ~5
+execute if entity @s[tag=YellowHyper] run summon marker ~ ~ ~ {Tags:["hyperExtraYellow","hyperExtra"]}
 execute if entity @s[tag=YellowHyper] run tp @s ~-1 ~-8 ~-14
 
 #Bullet

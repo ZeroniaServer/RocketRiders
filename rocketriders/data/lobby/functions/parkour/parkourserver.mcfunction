@@ -13,6 +13,18 @@ execute as @a[team=Lobby,tag=startParkour] run tag @s add inParkour
 execute as @a[team=Lobby,tag=startParkour] run tag @s remove startParkour
 execute as @a[team=Lobby] at @s positioned ~ ~1 ~ unless entity @e[type=marker,tag=parkourStart,limit=1,distance=..1.2] run tag @s remove keepInventory
 
+##Concrete detection
+execute as @a[team=Lobby] run tag @s remove onConcrete
+execute as @a[team=Lobby] at @s if block ~ ~-1 ~ black_concrete run tag @s[y=184,dy=16] add onConcrete
+execute as @a[team=Lobby] at @s if block ~-0.3 ~-1 ~ black_concrete run tag @s[y=184,dy=16] add onConcrete
+execute as @a[team=Lobby] at @s if block ~0.3 ~-1 ~ black_concrete run tag @s[y=184,dy=16] add onConcrete
+execute as @a[team=Lobby] at @s if block ~ ~-1 ~-0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
+execute as @a[team=Lobby] at @s if block ~ ~-1 ~0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
+execute as @a[team=Lobby] at @s if block ~0.3 ~-1 ~0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
+execute as @a[team=Lobby] at @s if block ~-0.3 ~-1 ~0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
+execute as @a[team=Lobby] at @s if block ~-0.3 ~-1 ~-0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
+execute as @a[team=Lobby] at @s if block ~0.3 ~-1 ~-0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
+
 ##Finish parkour
 execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[team=Lobby,tag=finishedParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.1
@@ -25,7 +37,7 @@ execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove inParkour
 execute as @a[team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour
 
 ##Invisible players within range
-execute as @a[team=Lobby,tag=inParkour] at @s if entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect give @s invisibility 1000000 255 true
+execute as @a[team=Lobby,tag=inParkour] at @s if entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect give @s invisibility infinite 255 true
 execute as @a[team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect clear @s invisibility
 effect clear @a[team=Lobby,tag=!inParkour] invisibility
 

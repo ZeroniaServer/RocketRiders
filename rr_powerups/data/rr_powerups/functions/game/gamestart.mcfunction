@@ -17,9 +17,14 @@ tag @a remove JoinBlue
 tag @a remove JoinYellow
 
 #Countdown
-execute if entity @s[tag=EditedSettings] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[team=Yellow] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=!SMCustom] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[team=Blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[team=Yellow] run function game:restartcountdown
+
+execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[team=Blue] run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,tag=SMCustom] unless entity @a[team=Blue] unless entity @a[team=Yellow] run function game:restartcountdown
+
 scoreboard players reset @s[scores={count=1..}] powerupcount
 scoreboard players set @s[scores={count=1..}] PowerupDisplay 45
 execute if entity @s[scores={count=1..}] run scoreboard players set @e[type=marker,tag=captureMiddle] captureYellow 0

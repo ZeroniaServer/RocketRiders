@@ -36,8 +36,12 @@ execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless 
 execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 1 run bossbar set rr:startgame color green
 
 #Countdown
-execute if entity @s[tag=EditedSettings] if score @s bluesCount matches 2.. run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown] if score @s bluesCount matches 0..1 run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=!SMCustom] if score @s bluesCount matches 2.. run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] if score @s bluesCount matches 0..1 run function game:restartcountdown
+
+execute if entity @s[tag=EditedSettings,tag=SMCustom] if score @s bluesCount matches 1.. run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,tag=SMCustom] if score @s bluesCount matches 0 run function game:restartcountdown
+
 execute if entity @s[tag=!GameStarted] as @a[team=Blue] run attribute @s minecraft:generic.knockback_resistance base set 10000
 execute as @a[team=!Blue] run attribute @s minecraft:generic.knockback_resistance base set 0.0
 execute if entity @s[scores={count=600},tag=!SMActive] as @a[team=Blue] run function rr_chase:chasegear/sabermsg

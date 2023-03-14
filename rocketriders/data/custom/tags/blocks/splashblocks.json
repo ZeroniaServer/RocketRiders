@@ -1,17 +1,9 @@
 {
-
-"values": [
-
-"minecraft:water",
-
-"minecraft:lava",
-
-"minecraft:stone",
-
-"minecraft:cobblestone",
-
-"minecraft:obsidian"
-
-]
-
+    "values": [
+        "minecraft:water",
+        "minecraft:lava",
+        "minecraft:stone",
+        "minecraft:cobblestone",
+        "minecraft:obsidian"
+    ]
 }

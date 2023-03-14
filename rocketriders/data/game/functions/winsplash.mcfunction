@@ -44,7 +44,7 @@ execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=31}] run title @a
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=32}] run title @a[tag=Winner] subtitle ["",{"text":"Better gaming chairs ;)","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=33}] run title @a[tag=Winner] subtitle ["",{"text":"this is very","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=34}] run title @a[tag=Winner] subtitle ["",{"text":"It's coming home!","color":"green"}]
-execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=35}] run title @a[tag=Winner] subtitle ["",{"text":"It's coming ","color":"green"},{"text":"h","color":"green","obfuscated":"true"},{"text":"Rome!","color":"green"}]
+execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=35}] run title @a[tag=Winner] subtitle ["",{"text":"It's coming ","color":"green"},{"text":"h","color":"green","obfuscated":true},{"text":"Rome!","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=36}] run title @a[tag=Winner] subtitle ["",{"text":"Knock knock, who's there? Nuclear warfare!","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=37}] run title @a[tag=Winner] subtitle ["",{"text":"Imagine losing","color":"green"}]
 execute as @e[type=marker,tag=RandomWinSplash,scores={RNGscore=38}] run title @a[tag=Winner,team=Yellow] subtitle ["",{"text":"Bet Yellow won, I just know it!","color":"green"}]

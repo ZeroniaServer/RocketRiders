@@ -4,30 +4,16 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+          "type": "minecraft:item",
+          "name": "minecraft:blaze_spawn_egg",
+          "functions": [
             {
-              "type": "minecraft:item",
-              "name": "minecraft:blaze_spawn_egg",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 1
-                },
-                {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Fireball\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Spawns a Fireball. Punch or shoot\",\"color\":\"gray\"}','{\"text\":\"Fireballs to quickly blow up missiles,\",\"color\":\"gray\"}','{\"text\":\"blocks, or enemy players.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowFireball\"]}}"
-                }
-              ],
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Yellow"
-                  }
-                }
-              ]
+              "function": "minecraft:set_count",
+              "count": 1
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Fireball\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Spawns a Fireball. Punch or shoot\",\"color\":\"gray\"}','{\"text\":\"Fireballs to quickly blow up missiles,\",\"color\":\"gray\"}','{\"text\":\"blocks, or enemy players.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowFireball\"]}}"
             }
           ],
           "conditions": [

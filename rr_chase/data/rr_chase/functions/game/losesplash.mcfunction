@@ -32,7 +32,7 @@ execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=22}] run title @
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=23}] run title @a[tag=Loser] subtitle ["",{"text":"Sure, blame it on the ping.","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=24}] run title @a[tag=Loser] subtitle ["",{"text":"this is not very","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=25}] run title @a[tag=Loser] subtitle ["",{"text":"It's coming home!","color":"red"}]
-execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=26}] run title @a[tag=Loser] subtitle ["",{"text":"It's coming ","color":"red"},{"text":"h","color":"red","obfuscated":"true"},{"text":"Rome!","color":"red"}]
+execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=26}] run title @a[tag=Loser] subtitle ["",{"text":"It's coming ","color":"red"},{"text":"h","color":"red","obfuscated":true},{"text":"Rome!","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=27}] run title @a[tag=Loser] subtitle ["",{"text":"L","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=28}] run title @a[tag=Loser] subtitle ["",{"text":"The IRS got you!","color":"red"}]
 execute as @e[type=marker,tag=RandomLossSplash,scores={RNGscore=29}] run title @a[tag=Loser] subtitle ["",{"text":"Sucks to suck!","color":"red"}]

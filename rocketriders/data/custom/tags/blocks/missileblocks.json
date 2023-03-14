@@ -1,93 +1,47 @@
 {
-
-"values": [
-
-"minecraft:tnt",
-
-"minecraft:slime_block",
-
-"minecraft:honey_block",
-
-"minecraft:piston",
-
-"minecraft:sticky_piston",
-
-"minecraft:piston_head",
-
-"minecraft:moving_piston",
-
-"minecraft:redstone_block",
-
-"minecraft:observer",
-
-"minecraft:water",
-
-"minecraft:structure_void",
-
-"#custom:glass",
-
-"#custom:glasspane",
-
-"minecraft:blue_glazed_terracotta",
-
-"minecraft:yellow_glazed_terracotta",
-
-"minecraft:white_glazed_terracotta",
-
-"minecraft:stone",
-
-"minecraft:cobblestone",
-
-"minecraft:blue_concrete",
-
-"minecraft:yellow_concrete",
-
-"minecraft:spruce_trapdoor",
-
-"minecraft:birch_trapdoor",
-
-"minecraft:end_stone",
-
-"minecraft:warped_fence_gate",
-
-"minecraft:birch_fence_gate",
-
-"minecraft:black_concrete",
-
-"minecraft:white_concrete",
-
-"minecraft:end_stone_brick_wall",
-
-"minecraft:powered_rail",
-
-"minecraft:iron_trapdoor",
-
-"minecraft:yellow_concrete",
-
-"minecraft:orange_concrete",
-
-"minecraft:blue_concrete",
-
-"minecraft:cyan_concrete",
-
-"minecraft:target",
-
-"minecraft:oak_wood",
-
-"minecraft:oak_planks",
-
-"minecraft:deepslate_bricks",
-
-"minecraft:chiseled_deepslate",
-
-"minecraft:deepslate",
-
-"minecraft:polished_deepslate",
-
-"minecraft:polished_deepslate_stairs",
-
-"minecraft:cave_air"
-
-]
-
+    "values": [
+        "minecraft:tnt",
+        "minecraft:slime_block",
+        "minecraft:honey_block",
+        "minecraft:piston",
+        "minecraft:sticky_piston",
+        "minecraft:piston_head",
+        "minecraft:moving_piston",
+        "minecraft:redstone_block",
+        "minecraft:observer",
+        "minecraft:water",
+        "minecraft:structure_void",
+        "#custom:glass",
+        "#custom:glasspane",
+        "minecraft:blue_glazed_terracotta",
+        "minecraft:yellow_glazed_terracotta",
+        "minecraft:white_glazed_terracotta",
+        "minecraft:stone",
+        "minecraft:cobblestone",
+        "minecraft:blue_concrete",
+        "minecraft:yellow_concrete",
+        "minecraft:spruce_trapdoor",
+        "minecraft:birch_trapdoor",
+        "minecraft:end_stone",
+        "minecraft:warped_fence_gate",
+        "minecraft:birch_fence_gate",
+        "minecraft:black_concrete",
+        "minecraft:white_concrete",
+        "minecraft:end_stone_brick_wall",
+        "minecraft:powered_rail",
+        "minecraft:iron_trapdoor",
+        "minecraft:yellow_concrete",
+        "minecraft:orange_concrete",
+        "minecraft:blue_concrete",
+        "minecraft:cyan_concrete",
+        "minecraft:target",
+        "minecraft:oak_wood",
+        "minecraft:oak_planks",
+        "minecraft:deepslate_bricks",
+        "minecraft:chiseled_deepslate",
+        "minecraft:deepslate",
+        "minecraft:polished_deepslate",
+        "minecraft:polished_deepslate_stairs",
+        "minecraft:cave_air"
+    ]
 }

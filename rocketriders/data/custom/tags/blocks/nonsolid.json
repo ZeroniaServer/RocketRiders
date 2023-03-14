@@ -1,17 +1,9 @@
 {
-
-"values": [
-
-"#custom:air",
-
-"minecraft:nether_portal",
-
-"minecraft:water",
-
-"minecraft:lava",
-
-"minecraft:light"
-
-]
-
+    "values": [
+        "#custom:air",
+        "minecraft:nether_portal",
+        "minecraft:water",
+        "minecraft:lava",
+        "minecraft:light"
+    ]
 }

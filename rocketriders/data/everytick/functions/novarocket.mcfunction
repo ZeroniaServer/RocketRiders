@@ -91,8 +91,8 @@ execute as @e[type=firework_rocket,tag=BlueNova] at @s if entity @e[type=firewor
 execute as @e[type=firework_rocket,tag=CollideNova] run kill @s
 
 #Explosion/particle effects
-execute as @e[type=firework_rocket,tag=BlueNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,tag:{Fireworks:{Explosions:[{Type:4}]}}}
-execute as @e[type=firework_rocket,tag=YellowNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,tag:{Fireworks:{Explosions:[{Type:4}]}}}
+execute as @e[type=firework_rocket,tag=BlueNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,FireworksItem:{tag:{Fireworks:{Explosions:[{Type:4}]}}}}
+execute as @e[type=firework_rocket,tag=YellowNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,FireworksItem:{tag:{Fireworks:{Explosions:[{Type:4}]}}}}
 execute if entity @e[type=armor_stand,tag=Selection,tag=!customNova] as @e[type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust lapis_block ~ ~0.2 ~ 0 0 0 1 2 force @a[predicate=custom:belowroof]
 execute if entity @e[type=armor_stand,tag=Selection,tag=customNova] as @e[type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust 3 3 3 1 ~ ~0.2 ~ 0 0 0 1 1 force @a[predicate=custom:belowroof]
 execute if entity @e[type=armor_stand,tag=Selection,tag=customNova] as @e[type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust 3 3 3 1 ^ ^0.2 ^-0.2 0 0 0 1 1 force @a[predicate=custom:belowroof]

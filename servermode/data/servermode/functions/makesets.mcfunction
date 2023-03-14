@@ -12,18 +12,18 @@ tag @e[type=armor_stand,tag=Selection] add ServerModeVoting
 kill @e[type=marker,tag=ServerMode]
 
 # Summon AEC's that will store all set info.
-summon marker -64 191 78 {Tags:["ServerMode","Set1","ServermodeSet1","Set","NormalMode"],CustomName:"\"Normal Mode\""}
-summon marker -64 191 78 {Tags:["ServerMode","Set2","ServermodeSet2","Set","PowerupsMode"],CustomName:"\"Powerups Mode\""}
-summon marker -64 191 78 {Tags:["ServerMode","Set3","ServermodeSet3","Set","SwapMode"],CustomName:"\"Swap Mode\""}
-summon marker -64 191 78 {Tags:["ServerMode","Set4","ServermodeSet4","Set","CTFMode"],CustomName:"\"Capture The Flag\""}
-summon marker -64 191 78 {Tags:["ServerMode","Set5","ServermodeSet5","Set","CrusadeMode"],CustomName:"\"Crusade Mode\""}
+summon marker -64 191 78 {Tags:["ServerMode","Set1","ServermodeSet1","Set","NormalMode"],CustomName:'"Normal Mode"'}
+summon marker -64 191 78 {Tags:["ServerMode","Set2","ServermodeSet2","Set","PowerupsMode"],CustomName:'"Powerups Mode"'}
+summon marker -64 191 78 {Tags:["ServerMode","Set3","ServermodeSet3","Set","SwapMode"],CustomName:'"Swap Mode"'}
+summon marker -64 191 78 {Tags:["ServerMode","Set4","ServermodeSet4","Set","CTFMode"],CustomName:'"Capture The Flag"'}
+summon marker -64 191 78 {Tags:["ServerMode","Set5","ServermodeSet5","Set","CrusadeMode"],CustomName:'"Crusade Mode"'}
 
 # Something
 summon marker -64 191 78 {Tags:["ServerMode","SCMChance"]}
 scoreboard players set @e[type=marker,tag=SneakyChase] RNGmax 1000
 execute as @e[type=marker,tag=SCMChance] store result score @s RNGscore run data get entity @s UUID[0]
 execute as @e[type=marker,tag=SCMChance] run scoreboard players operation @s RNGscore %= @s RNGmax
-execute as @e[type=marker,tag=SCMChance,scores={RNGscore=69}] run summon marker -64 191 78 {Tags:["ServerMode","Set6","ServermodeSet6","Set","ChaseMode"],CustomName:"\"Chase Mode\""}
+execute as @e[type=marker,tag=SCMChance,scores={RNGscore=69}] run summon marker -64 191 78 {Tags:["ServerMode","Set6","ServermodeSet6","Set","ChaseMode"],CustomName:'"Chase Mode"'}
 execute as @e[type=marker,tag=SCMChance,scores={RNGscore=69}] run summon marker -64 191 78 {Tags:["ServerMode","Maps","ServermodeSet6","RandomMap"],CustomName:'"Randomized map"'}
 kill @e[type=marker,tag=SCMChance]
 

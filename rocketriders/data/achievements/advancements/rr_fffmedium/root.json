@@ -3,7 +3,7 @@
     "display": {
         "title": {
             "text": "Medium Challenges",
-            "bold": "false",
+            "bold": false,
             "color": "gold"
         },
         "description": {

@@ -1,15 +1,8 @@
 {
-
-"values": [
-
-"minecraft:piston_head",
-
-"minecraft:moving_piston",
-
-"minecraft:piston",
-
-"minecraft:sticky_piston"
-
-]
-
+    "values": [
+        "minecraft:piston_head",
+        "minecraft:moving_piston",
+        "minecraft:piston",
+        "minecraft:sticky_piston"
+    ]
 }

@@ -1,13 +1,7 @@
 {
-
-"values": [
-
-"minecraft:obsidian",
-
-"minecraft:nether_portal",
-
-"minecraft:bedrock"
-
-]
-
+    "values": [
+        "minecraft:obsidian",
+        "minecraft:nether_portal",
+        "minecraft:bedrock"
+    ]
 }

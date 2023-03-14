@@ -11,7 +11,12 @@
             "type": "minecraft:arrow"
           },
           "type": {
-            "is_projectile": true
+            "tags": [
+              {
+                "id": "minecraft:is_projectile",
+                "expected": true
+              }
+            ]
           }
         },
         "entity": {

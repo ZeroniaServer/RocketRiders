@@ -6,7 +6,12 @@
       "conditions": {
         "damage": {
           "type": {
-            "is_explosion": "true"
+            "tags": [
+              {
+                "id": "is_explosion",
+                "expected": true
+              }
+            ]
           }
         }
       }

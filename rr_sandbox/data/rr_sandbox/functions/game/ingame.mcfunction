@@ -54,9 +54,9 @@ scoreboard players set @a SBplaceYCon 0
 scoreboard players set @a SBplaceScaf 0
 
 #disable portal mining
-execute as @a[team=Yellow] at @s if entity @s[z=70,dz=8] run effect give @s mining_fatigue 1000000 255 true
+execute as @a[team=Yellow] at @s if entity @s[z=70,dz=8] run effect give @s mining_fatigue infinite 255 true
 execute as @a[team=Yellow] at @s unless entity @s[z=70,dz=8] run effect clear @s mining_fatigue
-execute as @a[team=Blue] at @s if entity @s[z=-78,dz=8] run effect give @s mining_fatigue 1000000 255 true
+execute as @a[team=Blue] at @s if entity @s[z=-78,dz=8] run effect give @s mining_fatigue infinite 255 true
 execute as @a[team=Blue] at @s unless entity @s[z=-78,dz=8] run effect clear @s mining_fatigue
 
 #win

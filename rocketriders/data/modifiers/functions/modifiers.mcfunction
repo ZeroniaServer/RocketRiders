@@ -4,7 +4,7 @@
 ####################################
 
 ##Instamine
-execute if entity @s[tag=Instamine] as @a unless entity @s[team=!Yellow,team=!Blue] run effect give @s haste 1000000 255 true
+execute if entity @s[tag=Instamine] as @a unless entity @s[team=!Yellow,team=!Blue] run effect give @s haste infinite 255 true
 execute if entity @s[tag=Instamine] run effect clear @a[team=!Yellow,team=!Blue] haste
 
 ##Explosive
@@ -15,9 +15,9 @@ execute if entity @s[tag=Explosive,tag=!ClutterCollector] run kill @e[type=tnt,n
 execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
 
 ##Sonar
-execute unless entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] run effect give @s night_vision 1000000 100 true
+execute unless entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] run effect give @s night_vision infinite 100 true
 execute if entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] run effect clear @s night_vision
-execute if entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue] run effect give @s glowing 1000000 1 true
+execute if entity @s[tag=Sonar] as @a unless entity @s[team=!Yellow,team=!Blue] run effect give @s glowing infinite 1 true
 execute if entity @s[tag=Sonar] as @e[type=arrow] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[type=snowball] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[type=egg] run data merge entity @s {Glowing:1b}
@@ -46,8 +46,8 @@ execute if entity @s[tag=SpamClick] as @a[team=Lobby] run attribute @s minecraft
 execute if entity @s[tag=!SpamClick] as @a unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.attack_speed base set 4
 
 ##Ninja Jump
-execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s speed 1000000 2 true
-execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s jump_boost 1000000 2 true
+execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s speed infinite 2 true
+execute if entity @s[tag=NinjaJump] as @a unless entity @s[team=!Blue,team=!Yellow] run effect give @s jump_boost infinite 2 true
 
 ##Hardcore
 execute if entity @s[tag=Hardcore] as @a unless entity @s[team=!Blue,team=!Yellow] if entity @s[scores={nnhealth_max=20}] run function modifiers:hardcoreset

@@ -38,9 +38,9 @@ execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run function everyti
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run gamerule naturalRegeneration true
 
 #Night vision/saturation and more lobby functionality
-effect give @a[team=Lobby] night_vision 1000000 100 true
-execute as @e[type=armor_stand,tag=Selection,tag=!Sonar] run effect give @a[team=Spectator] night_vision 1000000 100 true
-execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run effect give @a saturation 1000000 0 true
+effect give @a[team=Lobby] night_vision infinite 100 true
+execute as @e[type=armor_stand,tag=Selection,tag=!Sonar] run effect give @a[team=Spectator] night_vision infinite 100 true
+execute as @e[type=armor_stand,tag=Selection,tag=!SMActive] run effect give @a saturation infinite 0 true
 execute as @e[type=armor_stand,tag=Selection,tag=SMActive] run effect clear @a saturation
 execute as @a[team=Lobby,scores={nnhealth_max=6}] run function modifiers:hardcorereset
 function lobby:bookwarp
@@ -99,6 +99,6 @@ execute if score $justcleared CmdData matches 4.. run tag @e[type=armor_stand,ta
 execute as @e[type=armor_stand,tag=Selection] unless entity @s[tag=JustCleared] run scoreboard players reset $justcleared CmdData
 
 #Gamemode/reload handling
-execute if entity @a run function gamemodes:disableerror
+execute if loaded -43 210 78 run function gamemodes:disableerror
 execute if score $reloaded CmdData matches 1..100 run scoreboard players add $reloaded CmdData 1
 execute if score $reloaded CmdData matches 101 run scoreboard players reset $reloaded

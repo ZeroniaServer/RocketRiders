@@ -6,12 +6,12 @@ function rr_crusade:items/spawnitems
 function rr_crusade:game/cancel_utility
 
 #middle wall
-execute as @e[type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement
+execute as @e[predicate=custom:indimension,type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement
 
 #regenerate glass every 30 seconds
-scoreboard players add @e[type=marker,tag=crusadeWall] CmdData 1
-execute as @e[type=marker,tag=crusadeWall,scores={CmdData=2400..}] run function rr_crusade:game/glassplacement
-execute as @e[type=marker,tag=crusadeWall,scores={CmdData=2400..}] run scoreboard players set @s CmdData 0
+scoreboard players add @e[predicate=custom:indimension,type=marker,tag=crusadeWall] CmdData 1
+execute as @e[predicate=custom:indimension,type=marker,tag=crusadeWall,scores={CmdData=2400..}] run function rr_crusade:game/glassplacement
+execute as @e[predicate=custom:indimension,type=marker,tag=crusadeWall,scores={CmdData=2400..}] run scoreboard players set @s CmdData 0
 
 #Item RNG
 scoreboard players add @s RandomItem 1
@@ -25,9 +25,9 @@ execute as @a[predicate=custom:indimension,tag=preventionMSG] run tellraw @s [""
 tag @a[predicate=custom:indimension,tag=preventionMSG] remove preventionMSG
 
 #Selected kit particles
-execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] at @s at @e[type=armor_stand,tag=KnightStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
-execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=2}] at @s at @e[type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
-execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=3}] at @s at @e[type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=2}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=3}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 
 #Give knights new shields when they respawn
 execute as @a[predicate=custom:indimension,scores={crusadekit=1,deathCooldown=5}] at @s run clear @s shield
@@ -94,10 +94,10 @@ execute store result bossbar rr_crusade:blue value run scoreboard players get $B
 execute store result bossbar rr_crusade:yellow value run scoreboard players get $YellowShield crusadehp
 
 #> Deplete health
-execute if score $BlueShield crusadehp matches 1.. if score $CBA crusadehp matches 1.. unless entity @e[type=end_crystal,tag=CrusadeBlueA] run function rr_crusade:game/restorecba
-execute if score $BlueShield crusadehp matches 1.. if score $CBB crusadehp matches 1.. unless entity @e[type=end_crystal,tag=CrusadeBlueB] run function rr_crusade:game/restorecbb
-execute if score $YellowShield crusadehp matches 1.. if score $CYA crusadehp matches 1.. unless entity @e[type=end_crystal,tag=CrusadeYellowA] run function rr_crusade:game/restorecya
-execute if score $YellowShield crusadehp matches 1.. if score $CYB crusadehp matches 1.. unless entity @e[type=end_crystal,tag=CrusadeYellowB] run function rr_crusade:game/restorecyb
+execute if score $BlueShield crusadehp matches 1.. if score $CBA crusadehp matches 1.. unless entity @e[predicate=custom:indimension,type=end_crystal,tag=CrusadeBlueA] run function rr_crusade:game/restorecba
+execute if score $BlueShield crusadehp matches 1.. if score $CBB crusadehp matches 1.. unless entity @e[predicate=custom:indimension,type=end_crystal,tag=CrusadeBlueB] run function rr_crusade:game/restorecbb
+execute if score $YellowShield crusadehp matches 1.. if score $CYA crusadehp matches 1.. unless entity @e[predicate=custom:indimension,type=end_crystal,tag=CrusadeYellowA] run function rr_crusade:game/restorecya
+execute if score $YellowShield crusadehp matches 1.. if score $CYB crusadehp matches 1.. unless entity @e[predicate=custom:indimension,type=end_crystal,tag=CrusadeYellowB] run function rr_crusade:game/restorecyb
 
 #> Win condition
 execute if score $BlueShield crusadehp matches -1000..0 unless block 4 45 -67 nether_portal if score $YellowShield crusadehp matches -1000..0 unless block 4 45 67 nether_portal run function game:winbothcheck

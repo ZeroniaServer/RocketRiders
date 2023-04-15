@@ -122,4 +122,4 @@ execute if entity @s[tag=bluemissile,tag=spawnpoint] at @s if entity @a[predicat
 tp @s ~ ~-300 ~
 data merge entity @s {Tags:["UnableMissile"]}
 scoreboard players reset $missile playerUUID
-execute as @e[type=marker,tag=UnableClear] at @s run function items:prevention/clearafter
+execute as @e[predicate=custom:indimension,type=marker,tag=UnableClear] at @s run function items:prevention/clearafter

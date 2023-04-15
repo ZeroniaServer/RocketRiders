@@ -35,14 +35,14 @@ execute if entity @s[tag=JustCleared] run tag @a[predicate=custom:indimension] r
 execute if entity @s[tag=!EditedSettings] run tag @a[predicate=custom:indimension] remove JoinBlue
 execute if entity @s[tag=GameEnd] run tag @a[predicate=custom:indimension] remove JoinBlue
 execute if entity @s[tag=BlueFull] run tag @a[predicate=custom:indimension] remove JoinBlue
-execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=-1..0},tag=!BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
-execute if score $barriers CmdData matches 1 if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=-1..0},tag=!BlueFull] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:blue_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
+execute if score $barriers CmdData matches 1 if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
-execute if entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings,tag=!JustCleared] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,limit=1,sort=random] add JoinBlue
+execute if entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings,tag=!JustCleared] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,limit=1,sort=random] add JoinBlue
 team join Blue @a[predicate=custom:indimension,tag=JoinBlue]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[predicate=custom:indimension,tag=JoinBlue]
-execute if entity @s[tag=!noSabers] as @a[predicate=custom:indimension,tag=JoinBlue] unless entity @e[type=armor_stand,tag=chaseEnabled] run function game:saberblue
+execute if entity @s[tag=!noSabers] as @a[predicate=custom:indimension,tag=JoinBlue] unless entity @e[predicate=custom:indimension,type=armor_stand,tag=chaseEnabled] run function game:saberblue
 execute if entity @s[tag=!GameStarted,tag=Hardcore] as @a[predicate=custom:indimension,tag=JoinBlue] run function modifiers:hardcoreset
 execute if entity @s[tag=!GameStarted,tag=!customSpawns] run tp @a[predicate=custom:indimension,tag=JoinBlue] -95 202 60 0 0
 execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] as @a[predicate=custom:indimension,tag=JoinBlue] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
@@ -63,17 +63,17 @@ execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom,tag=!chaseE
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom,tag=chaseEnabled] as @a[predicate=custom:indimension,tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
 
 #Imbalanced/full team control
-execute if entity @s[scores={largerTeam=1}] as @e[type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
-execute if entity @s[scores={largerTeam=1}] as @e[type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":true},{"text":" instead.","color":"yellow","bold":false}]
-execute if entity @s[scores={largerTeam=1}] as @e[type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
-execute if entity @s[scores={largerTeam=1}] as @e[type=marker,tag=bluejoinpad] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
-execute if entity @s[tag=BlueFull] as @e[type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Full!","color":"red","bold":true}]
-execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad,tag=CancelJoin] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
-execute if entity @s[tag=BlueFull,tag=!YellowFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":true},{"text":" instead.","color":"yellow","bold":false}]
-execute if entity @s[tag=BlueFull,tag=YellowFull,tag=EditedSettings] as @e[type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":false}]
-execute if entity @s[tag=BlueFull] as @e[type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
-execute if entity @s[tag=BlueFull] as @e[type=marker,tag=bluejoinpad] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
-execute as @e[type=marker,tag=bluejoinpad] at @s run tag @a[predicate=custom:indimension,distance=2..,team=Lobby] remove tryJoinBlue
+execute if entity @s[scores={largerTeam=1}] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
+execute if entity @s[scores={largerTeam=1}] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":true},{"text":" instead.","color":"yellow","bold":false}]
+execute if entity @s[scores={largerTeam=1}] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
+execute if entity @s[scores={largerTeam=1}] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
+execute if entity @s[tag=BlueFull] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Full!","color":"red","bold":true}]
+execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad,tag=CancelJoin] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
+execute if entity @s[tag=BlueFull,tag=!YellowFull,tag=EditedSettings] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":true},{"text":" instead.","color":"yellow","bold":false}]
+execute if entity @s[tag=BlueFull,tag=YellowFull,tag=EditedSettings] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":false}]
+execute if entity @s[tag=BlueFull] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
+execute if entity @s[tag=BlueFull] as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
+execute as @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] at @s run tag @a[predicate=custom:indimension,distance=2..,team=Lobby] remove tryJoinBlue
 
 ##Yellow Join Pad
 execute unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @a[predicate=custom:indimension,tag=JoinYellow] run function game:joinwarn
@@ -81,10 +81,10 @@ execute if entity @s[tag=JustCleared] run tag @a[predicate=custom:indimension] r
 execute if entity @s[tag=!EditedSettings] run tag @a[predicate=custom:indimension] remove JoinYellow
 execute if entity @s[tag=GameEnd] run tag @a[predicate=custom:indimension] remove JoinYellow
 execute if entity @s[tag=YellowFull] run tag @a[predicate=custom:indimension] remove JoinYellow
-execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=0..1},tag=!YellowFull] as @e[type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
-execute if score $barriers CmdData matches 1 if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=0..1},tag=!YellowFull] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:yellow_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
+execute if score $barriers CmdData matches 1 if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
-execute if entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings,tag=!JustCleared] as @e[type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,limit=1,sort=random] add JoinYellow
+execute if entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings,tag=!JustCleared] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,limit=1,sort=random] add JoinYellow
 team join Yellow @a[predicate=custom:indimension,tag=JoinYellow]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[predicate=custom:indimension,tag=JoinYellow]
@@ -105,36 +105,36 @@ execute if entity @s[tag=!customSpawns] as @a[predicate=custom:indimension,tag=J
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
 
 #Imbalanced/full team control
-execute if entity @s[scores={largerTeam=-1}] as @e[type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
-execute if entity @s[scores={largerTeam=-1}] as @e[type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"aqua","bold":false}]
-execute if entity @s[scores={largerTeam=-1}] as @e[type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
-execute if entity @s[scores={largerTeam=-1}] as @e[type=marker,tag=yellowjoinpad] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
-execute if entity @s[tag=YellowFull] as @e[type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Full!","color":"red","bold":true}]
-execute if entity @s[tag=YellowFull,tag=EditedSettings] as @e[type=marker,tag=yellowjoinpad,tag=CancelJoin] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
-execute if entity @s[tag=YellowFull,tag=!BlueFull,tag=EditedSettings] as @e[type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"aqua","bold":false}]
-execute if entity @s[tag=YellowFull,tag=BlueFull,tag=EditedSettings] as @e[type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":false}]
-execute if entity @s[tag=YellowFull] as @e[type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
-execute if entity @s[tag=YellowFull] as @e[type=marker,tag=yellowjoinpad] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
-execute as @e[type=marker,tag=yellowjoinpad] at @s run tag @a[predicate=custom:indimension,distance=2..,team=Lobby] remove tryJoinYellow
+execute if entity @s[scores={largerTeam=-1}] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
+execute if entity @s[scores={largerTeam=-1}] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"aqua","bold":false}]
+execute if entity @s[scores={largerTeam=-1}] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
+execute if entity @s[scores={largerTeam=-1}] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
+execute if entity @s[tag=YellowFull] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Full!","color":"red","bold":true}]
+execute if entity @s[tag=YellowFull,tag=EditedSettings] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad,tag=CancelJoin] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
+execute if entity @s[tag=YellowFull,tag=!BlueFull,tag=EditedSettings] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"aqua","bold":false}]
+execute if entity @s[tag=YellowFull,tag=BlueFull,tag=EditedSettings] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":false}]
+execute if entity @s[tag=YellowFull] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] at @s run title @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
+execute if entity @s[tag=YellowFull] as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] at @s run tag @a[predicate=custom:indimension,distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
+execute as @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] at @s run tag @a[predicate=custom:indimension,distance=2..,team=Lobby] remove tryJoinYellow
 
 ##Join pad + Leave pad Spectator
 execute if entity @s[tag=JustCleared] run tag @a[predicate=custom:indimension] remove JoinSpec
 execute if entity @s[tag=!EditedSettings] run tag @a[predicate=custom:indimension] remove JoinSpec
 execute if entity @s[tag=GameEnd] run tag @a[predicate=custom:indimension] remove JoinSpec
-execute if entity @e[type=armor_stand,tag=Selection,tag=SMActive] if entity @e[type=marker,tag=specjoinpad,tag=CancelJoin] as @a[predicate=custom:indimension,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=SMActive] if entity @e[predicate=custom:indimension,type=marker,tag=specjoinpad,tag=CancelJoin] as @a[predicate=custom:indimension,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 tag @a[predicate=custom:indimension,gamemode=spectator] remove JoinSpec
-execute if score $dust CmdData matches 1 as @e[type=marker,tag=specjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:gray_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
-execute as @e[type=marker,tag=specjoinpad,tag=!CancelJoin,tag=!JustCleared] at @s run tag @a[predicate=custom:indimension,team=!Spectator,distance=..1,limit=1,sort=random] add JoinSpec
-execute as @e[type=marker,tag=specjoinpad,tag=CancelJoin] run tag @a[predicate=custom:indimension] remove JoinSpec
-execute as @e[type=marker,tag=specjoinpad] at @s run tag @a[predicate=custom:indimension,team=Spectator,distance=..1] add AlreadySpec
-execute as @e[type=marker,tag=specjoinpad,tag=CancelJoin] run tag @a[predicate=custom:indimension] remove AlreadySpec
+execute if score $dust CmdData matches 1 as @e[predicate=custom:indimension,type=marker,tag=specjoinpad,tag=!CancelJoin] at @s run particle falling_dust minecraft:gray_concrete ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=specjoinpad,tag=!CancelJoin,tag=!JustCleared] at @s run tag @a[predicate=custom:indimension,team=!Spectator,distance=..1,limit=1,sort=random] add JoinSpec
+execute as @e[predicate=custom:indimension,type=marker,tag=specjoinpad,tag=CancelJoin] run tag @a[predicate=custom:indimension] remove JoinSpec
+execute as @e[predicate=custom:indimension,type=marker,tag=specjoinpad] at @s run tag @a[predicate=custom:indimension,team=Spectator,distance=..1] add AlreadySpec
+execute as @e[predicate=custom:indimension,type=marker,tag=specjoinpad,tag=CancelJoin] run tag @a[predicate=custom:indimension] remove AlreadySpec
 team join Spectator @a[predicate=custom:indimension,tag=JoinSpec,gamemode=!spectator]
 clear @a[predicate=custom:indimension,tag=JoinSpec]
 scoreboard players enable @a[predicate=custom:indimension,team=Spectator] leaveSpec
 tag @a[predicate=custom:indimension,scores={leaveSpec=1..}] add LeaveTeams
 scoreboard players reset @a[predicate=custom:indimension,team=!Spectator] leaveSpec
-execute unless entity @e[type=armor_stand,tag=Selection,tag=SMActive] run tellraw @a[predicate=custom:indimension,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":true}]
-execute if entity @e[type=armor_stand,tag=Selection,tag=SMActive] run tellraw @a[predicate=custom:indimension,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave ","color":"green"},{"text":"to go back to the lobby.","color":"dark_green","italic":true}]
+execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=SMActive] run tellraw @a[predicate=custom:indimension,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":true}]
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=SMActive] run tellraw @a[predicate=custom:indimension,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave ","color":"green"},{"text":"to go back to the lobby.","color":"dark_green","italic":true}]
 tp @a[predicate=custom:indimension,tag=JoinSpec] 12 100 0.5 90 90
 execute as @a[predicate=custom:indimension,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[predicate=custom:indimension,tag=JoinSpec] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
@@ -143,8 +143,8 @@ tag @a[predicate=custom:indimension] remove JoinSpec
 tp @a[predicate=custom:indimension,tag=AlreadySpec] 12 100 0.5 90 90
 execute as @a[predicate=custom:indimension,tag=AlreadySpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a[predicate=custom:indimension] remove AlreadySpec
-execute if score $dust CmdData matches 1 unless entity @e[type=armor_stand,tag=Selection,tag=SMActive] as @e[type=marker,tag=LeaveSpec] at @s run particle dust 2 1 0 1 ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[predicate=custom:indimension,team=Spectator,predicate=custom:belowroof]
-execute unless entity @e[type=armor_stand,tag=Selection,tag=SMActive] as @e[type=marker,tag=LeaveSpec] at @s run tag @a[predicate=custom:indimension,team=Spectator,distance=..2] add LeaveTeams
+execute if score $dust CmdData matches 1 unless entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=SMActive] as @e[predicate=custom:indimension,type=marker,tag=LeaveSpec] at @s run particle dust 2 1 0 1 ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[predicate=custom:indimension,team=Spectator,predicate=custom:belowroof]
+execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=SMActive] as @e[predicate=custom:indimension,type=marker,tag=LeaveSpec] at @s run tag @a[predicate=custom:indimension,team=Spectator,distance=..2] add LeaveTeams
 
 #Keep spectators inside arena
 execute as @a[predicate=custom:indimension,team=Spectator] at @s unless predicate custom:insideborder_lenient run tag @s add leftBorder
@@ -162,4 +162,4 @@ execute if entity @s[tag=Countdown] run function game:countdown
 ##Barrier particles on a timer
 scoreboard players add $barriers CmdData 1
 execute if score $barriers CmdData matches 81 run scoreboard players set $barriers CmdData 0
-execute if score $barriers CmdData matches 1 as @e[type=marker,tag=CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[predicate=custom:indimension,team=Lobby,predicate=!custom:belowroof]
+execute if score $barriers CmdData matches 1 as @e[predicate=custom:indimension,type=marker,tag=CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[predicate=custom:indimension,team=Lobby,predicate=!custom:belowroof]

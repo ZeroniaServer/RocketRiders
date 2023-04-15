@@ -27,7 +27,7 @@ execute if entity @s[tag=EditedSettings,tag=Countdown,tag=SMCustom] unless entit
 
 scoreboard players reset @s[scores={count=1..}] powerupcount
 scoreboard players set @s[scores={count=1..}] PowerupDisplay 45
-execute if entity @s[scores={count=1..}] run scoreboard players set @e[type=marker,tag=captureMiddle] captureYellow 0
-execute if entity @s[scores={count=1..}] run scoreboard players set @e[type=marker,tag=captureMiddle] captureBlue 0
-execute if entity @s[scores={count=1..}] run scoreboard players set @e[type=marker,tag=captureMiddle] capturePoint 0
+execute if entity @s[scores={count=1..}] run scoreboard players set @e[predicate=custom:indimension,type=marker,tag=captureMiddle] captureYellow 0
+execute if entity @s[scores={count=1..}] run scoreboard players set @e[predicate=custom:indimension,type=marker,tag=captureMiddle] captureBlue 0
+execute if entity @s[scores={count=1..}] run scoreboard players set @e[predicate=custom:indimension,type=marker,tag=captureMiddle] capturePoint 0
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

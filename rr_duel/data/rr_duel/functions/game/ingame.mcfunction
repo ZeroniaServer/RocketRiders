@@ -31,9 +31,9 @@ execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless b
 execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 11 38 74 nether_portal run function rr_duel:game/winblue
 
 #arena clear cheesing
-execute if entity @e[type=marker,tag=PlacerClear] run tag @s remove CriteriaTrue
-tag @e[type=marker,tag=PlacerClear] add BasePlaced
-tag @e[type=marker,tag=PlacerClear] add Cleared
+execute if entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear] run tag @s remove CriteriaTrue
+tag @e[predicate=custom:indimension,type=marker,tag=PlacerClear] add BasePlaced
+tag @e[predicate=custom:indimension,type=marker,tag=PlacerClear] add Cleared
 
 scoreboard players add Blue: RoundsWon 0
 scoreboard players add Yellow: RoundsWon 0
@@ -53,7 +53,7 @@ execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom
 
 #timeout
 scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1
-execute if entity @s[tag=TimeOut] run kill @e[type=tnt]
+execute if entity @s[tag=TimeOut] run kill @e[predicate=custom:indimension,type=tnt]
 execute if entity @s[tag=TimeOut] run clear @a[predicate=custom:indimension,team=Yellow] #custom:clear
 execute if entity @s[tag=TimeOut] run clear @a[predicate=custom:indimension,team=Yellow] crossbow{nova:1b}
 execute if entity @s[tag=TimeOut] run clear @a[predicate=custom:indimension,team=Blue] #custom:clear

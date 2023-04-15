@@ -1,6 +1,6 @@
 tag @s remove crusadeEnabled
 function arenaclear:unlockdecos
-kill @e[type=marker,tag=crusadeWall]
+kill @e[predicate=custom:indimension,type=marker,tag=crusadeWall]
 tag @s remove noSabers
 tag @s remove portalDecosOff
 tag @s[tag=HardcoreWasOn] add Hardcore

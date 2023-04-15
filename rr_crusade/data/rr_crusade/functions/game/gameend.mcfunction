@@ -4,7 +4,7 @@ clear @a[predicate=custom:indimension,team=Yellow] #custom:clear
 clear @a[predicate=custom:indimension,team=Yellow] crossbow{nova:1b}
 
 #Replacing Shooting Sabers
-execute if entity @s[scores={endtimer=1}] run kill @e[type=item,nbt={Item:{id:"minecraft:bow"}}]
+execute if entity @s[scores={endtimer=1}] run kill @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:bow"}}]
 execute if entity @s[scores={endtimer=1}] as @a[predicate=custom:indimension,scores={crusadekit=2}] unless entity @s[team=!Blue,team=!Yellow] run clear @s bow
 execute if entity @s[tag=BothWon,scores={endtimer=1}] run give @a[predicate=custom:indimension,team=Yellow,scores={crusadekit=2}] bow{display:{Name:'{"translate":"Shooting Saber","color":"gold","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1},{id:"sharpness",lvl:4}]}
 execute if entity @s[tag=BothWon,scores={endtimer=1}] run give @a[predicate=custom:indimension,team=Blue,scores={crusadekit=2}] bow{display:{Name:'{"translate":"Shooting Saber","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1},{id:"sharpness",lvl:4}]}
@@ -14,7 +14,7 @@ execute if entity @s[tag=BlueWon,scores={endtimer=1}] run give @a[predicate=cust
 execute if entity @s[tag=BlueWon,scores={endtimer=1}] run give @a[predicate=custom:indimension,team=Yellow,scores={crusadekit=2}] bow{display:{Name:'{"translate":"Shooting Saber","color":"gold","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks"}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1}]}
 
 #Replacing Fire Wands
-execute if entity @s[scores={endtimer=1}] as @e[type=item,nbt={Item:{id:"minecraft:blaze_rod"}}] run function items:killendweapon
+execute if entity @s[scores={endtimer=1}] as @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:blaze_rod"}}] run function items:killendweapon
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] run clear @a[predicate=custom:indimension,team=Blue,scores={crusadekit=3}] blaze_rod
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] run give @a[predicate=custom:indimension,team=Blue,scores={crusadekit=3}] blaze_rod{CustomModelData:1,Unbreakable:1b,display:{Name:'[{"text":"Fire Wand","italic":false,"bold":true,"color":"blue"}]',Lore:['[{"translate":"A special wand, made to"}]','[{"translate":"set enemies on fire!"}]']},Enchantments:[{id:"fire_aspect",lvl:2}]}
 execute if entity @s[tag=BlueWon,scores={endtimer=1}] run clear @a[predicate=custom:indimension,team=Yellow,scores={crusadekit=3}] blaze_rod

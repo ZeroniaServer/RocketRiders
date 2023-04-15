@@ -2,8 +2,8 @@
 tag @a[predicate=custom:indimension,tag=LeaveTeams,team=Yellow] add LeavingYellow
 execute as @a[predicate=custom:indimension,tag=LeavingYellow] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
 tag @a[predicate=custom:indimension,tag=LeaveTeams,team=Blue] add LeavingBlue
-execute unless entity @e[type=armor_stand,tag=chaseEnabled] as @a[predicate=custom:indimension,tag=LeavingBlue] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
-execute if entity @e[type=armor_stand,tag=chaseEnabled] as @a[predicate=custom:indimension,tag=LeavingBlue] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s","color":"dark_red"},{"text":" left the game!","color":"red"}]
+execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=chaseEnabled] as @a[predicate=custom:indimension,tag=LeavingBlue] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" left the blue team!","color":"aqua"}]
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=chaseEnabled] as @a[predicate=custom:indimension,tag=LeavingBlue] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s","color":"dark_red"},{"text":" left the game!","color":"red"}]
 tag @a[predicate=custom:indimension,tag=LeaveTeams,team=Spectator] add LeavingSpec
 execute as @a[predicate=custom:indimension,tag=LeavingSpec] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
 execute as @a[predicate=custom:indimension,tag=LeavingSpec] run tp @s @s

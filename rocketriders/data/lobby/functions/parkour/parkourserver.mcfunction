@@ -5,13 +5,13 @@
 ##Start parkour
 execute as @a[predicate=custom:indimension,tag=inParkour,gamemode=!adventure] run gamemode adventure
 
-execute as @a[predicate=custom:indimension,team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[type=marker,tag=parkourStart,limit=1,distance=..1.2] run tag @s add keepInventory
+execute as @a[predicate=custom:indimension,team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[predicate=custom:indimension,type=marker,tag=parkourStart,limit=1,distance=..1.2] run tag @s add keepInventory
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] run tag @s add inParkour
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] run tag @s remove startParkour
-execute as @a[predicate=custom:indimension,team=Lobby] at @s positioned ~ ~1 ~ unless entity @e[type=marker,tag=parkourStart,limit=1,distance=..1.2] run tag @s remove keepInventory
+execute as @a[predicate=custom:indimension,team=Lobby] at @s positioned ~ ~1 ~ unless entity @e[predicate=custom:indimension,type=marker,tag=parkourStart,limit=1,distance=..1.2] run tag @s remove keepInventory
 
 ##Concrete detection
 execute as @a[predicate=custom:indimension,team=Lobby] run tag @s remove onConcrete
@@ -42,7 +42,7 @@ execute as @a[predicate=custom:indimension,team=Lobby,tag=inParkour] at @s unles
 effect clear @a[predicate=custom:indimension,team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (non-duel mode)
-execute unless entity @e[type=armor_stand,tag=rr_duel,limit=1] run item replace entity @a[predicate=custom:indimension,team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},HideFlags:7}
+execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=rr_duel,limit=1] run item replace entity @a[predicate=custom:indimension,team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},HideFlags:7}
 execute if entity @s[tag=noYZELO] run item replace entity @a[predicate=custom:indimension,team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},HideFlags:7}
 
 ##Safety features
@@ -61,5 +61,5 @@ execute as @a[predicate=custom:indimension,team=Lobby,tag=!inParkour] at @s if b
 execute as @a[predicate=custom:indimension,team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
 
 ##Return to Lobby Pad
-execute as @e[type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
-execute as @e[type=area_effect_cloud,tag=parkourReturn] at @s positioned ~ ~ ~ as @a[predicate=custom:indimension,team=Lobby,distance=..2] run trigger LobbyWarp set 1
+execute as @e[predicate=custom:indimension,type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
+execute as @e[predicate=custom:indimension,type=area_effect_cloud,tag=parkourReturn] at @s positioned ~ ~ ~ as @a[predicate=custom:indimension,team=Lobby,distance=..2] run trigger LobbyWarp set 1

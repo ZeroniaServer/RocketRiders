@@ -101,8 +101,8 @@ execute if entity @s[tag=GameStarted] run gamemode survival @a[predicate=custom:
 #Hotfix for being able to keep charging bow from queue
 execute if entity @s[tag=GameStarted,tag=!noSabers] run clear @a[predicate=custom:indimension,team=Blue] bow
 execute if entity @s[tag=GameStarted,tag=!noSabers] run clear @a[predicate=custom:indimension,team=Yellow] bow
-execute if entity @s[tag=GameStarted,tag=!noSabers] as @a[predicate=custom:indimension,team=Blue] unless entity @e[type=armor_stand,tag=chaseEnabled] run function game:saberblue
-execute if entity @s[tag=GameStarted,tag=!noSabers] as @a[predicate=custom:indimension,team=Blue] if entity @e[type=armor_stand,tag=chaseEnabled] run function rr_chase:chasegear/givegear
+execute if entity @s[tag=GameStarted,tag=!noSabers] as @a[predicate=custom:indimension,team=Blue] unless entity @e[predicate=custom:indimension,type=armor_stand,tag=chaseEnabled] run function game:saberblue
+execute if entity @s[tag=GameStarted,tag=!noSabers] as @a[predicate=custom:indimension,team=Blue] if entity @e[predicate=custom:indimension,type=armor_stand,tag=chaseEnabled] run function rr_chase:chasegear/givegear
 execute if entity @s[tag=GameStarted,tag=!noSabers] as @a[predicate=custom:indimension,team=Yellow] run function game:saberyellow
 execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[predicate=custom:indimension,team=Blue] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]
 execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[predicate=custom:indimension,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
@@ -123,7 +123,7 @@ execute if entity @s[tag=GameStarted] run scoreboard players operation @s origBC
 execute if entity @s[tag=GameStarted] run scoreboard players operation @s origYCount = @s yellowsCount
 execute if entity @s[tag=GameStarted] run function lobby:credits/restart
 execute if entity @s[tag=GameStarted] run gamerule mobGriefing true
-execute if entity @s[tag=GameStarted] run kill @e[type=arrow]
+execute if entity @s[tag=GameStarted] run kill @e[predicate=custom:indimension,type=arrow]
 execute if entity @s[tag=GameStarted] as @a[predicate=custom:indimension] unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow{Lobby:1b}
 scoreboard players set @s[tag=GameStarted] count 0
 tag @s[tag=GameStarted] remove bossbarOverride

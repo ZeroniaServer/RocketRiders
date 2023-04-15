@@ -1,16 +1,16 @@
 #Reset pregame queue
-execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 96 -101 195 95 white_stained_glass
-execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 94 -101 195 93 orange_stained_glass
-execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 91 -101 195 92 yellow_stained_glass
-execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 60 -101 195 61 white_stained_glass
-execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 62 -101 195 63 cyan_stained_glass
-execute if entity @e[type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 65 -101 195 64 blue_stained_glass
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 96 -101 195 95 white_stained_glass
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 94 -101 195 93 orange_stained_glass
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 91 -101 195 92 yellow_stained_glass
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 60 -101 195 61 white_stained_glass
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 62 -101 195 63 cyan_stained_glass
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!swapEnabled,tag=!Hardcore] run fill -89 201 65 -101 195 64 blue_stained_glass
 
-execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/tetrisreset
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection] run function rr_swap:items/tetrisreset
 scoreboard players reset * swapside
 
 #ICBM reset
-kill @e[type=egg,tag=ICBM]
-kill @e[type=marker,tag=ICBMtracker]
-kill @e[type=chicken]
+kill @e[predicate=custom:indimension,type=egg,tag=ICBM]
+kill @e[predicate=custom:indimension,type=marker,tag=ICBMtracker]
+kill @e[predicate=custom:indimension,type=chicken]
 scoreboard players reset $highest ICBMID

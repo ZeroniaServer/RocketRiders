@@ -4,8 +4,8 @@
 
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
-scoreboard players reset @e[type=marker,tag=YellowPlatform] pearlOwnerUUID
-scoreboard players reset @e[type=marker,tag=BluePlatform] pearlOwnerUUID
+scoreboard players reset @e[predicate=custom:indimension,type=marker,tag=YellowPlatform] pearlOwnerUUID
+scoreboard players reset @e[predicate=custom:indimension,type=marker,tag=BluePlatform] pearlOwnerUUID
 tag @a[predicate=custom:indimension] remove canopyTP
 function everytick:spawnables
 tag @s[scores={endtimer=1}] remove GameStarted
@@ -16,7 +16,7 @@ execute if entity @s[scores={endtimer=1}] run effect clear @a[predicate=custom:i
 execute if entity @s[scores={endtimer=1}] run effect clear @a[predicate=custom:indimension,team=Yellow]
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[predicate=custom:indimension,team=Blue] bow
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[predicate=custom:indimension,team=Yellow] bow
-execute if entity @s[scores={endtimer=1},tag=!noSabers] run kill @e[type=item,nbt={Item:{id:"minecraft:bow"}}]
+execute if entity @s[scores={endtimer=1},tag=!noSabers] run kill @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:bow"}}]
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run function game:endsabers
 execute if entity @s[tag=BlueWon] run effect give @a[predicate=custom:indimension,team=Yellow] weakness infinite 255 true
 execute if entity @s[tag=YellowWon] run effect give @a[predicate=custom:indimension,team=Blue] weakness infinite 255 true
@@ -26,10 +26,10 @@ execute if entity @s[scores={endtimer=1}] run tag @a[predicate=custom:indimensio
 execute if entity @s[scores={endtimer=1}] as @a[predicate=custom:indimension] run trigger LeaveMidgame set -1
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[predicate=custom:indimension,team=Blue]
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[predicate=custom:indimension,team=Yellow]
-execute if entity @s[scores={endtimer=1}] run kill @e[type=ender_pearl]
-execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=yellowjoinpad] add CancelJoin
-execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=bluejoinpad] add CancelJoin
-execute if entity @s[scores={endtimer=1}] run tag @e[type=marker,tag=specjoinpad] add CancelJoin
+execute if entity @s[scores={endtimer=1}] run kill @e[predicate=custom:indimension,type=ender_pearl]
+execute if entity @s[scores={endtimer=1}] run tag @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] add CancelJoin
+execute if entity @s[scores={endtimer=1}] run tag @e[predicate=custom:indimension,type=marker,tag=bluejoinpad] add CancelJoin
+execute if entity @s[scores={endtimer=1}] run tag @e[predicate=custom:indimension,type=marker,tag=specjoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=2..3}] as @a[predicate=custom:indimension,predicate=custom:is_on_fire] unless entity @s[team=!Blue,team=!Yellow] at @s run function game:putoutfire
 execute if entity @s[scores={endtimer=1..2}] as @a[predicate=custom:indimension] unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance infinite 255 true
 execute if entity @s[scores={endtimer=1..2}] as @a[predicate=custom:indimension] unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
@@ -39,14 +39,14 @@ execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remov
 execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
 
 #Fireballs can't be punched (credit: Miolith)
-execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[type=fireball,tag=Still] run scoreboard players add @s endFireball 1
-execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[type=fireball,tag=StillOb] run scoreboard players add @s endFireball 1
-execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[type=fireball,scores={endFireball=1}] at @s run summon area_effect_cloud ~ ~-.375 ~ {Duration:2000000,Radius:0,NoGravity:1b,Tags:["endFireballAEC","endFireball"],Passengers:[{id:"minecraft:fireball",Tags:["endFireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}]}
-execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[type=fireball,tag=endFireball] at @s run data modify entity @s Item set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
-execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[type=fireball,tag=endFireball] at @s run data modify entity @s Tags set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
-execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[type=area_effect_cloud,tag=endFireballAEC] at @s run kill @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1]
-execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[type=area_effect_cloud,tag=endFireballAEC] at @s run tag @e[type=fireball,limit=1,sort=nearest,distance=..1] add endFireball
-execute if entity @s[tag=!fireballOverride,scores={endtimer=1..}] as @e[type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
+execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[predicate=custom:indimension,type=fireball,tag=Still] run scoreboard players add @s endFireball 1
+execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[predicate=custom:indimension,type=fireball,tag=StillOb] run scoreboard players add @s endFireball 1
+execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[predicate=custom:indimension,type=fireball,scores={endFireball=1}] at @s run summon area_effect_cloud ~ ~-.375 ~ {Duration:2000000,Radius:0,NoGravity:1b,Tags:["endFireballAEC","endFireball"],Passengers:[{id:"minecraft:fireball",Tags:["endFireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}]}
+execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[predicate=custom:indimension,type=fireball,tag=endFireball] at @s run data modify entity @s Item set from entity @e[predicate=custom:indimension,type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
+execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[predicate=custom:indimension,type=fireball,tag=endFireball] at @s run data modify entity @s Tags set from entity @e[predicate=custom:indimension,type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
+execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[predicate=custom:indimension,type=area_effect_cloud,tag=endFireballAEC] at @s run kill @e[predicate=custom:indimension,type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1]
+execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[predicate=custom:indimension,type=area_effect_cloud,tag=endFireballAEC] at @s run tag @e[predicate=custom:indimension,type=fireball,limit=1,sort=nearest,distance=..1] add endFireball
+execute if entity @s[tag=!fireballOverride,scores={endtimer=1..}] as @e[predicate=custom:indimension,type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
 
 ##Tie actionbar notifications
 execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=!BothWon,scores={endtimer=1..20}] run title @a[predicate=custom:indimension,team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"5","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
@@ -76,20 +76,20 @@ execute if entity @s[scores={endtimer=570}] run function achievements:scoresrese
 execute if entity @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute if entity @s[scores={endtimer=570},tag=SpamClick] as @a[predicate=custom:indimension] run attribute @s minecraft:generic.attack_speed base set 4
 #Reverse Sonar glowing
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=arrow] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=snowball] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=egg] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=firework_rocket] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=fireball] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=dragon_fireball] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=potion] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=tnt] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=tnt_minecart] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=item] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=armor_stand,tag=VortexItemBlue] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=armor_stand,tag=VortexItemYellow] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=armor_stand,tag=VortexItemFeathered] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[type=armor_stand,tag=Bot] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=arrow] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=snowball] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=egg] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=firework_rocket] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=fireball] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=dragon_fireball] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=potion] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=tnt] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=tnt_minecart] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=item] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=armor_stand,tag=VortexItemBlue] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=armor_stand,tag=VortexItemYellow] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=armor_stand,tag=VortexItemFeathered] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[predicate=custom:indimension,type=armor_stand,tag=Bot] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[predicate=custom:indimension,team=Spectator] LeaveGame 1
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[predicate=custom:indimension,team=Blue] LeaveGame 1
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[predicate=custom:indimension,team=Yellow] LeaveGame 1

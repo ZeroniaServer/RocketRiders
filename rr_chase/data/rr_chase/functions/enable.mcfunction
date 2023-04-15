@@ -29,9 +29,9 @@ tag @s add customSaberMsg
 team modify Blue friendlyFire true
 
 #haha funny
-tag @e[type=marker,tag=yellowjoinpad] add tempyellow
-tag @e[type=marker,tag=yellowjoinpad] add bluejoinpad
-tag @e[type=marker,tag=yellowjoinpad] remove yellowjoinpad
+tag @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] add tempyellow
+tag @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] add bluejoinpad
+tag @e[predicate=custom:indimension,type=marker,tag=yellowjoinpad] remove yellowjoinpad
 
 #enable arrows/utilities
 tag @s[tag=!rngArrows] add arrowsWasOff

@@ -7,9 +7,9 @@ fill -11 36 -75 35 59 -73 air
 fill -11 36 73 35 59 75 air
 
 #> Restore glass when game starts
-execute as @e[type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement
+execute as @e[predicate=custom:indimension,type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement
 function rr_crusade:game/glassplacement
-scoreboard players set @e[type=marker,tag=crusadeWall] CmdData 20
+scoreboard players set @e[predicate=custom:indimension,type=marker,tag=crusadeWall] CmdData 20
 
 #> Pregame bases
 fill -101 201 65 -89 195 64 deepslate_bricks
@@ -112,14 +112,14 @@ fill 36 51 40 40 47 40 light[level=1]
 scoreboard players set $YellowShield crusadehp 200
 scoreboard players set $CYA crusadehp 100
 scoreboard players set $CYB crusadehp 100
-execute unless entity @e[type=end_crystal,tag=CrusadeYellowA] run summon end_crystal -14 49 37 {Tags:["CrusadeEntity","CrusadeYellowA"],BeamTarget:{X:12,Y:50,Z:52},ShowBottom:0b}
-execute unless entity @e[type=end_crystal,tag=CrusadeYellowB] run summon end_crystal 38 49 37 {Tags:["CrusadeEntity","CrusadeYellowB"],BeamTarget:{X:12,Y:50,Z:52},ShowBottom:0b}
+execute unless entity @e[predicate=custom:indimension,type=end_crystal,tag=CrusadeYellowA] run summon end_crystal -14 49 37 {Tags:["CrusadeEntity","CrusadeYellowA"],BeamTarget:{X:12,Y:50,Z:52},ShowBottom:0b}
+execute unless entity @e[predicate=custom:indimension,type=end_crystal,tag=CrusadeYellowB] run summon end_crystal 38 49 37 {Tags:["CrusadeEntity","CrusadeYellowB"],BeamTarget:{X:12,Y:50,Z:52},ShowBottom:0b}
 
 scoreboard players set $BlueShield crusadehp 200
 scoreboard players set $CBA crusadehp 100
 scoreboard players set $CBB crusadehp 100
-execute unless entity @e[type=end_crystal,tag=CrusadeBlueA] run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],BeamTarget:{X:12,Y:50,Z:-52},ShowBottom:0b}
-execute unless entity @e[type=end_crystal,tag=CrusadeBlueB] run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],BeamTarget:{X:12,Y:50,Z:-52},ShowBottom:0b}
+execute unless entity @e[predicate=custom:indimension,type=end_crystal,tag=CrusadeBlueA] run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],BeamTarget:{X:12,Y:50,Z:-52},ShowBottom:0b}
+execute unless entity @e[predicate=custom:indimension,type=end_crystal,tag=CrusadeBlueB] run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],BeamTarget:{X:12,Y:50,Z:-52},ShowBottom:0b}
 
 #Set pre-game kit stands
 #blue
@@ -164,32 +164,32 @@ summon armor_stand 14 65 63 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect",
 setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{Text1:'{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}',Text2:'{"text":"Mage","bold":true,"color":"#008805"}'}
 
 #kit stand items
-execute as @e[type=armor_stand,tag=KnightStand] run item replace entity @s armor.head with netherite_helmet
-execute as @e[type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
-execute as @e[type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
-execute as @e[type=armor_stand,tag=KnightStand] run item replace entity @s armor.legs with iron_leggings
-execute as @e[type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
-execute as @e[type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
-execute as @e[type=armor_stand,tag=KnightStand] run item replace entity @s weapon.mainhand with stone_sword
-execute as @e[type=armor_stand,tag=KnightStand] run item replace entity @s weapon.offhand with shield
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s armor.head with netherite_helmet
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s armor.legs with iron_leggings
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s weapon.mainhand with stone_sword
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s weapon.offhand with shield
 
-execute as @e[type=armor_stand,tag=ArcherStand] run item replace entity @s armor.head with chainmail_helmet
-execute as @e[type=armor_stand,tag=ArcherStand] run item replace entity @s armor.chest with chainmail_chestplate
-execute as @e[type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
-execute as @e[type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
-execute as @e[type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
-execute as @e[type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
-execute as @e[type=armor_stand,tag=ArcherStand] run item replace entity @s weapon.mainhand with bow
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand] run item replace entity @s armor.head with chainmail_helmet
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand] run item replace entity @s armor.chest with chainmail_chestplate
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand] run item replace entity @s weapon.mainhand with bow
 
-execute as @e[type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.head with warped_fence_gate
-execute as @e[type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.head with birch_fence_gate
-execute as @e[type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
-execute as @e[type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
-execute as @e[type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
-execute as @e[type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
-execute as @e[type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
-execute as @e[type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
-execute as @e[type=armor_stand,tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.head with warped_fence_gate
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.head with birch_fence_gate
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
 
 #> Kit stand light blocks
 fill 15 64 -64 13 67 -62 light[level=0] replace air

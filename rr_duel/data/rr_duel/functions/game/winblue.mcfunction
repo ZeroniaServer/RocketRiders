@@ -13,7 +13,7 @@ effect give @a[predicate=custom:indimension,team=Yellow] instant_health 1 100
 
 execute unless score Blue: RoundsWon matches 2.. if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:aftergameblue
 execute unless score Blue: RoundsWon matches 2.. run function achievements:scoresreset
-execute unless score Blue: RoundsWon matches 2.. run kill @e[type=tnt]
+execute unless score Blue: RoundsWon matches 2.. run kill @e[predicate=custom:indimension,type=tnt]
 execute unless score Blue: RoundsWon matches 2.. as @a[predicate=custom:indimension,team=Blue] at @s run stopsound @s
 execute unless score Blue: RoundsWon matches 2.. as @a[predicate=custom:indimension,team=Yellow] at @s run stopsound @s
 execute unless score Blue: RoundsWon matches 2.. as @a[predicate=custom:indimension] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 100 0

@@ -13,12 +13,12 @@ execute as @a[predicate=custom:indimension,team=Blue,nbt=!{SpawnX:12,SpawnY:64,S
 execute as @a[predicate=custom:indimension,team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
 #endstone regeneration
-execute as @e[type=marker,tag=airDetectBlue] at @s run function rr_ctf:everytick/airdetectblue
-execute as @e[type=marker,tag=airDetectYellow] at @s run function rr_ctf:everytick/airdetectyellow
+execute as @e[predicate=custom:indimension,type=marker,tag=airDetectBlue] at @s run function rr_ctf:everytick/airdetectblue
+execute as @e[predicate=custom:indimension,type=marker,tag=airDetectYellow] at @s run function rr_ctf:everytick/airdetectyellow
 
 #Overtime sudden death
-execute as @e[type=armor_stand,tag=Selection,scores={gametime=36000},tag=doTying] run tag @s add CTFOvertime
-execute as @e[type=armor_stand,tag=Selection,tag=CTFOvertime] run function rr_ctf:everytick/overtime
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,scores={gametime=36000},tag=doTying] run tag @s add CTFOvertime
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CTFOvertime] run function rr_ctf:everytick/overtime
 
 #flag logic
 function rr_ctf:everytick/flag

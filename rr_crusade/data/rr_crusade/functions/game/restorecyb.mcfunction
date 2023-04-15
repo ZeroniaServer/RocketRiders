@@ -9,7 +9,7 @@ execute unless score $CYB crusadehp matches 1.. as @a[predicate=custom:indimensi
 execute unless score $CYB crusadehp matches 1.. as @a[predicate=custom:indimension,team=Yellow] at @s run playsound minecraft:block.glass.break master @s ~ ~ ~ 1 0
 
 execute if score $CYB crusadehp matches 1.. run gamerule showDeathMessages false
-execute if score $CYB crusadehp matches 1.. positioned 38 49 37 as @e[type=player,team=!Spectator,team=!Developer,team=!Lobby,distance=..5] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" went too close to an End Crystal","color":"white"}]
+execute if score $CYB crusadehp matches 1.. positioned 38 49 37 as @e[predicate=custom:indimension,type=player,team=!Spectator,team=!Developer,team=!Lobby,distance=..5] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" went too close to an End Crystal","color":"white"}]
 execute if score $CYB crusadehp matches 1.. positioned 38 49 37 run kill @a[predicate=custom:indimension,team=!Spectator,team=!Developer,team=!Lobby,distance=..5]
 execute if score $CYB crusadehp matches 1.. run gamerule showDeathMessages true
 execute if score $CYB crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:yellow_stained_glass

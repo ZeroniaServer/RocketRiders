@@ -13,9 +13,9 @@ execute if entity @s[scores={SDtime=1}] as @a[predicate=custom:indimension] run 
 scoreboard players reset @s endtimer
 execute if entity @s[scores={SDtime=1..15}] run tag @a[predicate=custom:indimension] remove Winner
 execute if entity @s[scores={SDtime=1..15}] run tag @a[predicate=custom:indimension] remove Loser
-execute if entity @s[scores={SDtime=1..15}] run kill @e[type=tnt]
-execute if entity @s[scores={SDtime=1..15}] run kill @e[type=tnt_minecart]
-execute if entity @s[scores={SDtime=1..15}] run kill @e[type=creeper]
+execute if entity @s[scores={SDtime=1..15}] run kill @e[predicate=custom:indimension,type=tnt]
+execute if entity @s[scores={SDtime=1..15}] run kill @e[predicate=custom:indimension,type=tnt_minecart]
+execute if entity @s[scores={SDtime=1..15}] run kill @e[predicate=custom:indimension,type=creeper]
 
 ##Preparing for Sudden Death
 execute if entity @s[scores={SDtime=1}] run title @a[predicate=custom:indimension,team=Blue] actionbar [""]
@@ -24,8 +24,8 @@ execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
 execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[predicate=custom:indimension,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[predicate=custom:indimension,team=Yellow] 12 64 66 180 0
-execute if entity @s[scores={SDtime=1}] run scoreboard players reset @e[type=marker,tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
-execute if entity @s[scores={SDtime=1}] run scoreboard players reset @e[type=marker,tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
+execute if entity @s[scores={SDtime=1}] run scoreboard players reset @e[predicate=custom:indimension,type=marker,tag=YellowPlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
+execute if entity @s[scores={SDtime=1}] run scoreboard players reset @e[predicate=custom:indimension,type=marker,tag=BluePlatform,scores={PlatTime=1..40},limit=1,sort=nearest] pearlOwnerUUID
 execute if entity @s[scores={SDtime=1}] at @s run scoreboard players set 2 MaxItemSec 2
 execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[predicate=custom:indimension] armor.head with air
@@ -33,7 +33,7 @@ execute if entity @s[scores={SDtime=1}] at @s run clear @a[predicate=custom:indi
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[predicate=custom:indimension] resistance
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[predicate=custom:indimension] weakness
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[predicate=custom:indimension] regeneration
-execute if entity @s[scores={SDtime=1},tag=!noSabers] as @e[type=item,nbt={Item:{id:"minecraft:bow"}}] run function items:killendweapon
+execute if entity @s[scores={SDtime=1},tag=!noSabers] as @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:bow"}}] run function items:killendweapon
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst,tag=!noSabers] run clear @a[predicate=custom:indimension,team=Yellow] bow
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst,tag=!noSabers] as @a[predicate=custom:indimension,team=Yellow] run function game:saberyellow
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] run clear @a[predicate=custom:indimension,team=Blue] bow
@@ -47,16 +47,16 @@ execute if entity @s[scores={SDtime=2}] run gamemode survival @a[predicate=custo
 execute if entity @s[scores={SDtime=1}] run tag @s add GameStarted
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
 #Fix endgame fireballs
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!specialEndFireball] run scoreboard players add @s endFireball 1
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!specialEndFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Owner set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Owner
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Item set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball2] at @s run data modify entity @s Tags set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run kill @e[type=fireball,tag=!specialEndFireball,scores={endFireball=1}]
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[type=fireball,tag=endFireball,tag=!specialEndFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run tag @e[type=fireball,tag=!specialEndFireball] remove endFireball
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run tag @e[type=fireball,tag=!specialEndFireball] remove endFireball2
-execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run kill @e[type=area_effect_cloud,tag=endFireballAEC,tag=!specialEndFireball]
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[predicate=custom:indimension,type=fireball,tag=endFireball,tag=!specialEndFireball] run scoreboard players add @s endFireball 1
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[predicate=custom:indimension,type=fireball,tag=endFireball,tag=!specialEndFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[predicate=custom:indimension,type=fireball,tag=endFireball2] at @s run data modify entity @s Owner set from entity @e[predicate=custom:indimension,type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Owner
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[predicate=custom:indimension,type=fireball,tag=endFireball2] at @s run data modify entity @s Item set from entity @e[predicate=custom:indimension,type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[predicate=custom:indimension,type=fireball,tag=endFireball2] at @s run data modify entity @s Tags set from entity @e[predicate=custom:indimension,type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Tags
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run kill @e[predicate=custom:indimension,type=fireball,tag=!specialEndFireball,scores={endFireball=1}]
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[predicate=custom:indimension,type=fireball,tag=endFireball,tag=!specialEndFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run tag @e[predicate=custom:indimension,type=fireball,tag=!specialEndFireball] remove endFireball
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run tag @e[predicate=custom:indimension,type=fireball,tag=!specialEndFireball] remove endFireball2
+execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] run kill @e[predicate=custom:indimension,type=area_effect_cloud,tag=endFireballAEC,tag=!specialEndFireball]
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon

@@ -1,10 +1,10 @@
 #management
-tag @e[type=armor_stand,tag=rr_crusade,limit=1] add enabled
+tag @e[predicate=custom:indimension,type=armor_stand,tag=rr_crusade,limit=1] add enabled
 execute if entity @s[tag=SignsRefreshed] run function rr_crusade:arenaclear/customizer
-execute if score @s SetGamemode = @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID unless entity @s[tag=decosLocked] run scoreboard players add @s refreshsigns 1
-execute if score @s SetGamemode = @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID unless entity @s[tag=decosLocked] run function arenaclear:lockdecos
+execute if score @s SetGamemode = @e[predicate=custom:indimension,type=armor_stand,tag=rr_crusade,limit=1] gamemodeID unless entity @s[tag=decosLocked] run scoreboard players add @s refreshsigns 1
+execute if score @s SetGamemode = @e[predicate=custom:indimension,type=armor_stand,tag=rr_crusade,limit=1] gamemodeID unless entity @s[tag=decosLocked] run function arenaclear:lockdecos
 
-execute unless score @s SetGamemode = @e[type=armor_stand,tag=rr_crusade,limit=1] gamemodeID run function rr_crusade:disable
+execute unless score @s SetGamemode = @e[predicate=custom:indimension,type=armor_stand,tag=rr_crusade,limit=1] gamemodeID run function rr_crusade:disable
 
 #tips
 execute unless entity @s[tag=SMCustom] run function rr_crusade:tip
@@ -19,7 +19,7 @@ function everytick:no_drop
 scoreboard players reset @a[predicate=custom:indimension,team=!Blue,team=!Yellow] crusadekit
 
 #Arrow pickup
-execute as @s[tag=!GameEnd] if entity @e[type=arrow] run function rr_crusade:game/arrow_pickup
+execute as @s[tag=!GameEnd] if entity @e[predicate=custom:indimension,type=arrow] run function rr_crusade:game/arrow_pickup
 
 #kits
 execute as @s[tag=EditedSettings,tag=!GameEnd] run scoreboard players enable @a[predicate=custom:indimension,team=!Lobby,team=!Developer,team=!Spectator] crusadechange
@@ -52,13 +52,13 @@ execute unless entity @s[tag=GameStarted] run scoreboard players reset @a[predic
 execute if entity @s[tag=GameStarted] run scoreboard players reset @a[predicate=custom:indimension,scores={crusadechange=1..,deathCooldown=5}] crusadechange
 
 #reset
-execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] run function rr_crusade:arenaclear/baseplacement
-execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @a[predicate=custom:indimension] remove informMe
-execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a[predicate=custom:indimension] at @s run function arenaclear:notifystart
-execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[predicate=custom:indimension] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Crusade","color":"light_purple","hoverEvent":{"action":"show_text","contents":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy crystals and portals\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Players choose Kits at their bases\n"},{"text":"- Bases are castles made of deepslate bricks\n"},{"text":"- Platform between the bases allows close combat\n"},{"text":"- Destroy both enemy crystals to unlock enemy portal\n"},{"text":"- Item Stacking is enabled\n"},{"text":"Kits:\n","color":"aqua"},{"text":"- Archers get a Shooting Saber and lightning missiles\n"},{"text":"- Knights get a Knight Sword/Shield and heavy missiles\n"},{"text":"- Mages get a Fire Wand and normal missiles"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run function modifiers:notifymodifiers
-execute if entity @e[type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @s add crusadeLast
-tag @e[type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
+execute if entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear,tag=Cleared] run function rr_crusade:arenaclear/baseplacement
+execute if entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @a[predicate=custom:indimension] remove informMe
+execute if entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a[predicate=custom:indimension] at @s run function arenaclear:notifystart
+execute if entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[predicate=custom:indimension] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Selected Gamemode: ","color":"gray"},{"text":"Crusade","color":"light_purple","hoverEvent":{"action":"show_text","contents":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy crystals and portals\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Players choose Kits at their bases\n"},{"text":"- Bases are castles made of deepslate bricks\n"},{"text":"- Platform between the bases allows close combat\n"},{"text":"- Destroy both enemy crystals to unlock enemy portal\n"},{"text":"- Item Stacking is enabled\n"},{"text":"Kits:\n","color":"aqua"},{"text":"- Archers get a Shooting Saber and lightning missiles\n"},{"text":"- Knights get a Knight Sword/Shield and heavy missiles\n"},{"text":"- Mages get a Fire Wand and normal missiles"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute if entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run function modifiers:notifymodifiers
+execute if entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @s add crusadeLast
+tag @e[predicate=custom:indimension,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners of active settings
 execute if entity @s[tag=EditedSettings] as @a[predicate=custom:indimension,tag=informMe] run function arenaclear:notifystart

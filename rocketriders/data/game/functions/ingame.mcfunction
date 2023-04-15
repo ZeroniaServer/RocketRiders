@@ -45,8 +45,8 @@ function everytick:spawnables
 function achievements:gain
 function everytick:clear_spawnblocks
 function everytick:no_fall
-execute if entity @e[type=tnt_minecart] run function everytick:init_kill_carts
-execute if entity @e[type=arrow] run function everytick:fire_arrow
+execute if entity @e[predicate=custom:indimension,type=tnt_minecart] run function everytick:init_kill_carts
+execute if entity @e[predicate=custom:indimension,type=arrow] run function everytick:fire_arrow
 
 ##Modifiers
 function modifiers:modifiers
@@ -82,13 +82,13 @@ execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 1 48 73
 execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 23 48 73 23 47 73 air
 
 ##Respawn handling
-execute as @e[type=marker,tag=YellowSpawnZone] at @s as @a[predicate=custom:indimension,team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0
-execute as @e[type=marker,tag=YellowSpawnZone] at @s as @a[predicate=custom:indimension,team=Yellow,tag=FellInVoid,distance=..6,scores={respawn=1..}] run scoreboard players add @s FellVoid 1
-execute as @e[type=marker,tag=YellowSpawnZone] at @s as @a[predicate=custom:indimension,team=Yellow,tag=FellInVoid,distance=..6,scores={respawn=1..}] run tag @s remove FellInVoid
-execute as @e[type=marker,tag=BlueSpawnZone] at @s as @a[predicate=custom:indimension,team=Blue,tag=FellInVoid,distance=..6,scores={respawn=1..}] run scoreboard players add @s FellVoid 1
-execute as @e[type=marker,tag=BlueSpawnZone] at @s as @a[predicate=custom:indimension,team=Blue,tag=FellInVoid,distance=..6,scores={respawn=1..}] run tag @s remove FellInVoid
-execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
-execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
+execute as @e[predicate=custom:indimension,type=marker,tag=YellowSpawnZone] at @s as @a[predicate=custom:indimension,team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0
+execute as @e[predicate=custom:indimension,type=marker,tag=YellowSpawnZone] at @s as @a[predicate=custom:indimension,team=Yellow,tag=FellInVoid,distance=..6,scores={respawn=1..}] run scoreboard players add @s FellVoid 1
+execute as @e[predicate=custom:indimension,type=marker,tag=YellowSpawnZone] at @s as @a[predicate=custom:indimension,team=Yellow,tag=FellInVoid,distance=..6,scores={respawn=1..}] run tag @s remove FellInVoid
+execute as @e[predicate=custom:indimension,type=marker,tag=BlueSpawnZone] at @s as @a[predicate=custom:indimension,team=Blue,tag=FellInVoid,distance=..6,scores={respawn=1..}] run scoreboard players add @s FellVoid 1
+execute as @e[predicate=custom:indimension,type=marker,tag=BlueSpawnZone] at @s as @a[predicate=custom:indimension,team=Blue,tag=FellInVoid,distance=..6,scores={respawn=1..}] run tag @s remove FellInVoid
+execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[predicate=custom:indimension,type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
+execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[predicate=custom:indimension,type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
 tag @a[predicate=custom:indimension,team=!Yellow,team=!Blue] remove FellInVoid
 scoreboard players reset @a[predicate=custom:indimension,team=!Yellow,team=!Blue] respawn
 

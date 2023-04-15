@@ -18,8 +18,8 @@ execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run sc
 execute if entity @s[tag=Minute] run function rr_swap:items/minutemix
 
 #Respawn handling
-execute as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
-execute as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
+execute as @e[predicate=custom:indimension,type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
+execute as @e[predicate=custom:indimension,type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
 
 #Give back fireballs
 execute as @a[predicate=custom:indimension,tag=BackFireball] run function rr_swap:items/util/givefireball

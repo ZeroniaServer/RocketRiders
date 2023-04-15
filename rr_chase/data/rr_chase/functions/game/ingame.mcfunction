@@ -35,7 +35,7 @@ function rr_chase:chaseblocks/chasecrystal
 
 # Respawn chase blocks
 scoreboard players set $ChaseBlockCheck CmdData 0
-execute as @e[type=marker,tag=ChaseBlock] run scoreboard players add $ChaseBlockCheck CmdData 1
+execute as @e[predicate=custom:indimension,type=marker,tag=ChaseBlock] run scoreboard players add $ChaseBlockCheck CmdData 1
 execute if score $ChaseBlockCheck CmdData matches ..145 run scoreboard players set $ChaseBlocks CmdData 5
 execute if score $ChaseBlockCheck CmdData matches ..145 run function rr_chase:chaseblocks/spawn
 

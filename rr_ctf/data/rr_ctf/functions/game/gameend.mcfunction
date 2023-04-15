@@ -2,13 +2,13 @@ clear @a[predicate=custom:indimension,team=Blue] #custom:clear
 clear @a[predicate=custom:indimension,team=Blue] crossbow{nova:1b}
 clear @a[predicate=custom:indimension,team=Yellow] #custom:clear
 clear @a[predicate=custom:indimension,team=Yellow] crossbow{nova:1b}
-execute if entity @s[scores={endtimer=1}] as @e[type=item,nbt={Item:{id:"minecraft:netherite_pickaxe"}}] run function items:killendweapon
+execute if entity @s[scores={endtimer=1}] as @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:netherite_pickaxe"}}] run function items:killendweapon
 execute if entity @s[scores={endtimer=1},tag=BlueWon] run clear @a[predicate=custom:indimension,team=Yellow] netherite_pickaxe
 execute if entity @s[scores={endtimer=1},tag=BlueWon] run give @a[predicate=custom:indimension,team=Yellow] netherite_pickaxe{display:{Name:'{"translate":"Piercing Pickaxe","color":"gold","bold":true,"italic":false}',Lore:['{"translate":"A tool used both for"}','{"translate":"mining and melee attacks."}']},HideFlags:31,Unbreakable:1b,Enchantments:[{id:"unbreaking",lvl:4}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:-2.2,Operation:0,UUID:[I;346953296,-1115273365,-1997860529,1241626160],Slot:"mainhand"}]}
 execute if entity @s[scores={endtimer=1},tag=YellowWon] run clear @a[predicate=custom:indimension,team=Blue] netherite_pickaxe
 execute if entity @s[scores={endtimer=1},tag=YellowWon] run give @a[predicate=custom:indimension,team=Blue] netherite_pickaxe{display:{Name:'{"translate":"Piercing Pickaxe","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"A tool used both for"}','{"translate":"mining and melee attacks."}']},HideFlags:31,Unbreakable:1b,Enchantments:[{id:"unbreaking",lvl:4}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:-2.2,Operation:0,UUID:[I;346953296,-1115273365,-1997860529,1241626160],Slot:"mainhand"}]}
-execute if entity @s[scores={endtimer=1..}] run kill @e[type=marker,tag=airDetectBlue]
-execute if entity @s[scores={endtimer=1..}] run kill @e[type=marker,tag=airDetectYellow]
+execute if entity @s[scores={endtimer=1..}] run kill @e[predicate=custom:indimension,type=marker,tag=airDetectBlue]
+execute if entity @s[scores={endtimer=1..}] run kill @e[predicate=custom:indimension,type=marker,tag=airDetectYellow]
 execute if entity @s[scores={endtimer=1..}] run fill -9 74 68 -15 64 61 moving_piston replace air
 execute if entity @s[scores={endtimer=1..}] run fill 35 74 68 29 64 61 moving_piston replace air
 execute if entity @s[scores={endtimer=1..}] run fill -9 74 -68 -15 64 -61 moving_piston replace air
@@ -20,7 +20,7 @@ execute if entity @s[scores={endtimer=2..}] run tag @a[predicate=custom:indimens
 execute if entity @s[scores={endtimer=2..}] run tag @a[predicate=custom:indimension] remove CarryFY2
 execute if entity @s[scores={endtimer=2..}] run tag @a[predicate=custom:indimension] remove CarryFB1
 execute if entity @s[scores={endtimer=2..}] run tag @a[predicate=custom:indimension] remove CarryFB2
-execute if entity @s[scores={endtimer=1..}] run kill @e[type=marker,tag=FlagParticle]
+execute if entity @s[scores={endtimer=1..}] run kill @e[predicate=custom:indimension,type=marker,tag=FlagParticle]
 execute if entity @s[scores={endtimer=2..}] run scoreboard players reset * FlagScore
 execute if entity @s[scores={endtimer=2..}] run scoreboard players reset * FlagDeliver
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 players none
@@ -39,5 +39,5 @@ execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdispl
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.blue
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * FlagDisp
-tag @e[type=armor_stand,tag=Selection] remove CTFOvertime
-tag @e[type=armor_stand,tag=Selection] remove CTF3stack
+tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection] remove CTFOvertime
+tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection] remove CTF3stack

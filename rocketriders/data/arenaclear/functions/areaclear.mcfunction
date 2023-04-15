@@ -5,7 +5,7 @@
 
 ##Repeating settings
 tag @s[scores={RepeatSettings=2..}] add Repeat
-execute if entity @s[tag=Repeat,tag=!RepeatForever] run schedule function arenaclear:notifyrepeat 3t append
+execute if entity @s[tag=Repeat,tag=!RepeatForever] run schedule function arenaclear:notifyrepeat_indimension 3t append
 
 ##Appropriate tags for Arena Clear state
 tag @s remove GameStarted
@@ -85,7 +85,7 @@ tag @a remove beenOnBlue
 tag @a remove beenOnBoth
 
 ##Remove join cancel from join pads
-schedule function game:uncancelpads 2t append
+schedule function game:uncancelpads_indimension 2t append
 
 ##Add flag that game just cleared (briefly locks joinpads)
 tag @s add JustCleared

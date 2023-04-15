@@ -23,7 +23,7 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=Hardcore] run fill -14 6
 function rr_swap:baseswap/observerconvert2
 
 #Visual titles and subtitles.
-schedule function rr_swap:baseswap/visuals 60t
+schedule function rr_swap:baseswap/visuals_indimension 60t
 
 #tetris resets
 execute as @e[type=armor_stand,tag=Selection] run function rr_swap:items/tetrisreset

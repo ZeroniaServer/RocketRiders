@@ -9,7 +9,7 @@ execute if entity @e[type=marker,tag=rngSelected,tag=rngArrow] run function rr_p
 function rr_powerups:items/tetris
 tag @a remove getItem
 tag @s remove tetrisTime
-execute unless entity @s[tag=doStacking] run schedule function items:scheduleantidupe 1t append
+execute unless entity @s[tag=doStacking] run schedule function items:scheduleantidupe_indimension 1t append
 kill @e[type=marker,tag=rng1]
 
 ##Actionbar notifications

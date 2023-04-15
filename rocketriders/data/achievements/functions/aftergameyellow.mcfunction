@@ -34,5 +34,5 @@ execute unless entity @s[tag=noPortal] as @a[team=Blue] store result score @s Ha
 execute as @a[team=Blue,scores={HasMissiles=1..}] at @s if entity @s[z=46,dz=28] run tag @s add HadIt
 
 #All end-game achievements (delay for Sudden Death))
-execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal] run schedule function achievements:aftergame 100t replace
+execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal] run schedule function achievements:aftergame_indimension 100t replace
 execute if entity @s[tag=!doTying] run function achievements:aftergame

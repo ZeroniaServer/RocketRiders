@@ -19,17 +19,17 @@ execute unless entity @s[tag=noPortal] as @e[type=marker,tag=bluenovatracker] at
 execute if entity @s[tag=!doFireballPortals,tag=!noPortal] unless entity @s[tag=fbPortalsOff] as @e[type=marker,tag=novatracker] at @s if entity @s[x=-11,y=30,z=71,dx=46,dy=32,dz=6] run kill @s
 execute if entity @s[tag=!doFireballPortals,tag=!noPortal] unless entity @s[tag=fbPortalsOff] as @e[type=marker,tag=novatracker] at @s if entity @s[x=-11,y=30,z=-77,dx=46,dy=32,dz=6] run kill @s
 
-#Kill everything near/above the roof (overworld only)
-execute in overworld as @e[type=ender_pearl] at @s run kill @s[y=175,dy=100]
-execute in overworld as @e[type=snowball] at @s run kill @s[y=175,dy=100]
-execute in overworld as @e[type=dragon_fireball] at @s run kill @s[y=175,dy=100]
-execute in overworld as @e[type=egg] at @s run kill @s[y=175,dy=100]
-execute in overworld as @e[type=fireball] at @s run kill @s[y=175,dy=100]
-execute in overworld as @e[type=tnt] at @s run kill @s[y=175,dy=100]
-execute in overworld as @e[type=tnt_minecart] at @s run kill @s[y=175,dy=100]
-execute in overworld as @e[type=marker,tag=novatracker] at @s run kill @s[y=175,dy=100]
-execute in overworld as @e[type=firework_rocket,scores={novatimer=1..}] at @s run kill @s[y=175,dy=100]
-execute in overworld as @e[type=potion] at @s run kill @s[y=175,dy=100]
+#Kill everything near/above the roof
+execute as @e[type=ender_pearl] at @s run kill @s[y=175,dy=100]
+execute as @e[type=snowball] at @s run kill @s[y=175,dy=100]
+execute as @e[type=dragon_fireball] at @s run kill @s[y=175,dy=100]
+execute as @e[type=egg] at @s run kill @s[y=175,dy=100]
+execute as @e[type=fireball] at @s run kill @s[y=175,dy=100]
+execute as @e[type=tnt] at @s run kill @s[y=175,dy=100]
+execute as @e[type=tnt_minecart] at @s run kill @s[y=175,dy=100]
+execute as @e[type=marker,tag=novatracker] at @s run kill @s[y=175,dy=100]
+execute as @e[type=firework_rocket,scores={novatimer=1..}] at @s run kill @s[y=175,dy=100]
+execute as @e[type=potion] at @s run kill @s[y=175,dy=100]
 
 #Kill everything near world border
 execute as @e[type=arrow] at @s unless predicate custom:insideborder run kill @s

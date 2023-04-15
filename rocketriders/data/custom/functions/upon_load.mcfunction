@@ -1,5 +1,5 @@
 ##Actions to be performed upon world load
-schedule function lobby:credits/restart 3t append
+schedule function lobby:credits/restart_indimension 3t append
 scoreboard players set $barriers CmdData 73
 scoreboard players add $reloaded CmdData 1
 
@@ -34,4 +34,4 @@ team modify Developer friendlyFire false
 gamerule logAdminCommands false
 
 #Check updates
-schedule function world_updates:check_updates 2s replace
+schedule function world_updates:check_updates_indimension 2s replace

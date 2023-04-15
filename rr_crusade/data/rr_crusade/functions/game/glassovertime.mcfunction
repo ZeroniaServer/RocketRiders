@@ -24,5 +24,5 @@ execute as @e[type=marker,tag=GlassSetMarker] at @s run fill 42 ~ 1 42 ~ -1 mine
 execute as @e[type=marker,tag=GlassSetMarker] at @s run tp @s ~ ~-1 ~
 execute as @e[type=marker,tag=GlassSetMarker] at @s run scoreboard players remove @s CmdData 1
 
-execute if entity @e[type=marker,tag=GlassSetMarker,scores={CmdData=1..}] run schedule function rr_crusade:game/glassovertime 2t
+execute if entity @e[type=marker,tag=GlassSetMarker,scores={CmdData=1..}] run schedule function rr_crusade:game/glassovertime_indimension 2t
 execute if entity @e[type=marker,tag=GlassSetMarker,scores={CmdData=-1000..0}] run kill @e[type=marker,tag=GlassSetMarker,scores={CmdData=-1000..0}]

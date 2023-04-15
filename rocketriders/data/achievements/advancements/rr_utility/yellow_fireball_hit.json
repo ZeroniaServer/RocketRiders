@@ -4,6 +4,11 @@
     "fireball_hit": {
       "trigger": "minecraft:player_hurt_entity",
       "conditions": {
+        "player": {
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
+        },
         "damage": {
           "type": {
             "tags": [
@@ -22,6 +27,6 @@
     }
   },
   "rewards": {
-    "function": "achievements:regifting_yellow"
+    "function": "achievements:regifting_yellow_indimension"
   }
 }

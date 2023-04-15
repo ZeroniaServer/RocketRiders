@@ -8,7 +8,7 @@ function rr_swap:items/spawnitems
 function rr_swap:items/cluster
 
 #platform
-bossbar set rr:startgame players @a[team=Lobby]
+bossbar set rr:startgame players @a[predicate=custom:indimension,team=Lobby]
 function rr_swap:baseswap/platform
 
 #Item RNG
@@ -18,16 +18,16 @@ execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run sc
 execute if entity @s[tag=Minute] run function rr_swap:items/minutemix
 
 #Respawn handling
-execute as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
-execute as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
+execute as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
+execute as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[predicate=custom:indimension,team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
 
 #Give back fireballs
-execute as @a[tag=BackFireball] run function rr_swap:items/util/givefireball
-tag @a remove BackFireball
-execute as @a[tag=roofMSGFB] run tellraw @s ["",{"text":"Unable to spawn Cluster Fireball near the roof.","color":"red"}]
-execute as @a[tag=voidMSGFB] run tellraw @s ["",{"text":"Unable to spawn Cluster Fireball near the void.","color":"red"}]
-tag @a[tag=roofMSGFB] remove roofMSGFB
-tag @a[tag=voidMSGFB] remove voidMSGFB
+execute as @a[predicate=custom:indimension,tag=BackFireball] run function rr_swap:items/util/givefireball
+tag @a[predicate=custom:indimension] remove BackFireball
+execute as @a[predicate=custom:indimension,tag=roofMSGFB] run tellraw @s ["",{"text":"Unable to spawn Cluster Fireball near the roof.","color":"red"}]
+execute as @a[predicate=custom:indimension,tag=voidMSGFB] run tellraw @s ["",{"text":"Unable to spawn Cluster Fireball near the void.","color":"red"}]
+tag @a[predicate=custom:indimension,tag=roofMSGFB] remove roofMSGFB
+tag @a[predicate=custom:indimension,tag=voidMSGFB] remove voidMSGFB
 
 #win
 execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon,tag=!DoublePortal] unless block 13 38 74 nether_portal unless block 13 38 -74 nether_portal run function rr_swap:game/winbothcheck

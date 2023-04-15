@@ -13,4 +13,4 @@ execute at @s run data modify entity @e[type=area_effect_cloud,tag=ParkourTime,l
 
 execute at @s run loot replace entity @e[type=armor_stand,tag=ParkourPlayer,limit=1] armor.head 1 loot lobby:parkourhead
 
-tellraw @a ["",{"selector":"@s"},{"text":" now holds the Parkour Record!","color":"dark_green"}]
+tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" now holds the Parkour Record!","color":"dark_green"}]

@@ -9,9 +9,9 @@ tag @e[type=potion,nbt={Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Poti
 execute as @e[type=potion,tag=splash,tag=!motioned] at @s as @p[scores={ThrowSplash=1..}] at @s anchored eyes run tp @e[type=potion,tag=splash,tag=!motioned] @s
 execute as @e[type=potion,tag=splash,tag=!motioned] run function everytick:projectile
 tag @e[type=potion,tag=splash,tag=!motioned] add motioned
-execute as @e[type=potion,tag=splash] at @s if score $dust CmdData matches 1 run particle splash ~ ~ ~ 0 0 0 0.1 1 force @a[predicate=custom:belowroof]
-scoreboard players add @a[scores={ThrowSplash=1..}] ThrowSplash 1
-scoreboard players reset @a[scores={ThrowSplash=3..}] ThrowSplash
+execute as @e[type=potion,tag=splash] at @s if score $dust CmdData matches 1 run particle splash ~ ~ ~ 0 0 0 0.1 1 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+scoreboard players add @a[predicate=custom:indimension,scores={ThrowSplash=1..}] ThrowSplash 1
+scoreboard players reset @a[predicate=custom:indimension,scores={ThrowSplash=3..}] ThrowSplash
 #Thanks @Maxaxik for this fix!!! Makes animations smoother
 scoreboard players add splash splashtick 1
 execute if score splash splashtick matches 1 as @e[type=potion,tag=splash] run data merge entity @s {Air:0}

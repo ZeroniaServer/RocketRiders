@@ -28,6 +28,6 @@ execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[ty
 
 execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] run function items:full_hotbar
 
-execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Blue,tag=getItem] run function items:surprise_blue/givesurpriseegg
-execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Yellow,tag=getItem] run function items:surprise_yellow/givesurpriseegg
+execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[predicate=custom:indimension,team=Blue,tag=getItem] run function items:surprise_blue/givesurpriseegg
+execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[predicate=custom:indimension,team=Yellow,tag=getItem] run function items:surprise_yellow/givesurpriseegg
 kill @e[type=marker,tag=rng1]

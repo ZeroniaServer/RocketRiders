@@ -14,7 +14,7 @@ execute as @e[type=marker,tag=rngSelected,tag=rngSplash] as @e[type=item] if dat
 
 function items:full_hotbar
 
-execute as @e[type=marker,tag=rngSelected,tag=rngArrows] as @a[scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givearrows
-execute as @e[type=marker,tag=rngSelected,tag=rngCanopy] as @a[scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
-execute as @e[type=marker,tag=rngSelected,tag=rngSplash] as @a[scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givesplash
+execute as @e[type=marker,tag=rngSelected,tag=rngArrows] as @a[predicate=custom:indimension,scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givearrows
+execute as @e[type=marker,tag=rngSelected,tag=rngCanopy] as @a[predicate=custom:indimension,scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
+execute as @e[type=marker,tag=rngSelected,tag=rngSplash] as @a[predicate=custom:indimension,scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givesplash
 kill @e[type=marker,tag=crusadeRNG]

@@ -14,7 +14,7 @@ execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @e[type=item] if data 
 
 function items:full_hotbar
 
-execute as @e[type=marker,tag=rngSelected,tag=rngFireball] as @a[scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givefireball
-execute as @e[type=marker,tag=rngSelected,tag=rngVortex] as @a[scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givevortex
-execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @a[scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givenova
+execute as @e[type=marker,tag=rngSelected,tag=rngFireball] as @a[predicate=custom:indimension,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givefireball
+execute as @e[type=marker,tag=rngSelected,tag=rngVortex] as @a[predicate=custom:indimension,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givevortex
+execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @a[predicate=custom:indimension,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givenova
 kill @e[type=marker,tag=crusadeRNG]

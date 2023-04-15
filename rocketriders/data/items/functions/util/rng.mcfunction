@@ -24,12 +24,12 @@ execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @e[type=item] if data 
 
 function items:full_hotbar
 
-execute as @e[type=marker,tag=rngSelected,tag=rngArrows] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givearrows
-execute as @e[type=marker,tag=rngSelected,tag=rngFireball] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givefireball
-execute as @e[type=marker,tag=rngSelected,tag=rngObshield] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveobshield
-execute as @e[type=marker,tag=rngSelected,tag=rngCanopy] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
-execute as @e[type=marker,tag=rngSelected,tag=rngShield] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveshield
-execute as @e[type=marker,tag=rngSelected,tag=rngSplash] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givesplash
-execute as @e[type=marker,tag=rngSelected,tag=rngVortex] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givevortex
-execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @a[tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givenova
+execute as @e[type=marker,tag=rngSelected,tag=rngArrows] as @a[predicate=custom:indimension,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givearrows
+execute as @e[type=marker,tag=rngSelected,tag=rngFireball] as @a[predicate=custom:indimension,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givefireball
+execute as @e[type=marker,tag=rngSelected,tag=rngObshield] as @a[predicate=custom:indimension,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveobshield
+execute as @e[type=marker,tag=rngSelected,tag=rngCanopy] as @a[predicate=custom:indimension,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
+execute as @e[type=marker,tag=rngSelected,tag=rngShield] as @a[predicate=custom:indimension,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveshield
+execute as @e[type=marker,tag=rngSelected,tag=rngSplash] as @a[predicate=custom:indimension,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givesplash
+execute as @e[type=marker,tag=rngSelected,tag=rngVortex] as @a[predicate=custom:indimension,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givevortex
+execute as @e[type=marker,tag=rngSelected,tag=rngNova] as @a[predicate=custom:indimension,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givenova
 kill @e[type=marker,tag=rng2]

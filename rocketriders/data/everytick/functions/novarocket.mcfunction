@@ -5,36 +5,36 @@
 
 ##General Nova Rocket functionality
 #Creative mode support
-execute as @a[team=Blue,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
-execute as @a[team=Yellow,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
-clear @a crossbow{Charged:0b,nova:1b}
+execute as @a[predicate=custom:indimension,team=Blue,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
+execute as @a[predicate=custom:indimension,team=Yellow,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
+clear @a[predicate=custom:indimension] crossbow{Charged:0b,nova:1b}
 
 #Identifies shot Nova Rockets and stores player UUID into their tracker score
-execute as @a[scores={NovaShot=1..}] store result score @s UUIDTracker run data get entity @s UUID[0]
-execute as @a[scores={NovaShot=1..}] at @s run setblock ~ 174 ~ oak_sign
-execute as @a[team=Blue,scores={NovaShot=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Blue,scores={NovaShot=1..}]"},{"text":"\'s Nova Rocket"}]'}
-execute as @a[team=Yellow,scores={NovaShot=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Yellow,scores={NovaShot=1..}]"},{"text":"\'s Nova Rocket"}]'}
-execute as @a[team=Blue,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] add BlueNova
-execute as @a[team=Blue,scores={NovaShot=1..}] at @s run data modify entity @e[type=firework_rocket,tag=BlueNova,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
-execute as @a[team=Blue,scores={NovaShot=1..}] at @s store result score @e[type=firework_rocket,tag=BlueNova,distance=..5,limit=1] UUIDTracker run scoreboard players get @s UUIDTracker
-execute as @a[team=Yellow,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] add YellowNova
-execute as @a[team=Yellow,scores={NovaShot=1..}] at @s run data modify entity @e[type=firework_rocket,tag=YellowNova,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
-execute as @a[team=Yellow,scores={NovaShot=1..}] at @s store result score @e[type=firework_rocket,tag=YellowNova,distance=..5,limit=1] UUIDTracker run scoreboard players get @s UUIDTracker
-execute as @a[team=Blue,scores={NovaShot=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
-execute as @a[team=Yellow,scores={NovaShot=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
-scoreboard players reset @a[scores={NovaShot=1..}] NovaShot
+execute as @a[predicate=custom:indimension,scores={NovaShot=1..}] store result score @s UUIDTracker run data get entity @s UUID[0]
+execute as @a[predicate=custom:indimension,scores={NovaShot=1..}] at @s run setblock ~ 174 ~ oak_sign
+execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Blue,scores={NovaShot=1..}]"},{"text":"\'s Nova Rocket"}]'}
+execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Yellow,scores={NovaShot=1..}]"},{"text":"\'s Nova Rocket"}]'}
+execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] add BlueNova
+execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run data modify entity @e[type=firework_rocket,tag=BlueNova,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
+execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s store result score @e[type=firework_rocket,tag=BlueNova,distance=..5,limit=1] UUIDTracker run scoreboard players get @s UUIDTracker
+execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run tag @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] add YellowNova
+execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run data modify entity @e[type=firework_rocket,tag=YellowNova,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
+execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s store result score @e[type=firework_rocket,tag=YellowNova,distance=..5,limit=1] UUIDTracker run scoreboard players get @s UUIDTracker
+execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
+execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
+scoreboard players reset @a[predicate=custom:indimension,scores={NovaShot=1..}] NovaShot
 
 #Identifies players near enemy Nova Rockets
-execute if entity @s[tag=!customNova] as @a[team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s add YellowNovaNear
-execute if entity @s[tag=!customNova] as @a[team=Yellow] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
-execute if entity @s[tag=!customNova] as @a[team=Blue] at @s if entity @e[type=marker,distance=..4,limit=1,tag=yellownovatracker] run tag @s add YellowNovaNear
-execute if entity @s[tag=!customNova] as @a[team=Yellow] at @s if entity @e[type=marker,distance=..4,limit=1,tag=bluenovatracker] run tag @s add BlueNovaNear
-scoreboard players add @a[tag=YellowNovaNear] NovaNear 1
-scoreboard players add @a[tag=BlueNovaNear] NovaNear 1
-execute if entity @s[tag=!customNova] as @a[team=Blue,tag=YellowNovaNear,scores={NovaNear=4..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s remove YellowNovaNear
-execute if entity @s[tag=!customNova] as @a[team=Blue,tag=!YellowNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
-execute if entity @s[tag=!customNova] as @a[team=Yellow,tag=BlueNovaNear,scores={NovaNear=4..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s remove BlueNovaNear
-execute if entity @s[tag=!customNova] as @a[team=Yellow,tag=!BlueNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
+execute if entity @s[tag=!customNova] as @a[predicate=custom:indimension,team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s add YellowNovaNear
+execute if entity @s[tag=!customNova] as @a[predicate=custom:indimension,team=Yellow] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
+execute if entity @s[tag=!customNova] as @a[predicate=custom:indimension,team=Blue] at @s if entity @e[type=marker,distance=..4,limit=1,tag=yellownovatracker] run tag @s add YellowNovaNear
+execute if entity @s[tag=!customNova] as @a[predicate=custom:indimension,team=Yellow] at @s if entity @e[type=marker,distance=..4,limit=1,tag=bluenovatracker] run tag @s add BlueNovaNear
+scoreboard players add @a[predicate=custom:indimension,tag=YellowNovaNear] NovaNear 1
+scoreboard players add @a[predicate=custom:indimension,tag=BlueNovaNear] NovaNear 1
+execute if entity @s[tag=!customNova] as @a[predicate=custom:indimension,team=Blue,tag=YellowNovaNear,scores={NovaNear=4..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=YellowNova] run tag @s remove YellowNovaNear
+execute if entity @s[tag=!customNova] as @a[predicate=custom:indimension,team=Blue,tag=!YellowNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
+execute if entity @s[tag=!customNova] as @a[predicate=custom:indimension,team=Yellow,tag=BlueNovaNear,scores={NovaNear=4..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s remove BlueNovaNear
+execute if entity @s[tag=!customNova] as @a[predicate=custom:indimension,team=Yellow,tag=!BlueNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
 
 #Nova Rocket flight and tracker entity
 scoreboard players add @e[type=firework_rocket,tag=BlueNova] novatimer 0
@@ -51,12 +51,12 @@ scoreboard players add @e[type=firework_rocket,tag=YellowNova] novatimer 1
 scoreboard players add @e[type=marker,tag=novatracker] novatimer 1
 
 #Nova Rockets explode Canopies
-execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[team=Blue,distance=..5] run tag @s add DontExplode
-execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[team=Yellow,distance=..5] run tag @s add DontExplode
-execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[team=Yellow,distance=..4] unless entity @a[team=Blue,distance=..4] run tag @s remove DontExplode
-execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[team=Blue,distance=..4] unless entity @a[team=Yellow,distance=..4] run tag @s remove DontExplode
-execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] unless entity @a[team=Blue,distance=..4] run tag @s remove DontExplode
-execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] unless entity @a[team=Yellow,distance=..4] run tag @s remove DontExplode
+execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[predicate=custom:indimension,team=Blue,distance=..5] run tag @s add DontExplode
+execute unless entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[predicate=custom:indimension,team=Yellow,distance=..5] run tag @s add DontExplode
+execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[predicate=custom:indimension,team=Yellow,distance=..4] unless entity @a[predicate=custom:indimension,team=Blue,distance=..4] run tag @s remove DontExplode
+execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[predicate=custom:indimension,team=Blue,distance=..4] unless entity @a[predicate=custom:indimension,team=Yellow,distance=..4] run tag @s remove DontExplode
+execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] unless entity @a[predicate=custom:indimension,team=Blue,distance=..4] run tag @s remove DontExplode
+execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] unless entity @a[predicate=custom:indimension,team=Yellow,distance=..4] run tag @s remove DontExplode
 
 execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..7,limit=1] unless entity @e[type=firework_rocket,tag=BlueNova,limit=1,sort=nearest,distance=..5] run tag @s add CanopyIsGone
 execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost,tag=!DontExplode] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7,limit=1] unless entity @e[type=firework_rocket,tag=YellowNova,limit=1,sort=nearest,distance=..5] run tag @s add CanopyIsGone
@@ -66,7 +66,7 @@ execute as @e[type=marker,tag=bluenovatracker,tag=CanopyIsGone,tag=!NovaLost,tag
 execute as @e[type=marker,tag=yellownovatracker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run kill @e[type=firework_rocket,tag=YellowNova,limit=1,sort=nearest,distance=..5]
 execute as @e[type=marker,tag=CanopyIsGone,tag=yellownovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] run tag @s add killCanopy
 execute as @e[type=marker,tag=CanopyIsGone,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[type=marker,tag=YellowPlatform,distance=..7,limit=1,sort=nearest] run tag @s add killCanopy
-execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run tag @a[team=!Lobby,team=!Spectator,distance=..10] add UtilKilled
+execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run tag @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,distance=..10] add UtilKilled
 execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[type=marker,tag=CanopyIsGone,tag=yellownovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] at @s run summon creeper ~ ~2 ~ {Tags:["UtilKilled","NovaCanopy"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=marker,tag=CanopyIsGone,tag=yellownovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] at @s run summon creeper ~ ~2 ~ {Tags:["UtilKilled","NovaCanopy"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:7,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute if entity @s[tag=ClutterCollector] as @e[type=marker,tag=CanopyIsGone,tag=yellownovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] at @s run summon creeper ~ ~2 ~ {Tags:["UtilKilled","NovaCanopy"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
@@ -77,7 +77,7 @@ execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s
 execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run tag @e[type=tnt,distance=..8] add UtilKilled
 execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s store result score @e[type=creeper,limit=1,sort=nearest,distance=..8,tag=NovaCanopy] UUIDTracker run scoreboard players get @s UUIDTracker
 execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s store result score @e[type=creeper,limit=1,sort=nearest,distance=..8,tag=NovaCanopy] KillerUUID run scoreboard players get @s UUIDTracker
-execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s store result score @a[team=!Spectator,team=!Lobby,distance=..8,tag=NovaCanopy] KillerUUID run scoreboard players get @s UUIDTracker
+execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s store result score @a[predicate=custom:indimension,team=!Spectator,team=!Lobby,distance=..8,tag=NovaCanopy] KillerUUID run scoreboard players get @s UUIDTracker
 execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run data modify entity @e[type=creeper,limit=1,sort=nearest,distance=..8,tag=NovaCanopy] CustomName set from entity @s CustomName
 execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run scoreboard players set @s novatimer 31
 execute as @e[type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run tag @s add NovaLost
@@ -93,10 +93,10 @@ execute as @e[type=firework_rocket,tag=CollideNova] run kill @s
 #Explosion/particle effects
 execute as @e[type=firework_rocket,tag=BlueNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,FireworksItem:{tag:{Fireworks:{Explosions:[{Type:4}]}}}}
 execute as @e[type=firework_rocket,tag=YellowNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,FireworksItem:{tag:{Fireworks:{Explosions:[{Type:4}]}}}}
-execute if entity @e[type=armor_stand,tag=Selection,tag=!customNova] as @e[type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust lapis_block ~ ~0.2 ~ 0 0 0 1 2 force @a[predicate=custom:belowroof]
-execute if entity @e[type=armor_stand,tag=Selection,tag=customNova] as @e[type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust 3 3 3 1 ~ ~0.2 ~ 0 0 0 1 1 force @a[predicate=custom:belowroof]
-execute if entity @e[type=armor_stand,tag=Selection,tag=customNova] as @e[type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust 3 3 3 1 ^ ^0.2 ^-0.2 0 0 0 1 1 force @a[predicate=custom:belowroof]
-execute as @e[type=firework_rocket,tag=YellowNova] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust gold_block ~ ~0.2 ~ 0 0 0 1 2 force @a[predicate=custom:belowroof]
+execute if entity @e[type=armor_stand,tag=Selection,tag=!customNova] as @e[type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust lapis_block ~ ~0.2 ~ 0 0 0 1 2 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute if entity @e[type=armor_stand,tag=Selection,tag=customNova] as @e[type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust 3 3 3 1 ~ ~0.2 ~ 0 0 0 1 1 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute if entity @e[type=armor_stand,tag=Selection,tag=customNova] as @e[type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust 3 3 3 1 ^ ^0.2 ^-0.2 0 0 0 1 1 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @e[type=firework_rocket,tag=YellowNova] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust gold_block ~ ~0.2 ~ 0 0 0 1 2 force @a[predicate=custom:indimension,predicate=custom:belowroof]
 
 ##Yellow Nova Rocket functionality
 #Static
@@ -108,7 +108,7 @@ execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=marker,tag=
 execute if entity @s[tag=ClutterCollector] as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=YellowNova,distance=..3,limit=1,sort=nearest] run summon creeper ~ ~ ~ {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=YellowNova,distance=..3,limit=1,sort=nearest] store result score @e[type=creeper,limit=1,sort=nearest,distance=..5,tag=NovaExplode] KillerUUID run scoreboard players get @s UUIDTracker
 execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=YellowNova,distance=..3,limit=1,sort=nearest] run data modify entity @e[type=creeper,limit=1,sort=nearest,distance=..5,tag=NovaExplode] CustomName set from entity @s CustomName
-execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=YellowNova,distance=..3,limit=1,sort=nearest] run tag @a[team=!Lobby,team=!Spectator,distance=..10] add UtilKilled
+execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=YellowNova,distance=..3,limit=1,sort=nearest] run tag @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,distance=..10] add UtilKilled
 execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=YellowNova,distance=..3,limit=1,sort=nearest] run tag @e[type=tnt,distance=..6] add UtilKilled
 execute as @e[type=marker,tag=yellownovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=YellowNova,distance=..3,limit=1,sort=nearest] run tag @s add NovaLost
 execute as @e[type=firework_rocket,tag=YellowNova,scores={novatimer=30}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}}
@@ -116,20 +116,20 @@ execute as @e[type=firework_rocket,tag=YellowNova,scores={novatimer=30..}] at @s
 kill @e[type=firework_rocket,tag=YellowNova,scores={novatimer=33..}]
 
 #Attach
-scoreboard players add @a[tag=YellowNovaAttach] novattach 1
-execute as @a[tag=YellowNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch master @a ~ ~ ~ 2 1.2
-execute as @a[tag=YellowNovaAttach,scores={novattach=1}] run effect give @s levitation 1 60 true
-execute as @a[tag=YellowNovaAttach,scores={novattach=4..}] run effect clear @s levitation
-execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] add killCanopy
-execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
-execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~-3 ~-2 ~-3 ~3 ~ ~3 air replace #minecraft:leaves
-execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run particle block oak_leaves ~ ~1 ~ 2 1 2 0.1 50 force @a[predicate=custom:belowroof]
-execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~ 2 0
-execute as @a[tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}}
-execute as @a[tag=YellowNovaAttach,tag=!CarryFlag,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~0.5 ~1 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:1,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @a[tag=YellowNovaAttach,tag=CarryFlag,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~0.5 ~-1 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:1,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @a[tag=YellowNovaAttach,scores={novattach=1..}] at @s if score $dust CmdData matches 1 run particle firework ~ ~ ~ 0 0 0 0.05 1 force @a[predicate=custom:belowroof]
-execute as @a[tag=YellowNovaAttach] run tag @s[scores={novattach=15..},nbt={OnGround:1b}] remove YellowNovaAttach
+scoreboard players add @a[predicate=custom:indimension,tag=YellowNovaAttach] novattach 1
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch master @a[predicate=custom:indimension] ~ ~ ~ 2 1.2
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=1}] run effect give @s levitation 1 60 true
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=4..}] run effect clear @s levitation
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] add killCanopy
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~-3 ~-2 ~-3 ~3 ~ ~3 air replace #minecraft:leaves
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run particle block oak_leaves ~ ~1 ~ 2 1 2 0.1 50 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run playsound minecraft:entity.firework_rocket.blast master @a[predicate=custom:indimension] ~ ~ ~ 2 0
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[I;14602026,15435844]}]}}}}
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,tag=!CarryFlag,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~0.5 ~1 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:1,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,tag=CarryFlag,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~0.5 ~-1 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:1,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach,scores={novattach=1..}] at @s if score $dust CmdData matches 1 run particle firework ~ ~ ~ 0 0 0 0.05 1 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @a[predicate=custom:indimension,tag=YellowNovaAttach] run tag @s[scores={novattach=15..},nbt={OnGround:1b}] remove YellowNovaAttach
 
 ##Blue Nova Rocket Functionality
 #Static
@@ -141,7 +141,7 @@ execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[type=marker,tag=
 execute if entity @s[tag=ClutterCollector] as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=BlueNova,distance=..3,limit=1,sort=nearest] run summon creeper ~ ~ ~ {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
 execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=BlueNova,distance=..3,limit=1,sort=nearest] store result score @e[type=creeper,limit=1,sort=nearest,distance=..5,tag=NovaExplode] KillerUUID run scoreboard players get @s UUIDTracker
 execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=BlueNova,distance=..3,limit=1,sort=nearest] run data modify entity @e[type=creeper,limit=1,sort=nearest,distance=..5,tag=NovaExplode] CustomName set from entity @s CustomName
-execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=BlueNova,distance=..3,limit=1,sort=nearest] run tag @a[team=!Lobby,team=!Spectator,distance=..10] add UtilKilled
+execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=BlueNova,distance=..3,limit=1,sort=nearest] run tag @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,distance=..10] add UtilKilled
 execute as @e[type=marker,tag=bluenovatracker,tag=!NovaLost] at @s unless entity @e[type=firework_rocket,tag=BlueNova,distance=..3,limit=1,sort=nearest] run tag @e[type=tnt,distance=..6] add UtilKilled
 execute if entity @s[tag=!customNova] as @e[type=marker,tag=bluenovatracker] at @s unless entity @e[type=firework_rocket,tag=BlueNova,distance=..3,limit=1,sort=nearest] run tag @s add NovaLost
 execute if entity @s[tag=!customNova] as @e[type=firework_rocket,tag=BlueNova,scores={novatimer=30}] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]}}}}
@@ -160,16 +160,16 @@ kill @e[type=marker,tag=NovaLost,scores={CmdData=6..}]
 execute as @e[type=firework_rocket,scores={novatimer=30..}] at @s store result score @e[type=tnt,distance=..6] KillerUUID run scoreboard players get @s UUIDTracker
 
 #Attach
-scoreboard players add @a[tag=BlueNovaAttach] novattach 1
-execute as @a[tag=BlueNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch master @a ~ ~ ~ 2 1.2
-execute as @a[tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levitation 1 60 true
-execute as @a[tag=BlueNovaAttach,scores={novattach=4..}] run effect clear @s levitation
-execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=YellowPlatform,distance=..7,limit=1,sort=nearest] add killCanopy
-execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] add killCanopy
-execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
-execute as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~ 3 0
-execute if entity @s[tag=!customNova] as @a[tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]}}}}
-execute as @a[tag=BlueNovaAttach,tag=!CarryFlag,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~0.5 ~-1 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:1,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @a[tag=BlueNovaAttach,tag=CarryFlag,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~0.5 ~1 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:1,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
-execute as @a[tag=BlueNovaAttach,scores={novattach=1..}] at @s if score $dust CmdData matches 1 run particle firework ~ ~ ~ 0 0 0 0.05 1 force @a[predicate=custom:belowroof]
-execute as @a[tag=BlueNovaAttach] run tag @s[scores={novattach=15..},nbt={OnGround:1b}] remove BlueNovaAttach
+scoreboard players add @a[predicate=custom:indimension,tag=BlueNovaAttach] novattach 1
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach,scores={novattach=1}] at @s run playsound minecraft:entity.firework_rocket.launch master @a[predicate=custom:indimension] ~ ~ ~ 2 1.2
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levitation 1 60 true
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach,scores={novattach=4..}] run effect clear @s levitation
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=YellowPlatform,distance=..7,limit=1,sort=nearest] add killCanopy
+execute if entity @e[type=armor_stand,tag=Selection,tag=chaseEnabled] as @a[predicate=custom:indimension,tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run tag @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] add killCanopy
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run playsound minecraft:entity.firework_rocket.blast master @a[predicate=custom:indimension] ~ ~ ~ 3 0
+execute if entity @s[tag=!customNova] as @a[predicate=custom:indimension,tag=BlueNovaAttach,scores={novattach=15..},nbt={OnGround:1b}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",Count:1,tag:{Fireworks:{Flight:3,Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[I;2437522,2651799]}]}}}}
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach,tag=!CarryFlag,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~0.5 ~-1 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:1,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach,tag=CarryFlag,scores={novattach=15..},nbt={OnGround:1b}] at @s anchored eyes run summon creeper ~ ~0.5 ~1 {Tags:["NovaExplode"],NoGravity:1b,CustomName:'{"text":"a Nova Rocket"}',ExplosionRadius:1,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s}
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach,scores={novattach=1..}] at @s if score $dust CmdData matches 1 run particle firework ~ ~ ~ 0 0 0 0.05 1 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @a[predicate=custom:indimension,tag=BlueNovaAttach] run tag @s[scores={novattach=15..},nbt={OnGround:1b}] remove BlueNovaAttach

@@ -1,16 +1,16 @@
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run fill 18 53 6 6 53 -6 air
-execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a ~ ~ ~ 3 0
-execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a ~ ~ ~ 3 0.6
-execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a ~ ~ ~ 3 0.7
-execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run particle minecraft:falling_obsidian_tear ~ ~ ~ 3 0 3 0.1 100 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run particle minecraft:explosion ~ ~ ~ 3 0 3 0.1 20 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a[predicate=custom:indimension] ~ ~ ~ 3 0
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a[predicate=custom:indimension] ~ ~ ~ 3 0.6
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a[predicate=custom:indimension] ~ ~ ~ 3 0.7
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run particle minecraft:falling_obsidian_tear ~ ~ ~ 3 0 3 0.1 100 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run particle minecraft:explosion ~ ~ ~ 3 0 3 0.1 20 force @a[predicate=custom:indimension,predicate=custom:belowroof]
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run scoreboard players remove @s captureYellow 1
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run scoreboard players remove @s captureBlue 1
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run scoreboard players set @s capturePoint 0
-execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run tag @a[tag=onCapturePoint] add CheckCry
-scoreboard players add @a[tag=CheckCry] CryAboutIt 1
-tag @a[scores={CryAboutIt=60..}] remove CheckCry
-scoreboard players reset @a[tag=!CheckCry,scores={CryAboutIt=1..}] CryAboutIt
+execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run tag @a[predicate=custom:indimension,tag=onCapturePoint] add CheckCry
+scoreboard players add @a[predicate=custom:indimension,tag=CheckCry] CryAboutIt 1
+tag @a[predicate=custom:indimension,scores={CryAboutIt=60..}] remove CheckCry
+scoreboard players reset @a[predicate=custom:indimension,tag=!CheckCry,scores={CryAboutIt=1..}] CryAboutIt
 
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run bossbar set rr_powerups:capture_progress name {"text":"Platform Temporarily Disabled","bold":true,"color":"dark_red"}
 execute as @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run bossbar set rr_powerups:capture_progress color red
@@ -28,11 +28,11 @@ scoreboard players remove @e[type=marker,tag=captureMiddle,tag=BrokenPlatform] C
 
 execute as @e[type=marker,tag=captureMiddle,tag=BrokenPlatform,scores={CmdData=..-1}] run tag @s add FixPlatform
 execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] run bossbar set rr_powerups:capture_progress max 100
-execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run particle minecraft:falling_obsidian_tear ~ ~ ~ 3 0 3 0.1 100 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run particle minecraft:explosion ~ ~ ~ 3 0 3 0.1 20 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run playsound minecraft:block.amethyst_cluster.place master @a ~ ~ ~ 3 0
-execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run playsound minecraft:block.amethyst_cluster.place master @a ~ ~ ~ 3 0.6
-execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run playsound minecraft:block.amethyst_cluster.place master @a ~ ~ ~ 3 0.7
+execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run particle minecraft:falling_obsidian_tear ~ ~ ~ 3 0 3 0.1 100 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run particle minecraft:explosion ~ ~ ~ 3 0 3 0.1 20 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run playsound minecraft:block.amethyst_cluster.place master @a[predicate=custom:indimension] ~ ~ ~ 3 0
+execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run playsound minecraft:block.amethyst_cluster.place master @a[predicate=custom:indimension] ~ ~ ~ 3 0.6
+execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] at @s run playsound minecraft:block.amethyst_cluster.place master @a[predicate=custom:indimension] ~ ~ ~ 3 0.7
 execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] run tag @s remove BrokenPlatform
 execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] run scoreboard players reset @s CmdData
 execute as @e[type=marker,tag=captureMiddle,tag=FixPlatform] run tag @s remove FixPlatform
@@ -59,9 +59,9 @@ execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at
 execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[type=marker,tag=captureMiddle,limit=1] CmdData matches 16 run data merge entity @s {BeamTarget:{X:12,Y:52,Z:0}}
 
 execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run scoreboard players add @e[type=marker,tag=captureMiddle] CmdData 1
-execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 10 force @a[predicate=custom:belowroof]
-execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run playsound minecraft:block.glass.break master @a ~ ~ ~ 1 0.8
-execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run playsound minecraft:block.respawn_anchor.set_spawn master @a ~ ~ ~ 2 2
+execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run playsound minecraft:block.glass.break master @a[predicate=custom:indimension] ~ ~ ~ 1 0.8
+execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run playsound minecraft:block.respawn_anchor.set_spawn master @a[predicate=custom:indimension] ~ ~ ~ 2 2
 execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run summon end_crystal ~ ~ ~ {ShowBottom:0b,Invulnerable:0b,Tags:["PUCrystal","PUCrystalEntity","PUCrystalPerma"]}
 execute as @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run kill @s
 scoreboard players reset @e[type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] capturePoint

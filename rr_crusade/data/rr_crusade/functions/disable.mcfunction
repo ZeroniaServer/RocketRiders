@@ -33,7 +33,7 @@ tag @s remove ChaosWasOn
 tag @s[tag=ClutterCollectorWasOn] add ClutterCollector
 tag @s remove ClutterCollectorOff
 tag @s remove portalOverride
-execute as @a run trigger crusadechange set 0
+execute as @a[predicate=custom:indimension] run trigger crusadechange set 0
 
 #item enabling/disabling
 tag @s[tag=arrowsWasOff] remove rngArrows

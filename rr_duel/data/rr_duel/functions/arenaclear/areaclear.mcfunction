@@ -56,23 +56,23 @@ kill @e[type=marker,tag=surprising]
 
 function arenaclear:superspeed
 
-tp @a[team=Blue] 12 64 -66 0 0
-tp @a[team=Yellow] 12 64 66 180 0
-execute as @a[team=Blue,predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @a[team=Yellow,predicate=custom:is_on_fire] at @s run function game:putoutfire
-clear @a[team=Blue] #custom:clear
-clear @a[team=Blue] crossbow{nova:1b}
-clear @a[team=Yellow] #custom:clear
-clear @a[team=Yellow] crossbow{nova:1b}
-gamemode survival @a[team=Blue]
-gamemode survival @a[team=Yellow]
+tp @a[predicate=custom:indimension,team=Blue] 12 64 -66 0 0
+tp @a[predicate=custom:indimension,team=Yellow] 12 64 66 180 0
+execute as @a[predicate=custom:indimension,team=Blue,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute as @a[predicate=custom:indimension,team=Yellow,predicate=custom:is_on_fire] at @s run function game:putoutfire
+clear @a[predicate=custom:indimension,team=Blue] #custom:clear
+clear @a[predicate=custom:indimension,team=Blue] crossbow{nova:1b}
+clear @a[predicate=custom:indimension,team=Yellow] #custom:clear
+clear @a[predicate=custom:indimension,team=Yellow] crossbow{nova:1b}
+gamemode survival @a[predicate=custom:indimension,team=Blue]
+gamemode survival @a[predicate=custom:indimension,team=Yellow]
 
 scoreboard players operation @s MaxItemTime = @s MaxItemSec
 scoreboard players operation @s MaxItemTime *= 20 MaxItemSec
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Blue] run function game:givegear
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Yellow] run function game:givegear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Blue] run function servermode:givegear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[team=Yellow] run function servermode:givegear
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,team=Blue] run function game:givegear
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,team=Yellow] run function game:givegear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,team=Blue] run function servermode:givegear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,team=Yellow] run function servermode:givegear

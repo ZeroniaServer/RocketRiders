@@ -22,7 +22,7 @@ execute if entity @e[type=armor_stand,tag=Selection,tag=GameEnd] run scoreboard 
 tp @s[team=Spectator] 12 100 0.5 90 90
 
 #Handle crossers (Rocket Residers)
-execute if entity @s[tag=crosser] run tellraw @a ["",{"selector":"@s"},{"text":" tried to leave their base"}]
+execute if entity @s[tag=crosser] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" tried to leave their base"}]
 effect give @s[tag=crosser] resistance 1 200 true
 effect give @s[tag=crosser] instant_health 1 200 true
 effect give @s[tag=crosser] fire_resistance 4 200 true

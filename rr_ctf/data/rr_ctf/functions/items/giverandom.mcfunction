@@ -15,7 +15,7 @@ execute if entity @s[tag=!gaveFirstItem] run scoreboard players set @e[type=mark
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1},tag=!doStacking] run schedule function items:scheduleantidupe_indimension 1t append
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] as @e[type=item] if data entity @s {Item:{id:"minecraft:ender_pearl"}} run function items:deduct
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run function items:full_hotbar
-execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] as @a unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
+execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] as @a[predicate=custom:indimension] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givecanopy
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run scoreboard players add @s canopyStreak 1
 execute if entity @s[tag=canopyStreaked] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run function items:rng
 execute if entity @s[tag=canopyStreaked] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run function items:tetris
@@ -23,12 +23,12 @@ execute if entity @s[tag=canopyStreaked,scores={canopyStreak=1..}] if entity @e[
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=2..}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=0}] run tag @s add canopyStreaked
 
 #Select item (75% chance)
-execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add getItem
+execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] as @a[predicate=custom:indimension] unless entity @s[team=!Yellow,team=!Blue] run tag @s add getItem
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run tag @s add tetrisTime
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run function items:tetris
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run function items:rng
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run function items:tetris
-execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run tag @a remove getItem
+execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run tag @a[predicate=custom:indimension] remove getItem
 execute if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run tag @s remove tetrisTime
 execute if entity @s[scores={canopyStreak=1..}] if entity @e[type=marker,tag=CTFRNG,limit=1,scores={RNGscore=1..3}] run scoreboard players remove @s canopyStreak 1
 tag @s add gaveFirstItem
@@ -42,12 +42,12 @@ execute if entity @s[tag=Chaos,tag=givenAllNormal,tag=givenAllHeavy,tag=givenAll
 kill @e[type=marker,tag=CTFRNG,limit=1]
 
 ##Actionbar notifications
-execute as @a unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
-execute as @a unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s actionbardelay 0
-execute as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
-execute if entity @s[tag=!noFullHotbarSound] as @a[tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-execute as @a[tag=wasFullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
-execute if entity @s[tag=!noFullHotbarSound] as @a[tag=wasFullHotbar] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+execute as @a[predicate=custom:indimension] unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
+execute as @a[predicate=custom:indimension] unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s actionbardelay 0
+execute as @a[predicate=custom:indimension,tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+execute if entity @s[tag=!noFullHotbarSound] as @a[predicate=custom:indimension,tag=fullHotbar] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+execute as @a[predicate=custom:indimension,tag=wasFullHotbar] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar {"text":"You have too many items, so you can't get any more.","color":"red"}
+execute if entity @s[tag=!noFullHotbarSound] as @a[predicate=custom:indimension,tag=wasFullHotbar] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
 ##Wind Down modifier - subtract two ticks from Item Delay
 scoreboard players remove @s[tag=WindDown,scores={MaxItemTime=62..}] MaxItemTime 2

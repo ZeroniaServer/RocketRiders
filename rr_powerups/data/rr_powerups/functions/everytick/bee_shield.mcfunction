@@ -1,12 +1,12 @@
 #bee shield
-execute as @a[scores={DrinkHoney=1..},team=Yellow] at @s run summon armor_stand ~ ~ ~ {Tags:["BeeShieldDisplay","YellowBee"],Invisible:1b,Invulnerable:1b,Silent:1b,DisabledSlots:4144959}
-execute as @a[scores={DrinkHoney=1..},team=Blue] at @s run summon armor_stand ~ ~ ~ {Tags:["BeeShieldDisplay","BlueBee"],Invisible:1b,Invulnerable:1b,Silent:1b,DisabledSlots:4144959}
+execute as @a[predicate=custom:indimension,scores={DrinkHoney=1..},team=Yellow] at @s run summon armor_stand ~ ~ ~ {Tags:["BeeShieldDisplay","YellowBee"],Invisible:1b,Invulnerable:1b,Silent:1b,DisabledSlots:4144959}
+execute as @a[predicate=custom:indimension,scores={DrinkHoney=1..},team=Blue] at @s run summon armor_stand ~ ~ ~ {Tags:["BeeShieldDisplay","BlueBee"],Invisible:1b,Invulnerable:1b,Silent:1b,DisabledSlots:4144959}
 scoreboard players add @e[type=armor_stand,tag=BeeShieldDisplay] BeeShieldTime 1
-execute as @a[scores={DrinkHoney=1..}] at @s anchored eyes run tp @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=1},distance=..4,limit=1,sort=nearest] @s
-execute as @a[scores={DrinkHoney=1..}] at @s as @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=1},distance=..4,limit=1,sort=nearest] at @s run function rr_powerups:everytick/projectile
-scoreboard players reset @a DrinkHoney
+execute as @a[predicate=custom:indimension,scores={DrinkHoney=1..}] at @s anchored eyes run tp @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=1},distance=..4,limit=1,sort=nearest] @s
+execute as @a[predicate=custom:indimension,scores={DrinkHoney=1..}] at @s as @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=1},distance=..4,limit=1,sort=nearest] at @s run function rr_powerups:everytick/projectile
+scoreboard players reset @a[predicate=custom:indimension] DrinkHoney
 item replace entity @e[type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=1}] armor.head with honey_block
-execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s run playsound minecraft:block.honey_block.slide master @a ~ ~ ~ 2 0.8
+execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s run playsound minecraft:block.honey_block.slide master @a[predicate=custom:indimension] ~ ~ ~ 2 0.8
 execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s anchored eyes if score $dust CmdData matches 1 run particle minecraft:block honey_block ~ ~ ~ 0 0 0 1 10
 
 #kill conditions
@@ -28,8 +28,8 @@ execute as @e[type=marker,tag=animBshield] at @s unless predicate custom:insideb
 execute as @e[type=armor_stand,tag=BeeShieldDisplay] at @s unless predicate custom:insideborder run scoreboard players set @s CmdData -3
 
 execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run particle minecraft:block honey_block ~ ~ ~ 0.5 0.5 0.5 1 100
-execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run playsound minecraft:block.honey_block.hit master @a ~ ~ ~ 2 1
-execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run playsound minecraft:block.honey_block.break master @a ~ ~ ~ 2 1
+execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run playsound minecraft:block.honey_block.hit master @a[predicate=custom:indimension] ~ ~ ~ 2 1
+execute as @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run playsound minecraft:block.honey_block.break master @a[predicate=custom:indimension] ~ ~ ~ 2 1
 kill @e[type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}]
 
 #placement (animations etc)
@@ -66,20 +66,20 @@ execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=30}] at @s
 execute as @e[type=marker,tag=YBeeShieldDisplay,scores={BeeShieldTime=32}] at @s run place template rr_powerups:bees_yellow_full ~-2 ~-4 ~
 
 #Sounds and particles for the shield animation
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=1}] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 1.3
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=3}] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 1.2
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=5}] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 1
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=7}] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 0.9
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=9}] at @s run playsound block.beehive.enter master @a ~ ~ ~ 1.5 0.8
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=21}] at @s run playsound block.honey_block.break master @a ~ ~ ~ 1.5 0.5
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=23}] at @s run playsound block.honey_block.break master @a ~ ~ ~ 1.5 0.6
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=24}] at @s run playsound block.honey_block.break master @a ~ ~ ~ 1.5 0.7
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=26}] at @s run playsound block.honey_block.break master @a ~ ~ ~ 1.5 0.8
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=21}] at @s run playsound block.glass.break master @a ~ ~ ~ 1.5 1.3
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=23}] at @s run playsound block.glass.break master @a ~ ~ ~ 1.5 1.2
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=32}] at @s run playsound block.grass.break master @a ~ ~ ~ 1.5 0.8
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block tnt ~ ~-2 ~ 0.2 0.2 0.2 0.2 40 force @a[predicate=custom:belowroof]
-execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block honey_block ~ ~-2 ~ 1 1.5 0 0.1 200 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=1}] at @s run playsound block.beehive.enter master @a[predicate=custom:indimension] ~ ~ ~ 1.5 1.3
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=3}] at @s run playsound block.beehive.enter master @a[predicate=custom:indimension] ~ ~ ~ 1.5 1.2
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=5}] at @s run playsound block.beehive.enter master @a[predicate=custom:indimension] ~ ~ ~ 1.5 1
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=7}] at @s run playsound block.beehive.enter master @a[predicate=custom:indimension] ~ ~ ~ 1.5 0.9
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=9}] at @s run playsound block.beehive.enter master @a[predicate=custom:indimension] ~ ~ ~ 1.5 0.8
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=21}] at @s run playsound block.honey_block.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 0.5
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=23}] at @s run playsound block.honey_block.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 0.6
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=24}] at @s run playsound block.honey_block.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 0.7
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=26}] at @s run playsound block.honey_block.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 0.8
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=21}] at @s run playsound block.glass.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 1.3
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=23}] at @s run playsound block.glass.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 1.2
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=32}] at @s run playsound block.grass.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 0.8
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block tnt ~ ~-2 ~ 0.2 0.2 0.2 0.2 40 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @e[type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block honey_block ~ ~-2 ~ 1 1.5 0 0.1 200 force @a[predicate=custom:indimension,predicate=custom:belowroof]
 
 #Kill animation AEC
 kill @e[type=marker,tag=animBshield,scores={BeeShieldTime=32..}]
@@ -101,10 +101,10 @@ tag @e[type=bee,tag=!beeChecked] add beeChecked
 
 scoreboard players add $beetime BeeShieldTime 1
 execute if score $beetime BeeShieldTime matches 100 run scoreboard players set $beetime BeeShieldTime 0
-execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=BlueBee] unless data entity @s AngryAt if entity @a[team=Yellow] at @s run summon snowball ~ ~1 ~ {Tags:["NullShield","BeeTick"],Motion:[0.0,-1.0,0.0]}
-execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=BlueBee] unless data entity @s AngryAt if entity @a[team=Yellow] at @s as @e[type=snowball,tag=BeeTick,limit=1,sort=nearest,distance=..1] at @s run data modify entity @s Owner set from entity @a[team=Yellow,limit=1,sort=nearest] UUID
-execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=YellowBee] unless data entity @s AngryAt if entity @a[team=Blue] at @s run summon snowball ~ ~1 ~ {Tags:["NullShield","BeeTick"],Motion:[0.0,-1.0,0.0]}
-execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=YellowBee] unless data entity @s AngryAt if entity @a[team=Blue] at @s as @e[type=snowball,tag=BeeTick,limit=1,sort=nearest,distance=..1] at @s run data modify entity @s Owner set from entity @a[team=Blue,limit=1,sort=nearest] UUID
+execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=BlueBee] unless data entity @s AngryAt if entity @a[predicate=custom:indimension,team=Yellow] at @s run summon snowball ~ ~1 ~ {Tags:["NullShield","BeeTick"],Motion:[0.0,-1.0,0.0]}
+execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=BlueBee] unless data entity @s AngryAt if entity @a[predicate=custom:indimension,team=Yellow] at @s as @e[type=snowball,tag=BeeTick,limit=1,sort=nearest,distance=..1] at @s run data modify entity @s Owner set from entity @a[predicate=custom:indimension,team=Yellow,limit=1,sort=nearest] UUID
+execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=YellowBee] unless data entity @s AngryAt if entity @a[predicate=custom:indimension,team=Blue] at @s run summon snowball ~ ~1 ~ {Tags:["NullShield","BeeTick"],Motion:[0.0,-1.0,0.0]}
+execute if score $beetime BeeShieldTime matches 1 as @e[type=bee,tag=YellowBee] unless data entity @s AngryAt if entity @a[predicate=custom:indimension,team=Blue] at @s as @e[type=snowball,tag=BeeTick,limit=1,sort=nearest,distance=..1] at @s run data modify entity @s Owner set from entity @a[predicate=custom:indimension,team=Blue,limit=1,sort=nearest] UUID
 execute if score $beetime BeeShieldTime matches 1 as @e[type=bee] run data merge entity @s {AngerTime:1000}
 execute if score $beetime BeeShieldTime matches 3 run kill @e[type=snowball,tag=BeeTick]
 

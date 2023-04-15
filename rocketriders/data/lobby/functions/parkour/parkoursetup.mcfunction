@@ -24,7 +24,7 @@ item replace entity @e[type=armor_stand,tag=ParkourPlayer] armor.chest with leat
 item replace entity @e[type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings{display:{color:16772430}}
 item replace entity @e[type=armor_stand,tag=ParkourPlayer] armor.feet with leather_boots{display:{color:16772430}}
 
-tag @a remove firstParkour
+tag @a[predicate=custom:indimension] remove firstParkour
 scoreboard players reset * bestParkourMins
 scoreboard players reset * bestParkourSecs
 scoreboard players reset * bestParkourDeci

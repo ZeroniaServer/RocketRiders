@@ -14,7 +14,7 @@ execute as @e[type=marker,tag=rngSelected,tag=rngICBM] as @e[type=item] if data 
 
 function items:full_hotbar
 
-execute as @e[type=marker,tag=rngSelected,tag=rngObshield] as @a[scores={crusadekit=1},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveobshield
-execute as @e[type=marker,tag=rngSelected,tag=rngShield] as @a[scores={crusadekit=1},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveshield
-execute as @e[type=marker,tag=rngSelected,tag=rngICBM] as @a[scores={crusadekit=1},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveicbm
+execute as @e[type=marker,tag=rngSelected,tag=rngObshield] as @a[predicate=custom:indimension,scores={crusadekit=1},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveobshield
+execute as @e[type=marker,tag=rngSelected,tag=rngShield] as @a[predicate=custom:indimension,scores={crusadekit=1},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveshield
+execute as @e[type=marker,tag=rngSelected,tag=rngICBM] as @a[predicate=custom:indimension,scores={crusadekit=1},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/giveicbm
 kill @e[type=marker,tag=crusadeRNG]

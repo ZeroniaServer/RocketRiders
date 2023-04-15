@@ -26,8 +26,8 @@ function items:prevention/giveback
 execute as @e[type=marker,tag=BlueObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[type=marker,tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
-execute as @e[type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
+execute as @e[type=marker,tag=BlueObshield] at @s as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute as @e[type=marker,tag=BlueObshield] at @s as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
 
 #Detecting motion
 tag @e[type=fireball,tag=blueobfireball] remove StillOb
@@ -84,8 +84,8 @@ execute as @e[type=area_effect_cloud,tag=tempobshield] at @s if entity @e[type=m
 execute as @e[type=marker,tag=YellowObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[type=marker,tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
 execute as @e[type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
-execute as @e[type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
+execute as @e[type=marker,tag=YellowObshield] at @s as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute as @e[type=marker,tag=YellowObshield] at @s as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
 execute as @e[type=fireball,tag=yellowobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:air",Count:1b}}
 tag @e[type=fireball,tag=yellowobfireball,tag=!headreplaced] add headreplaced
 
@@ -142,17 +142,17 @@ execute if score obShield obshieldTick matches 2 run scoreboard players set obSh
 #Obsidian Shield Break
 execute as @e[type=marker,tag=blueobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1
 execute as @e[type=marker,tag=yellowobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1
-execute as @e[type=marker,scores={breakobshield=1}] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1
+execute as @e[type=marker,scores={breakobshield=1}] at @s run playsound block.respawn_anchor.deplete master @a[predicate=custom:indimension] ~ ~ ~ 2 1
 execute as @e[type=marker,scores={breakobshield=1}] at @s run setblock ~ ~ ~ minecraft:magenta_stained_glass_pane[west=true,east=true]
 execute as @e[type=marker,scores={breakobshield=1}] run scoreboard players set @e[type=marker,scores={breakobshield=1}] breakobshield 2
-execute as @e[type=marker,scores={breakobshield=2}] at @s if score $dust CmdData matches 1 run particle block crying_obsidian ~ ~ ~ 1 1 0.4 0.1 5 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,scores={breakobshield=2}] at @s if score $dust CmdData matches 1 run particle block crying_obsidian ~ ~ ~ 1 1 0.4 0.1 5 force @a[predicate=custom:indimension,predicate=custom:belowroof]
 execute as @e[type=marker,scores={breakobshield=2}] at @s unless block ~ ~ ~ minecraft:magenta_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 3
-execute as @e[type=marker,scores={breakobshield=3}] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1.2
+execute as @e[type=marker,scores={breakobshield=3}] at @s run playsound block.respawn_anchor.deplete master @a[predicate=custom:indimension] ~ ~ ~ 2 1.2
 execute as @e[type=marker,scores={breakobshield=3}] at @s run setblock ~ ~ ~ minecraft:pink_stained_glass_pane[west=true,east=true]
 execute as @e[type=marker,scores={breakobshield=3}] at @s run scoreboard players set @s breakobshield 4
-execute as @e[type=marker,scores={breakobshield=4}] at @s if score $dust CmdData matches 1 run particle block crying_obsidian ~ ~ ~ 1 1 0 0.1 25 force @a[predicate=custom:belowroof]
+execute as @e[type=marker,scores={breakobshield=4}] at @s if score $dust CmdData matches 1 run particle block crying_obsidian ~ ~ ~ 1 1 0 0.1 25 force @a[predicate=custom:indimension,predicate=custom:belowroof]
 execute as @e[type=marker,scores={breakobshield=4}] at @s unless block ~ ~ ~ minecraft:pink_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 5
-execute as @e[type=marker,scores={breakobshield=5}] at @s run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 1.4
+execute as @e[type=marker,scores={breakobshield=5}] at @s run playsound block.respawn_anchor.deplete master @a[predicate=custom:indimension] ~ ~ ~ 2 1.4
 execute as @e[type=marker,scores={breakobshield=5..}] run scoreboard players add @s breakobshield 1
 execute as @e[type=marker,scores={breakobshield=20}] at @s run function everytick:obsidian_shield_break
 

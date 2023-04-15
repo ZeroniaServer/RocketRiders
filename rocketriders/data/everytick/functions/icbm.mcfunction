@@ -15,7 +15,7 @@ execute unless entity @s[tag=portalOverride] run kill @e[type=egg,tag=ICBM,tag=!
 execute unless entity @s[tag=portalOverride] run tag @e[type=egg,tag=ICBM] remove teleported
 
 #Smoke trail
-execute as @e[type=egg,tag=ICBM] at @s if score $dust CmdData matches 1 run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force @a[predicate=custom:belowroof]
+execute as @e[type=egg,tag=ICBM] at @s if score $dust CmdData matches 1 run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force @a[predicate=custom:indimension,predicate=custom:belowroof]
 
 #Kill chickens
 execute as @e[type=chicken] run data merge entity @s {DeathTime:19s}
@@ -23,4 +23,4 @@ execute as @e[type=chicken] at @s run tp @s ~ ~-250 ~
 kill @e[type=chicken]
 
 #Kill credit
-execute as @a[scores={respawn=1..},tag=UtilKilled] run function game:utilkillcheck
+execute as @a[predicate=custom:indimension,scores={respawn=1..},tag=UtilKilled] run function game:utilkillcheck

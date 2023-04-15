@@ -50,5 +50,5 @@ tag @p[tag=currentTP,tag=!canopyTP] remove threwCanopy
 execute at @s[scores={PlatTime=1..40}] if entity @p[team=Yellow,tag=currentTP,tag=canopyTP] run tp @s @s
 
 #Reset
-tag @a[tag=currentTP] remove currentTP
+tag @a[predicate=custom:indimension,tag=currentTP] remove currentTP
 scoreboard players reset $tempuuid playerUUID

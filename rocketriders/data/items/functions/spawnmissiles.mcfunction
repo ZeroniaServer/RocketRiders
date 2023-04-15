@@ -18,8 +18,8 @@ execute if entity @s[tag=YellowSurpriseSpecial] run function items:surprise_yell
 
 ##Flipping Capability
 execute store result score $tempuuid playerUUID run data get entity @s data.UUID[0]
-execute if entity @s[tag=yellowmissile] if entity @a[team=Yellow,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
-execute if entity @s[tag=bluemissile] if entity @a[team=Blue,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
+execute if entity @s[tag=yellowmissile] if entity @a[predicate=custom:indimension,team=Yellow,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
+execute if entity @s[tag=bluemissile] if entity @a[predicate=custom:indimension,team=Blue,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
 scoreboard players reset $tempuuid playerUUID
 tag @s[tag=missileflip,tag=yellowmissile] add wasyellow
 tag @s[tag=missileflip,tag=bluemissile] add wasblue
@@ -88,9 +88,9 @@ execute if entity @s[tag=yellowmissile] run data modify storage rocketriders:ymi
 execute if entity @s[tag=yellowmissile] run data modify storage rocketriders:ymissilepos z prepend from entity @s Pos[2]
 
 ##Play sounds
-execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
-execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
-execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 
 ##Individual missile positioning
 #Auxiliary

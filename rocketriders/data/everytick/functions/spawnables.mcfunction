@@ -35,28 +35,28 @@ tag @s[tag=runobshields] remove runobshields
 
 execute unless entity @s[tag=runnovarocket] if entity @e[type=firework_rocket] run tag @s add runnovarocket
 execute unless entity @s[tag=runnovarocket] if entity @e[type=marker,tag=novatracker] run tag @s add runnovarocket
-execute unless entity @s[tag=runnovarocket] if entity @a[tag=BlueNovaAttach] run tag @s add runnovarocket
-execute unless entity @s[tag=runnovarocket] if entity @a[tag=YellowNovaAttach] run tag @s add runnovarocket
-execute unless entity @s[tag=runnovarocket] if entity @a[tag=BlueNovaNear] run tag @s add runnovarocket
-execute unless entity @s[tag=runnovarocket] if entity @a[tag=YellowNovaNear] run tag @s add runnovarocket
+execute unless entity @s[tag=runnovarocket] if entity @a[predicate=custom:indimension,tag=BlueNovaAttach] run tag @s add runnovarocket
+execute unless entity @s[tag=runnovarocket] if entity @a[predicate=custom:indimension,tag=YellowNovaAttach] run tag @s add runnovarocket
+execute unless entity @s[tag=runnovarocket] if entity @a[predicate=custom:indimension,tag=BlueNovaNear] run tag @s add runnovarocket
+execute unless entity @s[tag=runnovarocket] if entity @a[predicate=custom:indimension,tag=YellowNovaNear] run tag @s add runnovarocket
 execute if entity @s[tag=runnovarocket] run function everytick:novarocket
 tag @s[tag=runnovarocket] remove runnovarocket
 #Attachment reset (both)
-scoreboard players reset @a[tag=!YellowNovaAttach,tag=!BlueNovaAttach] novattach
-scoreboard players reset @a[scores={novattach=15..},nbt={OnGround:1b}] novattach
-scoreboard players reset @a[team=!Yellow,team=!Blue] novattach
-tag @a[team=!Yellow,team=!Blue] remove BlueNovaAttach
-tag @a[team=!Yellow,team=!Blue] remove YellowNovaAttach
+scoreboard players reset @a[predicate=custom:indimension,tag=!YellowNovaAttach,tag=!BlueNovaAttach] novattach
+scoreboard players reset @a[predicate=custom:indimension,scores={novattach=15..},nbt={OnGround:1b}] novattach
+scoreboard players reset @a[predicate=custom:indimension,team=!Yellow,team=!Blue] novattach
+tag @a[predicate=custom:indimension,team=!Yellow,team=!Blue] remove BlueNovaAttach
+tag @a[predicate=custom:indimension,team=!Yellow,team=!Blue] remove YellowNovaAttach
 
 execute unless entity @s[tag=runcanopy] if entity @e[type=ender_pearl] run tag @s add runcanopy
 execute unless entity @s[tag=runcanopy] if entity @e[type=marker,tag=YellowPlatform] run tag @s add runcanopy
 execute unless entity @s[tag=runcanopy] if entity @e[type=marker,tag=BluePlatform] run tag @s add runcanopy
 execute if entity @s[tag=runcanopy] run function everytick:canopy
 #Near Canopy check
-tag @a remove nearcanopy
-execute if entity @s[tag=runcanopy] as @a[team=Blue] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..7] run tag @s add nearcanopy
-execute if entity @s[tag=runcanopy] as @a[team=Yellow] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7] run tag @s add nearcanopy
-execute if entity @s[tag=runcanopy,tag=onlyBlue] as @a[team=Blue] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7] run tag @s add nearcanopy
+tag @a[predicate=custom:indimension] remove nearcanopy
+execute if entity @s[tag=runcanopy] as @a[predicate=custom:indimension,team=Blue] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..7] run tag @s add nearcanopy
+execute if entity @s[tag=runcanopy] as @a[predicate=custom:indimension,team=Yellow] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7] run tag @s add nearcanopy
+execute if entity @s[tag=runcanopy,tag=onlyBlue] as @a[predicate=custom:indimension,team=Blue] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7] run tag @s add nearcanopy
 
 execute unless entity @s[tag=runfireball] if entity @e[type=fireball,tag=!obfireball] run tag @s add runfireball
 execute unless entity @s[tag=runfireball] if entity @e[type=marker,tag=BlueFireball] run tag @s add runfireball
@@ -68,6 +68,6 @@ function everytick:splash
 
 execute unless entity @s[tag=runicbm] if entity @e[type=egg,nbt={Item:{tag:{icbm:1b}}}] run tag @s add runicbm
 execute unless entity @s[tag=runicbm] if entity @e[type=marker,tag=ICBMtracker] run tag @s add runicbm
-execute unless entity @s[tag=runicbm] if entity @a[scores={respawn=1..},tag=UtilKilled] run tag @s add runicbm
+execute unless entity @s[tag=runicbm] if entity @a[predicate=custom:indimension,scores={respawn=1..},tag=UtilKilled] run tag @s add runicbm
 execute if entity @s[tag=runicbm] run function everytick:icbm
 tag @s[tag=runicbm] remove runicbm

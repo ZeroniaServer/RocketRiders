@@ -66,7 +66,7 @@ kill @e[type=marker,tag=surprising]
 function arenaclear:superspeed
 
 ##Close off Modification Room
-execute as @e[type=marker,tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0
+execute as @e[type=marker,tag=ControlRoom] at @s run tp @a[predicate=custom:indimension,distance=..15] -43 211 78 90 0
 fill -57 201 84 -70 201 72 barrier replace air
 
 ##Generate list of Game Rules
@@ -80,9 +80,9 @@ scoreboard players operation @s RandomItem += @s MaxItemTime
 scoreboard players set @s[tag=Minute] RandomItem 1197
 
 ##Remove Traveler tags
-tag @a remove beenOnYellow
-tag @a remove beenOnBlue
-tag @a remove beenOnBoth
+tag @a[predicate=custom:indimension] remove beenOnYellow
+tag @a[predicate=custom:indimension] remove beenOnBlue
+tag @a[predicate=custom:indimension] remove beenOnBoth
 
 ##Remove join cancel from join pads
 schedule function game:uncancelpads_indimension 2t append
@@ -91,4 +91,4 @@ schedule function game:uncancelpads_indimension 2t append
 tag @s add JustCleared
 
 ##Stop all sounds
-#execute as @a run function everytick:stopsounds
+#execute as @a[predicate=custom:indimension] run function everytick:stopsounds

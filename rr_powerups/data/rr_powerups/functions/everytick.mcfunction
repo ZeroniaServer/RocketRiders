@@ -5,8 +5,8 @@ execute as @e[type=armor_stand,tag=Selection,tag=powerupsEnabled] run function r
 execute as @e[type=armor_stand,tag=Selection,tag=powerupsLast] run function rr_powerups:iflast
 
 #hotfix to remove tags from players in gamemodes other than powerups
-execute as @e[type=armor_stand,tag=Selection,tag=!powerupsEnabled] run tag @a[tag=onCapturePoint] remove onCapturePoint
-execute as @e[type=armor_stand,tag=Selection,tag=!powerupsEnabled] run tag @a[tag=Infinity] remove Infinity
+execute as @e[type=armor_stand,tag=Selection,tag=!powerupsEnabled] run tag @a[predicate=custom:indimension,tag=onCapturePoint] remove onCapturePoint
+execute as @e[type=armor_stand,tag=Selection,tag=!powerupsEnabled] run tag @a[predicate=custom:indimension,tag=Infinity] remove Infinity
 
 #hotfix to kill bees in other modes without bees
 execute as @e[type=armor_stand,tag=Selection,tag=!powerupsEnabled,tag=!hasBees] if entity @e[type=bee] run kill @e[type=bee]

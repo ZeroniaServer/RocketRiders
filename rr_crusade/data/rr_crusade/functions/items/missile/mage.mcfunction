@@ -18,9 +18,9 @@ execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[ty
 
 function items:full_hotbar
 
-execute as @e[type=marker,tag=rngSelected,tag=rngAnt] as @a[scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveant
-execute as @e[type=marker,tag=rngSelected,tag=rngToma] as @a[scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givetoma
-execute as @e[type=marker,tag=rngSelected,tag=rngCata] as @a[scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givecata
-execute as @e[type=marker,tag=rngSelected,tag=rngLift] as @a[scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givelift
-execute as @e[type=marker,tag=rngSelected,tag=rngNull] as @a[scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givenull
+execute as @e[type=marker,tag=rngSelected,tag=rngAnt] as @a[predicate=custom:indimension,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveant
+execute as @e[type=marker,tag=rngSelected,tag=rngToma] as @a[predicate=custom:indimension,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givetoma
+execute as @e[type=marker,tag=rngSelected,tag=rngCata] as @a[predicate=custom:indimension,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givecata
+execute as @e[type=marker,tag=rngSelected,tag=rngLift] as @a[predicate=custom:indimension,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givelift
+execute as @e[type=marker,tag=rngSelected,tag=rngNull] as @a[predicate=custom:indimension,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givenull
 kill @e[type=marker,tag=crusadeRNG]

@@ -19,8 +19,8 @@ function rr_duel:rankcalc/rankchange1
 
 ##GAIN
 #Take current XP value of blue and yellow player.
-scoreboard players operation $CurrentBlue XP = @a[team=Blue,limit=1] XP
-scoreboard players operation $CurrentYellow XP = @a[team=Yellow,limit=1] XP
+scoreboard players operation $CurrentBlue XP = @a[predicate=custom:indimension,team=Blue,limit=1] XP
+scoreboard players operation $CurrentYellow XP = @a[predicate=custom:indimension,team=Yellow,limit=1] XP
 
 #Set RankResult to 80
 scoreboard players set $RankResult XP 80
@@ -29,57 +29,57 @@ scoreboard players set $RankResult XP 80
 scoreboard players operation $CurrentBlue XP /= $50 XP
 
 #CurrentBlue * YellowRankScore
-execute if entity @a[team=Yellow,limit=1] run scoreboard players operation $CurrentBlue XP *= @a[team=Yellow,limit=1] RankScore
+execute if entity @a[predicate=custom:indimension,team=Yellow,limit=1] run scoreboard players operation $CurrentBlue XP *= @a[predicate=custom:indimension,team=Yellow,limit=1] RankScore
 
 #RankResult+CurrentBlue = new RankResult
 scoreboard players operation $RankResult XP += $CurrentBlue XP
 
 #Add the RankResult scores to the Yellow player
-scoreboard players operation @a[team=Yellow,limit=1] XP += $RankResult XP
+scoreboard players operation @a[predicate=custom:indimension,team=Yellow,limit=1] XP += $RankResult XP
 scoreboard players operation $NetYellow XP += $RankResult XP
 
 #Adjust Yellow XP to below 1301
-execute if entity @a[team=Yellow,scores={XP=1301..},limit=1] run scoreboard players operation $DiffYellow XP = @a[team=Yellow,limit=1,scores={XP=1301..}] XP
-execute if entity @a[team=Yellow,scores={XP=1301..},limit=1] run scoreboard players operation $DiffYellow XP -= $1300 XP
-execute if entity @a[team=Yellow,scores={XP=1301..},limit=1] run scoreboard players operation $NetYellow XP -= $DiffYellow XP
-scoreboard players set @a[team=Yellow,scores={XP=1301..},limit=1] XP 1300
+execute if entity @a[predicate=custom:indimension,team=Yellow,scores={XP=1301..},limit=1] run scoreboard players operation $DiffYellow XP = @a[predicate=custom:indimension,team=Yellow,limit=1,scores={XP=1301..}] XP
+execute if entity @a[predicate=custom:indimension,team=Yellow,scores={XP=1301..},limit=1] run scoreboard players operation $DiffYellow XP -= $1300 XP
+execute if entity @a[predicate=custom:indimension,team=Yellow,scores={XP=1301..},limit=1] run scoreboard players operation $NetYellow XP -= $DiffYellow XP
+scoreboard players set @a[predicate=custom:indimension,team=Yellow,scores={XP=1301..},limit=1] XP 1300
 
 #Announce new Yellow XP
-execute as @a[team=Yellow,limit=1] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"score":{"name":"$NetYellow","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
+execute as @a[predicate=custom:indimension,team=Yellow,limit=1] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s","color":"green"},{"text":" gained ","color":"green"},{"score":{"name":"$NetYellow","objective":"XP"},"bold":true,"color":"dark_green"},{"text":", making their XP a total of: ","color":"green"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 
 ##LOSS
 #Set LossXP to RankResult
 scoreboard players operation $LossXP XP = $RankResult XP
 
 #LossXP * BlueRankScore
-execute if entity @a[team=Blue,limit=1] run scoreboard players operation $LossXP XP *= @a[team=Blue,limit=1] RankScore
+execute if entity @a[predicate=custom:indimension,team=Blue,limit=1] run scoreboard players operation $LossXP XP *= @a[predicate=custom:indimension,team=Blue,limit=1] RankScore
 
 #LossXP / 10
 scoreboard players operation $LossXP XP /= $10 XP
 
 #Subtract the LossXP score from the Blue player
-scoreboard players operation @a[team=Blue,limit=1] XP -= $LossXP XP
+scoreboard players operation @a[predicate=custom:indimension,team=Blue,limit=1] XP -= $LossXP XP
 scoreboard players operation $NetBlue XP += $LossXP XP
 
 #Set Buffer to current Yellow XP
-scoreboard players operation $Buffer XP = @a[team=Yellow,limit=1] XP
+scoreboard players operation $Buffer XP = @a[predicate=custom:indimension,team=Yellow,limit=1] XP
 
 #Buffer * BlueRankScore
-scoreboard players operation $Buffer XP *= @a[team=Blue,limit=1] RankScore
+scoreboard players operation $Buffer XP *= @a[predicate=custom:indimension,team=Blue,limit=1] RankScore
 
 #Buffer / 600
 scoreboard players operation $Buffer XP /= $600 XP
 
 #Add the Buffer score to the Blue player
-scoreboard players operation @a[team=Blue,limit=1] XP += $Buffer XP
+scoreboard players operation @a[predicate=custom:indimension,team=Blue,limit=1] XP += $Buffer XP
 scoreboard players operation $NetBlue XP -= $Buffer XP
 
 #Adjust Blue XP to above 0
-execute if entity @a[team=Blue,scores={XP=..-1},limit=1] run scoreboard players operation $NetBlue XP += @a[team=Blue,limit=1] XP
-scoreboard players set @a[team=Blue,scores={XP=..0},limit=1] XP 0
+execute if entity @a[predicate=custom:indimension,team=Blue,scores={XP=..-1},limit=1] run scoreboard players operation $NetBlue XP += @a[predicate=custom:indimension,team=Blue,limit=1] XP
+scoreboard players set @a[predicate=custom:indimension,team=Blue,scores={XP=..0},limit=1] XP 0
 
 #Announce new Blue XP
-execute as @a[team=Blue,limit=1] run tellraw @a ["",{"selector":"@s","color":"red"},{"text":" lost ","color":"red"},{"score":{"name":"$NetBlue","objective":"XP"},"bold":true,"color":"dark_red"},{"text":", making their XP a total of: ","color":"red"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
+execute as @a[predicate=custom:indimension,team=Blue,limit=1] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s","color":"red"},{"text":" lost ","color":"red"},{"score":{"name":"$NetBlue","objective":"XP"},"bold":true,"color":"dark_red"},{"text":", making their XP a total of: ","color":"red"},{"score":{"name":"@s","objective":"XP"},"bold":true,"color":"light_purple"}]
 
 #Rank change detect part 2
 function rr_duel:rankcalc/rankchange2

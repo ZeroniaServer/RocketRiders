@@ -4,6 +4,11 @@
         "fireball_kill": {
             "trigger": "minecraft:player_killed_entity",
             "conditions": {
+                "player": {
+                    "location": {
+                        "dimension": "minecraft:overworld"
+                    }
+                },
                 "entity": {
                     "type": "minecraft:player"
                 },
@@ -22,6 +27,6 @@
         }
     },
     "rewards": {
-        "function": "achievements:fireballkill"
+        "function": "achievements:fireballkill_indimension"
     }
 }

@@ -9,8 +9,8 @@ execute unless entity @s[tag=givenAllMissile] run summon marker 0 0 0 {Tags:["rn
 execute unless entity @s[tag=givenAllUtil] unless entity @s[tag=!gaveFirstItem] run summon marker 0 0 0 {Tags:["rngUtil","rng1"]}
 
 ##Select item and run appropriate sub-RNG function
-tag @e[type=marker,tag=rng1,sort=random,limit=1] add rngSelected
-execute as @e[type=marker,tag=rngSelected,tag=rngMissile] run function rr_crusade:items/missile/rng
-execute as @e[type=marker,tag=rngSelected,tag=rngUtil] run function rr_crusade:items/util/rng
+tag @e[predicate=custom:indimension,type=marker,tag=rng1,sort=random,limit=1] add rngSelected
+execute as @e[predicate=custom:indimension,type=marker,tag=rngSelected,tag=rngMissile] run function rr_crusade:items/missile/rng
+execute as @e[predicate=custom:indimension,type=marker,tag=rngSelected,tag=rngUtil] run function rr_crusade:items/util/rng
 
-kill @e[type=marker,tag=rng1]
+kill @e[predicate=custom:indimension,type=marker,tag=rng1]

@@ -27,7 +27,7 @@ fill 12 64 65 12 71 65 oak_fence replace air
 place template finish_flag1 8 70 63
 
 #Stair placement
-kill @e[type=marker,tag=chaseStairs]
+kill @e[predicate=custom:indimension,type=marker,tag=chaseStairs]
 summon marker 10 63 66 {Tags:["chaseStairs"]}
 execute positioned 10 63 66 run function rr_chase:arenaclear/stairleft
 execute positioned 14 63 66 run function rr_chase:arenaclear/stairright
@@ -116,11 +116,11 @@ summon marker 36 49 52 {Tags:["ChaseChecker","ChaseChecker1"]}
 summon marker 36 42 52 {Tags:["ChaseChecker","ChaseChecker2"]}
 summon marker 36 35 52 {Tags:["ChaseChecker","ChaseChecker3"]}
 
-execute if entity @s[tag=Hardcore,tag=!HardcoreOff] as @e[type=marker,tag=ChaseChecker] at @s run tp @s ~ ~ 64
+execute if entity @s[tag=Hardcore,tag=!HardcoreOff] as @e[predicate=custom:indimension,type=marker,tag=ChaseChecker] at @s run tp @s ~ ~ 64
 fill 38 63 64 -14 34 64 glass replace yellow_stained_glass
 
-execute as @e[type=marker,tag=ChaseChecker] at @s run function rr_chase:arenaclear/checkerboard
-kill @e[type=marker,tag=ChaseChecker]
+execute as @e[predicate=custom:indimension,type=marker,tag=ChaseChecker] at @s run function rr_chase:arenaclear/checkerboard
+kill @e[predicate=custom:indimension,type=marker,tag=ChaseChecker]
 
 fill 37 63 56 38 57 52 minecraft:black_stained_glass
 fill 38 50 56 37 56 52 minecraft:white_stained_glass

@@ -1,0 +1,1 @@
+execute in minecraft:overworld run function rr_crusade:game/glassovertime

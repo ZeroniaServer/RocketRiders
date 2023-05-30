@@ -1,4 +1,4 @@
-kill @e[type=marker,tag=swapplatform]
+kill @e[predicate=custom:indimension,type=marker,tag=swapplatform]
 
 tag @s remove swapEnabled
 tag @s remove SurpriseEggOff

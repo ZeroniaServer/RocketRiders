@@ -23,7 +23,7 @@
         }
     },
     "rewards": {
-        "function": "2811iaj1:wait"
+        "function": "2811iaj1:wait_indimension"
     },
     "parent": "2811iaj1:modif"
 }

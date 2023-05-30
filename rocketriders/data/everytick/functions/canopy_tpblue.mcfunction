@@ -18,8 +18,8 @@ execute if entity @p[team=Blue,tag=currentTP,scores={respawn=1..}] run scoreboar
 tag @p[team=Blue,tag=currentTP,scores={respawn=1..}] remove canopyTP
 
 #Canopy forgets owner if crossing in Rocket Residers
-execute if entity @e[type=armor_stand,tag=Selection,tag=Residers] if entity @p[team=Blue,tag=currentTP,predicate=custom:residers] run scoreboard players reset @s pearlOwnerUUID
-execute if entity @e[type=armor_stand,tag=Selection,tag=Residers] run tag @p[team=Blue,tag=currentTP,predicate=custom:residers] remove canopyTP
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=Residers] if entity @p[team=Blue,tag=currentTP,predicate=custom:residers] run scoreboard players reset @s pearlOwnerUUID
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=Residers] run tag @p[team=Blue,tag=currentTP,predicate=custom:residers] remove canopyTP
 
 #Canopy doesn't teleport more than once if shot by Nova Rocket
 execute if entity @p[team=Blue,tag=currentTP,scores={novattach=1..15}] run scoreboard players reset @s[scores={PlatTime=2..}] pearlOwnerUUID
@@ -50,5 +50,5 @@ tag @p[tag=currentTP,tag=!canopyTP] remove threwCanopy
 execute at @s[scores={PlatTime=1..40}] if entity @p[team=Blue,tag=currentTP,tag=canopyTP] run tp @s @s
 
 #Reset
-tag @a[tag=currentTP] remove currentTP
+tag @a[predicate=custom:indimension,tag=currentTP] remove currentTP
 scoreboard players reset $tempuuid playerUUID

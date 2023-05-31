@@ -12,13 +12,13 @@ clear @a[predicate=custom:indimension] crossbow{Charged:0b,nova:1b}
 #Identifies shot Nova Rockets and stores player UUID into their tracker score
 execute as @a[predicate=custom:indimension,scores={NovaShot=1..}] store result score @s UUIDTracker run data get entity @s UUID[0]
 execute as @a[predicate=custom:indimension,scores={NovaShot=1..}] at @s run setblock ~ 174 ~ oak_sign
-execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Blue,scores={NovaShot=1..}]"},{"text":"\'s Nova Rocket"}]'}
-execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run data merge block ~ 174 ~ {Text1:'{"text":""}',Text2:'["",{"selector":"@p[team=Yellow,scores={NovaShot=1..}]"},{"text":"\'s Nova Rocket"}]'}
+execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run data modify block ~ 174 ~ front_text.messages[0] set value '["",{"selector":"@p[team=Blue,scores={NovaShot=1..}]"},{"text":"\'s Nova Rocket"}]'
+execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run data modify block ~ 174 ~ front_text.messages[0] set value '["",{"selector":"@p[team=Yellow,scores={NovaShot=1..}]"},{"text":"\'s Nova Rocket"}]'
 execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run tag @e[predicate=custom:indimension,type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] add BlueNova
-execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run data modify entity @e[predicate=custom:indimension,type=firework_rocket,tag=BlueNova,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
+execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run data modify entity @e[predicate=custom:indimension,type=firework_rocket,tag=BlueNova,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ front_text.messages[0]
 execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s store result score @e[predicate=custom:indimension,type=firework_rocket,tag=BlueNova,distance=..5,limit=1] UUIDTracker run scoreboard players get @s UUIDTracker
 execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run tag @e[predicate=custom:indimension,type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] add YellowNova
-execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run data modify entity @e[predicate=custom:indimension,type=firework_rocket,tag=YellowNova,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ Text2
+execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run data modify entity @e[predicate=custom:indimension,type=firework_rocket,tag=YellowNova,limit=1,sort=nearest,distance=..5] CustomName set from block ~ 174 ~ front_text.messages[0]
 execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s store result score @e[predicate=custom:indimension,type=firework_rocket,tag=YellowNova,distance=..5,limit=1] UUIDTracker run scoreboard players get @s UUIDTracker
 execute as @a[predicate=custom:indimension,team=Blue,scores={NovaShot=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
 execute as @a[predicate=custom:indimension,team=Yellow,scores={NovaShot=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign

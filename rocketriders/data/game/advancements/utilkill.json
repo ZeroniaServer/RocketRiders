@@ -1,28 +1,28 @@
 {
-    "criteria": {
-      "requirement": {
-        "trigger": "minecraft:entity_killed_player",
-        "conditions": {
-          "player": {
-            "location": {
-              "dimension": "minecraft:overworld"
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "player": {
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
+        },
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_explosion",
+              "expected": true
             }
-          },
-          "killing_blow": {
-            "tags": [
-              {
-                "id": "minecraft:is_explosion",
-                "expected": true
-              }
-            ],
-            "direct_entity": {
-              "type": "minecraft:creeper"
-            }
+          ],
+          "direct_entity": {
+            "type": "minecraft:creeper"
           }
         }
       }
-    },
-    "rewards": {
-      "function": "game:utilkillcheck_indimension"
     }
+  },
+  "rewards": {
+    "function": "game:utilkillcheck_indimension"
+  }
 }

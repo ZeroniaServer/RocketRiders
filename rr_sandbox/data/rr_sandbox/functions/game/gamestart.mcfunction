@@ -20,7 +20,5 @@ execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[predicate=cus
 execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[predicate=custom:indimension,team=Yellow] run tag @s[tag=!GameStarted] add Countdown
 execute if entity @s[tag=EditedSettings,tag=Countdown,tag=SMCustom] unless entity @a[predicate=custom:indimension,team=Blue] unless entity @a[predicate=custom:indimension,team=Yellow] run function game:restartcountdown
 
-scoreboard players set @s[scores={count=1..}] sandboxRandom 78
-execute if entity @s[scores={count=1..}] run gamerule doTileDrops true
 execute if entity @s[scores={count=1..600}] run scoreboard players set @a dropPickaxe 0
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

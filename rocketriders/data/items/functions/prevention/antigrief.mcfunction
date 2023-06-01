@@ -68,7 +68,7 @@ execute if entity @s[tag=YellowRift,tag=!UnableMissile] at @s positioned ~-1 ~-5
 execute if entity @s[tag=BlueJug,tag=!UnableMissile] at @s positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~16 void_air
 execute if entity @s[tag=BlueJug,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~16 ~ 175 ~ filtered #custom:antigrief_blue force
 execute if entity @s[tag=YellowJug,tag=!UnableMissile] at @s positioned ~-1 175 ~-20 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~16 void_air
-execute if entity @s[tag=YellowJug,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-20 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~16 ~ 175 ~ filtered #custom:antigrief force
+execute if entity @s[tag=YellowJug,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-20 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~16 ~ 175 ~ filtered #custom:antigrief_yellow force
 
 #Slasher
 execute if entity @s[tag=BlueSlash,tag=!UnableMissile] at @s positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~3 ~12 void_air
@@ -86,7 +86,7 @@ execute if entity @s[tag=YellowCata,tag=!UnableMissile] at @s positioned ~-1 ~-6
 execute if entity @s[tag=BlueCitadel,tag=!UnableMissile] at @s positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~9 void_air
 execute if entity @s[tag=BlueCitadel,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:antigrief_blue force
 execute if entity @s[tag=YellowCitadel,tag=!UnableMissile] at @s positioned ~-1 175 ~-13 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~9 void_air
-execute if entity @s[tag=YellowCitadel,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-13 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:antigrief force
+execute if entity @s[tag=YellowCitadel,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-13 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:antigrief_yellow force
 
 #Gemini
 execute if entity @s[tag=BlueGemi,tag=!UnableMissile] at @s positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~1 ~9 void_air
@@ -110,7 +110,7 @@ execute if entity @s[tag=YellowHyper,tag=!UnableMissile] at @s positioned ~-1 ~-
 execute if entity @s[tag=BlueBull,tag=!UnableMissile] at @s positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~12 void_air
 execute if entity @s[tag=BlueBull,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~12 ~ 175 ~ filtered #custom:antigrief_blue force
 execute if entity @s[tag=YellowBull,tag=!UnableMissile] at @s positioned ~-1 175 ~-16 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~12 void_air
-execute if entity @s[tag=YellowBull,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-16 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~12 ~ 175 ~ filtered #custom:antigrief force
+execute if entity @s[tag=YellowBull,tag=!UnableMissile] at @s positioned ~-1 ~-6 ~-16 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~12 ~ 175 ~ filtered #custom:antigrief_yellow force
 
 #Duplex
 execute if entity @s[tag=BlueDuplex,tag=!UnableMissile] at @s positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~17 void_air

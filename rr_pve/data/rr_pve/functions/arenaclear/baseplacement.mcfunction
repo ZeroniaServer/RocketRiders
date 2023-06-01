@@ -1,4 +1,4 @@
 function arenaclear:baseplacement
-tag @e[type=armor_stand,tag=Selection] add noDetailYellow
+tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection] add noDetailYellow
 function arenaclear:detailplacement
 function game:cancelyellow

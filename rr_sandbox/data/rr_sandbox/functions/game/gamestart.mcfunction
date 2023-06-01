@@ -1,26 +1,24 @@
 #Items
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function game:givegear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinBlue] run function servermode:givegear
-item replace entity @a[tag=JoinBlue] hotbar.0 with minecraft:diamond_pickaxe{display:{Name:'{"translate":"Pickaxe","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"A tool used to destroy and obtain blocks"}']},HideFlags:7,Unbreakable:1b,Enchantments:[{id:"silk_touch",lvl:1}]}
-item replace entity @a[tag=JoinBlue] weapon.offhand with minecraft:firework_rocket{display:{Name:'{"translate":"Fireworks","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"For propulsion"}']},Fireworks:{Flight:3b}} 64
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue] run function game:givegear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue] run function servermode:givegear
+item replace entity @a[predicate=custom:indimension,tag=JoinBlue] hotbar.0 with minecraft:netherite_pickaxe{display:{Name:'{"translate":"Piercing Pickaxe","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"A tool used both for"}','{"translate":"mining and melee attacks."}']},CanDestroy:["minecraft:red_stained_glass","minecraft:orange_stained_glass","minecraft:yellow_stained_glass","minecraft:lime_stained_glass","minecraft:green_stained_glass","minecraft:cyan_stained_glass","minecraft:light_blue_stained_glass","minecraft:blue_stained_glass","minecraft:magenta_stained_glass","minecraft:purple_stained_glass","minecraft:pink_stained_glass","minecraft:white_stained_glass","minecraft:light_gray_stained_glass","minecraft:gray_stained_glass","minecraft:black_stained_glass","minecraft:brown_stained_glass"],HideFlags:31,Unbreakable:1b,Enchantments:[{id:"sharpness",lvl:4}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:-2.2d,Operation:0,UUID:[I;346953296,-1115273365,-1997860529,1241626160],Slot:"mainhand"}]}
 
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] run function game:givegear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[tag=JoinYellow] run function servermode:givegear
-item replace entity @a[tag=JoinYellow] hotbar.0 with minecraft:diamond_pickaxe{display:{Name:'{"translate":"Pickaxe","color":"gold","bold":true,"italic":false}',Lore:['{"translate":"A tool used to destroy and obtain blocks"}']},HideFlags:7,Unbreakable:1b,Enchantments:[{id:"silk_touch",lvl:1}]}
-item replace entity @a[tag=JoinYellow] weapon.offhand with minecraft:firework_rocket{display:{Name:'{"translate":"Fireworks","color":"yellow","bold":true,"italic":false}',Lore:['{"translate":"For propulsion"}']},Fireworks:{Flight:3b}} 64
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow] run function game:givegear
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow] run function servermode:givegear
+item replace entity @a[predicate=custom:indimension,tag=JoinYellow] hotbar.0 with minecraft:netherite_pickaxe{display:{Name:'{"translate":"Piercing Pickaxe","color":"gold","bold":true,"italic":false}',Lore:['{"translate":"A tool used both for"}','{"translate":"mining and melee attacks."}']},CanDestroy:["minecraft:red_stained_glass","minecraft:orange_stained_glass","minecraft:yellow_stained_glass","minecraft:lime_stained_glass","minecraft:green_stained_glass","minecraft:cyan_stained_glass","minecraft:light_blue_stained_glass","minecraft:blue_stained_glass","minecraft:magenta_stained_glass","minecraft:purple_stained_glass","minecraft:pink_stained_glass","minecraft:white_stained_glass","minecraft:light_gray_stained_glass","minecraft:gray_stained_glass","minecraft:black_stained_glass","minecraft:brown_stained_glass"],HideFlags:31,Unbreakable:1b,Enchantments:[{id:"sharpness",lvl:4}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:-2.2d,Operation:0,UUID:[I;346953296,-1115273365,-1997860529,1241626160],Slot:"mainhand"}]}
 
 #Tag Removal
 tag @a remove JoinBlue
 tag @a remove JoinYellow
 
 #Countdown
-execute if entity @s[tag=EditedSettings,tag=!SMCustom] if entity @a[team=Blue] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[team=Yellow] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=!SMCustom] if entity @a[predicate=custom:indimension,team=Blue] if entity @a[predicate=custom:indimension,team=Yellow] run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[predicate=custom:indimension,team=Blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[predicate=custom:indimension,team=Yellow] run function game:restartcountdown
 
-execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[team=Blue] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[team=Yellow] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=SMCustom] unless entity @a[team=Blue] unless entity @a[team=Yellow] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[predicate=custom:indimension,team=Blue] run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[predicate=custom:indimension,team=Yellow] run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,tag=SMCustom] unless entity @a[predicate=custom:indimension,team=Blue] unless entity @a[predicate=custom:indimension,team=Yellow] run function game:restartcountdown
 
 scoreboard players set @s[scores={count=1..}] sandboxRandom 78
 execute if entity @s[scores={count=1..}] run gamerule doTileDrops true

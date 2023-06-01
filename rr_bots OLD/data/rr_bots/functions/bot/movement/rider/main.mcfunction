@@ -5,7 +5,7 @@ execute if entity @s[tag=Speed33] at @s run function rr_bots:bot/movement/rider/
 
 execute if entity @s[tag=BotRider] if entity @s[tag=!Speed20,tag=!Speed22,tag=!Speed17,tag=!Speed33] unless entity @s[scores={botmisspawn=1..40}] run scoreboard players add @s botriding 2
 
-execute if entity @s[tag=BotRider] at @s if entity @e[type=tnt,distance=..10] run tag @s remove BotRider
+execute if entity @s[tag=BotRider] at @s if entity @e[predicate=custom:indimension,type=tnt,distance=..10] run tag @s remove BotRider
 
 execute if entity @s[tag=BotRider] at @s run function rr_bots:bot/animations/walkanim
 

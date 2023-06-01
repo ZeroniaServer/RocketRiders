@@ -1,18 +1,18 @@
 scoreboard players add @s VoteServerMode 1
-scoreboard players add @e[type=marker,tag=ServerMode,tag=Set] VoteServerMode 0
-execute unless entity @e[tag=ServerMode,tag=ChaseMode] as @a[scores={VoteServerMode=6}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
-execute unless entity @e[tag=ServerMode,tag=ChaseMode] as @a[scores={VoteServerMode=6}] run scoreboard players set @s VoteServerMode 0
-execute as @a[scores={VoteServerMode=7..}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
-execute as @a[scores={VoteServerMode=7..}] run scoreboard players set @s VoteServerMode 0
-execute as @a[scores={VoteServerMode=..-1}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
-execute as @a[scores={VoteServerMode=..-1}] run scoreboard players set @s VoteServerMode 0
+scoreboard players add @e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set] VoteServerMode 0
+execute unless entity @e[predicate=custom:indimension,tag=ServerMode,tag=ChaseMode] as @a[predicate=custom:indimension,scores={VoteServerMode=6}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
+execute unless entity @e[predicate=custom:indimension,tag=ServerMode,tag=ChaseMode] as @a[predicate=custom:indimension,scores={VoteServerMode=6}] run scoreboard players set @s VoteServerMode 0
+execute as @a[predicate=custom:indimension,scores={VoteServerMode=7..}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
+execute as @a[predicate=custom:indimension,scores={VoteServerMode=7..}] run scoreboard players set @s VoteServerMode 0
+execute as @a[predicate=custom:indimension,scores={VoteServerMode=..-1}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
+execute as @a[predicate=custom:indimension,scores={VoteServerMode=..-1}] run scoreboard players set @s VoteServerMode 0
 execute as @a run scoreboard players enable @s VoteServerMode
 
-execute as @a[scores={VoteServerMode=1..6}] unless score @s VoteNum = @s VoteServerMode at @s run playsound minecraft:entity.villager.work_librarian master @s ~ ~ ~ 0.4 1.5
-execute as @a[scores={VoteServerMode=1..6}] unless score @s VoteNum = @s VoteServerMode run tellraw @s [{"text":"You've voted for option ","color":"dark_aqua"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"gold","bold":true},{"text":"! You may change your vote if you wish, or wait for voting to end.\n","color":"dark_aqua"}]
-execute as @a[scores={VoteServerMode=1..6}] if score @s VoteNum = @s VoteServerMode run tellraw @s [{"text":"You've already voted for option ","color":"dark_aqua"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"gold","bold":true},{"text":".\n","color":"dark_aqua"}]
-execute as @a[scores={VoteServerMode=1..6}] run scoreboard players operation @s VoteNum = @s VoteServerMode
-execute as @a[scores={VoteServerMode=1..6}] run scoreboard players set @s VoteServerMode 0
+execute as @a[predicate=custom:indimension,scores={VoteServerMode=1..6}] unless score @s VoteNum = @s VoteServerMode at @s run playsound minecraft:entity.villager.work_librarian master @s ~ ~ ~ 0.4 1.5
+execute as @a[predicate=custom:indimension,scores={VoteServerMode=1..6}] unless score @s VoteNum = @s VoteServerMode run tellraw @s [{"text":"You've voted for option ","color":"dark_aqua"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"gold","bold":true},{"text":"! You may change your vote if you wish, or wait for voting to end.\n","color":"dark_aqua"}]
+execute as @a[predicate=custom:indimension,scores={VoteServerMode=1..6}] if score @s VoteNum = @s VoteServerMode run tellraw @s [{"text":"You've already voted for option ","color":"dark_aqua"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"gold","bold":true},{"text":".\n","color":"dark_aqua"}]
+execute as @a[predicate=custom:indimension,scores={VoteServerMode=1..6}] run scoreboard players operation @s VoteNum = @s VoteServerMode
+execute as @a[predicate=custom:indimension,scores={VoteServerMode=1..6}] run scoreboard players set @s VoteServerMode 0
 
 #countdown
 execute if entity @s[scores={VoteServerMode=1}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"30","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]

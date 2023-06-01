@@ -9,55 +9,13 @@ execute as @a[predicate=custom:indimension,team=Yellow,scores={LeaveMidgame=1}] 
 scoreboard players set @a[predicate=custom:indimension,team=Yellow,scores={LeaveMidgame=1}] LeaveGame 1
 tellraw @s[team=!Blue,team=!Yellow,scores={LeaveMidgame=1}] [{"text":"You are not in a match anymore.","color":"green"}]
 
-#general
-function rr_sandbox:items/spawnitems
-
-#give all players slow falling + shifting players levitation (SUPER EXPERIMENTAL, DOESN'T WORK WELL)
-#effect give @a[predicate=custom:indimension,team=Yellow] slow_falling 1 0 true
-#effect give @a[predicate=custom:indimension,team=Blue] slow_falling 1 0 true
-#effect give @a[predicate=custom:indimension,team=Yellow,scores={SBsneak=1..}] levitation 1 2 true
-#effect give @a[predicate=custom:indimension,team=Blue,scores={SBsneak=1..}] levitation 1 2 true
-#scoreboard players reset @a SBsneak
-
-#item generators
-scoreboard players add @s sandboxRandom 1
-execute if entity @s[scores={sandboxRandom=80..}] run function rr_sandbox:items/rng
-scoreboard players reset @s[scores={sandboxRandom=80..}] sandboxRandom
-
-#give specific defensive items (TODO exclude canopy?) -- incompatible with item delay
-scoreboard players add @s RandomItem 1
-execute if entity @s[scores={RandomItem=400..}] run function items:util/rng
-scoreboard players reset @s[scores={RandomItem=400..}] RandomItem
-
 #spawnpoints
 execute as @a[predicate=custom:indimension,team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
 execute as @a[predicate=custom:indimension,team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
-#smart clear stuff
-execute as @a[predicate=custom:indimension,team=Yellow] unless entity @s[scores={SBplaceSlime=0,SBplaceRS=0,SBplacePiston=0,SBplaceSPiston=0,SBplaceObs=0,SBplaceTNT=0,SBplaceBGlass=0,SBplaceYGlass=0,SBplaceBGlaze=0,SBplaceYGlaze=0,SBplaceBCon=0,SBplaceYCon=0}] at @s unless entity @e[predicate=custom:indimension,type=marker,tag=SmartClearAECyellow,limit=1,sort=nearest,distance=..6] run summon marker ~ ~ ~ {Tags:["SmartClearAECyellow"]}
-execute as @a[predicate=custom:indimension,team=Blue] unless entity @s[scores={SBplaceSlime=0,SBplaceRS=0,SBplacePiston=0,SBplaceSPiston=0,SBplaceObs=0,SBplaceTNT=0,SBplaceBGlass=0,SBplaceYGlass=0,SBplaceBGlaze=0,SBplaceYGlaze=0,SBplaceBCon=0,SBplaceYCon=0}] at @s unless entity @e[predicate=custom:indimension,type=marker,tag=SmartClearAECblue,limit=1,sort=nearest,distance=..6] run summon marker ~ ~ ~ {Tags:["SmartClearAECblue"]}
-execute as @a unless entity @s[team=!Yellow,team=!Blue] unless entity @s[scores={SBplaceScaf=0}] at @s unless entity @e[predicate=custom:indimension,type=marker,tag=SmartClearScaf,limit=1,sort=nearest,distance=..6] run summon marker ~ ~ ~ {Tags:["SmartClearScaf"]}
-
-#score reset
-scoreboard players set @a SBplaceSlime 0
-scoreboard players set @a SBplaceRS 0
-scoreboard players set @a SBplacePiston 0
-scoreboard players set @a SBplaceSPiston 0
-scoreboard players set @a SBplaceObs 0
-scoreboard players set @a SBplaceTNT 0
-scoreboard players set @a SBplaceBGlass 0
-scoreboard players set @a SBplaceYGlass 0
-scoreboard players set @a SBplaceBGlaze 0
-scoreboard players set @a SBplaceYGlaze 0
-scoreboard players set @a SBplaceBCon 0
-scoreboard players set @a SBplaceYCon 0
-scoreboard players set @a SBplaceScaf 0
-
-#disable portal mining
-execute as @a[predicate=custom:indimension,team=Yellow] at @s if entity @s[z=70,dz=8] run effect give @s mining_fatigue infinite 255 true
-execute as @a[predicate=custom:indimension,team=Yellow] at @s unless entity @s[z=70,dz=8] run effect clear @s mining_fatigue
-execute as @a[predicate=custom:indimension,team=Blue] at @s if entity @s[z=-78,dz=8] run effect give @s mining_fatigue infinite 255 true
-execute as @a[predicate=custom:indimension,team=Blue] at @s unless entity @s[z=-78,dz=8] run effect clear @s mining_fatigue
+#spawnables
+function rr_powerups:everytick/spawnables
+function rr_swap:items/cluster
 
 #win
 execute if block 13 38 74 air run function rr_sandbox:game/winblue

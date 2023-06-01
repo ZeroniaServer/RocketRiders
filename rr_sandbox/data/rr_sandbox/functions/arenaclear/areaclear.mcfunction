@@ -1,2 +1,0 @@
-execute as @e[predicate=custom:indimension,type=marker,tag=SmartClearScaf] at @s run fill ~-7 ~-7 ~-7 ~7 ~7 ~7 air replace scaffolding
-kill @e[predicate=custom:indimension,type=marker,tag=SmartClearScaf]

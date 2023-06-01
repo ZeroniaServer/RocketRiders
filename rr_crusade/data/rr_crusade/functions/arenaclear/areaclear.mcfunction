@@ -84,3 +84,7 @@ execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection
 execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run fill -96 201 59 -101 195 59 nether_portal[axis=x]
 execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run fill -89 201 97 -94 195 97 nether_portal[axis=x]
 execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run fill -96 201 97 -101 195 97 nether_portal[axis=x]
+
+#remove indestructible pathways
+fill 33 63 -66 -9 63 -57 air replace #rr_crusade:pathways
+fill 33 63 66 -9 63 57 air replace #rr_crusade:pathways

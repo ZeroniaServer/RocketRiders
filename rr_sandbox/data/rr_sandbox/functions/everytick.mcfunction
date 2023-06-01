@@ -1,5 +1,5 @@
-execute as @e[type=armor_stand,tag=rr_sandbox] run function gamemodes:updateid
-execute as @e[type=armor_stand,tag=Selection] if score @s[tag=!sandboxEnabled,tag=switchGamemodes] SetGamemode = @e[type=armor_stand,tag=rr_sandbox,limit=1] gamemodeID run function rr_sandbox:enable
-execute as @e[type=armor_stand,tag=Selection] if score @s[tag=sandboxEnabled,tag=switchGamemodes] SetGamemode = @e[type=armor_stand,tag=rr_sandbox,limit=1] gamemodeID run tag @s remove switchGamemodes
-execute as @e[type=armor_stand,tag=Selection,tag=sandboxEnabled] run function rr_sandbox:ifenabled
-execute as @e[type=armor_stand,tag=Selection,tag=sandboxLast] run function rr_sandbox:iflast
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=rr_sandbox] run function gamemodes:updateid
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection] if score @s[tag=!sandboxEnabled,tag=switchGamemodes] SetGamemode = @e[predicate=custom:indimension,type=armor_stand,tag=rr_sandbox,limit=1] gamemodeID run function rr_sandbox:enable
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection] if score @s[tag=sandboxEnabled,tag=switchGamemodes] SetGamemode = @e[predicate=custom:indimension,type=armor_stand,tag=rr_sandbox,limit=1] gamemodeID run tag @s remove switchGamemodes
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=sandboxEnabled] run function rr_sandbox:ifenabled
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=sandboxLast] run function rr_sandbox:iflast

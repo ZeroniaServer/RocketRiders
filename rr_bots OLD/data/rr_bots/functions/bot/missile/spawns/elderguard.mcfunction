@@ -1,9 +1,9 @@
 # Bot spawning - elder guard
-execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run summon marker ~ ~ ~ {Tags:["missile","bluemissile","BlueGuard"]}
-execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s remove BotHasGuard
-execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGuardSpawn,tag=BotRider] at @s if block ~ ~-3 ~4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s add Speed17
-execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s add DoneSpawning
-execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~-4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run summon marker ~ ~ ~ {Tags:["missile","yellowmissile","YellowGuard"]}
-execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~-4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s remove BotHasGuard
-execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn,tag=BotRider] at @s if block ~ ~-3 ~-4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s add Speed17
-execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~-4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s add DoneSpawning
+execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~4 air unless entity @e[predicate=custom:indimension,type=marker,tag=RecentBotspawn,distance=..7] run summon marker ~ ~ ~ {Tags:["missile","bluemissile","BlueGuard"]}
+execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~4 air unless entity @e[predicate=custom:indimension,type=marker,tag=RecentBotspawn,distance=..7] run tag @s remove BotHasGuard
+execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGuardSpawn,tag=BotRider] at @s if block ~ ~-3 ~4 air unless entity @e[predicate=custom:indimension,type=marker,tag=RecentBotspawn,distance=..7] run tag @s add Speed17
+execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~4 air unless entity @e[predicate=custom:indimension,type=marker,tag=RecentBotspawn,distance=..7] run tag @s add DoneSpawning
+execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~-4 air unless entity @e[predicate=custom:indimension,type=marker,tag=RecentBotspawn,distance=..7] run summon marker ~ ~ ~ {Tags:["missile","yellowmissile","YellowGuard"]}
+execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~-4 air unless entity @e[predicate=custom:indimension,type=marker,tag=RecentBotspawn,distance=..7] run tag @s remove BotHasGuard
+execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn,tag=BotRider] at @s if block ~ ~-3 ~-4 air unless entity @e[predicate=custom:indimension,type=marker,tag=RecentBotspawn,distance=..7] run tag @s add Speed17
+execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGuardSpawn] at @s if block ~ ~-3 ~-4 air unless entity @e[predicate=custom:indimension,type=marker,tag=RecentBotspawn,distance=..7] run tag @s add DoneSpawning

@@ -166,11 +166,11 @@ setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray"
 #kit stand items
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.head with netherite_helmet{Trim:{material:"minecraft:lapis",pattern:"minecraft:tide"}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.head with netherite_helmet{Trim:{material:"minecraft:gold",pattern:"minecraft:raiser"}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:quartz",pattern:"minecraft:vex"},display:{color:3949738}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.legs with iron_leggings{Trim:{material:"minecraft:lapis",pattern:"minecraft:vex"}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.legs with iron_leggings{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:quartz",pattern:"minecraft:vex"},display:{color:3949738}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s weapon.mainhand with stone_sword
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s weapon.offhand with shield
@@ -179,19 +179,19 @@ execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.head with chainmail_helmet{Trim:{material:"minecraft:gold",pattern:"minecraft:raiser"}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.chest with chainmail_chestplate{Trim:{material:"minecraft:lapis",pattern:"minecraft:vex"},display:{color:3949738}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.chest with chainmail_chestplate{Trim:{material:"minecraft:gold",pattern:"minecraft:spire"},display:{color:16768000}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:quartz",pattern:"minecraft:vex"},display:{color:3949738}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:quartz",pattern:"minecraft:vex"},display:{color:3949738}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand] run item replace entity @s weapon.mainhand with bow
 
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.head with warped_fence_gate
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.head with birch_fence_gate
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:quartz",pattern:"minecraft:vex"},display:{color:3949738}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:quartz",pattern:"minecraft:vex"},display:{color:3949738}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:quartz",pattern:"minecraft:vex"},display:{color:3949738}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
 

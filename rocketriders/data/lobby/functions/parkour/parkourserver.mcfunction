@@ -42,8 +42,8 @@ execute as @a[predicate=custom:indimension,team=Lobby,tag=inParkour] at @s unles
 effect clear @a[predicate=custom:indimension,team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (non-duel mode)
-execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=rr_duel,limit=1] run item replace entity @a[predicate=custom:indimension,team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},HideFlags:7}
-execute if entity @s[tag=noYZELO] run item replace entity @a[predicate=custom:indimension,team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},HideFlags:7}
+execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=rr_duel,limit=1] run item replace entity @a[predicate=custom:indimension,team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{Trim:{material:"minecraft:emerald",pattern:"minecraft:wayfinder"},display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},HideFlags:135}
+execute if entity @s[tag=noYZELO] run item replace entity @a[predicate=custom:indimension,team=Lobby,tag=inParkour,nbt=!{Inventory:[{id:"minecraft:iron_boots",Slot:100b}]}] armor.feet with iron_boots{Trim:{material:"minecraft:emerald",pattern:"minecraft:wayfinder"},display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},HideFlags:135}
 
 ##Safety features
 #Only lobby players in Parkour mode

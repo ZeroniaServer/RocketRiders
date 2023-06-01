@@ -42,8 +42,8 @@ fill -99 200 72 -101 202 72 bedrock
 fill -91 200 72 -89 202 72 bedrock
 fill -99 200 73 -101 202 73 blue_stained_glass
 fill -91 200 73 -89 202 73 blue_stained_glass
-fill -94 198 91 -96 200 94 crying_obsidian
-fill -96 198 65 -94 200 62 crying_obsidian
+fill -94 198 91 -96 200 94 minecraft:crying_obsidian
+fill -96 198 65 -94 200 62 minecraft:crying_obsidian
 
 fill 35 36 75 -11 59 73 air
 fill 36 36 -73 -12 59 -75 air
@@ -53,12 +53,12 @@ fill -14 34 52 38 63 56 deepslate_bricks
 fill 38 34 57 34 63 66 deepslate_bricks
 fill -14 34 57 -10 63 66 deepslate_bricks
 #
-fill 38 64 52 34 68 56 deepslate_bricks
+fill 38 64 52 34 68 56 minecraft:deepslate_bricks
 fill 30 64 52 26 68 56 deepslate_bricks
 fill 22 64 52 18 68 56 deepslate_bricks
-fill 14 64 52 10 68 56 deepslate_bricks
+fill 14 64 52 10 68 56 minecraft:deepslate_bricks
 fill 6 64 52 2 68 56 deepslate_bricks
-fill -2 64 56 -6 68 52 deepslate_bricks
+fill -2 64 56 -6 68 52 minecraft:deepslate_bricks
 fill -10 64 56 -14 68 52 deepslate_bricks
 fill -10 64 62 -14 68 66 deepslate_bricks
 fill 38 64 62 34 68 66 deepslate_bricks
@@ -68,14 +68,14 @@ fill 12 64 57 12 68 57 ladder[facing=south]
 fill -12 64 57 -12 68 57 ladder[facing=south]
 #Objectives
 #Main
-fill 20 45 52 4 55 66 crying_obsidian
+fill 20 45 52 4 55 66 minecraft:crying_obsidian
 #A
 fill 41 52 -39 35 52 -37 bedrock
-fill 36 47 -39 40 51 -35 blue_stained_glass
+fill 36 47 -39 40 51 -35 minecraft:blue_stained_glass
 fill 36 51 -40 40 47 -40 light[level=1]
 #B
 fill -11 52 -39 -17 52 -37 bedrock
-fill -16 47 -35 -12 51 -39 blue_stained_glass
+fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass
 fill -16 51 -40 -12 47 -40 light[level=1]
 
 #> Blue
@@ -98,14 +98,14 @@ fill 12 64 -57 12 68 -57 ladder[facing=north]
 fill -12 64 -57 -12 68 -57 ladder[facing=north]
 #Objectives
 #Main
-fill 4 55 -52 20 45 -66 crying_obsidian
+fill 4 55 -52 20 45 -66 minecraft:crying_obsidian
 #A
 fill -17 52 39 -11 52 37 bedrock
-fill -12 47 39 -16 51 35 yellow_stained_glass
+fill -12 47 39 -16 51 35 minecraft:yellow_stained_glass
 fill -16 51 40 -12 47 40 light[level=1]
 #B
 fill 35 52 39 41 52 37 bedrock
-fill 40 47 35 36 51 39 yellow_stained_glass
+fill 40 47 35 36 51 39 minecraft:yellow_stained_glass
 fill 36 51 40 40 47 40 light[level=1]
 
 #> prepare crystals and health
@@ -124,18 +124,18 @@ execute unless entity @e[predicate=custom:indimension,type=end_crystal,tag=Crusa
 #Set pre-game kit stands
 #blue
 summon armor_stand -94 202 64 {Rotation:[-180f,0f],Tags:["CrusadeEntity","KitSelect","KnightStand","BlueKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Knight","color":"dark_green","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{RightArm:[321f,0f,0f]}}
-setblock -94 202 63 oak_wall_sign[facing=north]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}','{"text":"Knight","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+setblock -94 202 63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}','{"text":"Knight","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
 summon armor_stand -95 202 64 {Rotation:[-180f,0f],Tags:["CrusadeEntity","KitSelect","ArcherStand","BlueKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Archer","color":"red","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[0f,0f,353f],RightLeg:[12f,0f,0f],LeftArm:[270f,68f,0f],RightArm:[274f,346f,0f]}}
-setblock -95 202 63 oak_wall_sign[facing=north]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}','{"text":"Archer","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+setblock -95 202 63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}','{"text":"Archer","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
 summon armor_stand -96 202 64 {Rotation:[-180f,0f],Tags:["CrusadeEntity","KitSelect","MageStand","BlueKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Mage","color":"dark_purple","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[345f,0f,0f],LeftLeg:[323f,0f,0f],RightLeg:[38f,0f,0f],LeftArm:[23f,0f,0f],RightArm:[215f,0f,0f]}}
-setblock -96 202 63 oak_wall_sign[facing=north]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}','{"text":"Mage","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+setblock -96 202 63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}','{"text":"Mage","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
 #yellow
 summon armor_stand -96 202 92 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect","KnightStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Knight","color":"dark_green","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{RightArm:[321f,0f,0f]}}
-setblock -96 202 93 oak_wall_sign[facing=south]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}','{"text":"Knight","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+setblock -96 202 93 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}','{"text":"Knight","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
 summon armor_stand -95 202 92 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect","ArcherStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Archer","color":"red","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[0f,0f,353f],RightLeg:[12f,0f,0f],LeftArm:[270f,68f,0f],RightArm:[274f,346f,0f]}}
-setblock -95 202 93 oak_wall_sign[facing=south]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}','{"text":"Archer","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+setblock -95 202 93 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}','{"text":"Archer","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
 summon armor_stand -94 202 92 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect","MageStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Mage","color":"dark_purple","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[345f,0f,0f],LeftLeg:[323f,0f,0f],RightLeg:[38f,0f,0f],LeftArm:[23f,0f,0f],RightArm:[215f,0f,0f]}}
-setblock -94 202 93 oak_wall_sign[facing=south]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}','{"text":"Mage","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+setblock -94 202 93 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}','{"text":"Mage","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
 #Text
 summon area_effect_cloud -95 204 64 {Duration:2000000000,Tags:["CrusadeEntity","KitMessage"],CustomName:'{"text":"Click a sign to select a kit!"}',CustomNameVisible:1b}
 summon area_effect_cloud -95 204 92 {Duration:2000000000,Tags:["CrusadeEntity","KitMessage"],CustomName:'{"text":"Click a sign to select a kit!"}',CustomNameVisible:1b}
@@ -143,52 +143,56 @@ summon area_effect_cloud -95 204 92 {Duration:2000000000,Tags:["CrusadeEntity","
 
 # Set in-game kit stands
 #blue
-fill 14 63 -63 14 64 -63 obsidian
+fill 14 63 -63 14 64 -63 minecraft:obsidian
 summon armor_stand 14 65 -63 {Rotation:[-180f,0f],Tags:["CrusadeEntity","KitSelect","KnightStand","BlueKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Knight","color":"dark_green","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{RightArm:[321f,0f,0f]}}
-setblock 14 64 -64 oak_wall_sign[facing=north]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}','{"text":"Knight","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
-fill 12 63 -62 12 64 -62 obsidian
+setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}','{"text":"Knight","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+fill 12 63 -62 12 64 -62 minecraft:obsidian
 summon armor_stand 12 65 -62 {Rotation:[-180f,0f],Tags:["CrusadeEntity","KitSelect","ArcherStand","BlueKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Archer","color":"red","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[0f,0f,353f],RightLeg:[12f,0f,0f],LeftArm:[270f,68f,0f],RightArm:[274f,346f,0f]}}
-setblock 12 64 -63 oak_wall_sign[facing=north]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}','{"text":"Archer","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
-fill 10 63 -63 10 64 -63 obsidian
+setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}','{"text":"Archer","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+fill 10 63 -63 10 64 -63 minecraft:obsidian
 summon armor_stand 10 65 -63 {Rotation:[-180f,0f],Tags:["CrusadeEntity","KitSelect","MageStand","BlueKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Mage","color":"dark_purple","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[345f,0f,0f],LeftLeg:[323f,0f,0f],RightLeg:[38f,0f,0f],LeftArm:[23f,0f,0f],RightArm:[215f,0f,0f]}}
-setblock 10 64 -64 oak_wall_sign[facing=north]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}','{"text":"Mage","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+setblock 10 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}','{"text":"Mage","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
 #yellow
-fill 14 63 63 14 64 63 obsidian
+fill 14 63 63 14 64 63 minecraft:obsidian
 summon armor_stand 10 65 63 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect","KnightStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Knight","color":"dark_green","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{RightArm:[321f,0f,0f]}}
-setblock 10 64 64 oak_wall_sign[facing=south]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}','{"text":"Knight","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
-fill 12 63 62 12 64 62 obsidian
+setblock 10 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 1"},"color":"#09FF00"}','{"text":"Knight","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+fill 12 63 62 12 64 62 minecraft:obsidian
 summon armor_stand 12 65 62 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect","ArcherStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Archer","color":"red","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[0f,0f,353f],RightLeg:[12f,0f,0f],LeftArm:[270f,68f,0f],RightArm:[274f,346f,0f]}}
-setblock 12 64 63 oak_wall_sign[facing=south]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}','{"text":"Archer","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
-fill 10 63 63 10 64 63 obsidian
+setblock 12 64 63 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 2"},"color":"#09FF00"}','{"text":"Archer","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+fill 10 63 63 10 64 63 minecraft:obsidian
 summon armor_stand 14 65 63 {Rotation:[0f,0f],Tags:["CrusadeEntity","KitSelect","MageStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:'{"text":"Mage","color":"dark_purple","bold":true}',CustomNameVisible:1b,DisabledSlots:4144959,Pose:{Head:[345f,0f,0f],LeftLeg:[323f,0f,0f],RightLeg:[38f,0f,0f],LeftArm:[23f,0f,0f],RightArm:[215f,0f,0f]}}
-setblock 14 64 64 oak_wall_sign[facing=south]{front_text:{messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}','{"text":"Mage","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
+setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:1b,messages:['{"text":"Select Kit:","clickEvent":{"action":"run_command","value":"trigger crusadechange set 3"},"color":"#09FF00"}','{"text":"Mage","bold":true,"color":"#008805"}','{"text":""}','{"text":""}']}}
 
 #kit stand items
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s armor.head with netherite_helmet
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s armor.legs with iron_leggings
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.head with netherite_helmet{Trim:{material:"minecraft:lapis",pattern:"minecraft:tide"}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.head with netherite_helmet{Trim:{material:"minecraft:gold",pattern:"minecraft:raiser"}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.legs with iron_leggings{Trim:{material:"minecraft:lapis",pattern:"minecraft:vex"}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.legs with iron_leggings{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s weapon.mainhand with stone_sword
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand] run item replace entity @s weapon.offhand with shield
 
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand] run item replace entity @s armor.head with chainmail_helmet
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand] run item replace entity @s armor.chest with chainmail_chestplate
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.head with chainmail_helmet{Trim:{material:"minecraft:lapis",pattern:"minecraft:tide"}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.head with chainmail_helmet{Trim:{material:"minecraft:gold",pattern:"minecraft:raiser"}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.chest with chainmail_chestplate{Trim:{material:"minecraft:lapis",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.chest with chainmail_chestplate{Trim:{material:"minecraft:gold",pattern:"minecraft:spire"},display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand] run item replace entity @s weapon.mainhand with bow
 
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.head with warped_fence_gate
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.head with birch_fence_gate
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:3949738}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{display:{color:16768000}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{display:{color:3949738}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{display:{color:16768000}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{display:{color:3949738}}
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with leather_leggings{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:diamond",pattern:"minecraft:vex"},display:{color:3949738}}
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with leather_boots{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16768000}}
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
 
 #> Kit stand light blocks

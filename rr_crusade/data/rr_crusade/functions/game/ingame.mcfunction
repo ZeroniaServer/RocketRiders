@@ -29,6 +29,9 @@ execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team
 execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=2}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=3}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 
+#Mage wand
+execute as @a[predicate=custom:indimension,scores={crusadekit=3},predicate=rr_crusade:holdwand] run function rr_crusade:game/mage_wand 
+
 #Give knights new shields when they respawn
 execute as @a[predicate=custom:indimension,scores={crusadekit=1,deathCooldown=5}] at @s run clear @s shield
 execute as @a[predicate=custom:indimension,team=Blue,scores={crusadekit=1,deathCooldown=5}] if entity @s[nbt={Inventory:[{Slot:-106b}]}] run give @s shield{Damage:326,display:{Name:'[{"text":"Knight Shield","italic":false,"bold":true,"color":"blue"}]',Lore:['[{"translate":"A not-so-sturdy shield."}]']},BlockEntityTag:{Base:11,Patterns:[{Pattern:"flo",Color:3},{Pattern:"bo",Color:3}]}}

@@ -7,7 +7,9 @@ item replace entity @e[predicate=custom:indimension,type=armor_stand,tag=Parkour
 
 scoreboard objectives add toggleParticles trigger
 scoreboard objectives add toggleTips trigger
+scoreboard objectives add toggleParkourTips trigger
 scoreboard objectives remove disableTips
+scoreboard objectives remove hideParkourTips
 
 tellraw @a[predicate=custom:indimension] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1300

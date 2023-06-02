@@ -1,3 +1,6 @@
+execute if entity @s[tag=JoinBlue,scores={crusadekit=3}] run scoreboard players reset @s crusadekit
+execute if entity @s[tag=JoinYellow,scores={crusadekit=3}] run scoreboard players reset @s crusadekit
+
 execute unless entity @s[scores={crusadekit=3}] run clear @s
 execute unless entity @s[scores={crusadekit=3}] run item replace entity @s[team=Blue] hotbar.0 with blaze_rod{CustomModelData:1,Unbreakable:1b,display:{Name:'[{"text":"Fire Wand","italic":false,"bold":true,"color":"blue"}]',Lore:['[{"translate":"A special wand, made to"}]','[{"translate":"set enemies on fire!"}]']},Enchantments:[{id:"fire_aspect",lvl:2},{id:"sharpness",lvl:2}]}
 execute unless entity @s[scores={crusadekit=3}] run item replace entity @s[team=Blue] armor.head with warped_fence_gate{display:{Name:'[{"text":"Blue Mage Mask","color":"blue","bold":true,"italic":false}]'},HideFlags:127,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}

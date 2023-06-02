@@ -16,8 +16,6 @@ execute if entity @s[tag=GameEnd] run function rr_crusade:game/gameend
 execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
 function everytick:no_drop
 
-scoreboard players reset @a[predicate=custom:indimension,team=!Blue,team=!Yellow] crusadekit
-
 #Arrow pickup
 execute as @s[tag=!GameEnd] if entity @e[predicate=custom:indimension,type=arrow] run function rr_crusade:game/arrow_pickup
 

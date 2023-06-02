@@ -1,3 +1,6 @@
+execute if entity @s[tag=JoinBlue,scores={crusadekit=2}] run scoreboard players reset @s crusadekit
+execute if entity @s[tag=JoinYellow,scores={crusadekit=2}] run scoreboard players reset @s crusadekit
+
 execute unless entity @s[scores={crusadekit=2}] run clear @s
 execute unless entity @s[scores={crusadekit=2}] run item replace entity @s[team=Blue] hotbar.0 with bow{display:{Name:'{"translate":"Shooting Saber","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1},{id:"sharpness",lvl:4}]}
 execute unless entity @s[scores={crusadekit=2}] run item replace entity @s[team=Blue] armor.head with chainmail_helmet{Trim:{material:"minecraft:lapis",pattern:"minecraft:tide"},display:{Name:'[{"text":"Blue Archer Helmet","color":"blue","bold":true,"italic":false}]'},HideFlags:255,Unbreakable:1}

@@ -1,8 +1,16 @@
-#Set kit to knight upon joining
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue] run function rr_crusade:items/kit/give/knight
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow] run function rr_crusade:items/kit/give/knight
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue] run function servermode:kitcrusade/knight
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow] run function servermode:kitcrusade/knight
+#Set kit to previous upon joining
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue,scores={crusadekit=1}] run function rr_crusade:items/kit/give/knight
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue,scores={crusadekit=2}] run function rr_crusade:items/kit/give/archer
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow,scores={crusadekit=1}] run function rr_crusade:items/kit/give/knight
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow,scores={crusadekit=2}] run function rr_crusade:items/kit/give/archer
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue,scores={crusadekit=1}] run function servermode:kitcrusade/knight
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue,scores={crusadekit=2}] run function servermode:kitcrusade/archer
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue,scores={crusadekit=3}] run function servermode:kitcrusade/mage
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow,scores={crusadekit=1}] run function servermode:kitcrusade/knight
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow,scores={crusadekit=2}] run function servermode:kitcrusade/archer
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinYellow,scores={crusadekit=3}] run function servermode:kitcrusade/mage
 
 #Notify Join
 execute if entity @s[tag=GameStarted,tag=!SMActive] run tellraw @a[predicate=custom:indimension,tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]

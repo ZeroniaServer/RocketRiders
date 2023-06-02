@@ -1,3 +1,6 @@
+execute if entity @s[tag=JoinBlue,scores={crusadekit=1}] run scoreboard players reset @s crusadekit
+execute if entity @s[tag=JoinYellow,scores={crusadekit=1}] run scoreboard players reset @s crusadekit
+
 execute unless entity @s[scores={crusadekit=1}] run clear @s
 execute unless entity @s[scores={crusadekit=1}] run item replace entity @s[team=Blue] hotbar.0 with stone_sword{CustomModelData:1,Unbreakable:1b,display:{Name:'[{"text":"Knight Sword","italic":false,"bold":true,"color":"blue"}]',Lore:['[{"translate":"A sharp sword, made to"}]','[{"translate":"kill the strongest enemies."}]']}}
 execute unless entity @s[scores={crusadekit=1}] run item replace entity @s[team=Blue] weapon.offhand with shield{Damage:326,display:{Name:'[{"text":"Knight Shield","italic":false,"bold":true,"color":"blue"}]',Lore:['[{"translate":"A not-so-sturdy shield."}]']},BlockEntityTag:{Base:11,Patterns:[{Pattern:"flo",Color:3},{Pattern:"bo",Color:3}]}}

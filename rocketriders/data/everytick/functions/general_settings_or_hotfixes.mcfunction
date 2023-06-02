@@ -18,9 +18,6 @@ execute if entity @s[tag=!EditedSettings] run tag @e[predicate=custom:indimensio
 execute if entity @s[tag=!EditedSettings] run tag @e[predicate=custom:indimension,type=marker,tag=specjoinpad] add CancelJoin
 execute if entity @s[tag=noTeamBalance] run scoreboard players set @s largerTeam 0
 
-#Hide tips automatically for 10+ games played
-tag @a[predicate=custom:indimension,scores={GamesPlayed=10..}] add hideTips
-
 #Particle timer
 scoreboard players add $dust CmdData 1
 execute if score $dust CmdData matches 4.. run scoreboard players set $dust CmdData 1

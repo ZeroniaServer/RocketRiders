@@ -30,8 +30,8 @@ execute if entity @s[tag=BotwalkNorth,scores={BOTwalks=1..8}] at @s run tp @s ~ 
 execute if entity @s[tag=BotwalkWest,scores={BOTwalks=1..8}] at @s run tp @s ~-0.25 ~ ~
 execute if entity @s[tag=BotwalkEast,scores={BOTwalks=1..8}] at @s run tp @s ~0.25 ~ ~
 
-execute if entity @s[scores={BOTwalks=1}] at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run playsound minecraft:block.glass.step master @a ~ ~ ~ 0.4 1
-execute if entity @s[scores={BOTwalks=8}] at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run playsound minecraft:block.glass.step master @a ~ ~ ~ 0.4 1
+execute if entity @s[scores={BOTwalks=1}] at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run playsound minecraft:block.glass.step master @a[predicate=custom:indimension] ~ ~ ~ 0.4 1
+execute if entity @s[scores={BOTwalks=8}] at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run playsound minecraft:block.glass.step master @a[predicate=custom:indimension] ~ ~ ~ 0.4 1
 
 execute at @s unless entity @s[tag=!BotwalkNorth,tag=!BotwalkSouth,tag=!BotwalkWest,tag=!BotwalkEast] run function rr_bots:bot/animations/walkanim
 

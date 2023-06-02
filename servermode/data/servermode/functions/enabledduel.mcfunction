@@ -10,7 +10,7 @@ tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection] remove Repea
 scoreboard players set @e[predicate=custom:indimension,type=armor_stand,tag=Selection] RepeatSettings 1
 fill -57 201 84 -70 201 72 barrier replace air
 fill -57 198 84 -70 198 72 blackstone replace air
-execute as @a run function achievements:reset
+execute as @a[predicate=custom:indimension] run function achievements:reset
 function game:forcestop
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection] store result score @s SetGamemode run scoreboard players get @e[predicate=custom:indimension,type=armor_stand,tag=rr_duel,limit=1] gamemodeID
 clear @a

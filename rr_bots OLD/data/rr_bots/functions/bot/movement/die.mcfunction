@@ -1,5 +1,5 @@
 #death message
-tellraw @a ["",{"selector":"@s"},{"text":" died"}]
+tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" died"}]
 
 tag @s remove BotRider
 

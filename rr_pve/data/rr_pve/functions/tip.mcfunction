@@ -94,12 +94,12 @@ execute if entity @s[tag=SMActive] as @e[predicate=custom:indimension,type=marke
 execute as @e[predicate=custom:indimension,type=marker,tag=SelectedTip,tag=Tip20] run tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection] add Tip20
 
 #Opt out message (disabled on servers)
-scoreboard players add @a GamesPlayed 0
+scoreboard players add @a[predicate=custom:indimension] GamesPlayed 0
 execute if entity @s[tag=!SMActive] run scoreboard players enable @a[predicate=custom:indimension,scores={GamesPlayed=..9}] disableTips
 execute if entity @s[tag=!SMActive] as @e[predicate=custom:indimension,type=marker,tag=SelectedTip] as @a[predicate=custom:indimension,tag=!hideTips] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger disableTips set 1"}},{"text":" to opt out of these messages.","color":"#888888","italic":true}]
 execute as @a[predicate=custom:indimension,scores={disableTips=1..}] run tellraw @s [{"text":"You will no longer receive tips.","color":"red"}]
 execute as @a[predicate=custom:indimension,scores={disableTips=1..}] run tag @s add hideTips
-scoreboard players set @a disableTips 0
+scoreboard players set @a[predicate=custom:indimension] disableTips 0
 
 #Kills all tip markers and resets timer
 kill @e[predicate=custom:indimension,type=marker,tag=HandyTip]

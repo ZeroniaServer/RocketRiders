@@ -6,7 +6,7 @@ execute as @a[predicate=custom:indimension,scores={VoteServerMode=7..}] run tell
 execute as @a[predicate=custom:indimension,scores={VoteServerMode=7..}] run scoreboard players set @s VoteServerMode 0
 execute as @a[predicate=custom:indimension,scores={VoteServerMode=..-1}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
 execute as @a[predicate=custom:indimension,scores={VoteServerMode=..-1}] run scoreboard players set @s VoteServerMode 0
-execute as @a run scoreboard players enable @s VoteServerMode
+execute as @a[predicate=custom:indimension] run scoreboard players enable @s VoteServerMode
 
 execute as @a[predicate=custom:indimension,scores={VoteServerMode=1..6}] unless score @s VoteNum = @s VoteServerMode at @s run playsound minecraft:entity.villager.work_librarian master @s ~ ~ ~ 0.4 1.5
 execute as @a[predicate=custom:indimension,scores={VoteServerMode=1..6}] unless score @s VoteNum = @s VoteServerMode run tellraw @s [{"text":"You've voted for option ","color":"dark_aqua"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"gold","bold":true},{"text":"! You may change your vote if you wish, or wait for voting to end.\n","color":"dark_aqua"}]
@@ -57,32 +57,32 @@ execute if entity @s[scores={VoteServerMode=380}] run bossbar set rr:startgame n
 execute if entity @s[scores={VoteServerMode=380}] run bossbar set rr:startgame value 11
 execute if entity @s[scores={VoteServerMode=400}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"10","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=400}] run bossbar set rr:startgame value 10
-execute if entity @s[scores={VoteServerMode=400}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if entity @s[scores={VoteServerMode=400}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute if entity @s[scores={VoteServerMode=420}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"9","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=420}] run bossbar set rr:startgame value 9
-execute if entity @s[scores={VoteServerMode=420}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if entity @s[scores={VoteServerMode=420}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute if entity @s[scores={VoteServerMode=440}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"8","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=440}] run bossbar set rr:startgame value 8
-execute if entity @s[scores={VoteServerMode=440}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if entity @s[scores={VoteServerMode=440}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute if entity @s[scores={VoteServerMode=460}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"7","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=460}] run bossbar set rr:startgame value 7
-execute if entity @s[scores={VoteServerMode=460}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if entity @s[scores={VoteServerMode=460}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute if entity @s[scores={VoteServerMode=480}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"6","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=480}] run bossbar set rr:startgame value 6
-execute if entity @s[scores={VoteServerMode=480}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if entity @s[scores={VoteServerMode=480}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute if entity @s[scores={VoteServerMode=500}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"5","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=500}] run bossbar set rr:startgame value 5
-execute if entity @s[scores={VoteServerMode=500}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if entity @s[scores={VoteServerMode=500}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
 execute if entity @s[scores={VoteServerMode=520}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"4","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=520}] run bossbar set rr:startgame value 4
-execute if entity @s[scores={VoteServerMode=520}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.6
+execute if entity @s[scores={VoteServerMode=520}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.6
 execute if entity @s[scores={VoteServerMode=540}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"3","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=540}] run bossbar set rr:startgame value 3
-execute if entity @s[scores={VoteServerMode=540}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.7
+execute if entity @s[scores={VoteServerMode=540}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.7
 execute if entity @s[scores={VoteServerMode=560}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"2","bold":true,"color":"light_purple"},{"text":" seconds.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=560}] run bossbar set rr:startgame value 2
-execute if entity @s[scores={VoteServerMode=560}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.8
+execute if entity @s[scores={VoteServerMode=560}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.8
 execute if entity @s[scores={VoteServerMode=580}] run bossbar set rr:startgame name ["",{"text":"Vote for game settings in chat! Voting ends in ","color":"dark_purple"},{"text":"1","bold":true,"color":"light_purple"},{"text":" second.","color":"dark_purple"}]
 execute if entity @s[scores={VoteServerMode=580}] run bossbar set rr:startgame value 1
-execute if entity @s[scores={VoteServerMode=580}] as @a at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
+execute if entity @s[scores={VoteServerMode=580}] as @a[predicate=custom:indimension] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
 execute if entity @s[scores={VoteServerMode=600..}] run function servermode:finishvote

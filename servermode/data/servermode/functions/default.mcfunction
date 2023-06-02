@@ -10,7 +10,7 @@ tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection] remove noFul
 scoreboard players set @e[predicate=custom:indimension,type=armor_stand,tag=Selection] modifierID 0
 fill -57 201 84 -70 201 72 air replace barrier
 fill -57 198 84 -70 198 72 air replace blackstone
-execute as @a run function achievements:roots
+execute as @a[predicate=custom:indimension] run function achievements:roots
 clear @a
 schedule function game:forcestop 2t append
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,limit=1] store result score @s SetGamemode run scoreboard players get @e[predicate=custom:indimension,type=armor_stand,tag=rr_normal,limit=1] gamemodeID

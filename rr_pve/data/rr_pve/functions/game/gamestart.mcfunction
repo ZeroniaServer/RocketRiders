@@ -23,11 +23,11 @@ execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=cu
 execute if entity @s[tag=GameStarted,scores={gametime=3..20}] run function items:givefirst
 
 #Tag Removal
-tag @a remove JoinBlue
-tag @a remove JoinYellow
+tag @a[predicate=custom:indimension] remove JoinBlue
+tag @a[predicate=custom:indimension] remove JoinYellow
 
 #Bossbar
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players.","color":"white"}]
+execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
 execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame value 0
 execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame color white
 

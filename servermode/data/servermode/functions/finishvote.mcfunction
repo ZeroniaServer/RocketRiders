@@ -7,7 +7,7 @@ execute as @a[predicate=custom:indimension,scores={VoteNum=3}] run scoreboard pl
 execute as @a[predicate=custom:indimension,scores={VoteNum=4}] run scoreboard players add @e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set4] VoteServerMode 1
 execute as @a[predicate=custom:indimension,scores={VoteNum=5}] run scoreboard players add @e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set5] VoteServerMode 1
 execute as @a[predicate=custom:indimension,scores={VoteNum=6}] run scoreboard players add @e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set6] VoteServerMode 1
-scoreboard players reset @a VoteNum
+scoreboard players reset @a[predicate=custom:indimension] VoteNum
 
 # finding out what won the vote
 execute as @e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set] store result score @s FinalVote run scoreboard players get @s VoteServerMode
@@ -35,10 +35,10 @@ execute as @e[predicate=custom:indimension,type=marker,tag=WonVote,tag=CTFMode] 
 execute as @e[predicate=custom:indimension,type=marker,tag=WonVote,tag=CrusadeMode] if score $CrusadeMode servermode matches 3.. run scoreboard players add @s VoteServerMode 3
 
 # Announce winner
-execute if score $winners VoteServerMode matches 1 if score @e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1] FinalVote matches 1 run tellraw @a ["",{"selector":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","color":"gold","bold":true},{"text":" won with ","color":"dark_green"},{"text":"1","color":"green"},{"text":" vote!","color":"dark_green"}]
-execute if score $winners VoteServerMode matches 1 if score @e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1] FinalVote matches 2.. run tellraw @a ["",{"selector":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","color":"gold","bold":true},{"text":" won with ","color":"dark_green"},{"score":{"name":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","objective":"FinalVote"},"color":"green"},{"text":" votes!","color":"dark_green"}]
-execute if score $winners VoteServerMode matches 2.. run tellraw @a ["",{"text":"There was a tie vote with the following game modes: ","color":"dark_green"},{"selector":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=TiedVote]","color":"green","bold":true,"separator":{"text":", ","color":"gray","bold":false}}]
-execute if score $winners VoteServerMode matches 2.. run tellraw @a ["",{"selector":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","color":"gold","bold":true},{"text":" was randomly selected as the winning mode.","color":"dark_green"}]
+execute if score $winners VoteServerMode matches 1 if score @e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1] FinalVote matches 1 run tellraw @a[predicate=custom:indimension] ["",{"selector":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","color":"gold","bold":true},{"text":" won with ","color":"dark_green"},{"text":"1","color":"green"},{"text":" vote!","color":"dark_green"}]
+execute if score $winners VoteServerMode matches 1 if score @e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1] FinalVote matches 2.. run tellraw @a[predicate=custom:indimension] ["",{"selector":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","color":"gold","bold":true},{"text":" won with ","color":"dark_green"},{"score":{"name":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","objective":"FinalVote"},"color":"green"},{"text":" votes!","color":"dark_green"}]
+execute if score $winners VoteServerMode matches 2.. run tellraw @a[predicate=custom:indimension] ["",{"text":"There was a tie vote with the following game modes: ","color":"dark_green"},{"selector":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=TiedVote]","color":"green","bold":true,"separator":{"text":", ","color":"gray","bold":false}}]
+execute if score $winners VoteServerMode matches 2.. run tellraw @a[predicate=custom:indimension] ["",{"selector":"@e[predicate=custom:indimension,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","color":"gold","bold":true},{"text":" was randomly selected as the winning mode.","color":"dark_green"}]
 scoreboard players reset $winners VoteServerMode
 
 # NORMAL MODE SELECTED

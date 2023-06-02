@@ -5,11 +5,11 @@ execute if entity @s[tag=BlueBot,scores={botarrow=1}] at @s run tp @s ~ ~ ~ faci
 execute if entity @s[tag=YellowBot,scores={botarrow=1}] at @s run tp @s ~ ~ ~ facing entity @e[predicate=custom:indimension,team=Blue,sort=nearest,limit=1]
 execute if entity @s[tag=BlueBot,scores={botarrow=1}] at @s run summon marker ~ ~ ~ {Tags:["LOSTracker","LOSTrackerBlue"]}
 execute if entity @s[tag=YellowBot,scores={botarrow=1}] at @s run summon marker ~ ~ ~ {Tags:["LOSTracker","LOSTrackerYellow"]}
-execute if entity @s[scores={botarrow=1}] at @s run playsound minecraft:item.armor.equip_generic master @a ~ ~ ~ 0.5 1
+execute if entity @s[scores={botarrow=1}] at @s run playsound minecraft:item.armor.equip_generic master @a[predicate=custom:indimension] ~ ~ ~ 0.5 1
 execute if entity @s[scores={botarrow=1}] at @s run tp @e[predicate=custom:indimension,tag=LOSTracker,distance=..1,limit=1,sort=nearest] @s
 execute if entity @s[scores={botarrow=1}] at @s run tp @e[predicate=custom:indimension,tag=LOSTracker,distance=..1,limit=1,sort=nearest] ~ ~1.5 ~
 execute as @e[predicate=custom:indimension,tag=LOSTracker] at @s run function rr_bots:bot/attacks/lostrack
-execute if entity @s[tag=BotFireArrow,scores={botarrow=10}] at @s run playsound minecraft:entity.skeleton.shoot master @a ~ ~ ~ 1 1
+execute if entity @s[tag=BotFireArrow,scores={botarrow=10}] at @s run playsound minecraft:entity.skeleton.shoot master @a[predicate=custom:indimension] ~ ~ ~ 1 1
 
 
 

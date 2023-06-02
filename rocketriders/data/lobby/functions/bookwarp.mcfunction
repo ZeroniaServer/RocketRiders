@@ -23,8 +23,8 @@ execute as @a[predicate=custom:indimension,scores={LobbyWarp=7}] at @s run tp @s
 
 #Sound and effects
 execute as @a[predicate=custom:indimension,scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted master @s ~ ~ ~ 1 2
-execute as @a[predicate=custom:indimension,scores={LobbyWarp=1..,hideParticles=0}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[predicate=custom:indimension,scores={LobbyWarp=1..,hideParticles=0}] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
+execute as @a[predicate=custom:indimension,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[predicate=custom:indimension,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
 
 
 #Message about mod room (server mode)

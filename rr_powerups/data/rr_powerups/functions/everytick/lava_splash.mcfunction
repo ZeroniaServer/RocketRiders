@@ -4,7 +4,7 @@ tag @e[predicate=custom:indimension,type=potion,nbt={Item:{id:"minecraft:lingeri
 execute as @e[predicate=custom:indimension,type=potion,tag=lavasplash,tag=!motioned] at @s as @p[scores={ThrowSplash=1..}] at @s anchored eyes run tp @e[predicate=custom:indimension,type=potion,tag=lavasplash,tag=!motioned] @s
 execute as @e[predicate=custom:indimension,type=potion,tag=lavasplash,tag=!motioned] run function everytick:projectile
 tag @e[predicate=custom:indimension,type=potion,tag=lavasplash,tag=!motioned] add motioned
-execute as @e[predicate=custom:indimension,type=potion,tag=lavasplash] at @s if score $dust CmdData matches 1 run particle lava ~ ~ ~ 0 0 0 0.1 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=potion,tag=lavasplash] at @s if score $dust CmdData matches 1 run particle lava ~ ~ ~ 0 0 0 0.1 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @a[predicate=custom:indimension,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[predicate=custom:indimension,scores={ThrowSplash=3..}] ThrowSplash
 

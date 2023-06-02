@@ -25,10 +25,22 @@ tag @a[predicate=custom:indimension,scores={GamesPlayed=10..}] add hideTips
 scoreboard players add $dust CmdData 1
 execute if score $dust CmdData matches 4.. run scoreboard players set $dust CmdData 1
 
-#Particle toggle
-scoreboard players enable @a[predicate=custom:indimension] hideParticles
-scoreboard players add @a[predicate=custom:indimension] hideParticles 0
-scoreboard players set @a[predicate=custom:indimension,scores={hideParticles=2..}] hideParticles 0
+#Toggle particles
+scoreboard players enable @a[predicate=custom:indimension] toggleParticles
+execute as @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=!hideParticles] run tellraw @s [{"text":"You will no longer see particles from Rocket Riders.","color":"red"}]
+execute as @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] run tellraw @s [{"text":"You will now see particles from Rocket Riders.","color":"green"}]
+execute as @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=!hideParticles] run tag @s add hideParticles
+execute as @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] run tag @s remove hideParticles
+scoreboard players set @a[predicate=custom:indimension] toggleParticles 0
+
+#Toggle tips
+scoreboard players add @a[predicate=custom:indimension] GamesPlayed 0
+scoreboard players enable @a[predicate=custom:indimension] toggleTips
+execute as @a[predicate=custom:indimension,scores={toggleTips=1..},tag=!hideTips] run tellraw @s [{"text":"You will no longer receive tips.","color":"red"}]
+execute as @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hideTips] run tellraw @s [{"text":"You will now receive tips.","color":"green"}]
+execute as @a[predicate=custom:indimension,scores={toggleTips=1..},tag=!hideTips] run tag @s add hideTips
+execute as @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hideTips] run tag @s remove hideTips
+scoreboard players set @a[predicate=custom:indimension] toggleTips 0
 
 #Utilkill timer
 execute as @e[predicate=custom:indimension,type=tnt,tag=UtilKilled] at @s run function game:tntutilkill
@@ -53,8 +65,6 @@ execute if entity @s[tag=EditedSettings] as @a[predicate=custom:indimension] run
 execute as @a[predicate=custom:indimension,team=!Lobby] run trigger daytime set 0
 execute if entity @s[tag=EditedSettings] as @a[predicate=custom:indimension] run trigger daytime set 0
 execute if entity @s[scores={servermode=1..}] as @a[predicate=custom:indimension] run trigger daytime set 0
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension] run trigger disableTips set 0
-execute as @a[predicate=custom:indimension,tag=hideTips] run trigger disableTips set 0
 execute as @a[predicate=custom:indimension,team=!Spectator] run trigger leaveSpec set 0
 execute as @a[predicate=custom:indimension,team=!Lobby,team=!Developer] run trigger displayinfo set 0
 
@@ -108,9 +118,9 @@ execute positioned -36 212 18 unless block ~ ~ ~ potted_blue_orchid run setblock
 execute positioned -37 212 138 unless block ~ ~ ~ potted_dandelion run setblock ~ ~ ~ potted_dandelion
 
 #Decoy Vortex (Lobby)
-execute if score $dust CmdData matches 1 as @e[predicate=custom:indimension,type=marker,tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if score $dust CmdData matches 1 as @e[predicate=custom:indimension,type=marker,tag=VortexDummy] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if score $dust CmdData matches 1 as @e[predicate=custom:indimension,type=marker,tag=VortexDummy] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[predicate=custom:indimension,type=marker,tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[predicate=custom:indimension,type=marker,tag=VortexDummy] at @s run particle dust 0 0 1 1 ~ ~ ~ 0.5 0.5 0 0 2 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[predicate=custom:indimension,type=marker,tag=VortexDummy] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
 
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=VortexItemDummy] at @s unless entity @a[predicate=custom:indimension,team=Lobby,distance=..4] run tp @s ~ ~ ~ ~15 ~
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=VortexItemDummy] at @s if entity @e[predicate=custom:indimension,type=marker,tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[predicate=custom:indimension,team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]

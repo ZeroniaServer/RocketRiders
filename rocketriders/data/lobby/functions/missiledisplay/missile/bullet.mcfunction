@@ -5,7 +5,7 @@ data merge entity @e[predicate=custom:indimension,type=area_effect_cloud,tag=Spe
 data merge entity @e[predicate=custom:indimension,type=item_frame,tag=MisDispIF,limit=1] {Item:{id:"minecraft:skeleton_horse_spawn_egg",tag:{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7},Count:1b}}
 
 playsound minecraft:entity.generic.explode master @a[predicate=custom:indimension] 19 204 78 0.5 1.75
-particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
+particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
 
 scoreboard players set $prevpage CmdData 1
 

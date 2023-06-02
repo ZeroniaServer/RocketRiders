@@ -3,9 +3,9 @@ execute as @a[predicate=custom:indimension,team=Blue] at @s run tag @e[predicate
 execute as @a[predicate=custom:indimension,team=Blue] at @s run tag @e[predicate=custom:indimension,type=egg,sort=nearest,limit=1,distance=..5,tag=BlueVortex] remove BlueVortex
 
 #Overwrite vortex particles
-execute as @e[predicate=custom:indimension,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1.5 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:electric_spark ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1.5 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:electric_spark ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 
 #Nova tracking
 execute as @a[predicate=custom:indimension,team=Blue] at @s if entity @e[predicate=custom:indimension,type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
@@ -48,7 +48,7 @@ execute as @e[predicate=custom:indimension,type=marker,scores={shieldplacement=6
 kill @e[predicate=custom:indimension,type=marker,scores={shieldplacement=6..}]
 
 #Shield
-execute as @e[predicate=custom:indimension,type=snowball,tag=BlueShield] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=snowball,tag=BlueShield] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run place template rr_chase:whiteshield1 ~-1 ~-1 ~
 execute as @e[predicate=custom:indimension,type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run place template rr_chase:whiteshield2 ~-2 ~-2 ~
 execute as @e[predicate=custom:indimension,type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run place template rr_chase:whiteshield3 ~-3 ~-3 ~
@@ -57,8 +57,8 @@ kill @e[predicate=custom:indimension,type=marker,tag=PlaceBlueShield,scores={shi
 kill @e[predicate=custom:indimension,type=snowball,tag=BlueShield,scores={shieldtest2=20..}]
 
 #Canopy
-execute as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle dust 3 3 3 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s run scoreboard players add @s testplat2 1
 #Next 4 commands disable Blue Canopies inside of portals
 execute unless entity @s[tag=noPortal] as @e[predicate=custom:indimension,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1

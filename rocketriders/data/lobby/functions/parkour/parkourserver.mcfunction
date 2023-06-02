@@ -8,7 +8,7 @@ execute as @a[predicate=custom:indimension,tag=inParkour,gamemode=!adventure] ru
 execute as @a[predicate=custom:indimension,team=Lobby,tag=!inParkour] at @s positioned ~ ~1 ~ if entity @e[predicate=custom:indimension,type=marker,tag=parkourStart,limit=1,distance=..1.2] run tag @s add keepInventory
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
-execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,scores={hideParticles=0}] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hideParticles] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] run tag @s add inParkour
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] run tag @s remove startParkour
 execute as @a[predicate=custom:indimension,team=Lobby] at @s positioned ~ ~1 ~ unless entity @e[predicate=custom:indimension,type=marker,tag=parkourStart,limit=1,distance=..1.2] run tag @s remove keepInventory
@@ -29,7 +29,7 @@ execute as @a[predicate=custom:indimension,team=Lobby] at @s if block ~0.3 ~-1 ~
 execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1.3
-execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour,scores={hideParticles=0}] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour,tag=!hideParticles] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
 #Remove tags and clear inventory
 execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour] run clear @s
@@ -61,5 +61,5 @@ execute as @a[predicate=custom:indimension,team=Lobby,tag=!inParkour] at @s if b
 execute as @a[predicate=custom:indimension,team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
 
 ##Return to Lobby Pad
-execute as @e[predicate=custom:indimension,type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
+execute as @e[predicate=custom:indimension,type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
 execute as @e[predicate=custom:indimension,type=area_effect_cloud,tag=parkourReturn] at @s positioned ~ ~ ~ as @a[predicate=custom:indimension,team=Lobby,distance=..2] run trigger LobbyWarp set 1

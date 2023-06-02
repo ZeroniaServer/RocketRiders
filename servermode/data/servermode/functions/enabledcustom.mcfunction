@@ -11,7 +11,6 @@ tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection] remove Repea
 scoreboard players set @e[predicate=custom:indimension,type=armor_stand,tag=Selection] RepeatSettings 1
 fill -57 201 84 -70 201 72 air replace barrier
 fill -57 198 84 -70 198 72 air replace blackstone
-execute as @a run function achievements:reset
 clear @a
 kill @e[predicate=custom:indimension,type=armor_stand,tag=ParkourLB]
 kill @e[predicate=custom:indimension,type=area_effect_cloud,tag=ParkourLB]

@@ -3,7 +3,7 @@
 ############################################################
 
 ##Achievements
-execute if entity @s[tag=!noAchievements,scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:aftergameyellow
+execute if entity @s[tag=!noAchievements,scores={servermode=0},tag=!realms] run function achievements:aftergameyellow
 
 ##Record tags
 tag @s add GameEnd

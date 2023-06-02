@@ -28,8 +28,8 @@ tellraw @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=!hidePa
 tellraw @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] [{"text":"Enabled particles from Rocket Riders gameplay elements.","color":"green"}]
 tag @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] add hidParticles
 tag @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] remove hideParticles
-tag @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=!hideParticles,tag=!hidParticles] add hideTips
-tag @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hidParticles] remove hidParticles
+tag @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=!hideParticles,tag=!hidParticles] add hideParticles
+tag @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hidParticles] remove hidParticles
 scoreboard players set @a[predicate=custom:indimension] toggleParticles 0
 
 #Toggle ingame tips

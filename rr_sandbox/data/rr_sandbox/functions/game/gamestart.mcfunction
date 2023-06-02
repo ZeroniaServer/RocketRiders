@@ -12,13 +12,9 @@ tag @a remove JoinBlue
 tag @a remove JoinYellow
 
 #Countdown
-execute if entity @s[tag=EditedSettings,tag=!SMCustom] if entity @a[predicate=custom:indimension,team=Blue] if entity @a[predicate=custom:indimension,team=Yellow] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[predicate=custom:indimension,team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[predicate=custom:indimension,team=Yellow] run function game:restartcountdown
-
-execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[predicate=custom:indimension,team=Blue] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[predicate=custom:indimension,team=Yellow] run tag @s[tag=!GameStarted] add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=SMCustom] unless entity @a[predicate=custom:indimension,team=Blue] unless entity @a[predicate=custom:indimension,team=Yellow] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings] if entity @a[predicate=custom:indimension,team=Blue] run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings] if entity @a[predicate=custom:indimension,team=Yellow] run tag @s[tag=!GameStarted] add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[predicate=custom:indimension,team=Blue] unless entity @a[predicate=custom:indimension,team=Yellow] run function game:restartcountdown
 
 execute if entity @s[scores={count=1..600}] run scoreboard players set @a dropPickaxe 0
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

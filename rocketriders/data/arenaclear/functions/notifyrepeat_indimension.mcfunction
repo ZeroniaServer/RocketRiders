@@ -1,1 +1,1 @@
-execute in minecraft:overworld run function arenaclear:notifyrepeat_indimension
+execute in minecraft:overworld run function arenaclear:notifyrepeat

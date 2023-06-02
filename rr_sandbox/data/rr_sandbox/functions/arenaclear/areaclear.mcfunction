@@ -1,0 +1,1 @@
+execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=sandboxEnabled] run function rr_sandbox:arenaclear/resetportal

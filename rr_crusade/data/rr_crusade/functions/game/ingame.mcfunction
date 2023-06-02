@@ -13,6 +13,9 @@ scoreboard players add @e[predicate=custom:indimension,type=marker,tag=crusadeWa
 execute as @e[predicate=custom:indimension,type=marker,tag=crusadeWall,scores={CmdData=2400..}] run function rr_crusade:game/glassplacement
 execute as @e[predicate=custom:indimension,type=marker,tag=crusadeWall,scores={CmdData=2400..}] run scoreboard players set @s CmdData 0
 
+#place pathways
+function rr_crusade:arenaclear/pathways
+
 #Item RNG
 scoreboard players add @s RandomItem 1
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=2}] run function rr_crusade:items/util/givearrows

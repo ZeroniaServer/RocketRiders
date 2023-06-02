@@ -14,7 +14,7 @@ execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hide
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger hideParkourTips set 1"}},{"text":" to no longer see these instructions.","color":"dark_green","italic":true}]
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
-execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,scores={hideParticles=0}] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] run tag @s add inParkour
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] run tag @s remove startParkour
 
@@ -30,7 +30,7 @@ execute as @a[predicate=custom:indimension,team=Lobby,tag=inParkour,scores={chec
 execute as @a[predicate=custom:indimension,team=Lobby,tag=earnCheckpoint] run scoreboard players add @s checkpoint 1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=earnCheckpoint] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=earnCheckpoint] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
-execute as @a[predicate=custom:indimension,team=Lobby,tag=earnCheckpoint] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[predicate=custom:indimension,team=Lobby,tag=earnCheckpoint,scores={hideParticles=0}] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
 #Tellraw messages
 execute as @a[predicate=custom:indimension,team=Lobby,tag=earnCheckpoint,scores={parkourSecs=..9,parkourMins=..9}] run tellraw @s ["",{"text":"You've reached Checkpoint ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true},{"text":" in ","color":"dark_green"},{"text":"0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourMins"},"color":"green","bold":true},{"text":":0","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourSecs"},"color":"green","bold":true},{"text":".","color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci"},"color":"green","bold":true},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"!","color":"dark_green"}]
@@ -51,7 +51,7 @@ execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour,tag=!c
 execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1.3
-execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[predicate=custom:indimension,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,scores={hideParticles=0}] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
 #Calculate final time
 execute if entity @s[scores={servermode=0}] run scoreboard players set $60 finalParkourTime 60
@@ -232,5 +232,5 @@ execute as @a[predicate=custom:indimension,team=Lobby,scores={hideParkourTips=1.
 scoreboard players set @a[predicate=custom:indimension] hideParkourTips 0
 
 ##Return to Lobby Pad
-execute as @e[predicate=custom:indimension,type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
+execute as @e[predicate=custom:indimension,type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
 execute as @e[predicate=custom:indimension,type=area_effect_cloud,tag=parkourReturn] at @s positioned ~ ~ ~ as @a[predicate=custom:indimension,team=Lobby,distance=..2] run trigger LobbyWarp set 1

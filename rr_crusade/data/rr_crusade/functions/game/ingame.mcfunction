@@ -25,9 +25,9 @@ execute as @a[predicate=custom:indimension,tag=preventionMSG] run tellraw @s [""
 tag @a[predicate=custom:indimension,tag=preventionMSG] remove preventionMSG
 
 #Selected kit particles
-execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
-execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=2}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
-execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=3}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=1,hideParticles=0}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=KnightStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=2,hideParticles=0}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=3,hideParticles=0}] at @s at @e[predicate=custom:indimension,type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 
 #Give knights new shields when they respawn
 execute as @a[predicate=custom:indimension,scores={crusadekit=1,deathCooldown=5}] at @s run clear @s shield

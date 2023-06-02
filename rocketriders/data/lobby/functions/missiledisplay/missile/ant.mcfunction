@@ -7,7 +7,7 @@ data merge entity @e[predicate=custom:indimension,type=item_frame,tag=MisDispIF,
 data remove entity @e[predicate=custom:indimension,type=item_frame,tag=MisDispIF,limit=1] Item.tag.Enchantments
 
 playsound minecraft:entity.generic.explode master @a[predicate=custom:indimension] 19 204 78 0.5 1.75
-particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[predicate=custom:indimension,predicate=!custom:belowroof]
+particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
 
 scoreboard players set $prevpage CmdData 0
 

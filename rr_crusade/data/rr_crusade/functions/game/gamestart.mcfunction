@@ -1,4 +1,6 @@
 #Set kit to previous upon joining
+execute as @a[predicate=custom:indimension,tag=JoinBlue] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
+execute as @a[predicate=custom:indimension,tag=JoinYellow] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue,scores={crusadekit=1}] run function rr_crusade:items/kit/give/knight
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue,scores={crusadekit=2}] run function rr_crusade:items/kit/give/archer
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension,tag=JoinBlue,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage

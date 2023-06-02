@@ -54,6 +54,6 @@ tag @e[predicate=custom:indimension,tag=Maps,tag=!ServermodeSet1,tag=!Servermode
 tag @e[predicate=custom:indimension,tag=Maps,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4,tag=!ServermodeSet5,tag=!ServermodeSet6,limit=1,sort=random] add ServermodeSet5
 
 # Notify vote
-execute as @a run function servermode:notifyvote
+execute as @a[predicate=custom:indimension] run function servermode:notifyvote
 
-scoreboard players enable @a VoteServerMode
+scoreboard players enable @a[predicate=custom:indimension] VoteServerMode

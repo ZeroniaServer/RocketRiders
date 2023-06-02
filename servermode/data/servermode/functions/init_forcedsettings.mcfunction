@@ -12,4 +12,4 @@ execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,limit=
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run tag @s add rngObshield
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run tag @s add rngFireball
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run tag @s add rngArrows
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] as @a run function servermode:swap_forcedsettings
+execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] as @a[predicate=custom:indimension] run function servermode:swap_forcedsettings

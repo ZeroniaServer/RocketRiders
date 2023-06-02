@@ -10,4 +10,5 @@ tag @s add normalForce
 tag @s add lightningForce
 tag @s add heavyForce
 tag @s add utilForce
+tag @s add customBossbar
 tag @s add sandboxEnabled

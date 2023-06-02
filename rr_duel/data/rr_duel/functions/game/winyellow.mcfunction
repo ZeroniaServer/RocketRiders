@@ -11,7 +11,7 @@ scoreboard players add Yellow: RoundsWon 1
 effect give @a[predicate=custom:indimension,team=Blue] instant_health 1 100
 effect give @a[predicate=custom:indimension,team=Yellow] instant_health 1 100
 
-execute unless score Yellow: RoundsWon matches 2.. if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function achievements:aftergameyellow
+execute unless score Yellow: RoundsWon matches 2.. if entity @s[scores={servermode=0},tag=!realms] run function achievements:aftergameyellow
 execute unless score Yellow: RoundsWon matches 2.. run function achievements:scoresreset
 execute unless score Yellow: RoundsWon matches 2.. run kill @e[predicate=custom:indimension,type=tnt]
 execute unless score Yellow: RoundsWon matches 2.. as @a[predicate=custom:indimension,team=Blue] at @s run stopsound @s

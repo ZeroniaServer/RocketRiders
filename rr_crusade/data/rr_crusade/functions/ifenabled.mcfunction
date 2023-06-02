@@ -17,12 +17,12 @@ execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
 function everytick:no_drop
 
 #Arrow pickup
-execute as @s[tag=!GameEnd] if entity @e[predicate=custom:indimension,type=arrow] run function rr_crusade:game/arrow_pickup
+execute if entity @s[tag=!GameEnd] if entity @e[predicate=custom:indimension,type=arrow] run function rr_crusade:game/arrow_pickup
 
 #kits
-execute as @s[tag=EditedSettings,tag=!GameEnd] run scoreboard players enable @a[predicate=custom:indimension,team=!Lobby,team=!Developer,team=!Spectator] crusadechange
-execute as @s[tag=GameEnd,tag=!GameStarted] as @a[predicate=custom:indimension] run trigger crusadechange set 0
-execute as @s[tag=GameEnd,tag=GameStarted] as @a[predicate=custom:indimension,scores={deathCooldown=5}] at @s run trigger crusadechange set 0
+execute if entity @s[tag=EditedSettings,tag=!GameEnd] run scoreboard players enable @a[predicate=custom:indimension,team=!Lobby,team=!Developer,team=!Spectator] crusadechange
+execute if entity @s[tag=GameEnd,tag=!GameStarted] as @a[predicate=custom:indimension] run trigger crusadechange set 0
+execute if entity @s[tag=GameEnd,tag=GameStarted] as @a[predicate=custom:indimension,scores={deathCooldown=5}] at @s run trigger crusadechange set 0
 execute if entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[predicate=custom:indimension,scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
 execute if entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[predicate=custom:indimension,scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
 execute if entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[predicate=custom:indimension,scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage
@@ -30,13 +30,13 @@ execute unless entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[t
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[predicate=custom:indimension,scores={crusadechange=2}] run function servermode:kitcrusade/archer
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] unless entity @s[tag=GameStarted] as @a[predicate=custom:indimension,scores={crusadechange=3}] run function servermode:kitcrusade/mage
 
-execute as @s[tag=GameStarted] as @a[predicate=custom:indimension,tag=!CrusadeNoteKnight,scores={crusadechange=1}] run function rr_crusade:items/kit/notify/knight
-execute as @s[tag=GameStarted] as @a[predicate=custom:indimension,tag=!CrusadeNoteArcher,scores={crusadechange=2}] run function rr_crusade:items/kit/notify/archer
-execute as @s[tag=GameStarted] as @a[predicate=custom:indimension,tag=!CrusadeNoteMage,scores={crusadechange=3}] run function rr_crusade:items/kit/notify/mage
+execute if entity @s[tag=GameStarted] as @a[predicate=custom:indimension,tag=!CrusadeNoteKnight,scores={crusadechange=1}] run function rr_crusade:items/kit/notify/knight
+execute if entity @s[tag=GameStarted] as @a[predicate=custom:indimension,tag=!CrusadeNoteArcher,scores={crusadechange=2}] run function rr_crusade:items/kit/notify/archer
+execute if entity @s[tag=GameStarted] as @a[predicate=custom:indimension,tag=!CrusadeNoteMage,scores={crusadechange=3}] run function rr_crusade:items/kit/notify/mage
 
-execute as @s[tag=!GameStarted] run tag @a[predicate=custom:indimension] remove CrusadeNoteKnight
-execute as @s[tag=!GameStarted] run tag @a[predicate=custom:indimension] remove CrusadeNoteArcher
-execute as @s[tag=!GameStarted] run tag @a[predicate=custom:indimension] remove CrusadeNoteMage
+execute if entity @s[tag=!GameStarted] run tag @a[predicate=custom:indimension] remove CrusadeNoteKnight
+execute if entity @s[tag=!GameStarted] run tag @a[predicate=custom:indimension] remove CrusadeNoteArcher
+execute if entity @s[tag=!GameStarted] run tag @a[predicate=custom:indimension] remove CrusadeNoteMage
 
 execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[predicate=custom:indimension,scores={crusadechange=1,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/knight
 execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[tag=GameStarted] as @a[predicate=custom:indimension,scores={crusadechange=2,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/archer

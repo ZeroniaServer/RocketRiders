@@ -1,5 +1,5 @@
 execute if entity @s[tag=!WasMolerat] run scoreboard players set $TORAGE CmdData 1
-execute as @s[tag=duelEnabled] run function gamemodes:restoresettings
+execute if entity @s[tag=duelEnabled] run function gamemodes:restoresettings
 execute if score $TORAGE CmdData matches 1 if entity @s[tag=WasMolerat] run tag @s remove WasMolerat
 scoreboard players reset $TORAGE CmdData
 tag @s remove duelEnabled

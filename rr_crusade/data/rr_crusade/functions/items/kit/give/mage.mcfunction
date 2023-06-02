@@ -21,6 +21,6 @@ execute unless entity @s[scores={crusadekit=3}] run tellraw @s[team=Yellow,tag=!
 
 execute unless entity @s[scores={crusadekit=3}] run title @s[tag=!kitmage] title {"text":"Selected Kit:","color":"green"}
 execute unless entity @s[scores={crusadekit=3}] run title @s[tag=!kitmage] subtitle {"text":"Mage","color":"dark_purple","bold":true}
-execute unless entity @s[scores={crusadekit=3}] as @s[tag=!kitmage] at @s run playsound minecraft:entity.illusioner.prepare_mirror master @s ~ ~ ~ 1 2
+execute unless entity @s[scores={crusadekit=3}] if entity @s[tag=!kitmage] at @s run playsound minecraft:entity.illusioner.prepare_mirror master @s ~ ~ ~ 1 2
 
 execute unless entity @s[scores={crusadekit=3}] run scoreboard players set @s crusadekit 3

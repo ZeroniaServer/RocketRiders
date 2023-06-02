@@ -122,7 +122,7 @@ tag @s[scores={RepeatSettings=0},tag=!RepeatForever] remove Repeat
 execute if entity @s[scores={endtimer=570..},tag=Repeat] unless entity @s[tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning,tag=!rngUtil] run function arenaclear:areaclear
 
 ##Refresh modification room
-execute as @s[scores={endtimer=570..}] run function arenaclear:refreshsigns
+execute if entity @s[scores={endtimer=570..}] run function arenaclear:refreshsigns
 
 ##Reset end timer
 scoreboard players set @s[scores={endtimer=570..}] endtimer 0

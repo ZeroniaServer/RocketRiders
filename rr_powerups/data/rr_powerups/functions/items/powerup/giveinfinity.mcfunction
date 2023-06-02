@@ -7,11 +7,11 @@ clear @s[tag=!Infinity] bow
 give @s[tag=!Infinity] bow{display:{Name:'{"translate":"Infinity Saber","color":"dark_purple","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks"}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1},{id:"sharpness",lvl:5},{id:"infinity",lvl:1}]}
 tag @s[tag=!Infinity] add needsArrow
 tag @s[tag=needsArrow] add Infinity
-execute as @s[tag=needsArrow] store result score @s HasArrows run clear @s arrow 0
-execute as @s[tag=needsArrow,scores={HasArrows=0}] as @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:arrow"}}] run function rr_powerups:items/deductarrow
+execute if entity @s[tag=needsArrow] store result score @s HasArrows run clear @s arrow 0
+execute if entity @s[tag=needsArrow,scores={HasArrows=0}] as @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:arrow"}}] run function rr_powerups:items/deductarrow
 tag @s[tag=needsArrow,tag=!itemDeducted,scores={HasArrows=0}] add DelayActionbar
-execute as @s[tag=needsArrow,scores={HasArrows=0}] run function items:util/givearrows
-execute as @s[tag=needsArrow] as @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:bow"}}] run function rr_powerups:items/killinfinitysaber
+execute if entity @s[tag=needsArrow,scores={HasArrows=0}] run function items:util/givearrows
+execute if entity @s[tag=needsArrow] as @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:bow"}}] run function rr_powerups:items/killinfinitysaber
 tag @s remove needsArrow
 tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=tetrisTime] add givenInfinity
 scoreboard players set $infinity PowerupDisplay 30

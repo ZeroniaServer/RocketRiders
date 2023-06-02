@@ -23,9 +23,9 @@ execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection
 
 #Canopy doesn't teleport more than once if shot by Nova Rocket
 execute if entity @p[team=Blue,tag=currentTP,scores={novattach=1..15}] run scoreboard players reset @s[scores={PlatTime=2..}] pearlOwnerUUID
-execute as @s[scores={PlatTime=2..}] run tag @p[team=Blue,tag=currentTP,scores={novattach=1..15}] remove canopyTP
+execute if entity @s[scores={PlatTime=2..}] run tag @p[team=Blue,tag=currentTP,scores={novattach=1..15}] remove canopyTP
 #Canopy ends Nova effects if teleporting in first tick
-execute as @s[scores={PlatTime=1}] run scoreboard players set @p[team=Blue,tag=currentTP,scores={novattach=1..15}] novattach 16
+execute if entity @s[scores={PlatTime=1}] run scoreboard players set @p[team=Blue,tag=currentTP,scores={novattach=1..15}] novattach 16
 
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
 #(thanks to Red_Bones for the teleport command format!)

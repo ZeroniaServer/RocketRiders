@@ -87,8 +87,8 @@ execute as @e[predicate=custom:indimension,type=ender_pearl] store result score 
 execute as @e[predicate=custom:indimension,type=ender_pearl] run function everytick:canopy_owner
 
 ##Yellow Canopy functionality
-execute as @e[predicate=custom:indimension,type=ender_pearl,tag=YellowPlat] at @s if score $dust CmdData matches 1 run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=ender_pearl,tag=YellowPlat] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=ender_pearl,tag=YellowPlat] at @s if score $dust CmdData matches 1 run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=ender_pearl,tag=YellowPlat] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=ender_pearl,tag=YellowPlat] at @s run scoreboard players add @s testplat 1
 #Next 4 commands disable Yellow Canopies inside of portals
 execute unless entity @s[tag=noPortal] as @e[predicate=custom:indimension,type=ender_pearl,scores={testplat=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat 1
@@ -120,8 +120,8 @@ execute as @e[predicate=custom:indimension,type=marker,tag=YellowSpawnZone] at @
 scoreboard players reset @e[predicate=custom:indimension,type=marker,tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUID
 
 ##Blue Canopy functionality
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!customShield] as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!customShield] as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!customShield] as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!customShield] as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!customShield] as @e[predicate=custom:indimension,type=ender_pearl,tag=BluePlat] at @s run scoreboard players add @s testplat2 1
 #Next 4 commands disable Blue Canopies inside of portals
 execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!customShield] unless entity @s[tag=noPortal] as @e[predicate=custom:indimension,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
@@ -178,28 +178,28 @@ execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={P
 scoreboard players remove @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1..}] canopySmoke 1
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1..}] at @s unless entity @e[predicate=custom:indimension,type=player,predicate=custom:is_on_fire,distance=..3] run scoreboard players remove @s canopySmoke 1
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1}] at @s run playsound block.campfire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 1
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1}] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 100 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1}] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 100 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=7}] at @s run playsound block.fire.ambient player @a[predicate=custom:indimension] ~ ~ ~ 2 0.25
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=14}] at @s run playsound block.campfire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 1
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=14}] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 200 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=14}] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 200 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21}] at @s run playsound block.fire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 0.5
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=28}] at @s run playsound block.campfire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 1
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=28}] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0 200 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=28}] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0 200 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=35}] at @s run playsound block.fire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 0.75
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=35}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=35}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=42}] at @s run playsound block.campfire.ambient player @a[predicate=custom:indimension] ~ ~ ~ 2 1
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=42}] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0.1 200 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=42}] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0.1 200 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=49}] at @s run playsound block.fire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 1
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=49}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=49}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=56}] at @s run playsound block.campfire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 1
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=56}] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 200 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=56}] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 200 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=63}] at @s run playsound block.fire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 1.5
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=63}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=63}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70}] at @s run playsound block.campfire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 1
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70}] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 300 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70}] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 300 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=77}] at @s run playsound block.fire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 2
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=77}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 2 -1 2 0.01 200 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=77}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 2 -1 2 0.01 200 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=80..}] run tag @s add FirePoof
 
 #Fire poofing
@@ -209,15 +209,15 @@ execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FireP
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FirePoof] at @s run playsound block.fire.ambient master @a[predicate=custom:indimension] ~ ~ ~ 2 2
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FirePoof] at @s run fill ~ ~ ~ ~ ~1 ~ air destroy
 execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FirePoof] at @s run fill ~-3 ~1 ~-3 ~3 ~1 ~3 fire replace #custom:air
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FirePoof] at @s run particle flame ~ ~ ~ 2 0 2 0.15 250 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FirePoof] at @s run particle lava ~ ~ ~ 2 0 2 0.1 20 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FirePoof] at @s run particle explosion_emitter ~ ~ ~ 2 0 2 0.1 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FirePoof] at @s run particle flame ~ ~ ~ 2 0 2 0.15 250 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FirePoof] at @s run particle lava ~ ~ ~ 2 0 2 0.1 20 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=!killCanopy,tag=FirePoof] at @s run particle explosion_emitter ~ ~ ~ 2 0 2 0.1 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 tag @e[predicate=custom:indimension,type=marker,tag=FirePoof] add killCanopy
 
 #Canopy durations
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=4..}] at @s unless block ~ ~1 ~ oak_wood run tag @s add killCanopy
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=4..}] at @s unless block ~ ~ ~ oak_wood run tag @s add killCanopy
-execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=220..}] at @s if score $dust CmdData matches 1 run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=220..}] at @s if score $dust CmdData matches 1 run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=220}] at @s run playsound block.wood.break master @a[predicate=custom:indimension] ~ ~ ~ 2 0
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=225}] at @s run playsound block.wood.break master @a[predicate=custom:indimension] ~ ~ ~ 2 0
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=230}] at @s run playsound block.wood.break master @a[predicate=custom:indimension] ~ ~ ~ 2 0
@@ -231,7 +231,7 @@ execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=265}] at
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=270}] at @s run playsound block.wood.break master @a[predicate=custom:indimension] ~ ~ ~ 2 1
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=275}] at @s run playsound block.wood.break master @a[predicate=custom:indimension] ~ ~ ~ 2 1.2
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=280}] at @s run playsound block.wood.break master @a[predicate=custom:indimension] ~ ~ ~ 2 1.5
-execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=300}] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 50 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=300}] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 50 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 
 #Canopy watering (one time use - Splash extends Canopy duration)
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s store result score @s CmdData run clone ~-2 ~-1 ~-2 ~2 ~2 ~2 ~-2 ~-1 ~-2 filtered water force
@@ -242,8 +242,8 @@ execute as @e[predicate=custom:indimension,type=marker,tag=wateredInit,tag=!wate
 execute as @e[predicate=custom:indimension,type=marker,tag=wateredInit,tag=!wateredTemp] at @s run playsound minecraft:block.bamboo_sapling.place master @a[predicate=custom:indimension] ~ ~ ~ 1 0.5
 execute as @e[predicate=custom:indimension,type=marker,tag=wateredInit,tag=!wateredTemp] at @s run playsound minecraft:block.chorus_flower.grow master @a[predicate=custom:indimension] ~ ~ ~ 1 1
 execute as @e[predicate=custom:indimension,type=marker,tag=wateredInit,tag=!wateredTemp] at @s run playsound minecraft:entity.player.swim master @a[predicate=custom:indimension] ~ ~ ~ 1 1
-execute as @e[predicate=custom:indimension,type=marker,tag=wateredInit,tag=!wateredTemp] at @s run particle minecraft:falling_water ~ ~1 ~ 2 -1 2 1 50 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=wateredInit,tag=!wateredTemp] at @s run particle minecraft:happy_villager ~ ~1 ~ 2 -1 2 1 50 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=wateredInit,tag=!wateredTemp] at @s run particle minecraft:falling_water ~ ~1 ~ 2 -1 2 1 50 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=wateredInit,tag=!wateredTemp] at @s run particle minecraft:happy_villager ~ ~1 ~ 2 -1 2 1 50 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 tag @e[predicate=custom:indimension,type=marker,tag=wateredInit] add wateredTemp
 scoreboard players remove @e[predicate=custom:indimension,type=marker,tag=animated,tag=wateredInit] PlatTime 200
 tag @e[predicate=custom:indimension,type=marker,tag=animated,tag=wateredInit] add watered
@@ -253,9 +253,9 @@ tag @e[predicate=custom:indimension,type=marker,tag=watered] remove wateredTemp
 #Canopy lava poof
 execute as @e[predicate=custom:indimension,type=marker,scores={PlatTime=3..300}] at @s store result score @s CmdData run clone ~-3 ~-1 ~-3 ~3 ~2 ~3 ~-3 ~-1 ~-3 filtered lava force
 tag @e[predicate=custom:indimension,type=marker,scores={PlatTime=3..300,CmdData=1..}] add LavaPoof
-execute as @e[predicate=custom:indimension,type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle lava ~ ~1 ~ 2 0.1 2 2 50 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle minecraft:falling_lava ~ ~-1 ~ 2 1 2 0.1 50 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 1 1 0.5 40 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle lava ~ ~1 ~ 2 0.1 2 2 50 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle minecraft:falling_lava ~ ~-1 ~ 2 1 2 0.1 50 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=LavaPoof,tag=!FirePoof] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 1 1 0.5 40 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=marker,tag=LavaPoof,tag=!FirePoof] at @s run playsound minecraft:block.lava.pop master @a[predicate=custom:indimension] ~ ~ ~ 1 0.7
 execute as @e[predicate=custom:indimension,type=marker,tag=LavaPoof,tag=!FirePoof] at @s run playsound minecraft:block.lava.pop master @a[predicate=custom:indimension] ~ ~ ~ 1 0.9
 execute as @e[predicate=custom:indimension,type=marker,tag=LavaPoof,tag=!FirePoof] at @s run playsound minecraft:item.bucket.empty_lava master @a[predicate=custom:indimension] ~ ~ ~ 2 0.8

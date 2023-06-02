@@ -9,7 +9,7 @@ execute as @a[predicate=custom:indimension,team=Blue,scores={ThrowShield=1..}] a
 scoreboard players reset @a[predicate=custom:indimension] ThrowShield
 
 ##Yellow Shield functionality
-execute as @e[predicate=custom:indimension,type=snowball,tag=YellowShield] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=snowball,tag=YellowShield] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @e[predicate=custom:indimension,type=snowball,tag=YellowShield] shieldtest 1
 #Next 2 commands disable Yellow Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[predicate=custom:indimension,type=snowball,tag=YellowShield,scores={shieldtest=19..20}] at @s if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] run scoreboard players remove @s shieldtest 1
@@ -40,7 +40,7 @@ kill @e[predicate=custom:indimension,type=marker,tag=PlaceYellowShield,scores={s
 kill @e[predicate=custom:indimension,type=snowball,tag=YellowShield,scores={shieldtest=20..}]
 
 ##Blue Shield functionality
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!customShield] as @e[predicate=custom:indimension,type=snowball,tag=BlueShield] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!customShield] as @e[predicate=custom:indimension,type=snowball,tag=BlueShield] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @e[predicate=custom:indimension,type=snowball,tag=BlueShield] shieldtest2 1
 #Next 2 commands disable Blue Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[predicate=custom:indimension,type=snowball,tag=BlueShield,scores={shieldtest2=19..20}] at @s if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] run scoreboard players remove @s shieldtest2 1

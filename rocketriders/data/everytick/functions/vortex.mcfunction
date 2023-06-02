@@ -8,10 +8,10 @@
 execute as @e[predicate=custom:indimension,type=egg] unless data entity @s {Item:{tag:{CustomModelData:3}}} run function everytick:vortex_owner
 
 ##Vortex deployment (both teams)
-execute as @e[predicate=custom:indimension,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=egg,tag=BlueVortex] at @s if score $dust CmdData matches 1 run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=egg,tag=BlueVortex] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=egg,tag=BlueVortex] at @s if score $dust CmdData matches 1 run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=egg,tag=BlueVortex] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @e[predicate=custom:indimension,type=egg,tag=BlueVortex] vortextimer 1
 scoreboard players add @e[predicate=custom:indimension,type=egg,tag=YellowVortex] vortextimer 1
 #Next two commands disable Vortex near own portals
@@ -31,12 +31,12 @@ execute as @e[predicate=custom:indimension,type=egg,tag=BlueVortex,scores={vorte
 scoreboard players add @e[predicate=custom:indimension,type=marker,tag=Vortex] VortexID 0
 execute as @e[predicate=custom:indimension,type=marker,tag=Vortex,tag=!VortexFeathered,scores={VortexID=0}] at @s run function everytick:vortexid
 kill @e[predicate=custom:indimension,type=egg,scores={vortextimer=20..}]
-execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:wax_on ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle minecraft:scrape ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:wax_on ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle minecraft:scrape ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[predicate=custom:indimension,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @e[predicate=custom:indimension,type=marker,tag=Vortex] vortexBoom 0
 
 ##Spin around (unprimed)
@@ -98,8 +98,8 @@ execute as @e[predicate=custom:indimension,type=chicken,tag=FeatherConfirmed] at
 execute as @e[predicate=custom:indimension,type=chicken] run data merge entity @s {DeathTime:19s}
 execute as @e[predicate=custom:indimension,type=chicken] at @s run tp @s ~ ~-250 ~
 kill @e[predicate=custom:indimension,type=chicken]
-execute as @e[predicate=custom:indimension,type=marker,tag=VortexFeathered] at @s if score $dust CmdData matches 1 run particle dust 1 1 1 1 ~ ~0.4 ~ 0.5 0.5 0 0 10 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=VortexFeathered] at @s if score $dust CmdData matches 1 run particle wax_off ~ ~0.4 ~ 0.5 0.5 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=VortexFeathered] at @s if score $dust CmdData matches 1 run particle dust 1 1 1 1 ~ ~0.4 ~ 0.5 0.5 0 0 10 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=VortexFeathered] at @s if score $dust CmdData matches 1 run particle wax_off ~ ~0.4 ~ 0.5 0.5 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[predicate=custom:indimension,type=armor_stand,tag=VortexItemFeathered] at @s run tp @s ~ ~ ~ ~15 ~
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @e[predicate=custom:indimension,type=marker,tag=VortexFeathered] at @s as @a[predicate=custom:indimension,team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/zzzzzzhuh
 execute as @e[predicate=custom:indimension,type=marker,tag=VortexFeathered] at @s if entity @a[predicate=custom:indimension,team=!Spectator,distance=..3] run tag @s add origin

@@ -5,20 +5,20 @@
 ####################################################
 
 ##Arrow pointing down into the lobby
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 215.3 78 0 1.5 0 0 5 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 212 78.8 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 212 78.2 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 212.5 77.8 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 212.5 79.2 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 213 77.45 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 213 79.5 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 213.5 77.1 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 213.5 79.9 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 211.6 78 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 215.3 78 0 1.5 0 0 5 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 212 78.8 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 212 78.2 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 212.5 77.8 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 212.5 79.2 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 213 77.45 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 213 79.5 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 213.5 77.1 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 213.5 79.9 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle dust 1 0 1 2 -64 211.6 78 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
 
 ##Particles around confirm changes sign
-execute if score $dust CmdData matches 1 run particle dust 1 0 1 2 -68.7 190.5 79.5 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
-execute if score $dust CmdData matches 1 run particle dust 1 0 1 2 -68.7 190.5 77.5 0 0 0 0 1 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 run particle dust 1 0 1 2 -68.7 190.5 79.5 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 run particle dust 1 0 1 2 -68.7 190.5 77.5 0 0 0 0 1 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]
 
 ##GAMEMODE SELECTION
 execute if score @s SetGamemode > maxID gamemodeID run scoreboard players set @s SetGamemode 1

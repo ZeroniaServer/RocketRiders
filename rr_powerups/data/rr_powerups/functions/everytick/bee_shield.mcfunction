@@ -78,8 +78,8 @@ execute as @e[predicate=custom:indimension,type=marker,tag=animBshield,scores={B
 execute as @e[predicate=custom:indimension,type=marker,tag=animBshield,scores={BeeShieldTime=21}] at @s run playsound block.glass.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 1.3
 execute as @e[predicate=custom:indimension,type=marker,tag=animBshield,scores={BeeShieldTime=23}] at @s run playsound block.glass.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 1.2
 execute as @e[predicate=custom:indimension,type=marker,tag=animBshield,scores={BeeShieldTime=32}] at @s run playsound block.grass.break master @a[predicate=custom:indimension] ~ ~ ~ 1.5 0.8
-execute as @e[predicate=custom:indimension,type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block tnt ~ ~-2 ~ 0.2 0.2 0.2 0.2 40 force @a[predicate=custom:indimension,predicate=custom:belowroof]
-execute as @e[predicate=custom:indimension,type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block honey_block ~ ~-2 ~ 1 1.5 0 0.1 200 force @a[predicate=custom:indimension,predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block tnt ~ ~-2 ~ 0.2 0.2 0.2 0.2 40 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
+execute as @e[predicate=custom:indimension,type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block honey_block ~ ~-2 ~ 1 1.5 0 0.1 200 force @a[predicate=custom:indimension,scores={hideParticles=0},predicate=custom:belowroof]
 
 #Kill animation AEC
 kill @e[predicate=custom:indimension,type=marker,tag=animBshield,scores={BeeShieldTime=32..}]

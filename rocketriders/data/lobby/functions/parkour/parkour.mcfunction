@@ -11,7 +11,7 @@ execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hide
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the compass to ","color":"green"},{"text":"Return to Checkpoint","color":"aqua","bold":true},{"text":".","color":"green"}]
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"green"},{"text":"Quit to Start","color":"yellow","bold":true},{"text":".","color":"green"}]
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":true},{"text":".","color":"green"}]
-execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger hideParkourTips set 1"}},{"text":" to no longer see these instructions.","color":"dark_green","italic":true}]
+execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger toggleParkourTips set 1"}},{"text":" to no longer see these instructions.","color":"dark_green","italic":true}]
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
 execute as @a[predicate=custom:indimension,team=Lobby,tag=startParkour,tag=!hideParticles] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
@@ -223,13 +223,15 @@ scoreboard players reset @a[predicate=custom:indimension,tag=!inParkour] finalPa
 tag @a[predicate=custom:indimension,tag=!inParkour] remove onResetPlate
 tag @a[predicate=custom:indimension,tag=!inParkour] remove timeReset
 
-##Handle hide tips trigger
-scoreboard players enable @a[predicate=custom:indimension,team=Lobby,tag=!hideParkourTips] hideParkourTips
-execute as @a[predicate=custom:indimension,team=!Lobby] run trigger hideParkourTips set 0
-execute as @a[predicate=custom:indimension,team=Lobby,tag=hideParkourTips] run trigger hideParkourTips set 0
-execute as @a[predicate=custom:indimension,team=Lobby,scores={hideParkourTips=1..}] run tellraw @s [{"text":"You will no longer see Parkour instructions.","color":"red"}]
-execute as @a[predicate=custom:indimension,team=Lobby,scores={hideParkourTips=1..}] run tag @s add hideParkourTips
-scoreboard players set @a[predicate=custom:indimension] hideParkourTips 0
+##Toggle Parkour tips
+scoreboard players enable @a[predicate=custom:indimension] toggleParkourTips
+tellraw @a[predicate=custom:indimension,scores={toggleParkourTips=1..},tag=!hideParkourTips] [{"text":"You will no longer see Parkour instructions.","color":"red"}]
+tellraw @a[predicate=custom:indimension,scores={toggleParkourTips=1..},tag=hideParkourTips] [{"text":"You will now see Parkour instructions.","color":"green"}]
+tag @a[predicate=custom:indimension,scores={toggleParkourTips=1..},tag=hideParkourTips] add hidParkourTips
+tag @a[predicate=custom:indimension,scores={toggleParkourTips=1..},tag=hideParkourTips] remove hideParkourTips
+tag @a[predicate=custom:indimension,scores={toggleParkourTips=1..},tag=!hideParkourTips,tag=!hidParkourTips] add hideParkourTips
+tag @a[predicate=custom:indimension,scores={toggleParkourTips=1..},tag=hidParkourTips] remove hidParkourTips
+scoreboard players set @a[predicate=custom:indimension] toggleParkourTips 0
 
 ##Return to Lobby Pad
 execute as @e[predicate=custom:indimension,type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle falling_dust minecraft:green_concrete ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[predicate=custom:indimension,tag=!hideParticles,predicate=!custom:belowroof]

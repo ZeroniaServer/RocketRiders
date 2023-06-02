@@ -27,19 +27,23 @@ execute if score $dust CmdData matches 4.. run scoreboard players set $dust CmdD
 
 #Toggle particles
 scoreboard players enable @a[predicate=custom:indimension] toggleParticles
-execute as @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=!hideParticles] run tellraw @s [{"text":"You will no longer see particles from Rocket Riders.","color":"red"}]
-execute as @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] run tellraw @s [{"text":"You will now see particles from Rocket Riders.","color":"green"}]
-execute as @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=!hideParticles] run tag @s add hideParticles
-execute as @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] run tag @s remove hideParticles
+tellraw @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=!hideParticles] [{"text":"Disabled particles from Rocket Riders gameplay elements.","color":"red"}]
+tellraw @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] [{"text":"Enabled particles from Rocket Riders gameplay elements.","color":"green"}]
+tag @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] add hidParticles
+tag @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=hideParticles] remove hideParticles
+tag @a[predicate=custom:indimension,scores={toggleParticles=1..},tag=!hideParticles,tag=!hidParticles] add hideTips
+tag @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hidParticles] remove hidParticles
 scoreboard players set @a[predicate=custom:indimension] toggleParticles 0
 
-#Toggle tips
+#Toggle ingame tips
 scoreboard players add @a[predicate=custom:indimension] GamesPlayed 0
 scoreboard players enable @a[predicate=custom:indimension] toggleTips
-execute as @a[predicate=custom:indimension,scores={toggleTips=1..},tag=!hideTips] run tellraw @s [{"text":"You will no longer receive tips.","color":"red"}]
-execute as @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hideTips] run tellraw @s [{"text":"You will now receive tips.","color":"green"}]
-execute as @a[predicate=custom:indimension,scores={toggleTips=1..},tag=!hideTips] run tag @s add hideTips
-execute as @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hideTips] run tag @s remove hideTips
+tellraw @a[predicate=custom:indimension,scores={toggleTips=1..},tag=!hideTips] [{"text":"You will no longer see ingame tips.","color":"red"}]
+tellraw @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hideTips] [{"text":"You will now see ingame tips.","color":"green"}]
+tag @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hideTips] add hidTips
+tag @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hideTips] remove hideTips
+tag @a[predicate=custom:indimension,scores={toggleTips=1..},tag=!hideTips,tag=!hidTips] add hideTips
+tag @a[predicate=custom:indimension,scores={toggleTips=1..},tag=hidTips] remove hidTips
 scoreboard players set @a[predicate=custom:indimension] toggleTips 0
 
 #Utilkill timer
@@ -57,6 +61,15 @@ execute as @a[predicate=custom:indimension,team=!Blue,team=!Yellow,tag=canopyTP]
 execute as @a[predicate=custom:indimension,team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s jump_boost
 
 #Disable trigger objectives when appropriate
+execute as @a[predicate=!custom:indimension] run trigger LeaveMidgame set -1
+execute as @a[predicate=!custom:indimension] run trigger MaxItemSec set 0
+execute as @a[predicate=!custom:indimension] run trigger VoteServerMode set 0
+execute as @a[predicate=!custom:indimension] run trigger daytime set 0
+execute as @a[predicate=!custom:indimension] run trigger leaveSpec set 0
+execute as @a[predicate=!custom:indimension] run trigger displayinfo set 0
+execute as @a[predicate=!custom:indimension] run trigger toggleTips set 0
+execute as @a[predicate=!custom:indimension] run trigger toggleParticles set 0
+execute as @a[predicate=!custom:indimension] run trigger toggleParkourTips set 0
 execute as @a[predicate=custom:indimension,team=!Blue,team=!Yellow] run trigger LeaveMidgame set -1
 execute as @a[predicate=custom:indimension,team=!Lobby] run trigger MaxItemSec set 0
 execute if entity @s[tag=EditedSettings] as @a[predicate=custom:indimension] run trigger MaxItemSec set 0
@@ -67,6 +80,7 @@ execute if entity @s[tag=EditedSettings] as @a[predicate=custom:indimension] run
 execute if entity @s[scores={servermode=1..}] as @a[predicate=custom:indimension] run trigger daytime set 0
 execute as @a[predicate=custom:indimension,team=!Spectator] run trigger leaveSpec set 0
 execute as @a[predicate=custom:indimension,team=!Lobby,team=!Developer] run trigger displayinfo set 0
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[predicate=custom:indimension] run trigger toggleParkourTips set 0
 
 #Launch pad in Modification Room
 execute if entity @s[tag=!GameStarted] as @a[predicate=custom:indimension,team=Lobby] at @s if entity @e[predicate=custom:indimension,type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true

@@ -18,5 +18,30 @@ execute if score @s nomicon matches 17 run function items:missile/special/givehy
 execute if score @s nomicon matches 18 run function items:missile/special/givebull
 execute if score @s nomicon matches 19 run function items:missile/special/giveduplex
 execute if score @s nomicon matches 20 run function items:missile/special/givebroad
-
+execute if score @s nomicon matches 21 run function items:util/givearrows
+execute if score @s nomicon matches 22 run function items:util/givecanopy
+execute if score @s nomicon matches 23 run function items:util/givefireball
+execute if score @s nomicon matches 24 run function rr_swap:items/util/givefireball
+execute if score @s nomicon matches 25 run function items:util/givenova
+execute if score @s nomicon matches 26 run function items:util/giveshield
+execute if score @s nomicon matches 27 run function items:util/giveobshield
+execute if score @s nomicon matches 28 run function items:util/givesplash
+execute if score @s nomicon matches 29 run function items:util/givevortex
+execute if score @s nomicon matches 30 run function items:util/giveicbm
+execute if score @s nomicon matches 31 run function rr_powerups:items/powerup/givebeeshield
+execute if score @s nomicon matches 32 run function rr_powerups:items/powerup/givelavasplash
+execute if score @s nomicon matches 33 run function rr_powerups:items/powerup/giveslapfish
+execute if score @s nomicon matches 34 run function rr_powerups:items/powerup/givetotem
+execute if score @s nomicon matches 35 run function rr_powerups:items/powerup/giveelytra
+execute if score @s nomicon matches 36 run function rr_powerups:items/powerup/givetrident
+execute if score @s nomicon matches 37 run function rr_powerups:items/powerup/giveinfinity
+execute if score @s nomicon matches 38 run function rr_powerups:items/arrow/giveblindarrow
+execute if score @s nomicon matches 39 run function rr_powerups:items/arrow/giveleviarrow
+execute if score @s nomicon matches 40 run function rr_powerups:items/arrow/giveslowarrow
+execute if score @s nomicon matches 41 run function rr_powerups:items/arrow/givewitherarrow
+execute if score @s nomicon matches 42 run function rr_sandbox:items/givesaber
+execute if score @s nomicon matches 43 run function rr_sandbox:items/givepickaxe
+execute if score @s nomicon matches 44 run function rr_sandbox:items/giveknightsword
+execute if score @s nomicon matches 45 run function rr_sandbox:items/giveknightshield
+execute if score @s nomicon matches 46 run function rr_sandbox:items/givefirewand
 scoreboard players set @s nomicon 0

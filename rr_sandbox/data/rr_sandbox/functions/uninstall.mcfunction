@@ -5,6 +5,7 @@ tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=sandboxLa
 execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=rr_sandbox,limit=1] run kill @e[predicate=custom:indimension,type=armor_stand,tag=rr_sandbox,limit=1]
 execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=rr_ctf,limit=1] run scoreboard objectives remove dropPickaxe
 scoreboard objectives remove nomicon
+scoreboard objectives remove dropBook
 scoreboard players reset * gamemodeID
 execute unless entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear] run function game:forcestop
 execute unless entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear] run function rr_sandbox:game/gameend

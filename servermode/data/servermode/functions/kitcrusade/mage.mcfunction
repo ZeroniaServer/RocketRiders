@@ -23,4 +23,6 @@ execute unless entity @s[scores={crusadekit=3}] run title @s[tag=!kitmage] title
 execute unless entity @s[scores={crusadekit=3}] run title @s[tag=!kitmage] subtitle {"text":"Mage","color":"dark_purple","bold":true}
 execute unless entity @s[scores={crusadekit=3}] at @s[tag=!kitmage] run playsound minecraft:entity.illusioner.prepare_mirror master @s ~ ~ ~ 1 2
 
+execute unless entity @s[scores={crusadekit=3}] run scoreboard players add $mage CmdData 1
+
 execute unless entity @s[scores={crusadekit=3}] run scoreboard players set @s crusadekit 3

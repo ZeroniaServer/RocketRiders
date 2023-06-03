@@ -25,4 +25,6 @@ execute unless entity @s[scores={crusadekit=1}] run title @s[tag=!kitknight] tit
 execute unless entity @s[scores={crusadekit=1}] run title @s[tag=!kitknight] subtitle {"text":"Knight","color":"dark_green","bold":true}
 execute unless entity @s[scores={crusadekit=1}] if entity @s[tag=!kitknight] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 1 1.3
 
+execute unless entity @s[scores={crusadekit=1}] run scoreboard players add $knight CmdData 1
+
 execute unless entity @s[scores={crusadekit=1}] run scoreboard players set @s crusadekit 1

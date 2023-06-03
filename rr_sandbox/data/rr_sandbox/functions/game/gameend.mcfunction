@@ -4,6 +4,7 @@ clear @a[predicate=custom:indimension,team=Blue] #rr_powerups:clear
 clear @a[predicate=custom:indimension,team=Yellow] #custom:clear
 clear @a[predicate=custom:indimension,team=Yellow] crossbow{nova:1b}
 clear @a[predicate=custom:indimension,team=Yellow] #rr_powerups:clear
+execute as @a run trigger nomicon set 0
 
 execute if entity @s[scores={endtimer=1}] as @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:netherite_pickaxe"}}] run function items:killendweapon
 execute if entity @s[scores={endtimer=1},tag=BlueWon] run clear @a[predicate=custom:indimension,team=Yellow] netherite_pickaxe

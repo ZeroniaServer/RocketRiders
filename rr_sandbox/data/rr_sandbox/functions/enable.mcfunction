@@ -3,6 +3,10 @@ function arenaclear:enableitems
 tag @s remove switchGamemodes
 tag @s add noSabers
 tag @s add itemDelayOff
+tag @s add stackingOn
+tag @s add doStacking
+tag @s add hotbarLimitOff
+tag @s remove doHotbarLimit
 tag @s add MinuteOff
 tag @s add WindDownOff
 tag @s add SurpriseEggOff

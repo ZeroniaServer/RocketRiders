@@ -15,7 +15,14 @@ execute as @a[predicate=custom:indimension,team=Yellow,nbt=!{SpawnX:12,SpawnY:64
 
 #spawnables
 function rr_powerups:everytick/spawnables
+function rr_powerups:everytick/powerups
 function rr_swap:items/cluster
+
+#nomicon
+execute as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator] run scoreboard players enable @s nomicon
+execute as @a[predicate=!custom:indimension] run trigger nomicon set 0
+execute as @a[predicate=custom:indimension,team=!Blue,team=!Yellow,team=!Developer] run trigger nomicon set 0
+execute as @a[predicate=custom:indimension,team=!Lobby,team=!Spectator,team=!Developer,scores={nomicon=1..}] run function rr_sandbox:game/nomicon
 
 #win
 execute if block 13 38 74 air run function rr_sandbox:game/winblue

@@ -1,7 +1,7 @@
 ##Utility function for handling item dropping
 
 #Kills books
-kill @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:written_book"}}]
+kill @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:written_book",tag:{navbook:1b}}}]
 #Kills parkour controls
 kill @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:barrier"}}]
 kill @e[predicate=custom:indimension,type=item,nbt={Item:{id:"minecraft:clock"}}]

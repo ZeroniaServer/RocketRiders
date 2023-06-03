@@ -27,4 +27,6 @@ execute unless entity @s[scores={crusadekit=2}] run title @s[tag=!kitarcher] tit
 execute unless entity @s[scores={crusadekit=2}] run title @s[tag=!kitarcher] subtitle {"text":"Archer","color":"red","bold":true}
 execute unless entity @s[scores={crusadekit=2}] if entity @s[tag=!kitarcher] at @s run playsound minecraft:item.crossbow.loading_end master @s ~ ~ ~ 1 1
 
+execute unless entity @s[scores={crusadekit=2}] run scoreboard players add $archer CmdData 1
+
 execute unless entity @s[scores={crusadekit=2}] run scoreboard players set @s crusadekit 2

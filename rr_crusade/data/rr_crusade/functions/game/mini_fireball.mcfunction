@@ -14,7 +14,11 @@ scoreboard players operation @s dx -= @s x
 scoreboard players operation @s dy -= @s y
 scoreboard players operation @s dz -= @s z
 
+tp @s ^ ^ ^0.5
+
 #Store resultant motion
-execute store result entity @s power[0] double 0.001 run scoreboard players get @s dx
-execute store result entity @s power[1] double 0.001 run scoreboard players get @s dy
-execute store result entity @s power[2] double 0.001 run scoreboard players get @s dz
+execute store result entity @s power[0] double 0.0005 run scoreboard players get @s dx
+execute store result entity @s power[1] double 0.0005 run scoreboard players get @s dy
+execute store result entity @s power[2] double 0.0005 run scoreboard players get @s dz
+
+playsound entity.blaze.shoot master @a[predicate=custom:indimension] ~ ~ ~

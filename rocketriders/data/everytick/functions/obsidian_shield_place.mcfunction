@@ -1,4 +1,4 @@
-#Obsiaidn Shield markers
+#Obsidian Shield markers
 execute if entity @s[scores={shieldplacement=1}] unless entity @e[type=marker,tag=obsidianshield,distance=..0.5] run summon marker ~ ~ ~ {Tags:["obsidianshield"]}
 execute if entity @s[scores={shieldplacement=1}] run scoreboard players set @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] breakobshield 0
 

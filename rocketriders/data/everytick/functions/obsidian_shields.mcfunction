@@ -25,7 +25,7 @@ function items:prevention/giveback
 #Spawning in Fireball entities
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
-execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0],Passengers:[{id:"minecraft:marker",Tags:["yellowobtracker"]}]}
+execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0],Passengers:[{id:"minecraft:marker",Tags:["blueobtracker"]}]}
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
 

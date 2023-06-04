@@ -7,11 +7,6 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!givenSplash] run su
 #Select item and run appropriate give function
 tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected
 
-#> Kill items to prevent duplication glitches
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:arrow"}} run function items:deduct
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:ender_pearl"}} run function items:deduct
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:lingering_potion",tag:{Potion:"minecraft:water"}}} run function items:deduct
-
 function items:full_hotbar
 
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @a[x=0,scores={crusadekit=2},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:util/givearrows

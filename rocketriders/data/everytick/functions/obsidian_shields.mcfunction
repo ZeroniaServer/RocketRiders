@@ -25,7 +25,7 @@ function items:prevention/giveback
 #Spawning in Fireball entities
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
-execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
+execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0],Passengers:[{id:"minecraft:marker",Tags:["yellowobtracker"]}]}
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
 
@@ -49,10 +49,7 @@ execute as @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s ru
 kill @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}]
 kill @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=30..}]
 execute as @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=0}] at @s unless entity @e[type=fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] run kill @s
-execute as @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1}] at @s run summon marker ~ ~ ~ {Tags:["blueobtracker"]}
-execute as @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=marker,tag=blueobtracker,distance=..2,limit=1,sort=nearest] @s
-tag @e[x=0,type=marker,tag=blueobtracker] add blueobalone
-execute as @e[x=0,type=marker,tag=blueobtracker,tag=blueobalone] at @s if entity @e[type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove blueobalone
+tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:has_vehicle] add blueobalone
 #Disable Blue Obsidian Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
@@ -83,7 +80,7 @@ execute as @e[x=0,type=area_effect_cloud,tag=tempobshield] at @s if entity @e[ty
 #Spawning in Fireball entities
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
-execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0,0.0,0.0]}
+execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0,0.0,0.0],Passengers:[{id:"minecraft:marker",Tags:["yellowobtracker"]}]}
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
 execute as @e[x=0,type=fireball,tag=yellowobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:air",Count:1b}}
@@ -109,10 +106,7 @@ execute as @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s 
 kill @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}]
 kill @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=30..}]
 execute as @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=0}] at @s unless entity @e[type=fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] run kill @s
-execute as @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..1}] at @s run summon marker ~ ~ ~ {Tags:["yellowobtracker"]}
-execute as @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] at @s run tp @e[type=marker,tag=yellowobtracker,distance=..2,limit=1,sort=nearest] @s
-tag @e[x=0,type=marker,tag=yellowobtracker] add yellowobalone
-execute as @e[x=0,type=marker,tag=yellowobtracker,tag=yellowobalone] at @s if entity @e[type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..},distance=..4,limit=1,sort=nearest] run tag @s remove yellowobalone
+tag @e[x=0,type=marker,tag=yellowobtracker,predicate=!custom:has_vehicle] add yellowobalone
 #Disable Yellow Obsidian Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s

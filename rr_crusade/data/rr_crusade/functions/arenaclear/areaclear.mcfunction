@@ -1,4 +1,5 @@
 kill @e[x=0,type=#custom:crystal,tag=CrusadeEntity]
+kill @e[x=0,type=interaction,tag=wandbox]
 fill 33 79 33 35 89 31 air
 fill -11 79 33 -9 89 31 air
 fill 9 89 66 15 99 60 air

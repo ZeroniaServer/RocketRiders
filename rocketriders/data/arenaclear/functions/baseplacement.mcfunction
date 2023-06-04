@@ -39,9 +39,9 @@ fill -14 48 51 38 63 28 air
 fill 38 33 51 -14 47 29 air
 
 #Clear crystal crafters
-scoreboard players reset @e[predicate=custom:indimension,type=marker,tag=captureMiddle] captureBlue
-scoreboard players reset @e[predicate=custom:indimension,type=marker,tag=captureMiddle] captureYellow
-scoreboard players reset @e[predicate=custom:indimension,type=marker,tag=captureMiddle] capturePoint
+scoreboard players reset @e[x=0,type=marker,tag=captureMiddle] captureBlue
+scoreboard players reset @e[x=0,type=marker,tag=captureMiddle] captureYellow
+scoreboard players reset @e[x=0,type=marker,tag=captureMiddle] capturePoint
 fill 13 63 67 10 66 71 air
 fill 13 63 -67 10 66 -71 air
 fill 14 63 67 10 66 71 air
@@ -121,4 +121,4 @@ fill -14 63 67 38 34 73 cave_air
 fill -14 63 -67 38 34 -73 cave_air
 
 ##Stop all sounds
-# execute as @a[predicate=custom:indimension] run function everytick:stopsounds
+# execute as @a[x=0] run function everytick:stopsounds

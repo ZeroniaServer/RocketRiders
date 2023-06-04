@@ -1,6 +1,6 @@
 tag @s remove crusadeEnabled
 function arenaclear:unlockdecos
-kill @e[predicate=custom:indimension,type=marker,tag=crusadeWall]
+kill @e[x=0,type=marker,tag=crusadeWall]
 tag @s remove noSabers
 tag @s remove portalDecosOff
 tag @s[tag=HardcoreWasOn] add Hardcore
@@ -33,7 +33,7 @@ tag @s remove ChaosWasOn
 tag @s[tag=ClutterCollectorWasOn] add ClutterCollector
 tag @s remove ClutterCollectorOff
 tag @s remove portalOverride
-execute as @a[predicate=custom:indimension] run trigger crusadechange set 0
+execute as @a[x=0] run trigger crusadechange set 0
 
 #item enabling/disabling
 tag @s[tag=arrowsWasOff] remove rngArrows

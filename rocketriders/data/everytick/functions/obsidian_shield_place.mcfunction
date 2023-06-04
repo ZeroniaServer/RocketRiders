@@ -38,5 +38,4 @@ execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run tag @e[type
 execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run tag @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] add yellowobsidianshield
 execute if entity @s[scores={shieldplacement=6}] run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 1
 execute if entity @s[scores={shieldplacement=6}] run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customShield] if entity @s[scores={shieldplacement=6..}] run kill @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest,distance=..1]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customShield] run kill @s[scores={shieldplacement=6..}]

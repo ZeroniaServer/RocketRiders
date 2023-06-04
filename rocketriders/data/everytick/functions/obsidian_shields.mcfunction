@@ -64,17 +64,9 @@ execute as @e[x=0,type=marker,tag=blueobalone] at @s if entity @e[type=marker,ta
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=blueobalone] shieldplacement 1
-execute as @e[x=0,type=marker,tag=blueobalone,scores={shieldplacement=1}] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:2000000,Tags:["tempobshield"],Particle:"block air"}
-execute as @e[x=0,type=marker,tag=blueobalone] at @s at @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest,distance=..1] align xyz run function everytick:obsidian_shield_place
+execute as @e[x=0,type=marker,tag=blueobalone] at @s align xyz run function everytick:obsidian_shield_place
 tp @e[x=0,type=marker,tag=BlueObshield] ~ ~-250 ~
 kill @e[x=0,type=marker,tag=BlueObshield]
-
-#Kill temporary Obsidian Shield entities in invalid locations
-execute unless entity @s[tag=noPortal] as @e[x=0,type=area_effect_cloud,tag=tempobshield] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
-execute unless entity @s[tag=noPortal] as @e[x=0,type=area_effect_cloud,tag=tempobshield] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
-execute as @e[x=0,type=area_effect_cloud,tag=tempobshield] at @s if predicate custom:nearvoid run kill @s
-execute as @e[x=0,type=area_effect_cloud,tag=tempobshield] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
-execute as @e[x=0,type=area_effect_cloud,tag=tempobshield] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
 
 ##Yellow Obsidian Shield functionality
 #Spawning in Fireball entities
@@ -121,8 +113,7 @@ execute as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @e[type=marker,
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=yellowobalone] shieldplacement 1
-execute as @e[x=0,type=marker,tag=yellowobalone,scores={shieldplacement=1}] at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:2000000,Tags:["tempobshield"],Particle:"block air"}
-execute as @e[x=0,type=marker,tag=yellowobalone] at @s at @e[type=area_effect_cloud,tag=tempobshield,limit=1,sort=nearest,distance=..1] align xyz run function everytick:obsidian_shield_place
+execute as @e[x=0,type=marker,tag=yellowobalone] at @s align xyz run function everytick:obsidian_shield_place
 tp @e[x=0,type=marker,tag=YellowObshield] ~ ~-250 ~
 kill @e[x=0,type=marker,tag=YellowObshield]
 

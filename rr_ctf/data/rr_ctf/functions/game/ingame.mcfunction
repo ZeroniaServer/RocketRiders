@@ -9,16 +9,16 @@ execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run sc
 execute if entity @s[tag=Minute] run function rr_ctf:items/minutemix
 
 #Spawnpoints
-execute as @a[predicate=custom:indimension,team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
-execute as @a[predicate=custom:indimension,team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
+execute as @a[x=0,team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
+execute as @a[x=0,team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
 #endstone regeneration
-execute as @e[predicate=custom:indimension,type=marker,tag=airDetectBlue] at @s run function rr_ctf:everytick/airdetectblue
-execute as @e[predicate=custom:indimension,type=marker,tag=airDetectYellow] at @s run function rr_ctf:everytick/airdetectyellow
+execute as @e[x=0,type=marker,tag=airDetectBlue] at @s run function rr_ctf:everytick/airdetectblue
+execute as @e[x=0,type=marker,tag=airDetectYellow] at @s run function rr_ctf:everytick/airdetectyellow
 
 #Overtime sudden death
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,scores={gametime=36000},tag=doTying] run tag @s add CTFOvertime
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CTFOvertime] run function rr_ctf:everytick/overtime
+execute as @e[x=0,type=armor_stand,tag=Selection,scores={gametime=36000},tag=doTying] run tag @s add CTFOvertime
+execute as @e[x=0,type=armor_stand,tag=Selection,tag=CTFOvertime] run function rr_ctf:everytick/overtime
 
 #flag logic
 function rr_ctf:everytick/flag
@@ -27,8 +27,8 @@ scoreboard objectives setdisplay sidebar.team.blue FlagDisp
 scoreboard objectives setdisplay sidebar.team.dark_gray FlagDisp
 
 #custom prevention message
-execute as @a[predicate=custom:indimension,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
-tag @a[predicate=custom:indimension,tag=preventionMSG] remove preventionMSG
+execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
+tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #fill bedrock
 fill -15 64 67 39 64 67 bedrock

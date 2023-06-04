@@ -11,7 +11,7 @@ data remove storage rocketriders:ymissilepos redundantY[0]
 data remove storage rocketriders:ymissilepos redundantZ[0]
 
 #Set missile counts equal for loop condition (offset 1 so it doesn't consider itself)
-scoreboard players operation $minifyyellow yMissileCount = @e[predicate=custom:indimension,type=armor_stand,tag=Selection,limit=1] yMissileCount
+scoreboard players operation $minifyyellow yMissileCount = @e[x=0,type=armor_stand,tag=Selection,limit=1] yMissileCount
 scoreboard players remove $minifyyellow yMissileCount 1
 
 #Start loop to scan for duplicate entries if another missile has been spawned
@@ -24,7 +24,7 @@ execute if score $minifyyellow yMissileCount matches 1.. run function items:mini
 execute if entity @s[tag=minify] run data remove storage rocketriders:ymissilepos x[0]
 execute if entity @s[tag=minify] run data remove storage rocketriders:ymissilepos y[0]
 execute if entity @s[tag=minify] run data remove storage rocketriders:ymissilepos z[0]
-execute if entity @s[tag=minify] run scoreboard players remove @e[predicate=custom:indimension,type=armor_stand,tag=Selection,limit=1] yMissileCount 1
+execute if entity @s[tag=minify] run scoreboard players remove @e[x=0,type=armor_stand,tag=Selection,limit=1] yMissileCount 1
 tag @s remove minify
 
 #Clean up

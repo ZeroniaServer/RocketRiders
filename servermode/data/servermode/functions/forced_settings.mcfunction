@@ -47,52 +47,52 @@ tag @s remove doFireballPortals
 ##        Thanks to Llewv for the suggestion!        ##
 #######################################################
 
-tellraw @a[predicate=custom:indimension] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"Active Items:","color":"gray","bold":false,"hoverEvent":{"action":"show_text","contents":["",{"text":"A set of 12 items is randomly generated for each game.","color":"white"}]}},{"text":" (hover for info)","italic":true,"color":"dark_gray"}]
-execute if entity @s[tag=!ctfEnabled] run tellraw @a[predicate=custom:indimension] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
-execute if entity @s[tag=ctfEnabled] run tellraw @a[predicate=custom:indimension] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"Active Items:","color":"gray","bold":false,"hoverEvent":{"action":"show_text","contents":["",{"text":"A set of 12 items is randomly generated for each game.","color":"white"}]}},{"text":" (hover for info)","italic":true,"color":"dark_gray"}]
+execute if entity @s[tag=!ctfEnabled] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+execute if entity @s[tag=ctfEnabled] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
 
 ### 1 shield type.
 summon marker ~ ~ ~ {CustomName:'{"text":"Shield","color":"light_purple"}',Tags:["ServerRNG","Shield","RShieldRNG","RUtilRNG"]}
 summon marker ~ ~ ~ {CustomName:'{"text":"Obsidian Shield","color":"light_purple"}',Tags:["ServerRNG","Obshield","RShieldRNG","RUtilRNG"]}
-tag @e[predicate=custom:indimension,type=marker,tag=RShieldRNG,limit=1,sort=random] add SelRRNG
+tag @e[x=0,type=marker,tag=RShieldRNG,limit=1,sort=random] add SelRRNG
 
 #normal shield selected
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Shield,tag=SelRRNG] run tag @s add rngShield
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Shield,tag=SelRRNG] run tag @s remove rngObshield
+execute if entity @e[x=0,type=marker,tag=Shield,tag=SelRRNG] run tag @s add rngShield
+execute if entity @e[x=0,type=marker,tag=Shield,tag=SelRRNG] run tag @s remove rngObshield
 
 #obshield selected
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Obshield,tag=SelRRNG] run tag @s add rngObshield
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Obshield,tag=SelRRNG] run tag @s remove rngShield
+execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run tag @s add rngObshield
+execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run tag @s remove rngShield
 
 ### 1 projectile type (except in CTF)
 summon marker ~ ~ ~ {CustomName:'{"text":"Fireball","color":"light_purple"}',Tags:["ServerRNG","Fireball","RProjecRNG","RUtilRNG"]}
 summon marker ~ ~ ~ {CustomName:'{"text":"Nova Rocket","color":"light_purple"}',Tags:["ServerRNG","Nova","RProjecRNG","RUtilRNG"]}
-execute if entity @s[tag=!ctfEnabled] run tag @e[predicate=custom:indimension,type=marker,tag=RProjecRNG,limit=1,sort=random] add SelRRNG
-execute if entity @s[tag=ctfEnabled] run tag @e[predicate=custom:indimension,type=marker,tag=RProjecRNG] add SelRRNG
+execute if entity @s[tag=!ctfEnabled] run tag @e[x=0,type=marker,tag=RProjecRNG,limit=1,sort=random] add SelRRNG
+execute if entity @s[tag=ctfEnabled] run tag @e[x=0,type=marker,tag=RProjecRNG] add SelRRNG
 
 #fireball selected
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Fireball,tag=SelRRNG] run tag @s add rngFireball
-execute if entity @s[tag=!ctfEnabled] if entity @e[predicate=custom:indimension,type=marker,tag=Fireball,tag=SelRRNG] run tag @s remove rngNova
+execute if entity @e[x=0,type=marker,tag=Fireball,tag=SelRRNG] run tag @s add rngFireball
+execute if entity @s[tag=!ctfEnabled] if entity @e[x=0,type=marker,tag=Fireball,tag=SelRRNG] run tag @s remove rngNova
 
 #nova rocket selected
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Nova,tag=SelRRNG] run tag @s add rngNova
-execute if entity @s[tag=!ctfEnabled] if entity @e[predicate=custom:indimension,type=marker,tag=Nova,tag=SelRRNG] run tag @s remove rngFireball
+execute if entity @e[x=0,type=marker,tag=Nova,tag=SelRRNG] run tag @s add rngNova
+execute if entity @s[tag=!ctfEnabled] if entity @e[x=0,type=marker,tag=Nova,tag=SelRRNG] run tag @s remove rngFireball
 
 #Announce extra utils
-tellraw @a[predicate=custom:indimension] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"light_purple","bold":false},{"selector":"@e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":false}]
+tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"light_purple","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":false}]
 
 ### 1 lightning type.
 summon marker ~ ~ ~ {Tags:["ServerRNG","Hurricane","RLightningRNG"]}
 summon marker ~ ~ ~ {Tags:["ServerRNG","Thunderbolt","RLightningRNG"]}
-tag @e[predicate=custom:indimension,type=marker,tag=RLightningRNG,limit=1,sort=random] add SelRRNG
+tag @e[x=0,type=marker,tag=RLightningRNG,limit=1,sort=random] add SelRRNG
 
 #hurricane selected
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Hurricane,tag=SelRRNG] run tag @s add rngHur
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Hurricane,tag=SelRRNG] run tag @s remove rngThun
+execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tag @s add rngHur
+execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tag @s remove rngThun
 
 #thunderbolt selected
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s add rngThun
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s remove rngHur
+execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s add rngThun
+execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s remove rngHur
 
 ### 5/14 non-lightning missiles
 summon marker ~ ~ ~ {CustomName:'{"text":"A.N.T.","color":"green"}',Tags:["ServerRNG","Ant","RMisRNG"]}
@@ -110,35 +110,35 @@ summon marker ~ ~ ~ {CustomName:'{"text":"Slasher","color":"green"}',Tags:["Serv
 summon marker ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["ServerRNG","TomaTwo","RMisRNG"]}
 summon marker ~ ~ ~ {CustomName:'{"text":"Warhead","color":"red"}',Tags:["ServerRNG","Warhead","RMisRNG","RHeavyRNG"]}
 
-tag @e[predicate=custom:indimension,type=marker,tag=RMisRNG,tag=!SelRRNG,limit=5,sort=random] add SelRRNG
+tag @e[x=0,type=marker,tag=RMisRNG,tag=!SelRRNG,limit=5,sort=random] add SelRRNG
 
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Ant] run tag @s add rngAnt
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Auxiliary] run tag @s add rngAux
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Blade] run tag @s add rngBlade
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Catapult] run tag @s add rngCata
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Nullifier] run tag @s add rngNull
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Citadel] run tag @s add rngCitadel
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Guard] run tag @s add rngEguard
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Gemini] run tag @s add rngGemi
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Juggerbuster] run tag @s add rngJbuster
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Lifter] run tag @s add rngLift
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Rifter] run tag @s add rngRift
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Slasher] run tag @s add rngSlash
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=TomaTwo] run tag @s add rngToma
-execute if entity @e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=Warhead] run tag @s add rngWar
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Ant] run tag @s add rngAnt
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Auxiliary] run tag @s add rngAux
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Blade] run tag @s add rngBlade
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Catapult] run tag @s add rngCata
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Nullifier] run tag @s add rngNull
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Citadel] run tag @s add rngCitadel
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Guard] run tag @s add rngEguard
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Gemini] run tag @s add rngGemi
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Juggerbuster] run tag @s add rngJbuster
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Lifter] run tag @s add rngLift
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Rifter] run tag @s add rngRift
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Slasher] run tag @s add rngSlash
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=TomaTwo] run tag @s add rngToma
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Warhead] run tag @s add rngWar
 
 #Announce normals
-tellraw @a[predicate=custom:indimension] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"green","bold":false},{"selector":"@e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=RMisRNG,tag=!RHeavyRNG]","color":"green","bold":false}]
+tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"green","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=!RHeavyRNG]","color":"green","bold":false}]
 
 #Announce lightning
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Hurricane,tag=SelRRNG] run tellraw @a[predicate=custom:indimension] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Hurricane","color":"gold","bold":false}]
-execute if entity @e[predicate=custom:indimension,type=marker,tag=Thunderbolt,tag=SelRRNG] run tellraw @a[predicate=custom:indimension] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Thunderbolt","color":"gold","bold":false}]
+execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Hurricane","color":"gold","bold":false}]
+execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Thunderbolt","color":"gold","bold":false}]
 
 #Announce heavys (if any)
 tag @s[tag=!rngAux,tag=!rngJbuster,tag=!rngRift,tag=!rngWar] remove rngHeavy
-execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!rngHeavy] run tellraw @a[predicate=custom:indimension] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"red","bold":false},{"selector":"@e[predicate=custom:indimension,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=!rngHeavy] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
 tag @s[tag=!rngAux,tag=!rngJbuster,tag=!rngRift,tag=!rngWar] add heavyOff
 execute unless entity @s[tag=!rngAux,tag=!rngJbuster,tag=!rngRift,tag=!rngWar] run tag @s remove heavyOff
-kill @e[predicate=custom:indimension,type=marker,tag=ServerRNG]
+kill @e[x=0,type=marker,tag=ServerRNG]
 
-tellraw @a[predicate=custom:indimension] [{"text":""}]
+tellraw @a[x=0] [{"text":""}]

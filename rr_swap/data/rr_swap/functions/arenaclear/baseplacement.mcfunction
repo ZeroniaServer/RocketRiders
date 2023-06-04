@@ -3,10 +3,10 @@ function arenaclear:baseplacement
 #Bases
 summon marker ~ ~ ~ {Tags:["RNGSwap","DarkBlue"]}
 summon marker ~ ~ ~ {Tags:["RNGSwap","DarkYellow"]}
-tag @e[predicate=custom:indimension,type=marker,tag=RNGSwap,limit=1,sort=random] add SelectRNGSwap
-execute as @e[predicate=custom:indimension,type=marker,tag=DarkBlue,tag=SelectRNGSwap] run scoreboard players set SwapSide swapside 1
-execute as @e[predicate=custom:indimension,type=marker,tag=DarkYellow,tag=SelectRNGSwap] run scoreboard players set SwapSide swapside 0
-kill @e[predicate=custom:indimension,type=marker,tag=RNGSwap]
+tag @e[x=0,type=marker,tag=RNGSwap,limit=1,sort=random] add SelectRNGSwap
+execute as @e[x=0,type=marker,tag=DarkBlue,tag=SelectRNGSwap] run scoreboard players set SwapSide swapside 1
+execute as @e[x=0,type=marker,tag=DarkYellow,tag=SelectRNGSwap] run scoreboard players set SwapSide swapside 0
+kill @e[x=0,type=marker,tag=RNGSwap]
 
 function arenaclear:detailplacement
 

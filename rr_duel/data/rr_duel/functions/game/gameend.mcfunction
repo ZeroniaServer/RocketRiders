@@ -1,23 +1,23 @@
-clear @a[predicate=custom:indimension,team=Blue] #custom:clear
-clear @a[predicate=custom:indimension,team=Blue] crossbow{nova:1b}
-clear @a[predicate=custom:indimension,team=Yellow] #custom:clear
-clear @a[predicate=custom:indimension,team=Yellow] crossbow{nova:1b}
+clear @a[x=0,team=Blue] #custom:clear
+clear @a[x=0,team=Blue] crossbow{nova:1b}
+clear @a[x=0,team=Yellow] #custom:clear
+clear @a[x=0,team=Yellow] crossbow{nova:1b}
 scoreboard players reset @s fakeendtimer
 tag @s remove FakeGameEnd
 
 #forfeit prize/loss
-execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[predicate=custom:indimension,tag=InRanked,team=Blue] add ForfeitWon
-execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[predicate=custom:indimension,tag=InRanked,team=Yellow] add ForfeitWon
-execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] as @a[predicate=custom:indimension,tag=ForfeitWon] run function rr_duel:forfeit/giveprize
-execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[predicate=custom:indimension,tag=!InRanked] ForfeitWin
-execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[predicate=custom:indimension,tag=!InRanked] ForfeitLoss
+execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[x=0,tag=InRanked,team=Blue] add ForfeitWon
+execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[x=0,tag=InRanked,team=Yellow] add ForfeitWon
+execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] as @a[x=0,tag=ForfeitWon] run function rr_duel:forfeit/giveprize
+execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[x=0,tag=!InRanked] ForfeitWin
+execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[x=0,tag=!InRanked] ForfeitLoss
 
 execute if entity @s[scores={endtimer=1}] run function game:endstats
-execute if entity @s[scores={endtimer=2..}] run tag @a[predicate=custom:indimension,team=Blue] remove InRanked
-execute if entity @s[scores={endtimer=2..}] run tag @a[predicate=custom:indimension,team=Yellow] remove InRanked
+execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,team=Blue] remove InRanked
+execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,team=Yellow] remove InRanked
 scoreboard players reset @s ForfeitTimeout
 tag @s remove TimeOut
-tag @a[predicate=custom:indimension] remove Forfeiter
+tag @a[x=0] remove Forfeiter
 
 scoreboard players reset @s Rounds
 

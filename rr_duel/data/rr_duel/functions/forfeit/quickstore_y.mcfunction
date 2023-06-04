@@ -1,2 +1,2 @@
-scoreboard players operation $BlueWin Forfeit = @a[predicate=custom:indimension,team=Blue] ForfeitWin
-scoreboard players operation $YellowLoss Forfeit = @a[predicate=custom:indimension,team=Yellow] ForfeitLoss
+scoreboard players operation $BlueWin Forfeit = @a[x=0,team=Blue] ForfeitWin
+scoreboard players operation $YellowLoss Forfeit = @a[x=0,team=Yellow] ForfeitLoss

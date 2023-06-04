@@ -1,9 +1,9 @@
 ##Gives executor a TomaTwo
 #Antidupe check
 execute store result score @s HasToma run clear @s creeper_spawn_egg 0
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasToma %= 64 CmdData
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=doStacking] if entity @s[scores={HasToma=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasToma 0
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasToma %= 64 CmdData
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] if entity @s[scores={HasToma=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasToma 0
 tag @s[tag=itemDeducted] remove fullHotbar
 
 #Title/giving
@@ -16,5 +16,5 @@ loot give @s[scores={HasToma=0},tag=!fullHotbar] loot items:normal/tomatwo
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasToma=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackToma] run tag @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=tetrisTime] add givenToma
-execute unless entity @s[tag=BackToma] run tag @e[predicate=custom:indimension,type=armor_stand,tag=Bot] add HasToma
+execute unless entity @s[tag=BackToma] run tag @e[x=0,type=armor_stand,tag=Selection,tag=tetrisTime] add givenToma
+execute unless entity @s[tag=BackToma] run tag @e[x=0,type=armor_stand,tag=Bot] add HasToma

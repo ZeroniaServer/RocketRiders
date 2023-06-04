@@ -10,19 +10,19 @@ scoreboard players add @s[tag=crosser] death 1
 scoreboard players add @s[tag=crosser] respawn 1
 
 ##Cry About It achievement
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] if entity @s[tag=CheckCry] run advancement grant @s only achievements:rr_challenges/cryaboutit 
+execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] if entity @s[tag=CheckCry] run advancement grant @s only achievements:rr_challenges/cryaboutit 
 
 ##Become one with the void
 kill @s[team=!Spectator,tag=!crosser]
 
 #Remove death during end game phase
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=GameEnd] run scoreboard players remove @s deaths 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=GameEnd] run scoreboard players remove @s deaths 1
 
 #Handle Spectators
 tp @s[team=Spectator] 12 100 0.5 90 90
 
 #Handle crossers (Rocket Residers)
-execute if entity @s[tag=crosser] run tellraw @a[predicate=custom:indimension] ["",{"selector":"@s"},{"text":" tried to leave their base"}]
+execute if entity @s[tag=crosser] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to leave their base"}]
 effect give @s[tag=crosser] resistance 1 200 true
 effect give @s[tag=crosser] instant_health 1 200 true
 effect give @s[tag=crosser] fire_resistance 4 200 true

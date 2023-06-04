@@ -3,14 +3,14 @@
 summon marker 0 0 0 {Tags:[Platform]}
 
 #Set position from global storage
-execute as @e[predicate=custom:indimension,type=marker,tag=Platform,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:canopypos x[0]
-execute as @e[predicate=custom:indimension,type=marker,tag=Platform,limit=1] run data modify entity @s Pos[1] set from storage rocketriders:canopypos y[0]
-execute as @e[predicate=custom:indimension,type=marker,tag=Platform,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:canopypos z[0]
+execute as @e[x=0,type=marker,tag=Platform,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:canopypos x[0]
+execute as @e[x=0,type=marker,tag=Platform,limit=1] run data modify entity @s Pos[1] set from storage rocketriders:canopypos y[0]
+execute as @e[x=0,type=marker,tag=Platform,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:canopypos z[0]
 
 #Remove necessary blocks
-execute as @e[predicate=custom:indimension,type=marker,tag=Platform,limit=1] at @s run fill ~-3 ~ ~-3 ~3 ~ ~3 air replace #minecraft:leaves
-execute as @e[predicate=custom:indimension,type=marker,tag=Platform,limit=1] at @s run fill ~ ~ ~ ~ ~1 ~ air
-kill @e[predicate=custom:indimension,type=marker,tag=Platform,limit=1]
+execute as @e[x=0,type=marker,tag=Platform,limit=1] at @s run fill ~-3 ~ ~-3 ~3 ~ ~3 air replace #minecraft:leaves
+execute as @e[x=0,type=marker,tag=Platform,limit=1] at @s run fill ~ ~ ~ ~ ~1 ~ air
+kill @e[x=0,type=marker,tag=Platform,limit=1]
 
 #Remove this set of coordinates in preparation for the next one
 data remove storage rocketriders:canopypos x[0]

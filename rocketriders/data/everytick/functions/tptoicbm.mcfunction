@@ -22,9 +22,13 @@ execute at @s[tag=ICBMTriggered] run summon tnt ~-0.1 ~ ~ {Fuse:1s,Tags:["UtilKi
 execute at @s[tag=ICBMTriggered] run summon tnt ~ ~0.1 ~ {Fuse:1s,Tags:["UtilKilled"]}
 execute at @s[tag=ICBMTriggered] run summon tnt ~ ~-0.1 ~ {Fuse:1s,Tags:["UtilKilled"]}
 execute at @s[tag=ICBMTriggered] run function game:tntutilkill
-kill @s[tag=ICBMTriggered]
+
+#Trigger nearby Vortices
+tag @e[type=marker,tag=Vortex,distance=..5,limit=1] add originboom
 
 #Reset
 tag @s remove teleportPair
 tag @e[x=0,type=egg,tag=ICBM,tag=teleportPair] remove teleportPair
 scoreboard players reset $temp ICBMID
+
+kill @s[tag=ICBMTriggered]

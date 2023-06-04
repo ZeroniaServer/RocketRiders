@@ -4,6 +4,6 @@ execute if score @s playerUUID = @p[tag=tridentChecking] playerUUID as @p[tag=tr
 execute as @p[tag=tridentValid] store result score @s HasTrident run clear @s trident 0
 execute if entity @p[tag=tridentValid,scores={HasTrident=1..},distance=..5] run kill @s
 tag @p[tag=tridentChecking] add tridentChecked
-tag @a[predicate=custom:indimension,tag=tridentChecked] remove tridentChecking
-tag @a[predicate=custom:indimension,tag=tridentChecked] remove tridentValid
-execute if entity @a[predicate=custom:indimension,tag=!tridentChecked] run function everytick:trident_antidupe
+tag @a[x=0,tag=tridentChecked] remove tridentChecking
+tag @a[x=0,tag=tridentChecked] remove tridentValid
+execute if entity @a[x=0,tag=!tridentChecked] run function everytick:trident_antidupe

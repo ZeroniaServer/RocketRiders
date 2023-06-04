@@ -18,8 +18,8 @@ execute if entity @s[tag=YellowSurpriseSpecial] run function items:surprise_yell
 
 ##Flipping Capability
 execute store result score $tempuuid playerUUID run data get entity @s data.UUID[0]
-execute if entity @s[tag=yellowmissile] if entity @a[predicate=custom:indimension,team=Yellow,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
-execute if entity @s[tag=bluemissile] if entity @a[predicate=custom:indimension,team=Blue,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
+execute if entity @s[tag=yellowmissile] if entity @a[x=0,team=Yellow,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
+execute if entity @s[tag=bluemissile] if entity @a[x=0,team=Blue,predicate=custom:matches_uuid,tag=FlipMissile] run tag @s add missileflip
 scoreboard players reset $tempuuid playerUUID
 tag @s[tag=missileflip,tag=yellowmissile] add wasyellow
 tag @s[tag=missileflip,tag=bluemissile] add wasblue
@@ -36,34 +36,34 @@ execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearroof run 
 execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearroof run tag @s add UnableMissile
 
 #Pierce Prevention (Portals)
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
 
 #Spawnpoint
 execute if entity @s[tag=!UnableMissile] run function items:prevention/spawnpoint
 
 ##Antigrief
 #Normal antigrief - starts after 10 seconds
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:flip/antigrief
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:flip/antigrief
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:flip/antigrief
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:flip/antigrief
 
 #Stronger antigrief - starts before 10 seconds
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
 
 #Collision Control - applies to enemy base
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=18] run function items:prevention/collisioncontrol
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=49,dz=18] run function items:prevention/collisioncontrol
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=18] run function items:prevention/collisioncontrol
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=49,dz=18] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=18] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=49,dz=18] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=18] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=49,dz=18] run function items:prevention/collisioncontrol
 
 #Remove clone blocks
 function items:prevention/clearafter
@@ -72,11 +72,11 @@ function items:prevention/clearafter
 #Give back
 execute if entity @s[tag=UnableMissile,tag=!missileflip] run function items:prevention/unablefx
 execute if entity @s[tag=UnableMissile,tag=missileflip] run function items:flip/unablefx
-execute as @e[predicate=custom:indimension,type=armor_stand,tag=Selection] run function items:prevention/giveback
+execute as @e[x=0,type=armor_stand,tag=Selection] run function items:prevention/giveback
 
 ##Bot preparation (for PVE mode)
-execute if entity @s[tag=bluemissile] if entity @e[predicate=custom:indimension,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}
-execute if entity @s[tag=yellowmissile] if entity @e[predicate=custom:indimension,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}
+execute if entity @s[tag=bluemissile] if entity @e[x=0,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}
+execute if entity @s[tag=yellowmissile] if entity @e[x=0,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}
 
 ##SmartClear preparation
 execute if entity @s[tag=bluemissile] run data modify storage rocketriders:bmissilepos x prepend from entity @s Pos[0]
@@ -88,9 +88,9 @@ execute if entity @s[tag=yellowmissile] run data modify storage rocketriders:ymi
 execute if entity @s[tag=yellowmissile] run data modify storage rocketriders:ymissilepos z prepend from entity @s Pos[2]
 
 ##Play sounds
-execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
-execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
-execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[predicate=custom:indimension,distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 
 ##Individual missile positioning
 #Auxiliary
@@ -190,24 +190,24 @@ execute if entity @s[tag=bluemissile] run function items:minify/minifyblue
 execute if entity @s[tag=yellowmissile] run function items:minify/minifyyellow
 
 #Extra for Duplex
-execute as @e[predicate=custom:indimension,type=marker,tag=duplexExtraBlue] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
-execute as @e[predicate=custom:indimension,type=marker,tag=duplexExtraBlue] run kill @s
-execute as @e[predicate=custom:indimension,type=marker,tag=duplexExtraYellow] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
-execute as @e[predicate=custom:indimension,type=marker,tag=duplexExtraYellow] run kill @s
+execute as @e[x=0,type=marker,tag=duplexExtraBlue] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
+execute as @e[x=0,type=marker,tag=duplexExtraBlue] run kill @s
+execute as @e[x=0,type=marker,tag=duplexExtraYellow] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
+execute as @e[x=0,type=marker,tag=duplexExtraYellow] run kill @s
 
 #Extra for Broadsword
-execute as @e[predicate=custom:indimension,type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
-execute as @e[predicate=custom:indimension,type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
-execute as @e[predicate=custom:indimension,type=marker,tag=broadExtraBlue] run kill @s
-execute as @e[predicate=custom:indimension,type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
-execute as @e[predicate=custom:indimension,type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
-execute as @e[predicate=custom:indimension,type=marker,tag=broadExtraYellow] run kill @s
+execute as @e[x=0,type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
+execute as @e[x=0,type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
+execute as @e[x=0,type=marker,tag=broadExtraBlue] run kill @s
+execute as @e[x=0,type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
+execute as @e[x=0,type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
+execute as @e[x=0,type=marker,tag=broadExtraYellow] run kill @s
 
 #Extra for Warhead
-execute as @e[predicate=custom:indimension,type=marker,tag=warExtraBlue] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] replace
-execute as @e[predicate=custom:indimension,type=marker,tag=warExtraBlue] run kill @s
-execute as @e[predicate=custom:indimension,type=marker,tag=warExtraYellow] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
-execute as @e[predicate=custom:indimension,type=marker,tag=warExtraYellow] run kill @s
+execute as @e[x=0,type=marker,tag=warExtraBlue] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] replace
+execute as @e[x=0,type=marker,tag=warExtraBlue] run kill @s
+execute as @e[x=0,type=marker,tag=warExtraYellow] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
+execute as @e[x=0,type=marker,tag=warExtraYellow] run kill @s
 
 ##Kill entity
 kill @s

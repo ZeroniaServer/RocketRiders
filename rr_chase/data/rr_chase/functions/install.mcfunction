@@ -1,4 +1,4 @@
-execute unless entity @e[predicate=custom:indimension,type=armor_stand,tag=rr_chase,limit=1] run summon armor_stand 25 184 -6 {Tags:["rr_chase","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:'{"text":"Chase Mode"}'}
+execute unless entity @e[x=0,type=armor_stand,tag=rr_chase,limit=1] run summon armor_stand 25 184 -6 {Tags:["rr_chase","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:'{"text":"Chase Mode"}'}
 bossbar add rr_chase:lead ["",{"text":"No one is in the lead!","color":"red"}]
 bossbar set rr_chase:lead color red
 bossbar set rr_chase:lead style notched_10
@@ -9,6 +9,6 @@ scoreboard objectives add BreakCBPurple minecraft.mined:minecraft.purple_stained
 scoreboard objectives add BreakCBTint minecraft.mined:minecraft.tinted_glass
 scoreboard objectives add ChaseAlarm dummy
 scoreboard objectives add ArmorColor dummy
-execute if entity @e[predicate=custom:indimension,type=armor_stand,tag=rr_chase,limit=1] run tellraw @s {"text":"Chase Mode installed.","color":"green","bold":true}
-scoreboard players add @e[predicate=custom:indimension,type=armor_stand,tag=rr_chase,limit=1] CmdData 1
-execute unless entity @e[predicate=custom:indimension,type=marker,tag=PlacerClear] run function game:forcestop
+execute if entity @e[x=0,type=armor_stand,tag=rr_chase,limit=1] run tellraw @s {"text":"Chase Mode installed.","color":"green","bold":true}
+scoreboard players add @e[x=0,type=armor_stand,tag=rr_chase,limit=1] CmdData 1
+execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop

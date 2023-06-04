@@ -3,15 +3,15 @@
 summon marker 0 0 0 {Tags:[ArenaClearYellow]}
 
 #Set position from global storage
-execute as @e[predicate=custom:indimension,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:ymissilepos x[0]
-execute as @e[predicate=custom:indimension,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] run data modify entity @s Pos[1] set from storage rocketriders:ymissilepos y[0]
-execute as @e[predicate=custom:indimension,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:ymissilepos z[0]
+execute as @e[x=0,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:ymissilepos x[0]
+execute as @e[x=0,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] run data modify entity @s Pos[1] set from storage rocketriders:ymissilepos y[0]
+execute as @e[x=0,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:ymissilepos z[0]
 
 #Extra offset for superspeed clears
-execute as @e[predicate=custom:indimension,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] at @s run tp @s ~2 ~-8 ~-3
+execute as @e[x=0,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] at @s run tp @s ~2 ~-8 ~-3
 
 #Mark AEC as checked (won't be affected on next iteration)
-execute as @e[predicate=custom:indimension,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] run tag @s add checked
+execute as @e[x=0,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] run tag @s add checked
 
 #Remove this set of coordinates in preparation for the next one
 data remove storage rocketriders:ymissilepos x[0]

@@ -34,10 +34,6 @@ execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=marker,
 execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=1,y=42,z=-67,dx=22,dy=16] run kill @s
 execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=1,y=42,z=67,dx=22,dy=16] run kill @s
 
-#Next 2 commands disable Obsidian Shields inside of portals in general (need to remove temporary entities)
-execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=area_effect_cloud,tag=tempobshield] at @s if entity @s[x=1,y=42,z=-67,dx=22,dy=16] run kill @s
-execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=area_effect_cloud,tag=tempobshield] at @s if entity @s[x=1,y=42,z=67,dx=22,dy=16] run kill @s
-
 #Next 2 commands disable Yellow Shields inside of portals
 execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=snowball,tag=YellowShield,scores={shieldtest=19..20}] at @s if entity @s[x=1,y=40,z=-67,dx=22,dy=19] run scoreboard players remove @s shieldtest 2
 execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=snowball,tag=YellowShield,scores={shieldtest=19..20}] at @s if entity @s[x=1,y=40,z=67,dx=22,dy=19] run scoreboard players remove @s shieldtest 2

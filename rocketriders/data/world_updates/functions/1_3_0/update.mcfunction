@@ -6,4 +6,5 @@ scoreboard objectives add toggleTips trigger
 scoreboard objectives add toggleParkourTips trigger
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
+kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 scoreboard players set $WorldVersion CmdData 1300

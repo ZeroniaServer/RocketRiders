@@ -50,7 +50,6 @@ kill @e[x=0,type=marker,tag=novatracker]
 execute as @e[x=0,type=marker,tag=obsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break
-kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 execute if entity @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
 execute if entity @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
 kill @e[x=0,type=marker,tag=YellowPlatform]

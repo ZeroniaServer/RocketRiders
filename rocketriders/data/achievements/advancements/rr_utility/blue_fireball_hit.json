@@ -4,24 +4,24 @@
     "fireball_hit": {
       "trigger": "minecraft:player_hurt_entity",
       "conditions": {
-          "damage": {
-            "type": {
-              "tags": [
-                {
-                  "id": "minecraft:is_projectile",
-                  "expected": true
-                }
-              ],
-              "direct_entity": {
-                "type": "minecraft:fireball",
-                "nbt": "{Tags:[\"NormalFireball\",\"FireballYellow\"]}"
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "minecraft:is_projectile",
+                "expected": true
               }
+            ],
+            "direct_entity": {
+              "type": "minecraft:fireball",
+              "nbt": "{Tags:[\"NormalFireball\",\"FireballYellow\"]}"
             }
           }
+        }
       }
     }
   },
   "rewards": {
-      "function": "achievements:regifting_blue"
+    "function": "achievements:regifting_blue"
   }
 }

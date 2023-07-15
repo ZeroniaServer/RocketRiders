@@ -22,7 +22,7 @@
             "trigger": "minecraft:impossible"
         }
     },
-	  "rewards": {
+    "rewards": {
         "function": "2811iaj1:play"
     },
     "parent": "2811iaj1:wait"

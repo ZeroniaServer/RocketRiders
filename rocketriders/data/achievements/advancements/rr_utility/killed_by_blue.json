@@ -1,18 +1,18 @@
 {
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "criteria": {
-      "requirement": {
-          "trigger": "minecraft:entity_killed_player",
-          "conditions": {
-              "player": {
-                  "team": "Yellow"
-              },
-              "entity": {
-                  "type": "minecraft:player",
-                  "team": "Blue"
-              }
-          }
-      }
+        "requirement": {
+            "trigger": "minecraft:entity_killed_player",
+            "conditions": {
+                "player": {
+                    "team": "Yellow"
+                },
+                "entity": {
+                    "type": "minecraft:player",
+                    "team": "Blue"
+                }
+            }
+        }
     },
     "rewards": {
         "function": "achievements:killedbyplayer"

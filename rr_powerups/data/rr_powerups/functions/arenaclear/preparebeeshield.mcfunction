@@ -3,13 +3,13 @@
 summon marker 0 0 0 {Tags:[BeeShield]}
 
 #Set position from global storage
-execute as @e[x=0,type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[0] set from storage rr_powerups:beeshieldpos x[0]
-execute as @e[x=0,type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[1] set from storage rr_powerups:beeshieldpos y[0]
-execute as @e[x=0,type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[2] set from storage rr_powerups:beeshieldpos z[0]
+execute as @e[type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[0] set from storage rr_powerups:beeshieldpos x[0]
+execute as @e[type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[1] set from storage rr_powerups:beeshieldpos y[0]
+execute as @e[type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[2] set from storage rr_powerups:beeshieldpos z[0]
 
 #Remove necessary blocks
-execute as @e[x=0,type=marker,tag=BeeShield,limit=1] at @s run fill ~-2 ~-4 ~ ~2 ~4 ~ air
-kill @e[x=0,type=marker,tag=BeeShield,limit=1]
+execute as @e[type=marker,tag=BeeShield,limit=1] at @s run fill ~-2 ~-4 ~ ~2 ~4 ~ air
+kill @e[type=marker,tag=BeeShield,limit=1]
 
 #Remove this set of coordinates in preparation for the next one
 data remove storage rr_powerups:beeshieldpos x[0]

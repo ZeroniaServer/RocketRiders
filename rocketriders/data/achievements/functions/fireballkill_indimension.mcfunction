@@ -1,1 +1,0 @@
-execute in minecraft:overworld run function achievements:fireballkill

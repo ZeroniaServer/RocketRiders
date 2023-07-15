@@ -1,10 +1,10 @@
 ##Gives executor Arrows
 #Antidupe check - Arrows are an exception for stacking in modes that limit arrows.
 execute store result score @s[tag=!itemDeducted] HasArrows run clear @s arrow 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] run scoreboard players operation @s HasArrows %= 64 CmdData
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] if entity @s[scores={HasArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] run scoreboard players set @s HasArrows 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!doStacking] if entity @s[scores={HasArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] run scoreboard players operation @s HasArrows %= 64 CmdData
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] if entity @s[scores={HasArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking,tag=!arrowLimit] run scoreboard players set @s HasArrows 0
+execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] if entity @s[scores={HasArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving
 title @s[scores={HasArrows=4..},tag=!fullHotbar,tag=!Infinity] actionbar {"text":"Arrows already obtained.","color":"aqua"}
@@ -29,6 +29,6 @@ execute if entity @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!fullOffhand,tag
 execute if entity @s[scores={HasArrows=0},tag=!fullOffhand,tag=Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 
 #Game tracking
-tag @e[x=0,type=armor_stand,tag=Selection,tag=givenArrows,tag=tetrisTime] add givenArrowsTwice
-tag @e[x=0,type=armor_stand,tag=Selection,tag=tetrisTime] add givenArrows
-scoreboard players set @e[x=0,type=armor_stand,tag=Bot] botarrowitems 4
+tag @e[type=armor_stand,tag=Selection,tag=givenArrows,tag=tetrisTime] add givenArrowsTwice
+tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenArrows
+scoreboard players set @e[type=armor_stand,tag=Bot] botarrowitems 4

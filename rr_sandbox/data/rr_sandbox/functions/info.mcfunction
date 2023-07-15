@@ -1,8 +1,0 @@
-tellraw @s ["",{"text":"Sandbox Mode:","color":"light_purple","bold":true},{"text":" Think of it like practice!"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Mess around to your heart's content!","color":"yellow"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Use the "},{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false},{"text":" to obtain every item in the game"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Items can stack and there is no hotbar limit"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- The game still ends when the portals break"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Only one player needs to join!"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Items:","color":"aqua"},{"text":" Every. Single. One.","italic":true}]
-tellraw @s [""]

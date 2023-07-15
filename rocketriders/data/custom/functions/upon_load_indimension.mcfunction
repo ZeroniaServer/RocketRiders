@@ -1,1 +1,0 @@
-execute in minecraft:overworld run function custom:upon_load

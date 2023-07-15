@@ -1,22 +1,22 @@
-tag @e[x=0,type=armor_stand,tag=Selection] add SMSwitch
-execute unless score @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode matches 2 run schedule function game:forcestop 2t append
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection] servermode 2
-tag @e[x=0,type=armor_stand,tag=Selection] add noYZELO
-tag @e[x=0,type=armor_stand,tag=Selection] add stopIfEmpty
-tag @e[x=0,type=armor_stand,tag=Selection] remove ServerModeVoting
-tag @e[x=0,type=armor_stand,tag=Selection] remove realms
-tag @e[x=0,type=armor_stand,tag=Selection] remove SMCustom
-tag @e[x=0,type=armor_stand,tag=Selection] remove Repeat
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection] RepeatSettings 1
+tag @e[type=armor_stand,tag=Selection] add SMSwitch
+execute unless score @e[type=armor_stand,tag=Selection,limit=1] servermode matches 2 run schedule function game:forcestop 2t append
+scoreboard players set @e[type=armor_stand,tag=Selection] servermode 2
+tag @e[type=armor_stand,tag=Selection] add noYZELO
+tag @e[type=armor_stand,tag=Selection] add stopIfEmpty
+tag @e[type=armor_stand,tag=Selection] remove ServerModeVoting
+tag @e[type=armor_stand,tag=Selection] remove realms
+tag @e[type=armor_stand,tag=Selection] remove SMCustom
+tag @e[type=armor_stand,tag=Selection] remove Repeat
+scoreboard players set @e[type=armor_stand,tag=Selection] RepeatSettings 1
 fill -57 201 84 -70 201 72 barrier replace air
 fill -57 198 84 -70 198 72 blackstone replace air
-execute as @a[x=0] run function achievements:reset
+execute as @a run function achievements:reset
 function game:forcestop
-execute as @e[x=0,type=armor_stand,tag=Selection] store result score @s SetGamemode run scoreboard players get @e[x=0,type=armor_stand,tag=rr_duel,limit=1] gamemodeID
+execute as @e[type=armor_stand,tag=Selection] store result score @s SetGamemode run scoreboard players get @e[type=armor_stand,tag=rr_duel,limit=1] gamemodeID
 clear @a
-kill @e[x=0,type=armor_stand,tag=ParkourLB]
-kill @e[x=0,type=area_effect_cloud,tag=ParkourLB]
-kill @e[x=0,type=#custom:crystal,tag=CrusadeEntity]
+kill @e[type=armor_stand,tag=ParkourLB]
+kill @e[type=area_effect_cloud,tag=ParkourLB]
+kill @e[type=#custom:crystal,tag=CrusadeEntity]
 setblock -31 190 17 air
 setblock -32 190 17 air
 setblock -31 190 16 air

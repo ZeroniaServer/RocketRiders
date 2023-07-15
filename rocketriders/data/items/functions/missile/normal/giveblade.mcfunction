@@ -1,9 +1,9 @@
 ##Gives executor a Blade
 #Antidupe check
 execute store result score @s HasBlade run clear @s husk_spawn_egg 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasBlade %= 64 CmdData
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] if entity @s[scores={HasBlade=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasBlade 0
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasBlade %= 64 CmdData
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] if entity @s[scores={HasBlade=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasBlade 0
 tag @s[tag=itemDeducted] remove fullHotbar
 
 #Title/giving
@@ -16,5 +16,5 @@ loot give @s[scores={HasBlade=0},tag=!fullHotbar] loot items:normal/blade
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasBlade=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-execute unless entity @s[tag=BackBlade] run tag @e[x=0,type=armor_stand,tag=Selection,tag=tetrisTime] add givenBlade
-execute unless entity @s[tag=BackBlade] run tag @e[x=0,type=armor_stand,tag=Bot] add HasBlade
+execute unless entity @s[tag=BackBlade] run tag @e[type=armor_stand,tag=Selection,tag=tetrisTime] add givenBlade
+execute unless entity @s[tag=BackBlade] run tag @e[type=armor_stand,tag=Bot] add HasBlade

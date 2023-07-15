@@ -1,2 +1,2 @@
-scoreboard players operation $YellowWin Forfeit = @a[x=0,team=Yellow] ForfeitWin
-scoreboard players operation $BlueLoss Forfeit = @a[x=0,team=Blue] ForfeitLoss
+scoreboard players operation $YellowWin Forfeit = @a[team=Yellow] ForfeitWin
+scoreboard players operation $BlueLoss Forfeit = @a[team=Blue] ForfeitLoss

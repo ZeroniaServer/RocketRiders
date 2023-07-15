@@ -3,14 +3,14 @@ execute store result score @s xp_level run scoreboard players get @s XP
 execute store result score @s xp_progress run scoreboard players get @s XP
 
 #setting progress bar appropriately
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] xp_mod 300
+scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] xp_mod 300
 # this is what you multiply xp_mod by to get 100 - 300 * 1 / 3
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] xp_mult 1
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] xp_div 3
+scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] xp_mult 1
+scoreboard players set @e[type=armor_stand,tag=Selection,limit=1] xp_div 3
 scoreboard players operation @s[scores={XP=101..}] xp_progress -= $100 XP
-scoreboard players operation @s xp_progress %= @e[x=0,type=armor_stand,tag=Selection,limit=1] xp_mod
-scoreboard players operation @s xp_progress *= @e[x=0,type=armor_stand,tag=Selection,limit=1] xp_mult
-scoreboard players operation @s[scores={XP=101..}] xp_progress /= @e[x=0,type=armor_stand,tag=Selection,limit=1] xp_div
+scoreboard players operation @s xp_progress %= @e[type=armor_stand,tag=Selection,limit=1] xp_mod
+scoreboard players operation @s xp_progress *= @e[type=armor_stand,tag=Selection,limit=1] xp_mult
+scoreboard players operation @s[scores={XP=101..}] xp_progress /= @e[type=armor_stand,tag=Selection,limit=1] xp_div
 
 #original system designed by WubbiConcepts: https://www.youtube.com/watch?v=NKaNyEM4VO0
 #updated to 1.14+ by Evtema3

@@ -1,1 +1,0 @@
-execute in minecraft:overworld run function world_updates:check_updates

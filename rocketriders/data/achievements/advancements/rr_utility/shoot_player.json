@@ -3,11 +3,6 @@
     "shot_arrow": {
       "trigger": "minecraft:player_hurt_entity",
       "conditions": {
-        "player": {
-          "location": {
-            "dimension": "minecraft:overworld"
-          }
-        },
         "damage": {
           "type": {
             "tags": [
@@ -28,6 +23,6 @@
     }
   },
   "rewards": {
-    "function": "achievements:shootplayer_indimension"
+    "function": "achievements:shootplayer"
   }
 }

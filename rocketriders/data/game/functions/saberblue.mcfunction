@@ -1,3 +1,3 @@
 ##Gives any players who join Blue team a Shooting Saber (and arrows if in the Waiting Area)
 item replace entity @s hotbar.0 with minecraft:bow{display:{Name:'{"translate":"Shooting Saber","color":"blue","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1},{id:"sharpness",lvl:5}]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!GameStarted,tag=!GameEnd,scores={count=..599}] run item replace entity @s weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'},Lobby:1b} 20
+execute if entity @e[type=armor_stand,tag=Selection,tag=!GameStarted,tag=!GameEnd,scores={count=..599}] run item replace entity @s weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'},Lobby:1b} 20

@@ -1,3 +1,0 @@
-give @s[team=Blue] blaze_rod{CustomModelData:1,Unbreakable:1b,display:{Name:'[{"text":"Fire Wand","italic":false,"bold":true,"color":"blue"}]',Lore:['[{"translate":"A special wand, made to"}]','[{"translate":"set enemies on fire!"}]']},Enchantments:[{id:"fire_aspect",lvl:2},{id:"sharpness",lvl:2}]}
-give @s[team=Yellow] blaze_rod{CustomModelData:1,Unbreakable:1b,display:{Name:'[{"text":"Fire Wand","italic":false,"bold":true,"color":"gold"}]',Lore:['[{"translate":"A special wand, made to"}]','[{"translate":"set enemies on fire!"}]']},Enchantments:[{id:"fire_aspect",lvl:2},{id:"sharpness",lvl:2}]}
-title @s actionbar {"text":"Fire Wand obtained.","color":"light_purple"}

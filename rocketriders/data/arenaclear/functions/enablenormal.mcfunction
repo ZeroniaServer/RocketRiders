@@ -10,4 +10,4 @@ tag @s[tag=!guardWasOn] add rngEguard
 tag @s[tag=!citaWasOn] add rngCitadel
 tag @s[tag=!gemiWasOn] add rngGemi
 tag @s[tag=!normalWasOn] remove normalOff
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection] refreshsigns 1
+scoreboard players set @e[type=armor_stand,tag=Selection] refreshsigns 1

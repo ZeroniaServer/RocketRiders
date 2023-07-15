@@ -3,11 +3,6 @@
     "requirement": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
-        "player": {
-          "location": {
-            "dimension": "minecraft:overworld"
-          }
-        },
         "entity": {
           "type": "minecraft:player",
           "effects": {
@@ -29,6 +24,6 @@
     }
   },
   "rewards": {
-    "function": "achievements:claypigeon_indimension"
+    "function": "achievements:claypigeon"
   }
 }

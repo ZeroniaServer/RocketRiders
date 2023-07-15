@@ -1,11 +1,14 @@
 #leave midgame
 execute if entity @s[tag=!SMActive] run function game:leavemidgame
 
+#general
+function rr_swap:items/spawnitems
+
 #custom util items
 function rr_swap:items/cluster
 
 #platform
-bossbar set rr:startgame players @a[x=0,team=Lobby]
+bossbar set rr:startgame players @a[team=Lobby]
 function rr_swap:baseswap/platform
 
 #Item RNG
@@ -15,16 +18,16 @@ execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run sc
 execute if entity @s[tag=Minute] run function rr_swap:items/minutemix
 
 #Respawn handling
-execute as @e[x=0,type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
-execute as @e[x=0,type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
+execute as @e[type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
+execute as @e[type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
 
 #Give back fireballs
-execute as @a[x=0,tag=BackFireball] run function rr_swap:items/util/givefireball
-tag @a[x=0] remove BackFireball
-execute as @a[x=0,tag=roofMSGFB] run tellraw @s ["",{"text":"Unable to spawn Cluster Fireball near the roof.","color":"red"}]
-execute as @a[x=0,tag=voidMSGFB] run tellraw @s ["",{"text":"Unable to spawn Cluster Fireball near the void.","color":"red"}]
-tag @a[x=0,tag=roofMSGFB] remove roofMSGFB
-tag @a[x=0,tag=voidMSGFB] remove voidMSGFB
+execute as @a[tag=BackFireball] run function rr_swap:items/util/givefireball
+tag @a remove BackFireball
+execute as @a[tag=roofMSGFB] run tellraw @s ["",{"text":"Unable to spawn Cluster Fireball near the roof.","color":"red"}]
+execute as @a[tag=voidMSGFB] run tellraw @s ["",{"text":"Unable to spawn Cluster Fireball near the void.","color":"red"}]
+tag @a[tag=roofMSGFB] remove roofMSGFB
+tag @a[tag=voidMSGFB] remove voidMSGFB
 
 #win
 execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon,tag=!DoublePortal] unless block 13 38 74 nether_portal unless block 13 38 -74 nether_portal run function rr_swap:game/winbothcheck

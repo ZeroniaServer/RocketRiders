@@ -3,7 +3,7 @@
 execute if score @s Machina matches ..21 at @s if block ~ ~ ~ #custom:air run scoreboard players add @s Machina 1
 execute if score @s Machina matches ..21 at @s if block ~ ~ ~ #custom:air run tp @s ~ ~ ~-1
 
-execute if score @s Machina matches 22 at @s run tag @a[x=0,team=Yellow] add DeusExMachina
+execute if score @s Machina matches 22 at @s run tag @a[team=Yellow] add DeusExMachina
 execute if score @s Machina matches 22 run kill @s
 
 execute at @s unless block ~ ~ ~ #custom:air run scoreboard players set @s Machina 0

@@ -3,15 +3,15 @@
 summon area_effect_cloud 0 0 0 {Tags:[SmartClearAECsplash],Duration:1}
 
 #Set position from global storage
-execute as @e[x=0,type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checked,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:splashpos x[0]
-execute as @e[x=0,type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checked,limit=1] run data modify entity @s Pos[1] set from storage rocketriders:splashpos y[0]
-execute as @e[x=0,type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checked,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:splashpos z[0]
+execute as @e[type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checked,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:splashpos x[0]
+execute as @e[type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checked,limit=1] run data modify entity @s Pos[1] set from storage rocketriders:splashpos y[0]
+execute as @e[type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checked,limit=1] run data modify entity @s Pos[2] set from storage rocketriders:splashpos z[0]
 
 #Mark AEC as checked (won't be affected on next iteration)
-execute as @e[x=0,type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checked,limit=1] run tag @s add checking
-execute as @e[x=0,type=area_effect_cloud,tag=SmartClearAECsplash,tag=checking,limit=1] at @s if entity @e[type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checking,tag=!checked,limit=1,distance=..1] run kill @s
-execute as @e[x=0,type=area_effect_cloud,tag=SmartClearAECsplash,tag=checking,limit=1] run tag @s add checked
-execute as @e[x=0,type=area_effect_cloud,tag=SmartClearAECsplash,tag=checking,limit=1] run tag @s remove checking
+execute as @e[type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checked,limit=1] run tag @s add checking
+execute as @e[type=area_effect_cloud,tag=SmartClearAECsplash,tag=checking,limit=1] at @s if entity @e[type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checking,tag=!checked,limit=1,distance=..1] run kill @s
+execute as @e[type=area_effect_cloud,tag=SmartClearAECsplash,tag=checking,limit=1] run tag @s add checked
+execute as @e[type=area_effect_cloud,tag=SmartClearAECsplash,tag=checking,limit=1] run tag @s remove checking
 
 #Remove this set of coordinates in preparation for the next one
 data remove storage rocketriders:splashpos x[0]

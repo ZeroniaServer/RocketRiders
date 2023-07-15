@@ -3,11 +3,6 @@
     "requirement": {
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
-        "player": {
-          "location": {
-            "dimension": "minecraft:overworld"
-          }
-        },
         "killing_blow": {
           "tags": [
             {
@@ -23,6 +18,6 @@
     }
   },
   "rewards": {
-    "function": "game:utilkillcheck_indimension"
+    "function": "game:utilkillcheck"
   }
 }

@@ -4,7 +4,7 @@ tag @s[tag=ResidersWasOn] add Residers
 tag @s remove ResidersWasOn
 tag @s remove HardcoreOff
 tag @s[tag=HardcoreWasOn] add Hardcore
-execute if entity @s[tag=HardcoreWasOn] run function arenaclear:lockdecos
+execute as @s[tag=HardcoreWasOn] run function arenaclear:lockdecos
 tag @s remove HardcoreWasOn
 tag @s[tag=DoublePortalWasOn] add DoublePortal
 tag @s remove DoublePortalWasOn

@@ -1,2 +1,2 @@
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!doStacking] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run function rr_swap:items/antidupe
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!doStacking] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run function items:antidupe
+execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] as @a unless entity @s[team=!Blue,team=!Yellow] run function rr_swap:items/antidupe
+execute if entity @e[type=armor_stand,tag=Selection,tag=!doStacking] as @a unless entity @s[team=!Blue,team=!Yellow] run function items:antidupe

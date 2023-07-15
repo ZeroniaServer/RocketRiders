@@ -17,17 +17,17 @@ execute if entity @s[tag=SurpriseEgg,tag=Chaos] unless entity @s[tag=givenAllNor
 execute if entity @s[tag=rngUtil,tag=!utilOff,tag=SurpriseEgg] unless entity @s[tag=givenAllUtil] unless entity @s[tag=!gaveFirstItem] run summon marker 0 0 0 {Tags:["rngUtil","rng1"]}
 
 ##Select item and run appropriate sub-RNG function
-tag @e[x=0,type=marker,tag=rng1,sort=random,limit=1] add rngSelected
+tag @e[type=marker,tag=rng1,sort=random,limit=1] add rngSelected
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngMissile] run function items:missile/rng
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngUtil] run function items:util/rng
+execute as @e[type=marker,tag=rngSelected,tag=rngMissile] run function items:missile/rng
+execute as @e[type=marker,tag=rngSelected,tag=rngUtil] run function items:util/rng
 
 ##If Surprise Egg is picked
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:squid_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:cod_spawn_egg"}} run function items:deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @e[type=item] if data entity @s {Item:{id:"minecraft:squid_spawn_egg"}} run function items:deduct
+execute unless entity @e[type=armor_stand,tag=Selection,tag=doStacking] as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @e[type=item] if data entity @s {Item:{id:"minecraft:cod_spawn_egg"}} run function items:deduct
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] run function items:full_hotbar
+execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] run function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,team=Blue,tag=getItem] run function items:surprise_blue/givesurpriseegg
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,team=Yellow,tag=getItem] run function items:surprise_yellow/givesurpriseegg
-kill @e[x=0,type=marker,tag=rng1]
+execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Blue,tag=getItem] run function items:surprise_blue/givesurpriseegg
+execute as @e[type=marker,tag=rngSelected,tag=rngSurprise] as @a[team=Yellow,tag=getItem] run function items:surprise_yellow/givesurpriseegg
+kill @e[type=marker,tag=rng1]

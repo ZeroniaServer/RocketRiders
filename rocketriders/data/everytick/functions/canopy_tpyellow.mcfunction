@@ -18,14 +18,14 @@ execute if entity @p[team=Yellow,tag=currentTP,scores={respawn=1..}] run scorebo
 tag @p[team=Yellow,tag=currentTP,scores={respawn=1..}] remove canopyTP
 
 #Canopy forgets owner if crossing in Rocket Residers
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=Residers] if entity @p[team=Yellow,tag=currentTP,predicate=custom:residers] run scoreboard players reset @s pearlOwnerUUID
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=Residers] run tag @p[team=Yellow,tag=currentTP,predicate=custom:residers] remove canopyTP
+execute if entity @e[type=armor_stand,tag=Selection,tag=Residers] if entity @p[team=Yellow,tag=currentTP,predicate=custom:residers] run scoreboard players reset @s pearlOwnerUUID
+execute if entity @e[type=armor_stand,tag=Selection,tag=Residers] run tag @p[team=Yellow,tag=currentTP,predicate=custom:residers] remove canopyTP
 
 #Canopy doesn't teleport more than once if shot by Nova Rocket
 execute if entity @p[team=Yellow,tag=currentTP,scores={novattach=1..15}] run scoreboard players reset @s[scores={PlatTime=2..}] pearlOwnerUUID
-execute if entity @s[scores={PlatTime=2..}] run tag @p[team=Yellow,tag=currentTP,scores={novattach=1..15}] remove canopyTP
+execute as @s[scores={PlatTime=2..}] run tag @p[team=Yellow,tag=currentTP,scores={novattach=1..15}] remove canopyTP
 #Canopy ends Nova effects if teleporting in first tick
-execute if entity @s[scores={PlatTime=1}] run scoreboard players set @p[team=Yellow,tag=currentTP,scores={novattach=1..15}] novattach 16
+execute as @s[scores={PlatTime=1}] run scoreboard players set @p[team=Yellow,tag=currentTP,scores={novattach=1..15}] novattach 16
 
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
 #(thanks to Red_Bones for the teleport command format!)
@@ -50,5 +50,5 @@ tag @p[tag=currentTP,tag=!canopyTP] remove threwCanopy
 execute at @s[scores={PlatTime=1..40}] if entity @p[team=Yellow,tag=currentTP,tag=canopyTP] run tp @s @s
 
 #Reset
-tag @a[x=0,tag=currentTP] remove currentTP
+tag @a[tag=currentTP] remove currentTP
 scoreboard players reset $tempuuid playerUUID

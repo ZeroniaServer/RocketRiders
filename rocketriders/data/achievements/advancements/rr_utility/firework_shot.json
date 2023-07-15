@@ -4,11 +4,6 @@
     "requirement": {
       "trigger": "minecraft:entity_hurt_player",
       "conditions": {
-        "player": {
-          "location": {
-            "dimension": "minecraft:overworld"
-          }
-        },
         "damage": {
           "type": {
             "tags": [
@@ -23,6 +18,6 @@
     }
   },
   "rewards": {
-    "function": "everytick:novashot_indimension"
+    "function": "everytick:novashot"
   }
 }

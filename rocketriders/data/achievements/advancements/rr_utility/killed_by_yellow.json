@@ -5,10 +5,7 @@
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
                 "player": {
-                    "team": "Blue",
-                    "location": {
-                        "dimension": "minecraft:overworld"
-                    }
+                    "team": "Blue"
                 },
                 "entity": {
                     "type": "minecraft:player",
@@ -18,6 +15,6 @@
         }
     },
     "rewards": {
-        "function": "achievements:killedbyplayer_indimension"
+        "function": "achievements:killedbyplayer"
     }
 }

@@ -108,7 +108,7 @@ fill -35 199 87 -35 200 87 air
 setblock -35 199 87 mangrove_door[facing=east,half=lower,hinge=left,open=false,powered=true]
 setblock -35 200 87 mangrove_door[facing=east,half=upper,hinge=left,open=false,powered=true]
 setblock -36 200 84 red_nether_brick_slab[type=top]
-setblock -32 196 81 mangrove_wall_sign[facing=west]{Color:"white",GlowingText:1b,Text1:'{"text":"There is not very"}',Text2:'["",{"text":"mushroom","italic":true},{"text":" on this"}]',Text3:'{"text":"island..."}',Text4:'{"text":""}'}
+setblock -32 196 81 mangrove_wall_sign[facing=west]{front_text:{color:"white",has_glowing_text:1b,messages:['{"text":"There is not very"}','["",{"text":"mushroom","italic":true},{"text":" on this"}]','{"text":"island..."}','{"text":""}']}}
 setblock -27 202 86 red_nether_brick_slab[type=top]
 setblock -27 203 88 red_nether_brick_slab[type=top]
 setblock -27 203 91 red_nether_brick_slab[type=top]

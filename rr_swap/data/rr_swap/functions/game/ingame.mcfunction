@@ -1,9 +1,6 @@
 #leave midgame
 execute if entity @s[tag=!SMActive] run function game:leavemidgame
 
-#general
-function rr_swap:items/spawnitems
-
 #custom util items
 function rr_swap:items/cluster
 

@@ -20,9 +20,9 @@ summon area_effect_cloud -31 196 21 {Duration:2000000000,Tags:["ParkourLB","Park
 summon area_effect_cloud -31 195.7 21 {Duration:2000000000,Tags:["ParkourLB","ParkourTime"],CustomName:'"?"',CustomNameVisible:1b}
 execute as @e[x=0,type=armor_stand,tag=ParkourPlayer] at @s run tp @s ~ ~ ~ 180 0
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.head with player_head{SkullOwner:{Id:[I;-539389612,1309754415,-1282767004,-1831671292],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM0ZTA2M2NhZmI0NjdhNWM4ZGU0M2VjNzg2MTkzOTlmMzY5ZjRhNTI0MzRkYTgwMTdhOTgzY2RkOTI1MTZhMCJ9fX0="}]}}}
-item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with leather_chestplate{display:{color:16772430}}
-item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings{display:{color:16772430}}
-item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with leather_boots{display:{color:16772430}}
+item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with leather_chestplate{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16772430}}
+item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16772430}}
+item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with leather_boots{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16772430}}
 
 tag @a[x=0] remove firstParkour
 scoreboard players reset * bestParkourMins

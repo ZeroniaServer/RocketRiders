@@ -27,6 +27,6 @@
     }
   },
   "rewards": {
-      "function": "achievements:regifting_blue_indimension"
+    "function": "achievements:regifting_blue_indimension"
   }
 }

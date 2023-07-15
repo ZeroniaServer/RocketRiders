@@ -4,9 +4,9 @@
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "player": {
-            "location": {
-                "dimension": "minecraft:overworld"
-            }
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
         },
         "entity": {
           "type": "minecraft:player",

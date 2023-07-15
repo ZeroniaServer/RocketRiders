@@ -13,7 +13,7 @@ scoreboard players add @s[tag=crosser] respawn 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] if entity @s[tag=CheckCry] run advancement grant @s only achievements:rr_challenges/cryaboutit 
 
 ##Become one with the void
-kill @s[team=!Spectator,tag=!crosser]
+damage @s[team=!Spectator,tag=!crosser] 100.0 out_of_world
 
 #Remove death during end game phase
 execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=GameEnd] run scoreboard players remove @s deaths 1

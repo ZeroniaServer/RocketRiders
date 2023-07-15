@@ -20,8 +20,10 @@ execute as @e[x=0,type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,S
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
-execute if entity @s[tag=!SplashStreams] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava[level=8] replace #custom:splashreplace
-execute if entity @s[tag=SplashStreams] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava replace #custom:splashreplace
+execute if entity @s[tag=!SplashStreams,tag=!doFireballPortals] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava[level=8] replace #custom:splashreplace
+execute if entity @s[tag=SplashStreams,tag=!doFireballPortals] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava replace #custom:splashreplace
+execute if entity @s[tag=!SplashStreams,tag=doFireballPortals] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava[level=8] replace #custom:splashreplace_portal
+execute if entity @s[tag=SplashStreams,tag=doFireballPortals] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 lava replace #custom:splashreplace_portal
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos x prepend from entity @s Pos[0]
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos y prepend from entity @s Pos[1]
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos z prepend from entity @s Pos[2]

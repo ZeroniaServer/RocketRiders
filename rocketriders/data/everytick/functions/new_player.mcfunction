@@ -8,7 +8,7 @@ execute as @a[x=0,scores={firstJoined=0}] at @s run playsound minecraft:entity.p
 execute as @a[x=0,scores={firstJoined=0}] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1.5
 title @a[x=0,scores={firstJoined=0}] times 10 80 20
 title @a[x=0,scores={firstJoined=0}] title [{"text":"Welcome to","color":"white"}]
-title @a[x=0,scores={firstJoined=0}] subtitle [{"text":"Rocket ","color":"blue","bold":true},{"text":"Riders","color":"gold","bold":true},{"text":" v1.3.0!","color":"green","bold":false}]
+title @a[x=0,scores={firstJoined=0}] subtitle [{"text":"Rocket ","color":"blue","bold":true},{"text":"Riders","color":"gold","bold":true},{"text":" v1.3.0 Alpha!","color":"green","bold":false}]
 
 #Handle achievements
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[x=0,scores={firstJoined=0}] run function achievements:roots

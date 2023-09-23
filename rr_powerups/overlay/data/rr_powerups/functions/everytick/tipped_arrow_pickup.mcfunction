@@ -1,0 +1,13 @@
+##Overhauls default arrow pickup system to give custom named tipped arrows
+#Pickup conditions
+execute as @a[x=0,team=!Spectator] at @s as @e[x=0,type=arrow,scores={arrowtime=10..},nbt={inGround:1b},limit=1,distance=..2,sort=nearest] if data entity @s custom_potion_effects run tag @s add pickup
+
+#Give appropriate tipped arrow
+execute as @a[x=0,team=!Spectator,tag=!fullOffhand] at @s as @e[type=arrow,tag=pickup,tag=!tippedpickup,limit=1,distance=..2,sort=nearest] if data entity @s custom_potion_effects at @s run function rr_powerups:everytick/tipped_arrow_replace
+execute as @e[x=0,type=arrow,tag=pickup,tag=!tippedpickup,tag=!given,nbt={custom_potion_effects:[{id:"minecraft:blindness"}]}] at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Blindness Arrow","color":"dark_purple","italic":true,"bold":true}'},custom_potion_effects:[{id:"minecraft:blindness",amplifier:0b,duration:200,show_particles:1b}],CustomPotionColor:3158064,HideFlags:63}
+execute as @e[x=0,type=arrow,tag=pickup,tag=!tippedpickup,tag=!given,nbt={custom_potion_effects:[{id:"minecraft:levitation"}]}] at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Levitation Arrow","color":"dark_purple","italic":true,"bold":true}'},custom_potion_effects:[{id:"minecraft:levitation",amplifier:0b,duration:100,show_particles:1b}],CustomPotionColor:11793919,HideFlags:63}
+execute as @e[x=0,type=arrow,tag=pickup,tag=!tippedpickup,tag=!given,nbt={custom_potion_effects:[{id:"minecraft:slowness"}]}] at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Slowness Arrow","color":"dark_purple","italic":true,"bold":true}'},custom_potion_effects:[{id:"minecraft:slowness",amplifier:1b,duration:200,show_particles:1b}],CustomPotionColor:5596802,HideFlags:63}
+execute as @e[x=0,type=arrow,tag=pickup,tag=!tippedpickup,tag=!given,nbt={custom_potion_effects:[{id:"minecraft:wither"}]}] at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] tipped_arrow{display:{Name:'{"text":"Wither Arrow","color":"dark_purple","italic":true,"bold":true}'},custom_potion_effects:[{id:"minecraft:wither",amplifier:2b,duration:150,show_particles:1b}],CustomPotionColor:4008735,HideFlags:63}
+
+#Hotfix because bad tick order
+execute as @a[x=0,team=!Spectator] at @s as @e[x=0,type=arrow,scores={arrowtime=10..},nbt={inGround:1b},limit=1,distance=..2,sort=nearest] if data entity @s custom_potion_effects run tag @s add tippedpickup

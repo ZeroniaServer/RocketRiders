@@ -1,6 +1,15 @@
 {
-   "pack": {
-      "pack_format": 15,
-      "description": "Rocket Riders Powerups Gamemode."
-   }
+    "pack": {
+        "pack_format": 15,
+        "description": "Rocket Riders Powerups Gamemode.",
+        "supported_formats": [15, 18]
+    },
+    "overlays": {
+        "entries": [
+            {
+                "formats": [17, 18],
+                "directory": "overlay"
+            }
+        ]
+    }
 }

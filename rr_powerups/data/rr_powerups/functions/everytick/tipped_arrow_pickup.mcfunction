@@ -1,6 +1,6 @@
 ##Overhauls default arrow pickup system to give custom named tipped arrows
 #Pickup conditions
-execute as @a[x=0,team=!Spectator] at @s as @e[x=0,type=arrow,scores={arrowtime=10..},nbt={inGround:1b},limit=1,distance=..2,sort=nearest] if data entity @s CustomPotionEffects run tag @s add pickup
+execute as @a[x=0,team=!Spectator] at @s as @e[type=arrow,scores={arrowtime=10..},nbt={inGround:1b},limit=1,distance=..2,sort=nearest] if data entity @s CustomPotionEffects run tag @s add pickup
 
 #Give appropriate tipped arrow
 execute as @a[x=0,team=!Spectator,tag=!fullOffhand] at @s as @e[type=arrow,tag=pickup,tag=!tippedpickup,limit=1,distance=..2,sort=nearest] if data entity @s CustomPotionEffects at @s run function rr_powerups:everytick/tipped_arrow_replace

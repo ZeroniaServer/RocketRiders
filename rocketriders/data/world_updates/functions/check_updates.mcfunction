@@ -13,4 +13,5 @@ execute unless score $WorldVersion CmdData matches 1292.. run function world_upd
 execute unless score $WorldVersion CmdData matches 1293.. run function world_updates:1_2_12/update
 ##totally messed up here and set it to 1300 in the world download so
 execute unless score $WorldVersion CmdData matches 1301.. run function world_updates:1_2_13/update
-execute unless score $WorldVersion CmdData matches 1302.. run function world_updates:1_3_0/update
+execute unless score $WorldVersion CmdData matches 1302.. run function world_updates:1_2_12/update
+execute unless score $WorldVersion CmdData matches 1303.. run function world_updates:1_3_0/update

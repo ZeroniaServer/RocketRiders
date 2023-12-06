@@ -13,4 +13,4 @@ scoreboard objectives remove hideParkourTips
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
-scoreboard players set $WorldVersion CmdData 1302
+scoreboard players set $WorldVersion CmdData 1303

@@ -9,6 +9,10 @@
             {
                 "formats": [17, 26],
                 "directory": "1_20_2"
+            },
+            {
+                "formats": [20, 26],
+                "directory": "1_20_3"
             }
         ]
     }

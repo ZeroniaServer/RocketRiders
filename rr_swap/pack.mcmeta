@@ -2,6 +2,6 @@
    "pack": {
       "pack_format": 15,
       "description": "Rocket Riders Swap Gamemode.",
-      "supported_formats": [15, 18]
+      "supported_formats": [15, 26]
    }
 }

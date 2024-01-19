@@ -192,7 +192,7 @@ execute if entity @s[tag=yellowmissile] run function items:minify/minifyyellow
 #Extra for Duplex
 execute as @e[x=0,type=marker,tag=duplexExtraBlue] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
 execute as @e[x=0,type=marker,tag=duplexExtraBlue] run kill @s
-execute as @e[x=0,type=marker,tag=duplexExtraYellow] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
+execute as @e[x=0,type=marker,tag=duplexExtraYellow] at @s if block ~ ~-6 ~-20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
 execute as @e[x=0,type=marker,tag=duplexExtraYellow] run kill @s
 
 #Extra for Broadsword

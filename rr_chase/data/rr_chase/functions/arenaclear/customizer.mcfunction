@@ -9,12 +9,12 @@ data modify block -69 191 74 front_text.messages[2] set value '{"clickEvent":{"a
 data modify block -69 191 74 front_text.messages[3] set value '{"text":""}'
 
 #lock arrows
-data modify block -64 193 82 front_text.messages[0] set value "{\"text\":\"Arrows\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"Arrows are required in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":true}\"}}"
+data modify block -64 193 82 front_text.messages[0] set value '{"clickEvent":{"action":"run_command","value":"tellraw @s {\\"text\\":\\"Arrows are required in this gamemode.\\",\\"color\\":\\"dark_gray\\",\\"italic\\":true}"},"color":"light_purple","text":"Arrows"}'
 data modify block -64 193 82 front_text.messages[1] set value "{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[type=armor_stand,tag=Selection,tag=!SignsRefreshed] run playsound ui.button.click master @a ~ ~ ~ 1 1\"}}"
 data modify block -64 193 82 front_text.messages[2] set value "{\"text\":\"Locked\",\"color\":\"white\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[type=armor_stand,tag=Selection,tag=!GamemodeRefreshed,scores={refreshsigns=0}] run function arenaclear:refreshitemsigns\"}}"
 
 #lock utilities
-data modify block -69 193 81 front_text.messages[0] set value "{\"text\":\"Utility Items\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"tellraw @s {\\\"text\\\":\\\"The Utility Item category is not adjustable in this gamemode.\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":true}\"}}"
+data modify block -69 193 81 front_text.messages[0] set value '{"clickEvent":{"action":"run_command","value":"tellraw @s {\\"text\\":\\"Utility Items are required in this gamemode.\\",\\"color\\":\\"dark_gray\\",\\"italic\\":true}"},"color":"light_purple","text":"Utility Items"}'
 data modify block -69 193 81 front_text.messages[1] set value "{\"text\":\"Enabled\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute if entity @e[type=armor_stand,tag=Selection,tag=!SignsRefreshed] run playsound ui.button.click master @a ~ ~ ~ 1 1\"}}"
 data modify block -69 193 81 front_text.messages[2] set value "{\"text\":\"Locked\",\"color\":\"white\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"execute as @e[type=armor_stand,tag=Selection,tag=!GamemodeRefreshed,scores={refreshsigns=0}] run function arenaclear:refreshitemsigns\"}}"
 data modify block -69 193 81 front_text.messages[3] set value "{\"text\":\"\"}"

@@ -176,9 +176,7 @@ execute if entity @s[tag=YellowDuplex] run summon marker ~ ~ ~ {Tags:[duplexExtr
 execute if entity @s[tag=YellowDuplex] run tp @s ~-1 ~-8 ~-21
 
 #Broadsword (+ extra entity)
-execute if entity @s[tag=BlueBroad] run summon marker ~ ~ ~ {Tags:[broadExtraBlue]}
 execute if entity @s[tag=BlueBroad] run tp @s ~-1 ~-8 ~5
-execute if entity @s[tag=YellowBroad] run summon marker ~ ~ ~ {Tags:[broadExtraYellow]}
 execute if entity @s[tag=YellowBroad] run tp @s ~-1 ~-8 ~-16
 
 ##Place structure
@@ -192,16 +190,8 @@ execute if entity @s[tag=yellowmissile] run function items:minify/minifyyellow
 #Extra for Duplex
 execute as @e[x=0,type=marker,tag=duplexExtraBlue] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
 execute as @e[x=0,type=marker,tag=duplexExtraBlue] run kill @s
-execute as @e[x=0,type=marker,tag=duplexExtraYellow] at @s if block ~ ~-6 ~-20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
+execute as @e[x=0,type=marker,tag=duplexExtraYellow] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
 execute as @e[x=0,type=marker,tag=duplexExtraYellow] run kill @s
-
-#Extra for Broadsword
-execute as @e[x=0,type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
-execute as @e[x=0,type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
-execute as @e[x=0,type=marker,tag=broadExtraBlue] run kill @s
-execute as @e[x=0,type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
-execute as @e[x=0,type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
-execute as @e[x=0,type=marker,tag=broadExtraYellow] run kill @s
 
 #Extra for Warhead
 execute as @e[x=0,type=marker,tag=warExtraBlue] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] replace

@@ -14,13 +14,9 @@ execute as @e[type=egg,tag=BlueICBM,tag=teleportPair] at @s if entity @s[x=-12,y
 execute as @e[type=egg,tag=YellowICBM,tag=teleportPair] at @s if entity @s[x=-12,y=36,z=68,dx=48,dy=25,dz=12] run kill @e[type=marker,tag=ICBMtracker,tag=teleportPair]
 
 #Trigger ICBM
-execute at @s[tag=ICBMTriggered] run summon tnt ~ ~ ~ {Fuse:1s,Tags:["UtilKilled"]}
-execute at @s[tag=ICBMTriggered] run summon tnt ~ ~ ~0.1 {Fuse:1s,Tags:["UtilKilled"]}
-execute at @s[tag=ICBMTriggered] run summon tnt ~ ~ ~-0.1 {Fuse:1s,Tags:["UtilKilled"]}
-execute at @s[tag=ICBMTriggered] run summon tnt ~0.1 ~ ~ {Fuse:1s,Tags:["UtilKilled"]}
-execute at @s[tag=ICBMTriggered] run summon tnt ~-0.1 ~ ~ {Fuse:1s,Tags:["UtilKilled"]}
-execute at @s[tag=ICBMTriggered] run summon tnt ~ ~0.1 ~ {Fuse:1s,Tags:["UtilKilled"]}
-execute at @s[tag=ICBMTriggered] run summon tnt ~ ~-0.1 ~ {Fuse:1s,Tags:["UtilKilled"]}
+execute store result score $extrafuse CmdData if entity @e[type=armor_stand,tag=Selection,tag=!ClutterCollector,tag=!Explosive,limit=1]
+execute if score $extrafuse CmdData matches 1 at @s[tag=ICBMTriggered] run function everytick:summonicbmtnt1
+execute if score $extrafuse CmdData matches 0 at @s[tag=ICBMTriggered] run function everytick:summonicbmtnt2
 execute at @s[tag=ICBMTriggered] run function game:tntutilkill
 kill @s[tag=ICBMTriggered]
 

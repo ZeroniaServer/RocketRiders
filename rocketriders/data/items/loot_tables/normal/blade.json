@@ -12,8 +12,28 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Blade\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"15\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Blade is a sword-shaped missile.\",\"color\":\"gray\"}','{\"text\":\"Breaking the slime block on the side\",\"color\":\"gray\"}','{\"text\":\"will drop down 3 bomber TNT below it.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowBlade\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 2,
+                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Blade\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"15\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]",
+                  "{\"text\":\" \",\"color\":\"gray\"}",
+                  "{\"text\":\"The Blade is a sword-shaped missile.\",\"color\":\"gray\"}",
+                  "{\"text\":\"Breaking the slime block on the side\",\"color\":\"gray\"}",
+                  "{\"text\":\"will drop down 3 bomber TNT below it.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "yellowmissile",
+                    "YellowBlade"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -35,8 +55,28 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Blade\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"15\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Blade is a sword-shaped missile.\",\"color\":\"gray\"}','{\"text\":\"Breaking the slime block on the side\",\"color\":\"gray\"}','{\"text\":\"will drop down 3 bomber TNT below it.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueBlade\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 1,
+                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Blade\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"15\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]",
+                  "{\"text\":\" \",\"color\":\"gray\"}",
+                  "{\"text\":\"The Blade is a sword-shaped missile.\",\"color\":\"gray\"}",
+                  "{\"text\":\"Breaking the slime block on the side\",\"color\":\"gray\"}",
+                  "{\"text\":\"will drop down 3 bomber TNT below it.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueBlade"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -54,7 +94,7 @@
   ],
   "functions": [
     {
-      "function": "minecraft:copy_nbt",
+      "function": "minecraft:copy_custom_data",
       "source": "this",
       "ops": [
         {

@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "I Swear I Had It",
-            "color": "green"
-        },
-        "description": {
-            "text": "Lose the game while you are near the enemy base with a missile in your inventory.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:phantom_membrane"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "I Swear I Had It",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Lose the game while you are near the enemy base with a missile in your inventory.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/veteran"
+    "icon": {
+      "id": "minecraft:phantom_membrane"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/veteran"
 }

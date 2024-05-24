@@ -12,8 +12,28 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Warhead\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"25\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Rubix_One\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Warhead is a Juggernaut-style missile.\",\"color\":\"gray\"}','{\"text\":\"When the Warhead hits a wall, the piston on\",\"color\":\"gray\"}','{\"text\":\"top of it will cover up the trigger TNT.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowWar\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 2,
+                "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Warhead\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"25\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Rubix_One\",\"color\":\"red\"}]",
+                  "{\"text\":\" \",\"color\":\"gray\"}",
+                  "{\"text\":\"The Warhead is a Juggernaut-style missile.\",\"color\":\"gray\"}",
+                  "{\"text\":\"When the Warhead hits a wall, the piston on\",\"color\":\"gray\"}",
+                  "{\"text\":\"top of it will cover up the trigger TNT.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "yellowmissile",
+                    "YellowWar"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -35,8 +55,27 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Warhead\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"25\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Rubix_One\",\"color\":\"red\"}]','{\"text\":\"The Warhead is a Juggernaut-style missile.\",\"color\":\"gray\"}','{\"text\":\"When the Warhead hits a wall, the piston on\",\"color\":\"gray\"}','{\"text\":\"top of it will cover up the trigger TNT.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueWar\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 1,
+                "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Warhead\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"25\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"1.7m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Rubix_One\",\"color\":\"red\"}]",
+                  "{\"text\":\"The Warhead is a Juggernaut-style missile.\",\"color\":\"gray\"}",
+                  "{\"text\":\"When the Warhead hits a wall, the piston on\",\"color\":\"gray\"}",
+                  "{\"text\":\"top of it will cover up the trigger TNT.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueWar"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -54,7 +93,7 @@
   ],
   "functions": [
     {
-      "function": "minecraft:copy_nbt",
+      "function": "minecraft:copy_custom_data",
       "source": "this",
       "ops": [
         {

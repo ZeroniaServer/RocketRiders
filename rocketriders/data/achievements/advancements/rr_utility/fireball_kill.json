@@ -1,32 +1,32 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "criteria": {
-        "fireball_kill": {
-            "trigger": "minecraft:player_killed_entity",
-            "conditions": {
-                "player": {
-                    "location": {
-                        "dimension": "minecraft:overworld"
-                    }
-                },
-                "entity": {
-                    "type": "minecraft:player"
-                },
-                "killing_blow": {
-                    "tags": [
-                        {
-                            "id": "minecraft:is_projectile",
-                            "expected": true
-                        }
-                    ],
-                    "direct_entity": {
-                        "type": "minecraft:fireball"
-                    }
-                }
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "criteria": {
+    "fireball_kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
+        },
+        "entity": {
+          "type": "minecraft:player"
+        },
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
             }
+          ],
+          "direct_entity": {
+            "type": "minecraft:fireball"
+          }
         }
-    },
-    "rewards": {
-        "function": "achievements:fireballkill_indimension"
+      }
     }
+  },
+  "rewards": {
+    "function": "achievements:fireballkill_indimension"
+  }
 }

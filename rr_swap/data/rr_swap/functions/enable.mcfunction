@@ -1,6 +1,6 @@
 tag @s remove switchGamemodes
 tag @s add swapEnabled
-summon marker 12 55 0 {Tags:[swapplatform]}
+summon marker 12 55 0 {Tags:["swapplatform"]}
 tag @s[tag=SurpriseEgg] add SurpriseEggWasOn
 tag @s add SurpriseEggOff
 tag @s[tag=SplashStreams] add SplashStreamsWasOn

@@ -1,7 +1,7 @@
 clear @a[x=0,team=Blue] #custom:clear
-clear @a[x=0,team=Blue] crossbow{nova:1b}
+clear @a[x=0,team=Blue] crossbow[custom_data={nova:1b}]
 clear @a[x=0,team=Yellow] #custom:clear
-clear @a[x=0,team=Yellow] crossbow{nova:1b}
+clear @a[x=0,team=Yellow] crossbow[custom_data={nova:1b}]
 scoreboard players reset @s fakeendtimer
 tag @s remove FakeGameEnd
 

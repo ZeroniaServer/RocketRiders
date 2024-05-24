@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Premature Celebration",
-            "color": "green"
-        },
-        "description": {
-            "text": "Win a game before it becomes a tie.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:poisonous_potato"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Premature Celebration",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Win a game before it becomes a tie.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/under_the_sea"
+    "icon": {
+      "id": "minecraft:poisonous_potato"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/under_the_sea"
 }

@@ -12,8 +12,29 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Rifter\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"34\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"YZEROgame, Chronos22,\",\"color\":\"red\"}]','{\"text\":\"& 69thAmendment\",\"color\":\"red\"}','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Rifter is a observer-engine\",\"color\":\"gray\"}','{\"text\":\"missile with plenty of TNT to tear\",\"color\":\"gray\"}','{\"text\":\"a rift in the enemy base.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowRift\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 2,
+                "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Rifter\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"34\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"YZEROgame, Chronos22,\",\"color\":\"red\"}]",
+                  "{\"text\":\"& 69thAmendment\",\"color\":\"red\"}",
+                  "{\"text\":\" \",\"color\":\"gray\"}",
+                  "{\"text\":\"The Rifter is a observer-engine\",\"color\":\"gray\"}",
+                  "{\"text\":\"missile with plenty of TNT to tear\",\"color\":\"gray\"}",
+                  "{\"text\":\"a rift in the enemy base.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "yellowmissile",
+                    "YellowRift"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -35,8 +56,29 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Rifter\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"34\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"YZEROgame, Chronos22,\",\"color\":\"red\"}]','{\"text\":\"69thAmendment\",\"color\":\"red\"}','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Rifter is a observer-engine\",\"color\":\"gray\"}','{\"text\":\"missile with plenty of TNT to tear\",\"color\":\"gray\"}','{\"text\":\"a rift in the enemy base.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueRift\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 1,
+                "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Rifter\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"34\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"YZEROgame, Chronos22,\",\"color\":\"red\"}]",
+                  "{\"text\":\"69thAmendment\",\"color\":\"red\"}",
+                  "{\"text\":\" \",\"color\":\"gray\"}",
+                  "{\"text\":\"The Rifter is a observer-engine\",\"color\":\"gray\"}",
+                  "{\"text\":\"missile with plenty of TNT to tear\",\"color\":\"gray\"}",
+                  "{\"text\":\"a rift in the enemy base.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueRift"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -54,7 +96,7 @@
   ],
   "functions": [
     {
-      "function": "minecraft:copy_nbt",
+      "function": "minecraft:copy_custom_data",
       "source": "this",
       "ops": [
         {

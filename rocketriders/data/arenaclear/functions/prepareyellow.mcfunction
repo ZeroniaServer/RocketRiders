@@ -1,6 +1,6 @@
 ##Prepares Smart Arena Clear entities for yellow missiles from global coordinate storage
 #Summon new AEC entity
-summon marker 0 0 0 {Tags:[ArenaClearYellow]}
+summon marker 0 0 0 {Tags:["ArenaClearYellow"]}
 
 #Set position from global storage
 execute as @e[x=0,type=marker,tag=ArenaClearYellow,tag=!checked,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:ymissilepos x[0]

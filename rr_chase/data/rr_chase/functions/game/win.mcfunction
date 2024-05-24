@@ -6,12 +6,12 @@ tag @s add GameEnd
 
 ##Celebratory items
 clear @a[x=0,team=Blue] #custom:clear
-clear @a[x=0,team=Blue] crossbow{nova:1b}
+clear @a[x=0,team=Blue] crossbow[custom_data={nova:1b}]
 execute as @a[x=0] store result score @s HasFirework run clear @s firework_rocket 0
-item replace entity @a[x=0,team=Blue,tag=Winner,scores={HasFirework=0},limit=1] hotbar.1 with firework_rocket{display:{Name:'{"text":"Celebratory Fireworks","color":"white","bold":true,"italic":false}'},Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;15790320],FadeColors:[I;11743532,3887386,2437522,8073150,2651799,14188952,4312372,14602026,6719955,12801229,15435844]}],Flight:3},CanPlaceOn:["#custom:missileblocks","#custom:basereplace"],HideFlags:50} 5
-item replace entity @a[x=0,team=Blue,tag=Winner,limit=1] armor.chest with elytra{HideFlags:127,Enchantments:[{id:"binding_curse",lvl:1}],Unbreakable:1b,display:{Name:'[{"text":"Elytra","color":"blue","bold":true,"italic":false}]'}} 1
+item replace entity @a[x=0,team=Blue,tag=Winner,scores={HasFirework=0},limit=1] hotbar.1 with minecraft:firework_rocket[custom_name='{"text":"Celebratory Fireworks","color":"white","bold":true,"italic":false}',fireworks={flight_duration:3,explosions:[{shape:"large_ball",colors:[I;15790320],fade_colors:[I;11743532,3887386,2437522,8073150,2651799,14188952,4312372,14602026,6719955,12801229,15435844],has_trail:1,has_twinkle:1}]},can_place_on={predicates:[{blocks:"#custom:missileblocks"},{blocks:"#custom:basereplace"}],show_in_tooltip:0b},hide_additional_tooltip={}] 5
+item replace entity @a[x=0,team=Blue,tag=Winner,limit=1] armor.chest with minecraft:elytra[enchantments={levels:{binding_curse:1},show_in_tooltip:0b},unbreakable={show_in_tooltip:0b},custom_name='[{"text":"Elytra","color":"blue","bold":true,"italic":false}]',hide_additional_tooltip={}] 1
 execute as @a[x=0] store result score @s HasFlag run clear @s #banners 0
-item replace entity @a[x=0,team=Blue,tag=Loser,scores={HasFlag=0}] armor.head with blue_banner{display:{Name:'{"text":"Flag of Shameful Loss","color":"blue","bold":true,"italic":false}'},BlockEntityTag:{Patterns:[{Pattern:hh,Color:0},{Pattern:hhb,Color:0},{Pattern:ls,Color:11},{Pattern:bs,Color:11},{Pattern:ls,Color:0},{Pattern:bs,Color:0},{Pattern:rs,Color:0},{Pattern:tl,Color:0}]},Enchantments:[{id:"binding_curse",lvl:1}],HideFlags:39} 1
+item replace entity @a[x=0,team=Blue,tag=Loser,scores={HasFlag=0}] armor.head with minecraft:blue_banner[custom_name='{"text":"Flag of Shameful Loss","color":"blue","bold":true,"italic":false}',banner_patterns=[{pattern:"half_horizontal",color:"white"},{pattern:"half_horizontal_bottom",color:"white"},{pattern:"stripe_left",color:"blue"},{pattern:"stripe_bottom",color:"blue"},{pattern:"stripe_left",color:"white"},{pattern:"stripe_bottom",color:"white"},{pattern:"stripe_right",color:"white"},{pattern:"square_top_left",color:"white"}],enchantments={levels:{binding_curse:1},show_in_tooltip:0b},hide_additional_tooltip={}] 1
 #I Am Speed achievement for Winner
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run advancement grant @a[x=0,team=Blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 

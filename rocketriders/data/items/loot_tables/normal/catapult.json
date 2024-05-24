@@ -12,8 +12,29 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Catapult\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"14\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.2m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Catapult does as its name suggests:\",\"color\":\"gray\"}','{\"text\":\"Once it contacts a wall, it launches 2 TNT\",\"color\":\"gray\"}','{\"text\":\"blocks out. You can also launch TNT by\",\"color\":\"gray\"}','{\"text\":\"breaking the back slime block. Watch out!\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowCata\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 2,
+                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Catapult\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"14\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.2m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]",
+                  "{\"text\":\" \",\"color\":\"gray\"}",
+                  "{\"text\":\"The Catapult does as its name suggests:\",\"color\":\"gray\"}",
+                  "{\"text\":\"Once it contacts a wall, it launches 2 TNT\",\"color\":\"gray\"}",
+                  "{\"text\":\"blocks out. You can also launch TNT by\",\"color\":\"gray\"}",
+                  "{\"text\":\"breaking the back slime block. Watch out!\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "yellowmissile",
+                    "YellowCata"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -35,8 +56,29 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Catapult\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"14\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.2m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Catapult does as its the name suggests:\",\"color\":\"gray\"}','{\"text\":\"Once it contacts a wall, it launches 2 TNT\",\"color\":\"gray\"}','{\"text\":\"blocks out. You can also launch TNT by\",\"color\":\"gray\"}','{\"text\":\"breaking the back slime block. Watch out!\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueCata\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 1,
+                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Catapult\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"14\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.2m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]",
+                  "{\"text\":\" \",\"color\":\"gray\"}",
+                  "{\"text\":\"The Catapult does as its the name suggests:\",\"color\":\"gray\"}",
+                  "{\"text\":\"Once it contacts a wall, it launches 2 TNT\",\"color\":\"gray\"}",
+                  "{\"text\":\"blocks out. You can also launch TNT by\",\"color\":\"gray\"}",
+                  "{\"text\":\"breaking the back slime block. Watch out!\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueCata"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -54,7 +96,7 @@
   ],
   "functions": [
     {
-      "function": "minecraft:copy_nbt",
+      "function": "minecraft:copy_custom_data",
       "source": "this",
       "ops": [
         {

@@ -101,9 +101,9 @@ tag @e[x=0,type=bee,tag=!beeChecked] add beeChecked
 
 scoreboard players add $beetime BeeShieldTime 1
 execute if score $beetime BeeShieldTime matches 100 run scoreboard players set $beetime BeeShieldTime 0
-execute if score $beetime BeeShieldTime matches 1 as @e[x=0,type=bee,tag=BlueBee] unless data entity @s AngryAt if entity @a[x=0,team=Yellow] at @s run summon snowball ~ ~1 ~ {Tags:["NullShield","BeeTick"],Motion:[0.0,-1.0,0.0]}
+execute if score $beetime BeeShieldTime matches 1 as @e[x=0,type=bee,tag=BlueBee] unless data entity @s AngryAt if entity @a[x=0,team=Yellow] at @s run summon snowball ~ ~1 ~ {Tags:["NullShield","BeeTick"],Motion:[0.0d,-1.0d,0.0d]}
 execute if score $beetime BeeShieldTime matches 1 as @e[x=0,type=bee,tag=BlueBee] unless data entity @s AngryAt if entity @a[x=0,team=Yellow] at @s as @e[type=snowball,tag=BeeTick,limit=1,sort=nearest,distance=..1] at @s run data modify entity @s Owner set from entity @a[x=0,team=Yellow,limit=1,sort=nearest] UUID
-execute if score $beetime BeeShieldTime matches 1 as @e[x=0,type=bee,tag=YellowBee] unless data entity @s AngryAt if entity @a[x=0,team=Blue] at @s run summon snowball ~ ~1 ~ {Tags:["NullShield","BeeTick"],Motion:[0.0,-1.0,0.0]}
+execute if score $beetime BeeShieldTime matches 1 as @e[x=0,type=bee,tag=YellowBee] unless data entity @s AngryAt if entity @a[x=0,team=Blue] at @s run summon snowball ~ ~1 ~ {Tags:["NullShield","BeeTick"],Motion:[0.0d,-1.0d,0.0d]}
 execute if score $beetime BeeShieldTime matches 1 as @e[x=0,type=bee,tag=YellowBee] unless data entity @s AngryAt if entity @a[x=0,team=Blue] at @s as @e[type=snowball,tag=BeeTick,limit=1,sort=nearest,distance=..1] at @s run data modify entity @s Owner set from entity @a[x=0,team=Blue,limit=1,sort=nearest] UUID
 execute if score $beetime BeeShieldTime matches 1 as @e[x=0,type=bee] run data merge entity @s {AngerTime:1000}
 execute if score $beetime BeeShieldTime matches 3 run kill @e[x=0,type=snowball,tag=BeeTick]

@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "| || || |_",
-            "color": "green"
-        },
-        "description": {
-            "text": "Lose a game after having a 10-game win streak.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:ghast_tear"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "| || || |_",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Lose a game after having a 10-game win streak.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/useful"
+    "icon": {
+      "id": "minecraft:ghast_tear"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/useful"
 }

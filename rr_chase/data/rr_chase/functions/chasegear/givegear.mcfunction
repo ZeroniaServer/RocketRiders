@@ -26,4 +26,4 @@ execute if score @s ArmorColor matches 11 run function rr_chase:chasegear/equip/
 execute if score @s ArmorColor matches 12 run function rr_chase:chasegear/equip/blurple
 execute if score @s ArmorColor matches 13.. run function rr_chase:chasegear/equip/white
 
-execute if entity @e[x=0,tag=Selection,tag=!GameStarted] run item replace entity @s weapon.offhand with arrow{display:{Name:'{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'},Lobby:1b} 20
+execute if entity @e[x=0,tag=Selection,tag=!GameStarted] run item replace entity @s weapon.offhand with minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Lobby:1b}] 20

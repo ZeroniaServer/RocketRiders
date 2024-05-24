@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Ground Bound",
-            "color": "green"
-        },
-        "description": {
-            "text": "Do not jump at all in a game and win.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:anvil"
-        },
-        "frame": "challenge",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Ground Bound",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Do not jump at all in a game and win.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/ballet"
+    "icon": {
+      "id": "minecraft:anvil"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/ballet"
 }

@@ -15,8 +15,22 @@
                   "count": 1
                 },
                 {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowSurpriseHeavy\",\"surprising\",\"missile\"]}}"
+                  "function": "minecraft:set_components",
+                  "components": {
+                    "minecraft:custom_model_data": 1,
+                    "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]",
+                    "minecraft:lore": [
+                      "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
+                    ],
+                    "minecraft:entity_data": {
+                      "id": "minecraft:marker",
+                      "Tags": [
+                        "YellowSurpriseHeavy",
+                        "surprising",
+                        "missile"
+                      ]
+                    }
+                  }
                 }
               ],
               "conditions": [
@@ -38,8 +52,22 @@
                   "count": 1
                 },
                 {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"BlueSurpriseHeavy\",\"surprising\",\"missile\"]}}"
+                  "function": "minecraft:set_components",
+                  "components": {
+                    "minecraft:custom_model_data": 1,
+                    "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]",
+                    "minecraft:lore": [
+                      "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
+                    ],
+                    "minecraft:entity_data": {
+                      "id": "minecraft:marker",
+                      "Tags": [
+                        "BlueSurpriseHeavy",
+                        "surprising",
+                        "missile"
+                      ]
+                    }
+                  }
                 }
               ],
               "conditions": [
@@ -57,7 +85,7 @@
       ],
       "functions": [
         {
-          "function": "minecraft:copy_nbt",
+          "function": "minecraft:copy_custom_data",
           "source": "this",
           "ops": [
             {

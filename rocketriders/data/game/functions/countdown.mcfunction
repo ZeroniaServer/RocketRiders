@@ -124,7 +124,7 @@ execute if entity @s[tag=GameStarted] run scoreboard players operation @s origYC
 execute if entity @s[tag=GameStarted] run function lobby:credits/restart
 execute if entity @s[tag=GameStarted] run gamerule mobGriefing true
 execute if entity @s[tag=GameStarted] run kill @e[x=0,type=arrow]
-execute if entity @s[tag=GameStarted] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow{Lobby:1b}
+execute if entity @s[tag=GameStarted] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow[custom_data={Lobby:1b}]
 scoreboard players set @s[tag=GameStarted] count 0
 tag @s[tag=GameStarted] remove bossbarOverride
 #The forceCountdown tag is used to override conditions that would otherwise cancel a countdown

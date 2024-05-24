@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Ballet Dancer",
-            "color": "green"
-        },
-        "description": {
-            "text": "Sprint and jump for the entire game.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:note_block"
-        },
-        "frame": "challenge",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Ballet Dancer",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Sprint and jump for the entire game.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_zzzhard/root"
+    "icon": {
+      "id": "minecraft:note_block"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_zzzhard/root"
 }

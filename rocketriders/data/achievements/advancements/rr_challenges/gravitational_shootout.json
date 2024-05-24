@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Gravitational Shootout",
-            "color": "green"
-        },
-        "description": {
-            "text": "Land five shots on players while falling in one game.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:arrow"
-        },
-        "frame": "challenge",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Gravitational Shootout",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Land five shots on players while falling in one game.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/pigeon"
+    "icon": {
+      "id": "minecraft:arrow"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/pigeon"
 }

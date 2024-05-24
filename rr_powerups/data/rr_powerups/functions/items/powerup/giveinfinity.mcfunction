@@ -4,7 +4,7 @@ scoreboard players set @s[tag=Infinity] actionbardelay 0
 title @s[tag=!Infinity] title [{"text":" "}]
 title @s[tag=!Infinity] subtitle ["",{"text":"Infinity Saber:","color":"dark_purple","italic":true,"bold":true},{"text":" Lasts for ","color":"light_purple","italic":true},{"text":"30 seconds.","color":"red"}]
 clear @s[tag=!Infinity] bow
-give @s[tag=!Infinity] bow{display:{Name:'{"translate":"Infinity Saber","color":"dark_purple","bold":true,"italic":false}',Lore:['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks"}']},HideFlags:4,Unbreakable:1b,Enchantments:[{id:"flame",lvl:1},{id:"sharpness",lvl:5},{id:"infinity",lvl:1}]}
+give @s[tag=!Infinity] minecraft:bow[custom_name='{"translate":"Infinity Saber","color":"dark_purple","bold":true,"italic":false}',lore=['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks"}'],unbreakable={show_in_tooltip:0b},enchantments={flame:1,sharpness:5,infinity:1}]
 tag @s[tag=!Infinity] add needsArrow
 tag @s[tag=needsArrow] add Infinity
 execute if entity @s[tag=needsArrow] store result score @s HasArrows run clear @s arrow 0

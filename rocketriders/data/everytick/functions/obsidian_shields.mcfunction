@@ -24,14 +24,14 @@ function items:prevention/giveback
 ##Blue Obsidian Shield functionality
 #Spawning in Fireball entities
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
-execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
-execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0,0.0,0.0],Passengers:[{id:"minecraft:marker",Tags:["blueobtracker"]}]}
+execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0d,0.0d,0.0d]}
+execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0d,0.0d,0.0d],Passengers:[{id:"minecraft:marker",Tags:["blueobtracker"]}]}
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 execute as @e[x=0,type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
 
 #Detecting motion
 tag @e[x=0,type=fireball,tag=blueobfireball] remove StillOb
-tag @e[x=0,type=fireball,tag=blueobfireball,nbt={Motion:[0.0,0.0,0.0]}] add StillOb
+tag @e[x=0,type=fireball,tag=blueobfireball,nbt={Motion:[0.0d,0.0d,0.0d]}] add StillOb
 execute as @e[x=0,type=fireball,tag=blueobfireball] store result score @s CmdData run data get entity @s Motion[1] 100
 execute as @e[x=0,type=fireball,tag=blueobfireball] unless score @s CmdData matches 0 run tag @s remove StillOb
 scoreboard players add @e[x=0,type=fireball,tag=blueobfireball,tag=!StillOb] obmove 1
@@ -71,16 +71,16 @@ kill @e[x=0,type=marker,tag=BlueObshield]
 ##Yellow Obsidian Shield functionality
 #Spawning in Fireball entities
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
-execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0,0.0,0.0]}
-execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0,0.0,0.0],Passengers:[{id:"minecraft:marker",Tags:["yellowobtracker"]}]}
+execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0d,0.0d,0.0d]}
+execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0d,0.0d,0.0d],Passengers:[{id:"minecraft:marker",Tags:["yellowobtracker"]}]}
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
-execute as @e[x=0,type=fireball,tag=yellowobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:air",Count:1b}}
+execute as @e[x=0,type=fireball,tag=yellowobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:air",count:1}}
 tag @e[x=0,type=fireball,tag=yellowobfireball,tag=!headreplaced] add headreplaced
 
 #Detecting motion
 tag @e[x=0,type=fireball,tag=yellowobfireball] remove StillOb
-tag @e[x=0,type=fireball,tag=yellowobfireball,nbt={Motion:[0.0,0.0,0.0]}] add StillOb
+tag @e[x=0,type=fireball,tag=yellowobfireball,nbt={Motion:[0.0d,0.0d,0.0d]}] add StillOb
 execute as @e[x=0,type=fireball,tag=yellowobfireball] store result score @s CmdData run data get entity @s Motion[1] 100
 execute as @e[x=0,type=fireball,tag=yellowobfireball] unless score @s CmdData matches 0 run tag @s remove StillOb
 scoreboard players add @e[x=0,type=fireball,tag=yellowobfireball,tag=!StillOb] obmove 1

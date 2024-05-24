@@ -12,8 +12,28 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Lightning] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Hurricane\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"18\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"3.3m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Hurricane bears much resemblance to the\",\"color\":\"gray\"}','{\"text\":\"Lightning, but with more TNT and a tight design.\",\"color\":\"gray\"}','{\"text\":\"It might be harder to get on this one.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowHur\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 2,
+                "minecraft:custom_name": "[{\"text\":\"[Lightning] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Hurricane\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"18\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"3.3m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]",
+                  "{\"text\":\" \",\"color\":\"gray\"}",
+                  "{\"text\":\"The Hurricane bears much resemblance to the\",\"color\":\"gray\"}",
+                  "{\"text\":\"Lightning, but with more TNT and a tight design.\",\"color\":\"gray\"}",
+                  "{\"text\":\"It might be harder to get on this one.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "yellowmissile",
+                    "YellowHur"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -35,8 +55,28 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Lightning] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Hurricane\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"18\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"3.3m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Hurricane bears much resemblance to the\",\"color\":\"gray\"}','{\"text\":\"Lightning, but with more TNT and a tight design.\",\"color\":\"gray\"}','{\"text\":\"It might be harder to get on this one.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueHur\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 1,
+                "minecraft:custom_name": "[{\"text\":\"[Lightning] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Hurricane\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"18\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"3.3m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"HolyToiletPaper\",\"color\":\"red\"}]",
+                  "{\"text\":\" \",\"color\":\"gray\"}",
+                  "{\"text\":\"The Hurricane bears much resemblance to the\",\"color\":\"gray\"}",
+                  "{\"text\":\"Lightning, but with more TNT and a tight design.\",\"color\":\"gray\"}",
+                  "{\"text\":\"It might be harder to get on this one.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueHur"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -54,7 +94,7 @@
   ],
   "functions": [
     {
-      "function": "minecraft:copy_nbt",
+      "function": "minecraft:copy_custom_data",
       "source": "this",
       "ops": [
         {

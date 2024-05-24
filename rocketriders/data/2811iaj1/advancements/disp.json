@@ -1,29 +1,29 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Missile Display Area",
-            "color": "light_purple"
-        },
-        "description": {
-            "text": "You've discovered the Missile Display Area.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:tnt"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": false,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Missile Display Area",
+      "color": "light_purple"
     },
-    "criteria": {
-        "Impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "You've discovered the Missile Display Area.",
+      "color": "dark_green"
     },
-    "rewards": {
-        "function": "2811iaj1:misdisp_indimension"
+    "icon": {
+      "id": "minecraft:tnt"
     },
-    "parent": "2811iaj1:root"
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "Impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "2811iaj1:misdisp_indimension"
+  },
+  "parent": "2811iaj1:root"
 }

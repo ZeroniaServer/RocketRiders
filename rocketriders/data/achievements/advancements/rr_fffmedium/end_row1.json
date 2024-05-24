@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Medium Challenges",
-            "color": "gold"
-        },
-        "description": {
-            "text": "The Medium difficulty challenges for Rocket Riders.",
-            "color": "yellow"
-        },
-        "icon": {
-            "item": "minecraft:orange_concrete"
-        },
-        "frame": "task",
-        "show_toast": false,
-        "announce_to_chat": false,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Medium Challenges",
+      "color": "gold"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "The Medium difficulty challenges for Rocket Riders.",
+      "color": "yellow"
     },
-    "parent": "achievements:rr_challenges/gravitational_shootout"
+    "icon": {
+      "id": "minecraft:orange_concrete"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/gravitational_shootout"
 }

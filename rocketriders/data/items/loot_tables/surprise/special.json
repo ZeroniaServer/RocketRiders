@@ -15,8 +15,32 @@
                   "count": 1
                 },
                 {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowSurpriseSpecial\",\"surprising\",\"missile\"]},Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}],HideFlags:7}"
+                  "function": "minecraft:set_components",
+                  "components": {
+                    "minecraft:custom_model_data": 1,
+                    "minecraft:enchantments": {
+                      "levels": {
+                        "minecraft:unbreaking": 1
+                      },
+                      "show_in_tooltip": false
+                    },
+                    "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]",
+                    "minecraft:lore": [
+                      "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
+                    ],
+                    "minecraft:entity_data": {
+                      "id": "minecraft:marker",
+                      "Tags": [
+                        "YellowSurpriseSpecial",
+                        "surprising",
+                        "missile"
+                      ]
+                    },
+                    "minecraft:attribute_modifiers": {
+                      "modifiers": [],
+                      "show_in_tooltip": false
+                    }
+                  }
                 }
               ],
               "conditions": [
@@ -38,8 +62,32 @@
                   "count": 1
                 },
                 {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Special] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]',Lore:['{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"BlueSurpriseSpecial\",\"surprising\",\"missile\"]},Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}],HideFlags:7}"
+                  "function": "minecraft:set_components",
+                  "components": {
+                    "minecraft:custom_model_data": 1,
+                    "minecraft:enchantments": {
+                      "levels": {
+                        "minecraft:unbreaking": 1
+                      },
+                      "show_in_tooltip": false
+                    },
+                    "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]",
+                    "minecraft:lore": [
+                      "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
+                    ],
+                    "minecraft:entity_data": {
+                      "id": "minecraft:marker",
+                      "Tags": [
+                        "BlueSurpriseSpecial",
+                        "surprising",
+                        "missile"
+                      ]
+                    },
+                    "minecraft:attribute_modifiers": {
+                      "modifiers": [],
+                      "show_in_tooltip": false
+                    }
+                  }
                 }
               ],
               "conditions": [
@@ -57,7 +105,7 @@
       ],
       "functions": [
         {
-          "function": "minecraft:copy_nbt",
+          "function": "minecraft:copy_custom_data",
           "source": "this",
           "ops": [
             {

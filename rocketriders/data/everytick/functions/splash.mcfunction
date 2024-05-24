@@ -4,8 +4,8 @@
 ######################################
 
 ##Splash projectile motion/effects
-execute as @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Potion:"minecraft:water"}}},tag=!splash] run data merge entity @s {NoGravity:1b,Motion:[0.0,0.0,0.0],Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionColor:3237342,custom_potion_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}}
-tag @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionColor:3237342,custom_potion_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}},tag=!splash] add splash
+execute as @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:water"}}}},tag=!splash] run data merge entity @s {NoGravity:1b,Motion:[0.0d,0.0d,0.0d],Item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:water",custom_color:3237342,custom_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}}}
+tag @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:water",custom_color:3237342,custom_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}}},tag=!splash] add splash
 execute as @e[x=0,type=potion,tag=splash,tag=!motioned] at @s as @p[scores={ThrowSplash=1..}] at @s anchored eyes run tp @e[x=0,type=potion,tag=splash,tag=!motioned] @s
 execute as @e[x=0,type=potion,tag=splash,tag=!motioned] run function everytick:projectile
 tag @e[x=0,type=potion,tag=splash,tag=!motioned] add motioned

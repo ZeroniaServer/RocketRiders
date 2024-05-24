@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Missile Sabotage",
-            "color": "green"
-        },
-        "description": {
-            "text": "Destroy 1000 TNT blocks (all-time).",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:tnt"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Missile Sabotage",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Destroy 1000 TNT blocks (all-time).",
+      "color": "dark_green"
     },
-    "parent": "achievements:a17z/root"
+    "icon": {
+      "id": "minecraft:tnt"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:a17z/root"
 }

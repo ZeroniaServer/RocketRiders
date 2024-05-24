@@ -1,27 +1,52 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Volcanic Hatred",
-            "color": "green"
-        },
-        "description": {
-            "text": "Kill an enemy with a Lava Splash in Powerups Mode.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:lingering_potion",
-            "nbt": "{Potion:\"minecraft:awkward\",CustomPotionColor:16747545,HideFlags:63,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1s}]}"
-        },
-        "frame": "goal",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Volcanic Hatred",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Kill an enemy with a Lava Splash in Powerups Mode.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/blocks_into_bits"
+    "icon": {
+      "id": "minecraft:lingering_potion",
+      "components": {
+        "minecraft:enchantments": {
+          "levels": {
+            "minecraft:unbreaking": 1
+          },
+          "show_in_tooltip": false
+        },
+        "minecraft:potion_contents": {
+          "custom_effects": [],
+          "potion": "minecraft:awkward",
+          "custom_color": 16747545
+        },
+        "minecraft:attribute_modifiers": {
+          "modifiers": [],
+          "show_in_tooltip": false
+        },
+        "minecraft:can_break": {
+          "predciates": [],
+          "show_in_tooltip": false
+        },
+        "minecraft:can_place_on": {
+          "predciates": [],
+          "show_in_tooltip": false
+        },
+        "minecraft:hide_additional_tooltip": {}
+      }
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/blocks_into_bits"
 }

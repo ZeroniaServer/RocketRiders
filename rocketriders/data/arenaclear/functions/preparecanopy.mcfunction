@@ -1,6 +1,6 @@
 ##Prepares Canopies to be cleared from global coordinate storage
 #Summon new AEC entity
-summon marker 0 0 0 {Tags:[Platform]}
+summon marker 0 0 0 {Tags:["Platform"]}
 
 #Set position from global storage
 execute as @e[x=0,type=marker,tag=Platform,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:canopypos x[0]

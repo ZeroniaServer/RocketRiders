@@ -1,6 +1,6 @@
 ##Prepares Stinging Shields to be cleared from global coordinate storage
 #Summon new AEC entity
-summon marker 0 0 0 {Tags:[BeeShield]}
+summon marker 0 0 0 {Tags:["BeeShield"]}
 
 #Set position from global storage
 execute as @e[x=0,type=marker,tag=BeeShield,limit=1] run data modify entity @s Pos[0] set from storage rr_powerups:beeshieldpos x[0]

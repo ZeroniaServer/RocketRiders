@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Fire Within Me",
-            "color": "green"
-        },
-        "description": {
-            "text": "Get a kill while being on fire.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:blaze_powder"
-        },
-        "frame": "goal",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Fire Within Me",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Get a kill while being on fire.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_fffmedium/root"
+    "icon": {
+      "id": "minecraft:blaze_powder"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_fffmedium/root"
 }

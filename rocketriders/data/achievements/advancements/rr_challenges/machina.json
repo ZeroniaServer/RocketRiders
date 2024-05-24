@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Deus Ex Machina",
-            "color": "green"
-        },
-        "description": {
-            "text": "Win the game while your portal is exposed.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:white_stained_glass"
-        },
-        "frame": "challenge",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Deus Ex Machina",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Win the game while your portal is exposed.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/uphere"
+    "icon": {
+      "id": "minecraft:white_stained_glass"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/uphere"
 }

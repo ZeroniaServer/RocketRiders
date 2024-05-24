@@ -1,27 +1,50 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "I Am Speed",
-            "color": "green"
-        },
-        "description": {
-            "text": "Arrive at the Finish Flag first in Chase Mode.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:white_banner",
-            "nbt": "{BlockEntityTag:{Patterns:[{Pattern:vhr,Color:15},{Pattern:tl,Color:15},{Pattern:bl,Color:15},{Pattern:tr,Color:0},{Pattern:br,Color:0}]}}"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "I Am Speed",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Arrive at the Finish Flag first in Chase Mode.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/helping"
+    "icon": {
+      "id": "minecraft:white_banner",
+      "components": {
+        "minecraft:banner_patterns": [
+          {
+            "pattern": "vhr",
+            "color": "black"
+          },
+          {
+            "pattern": "tl",
+            "color": "black"
+          },
+          {
+            "pattern": "bl",
+            "color": "black"
+          },
+          {
+            "pattern": "tr",
+            "color": "white"
+          },
+          {
+            "pattern": "br",
+            "color": "white"
+          }
+        ]
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/helping"
 }

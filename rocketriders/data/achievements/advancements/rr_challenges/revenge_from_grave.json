@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Revenge from the Grave!",
-            "color": "green"
-        },
-        "description": {
-            "text": "Get a kill right after you die.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:skeleton_skull"
-        },
-        "frame": "goal",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Revenge from the Grave!",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Get a kill right after you die.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_fffmedium/root"
+    "icon": {
+      "id": "minecraft:skeleton_skull"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_fffmedium/root"
 }

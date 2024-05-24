@@ -12,8 +12,22 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Obsidian Shield\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Spawns a Fireball that you can shoot or punch\",\"color\":\"gray\"}','{\"text\":\"to spawn an Obsidian Shield. Stops all missiles.\",\"color\":\"gray\"}','{\"text\":\"Break the central glass 3 times to destroy it.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowObshield\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 2,
+                "minecraft:custom_name": "[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Obsidian Shield\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "{\"text\":\"Spawns a Fireball that you can shoot or punch\",\"color\":\"gray\"}",
+                  "{\"text\":\"to spawn an Obsidian Shield. Stops all missiles.\",\"color\":\"gray\"}",
+                  "{\"text\":\"Break the central glass 3 times to destroy it.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "YellowObshield"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -35,8 +49,22 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Obsidian Shield\",\"color\":\"blue\",\"bold\":true}]',Lore:['{\"text\":\"Spawns a Fireball that you can shoot or punch\",\"color\":\"gray\"}','{\"text\":\"to spawn an Obsidian Shield. Stops all missiles.\",\"color\":\"gray\"}','{\"text\":\"Break the central glass 3 times to destroy it.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"BlueObshield\"]}}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 1,
+                "minecraft:custom_name": "[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Obsidian Shield\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "{\"text\":\"Spawns a Fireball that you can shoot or punch\",\"color\":\"gray\"}",
+                  "{\"text\":\"to spawn an Obsidian Shield. Stops all missiles.\",\"color\":\"gray\"}",
+                  "{\"text\":\"Break the central glass 3 times to destroy it.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "BlueObshield"
+                  ]
+                }
+              }
             }
           ],
           "conditions": [
@@ -54,7 +82,7 @@
   ],
   "functions": [
     {
-      "function": "minecraft:copy_nbt",
+      "function": "minecraft:copy_custom_data",
       "source": "this",
       "ops": [
         {

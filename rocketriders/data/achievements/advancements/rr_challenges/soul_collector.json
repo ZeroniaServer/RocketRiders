@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Soul Collector",
-            "color": "green"
-        },
-        "description": {
-            "text": "Get 50 player kills in one game.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:soul_sand"
-        },
-        "frame": "challenge",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Soul Collector",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Get 50 player kills in one game.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_zzzhard/root"
+    "icon": {
+      "id": "minecraft:soul_sand"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_zzzhard/root"
 }

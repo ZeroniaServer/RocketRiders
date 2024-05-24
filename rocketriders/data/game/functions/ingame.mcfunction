@@ -35,7 +35,7 @@ execute if entity @s[tag=GameStarted,scores={gametime=1..2}] as @a[x=0] unless e
 execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=10}] run gamerule fallDamage true
 
 ##Clear lobby arrows
-execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow{Lobby:1b}
+execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s arrow[custom_data={Lobby:1b}]
 
 ##Remove kills
 execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=..4}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players reset @s kills

@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Cursed Boomerang",
-            "color": "green"
-        },
-        "description": {
-            "text": "Get blown up by your own End Crystal in Chase Mode.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:end_crystal"
-        },
-        "frame": "goal",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Cursed Boomerang",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Get blown up by your own End Crystal in Chase Mode.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/speed"
+    "icon": {
+      "id": "minecraft:end_crystal"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/speed"
 }

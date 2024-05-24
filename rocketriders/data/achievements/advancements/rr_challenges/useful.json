@@ -1,27 +1,32 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "They're Useful!",
-            "color": "green"
-        },
-        "description": {
-            "text": "Prevent 20 explosions (all-time) using the Splash.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:lingering_potion",
-            "nbt": "{Potion:\"minecraft:water\"}"
-        },
-        "frame": "challenge",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "They're Useful!",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
+    "description": {
+      "text": "Prevent 20 explosions (all-time) using the Splash.",
+      "color": "dark_green"
+    },
+    "icon": {
+      "id": "minecraft:lingering_potion",
+      "components": {
+        "minecraft:potion_contents": {
+          "custom_effects": [],
+          "potion": "minecraft:water"
         }
+      }
     },
-    "parent": "achievements:rr_fffmedium/root"
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_fffmedium/root"
 }

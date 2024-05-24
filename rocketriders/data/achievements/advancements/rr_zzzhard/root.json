@@ -1,27 +1,27 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Hard Challenges",
-            "bold": false,
-            "color": "dark_red"
-        },
-        "description": {
-            "text": "The Hard difficulty challenges for Rocket Riders.",
-            "color": "red"
-        },
-        "icon": {
-            "item": "minecraft:red_concrete"
-        },
-        "frame": "task",
-        "show_toast": false,
-        "announce_to_chat": false,
-        "hidden": false,
-        "background": "minecraft:textures/block/redstone_block.png"
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Hard Challenges",
+      "bold": false,
+      "color": "dark_red"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "The Hard difficulty challenges for Rocket Riders.",
+      "color": "red"
+    },
+    "icon": {
+      "id": "minecraft:red_concrete"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/redstone_block.png"
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
     }
+  }
 }

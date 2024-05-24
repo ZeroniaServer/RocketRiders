@@ -1,23 +1,23 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "criteria": {
-        "requirement": {
-            "trigger": "minecraft:entity_killed_player",
-            "conditions": {
-                "player": {
-                    "team": "Blue",
-                    "location": {
-                        "dimension": "minecraft:overworld"
-                    }
-                },
-                "entity": {
-                    "type": "minecraft:player",
-                    "team": "Yellow"
-                }
-            }
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "player": {
+          "team": "Blue",
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
+        },
+        "entity": {
+          "type": "minecraft:player",
+          "team": "Yellow"
         }
-    },
-    "rewards": {
-        "function": "achievements:killedbyplayer_indimension"
+      }
     }
+  },
+  "rewards": {
+    "function": "achievements:killedbyplayer_indimension"
+  }
 }

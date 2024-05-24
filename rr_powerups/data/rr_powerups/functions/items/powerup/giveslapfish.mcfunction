@@ -11,5 +11,5 @@ execute if entity @s[scores={HasSlapFish=1..},tag=!fullHotbar,tag=!itemDeducted]
 title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Slap Fish already obtained.","color":"light_purple"}
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasSlapFish=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Slap Fish obtained.","color":"light_purple"}
-give @s[scores={HasSlapFish=0},tag=!fullHotbar] cooked_salmon{display:{Name:'{"text":"Slap Fish","color":"dark_purple","bold":true,"italic":true}',Lore:['{"text":"Use to slap your enemies away!","color":"gray"}','{"text":"Only good for one use.","color":"gray"}']},Enchantments:[{id:"minecraft:knockback",lvl:3s}]} 1
+give @s[scores={HasSlapFish=0},tag=!fullHotbar] minecraft:cooked_salmon[custom_name='{"text":"Slap Fish","color":"dark_purple","bold":true,"italic":true}',lore=['{"text":"Use to slap your enemies away!","color":"gray"}','{"text":"Only good for one use.","color":"gray"}'],enchantments={"minecraft:knockback":3}] 1
 tag @e[x=0,type=armor_stand,tag=Selection,tag=tetrisTime] add givenFish

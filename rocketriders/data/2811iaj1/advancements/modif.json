@@ -1,29 +1,29 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Modification Room",
-            "color": "light_purple"
-        },
-        "description": {
-            "text": "You've discovered the Modification Room.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:warped_sign"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": false,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Modification Room",
+      "color": "light_purple"
     },
-    "criteria": {
-        "Impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "You've discovered the Modification Room.",
+      "color": "dark_green"
     },
-    "rewards": {
-        "function": "2811iaj1:modification_indimension"
+    "icon": {
+      "id": "minecraft:warped_sign"
     },
-    "parent": "2811iaj1:root"
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "Impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "2811iaj1:modification_indimension"
+  },
+  "parent": "2811iaj1:root"
 }

@@ -3,10 +3,10 @@ scoreboard players add @e[x=0,type=fireball,tag=Cluster,tag=!Still,tag=!endFireb
 
 execute as @e[x=0,type=fireball,tag=!ClusterSpawn,scores={Clustertime=1}] at @s run tag @s add ClusterStarter
 
-execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~ ~2 ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
-execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~ ~-2 ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
-execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~2 ~ ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
-execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~-2 ~ ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0,0.0,0.0]}
+execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~ ~2 ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
+execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~ ~-2 ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
+execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~2 ~ ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
+execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~-2 ~ ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
 scoreboard players set @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] Clustertime 8
 
 execute as @e[x=0,type=fireball,tag=ClusterSpawn] at @s if entity @e[type=fireball,tag=ClusterStarter,distance=..5,limit=1] run scoreboard players add @s Clustertime 0
@@ -17,7 +17,7 @@ execute as @e[x=0,type=fireball,tag=ClusterSpawn] at @s unless entity @e[type=fi
 kill @e[x=0,type=fireball,tag=ClusterSpawn,tag=StillCluster,scores={Clustertime=-40}]
 
 tag @e[x=0,type=fireball,tag=ClusterFireball] remove StillCluster
-tag @e[x=0,type=fireball,tag=ClusterFireball,nbt={Motion:[0.0,0.0,0.0]}] add StillCluster
+tag @e[x=0,type=fireball,tag=ClusterFireball,nbt={Motion:[0.0d,0.0d,0.0d]}] add StillCluster
 execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store result score @s x run data get entity @s Motion[0] 100
 execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store result score @s y run data get entity @s Motion[1] 100
 execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store result score @s z run data get entity @s Motion[2] 100
@@ -35,7 +35,7 @@ execute if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] 
 
 #Fix endgame fireballs
 execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] run scoreboard players add @s endFireball 1
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
+execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0d,0.0d,0.0d],power:[0.0d,0.0d,0.0d]}
 execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run data modify entity @s Owner set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Owner
 execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run data modify entity @s Item set from entity @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Item
 execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run scoreboard players operation @s Clustertime = @e[type=fireball,scores={endFireball=1},limit=1,sort=nearest,distance=..1] Clustertime

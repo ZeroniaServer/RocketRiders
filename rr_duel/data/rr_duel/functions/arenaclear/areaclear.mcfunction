@@ -60,9 +60,9 @@ tp @a[x=0,team=Yellow] 12 64 66 180 0
 execute as @a[x=0,team=Blue,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @a[x=0,team=Yellow,predicate=custom:is_on_fire] at @s run function game:putoutfire
 clear @a[x=0,team=Blue] #custom:clear
-clear @a[x=0,team=Blue] crossbow{nova:1b}
+clear @a[x=0,team=Blue] crossbow[custom_data={nova:1b}]
 clear @a[x=0,team=Yellow] #custom:clear
-clear @a[x=0,team=Yellow] crossbow{nova:1b}
+clear @a[x=0,team=Yellow] crossbow[custom_data={nova:1b}]
 gamemode survival @a[x=0,team=Blue]
 gamemode survival @a[x=0,team=Yellow]
 

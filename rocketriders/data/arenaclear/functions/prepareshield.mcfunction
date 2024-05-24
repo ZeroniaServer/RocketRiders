@@ -1,6 +1,6 @@
 ##Prepares Shields to be cleared from global coordinate storage
 #Summon new AEC entity
-summon marker 0 0 0 {Tags:[ClearShields]}
+summon marker 0 0 0 {Tags:["ClearShields"]}
 
 #Set position from global storage
 execute as @e[x=0,type=marker,tag=ClearShields,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:shieldpos x[0]

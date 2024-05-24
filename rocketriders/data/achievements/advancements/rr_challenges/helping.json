@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "I'm Helping!",
-            "color": "green"
-        },
-        "description": {
-            "text": "Let your team win a game, but never fire a single missile yourself.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:red_bed"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "I'm Helping!",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Let your team win a game, but never fire a single missile yourself.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/sabotage"
+    "icon": {
+      "id": "minecraft:red_bed"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/sabotage"
 }

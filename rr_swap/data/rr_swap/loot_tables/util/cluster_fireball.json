@@ -12,8 +12,33 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Cluster Fireball\",\"color\":\"gold\",\"bold\":true}]',Lore:['{\"text\":\"Spawns a cluster of Fireballs. Punch or\",\"color\":\"gray\"}','{\"text\":\"shoot Fireballs to quickly blow up\",\"color\":\"gray\"}','{\"text\":\"missiles, blocks, or enemy players.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"YellowFireball\",\"Cluster\"]},Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}],HideFlags:7}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 2,
+                "minecraft:enchantments": {
+                  "levels": {
+                    "minecraft:unbreaking": 1
+                  },
+                  "show_in_tooltip": false
+                },
+                "minecraft:custom_name": "[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Cluster Fireball\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "{\"text\":\"Spawns a cluster of Fireballs. Punch or\",\"color\":\"gray\"}",
+                  "{\"text\":\"shoot Fireballs to quickly blow up\",\"color\":\"gray\"}",
+                  "{\"text\":\"missiles, blocks, or enemy players.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "YellowFireball",
+                    "Cluster"
+                  ]
+                },
+                "minecraft:attribute_modifiers": {
+                  "modifiers": [],
+                  "show_in_tooltip": false
+                }
+              }
             }
           ],
           "conditions": [
@@ -35,8 +60,33 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Cluster Fireball\",\"color\":\"blue\",\"bold\":true}]',Lore:['{\"text\":\"Spawns a cluster of Fireballs. Punch or\",\"color\":\"gray\"}','{\"text\":\"shoot Fireballs to quickly blow up\",\"color\":\"gray\"}','{\"text\":\"missiles, blocks, or players.\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"BlueFireball\",\"Cluster\"]},Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}],HideFlags:7}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 2,
+                "minecraft:enchantments": {
+                  "levels": {
+                    "minecraft:unbreaking": 1
+                  },
+                  "show_in_tooltip": false
+                },
+                "minecraft:custom_name": "[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Cluster Fireball\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "{\"text\":\"Spawns a cluster of Fireballs. Punch or\",\"color\":\"gray\"}",
+                  "{\"text\":\"shoot Fireballs to quickly blow up\",\"color\":\"gray\"}",
+                  "{\"text\":\"missiles, blocks, or players.\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "BlueFireball",
+                    "Cluster"
+                  ]
+                },
+                "minecraft:attribute_modifiers": {
+                  "modifiers": [],
+                  "show_in_tooltip": false
+                }
+              }
             }
           ],
           "conditions": [
@@ -54,7 +104,7 @@
   ],
   "functions": [
     {
-      "function": "minecraft:copy_nbt",
+      "function": "minecraft:copy_custom_data",
       "source": "this",
       "ops": [
         {

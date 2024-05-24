@@ -15,8 +15,38 @@
                   "count": 1
                 },
                 {
-                  "function": "minecraft:set_nbt",
-                  "tag": "{CustomModelData:2,display:{Name:'[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Hypersonic\",\"color\":\"gold\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"4.4m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]','{\"text\":\" \",\"color\":\"gray\"}','{\"text\":\"The Hypersonic is the fastest\",\"color\":\"gray\"}','{\"text\":\"missile in the game. It might be\",\"color\":\"gray\"}','{\"text\":\"very hard to get on this one!\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"yellowmissile\",\"YellowHyper\"]},Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}],HideFlags:7}"
+                  "function": "minecraft:set_components",
+                  "components": {
+                    "minecraft:custom_model_data": 2,
+                    "minecraft:enchantments": {
+                      "levels": {
+                        "minecraft:unbreaking": 1
+                      },
+                      "show_in_tooltip": false
+                    },
+                    "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Hypersonic\",\"color\":\"gold\",\"bold\":true}]",
+                    "minecraft:lore": [
+                      "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]",
+                      "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"4.4m/s\",\"color\":\"red\"}]",
+                      "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]",
+                      "{\"text\":\" \",\"color\":\"gray\"}",
+                      "{\"text\":\"The Hypersonic is the fastest\",\"color\":\"gray\"}",
+                      "{\"text\":\"missile in the game. It might be\",\"color\":\"gray\"}",
+                      "{\"text\":\"very hard to get on this one!\",\"color\":\"gray\"}"
+                    ],
+                    "minecraft:entity_data": {
+                      "id": "minecraft:marker",
+                      "Tags": [
+                        "missile",
+                        "yellowmissile",
+                        "YellowHyper"
+                      ]
+                    },
+                    "minecraft:attribute_modifiers": {
+                      "modifiers": [],
+                      "show_in_tooltip": false
+                    }
+                  }
                 }
               ],
               "conditions": [
@@ -40,8 +70,37 @@
               "count": 1
             },
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:1,display:{Name:'[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Hypersonic\",\"color\":\"blue\",\"bold\":true}]',Lore:['[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]','[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"4.4m/s\",\"color\":\"red\"}]','[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]','{\"text\":\"The Hypersonic is the fastest\",\"color\":\"gray\"}','{\"text\":\"missile in the game. It might be\",\"color\":\"gray\"}','{\"text\":\"very hard to get on this one!\",\"color\":\"gray\"}']},EntityTag:{id:\"minecraft:marker\",Tags:[\"missile\",\"bluemissile\",\"BlueHyper\"]},Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}],HideFlags:7}"
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": 1,
+                "minecraft:enchantments": {
+                  "levels": {
+                    "minecraft:unbreaking": 1
+                  },
+                  "show_in_tooltip": false
+                },
+                "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Hypersonic\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:lore": [
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"4.4m/s\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]",
+                  "{\"text\":\"The Hypersonic is the fastest\",\"color\":\"gray\"}",
+                  "{\"text\":\"missile in the game. It might be\",\"color\":\"gray\"}",
+                  "{\"text\":\"very hard to get on this one!\",\"color\":\"gray\"}"
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueHyper"
+                  ]
+                },
+                "minecraft:attribute_modifiers": {
+                  "modifiers": [],
+                  "show_in_tooltip": false
+                }
+              }
             }
           ],
           "conditions": [
@@ -59,7 +118,7 @@
   ],
   "functions": [
     {
-      "function": "minecraft:copy_nbt",
+      "function": "minecraft:copy_custom_data",
       "source": "this",
       "ops": [
         {

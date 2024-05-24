@@ -1,27 +1,62 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Just Give Me That Flag Already",
-            "color": "green"
-        },
-        "description": {
-            "text": "Get killed on your own base.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:black_banner",
-            "nbt": "{BlockEntityTag:{Patterns:[{Pattern:hh,Color:0},{Pattern:hhb,Color:0},{Pattern:ls,Color:15},{Pattern:bs,Color:15},{Pattern:ls,Color:0},{Pattern:bs,Color:0},{Pattern:rs,Color:0},{Pattern:tl,Color:0}]}}"
-        },
-        "frame": "goal",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Just Give Me That Flag Already",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Get killed on your own base.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/get_off_lawn"
+    "icon": {
+      "id": "minecraft:black_banner",
+      "components": {
+        "minecraft:banner_patterns": [
+          {
+            "pattern": "hh",
+            "color": "white"
+          },
+          {
+            "pattern": "hhb",
+            "color": "white"
+          },
+          {
+            "pattern": "ls",
+            "color": "black"
+          },
+          {
+            "pattern": "bs",
+            "color": "black"
+          },
+          {
+            "pattern": "ls",
+            "color": "white"
+          },
+          {
+            "pattern": "bs",
+            "color": "white"
+          },
+          {
+            "pattern": "rs",
+            "color": "white"
+          },
+          {
+            "pattern": "tl",
+            "color": "white"
+          }
+        ]
+      }
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/get_off_lawn"
 }

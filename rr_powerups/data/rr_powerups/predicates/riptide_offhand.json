@@ -12,11 +12,13 @@
         "items": [
           "minecraft:trident"
         ],
-        "enchantments": [
-          {
-            "enchantment": "minecraft:riptide"
-          }
-        ]
+        "predicates": {
+          "minecraft:enchantments": [
+            {
+              "enchantment": "minecraft:riptide"
+            }
+          ]
+        }
       }
     }
   }

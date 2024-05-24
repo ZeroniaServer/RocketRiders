@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Traveler",
-            "color": "green"
-        },
-        "description": {
-            "text": "Reach the enemy base and then return to your base without dying.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:saddle"
-        },
-        "frame": "goal",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Traveler",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Reach the enemy base and then return to your base without dying.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/machina"
+    "icon": {
+      "id": "minecraft:saddle"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/machina"
 }

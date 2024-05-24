@@ -1,26 +1,26 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Inaccurate but Committed",
-            "color": "green"
-        },
-        "description": {
-            "text": "Ride a missile to the world border.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:barrier"
-        },
-        "frame": "challenge",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Inaccurate but Committed",
+      "color": "green"
     },
-    "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Ride a missile to the world border.",
+      "color": "dark_green"
     },
-    "parent": "achievements:rr_challenges/new_world"
+    "icon": {
+      "id": "minecraft:barrier"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "achievements:rr_challenges/new_world"
 }

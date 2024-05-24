@@ -1,23 +1,23 @@
 #broken elytra replacing
-execute as @a[x=0,team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b}]}] at @s if predicate custom:canopy_nearyellow run tag @s add BreakEly
-execute as @a[x=0,team=Yellow,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b}]}] at @s if predicate custom:canopy_nearblue run tag @s add BreakEly
+execute as @a[x=0,team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",count:1}]}] at @s if predicate custom:canopy_nearyellow run tag @s add BreakEly
+execute as @a[x=0,team=Yellow,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",count:1}]}] at @s if predicate custom:canopy_nearblue run tag @s add BreakEly
 
-execute as @a[x=0,team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b,tag:{Damage:431}}]}] run tag @s add BreakEly
-execute as @a[x=0,team=Yellow,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",Count:1b,tag:{Damage:431}}]}] run tag @s add BreakEly
+execute as @a[x=0,team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",count:1,components:{"minecraft:damage":431}}]}] run tag @s add BreakEly
+execute as @a[x=0,team=Yellow,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",count:1,components:{"minecraft:damage":431}}]}] run tag @s add BreakEly
 
 execute as @a[x=0,tag=BreakEly] run title @s title ["",{"text":" "}]
 execute as @a[x=0,tag=BreakEly] run title @s subtitle ["",{"text":"Elytra ","color":"dark_red","italic":true,"bold":true},{"text":"expired!","color":"red"}]
 execute as @a[x=0,tag=BreakEly] at @s run playsound minecraft:entity.item.break master @s ~ ~ ~ 0.6 1
 execute as @a[x=0,tag=BreakEly] at @s run playsound minecraft:entity.bat.takeoff master @s ~ ~ ~ 0.4 1.2
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Blue,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:quartz",pattern:"minecraft:vex"},display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:3949738},HideFlags:255,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Yellow,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{Name:'[{"text":"Yellow Chestplate","color":"gold","bold":true,"italic":false}]',color:16768000},HideFlags:255,Unbreakable:1,Enchantments:[{id:"binding_curse",lvl:1}]}
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Blue,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:quartz",pattern:"minecraft:vex"},display:{Name:'[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',color:3949738},HideFlags:255,Unbreakable:1}
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Yellow,tag=BreakEly] run item replace entity @s armor.chest with leather_chestplate{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{Name:'[{"text":"Yellow Chestplate","color":"gold","bold":true,"italic":false}]',color:16768000},HideFlags:255,Unbreakable:1}
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Blue,tag=BreakEly] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:quartz",pattern:"minecraft:vex",show_in_tooltip:0b},custom_name='[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',dyed_color={rgb:3949738,show_in_tooltip:0b},unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},hide_additional_tooltip={}]
+execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Yellow,tag=BreakEly] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:spire",show_in_tooltip:0b},custom_name='[{"text":"Yellow Chestplate","color":"gold","bold":true,"italic":false}]',dyed_color={rgb:16768000,show_in_tooltip:0b},unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},hide_additional_tooltip={}]
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Blue,tag=BreakEly] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:quartz",pattern:"minecraft:vex",show_in_tooltip:0b},custom_name='[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',dyed_color={rgb:3949738,show_in_tooltip:0b},unbreakable={show_in_tooltip:0b},hide_additional_tooltip={}]
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Yellow,tag=BreakEly] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:spire",show_in_tooltip:0b},custom_name='[{"text":"Yellow Chestplate","color":"gold","bold":true,"italic":false}]',dyed_color={rgb:16768000,show_in_tooltip:0b},unbreakable={show_in_tooltip:0b},hide_additional_tooltip={}]
 tag @a[x=0,tag=BreakEly] remove BreakEly
 
 #broken trident clearing
-clear @a[x=0,team=Blue,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damage:250}}]}] trident 1
-clear @a[x=0,team=Yellow,nbt={Inventory:[{id:"minecraft:trident",Count:1b,tag:{Damage:250}}]}] trident 1
+clear @a[x=0,team=Blue,nbt={Inventory:[{id:"minecraft:trident",count:1,components:{"minecraft:damage":250}}]}] trident 1
+clear @a[x=0,team=Yellow,nbt={Inventory:[{id:"minecraft:trident",count:1,components:{"minecraft:damage":250}}]}] trident 1
 
 #trident auto riptide
 execute as @a[x=0,nbt={Inventory:[{id:"minecraft:trident"}]}] unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide

@@ -1,29 +1,29 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
-    "display": {
-        "title": {
-            "text": "Play a game",
-            "color": "light_purple"
-        },
-        "description": {
-            "text": "Play your first game of Rocket Riders.",
-            "color": "dark_green"
-        },
-        "icon": {
-            "item": "minecraft:sticky_piston"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": false,
-        "hidden": false
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Play a game",
+      "color": "light_purple"
     },
-    "criteria": {
-        "Impossible": {
-            "trigger": "minecraft:impossible"
-        }
+    "description": {
+      "text": "Play your first game of Rocket Riders.",
+      "color": "dark_green"
     },
-    "rewards": {
-        "function": "2811iaj1:play_indimension"
+    "icon": {
+      "id": "minecraft:sticky_piston"
     },
-    "parent": "2811iaj1:wait"
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "Impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "2811iaj1:play_indimension"
+  },
+  "parent": "2811iaj1:wait"
 }

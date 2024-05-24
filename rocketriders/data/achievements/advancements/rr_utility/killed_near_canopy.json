@@ -1,18 +1,18 @@
 {
-    "criteria": {
-        "requirement": {
-            "trigger": "minecraft:entity_killed_player",
-            "conditions": {
-                "player": {
-                    "nbt": "{Tags:[\"nearcanopy\"]}",
-                    "location": {
-                        "dimension": "minecraft:overworld"
-                    }
-                },
-                "entity": {
-                    "type": "minecraft:player"
-                }
-            }
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"nearcanopy\"]}",
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
+        },
+        "entity": {
+          "type": "minecraft:player"
         }
+      }
     }
+  }
 }

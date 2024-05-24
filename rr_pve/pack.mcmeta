@@ -1,7 +1,6 @@
 {
    "pack": {
-      "pack_format": 15,
-      "description": "Rocket Riders PVE Gamemode.",
-      "supported_formats": [15, 18]
+      "pack_format": 41,
+      "description": "Rocket Riders PVE Gamemode."
    }
 }

@@ -155,8 +155,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customShield] run s
 
 ##More general Canopy functionalities
 #Kill Canopy once it expires or when tnt gets near it (includes hotfix for breaking the banners and pushing the log blocks to cheat auto-decay system
-execute as @e[x=0,type=marker,tag=BluePlatform] at @s if entity @e[x=0,type=tnt,nbt={Fuse:1s},distance=..7] run tag @s add killCanopy
-execute as @e[x=0,type=marker,tag=YellowPlatform] at @s if entity @e[x=0,type=tnt,nbt={Fuse:1s},distance=..7] run tag @s add killCanopy
+execute as @e[x=0,type=marker,tag=BluePlatform] at @s if entity @e[x=0,type=tnt,nbt={fuse:1s},distance=..7] run tag @s add killCanopy
+execute as @e[x=0,type=marker,tag=YellowPlatform] at @s if entity @e[x=0,type=tnt,nbt={fuse:1s},distance=..7] run tag @s add killCanopy
 tag @e[x=0,type=marker,scores={PlatTime=300..}] add killCanopy
 execute as @e[x=0,type=marker,tag=killCanopy] at @s run scoreboard players add @s canopyExtraLogs 1
 #Hotfix for persistent leaves

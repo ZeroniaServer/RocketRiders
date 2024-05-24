@@ -1,6 +1,6 @@
 #lavasplash
-execute as @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Potion:"minecraft:awkward",CustomPotionColor:16747545}}},tag=!lavasplash] run data merge entity @s {NoGravity:1b,Motion:[0.0,0.0,0.0],Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Potion:"minecraft:awkward",CustomPotionColor:16747545,CustomPotionEffects:[{Duration:1,Id:23,Amplifier:0b,ShowParticles:0b}]}}}
-tag @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Potion:"minecraft:awkward",CustomPotionColor:16747545,CustomPotionEffects:[{Duration:1,Id:23,Amplifier:0b,ShowParticles:0b}]}}},tag=!lavasplash] add lavasplash
+execute as @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Potion:"minecraft:awkward",CustomPotionColor:16747545}}},tag=!lavasplash] run data merge entity @s {NoGravity:1b,Motion:[0.0,0.0,0.0],Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Potion:"minecraft:awkward",CustomPotionColor:16747545,custom_potion_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}}
+tag @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",Count:1b,tag:{Potion:"minecraft:awkward",CustomPotionColor:16747545,custom_potion_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}},tag=!lavasplash] add lavasplash
 execute as @e[x=0,type=potion,tag=lavasplash,tag=!motioned] at @s as @p[scores={ThrowSplash=1..}] at @s anchored eyes run tp @e[x=0,type=potion,tag=lavasplash,tag=!motioned] @s
 execute as @e[x=0,type=potion,tag=lavasplash,tag=!motioned] run function everytick:projectile
 tag @e[x=0,type=potion,tag=lavasplash,tag=!motioned] add motioned
@@ -14,7 +14,7 @@ execute if score lavasplash splashtick matches 1 as @e[x=0,type=potion,tag=lavas
 execute if score lavasplash splashtick matches 2 as @e[x=0,type=potion,tag=lavasplash] run data merge entity @s {Air:1}
 execute if score lavasplash splashtick matches 2 run scoreboard players set lavasplash splashtick 0
 
-execute as @e[x=0,type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:1,Id:23,Amplifier:0b}],Potion:"minecraft:awkward"},tag=!lavasplash] run data merge entity @s {Duration:2000000,Radius:0,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Tags:["lavasplash","lavasplash_alone","SmartClearAECsplash"],Particle:"block air"}
+execute as @e[x=0,type=area_effect_cloud,nbt={effects:[{ambient:0b,show_icon:0b,show_particles:0b,duration:1,id:"minecraft:saturation",amplifier:0b}],Potion:"minecraft:awkward"},tag=!lavasplash] run data merge entity @s {Duration:2000000,Radius:0,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Tags:["lavasplash","lavasplash_alone","SmartClearAECsplash"],Particle:"block air"}
 
 #Kill if near spawnpoints
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s

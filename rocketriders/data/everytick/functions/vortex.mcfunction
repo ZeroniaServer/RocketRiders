@@ -73,7 +73,7 @@ scoreboard players set @e[x=0,type=marker,tag=Vortex,scores={vortexBoom=1}] vort
 execute as @e[x=0,type=marker,tag=Vortex] at @s unless block ~ ~ ~ #custom:air unless block ~ ~ ~ moving_piston unless block ~ ~ ~ nether_portal run tag @s add originboom
 execute as @e[x=0,type=arrow] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[x=0,type=trident] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
-execute as @e[x=0,type=tnt,nbt={Fuse:2s}] at @s run tag @e[type=marker,tag=Vortex,distance=..5,limit=1] add originboom
+execute as @e[x=0,type=tnt,nbt={fuse:2s}] at @s run tag @e[type=marker,tag=Vortex,distance=..5,limit=1] add originboom
 execute as @e[x=0,type=firework_rocket,tag=BlueNova] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[x=0,type=armor_stand,tag=bluenovatracker] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[x=0,type=firework_rocket,tag=YellowNova] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom

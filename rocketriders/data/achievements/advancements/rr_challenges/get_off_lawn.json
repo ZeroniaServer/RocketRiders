@@ -10,7 +10,7 @@
             "color": "dark_green"
         },
         "icon": {
-            "item": "minecraft:grass"
+            "item": "minecraft:short_grass"
         },
         "frame": "goal",
         "show_toast": true,

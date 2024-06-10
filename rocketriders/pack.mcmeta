@@ -1,17 +1,17 @@
 {
   "pack": {
-    "pack_format": 41,
+    "pack_format": 47,
     "description": "Rocket Riders Core Datapack."
   },
   "filter": {
     "block": [
       {
         "namespace": "^minecraft$",
-        "path": "recipes/.*"
+        "path": "recipe/.*"
       },
       {
         "namespace": "^minecraft$",
-        "path": "advancements/.*"
+        "path": "advancement/.*"
       }
     ]
   }

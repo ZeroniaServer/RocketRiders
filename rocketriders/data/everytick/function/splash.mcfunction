@@ -19,7 +19,7 @@ execute if score splash splashtick matches 2 as @e[x=0,type=potion,tag=splash] r
 execute if score splash splashtick matches 2 run scoreboard players set splash splashtick 0
 
 ##Placing water upon impact
-execute as @e[x=0,type=area_effect_cloud,nbt={effects:[{ambient:0b,show_icon:0b,show_particles:0b,duration:1,id:"minecraft:saturation",amplifier:0b}],Potion:"minecraft:water"},tag=!splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["splash","splash_alone","SmartClearAECsplash"],Particle:"block air"}
+execute as @e[x=0,type=area_effect_cloud,nbt={effects:[{ambient:0b,show_icon:0b,show_particles:0b,duration:1,id:"minecraft:saturation",amplifier:0b}],Potion:"minecraft:water"},tag=!splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["splash","splash_alone","SmartClearAECsplash"],Particle:{type:"block",block_state:"minecraft:air"}}
 #Kill if near spawnpoints
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s

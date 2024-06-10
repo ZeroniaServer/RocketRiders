@@ -1,4 +1,0 @@
-- function: rr_powerups:items/powerup/rng
-  - tag_references:
-    - line: 17
-      - path: {Item: {id: "minecraft:lingering_potion", tag: {Potion: "minecraft:awkward", CustomPotionColor: 16747545}}}

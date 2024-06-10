@@ -1,8 +1,0 @@
-- function: rr_swap:items/darkbluededuct
-  - tag_references:
-    - line: 8
-      - path: {Item: {id: "minecraft:egg", tag: {icbm: 1b}}}
-- function: rr_swap:items/lightbluededuct
-  - tag_references:
-    - line: 8
-      - path: {Item: {id: "minecraft:egg", tag: {icbm: 1b}}}

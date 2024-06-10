@@ -23,8 +23,8 @@ execute as @e[x=0,type=marker,tag=rngSelected,tag=rngMissile] run function items
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngUtil] run function items:util/rng
 
 ##If Surprise Egg is picked
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:squid_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:cod_spawn_egg"}} run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if items entity @s contents squid_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if items entity @s contents cod_spawn_egg run function items:deduct
 
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] run function items:full_hotbar
 

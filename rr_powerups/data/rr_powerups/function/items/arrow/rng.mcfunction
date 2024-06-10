@@ -5,7 +5,7 @@ summon marker 0 0 0 {Tags:["rngSlowArrow","rng2"]}
 tag @e[x=0,type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 
 #> Prevent arrow duplication glitches
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:tipped_arrow"}} run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=item] if items entity @s contents tipped_arrow run function rr_powerups:items/deduct
 
 function items:full_hotbar
 

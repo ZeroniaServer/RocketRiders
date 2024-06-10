@@ -15,16 +15,16 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngGemi,tag=!givenGe
 tag @e[x=0,type=marker,tag=rng3,sort=random,limit=1] add rngSelected
 
 #> Kill items to prevent duplication glitches
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:bat_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:dolphin_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngBlade] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:husk_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:cave_spider_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngEguard] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:elder_guardian_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:phantom_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSlash] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:shulker_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:creeper_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngCitadel] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:wandering_trader_spawn_egg"}} run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngGemi] as @e[x=0,type=item] if data entity @s {Item:{id:"minecraft:fox_spawn_egg"}} run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @e[x=0,type=item] if items entity @s contents bat_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @e[x=0,type=item] if items entity @s contents dolphin_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngBlade] as @e[x=0,type=item] if items entity @s contents husk_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @e[x=0,type=item] if items entity @s contents cave_spider_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngEguard] as @e[x=0,type=item] if items entity @s contents elder_guardian_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @e[x=0,type=item] if items entity @s contents phantom_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSlash] as @e[x=0,type=item] if items entity @s contents shulker_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @e[x=0,type=item] if items entity @s contents creeper_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngCitadel] as @e[x=0,type=item] if items entity @s contents wandering_trader_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngGemi] as @e[x=0,type=item] if items entity @s contents fox_spawn_egg run function items:deduct
 
 function items:full_hotbar
 

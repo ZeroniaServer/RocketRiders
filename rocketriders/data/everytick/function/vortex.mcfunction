@@ -5,7 +5,7 @@
 #########################################
 
 ##Identify egg as a Vortex & apply custom name to the egg
-execute as @e[x=0,type=egg] unless data entity @s {Item:{tag:{CustomModelData:3}}} run function everytick:vortex_owner
+execute as @e[x=0,type=egg] unless items entity @s contents egg[custom_model_data=3] run function everytick:vortex_owner
 
 ##Vortex deployment (both teams)
 execute as @e[x=0,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]

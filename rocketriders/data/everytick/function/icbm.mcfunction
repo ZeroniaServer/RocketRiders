@@ -1,5 +1,5 @@
 ##Identify egg as ICBM
-execute as @e[x=0,type=egg] if data entity @s {Item:{tag:{icbm:1b}}} run function everytick:icbm_owner
+execute as @e[x=0,type=egg] if items entity @s contents egg[custom_data~{icbm:1b}] run function everytick:icbm_owner
 
 #Thanks iRobo for the ICBM algorithm!
 #Track ICBMs with IDs and summon trackers recursively

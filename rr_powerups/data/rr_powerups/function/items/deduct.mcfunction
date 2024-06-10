@@ -1,5 +1,5 @@
-##Reduces this item's Count by 1 (plus some extra checks for stackables)
-execute store result score @s CmdData run data get entity @s Item.Count
+##Reduces this item's count by 1 (plus some extra checks for stackables)
+execute store result score @s CmdData run data get entity @s Item.count
 execute store result score $tempuuid playerUUID run data get entity @s Thrower[0]
 execute if entity @e[x=0,type=marker,scores={capturePoint=1}] run tag @a[x=0,team=Blue,predicate=custom:matches_uuid] add correctTeam
 execute if entity @e[x=0,type=marker,scores={capturePoint=2}] run tag @a[x=0,team=Yellow,predicate=custom:matches_uuid] add correctTeam
@@ -11,7 +11,7 @@ execute if entity @s[nbt={Item:{id:"minecraft:tipped_arrow"}}] if entity @a[x=0,
 #Actually reducing count
 execute if entity @a[x=0,tag=correctTeam] unless entity @s[nbt={Item:{id:"minecraft:tipped_arrow"}}] run scoreboard players remove @s CmdData 1
 scoreboard players set @s[scores={CmdData=..-1}] CmdData 0
-execute store result entity @s Item.Count byte 1 run scoreboard players get @s CmdData
+execute store result entity @s Item.count byte 1 run scoreboard players get @s CmdData
 tag @a[x=0,tag=correctTeam] add itemDeducted
 tag @a[x=0,tag=correctTeam,tag=fullHotbar] add wasFullHotbar
 scoreboard players reset $tempuuid playerUUID

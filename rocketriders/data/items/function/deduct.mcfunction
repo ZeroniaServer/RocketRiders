@@ -1,5 +1,5 @@
-##Reduces this item's Count by 1 (plus some extra checks for stackables)
-execute store result score @s CmdData run data get entity @s Item.Count
+##Reduces this item's count by 1 (plus some extra checks for stackables)
+execute store result score @s CmdData run data get entity @s Item.count
 execute store result score $tempuuid playerUUID run data get entity @s Thrower[0]
 
 #Extra for arrows since they replenish to 4
@@ -19,7 +19,7 @@ execute if entity @s[nbt={Item:{id:"minecraft:cod_spawn_egg"}}] run scoreboard p
 #Actually reducing count
 execute unless entity @s[nbt={Item:{id:"minecraft:arrow"}}] unless entity @s[nbt={Item:{id:"minecraft:ender_pearl"}}] unless entity @s[nbt={Item:{id:"minecraft:cod_spawn_egg"}}] unless entity @s[nbt={Item:{id:"minecraft:squid_spawn_egg"}}] run scoreboard players remove @s CmdData 1
 scoreboard players set @s[scores={CmdData=..-1}] CmdData 0
-execute store result entity @s Item.Count byte 1 run scoreboard players get @s CmdData
+execute store result entity @s Item.count byte 1 run scoreboard players get @s CmdData
 tag @a[x=0,predicate=custom:matches_uuid] add itemDeducted
 tag @a[x=0,predicate=custom:matches_uuid,tag=fullHotbar] add wasFullHotbar
 scoreboard players reset $tempuuid playerUUID

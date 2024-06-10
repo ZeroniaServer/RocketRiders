@@ -27,14 +27,6 @@
           "modifiers": [],
           "show_in_tooltip": false
         },
-        "minecraft:can_break": {
-          "predciates": [],
-          "show_in_tooltip": false
-        },
-        "minecraft:can_place_on": {
-          "predciates": [],
-          "show_in_tooltip": false
-        },
         "minecraft:hide_additional_tooltip": {}
       }
     },

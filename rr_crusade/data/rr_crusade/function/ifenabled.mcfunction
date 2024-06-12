@@ -14,7 +14,7 @@ function rr_crusade:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_crusade:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_crusade:game/gameend
 execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
-function everytick:no_drop
+execute as @e[x=0,type=item] run function everytick:no_drop
 
 #Arrow pickup
 execute if entity @s[tag=!GameEnd] if entity @e[x=0,type=arrow] run function rr_crusade:game/arrow_pickup

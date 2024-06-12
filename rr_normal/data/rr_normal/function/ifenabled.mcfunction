@@ -10,7 +10,7 @@ execute unless entity @s[tag=SMCustom] run function rr_normal:tip
 function rr_normal:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_normal:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_normal:game/gameend
-function everytick:no_drop
+execute as @e[x=0,type=item] run function everytick:no_drop
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function rr_normal:arenaclear/baseplacement

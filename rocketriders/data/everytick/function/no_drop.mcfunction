@@ -1,17 +1,15 @@
 ##Utility function for handling item dropping
 
 #Kills books
-kill @e[x=0,type=item,nbt={Item:{id:"minecraft:written_book",components:{"minecraft:custom_data":{navbook:1b}}}}]
+execute if items entity @s contents written_book[custom_data~{navbook:1b}] run kill
 #Kills parkour controls
-kill @e[x=0,type=item,nbt={Item:{id:"minecraft:barrier"}}]
-kill @e[x=0,type=item,nbt={Item:{id:"minecraft:clock"}}]
-kill @e[x=0,type=item,nbt={Item:{id:"minecraft:compass"}}]
+execute if items entity @s contents barrier run kill
+execute if items entity @s contents clock run kill
+execute if items entity @s contents compass run kill
 
 #Process individual items
-execute as @e[x=0,type=item] unless entity @s[type=item,nbt={Item:{components:{"minecraft:custom_data":{Droppable:1b}}}}] run function everytick:no_drop_process
-
-#Kills items after a while
-execute as @e[x=0,type=item,nbt={Age:30s}] unless entity @s[nbt={Item:{components:{"minecraft:custom_data":{Droppable:1b}}}}] run kill @s
+execute unless items entity @s contents *[custom_data~{Droppable:1b}] run function everytick:no_drop_process
 
 #Item blastproof tag
-execute as @e[x=0,type=item,nbt={Item:{components:{"minecraft:custom_data":{BlastProof:1b}}}}] run data merge entity @s {Invulnerable:1b}
+execute if items entity @s[tag=!bp] contents *[custom_data~{BlastProof:1b}] run data merge entity @s {Invulnerable:1b}
+execute if items entity @s contents *[custom_data~{BlastProof:1b}] run tag @s add bp

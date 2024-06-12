@@ -4,7 +4,7 @@ clear @a[x=0,team=Yellow] #custom:clear
 clear @a[x=0,team=Yellow] crossbow[custom_data={nova:1b}]
 
 #Replacing Shooting Sabers
-execute if entity @s[scores={endtimer=1}] run kill @e[x=0,type=item,nbt={Item:{id:"minecraft:bow"}}]
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents bow run kill
 execute if entity @s[scores={endtimer=1}] as @a[x=0,scores={crusadekit=2}] unless entity @s[team=!Blue,team=!Yellow] run clear @s bow
 execute if entity @s[tag=BothWon,scores={endtimer=1}] run give @a[x=0,team=Yellow,scores={crusadekit=2}] minecraft:bow[custom_name='{"translate":"Shooting Saber","color":"gold","bold":true,"italic":false}',lore=['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}'],unbreakable={show_in_tooltip:0b},enchantments={flame:1,sharpness:4}]
 execute if entity @s[tag=BothWon,scores={endtimer=1}] run give @a[x=0,team=Blue,scores={crusadekit=2}] minecraft:bow[custom_name='{"translate":"Shooting Saber","color":"blue","bold":true,"italic":false}',lore=['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}'],unbreakable={show_in_tooltip:0b},enchantments={flame:1,sharpness:4}]
@@ -14,7 +14,7 @@ execute if entity @s[tag=BlueWon,scores={endtimer=1}] run give @a[x=0,team=Blue,
 execute if entity @s[tag=BlueWon,scores={endtimer=1}] run give @a[x=0,team=Yellow,scores={crusadekit=2}] minecraft:bow[custom_name='{"translate":"Shooting Saber","color":"gold","bold":true,"italic":false}',lore=['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks"}'],unbreakable={show_in_tooltip:0b},enchantments={flame:1}]
 
 #Replacing Fire Wands
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item,nbt={Item:{id:"minecraft:blaze_rod"}}] run function items:killendweapon
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents blaze_rod run function items:killendweapon
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] run clear @a[x=0,team=Blue,scores={crusadekit=3}] blaze_rod
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] run give @a[x=0,team=Blue,scores={crusadekit=3}] minecraft:blaze_rod[custom_model_data=1,unbreakable={},custom_name='[{"text":"Fire Wand","italic":false,"bold":true,"color":"blue"}]',lore=['[{"translate":"A special wand, made to"}]','[{"translate":"set enemies on fire!"}]'],enchantments={fire_aspect:2}]
 execute if entity @s[tag=BlueWon,scores={endtimer=1}] run clear @a[x=0,team=Yellow,scores={crusadekit=3}] blaze_rod

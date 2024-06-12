@@ -2,7 +2,7 @@ clear @a[x=0,team=Blue] #custom:clear
 clear @a[x=0,team=Blue] crossbow[custom_data={nova:1b}]
 clear @a[x=0,team=Yellow] #custom:clear
 clear @a[x=0,team=Yellow] crossbow[custom_data={nova:1b}]
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item,nbt={Item:{id:"minecraft:netherite_pickaxe"}}] run function items:killendweapon
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents netherite_pickaxe run function items:killendweapon
 execute if entity @s[scores={endtimer=1},tag=BlueWon] run clear @a[x=0,team=Yellow] netherite_pickaxe
 execute if entity @s[scores={endtimer=1},tag=BlueWon] run give @a[x=0,team=Yellow] minecraft:netherite_pickaxe[custom_name='{"translate":"Piercing Pickaxe","color":"gold","bold":true,"italic":false}',lore=['{"translate":"A tool used both for"}','{"translate":"mining and melee attacks."}'],unbreakable={show_in_tooltip:0b},enchantments={levels:{unbreaking:4},show_in_tooltip:0b},attribute_modifiers={modifiers:[{operation:"add_value",type:"generic.attack_speed",amount:-2.2d,slot:"mainhand",name:"generic.attack_speed",uuid:[I;346953296,-1115273365,-1997860529,1241626160]}],show_in_tooltip:0b}]
 execute if entity @s[scores={endtimer=1},tag=YellowWon] run clear @a[x=0,team=Blue] netherite_pickaxe

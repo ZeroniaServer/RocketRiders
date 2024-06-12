@@ -33,7 +33,7 @@ execute if entity @s[scores={SDtime=1}] at @s run clear @a[x=0] firework_rocket
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] resistance
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] weakness
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] regeneration
-execute if entity @s[scores={SDtime=1},tag=!noSabers] as @e[x=0,type=item,nbt={Item:{id:"minecraft:bow"}}] run function items:killendweapon
+execute if entity @s[scores={SDtime=1},tag=!noSabers] as @e[x=0,type=item] if items entity @s contents bow run function items:killendweapon
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst,tag=!noSabers] run clear @a[x=0,team=Yellow] bow
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst,tag=!noSabers] as @a[x=0,team=Yellow] run function game:saberyellow
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] run clear @a[x=0,team=Blue] bow

@@ -11,7 +11,7 @@ function rr_sandbox:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_sandbox:game/ingame
 execute if entity @s[scores={SDtime=1}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run function rr_sandbox:items/givenomicon
 execute if entity @s[tag=GameEnd] run function rr_sandbox:game/gameend
-function everytick:no_drop
+execute as @e[x=0,type=item] run function everytick:no_drop
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function rr_sandbox:arenaclear/baseplacement

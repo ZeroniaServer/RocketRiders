@@ -38,7 +38,7 @@ execute if score $infinity powerupcount matches 20.. if score $infinity PowerupD
 execute if score $infinity powerupcount matches 20.. run scoreboard players set $infinity powerupcount 0
 execute if score $infinity PowerupDisplay matches 0 as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 1 1.5
 execute if score $infinity PowerupDisplay matches 0 as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run clear @s bow
-execute if score $infinity PowerupDisplay matches 0 as @e[x=0,type=item,nbt={Item:{id:"minecraft:bow"}}] run function rr_powerups:items/killinfinitysaber
+execute if score $infinity PowerupDisplay matches 0 as @e[x=0,type=item] if items entity @s contents bow run function rr_powerups:items/killinfinitysaber
 execute if score $infinity PowerupDisplay matches 0 as @a[x=0,team=Yellow,tag=Infinity] run function game:saberyellow
 execute if score $infinity PowerupDisplay matches 0 as @a[x=0,team=Blue,tag=Infinity] run function game:saberblue
 execute if score $infinity PowerupDisplay matches 0 as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar [{"text":"Infinity Saber expired.","color":"red"}]

@@ -10,7 +10,7 @@ execute unless entity @s[tag=SMCustom] run function rr_powerups:tip
 function rr_powerups:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_powerups:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_powerups:game/gameend
-function everytick:no_drop
+execute as @e[x=0,type=item] run function everytick:no_drop
 execute if entity @e[x=0,type=arrow,tag=!GameEnd] run function rr_powerups:everytick/tipped_arrow_pickup
 
 #reset

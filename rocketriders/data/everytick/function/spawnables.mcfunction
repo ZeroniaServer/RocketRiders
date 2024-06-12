@@ -13,7 +13,7 @@ execute unless entity @s[tag=runshields] if entity @e[x=0,type=marker,tag=PlaceB
 execute if entity @s[tag=runshields] run function everytick:shields
 tag @s[tag=runshields] remove runshields
 
-execute unless entity @s[tag=runvortex] if entity @e[x=0,type=egg,nbt={Item:{components:{"minecraft:custom_data":{icbm:0b}}}}] run tag @s add runvortex
+execute unless entity @s[tag=runvortex] if entity @e[x=0,type=egg,predicate=!custom:is_icbm] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[x=0,type=marker,tag=Vortex] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[x=0,type=armor_stand,tag=VortexItem] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[x=0,type=chicken] run tag @s add runvortex
@@ -66,7 +66,7 @@ tag @s[tag=runfireball] remove runfireball
 
 function everytick:splash
 
-execute unless entity @s[tag=runicbm] if entity @e[x=0,type=egg,nbt={Item:{components:{"minecraft:custom_data":{icbm:1b}}}}] run tag @s add runicbm
+execute unless entity @s[tag=runicbm] if entity @e[x=0,type=egg,predicate=custom:is_icbm] run tag @s add runicbm
 execute unless entity @s[tag=runicbm] if entity @e[x=0,type=marker,tag=ICBMtracker] run tag @s add runicbm
 execute unless entity @s[tag=runicbm] if entity @a[x=0,scores={respawn=1..},tag=UtilKilled] run tag @s add runicbm
 execute if entity @s[tag=runicbm] run function everytick:icbm

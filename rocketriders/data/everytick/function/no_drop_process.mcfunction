@@ -7,3 +7,5 @@ scoreboard players operation $tempuuid playerUUID = @s playerUUID
 execute if entity @a[x=0,team=!Spectator,predicate=custom:matches_uuid] at @a[x=0,team=!Spectator,predicate=custom:matches_uuid,limit=1] run tp @s ~ ~ ~
 scoreboard players reset $tempuuid playerUUID
 tag @s[tag=!processed] add processed
+scoreboard players add @s CmdData 1
+kill @s[scores={CmdData=30..}]

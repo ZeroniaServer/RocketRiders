@@ -1,19 +1,10 @@
 #lavasplash
-execute as @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:awkward",custom_color:16747545}}}},tag=!lavasplash] run data merge entity @s {NoGravity:1b,Motion:[0.0d,0.0d,0.0d],Item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:awkward",custom_color:16747545,custom_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}}}
-tag @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:awkward",custom_color:16747545,custom_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}}},tag=!lavasplash] add lavasplash
-execute as @e[x=0,type=potion,tag=lavasplash,tag=!motioned] at @s as @p[scores={ThrowSplash=1..}] at @s anchored eyes run tp @e[x=0,type=potion,tag=lavasplash,tag=!motioned] @s
-execute as @e[x=0,type=potion,tag=lavasplash,tag=!motioned] run function everytick:projectile
-tag @e[x=0,type=potion,tag=lavasplash,tag=!motioned] add motioned
+execute as @e[x=0,type=potion,tag=!lavasplash] if items entity @s contents lingering_potion[minecraft:potion_contents~{potion:"minecraft:awkward",custom_color:16747545}] run function rr_powerups:everytick/lava_splash_init
 execute as @e[x=0,type=potion,tag=lavasplash] at @s if score $dust CmdData matches 1 run particle lava ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @a[x=0,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash
-
-#thanks @Maxaxik for this fix!!! makes animations smoother
-scoreboard players add lavasplash splashtick 1
-execute if score lavasplash splashtick matches 1 as @e[x=0,type=potion,tag=lavasplash] run data merge entity @s {Air:0}
-execute if score lavasplash splashtick matches 2 as @e[x=0,type=potion,tag=lavasplash] run data merge entity @s {Air:1}
-execute if score lavasplash splashtick matches 2 run scoreboard players set lavasplash splashtick 0
-
+execute store success score $lavasplash splashtick if score $lavasplash splashtick matches 0
+execute store result entity @s Air short 1 run scoreboard players get $lavasplash splashtick
 execute as @e[x=0,type=area_effect_cloud,nbt={effects:[{ambient:0b,show_icon:0b,show_particles:0b,duration:1,id:"minecraft:saturation",amplifier:0b}],Potion:"minecraft:awkward"},tag=!lavasplash] run data merge entity @s {Duration:2000000,Radius:0,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Tags:["lavasplash","lavasplash_alone","SmartClearAECsplash"],Particle:{type:"block",block_state:"minecraft:air"}}
 
 #Kill if near spawnpoints

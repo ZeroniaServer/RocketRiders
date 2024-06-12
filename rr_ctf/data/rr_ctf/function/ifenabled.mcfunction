@@ -11,7 +11,7 @@ function rr_ctf:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_ctf:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_ctf:game/gameend
 # function rr_ctf:everytick/pickaxefix
-function everytick:no_drop
+execute as @e[x=0,type=item] run function everytick:no_drop
 
 #pregame
 execute if entity @s[tag=!GameStarted,tag=EditedSettings] positioned -90 202 95 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass

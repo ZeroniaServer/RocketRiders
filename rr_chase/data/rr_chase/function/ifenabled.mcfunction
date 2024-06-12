@@ -11,7 +11,7 @@ function rr_chase:game/gamestart
 execute if entity @s[tag=GameStarted] run function rr_chase:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_chase:game/gameend
 execute as @a[x=0,team=!Blue,scores={ArmorColor=1..}] run scoreboard players reset @s ArmorColor
-function everytick:no_drop
+execute as @e[x=0,type=item] run function everytick:no_drop
 
 #disable yellow
 tag @a[x=0] remove JoinYellow

@@ -8,10 +8,10 @@ give @s[tag=!Infinity] minecraft:bow[custom_name='{"translate":"Infinity Saber",
 tag @s[tag=!Infinity] add needsArrow
 tag @s[tag=needsArrow] add Infinity
 execute if entity @s[tag=needsArrow] store result score @s HasArrows run clear @s arrow 0
-execute if entity @s[tag=needsArrow,scores={HasArrows=0}] as @e[x=0,type=item,nbt={Item:{id:"minecraft:arrow"}}] run function rr_powerups:items/deductarrow
+execute if entity @s[tag=needsArrow,scores={HasArrows=0}] as @e[x=0,type=item] if items entity @s contents arrow run function rr_powerups:items/deductarrow
 tag @s[tag=needsArrow,tag=!itemDeducted,scores={HasArrows=0}] add DelayActionbar
 execute if entity @s[tag=needsArrow,scores={HasArrows=0}] run function items:util/givearrows
-execute if entity @s[tag=needsArrow] as @e[x=0,type=item,nbt={Item:{id:"minecraft:bow"}}] run function rr_powerups:items/killinfinitysaber
+execute if entity @s[tag=needsArrow] as @e[x=0,type=item] if items entity @s contents bow run function rr_powerups:items/killinfinitysaber
 tag @s remove needsArrow
 tag @e[x=0,type=armor_stand,tag=Selection,tag=tetrisTime] add givenInfinity
 scoreboard players set $infinity PowerupDisplay 30

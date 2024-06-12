@@ -4,19 +4,12 @@
 ######################################
 
 ##Splash projectile motion/effects
-execute as @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:water"}}}},tag=!splash] run data merge entity @s {NoGravity:1b,Motion:[0.0d,0.0d,0.0d],Item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:water",custom_color:3237342,custom_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}}}
-tag @e[x=0,type=potion,nbt={Item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:water",custom_color:3237342,custom_effects:[{duration:1,id:"minecraft:saturation",amplifier:0b,show_particles:0b}]}}}},tag=!splash] add splash
-execute as @e[x=0,type=potion,tag=splash,tag=!motioned] at @s as @p[scores={ThrowSplash=1..}] at @s anchored eyes run tp @e[x=0,type=potion,tag=splash,tag=!motioned] @s
-execute as @e[x=0,type=potion,tag=splash,tag=!motioned] run function everytick:projectile
-tag @e[x=0,type=potion,tag=splash,tag=!motioned] add motioned
+execute as @e[x=0,type=potion,tag=!splash] if items entity @s contents lingering_potion[potion_contents~{potion:"minecraft:water"}] run function everytick:splash_init
 execute as @e[x=0,type=potion,tag=splash] at @s if score $dust CmdData matches 1 run particle splash ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @a[x=0,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash
-#Thanks @Maxaxik for this fix!!! Makes animations smoother
-scoreboard players add splash splashtick 1
-execute if score splash splashtick matches 1 as @e[x=0,type=potion,tag=splash] run data merge entity @s {Air:0}
-execute if score splash splashtick matches 2 as @e[x=0,type=potion,tag=splash] run data merge entity @s {Air:1}
-execute if score splash splashtick matches 2 run scoreboard players set splash splashtick 0
+execute store success score $splash splashtick if score $splash splashtick matches 0
+execute store result entity @s Air short 1 run scoreboard players get $splash splashtick
 
 ##Placing water upon impact
 execute as @e[x=0,type=area_effect_cloud,nbt={effects:[{ambient:0b,show_icon:0b,show_particles:0b,duration:1,id:"minecraft:saturation",amplifier:0b}],Potion:"minecraft:water"},tag=!splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["splash","splash_alone","SmartClearAECsplash"],Particle:{type:"block",block_state:"minecraft:air"}}

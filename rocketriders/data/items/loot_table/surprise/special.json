@@ -18,12 +18,7 @@
                   "function": "minecraft:set_components",
                   "components": {
                     "minecraft:custom_model_data": 1,
-                    "minecraft:enchantments": {
-                      "levels": {
-                        "minecraft:unbreaking": 1
-                      },
-                      "show_in_tooltip": false
-                    },
+                    "minecraft:enchantment_glint_override": true,
                     "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]",
                     "minecraft:lore": [
                       "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
@@ -35,10 +30,6 @@
                         "surprising",
                         "missile"
                       ]
-                    },
-                    "minecraft:attribute_modifiers": {
-                      "modifiers": [],
-                      "show_in_tooltip": false
                     }
                   }
                 }
@@ -65,12 +56,7 @@
                   "function": "minecraft:set_components",
                   "components": {
                     "minecraft:custom_model_data": 1,
-                    "minecraft:enchantments": {
-                      "levels": {
-                        "minecraft:unbreaking": 1
-                      },
-                      "show_in_tooltip": false
-                    },
+                    "minecraft:enchantment_glint_override": true,
                     "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]",
                     "minecraft:lore": [
                       "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
@@ -82,10 +68,6 @@
                         "surprising",
                         "missile"
                       ]
-                    },
-                    "minecraft:attribute_modifiers": {
-                      "modifiers": [],
-                      "show_in_tooltip": false
                     }
                   }
                 }

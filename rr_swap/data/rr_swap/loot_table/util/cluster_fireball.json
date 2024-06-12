@@ -15,12 +15,7 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": 2,
-                "minecraft:enchantments": {
-                  "levels": {
-                    "minecraft:unbreaking": 1
-                  },
-                  "show_in_tooltip": false
-                },
+                "minecraft:enchantment_glint_override": true,
                 "minecraft:custom_name": "[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Cluster Fireball\",\"color\":\"gold\",\"bold\":true}]",
                 "minecraft:lore": [
                   "{\"text\":\"Spawns a cluster of Fireballs. Punch or\",\"color\":\"gray\"}",
@@ -33,10 +28,6 @@
                     "YellowFireball",
                     "Cluster"
                   ]
-                },
-                "minecraft:attribute_modifiers": {
-                  "modifiers": [],
-                  "show_in_tooltip": false
                 }
               }
             }
@@ -63,12 +54,7 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": 2,
-                "minecraft:enchantments": {
-                  "levels": {
-                    "minecraft:unbreaking": 1
-                  },
-                  "show_in_tooltip": false
-                },
+                "minecraft:enchantment_glint_override": true,
                 "minecraft:custom_name": "[{\"text\":\"[Utility] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Cluster Fireball\",\"color\":\"blue\",\"bold\":true}]",
                 "minecraft:lore": [
                   "{\"text\":\"Spawns a cluster of Fireballs. Punch or\",\"color\":\"gray\"}",
@@ -81,10 +67,6 @@
                     "BlueFireball",
                     "Cluster"
                   ]
-                },
-                "minecraft:attribute_modifiers": {
-                  "modifiers": [],
-                  "show_in_tooltip": false
                 }
               }
             }

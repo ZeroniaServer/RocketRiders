@@ -12,20 +12,11 @@
     "icon": {
       "id": "minecraft:lingering_potion",
       "components": {
-        "minecraft:enchantments": {
-          "levels": {
-            "minecraft:unbreaking": 1
-          },
-          "show_in_tooltip": false
-        },
+        "minecraft:enchantment_glint_override": true,
         "minecraft:potion_contents": {
           "custom_effects": [],
           "potion": "minecraft:awkward",
           "custom_color": 16747545
-        },
-        "minecraft:attribute_modifiers": {
-          "modifiers": [],
-          "show_in_tooltip": false
         },
         "minecraft:hide_additional_tooltip": {}
       }

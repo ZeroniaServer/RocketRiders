@@ -19,5 +19,5 @@ execute positioned -36 214 15 if block ~ ~ ~ lever[powered=false] run setblock -
 execute positioned -37 214 141 if block ~ ~ ~ lever[powered=true] run setblock -37 212 144 white_concrete
 execute positioned -37 214 141 if block ~ ~ ~ lever[powered=false] run setblock -37 212 144 redstone_block
 
-execute as @a[x=0,team=Lobby,nbt={SelectedItem:{id:"minecraft:dandelion"}}] run tellraw @s [{"text":"don't steal the flowers :(","color":"red"}]
-execute as @a[x=0,team=Lobby,nbt={SelectedItem:{id:"minecraft:blue_orchid"}}] run tellraw @s [{"text":"don't steal the flowers :(","color":"red"}]
+execute as @a[x=0,team=Lobby] if items entity @s weapon.mainhand dandelion run tellraw @s [{"text":"don't steal the flowers :(","color":"red"}]
+execute as @a[x=0,team=Lobby] if items entity @s weapon.mainhand blue_orchid run tellraw @s [{"text":"don't steal the flowers :(","color":"red"}]

@@ -5,10 +5,10 @@
 
 execute store result score @s invCount if data entity @s Inventory[]
 #Doesn't count armor
-scoreboard players remove @s[nbt={Inventory:[{Slot:103b}]}] invCount 1
-scoreboard players remove @s[nbt={Inventory:[{Slot:102b}]}] invCount 1
-scoreboard players remove @s[nbt={Inventory:[{Slot:101b}]}] invCount 1
-scoreboard players remove @s[nbt={Inventory:[{Slot:100b}]}] invCount 1
+execute if items entity @s armor.head * run scoreboard players remove @s invCount 1
+execute if items entity @s armor.chest * run scoreboard players remove @s invCount 1
+execute if items entity @s armor.legs * run scoreboard players remove @s invCount 1
+execute if items entity @s armor.feet * run scoreboard players remove @s invCount 1
 #Includes items thrown by the player
 execute if entity @e[x=0,type=item] run scoreboard players operation $tempuuid playerUUID = @s playerUUID
 execute if entity @e[x=0,type=item] as @e[x=0,type=item] store result score @s playerUUID run data get entity @s Thrower[0]

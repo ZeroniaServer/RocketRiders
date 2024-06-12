@@ -5,4 +5,5 @@ execute if entity @s[tag=!given,nbt={custom_potion_effects:[{id:"minecraft:slown
 execute if entity @s[tag=!given,nbt={custom_potion_effects:[{id:"minecraft:wither"}]}] run item replace entity @p[team=!Spectator,distance=..2,tag=!fullOffhand] weapon.offhand with minecraft:tipped_arrow[custom_name='{"text":"Wither Arrow","color":"dark_purple","italic":true,"bold":true}',potion_contents={custom_effects:[{id:"minecraft:wither",amplifier:2b,duration:150,show_particles:1b}],custom_color:4008735},hide_additional_tooltip={}] 1
 execute if entity @s[tag=!given] as @p[team=!Spectator,distance=..2,tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 tag @s add given
-tag @a[x=0,nbt={Inventory:[{Slot:-106b}]}] add fullOffhand
+tag @a[x=0] remove fullOffhand
+execute as @a[x=0] if items entity @s weapon.offhand * run tag @s add fullOffhand

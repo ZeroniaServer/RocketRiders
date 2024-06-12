@@ -1,9 +1,9 @@
 #broken elytra replacing
-execute as @a[x=0,team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",count:1}]}] at @s if predicate custom:canopy_nearyellow run tag @s add BreakEly
-execute as @a[x=0,team=Yellow,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",count:1}]}] at @s if predicate custom:canopy_nearblue run tag @s add BreakEly
+execute as @a[x=0,team=Blue] at @s if items entity @s armor.chest elytra if predicate custom:canopy_nearyellow run tag @s add BreakEly
+execute as @a[x=0,team=Yellow] at @s if items entity @s armor.chest elytra if predicate custom:canopy_nearblue run tag @s add BreakEly
 
-execute as @a[x=0,team=Blue,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",count:1,components:{"minecraft:damage":431}}]}] run tag @s add BreakEly
-execute as @a[x=0,team=Yellow,nbt={Inventory:[{Slot:102b,id:"minecraft:elytra",count:1,components:{"minecraft:damage":431}}]}] run tag @s add BreakEly
+execute as @a[x=0,team=Blue] if items entity @s armor.chest elytra[damage=431] run tag @s add BreakEly
+execute as @a[x=0,team=Yellow] if items entity @s armor.chest elytra[damage=431] run tag @s add BreakEly
 
 execute as @a[x=0,tag=BreakEly] run title @s title ["",{"text":" "}]
 execute as @a[x=0,tag=BreakEly] run title @s subtitle ["",{"text":"Elytra ","color":"dark_red","italic":true,"bold":true},{"text":"expired!","color":"red"}]
@@ -16,8 +16,8 @@ execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Yel
 tag @a[x=0,tag=BreakEly] remove BreakEly
 
 #broken trident clearing
-clear @a[x=0,team=Blue,nbt={Inventory:[{id:"minecraft:trident",count:1,components:{"minecraft:damage":250}}]}] trident 1
-clear @a[x=0,team=Yellow,nbt={Inventory:[{id:"minecraft:trident",count:1,components:{"minecraft:damage":250}}]}] trident 1
+clear @a[x=0,team=Blue] trident[damage=250]
+clear @a[x=0,team=Yellow] trident[damage=250]
 
 #trident auto riptide
 execute as @a[x=0,nbt={Inventory:[{id:"minecraft:trident"}]}] unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide

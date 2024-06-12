@@ -145,8 +145,8 @@ execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=98..,Power
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55},limit=1] run summon marker 12 55 0 {Tags:["BlueCrystalSpot","NotSet","PUCrystalEntity"]}
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55},limit=1] run scoreboard players set @s PowerupCrystal 20
 
-execute as @e[x=0,type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~-3 if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~-3 if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~-3 if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=PUCrystalAS,limit=1] at @s positioned ~ ~.25 ~-3 if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
 execute as @e[x=0,type=marker,tag=PUCrystalAS] unless entity @e[x=0,type=end_crystal,tag=PUCrystal] run kill @s
 execute as @e[x=0,type=marker,tag=BlueCrystalSpot] unless entity @e[x=0,type=end_crystal,tag=PUCrystal] run kill @s

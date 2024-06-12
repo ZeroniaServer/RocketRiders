@@ -130,12 +130,12 @@ execute as @e[x=0,type=marker,tag=yellowobsidianshield,scores={breakobshield=..0
 execute as @e[x=0,type=marker,scores={breakobshield=1}] at @s run playsound block.respawn_anchor.deplete master @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=marker,scores={breakobshield=1}] at @s run setblock ~ ~ ~ minecraft:magenta_stained_glass_pane[west=true,east=true]
 execute as @e[x=0,type=marker,scores={breakobshield=1}] run scoreboard players set @e[x=0,type=marker,scores={breakobshield=1}] breakobshield 2
-execute as @e[x=0,type=marker,scores={breakobshield=2}] at @s if score $dust CmdData matches 1 run particle block crying_obsidian ~ ~ ~ 1 1 0.4 0.1 5 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=marker,scores={breakobshield=2}] at @s if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:crying_obsidian"} ~ ~ ~ 1 1 0.4 0.1 5 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,scores={breakobshield=2}] at @s unless block ~ ~ ~ minecraft:magenta_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 3
 execute as @e[x=0,type=marker,scores={breakobshield=3}] at @s run playsound block.respawn_anchor.deplete master @a[x=0] ~ ~ ~ 2 1.2
 execute as @e[x=0,type=marker,scores={breakobshield=3}] at @s run setblock ~ ~ ~ minecraft:pink_stained_glass_pane[west=true,east=true]
 execute as @e[x=0,type=marker,scores={breakobshield=3}] at @s run scoreboard players set @s breakobshield 4
-execute as @e[x=0,type=marker,scores={breakobshield=4}] at @s if score $dust CmdData matches 1 run particle block crying_obsidian ~ ~ ~ 1 1 0 0.1 25 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=marker,scores={breakobshield=4}] at @s if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:crying_obsidian"} ~ ~ ~ 1 1 0 0.1 25 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,scores={breakobshield=4}] at @s unless block ~ ~ ~ minecraft:pink_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 5
 execute as @e[x=0,type=marker,scores={breakobshield=5}] at @s run playsound block.respawn_anchor.deplete master @a[x=0] ~ ~ ~ 2 1.4
 execute as @e[x=0,type=marker,scores={breakobshield=5..}] run scoreboard players add @s breakobshield 1

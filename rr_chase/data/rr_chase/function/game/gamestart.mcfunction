@@ -7,8 +7,8 @@ tag @s remove BlueFull
 scoreboard players set @e[x=0,type=armor_stand,tag=rr_chase,limit=1] PlayerCap 2
 scoreboard players operation @e[x=0,type=armor_stand,tag=rr_chase,limit=1] PlayerCap *= @s PlayerCap
 execute if score @s bluesCount >= @e[x=0,type=armor_stand,tag=rr_chase,limit=1] PlayerCap run tag @s add BlueFull
-execute if score $dust CmdData matches 1 if entity @s[tag=!BlueFull] as @e[x=0,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle dust 3 3 3 1 ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if score $barriers CmdData matches 1 if entity @s[tag=BlueFull,tag=EditedSettings] as @e[x=0,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle block_marker barrier ~ ~1 ~ 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 if entity @s[tag=!BlueFull] as @e[x=0,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle minecraft:dust{color:[3,3,3],scale:1} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if score $barriers CmdData matches 1 if entity @s[tag=BlueFull,tag=EditedSettings] as @e[x=0,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle minecraft:block_marker{block_state:"minecraft:barrier"} ~ ~1 ~ 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 
 #Items
 execute as @a[x=0,tag=JoinBlue] run function rr_chase:chasegear/givegear

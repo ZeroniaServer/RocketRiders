@@ -10,7 +10,7 @@ execute as @e[x=0,type=marker,tag=YellowPlatform,scores={PlatTime=..57},tag=!wat
 
 #Canopy deploy animation/sounds
 tag @e[x=0,type=marker,scores={PlatTime=1..58},tag=killCanopy,tag=!animated] add animated
-execute as @e[x=0,type=marker,scores={PlatTime=1..50},tag=!animated] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 1 0 1 0.1 10
+execute as @e[x=0,type=marker,scores={PlatTime=1..50},tag=!animated] at @s if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 1 0 1 0.1 10
 execute as @e[x=0,type=marker,scores={PlatTime=1},tag=!animated] at @s run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 2
 
 execute as @e[x=0,type=marker,scores={PlatTime=5..},tag=!animated,tag=!killCanopy] at @s run setblock ~ ~ ~ oak_wood[axis=y]
@@ -72,7 +72,7 @@ execute as @e[x=0,type=marker,scores={PlatTime=55},tag=!animated,tag=!killCanopy
 
 execute as @e[x=0,type=marker,scores={PlatTime=56},tag=!animated,tag=!killCanopy] at @s run setblock ~3 ~ ~1 oak_leaves[persistent=true]
 execute as @e[x=0,type=marker,scores={PlatTime=56},tag=!animated,tag=!killCanopy] at @s run setblock ~-3 ~ ~-1 oak_leaves[persistent=true]
-execute as @e[x=0,type=marker,scores={PlatTime=56},tag=!animated,tag=!killCanopy] at @s run particle block spruce_leaves ~ ~2 ~ 1 1 1 1 300
+execute as @e[x=0,type=marker,scores={PlatTime=56},tag=!animated,tag=!killCanopy] at @s run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~2 ~ 1 1 1 1 300
 
 execute as @e[x=0,type=marker,scores={PlatTime=58},tag=!animated,tag=!killCanopy] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
 execute as @e[x=0,type=marker,scores={PlatTime=58},tag=!animated,tag=!killCanopy] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
@@ -87,8 +87,8 @@ execute as @e[x=0,type=ender_pearl] store result score @s pearlOwnerUUID run dat
 execute as @e[x=0,type=ender_pearl] run function everytick:canopy_owner
 
 ##Yellow Canopy functionality
-execute as @e[x=0,type=ender_pearl,tag=YellowPlat] at @s if score $dust CmdData matches 1 run particle dust 1 2 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=ender_pearl,tag=YellowPlat] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=ender_pearl,tag=YellowPlat] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,2,0],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=ender_pearl,tag=YellowPlat] at @s if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 0 0 0 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=ender_pearl,tag=YellowPlat] at @s run scoreboard players add @s testplat 1
 #Next 4 commands disable Yellow Canopies inside of portals
 execute unless entity @s[tag=noPortal] as @e[x=0,type=ender_pearl,scores={testplat=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat 1
@@ -120,8 +120,8 @@ execute as @e[x=0,type=marker,tag=YellowSpawnZone] at @s run scoreboard players 
 scoreboard players reset @e[x=0,type=marker,tag=YellowPlatform,scores={PlatTime=41}] pearlOwnerUUID
 
 ##Blue Canopy functionality
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customShield] as @e[x=0,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle dust 0 1 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customShield] as @e[x=0,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle block spruce_leaves ~ ~ ~ 0 0 0 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customShield] as @e[x=0,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[0,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customShield] as @e[x=0,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 0 0 0 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customShield] as @e[x=0,type=ender_pearl,tag=BluePlat] at @s run scoreboard players add @s testplat2 1
 #Next 4 commands disable Blue Canopies inside of portals
 execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customShield] unless entity @s[tag=noPortal] as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
@@ -217,7 +217,7 @@ tag @e[x=0,type=marker,tag=FirePoof] add killCanopy
 #Canopy durations
 execute as @e[x=0,type=marker,scores={PlatTime=4..}] at @s unless block ~ ~1 ~ oak_wood run tag @s add killCanopy
 execute as @e[x=0,type=marker,scores={PlatTime=4..}] at @s unless block ~ ~ ~ oak_wood run tag @s add killCanopy
-execute as @e[x=0,type=marker,scores={PlatTime=220..}] at @s if score $dust CmdData matches 1 run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=marker,scores={PlatTime=220..}] at @s if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:oak_wood"} ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,scores={PlatTime=220}] at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 0
 execute as @e[x=0,type=marker,scores={PlatTime=225}] at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 0
 execute as @e[x=0,type=marker,scores={PlatTime=230}] at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 0
@@ -231,7 +231,7 @@ execute as @e[x=0,type=marker,scores={PlatTime=265}] at @s run playsound block.w
 execute as @e[x=0,type=marker,scores={PlatTime=270}] at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=marker,scores={PlatTime=275}] at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 1.2
 execute as @e[x=0,type=marker,scores={PlatTime=280}] at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 1.5
-execute as @e[x=0,type=marker,scores={PlatTime=300}] at @s run particle block oak_wood ~ ~1 ~ 0.5 0.5 0.5 1 50 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=marker,scores={PlatTime=300}] at @s run particle minecraft:block{block_state:"minecraft:oak_wood"} ~ ~1 ~ 0.5 0.5 0.5 1 50 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
 #Canopy watering (one time use - Splash extends Canopy duration)
 execute as @e[x=0,type=marker,scores={PlatTime=3..300},tag=!watered] unless entity @s[tag=!YellowPlatform,tag=!BluePlatform] at @s store result score @s CmdData run clone ~-2 ~-1 ~-2 ~2 ~2 ~2 ~-2 ~-1 ~-2 filtered water force

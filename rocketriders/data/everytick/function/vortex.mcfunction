@@ -10,8 +10,8 @@ execute as @e[x=0,type=egg] unless items entity @s contents egg[custom_model_dat
 ##Vortex deployment (both teams)
 execute as @e[x=0,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=egg,tag=BlueVortex] at @s if score $dust CmdData matches 1 run particle dragon_breath ~ ~ ~ 0 0 0 0.02 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[x=0,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[x=0,type=egg,tag=BlueVortex] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[x=0,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,1,0],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[x=0,type=egg,tag=BlueVortex] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[0,0,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @e[x=0,type=egg,tag=BlueVortex] vortextimer 1
 scoreboard players add @e[x=0,type=egg,tag=YellowVortex] vortextimer 1
 #Next two commands disable Vortex near own portals
@@ -33,10 +33,10 @@ execute as @e[x=0,type=marker,tag=Vortex,tag=!VortexFeathered,scores={VortexID=0
 kill @e[x=0,type=egg,scores={vortextimer=20..}]
 execute if entity @s[tag=!custVortParticle] as @e[x=0,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:wax_on ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[x=0,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle dust 1 1 0 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[x=0,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,1,0],scale:1} ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute if entity @s[tag=!custVortParticle] as @e[x=0,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle minecraft:scrape ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle minecraft:dragon_breath ~ ~0.3 ~ 0.5 0.5 0 0 5 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if entity @s[tag=!custVortParticle] as @e[x=0,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle dust 0 0 1 1 ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[tag=!custVortParticle] as @e[x=0,type=marker,tag=VortexBlue] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[0,0,1],scale:1} ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @e[x=0,type=marker,tag=Vortex] vortexBoom 0
 
 ##Spin around (unprimed)
@@ -98,7 +98,7 @@ execute as @e[x=0,type=chicken,tag=FeatherConfirmed] at @s align xyz positioned 
 execute as @e[x=0,type=chicken] run data merge entity @s {DeathTime:19s}
 execute as @e[x=0,type=chicken] at @s run tp @s ~ ~-250 ~
 kill @e[x=0,type=chicken]
-execute as @e[x=0,type=marker,tag=VortexFeathered] at @s if score $dust CmdData matches 1 run particle dust 1 1 1 1 ~ ~0.4 ~ 0.5 0.5 0 0 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=marker,tag=VortexFeathered] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~0.4 ~ 0.5 0.5 0 0 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=VortexFeathered] at @s if score $dust CmdData matches 1 run particle wax_off ~ ~0.4 ~ 0.5 0.5 0 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=armor_stand,tag=VortexItemFeathered] at @s run tp @s ~ ~ ~ ~15 ~
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @e[x=0,type=marker,tag=VortexFeathered] at @s as @a[team=!Spectator,distance=..3] run advancement grant @s only achievements:rr_challenges/zzzzzzhuh

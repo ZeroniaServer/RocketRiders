@@ -18,24 +18,24 @@ scoreboard players reset @a[x=0,tag=!InLead,scores={ChaseAlarm=1..}] ChaseAlarm
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[x=0,tag=InLead,limit=1,sort=nearest]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.20
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[x=0,tag=InLead,limit=1,sort=nearest]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.10
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[x=0,tag=InLead,limit=1,sort=nearest]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.20
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run tp @s ~ ~ ~ facing entity @a[x=0,tag=InLead,limit=1,sort=nearest]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run tp @s ^ ^ ^0.20
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run function rr_chase:chaseblocks/shootcrystal
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] if score $dust CmdData matches 1 run particle dust 1 0 3 1 ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if entity @a[tag=InLead,distance=..2] run tag @s add CrystalComplete
 execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={servermode=0},tag=!SMCustom] as @e[x=0,type=armor_stand,tag=CrystalComplete] at @s if score @s ChaseCrystalID = @a[tag=InLead,distance=..3,sort=nearest,limit=1] playerUUID run advancement grant @a[tag=InLead,distance=..3,sort=nearest,limit=1] only achievements:rr_challenges/boomerang
 execute as @e[x=0,type=armor_stand,tag=CrystalComplete] at @s if entity @a[tag=InLead,distance=..2] as @a[tag=InLead,distance=..3,sort=nearest,limit=1] at @s run summon tnt ~ ~ ~2

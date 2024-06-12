@@ -7,7 +7,7 @@ execute as @a[x=0,scores={DrinkHoney=1..}] at @s as @e[type=armor_stand,tag=BeeS
 scoreboard players reset @a[x=0] DrinkHoney
 item replace entity @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=1}] armor.head with honey_block
 execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay] at @s run playsound minecraft:block.honey_block.slide master @a[x=0] ~ ~ ~ 2 0.8
-execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay] at @s anchored eyes if score $dust CmdData matches 1 run particle minecraft:block honey_block ~ ~ ~ 0 0 0 1 10
+execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay] at @s anchored eyes if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:honey_block"} ~ ~ ~ 0 0 0 1 10
 
 #kill conditions
 execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay] at @s if entity @s[x=-12,y=36,z=-74,dx=48,dy=25] run scoreboard players set @s CmdData -3
@@ -27,7 +27,7 @@ execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay] at @s if entity @s[y=17
 execute as @e[x=0,type=marker,tag=animBshield] at @s unless predicate custom:insideborder run kill @s
 execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay] at @s unless predicate custom:insideborder run scoreboard players set @s CmdData -3
 
-execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run particle minecraft:block honey_block ~ ~ ~ 0.5 0.5 0.5 1 100
+execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run particle minecraft:block{block_state:"minecraft:honey_block"} ~ ~ ~ 0.5 0.5 0.5 1 100
 execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run playsound minecraft:block.honey_block.hit master @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}] at @s run playsound minecraft:block.honey_block.break master @a[x=0] ~ ~ ~ 2 1
 kill @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={CmdData=..-3}]
@@ -78,8 +78,8 @@ execute as @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=26}] at @s r
 execute as @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=21}] at @s run playsound block.glass.break master @a[x=0] ~ ~ ~ 1.5 1.3
 execute as @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=23}] at @s run playsound block.glass.break master @a[x=0] ~ ~ ~ 1.5 1.2
 execute as @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=32}] at @s run playsound block.grass.break master @a[x=0] ~ ~ ~ 1.5 0.8
-execute as @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block tnt ~ ~-2 ~ 0.2 0.2 0.2 0.2 40 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle block honey_block ~ ~-2 ~ 1 1.5 0 0.1 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle minecraft:block{block_state:"minecraft:tnt"} ~ ~-2 ~ 0.2 0.2 0.2 0.2 40 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=31}] at @s run particle minecraft:block{block_state:"minecraft:honey_block"} ~ ~-2 ~ 1 1.5 0 0.1 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
 #Kill animation AEC
 kill @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=32..}]

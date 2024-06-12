@@ -27,9 +27,9 @@ execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #Selected kit particles
-execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=1}] at @s at @e[x=0,type=armor_stand,tag=KnightStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
-execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=2}] at @s at @e[x=0,type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
-execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=3}] at @s at @e[x=0,type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle dust 0 1 0 1 ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=1}] at @s at @e[x=0,type=armor_stand,tag=KnightStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=2}] at @s at @e[x=0,type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=3}] at @s at @e[x=0,type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 
 #Mage wand - UNUSED
 # execute as @a[x=0,scores={crusadekit=3},predicate=rr_crusade:holdwand] at @s run function rr_crusade:game/mage_wand

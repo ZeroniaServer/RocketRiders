@@ -40,23 +40,23 @@ execute as @e[x=0,type=marker,tag=captureMiddle,tag=FixPlatform] run tag @s remo
 
 #Crystals deplete platforms
 scoreboard players add @e[x=0,type=end_crystal,tag=PUCrystalPerma] capturePoint 1
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s unless score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 1.. run data merge entity @s {BeamTarget:{X:18,Y:52,Z:0}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 1 run data merge entity @s {BeamTarget:{X:6,Y:52,Z:0}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 2 run data merge entity @s {BeamTarget:{X:12,Y:52,Z:6}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 3 run data merge entity @s {BeamTarget:{X:12,Y:52,Z:-6}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 4 run data merge entity @s {BeamTarget:{X:7,Y:52,Z:3}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 5 run data merge entity @s {BeamTarget:{X:7,Y:52,Z:-3}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 6 run data merge entity @s {BeamTarget:{X:17,Y:52,Z:3}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 7 run data merge entity @s {BeamTarget:{X:17,Y:52,Z:-3}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 8 run data merge entity @s {BeamTarget:{X:9,Y:52,Z:5}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 9 run data merge entity @s {BeamTarget:{X:9,Y:52,Z:-5}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 10 run data merge entity @s {BeamTarget:{X:15,Y:52,Z:5}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 11 run data merge entity @s {BeamTarget:{X:15,Y:52,Z:-5}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 12 run data merge entity @s {BeamTarget:{X:16,Y:52,Z:4}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 13 run data merge entity @s {BeamTarget:{X:8,Y:52,Z:4}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 14 run data merge entity @s {BeamTarget:{X:8,Y:52,Z:-4}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 15 run data merge entity @s {BeamTarget:{X:16,Y:52,Z:-4}}
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 16 run data merge entity @s {BeamTarget:{X:12,Y:52,Z:0}}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s unless score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 1.. run data merge entity @s {beam_target:[I;18,52,0]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 1 run data merge entity @s {beam_target:[I;6,52,0]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 2 run data merge entity @s {beam_target:[I;12,52,6]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 3 run data merge entity @s {beam_target:[I;12,52,-6]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 4 run data merge entity @s {beam_target:[I;7,52,3]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 5 run data merge entity @s {beam_target:[I;7,52,-3]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 6 run data merge entity @s {beam_target:[I;17,52,3]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 7 run data merge entity @s {beam_target:[I;17,52,-3]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 8 run data merge entity @s {beam_target:[I;9,52,5]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 9 run data merge entity @s {beam_target:[I;9,52,-5]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 10 run data merge entity @s {beam_target:[I;15,52,5]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 11 run data merge entity @s {beam_target:[I;15,52,-5]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 12 run data merge entity @s {beam_target:[I;16,52,4]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 13 run data merge entity @s {beam_target:[I;8,52,4]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 14 run data merge entity @s {beam_target:[I;8,52,-4]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 15 run data merge entity @s {beam_target:[I;16,52,-4]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=25..}] at @s if score @e[x=0,type=marker,tag=captureMiddle,limit=1] CmdData matches 16 run data merge entity @s {beam_target:[I;12,52,0]}
 
 execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run scoreboard players add @e[x=0,type=marker,tag=captureMiddle] CmdData 1
 execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]

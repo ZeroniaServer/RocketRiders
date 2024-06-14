@@ -13,7 +13,7 @@ execute if score $CYA crusadehp matches 1.. positioned -14 49 37 as @e[type=play
 execute if score $CYA crusadehp matches 1.. positioned -14 49 37 run kill @a[team=!Spectator,team=!Developer,team=!Lobby,distance=..5]
 execute if score $CYA crusadehp matches 1.. run gamerule showDeathMessages true
 execute if score $CYA crusadehp matches 1.. run fill -12 47 35 -16 51 39 minecraft:yellow_stained_glass
-execute if score $CYA crusadehp matches 1.. run summon end_crystal -14 49 37 {Tags:["CrusadeEntity","CrusadeYellowA"],BeamTarget:{X:12,Y:50,Z:52},ShowBottom:0b}
+execute if score $CYA crusadehp matches 1.. run summon end_crystal -14 49 37 {Tags:["CrusadeEntity","CrusadeYellowA"],beam_target:[I;12,50,52],ShowBottom:0b}
 execute if score $CYA crusadehp matches 1.. positioned -14 49 37 run playsound minecraft:block.glass.break master @a[x=0] ~ ~ ~ 1 0.8
 execute if score $CYA crusadehp matches 1.. positioned -14 49 37 run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 2
 

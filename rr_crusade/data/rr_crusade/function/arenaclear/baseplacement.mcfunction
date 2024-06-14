@@ -112,14 +112,14 @@ fill 36 51 40 40 47 40 light[level=1]
 scoreboard players set $YellowShield crusadehp 200
 scoreboard players set $CYA crusadehp 100
 scoreboard players set $CYB crusadehp 100
-execute unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowA] run summon end_crystal -14 49 37 {Tags:["CrusadeEntity","CrusadeYellowA"],BeamTarget:{X:12,Y:50,Z:52},ShowBottom:0b}
-execute unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowB] run summon end_crystal 38 49 37 {Tags:["CrusadeEntity","CrusadeYellowB"],BeamTarget:{X:12,Y:50,Z:52},ShowBottom:0b}
+execute unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowA] run summon end_crystal -14 49 37 {Tags:["CrusadeEntity","CrusadeYellowA"],beam_target:[I;12,50,52],ShowBottom:0b}
+execute unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowB] run summon end_crystal 38 49 37 {Tags:["CrusadeEntity","CrusadeYellowB"],beam_target:[I;12,50,52],ShowBottom:0b}
 
 scoreboard players set $BlueShield crusadehp 200
 scoreboard players set $CBA crusadehp 100
 scoreboard players set $CBB crusadehp 100
-execute unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueA] run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],BeamTarget:{X:12,Y:50,Z:-52},ShowBottom:0b}
-execute unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueB] run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],BeamTarget:{X:12,Y:50,Z:-52},ShowBottom:0b}
+execute unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueA] run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],beam_target:[I;12,50,-52],ShowBottom:0b}
+execute unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueB] run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],beam_target:[I;12,50,-52],ShowBottom:0b}
 
 #Set pre-game kit stands
 #blue

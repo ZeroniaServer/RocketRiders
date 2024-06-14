@@ -10,16 +10,16 @@ summon armor_stand -49 216 77 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlat
 
 item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] armor.head with player_head{SkullOwner:{Id:[I;-943590382,1320568700,-1377308582,-375799538],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWRjNDJlYTk4ZTExNjRlNWQ4MmI5ZGM3N2M5NGNjMjJmYmY1NmRlNzg3MDNjMDQ3ZmYxNWU4NzA2N2NmNWNiYSJ9fX0="}]}}}
 item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] weapon.mainhand with slime_ball
-item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] armor.chest with leather_chestplate{display:{color:14548992}}
-item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] armor.legs with leather_leggings{display:{color:14548992}}
-item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] armor.feet with leather_boots{display:{color:7470949}}
+item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] armor.chest with leather_chestplate[dyed_color=14548992]
+item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] armor.legs with leather_leggings[dyed_color=14548992]
+item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] armor.feet with leather_boots[dyed_color=7470949]
 
 item replace entity @e[x=0,type=armor_stand,tag=YZEROCredits] armor.head with player_head{SkullOwner:{Id:[I;-695903554,-1949023048,-2133343279,304983704],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNlZmZjOWJmNWYyYThiMDU4NzcxODc1OTUxMDg1YTU0N2QxYjc1YzJkM2U2YTRhNWEzYWVlMTc1MjNjNzUyZCJ9fX0="}]}}}
 item replace entity @e[x=0,type=armor_stand,tag=YZEROCredits] weapon.mainhand with chain_command_block
 item replace entity @e[x=0,type=armor_stand,tag=YZEROCredits] weapon.offhand with tropical_fish
-item replace entity @e[x=0,type=armor_stand,tag=YZEROCredits] armor.chest with leather_chestplate{display:{color:2631720}}
-item replace entity @e[x=0,type=armor_stand,tag=YZEROCredits] armor.legs with leather_leggings{display:{color:2306126}}
-item replace entity @e[x=0,type=armor_stand,tag=YZEROCredits] armor.feet with leather_boots{display:{color:10682368}}
+item replace entity @e[x=0,type=armor_stand,tag=YZEROCredits] armor.chest with leather_chestplate[dyed_color=2631720]
+item replace entity @e[x=0,type=armor_stand,tag=YZEROCredits] armor.legs with leather_leggings[dyed_color=2306126]
+item replace entity @e[x=0,type=armor_stand,tag=YZEROCredits] armor.feet with leather_boots[dyed_color=10682368]
 
 item replace entity @e[x=0,type=armor_stand,tag=ChronosCredits] armor.head with player_head{SkullOwner:{Id:[I;-518895305,-306034928,-1464755402,-389337087],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzMzZmVlYjhlOTU3MmIwOTZlNTUxZmYwZDAzZGE5YzA0YzNhMzY1Y2E1N2ZmNDIzODY4ZTViOGM5YzMxNDk1NiJ9fX0="}]}}}
 item replace entity @e[x=0,type=armor_stand,tag=ChronosCredits] weapon.mainhand with bow
@@ -43,17 +43,17 @@ item replace entity @e[x=0,type=armor_stand,tag=ToulCredits] weapon.mainhand wit
 data merge entity @e[x=0,type=armor_stand,tag=BlockyCredits,limit=1] {HandItems:[{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:BlockyCam}}]}
 
 #Pose and armor
-item replace entity @e[x=0,type=armor_stand,tag=BuilderCreditsAS] armor.chest with leather_chestplate{display:{color:16770835}}
-item replace entity @e[x=0,type=armor_stand,tag=BuilderCreditsAS] armor.legs with leather_leggings{display:{color:16770835}}
-item replace entity @e[x=0,type=armor_stand,tag=BuilderCreditsAS] armor.feet with leather_boots{display:{color:10813439}}
+item replace entity @e[x=0,type=armor_stand,tag=BuilderCreditsAS] armor.chest with leather_chestplate[dyed_color=16770835]
+item replace entity @e[x=0,type=armor_stand,tag=BuilderCreditsAS] armor.legs with leather_leggings[dyed_color=16770835]
+item replace entity @e[x=0,type=armor_stand,tag=BuilderCreditsAS] armor.feet with leather_boots[dyed_color=10813439]
 
-item replace entity @e[x=0,type=armor_stand,tag=BlockyCredits] armor.chest with leather_chestplate{display:{color:14061821}}
-item replace entity @e[x=0,type=armor_stand,tag=BlockyCredits] armor.legs with leather_leggings{display:{color:14061821}}
-item replace entity @e[x=0,type=armor_stand,tag=BlockyCredits] armor.feet with leather_boots{display:{color:13784063}}
+item replace entity @e[x=0,type=armor_stand,tag=BlockyCredits] armor.chest with leather_chestplate[dyed_color=14061821]
+item replace entity @e[x=0,type=armor_stand,tag=BlockyCredits] armor.legs with leather_leggings[dyed_color=14061821]
+item replace entity @e[x=0,type=armor_stand,tag=BlockyCredits] armor.feet with leather_boots[dyed_color=13784063]
 
-item replace entity @e[x=0,type=armor_stand,tag=ToulCredits] armor.chest with leather_chestplate{display:{color:16383998}}
-item replace entity @e[x=0,type=armor_stand,tag=ToulCredits] armor.legs with leather_leggings{display:{color:1908001}}
-item replace entity @e[x=0,type=armor_stand,tag=ToulCredits] armor.feet with leather_boots{display:{color:16351261}}
+item replace entity @e[x=0,type=armor_stand,tag=ToulCredits] armor.chest with leather_chestplate[dyed_color=16383998]
+item replace entity @e[x=0,type=armor_stand,tag=ToulCredits] armor.legs with leather_leggings[dyed_color=1908001]
+item replace entity @e[x=0,type=armor_stand,tag=ToulCredits] armor.feet with leather_boots[dyed_color=16351261]
 
 #Skulls
 item replace entity @e[x=0,type=armor_stand,tag=BardCredits] armor.head with player_head{SkullOwner:{Id:[I;203251676,1795967249,-2032645852,-553887958],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzZhMDA4NjkxNDM1NDllYWEyNmEyM2ViNTQ2OTNjZTUyYzI3YTIxYTA1MTJmZTg3ZmRiNGZmNzBiY2ViYmU3ZiJ9fX0="}]}}}

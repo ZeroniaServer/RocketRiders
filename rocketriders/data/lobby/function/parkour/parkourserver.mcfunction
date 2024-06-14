@@ -37,13 +37,13 @@ execute as @a[x=0,team=Lobby,tag=finishedParkour] run tag @s remove inParkour
 execute as @a[x=0,team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour
 
 ##Invisible players within range
-execute as @a[x=0,team=Lobby,tag=inParkour] at @s if entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect give @s invisibility infinite 255 true
+execute as @a[x=0,team=Lobby,tag=inParkour] at @s if entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect give @s invisibility infinite 100 true
 execute as @a[x=0,team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect clear @s invisibility
 effect clear @a[x=0,team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (non-duel mode)
-execute unless entity @e[x=0,type=armor_stand,tag=rr_duel,limit=1] as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots{Trim:{material:"minecraft:emerald",pattern:"minecraft:wayfinder"},display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},HideFlags:135}
-execute if entity @s[tag=noYZELO] as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots{Trim:{material:"minecraft:emerald",pattern:"minecraft:wayfinder"},display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},HideFlags:135}
+execute unless entity @e[x=0,type=armor_stand,tag=rr_duel,limit=1] as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots[custom_name='{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}',trim={material:"minecraft:emerald",pattern:"minecraft:wayfinder"},enchantments={show_in_tooltip:0b},attribute_modifiers={show_in_tooltip:0b},unbreakable={show_in_tooltip:0b}]
+execute if entity @s[tag=noYZELO] as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots[custom_name='{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}',trim={material:"minecraft:emerald",pattern:"minecraft:wayfinder"},enchantments={show_in_tooltip:0b},attribute_modifiers={show_in_tooltip:0b},unbreakable={show_in_tooltip:0b}]
 
 ##Safety features
 #Only lobby players in Parkour mode

@@ -1,8 +1,8 @@
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
 
-item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with leather_chestplate{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16772430}}
-item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16772430}}
-item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with leather_boots{Trim:{material:"minecraft:netherite",pattern:"minecraft:spire"},display:{color:16772430}}
+item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with leather_chestplate[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
+item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
+item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with leather_boots[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
 
 scoreboard objectives add toggleParticles trigger
 scoreboard objectives add toggleTips trigger

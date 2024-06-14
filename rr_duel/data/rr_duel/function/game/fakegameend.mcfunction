@@ -14,7 +14,7 @@ execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,team
 execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,team=Yellow]
 execute if entity @s[scores={fakeendtimer=1..2}] run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={fakeendtimer=1..2}] run tp @a[x=0,team=Yellow] 12 64 66 180 0
-execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] haste
+execute if entity @s[scores={fakeendtimer=1}] as @a[x=0] run attribute @s minecraft:player.block_break_speed modifier remove rocketriders:instamine
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] blindness
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] glowing
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] speed

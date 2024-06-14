@@ -154,7 +154,7 @@ execute as @a[x=0,team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=
 ##Inventory controls (offhand and drop)
 #Return to last checkpoint (includes 1 second cooldown)
 scoreboard players add @a[x=0,team=Lobby,tag=inParkour] chkpntCooldown 0
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run item replace entity @s hotbar.3 with compass{display:{Name:'[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'}} 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run item replace entity @s hotbar.3 with compass[custom_name='[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'] 1
 execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropCompass=1..,chkpntCooldown=0}] run tag @s add returnCheckpoint
 execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropCompass=1..,chkpntCooldown=0}] run scoreboard players set @s chkpntCooldown 1
 scoreboard players reset @a[x=0] dropCompass
@@ -165,7 +165,7 @@ scoreboard players add @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=1.
 scoreboard players set @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
 #Quit to start
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock{display:{Name:'[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'}} 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name='[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'] 1
 execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropClock=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to the start.","color":"red"}]
 execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropClock=1..}] run tag @s remove inParkour
 execute as @a[x=0,team=Lobby,scores={dropClock=1..}] run scoreboard players set @s LobbyWarp 7
@@ -175,7 +175,7 @@ execute as @a[x=0,team=Lobby,tag=inParkour] if items entity @s weapon.offhand cl
 execute as @a[x=0,team=Lobby] if items entity @s weapon.offhand clock run scoreboard players set @s LobbyWarp 7
 
 #Quit parkour
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run item replace entity @s hotbar.8 with barrier{display:{Name:'[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'}} 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run item replace entity @s hotbar.8 with barrier[custom_name='[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'] 1
 execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to the Lobby.","color":"red"}]
 execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tag @s remove inParkour
 execute as @a[x=0,team=Lobby,scores={dropBarrier=1..}] run scoreboard players set @s LobbyWarp 1
@@ -188,13 +188,13 @@ execute as @a[x=0,team=Lobby] if items entity @s weapon.offhand barrier run scor
 item replace entity @a[x=0,team=Lobby] weapon.offhand with air
 
 ##Invisible players within range
-execute as @a[x=0,team=Lobby,tag=inParkour] at @s if entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect give @s invisibility infinite 255 true
+execute as @a[x=0,team=Lobby,tag=inParkour] at @s if entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect give @s invisibility infinite 100 true
 execute as @a[x=0,team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,tag=inParkour,distance=0.0001..8] run effect clear @s invisibility
 effect clear @a[x=0,team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (non-duel mode)
-execute unless entity @e[x=0,type=armor_stand,tag=rr_duel,limit=1] as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots{Trim:{material:"minecraft:emerald",pattern:"minecraft:wayfinder"},display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:135}
-execute if entity @s[tag=noYZELO] as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots{Trim:{material:"minecraft:emerald",pattern:"minecraft:wayfinder"},display:{Name:'{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],HideFlags:135}
+execute unless entity @e[x=0,type=armor_stand,tag=rr_duel,limit=1] as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots[enchantments={levels:{"minecraft:binding_curse":1},show_in_tooltip:0b},custom_name='{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}',trim={material:"minecraft:emerald",pattern:"minecraft:wayfinder"},attribute_modifiers={show_in_tooltip:0b},unbreakable={show_in_tooltip:0b}]
+execute if entity @s[tag=noYZELO] as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots[enchantments={levels:{"minecraft:binding_curse":1},show_in_tooltip:0b},custom_name='{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}',trim={material:"minecraft:emerald",pattern:"minecraft:wayfinder"},attribute_modifiers={show_in_tooltip:0b},unbreakable={show_in_tooltip:0b}]
 
 ##Safety features
 #Only lobby players in Parkour mode

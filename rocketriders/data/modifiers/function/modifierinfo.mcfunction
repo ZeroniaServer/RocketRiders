@@ -1,7 +1,7 @@
 ##Prints info/enabled status about the selected Modifier
 
 #Instamine
-execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={modifierID=0},tag=Instamine] run tellraw @s ["",{"text":"Instamine","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players receive Haste 255 and can mine (most) blocks instantly.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={modifierID=0},tag=Instamine] run tellraw @s ["",{"text":"Instamine","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players can mine (most) blocks instantly.","color":"gray","italic":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={modifierID=0},tag=!Instamine] run tellraw @s ["",{"text":"Instamine","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #No Fall

@@ -2,7 +2,7 @@
 data merge entity @e[x=0,type=area_effect_cloud,tag=NameDisp,limit=1] {CustomName:'{"text":"Bullet","color":"dark_purple","bold":true}'}
 data merge entity @e[x=0,type=area_effect_cloud,tag=TNTDisp,limit=1] {CustomName:'["",{"text":"TNT Count: ","color":"dark_green","bold":true},{"text":"44","color":"white"}]'}
 data merge entity @e[x=0,type=area_effect_cloud,tag=SpeedDisp,limit=1] {CustomName:'["",{"text":"Speed: ","color":"dark_green","bold":true},{"text":"2.0m/s","color":"white"}]'}
-data merge entity @e[x=0,type=item_frame,tag=MisDispIF,limit=1] {Item:{id:"minecraft:skeleton_horse_spawn_egg",tag:{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:7},Count:1b}}
+item replace entity @e[x=0,type=item_frame,tag=MisDispIF,limit=1] contents with skeleton_horse_spawn_egg[enchantment_glint_override=true]
 
 playsound minecraft:entity.generic.explode master @a[x=0] 19 204 78 0.5 1.75
 particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

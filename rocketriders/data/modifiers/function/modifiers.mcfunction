@@ -4,8 +4,8 @@
 ####################################
 
 ##Instamine
-execute if entity @s[tag=Instamine] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run effect give @s haste infinite 255 true
-execute if entity @s[tag=Instamine] run effect clear @a[x=0,team=!Yellow,team=!Blue] haste
+execute if entity @s[tag=Instamine] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run attribute @s minecraft:player.block_break_speed modifier add rocketriders:instamine 10000000000000000000000000000000000000 add_multiplied_base
+execute if entity @s[tag=Instamine] as @a[x=0,team=!Yellow,team=!Blue] run attribute @s minecraft:player.block_break_speed modifier remove rocketriders:instamine
 
 ##Explosive
 execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=tnt,nbt={fuse:2s}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"],Invulnerable:1b}

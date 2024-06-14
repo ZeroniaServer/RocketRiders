@@ -1,6 +1,6 @@
 ##Generates list of modifiers as JSON text components in storage
 data modify storage rocketriders:modifiers list set value []
-execute if entity @s[tag=Instamine] run data modify storage rocketriders:modifiers list append value '{"text":"Instamine","color":"aqua","hoverEvent":{"action":"show_text","contents":["",{"text":"Players receive Haste 255 and can mine (most) blocks instantly.","color":"white"}]}}'
+execute if entity @s[tag=Instamine] run data modify storage rocketriders:modifiers list append value '{"text":"Instamine","color":"aqua","hoverEvent":{"action":"show_text","contents":["",{"text":"Players can mine (most) blocks instantly.","color":"white"}]}}'
 execute if entity @s[tag=NoFall] run data modify storage rocketriders:modifiers list append value '{"text":"No Fall","color":"aqua","hoverEvent":{"action":"show_text","contents":["",{"text":"Players are immune to fall damage.","color":"white"}]}}'
 execute if entity @s[tag=Explosive] run data modify storage rocketriders:modifiers list append value '{"text":"Explosive","color":"aqua","hoverEvent":{"action":"show_text","contents":["",{"text":"TNT, Fireballs, Nova Rockets, and the Vortex all do more explosion damage.","color":"white"}]}}'
 execute if entity @s[tag=Residers] run data modify storage rocketriders:modifiers list append value '{"text":"Rocket Residers","color":"aqua","hoverEvent":{"action":"show_text","contents":["",{"text":"Players cannot leave their bases.","color":"white"}]}}'

@@ -41,7 +41,7 @@ execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
 #Fireballs can't be punched (credit: Miolith)
 execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[x=0,type=fireball,tag=Still] run scoreboard players add @s endFireball 1
 execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[x=0,type=fireball,tag=StillOb] run scoreboard players add @s endFireball 1
-execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[x=0,type=fireball,scores={endFireball=1}] at @s run summon area_effect_cloud ~ ~-.375 ~ {Duration:2000000,Radius:0,NoGravity:1b,Tags:["endFireballAEC","endFireball"],Passengers:[{id:"minecraft:fireball",Tags:["endFireball"],ExplosionPower:0,Motion:[0.0d,0.0d,0.0d],power:[0.0d,0.0d,0.0d]}]}
+execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[x=0,type=fireball,scores={endFireball=1}] at @s run summon area_effect_cloud ~ ~-.375 ~ {Duration:2000000,Radius:0,NoGravity:1b,Tags:["endFireballAEC","endFireball"],Passengers:[{id:"minecraft:fireball",Tags:["endFireball"],ExplosionPower:0,Motion:[0.0d,0.0d,0.0d],acceleration_power:0d}]}
 execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[x=0,type=fireball,tag=endFireball] at @s run item replace entity @s contents from entity @n[type=fireball,scores={endFireball=1},distance=..1] contents
 execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[x=0,type=fireball,tag=endFireball] at @s run data modify entity @s Tags set from entity @n[type=fireball,scores={endFireball=1},distance=..1] Tags
 execute if entity @s[tag=!fireballOverride,scores={endtimer=1}] as @e[x=0,type=area_effect_cloud,tag=endFireballAEC] at @s run kill @n[type=fireball,scores={endFireball=1},distance=..1]

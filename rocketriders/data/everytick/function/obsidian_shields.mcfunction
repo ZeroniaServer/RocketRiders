@@ -4,6 +4,8 @@
 ## the central glass pane is broken three times   ##
 #####################################################
 
+#TODO simplify everything to do with fireball click detection
+
 #Void spawn prevention
 execute as @e[x=0,type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
 execute as @e[x=0,type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
@@ -75,8 +77,6 @@ execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon fireball ~ ~1
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0d,0.0d,0.0d],Passengers:[{id:"minecraft:marker",Tags:["yellowobtracker"]}]}
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 execute as @e[x=0,type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
-execute as @e[x=0,type=fireball,tag=yellowobfireball,tag=!headreplaced] run data merge entity @s {Item:{id:"minecraft:air",count:1}}
-tag @e[x=0,type=fireball,tag=yellowobfireball,tag=!headreplaced] add headreplaced
 
 #Detecting motion
 tag @e[x=0,type=fireball,tag=yellowobfireball] remove StillOb

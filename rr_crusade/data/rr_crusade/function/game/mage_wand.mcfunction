@@ -1,3 +1,4 @@
+# TODO GET RID OF ALL THIS LMAOO
 scoreboard players operation $tempuuid playerUUID = @s playerUUID
 execute store success score $hasbox CmdData if entity @e[type=interaction,tag=wandbox,predicate=custom:matches_uuid,limit=1]
 execute unless score $hasbox CmdData matches 1 anchored eyes positioned ^ ^-0.5 ^ summon interaction run function rr_crusade:game/wand_box

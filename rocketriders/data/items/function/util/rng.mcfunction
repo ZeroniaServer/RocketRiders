@@ -18,7 +18,7 @@ execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @e[x=0,type=item] if items entity @s contents enderman_spawn_egg run function items:deduct
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @e[x=0,type=item] if items entity @s contents ender_pearl run function items:deduct
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @e[x=0,type=item] if items entity @s contents snowball run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @e[x=0,type=item] if items entity @s lingering_potion[potion_contents~{potion:"minecraft:water"}] run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @e[x=0,type=item] if items entity @s contents lingering_potion[custom_data~{splash:1b}] run function items:deduct
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngVortex] as @e[x=0,type=item] if items entity @s contents egg[custom_data~{icbm:0b}] run function items:deduct
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngNova] as @e[x=0,type=item] if items entity @s contents crossbow[custom_data~{nova:1b}] run kill @s
 

@@ -1,6 +1,6 @@
 ##Gives executor a Vortex
 #Antidupe check
-execute store result score @s HasVortex run clear @s egg{icbm:0b} 0
+execute store result score @s HasVortex run clear @s egg[custom_data~{icbm:0b}] 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasVortex %= 16 CmdData
 execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] if entity @s[scores={HasVortex=1..15},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasVortex 0

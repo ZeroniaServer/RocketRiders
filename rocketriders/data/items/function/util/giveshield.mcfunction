@@ -13,7 +13,7 @@ title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Shield already obt
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasShield=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Shield obtained.","color":"aqua"}
 give @s[team=Yellow,scores={HasShield=0},tag=!fullHotbar] snowball[max_stack_size=64,custom_name='[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Shield","color":"gold","bold":true}]',lore=['{"text":"Throw to spawn a glass Shield.","color":"gray"}','{"text":"This is able to stop most missiles.","color":"gray"}'],custom_model_data=2] 1
-give @s[team=Blue,scores={HasShield=0},tag=!fullHotbar] max_stack_size=64,custom_name='[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Shield","color":"blue","bold":true}]',lore=['{"text":"Throw to spawn a glass Shield.","color":"gray"}','{"text":"This is able to stop most missiles.","color":"gray"}'],custom_model_data=1] 1
+give @s[team=Blue,scores={HasShield=0},tag=!fullHotbar] snowball[max_stack_size=64,custom_name='[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Shield","color":"blue","bold":true}]',lore=['{"text":"Throw to spawn a glass Shield.","color":"gray"}','{"text":"This is able to stop most missiles.","color":"gray"}'],custom_model_data=1] 1
 
 #Game tracking
 tag @e[x=0,type=armor_stand,tag=Selection,tag=givenShield,tag=tetrisTime] add givenShieldTwice

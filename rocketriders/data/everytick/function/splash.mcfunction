@@ -4,7 +4,7 @@
 ######################################
 
 ##Splash projectile motion/effects
-execute as @e[x=0,type=potion,tag=!splash] if items entity @s contents lingering_potion[potion_contents~{potion:"minecraft:water"}] run function everytick:splash_init
+execute as @e[x=0,type=potion,tag=!splash] if items entity @s contents lingering_potion[custom_data~{splash:1b}] run function everytick:splash_init
 execute as @e[x=0,type=potion,tag=splash] at @s if score $dust CmdData matches 1 run particle splash ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @a[x=0,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash

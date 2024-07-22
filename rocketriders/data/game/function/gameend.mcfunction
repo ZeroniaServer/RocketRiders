@@ -18,8 +18,8 @@ execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[x=0,team=Bl
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[x=0,team=Yellow] bow
 execute if entity @s[scores={endtimer=1},tag=!noSabers] as @e[x=0,type=item] if items entity @s contents bow run kill
 execute if entity @s[scores={endtimer=1},tag=!noSabers] run function game:endsabers
-execute if entity @s[tag=BlueWon] run effect give @a[x=0,team=Yellow] weakness infinite 255 true
-execute if entity @s[tag=YellowWon] run effect give @a[x=0,team=Blue] weakness infinite 255 true
+execute if entity @s[tag=BlueWon] run effect give @a[x=0,team=Yellow] weakness infinite 100 true
+execute if entity @s[tag=YellowWon] run effect give @a[x=0,team=Blue] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1..100}] run worldborder warning distance 0
 execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove nearcanopy
 execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove threwCanopy
@@ -31,8 +31,8 @@ execute if entity @s[scores={endtimer=1}] run tag @e[x=0,type=marker,tag=yellowj
 execute if entity @s[scores={endtimer=1}] run tag @e[x=0,type=marker,tag=bluejoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=1}] run tag @e[x=0,type=marker,tag=specjoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=2..3}] as @a[x=0,predicate=custom:is_on_fire] unless entity @s[team=!Blue,team=!Yellow] at @s run function game:putoutfire
-execute if entity @s[scores={endtimer=1..2}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance infinite 255 true
-execute if entity @s[scores={endtimer=1..2}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 255 true
+execute if entity @s[scores={endtimer=1..2}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance infinite 100 true
+execute if entity @s[scores={endtimer=1..2}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 100 true
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,team=Yellow] 12 64 66 180 0
 execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings

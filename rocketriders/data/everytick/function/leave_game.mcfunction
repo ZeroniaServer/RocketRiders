@@ -12,8 +12,8 @@ tag @a[x=0,team=!Blue,team=!Yellow,tag=CarryFY2] remove CarryFY2
 tag @a[x=0,team=!Blue,team=!Yellow,tag=CarryFB1] remove CarryFB1
 tag @a[x=0,team=!Blue,team=!Yellow,tag=CarryFB2] remove CarryFB2
 effect clear @a[x=0,scores={LeaveGame=1..}]
-effect give @a[x=0,scores={LeaveGame=1..}] regeneration 1 255 true
-effect give @a[x=0,scores={LeaveGame=1..}] resistance infinite 255 true
+effect give @a[x=0,scores={LeaveGame=1..}] regeneration 1 100 true
+effect give @a[x=0,scores={LeaveGame=1..}] resistance infinite 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] night_vision infinite 100 true
 team join Lobby @a[x=0,scores={LeaveGame=1..},team=!Lobby]
 gamemode survival @a[x=0,scores={LeaveGame=1..}]

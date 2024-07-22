@@ -1,11 +1,9 @@
 #Items
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue] run function game:givegear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue] run function servermode:givegear
+execute as @a[x=0,tag=JoinBlue] run function game:givegear
 execute unless entity @s[tag=GameStarted] run item replace entity @a[x=0,tag=JoinBlue] hotbar.0 with minecraft:written_book[custom_name='[{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false}]',lore=['{"translate":"A helpful book used to obtain","color":"dark_purple"}','{"translate":"every item in Rocket Riders!","color":"dark_purple"}'],written_book_content={pages:['{"extra":[{"text":"\\u0020 Rocket","color":"blue","bold":true},{"text":"-","color":"gray","bold":true},{"text":"nomicon","color":"gold","bold":true},{"text":"\\n\\nYour one-stop shop for every item in RR!\\n\\nNothing to see here just yet, but check this book again once the game starts!\\n","color":"dark_gray"},{"text":"\\n\\n\\n\\nSo impatient...","color":"#CCCCCC","italic":true}],"text":""}'],author:"Zeronia",title:"Rocket-nomicon",resolved:1b}]
 execute if entity @s[tag=GameStarted] as @a[x=0,tag=JoinBlue] run function rr_sandbox:items/givenomicon
 
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow] run function game:givegear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow] run function servermode:givegear
+execute as @a[x=0,tag=JoinYellow] run function game:givegear
 execute unless entity @s[tag=GameStarted] run item replace entity @a[x=0,tag=JoinYellow] hotbar.0 with minecraft:written_book[custom_name='[{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false}]',lore=['{"translate":"A helpful book used to obtain","color":"dark_purple"}','{"translate":"every item in Rocket Riders!","color":"dark_purple"}'],written_book_content={pages:['{"extra":[{"text":"\\u0020 Rocket","color":"blue","bold":true},{"text":"-","color":"gray","bold":true},{"text":"nomicon","color":"gold","bold":true},{"text":"\\n\\nYour one-stop shop for every item in RR!\\n\\nNothing to see here just yet, but check this book again once the game starts!\\n","color":"dark_gray"},{"text":"\\n\\n\\n\\nSo impatient...","color":"#CCCCCC","italic":true}],"text":""}'],author:"Zeronia",title:"Rocket-nomicon",resolved:1b}]
 execute if entity @s[tag=GameStarted] as @a[x=0,tag=JoinYellow] run function rr_sandbox:items/givenomicon
 

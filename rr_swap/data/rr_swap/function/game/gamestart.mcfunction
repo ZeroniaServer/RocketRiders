@@ -1,9 +1,6 @@
 #Items
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue] run function rr_swap:baseswap/gear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue] run function servermode:giveswapgear
-
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow] run function rr_swap:baseswap/gear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow] run function servermode:giveswapgear
+execute as @a[x=0,tag=JoinBlue] run function rr_swap:baseswap/gear
+execute as @a[x=0,tag=JoinYellow] run function rr_swap:baseswap/gear
 
 #Spawnpoints
 execute if entity @s[tag=GameStarted] as @a[x=0,team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0

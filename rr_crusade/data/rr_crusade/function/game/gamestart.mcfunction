@@ -1,18 +1,12 @@
 #Set kit to previous upon joining
 execute as @a[x=0,tag=JoinBlue] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
 execute as @a[x=0,tag=JoinYellow] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue,scores={crusadekit=1}] run function rr_crusade:items/kit/give/knight
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue,scores={crusadekit=2}] run function rr_crusade:items/kit/give/archer
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow,scores={crusadekit=1}] run function rr_crusade:items/kit/give/knight
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow,scores={crusadekit=2}] run function rr_crusade:items/kit/give/archer
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue,scores={crusadekit=1}] run function servermode:kitcrusade/knight
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue,scores={crusadekit=2}] run function servermode:kitcrusade/archer
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue,scores={crusadekit=3}] run function servermode:kitcrusade/mage
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow,scores={crusadekit=1}] run function servermode:kitcrusade/knight
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow,scores={crusadekit=2}] run function servermode:kitcrusade/archer
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow,scores={crusadekit=3}] run function servermode:kitcrusade/mage
+execute as @a[x=0,tag=JoinBlue,scores={crusadekit=1}] run function rr_crusade:items/kit/give/knight
+execute as @a[x=0,tag=JoinBlue,scores={crusadekit=2}] run function rr_crusade:items/kit/give/archer
+execute as @a[x=0,tag=JoinBlue,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage
+execute as @a[x=0,tag=JoinYellow,scores={crusadekit=1}] run function rr_crusade:items/kit/give/knight
+execute as @a[x=0,tag=JoinYellow,scores={crusadekit=2}] run function rr_crusade:items/kit/give/archer
+execute as @a[x=0,tag=JoinYellow,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage
 
 #Notify Join
 execute if entity @s[tag=GameStarted,tag=!SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]

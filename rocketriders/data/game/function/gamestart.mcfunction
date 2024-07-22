@@ -49,7 +49,7 @@ execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue]
 execute if entity @s[tag=!GameStarted,tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
 execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"blue","italic":true}
 execute if entity @s[tag=!GameStarted,tag=chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"red","italic":true}
-execute if entity @s[tag=!GameStarted] run effect give @a[x=0,tag=JoinBlue] resistance infinite 255 true
+execute if entity @s[tag=!GameStarted] run effect give @a[x=0,tag=JoinBlue] resistance infinite 100 true
 execute if entity @s[tag=GameStarted,tag=!customSpawns] run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
 execute if entity @s[tag=GameStarted,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
 execute if entity @s[tag=GameStarted,tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
@@ -93,7 +93,7 @@ execute if entity @s[tag=!GameStarted,tag=Hardcore] as @a[x=0,tag=JoinYellow] ru
 execute if entity @s[tag=!GameStarted,tag=!customSpawns] run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
 execute if entity @s[tag=!GameStarted] as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
 execute if entity @s[tag=!GameStarted] run tellraw @a[x=0,tag=JoinYellow] {"text":"Fall off the base to return to the Lobby.","color":"gold","italic":true}
-execute if entity @s[tag=!GameStarted] run effect give @a[x=0,tag=JoinYellow] resistance infinite 255 true
+execute if entity @s[tag=!GameStarted] run effect give @a[x=0,tag=JoinYellow] resistance infinite 100 true
 execute if entity @s[tag=GameStarted,tag=!customSpawns] run tp @a[x=0,tag=JoinYellow] 12 64 66 180 0
 execute if entity @s[tag=GameStarted] as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
 execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]

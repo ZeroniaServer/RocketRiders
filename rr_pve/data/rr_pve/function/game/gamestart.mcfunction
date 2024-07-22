@@ -16,8 +16,7 @@ execute if entity @s[tag=Countdown] run scoreboard players set @e[x=0,type=armor
 execute if entity @s[tag=Countdown] run scoreboard players set @e[x=0,type=armor_stand,tag=Bot] BotHP 3
 
 #Items
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue] run function game:givegear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue] run function servermode:givegear
+execute as @a[x=0,tag=JoinBlue] run function game:givegear
 
 #Give first item to anyone who joins within 1st second
 execute if entity @s[tag=GameStarted,scores={gametime=3..20}] run function items:givefirst

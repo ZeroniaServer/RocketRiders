@@ -29,5 +29,4 @@ schedule function rr_swap:baseswap/visuals_indimension 60t
 execute as @e[x=0,type=armor_stand,tag=Selection] run function rr_swap:items/tetrisreset
 
 #armor
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=!Lobby,team=!Spectator] run function rr_swap:baseswap/gear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=!Lobby,team=!Spectator] run function servermode:giveswapgear
+execute as @a[x=0,team=!Lobby,team=!Spectator] run function rr_swap:baseswap/gear

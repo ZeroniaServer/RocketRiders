@@ -38,12 +38,9 @@ execute if entity @s[scores={SDtime=1}] run tag @a[x=0,scores={crusadekit=1}] ad
 execute if entity @s[scores={SDtime=1}] run tag @a[x=0,scores={crusadekit=2}] add kitarcher
 execute if entity @s[scores={SDtime=1}] run tag @a[x=0,scores={crusadekit=3}] add kitmage
 execute if entity @s[scores={SDtime=1}] run scoreboard players reset @a[x=0] crusadekit
-execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitknight] run function rr_crusade:items/kit/give/knight
-execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitarcher] run function rr_crusade:items/kit/give/archer
-execute if entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitmage] run function rr_crusade:items/kit/give/mage
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitknight] run function servermode:kitcrusade/knight
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitarcher] run function servermode:kitcrusade/archer
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitmage] run function servermode:kitcrusade/mage
+execute if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitknight] run function rr_crusade:items/kit/give/knight
+execute if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitarcher] run function rr_crusade:items/kit/give/archer
+execute if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitmage] run function rr_crusade:items/kit/give/mage
 execute if entity @s[scores={SDtime=1}] run tag @a[x=0] remove kitknight
 execute if entity @s[scores={SDtime=1}] run tag @a[x=0] remove kitarcher
 execute if entity @s[scores={SDtime=1}] run tag @a[x=0] remove kitmage

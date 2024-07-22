@@ -1,9 +1,6 @@
 #Items
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue] run function game:givegear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinBlue] run function servermode:givegear
-
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow] run function game:givegear
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=JoinYellow] run function servermode:givegear
+execute as @a[x=0,tag=JoinBlue] run function game:givegear
+execute as @a[x=0,tag=JoinYellow] run function game:givegear
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue

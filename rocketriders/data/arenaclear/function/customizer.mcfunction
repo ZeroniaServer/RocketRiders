@@ -5,16 +5,12 @@
 ####################################################
 
 ##Arrow pointing down into the lobby
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 215.3 78 0 1.5 0 0 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 212 78.8 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 212 78.2 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 212.5 77.8 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 212.5 79.2 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 213 77.45 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 213 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 213.5 77.1 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 213.5 79.9 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[scores={servermode=0},tag=!Repeat] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -64 211.6 78 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[scores={servermode=0},tag=!Repeat] unless entity @e[type=block_display,tag=LobbyArrowDisplay] if score $dust CmdData matches 1 run function lobby:spawnarrow
+scoreboard players add @e[type=block_display,tag=LobbyArrowDisplay] CmdData 1
+execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=1}] run function lobby:arrow_up
+execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=11}] run function lobby:arrow_down
+scoreboard players reset @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=21..}] CmdData
+
 
 ##Particles around confirm changes sign
 execute if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -68.7 190.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

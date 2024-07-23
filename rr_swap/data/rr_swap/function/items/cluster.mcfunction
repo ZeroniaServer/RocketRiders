@@ -17,7 +17,7 @@ execute as @e[x=0,type=fireball,tag=ClusterSpawn] at @s unless entity @e[type=fi
 kill @e[x=0,type=fireball,tag=ClusterSpawn,tag=StillCluster,scores={Clustertime=-40}]
 
 tag @e[x=0,type=fireball,tag=ClusterFireball] remove StillCluster
-tag @e[x=0,type=fireball,tag=ClusterFireball,nbt={Motion:[0.0d,0.0d,0.0d]}] add StillCluster
+tag @e[x=0,type=fireball,tag=ClusterFireball,predicate=!custom:not_moving] add StillCluster
 execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store result score @s x run data get entity @s Motion[0] 100
 execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store result score @s y run data get entity @s Motion[1] 100
 execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store result score @s z run data get entity @s Motion[2] 100

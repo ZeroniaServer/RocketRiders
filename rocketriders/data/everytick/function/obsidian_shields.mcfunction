@@ -33,7 +33,7 @@ execute as @e[x=0,type=marker,tag=BlueObshield] at @s as @a[distance=..6] run pl
 
 #Detecting motion
 tag @e[x=0,type=fireball,tag=blueobfireball] remove StillOb
-tag @e[x=0,type=fireball,tag=blueobfireball,nbt={Motion:[0.0d,0.0d,0.0d]}] add StillOb
+tag @e[x=0,type=fireball,tag=blueobfireball,predicate=!custom:not_moving] add StillOb
 execute as @e[x=0,type=fireball,tag=blueobfireball] store result score @s CmdData run data get entity @s Motion[1] 100
 execute as @e[x=0,type=fireball,tag=blueobfireball] unless score @s CmdData matches 0 run tag @s remove StillOb
 scoreboard players add @e[x=0,type=fireball,tag=blueobfireball,tag=!StillOb] obmove 1
@@ -80,7 +80,7 @@ execute as @e[x=0,type=marker,tag=YellowObshield] at @s as @a[distance=..6] run 
 
 #Detecting motion
 tag @e[x=0,type=fireball,tag=yellowobfireball] remove StillOb
-tag @e[x=0,type=fireball,tag=yellowobfireball,nbt={Motion:[0.0d,0.0d,0.0d]}] add StillOb
+tag @e[x=0,type=fireball,tag=yellowobfireball,predicate=!custom:not_moving] add StillOb
 execute as @e[x=0,type=fireball,tag=yellowobfireball] store result score @s CmdData run data get entity @s Motion[1] 100
 execute as @e[x=0,type=fireball,tag=yellowobfireball] unless score @s CmdData matches 0 run tag @s remove StillOb
 scoreboard players add @e[x=0,type=fireball,tag=yellowobfireball,tag=!StillOb] obmove 1

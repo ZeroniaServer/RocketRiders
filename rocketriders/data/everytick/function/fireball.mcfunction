@@ -35,7 +35,7 @@ kill @e[x=0,type=marker,tag=YellowFireball]
 
 #Detecting Fireball motion
 tag @e[x=0,type=fireball,tag=NormalFireball] remove Still
-tag @e[x=0,type=fireball,tag=NormalFireball,nbt={Motion:[0.0d,0.0d,0.0d]}] add Still
+tag @e[x=0,type=fireball,tag=NormalFireball,predicate=!custom:not_moving] add Still
 execute as @e[x=0,type=fireball,tag=NormalFireball,tag=!Still] store result score @s x run data get entity @s Motion[0] 100
 execute as @e[x=0,type=fireball,tag=NormalFireball,tag=!Still] store result score @s y run data get entity @s Motion[1] 100
 execute as @e[x=0,type=fireball,tag=NormalFireball,tag=!Still] store result score @s z run data get entity @s Motion[2] 100

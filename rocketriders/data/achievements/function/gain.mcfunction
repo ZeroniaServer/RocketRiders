@@ -4,8 +4,8 @@
 ##############################################
 
 #Necessary for fall distance check
-execute as @a[x=0,team=Blue] at @s unless entity @s[nbt={FallDistance:0.0f}] store result score @s FallDistance run data get entity @s FallDistance 50
-execute as @a[x=0,team=Yellow] at @s unless entity @s[nbt={FallDistance:0.0f}] store result score @s FallDistance run data get entity @s FallDistance 50
+execute as @a[x=0,team=Blue,predicate=!custom:not_falling] store result score @s FallDistance run data get entity @s FallDistance 50
+execute as @a[x=0,team=Yellow,predicate=!custom:not_falling] store result score @s FallDistance run data get entity @s FallDistance 50
 
 #Necessary for death check
 scoreboard players add @a[x=0] PlayerDeaths 0
@@ -63,5 +63,5 @@ execute as @a[x=0,scores={deathCooldown=20..}] run tag @s remove stopCheckingDea
 execute as @a[x=0,scores={deathCooldown=20..}] if score @s PlayerDeaths = @s deaths run scoreboard players set @s deathCooldown 0
 
 #Necessary for fall distance check (again)
-execute as @a[x=0,team=Blue] at @s if entity @s[nbt={FallDistance:0.0f}] run scoreboard players reset @s FallDistance
-execute as @a[x=0,team=Yellow] at @s if entity @s[nbt={FallDistance:0.0f}] run scoreboard players reset @s FallDistance
+execute as @a[x=0,team=Blue] at @s if predicate custom:not_falling run scoreboard players reset @s FallDistance
+execute as @a[x=0,team=Yellow] at @s if predicate custom:not_falling run scoreboard players reset @s FallDistance

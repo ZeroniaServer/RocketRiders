@@ -12,15 +12,15 @@ execute if entity @s[tag=!givenBroad] run summon marker 0 0 0 {Tags:["rngBroad",
 tag @e[x=0,type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 
 #> Kill items to prevent duplication glitches
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @e[x=0,type=item] if items entity @s contents skeleton_horse_spawn_egg run function rr_powerups:items/deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @e[x=0,type=item] if items entity @s contents turtle_spawn_egg run function rr_powerups:items/deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngLavaSplash] as @e[x=0,type=item] if items entity @s contents lingering_potion[custom_data~{lavasplash:1b}] run function rr_powerups:items/deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSlapFish] as @e[x=0,type=item] if items entity @s contents cooked_salmon run function rr_powerups:items/deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngTotem] as @e[x=0,type=item] if items entity @s contents totem_of_undying run function rr_powerups:items/deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngTrident] as @e[x=0,type=item] if items entity @s contents trident run function rr_powerups:items/deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngBeeShield] as @e[x=0,type=item] if items entity @s contents honey_bottle run function rr_powerups:items/deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @e[x=0,type=item] if items entity @s contents parrot_spawn_egg run function rr_powerups:items/deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @e[x=0,type=item] if items entity @s contents magma_cube_spawn_egg run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @e[x=0,type=item] if items entity @s contents skeleton_horse_spawn_egg run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @e[x=0,type=item] if items entity @s contents turtle_spawn_egg run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngLavaSplash] as @e[x=0,type=item] if items entity @s contents lingering_potion[custom_data~{lavasplash:1b}] run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSlapFish] as @e[x=0,type=item] if items entity @s contents cooked_salmon run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngTotem] as @e[x=0,type=item] if items entity @s contents totem_of_undying run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngTrident] as @e[x=0,type=item] if items entity @s contents trident run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngBeeShield] as @e[x=0,type=item] if items entity @s contents honey_bottle run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @e[x=0,type=item] if items entity @s contents parrot_spawn_egg run function rr_powerups:items/deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @e[x=0,type=item] if items entity @s contents magma_cube_spawn_egg run function rr_powerups:items/deduct
 
 function items:full_hotbar
 

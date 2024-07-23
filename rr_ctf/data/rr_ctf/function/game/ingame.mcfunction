@@ -17,8 +17,8 @@ execute as @e[x=0,type=marker,tag=airDetectBlue] at @s run function rr_ctf:every
 execute as @e[x=0,type=marker,tag=airDetectYellow] at @s run function rr_ctf:everytick/airdetectyellow
 
 #Overtime sudden death
-execute as @e[x=0,type=armor_stand,tag=Selection,scores={gametime=36000},tag=doTying] run tag @s add CTFOvertime
-execute as @e[x=0,type=armor_stand,tag=Selection,tag=CTFOvertime] run function rr_ctf:everytick/overtime
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={gametime=36000},tag=doTying] run tag @s add CTFOvertime
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CTFOvertime] run function rr_ctf:everytick/overtime
 
 #flag logic
 function rr_ctf:everytick/flag

@@ -81,8 +81,8 @@ execute if entity @s[tag=BlueBroad] run place template broadsword_yellow ~2 ~ ~1
 execute if entity @s[tag=YellowBroad] run place template broadsword_blue ~2 ~ ~11 180
 
 ##CHASE MODE - Missile color conversion
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] at @s positioned ~ ~2 ~ run function rr_chase:game/whitemissile
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] at @s positioned ~ ~2 ~ run function rr_chase:game/whitemissile
 
 ##Add 1 to appropriate missile count
-execute if entity @s[tag=bluemissile] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection] bMissileCount 1
-execute if entity @s[tag=yellowmissile] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection] yMissileCount 1
+execute if entity @s[tag=bluemissile] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] bMissileCount 1
+execute if entity @s[tag=yellowmissile] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] yMissileCount 1

@@ -1,9 +1,9 @@
 ##Sub-RNG for Heavy Missiles spawned by Yellow Surprise Eggs
 #Choose between each missile
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngAux] run summon marker ~ ~ ~ {Tags:["surpriseYellowAux","surpriseYellow2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngRift] run summon marker ~ ~ ~ {Tags:["surpriseYellowRift","surpriseYellow2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngJbuster] run summon marker ~ ~ ~ {Tags:["surpriseYellowJbuster","surpriseYellow2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngWar] run summon marker ~ ~ ~ {Tags:["surpriseYellowWar","surpriseYellow2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngAux] run summon marker ~ ~ ~ {Tags:["surpriseYellowAux","surpriseYellow2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngRift] run summon marker ~ ~ ~ {Tags:["surpriseYellowRift","surpriseYellow2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngJbuster] run summon marker ~ ~ ~ {Tags:["surpriseYellowJbuster","surpriseYellow2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngWar] run summon marker ~ ~ ~ {Tags:["surpriseYellowWar","surpriseYellow2"]}
 
 #Select missile and summon appropriate entity
 tag @e[type=marker,tag=surpriseYellow2,sort=random,limit=1,distance=..1] add rngSelected

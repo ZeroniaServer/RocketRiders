@@ -1,9 +1,9 @@
 ##Gives executor a Vortex
 #Antidupe check
 execute store result score @s HasVortex run clear @s egg[custom_data~{icbm:0b}] 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasVortex %= 16 CmdData
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] if entity @s[scores={HasVortex=1..15},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasVortex 0
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasVortex %= 16 CmdData
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasVortex=1..15},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasVortex 0
 tag @s[tag=itemDeducted] remove fullHotbar
 
 #Title/giving
@@ -16,4 +16,4 @@ give @s[team=Yellow,scores={HasVortex=0},tag=!fullHotbar] egg[max_stack_size=64,
 give @s[team=Blue,scores={HasVortex=0},tag=!fullHotbar] egg[max_stack_size=64,custom_name='[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Vortex","color":"blue","bold":true}]',lore=['{"text":"A sky-mine. Blows up when enemies get close,","color":"gray"}','{"text":"when missiles pass through it, or when it gets","color":"gray"}','{"text":"shot by projectiles. It also follows enemies!","color":"gray"}'],custom_model_data=1,custom_data={icbm:0b}] 1
 
 #Game tracking
-tag @e[x=0,type=armor_stand,tag=Selection,tag=tetrisTime] add givenVortex
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenVortex

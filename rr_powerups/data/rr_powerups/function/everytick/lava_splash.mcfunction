@@ -18,7 +18,7 @@ execute if entity @s[tag=SplashStreams,tag=doFireballPortals] as @e[x=0,type=are
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos x prepend from entity @s Pos[0]
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos y prepend from entity @s Pos[1]
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos z prepend from entity @s Pos[2]
-execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection] splashCount 1
+execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] splashCount 1
 tag @e[x=0,type=area_effect_cloud,tag=lavasplash_alone] add splashMarked
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone] store result score @s splashOwnerUUID run data get entity @s Owner[0]
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run data merge entity @s {Duration:100}

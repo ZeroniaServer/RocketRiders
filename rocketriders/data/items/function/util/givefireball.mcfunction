@@ -1,9 +1,9 @@
 ##Gives executor a Fireball
 #Antidupe check
 execute store result score @s HasFireball run clear @s blaze_spawn_egg 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players operation @s HasFireball %= 64 CmdData
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] if entity @s[scores={HasFireball=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doStacking] run scoreboard players set @s HasFireball 0
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasFireball %= 64 CmdData
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasFireball=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasFireball 0
 tag @s[tag=itemDeducted] remove fullHotbar
 
 #Title/giving
@@ -16,5 +16,5 @@ loot give @s[scores={HasFireball=0},tag=!fullHotbar] loot items:util/fireball
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasFireball=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
-tag @e[x=0,type=armor_stand,tag=Selection,tag=givenFireball,tag=tetrisTime] add givenFireballTwice
-tag @e[x=0,type=armor_stand,tag=Selection,tag=tetrisTime] add givenFireball
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=givenFireball,tag=tetrisTime] add givenFireballTwice
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenFireball

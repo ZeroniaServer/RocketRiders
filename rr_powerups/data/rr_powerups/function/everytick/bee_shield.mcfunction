@@ -87,7 +87,7 @@ kill @e[x=0,type=marker,tag=animBshield,scores={BeeShieldTime=32..}]
 execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run data modify storage rr_powerups:beeshieldpos x prepend from entity @s Pos[0]
 execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run data modify storage rr_powerups:beeshieldpos y prepend from entity @s Pos[1]
 execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run data modify storage rr_powerups:beeshieldpos z prepend from entity @s Pos[2]
-execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection] beeShieldCount 1
+execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount 1
 execute as @e[x=0,type=armor_stand,tag=BeeShieldDisplay,scores={BeeShieldTime=20}] run kill @s
 
 #Bees teams/angry

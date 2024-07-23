@@ -51,8 +51,8 @@ scoreboard players add @e[x=0,type=firework_rocket,tag=YellowNova] novatimer 1
 scoreboard players add @e[x=0,type=marker,tag=novatracker] novatimer 1
 
 #Nova Rockets explode Canopies
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[x=0,type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[team=Blue,distance=..5] run tag @s add DontExplode
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] as @e[x=0,type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[team=Yellow,limit=1,distance=..5] run tag @s add DontExplode
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] as @e[x=0,type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[team=Blue,distance=..5] run tag @s add DontExplode
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] as @e[x=0,type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[team=Yellow,limit=1,distance=..5] run tag @s add DontExplode
 execute as @e[x=0,type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] if entity @a[team=Yellow,limit=1,distance=..4] unless entity @a[team=Blue,distance=..4] run tag @s remove DontExplode
 execute as @e[x=0,type=marker,tag=yellownovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=BluePlatform,distance=..5,limit=1] if entity @a[team=Blue,limit=1,distance=..4] unless entity @a[team=Yellow,distance=..4] run tag @s remove DontExplode
 execute as @e[x=0,type=marker,tag=bluenovatracker,tag=!NovaLost] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..5,limit=1] unless entity @a[team=Blue,distance=..4] run tag @s remove DontExplode
@@ -93,9 +93,9 @@ execute as @e[x=0,type=firework_rocket,tag=CollideNova] run kill @s
 #Explosion/particle effects
 execute as @e[x=0,type=firework_rocket,tag=BlueNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,FireworksItem:{components:{"minecraft:fireworks":{flight_duration:1b,explosions:[{shape:"burst"}]}}}}
 execute as @e[x=0,type=firework_rocket,tag=YellowNova,scores={novatimer=1..10}] at @s run data merge entity @s {LifeTime:30,FireworksItem:{components:{"minecraft:fireworks":{flight_duration:1b,explosions:[{shape:"burst"}]}}}}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!customNova] as @e[x=0,type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust{block_state:"minecraft:lapis_block"} ~ ~0.2 ~ 0 0 0 1 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=customNova] as @e[x=0,type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[3,3,3],scale:1} ~ ~0.2 ~ 0 0 0 1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=customNova] as @e[x=0,type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[3,3,3],scale:1} ^ ^0.2 ^-0.2 0 0 0 1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customNova] as @e[x=0,type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust{block_state:"minecraft:lapis_block"} ~ ~0.2 ~ 0 0 0 1 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customNova] as @e[x=0,type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[3,3,3],scale:1} ~ ~0.2 ~ 0 0 0 1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customNova] as @e[x=0,type=firework_rocket,tag=BlueNova] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[3,3,3],scale:1} ^ ^0.2 ^-0.2 0 0 0 1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=firework_rocket,tag=YellowNova] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust{block_state:"minecraft:gold_block"} ~ ~0.2 ~ 0 0 0 1 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
 ##Yellow Nova Rocket functionality
@@ -165,7 +165,7 @@ execute as @a[x=0,tag=BlueNovaAttach,scores={novattach=1}] at @s run playsound m
 execute as @a[x=0,tag=BlueNovaAttach,scores={novattach=1}] run effect give @s levitation 1 60 true
 execute as @a[x=0,tag=BlueNovaAttach,scores={novattach=4..}] run effect clear @s levitation
 execute as @a[x=0,tag=BlueNovaAttach,scores={novattach=15..},predicate=custom:is_on_ground] at @s run tag @n[type=marker,tag=YellowPlatform,distance=..7] add killCanopy
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] as @a[x=0,tag=BlueNovaAttach,scores={novattach=15..},predicate=custom:is_on_ground] at @s run tag @n[type=marker,tag=BluePlatform,distance=..7] add killCanopy
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] as @a[x=0,tag=BlueNovaAttach,scores={novattach=15..},predicate=custom:is_on_ground] at @s run tag @n[type=marker,tag=BluePlatform,distance=..7] add killCanopy
 execute as @a[x=0,tag=BlueNovaAttach,scores={novattach=15..},predicate=custom:is_on_ground] at @s run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
 execute as @a[x=0,tag=BlueNovaAttach,scores={novattach=15..},predicate=custom:is_on_ground] at @s run playsound minecraft:entity.firework_rocket.blast master @a[x=0] ~ ~ ~ 3 0
 execute if entity @s[tag=!customNova] as @a[x=0,tag=BlueNovaAttach,scores={novattach=15..},predicate=custom:is_on_ground] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",count:1,components:{"minecraft:fireworks":{flight_duration:3,explosions:[{shape:"star",colors:[I;2437522,2651799],has_trail:1,has_twinkle:1}]}}}}

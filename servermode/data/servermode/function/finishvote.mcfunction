@@ -91,17 +91,17 @@ execute if entity @e[x=0,type=marker,tag=WonVote,tag=Set5] as @e[x=0,type=marker
 execute if entity @e[x=0,type=marker,tag=WonVote,tag=Set6] as @e[x=0,type=marker,tag=ServermodeSet6] run function servermode:selectmap
 
 # Item delay (CTF/Crusade specific difference)
-execute unless entity @e[x=0,type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection] MaxItemSec 10
-execute if entity @e[x=0,type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection] MaxItemSec 15
+execute unless entity @e[x=0,type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] MaxItemSec 10
+execute if entity @e[x=0,type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] MaxItemSec 15
 
 # Item stacking (Crusade specific difference)
-execute unless entity @e[x=0,type=marker,tag=WonVote,tag=!CrusadeMode,tag=!ChaseMode] run tag @e[x=0,type=armor_stand,tag=Selection] add doStacking
-execute if entity @e[x=0,type=marker,tag=WonVote,tag=!CrusadeMode,tag=!ChaseMode] run tag @e[x=0,type=armor_stand,tag=Selection] remove doStacking
+execute unless entity @e[x=0,type=marker,tag=WonVote,tag=!CrusadeMode,tag=!ChaseMode] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add doStacking
+execute if entity @e[x=0,type=marker,tag=WonVote,tag=!CrusadeMode,tag=!ChaseMode] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove doStacking
 
 # Global
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
-execute as @e[x=0,type=armor_stand,tag=Selection,tag=!needsForceClear,limit=1] run function arenaclear:testvalidclear
-execute as @e[x=0,type=armor_stand,tag=Selection,tag=needsForceClear,limit=1] run function arenaclear:forceareaclear
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!needsForceClear] run function arenaclear:testvalidclear
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=needsForceClear] run function arenaclear:forceareaclear
 
 # Select forced item sets and match settings
 schedule function servermode:init_forcedsettings 2t

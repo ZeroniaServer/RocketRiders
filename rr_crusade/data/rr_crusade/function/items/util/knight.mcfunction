@@ -1,8 +1,8 @@
 ##Sub-RNG for Knight Utility Items
 #Choose between each item based on Tetris state
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!givenObshield] run summon marker 0 0 0 {Tags:["rngObshield","crusadeRNG"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!givenShield] run summon marker 0 0 0 {Tags:["rngShield","crusadeRNG"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","crusadeRNG"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenObshield] run summon marker 0 0 0 {Tags:["rngObshield","crusadeRNG"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenShield] run summon marker 0 0 0 {Tags:["rngShield","crusadeRNG"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","crusadeRNG"]}
 
 #Select item and run appropriate give function
 tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected

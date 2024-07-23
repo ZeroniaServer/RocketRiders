@@ -1,7 +1,7 @@
-execute as @e[x=0,type=armor_stand,tag=Selection] run function rr_powerups:disable
-tag @e[x=0,type=armor_stand,tag=Selection,tag=powerupsLast,limit=1] add needsForceClear
-execute as @e[x=0,type=armor_stand,tag=Selection,tag=powerupsLast,limit=1] run function rr_powerups:arenaclear/areaclear
-tag @e[x=0,type=armor_stand,tag=Selection,tag=powerupsLast,limit=1] remove powerupsLast
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_powerups:disable
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsLast] add needsForceClear
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsLast] run function rr_powerups:arenaclear/areaclear
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsLast] remove powerupsLast
 execute if entity @e[x=0,type=armor_stand,tag=rr_powerups,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_powerups,limit=1]
 scoreboard players reset * gamemodeID
 scoreboard objectives remove beeShieldCount

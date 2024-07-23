@@ -1,6 +1,6 @@
-execute as @e[x=0,type=armor_stand,tag=Selection] run function rr_duel:disable
-tag @e[x=0,type=armor_stand,tag=Selection,tag=duelLast,limit=1] add needsForceClear
-tag @e[x=0,type=armor_stand,tag=Selection,tag=duelLast,limit=1] remove duelLast
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_duel:disable
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=duelLast] add needsForceClear
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=duelLast] remove duelLast
 execute if entity @e[x=0,type=armor_stand,tag=rr_duel,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_duel,limit=1]
 scoreboard objectives remove RoundsWon
 scoreboard players reset * gamemodeID

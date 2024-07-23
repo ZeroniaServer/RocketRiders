@@ -1,7 +1,7 @@
-execute as @e[x=0,type=armor_stand,tag=Selection] run function rr_crusade:disable
-tag @e[x=0,type=armor_stand,tag=Selection,tag=crusadeLast,limit=1] add needsForceClear
-execute as @e[x=0,type=armor_stand,tag=Selection,tag=crusadeLast,limit=1] run function rr_crusade:arenaclear/areaclear
-tag @e[x=0,type=armor_stand,tag=Selection,tag=crusadeLast,limit=1] remove crusadeLast
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_crusade:disable
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeLast] add needsForceClear
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeLast] run function rr_crusade:arenaclear/areaclear
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeLast] remove crusadeLast
 execute if entity @e[x=0,type=armor_stand,tag=rr_crusade,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_crusade,limit=1]
 scoreboard players reset * gamemodeID
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop

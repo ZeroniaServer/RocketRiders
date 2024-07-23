@@ -47,12 +47,12 @@ clear @s[scores={HasRift=2..}] salmon_spawn_egg 1
 clear @s[scores={HasJug=2..}] zombie_horse_spawn_egg 1
 clear @s[scores={HasShield=2..}] snowball 1
 #Canopies are an exception for modes that require extra Canopies for travel. In this case, you can only have 3 Canopies.
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=canopyStack] run clear @s[scores={HasPlat=2..}] ender_pearl 1
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=canopyStack] run scoreboard players remove @s[scores={HasPlat=2..}] HasPlat 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=canopyStack,tag=!CTF3stack] run clear @s[scores={HasPlat=3..}] ender_pearl 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=canopyStack,tag=!CTF3stack] run scoreboard players remove @s[scores={HasPlat=3..}] HasPlat 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=canopyStack,tag=CTF3stack] run clear @s[scores={HasPlat=4..}] ender_pearl 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=canopyStack,tag=CTF3stack] run scoreboard players remove @s[scores={HasPlat=4..}] HasPlat 1
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack] run clear @s[scores={HasPlat=2..}] ender_pearl 1
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack] run scoreboard players remove @s[scores={HasPlat=2..}] HasPlat 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=!CTF3stack] run clear @s[scores={HasPlat=3..}] ender_pearl 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=!CTF3stack] run scoreboard players remove @s[scores={HasPlat=3..}] HasPlat 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=CTF3stack] run clear @s[scores={HasPlat=4..}] ender_pearl 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=CTF3stack] run scoreboard players remove @s[scores={HasPlat=4..}] HasPlat 1
 clear @s[scores={HasFireball=2..}] blaze_spawn_egg 1
 clear @s[scores={HasObshield=2..}] enderman_spawn_egg 1
 clear @s[scores={HasBullet=2..}] skeleton_horse_spawn_egg 1

@@ -36,34 +36,34 @@ execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearroof run 
 execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearroof run tag @s add UnableMissile
 
 #Pierce Prevention (Portals)
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=preventionOff,tag=preventionSoft] run function items:prevention/preventmissiles
 
 #Spawnpoint
 execute if entity @s[tag=!UnableMissile] run function items:prevention/spawnpoint
 
 ##Antigrief
 #Normal antigrief - starts after 10 seconds
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:flip/antigrief
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:flip/antigrief
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:flip/antigrief
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff,scores={gametime=200..}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:flip/antigrief
 
 #Stronger antigrief - starts before 10 seconds
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff,scores={gametime=..199}] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
 
 #Collision Control - applies to enemy base
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=18] run function items:prevention/collisioncontrol
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=49,dz=18] run function items:prevention/collisioncontrol
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=18] run function items:prevention/collisioncontrol
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=CollisionControl,tag=Hardcore] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=49,dz=18] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CollisionControl,tag=!Hardcore] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=37,dz=30] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CollisionControl,tag=Hardcore] if entity @s[tag=yellowmissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=18] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CollisionControl,tag=Hardcore] if entity @s[tag=bluemissile,tag=!missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=49,dz=18] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CollisionControl,tag=Hardcore] if entity @s[tag=bluemissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=-67,dz=18] run function items:prevention/collisioncontrol
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CollisionControl,tag=Hardcore] if entity @s[tag=yellowmissile,tag=missileflip] if entity @s[x=-15,dx=54,y=33,dy=40,z=49,dz=18] run function items:prevention/collisioncontrol
 
 #Remove clone blocks
 function items:prevention/clearafter
@@ -72,7 +72,7 @@ function items:prevention/clearafter
 #Give back
 execute if entity @s[tag=UnableMissile,tag=!missileflip] run function items:prevention/unablefx
 execute if entity @s[tag=UnableMissile,tag=missileflip] run function items:flip/unablefx
-execute as @e[x=0,type=armor_stand,tag=Selection] run function items:prevention/giveback
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function items:prevention/giveback
 
 ##Bot preparation (for PVE mode)
 execute if entity @s[tag=bluemissile] if entity @e[x=0,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}

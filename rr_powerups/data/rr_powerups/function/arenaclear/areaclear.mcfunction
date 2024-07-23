@@ -1,5 +1,5 @@
 #reset tetris for powerups
-execute as @e[x=0,type=armor_stand,tag=Selection] run function rr_powerups:items/tetrisreset
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_powerups:items/tetrisreset
 
 #remove endcrystal entities
 kill @e[x=0,type=#custom:crystal,tag=PUCrystalEntity]
@@ -27,5 +27,5 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!powerupsEna
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!powerupsEnabled] run fill -97 201 99 -93 205 101 air
 
 #remove stinging shield entities
-execute as @e[x=0,type=armor_stand,tag=Selection] run function rr_powerups:arenaclear/preparebeeshield
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_powerups:arenaclear/preparebeeshield
 scoreboard players reset $beetime BeeShieldTime

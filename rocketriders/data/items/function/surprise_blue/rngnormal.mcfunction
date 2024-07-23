@@ -1,15 +1,15 @@
 ##Sub-RNG for Normal Missiles spawned by Blue Surprise Eggs
 #Choose between each missile
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngAnt] run summon marker ~ ~ ~ {Tags:["surpriseBlueAnt","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngBlade] run summon marker ~ ~ ~ {Tags:["surpriseBlueBlade","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngCata] run summon marker ~ ~ ~ {Tags:["surpriseBlueCata","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngCitadel] run summon marker ~ ~ ~ {Tags:["surpriseBlueCitadel","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngEguard] run summon marker ~ ~ ~ {Tags:["surpriseBlueEguard","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngGemi] run summon marker ~ ~ ~ {Tags:["surpriseBlueGemi","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngNull] run summon marker ~ ~ ~ {Tags:["surpriseBlueNull","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngLift] run summon marker ~ ~ ~ {Tags:["surpriseBlueLift","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngSlash] run summon marker ~ ~ ~ {Tags:["surpriseBlueSlash","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngToma] run summon marker ~ ~ ~ {Tags:["surpriseBlueToma","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngAnt] run summon marker ~ ~ ~ {Tags:["surpriseBlueAnt","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngBlade] run summon marker ~ ~ ~ {Tags:["surpriseBlueBlade","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngCata] run summon marker ~ ~ ~ {Tags:["surpriseBlueCata","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngCitadel] run summon marker ~ ~ ~ {Tags:["surpriseBlueCitadel","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngEguard] run summon marker ~ ~ ~ {Tags:["surpriseBlueEguard","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngGemi] run summon marker ~ ~ ~ {Tags:["surpriseBlueGemi","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngNull] run summon marker ~ ~ ~ {Tags:["surpriseBlueNull","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngLift] run summon marker ~ ~ ~ {Tags:["surpriseBlueLift","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngSlash] run summon marker ~ ~ ~ {Tags:["surpriseBlueSlash","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngToma] run summon marker ~ ~ ~ {Tags:["surpriseBlueToma","surpriseBlue2"]}
 
 #Select missile and summon appropriate entity
 tag @e[type=marker,tag=surpriseBlue2,sort=random,limit=1,distance=..1] add rngSelected

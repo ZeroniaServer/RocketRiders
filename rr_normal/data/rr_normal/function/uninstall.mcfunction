@@ -1,7 +1,7 @@
-execute as @e[x=0,type=armor_stand,tag=Selection] run function rr_normal:disable
-tag @e[x=0,type=armor_stand,tag=Selection,tag=normalLast,limit=1] add needsForceClear
-execute as @e[x=0,type=armor_stand,tag=Selection,tag=normalLast,limit=1] run function rr_normal:arenaclear/areaclear
-tag @e[x=0,type=armor_stand,tag=Selection,tag=normalLast,limit=1] remove normalLast
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_normal:disable
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalLast] add needsForceClear
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalLast] run function rr_normal:arenaclear/areaclear
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalLast] remove normalLast
 execute if entity @e[x=0,type=armor_stand,tag=rr_normal,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_normal,limit=1]
 scoreboard players reset * gamemodeID
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop

@@ -1,10 +1,10 @@
 ##Sub-sub-RNG for Mage Missiles
 #Choose between each missile based on Tetris state
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!givenAnt] run summon marker 0 0 0 {Tags:["rngAnt","crusadeRNG"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!givenToma] run summon marker 0 0 0 {Tags:["rngToma","crusadeRNG"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!givenCata] run summon marker 0 0 0 {Tags:["rngCata","crusadeRNG"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!givenLift] run summon marker 0 0 0 {Tags:["rngLift","crusadeRNG"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=!givenNull] run summon marker 0 0 0 {Tags:["rngNull","crusadeRNG"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenAnt] run summon marker 0 0 0 {Tags:["rngAnt","crusadeRNG"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenToma] run summon marker 0 0 0 {Tags:["rngToma","crusadeRNG"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenCata] run summon marker 0 0 0 {Tags:["rngCata","crusadeRNG"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenLift] run summon marker 0 0 0 {Tags:["rngLift","crusadeRNG"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenNull] run summon marker 0 0 0 {Tags:["rngNull","crusadeRNG"]}
 
 #Select a missile and run appropriate give function
 tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected

@@ -8,8 +8,8 @@ execute as @e[x=0,type=armor_stand,tag=SelectedCredit] run function lobby:credit
 scoreboard players reset @e[x=0,type=armor_stand,tag=creditsAS] CreditCycle
 tag @e[x=0,type=armor_stand,tag=creditsAS] remove OldSelectedCredit
 tag @e[x=0,type=armor_stand,tag=creditsAS] remove SelectedCredit
-execute as @e[x=0,type=armor_stand,tag=Selection,scores={creditsSet=0}] run tag @e[x=0,type=armor_stand,tag=KaisCredits] add SelectedCredit
-execute as @e[x=0,type=armor_stand,tag=Selection,scores={creditsSet=1}] run tag @e[x=0,type=armor_stand,tag=EvieCredits] add SelectedCredit
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={creditsSet=0}] run tag @e[x=0,type=armor_stand,tag=KaisCredits] add SelectedCredit
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={creditsSet=1}] run tag @e[x=0,type=armor_stand,tag=EvieCredits] add SelectedCredit
 
 scoreboard players reset @e[x=0,type=armor_stand,tag=devcycle] CreditCycle
 tag @e[x=0,type=armor_stand,tag=devcycle] remove OldDevSel

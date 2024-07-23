@@ -7,14 +7,14 @@
 execute as @e[x=0,type=armor_stand,tag=DispCooldown] run scoreboard players add $DispCD CmdData 1
 execute if score $DispCD CmdData matches 30 if score $prevpage CmdData matches 0 run data merge block 12 203 78 {Page:0}
 execute if score $DispCD CmdData matches 30 if score $prevpage CmdData matches 1 run data merge block 12 203 78 {Page:1}
-execute if score $DispCD CmdData matches 30 run tag @e[x=0,type=armor_stand,tag=Selection] remove DispCooldown
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=DispCooldown] run scoreboard players reset $DispCD CmdData
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=DispCooldown] run scoreboard players reset $prevpage CmdData
+execute if score $DispCD CmdData matches 30 run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove DispCooldown
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] run scoreboard players reset $DispCD CmdData
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] run scoreboard players reset $prevpage CmdData
 
 #Set page back to 1 if someone tries to use the arrow to cycle through pages
 execute if entity @e[x=0,type=armor_stand,tag=DispCooldown] run data merge block 12 203 78 {Page:26}
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=DispCooldown] unless block 12 203 78 minecraft:lectern{Page:0} unless block 12 203 78 minecraft:lectern{Page:1} unless block 12 203 78 minecraft:lectern{Page:2} unless block 12 203 78 minecraft:lectern{Page:3} unless block 12 203 78 minecraft:lectern{Page:4} unless block 12 203 78 minecraft:lectern{Page:25} unless block 12 203 78 minecraft:lectern{Page:26} run tag @e[x=0,type=armor_stand,tag=Selection] add DispCooldown
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=DispCooldown] unless block 12 203 78 minecraft:lectern{Page:0} unless block 12 203 78 minecraft:lectern{Page:1} run data merge block 12 203 78 {Page:0}
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] unless block 12 203 78 minecraft:lectern{Page:0} unless block 12 203 78 minecraft:lectern{Page:1} unless block 12 203 78 minecraft:lectern{Page:2} unless block 12 203 78 minecraft:lectern{Page:3} unless block 12 203 78 minecraft:lectern{Page:4} unless block 12 203 78 minecraft:lectern{Page:25} unless block 12 203 78 minecraft:lectern{Page:26} run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add DispCooldown
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] unless block 12 203 78 minecraft:lectern{Page:0} unless block 12 203 78 minecraft:lectern{Page:1} run data merge block 12 203 78 {Page:0}
 
 #Display missiles
 execute if block 12 203 78 minecraft:lectern{Page:5} run function lobby:missiledisplay/missile/tomatwo

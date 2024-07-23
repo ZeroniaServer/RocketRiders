@@ -12,7 +12,7 @@ execute as @a[x=0,team=Blue] at @s if entity @e[type=firework_rocket,distance=..
 execute as @a[x=0,team=Blue] at @s if entity @e[type=marker,distance=..4,limit=1,tag=bluenovatracker] run tag @s add BlueNovaNear
 execute as @a[x=0,team=Blue,tag=BlueNovaNear,scores={NovaNear=4..}] at @s unless entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s remove BlueNovaNear
 execute as @a[x=0,team=Blue,tag=!BlueNovaNear,scores={NovaNear=4..}] run scoreboard players reset @s NovaNear
-execute as @a[x=0,tag=BlueNovaAttach,scores={novattach=15..},predicate=custom:is_on_ground] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",count:1,components:{"minecraft:fireworks":{flight_duration:3,explosions:[{shape:"star",colors:[I;15790320],fade_colors:[I;11743532,3887386,2437522,8073150,2651799,14188952,4312372,14602026,6719955,12801229,15435844],has_trail:1,has_twinkle:1}]}}}}
+execute as @a[x=0,tag=BlueNovaAttach,scores={novattach=15..},predicate=custom:is_on_ground] at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:"firework_rocket",count:1,components:{"minecraft:fireworks":{flight_duration:3,explosions:[{shape:"star",colors:[I;15790320],fade_colors:[I;11743532,3887386,2437522,8073150,2651799,14188952,4312372,14602026,6719955,12801229,15435844],has_trail:true,has_twinkle:true}]}}}}
 
 #Nova Rockets explode same team Canopies
 tag @e[x=0,type=marker,tag=novatracker,tag=DontExplode] remove DontExplode
@@ -80,7 +80,7 @@ kill @e[x=0,type=ender_pearl,scores={testplat2=10..}]
 execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
 execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
 execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
-execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=1}] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection] canopyCount 1
+execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=1}] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount 1
 #Teleporting happens in another function
 execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=..41}] run function everytick:canopy_tpblue
 tag @e[x=0,type=marker,tag=BluePlatform] remove checkedTP

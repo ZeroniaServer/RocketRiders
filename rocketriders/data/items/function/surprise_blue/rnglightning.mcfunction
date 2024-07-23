@@ -1,7 +1,7 @@
 ##Sub-RNG for Lightning Missiles spawned by Blue Surprise Eggs
 #Choose between each missile
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngHur] run summon marker ~ ~ ~ {Tags:["surpriseBlueHur","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=rngThun] run summon marker ~ ~ ~ {Tags:["surpriseBlueBolt","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngHur] run summon marker ~ ~ ~ {Tags:["surpriseBlueHur","surpriseBlue2"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngThun] run summon marker ~ ~ ~ {Tags:["surpriseBlueBolt","surpriseBlue2"]}
 
 #Select missile and summon appropriate entity
 tag @e[type=marker,tag=surpriseBlue2,sort=random,limit=1,distance=..1] add rngSelected

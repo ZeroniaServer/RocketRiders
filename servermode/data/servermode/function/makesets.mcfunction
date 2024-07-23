@@ -6,7 +6,7 @@ execute unless score $CrusadeMode servermode matches 0.. run scoreboard players 
 execute unless score $GameCount servermode matches 0.. run scoreboard players set $GameCount servermode 0
 
 # Add tag
-tag @e[x=0,type=armor_stand,tag=Selection] add ServerModeVoting
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add ServerModeVoting
 
 # Kill potentially old entities
 kill @e[x=0,type=marker,tag=ServerMode]

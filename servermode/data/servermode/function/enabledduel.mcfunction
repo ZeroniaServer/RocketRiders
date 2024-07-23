@@ -1,18 +1,18 @@
-tag @e[x=0,type=armor_stand,tag=Selection] add SMSwitch
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
 execute unless score @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode matches 2 run schedule function game:forcestop 2t append
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection] servermode 2
-tag @e[x=0,type=armor_stand,tag=Selection] add noYZELO
-tag @e[x=0,type=armor_stand,tag=Selection] add stopIfEmpty
-tag @e[x=0,type=armor_stand,tag=Selection] remove ServerModeVoting
-tag @e[x=0,type=armor_stand,tag=Selection] remove realms
-tag @e[x=0,type=armor_stand,tag=Selection] remove SMCustom
-tag @e[x=0,type=armor_stand,tag=Selection] remove Repeat
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection] RepeatSettings 1
+scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode 2
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove realms
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SMCustom
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
+scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
 fill -57 201 84 -70 201 72 barrier replace air
 fill -57 198 84 -70 198 72 blackstone replace air
 execute as @a[x=0] run function achievements:reset
 function game:forcestop
-execute as @e[x=0,type=armor_stand,tag=Selection] store result score @s SetGamemode run scoreboard players get @e[x=0,type=armor_stand,tag=rr_duel,limit=1] gamemodeID
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] store result score @s SetGamemode run scoreboard players get @e[x=0,type=armor_stand,tag=rr_duel,limit=1] gamemodeID
 clear @a
 kill @e[x=0,type=armor_stand,tag=ParkourLB]
 kill @e[x=0,type=area_effect_cloud,tag=ParkourLB]

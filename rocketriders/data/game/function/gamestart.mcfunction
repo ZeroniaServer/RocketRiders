@@ -121,7 +121,7 @@ execute as @e[x=0,type=marker,tag=yellowjoinpad] at @s run tag @a[distance=2..,t
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinSpec
 execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinSpec
 execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinSpec
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=SMActive] if entity @e[x=0,type=marker,tag=specjoinpad,tag=CancelJoin] as @a[x=0,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] if entity @e[x=0,type=marker,tag=specjoinpad,tag=CancelJoin] as @a[x=0,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 tag @a[x=0,gamemode=spectator] remove JoinSpec
 execute if score $dust CmdData matches 1 as @e[x=0,type=marker,tag=specjoinpad,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:gray_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute as @e[x=0,type=marker,tag=specjoinpad,tag=!CancelJoin,tag=!JustCleared] at @s run tag @a[team=!Spectator,distance=..1,limit=1,sort=random] add JoinSpec
@@ -133,8 +133,8 @@ clear @a[x=0,tag=JoinSpec]
 scoreboard players enable @a[x=0,team=Spectator] leaveSpec
 tag @a[x=0,scores={leaveSpec=1..}] add LeaveTeams
 scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave ","color":"green"},{"text":"to go back to the lobby.","color":"dark_green","italic":true}]
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave ","color":"green"},{"text":"to go back to the lobby.","color":"dark_green","italic":true}]
 tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
@@ -143,8 +143,8 @@ tag @a[x=0] remove JoinSpec
 tp @a[x=0,tag=AlreadySpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=AlreadySpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a[x=0] remove AlreadySpec
-execute if score $dust CmdData matches 1 unless entity @e[x=0,type=armor_stand,tag=Selection,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[2,1,0],scale:1} ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[x=0,tag=!hideParticles,team=Spectator,predicate=custom:belowroof]
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run tag @a[team=Spectator,distance=..2] add LeaveTeams
+execute if score $dust CmdData matches 1 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[2,1,0],scale:1} ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[x=0,tag=!hideParticles,team=Spectator,predicate=custom:belowroof]
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run tag @a[team=Spectator,distance=..2] add LeaveTeams
 
 #Keep spectators inside arena
 execute as @a[x=0,team=Spectator] at @s unless predicate custom:insideborder_lenient run tag @s add leftBorder

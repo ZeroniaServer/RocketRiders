@@ -124,7 +124,7 @@ execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tellraw @a[x
 execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Thunderbolt","color":"gold","bold":false}]
 
 #Announce heavys (if any)
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=!rngAux,tag=!rngWar] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!rngAux,tag=!rngWar] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
 
 kill @e[x=0,type=marker,tag=RankedRNG]
 tellraw @a[x=0] [""]

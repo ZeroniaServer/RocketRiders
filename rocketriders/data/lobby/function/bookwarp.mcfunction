@@ -9,7 +9,7 @@ execute as @a[x=0,team=!Lobby] run trigger LobbyWarp set -1
 scoreboard players reset @a[team=!Lobby] LobbyWarp
 
 #Cancel parkour
-execute as @e[x=0,type=armor_stand,tag=Selection,tag=!SMActive] as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used a Lobby Warp, so your Parkour run was canceled.","color":"red"}]
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used a Lobby Warp, so your Parkour run was canceled.","color":"red"}]
 execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run clear @s
 execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inParkour
 
@@ -28,7 +28,7 @@ execute as @a[x=0,team=Lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s ru
 execute as @a[x=0,team=Lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
 
 #Message about mod room (server mode)
-execute as @e[x=0,type=armor_stand,tag=Selection,scores={servermode=1..}] as @a[x=0,team=Lobby,scores={LobbyWarp=2}] run tellraw @s [{"text":"You cannot access this area.","color":"red"}]
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=1..}] as @a[x=0,team=Lobby,scores={LobbyWarp=2}] run tellraw @s [{"text":"You cannot access this area.","color":"red"}]
 
 #Reset score
 scoreboard players reset @a[x=0,scores={LobbyWarp=1..}] LobbyWarp

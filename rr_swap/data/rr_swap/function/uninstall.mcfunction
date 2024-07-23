@@ -1,7 +1,7 @@
-execute as @e[x=0,type=armor_stand,tag=Selection] run function rr_swap:disable
-tag @e[x=0,type=armor_stand,tag=Selection,tag=swapLast,limit=1] add needsForceClear
-execute as @e[x=0,type=armor_stand,tag=Selection,tag=swapLast,limit=1] run function rr_swap:arenaclear/areaclear
-tag @e[x=0,type=armor_stand,tag=Selection,tag=swapLast,limit=1] remove swapLast
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_swap:disable
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapLast] add needsForceClear
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapLast] run function rr_swap:arenaclear/areaclear
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapLast] remove swapLast
 execute if entity @e[x=0,type=armor_stand,tag=rr_swap,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_swap,limit=1]
 bossbar remove rr_swap:swap_progress
 scoreboard objectives remove swapside

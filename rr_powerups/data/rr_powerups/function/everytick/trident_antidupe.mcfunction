@@ -6,4 +6,4 @@ execute if entity @p[tag=tridentValid,scores={HasTrident=1..},distance=..5] run 
 tag @p[tag=tridentChecking] add tridentChecked
 tag @a[x=0,tag=tridentChecked] remove tridentChecking
 tag @a[x=0,tag=tridentChecked] remove tridentValid
-execute if entity @a[x=0,tag=!tridentChecked] run function everytick:trident_antidupe
+execute if entity @a[x=0,tag=!tridentChecked] run function rr_powerups:everytick/trident_antidupe

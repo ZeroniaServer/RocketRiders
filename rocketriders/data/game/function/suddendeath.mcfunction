@@ -46,7 +46,7 @@ execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Blue]
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Yellow]
 execute if entity @s[scores={SDtime=1}] run tag @s add GameStarted
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
-#Fix endgame fireballs
+#Fixes endgame fireballs
 execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball,tag=!specialEndFireball] run scoreboard players add @s endFireball 1
 execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball,tag=!specialEndFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0,0.0,0.0],acceleration_power:0d}
 execute if entity @s[tag=!fireballOverride,scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run data modify entity @s Owner set from entity @n[type=fireball,scores={endFireball=1},distance=..1] Owner
@@ -62,11 +62,11 @@ execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon
 #For Premature Celebration achievement
 execute if entity @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=BlueWonFirst] run advancement grant @a[x=0,team=Blue] only achievements:rr_challenges/premature
-execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[x=0,team=Blue] armor.chest with leather_chestplate[unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},enchantment_glint_override=true,custom_name='[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',dyed_color={rgb:1247871,show_in_tooltip:0b},trim={material:"minecraft:quartz",pattern:"minecraft:vex"},attribute_modifiers={show_in_tooltip:0b},stored_enchantments={show_in_tooltip:0b},hide_additional_tooltip={}]
+execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[x=0,team=Blue] armor.chest with leather_chestplate[unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},enchantment_glint_override=true,custom_name='[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',dyed_color={rgb:1247871,show_in_tooltip:0b},trim={material:"minecraft:quartz",pattern:"minecraft:vex"},hide_additional_tooltip={}]
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[x=0,team=Yellow] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
 execute if entity @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=YellowWonFirst] run advancement grant @a[x=0,team=Yellow] only achievements:rr_challenges/premature
-execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[x=0,team=Yellow] armor.chest with leather_chestplate[unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},enchantment_glint_override=true,custom_name='[{"text":"Yellow Chestplate","color":"yellow","bold":true,"italic":false}]',dyed_color={rgb:16768000,show_in_tooltip:0b},trim={material:"minecraft:netherite",pattern:"minecraft:spire"},attribute_modifiers={show_in_tooltip:0b},stored_enchantments={show_in_tooltip:0b},hide_additional_tooltip={}]
+execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[x=0,team=Yellow] armor.chest with leather_chestplate[unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},enchantment_glint_override=true,custom_name='[{"text":"Yellow Chestplate","color":"yellow","bold":true,"italic":false}]',dyed_color={rgb:16768000,show_in_tooltip:0b},trim={material:"minecraft:netherite",pattern:"minecraft:spire"},hide_additional_tooltip={}]
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[x=0,team=Blue] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
 #Halves the Item Delay (more intense gameplay)

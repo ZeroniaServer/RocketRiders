@@ -1,29 +1,29 @@
 {
-  "rewards": {
-    "function": "rr_bots:hitdetect/plingsound"
-  },
-  "criteria": {
-    "requirement": {
-      "trigger": "minecraft:player_hurt_entity",
-      "conditions": {
-        "damage": {
-          "direct_entity": {
-            "type": "minecraft:arrow"
-          },
-          "type": {
-            "tags": [
-              {
-                "id": "minecraft:is_projectile",
-                "expected": true
-              }
-            ]
-          }
-        },
-        "entity": {
-          "type": "minecraft:armor_stand",
-          "nbt": "{Tags:[\"Bot\"]}"
+    "rewards": {
+        "function": "rr_bots:hitdetect/plingsound"
+    },
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "tags": [
+                            {
+                                "id": "minecraft:is_projectile",
+                                "expected": true
+                            }
+                        ],
+                        "direct_entity": {
+                            "type": "minecraft:arrow"
+                        }
+                    }
+                },
+                "entity": {
+                    "type": "minecraft:armor_stand",
+                    "nbt": "{Tags:[\"Bot\"]}"
+                }
+            }
         }
-      }
     }
-  }
 }

@@ -5,6 +5,7 @@ scoreboard objectives add FlagDeliver dummy
 scoreboard objectives add MineWhiteGlass minecraft.mined:minecraft.white_stained_glass
 scoreboard objectives add MinePurpleGlass minecraft.mined:minecraft.purple_stained_glass
 scoreboard objectives add canopyStreak dummy
+scoreboard objectives add FlagsCaptured dummy
 
 bossbar add rr_ctf:fy1 ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
 bossbar set rr_ctf:fy1 color blue

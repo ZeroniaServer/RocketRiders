@@ -177,26 +177,26 @@ kill @e[x=0,type=marker,tag=killCanopy,scores={canopyExtraLogs=4..}]
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300}] at @s if entity @e[x=0,type=player,predicate=custom:is_on_fire,distance=..3] run scoreboard players add @s canopySmoke 2
 scoreboard players remove @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1..}] canopySmoke 1
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1..}] at @s unless entity @e[x=0,type=player,predicate=custom:is_on_fire,distance=..3] run scoreboard players remove @s canopySmoke 1
-execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1}] at @s run playsound block.campfire.ambient master @a[x=0] ~ ~ ~ 2 1
+execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1}] at @s run playsound block.campfire.crackle master @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=1}] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 100 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=7}] at @s run playsound block.fire.ambient player @a[x=0] ~ ~ ~ 2 0.25
-execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=14}] at @s run playsound block.campfire.ambient master @a[x=0] ~ ~ ~ 2 1
+execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=14}] at @s run playsound block.campfire.crackle master @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=14}] at @s run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21}] at @s run playsound block.fire.ambient master @a[x=0] ~ ~ ~ 2 0.5
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=21}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=28}] at @s run playsound block.campfire.ambient master @a[x=0] ~ ~ ~ 2 1
+execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=28}] at @s run playsound block.campfire.crackle master @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=28}] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=35}] at @s run playsound block.fire.ambient master @a[x=0] ~ ~ ~ 2 0.75
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=35}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 -1 1 0.01 100 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=42}] at @s run playsound block.campfire.ambient player @a[x=0] ~ ~ ~ 2 1
+execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=42}] at @s run playsound block.campfire.crackle player @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=42}] at @s run particle minecraft:large_smoke ~ ~ ~ 1.5 0 1.5 0.1 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=49}] at @s run playsound block.fire.ambient master @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=49}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=56}] at @s run playsound block.campfire.ambient master @a[x=0] ~ ~ ~ 2 1
+execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=56}] at @s run playsound block.campfire.crackle master @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=56}] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=63}] at @s run playsound block.fire.ambient master @a[x=0] ~ ~ ~ 2 1.5
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=63}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.5 -1 1.5 0.01 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70}] at @s run playsound block.campfire.ambient master @a[x=0] ~ ~ ~ 2 1
+execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70}] at @s run playsound block.campfire.crackle master @a[x=0] ~ ~ ~ 2 1
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=70}] at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.1 300 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=77}] at @s run playsound block.fire.ambient master @a[x=0] ~ ~ ~ 2 2
 execute as @e[x=0,type=marker,tag=!killCanopy,scores={PlatTime=3..300,canopySmoke=77}] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 2 -1 2 0.01 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]

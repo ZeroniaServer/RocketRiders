@@ -29,7 +29,6 @@ fill 39 63 -67 39 34 -67 obsidian
 
 #Item RNG
 scoreboard players add @s RandomItem 1
-execute if score @s[tag=!doStacking] RandomItem matches ..1 as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run function item:antidupe
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
 execute if entity @s[tag=Minute] run function items:minutemix

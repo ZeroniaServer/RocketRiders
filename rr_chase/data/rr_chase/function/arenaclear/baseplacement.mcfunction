@@ -14,13 +14,13 @@ fill -11 36 -75 35 59 -73 air
 fill -11 36 73 35 59 75 air
 
 #Waiting lobby stuff
-setblock -89 203 71 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;-104960843,799031877,-1461346492,636471740],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0="}]}}}
-setblock -92 204 74 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1360113007,-1973466880,-1569223220,914918317],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYyMzY4NWM2OTdiYTU1ZWRkYTQyNWVjZjFmZWM3MmZlZWI3YmI5ODVjNjUwNmIyY2VmMDcwNTE1ZTRlNTQ5MiJ9fX0="}]}}}
-setblock -94 200 75 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1532111907,970802464,-1472056034,1445216331],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0="}]}}}
-setblock -96 201 71 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1360113007,-1973466880,-1569223220,914918317],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYyMzY4NWM2OTdiYTU1ZWRkYTQyNWVjZjFmZWM3MmZlZWI3YmI5ODVjNjUwNmIyY2VmMDcwNTE1ZTRlNTQ5MiJ9fX0="}]}}}
-setblock -95 203 74 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;-104960843,799031877,-1461346492,636471740],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0="}]}}}
-setblock -98 199 74 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;-104960843,799031877,-1461346492,636471740],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0="}]}}}
-setblock -100 201 78 minecraft:player_head[rotation=0]{SkullOwner:{Id:[I;1532111907,970802464,-1472056034,1445216331],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0="}]}}}
+setblock -89 203 71 minecraft:player_head[rotation=0]{profile:{id:[I;-104960843,799031877,-1461346492,636471740],properties:[{value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0=",name:""}]}}
+setblock -92 204 74 minecraft:player_head[rotation=0]{profile:{id:[I;1360113007,-1973466880,-1569223220,914918317],properties:[{value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYyMzY4NWM2OTdiYTU1ZWRkYTQyNWVjZjFmZWM3MmZlZWI3YmI5ODVjNjUwNmIyY2VmMDcwNTE1ZTRlNTQ5MiJ9fX0=",name:""}]}}
+setblock -94 200 75 minecraft:player_head[rotation=0]{profile:{id:[I;1532111907,970802464,-1472056034,1445216331],properties:[{value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0=",name:""}]}}
+setblock -96 201 71 minecraft:player_head[rotation=0]{profile:{id:[I;1360113007,-1973466880,-1569223220,914918317],properties:[{value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYyMzY4NWM2OTdiYTU1ZWRkYTQyNWVjZjFmZWM3MmZlZWI3YmI5ODVjNjUwNmIyY2VmMDcwNTE1ZTRlNTQ5MiJ9fX0=",name:""}]}}
+setblock -95 203 74 minecraft:player_head[rotation=0]{profile:{id:[I;-104960843,799031877,-1461346492,636471740],properties:[{value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0=",name:""}]}}
+setblock -98 199 74 minecraft:player_head[rotation=0]{profile:{id:[I;-104960843,799031877,-1461346492,636471740],properties:[{value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0=",name:""}]}}
+setblock -100 201 78 minecraft:player_head[rotation=0]{profile:{id:[I;1532111907,970802464,-1472056034,1445216331],properties:[{value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0=",name:""}]}}
 
 #Flag placement
 fill 12 64 65 12 71 65 oak_fence replace air
@@ -39,7 +39,7 @@ fill -89 201 97 -101 195 97 barrier
 fill -89 201 59 -101 195 59 barrier
 
 #Banner in pregame queue
-setblock -95 202 95 white_banner[rotation=8]{Patterns:[{Pattern:"vhr",Color:15},{Pattern:"tl",Color:15},{Pattern:"bl",Color:15},{Pattern:"tr",Color:0},{Pattern:"br",Color:0}]}
+setblock -95 202 95 white_banner[rotation=8]{patterns:[{pattern:"minecraft:half_vertical_right",color:"black"},{pattern:"minecraft:square_top_left",color:"black"},{pattern:"minecraft:square_bottom_left",color:"black"},{pattern:"minecraft:square_top_right",color:"white"},{pattern:"minecraft:square_bottom_right",color:"white"}]}
 
 #Stairs in pregame queue
 fill -94 201 95 -96 201 96 obsidian replace white_stained_glass

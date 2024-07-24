@@ -1,5 +1,5 @@
 #lavasplash
-execute as @e[x=0,type=potion,tag=!lavasplash] if items entity @s contents lingering_potion[custom_data~{lavasplash:1b}] run function rr_powerups:everytick/lava_splash_init
+execute as @e[x=0,type=potion,tag=!lavasplash,nbt={Item:{components:{"minecraft:custom_data":{lavasplash:1b}}}}] run function rr_powerups:everytick/lava_splash_init
 execute as @e[x=0,type=potion,tag=lavasplash] at @s if score $dust CmdData matches 1 run particle lava ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 scoreboard players add @a[x=0,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash

@@ -15,7 +15,7 @@ execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inPark
 
 #Teleports
 tp @a[x=0,team=Lobby,scores={LobbyWarp=1}] -43 211 78 90 0
-execute as @e[x=0,team=Lobby,type=armor_stand,tag=Selection,scores={servermode=0}] as @a[x=0,team=Lobby,scores={LobbyWarp=2}] run tp @s -64 202 78 90 0
+execute as @e[x=0,type=armor_stand,tag=Selection,scores={servermode=0}] as @a[x=0,team=Lobby,scores={LobbyWarp=2}] run tp @s -64 202 78 90 0
 tp @a[x=0,team=Lobby,scores={LobbyWarp=3}] -78 204 64 135 0
 tp @a[x=0,team=Lobby,scores={LobbyWarp=4}] -78 204 92 45 0
 tp @a[x=0,team=Lobby,scores={LobbyWarp=5}] -80 201 78 90 0

@@ -53,15 +53,6 @@ execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Blue]
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Yellow]
 execute if entity @s[scores={SDtime=1}] run tag @s add GameStarted
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
-#Fix endgame fireballs
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] run scoreboard players add @s endFireball 1
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0d,0.0d,0.0d],acceleration_power:0d}
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run item replace entity @s contents from entity @n[type=fireball,scores={endFireball=1},distance=..1] contents
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run data modify entity @s Tags set from entity @n[type=fireball,scores={endFireball=1},distance=..1] Tags
-execute if entity @s[scores={SDtime=1}] run kill @e[x=0,type=fireball,scores={endFireball=1}]
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
-execute if entity @s[scores={SDtime=1}] run tag @e[x=0,type=fireball] remove endFireball
-execute if entity @s[scores={SDtime=1}] run kill @e[x=0,type=area_effect_cloud,tag=endFireballAEC]
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon

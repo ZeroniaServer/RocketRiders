@@ -18,6 +18,7 @@
                   "function": "minecraft:set_components",
                   "components": {
                     "minecraft:custom_model_data": 1,
+                    "minecraft:custom_data": "{Missile:1b}",
                     "minecraft:custom_name": "[{\"text\":\"[???] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]",
                     "minecraft:lore": [
                       "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
@@ -55,6 +56,7 @@
                   "function": "minecraft:set_components",
                   "components": {
                     "minecraft:custom_model_data": 1,
+                    "minecraft:custom_data": "{Missile:1b}",
                     "minecraft:custom_name": "[{\"text\":\"[???] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]",
                     "minecraft:lore": [
                       "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
@@ -79,19 +81,6 @@
                   }
                 }
               ]
-            }
-          ]
-        }
-      ],
-      "functions": [
-        {
-          "function": "minecraft:copy_custom_data",
-          "source": "this",
-          "ops": [
-            {
-              "source": "UUID",
-              "target": "EntityTag.data.UUID",
-              "op": "replace"
             }
           ]
         }

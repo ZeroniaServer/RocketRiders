@@ -2,37 +2,6 @@
 ## FIREBALL: A punchable explosive ##
 #####################################
 
-#Void spawn prevention
-execute as @e[x=0,type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
-execute as @e[x=0,type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
-execute as @e[x=0,type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
-execute as @e[x=0,type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
-
-#Roof spawn prevention
-execute as @e[x=0,type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
-execute as @e[x=0,type=marker,tag=BlueFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
-execute as @e[x=0,type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
-execute as @e[x=0,type=marker,tag=YellowFireball,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
-
-#Give back if prevented
-execute as @e[x=0,type=marker,tag=BlueFireball,tag=UnableSpawn] run function items:prevention/unablefx
-execute as @e[x=0,type=marker,tag=YellowFireball,tag=UnableSpawn] run function items:prevention/unablefx
-function items:prevention/giveback
-
-#Summoning the Fireball entity
-execute as @e[x=0,type=marker,tag=BlueFireball] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
-execute as @e[x=0,type=marker,tag=BlueFireball,tag=!Cluster] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballBlue"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
-execute as @e[x=0,type=marker,tag=BlueFireball,tag=Cluster] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballBlue","Cluster"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
-execute as @e[x=0,type=marker,tag=BlueFireball] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[x=0,type=marker,tag=BlueFireball] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 0.5 1.25
-kill @e[x=0,type=marker,tag=BlueFireball]
-execute as @e[x=0,type=marker,tag=YellowFireball] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
-execute as @e[x=0,type=marker,tag=YellowFireball,tag=!Cluster] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballYellow"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
-execute as @e[x=0,type=marker,tag=YellowFireball,tag=Cluster] at @s run summon fireball ~ ~1.2 ~ {Tags:["NormalFireball","NoMotion","FireballYellow","Cluster"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
-execute as @e[x=0,type=marker,tag=YellowFireball] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[x=0,type=marker,tag=YellowFireball] at @s as @a[distance=..6] run playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 0.5 1.25
-kill @e[x=0,type=marker,tag=YellowFireball]
-
 #Detecting Fireball motion
 tag @e[x=0,type=fireball,tag=NormalFireball] remove Still
 tag @e[x=0,type=fireball,tag=NormalFireball,predicate=!custom:not_moving] add Still

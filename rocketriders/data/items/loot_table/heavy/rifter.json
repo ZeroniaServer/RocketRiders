@@ -15,6 +15,7 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": 2,
+                "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Rifter\",\"color\":\"gold\",\"bold\":true}]",
                 "minecraft:lore": [
                   "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"34\",\"color\":\"red\"}]",
@@ -59,6 +60,7 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": 1,
+                "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Rifter\",\"color\":\"blue\",\"bold\":true}]",
                 "minecraft:lore": [
                   "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"34\",\"color\":\"red\"}]",
@@ -90,19 +92,6 @@
               }
             }
           ]
-        }
-      ]
-    }
-  ],
-  "functions": [
-    {
-      "function": "minecraft:copy_custom_data",
-      "source": "this",
-      "ops": [
-        {
-          "source": "UUID",
-          "target": "EntityTag.data.UUID",
-          "op": "replace"
         }
       ]
     }

@@ -32,16 +32,3 @@ execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[x=0,type=fireba
 execute if entity @s[tag=!Explosive,tag=ClutterCollector] as @e[x=0,type=fireball,tag=ClusterFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:-1}
 execute if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=fireball,tag=ClusterFireball] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
 execute if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=fireball,tag=ClusterFireball] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
-
-#Fix endgame fireballs
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] run scoreboard players add @s endFireball 1
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] at @s run summon fireball ~ ~ ~ {Tags:["endFireball2"],ExplosionPower:0,Motion:[0.0d,0.0d,0.0d],acceleration_power:0d}
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run data modify entity @s Owner set from entity @n[type=fireball,scores={endFireball=1},distance=..1] Owner
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run item replace entity @s contents from entity @n[type=fireball,scores={endFireball=1},distance=..1] contents
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run scoreboard players operation @s Clustertime = @n[type=fireball,scores={endFireball=1},distance=..1] Clustertime
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball2] at @s run data modify entity @s Tags set from entity @n[type=fireball,scores={endFireball=1},distance=..1] Tags
-execute if entity @s[scores={SDtime=1}] run kill @e[x=0,type=fireball,scores={endFireball=1}]
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball,tag=!obfireball] run data merge entity @s {ExplosionPower:1}
-execute if entity @s[scores={SDtime=1}] run tag @e[x=0,type=fireball] remove endFireball
-execute if entity @s[scores={SDtime=1}] run tag @e[x=0,type=fireball] remove endFireball2
-execute if entity @s[scores={SDtime=1}] run kill @e[x=0,type=area_effect_cloud,tag=endFireballAEC]

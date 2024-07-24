@@ -11,5 +11,5 @@ execute if entity @s[tag=rngHyper] as @a[x=0,team=Yellow,tag=getItem] run functi
 execute if entity @s[tag=rngBroad] as @a[x=0,team=Yellow,tag=getItem] run function items:missile/special/givebroad
 execute if entity @s[tag=rngHur] as @a[x=0,team=Yellow,tag=getItem] run function items:missile/lightning/givehur
 execute if entity @s[tag=rngThun] as @a[x=0,team=Yellow,tag=getItem] run function items:missile/lightning/givethun
-execute if entity @s[tag=rngFireball] as @a[x=0,team=Yellow,tag=getItem] run function rr_swap:items/util/givefireball
+execute if entity @s[tag=rngFireball] as @a[x=0,team=Yellow,tag=getItem] run function items:util/giveclusterfireball
 execute if entity @s[tag=rngObshield] as @a[x=0,team=Yellow,tag=getItem] run function items:util/giveobshield

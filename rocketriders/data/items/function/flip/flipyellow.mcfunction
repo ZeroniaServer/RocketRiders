@@ -3,81 +3,81 @@ tag @s add bluemissile
 tag @s remove yellowmissile
 
 #Auxiliary
-execute if entity @s[tag=YellowAux] run tag @s add BlueAux
-execute if entity @s[tag=YellowAux] run tag @s remove YellowAux
+tag @s[tag=YellowAux] add BlueAux
+tag @s[tag=YellowAux] remove YellowAux
 
 #TomaTwo
-execute if entity @s[tag=YellowToma] run tag @s add BlueToma
-execute if entity @s[tag=YellowToma] run tag @s remove YellowToma
+tag @s[tag=YellowToma] add BlueToma
+tag @s[tag=YellowToma] remove YellowToma
 
 #Chronullifier
-execute if entity @s[tag=YellowNull] run tag @s add BlueNull
-execute if entity @s[tag=YellowNull] run tag @s remove YellowNull
+tag @s[tag=YellowNull] add BlueNull
+tag @s[tag=YellowNull] remove YellowNull
 
 #Warhead
-execute if entity @s[tag=YellowWar] run tag @s add BlueWar
-execute if entity @s[tag=YellowWar] run tag @s remove YellowWar
+tag @s[tag=YellowWar] add BlueWar
+tag @s[tag=YellowWar] remove YellowWar
 
 #Thunderbolt
-execute if entity @s[tag=YellowBolt] run tag @s add BlueBolt
-execute if entity @s[tag=YellowBolt] run tag @s remove YellowBolt
+tag @s[tag=YellowBolt] add BlueBolt
+tag @s[tag=YellowBolt] remove YellowBolt
 
 #Hurricane
-execute if entity @s[tag=YellowHur] run tag @s add BlueHur
-execute if entity @s[tag=YellowHur] run tag @s remove YellowHur
+tag @s[tag=YellowHur] add BlueHur
+tag @s[tag=YellowHur] remove YellowHur
 
 #Elder Guardian
-execute if entity @s[tag=YellowGuard] run tag @s add BlueGuard
-execute if entity @s[tag=YellowGuard] run tag @s remove YellowGuard
+tag @s[tag=YellowGuard] add BlueGuard
+tag @s[tag=YellowGuard] remove YellowGuard
 
 #A.N.T.
-execute if entity @s[tag=YellowAnt] run tag @s add BlueAnt
-execute if entity @s[tag=YellowAnt] run tag @s remove YellowAnt
+tag @s[tag=YellowAnt] add BlueAnt
+tag @s[tag=YellowAnt] remove YellowAnt
 
 #Blade
-execute if entity @s[tag=YellowBlade] run tag @s add BlueBlade
-execute if entity @s[tag=YellowBlade] run tag @s remove YellowBlade
+tag @s[tag=YellowBlade] add BlueBlade
+tag @s[tag=YellowBlade] remove YellowBlade
 
 #Rifter
-execute if entity @s[tag=YellowRift] run tag @s add BlueRift
-execute if entity @s[tag=YellowRift] run tag @s remove YellowRift
+tag @s[tag=YellowRift] add BlueRift
+tag @s[tag=YellowRift] remove YellowRift
 
 #Juggerbuster
-execute if entity @s[tag=YellowJug] run tag @s add BlueJug
-execute if entity @s[tag=YellowJug] run tag @s remove YellowJug
+tag @s[tag=YellowJug] add BlueJug
+tag @s[tag=YellowJug] remove YellowJug
 
 #Slasher
-execute if entity @s[tag=YellowSlash] run tag @s add BlueSlash
-execute if entity @s[tag=YellowSlash] run tag @s remove YellowSlash
+tag @s[tag=YellowSlash] add BlueSlash
+tag @s[tag=YellowSlash] remove YellowSlash
 
 #Catapult
-execute if entity @s[tag=YellowCata] run tag @s add BlueCata
-execute if entity @s[tag=YellowCata] run tag @s remove YellowCata
+tag @s[tag=YellowCata] add BlueCata
+tag @s[tag=YellowCata] remove YellowCata
 
 #Citadel
-execute if entity @s[tag=YellowCitadel] run tag @s add BlueCitadel
-execute if entity @s[tag=YellowCitadel] run tag @s remove YellowCitadel
+tag @s[tag=YellowCitadel] add BlueCitadel
+tag @s[tag=YellowCitadel] remove YellowCitadel
 
 #Gemini
-execute if entity @s[tag=YellowGemi] run tag @s add BlueGemi
-execute if entity @s[tag=YellowGemi] run tag @s remove YellowGemi
+tag @s[tag=YellowGemi] add BlueGemi
+tag @s[tag=YellowGemi] remove YellowGemi
 
 #Lifter
-execute if entity @s[tag=YellowLift] run tag @s add BlueLift
-execute if entity @s[tag=YellowLift] run tag @s remove YellowLift
+tag @s[tag=YellowLift] add BlueLift
+tag @s[tag=YellowLift] remove YellowLift
 
 #Hypersonic
-execute if entity @s[tag=YellowHyper] run tag @s add BlueHyper
-execute if entity @s[tag=YellowHyper] run tag @s remove YellowHyper
+tag @s[tag=YellowHyper] add BlueHyper
+tag @s[tag=YellowHyper] remove YellowHyper
 
 #Bullet
-execute if entity @s[tag=YellowBull] run tag @s add BlueBull
-execute if entity @s[tag=YellowBull] run tag @s remove YellowBull
+tag @s[tag=YellowBull] add BlueBull
+tag @s[tag=YellowBull] remove YellowBull
 
 #Duplex
-execute if entity @s[tag=YellowDuplex] run tag @s add BlueDuplex
-execute if entity @s[tag=YellowDuplex] run tag @s remove YellowDuplex
+tag @s[tag=YellowDuplex] add BlueDuplex
+tag @s[tag=YellowDuplex] remove YellowDuplex
 
 #Broadsword
-execute if entity @s[tag=YellowBroad] run tag @s add BlueBroad
-execute if entity @s[tag=YellowBroad] run tag @s remove YellowBroad
+tag @s[tag=YellowBroad] add BlueBroad
+tag @s[tag=YellowBroad] remove YellowBroad

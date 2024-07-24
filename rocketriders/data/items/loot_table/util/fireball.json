@@ -79,18 +79,5 @@
         }
       ]
     }
-  ],
-  "functions": [
-    {
-      "function": "minecraft:copy_custom_data",
-      "source": "this",
-      "ops": [
-        {
-          "source": "UUID",
-          "target": "EntityTag.data.UUID",
-          "op": "replace"
-        }
-      ]
-    }
   ]
 }

@@ -1,122 +1,119 @@
 ##Detects the player who likely placed the prevented missile (flipped version)
 
-#UUID match
-execute store result score $missile playerUUID run data get entity @s data.UUID[0]
-
 #Auxiliary
-execute if entity @s[tag=BlueAux,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackAux
-execute if entity @s[tag=YellowAux,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackAux
-tag @a[x=0,tag=BackAux] add MissiMSG
+execute if entity @s[tag=BlueAux,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackAux
+execute if entity @s[tag=YellowAux,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackAux
+tag @a[x=0,tag=BackAux,limit=1] add MissiMSG
 
 #TomaTwo
-execute if entity @s[tag=BlueToma,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackToma
-execute if entity @s[tag=YellowToma,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackToma
-tag @a[x=0,tag=BackToma] add MissiMSG
+execute if entity @s[tag=BlueToma,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackToma
+execute if entity @s[tag=YellowToma,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackToma
+tag @a[x=0,tag=BackToma,limit=1] add MissiMSG
 
 #Chronullifier
-execute if entity @s[tag=BlueNull,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackNull
-execute if entity @s[tag=YellowNull,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackNull
-tag @a[x=0,tag=BackNull] add MissiMSG
+execute if entity @s[tag=BlueNull,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackNull
+execute if entity @s[tag=YellowNull,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackNull
+tag @a[x=0,tag=BackNull,limit=1] add MissiMSG
 
 #Warhead
-execute if entity @s[tag=BlueWar,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackWar
-execute if entity @s[tag=YellowWar,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackWar
-tag @a[x=0,tag=BackWar] add MissiMSG
+execute if entity @s[tag=BlueWar,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackWar
+execute if entity @s[tag=YellowWar,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackWar
+tag @a[x=0,tag=BackWar,limit=1] add MissiMSG
 
 #Thunderbolt
-execute if entity @s[tag=BlueBolt,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackBolt
-execute if entity @s[tag=YellowBolt,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackBolt
-tag @a[x=0,tag=BackBolt] add MissiMSG
+execute if entity @s[tag=BlueBolt,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackBolt
+execute if entity @s[tag=YellowBolt,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackBolt
+tag @a[x=0,tag=BackBolt,limit=1] add MissiMSG
 
 #Hurricane
-execute if entity @s[tag=BlueHur,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackHur
-execute if entity @s[tag=YellowHur,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackHur
-tag @a[x=0,tag=BackHur] add MissiMSG
+execute if entity @s[tag=BlueHur,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackHur
+execute if entity @s[tag=YellowHur,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackHur
+tag @a[x=0,tag=BackHur,limit=1] add MissiMSG
 
 #Elder Guardian
-execute if entity @s[tag=BlueGuard,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackGuard
-execute if entity @s[tag=YellowGuard,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackGuard
-tag @a[x=0,tag=BackGuard] add MissiMSG
+execute if entity @s[tag=BlueGuard,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackGuard
+execute if entity @s[tag=YellowGuard,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackGuard
+tag @a[x=0,tag=BackGuard,limit=1] add MissiMSG
 
 #A.N.T.
-execute if entity @s[tag=BlueAnt,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackAnt
-execute if entity @s[tag=YellowAnt,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackAnt
-tag @a[x=0,tag=BackAnt] add MissiMSG
+execute if entity @s[tag=BlueAnt,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackAnt
+execute if entity @s[tag=YellowAnt,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackAnt
+tag @a[x=0,tag=BackAnt,limit=1] add MissiMSG
 
 #Blade
-execute if entity @s[tag=BlueBlade,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackBlade
-execute if entity @s[tag=YellowBlade,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackBlade
-tag @a[x=0,tag=BackBlade] add MissiMSG
+execute if entity @s[tag=BlueBlade,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackBlade
+execute if entity @s[tag=YellowBlade,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackBlade
+tag @a[x=0,tag=BackBlade,limit=1] add MissiMSG
 
 #Rifter
-execute if entity @s[tag=BlueRift,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackRift
-execute if entity @s[tag=YellowRift,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackRift
-tag @a[x=0,tag=BackRift] add MissiMSG
+execute if entity @s[tag=BlueRift,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackRift
+execute if entity @s[tag=YellowRift,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackRift
+tag @a[x=0,tag=BackRift,limit=1] add MissiMSG
 
 #Juggerbuster
-execute if entity @s[tag=BlueJug,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackJug
-execute if entity @s[tag=YellowJug,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackJug
-tag @a[x=0,tag=BackJug] add MissiMSG
+execute if entity @s[tag=BlueJug,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackJug
+execute if entity @s[tag=YellowJug,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackJug
+tag @a[x=0,tag=BackJug,limit=1] add MissiMSG
 
 #Slasher
-execute if entity @s[tag=BlueSlash,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackSlash
-execute if entity @s[tag=YellowSlash,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackSlash
-tag @a[x=0,tag=BackSlash] add MissiMSG
+execute if entity @s[tag=BlueSlash,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackSlash
+execute if entity @s[tag=YellowSlash,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackSlash
+tag @a[x=0,tag=BackSlash,limit=1] add MissiMSG
 
 #Catapult
-execute if entity @s[tag=BlueCata,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackCata
-execute if entity @s[tag=YellowCata,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackCata
-tag @a[x=0,tag=BackCata] add MissiMSG
+execute if entity @s[tag=BlueCata,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackCata
+execute if entity @s[tag=YellowCata,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackCata
+tag @a[x=0,tag=BackCata,limit=1] add MissiMSG
 
 #Citadel
-execute if entity @s[tag=BlueCitadel,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackCitadel
-execute if entity @s[tag=YellowCitadel,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackCitadel
-tag @a[x=0,tag=BackCitadel] add MissiMSG
+execute if entity @s[tag=BlueCitadel,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackCitadel
+execute if entity @s[tag=YellowCitadel,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackCitadel
+tag @a[x=0,tag=BackCitadel,limit=1] add MissiMSG
 
 #Gemini
-execute if entity @s[tag=BlueGemi,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackGemi
-execute if entity @s[tag=YellowGemi,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackGemi
-tag @a[x=0,tag=BackGemi] add MissiMSG
+execute if entity @s[tag=BlueGemi,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackGemi
+execute if entity @s[tag=YellowGemi,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackGemi
+tag @a[x=0,tag=BackGemi,limit=1] add MissiMSG
 
 #Lifter
-execute if entity @s[tag=BlueLift,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackLift
-execute if entity @s[tag=YellowLift,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackLift
-tag @a[x=0,tag=BackLift] add MissiMSG
+execute if entity @s[tag=BlueLift,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackLift
+execute if entity @s[tag=YellowLift,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackLift
+tag @a[x=0,tag=BackLift,limit=1] add MissiMSG
 
 #Hypersonic
-execute if entity @s[tag=BlueHyper,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackHyper
-execute if entity @s[tag=YellowHyper,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackHyper
-tag @a[x=0,tag=BackHyper] add MissiMSG
+execute if entity @s[tag=BlueHyper,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackHyper
+execute if entity @s[tag=YellowHyper,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackHyper
+tag @a[x=0,tag=BackHyper,limit=1] add MissiMSG
 
 #Bullet
-execute if entity @s[tag=BlueBull,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackBull
-execute if entity @s[tag=YellowBull,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackBull
-tag @a[x=0,tag=BackBull] add MissiMSG
+execute if entity @s[tag=BlueBull,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackBull
+execute if entity @s[tag=YellowBull,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackBull
+tag @a[x=0,tag=BackBull,limit=1] add MissiMSG
 
 #Duplex
-execute if entity @s[tag=BlueDuplex,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackDuplex
-execute if entity @s[tag=YellowDuplex,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackDuplex
-tag @a[x=0,tag=BackDuplex] add MissiMSG
+execute if entity @s[tag=BlueDuplex,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackDuplex
+execute if entity @s[tag=YellowDuplex,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackDuplex
+tag @a[x=0,tag=BackDuplex,limit=1] add MissiMSG
 
 #Broadsword
-execute if entity @s[tag=BlueBroad,tag=!surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackBroad
-execute if entity @s[tag=YellowBroad,tag=!surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackBroad
-tag @a[x=0,tag=BackBroad] add MissiMSG
+execute if entity @s[tag=BlueBroad,tag=!surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackBroad
+execute if entity @s[tag=YellowBroad,tag=!surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackBroad
+tag @a[x=0,tag=BackBroad,limit=1] add MissiMSG
 
 #Surprise Egg
-execute if entity @s[tag=bluemissile,tag=surp] as @a[x=0,team=Yellow] if score @s playerUUID = $missile playerUUID run tag @s add BackSurprise
-execute if entity @s[tag=yellowmissile,tag=surp] as @a[x=0,team=Blue] if score @s playerUUID = $missile playerUUID run tag @s add BackSurprise
-tag @a[x=0,tag=BackSurprise] add MissiMSG
+execute if entity @s[tag=bluemissile,tag=surp] run tag @a[x=0,team=Yellow,tag=placer,limit=1] add BackSurprise
+execute if entity @s[tag=yellowmissile,tag=surp] run tag @a[x=0,team=Blue,tag=placer,limit=1] add BackSurprise
+tag @a[x=0,tag=BackSurprise,limit=1] add MissiMSG
 
 #Special cases
-execute if entity @s[tag=yellowmissile,tag=void] at @s if entity @a[x=0,team=Blue,tag=MissiMSG] run tag @a[x=0,team=Blue,tag=MissiMSG] add voidMSG
-execute if entity @s[tag=bluemissile,tag=void] at @s if entity @a[x=0,team=Yellow,tag=MissiMSG] run tag @a[x=0,team=Yellow,tag=MissiMSG] add voidMSG
-execute if entity @s[tag=yellowmissile,tag=roof] at @s if entity @a[x=0,team=Blue,tag=MissiMSG] run tag @a[x=0,team=Blue,tag=MissiMSG] add roofMSG
-execute if entity @s[tag=bluemissile,tag=roof] at @s if entity @a[x=0,team=Yellow,tag=MissiMSG] run tag @a[x=0,team=Yellow,tag=MissiMSG] add roofMSG
-execute if entity @s[tag=yellowmissile,tag=antigrief] at @s if entity @a[x=0,team=Blue,tag=MissiMSG] run tag @a[x=0,team=Blue,tag=MissiMSG] add antigriefMSG
-execute if entity @s[tag=bluemissile,tag=antigrief] at @s if entity @a[x=0,team=Yellow,tag=MissiMSG] run tag @a[x=0,team=Yellow,tag=MissiMSG] add antigriefMSG
-execute if entity @s[tag=yellowmissile,tag=spawnpoint] at @s if entity @a[x=0,team=Blue,tag=MissiMSG] run tag @a[x=0,team=Blue,tag=MissiMSG] add spawnpointMSG
-execute if entity @s[tag=bluemissile,tag=spawnpoint] at @s if entity @a[x=0,team=Yellow,tag=MissiMSG] run tag @a[x=0,team=Yellow,tag=MissiMSG] add spawnpointMSG
+execute if entity @s[tag=yellowmissile,tag=void] run tag @a[x=0,team=Blue,tag=MissiMSG,limit=1] add voidMSG
+execute if entity @s[tag=bluemissile,tag=void] run tag @a[x=0,team=Yellow,tag=MissiMSG,limit=1] add voidMSG
+execute if entity @s[tag=yellowmissile,tag=roof] run tag @a[x=0,team=Blue,tag=MissiMSG,limit=1] add roofMSG
+execute if entity @s[tag=bluemissile,tag=roof] run tag @a[x=0,team=Yellow,tag=MissiMSG,limit=1] add roofMSG
+execute if entity @s[tag=yellowmissile,tag=antigrief] run tag @a[x=0,team=Blue,tag=MissiMSG,limit=1] add antigriefMSG
+execute if entity @s[tag=bluemissile,tag=antigrief] run tag @a[x=0,team=Yellow,tag=MissiMSG,limit=1] add antigriefMSG
+execute if entity @s[tag=yellowmissile,tag=spawnpoint] run tag @a[x=0,team=Blue,tag=MissiMSG,limit=1] add spawnpointMSG
+execute if entity @s[tag=bluemissile,tag=spawnpoint] run tag @a[x=0,team=Yellow,tag=MissiMSG,limit=1] add spawnpointMSG
 
 #All missiles
 tp @s ~ ~-300 ~

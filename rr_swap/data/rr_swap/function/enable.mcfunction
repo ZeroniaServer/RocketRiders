@@ -9,7 +9,6 @@ tag @s[tag=Chaos] add ChaosWasOn
 tag @s add ChaosOff
 tag @s add vortexOverride
 tag @s add respawnFlag
-tag @s add fireballOverride
 
 #item disabling/enabling
 tag @s[tag=!rngArrows] add arrowsWasOff

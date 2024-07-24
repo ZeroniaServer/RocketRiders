@@ -16,7 +16,7 @@ execute as @a[x=0,team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoi
 #spawnables
 function rr_powerups:everytick/spawnables
 function rr_powerups:everytick/powerups
-function rr_swap:items/cluster
+function everytick:cluster
 
 #nomicon
 execute as @a[x=0,team=!Lobby,team=!Spectator] run scoreboard players enable @s nomicon

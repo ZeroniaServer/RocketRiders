@@ -21,7 +21,7 @@ execute if score @s nomicon matches 20 run function items:missile/special/givebr
 execute if score @s nomicon matches 21 run function items:util/givearrows
 execute if score @s nomicon matches 22 run function items:util/givecanopy
 execute if score @s nomicon matches 23 run function items:util/givefireball
-execute if score @s nomicon matches 24 run function rr_swap:items/util/givefireball
+execute if score @s nomicon matches 24 run function items:util/giveclusterfireball
 execute if score @s nomicon matches 25 run function items:util/givenova
 execute if score @s nomicon matches 26 run function items:util/giveshield
 execute if score @s nomicon matches 27 run function items:util/giveobshield

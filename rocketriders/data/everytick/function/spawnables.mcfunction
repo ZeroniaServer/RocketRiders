@@ -1,12 +1,4 @@
-##Missile/utility-specific commands (optimized to only run when necessary)
-execute unless entity @s[tag=runspawnmissiles] if entity @e[x=0,type=marker,tag=missile] run tag @s add runspawnmissiles
-execute unless entity @s[tag=runspawnmissiles] if entity @e[x=0,type=marker,tag=surprising] run tag @s add runspawnmissiles
-execute if entity @s[tag=runspawnmissiles] as @e[x=0,type=marker,tag=missile] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
-execute if entity @s[tag=runspawnmissiles] as @e[x=0,type=marker,tag=missile] at @s run function items:spawnmissiles
-tag @s[tag=runspawnmissiles] remove runspawnmissiles
-
-execute as @e[x=0,type=marker,tag=hyperExtra] run function items:hyperextra
-
+##Utility-specific commands (optimized to only run when necessary)
 execute unless entity @s[tag=runshields] if entity @e[x=0,type=snowball] run tag @s add runshields
 execute unless entity @s[tag=runshields] if entity @e[x=0,type=marker,tag=PlaceYellowShield] run tag @s add runshields
 execute unless entity @s[tag=runshields] if entity @e[x=0,type=marker,tag=PlaceBlueShield] run tag @s add runshields
@@ -22,12 +14,9 @@ tag @s[tag=runvortex] remove runvortex
 
 execute unless entity @e[x=0,type=marker,tag=Vortex] unless entity @e[x=0,type=armor_stand,tag=VortexItem] run scoreboard players set $highest VortexID 0
 
-execute unless entity @s[tag=runobshields] if entity @e[x=0,type=fireball,tag=obfireball] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[x=0,type=dragon_fireball,tag=obfireball] run tag @s add runobshields
-execute unless entity @s[tag=runobshields] if entity @e[x=0,type=marker,tag=BlueObshield] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[x=0,type=marker,tag=blueobtracker] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[x=0,type=marker,tag=blueobsidianshield] run tag @s add runobshields
-execute unless entity @s[tag=runobshields] if entity @e[x=0,type=marker,tag=YellowObshield] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[x=0,type=marker,tag=yellowobtracker] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[x=0,type=marker,tag=yellowobsidianshield] run tag @s add runobshields
 execute if entity @s[tag=runobshields] run function everytick:obsidian_shields
@@ -58,7 +47,7 @@ execute if entity @s[tag=runcanopy] as @a[x=0,team=Blue] at @s if entity @e[type
 execute if entity @s[tag=runcanopy] as @a[x=0,team=Yellow] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7] run tag @s add nearcanopy
 execute if entity @s[tag=runcanopy,tag=onlyBlue] as @a[x=0,team=Blue] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7] run tag @s add nearcanopy
 
-execute unless entity @s[tag=runfireball] if entity @e[x=0,type=fireball,tag=!obfireball] run tag @s add runfireball
+execute unless entity @s[tag=runfireball] if entity @e[x=0,type=fireball] run tag @s add runfireball
 execute unless entity @s[tag=runfireball] if entity @e[x=0,type=marker,tag=BlueFireball] run tag @s add runfireball
 execute unless entity @s[tag=runfireball] if entity @e[x=0,type=marker,tag=YellowFireball] run tag @s add runfireball
 execute if entity @s[tag=runfireball] run function everytick:fireball

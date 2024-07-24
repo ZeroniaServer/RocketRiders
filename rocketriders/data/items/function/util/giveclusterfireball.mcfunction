@@ -11,7 +11,7 @@ execute if entity @s[scores={HasFireball=1..},tag=!fullHotbar,tag=!BackFireball,
 title @s[tag=!fullHotbar,tag=!BackFireball,tag=itemDeducted] actionbar {"text":"Cluster Fireball already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackFireball,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasFireball=0},tag=!fullHotbar,tag=!BackFireball,tag=!itemDeducted] actionbar {"text":"Cluster Fireball obtained.","color":"aqua"}
-loot give @s[scores={HasFireball=0},tag=!fullHotbar] loot rr_swap:util/cluster_fireball
+loot give @s[scores={HasFireball=0},tag=!fullHotbar] loot items:util/cluster_fireball
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasFireball=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add givenFireball

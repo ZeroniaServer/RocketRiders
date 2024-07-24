@@ -4,54 +4,12 @@
 ## the central glass pane is broken three times   ##
 #####################################################
 
-#TODO simplify everything to do with fireball click detection
-
-#Void spawn prevention
-execute as @e[x=0,type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
-execute as @e[x=0,type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
-execute as @e[x=0,type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add void
-execute as @e[x=0,type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:nearvoid run tag @s add UnableSpawn
-
-#Roof spawn prevention
-execute as @e[x=0,type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
-execute as @e[x=0,type=marker,tag=BlueObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
-execute as @e[x=0,type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add roof
-execute as @e[x=0,type=marker,tag=YellowObshield,tag=!UnableSpawn] at @s if predicate custom:verynearroof run tag @s add UnableSpawn
-
-#Give back if prevented
-execute as @e[x=0,type=marker,tag=BlueObshield,tag=UnableSpawn] run function items:prevention/unablefx
-execute as @e[x=0,type=marker,tag=YellowObshield,tag=UnableSpawn] run function items:prevention/unablefx
-function items:prevention/giveback
-
 ##Blue Obsidian Shield functionality
-#Spawning in Fireball entities
-execute as @e[x=0,type=marker,tag=BlueObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
-execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],ExplosionPower:0,Motion:[0.0d,0.0d,0.0d]}
-execute as @e[x=0,type=marker,tag=BlueObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["blueobfireball","obfireball"],Motion:[0.0d,0.0d,0.0d],Passengers:[{id:"minecraft:marker",Tags:["blueobtracker"]}]}
-execute as @e[x=0,type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[x=0,type=marker,tag=BlueObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
-
 #Detecting motion
-tag @e[x=0,type=fireball,tag=blueobfireball] remove StillOb
-tag @e[x=0,type=fireball,tag=blueobfireball,predicate=!custom:not_moving] add StillOb
-execute as @e[x=0,type=fireball,tag=blueobfireball] store result score @s CmdData run data get entity @s Motion[1] 100
-execute as @e[x=0,type=fireball,tag=blueobfireball] unless score @s CmdData matches 0 run tag @s remove StillOb
-scoreboard players add @e[x=0,type=fireball,tag=blueobfireball,tag=!StillOb] obmove 1
-scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=1..}] obshieldtime 1
-scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball] obshieldtime 0
-
-#Transferring movement data from Fireball to Dragon Fireball
-execute as @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] Motion[0] double 0.000001 run data get entity @s Motion[0] 1000000
-execute as @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] Motion[1] double 0.000001 run data get entity @s Motion[1] 1000000
-execute as @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] Motion[2] double 0.000001 run data get entity @s Motion[2] 1000000
-execute as @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] power[0] double 0.000001 run data get entity @s power[0] 1000000
-execute as @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] power[1] double 0.000001 run data get entity @s power[1] 1000000
-execute as @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] power[2] double 0.000001 run data get entity @s power[2] 1000000
-execute as @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}] at @s run scoreboard players set @e[type=dragon_fireball,tag=blueobfireball,distance=..1,limit=1,sort=nearest] obshieldtime 1
-kill @e[x=0,type=fireball,tag=blueobfireball,scores={obmove=1..}]
+scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball,predicate=!custom:not_moving] obshieldtime 1
 kill @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=30..}]
-execute as @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=0}] at @s unless entity @e[type=fireball,tag=blueobfireball,distance=..2,limit=1,sort=nearest] run kill @s
 tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:has_vehicle] add blueobalone
+
 #Disable Blue Obsidian Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
@@ -71,34 +29,11 @@ tp @e[x=0,type=marker,tag=BlueObshield] ~ ~-250 ~
 kill @e[x=0,type=marker,tag=BlueObshield]
 
 ##Yellow Obsidian Shield functionality
-#Spawning in Fireball entities
-execute as @e[x=0,type=marker,tag=YellowObshield] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
-execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],ExplosionPower:0,Motion:[0.0d,0.0d,0.0d]}
-execute as @e[x=0,type=marker,tag=YellowObshield] at @s run summon dragon_fireball ~ ~1.2 ~ {Tags:["yellowobfireball","obfireball"],Motion:[0.0d,0.0d,0.0d],Passengers:[{id:"minecraft:marker",Tags:["yellowobtracker"]}]}
-execute as @e[x=0,type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-execute as @e[x=0,type=marker,tag=YellowObshield] at @s as @a[distance=..6] run playsound minecraft:block.respawn_anchor.charge master @s ~ ~ ~ 0.5 1
-
 #Detecting motion
-tag @e[x=0,type=fireball,tag=yellowobfireball] remove StillOb
-tag @e[x=0,type=fireball,tag=yellowobfireball,predicate=!custom:not_moving] add StillOb
-execute as @e[x=0,type=fireball,tag=yellowobfireball] store result score @s CmdData run data get entity @s Motion[1] 100
-execute as @e[x=0,type=fireball,tag=yellowobfireball] unless score @s CmdData matches 0 run tag @s remove StillOb
-scoreboard players add @e[x=0,type=fireball,tag=yellowobfireball,tag=!StillOb] obmove 1
-scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=1..}] obshieldtime 1
-scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball] obshieldtime 0
-
-#Storing movement data
-execute as @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] Motion[0] double 0.000001 run data get entity @s Motion[0] 1000000
-execute as @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] Motion[1] double 0.000001 run data get entity @s Motion[1] 1000000
-execute as @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] Motion[2] double 0.000001 run data get entity @s Motion[2] 1000000
-execute as @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] power[0] double 0.000001 run data get entity @s power[0] 1000000
-execute as @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] power[1] double 0.000001 run data get entity @s power[1] 1000000
-execute as @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s store result entity @e[type=dragon_fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] power[2] double 0.000001 run data get entity @s power[2] 1000000
-execute as @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}] at @s run scoreboard players set @e[type=dragon_fireball,tag=yellowobfireball,distance=..1,limit=1,sort=nearest] obshieldtime 1
-kill @e[x=0,type=fireball,tag=yellowobfireball,scores={obmove=1..}]
+scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball,predicate=!custom:not_moving] obshieldtime 1
 kill @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=30..}]
-execute as @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=0}] at @s unless entity @e[type=fireball,tag=yellowobfireball,distance=..2,limit=1,sort=nearest] run kill @s
 tag @e[x=0,type=marker,tag=yellowobtracker,predicate=!custom:has_vehicle] add yellowobalone
+
 #Disable Yellow Obsidian Shields inside of portals
 execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
 execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s

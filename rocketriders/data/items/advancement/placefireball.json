@@ -13,5 +13,8 @@
                 ]
             }
         }
+    },
+    "rewards": {
+        "function": "items:placefireball"
     }
 }

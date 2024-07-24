@@ -4,11 +4,7 @@
 
 #Detecting Fireball motion
 tag @e[x=0,type=fireball,tag=NormalFireball] remove Still
-tag @e[x=0,type=fireball,tag=NormalFireball,predicate=!custom:not_moving] add Still
-execute as @e[x=0,type=fireball,tag=NormalFireball,tag=!Still] store result score @s x run data get entity @s Motion[0] 100
-execute as @e[x=0,type=fireball,tag=NormalFireball,tag=!Still] store result score @s y run data get entity @s Motion[1] 100
-execute as @e[x=0,type=fireball,tag=NormalFireball,tag=!Still] store result score @s z run data get entity @s Motion[2] 100
-tag @e[x=0,type=fireball,tag=NormalFireball,tag=!Still,scores={x=-1..0,y=-1..0,z=-1..0}] add Still
+tag @e[x=0,type=fireball,tag=NormalFireball,predicate=custom:not_moving] add Still
 
 #Fireball ambient sounds
 scoreboard players add $fireballsound CmdData 1

@@ -36,7 +36,7 @@ execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Blue,tag=cur
 
 execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.fall_damage_multiplier base set 1
 execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.jump_strength base set 0.42
-execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.movement_speed base set 0.7
+execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.movement_speed base set 0.1
 
 #Remove canopy TP tag if teleportation period ends
 execute if entity @s[scores={PlatTime=41..}] run tag @p[team=Blue,tag=currentTP,tag=canopyTP] remove canopyTP
@@ -46,7 +46,7 @@ execute if entity @s[tag=killCanopy] run tag @p[team=Blue,tag=currentTP,tag=cano
 
 #Remove effects if player loses canopy TP tag
 attribute @p[tag=currentTP,tag=!canopyTP] generic.fall_damage_multiplier base set 1
-attribute @p[tag=currentTP,tag=!canopyTP] generic.movement_speed base set 0.7
+attribute @p[tag=currentTP,tag=!canopyTP] generic.movement_speed base set 0.1
 attribute @p[tag=currentTP,tag=!canopyTP] generic.jump_strength base set 0.42
 tag @p[tag=currentTP,tag=!canopyTP] remove threwCanopy
 

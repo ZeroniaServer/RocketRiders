@@ -30,11 +30,10 @@ execute if entity @s[scores={PlatTime=1}] run scoreboard players set @p[team=Blu
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
 #(thanks to Red_Bones for the teleport command format!)
 execute at @s[scores={PlatTime=1..40}] as @p[team=Blue,tag=currentTP,tag=canopyTP] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
-execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.fall_damage_multiplier base set 0
+execute if entity @s[scores={PlatTime=1}] run effect give @p[team=Blue,tag=currentTP,tag=canopyTP] slow_falling 2 100 true
 execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.jump_strength base set 0
 execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.movement_speed base set 0
 
-execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.fall_damage_multiplier base set 1
 execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.jump_strength base set 0.42
 execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] generic.movement_speed base set 0.1
 

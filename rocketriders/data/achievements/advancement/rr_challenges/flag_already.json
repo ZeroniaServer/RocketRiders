@@ -1,5 +1,4 @@
 {
-  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
   "display": {
     "title": {
       "text": "Just Give Me That Flag Already",
@@ -14,35 +13,35 @@
       "components": {
         "minecraft:banner_patterns": [
           {
-            "pattern": "hh",
+            "pattern": "half_horizontal",
             "color": "white"
           },
           {
-            "pattern": "hhb",
+            "pattern": "half_horizontal_bottom",
             "color": "white"
           },
           {
-            "pattern": "ls",
+            "pattern": "stripe_left",
             "color": "black"
           },
           {
-            "pattern": "bs",
+            "pattern": "stripe_bottom",
             "color": "black"
           },
           {
-            "pattern": "ls",
+            "pattern": "stripe_left",
             "color": "white"
           },
           {
-            "pattern": "bs",
+            "pattern": "stripe_bottom",
             "color": "white"
           },
           {
-            "pattern": "rs",
+            "pattern": "stripe_right",
             "color": "white"
           },
           {
-            "pattern": "tl",
+            "pattern": "square_top_left",
             "color": "white"
           }
         ]

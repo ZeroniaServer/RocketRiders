@@ -67,18 +67,6 @@ function nnhealth:tick
 scoreboard players add @a[x=0] nnhealth_max 0
 tag @a[x=0,tag=nnhealth_init,scores={nnhealth_max=0}] remove nnhealth_init
 
-#Handling portals/roof with players/utilities
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:cancel_utility
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=!SMCustom] run function everytick:player_portal
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0,PortalDeco=4},tag=SMCustom] run function everytick:player_portal
-
-#Player void
-execute as @a[x=0] unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980] unless entity @s[scores={ThrowPlat=1..}] run function game:void
-effect give @s[scores={voidNoFallCount=0}] slow_falling 1 1 true
-scoreboard players add @s[scores={voidNoFallCount=0..1}] voidNoFallCount 1
-effect clear @s[scores={voidNoFallCount=2}] slow_falling
-scoreboard players reset @s[scores={voidNoFallCount=2}] voidNoFallCount
-
 #Arrow pickup
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameEnd,tag=!customArrowPickup] if entity @e[x=0,type=arrow] run function everytick:arrow_pickup
 

@@ -1,5 +1,4 @@
 {
-  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
   "display": {
     "title": {
       "text": "I Am Speed",
@@ -14,23 +13,23 @@
       "components": {
         "minecraft:banner_patterns": [
           {
-            "pattern": "vhr",
+            "pattern": "half_vertical_right",
             "color": "black"
           },
           {
-            "pattern": "tl",
+            "pattern": "square_top_left",
             "color": "black"
           },
           {
-            "pattern": "bl",
+            "pattern": "square_bottom_left",
             "color": "black"
           },
           {
-            "pattern": "tr",
+            "pattern": "square_top_right",
             "color": "white"
           },
           {
-            "pattern": "br",
+            "pattern": "square_bottom_right",
             "color": "white"
           }
         ]

@@ -30,15 +30,15 @@ tag @a[x=0,tag=tridentChecked] remove tridentChecked
 execute as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/slap_fish
 
 #infinity saber
+execute as @a[x=0,tag=Infinity] if entity @s[team=!Yellow,team=!Blue] run scoreboard players reset @s infinity
 execute as @a[x=0,tag=Infinity] if entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
-execute if score $infinity PowerupDisplay matches 1.. run scoreboard players add $infinity powerupcount 1
-execute if score $infinity powerupcount matches 20.. if score $infinity PowerupDisplay matches 1.. run scoreboard players remove $infinity PowerupDisplay 1
-execute if score $infinity powerupcount matches 20.. run scoreboard players set $infinity powerupcount 0
-execute if score $infinity PowerupDisplay matches 0 as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 1 1.5
-execute if score $infinity PowerupDisplay matches 0 as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run clear @s bow
-execute if score $infinity PowerupDisplay matches 0 as @e[x=0,type=item] if items entity @s contents bow run function rr_powerups:items/killinfinitysaber
-execute if score $infinity PowerupDisplay matches 0 as @a[x=0,team=Yellow,tag=Infinity] run function game:saberyellow
-execute if score $infinity PowerupDisplay matches 0 as @a[x=0,team=Blue,tag=Infinity] run function game:saberblue
-execute if score $infinity PowerupDisplay matches 0 as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run title @s actionbar [{"text":"Infinity Saber expired.","color":"red"}]
-execute if score $infinity PowerupDisplay matches 0 as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run tag @s add DelayActionbar
-execute if score $infinity PowerupDisplay matches 0 as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run tag @s remove Infinity
+execute as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] run scoreboard players add @s infinity 1
+execute as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] if score @s infinity matches 600.. at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 1 1.5
+execute as @a[x=0,tag=Infinity,team=Blue] if score @s infinity matches 600.. run function rr_powerups:items/saber/normal/blue
+execute as @a[x=0,tag=Infinity,team=Yellow] if score @s infinity matches 600.. run function rr_powerups:items/saber/normal/yellow
+# execute as @a[x=0,team=Yellow,tag=Infinity,scores={infinity=600..}] run give @s minecraft:bow[unbreakable={show_in_tooltip:0b},enchantments={flame:1,sharpness:5},custom_name='{"translate":"Shooting Saber","color":"gold","bold":true,"italic":false}',lore=['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}']]
+# execute as @a[x=0,team=Blue,tag=Infinity,scores={infinity=600..}] run give @s minecraft:bow[unbreakable={show_in_tooltip:0b},enchantments={flame:1,sharpness:5},custom_name='{"translate":"Shooting Saber","color":"blue","bold":true,"italic":false}',lore=['{"translate":"A weapon used for both"}','{"translate":"ranged and melee attacks."}']]
+execute as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] if score @s infinity matches 600.. run title @s actionbar [{"text":"Infinity Saber expired.","color":"red"}]
+execute as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] if score @s infinity matches 600.. run tag @s add DelayActionbar
+execute as @a[x=0,tag=Infinity] unless entity @s[team=!Yellow,team=!Blue] if score @s infinity matches 600.. run tag @s remove Infinity
+execute as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] if score @s infinity matches 600.. run scoreboard players reset @s infinity

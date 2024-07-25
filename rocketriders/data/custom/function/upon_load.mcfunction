@@ -229,3 +229,4 @@ scoreboard objectives add BSurpriseSpawned minecraft.used:minecraft.squid_spawn_
 scoreboard objectives add YSurpriseSpawned minecraft.used:minecraft.cod_spawn_egg
 scoreboard objectives add BowShot minecraft.used:minecraft.bow
 scoreboard objectives add ThrowShield minecraft.used:minecraft.snowball
+scoreboard objectives add infinity dummy

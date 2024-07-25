@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Volcanic Hatred",
-      "color": "green"
+      "color": "#c20000"
     },
     "description": {
       "text": "Kill an enemy with a Lava Splash in Powerups Mode.",
-      "color": "dark_green"
+      "color": "red"
     },
     "icon": {
       "id": "minecraft:lingering_potion",

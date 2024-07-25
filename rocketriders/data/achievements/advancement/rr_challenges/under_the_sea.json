@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Under the Sea",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Kill someone while submerged in water.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:tube_coral"

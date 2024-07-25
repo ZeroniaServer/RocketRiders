@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Gravitational Shootout",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Land five shots on players while falling in one game.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:arrow"

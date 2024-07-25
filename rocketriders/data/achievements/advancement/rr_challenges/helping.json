@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "I'm Helping!",
-      "color": "green"
+      "color": "#00be2f"
     },
     "description": {
       "text": "Let your team win a game, but never fire a single missile yourself.",
-      "color": "dark_green"
+      "color": "green"
     },
     "icon": {
       "id": "minecraft:red_bed"

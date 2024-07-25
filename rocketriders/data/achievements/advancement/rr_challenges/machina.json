@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Deus Ex Machina",
-      "color": "green"
+      "color": "#00be2f"
     },
     "description": {
       "text": "Win the game while your portal is exposed.",
-      "color": "dark_green"
+      "color": "green"
     },
     "icon": {
       "id": "minecraft:white_stained_glass"

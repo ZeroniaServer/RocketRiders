@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Immortal",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Do not die during a game.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:totem_of_undying"

@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Traveler",
-      "color": "green"
+      "color": "#00be2f"
     },
     "description": {
       "text": "Reach the enemy base and then return to your base without dying.",
-      "color": "dark_green"
+      "color": "green"
     },
     "icon": {
       "id": "minecraft:saddle"

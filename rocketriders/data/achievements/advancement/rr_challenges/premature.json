@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Premature Celebration",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Win a game before it becomes a tie.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:poisonous_potato"

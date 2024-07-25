@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Blocks into Bits",
-      "color": "green"
+      "color": "#c20000"
     },
     "description": {
       "text": "Kill 10 players (all-time) by hitting them directly with a Fireball.",
-      "color": "dark_green"
+      "color": "red"
     },
     "icon": {
       "id": "minecraft:fire_charge"

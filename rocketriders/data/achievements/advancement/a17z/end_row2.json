@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Easy Challenges",
-      "color": "green"
+      "color": "#00be2f"
     },
     "description": {
       "text": "The Easy difficulty challenges for Rocket Riders.",
-      "color": "dark_green"
+      "color": "green"
     },
     "icon": {
       "id": "minecraft:lime_concrete"

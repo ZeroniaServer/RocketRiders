@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Clay Pigeon",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Kill a levitating player.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:clay_ball"

@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Cry About It",
-      "color": "green"
+      "color": "#00be2f"
     },
     "description": {
       "text": "Fall in the void after the Powerup Platform breaks beneath you.",
-      "color": "dark_green"
+      "color": "green"
     },
     "icon": {
       "id": "minecraft:crying_obsidian"

@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "And now we wait...",
-      "color": "light_purple"
+      "color": "#d901d9"
     },
     "description": {
       "text": "Wait for a game to start.",
-      "color": "dark_green"
+      "color": "light_purple"
     },
     "icon": {
       "id": "minecraft:clock"

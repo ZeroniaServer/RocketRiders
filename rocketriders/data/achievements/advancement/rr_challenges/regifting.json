@@ -2,11 +2,11 @@
     "display": {
         "title": {
             "text": "Regifting",
-            "color": "green"
+            "color": "#c20000"
         },
         "description": {
             "text": "Return an enemy Fireball back to the enemy team five times in one game.",
-            "color": "dark_green"
+            "color": "red"
         },
         "icon": {
             "id": "minecraft:player_head",

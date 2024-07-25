@@ -3,11 +3,11 @@
     "title": {
       "text": "Medium Challenges",
       "bold": false,
-      "color": "gold"
+      "color": "#fe6309"
     },
     "description": {
       "text": "The Medium difficulty challenges for Rocket Riders.",
-      "color": "yellow"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:orange_concrete"

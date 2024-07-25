@@ -3,7 +3,7 @@
     "title": {
       "text": "Hard Challenges",
       "bold": false,
-      "color": "dark_red"
+      "color": "#c20000"
     },
     "description": {
       "text": "The Hard difficulty challenges for Rocket Riders.",

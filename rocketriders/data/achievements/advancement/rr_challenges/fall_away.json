@@ -1,12 +1,12 @@
 {
   "display": {
     "title": {
-      "text": "So Close, yet so Fall Away",
-      "color": "green"
+      "text": "So Close, Yet So Fall Away",
+      "color": "#c20000"
     },
     "description": {
       "text": "Fall on the enemy team's portal and die.",
-      "color": "dark_green"
+      "color": "red"
     },
     "icon": {
       "id": "minecraft:sand"

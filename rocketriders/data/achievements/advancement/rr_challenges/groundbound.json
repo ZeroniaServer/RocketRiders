@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Ground Bound",
-      "color": "green"
+      "color": "#c20000"
     },
     "description": {
       "text": "Do not jump at all in a game and win.",
-      "color": "dark_green"
+      "color": "red"
     },
     "icon": {
       "id": "minecraft:anvil"

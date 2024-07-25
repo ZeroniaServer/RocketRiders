@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "| || || |_",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Lose a game after having a 10-game win streak.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:ghast_tear"

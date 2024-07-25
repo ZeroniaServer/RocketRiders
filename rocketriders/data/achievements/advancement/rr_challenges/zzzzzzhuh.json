@@ -2,11 +2,11 @@
     "display": {
         "title": {
             "text": "Huh?",
-            "color": "green"
+            "color": "#c20000"
         },
         "description": {
-            "text": "Wait what?",
-            "color": "dark_green"
+            "text": "Wait, what?",
+            "color": "red"
         },
         "icon": {
             "id": "minecraft:player_head",

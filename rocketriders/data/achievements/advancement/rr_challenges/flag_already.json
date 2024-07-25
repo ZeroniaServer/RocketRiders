@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Just Give Me That Flag Already",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Get killed on your own base.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:black_banner",

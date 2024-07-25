@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Get Off My Lawn!",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Kill an enemy on your Canopy.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:short_grass"

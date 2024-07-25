@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Simple and Clean",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Win the game in under two minutes without your base taking any damage.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:clock"

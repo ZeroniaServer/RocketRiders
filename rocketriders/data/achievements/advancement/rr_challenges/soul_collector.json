@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Soul Collector",
-      "color": "green"
+      "color": "#c20000"
     },
     "description": {
       "text": "Get 50 player kills in one game.",
-      "color": "dark_green"
+      "color": "red"
     },
     "icon": {
       "id": "minecraft:soul_sand"

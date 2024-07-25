@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Missile Display Area",
-      "color": "light_purple"
+      "color": "#d901d9"
     },
     "description": {
       "text": "You've discovered the Missile Display Area.",
-      "color": "dark_green"
+      "color": "light_purple"
     },
     "icon": {
       "id": "minecraft:tnt"

@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Complete the Parkour",
-      "color": "light_purple"
+      "color": "#d901d9"
     },
     "description": {
       "text": "You've finished the Parkour!",
-      "color": "dark_green"
+      "color": "light_purple"
     },
     "icon": {
       "id": "minecraft:gold_block"

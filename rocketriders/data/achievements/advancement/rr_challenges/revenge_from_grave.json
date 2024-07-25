@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Revenge from the Grave!",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Get a kill right after you die.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:skeleton_skull"

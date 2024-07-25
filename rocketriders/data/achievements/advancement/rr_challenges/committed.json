@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Inaccurate but Committed",
-      "color": "green"
+      "color": "#c20000"
     },
     "description": {
       "text": "Ride a missile to the world border.",
-      "color": "dark_green"
+      "color": "red"
     },
     "icon": {
       "id": "minecraft:barrier"

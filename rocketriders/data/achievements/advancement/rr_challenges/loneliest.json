@@ -2,11 +2,11 @@
     "display": {
         "title": {
             "text": "One is the Loneliest Number",
-            "color": "green"
+            "color": "#fe6309"
         },
         "description": {
             "text": "Win a game against a team of two or more players by yourself.",
-            "color": "dark_green"
+            "color": "gold"
         },
         "icon": {
             "id": "minecraft:player_head",

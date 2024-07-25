@@ -2,7 +2,7 @@
   "display": {
     "title": {
       "text": "Hard Challenges",
-      "color": "dark_red"
+      "color": "#c20000"
     },
     "description": {
       "text": "The Hard difficulty challenges for Rocket Riders.",

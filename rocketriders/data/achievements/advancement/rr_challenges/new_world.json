@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "A Whole New World...",
-      "color": "green"
+      "color": "#c20000"
     },
     "description": {
       "text": "Ride a missile with another teammate at or above Y=160.",
-      "color": "dark_green"
+      "color": "red"
     },
     "icon": {
       "id": "minecraft:red_carpet"

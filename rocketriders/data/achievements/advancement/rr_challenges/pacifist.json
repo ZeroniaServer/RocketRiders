@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Pacifist",
-      "color": "green"
+      "color": "#00be2f"
     },
     "description": {
       "text": "Win a game without killing anyone.",
-      "color": "dark_green"
+      "color": "green"
     },
     "icon": {
       "id": "minecraft:shield"

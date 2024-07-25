@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Forsaken",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Start the game with a teammate who leaves soon after and still win.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:iron_block"

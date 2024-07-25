@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "It's Raining Men!",
-      "color": "green"
+      "color": "#00be2f"
     },
     "description": {
       "text": "Fall in the void 30 times in 1 game.",
-      "color": "dark_green"
+      "color": "green"
     },
     "icon": {
       "id": "minecraft:elytra"

@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Play a game",
-      "color": "light_purple"
+      "color": "#d901d9"
     },
     "description": {
       "text": "Play your first game of Rocket Riders.",
-      "color": "dark_green"
+      "color": "light_purple"
     },
     "icon": {
       "id": "minecraft:sticky_piston"

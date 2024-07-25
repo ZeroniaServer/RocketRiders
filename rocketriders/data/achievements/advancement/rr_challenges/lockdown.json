@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Lockdown",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Keep the Powerup Platform under your team's posession for one consecutive minute.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:iron_bars"

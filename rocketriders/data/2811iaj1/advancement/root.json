@@ -2,14 +2,17 @@
   "display": {
     "title": {
       "text": "The Tutorial",
-      "color": "light_purple"
+      "color": "#d901d9"
     },
     "description": {
       "text": "Welcome to Rocket Riders!",
-      "color": "dark_green"
+      "color": "light_purple"
     },
     "icon": {
-      "id": "minecraft:knowledge_book"
+      "id": "minecraft:enchanted_book",
+      "components": {
+        "enchantment_glint_override": true
+      }
     },
     "frame": "task",
     "show_toast": true,

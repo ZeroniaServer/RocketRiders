@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Ballet Dancer",
-      "color": "green"
+      "color": "#c20000"
     },
     "description": {
       "text": "Sprint and jump for the entire game.",
-      "color": "dark_green"
+      "color": "red"
     },
     "icon": {
       "id": "minecraft:note_block"

@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Fire Within Me",
-      "color": "green"
+      "color": "#fe6309"
     },
     "description": {
       "text": "Get a kill while being on fire.",
-      "color": "dark_green"
+      "color": "gold"
     },
     "icon": {
       "id": "minecraft:blaze_powder"

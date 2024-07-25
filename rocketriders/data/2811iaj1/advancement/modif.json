@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Modification Room",
-      "color": "light_purple"
+      "color": "#d901d9"
     },
     "description": {
       "text": "You've discovered the Modification Room.",
-      "color": "dark_green"
+      "color": "light_purple"
     },
     "icon": {
       "id": "minecraft:warped_sign"

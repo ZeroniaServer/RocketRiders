@@ -168,8 +168,7 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item 
 item replace entity @a[x=0,team=Lobby] armor.head with air
 item replace entity @a[x=0,team=Lobby] armor.chest with air
 item replace entity @a[x=0,team=Lobby] armor.legs with air
-execute unless entity @e[x=0,type=armor_stand,tag=rr_duel,limit=1] run item replace entity @a[x=0,team=Lobby,tag=!inParkour] armor.feet with air
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noYZELO] run item replace entity @a[x=0,team=Lobby,tag=!inParkour] armor.feet with air
+execute if function game:norankboots run item replace entity @a[x=0,team=Lobby,tag=!inParkour] armor.feet with air
 
 #Lobby player books + antidupe
 tag @a[x=0,team=Lobby] remove HasNavBook

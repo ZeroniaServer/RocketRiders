@@ -2,11 +2,11 @@
   "display": {
     "title": {
       "text": "Missile Sabotage",
-      "color": "green"
+      "color": "#00be2f"
     },
     "description": {
       "text": "Destroy 1000 TNT blocks (all-time).",
-      "color": "dark_green"
+      "color": "green"
     },
     "icon": {
       "id": "minecraft:tnt"

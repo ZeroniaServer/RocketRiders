@@ -2,11 +2,11 @@
     "display": {
         "title": {
             "text": "Superior Players",
-            "color": "green"
+            "color": "#c20000"
         },
         "description": {
             "text": "Lose to the Bots in PVE Mode.",
-            "color": "dark_green"
+            "color": "red"
         },
         "icon": {
             "id": "minecraft:player_head",

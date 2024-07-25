@@ -2,11 +2,11 @@
     "display": {
         "title": {
             "text": "Swiss Cheese",
-            "color": "green"
+            "color": "#c20000"
         },
         "description": {
             "text": "Win a game while your base is heavily damaged.",
-            "color": "dark_green"
+            "color": "red"
         },
         "icon": {
             "id": "minecraft:player_head",

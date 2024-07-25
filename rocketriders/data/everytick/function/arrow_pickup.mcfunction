@@ -21,9 +21,9 @@ scoreboard players set @e[x=0,type=arrow,nbt={inGround:0b}] arrowtime 0
 execute as @e[x=0,type=arrow,scores={arrowtime=..9}] run tag @s remove pickup
 
 #Give arrow
-execute as @a[x=0,team=!Spectator,tag=!fullOffhand] at @s as @e[x=0,type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity,limit=1,distance=..2,sort=nearest] unless items entity @s contents tipped_arrow at @s run function everytick:arrow_replace
-execute if entity @s[tag=!GameStarted] as @e[x=0,type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless items entity @s contents tipped_arrow at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Lobby:1b}]
-execute if entity @s[tag=GameStarted] as @e[x=0,type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless items entity @s contents tipped_arrow at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}']
+execute as @a[x=0,team=!Spectator,tag=!fullOffhand] at @s as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity,limit=1,distance=..2,sort=nearest] unless items entity @s contents tipped_arrow at @s run function everytick:arrow_replace
+execute if entity @s[tag=!GameStarted] as @e[x=0,type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless items entity @s contents tipped_arrow at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Lobby:1b,Droppable:1b}]
+execute if entity @s[tag=GameStarted] as @e[x=0,type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless items entity @s contents tipped_arrow at @s run give @p[team=!Spectator,distance=..2,tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}]
 
 #Schedule arrow for despawn
 scoreboard players set @e[x=0,type=arrow,tag=pickup] arrowtime 1199

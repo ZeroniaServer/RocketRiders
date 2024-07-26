@@ -14,8 +14,8 @@ execute as @a[x=0,team=Yellow,tag=BreakEly] run item replace entity @s armor.che
 tag @a[x=0,tag=BreakEly] remove BreakEly
 
 #broken trident clearing
-clear @a[x=0,team=Blue] trident[damage=250]
-clear @a[x=0,team=Yellow] trident[damage=250]
+clear @a[x=0,team=Blue] trident[damage=8]
+clear @a[x=0,team=Yellow] trident[damage=8]
 
 #trident auto riptide
 execute as @a[x=0,nbt={Inventory:[{id:"minecraft:trident"}]}] unless entity @s[team=!Yellow,team=!Blue] run function rr_powerups:everytick/auto_riptide

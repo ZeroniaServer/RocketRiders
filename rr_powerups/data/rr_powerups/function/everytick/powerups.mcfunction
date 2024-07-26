@@ -2,8 +2,8 @@
 execute as @a[x=0,team=Blue] at @s if items entity @s armor.chest elytra if predicate custom:canopy_nearyellow run tag @s add BreakEly
 execute as @a[x=0,team=Yellow] at @s if items entity @s armor.chest elytra if predicate custom:canopy_nearblue run tag @s add BreakEly
 
-execute as @a[x=0,team=Blue] if items entity @s armor.chest elytra[damage=431] run tag @s add BreakEly
-execute as @a[x=0,team=Yellow] if items entity @s armor.chest elytra[damage=431] run tag @s add BreakEly
+execute as @a[x=0,team=Blue] if items entity @s armor.chest elytra[damage=6] run tag @s add BreakEly
+execute as @a[x=0,team=Yellow] if items entity @s armor.chest elytra[damage=6] run tag @s add BreakEly
 
 execute as @a[x=0,tag=BreakEly] run title @s title ["",{"text":" "}]
 execute as @a[x=0,tag=BreakEly] run title @s subtitle ["",{"text":"Elytra ","color":"dark_red","italic":true,"bold":true},{"text":"expired!","color":"red"}]

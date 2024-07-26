@@ -2,16 +2,18 @@
 execute as @a[x=0,team=Blue] at @s if items entity @s armor.chest elytra if predicate custom:canopy_nearyellow run tag @s add BreakEly
 execute as @a[x=0,team=Yellow] at @s if items entity @s armor.chest elytra if predicate custom:canopy_nearblue run tag @s add BreakEly
 
-execute as @a[x=0,team=Blue] if items entity @s armor.chest elytra[damage=6] if predicate custom:not_falling run tag @s add BreakEly
-execute as @a[x=0,team=Yellow] if items entity @s armor.chest elytra[damage=6] if predicate custom:not_falling run tag @s add BreakEly
+execute as @a[x=0,team=Blue] if items entity @s armor.chest elytra[damage=6] run tag @s add BreakEly
+execute as @a[x=0,team=Yellow] if items entity @s armor.chest elytra[damage=6] run tag @s add BreakEly
 
-execute as @a[x=0,tag=BreakEly] run title @s title ["",{"text":" "}]
-execute as @a[x=0,tag=BreakEly] run title @s subtitle ["",{"text":"Elytra ","color":"dark_red","italic":true,"bold":true},{"text":"expired!","color":"red"}]
-execute as @a[x=0,tag=BreakEly] at @s run playsound minecraft:entity.item.break master @s ~ ~ ~ 0.6 1
-execute as @a[x=0,tag=BreakEly] at @s run playsound minecraft:entity.bat.takeoff master @s ~ ~ ~ 0.4 1.2
-execute as @a[x=0,team=Blue,tag=BreakEly] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:quartz",pattern:"minecraft:vex",show_in_tooltip:0b},custom_name='[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',dyed_color={rgb:3949738,show_in_tooltip:0b},unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},enchantment_glint_override=false,attribute_modifiers={modifiers:[{id:"rocketriders:chestplate",slot:"chest",amount:3,operation:"add_value",type:"generic.armor"}],show_in_tooltip:0b},hide_additional_tooltip={}]
-execute as @a[x=0,team=Yellow,tag=BreakEly] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:spire",show_in_tooltip:0b},custom_name='[{"text":"Yellow Chestplate","color":"gold","bold":true,"italic":false}]',dyed_color={rgb:16768000,show_in_tooltip:0b},unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},enchantment_glint_override=false,attribute_modifiers={modifiers:[{id:"rocketriders:chestplate",slot:"chest",amount:3,operation:"add_value",type:"generic.armor"}],show_in_tooltip:0b},hide_additional_tooltip={}]
-tag @a[x=0,tag=BreakEly] remove BreakEly
+execute as @a[x=0,tag=BreakEly,tag=!BreakElyMsg] run title @s title ["",{"text":" "}]
+execute as @a[x=0,tag=BreakEly,tag=!BreakElyMsg] run title @s subtitle ["",{"text":"Elytra ","color":"dark_red","italic":true,"bold":true},{"text":"expired!","color":"red"}]
+execute as @a[x=0,tag=BreakEly,tag=!BreakElyMsg] at @s run playsound minecraft:entity.item.break master @s ~ ~ ~ 0.6 1
+execute as @a[x=0,tag=BreakEly,tag=!BreakElyMsg] at @s run playsound minecraft:entity.bat.takeoff master @s ~ ~ ~ 0.4 1.2
+tag @a[x=0,tag=BreakEly] add BreakElyMsg
+execute as @a[x=0,team=Blue,tag=BreakEly,predicate=custom:not_falling] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:quartz",pattern:"minecraft:vex",show_in_tooltip:0b},custom_name='[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}]',dyed_color={rgb:3949738,show_in_tooltip:0b},unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},enchantment_glint_override=false,attribute_modifiers={modifiers:[{id:"rocketriders:chestplate",slot:"chest",amount:3,operation:"add_value",type:"generic.armor"}],show_in_tooltip:0b},hide_additional_tooltip={}]
+execute as @a[x=0,team=Yellow,tag=BreakEly,predicate=custom:not_falling] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:spire",show_in_tooltip:0b},custom_name='[{"text":"Yellow Chestplate","color":"gold","bold":true,"italic":false}]',dyed_color={rgb:16768000,show_in_tooltip:0b},unbreakable={show_in_tooltip:0b},enchantments={levels:{binding_curse:1},show_in_tooltip:0b},enchantment_glint_override=false,attribute_modifiers={modifiers:[{id:"rocketriders:chestplate",slot:"chest",amount:3,operation:"add_value",type:"generic.armor"}],show_in_tooltip:0b},hide_additional_tooltip={}]
+tag @a[x=0,tag=BreakElyMsg,predicate=custom:not_falling] remove BreakEly
+tag @a[x=0,tag=BreakElyMsg,predicate=custom:not_falling] remove BreakElyMsg
 
 #broken trident clearing
 clear @a[x=0,team=Blue] trident[damage=8]

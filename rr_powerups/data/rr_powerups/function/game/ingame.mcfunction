@@ -96,7 +96,7 @@ function rr_powerups:everytick/platformdeplete
 
 #bossbar
 bossbar set rr_powerups:capture_progress style progress
-bossbar set rr_powerups:capture_progress players @a[x=0,team=!Lobby]
+execute if score @s gametime matches 1.. run bossbar set rr_powerups:capture_progress players @a[x=0,team=!Lobby]
 
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform] if score @s captureBlue >= @s captureYellow store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureBlue
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue > @s captureYellow run bossbar set rr_powerups:capture_progress color blue

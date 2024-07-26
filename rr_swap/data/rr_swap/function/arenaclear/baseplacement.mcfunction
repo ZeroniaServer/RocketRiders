@@ -60,6 +60,7 @@ execute if entity @s[tag=Hardcore] if score SwapSide swapside matches 0 run fill
 
 #Bossbar prep
 bossbar set rr_swap:swap_progress players none
+bossbar set rr_swap:swap_progress value 0
 scoreboard players set SwapPlatform swapside 0
 scoreboard players set BossbarA swapside 0
 scoreboard players set BossbarB swapside 0

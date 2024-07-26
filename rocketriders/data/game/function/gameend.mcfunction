@@ -39,10 +39,10 @@ execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remov
 execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
 
 #Fireballs can't be punched (credit: Miolith)
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,tag=Still] run function game:endfireball
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=dragon_fireball,predicate=custom:not_moving] run function game:endfireball
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,tag=StillCluster] run function game:endfireball
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,tag=ClusterStarter,tag=Still] run function game:endfireball
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,tag=Still] at @s run function game:endfireball
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=dragon_fireball,predicate=custom:not_moving] at @s run function game:endfireball
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,tag=StillCluster] at @s run function game:endfireball
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,tag=ClusterStarter,tag=Still] at @s run function game:endfireball
 
 ##Tie actionbar notifications
 execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=!BothWon,scores={endtimer=1..20}] run title @a[x=0,team=!Lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"5","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]

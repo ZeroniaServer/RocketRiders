@@ -230,3 +230,8 @@ scoreboard objectives add YSurpriseSpawned minecraft.used:minecraft.cod_spawn_eg
 scoreboard objectives add BowShot minecraft.used:minecraft.bow
 scoreboard objectives add ThrowShield minecraft.used:minecraft.snowball
 scoreboard objectives add infinity dummy
+scoreboard objectives add notBackwards dummy
+scoreboard objectives add standStill dummy
+scoreboard objectives add timeSinceJump dummy
+scoreboard objectives add jumping minecraft.custom:minecraft.jump
+scoreboard objectives add movement dummy

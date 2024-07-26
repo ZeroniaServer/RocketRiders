@@ -62,6 +62,7 @@ execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}
 execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run playsound minecraft:block.glass.break master @a[x=0] ~ ~ ~ 1 0.8
 execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 2
-execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run summon end_crystal ~ ~ ~ {ShowBottom:0b,Invulnerable:0b,Tags:["PUCrystal","PUCrystalEntity","PUCrystalPerma"]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run summon item_display ~ ~ ~ {Tags:["PUCrystalEntity","PUCrystalPerma"],Passengers:[{id:"end_crystal",Invulnerable:1b,ShowBottom:0b,Tags:["PUCrystal","PUCrystalEntity","PUCrystalPerma"]}]}
+execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] on vehicle run kill @s
 execute as @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] at @s run kill @s
 scoreboard players reset @e[x=0,type=end_crystal,tag=PUCrystalPerma,scores={capturePoint=40..}] capturePoint

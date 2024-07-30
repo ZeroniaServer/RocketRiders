@@ -32,6 +32,8 @@ team modify Developer friendlyFire false
 
 #Gamerules
 gamerule logAdminCommands false
+gamerule playersNetherPortalCreativeDelay 2147483647
+gamerule playersNetherPortalDefaultDelay 2147483647
 
 #Check updates
 schedule function world_updates:check_updates_indimension 2s replace
@@ -235,3 +237,4 @@ scoreboard objectives add standStill dummy
 scoreboard objectives add timeSinceJump dummy
 scoreboard objectives add jumping minecraft.custom:minecraft.jump
 scoreboard objectives add movement dummy
+scoreboard objectives add impulse_cooldown dummy

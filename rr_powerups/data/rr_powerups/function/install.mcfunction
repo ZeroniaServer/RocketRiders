@@ -17,6 +17,7 @@ scoreboard objectives add HasTotem dummy
 scoreboard objectives add HasBeeShield dummy
 scoreboard objectives add HasTippedArrows dummy
 scoreboard objectives add HasElytra dummy
+scoreboard objectives add BeeShieldTime dummy
 execute if entity @e[x=0,type=armor_stand,tag=rr_powerups,limit=1] run tellraw @s {"text":"Powerups Mode installed.","color":"green","bold":true}
 scoreboard players add @e[x=0,type=armor_stand,tag=rr_powerups,limit=1] CmdData 1
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop

@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "use_item": {
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "item": {
+                    "items": "compass"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "lobby:parkour/usecompass"
+    }
+}

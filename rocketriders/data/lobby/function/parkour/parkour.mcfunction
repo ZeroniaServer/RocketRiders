@@ -8,9 +8,9 @@ execute as @a[x=0,team=Lobby,tag=startParkour] run tellraw @s [{"text":"Parkour 
 execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Step on pressure plates to reach ","color":"green"},{"text":"Checkpoints","color":"dark_green"},{"text":".","color":"green"}]
 execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- If you fall on the ground, you go to your last ","color":"green"},{"text":"Checkpoint","color":"dark_green"},{"text":".","color":"green"}]
 execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- The first pressure plate resets your time.","color":"green"}]
-execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the compass to ","color":"green"},{"text":"Return to Checkpoint","color":"aqua","bold":true},{"text":".","color":"green"}]
-execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the clock to ","color":"green"},{"text":"Quit to Start","color":"yellow","bold":true},{"text":".","color":"green"}]
-execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Drop/offhand the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":true},{"text":".","color":"green"}]
+execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the compass to ","color":"green"},{"text":"Return to Checkpoint","color":"aqua","bold":true},{"text":".","color":"green"}]
+execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the clock to ","color":"green"},{"text":"Quit to Start","color":"yellow","bold":true},{"text":".","color":"green"}]
+execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":true},{"text":".","color":"green"}]
 execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger toggleParkourTips set 1"}},{"text":" to no longer see these instructions.","color":"dark_green","italic":true}]
 execute as @a[x=0,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[x=0,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
@@ -151,38 +151,21 @@ execute as @a[x=0,team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=
 execute as @a[x=0,team=Lobby,tag=inParkour,scores={parkourSecs=..9,parkourMins=10..}] run title @s actionbar ["",{"text":"Checkpoint: ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"bold":true,"color":"green"},{"text":" [","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"bold":true,"color":"green"},{"text":":","bold":true,"color":"green"},{"text":"0","bold":true,"color":"green"},{"score":{"name":"@s","objective":"parkourSecs"},"bold":true,"color":"green"},{"text":".","bold":true,"color":"green"},{"score":{"name":"@s","objective":"parkourDeci"},"bold":true,"color":"green"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"]","color":"dark_green"}]
 execute as @a[x=0,team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=10..}] run title @s actionbar ["",{"text":"Checkpoint: ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"bold":true,"color":"green"},{"text":" [","color":"dark_green"},{"score":{"name":"@s","objective":"parkourMins"},"bold":true,"color":"green"},{"text":":","bold":true,"color":"green"},{"score":{"name":"@s","objective":"parkourSecs"},"bold":true,"color":"green"},{"text":".","bold":true,"color":"green"},{"score":{"name":"@s","objective":"parkourDeci"},"bold":true,"color":"green"},{"score":{"name":"@s","objective":"parkourDeci2"},"color":"green","bold":true},{"text":"]","color":"dark_green"}]
 
-##Inventory controls (offhand and drop)
+##Inventory controls
 #Return to last checkpoint (includes 1 second cooldown)
 scoreboard players add @a[x=0,team=Lobby,tag=inParkour] chkpntCooldown 0
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run item replace entity @s hotbar.3 with compass[custom_name='[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'] 1
-execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropCompass=1..,chkpntCooldown=0}] run tag @s add returnCheckpoint
-execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropCompass=1..,chkpntCooldown=0}] run scoreboard players set @s chkpntCooldown 1
-scoreboard players reset @a[x=0] dropCompass
-execute as @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=0}] if items entity @s weapon.offhand compass run tag @s add returnCheckpoint
-execute as @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=0}] if items entity @s weapon.offhand compass run scoreboard players set @s chkpntCooldown 1
-execute as @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=1}] run tellraw @s ["",{"text":"Returned to Checkpoint ","color":"dark_green"},{"score":{"name":"@s","objective":"checkpoint"},"color":"green","bold":true},{"text":".","color":"dark_green"}]
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run clear @s compass
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run item replace entity @s hotbar.3 with compass[custom_name='[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false}]',food={nutrition:0,saturation:0,eat_seconds:2147483647,can_always_eat:true}] 1
 scoreboard players add @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=1..19}] chkpntCooldown 1
 scoreboard players set @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
 #Quit to start
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name='[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'] 1
-execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropClock=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to the start.","color":"red"}]
-execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropClock=1..}] run tag @s remove inParkour
-execute as @a[x=0,team=Lobby,scores={dropClock=1..}] run scoreboard players set @s LobbyWarp 7
-scoreboard players reset @a[x=0] dropClock
-execute as @a[x=0,team=Lobby,tag=inParkour] if items entity @s weapon.offhand clock run tellraw @s [{"text":"You quit the Parkour. Returning to the start.","color":"red"}]
-execute as @a[x=0,team=Lobby,tag=inParkour] if items entity @s weapon.offhand clock run tag @s remove inParkour
-execute as @a[x=0,team=Lobby] if items entity @s weapon.offhand clock run scoreboard players set @s LobbyWarp 7
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run clear @s clock
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name='[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false}]',food={nutrition:0,saturation:0,eat_seconds:2147483647,can_always_eat:true}] 1
 
 #Quit parkour
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run item replace entity @s hotbar.8 with barrier[custom_name='[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false},{"translate":" (drop or offhand to use)","color":"white","bold":false,"italic":false}]'] 1
-execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tellraw @s [{"text":"You quit the Parkour. Returning to the Lobby.","color":"red"}]
-execute as @a[x=0,team=Lobby,tag=inParkour,scores={dropBarrier=1..}] run tag @s remove inParkour
-execute as @a[x=0,team=Lobby,scores={dropBarrier=1..}] run scoreboard players set @s LobbyWarp 1
-scoreboard players reset @a[x=0] dropBarrier
-execute as @a[x=0,team=Lobby,tag=inParkour] if items entity @s weapon.offhand barrier run tellraw @s [{"text":"You quit the Parkour. Returning to the Lobby.","color":"red"}]
-execute as @a[x=0,team=Lobby,tag=inParkour] if items entity @s weapon.offhand barrier run tag @s remove inParkour
-execute as @a[x=0,team=Lobby] if items entity @s weapon.offhand barrier run scoreboard players set @s LobbyWarp 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run clear @s barrier
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run item replace entity @s hotbar.8 with barrier[custom_name='[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false}]',food={nutrition:0,saturation:0,eat_seconds:2147483647,can_always_eat:true}] 1
 
 #Clear offhand (necessary for inventory controls)
 item replace entity @a[x=0,team=Lobby] weapon.offhand with air

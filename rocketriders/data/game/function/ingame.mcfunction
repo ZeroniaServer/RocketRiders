@@ -22,10 +22,8 @@ scoreboard players add @a[x=0,team=Blue] kills 0
 ##Prevent players from going above the arena
 execute as @a[x=0,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow] unless entity @s[team=!Yellow,team=!Blue] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
-##Handling portals/roof with players/utilities
+##Handling portals/roof with utilities
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:cancel_utility
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=!SMCustom] run function everytick:player_portal
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0,PortalDeco=4},tag=SMCustom] run function everytick:player_portal
 
 ##Player void
 execute as @a[x=0] unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980] unless entity @s[scores={ThrowPlat=1..}] run function game:void

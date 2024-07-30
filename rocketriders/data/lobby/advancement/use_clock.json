@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "use_item": {
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "item": {
+                    "items": "clock"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "lobby:parkour/useclock"
+    }
+}

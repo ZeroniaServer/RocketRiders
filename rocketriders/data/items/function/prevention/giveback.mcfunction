@@ -126,17 +126,17 @@ execute as @a[x=0,tag=BackObshield,limit=1] at @s run function items:util/giveob
 ##Unable message
 tag @a[x=0,tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG,tag=!roofMSGFB,tag=!voidMSGFB,tag=!roofMSGOS,tag=!voidMSGOS,limit=1] add preventionMSG
 execute unless entity @s[tag=customPrevention] run tellraw @a[x=0,tag=preventionMSG,limit=1] ["",{"text":"Unable to spawn missile inside of obsidian or portals.","color":"red"}]
-tellraw @a[x=0,tag=roofMSG,limit=1] ["",{"text":"Unable to spawn missile near the roof.","color":"red"}]
+tellraw @a[x=0,tag=roofMSG,limit=1] ["",{"text":"Unable to spawn missile too high.","color":"red"}]
 tellraw @a[x=0,tag=voidMSG,limit=1] ["",{"text":"Unable to spawn missile near the void.","color":"red"}]
 execute if entity @s[tag=!antigriefOff,scores={gametime=200..}] run tellraw @a[x=0,tag=antigriefMSG,limit=1] ["",{"text":"Unable to spawn missile inside own base.","color":"red"}]
 execute if entity @s[tag=!antigriefOff,scores={gametime=..199}] run tellraw @a[x=0,tag=antigriefMSG,limit=1] ["",{"text":"Unable to collide missiles for the first 10 seconds of a game.","color":"red"}]
 tellraw @a[x=0,tag=spawnpointMSG,limit=1] ["",{"text":"Unable to spawn missile inside team spawnpoint.","color":"red"}]
 tellraw @a[x=0,tag=collisionMSG] ["",{"text":"Unable to spawn missile inside enemy base (Collision Control).","color":"red"}]
-tellraw @a[x=0,tag=roofMSGFB,limit=1] ["",{"text":"Unable to spawn Fireball near the roof.","color":"red"}]
+tellraw @a[x=0,tag=roofMSGFB,limit=1] ["",{"text":"Unable to spawn Fireball too high.","color":"red"}]
 tellraw @a[x=0,tag=voidMSGFB,limit=1] ["",{"text":"Unable to spawn Fireball near the void.","color":"red"}]
-tellraw @a[x=0,tag=roofMSGCFB,limit=1] ["",{"text":"Unable to spawn Cluster Fireball near the roof.","color":"red"}]
+tellraw @a[x=0,tag=roofMSGCFB,limit=1] ["",{"text":"Unable to spawn Cluster Fireball too high.","color":"red"}]
 tellraw @a[x=0,tag=voidMSGCFB,limit=1] ["",{"text":"Unable to spawn Cluster Fireball near the void.","color":"red"}]
-tellraw @a[x=0,tag=roofMSGOS,limit=1] ["",{"text":"Unable to spawn Obsidian Shield near the roof.","color":"red"}]
+tellraw @a[x=0,tag=roofMSGOS,limit=1] ["",{"text":"Unable to spawn Obsidian Shield too high.","color":"red"}]
 tellraw @a[x=0,tag=voidMSGOS,limit=1] ["",{"text":"Unable to spawn Obsidian Shield near the void.","color":"red"}]
 
 ##Tag removal

@@ -20,16 +20,16 @@ execute if entity @s[tag=!doFireballPortals,tag=!noPortal] unless entity @s[tag=
 execute if entity @s[tag=!doFireballPortals,tag=!noPortal] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=marker,tag=novatracker] at @s if entity @s[x=-11,y=30,z=-77,dx=46,dy=32,dz=6] run kill @s
 
 #Kill everything near/above the roof
-execute as @e[x=0,type=ender_pearl] at @s run kill @s[y=175,dy=100]
-execute as @e[x=0,type=snowball] at @s run kill @s[y=175,dy=100]
-execute as @e[x=0,type=dragon_fireball] at @s run kill @s[y=175,dy=100]
-execute as @e[x=0,type=egg] at @s run kill @s[y=175,dy=100]
-execute as @e[x=0,type=fireball] at @s run kill @s[y=175,dy=100]
-execute as @e[x=0,type=tnt] at @s run kill @s[y=175,dy=100]
-execute as @e[x=0,type=tnt_minecart] at @s run kill @s[y=175,dy=100]
-execute as @e[x=0,type=marker,tag=novatracker] at @s run kill @s[y=175,dy=100]
-execute as @e[x=0,type=firework_rocket,scores={novatimer=1..}] at @s run kill @s[y=175,dy=100]
-execute as @e[x=0,type=potion] at @s run kill @s[y=175,dy=100]
+execute as @e[x=0,type=ender_pearl] at @s run kill @s[y=160,dy=115]
+execute as @e[x=0,type=snowball] at @s run kill @s[y=160,dy=115]
+execute as @e[x=0,type=dragon_fireball] at @s run kill @s[y=160,dy=115]
+execute as @e[x=0,type=egg] at @s run kill @s[y=160,dy=115]
+execute as @e[x=0,type=fireball] at @s run kill @s[y=160,dy=115]
+execute as @e[x=0,type=tnt] at @s run kill @s[y=160,dy=115]
+execute as @e[x=0,type=tnt_minecart] at @s run kill @s[y=160,dy=115]
+execute as @e[x=0,type=marker,tag=novatracker] at @s run kill @s[y=160,dy=115]
+execute as @e[x=0,type=firework_rocket,scores={novatimer=1..}] at @s run kill @s[y=160,dy=115]
+execute as @e[x=0,type=potion] at @s run kill @s[y=160,dy=115]
 
 #Kill everything near world border
 execute as @e[x=0,type=arrow] at @s unless predicate custom:insideborder run kill @s

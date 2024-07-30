@@ -1,0 +1,1 @@
+scoreboard players set $lockmodroom CmdData 1

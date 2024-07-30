@@ -25,7 +25,7 @@ execute as @a[x=0,team=Blue] at @s run stopsound @s
 execute as @a[x=0,team=Blue,tag=Winner] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
 execute as @a[x=0,team=Blue,tag=Loser] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2
 title @a[x=0] times 10 80 20
-title @a[x=0,team=!Lobby] title ["",{"selector":"@a[x=0,team=Blue,tag=Winner,limit=1]","color":"dark_red"},{"text":" Won!","color":"red"}]
+execute unless score $skiptitles CmdData matches 1 run title @a[x=0,team=!Lobby] title ["",{"selector":"@a[x=0,team=Blue,tag=Winner,limit=1]","color":"dark_red"},{"text":" Won!","color":"red"}]
 tellraw @a[x=0] ["",{"selector":"@a[x=0,team=Blue,tag=Winner,limit=1]","color":"dark_red","bold":true},{"text":" Won!","color":"red","bold":true}]
 
 ##Splashes

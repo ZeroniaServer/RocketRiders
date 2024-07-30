@@ -19,13 +19,9 @@ summon marker -64 191 78 {Tags:["ServerMode","Set4","ServermodeSet4","Set","CTFM
 summon marker -64 191 78 {Tags:["ServerMode","Set5","ServermodeSet5","Set","CrusadeMode"],CustomName:'"Crusade Mode"'}
 
 # Something
-summon marker -64 191 78 {Tags:["ServerMode","SCMChance"]}
-scoreboard players set @e[x=0,type=marker,tag=SneakyChase] RNGmax 1000
-execute as @e[x=0,type=marker,tag=SCMChance] store result score @s RNGscore run data get entity @s UUID[0]
-execute as @e[x=0,type=marker,tag=SCMChance] run scoreboard players operation @s RNGscore %= @s RNGmax
-execute as @e[x=0,type=marker,tag=SCMChance,scores={RNGscore=69}] run summon marker -64 191 78 {Tags:["ServerMode","Set6","ServermodeSet6","Set","ChaseMode"],CustomName:'"Chase Mode"'}
-execute as @e[x=0,type=marker,tag=SCMChance,scores={RNGscore=69}] run summon marker -64 191 78 {Tags:["ServerMode","Maps","ServermodeSet6","RandomMap"],CustomName:'"Randomized map"'}
-kill @e[x=0,type=marker,tag=SCMChance]
+execute store result score $SCMChance RNGscore run random value 0..999
+execute if score $SMCChance RNGscore matches 69 run summon marker -64 191 78 {Tags:["ServerMode","Set6","ServermodeSet6","Set","ChaseMode"],CustomName:'"Chase Mode"'}
+execute if score $SMCChance RNGscore matches 69 run summon marker -64 191 78 {Tags:["ServerMode","Maps","ServermodeSet6","RandomMap"],CustomName:'"Randomized map"'}
 
 # Decrease vote options scores in case of low priority.
 execute if score $NormalMode servermode matches 2 run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set1] VoteServerMode 1

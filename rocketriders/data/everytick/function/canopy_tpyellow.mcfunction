@@ -47,6 +47,7 @@ execute if entity @s[tag=killCanopy] run tag @p[team=Yellow,tag=currentTP,tag=ca
 attribute @p[tag=currentTP,tag=!canopyTP] generic.fall_damage_multiplier base set 1
 attribute @p[tag=currentTP,tag=!canopyTP] generic.movement_speed base set 0.1
 attribute @p[tag=currentTP,tag=!canopyTP] generic.jump_strength base set 0.42
+effect clear @p[tag=currentTP,tag=!canopyTP] slow_falling
 tag @p[tag=currentTP,tag=!canopyTP] remove threwCanopy
 
 #Extra CK thingy

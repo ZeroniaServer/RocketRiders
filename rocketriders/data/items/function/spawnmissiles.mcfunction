@@ -17,8 +17,8 @@ execute if entity @s[tag=YellowSurpriseLightning] run function items:surprise_ye
 execute if entity @s[tag=YellowSurpriseSpecial] run function items:surprise_yellow/rngspecial
 
 ##Flipping Capability
-execute if entity @s[tag=yellowmissile] run tag @a[x=0,team=Yellow,tag=FlipMissile,tag=placer,limit=1] add missileflip
-execute if entity @s[tag=bluemissile] run tag @a[x=0,team=Blue,tag=FlipMissile,tag=placer,limit=1] add missileflip
+execute if entity @s[tag=yellowmissile] if entity @a[x=0,team=Yellow,tag=FlipMissile,tag=placer,limit=1] run tag @s add missileflip
+execute if entity @s[tag=bluemissile] if entity @a[x=0,team=Blue,tag=FlipMissile,tag=placer,limit=1] run tag @s add missileflip
 tag @s[tag=missileflip,tag=yellowmissile] add wasyellow
 tag @s[tag=missileflip,tag=bluemissile] add wasblue
 execute if entity @s[tag=missileflip,tag=yellowmissile,tag=wasyellow] run function items:flip/flipyellow

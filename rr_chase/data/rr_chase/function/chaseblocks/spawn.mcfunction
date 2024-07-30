@@ -1,20 +1,12 @@
 summon marker -14 50 -51 {Tags:["SpawnChaseBlock"]}
 summon marker -14 40 -51 {Tags:["ChaseBlockPos","ChaseBlockX"]}
-scoreboard players set @e[x=0,type=marker,tag=ChaseBlockX] RNGmax 26
 summon marker -14 40 -51 {Tags:["ChaseBlockPos","ChaseBlockY"]}
-scoreboard players set @e[x=0,type=marker,tag=ChaseBlockY] RNGmax 5
 summon marker -14 40 -51 {Tags:["ChaseBlockPos","ChaseBlockZ"]}
-scoreboard players set @e[x=0,type=marker,tag=ChaseBlockZ] RNGmax 14
 summon marker -14 40 -51 {Tags:["ChaseBlockPos","ChaseBlockType"]}
-scoreboard players set @e[x=0,type=marker,tag=ChaseBlockType] RNGmax 105
-
-execute as @e[x=0,type=marker,tag=ChaseBlockPos] store result score @s RNGscore run data get entity @s UUID[0]
-execute as @e[x=0,type=marker,tag=ChaseBlockPos] run scoreboard players operation @s RNGscore %= @s RNGmax
-scoreboard players add @e[x=0,type=marker,tag=ChaseBlockZ] RNGscore 5
-execute as @e[x=0,type=marker,tag=SpawnChaseBlock] at @s store result score @s x run scoreboard players get @e[x=0,type=marker,tag=ChaseBlockX,limit=1,sort=nearest] RNGscore
-execute as @e[x=0,type=marker,tag=SpawnChaseBlock] at @s store result score @s y run scoreboard players get @e[x=0,type=marker,tag=ChaseBlockY,limit=1,sort=nearest] RNGscore
-execute as @e[x=0,type=marker,tag=SpawnChaseBlock] at @s store result score @s z run scoreboard players get @e[x=0,type=marker,tag=ChaseBlockZ,limit=1,sort=nearest] RNGscore
-execute as @e[x=0,type=marker,tag=SpawnChaseBlock] at @s store result score @s CmdData run scoreboard players get @e[x=0,type=marker,tag=ChaseBlockType,limit=1,sort=nearest] RNGscore
+execute as @e[x=0,type=marker,tag=SpawnChaseBlock] at @s store result score @s x run random value 5..30
+execute as @e[x=0,type=marker,tag=SpawnChaseBlock] at @s store result score @s y run random value 5..9
+execute as @e[x=0,type=marker,tag=SpawnChaseBlock] at @s store result score @s z run random value 5..18
+execute as @e[x=0,type=marker,tag=SpawnChaseBlock] at @s store result score @s CmdData run random value 5..109
 
 execute as @e[x=0,type=marker,tag=SpawnChaseBlock] at @s run function rr_chase:chaseblocks/teleport
 

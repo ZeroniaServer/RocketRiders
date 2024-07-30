@@ -88,9 +88,7 @@ execute as @e[x=0,type=armor_stand,tag=VortexItemBlue] at @s unless entity @e[ty
 
 ##Feathered vortex (Easter egg)
 execute unless entity @s[tag=featheredOff] as @e[x=0,type=chicken] unless entity @s[nbt={Age:0}] at @s run tag @s add SummonFeathered
-scoreboard players set @e[x=0,type=chicken,tag=SummonFeathered] RNGmax 99
-execute as @e[x=0,type=chicken,tag=SummonFeathered] store result score @s RNGscore run data get entity @s UUID[0]
-execute as @e[x=0,type=chicken,tag=SummonFeathered] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
+execute as @e[x=0,type=chicken,tag=SummonFeathered] store result score @s RNGscore run random value 0..99
 tag @e[x=0,type=chicken,tag=SummonFeathered,scores={RNGscore=0..49}] add FeatherConfirmed
 execute as @e[x=0,type=chicken,tag=FeatherConfirmed] at @s run playsound entity.chicken.hurt master @a[x=0] ~ ~ ~ 2 0
 execute as @e[x=0,type=chicken,tag=FeatherConfirmed] at @s align xyz positioned ~.5 ~ ~.5 run summon armor_stand ~ ~-1.2 ~ {Tags:["VortexItem","VortexItemFeathered"],Invisible:1b,Marker:1b,Invulnerable:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{id:[I;-117843415,-1049737373,-1734814166,67551181],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2EzNTgyY2U0ODg5MzMzZGFkMzI5ZTRlMjQzNzJhMDNhNWRhYTJjMzQyODBjNTYyNTZhZjUyODNlZGIwNDNmOCJ9fX0="}]}}}]}

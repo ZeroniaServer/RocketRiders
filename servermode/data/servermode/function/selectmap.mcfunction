@@ -22,44 +22,20 @@ execute if entity @s[tag=EmptyMap] run scoreboard players set @e[x=0,type=armor_
 execute if entity @s[tag=EmptyMap] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco 0
 
 #The Castle crusade map (Empty. Base design is forced.)
-#> UNCOMMENT WHEN CRUSADE IS FINISHED
-#execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco 0
-#execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner 0
-#execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco 0
-#execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco 0
-#execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco 0
+execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco 0
+execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner 0
+execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco 0
+execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco 0
+execute if entity @s[tag=TheCastle] run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco 0
+
 #Randomized map
-execute if entity @s[tag=RandomMap] run summon marker ~ ~ ~ {Tags:["RandomTop","RandomBases"]}
-execute if entity @s[tag=RandomMap] run scoreboard players set @e[x=0,type=marker,tag=RandomTop] RNGmax 3
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomTop] store result score @s RNGscore run data get entity @s UUID[0]
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomTop] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomTop] run scoreboard players add @s RNGscore 1
-execute if entity @s[tag=RandomMap] run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco = @e[x=0,type=marker,tag=RandomTop,limit=1] RNGscore
+execute if entity @s[tag=RandomMap] store result score @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco run random value 1..3
+execute if entity @s[tag=RandomMap] store result score @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner run random value 1..3
+execute if entity @s[tag=RandomMap] store result score @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco run random value 1..3
+execute if entity @s[tag=RandomMap] store result score @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco run random value 1..3
 
-execute if entity @s[tag=RandomMap] run summon marker ~ ~ ~ {Tags:["RandomTopSides","RandomBases"]}
-execute if entity @s[tag=RandomMap] run scoreboard players set @e[x=0,type=marker,tag=RandomTopSides] RNGmax 3
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomTopSides] store result score @s RNGscore run data get entity @s UUID[0]
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomTopSides] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomTopSides] run scoreboard players add @s RNGscore 1
-execute if entity @s[tag=RandomMap] run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner = @e[x=0,type=marker,tag=RandomTopSides,limit=1] RNGscore
-
-execute if entity @s[tag=RandomMap] run summon marker ~ ~ ~ {Tags:["RandomMiddle","RandomBases"]}
-execute if entity @s[tag=RandomMap] run scoreboard players set @e[x=0,type=marker,tag=RandomMiddle] RNGmax 3
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomMiddle] store result score @s RNGscore run data get entity @s UUID[0]
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomMiddle] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomMiddle] run scoreboard players add @s RNGscore 1
-execute if entity @s[tag=RandomMap] run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco = @e[x=0,type=marker,tag=RandomMiddle,limit=1] RNGscore
-
-execute if entity @s[tag=RandomMap] run summon marker ~ ~ ~ {Tags:["RandomBottom","RandomBases"]}
-execute if entity @s[tag=RandomMap] run scoreboard players set @e[x=0,type=marker,tag=RandomBottom] RNGmax 3
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomBottom] store result score @s RNGscore run data get entity @s UUID[0]
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomBottom] store result score @s RNGscore run scoreboard players operation @s RNGscore %= @s RNGmax
-execute if entity @s[tag=RandomMap] as @e[x=0,type=marker,tag=RandomBottom] run scoreboard players add @s RNGscore 1
-execute if entity @s[tag=RandomMap] run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco = @e[x=0,type=marker,tag=RandomBottom,limit=1] RNGscore
 #Extra precaution - no bottom deco if layered is on
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={MiddleDeco=3}] BottomDeco 0
 
 #Always use glass rim portals
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco 1
-
-kill @e[x=0,type=marker,tag=RandomBases]

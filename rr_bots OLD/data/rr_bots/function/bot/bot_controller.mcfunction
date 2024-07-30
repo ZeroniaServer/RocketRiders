@@ -60,8 +60,7 @@ execute as @e[x=0,type=armor_stand,tag=Bot,tag=!BotWalks,tag=!BotArrows,tag=!Bot
 execute as @e[x=0,type=armor_stand,tag=BlueBot,tag=BOTCONTROL,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider] at @s run summon marker ~ ~ ~ {Tags:["BotRNG","BlueRNG"]}
 execute as @e[x=0,type=armor_stand,tag=YellowBot,tag=BOTCONTROL,tag=!BotWalks,tag=!BotArrows,tag=!BotMissiles,tag=!BotRider] at @s run summon marker ~ ~ ~ {Tags:["BotRNG","YellowRNG"]}
 scoreboard players set @e[x=0,type=marker,tag=BotRNG] BotRNGmax 10
-execute as @e[x=0,type=marker,tag=BotRNG] store result score @s BotRNG run data get entity @s UUID[0]
-execute as @e[x=0,type=marker,tag=BotRNG] store result score @s BotRNG run scoreboard players operation @s BotRNG %= @s BotRNGmax
+execute as @e[x=0,type=marker,tag=BotRNG] store result score @s BotRNG run random value 0..9
 
 execute as @e[x=0,type=marker,tag=BotRNG,scores={BotRNG=0..3}] at @s run tag @e[type=armor_stand,tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotWalks
 execute as @e[x=0,type=marker,tag=BotRNG,tag=BlueRNG,scores={BotRNG=4..7}] at @s if entity @a[team=Yellow,distance=5..45] unless entity @e[x=0,type=armor_stand,tag=BotArrows,limit=4] run tag @e[type=armor_stand,tag=BotHasArrows,distance=..2,limit=1,sort=nearest] add BotArrows

@@ -4,18 +4,14 @@ scoreboard players add @s BOTwalks 1
 
 #RNG
 execute if entity @s[scores={BOTwalks=1}] at @s run summon marker ~ ~ ~ {Tags:["BotWalkRNG"]}
-scoreboard players set @e[x=0,type=marker,tag=BotWalkRNG] BotRNGmax 23
-execute as @e[x=0,type=marker,tag=BotWalkRNG] store result score @s BotRNG run data get entity @s UUID[0]
-execute as @e[x=0,type=marker,tag=BotWalkRNG] store result score @s BotRNG run scoreboard players operation @s BotRNG %= @s BotRNGmax
+execute store result score $BotRNG CmdData run random value 0..22
 
-execute as @e[x=0,type=marker,tag=BotWalkRNG,scores={BotRNG=0..5}] at @s unless block ~ ~-1 ~-1 air unless block ~ ~-1 ~-2 air if block ~ ~ ~-1 air if block ~ ~1 ~-2 air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkNorth
-execute as @e[x=0,type=marker,tag=BotWalkRNG,scores={BotRNG=6..11}] at @s unless block ~ ~-1 ~1 air unless block ~ ~-1 ~2 air if block ~ ~ ~1 air if block ~ ~1 ~2 air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkSouth
-execute as @e[x=0,type=marker,tag=BotWalkRNG,scores={BotRNG=12..17}] at @s unless block ~-2 ~-1 ~ air unless block ~-2 ~-1 ~ air if block ~-1 ~ ~ air if block ~-2 ~1 ~ air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkWest
-execute as @e[x=0,type=marker,tag=BotWalkRNG,scores={BotRNG=18..23}] at @s unless block ~1 ~-1 ~ air unless block ~2 ~-1 ~ air if block ~1 ~ ~ air if block ~2 ~1 ~ air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkEast
+execute if score $BotRNG CmdData matches 0..5 at @s unless block ~ ~-1 ~-1 air unless block ~ ~-1 ~-2 air if block ~ ~ ~-1 air if block ~ ~1 ~-2 air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkNorth
+execute if score $BotRNG CmdData matches 6..11 at @s unless block ~ ~-1 ~1 air unless block ~ ~-1 ~2 air if block ~ ~ ~1 air if block ~ ~1 ~2 air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkSouth
+execute if score $BotRNG CmdData matches 12..17 at @s unless block ~-2 ~-1 ~ air unless block ~-2 ~-1 ~ air if block ~-1 ~ ~ air if block ~-2 ~1 ~ air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkWest
+execute if score $BotRNG CmdData matches 18..23 at @s unless block ~1 ~-1 ~ air unless block ~2 ~-1 ~ air if block ~1 ~ ~ air if block ~2 ~1 ~ air run tag @e[type=armor_stand,scores={BOTwalks=1},limit=1,sort=nearest,distance=..2] add BotwalkEast
 
 execute if entity @s[tag=BotWalks,scores={BOTwalks=1},tag=!BotwalkNorth,tag=!BotwalkEast,tag=!BotwalkSouth,tag=!BotwalkWest] run scoreboard players reset @s BOTwalks
-
-kill @e[x=0,type=marker,tag=BotWalkRNG]
 
 
 

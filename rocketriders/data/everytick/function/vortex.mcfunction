@@ -77,6 +77,7 @@ execute as @e[x=0,type=small_fireball] at @s run tag @e[type=marker,tag=Vortex,d
 execute as @e[x=0,type=dragon_fireball] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[x=0,type=snowball] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[x=0,type=egg] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
+execute as @e[x=0,type=potion] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[x=0,type=ender_pearl] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[x=0,type=trident] at @s run tag @e[type=marker,tag=Vortex,distance=..2,limit=1] add originboom
 execute as @e[x=0,type=tnt,nbt={fuse:2s}] at @s run tag @e[type=marker,tag=Vortex,distance=..5,limit=1] add originboom

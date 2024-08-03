@@ -145,8 +145,8 @@ tp @s[tag=BlueCata] ~-1 ~-8 ~3
 tp @s[tag=YellowCata] ~-1 ~-8 ~-14
 
 #Citadel
-tp @s[tag=BlueCitadel] ~-1 ~-8 ~4
-tp @s[tag=YellowCitadel] ~-1 ~-8 ~-13
+tp @s[tag=BlueCitadel] ~-1 ~-8 ~3
+tp @s[tag=YellowCitadel] ~-1 ~-8 ~-12
 
 #Gemini
 tp @s[tag=BlueGemi] ~-1 ~-7 ~4

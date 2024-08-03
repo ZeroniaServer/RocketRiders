@@ -77,16 +77,16 @@ execute at @s[tag=YellowSlash,tag=!UnableMissile] positioned ~-1 175 ~-16 store 
 execute at @s[tag=YellowSlash,tag=!UnableMissile] positioned ~-1 ~-7 ~-16 store result score @s Unable run clone ~ ~ ~ ~2 ~3 ~12 ~ 175 ~ filtered #custom:antigrief_blue force
 
 #Catapult
-execute at @s[tag=BlueCata,tag=!UnableMissile] positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~9 void_air
-execute at @s[tag=BlueCata,tag=!UnableMissile] positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:antigrief_yellow force
+execute at @s[tag=BlueCata,tag=!UnableMissile] positioned ~-1 175 ~5 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~9 void_air
+execute at @s[tag=BlueCata,tag=!UnableMissile] positioned ~-1 ~-6 ~5 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:antigrief_yellow force
 execute at @s[tag=YellowCata,tag=!UnableMissile] positioned ~-1 175 ~-14 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~9 void_air
 execute at @s[tag=YellowCata,tag=!UnableMissile] positioned ~-1 ~-6 ~-14 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:antigrief_blue force
 
 #Citadel
-execute at @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~9 void_air
-execute at @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:antigrief_yellow force
-execute at @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 175 ~-13 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~9 void_air
-execute at @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~-13 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:antigrief_blue force
+execute at @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~8 void_air
+execute at @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~8 ~ 175 ~ filtered #custom:antigrief_yellow force
+execute at @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 175 ~-12 store result score @s Volume run fill ~ ~ ~ ~2 ~2 ~8 void_air
+execute at @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~-12 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~8 ~ 175 ~ filtered #custom:antigrief_blue force
 
 #Gemini
 execute at @s[tag=BlueGemi,tag=!UnableMissile] positioned ~-1 175 ~4 store result score @s Volume run fill ~ ~ ~ ~2 ~1 ~9 void_air

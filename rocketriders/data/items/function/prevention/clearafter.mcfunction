@@ -38,8 +38,8 @@ execute if entity @s[tag=YellowSlash] positioned ~-1 175 ~-16 run fill ~-5 ~ ~-5
 execute if entity @s[tag=BlueCata] positioned ~-1 175 ~3 run fill ~-5 ~ ~-5 ~7 ~2 ~16 air replace
 execute if entity @s[tag=YellowCata] positioned ~-1 175 ~-14 run fill ~-5 ~ ~-5 ~7 ~2 ~16 air replace
 
-execute if entity @s[tag=BlueCitadel] positioned ~-1 175 ~4 run fill ~-5 ~ ~-5 ~7 ~2 ~14 air replace
-execute if entity @s[tag=YellowCitadel] positioned ~-1 175 ~-13 run fill ~-5 ~ ~-5 ~7 ~2 ~14 air replace
+execute if entity @s[tag=BlueCitadel] positioned ~-1 175 ~3 run fill ~-5 ~ ~-5 ~7 ~2 ~14 air replace
+execute if entity @s[tag=YellowCitadel] positioned ~-1 175 ~-12 run fill ~-5 ~ ~-5 ~7 ~2 ~14 air replace
 
 execute if entity @s[tag=BlueGemi] positioned ~-1 175 ~4 run fill ~-5 ~ ~-5 ~7 ~1 ~14 air replace
 execute if entity @s[tag=YellowGemi] positioned ~-1 175 ~-13 run fill ~-5 ~ ~-5 ~7 ~1 ~14 air replace

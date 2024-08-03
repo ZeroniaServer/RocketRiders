@@ -83,10 +83,10 @@ execute at @s[tag=YellowCata,tag=!UnableMissile] positioned ~-1 175 ~-14 store r
 execute at @s[tag=YellowCata,tag=!UnableMissile] positioned ~-1 ~-6 ~-14 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~11 ~ 175 ~ filtered #custom:missileblocks force
 
 #Citadel
-execute at @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 175 ~4 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~9 void_air
-execute at @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~9 ~ 175 ~ filtered #custom:missileblocks force
-execute at @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 175 ~-13 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~9 void_air
-execute at @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~-13 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~9 ~ 175 ~ filtered #custom:missileblocks force
+execute at @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 175 ~4 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~8 void_air
+execute at @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~8 ~ 175 ~ filtered #custom:missileblocks force
+execute at @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 175 ~-12 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~8 void_air
+execute at @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~-12 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~8 ~ 175 ~ filtered #custom:missileblocks force
 
 #Gemini
 execute at @s[tag=BlueGemi,tag=!UnableMissile] positioned ~-1 175 ~4 store result score @s Volume run fill ~-1 ~ ~ ~3 ~1 ~9 void_air

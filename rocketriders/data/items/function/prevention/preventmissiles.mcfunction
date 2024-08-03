@@ -57,8 +57,8 @@ execute if entity @s[tag=BlueCata,tag=!UnableMissile] positioned ~-1 ~-6 ~3 stor
 execute if entity @s[tag=YellowCata,tag=!UnableMissile] positioned ~-1 ~-6 ~-14 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~11 ~ 175 ~ filtered #custom:portalblocks force
 
 #Citadel
-execute if entity @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:portalblocks force
-execute if entity @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~-13 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:portalblocks force
+execute if entity @s[tag=BlueCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~3 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:portalblocks force
+execute if entity @s[tag=YellowCitadel,tag=!UnableMissile] positioned ~-1 ~-6 ~-12 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:portalblocks force
 
 #Gemini
 execute if entity @s[tag=BlueGemi,tag=!UnableMissile] positioned ~-1 ~-5 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~1 ~9 ~ 175 ~ filtered #custom:portalblocks force

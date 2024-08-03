@@ -67,6 +67,9 @@ function nnhealth:tick
 scoreboard players add @a[x=0] nnhealth_max 0
 tag @a[x=0,tag=nnhealth_init,scores={nnhealth_max=0}] remove nnhealth_init
 
+#Handling portals/roof with utilities
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:cancel_utility
+
 #Arrow pickup
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameEnd,tag=!customArrowPickup] if entity @e[x=0,type=arrow] run function everytick:arrow_pickup
 

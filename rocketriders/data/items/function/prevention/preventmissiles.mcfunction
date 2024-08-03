@@ -69,8 +69,8 @@ execute if entity @s[tag=BlueLift,tag=!UnableMissile] positioned ~-1 ~-5 ~4 stor
 execute if entity @s[tag=YellowLift,tag=!UnableMissile] positioned ~-1 ~-5 ~-10 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~6 ~ 175 ~ filtered #custom:portalblocks force
 
 #Hypersonic
-execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-7 ~5 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:portalblocks force
-execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-7 ~-14 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ filtered #custom:portalblocks force
+execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 store result score @s Unable run clone ~ ~ ~ ~1 ~2 ~7 ~ 175 ~ filtered #custom:portalblocks force
+execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-12 store result score @s Unable run clone ~ ~ ~ ~1 ~2 ~7 ~ 175 ~ filtered #custom:portalblocks force
 
 #Bullet
 execute if entity @s[tag=BlueBull,tag=!UnableMissile] positioned ~-1 ~-6 ~4 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~12 ~ 175 ~ filtered #custom:portalblocks force

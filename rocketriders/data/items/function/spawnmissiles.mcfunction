@@ -156,11 +156,9 @@ tp @s[tag=YellowGemi] ~-1 ~-7 ~-13
 tp @s[tag=BlueLift] ~-1 ~-7 ~4
 tp @s[tag=YellowLift] ~-1 ~-7 ~-10
 
-#Hypersonic (+ extra entity)
-execute if entity @s[tag=BlueHyper] run summon marker ~ ~ ~ {Tags:["hyperExtraBlue","hyperExtra"]}
+#Hypersonic
 tp @s[tag=BlueHyper] ~-1 ~-8 ~5
-execute if entity @s[tag=YellowHyper] run summon marker ~ ~ ~ {Tags:["hyperExtraYellow","hyperExtra"]}
-tp @s[tag=YellowHyper] ~-1 ~-8 ~-14
+tp @s[tag=YellowHyper] ~-1 ~-8 ~-12
 
 #Bullet
 tp @s[tag=BlueBull] ~-1 ~-8 ~4
@@ -195,9 +193,6 @@ execute as @e[x=0,type=marker,tag=warExtraBlue,limit=1] at @s run fill ~ ~-5 ~10
 kill @e[x=0,type=marker,tag=warExtraBlue,limit=1]
 execute as @e[x=0,type=marker,tag=warExtraYellow,limit=1] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
 kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
-
-#Extra for Hyper
-execute as @e[x=0,type=marker,tag=hyperExtra,limit=1] at @s run function items:hyperextra
 
 ##Kill entity
 kill @s

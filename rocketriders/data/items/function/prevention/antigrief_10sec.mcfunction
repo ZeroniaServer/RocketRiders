@@ -101,10 +101,10 @@ execute at @s[tag=YellowLift,tag=!UnableMissile] positioned ~-1 175 ~-10 store r
 execute at @s[tag=YellowLift,tag=!UnableMissile] positioned ~-1 ~-5 ~-10 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~6 ~ 175 ~ filtered #custom:missileblocks force
 
 #Hypersonic
-execute at @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 175 ~5 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~9 void_air
-execute at @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-7 ~5 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~9 ~ 175 ~ filtered #custom:missileblocks force
-execute at @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 175 ~-14 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~9 void_air
-execute at @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-7 ~-14 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~9 ~ 175 ~ filtered #custom:missileblocks force
+execute at @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 175 ~5 store result score @s Volume run fill ~-1 ~ ~ ~2 ~2 ~7 void_air
+execute at @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 store result score @s Unable run clone ~-1 ~ ~ ~2 ~2 ~7 ~ 175 ~ filtered #custom:missileblocks force
+execute at @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 175 ~-12 store result score @s Volume run fill ~-1 ~ ~ ~2 ~2 ~7 void_air
+execute at @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-12 store result score @s Unable run clone ~-1 ~ ~ ~2 ~2 ~7 ~ 175 ~ filtered #custom:missileblocks force
 
 #Bullet
 execute at @s[tag=BlueBull,tag=!UnableMissile] positioned ~-1 175 ~4 store result score @s Volume run fill ~-1 ~ ~ ~3 ~2 ~12 void_air

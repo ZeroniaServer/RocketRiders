@@ -22,13 +22,13 @@
                     "minecraft:enchantment_glint_override": true,
                     "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Hypersonic\",\"color\":\"gold\",\"bold\":true}]",
                     "minecraft:lore": [
-                      "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]",
+                      "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"10\",\"color\":\"red\"}]",
                       "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"4.4m/s\",\"color\":\"red\"}]",
-                      "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]",
+                      "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Enator18 & DividedByZero\",\"color\":\"red\"}]",
                       "{\"text\":\" \",\"color\":\"gray\"}",
                       "{\"text\":\"The Hypersonic is the fastest\",\"color\":\"gray\"}",
                       "{\"text\":\"missile in the game. It might be\",\"color\":\"gray\"}",
-                      "{\"text\":\"very hard to get on this one!\",\"color\":\"gray\"}"
+                      "{\"text\":\"tricky to ride this one!\",\"color\":\"gray\"}"
                     ],
                     "minecraft:entity_data": {
                       "id": "minecraft:marker",
@@ -69,12 +69,12 @@
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Hypersonic\",\"color\":\"blue\",\"bold\":true}]",
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"6\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"10\",\"color\":\"red\"}]",
                   "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"4.4m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"IndigoLaser\",\"color\":\"red\"}]",
+                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Enator18 & DividedByZero\",\"color\":\"red\"}]",
                   "{\"text\":\"The Hypersonic is the fastest\",\"color\":\"gray\"}",
                   "{\"text\":\"missile in the game. It might be\",\"color\":\"gray\"}",
-                  "{\"text\":\"very hard to get on this one!\",\"color\":\"gray\"}"
+                  "{\"text\":\"tricky to ride this one!\",\"color\":\"gray\"}"
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",

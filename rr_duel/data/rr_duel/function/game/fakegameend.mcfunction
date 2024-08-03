@@ -1,9 +1,9 @@
 #After game ends
 scoreboard players add @s fakeendtimer 1
 clear @a[x=0,team=Blue] #custom:clear
-clear @a[x=0,team=Blue] crossbow[custom_data={nova:1b}]
+clear @a[x=0,team=Blue] crossbow[custom_data~{nova:1b}]
 clear @a[x=0,team=Yellow] #custom:clear
-clear @a[x=0,team=Yellow] crossbow[custom_data={nova:1b}]
+clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
 tag @s[scores={fakeendtimer=1}] remove gaveFirstItem
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime = @s[scores={fakeendtimer=1}] MaxItemSec
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime *= 20 MaxItemSec

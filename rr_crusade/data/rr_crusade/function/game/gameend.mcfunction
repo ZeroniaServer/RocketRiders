@@ -1,7 +1,7 @@
 clear @a[x=0,team=Blue] #custom:clear
-clear @a[x=0,team=Blue] crossbow[custom_data={nova:1b}]
+clear @a[x=0,team=Blue] crossbow[custom_data~{nova:1b}]
 clear @a[x=0,team=Yellow] #custom:clear
-clear @a[x=0,team=Yellow] crossbow[custom_data={nova:1b}]
+clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
 
 #Replacing Shooting Sabers
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents bow run kill

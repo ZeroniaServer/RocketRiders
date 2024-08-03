@@ -1,0 +1,17 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:shot_crossbow",
+            "conditions": {
+                "item": {
+                    "predicates": {
+                        "minecraft:custom_data": "{nova:1b}"
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "everytick:novashooter"
+    }
+}

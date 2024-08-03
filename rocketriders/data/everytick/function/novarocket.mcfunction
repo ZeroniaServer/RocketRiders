@@ -4,10 +4,6 @@
 ######################################################
 
 ##General Nova Rocket functionality
-execute as @a[x=0,team=Blue,scores={LaunchCrossbow=1..}] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
-execute as @a[x=0,team=Yellow,scores={LaunchCrossbow=1..}] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
-clear @a[x=0,scores={NovaShot=1..}] crossbow[custom_data={nova:1b}]
-
 #Identifies shot Nova Rockets and stores player UUID into their tracker score
 execute as @a[x=0,scores={NovaShot=1..}] store result score @s UUIDTracker run data get entity @s UUID[0]
 execute as @a[x=0,scores={NovaShot=1..}] at @s run setblock ~ 174 ~ oak_sign

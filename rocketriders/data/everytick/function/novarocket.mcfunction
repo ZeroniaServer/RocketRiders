@@ -4,9 +4,8 @@
 ######################################################
 
 ##General Nova Rocket functionality
-#Creative mode support
-execute as @a[x=0,team=Blue,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
-execute as @a[x=0,team=Yellow,scores={LaunchCrossbow=1..},gamemode=creative] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
+execute as @a[x=0,team=Blue,scores={LaunchCrossbow=1..}] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
+execute as @a[x=0,team=Yellow,scores={LaunchCrossbow=1..}] at @s if entity @e[type=firework_rocket,distance=..5,limit=1,tag=!YellowNova,tag=!BlueNova] run scoreboard players add @s NovaShot 1
 clear @a[x=0] crossbow[custom_data={nova:1b}]
 
 #Identifies shot Nova Rockets and stores player UUID into their tracker score

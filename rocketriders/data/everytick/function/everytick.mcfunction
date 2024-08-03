@@ -48,7 +48,7 @@ scoreboard players enable @a[x=0,team=Lobby] displayinfo
 scoreboard players enable @a[x=0,team=Developer] displayinfo
 execute as @a[x=0,scores={displayinfo=1..}] at @s run function lobby:displayinfo
 execute as @a[x=0,team=Lobby] run function everytick:score_reset
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted] run function lobby:credits/cycle
+execute if loaded 25 184 -6 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted] run function lobby:credits/cycle
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run function lobby:parkour/parkour
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run function lobby:parkour/parkourserver
 stopsound @a[x=0] ambient minecraft:ambient.cave

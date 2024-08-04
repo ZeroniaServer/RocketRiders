@@ -13,9 +13,9 @@ function lobby:missiledisplay/placedisp
 execute if entity @s[scores={servermode=0},tag=!SMCustom] run function 2811iaj1:advantriggers
 
 #Fix weirdness with join pads
-execute if entity @s[tag=!EditedSettings] run tag @e[x=0,type=marker,tag=yellowjoinpad] add CancelJoin
-execute if entity @s[tag=!EditedSettings] run tag @e[x=0,type=marker,tag=bluejoinpad] add CancelJoin
-execute if entity @s[tag=!EditedSettings] run tag @e[x=0,type=marker,tag=specjoinpad] add CancelJoin
+execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=yellowjoinpad] add CancelJoin
+execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=bluejoinpad] add CancelJoin
+execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=specjoinpad] add CancelJoin
 execute if entity @s[tag=noTeamBalance] run scoreboard players set @s largerTeam 0
 
 #Particle timer

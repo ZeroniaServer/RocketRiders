@@ -5,12 +5,11 @@
 ####################################################
 
 ##Arrow pointing down into the lobby
-execute if entity @s[scores={servermode=0},tag=!Repeat] unless entity @e[type=block_display,tag=LobbyArrowDisplay] if score $dust CmdData matches 1 run function lobby:spawnarrow
+execute if entity @s[scores={servermode=0},tag=!Repeat] unless entity @e[type=block_display,tag=LobbyArrowDisplay] if score $dust CmdData matches 1 unless score $lockmodroom CmdData matches 1 run function lobby:spawnarrow
 scoreboard players add @e[type=block_display,tag=LobbyArrowDisplay] CmdData 1
 execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=1}] run function lobby:arrow_up
 execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=11}] run function lobby:arrow_down
 scoreboard players reset @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=21..}] CmdData
-
 
 ##Particles around confirm changes sign
 execute if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,1],scale:2} -68.7 190.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

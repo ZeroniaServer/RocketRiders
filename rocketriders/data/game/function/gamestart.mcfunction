@@ -22,7 +22,8 @@ execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!cus
 execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame color white
 execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=SMCustom] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
 execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0..1}] run bossbar set rr:startgame color purple
-execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0}] run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
+execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0}] if score $lockmodroom CmdData matches 0 run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
+execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0}] if score $lockmodroom CmdData matches 1 run bossbar set rr:startgame name ["",{"text":"Waiting for game settings to be confirmed...","color":"dark_purple"}]
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame color red
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame name ["",{"text":"A game is currently ending.","color":"red"}]
 execute if entity @s[tag=EditedSettings] run scoreboard players set $ClearTime CmdData 0
@@ -133,11 +134,13 @@ clear @a[x=0,tag=JoinSpec]
 scoreboard players enable @a[x=0,team=Spectator] leaveSpec
 tag @a[x=0,scores={leaveSpec=1..}] add LeaveTeams
 scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster in the center of the arena.","color":"dark_green","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"If you want to leave Spectator mode, click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave ","color":"green"},{"text":"to go back to the lobby.","color":"dark_green","italic":true}]
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster to stop spectating!","color":"dark_green","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run title @a[team=Spectator] actionbar {"text":"Fly into the green particle cluster to stop spectating!","color":"green","bold":true}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run title @a[team=Spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
 gamemode spectator @a[x=0,tag=JoinSpec]
 tag @a[x=0] remove JoinSpec
 tp @a[x=0,tag=AlreadySpec] 12 100 0.5 90 90

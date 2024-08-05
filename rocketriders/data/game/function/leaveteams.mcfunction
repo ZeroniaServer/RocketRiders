@@ -10,6 +10,8 @@ execute as @a[x=0,tag=LeavingSpec] run tp @s @s
 tag @a[x=0,tag=LeaveTeams,team=Lobby] add WasInLobby
 team join Lobby @a[x=0,tag=LeaveTeams]
 title @a[x=0,tag=LeaveTeams] actionbar [""]
+title @a[x=0,tag=LeaveTeams] title [""]
+title @a[x=0,tag=LeaveTeams] subtitle [""]
 tp @a[x=0,tag=LeavingYellow] -78 204 92 45 0
 tp @a[x=0,tag=LeavingBlue] -78 204 64 135 0
 tp @a[x=0,tag=LeavingSpec] -43 212 78 90 0

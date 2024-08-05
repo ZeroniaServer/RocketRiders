@@ -90,6 +90,9 @@ function lobby:secrets/main
 execute as @a[x=0,team=Lobby] at @s if predicate custom:belowroof run tellraw @s [{"text":"You shouldn't be here!","color":"red"}]
 execute as @a[x=0,team=Lobby] at @s if predicate custom:belowroof run scoreboard players set @s LeaveGame 1
 
+#Locked Modification Room
+execute if score $lockmodroom CmdData matches 1 as @a[team=Lobby] at @s if predicate 2811iaj1:in_modification run function game:kickout
+
 #Lobby players can't switch out of adventure mode (security)
 execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
 

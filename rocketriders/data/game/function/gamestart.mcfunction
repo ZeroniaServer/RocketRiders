@@ -143,8 +143,11 @@ tag @a[x=0] remove JoinSpec
 tp @a[x=0,tag=AlreadySpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=AlreadySpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a[x=0] remove AlreadySpec
-execute if score $dust CmdData matches 1 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[2,1,0],scale:1} ~ ~ ~ 0.4 0.4 0.4 0.3 10 force @a[x=0,tag=!hideParticles,team=Spectator,predicate=custom:belowroof]
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run tag @a[team=Spectator,distance=..2] add LeaveTeams
+execute if score $dust CmdData matches 1 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[2,1,0],scale:4} ~ ~ ~ 0.7 0.7 0.7 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
+execute if score $dust CmdData matches 1 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[2,1,0],scale:3} ~ ~ ~ 0.8 0.8 0.8 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
+execute if score $dust CmdData matches 1 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[2,1,0],scale:2} ~ ~ ~ 1 1 1 0.3 10 force @a[x=0,team=Spectator,predicate=custom:belowroof]
+
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run tag @a[team=Spectator,distance=..4] add LeaveTeams
 
 #Keep spectators inside arena
 execute as @a[x=0,team=Spectator] at @s unless predicate custom:insideborder_lenient run tag @s add leftBorder

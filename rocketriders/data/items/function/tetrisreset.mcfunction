@@ -29,11 +29,11 @@ tag @s remove givenBolt
 tag @s remove givenAllLightning
 
 #Special
-tag @s remove givenBroad
-tag @s remove givenBull
-tag @s remove givenDuplex
-tag @s remove givenHyper
-tag @s remove givenAllSpecial
+tag @s[tag=!ChaosOff] remove givenBroad
+tag @s[tag=!ChaosOff] remove givenBull
+tag @s[tag=!ChaosOff] remove givenDuplex
+tag @s[tag=!ChaosOff] remove givenHyper
+tag @s[tag=!ChaosOff] remove givenAllSpecial
 
 #Utility
 tag @s remove givenCanopy

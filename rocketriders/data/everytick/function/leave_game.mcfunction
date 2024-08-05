@@ -18,6 +18,7 @@ effect give @a[x=0,scores={LeaveGame=1..}] night_vision infinite 100 true
 team join Lobby @a[x=0,scores={LeaveGame=1..},team=!Lobby]
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode survival
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode adventure
+title @a[x=0,scores={LeaveGame=1..}] actionbar [""]
 spawnpoint @a[x=0,tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78 90
 spawnpoint @a[x=0,tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96 90
 spawnpoint @a[x=0,tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61 90

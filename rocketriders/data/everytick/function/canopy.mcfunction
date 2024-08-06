@@ -166,7 +166,7 @@ execute as @e[x=0,type=marker,tag=killCanopy] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 j
 execute as @e[x=0,type=marker,tag=killCanopy] at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
 execute as @e[x=0,type=marker,tag=killCanopy] at @s if block ~ ~ ~ oak_wood run setblock ~ ~ ~ air destroy
 execute as @e[x=0,type=marker,tag=killCanopy] at @s if block ~ ~1 ~ oak_wood run setblock ~ ~1 ~ air destroy
-execute as @e[x=0,type=marker,tag=killCanopy] at @s run fill ~-3 ~-2 ~-3 ~3 ~1 ~3 air replace moving_piston{blockState:{Name:"minecraft:oak_wood"}}
+execute as @e[x=0,type=marker,tag=killCanopy] at @s run fill ~-3 ~-3 ~-3 ~3 ~2 ~3 air replace moving_piston{blockState:{Name:"minecraft:oak_wood"}}
 execute as @e[x=0,type=marker,tag=killCanopy] at @s if block ~1 ~1 ~ #minecraft:banners run setblock ~1 ~1 ~ air destroy
 execute as @e[x=0,type=marker,tag=killCanopy] at @s if block ~-1 ~1 ~ #minecraft:banners run setblock ~-1 ~1 ~ air destroy
 execute as @e[x=0,type=marker,tag=killCanopy] at @s if block ~ ~1 ~1 #minecraft:banners run setblock ~ ~1 ~1 air destroy

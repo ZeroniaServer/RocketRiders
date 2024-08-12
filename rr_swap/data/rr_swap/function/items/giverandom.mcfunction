@@ -19,6 +19,3 @@ execute if entity @s[tag=!noFullHotbarSound] as @a[x=0,tag=wasFullHotbar] unless
 
 #wind down
 scoreboard players remove @s[tag=WindDown,scores={MaxItemTime=62..}] MaxItemTime 2
-
-#schedule antidupe
-execute unless entity @s[tag=doStacking] run schedule function rr_swap:items/scheduleantidupe_indimension 1t append

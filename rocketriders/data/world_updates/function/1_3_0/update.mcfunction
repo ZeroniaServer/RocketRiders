@@ -7,13 +7,15 @@ item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with l
 scoreboard objectives add toggleParticles trigger
 scoreboard objectives add toggleTips trigger
 scoreboard objectives add toggleParkourTips trigger
-
-#TODO spyglass is stupid
-scoreboard objectives add disableTips dummy
-scoreboard objectives add hideParkourTips dummy
-
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
+
+# Bye bye, nnhealth o7
+scoreboard objectives remove nnhealth
+scoreboard objectives remove nnhealth_mod
+scoreboard objectives remove nnhealth_max
+scoreboard objectives remove nnhealth_real
+scoreboard objectives remove nnhealth_old
 
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 

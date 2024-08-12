@@ -17,7 +17,7 @@ tp @a[x=0,tag=LeavingBlue] -78 204 64 135 0
 tp @a[x=0,tag=LeavingSpec] -43 212 78 90 0
 clear @a[x=0,tag=!WasInLobby,tag=LeaveTeams]
 effect clear @a[x=0,tag=!WasInLobby,tag=LeaveTeams]
-effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] regeneration 1 100 true
+effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] instant_health 1 100 true
 effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] resistance infinite 100 true
 effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] night_vision infinite 100 true
 gamemode adventure @a[x=0,tag=!WasInLobby,tag=LeaveTeams,gamemode=!adventure]

@@ -6,6 +6,9 @@ scoreboard objectives setdisplay sidebar.team.dark_gray RoundsWon
 #leave midgame
 function rr_duel:game/leavemidgame
 
+#destroy crafting slots
+execute as @a unless entity @s[team=!Blue,team=!Yellow] if items entity @s player.crafting.* * at @s run function game:destroycraftingslots
+
 #tracking players and locking join pads
 tag @a[x=0,team=Blue] add InRanked
 tag @a[x=0,team=Yellow] add InRanked

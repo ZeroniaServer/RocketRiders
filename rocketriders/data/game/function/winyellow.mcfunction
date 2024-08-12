@@ -23,7 +23,7 @@ execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s levitation
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s wither
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s blindness
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s regeneration 1 100 true
+execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s instant_health 1 100 true
 execute as @a[x=0,team=Blue] at @s run stopsound @s
 execute as @a[x=0,team=Yellow] at @s run stopsound @s
 execute if entity @s[tag=!BlueWonFirst] as @a[x=0,team=Yellow] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85

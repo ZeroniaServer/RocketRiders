@@ -1,6 +1,3 @@
-#> Setup NNHealth (credit: NOPEname)
-function nnhealth:setup
-
 #> Update YZERO's armor
 function lobby:credits/devinitialize
 

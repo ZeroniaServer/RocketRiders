@@ -1,8 +1,8 @@
 ##Gives executor a Shield
 #Antidupe check
 execute store result score @s HasShield run clear @s snowball 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasShield %= 16 CmdData
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasShield=1..15},tag=fullHotbar] run tag @s remove fullHotbar
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasShield %= 64 CmdData
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasShield=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasShield 0
 tag @s[tag=itemDeducted] remove fullHotbar
 

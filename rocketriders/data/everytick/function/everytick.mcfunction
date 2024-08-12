@@ -42,7 +42,7 @@ effect give @a[x=0,team=Lobby] night_vision infinite 100 true
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Sonar] run effect give @a[x=0,team=Spectator] night_vision infinite 100 true
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run effect give @a[x=0] saturation infinite 0 true
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run effect clear @a[x=0] saturation
-execute as @a[x=0,team=Lobby,scores={nnhealth_max=6}] run function modifiers:hardcorereset
+execute as @a[x=0,team=Lobby,tag=hardcore] run function modifiers:hardcorereset
 function lobby:bookwarp
 scoreboard players enable @a[x=0,team=Lobby] displayinfo
 scoreboard players enable @a[x=0,team=Developer] displayinfo
@@ -52,20 +52,6 @@ execute if loaded 25 184 -6 unless entity @e[x=0,type=armor_stand,tag=Selection,
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run function lobby:parkour/parkour
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run function lobby:parkour/parkourserver
 stopsound @a[x=0] ambient minecraft:ambient.cave
-
-#NNHealth (credit: NOPEname)
-execute if entity @a[x=0,tag=!nnhealth_init] run gamerule showDeathMessages false
-execute as @a[x=0,tag=!nnhealth_init] run scoreboard players set @s nnhealth_max 20
-execute as @a[x=0,tag=!nnhealth_init] run scoreboard players set @s nnhealth_mod 20
-execute as @a[x=0,tag=!nnhealth_init] run scoreboard players set @s nnhealth 20
-execute as @a[x=0,tag=!nnhealth_init] run kill @s
-execute if entity @a[x=0,tag=!nnhealth_init] run gamerule showDeathMessages true
-tag @a[x=0,tag=!nnhealth_init] add nnhealth_init
-function nnhealth:tick
-
-#hotfix for players with 0 max health
-scoreboard players add @a[x=0] nnhealth_max 0
-tag @a[x=0,tag=nnhealth_init,scores={nnhealth_max=0}] remove nnhealth_init
 
 #Handling portals/roof with utilities
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:cancel_utility

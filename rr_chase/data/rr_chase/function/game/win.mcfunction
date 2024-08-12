@@ -20,7 +20,7 @@ execute as @a[x=0,team=Blue] run effect clear @s slowness
 execute as @a[x=0,team=Blue] run effect clear @s levitation
 execute as @a[x=0,team=Blue] run effect clear @s wither
 execute as @a[x=0,team=Blue] run effect clear @s blindness
-execute as @a[x=0,team=Blue] run effect give @s regeneration 1 100 true
+execute as @a[x=0,team=Blue] run effect give @s instant_health 1 100 true
 execute as @a[x=0,team=Blue] at @s run stopsound @s
 execute as @a[x=0,team=Blue,tag=Winner] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
 execute as @a[x=0,team=Blue,tag=Loser] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2

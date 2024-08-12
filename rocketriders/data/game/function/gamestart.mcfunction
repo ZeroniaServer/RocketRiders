@@ -169,3 +169,7 @@ execute if entity @s[tag=Countdown] run function game:countdown
 scoreboard players add $barriers CmdData 1
 execute if score $barriers CmdData matches 81 run scoreboard players set $barriers CmdData 0
 execute if score $barriers CmdData matches 1 as @e[x=0,type=marker,tag=CancelJoin] at @s run particle minecraft:block_marker{block_state:"minecraft:barrier"} ~ ~1 ~ 0 0 0 0 1 force @a[x=0,tag=!hideParticles,team=Lobby,predicate=!custom:belowroof]
+
+##Disable crafting slots
+execute if entity @s[tag=!GameStarted] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run function game:disablecraftingslots
+execute as @a[team=!Yellow,team=!Blue] run function game:disablecraftingslots

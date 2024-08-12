@@ -2,7 +2,7 @@
 execute if entity @s[tag=!SMActive] run function rr_chase:game/leavemidgame
 
 #destroy crafting slots
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if items entity @s player.crafting.* * at @s run function game:destroycraftingslots
+execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] if items entity @s player.crafting.* * at @s run function game:destroycraftingslots
 
 #Item RNG (exception for arrows)
 tag @s add givenArrows

@@ -1,2 +1,2 @@
 scoreboard players set $lockmodroom CmdData 0
-tellraw @a [{"text":"Modification Room unlocked.","color":"green"}]
+tellraw @a[x=0] [{"text":"Modification Room unlocked.","color":"green"}]

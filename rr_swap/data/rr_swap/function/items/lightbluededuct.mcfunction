@@ -13,7 +13,7 @@ execute if items entity @s contents turtle_spawn_egg if entity @a[x=0,team=Blue,
 execute if items entity @s contents magma_cube_spawn_egg if entity @a[x=0,team=Blue,predicate=custom:matches_uuid] run function items:deduct
 execute if items entity @s contents drowned_spawn_egg if entity @a[x=0,team=Blue,predicate=custom:matches_uuid] run function items:deduct
 execute if items entity @s contents vex_spawn_egg if entity @a[x=0,team=Blue,predicate=custom:matches_uuid] run function items:deduct
-execute if items entity @s contents blaze_spawn_egg if entity @a[x=0,team=Blue,predicate=custom:matches_uuid] run function items:deduct
+execute if items entity @s contents blaze_spawn_egg[custom_data~{cluster:1b}] if entity @a[x=0,team=Blue,predicate=custom:matches_uuid] run function items:deduct
 execute if items entity @s contents enderman_spawn_egg if entity @a[x=0,team=Blue,predicate=custom:matches_uuid] run function items:deduct
 
 scoreboard players reset $tempuuid playerUUID

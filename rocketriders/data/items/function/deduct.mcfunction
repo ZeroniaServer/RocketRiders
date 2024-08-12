@@ -17,7 +17,7 @@ execute if items entity @s contents cod_spawn_egg on origin run scoreboard playe
 
 #Actually reducing count
 execute if score $itemcount CmdData matches 1.. unless items entity @s contents arrow unless items entity @s contents ender_pearl unless items entity @s contents cod_spawn_egg unless items entity @s contents squid_spawn_egg run scoreboard players remove $itemcount CmdData 1
-execute store result entity @s Item.count byte 1 run scoreboard players get $itemcount CmdData
+item modify entity @s contents {function:"minecraft:set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$itemcount"},score:"CmdData"},add:false}
 execute on origin run tag @s add itemDeducted
 execute on origin run tag @s[tag=fullHotbar] add wasFullHotbar
 execute if score $itemcount CmdData matches ..0 run kill

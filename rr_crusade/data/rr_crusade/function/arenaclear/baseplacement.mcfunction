@@ -193,7 +193,8 @@ execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace e
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with minecraft:leather_leggings[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=MageStand] run item replace entity @s weapon.mainhand with blaze_rod
+execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s weapon.mainhand with blaze_rod
+execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s weapon.mainhand with breeze_rod
 
 #> Kit stand light blocks
 fill 15 64 -64 13 67 -62 light[level=0] replace air

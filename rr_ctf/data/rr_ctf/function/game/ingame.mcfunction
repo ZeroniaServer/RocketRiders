@@ -1,6 +1,9 @@
 #leave midgame
 execute if entity @s[tag=!SMActive] run function rr_ctf:game/leavemidgame
 
+#destroy crafting slots
+execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] if items entity @s player.crafting.* * at @s run function rr_ctf:game/destroycraftingslots
+
 #Item RNG
 tag @s add givenCanopy
 scoreboard players add @s RandomItem 1

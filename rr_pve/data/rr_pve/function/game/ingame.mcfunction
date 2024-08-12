@@ -2,7 +2,7 @@
 function game:leavemidgame
 
 #destroy crafting slots
-execute as @a unless entity @s[team=!Blue,team=!Yellow] if items entity @s player.crafting.* * at @s run function game:destroycraftingslots
+execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] if items entity @s player.crafting.* * at @s run function game:destroycraftingslots
 
 #general
 function rr_pve:items/spawnitems

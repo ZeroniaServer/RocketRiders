@@ -7,6 +7,7 @@ item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with l
 scoreboard objectives add toggleParticles trigger
 scoreboard objectives add toggleTips trigger
 scoreboard objectives add toggleParkourTips trigger
+scoreboard objectives add dropBRod minecraft.dropped:minecraft.breeze_rod
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
 

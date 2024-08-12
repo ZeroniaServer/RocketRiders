@@ -43,5 +43,5 @@ execute if score @s nomicon matches 42 run function rr_sandbox:items/givesaber
 execute if score @s nomicon matches 43 run function rr_sandbox:items/givepickaxe
 execute if score @s nomicon matches 44 run function rr_sandbox:items/giveknightsword
 execute if score @s nomicon matches 45 run function rr_sandbox:items/giveknightshield
-execute if score @s nomicon matches 46 run function rr_sandbox:items/givefirewand
+execute if score @s nomicon matches 46 run function rr_sandbox:items/givespellwand
 scoreboard players set @s nomicon 0

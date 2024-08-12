@@ -9,5 +9,5 @@ tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Item Sta
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Kits:","color":"aqua"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Archers get a Shooting Saber and lightning missiles"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Knights get a Knight Sword/Shield and heavy missiles"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Mages get a Fire Wand and normal missiles"}]
+tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Mages get a Spell Wand and normal missiles"}]
 tellraw @s [""]

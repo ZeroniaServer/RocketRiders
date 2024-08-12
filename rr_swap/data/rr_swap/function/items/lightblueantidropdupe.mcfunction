@@ -9,7 +9,7 @@ execute if entity @s[tag=rngHyper] as @e[x=0,type=item] if items entity @s conte
 execute if entity @s[tag=rngBroad] as @e[x=0,type=item] if items entity @s contents magma_cube_spawn_egg run function rr_swap:items/lightbluededuct
 execute if entity @s[tag=rngHur] as @e[x=0,type=item] if items entity @s contents drowned_spawn_egg run function rr_swap:items/lightbluededuct
 execute if entity @s[tag=rngThun] as @e[x=0,type=item] if items entity @s contents vex_spawn_egg run function rr_swap:items/lightbluededuct
-execute if entity @s[tag=rngFireball] as @e[x=0,type=item] if items entity @s contents blaze_spawn_egg run function rr_swap:items/lightbluededuct
+execute if entity @s[tag=rngFireball] as @e[x=0,type=item] if items entity @s contents blaze_spawn_egg[custom_data~{cluster:1b}] run function rr_swap:items/lightbluededuct
 execute if entity @s[tag=rngObshield] as @e[x=0,type=item] if items entity @s contents enderman_spawn_egg run function rr_swap:items/lightbluededuct
 execute if entity @s[tag=rngArrows] as @e[x=0,type=item] if items entity @s contents arrow run function items:deduct
 function items:full_hotbar

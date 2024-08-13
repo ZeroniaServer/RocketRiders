@@ -50,6 +50,10 @@ tag @a[x=0,scores={LeaveGame=1..}] remove beenOnYellow
 tag @a[x=0,scores={LeaveGame=1..}] remove beenOnBlue
 tag @a[x=0,scores={LeaveGame=1..}] remove beenOnBoth
 
+#Infinity fix
+tag @a[x=0,tag=Infinity,scores={LeaveGame=1..}] remove Infinity
+scoreboard players reset @a[x=0,scores={infinity=1..,LeaveGame=1..}] infinity
+
 #Voting message if in voting phase
 execute if entity @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[x=0,scores={LeaveGame=1..}] run function servermode:notifyvote
 #Notify game (if already selected)

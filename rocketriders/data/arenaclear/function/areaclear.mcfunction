@@ -89,5 +89,5 @@ schedule function game:uncancelpads_indimension 2t append
 ##Add flag that game just cleared (briefly locks joinpads)
 tag @s add JustCleared
 
-##Stop all sounds
-#execute as @a[x=0] run function everytick:stopsounds
+##Reset tips for next gamemode
+function game:tipreset

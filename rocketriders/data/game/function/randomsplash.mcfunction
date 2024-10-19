@@ -4,7 +4,7 @@ title @a[x=0] title ["",{"text":"Game Started!","color":"aqua"}]
 execute if score $skipsplashes CmdData matches 1 run return fail
 
 #If you want to add more splashes just increase this number.
-execute store result score $startsplash CmdData run random value 0..218
+execute store result score $startsplash CmdData run random value 0..219
 
 #Add splashes here (just copy paste the line and change the score)
 execute if score $startsplash CmdData matches 0..1 run title @a[x=0] subtitle ["",{"text":"GL HF!","color":"green"}]
@@ -225,3 +225,4 @@ execute if score $startsplash CmdData matches 215 run title @a[x=0] subtitle [""
 execute if score $startsplash CmdData matches 216 run title @a[x=0] subtitle ["",{"text":"Need to drop blocks? Use glazed_terracotta!","color":"green"}]
 execute if score $startsplash CmdData matches 217 run title @a[x=0] subtitle ["",{"text":"You are the Murderer- wait wrong game...","color":"green"}]
 execute if score $startsplash CmdData matches 218 run title @a[x=0] subtitle ["",{"text":"Now in ","color":"green"},{"text":"c","color":"red"},{"text":"o","color":"gold"},{"text":"l","color":"dark_green"},{"text":"o","color":"blue"},{"text":"r","color":"dark_purple"},{"text":"!","color":"light_purple"}]
+execute if score $startsplash CmdData matches 219 run title @a[x=0] subtitle ["",{"text":"Still relevant.","color":"green"}]

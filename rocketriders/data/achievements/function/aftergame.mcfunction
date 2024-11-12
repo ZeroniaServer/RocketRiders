@@ -1,3 +1,6 @@
+scoreboard players add @a[x=0,tag=Winner] wins 1
+scoreboard players add @a[x=0,tag=Loser] losses 1
+
 ##Any achievements to be given by the official end of the game.
 ##The execution of this function may be delayed for the Tie/Sudden Death window.
 #| || || |_

@@ -15,6 +15,9 @@ item replace entity @a[x=0,team=Blue,tag=Loser,scores={HasFlag=0}] armor.head wi
 #I Am Speed achievement for Winner
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run advancement grant @a[x=0,team=Blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 
+scoreboard players add @a[x=0,team=Blue,tag=Winner,limit=1] wins 1
+scoreboard players add @a[x=0,team=Blue,tag=Loser] losses 1
+
 ##Effects
 execute as @a[x=0,team=Blue] run effect clear @s slowness
 execute as @a[x=0,team=Blue] run effect clear @s levitation

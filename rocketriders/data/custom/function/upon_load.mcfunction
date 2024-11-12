@@ -239,4 +239,6 @@ scoreboard objectives add jumping minecraft.custom:minecraft.jump
 scoreboard objectives add movement dummy
 scoreboard objectives add impulse_cooldown dummy
 scoreboard objectives add leavecheck dummy
+scoreboard objectives add wins dummy
+scoreboard objectives add losses dummy
 scoreboard players add $curr leavecheck 0

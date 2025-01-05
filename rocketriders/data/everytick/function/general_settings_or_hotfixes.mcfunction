@@ -127,10 +127,6 @@ kill @e[x=0,type=area_effect_cloud,nbt={Particle:{type:"minecraft:dragon_breath"
 #Fill portals before game starts
 execute if entity @s[tag=!noPortal,tag=!GameStarted,tag=!GameEnd,tag=EditedSettings] run function arenaclear:placeportals
 
-#Keep flowerpots
-execute positioned -36 212 18 unless block ~ ~ ~ potted_blue_orchid run setblock ~ ~ ~ potted_blue_orchid
-execute positioned -37 212 138 unless block ~ ~ ~ potted_dandelion run setblock ~ ~ ~ potted_dandelion
-
 #Decoy Vortex (Lobby)
 execute if score $dust CmdData matches 1 as @e[x=0,type=marker,tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if score $dust CmdData matches 1 as @e[x=0,type=marker,tag=VortexDummy] at @s run particle minecraft:dust{color:[0,0,1],scale:1} ~ ~ ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

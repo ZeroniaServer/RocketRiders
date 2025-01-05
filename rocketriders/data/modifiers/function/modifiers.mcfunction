@@ -4,8 +4,8 @@
 ####################################
 
 ##Instamine
-execute if entity @s[tag=Instamine] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run attribute @s minecraft:player.block_break_speed modifier add rocketriders:instamine 10000000000000000000000000000000000000 add_multiplied_base
-execute if entity @s[tag=Instamine] as @a[x=0,team=!Yellow,team=!Blue] run attribute @s minecraft:player.block_break_speed modifier remove rocketriders:instamine
+execute if entity @s[tag=Instamine] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run attribute @s minecraft:block_break_speed modifier add rocketriders:instamine 10000000000000000000000000000000000000 add_multiplied_base
+execute if entity @s[tag=Instamine] as @a[x=0,team=!Yellow,team=!Blue] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 
 ##Explosive
 execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=tnt,nbt={fuse:2s}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"],Invulnerable:1b}
@@ -41,9 +41,9 @@ execute as @a[x=0,tag=crosser] run function game:void
 tag @a[x=0] remove crosser
 
 ##Spam Click
-execute if entity @s[tag=SpamClick] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.attack_speed base set 1000
-execute if entity @s[tag=SpamClick] as @a[x=0,team=Lobby] run attribute @s minecraft:generic.attack_speed base set 4
-execute if entity @s[tag=!SpamClick] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:generic.attack_speed base set 4
+execute if entity @s[tag=SpamClick] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:attack_speed base set 1000
+execute if entity @s[tag=SpamClick] as @a[x=0,team=Lobby] run attribute @s minecraft:attack_speed base set 4
+execute if entity @s[tag=!SpamClick] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run attribute @s minecraft:attack_speed base set 4
 
 ##Ninja Jump
 execute if entity @s[tag=NinjaJump] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s speed infinite 2 true

@@ -14,7 +14,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": 2,
+                "minecraft:custom_model_data": {
+                  "floats": [2]
+                },
                 "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Catapult\",\"color\":\"gold\",\"bold\":true}]",
                 "minecraft:lore": [
@@ -59,7 +61,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": 1,
+                "minecraft:custom_model_data": {
+                  "floats": [1]
+                },
                 "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Catapult\",\"color\":\"blue\",\"bold\":true}]",
                 "minecraft:lore": [

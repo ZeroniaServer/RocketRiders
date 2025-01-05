@@ -17,7 +17,9 @@
                 {
                   "function": "minecraft:set_components",
                   "components": {
-                    "minecraft:custom_model_data": 5,
+                    "minecraft:custom_model_data": {
+                      "floats": [5]
+                    },
                     "minecraft:custom_data": "{Missile:1b}",
                     "minecraft:enchantment_glint_override": true,
                     "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]",
@@ -56,7 +58,9 @@
                 {
                   "function": "minecraft:set_components",
                   "components": {
-                    "minecraft:custom_model_data": 5,
+                    "minecraft:custom_model_data": {
+                      "floats": [5]
+                    },
                     "minecraft:custom_data": "{Missile:1b}",
                     "minecraft:enchantment_glint_override": true,
                     "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]",

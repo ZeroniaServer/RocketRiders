@@ -155,17 +155,17 @@ execute as @a[x=0,team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=
 #Return to last checkpoint (includes 1 second cooldown)
 scoreboard players add @a[x=0,team=Lobby,tag=inParkour] chkpntCooldown 0
 execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run clear @s compass
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run item replace entity @s hotbar.3 with compass[custom_name='[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false}]',food={nutrition:0,saturation:0,eat_seconds:2147483647,can_always_eat:true}] 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run item replace entity @s hotbar.3 with compass[custom_name='[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false}]',consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
 scoreboard players add @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=1..19}] chkpntCooldown 1
 scoreboard players set @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
 #Quit to start
 execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run clear @s clock
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name='[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false}]',food={nutrition:0,saturation:0,eat_seconds:2147483647,can_always_eat:true}] 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name='[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false}]',consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
 
 #Quit parkour
 execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run clear @s barrier
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run item replace entity @s hotbar.8 with barrier[custom_name='[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false}]',food={nutrition:0,saturation:0,eat_seconds:2147483647,can_always_eat:true}] 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run item replace entity @s hotbar.8 with barrier[custom_name='[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false}]',consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
 
 #Clear offhand (necessary for inventory controls)
 item replace entity @a[x=0,team=Lobby] weapon.offhand with air

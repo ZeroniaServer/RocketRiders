@@ -4,7 +4,7 @@ execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run kill @e[x=0,type=a
 execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run particle explosion ~ ~ ~ 0.2 0.2 0.2 0.1 4 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run playsound block.glass.break master @a[x=0] ~ ~ ~ 1 0
 execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run playsound minecraft:entity.shulker_bullet.hurt master @a[x=0] ~ ~ ~ 1 0.8
-execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run playsound minecraft:entity.generic.explode master @a[x=0] ~ ~ ~ 1 1.3
+execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run playsound minecraft:entity.explode master @a[x=0] ~ ~ ~ 1 1.3
 execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run tag @e[type=armor_stand,tag=ChaseCrystal,distance=..2,limit=1,sort=nearest] add KillCrystal
 kill @e[x=0,type=end_crystal,tag=KillCrystal]
 kill @e[x=0,type=armor_stand,tag=KillCrystal]

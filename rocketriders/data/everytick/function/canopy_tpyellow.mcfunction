@@ -31,11 +31,11 @@ execute if entity @s[scores={PlatTime=1}] run scoreboard players set @p[team=Yel
 #(thanks to Red_Bones for the teleport command format!)
 execute at @s[scores={PlatTime=1..40}] as @p[team=Yellow,tag=currentTP,tag=canopyTP] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
 execute if entity @s[scores={PlatTime=1}] run effect give @p[team=Yellow,tag=currentTP,tag=canopyTP] slow_falling 2 100 true
-execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Yellow,tag=currentTP,tag=canopyTP] generic.jump_strength base set 0
-execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Yellow,tag=currentTP,tag=canopyTP] generic.movement_speed base set 0
+execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Yellow,tag=currentTP,tag=canopyTP] jump_strength base set 0
+execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Yellow,tag=currentTP,tag=canopyTP] movement_speed base set 0
 
-execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Yellow,tag=currentTP,tag=canopyTP] generic.jump_strength base set 0.42
-execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Yellow,tag=currentTP,tag=canopyTP] generic.movement_speed base set 0.1
+execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Yellow,tag=currentTP,tag=canopyTP] jump_strength base set 0.42
+execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Yellow,tag=currentTP,tag=canopyTP] movement_speed base set 0.1
 
 #Remove canopy TP tag if teleportation period ends
 execute if entity @s[scores={PlatTime=41..}] run tag @p[team=Yellow,tag=currentTP,tag=canopyTP] remove canopyTP
@@ -44,9 +44,9 @@ execute if entity @s[scores={PlatTime=41..}] run tag @p[team=Yellow,tag=currentT
 execute if entity @s[tag=killCanopy] run tag @p[team=Yellow,tag=currentTP,tag=canopyTP] remove canopyTP
 
 #Remove effects if player loses canopy TP tag
-attribute @p[tag=currentTP,tag=!canopyTP] generic.fall_damage_multiplier base set 1
-attribute @p[tag=currentTP,tag=!canopyTP] generic.movement_speed base set 0.1
-attribute @p[tag=currentTP,tag=!canopyTP] generic.jump_strength base set 0.42
+attribute @p[tag=currentTP,tag=!canopyTP] fall_damage_multiplier base set 1
+attribute @p[tag=currentTP,tag=!canopyTP] movement_speed base set 0.1
+attribute @p[tag=currentTP,tag=!canopyTP] jump_strength base set 0.42
 effect clear @p[tag=currentTP,tag=!canopyTP] slow_falling
 tag @p[tag=currentTP,tag=!canopyTP] remove threwCanopy
 

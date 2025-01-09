@@ -8,10 +8,7 @@ execute if entity @s[tag=Instamine] as @a[x=0] unless entity @s[team=!Yellow,tea
 execute if entity @s[tag=Instamine] as @a[x=0,team=!Yellow,team=!Blue] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 
 ##Explosive
-execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=tnt,nbt={fuse:2s}] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"],Invulnerable:1b}
-execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=tnt,nbt={fuse:2s},tag=UtilKilled] at @s run data modify entity @e[type=creeper,tag=ExplosiveTNT,limit=1,sort=nearest,distance=..1] CustomName set from entity @s CustomName
-
-execute if entity @s[tag=Explosive,tag=!ClutterCollector] run kill @e[x=0,type=tnt,nbt={fuse:2s}]
+execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=tnt] run data merge entity @s {explosion_power:5}
 execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
 
 ##Sonar
@@ -54,15 +51,13 @@ execute if entity @s[tag=Hardcore] as @a[x=0] unless entity @s[team=!Blue,team=!
 execute if entity @s[tag=!Hardcore] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] if entity @s[tag=hardcore] run function modifiers:hardcorereset
 
 #Clutter Collector
-execute if entity @s[tag=ClutterCollector,tag=Explosive,tag=!Hardcore] as @e[type=tnt,nbt={fuse:2s},z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"],Invulnerable:1b}
-execute if entity @s[tag=ClutterCollector,tag=Explosive,tag=!Hardcore] as @e[type=tnt,nbt={fuse:2s}] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"],Invulnerable:1b}
-execute if entity @s[tag=ClutterCollector,tag=!Explosive,tag=!Hardcore] as @e[type=tnt,nbt={fuse:2s},z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"],Invulnerable:1b}
-execute if entity @s[tag=ClutterCollector,tag=Explosive,tag=Hardcore] as @e[type=tnt,nbt={fuse:2s},z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"],Invulnerable:1b}
-execute if entity @s[tag=ClutterCollector,tag=Explosive,tag=Hardcore] as @e[type=tnt,nbt={fuse:2s}] unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"],Invulnerable:1b}
-execute if entity @s[tag=ClutterCollector,tag=!Explosive,tag=Hardcore] as @e[type=tnt,nbt={fuse:2s},z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:'{"text":"TNT"}',ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Tags:["ExplosiveTNT"],Invulnerable:1b}
-execute if entity @s[tag=ClutterCollector] as @e[x=0,type=tnt,nbt={fuse:2s},tag=UtilKilled] at @s run data modify entity @e[type=creeper,tag=ExplosiveTNT,limit=1,sort=nearest,distance=..1] CustomName set from entity @s CustomName
-execute if entity @s[tag=ClutterCollector,tag=Explosive] run kill @e[x=0,type=tnt,nbt={fuse:2s}]
-execute if entity @s[tag=ClutterCollector,tag=!Explosive,tag=!Hardcore] run kill @e[type=tnt,nbt={fuse:2s},z=-50,dz=100,x=-160,dx=320,y=-20,dy=200]
-execute if entity @s[tag=ClutterCollector,tag=!Explosive,tag=Hardcore] run kill @e[type=tnt,nbt={fuse:2s},z=-61,dz=122,x=-160,dx=320,y=-20,dy=200]
+execute if entity @s[tag=ClutterCollector,tag=!Hardcore] as @e[type=tnt,z=-50,dz=100,x=-160,dx=320,y=-20,dy=200,tag=!nosplode] run function modifiers:explosionpower/0
+execute if entity @s[tag=ClutterCollector,tag=Explosive,tag=!Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run function modifiers:explosionpower/5
+execute if entity @s[tag=ClutterCollector,tag=!Explosive,tag=!Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run function modifiers:explosionpower/4
+
+execute if entity @s[tag=ClutterCollector,tag=Hardcore] as @e[type=tnt,z=-62,dz=124,x=-160,dx=320,y=-20,dy=200,tag=!nosplode] run function modifiers:explosionpower/0
+execute if entity @s[tag=ClutterCollector,tag=Explosive,tag=Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run function modifiers:explosionpower/5
+execute if entity @s[tag=ClutterCollector,tag=!Explosive,tag=Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run function modifiers:explosionpower/4
+
 execute if entity @s[tag=ClutterCollector,tag=!Explosive] as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-1}
 execute if entity @s[tag=ClutterCollector,tag=Explosive] as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-3}

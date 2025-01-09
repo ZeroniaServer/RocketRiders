@@ -1,6 +1,9 @@
 #leave midgame
 execute if entity @s[tag=!SMActive] run function rr_ctf:game/leavemidgame
 
+##Player void
+execute as @a[x=0] unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if predicate rr_ctf:in_void unless entity @s[scores={ThrowPlat=1..}] run function game:void
+
 #destroy crafting slots
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] if items entity @s player.crafting.* * at @s run function rr_ctf:game/destroycraftingslots
 

@@ -19,6 +19,7 @@ tag @s add customPrevention
 tag @s add customObsidian
 tag @s add noSabers
 tag @s add respawnFlag
+tag @s add customVoid
 
 #disable arrows and enable canopies/fireballs
 tag @s[tag=rngArrows] add arrowsWasOn

@@ -29,5 +29,6 @@ tag @s remove canopyStack
 tag @s remove respawnFlag
 tag @s remove customPrevention
 tag @s remove customObsidian
+tag @s remove customVoid
 tag @s remove noSabers
 tag @s add switchGamemodes

@@ -1,5 +1,5 @@
 #death message
-tellraw @a[x=0] ["",{"selector":"@s"},{"text":" died"}]
+execute unless score $nodeathmessages CmdData matches 1 run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" died"}]
 
 tag @s remove BotRider
 

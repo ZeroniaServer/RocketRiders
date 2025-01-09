@@ -1,6 +1,6 @@
 ##Commands run for players who try to breach through to the lobby
-execute if entity @s[team=Blue,nbt={SpawnX:12,SpawnY:64,SpawnZ:-66}] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to breach the Lobby"}]
-execute if entity @s[team=Yellow,nbt={SpawnX:12,SpawnY:64,SpawnZ:66}] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to breach the Lobby"}]
+execute unless score $nodeathmessages CmdData matches 1 if entity @s[team=Blue,nbt={SpawnX:12,SpawnY:64,SpawnZ:-66}] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to breach the lobby"}]
+execute unless score $nodeathmessages CmdData matches 1 if entity @s[team=Yellow,nbt={SpawnX:12,SpawnY:64,SpawnZ:66}] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to breach the lobby"}]
 execute if entity @s[team=Blue,nbt={SpawnX:12,SpawnY:64,SpawnZ:-66}] run effect give @s poison 4 100 true
 execute if entity @s[team=Yellow,nbt={SpawnX:12,SpawnY:64,SpawnZ:66}] run effect give @s poison 4 100 true
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawns] run tp @s[team=Blue] 12 64 -66 0 0

@@ -109,6 +109,10 @@ execute if score $BlueShield crusadehp matches 1.. if score $CBA crusadehp match
 execute if score $BlueShield crusadehp matches 1.. if score $CBB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueB] run function rr_crusade:game/restorecbb
 execute if score $YellowShield crusadehp matches 1.. if score $CYA crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowA] run function rr_crusade:game/restorecya
 execute if score $YellowShield crusadehp matches 1.. if score $CYB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowB] run function rr_crusade:game/restorecyb
+execute if score $CBAcd crusadehp matches 1.. run scoreboard players remove $CBAcd crusadehp 1
+execute if score $CBBcd crusadehp matches 1.. run scoreboard players remove $CBBcd crusadehp 1
+execute if score $CYAcd crusadehp matches 1.. run scoreboard players remove $CYAcd crusadehp 1
+execute if score $CYBcd crusadehp matches 1.. run scoreboard players remove $CYBcd crusadehp 1
 
 #> Win condition
 execute if score $BlueShield crusadehp matches -1000..0 unless block 4 45 -67 nether_portal if score $YellowShield crusadehp matches -1000..0 unless block 4 45 67 nether_portal run function game:winbothcheck

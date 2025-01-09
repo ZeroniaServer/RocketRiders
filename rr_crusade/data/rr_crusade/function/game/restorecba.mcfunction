@@ -1,5 +1,6 @@
-scoreboard players remove $CBA crusadehp 5
-scoreboard players remove $BlueShield crusadehp 5
+execute unless score $CBAcd crusadehp matches 1.. run scoreboard players remove $CBA crusadehp 5
+execute unless score $CBAcd crusadehp matches 1.. run scoreboard players remove $BlueShield crusadehp 5
+execute unless score $CBAcd crusadehp matches 1.. run scoreboard players set $CBAcd crusadehp 20
 execute unless score $CBA crusadehp matches 1.. run tellraw @a[x=0,team=Yellow] ["\n",{"text":"✔ ","color":"green"},{"text":"Blue Crystal ","color":"blue"},{"text":"A","bold":true,"color":"dark_aqua"},{"text":" has been destroyed!","color":"blue"}]
 execute unless score $CBA crusadehp matches 1.. run tellraw @a[x=0,team=Blue] ["\n",{"text":"⚠ ","color":"red"},{"text":"Blue Crystal ","color":"blue"},{"text":"A","bold":true,"color":"dark_aqua"},{"text":" has been destroyed!","color":"blue"}]
 execute unless score $CBA crusadehp matches 1.. run tellraw @a[x=0,team=!Yellow,team=!Blue] ["\n",{"text":"Blue Crystal ","color":"blue"},{"text":"A","bold":true,"color":"dark_aqua"},{"text":" has been destroyed!","color":"blue"}]

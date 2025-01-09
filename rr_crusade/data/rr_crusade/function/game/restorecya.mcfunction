@@ -1,5 +1,6 @@
-scoreboard players remove $CYA crusadehp 5
-scoreboard players remove $YellowShield crusadehp 5
+execute unless score $CYAcd crusadehp matches 1.. run scoreboard players remove $CYA crusadehp 5
+execute unless score $CYAcd crusadehp matches 1.. run scoreboard players remove $YellowShield crusadehp 5
+execute unless score $CYAcd crusadehp matches 1.. run scoreboard players set $CYAcd crusadehp 20
 execute unless score $CYA crusadehp matches 1.. run tellraw @a[x=0,team=Blue] ["\n",{"text":"✔ ","color":"green"},{"text":"Yellow Crystal ","color":"gold"},{"text":"A","bold":true,"color":"yellow"},{"text":" has been destroyed!","color":"gold"}]
 execute unless score $CYA crusadehp matches 1.. run tellraw @a[x=0,team=Yellow] ["\n",{"text":"⚠ ","color":"red"},{"text":"Yellow Crystal ","color":"gold"},{"text":"A","bold":true,"color":"yellow"},{"text":" has been destroyed!","color":"gold"}]
 execute unless score $CYA crusadehp matches 1.. run tellraw @a[x=0,team=!Yellow,team=!Blue] ["\n",{"text":"Yellow Crystal ","color":"gold"},{"text":"A","bold":true,"color":"yellow"},{"text":" has been destroyed!","color":"gold"}]

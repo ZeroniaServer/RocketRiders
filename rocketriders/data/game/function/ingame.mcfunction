@@ -23,7 +23,7 @@ scoreboard players add @a[x=0,team=Blue] kills 0
 execute as @a[x=0,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow] unless entity @s[team=!Yellow,team=!Blue] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
 ##Player void
-execute as @a[x=0] unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if entity @s[y=-2000,dy=1980] unless entity @s[scores={ThrowPlat=1..}] run function game:void
+execute as @a[x=0] unless entity @s[team=!Yellow,team=!Blue,team=!Spectator] at @s if predicate {condition:"location_check",predicate:{position:{y:{max:-20}}}} unless entity @s[scores={ThrowPlat=1..}] run function game:void
 effect give @s[scores={voidNoFallCount=0}] slow_falling 1 1 true
 scoreboard players add @s[scores={voidNoFallCount=0..1}] voidNoFallCount 1
 effect clear @s[scores={voidNoFallCount=2}] slow_falling

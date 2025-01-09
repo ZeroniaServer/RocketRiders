@@ -22,7 +22,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameEnd] run
 tp @s[team=Spectator] 12 100 0.5 90 90
 
 #Handle crossers (Rocket Residers)
-execute if entity @s[tag=crosser] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to leave their base"}]
+execute unless score $nodeathmessages CmdData matches 1 if entity @s[tag=crosser] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to leave their base"}]
 effect give @s[tag=crosser] resistance 1 200 true
 effect give @s[tag=crosser] instant_health 1 200 true
 effect give @s[tag=crosser] fire_resistance 4 200 true

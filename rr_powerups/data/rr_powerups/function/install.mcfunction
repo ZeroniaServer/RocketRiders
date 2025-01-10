@@ -7,7 +7,7 @@ scoreboard objectives add captureBlue dummy
 scoreboard objectives add PowerupCrystal dummy
 scoreboard objectives add PowerupDisplay dummy
 scoreboard objectives add powerupcount dummy
-scoreboard objectives add DrinkHoney minecraft.used:minecraft.honey_bottle
+scoreboard objectives remove DrinkHoney
 scoreboard objectives add HasTrident dummy
 scoreboard objectives add bCapturedTime dummy
 scoreboard objectives add yCapturedTime dummy

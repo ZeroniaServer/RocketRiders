@@ -7,7 +7,7 @@ execute if entity @e[x=0,type=egg,tag=ICBM,tag=teleportPair] run tp @s @e[x=0,ty
 
 #Trigger conditions
 execute unless entity @e[x=0,type=egg,tag=ICBM,tag=teleportPair] run tag @s add ICBMTriggered
-execute if entity @e[x=0,type=egg,tag=ICBM,scores={ICBMtime=30..},tag=teleportPair] run tag @s add ICBMTriggered
+execute if entity @e[x=0,type=egg,tag=ICBM,scores={ICBMtime=20..},tag=teleportPair] run tag @s add ICBMTriggered
 
 #Next two commands disable ICBM near own portals
 execute as @e[x=0,type=egg,tag=BlueICBM,tag=teleportPair] at @s if entity @s[x=-12,y=36,z=-80,dx=48,dy=25,dz=12] run kill @e[x=0,type=marker,tag=ICBMtracker,tag=teleportPair]

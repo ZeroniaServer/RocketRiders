@@ -114,7 +114,7 @@ execute as @a[x=0,tag=CarryFlag,team=Blue,scores={FlagScore=1}] at @s run tellra
 execute as @a[x=0,tag=CarryFlag,team=Yellow,scores={FlagScore=1}] at @s run tellraw @a[x=0,team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" stole a ","color":"aqua"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"aqua"},"\n"]
 execute as @a[x=0,tag=CarryFlag,team=Yellow,scores={FlagScore=1}] at @s run tellraw @a[x=0,team=Yellow] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"gold"},{"text":" stole a ","color":"aqua"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"aqua"},"\n"]
 execute as @a[x=0,tag=CarryFlag,team=Yellow,scores={FlagScore=1}] at @s run tellraw @a[x=0,team=Blue] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"gold"},{"text":" stole your flag!","color":"aqua"},"\n"]
-# effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] glowing infinite 0 true
+effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] glowing infinite 0 true
 effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] resistance infinite 0 true
 effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] strength infinite 0 true
 effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] absorption infinite 0 true

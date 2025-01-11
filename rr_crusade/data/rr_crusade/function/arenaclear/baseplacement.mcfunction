@@ -114,6 +114,8 @@ scoreboard players set $CYA crusadehp 100
 scoreboard players set $CYB crusadehp 100
 scoreboard players set $CYAcd crusadehp 0
 scoreboard players set $CYBcd crusadehp 0
+scoreboard players set $CYAprecd crusadehp 0
+scoreboard players set $CYBprecd crusadehp 0
 execute unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowA] run summon end_crystal -14 49 37 {Tags:["CrusadeEntity","CrusadeYellowA"],beam_target:[I;12,50,52],ShowBottom:0b}
 execute unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowB] run summon end_crystal 38 49 37 {Tags:["CrusadeEntity","CrusadeYellowB"],beam_target:[I;12,50,52],ShowBottom:0b}
 
@@ -122,6 +124,8 @@ scoreboard players set $CBA crusadehp 100
 scoreboard players set $CBB crusadehp 100
 scoreboard players set $CBAcd crusadehp 0
 scoreboard players set $CBBcd crusadehp 0
+scoreboard players set $CBAprecd crusadehp 0
+scoreboard players set $CBBprecd crusadehp 0
 execute unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueA] run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],beam_target:[I;12,50,-52],ShowBottom:0b}
 execute unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueB] run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],beam_target:[I;12,50,-52],ShowBottom:0b}
 

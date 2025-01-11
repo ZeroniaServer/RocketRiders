@@ -1,6 +1,7 @@
+execute if score $CBAcd crusadehp matches 1.. run scoreboard players set $CBAcd crusadehp 60
 execute unless score $CBAcd crusadehp matches 1.. run scoreboard players remove $CBA crusadehp 5
 execute unless score $CBAcd crusadehp matches 1.. run scoreboard players remove $BlueShield crusadehp 5
-execute unless score $CBAcd crusadehp matches 1.. run scoreboard players set $CBAcd crusadehp 20
+execute unless score $CBAcd crusadehp matches 1.. run scoreboard players add $CBAprecd crusadehp 25
 execute unless score $CBA crusadehp matches 1.. run tellraw @a[x=0,team=Yellow] ["\n",{"text":"✔ ","color":"green"},{"text":"Blue Crystal ","color":"blue"},{"text":"A","bold":true,"color":"dark_aqua"},{"text":" has been destroyed!","color":"blue"}]
 execute unless score $CBA crusadehp matches 1.. run tellraw @a[x=0,team=Blue] ["\n",{"text":"⚠ ","color":"red"},{"text":"Blue Crystal ","color":"blue"},{"text":"A","bold":true,"color":"dark_aqua"},{"text":" has been destroyed!","color":"blue"}]
 execute unless score $CBA crusadehp matches 1.. run tellraw @a[x=0,team=!Yellow,team=!Blue] ["\n",{"text":"Blue Crystal ","color":"blue"},{"text":"A","bold":true,"color":"dark_aqua"},{"text":" has been destroyed!","color":"blue"}]
@@ -13,8 +14,10 @@ execute if score $CBA crusadehp matches 1.. unless score $nodeathmessages CmdDat
 execute if score $CBA crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 positioned 38 49 -37 as @e[type=player,team=!Spectator,team=!Developer,team=!Lobby,distance=..5] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" went too close to an End Crystal","color":"white"}]
 execute if score $CBA crusadehp matches 1.. positioned 38 49 -37 run kill @a[team=!Spectator,team=!Developer,team=!Lobby,distance=..5]
 execute if score $CBA crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run gamerule showDeathMessages true
-execute if score $CBA crusadehp matches 1.. run fill 36 47 -35 40 51 -39 minecraft:blue_stained_glass
-execute if score $CBA crusadehp matches 1.. run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],beam_target:[I;12,50,-52],ShowBottom:0b}
+execute if score $CBA crusadehp matches 1.. unless score $CBAcd crusadehp matches 1.. run fill 36 47 -35 40 51 -39 minecraft:blue_stained_glass
+execute if score $CBA crusadehp matches 1.. unless score $CBAcd crusadehp matches 1.. run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],beam_target:[I;12,50,-52],ShowBottom:0b}
+execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 1.. run fill 36 47 -35 40 51 -39 minecraft:tinted_glass
+execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 1.. run summon end_crystal 38 49 -37 {Tags:["CrusadeEntity","CrusadeBlueA"],beam_target:[I;12,50,-52],ShowBottom:0b,Invulnerable:1b}
 execute if score $CBA crusadehp matches 1.. positioned 38 49 -37 run playsound minecraft:block.glass.break master @a[x=0] ~ ~ ~ 1 0.8
 execute if score $CBA crusadehp matches 1.. positioned 38 49 -37 run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 2
 
@@ -30,3 +33,6 @@ execute if score $BlueShield crusadehp matches -1000..0 run fill 3 44 -67 21 44 
 execute if score $BlueShield crusadehp matches -1000..0 run fill 4 45 -67 20 55 -67 nether_portal
 
 execute unless score $CBA crusadehp matches 1.. run tellraw @a[x=0] [""]
+
+execute unless score $CBAcd crusadehp matches 1.. if score $CBAprecd crusadehp matches 100.. run scoreboard players set $CBAcd crusadehp 60
+execute if score $CBAcd crusadehp matches 1.. run scoreboard players set $CBAprecd crusadehp 0

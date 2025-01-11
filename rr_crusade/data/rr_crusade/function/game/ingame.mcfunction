@@ -109,10 +109,37 @@ execute if score $BlueShield crusadehp matches 1.. if score $CBA crusadehp match
 execute if score $BlueShield crusadehp matches 1.. if score $CBB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueB] run function rr_crusade:game/restorecbb
 execute if score $YellowShield crusadehp matches 1.. if score $CYA crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowA] run function rr_crusade:game/restorecya
 execute if score $YellowShield crusadehp matches 1.. if score $CYB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowB] run function rr_crusade:game/restorecyb
-execute if score $CBAcd crusadehp matches 1.. run scoreboard players remove $CBAcd crusadehp 1
-execute if score $CBBcd crusadehp matches 1.. run scoreboard players remove $CBBcd crusadehp 1
-execute if score $CYAcd crusadehp matches 1.. run scoreboard players remove $CYAcd crusadehp 1
-execute if score $CYBcd crusadehp matches 1.. run scoreboard players remove $CYBcd crusadehp 1
+
+#> Cooldown behavior
+# Pre cooldown
+execute if score $CBAprecd crusadehp matches 1.. run scoreboard players remove $CBAprecd crusadehp 1
+execute if score $CBBprecd crusadehp matches 1.. run scoreboard players remove $CBBprecd crusadehp 1
+execute if score $CYAprecd crusadehp matches 1.. run scoreboard players remove $CYAprecd crusadehp 1
+execute if score $CYBprecd crusadehp matches 1.. run scoreboard players remove $CYBprecd crusadehp 1
+
+# Actual cooldown
+execute if score $CBAcd crusadehp matches 0.. run scoreboard players remove $CBAcd crusadehp 1
+execute if score $CBBcd crusadehp matches 0.. run scoreboard players remove $CBBcd crusadehp 1
+execute if score $CYAcd crusadehp matches 0.. run scoreboard players remove $CYAcd crusadehp 1
+execute if score $CYBcd crusadehp matches 0.. run scoreboard players remove $CYBcd crusadehp 1
+
+# Glass during cooldown
+execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 1.. run fill 36 47 -35 40 51 -39 minecraft:tinted_glass
+execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. run fill -16 47 -35 -12 51 -39 minecraft:tinted_glass
+execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 1.. run fill -12 47 35 -16 51 39 minecraft:tinted_glass
+execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:tinted_glass
+
+# Glass after cooldown
+execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 run fill 36 47 -35 40 51 -39 minecraft:blue_stained_glass replace tinted_glass
+execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 run fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass replace tinted_glass
+execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 run fill -12 47 35 -16 51 39 minecraft:yellow_stained_glass replace tinted_glass
+execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 run fill 36 47 35 40 51 39 minecraft:yellow_stained_glass replace tinted_glass
+
+# End crystals after cooldown
+execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueA,limit=1] Invulnerable set value 0b
+execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueB,limit=1] Invulnerable set value 0b
+execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellowA,limit=1] Invulnerable set value 0b
+execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellow,limit=1] Invulnerable set value 0b
 
 #> Win condition
 execute if score $BlueShield crusadehp matches -1000..0 unless block 4 45 -67 nether_portal if score $YellowShield crusadehp matches -1000..0 unless block 4 45 67 nether_portal run function game:winbothcheck

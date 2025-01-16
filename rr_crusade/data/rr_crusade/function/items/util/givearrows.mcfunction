@@ -6,15 +6,23 @@ title @s[scores={HasArrows=4..},tag=!itemDeducted] actionbar {"text":"Arrows alr
 execute if entity @s[scores={HasArrows=4..},tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasArrows=..3},tag=!itemDeducted] actionbar {"text":"Arrows obtained.","color":"aqua"}
 
+#Intelligent stacking if player already has available arrow stack in inventory
+tag @s[tag=!fullOffhand] add notFullOffhand
+execute if items entity @s[tag=!fullOffhand] container.* arrow[count~{max:63}] run tag @s add fullOffhand
+
 #Tries to give enough arrows to refill up to 4
-give @s[scores={HasArrows=0},tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'] 4
-give @s[scores={HasArrows=1},tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'] 3
-give @s[scores={HasArrows=2},tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'] 2
-give @s[scores={HasArrows=3},tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'] 1
+give @s[scores={HasArrows=0},tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 4
+give @s[scores={HasArrows=1},tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 3
+give @s[scores={HasArrows=2},tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 2
+give @s[scores={HasArrows=3},tag=fullOffhand] minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 1
 
 #If possible, places arrows in offhand
-item replace entity @s[scores={HasArrows=0},tag=!fullOffhand] weapon.offhand with minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'] 4
-item replace entity @s[scores={HasArrows=1},tag=!fullOffhand] weapon.offhand with minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'] 3
-item replace entity @s[scores={HasArrows=2},tag=!fullOffhand] weapon.offhand with minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'] 2
-item replace entity @s[scores={HasArrows=3},tag=!fullOffhand] weapon.offhand with minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}'] 1
+item replace entity @s[scores={HasArrows=0},tag=!fullOffhand] weapon.offhand with minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 4
+item replace entity @s[scores={HasArrows=1},tag=!fullOffhand] weapon.offhand with minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 3
+item replace entity @s[scores={HasArrows=2},tag=!fullOffhand] weapon.offhand with minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 2
+item replace entity @s[scores={HasArrows=3},tag=!fullOffhand] weapon.offhand with minecraft:arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 1
 execute if entity @s[scores={HasArrows=..3},tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
+
+#Reset intelligent stacking
+tag @s[tag=notFullOffhand] remove fullOffhand
+tag @s[tag=notFullOffhand] remove notFullOffhand

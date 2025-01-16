@@ -12,6 +12,10 @@ execute if entity @s[scores={HasArrows=4..},tag=!fullHotbar,tag=!Infinity] at @s
 title @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!Infinity] actionbar {"text":"Arrows obtained.","color":"aqua"}
 title @s[scores={HasArrows=0},tag=!fullHotbar,tag=Infinity] actionbar {"text":"Arrow obtained.","color":"aqua"}
 
+#Intelligent stacking if player already has available arrow stack in inventory
+tag @s[tag=!fullOffhand] add notFullOffhand
+execute if items entity @s[tag=!fullOffhand] container.* arrow[count~{max:63}] run tag @s add fullOffhand
+
 #Tries to give enough arrows to refill up to 4
 give @s[scores={HasArrows=0},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 4
 give @s[scores={HasArrows=1},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 3
@@ -27,6 +31,10 @@ item replace entity @s[scores={HasArrows=3},tag=!fullHotbar,tag=!fullOffhand,tag
 item replace entity @s[scores={HasArrows=0},tag=!fullOffhand,tag=Infinity] weapon.offhand with arrow[custom_name='{"text":"Arrow","color":"light_purple","italic":true,"bold":true}',custom_data={Droppable:1b}] 1
 execute if entity @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 execute if entity @s[scores={HasArrows=0},tag=!fullOffhand,tag=Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
+
+#Reset intelligent stacking
+tag @s[tag=notFullOffhand] remove fullOffhand
+tag @s[tag=notFullOffhand] remove notFullOffhand
 
 #Game tracking
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=givenArrows,tag=tetrisTime] add givenArrowsTwice

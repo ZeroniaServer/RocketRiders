@@ -60,8 +60,9 @@ execute if entity @s[tag=GameStarted] run gamemode survival @a[x=0,team=Blue,gam
 execute if entity @s[tag=GameStarted] run effect clear @a[x=0,tag=JoinBlue] resistance
 execute if entity @s[tag=!customSpawns] as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom,tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
+execute if entity @s[scores={servermode=0},tag=!realms,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
+execute if entity @s[scores={servermode=0},tag=!realms,tag=chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
+execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tag @s add achievementInformed
 
 #Imbalanced/full team control
 execute if entity @s[scores={largerTeam=1}] as @e[x=0,type=marker,tag=bluejoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
@@ -103,7 +104,8 @@ execute if entity @s[tag=GameStarted] run gamemode survival @a[x=0,team=Yellow,g
 execute if entity @s[tag=GameStarted] run effect clear @a[x=0,tag=JoinYellow] resistance
 execute if entity @s[tag=!customSpawns] as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[x=0,tag=JoinYellow] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
+execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
+execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tag @s add achievementInformed
 
 #Imbalanced/full team control
 execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]

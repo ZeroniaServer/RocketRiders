@@ -9,6 +9,11 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!doStacking]
 title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Tipped Arrows already obtained.","color":"light_purple"}
 execute if entity @s[scores={HasTippedArrows=4..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasTippedArrows=..3},tag=!fullHotbar] actionbar {"text":"Levitation Arrows obtained.","color":"light_purple"}
+
+#Intelligent stacking if player already has available arrow stack in inventory
+tag @s[tag=!fullOffhand] add notFullOffhand
+execute if items entity @s[tag=!fullOffhand] container.* tipped_arrow[count~{max:63},potion_contents={custom_effects:[{show_icon:1b,duration:100,id:"minecraft:levitation"}]}] run tag @s add fullOffhand
+
 give @s[scores={HasTippedArrows=0},tag=!fullHotbar,tag=fullOffhand] minecraft:tipped_arrow[custom_name='{"text":"Levitation Arrow","color":"dark_purple","italic":true,"bold":true}',potion_contents={custom_effects:[{id:"minecraft:levitation",amplifier:0b,duration:100,show_particles:1b}]},hide_additional_tooltip={},custom_data={Droppable:1b}] 4
 give @s[scores={HasTippedArrows=1},tag=!fullHotbar,tag=fullOffhand] minecraft:tipped_arrow[custom_name='{"text":"Levitation Arrow","color":"dark_purple","italic":true,"bold":true}',potion_contents={custom_effects:[{id:"minecraft:levitation",amplifier:0b,duration:100,show_particles:1b}]},hide_additional_tooltip={},custom_data={Droppable:1b}] 3
 give @s[scores={HasTippedArrows=2},tag=!fullHotbar,tag=fullOffhand] minecraft:tipped_arrow[custom_name='{"text":"Levitation Arrow","color":"dark_purple","italic":true,"bold":true}',potion_contents={custom_effects:[{id:"minecraft:levitation",amplifier:0b,duration:100,show_particles:1b}]},hide_additional_tooltip={},custom_data={Droppable:1b}] 2
@@ -17,5 +22,10 @@ item replace entity @s[scores={HasTippedArrows=0},tag=!fullHotbar,tag=!fullOffha
 item replace entity @s[scores={HasTippedArrows=1},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand with minecraft:tipped_arrow[custom_name='{"text":"Levitation Arrow","color":"dark_purple","italic":true,"bold":true}',potion_contents={custom_effects:[{id:"minecraft:levitation",amplifier:0b,duration:100,show_particles:1b}]},hide_additional_tooltip={},custom_data={Droppable:1b}] 3
 item replace entity @s[scores={HasTippedArrows=2},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand with minecraft:tipped_arrow[custom_name='{"text":"Levitation Arrow","color":"dark_purple","italic":true,"bold":true}',potion_contents={custom_effects:[{id:"minecraft:levitation",amplifier:0b,duration:100,show_particles:1b}]},hide_additional_tooltip={},custom_data={Droppable:1b}] 2
 item replace entity @s[scores={HasTippedArrows=3},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand with minecraft:tipped_arrow[custom_name='{"text":"Levitation Arrow","color":"dark_purple","italic":true,"bold":true}',potion_contents={custom_effects:[{id:"minecraft:levitation",amplifier:0b,duration:100,show_particles:1b}]},hide_additional_tooltip={},custom_data={Droppable:1b}] 1
+
+#Reset intelligent stacking
+tag @s[tag=notFullOffhand] remove fullOffhand
+tag @s[tag=notFullOffhand] remove notFullOffhand
+
 execute if entity @s[scores={HasTippedArrows=..3},tag=!fullHotbar,tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenTipped

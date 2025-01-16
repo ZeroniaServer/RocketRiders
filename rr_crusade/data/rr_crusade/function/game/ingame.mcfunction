@@ -40,6 +40,9 @@ execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,t
 # execute store success score $toggle CmdData if score $toggle CmdData matches 0
 # execute as @e[x=0,type=small_fireball] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
 
+#Archer arrow pickup
+execute as @e[x=0,type=item] if items entity @s contents arrow at @s run function rr_crusade:game/arrow_item
+
 #Give knights new shields when they respawn
 execute as @a[x=0,scores={crusadekit=1,deathCooldown=5}] at @s run clear @s shield
 execute as @a[x=0,team=Blue,scores={crusadekit=1,deathCooldown=5}] if items entity @s weapon.offhand * run give @s minecraft:shield[max_damage=10,custom_name='[{"text":"Knight Shield","italic":false,"bold":true,"color":"blue"}]',lore=['[{"translate":"A not-so-sturdy shield."}]'],base_color="blue",banner_patterns=[{pattern:"flower",color:"light_blue"},{pattern:"border",color:"light_blue"}]]

@@ -27,10 +27,12 @@ execute if entity @s[tag=!CompletedVeteran] if score @s WarSpawned matches 1.. r
 execute if entity @s[tag=!CompletedVeteran] if score @s FireballSpawned matches 1.. run tag @s add FireballSpawned
 execute if entity @s[tag=!CompletedVeteran] if score @s ObshieldSpawned matches 1.. run tag @s add ObshieldSpawned
 execute if entity @s[tag=!CompletedVeteran] if score @s ThrowPlat matches 1.. run tag @s add CanopySpawned
+# i know that these will trigger for stinging shields and lava splashes but i don't rly care
 execute if entity @s[tag=!CompletedVeteran] if score @s ThrowShield matches 1.. run tag @s add ShieldSpawned
 execute if entity @s[tag=!CompletedVeteran] if score @s ThrowSplash matches 1.. run tag @s add SplashSpawned
-execute if entity @s[tag=!CompletedVeteran] if score @s ThrowVortex matches 1.. run tag @s add VortexSpawned
-execute if entity @s[tag=!CompletedVeteran] if score @s NovaShot matches 1.. run tag @s add NovaSpawned
+# these ones happen in the actual functions now
+# execute if entity @s[tag=!CompletedVeteran] if score @s ThrowVortex matches 1.. run tag @s add VortexSpawned
+# execute if entity @s[tag=!CompletedVeteran] if score @s NovaShot matches 1.. run tag @s add NovaSpawned
 execute if entity @s[tag=!CompletedVeteran] if score @s BowShot matches 1.. run tag @s add ArrowSpawned
 
 #Final check

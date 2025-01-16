@@ -5,7 +5,7 @@
       "color": "#00be2f"
     },
     "description": {
-      "text": "Use every missile and utility at least once.",
+      "text": "Use every main missile and utility item at least once. (Includes Special missiles!)",
       "color": "green"
     },
     "icon": {
@@ -17,9 +17,316 @@
     "hidden": false
   },
   "criteria": {
-    "impossible": {
-      "trigger": "minecraft:impossible"
+    "AntsSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"AntsSpawned\"]}"
+        }
+      }
+    },
+    "AuxSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"AuxSpawned\"]}"
+        }
+      }
+    },
+    "BladeSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"BladeSpawned\"]}"
+        }
+      }
+    },
+    "BroadSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"BroadSpawned\"]}"
+        }
+      }
+    },
+    "BulletSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"BulletSpawned\"]}"
+        }
+      }
+    },
+    "CataSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"CataSpawned\"]}"
+        }
+      }
+    },
+    "CitaSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"CitaSpawned\"]}"
+        }
+      }
+    },
+    "DuplexSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"DuplexSpawned\"]}"
+        }
+      }
+    },
+    "GemiSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"GemiSpawned\"]}"
+        }
+      }
+    },
+    "GuardSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"GuardSpawned\"]}"
+        }
+      }
+    },
+    "HurSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"HurSpawned\"]}"
+        }
+      }
+    },
+    "HyperSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"HyperSpawned\"]}"
+        }
+      }
+    },
+    "JugbSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"JugbSpawned\"]}"
+        }
+      }
+    },
+    "LifterSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"LifterSpawned\"]}"
+        }
+      }
+    },
+    "NullSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"NullSpawned\"]}"
+        }
+      }
+    },
+    "RifterSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"RifterSpawned\"]}"
+        }
+      }
+    },
+    "SlashSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"SlashSpawned\"]}"
+        }
+      }
+    },
+    "ThunSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"ThunSpawned\"]}"
+        }
+      }
+    },
+    "TomaSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"TomaSpawned\"]}"
+        }
+      }
+    },
+    "WarSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"WarSpawned\"]}"
+        }
+      }
+    },
+    "FireballSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"FireballSpawned\"]}"
+        }
+      }
+    },
+    "ObshieldSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"ObshieldSpawned\"]}"
+        }
+      }
+    },
+    "CanopySpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"CanopySpawned\"]}"
+        }
+      }
+    },
+    "ShieldSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"ShieldSpawned\"]}"
+        }
+      }
+    },
+    "SplashSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"SplashSpawned\"]}"
+        }
+      }
+    },
+    "VortexSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"VortexSpawned\"]}"
+        }
+      }
+    },
+    "NovaSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"NovaSpawned\"]}"
+        }
+      }
+    },
+    "ArrowSpawned": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"ArrowSpawned\"]}"
+        }
+      }
     }
   },
+  "requirements": [
+    [
+      "AntsSpawned"
+    ],
+    [
+      "AuxSpawned"
+    ],
+    [
+      "BladeSpawned"
+    ],
+    [
+      "BroadSpawned"
+    ],
+    [
+      "BulletSpawned"
+    ],
+    [
+      "CataSpawned"
+    ],
+    [
+      "CitaSpawned"
+    ],
+    [
+      "DuplexSpawned"
+    ],
+    [
+      "GemiSpawned"
+    ],
+    [
+      "GuardSpawned"
+    ],
+    [
+      "HurSpawned"
+    ],
+    [
+      "HyperSpawned"
+    ],
+    [
+      "JugbSpawned"
+    ],
+    [
+      "LifterSpawned"
+    ],
+    [
+      "NullSpawned"
+    ],
+    [
+      "RifterSpawned"
+    ],
+    [
+      "SlashSpawned"
+    ],
+    [
+      "ThunSpawned"
+    ],
+    [
+      "TomaSpawned"
+    ],
+    [
+      "WarSpawned"
+    ],
+    [
+      "FireballSpawned"
+    ],
+    [
+      "ObshieldSpawned"
+    ],
+    [
+      "CanopySpawned"
+    ],
+    [
+      "ShieldSpawned"
+    ],
+    [
+      "SplashSpawned"
+    ],
+    [
+      "VortexSpawned"
+    ],
+    [
+      "NovaSpawned"
+    ],
+    [
+      "ArrowSpawned"
+    ]
+  ],
   "parent": "achievements:rr_challenges/pacifist"
 }

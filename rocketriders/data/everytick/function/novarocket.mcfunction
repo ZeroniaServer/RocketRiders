@@ -17,6 +17,7 @@ execute as @a[x=0,team=Yellow,scores={NovaShot=1..}] at @s run data modify entit
 execute as @a[x=0,team=Yellow,scores={NovaShot=1..}] at @s store result score @e[type=firework_rocket,tag=YellowNova,distance=..5,limit=1] UUIDTracker run scoreboard players get @s UUIDTracker
 execute as @a[x=0,team=Blue,scores={NovaShot=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
 execute as @a[x=0,team=Yellow,scores={NovaShot=1..}] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
+tag @a[x=0,scores={NovaShot=1..}] add NovaSpawned
 scoreboard players reset @a[x=0,scores={NovaShot=1..}] NovaShot
 
 #Identifies players near enemy Nova Rockets

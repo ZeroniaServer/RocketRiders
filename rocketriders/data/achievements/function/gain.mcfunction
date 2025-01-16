@@ -42,7 +42,7 @@ execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0] unless entity
 execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run function achievements:veteran
 execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] at @s run function achievements:useful
 execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run function achievements:moonwalker
-execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run function achievements:sabotage
+execute unless entity @s[scores={servermode=0},tag=!realms] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run scoreboard players set @s minedTNT 0
 
 #Necessary for on base check
 execute if entity @s[tag=!Hardcore] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue,tag=!probablyDied] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue

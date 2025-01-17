@@ -17,9 +17,198 @@
     "hidden": false
   },
   "criteria": {
-    "impossible": {
-      "trigger": "minecraft:impossible"
+    "1": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    "2": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 2
+              }
+            }
+          }
+        ]
+      }
+    },
+    "3": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 3
+              }
+            }
+          }
+        ]
+      }
+    },
+    "4": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 4
+              }
+            }
+          }
+        ]
+      }
+    },
+    "5": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 5
+              }
+            }
+          }
+        ]
+      }
+    },
+    "6": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 6
+              }
+            }
+          }
+        ]
+      }
+    },
+    "7": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 7
+              }
+            }
+          }
+        ]
+      }
+    },
+    "8": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 8
+              }
+            }
+          }
+        ]
+      }
+    },
+    "9": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 9
+              }
+            }
+          }
+        ]
+      }
+    },
+    "10": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "fireballkill": {
+                "min": 10
+              }
+            }
+          }
+        ]
+      }
     }
   },
-  "parent": "achievements:rr_challenges/soul_collector"
+  "requirements": [
+    [
+      "1"
+    ],
+    [
+      "2"
+    ],
+    [
+      "3"
+    ],
+    [
+      "4"
+    ],
+    [
+      "5"
+    ],
+    [
+      "6"
+    ],
+    [
+      "7"
+    ],
+    [
+      "8"
+    ],
+    [
+      "9"
+    ],
+    [
+      "10"
+    ]
+  ],
+  "parent": "achievements:rr_fffmedium/root"
 }

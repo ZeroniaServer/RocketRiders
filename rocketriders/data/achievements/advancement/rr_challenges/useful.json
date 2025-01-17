@@ -23,9 +23,388 @@
     "hidden": false
   },
   "criteria": {
-    "impossible": {
-      "trigger": "minecraft:impossible"
+    "1": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    "2": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 2
+              }
+            }
+          }
+        ]
+      }
+    },
+    "3": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 3
+              }
+            }
+          }
+        ]
+      }
+    },
+    "4": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 4
+              }
+            }
+          }
+        ]
+      }
+    },
+    "5": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 5
+              }
+            }
+          }
+        ]
+      }
+    },
+    "6": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 6
+              }
+            }
+          }
+        ]
+      }
+    },
+    "7": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 7
+              }
+            }
+          }
+        ]
+      }
+    },
+    "8": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 8
+              }
+            }
+          }
+        ]
+      }
+    },
+    "9": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 9
+              }
+            }
+          }
+        ]
+      }
+    },
+    "10": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 10
+              }
+            }
+          }
+        ]
+      }
+    },
+    "11": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 11
+              }
+            }
+          }
+        ]
+      }
+    },
+    "12": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 12
+              }
+            }
+          }
+        ]
+      }
+    },
+    "13": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 13
+              }
+            }
+          }
+        ]
+      }
+    },
+    "14": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 14
+              }
+            }
+          }
+        ]
+      }
+    },
+    "15": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 15
+              }
+            }
+          }
+        ]
+      }
+    },
+    "16": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 16
+              }
+            }
+          }
+        ]
+      }
+    },
+    "17": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 17
+              }
+            }
+          }
+        ]
+      }
+    },
+    "18": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 18
+              }
+            }
+          }
+        ]
+      }
+    },
+    "19": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 19
+              }
+            }
+          }
+        ]
+      }
+    },
+    "20": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "useful": {
+                "min": 20
+              }
+            }
+          }
+        ]
+      }
     }
   },
+  "requirements": [
+    [
+      "1"
+    ],
+    [
+      "2"
+    ],
+    [
+      "3"
+    ],
+    [
+      "4"
+    ],
+    [
+      "5"
+    ],
+    [
+      "6"
+    ],
+    [
+      "7"
+    ],
+    [
+      "8"
+    ],
+    [
+      "9"
+    ],
+    [
+      "10"
+    ],
+    [
+      "11"
+    ],
+    [
+      "12"
+    ],
+    [
+      "13"
+    ],
+    [
+      "14"
+    ],
+    [
+      "15"
+    ],
+    [
+      "16"
+    ],
+    [
+      "17"
+    ],
+    [
+      "18"
+    ],
+    [
+      "19"
+    ],
+    [
+      "20"
+    ]
+  ],
   "parent": "achievements:rr_fffmedium/root"
 }

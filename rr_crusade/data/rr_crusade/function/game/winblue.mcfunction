@@ -1,4 +1,5 @@
 scoreboard players reset @a[x=0,team=Blue] HolyLand
+advancement revoke @a[x=0,team=Blue,tag=!HolyLand] only achievements:rr_challenges/holyland
 scoreboard players add @a[x=0,team=Yellow] HolyLand 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Yellow,scores={HolyLand=5..}] run advancement grant @s only achievements:rr_challenges/holyland
 execute as @a[x=0,team=Yellow,scores={HolyLand=5..}] run scoreboard players reset @s HolyLand

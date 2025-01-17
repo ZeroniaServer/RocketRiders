@@ -17,9 +17,961 @@
     "hidden": false
   },
   "criteria": {
-    "impossible": {
-      "trigger": "minecraft:impossible"
+    "1": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    "2": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 2
+              }
+            }
+          }
+        ]
+      }
+    },
+    "3": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 3
+              }
+            }
+          }
+        ]
+      }
+    },
+    "4": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 4
+              }
+            }
+          }
+        ]
+      }
+    },
+    "5": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 5
+              }
+            }
+          }
+        ]
+      }
+    },
+    "6": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 6
+              }
+            }
+          }
+        ]
+      }
+    },
+    "7": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 7
+              }
+            }
+          }
+        ]
+      }
+    },
+    "8": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 8
+              }
+            }
+          }
+        ]
+      }
+    },
+    "9": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 9
+              }
+            }
+          }
+        ]
+      }
+    },
+    "10": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 10
+              }
+            }
+          }
+        ]
+      }
+    },
+    "11": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 11
+              }
+            }
+          }
+        ]
+      }
+    },
+    "12": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 12
+              }
+            }
+          }
+        ]
+      }
+    },
+    "13": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 13
+              }
+            }
+          }
+        ]
+      }
+    },
+    "14": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 14
+              }
+            }
+          }
+        ]
+      }
+    },
+    "15": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 15
+              }
+            }
+          }
+        ]
+      }
+    },
+    "16": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 16
+              }
+            }
+          }
+        ]
+      }
+    },
+    "17": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 17
+              }
+            }
+          }
+        ]
+      }
+    },
+    "18": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 18
+              }
+            }
+          }
+        ]
+      }
+    },
+    "19": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 19
+              }
+            }
+          }
+        ]
+      }
+    },
+    "20": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 20
+              }
+            }
+          }
+        ]
+      }
+    },
+    "21": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 21
+              }
+            }
+          }
+        ]
+      }
+    },
+    "22": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 22
+              }
+            }
+          }
+        ]
+      }
+    },
+    "23": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 23
+              }
+            }
+          }
+        ]
+      }
+    },
+    "24": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 24
+              }
+            }
+          }
+        ]
+      }
+    },
+    "25": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 25
+              }
+            }
+          }
+        ]
+      }
+    },
+    "26": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 26
+              }
+            }
+          }
+        ]
+      }
+    },
+    "27": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 27
+              }
+            }
+          }
+        ]
+      }
+    },
+    "28": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 28
+              }
+            }
+          }
+        ]
+      }
+    },
+    "29": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 29
+              }
+            }
+          }
+        ]
+      }
+    },
+    "30": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 30
+              }
+            }
+          }
+        ]
+      }
+    },
+    "31": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 31
+              }
+            }
+          }
+        ]
+      }
+    },
+    "32": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 32
+              }
+            }
+          }
+        ]
+      }
+    },
+    "33": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 33
+              }
+            }
+          }
+        ]
+      }
+    },
+    "34": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 34
+              }
+            }
+          }
+        ]
+      }
+    },
+    "35": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 35
+              }
+            }
+          }
+        ]
+      }
+    },
+    "36": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 36
+              }
+            }
+          }
+        ]
+      }
+    },
+    "37": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 37
+              }
+            }
+          }
+        ]
+      }
+    },
+    "38": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 38
+              }
+            }
+          }
+        ]
+      }
+    },
+    "39": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 39
+              }
+            }
+          }
+        ]
+      }
+    },
+    "40": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 40
+              }
+            }
+          }
+        ]
+      }
+    },
+    "41": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 41
+              }
+            }
+          }
+        ]
+      }
+    },
+    "42": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 42
+              }
+            }
+          }
+        ]
+      }
+    },
+    "43": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 43
+              }
+            }
+          }
+        ]
+      }
+    },
+    "44": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 44
+              }
+            }
+          }
+        ]
+      }
+    },
+    "45": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 45
+              }
+            }
+          }
+        ]
+      }
+    },
+    "46": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 46
+              }
+            }
+          }
+        ]
+      }
+    },
+    "47": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 47
+              }
+            }
+          }
+        ]
+      }
+    },
+    "48": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 48
+              }
+            }
+          }
+        ]
+      }
+    },
+    "49": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 49
+              }
+            }
+          }
+        ]
+      }
+    },
+    "50": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "kills": {
+                "min": 50
+              }
+            }
+          }
+        ]
+      }
     }
+  },
+  "requirements": [
+    [
+      "1"
+    ],
+    [
+      "2"
+    ],
+    [
+      "3"
+    ],
+    [
+      "4"
+    ],
+    [
+      "5"
+    ],
+    [
+      "6"
+    ],
+    [
+      "7"
+    ],
+    [
+      "8"
+    ],
+    [
+      "9"
+    ],
+    [
+      "10"
+    ],
+    [
+      "11"
+    ],
+    [
+      "12"
+    ],
+    [
+      "13"
+    ],
+    [
+      "14"
+    ],
+    [
+      "15"
+    ],
+    [
+      "16"
+    ],
+    [
+      "17"
+    ],
+    [
+      "18"
+    ],
+    [
+      "19"
+    ],
+    [
+      "20"
+    ],
+    [
+      "21"
+    ],
+    [
+      "22"
+    ],
+    [
+      "23"
+    ],
+    [
+      "24"
+    ],
+    [
+      "25"
+    ],
+    [
+      "26"
+    ],
+    [
+      "27"
+    ],
+    [
+      "28"
+    ],
+    [
+      "29"
+    ],
+    [
+      "30"
+    ],
+    [
+      "31"
+    ],
+    [
+      "32"
+    ],
+    [
+      "33"
+    ],
+    [
+      "34"
+    ],
+    [
+      "35"
+    ],
+    [
+      "36"
+    ],
+    [
+      "37"
+    ],
+    [
+      "38"
+    ],
+    [
+      "39"
+    ],
+    [
+      "40"
+    ],
+    [
+      "41"
+    ],
+    [
+      "42"
+    ],
+    [
+      "43"
+    ],
+    [
+      "44"
+    ],
+    [
+      "45"
+    ],
+    [
+      "46"
+    ],
+    [
+      "47"
+    ],
+    [
+      "48"
+    ],
+    [
+      "49"
+    ],
+    [
+      "50"
+    ]
+  ],
+  "rewards": {
+    "function": "achievements:soulcollector_gain"
   },
   "parent": "achievements:rr_zzzhard/root"
 }

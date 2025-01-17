@@ -29,3 +29,8 @@ scoreboard players set @s TomaSpawned 0
 scoreboard players set @s WarSpawned 0
 scoreboard players set @s YSurpriseSpawned 0
 scoreboard players set @s FellVoid 0
+
+#Reset advancement criteria progress for the temp trackables also
+advancement revoke @s[tag=!RainingMen] only achievements:rr_challenges/raining_men
+advancement revoke @s[tag=!GravShootout] only achievements:rr_challenges/gravitational_shootout
+advancement revoke @s[tag=!SoulCollector] only achievements:rr_challenges/soul_collector

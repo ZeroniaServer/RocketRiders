@@ -109,6 +109,7 @@ scoreboard objectives add origYCount dummy
 scoreboard objectives add yellowsCount dummy
 scoreboard objectives add pearlOwnerUUID dummy
 scoreboard objectives add PlayerKills playerKillCount
+scoreboard objectives add soulKills dummy
 scoreboard objectives add kills playerKillCount
 scoreboard objectives add jumps minecraft.custom:minecraft.jump
 scoreboard objectives add SDtime dummy
@@ -243,8 +244,8 @@ scoreboard objectives add wins dummy
 scoreboard objectives add losses dummy
 scoreboard objectives add prevMinedTNT dummy
 scoreboard objectives add prevUseful dummy
+scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevfireballkill dummy
 scoreboard objectives add prevFellVoid dummy
-scoreboard objectives add prevGravShot dummy
 scoreboard objectives add prevKills dummy
 scoreboard players add $curr leavecheck 0

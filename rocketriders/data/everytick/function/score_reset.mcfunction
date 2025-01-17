@@ -18,6 +18,7 @@ scoreboard players set @s HurSpawned 0
 scoreboard players set @s HyperSpawned 0
 scoreboard players set @s JugbSpawned 0
 scoreboard players set @s kills 0
+scoreboard players set @s soulKills 0
 scoreboard players set @s prevKills 0
 scoreboard players set @s LifterSpawned 0
 scoreboard players set @s MissilesSpawned 0
@@ -31,8 +32,12 @@ scoreboard players set @s WarSpawned 0
 scoreboard players set @s YSurpriseSpawned 0
 scoreboard players set @s FellVoid 0
 scoreboard players set @s prevFellVoid 0
+scoreboard players set @s gravShot 0
+scoreboard players set @s regifts 0
+scoreboard players set @s ThrowShield 0
 
 #Reset advancement criteria progress for the temp trackables also
 advancement revoke @s[tag=!RainingMen] only achievements:rr_challenges/raining_men
 advancement revoke @s[tag=!GravShootout] only achievements:rr_challenges/gravitational_shootout
 advancement revoke @s[tag=!SoulCollector] only achievements:rr_challenges/soul_collector
+advancement revoke @s[tag=!Regifting] only achievements:rr_challenges/regifting

@@ -27,7 +27,6 @@ execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s 
 execute as @a[x=0,team=Blue] at @s run stopsound @s
 execute as @a[x=0,team=Yellow] at @s run stopsound @s
 execute if entity @s[tag=!BlueWonFirst] as @a[x=0,team=Yellow] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
-execute if entity @s[tag=BlueWonFirst] run say why dude
 execute if entity @s[tag=!BlueWonFirst] as @a[x=0,team=Blue] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2
 execute unless score $skiptitles CmdData matches 1 run title @a[x=0,team=!Lobby] title ["",{"text":"Team Yellow Won!","color":"yellow","bold":false}]
 

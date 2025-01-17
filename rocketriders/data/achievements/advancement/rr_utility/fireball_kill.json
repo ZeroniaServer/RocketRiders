@@ -26,6 +26,6 @@
     }
   },
   "rewards": {
-    "function": "achievements:fireballkill_indimension"
+    "function": "achievements:blocksintobits_indimension"
   }
 }

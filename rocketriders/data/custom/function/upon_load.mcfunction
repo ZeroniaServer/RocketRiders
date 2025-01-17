@@ -241,4 +241,10 @@ scoreboard objectives add impulse_cooldown dummy
 scoreboard objectives add leavecheck dummy
 scoreboard objectives add wins dummy
 scoreboard objectives add losses dummy
+scoreboard objectives add prevMinedTNT dummy
+scoreboard objectives add prevUseful dummy
+scoreboard objectives add prevfireballkill dummy
+scoreboard objectives add prevFellVoid dummy
+scoreboard objectives add prevGravShot dummy
+scoreboard objectives add prevKills dummy
 scoreboard players add $curr leavecheck 0

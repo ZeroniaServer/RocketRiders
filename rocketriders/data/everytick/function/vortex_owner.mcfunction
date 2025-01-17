@@ -3,7 +3,6 @@ execute store result score $tempuuid playerUUID run data get entity @s Owner[0]
 execute as @a[x=0,predicate=custom:matches_uuid] store result score @s UUIDTracker run data get entity @s UUID[0]
 execute as @a[x=0,team=Yellow,predicate=custom:matches_uuid] at @s run setblock ~ 174 ~ oak_sign
 execute as @a[x=0,team=Blue,predicate=custom:matches_uuid] at @s run setblock ~ 174 ~ oak_sign
-tag @a[x=0,team=Blue,predicate=custom:matches_uuid] add VortexSpawned
 execute as @a[x=0,team=Yellow,predicate=custom:matches_uuid] at @s run data modify block ~ 174 ~ front_text.messages[0] set value '["",{"selector":"@p[team=Yellow,predicate=custom:matches_uuid]"},{"text":"\'s Vortex"}]'
 execute as @a[x=0,team=Blue,predicate=custom:matches_uuid] at @s run data modify block ~ 174 ~ front_text.messages[0] set value '["",{"selector":"@p[team=Blue,predicate=custom:matches_uuid]"},{"text":"\'s Vortex"}]'
 execute if entity @a[x=0,team=Yellow,predicate=custom:matches_uuid] run tag @s[tag=!YellowVortex,tag=!BlueVortex] add YellowVortex
@@ -14,4 +13,11 @@ execute if entity @s[tag=BlueVortex] store result score @s UUIDTracker run score
 execute if entity @s[tag=BlueVortex] at @p[team=Blue,predicate=custom:matches_uuid] run data modify entity @s CustomName set from block ~ 174 ~ front_text.messages[0]
 execute as @a[x=0,team=Yellow,predicate=custom:matches_uuid] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
 execute as @a[x=0,team=Blue,predicate=custom:matches_uuid] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
+
+#Veteran tracking
+advancement grant @a[x=0,team=Yellow,predicate=custom:matches_uuid,tag=!VortexSpawned] only achievements:rr_challenges/veteran VortexSpawned
+advancement grant @a[x=0,team=Blue,predicate=custom:matches_uuid,tag=!VortexSpawned] only achievements:rr_challenges/veteran VortexSpawned
+tag @a[x=0,team=Yellow,predicate=custom:matches_uuid] add VortexSpawned
+tag @a[x=0,team=Blue,predicate=custom:matches_uuid] add VortexSpawned
+
 scoreboard players reset $tempuuid playerUUID

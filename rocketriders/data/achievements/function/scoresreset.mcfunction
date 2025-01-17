@@ -5,7 +5,9 @@ scoreboard players reset @a[x=0] PlayerDeaths
 scoreboard players reset @a[x=0] deathCooldown
 scoreboard players reset @a[x=0] FallDistance
 scoreboard players reset @a[x=0] gravShot
+scoreboard players reset @a[x=0] prevGravShot
 scoreboard players reset @a[x=0] regifts
+advancement revoke @a[x=0,tag=!Regifting] only achievements:rr_challenges/regifting
 scoreboard players reset @a[x=0] notBackwards
 scoreboard players reset @a[x=0] standStill
 tag @a[x=0] remove beenOnBlue

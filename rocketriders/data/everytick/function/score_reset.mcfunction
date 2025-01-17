@@ -18,6 +18,7 @@ scoreboard players set @s HurSpawned 0
 scoreboard players set @s HyperSpawned 0
 scoreboard players set @s JugbSpawned 0
 scoreboard players set @s kills 0
+scoreboard players set @s prevKills 0
 scoreboard players set @s LifterSpawned 0
 scoreboard players set @s MissilesSpawned 0
 scoreboard players set @s NullSpawned 0
@@ -29,6 +30,7 @@ scoreboard players set @s TomaSpawned 0
 scoreboard players set @s WarSpawned 0
 scoreboard players set @s YSurpriseSpawned 0
 scoreboard players set @s FellVoid 0
+scoreboard players set @s prevFellVoid 0
 
 #Reset advancement criteria progress for the temp trackables also
 advancement revoke @s[tag=!RainingMen] only achievements:rr_challenges/raining_men

@@ -11,10 +11,10 @@ tag @s[tag=JoinBlue] remove JoinBlue
 
 #Yellow
 execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={largerTeam=-1}] run title @s title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
-execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={largerTeam=-1}] run title @s subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"aqua","bold":false}]
+execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={largerTeam=-1}] run title @s subtitle ["",{"text":"Join ","color":"dark_aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"dark_aqua","bold":false}]
 execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=YellowFull] if entity @e[x=0,type=marker,tag=yellowjoinpad,tag=!CancelJoin] run title @s title ["",{"text":"Team Full!","color":"red","bold":true}]
 execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=YellowFull,tag=EditedSettings] if entity @e[x=0,type=marker,tag=yellowjoinpad,tag=CancelJoin] run title @s title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
-execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=YellowFull,tag=!BlueFull,tag=EditedSettings] run title @s subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"aqua","bold":false}]
+execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=YellowFull,tag=!BlueFull,tag=EditedSettings] run title @s subtitle ["",{"text":"Join ","color":"dark_aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"dark_aqua","bold":false}]
 execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=YellowFull,tag=BlueFull,tag=EditedSettings] run title @s subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":false}]
 tag @s[tag=JoinYellow] remove JoinYellow
 

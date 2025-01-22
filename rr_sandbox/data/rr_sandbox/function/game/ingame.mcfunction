@@ -1,9 +1,9 @@
 #leave midgame
 scoreboard players enable @a[x=0] LeaveMidgame
-tellraw @a[x=0,team=Blue,scores={dropBook=1..}] [{"text":"Are you sure you want to leave the match? ","color":"blue"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
-tellraw @a[x=0,team=Yellow,scores={dropBook=1..}] [{"text":"Are you sure you want to leave the match? ","color":"gold"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
+tellraw @a[x=0,team=Blue,scores={dropBook=1..}] [{"text":"Are you sure you want to leave the match? ","color":"dark_aqua"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
+tellraw @a[x=0,team=Yellow,scores={dropBook=1..}] [{"text":"Are you sure you want to leave the match? ","color":"yellow"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
 scoreboard players set @a[x=0,scores={dropBook=1..}] dropBook 0
-execute as @a[x=0,team=Blue,scores={LeaveMidgame=1}] run tellraw @a[x=0] [{"selector":"@s"},{"text":" left the match!","color":"aqua"}]
+execute as @a[x=0,team=Blue,scores={LeaveMidgame=1}] run tellraw @a[x=0] [{"selector":"@s"},{"text":" left the match!","color":"dark_aqua"}]
 scoreboard players set @a[x=0,team=Blue,scores={LeaveMidgame=1}] LeaveGame 1
 execute as @a[x=0,team=Yellow,scores={LeaveMidgame=1}] run tellraw @a[x=0] [{"selector":"@s"},{"text":" left the match!","color":"yellow"}]
 scoreboard players set @a[x=0,team=Yellow,scores={LeaveMidgame=1}] LeaveGame 1

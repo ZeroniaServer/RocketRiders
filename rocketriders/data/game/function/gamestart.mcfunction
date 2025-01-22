@@ -46,16 +46,16 @@ clear @a[x=0,tag=JoinBlue]
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function game:saberblue
 execute if entity @s[tag=!GameStarted,tag=Hardcore] as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
 execute if entity @s[tag=!GameStarted,tag=!customSpawns] run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
-execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"aqua"}]
+execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
 execute if entity @s[tag=!GameStarted,tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
 execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"blue","italic":true}
 execute if entity @s[tag=!GameStarted,tag=chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"red","italic":true}
 execute if entity @s[tag=!GameStarted] run effect give @a[x=0,tag=JoinBlue] resistance infinite 100 true
 execute if entity @s[tag=GameStarted,tag=!customSpawns] run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
-execute if entity @s[tag=GameStarted,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"aqua"}]
+execute if entity @s[tag=GameStarted,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"dark_aqua"}]
 execute if entity @s[tag=GameStarted,tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
-execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]
-execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"aqua","italic":true}]
+execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
 execute if entity @s[tag=GameStarted] run gamemode survival @a[x=0,team=Blue,gamemode=adventure]
 execute if entity @s[tag=GameStarted] run effect clear @a[x=0,tag=JoinBlue] resistance
 execute if entity @s[tag=!customSpawns] as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
@@ -109,12 +109,12 @@ execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinYellow
 
 #Imbalanced/full team control
 execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
-execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"aqua","bold":false}]
+execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"dark_aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"dark_aqua","bold":false}]
 execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
 execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
 execute if entity @s[tag=YellowFull] as @e[x=0,type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Full!","color":"red","bold":true}]
 execute if entity @s[tag=YellowFull,tag=EditedSettings] as @e[x=0,type=marker,tag=yellowjoinpad,tag=CancelJoin] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
-execute if entity @s[tag=YellowFull,tag=!BlueFull,tag=EditedSettings] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"aqua","bold":false}]
+execute if entity @s[tag=YellowFull,tag=!BlueFull,tag=EditedSettings] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"dark_aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"dark_aqua","bold":false}]
 execute if entity @s[tag=YellowFull,tag=BlueFull,tag=EditedSettings] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":false}]
 execute if entity @s[tag=YellowFull] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
 execute if entity @s[tag=YellowFull] as @e[x=0,type=marker,tag=yellowjoinpad] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow

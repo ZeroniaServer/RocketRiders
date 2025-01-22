@@ -1,3 +1,4 @@
+execute unless score #size sbstackamt matches 1.. run scoreboard players operation #size sbstackamt = @s sbstackamt
 execute if score @s nomicon matches 1 run function items:missile/normal/givetoma
 execute if score @s nomicon matches 2 run function items:missile/normal/giveant
 execute if score @s nomicon matches 3 run function items:missile/normal/giveblade
@@ -44,4 +45,6 @@ execute if score @s nomicon matches 43 run function rr_sandbox:items/givepickaxe
 execute if score @s nomicon matches 44 run function rr_sandbox:items/giveknightsword
 execute if score @s nomicon matches 45 run function rr_sandbox:items/giveknightshield
 execute if score @s nomicon matches 46 run function rr_sandbox:items/givespellwand
-scoreboard players set @s nomicon 0
+scoreboard players remove #size sbstackamt 1
+execute unless score #size sbstackamt matches 1.. run return run scoreboard players set @s nomicon 0
+function rr_sandbox:game/nomicon

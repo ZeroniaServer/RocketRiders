@@ -2,6 +2,8 @@ execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run summon
 scoreboard objectives add dropPickaxe minecraft.dropped:minecraft.netherite_pickaxe
 execute if entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run tellraw @s {"text":"Sandbox Mode installed.","color":"green","bold":true}
 scoreboard objectives add nomicon trigger
+scoreboard objectives add nomiconstack trigger
+scoreboard objectives add sbstackamt dummy
 scoreboard objectives add dropBook minecraft.dropped:minecraft.written_book
 scoreboard players add @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] CmdData 1
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop

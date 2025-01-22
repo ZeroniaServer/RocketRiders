@@ -26,7 +26,11 @@ execute if entity @e[x=0,type=arrow] run function rr_powerups:everytick/tipped_a
 execute as @a[x=0,team=!Lobby,team=!Spectator] run scoreboard players enable @s nomicon
 execute as @a[predicate=!custom:indimension] run trigger nomicon set 0
 execute as @a[x=0,team=!Blue,team=!Yellow,team=!Developer] run trigger nomicon set 0
+execute as @a[x=0,team=!Lobby,team=!Spectator] run scoreboard players enable @s nomiconstack
+execute as @a[predicate=!custom:indimension] run trigger nomiconstack set 0
+execute as @a[x=0,team=!Blue,team=!Yellow,team=!Developer] run trigger nomiconstack set 0
 execute as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,scores={nomicon=1..}] run function rr_sandbox:game/nomicon
+execute as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,scores={nomiconstack=1..}] run function rr_sandbox:game/nomiconstack
 
 #win
 execute if block 13 38 74 air run function rr_sandbox:game/winblue

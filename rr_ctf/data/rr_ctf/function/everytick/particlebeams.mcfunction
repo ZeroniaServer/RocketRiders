@@ -4,7 +4,7 @@ execute as @a[x=0,tag=CarryFlag,team=Yellow] at @s anchored eyes if score $dust 
 
 #distant different-colored line
 execute as @a[x=0,tag=CarryFlag,team=Blue] at @s anchored eyes if score $dust CmdData matches 1 run particle minecraft:dust{color:[0,1,1],scale:1} ~ ~3 ~ 0.2 0.5 0.2 1 10 force @a[tag=!hideParticles,team=!Lobby,distance=30..,predicate=custom:belowroof]
-execute as @a[x=0,tag=CarryFlag,team=Yellow] at @s anchored eyes if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,2,0],scale:1} ~ ~3 ~ 0.2 0.5 0.2 1 10 force @a[tag=!hideParticles,team=!Lobby,distance=30..,predicate=custom:belowroof]
+execute as @a[x=0,tag=CarryFlag,team=Yellow] at @s anchored eyes if score $dust CmdData matches 1 run particle minecraft:dust{color:[1.0,0.75,0.0],scale:1} ~ ~3 ~ 0.2 0.5 0.2 1 10 force @a[tag=!hideParticles,team=!Lobby,distance=30..,predicate=custom:belowroof]
 
 #distant thicker
 execute as @a[x=0,tag=CarryFlag,team=Blue] at @s anchored eyes if score $dust CmdData matches 1 run particle minecraft:dust{color:[0,0,1],scale:1} ~ ~28 ~ 0.1 10 0.1 1 100 force @a[tag=!hideParticles,team=!Lobby,distance=40..80,predicate=custom:belowroof]
@@ -40,6 +40,6 @@ execute as @e[x=0,type=marker,tag=FlagParticleBlue,scores={CmdData=..75}] at @s 
 execute as @e[x=0,type=marker,tag=FlagParticleYellow,scores={CmdData=..75}] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,1,0],scale:1.5} ^ ^ ^-1.2 0 0 0 0 1 force @a[tag=!hideParticles,team=!Lobby,distance=2..,predicate=custom:belowroof]
 
 execute as @e[x=0,type=marker,tag=FlagParticleBlue,scores={CmdData=75..150}] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[0,1,2],scale:1.5} ^ ^ ^1.2 0 0 0 0 1 force @a[tag=!hideParticles,team=!Lobby,distance=2..,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=FlagParticleYellow,scores={CmdData=75..150}] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,2,0],scale:1.5} ^ ^ ^1.2 0 0 0 0 1 force @a[tag=!hideParticles,team=!Lobby,distance=2..,predicate=custom:belowroof]
+execute as @e[x=0,type=marker,tag=FlagParticleYellow,scores={CmdData=75..150}] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1.0,0.75,0.0],scale:1.5} ^ ^ ^1.2 0 0 0 0 1 force @a[tag=!hideParticles,team=!Lobby,distance=2..,predicate=custom:belowroof]
 execute as @e[x=0,type=marker,tag=FlagParticleBlue,scores={CmdData=75..150}] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[0,1,2],scale:1.5} ^ ^ ^-1.2 0 0 0 0 1 force @a[tag=!hideParticles,team=!Lobby,distance=2..,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=FlagParticleYellow,scores={CmdData=75..150}] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,2,0],scale:1.5} ^ ^ ^-1.2 0 0 0 0 1 force @a[tag=!hideParticles,team=!Lobby,distance=2..,predicate=custom:belowroof]
+execute as @e[x=0,type=marker,tag=FlagParticleYellow,scores={CmdData=75..150}] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[1.0,0.75,0.0],scale:1.5} ^ ^ ^-1.2 0 0 0 0 1 force @a[tag=!hideParticles,team=!Lobby,distance=2..,predicate=custom:belowroof]

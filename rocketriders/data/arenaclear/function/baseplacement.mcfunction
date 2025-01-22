@@ -120,5 +120,7 @@ tag @s add EditedSettings
 fill -14 63 67 38 34 73 cave_air
 fill -14 63 -67 38 34 -73 cave_air
 
+function lobby:cancelsettings/begin
+
 ##Stop all sounds
 # execute as @a[x=0] run function everytick:stopsounds

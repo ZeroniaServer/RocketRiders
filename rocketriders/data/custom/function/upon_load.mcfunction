@@ -248,4 +248,5 @@ scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevfireballkill dummy
 scoreboard objectives add prevFellVoid dummy
 scoreboard objectives add prevKills dummy
+scoreboard objectives add cancelMatch trigger
 scoreboard players add $curr leavecheck 0

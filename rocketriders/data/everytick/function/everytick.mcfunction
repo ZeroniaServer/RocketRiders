@@ -82,3 +82,10 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless entity @s[tag=J
 execute if loaded -43 210 78 run function gamemodes:disableerror
 execute if score $reloaded CmdData matches 1..100 run scoreboard players add $reloaded CmdData 1
 execute if score $reloaded CmdData matches 101 run scoreboard players reset $reloaded
+
+#Cancel match
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players enable @a[x=0,team=Lobby] cancelMatch
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] as @a[x=0] run trigger cancelMatch set 0
+execute as @a[x=0,team=!Lobby,team=!Developer] run trigger cancelMatch set 0
+execute as @a[x=0,team=Lobby,scores={cancelMatch=1..}] run function lobby:cancelsettings/interact
+execute if score $mcancel CmdData matches -1 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=0}] run function lobby:cancelsettings/resume

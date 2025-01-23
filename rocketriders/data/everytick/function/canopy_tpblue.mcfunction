@@ -44,7 +44,6 @@ execute if entity @s[scores={PlatTime=41..}] run tag @p[team=Blue,tag=currentTP,
 execute if entity @s[tag=killCanopy] run tag @p[team=Blue,tag=currentTP,tag=canopyTP] remove canopyTP
 
 #Remove effects if player loses canopy TP tag
-attribute @p[tag=currentTP,tag=!canopyTP] fall_damage_multiplier base set 1
 attribute @p[tag=currentTP,tag=!canopyTP] movement_speed base set 0.1
 attribute @p[tag=currentTP,tag=!canopyTP] jump_strength base set 0.42
 effect clear @p[tag=currentTP,tag=!canopyTP] slow_falling 

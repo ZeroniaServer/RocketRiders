@@ -1,6 +1,3 @@
-kill @e[x=0,type=#custom:crystal,tag=CrusadeEntity]
-kill @e[x=0,type=interaction,tag=wandbox]
-kill @e[x=0,type=small_fireball]
 fill 33 79 33 35 89 31 air
 fill -11 79 33 -9 89 31 air
 fill 9 89 66 15 99 60 air
@@ -31,16 +28,13 @@ fill 15 64 64 13 67 62 air
 fill 13 64 63 11 67 61 air
 fill 11 64 64 9 67 62 air
 
-#ICBM reset
-kill @e[x=0,type=egg,tag=ICBM]
-kill @e[x=0,type=marker,tag=ICBMtracker]
-kill @e[x=0,type=chicken]
-scoreboard players reset $highest ICBMID
-
 #tetris reset
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_crusade:items/tetrisreset
 
 ##reset pregame bases
+#remove armor stands
+kill @e[x=0,type=armor_stand,tag=KitSelect]
+
 #remove signs
 fill -96 202 93 -94 202 93 air
 fill -96 202 63 -94 202 63 air

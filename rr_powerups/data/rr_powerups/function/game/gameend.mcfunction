@@ -22,6 +22,5 @@ tag @a[x=0] remove Infinity
 tag @a[x=0] remove HoldingSlapFish
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_powerups:capture_progress players none
 execute if entity @s[scores={endtimer=1..}] run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] capturePoint 0
-execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=bee]
-execute if entity @s[scores={endtimer=569..}] run kill @e[x=0,type=armor_stand,tag=BeeShieldDisplay]
-execute if entity @s[scores={endtimer=569..}] run kill @e[x=0,type=marker,tag=animBshield]
+#Preclear
+execute if entity @s[scores={endtimer=569..}] run function rr_powerups:arenaclear/preclear

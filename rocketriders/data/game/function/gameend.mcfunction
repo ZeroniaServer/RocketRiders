@@ -111,6 +111,7 @@ execute if entity @s[scores={endtimer=570..}] run scoreboard players set $barrie
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset $highest VortexID
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset $count VortexID
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * invCount
+execute if entity @s[scores={endtimer=570..}] run function arenaclear:preclear
 tag @s[scores={endtimer=570..}] remove GameEnd
 
 ##For repeating settings

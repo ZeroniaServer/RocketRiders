@@ -29,37 +29,12 @@ fill -11 59 73 35 36 75 air
 fill -14 13 66 38 33 48 air
 fill -14 13 -66 38 33 -48 air
 
-##Kill all necessary entities and clear utility structures
-kill @e[x=0,type=fireball]
-kill @e[x=0,type=item_display,tag=endFireballAnchor]
-kill @e[x=0,type=snowball]
-kill @e[x=0,type=arrow]
-kill @e[x=0,type=marker,tag=Vortex]
-kill @e[x=0,type=armor_stand,tag=VortexItem]
-kill @e[x=0,type=chicken]
-kill @e[x=0,type=tnt]
-kill @e[x=0,type=tnt_minecart]
-kill @e[x=0,type=creeper]
-kill @e[x=0,type=dragon_fireball]
-kill @e[x=0,type=potion,tag=splash]
-kill @e[x=0,type=item]
-kill @e[x=0,type=ender_pearl]
-kill @e[x=0,type=firework_rocket,tag=BlueNova]
-kill @e[x=0,type=firework_rocket,tag=YellowNova]
-kill @e[x=0,type=marker,tag=novatracker]
+##Clear utility structures
 execute as @e[x=0,type=marker,tag=obsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break
 execute if entity @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
 execute if entity @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
-kill @e[x=0,type=marker,tag=YellowPlatform]
-kill @e[x=0,type=marker,tag=BluePlatform]
-kill @e[x=0,type=marker,tag=BlueObshield]
-kill @e[x=0,type=marker,tag=YellowObshield]
-kill @e[x=0,type=marker,tag=BlueFireball]
-kill @e[x=0,type=marker,tag=YellowFireball]
-kill @e[x=0,type=marker,tag=missile]
-kill @e[x=0,type=marker,tag=surprising]
 
 ##Begin recursive SmartClear process
 function arenaclear:superspeed

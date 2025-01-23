@@ -27,11 +27,13 @@ execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.
 execute if score $YellowShield crusadehp matches -1000..0 run tellraw @a[x=0,team=Blue] ["\n",{"text":"Both Yellow Crystals have been destroyed!","color":"gold"},{"text":"\nA portal has been exposed; destroy it to win!","color":"yellow","italic":true}]
 execute if score $YellowShield crusadehp matches -1000..0 run tellraw @a[x=0,team=Yellow] ["\n",{"text":"Both of our Crystals have been destroyed!","color":"gold"},{"text":"\nOur portal is no longer protected; don't let them destroy it!","color":"yellow","italic":true}]
 execute if score $YellowShield crusadehp matches -1000..0 run tellraw @a[x=0,team=!Yellow,team=!Blue] ["\n",{"text":"Both Yellow Crystals have been destroyed!","color":"gold"}]
+execute if score $YellowShield crusadehp matches -1000..0 run function rr_crusade:game/cancel_utility
 execute if score $YellowShield crusadehp matches -1000..0 run fill 4 45 52 20 55 66 minecraft:yellow_stained_glass
 execute if score $YellowShield crusadehp matches -1000..0 run fill 21 44 67 21 56 67 minecraft:obsidian
 execute if score $YellowShield crusadehp matches -1000..0 run fill 21 56 67 3 56 67 minecraft:obsidian
 execute if score $YellowShield crusadehp matches -1000..0 run fill 3 44 67 3 56 67 minecraft:obsidian
 execute if score $YellowShield crusadehp matches -1000..0 run fill 3 44 67 21 44 67 minecraft:obsidian
+execute if score $YellowShield crusadehp matches -1000..0 run fill 20 55 67 4 45 67 air
 execute if score $YellowShield crusadehp matches -1000..0 run fill 20 55 67 4 45 67 minecraft:nether_portal
 
 execute unless score $CYB crusadehp matches 1.. run tellraw @a[x=0] [""]

@@ -32,4 +32,19 @@ setblock -47 211 75 minecraft:player_head[powered=false,rotation=5]{profile:{id:
 kill @e[x=0,type=interaction,tag=ZeroniaCredit]
 summon interaction -47 211 81 {width:0.75,height:0.75,response:1b,Tags:["ZeroniaCredit1"]}
 summon interaction -47 211 75 {width:0.75,height:0.75,response:1b,Tags:["ZeroniaCredit2"]}
+data modify entity 49548abb-1add-4dc9-bef0-a23101ae54d1 CustomName set value '{"text":"Game Rules","color":"yellow"}'
+data modify entity cdf45025-712b-428c-99d5-5b9ffe760c26 CustomName set value '{"text":"Item Categories","color":"aqua"}'
+data modify entity 518e79cf-2fd6-4b68-8fdf-02967838e7e5 CustomName set value '{"text":"Jump to go back!","color":"gray"}'
+fill -76 200 92 -70 203 86 bamboo_fence replace birch_fence
+fill -76 201 92 -70 203 86 bamboo_slab[type=double] replace birch_slab[type=double]
+fill -76 201 92 -70 203 86 bamboo_slab[type=top] replace birch_slab[type=top]
+fill -76 201 92 -70 203 86 bamboo_slab[type=bottom] replace birch_slab[type=bottom]
+fill -109 229 106 -109 241 50 bamboo_planks replace birch_planks
+fill -109 229 106 -109 241 50 bamboo_slab[type=bottom] replace birch_slab[type=bottom]
+fill -109 229 106 -109 241 50 bamboo_slab[type=top] replace birch_slab[type=top]
+fill -109 229 106 -109 241 50 bamboo_stairs[facing=south,half=top] replace birch_stairs[facing=south,half=top]
+fill -109 229 106 -109 241 50 bamboo_stairs[facing=south,half=bottom] replace birch_stairs[facing=south,half=bottom]
+fill -109 229 106 -109 241 50 bamboo_stairs[facing=north,half=top] replace birch_stairs[facing=north,half=top]
+fill -109 229 106 -109 241 50 bamboo_stairs[facing=north,half=bottom] replace birch_stairs[facing=north,half=bottom]
+
 scoreboard players set $WorldVersion CmdData 1304

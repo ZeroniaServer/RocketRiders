@@ -1,6 +1,6 @@
-tellraw @s ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"Active Items:","color":"gray","bold":false,"hoverEvent":{"action":"show_text","contents":["",{"text":"A set of 12 items is randomly generated for each game.","color":"white"}]}},{"text":" (hover for info)","italic":true,"color":"dark_gray"}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ctfEnabled] run tellraw @s ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run tellraw @s ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+tellraw @s ["",{"text":"|","color":"dark_gray","bold":true},{"text":" Active Items:","color":"gray","bold":false,"hoverEvent":{"action":"show_text","contents":["",{"text":"A set of 12 items is randomly generated for each game.","color":"white"}]}},{"text":" (hover for info)","italic":true,"color":"dark_gray"}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ctfEnabled] run tellraw @s ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run tellraw @s ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
 
 ### 1 shield type
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngShield] run summon marker ~ ~ ~ {CustomName:'{"text":"Shield","color":"light_purple"}',Tags:["ServerRNG","Shield","RShieldRNG","RUtilRNG"]}
@@ -11,7 +11,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngFireball]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngNova] run summon marker ~ ~ ~ {CustomName:'{"text":"Nova Rocket","color":"light_purple"}',Tags:["ServerRNG","Nova","RProjecRNG","RUtilRNG"]}
 
 #Announce extra utils
-tellraw @s ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"light_purple","bold":false},{"selector":"@e[x=0,type=marker,tag=RUtilRNG]","color":"light_purple","bold":false}]
+tellraw @s ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"light_purple","bold":false},{"selector":"@e[x=0,type=marker,tag=RUtilRNG]","color":"light_purple","bold":false}]
 
 ### 1 lightning type.
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngHur] run summon marker ~ ~ ~ {Tags:["ServerRNG","Hurricane","RLightningRNG"]}
@@ -34,14 +34,14 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngToma] run
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngWar] run summon marker ~ ~ ~ {CustomName:'{"text":"Warhead","color":"red"}',Tags:["ServerRNG","Warhead","RMisRNG","RHeavyRNG"]}
 
 #Announce normals
-tellraw @s ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"green","bold":false},{"selector":"@e[x=0,type=marker,tag=RMisRNG,tag=!RHeavyRNG]","color":"green","bold":false}]
+tellraw @s ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"green","bold":false},{"selector":"@e[x=0,type=marker,tag=RMisRNG,tag=!RHeavyRNG]","color":"green","bold":false}]
 
 #Announce lightning
-execute if entity @e[x=0,type=marker,tag=Hurricane] run tellraw @s ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Hurricane","color":"gold","bold":false}]
-execute if entity @e[x=0,type=marker,tag=Thunderbolt] run tellraw @s ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- Thunderbolt","color":"gold","bold":false}]
+execute if entity @e[x=0,type=marker,tag=Hurricane] run tellraw @s ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Hurricane","color":"gold","bold":false}]
+execute if entity @e[x=0,type=marker,tag=Thunderbolt] run tellraw @s ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Thunderbolt","color":"gold","bold":false}]
 
 #Announce heavys (if any)
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!rngHeavy] run tellraw @s ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"- ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!rngHeavy] run tellraw @s ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
 kill @e[x=0,type=marker,tag=ServerRNG]
 
 tellraw @s [{"text":""}]

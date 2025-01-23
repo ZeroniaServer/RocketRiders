@@ -1,5 +1,5 @@
 ##Notifies players that settings are being repeated for a certain game
-tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true}]
+# tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={RepeatSettings=1}] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"(Keeping settings for ","color":"gray","italic":true},{"text":"1","color":"white","italic":true},{"text":" game!)","color":"gray","italic":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={RepeatSettings=2..}] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"(Keeping settings for ","color":"gray","italic":true},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"RepeatSettings"},"color":"white","italic":true},{"text":" games!)","color":"gray","italic":true}]
 #Update repeat settings sign

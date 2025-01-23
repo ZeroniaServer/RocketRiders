@@ -1,10 +1,3 @@
-execute unless score $NormalMode servermode matches 0.. run scoreboard players set $NormalMode servermode 0
-execute unless score $PowerupsMode servermode matches 0.. run scoreboard players set $PowerupsMode servermode 0
-execute unless score $SwapMode servermode matches 0.. run scoreboard players set $SwapMode servermode 0
-execute unless score $CTFMode servermode matches 0.. run scoreboard players set $CTFMode servermode 0
-execute unless score $CrusadeMode servermode matches 0.. run scoreboard players set $CrusadeMode servermode 0
-execute unless score $GameCount servermode matches 0.. run scoreboard players set $GameCount servermode 0
-
 # Add tag
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add ServerModeVoting
 
@@ -22,19 +15,6 @@ summon marker -64 191 78 {Tags:["ServerMode","Set5","ServermodeSet5","Set","Crus
 execute store result score $SCMChance RNGscore run random value 0..999
 execute if score $SMCChance RNGscore matches 69 run summon marker -64 191 78 {Tags:["ServerMode","Set6","ServermodeSet6","Set","ChaseMode"],CustomName:'"Chase Mode"'}
 execute if score $SMCChance RNGscore matches 69 run summon marker -64 191 78 {Tags:["ServerMode","Maps","ServermodeSet6","RandomMap"],CustomName:'"Randomized map"'}
-
-# Decrease vote options scores in case of low priority.
-execute if score $NormalMode servermode matches 2 run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set1] VoteServerMode 1
-execute if score $PowerupsMode servermode matches 2 run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set2] VoteServerMode 1
-execute if score $SwapMode servermode matches 2 run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set3] VoteServerMode 1
-execute if score $CTFMode servermode matches 2 run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set4] VoteServerMode 1
-execute if score $CrusadeMode servermode matches 2 run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set5] VoteServerMode 1
-
-execute if score $NormalMode servermode matches 3.. run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set1] VoteServerMode 3
-execute if score $PowerupsMode servermode matches 3.. run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set2] VoteServerMode 3
-execute if score $SwapMode servermode matches 3.. run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set3] VoteServerMode 3
-execute if score $CTFMode servermode matches 3.. run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set4] VoteServerMode 3
-execute if score $CrusadeMode servermode matches 3.. run scoreboard players remove @e[x=0,type=marker,tag=ServerMode,tag=Set5] VoteServerMode 3
 
 # Summon AEC's for base decos, assign 3 of them to the 3 set entities.
 summon marker -64 191 78 {Tags:["ServerMode","Maps","DefaultMap"],CustomName:'"New Dawn map"'}

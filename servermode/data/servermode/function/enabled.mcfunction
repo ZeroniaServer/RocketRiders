@@ -1,3 +1,5 @@
+execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={servermode=1}] run return run tellraw @s [{"text":"Vote Server Mode is already enabled!","color":"red"}]
+
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PlayerCap 6
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=2}] run schedule function servermode:enabled 1t
@@ -8,7 +10,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove realms
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SMCustom
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
-fill -57 201 84 -70 201 72 barrier replace air
+fill -57 201 84 -70 201 72 tinted_glass replace air
 fill -57 198 84 -70 198 72 blackstone replace air
 execute as @a[x=0] run function achievements:reset
 clear @a

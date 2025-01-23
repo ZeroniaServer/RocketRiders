@@ -3,8 +3,8 @@
   "predicate": {
     "position": {
       "x": {
-        "min": -69,
-        "max": -58
+        "min": -70,
+        "max": -56
       },
       "y": {
         "min": 190,

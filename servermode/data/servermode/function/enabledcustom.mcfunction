@@ -1,3 +1,5 @@
+execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=SMCustom] run return run tellraw @s [{"text":"Custom Server Mode is already enabled!","color":"red"}]
+
 function game:forcestop
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PlayerCap 6
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
@@ -10,6 +12,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove realms
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
 fill -57 201 84 -70 201 72 air replace barrier
+fill -57 201 84 -70 201 72 air replace tinted_glass
 fill -57 198 84 -70 198 72 air replace blackstone
 clear @a
 kill @e[x=0,type=armor_stand,tag=ParkourLB]

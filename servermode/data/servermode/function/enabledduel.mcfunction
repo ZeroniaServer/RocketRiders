@@ -1,3 +1,5 @@
+execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={servermode=2}] run return run tellraw @s [{"text":"Duel Server Mode is already enabled!","color":"red"}]
+
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
 execute unless score @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode matches 2 run schedule function game:forcestop 2t append
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode 2
@@ -8,7 +10,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove realms
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SMCustom
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
-fill -57 201 84 -70 201 72 barrier replace air
+fill -57 201 84 -70 201 72 tinted_glass replace air
 fill -57 198 84 -70 198 72 blackstone replace air
 execute as @a[x=0] run function achievements:reset
 function game:forcestop

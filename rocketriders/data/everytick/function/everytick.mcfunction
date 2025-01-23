@@ -84,10 +84,10 @@ execute if score $reloaded CmdData matches 1..100 run scoreboard players add $re
 execute if score $reloaded CmdData matches 101 run scoreboard players reset $reloaded
 
 #Cancel match
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players enable @a[x=0,team=Lobby] cancelMatch
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players enable @a[x=0,team=!Spectator,team=!Blue,team=!Yellow] cancelMatch
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] as @a[x=0] run trigger cancelMatch set 0
 execute as @a[x=0,team=!Lobby,team=!Developer] run trigger cancelMatch set 0
-execute as @a[x=0,team=Lobby,scores={cancelMatch=1..}] run function lobby:cancelsettings/interact
+execute as @a[x=0,team=!Spectator,team=!Blue,team=!Yellow,scores={cancelMatch=1..}] run function lobby:cancelsettings/interact
 execute if score $mcancel CmdData matches -1 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=0}] run function lobby:cancelsettings/resume
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=0}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=0}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=..1}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=..1}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

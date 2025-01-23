@@ -2,25 +2,20 @@
 #Calculates who has the most of each score
 
 tag @a[x=0] remove flagschamp
-execute as @a[x=0] run scoreboard players operation @s CmdData = @s FlagsCaptured
-tag @a[x=0,scores={CmdData=1..}] add maybeflagschamp
-execute if entity @a[x=0,tag=maybeflagschamp] run function everytick:pogger_calculation
-tag @a[x=0,scores={CmdData=0},tag=maybeflagschamp] add flagschamp
-tag @a[x=0] remove maybeflagschamp
+scoreboard players operation #max FlagsCaptured > @a[x=0,scores={FlagsCaptured=1..}] FlagsCaptured
+execute as @a[x=0,scores={FlagsCaptured=1..}] if score @s FlagsCaptured = #max FlagsCaptured run tag @s add flagschamp
+scoreboard players reset #max FlagsCaptured
 
 tag @a[x=0] remove killschamp
-execute as @a[x=0] run scoreboard players operation @s CmdData = @s kills
-tag @a[x=0,scores={CmdData=1..}] add maybekillschamp
-execute if entity @a[x=0,tag=maybekillschamp] run function everytick:pogger_calculation
-tag @a[x=0,scores={CmdData=0},tag=maybekillschamp] add killschamp
-tag @a[x=0] remove maybekillschamp
+scoreboard players operation #max kills > @a[x=0,scores={kills=1..}] kills
+execute as @a[x=0,scores={kills=1..}] if score @s kills = #max kills run tag @s add killschamp
+scoreboard players reset #max kills
 
 tag @a[x=0] remove deathchamp
-execute as @a[x=0] run scoreboard players operation @s CmdData = @s deaths
-tag @a[x=0,scores={CmdData=1..}] add maybedeathchamp
-execute if entity @a[x=0,tag=maybedeathchamp] run function everytick:pogger_calculation
-tag @a[x=0,scores={CmdData=0},tag=maybedeathchamp] add deathchamp
-tag @a[x=0] remove maybedeathchamp
+scoreboard players operation #max deaths > @a[x=0,scores={deaths=1..}] deaths
+execute as @a[x=0,scores={deaths=1..}] if score @s deaths = #max deaths run tag @s add deathchamp
+scoreboard players reset #max deaths
+
 
 #Announces who has the most of each score
 scoreboard players add $playercount CmdData 0

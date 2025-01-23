@@ -40,8 +40,8 @@ execute if entity @s[scores={shieldCount=1..}] run function arenaclear:preparesh
 function arenaclear:superspeed
 
 ##Close off Modification Room
-execute as @e[x=0,type=marker,tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0
-fill -57 201 84 -70 201 72 barrier replace air
+execute if entity @s[scores={servermode=0}] as @e[x=0,type=marker,tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0
+fill -57 201 84 -70 201 72 tinted_glass replace air
 
 ##Generate list of Game Rules
 function arenaclear:gamerulelist

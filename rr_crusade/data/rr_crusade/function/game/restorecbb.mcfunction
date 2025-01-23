@@ -19,7 +19,9 @@ execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matche
 execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. run fill -16 47 -35 -12 51 -39 minecraft:tinted_glass
 execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],beam_target:[I;12,50,-52],ShowBottom:0b,Invulnerable:1b}
 execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 run playsound minecraft:block.glass.break master @a[x=0] ~ ~ ~ 1 0.8
-execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 2
+execute unless score $CBBcd crusadehp matches 1.. if score $CBBprecd crusadehp matches 100.. run scoreboard players set $CBBcd crusadehp 60
+execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. positioned -14 49 -37 run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 2
+execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. positioned -14 49 -37 run playsound minecraft:block.respawn_anchor.deplete master @a[x=0] ~ ~ ~ 2 2
 
 #> Expose Portals
 execute if score $BlueShield crusadehp matches -1000..0 run tellraw @a[x=0,team=Yellow] ["\n",{"text":"Both Blue Crystals have been destroyed!","color":"blue"},{"text":"\nA portal has been exposed; destroy it to win!","color":"dark_aqua","italic":true}]
@@ -34,5 +36,4 @@ execute if score $BlueShield crusadehp matches -1000..0 run fill 4 45 -67 20 55 
 
 execute unless score $CBB crusadehp matches 1.. run tellraw @a[x=0] [""]
 
-execute unless score $CBBcd crusadehp matches 1.. if score $CBBprecd crusadehp matches 100.. run scoreboard players set $CBBcd crusadehp 60
 execute if score $CBBcd crusadehp matches 1.. run scoreboard players set $CBBprecd crusadehp 0

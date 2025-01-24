@@ -1,0 +1,18 @@
+{
+    "criteria": {
+        "use_item": {
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "item": {
+                    "items": [
+                        "blaze_rod",
+                        "breeze_rod"
+                    ]
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "rr_crusade:game/usewand"
+    }
+}

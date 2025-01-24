@@ -34,11 +34,7 @@ execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,t
 execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=2}] at @s at @e[x=0,type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=3}] at @s at @e[x=0,type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 
-#Mage wand - UNUSED
-# execute as @a[x=0,scores={crusadekit=3},predicate=rr_crusade:holdwand] at @s run function rr_crusade:game/mage_wand
-# execute as @e[x=0,type=interaction,tag=wandbox] run function rr_crusade:game/kill_wand_box
-# execute store success score $toggle CmdData if score $toggle CmdData matches 0
-# execute as @e[x=0,type=small_fireball] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
+#TODO Mage wand
 
 #Archer arrow pickup
 execute as @e[x=0,type=item] if items entity @s contents arrow at @s run function rr_crusade:game/arrow_item

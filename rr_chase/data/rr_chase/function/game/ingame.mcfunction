@@ -13,6 +13,9 @@ execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run fu
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
 execute if entity @s[tag=Minute] run function items:minutemix
 
+#glass regeneration
+execute as @e[x=0,type=marker,tag=airDetect,limit=1] at @s run function rr_chase:game/airdetect
+
 #Arrows on death - DISABLED AS OF 1.2.0
 # execute if entity @s[scores={gametime=2..}] as @a[x=0,team=Blue,scores={deathCooldown=1}] run function items:util/givearrows
 

@@ -19,8 +19,8 @@ execute as @a[x=0,team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoin
 execute as @a[x=0,team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
 
 #endstone regeneration
-execute as @e[x=0,type=marker,tag=airDetectBlue] at @s run function rr_ctf:everytick/airdetectblue
-execute as @e[x=0,type=marker,tag=airDetectYellow] at @s run function rr_ctf:everytick/airdetectyellow
+execute as @e[x=0,type=marker,tag=airDetectBlue,limit=1] at @s run function rr_ctf:everytick/airdetectblue
+execute as @e[x=0,type=marker,tag=airDetectYellow,limit=1] at @s run function rr_ctf:everytick/airdetectyellow
 
 #Overtime sudden death
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={gametime=36000},tag=doTying] run tag @s add CTFOvertime

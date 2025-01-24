@@ -7,8 +7,8 @@ execute if entity @s[scores={endtimer=1},tag=BlueWon] run clear @a[x=0,team=Yell
 execute if entity @s[scores={endtimer=1},tag=BlueWon] run give @a[x=0,team=Yellow] minecraft:netherite_pickaxe[custom_name='{"translate":"Piercing Pickaxe","color":"gold","bold":true,"italic":false}',lore=['{"translate":"A tool used both for"}','{"translate":"mining and melee attacks."}'],unbreakable={show_in_tooltip:0b},enchantments={levels:{unbreaking:4},show_in_tooltip:0b},attribute_modifiers={modifiers:[{operation:"add_value",amount:-2.2d,slot:"mainhand",type:"attack_speed",id:"rr_ctf:piercing_pickaxe_attack_speed"}],show_in_tooltip:0b}]
 execute if entity @s[scores={endtimer=1},tag=YellowWon] run clear @a[x=0,team=Blue] netherite_pickaxe
 execute if entity @s[scores={endtimer=1},tag=YellowWon] run give @a[x=0,team=Blue] minecraft:netherite_pickaxe[custom_name='{"translate":"Piercing Pickaxe","color":"blue","bold":true,"italic":false}',lore=['{"translate":"A tool used both for"}','{"translate":"mining and melee attacks."}'],unbreakable={show_in_tooltip:0b},enchantments={levels:{unbreaking:4},show_in_tooltip:0b},attribute_modifiers={modifiers:[{operation:"add_value",amount:-2.2d,slot:"mainhand",type:"attack_speed",id:"rr_ctf:piercing_pickaxe_attack_speed"}],show_in_tooltip:0b}]
-execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectBlue]
-execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectYellow]
+execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectBlue,limit=1]
+execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectYellow,limit=1]
 execute if entity @s[scores={endtimer=1..}] run fill -9 74 68 -15 64 61 moving_piston replace air
 execute if entity @s[scores={endtimer=1..}] run fill 35 74 68 29 64 61 moving_piston replace air
 execute if entity @s[scores={endtimer=1..}] run fill -9 74 -68 -15 64 -61 moving_piston replace air

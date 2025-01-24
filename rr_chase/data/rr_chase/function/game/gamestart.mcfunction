@@ -50,5 +50,6 @@ execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
 execute if entity @s[scores={count=600},tag=!GameEnd] run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={count=600},tag=!GameEnd] run spawnpoint @a[x=0,team=Blue] 12 64 -66 0
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @a[x=0,team=Blue] add onBlue
+execute if entity @s[scores={count=600}] run summon marker 38 63 -66 {Tags:["airDetect"]}
 execute if entity @s[scores={count=600},tag=!GameEnd] as @a[x=0,team=Blue] run attribute @s minecraft:knockback_resistance base set 0.0
 execute if entity @s[scores={count=600},tag=!GameEnd] as @a[x=0,team=Blue] run tag @s remove fullOffhand

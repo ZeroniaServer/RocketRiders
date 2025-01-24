@@ -7,6 +7,7 @@ execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Loser] run fun
 execute if entity @s[scores={endtimer=1}] run effect give @a[x=0,team=Blue,tag=Loser] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1}] run function rr_chase:game/endstats
 scoreboard players reset * FlagScore
+execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetect,limit=1]
 execute if entity @s[scores={endtimer=1..}] run fill 13 74 68 7 64 61 moving_piston replace air
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_chase:lead players none
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"red"}]

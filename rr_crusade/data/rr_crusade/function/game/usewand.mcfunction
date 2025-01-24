@@ -8,7 +8,6 @@ execute unless items entity @s container.* enchanted_book unless items entity @s
 execute unless items entity @s container.* enchanted_book unless items entity @s weapon.offhand enchanted_book run return run scoreboard players set @s impulse_cooldown 2
 
 execute if items entity @s weapon.offhand enchanted_book run return run function rr_crusade:spell/cast {slot:"weapon.offhand"}
-execute if items entity @s weapon.mainhand enchanted_book run return run function rr_crusade:spell/cast {slot:"weapon.mainhand"}
 
 execute if items entity @s hotbar.0 enchanted_book run return run function rr_crusade:spell/cast {slot:"hotbar.0"}
 execute if items entity @s hotbar.1 enchanted_book run return run function rr_crusade:spell/cast {slot:"hotbar.1"}

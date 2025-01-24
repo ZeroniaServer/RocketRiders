@@ -29,7 +29,7 @@ tag @s remove givenToma
 tag @s remove givenCata
 tag @s remove givenLift
 tag @s remove givenNull
-tag @s remove givenFireball
+tag @s remove givenSpellBook
 tag @s remove givenVortex
 tag @s remove givenNova
 

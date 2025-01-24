@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "use_item": {
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "item": {
+                    "items": "enchanted_book"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "rr_crusade:game/usebook"
+    }
+}

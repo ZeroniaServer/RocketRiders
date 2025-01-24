@@ -36,6 +36,10 @@ execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,t
 
 #TODO Mage wand
 
+#Top layer regen
+execute as @e[x=0,type=marker,tag=airDetectBlue,limit=1] at @s run function rr_crusade:game/airdetectblue
+execute as @e[x=0,type=marker,tag=airDetectYellow,limit=1] at @s run function rr_crusade:game/airdetectyellow
+
 #Archer arrow pickup
 execute as @e[x=0,type=item] if items entity @s contents arrow at @s run function rr_crusade:game/arrow_item
 

@@ -1,0 +1,4 @@
+execute at @s[tag=airDetectBlue] unless predicate rr_crusade:cyan unless entity @a[distance=..5] if block ~ ~ ~ #custom:air run setblock ~ ~ ~ white_stained_glass
+execute at @s[tag=airDetectBlue] if predicate rr_crusade:cyan unless entity @a[distance=..5] if block ~ ~ ~ #custom:air run setblock ~ ~ ~ cyan_stained_glass
+execute at @s[tag=airDetectYellow] unless predicate rr_crusade:orange unless entity @a[distance=..5] if block ~ ~ ~ #custom:air run setblock ~ ~ ~ white_stained_glass
+execute at @s[tag=airDetectYellow] if predicate rr_crusade:orange unless entity @a[distance=..5] if block ~ ~ ~ #custom:air run setblock ~ ~ ~ orange_stained_glass

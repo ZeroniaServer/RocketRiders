@@ -54,4 +54,6 @@ execute if entity @s[scores={count=600}] run clear @a[x=0,team=Blue,scores={crus
 execute if entity @s[scores={count=600}] run clear @a[x=0,team=Yellow,scores={crusadekit=1}] shield
 execute if entity @s[scores={count=600}] as @a[x=0,team=Blue,scores={crusadekit=1}] run item replace entity @s weapon.offhand with minecraft:shield[max_damage=10,custom_name='[{"text":"Knight Shield","italic":false,"bold":true,"color":"blue"}]',lore=['[{"translate":"A not-so-sturdy shield."}]'],base_color="blue",banner_patterns=[{pattern:"flower",color:"light_blue"},{pattern:"border",color:"light_blue"}]]
 execute if entity @s[scores={count=600}] as @a[x=0,team=Yellow,scores={crusadekit=1}] run item replace entity @s[team=Yellow] weapon.offhand with minecraft:shield[max_damage=10,custom_name='[{"text":"Knight Shield","italic":false,"bold":true,"color":"gold"}]',lore=['[{"translate":"A not-so-sturdy shield."}]'],base_color="yellow",banner_patterns=[{pattern:"flower",color:"orange"},{pattern:"border",color:"orange"}]]
+execute if entity @s[scores={count=600}] run summon marker 33 63 -66 {Tags:["airDetectBlue"]}
+execute if entity @s[scores={count=600}] run summon marker 33 63 66 {Tags:["airDetectYellow"]}
 execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted

@@ -47,6 +47,7 @@ execute if score @s nomicon matches 43 run function rr_sandbox:items/givepickaxe
 execute if score @s nomicon matches 44 run function rr_sandbox:items/giveknightsword
 execute if score @s nomicon matches 45 run function rr_sandbox:items/giveknightshield
 execute if score @s nomicon matches 46 run function rr_sandbox:items/givespellwand
+execute if score @s nomicon matches 47 run function rr_crusade:items/util/givespellbook
 scoreboard players remove #size sbstackamt 1
 execute unless score #size sbstackamt matches 1.. run return run scoreboard players set @s nomicon 0
 function rr_sandbox:game/nomicon

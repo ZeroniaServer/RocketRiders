@@ -212,3 +212,6 @@ kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
 
 ##Kill entity
 kill @s
+
+##Surprise Egg support
+execute as @e[x=0,type=marker,tag=surp] at @s run function items:spawnmissiles

@@ -15,18 +15,70 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [2]
+                  "floats": [
+                    2
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Chronullifier\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true
+                  },
+                  {
+                    "text": "Chronullifier",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"14\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.2m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22 & YZEROgame\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The Chronullifier uses a unique\",\"color\":\"gray\"}",
-                  "{\"text\":\"observer engine with the same\",\"color\":\"gray\"}",
-                  "{\"text\":\"speed as non-observer engines.\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "14",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.2m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "Chronos22 & YZEROgame",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The Chronullifier uses a unique",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "observer engine with the same",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "speed as non-observer engines.",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",
@@ -61,18 +113,70 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [1]
+                  "floats": [
+                    1
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Chronullifier\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true
+                  },
+                  {
+                    "text": "Chronullifier",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"14\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.2m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22 & YZEROgame\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The Chronullifier uses a unique\",\"color\":\"gray\"}",
-                  "{\"text\":\"observer engine with the same\",\"color\":\"gray\"}",
-                  "{\"text\":\"speed as non-observer engines.\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "14",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.2m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "Chronos22 & YZEROgame",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The Chronullifier uses a unique",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "observer engine with the same",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "speed as non-observer engines.",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",

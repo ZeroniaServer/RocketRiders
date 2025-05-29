@@ -11,7 +11,7 @@ execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw 
 execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the compass to ","color":"green"},{"text":"Return to Checkpoint","color":"aqua","bold":true},{"text":".","color":"green"}]
 execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the clock to ","color":"green"},{"text":"Quit to Start","color":"yellow","bold":true},{"text":".","color":"green"}]
 execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":true},{"text":".","color":"green"}]
-execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger toggleParkourTips set 1"}},{"text":" to no longer see these instructions.","color":"dark_green","italic":true}]
+execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger toggleParkourTips set 1"}},{"text":" to no longer see these instructions.","color":"dark_green","italic":true}]
 execute as @a[x=0,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[x=0,team=Lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
 execute as @a[x=0,team=Lobby,tag=startParkour,tag=!hideParticles] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
@@ -155,17 +155,17 @@ execute as @a[x=0,team=Lobby,tag=inParkour,scores={parkourSecs=10..,parkourMins=
 #Return to last checkpoint (includes 1 second cooldown)
 scoreboard players add @a[x=0,team=Lobby,tag=inParkour] chkpntCooldown 0
 execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run clear @s compass
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run item replace entity @s hotbar.3 with compass[custom_name='[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false}]',consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.3 compass run item replace entity @s hotbar.3 with compass[custom_name=[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false}],consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
 scoreboard players add @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=1..19}] chkpntCooldown 1
 scoreboard players set @a[x=0,team=Lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
 #Quit to start
 execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run clear @s clock
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name='[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false}]',consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name=[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false}],consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
 
 #Quit parkour
 execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run clear @s barrier
-execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run item replace entity @s hotbar.8 with barrier[custom_name='[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false}]',consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
+execute as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run item replace entity @s hotbar.8 with barrier[custom_name=[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false}],consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
 
 #Clear offhand (necessary for inventory controls)
 item replace entity @a[x=0,team=Lobby] weapon.offhand with air
@@ -176,7 +176,7 @@ execute as @a[x=0,team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,ta
 effect clear @a[x=0,team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (excluding rank)
-execute if function game:norankboots as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots[enchantments={levels:{"minecraft:binding_curse":1},show_in_tooltip:0b},enchantment_glint_override=false,custom_name='{"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false}',trim={material:"minecraft:emerald",pattern:"minecraft:wayfinder"},attribute_modifiers={modifiers:[],show_in_tooltip:0b},unbreakable={show_in_tooltip:0b}]
+execute if function game:norankboots as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots[enchantments={"minecraft:binding_curse":1},enchantment_glint_override=false,custom_name={"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false},trim={material:"minecraft:emerald",pattern:"minecraft:wayfinder"},attribute_modifiers=[],unbreakable={},tooltip_display={hidden_components:["minecraft:unbreakable","minecraft:enchantments"]}]
 
 ##Safety features
 #Only lobby players in Parkour mode

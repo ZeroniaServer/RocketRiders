@@ -15,19 +15,74 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [2]
+                  "floats": [
+                    2
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Rifter\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Heavy] ",
+                    "color": "dark_red",
+                    "bold": true
+                  },
+                  {
+                    "text": "Rifter",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"34\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"YZEROgame, Chronos22,\",\"color\":\"red\"}]",
-                  "{\"text\":\"& 69thAmendment\",\"color\":\"red\"}",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The Rifter is a observer-engine\",\"color\":\"gray\"}",
-                  "{\"text\":\"missile with plenty of TNT to tear\",\"color\":\"gray\"}",
-                  "{\"text\":\"a rift in the enemy base.\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "34",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.0m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "YZEROgame, Chronos22,",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": "& 69thAmendment",
+                    "color": "red"
+                  },
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The Rifter is a observer-engine",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "missile with plenty of TNT to tear",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "a rift in the enemy base.",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",
@@ -62,19 +117,74 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [1]
+                  "floats": [
+                    1
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"dark_red\",\"bold\":true},{\"text\":\"Rifter\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Heavy] ",
+                    "color": "dark_red",
+                    "bold": true
+                  },
+                  {
+                    "text": "Rifter",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"34\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"YZEROgame, Chronos22,\",\"color\":\"red\"}]",
-                  "{\"text\":\"69thAmendment\",\"color\":\"red\"}",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The Rifter is a observer-engine\",\"color\":\"gray\"}",
-                  "{\"text\":\"missile with plenty of TNT to tear\",\"color\":\"gray\"}",
-                  "{\"text\":\"a rift in the enemy base.\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "34",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.0m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "YZEROgame, Chronos22,",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": "69thAmendment",
+                    "color": "red"
+                  },
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The Rifter is a observer-engine",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "missile with plenty of TNT to tear",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "a rift in the enemy base.",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",

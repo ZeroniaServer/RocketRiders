@@ -15,18 +15,70 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [2]
+                  "floats": [
+                    2
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Citadel\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true
+                  },
+                  {
+                    "text": "Citadel",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"16\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22 & YZEROgame\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The Citadel is good for surprise attacks.\",\"color\":\"gray\"}",
-                  "{\"text\":\"You can climb inside of the missile using\",\"color\":\"gray\"}",
-                  "{\"text\":\"the trapdoor on top of it.\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "16",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.0m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "Chronos22 & YZEROgame",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The Citadel is good for surprise attacks.",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "You can climb inside of the missile using",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "the trapdoor on top of it.",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",
@@ -61,18 +113,70 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [1]
+                  "floats": [
+                    1
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Citadel\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true
+                  },
+                  {
+                    "text": "Citadel",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"16\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22 & YZEROgame\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The Citadel is good for surprise attacks.\",\"color\":\"gray\"}",
-                  "{\"text\":\"You can climb inside of the missile using\",\"color\":\"gray\"}",
-                  "{\"text\":\"the trapdoor on top of it.\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "16",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.0m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "Chronos22 & YZEROgame",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The Citadel is good for surprise attacks.",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "You can climb inside of the missile using",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "the trapdoor on top of it.",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",

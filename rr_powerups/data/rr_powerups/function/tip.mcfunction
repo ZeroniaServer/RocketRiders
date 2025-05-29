@@ -93,7 +93,7 @@ execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip20] as @a[x=0,tag=!hideTips
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip20] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip20
 
 #Opt out message
-execute as @e[x=0,type=marker,tag=SelectedTip] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger toggleTips set 1"}},{"text":" to opt out of these messages.","color":"#888888","italic":true}]
+execute as @e[x=0,type=marker,tag=SelectedTip] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger toggleTips set 1"}},{"text":" to opt out of these messages.","color":"#888888","italic":true}]
 
 #Kills all tip markers and resets timer
 kill @e[x=0,type=marker,tag=HandyTip]

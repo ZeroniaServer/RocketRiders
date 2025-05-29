@@ -16,8 +16,7 @@
           "custom_effects": [],
           "potion": "minecraft:awkward",
           "custom_color": 16747545
-        },
-        "minecraft:hide_additional_tooltip": {}
+        }
       }
     },
     "frame": "goal",

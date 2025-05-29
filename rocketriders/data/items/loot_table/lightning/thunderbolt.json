@@ -15,18 +15,70 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [2]
+                  "floats": [
+                    2
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Lightning] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Thunderbolt\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Lightning] ",
+                    "color": "yellow",
+                    "bold": true
+                  },
+                  {
+                    "text": "Thunderbolt",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"15\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"3.3m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Rubix_One\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"Breaking too much TNT may stop this missile,\",\"color\":\"gray\"}",
-                  "{\"text\":\"but its length and 2x2 form factor make it\",\"color\":\"gray\"}",
-                  "{\"text\":\"easier to cruise on to the enemy base!\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "15",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "3.3m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "Rubix_One",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "Breaking too much TNT may stop this missile,",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "but its length and 2x2 form factor make it",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "easier to cruise on to the enemy base!",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",
@@ -61,18 +113,70 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [1]
+                  "floats": [
+                    1
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Lightning] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Thunderbolt\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Lightning] ",
+                    "color": "yellow",
+                    "bold": true
+                  },
+                  {
+                    "text": "Thunderbolt",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"15\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"3.3m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Rubix_One\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"Breaking too much TNT may stop this missile,\",\"color\":\"gray\"}",
-                  "{\"text\":\"but its length and 2x2 form factor make it\",\"color\":\"gray\"}",
-                  "{\"text\":\"easier to cruise on to the enemy base!\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "15",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "3.3m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "Rubix_One",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "Breaking too much TNT may stop this missile,",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "but its length and 2x2 form factor make it",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "easier to cruise on to the enemy base!",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",

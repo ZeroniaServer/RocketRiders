@@ -15,19 +15,71 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [2]
+                  "floats": [
+                    2
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:enchantment_glint_override": true,
-                "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Duplex\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Special] ",
+                    "color": "dark_purple",
+                    "bold": true
+                  },
+                  {
+                    "text": "Duplex",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"16 (+4 carts)\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22 & YZEROgame\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The Duplex works like a ShieldBuster but it takes a\",\"color\":\"gray\"}",
-                  "{\"text\":\"more creative approach. Instead of going through\",\"color\":\"gray\"}",
-                  "{\"text\":\"a Shield, it will blow it up and keep on flying!\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "16 (+4 carts)",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.0m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "Chronos22 & YZEROgame",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The Duplex works like a ShieldBuster but it takes a",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "more creative approach. Instead of going through",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "a Shield, it will blow it up and keep on flying!",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",
@@ -62,19 +114,71 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [1]
+                  "floats": [
+                    1
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:enchantment_glint_override": true,
-                "minecraft:custom_name": "[{\"text\":\"[Special] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"Duplex\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Special] ",
+                    "color": "dark_purple",
+                    "bold": true
+                  },
+                  {
+                    "text": "Duplex",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"16 (+4 carts)\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"Chronos22 & YZEROgame\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The Duplex works like a ShieldBuster but it takes a\",\"color\":\"gray\"}",
-                  "{\"text\":\"more creative approach. Instead of going though\",\"color\":\"gray\"}",
-                  "{\"text\":\"a Shield, it will blow it up and keep on flying!\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "16 (+4 carts)",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.0m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "Chronos22 & YZEROgame",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The Duplex works like a ShieldBuster but it takes a",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "more creative approach. Instead of going though",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "a Shield, it will blow it up and keep on flying!",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",

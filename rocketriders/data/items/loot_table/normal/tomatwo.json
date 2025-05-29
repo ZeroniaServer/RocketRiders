@@ -15,18 +15,70 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [2]
+                  "floats": [
+                    2
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"TomaTwo\",\"color\":\"gold\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true
+                  },
+                  {
+                    "text": "TomaTwo",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"16\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"YZEROgame & Chronos22\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The TomaTwo is a missile inspired by\",\"color\":\"gray\"}",
-                  "{\"text\":\"the Tomahawk from Missile Wars. This\",\"color\":\"gray\"}",
-                  "{\"text\":\"missile uses an observer engine.\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "16",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.0m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "YZEROgame & Chronos22",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The TomaTwo is a missile inspired by",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "the Tomahawk from Missile Wars. This",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "missile uses an observer engine.",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",
@@ -61,18 +113,70 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
-                  "floats": [1]
+                  "floats": [
+                    1
+                  ]
                 },
                 "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": "[{\"text\":\"[Normal] \",\"color\":\"green\",\"bold\":true},{\"text\":\"TomaTwo\",\"color\":\"blue\",\"bold\":true}]",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true
+                  },
+                  {
+                    "text": "TomaTwo",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ],
                 "minecraft:lore": [
-                  "[{\"text\":\"Amount of TNT: \",\"color\":\"gray\"},{\"text\":\"16\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Speed: \",\"color\":\"gray\"},{\"text\":\"2.0m/s\",\"color\":\"red\"}]",
-                  "[{\"text\":\"Made by: \",\"color\":\"gray\"},{\"text\":\"YZEROgame & Chronos22\",\"color\":\"red\"}]",
-                  "{\"text\":\" \",\"color\":\"gray\"}",
-                  "{\"text\":\"The TomaTwo is a missile inspired by\",\"color\":\"gray\"}",
-                  "{\"text\":\"the Tomahawk from Missile Wars. This\",\"color\":\"gray\"}",
-                  "{\"text\":\"missile uses an observer engine.\",\"color\":\"gray\"}"
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "16",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "2.0m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray"
+                    },
+                    {
+                      "text": "YZEROgame & Chronos22",
+                      "color": "red"
+                    }
+                  ],
+                  {
+                    "text": " ",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "The TomaTwo is a missile inspired by",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "the Tomahawk from Missile Wars. This",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "missile uses an observer engine.",
+                    "color": "gray"
+                  }
                 ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",

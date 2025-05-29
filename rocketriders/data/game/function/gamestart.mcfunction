@@ -138,8 +138,8 @@ clear @a[x=0,tag=JoinSpec]
 scoreboard players enable @a[x=0,team=Spectator] leaveSpec
 tag @a[x=0,scores={leaveSpec=1..}] add LeaveTeams
 scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster to stop spectating!","color":"dark_green","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","clickEvent":{"action":"run_command","value":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"}},{"text":" or fly into the green particle cluster to stop spectating!","color":"dark_green","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]

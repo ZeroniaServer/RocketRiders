@@ -1,7 +1,7 @@
 ##Allows players to forfeit the game by dropping their Shooting Sabers and confirming in chat
 execute if entity @s[tag=!SMActive] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run scoreboard players enable @s LeaveMidgame
-execute if entity @s[tag=!SMActive] run tellraw @a[x=0,team=Blue,scores={dropBow=1..}] [{"text":"Are you sure you want to forfeit the match? ","color":"red"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
-execute if entity @s[tag=!SMActive] run tellraw @a[x=0,team=Yellow,scores={dropBow=1..}] [{"text":"Are you sure you want to forfeit the match? ","color":"red"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/trigger LeaveMidgame set 1"}}]
+execute if entity @s[tag=!SMActive] run tellraw @a[x=0,team=Blue,scores={dropBow=1..}] [{"text":"Are you sure you want to forfeit the match? ","color":"red"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"click_event":{"action":"run_command","command":"/trigger LeaveMidgame set 1"}}]
+execute if entity @s[tag=!SMActive] run tellraw @a[x=0,team=Yellow,scores={dropBow=1..}] [{"text":"Are you sure you want to forfeit the match? ","color":"red"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"click_event":{"action":"run_command","command":"/trigger LeaveMidgame set 1"}}]
 execute if entity @s[tag=!SMActive] if entity @s[tag=!noYZELO] run tellraw @a[x=0,scores={dropBow=1..}] {"text":"Note: you will lose XP!","color":"dark_red","italic":true}
 execute if entity @s[tag=!SMActive] run scoreboard players set @a[x=0,scores={dropBow=1..}] dropBow 0
 execute if entity @s[tag=!SMActive] as @a[x=0,team=Blue,scores={LeaveMidgame=1}] run tellraw @a[x=0] [{"selector":"@s"},{"text":" forfeited the match!","color":"red"}]

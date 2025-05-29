@@ -22,7 +22,7 @@ execute if entity @s[tag=Sonar] as @e[x=0,type=egg] run data merge entity @s {Gl
 execute if entity @s[tag=Sonar] as @e[x=0,type=firework_rocket] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=fireball] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=dragon_fireball] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=potion] run data merge entity @s {Glowing:1b}
+execute if entity @s[tag=Sonar] as @e[x=0,type=#custom:potion] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=tnt] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=tnt_minecart] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=item] run data merge entity @s {Glowing:1b}

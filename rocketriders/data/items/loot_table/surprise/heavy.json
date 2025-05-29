@@ -18,12 +18,28 @@
                   "function": "minecraft:set_components",
                   "components": {
                     "minecraft:custom_model_data": {
-                      "floats": [2]
+                      "floats": [
+                        2
+                      ]
                     },
                     "minecraft:custom_data": "{Missile:1b}",
-                    "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"gold\",\"bold\":true}]",
+                    "minecraft:custom_name": [
+                      {
+                        "text": "[Heavy] ",
+                        "color": "red",
+                        "bold": true
+                      },
+                      {
+                        "text": "Surprise Egg",
+                        "color": "gold",
+                        "bold": true
+                      }
+                    ],
                     "minecraft:lore": [
-                      "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
+                      {
+                        "text": "Wonder what it spawns?",
+                        "color": "gray"
+                      }
                     ],
                     "minecraft:entity_data": {
                       "id": "minecraft:marker",
@@ -58,12 +74,28 @@
                   "function": "minecraft:set_components",
                   "components": {
                     "minecraft:custom_model_data": {
-                      "floats": [2]
+                      "floats": [
+                        2
+                      ]
                     },
                     "minecraft:custom_data": "{Missile:1b}",
-                    "minecraft:custom_name": "[{\"text\":\"[Heavy] \",\"color\":\"red\",\"bold\":true},{\"text\":\"Surprise Egg\",\"color\":\"blue\",\"bold\":true}]",
+                    "minecraft:custom_name": [
+                      {
+                        "text": "[Heavy] ",
+                        "color": "red",
+                        "bold": true
+                      },
+                      {
+                        "text": "Surprise Egg",
+                        "color": "blue",
+                        "bold": true
+                      }
+                    ],
                     "minecraft:lore": [
-                      "{\"text\":\"Wonder what it spawns?\",\"color\":\"gray\"}"
+                      {
+                        "text": "Wonder what it spawns?",
+                        "color": "gray"
+                      }
                     ],
                     "minecraft:entity_data": {
                       "id": "minecraft:marker",

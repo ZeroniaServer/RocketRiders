@@ -29,7 +29,7 @@ execute as @e[x=0,type=tnt] at @s run kill @s[predicate=game:above_roof]
 execute as @e[x=0,type=tnt_minecart] at @s run kill @s[predicate=game:above_roof]
 execute as @e[x=0,type=marker,tag=novatracker] at @s run kill @s[predicate=game:above_roof]
 execute as @e[x=0,type=firework_rocket,scores={novatimer=1..}] at @s run kill @s[predicate=game:above_roof]
-execute as @e[x=0,type=potion] at @s run kill @s[predicate=game:above_roof]
+execute as @e[x=0,type=#custom:potion] at @s run kill @s[predicate=game:above_roof]
 
 #Kill everything below void
 execute unless entity @s[tag=customVoid] as @e[x=0,type=ender_pearl] at @s run kill @s[predicate=game:in_void]
@@ -41,7 +41,7 @@ execute unless entity @s[tag=customVoid] as @e[x=0,type=tnt] at @s run kill @s[p
 execute unless entity @s[tag=customVoid] as @e[x=0,type=tnt_minecart] at @s run kill @s[predicate=game:in_void]
 execute unless entity @s[tag=customVoid] as @e[x=0,type=marker,tag=novatracker] at @s run kill @s[predicate=game:in_void]
 execute unless entity @s[tag=customVoid] as @e[x=0,type=firework_rocket,scores={novatimer=1..}] at @s run kill @s[predicate=game:in_void]
-execute unless entity @s[tag=customVoid] as @e[x=0,type=potion] at @s run kill @s[predicate=game:in_void]
+execute unless entity @s[tag=customVoid] as @e[x=0,type=#custom:potion] at @s run kill @s[predicate=game:in_void]
 
 #Kill everything near world border
 execute as @e[x=0,type=arrow] at @s unless predicate custom:insideborder run kill @s
@@ -54,4 +54,4 @@ execute as @e[x=0,type=tnt] at @s unless predicate custom:insideborder run kill 
 execute as @e[x=0,type=tnt_minecart] at @s unless predicate custom:insideborder run kill @s
 execute as @e[x=0,type=marker,tag=novatracker] at @s unless predicate custom:insideborder run kill @s
 execute as @e[x=0,type=firework_rocket,scores={novatimer=1..}] at @s unless predicate custom:insideborder run kill @s
-execute as @e[x=0,type=potion] at @s unless predicate custom:insideborder run kill @s
+execute as @e[x=0,type=#custom:potion] at @s unless predicate custom:insideborder run kill @s

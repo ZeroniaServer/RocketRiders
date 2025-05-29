@@ -21,7 +21,7 @@ scoreboard objectives remove nnhealth_old
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 
 setblock -69 190 78 air
-setblock -69 190 78 minecraft:cherry_wall_sign[facing=east,waterlogged=false]{back_text:{color:"black",has_glowing_text:0b,messages:['""','""','""','""']},front_text:{color:"purple",has_glowing_text:1b,messages:['""','{"bold":true,"clickEvent":{"action":"run_command","value":"/function arenaclear:testvalidclear"},"color":"light_purple","text":"Start"}','{"bold":true,"clickEvent":{"action":"run_command","value":"/execute if entity @e[tag=CancelJoin,limit=1] as @e[tag=Selection,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] run tellraw @s {\\"text\\":\\"You must have at least one Missile enabled to start the game\\",\\"color\\":\\"red\\"}"},"color":"light_purple","text":"Game"}','""']},is_waxed:0b}
+setblock -69 190 78 minecraft:cherry_wall_sign[facing=east,waterlogged=false]{back_text:{color:"black",has_glowing_text:0b,messages:["","","",""]},front_text:{color:"purple",has_glowing_text:1b,messages:["",{"bold":true,"click_event":{"action":"run_command","command":"/function arenaclear:testvalidclear"},"color":"light_purple","text":"Start"},{"bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[tag=CancelJoin,limit=1] as @e[tag=Selection,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] run tellraw @s {\"text\":\"You must have at least one Missile enabled to start the game\",\"color\":\"red\"}"},"color":"light_purple","text":"Game"},""]},is_waxed:0b}
 
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 
@@ -32,9 +32,9 @@ setblock -47 211 75 minecraft:player_head[powered=false,rotation=5]{profile:{id:
 kill @e[x=0,type=interaction,tag=ZeroniaCredit]
 summon interaction -47 211 81 {width:0.75,height:0.75,response:1b,Tags:["ZeroniaCredit1"]}
 summon interaction -47 211 75 {width:0.75,height:0.75,response:1b,Tags:["ZeroniaCredit2"]}
-data modify entity 49548abb-1add-4dc9-bef0-a23101ae54d1 CustomName set value '{"text":"Game Rules","color":"yellow"}'
-data modify entity cdf45025-712b-428c-99d5-5b9ffe760c26 CustomName set value '{"text":"Item Categories","color":"aqua"}'
-data modify entity 518e79cf-2fd6-4b68-8fdf-02967838e7e5 CustomName set value '{"text":"Jump to go back!","color":"gray"}'
+data modify entity 49548abb-1add-4dc9-bef0-a23101ae54d1 CustomName set value {"text":"Game Rules","color":"yellow"}
+data modify entity cdf45025-712b-428c-99d5-5b9ffe760c26 CustomName set value {"text":"Item Categories","color":"aqua"}
+data modify entity 518e79cf-2fd6-4b68-8fdf-02967838e7e5 CustomName set value {"text":"Jump to go back!","color":"gray"}
 fill -76 200 92 -70 203 86 bamboo_fence replace birch_fence
 fill -76 201 92 -70 203 86 bamboo_slab[type=double] replace birch_slab[type=double]
 fill -76 201 92 -70 203 86 bamboo_slab[type=top] replace birch_slab[type=top]

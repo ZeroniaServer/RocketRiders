@@ -51,8 +51,8 @@ tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" Activ
 tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
 
 ### 1 shield type.
-summon marker ~ ~ ~ {CustomName:'{"text":"Shield","color":"light_purple"}',Tags:["RankedRNG","Shield","RShieldRNG","RUtilRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Obsidian Shield","color":"light_purple"}',Tags:["RankedRNG","Obshield","RShieldRNG","RUtilRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Shield","color":"light_purple"},Tags:["RankedRNG","Shield","RShieldRNG","RUtilRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Obsidian Shield","color":"light_purple"},Tags:["RankedRNG","Obshield","RShieldRNG","RUtilRNG"]}
 tag @e[x=0,type=marker,tag=RShieldRNG,limit=1,sort=random] add SelRRNG
 
 #normal shield selected
@@ -64,7 +64,7 @@ execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run tag @s add rn
 execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run tag @s remove rngShield
 
 ### 1 projectile type (only fireballs, novas removed)
-summon marker ~ ~ ~ {CustomName:'{"text":"Fireball","color":"light_purple"}',Tags:["RankedRNG","Fireball","RProjecRNG","RUtilRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Fireball","color":"light_purple"},Tags:["RankedRNG","Fireball","RProjecRNG","RUtilRNG"]}
 tag @e[x=0,type=marker,tag=RProjecRNG,limit=1,sort=random] add SelRRNG
 
 #fireball selected
@@ -88,18 +88,18 @@ execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s add
 execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s remove rngHur
 
 ### 6/10 non-lightning missiles
-summon marker ~ ~ ~ {CustomName:'{"text":"A.N.T","color":"green"}',Tags:["RankedRNG","Ant","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Gemini","color":"green"}',Tags:["RankedRNG","Gemini","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"TomaTwo","color":"green"}',Tags:["RankedRNG","TomaTwo","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Auxiliary","color":"red"}',Tags:["RankedRNG","Auxiliary","RMisRNG","RHeavyRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Blade","color":"green"}',Tags:["RankedRNG","Blade","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Catapult","color":"green"}',Tags:["RankedRNG","Catapult","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Slasher","color":"green"}',Tags:["RankedRNG","Slasher","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Elder Guardian","color":"green"}',Tags:["RankedRNG","Guard","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Lifter","color":"green"}',Tags:["RankedRNG","Lifter","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Chronullifier","color":"green"}',Tags:["RankedRNG","Nullifier","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Citadel","color":"green"}',Tags:["RankedRNG","Citadel","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:'{"text":"Warhead","color":"red"}',Tags:["RankedRNG","Warhead","RMisRNG","RHeavyRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"A.N.T","color":"green"},Tags:["RankedRNG","Ant","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Gemini","color":"green"},Tags:["RankedRNG","Gemini","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"TomaTwo","color":"green"},Tags:["RankedRNG","TomaTwo","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Auxiliary","color":"red"},Tags:["RankedRNG","Auxiliary","RMisRNG","RHeavyRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Blade","color":"green"},Tags:["RankedRNG","Blade","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Catapult","color":"green"},Tags:["RankedRNG","Catapult","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Slasher","color":"green"},Tags:["RankedRNG","Slasher","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Elder Guardian","color":"green"},Tags:["RankedRNG","Guard","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Lifter","color":"green"},Tags:["RankedRNG","Lifter","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Chronullifier","color":"green"},Tags:["RankedRNG","Nullifier","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Citadel","color":"green"},Tags:["RankedRNG","Citadel","RMisRNG"]}
+summon marker ~ ~ ~ {CustomName:{"text":"Warhead","color":"red"},Tags:["RankedRNG","Warhead","RMisRNG","RHeavyRNG"]}
 
 tag @e[x=0,type=marker,tag=RMisRNG,tag=!SelRRNG,limit=6,sort=random] add SelRRNG
 

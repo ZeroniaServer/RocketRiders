@@ -10,76 +10,25 @@ execute if entity @s[scores={count=1..399}] unless entity @a[x=0,team=Lobby,tag=
 execute if entity @s[scores={count=1..399}] unless entity @a[x=0,team=Lobby,tag=!inParkour,tag=!vanished] run scoreboard players set @s count 400
 execute if entity @s[scores={count=1..600}] run scoreboard players set @a[x=0] dropBow 0
 execute if entity @s[scores={count=1..599}] run bossbar set rr:startgame color green
-execute if entity @s[scores={count=1}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"30","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=1}] run bossbar set rr:startgame value 30
-execute if entity @s[scores={count=20}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"29","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=20}] run bossbar set rr:startgame value 29
-execute if entity @s[scores={count=40}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"28","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=40}] run bossbar set rr:startgame value 28
-execute if entity @s[scores={count=60}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"27","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=60}] run bossbar set rr:startgame value 27
-execute if entity @s[scores={count=80}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"26","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=80}] run bossbar set rr:startgame value 26
-execute if entity @s[scores={count=100}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"25","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=100}] run bossbar set rr:startgame value 25
-execute if entity @s[scores={count=120}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"24","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=120}] run bossbar set rr:startgame value 24
-execute if entity @s[scores={count=140}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"23","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=140}] run bossbar set rr:startgame value 23
-execute if entity @s[scores={count=160}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"22","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=160}] run bossbar set rr:startgame value 22
-execute if entity @s[scores={count=180}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"21","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=180}] run bossbar set rr:startgame value 21
-execute if entity @s[scores={count=200}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"20","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=200}] run bossbar set rr:startgame value 20
-execute if entity @s[scores={count=220}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"19","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=220}] run bossbar set rr:startgame value 19
-execute if entity @s[scores={count=240}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"18","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=240}] run bossbar set rr:startgame value 18
-execute if entity @s[scores={count=260}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"17","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=260}] run bossbar set rr:startgame value 17
-execute if entity @s[scores={count=280}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"16","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=280}] run bossbar set rr:startgame value 16
-execute if entity @s[scores={count=300}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"15","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=300}] run bossbar set rr:startgame value 15
-execute if entity @s[scores={count=320}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"14","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=320}] run bossbar set rr:startgame value 14
-execute if entity @s[scores={count=340}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"13","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=340}] run bossbar set rr:startgame value 13
-execute if entity @s[scores={count=360}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"12","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=360}] run bossbar set rr:startgame value 12
-execute if entity @s[scores={count=380}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"11","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=380}] run bossbar set rr:startgame value 11
-execute if entity @s[scores={count=400}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"10","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=400}] run bossbar set rr:startgame value 10
-execute if entity @s[scores={count=400}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
-execute if entity @s[scores={count=420}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"9","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=420}] run bossbar set rr:startgame value 9
-execute if entity @s[scores={count=420}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
-execute if entity @s[scores={count=440}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"8","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=440}] run bossbar set rr:startgame value 8
-execute if entity @s[scores={count=440}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
-execute if entity @s[scores={count=460}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"7","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=460}] run bossbar set rr:startgame value 7
-execute if entity @s[scores={count=460}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
-execute if entity @s[scores={count=480}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"6","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=480}] run bossbar set rr:startgame value 6
-execute if entity @s[scores={count=480}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
-execute if entity @s[scores={count=500}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"5","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=500}] run bossbar set rr:startgame value 5
-execute if entity @s[scores={count=500}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
-execute if entity @s[scores={count=520}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"4","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=520}] run bossbar set rr:startgame value 4
-execute if entity @s[scores={count=520}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.6
-execute if entity @s[scores={count=540}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"3","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=540}] run bossbar set rr:startgame value 3
-execute if entity @s[scores={count=540}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.7
-execute if entity @s[scores={count=560}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"2","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
-execute if entity @s[scores={count=560}] run bossbar set rr:startgame value 2
-execute if entity @s[scores={count=560}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.8
-execute if entity @s[scores={count=580}] run bossbar set rr:startgame name ["",{"text":"The game will begin in ","color":"green"},{"text":"1","bold":true,"color":"dark_green"},{"text":" second.","color":"green"}]
-execute if entity @s[scores={count=580}] run bossbar set rr:startgame value 1
-execute if entity @s[scores={count=580}] as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
+
+#Countdown bossbar
+execute if score @s count matches 1..599 run scoreboard players set $seconds count 619
+execute if score @s count matches 1..599 run scoreboard players operation $seconds count -= @s count
+execute if score @s count matches 1..599 store result bossbar rr:startgame value run scoreboard players operation $seconds count /= $ticks_per_second Constant
+execute if score @s count matches 1..579 run bossbar set rr:startgame name [{color:"green",text:"The game will begin in ",color:"green"},{bold:true,color:"dark_green",score:{name:"$seconds",objective:"count"}}," seconds."]
+execute if score @s count matches 580..599 run bossbar set rr:startgame name [{color:"green",text:"The game will begin in ",color:"green"},{bold:true,color:"dark_green",text:"1"}," second."]
+
+#Countdown dings (10 to 1)
+execute if score @s count matches 400 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if score @s count matches 420 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if score @s count matches 440 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if score @s count matches 460 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if score @s count matches 480 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if score @s count matches 500 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
+execute if score @s count matches 520 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.6
+execute if score @s count matches 540 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.7
+execute if score @s count matches 560 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.8
+execute if score @s count matches 580 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
 
 ##As the game starts, add a UUIDTracker score
 execute if entity @s[tag=GameStarted] run scoreboard objectives add UUIDTracker dummy

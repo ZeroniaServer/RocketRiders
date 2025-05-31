@@ -42,6 +42,9 @@ schedule function world_updates:check_updates_indimension 2s replace
 bossbar add rr:startgame ""
 
 #Scores
+scoreboard objectives add Constant dummy
+scoreboard players set $ticks_per_second Constant 20
+
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
 scoreboard objectives add z dummy

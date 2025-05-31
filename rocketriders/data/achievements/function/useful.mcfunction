@@ -2,13 +2,10 @@
 ##Detects if a player successfully uses a Splash to prevent a TNT explosion
 execute if score @s useful matches 20.. run return fail
 
-scoreboard players operation $useful playerUUID = @s playerUUID
-execute as @e[x=0,type=area_effect_cloud,tag=splash_alone] if score @s splashOwnerUUID = $useful playerUUID run tag @s add currSplash
-execute as @e[x=0,type=area_effect_cloud,tag=currSplash] at @s run function achievements:useful_track
-scoreboard players operation @s useful += @e[x=0,type=area_effect_cloud,tag=currSplash] useful
-scoreboard players reset $useful playerUUID
-scoreboard players reset @e[x=0,type=area_effect_cloud,tag=currSplash] useful
-tag @e[x=0,type=area_effect_cloud,tag=currSplash] remove currSplash
+tag @s add matchOrigin
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone] if function custom:match_origin at @s run tag @e[type=tnt,distance=..7,tag=!useful,predicate=custom:is_underwater,nbt={fuse:1s}] add useful
+tag @s remove matchOrigin
+execute at @e[type=tnt,tag=useful] run scoreboard players add @s useful 1
 tag @e[x=0,type=tnt,tag=useful] remove useful
 
 execute if score @s prevUseful = @s useful run return fail

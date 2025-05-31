@@ -12,7 +12,7 @@ execute store success score $splash splashtick if score $splash splashtick match
 execute store result entity @s Air short 1 run scoreboard players get $splash splashtick
 
 ##Placing water upon impact
-execute as @e[x=0,type=area_effect_cloud,nbt={potion_contents:{potion:"minecraft:water"}},tag=!splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["splash","splash_alone","SmartClearAECsplash"],Particle:{type:"block",block_state:"minecraft:air"}}
+execute as @e[x=0,type=area_effect_cloud,predicate=custom:is_water_area_effect_cloud,tag=!splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["splash","splash_alone","SmartClearAECsplash"],Particle:{type:"block",block_state:"minecraft:air"}}
 
 #Kill if near spawnpoints
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
@@ -27,7 +27,6 @@ execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] run
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos z prepend from entity @s Pos[2]
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] splashCount 1
 tag @e[x=0,type=area_effect_cloud,tag=splash_alone] add splashMarked
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[x=0,type=area_effect_cloud,tag=splash_alone] store result score @s splashOwnerUUID run data get entity @s Owner[0]
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run data merge entity @s {Duration:100}
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run tag @s add markedForDeath
 execute unless entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run kill @e[x=0,type=area_effect_cloud,tag=splash_alone]

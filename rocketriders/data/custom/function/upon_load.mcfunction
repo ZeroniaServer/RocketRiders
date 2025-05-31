@@ -85,7 +85,6 @@ scoreboard objectives add dropBarrier minecraft.dropped:minecraft.barrier
 scoreboard objectives add regifts dummy
 scoreboard objectives add gravShot dummy
 scoreboard objectives add useful dummy
-scoreboard objectives add splashOwnerUUID dummy
 scoreboard objectives add RepeatSettings dummy
 scoreboard objectives add bMissileCount dummy
 scoreboard objectives add yMissileCount dummy

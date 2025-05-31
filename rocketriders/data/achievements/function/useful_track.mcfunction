@@ -1,2 +1,0 @@
-execute store result score @s useful if entity @e[type=tnt,predicate=custom:is_underwater,distance=..7,nbt={fuse:1s},tag=!useful]
-tag @e[type=tnt,predicate=custom:is_underwater,distance=..7,nbt={fuse:1s},tag=!useful] add useful

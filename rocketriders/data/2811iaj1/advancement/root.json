@@ -18,7 +18,7 @@
     "show_toast": true,
     "announce_to_chat": false,
     "hidden": false,
-    "background": "minecraft:textures/block/netherite_block.png"
+    "background": "minecraft:block/netherite_block"
   },
   "criteria": {
     "impossible": {

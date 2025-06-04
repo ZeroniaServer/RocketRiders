@@ -45,10 +45,10 @@ execute as @e[x=0,type=item] if items entity @s contents arrow at @s run functio
 
 #Give knights new shields when they respawn
 execute as @a[x=0,scores={crusadekit=1,deathCooldown=5}] at @s run clear @s shield
-execute as @a[x=0,team=Blue,scores={crusadekit=1,deathCooldown=5}] if items entity @s weapon.offhand * run give @s minecraft:shield[max_damage=10,custom_name=[{"text":"Knight Shield","italic":false,"bold":true,"color":"blue"}],lore=[[{"translate":"A not-so-sturdy shield."}]],base_color="blue",banner_patterns=[{pattern:"flower",color:"light_blue"},{pattern:"border",color:"light_blue"}]]
-execute as @a[x=0,team=Yellow,scores={crusadekit=1,deathCooldown=5}] if items entity @s weapon.offhand * run give @s minecraft:shield[max_damage=10,custom_name=[{"text":"Knight Shield","italic":false,"bold":true,"color":"gold"}],lore=[[{"translate":"A not-so-sturdy shield."}]],base_color="yellow",banner_patterns=[{pattern:"flower",color:"orange"},{pattern:"border",color:"orange"}]]
-execute as @a[x=0,team=Blue,scores={crusadekit=1,deathCooldown=5}] unless items entity @s weapon.offhand * run item replace entity @s weapon.offhand with minecraft:shield[max_damage=10,custom_name=[{"text":"Knight Shield","italic":false,"bold":true,"color":"blue"}],lore=[[{"translate":"A not-so-sturdy shield."}]],base_color="blue",banner_patterns=[{pattern:"flower",color:"light_blue"},{pattern:"border",color:"light_blue"}]]
-execute as @a[x=0,team=Yellow,scores={crusadekit=1,deathCooldown=5}] unless items entity @s weapon.offhand * run item replace entity @s weapon.offhand with minecraft:shield[max_damage=10,custom_name=[{"text":"Knight Shield","italic":false,"bold":true,"color":"gold"}],lore=[[{"translate":"A not-so-sturdy shield."}]],base_color="yellow",banner_patterns=[{pattern:"flower",color:"orange"},{pattern:"border",color:"orange"}]]
+execute as @a[x=0,team=Blue,scores={crusadekit=1,deathCooldown=5}] if items entity @s weapon.offhand * run loot give @s loot items:misc/knight_shield
+execute as @a[x=0,team=Yellow,scores={crusadekit=1,deathCooldown=5}] if items entity @s weapon.offhand * run loot give @s loot items:misc/knight_shield
+execute as @a[x=0,team=Blue,scores={crusadekit=1,deathCooldown=5}] unless items entity @s weapon.offhand * run loot replace entity @s weapon.offhand loot items:misc/knight_shield
+execute as @a[x=0,team=Yellow,scores={crusadekit=1,deathCooldown=5}] unless items entity @s weapon.offhand * run loot replace entity @s weapon.offhand loot items:misc/knight_shield
 #Set banners/light blocks
 #Yellow A
 execute unless block -14 53 38 minecraft:yellow_banner run setblock -14 53 38 minecraft:yellow_banner[rotation=8]{patterns:[{pattern:"minecraft:stripe_middle",color:"orange"},{pattern:"minecraft:stripe_left",color:"orange"},{pattern:"minecraft:stripe_right",color:"orange"},{pattern:"minecraft:stripe_top",color:"orange"},{pattern:"minecraft:border",color:"yellow"}]}

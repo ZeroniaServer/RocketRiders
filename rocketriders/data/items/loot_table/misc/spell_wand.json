@@ -1,0 +1,103 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "blaze_rod",
+          "functions": [
+            {
+              "function": "minecraft:set_item",
+              "item": "minecraft:breeze_rod",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    1
+                  ]
+                },
+                "minecraft:unbreakable": {},
+                "minecraft:custom_name": {
+                  "text": "Spell Wand",
+                  "italic": false,
+                  "bold": true,
+                  "color": "white"
+                },
+                "minecraft:lore": [
+                  {
+                    "translate": "A special wand, made to"
+                  },
+                  {
+                    "translate": "set enemies on fire!"
+                  }
+                ],
+                "minecraft:enchantments": {
+                  "minecraft:fire_aspect": 2,
+                  "minecraft:sharpness": 2
+                },
+                "minecraft:consumable": {
+                  "animation": "block",
+                  "consume_seconds": 2147483647,
+                  "has_consume_particles": false,
+                  "sound": "minecraft:intentionally_empty"
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Spell Wand",
+                  "italic": false,
+                  "bold": true,
+                  "color": "blue"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Spell Wand",
+                  "italic": false,
+                  "bold": true,
+                  "color": "gold"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

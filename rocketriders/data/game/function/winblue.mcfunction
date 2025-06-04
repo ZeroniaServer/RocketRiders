@@ -14,9 +14,9 @@ tag @s add BlueWonFirst
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s crossbow[custom_data~{nova:1b}]
 execute as @a[x=0] store result score @s HasFirework run clear @s firework_rocket 0
-item replace entity @a[x=0,team=Blue,scores={HasFirework=0}] hotbar.1 with firework_rocket[custom_name={"text":"Celebratory Fireworks","color":"blue","bold":true,"italic":false},can_place_on={blocks:"#custom:missileandbase"},tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments","minecraft:attribute_modifiers","minecraft:dyed_color","minecraft:can_place_on","minecraft:can_break","minecraft:fireworks","minecraft:trim","minecraft:banner_patterns"]},fireworks={explosions:[{shape:"large_ball",colors:[I;2437522,2651799],has_trail:true,has_twinkle:true}],flight_duration:3}] 5
-item replace entity @a[x=0,team=Blue] armor.chest with elytra[unbreakable={},enchantments={binding_curse:1},enchantment_glint_override=false,attribute_modifiers=[],custom_name=[{"text":"Elytra","color":"blue","bold":true,"italic":false}],tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments"]}] 1
-item replace entity @a[x=0,team=Yellow] armor.head with yellow_banner[enchantments={binding_curse:1},enchantment_glint_override=false,attribute_modifiers=[],custom_name={"text":"Flag of Shameful Loss","color":"gold","bold":true,"italic":false},tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments","minecraft:attribute_modifiers","minecraft:dyed_color","minecraft:can_place_on","minecraft:can_break","minecraft:fireworks","minecraft:trim","minecraft:banner_patterns"]},banner_patterns=[{color:"white",pattern:"half_horizontal"},{color:"white",pattern:"half_horizontal_bottom"},{color:"red",pattern:"stripe_left"},{color:"red",pattern:"stripe_bottom"},{color:"white",pattern:"stripe_left"},{color:"white",pattern:"stripe_bottom"},{color:"white",pattern:"stripe_right"},{color:"white",pattern:"square_top_left"}]] 1
+execute as @a[x=0,team=Blue,scores={HasFirework=0}] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
+execute as @a[x=0,team=Blue] run loot replace entity @s armor.chest loot items:ending/elytra
+execute as @a[x=0,team=Yellow] run loot replace entity @s armor.head loot items:ending/loser_banner
 
 ##Effects
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s slowness

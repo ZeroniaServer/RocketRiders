@@ -1,3 +1,2 @@
-give @s[team=Blue] minecraft:breeze_rod[custom_model_data={floats:[1]},unbreakable={},custom_name=[{"text":"Spell Wand","italic":false,"bold":true,"color":"blue"}],lore=[[{"translate":"A special wand, made"}],[{"translate":"to cast spells!"}]],enchantments={fire_aspect:2,sharpness:2},consumable={animation:"block",consume_seconds:2147483647,has_consume_particles:false,sound:"intentionally_empty"}]
-give @s[team=Yellow] minecraft:blaze_rod[custom_model_data={floats:[1]},unbreakable={},custom_name=[{"text":"Spell Wand","italic":false,"bold":true,"color":"gold"}],lore=[[{"translate":"A special wand, made"}],[{"translate":"to cast spells!"}]],enchantments={fire_aspect:2,sharpness:2},consumable={animation:"block",consume_seconds:2147483647,has_consume_particles:false,sound:"intentionally_empty"}]
+loot give @s loot items:misc/spell_wand
 title @s actionbar {"text":"Spell Wand obtained.","color":"light_purple"}

@@ -1,0 +1,24 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "items:misc/spell_wand",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:enchantments": {
+                  "minecraft:fire_aspect": 2
+                },
+                "!minecraft:consumable": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

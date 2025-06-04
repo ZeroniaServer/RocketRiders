@@ -1,0 +1,21 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "items:misc/shooting_saber",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "!minecraft:attribute_modifiers": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

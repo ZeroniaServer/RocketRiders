@@ -1,3 +1,2 @@
-give @s[team=Blue] minecraft:stone_sword[custom_model_data={floats:[1]},unbreakable={},custom_name=[{"text":"Knight Sword","italic":false,"bold":true,"color":"blue"}],lore=[[{"translate":"A sharp sword, made to"}],[{"translate":"kill the strongest enemies."}]]]
-give @s[team=Yellow] minecraft:stone_sword[custom_model_data={floats:[1]},unbreakable={},custom_name=[{"text":"Knight Sword","italic":false,"bold":true,"color":"gold"}],lore=[[{"translate":"A sharp sword, made to"}],[{"translate":"kill the strongest enemies."}]]]
+loot give @s loot items:misc/knight_sword
 title @s actionbar {"text":"Knight Sword obtained.","color":"light_purple"}

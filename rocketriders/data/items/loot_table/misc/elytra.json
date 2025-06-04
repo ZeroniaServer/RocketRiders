@@ -1,0 +1,69 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:elytra",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:equippable": {
+                  "slot": "chest",
+                  "damage_on_hurt": false,
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "asset_id": "minecraft:elytra"
+                },
+                "minecraft:enchantments": {
+                  "minecraft:binding_curse": 1
+                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:max_damage": 7,
+                "minecraft:custom_name": {
+                  "text": "Elytra",
+                  "color": "dark_purple",
+                  "bold": true
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Useful for short flights!",
+                    "italic": false,
+                    "color": "dark_gray"
+                  },
+                  "",
+                  {
+                    "text": "Breaks when you get near",
+                    "italic": false,
+                    "color": "red"
+                  },
+                  {
+                    "text": "the enemy base.",
+                    "italic": false,
+                    "color": "red"
+                  }
+                ],
+                "minecraft:attribute_modifiers": [
+                  {
+                    "operation": "add_value",
+                    "amount": 3,
+                    "slot": "chest",
+                    "type": "minecraft:armor",
+                    "id": "rr_powerups:elytra_armor"
+                  }
+                ],
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:enchantments",
+                    "minecraft:attribute_modifiers"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

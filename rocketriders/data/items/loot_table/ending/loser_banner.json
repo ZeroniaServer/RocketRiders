@@ -1,0 +1,171 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:white_banner",
+          "functions": [
+            {
+              "function": "minecraft:set_item",
+              "item": "minecraft:blue_banner",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_item",
+              "item": "minecraft:yellow_banner",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:enchantments": {
+                  "minecraft:binding_curse": 1
+                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:unbreakable": {},
+                "minecraft:custom_name": {
+                  "text": "Flag of Shameful Loss",
+                  "color": "white",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:banner_patterns",
+                    "minecraft:enchantments"
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Flag of Shameful Loss",
+                  "color": "blue",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:banner_patterns": [
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:half_horizontal"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:half_horizontal_bottom"
+                  },
+                  {
+                    "color": "blue",
+                    "pattern": "minecraft:stripe_left"
+                  },
+                  {
+                    "color": "blue",
+                    "pattern": "minecraft:stripe_bottom"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_left"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_bottom"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_right"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:square_top_left"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Flag of Shameful Loss",
+                  "color": "gold",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:banner_patterns": [
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:half_horizontal"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:half_horizontal_bottom"
+                  },
+                  {
+                    "color": "red",
+                    "pattern": "minecraft:stripe_left"
+                  },
+                  {
+                    "color": "red",
+                    "pattern": "minecraft:stripe_bottom"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_left"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_bottom"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_right"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "square_top_left"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lingering_potion",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:max_stack_size": 64,
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "dark_purple",
+                    "bold": true
+                  },
+                  {
+                    "text": "Lava Splash",
+                    "color": "white",
+                    "bold": true
+                  }
+                ],
+                "minecraft:lore": [
+                  {
+                    "text": "Spawns a brief lava source where it",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "lands. Used to burn enemies or break",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "your fall in a dumb way.",
+                    "color": "gray"
+                  }
+                ],
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:potion_contents": {
+                  "potion": "minecraft:awkward",
+                  "custom_effects": [
+                    {
+                      "id": "minecraft:saturation",
+                      "amplifier": 0,
+                      "duration": 1,
+                      "show_particles": false
+                    }
+                  ],
+                  "custom_color": 16747545
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:potion_contents"
+                  ]
+                },
+                "minecraft:custom_data": {
+                  "lavasplash": true
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "dark_purple",
+                    "bold": true
+                  },
+                  {
+                    "text": "Lava Splash",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "dark_purple",
+                    "bold": true
+                  },
+                  {
+                    "text": "Lava Splash",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

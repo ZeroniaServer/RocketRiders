@@ -1,0 +1,100 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:shield",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:max_damage": 10,
+                "minecraft:custom_name": {
+                  "text": "Knight Shield",
+                  "italic": false,
+                  "bold": true,
+                  "color": "white"
+                },
+                "minecraft:lore": [
+                  {
+                    "translate": "A not-so-sturdy shield."
+                  }
+                ],
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:base_color",
+                    "minecraft:banner_patterns"
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Knight Shield",
+                  "italic": false,
+                  "bold": true,
+                  "color": "blue"
+                },
+                "minecraft:base_color": "blue",
+                "minecraft:banner_patterns": [
+                  {
+                    "pattern": "minecraft:flower",
+                    "color": "light_blue"
+                  },
+                  {
+                    "pattern": "minecraft:border",
+                    "color": "light_blue"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Knight Shield",
+                  "italic": false,
+                  "bold": true,
+                  "color": "gold"
+                },
+                "minecraft:base_color": "yellow",
+                "minecraft:banner_patterns": [
+                  {
+                    "pattern": "minecraft:flower",
+                    "color": "orange"
+                  },
+                  {
+                    "pattern": "minecraft:border",
+                    "color": "orange"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

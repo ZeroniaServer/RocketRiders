@@ -1,0 +1,30 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "items:misc/shooting_saber",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "translate": "Infinity Saber",
+                  "color": "dark_purple",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:enchantments": {
+                  "minecraft:flame": 1,
+                  "minecraft:infinity": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

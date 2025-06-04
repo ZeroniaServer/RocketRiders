@@ -1,0 +1,107 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_pickaxe",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "translate": "Piercing Pickaxe",
+                  "color": "white",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:lore": [
+                  {
+                    "translate": "A tool used both for"
+                  },
+                  {
+                    "translate": "mining and melee attacks."
+                  }
+                ],
+                "minecraft:unbreakable": {},
+                "minecraft:enchantments": {
+                  "minecraft:sharpness": 4
+                },
+                "minecraft:attribute_modifiers": [
+                  {
+                    "operation": "add_value",
+                    "amount": -2.2,
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_speed",
+                    "id": "rr_ctf:piercing_pickaxe_attack_speed"
+                  }
+                ],
+                "minecraft:can_break": {
+                  "blocks": "#custom:glass"
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:attribute_modifiers",
+                    "minecraft:can_break",
+                    "minecraft:unbreakable"
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "translate": "Piercing Pickaxe",
+                  "color": "blue",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    1
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "translate": "Piercing Pickaxe",
+                  "color": "gold",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    2
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

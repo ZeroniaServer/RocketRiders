@@ -1,0 +1,45 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tipped_arrow",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Levitation Arrow",
+                  "color": "dark_purple",
+                  "italic": true,
+                  "bold": true
+                },
+                "minecraft:potion_contents": {
+                  "custom_effects": [
+                    {
+                      "id": "minecraft:levitation",
+                      "amplifier": 0,
+                      "duration": 200,
+                      "show_particles": true
+                    }
+                  ]
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:potion_contents"
+                  ]
+                },
+                "minecraft:custom_data": {
+                  "Droppable": true,
+                  "tipped_arrow_type": "levitation"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

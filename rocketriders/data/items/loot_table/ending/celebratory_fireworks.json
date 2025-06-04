@@ -1,0 +1,107 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:firework_rocket",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Celebratory Fireworks",
+                  "color": "white",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:can_place_on": {
+                  "blocks": "#custom:missileandbase"
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:can_place_on",
+                    "minecraft:fireworks"
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 5
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Celebratory Fireworks",
+                  "color": "blue",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:fireworks": {
+                  "explosions": [
+                    {
+                      "shape": "large_ball",
+                      "colors": [
+                        2437522,
+                        2651799
+                      ],
+                      "has_trail": true,
+                      "has_twinkle": true
+                    }
+                  ],
+                  "flight_duration": 3
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Celebratory Fireworks",
+                  "color": "gold",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:fireworks": {
+                  "explosions": [
+                    {
+                      "shape": "large_ball",
+                      "colors": [
+                        14602026,
+                        15435844
+                      ],
+                      "has_trail": true,
+                      "has_twinkle": true
+                    }
+                  ],
+                  "flight_duration": 3
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

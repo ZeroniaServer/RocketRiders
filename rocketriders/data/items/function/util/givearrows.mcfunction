@@ -17,18 +17,18 @@ tag @s[tag=!fullOffhand] add notFullOffhand
 execute if items entity @s[tag=!fullOffhand] container.* arrow[count~{max:63}] run tag @s add fullOffhand
 
 #Tries to give enough arrows to refill up to 4
-give @s[scores={HasArrows=0},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 4
-give @s[scores={HasArrows=1},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 3
-give @s[scores={HasArrows=2},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 2
-give @s[scores={HasArrows=3},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 1
-give @s[scores={HasArrows=0},tag=fullOffhand,tag=Infinity] arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 1
+loot give @s[scores={HasArrows=0},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:4}]}]}
+loot give @s[scores={HasArrows=1},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:3}]}]}
+loot give @s[scores={HasArrows=2},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:2}]}]}
+loot give @s[scores={HasArrows=3},tag=!fullHotbar,tag=fullOffhand,tag=!Infinity] loot items:misc/arrow
+loot give @s[scores={HasArrows=0},tag=fullOffhand,tag=Infinity] loot items:misc/arrow
 
 #If possible, places arrows in offhand
-item replace entity @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 4
-item replace entity @s[scores={HasArrows=1},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 3
-item replace entity @s[scores={HasArrows=2},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 2
-item replace entity @s[scores={HasArrows=3},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand with arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 1
-item replace entity @s[scores={HasArrows=0},tag=!fullOffhand,tag=Infinity] weapon.offhand with arrow[custom_name={"text":"Arrow","color":"light_purple","italic":true,"bold":true},custom_data={Droppable:1b}] 1
+loot replace entity @s[scores={HasArrows=0},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:4}]}]}
+loot replace entity @s[scores={HasArrows=1},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:3}]}]}
+loot replace entity @s[scores={HasArrows=2},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:2}]}]}
+loot replace entity @s[scores={HasArrows=3},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] weapon.offhand loot items:misc/arrow
+loot replace entity @s[scores={HasArrows=0},tag=!fullOffhand,tag=Infinity] weapon.offhand loot items:misc/arrow
 execute if entity @s[scores={HasArrows=..3},tag=!fullHotbar,tag=!fullOffhand,tag=!Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 execute if entity @s[scores={HasArrows=0},tag=!fullOffhand,tag=Infinity] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 

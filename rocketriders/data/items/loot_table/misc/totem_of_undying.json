@@ -1,0 +1,41 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:totem_of_undying",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Totem of Undying",
+                  "color": "dark_purple",
+                  "bold": true,
+                  "italic": true
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Hold to survive certain death.",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "Only good for one use.",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "(Does not include void deaths.)",
+                    "color": "gray"
+                  }
+                ],
+                "minecraft:enchantment_glint_override": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

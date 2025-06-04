@@ -14,10 +14,8 @@ tag @s add BothWon
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s crossbow[custom_data~{nova:1b}]
 execute as @a[x=0] store result score @s HasFirework run clear @s firework_rocket 0
-item replace entity @a[x=0,team=Blue,scores={HasFirework=0}] hotbar.1 with firework_rocket[custom_name={"text":"Celebratory Fireworks","color":"blue","bold":true,"italic":false},can_place_on={blocks:"#custom:missileandbase"},tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments","minecraft:attribute_modifiers","minecraft:dyed_color","minecraft:can_place_on","minecraft:can_break","minecraft:fireworks","minecraft:trim","minecraft:banner_patterns"]},fireworks={explosions:[{shape:"large_ball",colors:[I;2437522,2651799],has_trail:true,has_twinkle:true}],flight_duration:3}] 5
-item replace entity @a[x=0,team=Blue] armor.chest with elytra[unbreakable={},enchantments={binding_curse:1},enchantment_glint_override=false,attribute_modifiers=[],custom_name=[{"text":"Elytra","color":"blue","bold":true,"italic":false}],tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments"]}] 1
-item replace entity @a[x=0,team=Yellow,scores={HasFirework=0}] hotbar.1 with firework_rocket[custom_name={"text":"Celebratory Fireworks","color":"gold","bold":true,"italic":false},can_place_on={blocks:"#custom:missileandbase"},tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments","minecraft:attribute_modifiers","minecraft:dyed_color","minecraft:can_place_on","minecraft:can_break","minecraft:fireworks","minecraft:trim","minecraft:banner_patterns"]},fireworks={explosions:[{shape:"large_ball",colors:[I;14602026,15435844],has_trail:true,has_twinkle:true}],flight_duration:3}] 5
-item replace entity @a[x=0,team=Yellow] armor.chest with elytra[unbreakable={},enchantments={binding_curse:1},enchantment_glint_override=false,attribute_modifiers=[],custom_name=[{"text":"Elytra","color":"gold","bold":true,"italic":false}],tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments"]}] 1
+execute as @a[x=0,scores={HasFirework=0}] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
+execute as @a run loot replace entity @s armor.chest loot items:ending/elytra
 
 ##Effects
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s slowness

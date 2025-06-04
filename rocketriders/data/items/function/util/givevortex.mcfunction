@@ -12,8 +12,7 @@ execute if entity @s[scores={HasVortex=1..},tag=!fullHotbar,tag=!itemDeducted] a
 title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Vortex already obtained","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasVortex=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Vortex obtained","color":"aqua"}
-give @s[team=Yellow,scores={HasVortex=0},tag=!fullHotbar] egg[max_stack_size=64,custom_name=[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Vortex","color":"gold","bold":true}],lore=[{"text":"A sky-mine. Blows up when enemies get close,","color":"gray"},{"text":"when missiles pass through it, or when it gets","color":"gray"},{"text":"shot by projectiles. It also follows enemies!","color":"gray"}],item_model="minecraft:ender_eye",custom_model_data={floats:[2]},custom_data={icbm:0b}] 1
-give @s[team=Blue,scores={HasVortex=0},tag=!fullHotbar] egg[max_stack_size=64,custom_name=[{"text":"[Utility] ","color":"light_purple","bold":true},{"text":"Vortex","color":"blue","bold":true}],lore=[{"text":"A sky-mine. Blows up when enemies get close,","color":"gray"},{"text":"when missiles pass through it, or when it gets","color":"gray"},{"text":"shot by projectiles. It also follows enemies!","color":"gray"}],item_model="minecraft:ender_eye",custom_model_data={floats:[1]},custom_data={icbm:0b}] 1
+loot give @s[scores={HasVortex=0},tag=!fullHotbar] loot items:util/vortex
 
 #Game tracking
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenVortex

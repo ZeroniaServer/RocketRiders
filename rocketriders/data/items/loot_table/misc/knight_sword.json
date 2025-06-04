@@ -1,0 +1,91 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone_sword",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:unbreakable": {},
+                "minecraft:custom_name": {
+                  "text": "Knight Sword",
+                  "italic": false,
+                  "bold": true,
+                  "color": "white"
+                },
+                "minecraft:lore": [
+                  {
+                    "translate": "A sharp sword, made to"
+                  },
+                  {
+                    "translate": "kill the strongest enemies."
+                  }
+                ],
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:attribute_modifiers",
+                    "minecraft:unbreakable"
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Knight Sword",
+                  "italic": false,
+                  "bold": true,
+                  "color": "blue"
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    1
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Knight Sword",
+                  "italic": false,
+                  "bold": true,
+                  "color": "gold"
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    2
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

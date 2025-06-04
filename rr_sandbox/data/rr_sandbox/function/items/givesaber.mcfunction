@@ -1,5 +1,4 @@
-give @s[team=Blue,tag=!Infinity] bow[custom_name={"translate":"Shooting Saber","color":"blue","bold":true,"italic":false},lore=[{"translate":"A weapon used for both"},{"translate":"ranged and melee attacks."}],unbreakable={},enchantments={flame:1},attribute_modifiers=[{id:"rocketriders:saber",type:"attack_damage",amount:3,operation:"add_value",slot:"mainhand"}]]
-give @s[team=Yellow,tag=!Infinity] bow[custom_name={"translate":"Shooting Saber","color":"gold","bold":true,"italic":false},lore=[{"translate":"A weapon used for both"},{"translate":"ranged and melee attacks."}],unbreakable={},enchantments={flame:1},attribute_modifiers=[{id:"rocketriders:saber",type:"attack_damage",amount:3,operation:"add_value",slot:"mainhand"}]]
-give @s[tag=Infinity] bow[custom_name={"translate":"Infinity Saber","color":"dark_purple","bold":true,"italic":false},lore=[{"translate":"A weapon used for both"},{"translate":"ranged and melee attacks"}],unbreakable={},enchantments={flame:1,infinity:1},attribute_modifiers=[{id:"rocketriders:saber",type:"attack_damage",amount:3,operation:"add_value",slot:"mainhand"}]]
+loot give @s[tag=!Infinity] loot items:misc/shooting_saber
+loot give @s[tag=Infinity] loot items:misc/shooting_saber_infinity
 title @s[tag=!Infinity] actionbar {"text":"Shooting Saber obtained.","color":"light_purple"}
 title @s[tag=Infinity] actionbar {"text":"Infinity Saber obtained.","color":"light_purple"}

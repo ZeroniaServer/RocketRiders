@@ -13,8 +13,7 @@ tag @s add BothWon
 ##Celebratory items
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s crossbow[custom_data~{nova:1b}]
-execute as @a[x=0] store result score @s HasFirework run clear @s firework_rocket 0
-execute as @a[x=0,scores={HasFirework=0}] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
+execute as @a[x=0,predicate=!custom:has_firework_rocket_in_inventory] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
 execute as @a run loot replace entity @s armor.chest loot items:ending/elytra
 
 ##Effects

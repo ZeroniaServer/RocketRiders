@@ -124,7 +124,6 @@ scoreboard objectives add actionbardelay dummy
 scoreboard objectives add PortalDeco dummy
 scoreboard objectives add FellVoid dummy
 scoreboard objectives add LaunchCrossbow minecraft.used:minecraft.crossbow
-scoreboard objectives add HasFirework dummy
 scoreboard objectives add CreditCycle dummy
 scoreboard objectives add RNGmax dummy
 scoreboard objectives add RNGscore dummy

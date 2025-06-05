@@ -6,7 +6,6 @@
 ##Record death statistics
 tag @s[team=!Spectator] add FellInVoid
 scoreboard players add @s[tag=crosser] deaths 1
-scoreboard players add @s[tag=crosser] death 1
 scoreboard players add @s[tag=crosser] respawn 1
 
 ##Cry About It achievement

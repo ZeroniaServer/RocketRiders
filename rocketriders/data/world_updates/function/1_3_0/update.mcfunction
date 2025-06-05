@@ -13,6 +13,7 @@ scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
 scoreboard objectives remove splashOwnerUUID
 scoreboard objectives remove HasFirework
+scoreboard objectives remove death
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

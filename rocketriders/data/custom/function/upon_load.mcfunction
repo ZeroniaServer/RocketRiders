@@ -62,7 +62,6 @@ scoreboard objectives add LeaveMidgame trigger
 scoreboard objectives add FallDistance dummy
 scoreboard objectives add PlayerDeaths dummy
 scoreboard objectives add deaths deathCount
-scoreboard objectives add death deathCount
 scoreboard objectives add respawn deathCount
 scoreboard objectives add deathCooldown dummy
 scoreboard objectives add novattach dummy

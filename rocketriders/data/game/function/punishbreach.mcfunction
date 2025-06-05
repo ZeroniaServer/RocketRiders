@@ -6,6 +6,4 @@ execute if entity @s[team=Yellow,nbt={respawn:{pos:[I;12,64,66]}}] run effect gi
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawns] run tp @s[team=Blue] 12 64 -66 0 0
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawns] run tp @s[team=Yellow] 12 64 66 -180 0
 scoreboard players add @s[team=Blue,nbt={respawn:{pos:[I;12,64,-66]}}] deaths 1
-scoreboard players add @s[team=Blue,nbt={respawn:{pos:[I;12,64,-66]}}] death 1
 scoreboard players add @s[team=Yellow,nbt={respawn:{pos:[I;12,64,66]}}] deaths 1
-scoreboard players add @s[team=Yellow,nbt={respawn:{pos:[I;12,64,66]}}] death 1

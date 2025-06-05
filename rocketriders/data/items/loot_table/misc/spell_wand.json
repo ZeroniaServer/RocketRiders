@@ -8,19 +8,6 @@
           "name": "blaze_rod",
           "functions": [
             {
-              "function": "minecraft:set_item",
-              "item": "minecraft:breeze_rod",
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Blue"
-                  }
-                }
-              ]
-            },
-            {
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
@@ -63,7 +50,8 @@
                   "italic": false,
                   "bold": true,
                   "color": "blue"
-                }
+                },
+                "minecraft:item_model": "minecraft:breeze_rod"
               },
               "conditions": [
                 {

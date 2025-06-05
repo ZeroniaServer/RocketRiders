@@ -14,8 +14,7 @@ execute if entity @s[tag=BlueWon,scores={endtimer=1}] run loot give @a[x=0,team=
 
 #Replacing Spell Wands
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents blaze_rod run function items:killendweapon
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents breeze_rod run function items:killendweapon
-execute if entity @s[tag=YellowWon,scores={endtimer=1}] run clear @a[x=0,team=Blue,scores={crusadekit=3}] breeze_rod
+execute if entity @s[tag=YellowWon,scores={endtimer=1}] run clear @a[x=0,team=Blue,scores={crusadekit=3}] blaze_rod
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=3}] run loot give @s loot items:misc/spell_wand_end
 execute if entity @s[tag=BlueWon,scores={endtimer=1}] run clear @a[x=0,team=Yellow,scores={crusadekit=3}] blaze_rod
 execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=3}] run loot give @s loot items:misc/spell_wand_end

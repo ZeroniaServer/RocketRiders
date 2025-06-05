@@ -47,8 +47,7 @@ execute if entity @s[scores={count=600}] run clear @a[x=0,team=Blue,scores={crus
 execute if entity @s[scores={count=600}] run clear @a[x=0,team=Yellow,scores={crusadekit=2}] bow
 execute if entity @s[scores={count=600}] as @a[x=0,scores={crusadekit=2}] run loot replace entity @s hotbar.0 loot items:misc/shooting_saber_crusade
 #Hotfix for being able to cast spells in queue
-execute if entity @s[scores={count=600}] run clear @a[x=0,team=Blue,scores={crusadekit=3}] breeze_rod
-execute if entity @s[scores={count=600}] run clear @a[x=0,team=Yellow,scores={crusadekit=3}] blaze_rod
+execute if entity @s[scores={count=600}] run clear @a[x=0,scores={crusadekit=3}] blaze_rod
 execute if entity @s[scores={count=600}] as @a[x=0,scores={crusadekit=3}] run loot replace entity @s hotbar.0 loot items:misc/spell_wand
 execute if entity @s[scores={count=600}] as @a[x=0,scores={crusadekit=2}] run tag @s remove fullOffhand
 #Hotfix for losing shield in queue

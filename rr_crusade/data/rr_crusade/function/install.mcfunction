@@ -8,7 +8,6 @@ scoreboard objectives add crusadekit dummy
 scoreboard objectives add crusadehp dummy
 scoreboard objectives add crusadechange trigger
 scoreboard objectives add dropRod minecraft.dropped:minecraft.blaze_rod
-scoreboard objectives add dropBRod minecraft.dropped:minecraft.breeze_rod
 scoreboard objectives add dropSword minecraft.dropped:minecraft.stone_sword
 
 bossbar add rr_crusade:blue {"text":"Total Crystal Health","color":"white"}

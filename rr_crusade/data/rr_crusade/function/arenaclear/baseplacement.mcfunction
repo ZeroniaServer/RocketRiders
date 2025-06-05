@@ -201,8 +201,8 @@ execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace e
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with minecraft:leather_leggings[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s weapon.mainhand with blaze_rod
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s weapon.mainhand with breeze_rod
+execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s weapon.mainhand with blaze_rod[custom_model_data={floats:[1]}]
+execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s weapon.mainhand with blaze_rod[item_model="minecraft:breeze_rod",custom_model_data={floats:[1]}]
 
 execute as @e[x=0,type=armor_stand,tag=KitSelect] run data merge entity @s {DisabledSlots:4144959}
 

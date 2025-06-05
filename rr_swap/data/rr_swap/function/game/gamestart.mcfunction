@@ -3,8 +3,8 @@ execute as @a[x=0,tag=JoinBlue] run function rr_swap:baseswap/gear
 execute as @a[x=0,tag=JoinYellow] run function rr_swap:baseswap/gear
 
 #Spawnpoints
-execute if entity @s[tag=GameStarted] as @a[x=0,team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
-execute if entity @s[tag=GameStarted] as @a[x=0,team=Yellow,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:66}] run spawnpoint @s 12 64 66 -180
+execute if entity @s[tag=GameStarted] as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @s 12 64 -66 0
+execute if entity @s[tag=GameStarted] as @a[x=0,team=Yellow,nbt=!{respawn:{pos:[I;12,64,66]}}] run spawnpoint @s 12 64 66 -180
 
 #Give first item to anyone who joins within 1st second
 execute if entity @s[tag=GameStarted,scores={gametime=3..20}] if score SwapSide swapside matches 1 run function rr_swap:items/givefirstdarkblue

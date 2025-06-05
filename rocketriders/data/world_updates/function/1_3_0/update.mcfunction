@@ -7,8 +7,12 @@ item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with l
 scoreboard objectives add toggleParticles trigger
 scoreboard objectives add toggleTips trigger
 scoreboard objectives add toggleParkourTips trigger
+scoreboard objectives add Constant dummy
+
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
+scoreboard objectives remove splashOwnerUUID
+scoreboard objectives remove HasFirework
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

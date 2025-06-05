@@ -1,0 +1,78 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": [
+                  {
+                    "text": "Rocket",
+                    "color": "blue",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "-",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "nomicon",
+                    "color": "gold"
+                  }
+                ],
+                "minecraft:lore": [
+                  {
+                    "translate": "A helpful book used to obtain"
+                  },
+                  {
+                    "translate": "every item in Rocket Riders!"
+                  }
+                ],
+                "minecraft:written_book_content": {
+                  "pages": [
+                    [
+                      "",
+                      {
+                        "text": "  Rocket",
+                        "color": "blue",
+                        "bold": true
+                      },
+                      {
+                        "text": "-",
+                        "color": "gray",
+                        "bold": true
+                      },
+                      {
+                        "text": "nomicon",
+                        "color": "gold",
+                        "bold": true
+                      },
+                      {
+                        "text": "\n\nYour one-stop shop for every item in RR!\n\nNothing to see here anymore. Check back again next game!\n",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "text": "\n\n\n\n\nParty's over, guys...",
+                        "color": "#CCCCCC",
+                        "italic": true
+                      }
+                    ]
+                  ],
+                  "title": "Rocket-nomicon",
+                  "author": "Zeronia",
+                  "resolved": true
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -11,18 +11,18 @@ tag @s add YellowWon
 tag @s add YellowWonFirst
 
 ##Celebratory items
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s crossbow[custom_data~{nova:1b}]
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run clear @s #custom:clear
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run clear @s crossbow[custom_data~{nova:1b}]
 execute as @a[x=0,team=Yellow,predicate=!custom:has_firework_rocket_in_inventory] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
 execute as @a[x=0,team=Yellow] run loot replace entity @s armor.chest loot items:ending/elytra
 execute as @a[x=0,team=Bluee] run loot replace entity @s armor.head loot items:ending/loser_banner
 
 ##Effects
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s slowness
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s levitation
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s wither
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s blindness
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s instant_health 1 100 true
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect clear @s slowness
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect clear @s levitation
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect clear @s wither
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect clear @s blindness
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect give @s instant_health 1 100 true
 execute as @a[x=0,team=Blue] at @s run stopsound @s
 execute as @a[x=0,team=Yellow] at @s run stopsound @s
 execute if entity @s[tag=!BlueWonFirst] as @a[x=0,team=Yellow] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85

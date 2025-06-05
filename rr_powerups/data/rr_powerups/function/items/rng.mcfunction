@@ -2,7 +2,7 @@ execute if entity @s[tag=!givenAllPowerup] run summon marker 0 0 0 {Tags:["rngPo
 execute if entity @s[tag=!givenAllPowerup] run summon marker 0 0 0 {Tags:["rngPowerup","rng1"]}
 execute if entity @s[tag=!givenTipped] run summon marker 0 0 0 {Tags:["rngArrow","rng1"]}
 tag @e[x=0,type=marker,tag=rng1,sort=random,limit=1] add rngSelected
-execute as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run tag @s add getItem
+tag @a[x=0,predicate=custom:on_blue_or_yellow_team] add getItem
 tag @s add tetrisTime
 execute if entity @e[x=0,type=marker,tag=rngSelected,tag=rngPowerup] run function rr_powerups:items/powerup/rng
 execute if entity @e[x=0,type=marker,tag=rngSelected,tag=rngArrow] run function rr_powerups:items/arrow/rng

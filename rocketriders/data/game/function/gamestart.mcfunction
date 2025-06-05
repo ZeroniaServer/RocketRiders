@@ -163,7 +163,7 @@ tellraw @a[x=0,team=Spectator,tag=leftBorder] {"text":"Cannot leave world border
 tag @a[x=0] remove leftBorder
 
 ##Leave Pad
-execute as @a[x=0,gamemode=!spectator] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] unless entity @s[team=!Yellow,team=!Blue] in overworld run tag @s add LeaveTeams
+execute as @a[x=0,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] run tag @s add LeaveTeams
 execute if entity @s[tag=!customLeaveHandling] run function game:leaveteams
 
 ##Countdown
@@ -175,5 +175,5 @@ execute if score $barriers CmdData matches 81 run scoreboard players set $barrie
 execute if score $barriers CmdData matches 1 as @e[x=0,type=marker,tag=CancelJoin] at @s run particle minecraft:block_marker{block_state:"minecraft:barrier"} ~ ~1 ~ 0 0 0 0 1 force @a[x=0,tag=!hideParticles,team=Lobby,predicate=!custom:belowroof]
 
 ##Disable crafting slots
-execute if entity @s[tag=!GameStarted] as @a[x=0] unless entity @s[team=!Yellow,team=!Blue] run function game:disablecraftingslots
+execute if entity @s[tag=!GameStarted] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function game:disablecraftingslots
 execute as @a[team=!Yellow,team=!Blue] run function game:disablecraftingslots

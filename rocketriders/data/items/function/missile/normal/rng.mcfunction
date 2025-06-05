@@ -28,14 +28,14 @@ execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacki
 
 function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveant
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givelift
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBlade] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveblade
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givecata
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngEguard] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveeguard
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givenull
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSlash] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveslash
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givetoma
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCitadel] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givecitadel
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngGemi] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givegemi
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/giveant
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givelift
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBlade] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/giveblade
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givecata
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngEguard] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/giveeguard
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givenull
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSlash] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/giveslash
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givetoma
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCitadel] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givecitadel
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngGemi] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givegemi
 kill @e[x=0,type=marker,tag=rng3]

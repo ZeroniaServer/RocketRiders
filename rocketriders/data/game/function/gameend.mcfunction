@@ -30,9 +30,9 @@ execute if entity @s[scores={endtimer=1}] run kill @e[x=0,type=ender_pearl]
 execute if entity @s[scores={endtimer=1}] run tag @e[x=0,type=marker,tag=yellowjoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=1}] run tag @e[x=0,type=marker,tag=bluejoinpad] add CancelJoin
 execute if entity @s[scores={endtimer=1}] run tag @e[x=0,type=marker,tag=specjoinpad] add CancelJoin
-execute if entity @s[scores={endtimer=2..3}] as @a[x=0,predicate=custom:is_on_fire] unless entity @s[team=!Blue,team=!Yellow] at @s run function game:putoutfire
-execute if entity @s[scores={endtimer=1..2}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s resistance infinite 100 true
-execute if entity @s[scores={endtimer=1..2}] as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect give @s instant_health 1 100 true
+execute if entity @s[scores={endtimer=2..3}] as @a[x=0,predicate=custom:is_on_fire,predicate=custom:on_blue_or_yellow_team] at @s run function game:putoutfire
+execute if entity @s[scores={endtimer=1..2}] run effect give @a[x=0,predicate=custom:on_blue_or_yellow_team] resistance infinite 100 true
+execute if entity @s[scores={endtimer=1..2}] run effect give @a[x=0,predicate=custom:on_blue_or_yellow_team] instant_health 1 100 true
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,team=Yellow] 12 64 66 180 0
 execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings

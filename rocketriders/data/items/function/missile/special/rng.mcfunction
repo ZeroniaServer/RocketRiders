@@ -16,8 +16,8 @@ execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacki
 
 function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/special/givebroad
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/special/givebull
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/special/giveduplex
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @a[x=0,tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/special/givehyper
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/special/givebroad
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/special/givebull
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/special/giveduplex
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/special/givehyper
 kill @e[x=0,type=marker,tag=rng3]

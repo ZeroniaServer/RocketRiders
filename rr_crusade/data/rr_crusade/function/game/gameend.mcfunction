@@ -5,7 +5,7 @@ clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
 
 #Replacing Shooting Sabers
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents bow run kill
-execute if entity @s[scores={endtimer=1}] as @a[x=0,scores={crusadekit=2}] unless entity @s[team=!Blue,team=!Yellow] run clear @s bow
+execute if entity @s[scores={endtimer=1}] run clear @a[x=0,scores={crusadekit=2},predicate=custom:on_blue_or_yellow_team] bow
 execute if entity @s[tag=BothWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_end

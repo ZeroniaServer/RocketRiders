@@ -11,9 +11,9 @@ tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected
 
 function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/giveant
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givetoma
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givecata
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givelift
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,scores={crusadekit=3},tag=getItem] unless entity @s[team=!Yellow,team=!Blue] run function items:missile/normal/givenull
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,scores={crusadekit=3},tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/giveant
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,scores={crusadekit=3},tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givetoma
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,scores={crusadekit=3},tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givecata
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,scores={crusadekit=3},tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givelift
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,scores={crusadekit=3},tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/normal/givenull
 kill @e[x=0,type=marker,tag=crusadeRNG]

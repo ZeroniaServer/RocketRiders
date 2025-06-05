@@ -2,7 +2,7 @@
 execute if entity @s[tag=!SMActive] run function rr_crusade:game/leavemidgame
 
 #destroy crafting slots
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] if items entity @s player.crafting.* * at @s run function rr_crusade:game/destroycraftingslots
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] if items entity @s player.crafting.* * at @s run function rr_crusade:game/destroycraftingslots
 
 #general
 function rr_crusade:game/cancel_utility
@@ -72,10 +72,10 @@ execute as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @
 execute as @a[x=0,team=Yellow,nbt=!{respawn:{pos:[I;12,64,66]}}] run spawnpoint @s 12 64 66 -180
 
 #Suffocate players in gray glass
-execute as @a[x=0,tag=!inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run effect give @s poison infinite 4 true
-execute as @a[x=0,tag=!inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run tag @s add inGlass
-execute as @a[x=0,tag=inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s unless block ~ ~ ~ light_gray_stained_glass run tag @s add notInGlass
-execute as @a[x=0,tag=inGlass] unless entity @s[team=!Blue,team=!Yellow] at @s unless block ~ ~1 ~ light_gray_stained_glass run tag @s add notInGlass
+execute as @a[x=0,tag=!inGlass,predicate=custom:on_blue_or_yellow_team] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run effect give @s poison infinite 4 true
+execute as @a[x=0,tag=!inGlass,predicate=custom:on_blue_or_yellow_team] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run tag @s add inGlass
+execute as @a[x=0,tag=inGlass,predicate=custom:on_blue_or_yellow_team] at @s unless block ~ ~ ~ light_gray_stained_glass run tag @s add notInGlass
+execute as @a[x=0,tag=inGlass,predicate=custom:on_blue_or_yellow_team] at @s unless block ~ ~1 ~ light_gray_stained_glass run tag @s add notInGlass
 effect clear @a[x=0,tag=notInGlass] poison
 tag @a[x=0,tag=notInGlass] remove inGlass
 tag @a[x=0] remove notInGlass

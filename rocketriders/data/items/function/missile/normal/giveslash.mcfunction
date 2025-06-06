@@ -12,7 +12,7 @@ execute if entity @s[scores={HasSlash=1..},tag=!fullHotbar,tag=!BackSlash,tag=!i
 title @s[tag=!fullHotbar,tag=!BackSlash,tag=itemDeducted] actionbar {"text":"Slasher already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackSlash,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasSlash=0},tag=!fullHotbar,tag=!BackSlash,tag=!itemDeducted] actionbar {"text":"Slasher obtained.","color":"aqua"}
-loot give @s[scores={HasSlash=0},tag=!fullHotbar] loot items:normal/slasher
+loot give @s[scores={HasSlash=0},tag=!fullHotbar] loot items:missile/normal/slasher
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasSlash=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

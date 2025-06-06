@@ -12,7 +12,7 @@ execute if entity @s[scores={HasLift=1..},tag=!fullHotbar,tag=!BackLift,tag=!ite
 title @s[tag=!fullHotbar,tag=!BackLift,tag=itemDeducted] actionbar {"text":"Lifter already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackLift,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasLift=0},tag=!fullHotbar,tag=!BackLift,tag=!itemDeducted] actionbar {"text":"Lifter obtained.","color":"aqua"}
-loot give @s[scores={HasLift=0},tag=!fullHotbar] loot items:normal/lifter
+loot give @s[scores={HasLift=0},tag=!fullHotbar] loot items:missile/normal/lifter
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasLift=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

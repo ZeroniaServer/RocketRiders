@@ -12,7 +12,7 @@ execute if entity @s[scores={HasAux=1..},tag=!fullHotbar,tag=!BackAux,tag=!itemD
 title @s[tag=!fullHotbar,tag=!BackAux,tag=itemDeducted] actionbar {"text":"Auxiliary already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackAux,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasAux=0},tag=!fullHotbar,tag=!BackAux,tag=!itemDeducted] actionbar {"text":"Auxiliary obtained.","color":"aqua"}
-loot give @s[scores={HasAux=0},tag=!fullHotbar] loot items:heavy/auxiliary
+loot give @s[scores={HasAux=0},tag=!fullHotbar] loot items:missile/heavy/auxiliary
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasAux=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

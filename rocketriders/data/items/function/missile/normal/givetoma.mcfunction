@@ -12,7 +12,7 @@ execute if entity @s[scores={HasToma=1..},tag=!fullHotbar,tag=!BackToma,tag=!ite
 title @s[tag=!fullHotbar,tag=!BackToma,tag=itemDeducted] actionbar {"text":"TomaTwo already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackToma,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasToma=0},tag=!fullHotbar,tag=!BackToma,tag=!itemDeducted] actionbar {"text":"TomaTwo obtained.","color":"aqua"}
-loot give @s[scores={HasToma=0},tag=!fullHotbar] loot items:normal/tomatwo
+loot give @s[scores={HasToma=0},tag=!fullHotbar] loot items:missile/normal/tomatwo
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasToma=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

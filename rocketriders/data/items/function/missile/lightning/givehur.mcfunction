@@ -12,7 +12,7 @@ execute if entity @s[scores={HasHur=1..},tag=!fullHotbar,tag=!BackHur,tag=!itemD
 title @s[tag=!fullHotbar,tag=!BackHur,tag=itemDeducted] actionbar {"text":"Hurricane already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackHur,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasHur=0},tag=!fullHotbar,tag=!BackHur,tag=!itemDeducted] actionbar {"text":"Hurricane obtained.","color":"aqua"}
-loot give @s[scores={HasHur=0},tag=!fullHotbar] loot items:lightning/hurricane
+loot give @s[scores={HasHur=0},tag=!fullHotbar] loot items:missile/lightning/hurricane
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasHur=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

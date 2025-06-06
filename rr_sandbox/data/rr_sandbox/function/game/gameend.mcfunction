@@ -9,7 +9,7 @@ clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
 clear @a[x=0,team=Yellow] #rr_powerups:clear
 clear @a[x=0,team=Yellow] #rr_sandbox:clear
 execute if entity @s[scores={endtimer=1}] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] written_book
-execute if entity @s[scores={endtimer=1}] run loot replace entity @a[x=0,predicate=custom:on_blue_or_yellow_team] hotbar.0 loot items:nomicon/post_game
+execute if entity @s[scores={endtimer=1}] run loot replace entity @a[x=0,predicate=custom:on_blue_or_yellow_team] hotbar.0 loot items:books/nomicon/post_game
 execute as @a[x=0] run trigger nomicon set 0
 
 execute if entity @s[scores={endtimer=1},tag=YellowWon] run item replace entity @a[x=0,team=Blue] armor.chest with minecraft:leather_chestplate[equippable={slot:"chest",equip_sound:"minecraft:intentionally_empty",asset_id:"leather"},trim={material:"minecraft:quartz",pattern:"minecraft:vex"},custom_name=[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}],dyed_color=1247871,unbreakable={},enchantments={binding_curse:1},enchantment_glint_override=false,attribute_modifiers=[{id:"rocketriders:chestplate",slot:"chest",amount:3,operation:"add_value",type:"armor"}],tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments","minecraft:attribute_modifiers","minecraft:dyed_color","minecraft:can_place_on","minecraft:can_break","minecraft:fireworks","minecraft:trim","minecraft:banner_patterns"]}]

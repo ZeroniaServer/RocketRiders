@@ -1,12 +1,12 @@
 #Items
 execute as @a[x=0,tag=JoinBlue] run function game:givegear
 execute as @a[x=0,team=Blue] unless score @s sbstackamt matches 1.. run scoreboard players set @s sbstackamt 1
-execute unless entity @s[tag=GameStarted] run loot replace entity @a[x=0,tag=JoinBlue] hotbar.0 loot items:nomicon/pre_game
+execute unless entity @s[tag=GameStarted] run loot replace entity @a[x=0,tag=JoinBlue] hotbar.0 loot items:books/nomicon/pre_game
 execute if entity @s[tag=GameStarted] as @a[x=0,tag=JoinBlue] run function rr_sandbox:items/givenomicon
 
 execute as @a[x=0,tag=JoinYellow] run function game:givegear
 execute as @a[x=0,team=Yellow] unless score @s sbstackamt matches 1.. run scoreboard players set @s sbstackamt 1
-execute unless entity @s[tag=GameStarted] run loot replace entity @a[x=0,tag=JoinYellow] hotbar.0 loot items:nomicon/pre_game
+execute unless entity @s[tag=GameStarted] run loot replace entity @a[x=0,tag=JoinYellow] hotbar.0 loot items:books/nomicon/pre_game
 execute if entity @s[tag=GameStarted] as @a[x=0,tag=JoinYellow] run function rr_sandbox:items/givenomicon
 
 #Notify Join

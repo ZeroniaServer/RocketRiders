@@ -1,10 +1,3 @@
-# Do nothing if the world version is already up to date
-execute if score $WorldVersion CmdData matches 1304.. run forceload remove -163 -175 76 64
-execute if score $WorldVersion CmdData matches 1304.. run forceload remove 77 -175 187 80
-execute if score $WorldVersion CmdData matches 1304.. run forceload remove -163 65 92 175
-execute if score $WorldVersion CmdData matches 1304.. run forceload remove 77 65 187 175
-execute if score $WorldVersion CmdData matches 1304.. run return 1
-
 # Forceload all chunks that intsersect with the 2D region from -163 -175 to 187 175
 forceload add -163 -175 76 64
 forceload add 77 -175 187 80
@@ -35,9 +28,3 @@ execute unless score $WorldVersion CmdData matches 1301.. run function world_upd
 execute unless score $WorldVersion CmdData matches 1302.. run function world_updates:1_2_14/update
 execute unless score $WorldVersion CmdData matches 1303.. run function world_updates:1_2_14/update
 execute unless score $WorldVersion CmdData matches 1304.. run function world_updates:1_3_0/update
-
-# Un-forceload the chunks again
-forceload remove -163 -175 76 64
-forceload remove 77 -175 187 80
-forceload remove -163 65 92 175
-forceload remove 77 65 187 175

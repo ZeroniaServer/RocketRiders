@@ -1,0 +1,306 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_leggings",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:equippable": {
+                  "slot": "legs",
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "asset_id": "minecraft:leather"
+                },
+                "minecraft:custom_name": {
+                  "text": "White Leggings",
+                  "color": "white",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:dyed_color": -1,
+                "minecraft:unbreakable": {},
+                "minecraft:enchantments": {
+                  "minecraft:binding_curse": 1
+                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:attribute_modifiers": [
+                  {
+                    "id": "rocketriders:leggings",
+                    "slot": "legs",
+                    "amount": 2,
+                    "operation": "add_value",
+                    "type": "minecraft:armor"
+                  }
+                ],
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:attribute_modifiers",
+                    "minecraft:dyed_color",
+                    "minecraft:enchantments",
+                    "minecraft:unbreakable"
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 3949738,
+                "minecraft:custom_name": {
+                  "text": "Blue Leggings",
+                  "color": "blue",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 1
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16768000,
+                "minecraft:custom_name": {
+                  "text": "Yellow Leggings",
+                  "color": "yellow",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 2
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16711680,
+                "minecraft:custom_name": {
+                  "text": "Red Leggings",
+                  "color": "red",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 3
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 65281,
+                "minecraft:custom_name": {
+                  "text": "Green Leggings",
+                  "color": "green",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 4
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 11796735,
+                "minecraft:custom_name": {
+                  "text": "Purple Leggings",
+                  "color": "dark_purple",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 5
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16752877,
+                "minecraft:custom_name": {
+                  "text": "Pink Leggings",
+                  "color": "light_purple",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 6
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16744704,
+                "minecraft:custom_name": {
+                  "text": "Orange Leggings",
+                  "color": "gold",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 7
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16735636,
+                "minecraft:custom_name": {
+                  "text": "Strawberry Leggings",
+                  "color": "#FF5D94",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 8
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 6684628,
+                "minecraft:custom_name": {
+                  "text": "Mint Leggings",
+                  "color": "#65FFD4",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 9
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 13959061,
+                "minecraft:custom_name": {
+                  "text": "Apple Leggings",
+                  "color": "#D4FF95",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 10
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16383860,
+                "minecraft:custom_name": {
+                  "text": "Banana Leggings",
+                  "color": "#F9FF74",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 11
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 7506394,
+                "minecraft:custom_name": {
+                  "text": "Blurple Leggings",
+                  "color": "#7289DA",
+                  "bold": true,
+                  "italic": false
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 12
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

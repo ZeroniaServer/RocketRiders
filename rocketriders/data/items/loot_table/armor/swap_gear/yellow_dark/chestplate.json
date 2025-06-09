@@ -1,0 +1,59 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_chestplate",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:equippable": {
+                  "slot": "chest",
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "asset_id": "minecraft:leather"
+                },
+                "minecraft:trim": {
+                  "material": "minecraft:netherite",
+                  "pattern": "minecraft:spire"
+                },
+                "minecraft:custom_name": {
+                  "text": "Dark Yellow Chestplate",
+                  "color": "#918C00",
+                  "bold": true,
+                  "italic": false
+                },
+                "minecraft:dyed_color": 9538560,
+                "minecraft:unbreakable": {},
+                "minecraft:enchantments": {
+                  "minecraft:binding_curse": 1
+                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:attribute_modifiers": [
+                  {
+                    "id": "rocketriders:chestplate",
+                    "slot": "chest",
+                    "amount": 3,
+                    "operation": "add_value",
+                    "type": "minecraft:armor"
+                  }
+                ],
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:attribute_modifiers",
+                    "minecraft:dyed_color",
+                    "minecraft:enchantments",
+                    "minecraft:trim",
+                    "minecraft:unbreakable"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

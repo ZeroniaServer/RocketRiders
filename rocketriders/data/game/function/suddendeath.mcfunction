@@ -53,11 +53,11 @@ execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon
 #For Premature Celebration achievement
 execute if entity @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=BlueWonFirst] run advancement grant @a[x=0,team=Blue] only achievements:rr_challenges/premature
-execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[x=0,team=Blue] armor.chest with leather_chestplate[unbreakable={},enchantments={binding_curse:1},enchantment_glint_override=false,attribute_modifiers=[{id:"rocketriders:chestplate",slot:"chest",amount:3,operation:"add_value",type:"armor"}],custom_name=[{"text":"Blue Chestplate","color":"blue","bold":true,"italic":false}],dyed_color=1247871,trim={material:"minecraft:quartz",pattern:"minecraft:vex"},tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments","minecraft:attribute_modifiers","minecraft:dyed_color","minecraft:can_place_on","minecraft:can_break","minecraft:fireworks","minecraft:trim","minecraft:banner_patterns"]}]
+execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] as @a[x=0,team=Blue] run loot replace entity @s armor.chest loot items:armor/generic_gear/chestplate
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[x=0,team=Yellow] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
 execute if entity @s[scores={SDtime=1,servermode=0},tag=!realms,tag=!SMCustom,tag=YellowWonFirst] run advancement grant @a[x=0,team=Yellow] only achievements:rr_challenges/premature
-execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[x=0,team=Yellow] armor.chest with leather_chestplate[unbreakable={},enchantments={binding_curse:1},enchantment_glint_override=false,attribute_modifiers=[],custom_name=[{"text":"Yellow Chestplate","color":"yellow","bold":true,"italic":false}],dyed_color=16768000,trim={material:"minecraft:netherite",pattern:"minecraft:spire"},tooltip_display={"hidden_components":["minecraft:unbreakable","minecraft:enchantments","minecraft:attribute_modifiers","minecraft:dyed_color","minecraft:can_place_on","minecraft:can_break","minecraft:fireworks","minecraft:trim","minecraft:banner_patterns"]}]
+execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] as @a[x=0,team=Yellow] run loot replace entity @s armor.chest loot items:armor/generic_gear/chestplate
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[x=0,team=Blue] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
 #Halves the Item Delay (more intense gameplay)

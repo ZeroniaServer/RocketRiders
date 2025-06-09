@@ -12,18 +12,9 @@ execute unless entity @s[scores={ArmorColor=1..}] unless entity @a[x=0,team=Blue
 execute unless entity @s[scores={ArmorColor=1..}] unless entity @a[x=0,team=Blue,scores={ArmorColor=12}] run scoreboard players set @s ArmorColor 12
 execute unless entity @s[scores={ArmorColor=1..}] if entity @a[x=0,team=Blue,scores={ArmorColor=12..}] run scoreboard players set @s ArmorColor 13
 
-execute if score @s ArmorColor matches 1 run function rr_chase:chasegear/equip/blue
-execute if score @s ArmorColor matches 2 run function rr_chase:chasegear/equip/yellow
-execute if score @s ArmorColor matches 3 run function rr_chase:chasegear/equip/red
-execute if score @s ArmorColor matches 4 run function rr_chase:chasegear/equip/green
-execute if score @s ArmorColor matches 5 run function rr_chase:chasegear/equip/purple
-execute if score @s ArmorColor matches 6 run function rr_chase:chasegear/equip/pink
-execute if score @s ArmorColor matches 7 run function rr_chase:chasegear/equip/orange
-execute if score @s ArmorColor matches 8 run function rr_chase:chasegear/equip/strawberry
-execute if score @s ArmorColor matches 9 run function rr_chase:chasegear/equip/mint
-execute if score @s ArmorColor matches 10 run function rr_chase:chasegear/equip/apple
-execute if score @s ArmorColor matches 11 run function rr_chase:chasegear/equip/banana
-execute if score @s ArmorColor matches 12 run function rr_chase:chasegear/equip/blurple
-execute if score @s ArmorColor matches 13.. run function rr_chase:chasegear/equip/white
+loot replace entity @s armor.chest loot items:armor/chase_gear/chestplate
+loot replace entity @s armor.legs loot items:armor/chase_gear/leggings
+execute if function game:norankboots run loot replace entity @s armor.feet loot items:armor/chase_gear/boots
 
+loot replace entity @s hotbar.0 loot items:misc/shooting_saber
 execute if entity @e[x=0,tag=Selection,tag=!GameStarted] run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow_lobby"}],functions:[{function:"set_count",count:20}]}]}

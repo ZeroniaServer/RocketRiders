@@ -50,7 +50,7 @@
                     "amount": 3,
                     "slot": "chest",
                     "type": "minecraft:armor",
-                    "id": "rr_powerups:elytra_armor"
+                    "id": "rr_powerups:elytra"
                   }
                 ],
                 "minecraft:tooltip_display": {

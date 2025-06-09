@@ -176,7 +176,7 @@ execute as @a[x=0,team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,ta
 effect clear @a[x=0,team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (excluding rank)
-execute if function game:norankboots as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run item replace entity @s armor.feet with iron_boots[enchantments={"minecraft:binding_curse":1},enchantment_glint_override=false,custom_name={"text":"Parkour Boots","color":"dark_green","bold":true,"italic":false},trim={material:"minecraft:emerald",pattern:"minecraft:wayfinder"},attribute_modifiers=[],unbreakable={},tooltip_display={hidden_components:["minecraft:unbreakable","minecraft:enchantments"]}]
+execute if function game:norankboots as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run loot replace entity @s armor.feet loot items:armor/parkour_boots
 
 ##Safety features
 #Only lobby players in Parkour mode

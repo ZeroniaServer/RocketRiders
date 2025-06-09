@@ -1,0 +1,88 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_gear/blue_dark/leggings",
+              "conditions": [
+                {"condition":"minecraft:value_check","value":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"SwapSide"},"score":"swapside"},"range":1},
+                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_gear/yellow_light/leggings",
+              "conditions": [
+                {"condition":"minecraft:value_check","value":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"SwapSide"},"score":"swapside"},"range":1},
+                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_gear/blue_light/leggings",
+              "conditions": [
+                {"condition":"minecraft:value_check","value":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"SwapSide"},"score":"swapside"},"range":0},
+                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_gear/yellow_dark/leggings",
+              "conditions": [
+                {"condition":"minecraft:value_check","value":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"SwapSide"},"score":"swapside"},"range":0},
+                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_gear/blue_dark/chestplate",
+              "conditions": [
+                {"condition":"minecraft:value_check","value":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"SwapSide"},"score":"swapside"},"range":1},
+                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_gear/yellow_light/chestplate",
+              "conditions": [
+                {"condition":"minecraft:value_check","value":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"SwapSide"},"score":"swapside"},"range":1},
+                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_gear/blue_light/chestplate",
+              "conditions": [
+                {"condition":"minecraft:value_check","value":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"SwapSide"},"score":"swapside"},"range":0},
+                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_gear/yellow_dark/chestplate",
+              "conditions": [
+                {"condition":"minecraft:value_check","value":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"SwapSide"},"score":"swapside"},"range":0},
+                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

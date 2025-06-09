@@ -5,46 +5,29 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_pickaxe",
+          "name": "minecraft:pale_oak_fence_gate",
           "functions": [
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:equippable": {
+                  "slot": "head",
+                  "equip_sound": "minecraft:intentionally_empty"
+                },
                 "minecraft:custom_name": {
-                  "translate": "Piercing Pickaxe",
+                  "text": "Mage Mask",
                   "color": "white",
                   "bold": true,
                   "italic": false
                 },
-                "minecraft:lore": [
-                  {
-                    "translate": "A tool used both for"
-                  },
-                  {
-                    "translate": "mining and melee attacks."
-                  }
-                ],
-                "minecraft:unbreakable": {},
                 "minecraft:enchantments": {
-                  "minecraft:sharpness": 4
+                  "minecraft:binding_curse": 1
                 },
-                "minecraft:attribute_modifiers": [
-                  {
-                    "operation": "add_value",
-                    "amount": -2.2,
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_speed",
-                    "id": "rr_ctf:piercing_pickaxe"
-                  }
-                ],
-                "minecraft:can_break": {
-                  "blocks": "#custom:glass"
-                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:attribute_modifiers": [],
                 "minecraft:tooltip_display": {
                   "hidden_components": [
-                    "minecraft:attribute_modifiers",
-                    "minecraft:can_break",
-                    "minecraft:unbreakable"
+                    "minecraft:enchantments"
                   ]
                 }
               }
@@ -53,16 +36,12 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_name": {
-                  "translate": "Piercing Pickaxe",
+                  "text": "Blue Mage Mask",
                   "color": "blue",
                   "bold": true,
                   "italic": false
                 },
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                }
+                "minecraft:item_model": "minecraft:warped_fence_gate"
               },
               "conditions": [
                 {
@@ -78,16 +57,12 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_name": {
-                  "translate": "Piercing Pickaxe",
+                  "text": "Yellow Mage Mask",
                   "color": "gold",
                   "bold": true,
                   "italic": false
                 },
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                }
+                "minecraft:item_model": "minecraft:birch_fence_gate"
               },
               "conditions": [
                 {

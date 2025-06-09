@@ -5,45 +5,42 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_pickaxe",
+          "name": "minecraft:iron_leggings",
           "functions": [
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:equippable": {
+                  "slot": "legs",
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "asset_id": "minecraft:iron"
+                },
                 "minecraft:custom_name": {
-                  "translate": "Piercing Pickaxe",
+                  "text": "Knight Leggings",
                   "color": "white",
                   "bold": true,
                   "italic": false
                 },
-                "minecraft:lore": [
-                  {
-                    "translate": "A tool used both for"
-                  },
-                  {
-                    "translate": "mining and melee attacks."
-                  }
-                ],
                 "minecraft:unbreakable": {},
                 "minecraft:enchantments": {
-                  "minecraft:sharpness": 4
+                  "minecraft:binding_curse": 1
                 },
+                "minecraft:enchantment_glint_override": false,
                 "minecraft:attribute_modifiers": [
                   {
+                    "id": "rocketriders:leggings",
+                    "slot": "legs",
+                    "amount": 2,
                     "operation": "add_value",
-                    "amount": -2.2,
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_speed",
-                    "id": "rr_ctf:piercing_pickaxe"
+                    "type": "armor"
                   }
                 ],
-                "minecraft:can_break": {
-                  "blocks": "#custom:glass"
-                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:attribute_modifiers",
-                    "minecraft:can_break",
+                    "minecraft:dyed_color",
+                    "minecraft:enchantments",
+                    "minecraft:trim",
                     "minecraft:unbreakable"
                   ]
                 }
@@ -52,16 +49,15 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:trim": {
+                  "material": "minecraft:lapis",
+                  "pattern": "minecraft:vex"
+                },
                 "minecraft:custom_name": {
-                  "translate": "Piercing Pickaxe",
+                  "text": "Blue Knight Leggings",
                   "color": "blue",
                   "bold": true,
                   "italic": false
-                },
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
                 }
               },
               "conditions": [
@@ -77,16 +73,15 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:trim": {
+                  "material": "minecraft:gold",
+                  "pattern": "minecraft:spire"
+                },
                 "minecraft:custom_name": {
-                  "translate": "Piercing Pickaxe",
+                  "text": "Yellow Knight Leggings",
                   "color": "gold",
                   "bold": true,
                   "italic": false
-                },
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
                 }
               },
               "conditions": [

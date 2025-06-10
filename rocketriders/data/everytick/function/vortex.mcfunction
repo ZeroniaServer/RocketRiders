@@ -117,18 +117,18 @@ scoreboard players add @e[x=0,type=marker,tag=chained] vortexChain 1
 execute as @e[x=0,type=marker,tag=chained,scores={vortexChain=4..}] at @s run function everytick:vortex_chain
 execute as @e[x=0,type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s run tag @a[team=!Spectator,team=!Lobby,distance=..10] add UtilKilled
 execute as @e[x=0,type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s store result score @a[tag=UtilKilled,distance=..10] KillerUUID run scoreboard players get @s UUIDTracker
-execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:{"text":"a Vortex"},ExplosionRadius:3,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Invulnerable:1b}
+execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run function custom:explosion {r:3,modifiers:{nbt:{CustomName:"a Vortex"}}}
 execute if entity @s[tag=!Explosive] as @e[x=0,type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run data modify entity @n[type=creeper,distance=..5] CustomName set from entity @s CustomName
-execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:{"text":"a Vortex"},ExplosionRadius:5,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Invulnerable:1b}
-execute if entity @s[tag=ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,CustomName:{"text":"a Vortex"},ExplosionRadius:0,Fuse:0,Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Invulnerable:1b}
+execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run function custom:explosion {r:5,modifiers:{nbt:{CustomName:"a Vortex"}}}
+execute if entity @s[tag=ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run function custom:explosion {r:0,modifiers:{nbt:{CustomName:"a Vortex"}}}
 execute if entity @s[tag=Explosive] as @e[x=0,type=marker,scores={vortexBoom=10},tag=!VortexFeathered] at @s run data modify entity @n[type=creeper,distance=..5] CustomName set from entity @s CustomName
 execute as @e[x=0,type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s run tag @e[type=tnt,distance=..6] add UtilKilled
 execute as @e[x=0,type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s store result score @e[type=tnt,tag=UtilKilled,distance=..6] UUIDTracker run scoreboard players get @s UUIDTracker
 execute as @e[x=0,type=marker,scores={vortexBoom=10..},tag=!VortexFeathered] at @s run function game:nametnt
 
-execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:2,CustomName:{"text":"a... Feathery Vortex?"},Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Invulnerable:1b}
-execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:4,CustomName:{"text":"a... Feathery Vortex?"},Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Invulnerable:1b}
-execute if entity @s[tag=ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run summon creeper ~ ~ ~ {NoGravity:1b,Fuse:0,ExplosionRadius:0,CustomName:{"text":"a... Feathery Vortex?"},Silent:1b,CustomNameVisible:0b,NoAI:1b,CanPickUpLoot:0b,DeathTime:19s,Invulnerable:1b}
+execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run function custom:explosion {r:2,modifiers:{nbt:{CustomName:"a... Feathery Vortex?"}}}
+execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run function custom:explosion {r:4,modifiers:{nbt:{CustomName:"a... Feathery Vortex?"}}}
+execute if entity @s[tag=ClutterCollector] as @e[x=0,type=marker,scores={vortexBoom=10},tag=VortexFeathered] at @s run function custom:explosion {r:0,modifiers:{nbt:{CustomName:"a... Feathery Vortex?"}}}
 execute as @e[x=0,type=marker,scores={vortexBoom=10}] at @s run kill @n[type=arrow,distance=..2]
 execute as @e[x=0,type=marker,scores={vortexBoom=10}] at @s run kill @n[type=trident,distance=..2]
 execute as @e[x=0,type=marker,scores={vortexBoom=10}] at @s run kill @n[type=firework_rocket,tag=BlueNova,distance=..2]

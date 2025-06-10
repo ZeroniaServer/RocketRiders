@@ -16,8 +16,8 @@ setblock -31 190 17 warped_wall_sign[facing=south]
 kill @e[x=0,type=armor_stand,tag=ParkourLB]
 kill @e[x=0,type=area_effect_cloud,tag=ParkourLB]
 summon armor_stand -31 197 22 {Tags:["ParkourPlayer","ParkourLB"],NoGravity:1b,NoBasePlate:1b,Marker:1b,Invulnerable:1b,ShowArms:1b}
-execute positioned -31 196 21 run function custom:summon_marker_aec {run:'data merge entity @s {Tags:["ParkourLB","ParkourName"],CustomName:"?",CustomNameVisible:true}'}
-execute positioned -31 195.7 21 run function custom:summon_marker_aec {run:'data merge entity @s {Tags:["ParkourLB","ParkourTime"],CustomName:"?",CustomNameVisible:true}'}
+execute positioned -31 196 21 run function custom:summon_marker_aec {modifiers:{nbt:{Tags:["ParkourLB","ParkourName"],CustomName:"?",CustomNameVisible:true}}}
+execute positioned -31 195.7 21 run function custom:summon_marker_aec {modifiers:{nbt:{Tags:["ParkourLB","ParkourTime"],CustomName:"?",CustomNameVisible:true}}}
 execute as @e[x=0,type=armor_stand,tag=ParkourPlayer] at @s run tp @s ~ ~ ~ 180 0
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.head with player_head[profile={id:[I;-539389612,1309754415,-1282767004,-1831671292],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM0ZTA2M2NhZmI0NjdhNWM4ZGU0M2VjNzg2MTkzOTlmMzY5ZjRhNTI0MzRkYTgwMTdhOTgzY2RkOTI1MTZhMCJ9fX0="}]}]
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with leather_chestplate[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]

@@ -145,8 +145,8 @@ setblock -95 202 93 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gra
 summon armor_stand -94 202 92 {Rotation:[0.0f,0.0f],Tags:["CrusadeEntity","KitSelect","MageStand","YellowKit"],Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ShowArms:1b,CustomName:{"text":"Mage","color":"dark_purple","bold":true},CustomNameVisible:1b,Pose:{Head:[345.0f,0.0f,0.0f],LeftLeg:[323.0f,0.0f,0.0f],RightLeg:[38.0f,0.0f,0.0f],LeftArm:[23.0f,0.0f,0.0f],RightArm:[215.0f,0.0f,0.0f]}}
 setblock -94 202 93 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:1b,messages:[{"text":"Select Kit:","click_event":{"action":"run_command","command":"/trigger crusadechange set 3"},"color":"#09FF00"},{"text":"Mage","bold":true,"color":"#008805"},{"text":""},{"text":""}]}}
 #Text
-execute positioned -95 204 64 run function custom:summon_marker_aec {run:'data merge entity @s {Tags:["CrusadeEntity","KitMessage"],CustomName:{text:"Click a sign to select a kit!"},CustomNameVisible:true}'}
-execute positioned -95 204 92 run function custom:summon_marker_aec {run:'data merge entity @s {Tags:["CrusadeEntity","KitMessage"],CustomName:{text:"Click a sign to select a kit!"},CustomNameVisible:true}'}
+execute positioned -95 204 64 run function custom:summon_marker_aec {modifiers:{nbt:{Tags:["CrusadeEntity","KitMessage"],CustomName:{text:"Click a sign to select a kit!"},CustomNameVisible:true}}}
+execute positioned -95 204 92 run function custom:summon_marker_aec {modifiers:{nbt:{Tags:["CrusadeEntity","KitMessage"],CustomName:{text:"Click a sign to select a kit!"},CustomNameVisible:true}}}
 
 # Set in-game kit stands
 #blue

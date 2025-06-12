@@ -1,6 +1,6 @@
 ##Prepares Smart Arena Clear entities for Splashes from global coordinate storage
 #Summon new AEC entity
-execute positioned 0 0 0 run function custom:summon_marker_aec {modifiers:{nbt:{Tags:["SmartClearAECsplash"],Duration:1}}}
+execute positioned 0 0 0 run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["SmartClearAECsplash"],WaitTime:1}}}
 
 #Set position from global storage
 execute as @e[x=0,type=area_effect_cloud,tag=SmartClearAECsplash,tag=!checked,limit=1] run data modify entity @s Pos[0] set from storage rocketriders:splashpos x[0]

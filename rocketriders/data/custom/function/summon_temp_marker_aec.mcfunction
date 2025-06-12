@@ -5,8 +5,8 @@ summon area_effect_cloud ~ ~ ~ {\
     data: {marker:true},\
     custom_particle: {type: "minecraft:block", block_state: "minecraft:air"},\
     Radius: 0,\
-    Age: -2147483648,\
-    WaitTime: 2147483647,\
+    Age: 0,\
+    WaitTime: 0,\
     Duration: 0,\
 }
 

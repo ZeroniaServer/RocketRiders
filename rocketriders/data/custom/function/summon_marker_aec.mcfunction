@@ -3,7 +3,6 @@
 summon area_effect_cloud ~ ~ ~ {\
     Tags: ["summon.this"],\
     data: {marker:true},\
-    Particle: {type: "minecraft:block", block_state: "minecraft:air"},\
     custom_particle: {type: "minecraft:block", block_state: "minecraft:air"},\
     Radius: 0,\
     Age: -2147483648,\

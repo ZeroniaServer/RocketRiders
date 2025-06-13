@@ -3,8 +3,8 @@
 #################################################
 
 #Timer for tips (only active when game is ongoing)
-scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted] ShowTip 1
-scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameStarted] ShowTip
+execute if predicate game:game_started run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] ShowTip 1
+execute unless predicate game:game_started run scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1] ShowTip
 
 #Chooses a random tip (20 possible)
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Tip1,scores={ShowTip=900}] run summon marker ~ ~ ~ {Tags:["HandyTip","Tip1"]}

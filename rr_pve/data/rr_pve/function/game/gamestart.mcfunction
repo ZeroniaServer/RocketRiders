@@ -19,20 +19,20 @@ execute if entity @s[tag=Countdown] run scoreboard players set @e[x=0,type=armor
 execute as @a[x=0,tag=JoinBlue] run function game:givegear
 
 #Give first item to anyone who joins within 1st second
-execute if entity @s[tag=GameStarted,scores={gametime=3..20}] run function items:givefirst
+execute if predicate game:game_started if score @s gametime matches 3..20 run function items:givefirst
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Bossbar
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame value 0
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame color white
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame value 0
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame color white
 
 #Countdown
-execute if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s[tag=!GameStarted] add Countdown
+execute unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s add Countdown
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] run function game:restartcountdown
 execute if entity @s[tag=EditedSettings] unless entity @a[x=0,team=Blue] run kill @e[x=0,type=armor_stand,tag=Bot]
 execute if entity @s[scores={count=590..600},tag=!GameEnd] run kill @e[x=0,type=armor_stand,tag=Bot]
-execute if entity @s[scores={count=600},tag=!GameEnd] run tag @s add GameStarted
+execute if entity @s[scores={count=600},tag=!GameEnd] run function custom:set_global/game_started {bool:true}

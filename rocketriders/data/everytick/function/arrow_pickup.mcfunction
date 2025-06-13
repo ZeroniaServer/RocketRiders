@@ -22,8 +22,8 @@ execute as @e[x=0,type=arrow,scores={arrowtime=..9}] run tag @s remove pickup
 
 #Give arrow
 execute as @a[x=0,team=!Spectator,tag=!fullOffhand] at @s as @e[type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity,limit=1,distance=..2,sort=nearest] unless items entity @s contents tipped_arrow at @s run function everytick:arrow_replace
-execute if entity @s[tag=!GameStarted] as @e[x=0,type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless items entity @s contents tipped_arrow at @s run loot give @p[team=!Spectator,distance=..2,tag=fullOffhand] loot items:misc/arrow_lobby
-execute if entity @s[tag=GameStarted] as @e[x=0,type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless items entity @s contents tipped_arrow at @s run loot give @p[team=!Spectator,distance=..2,tag=fullOffhand] loot items:misc/arrow
+execute unless predicate game:game_started as @e[x=0,type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless items entity @s contents tipped_arrow at @s run loot give @p[team=!Spectator,distance=..2,tag=fullOffhand] loot items:misc/arrow_lobby
+execute if predicate game:game_started as @e[x=0,type=arrow,tag=pickup,tag=!given,nbt={inGround:1b},tag=!infinity] unless items entity @s contents tipped_arrow at @s run loot give @p[team=!Spectator,distance=..2,tag=fullOffhand] loot items:misc/arrow
 tag @a[x=0] remove fullOffhand
 execute as @a[x=0] if items entity @s weapon.offhand * run tag @s add fullOffhand
 

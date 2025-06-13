@@ -23,7 +23,7 @@ scoreboard players add @a[x=0,team=Blue] kills 0
 execute as @a[x=0,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow,predicate=custom:on_blue_or_yellow_team] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
 ##Player void
-execute unless entity @s[tag=customVoid] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] at @s if predicate game:in_void unless entity @s[scores={ThrowPlat=1..}] run function game:void
+execute unless entity @s[tag=customVoid] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] at @s if predicate custom:in_void unless entity @s[scores={ThrowPlat=1..}] run function game:void
 effect give @a[x=0,scores={voidNoFallCount=0}] slow_falling 1 1 true
 scoreboard players add @a[x=0,scores={voidNoFallCount=0..1}] voidNoFallCount 1
 effect clear @a[x=0,scores={voidNoFallCount=2}] slow_falling
@@ -37,15 +37,16 @@ scoreboard players add @s gametime 1
 
 ##Put out players on fire
 execute if entity @s[tag=GameStarted,scores={gametime=1..2}] as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute if predicate game:game_started if score @s gametime matches 1..2 as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
 
 ##Enable fall damage (considers modifiers)
-execute if entity @s[tag=GameStarted,tag=!NoFall,scores={gametime=10}] run gamerule fallDamage true
+execute if predicate game:game_started if score @s gametime matches 10 if entity @s[tag=!NoFall] run gamerule fallDamage true
 
 ##Clear lobby arrows
-execute if entity @s[tag=GameStarted,scores={gametime=..4}] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] arrow[custom_data~{Lobby:1b}]
+execute if predicate game:game_started if score @s gametime matches ..4 run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] arrow[custom_data~{Lobby:1b}]
 
 ##Remove kills
-execute if entity @s[tag=GameStarted,scores={gametime=..4}] run scoreboard players reset @a[x=0,predicate=custom:on_blue_or_yellow_team] kills
+execute if predicate game:game_started if score @s gametime matches ..4 run scoreboard players reset @a[x=0,predicate=custom:on_blue_or_yellow_team] kills
 
 ##General everytick commands
 function everytick:spawnables

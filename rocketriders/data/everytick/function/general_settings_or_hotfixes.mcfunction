@@ -80,8 +80,8 @@ execute as @a[x=0,team=!Lobby,team=!Developer] run trigger displayinfo set 0
 execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0] run trigger toggleParkourTips set 0
 
 #Launch pad in Modification Room
-execute if entity @s[tag=!GameStarted] as @a[x=0,team=Lobby] at @s if entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
-execute if entity @s[tag=!GameStarted] as @a[x=0,team=Lobby] at @s unless entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect clear @s jump_boost
+execute unless predicate game:game_started as @a[x=0,team=Lobby] at @s if entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
+execute unless predicate game:game_started as @a[x=0,team=Lobby] at @s unless entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect clear @s jump_boost
 
 #Lobby easter eggs
 function lobby:secrets/main
@@ -100,8 +100,8 @@ execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Lobby,g
 execute as @a[x=0,team=Spectator,gamemode=!spectator] run gamemode spectator
 
 #Blue/Yellow players can't switch out of adventure mode before game (security)
-execute if entity @s[scores={servermode=0},tag=!SMCustom,tag=!GameStarted,tag=!GameEnd] as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
-execute if entity @s[scores={servermode=0},tag=!SMCustom,tag=!GameStarted,tag=!GameEnd] as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
+execute unless predicate game:game_started if entity @s[scores={servermode=0},tag=!SMCustom,tag=!GameEnd] as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
+execute unless predicate game:game_started if entity @s[scores={servermode=0},tag=!SMCustom,tag=!GameEnd] as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
 
 #Full offhand check
 tag @a[x=0] remove fullOffhand
@@ -125,7 +125,7 @@ tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 kill @e[x=0,type=area_effect_cloud,nbt={Particle:{type:"minecraft:dragon_breath"}}]
 
 #Fill portals before game starts
-execute if entity @s[tag=!noPortal,tag=!GameStarted,tag=!GameEnd,tag=EditedSettings] run function arenaclear:placeportals
+execute unless predicate game:game_started if entity @s[tag=!noPortal,tag=!GameEnd,tag=EditedSettings] run function arenaclear:placeportals
 
 #Decoy Vortex (Lobby)
 execute if score $dust CmdData matches 1 as @e[x=0,type=marker,tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
@@ -137,9 +137,9 @@ execute as @e[x=0,type=armor_stand,tag=VortexItemDummy] at @s if entity @e[type=
 execute as @e[x=0,type=armor_stand,tag=VortexItemDummy] at @s if entity @e[type=marker,tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~-180 ~
 
 #Disable damage gamerules if no game has started
-execute unless entity @s[tag=GameStarted,tag=!GameEnd] run gamerule fallDamage false
-execute unless entity @s[tag=GameStarted,tag=!GameEnd] run gamerule drowningDamage false
-execute unless entity @s[tag=GameStarted,tag=!GameEnd] run gamerule fireDamage false
+execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule fallDamage false
+execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule drowningDamage false
+execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule fireDamage false
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active

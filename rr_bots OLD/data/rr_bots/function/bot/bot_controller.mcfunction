@@ -23,7 +23,7 @@ execute as @e[x=0,type=armor_stand,tag=BotHasArrows] unless entity @s[scores={bo
 scoreboard players add @e[x=0,type=arrow,tag=BArrow] BotHP 1
 kill @e[x=0,type=arrow,tag=BArrow,scores={BotHP=50..}]
 
-execute as @e[x=0,type=armor_stand,tag=Bot] at @s if predicate game:in_void run function rr_bots:bot/movement/voidfall
+execute as @e[x=0,type=armor_stand,tag=Bot] at @s if predicate custom:in_void run function rr_bots:bot/movement/voidfall
 
 
 execute as @e[x=0,type=armor_stand,tag=Bot] at @s unless entity @e[type=zombie,tag=BotHPZombie,distance=..3,limit=1] if entity @a[team=!Spectator,distance=..45,limit=1] run scoreboard players remove @s BotHP 1

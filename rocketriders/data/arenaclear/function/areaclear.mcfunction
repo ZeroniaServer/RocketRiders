@@ -8,7 +8,7 @@ tag @s[scores={RepeatSettings=2..}] add Repeat
 execute if entity @s[tag=Repeat,tag=!RepeatForever] run schedule function arenaclear:notifyrepeat_indimension 3t append
 
 ##Appropriate tags for Arena Clear state
-tag @s remove GameStarted
+function custom:set_global/game_started {bool:false}
 
 ##Summon AECs for tracking/block sweeping
 execute if score @s bMissileCount matches 1.. run function arenaclear:prepareblue

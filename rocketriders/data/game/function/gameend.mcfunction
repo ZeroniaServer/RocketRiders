@@ -8,7 +8,7 @@ scoreboard players reset @e[x=0,type=marker,tag=YellowPlatform] pearlOwnerUUID
 scoreboard players reset @e[x=0,type=marker,tag=BluePlatform] pearlOwnerUUID
 tag @a[x=0] remove canopyTP
 function everytick:spawnables
-tag @s[scores={endtimer=1}] remove GameStarted
+execute if score @s endtimer matches 1 run function custom:set_global/game_started {bool:false}
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
 scoreboard players reset @s[scores={endtimer=1..}] SDtime

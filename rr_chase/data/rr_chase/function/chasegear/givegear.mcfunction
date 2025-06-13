@@ -17,4 +17,4 @@ loot replace entity @s armor.legs loot items:armor/chase_gear/leggings
 execute if function game:norankboots run loot replace entity @s armor.feet loot items:armor/chase_gear/boots
 
 loot replace entity @s hotbar.0 loot items:misc/shooting_saber
-execute if entity @e[x=0,tag=Selection,tag=!GameStarted] run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow_lobby"}],functions:[{function:"set_count",count:20}]}]}
+execute unless predicate game:game_started run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow_lobby"}],functions:[{function:"set_count",count:20}]}]}

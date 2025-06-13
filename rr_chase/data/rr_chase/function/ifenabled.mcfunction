@@ -8,7 +8,7 @@ execute unless entity @s[tag=SMCustom] run function rr_chase:tip
 
 #game
 function rr_chase:game/gamestart
-execute if entity @s[tag=GameStarted] run function rr_chase:game/ingame
+execute if predicate game:game_started run function rr_chase:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_chase:game/gameend
 execute as @a[x=0,team=!Blue,scores={ArmorColor=1..}] run scoreboard players reset @s ArmorColor
 execute as @e[x=0,type=item] run function everytick:no_drop
@@ -19,11 +19,11 @@ execute as @a[x=0,team=Yellow] run function custom:leave
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function rr_chase:arenaclear/baseplacement
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @a[x=0] remove informMe
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] as @a[x=0] at @s run function arenaclear:notifystart
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Chase","color":"light_purple","hoverEvent":{"action":"show_text","contents":["",{"text":"Objective:","color":"gold"},{"text":" Touch Finish Flag on Yellow base\n","color":"yellow"},{"text":"- Race against your enemies to Yellow base\n"},{"text":"- Attack your enemies to stop them\n"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Special \"Chase Blocks\" spawn on the map\n"},{"text":"- Break Chase Blocks to obtain extra items\n"},{"text":"- End Crystal Chase Blocks fire a Crystal at the leader\n"},{"text":"- Item Stacking is enabled\n"},{"text":"- Obsidian stairs lead up to Finish Flag\n"},{"text":"- No portals at bases"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run function modifiers:notifymodifiers
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=!GameStarted] run tag @s add chaseLast
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run tag @a[x=0] remove informMe
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started as @a[x=0] at @s run function arenaclear:notifystart
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Chase","color":"light_purple","hoverEvent":{"action":"show_text","contents":["",{"text":"Objective:","color":"gold"},{"text":" Touch Finish Flag on Yellow base\n","color":"yellow"},{"text":"- Race against your enemies to Yellow base\n"},{"text":"- Attack your enemies to stop them\n"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Special \"Chase Blocks\" spawn on the map\n"},{"text":"- Break Chase Blocks to obtain extra items\n"},{"text":"- End Crystal Chase Blocks fire a Crystal at the leader\n"},{"text":"- Item Stacking is enabled\n"},{"text":"- Obsidian stairs lead up to Finish Flag\n"},{"text":"- No portals at bases"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run function modifiers:notifymodifiers
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run tag @s add chaseLast
 tag @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners of active settings

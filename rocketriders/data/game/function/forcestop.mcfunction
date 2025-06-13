@@ -3,7 +3,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add GameEnd
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s crossbow[custom_data~{nova:1b}]
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
+function custom:set_global/game_started {bool:false}
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Countdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove forceCountdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove bossbarOverride

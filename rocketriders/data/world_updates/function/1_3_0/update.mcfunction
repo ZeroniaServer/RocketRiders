@@ -4,10 +4,12 @@ item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with 
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with leather_boots[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
 
+scoreboard objectives add global dummy
+scoreboard objectives add var dummy
+scoreboard objectives add Constant dummy
 scoreboard objectives add toggleParticles trigger
 scoreboard objectives add toggleTips trigger
 scoreboard objectives add toggleParkourTips trigger
-scoreboard objectives add Constant dummy
 
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
@@ -22,12 +24,15 @@ scoreboard objectives remove nnhealth_max
 scoreboard objectives remove nnhealth_real
 scoreboard objectives remove nnhealth_old
 
+# early stages of nuking Selection armour stand...
+execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
+
+
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 
 setblock -69 190 78 air
 setblock -69 190 78 minecraft:cherry_wall_sign[facing=east,waterlogged=false]{back_text:{color:"black",has_glowing_text:0b,messages:["","","",""]},front_text:{color:"purple",has_glowing_text:1b,messages:["",{"bold":true,"click_event":{"action":"run_command","command":"/function arenaclear:testvalidclear"},"color":"light_purple","text":"Start"},{"bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[tag=CancelJoin,limit=1] as @e[tag=Selection,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] run tellraw @s {\"text\":\"You must have at least one Missile enabled to start the game\",\"color\":\"red\"}"},"color":"light_purple","text":"Game"},""]},is_waxed:0b}
-
-tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 
 setblock -47 211 81 air
 setblock -47 211 81 minecraft:player_head[powered=false,rotation=3]{profile:{id:[I;1909544700,370756089,-1576344790,1695827449]}}
@@ -51,4 +56,5 @@ fill -109 229 106 -109 241 50 bamboo_stairs[facing=south,half=bottom] replace bi
 fill -109 229 106 -109 241 50 bamboo_stairs[facing=north,half=top] replace birch_stairs[facing=north,half=top]
 fill -109 229 106 -109 241 50 bamboo_stairs[facing=north,half=bottom] replace birch_stairs[facing=north,half=bottom]
 
+tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1304

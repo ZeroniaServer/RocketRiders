@@ -1,5 +1,5 @@
 ##Operator command - tests valid arenaclear based on enabled items
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameStarted] unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] run tag @s add validClear
+execute unless predicate game:game_started unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] run tag @s add validClear
 #Check how many categories are disabled (locked)/off (mutually exclusive) - if 3 or more then don't clear
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!rngNormal] run scoreboard players add $test ClearArena 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalOff] run scoreboard players add $test ClearArena 1
@@ -11,8 +11,8 @@ execute if score $test ClearArena matches 3.. run tag @s remove validClear
 scoreboard players reset $test ClearArena
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Molerat,tag=!WasMolerat] run tag @s add MoleratStop
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Molerat,tag=WasMolerat] run tag @s add MoleratStop
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameStarted] run tellraw @s {"text":"You can only run this when the game has ended","color":"red"}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameStarted] if entity @s[tag=!validClear] run tellraw @s {"text":"You must have at least one Missile enabled to start the game","color":"red"}
+execute if predicate game:game_started run tellraw @s {"text":"You can only run this when the game has ended","color":"red"}
+execute unless predicate game:game_started if entity @s[tag=!validClear] run tellraw @s {"text":"You must have at least one Missile enabled to start the game","color":"red"}
 execute if entity @s[tag=validClear,tag=MoleratStop,tag=!moleratConfirm] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run scoreboard players enable @s moleratConfirm
 execute if entity @s[tag=validClear,tag=MoleratStop,tag=!moleratConfirm] at @s run playsound minecraft:ui.cartography_table.take_result master @s ~ ~ ~ 1 1
 execute if entity @s[tag=validClear,tag=MoleratStop,tag=!moleratConfirm] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run tellraw @s ["","\n",{"text":"====================================================","color":"dark_gray"},"\n",{"text":"[WARNING]","bold":true,"color":"red"},{"text":" Toggling the "},{"text":"Molerat","color":"aqua"},{"text":" Modifier will cause lag due to the many fill commands needed to place/remove the wall."},"\n",{"text":"Are you sure you want to confirm game settings? ","color":"gold"},{"text":"[CONFIRM]","bold":true,"color":"green","click_event":{"action":"run_command","command":"/trigger moleratConfirm set 1"}},"\n",{"text":"====================================================","color":"dark_gray"},"\n"]

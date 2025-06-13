@@ -4,23 +4,23 @@
 ###################################################
 
 ##Game Bossbar
-execute if entity @s[tag=GameStarted] run bossbar set rr:startgame players @a[x=0,team=Lobby]
+execute if predicate game:game_started run bossbar set rr:startgame players @a[x=0,team=Lobby]
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a[x=0,team=Lobby]
-execute if entity @s[tag=GameStarted,tag=!bossbarOverride] unless entity @s[tag=YellowFull,tag=BlueFull] unless score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"A match is currently in progress. Feel free to join in!","color":"dark_green"}]
-execute if entity @s[tag=GameStarted,tag=!bossbarOverride,tag=YellowFull,tag=BlueFull] unless score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"The match is full, but feel free to spectate!","color":"dark_green"}]
-execute if entity @s[tag=GameStarted,tag=!bossbarOverride] unless entity @s[tag=YellowFull,tag=BlueFull] if score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"A match is currently in Sudden Death. Feel free to join in!","color":"dark_red"}]
-execute if entity @s[tag=GameStarted,tag=!bossbarOverride,tag=YellowFull,tag=BlueFull] if score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"The match is full, but feel free to spectate!","color":"dark_red"}]
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] run bossbar set rr:startgame max 30
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"players...","color":"white"}]
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame color blue
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame value 15
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Yellow] unless entity @a[x=0,team=Blue] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Yellow] unless entity @a[x=0,team=Blue] run bossbar set rr:startgame color yellow
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Yellow] unless entity @a[x=0,team=Blue] run bossbar set rr:startgame value 15
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"and ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame value 0
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame color white
-execute if entity @s[tag=!GameStarted,tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=SMCustom] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
+execute if predicate game:game_started if entity @s[tag=!bossbarOverride] unless entity @s[tag=YellowFull,tag=BlueFull] unless score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"A match is currently in progress. Feel free to join in!","color":"dark_green"}]
+execute if predicate game:game_started if entity @s[tag=!bossbarOverride,tag=YellowFull,tag=BlueFull] unless score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"The match is full, but feel free to spectate!","color":"dark_green"}]
+execute if predicate game:game_started if entity @s[tag=!bossbarOverride] unless entity @s[tag=YellowFull,tag=BlueFull] if score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"A match is currently in Sudden Death. Feel free to join in!","color":"dark_red"}]
+execute if predicate game:game_started if entity @s[tag=!bossbarOverride,tag=YellowFull,tag=BlueFull] if score @s SDtime matches 1.. run bossbar set rr:startgame name ["",{"text":"The match is full, but feel free to spectate!","color":"dark_red"}]
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar] run bossbar set rr:startgame max 30
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"players...","color":"white"}]
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame color blue
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame value 15
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Yellow] unless entity @a[x=0,team=Blue] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Yellow] unless entity @a[x=0,team=Blue] run bossbar set rr:startgame color yellow
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Yellow] unless entity @a[x=0,team=Blue] run bossbar set rr:startgame value 15
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=!SMCustom] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"and ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame value 0
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame color white
+execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar,tag=SMCustom] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
 execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0..1}] run bossbar set rr:startgame color purple
 execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0}] unless score $lockmodroom CmdData matches 1 run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
 execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0}] if score $lockmodroom CmdData matches 1 run bossbar set rr:startgame name ["",{"text":"Waiting for game settings to be confirmed...","color":"dark_purple"}]
@@ -28,7 +28,7 @@ execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame color r
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame name ["",{"text":"A game is currently ending.","color":"red"}]
 execute if entity @s[tag=EditedSettings] run scoreboard players set $ClearTime CmdData 0
 execute if entity @s[tag=!EditedSettings,scores={servermode=0}] run bossbar set rr:startgame value 30
-execute if entity @s[tag=!GameStarted] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a[x=0]
+execute unless predicate game:game_started unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a[x=0]
 
 ##Blue Join Pad
 execute unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @a[x=0,tag=JoinBlue] run function game:joinwarn
@@ -44,20 +44,20 @@ team join Blue @a[x=0,tag=JoinBlue]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[x=0,tag=JoinBlue]
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function game:saberblue
-execute if entity @s[tag=!GameStarted,tag=Hardcore] as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
-execute if entity @s[tag=!GameStarted,tag=!customSpawns] run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
-execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
-execute if entity @s[tag=!GameStarted,tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
-execute if entity @s[tag=!GameStarted,tag=!chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"blue","italic":true}
-execute if entity @s[tag=!GameStarted,tag=chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"red","italic":true}
-execute if entity @s[tag=!GameStarted] run effect give @a[x=0,tag=JoinBlue] resistance infinite 100 true
-execute if entity @s[tag=GameStarted,tag=!customSpawns] run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
-execute if entity @s[tag=GameStarted,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"dark_aqua"}]
-execute if entity @s[tag=GameStarted,tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
-execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if entity @s[tag=GameStarted] run gamemode survival @a[x=0,team=Blue,gamemode=adventure]
-execute if entity @s[tag=GameStarted] run effect clear @a[x=0,tag=JoinBlue] resistance
+execute unless predicate game:game_started if entity @s[tag=Hardcore] as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
+execute unless predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
+execute unless predicate game:game_started if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
+execute unless predicate game:game_started if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
+execute unless predicate game:game_started if entity @s[tag=!chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"blue","italic":true}
+execute unless predicate game:game_started if entity @s[tag=chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"red","italic":true}
+execute unless predicate game:game_started run effect give @a[x=0,tag=JoinBlue] resistance infinite 100 true
+execute if predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
+execute if predicate game:game_started if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"dark_aqua"}]
+execute if predicate game:game_started if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
+execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started run gamemode survival @a[x=0,team=Blue,gamemode=adventure]
+execute if predicate game:game_started run effect clear @a[x=0,tag=JoinBlue] resistance
 execute if entity @s[tag=!customSpawns] as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
@@ -92,17 +92,17 @@ team join Yellow @a[x=0,tag=JoinYellow]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[x=0,tag=JoinYellow]
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinYellow] run function game:saberyellow
-execute if entity @s[tag=!GameStarted,tag=Hardcore] as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
-execute if entity @s[tag=!GameStarted,tag=!customSpawns] run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
-execute if entity @s[tag=!GameStarted] as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
-execute if entity @s[tag=!GameStarted] run tellraw @a[x=0,tag=JoinYellow] {"text":"Fall off the base to return to the Lobby.","color":"gold","italic":true}
-execute if entity @s[tag=!GameStarted] run effect give @a[x=0,tag=JoinYellow] resistance infinite 100 true
-execute if entity @s[tag=GameStarted,tag=!customSpawns] run tp @a[x=0,tag=JoinYellow] 12 64 66 180 0
-execute if entity @s[tag=GameStarted] as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
-execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if entity @s[tag=GameStarted,tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if entity @s[tag=GameStarted] run gamemode survival @a[x=0,team=Yellow,gamemode=adventure]
-execute if entity @s[tag=GameStarted] run effect clear @a[x=0,tag=JoinYellow] resistance
+execute unless predicate game:game_started if entity @s[tag=Hardcore] as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
+execute unless predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
+execute unless predicate game:game_started as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
+execute unless predicate game:game_started run tellraw @a[x=0,tag=JoinYellow] {"text":"Fall off the base to return to the Lobby.","color":"gold","italic":true}
+execute unless predicate game:game_started run effect give @a[x=0,tag=JoinYellow] resistance infinite 100 true
+execute if predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,tag=JoinYellow] 12 64 66 180 0
+execute if predicate game:game_started as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
+execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started run gamemode survival @a[x=0,team=Yellow,gamemode=adventure]
+execute if predicate game:game_started run effect clear @a[x=0,tag=JoinYellow] resistance
 execute if entity @s[tag=!customSpawns] as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
 execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
@@ -175,5 +175,5 @@ execute if score $barriers CmdData matches 81 run scoreboard players set $barrie
 execute if score $barriers CmdData matches 1 as @e[x=0,type=marker,tag=CancelJoin] at @s run particle minecraft:block_marker{block_state:"minecraft:barrier"} ~ ~1 ~ 0 0 0 0 1 force @a[x=0,tag=!hideParticles,team=Lobby,predicate=!custom:belowroof]
 
 ##Disable crafting slots
-execute if entity @s[tag=!GameStarted] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function game:disablecraftingslots
+execute unless predicate game:game_started as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function game:disablecraftingslots
 execute as @a[team=!Yellow,team=!Blue] run function game:disablecraftingslots

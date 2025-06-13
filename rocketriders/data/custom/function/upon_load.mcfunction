@@ -34,6 +34,7 @@ team modify Developer friendlyFire false
 gamerule logAdminCommands false
 gamerule playersNetherPortalCreativeDelay 2147483647
 gamerule playersNetherPortalDefaultDelay 2147483647
+gamerule locatorBar false
 
 #Check updates
 schedule function world_updates:check_updates_indimension 2s replace

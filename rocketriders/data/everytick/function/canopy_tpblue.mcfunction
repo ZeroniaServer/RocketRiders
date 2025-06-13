@@ -31,11 +31,11 @@ execute if entity @s[scores={PlatTime=1}] run scoreboard players set @p[team=Blu
 #(thanks to Red_Bones for the teleport command format!)
 execute at @s[scores={PlatTime=1..40}] as @p[team=Blue,tag=currentTP,tag=canopyTP] align xyz positioned ~0.5 ~2 ~0.5 run tp @s ~ ~ ~
 execute if entity @s[scores={PlatTime=1}] run effect give @p[team=Blue,tag=currentTP,tag=canopyTP] slow_falling 2 100 true
-execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] jump_strength base set 0
-execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] movement_speed base set 0
+execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] minecraft:jump_strength modifier add rocketriders:canopy_penalty -1 add_multiplied_total
+execute if entity @s[scores={PlatTime=1..40}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] minecraft:movement_speed modifier add rocketriders:canopy_penalty -1 add_multiplied_total
 
-execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] jump_strength base set 0.42
-execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] movement_speed base set 0.1
+execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] minecraft:jump_strength modifier remove rocketriders:canopy_penalty
+execute if entity @s[scores={PlatTime=41..}] run attribute @p[team=Blue,tag=currentTP,tag=canopyTP] minecraft:movement_speed modifier remove rocketriders:canopy_penalty
 
 #Remove canopy TP tag if teleportation period ends
 execute if entity @s[scores={PlatTime=41..}] run tag @p[team=Blue,tag=currentTP,tag=canopyTP] remove canopyTP

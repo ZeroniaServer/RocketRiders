@@ -63,6 +63,8 @@ execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=YellowWon,tag=B
 ##Post-tie phase and reset
 scoreboard players set @s[scores={endtimer=101}] gametime 0
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function everytick:score_reset
+execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy_penalty
+execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy_penalty
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Blue]
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Yellow]
 execute if entity @s[scores={endtimer=570},tag=!SMActive] run scoreboard players add @a[x=0,team=Blue] GamesPlayed 1

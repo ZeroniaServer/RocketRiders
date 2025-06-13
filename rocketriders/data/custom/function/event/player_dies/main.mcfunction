@@ -57,6 +57,8 @@ tag @s remove beenOnBoth
 
 execute if entity @s[tag=CarryFlag] run function custom:event/player_dies/restore_flag
 
+attribute @s minecraft:jump_strength modifier remove rocketriders:canopy_penalty
+attribute @s minecraft:movement_speed modifier remove rocketriders:canopy_penalty
 
 ## If alive, instantly trigger respawn
 tag @s add player_dies.this

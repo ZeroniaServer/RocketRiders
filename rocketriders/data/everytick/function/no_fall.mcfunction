@@ -1,2 +1,2 @@
-execute as @a[team=Lobby] run attribute @s safe_fall_distance base set 1024
-execute as @a[team=!Lobby] run attribute @s safe_fall_distance base set 3
+execute as @a[team=Lobby] run attribute @s minecraft:safe_fall_distance modifier add rocketriders:lobby 1024 add_value
+execute as @a[team=!Lobby] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:lobby

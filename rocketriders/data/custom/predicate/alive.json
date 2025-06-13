@@ -1,0 +1,7 @@
+{
+  "condition": "minecraft:entity_scores",
+  "entity": "this",
+  "scores": {
+    "flag.is_dead": 0
+  }
+}

@@ -3,6 +3,11 @@
 ## the core RR Datapack runs from ##
 ####################################
 
+# Handle events and flags
+execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom:event/player_respawns/main
+scoreboard players set @a[x=0] flag.is_dead 1
+scoreboard players set @e[x=0,type=player] flag.is_dead 0
+
 #Server mode
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=!SMCustom] remove SMActive
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=1..}] add SMActive
@@ -37,7 +42,7 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] in minecraft:overworld
 #Team/inventory counting and game-related effects
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:team_count
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gamestart
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
+execute if predicate game:game_started as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run function everytick:regen_system
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run gamerule naturalRegeneration true
 
@@ -52,7 +57,7 @@ scoreboard players enable @a[x=0,team=Lobby] displayinfo
 scoreboard players enable @a[x=0,team=Developer] displayinfo
 execute as @a[x=0,scores={displayinfo=1..}] at @s run function lobby:displayinfo
 execute as @a[x=0,team=Lobby] run function everytick:score_reset
-execute if loaded 25 184 -6 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted] run function lobby:credits/cycle
+execute if loaded 25 184 -6 unless predicate game:game_started run function lobby:credits/cycle
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run function lobby:parkour/parkour
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run function lobby:parkour/parkourserver
 stopsound @a[x=0] ambient minecraft:ambient.cave

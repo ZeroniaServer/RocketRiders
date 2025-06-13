@@ -43,12 +43,6 @@ execute as @e[x=0,type=marker,tag=airDetectYellow,limit=1] at @s run function rr
 #Archer arrow pickup
 execute as @e[x=0,type=item] if items entity @s contents arrow at @s run function rr_crusade:game/arrow_item
 
-#Give knights new shields when they respawn
-execute as @a[x=0,scores={crusadekit=1,deathCooldown=5}] at @s run clear @s shield
-execute as @a[x=0,team=Blue,scores={crusadekit=1,deathCooldown=5}] if items entity @s weapon.offhand * run loot give @s loot items:misc/knight_shield
-execute as @a[x=0,team=Yellow,scores={crusadekit=1,deathCooldown=5}] if items entity @s weapon.offhand * run loot give @s loot items:misc/knight_shield
-execute as @a[x=0,team=Blue,scores={crusadekit=1,deathCooldown=5}] unless items entity @s weapon.offhand * run loot replace entity @s weapon.offhand loot items:misc/knight_shield
-execute as @a[x=0,team=Yellow,scores={crusadekit=1,deathCooldown=5}] unless items entity @s weapon.offhand * run loot replace entity @s weapon.offhand loot items:misc/knight_shield
 #Set banners/light blocks
 #Yellow A
 execute unless block -14 53 38 minecraft:yellow_banner run setblock -14 53 38 minecraft:yellow_banner[rotation=8]{patterns:[{pattern:"minecraft:stripe_middle",color:"orange"},{pattern:"minecraft:stripe_left",color:"orange"},{pattern:"minecraft:stripe_right",color:"orange"},{pattern:"minecraft:stripe_top",color:"orange"},{pattern:"minecraft:border",color:"yellow"}]}

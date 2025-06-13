@@ -41,11 +41,6 @@ execute unless entity @s[tag=runcanopy] if entity @e[x=0,type=ender_pearl] run t
 execute unless entity @s[tag=runcanopy] if entity @e[x=0,type=marker,tag=YellowPlatform] run tag @s add runcanopy
 execute unless entity @s[tag=runcanopy] if entity @e[x=0,type=marker,tag=BluePlatform] run tag @s add runcanopy
 execute if entity @s[tag=runcanopy] run function everytick:canopy
-#Near Canopy check
-tag @a[x=0] remove nearcanopy
-execute if entity @s[tag=runcanopy] as @a[x=0,team=Blue] at @s if entity @e[type=marker,tag=YellowPlatform,distance=..7] run tag @s add nearcanopy
-execute if entity @s[tag=runcanopy] as @a[x=0,team=Yellow] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7] run tag @s add nearcanopy
-execute if entity @s[tag=runcanopy,tag=onlyBlue] as @a[x=0,team=Blue] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7] run tag @s add nearcanopy
 
 execute unless entity @s[tag=runfireball] if entity @e[x=0,type=fireball] run tag @s add runfireball
 execute unless entity @s[tag=runfireball] if entity @e[x=0,type=marker,tag=BlueFireball] run tag @s add runfireball

@@ -60,22 +60,19 @@ execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=SMAc
 execute if predicate game:game_started if entity @s[tag=!GameEnd] run tag @a[x=0] remove CalculateWin
 execute if predicate game:game_started if entity @s[tag=!GameEnd] run tag @a[x=0] remove CalculateLoss
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
-#Hotfix for improperly triggering achievements
-execute if entity @s[tag=GameStarted] run scoreboard players reset * PlayerKills
-execute if entity @s[tag=GameStarted] run scoreboard players reset * PlayerDeaths
 execute if predicate game:game_started run scoreboard players set @a[x=0,team=Yellow] jumps 0
 execute if predicate game:game_started run scoreboard players set @a[x=0,team=Blue] jumps 0
 #Enabling damage gamerules
-execute if entity @s[tag=GameStarted] run gamerule drowningDamage true
-execute if entity @s[tag=GameStarted] run gamerule fireDamage true
-execute if entity @s[tag=GameStarted] run scoreboard players operation @s origBCount = @s bluesCount
-execute if entity @s[tag=GameStarted] run scoreboard players operation @s origYCount = @s yellowsCount
-execute if entity @s[tag=GameStarted] run function lobby:credits/restart
-execute if entity @s[tag=GameStarted] run gamerule mobGriefing true
-execute if entity @s[tag=GameStarted] run kill @e[x=0,type=arrow]
-execute if entity @s[tag=GameStarted] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] arrow[custom_data~{Lobby:1b}]
-scoreboard players set @s[tag=GameStarted] count 0
-tag @s[tag=GameStarted] remove bossbarOverride
+execute if predicate game:game_started run gamerule drowningDamage true
+execute if predicate game:game_started run gamerule fireDamage true
+execute if predicate game:game_started run scoreboard players operation @s origBCount = @s bluesCount
+execute if predicate game:game_started run scoreboard players operation @s origYCount = @s yellowsCount
+execute if predicate game:game_started run function lobby:credits/restart
+execute if predicate game:game_started run gamerule mobGriefing true
+execute if predicate game:game_started run kill @e[x=0,type=arrow]
+execute if predicate game:game_started run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] arrow[custom_data~{Lobby:1b}]
+execute if predicate game:game_started run scoreboard players set @s count 0
+execute if predicate game:game_started run tag @s remove bossbarOverride
 #The forceCountdown tag is used to override conditions that would otherwise cancel a countdown
-tag @s[tag=GameStarted] remove forceCountdown
-tag @s[tag=GameStarted] remove Countdown
+execute if predicate game:game_started run tag @s remove forceCountdown
+execute if predicate game:game_started run tag @s remove Countdown

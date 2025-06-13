@@ -1,0 +1,31 @@
+scoreboard players set @s flag.is_dead 0
+
+# Clear game effects
+effect clear @s levitation
+
+# Ensure return to spawnpoint
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawns] run tp @s[team=Blue] 12 64 -66 0 0
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawns] run tp @s[team=Yellow] 12 64 66 -180 0
+tp @s[tag=crosser,team=Blue] 12 64 -66 0 0
+tp @s[tag=crosser,team=Yellow] 12 64 66 -180 0
+
+# Reset motion
+tp @s @s
+
+# Put out fire
+execute if entity @s[tag=crosser,predicate=custom:is_on_fire] at @s run function game:putoutfire
+
+# Apply poison if lobby breach was made
+execute if predicate game:game_started run effect give @s[tag=on_respawn.apply_poison_effect] poison 4 100 true
+tag @s remove on_respawn.apply_poison_effect
+
+# Apply effects if crosser fell into the void
+execute if predicate game:game_started run effect give @s[tag=on_respawn.apply_crosser_void_fall_effects] resistance 1 200 true
+execute if predicate game:game_started run effect give @s[tag=on_respawn.apply_crosser_void_fall_effects] instant_health 1 200 true
+execute if predicate game:game_started run effect give @s[tag=on_respawn.apply_crosser_void_fall_effects] fire_resistance 4 200 true
+tag @s remove on_respawn.apply_crosser_void_fall_effects
+
+# Give knights new shields when they respawn
+clear @s[scores={crusadekit=1}] shield
+execute if entity @s[predicate=custom:on_blue_or_yellow_team,scores={crusadekit=1}] if items entity @s weapon.offhand * run loot give @s loot items:misc/knight_shield
+execute if entity @s[predicate=custom:on_blue_or_yellow_team,scores={crusadekit=1}] unless items entity @s weapon.offhand * run loot replace entity @s weapon.offhand loot items:misc/knight_shield

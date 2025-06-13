@@ -31,7 +31,7 @@ advancement grant @a[x=0,tag=Forsaken,tag=Winner] only achievements:rr_challenge
 advancement grant @a[x=0,tag=GroundBound,tag=Winner] only achievements:rr_challenges/groundbound
 
 #Immortal (part 2) - applies to both winners/losers but only if win/loss still stands
-execute as @a[x=0,tag=Immortal] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/immortal
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team,scores={deaths=..0}] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/immortal
 
 #Ballet Dancer - applies to both winners/losers but only if win/loss still stands
 execute as @a[x=0,tag=!FailedBallet,tag=firstMoved] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/ballet

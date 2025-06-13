@@ -21,7 +21,6 @@ execute if entity @s[scores={endtimer=1},tag=!noSabers] run function game:endsab
 execute if entity @s[tag=BlueWon] run effect give @a[x=0,team=Yellow] weakness infinite 100 true
 execute if entity @s[tag=YellowWon] run effect give @a[x=0,team=Blue] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1..100}] run worldborder warning distance 0
-execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove nearcanopy
 execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove threwCanopy
 execute if entity @s[scores={endtimer=1}] as @a[x=0] run trigger LeaveMidgame set -1
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[x=0,team=Blue]

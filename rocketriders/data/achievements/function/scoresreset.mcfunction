@@ -1,7 +1,6 @@
 ##Runs at the end of the game to reset any ingame statistics for achievements
 scoreboard players reset @a[x=0] jumping
 scoreboard players reset @a[x=0] timeSinceJump
-scoreboard players reset @a[x=0] PlayerDeaths
 scoreboard players reset @a[x=0] deathCooldown
 scoreboard players reset @a[x=0] FallDistance
 scoreboard players reset @a[x=0] gravShot
@@ -25,5 +24,3 @@ tag @a[x=0] remove HadIt
 tag @a[x=0] remove Loneliest
 tag @a[x=0] remove Forsaken
 tag @a[x=0] remove GroundBound
-tag @a[x=0] remove Immortal
-tag @a[x=0] remove probGonnaDie

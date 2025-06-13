@@ -36,7 +36,6 @@ function items:full_hotbar
 scoreboard players add @s gametime 1
 
 ##Put out players on fire
-execute if entity @s[tag=GameStarted,scores={gametime=1..2}] as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute if predicate game:game_started if score @s gametime matches 1..2 as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
 
 ##Enable fall damage (considers modifiers)
@@ -88,17 +87,6 @@ execute if entity @s[tag=!customObsidian] run fill 39 63 -67 39 34 -67 obsidian
 execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill -11 59 73 34 36 75 obsidian outline
 execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 1 48 73 1 47 73 air
 execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 23 48 73 23 47 73 air
-
-##Respawn handling
-execute as @e[x=0,type=marker,tag=YellowSpawnZone] at @s as @a[team=Yellow,distance=..6,scores={respawn=1..}] at @s run tp @s ~ ~ ~ -180 0
-execute as @e[x=0,type=marker,tag=YellowSpawnZone] at @s as @a[team=Yellow,tag=FellInVoid,distance=..6,scores={respawn=1..}] run scoreboard players add @s FellVoid 1
-execute as @e[x=0,type=marker,tag=YellowSpawnZone] at @s as @a[team=Yellow,tag=FellInVoid,distance=..6,scores={respawn=1..}] run tag @s remove FellInVoid
-execute as @e[x=0,type=marker,tag=BlueSpawnZone] at @s as @a[team=Blue,tag=FellInVoid,distance=..6,scores={respawn=1..}] run scoreboard players add @s FellVoid 1
-execute as @e[x=0,type=marker,tag=BlueSpawnZone] at @s as @a[team=Blue,tag=FellInVoid,distance=..6,scores={respawn=1..}] run tag @s remove FellInVoid
-execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[x=0,type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
-execute unless entity @s[tag=respawnFlag] unless entity @s[tag=runcanopy] as @e[x=0,type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
-tag @a[x=0,team=!Yellow,team=!Blue] remove FellInVoid
-scoreboard players reset @a[x=0,team=!Yellow,team=!Blue] respawn
 
 ##Hotfix for Canopy respawns
 tag @s[tag=runcanopy] remove runcanopy

@@ -16,6 +16,8 @@ scoreboard objectives remove hideParkourTips
 scoreboard objectives remove splashOwnerUUID
 scoreboard objectives remove HasFirework
 scoreboard objectives remove death
+scoreboard objectives remove PlayerKills
+scoreboard objectives remove PlayerDeaths
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

@@ -1,0 +1,65 @@
+{
+  "criteria": {
+    "die_not_void": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "event.player_dies": {
+                "min": 1
+              }
+            }
+          }
+        ],
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "custom:void",
+                "expected": false
+              }
+            ]
+          }
+        }
+      }
+    },
+    "die_void": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "event.player_dies": {
+                "min": 1
+              }
+            }
+          }
+        ],
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "custom:void",
+                "expected": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "die_not_void",
+      "die_void"
+    ]
+  ],
+  "rewards": {
+    "function": "custom:event/player_dies/main"
+  }
+}

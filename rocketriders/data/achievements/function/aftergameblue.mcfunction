@@ -26,9 +26,6 @@ execute if score @s bluesCount < @s origBCount run tag @a[x=0,team=Blue] add For
 #Ground Bound (part 1) - necessary because players can jump after game end
 tag @a[x=0,team=Blue,scores={jumps=..0}] add GroundBound
 
-#Immortal (part 1)
-tag @a[x=0,team=Blue,scores={deaths=..0}] add Immortal
-
 #I Swear I Had It (part 1)
 execute unless entity @s[tag=noPortal] as @a[x=0,team=Yellow] store result score @s HasMissiles run clear @s #custom:missile 0
 execute as @a[x=0,team=Yellow,scores={HasMissiles=1..}] at @s if entity @s[z=-74,dz=28] run tag @s add HadIt

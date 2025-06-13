@@ -42,8 +42,13 @@ schedule function world_updates:check_updates_indimension 2s replace
 bossbar add rr:startgame ""
 
 #Scores
+scoreboard objectives add global dummy
+scoreboard objectives add var dummy
 scoreboard objectives add Constant dummy
 scoreboard players set $ticks_per_second Constant 20
+
+scoreboard objectives add event.player_dies custom:deaths
+scoreboard objectives add flag.is_dead dummy
 
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
@@ -60,7 +65,6 @@ scoreboard objectives add GamesPlayed dummy
 scoreboard objectives add largerTeam dummy
 scoreboard objectives add LeaveMidgame trigger
 scoreboard objectives add FallDistance dummy
-scoreboard objectives add PlayerDeaths dummy
 scoreboard objectives add deaths deathCount
 scoreboard objectives add respawn deathCount
 scoreboard objectives add deathCooldown dummy
@@ -109,7 +113,6 @@ scoreboard objectives add bluesCount dummy
 scoreboard objectives add origYCount dummy
 scoreboard objectives add yellowsCount dummy
 scoreboard objectives add pearlOwnerUUID dummy
-scoreboard objectives add PlayerKills playerKillCount
 scoreboard objectives add soulKills dummy
 scoreboard objectives add kills playerKillCount
 scoreboard objectives add jumps minecraft.custom:minecraft.jump

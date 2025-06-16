@@ -1,3 +1,5 @@
+setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
+
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
 
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with leather_chestplate[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]

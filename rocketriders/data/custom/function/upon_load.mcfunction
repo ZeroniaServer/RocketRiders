@@ -42,6 +42,9 @@ schedule function world_updates:check_updates_indimension 2s replace
 #Bossbars
 bossbar add rr:startgame ""
 
+#Useful blocks
+setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
+
 #Scores
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy

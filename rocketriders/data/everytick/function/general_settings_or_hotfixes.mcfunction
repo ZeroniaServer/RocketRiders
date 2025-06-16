@@ -122,7 +122,7 @@ tag @a[x=0,tag=itemDeducted] remove itemDeducted
 tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 
 #Remove dragon breath
-kill @e[x=0,type=area_effect_cloud,nbt={Particle:{type:"minecraft:dragon_breath"}}]
+kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect_cloud]
 
 #Fill portals before game starts
 execute unless predicate game:game_started if entity @s[tag=!noPortal,tag=!GameEnd,tag=EditedSettings] run function arenaclear:placeportals

@@ -15,7 +15,7 @@ execute as @a[x=0,tag=JoinBlue] run function rr_chase:chasegear/givegear
 execute if predicate game:game_started as @a[x=0,tag=JoinBlue] run function items:util/givearrows
 
 #Spawnpoints
-execute if predicate game:game_started as @a[x=0,team=Blue,nbt=!{SpawnX:12,SpawnY:64,SpawnZ:-66}] run spawnpoint @s 12 64 -66 0
+execute if predicate game:game_started as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @s 12 64 -66 0
 
 #Notify Join
 execute if predicate game:game_started if entity @s[tag=!SMActive] as @a[x=0,tag=JoinBlue] run function rr_chase:chasegear/sabermsg

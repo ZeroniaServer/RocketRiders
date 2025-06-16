@@ -1,23 +1,12 @@
 ##Identify egg as a Vortex & apply custom name to the egg
-execute store result score $tempuuid playerUUID run data get entity @s Owner[0]
-execute as @a[x=0,predicate=custom:matches_uuid] store result score @s UUIDTracker run data get entity @s UUID[0]
-execute as @a[x=0,team=Yellow,predicate=custom:matches_uuid] at @s run setblock ~ 174 ~ oak_sign
-execute as @a[x=0,team=Blue,predicate=custom:matches_uuid] at @s run setblock ~ 174 ~ oak_sign
-execute as @a[x=0,team=Yellow,predicate=custom:matches_uuid] at @s run data modify block ~ 174 ~ front_text.messages[0] set value ["",{"selector":"@p[team=Yellow,predicate=custom:matches_uuid]"},{"text":"'s Vortex"}]
-execute as @a[x=0,team=Blue,predicate=custom:matches_uuid] at @s run data modify block ~ 174 ~ front_text.messages[0] set value ["",{"selector":"@p[team=Blue,predicate=custom:matches_uuid]"},{"text":"'s Vortex"}]
-execute if entity @a[x=0,team=Yellow,predicate=custom:matches_uuid] run tag @s[tag=!YellowVortex,tag=!BlueVortex] add YellowVortex
-execute if entity @s[tag=YellowVortex] store result score @s UUIDTracker run scoreboard players get @p[team=Yellow,predicate=custom:matches_uuid] UUIDTracker
-execute if entity @s[tag=YellowVortex] at @p[team=Yellow,predicate=custom:matches_uuid] run data modify entity @s CustomName set from block ~ 174 ~ front_text.messages[0]
-execute if entity @a[x=0,team=Blue,predicate=custom:matches_uuid] run tag @s[tag=!YellowVortex,tag=!BlueVortex] add BlueVortex
-execute if entity @s[tag=BlueVortex] store result score @s UUIDTracker run scoreboard players get @p[team=Blue,predicate=custom:matches_uuid] UUIDTracker
-execute if entity @s[tag=BlueVortex] at @p[team=Blue,predicate=custom:matches_uuid] run data modify entity @s CustomName set from block ~ 174 ~ front_text.messages[0]
-execute as @a[x=0,team=Yellow,predicate=custom:matches_uuid] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
-execute as @a[x=0,team=Blue,predicate=custom:matches_uuid] at @s run fill ~ 173 ~ ~ 175 ~ air replace oak_sign
+
+scoreboard players set $team var -1
+execute store success score $team var on origin if entity @s[team=!Blue]
+execute if score $team var matches 0 run tag @s add BlueVortex
+execute if score $team var matches 1 run tag @s add YellowVortex
+
+function custom:set_entity_name_with_owner {text_component:{text:"Vortex"}}
 
 #Veteran tracking
-advancement grant @a[x=0,team=Yellow,predicate=custom:matches_uuid,tag=!VortexSpawned] only achievements:rr_challenges/veteran VortexSpawned
-advancement grant @a[x=0,team=Blue,predicate=custom:matches_uuid,tag=!VortexSpawned] only achievements:rr_challenges/veteran VortexSpawned
-tag @a[x=0,team=Yellow,predicate=custom:matches_uuid] add VortexSpawned
-tag @a[x=0,team=Blue,predicate=custom:matches_uuid] add VortexSpawned
-
-scoreboard players reset $tempuuid playerUUID
+execute on origin run advancement grant @s[tag=!VortexSpawned] only achievements:rr_challenges/veteran VortexSpawned
+execute on origin run tag @s add VortexSpawned

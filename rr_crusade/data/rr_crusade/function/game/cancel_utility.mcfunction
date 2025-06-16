@@ -14,18 +14,6 @@ execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=marker,ta
 execute if score $YellowShield crusadehp matches -1000..0 if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=marker,tag=novatracker] at @s if entity @s[x=2,y=37,z=64,dx=20,dy=26,dz=6] run kill @s
 execute if score $BlueShield crusadehp matches -1000..0 if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=marker,tag=novatracker] at @s if entity @s[x=2,y=37,z=-70,dx=20,dy=26,dz=6] run kill @s
 
-#Next 4 commands disable Yellow Canopies inside of portals
-execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=ender_pearl,scores={testplat=9..10}] at @s if entity @s[x=0,y=44,z=64,dx=24,dy=12,dz=6] run scoreboard players remove @s testplat 1
-execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=ender_pearl,scores={testplat=9..10}] at @s if entity @s[x=3,y=43,z=66,dx=18,dy=1,dz=2] run scoreboard players remove @s testplat 2
-execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=ender_pearl,scores={testplat=9..10}] at @s if entity @s[x=0,y=44,z=-70,dx=24,dy=12,dz=6] run scoreboard players remove @s testplat 1
-execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=ender_pearl,scores={testplat=9..10}] at @s if entity @s[x=3,y=43,z=-68,dx=18,dy=1,dz=2] run scoreboard players remove @s testplat 2
-
-#Next 4 commands disable Blue Canopies inside of portals
-execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=0,y=44,z=64,dx=24,dy=12,dz=6] run scoreboard players remove @s testplat2 1
-execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=3,y=43,z=66,dx=18,dy=1,dz=2] run scoreboard players remove @s testplat2 2
-execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=0,y=44,z=-70,dx=24,dy=12,dz=6] run scoreboard players remove @s testplat2 1
-execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=3,y=43,z=-68,dx=18,dy=1,dz=2] run scoreboard players remove @s testplat2 2
-
 #Next 2 commands disable Blue Obsidian Shields inside of portals
 execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=1,y=42,z=-67,dx=22,dy=16] run kill @s
 execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=1,y=42,z=67,dx=22,dy=16] run kill @s
@@ -37,14 +25,6 @@ execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=marker,
 #Next 2 commands disable general Obsidian Shields inside of portals
 execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=marker,tag=obsidianshield] at @s if entity @s[x=1,y=42,z=-68,dz=1,dx=22,dy=16] run kill @s
 execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=marker,tag=obsidianshield] at @s if entity @s[x=1,y=42,z=66,dz=1,dx=22,dy=16] run kill @s
-
-#Next 2 commands disable Yellow Shields inside of portals
-execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=snowball,tag=YellowShield,scores={shieldtest=19..20}] at @s if entity @s[x=1,y=40,z=-67,dx=22,dy=19] run scoreboard players remove @s shieldtest 2
-execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=snowball,tag=YellowShield,scores={shieldtest=19..20}] at @s if entity @s[x=1,y=40,z=67,dx=22,dy=19] run scoreboard players remove @s shieldtest 2
-
-#Next 2 commands disable Blue Shields inside of portals
-execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=snowball,tag=BlueShield,scores={shieldtest2=19..20}] at @s if entity @s[x=1,y=40,z=-67,dx=22,dy=19] run scoreboard players remove @s shieldtest2 2
-execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=snowball,tag=BlueShield,scores={shieldtest2=19..20}] at @s if entity @s[x=1,y=40,z=67,dx=22,dy=19] run scoreboard players remove @s shieldtest2 2
 
 ##Special ICBM override
 #Teleport trackers to matching ICBMs + detect trigger conditions

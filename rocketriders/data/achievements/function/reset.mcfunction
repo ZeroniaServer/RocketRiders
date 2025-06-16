@@ -14,7 +14,6 @@ scoreboard players reset @s gravShot
 scoreboard players reset @s soulKills
 scoreboard players reset @s prevKills
 scoreboard players reset @s regifts
-scoreboard players reset @s ThrowShield
 tag @s remove HolyLand
 tag @s remove RainingMen
 tag @s remove Regifting

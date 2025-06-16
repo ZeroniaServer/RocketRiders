@@ -168,7 +168,6 @@ scoreboard objectives add DealtDamage minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add arrowtime dummy
 scoreboard objectives add ShowTip dummy
 scoreboard objectives add modifierID dummy
-scoreboard objectives add voidNoFallCount dummy
 scoreboard objectives add novatimer dummy
 scoreboard objectives add testplat dummy
 scoreboard objectives add testplat2 dummy
@@ -185,8 +184,6 @@ scoreboard objectives add obmove dummy
 scoreboard objectives add obshieldtime dummy
 scoreboard objectives add obshieldTick dummy
 scoreboard objectives add regenTimer dummy
-scoreboard objectives add shieldtest dummy
-scoreboard objectives add shieldtest2 dummy
 scoreboard objectives add teamDiff dummy
 scoreboard objectives add smallerTeamCount dummy
 scoreboard objectives add largerTeamCount dummy
@@ -253,7 +250,6 @@ scoreboard objectives add FireballSpawned minecraft.used:minecraft.blaze_spawn_e
 scoreboard objectives add BSurpriseSpawned minecraft.used:minecraft.squid_spawn_egg
 scoreboard objectives add YSurpriseSpawned minecraft.used:minecraft.cod_spawn_egg
 scoreboard objectives add BowShot minecraft.used:minecraft.bow
-scoreboard objectives add ThrowShield minecraft.used:minecraft.snowball
 scoreboard objectives add infinity dummy
 scoreboard objectives add notBackwards dummy
 scoreboard objectives add standStill dummy

@@ -45,12 +45,3 @@ execute as @e[x=0,type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s 
 execute as @e[x=0,type=marker,tag=blueobalone,scores={shieldplacement=6}] at @s run setblock ~2 ~-1 ~ white_stained_glass_pane[west=true]
 
 kill @e[x=0,type=marker,scores={shieldplacement=6..}]
-
-#Shield
-execute as @e[x=0,type=snowball,tag=BlueShield] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[3,3,3],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=PlaceBlueShield,scores={shieldplacement=1}] at @s run place template rr_chase:whiteshield1 ~-1 ~-1 ~
-execute as @e[x=0,type=marker,tag=PlaceBlueShield,scores={shieldplacement=2}] at @s run place template rr_chase:whiteshield2 ~-2 ~-2 ~
-execute as @e[x=0,type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run place template rr_chase:whiteshield3 ~-3 ~-3 ~
-execute as @e[x=0,type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run particle minecraft:block{block_state:"minecraft:white_stained_glass"} ~ ~ ~ 1 1 0 0.1 50
-kill @e[x=0,type=marker,tag=PlaceBlueShield,scores={shieldplacement=3..}]
-kill @e[x=0,type=snowball,tag=BlueShield,scores={shieldtest2=20..}]

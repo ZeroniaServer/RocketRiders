@@ -69,13 +69,6 @@ execute if entity @s[tag=!CompletedVeteran,tag=!FireballSpawned] if score @s Fir
 execute if entity @s[tag=!CompletedVeteran,tag=!ObshieldSpawned] if score @s ObshieldSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran ObshieldSpawned
 execute if entity @s[tag=!CompletedVeteran,tag=!ObshieldSpawned] if score @s ObshieldSpawned matches 1.. run tag @s add ObshieldSpawned
 
-execute if entity @s[tag=!CompletedVeteran,tag=!CanopySpawned] if score @s ThrowPlat matches 1.. run advancement grant @s only achievements:rr_challenges/veteran CanopySpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!CanopySpawned] if score @s ThrowPlat matches 1.. run tag @s add CanopySpawned
-
-# i know that these will trigger for stinging shields and lava splashes but i don't rly care
-execute if entity @s[tag=!CompletedVeteran,tag=!ShieldSpawned] if score @s ThrowShield matches 1.. run advancement grant @s only achievements:rr_challenges/veteran ShieldSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!ShieldSpawned] if score @s ThrowShield matches 1.. run tag @s add ShieldSpawned
-
 execute if entity @s[tag=!CompletedVeteran,tag=!SplashSpawned] if score @s ThrowSplash matches 1.. run advancement grant @s only achievements:rr_challenges/veteran SplashSpawned
 execute if entity @s[tag=!CompletedVeteran,tag=!SplashSpawned] if score @s ThrowSplash matches 1.. run tag @s add SplashSpawned
 

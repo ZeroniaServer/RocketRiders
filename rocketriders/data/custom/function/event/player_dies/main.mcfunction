@@ -32,7 +32,6 @@ execute if predicate game:game_started if predicate custom:on_blue_or_yellow_tea
 # Handle falling into the void
 execute if predicate game:game_started if predicate custom:on_blue_or_yellow_team if score $void_death var matches 1 run scoreboard players add @s FellVoid 1
 execute if predicate game:game_started if predicate custom:on_blue_or_yellow_team run tag @s[tag=crosser] add on_respawn.apply_crosser_void_fall_effects
-execute if predicate game:game_started if predicate custom:on_blue_or_yellow_team run scoreboard players set @s[tag=crosser] voidNoFallCount 0
 
 
 ## General

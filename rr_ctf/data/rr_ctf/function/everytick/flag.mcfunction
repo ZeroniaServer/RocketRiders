@@ -346,12 +346,6 @@ execute positioned 34 65 -64 as @e[type=egg,scores={vortextimer=19..20},distance
 execute positioned -10 65 64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1
 execute positioned 34 65 64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1
 
-#Disable shields near flags
-execute positioned -10 65 -64 as @e[type=snowball,scores={shieldtest=19..20},distance=..5] run scoreboard players remove @s shieldtest 1
-execute positioned 34 65 -64 as @e[type=snowball,scores={shieldtest=19..20},distance=..5] run scoreboard players remove @s shieldtest 1
-execute positioned -10 65 64 as @e[type=snowball,scores={shieldtest=19..20},distance=..5] run scoreboard players remove @s shieldtest 1
-execute positioned 34 65 64 as @e[type=snowball,scores={shieldtest=19..20},distance=..5] run scoreboard players remove @s shieldtest 1
-
 #Disable obsidian shields near flags
 execute positioned -10 65 -64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
 execute positioned 34 65 -64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s

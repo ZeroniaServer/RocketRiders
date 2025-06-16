@@ -34,7 +34,6 @@ scoreboard players set @s FellVoid 0
 scoreboard players set @s prevFellVoid 0
 scoreboard players set @s gravShot 0
 scoreboard players set @s regifts 0
-scoreboard players set @s ThrowShield 0
 
 #Reset advancement criteria progress for the temp trackables also
 advancement revoke @s[tag=!RainingMen] only achievements:rr_challenges/raining_men

@@ -12,6 +12,10 @@ data modify storage rocketriders:main shield.name set value "Shield"
 execute on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s Canopy"], write_to:"storage rocketriders:main shield.name"}
 data modify entity @s CustomName set from storage rocketriders:main shield.name
 
+## Achievements
+execute on origin run advancement grant @s only achievements:rr_challenges/veteran ShieldSpawned
+execute on origin run tag @s add ShieldSpawned
+
 ## Spawn behaviour
 execute align xyz positioned ~0.5 ~ ~0.5 run tp @s ~ ~ ~
 

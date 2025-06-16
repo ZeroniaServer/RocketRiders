@@ -51,6 +51,10 @@ scoreboard objectives remove canopyCount
 scoreboard objectives remove canopyExtraLogs
 scoreboard objectives remove pearlOwnerUUID
 scoreboard objectives remove shieldCount
+scoreboard objectives remove shieldtest
+scoreboard objectives remove shieldtest2
+scoreboard objectives remove ThrowShield
+scoreboard objectives remove voidNoFallCount
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

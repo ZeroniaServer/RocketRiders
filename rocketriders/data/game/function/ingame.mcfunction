@@ -24,10 +24,6 @@ execute as @a[x=0,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow,predicate=cu
 
 ##Player void
 execute unless entity @s[tag=customVoid] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] at @s if predicate custom:in_void unless entity @s[scores={ThrowPlat=1..}] run function game:void
-effect give @a[x=0,scores={voidNoFallCount=0}] slow_falling 1 1 true
-scoreboard players add @a[x=0,scores={voidNoFallCount=0..1}] voidNoFallCount 1
-effect clear @a[x=0,scores={voidNoFallCount=2}] slow_falling
-scoreboard players reset @a[x=0,scores={voidNoFallCount=2}] voidNoFallCount
 
 ##Full hotbar check
 function items:full_hotbar

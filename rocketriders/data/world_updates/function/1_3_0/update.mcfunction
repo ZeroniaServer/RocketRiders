@@ -6,9 +6,29 @@ item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with 
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with leather_boots[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
 
+scoreboard objectives add constant dummy
+scoreboard players reset 0 FlagScore
+scoreboard players reset 2 MaxItemSec
+scoreboard players reset $2 parkourDeci
+scoreboard players reset $10 finalParkourTime
+scoreboard players reset $10 XP
+scoreboard players reset 16 CmdData
+scoreboard players reset 20 FlagScore
+scoreboard players reset 20 MaxItemSec
+scoreboard players reset 29 FlagScore
+scoreboard players reset 40 FlagScore
+scoreboard players reset $50 XP
+scoreboard players reset $60 finalParkourTime
+scoreboard players reset 64 CmdData
+scoreboard players reset $100 finalParkourTime
+scoreboard players reset $100 XP
+scoreboard players reset $600 XP
+scoreboard players reset $1000 Unable
+scoreboard players reset $1300 XP
+scoreboard players reset 24000 daytime
+
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy
-scoreboard objectives add Constant dummy
 scoreboard objectives add toggleParticles trigger
 scoreboard objectives add toggleTips trigger
 scoreboard objectives add toggleParkourTips trigger
@@ -17,6 +37,7 @@ scoreboard objectives add toggleParkourTips trigger
 execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches -2147483648..2147483647 store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
+
 
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips

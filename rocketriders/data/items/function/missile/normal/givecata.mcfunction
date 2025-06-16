@@ -1,7 +1,7 @@
 ##Gives executor a Catapult
 #Antidupe check
 execute store result score @s HasCata run clear @s cave_spider_spawn_egg 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasCata %= 64 CmdData
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasCata %=  constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasCata=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasCata 0
 tag @s[tag=itemDeducted] remove fullHotbar

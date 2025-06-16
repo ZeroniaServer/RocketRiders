@@ -54,21 +54,18 @@ execute as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run 
 execute as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!hideParticles] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
 #Calculate final time
-execute if entity @s[scores={servermode=0}] run scoreboard players set $60 finalParkourTime 60
-execute if entity @s[scores={servermode=0}] run scoreboard players set $100 finalParkourTime 100
-execute if entity @s[scores={servermode=0}] run scoreboard players set $10 finalParkourTime 10
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $60 finalParkourTime
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $100 finalParkourTime
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs *= $100 finalParkourTime
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci *= $10 finalParkourTime
+execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $60 constant
+execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $100 constant
+execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs *= $100 constant
+execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci *= $10 constant
 execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime = @s parkourDeci2
 execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourDeci
 execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourSecs
 execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourMins
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $60 finalParkourTime
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $100 finalParkourTime
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs /= $100 finalParkourTime
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci /= $10 finalParkourTime
+execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $60 constant
+execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $100 constant
+execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs /= $100 constant
+execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci /= $10 constant
 
 #First time completion
 execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourTime = @s finalParkourTime
@@ -127,9 +124,8 @@ scoreboard players add @a[x=0,team=Lobby,tag=inParkour,scores={parkourSecs=60}] 
 scoreboard players set @a[x=0,team=Lobby,tag=inParkour,scores={parkourSecs=60}] parkourSecs 0
 
 #Decimals
-scoreboard players set $2 parkourDeci 2
 execute as @a[x=0,team=Lobby,tag=inParkour] run scoreboard players operation @s parkourDeci = @s parkourTimer
-execute as @a[x=0,team=Lobby,tag=inParkour] run scoreboard players operation @s parkourDeci /= $2 parkourDeci
+execute as @a[x=0,team=Lobby,tag=inParkour] run scoreboard players operation @s parkourDeci /= $2 constant
 scoreboard players add @a[x=0,team=Lobby,tag=inParkour] parkourDeci2 5
 scoreboard players set @a[x=0,team=Lobby,tag=inParkour,scores={parkourDeci2=10}] parkourDeci2 0
 

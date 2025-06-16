@@ -125,8 +125,7 @@ execute at @s[tag=YellowBroad,tag=!UnableMissile] positioned ~-1 175 ~-16 store 
 execute at @s[tag=YellowBroad,tag=!UnableMissile] positioned ~-1 ~-6 ~-16 store result score @s Unable run clone ~-1 ~ ~ ~3 ~2 ~11 ~ 175 ~ filtered #custom:missileblocks force
 
 ##All missiles
-scoreboard players set $1000 Unable 1000
-scoreboard players operation @s[scores={Unable=1..}] Unable *= $1000 Unable
+scoreboard players operation @s[scores={Unable=1..}] Unable *= $1000 constant
 scoreboard players operation @s[scores={Unable=1..}] Unable /= @s Volume
 tag @s[scores={Unable=70..}] add UnableMissile
 tag @s[scores={Unable=70..}] add antigrief

@@ -17,7 +17,7 @@ execute as @a[x=0,scores={VoteServerMode=1..6}] run scoreboard players set @s Vo
 #Countdown bossbar
 execute if score @s VoteServerMode matches 1..599 run scoreboard players set $seconds VoteServerMode 619
 execute if score @s VoteServerMode matches 1..599 run scoreboard players operation $seconds VoteServerMode -= @s VoteServerMode
-execute if score @s VoteServerMode matches 1..599 store result bossbar rr:startgame value run scoreboard players operation $seconds VoteServerMode /= $ticks_per_second Constant
+execute if score @s VoteServerMode matches 1..599 store result bossbar rr:startgame value run scoreboard players operation $seconds VoteServerMode /= $ticks_per_second constant
 execute if score @s VoteServerMode matches 1..579 run bossbar set rr:startgame name [{color:"dark_purple",text:"Vote for game settings in chat! Voting ends in "},{bold:true,color:"light_purple",score:{name:"$seconds",objective:"VoteServerMode"}}," seconds."]
 execute if score @s VoteServerMode matches 580..599 run bossbar set rr:startgame name [{color:"dark_purple",text:"Vote for game settings in chat! Voting ends in "},{bold:true,color:"light_purple",text:"1"}," second."]
 

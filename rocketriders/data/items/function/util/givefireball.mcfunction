@@ -1,7 +1,7 @@
 ##Gives executor a Fireball
 #Antidupe check
 execute store result score @s HasFireball run clear @s blaze_spawn_egg[custom_data~{cluster:0b}] 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasFireball %= 64 CmdData
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasFireball %=  constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasFireball=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasFireball 0
 tag @s[tag=itemDeducted] remove fullHotbar

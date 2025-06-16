@@ -1,7 +1,7 @@
 ##Gives executor an Obsidian Shield
 #Antidupe check
 execute store result score @s HasObshield run clear @s enderman_spawn_egg 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasObshield %= 64 CmdData
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasObshield %=  constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasObshield=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasObshield 0
 tag @s[tag=itemDeducted] remove fullHotbar

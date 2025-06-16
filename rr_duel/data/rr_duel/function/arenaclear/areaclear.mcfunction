@@ -66,7 +66,7 @@ gamemode survival @a[x=0,team=Blue]
 gamemode survival @a[x=0,team=Yellow]
 
 scoreboard players operation @s MaxItemTime = @s MaxItemSec
-scoreboard players operation @s MaxItemTime *= 20 MaxItemSec
+scoreboard players operation @s MaxItemTime *= $20 constant
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 

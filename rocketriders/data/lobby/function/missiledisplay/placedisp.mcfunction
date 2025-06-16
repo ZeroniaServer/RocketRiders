@@ -5,35 +5,36 @@
 
 #Cooldown
 execute as @e[x=0,type=armor_stand,tag=DispCooldown] run scoreboard players add $DispCD CmdData 1
-execute if score $DispCD CmdData matches 30 if score $prevpage CmdData matches 0 run data merge block 12 203 78 {Page:0}
-execute if score $DispCD CmdData matches 30 if score $prevpage CmdData matches 1 run data merge block 12 203 78 {Page:1}
+execute if score $DispCD CmdData matches 30 if score $prevpage CmdData matches 0 run data modify block 12 203 78 Page set value 0
+execute if score $DispCD CmdData matches 30 if score $prevpage CmdData matches 1 run data modify block 12 203 78 Page set value 1
 execute if score $DispCD CmdData matches 30 run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove DispCooldown
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] run scoreboard players reset $DispCD CmdData
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] run scoreboard players reset $prevpage CmdData
 
 #Set page back to 1 if someone tries to use the arrow to cycle through pages
-execute if entity @e[x=0,type=armor_stand,tag=DispCooldown] run data merge block 12 203 78 {Page:26}
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] unless block 12 203 78 minecraft:lectern{Page:0} unless block 12 203 78 minecraft:lectern{Page:1} unless block 12 203 78 minecraft:lectern{Page:2} unless block 12 203 78 minecraft:lectern{Page:3} unless block 12 203 78 minecraft:lectern{Page:4} unless block 12 203 78 minecraft:lectern{Page:25} unless block 12 203 78 minecraft:lectern{Page:26} run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add DispCooldown
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] unless block 12 203 78 minecraft:lectern{Page:0} unless block 12 203 78 minecraft:lectern{Page:1} run data merge block 12 203 78 {Page:0}
+execute store result score $page var run data get block 12 203 78 Page
+execute if entity @e[x=0,type=armor_stand,tag=DispCooldown] run data modify block 12 203 78 Page set value 26
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] unless score $page var matches 0..4 unless score $page var matches 25..26 run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add DispCooldown
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] unless score $page var matches 0..1 run data modify block 12 203 78 Page set value 0
 
 #Display missiles
-execute if block 12 203 78 minecraft:lectern{Page:5} run function lobby:missiledisplay/missile/tomatwo
-execute if block 12 203 78 minecraft:lectern{Page:6} run function lobby:missiledisplay/missile/ant
-execute if block 12 203 78 minecraft:lectern{Page:7} run function lobby:missiledisplay/missile/blade
-execute if block 12 203 78 minecraft:lectern{Page:8} run function lobby:missiledisplay/missile/catapult
-execute if block 12 203 78 minecraft:lectern{Page:9} run function lobby:missiledisplay/missile/slasher
-execute if block 12 203 78 minecraft:lectern{Page:10} run function lobby:missiledisplay/missile/lifter
-execute if block 12 203 78 minecraft:lectern{Page:11} run function lobby:missiledisplay/missile/chronull
-execute if block 12 203 78 minecraft:lectern{Page:12} run function lobby:missiledisplay/missile/eguard
-execute if block 12 203 78 minecraft:lectern{Page:13} run function lobby:missiledisplay/missile/citadel
-execute if block 12 203 78 minecraft:lectern{Page:14} run function lobby:missiledisplay/missile/gemini
-execute if block 12 203 78 minecraft:lectern{Page:15} run function lobby:missiledisplay/missile/thunderbolt
-execute if block 12 203 78 minecraft:lectern{Page:16} run function lobby:missiledisplay/missile/hurricane
-execute if block 12 203 78 minecraft:lectern{Page:17} run function lobby:missiledisplay/missile/auxiliary
-execute if block 12 203 78 minecraft:lectern{Page:18} run function lobby:missiledisplay/missile/warhead
-execute if block 12 203 78 minecraft:lectern{Page:19} run function lobby:missiledisplay/missile/rifter
-execute if block 12 203 78 minecraft:lectern{Page:20} run function lobby:missiledisplay/missile/jbuster
-execute if block 12 203 78 minecraft:lectern{Page:21} run function lobby:missiledisplay/missile/hypersonic
-execute if block 12 203 78 minecraft:lectern{Page:22} run function lobby:missiledisplay/missile/bullet
-execute if block 12 203 78 minecraft:lectern{Page:23} run function lobby:missiledisplay/missile/duplex
-execute if block 12 203 78 minecraft:lectern{Page:24} run function lobby:missiledisplay/missile/broadsword
+execute if score $page var matches 5 run return run function lobby:missiledisplay/missile/tomatwo
+execute if score $page var matches 6 run return run function lobby:missiledisplay/missile/ant
+execute if score $page var matches 7 run return run function lobby:missiledisplay/missile/blade
+execute if score $page var matches 8 run return run function lobby:missiledisplay/missile/catapult
+execute if score $page var matches 9 run return run function lobby:missiledisplay/missile/slasher
+execute if score $page var matches 10 run return run function lobby:missiledisplay/missile/lifter
+execute if score $page var matches 11 run return run function lobby:missiledisplay/missile/chronull
+execute if score $page var matches 12 run return run function lobby:missiledisplay/missile/eguard
+execute if score $page var matches 13 run return run function lobby:missiledisplay/missile/citadel
+execute if score $page var matches 14 run return run function lobby:missiledisplay/missile/gemini
+execute if score $page var matches 15 run return run function lobby:missiledisplay/missile/thunderbolt
+execute if score $page var matches 16 run return run function lobby:missiledisplay/missile/hurricane
+execute if score $page var matches 17 run return run function lobby:missiledisplay/missile/auxiliary
+execute if score $page var matches 18 run return run function lobby:missiledisplay/missile/warhead
+execute if score $page var matches 19 run return run function lobby:missiledisplay/missile/rifter
+execute if score $page var matches 20 run return run function lobby:missiledisplay/missile/jbuster
+execute if score $page var matches 21 run return run function lobby:missiledisplay/missile/hypersonic
+execute if score $page var matches 22 run return run function lobby:missiledisplay/missile/bullet
+execute if score $page var matches 23 run return run function lobby:missiledisplay/missile/duplex
+execute if score $page var matches 24 run return run function lobby:missiledisplay/missile/broadsword

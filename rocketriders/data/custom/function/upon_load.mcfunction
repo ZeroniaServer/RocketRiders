@@ -48,8 +48,26 @@ setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
 #Scores
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy
-scoreboard objectives add Constant dummy
-scoreboard players set $ticks_per_second Constant 20
+
+scoreboard objectives add constant dummy
+scoreboard players set $ticks_per_second constant 20
+scoreboard players set $1 constant 1
+scoreboard players set $2 constant 2
+scoreboard players set $3 constant 3
+scoreboard players set $4 constant 4
+scoreboard players set $5 constant 5
+scoreboard players set $6 constant 6
+scoreboard players set $7 constant 7
+scoreboard players set $8 constant 8
+scoreboard players set $9 constant 9
+scoreboard players set $10 constant 10
+scoreboard players set $20 constant 20
+scoreboard players set $16 constant 16
+scoreboard players set $60 constant 60
+scoreboard players set $64 constant 64
+scoreboard players set $100 constant 100
+scoreboard players set $1000 constant 1000
+scoreboard players set $24000 constant 24000
 
 scoreboard objectives add event.player_dies custom:deaths
 scoreboard objectives add flag.is_dead dummy

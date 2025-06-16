@@ -14,7 +14,7 @@ execute if entity @s[scores={count=1..599}] run bossbar set rr:startgame color g
 #Countdown bossbar
 execute if score @s count matches 1..599 run scoreboard players set $seconds count 619
 execute if score @s count matches 1..599 run scoreboard players operation $seconds count -= @s count
-execute if score @s count matches 1..599 store result bossbar rr:startgame value run scoreboard players operation $seconds count /= $ticks_per_second Constant
+execute if score @s count matches 1..599 store result bossbar rr:startgame value run scoreboard players operation $seconds count /= $ticks_per_second constant
 execute if score @s count matches 1..579 run bossbar set rr:startgame name [{color:"green",text:"The game will begin in ",color:"green"},{bold:true,color:"dark_green",score:{name:"$seconds",objective:"count"}}," seconds."]
 execute if score @s count matches 580..599 run bossbar set rr:startgame name [{color:"green",text:"The game will begin in ",color:"green"},{bold:true,color:"dark_green",text:"1"}," second."]
 

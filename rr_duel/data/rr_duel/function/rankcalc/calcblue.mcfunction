@@ -5,10 +5,6 @@
 #Loser gains WinnersXP*LosersRankScore/600
 
 #set the values for later maths.
-scoreboard players set $10 XP 10
-scoreboard players set $50 XP 50
-scoreboard players set $600 XP 600
-scoreboard players set $1300 XP 1300
 scoreboard players set $XPLoss XP 0
 scoreboard players set $Buffer XP 0
 scoreboard players set $NetBlue XP 0
@@ -26,7 +22,7 @@ scoreboard players operation $CurrentYellow XP = @a[x=0,team=Yellow,limit=1] XP
 scoreboard players set $RankResult XP 80
 
 #CurrentYellow / 50
-scoreboard players operation $CurrentYellow XP /= $50 XP
+scoreboard players operation $CurrentYellow XP /= $50 constant
 
 #CurrentYellow * YellowRankScore
 execute if entity @a[x=0,team=Blue,limit=1] run scoreboard players operation $CurrentYellow XP *= @a[x=0,team=Blue,limit=1] RankScore
@@ -40,7 +36,7 @@ scoreboard players operation $NetBlue XP += $RankResult XP
 
 #Adjust Blue XP to below 1301
 execute if entity @a[x=0,team=Blue,scores={XP=1301..},limit=1] run scoreboard players operation $DiffBlue XP = @a[x=0,team=Blue,limit=1,scores={XP=1301..}] XP
-execute if entity @a[x=0,team=Blue,scores={XP=1301..},limit=1] run scoreboard players operation $DiffBlue XP -= $1300 XP
+execute if entity @a[x=0,team=Blue,scores={XP=1301..},limit=1] run scoreboard players operation $DiffBlue XP -= $1300 constant
 execute if entity @a[x=0,team=Blue,scores={XP=1301..},limit=1] run scoreboard players operation $NetBlue XP -= $DiffBlue XP
 scoreboard players set @a[x=0,team=Blue,scores={XP=1301..},limit=1] XP 1300
 
@@ -55,7 +51,7 @@ scoreboard players operation $LossXP XP = $RankResult XP
 execute if entity @a[x=0,team=Yellow,limit=1] run scoreboard players operation $LossXP XP *= @a[x=0,team=Yellow,limit=1] RankScore
 
 #LossXP / 10
-scoreboard players operation $LossXP XP /= $10 XP
+scoreboard players operation $LossXP XP /= $10 constant
 
 #Subtract the LossXP score from the Yellow player
 scoreboard players operation @a[x=0,team=Yellow,limit=1] XP -= $LossXP XP
@@ -68,7 +64,7 @@ scoreboard players operation $Buffer XP = @a[x=0,team=Blue,limit=1] XP
 scoreboard players operation $Buffer XP *= @a[x=0,team=Yellow,limit=1] RankScore
 
 #Buffer / 600
-scoreboard players operation $Buffer XP /= $600 XP
+scoreboard players operation $Buffer XP /= $600 constant
 
 #Add the Buffer score to the Yellow player
 scoreboard players operation @a[x=0,team=Yellow,limit=1] XP += $Buffer XP
@@ -85,10 +81,6 @@ execute as @a[x=0,team=Yellow,limit=1] run tellraw @a[x=0] ["",{"selector":"@s",
 function rr_duel:rankcalc/rankchange2
 
 #Reset all scores (optimization)
-scoreboard players reset $10 XP
-scoreboard players reset $50 XP
-scoreboard players reset $600 XP
-scoreboard players reset $1300 XP
 scoreboard players reset $XPLoss XP
 scoreboard players reset $CurrentBlue XP
 scoreboard players reset $CurrentYellow XP

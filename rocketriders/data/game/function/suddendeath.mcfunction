@@ -25,7 +25,6 @@ execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Yellow] 12 64 66 180 0
 execute if entity @s[scores={SDtime=1}] run tag @e[x=0,predicate=entities:canopy,scores={entity.age=0..39}] add canopy.forgotten_origin
-execute if entity @s[scores={SDtime=1}] at @s run scoreboard players set 2 MaxItemSec 2
 execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[x=0] armor.head with air
 execute if entity @s[scores={SDtime=1}] at @s run clear @a[x=0] firework_rocket
@@ -60,7 +59,7 @@ execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] as @a[x=0,team=Yellow
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[x=0,team=Blue] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
 #Halves the Item Delay (more intense gameplay)
-scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /= 2 MaxItemSec
+scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /= $2 constant
 scoreboard players set @s[scores={SDtime=1,MaxItemTime=..1}] MaxItemTime 2
 execute if entity @s[scores={SDtime=1}] run scoreboard players set @s RandomItem -3
 execute if entity @s[scores={SDtime=1}] run scoreboard players operation @s RandomItem += @s MaxItemTime
@@ -87,4 +86,3 @@ execute if entity @s[scores={SDtime=16..}] unless score $skiptitles CmdData matc
 
 ##Resets timer
 execute if entity @s[scores={SDtime=20..}] run tag @s remove SuddenDeath
-execute if entity @s[scores={SDtime=20..}] run scoreboard players reset 2 MaxItemSec

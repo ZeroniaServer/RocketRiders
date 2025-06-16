@@ -8,10 +8,9 @@ execute if entity @s[scores={SDtime=20..}] run scoreboard players reset @s SDtim
 scoreboard players add @s SDtime 1
 
 ##Preparing for Sudden Death
-execute if entity @s[scores={SDtime=1}] at @s run scoreboard players set 2 MaxItemSec 2
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
 #Halves the Item Delay (more intense gameplay)
-scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /= 2 MaxItemSec
+scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /= $2 constant
 scoreboard players set @s[scores={SDtime=1,MaxItemTime=..1}] MaxItemTime 2
 execute if entity @s[scores={SDtime=1}] run scoreboard players set @s RandomItem -3
 execute if entity @s[scores={SDtime=1}] run scoreboard players operation @s RandomItem += @s MaxItemTime
@@ -36,4 +35,3 @@ execute if entity @s[scores={SDtime=16..}] run title @a[x=0] subtitle ["",{"text
 ##Resets timer
 execute if entity @s[scores={SDtime=20..}] run tag @s remove CTFOvertime
 execute if entity @s[scores={SDtime=20..}] run tag @s add CTF3stack
-execute if entity @s[scores={SDtime=20..}] run scoreboard players reset 2 MaxItemSec

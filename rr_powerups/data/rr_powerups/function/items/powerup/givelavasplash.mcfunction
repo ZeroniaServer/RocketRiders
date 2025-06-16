@@ -1,6 +1,6 @@
 #Antidupe check
 execute store result score @s HasLavaSplash run clear @s lingering_potion[custom_data~{lavasplash:1b}] 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasLavaSplash %=  constant
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasLavaSplash %= $64 constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasLavaSplash=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasLavaSplash 0
 tag @s[tag=itemDeducted] remove fullHotbar

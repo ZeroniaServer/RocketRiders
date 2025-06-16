@@ -1,6 +1,6 @@
 #Antidupe check
 execute store result score @s HasICBM run clear @s egg[custom_data~{icbm:1b}] 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasICBM %=  constant
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasICBM %= $64 constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasICBM=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasICBM 0
 tag @s[tag=itemDeducted] remove fullHotbar

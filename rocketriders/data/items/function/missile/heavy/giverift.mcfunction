@@ -1,7 +1,7 @@
 ##Gives executor a Rifter
 #Antidupe check
 execute store result score @s HasRift run clear @s salmon_spawn_egg 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasRift %=  constant
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasRift %= $64 constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasRift=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasRift 0
 tag @s[tag=itemDeducted] remove fullHotbar

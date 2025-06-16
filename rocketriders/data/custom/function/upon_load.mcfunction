@@ -115,7 +115,6 @@ scoreboard objectives add RepeatSettings dummy
 scoreboard objectives add bMissileCount dummy
 scoreboard objectives add yMissileCount dummy
 scoreboard objectives add splashCount dummy
-scoreboard objectives add shieldCount dummy
 scoreboard objectives add MaxItemTime dummy
 scoreboard objectives add MaxItemSec dummy
 scoreboard objectives add RandomItem dummy

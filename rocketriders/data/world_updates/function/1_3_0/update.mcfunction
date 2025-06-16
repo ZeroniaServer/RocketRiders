@@ -37,6 +37,7 @@ scoreboard objectives add toggleParkourTips trigger
 execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches -2147483648..2147483647 store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount matches -2147483648..2147483647 store result score $shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount
 
 
 scoreboard objectives remove disableTips
@@ -49,6 +50,7 @@ scoreboard objectives remove PlayerDeaths
 scoreboard objectives remove canopyCount
 scoreboard objectives remove canopyExtraLogs
 scoreboard objectives remove pearlOwnerUUID
+scoreboard objectives remove shieldCount
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

@@ -1,10 +1,4 @@
 ##Utility-specific commands (optimized to only run when necessary)
-execute unless entity @s[tag=runshields] if entity @e[x=0,type=snowball] run tag @s add runshields
-execute unless entity @s[tag=runshields] if entity @e[x=0,type=marker,tag=PlaceYellowShield] run tag @s add runshields
-execute unless entity @s[tag=runshields] if entity @e[x=0,type=marker,tag=PlaceBlueShield] run tag @s add runshields
-execute if entity @s[tag=runshields] run function everytick:shields
-tag @s[tag=runshields] remove runshields
-
 execute unless entity @s[tag=runvortex] if entity @e[x=0,type=egg,nbt=!{Item:{components:{"minecraft:custom_data":{icbm:1b}}}}] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[x=0,type=marker,tag=Vortex] run tag @s add runvortex
 execute unless entity @s[tag=runvortex] if entity @e[x=0,type=armor_stand,tag=VortexItem] run tag @s add runvortex

@@ -24,8 +24,8 @@ execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
 execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Yellow] 12 64 66 180 0
-execute if entity @s[scores={SDtime=1}] run tag @n[x=0,predicate=entities:canopy,predicate=entities:canopy/origin_team_is_yellow,scores={entity.age=0..39}] add canopy.forgotten_origin
-execute if entity @s[scores={SDtime=1}] run tag @n[x=0,predicate=entities:canopy,predicate=entities:canopy/origin_team_is_blue,scores={entity.age=0..39}] add canopy.forgotten_origin
+execute if entity @s[scores={SDtime=1}] run tag @n[x=0,predicate=entities:canopy,predicate=entities:origin_team/yellow,scores={entity.age=0..39}] add canopy.forgotten_origin
+execute if entity @s[scores={SDtime=1}] run tag @n[x=0,predicate=entities:canopy,predicate=entities:origin_team/blue,scores={entity.age=0..39}] add canopy.forgotten_origin
 execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[x=0] armor.head with air
 execute if entity @s[scores={SDtime=1}] at @s run clear @a[x=0] firework_rocket

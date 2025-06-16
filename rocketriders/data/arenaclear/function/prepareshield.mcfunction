@@ -17,12 +17,12 @@ data remove storage rocketriders:shieldpos y[0]
 data remove storage rocketriders:shieldpos z[0]
 
 #Remove 1 from counter
-scoreboard players remove @s[scores={shieldCount=1..}] shieldCount 1
+execute if score $shield_count global matches 1.. run scoreboard players remove $shield_count global 1
 
 #Recursion condition - as long as there's still coords stored, keep going
-execute if entity @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
+execute if score $shield_count global matches 1.. run function arenaclear:prepareshield
 
 #End condition - clear arrays
-execute if entity @s[scores={shieldCount=0}] run data remove storage rocketriders:shieldpos x
-execute if entity @s[scores={shieldCount=0}] run data remove storage rocketriders:shieldpos y
-execute if entity @s[scores={shieldCount=0}] run data remove storage rocketriders:shieldpos z
+execute if score $shield_count global matches 0 run data remove storage rocketriders:shieldpos x
+execute if score $shield_count global matches 0 run data remove storage rocketriders:shieldpos y
+execute if score $shield_count global matches 0 run data remove storage rocketriders:shieldpos z

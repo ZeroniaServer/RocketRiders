@@ -37,6 +37,39 @@
                     "color": "gray"
                   }
                 ],
+                "minecraft:charged_projectiles": [
+                  {
+                    "id": "minecraft:firework_rocket",
+                    "components": {
+                      "minecraft:fireworks": {
+                        "explosions": [
+                          {
+                            "shape": "large_ball",
+                            "colors": [
+                              15790320
+                            ],
+                            "fade_colors": [
+                              11743532,
+                              3887386,
+                              2437522,
+                              8073150,
+                              2651799,
+                              14188952,
+                              4312372,
+                              14602026,
+                              6719955,
+                              12801229,
+                              15435844
+                            ],
+                            "has_trail": true,
+                            "has_twinkle": true
+                          }
+                        ],
+                        "flight_duration": 2
+                      }
+                    }
+                  }
+                ],
                 "minecraft:unbreakable": {},
                 "minecraft:tooltip_display": {
                   "hidden_components": [

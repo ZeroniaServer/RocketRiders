@@ -42,10 +42,9 @@ kill @e[x=0,type=marker,tag=novatracker]
 execute as @e[x=0,type=marker,tag=obsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break
-execute if entity @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
+execute if score $canopy_count global matches 1.. run function arenaclear:preparecanopy
 execute if entity @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
-kill @e[x=0,type=marker,tag=YellowPlatform]
-kill @e[x=0,type=marker,tag=BluePlatform]
+kill @e[x=0,predicate=entities:canopy]
 kill @e[x=0,type=marker,tag=BlueObshield]
 kill @e[x=0,type=marker,tag=YellowObshield]
 kill @e[x=0,type=marker,tag=BlueFireball]

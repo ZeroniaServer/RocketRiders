@@ -37,11 +37,6 @@ scoreboard players reset @a[x=0,team=!Yellow,team=!Blue] novattach
 tag @a[x=0,team=!Yellow,team=!Blue] remove BlueNovaAttach
 tag @a[x=0,team=!Yellow,team=!Blue] remove YellowNovaAttach
 
-execute unless entity @s[tag=runcanopy] if entity @e[x=0,type=ender_pearl] run tag @s add runcanopy
-execute unless entity @s[tag=runcanopy] if entity @e[x=0,type=marker,tag=YellowPlatform] run tag @s add runcanopy
-execute unless entity @s[tag=runcanopy] if entity @e[x=0,type=marker,tag=BluePlatform] run tag @s add runcanopy
-execute if entity @s[tag=runcanopy] run function everytick:canopy
-
 execute unless entity @s[tag=runfireball] if entity @e[x=0,type=fireball] run tag @s add runfireball
 execute unless entity @s[tag=runfireball] if entity @e[x=0,type=marker,tag=BlueFireball] run tag @s add runfireball
 execute unless entity @s[tag=runfireball] if entity @e[x=0,type=marker,tag=YellowFireball] run tag @s add runfireball

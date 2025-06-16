@@ -4,8 +4,7 @@
 
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
-scoreboard players reset @e[x=0,type=marker,tag=YellowPlatform] pearlOwnerUUID
-scoreboard players reset @e[x=0,type=marker,tag=BluePlatform] pearlOwnerUUID
+tag @e[x=0,predicate=entities:canopy] add canopy.forgotten_origin
 tag @a[x=0] remove canopyTP
 function everytick:spawnables
 execute if score @s endtimer matches 1 run function custom:set_global/game_started {bool:false}
@@ -21,7 +20,6 @@ execute if entity @s[scores={endtimer=1},tag=!noSabers] run function game:endsab
 execute if entity @s[tag=BlueWon] run effect give @a[x=0,team=Yellow] weakness infinite 100 true
 execute if entity @s[tag=YellowWon] run effect give @a[x=0,team=Blue] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1..100}] run worldborder warning distance 0
-execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove threwCanopy
 execute if entity @s[scores={endtimer=1}] as @a[x=0] run trigger LeaveMidgame set -1
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[x=0,team=Blue]
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[x=0,team=Yellow]
@@ -63,8 +61,9 @@ execute if entity @s[tag=doTying,tag=!tyingOff,tag=!noPortal,tag=YellowWon,tag=B
 ##Post-tie phase and reset
 scoreboard players set @s[scores={endtimer=101}] gametime 0
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function everytick:score_reset
-execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy_penalty
-execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy_penalty
+execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy
+execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy
+execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Blue]
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Yellow]
 execute if entity @s[scores={endtimer=570},tag=!SMActive] run scoreboard players add @a[x=0,team=Blue] GamesPlayed 1

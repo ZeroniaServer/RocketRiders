@@ -16,14 +16,14 @@ execute as @a[x=0,tag=BlueNovaAttach,scores={novattach=15..},predicate=custom:is
 
 #Nova Rockets explode same team Canopies
 tag @e[x=0,type=marker,tag=novatracker,tag=DontExplode] remove DontExplode
-execute as @e[x=0,type=marker,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7,limit=1] unless entity @e[type=firework_rocket,tag=BlueNova,limit=1,sort=nearest,distance=..5] run tag @s add CanopyIsGone
-execute as @e[x=0,type=marker,tag=bluenovatracker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s if entity @e[type=marker,tag=BluePlatform,distance=..7,limit=1] run tag @e[type=marker,tag=BluePlatform,distance=..7,limit=1] add killCanopy
+execute as @e[x=0,type=marker,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s if entity @e[predicate=entities:canopy,predicate=entities:canopy/origin_team_is_blue,distance=..7,limit=1] unless entity @e[type=firework_rocket,tag=BlueNova,limit=1,sort=nearest,distance=..5] run tag @s add CanopyIsGone
+execute as @e[x=0,type=marker,tag=bluenovatracker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s if entity @e[predicate=entities:canopy,predicate=entities:canopy/origin_team_is_blue,distance=..7,limit=1] run tag @e[predicate=entities:canopy,predicate=entities:canopy/origin_team_is_blue,distance=..7,limit=1] add canopy.kill
 execute as @e[x=0,type=marker,tag=bluenovatracker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run kill @e[type=firework_rocket,tag=BlueNova,limit=1,sort=nearest,distance=..5]
-execute as @e[x=0,type=marker,tag=CanopyIsGone,tag=yellownovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] run tag @s add killCanopy
+execute as @e[x=0,type=marker,tag=CanopyIsGone,tag=yellownovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[predicate=entities:canopy,predicate=entities:canopy/origin_team_is_blue,distance=..7,limit=1,sort=nearest] run tag @s add canopy.kill
 execute as @e[x=0,type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run tag @a[team=!Lobby,team=!Spectator,distance=..10] add UtilKilled
-execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,tag=CanopyIsGone,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] at @s positioned ~ ~2 ~ run function custom:explosion {r:5,modifiers:{nbt:{Tags:["UtilKilled","NovaCanopy"],CustomName:"a Nova Rocket"}}}
-execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,tag=CanopyIsGone,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] at @s positioned ~ ~2 ~ run function custom:explosion {r:7,modifiers:{nbt:{Tags:["UtilKilled","NovaCanopy"],CustomName:"a Nova Rocket"}}}
-execute if entity @s[tag=ClutterCollector] as @e[x=0,type=marker,tag=CanopyIsGone,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[type=marker,tag=BluePlatform,distance=..7,limit=1,sort=nearest] at @s positioned ~ ~2 ~ run function custom:explosion {r:0,modifiers:{nbt:{Tags:["UtilKilled","NovaCanopy"],CustomName:"a Nova Rocket"}}}
+execute if entity @s[tag=!Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,tag=CanopyIsGone,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[predicate=entities:canopy,predicate=entities:canopy/origin_team_is_blue,distance=..7,limit=1,sort=nearest] at @s positioned ~ ~2 ~ run function custom:explosion {r:5,modifiers:{nbt:{Tags:["UtilKilled","NovaCanopy"],CustomName:"a Nova Rocket"}}}
+execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=marker,tag=CanopyIsGone,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[predicate=entities:canopy,predicate=entities:canopy/origin_team_is_blue,distance=..7,limit=1,sort=nearest] at @s positioned ~ ~2 ~ run function custom:explosion {r:7,modifiers:{nbt:{Tags:["UtilKilled","NovaCanopy"],CustomName:"a Nova Rocket"}}}
+execute if entity @s[tag=ClutterCollector] as @e[x=0,type=marker,tag=CanopyIsGone,tag=bluenovatracker,tag=!NovaLost,tag=!DontExplode] at @s as @e[predicate=entities:canopy,predicate=entities:canopy/origin_team_is_blue,distance=..7,limit=1,sort=nearest] at @s positioned ~ ~2 ~ run function custom:explosion {r:0,modifiers:{nbt:{Tags:["UtilKilled","NovaCanopy"],CustomName:"a Nova Rocket"}}}
 execute as @e[x=0,type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run tag @e[type=creeper,distance=..10,limit=1] add UtilKilled
 execute as @e[x=0,type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s run tag @e[type=tnt,distance=..8] add UtilKilled
 execute as @e[x=0,type=marker,tag=CanopyIsGone,tag=!NovaLost,tag=!DontExplode] at @s store result score @e[type=creeper,limit=1,sort=nearest,distance=..8,tag=NovaCanopy] UUIDTracker run scoreboard players get @s UUIDTracker
@@ -54,37 +54,3 @@ execute as @e[x=0,type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at
 execute as @e[x=0,type=marker,tag=PlaceBlueShield,scores={shieldplacement=3}] at @s run particle minecraft:block{block_state:"minecraft:white_stained_glass"} ~ ~ ~ 1 1 0 0.1 50
 kill @e[x=0,type=marker,tag=PlaceBlueShield,scores={shieldplacement=3..}]
 kill @e[x=0,type=snowball,tag=BlueShield,scores={shieldtest2=20..}]
-
-#Canopy
-execute as @e[x=0,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[3,3,3],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=ender_pearl,tag=BluePlat] at @s if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 0 0 0 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=ender_pearl,tag=BluePlat] at @s run scoreboard players add @s testplat2 1
-#Next 4 commands disable Blue Canopies inside of portals
-execute unless entity @s[tag=noPortal] as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
-execute unless entity @s[tag=noPortal] as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
-execute unless entity @s[tag=noPortal] as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run scoreboard players remove @s testplat2 1
-execute unless entity @s[tag=noPortal] as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s testplat2 2
-#Disable Blue Canopies near void
-execute as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if predicate custom:canopy_nearvoid run scoreboard players remove @s testplat2 1
-#Disable Blue Canopies near spawnpoints
-execute as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
-execute as @e[x=0,type=ender_pearl,scores={testplat2=9..10}] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..7] run scoreboard players remove @s testplat2 1
-execute as @e[x=0,type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run function everytick:canopy_threw
-execute as @e[x=0,type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run place template rr_chase:whitecanopy1 ~-1 ~ ~-1
-execute as @e[x=0,type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound ui.stonecutter.take_result master @a[x=0] ~ ~ ~ 2 0
-execute as @e[x=0,type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 1
-execute as @e[x=0,type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s run playsound block.grass.place master @a[x=0] ~ ~ ~ 2 0
-execute as @e[x=0,type=ender_pearl,scores={testplat2=10},predicate=!custom:canopy_nearvoid] at @s align xyz positioned ~0.5 ~ ~0.5 run function everytick:canopy_marker
-scoreboard players add @e[x=0,type=marker,tag=BluePlatform] PlatTime 1
-kill @e[x=0,type=ender_pearl,scores={testplat2=10..}]
-execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
-execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
-execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=1}] run data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
-execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=1}] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount 1
-#Teleporting happens in another function
-execute as @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=..41}] run function everytick:canopy_tpblue
-tag @e[x=0,type=marker,tag=BluePlatform] remove checkedTP
-tag @a[x=0,team=Blue] remove checkedTP
-execute as @e[x=0,type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,distance=..6] respawn 0
-#After 2 seconds the Canopy gives up
-scoreboard players reset @e[x=0,type=marker,tag=BluePlatform,scores={PlatTime=41}] pearlOwnerUUID

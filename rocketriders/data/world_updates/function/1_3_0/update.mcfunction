@@ -13,6 +13,11 @@ scoreboard objectives add toggleParticles trigger
 scoreboard objectives add toggleTips trigger
 scoreboard objectives add toggleParkourTips trigger
 
+# early stages of nuking Selection armour stand...
+execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches -2147483648..2147483647 store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
+
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
 scoreboard objectives remove splashOwnerUUID
@@ -20,6 +25,9 @@ scoreboard objectives remove HasFirework
 scoreboard objectives remove death
 scoreboard objectives remove PlayerKills
 scoreboard objectives remove PlayerDeaths
+scoreboard objectives remove canopyCount
+scoreboard objectives remove canopyExtraLogs
+scoreboard objectives remove pearlOwnerUUID
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth
@@ -27,11 +35,6 @@ scoreboard objectives remove nnhealth_mod
 scoreboard objectives remove nnhealth_max
 scoreboard objectives remove nnhealth_real
 scoreboard objectives remove nnhealth_old
-
-# early stages of nuking Selection armour stand...
-execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
-
 
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 

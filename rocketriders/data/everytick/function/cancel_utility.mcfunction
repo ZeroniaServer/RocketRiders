@@ -20,7 +20,7 @@ execute if entity @s[tag=!doFireballPortals,tag=!noPortal] unless entity @s[tag=
 execute if entity @s[tag=!doFireballPortals,tag=!noPortal] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=marker,tag=novatracker] at @s if entity @s[x=-11,y=30,z=-77,dx=46,dy=32,dz=6] run kill @s
 
 #Kill everything near/above the roof
-execute as @e[x=0,type=ender_pearl] at @s run kill @s[predicate=custom:above_roof]
+execute as @e[x=0,type=ender_pearl,predicate=custom:above_roof] run function entities:canopy_projectile/actions/break
 execute as @e[x=0,type=snowball] at @s run kill @s[predicate=custom:above_roof]
 execute as @e[x=0,type=dragon_fireball] at @s run kill @s[predicate=custom:above_roof]
 execute as @e[x=0,type=egg] at @s run kill @s[predicate=custom:above_roof]

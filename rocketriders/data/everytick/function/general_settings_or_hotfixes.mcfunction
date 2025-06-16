@@ -53,9 +53,9 @@ execute as @e[x=0,type=tnt,tag=UtilKilled] at @s run tag @a[team=!Spectator,dist
 execute as @e[x=0,type=tnt,tag=UtilKilled] at @s store result score @a[team=!Spectator,distance=..6] KillerUUID run scoreboard players get @s UUIDTracker
 
 #Canopy teleport remove effects
-execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s slowness
-execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s slow_falling
-execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run effect clear @s jump_boost
+execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy
+execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy
+execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy
 
 #Disable trigger objectives when appropriate
 execute as @a[predicate=!custom:indimension] run trigger LeaveMidgame set -1

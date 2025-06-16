@@ -33,7 +33,7 @@ fill -14 13 -66 38 33 -48 air
 execute as @e[x=0,type=marker,tag=obsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break
-execute if entity @s[scores={canopyCount=1..}] run function arenaclear:preparecanopy
+execute if score $canopy_count global matches 1.. run function arenaclear:preparecanopy
 execute if entity @s[scores={shieldCount=1..}] run function arenaclear:prepareshield
 
 ##Begin recursive SmartClear process

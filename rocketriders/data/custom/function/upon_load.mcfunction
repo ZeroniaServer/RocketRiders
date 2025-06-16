@@ -53,6 +53,7 @@ scoreboard players set $ticks_per_second Constant 20
 
 scoreboard objectives add event.player_dies custom:deaths
 scoreboard objectives add flag.is_dead dummy
+scoreboard objectives add entity.age dummy
 
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
@@ -97,7 +98,6 @@ scoreboard objectives add bMissileCount dummy
 scoreboard objectives add yMissileCount dummy
 scoreboard objectives add splashCount dummy
 scoreboard objectives add shieldCount dummy
-scoreboard objectives add canopyCount dummy
 scoreboard objectives add MaxItemTime dummy
 scoreboard objectives add MaxItemSec dummy
 scoreboard objectives add RandomItem dummy
@@ -116,7 +116,6 @@ scoreboard objectives add origBCount dummy
 scoreboard objectives add bluesCount dummy
 scoreboard objectives add origYCount dummy
 scoreboard objectives add yellowsCount dummy
-scoreboard objectives add pearlOwnerUUID dummy
 scoreboard objectives add soulKills dummy
 scoreboard objectives add kills playerKillCount
 scoreboard objectives add jumps minecraft.custom:minecraft.jump
@@ -156,7 +155,6 @@ scoreboard objectives add voidNoFallCount dummy
 scoreboard objectives add novatimer dummy
 scoreboard objectives add testplat dummy
 scoreboard objectives add testplat2 dummy
-scoreboard objectives add canopyExtraLogs dummy
 scoreboard objectives add canopySmoke dummy
 scoreboard objectives add NovaShot minecraft.broken:minecraft.crossbow
 scoreboard objectives add NovaNear dummy

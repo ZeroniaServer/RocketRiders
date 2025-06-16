@@ -8,6 +8,9 @@ execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom
 scoreboard players set @a[x=0] flag.is_dead 1
 scoreboard players set @e[x=0,type=player] flag.is_dead 0
 
+# Tick entities
+function entities:tick
+
 #Server mode
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=!SMCustom] remove SMActive
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=1..}] add SMActive

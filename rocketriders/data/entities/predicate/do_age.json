@@ -1,0 +1,34 @@
+[
+  {"condition":"minecraft:inverted","term":{"condition":"minecraft:all_of","terms":[{"condition":"minecraft:entity_scores","entity":"this","scores":{"entity.age":0}},{"condition":"minecraft:entity_properties","entity":"this","predicate":{"periodic_tick":2147483647}}]}},
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:area_effect_cloud",
+          "predicates": {
+            "minecraft:custom_data": {
+              "canopy_projectile": {
+                "brain": {}
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:area_effect_cloud",
+          "predicates": {
+            "minecraft:custom_data": {
+              "canopy": {}
+            }
+          }
+        }
+      }
+    ]
+  }
+]

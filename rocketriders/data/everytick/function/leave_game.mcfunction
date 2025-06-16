@@ -33,7 +33,6 @@ execute as @a[x=0,scores={LeaveGame=1..,LeaveMidgame=1}] at @s run playsound ent
 tag @a[x=0,scores={LeaveGame=1..}] remove YellowNovaAttach
 tag @a[x=0,scores={LeaveGame=1..}] remove BlueNovaAttach
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] novattach
-tag @a[x=0,scores={LeaveGame=1..}] remove threwCanopy
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
 
 #Parkour quit

@@ -1,0 +1,14 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:ender_pearl",
+    "predicates": {
+      "minecraft:custom_data": {
+        "canopy_projectile": {
+          "body": {}
+        }
+      }
+    }
+  }
+}

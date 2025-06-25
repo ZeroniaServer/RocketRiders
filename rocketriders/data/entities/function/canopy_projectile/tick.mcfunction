@@ -1,4 +1,5 @@
 # If the ender pearl hits something, do nothing
+execute unless predicate custom:has_vehicle on origin run function custom:player_action/forget_all_canopies
 execute unless predicate custom:has_vehicle run return run kill @s
 
 # Movement trail

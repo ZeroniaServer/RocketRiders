@@ -1,9 +1,15 @@
-execute if entity @s[tag=!canopy.kill,tag=!canopy.forgotten_origin] if score @s entity.age matches ..40 run function entities:canopy/tick/teleporting
+# Movement cooldown
+scoreboard players add @s entity.canopy.movement_cooldown 0
+scoreboard players add @s[predicate=entities:do_age,tag=!canopy.forgotten_origin] entity.canopy.movement_cooldown 1
+execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=custom:canopy_nearblue] if function custom:origin_on_blue_team run scoreboard players add @s entity.canopy.movement_cooldown 3
+execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=custom:canopy_nearyellow] if function custom:origin_on_yellow_team run scoreboard players add @s entity.canopy.movement_cooldown 3
+execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.kill] if score @s entity.canopy.movement_cooldown matches ..42 run function entities:canopy/tick/teleporting
 
 # Speed up aging when near the base of its own team color
-execute if entity @s[tag=!wateredTemp,tag=!canopy.animated,predicate=custom:canopy_nearblue] if function custom:origin_on_blue_team run scoreboard players add @s entity.age 3
-execute if entity @s[tag=!wateredTemp,tag=!canopy.animated,predicate=custom:canopy_nearyellow] if function custom:origin_on_yellow_team run scoreboard players add @s entity.age 3
+execute if entity @s[tag=!canopy.animated,predicate=custom:canopy_nearblue] if function custom:origin_on_blue_team run scoreboard players add @s entity.age 3
+execute if entity @s[tag=!canopy.animated,predicate=custom:canopy_nearyellow] if function custom:origin_on_yellow_team run scoreboard players add @s entity.age 3
 
+# Animate platform
 tag @s[tag=canopy.kill,tag=!canopy.animated] add canopy.animated
 execute if entity @s[tag=!canopy.animated] run function entities:canopy/tick/deployment_animation
 
@@ -47,7 +53,7 @@ execute if score @s entity.age matches 2..299 if score @s canopySmoke matches 80
 
 #Canopy lava poof
 scoreboard players set $in_lava var 0
-execute store result score $in_lava var run clone ~-3 ~-1 ~-3 ~3 ~2 ~3 ~-3 ~-1 ~-3 filtered lava force
+execute store success score $in_lava var run clone ~-3 ~-1 ~-3 ~3 ~2 ~3 ~-3 ~-1 ~-3 filtered lava force
 execute if score $in_lava var matches 1 run particle lava ~ ~1 ~ 2 0.1 2 2 50 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute if score $in_lava var matches 1 run particle minecraft:falling_lava ~ ~-1 ~ 2 1 2 0.1 50 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute if score $in_lava var matches 1 run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1 1 1 0.5 40 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
@@ -58,7 +64,7 @@ execute if score $in_lava var matches 1 run tag @s add canopy.burn
 
 #Burning (fire poofing)
 scoreboard players set $on_fire var 0
-execute if score @s entity.age matches 2..299 store result score $on_fire var run clone ~-1 ~-1 ~-1 ~1 ~2 ~1 ~-1 ~-1 ~-1 filtered fire force
+execute if score @s entity.age matches 2..299 store success score $on_fire var run clone ~-1 ~-1 ~-1 ~1 ~2 ~1 ~-1 ~-1 ~-1 filtered fire force
 execute if score @s entity.age matches 2..299 if score $on_fire var matches 1 run tag @s add canopy.burn
 
 execute if entity @s[tag=canopy.burn] run playsound entity.blaze.shoot master @a[x=0] ~ ~ ~ 2 0
@@ -91,7 +97,7 @@ execute if score @s entity.age matches 299 run particle minecraft:block{block_st
 
 #Canopy watering (one time use - Splash extends Canopy duration)
 scoreboard players set $in_water var 0
-execute if score @s[tag=!canopy.watered] entity.age matches 2..299 store result score $in_water var run clone ~-2 ~-1 ~-2 ~2 ~2 ~2 ~-2 ~-1 ~-2 filtered water force
+execute if score @s[tag=!canopy.watered] entity.age matches 2..299 store success score $in_water var run clone ~-2 ~-1 ~-2 ~2 ~2 ~2 ~-2 ~-1 ~-2 filtered water force
 execute if score $in_water var matches 1 run setblock ~ ~1 ~ sponge
 execute if score $in_water var matches 1 run fill ~-2 ~-1 ~-2 ~2 ~2 ~2 air replace water
 execute if score $in_water var matches 1 run setblock ~ ~1 ~ oak_wood[axis=y]

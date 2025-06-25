@@ -5,6 +5,7 @@ execute if entity @s[predicate=entities:canopy] run return fail
 ## Set up data
 data modify entity @s data.canopy set value {}
 scoreboard players set @s entity.age 0
+scoreboard players set @s entity.canopy.movement_cooldown 0
 
 scoreboard players add $canopy_count global 1
 

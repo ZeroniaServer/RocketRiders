@@ -72,6 +72,7 @@ scoreboard players set $24000 constant 24000
 scoreboard objectives add event.player_dies custom:deaths
 scoreboard objectives add flag.is_dead dummy
 scoreboard objectives add entity.age dummy
+scoreboard objectives add entity.canopy.movement_cooldown dummy
 scoreboard objectives add entity.vortex.fuse dummy
 scoreboard objectives add last_creeper_damage_origin_uuid.0 dummy
 scoreboard objectives add last_creeper_damage_origin_uuid.1 dummy

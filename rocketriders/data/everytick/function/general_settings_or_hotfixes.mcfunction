@@ -127,15 +127,6 @@ kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect
 #Fill portals before game starts
 execute unless predicate game:game_started if entity @s[tag=!noPortal,tag=!GameEnd,tag=EditedSettings] run function arenaclear:placeportals
 
-#Decoy Vortex (Lobby)
-execute if score $dust CmdData matches 1 as @e[x=0,type=marker,tag=VortexDummy] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.5 0.5 0 0 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if score $dust CmdData matches 1 as @e[x=0,type=marker,tag=VortexDummy] at @s run particle minecraft:dust{color:[0,0,1],scale:1} ~ ~ ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if score $dust CmdData matches 1 as @e[x=0,type=marker,tag=VortexDummy] at @s run particle minecraft:scrape ~ ~ ~ 0.5 0.5 0 0 3 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-
-execute as @e[x=0,type=armor_stand,tag=VortexItemDummy] at @s unless entity @a[team=Lobby,distance=..4] run tp @s ~ ~ ~ ~15 ~
-execute as @e[x=0,type=armor_stand,tag=VortexItemDummy] at @s if entity @e[type=marker,tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ facing entity @p[team=Lobby,distance=..6]
-execute as @e[x=0,type=armor_stand,tag=VortexItemDummy] at @s if entity @e[type=marker,tag=VortexDummy,sort=nearest,limit=1,distance=..2] if entity @a[team=Lobby,distance=..6] run tp @s ~ ~ ~ ~-180 ~
-
 #Disable damage gamerules if no game has started
 execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule fallDamage false
 execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule drowningDamage false

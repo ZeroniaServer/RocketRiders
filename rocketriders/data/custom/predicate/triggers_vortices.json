@@ -1,0 +1,40 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": [
+          "minecraft:arrow",
+          "minecraft:spectral_arrow",
+          "minecraft:fireball",
+          "minecraft:small_fireball",
+          "minecraft:dragon_fireball",
+          "minecraft:snowball",
+          "minecraft:splash_potion",
+          "minecraft:lingering_potion",
+          "minecraft:ender_pearl",
+          "minecraft:trident",
+          "minecraft:firework_rocket"
+        ]
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:egg",
+        "nbt": "{Item:{components:{'minecraft:custom_data':{icbm:1b}}}}"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:tnt",
+        "nbt": "{fuse:2s}"
+      }
+    }
+  ]
+}

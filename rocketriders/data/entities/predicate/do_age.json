@@ -54,6 +54,34 @@
             }
           }
         }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:area_effect_cloud",
+          "predicates": {
+            "minecraft:custom_data": {
+              "vortex_projectile": {
+                "brain": {}
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:area_effect_cloud",
+          "predicates": {
+            "minecraft:custom_data": {
+              "vortex": {
+                "brain": {}
+              }
+            }
+          }
+        }
       }
     ]
   }

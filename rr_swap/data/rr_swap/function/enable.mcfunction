@@ -7,7 +7,6 @@ tag @s[tag=SplashStreams] add SplashStreamsWasOn
 tag @s add SplashStreamsOff
 tag @s[tag=Chaos] add ChaosWasOn
 tag @s add ChaosOff
-tag @s add vortexOverride
 tag @s add respawnFlag
 
 #item disabling/enabling

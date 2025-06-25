@@ -25,6 +25,36 @@ execute if entity @s[team=Yellow] positioned as @n[distance=..7,predicate=entiti
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:canopy,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
 
 
+## Creeper Explosion Kill Credit
+# Extract explosion origin UUID
+scoreboard players set $direct_attacker var 0
+execute on attacker run scoreboard players set $direct_attacker var 1
+
+data modify storage rocketriders:main player_dies set value {}
+execute if score $direct_attacker var matches 1 on attacker run data modify storage rocketriders:main player_dies.creeper_explosion_origin set from entity @s[type=creeper] data.explosion.origin
+
+# If creeper killed indirectly (no origin from immediate creeper explosion), use last_creeper_damage_origin_uuid
+execute store success score $last_damaged_by_creeper var if score @s last_creeper_damage_origin_uuid.0 = @s last_creeper_damage_origin_uuid.0
+execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 run data modify storage rocketriders:main player_dies.creeper_explosion_origin set value [I;0,0,0,0]
+execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.creeper_explosion_origin[0] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.0
+execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.creeper_explosion_origin[1] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.1
+execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.creeper_explosion_origin[2] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.2
+execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.creeper_explosion_origin[3] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.3
+
+# Locate player by UUID and reward them 1 kill credit
+scoreboard players set $team var -1
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] store success score $team var if entity @s[team=!Blue]
+tag @s add player_dies.this
+execute if data storage rocketriders:main player_dies.creeper_explosion_origin positioned ~ -1000 ~ summon minecraft:area_effect_cloud run return run function custom:event/player_dies/target_creeper_explosion_origin
+tag @s remove player_dies.this
+
+# Forget creeper
+scoreboard players reset @s last_creeper_damage_origin_uuid.0
+scoreboard players reset @s last_creeper_damage_origin_uuid.1
+scoreboard players reset @s last_creeper_damage_origin_uuid.2
+scoreboard players reset @s last_creeper_damage_origin_uuid.3
+
+
 ## Death-Specific
 # Apply poison on respawn if the player breached the lobby
 execute if predicate game:game_started if predicate custom:on_blue_or_yellow_team run tag @s[y=181,dy=100] add on_respawn.apply_poison_effect

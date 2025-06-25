@@ -1,13 +1,4 @@
 ##Utility-specific commands (optimized to only run when necessary)
-execute unless entity @s[tag=runvortex] if entity @e[x=0,type=egg,nbt=!{Item:{components:{"minecraft:custom_data":{icbm:1b}}}}] run tag @s add runvortex
-execute unless entity @s[tag=runvortex] if entity @e[x=0,type=marker,tag=Vortex] run tag @s add runvortex
-execute unless entity @s[tag=runvortex] if entity @e[x=0,type=armor_stand,tag=VortexItem] run tag @s add runvortex
-execute unless entity @s[tag=runvortex] if entity @e[x=0,type=chicken] run tag @s add runvortex
-execute if entity @s[tag=runvortex,tag=!vortexOverride] run function everytick:vortex
-tag @s[tag=runvortex] remove runvortex
-
-execute unless entity @e[x=0,type=marker,tag=Vortex] unless entity @e[x=0,type=armor_stand,tag=VortexItem] run scoreboard players set $highest VortexID 0
-
 execute unless entity @s[tag=runobshields] if entity @e[x=0,type=dragon_fireball,tag=obfireball] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[x=0,type=marker,tag=blueobtracker] run tag @s add runobshields
 execute unless entity @s[tag=runobshields] if entity @e[x=0,type=marker,tag=blueobsidianshield] run tag @s add runobshields

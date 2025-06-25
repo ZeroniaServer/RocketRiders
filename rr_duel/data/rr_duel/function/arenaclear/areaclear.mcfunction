@@ -20,12 +20,13 @@ fill -14 13 -66 38 33 -48 air
 #Molerat
 execute if entity @s[tag=!Molerat] run fill -12 36 -12 36 61 12 air
 
+kill @e[x=0,type=area_effect_cloud,predicate=custom:belowroof]
 kill @e[x=0,type=fireball]
 kill @e[x=0,type=item_display,tag=endFireballAnchor]
 kill @e[x=0,type=snowball]
 kill @e[x=0,type=arrow]
-kill @e[x=0,type=marker,tag=Vortex]
-kill @e[x=0,type=armor_stand,tag=VortexItem]
+kill @e[x=0,predicate=entities:vortex]
+kill @e[x=0,type=egg]
 kill @e[x=0,type=chicken]
 kill @e[x=0,type=tnt]
 kill @e[x=0,type=tnt_minecart]

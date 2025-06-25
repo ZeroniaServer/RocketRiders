@@ -72,10 +72,6 @@ execute if entity @s[tag=!CompletedVeteran,tag=!ObshieldSpawned] if score @s Obs
 execute if entity @s[tag=!CompletedVeteran,tag=!SplashSpawned] if score @s ThrowSplash matches 1.. run advancement grant @s only achievements:rr_challenges/veteran SplashSpawned
 execute if entity @s[tag=!CompletedVeteran,tag=!SplashSpawned] if score @s ThrowSplash matches 1.. run tag @s add SplashSpawned
 
-# these ones happen in the actual functions now
-# execute if entity @s[tag=!CompletedVeteran] if score @s ThrowVortex matches 1.. run tag @s add VortexSpawned
-# execute if entity @s[tag=!CompletedVeteran] if score @s NovaShot matches 1.. run tag @s add NovaSpawned
-
 execute if entity @s[tag=!CompletedVeteran,tag=!ArrowSpawned] if score @s BowShot matches 1.. run advancement grant @s only achievements:rr_challenges/veteran ArrowSpawned
 execute if entity @s[tag=!CompletedVeteran,tag=!ArrowSpawned] if score @s BowShot matches 1.. run tag @s add ArrowSpawned
 

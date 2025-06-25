@@ -72,6 +72,11 @@ scoreboard players set $24000 constant 24000
 scoreboard objectives add event.player_dies custom:deaths
 scoreboard objectives add flag.is_dead dummy
 scoreboard objectives add entity.age dummy
+scoreboard objectives add entity.vortex.fuse dummy
+scoreboard objectives add last_creeper_damage_origin_uuid.0 dummy
+scoreboard objectives add last_creeper_damage_origin_uuid.1 dummy
+scoreboard objectives add last_creeper_damage_origin_uuid.2 dummy
+scoreboard objectives add last_creeper_damage_origin_uuid.3 dummy
 
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
@@ -140,7 +145,6 @@ scoreboard objectives add SDtime dummy
 scoreboard objectives add endFireball dummy
 scoreboard objectives add SetGamemode dummy
 scoreboard objectives add gamemodeID dummy
-scoreboard objectives add VortexID dummy
 scoreboard objectives add invCount dummy
 scoreboard objectives add actionbardelay dummy
 scoreboard objectives add PortalDeco dummy
@@ -175,9 +179,6 @@ scoreboard objectives add canopySmoke dummy
 scoreboard objectives add NovaShot minecraft.broken:minecraft.crossbow
 scoreboard objectives add NovaNear dummy
 scoreboard objectives add firstJoined dummy
-scoreboard objectives add vortexBoom dummy
-scoreboard objectives add vortexChain dummy
-scoreboard objectives add vortextimer dummy
 scoreboard objectives add shieldplacement dummy
 scoreboard objectives add breakobshield dummy
 scoreboard objectives add obmove dummy

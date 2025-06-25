@@ -82,9 +82,7 @@ execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=#custom:pot
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=tnt] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=tnt_minecart] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=item] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=armor_stand,tag=VortexItemBlue] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=armor_stand,tag=VortexItemYellow] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=armor_stand,tag=VortexItemFeathered] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,predicate=entities:vortex/body] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=armor_stand,tag=Bot] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Spectator] LeaveGame 1
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Blue] LeaveGame 1
@@ -108,8 +106,6 @@ tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
 tag @s[scores={endtimer=570..}] remove BothWon
 execute if entity @s[scores={endtimer=570..}] run scoreboard players set $barriers CmdData 0
-execute if entity @s[scores={endtimer=570..}] run scoreboard players reset $highest VortexID
-execute if entity @s[scores={endtimer=570..}] run scoreboard players reset $count VortexID
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * invCount
 execute if entity @s[scores={endtimer=570..}] run function arenaclear:preclear
 tag @s[scores={endtimer=570..}] remove GameEnd

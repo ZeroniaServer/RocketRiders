@@ -39,6 +39,9 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches -2147483648..2147483647 store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount matches -2147483648..2147483647 store result score $shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount
 
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
+
 
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
@@ -55,6 +58,10 @@ scoreboard objectives remove shieldtest
 scoreboard objectives remove shieldtest2
 scoreboard objectives remove ThrowShield
 scoreboard objectives remove voidNoFallCount
+scoreboard objectives remove VortexID
+scoreboard objectives remove vortexBoom
+scoreboard objectives remove vortexChain
+scoreboard objectives remove vortextimer
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth
@@ -89,6 +96,10 @@ fill -109 229 106 -109 241 50 bamboo_stairs[facing=south,half=top] replace birch
 fill -109 229 106 -109 241 50 bamboo_stairs[facing=south,half=bottom] replace birch_stairs[facing=south,half=bottom]
 fill -109 229 106 -109 241 50 bamboo_stairs[facing=north,half=top] replace birch_stairs[facing=north,half=top]
 fill -109 229 106 -109 241 50 bamboo_stairs[facing=north,half=bottom] replace birch_stairs[facing=north,half=bottom]
+
+kill @e[x=0,type=marker,tag=VortexDummy]
+kill @e[x=0,type=armor_stand,tag=VortexItemDummy]
+execute positioned -69.5 206.5 48.5 run function entities:vortex_decoy/summon
 
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1304

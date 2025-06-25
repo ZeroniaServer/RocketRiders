@@ -1,12 +1,3 @@
-#Overwrite vortex owner (makes these hostile towards team members)
-execute as @a[x=0,team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=BlueVortex] add YellowVortex
-execute as @a[x=0,team=Blue] at @s run tag @e[type=egg,sort=nearest,limit=1,distance=..5,tag=BlueVortex] remove BlueVortex
-
-#Overwrite vortex particles
-execute as @e[x=0,type=egg,tag=YellowVortex] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[3,3,3],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:dust{color:[3,3,3],scale:1.5} ~ ~0.3 ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=marker,tag=VortexYellow] at @s if score $dust CmdData matches 1 run particle minecraft:electric_spark ~ ~0.3 ~ 0.5 0.5 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-
 #Nova tracking
 execute as @a[x=0,team=Blue] at @s if entity @e[type=firework_rocket,distance=..4,limit=1,tag=BlueNova] run tag @s add BlueNovaNear
 execute as @a[x=0,team=Blue] at @s if entity @e[type=marker,distance=..4,limit=1,tag=bluenovatracker] run tag @s add BlueNovaNear

@@ -340,12 +340,6 @@ tag @a[x=0,tag=!CarryFlag] remove FlipMissile
 execute as @e[x=0,type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
 execute as @e[x=0,type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0
 
-#Disable vortices near flags
-execute positioned -10 65 -64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1
-execute positioned 34 65 -64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1
-execute positioned -10 65 64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1
-execute positioned 34 65 64 as @e[type=egg,scores={vortextimer=19..20},distance=..5] run scoreboard players remove @s vortextimer 1
-
 #Disable obsidian shields near flags
 execute positioned -10 65 -64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s
 execute positioned 34 65 -64 as @e[type=marker,tag=yellowobalone,distance=..5] run kill @s

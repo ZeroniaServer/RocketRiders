@@ -19,9 +19,6 @@ execute if score $extrafuse CmdData matches 1 at @s[tag=ICBMTriggered] run funct
 execute if score $extrafuse CmdData matches 0 at @s[tag=ICBMTriggered] run function everytick:summonicbmtnt2
 execute at @s[tag=ICBMTriggered] run function game:tntutilkill
 
-#Trigger nearby Vortices
-tag @e[type=marker,tag=Vortex,distance=..5,limit=1] add originboom
-
 #Reset
 tag @s remove teleportPair
 tag @e[x=0,type=egg,tag=ICBM,tag=teleportPair] remove teleportPair

@@ -62,6 +62,8 @@ scoreboard objectives remove VortexID
 scoreboard objectives remove vortexBoom
 scoreboard objectives remove vortexChain
 scoreboard objectives remove vortextimer
+scoreboard objectives remove ICBMID
+scoreboard objectives remove ICBMtime
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

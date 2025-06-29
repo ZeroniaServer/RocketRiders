@@ -6,8 +6,6 @@ execute if entity @e[x=0,type=armor_stand,tag=rr_swap,limit=1] run kill @e[x=0,t
 bossbar remove rr_swap:swap_progress
 scoreboard objectives remove swapside
 scoreboard objectives remove Clustertime
-scoreboard objectives remove ICBMID
-scoreboard objectives remove ICBMtime
 scoreboard players reset * gamemodeID
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function rr_swap:game/gameend

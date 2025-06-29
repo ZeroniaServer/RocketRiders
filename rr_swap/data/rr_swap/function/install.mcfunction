@@ -2,8 +2,6 @@ execute unless entity @e[x=0,type=armor_stand,tag=rr_swap,limit=1] run summon ar
 
 scoreboard objectives add swapside dummy
 scoreboard objectives add Clustertime dummy
-scoreboard objectives add ICBMID dummy
-scoreboard objectives add ICBMtime dummy
 
 bossbar add rr_swap:swap_progress ["",{"text":"Swapping in: 60 seconds","bold":true,"color":"white"}]
 bossbar set rr_swap:swap_progress color white

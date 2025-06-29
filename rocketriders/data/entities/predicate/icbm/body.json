@@ -1,0 +1,14 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:egg",
+    "predicates": {
+      "minecraft:custom_data": {
+        "icbm": {
+          "body": {}
+        }
+      }
+    }
+  }
+}

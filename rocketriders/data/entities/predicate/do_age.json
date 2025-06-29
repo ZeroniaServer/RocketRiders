@@ -82,6 +82,20 @@
             }
           }
         }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:area_effect_cloud",
+          "predicates": {
+            "minecraft:custom_data": {
+              "icbm": {
+                "brain": {}
+              }
+            }
+          }
+        }
       }
     ]
   }

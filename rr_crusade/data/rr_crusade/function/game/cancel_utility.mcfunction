@@ -25,11 +25,3 @@ execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=marker,
 #Next 2 commands disable general Obsidian Shields inside of portals
 execute if score $BlueShield crusadehp matches -1000..0 as @e[x=0,type=marker,tag=obsidianshield] at @s if entity @s[x=1,y=42,z=-68,dz=1,dx=22,dy=16] run kill @s
 execute if score $YellowShield crusadehp matches -1000..0 as @e[x=0,type=marker,tag=obsidianshield] at @s if entity @s[x=1,y=42,z=66,dz=1,dx=22,dy=16] run kill @s
-
-##Special ICBM override
-#Teleport trackers to matching ICBMs + detect trigger conditions
-execute as @e[x=0,type=marker,tag=ICBMtracker] at @s run function rr_crusade:game/tptoicbm
-
-#Kill eggs that didn't teleport
-kill @e[x=0,type=egg,tag=ICBM,tag=!teleported]
-tag @e[x=0,type=egg,tag=ICBM] remove teleported

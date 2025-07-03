@@ -5,13 +5,9 @@ execute if entity @s[predicate=entities:icbm] run return fail
 ## Set up data
 data modify entity @s data.icbm set value {body:{}}
 
-data modify storage rocketriders:main icbm.name set value "Intercontinental Ballistic Missle"
+data modify storage rocketriders:main icbm.name set value "Intercontinental Ballistic Missile"
 execute on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s ICBM"], write_to:"storage rocketriders:main icbm.name"}
 data modify entity @s CustomName set from storage rocketriders:main icbm.name
-
-## Achievements
-#execute on origin run advancement grant @s only achievements:rr_challenges/veteran ShieldSpawned
-#execute on origin run tag @s add ShieldSpawned
 
 ## Summon brain
 tag @s add icbm.this

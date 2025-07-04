@@ -19,10 +19,12 @@
                 },
                 "minecraft:lore": [
                   {
-                    "translate": "A sharp sword, made to"
+                    "translate": "A sharp sword, made to",
+                    "italic": false
                   },
                   {
-                    "translate": "kill the strongest enemies."
+                    "translate": "kill the strongest enemies.",
+                    "italic": false
                   }
                 ],
                 "minecraft:tooltip_display": {

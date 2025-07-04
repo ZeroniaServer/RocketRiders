@@ -15,7 +15,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Splash",
@@ -26,15 +27,18 @@
                 "minecraft:lore": [
                   {
                     "text": "Spawns a brief water source where it",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "lands. Used to restart missiles, reduce",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "explosions, or break your fall.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:potion_contents": {
@@ -65,7 +69,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Splash",
@@ -91,7 +96,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Splash",

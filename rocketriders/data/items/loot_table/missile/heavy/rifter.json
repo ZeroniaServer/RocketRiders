@@ -24,7 +24,8 @@
                   {
                     "text": "[Heavy] ",
                     "color": "dark_red",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Rifter",
@@ -126,7 +127,8 @@
                   {
                     "text": "[Heavy] ",
                     "color": "dark_red",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Rifter",

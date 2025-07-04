@@ -24,7 +24,8 @@
                   {
                     "text": "[Normal] ",
                     "color": "green",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Catapult",
@@ -126,7 +127,8 @@
                   {
                     "text": "[Normal] ",
                     "color": "green",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Catapult",

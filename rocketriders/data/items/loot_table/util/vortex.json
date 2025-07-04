@@ -15,7 +15,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Vortex",
@@ -26,15 +27,18 @@
                 "minecraft:lore": [
                   {
                     "text": "A sky-mine. Blows up when enemies get close,",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "when missiles pass through it, or when it gets",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "shot by projectiles. It also follows enemies!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:item_model": "minecraft:ender_eye",
@@ -50,7 +54,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Vortex",
@@ -81,7 +86,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Vortex",

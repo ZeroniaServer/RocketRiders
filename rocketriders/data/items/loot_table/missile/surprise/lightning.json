@@ -27,7 +27,8 @@
                       {
                         "text": "[Lightning] ",
                         "color": "yellow",
-                        "bold": true
+                        "bold": true,
+                        "italic": false
                       },
                       {
                         "text": "Surprise Egg",
@@ -83,7 +84,8 @@
                       {
                         "text": "[Lightning] ",
                         "color": "yellow",
-                        "bold": true
+                        "bold": true,
+                        "italic": false
                       },
                       {
                         "text": "Surprise Egg",

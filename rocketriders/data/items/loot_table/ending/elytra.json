@@ -24,7 +24,8 @@
                 "minecraft:custom_name": {
                   "text": "Elytra",
                   "color": "white",
-                  "bold": true
+                  "bold": true,
+                  "italic": false
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [

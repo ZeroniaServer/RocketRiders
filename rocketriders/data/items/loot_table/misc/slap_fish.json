@@ -14,16 +14,18 @@
                   "text": "Slap Fish",
                   "color": "dark_purple",
                   "bold": true,
-                  "italic": true
+                  "italic": false
                 },
                 "minecraft:lore": [
                   {
                     "text": "Use to slap your enemies away!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "Only good for one use.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:enchantments": {

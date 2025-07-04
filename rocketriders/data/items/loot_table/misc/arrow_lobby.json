@@ -13,7 +13,8 @@
                 "minecraft:custom_name": {
                   "text": "Arrow",
                   "color": "light_purple",
-                  "bold": true
+                  "bold": true,
+                  "italic": false
                 },
                 "minecraft:custom_data": {
                   "Droppable": true,

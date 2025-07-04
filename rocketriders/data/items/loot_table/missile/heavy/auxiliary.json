@@ -24,7 +24,8 @@
                   {
                     "text": "[Heavy] ",
                     "color": "dark_red",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Auxiliary",
@@ -122,7 +123,8 @@
                   {
                     "text": "[Heavy] ",
                     "color": "dark_red",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Auxiliary",

@@ -24,7 +24,8 @@
                   {
                     "text": "[Lightning] ",
                     "color": "yellow",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Thunderbolt",
@@ -122,7 +123,8 @@
                   {
                     "text": "[Lightning] ",
                     "color": "yellow",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Thunderbolt",

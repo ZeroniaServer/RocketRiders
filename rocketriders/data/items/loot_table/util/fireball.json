@@ -24,7 +24,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Fireball",
@@ -35,15 +36,18 @@
                 "minecraft:lore": [
                   {
                     "text": "Spawns a Fireball. Punch or shoot",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "Fireballs to quickly blow up missiles,",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "blocks, or enemy players.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {
@@ -85,7 +89,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Fireball",

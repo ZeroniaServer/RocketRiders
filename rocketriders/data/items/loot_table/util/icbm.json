@@ -16,7 +16,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "ICBM",
@@ -27,11 +28,13 @@
                 "minecraft:lore": [
                   {
                     "text": "Short for \"intercontinental ballistic missile\".",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "Blows up upon impact or after short flight.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:custom_data": {
@@ -50,7 +53,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "ICBM",
@@ -76,7 +80,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "ICBM",

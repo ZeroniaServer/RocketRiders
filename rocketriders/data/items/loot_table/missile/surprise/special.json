@@ -28,7 +28,8 @@
                       {
                         "text": "[Special] ",
                         "color": "dark_purple",
-                        "bold": true
+                        "bold": true,
+                        "italic": false
                       },
                       {
                         "text": "Surprise Egg",
@@ -85,7 +86,8 @@
                       {
                         "text": "[Special] ",
                         "color": "green",
-                        "bold": true
+                        "bold": true,
+                        "italic": false
                       },
                       {
                         "text": "Surprise Egg",

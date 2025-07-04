@@ -24,7 +24,8 @@
                   {
                     "text": "[Normal] ",
                     "color": "green",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Slasher",
@@ -122,7 +123,8 @@
                   {
                     "text": "[Normal] ",
                     "color": "green",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Slasher",

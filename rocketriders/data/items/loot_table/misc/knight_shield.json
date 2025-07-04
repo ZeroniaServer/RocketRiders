@@ -19,7 +19,8 @@
                 },
                 "minecraft:lore": [
                   {
-                    "translate": "A not-so-sturdy shield."
+                    "translate": "A not-so-sturdy shield.",
+                    "italic": false
                   }
                 ],
                 "minecraft:tooltip_display": {

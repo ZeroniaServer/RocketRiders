@@ -15,7 +15,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "dark_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Lava Splash",
@@ -26,15 +27,18 @@
                 "minecraft:lore": [
                   {
                     "text": "Spawns a brief lava source where it",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "lands. Used to burn enemies or break",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "your fall in a dumb way.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:enchantment_glint_override": true,
@@ -67,7 +71,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "dark_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Lava Splash",
@@ -93,7 +98,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "dark_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Lava Splash",

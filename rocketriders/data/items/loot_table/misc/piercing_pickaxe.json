@@ -18,10 +18,12 @@
                 },
                 "minecraft:lore": [
                   {
-                    "translate": "A tool used both for"
+                    "translate": "A tool used both for",
+                    "italic": false
                   },
                   {
-                    "translate": "mining and melee attacks."
+                    "translate": "mining and melee attacks.",
+                    "italic": false
                   }
                 ],
                 "minecraft:unbreakable": {},

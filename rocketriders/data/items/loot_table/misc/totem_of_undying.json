@@ -14,7 +14,7 @@
                   "text": "Totem of Undying",
                   "color": "dark_purple",
                   "bold": true,
-                  "italic": true
+                  "italic": false
                 },
                 "minecraft:lore": [
                   {

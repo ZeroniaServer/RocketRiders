@@ -15,7 +15,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "dark_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Stinging Shield",
@@ -25,11 +26,13 @@
                 "minecraft:lore": [
                   {
                     "text": "Throw to deploy a Shield made of",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "beehives and unstable TNT!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:custom_data": {
@@ -45,7 +48,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "dark_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Stinging Shield",
@@ -76,7 +80,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "dark_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Stinging Shield",

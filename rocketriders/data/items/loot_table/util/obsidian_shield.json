@@ -23,7 +23,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Obsidian Shield",
@@ -34,15 +35,18 @@
                 "minecraft:lore": [
                   {
                     "text": "Spawns a Fireball that you can shoot or punch",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "to spawn an Obsidian Shield. Stops all missiles.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "Break the central glass 3 times to destroy it.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {
@@ -84,7 +88,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Obsidian Shield",
@@ -95,15 +100,18 @@
                 "minecraft:lore": [
                   {
                     "text": "Spawns a Fireball that you can shoot or punch",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "to spawn an Obsidian Shield. Stops all missiles.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "Break the central glass 3 times to destroy it.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {

@@ -13,7 +13,7 @@
                 "minecraft:custom_name": {
                   "text": "Blindness Arrow",
                   "color": "dark_purple",
-                  "italic": true,
+                  "italic": false,
                   "bold": true
                 },
                 "minecraft:potion_contents": {

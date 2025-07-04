@@ -15,7 +15,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Canopy",
@@ -26,15 +27,18 @@
                 "minecraft:lore": [
                   {
                     "text": "The Canopy creates a leaf platform.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "Use it to quickly reposition yourself,",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "but don't play with fire on it!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ]
               }
@@ -46,7 +50,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Canopy",
@@ -77,7 +82,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Canopy",

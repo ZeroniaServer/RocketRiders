@@ -25,7 +25,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Cluster Fireball",
@@ -36,15 +37,18 @@
                 "minecraft:lore": [
                   {
                     "text": "Spawns a cluster of Fireballs. Punch or",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "shoot Fireballs to quickly blow up",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "missiles, blocks, or enemy players.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {
@@ -88,7 +92,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Cluster Fireball",
@@ -99,15 +104,18 @@
                 "minecraft:lore": [
                   {
                     "text": "Spawns a cluster of Fireballs. Punch or",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "shoot Fireballs to quickly blow up",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "missiles, blocks, or players.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {

@@ -18,7 +18,8 @@
                 "minecraft:custom_name": {
                   "text": "Trident",
                   "color": "dark_purple",
-                  "bold": true
+                  "bold": true,
+                  "italic": false
                 },
                 "minecraft:lore": [
                   {

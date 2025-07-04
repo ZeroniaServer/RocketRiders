@@ -18,10 +18,12 @@
                 },
                 "minecraft:lore": [
                   {
-                    "translate": "A weapon used for both"
+                    "translate": "A weapon used for both",
+                    "italic": false
                   },
                   {
-                    "translate": "ranged and melee attacks"
+                    "translate": "ranged and melee attacks",
+                    "italic": false
                   }
                 ],
                 "minecraft:unbreakable": {},

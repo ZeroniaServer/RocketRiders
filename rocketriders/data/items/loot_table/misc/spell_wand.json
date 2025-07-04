@@ -24,10 +24,12 @@
                 },
                 "minecraft:lore": [
                   {
-                    "translate": "A special wand, made to"
+                    "translate": "A special wand, made to",
+                    "italic": false
                   },
                   {
-                    "translate": "set enemies on fire!"
+                    "translate": "set enemies on fire!",
+                    "italic": false
                   }
                 ],
                 "minecraft:enchantments": {

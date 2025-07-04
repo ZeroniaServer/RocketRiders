@@ -1,0 +1,15 @@
+{
+  "condition": "minecraft:inverted",
+  "term": {
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$disable_cannoning"
+      },
+      "score": "global"
+    },
+    "range": 1
+  }
+}

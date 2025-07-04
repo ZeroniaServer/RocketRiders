@@ -38,11 +38,15 @@ execute store success score $game_started global if entity @e[x=0,type=armor_sta
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches -2147483648..2147483647 store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount matches -2147483648..2147483647 store result score $shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount matches -2147483648..2147483647 store result score $stinging_shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
 
+execute as @e[x=0,type=marker,tag=animBshield] at @s run function world_updates:1_3_0/update_stinging_shield
 
+# Remove unused objectives
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
 scoreboard objectives remove splashOwnerUUID
@@ -64,6 +68,8 @@ scoreboard objectives remove vortexChain
 scoreboard objectives remove vortextimer
 scoreboard objectives remove ICBMID
 scoreboard objectives remove ICBMtime
+scoreboard objectives remove BeeShieldTime
+scoreboard objectives remove beeShieldCount
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

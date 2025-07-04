@@ -4,7 +4,6 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsLast] run f
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsLast] remove powerupsLast
 execute if entity @e[x=0,type=armor_stand,tag=rr_powerups,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_powerups,limit=1]
 scoreboard players reset * gamemodeID
-scoreboard objectives remove beeShieldCount
 bossbar remove rr_powerups:capture_progress
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function rr_powerups:game/gameend

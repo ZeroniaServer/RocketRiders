@@ -33,7 +33,7 @@
                   }
                 ],
                 "minecraft:custom_data": {
-                  "BeeShield": true
+                  "stinging_shield": true
                 },
                 "minecraft:item_model": "minecraft:honeycomb"
               }

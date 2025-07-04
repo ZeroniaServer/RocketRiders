@@ -17,12 +17,12 @@ data remove storage rr_powerups:beeshieldpos y[0]
 data remove storage rr_powerups:beeshieldpos z[0]
 
 #Remove 1 from counter
-scoreboard players remove @s[scores={beeShieldCount=1..}] beeShieldCount 1
+execute if score $stinging_shield_count global matches 1.. run scoreboard players remove $stinging_shield_count global 1
 
 #Recursion condition - as long as there's still coords stored, keep going
-execute if entity @s[scores={beeShieldCount=1..}] run function rr_powerups:arenaclear/preparebeeshield
+execute if score $stinging_shield_count global matches 1.. run function rr_powerups:arenaclear/preparebeeshield
 
 #End condition - clear arrays
-execute if entity @s[scores={beeShieldCount=0}] run data remove storage rr_powerups:beeshieldpos x
-execute if entity @s[scores={beeShieldCount=0}] run data remove storage rr_powerups:beeshieldpos y
-execute if entity @s[scores={beeShieldCount=0}] run data remove storage rr_powerups:beeshieldpos z
+execute if score $stinging_shield_count global matches 0 run data remove storage rr_powerups:beeshieldpos x
+execute if score $stinging_shield_count global matches 0 run data remove storage rr_powerups:beeshieldpos y
+execute if score $stinging_shield_count global matches 0 run data remove storage rr_powerups:beeshieldpos z

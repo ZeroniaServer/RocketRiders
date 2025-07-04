@@ -5,7 +5,9 @@
 execute if entity @s[tag=GlobalDefaults] run tag @e[x=0,type=armor_stand,tag=rr_normal] add GlobalDefaults
 
 data modify entity @s Tags set from storage rocketriders:storage Tags
+execute store success score $disable_cannoning global if data storage rocketriders:storage config{disable_cannoning:1b}
 data remove storage rocketriders:storage Tags
+data remove storage rocketriders:storage config
 tag @s remove GameEnd
 
 scoreboard players operation @s TopDeco = $TORAGE TopDeco

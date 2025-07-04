@@ -37,7 +37,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "8",
@@ -47,7 +48,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "2.0m/s",
@@ -57,28 +59,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "Chronos22",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "The Lifter lifts its warhead",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "up by 3 blocks when it hits",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "an obstacle.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {
@@ -136,7 +139,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "8",
@@ -146,7 +150,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "2.0m/s",
@@ -156,28 +161,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "Chronos22",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "The Lifter lifts its warhead",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "up by 3 blocks when it hits",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "an obstacle.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {

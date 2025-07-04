@@ -38,7 +38,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "23",
@@ -48,7 +49,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "3.3m/s",
@@ -58,28 +60,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "IndigoLaser",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "The Broadsword is a fast and powerful",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "missile that lights lots of TNT on impact.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "It's like three Swords combined!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {
@@ -138,7 +141,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "23",
@@ -148,7 +152,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "3.3m/s",
@@ -158,28 +163,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "IndigoLaser",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "The Broadsword is a fast and powerful",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "missile that lights lots of TNT on impact.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "It's like three Swords combined!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {

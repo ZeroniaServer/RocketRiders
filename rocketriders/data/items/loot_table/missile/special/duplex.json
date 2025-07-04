@@ -38,7 +38,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "16 (+4 carts)",
@@ -48,7 +49,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                     "italic": false
                     },
                     {
                       "text": "2.0m/s",
@@ -58,28 +60,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "Chronos22 & YZEROgame",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "The Duplex works like a ShieldBuster but it takes a",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "more creative approach. Instead of going through",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "a Shield, it will blow it up and keep on flying!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {
@@ -138,7 +141,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "16 (+4 carts)",
@@ -148,7 +152,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "2.0m/s",
@@ -158,28 +163,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "Chronos22 & YZEROgame",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "The Duplex works like a ShieldBuster but it takes a",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "more creative approach. Instead of going though",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "a Shield, it will blow it up and keep on flying!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {

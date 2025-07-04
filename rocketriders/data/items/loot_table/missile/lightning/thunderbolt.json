@@ -37,7 +37,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "15",
@@ -47,7 +48,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "3.3m/s",
@@ -57,28 +59,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "Rubix_One",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "Breaking too much TNT may stop this missile,",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "but its length and 2x2 form factor make it",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "easier to cruise on to the enemy base!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {
@@ -136,7 +139,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "15",
@@ -146,7 +150,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "3.3m/s",
@@ -156,28 +161,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "Rubix_One",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "Breaking too much TNT may stop this missile,",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "but its length and 2x2 form factor make it",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "easier to cruise on to the enemy base!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {

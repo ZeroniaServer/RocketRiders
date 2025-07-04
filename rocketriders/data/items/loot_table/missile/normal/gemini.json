@@ -37,7 +37,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "4",
@@ -47,7 +48,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "2.0m/s",
@@ -57,28 +59,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "Evtema3 & samnrad",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "The Gemini is a twin missile, in that",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "if one side is stopped, the other",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "side of the missile will keep going.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {
@@ -136,7 +139,8 @@
                   [
                     {
                       "text": "Amount of TNT: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "4",
@@ -146,7 +150,8 @@
                   [
                     {
                       "text": "Speed: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "2.0m/s",
@@ -156,28 +161,29 @@
                   [
                     {
                       "text": "Made by: ",
-                      "color": "gray"
+                      "color": "gray",
+                      "italic": false
                     },
                     {
                       "text": "Evtema3 & samnrad",
                       "color": "red"
                     }
                   ],
-                  {
-                    "text": " ",
-                    "color": "gray"
-                  },
+                  "",
                   {
                     "text": "The Gemini is a twin missile, in that",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "if one side is stopped, the other",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "side of the missile will keep going.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:entity_data": {

@@ -40,7 +40,8 @@
                     "minecraft:lore": [
                       {
                         "text": "Wonder what it spawns?",
-                        "color": "gray"
+                        "color": "gray",
+                        "italic": false
                       }
                     ],
                     "minecraft:entity_data": {
@@ -98,7 +99,8 @@
                     "minecraft:lore": [
                       {
                         "text": "Wonder what it spawns?",
-                        "color": "gray"
+                        "color": "gray",
+                        "italic": false
                       }
                     ],
                     "minecraft:entity_data": {

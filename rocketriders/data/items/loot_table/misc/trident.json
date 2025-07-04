@@ -24,15 +24,18 @@
                 "minecraft:lore": [
                   {
                     "text": "Useful for strong close/ranged damage.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "When in water, automatically gains Riptide.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "Otherwise, the Trident contains Loyalty.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ]
               }

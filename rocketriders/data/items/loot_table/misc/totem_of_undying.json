@@ -19,15 +19,18 @@
                 "minecraft:lore": [
                   {
                     "text": "Hold to survive certain death.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "Only good for one use.",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   },
                   {
                     "text": "(Does not include void deaths.)",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:enchantment_glint_override": true

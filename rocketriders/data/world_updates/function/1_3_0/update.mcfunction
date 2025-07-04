@@ -1,11 +1,5 @@
 setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
 
-execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
-
-item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with leather_chestplate[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
-item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
-item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with leather_boots[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
-
 scoreboard objectives add constant dummy
 scoreboard players reset 0 FlagScore
 scoreboard players reset 2 MaxItemSec
@@ -29,9 +23,6 @@ scoreboard players reset 24000 daytime
 
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy
-scoreboard objectives add toggleParticles trigger
-scoreboard objectives add toggleTips trigger
-scoreboard objectives add toggleParkourTips trigger
 
 # early stages of nuking Selection armour stand...
 execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
@@ -44,7 +35,36 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
 
-execute as @e[x=0,type=marker,tag=animBshield] at @s run function world_updates:1_3_0/update_stinging_shield
+# Kill old game entities
+kill @e[x=0,type=marker,tag=BluePlatform]
+kill @e[x=0,type=marker,tag=YellowPlatform]
+kill @e[x=0,type=ender_pearl,tag=BluePlat]
+kill @e[x=0,type=ender_pearl,tag=YellowPlat]
+kill @e[x=0,type=snowball,tag=BlueShield]
+kill @e[x=0,type=snowball,tag=YellowShield]
+kill @e[x=0,type=marker,tag=PlaceBlueShield]
+kill @e[x=0,type=marker,tag=PlaceYellowShield]
+kill @e[x=0,type=egg,tag=BlueVortex]
+kill @e[x=0,type=egg,tag=YellowVortex]
+kill @e[x=0,type=armor_stand,tag=VortexItemBlue]
+kill @e[x=0,type=armor_stand,tag=VortexItemYellow]
+kill @e[x=0,type=marker,tag=VortexBlue]
+kill @e[x=0,type=marker,tag=VortexYellow]
+kill @e[x=0,type=egg,tag=ICBM]
+kill @e[x=0,type=marker,tag=ICBMtracker]
+kill @e[x=0,type=snowball,tag=BeeShieldDisplay]
+kill @e[x=0,type=marker,tag=animBshield]
+kill @e[x=0,type=marker,tag=BBeeShieldDisplay]
+kill @e[x=0,type=marker,tag=YBeeShieldDisplay]
+
+# Force stop the game
+function game:forcestop
+
+execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
+
+scoreboard objectives add toggleParticles trigger
+scoreboard objectives add toggleTips trigger
+scoreboard objectives add toggleParkourTips trigger
 
 # Remove unused objectives
 scoreboard objectives remove disableTips
@@ -104,6 +124,10 @@ fill -109 229 106 -109 241 50 bamboo_stairs[facing=south,half=top] replace birch
 fill -109 229 106 -109 241 50 bamboo_stairs[facing=south,half=bottom] replace birch_stairs[facing=south,half=bottom]
 fill -109 229 106 -109 241 50 bamboo_stairs[facing=north,half=top] replace birch_stairs[facing=north,half=top]
 fill -109 229 106 -109 241 50 bamboo_stairs[facing=north,half=bottom] replace birch_stairs[facing=north,half=bottom]
+
+item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with leather_chestplate[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
+item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
+item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with leather_boots[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
 
 kill @e[x=0,type=marker,tag=VortexDummy]
 kill @e[x=0,type=armor_stand,tag=VortexItemDummy]

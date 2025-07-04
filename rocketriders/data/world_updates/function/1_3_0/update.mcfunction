@@ -49,6 +49,7 @@ scoreboard players reset 24000 daytime
 
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy
+scoreboard objectives add config dummy
 
 # early stages of nuking Selection armour stand...
 execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]

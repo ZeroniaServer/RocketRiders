@@ -4,10 +4,10 @@
 #EXTRA: For resetting to global defaults
 execute if entity @s[tag=GlobalDefaults] run tag @e[x=0,type=armor_stand,tag=rr_normal] add GlobalDefaults
 
-data modify entity @s Tags set from storage rocketriders:storage Tags
-execute store success score $disable_cannoning global if data storage rocketriders:storage config{disable_cannoning:1b}
-data remove storage rocketriders:storage Tags
+function custom:config/load {read_from:"storage rocketriders:storage config",merge:false}
 data remove storage rocketriders:storage config
+data modify entity @s Tags set from storage rocketriders:storage Tags
+data remove storage rocketriders:storage Tags
 tag @s remove GameEnd
 
 scoreboard players operation @s TopDeco = $TORAGE TopDeco

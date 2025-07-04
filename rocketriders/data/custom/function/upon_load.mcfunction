@@ -48,6 +48,7 @@ setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
 #Scores
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy
+scoreboard objectives add config dummy
 
 scoreboard objectives add constant dummy
 scoreboard players set $ticks_per_second constant 20

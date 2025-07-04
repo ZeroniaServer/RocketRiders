@@ -1,3 +1,29 @@
+# Force stop the game
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted] run function world_updates:1_3_0/instant_legacy_force_stop
+
+# Ensure that old game entities are killed
+kill @e[x=0,type=marker,tag=BluePlatform]
+kill @e[x=0,type=marker,tag=YellowPlatform]
+kill @e[x=0,type=ender_pearl,tag=BluePlat]
+kill @e[x=0,type=ender_pearl,tag=YellowPlat]
+kill @e[x=0,type=snowball,tag=BlueShield]
+kill @e[x=0,type=snowball,tag=YellowShield]
+kill @e[x=0,type=marker,tag=PlaceBlueShield]
+kill @e[x=0,type=marker,tag=PlaceYellowShield]
+kill @e[x=0,type=egg,tag=BlueVortex]
+kill @e[x=0,type=egg,tag=YellowVortex]
+kill @e[x=0,type=armor_stand,tag=VortexItemBlue]
+kill @e[x=0,type=armor_stand,tag=VortexItemYellow]
+kill @e[x=0,type=marker,tag=VortexBlue]
+kill @e[x=0,type=marker,tag=VortexYellow]
+kill @e[x=0,type=egg,tag=ICBM]
+kill @e[x=0,type=marker,tag=ICBMtracker]
+kill @e[x=0,type=snowball,tag=BeeShieldDisplay]
+kill @e[x=0,type=marker,tag=animBshield]
+kill @e[x=0,type=marker,tag=BBeeShieldDisplay]
+kill @e[x=0,type=marker,tag=YBeeShieldDisplay]
+
+#
 setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
 
 scoreboard objectives add constant dummy
@@ -34,31 +60,6 @@ execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount m
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
-
-# Kill old game entities
-kill @e[x=0,type=marker,tag=BluePlatform]
-kill @e[x=0,type=marker,tag=YellowPlatform]
-kill @e[x=0,type=ender_pearl,tag=BluePlat]
-kill @e[x=0,type=ender_pearl,tag=YellowPlat]
-kill @e[x=0,type=snowball,tag=BlueShield]
-kill @e[x=0,type=snowball,tag=YellowShield]
-kill @e[x=0,type=marker,tag=PlaceBlueShield]
-kill @e[x=0,type=marker,tag=PlaceYellowShield]
-kill @e[x=0,type=egg,tag=BlueVortex]
-kill @e[x=0,type=egg,tag=YellowVortex]
-kill @e[x=0,type=armor_stand,tag=VortexItemBlue]
-kill @e[x=0,type=armor_stand,tag=VortexItemYellow]
-kill @e[x=0,type=marker,tag=VortexBlue]
-kill @e[x=0,type=marker,tag=VortexYellow]
-kill @e[x=0,type=egg,tag=ICBM]
-kill @e[x=0,type=marker,tag=ICBMtracker]
-kill @e[x=0,type=snowball,tag=BeeShieldDisplay]
-kill @e[x=0,type=marker,tag=animBshield]
-kill @e[x=0,type=marker,tag=BBeeShieldDisplay]
-kill @e[x=0,type=marker,tag=YBeeShieldDisplay]
-
-# Force stop the game
-function game:forcestop
 
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
 

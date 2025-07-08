@@ -4,7 +4,8 @@ execute if entity @s[predicate=entities:vortex] run return fail
 
 ## Set up data
 data modify entity @s data.vortex set value {brain:{}}
-scoreboard players set @s entity.age 0
+execute if score @s entity.age matches 0..19 run scoreboard players remove @s entity.age 20
+execute unless score @s entity.age matches -20..-1 run scoreboard players set @s entity.age 0
 
 data modify storage rocketriders:main vortex.name set value "a Vortex"
 execute if entity @s[tag=vortex.feathered] run data modify storage rocketriders:main vortex.name set value "a... Feathery Vortex?"

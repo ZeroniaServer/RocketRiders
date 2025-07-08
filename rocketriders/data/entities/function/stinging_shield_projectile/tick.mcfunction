@@ -1,5 +1,5 @@
-# If snowball hits something, do nothing
-execute unless predicate custom:has_vehicle run return run kill @s
+# Early impact
+execute unless predicate custom:has_vehicle run return run function entities:stinging_shield_projectile/tick/early_impact
 
 # Movement trail
 execute if score @s entity.age matches 1.. run playsound minecraft:block.honey_block.slide master @a[x=0] ~ ~ ~ 2 0.8

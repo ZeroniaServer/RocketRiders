@@ -47,4 +47,5 @@ execute if score @s entity.age matches 30 run particle minecraft:block{block_sta
 
 execute if score @s entity.age matches 31.. unless predicate entities:origin_team/yellow run place template rr_powerups:bees_blue_full ~-2 ~-4 ~
 execute if score @s entity.age matches 31.. if predicate entities:origin_team/yellow run place template rr_powerups:bees_yellow_full ~-2 ~-4 ~
+execute if score @s entity.age matches 31.. run function entities:stinging_shield/tick/set_bee_origins
 execute if score @s entity.age matches 31.. run playsound block.grass.break master @a[x=0] ~ ~ ~ 1.5 0.8

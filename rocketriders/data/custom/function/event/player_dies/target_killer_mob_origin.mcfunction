@@ -1,4 +1,4 @@
-data modify entity @s Owner set from storage rocketriders:main player_dies.creeper_explosion_origin
+data modify entity @s Owner set from storage rocketriders:main player_dies.killer_mob_origin
 
 # Prevent self-kills and team-kills from being awarded
 scoreboard players set $award_kill var 1

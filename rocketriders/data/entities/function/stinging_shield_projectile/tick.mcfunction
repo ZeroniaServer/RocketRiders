@@ -1,5 +1,11 @@
+# Break if near the roof
+execute if predicate custom:nearroof run return run function entities:stinging_shield_projectile/actions/break
+
+# Store the rotation and speed of vehicle
+execute if predicate custom:has_vehicle run function custom:projectile_motion_save
+
 # Early impact
-execute unless predicate custom:has_vehicle run return run function entities:stinging_shield_projectile/tick/early_impact
+execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:stinging_shield_projectile/tick/early_impact
 
 # Movement trail
 execute if score @s entity.age matches 1.. run playsound minecraft:block.honey_block.slide master @a[x=0] ~ ~ ~ 2 0.8

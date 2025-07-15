@@ -1,5 +1,11 @@
+# Break if near the roof
+execute if predicate custom:nearroof run return run function entities:shield_projectile/actions/break
+
+# Store the rotation and speed of vehicle
+execute if predicate custom:has_vehicle run function custom:projectile_motion_save
+
 # Early impact
-execute unless predicate custom:has_vehicle run return run function entities:shield_projectile/tick/early_impact
+execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:shield_projectile/tick/early_impact
 
 # Movement trail
 execute if score @s entity.age matches 1.. if predicate entities:origin_team/blue if score $dust CmdData matches 1 run particle minecraft:dust{color:0x00FFFF,scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
@@ -10,7 +16,7 @@ execute if score @s entity.age matches 1.. if predicate entities:origin_team/non
 execute if score @s entity.age matches 19..20 if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!noPortal] run scoreboard players remove @s entity.age 1
 execute if score @s entity.age matches 19..20 if entity @s[x=-12,y=33,z=74,dx=48,dy=28] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!noPortal] run scoreboard players remove @s entity.age 1
 
-# Pause aging near the void
+# Pause aging near the roof
 execute if predicate custom:nearvoid run scoreboard players remove @s entity.age 1
 
 # Pause aging near spawnpoints

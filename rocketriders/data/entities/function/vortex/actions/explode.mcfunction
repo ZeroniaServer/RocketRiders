@@ -1,3 +1,6 @@
+# Redirect function to the brain
+execute if entity @s[predicate=entities:vortex/body] run return run execute on passengers if entity @s[predicate=entities:vortex/brain] at @s run function entities:vortex/actions/explode
+
 scoreboard players set @s entity.vortex.fuse 0
 
 scoreboard players set $fuse var 0

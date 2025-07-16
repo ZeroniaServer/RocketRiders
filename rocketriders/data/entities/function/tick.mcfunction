@@ -31,3 +31,8 @@ execute as @e[x=0,predicate=entities:vortex_decoy] at @s run function entities:v
 
 # ICBM
 execute as @e[x=0,predicate=entities:icbm/brain] at @s run function entities:icbm/tick
+
+
+## Animators
+# Shield
+execute as @e[x=0,tag=ShieldDisplayEntity] at @s run function entities:shield/tick/animation_player

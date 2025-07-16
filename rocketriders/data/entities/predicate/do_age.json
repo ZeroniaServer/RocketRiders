@@ -122,6 +122,18 @@
             }
           }
         }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:block_display",
+          "predicates": {
+            "minecraft:custom_data": {
+              "animation_entity": {}
+            }
+          }
+        }
       }
     ]
   }

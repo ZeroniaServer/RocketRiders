@@ -1,4 +1,4 @@
-advancement revoke @s only custom:event/player_kills_player
+advancement revoke @s only custom:event/player_kills_another_player
 
 ## Achievements
 scoreboard players set $can_grant_achievements var 0

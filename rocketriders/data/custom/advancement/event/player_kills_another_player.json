@@ -10,6 +10,6 @@
     }
   },
   "rewards": {
-    "function": "custom:event/player_kills_player/main"
+    "function": "custom:event/player_kills_another_player/main"
   }
 }

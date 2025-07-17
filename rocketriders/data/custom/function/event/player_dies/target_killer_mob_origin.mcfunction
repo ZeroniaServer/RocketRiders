@@ -9,7 +9,7 @@ execute if score $award_kill var matches 0 run return run kill @s
 
 # Award killer
 execute on origin run scoreboard players add @s kills 1
-execute on origin run advancement grant @s only custom:event/player_kills_player
+execute on origin run advancement grant @s only custom:event/player_kills_another_player
 
 #
 kill @s

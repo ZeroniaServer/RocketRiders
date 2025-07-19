@@ -26,4 +26,4 @@ execute positioned -10 65 64 if score @s entity.age matches 20.. if entity @s[di
 execute positioned 34 65 64 if score @s entity.age matches 20.. if entity @s[distance=..5] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set @s entity.age 19
 
 # Deploy
-execute if score @s entity.age matches 20.. align xyz unless entity @e[limit=1,dx=0,predicate=entities:vortex/body] positioned as @s run function entities:vortex_projectile/actions/deploy
+execute if score @s entity.age matches 20.. on vehicle positioned as @s align xyz unless entity @e[limit=1,dx=0,predicate=entities:vortex/body] on passengers if entity @s[predicate=entities:vortex/brain] run function entities:vortex_projectile/actions/deploy

@@ -61,7 +61,7 @@ execute if score $impulse_strength var matches 250.. on attacker positioned as @
 execute unless score $impulse_strength var matches 250.. on attacker positioned as @s run playsound minecraft:entity.player.attack.weak player @a[x=0] ~ ~ ~
 
 # particles
-execute on vehicle on vehicle positioned as @s positioned ~0.5 ~0.5 ~0.5 on attacker facing entity @s eyes run particle minecraft:crit ^ ^ ^0.5 0.2 0.2 0.2 0 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute on vehicle on vehicle positioned as @s positioned ~ ~0.5 ~ on passengers on passengers on attacker facing entity @s eyes run particle minecraft:crit ^ ^ ^0.5 0.2 0.2 0.2 0 5 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
 ## Post
 # set attacker's cooldown

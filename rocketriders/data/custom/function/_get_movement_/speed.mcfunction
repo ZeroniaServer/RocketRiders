@@ -18,7 +18,7 @@ scoreboard players operation $diff var -= $min var
 execute if score $diff var matches ..0100 run return run execute store result score $speed var run scoreboard players operation $min var /= $ticks_per_second constant
 
 # otherwise, repeat for new range
-execute if score $low var matches 1 run data modify storage rocketriders:main store_projectile_motion.max set from storage rocketriders:main store_projectile_motion.mean
-execute if score $low var matches 0 run data modify storage rocketriders:main store_projectile_motion.min set from storage rocketriders:main store_projectile_motion.mean
-execute store result storage rocketriders:main store_projectile_motion.mean float 0.001 run scoreboard players get $mean var
-return run function custom:_get_speed_/search with storage rocketriders:main store_projectile_motion
+execute if score $low var matches 1 run data modify storage rocketriders:main get_movement.max set from storage rocketriders:main get_movement.mean
+execute if score $low var matches 0 run data modify storage rocketriders:main get_movement.min set from storage rocketriders:main get_movement.mean
+execute store result storage rocketriders:main get_movement.mean float 0.001 run scoreboard players get $mean var
+return run function custom:_get_movement_/speed with storage rocketriders:main get_movement

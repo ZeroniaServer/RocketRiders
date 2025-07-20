@@ -12,5 +12,8 @@ execute unless score $disable_cannoning config matches 1..1 run scoreboard playe
 execute store result score $impact_projectiles config run data get storage rocketriders:main "config/load".config.impact_projectiles
 execute unless score $impact_projectiles config matches 1..1 run scoreboard players reset $impact_projectiles config
 
+execute store result score $punchable_tnt config run data get storage rocketriders:main "config/load".config.punchable_tnt
+execute unless score $punchable_tnt config matches 1..1 run scoreboard players reset $punchable_tnt config
+
 ## Clean Up
 data remove storage rocketriders:main "config/load"

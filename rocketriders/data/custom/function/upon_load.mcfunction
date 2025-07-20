@@ -52,6 +52,7 @@ scoreboard objectives add config dummy
 
 scoreboard objectives add constant dummy
 scoreboard players set $ticks_per_second constant 20
+scoreboard players set $-1 constant -1
 scoreboard players set $1 constant 1
 scoreboard players set $2 constant 2
 scoreboard players set $3 constant 3
@@ -80,6 +81,7 @@ scoreboard objectives add last_creeper_damage_origin_uuid.0 dummy
 scoreboard objectives add last_creeper_damage_origin_uuid.1 dummy
 scoreboard objectives add last_creeper_damage_origin_uuid.2 dummy
 scoreboard objectives add last_creeper_damage_origin_uuid.3 dummy
+scoreboard objectives add time_since_tnt_punch custom:play_time
 
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy

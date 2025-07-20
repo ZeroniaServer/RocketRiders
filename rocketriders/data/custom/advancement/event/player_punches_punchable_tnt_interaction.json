@@ -1,0 +1,31 @@
+{
+  "criteria": {
+    "punch_punchable_tnt_interaction": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "game:config/punchable_tnt"
+          }
+        ],
+        "entity": {
+          "type": "minecraft:interaction",
+          "movement": {
+            "speed": {
+              "max": 20
+            }
+          },
+          "predicates": {
+            "minecraft:custom_data": {
+              "punchable_tnt": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom:event/player_punches_punchable_tnt_interaction/main"
+  }
+}

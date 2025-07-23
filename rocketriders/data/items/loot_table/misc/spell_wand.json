@@ -36,12 +36,6 @@
                 "minecraft:enchantments": {
                   "minecraft:fire_aspect": 2,
                   "minecraft:sharpness": 2
-                },
-                "minecraft:consumable": {
-                  "animation": "block",
-                  "consume_seconds": 2147483647,
-                  "has_consume_particles": false,
-                  "sound": "minecraft:intentionally_empty"
                 }
               }
             },

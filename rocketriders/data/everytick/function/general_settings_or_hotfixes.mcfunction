@@ -164,10 +164,7 @@ execute if function game:norankboots run item replace entity @a[x=0,team=Lobby,t
 tag @a[x=0,team=Lobby] remove HasNavBook
 execute as @a[x=0,team=Lobby] if items entity @s hotbar.4 written_book run tag @s add HasNavBook
 clear @a[x=0,team=Lobby,tag=!HasNavBook] written_book
-execute if entity @s[scores={servermode=0},tag=!SMCustom] run loot replace entity @a[x=0,team=Lobby,tag=!HasNavBook] hotbar.4 loot items:books/nav_book/variant_1
-execute if entity @s[scores={servermode=0},tag=SMCustom] run loot replace entity @a[x=0,team=Lobby,tag=!HasNavBook] hotbar.4 loot items:books/nav_book/variant_2
-execute if entity @s[scores={servermode=1}] run loot replace entity @a[x=0,team=Lobby,tag=!HasNavBook] hotbar.4 loot items:books/nav_book/variant_3
-execute if entity @s[scores={servermode=2}] run loot replace entity @a[x=0,team=Lobby,tag=!HasNavBook] hotbar.4 loot items:books/nav_book/variant_4
+loot replace entity @a[x=0,team=Lobby,tag=!HasNavBook] hotbar.4 loot items:books/nav_book
 
 #Servermode teleport out of modification room
 execute if entity @s[scores={servermode=1..}] as @a[x=0] at @s if predicate 2811iaj1:in_modification run tellraw @s ["",{"text":"You shouldn't be here!","color":"red"}]

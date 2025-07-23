@@ -274,3 +274,8 @@ scoreboard objectives add prevFellVoid dummy
 scoreboard objectives add prevKills dummy
 scoreboard objectives add cancelMatch trigger
 scoreboard players add $curr leavecheck 0
+
+#Book Config
+execute unless data storage rocketriders:navbook modroom run data modify storage rocketriders:navbook modroom set value ["\n",{text:"* ",color:"gray",hover_event:{action:"show_text",value:{text:"Click to teleport to the Modification Room.",italic:true}},click_event:{action:"run_command","command":"/trigger LobbyWarp set 2"}},{text:"Modification Room",color:"dark_purple",hover_event:{action:"show_text",value:{text:"Click to teleport to the Modification Room.",italic:true}},click_event:{action:"run_command","command":"/trigger LobbyWarp set 2"}}]
+execute unless data storage rocketriders:navbook description run data modify storage rocketriders:navbook description set value {text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn the Modification Room, you can easily customize the game with many gamemodes, modifiers, and other settings to play with.",color:"dark_gray"}
+execute unless data storage rocketriders:navbook parkourtips run data modify storage rocketriders:navbook parkourtips set value ["\n\n     ",{text:"[Parkour Tips]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to toggle Parkour instructions.",italic:true}},click_event:{action:"run_command",command:"/trigger toggleParkourTips set 1"}}]

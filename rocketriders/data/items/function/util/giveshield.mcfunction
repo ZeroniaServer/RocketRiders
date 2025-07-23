@@ -13,6 +13,7 @@ title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Shield already obt
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasShield=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Shield obtained.","color":"aqua"}
 loot give @s[scores={HasShield=0},tag=!fullHotbar] loot items:util/shield
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasShield=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=givenShield,tag=tetrisTime] add givenShieldTwice

@@ -13,6 +13,7 @@ title @s[scores={HasNova=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text"
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customNova] run loot give @s[team=Blue,scores={HasNova=0},tag=!fullHotbar] loot items:util/nova
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customNova] run loot give @s[team=Blue,scores={HasNova=0},tag=!fullHotbar] loot items:util/nova_custom
 loot give @s[team=Yellow,scores={HasNova=0},tag=!fullHotbar] loot items:util/nova
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasNova=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenNova

@@ -13,6 +13,7 @@ title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Splash already obt
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasSplash=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Splash obtained.","color":"aqua"}
 loot give @s[scores={HasSplash=0},tag=!fullHotbar] loot items:util/splash
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasSplash=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenSplash

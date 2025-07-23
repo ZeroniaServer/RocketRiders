@@ -20,7 +20,7 @@ tag @s add vortex.this
 execute at @s summon item_display run function entities:vortex/init/body
 tag @s remove vortex.this
 
-execute if score $feathered var matches 0 run playsound minecraft:entity.shulker.hurt_closed master @a[x=0] ~ ~ ~ 0.7 0
-execute if score $feathered var matches 0 run playsound minecraft:block.sculk_sensor.clicking master @a[x=0] ~ ~ ~ 1 1
-execute if score $feathered var matches 1 run playsound minecraft:entity.chicken.hurt master @a[x=0] ~ ~ ~ 2 0
+execute if score $feathered var matches 0 at @s run playsound minecraft:entity.shulker.hurt_closed master @a[x=0] ~ ~ ~ 0.7 0 0.05
+execute if score $feathered var matches 0 at @s run playsound minecraft:block.sculk_sensor.clicking master @a[x=0] ~ ~ ~ 1 1 0.05
+execute if score $feathered var matches 1 at @s run playsound minecraft:entity.chicken.hurt master @a[x=0] ~ ~ ~ 2 0 0.05
 

@@ -5,7 +5,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "blaze_rod",
+          "name": "writable_book",
           "functions": [
             {
               "function": "minecraft:set_components",
@@ -15,6 +15,7 @@
                     1
                   ]
                 },
+                "!minecraft:writable_book_content": {},
                 "minecraft:unbreakable": {},
                 "minecraft:custom_name": {
                   "text": "Spell Wand",
@@ -73,7 +74,8 @@
                   "italic": false,
                   "bold": true,
                   "color": "gold"
-                }
+                },
+                "minecraft:item_model": "minecraft:blaze_rod"
               },
               "conditions": [
                 {

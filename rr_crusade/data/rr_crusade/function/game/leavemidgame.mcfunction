@@ -12,10 +12,10 @@ tellraw @a[x=0,team=Yellow,scores={dropSword=1..}] [{"text":"Are you sure you wa
 scoreboard players set @a[x=0,scores={dropSword=1..}] dropSword 0
 
 #Wand
-tellraw @a[x=0,team=Blue,scores={dropBRod=1..}] [{"text":"Are you sure you want to leave the match? ","color":"dark_aqua"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"click_event":{"action":"run_command","command":"/trigger LeaveMidgame set 1"}}]
-tellraw @a[x=0,team=Yellow,scores={dropRod=1..}] [{"text":"Are you sure you want to leave the match? ","color":"yellow"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"click_event":{"action":"run_command","command":"/trigger LeaveMidgame set 1"}}]
-scoreboard players set @a[x=0,scores={dropRod=1..}] dropRod 0
-scoreboard players set @a[x=0,scores={dropBRod=1..}] dropBRod 0
+scoreboard players set @a[x=0,team=Lobby,scores={dropWand=1..}] dropWand 0
+tellraw @a[x=0,team=Blue,scores={dropWand=1..}] [{"text":"Are you sure you want to leave the match? ","color":"dark_aqua"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"click_event":{"action":"run_command","command":"/trigger LeaveMidgame set 1"}}]
+tellraw @a[x=0,team=Yellow,scores={dropWand=1..}] [{"text":"Are you sure you want to leave the match? ","color":"yellow"},{"text":"[YES]","color":"green","bold":true,"underlined":true,"click_event":{"action":"run_command","command":"/trigger LeaveMidgame set 1"}}]
+scoreboard players set @a[x=0,scores={dropWand=1..}] dropWand 0
 
 execute as @a[x=0,team=Blue,scores={LeaveMidgame=1}] run tellraw @a[x=0] [{"selector":"@s"},{"text":" left the match!","color":"dark_aqua"}]
 scoreboard players set @a[x=0,team=Blue,scores={LeaveMidgame=1}] LeaveGame 1

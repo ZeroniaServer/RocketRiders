@@ -23,7 +23,7 @@ kill @e[x=0,type=marker,tag=animBshield]
 kill @e[x=0,type=marker,tag=BBeeShieldDisplay]
 kill @e[x=0,type=marker,tag=YBeeShieldDisplay]
 
-#
+# For item copy operations
 setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
 
 scoreboard objectives add constant dummy
@@ -99,6 +99,11 @@ scoreboard objectives remove nnhealth_mod
 scoreboard objectives remove nnhealth_max
 scoreboard objectives remove nnhealth_real
 scoreboard objectives remove nnhealth_old
+
+# Crusade new objectives
+scoreboard objectives remove dropRod
+scoreboard objectives add dropWand minecraft.dropped:minecraft.writable_book
+scoreboard objectives add useWand minecraft.used:minecraft.writable_book
 
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 

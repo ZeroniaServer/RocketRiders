@@ -1,7 +1,4 @@
-advancement revoke @s only rr_crusade:use_wand
-advancement revoke @s only rr_crusade:wand_cooldown
-
-execute if score @s impulse_cooldown matches 1.. run return run scoreboard players set @s impulse_cooldown 2
+scoreboard players reset @s useWand
 
 execute unless items entity @s container.* enchanted_book unless items entity @s weapon.offhand enchanted_book run playsound block.note_block.didgeridoo master @s ~ ~ ~ 1 1
 execute unless items entity @s container.* enchanted_book unless items entity @s weapon.offhand enchanted_book run title @s actionbar [{"text":"No spells to cast!","color":"red"}]

@@ -272,7 +272,8 @@ scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevfireballkill dummy
 scoreboard objectives add prevFellVoid dummy
 scoreboard objectives add prevKills dummy
-scoreboard objectives add cancelMatch trigger
+scoreboard objectives remove cancelMatch
+scoreboard objectives add editSettings trigger
 scoreboard players add $curr leavecheck 0
 
 #Book Config

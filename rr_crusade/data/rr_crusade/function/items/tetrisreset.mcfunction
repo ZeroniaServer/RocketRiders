@@ -4,7 +4,7 @@
 ############################################
 
 #Knight
-tag @s remove givenCita
+tag @s remove givenGemi
 tag @s remove givenJbust
 tag @s remove givenWar
 tag @s remove givenAux
@@ -14,7 +14,7 @@ tag @s remove givenShield
 tag @s remove givenICBM
 
 #Archer
-tag @s remove givenGemi
+tag @s remove givenCita
 tag @s remove givenSlash
 tag @s remove givenBolt
 tag @s remove givenHur

@@ -69,3 +69,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 #Collision Control
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=16},tag=CollisionControl] run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Missiles cannot be spawned inside the enemy base.","color":"gray","italic":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=16},tag=!CollisionControl] run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+
+#Punchable TNT
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=17}] if predicate game:config/punchable_tnt run tellraw @s ["",{"text":"Punchable TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Primed TNT can be punched forward.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=17}] unless predicate game:config/punchable_tnt run tellraw @s ["",{"text":"Punchable TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]

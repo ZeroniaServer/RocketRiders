@@ -68,6 +68,9 @@ fill -14 34 57 -10 63 66 deepslate_bricks
 # fill -12 64 57 -12 68 57 ladder[facing=south]
 place template rr_crusade:castle 38 59 66 180
 place template rr_crusade:castle2 -10 59 66 180
+setblock 0 63 57 orange_stained_glass
+fill -5 63 57 -3 63 57 orange_stained_glass
+fill 11 63 57 13 63 57 orange_stained_glass
 
 #Objectives
 #Main
@@ -101,6 +104,9 @@ fill -14 34 -66 -10 63 -57 deepslate_bricks
 # fill -12 64 -57 -12 68 -57 ladder[facing=north]
 place template rr_crusade:castle -14 59 -66
 place template rr_crusade:castle2 34 59 -66
+fill 13 63 -57 11 63 -57 cyan_stained_glass
+setblock 24 63 -57 cyan_stained_glass
+fill 29 63 -57 27 63 -57 cyan_stained_glass
 
 #Objectives
 #Main

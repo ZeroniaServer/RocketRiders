@@ -26,7 +26,7 @@ execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run sc
 execute if entity @s[tag=Minute] run function rr_crusade:items/minutemix
 
 #custom prevention message
-execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
+execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portal or bedrock.","color":"red"}]
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #Selected kit particles

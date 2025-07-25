@@ -1,7 +1,7 @@
 {
     "values": [
-        "minecraft:obsidian",
-        "minecraft:nether_portal",
+        "minecraft:resin_block",
+        "minecraft:resin_bricks",
         "minecraft:bedrock"
     ]
 }

@@ -52,20 +52,23 @@ fill 36 36 -73 -12 59 -75 air
 fill -14 34 52 38 63 56 deepslate_bricks
 fill 38 34 57 34 63 66 deepslate_bricks
 fill -14 34 57 -10 63 66 deepslate_bricks
-#
-fill 38 64 52 34 68 56 minecraft:deepslate_bricks
-fill 30 64 52 26 68 56 deepslate_bricks
-fill 22 64 52 18 68 56 deepslate_bricks
-fill 14 64 52 10 68 56 minecraft:deepslate_bricks
-fill 6 64 52 2 68 56 deepslate_bricks
-fill -2 64 56 -6 68 52 minecraft:deepslate_bricks
-fill -10 64 56 -14 68 52 deepslate_bricks
-fill -10 64 62 -14 68 66 deepslate_bricks
-fill 38 64 62 34 68 66 deepslate_bricks
-#
-fill 36 64 57 36 68 57 ladder[facing=south]
-fill 12 64 57 12 68 57 ladder[facing=south]
-fill -12 64 57 -12 68 57 ladder[facing=south]
+# #
+# fill 38 64 52 34 68 56 minecraft:deepslate_bricks
+# fill 30 64 52 26 68 56 deepslate_bricks
+# fill 22 64 52 18 68 56 deepslate_bricks
+# fill 14 64 52 10 68 56 minecraft:deepslate_bricks
+# fill 6 64 52 2 68 56 deepslate_bricks
+# fill -2 64 56 -6 68 52 minecraft:deepslate_bricks
+# fill -10 64 56 -14 68 52 deepslate_bricks
+# fill -10 64 62 -14 68 66 deepslate_bricks
+# fill 38 64 62 34 68 66 deepslate_bricks
+# #
+# fill 36 64 57 36 68 57 ladder[facing=south]
+# fill 12 64 57 12 68 57 ladder[facing=south]
+# fill -12 64 57 -12 68 57 ladder[facing=south]
+place template rr_crusade:castle 38 59 66 180
+place template rr_crusade:castle2 -10 59 66 180
+
 #Objectives
 #Main
 fill 20 45 52 4 55 66 minecraft:crying_obsidian
@@ -82,20 +85,23 @@ fill -16 51 -40 -12 47 -40 light[level=1]
 fill -14 34 -52 38 63 -56 deepslate_bricks
 fill 38 34 -66 34 63 -57 deepslate_bricks
 fill -14 34 -66 -10 63 -57 deepslate_bricks
-#
-fill 38 64 -52 34 68 -56 deepslate_bricks
-fill 30 64 -52 26 68 -56 deepslate_bricks
-fill 22 64 -52 18 68 -56 deepslate_bricks
-fill 14 64 -52 10 68 -56 deepslate_bricks
-fill 6 64 -52 2 68 -56 deepslate_bricks
-fill -2 64 -52 -6 68 -56 deepslate_bricks
-fill -10 64 -52 -14 68 -56 deepslate_bricks
-fill -10 64 -62 -14 68 -66 deepslate_bricks
-fill 38 64 -62 34 68 -66 deepslate_bricks
-#
-fill 36 64 -57 36 68 -57 ladder[facing=north]
-fill 12 64 -57 12 68 -57 ladder[facing=north]
-fill -12 64 -57 -12 68 -57 ladder[facing=north]
+# #
+# fill 38 64 -52 34 68 -56 deepslate_bricks
+# fill 30 64 -52 26 68 -56 deepslate_bricks
+# fill 22 64 -52 18 68 -56 deepslate_bricks
+# fill 14 64 -52 10 68 -56 deepslate_bricks
+# fill 6 64 -52 2 68 -56 deepslate_bricks
+# fill -2 64 -52 -6 68 -56 deepslate_bricks
+# fill -10 64 -52 -14 68 -56 deepslate_bricks
+# fill -10 64 -62 -14 68 -66 deepslate_bricks
+# fill 38 64 -62 34 68 -66 deepslate_bricks
+# #
+# fill 36 64 -57 36 68 -57 ladder[facing=north]
+# fill 12 64 -57 12 68 -57 ladder[facing=north]
+# fill -12 64 -57 -12 68 -57 ladder[facing=north]
+place template rr_crusade:castle -14 59 -66
+place template rr_crusade:castle2 34 59 -66
+
 #Objectives
 #Main
 fill 4 55 -52 20 45 -66 minecraft:crying_obsidian

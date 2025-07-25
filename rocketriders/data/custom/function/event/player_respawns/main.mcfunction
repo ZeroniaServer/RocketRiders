@@ -25,6 +25,12 @@ execute if predicate game:game_started run effect give @s[tag=on_respawn.apply_c
 execute if predicate game:game_started run effect give @s[tag=on_respawn.apply_crosser_void_fall_effects] fire_resistance 4 200 true
 tag @s remove on_respawn.apply_crosser_void_fall_effects
 
+# Apply new kits in Crusade Mode
+execute if predicate game:game_started as @s[scores={crusadechange=1}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/knight
+execute if predicate game:game_started as @s[scores={crusadechange=2}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/archer
+execute if predicate game:game_started as @s[scores={crusadechange=3}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/mage
+execute if predicate game:game_started run scoreboard players reset @s crusadechange
+
 # Give knights new shields when they respawn
 clear @s[scores={crusadekit=1}] shield
 execute if entity @s[predicate=custom:on_blue_or_yellow_team,scores={crusadekit=1}] if items entity @s weapon.offhand * run loot give @s loot items:misc/knight_shield

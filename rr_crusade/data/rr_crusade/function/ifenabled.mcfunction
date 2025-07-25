@@ -35,13 +35,7 @@ execute unless predicate game:game_started run tag @a[x=0] remove CrusadeNoteKni
 execute unless predicate game:game_started run tag @a[x=0] remove CrusadeNoteArcher
 execute unless predicate game:game_started run tag @a[x=0] remove CrusadeNoteMage
 
-execute if predicate game:game_started as @a[x=0,scores={crusadechange=1,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/knight
-execute if predicate game:game_started as @a[x=0,scores={crusadechange=2,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/archer
-execute if predicate game:game_started as @a[x=0,scores={crusadechange=3,deathCooldown=5}] unless score @s crusadechange = @s crusadekit run function rr_crusade:items/kit/give/mage
-
-execute if predicate game:game_started run scoreboard players reset @a[x=0,scores={crusadechange=-2147483647..-1}] crusadechange
 execute unless predicate game:game_started run scoreboard players reset @a[x=0,scores={crusadechange=1..}] crusadechange
-execute if predicate game:game_started run scoreboard players reset @a[x=0,scores={crusadechange=1..,deathCooldown=5}] crusadechange
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function rr_crusade:arenaclear/baseplacement

@@ -36,5 +36,8 @@ tag @s remove CollisionControlWasOn
 scoreboard players set $punchable_tnt config 0
 #TODO Replace with a corresponding config score
 tag @s remove PunchableTNTWasOn
+scoreboard players set $unstable_tnt config 0
+#TODO Replace with a corresponding config score
+tag @s remove UnstableTNTWasOn
 
 function arenaclear:unlockdecos

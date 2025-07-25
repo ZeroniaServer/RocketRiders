@@ -15,5 +15,8 @@ execute unless score $impact_projectiles config matches 1..1 run scoreboard play
 execute store result score $punchable_tnt config run data get storage rocketriders:main "config/load".config.punchable_tnt
 execute unless score $punchable_tnt config matches 1..1 run scoreboard players reset $punchable_tnt config
 
+execute store result score $unstable_tnt config run data get storage rocketriders:main "config/load".config.unstable_tnt
+execute unless score $unstable_tnt config matches 1..1 run scoreboard players reset $unstable_tnt config
+
 ## Clean Up
 data remove storage rocketriders:main "config/load"

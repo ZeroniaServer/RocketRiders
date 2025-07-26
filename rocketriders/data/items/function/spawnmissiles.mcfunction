@@ -261,6 +261,10 @@ execute if entity @s[tag=strict] if score $bport var matches 1 run fill 20 55 -6
 scoreboard players reset $yport var
 scoreboard players reset $bport var
 
+##Pierce Prevention -- set back powerables and pistons
+execute if entity @s[tag=strict] run function items:prevention/setbackpowerables
+execute if entity @s[tag=strict] run function items:prevention/setbackpistons
+
 ##Kill entity
 kill @s
 

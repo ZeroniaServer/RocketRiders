@@ -86,3 +86,5 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled
 ##Add 1 to appropriate missile count
 execute if entity @s[tag=bluemissile] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] bMissileCount 1
 execute if entity @s[tag=yellowmissile] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] yMissileCount 1
+
+function items:prevention/replacepistons

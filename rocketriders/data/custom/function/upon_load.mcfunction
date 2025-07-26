@@ -1,4 +1,5 @@
-##Actions to be performed upon world load
+## Actions to be performed (upon the world loading and after a data pack reload) once all the chunks in the map have been loaded, but before the game starts ticking
+
 schedule function lobby:credits/restart_indimension 3t append
 scoreboard players set $barriers CmdData 73
 scoreboard players add $reloaded CmdData 1
@@ -35,9 +36,6 @@ gamerule logAdminCommands false
 gamerule playersNetherPortalCreativeDelay 2147483647
 gamerule playersNetherPortalDefaultDelay 2147483647
 gamerule locatorBar false
-
-#Check updates
-schedule function world_updates:check_updates_indimension 2s replace
 
 #Bossbars
 bossbar add rr:startgame ""

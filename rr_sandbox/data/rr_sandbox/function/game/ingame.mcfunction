@@ -35,8 +35,16 @@ execute as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,scores={nomiconsta
 scoreboard players reset #size sbstackamt
 
 #win
-execute if block 13 38 74 air run function rr_sandbox:game/winblue
-execute if block 11 38 74 air run function rr_sandbox:game/winblue
+execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon,tag=!DoublePortal] unless block 13 38 74 nether_portal unless block 13 38 -74 nether_portal run function rr_sandbox:game/winbothcheck
+execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon,tag=!DoublePortal] unless block 11 38 74 nether_portal unless block 13 38 -74 nether_portal run function rr_sandbox:game/winbothcheck
+execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon,tag=!DoublePortal] unless block 11 38 74 nether_portal unless block 11 38 -74 nether_portal run function rr_sandbox:game/winbothcheck
+execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon,tag=!DoublePortal] unless block 13 38 74 nether_portal unless block 11 38 -74 nether_portal run function rr_sandbox:game/winbothcheck
+execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon,tag=DoublePortal] unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run function rr_sandbox:game/winbothcheck
 
-execute if block 11 38 -74 air run function rr_sandbox:game/winyellow
-execute if block 13 38 -74 air run function rr_sandbox:game/winyellow
+execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!DoublePortal] unless block 13 38 74 nether_portal run function rr_sandbox:game/winblue
+execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!DoublePortal] unless block 11 38 74 nether_portal run function rr_sandbox:game/winblue
+execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=DoublePortal] unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal run function rr_sandbox:game/winblue
+
+execute if entity @s[tag=!BothWon,tag=!YellowWon,tag=!DoublePortal] unless block 11 38 -74 nether_portal run function rr_sandbox:game/winyellow
+execute if entity @s[tag=!BothWon,tag=!YellowWon,tag=!DoublePortal] unless block 13 38 -74 nether_portal run function rr_sandbox:game/winyellow
+execute if entity @s[tag=!BothWon,tag=!YellowWon,tag=DoublePortal] unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run function rr_sandbox:game/winyellow

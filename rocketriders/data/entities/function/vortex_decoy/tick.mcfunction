@@ -1,7 +1,7 @@
 # Particles
 execute if score $dust CmdData matches 1 unless entity @s[tag=vortex_decoy.is_staring] run particle minecraft:dragon_breath ~ ~-0.2 ~ 0.5 0.5 0 0 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if score $dust CmdData matches 1 unless entity @s[tag=vortex_decoy.is_staring] run particle minecraft:scrape ~ ~-0.2 ~ 0.5 0.5 0 0 3 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if score $dust CmdData matches 1 unless entity @s[tag=vortex_decoy.is_staring] run particle minecraft:dust{color:0x0000FF,scale:1} ~ ~-0.2 ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if score $dust CmdData matches 1 unless entity @s[tag=vortex_decoy.is_staring] run particle minecraft:dust{color:[0,1,1],scale:1} ~ ~-0.2 ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 
 execute if score $dust CmdData matches 1 if entity @s[tag=vortex_decoy.is_staring] run particle minecraft:dragon_breath ^ ^ ^-0.75 0.5 0.5 0.5 0 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if score $dust CmdData matches 1 if entity @s[tag=vortex_decoy.is_staring] run particle minecraft:scrape ^ ^ ^-0.75 0.5 0.5 0.5 0 3 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

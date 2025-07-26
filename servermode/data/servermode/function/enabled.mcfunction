@@ -34,3 +34,6 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function modifiers
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsigns
 function arenaclear:hidemodroom
+data modify storage rocketriders:navbook modroom set value [""]
+data modify storage rocketriders:navbook description set value {text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nAfter each game, you can vote between several gamemodes, modifiers, and base designs to play with for the next round.",color:"dark_gray"}
+data modify storage rocketriders:navbook parkourtips set value [""]

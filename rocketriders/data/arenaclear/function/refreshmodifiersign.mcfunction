@@ -1,6 +1,6 @@
 ##Refreshes signs for individual Game Modifiers (warped/crimson)
 #Reset counter
-scoreboard players set @s[scores={modifierID=17..}] modifierID 0
+scoreboard players set @s[scores={modifierID=19..}] modifierID 0
 
 #Instamine
 execute if entity @s[scores={modifierID=0},tag=Instamine,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
@@ -82,6 +82,18 @@ execute if entity @s[scores={modifierID=15},tag=ChaosOff,tag=!settingsLocked] ru
 execute if entity @s[scores={modifierID=16},tag=CollisionControl,tag=!CollisionControlOff,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=16},tag=!CollisionControl,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=16},tag=CollisionControlOff,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+
+#Punchable TNT
+#TODO replace PunchableTNTOff with a proper score config disabler
+execute if predicate game:config/punchable_tnt if entity @s[scores={modifierID=17},tag=!PunchableTNTOff,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
+execute unless predicate game:config/punchable_tnt if entity @s[scores={modifierID=17},tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=17},tag=PunchableTNTOff,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+
+#Unstable TNT
+#TODO replace UnstableTNTOff with a proper score config disabler
+execute if predicate game:config/unstable_tnt if entity @s[scores={modifierID=18},tag=!UnstableTNTOff,tag=!settingsLocked] run setblock -69 191 75 warped_wall_sign[facing=east]
+execute unless predicate game:config/unstable_tnt if entity @s[scores={modifierID=18},tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=18},tag=UnstableTNTOff,tag=!settingsLocked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #All locked
 execute if entity @s[tag=settingsLocked] unless entity @s[scores={modifierID=8},tag=WindDownForce] run setblock -69 191 75 crimson_wall_sign[facing=east]

@@ -125,7 +125,7 @@ execute as @a[x=0,tag=BackObshield,limit=1] at @s run function items:util/giveob
 
 ##Unable message
 tag @a[x=0,tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG,tag=!roofMSGFB,tag=!voidMSGFB,tag=!roofMSGOS,tag=!voidMSGOS,limit=1] add preventionMSG
-execute unless entity @s[tag=customPrevention] run tellraw @a[x=0,tag=preventionMSG,limit=1] ["",{"text":"Unable to spawn missile inside of obsidian or portals.","color":"red"}]
+execute unless entity @s[tag=customPrevention] run tellraw @a[x=0,tag=preventionMSG,limit=1] ["",{"text":"Unable to spawn missile inside of portal.","color":"red"}]
 tellraw @a[x=0,tag=roofMSG,limit=1] ["",{"text":"Unable to spawn missile too high.","color":"red"}]
 tellraw @a[x=0,tag=voidMSG,limit=1] ["",{"text":"Unable to spawn missile near the void.","color":"red"}]
 execute if entity @s[tag=!antigriefOff,scores={gametime=200..}] run tellraw @a[x=0,tag=antigriefMSG,limit=1] ["",{"text":"Unable to spawn missile inside own base.","color":"red"}]

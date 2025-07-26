@@ -52,20 +52,26 @@ fill 36 36 -73 -12 59 -75 air
 fill -14 34 52 38 63 56 deepslate_bricks
 fill 38 34 57 34 63 66 deepslate_bricks
 fill -14 34 57 -10 63 66 deepslate_bricks
-#
-fill 38 64 52 34 68 56 minecraft:deepslate_bricks
-fill 30 64 52 26 68 56 deepslate_bricks
-fill 22 64 52 18 68 56 deepslate_bricks
-fill 14 64 52 10 68 56 minecraft:deepslate_bricks
-fill 6 64 52 2 68 56 deepslate_bricks
-fill -2 64 56 -6 68 52 minecraft:deepslate_bricks
-fill -10 64 56 -14 68 52 deepslate_bricks
-fill -10 64 62 -14 68 66 deepslate_bricks
-fill 38 64 62 34 68 66 deepslate_bricks
-#
-fill 36 64 57 36 68 57 ladder[facing=south]
-fill 12 64 57 12 68 57 ladder[facing=south]
-fill -12 64 57 -12 68 57 ladder[facing=south]
+# #
+# fill 38 64 52 34 68 56 minecraft:deepslate_bricks
+# fill 30 64 52 26 68 56 deepslate_bricks
+# fill 22 64 52 18 68 56 deepslate_bricks
+# fill 14 64 52 10 68 56 minecraft:deepslate_bricks
+# fill 6 64 52 2 68 56 deepslate_bricks
+# fill -2 64 56 -6 68 52 minecraft:deepslate_bricks
+# fill -10 64 56 -14 68 52 deepslate_bricks
+# fill -10 64 62 -14 68 66 deepslate_bricks
+# fill 38 64 62 34 68 66 deepslate_bricks
+# #
+# fill 36 64 57 36 68 57 ladder[facing=south]
+# fill 12 64 57 12 68 57 ladder[facing=south]
+# fill -12 64 57 -12 68 57 ladder[facing=south]
+place template rr_crusade:castle 38 59 66 180
+place template rr_crusade:castle2 -10 59 66 180
+setblock 0 63 57 orange_stained_glass
+fill -5 63 57 -3 63 57 orange_stained_glass
+fill 11 63 57 13 63 57 orange_stained_glass
+
 #Objectives
 #Main
 fill 20 45 52 4 55 66 minecraft:crying_obsidian
@@ -82,20 +88,26 @@ fill -16 51 -40 -12 47 -40 light[level=1]
 fill -14 34 -52 38 63 -56 deepslate_bricks
 fill 38 34 -66 34 63 -57 deepslate_bricks
 fill -14 34 -66 -10 63 -57 deepslate_bricks
-#
-fill 38 64 -52 34 68 -56 deepslate_bricks
-fill 30 64 -52 26 68 -56 deepslate_bricks
-fill 22 64 -52 18 68 -56 deepslate_bricks
-fill 14 64 -52 10 68 -56 deepslate_bricks
-fill 6 64 -52 2 68 -56 deepslate_bricks
-fill -2 64 -52 -6 68 -56 deepslate_bricks
-fill -10 64 -52 -14 68 -56 deepslate_bricks
-fill -10 64 -62 -14 68 -66 deepslate_bricks
-fill 38 64 -62 34 68 -66 deepslate_bricks
-#
-fill 36 64 -57 36 68 -57 ladder[facing=north]
-fill 12 64 -57 12 68 -57 ladder[facing=north]
-fill -12 64 -57 -12 68 -57 ladder[facing=north]
+# #
+# fill 38 64 -52 34 68 -56 deepslate_bricks
+# fill 30 64 -52 26 68 -56 deepslate_bricks
+# fill 22 64 -52 18 68 -56 deepslate_bricks
+# fill 14 64 -52 10 68 -56 deepslate_bricks
+# fill 6 64 -52 2 68 -56 deepslate_bricks
+# fill -2 64 -52 -6 68 -56 deepslate_bricks
+# fill -10 64 -52 -14 68 -56 deepslate_bricks
+# fill -10 64 -62 -14 68 -66 deepslate_bricks
+# fill 38 64 -62 34 68 -66 deepslate_bricks
+# #
+# fill 36 64 -57 36 68 -57 ladder[facing=north]
+# fill 12 64 -57 12 68 -57 ladder[facing=north]
+# fill -12 64 -57 -12 68 -57 ladder[facing=north]
+place template rr_crusade:castle -14 59 -66
+place template rr_crusade:castle2 34 59 -66
+fill 13 63 -57 11 63 -57 cyan_stained_glass
+setblock 24 63 -57 cyan_stained_glass
+fill 29 63 -57 27 63 -57 cyan_stained_glass
+
 #Objectives
 #Main
 fill 4 55 -52 20 45 -66 minecraft:crying_obsidian
@@ -190,18 +202,18 @@ execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace
 execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.legs with minecraft:leather_leggings[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
 execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
 execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=ArcherStand] run item replace entity @s weapon.mainhand with bow
+execute as @e[x=0,type=armor_stand,tag=ArcherStand] run item replace entity @s weapon.mainhand with minecraft:bow
 
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.head with warped_fence_gate
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.head with birch_fence_gate
+execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.head with minecraft:warped_fence_gate
+execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.head with minecraft:birch_fence_gate
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with minecraft:leather_leggings[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with minecraft:leather_leggings[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
 execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s weapon.mainhand with blaze_rod[custom_model_data={floats:[1]}]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s weapon.mainhand with blaze_rod[item_model="minecraft:breeze_rod",custom_model_data={floats:[1]}]
+execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s weapon.mainhand with minecraft:writable_book[item_model="minecraft:blaze_rod",custom_model_data={floats:[1]}]
+execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s weapon.mainhand with minecraft:writable_book[item_model="minecraft:breeze_rod",custom_model_data={floats:[1]}]
 
 execute as @e[x=0,type=armor_stand,tag=KitSelect] run data merge entity @s {DisabledSlots:4144959}
 

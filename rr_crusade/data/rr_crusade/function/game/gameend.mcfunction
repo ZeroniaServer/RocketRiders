@@ -13,10 +13,10 @@ execute if entity @s[tag=BlueWon,scores={endtimer=1}] run loot give @a[x=0,team=
 execute if entity @s[tag=BlueWon,scores={endtimer=1}] run loot give @a[x=0,team=Yellow,scores={crusadekit=2}] loot items:misc/shooting_saber_end
 
 #Replacing Spell Wands
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents blaze_rod run function items:killendweapon
-execute if entity @s[tag=YellowWon,scores={endtimer=1}] run clear @a[x=0,team=Blue,scores={crusadekit=3}] blaze_rod
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents writable_book run function items:killendweapon
+execute if entity @s[tag=YellowWon,scores={endtimer=1}] run clear @a[x=0,team=Blue,scores={crusadekit=3}] writable_book
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=3}] run loot give @s loot items:misc/spell_wand_end
-execute if entity @s[tag=BlueWon,scores={endtimer=1}] run clear @a[x=0,team=Yellow,scores={crusadekit=3}] blaze_rod
+execute if entity @s[tag=BlueWon,scores={endtimer=1}] run clear @a[x=0,team=Yellow,scores={crusadekit=3}] writable_book
 execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=3}] run loot give @s loot items:misc/spell_wand_end
 
 execute if entity @s[tag=!doTying,scores={endtimer=1}] run function game:endstats

@@ -23,7 +23,7 @@ kill @e[x=0,type=marker,tag=animBshield]
 kill @e[x=0,type=marker,tag=BBeeShieldDisplay]
 kill @e[x=0,type=marker,tag=YBeeShieldDisplay]
 
-#
+# For item copy operations
 setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
 
 scoreboard objectives add constant dummy
@@ -100,6 +100,11 @@ scoreboard objectives remove nnhealth_max
 scoreboard objectives remove nnhealth_real
 scoreboard objectives remove nnhealth_old
 
+# Crusade new objectives
+scoreboard objectives remove dropRod
+scoreboard objectives add dropWand minecraft.dropped:minecraft.writable_book
+scoreboard objectives add useWand minecraft.used:minecraft.writable_book
+
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 
 setblock -69 190 78 air
@@ -134,6 +139,14 @@ item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with l
 kill @e[x=0,type=marker,tag=VortexDummy]
 kill @e[x=0,type=armor_stand,tag=VortexItemDummy]
 execute positioned -69.5 206.5 48.5 run function entities:vortex_decoy/summon
+
+# Modification Room redesign
+setblock -70 190 80 netherite_block strict
+setblock -70 190 76 netherite_block strict
+setblock -69 190 80 jungle_wall_sign[facing=east]{front_text:{color:"black",has_glowing_text:0b,messages:["",{bold:1b,click_event:{action:"run_command",command:"execute as @e[type=armor_stand,tag=Selection] run function arenaclear:globaldefaults"},color:"#FF0044",text:"Restore Global"},{bold:1b,click_event:{action:"run_command",command:"playsound ui.button.click master @a ~ ~ ~ 1 1"},color:"#FF0044",text:"Defaults"},""]},is_waxed:0b} strict
+setblock -69 190 76 birch_wall_sign[facing=east] strict
+setblock -71 192 78 yellow_stained_glass strict
+scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] refreshsigns 1
 
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1304

@@ -11,11 +11,11 @@ execute if items entity @s[tag=mainweapon,scores={crusadekit=2}] player.crafting
 execute if items entity @s[tag=mainweapon,scores={crusadekit=2}] player.crafting.2 * unless items entity @s player.crafting.2 bow run tag @s remove mainweapon
 execute if items entity @s[tag=mainweapon,scores={crusadekit=2}] player.crafting.3 * unless items entity @s player.crafting.3 bow run tag @s remove mainweapon
 
-execute if items entity @s[scores={crusadekit=3}] player.crafting.* blaze_rod run tag @s add mainweapon
-execute if items entity @s[tag=mainweapon,scores={crusadekit=3}] player.crafting.0 * unless items entity @s player.crafting.0 blaze_rod run tag @s remove mainweapon
-execute if items entity @s[tag=mainweapon,scores={crusadekit=3}] player.crafting.1 * unless items entity @s player.crafting.1 blaze_rod run tag @s remove mainweapon
-execute if items entity @s[tag=mainweapon,scores={crusadekit=3}] player.crafting.2 * unless items entity @s player.crafting.2 blaze_rod run tag @s remove mainweapon
-execute if items entity @s[tag=mainweapon,scores={crusadekit=3}] player.crafting.3 * unless items entity @s player.crafting.3 blaze_rod run tag @s remove mainweapon
+execute if items entity @s[scores={crusadekit=3}] player.crafting.* writable_book run tag @s add mainweapon
+execute if items entity @s[tag=mainweapon,scores={crusadekit=3}] player.crafting.0 * unless items entity @s player.crafting.0 writable_book run tag @s remove mainweapon
+execute if items entity @s[tag=mainweapon,scores={crusadekit=3}] player.crafting.1 * unless items entity @s player.crafting.1 writable_book run tag @s remove mainweapon
+execute if items entity @s[tag=mainweapon,scores={crusadekit=3}] player.crafting.2 * unless items entity @s player.crafting.2 writable_book run tag @s remove mainweapon
+execute if items entity @s[tag=mainweapon,scores={crusadekit=3}] player.crafting.3 * unless items entity @s player.crafting.3 writable_book run tag @s remove mainweapon
 
 #> Ensure player doesn't lose main weapon
 execute if items entity @s[scores={crusadekit=1}] player.crafting.0 stone_sword run item replace entity @s player.cursor from entity @s player.crafting.0
@@ -36,14 +36,14 @@ execute if items entity @s[scores={crusadekit=2}] player.crafting.2 bow run item
 execute if items entity @s[scores={crusadekit=2}] player.crafting.3 bow run item replace entity @s player.cursor from entity @s player.crafting.3
 execute if items entity @s[scores={crusadekit=2}] player.crafting.3 bow run item replace entity @s player.crafting.3 with air
 
-execute if items entity @s[scores={crusadekit=3}] player.crafting.0 blaze_rod run item replace entity @s player.cursor from entity @s player.crafting.0
-execute if items entity @s[scores={crusadekit=3}] player.crafting.0 blaze_rod run item replace entity @s player.crafting.0 with air
-execute if items entity @s[scores={crusadekit=3}] player.crafting.1 blaze_rod run item replace entity @s player.cursor from entity @s player.crafting.1
-execute if items entity @s[scores={crusadekit=3}] player.crafting.1 blaze_rod run item replace entity @s player.crafting.1 with air
-execute if items entity @s[scores={crusadekit=3}] player.crafting.2 blaze_rod run item replace entity @s player.cursor from entity @s player.crafting.2
-execute if items entity @s[scores={crusadekit=3}] player.crafting.2 blaze_rod run item replace entity @s player.crafting.2 with air
-execute if items entity @s[scores={crusadekit=3}] player.crafting.3 blaze_rod run item replace entity @s player.cursor from entity @s player.crafting.3
-execute if items entity @s[scores={crusadekit=3}] player.crafting.3 blaze_rod run item replace entity @s player.crafting.3 with air
+execute if items entity @s[scores={crusadekit=3}] player.crafting.0 writable_book run item replace entity @s player.cursor from entity @s player.crafting.0
+execute if items entity @s[scores={crusadekit=3}] player.crafting.0 writable_book run item replace entity @s player.crafting.0 with air
+execute if items entity @s[scores={crusadekit=3}] player.crafting.1 writable_book run item replace entity @s player.cursor from entity @s player.crafting.1
+execute if items entity @s[scores={crusadekit=3}] player.crafting.1 writable_book run item replace entity @s player.crafting.1 with air
+execute if items entity @s[scores={crusadekit=3}] player.crafting.2 writable_book run item replace entity @s player.cursor from entity @s player.crafting.2
+execute if items entity @s[scores={crusadekit=3}] player.crafting.2 writable_book run item replace entity @s player.crafting.2 with air
+execute if items entity @s[scores={crusadekit=3}] player.crafting.3 writable_book run item replace entity @s player.cursor from entity @s player.crafting.3
+execute if items entity @s[scores={crusadekit=3}] player.crafting.3 writable_book run item replace entity @s player.crafting.3 with air
 
 execute if entity @s[tag=mainweapon] run return run tag @s remove mainweapon
 

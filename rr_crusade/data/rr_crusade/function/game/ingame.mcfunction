@@ -26,7 +26,7 @@ execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run sc
 execute if entity @s[tag=Minute] run function rr_crusade:items/minutemix
 
 #custom prevention message
-execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
+execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portal or bedrock.","color":"red"}]
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #Selected kit particles
@@ -34,7 +34,8 @@ execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,t
 execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=2}] at @s at @e[x=0,type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 execute if score $dust CmdData matches 1 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=3}] at @s at @e[x=0,type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
 
-#TODO Mage wand
+#Mage Wand
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team,scores={useWand=1..}] run function rr_crusade:game/usewand
 
 #Top layer regen
 execute as @e[x=0,type=marker,tag=airDetectBlue,limit=1] at @s run function rr_crusade:game/airdetectblue

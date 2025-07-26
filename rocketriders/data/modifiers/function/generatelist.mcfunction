@@ -17,6 +17,8 @@ execute if entity @s[tag=DoublePortal] run data modify storage rocketriders:modi
 execute if entity @s[tag=ClutterCollector] run data modify storage rocketriders:modifiers list append value {"text":"Clutter Collector","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Explosions do no block damage between the bases.","color":"white"}]}}
 execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers list append value {"text":"Chaos","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Special Missiles are obtainable in regular gameplay.","color":"white"}]}}
 execute if entity @s[tag=CollisionControl] run data modify storage rocketriders:modifiers list append value {"text":"Collision Control","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Missiles cannot be spawned inside the enemy base.","color":"white"}]}}
+execute if predicate game:config/punchable_tnt run data modify storage rocketriders:modifiers list append value {"text":"Punchable TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Primed TNT can be punched forward.","color":"white"}]}}
+execute if predicate game:config/unstable_tnt run data modify storage rocketriders:modifiers list append value {"text":"Unstable TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Breaking TNT blocks immediately ignites them.","color":"white"}]}}
 
 #Creates companion list of each modifier's name length
 data modify storage rocketriders:modifiers length set value []
@@ -37,6 +39,8 @@ execute if entity @s[tag=DoublePortal] run data modify storage rocketriders:modi
 execute if entity @s[tag=ClutterCollector] run data modify storage rocketriders:modifiers length append value 17
 execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers length append value 5
 execute if entity @s[tag=CollisionControl] run data modify storage rocketriders:modifiers length append value 17
+execute if predicate game:config/punchable_tnt run data modify storage rocketriders:modifiers length append value 13
+execute if predicate game:config/unstable_tnt run data modify storage rocketriders:modifiers length append value 12
 
 #Splits this list into lines for chat legibility
 data modify storage rocketriders:modifiers line set value []

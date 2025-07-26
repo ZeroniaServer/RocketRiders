@@ -12,4 +12,6 @@ clear @s[scores={HasTrident=1..}] trident 1
 tag @s[scores={HasTrident=1..}] remove fullHotbar
 title @s[scores={HasTrident=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Trident obtained.","color":"light_purple"}
 loot give @s[tag=!fullHotbar] loot items:misc/trident
+execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasTrident=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenTrident

@@ -36,6 +36,10 @@ tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doFireballPortals
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] RepeatSettings 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!realms] run scoreboard players set $disable_cannoning config 0
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=realms,tag=!tntCannoningOff] run scoreboard players set $disable_cannoning config 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!realms,tag=!impactUtilitiesOff] run scoreboard players set $impact_projectiles config 0
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=realms] run scoreboard players set $impact_projectiles config 1
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultOptions] remove DefaultOptions
 

@@ -210,6 +210,9 @@ kill @e[x=0,type=marker,tag=warExtraBlue,limit=1]
 execute as @e[x=0,type=marker,tag=warExtraYellow,limit=1] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
 kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
 
+#Unstable TNT Modifier
+execute if predicate game:config/unstable_tnt run function modifiers:unstabletnt
+
 ##Kill entity
 kill @s
 

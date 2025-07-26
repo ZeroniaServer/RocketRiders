@@ -55,7 +55,7 @@ tag @a[x=0] remove spawnchamp
 
 ## Instant remaining commands
 scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1] SDtime
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!fireballOverride] as @e[x=0,type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!fireballOverride] as @e[x=0,type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],acceleration_power:0}
 tag @a[x=0] remove Winner
 tag @a[x=0] remove Loser
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove BlueWon
@@ -129,7 +129,7 @@ kill @e[x=0,type=bee]
 kill @e[x=0,type=armor_stand,tag=BeeShieldDisplay]
 kill @e[x=0,type=marker,tag=animBshield]
 
-execute as @e[x=0,type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],power:[0.0,0.0,0.0]}
+execute as @e[x=0,type=fireball,tag=endFireball] run data merge entity @s {ExplosionPower:0,Motion:[0.0,0.0,0.0],acceleration_power:0}
 
 ##
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] endtimer 0
+scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] endtimer 568

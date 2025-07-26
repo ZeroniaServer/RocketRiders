@@ -134,6 +134,20 @@
             }
           }
         }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:interaction",
+          "predicates": {
+            "minecraft:custom_data": {
+              "punchable_tnt": {
+                "brain": {}
+              }
+            }
+          }
+        }
       }
     ]
   }

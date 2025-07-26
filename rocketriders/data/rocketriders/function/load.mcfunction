@@ -1,6 +1,9 @@
-# Make sure "var" dummy objective is initialised
-scoreboard objectives remove var
+# Make sure "var" and "global" dummy objectives are initialised
+scoreboard objectives add global dummy
 scoreboard objectives add var dummy
+
+# Prevent `#rocketriders:tick` from running before all set-up has been completed
+scoreboard players set $tick global 0
 
 # Forceload all chunks that intsersect with the 2D region from -163 -175 to 187 175
 execute in minecraft:overworld run forceload add -163 -175 76 64
@@ -20,4 +23,4 @@ execute in minecraft:overworld positioned 0.0 0.0 0.0 run function world_updates
 execute in minecraft:overworld positioned 0.0 0.0 0.0 run function #rocketriders:load
 
 # Start ticking functions
-function rocketriders:tick
+scoreboard players set $tick global 1

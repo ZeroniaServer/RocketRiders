@@ -109,5 +109,5 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run 
 execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run fill 3 56 -67 21 44 -67 nether_portal[axis=x] replace resin_bricks strict
 
 ##All missiles
-tag @s[scores={Unable=1..}] add UnableMissile
+execute if entity @s[scores={Unable=1..}] run tag @s add strict
 scoreboard players reset * Unable

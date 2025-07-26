@@ -10,7 +10,6 @@ tag @s[tag=DoublePortal] add DoublePortalWasOn
 function arenaclear:unlockdecos
 tag @s add fbPortalsOff
 tag @s add preventionOff
-tag @s add preventionSoft
 tag @s add portalDecosOff
 tag @s add customSaberMsg
 tag @s add noPortal

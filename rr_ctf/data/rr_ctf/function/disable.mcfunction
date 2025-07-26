@@ -13,7 +13,6 @@ tag @s[tag=CollisionControlWasOn] add CollisionControl
 tag @s remove CollisionControlWasOn
 tag @s remove fbPortalsOff
 tag @s remove preventionOff
-tag @s remove preventionSoft
 tag @s remove portalDecosOff
 tag @s[tag=arrowsWasOn] add rngArrows
 tag @s remove arrowsWasOn

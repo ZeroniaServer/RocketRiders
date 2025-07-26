@@ -9,7 +9,6 @@ tag @s[tag=CollisionControl] add CollisionControlWasOn
 tag @s add fbPortalsOff
 tag @s add portalDecosOff
 tag @s add preventionOff
-tag @s add preventionSoft
 tag @s add customPrevention
 tag @s add noPortal
 tag @s add customEnds

@@ -11,7 +11,7 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:equippable": {
-                  "slot": "chest",
+                  "slot": "head",
                   "equip_sound": "minecraft:intentionally_empty",
                   "asset_id": "minecraft:chainmail"
                 },

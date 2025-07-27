@@ -1,0 +1,351 @@
+data remove storage rocketriders:nomicon dialogs
+
+##
+## Missiles
+##
+data modify storage rocketriders:nomicon dialogs.missiles.dialog set value {\
+  "type": "minecraft:confirmation",\
+  "title": [\
+    {\
+      "text": "Rocket",\
+      "color": "blue",\
+      "bold": true\
+    },\
+    {\
+      "text": "-",\
+      "color": "gray"\
+    },\
+    {\
+      "text": "nomicon",\
+      "color": "gold"\
+    }\
+  ],\
+  "body": [\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "bold": true,\
+        "text": "Missiles"\
+      }\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    }\
+  ],\
+  "pause": false,\
+  "after_action": "none",\
+  "yes": {\
+    "label": "Back",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1"\
+    }\
+  },\
+  "no": {\
+    "label": "Done",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1000001"\
+    }\
+  }\
+}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 48, item_loot_table: "items:missile/normal/tomatwo", item_plain_name_singular: "TomaTwo", item_plain_name_plural: "TomaTwos", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 2, item_loot_table: "items:missile/normal/ant", item_plain_name_singular: "A.N.T.", item_plain_name_plural: "A.N.T.s", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 3, item_loot_table: "items:missile/normal/blade", item_plain_name_singular: "Blade", item_plain_name_plural: "Blade", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 4, item_loot_table: "items:missile/normal/catapult", item_plain_name_singular: "Catapult", item_plain_name_plural: "Catapults", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 5, item_loot_table: "items:missile/normal/slasher", item_plain_name_singular: "Slasher", item_plain_name_plural: "Slashers", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 6, item_loot_table: "items:missile/normal/lifter", item_plain_name_singular: "Lifter", item_plain_name_plural: "Lifters", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 7, item_loot_table: "items:missile/normal/chronull", item_plain_name_singular: "Chronullifier", item_plain_name_plural: "Chronullifiers", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 8, item_loot_table: "items:missile/normal/eguard", item_plain_name_singular: "Elder Guardian", item_plain_name_plural: "Elder Guardians", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 9, item_loot_table: "items:missile/normal/citadel", item_plain_name_singular: "Citadel", item_plain_name_plural: "Citadels", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 10, item_loot_table: "items:missile/normal/gemini", item_plain_name_singular: "Gemini", item_plain_name_plural: "Geminis", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 11, item_loot_table: "items:missile/lightning/thunderbolt", item_plain_name_singular: "Thunderbolt", item_plain_name_plural: "Thunderbolts", color: "yellow"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 12, item_loot_table: "items:missile/lightning/hurricane", item_plain_name_singular: "Hurricane", item_plain_name_plural: "Hurricanes", color: "yellow"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 13, item_loot_table: "items:missile/heavy/auxiliary", item_plain_name_singular: "Auxiliary", item_plain_name_plural: "Auxiliaries", color: "dark_red"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 14, item_loot_table: "items:missile/heavy/warhead", item_plain_name_singular: "Warhead", item_plain_name_plural: "Warheads", color: "dark_red"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 15, item_loot_table: "items:missile/heavy/rifter", item_plain_name_singular: "Rifter", item_plain_name_plural: "Rifters", color: "dark_red"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 16, item_loot_table: "items:missile/heavy/jbuster", item_plain_name_singular: "Juggerbuster", item_plain_name_plural: "Juggerbusters", color: "dark_red"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 17, item_loot_table: "items:missile/special/hypersonic", item_plain_name_singular: "Hypersonic", item_plain_name_plural: "Hypersonics", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 18, item_loot_table: "items:missile/special/bullet", item_plain_name_singular: "Bullet", item_plain_name_plural: "Bullets", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 19, item_loot_table: "items:missile/special/duplex", item_plain_name_singular: "Duplex", item_plain_name_plural: "Duplexes", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 20, item_loot_table: "items:missile/special/broadsword", item_plain_name_singular: "Broadsword", item_plain_name_plural: "Broadswords", color: "dark_purple"}
+##
+## Utilities
+##
+data modify storage rocketriders:nomicon dialogs.utilities.dialog set value {\
+  "type": "minecraft:confirmation",\
+  "title": [\
+    {\
+      "text": "Rocket",\
+      "color": "blue",\
+      "bold": true\
+    },\
+    {\
+      "text": "-",\
+      "color": "gray"\
+    },\
+    {\
+      "text": "nomicon",\
+      "color": "gold"\
+    }\
+  ],\
+  "body": [\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "bold": true,\
+        "text": "Utilities"\
+      }\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    }\
+  ],\
+  "pause": false,\
+  "after_action": "none",\
+  "yes": {\
+    "label": "Back",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1"\
+    }\
+  },\
+  "no": {\
+    "label": "Done",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1000001"\
+    }\
+  }\
+}
+function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "utilities", trigger_input_id: 21, item_loot_table: "items:misc/arrow", item_plain_name_singular: "Arrow", item_plain_name_plural: "Arrows", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "utilities", trigger_input_id: 22, item_loot_table: "items:util/canopy", item_plain_name_singular: "Canopy", item_plain_name_plural: "Canopies", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "utilities", trigger_input_id: 23, item_loot_table: "items:util/fireball", item_plain_name_singular: "Fireball", item_plain_name_plural: "Fireballs", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "utilities", trigger_input_id: 24, item_loot_table: "items:util/cluster_fireball", item_plain_name_singular: "Cluster Fireball", item_plain_name_plural: "Cluster Fireballs", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "utilities", trigger_input_id: 25, item_loot_table: "items:util/nova", item_plain_name_singular: "Nova Rocket", item_plain_name_plural: "Nova Rockets", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "utilities", trigger_input_id: 26, item_loot_table: "items:util/shield", item_plain_name_singular: "Shield", item_plain_name_plural: "Shields", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "utilities", trigger_input_id: 27, item_loot_table: "items:util/obsidian_shield", item_plain_name_singular: "Obsidian Shield", item_plain_name_plural: "Obsidian Shields", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "utilities", trigger_input_id: 28, item_loot_table: "items:util/splash", item_plain_name_singular: "Splash", item_plain_name_plural: "Splashes", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "utilities", trigger_input_id: 29, item_loot_table: "items:util/vortex", item_plain_name_singular: "Vortex", item_plain_name_plural: "Vortices", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "utilities", trigger_input_id: 30, item_loot_table: "items:util/icbm", item_plain_name_singular: "ICBM", item_plain_name_plural: "ICBMs", color: "light_purple"}
+
+##
+## Powerups
+##
+data modify storage rocketriders:nomicon dialogs.powerups.dialog set value {\
+  "type": "minecraft:confirmation",\
+  "title": [\
+    {\
+      "text": "Rocket",\
+      "color": "blue",\
+      "bold": true\
+    },\
+    {\
+      "text": "-",\
+      "color": "gray"\
+    },\
+    {\
+      "text": "nomicon",\
+      "color": "gold"\
+    }\
+  ],\
+  "body": [\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "bold": true,\
+        "text": "Powerups"\
+      }\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    }\
+  ],\
+  "pause": false,\
+  "after_action": "none",\
+  "yes": {\
+    "label": "Back",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1"\
+    }\
+  },\
+  "no": {\
+    "label": "Done",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1000001"\
+    }\
+  }\
+}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "powerups", trigger_input_id: 31, item_loot_table: "items:util/stinging_shield", item_plain_name_singular: "Stinging Shield", item_plain_name_plural: "Stinging Shields", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "powerups", trigger_input_id: 32, item_loot_table: "items:util/splash_lava", item_plain_name_singular: "Lava Splash", item_plain_name_plural: "Lava Splashes", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "powerups", trigger_input_id: 33, item_loot_table: "items:misc/slap_fish", item_plain_name_singular: "Slap Fish", item_plain_name_plural: "Slap Fish", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "powerups", trigger_input_id: 34, item_loot_table: "items:misc/totem_of_undying", item_plain_name_singular: "Totem of Undying", item_plain_name_plural: "Totems of Undying", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_activate {dialog_name: "powerups", trigger_input_id: 35, item_loot_table: "items:misc/elytra", item_plain_name: "Elytra", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "powerups", trigger_input_id: 36, item_loot_table: "items:misc/trident", item_plain_name_singular: "Trident", item_plain_name_plural: "Tridents", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_activate {dialog_name: "powerups", trigger_input_id: 37, item_loot_table: "items:misc/shooting_saber_infinity", item_plain_name: "Infinity Saber", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "powerups", trigger_input_id: 38, item_loot_table: "items:misc/tipped_arrow_blindness", item_plain_name_singular: "Blindness Arrow", item_plain_name_plural: "Blindness Arrows", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "powerups", trigger_input_id: 39, item_loot_table: "items:misc/tipped_arrow_levitation", item_plain_name_singular: "Levitation Arrow", item_plain_name_plural: "Levitation Arrows", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "powerups", trigger_input_id: 40, item_loot_table: "items:misc/tipped_arrow_slowness", item_plain_name_singular: "Slowness Arrow", item_plain_name_plural: "Slowness Arrows", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "powerups", trigger_input_id: 41, item_loot_table: "items:misc/tipped_arrow_wither", item_plain_name_singular: "Wither Arrow", item_plain_name_plural: "Wither Arrows", color: "dark_purple"}
+
+##
+## Powerups
+##
+data modify storage rocketriders:nomicon dialogs.weapons_and_tools.dialog set value {\
+  "type": "minecraft:confirmation",\
+  "title": [\
+    {\
+      "text": "Rocket",\
+      "color": "blue",\
+      "bold": true\
+    },\
+    {\
+      "text": "-",\
+      "color": "gray"\
+    },\
+    {\
+      "text": "nomicon",\
+      "color": "gold"\
+    }\
+  ],\
+  "body": [\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "bold": true,\
+        "text": "Weapons/Tools"\
+      }\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    }\
+  ],\
+  "pause": false,\
+  "after_action": "none",\
+  "yes": {\
+    "label": "Back",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1"\
+    }\
+  },\
+  "no": {\
+    "label": "Done",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1000001"\
+    }\
+  }\
+}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 42, item_loot_table: "items:misc/shooting_saber", item_plain_name_singular: "Shooting Saber", item_plain_name_plural: "Shooting Sabers", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 43, item_loot_table: "items:misc/piercing_pickaxe", item_plain_name_singular: "Piercing Pickaxe", item_plain_name_plural: "Piercing Pickaxes", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 44, item_loot_table: "items:misc/knight_sword", item_plain_name_singular: "Knight Sword", item_plain_name_plural: "Knight Swords", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 45, item_loot_table: "items:misc/knight_shield", item_plain_name_singular: "Knight Shield", item_plain_name_plural: "Knight Shields", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 46, item_loot_table: "items:misc/spell_wand", item_plain_name_singular: "Spell Wand", item_plain_name_plural: "Spell Wands", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 47, item_loot_table: {pools:[{rolls:1,entries:[{type:"minecraft:item",name:"minecraft:enchanted_book",functions:[{function:"minecraft:set_components",components:{"minecraft:item_name":{text:"Spell Book",color:"red"},"minecraft:lore":[{"text":"Missing loot table!","color":"yellow","italic":false}]}}]}]}]}, item_plain_name_singular: "Spell Book", item_plain_name_plural: "Spell Books", color: "light_purple"}
+
+##
+## All
+##
+
+data modify storage rocketriders:nomicon dialogs.all.dialog set value {\
+  "type": "minecraft:confirmation",\
+  "title": [\
+    {\
+      "text": "Rocket",\
+      "color": "blue",\
+      "bold": true\
+    },\
+    {\
+      "text": "-",\
+      "color": "gray"\
+    },\
+    {\
+      "text": "nomicon",\
+      "color": "gold"\
+    }\
+  ],\
+  "body": [],\
+  "pause": false,\
+  "after_action": "none",\
+  "yes": {\
+    "label": "Back",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1"\
+    }\
+  },\
+  "no": {\
+    "label": "Done",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1000001"\
+    }\
+  }\
+}
+data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.missiles.dialog.body[]
+data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.utilities.dialog.body[]
+data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.powerups.dialog.body[]
+data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.weapons_and_tools.dialog.body[]

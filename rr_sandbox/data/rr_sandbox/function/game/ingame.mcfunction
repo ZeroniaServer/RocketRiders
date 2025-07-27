@@ -24,15 +24,10 @@ execute if entity @e[x=0,type=arrow] run function rr_powerups:everytick/tipped_a
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team,scores={useWand=1..}] run function rr_crusade:game/usewand
 
 #nomicon
-execute as @a[x=0,team=!Lobby,team=!Spectator] run scoreboard players enable @s nomicon
-execute as @a[predicate=!custom:indimension] run trigger nomicon set 0
-execute as @a[x=0,team=!Blue,team=!Yellow,team=!Developer] run trigger nomicon set 0
-execute as @a[x=0,team=!Lobby,team=!Spectator] run scoreboard players enable @s nomiconstack
-execute as @a[predicate=!custom:indimension] run trigger nomiconstack set 0
-execute as @a[x=0,team=!Blue,team=!Yellow,team=!Developer] run trigger nomiconstack set 0
+scoreboard players enable @a[x=0,team=!Lobby,team=!Spectator] nomicon
+scoreboard players reset @a[predicate=!custom:indimension] nomicon
+scoreboard players reset @a[x=0,team=!Blue,team=!Yellow,team=!Developer] nomicon
 execute as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,scores={nomicon=1..}] run function rr_sandbox:game/nomicon
-execute as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,scores={nomiconstack=1..}] run function rr_sandbox:game/nomiconstack
-scoreboard players reset #size sbstackamt
 
 #win
 execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon,tag=!DoublePortal] unless block 13 38 74 nether_portal unless block 13 38 -74 nether_portal run function rr_sandbox:game/winbothcheck

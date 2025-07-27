@@ -70,6 +70,7 @@ scoreboard players set $1000 constant 1000
 scoreboard players set $24000 constant 24000
 
 scoreboard objectives add event.player_dies custom:deaths
+scoreboard objectives add event.player_uses_written_book used:written_book
 scoreboard objectives add flag.is_dead dummy
 scoreboard objectives add entity.age dummy
 scoreboard objectives add entity.speed dummy
@@ -278,3 +279,6 @@ scoreboard players add $curr leavecheck 0
 execute unless data storage rocketriders:navbook modroom run data modify storage rocketriders:navbook modroom set value ["\n",{text:"* ",color:"gray",hover_event:{action:"show_text",value:{text:"Click to teleport to the Modification Room.",italic:true}},click_event:{action:"run_command","command":"/trigger LobbyWarp set 2"}},{text:"Modification Room",color:"dark_purple",hover_event:{action:"show_text",value:{text:"Click to teleport to the Modification Room.",italic:true}},click_event:{action:"run_command","command":"/trigger LobbyWarp set 2"}}]
 execute unless data storage rocketriders:navbook description run data modify storage rocketriders:navbook description set value {text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn the Modification Room, you can easily customize the game with many gamemodes, modifiers, and other settings to play with.",color:"dark_gray"}
 execute unless data storage rocketriders:navbook parkourtips run data modify storage rocketriders:navbook parkourtips set value ["\n\n     ",{text:"[Parkour Tips]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to toggle Parkour instructions.",italic:true}},click_event:{action:"run_command",command:"/trigger toggleParkourTips set 1"}}]
+
+# Nomicon Dialog Data
+function rr_sandbox:nomicon/load_pages

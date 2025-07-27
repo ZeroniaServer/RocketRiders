@@ -8,6 +8,8 @@ execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom
 scoreboard players set @a[x=0] flag.is_dead 1
 scoreboard players set @e[x=0,type=player] flag.is_dead 0
 
+execute as @a[scores={event.player_uses_written_book=1..}] at @s run function custom:event/player_uses_written_book/main
+
 # Tick entities
 function entities:tick
 

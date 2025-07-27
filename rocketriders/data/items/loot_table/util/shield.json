@@ -20,6 +20,7 @@
                   },
                   {
                     "text": "Shield",
+                    "color": "white",
                     "bold": true
                   }
                 ],

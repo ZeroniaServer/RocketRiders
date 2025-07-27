@@ -304,7 +304,7 @@ function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapon
 function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 44, item_loot_table: "items:misc/knight_sword", item_plain_name_singular: "Knight Sword", item_plain_name_plural: "Knight Swords", color: "white"}
 function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 45, item_loot_table: "items:misc/knight_shield", item_plain_name_singular: "Knight Shield", item_plain_name_plural: "Knight Shields", color: "white"}
 function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 46, item_loot_table: "items:misc/spell_wand", item_plain_name_singular: "Spell Wand", item_plain_name_plural: "Spell Wands", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 47, item_loot_table: {}, item_plain_name_singular: "Spell Book", item_plain_name_plural: "Spell Books", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 47, item_loot_table: "rr_crusade:book_icon", item_plain_name_singular: "Spell Book", item_plain_name_plural: "Spell Books", color: "light_purple"}
 
 ##
 ## All

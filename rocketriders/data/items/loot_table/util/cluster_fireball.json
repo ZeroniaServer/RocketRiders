@@ -8,17 +8,8 @@
           "name": "minecraft:blaze_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
-            {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                },
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:custom_data": "{cluster:1b}",
                 "minecraft:custom_name": [
@@ -30,7 +21,7 @@
                   },
                   {
                     "text": "Cluster Fireball",
-                    "color": "gold",
+                    "color": "white",
                     "bold": true
                   }
                 ],
@@ -54,40 +45,20 @@
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",
                   "Tags": [
-                    "YellowFireball",
+                    "BlueFireball",
                     "Cluster"
                   ]
                 }
               }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Yellow"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:blaze_spawn_egg",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
             },
             {
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_model_data": {
                   "floats": [
-                    2
+                    1
                   ]
                 },
-                "minecraft:enchantment_glint_override": true,
                 "minecraft:custom_name": [
                   {
                     "text": "[Utility] ",
@@ -101,23 +72,6 @@
                     "bold": true
                   }
                 ],
-                "minecraft:lore": [
-                  {
-                    "text": "Spawns a cluster of Fireballs. Punch or",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "shoot Fireballs to quickly blow up",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "missiles, blocks, or players.",
-                    "color": "gray",
-                    "italic": false
-                  }
-                ],
                 "minecraft:entity_data": {
                   "id": "minecraft:marker",
                   "Tags": [
@@ -125,16 +79,55 @@
                     "Cluster"
                   ]
                 }
-              }
-            }
-          ],
-          "conditions": [
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
             {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Blue"
-              }
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    2
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "light_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Cluster Fireball",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "YellowFireball",
+                    "Cluster"
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
             }
           ]
         }

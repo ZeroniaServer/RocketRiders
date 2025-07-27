@@ -1,6 +1,6 @@
 ##Utility function for changing Item Delay
 #Add new time
-execute if entity @s[team=!Yellow,team=!Blue,team=!Spectator] run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemSec += @s MaxItemSec
+execute if entity @s[team=!Yellow,team=!Blue,team=!Spectator] run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemSec = @s MaxItemSec
 
 #Lower limit is 5 seconds
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,scores={MaxItemSec=..4}] run tellraw @s {"text":"You cannot make item delay too low","color":"red"}

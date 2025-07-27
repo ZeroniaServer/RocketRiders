@@ -8,17 +8,8 @@
           "name": "minecraft:husk_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
-            {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                },
                 "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:custom_name": [
                   {
@@ -29,109 +20,7 @@
                   },
                   {
                     "text": "Blade",
-                    "color": "gold",
-                    "bold": true
-                  }
-                ],
-                "minecraft:lore": [
-                  [
-                    {
-                      "text": "Amount of TNT: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "15",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Speed: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "1.7m/s",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Made by: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "HolyToiletPaper",
-                      "color": "red"
-                    }
-                  ],
-                  "",
-                  {
-                    "text": "The Blade is a sword-shaped missile.",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "Breaking the slime block on the side",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "will drop down 3 bomber TNT below it.",
-                    "color": "gray",
-                    "italic": false
-                  }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "yellowmissile",
-                    "YellowBlade"
-                  ]
-                }
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Yellow"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:husk_spawn_egg",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                },
-                "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:custom_name": [
-                  {
-                    "text": "[Normal] ",
-                    "color": "green",
-                    "bold": true,
-                    "italic": false
-                  },
-                  {
-                    "text": "Blade",
-                    "color": "blue",
+                    "color": "white",
                     "bold": true
                   }
                 ],
@@ -195,15 +84,86 @@
                   ]
                 }
               }
-            }
-          ],
-          "conditions": [
+            },
             {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Blue"
-              }
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    1
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Blade",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueBlade"
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    2
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Blade",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "yellowmissile",
+                    "YellowBlade"
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
             }
           ]
         }

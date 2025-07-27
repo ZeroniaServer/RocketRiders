@@ -8,17 +8,8 @@
           "name": "minecraft:skeleton_horse_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
-            {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                },
                 "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:custom_name": [
@@ -30,110 +21,7 @@
                   },
                   {
                     "text": "Bullet",
-                    "color": "gold",
-                    "bold": true
-                  }
-                ],
-                "minecraft:lore": [
-                  [
-                    {
-                      "text": "Amount of TNT: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "44",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Speed: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "2.0m/s",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Made by: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "Chronos22 & Evtema3",
-                      "color": "red"
-                    }
-                  ],
-                  "",
-                  {
-                    "text": "The Bullet makes all missiles look like an A.N.T.",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "With 44 TNT, 12 of which being triggers, you",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "have to be very careful defusing this one!",
-                    "color": "gray",
-                    "italic": false
-                  }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "yellowmissile",
-                    "YellowBull"
-                  ]
-                }
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Yellow"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:skeleton_horse_spawn_egg",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                },
-                "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:enchantment_glint_override": true,
-                "minecraft:custom_name": [
-                  {
-                    "text": "[Special] ",
-                    "color": "dark_purple",
-                    "bold": true,
-                    "italic": false
-                  },
-                  {
-                    "text": "Bullet",
-                    "color": "blue",
+                    "color": "white",
                     "bold": true
                   }
                 ],
@@ -197,15 +85,86 @@
                   ]
                 }
               }
-            }
-          ],
-          "conditions": [
+            },
             {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Blue"
-              }
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    1
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Special] ",
+                    "color": "dark_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Bullet",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueBull"
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    2
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Special] ",
+                    "color": "dark_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Bullet",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "yellowmissile",
+                    "YellowBull"
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
             }
           ]
         }

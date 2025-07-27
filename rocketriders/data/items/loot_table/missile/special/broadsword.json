@@ -8,17 +8,8 @@
           "name": "minecraft:magma_cube_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
-            {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                },
                 "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:custom_name": [
@@ -30,110 +21,7 @@
                   },
                   {
                     "text": "Broadsword",
-                    "color": "gold",
-                    "bold": true
-                  }
-                ],
-                "minecraft:lore": [
-                  [
-                    {
-                      "text": "Amount of TNT: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "23",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Speed: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "3.3m/s",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Made by: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "IndigoLaser",
-                      "color": "red"
-                    }
-                  ],
-                  "",
-                  {
-                    "text": "The Broadsword is a fast and powerful",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "missile that lights lots of TNT on impact.",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "It's like three Swords combined!",
-                    "color": "gray",
-                    "italic": false
-                  }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "yellowmissile",
-                    "YellowBroad"
-                  ]
-                }
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Yellow"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:magma_cube_spawn_egg",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                },
-                "minecraft:custom_data": "{Missile:1b}",
-                "minecraft:enchantment_glint_override": true,
-                "minecraft:custom_name": [
-                  {
-                    "text": "[Special] ",
-                    "color": "dark_purple",
-                    "bold": true,
-                    "italic": false
-                  },
-                  {
-                    "text": "Broadsword",
-                    "color": "blue",
+                    "color": "white",
                     "bold": true
                   }
                 ],
@@ -197,15 +85,86 @@
                   ]
                 }
               }
-            }
-          ],
-          "conditions": [
+            },
             {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Blue"
-              }
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    1
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Special] ",
+                    "color": "dark_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Broadsword",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueBroad"
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    2
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Special] ",
+                    "color": "dark_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Broadsword",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ],
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker",
+                  "Tags": [
+                    "missile",
+                    "yellowmissile",
+                    "YellowBroad"
+                  ]
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
             }
           ]
         }

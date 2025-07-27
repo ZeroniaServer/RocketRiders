@@ -17,6 +17,17 @@
                   "bold": true,
                   "color": "white"
                 },
+                "minecraft:base_color": "white",
+                "minecraft:banner_patterns": [
+                  {
+                    "pattern": "minecraft:flower",
+                    "color": "light_gray"
+                  },
+                  {
+                    "pattern": "minecraft:border",
+                    "color": "light_gray"
+                  }
+                ],
                 "minecraft:lore": [
                   {
                     "translate": "A not-so-sturdy shield.",

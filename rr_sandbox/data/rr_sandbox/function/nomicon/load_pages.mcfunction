@@ -64,26 +64,29 @@ data modify storage rocketriders:nomicon dialogs.missiles.dialog set value {\
     }\
   }\
 }
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 48, item_loot_table: "items:missile/normal/tomatwo", item_plain_name_singular: "TomaTwo", item_plain_name_plural: "TomaTwos", color: "green"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 2, item_loot_table: "items:missile/normal/ant", item_plain_name_singular: "A.N.T.", item_plain_name_plural: "A.N.T.s", color: "green"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 3, item_loot_table: "items:missile/normal/blade", item_plain_name_singular: "Blade", item_plain_name_plural: "Blade", color: "green"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 4, item_loot_table: "items:missile/normal/catapult", item_plain_name_singular: "Catapult", item_plain_name_plural: "Catapults", color: "green"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 5, item_loot_table: "items:missile/normal/slasher", item_plain_name_singular: "Slasher", item_plain_name_plural: "Slashers", color: "green"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 6, item_loot_table: "items:missile/normal/lifter", item_plain_name_singular: "Lifter", item_plain_name_plural: "Lifters", color: "green"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 7, item_loot_table: "items:missile/normal/chronull", item_plain_name_singular: "Chronullifier", item_plain_name_plural: "Chronullifiers", color: "green"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 8, item_loot_table: "items:missile/normal/eguard", item_plain_name_singular: "Elder Guardian", item_plain_name_plural: "Elder Guardians", color: "green"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 9, item_loot_table: "items:missile/normal/citadel", item_plain_name_singular: "Citadel", item_plain_name_plural: "Citadels", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 8, item_loot_table: "items:missile/normal/eguard", item_plain_name_singular: "Elder Guardian", item_plain_name_plural: "Elder Guardians", color: "green"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 10, item_loot_table: "items:missile/normal/gemini", item_plain_name_singular: "Gemini", item_plain_name_plural: "Geminis", color: "green"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 11, item_loot_table: "items:missile/lightning/thunderbolt", item_plain_name_singular: "Thunderbolt", item_plain_name_plural: "Thunderbolts", color: "yellow"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 6, item_loot_table: "items:missile/normal/lifter", item_plain_name_singular: "Lifter", item_plain_name_plural: "Lifters", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 5, item_loot_table: "items:missile/normal/slasher", item_plain_name_singular: "Slasher", item_plain_name_plural: "Slashers", color: "green"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 48, item_loot_table: "items:missile/normal/tomatwo", item_plain_name_singular: "TomaTwo", item_plain_name_plural: "TomaTwos", color: "green"}
+
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 12, item_loot_table: "items:missile/lightning/hurricane", item_plain_name_singular: "Hurricane", item_plain_name_plural: "Hurricanes", color: "yellow"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 11, item_loot_table: "items:missile/lightning/thunderbolt", item_plain_name_singular: "Thunderbolt", item_plain_name_plural: "Thunderbolts", color: "yellow"}
+
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 13, item_loot_table: "items:missile/heavy/auxiliary", item_plain_name_singular: "Auxiliary", item_plain_name_plural: "Auxiliaries", color: "dark_red"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 14, item_loot_table: "items:missile/heavy/warhead", item_plain_name_singular: "Warhead", item_plain_name_plural: "Warheads", color: "dark_red"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 15, item_loot_table: "items:missile/heavy/rifter", item_plain_name_singular: "Rifter", item_plain_name_plural: "Rifters", color: "dark_red"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 16, item_loot_table: "items:missile/heavy/jbuster", item_plain_name_singular: "Juggerbuster", item_plain_name_plural: "Juggerbusters", color: "dark_red"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 17, item_loot_table: "items:missile/special/hypersonic", item_plain_name_singular: "Hypersonic", item_plain_name_plural: "Hypersonics", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 15, item_loot_table: "items:missile/heavy/rifter", item_plain_name_singular: "Rifter", item_plain_name_plural: "Rifters", color: "dark_red"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 14, item_loot_table: "items:missile/heavy/warhead", item_plain_name_singular: "Warhead", item_plain_name_plural: "Warheads", color: "dark_red"}
+
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 20, item_loot_table: "items:missile/special/broadsword", item_plain_name_singular: "Broadsword", item_plain_name_plural: "Broadswords", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 18, item_loot_table: "items:missile/special/bullet", item_plain_name_singular: "Bullet", item_plain_name_plural: "Bullets", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 19, item_loot_table: "items:missile/special/duplex", item_plain_name_singular: "Duplex", item_plain_name_plural: "Duplexes", color: "dark_purple"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 20, item_loot_table: "items:missile/special/broadsword", item_plain_name_singular: "Broadsword", item_plain_name_plural: "Broadswords", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 17, item_loot_table: "items:missile/special/hypersonic", item_plain_name_singular: "Hypersonic", item_plain_name_plural: "Hypersonics", color: "dark_purple"}
 
 ##
 ## Utilities

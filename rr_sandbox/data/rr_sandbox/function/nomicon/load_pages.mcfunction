@@ -32,18 +32,18 @@ data modify storage rocketriders:nomicon dialogs.missiles.dialog set value {\
     },\
     {\
       "type": "minecraft:plain_message",\
-      "contents": {\
-        "bold": true,\
-        "text": "Missiles"\
-      }\
-    },\
-    {\
-      "type": "minecraft:plain_message",\
-      "contents": {\
-        "underlined": true,\
-        "shadow_color": 0,\
-        "text": "                                                                "\
-      },\
+      "contents": [\
+        {\
+          "bold": true,\
+          "text": "\nMissiles\n"\
+        },\
+        {\
+          "bold": false,\
+          "underlined": true,\
+          "shadow_color": 0,\
+          "text": "\n                                                                "\
+        }\
+      ],\
       "width": 400\
     }\
   ],\
@@ -84,6 +84,7 @@ function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", tri
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 18, item_loot_table: "items:missile/special/bullet", item_plain_name_singular: "Bullet", item_plain_name_plural: "Bullets", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 19, item_loot_table: "items:missile/special/duplex", item_plain_name_singular: "Duplex", item_plain_name_plural: "Duplexes", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 20, item_loot_table: "items:missile/special/broadsword", item_plain_name_singular: "Broadsword", item_plain_name_plural: "Broadswords", color: "dark_purple"}
+
 ##
 ## Utilities
 ##
@@ -116,18 +117,18 @@ data modify storage rocketriders:nomicon dialogs.utilities.dialog set value {\
     },\
     {\
       "type": "minecraft:plain_message",\
-      "contents": {\
-        "bold": true,\
-        "text": "Utilities"\
-      }\
-    },\
-    {\
-      "type": "minecraft:plain_message",\
-      "contents": {\
-        "underlined": true,\
-        "shadow_color": 0,\
-        "text": "                                                                "\
-      },\
+      "contents": [\
+        {\
+          "bold": true,\
+          "text": "\nUtilities\n"\
+        },\
+        {\
+          "bold": false,\
+          "underlined": true,\
+          "shadow_color": 0,\
+          "text": "\n                                                                "\
+        }\
+      ],\
       "width": 400\
     }\
   ],\
@@ -191,18 +192,18 @@ data modify storage rocketriders:nomicon dialogs.powerups.dialog set value {\
     },\
     {\
       "type": "minecraft:plain_message",\
-      "contents": {\
-        "bold": true,\
-        "text": "Powerups"\
-      }\
-    },\
-    {\
-      "type": "minecraft:plain_message",\
-      "contents": {\
-        "underlined": true,\
-        "shadow_color": 0,\
-        "text": "                                                                "\
-      },\
+      "contents": [\
+        {\
+          "bold": true,\
+          "text": "\nPowerups\n"\
+        },\
+        {\
+          "bold": false,\
+          "underlined": true,\
+          "shadow_color": 0,\
+          "text": "\n                                                                "\
+        }\
+      ],\
       "width": 400\
     }\
   ],\
@@ -236,7 +237,7 @@ function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "powerups
 function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "powerups", trigger_input_id: 41, item_loot_table: "items:misc/tipped_arrow_wither", item_plain_name_singular: "Wither Arrow", item_plain_name_plural: "Wither Arrows", color: "dark_purple"}
 
 ##
-## Powerups
+## Weapons/Tools
 ##
 data modify storage rocketriders:nomicon dialogs.weapons_and_tools.dialog set value {\
   "type": "minecraft:confirmation",\
@@ -267,18 +268,18 @@ data modify storage rocketriders:nomicon dialogs.weapons_and_tools.dialog set va
     },\
     {\
       "type": "minecraft:plain_message",\
-      "contents": {\
-        "bold": true,\
-        "text": "Weapons/Tools"\
-      }\
-    },\
-    {\
-      "type": "minecraft:plain_message",\
-      "contents": {\
-        "underlined": true,\
-        "shadow_color": 0,\
-        "text": "                                                                "\
-      },\
+      "contents": [\
+        {\
+          "bold": true,\
+          "text": "\nWeapons/Tools\n"\
+        },\
+        {\
+          "bold": false,\
+          "underlined": true,\
+          "shadow_color": 0,\
+          "text": "\n                                                                "\
+        }\
+      ],\
       "width": 400\
     }\
   ],\
@@ -349,3 +350,10 @@ data modify storage rocketriders:nomicon dialogs.all.dialog.body append from sto
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.utilities.dialog.body[]
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.powerups.dialog.body[]
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.weapons_and_tools.dialog.body[]
+
+# Remove top separator from every section
+data remove storage rocketriders:nomicon dialogs.all.dialog.body[0]
+data remove storage rocketriders:nomicon dialogs.missiles.dialog.body[0]
+data remove storage rocketriders:nomicon dialogs.utilities.dialog.body[0]
+data remove storage rocketriders:nomicon dialogs.powerups.dialog.body[0]
+data remove storage rocketriders:nomicon dialogs.weapons_and_tools.dialog.body[0]

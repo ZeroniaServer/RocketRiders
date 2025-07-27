@@ -11,7 +11,11 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
     {\
       "text": "$(item_plain_name_plural)",\
       "color": "$(color)",\
-      "bold": true\
+      "bold": true,\
+      "click_event": {\
+        "action": "run_command",\
+        "command": "/trigger nomicon set $(trigger_input_id)01"\
+      }\
     },\
     [\
         {\

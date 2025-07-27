@@ -11,7 +11,11 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
     {\
       "text": "$(item_plain_name)",\
       "color": "$(color)",\
-      "bold": true\
+      "bold": true,\
+      "click_event": {\
+        "action": "run_command",\
+        "command": "/trigger nomicon set $(trigger_input_id)01"\
+      }\
     },\
     [\
         {\
@@ -23,13 +27,13 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-                "text": "Click to activate $(item_plain_name)",\
+                "text": "Click to activate $(item_plain_name)01",\
                 "color": "white"\
               }\
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(trigger_input_id)"\
+            "command": "/trigger nomicon set $(trigger_input_id)01"\
           }\
         }\
     ],\

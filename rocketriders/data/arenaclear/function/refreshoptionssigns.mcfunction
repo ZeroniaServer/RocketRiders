@@ -227,12 +227,15 @@ execute if entity @s[tag=noPlayerCredits] run data modify block -69 191 73 front
 execute if entity @s[tag=noPlayerCredits] run data modify block -69 191 73 front_text.messages[3] set value {"text":"(Reduces lag)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns"}}
 
 #Daytime
-execute store result score @s daytime run time query daytime
-execute unless score @s daytime matches 1 run data modify block -69 192 73 front_text.messages[0] set value {"text":"Daytime:","color":"dark_green","click_event":{"action":"run_command","command":"/tag @s[team=!Yellow,team=!Blue,team=!Spectator] add daytimeChange"}}
-execute unless score @s daytime matches 1 run data modify block -69 192 73 front_text.messages[1] set value [{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"daytime"},"color":"green","bold":true},{"text":" ticks","color":"dark_green","bold":false}]
-execute unless score @s daytime matches 1 run data modify block -69 192 73 front_text.messages[3] set value {"text":"(Click to adjust)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if score @s daytime matches 1 run data modify block -69 192 73 front_text.messages[0] set value {"text":"Daytime:","color":"dark_green","click_event":{"action":"run_command","command":"/tag @s[team=!Yellow,team=!Blue,team=!Spectator] add daytimeChange"}}
-execute if score @s daytime matches 1 run data modify block -69 192 73 front_text.messages[1] set value [{"text":"1","color":"dark_green","bold":true},{"text":" tick","color":"green","bold":false}]
-execute if score @s daytime matches 1 run data modify block -69 192 73 front_text.messages[3] set value {"text":"(Click to adjust)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
+data modify block -69 192 73 front_text.messages[0] set value {"text":"Daytime:","color":"dark_green","click_event":{"action":"run_command","command":"/tag @s[team=!Yellow,team=!Blue,team=!Spectator] add daytimeChange"}}
+data modify block -69 192 73 front_text.messages[3] set value {"text":"(Click to adjust)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
+execute store result score $daytime var run time query daytime
+execute if score $daytime var matches 0 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Sunrise","color":"green","bold":true}
+execute if score $daytime var matches 1 run data modify block -69 192 73 front_text.messages[1] set value [{"text":"1","color":"dark_green","bold":true},{"text":" tick","color":"green","bold":false}]
+execute if score $daytime var matches 1000 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Morning","color":"green","bold":true}
+execute if score $daytime var matches 6000 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Noon","color":"green","bold":true}
+execute if score $daytime var matches 13000 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Evening","color":"green","bold":true}
+execute if score $daytime var matches 18000 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Midnight","color":"green","bold":true}
+execute unless score $daytime var matches 0 unless score $daytime var matches 1 unless score $daytime var matches 1000 unless score $daytime var matches 6000 unless score $daytime var matches 13000 unless score $daytime var matches 18000 run data modify block -69 192 73 front_text.messages[1] set value [{"score":{"name":"$daytime","objective":"var"},"color":"green","bold":true},{"text":" ticks","color":"dark_green","bold":false}]
 
 tag @s add SignsRefreshed

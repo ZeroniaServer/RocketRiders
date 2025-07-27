@@ -9,7 +9,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
   "description": [\
     "",\
     {\
-      "text": "$(item_plain_name_singular)",\
+      "text": "$(item_plain_name_plural)",\
       "color": "$(color)",\
       "bold": true\
     },\
@@ -31,7 +31,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
                     "text": "4",\
                     "bold": true\
                 },\
-                " $(item_plain_name_singular)"\
+                " $(item_plain_name_plural)"\
             ]\
           },\
           "click_event": {\

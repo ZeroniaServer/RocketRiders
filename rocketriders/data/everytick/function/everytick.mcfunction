@@ -57,6 +57,7 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Sonar] run effect 
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run effect give @a[x=0] saturation infinite 0 true
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run effect clear @a[x=0] saturation
 execute as @a[x=0,team=Lobby,tag=hardcore] run function modifiers:hardcorereset
+execute as @a[x=0,team=Lobby,tag=hobbit] run function modifiers:hobbit/reset
 function lobby:bookwarp
 scoreboard players enable @a[x=0,team=Lobby] displayinfo
 scoreboard players enable @a[x=0,team=Developer] displayinfo

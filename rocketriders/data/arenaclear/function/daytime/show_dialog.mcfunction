@@ -62,7 +62,7 @@ data modify storage rocketriders:main daytime.dialog set value {\
         },\
         "  ",\
         {\
-          "text": "[Evening]",\
+          "text": "[Sunset]",\
           "click_event": {\
             "action": "run_command",\
             "command": "trigger daytime set 37000"\
@@ -70,7 +70,7 @@ data modify storage rocketriders:main daytime.dialog set value {\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-              "text": "Click to set the daytime to Evening (13000)"\
+              "text": "Click to set the daytime to Sunset (13000)"\
             }\
           }\
         },\

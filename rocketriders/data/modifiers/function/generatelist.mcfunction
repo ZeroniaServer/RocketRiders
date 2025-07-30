@@ -19,6 +19,7 @@ execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers l
 execute if entity @s[tag=CollisionControl] run data modify storage rocketriders:modifiers list append value {"text":"Collision Control","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Missiles cannot be spawned inside the enemy base.","color":"white"}]}}
 execute if predicate game:config/punchable_tnt run data modify storage rocketriders:modifiers list append value {"text":"Punchable TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Primed TNT can be punched forward.","color":"white"}]}}
 execute if predicate game:config/unstable_tnt run data modify storage rocketriders:modifiers list append value {"text":"Unstable TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Breaking TNT blocks immediately ignites them.","color":"white"}]}}
+execute if predicate game:config/hobbits run data modify storage rocketriders:modifiers list append value {"text":"Hobbits","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players are 2/3 their normal size, and can sneak under 1-block-tall gaps.","color":"white"}]}}
 
 #Creates companion list of each modifier's name length
 data modify storage rocketriders:modifiers length set value []
@@ -41,6 +42,7 @@ execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers l
 execute if entity @s[tag=CollisionControl] run data modify storage rocketriders:modifiers length append value 17
 execute if predicate game:config/punchable_tnt run data modify storage rocketriders:modifiers length append value 13
 execute if predicate game:config/unstable_tnt run data modify storage rocketriders:modifiers length append value 12
+execute if predicate game:config/hobbits run data modify storage rocketriders:modifiers length append value 7
 
 #Splits this list into lines for chat legibility
 data modify storage rocketriders:modifiers line set value []

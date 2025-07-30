@@ -33,6 +33,9 @@ tag @s remove ChaosWasOn
 tag @s[tag=ClutterCollectorWasOn] add ClutterCollector
 tag @s remove ClutterCollectorOff
 tag @s remove portalOverride
+tag @s remove HobbitsOff
+execute if entity @s[tag=HobbitsWasOn] run scoreboard players set $hobbits config 1
+tag @s remove HobbitsWasOn
 execute as @a[x=0] run trigger crusadechange set 0
 
 #item enabling/disabling

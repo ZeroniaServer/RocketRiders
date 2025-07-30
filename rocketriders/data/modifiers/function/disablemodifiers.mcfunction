@@ -39,5 +39,8 @@ tag @s remove PunchableTNTWasOn
 scoreboard players set $unstable_tnt config 0
 #TODO Replace with a corresponding config score
 tag @s remove UnstableTNTWasOn
+scoreboard players set $hobbits config 0
+#TODO Replace with a corresponding config score
+tag @s remove HobbitsWasOn
 
 function arenaclear:unlockdecos

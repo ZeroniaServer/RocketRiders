@@ -28,6 +28,9 @@ tag @s add ChaosOff
 tag @s[tag=ClutterCollector] add ClutterCollectorWasOn
 tag @s add ClutterCollectorOff
 tag @s add portalOverride
+execute if score $hobbits config matches 1 run tag @s add HobbitsWasOn
+scoreboard players set $hobbits config 0
+tag @s add HobbitsOff
 tag @s add crusadeEnabled
 
 #item disabling/enabling

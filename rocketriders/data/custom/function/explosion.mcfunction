@@ -21,6 +21,6 @@ execute unless data storage rocketriders:main summon.nbt.data.explosion.origin o
 execute unless data storage rocketriders:main summon.nbt.data.explosion.origin if entity @s[type=player] run data modify storage rocketriders:main summon.nbt.data.explosion.origin set from entity @s UUID
 
 # Modify creeper
-execute as @e[distance=..0.01,type=creeper,tag=summon.this,limit=1] if function custom:summon/remove_tag run function custom:summon/modify with storage rocketriders:main summon
+execute as @e[distance=..0.01,type=creeper,tag=summon.this,limit=1] if function custom:_summon_/remove_tag run function custom:_summon_/modify with storage rocketriders:main summon
 
 return 1

@@ -11,7 +11,8 @@ execute if entity @s[tag=!canopy.animated,predicate=custom:canopy_nearyellow] if
 
 # Animate platform
 tag @s[tag=canopy.kill,tag=!canopy.animated] add canopy.animated
-execute if entity @s[tag=!canopy.animated] run function entities:canopy/tick/deployment_animation
+execute if entity @s[tag=!canopy.animated,tag=!canopy.small] run function entities:canopy/tick/deployment_animation
+execute if entity @s[tag=!canopy.animated,tag=canopy.small] run function entities:canopy/tick/deployment_animation_small
 
 #Kill Canopy if marked to be killed
 execute if entity @s[tag=canopy.kill] run return run function entities:canopy/actions/kill

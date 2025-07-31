@@ -1,9 +1,8 @@
 # Store the rotation and speed of vehicle
 execute if predicate custom:has_vehicle run function custom:projectile_motion_save
 
-# If the ender pearl hits something, do nothing
-execute unless predicate custom:has_vehicle on origin run function custom:player_action/forget_all_canopies
-execute unless predicate custom:has_vehicle run return run kill @s
+# Early impact
+execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:canopy_projectile/tick/early_impact
 
 # Movement trail
 execute if score @s entity.age matches 1.. if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 0 0 0 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]

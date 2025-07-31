@@ -23,11 +23,11 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           "color": "white"\
         },\
         {\
-          "text": "[ᴀᴄᴛɪᴠᴀᴛᴇ]",\
+          "text": "[1x]",\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-                "text": "Click to activate $(item_plain_name)",\
+                "text": "Click to give yourself 1 $(item_plain_name)",\
                 "color": "white"\
               }\
           },\

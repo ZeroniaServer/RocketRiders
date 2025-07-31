@@ -303,12 +303,12 @@ data modify storage rocketriders:nomicon dialogs.weapons_and_tools.dialog set va
     }\
   }\
 }
-function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 42, item_loot_table: "items:misc/shooting_saber", item_plain_name_singular: "Shooting Saber", item_plain_name_plural: "Shooting Sabers", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 43, item_loot_table: "items:misc/piercing_pickaxe", item_plain_name_singular: "Piercing Pickaxe", item_plain_name_plural: "Piercing Pickaxes", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 44, item_loot_table: "items:misc/knight_sword", item_plain_name_singular: "Knight Sword", item_plain_name_plural: "Knight Swords", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 45, item_loot_table: "items:misc/knight_shield", item_plain_name_singular: "Knight Shield", item_plain_name_plural: "Knight Shields", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 46, item_loot_table: "items:misc/spell_wand", item_plain_name_singular: "Spell Wand", item_plain_name_plural: "Spell Wands", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "weapons_and_tools", trigger_input_id: 47, item_loot_table: "rr_crusade:book_icon", item_plain_name_singular: "Spell Book", item_plain_name_plural: "Spell Books", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 42, item_loot_table: "items:misc/shooting_saber", item_plain_name: "Shooting Saber", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 43, item_loot_table: "items:misc/piercing_pickaxe", item_plain_name: "Piercing Pickaxe", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 44, item_loot_table: "items:misc/knight_sword", item_plain_name: "Knight Sword", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 45, item_loot_table: "items:misc/knight_shield", item_plain_name: "Knight Shield", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 46, item_loot_table: "items:misc/spell_wand", item_plain_name: "Spell Wand", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 47, item_loot_table: "rr_crusade:book_icon", item_plain_name: "Spell Book", color: "light_purple"}
 
 ##
 ## All

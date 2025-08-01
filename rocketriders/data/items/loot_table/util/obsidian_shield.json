@@ -5,11 +5,20 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:enderman_spawn_egg",
+          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:custom_data": {
+                  "spawn_egg": {
+                    "type": "obsidian_shield"
+                  }
+                },
+                "minecraft:item_model": "minecraft:enderman_spawn_egg",
                 "minecraft:custom_name": [
                   {
                     "text": "[Utility] ",
@@ -22,14 +31,19 @@
                     "color": "white",
                     "bold": true
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "BlueObshield"
-                  ]
-                }
+                ]
               }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "source": "this",
+              "ops": [
+                {
+                  "source": "UUID",
+                  "target": "spawn_egg.owner",
+                  "op": "replace"
+                }
+              ]
             },
             {
               "function": "minecraft:set_components",
@@ -51,13 +65,7 @@
                     "color": "blue",
                     "bold": true
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "BlueObshield"
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {
@@ -89,13 +97,7 @@
                     "color": "gold",
                     "bold": true
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "YellowObshield"
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {

@@ -1,13 +1,13 @@
 {
     "criteria": {
-        "requirement": {
+        "use_pig_spawn_egg_on_block": {
             "trigger": "minecraft:item_used_on_block",
             "conditions": {
                 "location": [
                     {
                         "condition": "minecraft:match_tool",
                         "predicate": {
-                            "items": "minecraft:blaze_spawn_egg"
+                            "items": "minecraft:pig_spawn_egg"
                         }
                     }
                 ]
@@ -15,6 +15,6 @@
         }
     },
     "rewards": {
-        "function": "items:placefireball"
+        "function": "custom:event/player_uses_pig_spawn_egg/main"
     }
 }

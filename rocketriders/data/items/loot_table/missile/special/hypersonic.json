@@ -5,12 +5,21 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:turtle_spawn_egg",
+          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_data": "{Missile:1b}",
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:custom_data": {
+                  "spawn_egg": {
+                    "type": "missile",
+                    "missile": "hypersonic"
+                  }
+                },
+                "minecraft:item_model": "minecraft:turtle_spawn_egg",
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:custom_name": [
                   {
@@ -75,16 +84,19 @@
                     "color": "gray",
                     "italic": false
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "bluemissile",
-                    "BlueHyper"
-                  ]
-                }
+                ]
               }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "source": "this",
+              "ops": [
+                {
+                  "source": "UUID",
+                  "target": "spawn_egg.owner",
+                  "op": "replace"
+                }
+              ]
             },
             {
               "function": "minecraft:set_components",
@@ -106,15 +118,7 @@
                     "color": "blue",
                     "bold": true
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "bluemissile",
-                    "BlueHyper"
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {
@@ -146,15 +150,7 @@
                     "color": "gold",
                     "bold": true
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "yellowmissile",
-                    "YellowHyper"
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {

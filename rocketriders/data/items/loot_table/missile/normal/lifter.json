@@ -5,12 +5,21 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:dolphin_spawn_egg",
+          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_data": "{Missile:1b}",
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:custom_data": {
+                  "spawn_egg": {
+                    "type": "missile",
+                    "missile": "lifter"
+                  }
+                },
+                "minecraft:item_model": "minecraft:dolphin_spawn_egg",
                 "minecraft:custom_name": [
                   {
                     "text": "[Normal] ",
@@ -74,16 +83,19 @@
                     "color": "gray",
                     "italic": false
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "bluemissile",
-                    "BlueLift"
-                  ]
-                }
+                ]
               }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "source": "this",
+              "ops": [
+                {
+                  "source": "UUID",
+                  "target": "spawn_egg.owner",
+                  "op": "replace"
+                }
+              ]
             },
             {
               "function": "minecraft:set_components",
@@ -105,15 +117,7 @@
                     "color": "blue",
                     "bold": true
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "bluemissile",
-                    "BlueLift"
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {
@@ -145,15 +149,7 @@
                     "color": "gold",
                     "bold": true
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "yellowmissile",
-                    "YellowLift"
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {

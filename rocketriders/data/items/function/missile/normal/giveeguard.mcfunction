@@ -12,7 +12,7 @@ execute if entity @s[scores={HasGuard=1..},tag=!fullHotbar,tag=!BackGuard,tag=!i
 title @s[tag=!fullHotbar,tag=!BackGuard,tag=itemDeducted] actionbar {"text":"Elder Guardian already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackGuard,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasGuard=0},tag=!fullHotbar,tag=!BackGuard,tag=!itemDeducted] actionbar {"text":"Elder Guardian obtained.","color":"aqua"}
-loot give @s[scores={HasGuard=0},tag=!fullHotbar] loot items:missile/normal/eguard
+loot give @s[scores={HasGuard=0},tag=!fullHotbar] loot items:missile/normal/elder_guardian
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasGuard=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

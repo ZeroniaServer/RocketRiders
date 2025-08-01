@@ -12,7 +12,7 @@ execute if entity @s[scores={HasJug=1..},tag=!fullHotbar,tag=!BackJug,tag=!itemD
 title @s[tag=!fullHotbar,tag=!BackJug,tag=itemDeducted] actionbar {"text":"Juggerbuster already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackJug,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasJug=0},tag=!fullHotbar,tag=!BackJug,tag=!itemDeducted] actionbar {"text":"Juggerbuster obtained.","color":"aqua"}
-loot give @s[scores={HasJug=0},tag=!fullHotbar] loot items:missile/heavy/jbuster
+loot give @s[scores={HasJug=0},tag=!fullHotbar] loot items:missile/heavy/juggerbuster
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasJug=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

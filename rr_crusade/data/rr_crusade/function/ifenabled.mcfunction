@@ -37,6 +37,9 @@ execute unless predicate game:game_started run tag @a[x=0] remove CrusadeNoteMag
 
 execute unless predicate game:game_started run scoreboard players reset @a[x=0,scores={crusadechange=1..}] crusadechange
 
+#tnt cracking
+execute as @e[type=tnt,predicate=rr_crusade:tnt_near_castle,tag=!icbm_tnt,nbt={fuse:1s}] at @s align xyz positioned ~ ~0.5 ~ run function rr_crusade:game/tnt_cracks
+
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function rr_crusade:arenaclear/baseplacement
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run tag @a[x=0] remove informMe

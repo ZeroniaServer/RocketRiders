@@ -23,4 +23,14 @@ execute unless data storage rocketriders:main summon.nbt.data.explosion.origin i
 # Modify creeper
 execute as @e[distance=..0.01,type=creeper,tag=summon.this,limit=1] if function custom:_summon_/remove_tag run function custom:_summon_/modify with storage rocketriders:main summon
 
+# Crusade cracks
+execute unless predicate rr_crusade:tnt_near_castle run return 1
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run return 1
+
+$data modify storage rocketriders:main summon.radius set value $(r)
+execute store result score $radius var run data get storage rocketriders:main summon.radius
+execute if score $radius var matches 0..2 run function rr_crusade:game/tnt_cracks_small
+execute if score $radius var matches 3..6 run function rr_crusade:game/tnt_cracks
+execute if score $radius var matches 7..10 run function rr_crusade:game/tnt_cracks_large
+
 return 1

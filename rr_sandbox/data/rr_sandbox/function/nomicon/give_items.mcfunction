@@ -52,5 +52,8 @@ execute if score @s nomicon matches 46 run function rr_sandbox:items/givespellwa
 execute if score @s nomicon matches 47 run function rr_crusade:items/util/givespellbook
 # 48 maps to tomatwo (used to be 1)
 
+execute if score @s nomicon matches 49 if entity @s[team=Blue] run function items:surprise_blue/givesurpriseegg
+execute if score @s nomicon matches 49 if entity @s[team=Yellow] run function items:surprise_yellow/givesurpriseegg
+
 scoreboard players remove $rolls var 1
 execute if score $rolls var matches 1.. run function rr_sandbox:nomicon/give_items

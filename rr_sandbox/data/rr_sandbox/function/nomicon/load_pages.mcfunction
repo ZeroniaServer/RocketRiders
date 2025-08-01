@@ -88,6 +88,8 @@ function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", tri
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 19, item_loot_table: "items:missile/special/duplex", item_plain_name_singular: "Duplex", item_plain_name_plural: "Duplexes", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 17, item_loot_table: "items:missile/special/hypersonic", item_plain_name_singular: "Hypersonic", item_plain_name_plural: "Hypersonics", color: "dark_purple"}
 
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "missiles", trigger_input_id: 49, item_loot_table: "items:missile/surprise/all", item_plain_name_singular: "Surprise Egg", item_plain_name_plural: "Surprise Eggs", color: "white"}
+
 ##
 ## Utilities
 ##

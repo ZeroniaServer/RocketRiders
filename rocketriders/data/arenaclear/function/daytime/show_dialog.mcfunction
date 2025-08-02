@@ -1,5 +1,5 @@
 data modify storage rocketriders:main daytime.dialog set value {\
-  "type": "minecraft:confirmation",\
+  "type": "minecraft:multi_action",\
   "title": {\
     "text": "Daytime",\
     "bold": true\
@@ -106,16 +106,18 @@ data modify storage rocketriders:main daytime.dialog set value {\
   ],\
   "pause": true,\
   "after_action": "close",\
-  "yes": {\
-    "label": "Confirm",\
-    "action": {\
-      "type": "minecraft:dynamic/run_command",\
-      "template": "trigger daytime set $(daytime)"\
-    }\
-  },\
-  "no": {\
+  "exit_action": {\
     "label": "Cancel"\
-  }\
+  },\
+  "actions": [\
+    {\
+      "label": "Confirm",\
+      "action": {\
+        "type": "minecraft:dynamic/run_command",\
+        "template": "trigger daytime set $(daytime)"\
+      }\
+    }\
+  ]\
 }
 execute store result storage rocketriders:main daytime.dialog.inputs[0].initial int 1 run time query daytime
 

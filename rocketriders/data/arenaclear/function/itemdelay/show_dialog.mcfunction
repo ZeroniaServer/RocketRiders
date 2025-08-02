@@ -1,5 +1,5 @@
 data modify storage rocketriders:main itemdelay.dialog set value {\
-  "type": "minecraft:confirmation",\
+  "type": "minecraft:multi_action",\
   "title": {\
     "text": "Item Delay",\
     "bold": true\
@@ -37,16 +37,18 @@ data modify storage rocketriders:main itemdelay.dialog set value {\
   ],\
   "pause": true,\
   "after_action": "close",\
-  "yes": {\
-    "label": "Confirm",\
-    "action": {\
-      "type": "minecraft:dynamic/run_command",\
-      "template": "trigger MaxItemSec set $(itemdelay)"\
-    }\
-  },\
-  "no": {\
+  "exit_action": {\
     "label": "Cancel"\
-  }\
+  },\
+  "actions": [\
+    {\
+      "label": "Confirm",\
+      "action": {\
+        "type": "minecraft:dynamic/run_command",\
+        "template": "trigger MaxItemSec set $(itemdelay)"\
+      }\
+    }\
+  ]\
 }
 execute store result storage rocketriders:main itemdelay.dialog.inputs[0].initial int 1 run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemSec
 

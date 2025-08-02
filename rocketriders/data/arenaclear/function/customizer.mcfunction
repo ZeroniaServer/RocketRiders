@@ -71,7 +71,8 @@ scoreboard players set @a[x=0] MaxItemSec 0
 ##DAYTIME
 execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=daytimeChange] run function arenaclear:daytime/show_dialog
 tag @a[x=0,tag=daytimeChange] remove daytimeChange
-execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s daytime matches -1 run function arenaclear:daytimechange
+execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-1}] run function arenaclear:daytime/show_dialog
+execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s daytime matches -2..-1 run function arenaclear:daytimechange
 scoreboard players reset @a[x=0] daytime
-execute if entity @s[scores={servermode=0}] run scoreboard players set @a[x=0,team=Lobby] daytime -1
+execute if entity @s[scores={servermode=0}] run scoreboard players set @a[x=0,team=Lobby] daytime -2
 execute if entity @s[scores={servermode=0}] run scoreboard players enable @a[x=0,team=Lobby] daytime

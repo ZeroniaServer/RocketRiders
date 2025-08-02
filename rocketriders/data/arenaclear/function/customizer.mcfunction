@@ -59,14 +59,16 @@ execute as @a[x=0,scores={moleratConfirm=1..}] run tag @s add moleratConfirm
 execute as @a[x=0,scores={moleratConfirm=1..}] run function arenaclear:testvalidclear
 
 ##ITEM DELAY
-execute if entity @s[scores={servermode=0},tag=!Minute] run scoreboard players enable @a[x=0,team=Lobby] MaxItemSec
-execute if entity @s[scores={servermode=0},tag=Minute] as @a[x=0,team=Lobby] run trigger MaxItemSec set 0
+execute if entity @s[scores={servermode=0},tag=Minute] run scoreboard players reset @a[x=0,team=Lobby] MaxItemSec
 execute if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] run function arenaclear:itemdelay/show_dialog
 execute if entity @s[tag=itemDelayOff] run tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 tag @a[x=0,tag=ItemDelayChange] remove ItemDelayChange
-execute if entity @s[scores={servermode=0},tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run function arenaclear:itemdelay
-execute if entity @s[scores={servermode=0},tag=itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
-scoreboard players set @a[x=0] MaxItemSec 0
+execute if entity @s[scores={servermode=0},tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-1}] run function arenaclear:itemdelay/show_dialog
+execute if entity @s[scores={servermode=0},tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run function arenaclear:itemdelay
+execute if entity @s[scores={servermode=0},tag=itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
+scoreboard players reset @a[x=0] MaxItemSec
+execute if entity @s[scores={servermode=0},tag=!Minute] run scoreboard players set @a[x=0] MaxItemSec -2
+execute if entity @s[scores={servermode=0},tag=!Minute] run scoreboard players enable @a[x=0,team=Lobby] MaxItemSec
 
 ##DAYTIME
 execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=daytimeChange] run function arenaclear:daytime/show_dialog

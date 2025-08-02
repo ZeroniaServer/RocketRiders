@@ -105,6 +105,18 @@ scoreboard objectives remove dropRod
 scoreboard objectives add dropWand minecraft.dropped:minecraft.writable_book
 scoreboard objectives add useWand minecraft.used:minecraft.writable_book
 
+# Reset offline player triggers
+scoreboard players reset * LeaveMidgame
+scoreboard players reset * MaxItemSec
+scoreboard players reset * VoteServerMode
+scoreboard players reset * daytime
+scoreboard players reset * leaveSpec
+scoreboard players reset * displayinfo
+scoreboard players reset * toggleTips
+scoreboard players reset * toggleParticles
+scoreboard players reset * toggleParkourTips
+scoreboard players reset * MaxItemSec
+
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 
 setblock -69 190 78 air

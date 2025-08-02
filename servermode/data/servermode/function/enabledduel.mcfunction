@@ -10,8 +10,8 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove realms
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SMCustom
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
-fill -57 201 84 -70 201 72 tinted_glass replace #custom:air_or_water strict
-fill -57 200 84 -70 200 72 water[level=8] replace #custom:air_or_water strict
+fill -57 201 84 -70 201 72 tinted_glass replace #custom:modification_room_pool_blocks strict
+fill -57 200 84 -70 200 72 water[level=8] replace #custom:modification_room_pool_blocks strict
 fill -57 198 84 -70 198 72 blackstone replace air
 execute as @a[x=0] run function achievements:reset
 function game:forcestop

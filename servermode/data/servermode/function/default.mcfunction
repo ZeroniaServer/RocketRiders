@@ -9,7 +9,8 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SMCustom
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noFullHotbarSound
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 0
 fill -57 201 84 -70 201 72 air replace barrier
-fill -57 201 84 -70 201 72 air replace tinted_glass
+fill -57 201 84 -70 201 72 water[level=7] replace tinted_glass strict
+fill -57 200 84 -70 200 72 air replace #custom:air_or_water strict
 fill -57 198 84 -70 198 72 air replace blackstone
 execute as @a[x=0] run function achievements:roots
 clear @a

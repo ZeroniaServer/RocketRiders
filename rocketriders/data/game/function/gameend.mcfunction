@@ -94,7 +94,8 @@ execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] k
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] deaths 0
 execute if entity @s[scores={endtimer=570}] run gamerule mobGriefing false
 #Server mode specifics
-execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=0}] run fill -57 201 84 -70 201 72 air replace tinted_glass
+execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=0}] run fill -57 201 84 -70 201 72 water[level=7] replace tinted_glass strict
+execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=0}] run fill -57 200 84 -70 200 72 air replace #custom:air_or_water strict
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=1},tag=!forcenormal] run function servermode:makesets
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=2}] run schedule function servermode:forceclear 3t
 execute if entity @s[scores={endtimer=570..}] run tag @a[x=0] remove Winner

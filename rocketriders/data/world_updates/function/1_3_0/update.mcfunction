@@ -152,6 +152,10 @@ execute at @e[x=0,type=marker,tag=join_pad.left] run summon item_display ~ ~1 ~ 
 execute at @e[x=0,type=marker,tag=join_pad.middle] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.middle"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
 execute at @e[x=0,type=marker,tag=join_pad.right] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.right"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
 
+fill -57 201 84 -70 201 72 water[level=7] replace #custom:air_or_water strict
+execute if block -63 201 78 tinted_glass run fill -57 200 84 -70 200 72 water[level=8] replace #custom:air_or_water strict
+execute unless block -63 201 78 tinted_glass run fill -57 200 84 -70 200 72 air replace #custom:air_or_water strict
+
 # Modification Room redesign
 setblock -70 190 80 netherite_block strict
 setblock -70 190 76 netherite_block strict

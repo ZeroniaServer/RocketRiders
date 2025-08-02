@@ -5,7 +5,6 @@
 
 #Enable trigger
 scoreboard players enable @a[x=0,team=Lobby] LobbyWarp
-execute as @a[x=0,team=!Lobby] run trigger LobbyWarp set -1
 scoreboard players reset @a[team=!Lobby] LobbyWarp
 
 #Cancel parkour

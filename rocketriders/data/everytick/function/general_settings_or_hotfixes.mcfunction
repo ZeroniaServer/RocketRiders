@@ -58,26 +58,26 @@ execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecra
 execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy
 
 #Disable trigger objectives when appropriate
-execute as @a[predicate=!custom:indimension] run trigger LeaveMidgame set -1
-execute as @a[predicate=!custom:indimension] run trigger MaxItemSec set 0
-execute as @a[predicate=!custom:indimension] run trigger VoteServerMode set 0
+scoreboard players reset @a[predicate=!custom:indimension] LeaveMidgame
+scoreboard players reset @a[predicate=!custom:indimension] MaxItemSec
+scoreboard players reset @a[predicate=!custom:indimension] VoteServerMode
 scoreboard players reset @a[predicate=!custom:indimension] daytime
-execute as @a[predicate=!custom:indimension] run trigger leaveSpec set 0
-execute as @a[predicate=!custom:indimension] run trigger displayinfo set 0
-execute as @a[predicate=!custom:indimension] run trigger toggleTips set 0
-execute as @a[predicate=!custom:indimension] run trigger toggleParticles set 0
-execute as @a[predicate=!custom:indimension] run trigger toggleParkourTips set 0
-execute as @a[x=0,team=!Blue,team=!Yellow] run trigger LeaveMidgame set -1
-execute as @a[x=0,team=!Lobby] run trigger MaxItemSec set 0
-execute if entity @s[tag=EditedSettings] as @a[x=0] run trigger MaxItemSec set 0
-execute if entity @s[scores={servermode=1..}] as @a[x=0] run trigger MaxItemSec set 0
-execute if entity @s[tag=EditedSettings] as @a[x=0] run trigger VoteServerMode set 0
+scoreboard players reset @a[predicate=!custom:indimension] leaveSpec
+scoreboard players reset @a[predicate=!custom:indimension] displayinfo
+scoreboard players reset @a[predicate=!custom:indimension] toggleTips
+scoreboard players reset @a[predicate=!custom:indimension] toggleParticles
+scoreboard players reset @a[predicate=!custom:indimension] toggleParkourTips
+scoreboard players reset @a[x=0,team=!Blue,team=!Yellow] LeaveMidgame
+scoreboard players reset @a[x=0,team=!Lobby] MaxItemSec
+execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] MaxItemSec
+execute if entity @s[scores={servermode=1..}] run scoreboard players reset @a[x=0] MaxItemSec
+execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] VoteServerMode
 scoreboard players reset @a[x=0,team=!Lobby] daytime
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] daytime
 execute if entity @s[scores={servermode=1..}] run scoreboard players reset @a[x=0] daytime
-execute as @a[x=0,team=!Spectator] run trigger leaveSpec set 0
-execute as @a[x=0,team=!Lobby,team=!Developer] run trigger displayinfo set 0
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0] run trigger toggleParkourTips set 0
+scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
+scoreboard players reset @a[x=0,team=!Lobby,team=!Developer] displayinfo
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] run scoreboard players reset @a[x=0] toggleParkourTips
 
 #Launch pad in Modification Room
 execute unless predicate game:game_started as @a[x=0,team=Lobby] at @s if entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true

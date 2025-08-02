@@ -20,7 +20,7 @@ execute if entity @s[scores={endtimer=1},tag=!noSabers] run function game:endsab
 execute if entity @s[tag=BlueWon] run effect give @a[x=0,team=Yellow] weakness infinite 100 true
 execute if entity @s[tag=YellowWon] run effect give @a[x=0,team=Blue] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1..100}] run worldborder warning distance 0
-execute if entity @s[scores={endtimer=1}] as @a[x=0] run trigger LeaveMidgame set -1
+execute if entity @s[scores={endtimer=1}] run scoreboard players reset @a[x=0] LeaveMidgame
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[x=0,team=Blue]
 execute if entity @s[scores={endtimer=1}] run gamemode adventure @a[x=0,team=Yellow]
 execute if entity @s[scores={endtimer=1}] run kill @e[x=0,type=ender_pearl]

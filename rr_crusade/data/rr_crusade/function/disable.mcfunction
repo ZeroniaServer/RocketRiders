@@ -36,7 +36,7 @@ tag @s remove portalOverride
 tag @s remove HobbitsOff
 execute if entity @s[tag=HobbitsWasOn] run scoreboard players set $hobbits config 1
 tag @s remove HobbitsWasOn
-execute as @a[x=0] run trigger crusadechange set 0
+scoreboard players reset @a[x=0] crusadechange
 
 #item enabling/disabling
 tag @s[tag=arrowsWasOff] remove rngArrows

@@ -21,8 +21,8 @@ execute if entity @s[tag=!GameEnd] if entity @e[x=0,type=arrow] run function rr_
 
 #kits
 execute if entity @s[tag=EditedSettings,tag=!GameEnd] run scoreboard players enable @a[x=0,team=!Lobby,team=!Developer,team=!Spectator] crusadechange
-execute unless predicate game:game_started if entity @s[tag=GameEnd] as @a[x=0] run trigger crusadechange set 0
-execute if predicate game:game_started if entity @s[tag=GameEnd] as @a[x=0,scores={deathCooldown=5}] at @s run trigger crusadechange set 0
+execute unless predicate game:game_started if entity @s[tag=GameEnd] run scoreboard players reset @a[x=0] crusadechange
+execute if predicate game:game_started if entity @s[tag=GameEnd] run scoreboard players reset @a[x=0,scores={deathCooldown=5}] crusadechange
 execute unless predicate game:game_started as @a[x=0,scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
 execute unless predicate game:game_started as @a[x=0,scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
 execute unless predicate game:game_started as @a[x=0,scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage

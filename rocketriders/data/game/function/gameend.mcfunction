@@ -105,7 +105,6 @@ tag @s[scores={endtimer=570..}] remove BlueWonFirst
 tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
 tag @s[scores={endtimer=570..}] remove BothWon
-execute if entity @s[scores={endtimer=570..}] run scoreboard players set $barriers CmdData 0
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * invCount
 execute if entity @s[scores={endtimer=570..}] run function arenaclear:preclear
 tag @s[scores={endtimer=570..}] remove GameEnd

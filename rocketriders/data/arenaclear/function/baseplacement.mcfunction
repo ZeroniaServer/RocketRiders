@@ -112,7 +112,6 @@ tag @s[tag=!onlyBlue] remove YellowFull
 tag @s[tag=!onlyBlue] remove YellowCapOverride
 tag @s remove BlueFull
 tag @s remove BlueCapOverride
-scoreboard players set $barriers CmdData 79
 
 tag @s add EditedSettings
 

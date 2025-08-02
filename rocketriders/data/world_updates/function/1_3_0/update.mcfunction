@@ -140,6 +140,18 @@ kill @e[x=0,type=marker,tag=VortexDummy]
 kill @e[x=0,type=armor_stand,tag=VortexItemDummy]
 execute positioned -69.5 206.5 48.5 run function entities:vortex_decoy/summon
 
+tag @e[x=0,type=marker,tag=bluejoinpad] add join_pad
+tag @e[x=0,type=marker,tag=specjoinpad] add join_pad
+tag @e[x=0,type=marker,tag=yellowjoinpad] add join_pad
+tag @e[x=-79.47,y=205.00,z=94.46,distance=..1,type=marker,tag=join_pad] add join_pad.left
+tag @e[x=-82.50,y=202.00,z=78.50,distance=..1,type=marker,tag=join_pad] add join_pad.middle
+tag @e[x=-79.49,y=205.00,z=62.44,distance=..1,type=marker,tag=join_pad] add join_pad.right
+tp @e[x=0,type=marker,tag=join_pad.left] -79.5 205.0 94.5
+tp @e[x=0,type=marker,tag=join_pad.right] -79.5 205.0 62.5
+execute at @e[x=0,type=marker,tag=join_pad.left] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.left"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
+execute at @e[x=0,type=marker,tag=join_pad.middle] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.middle"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
+execute at @e[x=0,type=marker,tag=join_pad.right] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.right"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
+
 # Modification Room redesign
 setblock -70 190 80 netherite_block strict
 setblock -70 190 76 netherite_block strict

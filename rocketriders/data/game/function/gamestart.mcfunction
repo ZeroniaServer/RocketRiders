@@ -37,7 +37,7 @@ execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinBlue
 execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinBlue
 execute if entity @s[tag=BlueFull] run tag @a[x=0] remove JoinBlue
 execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=-1..0},tag=!BlueFull] as @e[x=0,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if score $barriers CmdData matches 1 if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] as @e[x=0,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run particle minecraft:block_marker{block_state:"minecraft:barrier"} ~ ~1 ~ 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=bluejoinpad,tag=!CancelJoin] add join_pad.show_barrier
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 execute if entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings,tag=!JustCleared] as @e[x=0,type=marker,tag=bluejoinpad,tag=!CancelJoin] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinBlue
 team join Blue @a[x=0,tag=JoinBlue]
@@ -86,7 +86,7 @@ execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinYellow
 execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinYellow
 execute if entity @s[tag=YellowFull] run tag @a[x=0] remove JoinYellow
 execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=0..1},tag=!YellowFull] as @e[x=0,type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:yellow_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if score $barriers CmdData matches 1 if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] as @e[x=0,type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run particle minecraft:block_marker{block_state:"minecraft:barrier"} ~ ~1 ~ 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=yellowjoinpad,tag=!CancelJoin] add join_pad.show_barrier
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 execute if entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings,tag=!JustCleared] as @e[x=0,type=marker,tag=yellowjoinpad,tag=!CancelJoin] at @s run tag @a[distance=..1,team=Lobby,limit=1,sort=random] add JoinYellow
 team join Yellow @a[x=0,tag=JoinYellow]
@@ -171,10 +171,8 @@ execute if entity @s[tag=!customLeaveHandling] run function game:leaveteams
 ##Countdown
 execute if entity @s[tag=Countdown] run function game:countdown
 
-##Barrier particles on a timer
-scoreboard players add $barriers CmdData 1
-execute if score $barriers CmdData matches 81 run scoreboard players set $barriers CmdData 0
-execute if score $barriers CmdData matches 1 as @e[x=0,type=marker,tag=CancelJoin] at @s run particle minecraft:block_marker{block_state:"minecraft:barrier"} ~ ~1 ~ 0 0 0 0 1 force @a[x=0,tag=!hideParticles,team=Lobby,predicate=!custom:belowroof]
+##Display CancelJoin join pad barriers
+tag @e[x=0,type=marker,tag=CancelJoin] add join_pad.show_barrier
 
 ##Disable crafting slots
 execute unless predicate game:game_started as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function game:disablecraftingslots

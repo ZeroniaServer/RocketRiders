@@ -96,7 +96,6 @@ execute if entity @s[scores={endtimer=570}] run gamerule mobGriefing false
 #Server mode specifics
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=0}] run fill -57 201 84 -70 201 72 water[level=7] replace tinted_glass strict
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=0}] run fill -57 200 84 -70 200 72 air replace #custom:modification_room_pool_blocks strict
-execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=0}] run fill -70 200 79 -70 200 77 ladder[facing=east] replace #custom:modification_room_pool_blocks strict
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=1},tag=!forcenormal] run function servermode:makesets
 execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=2}] run schedule function servermode:forceclear 3t
 execute if entity @s[scores={endtimer=570..}] run tag @a[x=0] remove Winner

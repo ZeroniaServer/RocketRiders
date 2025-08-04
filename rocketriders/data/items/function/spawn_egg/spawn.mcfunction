@@ -13,6 +13,7 @@ execute unless data storage rocketriders:main spawn_egg.type run return run func
 
 ## TODO: Refactor spawning system to use updated names. Until then, just convert the marker into the legacy format. 
 execute if data storage rocketriders:main spawn_egg{type:"fireball"} at @s run function items:spawn_egg/convert_to_legacy_fireball
+execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} at @s run function items:spawn_egg/convert_to_legacy_cluster_fireball
 execute if data storage rocketriders:main spawn_egg{type:"obsidian_shield"} at @s run function items:spawn_egg/convert_to_legacy_obsidian_shield
 execute if data storage rocketriders:main spawn_egg{type:"missile"} at @s run function items:spawn_egg/convert_to_legacy_missile
 execute if data storage rocketriders:main spawn_egg{type:"surprise_missile"} at @s run function items:spawn_egg/convert_to_legacy_surprise_missile

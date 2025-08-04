@@ -6,7 +6,6 @@ execute if entity @s[tag=duelEnabled] run function gamemodes:restoresettings
 execute if score $TORAGE CmdData matches 1 if entity @s[tag=WasMolerat] run tag @s remove WasMolerat
 scoreboard players reset $TORAGE CmdData
 tag @s remove duelEnabled
-tag @s remove settingsLocked
 tag @s remove tyingOff
 tag @s remove itemDelayOff
 tag @s remove SurpriseEggOff

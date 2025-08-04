@@ -1,4 +1,5 @@
 scoreboard players reset * gamemode_components
+scoreboard players set $no_portal gamemode_components 1
 scoreboard players set $config_override.hobbits gamemode_components -1
 
 tag @s remove switchGamemodes
@@ -10,7 +11,6 @@ tag @s[tag=Hardcore] add HardcoreWasOn
 tag @s add HardcoreOff
 tag @s[tag=Residers] add ResidersWasOn
 tag @s add ResidersOff
-tag @s add noPortal
 tag @s add customPrevention
 tag @s add featheredOff
 tag @s add arrowLimit

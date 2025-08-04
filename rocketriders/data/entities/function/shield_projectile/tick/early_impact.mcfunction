@@ -6,8 +6,8 @@ execute unless predicate game:modifier/impact_projectiles run return run functio
 
 ## If impact_projectiles is ON
 # Prevent deployment inside of portals
-execute if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!noPortal] run return run function entities:shield_projectile/actions/break
-execute if entity @s[x=-12,y=33,z=74,dx=48,dy=28] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!noPortal] run return run function entities:shield_projectile/actions/break
+execute if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:gamemode_components/no_portal] run return run function entities:shield_projectile/actions/break
+execute if entity @s[x=-12,y=33,z=74,dx=48,dy=28] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:gamemode_components/no_portal] run return run function entities:shield_projectile/actions/break
 # Prevent deployment near the void
 execute if predicate custom:nearvoid run return run function entities:shield_projectile/actions/break
 # Prevent deployment near spawnpoints

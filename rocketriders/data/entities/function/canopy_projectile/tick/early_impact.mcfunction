@@ -19,10 +19,10 @@ execute at @s unless block ~ ~1 ~ #custom:air run return run kill @s
 execute at @s run fill ~ ~1 ~ ~ ~1 ~ jungle_leaves[persistent=false] replace #custom:air
 
 # Prevent deployment inside of portals
-execute if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,tag=!noPortal] run return run kill @s
-execute if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,tag=!noPortal] run return run kill @s
-execute if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,tag=!noPortal] run return run kill @s
-execute if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,tag=!noPortal] run return run kill @s
+execute if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,predicate=!game:gamemode_components/no_portal] run return run kill @s
+execute if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,predicate=!game:gamemode_components/no_portal] run return run kill @s
+execute if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,predicate=!game:gamemode_components/no_portal] run return run kill @s
+execute if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,predicate=!game:gamemode_components/no_portal] run return run kill @s
 # Prevent deployment near the void
 execute if predicate custom:canopy_nearvoid if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield] run return run kill @s
 # Prevent deployment near spawnpoints

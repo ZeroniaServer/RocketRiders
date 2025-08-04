@@ -15,7 +15,6 @@ tag @s remove portalDecosOff
 tag @s remove preventionOff
 tag @s remove preventionSoft
 tag @s remove customPrevention
-tag @s remove noPortal
 tag @s remove customEnds
 tag @s remove customBossbar
 tag @s remove leaveYSpawn

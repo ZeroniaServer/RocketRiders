@@ -1,4 +1,5 @@
 scoreboard players reset * gamemode_components
+scoreboard players set $no_portal gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add chaseEnabled
@@ -13,7 +14,6 @@ tag @s add portalDecosOff
 tag @s add preventionOff
 tag @s add preventionSoft
 tag @s add customPrevention
-tag @s add noPortal
 tag @s add customEnds
 tag @s add customBossbar
 tag @s add leaveYSpawn

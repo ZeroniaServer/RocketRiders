@@ -67,6 +67,9 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] 
 
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $settings_locked gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] run scoreboard players set $no_portal gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPortal
+
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
 
 scoreboard objectives add toggleParticles trigger

@@ -1,4 +1,5 @@
 scoreboard players reset * gamemode_components
+scoreboard players set $no_portal gamemode_components 1
 scoreboard players set $has_flags gamemode_components 1
 
 tag @s remove switchGamemodes
@@ -16,7 +17,6 @@ tag @s add preventionOff
 tag @s add preventionSoft
 tag @s add portalDecosOff
 tag @s add customSaberMsg
-tag @s add noPortal
 tag @s add canopyStack
 tag @s add customPrevention
 tag @s add customObsidian

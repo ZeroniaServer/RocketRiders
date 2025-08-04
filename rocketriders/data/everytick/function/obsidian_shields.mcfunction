@@ -11,11 +11,11 @@ kill @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=30..}]
 tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:has_vehicle] add blueobalone
 
 #Disable Blue Obsidian Shields inside of portals
-execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
-execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
+execute unless entity @s[predicate=game:gamemode_components/no_portal] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
+execute unless entity @s[predicate=game:gamemode_components/no_portal] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
 #Do the same but for Hole in One
-execute unless entity @s[tag=noPortal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
-execute unless entity @s[tag=noPortal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
+execute unless entity @s[predicate=game:gamemode_components/no_portal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
+execute unless entity @s[predicate=game:gamemode_components/no_portal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
 #Disable Blue Obsidian Shields near void
 execute as @e[x=0,type=marker,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Blue Obsidian Shields near spawnpoints
@@ -35,11 +35,11 @@ kill @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=30..}
 tag @e[x=0,type=marker,tag=yellowobtracker,predicate=!custom:has_vehicle] add yellowobalone
 
 #Disable Yellow Obsidian Shields inside of portals
-execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
-execute unless entity @s[tag=noPortal] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
+execute unless entity @s[predicate=game:gamemode_components/no_portal] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
+execute unless entity @s[predicate=game:gamemode_components/no_portal] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
 #Do the same but for Hole in One
-execute unless entity @s[tag=noPortal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
-execute unless entity @s[tag=noPortal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
+execute unless entity @s[predicate=game:gamemode_components/no_portal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
+execute unless entity @s[predicate=game:gamemode_components/no_portal] if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
 #Disable Yellow Obsidian Shields near void
 execute as @e[x=0,type=marker,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Yellow Obsidian Shields near spawnpoints

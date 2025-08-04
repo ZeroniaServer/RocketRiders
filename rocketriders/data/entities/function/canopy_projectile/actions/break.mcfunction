@@ -2,9 +2,12 @@
 execute on vehicle if entity @s[predicate=entities:canopy_projectile/body] positioned as @s run return run function entities:canopy_projectile/actions/break
 
 # Particles
-execute at @s run particle minecraft:item{item:{id:"minecraft:ender_pearl"}} ~ ~ ~ 0 0 0 0.05 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute at @s run particle minecraft:item{item:{id:"minecraft:ender_pearl"}} ~ ~ ~ 0 0 0 0.05 5 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute at @s run particle minecraft:dust_color_transition{from_color:[1,0,1],to_color:[0,1,0],scale:1} ~ ~ ~ 0.1 0.2 0.1 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute at @s run playsound minecraft:entity.splash_potion.break master @a[x=0] ~ ~ ~ 1 2
+execute on origin run tag @s add vortex_projectile.origin
+execute at @s run playsound minecraft:entity.splash_potion.break master @a[x=0,tag=!vortex_projectile.origin] ~ ~ ~ 1 2
+execute at @s run playsound minecraft:entity.splash_potion.break master @a[x=0,tag=vortex_projectile.origin] ~ ~ ~ 1 2 0.5
+execute on origin run tag @s remove vortex_projectile.origin
 
 # Kill entity stack
 execute on vehicle run kill @s[predicate=entities:canopy_projectile]

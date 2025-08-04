@@ -3,7 +3,11 @@ execute on vehicle if entity @s[predicate=entities:shield_projectile/body] posit
 
 # Particles
 execute at @s run particle minecraft:block{block_state:"minecraft:white_stained_glass"} ~ ~ ~ 0 0 0 1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute at @s run playsound minecraft:block.glass.break master @a[x=0] ~ ~ ~ 1 2
+execute on origin run tag @s add vortex_projectile.origin
+execute at @s run playsound minecraft:block.glass.break master @a[x=0,tag=!vortex_projectile.origin] ~ ~ ~ 1 2
+execute at @s run playsound minecraft:block.glass.break master @a[x=0,tag=vortex_projectile.origin] ~ ~ ~ 1 2 0.5
+execute on origin run tag @s remove vortex_projectile.origin
+
 
 # Kill entity stack
 execute on vehicle run kill @s[predicate=entities:shield_projectile]

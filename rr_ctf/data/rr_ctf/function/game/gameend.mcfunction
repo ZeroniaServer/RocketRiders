@@ -4,9 +4,9 @@ clear @a[x=0,team=Yellow] #custom:clear
 clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents netherite_pickaxe run function items:killendweapon
 execute if entity @s[scores={endtimer=1},tag=BlueWon] run clear @a[x=0,team=Yellow] netherite_pickaxe
-execute if entity @s[scores={endtimer=1},tag=BlueWon] run loot give @a[x=0,team=Yellow] loot items:misc/piercing_pickaxe_end
+execute if entity @s[scores={endtimer=1},tag=BlueWon] as @a[x=0,team=Yellow] run loot give @s loot items:misc/piercing_pickaxe_end
 execute if entity @s[scores={endtimer=1},tag=YellowWon] run clear @a[x=0,team=Blue] netherite_pickaxe
-execute if entity @s[scores={endtimer=1},tag=YellowWon] run loot give @a[x=0,team=Blue] loot items:misc/piercing_pickaxe_end
+execute if entity @s[scores={endtimer=1},tag=YellowWon] as @a[x=0,team=Blue] run loot give @s loot items:misc/piercing_pickaxe_end
 execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectBlue,limit=1]
 execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectYellow,limit=1]
 execute if entity @s[scores={endtimer=1..}] run fill -9 74 68 -15 64 61 moving_piston replace air

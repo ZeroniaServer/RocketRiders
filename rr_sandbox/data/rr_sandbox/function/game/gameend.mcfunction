@@ -9,7 +9,7 @@ clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
 clear @a[x=0,team=Yellow] #rr_powerups:clear
 clear @a[x=0,team=Yellow] #rr_sandbox:clear
 execute if entity @s[scores={endtimer=1}] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] written_book
-execute if entity @s[scores={endtimer=1}] run loot replace entity @a[x=0,predicate=custom:on_blue_or_yellow_team] hotbar.0 loot items:books/nomicon/post_game
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run loot replace entity @s hotbar.0 loot items:books/nomicon/post_game
 scoreboard players reset @a[x=0] nomicon
 
 execute if entity @s[scores={endtimer=1},tag=YellowWon] as @a[x=0,team=Blue] run loot replace entity @s armor.chest loot items:armor/generic_gear/chestplate

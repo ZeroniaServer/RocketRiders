@@ -9,8 +9,8 @@ execute if entity @s[scores={endtimer=1}] run clear @a[x=0,scores={crusadekit=2}
 execute if entity @s[tag=BothWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_end
-execute if entity @s[tag=BlueWon,scores={endtimer=1}] run loot give @a[x=0,team=Blue,scores={crusadekit=2}] loot items:misc/shooting_saber_crusade
-execute if entity @s[tag=BlueWon,scores={endtimer=1}] run loot give @a[x=0,team=Yellow,scores={crusadekit=2}] loot items:misc/shooting_saber_end
+execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
+execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_end
 
 #Replacing Spell Wands
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents writable_book run function items:killendweapon

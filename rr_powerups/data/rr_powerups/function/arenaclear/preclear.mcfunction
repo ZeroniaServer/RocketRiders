@@ -1,5 +1,5 @@
-kill @e[x=0,predicate=entities:stinging_shield]
-kill @e[x=0,predicate=entities:stinging_shield_projectile]
+kill @e[x=0,predicate=entities:type/stinging_shield]
+kill @e[x=0,predicate=entities:type/stinging_shield_projectile]
 kill @e[x=0,type=bee]
 kill @e[x=0,type=#custom:crystal,tag=PUCrystalEntity]
 kill @e[x=0,type=trident]

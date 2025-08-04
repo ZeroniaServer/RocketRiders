@@ -1,8 +1,8 @@
 # Redirect function to the brain
-execute unless entity @s[predicate=entities:icbm/brain] run return run execute on passengers if entity @s[predicate=entities:icbm/brain] run function entities:icbm/actions/explode
+execute unless entity @s[predicate=entities:type/icbm/brain] run return run execute on passengers if entity @s[predicate=entities:type/icbm/brain] run function entities:icbm/actions/explode
 
 # Kill body and correct position
-execute on vehicle if entity @s[predicate=entities:icbm/body] run function custom:tp_passengers_to_self_and_die
+execute on vehicle if entity @s[predicate=entities:type/icbm/body] run function custom:tp_passengers_to_self_and_die
 
 # Create explosions
 execute store success score $extra_fuse var if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ClutterCollector,tag=!Explosive]

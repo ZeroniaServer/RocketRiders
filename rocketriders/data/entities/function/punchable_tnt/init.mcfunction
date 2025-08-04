@@ -1,6 +1,6 @@
 # Do nothing if already processed
 execute unless entity @s[type=tnt] run return fail
-execute if entity @s[predicate=entities:punchable_tnt] run return fail
+execute if entity @s[predicate=entities:type/punchable_tnt] run return fail
 
 ## Set up data
 data modify entity @s data.punchable_tnt set value {body:{}}

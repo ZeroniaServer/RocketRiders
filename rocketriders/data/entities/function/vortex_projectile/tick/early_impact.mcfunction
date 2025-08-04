@@ -17,7 +17,7 @@ execute if predicate game:modifier/impact_projectiles run return run function en
 
 # Chance of creating a feathered vortex if chickens were spawned
 execute if score $chickens_were_spawned var matches 0 run return run function entities:vortex_projectile/actions/break
-execute align xyz if entity @e[limit=1,dx=0,predicate=entities:vortex/brain] run return run function entities:vortex_projectile/actions/break
+execute align xyz if entity @e[limit=1,dx=0,predicate=entities:type/vortex/brain] run return run function entities:vortex_projectile/actions/break
 execute unless predicate {condition:"minecraft:random_chance",chance:0.5} run return run function entities:vortex_projectile/actions/break
 tag @s add vortex.feathered
 function entities:vortex_projectile/actions/deploy

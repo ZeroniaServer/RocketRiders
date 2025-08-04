@@ -4,7 +4,7 @@
 
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
-tag @e[x=0,predicate=entities:canopy] add canopy.forgotten_origin
+tag @e[x=0,predicate=entities:type/canopy] add canopy.forgotten_origin
 tag @a[x=0] remove canopyTP
 function everytick:spawnables
 execute if score @s endtimer matches 1 run function custom:set_global/game_started {bool:false}
@@ -82,7 +82,7 @@ execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=#custom:pot
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=tnt] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=tnt_minecart] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=item] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,predicate=entities:vortex/body] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,predicate=entities:type/vortex/body] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=armor_stand,tag=Bot] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Spectator] LeaveGame 1
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Blue] LeaveGame 1

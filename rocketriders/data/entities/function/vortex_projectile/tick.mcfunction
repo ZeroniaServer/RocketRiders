@@ -23,4 +23,4 @@ execute if entity @e[distance=..3,type=marker,tag=YellowSpawnZone,limit=1] run s
 execute if score @s entity.age matches 20.. if predicate custom:near_flag_base run scoreboard players set @s entity.age 19
 
 # Deploy
-execute if score @s entity.age matches 20.. on vehicle positioned as @s align xyz unless entity @e[limit=1,dx=0,predicate=entities:vortex/body] on passengers if entity @s[predicate=entities:vortex_projectile/brain] run function entities:vortex_projectile/actions/deploy
+execute if score @s entity.age matches 20.. on vehicle positioned as @s align xyz unless entity @e[limit=1,dx=0,predicate=entities:type/vortex/body] on passengers if entity @s[predicate=entities:type/vortex_projectile/brain] run function entities:vortex_projectile/actions/deploy

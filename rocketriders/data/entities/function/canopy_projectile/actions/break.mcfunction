@@ -1,5 +1,5 @@
 # If possible, redirect function to the body
-execute on vehicle if entity @s[predicate=entities:canopy_projectile/body] positioned as @s run return run function entities:canopy_projectile/actions/break
+execute on vehicle if entity @s[predicate=entities:type/canopy_projectile/body] positioned as @s run return run function entities:canopy_projectile/actions/break
 
 # Particles
 execute at @s run particle minecraft:item{item:{id:"minecraft:ender_pearl"}} ~ ~ ~ 0 0 0 0.05 5 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
@@ -10,6 +10,6 @@ execute at @s run playsound minecraft:entity.splash_potion.break master @a[x=0,t
 execute on origin run tag @s remove vortex_projectile.origin
 
 # Kill entity stack
-execute on vehicle run kill @s[predicate=entities:canopy_projectile]
-execute on passengers run kill @s[predicate=entities:canopy_projectile]
-kill @s[predicate=entities:canopy_projectile]
+execute on vehicle run kill @s[predicate=entities:type/canopy_projectile]
+execute on passengers run kill @s[predicate=entities:type/canopy_projectile]
+kill @s[predicate=entities:type/canopy_projectile]

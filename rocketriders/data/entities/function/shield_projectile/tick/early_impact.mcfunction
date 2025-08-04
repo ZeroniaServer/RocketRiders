@@ -1,5 +1,5 @@
 # Kill body
-execute on vehicle run kill @s[predicate=entities:shield_projectile/body]
+execute on vehicle run kill @s[predicate=entities:type/shield_projectile/body]
 
 ## If impact_projectiles is OFF
 execute unless predicate game:modifier/impact_projectiles run return run function entities:shield_projectile/actions/break

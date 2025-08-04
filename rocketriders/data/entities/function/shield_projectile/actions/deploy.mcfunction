@@ -1,8 +1,8 @@
 # Redirect function to the brain
-execute unless entity @s[predicate=entities:shield_projectile/brain] run return run execute on passengers if entity @s[predicate=entities:shield_projectile/brain] run function entities:shield_projectile/actions/deploy
+execute unless entity @s[predicate=entities:type/shield_projectile/brain] run return run execute on passengers if entity @s[predicate=entities:type/shield_projectile/brain] run function entities:shield_projectile/actions/deploy
 
 # Kill body and correct position
-execute on vehicle if entity @s[predicate=entities:shield_projectile/body] run function custom:tp_passengers_to_self_and_die
+execute on vehicle if entity @s[predicate=entities:type/shield_projectile/body] run function custom:tp_passengers_to_self_and_die
 
 # Convert to a shield entity
 data remove entity @s data.shield_projectile

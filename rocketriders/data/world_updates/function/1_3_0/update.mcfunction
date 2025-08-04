@@ -153,8 +153,14 @@ kill @e[x=0,type=armor_stand,tag=VortexItemDummy]
 execute positioned -69.5 206.5 48.5 run function entities:vortex_decoy/summon
 
 tag @e[x=0,type=marker,tag=bluejoinpad] add join_pad
+tag @e[x=0,type=marker,tag=bluejoinpad] add join_pad.blue
+tag @e[x=0,type=marker,tag=bluejoinpad] remove bluejoinpad
 tag @e[x=0,type=marker,tag=specjoinpad] add join_pad
+tag @e[x=0,type=marker,tag=specjoinpad] add join_pad.spectator
+tag @e[x=0,type=marker,tag=specjoinpad] remove specjoinpad
 tag @e[x=0,type=marker,tag=yellowjoinpad] add join_pad
+tag @e[x=0,type=marker,tag=yellowjoinpad] add join_pad.yellow
+tag @e[x=0,type=marker,tag=yellowjoinpad] remove yellowjoinpad
 tag @e[x=-79.47,y=205.00,z=94.46,distance=..1,type=marker,tag=join_pad] add join_pad.left
 tag @e[x=-82.50,y=202.00,z=78.50,distance=..1,type=marker,tag=join_pad] add join_pad.middle
 tag @e[x=-79.49,y=205.00,z=62.44,distance=..1,type=marker,tag=join_pad] add join_pad.right

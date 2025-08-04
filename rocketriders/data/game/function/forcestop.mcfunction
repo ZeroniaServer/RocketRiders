@@ -13,9 +13,9 @@ scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] gametime 0
 worldborder warning distance 0
 execute as @a[x=0] run function everytick:score_reset
 tag @e[x=0,type=armor_stand,tag=EditedSettings] remove EditedSettings
-tag @e[x=0,type=marker,tag=yellowjoinpad] add CancelJoin
-tag @e[x=0,type=marker,tag=bluejoinpad] add CancelJoin
-tag @e[x=0,type=marker,tag=specjoinpad] add CancelJoin
+tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
+tag @e[x=0,type=marker,tag=join_pad.blue] add CancelJoin
+tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
 bossbar set rr:startgame max 30
 tag @a[x=0] remove deathchamp
 tag @a[x=0] remove flagschamp

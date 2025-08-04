@@ -36,9 +36,8 @@ tag @s remove onlyBlue
 tag @s remove antigriefOff
 tag @s remove customSaberMsg
 
-#haha funny
-tag @e[x=0,type=marker,tag=tempyellow] remove bluejoinpad
-tag @e[x=0,type=marker,tag=tempyellow] add yellowjoinpad
-tag @e[x=0,type=marker,tag=tempyellow] remove tempyellow
+# change left spawn pad to yellow
+tag @e[x=0,type=marker,tag=join_pad.left] remove join_pad.blue
+tag @e[x=0,type=marker,tag=join_pad.left] add join_pad.yellow
 
 tag @s add switchGamemodes

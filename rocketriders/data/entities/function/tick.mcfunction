@@ -7,7 +7,7 @@ execute as @e[x=0,type=snowball,predicate=!entities:shield_projectile,predicate=
 execute as @e[x=0,type=snowball,predicate=!entities:shield_projectile,predicate=!entities:stinging_shield_projectile,nbt={Item:{components:{"minecraft:custom_data":{stinging_shield:1b}}}}] at @s run function entities:stinging_shield_projectile/init
 execute as @e[x=0,type=egg,predicate=!entities:vortex_projectile,predicate=!entities:icbm,nbt=!{Item:{components:{"minecraft:custom_data":{icbm:1b}}}}] at @s run function entities:vortex_projectile/init
 execute as @e[x=0,type=egg,predicate=!entities:vortex_projectile,predicate=!entities:icbm,nbt={Item:{components:{"minecraft:custom_data":{icbm:1b}}}}] at @s run function entities:icbm/init
-execute if predicate game:config/punchable_tnt as @e[x=0,type=tnt,predicate=!entities:punchable_tnt] at @s run function entities:punchable_tnt/init
+execute if predicate game:modifier/punchable_tnt as @e[x=0,type=tnt,predicate=!entities:punchable_tnt] at @s run function entities:punchable_tnt/init
 
 ## Tick entities
 # Canopy
@@ -34,4 +34,4 @@ execute as @e[x=0,predicate=entities:vortex_decoy] at @s run function entities:v
 execute as @e[x=0,predicate=entities:icbm/brain] at @s run function entities:icbm/tick
 
 # Punchable TNT
-execute if predicate game:config/punchable_tnt as @e[x=0,predicate=entities:punchable_tnt/brain,scores={entity.age=0..}] run function entities:punchable_tnt/actions/kill
+execute if predicate game:modifier/punchable_tnt as @e[x=0,predicate=entities:punchable_tnt/brain,scores={entity.age=0..}] run function entities:punchable_tnt/actions/kill

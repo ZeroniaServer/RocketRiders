@@ -14,7 +14,7 @@ effect give @a[x=0,team=Yellow] instant_health 1 100
 execute unless score Yellow: RoundsWon matches 2.. if entity @s[scores={servermode=0},tag=!realms] run function achievements:aftergameyellow
 execute unless score Yellow: RoundsWon matches 2.. run function achievements:scoresreset
 execute unless score Yellow: RoundsWon matches 2.. run kill @e[x=0,type=tnt]
-execute unless score Yellow: RoundsWon matches 2.. if predicate game:config/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
+execute unless score Yellow: RoundsWon matches 2.. if predicate game:modifier/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
 execute unless score Yellow: RoundsWon matches 2.. as @a[x=0,team=Blue] at @s run stopsound @s
 execute unless score Yellow: RoundsWon matches 2.. as @a[x=0,team=Yellow] at @s run stopsound @s
 execute unless score Yellow: RoundsWon matches 2.. as @a[x=0] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 100 0

@@ -14,7 +14,7 @@ scoreboard players reset @s endtimer
 execute if entity @s[scores={SDtime=1..15}] run tag @a[x=0] remove Winner
 execute if entity @s[scores={SDtime=1..15}] run tag @a[x=0] remove Loser
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt]
-execute if entity @s[scores={SDtime=1..15}] if predicate game:config/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
+execute if entity @s[scores={SDtime=1..15}] if predicate game:modifier/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt_minecart]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=creeper]
 

@@ -50,9 +50,9 @@ execute if entity @s[tag=Hardcore] as @a[x=0,predicate=custom:on_blue_or_yellow_
 execute if entity @s[tag=!Hardcore] as @a[x=0,predicate=custom:on_blue_or_yellow_team] if entity @s[tag=hardcore] run function modifiers:hardcorereset
 
 ##Hobbits
-execute if predicate game:config/hobbits as @a[x=0,predicate=custom:on_blue_or_yellow_team,tag=!hobbit] run function modifiers:hobbit/set
-execute if predicate game:config/hobbits as @a[x=0,predicate=!custom:on_blue_or_yellow_team,tag=hobbit] run function modifiers:hobbit/reset
-execute unless predicate game:config/hobbits as @a[x=0,tag=hobbit] run function modifiers:hobbit/reset
+execute if predicate game:modifier/hobbits as @a[x=0,predicate=custom:on_blue_or_yellow_team,tag=!hobbit] run function modifiers:hobbit/set
+execute if predicate game:modifier/hobbits as @a[x=0,predicate=!custom:on_blue_or_yellow_team,tag=hobbit] run function modifiers:hobbit/reset
+execute unless predicate game:modifier/hobbits as @a[x=0,tag=hobbit] run function modifiers:hobbit/reset
 
 #Clutter Collector
 execute if entity @s[tag=ClutterCollector,tag=!Hardcore] as @e[type=tnt,z=-50,dz=100,x=-160,dx=320,y=-20,dy=200,tag=!nosplode] run function modifiers:explosionpower/0

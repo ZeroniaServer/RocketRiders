@@ -1,5 +1,5 @@
 ## If impact_projectiles is OFF
-execute unless predicate game:config/impact_projectiles run return run kill @s
+execute unless predicate game:modifier/impact_projectiles run return run kill @s
 
 ## If impact_projectiles is ON
 # Move to the player's position

@@ -211,7 +211,7 @@ execute as @e[x=0,type=marker,tag=warExtraYellow,limit=1] at @s run fill ~ ~-5 ~
 kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
 
 #Unstable TNT Modifier
-execute if predicate game:config/unstable_tnt run function modifiers:unstabletnt
+execute if predicate game:modifier/unstable_tnt run function modifiers:unstabletnt
 
 ##Kill entity
 kill @s

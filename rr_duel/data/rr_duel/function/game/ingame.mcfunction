@@ -57,7 +57,7 @@ execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=InRanked
 #timeout
 scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1
 execute if entity @s[tag=TimeOut] run kill @e[x=0,type=tnt]
-execute if entity @s[tag=TimeOut] if predicate game:config/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
+execute if entity @s[tag=TimeOut] if predicate game:modifier/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
 execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Yellow] #custom:clear
 execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
 execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Blue] #custom:clear

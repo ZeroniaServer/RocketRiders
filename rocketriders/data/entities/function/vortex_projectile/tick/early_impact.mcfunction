@@ -16,7 +16,7 @@ execute positioned -10 65 64 if entity @s[distance=..5] if entity @e[x=0,type=ar
 execute positioned 34 65 64 if entity @s[distance=..5] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run return run kill @s
 
 # Deploy if impact projectiles is on
-execute if predicate game:config/impact_projectiles run return run function entities:vortex_projectile/actions/deploy
+execute if predicate game:modifier/impact_projectiles run return run function entities:vortex_projectile/actions/deploy
 
 # Chance of creating a feathered vortex if chickens were spawned
 execute if score $chickens_were_spawned var matches 0 run return 0

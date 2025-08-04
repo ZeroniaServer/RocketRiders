@@ -6,7 +6,7 @@
         "player": [
           {
             "condition": "minecraft:reference",
-            "name": "game:config/punchable_tnt"
+            "name": "game:modifier/punchable_tnt"
           }
         ],
         "entity": {

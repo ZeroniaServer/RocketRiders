@@ -10,10 +10,7 @@ execute if entity @e[distance=..3,type=marker,tag=BlueSpawnZone,limit=1] run ret
 execute if entity @e[distance=..3,type=marker,tag=YellowSpawnZone,limit=1] run return run kill @s
 
 # Prevent deployment near flags
-execute positioned -10 65 -64 if entity @s[distance=..5] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run return run kill @s
-execute positioned 34 65 -64 if entity @s[distance=..5] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run return run kill @s
-execute positioned -10 65 64 if entity @s[distance=..5] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run return run kill @s
-execute positioned 34 65 64 if entity @s[distance=..5] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run return run kill @s
+execute if predicate custom:near_flag_base run return run kill @s
 
 # Deploy if impact projectiles is on
 execute if predicate game:modifier/impact_projectiles run return run function entities:vortex_projectile/actions/deploy

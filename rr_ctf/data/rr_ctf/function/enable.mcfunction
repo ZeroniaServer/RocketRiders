@@ -1,4 +1,5 @@
 scoreboard players reset * gamemode_components
+scoreboard players set $has_flags gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add ctfEnabled

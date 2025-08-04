@@ -31,10 +31,7 @@ execute if score $BlueShield crusadehp matches -1000..0 if score @s entity.age m
 execute if score $YellowShield crusadehp matches -1000..0 if score @s entity.age matches 19..20 if entity @s[x=1,y=40,z=67,dx=22,dy=19] run scoreboard players remove @s entity.age 2
 
 # Pause aging near flags (ctf)
-execute if score @s entity.age matches 19..20 positioned -10 65 -64 as @s[distance=..5] run scoreboard players remove @s entity.age 1
-execute if score @s entity.age matches 19..20 positioned 34 65 -64 as @s[distance=..5] run scoreboard players remove @s entity.age 1
-execute if score @s entity.age matches 19..20 positioned -10 65 64 as @s[distance=..5] run scoreboard players remove @s entity.age 1
-execute if score @s entity.age matches 19..20 positioned 34 65 64 as @s[distance=..5] run scoreboard players remove @s entity.age 1
+execute if score @s entity.age matches 19..20 if predicate custom:near_flag_base run scoreboard players remove @s entity.age 1
 
 # Deploy
 execute if score @s entity.age matches 20.. run function entities:stinging_shield_projectile/actions/deploy

@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 function gamemodes:storesettings
 function arenaclear:enableitems
 tag @s remove switchGamemodes

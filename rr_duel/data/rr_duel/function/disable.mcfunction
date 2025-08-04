@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 execute if entity @s[tag=!WasMolerat] run scoreboard players set $TORAGE CmdData 1
 execute if entity @s[tag=duelLast] run data modify storage rocketriders:storage Tags append value "duelLast"
 execute if entity @s[tag=duelEnabled] run function gamemodes:restoresettings

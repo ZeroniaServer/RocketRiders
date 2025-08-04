@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 tag @s remove switchGamemodes
 tag @s add pveEnabled
 tag @s add HardcoreOff

@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 tag @s remove crusadeEnabled
 function arenaclear:unlockdecos
 kill @e[x=0,type=marker,tag=crusadeWall]
@@ -33,9 +35,6 @@ tag @s remove ChaosWasOn
 tag @s[tag=ClutterCollectorWasOn] add ClutterCollector
 tag @s remove ClutterCollectorOff
 tag @s remove portalOverride
-tag @s remove HobbitsOff
-execute if entity @s[tag=HobbitsWasOn] run scoreboard players set $hobbits config 1
-tag @s remove HobbitsWasOn
 scoreboard players reset @a[x=0] crusadechange
 
 #item enabling/disabling

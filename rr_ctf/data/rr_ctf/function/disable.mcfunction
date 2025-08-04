@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 tag @s remove ctfEnabled
 tag @s remove ResidersOff
 tag @s[tag=ResidersWasOn] add Residers

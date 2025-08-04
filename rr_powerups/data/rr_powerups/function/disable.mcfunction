@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove powerupsEnabled
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ResidersOff
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ResidersWasOn] add Residers

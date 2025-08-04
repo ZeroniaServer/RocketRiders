@@ -1,3 +1,6 @@
+scoreboard players reset * gamemode_components
+scoreboard players set $settings_locked gamemode_components 1
+
 tag @s remove switchGamemodes
 
 tag @s[tag=Molerat] add MoleratOff

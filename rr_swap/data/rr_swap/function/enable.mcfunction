@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 tag @s remove switchGamemodes
 tag @s add swapEnabled
 summon marker 12 55 0 {Tags:["swapplatform"]}

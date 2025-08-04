@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 tag @s remove switchGamemodes
 tag @s add powerupsEnabled
 tag @s[tag=Residers] add ResidersWasOn

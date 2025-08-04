@@ -3,10 +3,7 @@ scoreboard players add @e[x=0,type=fireball,tag=Cluster,tag=!Still,tag=!endFireb
 
 execute as @e[x=0,type=fireball,tag=!ClusterSpawn,scores={Clustertime=1}] at @s run tag @s add ClusterStarter
 
-execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~ ~2 ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
-execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~ ~-2 ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
-execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~2 ~ ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
-execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run summon fireball ~-2 ~ ~ {Tags:["ClusterFireball","ClusterSpawn"],ExplosionPower:1,Motion:[0.0d,0.0d,0.0d]}
+execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run function everytick:cluster/split
 scoreboard players set @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] Clustertime 8
 
 execute as @e[x=0,type=fireball,tag=ClusterSpawn] at @s if entity @e[type=fireball,tag=ClusterStarter,distance=..5,limit=1] run scoreboard players add @s Clustertime 0

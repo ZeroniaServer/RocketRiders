@@ -1,5 +1,6 @@
 scoreboard players reset * gamemode_components
 scoreboard players set $no_portal gamemode_components 1
+scoreboard players set $neutral_utility_colors gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add chaseEnabled
@@ -22,9 +23,6 @@ tag @s add noTeamBalance
 tag @s[tag=!doStacking] add stackingWasOff
 tag @s add doStacking
 tag @s add stackingOn
-tag @s add custVortParticle
-tag @s add customNova
-tag @s add customShield
 tag @s add onlyBlue
 tag @s add antigriefOff
 tag @s add customSaberMsg

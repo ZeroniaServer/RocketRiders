@@ -12,13 +12,13 @@ execute if score @s entity.age matches 1.. if predicate entities:origin_team/yel
 execute if score @s entity.age matches 1.. if predicate entities:origin_team/none if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
 # Pause aging inside of portals
-execute if score @s entity.age matches 8..9 if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,predicate=!game:gamemode_components/no_portal] run scoreboard players remove @s entity.age 1
-execute if score @s entity.age matches 8..9 if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,predicate=!game:gamemode_components/no_portal] run scoreboard players remove @s entity.age 2
-execute if score @s entity.age matches 8..9 if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,predicate=!game:gamemode_components/no_portal] run scoreboard players remove @s entity.age 1
-execute if score @s entity.age matches 8..9 if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield,predicate=!game:gamemode_components/no_portal] run scoreboard players remove @s entity.age 2
+execute unless predicate game:gamemode_components/no_portal if score @s entity.age matches 8..9 if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run scoreboard players remove @s entity.age 1
+execute unless predicate game:gamemode_components/no_portal if score @s entity.age matches 8..9 if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] run scoreboard players remove @s entity.age 2
+execute unless predicate game:gamemode_components/no_portal if score @s entity.age matches 8..9 if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run scoreboard players remove @s entity.age 1
+execute unless predicate game:gamemode_components/no_portal if score @s entity.age matches 8..9 if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run scoreboard players remove @s entity.age 2
 
 # Pause aging near the void
-execute if score @s entity.age matches 8..9 if predicate custom:canopy_nearvoid if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield] run scoreboard players remove @s entity.age 1
+execute if score @s entity.age matches 8..9 if predicate custom:canopy_nearvoid unless predicate game:gamemode_components/neutral_utility_colors run scoreboard players remove @s entity.age 1
 
 # Pause aging near spawnpoints
 execute if score @s entity.age matches 8..9 if entity @e[distance=..7,type=marker,tag=BlueSpawnZone,limit=1] run scoreboard players remove @s entity.age 1

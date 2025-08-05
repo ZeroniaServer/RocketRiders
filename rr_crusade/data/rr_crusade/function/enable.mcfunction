@@ -1,4 +1,5 @@
 scoreboard players reset * gamemode_components
+scoreboard players set $crusade_portal gamemode_components 1
 scoreboard players set $no_portal gamemode_components 1
 scoreboard players set $config_override.hobbits gamemode_components -1
 

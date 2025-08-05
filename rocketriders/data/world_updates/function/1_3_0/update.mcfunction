@@ -66,6 +66,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] 
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $config_override.hobbits gamemode_components -1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $neutral_utility_colors gamemode_components 1
 
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $crusade_portal gamemode_components 1
+
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $settings_locked gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] run scoreboard players set $no_portal gamemode_components 1

@@ -14,8 +14,8 @@ execute if predicate custom:nearvoid run return run function entities:shield_pro
 execute if entity @e[distance=..3,type=marker,tag=BlueSpawnZone,limit=1] run return run function entities:shield_projectile/actions/break
 execute if entity @e[distance=..3,type=marker,tag=YellowSpawnZone,limit=1] run return run function entities:shield_projectile/actions/break
 # Prevent deployment inside of portals (crusade)
-execute if score $BlueShield crusadehp matches -1000..0 if entity @s[x=1,y=40,z=-67,dx=22,dy=19] run return run function entities:shield_projectile/actions/break
-execute if score $YellowShield crusadehp matches -1000..0 if entity @s[x=1,y=40,z=67,dx=22,dy=19] run return run function entities:shield_projectile/actions/break
+execute if predicate rr_crusade:blue_portal_revealed if entity @s[x=1,y=40,z=-67,dx=22,dy=19] run return run function entities:shield_projectile/actions/break
+execute if predicate rr_crusade:yellow_portal_revealed if entity @s[x=1,y=40,z=67,dx=22,dy=19] run return run function entities:shield_projectile/actions/break
 # Prevent deployment near flags (ctf)
 execute if predicate custom:near_flag_base run return run function entities:shield_projectile/actions/break
 

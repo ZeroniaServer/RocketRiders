@@ -25,10 +25,10 @@ execute if score @s entity.age matches 8..9 if entity @e[distance=..7,type=marke
 execute if score @s entity.age matches 8..9 if entity @e[distance=..7,type=marker,tag=YellowSpawnZone,limit=1] run scoreboard players remove @s entity.age 1
 
 # Pause aging inside of portals (crusade)
-execute if score $YellowShield crusadehp matches -1000..0 if score @s entity.age matches 8..9 at @s if entity @s[x=0,y=44,z=64,dx=24,dy=12,dz=6] run scoreboard players remove @s entity.age 1
-execute if score $YellowShield crusadehp matches -1000..0 if score @s entity.age matches 8..9 at @s if entity @s[x=3,y=43,z=66,dx=18,dy=1,dz=2] run scoreboard players remove @s entity.age 2
-execute if score $BlueShield crusadehp matches -1000..0 if score @s entity.age matches 8..9 at @s if entity @s[x=0,y=44,z=-70,dx=24,dy=12,dz=6] run scoreboard players remove @s entity.age 1
-execute if score $BlueShield crusadehp matches -1000..0 if score @s entity.age matches 8..9 at @s if entity @s[x=3,y=43,z=-68,dx=18,dy=1,dz=2] run scoreboard players remove @s entity.age 2
+execute if predicate rr_crusade:yellow_portal_revealed if score @s entity.age matches 8..9 at @s if entity @s[x=0,y=44,z=64,dx=24,dy=12,dz=6] run scoreboard players remove @s entity.age 1
+execute if predicate rr_crusade:yellow_portal_revealed if score @s entity.age matches 8..9 at @s if entity @s[x=3,y=43,z=66,dx=18,dy=1,dz=2] run scoreboard players remove @s entity.age 2
+execute if predicate rr_crusade:blue_portal_revealed if score @s entity.age matches 8..9 at @s if entity @s[x=0,y=44,z=-70,dx=24,dy=12,dz=6] run scoreboard players remove @s entity.age 1
+execute if predicate rr_crusade:blue_portal_revealed if score @s entity.age matches 8..9 at @s if entity @s[x=3,y=43,z=-68,dx=18,dy=1,dz=2] run scoreboard players remove @s entity.age 2
 
 # Deploy
 execute if score @s entity.age matches 9.. run function entities:canopy_projectile/actions/deploy

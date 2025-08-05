@@ -31,8 +31,8 @@ execute if entity @e[distance=..7,type=marker,tag=YellowSpawnZone,limit=1] run r
 # Prevent deployment inside of portals (crusade)
 execute if score $YellowShield crusadehp matches -1000..0 at @s if entity @s[x=0,y=44,z=64,dx=24,dy=12,dz=6] run return run kill @s
 execute if score $YellowShield crusadehp matches -1000..0 at @s if entity @s[x=3,y=43,z=66,dx=18,dy=1,dz=2] run return run kill @s
-execute if score $BlueShield crusadehp matches -1000..0 at @s if entity @s[x=0,y=44,z=-70,dx=24,dy=12,dz=6] run return run kill @s
-execute if score $BlueShield crusadehp matches -1000..0 at @s if entity @s[x=3,y=43,z=-68,dx=18,dy=1,dz=2] run return run kill @s
+execute if predicate rr_crusade:blue_portal_revealed at @s if entity @s[x=0,y=44,z=-70,dx=24,dy=12,dz=6] run return run kill @s
+execute if predicate rr_crusade:blue_portal_revealed at @s if entity @s[x=3,y=43,z=-68,dx=18,dy=1,dz=2] run return run kill @s
 
 # Re-initialise as a "canopy" entity
 data remove entity @s data.canopy_projectile

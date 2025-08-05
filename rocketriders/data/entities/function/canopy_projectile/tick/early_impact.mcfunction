@@ -18,21 +18,7 @@ execute at @s unless block ~ ~1 ~ #custom:air run return run kill @s
 
 execute at @s run fill ~ ~1 ~ ~ ~1 ~ jungle_leaves[persistent=false] replace #custom:air
 
-# Prevent deployment inside of portals
-execute unless predicate game:gamemode_components/no_portal if entity @s[x=-13,y=37,z=71,dx=50,dy=21,dz=6] run return run kill @s
-execute unless predicate game:gamemode_components/no_portal if entity @s[x=-10,y=36,z=73,dx=44,dy=1,dz=2] run return run kill @s
-execute unless predicate game:gamemode_components/no_portal if entity @s[x=-13,y=37,z=-77,dx=50,dy=21,dz=6] run return run kill @s
-execute unless predicate game:gamemode_components/no_portal if entity @s[x=-10,y=36,z=-75,dx=44,dy=1,dz=2] run return run kill @s
-# Prevent deployment near the void
-execute if predicate custom:canopy_nearvoid unless predicate game:gamemode_components/neutral_utility_colors run return run kill @s
-# Prevent deployment near spawnpoints
-execute if entity @e[distance=..7,type=marker,tag=BlueSpawnZone,limit=1] run return run kill @s
-execute if entity @e[distance=..7,type=marker,tag=YellowSpawnZone,limit=1] run return run kill @s
-# Prevent deployment inside of portals (crusade)
-execute if score $YellowShield crusadehp matches -1000..0 at @s if entity @s[x=0,y=44,z=64,dx=24,dy=12,dz=6] run return run kill @s
-execute if score $YellowShield crusadehp matches -1000..0 at @s if entity @s[x=3,y=43,z=66,dx=18,dy=1,dz=2] run return run kill @s
-execute if predicate rr_crusade:blue_portal_revealed at @s if entity @s[x=0,y=44,z=-70,dx=24,dy=12,dz=6] run return run kill @s
-execute if predicate rr_crusade:blue_portal_revealed at @s if entity @s[x=3,y=43,z=-68,dx=18,dy=1,dz=2] run return run kill @s
+execute at @s unless predicate entities:canopy_can_be_deployed run return run kill @s
 
 # Re-initialise as a "canopy" entity
 data remove entity @s data.canopy_projectile

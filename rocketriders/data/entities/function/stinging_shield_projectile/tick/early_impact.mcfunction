@@ -11,17 +11,8 @@ execute if entity @s[x=-12,y=36,z=74,dx=48,dy=25,dz=0] run return run function e
 execute if predicate custom:nearvoid run return run function entities:stinging_shield_projectile/actions/break
 execute if entity @s[y=175,dy=100] run return run function entities:stinging_shield_projectile/actions/break
 execute unless predicate custom:insideborder run return run function entities:stinging_shield_projectile/actions/break
-# Prevent deployment inside of portals
-execute if entity @s[x=-12,y=33,z=-74,dx=48,dy=28] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:gamemode_components/no_portal] run return run function entities:stinging_shield_projectile/actions/break
-execute if entity @s[x=-12,y=33,z=74,dx=48,dy=28] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:gamemode_components/no_portal] run return run function entities:stinging_shield_projectile/actions/break
-# Prevent deployment near spawnpoints
-execute if entity @e[distance=..3,type=marker,tag=BlueSpawnZone,limit=1] run return run function entities:stinging_shield_projectile/actions/break
-execute if entity @e[distance=..3,type=marker,tag=YellowSpawnZone,limit=1] run return run function entities:stinging_shield_projectile/actions/break
-# Prevent deployment inside of portals (crusade)
-execute if predicate rr_crusade:blue_portal_revealed if entity @s[x=1,y=40,z=-67,dx=22,dy=19] run return run function entities:stinging_shield_projectile/actions/break
-execute if predicate rr_crusade:yellow_portal_revealed if entity @s[x=1,y=40,z=67,dx=22,dy=19] run return run function entities:stinging_shield_projectile/actions/break
-# Prevent deployment near flags (ctf)
-execute if predicate custom:near_flag_base run return run function entities:stinging_shield_projectile/actions/break
+
+execute unless predicate entities:stinging_shield_can_be_deployed run return run function entities:stinging_shield_projectile/actions/break
 
 # Re-initialise as a "stinging_shield" entity
 data remove entity @s data.stinging_shield_projectile

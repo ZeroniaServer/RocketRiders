@@ -5,28 +5,8 @@
       "conditions": {
         "player": [
           {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:any_of",
-              "terms": [
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "flag.is_dead": 1
-                  }
-                },
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "event.player_dies": {
-                      "min": 1
-                    }
-                  }
-                }
-              ]
-            }
+            "condition": "minecraft:reference",
+            "name": "custom:alive"
           }
         ]
       }

@@ -52,10 +52,14 @@ scoreboard players reset @a[x=0,scores={UKTimer=55..}] UKTimer
 execute as @e[x=0,type=tnt,tag=UtilKilled] at @s run tag @a[team=!Spectator,distance=..6] add UtilKilled
 execute as @e[x=0,type=tnt,tag=UtilKilled] at @s store result score @a[team=!Spectator,distance=..6] KillerUUID run scoreboard players get @s UUIDTracker
 
+# Fix for players joining with legacy canopyTP tag
+execute as @a[tag=canopyTP] run attribute @s minecraft:safe_fall_distance base reset
+execute as @a[tag=canopyTP] run attribute @s minecraft:jump_strength base reset
+execute as @a[tag=canopyTP] run attribute @s minecraft:movement_speed base reset
+tag @a[tag=canopyTP] remove canopyTP
+
 #Canopy teleport remove effects
-execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy
-execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy
-execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy
+execute as @a[x=0,tag=canopy_teleporting,predicate=!custom:on_blue_or_yellow_team] run function custom:canopy_teleporting_effect/remove
 
 #Disable trigger objectives when appropriate
 scoreboard players reset @a[predicate=!custom:indimension] LeaveMidgame

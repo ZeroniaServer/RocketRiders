@@ -5,7 +5,7 @@
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
 tag @e[x=0,predicate=entities:type/canopy] add canopy.forgotten_origin
-tag @a[x=0] remove canopyTP
+function custom:canopy_teleporting_effect/remove
 function everytick:spawnables
 execute if score @s endtimer matches 1 run function custom:set_global/game_started {bool:false}
 tag @s[scores={endtimer=1}] remove SuddenDeath

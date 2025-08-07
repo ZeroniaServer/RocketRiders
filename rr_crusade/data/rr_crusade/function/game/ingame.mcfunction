@@ -1,9 +1,6 @@
 #leave midgame
 execute if entity @s[tag=!SMActive] run function rr_crusade:game/leavemidgame
 
-#destroy crafting slots
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] if items entity @s player.crafting.* * at @s run function rr_crusade:game/destroycraftingslots
-
 #general
 function rr_crusade:game/cancel_utility
 

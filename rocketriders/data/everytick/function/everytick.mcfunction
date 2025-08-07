@@ -19,6 +19,9 @@ tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
 tag @e[limit=3,x=0,type=marker,tag=join_pad,tag=join_pad.show_barrier] add join_pad.was_showing_barrier
 tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 
+# Crafting Slots
+execute as @a[x=0,gamemode=!spectator] if items entity @s player.crafting.* * run function items:crafting/check
+
 #Server mode
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=!SMCustom] remove SMActive
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=1..}] add SMActive

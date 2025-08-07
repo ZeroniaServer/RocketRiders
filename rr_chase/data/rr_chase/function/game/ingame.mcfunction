@@ -1,9 +1,6 @@
 #Leave midgame
 execute if entity @s[tag=!SMActive] run function rr_chase:game/leavemidgame
 
-#destroy crafting slots
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] if items entity @s player.crafting.* * at @s run function game:destroycraftingslots
-
 #Item RNG (exception for arrows)
 tag @s add givenArrows
 tag @s add givenArrowsTwice

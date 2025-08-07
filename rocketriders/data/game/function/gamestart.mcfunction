@@ -173,7 +173,3 @@ execute if entity @s[tag=Countdown] run function game:countdown
 
 ##Display CancelJoin join pad barriers
 tag @e[x=0,type=marker,tag=CancelJoin] add join_pad.show_barrier
-
-##Disable crafting slots
-execute unless predicate game:game_started as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function game:disablecraftingslots
-execute as @a[team=!Yellow,team=!Blue] run function game:disablecraftingslots

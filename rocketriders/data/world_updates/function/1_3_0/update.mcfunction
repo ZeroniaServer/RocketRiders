@@ -50,29 +50,36 @@ scoreboard players reset 24000 daytime
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy
 scoreboard objectives add config dummy
+scoreboard objectives add gamemode_components dummy
 
-# early stages of nuking Selection armour stand...
+## early stages of nuking Selection armour stand...
 execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches -2147483648..2147483647 store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount matches -2147483648..2147483647 store result score $shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount matches -2147483648..2147483647 store result score $stinging_shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount
-
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
 
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $config_override.hobbits gamemode_components -1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $neutral_utility_colors gamemode_components 1
-
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $crusade_portal gamemode_components 1
-
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $settings_locked gamemode_components 1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
+# Updating gamemode components
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_utility_colors gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customNova
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customShield
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove custVortParticle
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] run scoreboard players set $no_portal gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPortal
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $settings_locked gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
+# New gamemode components
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $crusade_portal gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $config_override.hobbits gamemode_components -1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!ctfEnabled] run scoreboard players set $main_item/bow gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $main_item/pickaxe gamemode_components 1
 
+##
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
 
 scoreboard objectives add toggleParticles trigger

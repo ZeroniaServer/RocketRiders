@@ -61,14 +61,14 @@ fill 13 63 65 11 63 65 obsidian
 setblock 14 63 66 obsidian
 setblock 10 63 66 obsidian
 setblock 12 63 64 obsidian
-execute if entity @s[tag=!customSpawn] run fill 13 65 67 11 65 67 obsidian
-execute if entity @s[tag=!customSpawn] run setblock 12 66 67 obsidian
+execute if entity @s[tag=!customSpawnpointBlockProtection] run fill 13 65 67 11 65 67 obsidian
+execute if entity @s[tag=!customSpawnpointBlockProtection] run setblock 12 66 67 obsidian
 fill 11 63 -65 13 63 -66 obsidian
 setblock 12 63 -64 obsidian
 setblock 10 63 -66 obsidian
 setblock 14 63 -66 obsidian
-execute if entity @s[tag=!customSpawn] run fill 11 65 -67 13 65 -67 obsidian
-execute if entity @s[tag=!customSpawn] run setblock 12 66 -67 obsidian
+execute if entity @s[tag=!customSpawnpointBlockProtection] run fill 11 65 -67 13 65 -67 obsidian
+execute if entity @s[tag=!customSpawnpointBlockProtection] run setblock 12 66 -67 obsidian
 
 ##Extra obsidian if necessary
 execute if entity @s[tag=!customObsidian] run fill -15 64 67 39 64 67 obsidian

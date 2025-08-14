@@ -8,5 +8,5 @@ tag @s add ResidersOff
 tag @s[tag=Chaos] add ChaosWasOn
 tag @s add ChaosOff
 tag @s add customObsidian
-tag @s add customSpawn
+tag @s add customSpawnpointBlockProtection
 execute unless entity @e[x=0,type=marker,tag=captureMiddle,limit=1] run summon marker 12.5 54.0 0.0 {Tags:["captureMiddle"]}

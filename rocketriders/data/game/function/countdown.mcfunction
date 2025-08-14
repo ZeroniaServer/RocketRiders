@@ -39,8 +39,8 @@ execute if predicate game:game_started run bossbar set rr:startgame value 30
 execute if predicate game:game_started run bossbar set rr:startgame max 30
 execute if predicate game:game_started run function game:randomsplash
 execute if predicate game:game_started as @a[x=0] at @s run playsound entity.generic.explode master @s ~ ~ ~ 100 1.2
-execute if predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,team=Yellow] 12 64 66 -180 0
-execute if predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,team=Blue] 12 64 -66 0 0
+execute if predicate game:game_started run tp @a[x=0,team=Yellow] 12 64 66 -180 0
+execute if predicate game:game_started run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if predicate game:game_started run effect clear @a[x=0,team=Blue] resistance
 execute if predicate game:game_started run effect clear @a[x=0,team=Yellow] resistance
 execute if predicate game:game_started run effect give @a[x=0,team=Blue] fire_resistance 10 100 true

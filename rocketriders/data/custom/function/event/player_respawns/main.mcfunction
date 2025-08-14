@@ -4,10 +4,8 @@ scoreboard players set @s flag.is_dead 0
 effect clear @s levitation
 
 # Ensure return to spawnpoint
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawns] run tp @s[team=Blue] 12 64 -66 0 0
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawns] run tp @s[team=Yellow] 12 64 66 -180 0
-tp @s[tag=crosser,team=Blue] 12 64 -66 0 0
-tp @s[tag=crosser,team=Yellow] 12 64 66 -180 0
+tp @s[team=Blue] 12 64 -66 0 0
+tp @s[team=Yellow] 12 64 66 -180 0
 
 # Reset motion
 tp @s @s

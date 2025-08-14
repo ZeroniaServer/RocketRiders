@@ -46,20 +46,20 @@ clear @a[x=0,tag=JoinBlue]
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function game:saberblue
 execute unless predicate game:game_started if entity @s[tag=Hardcore] as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
 execute unless predicate game:game_started if predicate game:modifier/hobbits as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
-execute unless predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
+execute unless predicate game:game_started run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
 execute unless predicate game:game_started if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
 execute unless predicate game:game_started if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
 execute unless predicate game:game_started if entity @s[tag=!chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"blue","italic":true}
 execute unless predicate game:game_started if entity @s[tag=chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"red","italic":true}
 execute unless predicate game:game_started run effect give @a[x=0,tag=JoinBlue] resistance infinite 100 true
-execute if predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
+execute if predicate game:game_started run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
 execute if predicate game:game_started if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"dark_aqua"}]
 execute if predicate game:game_started if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
 execute if predicate game:game_started run gamemode survival @a[x=0,team=Blue,gamemode=adventure]
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinBlue] resistance
-execute if entity @s[tag=!customSpawns] as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
 execute if entity @s[scores={servermode=0},tag=!realms,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
 execute if entity @s[scores={servermode=0},tag=!realms,tag=chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
@@ -95,17 +95,17 @@ clear @a[x=0,tag=JoinYellow]
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinYellow] run function game:saberyellow
 execute unless predicate game:game_started if entity @s[tag=Hardcore] as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
 execute unless predicate game:game_started if predicate game:modifier/hobbits as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set
-execute unless predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
+execute unless predicate game:game_started run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
 execute unless predicate game:game_started as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
 execute unless predicate game:game_started run tellraw @a[x=0,tag=JoinYellow] {"text":"Fall off the base to return to the Lobby.","color":"gold","italic":true}
 execute unless predicate game:game_started run effect give @a[x=0,tag=JoinYellow] resistance infinite 100 true
-execute if predicate game:game_started if entity @s[tag=!customSpawns] run tp @a[x=0,tag=JoinYellow] 12 64 66 180 0
+execute if predicate game:game_started run tp @a[x=0,tag=JoinYellow] 12 64 66 180 0
 execute if predicate game:game_started as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 execute if predicate game:game_started run gamemode survival @a[x=0,team=Yellow,gamemode=adventure]
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinYellow] resistance
-execute if entity @s[tag=!customSpawns] as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
 execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
 execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tag @s add achievementInformed

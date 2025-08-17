@@ -8,7 +8,7 @@ scoreboard players enable @a[x=0,team=Lobby] LobbyWarp
 scoreboard players reset @a[team=!Lobby] LobbyWarp
 
 #Cancel parkour
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used a Lobby Warp, so your Parkour run was canceled.","color":"red"}]
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used a Lobby Warp, so your Parkour run was canceled.","color":"red"}]
 execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run clear @s
 execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inParkour
 

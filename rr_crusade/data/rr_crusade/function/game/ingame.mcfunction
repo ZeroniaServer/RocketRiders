@@ -1,5 +1,5 @@
 #leave midgame
-execute if entity @s[tag=!SMActive] run function rr_crusade:game/leavemidgame
+execute if score @s servermode matches 0 run function rr_crusade:game/leavemidgame
 
 #general
 function rr_crusade:game/cancel_utility

@@ -36,7 +36,7 @@ scoreboard players reset @a[x=0,scores={LeaveGame=1..}] novattach
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
 
 #Parkour quit
-execute if entity @s[tag=!SMActive] as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]
+execute if score @s servermode matches 0 as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]
 execute as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tag @s remove inParkour
 
 #Handle achievements with servermode

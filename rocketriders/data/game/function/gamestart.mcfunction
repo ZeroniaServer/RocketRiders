@@ -55,8 +55,8 @@ execute unless predicate game:game_started run effect give @a[x=0,tag=JoinBlue] 
 execute if predicate game:game_started run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
 execute if predicate game:game_started if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"dark_aqua"}]
 execute if predicate game:game_started if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
-execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started if entity @s[tag=!customSaberMsg] if score @s servermode matches 0 run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started if entity @s[tag=!customSaberMsg] unless score @s servermode matches 0 run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
 execute if predicate game:game_started run gamemode survival @a[x=0,team=Blue,gamemode=adventure]
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinBlue] resistance
 execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
@@ -101,8 +101,8 @@ execute unless predicate game:game_started run tellraw @a[x=0,tag=JoinYellow] {"
 execute unless predicate game:game_started run effect give @a[x=0,tag=JoinYellow] resistance infinite 100 true
 execute if predicate game:game_started run tp @a[x=0,tag=JoinYellow] 12 64 66 180 0
 execute if predicate game:game_started as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
-execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=!SMActive] run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started if entity @s[tag=!customSaberMsg,tag=SMActive] run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started if entity @s[tag=!customSaberMsg] if score @s servermode matches 0 run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started if entity @s[tag=!customSaberMsg] unless score @s servermode matches 0 run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 execute if predicate game:game_started run gamemode survival @a[x=0,team=Yellow,gamemode=adventure]
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinYellow] resistance
 execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
@@ -128,7 +128,7 @@ execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s run tag @a[distance=2..
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinSpec
 execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinSpec
 execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinSpec
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] if entity @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] as @a[x=0,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 if entity @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] as @a[x=0,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 tag @a[x=0,gamemode=spectator] remove JoinSpec
 execute if score $dust CmdData matches 1 as @e[x=0,type=marker,tag=join_pad.spectator,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:gray_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=!CancelJoin,tag=!JustCleared] at @s run tag @a[team=!Spectator,distance=..1,limit=1,sort=random] add JoinSpec
@@ -140,23 +140,23 @@ clear @a[x=0,tag=JoinSpec]
 scoreboard players enable @a[x=0,team=Spectator] leaveSpec
 tag @a[x=0,scores={leaveSpec=1..}] add LeaveTeams
 scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or fly into the green particle cluster to stop spectating!","color":"dark_green","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or fly into the green particle cluster to stop spectating!","color":"dark_green","italic":true}]
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run title @a[team=Spectator] actionbar {"text":"Fly into the green particle cluster to stop spectating!","color":"green","bold":true}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run title @a[team=Spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run title @a[team=Spectator] actionbar {"text":"Fly into the green particle cluster to stop spectating!","color":"green","bold":true}
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run title @a[team=Spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
 gamemode spectator @a[x=0,tag=JoinSpec]
 tag @a[x=0] remove JoinSpec
 tp @a[x=0,tag=AlreadySpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=AlreadySpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a[x=0] remove AlreadySpec
-execute if score $dust CmdData matches 1 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[0,1,0],scale:4} ~ ~ ~ 0.7 0.7 0.7 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
-execute if score $dust CmdData matches 1 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[0,1,0],scale:3} ~ ~ ~ 0.8 0.8 0.8 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
-execute if score $dust CmdData matches 1 unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[0,1,0],scale:2} ~ ~ ~ 1 1 1 0.3 10 force @a[x=0,team=Spectator,predicate=custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[0,1,0],scale:4} ~ ~ ~ 0.7 0.7 0.7 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[0,1,0],scale:3} ~ ~ ~ 0.8 0.8 0.8 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
+execute if score $dust CmdData matches 1 as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 as @e[x=0,type=marker,tag=LeaveSpec] at @s run particle minecraft:dust{color:[0,1,0],scale:2} ~ ~ ~ 1 1 1 0.3 10 force @a[x=0,team=Spectator,predicate=custom:belowroof]
 
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] as @e[x=0,type=marker,tag=LeaveSpec] at @s run tag @a[team=Spectator,distance=..4] add LeaveTeams
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 as @e[x=0,type=marker,tag=LeaveSpec] at @s run tag @a[team=Spectator,distance=..4] add LeaveTeams
 
 #Keep spectators inside arena
 execute as @a[x=0,team=Spectator] at @s unless predicate custom:insideborder_lenient run tag @s add leftBorder

@@ -54,44 +54,44 @@ execute as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] at @s run 
 execute as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!hideParticles] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
 #Calculate final time
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $60 constant
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $100 constant
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs *= $100 constant
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci *= $10 constant
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime = @s parkourDeci2
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourDeci
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourSecs
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourMins
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $60 constant
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $100 constant
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs /= $100 constant
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci /= $10 constant
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $60 constant
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins *= $100 constant
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs *= $100 constant
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci *= $10 constant
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime = @s parkourDeci2
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourDeci
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourSecs
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s finalParkourTime += @s parkourMins
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $60 constant
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourMins /= $100 constant
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourSecs /= $100 constant
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run scoreboard players operation @s parkourDeci /= $10 constant
 
 #First time completion
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourTime = @s finalParkourTime
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourMins = @s parkourMins
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourSecs = @s parkourSecs
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourDeci = @s parkourDeci
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourDeci2 = @s parkourDeci2
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourTime = @s finalParkourTime
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourMins = @s parkourMins
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourSecs = @s parkourSecs
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourDeci = @s parkourDeci
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=!firstParkour] run scoreboard players operation @s bestParkourDeci2 = @s parkourDeci2
 
 #Repeat completion
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run tellraw @s [{"text":"That's a new personal best time!","color":"green","italic":true}]
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourMins = @s parkourMins
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourSecs = @s parkourSecs
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourDeci = @s parkourDeci
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourDeci2 = @s parkourDeci2
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run tellraw @s [{"text":"That's a new personal best time!","color":"green","italic":true}]
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourMins = @s parkourMins
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourSecs = @s parkourSecs
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourDeci = @s parkourDeci
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourDeci2 = @s parkourDeci2
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
 
 #Store in leaderboard
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] if score @e[x=0,type=area_effect_cloud,tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:parkour/updatelb
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] if score @e[x=0,type=area_effect_cloud,tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:parkour/updatelb
 
 #Notify cheaters
 execute as @a[x=0,team=Lobby,tag=cheatedParkour] run tellraw @s ["",{"text":"You skipped a checkpoint, so your Parkour run was invalidated.","color":"red"}]
 execute as @a[x=0,team=Lobby,tag=cheatedParkour] at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 1 1
 
 #Remove tags + give advancement
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run advancement grant @s only 2811iaj1:endparkour
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run tag @s add firstParkour
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run advancement grant @s only 2811iaj1:endparkour
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] run tag @s add firstParkour
 execute as @a[x=0,team=Lobby,tag=finishedParkour] run tag @s remove inParkour
 execute as @a[x=0,team=Lobby,tag=finishedParkour] run tag @s remove cheatedParkour
 execute as @a[x=0,team=Lobby,tag=finishedParkour] run tag @s remove finishedParkour

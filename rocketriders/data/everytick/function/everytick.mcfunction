@@ -23,9 +23,6 @@ tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 execute as @a[x=0,gamemode=!spectator] if items entity @s player.crafting.* * run function items:crafting/check
 
 #Server mode
-#TODO: SMActive as a whole is bad
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0}] remove SMActive
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=1..}] add SMActive
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] if entity @a[x=0] run function servermode:loop
 scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ServerModeVoting] VoteServerMode
 execute unless entity @a[x=0,team=Lobby] run scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] VoteServerMode
@@ -58,14 +55,14 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] in minecraft:overworld
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:team_count
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gamestart
 execute if predicate game:game_started as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run function everytick:regen_system
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run gamerule naturalRegeneration true
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0}] run function everytick:regen_system
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run gamerule naturalRegeneration true
 
 #Night vision/saturation and more lobby functionality
 effect give @a[x=0,team=Lobby] night_vision infinite 100 true
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Sonar] run effect give @a[x=0,team=Spectator] night_vision infinite 100 true
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run effect give @a[x=0] saturation infinite 0 true
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run effect clear @a[x=0] saturation
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0}] run effect give @a[x=0] saturation infinite 0 true
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run effect clear @a[x=0] saturation
 execute as @a[x=0,team=Lobby,tag=hardcore] run function modifiers:hardcorereset
 execute as @a[x=0,team=Lobby,tag=hobbit] run function modifiers:hobbit/reset
 function lobby:bookwarp
@@ -74,8 +71,8 @@ scoreboard players enable @a[x=0,team=Developer] displayinfo
 execute as @a[x=0,scores={displayinfo=1..}] at @s run function lobby:displayinfo
 execute as @a[x=0,team=Lobby] run function everytick:score_reset
 execute if loaded 25 184 -6 unless predicate game:game_started run function lobby:credits/cycle
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run function lobby:parkour/parkour
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run function lobby:parkour/parkourserver
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0}] run function lobby:parkour/parkour
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run function lobby:parkour/parkourserver
 stopsound @a[x=0] ambient minecraft:ambient.cave
 
 #Handling portals/roof with utilities

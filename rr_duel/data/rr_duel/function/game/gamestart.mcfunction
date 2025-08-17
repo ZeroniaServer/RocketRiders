@@ -29,10 +29,10 @@ execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 execute if entity @s[scores={count=600}] as @a[x=0,team=Blue] run function rr_duel:forfeit/calculate
 execute if entity @s[scores={count=600}] as @a[x=0,team=Yellow] run function rr_duel:forfeit/calculate
-execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"dark_aqua","italic":true}]
-execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
-execute if entity @s[scores={count=600},tag=SMActive] run tellraw @a[x=0,team=Blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"dark_aqua","italic":true}]
-execute if entity @s[scores={count=600},tag=SMActive] run tellraw @a[x=0,team=Yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
+execute if entity @s[scores={count=600}] if score @s servermode matches 0 run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"dark_aqua","italic":true}]
+execute if entity @s[scores={count=600}] if score @s servermode matches 0 run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
+execute if entity @s[scores={count=600}] unless score @s servermode matches 0 run tellraw @a[x=0,team=Blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"dark_aqua","italic":true}]
+execute if entity @s[scores={count=600}] unless score @s servermode matches 0 run tellraw @a[x=0,team=Yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
 execute if entity @s[scores={count=600}] run team join Blue Blue:
 execute if entity @s[scores={count=600}] run team join Yellow Yellow:
 execute if entity @s[scores={count=600}] run bossbar set rr:startgame name ["",{"text":"A 1v1 Duel match is currently in progress!","color":"dark_red"}]

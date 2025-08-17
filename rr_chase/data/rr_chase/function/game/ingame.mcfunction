@@ -1,5 +1,5 @@
 #Leave midgame
-execute if entity @s[tag=!SMActive] run function rr_chase:game/leavemidgame
+execute if score @s servermode matches 0 run function rr_chase:game/leavemidgame
 
 #Item RNG (exception for arrows)
 tag @s add givenArrows

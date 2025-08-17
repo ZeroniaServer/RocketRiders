@@ -81,7 +81,7 @@ execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] da
 execute if entity @s[scores={servermode=1..}] run scoreboard players reset @a[x=0] daytime
 scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
 scoreboard players reset @a[x=0,team=!Lobby,team=!Developer] displayinfo
-execute unless entity @s[scores={servermode=0}] run scoreboard players reset @a[x=0] toggleParkourTips
+execute unless score @s servermode matches 0 run scoreboard players reset @a[x=0] toggleParkourTips
 
 #Launch pad in Modification Room
 execute unless predicate game:game_started as @a[x=0,team=Lobby] at @s if entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
@@ -98,7 +98,7 @@ execute as @a[x=0,team=Lobby] at @s if predicate custom:belowroof run scoreboard
 execute if score $lockmodroom CmdData matches 1 as @a[team=Lobby] at @s if predicate 2811iaj1:in_modification run function game:kickout
 
 #Lobby players can't switch out of adventure mode (security, disabled in servermodes)
-execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
+execute if score @s servermode matches 0 as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
 
 #Spectators can't switch out of spectator mode (security)
 execute as @a[x=0,team=Spectator,gamemode=!spectator] run gamemode spectator
@@ -138,26 +138,26 @@ execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule 
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run item replace entity @a[x=0,team=Lobby] armor.chest with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run item replace entity @a[x=0,team=Lobby] hotbar.0 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run item replace entity @a[x=0,team=Lobby] hotbar.1 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run item replace entity @a[x=0,team=Lobby] hotbar.2 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.3 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.5 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run item replace entity @a[x=0,team=Lobby] hotbar.6 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run item replace entity @a[x=0,team=Lobby] hotbar.7 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.8 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] armor.chest with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.0 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.1 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.2 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.3 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.5 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.6 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.7 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.8 with air
 
 #If servermode is active
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] armor.chest with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.1 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.2 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.3 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.5 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.6 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.7 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.8 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] armor.chest with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.1 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.2 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.3 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.5 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.6 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.7 with air
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.8 with air
 
 item replace entity @a[x=0,team=Lobby] armor.head with air
 item replace entity @a[x=0,team=Lobby] armor.chest with air

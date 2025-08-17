@@ -8,5 +8,5 @@ execute if entity @s[scores={servermode=2}] run tellraw @a[x=0] ["",{"text":"|",
 #Also notifies about Game Rules
 execute unless entity @s[scores={servermode=1},tag=!WindDownForce] unless entity @s[scores={servermode=2}] run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Game Rules","color":"yellow","hover_event":{"action":"show_text","value":[{"storage":"rocketriders:gamerules","nbt":"list[]","interpret":true,"separator":{"text":"\n"}}]}},{"text":" (hover for info)","color":"dark_gray","italic":true}]
 
-execute if entity @s[scores={servermode=0}] unless entity @s[tag=Repeat,tag=!RepeatForever] run tellraw @a[x=0] [{"text":""}]
+execute if score @s servermode matches 0 unless entity @s[tag=Repeat,tag=!RepeatForever] run tellraw @a[x=0] [{"text":""}]
 execute if entity @s[scores={servermode=2}] run tellraw @a[x=0] [{"text":""}]

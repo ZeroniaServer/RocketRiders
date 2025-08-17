@@ -1,5 +1,5 @@
 #leave midgame
-execute if entity @s[tag=!SMActive] run function game:leavemidgame
+execute if score @s servermode matches 0 run function game:leavemidgame
 
 #spawnables
 function rr_powerups:everytick/spawnables

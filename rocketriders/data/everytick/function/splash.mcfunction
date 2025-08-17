@@ -17,7 +17,7 @@ execute as @e[x=0,type=area_effect_cloud,predicate=custom:is_water_area_effect_c
 #Kill if near spawnpoints
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
-execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:nonsolid run function everytick:splash_correct_position
 execute if entity @s[tag=!SplashStreams,tag=!doFireballPortals] as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 water[level=8] replace #custom:splashreplace
 execute if entity @s[tag=SplashStreams,tag=!doFireballPortals] as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 water replace #custom:splashreplace
 execute if entity @s[tag=!SplashStreams,tag=doFireballPortals] as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s run fill ~.5 ~ ~.5 ~-.5 ~ ~-.5 water[level=8] replace #custom:splashreplace_portal

@@ -18,8 +18,8 @@ execute if predicate game:game_started as @a[x=0,tag=JoinBlue] run function item
 execute if predicate game:game_started as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @s 12 64 -66 0
 
 #Notify Join
-execute if predicate game:game_started if score @s servermode matches 0 as @a[x=0,tag=JoinBlue] run function rr_chase:chasegear/sabermsg
-execute if predicate game:game_started unless score @s servermode matches 0 run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd as @a[x=0,tag=JoinBlue] run function rr_chase:chasegear/sabermsg
+execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
 
 #Give first item to anyone who joins within 1st second
 execute if predicate game:game_started if score @s gametime matches 3..20 run function items:givefirst
@@ -36,16 +36,16 @@ execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=Edite
 execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 1 run bossbar set rr:startgame color green
 
 #Countdown
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=0..}] if score @s bluesCount matches 2.. run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=0..}] if score @s bluesCount matches 0..1 run function game:restartcountdown
+execute if predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if score @s bluesCount matches 2.. run tag @s add Countdown
+execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] if score @s bluesCount matches 0..1 run function game:restartcountdown
 
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=-1}] if score @s bluesCount matches 1.. run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=-1}] if score @s bluesCount matches 0 run function game:restartcountdown
+execute unless predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if score @s bluesCount matches 1.. run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] if score @s bluesCount matches 0 run function game:restartcountdown
 
 execute unless predicate game:game_started as @a[x=0,team=Blue] run attribute @s minecraft:knockback_resistance base set 10000
 execute as @a[x=0,team=!Blue] run attribute @s minecraft:knockback_resistance base set 0.0
-execute if entity @s[scores={count=600}] if score @s servermode matches 0 as @a[x=0,team=Blue] run function rr_chase:chasegear/sabermsg
-execute if entity @s[scores={count=600}] unless score @s servermode matches 0 run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
+execute if entity @s[scores={count=600}] unless predicate rr:is_cubekrowd as @a[x=0,team=Blue] run function rr_chase:chasegear/sabermsg
+execute if entity @s[scores={count=600}] if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
 execute if entity @s[scores={count=600},tag=!GameEnd] run function custom:set_global/game_started {bool:true}
 execute if entity @s[scores={count=600},tag=!GameEnd] run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={count=600},tag=!GameEnd] run spawnpoint @a[x=0,team=Blue] 12 64 -66 0

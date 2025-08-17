@@ -6,7 +6,7 @@ tag @s remove swapEnabled
 tag @s remove SurpriseEggOff
 tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
 tag @s remove SurpriseEggWasOn
-tag @s[scores={servermode=0}] remove SplashStreamsOff
+execute unless predicate rr:is_cubekrowd run tag @s remove SplashStreamsOff
 tag @s[tag=SplashStreamsWasOn] add SplashStreams
 tag @s remove SplashStreamsWasOn
 tag @s remove ChaosOff

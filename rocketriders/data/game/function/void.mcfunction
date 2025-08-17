@@ -8,7 +8,7 @@ execute if entity @s[team=Spectator] run return run tp @s 12 100 0.5 90 90
 
 
 # "Cry About It" achievement
-execute if entity @s[tag=CheckCry] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=-1..0},predicate=!rr:realms] run advancement grant @s only achievements:rr_challenges/cryaboutit
+execute if entity @s[tag=CheckCry] if predicate rr:has_achievements run advancement grant @s only achievements:rr_challenges/cryaboutit
 
 # Handle non-crossers
 execute if entity @s[team=!Spectator,tag=!crosser] run return run damage @s 100.0 out_of_world

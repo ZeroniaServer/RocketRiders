@@ -119,7 +119,7 @@ tag @s add EditedSettings
 fill -14 63 67 38 34 73 cave_air
 fill -14 63 -67 38 34 -73 cave_air
 
-execute if entity @s[scores={servermode=..1}] run function lobby:cancelsettings/begin
+execute unless predicate rr:server_mode/cubekrowd_duels run function lobby:cancelsettings/begin
 
 ##Stop all sounds
 # execute as @a[x=0] run function everytick:stopsounds

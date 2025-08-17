@@ -36,13 +36,13 @@ scoreboard players reset @a[x=0,scores={LeaveGame=1..}] novattach
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
 
 #Parkour quit
-execute if score @s servermode matches 0 as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]
+execute if predicate rr:has_parkour as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]
 execute as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tag @s remove inParkour
 
 #Handle achievements with servermode
-execute if entity @s[scores={servermode=-1..0},predicate=!rr:realms] as @a[x=0,scores={LeaveGame=1..}] run function achievements:roots
-execute if predicate rr:realms as @a[x=0,scores={LeaveGame=1..}] run advancement grant @s only 2811iaj1:root
-execute if entity @s[scores={servermode=1..}] as @a[x=0,scores={LeaveGame=1..}] run function achievements:reset
+execute if predicate rr:has_achievements as @a[x=0,scores={LeaveGame=1..}] run function achievements:roots
+execute unless predicate rr:has_achievements if predicate rr:server_mode/realms as @a[x=0,scores={LeaveGame=1..}] run advancement grant @s only 2811iaj1:root
+execute unless predicate rr:has_achievements if predicate rr:is_cubekrowd as @a[x=0,scores={LeaveGame=1..}] run function achievements:reset
 
 #Traveler fix
 tag @a[x=0,scores={LeaveGame=1..}] remove beenOnYellow

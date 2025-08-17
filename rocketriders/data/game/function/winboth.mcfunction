@@ -3,8 +3,8 @@
 ########################################################
 
 ##Achievements
-execute if entity @s[tag=!noAchievements,scores={servermode=-1..0},predicate=!rr:realms] run function achievements:aftergameyellow
-execute if entity @s[tag=!noAchievements,scores={servermode=-1..0},predicate=!rr:realms] run function achievements:aftergameblue
+execute if predicate rr:has_achievements if entity @s[tag=!noAchievements] run function achievements:aftergameyellow
+execute if predicate rr:has_achievements if entity @s[tag=!noAchievements] run function achievements:aftergameblue
 
 ##Record tags
 tag @s add GameEnd

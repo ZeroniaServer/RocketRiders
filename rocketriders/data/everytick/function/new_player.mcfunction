@@ -11,8 +11,8 @@ title @a[x=0,scores={firstJoined=0}] title [{"text":"Welcome to","color":"white"
 title @a[x=0,scores={firstJoined=0}] subtitle [{"text":"Rocket ","color":"blue","bold":true},{"text":"Riders","color":"gold","bold":true},{"text":" v1.3.0!","color":"green","bold":false}]
 
 #Handle achievements
-execute if entity @s[scores={servermode=-1..0},predicate=!rr:realms] as @a[x=0,scores={firstJoined=0}] run function achievements:roots
-execute if predicate rr:realms as @a[x=0,scores={firstJoined=0}] run advancement grant @s only 2811iaj1:root
+execute if predicate rr:has_achievements as @a[x=0,scores={firstJoined=0}] run function achievements:roots
+execute if predicate rr:server_mode/realms as @a[x=0,scores={firstJoined=0}] run advancement grant @s only 2811iaj1:root
 
 #Welcome message
 execute as @a[x=0,scores={firstJoined=0}] run tellraw @s ["",{"text":"Welcome to ","color":"gray"},{"text":"Rocket ","color":"blue"},{"text":"Riders","color":"gold"},{"text":", ","color":"gray"},{"selector":"@s","color":"green"},{"text":"! Use the ","color":"gray"},{"text":"Navigation Book","color":"dark_green"},{"text":" to explore the Lobby. You can join the game with join pads, see missiles in the Missile Display Area, or try the Parkour. Enjoy!","color":"gray"}]

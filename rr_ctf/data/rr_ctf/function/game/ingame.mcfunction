@@ -1,5 +1,5 @@
 #leave midgame
-execute if score @s servermode matches 0 run function rr_ctf:game/leavemidgame
+execute unless predicate rr:is_cubekrowd run function rr_ctf:game/leavemidgame
 
 ##Player void
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] at @s if predicate rr_ctf:in_void unless entity @s[scores={ThrowPlat=1..}] run function game:void

@@ -11,7 +11,7 @@ scoreboard players add Yellow: RoundsWon 1
 effect give @a[x=0,team=Blue] instant_health 1 100
 effect give @a[x=0,team=Yellow] instant_health 1 100
 
-execute unless score Yellow: RoundsWon matches 2.. if entity @s[scores={servermode=-1..0},predicate=!rr:realms] run function achievements:aftergameyellow
+execute unless score Yellow: RoundsWon matches 2.. if predicate rr:has_achievements run function achievements:aftergameyellow
 execute unless score Yellow: RoundsWon matches 2.. run function achievements:scoresreset
 execute unless score Yellow: RoundsWon matches 2.. run kill @e[x=0,type=tnt]
 execute unless score Yellow: RoundsWon matches 2.. if predicate game:modifier/punchable_tnt run kill @e[x=0,predicate=entities:type/punchable_tnt]

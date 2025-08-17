@@ -10,7 +10,7 @@ execute as @a[x=0] store result score @s playerUUID run data get entity @s UUID[
 function lobby:missiledisplay/placedisp
 
 #Tutorial advancements
-execute if entity @s[scores={servermode=-1..0}] run function 2811iaj1:advantriggers
+execute if predicate rr:has_tutorial run function 2811iaj1:advantriggers
 
 #Fix weirdness with join pads
 execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
@@ -74,14 +74,14 @@ scoreboard players reset @a[predicate=!custom:indimension] toggleParkourTips
 scoreboard players reset @a[x=0,team=!Blue,team=!Yellow] LeaveMidgame
 scoreboard players reset @a[x=0,team=!Lobby] MaxItemSec
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] MaxItemSec
-execute if entity @s[scores={servermode=1..}] run scoreboard players reset @a[x=0] MaxItemSec
+execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] MaxItemSec
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] VoteServerMode
 scoreboard players reset @a[x=0,team=!Lobby] daytime
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] daytime
-execute if entity @s[scores={servermode=1..}] run scoreboard players reset @a[x=0] daytime
+execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] daytime
 scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
 scoreboard players reset @a[x=0,team=!Lobby,team=!Developer] displayinfo
-execute unless score @s servermode matches 0 run scoreboard players reset @a[x=0] toggleParkourTips
+execute unless predicate rr:has_parkour run scoreboard players reset @a[x=0] toggleParkourTips
 
 #Launch pad in Modification Room
 execute unless predicate game:game_started as @a[x=0,team=Lobby] at @s if entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
@@ -98,14 +98,14 @@ execute as @a[x=0,team=Lobby] at @s if predicate custom:belowroof run scoreboard
 execute if score $lockmodroom CmdData matches 1 as @a[team=Lobby] at @s if predicate 2811iaj1:in_modification run function game:kickout
 
 #Lobby players can't switch out of adventure mode (security, disabled in servermodes)
-execute if score @s servermode matches 0 as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
+execute if predicate rr:force_gamemodes as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
 
-#Spectators can't switch out of spectator mode (security)
-execute as @a[x=0,team=Spectator,gamemode=!spectator] run gamemode spectator
+#Spectators can't switch out of spectator mode (security, disabled in servermodes)
+execute if predicate rr:force_gamemodes as @a[x=0,team=Spectator,gamemode=!spectator] run gamemode spectator
 
 #Blue/Yellow players can't switch out of adventure mode before game (security, disabled in servermodes)
-execute unless predicate game:game_started if entity @s[scores={servermode=0},tag=!GameEnd] as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
-execute unless predicate game:game_started if entity @s[scores={servermode=0},tag=!GameEnd] as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
+execute if predicate rr:force_gamemodes unless predicate game:game_started if entity @s[tag=!GameEnd] as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
+execute if predicate rr:force_gamemodes unless predicate game:game_started if entity @s[tag=!GameEnd] as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
 
 #Full offhand check
 tag @a[x=0] remove fullOffhand
@@ -138,26 +138,26 @@ execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule 
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] armor.chest with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.0 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.1 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.2 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.3 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.5 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.6 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby] hotbar.7 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.8 with air
+execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] armor.chest with air
+execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] hotbar.0 with air
+execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] hotbar.1 with air
+execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] hotbar.2 with air
+execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.3 with air
+execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.5 with air
+execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] hotbar.6 with air
+execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] hotbar.7 with air
+execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.8 with air
 
 #If servermode is active
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] armor.chest with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.1 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.2 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.3 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.5 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.6 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.7 with air
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.8 with air
+execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] armor.chest with air
+execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
+execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.1 with air
+execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.2 with air
+execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.3 with air
+execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.5 with air
+execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.6 with air
+execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.7 with air
+execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.8 with air
 
 item replace entity @a[x=0,team=Lobby] armor.head with air
 item replace entity @a[x=0,team=Lobby] armor.chest with air
@@ -171,12 +171,12 @@ clear @a[x=0,team=Lobby,tag=!HasNavBook] written_book
 loot replace entity @a[x=0,team=Lobby,tag=!HasNavBook] hotbar.4 loot items:books/nav_book
 
 #Servermode teleport out of modification room
-execute if entity @s[scores={servermode=1..}] as @a[x=0] at @s if predicate 2811iaj1:in_modification run tellraw @s ["",{"text":"You shouldn't be here!","color":"red"}]
-execute if entity @s[scores={servermode=1..}] as @a[x=0,team=!Spectator] at @s if predicate 2811iaj1:in_modification run function custom:leave
-execute if entity @s[scores={servermode=1..}] as @a[x=0,team=Spectator] at @s if predicate 2811iaj1:in_modification run tp @s 12 100 0.5 90 90
+execute if predicate rr:has_modification_room run tellraw @a[x=0,predicate=2811iaj1:in_modification] ["",{"text":"You shouldn't be here!","color":"red"}]
+execute if predicate rr:has_modification_room as @a[x=0,team=!Spectator,predicate=2811iaj1:in_modification] at @s run function custom:leave
+execute if predicate rr:has_modification_room as @a[x=0,team=Spectator,predicate=2811iaj1:in_modification] run tp @s 12 100 0.5 90 90
 
 #Servermode quick fix for Duel Mode
-tag @s[scores={servermode=2}] add duelLast
+execute if predicate rr:server_mode/cubekrowd_duels run tag @s add duelLast
 
 # Fix for players not being able to jump up onto the slab from the modification room pool
 execute as @a[team=Lobby,x=-70,y=200,z=77,dz=2] run attribute @s minecraft:gravity modifier add rocketriders:learning_to_swim -0.75 add_multiplied_base

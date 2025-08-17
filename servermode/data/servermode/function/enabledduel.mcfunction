@@ -1,8 +1,8 @@
-execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={servermode=2}] run return run tellraw @s [{"text":"Duel Server Mode is already enabled!","color":"red"}]
+execute if score $server_mode global matches 2 run return run tellraw @s [{"text":"Duel Server Mode is already enabled!","color":"red"}]
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
-execute unless score @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode matches 2 run schedule function game:forcestop 2t append
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode 2
+execute unless score $server_mode global matches 2 run schedule function game:forcestop 2t append
+scoreboard players set $server_mode global 2
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting

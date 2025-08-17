@@ -56,6 +56,8 @@ scoreboard objectives add gamemode_components dummy
 execute store success score $realms global if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms]
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove realms
 
+scoreboard players operation $server_mode global = @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms] servermode
+
 execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches -2147483648..2147483647 store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
@@ -94,6 +96,7 @@ scoreboard objectives add toggleTips trigger
 scoreboard objectives add toggleParkourTips trigger
 
 # Remove unused objectives
+scoreboard objectives remove servermode
 scoreboard objectives remove disableTips
 scoreboard objectives remove hideParkourTips
 scoreboard objectives remove splashOwnerUUID

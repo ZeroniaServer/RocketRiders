@@ -66,8 +66,8 @@ execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraf
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Blue]
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Yellow]
-execute if entity @s[scores={endtimer=570}] if score @s servermode matches -1..0 run scoreboard players add @a[x=0,team=Blue] GamesPlayed 1
-execute if entity @s[scores={endtimer=570}] if score @s servermode matches -1..0 run scoreboard players add @a[x=0,team=Yellow] GamesPlayed 1
+execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Blue] GamesPlayed 1
+execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Yellow] GamesPlayed 1
 execute if entity @s[scores={endtimer=570}] run function achievements:scoresreset
 execute if entity @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute if entity @s[scores={endtimer=570},tag=SpamClick] as @a[x=0] run attribute @s minecraft:attack_speed base set 4
@@ -94,10 +94,10 @@ execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] k
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] deaths 0
 execute if entity @s[scores={endtimer=570}] run gamerule mobGriefing false
 #Server mode specifics
-execute if entity @s[scores={endtimer=570}] if score @s servermode matches -1..0 run fill -57 201 84 -70 201 72 water[level=7] replace tinted_glass strict
-execute if entity @s[scores={endtimer=570}] if score @s servermode matches -1..0 run fill -57 200 84 -70 200 72 air replace #custom:modification_room_pool_blocks strict
-execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=1},tag=!forcenormal] run function servermode:makesets
-execute if entity @s[scores={endtimer=570}] if entity @s[scores={servermode=2}] run schedule function servermode:forceclear 3t
+execute if entity @s[scores={endtimer=570}] if predicate rr:has_modification_room run fill -57 201 84 -70 201 72 water[level=7] replace tinted_glass strict
+execute if entity @s[scores={endtimer=570}] if predicate rr:has_modification_room run fill -57 200 84 -70 200 72 air replace #custom:modification_room_pool_blocks strict
+execute if entity @s[scores={endtimer=570}] if predicate rr:server_mode/cubekrowd_voting if entity @s[tag=!forcenormal] run function servermode:makesets
+execute if entity @s[scores={endtimer=570}] if predicate rr:server_mode/cubekrowd_duels run schedule function servermode:forceclear 3t
 execute if entity @s[scores={endtimer=570..}] run tag @a[x=0] remove Winner
 execute if entity @s[scores={endtimer=570..}] run tag @a[x=0] remove Loser
 tag @s[scores={endtimer=570..}] remove BlueWon

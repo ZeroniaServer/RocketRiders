@@ -1,5 +1,5 @@
 #Leave midgame
-execute if score @s servermode matches 0 run function rr_chase:game/leavemidgame
+execute unless predicate rr:is_cubekrowd run function rr_chase:game/leavemidgame
 
 #Item RNG (exception for arrows)
 tag @s add givenArrows

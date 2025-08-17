@@ -5,7 +5,7 @@
 ####################################################
 
 ##Arrow pointing down into the lobby
-execute if entity @s[scores={servermode=-1..0},tag=!Repeat] unless entity @e[type=block_display,tag=LobbyArrowDisplay] if score $dust CmdData matches 1 unless score $lockmodroom CmdData matches 1 run function lobby:spawnarrow
+execute if predicate rr:has_modification_room if entity @s[tag=!Repeat] unless entity @e[type=block_display,tag=LobbyArrowDisplay] if score $dust CmdData matches 1 unless score $lockmodroom CmdData matches 1 run function lobby:spawnarrow
 scoreboard players add @e[type=block_display,tag=LobbyArrowDisplay] CmdData 1
 execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=1}] run function lobby:arrow_up
 execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=11}] run function lobby:arrow_down
@@ -36,10 +36,10 @@ tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doFireballPortals
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] RepeatSettings 1
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=!rr:realms] run scoreboard players set $disable_cannoning config 0
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=rr:realms,tag=!tntCannoningOff] run scoreboard players set $disable_cannoning config 1
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=!rr:realms,tag=!impactUtilitiesOff] run scoreboard players set $impact_projectiles config 0
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=rr:realms] run scoreboard players set $impact_projectiles config 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=!rr:server_mode/realms] run scoreboard players set $disable_cannoning config 0
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=rr:server_mode/realms,tag=!tntCannoningOff] run scoreboard players set $disable_cannoning config 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=!rr:server_mode/realms,tag=!impactUtilitiesOff] run scoreboard players set $impact_projectiles config 0
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=rr:server_mode/realms] run scoreboard players set $impact_projectiles config 1
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultOptions] remove DefaultOptions
 
@@ -59,16 +59,16 @@ execute as @a[x=0,scores={moleratConfirm=1..}] run tag @s add moleratConfirm
 execute as @a[x=0,scores={moleratConfirm=1..}] run function arenaclear:testvalidclear
 
 ##ITEM DELAY
-execute if entity @s[scores={servermode=-1..0},tag=Minute] run scoreboard players reset @a[x=0,team=Lobby] MaxItemSec
+execute if predicate rr:has_modification_room if entity @s[tag=Minute] run scoreboard players reset @a[x=0,team=Lobby] MaxItemSec
 execute if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] run function arenaclear:itemdelay/show_dialog
 execute if entity @s[tag=itemDelayOff] run tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 tag @a[x=0,tag=ItemDelayChange] remove ItemDelayChange
-execute if entity @s[scores={servermode=-1..0},tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-1}] run function arenaclear:itemdelay/show_dialog
-execute if entity @s[scores={servermode=-1..0},tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run function arenaclear:itemdelay
-execute if entity @s[scores={servermode=-1..0},tag=itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
+execute if predicate rr:has_modification_room if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-1}] run function arenaclear:itemdelay/show_dialog
+execute if predicate rr:has_modification_room if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run function arenaclear:itemdelay
+execute if predicate rr:has_modification_room if entity @s[tag=itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 scoreboard players reset @a[x=0] MaxItemSec
-execute if entity @s[scores={servermode=-1..0},tag=!Minute] run scoreboard players set @a[x=0] MaxItemSec -2
-execute if entity @s[scores={servermode=-1..0},tag=!Minute] run scoreboard players enable @a[x=0,team=Lobby] MaxItemSec
+execute if predicate rr:has_modification_room if entity @s[tag=!Minute] run scoreboard players set @a[x=0] MaxItemSec -2
+execute if predicate rr:has_modification_room if entity @s[tag=!Minute] run scoreboard players enable @a[x=0,team=Lobby] MaxItemSec
 
 ##DAYTIME
 execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=daytimeChange] run function arenaclear:daytime/show_dialog
@@ -76,5 +76,5 @@ tag @a[x=0,tag=daytimeChange] remove daytimeChange
 execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-1}] run function arenaclear:daytime/show_dialog
 execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s daytime matches -2..-1 run function arenaclear:daytimechange
 scoreboard players reset @a[x=0] daytime
-execute if score @s servermode matches -1..0 run scoreboard players set @a[x=0,team=Lobby] daytime -2
-execute if score @s servermode matches -1..0 run scoreboard players enable @a[x=0,team=Lobby] daytime
+execute if predicate rr:has_modification_room run scoreboard players set @a[x=0,team=Lobby] daytime -2
+execute if predicate rr:has_modification_room run scoreboard players enable @a[x=0,team=Lobby] daytime

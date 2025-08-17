@@ -42,14 +42,14 @@ scoreboard players add Yellow: RoundsWon 0
 #initial condition - use tag NOFORFEITS to disable forfeits
 execute unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. if entity @a[x=0,team=Yellow] unless entity @a[x=0,team=Blue] run tag @s add TimeOut
 execute unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[x=0,team=Yellow] if entity @a[x=0,team=Blue] run tag @s add TimeOut
-execute if entity @s[tag=TimeOut] unless score @s servermode matches 0 run tellraw @a[x=0] ["",{"text":"[FORFEIT] ","bold":true,"color":"dark_red"},{"text":"Someone left the 1v1 Duel match, so it has ended.","color":"red"}]
-execute if entity @s[tag=TimeOut] unless score @s servermode matches 0 run scoreboard players set @s ForfeitTimeout 1200
+execute if entity @s[tag=TimeOut] if predicate rr:is_cubekrowd run tellraw @a[x=0] ["",{"text":"[FORFEIT] ","bold":true,"color":"dark_red"},{"text":"Someone left the 1v1 Duel match, so it has ended.","color":"red"}]
+execute if entity @s[tag=TimeOut] if predicate rr:is_cubekrowd run scoreboard players set @s ForfeitTimeout 1200
 
 #adds original player back (non-servermode)
-execute if score @s servermode matches 0 as @a[x=0,tag=InRanked,tag=WasInBlue,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,team=Blue] run tellraw @s {"text":"You were added back to Blue to finish the 1v1 Duel match.","color":"red","italic":true}
-execute if score @s servermode matches 0 as @a[x=0,tag=InRanked,tag=WasInBlue,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,team=Blue] run function game:joinblue
-execute if score @s servermode matches 0 as @a[x=0,tag=InRanked,tag=WasInYellow,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,team=Yellow] run tellraw @s {"text":"You were added back to Yellow to finish the 1v1 Duel match.","color":"red","italic":true}
-execute if score @s servermode matches 0 as @a[x=0,tag=InRanked,tag=WasInYellow,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,team=Yellow] run function game:joinyellow
+execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInBlue,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,team=Blue] run tellraw @s {"text":"You were added back to Blue to finish the 1v1 Duel match.","color":"red","italic":true}
+execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInBlue,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,team=Blue] run function game:joinblue
+execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInYellow,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,team=Yellow] run tellraw @s {"text":"You were added back to Yellow to finish the 1v1 Duel match.","color":"red","italic":true}
+execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInYellow,team=Lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,team=Yellow] run function game:joinyellow
 
 #timeout
 scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1

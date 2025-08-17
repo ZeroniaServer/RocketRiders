@@ -1,5 +1,5 @@
 #leave midgame
-execute if score @s servermode matches 0 run function game:leavemidgame
+execute unless predicate rr:is_cubekrowd run function game:leavemidgame
 
 #spawnables
 function rr_powerups:everytick/spawnables

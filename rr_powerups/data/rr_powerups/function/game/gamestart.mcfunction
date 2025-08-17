@@ -14,13 +14,13 @@ tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Countdown
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=0..}] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=0..}] unless entity @a[x=0,team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=0..}] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
+execute if predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown
+execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] run function game:restartcountdown
+execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=-1}] if entity @a[x=0,team=Blue] run tag @s add Countdown
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=-1}] if entity @a[x=0,team=Yellow] run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=-1}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
+execute unless predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Yellow] run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
 scoreboard players reset @s[scores={count=1..}] powerupcount
 scoreboard players set @s[scores={count=1..}] PowerupDisplay 45

@@ -1,0 +1,23 @@
+[
+	{
+		"condition": "minecraft:value_check",
+		"value": {
+			"type": "minecraft:score",
+			"target": {
+				"type": "minecraft:fixed",
+				"name": "$server_mode"
+			},
+			"score": "global"
+		},
+		"range": 0
+	},
+	{
+		"condition": "minecraft:inverted",
+		"term": [
+			{
+				"condition": "minecraft:reference",
+				"name": "rr:server_mode/realms"
+			}
+		]
+	}
+]

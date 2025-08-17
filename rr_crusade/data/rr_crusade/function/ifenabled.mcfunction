@@ -7,7 +7,7 @@ execute if score @s SetGamemode = @e[x=0,type=armor_stand,tag=rr_crusade,limit=1
 execute unless score @s SetGamemode = @e[x=0,type=armor_stand,tag=rr_crusade,limit=1] gamemodeID run function rr_crusade:disable
 
 #tips
-execute unless entity @s[tag=SMCustom] run function rr_crusade:tip
+function rr_crusade:tip
 
 #game
 function rr_crusade:game/gamestart

@@ -4,7 +4,7 @@ execute if entity @s[tag=SignsRefreshed] run function rr_powerups:arenaclear/cus
 execute unless score @s SetGamemode = @e[x=0,type=armor_stand,tag=rr_powerups,limit=1] gamemodeID run function rr_powerups:disable
 
 #tips
-execute unless entity @s[tag=SMCustom] run function rr_powerups:tip
+function rr_powerups:tip
 
 #game
 function rr_powerups:game/gamestart

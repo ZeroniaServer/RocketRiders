@@ -5,7 +5,6 @@ scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function game:tipreset
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove realms
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SMCustom
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noFullHotbarSound
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 0
 fill -57 201 84 -70 201 72 air replace barrier

@@ -3,8 +3,8 @@ tag @e[x=0,type=armor_stand,tag=rr_duel,limit=1] add enabled
 execute if entity @s[tag=SignsRefreshed] run function rr_duel:arenaclear/customizer
 execute unless score @s SetGamemode = @e[x=0,type=armor_stand,tag=rr_duel,limit=1] gamemodeID run function rr_duel:disable
 
-#tips (disabled on duel servermode)
-execute unless entity @s[scores={servermode=2}] unless entity @s[tag=SMCustom] run function rr_duel:tip
+#tips
+function rr_duel:tip
 
 #game
 function rr_duel:game/gamestart

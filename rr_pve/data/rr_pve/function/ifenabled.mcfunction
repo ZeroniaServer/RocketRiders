@@ -4,7 +4,7 @@ execute if entity @s[tag=SignsRefreshed] run function rr_pve:arenaclear/customiz
 execute unless score @s SetGamemode = @e[x=0,type=armor_stand,tag=rr_pve,limit=1] gamemodeID run function rr_pve:disable
 
 #tips
-execute unless entity @s[tag=SMCustom] run function rr_pve:tip
+function rr_pve:tip
 
 #game
 function rr_pve:game/gamestart

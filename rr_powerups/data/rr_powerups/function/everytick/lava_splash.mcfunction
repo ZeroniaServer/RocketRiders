@@ -20,6 +20,6 @@ execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked]
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos z prepend from entity @s Pos[2]
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] splashCount 1
 tag @e[x=0,type=area_effect_cloud,tag=lavasplash_alone] add splashMarked
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run data merge entity @s {Duration:100}
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run tag @s add markedForDeath
-execute unless entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run kill @e[x=0,type=area_effect_cloud,tag=lavasplash_alone]
+execute if entity @s[scores={servermode=-1..0},tag=!realms] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run data merge entity @s {Duration:100}
+execute if entity @s[scores={servermode=-1..0},tag=!realms] as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run tag @s add markedForDeath
+execute unless entity @s[scores={servermode=-1..0},tag=!realms] run kill @e[x=0,type=area_effect_cloud,tag=lavasplash_alone]

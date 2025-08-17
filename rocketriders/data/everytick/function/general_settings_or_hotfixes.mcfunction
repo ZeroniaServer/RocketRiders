@@ -10,7 +10,7 @@ execute as @a[x=0] store result score @s playerUUID run data get entity @s UUID[
 function lobby:missiledisplay/placedisp
 
 #Tutorial advancements
-execute if entity @s[scores={servermode=0},tag=!SMCustom] run function 2811iaj1:advantriggers
+execute if entity @s[scores={servermode=-1..0}] run function 2811iaj1:advantriggers
 
 #Fix weirdness with join pads
 execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
@@ -81,7 +81,7 @@ execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] da
 execute if entity @s[scores={servermode=1..}] run scoreboard players reset @a[x=0] daytime
 scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
 scoreboard players reset @a[x=0,team=!Lobby,team=!Developer] displayinfo
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] run scoreboard players reset @a[x=0] toggleParkourTips
+execute unless entity @s[scores={servermode=0}] run scoreboard players reset @a[x=0] toggleParkourTips
 
 #Launch pad in Modification Room
 execute unless predicate game:game_started as @a[x=0,team=Lobby] at @s if entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
@@ -97,15 +97,15 @@ execute as @a[x=0,team=Lobby] at @s if predicate custom:belowroof run scoreboard
 #Locked Modification Room
 execute if score $lockmodroom CmdData matches 1 as @a[team=Lobby] at @s if predicate 2811iaj1:in_modification run function game:kickout
 
-#Lobby players can't switch out of adventure mode (security)
-execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
+#Lobby players can't switch out of adventure mode (security, disabled in servermodes)
+execute if entity @s[scores={servermode=0}] as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
 
 #Spectators can't switch out of spectator mode (security)
 execute as @a[x=0,team=Spectator,gamemode=!spectator] run gamemode spectator
 
-#Blue/Yellow players can't switch out of adventure mode before game (security)
-execute unless predicate game:game_started if entity @s[scores={servermode=0},tag=!SMCustom,tag=!GameEnd] as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
-execute unless predicate game:game_started if entity @s[scores={servermode=0},tag=!SMCustom,tag=!GameEnd] as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
+#Blue/Yellow players can't switch out of adventure mode before game (security, disabled in servermodes)
+execute unless predicate game:game_started if entity @s[scores={servermode=0},tag=!GameEnd] as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
+execute unless predicate game:game_started if entity @s[scores={servermode=0},tag=!GameEnd] as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
 
 #Full offhand check
 tag @a[x=0] remove fullOffhand

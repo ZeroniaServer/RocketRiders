@@ -7,7 +7,6 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove realms
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SMCustom
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
 fill -57 201 84 -70 201 72 tinted_glass replace #custom:modification_room_pool_blocks strict

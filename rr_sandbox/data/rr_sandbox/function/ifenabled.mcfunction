@@ -4,7 +4,7 @@ execute if entity @s[tag=SignsRefreshed] run function rr_sandbox:arenaclear/cust
 execute unless score @s SetGamemode = @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] gamemodeID run function rr_sandbox:disable
 
 #tips
-execute unless entity @s[tag=SMCustom] run function rr_sandbox:tip
+function rr_sandbox:tip
 
 #game
 function rr_sandbox:game/gamestart

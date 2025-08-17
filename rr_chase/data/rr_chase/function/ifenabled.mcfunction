@@ -4,7 +4,7 @@ execute if entity @s[tag=SignsRefreshed] run function rr_chase:arenaclear/custom
 execute unless score @s SetGamemode = @e[x=0,type=armor_stand,tag=rr_chase,limit=1] gamemodeID run function rr_chase:disable
 
 #tips
-execute unless entity @s[tag=SMCustom] run function rr_chase:tip
+function rr_chase:tip
 
 #game
 function rr_chase:game/gamestart

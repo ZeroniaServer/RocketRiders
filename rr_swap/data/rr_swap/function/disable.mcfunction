@@ -6,7 +6,7 @@ tag @s remove swapEnabled
 tag @s remove SurpriseEggOff
 tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
 tag @s remove SurpriseEggWasOn
-tag @s[tag=!SMCustom] remove SplashStreamsOff
+tag @s[scores={servermode=0}] remove SplashStreamsOff
 tag @s[tag=SplashStreamsWasOn] add SplashStreams
 tag @s remove SplashStreamsWasOn
 tag @s remove ChaosOff

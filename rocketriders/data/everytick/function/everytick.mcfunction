@@ -23,15 +23,16 @@ tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 execute as @a[x=0,gamemode=!spectator] if items entity @s player.crafting.* * run function items:crafting/check
 
 #Server mode
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=!SMCustom] remove SMActive
+#TODO: SMActive as a whole is bad
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0}] remove SMActive
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=1..}] add SMActive
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] if entity @a[x=0] run function servermode:loop
 scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ServerModeVoting] VoteServerMode
 execute unless entity @a[x=0,team=Lobby] run scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] VoteServerMode
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=1..}] unless entity @a[x=0] run function game:forcestop
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=SMCustom] unless entity @a[x=0] run scoreboard players set @s RepeatSettings 0
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=SMCustom] unless entity @a[x=0] run function game:forcestop
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=SMCustom] unless entity @a[x=0] run function arenaclear:globaldefaults
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=-1}] unless entity @a[x=0] run scoreboard players set @s RepeatSettings 0
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=-1}] unless entity @a[x=0] run function game:forcestop
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=-1}] unless entity @a[x=0] run function arenaclear:globaldefaults
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] run scoreboard players reset @a[x=0] VoteServerMode
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] run kill @e[x=0,type=marker,tag=ServerMode]
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMSwitch] run scoreboard players add $smswitch CmdData 1

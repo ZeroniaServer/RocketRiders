@@ -11,7 +11,7 @@ title @a[x=0,scores={firstJoined=0}] title [{"text":"Welcome to","color":"white"
 title @a[x=0,scores={firstJoined=0}] subtitle [{"text":"Rocket ","color":"blue","bold":true},{"text":"Riders","color":"gold","bold":true},{"text":" v1.3.0!","color":"green","bold":false}]
 
 #Handle achievements
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] as @a[x=0,scores={firstJoined=0}] run function achievements:roots
+execute if entity @s[scores={servermode=-1..0},tag=!realms] as @a[x=0,scores={firstJoined=0}] run function achievements:roots
 execute if entity @s[scores={servermode=0},tag=realms] as @a[x=0,scores={firstJoined=0}] run advancement grant @s only 2811iaj1:root
 
 #Welcome message

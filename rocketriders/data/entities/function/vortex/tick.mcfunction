@@ -36,7 +36,7 @@ execute unless entity @s[tag=vortex.is_drifting] if predicate {condition:"minecr
 
 
 ## Achievements
-execute if entity @s[tag=vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=!SMCustom] run advancement grant @a[distance=..3,predicate=custom:on_blue_or_yellow_team] only achievements:rr_challenges/zzzzzzhuh
+execute if entity @s[tag=vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=-1..0},tag=!realms] run advancement grant @a[distance=..3,predicate=custom:on_blue_or_yellow_team] only achievements:rr_challenges/zzzzzzhuh
 
 
 ## Explosion conditions

@@ -1,5 +1,5 @@
 ##Achievements
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run function rr_chase:achievements/aftergame
+execute if entity @s[scores={servermode=-1..0},tag=!realms] run function rr_chase:achievements/aftergame
 
 ##Record tags
 tag @s add GameEnd
@@ -12,7 +12,7 @@ execute as @a[x=0,team=Blue,tag=Winner,limit=1] run loot replace entity @s armor
 execute as @a[x=0] store result score @s HasFlag run clear @s #banners 0
 execute as @a[x=0,team=Blue,tag=Loser,scores={HasFlag=0}] run loot replace entity @s armor.head loot items:ending/loser_banner
 #I Am Speed achievement for Winner
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!SMCustom] run advancement grant @a[x=0,team=Blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
+execute if entity @s[scores={servermode=-1..0},tag=!realms] run advancement grant @a[x=0,team=Blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 
 scoreboard players add @a[x=0,team=Blue,tag=Winner,limit=1] wins 1
 scoreboard players add @a[x=0,team=Blue,tag=Loser] losses 1

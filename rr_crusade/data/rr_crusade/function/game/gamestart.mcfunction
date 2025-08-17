@@ -26,13 +26,13 @@ tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Countdown
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,tag=!SMCustom] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[x=0,team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
+execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=0..}] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=0..}] unless entity @a[x=0,team=Blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=0..}] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[x=0,team=Blue] run tag @s add Countdown
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,tag=SMCustom] if entity @a[x=0,team=Yellow] run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=SMCustom] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
+execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=-1}] if entity @a[x=0,team=Blue] run tag @s add Countdown
+execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=-1}] if entity @a[x=0,team=Yellow] run tag @s add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=-1}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
 execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[x=0,team=Blue,scores={crusadekit=1}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
 execute if entity @s[scores={count=600},tag=!SMActive] run tellraw @a[x=0,team=Blue,scores={crusadekit=2}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]

@@ -36,11 +36,11 @@ execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=Edite
 execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 1 run bossbar set rr:startgame color green
 
 #Countdown
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,tag=!SMCustom] if score @s bluesCount matches 2.. run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=!SMCustom] if score @s bluesCount matches 0..1 run function game:restartcountdown
+execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=0..}] if score @s bluesCount matches 2.. run tag @s add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=0..}] if score @s bluesCount matches 0..1 run function game:restartcountdown
 
-execute unless predicate game:game_started if entity @s[tag=EditedSettings,tag=SMCustom] if score @s bluesCount matches 1.. run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown,tag=SMCustom] if score @s bluesCount matches 0 run function game:restartcountdown
+execute unless predicate game:game_started if entity @s[tag=EditedSettings,scores={servermode=-1}] if score @s bluesCount matches 1.. run tag @s add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown,scores={servermode=-1}] if score @s bluesCount matches 0 run function game:restartcountdown
 
 execute unless predicate game:game_started as @a[x=0,team=Blue] run attribute @s minecraft:knockback_resistance base set 10000
 execute as @a[x=0,team=!Blue] run attribute @s minecraft:knockback_resistance base set 0.0

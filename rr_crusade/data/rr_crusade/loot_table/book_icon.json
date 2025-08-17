@@ -1,0 +1,60 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "!minecraft:stored_enchantments": {},
+                "minecraft:max_stack_size": 1,
+                "minecraft:custom_name": [
+                  "",
+                  {
+                    "text": "Spell Book ",
+                    "color": "light_purple",
+                    "italic": true,
+                    "bold": true
+                  },
+                  {
+                    "translate": "[%s]",
+                    "color": "dark_gray",
+                    "italic": false,
+                    "with": [
+                      {
+                        "text": "?",
+                        "color": "aqua",
+                        "italic": false
+                      }
+                    ]
+                  }
+                ],
+                "minecraft:lore": [
+                  [
+                    {
+                      "text": "Current Spell: ",
+                      "color": "white",
+                      "italic": false
+                    },
+                    {
+                      "text": "????",
+                      "color": "aqua"
+                    }
+                  ],
+                  {
+                    "text": "Click to cycle spells!",
+                    "color": "gray"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

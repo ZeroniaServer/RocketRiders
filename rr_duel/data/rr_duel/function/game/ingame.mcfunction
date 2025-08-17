@@ -6,9 +6,6 @@ scoreboard objectives setdisplay sidebar.team.dark_gray RoundsWon
 #leave midgame
 function rr_duel:game/leavemidgame
 
-#destroy crafting slots
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] if items entity @s player.crafting.* * at @s run function game:destroycraftingslots
-
 #tracking players and locking join pads
 tag @a[x=0,team=Blue] add InRanked
 tag @a[x=0,team=Yellow] add InRanked
@@ -57,7 +54,7 @@ execute if entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0,tag=InRanked
 #timeout
 scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1
 execute if entity @s[tag=TimeOut] run kill @e[x=0,type=tnt]
-execute if entity @s[tag=TimeOut] if predicate game:config/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
+execute if entity @s[tag=TimeOut] if predicate game:modifier/punchable_tnt run kill @e[x=0,predicate=entities:type/punchable_tnt]
 execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Yellow] #custom:clear
 execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
 execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Blue] #custom:clear

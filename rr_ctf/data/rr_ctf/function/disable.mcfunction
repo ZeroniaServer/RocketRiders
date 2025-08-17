@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 tag @s remove ctfEnabled
 tag @s remove ResidersOff
 tag @s[tag=ResidersWasOn] add Residers
@@ -24,7 +26,6 @@ tag @s remove fireballWasOff
 tag @s[tag=utilWasOff] remove rngUtil
 tag @s remove utilWasOff
 tag @s remove customSaberMsg
-tag @s remove noPortal
 tag @s remove canopyStack
 tag @s remove respawnFlag
 tag @s remove customPrevention

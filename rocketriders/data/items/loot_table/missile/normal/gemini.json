@@ -5,11 +5,97 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:fox_spawn_egg",
+          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": 1
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:custom_data": {
+                  "spawn_egg": {
+                    "type": "missile",
+                    "missile": "gemini"
+                  }
+                },
+                "minecraft:item_model": "minecraft:fox_spawn_egg",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Gemini",
+                    "color": "white",
+                    "bold": true
+                  }
+                ],
+                "minecraft:lore": [
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray",
+                      "italic": false
+                    },
+                    {
+                      "text": "4",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray",
+                      "italic": false
+                    },
+                    {
+                      "text": "2.0m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray",
+                      "italic": false
+                    },
+                    {
+                      "text": "Evtema3 & samnrad",
+                      "color": "red"
+                    }
+                  ],
+                  "",
+                  {
+                    "text": "The Gemini is a twin missile, in that",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "if one side is stopped, the other",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "side of the missile will keep going.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "source": "this",
+              "ops": [
+                {
+                  "source": "UUID",
+                  "target": "spawn_egg.owner",
+                  "op": "replace"
+                }
+              ]
             },
             {
               "function": "minecraft:set_components",
@@ -19,7 +105,6 @@
                     2
                   ]
                 },
-                "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:custom_name": [
                   {
                     "text": "[Normal] ",
@@ -32,86 +117,17 @@
                     "color": "gold",
                     "bold": true
                   }
-                ],
-                "minecraft:lore": [
-                  [
-                    {
-                      "text": "Amount of TNT: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "4",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Speed: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "2.0m/s",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Made by: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "Evtema3 & samnrad",
-                      "color": "red"
-                    }
-                  ],
-                  "",
-                  {
-                    "text": "The Gemini is a twin missile, in that",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "if one side is stopped, the other",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "side of the missile will keep going.",
-                    "color": "gray",
-                    "italic": false
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "yellowmissile",
-                    "YellowGemi"
-                  ]
                 }
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Yellow"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:fox_spawn_egg",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
+              ]
             },
             {
               "function": "minecraft:set_components",
@@ -121,7 +137,6 @@
                     1
                   ]
                 },
-                "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:custom_name": [
                   {
                     "text": "[Normal] ",
@@ -134,76 +149,17 @@
                     "color": "blue",
                     "bold": true
                   }
-                ],
-                "minecraft:lore": [
-                  [
-                    {
-                      "text": "Amount of TNT: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "4",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Speed: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "2.0m/s",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Made by: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "Evtema3 & samnrad",
-                      "color": "red"
-                    }
-                  ],
-                  "",
-                  {
-                    "text": "The Gemini is a twin missile, in that",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "if one side is stopped, the other",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "side of the missile will keep going.",
-                    "color": "gray",
-                    "italic": false
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "bluemissile",
-                    "BlueGemi"
-                  ]
                 }
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Blue"
-              }
+              ]
             }
           ]
         }

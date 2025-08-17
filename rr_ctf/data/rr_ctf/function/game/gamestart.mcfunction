@@ -1,9 +1,9 @@
 #Items
 execute as @a[x=0,tag=JoinBlue] run function game:givegear
-loot replace entity @a[x=0,tag=JoinBlue] hotbar.0 loot items:misc/piercing_pickaxe
+execute as @a[x=0,tag=JoinBlue] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
 
 execute as @a[x=0,tag=JoinYellow] run function game:givegear
-loot replace entity @a[x=0,tag=JoinYellow] hotbar.0 loot items:misc/piercing_pickaxe
+execute as @a[x=0,tag=JoinBlue] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
 
 #Notify Join
 execute if predicate game:game_started if entity @s[tag=!SMActive] run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Piercing Pickaxe ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]

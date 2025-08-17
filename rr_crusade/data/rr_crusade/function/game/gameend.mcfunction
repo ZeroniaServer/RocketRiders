@@ -9,8 +9,8 @@ execute if entity @s[scores={endtimer=1}] run clear @a[x=0,scores={crusadekit=2}
 execute if entity @s[tag=BothWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
 execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_end
-execute if entity @s[tag=BlueWon,scores={endtimer=1}] run loot give @a[x=0,team=Blue,scores={crusadekit=2}] loot items:misc/shooting_saber_crusade
-execute if entity @s[tag=BlueWon,scores={endtimer=1}] run loot give @a[x=0,team=Yellow,scores={crusadekit=2}] loot items:misc/shooting_saber_end
+execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
+execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_end
 
 #Replacing Spell Wands
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents writable_book run function items:killendweapon
@@ -20,7 +20,7 @@ execute if entity @s[tag=BlueWon,scores={endtimer=1}] run clear @a[x=0,team=Yell
 execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=3}] run loot give @s loot items:misc/spell_wand_end
 
 execute if entity @s[tag=!doTying,scores={endtimer=1}] run function game:endstats
-execute if score $YellowShield crusadehp matches -1000..0 if score $BlueShield crusadehp matches -1000..0 run tag @s add couldTie
+execute if predicate rr_crusade:yellow_portal_revealed if predicate rr_crusade:blue_portal_revealed run tag @s add couldTie
 execute if entity @s[tag=couldTie,tag=doTying,scores={endtimer=101}] run function game:endstats
 execute if entity @s[tag=!couldTie,tag=doTying,scores={endtimer=1}] run function game:endstats
 bossbar set rr_crusade:blue players none

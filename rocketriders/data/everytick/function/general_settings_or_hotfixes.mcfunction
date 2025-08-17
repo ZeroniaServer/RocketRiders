@@ -13,9 +13,9 @@ function lobby:missiledisplay/placedisp
 execute if entity @s[scores={servermode=0},tag=!SMCustom] run function 2811iaj1:advantriggers
 
 #Fix weirdness with join pads
-execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=yellowjoinpad] add CancelJoin
-execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=bluejoinpad] add CancelJoin
-execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=specjoinpad] add CancelJoin
+execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
+execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.blue] add CancelJoin
+execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
 execute if entity @s[tag=noTeamBalance] run scoreboard players set @s largerTeam 0
 
 #Particle timer
@@ -52,32 +52,36 @@ scoreboard players reset @a[x=0,scores={UKTimer=55..}] UKTimer
 execute as @e[x=0,type=tnt,tag=UtilKilled] at @s run tag @a[team=!Spectator,distance=..6] add UtilKilled
 execute as @e[x=0,type=tnt,tag=UtilKilled] at @s store result score @a[team=!Spectator,distance=..6] KillerUUID run scoreboard players get @s UUIDTracker
 
+# Fix for players joining with legacy canopyTP tag
+execute as @a[tag=canopyTP] run attribute @s minecraft:safe_fall_distance base reset
+execute as @a[tag=canopyTP] run attribute @s minecraft:jump_strength base reset
+execute as @a[tag=canopyTP] run attribute @s minecraft:movement_speed base reset
+tag @a[tag=canopyTP] remove canopyTP
+
 #Canopy teleport remove effects
-execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy
-execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy
-execute as @a[x=0,team=!Blue,team=!Yellow,tag=canopyTP] run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy
+execute as @a[x=0,tag=canopy_teleporting,predicate=!custom:on_blue_or_yellow_team] run function custom:canopy_teleporting_effect/remove
 
 #Disable trigger objectives when appropriate
-execute as @a[predicate=!custom:indimension] run trigger LeaveMidgame set -1
-execute as @a[predicate=!custom:indimension] run trigger MaxItemSec set 0
-execute as @a[predicate=!custom:indimension] run trigger VoteServerMode set 0
-execute as @a[predicate=!custom:indimension] run trigger daytime set 0
-execute as @a[predicate=!custom:indimension] run trigger leaveSpec set 0
-execute as @a[predicate=!custom:indimension] run trigger displayinfo set 0
-execute as @a[predicate=!custom:indimension] run trigger toggleTips set 0
-execute as @a[predicate=!custom:indimension] run trigger toggleParticles set 0
-execute as @a[predicate=!custom:indimension] run trigger toggleParkourTips set 0
-execute as @a[x=0,team=!Blue,team=!Yellow] run trigger LeaveMidgame set -1
-execute as @a[x=0,team=!Lobby] run trigger MaxItemSec set 0
-execute if entity @s[tag=EditedSettings] as @a[x=0] run trigger MaxItemSec set 0
-execute if entity @s[scores={servermode=1..}] as @a[x=0] run trigger MaxItemSec set 0
-execute if entity @s[tag=EditedSettings] as @a[x=0] run trigger VoteServerMode set 0
-execute as @a[x=0,team=!Lobby] run trigger daytime set 0
-execute if entity @s[tag=EditedSettings] as @a[x=0] run trigger daytime set 0
-execute if entity @s[scores={servermode=1..}] as @a[x=0] run trigger daytime set 0
-execute as @a[x=0,team=!Spectator] run trigger leaveSpec set 0
-execute as @a[x=0,team=!Lobby,team=!Developer] run trigger displayinfo set 0
-execute unless entity @s[scores={servermode=0},tag=!SMCustom] as @a[x=0] run trigger toggleParkourTips set 0
+scoreboard players reset @a[predicate=!custom:indimension] LeaveMidgame
+scoreboard players reset @a[predicate=!custom:indimension] MaxItemSec
+scoreboard players reset @a[predicate=!custom:indimension] VoteServerMode
+scoreboard players reset @a[predicate=!custom:indimension] daytime
+scoreboard players reset @a[predicate=!custom:indimension] leaveSpec
+scoreboard players reset @a[predicate=!custom:indimension] displayinfo
+scoreboard players reset @a[predicate=!custom:indimension] toggleTips
+scoreboard players reset @a[predicate=!custom:indimension] toggleParticles
+scoreboard players reset @a[predicate=!custom:indimension] toggleParkourTips
+scoreboard players reset @a[x=0,team=!Blue,team=!Yellow] LeaveMidgame
+scoreboard players reset @a[x=0,team=!Lobby] MaxItemSec
+execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] MaxItemSec
+execute if entity @s[scores={servermode=1..}] run scoreboard players reset @a[x=0] MaxItemSec
+execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] VoteServerMode
+scoreboard players reset @a[x=0,team=!Lobby] daytime
+execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] daytime
+execute if entity @s[scores={servermode=1..}] run scoreboard players reset @a[x=0] daytime
+scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
+scoreboard players reset @a[x=0,team=!Lobby,team=!Developer] displayinfo
+execute unless entity @s[scores={servermode=0},tag=!SMCustom] run scoreboard players reset @a[x=0] toggleParkourTips
 
 #Launch pad in Modification Room
 execute unless predicate game:game_started as @a[x=0,team=Lobby] at @s if entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
@@ -125,7 +129,7 @@ tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect_cloud]
 
 #Fill portals before game starts
-execute unless predicate game:game_started if entity @s[tag=!noPortal,tag=!GameEnd,tag=EditedSettings] run function arenaclear:placeportals
+execute unless predicate game:game_started if entity @s[predicate=!game:gamemode_components/no_portal,tag=!GameEnd,tag=EditedSettings] run function arenaclear:placeportals
 
 #Disable damage gamerules if no game has started
 execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule fallDamage false
@@ -173,3 +177,7 @@ execute if entity @s[scores={servermode=1..}] as @a[x=0,team=Spectator] at @s if
 
 #Servermode quick fix for Duel Mode
 tag @s[scores={servermode=2}] add duelLast
+
+# Fix for players not being able to jump up onto the slab from the modification room pool
+execute as @a[team=Lobby,x=-70,y=200,z=77,dz=2] run attribute @s minecraft:gravity modifier add rocketriders:learning_to_swim -0.75 add_multiplied_base
+execute as @a[team=Lobby] unless entity @s[x=-70,y=200,z=77,dy=0.5,dz=2] run attribute @s minecraft:gravity modifier remove rocketriders:learning_to_swim

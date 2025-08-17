@@ -14,7 +14,7 @@ scoreboard players reset @s endtimer
 execute if entity @s[scores={SDtime=1..15}] run tag @a[x=0] remove Winner
 execute if entity @s[scores={SDtime=1..15}] run tag @a[x=0] remove Loser
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt]
-execute if entity @s[scores={SDtime=1..15}] if predicate game:config/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
+execute if entity @s[scores={SDtime=1..15}] if predicate game:modifier/punchable_tnt run kill @e[x=0,predicate=entities:type/punchable_tnt]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt_minecart]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=creeper]
 
@@ -25,8 +25,8 @@ execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
 execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Yellow] 12 64 66 180 0
-execute if entity @s[scores={SDtime=1}] run tag @n[x=0,predicate=entities:canopy,predicate=entities:origin_team/yellow,scores={entity.age=0..39}] add canopy.forgotten_origin
-execute if entity @s[scores={SDtime=1}] run tag @n[x=0,predicate=entities:canopy,predicate=entities:origin_team/blue,scores={entity.age=0..39}] add canopy.forgotten_origin
+execute if entity @s[scores={SDtime=1}] run tag @n[x=0,predicate=entities:type/canopy,predicate=entities:origin_team/yellow,scores={entity.age=0..39}] add canopy.forgotten_origin
+execute if entity @s[scores={SDtime=1}] run tag @n[x=0,predicate=entities:type/canopy,predicate=entities:origin_team/blue,scores={entity.age=0..39}] add canopy.forgotten_origin
 execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[x=0] armor.head with air
 execute if entity @s[scores={SDtime=1}] at @s run clear @a[x=0] firework_rocket
@@ -70,17 +70,17 @@ execute if entity @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute
 execute if entity @s[scores={SDtime=10}] as @a[x=0,team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
 
 ##Places back portals
-execute if score $YellowShield crusadehp matches -1000..0 run fill 21 44 67 21 56 67 minecraft:obsidian
-execute if score $YellowShield crusadehp matches -1000..0 run fill 21 56 67 3 56 67 minecraft:obsidian
-execute if score $YellowShield crusadehp matches -1000..0 run fill 3 44 67 3 56 67 minecraft:obsidian
-execute if score $YellowShield crusadehp matches -1000..0 run fill 3 44 67 21 44 67 minecraft:obsidian
-execute if score $YellowShield crusadehp matches -1000..0 run fill 20 55 67 4 45 67 minecraft:nether_portal
+execute if predicate rr_crusade:yellow_portal_revealed run fill 21 44 67 21 56 67 minecraft:obsidian
+execute if predicate rr_crusade:yellow_portal_revealed run fill 21 56 67 3 56 67 minecraft:obsidian
+execute if predicate rr_crusade:yellow_portal_revealed run fill 3 44 67 3 56 67 minecraft:obsidian
+execute if predicate rr_crusade:yellow_portal_revealed run fill 3 44 67 21 44 67 minecraft:obsidian
+execute if predicate rr_crusade:yellow_portal_revealed run fill 20 55 67 4 45 67 minecraft:nether_portal
 
-execute if score $BlueShield crusadehp matches -1000..0 run fill 21 44 -67 21 56 -67 minecraft:obsidian
-execute if score $BlueShield crusadehp matches -1000..0 run fill 21 56 -67 3 56 -67 minecraft:obsidian
-execute if score $BlueShield crusadehp matches -1000..0 run fill 3 56 -67 3 44 -67 minecraft:obsidian
-execute if score $BlueShield crusadehp matches -1000..0 run fill 3 44 -67 21 44 -67 minecraft:obsidian
-execute if score $BlueShield crusadehp matches -1000..0 run fill 4 45 -67 20 55 -67 nether_portal
+execute if predicate rr_crusade:blue_portal_revealed run fill 21 44 -67 21 56 -67 minecraft:obsidian
+execute if predicate rr_crusade:blue_portal_revealed run fill 21 56 -67 3 56 -67 minecraft:obsidian
+execute if predicate rr_crusade:blue_portal_revealed run fill 3 56 -67 3 44 -67 minecraft:obsidian
+execute if predicate rr_crusade:blue_portal_revealed run fill 3 44 -67 21 44 -67 minecraft:obsidian
+execute if predicate rr_crusade:blue_portal_revealed run fill 4 45 -67 20 55 -67 nether_portal
 
 ##Animated titles
 execute if entity @s[scores={SDtime=1}] unless score $skiptitles CmdData matches 1 run title @a[x=0] title ["",{"text":"It's a Tie!","color":"gray","bold":true}]

@@ -1,9 +1,6 @@
 #leave midgame
 execute if entity @s[tag=!SMActive] run function game:leavemidgame
 
-#destroy crafting slots
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] if items entity @s player.crafting.* * at @s run function game:destroycraftingslots
-
 #custom util items
 function everytick:cluster
 

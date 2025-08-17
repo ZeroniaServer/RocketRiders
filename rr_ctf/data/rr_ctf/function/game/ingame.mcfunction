@@ -4,9 +4,6 @@ execute if entity @s[tag=!SMActive] run function rr_ctf:game/leavemidgame
 ##Player void
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] at @s if predicate rr_ctf:in_void unless entity @s[scores={ThrowPlat=1..}] run function game:void
 
-#destroy crafting slots
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] if items entity @s player.crafting.* * at @s run function rr_ctf:game/destroycraftingslots
-
 #Item RNG
 tag @s add givenCanopy
 scoreboard players add @s RandomItem 1

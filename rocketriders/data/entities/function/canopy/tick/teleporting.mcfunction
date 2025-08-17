@@ -12,10 +12,6 @@ execute if score @s entity.canopy.movement_cooldown matches 0 on origin run tp @
 #The teleport window for players on Canopies is 2 seconds. This is to ensure that falling players arrive on the Canopy safely and to reduce lag-induced oddities with Canopies.
 execute if score @s entity.canopy.movement_cooldown matches 0..39 on origin positioned as @s run tp @s[distance=0.01..] @s
 execute if score @s entity.canopy.movement_cooldown matches 0..39 on origin align xyz positioned ~0.5 ~2 ~0.5 run tp @s[distance=0.01..] ~ ~ ~
-execute if score @s entity.canopy.movement_cooldown matches 0..39 on origin run attribute @s minecraft:safe_fall_distance modifier add rocketriders:canopy 100 add_value
-execute if score @s entity.canopy.movement_cooldown matches 0..39 on origin run attribute @s minecraft:jump_strength modifier add rocketriders:canopy -1 add_multiplied_total
-execute if score @s entity.canopy.movement_cooldown matches 0..39 on origin run attribute @s minecraft:movement_speed modifier add rocketriders:canopy -1 add_multiplied_total
+execute if score @s entity.canopy.movement_cooldown matches 0..39 on origin run function custom:canopy_teleporting_effect/add
 
-execute if score @s entity.canopy.movement_cooldown matches 40.. on origin run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy
-execute if score @s entity.canopy.movement_cooldown matches 40.. on origin run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy
-execute if score @s entity.canopy.movement_cooldown matches 40.. on origin run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy
+execute if score @s entity.canopy.movement_cooldown matches 40.. on origin run function custom:canopy_teleporting_effect/remove

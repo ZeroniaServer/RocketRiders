@@ -1,6 +1,6 @@
 # Do nothing if already processed
 execute unless entity @s[type=ender_pearl] run return fail
-execute if entity @s[predicate=entities:canopy_projectile] run return fail
+execute if entity @s[predicate=entities:type/canopy_projectile] run return fail
 
 ## Set up data
 data modify entity @s data.canopy_projectile set value {body:{}}

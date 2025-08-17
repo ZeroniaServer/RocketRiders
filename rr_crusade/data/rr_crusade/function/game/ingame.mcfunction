@@ -1,9 +1,6 @@
 #leave midgame
 execute if entity @s[tag=!SMActive] run function rr_crusade:game/leavemidgame
 
-#destroy crafting slots
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] if items entity @s player.crafting.* * at @s run function rr_crusade:game/destroycraftingslots
-
 #general
 function rr_crusade:game/cancel_utility
 
@@ -146,6 +143,6 @@ execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 
 execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 positioned 38 49 37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2
 
 #> Win condition
-execute if score $BlueShield crusadehp matches -1000..0 unless block 4 45 -67 nether_portal if score $YellowShield crusadehp matches -1000..0 unless block 4 45 67 nether_portal run function game:winbothcheck
-execute if entity @s[tag=!BothWon] if score $BlueShield crusadehp matches -1000..0 unless block 4 45 -67 nether_portal run function rr_crusade:game/winyellow
-execute if entity @s[tag=!BothWon] if score $YellowShield crusadehp matches -1000..0 unless block 4 45 67 nether_portal run function rr_crusade:game/winblue
+execute if predicate rr_crusade:blue_portal_revealed unless block 4 45 -67 nether_portal if predicate rr_crusade:yellow_portal_revealed unless block 4 45 67 nether_portal run function game:winbothcheck
+execute if entity @s[tag=!BothWon] if predicate rr_crusade:blue_portal_revealed unless block 4 45 -67 nether_portal run function rr_crusade:game/winyellow
+execute if entity @s[tag=!BothWon] if predicate rr_crusade:yellow_portal_revealed unless block 4 45 67 nether_portal run function rr_crusade:game/winblue

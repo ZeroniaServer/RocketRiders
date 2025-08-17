@@ -59,21 +59,22 @@ execute as @a[x=0,scores={moleratConfirm=1..}] run tag @s add moleratConfirm
 execute as @a[x=0,scores={moleratConfirm=1..}] run function arenaclear:testvalidclear
 
 ##ITEM DELAY
-execute if entity @s[scores={servermode=0},tag=!Minute] run scoreboard players enable @a[x=0,team=Lobby] MaxItemSec
-execute if entity @s[scores={servermode=0},tag=Minute] as @a[x=0,team=Lobby] run trigger MaxItemSec set 0
-execute if entity @s[tag=!itemDelayOff] run tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] ["",{"text":"Item Delay: ","bold":true,"color":"white"},{"text":"How long it takes to give items. Click numbers below to change time.","color":"gray","italic":true}]
-execute if entity @s[tag=!itemDelayOff] run tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] [{"text":"[-5] ","color":"red","click_event":{"action":"run_command","command":"/trigger MaxItemSec set -5"}},{"text":"[-4] ","color":"red","click_event":{"action":"run_command","command":"/trigger MaxItemSec set -4"}},{"text":"[-3] ","color":"red","click_event":{"action":"run_command","command":"/trigger MaxItemSec set -3"}},{"text":"[-2] ","color":"red","click_event":{"action":"run_command","command":"/trigger MaxItemSec set -2"}},{"text":"[-1] ","color":"red","click_event":{"action":"run_command","command":"/trigger MaxItemSec set -1"}},{"text":"[+1] ","color":"green","click_event":{"action":"run_command","command":"/trigger MaxItemSec set 1"}},{"text":"[+2] ","color":"green","click_event":{"action":"run_command","command":"/trigger MaxItemSec set 2"}},{"text":"[+3] ","color":"green","click_event":{"action":"run_command","command":"/trigger MaxItemSec set 3"}},{"text":"[+4] ","color":"green","click_event":{"action":"run_command","command":"/trigger MaxItemSec set 4"}},{"text":"[+5]","color":"green","click_event":{"action":"run_command","command":"/trigger MaxItemSec set 5"}}]
+execute if entity @s[scores={servermode=0},tag=Minute] run scoreboard players reset @a[x=0,team=Lobby] MaxItemSec
+execute if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] run function arenaclear:itemdelay/show_dialog
 execute if entity @s[tag=itemDelayOff] run tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 tag @a[x=0,tag=ItemDelayChange] remove ItemDelayChange
-execute if entity @s[scores={servermode=0},tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run function arenaclear:itemdelay
-execute if entity @s[scores={servermode=0},tag=itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator] unless score @s MaxItemSec matches 0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
-scoreboard players set @a[x=0] MaxItemSec 0
+execute if entity @s[scores={servermode=0},tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-1}] run function arenaclear:itemdelay/show_dialog
+execute if entity @s[scores={servermode=0},tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run function arenaclear:itemdelay
+execute if entity @s[scores={servermode=0},tag=itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
+scoreboard players reset @a[x=0] MaxItemSec
+execute if entity @s[scores={servermode=0},tag=!Minute] run scoreboard players set @a[x=0] MaxItemSec -2
+execute if entity @s[scores={servermode=0},tag=!Minute] run scoreboard players enable @a[x=0,team=Lobby] MaxItemSec
 
 ##DAYTIME
-execute if entity @s[scores={servermode=0}] run scoreboard players enable @a[x=0,team=Lobby] daytime
-scoreboard players add @a[x=0,team=Lobby] daytime 0
-tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=daytimeChange] ["",{"text":"Daytime: ","bold":true,"color":"white"},{"text":"Determines the sky appearance. Click numbers below to change time.","color":"gray","italic":true}]
-tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=daytimeChange] [{"text":"[-1000] ","color":"red","click_event":{"action":"run_command","command":"/trigger daytime set -1000"}},{"text":"[-100] ","color":"red","click_event":{"action":"run_command","command":"/trigger daytime set -100"}},{"text":"[-10] ","color":"red","click_event":{"action":"run_command","command":"/trigger daytime set -10"}},{"text":"[-5] ","color":"red","click_event":{"action":"run_command","command":"/trigger daytime set -5"}},{"text":"[-1] ","color":"red","click_event":{"action":"run_command","command":"/trigger daytime set -1"}},{"text":"[+1] ","color":"green","click_event":{"action":"run_command","command":"/trigger daytime set 1"}},{"text":"[+5] ","color":"green","click_event":{"action":"run_command","command":"/trigger daytime set 5"}},{"text":"[+10] ","color":"green","click_event":{"action":"run_command","command":"/trigger daytime set 10"}},{"text":"[+100] ","color":"green","click_event":{"action":"run_command","command":"/trigger daytime set 100"}},{"text":"[+1000] ","color":"green","click_event":{"action":"run_command","command":"/trigger daytime set 1000"}}]
+execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=daytimeChange] run function arenaclear:daytime/show_dialog
 tag @a[x=0,tag=daytimeChange] remove daytimeChange
-execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator] unless score @s daytime matches 0 run function arenaclear:daytimechange
-scoreboard players set @a[x=0] daytime 0
+execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-1}] run function arenaclear:daytime/show_dialog
+execute as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s daytime matches -2..-1 run function arenaclear:daytimechange
+scoreboard players reset @a[x=0] daytime
+execute if entity @s[scores={servermode=0}] run scoreboard players set @a[x=0,team=Lobby] daytime -2
+execute if entity @s[scores={servermode=0}] run scoreboard players enable @a[x=0,team=Lobby] daytime

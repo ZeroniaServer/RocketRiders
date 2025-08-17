@@ -5,21 +5,21 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:drowned_spawn_egg",
+          "name": "minecraft:pig_spawn_egg",
           "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
                 },
-                "minecraft:custom_data": "{Missile:1b}",
+                "minecraft:custom_data": {
+                  "spawn_egg": {
+                    "type": "missile",
+                    "missile": "hurricane"
+                  }
+                },
+                "minecraft:item_model": "minecraft:drowned_spawn_egg",
                 "minecraft:custom_name": [
                   {
                     "text": "[Lightning] ",
@@ -29,7 +29,7 @@
                   },
                   {
                     "text": "Hurricane",
-                    "color": "gold",
+                    "color": "white",
                     "bold": true
                   }
                 ],
@@ -83,35 +83,19 @@
                     "color": "gray",
                     "italic": false
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "yellowmissile",
-                    "YellowHur"
-                  ]
+                ]
+              }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "source": "this",
+              "ops": [
+                {
+                  "source": "UUID",
+                  "target": "spawn_egg.owner",
+                  "op": "replace"
                 }
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Yellow"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:drowned_spawn_egg",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
+              ]
             },
             {
               "function": "minecraft:set_components",
@@ -121,7 +105,6 @@
                     1
                   ]
                 },
-                "minecraft:custom_data": "{Missile:1b}",
                 "minecraft:custom_name": [
                   {
                     "text": "[Lightning] ",
@@ -134,76 +117,49 @@
                     "color": "blue",
                     "bold": true
                   }
-                ],
-                "minecraft:lore": [
-                  [
-                    {
-                      "text": "Amount of TNT: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "18",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Speed: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "3.3m/s",
-                      "color": "red"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Made by: ",
-                      "color": "gray",
-                      "italic": false
-                    },
-                    {
-                      "text": "HolyToiletPaper",
-                      "color": "red"
-                    }
-                  ],
-                  "",
-                  {
-                    "text": "The Hurricane bears much resemblance to the",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "Lightning, but with more TNT and a tight design.",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "It might be harder to get on this one.",
-                    "color": "gray",
-                    "italic": false
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "missile",
-                    "bluemissile",
-                    "BlueHur"
-                  ]
                 }
-              }
-            }
-          ],
-          "conditions": [
+              ]
+            },
             {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Blue"
-              }
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    2
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Lightning] ",
+                    "color": "yellow",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Hurricane",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
             }
           ]
         }

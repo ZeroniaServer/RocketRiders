@@ -1,0 +1,169 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pig_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:custom_data": {
+                  "spawn_egg": {
+                    "type": "missile",
+                    "missile": "juggerbuster"
+                  }
+                },
+                "minecraft:item_model": "minecraft:zombie_horse_spawn_egg",
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Heavy] ",
+                    "color": "dark_red",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Juggerbuster",
+                    "color": "white",
+                    "bold": true
+                  }
+                ],
+                "minecraft:lore": [
+                  [
+                    {
+                      "text": "Amount of TNT: ",
+                      "color": "gray",
+                      "italic": false
+                    },
+                    {
+                      "text": "32",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Speed: ",
+                      "color": "gray",
+                      "italic": false
+                    },
+                    {
+                      "text": "1.7m/s",
+                      "color": "red"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Made by: ",
+                      "color": "gray",
+                      "italic": false
+                    },
+                    {
+                      "text": "Chronos22",
+                      "color": "red"
+                    }
+                  ],
+                  "",
+                  {
+                    "text": "This is a Juggernaut-ShieldBuster hybrid.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "This missile has the power of a Juggernaut",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "plus the ability to bust through a Shield.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "source": "this",
+              "ops": [
+                {
+                  "source": "UUID",
+                  "target": "spawn_egg.owner",
+                  "op": "replace"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    1
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Heavy] ",
+                    "color": "dark_red",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Juggerbuster",
+                    "color": "blue",
+                    "bold": true
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    2
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Heavy] ",
+                    "color": "dark_red",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Juggerbuster",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

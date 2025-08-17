@@ -1,6 +1,6 @@
 # Do nothing if already processed
 execute unless entity @s[type=area_effect_cloud] run return fail
-execute if entity @s[predicate=entities:stinging_shield] run return fail
+execute if entity @s[predicate=entities:type/stinging_shield] run return fail
 
 ## Set up data
 data modify entity @s data.stinging_shield set value {}

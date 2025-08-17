@@ -1,3 +1,7 @@
+scoreboard players reset * gamemode_components
+scoreboard players set $settings_locked gamemode_components 1
+scoreboard players set $main_item/bow gamemode_components 1
+
 tag @s remove switchGamemodes
 
 tag @s[tag=Molerat] add MoleratOff
@@ -10,7 +14,6 @@ tag @s add duelEnabled
 tag @s add SurpriseEggOff
 tag @s add tyingOff
 tag @s add itemDelayOff
-tag @s add settingsLocked
 tag @s add customSaberMsg
 tag @s add customLeaveHandling
 tag @s add featheredOff

@@ -1,3 +1,9 @@
+scoreboard players reset * gamemode_components
+scoreboard players set $crusade_portals gamemode_components 1
+scoreboard players set $no_portal gamemode_components 1
+scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
+scoreboard players set $config_override.hobbits gamemode_components -1
+
 tag @s remove switchGamemodes
 function arenaclear:lockdecos
 execute unless entity @e[x=0,type=marker,tag=crusadeWall,limit=1] run summon marker 12.5 54.0 0.0 {Tags:["crusadeWall"]}
@@ -7,7 +13,6 @@ tag @s[tag=Hardcore] add HardcoreWasOn
 tag @s add HardcoreOff
 tag @s[tag=Residers] add ResidersWasOn
 tag @s add ResidersOff
-tag @s add noPortal
 tag @s add customPrevention
 tag @s add featheredOff
 tag @s add arrowLimit

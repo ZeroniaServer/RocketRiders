@@ -1,3 +1,6 @@
+scoreboard players reset * gamemode_components
+scoreboard players set $main_item/rocket_nomicon gamemode_components 1
+
 function gamemodes:storesettings
 function arenaclear:enableitems
 tag @s remove switchGamemodes

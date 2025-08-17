@@ -9,7 +9,7 @@ data modify entity @s Owner set from storage rocketriders:main stinging_shield_p
 data modify entity @s CustomName set from storage rocketriders:main stinging_shield_projectile.name
 
 scoreboard players set $team var -1
-execute store success score $team var if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customShield] on origin if predicate custom:on_blue_or_yellow_team if entity @s[team=!Blue]
+execute unless predicate game:gamemode_components/neutral_utility_colors on origin if predicate custom:on_blue_or_yellow_team store success score $team var if entity @s[team=!Blue]
 execute if score $team var matches -1 run data modify entity @s data.origin_team set value "none"
 execute if score $team var matches 0 run data modify entity @s data.origin_team set value "blue"
 execute if score $team var matches 1 run data modify entity @s data.origin_team set value "yellow"

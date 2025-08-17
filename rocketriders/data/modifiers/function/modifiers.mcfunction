@@ -26,7 +26,7 @@ execute if entity @s[tag=Sonar] as @e[x=0,type=#custom:potion] run data merge en
 execute if entity @s[tag=Sonar] as @e[x=0,type=tnt] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=tnt_minecart] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=item] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,predicate=entities:vortex/body] run data merge entity @s {Glowing:1b}
+execute if entity @s[tag=Sonar] as @e[x=0,predicate=entities:type/vortex/body] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=armor_stand,tag=Bot] run data merge entity @s {Glowing:1b}
 
 ##Rocket Residers (anti-crossing behavior)
@@ -48,6 +48,11 @@ execute if entity @s[tag=NinjaJump] as @a[x=0,predicate=custom:on_blue_or_yellow
 ##Hardcore
 execute if entity @s[tag=Hardcore] as @a[x=0,predicate=custom:on_blue_or_yellow_team] if entity @s[tag=!hardcore] run function modifiers:hardcoreset
 execute if entity @s[tag=!Hardcore] as @a[x=0,predicate=custom:on_blue_or_yellow_team] if entity @s[tag=hardcore] run function modifiers:hardcorereset
+
+##Hobbits
+execute if predicate game:modifier/hobbits as @a[x=0,predicate=custom:on_blue_or_yellow_team,tag=!hobbit] run function modifiers:hobbit/set
+execute if predicate game:modifier/hobbits as @a[x=0,predicate=!custom:on_blue_or_yellow_team,tag=hobbit] run function modifiers:hobbit/reset
+execute unless predicate game:modifier/hobbits as @a[x=0,tag=hobbit] run function modifiers:hobbit/reset
 
 #Clutter Collector
 execute if entity @s[tag=ClutterCollector,tag=!Hardcore] as @e[type=tnt,z=-50,dz=100,x=-160,dx=320,y=-20,dy=200,tag=!nosplode] run function modifiers:explosionpower/0

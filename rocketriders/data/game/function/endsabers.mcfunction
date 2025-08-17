@@ -2,6 +2,6 @@
 execute if entity @s[tag=BothWon] as @a[x=0,team=Yellow] run function game:saberyellow
 execute if entity @s[tag=BothWon] as @a[x=0,team=Blue] unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function game:saberblue
 execute if entity @s[tag=YellowWon] as @a[x=0,team=Yellow] run function game:saberyellow
-execute if entity @s[tag=YellowWon] run loot give @a[x=0,team=Blue] loot items:misc/shooting_saber_end
+execute if entity @s[tag=YellowWon] as @a[x=0,team=Blue] run loot give @s loot items:misc/shooting_saber_end
 execute if entity @s[tag=BlueWon] as @a[x=0,team=Blue] unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function game:saberblue
-execute if entity @s[tag=BlueWon] run loot give @a[x=0,team=Yellow] loot items:misc/shooting_saber_end
+execute if entity @s[tag=BlueWon] as @a[x=0,team=Yellow] run loot give @s loot items:misc/shooting_saber_end

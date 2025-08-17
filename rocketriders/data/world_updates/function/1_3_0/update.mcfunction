@@ -50,18 +50,40 @@ scoreboard players reset 24000 daytime
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy
 scoreboard objectives add config dummy
+scoreboard objectives add gamemode_components dummy
 
-# early stages of nuking Selection armour stand...
+## early stages of nuking Selection armour stand...
 execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches -2147483648..2147483647 store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount matches -2147483648..2147483647 store result score $shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount matches -2147483648..2147483647 store result score $stinging_shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount
-
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
 
+# Updating gamemode components
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_utility_colors gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customNova
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customShield
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove custVortParticle
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] run scoreboard players set $no_portal gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPortal
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $settings_locked gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
+# New gamemode components
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $crusade_portals gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $config_override.hobbits gamemode_components -1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!ctfEnabled] run scoreboard players set $main_item/bow gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $main_item/pickaxe gamemode_components 1
+
+# rename confusingly named tag
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] add customSpawnpointBlockProtection
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] remove customSpawn
+
+##
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
 
 scoreboard objectives add toggleParticles trigger
@@ -105,6 +127,18 @@ scoreboard objectives remove dropRod
 scoreboard objectives add dropWand minecraft.dropped:minecraft.writable_book
 scoreboard objectives add useWand minecraft.used:minecraft.writable_book
 
+# Reset offline player triggers
+scoreboard players reset * LeaveMidgame
+scoreboard players reset * MaxItemSec
+scoreboard players reset * VoteServerMode
+scoreboard players reset * daytime
+scoreboard players reset * leaveSpec
+scoreboard players reset * displayinfo
+scoreboard players reset * toggleTips
+scoreboard players reset * toggleParticles
+scoreboard players reset * toggleParkourTips
+scoreboard players reset * MaxItemSec
+
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]
 
 setblock -69 190 78 air
@@ -138,7 +172,29 @@ item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with l
 
 kill @e[x=0,type=marker,tag=VortexDummy]
 kill @e[x=0,type=armor_stand,tag=VortexItemDummy]
-execute positioned -69.5 206.5 48.5 run function entities:vortex_decoy/summon
+execute positioned -69.5 206.5 48.5 run function entities:type/vortex_decoy/summon
+
+tag @e[x=0,type=marker,tag=bluejoinpad] add join_pad
+tag @e[x=0,type=marker,tag=bluejoinpad] add join_pad.blue
+tag @e[x=0,type=marker,tag=bluejoinpad] remove bluejoinpad
+tag @e[x=0,type=marker,tag=specjoinpad] add join_pad
+tag @e[x=0,type=marker,tag=specjoinpad] add join_pad.spectator
+tag @e[x=0,type=marker,tag=specjoinpad] remove specjoinpad
+tag @e[x=0,type=marker,tag=yellowjoinpad] add join_pad
+tag @e[x=0,type=marker,tag=yellowjoinpad] add join_pad.yellow
+tag @e[x=0,type=marker,tag=yellowjoinpad] remove yellowjoinpad
+tag @e[x=-79.47,y=205.00,z=94.46,distance=..1,type=marker,tag=join_pad] add join_pad.left
+tag @e[x=-82.50,y=202.00,z=78.50,distance=..1,type=marker,tag=join_pad] add join_pad.middle
+tag @e[x=-79.49,y=205.00,z=62.44,distance=..1,type=marker,tag=join_pad] add join_pad.right
+tp @e[x=0,type=marker,tag=join_pad.left] -79.5 205.0 94.5
+tp @e[x=0,type=marker,tag=join_pad.right] -79.5 205.0 62.5
+execute at @e[x=0,type=marker,tag=join_pad.left] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.left"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
+execute at @e[x=0,type=marker,tag=join_pad.middle] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.middle"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
+execute at @e[x=0,type=marker,tag=join_pad.right] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.right"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
+
+fill -57 201 84 -70 201 72 water[level=7] replace #custom:modification_room_pool_blocks strict
+execute if block -63 201 78 tinted_glass run fill -57 200 84 -70 200 72 water[level=8] replace #custom:modification_room_pool_blocks strict
+execute unless block -63 201 78 tinted_glass run fill -57 200 84 -70 200 72 air replace #custom:modification_room_pool_blocks strict
 
 # Modification Room redesign
 setblock -70 190 80 netherite_block strict

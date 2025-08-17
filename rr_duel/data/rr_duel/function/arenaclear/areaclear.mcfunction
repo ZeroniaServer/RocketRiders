@@ -25,11 +25,11 @@ kill @e[x=0,type=fireball]
 kill @e[x=0,type=item_display,tag=endFireballAnchor]
 kill @e[x=0,type=snowball]
 kill @e[x=0,type=arrow]
-kill @e[x=0,predicate=entities:vortex]
+kill @e[x=0,predicate=entities:type/vortex]
 kill @e[x=0,type=egg]
 kill @e[x=0,type=chicken]
 kill @e[x=0,type=tnt]
-execute if predicate game:config/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
+execute if predicate game:modifier/punchable_tnt run kill @e[x=0,predicate=entities:type/punchable_tnt]
 kill @e[x=0,type=tnt_minecart]
 kill @e[x=0,type=creeper]
 kill @e[x=0,type=dragon_fireball]
@@ -46,7 +46,7 @@ execute as @e[x=0,type=marker,tag=blueobtracker] at @s run function everytick:ob
 execute as @e[x=0,type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break
 execute if score $canopy_count global matches 1.. run function arenaclear:preparecanopy
 execute if score $shield_count global matches 1.. run function arenaclear:prepareshield
-kill @e[x=0,predicate=entities:canopy]
+kill @e[x=0,predicate=entities:type/canopy]
 kill @e[x=0,type=marker,tag=BlueObshield]
 kill @e[x=0,type=marker,tag=YellowObshield]
 kill @e[x=0,type=marker,tag=BlueFireball]

@@ -8,8 +8,19 @@ execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom
 scoreboard players set @a[x=0] flag.is_dead 1
 scoreboard players set @e[x=0,type=player] flag.is_dead 0
 
+execute as @a[scores={event.player_uses_pig_spawn_egg=1..}] at @s run function custom:event/player_uses_pig_spawn_egg/main
+execute as @a[scores={event.player_uses_written_book=1..}] at @s run function custom:event/player_uses_written_book/main
+
 # Tick entities
 function entities:tick
+
+# Reset join pads barrier tags
+tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
+tag @e[limit=3,x=0,type=marker,tag=join_pad,tag=join_pad.show_barrier] add join_pad.was_showing_barrier
+tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
+
+# Crafting Slots
+execute as @a[x=0,gamemode=!spectator] if items entity @s player.crafting.* * run function items:crafting/check
 
 #Server mode
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0},tag=!SMCustom] remove SMActive
@@ -55,6 +66,7 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Sonar] run effect 
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SMActive] run effect give @a[x=0] saturation infinite 0 true
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMActive] run effect clear @a[x=0] saturation
 execute as @a[x=0,team=Lobby,tag=hardcore] run function modifiers:hardcorereset
+execute as @a[x=0,team=Lobby,tag=hobbit] run function modifiers:hobbit/reset
 function lobby:bookwarp
 scoreboard players enable @a[x=0,team=Lobby] displayinfo
 scoreboard players enable @a[x=0,team=Developer] displayinfo

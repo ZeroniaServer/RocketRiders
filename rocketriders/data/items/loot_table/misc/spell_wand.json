@@ -10,6 +10,7 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_model": "minecraft:stick",
                 "minecraft:custom_model_data": {
                   "floats": [
                     1
@@ -36,6 +37,11 @@
                 "minecraft:enchantments": {
                   "minecraft:fire_aspect": 2,
                   "minecraft:sharpness": 2
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:unbreakable"
+                  ]
                 }
               }
             },

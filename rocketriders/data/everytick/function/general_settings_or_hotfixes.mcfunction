@@ -171,9 +171,9 @@ clear @a[x=0,team=Lobby,tag=!HasNavBook] written_book
 loot replace entity @a[x=0,team=Lobby,tag=!HasNavBook] hotbar.4 loot items:books/nav_book
 
 #Servermode teleport out of modification room
-execute if predicate rr:has_modification_room run tellraw @a[x=0,predicate=2811iaj1:in_modification] ["",{"text":"You shouldn't be here!","color":"red"}]
-execute if predicate rr:has_modification_room as @a[x=0,team=!Spectator,predicate=2811iaj1:in_modification] at @s run function custom:leave
-execute if predicate rr:has_modification_room as @a[x=0,team=Spectator,predicate=2811iaj1:in_modification] run tp @s 12 100 0.5 90 90
+execute unless predicate rr:has_modification_room run tellraw @a[x=0,predicate=2811iaj1:in_modification] ["",{"text":"You shouldn't be here!","color":"red"}]
+execute unless predicate rr:has_modification_room as @a[x=0,team=!Spectator,predicate=2811iaj1:in_modification] at @s run function custom:leave
+execute unless predicate rr:has_modification_room as @a[x=0,team=Spectator,predicate=2811iaj1:in_modification] run tp @s 12 100 0.5 90 90
 
 #Servermode quick fix for Duel Mode
 execute if predicate rr:server_mode/cubekrowd_duels run tag @s add duelLast

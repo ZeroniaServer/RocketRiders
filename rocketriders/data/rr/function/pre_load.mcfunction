@@ -20,6 +20,7 @@ execute if score $forceloaded_region var matches 0 run return run schedule funct
 execute in minecraft:overworld positioned 0.0 0.0 0.0 run function world_updates:check_updates
 
 # Set up game data
+execute in minecraft:overworld positioned 0.0 0.0 0.0 run function rr:upon_load
 execute in minecraft:overworld positioned 0.0 0.0 0.0 run function #rr:load
 
 # Start ticking functions

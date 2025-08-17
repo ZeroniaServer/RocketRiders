@@ -1,7 +1,6 @@
 {
     "values": [
         "minecraft:resin_block",
-        "minecraft:resin_bricks",
-        "minecraft:bedrock"
+        "minecraft:resin_bricks"
     ]
 }

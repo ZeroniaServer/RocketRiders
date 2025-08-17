@@ -13,7 +13,6 @@ tag @s remove CollisionControlWasOn
 tag @s remove fbPortalsOff
 tag @s remove portalDecosOff
 tag @s remove preventionOff
-tag @s remove preventionSoft
 tag @s remove customPrevention
 tag @s remove customEnds
 tag @s remove customBossbar

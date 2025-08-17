@@ -66,7 +66,7 @@ fill -15 33 -67 39 33 -67 minecraft:obsidian replace #custom:basereplace
 fill 39 33 -67 39 64 -67 minecraft:obsidian replace #custom:basereplace
 
 #Set portals
-execute unless entity @s[tag=noPortal] run function arenaclear:placeportals
+execute unless entity @s[predicate=game:gamemode_components/no_portal] run function arenaclear:placeportals
 
 #Remove fire
 fill 39 64 67 -15 67 67 air replace fire
@@ -112,7 +112,6 @@ tag @s[tag=!onlyBlue] remove YellowFull
 tag @s[tag=!onlyBlue] remove YellowCapOverride
 tag @s remove BlueFull
 tag @s remove BlueCapOverride
-scoreboard players set $barriers CmdData 79
 
 tag @s add EditedSettings
 

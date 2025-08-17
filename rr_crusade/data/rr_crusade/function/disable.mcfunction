@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 tag @s remove crusadeEnabled
 function arenaclear:unlockdecos
 kill @e[x=0,type=marker,tag=crusadeWall]
@@ -9,7 +11,6 @@ tag @s remove HardcoreWasOn
 tag @s remove ResidersOff
 tag @s[tag=ResidersWasOn] add Residers
 tag @s remove ResidersWasOn
-tag @s remove noPortal
 tag @s remove customPrevention
 tag @s remove featheredOff
 tag @s remove arrowLimit
@@ -33,7 +34,7 @@ tag @s remove ChaosWasOn
 tag @s[tag=ClutterCollectorWasOn] add ClutterCollector
 tag @s remove ClutterCollectorOff
 tag @s remove portalOverride
-execute as @a[x=0] run trigger crusadechange set 0
+scoreboard players reset @a[x=0] crusadechange
 
 #item enabling/disabling
 tag @s[tag=arrowsWasOff] remove rngArrows

@@ -1,53 +1,30 @@
-execute unless score #size sbstackamt matches 1.. run scoreboard players operation #size sbstackamt = @s sbstackamt
-execute if score @s nomicon matches 1 run function items:missile/normal/givetoma
-execute if score @s nomicon matches 2 run function items:missile/normal/giveant
-execute if score @s nomicon matches 3 run function items:missile/normal/giveblade
-execute if score @s nomicon matches 4 run function items:missile/normal/givecata
-execute if score @s nomicon matches 5 run function items:missile/normal/giveslash
-execute if score @s nomicon matches 6 run function items:missile/normal/givelift
-execute if score @s nomicon matches 7 run function items:missile/normal/givenull
-execute if score @s nomicon matches 8 run function items:missile/normal/giveeguard
-execute if score @s nomicon matches 9 run function items:missile/normal/givecitadel
-execute if score @s nomicon matches 10 run function items:missile/normal/givegemi
-execute if score @s nomicon matches 11 run function items:missile/lightning/givethun
-execute if score @s nomicon matches 12 run function items:missile/lightning/givehur
-execute if score @s nomicon matches 13 run function items:missile/heavy/giveaux
-execute if score @s nomicon matches 14 run function items:missile/heavy/givewar
-execute if score @s nomicon matches 15 run function items:missile/heavy/giverift
-execute if score @s nomicon matches 16 run function items:missile/heavy/givejbuster
-execute if score @s nomicon matches 17 run function items:missile/special/givehyper
-execute if score @s nomicon matches 18 run function items:missile/special/givebull
-execute if score @s nomicon matches 19 run function items:missile/special/giveduplex
-execute if score @s nomicon matches 20 run function items:missile/special/givebroad
-execute if score @s nomicon matches 21 run function items:util/givearrows
-execute if score @s nomicon matches 22 run function items:util/givecanopy
-execute if score @s nomicon matches 23 run function items:util/givefireball
-execute if score @s nomicon matches 24 run function items:util/giveclusterfireball
-execute if score @s nomicon matches 25 run function items:util/givenova
-execute if score @s nomicon matches 26 run function items:util/giveshield
-execute if score @s nomicon matches 27 run function items:util/giveobshield
-execute if score @s nomicon matches 28 run function items:util/givesplash
-execute if score @s nomicon matches 29 run function items:util/givevortex
-execute if score @s nomicon matches 30 run function items:util/giveicbm
-execute if score @s nomicon matches 31 run function rr_powerups:items/powerup/givebeeshield
-execute if score @s nomicon matches 32 run function rr_powerups:items/powerup/givelavasplash
-execute if score @s nomicon matches 33 run function rr_powerups:items/powerup/giveslapfish
-execute if score @s nomicon matches 34 run function rr_powerups:items/powerup/givetotem
-execute if score @s nomicon matches 35 run function rr_powerups:items/powerup/giveelytra
-execute if score @s nomicon matches 36 run function rr_powerups:items/powerup/givetrident
-execute if score @s nomicon matches 37 run function rr_powerups:items/powerup/giveinfinity
-execute if score @s nomicon matches 37 run scoreboard players set @s nomicon 0
-execute if score @s nomicon matches 37 run return run scoreboard players set #size sbstackamt 0
-execute if score @s nomicon matches 38 run function rr_powerups:items/arrow/giveblindarrow
-execute if score @s nomicon matches 39 run function rr_powerups:items/arrow/giveleviarrow
-execute if score @s nomicon matches 40 run function rr_powerups:items/arrow/giveslowarrow
-execute if score @s nomicon matches 41 run function rr_powerups:items/arrow/givewitherarrow
-execute if score @s nomicon matches 42 run function rr_sandbox:items/givesaber
-execute if score @s nomicon matches 43 run function rr_sandbox:items/givepickaxe
-execute if score @s nomicon matches 44 run function rr_sandbox:items/giveknightsword
-execute if score @s nomicon matches 45 run function rr_sandbox:items/giveknightshield
-execute if score @s nomicon matches 46 run function rr_sandbox:items/givespellwand
-execute if score @s nomicon matches 47 run function rr_crusade:items/util/givespellbook
-scoreboard players remove #size sbstackamt 1
-execute unless score #size sbstackamt matches 1.. run return run scoreboard players set @s nomicon 0
-function rr_sandbox:game/nomicon
+# Open dialog from trigger (1)
+execute if score @s nomicon matches 1 run function rr_sandbox:nomicon/pages/main_menu
+execute if score @s nomicon matches 1 run return run scoreboard players reset @s nomicon
+
+# Close dialog button (1000001..9999999)
+execute if score @s nomicon matches 1000001 run dialog clear @s
+# Other pages
+execute if score @s nomicon matches 1000002 run function rr_sandbox:nomicon/pages/utilities
+execute if score @s nomicon matches 1000003 run function rr_sandbox:nomicon/pages/missiles
+execute if score @s nomicon matches 1000004 run function rr_sandbox:nomicon/pages/all
+execute if score @s nomicon matches 1000005 run function rr_sandbox:nomicon/pages/powerups
+execute if score @s nomicon matches 1000006 run function rr_sandbox:nomicon/pages/weapons_and_tools
+execute if score @s nomicon matches 1000001.. run return run scoreboard players reset @s nomicon
+
+# Give random item (100001..999999)
+execute if score @s nomicon matches 100001 run function rr_sandbox:nomicon/pages/utilities
+execute if score @s nomicon matches 100001.. run return run scoreboard players reset @s nomicon
+
+# Give items (2..999_99)
+scoreboard players set $rolls var 0
+
+execute if score @s nomicon matches 0..99 run scoreboard players set $rolls var 1
+execute if score @s nomicon matches 100.. run scoreboard players operation $rolls var = @s nomicon
+execute if score @s nomicon matches 100.. run scoreboard players operation $rolls var %= $100 constant
+execute if score @s nomicon matches 100.. run scoreboard players operation @s nomicon /= $100 constant
+execute unless score $rolls var matches 1.. run scoreboard players set $rolls var 1
+execute if score $rolls var matches 100.. run scoreboard players set $rolls var 99
+
+execute if score $rolls var matches 1.. run function rr_sandbox:nomicon/give_items
+scoreboard players reset @s nomicon

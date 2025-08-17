@@ -1,3 +1,5 @@
+scoreboard players reset * gamemode_components
+
 tag @s remove chaseEnabled
 tag @s remove tyingOff
 tag @s remove ResidersOff
@@ -12,7 +14,6 @@ tag @s remove fbPortalsOff
 tag @s remove portalDecosOff
 tag @s remove preventionOff
 tag @s remove customPrevention
-tag @s remove noPortal
 tag @s remove customEnds
 tag @s remove customBossbar
 tag @s remove leaveYSpawn
@@ -26,16 +27,12 @@ tag @s remove utilWasOff
 tag @s[tag=stackingWasOff] remove doStacking
 tag @s remove stackingWasOff
 tag @s remove stackingOn
-tag @s remove custVortParticle
-tag @s remove customNova
-tag @s remove customShield
 tag @s remove onlyBlue
 tag @s remove antigriefOff
 tag @s remove customSaberMsg
 
-#haha funny
-tag @e[x=0,type=marker,tag=tempyellow] remove bluejoinpad
-tag @e[x=0,type=marker,tag=tempyellow] add yellowjoinpad
-tag @e[x=0,type=marker,tag=tempyellow] remove tempyellow
+# change left spawn pad to yellow
+tag @e[x=0,type=marker,tag=join_pad.left] remove join_pad.blue
+tag @e[x=0,type=marker,tag=join_pad.left] add join_pad.yellow
 
 tag @s add switchGamemodes

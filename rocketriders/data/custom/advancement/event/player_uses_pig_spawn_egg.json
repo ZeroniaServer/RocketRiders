@@ -1,0 +1,20 @@
+{
+    "criteria": {
+        "use_pig_spawn_egg_on_block": {
+            "trigger": "minecraft:item_used_on_block",
+            "conditions": {
+                "location": [
+                    {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                            "items": "minecraft:pig_spawn_egg"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "custom:event/player_uses_pig_spawn_egg/main"
+    }
+}

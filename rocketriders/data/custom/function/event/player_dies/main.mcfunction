@@ -13,16 +13,16 @@ scoreboard players set $can_grant_achievements var 0
 execute if predicate game:game_started if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled,scores={servermode=0},tag=!realms] run scoreboard players set $can_grant_achievements var 1
 
 # So Close, Yet So Fall Away (if I am touching the floor of the enemy nether portal, award me)
-execute if score $can_grant_achievements var matches 1 if entity @s[team=Blue,predicate=!custom:not_falling,x=-10,dx=45,y=60,dy=2,z=73,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!noPortal] run advancement grant @s only achievements:rr_challenges/fall_away
-execute if score $can_grant_achievements var matches 1 if entity @s[team=Yellow,predicate=!custom:not_falling,x=-10,dx=45,y=60,dy=2,z=-75,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!noPortal] run advancement grant @s only achievements:rr_challenges/fall_away
+execute if score $can_grant_achievements var matches 1 if entity @s[team=Blue,predicate=!custom:not_falling,x=-10,dx=45,y=60,dy=2,z=73,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:gamemode_components/no_portal] run advancement grant @s only achievements:rr_challenges/fall_away
+execute if score $can_grant_achievements var matches 1 if entity @s[team=Yellow,predicate=!custom:not_falling,x=-10,dx=45,y=60,dy=2,z=-75,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:gamemode_components/no_portal] run advancement grant @s only achievements:rr_challenges/fall_away
 
 # Volcanic Hatred (if I am inside of lava, award the owners of the nearby lava splash markers)
 execute if predicate game:game_started if predicate custom:on_blue_or_yellow_team if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin run advancement grant @s[predicate=custom:on_blue_or_yellow_team] only achievements:rr_challenges/volcanic_hatred
 
 # Get Off My Lawn (if I am killed within 7 blocks of an enemy canopy, and my attacker is within 7 blocks of that same canopy, award the attacker)
-execute if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:canopy,predicate=entities:origin_team/yellow] on attacker if entity @s[distance=..7,team=Yellow] run advancement grant @s only achievements:rr_challenges/get_off_lawn
-execute if entity @s[team=Yellow] positioned as @n[distance=..7,predicate=entities:canopy,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:canopy,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
+execute if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:type/canopy,predicate=entities:origin_team/yellow] on attacker if entity @s[distance=..7,team=Yellow] run advancement grant @s only achievements:rr_challenges/get_off_lawn
+execute if entity @s[team=Yellow] positioned as @n[distance=..7,predicate=entities:type/canopy,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:type/canopy,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
 
 
 ## Mob Kill Credit (creeper explosions & bees)
@@ -32,7 +32,7 @@ execute on attacker run scoreboard players set $direct_attacker var 1
 
 data modify storage rocketriders:main player_dies set value {}
 execute if score $direct_attacker var matches 1 on attacker run data modify storage rocketriders:main player_dies.killer_mob_origin set from entity @s[type=creeper] data.explosion.origin
-execute if score $direct_attacker var matches 1 on attacker run data modify storage rocketriders:main player_dies.killer_mob_origin set from entity @s[type=bee,predicate=entities:stinging_shield_bee] data.stinging_shield_bee.origin
+execute if score $direct_attacker var matches 1 on attacker run data modify storage rocketriders:main player_dies.killer_mob_origin set from entity @s[type=bee,predicate=entities:type/stinging_shield_bee] data.stinging_shield_bee.origin
 
 # If creeper killed indirectly (no origin from immediate creeper explosion), use last_creeper_damage_origin_uuid
 execute store success score $last_damaged_by_creeper var if score @s last_creeper_damage_origin_uuid.0 = @s last_creeper_damage_origin_uuid.0

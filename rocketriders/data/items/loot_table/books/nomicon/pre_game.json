@@ -72,6 +72,11 @@
                   "title": "Rocket-nomicon",
                   "author": "Zeronia",
                   "resolved": true
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:written_book_content"
+                  ]
                 }
               }
             }

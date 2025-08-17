@@ -1,4 +1,4 @@
-kill @e[x=0,predicate=entities:icbm]
+kill @e[x=0,predicate=entities:type/icbm]
 kill @e[x=0,type=chicken]
 kill @e[x=0,type=small_fireball]
 kill @e[x=0,type=wind_charge]

@@ -1,6 +1,6 @@
 # Do nothing if already processed
 execute unless entity @s[type=snowball] run return fail
-execute if entity @s[predicate=entities:shield_projectile] run return fail
+execute if entity @s[predicate=entities:type/shield_projectile] run return fail
 
 ## Set up data
 data modify entity @s data.shield_projectile set value {body:{}}

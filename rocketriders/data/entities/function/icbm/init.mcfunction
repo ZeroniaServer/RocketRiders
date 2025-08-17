@@ -1,6 +1,6 @@
 # Do nothing if already processed
 execute unless entity @s[type=egg] run return fail
-execute if entity @s[predicate=entities:icbm] run return fail
+execute if entity @s[predicate=entities:type/icbm] run return fail
 
 ## Set up data
 data modify entity @s data.icbm set value {body:{}}

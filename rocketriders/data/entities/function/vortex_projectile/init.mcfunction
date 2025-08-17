@@ -1,6 +1,6 @@
 # Do nothing if already processed
 execute unless entity @s[type=egg] run return fail
-execute if entity @s[predicate=entities:vortex_projectile] run return fail
+execute if entity @s[predicate=entities:type/vortex_projectile] run return fail
 
 ## Set up data
 data modify entity @s data.vortex_projectile set value {body:{}}

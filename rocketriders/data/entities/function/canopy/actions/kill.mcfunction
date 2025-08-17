@@ -1,4 +1,4 @@
-execute unless entity @s[predicate=entities:canopy] run return fail
+execute unless entity @s[predicate=entities:type/canopy] run return fail
 
 execute if entity @s[tag=!canopy.forgotten_origin] on origin run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy
 execute if entity @s[tag=!canopy.forgotten_origin] on origin run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy

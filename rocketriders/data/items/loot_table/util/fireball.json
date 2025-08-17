@@ -5,21 +5,21 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:blaze_spawn_egg",
+          "name": "minecraft:pig_spawn_egg",
           "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
                 },
-                "minecraft:custom_data": "{cluster:0b}",
+                "minecraft:custom_data": {
+                  "cluster": false,
+                  "spawn_egg": {
+                    "type": "fireball"
+                  }
+                },
+                "minecraft:item_model": "minecraft:blaze_spawn_egg",
                 "minecraft:custom_name": [
                   {
                     "text": "[Utility] ",
@@ -29,7 +29,7 @@
                   },
                   {
                     "text": "Fireball",
-                    "color": "gold",
+                    "color": "white",
                     "bold": true
                   }
                 ],
@@ -49,33 +49,19 @@
                     "color": "gray",
                     "italic": false
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "YellowFireball"
-                  ]
+                ]
+              }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "source": "this",
+              "ops": [
+                {
+                  "source": "UUID",
+                  "target": "spawn_egg.owner",
+                  "op": "replace"
                 }
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Yellow"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:blaze_spawn_egg",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
+              ]
             },
             {
               "function": "minecraft:set_components",
@@ -97,37 +83,49 @@
                     "color": "blue",
                     "bold": true
                   }
-                ],
-                "minecraft:lore": [
-                  {
-                    "text": "Spawns a Fireball. Punch or shoot",
-                    "color": "gray"
-                  },
-                  {
-                    "text": "Fireballs to quickly blow up missiles,",
-                    "color": "gray"
-                  },
-                  {
-                    "text": "blocks, or players.",
-                    "color": "gray"
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
                   }
-                ],
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker",
-                  "Tags": [
-                    "BlueFireball"
-                  ]
                 }
-              }
-            }
-          ],
-          "conditions": [
+              ]
+            },
             {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "team": "Blue"
-              }
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_model_data": {
+                  "floats": [
+                    1
+                  ]
+                },
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "light_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Fireball",
+                    "color": "gold",
+                    "bold": true
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
+                  }
+                }
+              ]
             }
           ]
         }

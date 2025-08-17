@@ -14,7 +14,7 @@ scoreboard players reset @s endtimer
 execute if entity @s[scores={SDtime=1..15}] run tag @a[x=0] remove Winner
 execute if entity @s[scores={SDtime=1..15}] run tag @a[x=0] remove Loser
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt]
-execute if entity @s[scores={SDtime=1..15}] if predicate game:config/punchable_tnt run kill @e[x=0,predicate=entities:punchable_tnt]
+execute if entity @s[scores={SDtime=1..15}] if predicate game:modifier/punchable_tnt run kill @e[x=0,predicate=entities:type/punchable_tnt]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt_minecart]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=creeper]
 
@@ -25,7 +25,7 @@ execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
 execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Yellow] 12 64 66 180 0
-execute if entity @s[scores={SDtime=1}] run tag @e[x=0,predicate=entities:canopy,scores={entity.age=0..39}] add canopy.forgotten_origin
+execute if entity @s[scores={SDtime=1}] run tag @e[x=0,predicate=entities:type/canopy,scores={entity.age=0..39}] add canopy.forgotten_origin
 execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[x=0] armor.head with air
 execute if entity @s[scores={SDtime=1}] at @s run clear @a[x=0] firework_rocket
@@ -68,7 +68,7 @@ execute if entity @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute
 execute if entity @s[scores={SDtime=10}] as @a[x=0,team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
 
 ##Places back portals
-execute unless entity @s[tag=noPortal] run function arenaclear:placeportals
+execute unless entity @s[predicate=game:gamemode_components/no_portal] run function arenaclear:placeportals
 
 ##Animated titles
 execute if entity @s[scores={SDtime=1}] unless score $skiptitles CmdData matches 1 run title @a[x=0] title ["",{"text":"It's a Tie!","color":"gray","bold":true}]

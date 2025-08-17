@@ -1,0 +1,87 @@
+[
+  {
+    "condition": "minecraft:reference",
+    "name": "game:gamemode_components/has_flags"
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:location_check",
+        "predicate": {
+          "position": {
+            "x": {
+              "min": -15,
+              "max": -5
+            },
+            "y": {
+              "min": 60,
+              "max": 70
+            },
+            "z": {
+              "min": -69,
+              "max": -59
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:location_check",
+        "predicate": {
+          "position": {
+            "x": {
+              "min": 29,
+              "max": 39
+            },
+            "y": {
+              "min": 60,
+              "max": 70
+            },
+            "z": {
+              "min": -69,
+              "max": -59
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:location_check",
+        "predicate": {
+          "position": {
+            "x": {
+              "min": -15,
+              "max": -5
+            },
+            "y": {
+              "min": 60,
+              "max": 70
+            },
+            "z": {
+              "min": 59,
+              "max": 69
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:location_check",
+        "predicate": {
+          "position": {
+            "x": {
+              "min": 29,
+              "max": 39
+            },
+            "y": {
+              "min": 60,
+              "max": 70
+            },
+            "z": {
+              "min": 59,
+              "max": 69
+            }
+          }
+        }
+      }
+    ]
+  }
+]

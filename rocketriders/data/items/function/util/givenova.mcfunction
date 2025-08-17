@@ -10,9 +10,7 @@ execute if entity @s[scores={HasNova=1..},tag=!fullHotbar,tag=!itemDeducted] at 
 title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Nova Rocket already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasNova=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Nova Rocket obtained.","color":"aqua"}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customNova] run loot give @s[team=Blue,scores={HasNova=0},tag=!fullHotbar] loot items:util/nova
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customNova] run loot give @s[team=Blue,scores={HasNova=0},tag=!fullHotbar] loot items:util/nova_custom
-loot give @s[team=Yellow,scores={HasNova=0},tag=!fullHotbar] loot items:util/nova
+loot give @s[scores={HasNova=0},tag=!fullHotbar] loot items:util/nova
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasNova=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

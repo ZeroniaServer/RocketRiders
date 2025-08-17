@@ -1,6 +1,6 @@
 # arguments: fuse
 
-execute unless entity @s[predicate=entities:vortex/brain] run return fail
+execute unless entity @s[predicate=entities:type/vortex/brain] run return fail
 
 execute unless score @s entity.vortex.fuse matches 0.. if entity @s[tag=!vortex.is_drifting,tag=!vortex.feathered] run playsound entity.shulker.hurt_closed master @a[x=0] ~ ~ ~ 0.7 0
 execute unless score @s entity.vortex.fuse matches 0.. if entity @s[tag=!vortex.is_drifting,tag=!vortex.feathered] run playsound minecraft:block.sculk_sensor.clicking master @a[x=0] ~ ~ ~ 1 1

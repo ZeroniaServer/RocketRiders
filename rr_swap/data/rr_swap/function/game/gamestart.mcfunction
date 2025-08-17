@@ -1,6 +1,6 @@
 #Items
-execute as @a[x=0,tag=JoinBlue] run function rr_swap:baseswap/gear
-execute as @a[x=0,tag=JoinYellow] run function rr_swap:baseswap/gear
+execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function rr_swap:baseswap/gear
+execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function rr_swap:baseswap/gear
 
 #Spawnpoints
 execute if predicate game:game_started as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @s 12 64 -66 0
@@ -11,8 +11,8 @@ execute if predicate game:game_started if score @s gametime matches 3..20 if sco
 execute if predicate game:game_started if score @s gametime matches 3..20 if score SwapSide swapside matches 0 run function rr_swap:items/givefirstlightblue
 
 #Tag Removal
-tag @a[x=0] remove JoinBlue
-tag @a[x=0] remove JoinYellow
+tag @a[x=0,tag=!servermodeJoin] remove JoinBlue
+tag @a[x=0,tag=!servermodeJoin] remove JoinYellow
 
 #Countdown
 execute if predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown

@@ -71,7 +71,7 @@ scoreboard players reset @a[predicate=!custom:indimension] displayinfo
 scoreboard players reset @a[predicate=!custom:indimension] toggleTips
 scoreboard players reset @a[predicate=!custom:indimension] toggleParticles
 scoreboard players reset @a[predicate=!custom:indimension] toggleParkourTips
-scoreboard players reset @a[x=0,team=!Blue,team=!Yellow] LeaveMidgame
+execute as @a[x=0,team=!Blue,team=!Yellow] run trigger LeaveMidgame set 0
 scoreboard players reset @a[x=0,team=!Lobby] MaxItemSec
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] MaxItemSec
 execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] MaxItemSec

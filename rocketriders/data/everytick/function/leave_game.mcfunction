@@ -4,6 +4,7 @@ tag @a[x=0,tag=WasInYellow] remove WasInYellow
 tag @a[x=0,tag=WasInBlue] remove WasInBlue
 tag @a[x=0,team=Yellow] add WasInYellow
 tag @a[x=0,team=Blue] add WasInBlue
+scoreboard players add @a[x=0] LeaveGame 0
 
 #Clearing effects/tags and teleporting to lobby
 tag @a[x=0,team=!Blue,team=!Yellow,tag=CarryFlag] remove CarryFlag

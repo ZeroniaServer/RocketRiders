@@ -1,29 +1,29 @@
 #Set kit to previous upon joining
-execute as @a[x=0,tag=JoinBlue] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
-execute as @a[x=0,tag=JoinYellow] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
-execute as @a[x=0,tag=JoinBlue,scores={crusadekit=1}] run function rr_crusade:items/kit/give/knight
-execute as @a[x=0,tag=JoinBlue,scores={crusadekit=2}] run function rr_crusade:items/kit/give/archer
-execute as @a[x=0,tag=JoinBlue,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage
-execute as @a[x=0,tag=JoinYellow,scores={crusadekit=1}] run function rr_crusade:items/kit/give/knight
-execute as @a[x=0,tag=JoinYellow,scores={crusadekit=2}] run function rr_crusade:items/kit/give/archer
-execute as @a[x=0,tag=JoinYellow,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage
+execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
+execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
+execute as @a[x=0,tag=JoinBlue,scores={crusadekit=1},tag=!servermodeJoin] run function rr_crusade:items/kit/give/knight
+execute as @a[x=0,tag=JoinBlue,scores={crusadekit=2},tag=!servermodeJoin] run function rr_crusade:items/kit/give/archer
+execute as @a[x=0,tag=JoinBlue,scores={crusadekit=3},tag=!servermodeJoin] run function rr_crusade:items/kit/give/mage
+execute as @a[x=0,tag=JoinYellow,scores={crusadekit=1},tag=!servermodeJoin] run function rr_crusade:items/kit/give/knight
+execute as @a[x=0,tag=JoinYellow,scores={crusadekit=2},tag=!servermodeJoin] run function rr_crusade:items/kit/give/archer
+execute as @a[x=0,tag=JoinYellow,scores={crusadekit=3},tag=!servermodeJoin] run function rr_crusade:items/kit/give/mage
 
 #Notify Join
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=1}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=2}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=3}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Spell Wand ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=1}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Knight Sword ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=2}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=3}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Spell Wand ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=1},tag=!servermodeJoin] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=2},tag=!servermodeJoin] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=3},tag=!servermodeJoin] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Spell Wand ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,tag=!servermodeJoin] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=1},tag=!servermodeJoin] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Knight Sword ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=2},tag=!servermodeJoin] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=3},tag=!servermodeJoin] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Spell Wand ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,tag=!servermodeJoin] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 
 #Give first item to anyone who joins within 1st second
 execute if predicate game:game_started if score @s gametime matches 3..20 run function rr_crusade:items/givefirst
 
 #Tag Removal
-tag @a[x=0] remove JoinBlue
-tag @a[x=0] remove JoinYellow
+tag @a[x=0,tag=!servermodeJoin] remove JoinBlue
+tag @a[x=0,tag=!servermodeJoin] remove JoinYellow
 
 #Countdown
 execute if predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown

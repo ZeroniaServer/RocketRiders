@@ -1,10 +1,10 @@
 #Items
-execute as @a[x=0,tag=JoinBlue] run function game:givegear
-execute as @a[x=0,tag=JoinYellow] run function game:givegear
+execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function game:givegear
+execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function game:givegear
 
 #Tag Removal
-tag @a[x=0] remove JoinBlue
-tag @a[x=0] remove JoinYellow
+tag @a[x=0,tag=!servermodeJoin] remove JoinBlue
+tag @a[x=0,tag=!servermodeJoin] remove JoinYellow
 
 #Bossbar
 execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"player...","color":"white"}]

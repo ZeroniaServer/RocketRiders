@@ -198,8 +198,8 @@ kill @e[type=item_display,tag=join_pad_display]
 execute at @e[x=0,type=marker,tag=join_pad.left] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.left"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
 execute at @e[x=0,type=marker,tag=join_pad.middle] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.middle"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
 execute at @e[x=0,type=marker,tag=join_pad.right] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.right"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
+tag @e[x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
-function everytick:everytick_last
 
 fill -57 201 84 -70 201 72 water[level=7] replace #custom:modification_room_pool_blocks strict
 execute if block -63 201 78 tinted_glass run fill -57 200 84 -70 200 72 water[level=8] replace #custom:modification_room_pool_blocks strict

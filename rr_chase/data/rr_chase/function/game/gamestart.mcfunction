@@ -11,21 +11,21 @@ execute if score $dust CmdData matches 1 if entity @s[tag=!BlueFull] as @e[x=0,t
 execute if entity @s[tag=BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
 
 #Items
-execute as @a[x=0,tag=JoinBlue] run function rr_chase:chasegear/givegear
-execute if predicate game:game_started as @a[x=0,tag=JoinBlue] run function items:util/givearrows
+execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function rr_chase:chasegear/givegear
+execute if predicate game:game_started as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function items:util/givearrows
 
 #Spawnpoints
 execute if predicate game:game_started as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @s 12 64 -66 0
 
 #Notify Join
-execute if predicate game:game_started if score @s servermode matches 0 as @a[x=0,tag=JoinBlue] run function rr_chase:chasegear/sabermsg
-execute if predicate game:game_started unless score @s servermode matches 0 run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
+execute if predicate game:game_started if score @s servermode matches 0 as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function rr_chase:chasegear/sabermsg
+execute if predicate game:game_started unless score @s servermode matches 0 run tellraw @a[x=0,tag=JoinBlue,tag=!servermodeJoin] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
 
 #Give first item to anyone who joins within 1st second
 execute if predicate game:game_started if score @s gametime matches 3..20 run function items:givefirst
 
 #Tag Removal
-tag @a[x=0] remove JoinBlue
+tag @a[x=0,tag=!servermodeJoin] remove JoinBlue
 
 #Bossbar
 execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]

@@ -16,14 +16,14 @@ execute if entity @s[tag=Countdown] run scoreboard players set @e[x=0,type=armor
 execute if entity @s[tag=Countdown] run scoreboard players set @e[x=0,type=armor_stand,tag=Bot] BotHP 3
 
 #Items
-execute as @a[x=0,tag=JoinBlue] run function game:givegear
+execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function game:givegear
 
 #Give first item to anyone who joins within 1st second
 execute if predicate game:game_started if score @s gametime matches 3..20 run function items:givefirst
 
 #Tag Removal
-tag @a[x=0] remove JoinBlue
-tag @a[x=0] remove JoinYellow
+tag @a[x=0,tag=!servermodeJoin] remove JoinBlue
+tag @a[x=0,tag=!servermodeJoin] remove JoinYellow
 
 #Bossbar
 execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score @s bluesCount matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]

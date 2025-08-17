@@ -2,7 +2,7 @@ advancement revoke @s only custom:event/player_kills_another_player
 
 ## Achievements
 scoreboard players set $can_grant_achievements var 0
-execute if predicate game:game_started if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled,scores={servermode=0},tag=!realms] run scoreboard players set $can_grant_achievements var 1
+execute if predicate game:game_started if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled,scores={servermode=-1..0},tag=!realms] run scoreboard players set $can_grant_achievements var 1
 
 # Fire Within Me (if I am on fire, award me)
 execute if score $can_grant_achievements var matches 1 if predicate custom:is_on_fire run advancement grant @s only achievements:rr_challenges/fire_within_me

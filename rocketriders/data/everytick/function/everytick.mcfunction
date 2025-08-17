@@ -55,13 +55,13 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] in minecraft:overworld
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:team_count
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gamestart
 execute if predicate game:game_started as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0}] run function everytick:regen_system
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run function everytick:regen_system
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run gamerule naturalRegeneration true
 
 #Night vision/saturation and more lobby functionality
 effect give @a[x=0,team=Lobby] night_vision infinite 100 true
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Sonar] run effect give @a[x=0,team=Spectator] night_vision infinite 100 true
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0}] run effect give @a[x=0] saturation infinite 0 true
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run effect give @a[x=0] saturation infinite 0 true
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run effect clear @a[x=0] saturation
 execute as @a[x=0,team=Lobby,tag=hardcore] run function modifiers:hardcorereset
 execute as @a[x=0,team=Lobby,tag=hobbit] run function modifiers:hobbit/reset
@@ -71,7 +71,7 @@ scoreboard players enable @a[x=0,team=Developer] displayinfo
 execute as @a[x=0,scores={displayinfo=1..}] at @s run function lobby:displayinfo
 execute as @a[x=0,team=Lobby] run function everytick:score_reset
 execute if loaded 25 184 -6 unless predicate game:game_started run function lobby:credits/cycle
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=0}] run function lobby:parkour/parkour
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s servermode matches 0 run function lobby:parkour/parkour
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless score @s servermode matches 0 run function lobby:parkour/parkourserver
 stopsound @a[x=0] ambient minecraft:ambient.cave
 
@@ -106,7 +106,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettin
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] as @a[x=0] run trigger editSettings set 0
 execute as @a[x=0,team=!Lobby,team=!Developer] run trigger editSettings set 0
 execute as @a[x=0,team=!Spectator,team=!Blue,team=!Yellow,scores={editSettings=1..}] run function lobby:cancelsettings/interact
-execute if score $mcancel CmdData matches -1 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=0}] run function lobby:cancelsettings/resume
+execute if score $mcancel CmdData matches -1 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=-1..0}] run function lobby:cancelsettings/resume
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=..1}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0,servermode=..1}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 

@@ -6,8 +6,9 @@ execute if entity @s[tag=preventionOff,predicate=!game:gamemode_components/setti
 execute if entity @s[predicate=game:gamemode_components/settings_locked] run setblock -70 193 79 crimson_wall_sign[facing=east]
 
 #Hotbar Limit
-execute if entity @s[tag=doHotbarLimit,predicate=!game:gamemode_components/settings_locked] run setblock -70 191 78 warped_wall_sign[facing=east]
-execute if entity @s[tag=!doHotbarLimit,predicate=!game:gamemode_components/settings_locked] run setblock -70 191 78 crimson_wall_sign[facing=east]
+execute if entity @s[tag=doHotbarLimit,tag=!hotbarLimitOff,predicate=!game:gamemode_components/settings_locked] run setblock -70 191 78 warped_wall_sign[facing=east]
+execute if entity @s[tag=!doHotbarLimit,tag=!hotbarLimitOff,predicate=!game:gamemode_components/settings_locked] run setblock -70 191 78 crimson_wall_sign[facing=east]
+execute if entity @s[tag=hotbarLimitOff,predicate=!game:gamemode_components/settings_locked] run setblock -70 191 78 crimson_wall_sign[facing=east]
 execute if entity @s[predicate=game:gamemode_components/settings_locked] run setblock -70 191 78 crimson_wall_sign[facing=east]
 
 #Item Stacking

@@ -41,7 +41,7 @@ execute as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tag @s remove inPark
 
 #Handle achievements with servermode
 execute if entity @s[scores={servermode=-1..0},tag=!realms] as @a[x=0,scores={LeaveGame=1..}] run function achievements:roots
-execute if entity @s[scores={servermode=0},tag=realms] as @a[x=0,scores={LeaveGame=1..}] run advancement grant @s only 2811iaj1:root
+execute if entity @s[tag=realms] as @a[x=0,scores={LeaveGame=1..}] run advancement grant @s only 2811iaj1:root
 execute if entity @s[scores={servermode=1..}] as @a[x=0,scores={LeaveGame=1..}] run function achievements:reset
 
 #Traveler fix

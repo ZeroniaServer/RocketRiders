@@ -21,13 +21,13 @@ execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=Edite
 execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame value 0
 execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame color white
 execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings,tag=!customBossbar,scores={servermode=-1}] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
-execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0..1}] run bossbar set rr:startgame color purple
-execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0}] unless score $lockmodroom CmdData matches 1 run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
-execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=0}] if score $lockmodroom CmdData matches 1 run bossbar set rr:startgame name ["",{"text":"Waiting for game settings to be confirmed...","color":"dark_purple"}]
+execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=-1..1}] run bossbar set rr:startgame color purple
+execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=-1..0}] unless score $lockmodroom CmdData matches 1 run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
+execute if entity @s[tag=!EditedSettings,scores={endtimer=..0,servermode=-1..0}] if score $lockmodroom CmdData matches 1 run bossbar set rr:startgame name ["",{"text":"Waiting for game settings to be confirmed...","color":"dark_purple"}]
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame color red
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame name ["",{"text":"A game is currently ending.","color":"red"}]
 execute if entity @s[tag=EditedSettings] run scoreboard players set $ClearTime CmdData 0
-execute if entity @s[tag=!EditedSettings,scores={servermode=0}] run bossbar set rr:startgame value 30
+execute if entity @s[tag=!EditedSettings,scores={servermode=-1..0}] run bossbar set rr:startgame value 30
 execute unless predicate game:game_started unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a[x=0]
 
 ##Blue Join Pad
@@ -61,9 +61,9 @@ execute if predicate game:game_started run gamemode survival @a[x=0,team=Blue,ga
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinBlue] resistance
 execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
-execute if entity @s[scores={servermode=0},tag=!realms,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
-execute if entity @s[scores={servermode=0},tag=!realms,tag=chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
-execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tag @s add achievementInformed
+execute if entity @s[scores={servermode=-1..0},tag=!realms,tag=!chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
+execute if entity @s[scores={servermode=-1..0},tag=!realms,tag=chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
+execute if entity @s[scores={servermode=-1..0},tag=!realms] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tag @s add achievementInformed
 execute if entity @a[x=0,tag=JoinBlue] run function lobby:cancelsettings/reset
 
 #Imbalanced/full team control
@@ -107,8 +107,8 @@ execute if predicate game:game_started run gamemode survival @a[x=0,team=Yellow,
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinYellow] resistance
 execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 #Achievement keybind tutorial
-execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
-execute if entity @s[scores={servermode=0},tag=!realms] as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tag @s add achievementInformed
+execute if entity @s[scores={servermode=-1..0},tag=!realms] as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
+execute if entity @s[scores={servermode=-1..0},tag=!realms] as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tag @s add achievementInformed
 execute if entity @a[x=0,tag=JoinYellow] run function lobby:cancelsettings/reset
 
 #Imbalanced/full team control

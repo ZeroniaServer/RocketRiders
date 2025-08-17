@@ -10,7 +10,7 @@ execute if predicate game:game_started if entity @e[x=0,type=armor_stand,tag=Sel
 
 ## Achievements
 scoreboard players set $can_grant_achievements var 0
-execute if predicate game:game_started if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled,scores={servermode=-1..0},tag=!realms] run scoreboard players set $can_grant_achievements var 1
+execute if predicate game:game_started if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled,scores={servermode=-1..0},predicate=!rr:realms] run scoreboard players set $can_grant_achievements var 1
 
 # So Close, Yet So Fall Away (if I am touching the floor of the enemy nether portal, award me)
 execute if score $can_grant_achievements var matches 1 if entity @s[team=Blue,predicate=!custom:not_falling,x=-10,dx=45,y=60,dy=2,z=73,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:gamemode_components/no_portal] run advancement grant @s only achievements:rr_challenges/fall_away

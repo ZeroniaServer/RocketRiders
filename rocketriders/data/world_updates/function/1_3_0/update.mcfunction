@@ -53,6 +53,9 @@ scoreboard objectives add config dummy
 scoreboard objectives add gamemode_components dummy
 
 ## early stages of nuking Selection armour stand...
+execute store success score $realms global if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms]
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove realms
+
 execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches -2147483648..2147483647 store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount

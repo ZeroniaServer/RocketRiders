@@ -1,7 +1,7 @@
 ##Regifting achievement for Yellow team
 ##Detects a Yellow player damaging a player with a Blue fireball
 advancement revoke @s only achievements:rr_utility/yellow_fireball_hit
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=-1..0},tag=!realms] run return fail
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={servermode=-1..0},predicate=!rr:realms] run return fail
 scoreboard players add @s[team=Yellow] regifts 1
 advancement grant @s[team=Yellow,scores={regifts=1..}] only achievements:rr_challenges/regifting 1
 advancement grant @s[team=Yellow,scores={regifts=2..}] only achievements:rr_challenges/regifting 2

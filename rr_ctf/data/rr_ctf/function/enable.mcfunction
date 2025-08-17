@@ -2,6 +2,7 @@ scoreboard players reset * gamemode_components
 scoreboard players set $no_portal gamemode_components 1
 scoreboard players set $main_item/pickaxe gamemode_components 1
 scoreboard players set $has_flags gamemode_components 1
+scoreboard players set $lower_void gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add ctfEnabled
@@ -22,7 +23,6 @@ tag @s add customPrevention
 tag @s add customObsidian
 tag @s add noSabers
 tag @s add respawnFlag
-tag @s add customVoid
 
 #disable arrows and enable canopies/fireballs
 tag @s[tag=rngArrows] add arrowsWasOn

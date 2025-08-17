@@ -1,9 +1,6 @@
 #leave midgame
 execute unless predicate rr:is_cubekrowd run function rr_ctf:game/leavemidgame
 
-##Player void
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] at @s if predicate rr_ctf:in_void unless entity @s[scores={ThrowPlat=1..}] run function game:void
-
 #Item RNG
 tag @s add givenCanopy
 scoreboard players add @s RandomItem 1

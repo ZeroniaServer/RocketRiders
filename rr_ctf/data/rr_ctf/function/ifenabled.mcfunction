@@ -41,15 +41,3 @@ execute if entity @s[tag=EditedSettings] if entity @a[x=0,tag=informMe] run func
 execute if entity @s[tag=EditedSettings] if predicate rr:inform_late_joiners_about_items as @a[x=0,tag=informMe] run function servermode:notifyitems
 execute if entity @s[tag=EditedSettings,tag=Repeat] if entity @a[x=0,tag=informMe] run function gamemodes:informrepeat
 tag @a[x=0,tag=informMe] remove informMe
-
-#Kill everything below void
-execute as @e[x=0,type=ender_pearl] at @s run kill @s[predicate=rr_ctf:in_void]
-execute as @e[x=0,type=snowball] at @s run kill @s[predicate=rr_ctf:in_void]
-execute as @e[x=0,type=dragon_fireball] at @s run kill @s[predicate=rr_ctf:in_void]
-execute as @e[x=0,type=egg] at @s run kill @s[predicate=rr_ctf:in_void]
-execute as @e[x=0,type=fireball] at @s run kill @s[predicate=rr_ctf:in_void]
-execute as @e[x=0,type=tnt] at @s run kill @s[predicate=rr_ctf:in_void]
-execute as @e[x=0,type=tnt_minecart] at @s run kill @s[predicate=rr_ctf:in_void]
-execute as @e[x=0,type=marker,tag=novatracker] at @s run kill @s[predicate=rr_ctf:in_void]
-execute as @e[x=0,type=firework_rocket,scores={novatimer=1..}] at @s run kill @s[predicate=rr_ctf:in_void]
-execute as @e[x=0,type=#custom:potion] at @s run kill @s[predicate=rr_ctf:in_void]

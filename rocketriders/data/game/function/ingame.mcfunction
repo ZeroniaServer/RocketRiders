@@ -23,7 +23,7 @@ scoreboard players add @a[x=0,team=Blue] kills 0
 execute as @a[x=0,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow,predicate=custom:on_blue_or_yellow_team] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
 ##Player void
-execute unless entity @s[tag=customVoid] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] at @s if predicate custom:in_void unless entity @s[scores={ThrowPlat=1..}] run function game:void
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team,predicate=custom:in_void] unless score @s ThrowPlat matches 1.. at @s run function game:void
 
 ##Full hotbar check
 function items:full_hotbar

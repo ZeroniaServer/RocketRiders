@@ -76,6 +76,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] ru
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPortal
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $settings_locked gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $lower_void gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customVoid
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $crusade_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

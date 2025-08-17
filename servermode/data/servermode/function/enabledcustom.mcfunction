@@ -3,7 +3,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,scores={servermode=-1}] 
 function game:forcestop
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PlayerCap 6
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode 0
+scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] servermode -1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SplashStreamsOff

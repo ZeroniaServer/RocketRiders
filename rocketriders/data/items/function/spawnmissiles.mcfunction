@@ -182,7 +182,6 @@ execute if entity @s[tag=strict] if block 11 38 -74 nether_portal run scoreboard
 execute if entity @s[tag=strict] if block 13 38 -74 nether_portal run scoreboard players set $b2port var 1
 
 #Crusade Mode override behavior
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,limit=1] run say hi
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,limit=1] if block 4 45 67 nether_portal run scoreboard players set $yport var 1
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,limit=1] if block 4 45 -67 nether_portal run scoreboard players set $bport var 1
 

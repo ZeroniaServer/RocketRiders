@@ -40,7 +40,8 @@ execute if entity @s[tag=BlueFull] run tag @a[x=0] remove JoinBlue
 execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=-1..0},tag=!BlueFull] as @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
-execute if entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings,tag=!JustCleared] as @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] at @s as @a[distance=..1,team=Lobby,limit=1,sort=random] run function game:joinblue
+execute as @e[x=0,type=marker,tag=join_pad.blue] at @s as @a[distance=..1,team=Lobby,limit=1,sort=random,tag=!tryJoinBlue] run function game:joinblue
+execute as @e[x=0,type=marker,tag=join_pad.blue] at @s run tag @a[distance=2..,tag=tryJoinBlue] remove tryJoinBlue
 team join Blue @a[x=0,tag=JoinBlue]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[x=0,tag=JoinBlue]
@@ -67,19 +68,6 @@ execute if predicate rr:has_achievements if entity @s[tag=chaseEnabled] as @a[x=
 execute if predicate rr:has_achievements as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tag @s add achievementInformed
 execute if entity @a[x=0,tag=JoinBlue] run function lobby:cancelsettings/reset
 
-#Imbalanced/full team control
-execute if entity @s[scores={largerTeam=1}] as @e[x=0,type=marker,tag=join_pad.blue] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
-execute if entity @s[scores={largerTeam=1}] as @e[x=0,type=marker,tag=join_pad.blue] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":true},{"text":" instead.","color":"yellow","bold":false}]
-execute if entity @s[scores={largerTeam=1}] as @e[x=0,type=marker,tag=join_pad.blue] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
-execute if entity @s[scores={largerTeam=1}] as @e[x=0,type=marker,tag=join_pad.blue] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
-execute if entity @s[tag=BlueFull] as @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Team Full!","color":"red","bold":true}]
-execute if entity @s[tag=BlueFull,tag=EditedSettings] as @e[x=0,type=marker,tag=join_pad.blue,tag=CancelJoin] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
-execute if entity @s[tag=BlueFull,tag=!YellowFull,tag=EditedSettings] as @e[x=0,type=marker,tag=join_pad.blue] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Join ","color":"yellow","bold":false},{"text":"Yellow","color":"gold","bold":true},{"text":" instead.","color":"yellow","bold":false}]
-execute if entity @s[tag=BlueFull,tag=YellowFull,tag=EditedSettings] as @e[x=0,type=marker,tag=join_pad.blue] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":false}]
-execute if entity @s[tag=BlueFull] as @e[x=0,type=marker,tag=join_pad.blue] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinBlue] times 5 30 5
-execute if entity @s[tag=BlueFull] as @e[x=0,type=marker,tag=join_pad.blue] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinBlue] add tryJoinBlue
-execute as @e[x=0,type=marker,tag=join_pad.blue] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinBlue
-
 ##Yellow Join Pad
 execute as @a[x=0] if score @s joinYellow matches 1 if predicate rr:is_cubekrowd run function servermode:joinyellow
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinYellow
@@ -89,7 +77,8 @@ execute if entity @s[tag=YellowFull] run tag @a[x=0] remove JoinYellow
 execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=0..1},tag=!YellowFull] as @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:yellow_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if entity @s[tag=!noTeamBalance] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] add join_pad.show_barrier
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
-execute if entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings,tag=!JustCleared] as @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] at @s as @a[distance=..1,team=Lobby,limit=1,sort=random] run function game:joinyellow
+execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s as @a[distance=..1,team=Lobby,limit=1,sort=random,tag=!tryJoinYellow] run function game:joinyellow
+execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s run tag @a[distance=2..,tag=tryJoinYellow] remove tryJoinYellow
 team join Yellow @a[x=0,tag=JoinYellow]
 execute if entity @s[tag=!noTeamBalance] run function everytick:team_balance
 clear @a[x=0,tag=JoinYellow]
@@ -111,19 +100,6 @@ execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport m
 execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
 execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tag @s add achievementInformed
 execute if entity @a[x=0,tag=JoinYellow] run function lobby:cancelsettings/reset
-
-#Imbalanced/full team control
-execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=join_pad.yellow] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Imbalanced!","color":"red","bold":true}]
-execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=join_pad.yellow] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"dark_aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"dark_aqua","bold":false}]
-execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=join_pad.yellow] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
-execute if entity @s[scores={largerTeam=-1}] as @e[x=0,type=marker,tag=join_pad.yellow] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
-execute if entity @s[tag=YellowFull] as @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Team Full!","color":"red","bold":true}]
-execute if entity @s[tag=YellowFull,tag=EditedSettings] as @e[x=0,type=marker,tag=join_pad.yellow,tag=CancelJoin] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] title ["",{"text":"Cannot Join Team!","color":"red","bold":true}]
-execute if entity @s[tag=YellowFull,tag=!BlueFull,tag=EditedSettings] as @e[x=0,type=marker,tag=join_pad.yellow] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Join ","color":"dark_aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"dark_aqua","bold":false}]
-execute if entity @s[tag=YellowFull,tag=BlueFull,tag=EditedSettings] as @e[x=0,type=marker,tag=join_pad.yellow] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] subtitle ["",{"text":"Feel free to spectate this game instead.","color":"gray","bold":false}]
-execute if entity @s[tag=YellowFull] as @e[x=0,type=marker,tag=join_pad.yellow] at @s run title @a[distance=..1,team=Lobby,tag=!tryJoinYellow] times 5 30 5
-execute if entity @s[tag=YellowFull] as @e[x=0,type=marker,tag=join_pad.yellow] at @s run tag @a[distance=..1,team=Lobby,tag=!tryJoinYellow] add tryJoinYellow
-execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinYellow
 
 ##Join pad + Leave pad Spectator
 execute as @a[x=0] if score @s spectate matches 1 if predicate rr:is_cubekrowd run function servermode:spectate

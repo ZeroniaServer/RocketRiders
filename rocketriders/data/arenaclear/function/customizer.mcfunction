@@ -33,6 +33,7 @@ tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!tyingOff] add doTying
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doHotbarLimit
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!stackingOn] remove doStacking
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doFireballPortals
+execute unless score @s MaxItemSec matches 5..30 run scoreboard players set @s MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] RepeatSettings 1
@@ -47,6 +48,7 @@ tag @s[tag=DefaultOptions] remove DefaultOptions
 tag @s[tag=DefaultWorld,tag=!GamemodeRefreshed] add noPlayerCredits
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function lobby:credits/stop
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run time set 12925t
+execute unless score @s daytime matches 0..23999 store result score @s daytime run time query daytime
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultWorld] remove DefaultWorld
 

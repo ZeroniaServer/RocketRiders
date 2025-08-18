@@ -32,6 +32,7 @@ execute if entity @s[tag=!EditedSettings] if predicate rr:has_modification_room 
 execute unless predicate game:game_started unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a[x=0]
 
 ##Blue Join Pad
+execute as @a[x=0] if score @s joinBlue matches 1 if predicate rr:is_cubekrowd run function servermode:joinblue
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinBlue
 execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinBlue
 execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinBlue
@@ -80,6 +81,7 @@ execute if entity @s[tag=BlueFull] as @e[x=0,type=marker,tag=join_pad.blue] at @
 execute as @e[x=0,type=marker,tag=join_pad.blue] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinBlue
 
 ##Yellow Join Pad
+execute as @a[x=0] if score @s joinYellow matches 1 if predicate rr:is_cubekrowd run function servermode:joinyellow
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinYellow
 execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinYellow
 execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinYellow
@@ -124,6 +126,7 @@ execute if entity @s[tag=YellowFull] as @e[x=0,type=marker,tag=join_pad.yellow] 
 execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s run tag @a[distance=2..,team=Lobby] remove tryJoinYellow
 
 ##Join pad + Leave pad Spectator
+execute as @a[x=0] if score @s spectate matches 1 if predicate rr:is_cubekrowd run function servermode:spectate
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinSpec
 execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinSpec
 execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinSpec

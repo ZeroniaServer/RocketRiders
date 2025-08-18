@@ -17,7 +17,7 @@ execute align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~
 
 execute store success score $feathered var if entity @s[tag=vortex.feathered]
 tag @s add vortex.this
-execute at @s summon item_display run function entities:type/vortex/init/body
+execute at @s summon item_display run function entities:vortex/init/body
 tag @s remove vortex.this
 
 execute if score $feathered var matches 0 at @s run playsound minecraft:entity.shulker.hurt_closed master @a[x=0] ~ ~ ~ 0.7 0 0.05

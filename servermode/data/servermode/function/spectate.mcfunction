@@ -1,0 +1,4 @@
+##Utility function for joining Yellow team
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run tag @s[team=!Spectator] add JoinSpec
+execute if entity @s[team=Spectator] run return run tellraw @s [{text:"[",color:"dark_gray"},{text:"!",color:"red",bold:true},{text:"] ",color:"dark_gray"},{"text":"You're already spectating!","color":"gray"}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run tellraw @s [{text:"[",color:"dark_gray"},{text:"!",color:"red",bold:true},{text:"] ",color:"dark_gray"},{"text":"Wait until game settings are confirmed first.","color":"gray"}]

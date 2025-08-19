@@ -66,8 +66,8 @@ execute if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!
 execute if entity @s[tag=itemDelayOff] run tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 tag @a[x=0,tag=ItemDelayChange] remove ItemDelayChange
 execute if predicate rr:has_modification_room if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-1}] run function arenaclear:itemdelay/show_dialog
-execute if predicate rr:has_modification_room if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run function arenaclear:itemdelay
-execute if predicate rr:has_modification_room if entity @s[tag=itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={daytime=-2147483648..}] unless score @s MaxItemSec matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
+execute if predicate rr:has_modification_room if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-2147483648..}] unless score @s MaxItemSec matches -2..0 run function arenaclear:itemdelay
+execute if predicate rr:has_modification_room if entity @s[tag=itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-2147483648..}] unless score @s MaxItemSec matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 scoreboard players reset @a[x=0] MaxItemSec
 execute if predicate rr:has_modification_room if entity @s[tag=!Minute] run scoreboard players set @a[x=0] MaxItemSec -2
 execute if predicate rr:has_modification_room if entity @s[tag=!Minute] run scoreboard players enable @a[x=0,team=Lobby] MaxItemSec

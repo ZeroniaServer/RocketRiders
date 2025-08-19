@@ -1,0 +1,107 @@
+{
+	"type": "minecraft:multi_action",
+	"title": "RR Dev Quick Actions",
+	"exit_action": {
+		"label": "Cancel"
+	},
+	"actions": [
+		{
+			"label": "Force Stop",
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "/trigger dev set 2"
+			}
+		},
+		{
+			"label": "Force Start",
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "/trigger dev set 3"
+			}
+		},
+		{
+			"label": "Quick Launch",
+			"tooltip": "Start the game with current game mode & settings",
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "/trigger dev set 100"
+			}
+		},
+		{
+			"label": "Quick Launch Game Mode",
+			"tooltip": "Start the game on a specific gamemode",
+			"action": {
+				"type": "minecraft:show_dialog",
+				"dialog": {
+					"type": "minecraft:multi_action",
+					"title": "RR Dev: Quick Actions",
+					"exit_action": {
+						"label": "Back",
+						"action": {
+							"type": "minecraft:run_command",
+							"command": "/trigger dev"
+						}
+					},
+					"actions": [
+						{
+							"label": "Launch Normal",
+							"action": {
+								"type": "minecraft:run_command",
+								"command": "/trigger dev set 101"
+							}
+						},
+						{
+							"label": "Launch Powerups",
+							"action": {
+								"type": "minecraft:run_command",
+								"command": "/trigger dev set 102"
+							}
+						},
+						{
+							"label": "Launch Swap",
+							"action": {
+								"type": "minecraft:run_command",
+								"command": "/trigger dev set 103"
+							}
+						},
+						{
+							"label": "Launch Capture The Flag",
+							"action": {
+								"type": "minecraft:run_command",
+								"command": "/trigger dev set 104"
+							}
+						},
+						{
+							"label": "Launch Chase",
+							"action": {
+								"type": "minecraft:run_command",
+								"command": "/trigger dev set 105"
+							}
+						},
+						{
+							"label": "Launch 1v1 Duel",
+							"action": {
+								"type": "minecraft:run_command",
+								"command": "/trigger dev set 106"
+							}
+						},
+						{
+							"label": "Launch Crusade",
+							"action": {
+								"type": "minecraft:run_command",
+								"command": "/trigger dev set 107"
+							}
+						},
+						{
+							"label": "Launch Sandbox",
+							"action": {
+								"type": "minecraft:run_command",
+								"command": "/trigger dev set 108"
+							}
+						}
+					]
+				}
+			}
+		}
+	]
+}

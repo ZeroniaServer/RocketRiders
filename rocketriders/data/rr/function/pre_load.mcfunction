@@ -23,5 +23,10 @@ execute in minecraft:overworld positioned 0.0 0.0 0.0 run function world_updates
 execute in minecraft:overworld positioned 0.0 0.0 0.0 run function rr:upon_load
 execute in minecraft:overworld positioned 0.0 0.0 0.0 run function #rr:load
 
+execute unless function dev:enabled run scoreboard objectives remove dev
+execute unless function dev:enabled run scoreboard objectives remove dev_action
+execute unless function dev:enabled run scoreboard objectives remove confirmed_dev
+execute in minecraft:overworld positioned 0.0 0.0 0.0 run function dev:load
+
 # Start ticking functions
 scoreboard players set $tick global 1

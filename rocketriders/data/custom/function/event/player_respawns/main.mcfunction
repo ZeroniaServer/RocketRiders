@@ -35,5 +35,5 @@ execute if predicate game:game_started run scoreboard players reset @s crusadech
 
 # Give knights new shields when they respawn
 clear @s[scores={crusadekit=1}] shield
-execute if entity @s[predicate=custom:on_blue_or_yellow_team,scores={crusadekit=1}] if items entity @s weapon.offhand * run loot give @s loot items:misc/knight_shield
-execute if entity @s[predicate=custom:on_blue_or_yellow_team,scores={crusadekit=1}] unless items entity @s weapon.offhand * run loot replace entity @s weapon.offhand loot items:misc/knight_shield
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] if entity @s[predicate=custom:on_blue_or_yellow_team,scores={crusadekit=1}] if items entity @s weapon.offhand * run loot give @s loot items:misc/knight_shield
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] if entity @s[predicate=custom:on_blue_or_yellow_team,scores={crusadekit=1}] unless items entity @s weapon.offhand * run loot replace entity @s weapon.offhand loot items:misc/knight_shield

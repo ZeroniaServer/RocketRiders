@@ -238,25 +238,40 @@ kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
 #Unstable TNT Modifier
 execute if predicate game:modifier/unstable_tnt run function modifiers:unstabletnt
 
-##Pierce Prevention -- set back powerables and pistons
-execute if entity @s[tag=strict] run function items:prevention/setbackpowerables
-execute if entity @s[tag=strict] run function items:prevention/setbackpistons
-
 ##Pierce Prevention -- replace portals
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 58 74 34 58 74 minecraft:obsidian replace #custom:basereplace strict
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 58 74 34 37 74 minecraft:obsidian replace #custom:basereplace strict
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 37 74 -10 37 74 minecraft:obsidian replace #custom:basereplace strict
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 12 37 74 12 58 74 minecraft:obsidian replace #custom:basereplace strict
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 37 74 -10 58 74 minecraft:obsidian replace #custom:basereplace strict
+
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 58 -74 34 58 -74 minecraft:obsidian replace #custom:basereplace strict
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 58 -74 34 37 -74 minecraft:obsidian replace #custom:basereplace strict
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 37 -74 -10 37 -74 minecraft:obsidian replace #custom:basereplace strict
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 12 37 -74 12 58 -74 minecraft:obsidian replace #custom:basereplace strict
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 37 -74 -10 58 -74 minecraft:obsidian replace #custom:basereplace strict
+
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 175 74 34 178 74 air replace #custom:piston strict
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 175 74 34 178 74 air replace #custom:piston strict
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 175 74 -10 178 74 air replace #custom:piston strict
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 12 175 74 12 178 74 air replace #custom:piston strict
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 175 74 -10 178 74 air replace #custom:piston strict
+
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 175 -74 34 178 -74 air replace #custom:piston strict
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 175 -74 34 178 -74 air replace #custom:piston strict
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 175 -74 -10 178 -74 air replace #custom:piston strict
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 12 175 -74 12 178 -74 air replace #custom:piston strict
+execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 175 -74 -10 178 -74 air replace #custom:piston strict
+
 execute if entity @s[tag=strict] if score $y1port var matches 1 run fill 11 38 74 -9 57 74 nether_portal strict
+execute if entity @s[tag=strict] if score $y1port var matches 1 run fill 11 175 74 -9 178 74 air replace #custom:piston strict
 execute if entity @s[tag=strict] if score $y2port var matches 1 run fill 13 38 74 33 57 74 nether_portal strict
+execute if entity @s[tag=strict] if score $y2port var matches 1 run fill 13 175 74 33 178 74 air replace #custom:piston strict
 execute if entity @s[tag=strict] if score $b1port var matches 1 run fill 11 38 -74 -9 57 -74 nether_portal strict
+execute if entity @s[tag=strict] if score $b1port var matches 1 run fill 11 175 -74 -9 178 -74 air replace #custom:piston strict
 execute if entity @s[tag=strict] if score $b2port var matches 1 run fill 13 38 -74 33 57 -74 nether_portal strict
+execute if entity @s[tag=strict] if score $b2port var matches 1 run fill 13 175 -74 33 178 -74 air replace #custom:piston strict
+
 scoreboard players reset $y1port var
 scoreboard players reset $y2port var
 scoreboard players reset $b1port var
@@ -265,10 +280,16 @@ scoreboard players reset $b2port var
 #Crusade Mode override behavior
 execute if entity @s[tag=strict] if score $yport var matches 1 run fill 21 56 67 3 44 67 obsidian strict
 execute if entity @s[tag=strict] if score $yport var matches 1 run fill 20 55 67 4 45 67 nether_portal strict
+execute if entity @s[tag=strict] if score $yport var matches 1 run fill 21 175 67 3 178 67 air replace #custom:piston strict
 execute if entity @s[tag=strict] if score $bport var matches 1 run fill 21 56 -67 3 44 -67 obsidian strict
 execute if entity @s[tag=strict] if score $bport var matches 1 run fill 20 55 -67 4 45 -67 nether_portal strict
+execute if entity @s[tag=strict] if score $bport var matches 1 run fill 21 175 -67 3 178 -67 air replace #custom:piston strict
 scoreboard players reset $yport var
 scoreboard players reset $bport var
+
+##Pierce Prevention -- set back powerables and pistons
+execute if entity @s[tag=strict] run function items:prevention/setbackpowerables
+execute if entity @s[tag=strict] run function items:prevention/setbackpistons
 
 ##Kill entity
 kill @s

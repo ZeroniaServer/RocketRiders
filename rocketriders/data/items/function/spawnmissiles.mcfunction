@@ -238,6 +238,10 @@ kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
 #Unstable TNT Modifier
 execute if predicate game:modifier/unstable_tnt run function modifiers:unstabletnt
 
+##Pierce Prevention -- set back powerables and pistons
+execute if entity @s[tag=strict] run function items:prevention/setbackpowerables
+execute if entity @s[tag=strict] run function items:prevention/setbackpistons
+
 ##Pierce Prevention -- replace portals
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 58 74 34 58 74 minecraft:obsidian replace #custom:basereplace strict
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 58 74 34 37 74 minecraft:obsidian replace #custom:basereplace strict
@@ -265,10 +269,6 @@ execute if entity @s[tag=strict] if score $bport var matches 1 run fill 21 56 -6
 execute if entity @s[tag=strict] if score $bport var matches 1 run fill 20 55 -67 4 45 -67 nether_portal strict
 scoreboard players reset $yport var
 scoreboard players reset $bport var
-
-##Pierce Prevention -- set back powerables and pistons
-execute if entity @s[tag=strict] run function items:prevention/setbackpowerables
-execute if entity @s[tag=strict] run function items:prevention/setbackpistons
 
 ##Kill entity
 kill @s

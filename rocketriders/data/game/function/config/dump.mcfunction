@@ -4,7 +4,7 @@
 data modify storage rocketriders:main "config/dump" set value {config:{}}
 
 execute store success storage rocketriders:main "config/dump".config.disable_cannoning byte 1 if score $disable_cannoning config matches 1
-execute store success storage rocketriders:main "config/dump".config.impact_projectiles byte 1 if score $impact_projectiles config matches 1
+execute store success storage rocketriders:main "config/dump".config.impact_utilities byte 1 if score $impact_utilities config matches 1
 execute store success storage rocketriders:main "config/dump".config.explosive byte 1 if score $explosive config matches 1
 execute store success storage rocketriders:main "config/dump".config.punchable_tnt byte 1 if score $punchable_tnt config matches 1
 execute store success storage rocketriders:main "config/dump".config.unstable_tnt byte 1 if score $unstable_tnt config matches 1

@@ -1,7 +1,7 @@
-## If impact_projectiles is OFF
-execute unless predicate game:modifier/impact_projectiles run return run kill @s
+## If impact_utilities is OFF
+execute unless predicate game:modifier/impact_utilities run return run kill @s
 
-## If impact_projectiles is ON
+## If impact_utilities is ON
 # Move to the player's position
 tag @s add canopy_projectile.early_impact.this
 execute on origin at @s run tp @e[limit=1,tag=canopy_projectile.early_impact.this] ~ ~ ~

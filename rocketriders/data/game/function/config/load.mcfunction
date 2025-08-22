@@ -9,8 +9,8 @@ execute unless score $merge var matches 1 run function game:modifier/reset
 execute store result score $disable_cannoning config run data get storage rocketriders:main "config/load".config.disable_cannoning
 execute unless score $disable_cannoning config matches 1..1 run scoreboard players reset $disable_cannoning config
 
-execute store result score $impact_projectiles config run data get storage rocketriders:main "config/load".config.impact_projectiles
-execute unless score $impact_projectiles config matches 1..1 run scoreboard players reset $impact_projectiles config
+execute store result score $impact_utilities config run data get storage rocketriders:main "config/load".config.impact_utilities
+execute unless score $impact_utilities config matches 1..1 run scoreboard players reset $impact_utilities config
 
 execute store result score $explosive config run data get storage rocketriders:main "config/load".config.explosive
 execute unless score $explosive config matches 1..1 run scoreboard players reset $explosive config

@@ -22,7 +22,7 @@
         "type": "minecraft:score",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$config_override.impact_projectiles"
+          "name": "$config_override.impact_utilities"
         },
         "score": "gamemode_components"
       },
@@ -38,7 +38,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "$impact_projectiles"
+            "name": "$impact_utilities"
           },
           "score": "config"
         },
@@ -50,7 +50,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "$config_override.impact_projectiles"
+            "name": "$config_override.impact_utilities"
           },
           "score": "gamemode_components"
         },

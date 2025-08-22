@@ -2,7 +2,7 @@
 execute on vehicle run kill @s[predicate=entities:type/stinging_shield_projectile/body]
 
 ## If impact_utilities is OFF
-execute unless predicate game:modifier/impact_utilities run return run function entities:stinging_shield_projectile/actions/break
+execute unless predicate game:modifiers/impact_utilities/on run return run function entities:stinging_shield_projectile/actions/break
 
 ## If impact_utilities is ON
 # Prevent deployment when out of bounds

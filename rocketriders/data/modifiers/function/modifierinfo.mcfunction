@@ -9,8 +9,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=1},tag=!NoFall] run tellraw @s ["",{"text":"No Fall","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Explosive
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=2}] if predicate game:modifier/explosive run tellraw @s ["",{"text":"Explosive","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" TNT, Fireballs, Nova Rockets, and the Vortex all do more explosion damage.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=2}] unless predicate game:modifier/explosive run tellraw @s ["",{"text":"Explosive","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=2}] if predicate game:modifiers/explosive/on run tellraw @s ["",{"text":"Explosive","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" TNT, Fireballs, Nova Rockets, and the Vortex all do more explosion damage.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=2}] unless predicate game:modifiers/explosive/on run tellraw @s ["",{"text":"Explosive","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Rocket Residers
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=3},tag=Residers] run tellraw @s ["",{"text":"Rocket Residers","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players cannot leave their bases.","color":"gray","italic":true}]
@@ -71,13 +71,13 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=16},tag=!CollisionControl] run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Punchable TNT
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=17}] if predicate game:modifier/punchable_tnt run tellraw @s ["",{"text":"Punchable TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Primed TNT can be punched forward.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=17}] unless predicate game:modifier/punchable_tnt run tellraw @s ["",{"text":"Punchable TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=17}] if predicate game:modifiers/punchable_tnt/on run tellraw @s ["",{"text":"Punchable TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Primed TNT can be punched forward.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=17}] unless predicate game:modifiers/punchable_tnt/on run tellraw @s ["",{"text":"Punchable TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Unstable TNT
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=18}] if predicate game:modifier/unstable_tnt run tellraw @s ["",{"text":"Unstable TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Breaking TNT blocks immediately ignites them.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=18}] unless predicate game:modifier/unstable_tnt run tellraw @s ["",{"text":"Unstable TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=18}] if predicate game:modifiers/unstable_tnt/on run tellraw @s ["",{"text":"Unstable TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Breaking TNT blocks immediately ignites them.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=18}] unless predicate game:modifiers/unstable_tnt/on run tellraw @s ["",{"text":"Unstable TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Hobbits
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=19}] if predicate game:modifier/hobbits run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players are 2/3 their normal size, and can sneak under 1-block-tall gaps.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=19}] unless predicate game:modifier/hobbits run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=19}] if predicate game:modifiers/hobbits/on run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players are 2/3 their normal size, and can sneak under 1-block-tall gaps.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=19}] unless predicate game:modifiers/hobbits/on run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]

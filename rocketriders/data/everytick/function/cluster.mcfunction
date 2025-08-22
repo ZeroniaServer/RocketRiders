@@ -21,11 +21,11 @@ execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store res
 tag @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster,scores={x=-1..0,y=-1..0,z=-1..0}] add StillCluster
 
 #Proper explosive cluster fireballs
-execute if entity @s[predicate=game:modifier/explosive,tag=!ClutterCollector] as @e[x=0,type=fireball,tag=ClusterFireball] run data merge entity @s {ExplosionPower:3}
-execute if entity @s[predicate=game:modifier/explosive,tag=ClutterCollector] as @e[x=0,type=fireball,tag=ClusterFireball] run data merge entity @s {ExplosionPower:-3}
+execute if entity @s[predicate=game:modifiers/explosive/on,tag=!ClutterCollector] as @e[x=0,type=fireball,tag=ClusterFireball] run data merge entity @s {ExplosionPower:3}
+execute if entity @s[predicate=game:modifiers/explosive/on,tag=ClutterCollector] as @e[x=0,type=fireball,tag=ClusterFireball] run data merge entity @s {ExplosionPower:-3}
 
 #Disable cluster fireballs near portals (depends on Fireball Portals option) - thanks @Cubehamster!!!
-execute if entity @s[predicate=!game:modifier/explosive,tag=!ClutterCollector] as @e[x=0,type=fireball,tag=ClusterFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:1}
-execute if entity @s[predicate=!game:modifier/explosive,tag=ClutterCollector] as @e[x=0,type=fireball,tag=ClusterFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:-1}
+execute if entity @s[predicate=!game:modifiers/explosive/on,tag=!ClutterCollector] as @e[x=0,type=fireball,tag=ClusterFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:1}
+execute if entity @s[predicate=!game:modifiers/explosive/on,tag=ClutterCollector] as @e[x=0,type=fireball,tag=ClusterFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:-1}
 execute if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=fireball,tag=ClusterFireball] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
 execute if entity @s[tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=fireball,tag=ClusterFireball] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}

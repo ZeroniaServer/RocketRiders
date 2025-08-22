@@ -236,7 +236,7 @@ execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=warExtraYellow,limit=
 kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
 
 #Unstable TNT Modifier
-execute if predicate game:modifier/unstable_tnt run function modifiers:unstabletnt
+execute if predicate game:modifiers/unstable_tnt/on run function modifiers:unstabletnt
 
 ##Pierce Prevention -- replace portals
 execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 58 74 34 58 74 minecraft:obsidian replace #custom:basereplace strict

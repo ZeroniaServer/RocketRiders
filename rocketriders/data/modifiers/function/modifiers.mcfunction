@@ -9,8 +9,8 @@ execute if entity @s[tag=Instamine] as @a[x=0,predicate=!custom:on_blue_or_yello
 execute if entity @s[tag=!Instamine] as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 
 ##Explosive
-execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=tnt] run data merge entity @s {explosion_power:5}
-execute if entity @s[tag=Explosive,tag=!ClutterCollector] as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
+execute if entity @s[predicate=game:modifier/explosive,tag=!ClutterCollector] as @e[x=0,type=tnt] run data merge entity @s {explosion_power:5}
+execute if entity @s[predicate=game:modifier/explosive,tag=!ClutterCollector] as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
 
 ##Sonar
 execute unless entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] run effect give @s night_vision infinite 100 true
@@ -56,12 +56,12 @@ execute unless predicate game:modifier/hobbits as @a[x=0,tag=hobbit] run functio
 
 #Clutter Collector
 execute if entity @s[tag=ClutterCollector,tag=!Hardcore] as @e[type=tnt,z=-50,dz=100,x=-160,dx=320,y=-20,dy=200,tag=!nosplode] run function modifiers:explosionpower/0
-execute if entity @s[tag=ClutterCollector,tag=Explosive,tag=!Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run function modifiers:explosionpower/5
-execute if entity @s[tag=ClutterCollector,tag=!Explosive,tag=!Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run function modifiers:explosionpower/4
+execute if entity @s[tag=ClutterCollector,predicate=game:modifier/explosive,tag=!Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run function modifiers:explosionpower/5
+execute if entity @s[tag=ClutterCollector,predicate=!game:modifier/explosive,tag=!Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run function modifiers:explosionpower/4
 
 execute if entity @s[tag=ClutterCollector,tag=Hardcore] as @e[type=tnt,z=-62,dz=124,x=-160,dx=320,y=-20,dy=200,tag=!nosplode] run function modifiers:explosionpower/0
-execute if entity @s[tag=ClutterCollector,tag=Explosive,tag=Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run function modifiers:explosionpower/5
-execute if entity @s[tag=ClutterCollector,tag=!Explosive,tag=Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run function modifiers:explosionpower/4
+execute if entity @s[tag=ClutterCollector,predicate=game:modifier/explosive,tag=Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run function modifiers:explosionpower/5
+execute if entity @s[tag=ClutterCollector,predicate=!game:modifier/explosive,tag=Hardcore] as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run function modifiers:explosionpower/4
 
-execute if entity @s[tag=ClutterCollector,tag=!Explosive] as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-1}
-execute if entity @s[tag=ClutterCollector,tag=Explosive] as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-3}
+execute if entity @s[tag=ClutterCollector,predicate=!game:modifier/explosive] as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-1}
+execute if entity @s[tag=ClutterCollector,predicate=game:modifier/explosive] as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-3}

@@ -9,8 +9,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=1},tag=!NoFall] run tellraw @s ["",{"text":"No Fall","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Explosive
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=2},tag=Explosive] run tellraw @s ["",{"text":"Explosive","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" TNT, Fireballs, Nova Rockets, and the Vortex all do more explosion damage.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=2},tag=!Explosive] run tellraw @s ["",{"text":"Explosive","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=2}] if predicate game:modifier/explosive run tellraw @s ["",{"text":"Explosive","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" TNT, Fireballs, Nova Rockets, and the Vortex all do more explosion damage.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=2}] unless predicate game:modifier/explosive run tellraw @s ["",{"text":"Explosive","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Rocket Residers
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=3},tag=Residers] run tellraw @s ["",{"text":"Rocket Residers","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players cannot leave their bases.","color":"gray","italic":true}]

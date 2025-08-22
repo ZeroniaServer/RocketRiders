@@ -11,12 +11,12 @@ execute if entity @s[tag=!vortex.feathered] run particle minecraft:item{item:"mi
 #execute if entity @s[tag=vortex.feathered] run loot spawn ~ ~ ~ loot {pools:[{rolls:{min:2,max:4},entries:[{type:"minecraft:item",name:"minecraft:feather",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{vortex:{dummy_feather:true}},"minecraft:damage_resistant":{types:"#minecraft:is_explosion"}}}]}]}]}
 #execute if entity @s[tag=vortex.feathered] as @e[distance=..1,type=item] if items entity @s contents feather run data merge entity @s {PickupDelay:32767,Age:5900}
 
-execute if entity @s[tag=!vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Explosive,tag=!ClutterCollector] at @s run function custom:explosion {r:3,modifiers:{copy_name:true}}
-execute if entity @s[tag=!vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive,tag=!ClutterCollector] at @s run function custom:explosion {r:5,modifiers:{copy_name:true}}
+execute if entity @s[tag=!vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:modifier/explosive,tag=!ClutterCollector] at @s run function custom:explosion {r:3,modifiers:{copy_name:true}}
+execute if entity @s[tag=!vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=game:modifier/explosive,tag=!ClutterCollector] at @s run function custom:explosion {r:5,modifiers:{copy_name:true}}
 execute if entity @s[tag=!vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ClutterCollector] at @s run function custom:explosion {r:0,modifiers:{copy_name:true}}
 
-execute if entity @s[tag=vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Explosive,tag=!ClutterCollector] at @s run function custom:explosion {r:2,modifiers:{copy_name:true}}
-execute if entity @s[tag=vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive,tag=!ClutterCollector] at @s run function custom:explosion {r:4,modifiers:{copy_name:true}}
+execute if entity @s[tag=vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:modifier/explosive,tag=!ClutterCollector] at @s run function custom:explosion {r:2,modifiers:{copy_name:true}}
+execute if entity @s[tag=vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=game:modifier/explosive,tag=!ClutterCollector] at @s run function custom:explosion {r:4,modifiers:{copy_name:true}}
 execute if entity @s[tag=vortex.feathered] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ClutterCollector] at @s run function custom:explosion {r:0,modifiers:{copy_name:true}}
 
 function entities:vortex/actions/kill

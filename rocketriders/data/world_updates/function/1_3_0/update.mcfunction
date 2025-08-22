@@ -67,6 +67,10 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
 
+# Updating modifiers
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive] run scoreboard players set $explosive config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Explosive
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ExplosiveWasOn
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_utility_colors gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customNova

@@ -3,8 +3,7 @@ tag @s remove Instamine
 tag @s remove InstamineWasOn
 tag @s remove NoFall
 tag @s remove NoFallWasOn
-tag @s remove Explosive
-tag @s remove ExplosiveWasOn
+scoreboard players set $explosive config 0
 tag @s remove Residers
 tag @s remove ResidersWasOn
 tag @s remove Sonar

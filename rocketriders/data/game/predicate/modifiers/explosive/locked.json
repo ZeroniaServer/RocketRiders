@@ -8,6 +8,10 @@
     {
       "condition": "minecraft:reference",
       "name": "game:modifiers/explosive/forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/explosive/incompatible_modifiers"
     }
   ]
 }

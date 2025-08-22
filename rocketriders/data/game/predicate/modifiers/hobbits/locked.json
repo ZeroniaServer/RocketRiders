@@ -8,6 +8,10 @@
     {
       "condition": "minecraft:reference",
       "name": "game:modifiers/hobbits/forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/hobbits/incompatible_modifiers"
     }
   ]
 }

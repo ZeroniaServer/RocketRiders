@@ -8,6 +8,10 @@
     {
       "condition": "minecraft:reference",
       "name": "game:modifiers/impact_utilities/forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/impact_utilities/incompatible_modifiers"
     }
   ]
 }

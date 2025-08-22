@@ -8,6 +8,10 @@
     {
       "condition": "minecraft:reference",
       "name": "game:modifiers/disable_cannoning/forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/disable_cannoning/incompatible_modifiers"
     }
   ]
 }

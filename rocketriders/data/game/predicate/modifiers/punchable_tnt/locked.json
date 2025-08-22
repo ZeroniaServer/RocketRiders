@@ -8,6 +8,10 @@
     {
       "condition": "minecraft:reference",
       "name": "game:modifiers/punchable_tnt/forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/punchable_tnt/incompatible_modifiers"
     }
   ]
 }

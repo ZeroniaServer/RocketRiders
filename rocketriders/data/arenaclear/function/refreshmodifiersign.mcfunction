@@ -11,24 +11,20 @@ execute if entity @s[scores={modifierID=1},tag=NoFall,predicate=!game:gamemode_c
 execute if entity @s[scores={modifierID=1},tag=!NoFall,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Explosive
+execute if entity @s[scores={modifierID=2},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/explosive/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=2},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/explosive/on run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=2},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/explosive/on if predicate game:modifiers/explosive/locked run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=2},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/explosive/on unless predicate game:modifiers/explosive/locked run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #Rocket Residers
+execute if entity @s[scores={modifierID=3},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/rocket_residers/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=3},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/rocket_residers/on run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=3},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/rocket_residers/on if predicate game:modifiers/rocket_residers/locked run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=3},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/rocket_residers/on unless predicate game:modifiers/rocket_residers/locked run setblock -69 191 75 warped_wall_sign[facing=east]
-
 
 #Sonar
 execute if entity @s[scores={modifierID=4},tag=Sonar,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=4},tag=!Sonar,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Molerat
+execute if entity @s[scores={modifierID=5},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/molerat/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=5},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/molerat/on run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=5},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/molerat/on if predicate game:modifiers/molerat/locked run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=5},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/molerat/on unless predicate game:modifiers/molerat/locked run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #Minute Mix
 execute if entity @s[scores={modifierID=6},tag=Minute,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
@@ -69,34 +65,29 @@ execute if entity @s[scores={modifierID=13},tag=!DoublePortal,predicate=!game:ga
 execute if entity @s[scores={modifierID=13},predicate=game:gamemode_components/no_portal,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Clutter Collector
+execute if entity @s[scores={modifierID=14},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/clutter_collector/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=14},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/clutter_collector/on run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=14},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/clutter_collector/locked run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=14},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/clutter_collector/locked run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #Chaos
-execute if entity @s[scores={modifierID=15},tag=Chaos,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=15},tag=Chaos,tag=!ChaosOff,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=15},tag=!Chaos,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=15},tag=ChaosOff,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Collision Control
+execute if entity @s[scores={modifierID=14},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/collision_control/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=14},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/collision_control/on run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=14},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/collision_control/on if predicate game:modifiers/collision_control/locked run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=14},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/collision_control/on unless predicate game:modifiers/collision_control/locked run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #Punchable TNT
+execute if entity @s[scores={modifierID=17},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/punchable_tnt/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=17},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/punchable_tnt/on run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=17},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/punchable_tnt/on if predicate game:modifiers/punchable_tnt/locked run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=17},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/punchable_tnt/on unless predicate game:modifiers/punchable_tnt/locked run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #Unstable TNT
+execute if entity @s[scores={modifierID=18},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/unstable_tnt/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=18},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/unstable_tnt/on run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=18},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/unstable_tnt/on if predicate game:modifiers/unstable_tnt/locked run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=18},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/unstable_tnt/on unless predicate game:modifiers/unstable_tnt/locked run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #Hobbits
+execute if entity @s[scores={modifierID=19},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/hobbits/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=19},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/hobbits/on run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=19},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/hobbits/on if predicate game:modifiers/hobbits/locked run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=19},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/hobbits/on unless predicate game:modifiers/hobbits/locked run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #All locked
 execute if entity @s[predicate=game:gamemode_components/settings_locked] unless entity @s[scores={modifierID=8},tag=WindDownForce] run setblock -69 191 75 crimson_wall_sign[facing=east]

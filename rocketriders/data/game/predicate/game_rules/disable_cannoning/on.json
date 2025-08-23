@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/impact_utilities/forced_off"
+      "name": "game:game_rules/disable_cannoning/forced_off"
     }
   },
   {
@@ -15,7 +15,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "$impact_utilities"
+            "name": "$disable_cannoning"
           },
           "score": "config"
         },
@@ -23,7 +23,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/impact_utilities/forced_on"
+        "name": "game:game_rules/disable_cannoning/forced_on"
       }
     ]
   }

@@ -50,7 +50,7 @@ function everytick:clear_spawnblocks
 function everytick:no_fall
 execute if entity @e[x=0,type=tnt_minecart] run function everytick:init_kill_carts
 execute if entity @e[x=0,type=arrow] run function everytick:fire_arrow
-execute if predicate game:modifiers/disable_cannoning/on as @e[x=0,type=tnt,predicate=custom:tnt_is_moving_too_fast] run function game:slow_down_tnt
+execute if predicate game:game_rules/disable_cannoning/on as @e[x=0,type=tnt,predicate=custom:tnt_is_moving_too_fast] run function game:slow_down_tnt
 
 ##Modifiers
 function modifiers:modifiers

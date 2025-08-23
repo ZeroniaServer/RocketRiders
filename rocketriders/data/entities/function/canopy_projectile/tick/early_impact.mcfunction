@@ -1,5 +1,5 @@
 ## If impact_utilities is OFF
-execute unless predicate game:modifiers/impact_utilities/on run return run kill @s
+execute unless predicate game:game_rules/impact_utilities/on run return run kill @s
 
 ## If impact_utilities is ON
 # Move to the player's position

@@ -14,7 +14,4 @@ tag @s remove customSaberMsg
 tag @s remove customLeaveHandling
 tag @s remove featheredOff
 tag @s remove WindDownForce
-tag @s remove MoleratOff
-tag @s[tag=MoleratWasOn] add Molerat
-tag @s[tag=MoleratWasOn] remove MoleratWasOn
 tag @s add switchGamemodes

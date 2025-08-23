@@ -4,7 +4,7 @@
 #EXTRA: For resetting to global defaults
 execute if entity @s[tag=GlobalDefaults] run tag @e[x=0,type=armor_stand,tag=rr_normal] add GlobalDefaults
 
-function game:modifier/load {read_from:"storage rocketriders:storage config",merge:false}
+function game:config/load {read_from:"storage rocketriders:storage config",merge:false}
 data remove storage rocketriders:storage config
 data modify entity @s Tags set from storage rocketriders:storage Tags
 data remove storage rocketriders:storage Tags

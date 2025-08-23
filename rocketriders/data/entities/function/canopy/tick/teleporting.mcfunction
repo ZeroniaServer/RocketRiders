@@ -1,6 +1,6 @@
 
 #Canopy forgets owner if crossing in Rocket Residers
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Residers] on origin if entity @s[predicate=custom:residers] run return run function custom:player_action/forget_all_canopies
+execute if predicate game:modifiers/rocket_residers/on on origin if entity @s[predicate=custom:residers] run return run function custom:player_action/forget_all_canopies
 
 #Canopy doesn't teleport more than once if shot by Nova Rocket
 execute if score @s entity.canopy.movement_cooldown matches 1.. on origin if score @s novattach matches 1..15 run return run function custom:player_action/forget_all_canopies

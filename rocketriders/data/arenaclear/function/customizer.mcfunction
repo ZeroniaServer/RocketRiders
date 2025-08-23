@@ -37,10 +37,10 @@ execute unless score @s MaxItemSec matches 5..30 run scoreboard players set @s M
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] RepeatSettings 1
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=!rr:server_mode/realms] run scoreboard players set $disable_cannoning config 0
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=rr:server_mode/realms,tag=!tntCannoningOff] run scoreboard players set $disable_cannoning config 1
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=!rr:server_mode/realms,tag=!impactUtilitiesOff] run scoreboard players set $impact_utilities config 0
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed,predicate=rr:server_mode/realms] run scoreboard players set $impact_utilities config 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:server_mode/realms run scoreboard players set $disable_cannoning config 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:server_mode/realms run scoreboard players set $disable_cannoning config 0
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:server_mode/realms run scoreboard players set $impact_utilities config 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:server_mode/realms run scoreboard players set $impact_utilities config 0
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultOptions] remove DefaultOptions
 
@@ -53,10 +53,10 @@ execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function arena
 tag @s[tag=DefaultWorld] remove DefaultWorld
 
 ##MOLERAT WARNING
-execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run tag @a[x=0] remove MoleratStop
-execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] as @a[x=0] run trigger moleratConfirm set 0
-execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run scoreboard players reset @a[x=0] moleratConfirm
-execute unless entity @s[tag=Molerat,tag=!WasMolerat] unless entity @s[tag=!Molerat,tag=WasMolerat] run tag @a[x=0,tag=moleratConfirm] remove moleratConfirm
+execute unless entity @s[predicate=game:modifiers/molerat/on,tag=!WasMolerat] unless entity @s[predicate=!game:modifiers/molerat/on,tag=WasMolerat] run tag @a[x=0] remove MoleratStop
+execute unless entity @s[predicate=game:modifiers/molerat/on,tag=!WasMolerat] unless entity @s[predicate=!game:modifiers/molerat/on,tag=WasMolerat] as @a[x=0] run trigger moleratConfirm set 0
+execute unless entity @s[predicate=game:modifiers/molerat/on,tag=!WasMolerat] unless entity @s[predicate=!game:modifiers/molerat/on,tag=WasMolerat] run scoreboard players reset @a[x=0] moleratConfirm
+execute unless entity @s[predicate=game:modifiers/molerat/on,tag=!WasMolerat] unless entity @s[predicate=!game:modifiers/molerat/on,tag=WasMolerat] run tag @a[x=0,tag=moleratConfirm] remove moleratConfirm
 execute as @a[x=0,scores={moleratConfirm=1..}] run tag @s add moleratConfirm
 execute as @a[x=0,scores={moleratConfirm=1..}] run function arenaclear:testvalidclear
 

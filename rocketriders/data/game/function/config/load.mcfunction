@@ -3,7 +3,7 @@
 ## Get
 $data modify storage rocketriders:main "config/load".config set from $(read_from)
 $scoreboard players set $merge var $(merge)
-execute unless score $merge var matches 1 run function game:modifier/reset
+execute unless score $merge var matches 1 run function game:config/reset
 
 ## Write
 execute store result score $disable_cannoning config run data get storage rocketriders:main "config/load".config.disable_cannoning
@@ -12,8 +12,21 @@ execute unless score $disable_cannoning config matches 1..1 run scoreboard playe
 execute store result score $impact_utilities config run data get storage rocketriders:main "config/load".config.impact_utilities
 execute unless score $impact_utilities config matches 1..1 run scoreboard players reset $impact_utilities config
 
+
 execute store result score $explosive config run data get storage rocketriders:main "config/load".config.explosive
 execute unless score $explosive config matches 1..1 run scoreboard players reset $explosive config
+
+execute store result score $rocket_residers config run data get storage rocketriders:main "config/load".config.rocket_residers
+execute unless score $rocket_residers config matches 1..1 run scoreboard players reset $rocket_residers config
+
+execute store result score $molerat config run data get storage rocketriders:main "config/load".config.molerat
+execute unless score $molerat config matches 1..1 run scoreboard players reset $molerat config
+
+execute store result score $clutter_collector config run data get storage rocketriders:main "config/load".config.clutter_collector
+execute unless score $clutter_collector config matches 1..1 run scoreboard players reset $clutter_collector config
+
+execute store result score $collision_control config run data get storage rocketriders:main "config/load".config.collision_control
+execute unless score $collision_control config matches 1..1 run scoreboard players reset $collision_control config
 
 execute store result score $punchable_tnt config run data get storage rocketriders:main "config/load".config.punchable_tnt
 execute unless score $punchable_tnt config matches 1..1 run scoreboard players reset $punchable_tnt config

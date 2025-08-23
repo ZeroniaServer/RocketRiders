@@ -1,18 +1,12 @@
 scoreboard players reset * gamemode_components
 
 tag @s remove ctfEnabled
-tag @s remove ResidersOff
-tag @s[tag=ResidersWasOn] add Residers
-tag @s remove ResidersWasOn
 tag @s remove HardcoreOff
 tag @s[tag=HardcoreWasOn] add Hardcore
 execute if entity @s[tag=HardcoreWasOn] run function arenaclear:lockdecos
 tag @s remove HardcoreWasOn
 tag @s[tag=DoublePortalWasOn] add DoublePortal
 tag @s remove DoublePortalWasOn
-tag @s remove CollisionControlOff
-tag @s[tag=CollisionControlWasOn] add CollisionControl
-tag @s remove CollisionControlWasOn
 tag @s remove fbPortalsOff
 tag @s remove preventionOff
 tag @s remove portalDecosOff

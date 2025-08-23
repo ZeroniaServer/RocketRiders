@@ -71,6 +71,33 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive] run scoreboard players set $explosive config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Explosive
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ExplosiveWasOn
+execute if data storage rocketriders:storage {Tags:["Explosive"]} run data modify storage rocketriders:storage config.explosive set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Explosive"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"ExplosiveWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Residers] run scoreboard players set $rocket_residers config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Residers
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ResidersWasOn
+execute if data storage rocketriders:storage {Tags:["Residers"]} run data modify storage rocketriders:storage config.rocket_residers set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Residers"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"ResidersWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Molerat] run scoreboard players set $molerat config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Molerat
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MoleratWasOn
+execute if data storage rocketriders:storage {Tags:["Molerat"]} run data modify storage rocketriders:storage config.molerat set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Molerat"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"MoleratWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ClutterCollector] run scoreboard players set $clutter_collector config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ClutterCollector
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ClutterCollectorWasOn
+execute if data storage rocketriders:storage {Tags:["ClutterCollector"]} run data modify storage rocketriders:storage config.clutter_collector set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"ClutterCollector"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"ClutterCollectorWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CollisionControl] run scoreboard players set $collision_control config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove CollisionControl
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove CollisionControlWasOn
+execute if data storage rocketriders:storage {Tags:["CollisionControl"]} run data modify storage rocketriders:storage config.collision_control set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"CollisionControl"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"CollisionControlWasOn"}
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_utility_colors gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customNova

@@ -4,12 +4,10 @@ tag @s remove InstamineWasOn
 tag @s remove NoFall
 tag @s remove NoFallWasOn
 scoreboard players set $explosive config 0
-tag @s remove Residers
-tag @s remove ResidersWasOn
+scoreboard players set $rocket_residers config 0
 tag @s remove Sonar
 tag @s remove SonarWasOn
-tag @s remove Molerat
-tag @s remove MoleratWasOn
+scoreboard players set $molerat config 0
 tag @s remove Minute
 tag @s remove MinuteWasOn
 tag @s remove SurpriseEgg
@@ -26,12 +24,10 @@ tag @s remove Hardcore
 tag @s remove HardcoreWasOn
 tag @s remove DoublePortal
 tag @s remove DoublePortalWasOn
-tag @s remove ClutterCollector
-tag @s remove ClutterCollectorWasOn
+scoreboard players set $clutter_collector config 0
 tag @s remove Chaos
 tag @s remove ChaosWasOn
-tag @s remove CollisionControl
-tag @s remove CollisionControlWasOn
+scoreboard players set $collision_control config 0
 scoreboard players set $punchable_tnt config 0
 scoreboard players set $unstable_tnt config 0
 scoreboard players set $hobbits config 0

@@ -1,9 +1,6 @@
 scoreboard players reset * gamemode_components
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove powerupsEnabled
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ResidersOff
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ResidersWasOn] add Residers
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ResidersWasOn
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ChaosOff
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ChaosWasOn] add Chaos
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ChaosWasOn

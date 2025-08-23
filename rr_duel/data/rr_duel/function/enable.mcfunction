@@ -4,9 +4,6 @@ scoreboard players set $main_item/bow gamemode_components 1
 
 tag @s remove switchGamemodes
 
-tag @s[tag=Molerat] add MoleratOff
-tag @s[tag=Molerat] add MoleratWasOn
-
 function gamemodes:storesettings
 function modifiers:disablemodifiers
 tag @s add customBossbar

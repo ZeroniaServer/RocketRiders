@@ -8,9 +8,6 @@ tag @s remove portalDecosOff
 tag @s[tag=HardcoreWasOn] add Hardcore
 tag @s remove HardcoreOff
 tag @s remove HardcoreWasOn
-tag @s remove ResidersOff
-tag @s[tag=ResidersWasOn] add Residers
-tag @s remove ResidersWasOn
 tag @s remove customPrevention
 tag @s remove featheredOff
 tag @s remove arrowLimit
@@ -20,19 +17,14 @@ tag @s remove stackingOn
 tag @s remove customSaberMsg
 tag @s remove customArrowPickup
 tag @s remove SuddenDeathCustom
-tag @s remove MoleratOff
 tag @s[tag=DoublePortalWasOn] add DoublePortal
 tag @s[tag=DoublePortalWasOn] remove DoublePortalWasOn
-tag @s[tag=MoleratWasOn] add Molerat
-tag @s[tag=MoleratWasOn] remove MoleratWasOn
 tag @s remove SurpriseEggOff
 tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
 tag @s remove SurpriseEggWasOn
 tag @s remove ChaosOff
 tag @s[tag=ChaosWasOn] add Chaos
 tag @s remove ChaosWasOn
-tag @s[tag=ClutterCollectorWasOn] add ClutterCollector
-tag @s remove ClutterCollectorOff
 tag @s remove portalOverride
 scoreboard players reset @a[x=0] crusadechange
 

@@ -2,14 +2,8 @@ scoreboard players reset * gamemode_components
 
 tag @s remove chaseEnabled
 tag @s remove tyingOff
-tag @s remove ResidersOff
-tag @s[tag=ResidersWasOn] add Residers
-tag @s remove ResidersWasOn
 tag @s[tag=DoublePortalWasOn] add DoublePortal
 tag @s remove DoublePortalWasOn
-tag @s remove CollisionControlOff
-tag @s[tag=CollisionControlWasOn] add CollisionControl
-tag @s remove CollisionControlWasOn
 tag @s remove fbPortalsOff
 tag @s remove portalDecosOff
 tag @s remove preventionOff

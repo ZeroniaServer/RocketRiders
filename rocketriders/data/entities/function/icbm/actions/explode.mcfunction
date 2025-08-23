@@ -5,7 +5,9 @@ execute unless entity @s[predicate=entities:type/icbm/brain] run return run exec
 execute on vehicle if entity @s[predicate=entities:type/icbm/body] run function custom:tp_passengers_to_self_and_die
 
 # Create explosions
-execute store success score $extra_fuse var if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ClutterCollector,predicate=!game:modifiers/explosive/on]
+scoreboard players set $extra_fuse var 0
+execute if predicate game:modifiers/clutter_collector/on run scoreboard players set $extra_fuse var 1
+execute if predicate game:modifiers/explosive/on run scoreboard players set $extra_fuse var 1
 
 data modify storage rocketriders:main icbm set value {Tags:["icbm_tnt"]}
 data modify storage rocketriders:main icbm.owner set from entity @s Owner

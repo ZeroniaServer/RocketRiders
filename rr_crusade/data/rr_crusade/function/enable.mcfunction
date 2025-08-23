@@ -1,8 +1,11 @@
 scoreboard players reset * gamemode_components
+scoreboard players set $config_override.rocket_residers gamemode_components -1
+scoreboard players set $config_override.molerat gamemode_components -1
+scoreboard players set $config_override.clutter_collector gamemode_components -1
+scoreboard players set $config_override.hobbits gamemode_components -1
 scoreboard players set $crusade_portals gamemode_components 1
 scoreboard players set $no_portal gamemode_components 1
 scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
-scoreboard players set $config_override.hobbits gamemode_components -1
 
 tag @s remove switchGamemodes
 function arenaclear:lockdecos
@@ -11,8 +14,6 @@ tag @s add noSabers
 tag @s add portalDecosOff
 tag @s[tag=Hardcore] add HardcoreWasOn
 tag @s add HardcoreOff
-tag @s[tag=Residers] add ResidersWasOn
-tag @s add ResidersOff
 tag @s add customPrevention
 tag @s add featheredOff
 tag @s add arrowLimit
@@ -22,16 +23,11 @@ tag @s add stackingOn
 tag @s add customSaberMsg
 tag @s add customArrowPickup
 tag @s add SuddenDeathCustom
-tag @s add MoleratOff
 tag @s[tag=DoublePortal] add DoublePortalWasOn
-tag @s[tag=Molerat] add MoleratWasOn
-tag @s[tag=Molerat] remove Molerat
 tag @s[tag=SurpriseEgg] add SurpriseEggWasOn
 tag @s add SurpriseEggOff
 tag @s[tag=Chaos] add ChaosWasOn
 tag @s add ChaosOff
-tag @s[tag=ClutterCollector] add ClutterCollectorWasOn
-tag @s add ClutterCollectorOff
 tag @s add portalOverride
 tag @s add crusadeEnabled
 

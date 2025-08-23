@@ -74,8 +74,8 @@ fill 39 64 67 -15 67 67 air replace fire
 
 ##Extra stuff for Modifiers
 #Molerat
-execute if entity @s[tag=Molerat] run function arenaclear:moleratplace
-execute if entity @s[tag=!Molerat,tag=WasMolerat] run function arenaclear:moleratclear
+execute if predicate game:modifiers/molerat/on run function arenaclear:moleratplace
+execute unless predicate game:modifiers/molerat/on if entity @s[tag=WasMolerat] run function arenaclear:moleratclear
 
 #Hardcore
 execute if entity @s[tag=Hardcore] run fill 38 63 63 -14 34 52 air

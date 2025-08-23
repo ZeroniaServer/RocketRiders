@@ -1,10 +1,9 @@
 scoreboard players reset * gamemode_components
+scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $main_item/bow gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add powerupsEnabled
-tag @s[tag=Residers] add ResidersWasOn
-tag @s add ResidersOff
 tag @s[tag=Chaos] add ChaosWasOn
 tag @s add ChaosOff
 tag @s add customObsidian

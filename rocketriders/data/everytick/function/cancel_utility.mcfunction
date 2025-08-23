@@ -4,10 +4,10 @@
 ####################################
 
 #Disable fireballs near portals (depends on Snipe Portals game rule)
-execute if entity @s[predicate=!game:gamemode_components/no_portal,predicate=!game:modifiers/explosive/on,tag=!ClutterCollector] as @e[x=0,type=fireball,tag=NormalFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:1}
-execute if entity @s[predicate=!game:gamemode_components/no_portal,predicate=!game:modifiers/explosive/on,tag=ClutterCollector] as @e[x=0,type=fireball,tag=NormalFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:-1}
-execute if entity @s[predicate=!game:gamemode_components/no_portal,tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=fireball,tag=NormalFireball] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
-execute if entity @s[predicate=!game:gamemode_components/no_portal,tag=!doFireballPortals] unless entity @s[tag=fbPortalsOff] as @e[x=0,type=fireball,tag=NormalFireball] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
+execute unless predicate game:gamemode_components/no_portal unless predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on as @e[x=0,type=fireball,tag=NormalFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:1}
+execute unless predicate game:gamemode_components/no_portal unless predicate game:modifiers/explosive/on if predicate game:modifiers/clutter_collector/on as @e[x=0,type=fireball,tag=NormalFireball] at @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:-1}
+execute unless predicate game:gamemode_components/no_portal if entity @s[tag=!doFireballPortals,tag=!fbPortalsOff] as @e[x=0,type=fireball,tag=NormalFireball] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
+execute unless predicate game:gamemode_components/no_portal if entity @s[tag=!doFireballPortals,tag=!fbPortalsOff] as @e[x=0,type=fireball,tag=NormalFireball] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
 #Exception for own portal
 execute if entity @s[predicate=!game:gamemode_components/no_portal] as @e[x=0,type=fireball,tag=FireballYellow] at @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
 execute if entity @s[predicate=!game:gamemode_components/no_portal] as @e[x=0,type=fireball,tag=FireballBlue] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}

@@ -9,8 +9,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!rngLightnin
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=lightningOff] run scoreboard players add $test ClearArena 1
 execute if score $test ClearArena matches 3.. run tag @s remove validClear
 scoreboard players reset $test ClearArena
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Molerat,tag=!WasMolerat] run tag @s add MoleratStop
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Molerat,tag=WasMolerat] run tag @s add MoleratStop
+execute if predicate game:modifiers/molerat/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!WasMolerat] run tag @s add MoleratStop
+execute unless predicate game:modifiers/molerat/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WasMolerat] run tag @s add MoleratStop
 execute if predicate game:game_started run tellraw @s {"text":"You can only run this when the game has ended","color":"red"}
 execute unless predicate game:game_started if entity @s[tag=!validClear] run tellraw @s {"text":"You must have at least one Missile enabled to start the game","color":"red"}
 execute if entity @s[tag=validClear,tag=MoleratStop,tag=!moleratConfirm] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run scoreboard players enable @s moleratConfirm

@@ -13,18 +13,18 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=2}] unless predicate game:modifiers/explosive/on run tellraw @s ["",{"text":"Explosive","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Rocket Residers
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=3},tag=Residers] run tellraw @s ["",{"text":"Rocket Residers","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players cannot leave their bases.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=3},tag=!Residers] run tellraw @s ["",{"text":"Rocket Residers","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=3}] if predicate game:modifiers/rocket_residers/on run tellraw @s ["",{"text":"Rocket Residers","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players cannot leave their bases.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=3}] unless predicate game:modifiers/rocket_residers/on run tellraw @s ["",{"text":"Rocket Residers","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Sonar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=4},tag=Sonar] run tellraw @s ["",{"text":"Sonar","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players lose Night Vision so they cannot see blocks. Other players, projectiles, TNT, and utilities have glowing outlines.","color":"gray","italic":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=4},tag=!Sonar] run tellraw @s ["",{"text":"Sonar","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Molerat
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5},tag=Molerat] run tellraw @s ["",{"text":"Molerat","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" A big block of glass spawns in the center of the map, which players must break through to damage the other base.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5},tag=!Molerat] run tellraw @s ["",{"text":"Molerat","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5},tag=Molerat,tag=!WasMolerat] run tellraw @s ["",{"text":"[WARNING]","color":"red","bold":true},{"text":" Toggling this causes lag due to fill commands."}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5},tag=!Molerat,tag=WasMolerat] run tellraw @s ["",{"text":"[WARNING]","color":"red","bold":true},{"text":" Toggling this causes lag due to fill commands."}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5}] if predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"Molerat","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" A big block of glass spawns in the center of the map, which players must break through to damage the other base.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5},tag=!WasMolerat] if predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"[WARNING]","color":"red","bold":true},{"text":" Toggling this causes lag due to fill commands."}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5}] unless predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"Molerat","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5},tag=WasMolerat] unless predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"[WARNING]","color":"red","bold":true},{"text":" Toggling this causes lag due to fill commands."}]
 
 #Minute Mix
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=6},tag=Minute] run tellraw @s ["",{"text":"Minute Mix","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players receive a new set of 8 items every minute.","color":"gray","italic":true}]
@@ -59,16 +59,16 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=13},tag=!DoublePortal] run tellraw @s ["",{"text":"Double Portal","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Clutter Collector
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=14},tag=ClutterCollector] run tellraw @s ["",{"text":"Clutter Collector","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Explosions do no block damage between the bases.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=14},tag=!ClutterCollector] run tellraw @s ["",{"text":"Clutter Collector","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=14}] if predicate game:modifiers/clutter_collector/on run tellraw @s ["",{"text":"Clutter Collector","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Explosions do no block damage between the bases.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=14}] unless predicate game:modifiers/clutter_collector/on run tellraw @s ["",{"text":"Clutter Collector","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Chaos
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=15},tag=Chaos] run tellraw @s ["",{"text":"Chaos","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Special Missiles are obtainable in regular gameplay.","color":"gray","italic":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=15},tag=!Chaos] run tellraw @s ["",{"text":"Chaos","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Collision Control
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=16},tag=CollisionControl] run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Missiles cannot be spawned inside the enemy base.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=16},tag=!CollisionControl] run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=16}] if predicate game:modifiers/collision_control/on run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Missiles cannot be spawned inside the enemy base.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=16}] unless predicate game:modifiers/collision_control/on run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Punchable TNT
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=17}] if predicate game:modifiers/punchable_tnt/on run tellraw @s ["",{"text":"Punchable TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Primed TNT can be punched forward.","color":"gray","italic":true}]

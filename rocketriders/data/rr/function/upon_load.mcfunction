@@ -74,6 +74,7 @@ scoreboard objectives add event.player_dies custom:deaths
 scoreboard objectives add event.player_uses_written_book used:written_book
 scoreboard objectives add event.player_uses_pig_spawn_egg used:pig_spawn_egg
 scoreboard objectives add flag.is_dead dummy
+scoreboard objectives add flag.is_nova_attached dummy
 scoreboard objectives add entity.age dummy
 scoreboard objectives add entity.speed dummy
 scoreboard objectives add entity.canopy.movement_cooldown dummy
@@ -102,7 +103,6 @@ scoreboard objectives add FallDistance dummy
 scoreboard objectives add deaths deathCount
 scoreboard objectives add respawn deathCount
 scoreboard objectives add deathCooldown dummy
-scoreboard objectives add novattach dummy
 scoreboard objectives add bestParkourMins dummy
 scoreboard objectives add bestParkourSecs dummy
 scoreboard objectives add bestParkourDeci dummy
@@ -178,12 +178,9 @@ scoreboard objectives add DealtDamage minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add arrowtime dummy
 scoreboard objectives add ShowTip dummy
 scoreboard objectives add modifierID dummy
-scoreboard objectives add novatimer dummy
 scoreboard objectives add testplat dummy
 scoreboard objectives add testplat2 dummy
 scoreboard objectives add canopySmoke dummy
-scoreboard objectives add NovaShot minecraft.broken:minecraft.crossbow
-scoreboard objectives add NovaNear dummy
 scoreboard objectives add firstJoined dummy
 scoreboard objectives add shieldplacement dummy
 scoreboard objectives add breakobshield dummy

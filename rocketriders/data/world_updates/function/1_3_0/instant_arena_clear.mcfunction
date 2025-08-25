@@ -65,9 +65,8 @@ kill @e[x=0,type=dragon_fireball]
 kill @e[x=0,type=#custom:potion,tag=splash]
 kill @e[x=0,type=item]
 kill @e[x=0,type=ender_pearl]
-kill @e[x=0,type=firework_rocket,tag=BlueNova]
-kill @e[x=0,type=firework_rocket,tag=YellowNova]
-kill @e[x=0,type=marker,tag=novatracker]
+kill @e[x=0,predicate=entities:type/nova_rocket]
+kill @e[x=0,predicate=entities:type/nova_attach]
 execute at @e[x=0,type=marker,tag=obsidianshield] run fill ~-2 ~1 ~ ~2 ~-1 ~ air destroy
 execute at @e[x=0,type=marker,tag=obsidianshield] run fill ~-1 ~2 ~ ~1 ~-2 ~ air destroy
 kill @e[x=0,type=marker,tag=obsidianshield]

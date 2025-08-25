@@ -38,9 +38,8 @@ kill @e[x=0,type=marker,tag=yellowobtracker]
 kill @e[x=0,type=#custom:potion,tag=splash]
 kill @e[x=0,type=item]
 kill @e[x=0,type=ender_pearl]
-kill @e[x=0,type=firework_rocket,tag=BlueNova]
-kill @e[x=0,type=firework_rocket,tag=YellowNova]
-kill @e[x=0,type=marker,tag=novatracker]
+kill @e[x=0,predicate=entities:type/nova_rocket]
+kill @e[x=0,predicate=entities:type/nova_attach]
 execute as @e[x=0,type=marker,tag=obsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break

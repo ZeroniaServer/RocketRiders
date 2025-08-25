@@ -153,6 +153,10 @@ scoreboard objectives remove ICBMID
 scoreboard objectives remove ICBMtime
 scoreboard objectives remove BeeShieldTime
 scoreboard objectives remove beeShieldCount
+scoreboard objectives remove NovaShot
+scoreboard objectives remove NovaNear
+scoreboard objectives remove novatimer
+scoreboard objectives remove novattach
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

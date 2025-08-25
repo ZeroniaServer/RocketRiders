@@ -45,6 +45,11 @@
                   {
                     "id": "minecraft:firework_rocket",
                     "components": {
+                      "custom_data": {
+                        "nova_rocket": {
+                          "firework_rocket": true
+                        }
+                      },
                       "minecraft:fireworks": {
                         "explosions": [
                           {
@@ -94,10 +99,15 @@
                   {
                     "id": "minecraft:firework_rocket",
                     "components": {
+                      "custom_data": {
+                        "nova_rocket": {
+                          "firework_rocket": true
+                        }
+                      },
                       "minecraft:fireworks": {
                         "explosions": [
                           {
-                            "shape": "large_ball",
+                            "shape": "small_ball",
                             "colors": [
                               2437522,
                               2651799
@@ -147,10 +157,15 @@
                   {
                     "id": "minecraft:firework_rocket",
                     "components": {
+                      "custom_data": {
+                        "nova_rocket": {
+                          "firework_rocket": true
+                        }
+                      },
                       "minecraft:fireworks": {
                         "explosions": [
                           {
-                            "shape": "large_ball",
+                            "shape": "small_ball",
                             "colors": [
                               14602026,
                               15435844
@@ -168,7 +183,8 @@
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Nova Rocket",
@@ -199,6 +215,11 @@
                   {
                     "id": "minecraft:firework_rocket",
                     "components": {
+                      "custom_data": {
+                        "nova_rocket": {
+                          "firework_rocket": true
+                        }
+                      },
                       "minecraft:custom_model_data": {
                         "floats": [
                           3
@@ -207,7 +228,7 @@
                       "minecraft:fireworks": {
                         "explosions": [
                           {
-                            "shape": "large_ball",
+                            "shape": "small_ball",
                             "colors": [
                               15790320
                             ],

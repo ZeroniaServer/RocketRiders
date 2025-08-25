@@ -66,16 +66,12 @@ execute if predicate game:game_started if predicate custom:on_blue_or_yellow_tea
 
 
 ## General
-effect clear @s levitation
-
-scoreboard players reset @s novattach
-tag @s remove YellowNovaNear
-tag @s remove YellowNovaAttach
-tag @s remove BlueNovaNear
-tag @s remove BlueNovaAttach
+tag @s add matchOrigin
+execute if predicate custom:nova_attached as @e[x=0,predicate=entities:type/nova_attach/body] if function custom:match_origin run function entities:nova_attach/actions/explode
+tag @s remove matchOrigin
 
 tag @s add matchOrigin
-execute as @e[x=0,type=ender_pearl] if function custom:match_origin positioned as @s run function custom:event/player_dies/withdraw_canopy
+execute as @e[x=0,predicate=entities:type/canopy_projectile/brain] if function custom:match_origin positioned as @s run function custom:event/player_dies/withdraw_canopy
 tag @s remove matchOrigin
 
 tag @s remove onBlue

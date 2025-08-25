@@ -1,0 +1,19 @@
+{
+  "criteria": {
+    "player_uses_nova_rocket": {
+      "trigger": "minecraft:shot_crossbow",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "nova": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom:event/player_uses_nova_rocket/main"
+  }
+}

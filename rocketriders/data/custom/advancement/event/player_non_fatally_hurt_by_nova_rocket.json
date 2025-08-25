@@ -1,0 +1,71 @@
+{
+  "criteria": {
+    "player_non_fatally_hurt_by_nova_rocket_creeper_explosion": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:alive"
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:reference",
+              "name": "custom:nova_attached"
+            }
+          }
+        ],
+        "damage": {
+          "source_entity": {
+            "type": "minecraft:creeper",
+            "predicates": {
+              "minecraft:custom_data": {
+                "nova_rocket_explosion": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "player_non_fatally_hurt_by_nova_rocket_firework_explosion": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:alive"
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:reference",
+              "name": "custom:nova_attached"
+            }
+          }
+        ],
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "minecraft:firework_rocket",
+              "predicates": {
+                "minecraft:custom_data": {
+                  "nova_rocket": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "player_non_fatally_hurt_by_nova_rocket_creeper_explosion",
+      "player_non_fatally_hurt_by_nova_rocket_firework_explosion"
+    ]
+  ],
+  "rewards": {
+    "function": "custom:event/player_non_fatally_hurt_by_nova_rocket/main"
+  }
+}

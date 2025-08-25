@@ -1,0 +1,11 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "predicates": {
+      "minecraft:custom_data": {
+        "nova_rocket": {}
+      }
+    }
+  }
+}

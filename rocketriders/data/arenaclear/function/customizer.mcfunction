@@ -38,9 +38,9 @@ scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] RepeatSettings 1
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:server_mode/realms run scoreboard players set $disable_cannoning config 1
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:server_mode/realms run scoreboard players set $disable_cannoning config 0
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:server_mode/realms run scoreboard players reset $disable_cannoning config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:server_mode/realms run scoreboard players set $impact_utilities config 1
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:server_mode/realms run scoreboard players set $impact_utilities config 0
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:server_mode/realms run scoreboard players reset $impact_utilities config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultOptions] remove DefaultOptions
 

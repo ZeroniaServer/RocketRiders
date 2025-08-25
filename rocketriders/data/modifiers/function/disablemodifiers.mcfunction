@@ -3,11 +3,11 @@ tag @s remove Instamine
 tag @s remove InstamineWasOn
 tag @s remove NoFall
 tag @s remove NoFallWasOn
-scoreboard players set $explosive config 0
-scoreboard players set $rocket_residers config 0
+scoreboard players reset $explosive config
+scoreboard players reset $rocket_residers config
 tag @s remove Sonar
 tag @s remove SonarWasOn
-scoreboard players set $molerat config 0
+scoreboard players reset $molerat config
 tag @s remove Minute
 tag @s remove MinuteWasOn
 tag @s remove SurpriseEgg
@@ -24,12 +24,12 @@ tag @s remove Hardcore
 tag @s remove HardcoreWasOn
 tag @s remove DoublePortal
 tag @s remove DoublePortalWasOn
-scoreboard players set $clutter_collector config 0
+scoreboard players reset $clutter_collector config
 tag @s remove Chaos
 tag @s remove ChaosWasOn
-scoreboard players set $collision_control config 0
-scoreboard players set $punchable_tnt config 0
-scoreboard players set $unstable_tnt config 0
-scoreboard players set $hobbits config 0
+scoreboard players reset $collision_control config
+scoreboard players reset $punchable_tnt config
+scoreboard players reset $unstable_tnt config
+scoreboard players reset $hobbits config
 
 function arenaclear:unlockdecos

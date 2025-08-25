@@ -35,6 +35,7 @@ gamerule logAdminCommands false
 gamerule playersNetherPortalCreativeDelay 2147483647
 gamerule playersNetherPortalDefaultDelay 2147483647
 gamerule locatorBar false
+gamerule waterSourceConversion false
 
 #Bossbars
 bossbar add rr:startgame ""

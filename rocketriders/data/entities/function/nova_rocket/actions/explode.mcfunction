@@ -32,18 +32,18 @@ execute on origin run tag @s remove nova_attach.origin
 
 # Create explosion
 # maximum explosion radius is 1.7333 times explosion power, rounded up
-execute if predicate game:modifiers/clutter_collector/on at @s run return run function custom:explosion {r:0,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute if predicate game:modifiers/clutter_collector/on at @s run return run function custom:explosion {power:0,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
 scoreboard players set $do_explosion_power_ramp var 0
 execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=doFireballPortals] run scoreboard players set $do_explosion_power_ramp var 1
 execute if predicate entities:origin_team/blue at @s if predicate custom:on_blue_half run scoreboard players set $do_explosion_power_ramp var 1
 execute if predicate entities:origin_team/yellow at @s if predicate custom:on_yellow_half run scoreboard players set $do_explosion_power_ramp var 1
 # Fixed Power
-execute if score $do_explosion_power_ramp var matches 0 if predicate game:modifiers/explosive/on run return run function custom:explosion {r:5,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute if score $do_explosion_power_ramp var matches 0 run return run function custom:explosion {r:2,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute if score $do_explosion_power_ramp var matches 0 if predicate game:modifiers/explosive/on run return run function custom:explosion {power:5,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute if score $do_explosion_power_ramp var matches 0 run return run function custom:explosion {power:2,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
 # Ramped Power
-execute if predicate game:modifiers/explosive/on at @s unless predicate custom:intersects_portal/radius_9 run return run function custom:explosion {r:5,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute if predicate game:modifiers/explosive/on at @s unless predicate custom:intersects_portal/radius_7 run return run function custom:explosion {r:4,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute if predicate game:modifiers/explosive/on at @s unless predicate custom:intersects_portal/radius_6 run return run function custom:explosion {r:3,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute at @s unless predicate custom:intersects_portal/radius_4 run return run function custom:explosion {r:2,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute at @s unless predicate custom:intersects_portal/radius_2 run return run function custom:explosion {r:1,modifiers:{copy_name:true,force_explosion_emitter:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute at @s run return run function custom:explosion {r:0,modifiers:{copy_name:true,force_explosion_emitter:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute if predicate game:modifiers/explosive/on at @s unless predicate custom:intersects_portal/radius_9 run return run function custom:explosion {power:5,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute if predicate game:modifiers/explosive/on at @s unless predicate custom:intersects_portal/radius_7 run return run function custom:explosion {power:4,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute if predicate game:modifiers/explosive/on at @s unless predicate custom:intersects_portal/radius_6 run return run function custom:explosion {power:3,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute at @s unless predicate custom:intersects_portal/radius_4 run return run function custom:explosion {power:2,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute at @s unless predicate custom:intersects_portal/radius_2 run return run function custom:explosion {power:1,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute at @s run return run function custom:explosion {power:0,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}

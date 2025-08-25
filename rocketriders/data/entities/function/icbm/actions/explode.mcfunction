@@ -22,7 +22,7 @@ execute at @s positioned ~-0.1 ~ ~ summon tnt run data modify entity @s {} merge
 execute at @s positioned ~ ~0.1 ~ summon tnt run data modify entity @s {} merge from storage rocketriders:main icbm
 execute at @s positioned ~ ~-0.1 ~ summon tnt run data modify entity @s {} merge from storage rocketriders:main icbm
 
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run function rr_crusade:game/tnt_cracks_large
+execute if predicate game:gamemode_components/explosions_crack_deepslate_bricks run function rr_crusade:game/tnt_cracks_large
 
 # Kill brain
 kill @s

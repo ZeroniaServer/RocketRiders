@@ -26,6 +26,6 @@ def generate(name: str, radius: float) -> None:
                         )
                     )
 
-generate("execute_through_small_sphere_biased",2.5)
-generate("execute_through_medium_sphere_biased",4)
-generate("execute_through_large_sphere_biased",7)
+generate("execute_through_sphere_biased_radius_2",2)
+generate("execute_through_sphere_biased_radius_5",5)
+generate("execute_through_sphere_biased_radius_8",8)

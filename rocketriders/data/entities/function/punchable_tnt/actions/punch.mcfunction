@@ -33,7 +33,7 @@ execute if score $impulse_z var matches 500.. run scoreboard players set $impuls
 execute if score $impulse_z var matches ..-500 run scoreboard players set $impulse_z var -500
 
 # attack cooldown
-scoreboard players set $impulse_reduction_factor var 10
+scoreboard players set $impulse_reduction_factor var 6
 execute on attacker if score @s time_since_tnt_punch matches 1.. run scoreboard players operation $impulse_reduction_factor var -= @s time_since_tnt_punch
 execute if score $impulse_reduction_factor var matches 2.. run scoreboard players operation $impulse_x var /= $impulse_reduction_factor var
 execute if score $impulse_reduction_factor var matches 2.. run scoreboard players operation $impulse_z var /= $impulse_reduction_factor var

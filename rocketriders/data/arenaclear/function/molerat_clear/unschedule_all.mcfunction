@@ -148,3 +148,4 @@ schedule clear arenaclear:molerat_clear/147
 schedule clear arenaclear:molerat_clear/148
 schedule clear arenaclear:molerat_clear/149
 schedule clear arenaclear:molerat_clear/150
+schedule clear arenaclear:molerat_clear/decoration

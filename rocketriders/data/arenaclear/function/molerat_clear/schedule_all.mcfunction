@@ -148,3 +148,4 @@ schedule function arenaclear:molerat_clear/147 147t
 schedule function arenaclear:molerat_clear/148 148t
 schedule function arenaclear:molerat_clear/149 149t
 schedule function arenaclear:molerat_clear/150 150t
+schedule function arenaclear:molerat_clear/decoration 151t

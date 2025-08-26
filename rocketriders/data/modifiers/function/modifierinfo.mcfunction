@@ -22,9 +22,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 
 #Molerat
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5}] if predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"Molerat","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" A big block of glass spawns in the center of the map, which players must break through to damage the other base.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5},tag=!WasMolerat] if predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"[WARNING]","color":"red","bold":true},{"text":" Toggling this causes lag due to fill commands."}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5}] unless predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"Molerat","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5},tag=WasMolerat] unless predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"[WARNING]","color":"red","bold":true},{"text":" Toggling this causes lag due to fill commands."}]
 
 #Minute Mix
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=6},tag=Minute] run tellraw @s ["",{"text":"Minute Mix","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players receive a new set of 8 items every minute.","color":"gray","italic":true}]

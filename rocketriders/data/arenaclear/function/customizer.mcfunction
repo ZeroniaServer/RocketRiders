@@ -52,14 +52,6 @@ execute unless score @s daytime matches 0..23999 store result score @s daytime r
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultWorld] remove DefaultWorld
 
-##MOLERAT WARNING
-execute unless entity @s[predicate=game:modifiers/molerat/on,tag=!WasMolerat] unless entity @s[predicate=!game:modifiers/molerat/on,tag=WasMolerat] run tag @a[x=0] remove MoleratStop
-execute unless entity @s[predicate=game:modifiers/molerat/on,tag=!WasMolerat] unless entity @s[predicate=!game:modifiers/molerat/on,tag=WasMolerat] as @a[x=0] run trigger moleratConfirm set 0
-execute unless entity @s[predicate=game:modifiers/molerat/on,tag=!WasMolerat] unless entity @s[predicate=!game:modifiers/molerat/on,tag=WasMolerat] run scoreboard players reset @a[x=0] moleratConfirm
-execute unless entity @s[predicate=game:modifiers/molerat/on,tag=!WasMolerat] unless entity @s[predicate=!game:modifiers/molerat/on,tag=WasMolerat] run tag @a[x=0,tag=moleratConfirm] remove moleratConfirm
-execute as @a[x=0,scores={moleratConfirm=1..}] run tag @s add moleratConfirm
-execute as @a[x=0,scores={moleratConfirm=1..}] run function arenaclear:testvalidclear
-
 ##ITEM DELAY
 execute if predicate rr:has_modification_room if entity @s[tag=Minute] run scoreboard players reset @a[x=0,team=Lobby] MaxItemSec
 execute if entity @s[tag=!itemDelayOff] as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] run function arenaclear:itemdelay/show_dialog

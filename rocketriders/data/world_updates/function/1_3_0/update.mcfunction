@@ -66,6 +66,8 @@ execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount m
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MoleratStop
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove moleratConfirm
 
 # Updating modifiers
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive] run scoreboard players set $explosive config 1
@@ -157,6 +159,7 @@ scoreboard objectives remove NovaShot
 scoreboard objectives remove NovaNear
 scoreboard objectives remove novatimer
 scoreboard objectives remove novattach
+scoreboard objectives remove moleratConfirm
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

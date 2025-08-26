@@ -73,7 +73,7 @@ fill 39 64 67 -15 67 67 air replace fire
 fill 39 64 67 -15 67 67 air replace fire
 
 ##Extra stuff for Modifiers
-#Molerat
+#Molerat (asynchronous)
 execute if predicate game:modifiers/molerat/on run function arenaclear:moleratplace
 execute unless predicate game:modifiers/molerat/on if entity @s[tag=WasMolerat] run function arenaclear:moleratclear
 

@@ -11,7 +11,7 @@ execute if score $dust CmdData matches 1 if entity @s[tag=!BlueFull] as @e[x=0,t
 execute if entity @s[tag=BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
 
 #Items
-execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function rr_chase:chasegear/givegear
+execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function custom:update_armor
 execute if predicate game:game_started as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function items:util/givearrows
 
 #Spawnpoints

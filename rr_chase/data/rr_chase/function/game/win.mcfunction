@@ -8,9 +8,9 @@ tag @s add GameEnd
 clear @a[x=0,team=Blue] #custom:clear
 clear @a[x=0,team=Blue] crossbow[custom_data~{nova:1b}]
 execute as @a[x=0,team=Blue,tag=Winner,predicate=!custom:has_firework_rocket_in_inventory,limit=1] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
-execute as @a[x=0,team=Blue,tag=Winner,limit=1] run loot replace entity @s armor.chest loot items:ending/elytra
+execute as @a[x=0,team=Blue,tag=Winner,limit=1] run function custom:update_armor
 execute as @a[x=0] store result score @s HasFlag run clear @s #banners 0
-execute as @a[x=0,team=Blue,tag=Loser,scores={HasFlag=0}] run loot replace entity @s armor.head loot items:ending/loser_banner
+execute as @a[x=0,team=Blue,tag=Loser,scores={HasFlag=0}] run function custom:update_armor
 #I Am Speed achievement for Winner
 execute if predicate rr:has_achievements run advancement grant @a[x=0,team=Blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 

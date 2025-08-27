@@ -71,5 +71,4 @@ scoreboard players operation @s MaxItemTime *= $20 constant
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 
-execute as @a[x=0,team=Blue] run function game:givegear
-execute as @a[x=0,team=Yellow] run function game:givegear
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:update_armor

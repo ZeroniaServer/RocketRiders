@@ -33,6 +33,7 @@ execute as @a[x=0,scores={LeaveGame=1..},predicate=custom:is_on_fire] at @s run 
 execute as @a[x=0,scores={LeaveGame=1..,LeaveMidgame=1}] at @s run playsound entity.enderman.teleport master @s ~ ~ ~ 1 1
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] flag.is_nova_attached
+tag @a[x=0,scores={LeaveGame=1..}] remove wearing_elytra
 
 #Parkour quit
 execute if predicate rr:has_parkour as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]
@@ -70,3 +71,6 @@ scoreboard players set @a[x=0,team=!Yellow,team=!Blue] LeaveMidgame 0
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteNum
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteServerMode
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] LeaveGame
+
+#Update Armor
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:update_armor

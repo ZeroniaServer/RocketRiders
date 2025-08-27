@@ -14,7 +14,7 @@ tag @s add BothWon
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run clear @s #custom:clear
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run clear @s crossbow[custom_data~{nova:1b}]
 execute as @a[x=0,predicate=!custom:has_firework_rocket_in_inventory] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
-execute as @a run loot replace entity @s armor.chest loot items:ending/elytra
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:update_armor
 
 ##Effects
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect clear @s slowness

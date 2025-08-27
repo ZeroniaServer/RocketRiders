@@ -1,6 +1,6 @@
 #Items
-execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function rr_swap:baseswap/gear
-execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function rr_swap:baseswap/gear
+execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function custom:update_armor
+execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function custom:update_armor
 
 #Spawnpoints
 execute if predicate game:game_started as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @s 12 64 -66 0

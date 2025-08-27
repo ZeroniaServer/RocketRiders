@@ -1,9 +1,9 @@
 #Items
-execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function game:givegear
+execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function custom:update_armor
 execute unless predicate game:game_started as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run loot replace entity @s hotbar.0 loot items:books/nomicon/pre_game
 execute if predicate game:game_started as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function rr_sandbox:items/givenomicon
 
-execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function game:givegear
+execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function custom:update_armor
 execute unless predicate game:game_started as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run loot replace entity @s hotbar.0 loot items:books/nomicon/pre_game
 execute if predicate game:game_started as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function rr_sandbox:items/givenomicon
 

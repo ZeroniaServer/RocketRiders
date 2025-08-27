@@ -1,8 +1,7 @@
 clear @a[x=0,team=Blue] #custom:clear
 clear @a[x=0,team=Blue] crossbow[custom_data~{nova:1b}]
 function rr_chase:game/overwrite
-execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Winner,limit=1] if entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function rr_chase:chasegear/givegear
-execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Winner,limit=1] if entity @e[x=0,type=armor_stand,tag=chaseEnabled] run loot replace entity @s armor.chest loot items:ending/elytra
+execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Winner,limit=1] if entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function custom:update_armor
 execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Loser] run function rr_chase:chasegear/losesaber
 execute if entity @s[scores={endtimer=1}] run effect give @a[x=0,team=Blue,tag=Loser] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1}] run function rr_chase:game/endstats

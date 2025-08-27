@@ -2,13 +2,8 @@ execute if entity @s[tag=JoinBlue,scores={crusadekit=2}] run scoreboard players 
 execute if entity @s[tag=JoinYellow,scores={crusadekit=2}] run scoreboard players reset @s crusadekit
 
 execute unless entity @s[scores={crusadekit=2}] run clear @s
-
 execute unless entity @s[scores={crusadekit=2}] run loot replace entity @s hotbar.0 loot items:misc/shooting_saber_crusade
-
-execute unless entity @s[scores={crusadekit=2}] if function game:norankboots run loot replace entity @s armor.feet loot items:armor/crusade_kits/archer/boots
-execute unless entity @s[scores={crusadekit=2}] run loot replace entity @s armor.legs loot items:armor/crusade_kits/archer/leggings
-execute unless entity @s[scores={crusadekit=2}] run loot replace entity @s armor.chest loot items:armor/crusade_kits/archer/chestplate
-execute unless entity @s[scores={crusadekit=2}] run loot replace entity @s armor.head loot items:armor/crusade_kits/archer/helmet
+execute unless entity @s[scores={crusadekit=2}] run function custom:update_armor
 
 execute unless entity @s[scores={crusadekit=2}] run tag @s remove fullOffhand
 execute unless predicate game:game_started if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameEnd,scores={count=..599}] unless entity @s[scores={crusadekit=2}] run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow_lobby"}],functions:[{function:"set_count",count:20}]}]}

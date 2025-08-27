@@ -1,8 +1,9 @@
 scoreboard players reset * gamemode_components
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $config_override.collision_control gamemode_components -1
-scoreboard players set $no_portal gamemode_components 1
+scoreboard players set $armor/chase gamemode_components 1
 scoreboard players set $main_item/bow gamemode_components 1
+scoreboard players set $no_portal gamemode_components 1
 scoreboard players set $neutral_utility_colors gamemode_components 1
 
 tag @s remove switchGamemodes

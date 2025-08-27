@@ -138,7 +138,6 @@ execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule 
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active
-execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] armor.chest with air
 execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] hotbar.0 with air
 execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] hotbar.1 with air
 execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby] hotbar.2 with air
@@ -149,7 +148,6 @@ execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lob
 execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.8 with air
 
 #If servermode is active
-execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] armor.chest with air
 execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
 execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.1 with air
 execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.2 with air
@@ -181,3 +179,7 @@ execute if predicate rr:server_mode/cubekrowd_duels run tag @s add duelLast
 # Fix for players not being able to jump up onto the slab from the modification room pool
 execute as @a[team=Lobby,x=-70,y=200,z=77,dz=2] run attribute @s minecraft:gravity modifier add rocketriders:learning_to_swim -0.75 add_multiplied_base
 execute as @a[team=Lobby] unless entity @s[x=-70,y=200,z=77,dy=0.5,dz=2] run attribute @s minecraft:gravity modifier remove rocketriders:learning_to_swim
+
+#Make armour visible again after invisibility wears off
+execute as @a[tag=was_invisible,predicate=!custom:invisible] run function custom:update_armor
+tag @a[tag=was_invisible,predicate=!custom:invisible] remove was_invisible

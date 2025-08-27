@@ -12,8 +12,7 @@ execute if entity @s[scores={endtimer=1}] run clear @a[x=0,predicate=custom:on_b
 execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run loot replace entity @s hotbar.0 loot items:books/nomicon/post_game
 scoreboard players reset @a[x=0] nomicon
 
-execute if entity @s[scores={endtimer=1},tag=YellowWon] as @a[x=0,team=Blue] run loot replace entity @s armor.chest loot items:armor/generic_gear/chestplate
-execute if entity @s[scores={endtimer=1},tag=BlueWon] as @a[x=0,team=Yellow] run loot replace entity @s armor.chest loot items:armor/generic_gear/chestplate
+execute if entity @s[scores={endtimer=1}] as @a[x=0] run function custom:unequip_elytra
 
 #Preclear
 execute if entity @s[scores={endtimer=569..}] run function rr_sandbox:arenaclear/preclear

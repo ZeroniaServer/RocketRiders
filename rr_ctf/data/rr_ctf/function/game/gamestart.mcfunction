@@ -1,8 +1,8 @@
 #Items
-execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function game:givegear
+execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function custom:update_armor
 execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
 
-execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function game:givegear
+execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function custom:update_armor
 execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
 
 #Notify Join

@@ -51,7 +51,7 @@ execute if predicate game:game_started run gamemode survival @a[x=0,team=Blue]
 execute if predicate game:game_started if entity @s[tag=!noSabers] run clear @a[x=0,team=Blue] bow
 execute if predicate game:game_started if entity @s[tag=!noSabers] run clear @a[x=0,team=Yellow] bow
 execute if predicate game:game_started if entity @s[tag=!noSabers] as @a[x=0,team=Blue] unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function game:saberblue
-execute if predicate game:game_started if entity @s[tag=!noSabers] as @a[x=0,team=Blue] if entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function rr_chase:chasegear/givegear
+execute if predicate game:game_started if entity @s[tag=!noSabers] as @a[x=0,team=Blue] if entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function custom:update_armor
 execute if predicate game:game_started if entity @s[tag=!noSabers] as @a[x=0,team=Yellow] run function game:saberyellow
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]

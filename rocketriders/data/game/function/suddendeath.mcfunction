@@ -52,11 +52,11 @@ execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon
 #For Premature Celebration achievement
 execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=BlueWonFirst] run advancement grant @a[x=0,team=Blue] only achievements:rr_challenges/premature
-execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] as @a[x=0,team=Blue] run loot replace entity @s armor.chest loot items:armor/generic_gear/chestplate
+execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] as @a[x=0,team=Blue] run function custom:update_armor
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[x=0,team=Yellow] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
 execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=YellowWonFirst] run advancement grant @a[x=0,team=Yellow] only achievements:rr_challenges/premature
-execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] as @a[x=0,team=Yellow] run loot replace entity @s armor.chest loot items:armor/generic_gear/chestplate
+execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] as @a[x=0,team=Yellow] run function custom:update_armor
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[x=0,team=Blue] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
 #Halves the Item Delay (more intense gameplay)

@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "gain_invisibility_effect": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "minecraft:invisibility": {}
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom:event/player_becomes_invisible/main"
+  }
+}

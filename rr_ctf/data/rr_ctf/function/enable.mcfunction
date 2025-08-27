@@ -1,8 +1,9 @@
 scoreboard players reset * gamemode_components
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $config_override.collision_control gamemode_components -1
-scoreboard players set $no_portal gamemode_components 1
+scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $main_item/pickaxe gamemode_components 1
+scoreboard players set $no_portal gamemode_components 1
 scoreboard players set $has_flags gamemode_components 1
 scoreboard players set $lower_void gamemode_components 1
 

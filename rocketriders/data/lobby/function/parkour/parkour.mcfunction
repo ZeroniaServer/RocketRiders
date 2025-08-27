@@ -172,7 +172,7 @@ execute as @a[x=0,team=Lobby,tag=inParkour] at @s unless entity @a[team=Lobby,ta
 effect clear @a[x=0,team=Lobby,tag=!inParkour] invisibility
 
 ##Boots (excluding rank)
-execute if function game:norankboots as @a[x=0,team=Lobby,tag=inParkour] unless items entity @s armor.feet iron_boots run loot replace entity @s armor.feet loot items:armor/parkour_boots
+execute as @a[x=0,team=Lobby,tag=inParkour] run function custom:update_armor
 
 ##Safety features
 #Only lobby players in Parkour mode

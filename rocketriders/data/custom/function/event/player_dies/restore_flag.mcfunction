@@ -35,4 +35,4 @@ tag @s remove CarryFlag
 scoreboard players reset @s FlagDeliver
 scoreboard players reset @s FlagScore
 
-item replace entity @s armor.head with air
+function custom:update_armor

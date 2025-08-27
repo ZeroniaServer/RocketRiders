@@ -29,7 +29,8 @@
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
-                    "minecraft:enchantments"
+                    "minecraft:enchantments",
+                    "minecraft:unbreakable"
                   ]
                 }
               }
@@ -40,7 +41,8 @@
                 "minecraft:custom_name": {
                   "text": "Elytra",
                   "color": "blue",
-                  "bold": true
+                  "bold": true,
+                  "italic": false
                 }
               },
               "conditions": [
@@ -59,7 +61,8 @@
                 "minecraft:custom_name": {
                   "text": "Elytra",
                   "color": "gold",
-                  "bold": true
+                  "bold": true,
+                  "italic": false
                 }
               },
               "conditions": [

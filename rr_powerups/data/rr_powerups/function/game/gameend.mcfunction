@@ -6,8 +6,7 @@ clear @a[x=0,team=Yellow] #custom:clear
 clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
 clear @a[x=0,team=Yellow] #rr_powerups:clear
 execute as @e[x=0,type=marker,tag=captureMiddle] at @s run function rr_powerups:everytick/powerup_platform
-execute if entity @s[scores={endtimer=1},tag=YellowWon] as @a[x=0,team=Blue] run loot replace entity @s armor.chest loot items:armor/generic_gear/chestplate
-execute if entity @s[scores={endtimer=1},tag=BlueWon] as @a[x=0,team=Yellow] run loot replace entity @s armor.chest loot items:armor/generic_gear/chestplate
+execute if entity @s[scores={endtimer=1}] as @a[x=0] run function custom:unequip_elytra
 execute if entity @s[scores={endtimer=101},tag=doTying,tag=!tyingOff,tag=!BothWon] run function game:endstats
 execute if entity @s[scores={endtimer=1},tag=!doTying,tag=!BothWon] run function game:endstats
 execute if entity @s[scores={endtimer=1},tag=BothWon] run function game:endstats

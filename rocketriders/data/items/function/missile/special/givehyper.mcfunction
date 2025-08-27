@@ -1,6 +1,6 @@
 ##Gives executor a Hypersonic
 #Antidupe check
-execute store result score @s HasHyper run clear @s turtle_spawn_egg 0
+execute store result score @s HasHyper run clear @s #custom:missile[custom_data~{spawn_egg:{type:"missile",missile:"hypersonic"}}] 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasHyper %= $64 constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasHyper=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasHyper 0

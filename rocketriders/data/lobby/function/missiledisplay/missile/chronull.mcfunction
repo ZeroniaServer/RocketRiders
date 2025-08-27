@@ -2,7 +2,7 @@
 data merge entity @e[x=0,type=area_effect_cloud,tag=NameDisp,limit=1] {CustomName:{"text":"Chronullifier","color":"green","bold":true}}
 data merge entity @e[x=0,type=area_effect_cloud,tag=TNTDisp,limit=1] {CustomName:["",{"text":"TNT Count: ","color":"dark_green","bold":true},{"text":"14","color":"white"}]}
 data merge entity @e[x=0,type=area_effect_cloud,tag=SpeedDisp,limit=1] {CustomName:["",{"text":"Speed: ","color":"dark_green","bold":true},{"text":"2.2m/s","color":"white"}]}
-item replace entity @e[x=0,type=item_frame,tag=MisDispIF,limit=1] contents with phantom_spawn_egg
+loot replace entity @e[x=0,type=item_frame,tag=MisDispIF,limit=1] contents loot items:missile/normal/chronullifier
 
 playsound minecraft:entity.explode master @a[x=0] 19 204 78 0.5 1.75
 particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

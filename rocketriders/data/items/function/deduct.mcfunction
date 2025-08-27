@@ -10,13 +10,11 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack] if items entity @s contents ender_pearl run scoreboard players operation @p[predicate=custom:matches_uuid] HasPlat += $itemcount CmdData
 
 #Extra for Surprise Eggs since they can stack to 3
-execute if items entity @s contents squid_spawn_egg on origin store result score @s[team=Blue,tag=!itemDeducted] HasSurprise run clear @s squid_spawn_egg 0
-execute if items entity @s contents squid_spawn_egg on origin run scoreboard players operation @s[team=Blue] HasSurprise += $itemcount CmdData
-execute if items entity @s contents cod_spawn_egg on origin store result score @s[team=Yellow,tag=!itemDeducted] HasSurprise run clear @s cod_spawn_egg 0
-execute if items entity @s contents cod_spawn_egg on origin run scoreboard players operation @s[team=Yellow] HasSurprise += $itemcount CmdData
+execute if items entity @s contents #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] on origin store result score @s[tag=!itemDeducted] HasSurprise run clear @s #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] 0
+execute if items entity @s contents #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] on origin run scoreboard players operation @s HasSurprise += $itemcount CmdData
 
 #Actually reducing count
-execute if score $itemcount CmdData matches 1.. unless items entity @s contents arrow unless items entity @s contents ender_pearl unless items entity @s contents cod_spawn_egg unless items entity @s contents squid_spawn_egg run scoreboard players remove $itemcount CmdData 1
+execute if score $itemcount CmdData matches 1.. unless items entity @s contents arrow unless items entity @s contents ender_pearl unless items entity @s contents #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] run scoreboard players remove $itemcount CmdData 1
 item modify entity @s contents {function:"minecraft:set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$itemcount"},score:"CmdData"},add:false}
 execute on origin run tag @s add itemDeducted
 execute on origin run tag @s[tag=fullHotbar] add wasFullHotbar

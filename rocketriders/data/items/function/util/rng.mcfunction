@@ -14,8 +14,8 @@ tag @e[x=0,type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 
 #> Kill items to prevent duplication glitches
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @e[x=0,type=item] if items entity @s contents arrow run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngFireball] as @e[x=0,type=item] if items entity @s contents blaze_spawn_egg[custom_data~{cluster:0b}] run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @e[x=0,type=item] if items entity @s contents enderman_spawn_egg run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngFireball] as @e[x=0,type=item] if items entity @s contents pig_spawn_egg[custom_data~{spawn_egg:{type:"fireball"}}] run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @e[x=0,type=item] if items entity @s contents pig_spawn_egg[custom_data~{spawn_egg:{type:"obsidian_shield"}}] run function items:deduct
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @e[x=0,type=item] if items entity @s contents ender_pearl run function items:deduct
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @e[x=0,type=item] if items entity @s contents snowball[custom_data~{shield:1b}] run function items:deduct
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @e[x=0,type=item] if items entity @s contents lingering_potion[custom_data~{splash:1b}] run function items:deduct

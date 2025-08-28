@@ -376,7 +376,7 @@ data modify storage rocketriders:nomicon dialogs.experimental.dialog set value {
     }\
   }\
 }
-#function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 54, item_loot_table: "items:experimental/building_block", item_plain_name_singular: "Building Block", item_plain_name_plural: "Building Blocks", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 54, item_loot_table: "items:experimental/building_block", item_plain_name_singular: "Building Block", item_plain_name_plural: "Building Blocks", color: "white"}
 function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "experimental", trigger_input_id: 53, item_loot_table: "items:experimental/shooting_saber_multishot", item_plain_name: "Multishot Saber", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 50, item_loot_table: "items:experimental/invisibility_potion", item_plain_name_singular: "Invisibility Potion", item_plain_name_plural: "Invisibility Potions", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "experimental", trigger_input_id: 52, item_loot_table: "items:experimental/spectral_arrow", item_plain_name_singular: "Spectral Arrow", item_plain_name_plural: "Spectral Arrows", color: "dark_purple"}

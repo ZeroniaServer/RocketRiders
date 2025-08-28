@@ -6,7 +6,8 @@
       "entity": "this",
       "predicate": {
         "type": [
-          "#minecraft:arrows",
+          "minecraft:arrow",
+          "minecraft:spectral_arrow",
           "minecraft:fireball",
           "minecraft:small_fireball",
           "minecraft:dragon_fireball",

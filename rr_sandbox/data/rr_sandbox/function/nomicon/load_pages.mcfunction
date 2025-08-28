@@ -310,7 +310,77 @@ function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapo
 function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 44, item_loot_table: "items:misc/knight_sword", item_plain_name: "Knight Sword", color: "white"}
 function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 45, item_loot_table: "items:misc/knight_shield", item_plain_name: "Knight Shield", color: "white"}
 function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 46, item_loot_table: "items:misc/spell_wand", item_plain_name: "Spell Wand", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 47, item_loot_table: "rr_crusade:book_icon", item_plain_name: "Spell Book", color: "light_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "weapons_and_tools", trigger_input_id: 47, item_loot_table: "rr_crusade:book_icon", item_plain_name_singular: "Spell Book", item_plain_name_plural: "Spell Books", color: "light_purple"}
+
+##
+## Experimental/Unused
+##
+data modify storage rocketriders:nomicon dialogs.experimental.dialog set value {\
+  "type": "minecraft:confirmation",\
+  "title": [\
+    {\
+      "text": "Rocket",\
+      "color": "blue",\
+      "bold": true\
+    },\
+    {\
+      "text": "-",\
+      "color": "gray"\
+    },\
+    {\
+      "text": "nomicon",\
+      "color": "gold"\
+    }\
+  ],\
+  "body": [\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": [\
+        {\
+          "bold": true,\
+          "text": "\nExperimental/Unused\n"\
+        },\
+        {\
+          "bold": false,\
+          "underlined": true,\
+          "shadow_color": 0,\
+          "text": "\n                                                                "\
+        }\
+      ],\
+      "width": 400\
+    }\
+  ],\
+  "pause": false,\
+  "after_action": "none",\
+  "yes": {\
+    "label": "Back",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1"\
+    }\
+  },\
+  "no": {\
+    "label": "Done",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1000001"\
+    }\
+  }\
+}
+#function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 54, item_loot_table: "items:experimental/building_block", item_plain_name_singular: "Building Block", item_plain_name_plural: "Building Blocks", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "experimental", trigger_input_id: 53, item_loot_table: "items:experimental/shooting_saber_multishot", item_plain_name: "Multishot Saber", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 50, item_loot_table: "items:experimental/invisibility_potion", item_plain_name_singular: "Invisibility Potion", item_plain_name_plural: "Invisibility Potions", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "experimental", trigger_input_id: 52, item_loot_table: "items:experimental/spectral_arrow", item_plain_name_singular: "Spectral Arrow", item_plain_name_plural: "Spectral Arrows", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 51, item_loot_table: "items:experimental/jump_boost_potion", item_plain_name_singular: "Jump Boost Potion", item_plain_name_plural: "Jump Boost Potions", color: "dark_purple"}
 
 ##
 ## All
@@ -355,6 +425,7 @@ data modify storage rocketriders:nomicon dialogs.all.dialog.body append from sto
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.utilities.dialog.body[]
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.powerups.dialog.body[]
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.weapons_and_tools.dialog.body[]
+data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.experimental.dialog.body[]
 
 # Remove top separator from every section
 data remove storage rocketriders:nomicon dialogs.all.dialog.body[0]
@@ -362,3 +433,4 @@ data remove storage rocketriders:nomicon dialogs.missiles.dialog.body[0]
 data remove storage rocketriders:nomicon dialogs.utilities.dialog.body[0]
 data remove storage rocketriders:nomicon dialogs.powerups.dialog.body[0]
 data remove storage rocketriders:nomicon dialogs.weapons_and_tools.dialog.body[0]
+data remove storage rocketriders:nomicon dialogs.experimental.dialog.body[0]

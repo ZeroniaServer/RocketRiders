@@ -69,7 +69,7 @@ execute if predicate game:game_started run scoreboard players operation @s origB
 execute if predicate game:game_started run scoreboard players operation @s origYCount = @s yellowsCount
 execute if predicate game:game_started run function lobby:credits/restart
 execute if predicate game:game_started run gamerule mobGriefing true
-execute if predicate game:game_started run kill @e[x=0,type=arrow]
+execute if predicate game:game_started run kill @e[x=0,type=#arrows]
 execute if predicate game:game_started run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] arrow[custom_data~{Lobby:1b}]
 execute if predicate game:game_started run scoreboard players set @s count 0
 execute if predicate game:game_started run tag @s remove bossbarOverride

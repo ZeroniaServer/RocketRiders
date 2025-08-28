@@ -70,6 +70,16 @@ dialog show @s {\
         "type": "run_command",\
         "command": "trigger nomicon set 1000006"\
       }\
+    },\
+    {\
+      "label": {\
+        "text": "Experimental/Unused",\
+        "italic": true\
+      },\
+      "action": {\
+        "type": "run_command",\
+        "command": "trigger nomicon set 1000007"\
+      }\
     }\
   ],\
   "exit_action": {\

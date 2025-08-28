@@ -53,7 +53,7 @@ fill -14 13 -66 38 33 -48 air
 kill @e[x=0,type=fireball]
 kill @e[x=0,type=area_effect_cloud,tag=endFireballAEC]
 kill @e[x=0,type=snowball]
-kill @e[x=0,type=arrow]
+kill @e[x=0,type=#arrows]
 kill @e[x=0,type=marker,tag=Vortex]
 kill @e[x=0,type=armor_stand,tag=VortexItem]
 kill @e[x=0,type=chicken]

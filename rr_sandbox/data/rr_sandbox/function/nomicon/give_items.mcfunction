@@ -55,5 +55,11 @@ execute if score @s nomicon matches 47 run function rr_crusade:items/util/givesp
 execute if score @s nomicon matches 49 if entity @s[team=Blue] run function items:surprise_blue/givesurpriseegg
 execute if score @s nomicon matches 49 if entity @s[team=Yellow] run function items:surprise_yellow/givesurpriseegg
 
+execute if score @s nomicon matches 50 run loot give @s loot items:experimental/invisibility_potion
+execute if score @s nomicon matches 51 run loot give @s loot items:experimental/jump_boost_potion
+execute if score @s nomicon matches 52 run function items:experimental/give_spectral_arrows
+execute if score @s nomicon matches 53 run loot give @s loot items:experimental/shooting_saber_multishot
+#execute if score @s nomicon matches 54 run loot give @s loot items:experimental/building_block
+
 scoreboard players remove $rolls var 1
 execute if score $rolls var matches 1.. run function rr_sandbox:nomicon/give_items

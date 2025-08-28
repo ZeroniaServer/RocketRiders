@@ -17,7 +17,7 @@ execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
 execute as @e[x=0,type=item] run function everytick:no_drop
 
 #Arrow pickup
-execute if entity @s[tag=!GameEnd] if entity @e[x=0,type=arrow] run function rr_crusade:game/arrow_pickup
+execute if entity @s[tag=!GameEnd] if entity @e[x=0,type=#arrows] run function rr_crusade:game/arrow_pickup
 
 #kits
 execute if entity @s[tag=EditedSettings,tag=!GameEnd] run scoreboard players enable @a[x=0,team=!Lobby,team=!Developer,team=!Spectator] crusadechange

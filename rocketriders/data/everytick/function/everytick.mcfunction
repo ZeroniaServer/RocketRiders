@@ -78,7 +78,7 @@ stopsound @a[x=0] ambient minecraft:ambient.cave
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:cancel_utility
 
 #Arrow pickup
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameEnd,tag=!customArrowPickup] if entity @e[x=0,type=arrow] run function everytick:arrow_pickup
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameEnd,tag=!customArrowPickup] if entity @e[x=0,type=#arrows] run function everytick:arrow_pickup
 
 #Game ending and arena clearing
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameEnd,tag=!NoModesInstalled] run function game:gameend

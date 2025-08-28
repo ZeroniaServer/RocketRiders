@@ -16,7 +16,7 @@ execute if predicate game:modifiers/explosive/on unless predicate game:modifiers
 execute unless entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] run effect give @s night_vision infinite 100 true
 execute if entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] run effect clear @s night_vision
 execute if entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect give @s glowing infinite 1 true
-execute if entity @s[tag=Sonar] as @e[x=0,type=arrow] run data merge entity @s {Glowing:1b}
+execute if entity @s[tag=Sonar] as @e[x=0,type=#arrows] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=snowball] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=egg] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=firework_rocket] run data merge entity @s {Glowing:1b}

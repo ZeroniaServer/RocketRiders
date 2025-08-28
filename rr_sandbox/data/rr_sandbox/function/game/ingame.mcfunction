@@ -17,7 +17,7 @@ execute as @a[x=0,team=Yellow,nbt=!{respawn:{pos:[I;12,64,66]}}] run spawnpoint 
 function rr_powerups:everytick/spawnables
 function rr_powerups:everytick/powerups
 function everytick:cluster
-execute if entity @e[x=0,type=arrow] run function rr_powerups:everytick/tipped_arrow_pickup
+execute if entity @e[x=0,type=#arrows] run function rr_powerups:everytick/tipped_arrow_pickup
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team,scores={useWand=1..}] run function rr_crusade:game/usewand
 
 #nomicon

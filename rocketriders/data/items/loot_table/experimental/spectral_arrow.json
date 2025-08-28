@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spectral_arrow",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Spectral Arrow",
+                  "color": "dark_purple",
+                  "italic": false,
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "Droppable": true
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

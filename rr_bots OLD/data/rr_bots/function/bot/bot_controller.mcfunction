@@ -20,8 +20,8 @@ execute as @e[x=0,type=armor_stand,tag=Bot,scores={botarrowitems=1..}] run tag @
 execute as @e[x=0,type=armor_stand,tag=BotHasArrows] unless entity @s[scores={botarrowitems=1..}] run tag @s remove BotHasArrows
 
 
-scoreboard players add @e[x=0,type=arrow,tag=BArrow] BotHP 1
-kill @e[x=0,type=arrow,tag=BArrow,scores={BotHP=50..}]
+scoreboard players add @e[x=0,type=#arrows,tag=BArrow] BotHP 1
+kill @e[x=0,type=#arrows,tag=BArrow,scores={BotHP=50..}]
 
 execute as @e[x=0,type=armor_stand,tag=Bot] at @s if predicate custom:in_void run function rr_bots:bot/movement/voidfall
 

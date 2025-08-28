@@ -72,7 +72,7 @@ execute if entity @s[scores={endtimer=570}] run function achievements:scoresrese
 execute if entity @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute if entity @s[scores={endtimer=570},tag=SpamClick] as @a[x=0] run attribute @s minecraft:attack_speed base set 4
 #Reverse Sonar glowing
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=arrow] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=#arrows] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=snowball] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=egg] run data merge entity @s {Glowing:0b}
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=firework_rocket] run data merge entity @s {Glowing:0b}

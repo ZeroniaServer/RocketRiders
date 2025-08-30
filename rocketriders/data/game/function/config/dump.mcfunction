@@ -15,7 +15,7 @@ execute store success storage rocketriders:main "config/dump".config.punchable_t
 execute store success storage rocketriders:main "config/dump".config.unstable_tnt byte 1 if score $unstable_tnt config matches 1
 execute store success storage rocketriders:main "config/dump".config.hobbits byte 1 if score $hobbits config matches 1
 
-execute store success storage rocketriders:main "config/dump".config.disable_balancing byte 1 if score $disable_balancing config matches 1
+execute store success storage rocketriders:main "config/dump".config.disable_team_balancing byte 1 if score $disable_team_balancing config matches 1
 
 ## Write
 $data modify $(write_to) set from storage rocketriders:main "config/dump".config

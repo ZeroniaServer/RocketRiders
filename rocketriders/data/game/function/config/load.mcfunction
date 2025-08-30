@@ -48,9 +48,9 @@ execute unless score $hobbits config matches 0..1 run scoreboard players reset $
 execute if score $hobbits config matches 0 run scoreboard players reset $hobbits config
 
 
-execute store result score $disable_balancing config run data get storage rocketriders:main "config/load".config.disable_balancing
-execute unless score $disable_balancing config matches 0..1 run scoreboard players reset $disable_balancing config
-execute if score $disable_balancing config matches 0 run scoreboard players reset $disable_balancing config
+execute store result score $disable_team_balancing config run data get storage rocketriders:main "config/load".config.disable_team_balancing
+execute unless score $disable_team_balancing config matches 0..1 run scoreboard players reset $disable_team_balancing config
+execute if score $disable_team_balancing config matches 0 run scoreboard players reset $disable_team_balancing config
 
 ## Clean Up
 data remove storage rocketriders:main "config/load"

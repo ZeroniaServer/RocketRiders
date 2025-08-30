@@ -10,14 +10,15 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker"
-                },
                 "minecraft:custom_data": {
+                  "id": "missile/bullet",
                   "spawn_egg": {
                     "type": "missile",
                     "missile": "bullet"
                   }
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:skeleton_horse_spawn_egg",
                 "minecraft:enchantment_glint_override": true,

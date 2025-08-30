@@ -1,6 +1,6 @@
 ##Gives executor a Bullet
 #Antidupe check
-execute store result score @s HasBullet run clear @s #custom:missile[custom_data~{spawn_egg:{type:"missile",missile:"bullet"}}] 0
+execute store result score @s HasBullet run clear @s #custom:missile[custom_data~{id:"missile/bullet"}] 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasBullet %= $64 constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasBullet=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasBullet 0

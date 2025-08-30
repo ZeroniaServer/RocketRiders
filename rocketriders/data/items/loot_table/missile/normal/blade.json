@@ -10,14 +10,15 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker"
-                },
                 "minecraft:custom_data": {
-                  "spawn_egg": {
-                    "type": "missile",
+                "id": "missile/blade",
+                "spawn_egg": {
+                  "type": "missile",
                     "missile": "blade"
                   }
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:husk_spawn_egg",
                 "minecraft:custom_name": [

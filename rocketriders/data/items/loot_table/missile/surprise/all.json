@@ -10,14 +10,15 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker"
-                },
                 "minecraft:custom_data": {
+                  "id": "surprise_missile/all",
                   "spawn_egg": {
                     "type": "surprise_missile",
                     "category": "all"
                   }
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:squid_spawn_egg",
                 "minecraft:enchantment_glint_override": true,

@@ -26,4 +26,5 @@ tag @s add heavyForce
 tag @s add utilForce
 tag @s add hasBees
 tag @s add customBossbar
+tag @s add noTeamBalance
 tag @s add sandboxEnabled

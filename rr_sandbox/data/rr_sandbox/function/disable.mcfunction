@@ -27,4 +27,5 @@ tag @s remove heavyForce
 tag @s remove utilForce
 tag @s remove hasBees
 tag @s remove customBossbar
+tag @s remove noTeamBalance
 tag @s add switchGamemodes

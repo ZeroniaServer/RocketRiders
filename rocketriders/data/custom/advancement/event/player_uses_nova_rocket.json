@@ -6,7 +6,7 @@
         "item": {
           "predicates": {
             "minecraft:custom_data": {
-              "nova": true
+              "id": "nova_rocket"
             }
           }
         }

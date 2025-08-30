@@ -55,10 +55,8 @@ execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInYellow,
 scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1
 execute if entity @s[tag=TimeOut] run kill @e[x=0,type=tnt]
 execute if entity @s[tag=TimeOut] if predicate game:modifiers/punchable_tnt/on run kill @e[x=0,predicate=entities:type/punchable_tnt]
-execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Yellow] #custom:clear
-execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
-execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Blue] #custom:clear
-execute if entity @s[tag=TimeOut] run clear @a[x=0,team=Blue] crossbow[custom_data~{nova:1b}]
+execute if entity @s[tag=TimeOut] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
+execute if entity @s[tag=TimeOut] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] crossbow[custom_data~{id:"nova_rocket"}]
 execute if entity @s[tag=TimeOut] run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute if entity @s[tag=TimeOut] run tp @a[x=0,team=Yellow] 12 64 66 180 0
 tag @s[tag=TimeOut] add noAchievements

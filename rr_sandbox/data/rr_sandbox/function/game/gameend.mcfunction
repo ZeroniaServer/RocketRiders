@@ -1,13 +1,9 @@
 function everytick:cluster
 function rr_powerups:everytick/spawnables
-clear @a[x=0,team=Blue] #custom:clear
-clear @a[x=0,team=Blue] crossbow[custom_data~{nova:1b}]
-clear @a[x=0,team=Blue] #rr_powerups:clear
-clear @a[x=0,team=Blue] #rr_sandbox:clear
-clear @a[x=0,team=Yellow] #custom:clear
-clear @a[x=0,team=Yellow] crossbow[custom_data~{nova:1b}]
-clear @a[x=0,team=Yellow] #rr_powerups:clear
-clear @a[x=0,team=Yellow] #rr_sandbox:clear
+clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
+clear @a[x=0,predicate=custom:on_blue_or_yellow_team] crossbow[custom_data~{id:"nova_rocket"}]
+clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #rr_powerups:clear
+clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #rr_sandbox:clear
 execute if entity @s[scores={endtimer=1}] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] written_book
 execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run loot replace entity @s hotbar.0 loot items:books/nomicon/post_game
 scoreboard players reset @a[x=0] nomicon

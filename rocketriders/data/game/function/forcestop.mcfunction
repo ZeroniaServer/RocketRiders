@@ -1,7 +1,7 @@
 ##Operator function for forcing a game to end
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add GameEnd
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s crossbow[custom_data~{nova:1b}]
+execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s crossbow[custom_data~{id:"nova_rocket"}]
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s
 function custom:set_global/game_started {bool:false}
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Countdown

@@ -1,5 +1,5 @@
 clear @a[x=0,team=Blue] #custom:clear
-clear @a[x=0,team=Blue] crossbow[custom_data~{nova:1b}]
+clear @a[x=0,team=Blue] crossbow[custom_data~{id:"nova_rocket"}]
 function rr_chase:game/overwrite
 execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Winner,limit=1] if entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function custom:update_armor
 execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Loser] run function rr_chase:chasegear/losesaber

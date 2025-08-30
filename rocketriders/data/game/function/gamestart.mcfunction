@@ -38,12 +38,12 @@ execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinBlue
 execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinBlue
 execute if entity @s[tag=BlueFull] run tag @a[x=0] remove JoinBlue
 execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=-1..0},tag=!BlueFull] as @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[predicate=!game:config/disable_balancing] unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
-execute if entity @s[predicate=!game:config/disable_balancing] run function everytick:team_balance
+execute unless predicate game:config/disable_balancing unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
+execute unless predicate game:config/disable_balancing run function everytick:team_balance
 execute as @e[x=0,type=marker,tag=join_pad.blue] at @s as @a[distance=..1,team=Lobby,limit=1,sort=random,tag=!tryJoinBlue] run function game:joinblue
 execute as @e[x=0,type=marker,tag=join_pad.blue] at @s run tag @a[distance=2..,tag=tryJoinBlue] remove tryJoinBlue
 team join Blue @a[x=0,tag=JoinBlue]
-execute if entity @s[predicate=!game:config/disable_balancing] run function everytick:team_balance
+execute unless predicate game:config/disable_balancing run function everytick:team_balance
 clear @a[x=0,tag=JoinBlue]
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function game:saberblue
 execute unless predicate game:game_started if entity @s[tag=Hardcore] as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
@@ -75,12 +75,12 @@ execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinYellow
 execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinYellow
 execute if entity @s[tag=YellowFull] run tag @a[x=0] remove JoinYellow
 execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=0..1},tag=!YellowFull] as @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:yellow_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if entity @s[predicate=!game:config/disable_balancing] unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] add join_pad.show_barrier
-execute if entity @s[predicate=!game:config/disable_balancing] run function everytick:team_balance
+execute unless predicate game:config/disable_balancing unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] add join_pad.show_barrier
+execute unless predicate game:config/disable_balancing run function everytick:team_balance
 execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s as @a[distance=..1,team=Lobby,limit=1,sort=random,tag=!tryJoinYellow] run function game:joinyellow
 execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s run tag @a[distance=2..,tag=tryJoinYellow] remove tryJoinYellow
 team join Yellow @a[x=0,tag=JoinYellow]
-execute if entity @s[predicate=!game:config/disable_balancing] run function everytick:team_balance
+execute unless predicate game:config/disable_balancing run function everytick:team_balance
 clear @a[x=0,tag=JoinYellow]
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinYellow] run function game:saberyellow
 execute unless predicate game:game_started if entity @s[tag=Hardcore] as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset

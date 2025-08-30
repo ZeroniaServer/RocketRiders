@@ -5,6 +5,7 @@ scoreboard players set $armor/chase gamemode_components 1
 scoreboard players set $main_item/bow gamemode_components 1
 scoreboard players set $no_portal gamemode_components 1
 scoreboard players set $neutral_utility_colors gamemode_components 1
+scoreboard players set $disable_balancing gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add chaseEnabled
@@ -17,7 +18,6 @@ tag @s add customPrevention
 tag @s add customEnds
 tag @s add customBossbar
 tag @s add leaveYSpawn
-tag @s add noTeamBalance
 # tag @s add arrowLimit
 tag @s[tag=!doStacking] add stackingWasOff
 tag @s add doStacking

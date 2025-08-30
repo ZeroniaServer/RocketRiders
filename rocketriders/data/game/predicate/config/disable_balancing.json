@@ -1,0 +1,30 @@
+{
+    "condition": "any_of",
+    "terms": [
+        {
+            "condition": "minecraft:value_check",
+            "value": {
+                "type": "minecraft:score",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "$disable_balancing"
+                },
+                "score": "config"
+            },
+            "range": 1
+        },
+        {
+            "condition": "minecraft:value_check",
+            "value": {
+                "type": "minecraft:score",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "$disable_balancing"
+                },
+                "score": "gamemode_components"
+            },
+            "range": 1
+        }
+    ]
+   
+}

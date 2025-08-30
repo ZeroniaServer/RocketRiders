@@ -11,7 +11,6 @@ tag @s remove customPrevention
 tag @s remove customEnds
 tag @s remove customBossbar
 tag @s remove leaveYSpawn
-tag @s remove noTeamBalance
 team modify Blue friendlyFire false
 tag @s[tag=arrowsWasOff] remove rngArrows
 tag @s remove arrowsWasOff

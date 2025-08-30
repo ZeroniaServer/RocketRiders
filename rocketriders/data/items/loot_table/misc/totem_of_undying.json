@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "totem_of_undying"
+                },
                 "minecraft:custom_name": {
                   "text": "Totem of Undying",
                   "color": "dark_purple",

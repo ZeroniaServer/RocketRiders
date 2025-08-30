@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "shooting_saber/infinity"
+                },
                 "minecraft:custom_name": {
                   "translate": "Infinity Saber",
                   "color": "dark_purple",

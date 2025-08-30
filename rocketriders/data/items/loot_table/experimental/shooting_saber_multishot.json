@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "shooting_saber/multishot"
+                },
                 "minecraft:custom_name": {
                   "translate": "Multishot Saber",
                   "color": "dark_purple",

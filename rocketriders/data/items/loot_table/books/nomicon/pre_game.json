@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "rocket_nomicon/pre_game"
+                },
                 "minecraft:custom_name": [
                   {
                     "text": "Rocket",

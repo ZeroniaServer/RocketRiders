@@ -10,6 +10,11 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "tipped_arrow_levitation",
+                  "Droppable": true,
+                  "tipped_arrow_type": "levitation"
+                },
                 "minecraft:custom_name": {
                   "text": "Levitation Arrow",
                   "color": "dark_purple",
@@ -30,10 +35,6 @@
                   "hidden_components": [
                     "minecraft:potion_contents"
                   ]
-                },
-                "minecraft:custom_data": {
-                  "Droppable": true,
-                  "tipped_arrow_type": "levitation"
                 }
               }
             }

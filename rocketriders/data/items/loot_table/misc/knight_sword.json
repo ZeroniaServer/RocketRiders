@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "knight_sword"
+                },
                 "minecraft:unbreakable": {},
                 "minecraft:custom_name": {
                   "text": "Knight Sword",

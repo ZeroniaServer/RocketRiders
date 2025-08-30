@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "spell_wand/end"
+                },
                 "minecraft:enchantments": {
                   "minecraft:fire_aspect": 2
                 },

@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "shooting_saber/end"
+                },
                 "!minecraft:attribute_modifiers": {}
               }
             }

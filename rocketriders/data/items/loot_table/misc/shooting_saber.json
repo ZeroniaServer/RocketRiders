@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "shooting_saber"
+                },
                 "minecraft:custom_name": {
                   "translate": "Shooting Saber",
                   "color": "white",

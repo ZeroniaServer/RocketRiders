@@ -36,6 +36,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "loser_banner"
+                },
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },

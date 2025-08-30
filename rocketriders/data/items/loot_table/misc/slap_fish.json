@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "slap_fish"
+                },
                 "minecraft:custom_name": {
                   "text": "Slap Fish",
                   "color": "dark_purple",

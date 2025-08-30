@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "piercing_pickaxe/end"
+                },
                 "!minecraft:enchantments": {},
                 "minecraft:enchantment_glint_override": true,
                 "!minecraft:can_break": {}

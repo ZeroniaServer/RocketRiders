@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "spell_wand"
+                },
                 "minecraft:item_model": "minecraft:stick",
                 "minecraft:custom_model_data": {
                   "floats": [

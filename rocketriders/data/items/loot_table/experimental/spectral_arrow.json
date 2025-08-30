@@ -10,14 +10,15 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "spectral_arrow",
+                  "Droppable": true
+                },
                 "minecraft:custom_name": {
                   "text": "Spectral Arrow",
                   "color": "dark_purple",
                   "italic": false,
                   "bold": true
-                },
-                "minecraft:custom_data": {
-                  "Droppable": true
                 }
               }
             }

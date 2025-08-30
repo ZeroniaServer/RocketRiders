@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "knight_shield"
+                },
                 "minecraft:max_damage": 10,
                 "minecraft:custom_name": {
                   "text": "Knight Shield",

@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "trident"
+                },
                 "minecraft:max_damage": 8,
                 "minecraft:enchantments": {
                   "minecraft:impaling": 2,

@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "building_block"
+                },
                 "minecraft:custom_name": {
                   "text": "Building Block",
                   "color": "white",

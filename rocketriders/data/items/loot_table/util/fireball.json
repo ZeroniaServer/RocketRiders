@@ -10,14 +10,14 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker"
-                },
                 "minecraft:custom_data": {
-                  "cluster": false,
+                  "id": "fireball",
                   "spawn_egg": {
                     "type": "fireball"
                   }
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:blaze_spawn_egg",
                 "minecraft:custom_name": [

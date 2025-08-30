@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "stinging_shield"
+                },
                 "minecraft:max_stack_size": 64,
                 "minecraft:custom_name": [
                   {
@@ -36,9 +39,6 @@
                     "italic": false
                   }
                 ],
-                "minecraft:custom_data": {
-                  "stinging_shield": true
-                },
                 "minecraft:item_model": "minecraft:honeycomb"
               }
             },

@@ -1,6 +1,6 @@
 ##Gives executor an Obsidian Shield
 #Antidupe check
-execute store result score @s HasObshield run clear @s pig_spawn_egg[custom_data~{spawn_egg:{type:"obsidian_shield"}}] 0
+execute store result score @s HasObshield run clear @s pig_spawn_egg[custom_data~{id:"obsidian_shield"}] 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasObshield %= $64 constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasObshield=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasObshield 0

@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "vortex"
+                },
                 "minecraft:max_stack_size": 64,
                 "minecraft:custom_name": [
                   {
@@ -41,10 +44,7 @@
                     "italic": false
                   }
                 ],
-                "minecraft:item_model": "minecraft:ender_eye",
-                "minecraft:custom_data": {
-                  "icbm": false
-                }
+                "minecraft:item_model": "minecraft:ender_eye"
               }
             },
             {

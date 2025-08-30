@@ -10,14 +10,14 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:entity_data": {
-                  "id": "minecraft:marker"
-                },
                 "minecraft:custom_data": {
-                  "cluster": true,
+                  "id": "cluster_fireball",
                   "spawn_egg": {
                     "type": "cluster_fireball"
                   }
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:blaze_spawn_egg",
                 "minecraft:enchantment_glint_override": true,

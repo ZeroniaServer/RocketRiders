@@ -25,7 +25,11 @@
       "entity": "this",
       "predicate": {
         "type": "minecraft:egg",
-        "nbt": "{Item:{components:{'minecraft:custom_data':{icbm:1b}}}}"
+        "predicates": {
+          "minecraft:custom_data": {
+            "icbm": {}
+          }
+        }
       }
     },
     {

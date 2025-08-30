@@ -1,5 +1,5 @@
 #Antidupe check
-execute store result score @s HasFireball run clear @s pig_spawn_egg[custom_data~{spawn_egg:{type:"cluster_fireball"}}] 0
+execute store result score @s HasFireball run clear @s pig_spawn_egg[custom_data~{id:"cluster_fireball"}] 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasFireball %= $64 constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasFireball=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasFireball 0

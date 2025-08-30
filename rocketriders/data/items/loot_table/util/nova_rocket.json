@@ -10,6 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "nova_rocket"
+                },
                 "minecraft:damage": 465,
                 "minecraft:custom_name": [
                   {
@@ -86,9 +89,6 @@
                     "minecraft:charged_projectiles",
                     "minecraft:unbreakable"
                   ]
-                },
-                "minecraft:custom_data": {
-                  "id": "nova_rocket"
                 }
               }
             },

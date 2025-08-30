@@ -35,6 +35,8 @@ data modify storage rocketriders:navbook modroom set value [""]
 data modify storage rocketriders:navbook description set value {text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn 1v1 Duel Mode, players challenge each other to a best of three, one-on-one tournament with sets of 12 random items.",color:"dark_gray"}
 data modify storage rocketriders:navbook parkourtips set value [""]
 
+scoreboard players set $disable_cannoning config 1
+
 scoreboard objectives add joinBlue dummy
 scoreboard objectives add joinYellow dummy
 scoreboard objectives add spectate dummy

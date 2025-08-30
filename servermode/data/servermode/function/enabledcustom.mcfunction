@@ -38,6 +38,8 @@ data modify storage rocketriders:navbook modroom set value ["\n",{text:"* ",colo
 data modify storage rocketriders:navbook description set value {text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn the Modification Room, you can easily customize the game with many gamemodes, modifiers, and other settings to play with.",color:"dark_gray"}
 data modify storage rocketriders:navbook parkourtips set value [""]
 
+scoreboard players set $disable_cannoning config 0
+
 scoreboard objectives add joinBlue dummy
 scoreboard objectives add joinYellow dummy
 scoreboard objectives add spectate dummy

@@ -1,6 +1,6 @@
 ##Gives executor a Warhead
 #Antidupe check
-execute store result score @s HasWar run clear @s #custom:missile[custom_data~{id:"missile/warhead"}] 0
+execute store result score @s HasWar run clear @s *[custom_data~{id:"missile/warhead"}] 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasWar %= $64 constant
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasWar=1..63},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasWar 0

@@ -14,13 +14,13 @@ tag @e[x=0,type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 
 #> Kill items to prevent duplication glitches
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @e[x=0,type=item] if items entity @s contents arrow run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngFireball] as @e[x=0,type=item] if items entity @s contents pig_spawn_egg[custom_data~{id:"fireball"}] run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @e[x=0,type=item] if items entity @s contents pig_spawn_egg[custom_data~{id:"obsidian_shield"}] run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngFireball] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"fireball"}] run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"obsidian_shield"}] run function items:deduct
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @e[x=0,type=item] if items entity @s contents ender_pearl run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @e[x=0,type=item] if items entity @s contents snowball[custom_data~{id:"shield"}] run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @e[x=0,type=item] if items entity @s contents lingering_potion[custom_data~{id:"splash"}] run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngVortex] as @e[x=0,type=item] if items entity @s contents egg[custom_data~{id:"vortex"}] run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngNova] as @e[x=0,type=item] if items entity @s contents crossbow[custom_data~{id:"nova_rocket"}] run kill @s
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"shield"}] run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"splash"}] run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngVortex] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"vortex"}] run function items:deduct
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngNova] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"nova_rocket"}] run kill @s
 
 function items:full_hotbar
 

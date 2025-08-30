@@ -1,5 +1,5 @@
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] crossbow[custom_data~{id:"nova_rocket"}]
+clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents netherite_pickaxe run function items:killendweapon
 execute if entity @s[scores={endtimer=1},tag=BlueWon] run clear @a[x=0,team=Yellow] netherite_pickaxe
 execute if entity @s[scores={endtimer=1},tag=BlueWon] as @a[x=0,team=Yellow] run loot give @s loot items:misc/piercing_pickaxe_end

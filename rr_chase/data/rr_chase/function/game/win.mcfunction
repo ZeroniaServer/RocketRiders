@@ -6,7 +6,7 @@ tag @s add GameEnd
 
 ##Celebratory items
 clear @a[x=0,team=Blue] #custom:clear
-clear @a[x=0,team=Blue] crossbow[custom_data~{id:"nova_rocket"}]
+clear @a[x=0,team=Blue] *[custom_data~{id:"nova_rocket"}]
 execute as @a[x=0,team=Blue,tag=Winner,predicate=!custom:has_firework_rocket_in_inventory,limit=1] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
 execute as @a[x=0,team=Blue,tag=Winner,limit=1] run function custom:update_armor
 execute as @a[x=0] store result score @s HasFlag run clear @s #banners 0

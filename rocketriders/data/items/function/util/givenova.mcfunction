@@ -1,6 +1,6 @@
 ##Gives executor a Nova Rocket
 #Antidupe check
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!doStacking] store result score @s HasNova run clear @s crossbow[custom_data~{id:"nova_rocket"}] 0
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!doStacking] store result score @s HasNova run clear @s *[custom_data~{id:"nova_rocket"}] 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasNova 0
 tag @s[tag=itemDeducted] remove fullHotbar
 

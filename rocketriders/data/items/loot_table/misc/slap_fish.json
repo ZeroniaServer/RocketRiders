@@ -31,6 +31,14 @@
                 "minecraft:enchantments": {
                   "minecraft:knockback": 3
                 },
+                "minecraft:max_damage": 1,
+                "minecraft:max_stack_size": 1,
+                "minecraft:weapon": {
+                  "item_damage_per_attack": 1,
+                  "disable_blocking_for_seconds": 0.0
+                },
+                "minecraft:damage": 0,
+                "minecraft:break_sound": "minecraft:entity.guardian.flop",
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:enchantments"

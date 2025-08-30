@@ -27,9 +27,6 @@ execute as @e[x=0,type=trident,tag=return] store result score @s playerUUID run 
 execute if entity @s[tag=!doStacking] as @e[x=0,type=trident,tag=return] at @s run function rr_powerups:everytick/trident_antidupe
 tag @a[x=0,tag=tridentChecked] remove tridentChecked
 
-#slap fish
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function rr_powerups:everytick/slap_fish
-
 #infinity saber
 scoreboard players reset @a[x=0,tag=Infinity,predicate=!custom:on_blue_or_yellow_team] infinity
 tag @a[x=0,tag=Infinity,predicate=!custom:on_blue_or_yellow_team] remove Infinity

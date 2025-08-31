@@ -1,3 +1,4 @@
+# Voting trigger
 scoreboard players add @s VoteServerMode 1
 scoreboard players add @e[x=0,type=marker,tag=ServerMode,tag=Set] VoteServerMode 0
 execute unless entity @e[x=0,tag=ServerMode,tag=ChaseMode] as @a[x=0,scores={VoteServerMode=6}] run tellraw @s {"text":"Invalid vote! Please try again.","color":"red"}
@@ -8,11 +9,20 @@ execute as @a[x=0,scores={VoteServerMode=..-1}] run tellraw @s {"text":"Invalid 
 execute as @a[x=0,scores={VoteServerMode=..-1}] run scoreboard players set @s VoteServerMode 0
 execute as @a[x=0] run scoreboard players enable @s VoteServerMode
 
-execute as @a[x=0,scores={VoteServerMode=1..6}] unless score @s VoteNum = @s VoteServerMode at @s run playsound minecraft:entity.villager.work_librarian master @s ~ ~ ~ 0.4 1.5
+execute as @a[x=0,scores={VoteServerMode=1..6}] unless score @s VoteNum = @s VoteServerMode at @s run playsound minecraft:ui.cartography_table.take_result master @s ~ ~ ~ 0.4 1.5
 execute as @a[x=0,scores={VoteServerMode=1..6}] unless score @s VoteNum = @s VoteServerMode run tellraw @s [{"text":"You've voted for option ","color":"dark_aqua"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"gold","bold":true},{"text":"! You may change your vote if you wish, or wait for voting to end.\n","color":"dark_aqua"}]
 execute as @a[x=0,scores={VoteServerMode=1..6}] if score @s VoteNum = @s VoteServerMode run tellraw @s [{"text":"You've already voted for option ","color":"dark_aqua"},{"score":{"name":"@s","objective":"VoteServerMode"},"color":"gold","bold":true},{"text":".\n","color":"dark_aqua"}]
 execute as @a[x=0,scores={VoteServerMode=1..6}] run scoreboard players operation @s VoteNum = @s VoteServerMode
 execute as @a[x=0,scores={VoteServerMode=1..6}] run scoreboard players set @s VoteServerMode 0
+
+#Voting ballot
+execute if entity @s[tag=ServerModeVoting] as @a unless score @s VoteNum matches 1.. unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"},!custom_data~{voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot
+execute if entity @s[tag=ServerModeVoting] as @a[scores={VoteNum=1..}] unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot",voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot_used
+execute unless entity @s[tag=ServerModeVoting] run clear @a *[custom_data~{id:"voting_ballot"}]
+
+execute if entity @s[tag=ServerModeVoting] as @a[tag=was_using_voting_ballot,tag=!is_using_voting_ballot] run function servermode:voting/show_dialog
+tag @a[tag=!is_using_voting_ballot] remove was_using_voting_ballot
+tag @a remove is_using_voting_ballot
 
 #Countdown bossbar
 execute if score @s VoteServerMode matches 1..599 run scoreboard players set $seconds VoteServerMode 619

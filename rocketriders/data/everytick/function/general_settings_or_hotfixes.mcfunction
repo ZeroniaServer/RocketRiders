@@ -148,7 +148,7 @@ execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lob
 execute unless predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour] hotbar.8 with air
 
 #If servermode is active
-execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
+execute if predicate rr:is_cubekrowd unless entity @s[tag=ServerModeVoting] run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.0 with air
 execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.1 with air
 execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.2 with air
 execute if predicate rr:is_cubekrowd run item replace entity @a[x=0,team=Lobby,tag=!inParkour,tag=!keepInventory] hotbar.3 with air

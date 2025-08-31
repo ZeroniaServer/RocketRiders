@@ -1,0 +1,19 @@
+{
+  "criteria": {
+    "use_ballot_item": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "id": "voting_ballot"
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "servermode:voting/use_voting_ballot"
+  }
+}

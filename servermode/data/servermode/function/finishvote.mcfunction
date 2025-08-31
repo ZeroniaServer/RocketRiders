@@ -1,5 +1,10 @@
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] VoteServerMode 600
 
+# Close voting ballot
+dialog clear @a
+tag @a remove is_using_voting_ballot
+tag @a remove was_using_voting_ballot
+
 # tallying votes
 execute as @a[x=0,scores={VoteNum=1}] run summon marker ~ ~ ~ {Tags:["ServerModeVote","ServerModeVote1"]}
 execute as @a[x=0,scores={VoteNum=2}] run summon marker ~ ~ ~ {Tags:["ServerModeVote","ServerModeVote2"]}

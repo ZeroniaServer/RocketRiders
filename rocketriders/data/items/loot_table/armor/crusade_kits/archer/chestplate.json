@@ -15,11 +15,10 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "asset_id": "minecraft:chainmail"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Archer Chestplate",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 },
                 "minecraft:unbreakable": {},
                 "minecraft:enchantments": {
@@ -43,11 +42,10 @@
                   "material": "minecraft:lapis",
                   "pattern": "minecraft:vex"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Blue Archer Chestplate",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
+                  "color": "blue"
                 }
               },
               "conditions": [
@@ -67,11 +65,10 @@
                   "material": "minecraft:gold",
                   "pattern": "minecraft:spire"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Yellow Archer Chestplate",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
+                  "color": "gold"
                 }
               },
               "conditions": [

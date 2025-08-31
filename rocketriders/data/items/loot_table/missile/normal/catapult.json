@@ -21,17 +21,15 @@
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:cave_spider_spawn_egg",
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Normal] ",
                     "color": "green",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Catapult",
-                    "color": "white",
-                    "bold": true
+                    "color": "white"
                   }
                 ],
                 "minecraft:lore": [
@@ -111,17 +109,15 @@
                     1
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Normal] ",
                     "color": "green",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Catapult",
-                    "color": "blue",
-                    "bold": true
+                    "color": "blue"
                   }
                 ]
               },
@@ -143,17 +139,15 @@
                     2
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Normal] ",
                     "color": "green",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Catapult",
-                    "color": "gold",
-                    "bold": true
+                    "color": "gold"
                   }
                 ]
               },

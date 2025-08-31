@@ -13,12 +13,11 @@
                 "minecraft:custom_data": {
                   "id": "rocket_nomicon/post_game"
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "Rocket",
-                    "color": "blue",
                     "bold": true,
-                    "italic": false
+                    "color": "blue"
                   },
                   {
                     "text": "-",
@@ -67,7 +66,7 @@
                       }
                     ]
                   ],
-                  "title": "Rocket-nomicon",
+                  "title": "",
                   "author": "Zeronia",
                   "resolved": true
                 },

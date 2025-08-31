@@ -14,11 +14,10 @@
                   "id": "spectral_arrow",
                   "Droppable": true
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Spectral Arrow",
-                  "color": "dark_purple",
-                  "italic": false,
-                  "bold": true
+                  "bold": true,
+                  "color": "dark_purple"
                 }
               }
             }

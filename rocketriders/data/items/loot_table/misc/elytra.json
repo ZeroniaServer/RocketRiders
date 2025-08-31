@@ -24,11 +24,10 @@
                 },
                 "minecraft:enchantment_glint_override": false,
                 "minecraft:max_damage": 7,
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Elytra",
                   "color": "dark_purple",
-                  "bold": true,
-                  "italic": false
+                  "bold": true
                 },
                 "minecraft:lore": [
                   {

@@ -27,17 +27,15 @@
                     3
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[???] ",
                     "color": "red",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Surprise Egg",
-                    "color": "white",
-                    "bold": true
+                    "color": "white"
                   }
                 ],
                 "minecraft:lore": [
@@ -64,17 +62,15 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:squid_spawn_egg",
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[???] ",
                     "color": "yellow",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Surprise Egg",
-                    "color": "blue",
-                    "bold": true
+                    "color": "blue"
                   }
                 ]
               },
@@ -92,17 +88,15 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:cod_spawn_egg",
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[???] ",
                     "color": "yellow",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Surprise Egg",
-                    "color": "gold",
-                    "bold": true
+                    "color": "gold"
                   }
                 ]
               },

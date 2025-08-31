@@ -20,17 +20,15 @@
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:blaze_spawn_egg",
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Fireball",
-                    "color": "white",
-                    "bold": true
+                    "color": "white"
                   }
                 ],
                 "minecraft:lore": [
@@ -71,17 +69,15 @@
                     1
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:custitem_nameom_name": [
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Fireball",
-                    "color": "blue",
-                    "bold": true
+                    "color": "blue"
                   }
                 ]
               },
@@ -103,17 +99,15 @@
                     1
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Utility] ",
                     "color": "light_purple",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Fireball",
-                    "color": "gold",
-                    "bold": true
+                    "color": "gold"
                   }
                 ]
               },

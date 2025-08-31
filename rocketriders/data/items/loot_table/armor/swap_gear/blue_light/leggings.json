@@ -19,11 +19,10 @@
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:spire"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Light Blue Leggings",
-                  "color": "#9AB0FF",
                   "bold": true,
-                  "italic": false
+                  "color": "#9AB0FF"
                 },
                 "minecraft:dyed_color": 10137855,
                 "minecraft:unbreakable": {},

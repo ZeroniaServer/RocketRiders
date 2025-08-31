@@ -19,11 +19,10 @@
                   "material": "minecraft:netherite",
                   "pattern": "minecraft:vex"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Dark Blue Leggings",
-                  "color": "#2C248A",
                   "bold": true,
-                  "italic": false
+                  "color": "#2C248A"
                 },
                 "minecraft:dyed_color": 524382,
                 "minecraft:unbreakable": {},

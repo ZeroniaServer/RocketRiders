@@ -10,11 +10,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Arrow",
                   "color": "light_purple",
-                  "bold": true,
-                  "italic": false
+                  "bold": true
                 },
                 "minecraft:custom_data": {
                   "id": "arrow/lobby",

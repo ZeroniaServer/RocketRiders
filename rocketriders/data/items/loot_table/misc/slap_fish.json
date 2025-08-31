@@ -13,10 +13,15 @@
                 "minecraft:custom_data": {
                   "id": "slap_fish"
                 },
+                "minecraft:item_name": {
+                  "text": "Slap Fish",
+                  "bold": true,
+                  "color": "dark_purple"
+                },
                 "minecraft:custom_name": {
                   "text": "Slap Fish",
-                  "color": "dark_purple",
                   "bold": true,
+                  "color": "dark_purple",
                   "italic": false
                 },
                 "minecraft:lore": [

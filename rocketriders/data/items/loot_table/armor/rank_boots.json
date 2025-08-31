@@ -18,11 +18,10 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "asset_id": "minecraft:leather"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "text": "Unranked Boots",
-                      "color": "dark_gray",
                       "bold": true,
-                      "italic": false
+                      "color": "dark_gray"
                     },
                     "minecraft:dyed_color": 4210752
                   }
@@ -52,11 +51,10 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "asset_id": "minecraft:leather"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "text": "Bronze Boots",
-                      "color": "#CD7F32",
                       "bold": true,
-                      "italic": false
+                      "color": "#CD7F32"
                     },
                     "minecraft:dyed_color": 13467442
                   }
@@ -87,11 +85,10 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "asset_id": "minecraft:iron"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "text": "Silver Boots",
-                      "color": "gray",
                       "bold": true,
-                      "italic": false
+                      "color": "gray"
                     }
                   }
                 }
@@ -121,11 +118,10 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "asset_id": "minecraft:gold"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "text": "Gold Boots",
-                      "color": "gold",
                       "bold": true,
-                      "italic": false
+                      "color": "gold"
                     }
                   }
                 }
@@ -155,11 +151,10 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "asset_id": "minecraft:diamond"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "text": "Diamond Boots",
-                      "color": "aqua",
                       "bold": true,
-                      "italic": false
+                      "color": "aqua"
                     }
                   }
                 }
@@ -189,11 +184,10 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "asset_id": "minecraft:netherite"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "text": "Champion Boots",
-                      "color": "red",
                       "bold": true,
-                      "italic": false
+                      "color": "red"
                     }
                   }
                 }

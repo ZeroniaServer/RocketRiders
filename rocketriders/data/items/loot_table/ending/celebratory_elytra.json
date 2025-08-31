@@ -24,11 +24,10 @@
                 },
                 "minecraft:enchantment_glint_override": false,
                 "minecraft:unbreakable": {},
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Elytra",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
@@ -41,11 +40,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Elytra",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
+                  "color": "blue"
                 }
               },
               "conditions": [
@@ -61,11 +59,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Elytra",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
+                  "color": "gold"
                 }
               },
               "conditions": [

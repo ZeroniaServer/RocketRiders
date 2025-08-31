@@ -15,11 +15,10 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "asset_id": "minecraft:leather"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Archer Leggings",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 },
                 "minecraft:dyed_color": -1,
                 "minecraft:unbreakable": {},
@@ -54,11 +53,10 @@
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:vex"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Blue Archer Leggings",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
+                  "color": "blue"
                 },
                 "minecraft:dyed_color": 3949738
               },
@@ -79,11 +77,10 @@
                   "material": "minecraft:netherite",
                   "pattern": "minecraft:spire"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Yellow Archer Leggings",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
+                  "color": "gold"
                 },
                 "minecraft:dyed_color": 16768000
               },

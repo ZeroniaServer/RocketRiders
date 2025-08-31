@@ -14,11 +14,10 @@
                   "minecraft:binding_curse": 1
                 },
                 "minecraft:enchantment_glint_override": false,
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Parkour Boots",
-                  "color": "dark_green",
                   "bold": true,
-                  "italic": false
+                  "color": "dark_green"
                 },
                 "minecraft:trim": {
                   "material": "minecraft:emerald",

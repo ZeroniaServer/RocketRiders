@@ -15,11 +15,10 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "asset_id": "minecraft:iron"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Knight Leggings",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 },
                 "minecraft:unbreakable": {},
                 "minecraft:enchantments": {
@@ -53,11 +52,10 @@
                   "material": "minecraft:lapis",
                   "pattern": "minecraft:vex"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Blue Knight Leggings",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
+                  "color": "blue"
                 }
               },
               "conditions": [
@@ -77,11 +75,10 @@
                   "material": "minecraft:gold",
                   "pattern": "minecraft:spire"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Yellow Knight Leggings",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
+                  "color": "gold"
                 }
               },
               "conditions": [

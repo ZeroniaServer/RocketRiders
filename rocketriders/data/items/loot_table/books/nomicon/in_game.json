@@ -14,12 +14,11 @@
                   "id": "rocket_nomicon",
                   "nomicon": {}
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "Rocket",
-                    "color": "blue",
                     "bold": true,
-                    "italic": false
+                    "color": "blue"
                   },
                   {
                     "text": "-",

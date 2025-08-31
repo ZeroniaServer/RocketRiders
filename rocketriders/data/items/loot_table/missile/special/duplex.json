@@ -22,17 +22,15 @@
                 },
                 "minecraft:item_model": "minecraft:parrot_spawn_egg",
                 "minecraft:enchantment_glint_override": true,
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Special] ",
                     "color": "dark_purple",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Duplex",
-                    "color": "white",
-                    "bold": true
+                    "color": "white"
                   }
                 ],
                 "minecraft:lore": [
@@ -107,17 +105,15 @@
                     1
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Special] ",
                     "color": "dark_purple",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Duplex",
-                    "color": "blue",
-                    "bold": true
+                    "color": "blue"
                   }
                 ],
                 "minecraft:entity_data": {
@@ -147,17 +143,15 @@
                     2
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Special] ",
                     "color": "dark_purple",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Duplex",
-                    "color": "gold",
-                    "bold": true
+                    "color": "gold"
                   }
                 ],
                 "minecraft:entity_data": {

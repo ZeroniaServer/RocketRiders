@@ -14,9 +14,8 @@
                   "id": "knight_sword"
                 },
                 "minecraft:unbreakable": {},
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Knight Sword",
-                  "italic": false,
                   "bold": true,
                   "color": "white"
                 },

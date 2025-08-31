@@ -19,11 +19,10 @@
                   "material": "minecraft:netherite",
                   "pattern": "minecraft:spire"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Dark Yellow Chestplate",
-                  "color": "#918C00",
                   "bold": true,
-                  "italic": false
+                  "color": "#918C00"
                 },
                 "minecraft:dyed_color": 9538560,
                 "minecraft:unbreakable": {},

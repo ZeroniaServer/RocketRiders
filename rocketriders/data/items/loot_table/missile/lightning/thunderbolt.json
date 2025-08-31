@@ -21,17 +21,15 @@
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:vex_spawn_egg",
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Lightning] ",
                     "color": "yellow",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Thunderbolt",
-                    "color": "white",
-                    "bold": true
+                    "color": "white"
                   }
                 ],
                 "minecraft:lore": [
@@ -106,17 +104,15 @@
                     1
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Lightning] ",
                     "color": "yellow",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Thunderbolt",
-                    "color": "blue",
-                    "bold": true
+                    "color": "blue"
                   }
                 ]
               },
@@ -138,17 +134,15 @@
                     2
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Lightning] ",
                     "color": "yellow",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Thunderbolt",
-                    "color": "gold",
-                    "bold": true
+                    "color": "gold"
                   }
                 ]
               },

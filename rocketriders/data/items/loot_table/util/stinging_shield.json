@@ -14,17 +14,15 @@
                   "id": "stinging_shield"
                 },
                 "minecraft:max_stack_size": 64,
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Utility] ",
                     "color": "dark_purple",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Stinging Shield",
-                    "color": "white",
-                    "bold": true
+                    "color": "white"
                   }
                 ],
                 "minecraft:lore": [
@@ -45,17 +43,15 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Utility] ",
                     "color": "dark_purple",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Stinging Shield",
-                    "color": "blue",
-                    "bold": true
+                    "color": "blue"
                   }
                 ],
                 "minecraft:custom_model_data": {
@@ -77,17 +73,15 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Utility] ",
                     "color": "dark_purple",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Stinging Shield",
-                    "color": "gold",
-                    "bold": true
+                    "color": "gold"
                   }
                 ],
                 "minecraft:custom_model_data": {

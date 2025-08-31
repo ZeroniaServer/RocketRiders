@@ -13,11 +13,10 @@
                 "minecraft:custom_data": {
                   "id": "building_block"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Building Block",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 }
               }
             },
@@ -37,11 +36,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Building Block",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
+                  "color": "blue"
                 }
               },
               "conditions": [
@@ -70,11 +68,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Building Block",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
+                  "color": "gold"
                 }
               },
               "conditions": [

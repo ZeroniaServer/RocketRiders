@@ -21,9 +21,8 @@
                 },
                 "!minecraft:writable_book_content": {},
                 "minecraft:unbreakable": {},
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Spell Wand",
-                  "italic": false,
                   "bold": true,
                   "color": "white"
                 },
@@ -51,9 +50,8 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Spell Wand",
-                  "italic": false,
                   "bold": true,
                   "color": "blue"
                 },
@@ -72,9 +70,8 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Spell Wand",
-                  "italic": false,
                   "bold": true,
                   "color": "gold"
                 },

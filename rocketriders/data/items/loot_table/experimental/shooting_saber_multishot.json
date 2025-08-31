@@ -13,11 +13,10 @@
                 "minecraft:custom_data": {
                   "id": "shooting_saber/multishot"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "translate": "Multishot Saber",
-                  "color": "dark_purple",
                   "bold": true,
-                  "italic": false
+                  "color": "dark_purple"
                 },
                 "minecraft:enchantments": {
                   "minecraft:flame": 1,

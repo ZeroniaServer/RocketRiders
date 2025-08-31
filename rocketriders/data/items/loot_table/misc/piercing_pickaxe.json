@@ -13,11 +13,10 @@
                 "minecraft:custom_data": {
                   "id": "piercing_pickaxe"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "translate": "Piercing Pickaxe",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 },
                 "minecraft:lore": [
                   {

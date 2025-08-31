@@ -44,11 +44,10 @@
                 },
                 "minecraft:enchantment_glint_override": false,
                 "minecraft:unbreakable": {},
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Flag of Shameful Loss",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
@@ -61,11 +60,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Flag of Shameful Loss",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
+                  "color": "blue"
                 },
                 "minecraft:banner_patterns": [
                   {
@@ -115,11 +113,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Flag of Shameful Loss",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
+                  "color": "gold"
                 },
                 "minecraft:banner_patterns": [
                   {

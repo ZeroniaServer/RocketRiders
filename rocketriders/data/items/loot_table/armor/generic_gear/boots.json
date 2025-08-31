@@ -15,11 +15,10 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "asset_id": "minecraft:leather"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Boots",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 },
                 "minecraft:dyed_color": -1,
                 "minecraft:unbreakable": {},
@@ -55,11 +54,10 @@
                   "pattern": "minecraft:vex"
                 },
                 "minecraft:dyed_color": 3949738,
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Blue Boots",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
+                  "color": "blue"
                 }
               },
               "conditions": [
@@ -80,11 +78,10 @@
                   "pattern": "minecraft:spire"
                 },
                 "minecraft:dyed_color": 16768000,
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Yellow Boots",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
+                  "color": "gold"
                 }
               },
               "conditions": [

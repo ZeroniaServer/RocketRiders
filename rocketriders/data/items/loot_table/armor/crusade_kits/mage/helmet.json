@@ -14,11 +14,10 @@
                   "slot": "head",
                   "equip_sound": "minecraft:intentionally_empty"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Mage Mask",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 },
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
@@ -35,11 +34,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Blue Mage Mask",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
+                  "color": "blue"
                 },
                 "minecraft:item_model": "minecraft:warped_fence_gate"
               },
@@ -56,11 +54,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Yellow Mage Mask",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
+                  "color": "gold"
                 },
                 "minecraft:item_model": "minecraft:birch_fence_gate"
               },

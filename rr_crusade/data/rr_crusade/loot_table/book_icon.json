@@ -12,23 +12,20 @@
               "components": {
                 "!minecraft:stored_enchantments": {},
                 "minecraft:max_stack_size": 1,
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   "",
                   {
                     "text": "Spell Book ",
-                    "color": "light_purple",
-                    "italic": true,
-                    "bold": true
+                    "bold": true,
+                    "color": "light_purple"
                   },
                   {
                     "translate": "[%s]",
                     "color": "dark_gray",
-                    "italic": false,
                     "with": [
                       {
                         "text": "?",
-                        "color": "aqua",
-                        "italic": false
+                        "color": "aqua"
                       }
                     ]
                   }

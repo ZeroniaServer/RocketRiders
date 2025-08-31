@@ -19,11 +19,10 @@
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:spire"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Light Yellow Chestplate",
-                  "color": "#FFFCB1",
                   "bold": true,
-                  "italic": false
+                  "color": "#FFFCB1"
                 },
                 "minecraft:dyed_color": 16776369,
                 "minecraft:unbreakable": {},

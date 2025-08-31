@@ -13,11 +13,10 @@
                 "minecraft:custom_data": {
                   "id": "celebratory_fireworks"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Celebratory Fireworks",
-                  "color": "white",
                   "bold": true,
-                  "italic": false
+                  "color": "white"
                 },
                 "minecraft:can_place_on": {
                   "blocks": "#custom:missileandbase"
@@ -37,11 +36,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Celebratory Fireworks",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
+                  "color": "blue"
                 },
                 "minecraft:fireworks": {
                   "explosions": [
@@ -71,11 +69,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Celebratory Fireworks",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
+                  "color": "gold"
                 },
                 "minecraft:fireworks": {
                   "explosions": [

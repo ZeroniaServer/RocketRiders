@@ -14,9 +14,8 @@
                   "id": "knight_shield"
                 },
                 "minecraft:max_damage": 10,
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Knight Shield",
-                  "italic": false,
                   "bold": true,
                   "color": "white"
                 },

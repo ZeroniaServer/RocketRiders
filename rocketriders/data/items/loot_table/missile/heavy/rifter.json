@@ -21,17 +21,15 @@
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:salmon_spawn_egg",
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Heavy] ",
                     "color": "dark_red",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Rifter",
-                    "color": "white",
-                    "bold": true
+                    "color": "white"
                   }
                 ],
                 "minecraft:lore": [
@@ -111,17 +109,15 @@
                     1
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Heavy] ",
                     "color": "dark_red",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Rifter",
-                    "color": "blue",
-                    "bold": true
+                    "color": "blue"
                   }
                 ]
               },
@@ -143,17 +139,15 @@
                     2
                   ]
                 },
-                "minecraft:custom_name": [
+                "minecraft:item_name": [
                   {
                     "text": "[Heavy] ",
                     "color": "dark_red",
-                    "bold": true,
-                    "italic": false
+                    "bold": true
                   },
                   {
                     "text": "Rifter",
-                    "color": "gold",
-                    "bold": true
+                    "color": "gold"
                   }
                 ]
               },

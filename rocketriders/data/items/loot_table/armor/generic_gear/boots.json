@@ -16,7 +16,7 @@
                   "asset_id": "minecraft:leather"
                 },
                 "minecraft:item_name": {
-                  "text": "Boots",
+                  "text": "White Boots",
                   "bold": true,
                   "color": "white"
                 },
@@ -62,6 +62,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  }
+                },
+                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
@@ -86,10 +93,305 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  }
+                },
+                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
                     "team": "Yellow"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 3949738,
+                "minecraft:item_name": {
+                  "text": "Blue Boots",
+                  "bold": true,
+                  "color": "blue"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 1
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16768000,
+                "minecraft:item_name": {
+                  "text": "Yellow Boots",
+                  "bold": true,
+                  "color": "yellow"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 2
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16711680,
+                "minecraft:item_name": {
+                  "text": "Red Boots",
+                  "bold": true,
+                  "color": "red"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 3
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 65281,
+                "minecraft:item_name": {
+                  "text": "Green Boots",
+                  "bold": true,
+                  "color": "green"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 4
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 11796735,
+                "minecraft:item_name": {
+                  "text": "Purple Boots",
+                  "bold": true,
+                  "color": "dark_purple"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 5
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16752877,
+                "minecraft:item_name": {
+                  "text": "Pink Boots",
+                  "bold": true,
+                  "color": "light_purple"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 6
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16744704,
+                "minecraft:item_name": {
+                  "text": "Orange Boots",
+                  "bold": true,
+                  "color": "gold"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 7
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16735636,
+                "minecraft:item_name": {
+                  "text": "Strawberry Boots",
+                  "bold": true,
+                  "color": "#FF5D94"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 8
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 6684628,
+                "minecraft:item_name": {
+                  "text": "Mint Boots",
+                  "bold": true,
+                  "color": "#65FFD4"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 9
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 13959061,
+                "minecraft:item_name": {
+                  "text": "Apple Boots",
+                  "bold": true,
+                  "color": "#D4FF95"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 10
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16383860,
+                "minecraft:item_name": {
+                  "text": "Banana Boots",
+                  "bold": true,
+                  "color": "#F9FF74"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 11
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 7506394,
+                "minecraft:item_name": {
+                  "text": "Blurple Boots",
+                  "bold": true,
+                  "color": "#7289DA"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                },
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "ArmorColor": 12
                   }
                 }
               ]

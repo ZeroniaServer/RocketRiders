@@ -23,10 +23,6 @@ execute if predicate custom:on_blue_or_yellow_team if predicate game:modifiers/h
 execute if predicate custom:on_blue_or_yellow_team if predicate game:gamemode_components/armor/generic run loot replace block 0 184 -16 container.0 loot items:armor/generic_gear/boots
 execute if predicate custom:on_blue_or_yellow_team if predicate game:gamemode_components/armor/generic run loot replace block 0 184 -16 container.1 loot items:armor/generic_gear/leggings
 execute if predicate custom:on_blue_or_yellow_team if predicate game:gamemode_components/armor/generic run loot replace block 0 184 -16 container.2 loot items:armor/generic_gear/chestplate
-# Chase Gear
-execute if predicate custom:on_blue_or_yellow_team if predicate game:gamemode_components/armor/chase run loot replace block 0 184 -16 container.0 loot items:armor/chase_gear/boots
-execute if predicate custom:on_blue_or_yellow_team if predicate game:gamemode_components/armor/chase run loot replace block 0 184 -16 container.1 loot items:armor/chase_gear/leggings
-execute if predicate custom:on_blue_or_yellow_team if predicate game:gamemode_components/armor/chase run loot replace block 0 184 -16 container.2 loot items:armor/chase_gear/chestplate
 # Swap Gear
 execute if predicate custom:on_blue_or_yellow_team if predicate game:gamemode_components/armor/swap run loot replace block 0 184 -16 container.0 3 loot items:armor/swap_gear/all
 # Crusade Gear

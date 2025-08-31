@@ -80,6 +80,16 @@ dialog show @s {\
         "type": "run_command",\
         "command": "trigger nomicon set 1000007"\
       }\
+    },\
+    {\
+      "label": {\
+        "text": "Switch Team"\
+      },\
+      "width": 70,\
+      "action": {\
+        "type": "run_command",\
+        "command": "trigger nomicon set 2000001"\
+      }\
     }\
   ],\
   "exit_action": {\

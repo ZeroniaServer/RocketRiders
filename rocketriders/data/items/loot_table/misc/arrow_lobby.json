@@ -17,7 +17,7 @@
                   "italic": false
                 },
                 "minecraft:custom_data": {
-                  "id": "arrow_lobby",
+                  "id": "arrow/lobby",
                   "Droppable": true,
                   "Lobby": true
                 }

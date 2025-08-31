@@ -4,7 +4,7 @@
     "type": "minecraft:score",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$custom_armor_and_tool_colors"
+      "name": "$custom_team_colors"
     },
     "score": "gamemode_components"
   },

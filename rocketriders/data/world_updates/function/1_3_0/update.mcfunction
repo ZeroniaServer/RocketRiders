@@ -102,6 +102,8 @@ function world_updates:1_3_0/remove_tag_from_storage_list {tag:"CollisionControl
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"CollisionControlWasOn"}
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_utility_colors gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $custom_team_colors gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] as @a[x=0,predicate=custom:on_blue_or_yellow_team,scores={ArmorColor=1..12}] run scoreboard players operation @s custom_team_color = @s ArmorColor
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customNova
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customShield
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove custVortParticle
@@ -160,6 +162,7 @@ scoreboard objectives remove NovaNear
 scoreboard objectives remove novatimer
 scoreboard objectives remove novattach
 scoreboard objectives remove moleratConfirm
+scoreboard objectives remove ArmorColor
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

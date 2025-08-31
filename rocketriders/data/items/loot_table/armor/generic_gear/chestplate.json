@@ -65,7 +65,7 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                    "name": "game:gamemode_components/custom_team_colors"
                   }
                 },
                 {
@@ -96,7 +96,7 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                    "name": "game:gamemode_components/custom_team_colors"
                   }
                 },
                 {
@@ -121,13 +121,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 1
+                    "custom_team_color": 1
                   }
                 }
               ]
@@ -145,13 +145,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 2
+                    "custom_team_color": 2
                   }
                 }
               ]
@@ -169,13 +169,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 3
+                    "custom_team_color": 3
                   }
                 }
               ]
@@ -193,13 +193,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 4
+                    "custom_team_color": 4
                   }
                 }
               ]
@@ -217,13 +217,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 5
+                    "custom_team_color": 5
                   }
                 }
               ]
@@ -241,13 +241,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 6
+                    "custom_team_color": 6
                   }
                 }
               ]
@@ -265,13 +265,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 7
+                    "custom_team_color": 7
                   }
                 }
               ]
@@ -289,13 +289,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 8
+                    "custom_team_color": 8
                   }
                 }
               ]
@@ -313,13 +313,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 9
+                    "custom_team_color": 9
                   }
                 }
               ]
@@ -337,13 +337,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 10
+                    "custom_team_color": 10
                   }
                 }
               ]
@@ -361,13 +361,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 11
+                    "custom_team_color": 11
                   }
                 }
               ]
@@ -385,13 +385,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_armor_and_tool_colors"
+                  "name": "game:gamemode_components/custom_team_colors"
                 },
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
-                    "ArmorColor": 12
+                    "custom_team_color": 12
                   }
                 }
               ]

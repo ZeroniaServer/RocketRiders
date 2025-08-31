@@ -10,7 +10,6 @@ scoreboard objectives remove BreakCBCyan
 scoreboard objectives remove BreakCBPurple
 scoreboard objectives remove BreakCBTint
 scoreboard objectives remove ChaseAlarm
-scoreboard objectives remove ArmorColor
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function rr_chase:game/gameend
 execute unless entity @e[x=0,type=armor_stand,tag=rr_chase,limit=1] run tellraw @s {"text":"Chase Mode uninstalled.","color":"red","bold":true}

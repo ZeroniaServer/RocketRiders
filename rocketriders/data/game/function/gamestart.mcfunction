@@ -45,7 +45,7 @@ execute as @e[x=0,type=marker,tag=join_pad.blue] at @s run tag @a[distance=2..,t
 team join Blue @a[x=0,tag=JoinBlue]
 execute unless predicate game:game_rules/disable_team_balancing/on run function everytick:team_balance
 clear @a[x=0,tag=JoinBlue]
-execute if predicate game:gamemode_components/custom_armor_and_tool_colors as @a[x=0,tag=JoinBlue] run function game:assign_armor_and_tool_color
+execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinBlue] run function game:assign_custom_team_color
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] run function game:saberblue
 execute unless predicate game:game_started if entity @s[tag=Hardcore] as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
 execute unless predicate game:game_started if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
@@ -83,7 +83,7 @@ execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s run tag @a[distance=2..
 team join Yellow @a[x=0,tag=JoinYellow]
 execute unless predicate game:game_rules/disable_team_balancing/on run function everytick:team_balance
 clear @a[x=0,tag=JoinYellow]
-execute if predicate game:gamemode_components/custom_armor_and_tool_colors as @a[x=0,tag=JoinYellow] run function game:assign_armor_and_tool_color
+execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinYellow] run function game:assign_custom_team_color
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinYellow] run function game:saberyellow
 execute unless predicate game:game_started if entity @s[tag=Hardcore] as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
 execute unless predicate game:game_started if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set

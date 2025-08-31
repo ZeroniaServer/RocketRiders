@@ -64,6 +64,7 @@ execute if entity @s[scores={endtimer=102}] as @a[x=0] run function everytick:sc
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy_teleporting
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy_teleporting
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy_teleporting
+execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:gravity modifier remove rocketriders:canopy_teleporting
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Blue]
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Yellow]
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Blue] GamesPlayed 1

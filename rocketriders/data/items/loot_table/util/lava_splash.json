@@ -25,6 +25,18 @@
                     "color": "white"
                   }
                 ],
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "dark_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Lava Splash",
+                    "color": "white"
+                  }
+                ],
                 "minecraft:lore": [
                   {
                     "text": "Spawns a brief lava source where it",
@@ -75,6 +87,18 @@
                     "text": "Lava Splash",
                     "color": "blue"
                   }
+                ],
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "dark_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Lava Splash",
+                    "color": "blue"
+                  }
                 ]
               },
               "conditions": [
@@ -95,6 +119,18 @@
                     "text": "[Utility] ",
                     "color": "dark_purple",
                     "bold": true
+                  },
+                  {
+                    "text": "Lava Splash",
+                    "color": "gold"
+                  }
+                ],
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "dark_purple",
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Lava Splash",

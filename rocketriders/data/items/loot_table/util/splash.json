@@ -25,6 +25,18 @@
                     "color": "white"
                   }
                 ],
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "light_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Splash",
+                    "color": "white"
+                  }
+                ],
                 "minecraft:lore": [
                   {
                     "text": "Spawns a brief water source where it",
@@ -73,6 +85,18 @@
                     "text": "Splash",
                     "color": "blue"
                   }
+                ],
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "light_purple",
+                    "bold": true,
+                    "italic": false
+                  },
+                  {
+                    "text": "Splash",
+                    "color": "blue"
+                  }
                 ]
               },
               "conditions": [
@@ -93,6 +117,18 @@
                     "text": "[Utility] ",
                     "color": "light_purple",
                     "bold": true
+                  },
+                  {
+                    "text": "Splash",
+                    "color": "gold"
+                  }
+                ],
+                "minecraft:custom_name": [
+                  {
+                    "text": "[Utility] ",
+                    "color": "light_purple",
+                    "bold": true,
+                    "italic": false
                   },
                   {
                     "text": "Splash",

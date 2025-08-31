@@ -62,7 +62,7 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:squid_spawn_egg",
-                "minecraft:custom_nitem_nameame": [
+                "minecraft:item_name": [
                   {
                     "text": "[???] ",
                     "color": "dark_purple",

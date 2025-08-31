@@ -49,6 +49,7 @@ execute unless function game:norankboots run loot replace block 0 184 -16 contai
 
 # Elytra
 execute if predicate custom:on_blue_or_yellow_team if entity @s[tag=wearing_elytra] run loot replace block 0 184 -16 container.2 loot items:misc/elytra
+execute if predicate custom:on_blue_or_yellow_team if entity @s[tag=wearing_elytra] if items entity @s armor.chest *[custom_data~{id:"elytra"}] run item replace block 0 184 -16 container.2 from entity @s armor.chest
 
 # Invisibility
 #set asset ID to a random string of numbers so that they can't get around the armour invisibility with a resource pack

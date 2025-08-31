@@ -45,7 +45,7 @@ execute as @e[x=0,type=marker,tag=join_pad.blue] at @s run tag @a[distance=2..,t
 team join Blue @a[x=0,tag=JoinBlue]
 execute unless predicate game:game_rules/disable_team_balancing/on run function everytick:team_balance
 clear @a[x=0,tag=JoinBlue]
-execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function game:saberblue
+execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] run function game:saberblue
 execute unless predicate game:game_started if entity @s[tag=Hardcore] as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
 execute unless predicate game:game_started if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
 execute unless predicate game:game_started run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0

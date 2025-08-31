@@ -8,9 +8,74 @@
           "name": "minecraft:white_banner",
           "functions": [
             {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "id": "loser_banner"
+                },
+                "minecraft:item_name": {
+                  "text": "Flag of Shameful Loss",
+                  "bold": true,
+                  "color": "white"
+                },
+                "minecraft:banner_patterns": [
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:half_horizontal"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:half_horizontal_bottom"
+                  },
+                  {
+                    "color": "black",
+                    "pattern": "minecraft:stripe_left"
+                  },
+                  {
+                    "color": "black",
+                    "pattern": "minecraft:stripe_bottom"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_left"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_bottom"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_right"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "square_top_left"
+                  }
+                ],
+                "minecraft:enchantments": {
+                  "minecraft:binding_curse": 1
+                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:unbreakable": {},
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:banner_patterns",
+                    "minecraft:enchantments"
+                  ]
+                }
+              }
+            },
+            {
               "function": "minecraft:set_item",
               "item": "minecraft:blue_banner",
               "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
                 {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
@@ -19,43 +84,6 @@
                   }
                 }
               ]
-            },
-            {
-              "function": "minecraft:set_item",
-              "item": "minecraft:yellow_banner",
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Yellow"
-                  }
-                }
-              ]
-            },
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:custom_data": {
-                  "id": "loser_banner"
-                },
-                "minecraft:enchantments": {
-                  "minecraft:binding_curse": 1
-                },
-                "minecraft:enchantment_glint_override": false,
-                "minecraft:unbreakable": {},
-                "minecraft:item_name": {
-                  "text": "Flag of Shameful Loss",
-                  "bold": true,
-                  "color": "white"
-                },
-                "minecraft:tooltip_display": {
-                  "hidden_components": [
-                    "minecraft:banner_patterns",
-                    "minecraft:enchantments"
-                  ]
-                }
-              }
             },
             {
               "function": "minecraft:set_components",
@@ -102,10 +130,37 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
+                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
                     "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_item",
+              "item": "minecraft:yellow_banner",
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Yellow"
                   }
                 }
               ]
@@ -154,6 +209,13 @@
                 ]
               },
               "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
                 {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",

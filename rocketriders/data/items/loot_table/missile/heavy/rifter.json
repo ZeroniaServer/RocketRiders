@@ -123,6 +123,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/neutral_utility_colors"
+                  }
+                },
+                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
@@ -152,6 +159,13 @@
                 ]
               },
               "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/neutral_utility_colors"
+                  }
+                },
                 {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",

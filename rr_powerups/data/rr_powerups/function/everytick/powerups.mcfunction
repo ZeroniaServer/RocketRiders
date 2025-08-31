@@ -22,10 +22,8 @@ clear @a[x=0,team=Yellow] trident[damage=8]
 execute as @a[x=0,predicate=custom:has_trident_in_inventory,predicate=custom:on_blue_or_yellow_team] run function rr_powerups:everytick/auto_riptide
 
 #trident antidupe
-tag @e[x=0,type=trident,nbt={inGround:1b}] add return
-execute as @e[x=0,type=trident,tag=return] store result score @s playerUUID run data get entity @s Owner[0]
+tag @e[x=0,type=trident,nbt={inGround:1b},tag=!return] add return
 execute if entity @s[tag=!doStacking] as @e[x=0,type=trident,tag=return] at @s run function rr_powerups:everytick/trident_antidupe
-tag @a[x=0,tag=tridentChecked] remove tridentChecked
 
 #infinity saber
 scoreboard players reset @a[x=0,tag=Infinity,predicate=!custom:on_blue_or_yellow_team] infinity

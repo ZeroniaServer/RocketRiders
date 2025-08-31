@@ -222,6 +222,7 @@ item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.feet with l
 
 kill @e[x=0,type=marker,tag=VortexDummy]
 kill @e[x=0,type=armor_stand,tag=VortexItemDummy]
+kill @e[x=0,predicate=entities:type/vortex_decoy]
 execute positioned -69.5 206.5 48.5 run function entities:vortex_decoy/summon
 
 tag @e[x=0,type=marker,tag=bluejoinpad] add join_pad

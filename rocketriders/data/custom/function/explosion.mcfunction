@@ -9,7 +9,7 @@ $data modify storage rocketriders:main summon.modifiers merge value $(modifiers)
 data modify storage rocketriders:main summon.modifiers.nbt.ExplosionPower set from storage rocketriders:main summon.explosion_power
 
 # Copy name
-execute if data storage rocketriders:main summon{copy_name:true} run data modify storage rocketriders:main summon.nbt.CustomName set from entity @s CustomName
+execute if data storage rocketriders:main summon.modifiers{copy_name:true} run data modify storage rocketriders:main summon.modifiers.nbt.CustomName set from entity @s CustomName
 
 # Remove hover event and insertion from death message
 data modify storage rocketriders:main summon.name set value {text:"",extra:[{text:"",insertion:"",hover_event:{action:"show_text",value:""},extra:["an explosion"]}]}

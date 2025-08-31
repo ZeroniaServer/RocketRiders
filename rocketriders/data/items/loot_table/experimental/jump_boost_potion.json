@@ -20,6 +20,12 @@
                   "bold": true,
                   "color": "dark_purple"
                 },
+                "minecraft:custom_name": {
+                  "text": "Jump Boost Potion",
+                  "bold": true,
+                  "color": "dark_purple",
+                  "italic": false
+                },
                 "minecraft:potion_contents": {
                   "potion": "minecraft:water",
                   "custom_effects": [

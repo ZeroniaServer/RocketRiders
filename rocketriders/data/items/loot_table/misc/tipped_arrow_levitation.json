@@ -20,6 +20,12 @@
                   "bold": true,
                   "color": "dark_purple"
                 },
+                "minecraft:custom_name": {
+                  "text": "Levitation Arrow",
+                  "bold": true,
+                  "color": "dark_purple",
+                  "italic": false
+                },
                 "minecraft:potion_contents": {
                   "custom_effects": [
                     {

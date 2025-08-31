@@ -1,9 +1,3 @@
 ##kills trident entities if the player already has a trident
-execute as @p[tag=!tridentChecked] if predicate custom:on_blue_or_yellow_team run tag @s add tridentChecking
-execute if score @s playerUUID = @p[tag=tridentChecking] playerUUID as @p[tag=tridentChecking] run tag @s add tridentValid
-execute as @p[tag=tridentValid] store result score @s HasTrident run clear @s trident 0
-execute if entity @p[tag=tridentValid,scores={HasTrident=1..},distance=..5] run kill @s
-tag @p[tag=tridentChecking] add tridentChecked
-tag @a[x=0,tag=tridentChecked] remove tridentChecking
-tag @a[x=0,tag=tridentChecked] remove tridentValid
-execute if entity @a[x=0,tag=!tridentChecked] run function rr_powerups:everytick/trident_antidupe
+execute on origin store result score @s HasTrident run clear @s trident 0
+execute on origin if entity @s[tag=tridentValid,scores={HasTrident=1..}] run kill @s

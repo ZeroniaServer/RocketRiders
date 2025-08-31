@@ -59,12 +59,12 @@ data modify storage rocketriders:main voting.dialog set value {\
   ]\
 }
 
-function custom:resolve_text_component {text_component:[{"text":"Normal Mode","color":"#D586D5"},{"text":", ","color":"#954B95"},{"selector":"@e[x=0,tag=Maps,tag=ServermodeSet1,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[0].label"}
-function custom:resolve_text_component {text_component:[{"text":"Powerups Mode","color":"#D586D5"},{"text":", ","color":"#954B95"},{"selector":"@e[x=0,tag=Maps,tag=ServermodeSet2,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[1].label"}
-function custom:resolve_text_component {text_component:[{"text":"Swap Mode","color":"#D586D5"},{"text":", ","color":"#954B95"},{"selector":"@e[x=0,tag=Maps,tag=ServermodeSet3,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[2].label"}
-function custom:resolve_text_component {text_component:[{"text":"Capture The Flag","color":"#D586D5"},{"text":", ","color":"#954B95"},{"selector":"@e[x=0,tag=Maps,tag=ServermodeSet4,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[3].label"}
-function custom:resolve_text_component {text_component:[{"text":"Crusade Mode","color":"#D586D5"},{"text":", ","color":"#954B95"},{"selector":"@e[x=0,tag=Maps,tag=ServermodeSet5,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[4].label"}
-function custom:resolve_text_component {text_component:[{"text":"Chase Mode","color":"#D586D5"},{"text":", ","color":"#954B95"},{"selector":"@e[x=0,tag=Maps,tag=ServermodeSet6,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[5].label"}
+function custom:resolve_text_component {text_component:[{color:"gold",text:"Normal Mode"},{color:"#494949",shadow_color:0,text:" + "},{color:"#65cecf","selector":"@e[x=0,tag=Maps,tag=ServermodeSet1,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[0].label"}
+function custom:resolve_text_component {text_component:[{color:"gold",text:"Powerups Mode"},{color:"#494949",shadow_color:0,text:" + "},{color:"#65cecf","selector":"@e[x=0,tag=Maps,tag=ServermodeSet2,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[1].label"}
+function custom:resolve_text_component {text_component:[{color:"gold",text:"Swap Mode"},{color:"#494949",shadow_color:0,text:" + "},{color:"#65cecf","selector":"@e[x=0,tag=Maps,tag=ServermodeSet3,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[2].label"}
+function custom:resolve_text_component {text_component:[{color:"gold",text:"Capture The Flag"},{color:"#494949",shadow_color:0,text:" + "},{color:"#65cecf","selector":"@e[x=0,tag=Maps,tag=ServermodeSet4,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[3].label"}
+function custom:resolve_text_component {text_component:[{color:"gold",text:"Crusade Mode"},{color:"#494949",shadow_color:0,text:" + "},{color:"#65cecf","selector":"@e[x=0,tag=Maps,tag=ServermodeSet5,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[4].label"}
+function custom:resolve_text_component {text_component:[{color:"gold",text:"Chase Mode"},{color:"#494949",shadow_color:0,text:" + "},{color:"#65cecf","selector":"@e[x=0,tag=Maps,tag=ServermodeSet6,limit=1]"}],write_to:"storage rocketriders:main voting.dialog.actions[5].label"}
 
 execute unless entity @e[limit=1,x=0,type=marker,tag=Set6] run data remove storage rocketriders:main voting.dialog.actions[5]
 

@@ -23,7 +23,7 @@ execute unless predicate custom:has_vehicle positioned as @s run return run func
 scoreboard players set $collision var 0
 execute if predicate entities:origin_team/blue on vehicle positioned as @s as @n[distance=..2,predicate=entities:type/nova_rocket/body,predicate=entities:origin_team/yellow] facing entity @s feet run function entities:nova_rocket/tick/collision
 execute if predicate entities:origin_team/yellow on vehicle positioned as @s as @n[distance=..2,predicate=entities:type/nova_rocket/body,predicate=entities:origin_team/blue] facing entity @s feet run function entities:nova_rocket/tick/collision
-execute if predicate entities:origin_team/none run tag @s add nova_rocket.this
+execute if predicate entities:origin_team/none on vehicle run tag @s add nova_rocket.this
 execute if predicate entities:origin_team/none on vehicle positioned as @s as @n[distance=..2,predicate=entities:type/nova_rocket/body,tag=!nova_rocket.this] facing entity @s feet run function entities:nova_rocket/tick/collision
 tag @s remove nova_rocket.this
 execute if score $collision var matches 1 on vehicle run kill @s

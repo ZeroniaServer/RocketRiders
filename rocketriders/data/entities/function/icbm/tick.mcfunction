@@ -1,5 +1,5 @@
 # Break if near the roof
-execute if predicate custom:nearroof run return run function entities:shield_projectile/actions/break
+execute if predicate custom:nearroof run return run function entities:icbm/actions/break
 
 # Break if near own portals
 execute if predicate entities:origin_team/blue if entity @s[x=-12,y=36,z=-80,dx=48,dy=25,dz=12] run return run function entities:icbm/actions/break

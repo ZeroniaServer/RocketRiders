@@ -1,0 +1,13 @@
+[
+  {
+    "condition": "minecraft:reference",
+    "name": "game:gamemode_components/crusade_portals"
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:gamemode_components/no_portal"
+    }
+  }
+]

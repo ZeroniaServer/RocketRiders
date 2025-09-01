@@ -13,7 +13,7 @@ execute if score Yellow SwissCheese matches 0 if score @s gametime matches ..240
 scoreboard players reset Yellow SwissCheese
 
 #Deus Ex Machina (part 1)
-execute unless entity @s[predicate=game:gamemode_components/no_portal] run summon armor_stand 33 57 73 {Invisible:1b,Marker:1b,NoGravity:1b,Silent:1b,Tags:["machinacheck"]}
+execute if predicate game:portal_type/default run summon armor_stand 33 57 73 {Invisible:1b,Marker:1b,NoGravity:1b,Silent:1b,Tags:["machinacheck"]}
 scoreboard players add @e[x=0,type=armor_stand,tag=machinacheck] Machina 0
 execute as @e[x=0,type=armor_stand,tag=machinacheck] at @s run function achievements:machinacheckyellow
 
@@ -27,9 +27,9 @@ execute if score @s yellowsCount < @s origYCount run tag @a[x=0,team=Yellow] add
 tag @a[x=0,team=Yellow,scores={jumps=..0}] add GroundBound
 
 #I Swear I Had It (part 1) - necessary because players can die after game end
-execute unless entity @s[predicate=game:gamemode_components/no_portal] as @a[x=0,team=Blue] store result score @s HasMissiles run clear @s #custom:missile 0
+execute if predicate game:portal_type/default as @a[x=0,team=Blue] store result score @s HasMissiles run clear @s #custom:missile 0
 execute as @a[x=0,team=Blue,scores={HasMissiles=1..}] at @s if entity @s[z=46,dz=28] run tag @s add HadIt
 
 #All end-game achievements (delay for Sudden Death))
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=!game:gamemode_components/no_portal] run schedule function achievements:aftergame_indimension 100t replace
+execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default] run schedule function achievements:aftergame_indimension 100t replace
 execute if entity @s[tag=!doTying] run function achievements:aftergame

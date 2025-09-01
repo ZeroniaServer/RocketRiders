@@ -59,9 +59,9 @@ execute if entity @s[scores={modifierID=12},predicate=!game:gamemode_components/
 execute if entity @s[scores={modifierID=12},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/hardcore/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Double Portal
-execute if entity @s[scores={modifierID=13},tag=DoublePortal,predicate=!game:gamemode_components/no_portal,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=13},tag=DoublePortal,predicate=game:portal_type/default,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=13},tag=!DoublePortal,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=13},predicate=game:gamemode_components/no_portal,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=13},predicate=!game:portal_type/default,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Clutter Collector
 execute if entity @s[scores={modifierID=14},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/clutter_collector/on run setblock -69 191 75 warped_wall_sign[facing=east]

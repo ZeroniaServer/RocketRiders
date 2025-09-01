@@ -13,8 +13,8 @@ scoreboard players set $can_grant_achievements var 0
 execute if predicate game:game_started if predicate rr:has_achievements if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run scoreboard players set $can_grant_achievements var 1
 
 # So Close, Yet So Fall Away (if I am touching the floor of the enemy nether portal, award me)
-execute if score $can_grant_achievements var matches 1 if entity @s[team=Blue,predicate=!custom:not_falling,x=-10,dx=45,y=60,dy=2,z=73,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:gamemode_components/no_portal] run advancement grant @s only achievements:rr_challenges/fall_away
-execute if score $can_grant_achievements var matches 1 if entity @s[team=Yellow,predicate=!custom:not_falling,x=-10,dx=45,y=60,dy=2,z=-75,dz=2] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,predicate=!game:gamemode_components/no_portal] run advancement grant @s only achievements:rr_challenges/fall_away
+execute if score $can_grant_achievements var matches 1 if entity @s[team=Blue,predicate=!custom:not_falling,x=-10,dx=45,y=60,dy=2,z=73,dz=2] if predicate game:portal_type/default run advancement grant @s only achievements:rr_challenges/fall_away
+execute if score $can_grant_achievements var matches 1 if entity @s[team=Yellow,predicate=!custom:not_falling,x=-10,dx=45,y=60,dy=2,z=-75,dz=2] if predicate game:portal_type/default run advancement grant @s only achievements:rr_challenges/fall_away
 
 # Volcanic Hatred (if I am inside of lava, award the owners of the nearby lava splash markers)
 execute if predicate game:game_started unless predicate game:gamemode_components/neutral_utility_colors if entity @s[team=Blue] if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[team=Yellow] run advancement grant @s only achievements:rr_challenges/volcanic_hatred

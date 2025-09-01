@@ -13,7 +13,7 @@ execute if score Blue SwissCheese matches 0 if score @s gametime matches ..2400 
 scoreboard players reset Blue SwissCheese
 
 #Deus Ex Machina (part 1)
-execute unless entity @s[predicate=game:gamemode_components/no_portal] run summon armor_stand 33 57 -73 {Invisible:1b,Marker:1b,NoGravity:1b,Silent:1b,Tags:["machinacheck"]}
+execute if predicate game:portal_type/default run summon armor_stand 33 57 -73 {Invisible:1b,Marker:1b,NoGravity:1b,Silent:1b,Tags:["machinacheck"]}
 scoreboard players add @e[x=0,type=armor_stand,tag=machinacheck] Machina 0
 execute as @e[x=0,type=armor_stand,tag=machinacheck] at @s run function achievements:machinacheckblue
 
@@ -27,7 +27,7 @@ execute if score @s bluesCount < @s origBCount run tag @a[x=0,team=Blue] add For
 tag @a[x=0,team=Blue,scores={jumps=..0}] add GroundBound
 
 #I Swear I Had It (part 1)
-execute unless entity @s[predicate=game:gamemode_components/no_portal] as @a[x=0,team=Yellow] store result score @s HasMissiles run clear @s #custom:missile 0
+execute if predicate game:portal_type/default as @a[x=0,team=Yellow] store result score @s HasMissiles run clear @s #custom:missile 0
 execute as @a[x=0,team=Yellow,scores={HasMissiles=1..}] at @s if entity @s[z=-74,dz=28] run tag @s add HadIt
 
 #All end-game achievements (delay for Sudden Death)

@@ -4,16 +4,16 @@
 #####################################################################
 
 ##Initial portal replacement
-execute if entity @e[x=0,type=armor_stand,tag=Selection,predicate=!game:gamemode_components/no_portal] run fill -10 58 -74 34 37 -74 resin_block replace obsidian strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,predicate=!game:gamemode_components/no_portal] run fill -10 58 -74 34 37 -74 resin_bricks replace nether_portal strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,predicate=!game:gamemode_components/no_portal] run fill -10 58 74 34 37 74 resin_block replace obsidian strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,predicate=!game:gamemode_components/no_portal] run fill -10 58 74 34 37 74 resin_bricks replace nether_portal strict
+execute if predicate game:portal_type/default run fill -10 58 -74 34 37 -74 resin_block replace obsidian strict
+execute if predicate game:portal_type/default run fill -10 58 -74 34 37 -74 resin_bricks replace nether_portal strict
+execute if predicate game:portal_type/default run fill -10 58 74 34 37 74 resin_block replace obsidian strict
+execute if predicate game:portal_type/default run fill -10 58 74 34 37 74 resin_bricks replace nether_portal strict
 
 #Crusade Mode override
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run fill 3 56 67 21 44 67 resin_block replace obsidian strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run fill 3 56 67 21 44 67 resin_bricks replace nether_portal strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run fill 3 56 -67 21 44 -67 resin_block replace obsidian strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run fill 3 56 -67 21 44 -67 resin_bricks replace nether_portal strict
+execute if predicate game:portal_type/crusade run fill 3 56 67 21 44 67 resin_block replace obsidian strict
+execute if predicate game:portal_type/crusade run fill 3 56 67 21 44 67 resin_bricks replace nether_portal strict
+execute if predicate game:portal_type/crusade run fill 3 56 -67 21 44 -67 resin_block replace obsidian strict
+execute if predicate game:portal_type/crusade run fill 3 56 -67 21 44 -67 resin_bricks replace nether_portal strict
 
 ##Individual missile detection
 #Auxiliary
@@ -97,16 +97,16 @@ execute if entity @s[tag=BlueBroad,tag=!UnableMissile] positioned ~-1 ~-6 ~5 sto
 execute if entity @s[tag=YellowBroad,tag=!UnableMissile] positioned ~-1 ~-6 ~-16 store result score @s Unable run clone ~ ~ ~ ~2 ~2 ~11 ~ 175 ~ filtered #custom:portalblocks force
 
 ##Post portal replacement
-execute if entity @e[x=0,type=armor_stand,tag=Selection,predicate=!game:gamemode_components/no_portal] run fill -10 58 -74 34 37 -74 obsidian replace resin_block strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,predicate=!game:gamemode_components/no_portal] run fill -10 58 -74 34 37 -74 nether_portal[axis=x] replace resin_bricks strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,predicate=!game:gamemode_components/no_portal] run fill -10 58 74 34 37 74 obsidian replace resin_block strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,predicate=!game:gamemode_components/no_portal] run fill -10 58 74 34 37 74 nether_portal[axis=x] replace resin_bricks strict
+execute if predicate game:portal_type/default run fill -10 58 -74 34 37 -74 obsidian replace resin_block strict
+execute if predicate game:portal_type/default run fill -10 58 -74 34 37 -74 nether_portal[axis=x] replace resin_bricks strict
+execute if predicate game:portal_type/default run fill -10 58 74 34 37 74 obsidian replace resin_block strict
+execute if predicate game:portal_type/default run fill -10 58 74 34 37 74 nether_portal[axis=x] replace resin_bricks strict
 
 #Crusade Mode override
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run fill 3 56 67 21 44 67 obsidian replace resin_block strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run fill 3 56 67 21 44 67 nether_portal[axis=x] replace resin_bricks strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run fill 3 56 -67 21 44 -67 obsidian replace resin_block strict
-execute if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run fill 3 56 -67 21 44 -67 nether_portal[axis=x] replace resin_bricks strict
+execute if predicate game:portal_type/crusade run fill 3 56 67 21 44 67 obsidian replace resin_block strict
+execute if predicate game:portal_type/crusade run fill 3 56 67 21 44 67 nether_portal[axis=x] replace resin_bricks strict
+execute if predicate game:portal_type/crusade run fill 3 56 -67 21 44 -67 obsidian replace resin_block strict
+execute if predicate game:portal_type/crusade run fill 3 56 -67 21 44 -67 nether_portal[axis=x] replace resin_bricks strict
 
 ##All missiles
 execute if entity @s[scores={Unable=1..}] run tag @s add strict

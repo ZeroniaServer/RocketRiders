@@ -1,4 +1,5 @@
 execute if score @s entity.age matches 3.. on vehicle on origin run effect clear @s levitation
+execute if score @s entity.age matches 8 on vehicle on origin run advancement grant @s only achievements:rr_challenges/uphere
 
 execute if score $dust CmdData matches 1 on vehicle on origin at @s run particle firework ~ ~ ~ 0 0 0 0.05 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 

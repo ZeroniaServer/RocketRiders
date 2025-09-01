@@ -8,9 +8,6 @@ scoreboard players set @s flag.is_nova_attached 1
 playsound minecraft:entity.firework_rocket.launch master @a[x=0] ~ ~ ~ 2 1.2
 effect give @s levitation 1 60 true
 
-## Achievements
-advancement grant @s only achievements:rr_challenges/uphere
-
 ## Summon body
 tag @s add nova_attach.this
 data modify storage rocketriders:main nova_attach.target set from entity @s UUID

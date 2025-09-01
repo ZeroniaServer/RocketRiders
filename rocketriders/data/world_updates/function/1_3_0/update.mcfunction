@@ -51,6 +51,7 @@ scoreboard objectives add global dummy
 scoreboard objectives add var dummy
 scoreboard objectives add config dummy
 scoreboard objectives add gamemode_components dummy
+scoreboard objectives add custom_team_color dummy
 
 ## early stages of nuking Selection armour stand...
 execute store success score $realms global if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms]

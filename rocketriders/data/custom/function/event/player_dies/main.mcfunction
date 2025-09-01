@@ -50,7 +50,7 @@ execute if score $direct_attacker var matches 0 if score $last_damaged_by_creepe
 scoreboard players set $team var -1
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] store success score $team var if entity @s[team=!Blue]
 tag @s add player_dies.this
-execute if data storage rocketriders:main player_dies.killer_mob_origin positioned ~ -1000 ~ summon minecraft:area_effect_cloud run return run function custom:event/player_dies/target_killer_mob_origin
+execute if data storage rocketriders:main player_dies.killer_mob_origin positioned ~ -1000 ~ summon minecraft:area_effect_cloud run function custom:event/player_dies/target_killer_mob_origin
 tag @s remove player_dies.this
 
 # Forget creeper
@@ -70,13 +70,13 @@ execute if predicate game:game_started if predicate custom:on_blue_or_yellow_tea
 
 
 ## General
-tag @s add matchOrigin
-execute if predicate custom:nova_attached as @e[x=0,predicate=entities:type/nova_attach/body] if function custom:match_origin run function entities:nova_attach/actions/explode
-tag @s remove matchOrigin
+execute if predicate custom:nova_attached run function custom:player_action/trigger_nova_attach
 
 tag @s add matchOrigin
 execute as @e[x=0,predicate=entities:type/canopy_projectile/brain] if function custom:match_origin positioned as @s run function custom:event/player_dies/withdraw_canopy
 tag @s remove matchOrigin
+
+function custom:player_action/forget_all_canopies
 
 tag @s remove onBlue
 tag @s remove onYellow
@@ -84,8 +84,6 @@ tag @s remove onYellow
 tag @s remove beenOnBlue
 tag @s remove beenOnYellow
 tag @s remove beenOnBoth
-
-function custom:player_action/forget_all_canopies
 
 execute if entity @s[tag=CarryFlag] run function custom:event/player_dies/restore_flag
 

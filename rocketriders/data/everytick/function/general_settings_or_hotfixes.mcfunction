@@ -186,3 +186,6 @@ tag @a[tag=was_invisible,predicate=!custom:invisible] remove was_invisible
 
 # Remove custom team colour from those not playing
 execute as @a[x=0,scores={custom_team_color=1..}] unless entity @s[predicate=custom:on_blue_or_yellow_team,predicate=game:gamemode_components/custom_team_colors] run scoreboard players reset @s custom_team_color
+
+# Destroy grounded intangible arrows
+execute as @e[type=#arrows,predicate=custom:not_moving] if items entity @s contents *[intangible_projectile] run function custom:kill_with_smoke_poof

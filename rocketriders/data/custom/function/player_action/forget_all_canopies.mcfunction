@@ -4,7 +4,8 @@ tag @s add matchOrigin
 execute as @e[x=0,predicate=entities:type/canopy] if function custom:match_origin run tag @s add canopy.forgotten_origin
 tag @s remove matchOrigin
 
-attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy_teleporting
-attribute @s minecraft:jump_strength modifier remove rocketriders:canopy_teleporting
-attribute @s minecraft:movement_speed modifier remove rocketriders:canopy_teleporting
-attribute @s minecraft:gravity modifier remove rocketriders:canopy_teleporting
+# Stand up if on canopy
+execute unless predicate custom:has_vehicle run return fail
+execute on vehicle unless entity @s[predicate=entities:type/canopy/saddle] run return fail
+execute on vehicle on vehicle positioned as @s on passengers on passengers run tp @s[type=player] ~ ~2 ~
+tp @s @s

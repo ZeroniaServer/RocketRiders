@@ -89,11 +89,6 @@ function custom:player_action/forget_all_canopies
 
 execute if entity @s[tag=CarryFlag] run function custom:event/player_dies/restore_flag
 
-attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy_teleporting
-attribute @s minecraft:jump_strength modifier remove rocketriders:canopy_teleporting
-attribute @s minecraft:movement_speed modifier remove rocketriders:canopy_teleporting
-attribute @s minecraft:gravity modifier remove rocketriders:canopy_teleporting
-
 ## If alive, instantly trigger respawn
 tag @s add player_dies.this
 execute unless entity @e[x=0,type=player,tag=player_dies.this] run return run tag @s remove player_dies.this

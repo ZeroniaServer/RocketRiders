@@ -1,9 +1,7 @@
 execute unless entity @s[predicate=entities:type/canopy] run return fail
 
-execute if entity @s[tag=!canopy.forgotten_origin] on origin run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy_teleporting
-execute if entity @s[tag=!canopy.forgotten_origin] on origin run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy_teleporting
-execute if entity @s[tag=!canopy.forgotten_origin] on origin run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy_teleporting
-execute if entity @s[tag=!canopy.forgotten_origin] on origin run attribute @s minecraft:gravity modifier remove rocketriders:canopy_teleporting
+execute at @s on passengers on passengers if entity @s[type=player] run tp @s ~ ~2 ~
+execute at @s on passengers on passengers if entity @s[type=player] run tp @s @s
 
 fill ~3 ~ ~-3 ~-3 ~ ~3 oak_leaves[persistent=false,distance=1] replace oak_leaves
 fill ~3 ~ ~-3 ~-3 ~ ~3 spruce_leaves[persistent=false,distance=1] replace spruce_leaves
@@ -16,4 +14,8 @@ execute if block ~1 ~1 ~ #minecraft:banners run setblock ~1 ~1 ~ air destroy
 execute if block ~-1 ~1 ~ #minecraft:banners run setblock ~-1 ~1 ~ air destroy
 execute if block ~ ~1 ~1 #minecraft:banners run setblock ~ ~1 ~1 air destroy
 execute if block ~ ~1 ~-1 #minecraft:banners run setblock ~ ~1 ~-1 air destroy
-kill @s
+
+# Kill entity stack
+execute on vehicle run kill @s[predicate=entities:type/canopy]
+execute on passengers run kill @s[predicate=entities:type/canopy]
+kill @s[predicate=entities:type/canopy]

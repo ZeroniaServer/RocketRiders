@@ -58,9 +58,6 @@ execute as @a[tag=canopyTP] run attribute @s minecraft:jump_strength base reset
 execute as @a[tag=canopyTP] run attribute @s minecraft:movement_speed base reset
 tag @a[tag=canopyTP] remove canopyTP
 
-#Canopy teleport remove effects
-execute as @a[x=0,tag=canopy_teleporting,predicate=!custom:on_blue_or_yellow_team] run function custom:canopy_teleporting_effect/remove
-
 #Disable trigger objectives when appropriate
 scoreboard players reset @a[predicate=!custom:indimension] LeaveMidgame
 scoreboard players reset @a[predicate=!custom:indimension] MaxItemSec

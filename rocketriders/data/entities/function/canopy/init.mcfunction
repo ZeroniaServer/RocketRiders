@@ -3,7 +3,7 @@ execute unless entity @s[type=area_effect_cloud] run return fail
 execute if entity @s[predicate=entities:type/canopy] run return fail
 
 ## Set up data
-data modify entity @s data.canopy set value {}
+data modify entity @s data.canopy set value {brain:{}}
 scoreboard players set @s entity.age 0
 scoreboard players set @s entity.canopy.movement_cooldown 0
 
@@ -14,6 +14,8 @@ execute on origin run function custom:resolve_text_component {text_component:[""
 data modify entity @s CustomName set from storage rocketriders:main canopy.name
 
 ## Spawn behaviour
+execute on origin run function custom:player_action/forget_nova_attach
+
 execute align xyz positioned ~0.5 ~ ~0.5 run tp @s ~ ~ ~
 
 data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
@@ -30,3 +32,8 @@ execute if predicate entities:origin_team/none run place template rr_chase:white
 playsound ui.stonecutter.take_result master @a[x=0] ~ ~ ~ 2 0
 playsound block.wood.break master @a[x=0] ~ ~ ~ 2 1
 playsound block.grass.place master @a[x=0] ~ ~ ~ 2 0
+
+## Summon saddle
+tag @s add canopy.this
+execute at @s positioned ~ ~0.5 ~ summon interaction positioned ~ ~-0.5 ~ run function entities:canopy/init/saddle
+tag @s remove canopy.this

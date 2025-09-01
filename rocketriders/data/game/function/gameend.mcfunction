@@ -4,8 +4,7 @@
 
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
-tag @e[x=0,predicate=entities:type/canopy] add canopy.forgotten_origin
-function custom:canopy_teleporting_effect/remove
+execute as @a run function custom:player_action/forget_all_canopies
 function everytick:spawnables
 execute if score @s endtimer matches 1 run function custom:set_global/game_started {bool:false}
 tag @s[scores={endtimer=1}] remove SuddenDeath
@@ -61,10 +60,7 @@ execute if entity @s[tag=doTying,tag=!tyingOff,predicate=!game:gamemode_componen
 ##Post-tie phase and reset
 scoreboard players set @s[scores={endtimer=101}] gametime 0
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function everytick:score_reset
-execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:canopy_teleporting
-execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:jump_strength modifier remove rocketriders:canopy_teleporting
-execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:movement_speed modifier remove rocketriders:canopy_teleporting
-execute if entity @s[scores={endtimer=102}] as @a[x=0] run attribute @s minecraft:gravity modifier remove rocketriders:canopy_teleporting
+execute if entity @s[scores={endtimer=102}] as @a[x=0] run function custom:player_action/forget_all_canopies
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Blue]
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Yellow]
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Blue] GamesPlayed 1

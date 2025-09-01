@@ -13,7 +13,7 @@ execute as @e[x=0,type=firework_rocket,predicate=!entities:type/nova_rocket,nbt=
 ## Tick entities
 # Canopy
 execute as @e[x=0,predicate=entities:type/canopy_projectile/brain] at @s run function entities:canopy_projectile/tick
-execute as @e[x=0,predicate=entities:type/canopy] at @s run function entities:canopy/tick
+execute as @e[x=0,predicate=entities:type/canopy/brain] at @s run function entities:canopy/tick
 
 # Shield
 execute as @e[x=0,predicate=entities:type/shield_projectile/brain] at @s run function entities:shield_projectile/tick

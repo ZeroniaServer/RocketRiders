@@ -22,14 +22,14 @@ execute if predicate rr:has_achievements as @a[x=0,predicate=custom:on_blue_or_y
 execute if predicate rr:has_achievements as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function achievements:sabotage
 
 #Necessary for on base check
-execute if entity @s[tag=!Hardcore] as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:alive] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
-execute if entity @s[tag=!Hardcore] as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:alive] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s add onYellow
-execute if entity @s[tag=!Hardcore] as @a[x=0,tag=onBlue] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s remove onBlue
-execute if entity @s[tag=!Hardcore] as @a[x=0,tag=onYellow] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s remove onYellow
-execute if entity @s[tag=Hardcore] as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:alive] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s add onBlue
-execute if entity @s[tag=Hardcore] as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:alive] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=64,dz=10] run tag @s add onYellow
-execute if entity @s[tag=Hardcore] as @a[x=0,tag=onBlue] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s remove onBlue
-execute if entity @s[tag=Hardcore] as @a[x=0,tag=onYellow] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=64,dz=10] run tag @s remove onYellow
+execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:alive] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
+execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:alive] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s add onYellow
+execute unless predicate game:modifiers/hardcore/on as @a[x=0,tag=onBlue] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s remove onBlue
+execute unless predicate game:modifiers/hardcore/on as @a[x=0,tag=onYellow] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=46,dz=28] run tag @s remove onYellow
+execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:alive] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s add onBlue
+execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:alive] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=64,dz=10] run tag @s add onYellow
+execute if predicate game:modifiers/hardcore/on as @a[x=0,tag=onBlue] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s remove onBlue
+execute if predicate game:modifiers/hardcore/on as @a[x=0,tag=onYellow] at @s unless entity @s[x=-15,dx=54,y=33,dy=40,z=64,dz=10] run tag @s remove onYellow
 
 #Necessary for fall distance check (again)
 execute as @a[x=0,team=Blue] at @s if predicate custom:not_falling run scoreboard players reset @s FallDistance

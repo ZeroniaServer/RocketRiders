@@ -101,6 +101,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove CollisionControlWasOn
 execute if data storage rocketriders:storage {Tags:["CollisionControl"]} run data modify storage rocketriders:storage config.collision_control set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"CollisionControl"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"CollisionControlWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Hardcore] run scoreboard players set $hardcore config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Hardcore
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Hardcore
+execute if data storage rocketriders:storage {Tags:["Hardcore"]} run data modify storage rocketriders:storage config.hardcore set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Hardcore"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"HardcoreWasOn"}
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_utility_colors gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $custom_team_colors gamemode_components 1

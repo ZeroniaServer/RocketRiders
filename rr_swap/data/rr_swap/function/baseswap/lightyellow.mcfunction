@@ -14,11 +14,11 @@ fill 38 34 -73 -14 63 -62 black_concrete replace minecraft:white_concrete
 fill -14 34 61 38 63 57 minecraft:white_stained_glass replace minecraft:orange_stained_glass
 fill 38 34 62 -14 63 73 minecraft:white_concrete replace minecraft:black_concrete
 
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Hardcore] run fill -14 63 73 38 34 66 white_concrete replace black_concrete
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Hardcore] run fill -14 63 65 38 34 65 white_stained_glass replace orange_stained_glass
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Hardcore] run fill -14 63 -73 38 34 -66 black_concrete replace white_concrete
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Hardcore] run fill -14 63 -65 38 34 -65 black_stained_glass replace white_stained_glass
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Hardcore] run fill -14 63 -64 38 34 -64 blue_stained_glass replace light_blue_stained_glass
+execute if predicate game:modifiers/hardcore/on run fill -14 63 73 38 34 66 white_concrete replace black_concrete
+execute if predicate game:modifiers/hardcore/on run fill -14 63 65 38 34 65 white_stained_glass replace orange_stained_glass
+execute if predicate game:modifiers/hardcore/on run fill -14 63 -73 38 34 -66 black_concrete replace white_concrete
+execute if predicate game:modifiers/hardcore/on run fill -14 63 -65 38 34 -65 black_stained_glass replace white_stained_glass
+execute if predicate game:modifiers/hardcore/on run fill -14 63 -64 38 34 -64 blue_stained_glass replace light_blue_stained_glass
 
 function rr_swap:baseswap/observerconvert2
 

@@ -4,8 +4,8 @@
 #########################################
 
 #Runs individual detail placement functions depending on initial tags
-execute if entity @s[tag=!Hardcore,tag=!noDetailBlue] run function arenaclear:detailplacementblue
-execute if entity @s[tag=!Hardcore,tag=!noDetailYellow] run function arenaclear:detailplacementyellow
+execute unless predicate game:modifiers/hardcore/on if entity @s[tag=!noDetailBlue] run function arenaclear:detailplacementblue
+execute unless predicate game:modifiers/hardcore/on if entity @s[tag=!noDetailYellow] run function arenaclear:detailplacementyellow
 tag @s remove noDetailBlue
 tag @s remove noDetailYellow
 

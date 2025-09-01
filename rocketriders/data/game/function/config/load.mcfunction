@@ -14,6 +14,10 @@ execute store result score $impact_utilities config run data get storage rocketr
 execute unless score $impact_utilities config matches 0..1 run scoreboard players reset $impact_utilities config
 execute if score $impact_utilities config matches 0 run scoreboard players reset $impact_utilities config
 
+execute store result score $disable_team_balancing config run data get storage rocketriders:main "config/load".config.disable_team_balancing
+execute unless score $disable_team_balancing config matches 0..1 run scoreboard players reset $disable_team_balancing config
+execute if score $disable_team_balancing config matches 0 run scoreboard players reset $disable_team_balancing config
+
 
 execute store result score $explosive config run data get storage rocketriders:main "config/load".config.explosive
 execute unless score $explosive config matches 0..1 run scoreboard players reset $explosive config
@@ -47,10 +51,10 @@ execute store result score $hobbits config run data get storage rocketriders:mai
 execute unless score $hobbits config matches 0..1 run scoreboard players reset $hobbits config
 execute if score $hobbits config matches 0 run scoreboard players reset $hobbits config
 
+execute store result score $hardcore config run data get storage rocketriders:main "config/load".config.hardcore
+execute unless score $hardcore config matches 0..1 run scoreboard players reset $hardcore config
+execute if score $hardcore config matches 0 run scoreboard players reset $hardcore config
 
-execute store result score $disable_team_balancing config run data get storage rocketriders:main "config/load".config.disable_team_balancing
-execute unless score $disable_team_balancing config matches 0..1 run scoreboard players reset $disable_team_balancing config
-execute if score $disable_team_balancing config matches 0 run scoreboard players reset $disable_team_balancing config
 
 ## Clean Up
 data remove storage rocketriders:main "config/load"

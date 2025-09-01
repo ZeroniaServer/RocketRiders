@@ -1,6 +1,7 @@
 scoreboard players reset * gamemode_components
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $config_override.collision_control gamemode_components -1
+scoreboard players set $config_override.hardcore gamemode_components -1
 scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $main_item/pickaxe gamemode_components 1
 scoreboard players set $no_portal gamemode_components 1
@@ -9,8 +10,6 @@ scoreboard players set $lower_void gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add ctfEnabled
-tag @s add HardcoreOff
-tag @s[tag=Hardcore] add HardcoreWasOn
 tag @s[tag=DoublePortal] add DoublePortalWasOn
 function arenaclear:unlockdecos
 tag @s add fbPortalsOff

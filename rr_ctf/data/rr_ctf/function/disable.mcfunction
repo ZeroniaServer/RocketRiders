@@ -1,10 +1,6 @@
 scoreboard players reset * gamemode_components
 
 tag @s remove ctfEnabled
-tag @s remove HardcoreOff
-tag @s[tag=HardcoreWasOn] add Hardcore
-execute if entity @s[tag=HardcoreWasOn] run function arenaclear:lockdecos
-tag @s remove HardcoreWasOn
 tag @s[tag=DoublePortalWasOn] add DoublePortal
 tag @s remove DoublePortalWasOn
 tag @s remove fbPortalsOff
@@ -25,3 +21,5 @@ tag @s remove customPrevention
 tag @s remove customObsidian
 tag @s remove noSabers
 tag @s add switchGamemodes
+
+execute if predicate game:modifiers/hardcore/on run function arenaclear:lockdecos

@@ -2,6 +2,7 @@ scoreboard players reset * gamemode_components
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $config_override.molerat gamemode_components -1
 scoreboard players set $config_override.clutter_collector gamemode_components -1
+scoreboard players set $config_override.hardcore gamemode_components -1
 scoreboard players set $armor/crusade_kit_dependent gamemode_components 1
 scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
 scoreboard players set $crusade_portals gamemode_components 1
@@ -13,8 +14,6 @@ function arenaclear:lockdecos
 execute unless entity @e[x=0,type=marker,tag=crusadeWall,limit=1] run summon marker 12.5 54.0 0.0 {Tags:["crusadeWall"]}
 tag @s add noSabers
 tag @s add portalDecosOff
-tag @s[tag=Hardcore] add HardcoreWasOn
-tag @s add HardcoreOff
 tag @s add customPrevention
 tag @s add featheredOff
 tag @s add arrowLimit

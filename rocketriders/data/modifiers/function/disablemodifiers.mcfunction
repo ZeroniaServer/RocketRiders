@@ -20,8 +20,7 @@ tag @s remove SpamClick
 tag @s remove SpamClickWasOn
 tag @s remove NinjaJump
 tag @s remove NinjaJumpWasOn
-tag @s remove Hardcore
-tag @s remove HardcoreWasOn
+scoreboard players reset $hardcore config
 tag @s remove DoublePortal
 tag @s remove DoublePortalWasOn
 scoreboard players reset $clutter_collector config

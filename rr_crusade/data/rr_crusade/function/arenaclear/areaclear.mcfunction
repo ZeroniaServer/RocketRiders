@@ -43,12 +43,12 @@ fill -96 202 93 -94 202 93 air strict
 fill -96 202 63 -94 202 63 air strict
 
 #restore glass
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 96 -101 195 95 white_stained_glass
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 94 -101 195 93 orange_stained_glass
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 91 -101 195 92 yellow_stained_glass
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 60 -101 195 61 white_stained_glass
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 62 -101 195 63 cyan_stained_glass
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!Hardcore] run fill -89 201 65 -101 195 64 blue_stained_glass
+execute unless predicate game:modifiers/hardcore/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled] run fill -89 201 96 -101 195 95 white_stained_glass
+execute unless predicate game:modifiers/hardcore/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled] run fill -89 201 94 -101 195 93 orange_stained_glass
+execute unless predicate game:modifiers/hardcore/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled] run fill -89 201 91 -101 195 92 yellow_stained_glass
+execute unless predicate game:modifiers/hardcore/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled] run fill -89 201 60 -101 195 61 white_stained_glass
+execute unless predicate game:modifiers/hardcore/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled] run fill -89 201 62 -101 195 63 cyan_stained_glass
+execute unless predicate game:modifiers/hardcore/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled] run fill -89 201 65 -101 195 64 blue_stained_glass
 
 #remove tower ridges
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled] run setblock -89 202 62 air strict

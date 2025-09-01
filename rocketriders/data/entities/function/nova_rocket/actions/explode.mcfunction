@@ -16,7 +16,7 @@ execute on origin run tag @s add nova_attach.origin
 execute if predicate entities:origin_team/blue run scoreboard players set $nova_rocket_team var 0
 execute if predicate entities:origin_team/yellow run scoreboard players set $nova_rocket_team var 1
 execute if predicate entities:origin_team/none run scoreboard players set $nova_rocket_team var -1
-execute positioned as @s as @e[distance=..5,predicate=entities:type/canopy] run function entities:nova_rocket/actions/_explode_/check_canopy
+execute positioned as @s as @e[distance=..5,predicate=entities:type/canopy/brain] run function entities:nova_rocket/actions/_explode_/check_canopy
 execute on origin run tag @s remove nova_rocket.origin
 execute on origin run tag @s remove nova_attach.origin
 #execute positioned as @s run fill ~3.5 ~3.5 ~3.5 ~-3.5 ~-3.5 ~-3.5 air replace #custom:canopy_blocks

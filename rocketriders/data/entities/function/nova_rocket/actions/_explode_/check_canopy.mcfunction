@@ -3,14 +3,16 @@ execute if score $nova_rocket_team var matches 0 if predicate entities:origin_te
 execute if score $nova_rocket_team var matches 1 if predicate entities:origin_team/yellow run return fail
 
 # If the nova rocket shooter or one of their teammates is on the canopy, do not go boom
-tag @a[tag=nova_rocket.canopy_passengers] remove nova_rocket.canopy_passengers
-function entities:canopy/execute_as_passengers {run:"tag @s add nova_rocket.canopy_passengers"}
-execute if score $nova_rocket_team var matches 0 if entity @a[limit=1,tag=nova_rocket.canopy_passengers,team=Blue] run return run tag @a[tag=nova_rocket.canopy_passengers] remove nova_rocket.canopy_passengers
-execute if score $nova_rocket_team var matches 1 if entity @a[limit=1,tag=nova_rocket.canopy_passengers,team=Yellow] run return run tag @a[tag=nova_rocket.canopy_passengers] remove nova_rocket.canopy_passengers
-execute if score $nova_rocket_team var matches -1 if entity @a[limit=1,tag=nova_rocket.canopy_passengers,tag=nova_rocket.origin] run return run tag @a[tag=nova_rocket.canopy_passengers] remove nova_rocket.canopy_passengers
+tag @a[tag=nova_rocket.enemy_canopy_occupant] remove nova_rocket.enemy_canopy_occupant
+execute if score $nova_rocket_team var matches 0 run function entities:canopy/execute_as_passengers {run:"tag @s[team=Yellow] add nova_rocket.enemy_canopy_occupant"}
+execute if score $nova_rocket_team var matches 1 run function entities:canopy/execute_as_passengers {run:"tag @s[team=Blue] add nova_rocket.enemy_canopy_occupant"}
+execute if score $nova_rocket_team var matches -1 run function entities:canopy/execute_as_passengers {run:"tag @s[tag=!nova_rocket.origin] add nova_rocket.enemy_canopy_occupant"}
 
-# Nova attach targets
-execute as @a[tag=nova_rocket.canopy_passengers] run function entities:nova_attach/init
-tag @a[tag=nova_rocket.canopy_passengers] remove nova_rocket.canopy_passengers
+execute unless entity @a[limit=1,tag=nova_rocket.enemy_canopy_occupant] run return fail
 
-function entities:canopy/actions/boom
+# Ensure enemy canopy occupants get nova attached
+execute as @a[tag=nova_rocket.enemy_canopy_occupant] run function entities:nova_attach/init
+tag @a[tag=nova_rocket.enemy_canopy_occupant] remove nova_rocket.enemy_canopy_occupant
+
+# If enemies are on the canopy, boom!
+execute at @s run function entities:canopy/actions/boom

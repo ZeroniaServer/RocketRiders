@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:multi_action",
-	"title": "RR Dev Quick Actions",
+	"title": "RR Dev: Quick Actions",
 	"exit_action": {
 		"label": "Cancel"
 	},
@@ -34,7 +34,7 @@
 				"type": "minecraft:show_dialog",
 				"dialog": {
 					"type": "minecraft:multi_action",
-					"title": "RR Dev: Quick Actions",
+					"title": "RR Dev: Quick Actions -> Quick Launch Game Mode",
 					"exit_action": {
 						"label": "Back",
 						"action": {
@@ -101,6 +101,14 @@
 						}
 					]
 				}
+			}
+		},
+		{
+			"label": "Leave Game",
+			"tooltip": "Leave mid-game",
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "/trigger LeaveMidgame"
 			}
 		}
 	]

@@ -6,5 +6,8 @@ execute on attacker run tag @s[type=player] add nova_attach.origin
 scoreboard players set $origin_team var -1
 execute as @a[limit=1,tag=nova_attach.origin] if predicate custom:on_blue_or_yellow_team store success score $origin_team var if entity @s[team=!Blue]
 
-function entities:nova_attach/init
+execute if score $origin_team var matches -1 unless entity @s[tag=nova_attach.origin] run function entities:nova_attach/init
+execute if score $origin_team var matches 0 unless entity @s[team=Blue] run function entities:nova_attach/init
+execute if score $origin_team var matches 1 unless entity @s[team=Yellow] run function entities:nova_attach/init
+
 tag @a[limit=1,tag=nova_attach.origin] remove nova_attach.origin

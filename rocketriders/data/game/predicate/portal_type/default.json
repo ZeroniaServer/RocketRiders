@@ -5,7 +5,7 @@
     "terms": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/no_portal"
+        "name": "game:gamemode_components/no_portals"
       },
       {
         "condition": "minecraft:reference",

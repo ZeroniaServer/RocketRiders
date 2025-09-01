@@ -31,5 +31,5 @@ execute if predicate game:portal_type/default as @a[x=0,team=Yellow] store resul
 execute as @a[x=0,team=Yellow,scores={HasMissiles=1..}] at @s if entity @s[z=-74,dz=28] run tag @s add HadIt
 
 #All end-game achievements (delay for Sudden Death)
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=!game:gamemode_components/no_portal] run schedule function achievements:aftergame_indimension 100t replace
+execute if entity @s[tag=doTying,tag=!tyingOff,predicate=!game:gamemode_components/no_portals] run schedule function achievements:aftergame_indimension 100t replace
 execute if entity @s[tag=!doTying] run function achievements:aftergame

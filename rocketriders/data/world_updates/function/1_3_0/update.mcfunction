@@ -114,7 +114,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customNova
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customShield
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove custVortParticle
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] run scoreboard players set $no_portal gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] run scoreboard players set $no_portals gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPortal
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $settings_locked gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked

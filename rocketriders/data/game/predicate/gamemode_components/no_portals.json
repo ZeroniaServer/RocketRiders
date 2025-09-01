@@ -4,7 +4,7 @@
     "type": "minecraft:score",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$no_portal"
+      "name": "$no_portals"
     },
     "score": "gamemode_components"
   },

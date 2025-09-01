@@ -24,9 +24,9 @@ execute if predicate game:game_started if predicate game:gamemode_components/neu
 execute if predicate game:game_started if predicate game:gamemode_components/neutral_utility_colors if predicate custom:on_blue_or_yellow_team if predicate custom:is_in_lava run tag @s remove volcanic_hatred.victim
 
 # Get Off My Lawn (if I am killed within 7 blocks of an enemy canopy, and my attacker is within 7 blocks of that same canopy, award the attacker)
-execute if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:type/canopy,predicate=entities:origin_team/yellow] on attacker if entity @s[distance=..7,team=Yellow] run advancement grant @s only achievements:rr_challenges/get_off_lawn
-execute if entity @s[team=Yellow] positioned as @n[distance=..7,predicate=entities:type/canopy,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:type/canopy,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
+execute if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/yellow] on attacker if entity @s[distance=..7,team=Yellow] run advancement grant @s only achievements:rr_challenges/get_off_lawn
+execute if entity @s[team=Yellow] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
 
 
 ## Mob Kill Credit (creeper explosions & bees)

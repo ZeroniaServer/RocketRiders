@@ -3,3 +3,4 @@ attribute @s minecraft:safe_fall_distance modifier add rocketriders:canopy_telep
 attribute @s minecraft:jump_strength modifier add rocketriders:canopy_teleporting -1 add_multiplied_total
 attribute @s minecraft:movement_speed modifier add rocketriders:canopy_teleporting -1 add_multiplied_total
 attribute @s minecraft:gravity modifier add rocketriders:canopy_teleporting -1 add_multiplied_total
+effect give @s slow_falling 1 0 true

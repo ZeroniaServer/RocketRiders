@@ -16,12 +16,9 @@ execute unless score $extra_fuse var matches 1 run data modify storage rocketrid
 
 data modify storage rocketriders:main icbm set value {power:4,modifiers:{copy_name:true}}
 execute unless predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on run data modify storage rocketriders:main icbm.power set value 5
-execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/hardcore/on if entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run data modify storage rocketriders:main icbm.power set value 0
-execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on unless predicate game:modifiers/hardcore/on unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run data modify storage rocketriders:main icbm.power set value 5
-execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/explosive/on unless predicate game:modifiers/hardcore/on unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run data modify storage rocketriders:main icbm.power set value 4
-execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/hardcore/on if entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] run data modify storage rocketriders:main icbm.power set value 0
-execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on if predicate game:modifiers/hardcore/on unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] run data modify storage rocketriders:main icbm.power set value 5
-execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/explosive/on if predicate game:modifiers/hardcore/on unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] run data modify storage rocketriders:main icbm.power set value 4
+execute if predicate game:modifiers/clutter_collector/on if entity @s[predicate=custom:in_clutter_collection_zone] run data modify storage rocketriders:main icbm.power set value 0
+execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on unless entity @s[predicate=custom:in_clutter_collection_zone] run data modify storage rocketriders:main icbm.power set value 5
+execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/explosive/on unless entity @s[predicate=custom:in_clutter_collection_zone] run data modify storage rocketriders:main icbm.power set value 4
 execute at @s positioned ~ ~ ~ run function custom:explosion with storage rocketriders:main icbm
 execute at @s positioned ~ ~ ~0.1 run function custom:explosion with storage rocketriders:main icbm
 execute at @s positioned ~ ~ ~-0.1 run function custom:explosion with storage rocketriders:main icbm

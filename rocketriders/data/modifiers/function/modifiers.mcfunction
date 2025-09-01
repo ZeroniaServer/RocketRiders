@@ -55,13 +55,9 @@ execute if predicate game:modifiers/hobbits/on as @a[x=0,predicate=!custom:on_bl
 execute unless predicate game:modifiers/hobbits/on as @a[x=0,tag=hobbit] run function modifiers:hobbit/reset
 
 #Clutter Collector
-execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/hardcore/on as @e[type=tnt,z=-50,dz=100,x=-160,dx=320,y=-20,dy=200,tag=!nosplode] run function modifiers:explosionpower/0
-execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on unless predicate game:modifiers/hardcore/on as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run function modifiers:explosionpower/5
-execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/explosive/on unless predicate game:modifiers/hardcore/on as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-50,dz=100,x=-160,dx=320,y=-20,dy=200] run function modifiers:explosionpower/4
-
-execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/hardcore/on as @e[type=tnt,z=-62,dz=124,x=-160,dx=320,y=-20,dy=200,tag=!nosplode] run function modifiers:explosionpower/0
-execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on if predicate game:modifiers/hardcore/on as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run function modifiers:explosionpower/5
-execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/explosive/on if predicate game:modifiers/hardcore/on as @e[x=0,type=tnt,tag=nosplode] unless entity @s[z=-62,dz=124,x=-160,dx=320,y=-20,dy=200] at @s run function modifiers:explosionpower/4
+execute if predicate game:modifiers/clutter_collector/on as @e[type=tnt,predicate=custom:in_clutter_collection_zone,tag=!nosplode] run function modifiers:explosionpower/0
+execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/explosive/on as @e[x=0,type=tnt,predicate=!custom:in_clutter_collection_zone,tag=nosplode] run function modifiers:explosionpower/4
+execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on as @e[x=0,type=tnt,predicate=!custom:in_clutter_collection_zone,tag=nosplode] run function modifiers:explosionpower/5
 
 execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/explosive/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-1}
 execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-3}

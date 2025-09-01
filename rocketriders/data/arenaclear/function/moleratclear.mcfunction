@@ -7,4 +7,4 @@ fill -101 207 69 -89 186 87 air replace light_gray_stained_glass
 function arenaclear:molerat_place/unschedule_all
 function arenaclear:molerat_clear/schedule_all
 
-tag @s remove WasMolerat
+scoreboard players reset $was_molerat global

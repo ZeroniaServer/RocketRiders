@@ -7,7 +7,7 @@ loot replace entity @e[x=0,type=item_frame,tag=MisDispIF,limit=1] contents loot 
 playsound minecraft:entity.explode master @a[x=0] 19 204 78 0.5 1.75
 particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 
-scoreboard players set $prevpage CmdData 0
+scoreboard players set $previous_page var 0
 
 fill 22 202 69 15 206 87 air
 

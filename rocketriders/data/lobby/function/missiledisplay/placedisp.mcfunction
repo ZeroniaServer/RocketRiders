@@ -4,18 +4,17 @@
 #############################################
 
 #Cooldown
-execute as @e[x=0,type=armor_stand,tag=DispCooldown] run scoreboard players add $DispCD CmdData 1
-execute if score $DispCD CmdData matches 30 if score $prevpage CmdData matches 0 run data modify block 12 203 78 Page set value 0
-execute if score $DispCD CmdData matches 30 if score $prevpage CmdData matches 1 run data modify block 12 203 78 Page set value 1
-execute if score $DispCD CmdData matches 30 run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove DispCooldown
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] run scoreboard players reset $DispCD CmdData
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] run scoreboard players reset $prevpage CmdData
+execute if score $display_cooldown var matches 1..29 run scoreboard players add $display_cooldown var 1
+execute if score $display_cooldown var matches 30 if score $previous_page var matches 0 run data modify block 12 203 78 Page set value 0
+execute if score $display_cooldown var matches 30 if score $previous_page var matches 1 run data modify block 12 203 78 Page set value 1
+execute if score $display_cooldown var matches 30 run scoreboard players reset $display_cooldown var
+execute unless score $display_cooldown var matches 1.. run scoreboard players reset $previous_page var
 
 #Set page back to 1 if someone tries to use the arrow to cycle through pages
+execute if score $display_cooldown var matches 1.. run data modify block 12 203 78 Page set value 26
 execute store result score $page var run data get block 12 203 78 Page
-execute if entity @e[x=0,type=armor_stand,tag=DispCooldown] run data modify block 12 203 78 Page set value 26
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] unless score $page var matches 0..4 unless score $page var matches 25..26 run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add DispCooldown
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DispCooldown] unless score $page var matches 0..1 run data modify block 12 203 78 Page set value 0
+execute unless score $display_cooldown var matches 1.. unless score $page var matches 0..4 unless score $page var matches 25..26 run scoreboard players set $display_cooldown var 1
+execute unless score $display_cooldown var matches 1.. unless score $page var matches 0..1 run data modify block 12 203 78 Page set value 0
 
 #Display missiles
 execute if score $page var matches 5 run return run function lobby:missiledisplay/missile/tomatwo

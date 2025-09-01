@@ -19,6 +19,7 @@ effect give @a[x=0,scores={LeaveGame=1..}] night_vision infinite 100 true
 team join Lobby @a[x=0,scores={LeaveGame=1..},team=!Lobby]
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode survival
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode adventure
+title @a[x=0,scores={LeaveGame=1..,firstJoined=2}] times 5 30 5
 title @a[x=0,scores={LeaveGame=1..,firstJoined=2}] actionbar [""]
 title @a[x=0,scores={LeaveGame=1..,firstJoined=2}] title [""]
 title @a[x=0,scores={LeaveGame=1..,firstJoined=2}] subtitle [""]

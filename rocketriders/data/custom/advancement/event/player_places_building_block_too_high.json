@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "place_building_block_too_high": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:belowroof"
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#custom:building_blocks"
+            }
+          },
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "position": {
+                "y": {
+                  "min": 160
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom:event/player_places_building_block_too_high/main"
+  }
+}

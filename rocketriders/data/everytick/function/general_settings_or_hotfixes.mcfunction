@@ -103,6 +103,9 @@ execute if predicate rr:force_gamemodes as @a[x=0,team=Lobby,gamemode=!adventure
 #Spectators can't switch out of spectator mode (security, disabled in servermodes)
 execute if predicate rr:force_gamemodes as @a[x=0,team=Spectator,gamemode=!spectator] run gamemode spectator
 
+#Spectator void
+execute as @a[x=0,gamemode=spectator,predicate=custom:in_void] at @s run function game:void
+
 #Blue/Yellow players can't switch out of adventure mode before game (security, disabled in servermodes)
 execute if predicate rr:force_gamemodes unless predicate game:game_started if entity @s[tag=!GameEnd] as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
 execute if predicate rr:force_gamemodes unless predicate game:game_started if entity @s[tag=!GameEnd] as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure

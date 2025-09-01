@@ -183,3 +183,6 @@ execute as @a[team=Lobby] unless entity @s[x=-70,y=200,z=77,dy=0.5,dz=2] run att
 #Make armour visible again after invisibility wears off
 execute as @a[tag=was_invisible,predicate=!custom:invisible] run function custom:update_armor
 tag @a[tag=was_invisible,predicate=!custom:invisible] remove was_invisible
+
+# Remove custom team colour from those not playing
+execute as @a[x=0,scores={custom_team_color=1..}] unless entity @s[predicate=custom:on_blue_or_yellow_team,predicate=game:gamemode_components/custom_team_colors] run scoreboard players reset @s custom_team_color

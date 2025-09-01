@@ -10,7 +10,6 @@ function rr_chase:tip
 function rr_chase:game/gamestart
 execute if predicate game:game_started run function rr_chase:game/ingame
 execute if entity @s[tag=GameEnd] run function rr_chase:game/gameend
-scoreboard players reset @a[x=0] custom_team_color
 execute as @e[x=0,type=item] run function everytick:no_drop
 
 #disable yellow

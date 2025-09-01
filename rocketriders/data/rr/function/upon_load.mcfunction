@@ -87,7 +87,7 @@ scoreboard objectives add last_creeper_damage_origin_uuid.1 dummy
 scoreboard objectives add last_creeper_damage_origin_uuid.2 dummy
 scoreboard objectives add last_creeper_damage_origin_uuid.3 dummy
 scoreboard objectives add time_since_tnt_punch custom:play_time
-scoreboard objectives add custom_team_color custom:play_time
+scoreboard objectives add custom_team_color dummy
 
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy

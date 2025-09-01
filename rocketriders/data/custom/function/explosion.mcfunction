@@ -6,7 +6,7 @@ summon creeper ~ ~ ~ {Tags:["summon.this","explosion"],data:{explosion:{}},NoGra
 # Get modifiers
 $data modify storage rocketriders:main summon set value {explosion_power:$(power),modifiers:{copy_name:false,nbt:{},run:"function custom:nothing",force_explosion_emitter:true}}
 $data modify storage rocketriders:main summon.modifiers merge value $(modifiers)
-data modify storage rocketriders:main summon.modifiers.nbt.ExplosionPower set from storage rocketriders:main summon.explosion_power
+data modify storage rocketriders:main summon.modifiers.nbt.ExplosionRadius set from storage rocketriders:main summon.explosion_power
 
 # Copy name
 execute if data storage rocketriders:main summon.modifiers{copy_name:true} run data modify storage rocketriders:main summon.modifiers.nbt.CustomName set from entity @s CustomName

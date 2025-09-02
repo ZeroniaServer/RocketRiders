@@ -1,49 +1,127 @@
-[
-  {
-    "condition": "minecraft:reference",
-    "name": "game:portal_type/default"
-  },
-  {
-    "condition": "minecraft:any_of",
-    "terms": [
-      {
-        "condition": "minecraft:location_check",
-        "predicate": {
-          "position": {
-            "x": {
-              "min": -17,
-              "max": 42
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:reference",
+          "name": "game:portal_type/default"
+        },
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "x": {
+                    "min": -17,
+                    "max": 42
+                  },
+                  "y": {
+                    "min": 30,
+                    "max": 66
+                  },
+                  "z": {
+                    "min": -81,
+                    "max": -66
+                  }
+                }
+              }
             },
-            "y": {
-              "min": 30,
-              "max": 66
-            },
-            "z": {
-              "min": 67,
-              "max": 82
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "x": {
+                    "min": -17,
+                    "max": 42
+                  },
+                  "y": {
+                    "min": 30,
+                    "max": 66
+                  },
+                  "z": {
+                    "min": 67,
+                    "max": 82
+                  }
+                }
+              }
             }
-          }
+          ]
         }
-      },
-      {
-        "condition": "minecraft:location_check",
-        "predicate": {
-          "position": {
-            "x": {
-              "min": -17,
-              "max": 42
+      ]
+    },
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:reference",
+          "name": "game:portal_type/crusade"
+        },
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_crusade:blue_portal_revealed"
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "position": {
+                      "x": {
+                        "min": -3,
+                        "max": 28
+                      },
+                      "y": {
+                        "min": 38,
+                        "max": 63
+                      },
+                      "z": {
+                        "min": -74,
+                        "max": -59
+                      }
+                    }
+                  }
+                }
+              ]
             },
-            "y": {
-              "min": 30,
-              "max": 66
-            },
-            "z": {
-              "min": -83,
-              "max": -66
+            {
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_crusade:yellow_portal_revealed"
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "position": {
+                      "x": {
+                        "min": -3,
+                        "max": 28
+                      },
+                      "y": {
+                        "min": 38,
+                        "max": 63
+                      },
+                      "z": {
+                        "min": 60,
+                        "max": 75
+                      }
+                    }
+                  }
+                }
+              ]
             }
-          }
+          ]
         }
-      }
-    ]
-  }
-]
+      ]
+    }
+  ]
+}

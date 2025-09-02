@@ -16,16 +16,16 @@
               "predicate": {
                 "position": {
                   "x": {
-                    "min": -19,
-                    "max": 44
+                    "min": -15,
+                    "max": 40
                   },
                   "y": {
-                    "min": 28,
-                    "max": 68
+                    "min": 32,
+                    "max": 64
                   },
                   "z": {
-                    "min": -83,
-                    "max": -64
+                    "min": -79,
+                    "max": -68
                   }
                 }
               }
@@ -35,16 +35,16 @@
               "predicate": {
                 "position": {
                   "x": {
-                    "min": -19,
-                    "max": 44
+                    "min": -15,
+                    "max": 40
                   },
                   "y": {
-                    "min": 28,
-                    "max": 68
+                    "min": 32,
+                    "max": 64
                   },
                   "z": {
-                    "min": 65,
-                    "max": 84
+                    "min": 69,
+                    "max": 80
                   }
                 }
               }
@@ -75,16 +75,16 @@
                   "predicate": {
                     "position": {
                       "x": {
-                        "min": -5,
-                        "max": 30
+                        "min": -1,
+                        "max": 26
                       },
                       "y": {
-                        "min": 36,
-                        "max": 65
+                        "min": 40,
+                        "max": 61
                       },
                       "z": {
-                        "min": -76,
-                        "max": -57
+                        "min": -72,
+                        "max": -61
                       }
                     }
                   }
@@ -103,16 +103,16 @@
                   "predicate": {
                     "position": {
                       "x": {
-                        "min": -5,
-                        "max": 30
+                        "min": -1,
+                        "max": 26
                       },
                       "y": {
-                        "min": 36,
-                        "max": 65
+                        "min": 40,
+                        "max": 61
                       },
                       "z": {
-                        "min": 58,
-                        "max": 77
+                        "min": 62,
+                        "max": 73
                       }
                     }
                   }

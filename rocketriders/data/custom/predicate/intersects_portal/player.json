@@ -1,0 +1,34 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:reference",
+            "name": "game:modifiers/hobbits/on"
+          }
+        },
+        {
+          "condition": "minecraft:reference",
+          "name": "custom:intersects_portal/player_normal"
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:reference",
+          "name": "game:modifiers/hobbits/on"
+        },
+        {
+          "condition": "minecraft:reference",
+          "name": "custom:intersects_portal/player_small"
+        }
+      ]
+    }
+  ]
+}

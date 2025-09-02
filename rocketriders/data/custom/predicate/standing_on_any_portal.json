@@ -1,0 +1,301 @@
+[
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "flags": {
+        "is_on_ground": true
+      },
+      "stepping_on": {
+        "block": {
+          "blocks": [
+            "minecraft:obsidian",
+            "minecraft:nether_portal",
+            "minecraft:blue_stained_glass_pane",
+            "minecraft:yellow_stained_glass_pane"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:all_of",
+        "terms": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:reference",
+              "name": "game:modifierse/hobbits/on"
+            }
+          },
+          {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:all_of",
+                "terms": [
+                  {
+                    "condition": "minecraft:reference",
+                    "name": "game:portal_type/default"
+                  },
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "position": {
+                            "x": {
+                              "min": -10.3,
+                              "max": 35.3
+                            },
+                            "y": {
+                              "min": 37,
+                              "max": 60
+                            },
+                            "z": {
+                              "min": -74.3,
+                              "max": -72.7
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "position": {
+                            "x": {
+                              "min": -10.3,
+                              "max": 35.3
+                            },
+                            "y": {
+                              "min": 37,
+                              "max": 60
+                            },
+                            "z": {
+                              "min": 73.7,
+                              "max": 75.3
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "condition": "minecraft:all_of",
+                "terms": [
+                  {
+                    "condition": "minecraft:reference",
+                    "name": "game:portal_type/crusade"
+                  },
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:all_of",
+                        "terms": [
+                          {
+                            "condition": "minecraft:reference",
+                            "name": "rr_crusade:blue_portal_revealed"
+                          },
+                          {
+                            "condition": "minecraft:location_check",
+                            "predicate": {
+                              "position": {
+                                "x": {
+                                  "min": 3.7,
+                                  "max": 21.3
+                                },
+                                "y": {
+                                  "min": 45,
+                                  "max": 57
+                                },
+                                "z": {
+                                  "min": -67.3,
+                                  "max": -65.7
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "condition": "minecraft:all_of",
+                        "terms": [
+                          {
+                            "condition": "minecraft:reference",
+                            "name": "rr_crusade:yellow_portal_revealed"
+                          },
+                          {
+                            "condition": "minecraft:location_check",
+                            "predicate": {
+                              "position": {
+                                "x": {
+                                  "min": 3.7,
+                                  "max": 21.3
+                                },
+                                "y": {
+                                  "min": 45,
+                                  "max": 57
+                                },
+                                "z": {
+                                  "min": 66.7,
+                                  "max": 68.3
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "condition": "minecraft:all_of",
+        "terms": [
+          {
+            "condition": "minecraft:reference",
+            "name": "game:modifiers/hobbits/on"
+          },
+          {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:all_of",
+                "terms": [
+                  {
+                    "condition": "minecraft:reference",
+                    "name": "game:portal_type/default"
+                  },
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "position": {
+                            "x": {
+                              "min": -10.2,
+                              "max": 35.2
+                            },
+                            "y": {
+                              "min": 37,
+                              "max": 60
+                            },
+                            "z": {
+                              "min": -74.2,
+                              "max": -72.8
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                          "position": {
+                            "x": {
+                              "min": -10.2,
+                              "max": 35.2
+                            },
+                            "y": {
+                              "min": 37,
+                              "max": 60
+                            },
+                            "z": {
+                              "min": 73.8,
+                              "max": 75.2
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "condition": "minecraft:all_of",
+                "terms": [
+                  {
+                    "condition": "minecraft:reference",
+                    "name": "game:portal_type/crusade"
+                  },
+                  {
+                    "condition": "minecraft:any_of",
+                    "terms": [
+                      {
+                        "condition": "minecraft:all_of",
+                        "terms": [
+                          {
+                            "condition": "minecraft:reference",
+                            "name": "rr_crusade:blue_portal_revealed"
+                          },
+                          {
+                            "condition": "minecraft:location_check",
+                            "predicate": {
+                              "position": {
+                                "x": {
+                                  "min": 3.8,
+                                  "max": 21.2
+                                },
+                                "y": {
+                                  "min": 45,
+                                  "max": 57
+                                },
+                                "z": {
+                                  "min": -67.2,
+                                  "max": -65.8
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "condition": "minecraft:all_of",
+                        "terms": [
+                          {
+                            "condition": "minecraft:reference",
+                            "name": "rr_crusade:yellow_portal_revealed"
+                          },
+                          {
+                            "condition": "minecraft:location_check",
+                            "predicate": {
+                              "position": {
+                                "x": {
+                                  "min": 3.8,
+                                  "max": 21.2
+                                },
+                                "y": {
+                                  "min": 45,
+                                  "max": 57
+                                },
+                                "z": {
+                                  "min": 66.8,
+                                  "max": 68.2
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

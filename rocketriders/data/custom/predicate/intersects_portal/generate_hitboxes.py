@@ -12,44 +12,102 @@ base_predicate = {
           "condition": "minecraft:any_of",
           "terms": [
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "position": {
-                  "x": {
-                    "min": -10,
-                    "max": 35
-                  },
-                  "y": {
-                    "min": 37,
-                    "max": 59
-                  },
-                  "z": {
-                    "min": -74,
-                    "max": -73
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "position": {
+                      "x": {
+                        "min": -10,
+                        "max": 35
+                      },
+                      "y": {
+                        "min": 37,
+                        "max": 59
+                      },
+                      "z": {
+                        "min": -74,
+                        "max": -73
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "_exclusive_": True,
+                    "predicate": {
+                      "position": {
+                        "z": -73
+                      }
+                    }
                   }
                 }
-              }
+              ]
             },
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "position": {
-                  "x": {
-                    "min": -10,
-                    "max": 35
-                  },
-                  "y": {
-                    "min": 37,
-                    "max": 59
-                  },
-                  "z": {
-                    "min": 74,
-                    "max": 75
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "position": {
+                      "x": {
+                        "min": -10,
+                        "max": 35
+                      },
+                      "y": {
+                        "min": 37,
+                        "max": 59
+                      },
+                      "z": {
+                        "min": 74,
+                        "max": 75
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "_exclusive_": True,
+                    "predicate": {
+                      "position": {
+                        "z": 75
+                      }
+                    }
                   }
                 }
-              }
+              ]
             }
           ]
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:location_check",
+            "_exclusive_": True,
+            "predicate": {
+              "position": {
+                "x": 35
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:location_check",
+            "_exclusive_": True,
+            "predicate": {
+              "position": {
+                "y": 59
+              }
+            }
+          }
         }
       ]
     },
@@ -88,6 +146,18 @@ base_predicate = {
                       }
                     }
                   }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "_exclusive_": True,
+                    "predicate": {
+                      "position": {
+                        "z": -66
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -116,10 +186,46 @@ base_predicate = {
                       }
                     }
                   }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "_exclusive_": True,
+                    "predicate": {
+                      "position": {
+                        "z": 68
+                      }
+                    }
+                  }
                 }
               ]
             }
           ]
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:location_check",
+            "_exclusive_": True,
+            "predicate": {
+              "position": {
+                "x": 21
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:location_check",
+            "_exclusive_": True,
+            "predicate": {
+              "position": {
+                "y": 56
+              }
+            }
+          }
         }
       ]
     }
@@ -137,12 +243,18 @@ def get_predicate(negative_corner: tuple[float,float,float], positive_corner: tu
       if "terms" in value:
         modify_value(value["terms"])
       if "condition" in value and value["condition"] == "minecraft:location_check":
-        value["predicate"]["position"]["x"]["min"] -= positive_corner[0]
-        value["predicate"]["position"]["x"]["max"] -= negative_corner[0]
-        value["predicate"]["position"]["y"]["min"] -= positive_corner[1]
-        value["predicate"]["position"]["y"]["max"] -= negative_corner[1]
-        value["predicate"]["position"]["z"]["min"] -= positive_corner[2]
-        value["predicate"]["position"]["z"]["max"] -= negative_corner[2]
+        if "_exclusive_" in value:
+          if "x" in value["predicate"]["position"]: value["predicate"]["position"]["x"] -= negative_corner[0]
+          if "y" in value["predicate"]["position"]: value["predicate"]["position"]["y"] -= negative_corner[1]
+          if "z" in value["predicate"]["position"]: value["predicate"]["position"]["z"] -= negative_corner[2]
+          del value["_exclusive_"]
+        else:
+          value["predicate"]["position"]["x"]["min"] -= positive_corner[0]
+          value["predicate"]["position"]["x"]["max"] -= negative_corner[0]
+          value["predicate"]["position"]["y"]["min"] -= positive_corner[1]
+          value["predicate"]["position"]["y"]["max"] -= negative_corner[1]
+          value["predicate"]["position"]["z"]["min"] -= positive_corner[2]
+          value["predicate"]["position"]["z"]["max"] -= negative_corner[2]
     if isinstance(value,list):
       for term in value:
         modify_value(term)

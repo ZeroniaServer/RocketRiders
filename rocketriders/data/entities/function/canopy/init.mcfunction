@@ -18,6 +18,10 @@ execute on origin run function custom:player_action/forget_nova_attach
 
 execute align xyz positioned ~0.5 ~ ~0.5 run tp @s ~ ~ ~
 
+execute on origin run tag @s add canopy.origin
+execute at @s[tag=!canopy.small] run playsound minecraft:entity.player.teleport player @a[x=0,tag=!canopy.origin] ~ ~2 ~ 1 1
+execute on origin run tag @s remove canopy.origin
+
 data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
 data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
 data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]

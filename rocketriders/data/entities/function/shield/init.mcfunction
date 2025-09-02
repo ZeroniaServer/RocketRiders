@@ -13,7 +13,7 @@ execute on origin run function custom:resolve_text_component {text_component:[""
 data modify entity @s CustomName set from storage rocketriders:main shield.name
 
 ## Spawn behaviour
-execute align xyz positioned ~0.5 ~ ~0.5 run tp @s ~ ~ ~
+execute align xyz run tp @s ~0.5 ~0.5 ~0.5
 
 data modify storage rocketriders:shieldpos x prepend from entity @s Pos[0]
 data modify storage rocketriders:shieldpos y prepend from entity @s Pos[1]

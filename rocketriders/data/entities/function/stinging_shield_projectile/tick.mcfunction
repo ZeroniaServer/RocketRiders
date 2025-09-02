@@ -12,8 +12,6 @@ execute if score @s entity.age matches 1.. run playsound minecraft:block.honey_b
 execute if score @s entity.age matches 1.. if score $dust CmdData matches 1 run particle minecraft:block{block_state:{Name:"minecraft:honey_block"}} ~ ~ ~ 0 0 0 1 10
 
 # Break when out of bounds
-execute if entity @s[x=-12,y=36,z=-74,dx=48,dy=25,dz=0] run return run function entities:stinging_shield_projectile/actions/break
-execute if entity @s[x=-12,y=36,z=74,dx=48,dy=25,dz=0] run return run function entities:stinging_shield_projectile/actions/break
 execute if predicate custom:nearvoid run return run function entities:stinging_shield_projectile/actions/break
 execute if entity @s[y=175,dy=100] run return run function entities:stinging_shield_projectile/actions/break
 execute unless predicate custom:insideborder run return run function entities:stinging_shield_projectile/actions/break

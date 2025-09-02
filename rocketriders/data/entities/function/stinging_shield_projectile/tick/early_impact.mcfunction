@@ -6,13 +6,11 @@ execute unless predicate game:game_rules/impact_utilities/on run return run func
 
 ## If impact_utilities is ON
 # Prevent deployment when out of bounds
-execute if entity @s[x=-12,y=36,z=-74,dx=48,dy=25,dz=0] run return run function entities:stinging_shield_projectile/actions/break
-execute if entity @s[x=-12,y=36,z=74,dx=48,dy=25,dz=0] run return run function entities:stinging_shield_projectile/actions/break
 execute if predicate custom:nearvoid run return run function entities:stinging_shield_projectile/actions/break
 execute if entity @s[y=175,dy=100] run return run function entities:stinging_shield_projectile/actions/break
 execute unless predicate custom:insideborder run return run function entities:stinging_shield_projectile/actions/break
 
-execute unless predicate entities:stinging_shield_can_be_deployed run return run function entities:stinging_shield_projectile/actions/break
+execute at @s unless predicate entities:stinging_shield_can_be_deployed run return run function entities:stinging_shield_projectile/actions/break
 
 # Re-initialise as a "stinging_shield" entity
 data remove entity @s data.stinging_shield_projectile

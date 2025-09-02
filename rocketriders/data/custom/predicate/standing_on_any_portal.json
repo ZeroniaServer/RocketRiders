@@ -28,7 +28,7 @@
             "condition": "minecraft:inverted",
             "term": {
               "condition": "minecraft:reference",
-              "name": "game:modifierse/hobbits/on"
+              "name": "game:modifiers/hobbits/on"
             }
           },
           {

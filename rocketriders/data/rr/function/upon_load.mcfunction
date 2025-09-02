@@ -36,6 +36,8 @@ gamerule playersNetherPortalCreativeDelay 2147483647
 gamerule playersNetherPortalDefaultDelay 2147483647
 gamerule locatorBar false
 gamerule waterSourceConversion false
+#use freezeDamage to control ender pearl damage
+gamerule freezeDamage false
 
 #Bossbars
 bossbar add rr:startgame ""

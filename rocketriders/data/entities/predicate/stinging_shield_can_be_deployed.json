@@ -53,68 +53,6 @@
   {
     "condition": "minecraft:inverted",
     "term": {
-      "condition": "minecraft:all_of",
-      "terms": [
-        {
-          "condition": "minecraft:reference",
-          "name": "rr_crusade:blue_portal_revealed"
-        },
-        {
-          "condition": "minecraft:location_check",
-          "predicate": {
-            "position": {
-              "x": {
-                "min": 1,
-                "max": 24
-              },
-              "y": {
-                "min": 40,
-                "max": 60
-              },
-              "z": {
-                "min": -67,
-                "max": -66
-              }
-            }
-          }
-        }
-      ]
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:all_of",
-      "terms": [
-        {
-          "condition": "minecraft:reference",
-          "name": "rr_crusade:yellow_portal_revealed"
-        },
-        {
-          "condition": "minecraft:location_check",
-          "predicate": {
-            "position": {
-              "x": {
-                "min": 1,
-                "max": 24
-              },
-              "y": {
-                "min": 40,
-                "max": 60
-              },
-              "z": {
-                "min": 67,
-                "max": 68
-              }
-            }
-          }
-        }
-      ]
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
       "condition": "minecraft:reference",
       "name": "custom:near_flag_base"
     }

@@ -81,8 +81,8 @@ scoreboard players reset @a[x=0,team=!Lobby,team=!Developer] displayinfo
 execute unless predicate rr:has_parkour run scoreboard players reset @a[x=0] toggleParkourTips
 
 #Launch pad in Modification Room
-execute unless predicate game:game_started as @a[x=0,team=Lobby] at @s if entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect give @s jump_boost 1 20 true
-execute unless predicate game:game_started as @a[x=0,team=Lobby] at @s unless entity @e[type=area_effect_cloud,tag=modroomGoBack,limit=1,distance=..1] run effect clear @s jump_boost
+execute unless predicate game:game_started as @a[x=-63.5,y=190.5,z=78.5,distance=..1] unless entity @s[team=!Lobby,team=!Developer] run effect give @s jump_boost 1 20 true
+execute unless predicate game:game_started as @a[x=-63.5,y=190.5,z=78.5,distance=1..10] unless entity @s[team=!Lobby,team=!Developer] run effect clear @s jump_boost
 
 #Lobby easter eggs
 function lobby:secrets/main

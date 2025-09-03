@@ -4,7 +4,7 @@ title @a[x=0] title ["",{"text":"Game Started!","color":"aqua"}]
 execute if score $skipsplashes CmdData matches 1 run return fail
 
 #If you want to add more splashes just increase this number.
-execute store result score $startsplash CmdData run random value 0..219
+execute store result score $startsplash CmdData run random value 0..221
 
 #Add splashes here (just copy paste the line and change the score)
 execute if score $startsplash CmdData matches 0..1 run title @a[x=0] subtitle ["",{"text":"GL HF!","color":"green"}]
@@ -226,3 +226,5 @@ execute if score $startsplash CmdData matches 216 run title @a[x=0] subtitle [""
 execute if score $startsplash CmdData matches 217 run title @a[x=0] subtitle ["",{"text":"You are the Murderer- wait wrong game...","color":"green"}]
 execute if score $startsplash CmdData matches 218 run title @a[x=0] subtitle ["",{"text":"Now in ","color":"green"},{"text":"c","color":"red"},{"text":"o","color":"gold"},{"text":"l","color":"dark_green"},{"text":"o","color":"blue"},{"text":"r","color":"dark_purple"},{"text":"!","color":"light_purple"}]
 execute if score $startsplash CmdData matches 219 run title @a[x=0] subtitle ["",{"text":"Still relevant.","color":"green"}]
+execute if score $startsplash CmdData matches 220 run title @a[x=0] subtitle ["",{"text":"Why are they all pig spawn eggs?!","color":"green"}]
+execute if score $startsplash CmdData matches 221 run title @a[x=0] subtitle ["",{"text":"no way this guy might be the... deus ex machina","color":"green"}]

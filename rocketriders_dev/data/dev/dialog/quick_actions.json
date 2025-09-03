@@ -110,6 +110,14 @@
 				"type": "minecraft:run_command",
 				"command": "/trigger LeaveMidgame"
 			}
+		},
+		{
+			"label": "Join Game",
+			"tooltip": "Join mid-game",
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "/trigger dev set 4"
+			}
 		}
 	]
 }

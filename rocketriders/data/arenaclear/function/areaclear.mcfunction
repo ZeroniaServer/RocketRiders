@@ -70,3 +70,6 @@ tag @s add JustCleared
 
 ##Reset tips for next gamemode
 function game:tipreset
+
+##Reset creeper explosion origin uuid map
+data modify storage rocketriders:explosions creeper_to_player_map set value {}

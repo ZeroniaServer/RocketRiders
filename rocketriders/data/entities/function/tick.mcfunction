@@ -7,7 +7,6 @@ execute as @e[x=0,type=snowball,predicate=!entities:type/shield_projectile,predi
 execute as @e[x=0,type=snowball,predicate=!entities:type/shield_projectile,predicate=!entities:type/stinging_shield_projectile,nbt={Item:{components:{"minecraft:custom_data":{id:"stinging_shield"}}}}] at @s run function entities:stinging_shield_projectile/init
 execute as @e[x=0,type=egg,predicate=!entities:type/vortex_projectile,predicate=!entities:type/icbm,nbt={Item:{components:{"minecraft:custom_data":{id:"vortex"}}}}] at @s run function entities:vortex_projectile/init
 execute as @e[x=0,type=egg,predicate=!entities:type/vortex_projectile,predicate=!entities:type/icbm,nbt={Item:{components:{"minecraft:custom_data":{id:"icbm"}}}}] at @s run function entities:icbm/init
-execute if predicate game:modifiers/punchable_tnt/on as @e[x=0,type=tnt,predicate=!entities:type/punchable_tnt] at @s run function entities:punchable_tnt/init
 execute as @e[x=0,type=firework_rocket,predicate=!entities:type/nova_rocket,nbt={FireworksItem:{components:{"minecraft:custom_data":{nova_rocket:{}}}}}] at @s run function entities:nova_rocket/init
 
 ## Tick entities

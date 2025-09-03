@@ -17,8 +17,7 @@ execute if entity @s[tag=!canopy.animated,tag=canopy.small] run function entitie
 #Kill Canopy if marked to be killed
 execute if entity @s[tag=canopy.kill] run return run function entities:canopy/actions/kill
 
-#Kill Canopy once it expires or when tnt gets near it (includes hotfix for breaking the banners and pushing the log blocks to cheat auto-decay system
-execute if entity @e[distance=..7,type=tnt,nbt={fuse:1s}] run return run function entities:canopy/actions/kill
+#Kill Canopy once it expires
 execute if score @s entity.age matches 299.. run return run function entities:canopy/actions/kill
 
 #Canopy smoke when player on fire is nearby

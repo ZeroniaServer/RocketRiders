@@ -3,6 +3,10 @@
 ## the core RR Datapack runs from ##
 ####################################
 
+# Store this tick's gametime (+1 because #tick functions run before gametime increments for this tick)
+execute store result score $gametime global run time query gametime
+scoreboard players add $gametime global 1
+
 # Handle events and flags
 execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom:event/player_respawns/main
 scoreboard players set @a[x=0] flag.is_dead 1
@@ -10,6 +14,10 @@ scoreboard players set @e[x=0,type=player] flag.is_dead 0
 
 execute as @a[scores={event.player_uses_pig_spawn_egg=1..}] at @s run function custom:event/player_uses_pig_spawn_egg/main
 execute as @a[scores={event.player_uses_written_book=1..}] at @s run function custom:event/player_uses_written_book/main
+
+# Process primed TNT
+execute as @e[x=0,type=tnt,tag=!tnt.processed] at @s run function game:tnt/init
+execute as @e[x=0,type=tnt] if score @s tnt.explosion_timestamp = $gametime global at @s run function game:tnt/upon_explosion
 
 # Tick entities
 function entities:tick

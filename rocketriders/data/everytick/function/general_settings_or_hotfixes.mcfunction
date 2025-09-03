@@ -43,15 +43,6 @@ tag @a[x=0,scores={toggleTips=1..},tag=!hideTips,tag=!hidTips] add hideTips
 tag @a[x=0,scores={toggleTips=1..},tag=hidTips] remove hidTips
 scoreboard players set @a[x=0] toggleTips 0
 
-#Utilkill timer
-execute as @e[x=0,type=tnt,tag=UtilKilled] at @s run function game:tntutilkill
-scoreboard players add @a[x=0,tag=UtilKilled] UKTimer 1
-scoreboard players reset @a[x=0,tag=UtilKilled,scores={UKTimer=55..}] KillerUUID
-tag @a[x=0,tag=UtilKilled,scores={UKTimer=55..}] remove UtilKilled
-scoreboard players reset @a[x=0,scores={UKTimer=55..}] UKTimer
-execute as @e[x=0,type=tnt,tag=UtilKilled] at @s run tag @a[team=!Spectator,distance=..6] add UtilKilled
-execute as @e[x=0,type=tnt,tag=UtilKilled] at @s store result score @a[team=!Spectator,distance=..6] KillerUUID run scoreboard players get @s UUIDTracker
-
 # Fix for players joining with legacy canopyTP tag
 execute as @a[tag=canopyTP] run attribute @s minecraft:safe_fall_distance base reset
 execute as @a[tag=canopyTP] run attribute @s minecraft:jump_strength base reset

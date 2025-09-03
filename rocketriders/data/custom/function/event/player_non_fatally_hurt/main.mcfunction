@@ -9,8 +9,7 @@ scoreboard players reset @s last_creeper_damage_origin_uuid.3
 
 # Get origin uuid from creeper if it exists, otherwise do nothing
 data modify storage rocketriders:main player_non_fatally_hurt set value {}
-execute on attacker run data modify storage rocketriders:main player_non_fatally_hurt.origin set from entity @s[type=creeper,tag=!UtilKilled] data.explosion.origin
-# ^ ignore UtilKilled entities for things that still use the legacy system
+execute on attacker run data modify storage rocketriders:main player_non_fatally_hurt.origin set from entity @s[type=creeper] data.explosion.origin
 
 execute store success score $creeper_damage_origin var if data storage rocketriders:main player_non_fatally_hurt.origin
 execute if score $creeper_damage_origin var matches 1 store result score @s last_creeper_damage_origin_uuid.0 run data get storage rocketriders:main player_non_fatally_hurt.origin[0]

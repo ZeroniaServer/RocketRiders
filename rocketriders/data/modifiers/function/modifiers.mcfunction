@@ -9,7 +9,6 @@ execute if entity @s[tag=Instamine] as @a[x=0,predicate=!custom:on_blue_or_yello
 execute if entity @s[tag=!Instamine] as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 
 ##Explosive
-execute if predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on as @e[x=0,type=tnt] run data merge entity @s {explosion_power:5}
 execute if predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
 
 ##Sonar
@@ -23,7 +22,6 @@ execute if entity @s[tag=Sonar] as @e[x=0,type=firework_rocket] run data merge e
 execute if entity @s[tag=Sonar] as @e[x=0,type=fireball] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=dragon_fireball] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=#custom:potion] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=tnt] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=tnt_minecart] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,type=item] run data merge entity @s {Glowing:1b}
 execute if entity @s[tag=Sonar] as @e[x=0,predicate=entities:type/vortex/body] run data merge entity @s {Glowing:1b}

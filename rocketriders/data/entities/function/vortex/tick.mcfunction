@@ -55,9 +55,6 @@ execute if entity @s[tag=vortex.feathered] if entity @e[x=0,type=armor_stand,tag
 # block trigger
 execute unless block ~ ~ ~ #custom:vortices_ignore run return run function entities:vortex/actions/explode
 
-# primed tnt trigger
-execute if entity @e[limit=1,distance=..5,type=tnt,nbt={fuse:2s}] unless score @s entity.vortex.fuse matches ..2 run scoreboard players set @s entity.vortex.fuse 2
-
 # projectiles trigger
 scoreboard players set $triggered_by_entity var 0
 tag @s add vortex.this

@@ -2,8 +2,56 @@
   {
     "condition": "minecraft:inverted",
     "term": {
-      "condition": "minecraft:reference",
-      "name": "custom:intersects_portal/shield_projectile"
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:reference",
+                "name": "game:game_rules/snipe_portals/on"
+              }
+            },
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:reference",
+                      "name": "entities:origin_team/blue"
+                    },
+                    {
+                      "condition": "minecraft:reference",
+                      "name": "custom:on_blue_half"
+                    }
+                  ]
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:reference",
+                      "name": "entities:origin_team/yellow"
+                    },
+                    {
+                      "condition": "minecraft:reference",
+                      "name": "custom:on_yellow_half"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:reference",
+          "name": "custom:intersects_portal/shield_projectile"
+        }
+      ]
     }
   },
   {

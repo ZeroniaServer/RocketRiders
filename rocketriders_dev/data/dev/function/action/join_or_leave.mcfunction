@@ -1,0 +1,10 @@
+execute unless predicate game:game_started unless entity @n[tag=Selection,tag=EditedSettings] run return run tellraw @s {color:"red",text:"The game has not started yet."}
+
+# Leave
+execute if predicate game:game_started if predicate custom:on_blue_or_yellow_team run return run trigger LeaveMidgame
+execute if predicate game:game_started if entity @s[team=Spectator] run return run trigger leaveSpec
+execute unless predicate game:game_started if predicate custom:on_blue_or_yellow_team if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run return run tag @s add LeaveTeams
+
+# Join
+execute if score @e[limit=1,x=0,type=armor_stand,tag=Selection] bluesCount > @e[limit=1,x=0,type=armor_stand,tag=Selection] yellowsCount run return run tp @s -79.5 205.0 94.5
+tp @s -79.5 205.0 62.5

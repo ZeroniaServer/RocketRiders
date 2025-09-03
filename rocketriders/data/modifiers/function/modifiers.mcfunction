@@ -53,9 +53,5 @@ execute if predicate game:modifiers/hobbits/on as @a[x=0,predicate=!custom:on_bl
 execute unless predicate game:modifiers/hobbits/on as @a[x=0,tag=hobbit] run function modifiers:hobbit/reset
 
 #Clutter Collector
-execute if predicate game:modifiers/clutter_collector/on as @e[type=tnt,predicate=custom:in_clutter_collection_zone,tag=!nosplode] run function modifiers:explosionpower/0
-execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/explosive/on as @e[x=0,type=tnt,predicate=!custom:in_clutter_collection_zone,tag=nosplode] run function modifiers:explosionpower/4
-execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on as @e[x=0,type=tnt,predicate=!custom:in_clutter_collection_zone,tag=nosplode] run function modifiers:explosionpower/5
-
 execute if predicate game:modifiers/clutter_collector/on unless predicate game:modifiers/explosive/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-1}
 execute if predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:-3}

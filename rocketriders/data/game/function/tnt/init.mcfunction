@@ -4,12 +4,6 @@ tag @s add tnt.processed
 # get initial data
 data modify storage rocketriders:main tnt.entity_data set from entity @s {}
 
-# Set explosion power
-execute unless predicate game:modifiers/clutter_collector/on if predicate game:modifiers/explosive/on run data modify entity @s explosion_power set value 5
-execute if predicate game:modifiers/clutter_collector/on if predicate custom:in_clutter_collection_zone run function modifiers:explosionpower/0
-execute if predicate game:modifiers/clutter_collector/on unless predicate custom:in_clutter_collection_zone unless predicate game:modifiers/explosive/on run function modifiers:explosionpower/4
-execute if predicate game:modifiers/clutter_collector/on unless predicate custom:in_clutter_collection_zone if predicate game:modifiers/explosive/on run function modifiers:explosionpower/5
-
 # Set glowing
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Sonar] run data modify entity @s Glowing set value true
 

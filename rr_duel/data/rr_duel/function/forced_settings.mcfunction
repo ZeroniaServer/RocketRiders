@@ -40,7 +40,6 @@ tag @s add WindDown
 tag @s add doPrevention
 tag @s add doHotbarLimit
 tag @s remove doStacking
-tag @s remove doFireballPortals
 
 #######################################################
 ## The lines below make it so 12 items are selected. ##

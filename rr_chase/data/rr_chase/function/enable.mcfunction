@@ -12,7 +12,6 @@ tag @s remove switchGamemodes
 tag @s add chaseEnabled
 tag @s add tyingOff
 tag @s[tag=DoublePortal] add DoublePortalWasOn
-tag @s add fbPortalsOff
 tag @s add portalDecosOff
 tag @s add preventionOff
 tag @s add customPrevention

@@ -70,6 +70,17 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MoleratStop
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove moleratConfirm
 
+# Updating game rules
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noTeamBalance] run scoreboard players set $disable_team_balancing config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noTeamBalance
+execute if data storage rocketriders:storage {Tags:["noTeamBalance"]} run data modify storage rocketriders:storage config.disable_team_balancing set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"noTeamBalance"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doFireballPortals] run scoreboard players set $snipe_portals config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove doFireballPortals
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove fbPortalsOff
+execute if data storage rocketriders:storage {Tags:["doFireballPortals"]} run data modify storage rocketriders:storage config.snipe_portals set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"doFireballPortals"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"fbPortalsOff"}
 # Updating modifiers
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive] run scoreboard players set $explosive config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Explosive

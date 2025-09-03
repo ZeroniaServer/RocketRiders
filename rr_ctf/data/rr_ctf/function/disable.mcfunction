@@ -3,7 +3,6 @@ scoreboard players reset * gamemode_components
 tag @s remove ctfEnabled
 tag @s[tag=DoublePortalWasOn] add DoublePortal
 tag @s remove DoublePortalWasOn
-tag @s remove fbPortalsOff
 tag @s remove preventionOff
 tag @s remove portalDecosOff
 tag @s[tag=arrowsWasOn] add rngArrows

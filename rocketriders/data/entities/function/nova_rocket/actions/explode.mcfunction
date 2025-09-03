@@ -34,7 +34,7 @@ execute on origin run tag @s remove nova_attach.origin
 # maximum explosion radius is 1.7333 times explosion power, rounded up
 execute if predicate game:modifiers/clutter_collector/on at @s run return run function custom:explosion {power:0,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
 scoreboard players set $do_explosion_power_ramp var 0
-execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=doFireballPortals] run scoreboard players set $do_explosion_power_ramp var 1
+execute unless predicate game:game_rules/snipe_portals/on run scoreboard players set $do_explosion_power_ramp var 1
 execute if predicate entities:origin_team/blue at @s if predicate custom:on_blue_half run scoreboard players set $do_explosion_power_ramp var 1
 execute if predicate entities:origin_team/yellow at @s if predicate custom:on_yellow_half run scoreboard players set $do_explosion_power_ramp var 1
 # Fixed Power

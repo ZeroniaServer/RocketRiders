@@ -12,7 +12,6 @@ tag @s remove switchGamemodes
 tag @s add ctfEnabled
 tag @s[tag=DoublePortal] add DoublePortalWasOn
 function arenaclear:unlockdecos
-tag @s add fbPortalsOff
 tag @s add preventionOff
 tag @s add portalDecosOff
 tag @s add customSaberMsg

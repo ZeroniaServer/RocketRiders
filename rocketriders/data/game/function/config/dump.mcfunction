@@ -6,6 +6,7 @@ data modify storage rocketriders:main "config/dump" set value {config:{}}
 execute store success storage rocketriders:main "config/dump".config.disable_cannoning byte 1 if score $disable_cannoning config matches 1
 execute store success storage rocketriders:main "config/dump".config.impact_utilities byte 1 if score $impact_utilities config matches 1
 execute store success storage rocketriders:main "config/dump".config.disable_team_balancing byte 1 if score $disable_team_balancing config matches 1
+execute store success storage rocketriders:main "config/dump".config.snipe_portals byte 1 if score $snipe_portals config matches 1
 
 execute store success storage rocketriders:main "config/dump".config.explosive byte 1 if score $explosive config matches 1
 execute store success storage rocketriders:main "config/dump".config.rocket_residers byte 1 if score $rocket_residers config matches 1

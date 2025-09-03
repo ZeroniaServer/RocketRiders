@@ -4,7 +4,6 @@ tag @s remove chaseEnabled
 tag @s remove tyingOff
 tag @s[tag=DoublePortalWasOn] add DoublePortal
 tag @s remove DoublePortalWasOn
-tag @s remove fbPortalsOff
 tag @s remove portalDecosOff
 tag @s remove preventionOff
 tag @s remove customPrevention

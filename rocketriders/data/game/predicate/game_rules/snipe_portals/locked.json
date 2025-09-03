@@ -1,0 +1,13 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/snipe_portals/forced_on"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/snipe_portals/forced_off"
+    }
+  ]
+}

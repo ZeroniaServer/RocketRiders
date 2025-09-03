@@ -40,7 +40,6 @@ execute if entity @s[tag=!WindDownForce] run function modifiers:disablemodifiers
 tag @s add doPrevention
 tag @s add doHotbarLimit
 tag @s add doTying
-tag @s remove doFireballPortals
 
 #######################################################
 ## The lines below make it so 12 items are selected. ##

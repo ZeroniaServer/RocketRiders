@@ -18,6 +18,10 @@ execute store result score $disable_team_balancing config run data get storage r
 execute unless score $disable_team_balancing config matches 0..1 run scoreboard players reset $disable_team_balancing config
 execute if score $disable_team_balancing config matches 0 run scoreboard players reset $disable_team_balancing config
 
+execute store result score $snipe_portals config run data get storage rocketriders:main "config/load".config.snipe_portals
+execute unless score $snipe_portals config matches 0..1 run scoreboard players reset $snipe_portals config
+execute if score $snipe_portals config matches 0 run scoreboard players reset $snipe_portals config
+
 
 execute store result score $explosive config run data get storage rocketriders:main "config/load".config.explosive
 execute unless score $explosive config matches 0..1 run scoreboard players reset $explosive config

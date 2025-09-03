@@ -8,7 +8,6 @@ tag @s add WindDown
 tag @s add doPrevention
 tag @s add doHotbarLimit
 tag @s remove doStacking
-tag @s remove doFireballPortals
 
 function arenaclear:baseplacement
 function arenaclear:detailplacement

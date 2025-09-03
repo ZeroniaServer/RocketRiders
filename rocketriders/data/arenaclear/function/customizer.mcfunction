@@ -32,7 +32,7 @@ tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!preventionOff] add doPreve
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!tyingOff] add doTying
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doHotbarLimit
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!stackingOn] remove doStacking
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] remove doFireballPortals
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $snipe_portals config
 execute unless score @s MaxItemSec matches 5..30 run scoreboard players set @s MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300

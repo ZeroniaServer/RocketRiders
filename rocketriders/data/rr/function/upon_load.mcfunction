@@ -39,6 +39,9 @@ gamerule waterSourceConversion false
 #use freezeDamage to control ender pearl damage
 gamerule freezeDamage false
 
+#Difficulty Easy
+difficulty easy
+
 #Bossbars
 bossbar add rr:startgame ""
 

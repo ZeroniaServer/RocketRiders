@@ -22,6 +22,10 @@ execute store result score $snipe_portals config run data get storage rocketride
 execute unless score $snipe_portals config matches 0..1 run scoreboard players reset $snipe_portals config
 execute if score $snipe_portals config matches 0 run scoreboard players reset $snipe_portals config
 
+execute store result score $friendly_tnt_damage config run data get storage rocketriders:main "config/load".config.friendly_tnt_damage
+execute unless score $friendly_tnt_damage config matches 0..1 run scoreboard players reset $friendly_tnt_damage config
+execute if score $friendly_tnt_damage config matches 0 run scoreboard players reset $friendly_tnt_damage config
+
 
 execute store result score $explosive config run data get storage rocketriders:main "config/load".config.explosive
 execute unless score $explosive config matches 0..1 run scoreboard players reset $explosive config

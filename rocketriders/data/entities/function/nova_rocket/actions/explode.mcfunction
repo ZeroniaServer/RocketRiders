@@ -1,9 +1,6 @@
 # Redirect function to the brain
 execute unless entity @s[predicate=entities:type/nova_rocket/brain] run return run execute on passengers if entity @s[predicate=entities:type/nova_rocket/brain] run function entities:nova_rocket/actions/explode
 
-tag @s add nova_rocket.exploded
-scoreboard players set @s entity.age 0
-
 execute at @s unless predicate entities:nova_rocket_can_explode run return run function entities:nova_rocket/actions/break
 
 # Dismount the brain and trigger the firework
@@ -31,19 +28,9 @@ execute unless predicate game:modifiers/explosive/on if predicate entities:origi
 execute on origin run tag @s remove nova_attach.origin
 
 # Create explosion
-# maximum explosion radius is 1.7333 times explosion power, rounded up
-execute if predicate game:modifiers/clutter_collector/on at @s run return run function custom:explosion {power:0,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-scoreboard players set $do_explosion_power_ramp var 0
-execute unless predicate game:game_rules/snipe_portals/on run scoreboard players set $do_explosion_power_ramp var 1
-execute if predicate entities:origin_team/blue at @s if predicate custom:on_blue_half run scoreboard players set $do_explosion_power_ramp var 1
-execute if predicate entities:origin_team/yellow at @s if predicate custom:on_yellow_half run scoreboard players set $do_explosion_power_ramp var 1
-# Fixed Power
-execute if score $do_explosion_power_ramp var matches 0 if predicate game:modifiers/explosive/on run return run function custom:explosion {power:5,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute if score $do_explosion_power_ramp var matches 0 run return run function custom:explosion {power:2,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-# Ramped Power
-execute if predicate game:modifiers/explosive/on at @s unless predicate custom:intersects_portal/radius_9 run return run function custom:explosion {power:5,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute if predicate game:modifiers/explosive/on at @s unless predicate custom:intersects_portal/radius_7 run return run function custom:explosion {power:4,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute if predicate game:modifiers/explosive/on at @s unless predicate custom:intersects_portal/radius_6 run return run function custom:explosion {power:3,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute at @s unless predicate custom:intersects_portal/radius_4 run return run function custom:explosion {power:2,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute at @s unless predicate custom:intersects_portal/radius_2 run return run function custom:explosion {power:1,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
-execute at @s run return run function custom:explosion {power:0,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute if predicate game:modifiers/explosive/on run function custom:explosion {power:5,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+execute unless predicate game:modifiers/explosive/on run function custom:explosion {power:2,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
+
+# Kill entity stack
+kill @s[predicate=entities:type/nova_rocket]
+execute on vehicle run kill @s[predicate=entities:type/nova_rocket]

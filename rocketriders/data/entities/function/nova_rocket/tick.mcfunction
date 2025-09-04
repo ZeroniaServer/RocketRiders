@@ -1,12 +1,6 @@
 execute if entity @s[tag=nova_rocket.killed] on vehicle run kill @s
 execute if entity @s[tag=nova_rocket.killed] run return run kill @s
 
-# If exploded, continue to exist for a few ticks and update nearby TNT entities' owners
-# TODO: move this to the generic creeper explosion function so that it works for all TNT ignited by a creeper with a player origin
-execute if entity @s[tag=nova_rocket.exploded] run data modify storage rocketriders:main nova_rocket.origin set from entity @s Owner
-execute if entity @s[tag=nova_rocket.exploded] at @s as @e[distance=..5] run data modify entity @s owner set from storage rocketriders:main nova_rocket.origin
-execute if entity @s[tag=nova_rocket.exploded] run return run execute if score @s entity.age matches 1.. run kill @s
-
 # Store the rotation and speed of vehicle
 execute if predicate custom:has_vehicle run function custom:projectile_motion_save
 

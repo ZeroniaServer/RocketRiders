@@ -12,8 +12,7 @@ execute if entity @s[type=snowball,predicate=entities:type/shield_projectile/bod
 execute if entity @s[type=snowball,predicate=entities:type/stinging_shield_projectile/body] run function entities:stinging_shield_projectile/actions/break
 
 execute if entity @s[type=egg,predicate=!entities:type/icbm/body,predicate=!entities:type/vortex_projectile/body] run kill @s
-execute if entity @s[type=egg,predicate=entities:type/icbm/body] run function entities:icbm/actions/break
-execute if entity @s[type=egg,predicate=entities:type/vortex_projectile/body] run function entities:vortex_projectile/actions/break
+execute if entity @s[type=egg,predicate=entities:type/icbm/body] run function entities:icbm/actions/explode
 
 execute if entity @s[type=lingering_potion,nbt={Item:{components:{"minecraft:potion_contents":{potion:"minecraft:water"}}}}] facing entity @s feet run summon minecraft:area_effect_cloud ^ ^ ^0.5 {potion_contents:{potion:"minecraft:water"}}
 execute if entity @s[type=lingering_potion,nbt={Item:{components:{"minecraft:potion_contents":{potion:"minecraft:awkward"}}}}] facing entity @s feet run summon minecraft:area_effect_cloud ^ ^ ^0.5 {potion_contents:{potion:"minecraft:awkward",custom_color:16747545}}

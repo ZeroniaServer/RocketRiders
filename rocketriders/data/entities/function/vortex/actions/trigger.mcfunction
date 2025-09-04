@@ -1,6 +1,7 @@
 # arguments: fuse
 
-execute unless entity @s[predicate=entities:type/vortex/brain] run return fail
+# Redirect function to the brain
+$execute if entity @s[predicate=entities:type/vortex/body] run return run execute on passengers if entity @s[predicate=entities:type/vortex/brain] at @s run function entities:vortex/actions/trigger {fuse:$(fuse)}
 
 execute unless score @s entity.vortex.fuse matches 0.. if entity @s[tag=!vortex.is_drifting,tag=!vortex.feathered] run playsound entity.shulker.hurt_closed master @a[x=0] ~ ~ ~ 0.7 0
 execute unless score @s entity.vortex.fuse matches 0.. if entity @s[tag=!vortex.is_drifting,tag=!vortex.feathered] run playsound minecraft:block.sculk_sensor.clicking master @a[x=0] ~ ~ ~ 1 1

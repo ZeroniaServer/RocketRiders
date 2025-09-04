@@ -26,7 +26,8 @@ execute if predicate game:game_rules/friendly_tnt_damage/on if score $explosion_
 execute if predicate game:modifiers/instant_tnt_explosions/on unless predicate game:game_rules/friendly_tnt_damage/on run data modify entity @s fuse set value 0
 
 # Trigger nearby vortices
-execute as @e[distance=..5,predicate=entities:type/vortex/brain] at @s run function entities:vortex/actions/trigger {fuse:0}
+execute unless predicate game:modifiers/explosive/on as @e[distance=..5.333,predicate=entities:type/vortex/brain] at @s run function entities:vortex/actions/trigger {fuse:0}
+execute if predicate game:modifiers/explosive/on as @e[distance=..6.666,predicate=entities:type/vortex/brain] at @s run function entities:vortex/actions/trigger {fuse:0}
 
 # Kill nearby canopies
 execute as @e[distance=..7,predicate=entities:type/canopy/brain] at @s run function entities:canopy/actions/kill

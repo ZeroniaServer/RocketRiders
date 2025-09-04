@@ -79,3 +79,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 #Hobbits
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=19}] if predicate game:modifiers/hobbits/on run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players are 2/3 their normal size, and can sneak under 1-block-tall gaps.","color":"gray","italic":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=19}] unless predicate game:modifiers/hobbits/on run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+
+#Instant TNT
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=20}] if predicate game:modifiers/instant_tnt_explosions/on run tellraw @s ["",{"text":"Instant TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Primed TNT instantly explodes.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=20}] unless predicate game:modifiers/instant_tnt_explosions/on run tellraw @s ["",{"text":"Instant TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]

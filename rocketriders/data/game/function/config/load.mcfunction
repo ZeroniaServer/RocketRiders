@@ -62,6 +62,11 @@ execute if score $hobbits config matches 0 run scoreboard players reset $hobbits
 execute store result score $hardcore config run data get storage rocketriders:main "config/load".config.hardcore
 execute unless score $hardcore config matches 0..1 run scoreboard players reset $hardcore config
 execute if score $hardcore config matches 0 run scoreboard players reset $hardcore config
+execute if score $hobbits config matches 0 run scoreboard players reset $hobbits config
+
+execute store result score $instant_tnt_explosions config run data get storage rocketriders:main "config/load".config.instant_tnt_explosions
+execute unless score $instant_tnt_explosions config matches 0..1 run scoreboard players reset $instant_tnt_explosions config
+execute if score $instant_tnt_explosions config matches 0 run scoreboard players reset $instant_tnt_explosions config
 
 
 ## Clean Up

@@ -1,6 +1,6 @@
 ##Refreshes signs for individual Game Modifiers (warped/crimson)
 #Reset counter
-scoreboard players set @s[scores={modifierID=20..}] modifierID 0
+execute unless score @s modifierID matches 0..20 run scoreboard players set @s modifierID 0
 
 #Instamine
 execute if entity @s[scores={modifierID=0},tag=Instamine,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
@@ -87,6 +87,10 @@ execute if entity @s[scores={modifierID=18},predicate=!game:gamemode_components/
 #Hobbits
 execute if entity @s[scores={modifierID=19},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/hobbits/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=19},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/hobbits/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+
+#Instant TNT
+execute if entity @s[scores={modifierID=20},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/instant_tnt_explosions/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=20},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/instant_tnt_explosions/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #All locked
 execute if entity @s[predicate=game:gamemode_components/settings_locked] unless entity @s[scores={modifierID=8},tag=WindDownForce] run setblock -69 191 75 crimson_wall_sign[facing=east]

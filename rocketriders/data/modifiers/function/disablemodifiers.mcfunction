@@ -30,5 +30,6 @@ scoreboard players reset $collision_control config
 scoreboard players reset $punchable_tnt config
 scoreboard players reset $unstable_tnt config
 scoreboard players reset $hobbits config
+scoreboard players reset $instant_tnt_explosions config
 
 function arenaclear:unlockdecos

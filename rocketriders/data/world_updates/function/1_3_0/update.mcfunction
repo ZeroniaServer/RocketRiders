@@ -181,6 +181,7 @@ scoreboard objectives remove novatimer
 scoreboard objectives remove novattach
 scoreboard objectives remove moleratConfirm
 scoreboard objectives remove ArmorColor
+scoreboard objectives remove Clustertime
 
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth

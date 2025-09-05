@@ -5,7 +5,6 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapLast] remove swapLast
 execute if entity @e[x=0,type=armor_stand,tag=rr_swap,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_swap,limit=1]
 bossbar remove rr_swap:swap_progress
 scoreboard objectives remove swapside
-scoreboard objectives remove Clustertime
 scoreboard players reset * gamemodeID
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function rr_swap:game/gameend

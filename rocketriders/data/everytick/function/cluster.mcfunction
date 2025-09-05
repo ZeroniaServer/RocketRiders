@@ -1,24 +1,5 @@
-scoreboard players add @e[x=0,type=fireball,tag=Cluster,tag=!Still] Clustertime 0
-scoreboard players add @e[x=0,type=fireball,tag=Cluster,tag=!Still,tag=!endFireball,tag=!ClusterSpawn,scores={Clustertime=..7}] Clustertime 1
-
-execute as @e[x=0,type=fireball,tag=!ClusterSpawn,scores={Clustertime=1}] at @s run tag @s add ClusterStarter
-
-execute as @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] at @s run function everytick:cluster/split
-scoreboard players set @e[x=0,type=fireball,tag=ClusterStarter,scores={Clustertime=7}] Clustertime 8
-
-execute as @e[x=0,type=fireball,tag=ClusterSpawn] at @s if entity @e[type=fireball,tag=ClusterStarter,distance=..5,limit=1] run scoreboard players add @s Clustertime 0
-execute as @e[x=0,type=fireball,tag=ClusterSpawn] at @s if entity @e[type=fireball,tag=ClusterStarter,distance=..5,limit=1] run scoreboard players add @s[scores={Clustertime=..39}] Clustertime 1
-execute as @e[x=0,type=fireball,tag=ClusterSpawn] at @s if entity @e[type=fireball,tag=ClusterStarter,distance=..5,limit=1] run data modify entity @s Motion set from entity @e[x=0,type=fireball,tag=ClusterStarter,sort=nearest,limit=1] Motion
-execute as @e[x=0,type=fireball,tag=ClusterSpawn] at @s if entity @e[type=fireball,tag=ClusterStarter,distance=..5,limit=1] run data modify entity @s Owner set from entity @e[x=0,type=fireball,tag=ClusterStarter,sort=nearest,limit=1] Owner
-execute as @e[x=0,type=fireball,tag=ClusterSpawn] at @s unless entity @e[type=fireball,tag=ClusterStarter,distance=..5,limit=1] run scoreboard players remove @s[scores={Clustertime=-39..}] Clustertime 1
-kill @e[x=0,type=fireball,tag=ClusterSpawn,tag=StillCluster,scores={Clustertime=-40}]
-
-tag @e[x=0,type=fireball,tag=ClusterFireball] remove StillCluster
-tag @e[x=0,type=fireball,tag=ClusterFireball,predicate=!custom:not_moving] add StillCluster
-execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store result score @s x run data get entity @s Motion[0] 100
-execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store result score @s y run data get entity @s Motion[1] 100
-execute as @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster] store result score @s z run data get entity @s Motion[2] 100
-tag @e[x=0,type=fireball,tag=ClusterFireball,tag=!StillCluster,scores={x=-1..0,y=-1..0,z=-1..0}] add StillCluster
+scoreboard players add @e[x=0,type=fireball,tag=Cluster,predicate=!custom:not_moving,tag=!endFireball,tag=!cluster_fireball.child] cluster_fireball.time 1
+execute as @e[x=0,type=fireball,tag=!cluster_fireball.child,scores={cluster_fireball.time=7}] at @s run function everytick:cluster/split
 
 #Proper explosive cluster fireballs
 execute if predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on as @e[x=0,type=fireball,tag=ClusterFireball] run data merge entity @s {ExplosionPower:3}

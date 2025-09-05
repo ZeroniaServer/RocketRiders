@@ -96,6 +96,7 @@ scoreboard objectives add time_since_tnt_punch custom:play_time
 scoreboard objectives add custom_team_color dummy
 scoreboard objectives add tnt.explosion_timestamp dummy
 scoreboard objectives add intangible_arrow.despawn_buffer dummy
+scoreboard objectives add cluster_fireball.time dummy
 
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy

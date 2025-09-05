@@ -1,7 +1,6 @@
 execute unless entity @e[x=0,type=armor_stand,tag=rr_swap,limit=1] run summon armor_stand 25 184 -6 {Tags:["rr_swap","gamemodeAS"],Marker:1b,Invisible:1b,Invulnerable:1b,CustomNameVisible:0b,CustomName:{"text":"Swap Mode"}}
 
 scoreboard objectives add swapside dummy
-scoreboard objectives add Clustertime dummy
 
 bossbar add rr_swap:swap_progress ["",{"text":"Swapping in: 60 seconds","bold":true,"color":"white"}]
 bossbar set rr_swap:swap_progress color white

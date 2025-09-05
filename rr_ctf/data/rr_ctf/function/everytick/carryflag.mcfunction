@@ -14,6 +14,7 @@ execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run tellraw @a[x=0,team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"blue"},{"text":" successfully captured a","color":"yellow"},{"text":" Yellow","color":"gold"},{"text":" flag!","color":"yellow"},"\n"]
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players set FY1: FlagScore -2
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
+execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s flag_tablist_display
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run tag @s remove CarryFY1
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
@@ -29,6 +30,7 @@ execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run tellraw @a[x=0,team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"blue"},{"text":" successfully captured a","color":"dark_aqua"},{"text":" Yellow","color":"gold"},{"text":" flag!","color":"yellow"},"\n"]
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players set FY2: FlagScore -2
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
+execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s flag_tablist_display
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run tag @s remove CarryFY2
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
@@ -45,6 +47,7 @@ execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=cu
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run tellraw @a[x=0,team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" successfully captured a","color":"dark_aqua"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"dark_aqua"},"\n"]
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players set FB1: FlagScore -2
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
+execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s flag_tablist_display
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run tag @s remove CarryFB1
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
@@ -60,6 +63,7 @@ execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=cu
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run tellraw @a[x=0,team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" successfully captured a","color":"dark_aqua"},{"text":" Blue","color":"blue"},{"text":" flag!","color":"dark_aqua"},"\n"]
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players set FB2: FlagScore -2
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add @s[scores={FlagsCaptured=..1}] FlagsCaptured 1
+execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s flag_tablist_display
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run tag @s remove CarryFB2
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 

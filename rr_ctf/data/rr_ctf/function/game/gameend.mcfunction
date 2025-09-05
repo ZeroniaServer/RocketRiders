@@ -36,6 +36,8 @@ execute if entity @s[scores={endtimer=1..}] run bossbar set rr_ctf:fb2 value 0
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.gold
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.blue
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
+execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay list
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * FlagDisp
+execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * flag_tablist_display
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove CTFOvertime
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove CTF3stack

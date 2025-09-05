@@ -271,6 +271,14 @@ tag @e[x=0,type=player,team=Blue,tag=CarryFY2] add CarryFlag
 tag @e[x=0,type=player,team=Yellow,tag=CarryFB1] add CarryFlag
 tag @e[x=0,type=player,team=Yellow,tag=CarryFB2] add CarryFlag
 
+# Show flag carriers in tablist
+#scoreboard players set @a[tag=CarryFlag] flag_tablist_display 1
+scoreboard players reset @a[tag=!CarryFlag] flag_tablist_display
+scoreboard players display numberformat @a[tag=CarryFlag,tag=CarryFY1] flag_tablist_display fixed {color:"yellow",text:"🏴"}
+scoreboard players display numberformat @a[tag=CarryFlag,tag=CarryFY2] flag_tablist_display fixed {color:"yellow",text:"🏴"}
+scoreboard players display numberformat @a[tag=CarryFlag,tag=CarryFB1] flag_tablist_display fixed {color:"blue",text:"🏴"}
+scoreboard players display numberformat @a[tag=CarryFlag,tag=CarryFB2] flag_tablist_display fixed {color:"blue",text:"🏴"}
+
 #Add scores for flag carriers
 scoreboard players add @a[x=0,team=Blue] FlagsCaptured 0
 scoreboard players add @a[x=0,team=Yellow] FlagsCaptured 0

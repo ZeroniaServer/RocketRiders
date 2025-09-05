@@ -24,7 +24,7 @@ setblock -100 201 78 minecraft:player_head[rotation=0]{profile:{id:[I;1532111907
 
 #Flag placement
 fill 12 64 65 12 71 65 oak_fence replace air
-place template finish_flag1 8 70 63
+place template game:finish_flag1 8 70 63
 
 #Stair placement
 kill @e[x=0,type=marker,tag=chaseStairs]

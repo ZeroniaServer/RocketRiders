@@ -43,8 +43,8 @@ execute if score $ChaseBlockCheck CmdData matches ..145 run scoreboard players s
 execute if score $ChaseBlockCheck CmdData matches ..145 run function rr_chase:chaseblocks/spawn
 
 #Make flag wave around
-execute if score FlagWave FlagScore matches 20 run place template finish_flag1 8 70 63
-execute if score FlagWave FlagScore matches 40.. run place template finish_flag2 8 70 63
+execute if score FlagWave FlagScore matches 20 run place template game:finish_flag1 8 70 63
+execute if score FlagWave FlagScore matches 40.. run place template game:finish_flag2 8 70 63
 execute if score FlagWave FlagScore matches 40.. run scoreboard players reset FlagWave FlagScore
 
 #Chase Blocks

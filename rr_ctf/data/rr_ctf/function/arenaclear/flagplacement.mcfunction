@@ -52,8 +52,8 @@ setblock 34 64 -64 bedrock
 fill 34 66 -64 34 72 -64 minecraft:oak_fence replace air
 
 #Wool
-place template yellow_flag1 30 71 63
-place template yellow_flag1 -14 71 63
+place template game:yellow_flag1 30 71 63
+place template game:yellow_flag1 -14 71 63
 
-place template blue_flag1 -14 71 -65
-place template blue_flag1 30 71 -65
+place template game:blue_flag1 -14 71 -65
+place template game:blue_flag1 30 71 -65

@@ -141,30 +141,30 @@ fill -42 197 81 -45 199 85 air
 
 ##Top Decorations
 #New Dawn Arch
-execute if entity @s[scores={TopDeco=1},tag=!decosLocked] run place template archpreview -48 197 74
+execute if entity @s[scores={TopDeco=1},tag=!decosLocked] run place template game:archpreview -48 197 74
 #Towers
-execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run place template towerpreview -44 197 65
-execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run place template towerpreview -44 197 87
+execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run place template game:towerpreview -44 197 65
+execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run place template game:towerpreview -44 197 87
 #Spikes
-execute if entity @s[scores={TopDeco=3},tag=!decosLocked] run place template spike_top_preview -45 197 71
+execute if entity @s[scores={TopDeco=3},tag=!decosLocked] run place template game:spike_top_preview -45 197 71
 
 ##Top Sides Decorations
 #New Dawn Platforms
-execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run place template topplatform_preview -50 194 71
-execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run place template topplatform_preview -50 194 81
+execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run place template game:topplatform_preview -50 194 71
+execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run place template game:topplatform_preview -50 194 81
 #Spikes
-execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run place template spike_side_preview -51 193 68
-execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run place template spike_side_preview -51 193 88 none left_right
+execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run place template game:spike_side_preview -51 193 68
+execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run place template game:spike_side_preview -51 193 88 none left_right
 #Cannons
-execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run place template cannon_preview -45 196 72
-execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run place template cannon_preview -45 196 82
+execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run place template game:cannon_preview -45 196 72
+execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run place template game:cannon_preview -45 196 82
 
 ##Middle Decorations
 #New Dawn Slimepads
-execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run place template midslimepad_preview -49 190 65
-execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run place template midslimepad_preview -49 190 85
+execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run place template game:midslimepad_preview -49 190 65
+execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run place template game:midslimepad_preview -49 190 85
 #Spikes
-execute if entity @s[scores={MiddleDeco=2},tag=!decosLocked] run place template spike_mid_preview -54 191 67
+execute if entity @s[scores={MiddleDeco=2},tag=!decosLocked] run place template game:spike_mid_preview -54 191 67
 #Layered
 execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run scoreboard players set @s BottomDeco 0
 execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -44 196 64 -43 196 92 minecraft:black_stained_glass replace air
@@ -177,8 +177,8 @@ execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 187 92
 
 ##Bottom Decorations
 #New Dawn Slimepads
-execute if entity @s[scores={BottomDeco=1},tag=!decosLocked] run place template bottomslimepad_preview -49 186 75
+execute if entity @s[scores={BottomDeco=1},tag=!decosLocked] run place template game:bottomslimepad_preview -49 186 75
 #Spikes
-execute if entity @s[scores={BottomDeco=2},tag=!decosLocked] run place template spike_bottom_preview -53 185 76
+execute if entity @s[scores={BottomDeco=2},tag=!decosLocked] run place template game:spike_bottom_preview -53 185 76
 #Cannon
-execute if entity @s[scores={BottomDeco=3},tag=!decosLocked] run place template bottomcannon_preview -49 187 75
+execute if entity @s[scores={BottomDeco=3},tag=!decosLocked] run place template game:bottomcannon_preview -49 187 75

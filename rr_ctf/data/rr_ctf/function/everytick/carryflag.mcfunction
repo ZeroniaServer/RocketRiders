@@ -3,7 +3,9 @@ function rr_ctf:everytick/bossbars
 
 #Deliver Yellow flag at Blue base
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive] run scoreboard players add @s FlagDeliver 1
-execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add Blue: FlagDisp 1
+execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add $flags_captured_by_blue global 1
+execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] unless score $flags_captured_by_yellow matches 1 run scoreboard players display name Blue: FlagDisp [{color:"blue",text:"Blue"},[{color:"white",text:" has captured "},{score:{name:"$flags_captured_by_blue",objective:"global"}}]]
+execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] if score $flags_captured_by_yellow matches 1 run scoreboard players display name Blue: FlagDisp [{color:"blue",text:"Blue"},{color:"white",text:" has captured 1 flag"}]
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Yellow] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
@@ -16,7 +18,9 @@ execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY1,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive] run scoreboard players add @s FlagDeliver 1
-execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add Blue: FlagDisp 1
+execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add $flags_captured_by_blue global 1
+execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] unless score $flags_captured_by_yellow matches 1 run scoreboard players display name Blue: FlagDisp [{color:"blue",text:"Blue"},[{color:"white",text:" has captured "},{score:{name:"$flags_captured_by_blue",objective:"global"}}]]
+execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] if score $flags_captured_by_yellow matches 1 run scoreboard players display name Blue: FlagDisp [{color:"blue",text:"Blue"},{color:"white",text:" has captured 1 flag"}]
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Blue] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
 execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Yellow] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
@@ -30,7 +34,9 @@ execute as @e[x=0,type=player,team=Blue,tag=CarryFY2,tag=onBlue,predicate=custom
 
 #Deliver Blue flag at Yellow base
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive] run scoreboard players add @s FlagDeliver 1
-execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add Yellow: FlagDisp 1
+execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add $flags_captured_by_yellow global 1
+execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] unless score $flags_captured_by_yellow matches 1 run scoreboard players display name Yellow: FlagDisp [{color:"gold",text:"Yellow"},[{color:"white",text:" has captured "},{score:{name:"$flags_captured_by_yellow",objective:"global"}}]]
+execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] if score $flags_captured_by_yellow matches 1 run scoreboard players display name Yellow: FlagDisp [{color:"gold",text:"Yellow"},{color:"white",text:" has captured 1 flag"}]
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Blue] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
@@ -43,7 +49,9 @@ execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=cu
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB1,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players reset @s FlagDeliver
 
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive] run scoreboard players add @s FlagDeliver 1
-execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add Yellow: FlagDisp 1
+execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] run scoreboard players add $flags_captured_by_yellow global 1
+execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] unless score $flags_captured_by_yellow matches 1 run scoreboard players display name Yellow: FlagDisp [{color:"gold",text:"Yellow"},[{color:"white",text:" has captured "},{score:{name:"$flags_captured_by_yellow",objective:"global"}}]]
+execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] if score $flags_captured_by_yellow matches 1 run scoreboard players display name Yellow: FlagDisp [{color:"gold",text:"Yellow"},{color:"white",text:" has captured 1 flag"}]
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.2
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Yellow] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 0.75
 execute as @e[x=0,type=player,team=Yellow,tag=CarryFB2,tag=onYellow,predicate=custom:alive,scores={FlagDeliver=3..}] as @a[x=0,team=Blue] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1

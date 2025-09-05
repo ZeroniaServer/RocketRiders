@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Rocket Riders",
+  "external_title": "Rocket Riders...",
+  "pause": false,
+  "actions": [
+    {
+      "label": "Settings...",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger options"
+      }
+    },
+    {
+      "label": "Leave Match",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger options set 101"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": {
+      "translate": "gui.done"
+    },
+    "action": {
+      "type": "minecraft:run_command",
+      "command": "trigger options set -1"
+    }
+  },
+  "after_action": "none"
+}

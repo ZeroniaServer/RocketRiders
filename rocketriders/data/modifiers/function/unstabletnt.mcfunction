@@ -63,8 +63,8 @@ execute if entity @s[tag=BlueLift,tag=!UnableMissile] positioned ~-1 ~-5 ~4 run 
 execute if entity @s[tag=YellowLift,tag=!UnableMissile] positioned ~-1 ~-5 ~-10 run fill ~ ~ ~ ~2 ~2 ~6 tnt[unstable=true] replace tnt strict
 
 #Hypersonic
-execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 run fill ~ ~ ~ ~1 ~2 ~7 tnt[unstable=true] replace tnt strict
-execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-12 run fill ~ ~ ~ ~1 ~2 ~7 tnt[unstable=true] replace tnt strict
+execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 run fill ~ ~ ~ ~2 ~2 ~9 tnt[unstable=true] replace tnt strict
+execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-14 run fill ~ ~ ~ ~2 ~2 ~9 tnt[unstable=true] replace tnt strict
 
 #Bullet
 execute if entity @s[tag=BlueBull,tag=!UnableMissile] positioned ~-1 ~-6 ~4 run fill ~ ~ ~ ~2 ~2 ~12 tnt[unstable=true] replace tnt strict

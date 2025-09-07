@@ -90,3 +90,6 @@ tag @s[tag=runcanopy] remove runcanopy
 
 ##Hotfix for crossbows
 scoreboard players reset @a[x=0] LaunchCrossbow
+
+##Hotfix for Hypersonic
+execute as @e[x=0,type=marker,tag=hyperExtra] at @s run function items:hyperextra

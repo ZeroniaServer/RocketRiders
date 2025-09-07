@@ -63,8 +63,8 @@ execute if entity @s[tag=BlueLift,tag=!UnableMissile] run clone ~ ~ ~ ~2 ~2 ~6 ~
 execute if entity @s[tag=YellowLift,tag=!UnableMissile] run clone ~ ~ ~ ~2 ~2 ~6 ~ 175 ~ strict filtered #custom:piston move
 
 #Hypersonic
-execute if entity @s[tag=BlueHyper,tag=!UnableMissile] run clone ~ ~ ~ ~1 ~2 ~7 ~ 175 ~ strict filtered #custom:piston move
-execute if entity @s[tag=YellowHyper,tag=!UnableMissile] run clone ~ ~ ~ ~1 ~2 ~7 ~ 175 ~ strict filtered #custom:piston move
+execute if entity @s[tag=BlueHyper,tag=!UnableMissile] run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ strict filtered #custom:piston move
+execute if entity @s[tag=YellowHyper,tag=!UnableMissile] run clone ~ ~ ~ ~2 ~2 ~9 ~ 175 ~ strict filtered #custom:piston move
 
 #Bullet
 execute if entity @s[tag=BlueBull,tag=!UnableMissile] run clone ~ ~ ~ ~2 ~2 ~12 ~ 175 ~ strict filtered #custom:piston move

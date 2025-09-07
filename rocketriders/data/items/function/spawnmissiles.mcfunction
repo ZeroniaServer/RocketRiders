@@ -155,9 +155,13 @@ tp @s[tag=YellowGemi] ~-1 ~-7 ~-13
 tp @s[tag=BlueLift] ~-1 ~-7 ~4
 tp @s[tag=YellowLift] ~-1 ~-7 ~-10
 
-#Hypersonic
+#Hypersonic (+ extra entity)
 tp @s[tag=BlueHyper] ~-1 ~-8 ~5
-tp @s[tag=YellowHyper] ~-1 ~-8 ~-12
+execute if entity @s[tag=BlueHyper,tag=!strict] run summon marker ~ ~ ~ {Tags:["hyperExtraBlue","hyperExtra"]}
+execute if entity @s[tag=BlueHyper,tag=strict] run summon marker ~ ~ ~ {Tags:["hyperExtraBlue","hyperExtra","strict"]}
+tp @s[tag=YellowHyper] ~-1 ~-8 ~-14
+execute if entity @s[tag=YellowHyper,tag=!strict] run summon marker ~ ~ ~ {Tags:["hyperExtraYellow","hyperExtra"]}
+execute if entity @s[tag=YellowHyper,tag=strict] run summon marker ~ ~ ~ {Tags:["hyperExtraYellow","hyperExtra","strict"]}
 
 #Bullet
 tp @s[tag=BlueBull] ~-1 ~-8 ~4
@@ -176,14 +180,7 @@ execute if entity @s[tag=YellowBroad] run summon marker ~ ~ ~ {Tags:[broadExtraY
 execute if entity @s[tag=YellowBroad] run tp @s ~-1 ~-8 ~-16
 
 ##Pierce Prevention -- track portals
-execute if entity @s[tag=strict] if block 11 38 74 nether_portal run scoreboard players set $y1port var 1
-execute if entity @s[tag=strict] if block 13 38 74 nether_portal run scoreboard players set $y2port var 1
-execute if entity @s[tag=strict] if block 11 38 -74 nether_portal run scoreboard players set $b1port var 1
-execute if entity @s[tag=strict] if block 13 38 -74 nether_portal run scoreboard players set $b2port var 1
-
-#Crusade Mode override behavior
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,limit=1] if block 4 45 67 nether_portal run scoreboard players set $yport var 1
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,limit=1] if block 4 45 -67 nether_portal run scoreboard players set $bport var 1
+function items:prevention/trackportals
 
 ##Place structure
 execute at @s[tag=!missileflip,tag=!strict] positioned ~ ~2 ~ run function items:placestructure
@@ -196,100 +193,54 @@ execute if entity @s[tag=bluemissile] run function items:minify/minifyblue
 execute if entity @s[tag=yellowmissile] run function items:minify/minifyyellow
 
 #Extra for Duplex
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~1 ~-5 ~17 air
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~-1 ~-5 ~17 air
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run fill ~ ~-5 ~16 ~ ~-4 ~16 air
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail strict
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~1 ~-5 ~17 air strict
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~-1 ~-5 ~17 air strict
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run fill ~ ~-5 ~16 ~ ~-4 ~16 air strict
-kill @e[x=0,type=marker,tag=duplexExtraBlue,limit=1]
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~1 ~-5 ~-17 air
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~-1 ~-5 ~-17 air
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run fill ~ ~-5 ~-16 ~ ~-4 ~-16 air
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~1 ~-5 ~-17 air strict
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~-1 ~-5 ~-17 air strict
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run fill ~ ~-5 ~-16 ~ ~-4 ~-16 air strict
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail strict
-kill @e[x=0,type=marker,tag=duplexExtraYellow,limit=1]
+execute if entity @s[tag=BlueDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
+execute if entity @s[tag=BlueDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~1 ~-5 ~17 air
+execute if entity @s[tag=BlueDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~-1 ~-5 ~17 air
+execute if entity @s[tag=BlueDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run fill ~ ~-5 ~16 ~ ~-4 ~16 air
+execute if entity @s[tag=BlueDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail strict
+execute if entity @s[tag=BlueDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~1 ~-5 ~17 air strict
+execute if entity @s[tag=BlueDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~-1 ~-5 ~17 air strict
+execute if entity @s[tag=BlueDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run fill ~ ~-5 ~16 ~ ~-4 ~16 air strict
+execute if entity @s[tag=BlueDuplex] run kill @e[x=0,type=marker,tag=duplexExtraBlue,limit=1]
+execute if entity @s[tag=YellowDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~1 ~-5 ~-17 air
+execute if entity @s[tag=YellowDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~-1 ~-5 ~-17 air
+execute if entity @s[tag=YellowDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run fill ~ ~-5 ~-16 ~ ~-4 ~-16 air
+execute if entity @s[tag=YellowDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail
+execute if entity @s[tag=YellowDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~1 ~-5 ~-17 air strict
+execute if entity @s[tag=YellowDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~-1 ~-5 ~-17 air strict
+execute if entity @s[tag=YellowDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run fill ~ ~-5 ~-16 ~ ~-4 ~-16 air strict
+execute if entity @s[tag=YellowDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail strict
+execute if entity @s[tag=YellowDuplex] run kill @e[x=0,type=marker,tag=duplexExtraYellow,limit=1]
 
 #Extra for Broadsword
-execute if entity @s[tag=!strict] as @e[type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
-execute if entity @s[tag=!strict] as @e[type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
-execute if entity @s[tag=strict] as @e[type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] strict
-execute if entity @s[tag=strict] as @e[type=marker,tag=broadExtraBlue] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt strict
-execute as @e[type=marker,tag=broadExtraBlue] run kill @s
-execute if entity @s[tag=!strict] as @e[type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
-execute if entity @s[tag=!strict] as @e[type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
-execute if entity @s[tag=strict] as @e[type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] strict
-execute if entity @s[tag=strict] as @e[type=marker,tag=broadExtraYellow] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt strict
-execute as @e[type=marker,tag=broadExtraYellow] run kill @s
+execute if entity @s[tag=BlueBroad,tag=!strict] as @e[x=0,type=marker,tag=broadExtraBlue,limit=1] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
+execute if entity @s[tag=BlueBroad,tag=!strict] as @e[x=0,type=marker,tag=broadExtraBlue,limit=1] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
+execute if entity @s[tag=BlueBroad,tag=strict] as @e[x=0,type=marker,tag=broadExtraBlue,limit=1] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] strict
+execute if entity @s[tag=BlueBroad,tag=strict] as @e[x=0,type=marker,tag=broadExtraBlue,limit=1] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt strict
+execute if entity @s[tag=BlueBroad] run kill @e[x=0,type=marker,tag=broadExtraBlue,limit=1]
+execute if entity @s[tag=YellowBroad,tag=!strict] as @e[x=0,type=marker,tag=broadExtraYellow,limit=1] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
+execute if entity @s[tag=YellowBroad,tag=!strict] as @e[x=0,type=marker,tag=broadExtraYellow,limit=1] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
+execute if entity @s[tag=YellowBroad,tag=strict] as @e[x=0,type=marker,tag=broadExtraYellow,limit=1] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] strict
+execute if entity @s[tag=YellowBroad,tag=strict] as @e[x=0,type=marker,tag=broadExtraYellow,limit=1] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt strict
+execute if entity @s[tag=BlueBroad] run kill @e[x=0,type=marker,tag=broadExtraYellow,limit=1]
 
 #Extra for Warhead
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=warExtraBlue,limit=1] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] replace
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=warExtraBlue,limit=1] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] strict
-kill @e[x=0,type=marker,tag=warExtraBlue,limit=1]
-execute if entity @s[tag=!strict] as @e[x=0,type=marker,tag=warExtraYellow,limit=1] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
-execute if entity @s[tag=strict] as @e[x=0,type=marker,tag=warExtraYellow,limit=1] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] strict
-kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
+execute if entity @s[tag=BlueWar,tag=!strict] as @e[x=0,type=marker,tag=warExtraBlue,limit=1] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] replace
+execute if entity @s[tag=BlueWar,tag=strict] as @e[x=0,type=marker,tag=warExtraBlue,limit=1] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] strict
+execute if entity @s[tag=BlueWar] run kill @e[x=0,type=marker,tag=warExtraBlue,limit=1]
+execute if entity @s[tag=YellowWar,tag=!strict] as @e[x=0,type=marker,tag=warExtraYellow,limit=1] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
+execute if entity @s[tag=YellowWar,tag=strict] as @e[x=0,type=marker,tag=warExtraYellow,limit=1] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] strict
+execute if entity @s[tag=YellowWar] run kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
+
+#Extra for Hypersonic
+execute if entity @s[tag=BlueHyper,tag=strict] as @e[x=0,type=marker,tag=hyperExtraBlue,tag=strict,limit=1] at @s run function items:hyperextra
+execute if entity @s[tag=YellowHyper,tag=strict] as @e[x=0,type=marker,tag=hyperExtraYellow,tag=strict,limit=1] at @s run function items:hyperextra
 
 #Unstable TNT Modifier
 execute if predicate game:modifiers/unstable_tnt/on run function modifiers:unstabletnt
 
-##Pierce Prevention -- replace portals
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 58 74 34 58 74 minecraft:obsidian replace #custom:basereplace strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 58 74 34 37 74 minecraft:obsidian replace #custom:basereplace strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 37 74 -10 37 74 minecraft:obsidian replace #custom:basereplace strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 12 37 74 12 58 74 minecraft:obsidian replace #custom:basereplace strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 37 74 -10 58 74 minecraft:obsidian replace #custom:basereplace strict
-
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 58 -74 34 58 -74 minecraft:obsidian replace #custom:basereplace strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 58 -74 34 37 -74 minecraft:obsidian replace #custom:basereplace strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 37 -74 -10 37 -74 minecraft:obsidian replace #custom:basereplace strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 12 37 -74 12 58 -74 minecraft:obsidian replace #custom:basereplace strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 37 -74 -10 58 -74 minecraft:obsidian replace #custom:basereplace strict
-
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 175 74 34 178 74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 175 74 34 178 74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 175 74 -10 178 74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 12 175 74 12 178 74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 175 74 -10 178 74 air replace #custom:piston strict
-
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 175 -74 34 178 -74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 175 -74 34 178 -74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 34 175 -74 -10 178 -74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill 12 175 -74 12 178 -74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if entity @e[x=0,type=armor_stand,tag=Selection,tag=!noPortal] run fill -10 175 -74 -10 178 -74 air replace #custom:piston strict
-
-execute if entity @s[tag=strict] if score $y1port var matches 1 run fill 11 38 74 -9 57 74 nether_portal strict
-execute if entity @s[tag=strict] if score $y1port var matches 1 run fill 11 175 74 -9 178 74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if score $y2port var matches 1 run fill 13 38 74 33 57 74 nether_portal strict
-execute if entity @s[tag=strict] if score $y2port var matches 1 run fill 13 175 74 33 178 74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if score $b1port var matches 1 run fill 11 38 -74 -9 57 -74 nether_portal strict
-execute if entity @s[tag=strict] if score $b1port var matches 1 run fill 11 175 -74 -9 178 -74 air replace #custom:piston strict
-execute if entity @s[tag=strict] if score $b2port var matches 1 run fill 13 38 -74 33 57 -74 nether_portal strict
-execute if entity @s[tag=strict] if score $b2port var matches 1 run fill 13 175 -74 33 178 -74 air replace #custom:piston strict
-
-scoreboard players reset $y1port var
-scoreboard players reset $y2port var
-scoreboard players reset $b1port var
-scoreboard players reset $b2port var
-
-#Crusade Mode override behavior
-execute if entity @s[tag=strict] if score $yport var matches 1 run fill 21 56 67 3 44 67 obsidian strict
-execute if entity @s[tag=strict] if score $yport var matches 1 run fill 20 55 67 4 45 67 nether_portal strict
-execute if entity @s[tag=strict] if score $yport var matches 1 run fill 21 175 67 3 178 67 air replace #custom:piston strict
-execute if entity @s[tag=strict] if score $bport var matches 1 run fill 21 56 -67 3 44 -67 obsidian strict
-execute if entity @s[tag=strict] if score $bport var matches 1 run fill 20 55 -67 4 45 -67 nether_portal strict
-execute if entity @s[tag=strict] if score $bport var matches 1 run fill 21 175 -67 3 178 -67 air replace #custom:piston strict
-scoreboard players reset $yport var
-scoreboard players reset $bport var
-
-##Pierce Prevention -- set back powerables and pistons
-execute if entity @s[tag=strict] run function items:prevention/setbackpowerables
-execute if entity @s[tag=strict] run function items:prevention/setbackpistons
+##Pierce Prevention -- resolve portals
+execute if entity @s[tag=strict] run function items:prevention/resolveportals
 
 ##Kill entity
 kill @s

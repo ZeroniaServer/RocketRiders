@@ -129,12 +129,12 @@ execute if entity @s[tag=YellowLift,tag=!UnableMissile] positioned ~-1 ~-5 ~-10 
 execute if entity @s[tag=YellowLift,tag=!UnableMissile] positioned ~-1 ~-5 ~-10 run clone ~ ~ ~ ~2 ~2 ~6 ~ ~ ~ filtered observer[powered=true] force
 
 #Hypersonic
-execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 run clone ~ ~ ~ ~1 ~2 ~7 ~ ~ ~ filtered tnt force
-execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 run clone ~ ~ ~ ~1 ~2 ~7 ~ ~ ~ filtered redstone_block force
-execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 run clone ~ ~ ~ ~1 ~2 ~7 ~ ~ ~ filtered observer[powered=true] force
-execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-12 run clone ~ ~ ~ ~1 ~2 ~7 ~ ~ ~ filtered tnt force
-execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-12 run clone ~ ~ ~ ~1 ~2 ~7 ~ ~ ~ filtered redstone_block force
-execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-12 run clone ~ ~ ~ ~1 ~2 ~7 ~ ~ ~ filtered observer[powered=true] force
+execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 run clone ~ ~ ~ ~2 ~2 ~9 ~ ~ ~ filtered tnt force
+execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 run clone ~ ~ ~ ~2 ~2 ~9 ~ ~ ~ filtered redstone_block force
+execute if entity @s[tag=BlueHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~5 run clone ~ ~ ~ ~2 ~2 ~9 ~ ~ ~ filtered observer[powered=true] force
+execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-14 run clone ~ ~ ~ ~2 ~2 ~9 ~ ~ ~ filtered tnt force
+execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-14 run clone ~ ~ ~ ~2 ~2 ~9 ~ ~ ~ filtered redstone_block force
+execute if entity @s[tag=YellowHyper,tag=!UnableMissile] positioned ~-1 ~-6 ~-14 run clone ~ ~ ~ ~2 ~2 ~9 ~ ~ ~ filtered observer[powered=true] force
 
 #Bullet
 execute if entity @s[tag=BlueBull,tag=!UnableMissile] positioned ~-1 ~-6 ~4 run clone ~ ~ ~ ~2 ~2 ~12 ~ ~ ~ filtered tnt force

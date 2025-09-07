@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "get_directly_killed_by_another_player": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:player"
+        }
+      }
+    },
+    "get_killed_by_custom_explosion": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:creeper",
+          "predicates": {
+            "minecraft:custom_data": {
+              "explosion": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_directly_killed_by_another_player",
+      "get_killed_by_custom_explosion"
+    ]
+  ],
+  "rewards": {
+    "function": "custom:event/player_directly_killed_by_another_player/main"
+  }
+}

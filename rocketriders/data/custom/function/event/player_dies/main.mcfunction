@@ -31,20 +31,20 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] if
 
 ## Mob Kill Credit (creeper explosions & bees)
 # Extract origin UUID
-scoreboard players set $direct_attacker var 0
-execute on attacker run scoreboard players set $direct_attacker var 1
+scoreboard players set $attacker_still_exists var 0
+execute on attacker run scoreboard players set $attacker_still_exists var 1
 
 data modify storage rocketriders:main player_dies set value {}
-execute if score $direct_attacker var matches 1 on attacker run data modify storage rocketriders:main player_dies.killer_mob_origin set from entity @s[type=creeper] data.explosion.origin
-execute if score $direct_attacker var matches 1 on attacker run data modify storage rocketriders:main player_dies.killer_mob_origin set from entity @s[type=bee,predicate=entities:type/stinging_shield_bee] data.stinging_shield_bee.origin
+execute if score $attacker_still_exists var matches 1 on attacker run data modify storage rocketriders:main player_dies.killer_mob_origin set from entity @s[type=creeper] data.explosion.origin
+execute if score $attacker_still_exists var matches 1 on attacker run data modify storage rocketriders:main player_dies.killer_mob_origin set from entity @s[type=bee,predicate=entities:type/stinging_shield_bee] data.stinging_shield_bee.origin
 
 # If creeper killed indirectly (no origin from immediate creeper explosion), use last_creeper_damage_origin_uuid
 execute store success score $last_damaged_by_creeper var if score @s last_creeper_damage_origin_uuid.0 = @s last_creeper_damage_origin_uuid.0
-execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 run data modify storage rocketriders:main player_dies.killer_mob_origin set value [I;0,0,0,0]
-execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[0] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.0
-execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[1] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.1
-execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[2] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.2
-execute if score $direct_attacker var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[3] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.3
+execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 run data modify storage rocketriders:main player_dies.killer_mob_origin set value [I;0,0,0,0]
+execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[0] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.0
+execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[1] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.1
+execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[2] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.2
+execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[3] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.3
 
 # Locate player by UUID and reward them 1 kill credit
 scoreboard players set $team var -1
@@ -58,6 +58,16 @@ scoreboard players reset @s last_creeper_damage_origin_uuid.0
 scoreboard players reset @s last_creeper_damage_origin_uuid.1
 scoreboard players reset @s last_creeper_damage_origin_uuid.2
 scoreboard players reset @s last_creeper_damage_origin_uuid.3
+
+
+## Revenge from the Grave
+execute if entity @s[tag=attacker_died] on attacker run advancement grant @s only achievements:rr_challenges/revenge_from_grave
+
+tag @s add match_attacker
+execute as @e[x=0,type=player,predicate=custom:on_blue_or_yellow_team] if function custom:match_attacker run tag @s add attacker_died
+tag @s remove match_attacker
+
+tag @s remove attacker_died
 
 
 ## Death-Specific

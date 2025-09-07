@@ -1,0 +1,49 @@
+[
+  {
+    "condition": "minecraft:reference",
+    "name": "custom:is_traversing"
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "input": {
+              "forward": true
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "input": {
+              "backward": false,
+              "left": true
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "input": {
+              "backward": false,
+              "right": true
+            }
+          }
+        }
+      }
+    ]
+  }
+]

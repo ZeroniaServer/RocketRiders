@@ -5,7 +5,7 @@
         "predicate": {
             "position": {
                 "z": {
-                    "min": 0
+                    "min": 0.5
                 }
             }
         }

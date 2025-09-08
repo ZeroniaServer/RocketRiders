@@ -14,5 +14,6 @@ execute if items block 0 184 -16 container.0 *[count] store result score $damage
 
 function custom:_update_inventory_/get_loot_table_id with storage rocketriders:main update_inventory.item.components.minecraft:custom_data
 
-function custom:_update_inventory_/replace_item with storage rocketriders:main update_inventory
+execute if entity @s[type=item] on origin run function custom:_update_inventory_/replace_item with storage rocketriders:main update_inventory
+execute if entity @s[type=player] run function custom:_update_inventory_/replace_item with storage rocketriders:main update_inventory
 $item replace entity @s $(slot) from block 0 184 -16 container.0

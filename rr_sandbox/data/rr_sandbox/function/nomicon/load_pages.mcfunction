@@ -235,7 +235,7 @@ function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "powerups", tri
 function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "powerups", trigger_input_id: 34, item_loot_table: "items:misc/totem_of_undying", item_plain_name_singular: "Totem of Undying", item_plain_name_plural: "Totems of Undying", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_activate {dialog_name: "powerups", trigger_input_id: 35, item_loot_table: "items:misc/elytra", item_plain_name: "Elytra", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "powerups", trigger_input_id: 36, item_loot_table: "items:misc/trident", item_plain_name_singular: "Trident", item_plain_name_plural: "Tridents", color: "dark_purple"}
-function rr_sandbox:nomicon/load_pages/append_item_activate {dialog_name: "powerups", trigger_input_id: 37, item_loot_table: "items:misc/shooting_saber_infinity", item_plain_name: "Infinity Saber", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_activate {dialog_name: "powerups", trigger_input_id: 37, item_loot_table: {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:misc/shooting_saber"}],functions:[{function:"minecraft:reference",name:"items:shooting_saber/set_infinity"}]}]}, item_plain_name: "Infinity Saber", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "powerups", trigger_input_id: 38, item_loot_table: "items:misc/tipped_arrow_blindness", item_plain_name_singular: "Blindness Arrow", item_plain_name_plural: "Blindness Arrows", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "powerups", trigger_input_id: 39, item_loot_table: "items:misc/tipped_arrow_levitation", item_plain_name_singular: "Levitation Arrow", item_plain_name_plural: "Levitation Arrows", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "powerups", trigger_input_id: 40, item_loot_table: "items:misc/tipped_arrow_slowness", item_plain_name_singular: "Slowness Arrow", item_plain_name_plural: "Slowness Arrows", color: "dark_purple"}
@@ -377,10 +377,11 @@ data modify storage rocketriders:nomicon dialogs.experimental.dialog set value {
   }\
 }
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 54, item_loot_table: "items:experimental/building_block", item_plain_name_singular: "Building Block", item_plain_name_plural: "Building Blocks", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "experimental", trigger_input_id: 53, item_loot_table: "items:experimental/shooting_saber_multishot", item_plain_name: "Multishot Saber", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_activate {dialog_name: "experimental", trigger_input_id: 53, item_loot_table: {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:misc/shooting_saber"}],functions:[{function:"minecraft:reference",name:"items:shooting_saber/set_multishot"}]}]}, item_plain_name: "Multishot Saber", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 50, item_loot_table: "items:experimental/invisibility_potion", item_plain_name_singular: "Invisibility Potion", item_plain_name_plural: "Invisibility Potions", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_arrow {dialog_name: "experimental", trigger_input_id: 52, item_loot_table: "items:experimental/spectral_arrow", item_plain_name_singular: "Spectral Arrow", item_plain_name_plural: "Spectral Arrows", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 51, item_loot_table: "items:experimental/jump_boost_potion", item_plain_name_singular: "Jump Boost Potion", item_plain_name_plural: "Jump Boost Potions", color: "dark_purple"}
+
 
 ##
 ## All

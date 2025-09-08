@@ -51,6 +51,38 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:attribute_modifiers": [
+                  {
+                    "id": "rocketriders:saber",
+                    "type": "attack_damage",
+                    "amount": 2.5,
+                    "operation": "add_value",
+                    "slot": "mainhand"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/decreased_shooting_saber_attack_damage"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "!minecraft:attribute_modifiers": {}
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:game_ended"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
                 "minecraft:item_name": {
                   "translate": "Shooting Saber",
                   "bold": true,
@@ -373,6 +405,46 @@
                   "scores": {
                     "custom_team_color": 12
                   }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:shooting_saber/set_multishot",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "items:shooting_saber/multishot"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:shooting_saber/set_infinity",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "items:shooting_saber/infinity"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "translate": "Multishot-Infinity Saber",
+                  "bold": true,
+                  "color": "dark_purple"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "items:shooting_saber/infinity"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "items:shooting_saber/multishot"
                 }
               ]
             }

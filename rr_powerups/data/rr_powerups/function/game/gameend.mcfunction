@@ -12,9 +12,9 @@ scoreboard players set @e[x=0,type=marker,tag=captureMiddle] yCapturedTime 0
 scoreboard players set @e[x=0,type=marker,tag=captureMiddle] captureBlue 0
 scoreboard players set @e[x=0,type=marker,tag=captureMiddle] captureYellow 0
 scoreboard players set @e[x=0,type=marker,tag=captureMiddle] capturePoint 0
-execute if entity @s[scores={endtimer=1}] as @a[x=0,tag=Infinity] run clear @s bow
-scoreboard players reset @a[x=0,tag=Infinity] infinity
-tag @a[x=0] remove Infinity
+scoreboard players reset @a shooting_saber.infinity_time
+scoreboard players reset @a shooting_saber.multishot_time
+execute if entity @s[scores={endtimer=1}] as @a[x=0] run function custom:update_inventory/shooting_saber
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_powerups:capture_progress players none
 execute if entity @s[scores={endtimer=1..}] run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] capturePoint 0
 #Preclear

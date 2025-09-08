@@ -45,7 +45,7 @@ execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @
 #Hotfix for being able to keep charging bow from queue
 execute if score @s count matches 600 run clear @a[x=0,team=Blue,scores={crusadekit=2}] bow
 execute if score @s count matches 600 run clear @a[x=0,team=Yellow,scores={crusadekit=2}] bow
-execute if score @s count matches 600 as @a[x=0,scores={crusadekit=2}] run loot replace entity @s hotbar.0 loot items:misc/shooting_saber_crusade
+execute if score @s count matches 600 as @a[x=0,scores={crusadekit=2}] run loot replace entity @s hotbar.0 loot items:misc/shooting_saber
 execute if score @s count matches 600 as @a[x=0,scores={crusadekit=2}] run tag @s remove fullOffhand
 #Hotfix for being able to cast spells in queue
 execute if score @s count matches 600 run scoreboard players reset @a[x=0,predicate=custom:on_blue_or_yellow_team] useWand

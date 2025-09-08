@@ -40,3 +40,6 @@ execute if items entity @s player.crafting.0 * run function custom:_update_inven
 execute if items entity @s player.crafting.1 * run function custom:_update_inventory_/update_slot {slot:"player.crafting.1"}
 execute if items entity @s player.crafting.2 * run function custom:_update_inventory_/update_slot {slot:"player.crafting.2"}
 execute if items entity @s player.crafting.3 * run function custom:_update_inventory_/update_slot {slot:"player.crafting.3"}
+tag @s add matchOrigin
+execute as @e[x=0,type=item] if function custom:match_origin run function custom:_update_inventory_/update_slot {slot:"contents"}
+tag @s remove matchOrigin

@@ -4,11 +4,11 @@ clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_ro
 #Replacing Shooting Sabers
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents bow run kill
 execute if entity @s[scores={endtimer=1}] run clear @a[x=0,scores={crusadekit=2},predicate=custom:on_blue_or_yellow_team] bow
-execute if entity @s[tag=BothWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
-execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
-execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_end
-execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_crusade
-execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber_end
+execute if entity @s[tag=BothWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber
+execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber
+execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber
+execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber
+execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=2}] run loot give @s loot items:misc/shooting_saber
 
 #Replacing Spell Wands
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents writable_book run function items:killendweapon

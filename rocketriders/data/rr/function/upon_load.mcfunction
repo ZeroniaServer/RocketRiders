@@ -96,6 +96,9 @@ scoreboard objectives add cluster_fireball.time dummy
 scoreboard objectives add flag_tablist_display dummy
 scoreboard objectives modify flag_tablist_display numberformat blank
 
+scoreboard objectives add shooting_saber.infinity_time dummy
+scoreboard objectives add shooting_saber.multishot_time dummy
+
 scoreboard objectives add primary_damage_origin_uuid.0 dummy
 scoreboard objectives add primary_damage_origin_uuid.1 dummy
 scoreboard objectives add primary_damage_origin_uuid.2 dummy
@@ -276,7 +279,6 @@ scoreboard objectives add FireballSpawned minecraft.used:minecraft.blaze_spawn_e
 scoreboard objectives add BSurpriseSpawned minecraft.used:minecraft.squid_spawn_egg
 scoreboard objectives add YSurpriseSpawned minecraft.used:minecraft.cod_spawn_egg
 scoreboard objectives add BowShot minecraft.used:minecraft.bow
-scoreboard objectives add infinity dummy
 scoreboard objectives add notBackwards dummy
 scoreboard objectives add standStill dummy
 scoreboard objectives add timeSinceJump dummy
@@ -326,8 +328,6 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "piercing_pickaxe/end": "items:misc/piercing_pickaxe_end",\
     "piercing_pickaxe/nomicon": "items:misc/piercing_pickaxe_nomicon",\
     "shooting_saber": "items:misc/shooting_saber",\
-    "shooting_saber/crusade": "items:misc/shooting_saber_crusade",\
-    "shooting_saber/end": "items:misc/shooting_saber_end",\
     "shooting_saber/infinity": "items:misc/shooting_saber_infinity",\
     "shooting_saber/multishot": "items:experimental/shooting_saber_multishot",\
     "slap_fish": "items:misc/slap_fish",\

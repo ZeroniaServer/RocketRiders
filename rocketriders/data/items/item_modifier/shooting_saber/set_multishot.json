@@ -1,0 +1,18 @@
+[
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:item_name": {
+        "translate": "Multishot Saber",
+        "bold": true,
+        "color": "dark_purple"
+      }
+    }
+  },
+  {
+    "function": "minecraft:set_enchantments",
+    "enchantments": {
+      "minecraft:multishot": 1
+    }
+  }
+]

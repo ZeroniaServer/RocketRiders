@@ -2,7 +2,7 @@ clear @a[x=0,team=Blue] #custom:clear
 clear @a[x=0,team=Blue] *[custom_data~{id:"nova_rocket"}]
 function rr_chase:game/overwrite
 execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Winner,limit=1] if entity @e[x=0,type=armor_stand,tag=chaseEnabled] run function custom:update_armor
-execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Loser] run function rr_chase:chasegear/losesaber
+execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Loser] run loot give @s loot items:misc/shooting_saber
 execute if entity @s[scores={endtimer=1}] run effect give @a[x=0,team=Blue,tag=Loser] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1}] run function rr_chase:game/endstats
 scoreboard players reset * FlagScore

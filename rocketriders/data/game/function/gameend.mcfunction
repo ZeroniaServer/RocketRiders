@@ -12,10 +12,8 @@ tag @s[scores={endtimer=1}] remove gaveFirstItem
 scoreboard players reset @s[scores={endtimer=1..}] SDtime
 execute if entity @s[scores={endtimer=1}] run effect clear @a[x=0,team=Blue]
 execute if entity @s[scores={endtimer=1}] run effect clear @a[x=0,team=Yellow]
-execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[x=0,team=Blue] bow
-execute if entity @s[scores={endtimer=1},tag=!noSabers] run clear @a[x=0,team=Yellow] bow
 execute if entity @s[scores={endtimer=1},tag=!noSabers] as @e[x=0,type=item] if items entity @s contents bow run kill
-execute if entity @s[scores={endtimer=1},tag=!noSabers] run function game:endsabers
+execute if entity @s[scores={endtimer=1},tag=!noSabers] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:update_inventory/shooting_saber
 execute if entity @s[tag=BlueWon] run effect give @a[x=0,team=Yellow] weakness infinite 100 true
 execute if entity @s[tag=YellowWon] run effect give @a[x=0,team=Blue] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1..100}] run worldborder warning distance 0

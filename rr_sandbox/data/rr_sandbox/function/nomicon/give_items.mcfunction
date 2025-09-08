@@ -37,7 +37,7 @@ execute if score @s nomicon matches 33 run function rr_powerups:items/powerup/gi
 execute if score @s nomicon matches 34 run function rr_powerups:items/powerup/givetotem
 execute if score @s nomicon matches 35 run function rr_powerups:items/powerup/giveelytra
 execute if score @s nomicon matches 36 run function rr_powerups:items/powerup/givetrident
-execute if score @s nomicon matches 37 run function rr_powerups:items/powerup/giveinfinity
+execute if score @s nomicon matches 37 run function items:shooting_saber/infinity_30_seconds
 execute if score @s nomicon matches 37 run scoreboard players set @s nomicon 0
 execute if score @s nomicon matches 37 run return run scoreboard players set $rolls var 0
 execute if score @s nomicon matches 38 run function rr_powerups:items/arrow/giveblindarrow
@@ -58,7 +58,9 @@ execute if score @s nomicon matches 49 if entity @s[team=Yellow] run function it
 execute if score @s nomicon matches 50 run loot give @s loot items:experimental/invisibility_potion
 execute if score @s nomicon matches 51 run loot give @s loot items:experimental/jump_boost_potion
 execute if score @s nomicon matches 52 run function items:experimental/give_spectral_arrows
-execute if score @s nomicon matches 53 run loot give @s loot items:experimental/shooting_saber_multishot
+execute if score @s nomicon matches 53 run function items:shooting_saber/multishot_30_seconds
+execute if score @s nomicon matches 53 run scoreboard players set @s nomicon 0
+execute if score @s nomicon matches 53 run return run scoreboard players set $rolls var 0
 execute if score @s nomicon matches 54 run loot give @s loot items:experimental/building_block
 
 scoreboard players remove $rolls var 1

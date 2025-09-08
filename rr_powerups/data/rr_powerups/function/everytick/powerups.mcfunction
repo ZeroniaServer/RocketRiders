@@ -21,17 +21,3 @@ execute as @a[x=0,predicate=custom:has_trident_in_inventory,predicate=custom:on_
 tag @e[x=0,type=trident,nbt={inGround:1b},tag=!return] add return
 execute as @e[x=0,type=trident,tag=return] if items entity @s contents *[damage=7] at @s run function rr_powerups:everytick/trident_break
 execute if entity @s[tag=!doStacking] as @e[x=0,type=trident,tag=return] at @s run function rr_powerups:everytick/trident_antidupe
-
-#infinity saber
-scoreboard players reset @a[x=0,tag=Infinity,predicate=!custom:on_blue_or_yellow_team] infinity
-tag @a[x=0,tag=Infinity,predicate=!custom:on_blue_or_yellow_team] remove Infinity
-scoreboard players add @a[x=0,tag=Infinity,predicate=custom:on_blue_or_yellow_team] infinity 1
-execute as @a[x=0,tag=Infinity,predicate=custom:on_blue_or_yellow_team,scores={infinity=600..}] at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 1 1.5
-execute as @a[x=0,tag=Infinity,team=Blue,scores={infinity=600..}] run function rr_powerups:items/saber/normal/blue
-execute as @a[x=0,tag=Infinity,team=Yellow,scores={infinity=600..}] run function rr_powerups:items/saber/normal/yellow
-# execute as @a[x=0,team=Yellow,tag=Infinity,scores={infinity=600..}] run loot give @s loot items:misc/shooting_saber
-# execute as @a[x=0,team=Blue,tag=Infinity,scores={infinity=600..}] run loot give @s loot items:misc/shooting_saber
-title @a[x=0,tag=Infinity,predicate=custom:on_blue_or_yellow_team,scores={infinity=600..}] actionbar {"text":"Infinity Saber expired.","color":"red"}
-tag @a[x=0,tag=Infinity,predicate=custom:on_blue_or_yellow_team,scores={infinity=600..}] add DelayActionbar
-tag @a[x=0,tag=Infinity,predicate=custom:on_blue_or_yellow_team,scores={infinity=600..}] remove Infinity
-scoreboard players reset @a[x=0,predicate=custom:on_blue_or_yellow_team,scores={infinity=600..}] infinity

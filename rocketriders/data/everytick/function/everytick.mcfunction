@@ -18,6 +18,12 @@ execute as @a[scores={event.player_uses_written_book=1..}] at @s run function cu
 execute as @a[scores={time_since_attack=101..,primary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
 execute as @a[scores={time_since_attack=101..,secondary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
 
+# Item timers
+scoreboard players remove @a[x=0,scores={shooting_saber.infinity_time=1..}] shooting_saber.infinity_time 1
+execute as @a[x=0,scores={shooting_saber.infinity_time=..0}] run function items:shooting_saber/infinity_deactivate
+scoreboard players remove @a[x=0,scores={shooting_saber.multishot_time=1..}] shooting_saber.multishot_time 1
+execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items:shooting_saber/multishot_deactivate
+
 # Process primed TNT
 scoreboard players set $instant_explosion_buffer var -1
 execute as @e[x=0,type=tnt,tag=!tnt.processed] at @s run function game:tnt/init

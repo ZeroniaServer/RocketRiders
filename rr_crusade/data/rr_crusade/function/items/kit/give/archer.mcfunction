@@ -2,7 +2,7 @@ execute if entity @s[tag=JoinBlue,scores={crusadekit=2}] run scoreboard players 
 execute if entity @s[tag=JoinYellow,scores={crusadekit=2}] run scoreboard players reset @s crusadekit
 
 execute unless entity @s[scores={crusadekit=2}] run clear @s
-execute unless entity @s[scores={crusadekit=2}] run loot replace entity @s hotbar.0 loot items:misc/shooting_saber_crusade
+execute unless entity @s[scores={crusadekit=2}] run loot replace entity @s hotbar.0 loot items:misc/shooting_saber
 execute unless entity @s[scores={crusadekit=2}] run function custom:update_armor
 
 execute unless entity @s[scores={crusadekit=2}] run tag @s remove fullOffhand

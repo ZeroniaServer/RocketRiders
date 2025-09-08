@@ -4,7 +4,7 @@
     "type": "minecraft:score",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$main_item/bow"
+      "name": "$main_item/shooting_saber"
     },
     "score": "gamemode_components"
   },

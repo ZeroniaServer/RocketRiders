@@ -2,7 +2,7 @@ scoreboard players reset * gamemode_components
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $config_override.collision_control gamemode_components -1
 scoreboard players set $armor/generic gamemode_components 1
-scoreboard players set $main_item/bow gamemode_components 1
+scoreboard players set $main_item/shooting_saber gamemode_components 1
 scoreboard players set $custom_team_colors gamemode_components 1
 scoreboard players set $no_portals gamemode_components 1
 scoreboard players set $neutral_utility_colors gamemode_components 1

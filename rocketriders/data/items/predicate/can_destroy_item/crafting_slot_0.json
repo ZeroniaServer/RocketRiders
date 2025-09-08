@@ -10,8 +10,8 @@
         {
           "condition": "minecraft:all_of",
           "terms": [
-            {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/bow"},
-            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"items":"minecraft:bow"}}}}
+            {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/shooting_saber"},
+            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"predicates":{"minecraft:custom_data":{"id":"shooting_saber"}}}}}}
           ]
         },
         {
@@ -41,7 +41,7 @@
           "terms": [
             {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/crusade_kit_dependent"},
             {"condition":"minecraft:reference","name":"rr_crusade:kit/archer"},
-            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"items":"minecraft:bow"}}}}
+            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"predicates":{"minecraft:custom_data":{"id":"shooting_saber"}}}}}}
           ]
         },
         {

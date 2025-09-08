@@ -135,7 +135,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customVoid
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $crusade_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $config_override.hobbits gamemode_components -1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!ctfEnabled] run scoreboard players set $main_item/bow gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!ctfEnabled] run scoreboard players set $main_item/shooting_saber gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $main_item/pickaxe gamemode_components 1
 

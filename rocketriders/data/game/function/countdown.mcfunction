@@ -48,8 +48,7 @@ execute if predicate game:game_started run effect give @a[x=0,team=Yellow] fire_
 execute if predicate game:game_started run gamemode survival @a[x=0,team=Yellow]
 execute if predicate game:game_started run gamemode survival @a[x=0,team=Blue]
 #Hotfix for being able to keep charging bow from queue
-execute if predicate game:game_started if entity @s[tag=!noSabers] run clear @a[x=0,team=Blue] bow
-execute if predicate game:game_started if entity @s[tag=!noSabers] run clear @a[x=0,team=Yellow] bow
+execute if predicate game:game_started if entity @s[tag=!noSabers] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] bow
 execute if predicate game:game_started if entity @s[tag=!noSabers] as @a[x=0,team=Blue] run function game:saberblue
 execute if predicate game:game_started if entity @s[tag=!noSabers] as @a[x=0,team=Yellow] run function game:saberyellow
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]

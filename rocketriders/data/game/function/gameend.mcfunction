@@ -6,7 +6,7 @@
 scoreboard players add @s endtimer 1
 execute as @a run function custom:player_action/forget_all_canopies
 function everytick:spawnables
-execute if score @s endtimer matches 1 run function custom:set_global/game_started {bool:false}
+execute if score @s endtimer matches 1 run scoreboard players reset $game_started global
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
 scoreboard players reset @s[scores={endtimer=1..}] SDtime

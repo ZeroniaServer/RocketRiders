@@ -3,7 +3,7 @@ scoreboard players set $game_ended global 1
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s *[custom_data~{id:"nova_rocket"}]
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s
-function custom:set_global/game_started {bool:false}
+scoreboard players reset $game_started global
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Countdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove forceCountdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove bossbarOverride

@@ -27,4 +27,4 @@ scoreboard players set @s[scores={count=1..}] PowerupDisplay 45
 execute if entity @s[scores={count=1..}] run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] captureYellow 0
 execute if entity @s[scores={count=1..}] run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] captureBlue 0
 execute if entity @s[scores={count=1..}] run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] capturePoint 0
-execute unless predicate game:game_ended if score @s count matches 600 run function custom:set_global/game_started {bool:true}
+execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1

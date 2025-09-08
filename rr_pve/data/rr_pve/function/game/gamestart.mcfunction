@@ -35,4 +35,4 @@ execute unless predicate game:game_started if entity @s[tag=EditedSettings] if e
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] run function game:restartcountdown
 execute if entity @s[tag=EditedSettings] unless entity @a[x=0,team=Blue] run kill @e[x=0,type=armor_stand,tag=Bot]
 execute unless predicate game:game_ended if entity @s[scores={count=590..600}] run kill @e[x=0,type=armor_stand,tag=Bot]
-execute unless predicate game:game_ended if score @s count matches 600 run function custom:set_global/game_started {bool:true}
+execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1

@@ -27,4 +27,4 @@ execute unless predicate game:game_ended if score @s count matches 600 run score
 execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set SwapPlatformSec swapside 60
 execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set SwapPlatformTick swapside 0
 execute unless predicate game:game_ended if score @s count matches 600 run function rr_swap:items/tetrisreset
-execute unless predicate game:game_ended if score @s count matches 600 run function custom:set_global/game_started {bool:true}
+execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1

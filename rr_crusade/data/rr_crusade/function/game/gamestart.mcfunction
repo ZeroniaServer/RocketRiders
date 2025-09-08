@@ -54,4 +54,4 @@ execute if score @s count matches 600 run clear @a[x=0,team=Yellow,scores={crusa
 execute if score @s count matches 600 as @a[x=0,scores={crusadekit=1}] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
 execute if score @s count matches 600 run summon marker 33 63 -66 {Tags:["airDetectBlue"]}
 execute if score @s count matches 600 run summon marker 33 63 66 {Tags:["airDetectYellow"]}
-execute unless predicate game:game_ended if score @s count matches 600 run function custom:set_global/game_started {bool:true}
+execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1

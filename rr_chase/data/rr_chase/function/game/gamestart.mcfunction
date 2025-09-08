@@ -46,7 +46,7 @@ execute unless predicate game:game_started as @a[x=0,team=Blue] run attribute @s
 execute as @a[x=0,team=!Blue] run attribute @s minecraft:knockback_resistance base set 0.0
 execute if score @s count matches 600 unless predicate rr:is_cubekrowd as @a[x=0,team=Blue] run function rr_chase:chasegear/sabermsg
 execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
-execute unless predicate game:game_ended if score @s count matches 600 run function custom:set_global/game_started {bool:true}
+execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1
 execute unless predicate game:game_ended if score @s count matches 600 run tp @a[x=0,team=Blue] 12 64 -66 0 0
 execute unless predicate game:game_ended if score @s count matches 600 run spawnpoint @a[x=0,team=Blue] 12 64 -66 0
 execute unless predicate game:game_ended if score @s count matches 600 run tag @a[x=0,team=Blue] add onBlue

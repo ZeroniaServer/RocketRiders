@@ -43,7 +43,7 @@ execute if entity @s[scores={SDtime=1}] run scoreboard players reset $game_ended
 execute if entity @s[scores={SDtime=1}] run function achievements:scoresreset
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Blue]
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Yellow]
-execute if entity @s[scores={SDtime=1}] run function custom:set_global/game_started {bool:true}
+execute if entity @s[scores={SDtime=1}] run scoreboard players set $game_started global 1
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
 execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] run function game:fixfireball
 execute if entity @s[scores={SDtime=1}] as @e[x=0,type=dragon_fireball,tag=endFireball] run function game:fixfireball

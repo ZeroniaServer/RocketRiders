@@ -183,6 +183,12 @@ scoreboard objectives remove moleratConfirm
 scoreboard objectives remove ArmorColor
 scoreboard objectives remove Clustertime
 
+# Remove removed-in-dev objectives
+scoreboard objectives remove last_creeper_damage_origin_uuid.0
+scoreboard objectives remove last_creeper_damage_origin_uuid.1
+scoreboard objectives remove last_creeper_damage_origin_uuid.2
+scoreboard objectives remove last_creeper_damage_origin_uuid.3
+
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth
 scoreboard objectives remove nnhealth_mod

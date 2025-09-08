@@ -8,6 +8,15 @@ execute unless predicate game:game_started run scoreboard players remove @s deat
 execute if predicate game:game_started if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameEnd] run scoreboard players remove @s deaths 1
 
 
+## Mark projectiles as pre-death
+tag @s add matchOrigin
+execute as @e[type=#arrows] if function custom:match_origin run data modify entity @s data.pre_death_projectile set value true
+execute as @e[type=tnt] if function custom:match_origin run data modify entity @s data.pre_death_projectile set value true
+execute as @e[predicate=entities:type/icbm] if function custom:match_origin run data modify entity @s data.pre_death_projectile set value true
+execute as @e[predicate=entities:type/nova_rocket/brain] if function custom:match_origin run data modify entity @s data.pre_death_projectile set value true
+tag @s remove matchOrigin
+
+
 ## Achievements
 scoreboard players set $can_grant_achievements var 0
 execute if predicate game:game_started if predicate rr:has_achievements if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run scoreboard players set $can_grant_achievements var 1
@@ -28,46 +37,19 @@ execute if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities
 execute if entity @s[team=Yellow] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
 
-
-## Mob Kill Credit (creeper explosions & bees)
-# Extract origin UUID
-scoreboard players set $attacker_still_exists var 0
-execute on attacker run scoreboard players set $attacker_still_exists var 1
-
-data modify storage rocketriders:main player_dies set value {}
-execute if score $attacker_still_exists var matches 1 on attacker run data modify storage rocketriders:main player_dies.killer_mob_origin set from entity @s[type=creeper] data.explosion.origin
-execute if score $attacker_still_exists var matches 1 on attacker run data modify storage rocketriders:main player_dies.killer_mob_origin set from entity @s[type=bee,predicate=entities:type/stinging_shield_bee] data.stinging_shield_bee.origin
-
-# If creeper killed indirectly (no origin from immediate creeper explosion), use last_creeper_damage_origin_uuid
-execute store success score $last_damaged_by_creeper var if score @s last_creeper_damage_origin_uuid.0 = @s last_creeper_damage_origin_uuid.0
-execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 run data modify storage rocketriders:main player_dies.killer_mob_origin set value [I;0,0,0,0]
-execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[0] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.0
-execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[1] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.1
-execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[2] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.2
-execute if score $attacker_still_exists var matches 0 if score $last_damaged_by_creeper var matches 1 store result storage rocketriders:main player_dies.killer_mob_origin[3] int 1 run scoreboard players get @s last_creeper_damage_origin_uuid.3
-
-# Locate player by UUID and reward them 1 kill credit
-scoreboard players set $team var -1
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] store success score $team var if entity @s[team=!Blue]
-tag @s add player_dies.this
-execute if data storage rocketriders:main player_dies.killer_mob_origin positioned ~ -1000 ~ summon minecraft:area_effect_cloud run function custom:event/player_dies/target_killer_mob_origin
-tag @s remove player_dies.this
-
-# Forget creeper
-scoreboard players reset @s last_creeper_damage_origin_uuid.0
-scoreboard players reset @s last_creeper_damage_origin_uuid.1
-scoreboard players reset @s last_creeper_damage_origin_uuid.2
-scoreboard players reset @s last_creeper_damage_origin_uuid.3
-
-
-## Revenge from the Grave
-execute if entity @s[tag=attacker_died] on attacker run advancement grant @s only achievements:rr_challenges/revenge_from_grave
+# Revenge from the Grave
+tag @s[tag=killed_from_pre_death_projectile] add primary_attacker_died
+tag @s remove killed_from_pre_death_projectile
+execute if entity @s[tag=primary_attacker_died] run function custom:target_attackers/primary {run:"advancement grant @s only achievements:rr_challenges/revenge_from_grave"}
+execute if entity @s[tag=secondary_attacker_died] run function custom:target_attackers/secondary {run:"advancement grant @s only achievements:rr_challenges/revenge_from_grave"}
 
 tag @s add match_attacker
-execute as @e[x=0,type=player,predicate=custom:on_blue_or_yellow_team] if function custom:match_attacker run tag @s add attacker_died
+execute as @e[x=0,type=player,predicate=custom:on_blue_or_yellow_team] if function custom:match_attacker/primary run tag @s add primary_attacker_died
+execute as @e[x=0,type=player,predicate=custom:on_blue_or_yellow_team] if function custom:match_attacker/secondary run tag @s add secondary_attacker_died
 tag @s remove match_attacker
 
-tag @s remove attacker_died
+tag @s remove primary_attacker_died
+tag @s remove secondary_attacker_died
 
 
 ## Death-Specific
@@ -96,6 +78,20 @@ tag @s remove beenOnYellow
 tag @s remove beenOnBoth
 
 execute if entity @s[tag=CarryFlag] run function custom:event/player_dies/restore_flag
+
+
+## Forget previous damage origins and reset damage/attack timers
+scoreboard players reset @s primary_damage_origin_uuid.0
+scoreboard players reset @s primary_damage_origin_uuid.1
+scoreboard players reset @s primary_damage_origin_uuid.2
+scoreboard players reset @s primary_damage_origin_uuid.3
+scoreboard players reset @s secondary_damage_origin_uuid.0
+scoreboard players reset @s secondary_damage_origin_uuid.1
+scoreboard players reset @s secondary_damage_origin_uuid.2
+scoreboard players reset @s secondary_damage_origin_uuid.3
+scoreboard players set @s time_since_damage 0
+scoreboard players set @s time_since_attack 0
+
 
 ## If alive, instantly trigger respawn
 tag @s add player_dies.this

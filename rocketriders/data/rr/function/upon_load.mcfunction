@@ -88,10 +88,6 @@ scoreboard objectives add entity.age dummy
 scoreboard objectives add entity.speed dummy
 scoreboard objectives add entity.canopy.movement_cooldown dummy
 scoreboard objectives add entity.vortex.fuse dummy
-scoreboard objectives add last_creeper_damage_origin_uuid.0 dummy
-scoreboard objectives add last_creeper_damage_origin_uuid.1 dummy
-scoreboard objectives add last_creeper_damage_origin_uuid.2 dummy
-scoreboard objectives add last_creeper_damage_origin_uuid.3 dummy
 scoreboard objectives add time_since_tnt_punch custom:play_time
 scoreboard objectives add custom_team_color dummy
 scoreboard objectives add tnt.explosion_timestamp dummy
@@ -99,6 +95,17 @@ scoreboard objectives add intangible_arrow.despawn_buffer dummy
 scoreboard objectives add cluster_fireball.time dummy
 scoreboard objectives add flag_tablist_display dummy
 scoreboard objectives modify flag_tablist_display numberformat blank
+
+scoreboard objectives add primary_damage_origin_uuid.0 dummy
+scoreboard objectives add primary_damage_origin_uuid.1 dummy
+scoreboard objectives add primary_damage_origin_uuid.2 dummy
+scoreboard objectives add primary_damage_origin_uuid.3 dummy
+scoreboard objectives add secondary_damage_origin_uuid.0 dummy
+scoreboard objectives add secondary_damage_origin_uuid.1 dummy
+scoreboard objectives add secondary_damage_origin_uuid.2 dummy
+scoreboard objectives add secondary_damage_origin_uuid.3 dummy
+scoreboard objectives add time_since_damage custom:play_time
+scoreboard objectives add time_since_attack custom:play_time
 
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy

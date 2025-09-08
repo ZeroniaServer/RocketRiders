@@ -1,0 +1,71 @@
+{
+  "criteria": {
+    "get_directly_non_fatally_attacked_by_another_player": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:alive"
+          }
+        ],
+        "damage": {
+          "source_entity": {
+            "type": "minecraft:player"
+          }
+        }
+      }
+    },
+    "get_non_fatally_hurt_by_mob_with_damage_origins": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:alive"
+          }
+        ],
+        "damage": {
+          "source_entity": {
+            "predicates": {
+              "minecraft:custom_data": {
+                "damage_origin": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "get_directly_killed_by_another_player": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:player"
+        }
+      }
+    },
+    "get_killed_by_mob_with_damage_origins": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "entity": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "damage_origin": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_directly_non_fatally_attacked_by_another_player",
+      "get_non_fatally_hurt_by_mob_with_damage_origins",
+      "get_directly_killed_by_another_player",
+      "get_killed_by_mob_with_damage_origins"
+    ]
+  ],
+  "rewards": {
+    "function": "custom:event/player_directly_attacked_by_another_player/main"
+  }
+}

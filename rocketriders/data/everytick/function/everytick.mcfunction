@@ -15,6 +15,9 @@ scoreboard players set @e[x=0,type=player] flag.is_dead 0
 execute as @a[scores={event.player_uses_pig_spawn_egg=1..}] at @s run function custom:event/player_uses_pig_spawn_egg/main
 execute as @a[scores={event.player_uses_written_book=1..}] at @s run function custom:event/player_uses_written_book/main
 
+execute as @a[scores={time_since_attack=101..,primary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
+execute as @a[scores={time_since_attack=101..,secondary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
+
 # Process primed TNT
 scoreboard players set $instant_explosion_buffer var -1
 execute as @e[x=0,type=tnt,tag=!tnt.processed] at @s run function game:tnt/init

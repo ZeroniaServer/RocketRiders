@@ -46,7 +46,7 @@ execute if entity @s[scores={SDtime=1}] run tag @a[x=0] remove kitmage
 
 execute if entity @s[scores={SDtime=1}] at @s run effect give @a[x=0] blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] at @s run effect clear @a[x=0] blindness
-execute if entity @s[scores={SDtime=1}] at @s run tag @s remove GameEnd
+execute if entity @s[scores={SDtime=1}] run scoreboard players reset $game_ended global
 execute if entity @s[scores={SDtime=1}] run function achievements:scoresreset
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Blue]
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Yellow]

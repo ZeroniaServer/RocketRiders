@@ -23,8 +23,8 @@ execute unless predicate rr:wait_for_sufficient_players unless predicate game:ga
 execute unless predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Yellow] run tag @s add Countdown
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
-execute if entity @s[scores={count=600},tag=!GameEnd] run scoreboard players set QuickSwap swapside 0
-execute if entity @s[scores={count=600},tag=!GameEnd] run scoreboard players set SwapPlatformSec swapside 60
-execute if entity @s[scores={count=600},tag=!GameEnd] run scoreboard players set SwapPlatformTick swapside 0
-execute if entity @s[scores={count=600},tag=!GameEnd] run function rr_swap:items/tetrisreset
-execute if entity @s[scores={count=600},tag=!GameEnd] run function custom:set_global/game_started {bool:true}
+execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set QuickSwap swapside 0
+execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set SwapPlatformSec swapside 60
+execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set SwapPlatformTick swapside 0
+execute unless predicate game:game_ended if score @s count matches 600 run function rr_swap:items/tetrisreset
+execute unless predicate game:game_ended if score @s count matches 600 run function custom:set_global/game_started {bool:true}

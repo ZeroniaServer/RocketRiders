@@ -5,11 +5,11 @@ advancement revoke @s only custom:event/player_dies
 
 # Do not count towards deaths statistic during end game phase
 execute unless predicate game:game_started run scoreboard players remove @s deaths 1
-execute if predicate game:game_started if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameEnd] run scoreboard players remove @s deaths 1
+execute if predicate game:game_started if predicate game:game_ended run scoreboard players remove @s deaths 1
 
 
 ## Update statistics
-execute if predicate game:game_started unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=GameEnd] run function custom:event/player_dies/update_statistics
+execute if predicate game:game_started unless predicate game:game_ended run function custom:event/player_dies/update_statistics
 
 
 ## Mark projectiles as pre-death

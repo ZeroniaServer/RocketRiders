@@ -39,7 +39,7 @@ execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] run cle
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] as @a[x=0,team=Blue] run function game:saberblue
 execute if entity @s[scores={SDtime=1}] at @s run effect give @a[x=0] blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] at @s run effect clear @a[x=0] blindness
-execute if entity @s[scores={SDtime=1}] at @s run tag @s remove GameEnd
+execute if entity @s[scores={SDtime=1}] run scoreboard players reset $game_ended global
 execute if entity @s[scores={SDtime=1}] run function achievements:scoresreset
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Blue]
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Yellow]

@@ -54,8 +54,8 @@ execute if predicate custom:on_blue_or_yellow_team if predicate custom:invisible
 execute if predicate custom:on_blue_or_yellow_team if predicate custom:invisible run function custom:_update_armor_/make_invisible with storage rocketriders:main update_armor
 
 # Game Ending
-execute if entity @s[tag=Winner] if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=GameEnd] run loot replace block 0 184 -16 container.2 loot items:ending/celebratory_elytra
-execute if entity @s[tag=Loser] if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=GameEnd] run loot replace block 0 184 -16 container.3 loot items:ending/loser_banner
+execute if entity @s[tag=Winner] if predicate game:game_ended run loot replace block 0 184 -16 container.2 loot items:ending/celebratory_elytra
+execute if entity @s[tag=Loser] if predicate game:game_ended run loot replace block 0 184 -16 container.3 loot items:ending/loser_banner
 
 # Flag
 execute if predicate game:gamemode_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFY1] run item replace block 0 184 -16 container.3 with minecraft:yellow_banner[enchantments={binding_curse:1},tooltip_display={hidden_components:["enchantments"]}]

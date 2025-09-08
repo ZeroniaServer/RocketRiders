@@ -35,11 +35,11 @@ execute unless predicate game:game_started run scoreboard players set @a[x=0] dr
 execute unless predicate game:game_started run scoreboard players set @s canopyStreak 0
 execute unless predicate game:game_started run scoreboard players reset @a[x=0] MineWhiteGlass
 execute unless predicate game:game_started run scoreboard players reset @a[x=0] MinePurpleGlass
-execute unless predicate game:game_started if entity @s[tag=!GameEnd] run scoreboard players reset @a[x=0] FlagsCaptured
-execute if entity @s[scores={count=600}] run summon marker 38 63 -66 {Tags:["airDetectBlue"]}
-execute if entity @s[scores={count=600}] run summon marker 38 63 66 {Tags:["airDetectYellow"]}
-execute if entity @s[scores={count=600}] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Piercing Pickaxe ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if entity @s[scores={count=600}] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Piercing Pickaxe ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if entity @s[scores={count=600}] if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if entity @s[scores={count=600}] if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if entity @s[scores={count=600},tag=!GameEnd] run function custom:set_global/game_started {bool:true}
+execute unless predicate game:game_started unless predicate game:game_ended run scoreboard players reset @a[x=0] FlagsCaptured
+execute if score @s count matches 600 run summon marker 38 63 -66 {Tags:["airDetectBlue"]}
+execute if score @s count matches 600 run summon marker 38 63 66 {Tags:["airDetectYellow"]}
+execute if score @s count matches 600 unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Piercing Pickaxe ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if score @s count matches 600 unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Piercing Pickaxe ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute unless predicate game:game_ended if score @s count matches 600 run function custom:set_global/game_started {bool:true}

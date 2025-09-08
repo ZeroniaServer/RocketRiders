@@ -59,14 +59,14 @@ scoreboard players reset @a[x=0,scores={infinity=1..,LeaveGame=1..}] infinity
 #Voting message if in voting phase
 execute if entity @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[x=0,scores={LeaveGame=1..}] run function servermode:notifyvote
 #Notify game (if already selected)
-execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={LeaveGame=1..,LeaveMidgame=0},tag=!informMeLate] add informMe
-execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!SMSwitch] run scoreboard players add @a[x=0,scores={informMeLate=1..120}] informMeLate 1
-execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!SMSwitch] run scoreboard players add @a[x=0,tag=informMeLate] informMeLate 1
-execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={informMeLate=1..}] remove informMeLate
-execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={informMeLate=120..}] add informMe
-execute if entity @s[tag=!GameEnd,tag=EditedSettings,tag=!SMSwitch] run scoreboard players reset @a[x=0,tag=informMe] informMeLate
-execute unless entity @s[tag=!GameEnd,tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0] remove informMeLate
-execute unless entity @s[tag=!GameEnd,tag=EditedSettings,tag=!SMSwitch] run scoreboard players reset @a[x=0] informMeLate
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={LeaveGame=1..,LeaveMidgame=0},tag=!informMeLate] add informMe
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run scoreboard players add @a[x=0,scores={informMeLate=1..120}] informMeLate 1
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run scoreboard players add @a[x=0,tag=informMeLate] informMeLate 1
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={informMeLate=1..}] remove informMeLate
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={informMeLate=120..}] add informMe
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run scoreboard players reset @a[x=0,tag=informMe] informMeLate
+execute unless entity @s[predicate=!game:game_ended,tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0] remove informMeLate
+execute unless entity @s[predicate=!game:game_ended,tag=EditedSettings,tag=!SMSwitch] run scoreboard players reset @a[x=0] informMeLate
 
 #Reset
 scoreboard players set @a[x=0,scores={LeaveGame=1..}] LeaveMidgame 0

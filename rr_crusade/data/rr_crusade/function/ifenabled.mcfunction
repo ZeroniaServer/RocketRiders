@@ -12,17 +12,17 @@ function rr_crusade:tip
 #game
 function rr_crusade:game/gamestart
 execute if predicate game:game_started run function rr_crusade:game/ingame
-execute if entity @s[tag=GameEnd] run function rr_crusade:game/gameend
+execute if predicate game:game_ended run function rr_crusade:game/gameend
 execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
 execute as @e[x=0,type=item] run function everytick:no_drop
 
 #Arrow pickup
-execute if entity @s[tag=!GameEnd] if entity @e[x=0,type=#arrows] run function rr_crusade:game/arrow_pickup
+execute unless predicate game:game_ended if entity @e[x=0,type=#arrows] run function rr_crusade:game/arrow_pickup
 
 #kits
-execute if entity @s[tag=EditedSettings,tag=!GameEnd] run scoreboard players enable @a[x=0,team=!Lobby,team=!Developer,team=!Spectator] crusadechange
-execute unless predicate game:game_started if entity @s[tag=GameEnd] run scoreboard players reset @a[x=0] crusadechange
-execute if predicate game:game_started if entity @s[tag=GameEnd] run scoreboard players reset @a[x=0,scores={deathCooldown=5}] crusadechange
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings] run scoreboard players enable @a[x=0,team=!Lobby,team=!Developer,team=!Spectator] crusadechange
+execute unless predicate game:game_started if predicate game:game_ended run scoreboard players reset @a[x=0] crusadechange
+execute if predicate game:game_started if predicate game:game_ended run scoreboard players reset @a[x=0,scores={deathCooldown=5}] crusadechange
 execute unless predicate game:game_started as @a[x=0,scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
 execute unless predicate game:game_started as @a[x=0,scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
 execute unless predicate game:game_started as @a[x=0,scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage

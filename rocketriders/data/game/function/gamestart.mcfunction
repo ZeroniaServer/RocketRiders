@@ -35,7 +35,7 @@ execute unless predicate game:game_started unless entity @s[scores={endtimer=1..
 execute as @a[x=0] if score @s joinBlue matches 1 if predicate rr:is_cubekrowd run function servermode:joinblue
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinBlue
 execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinBlue
-execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinBlue
+execute if predicate game:game_ended run tag @a[x=0] remove JoinBlue
 execute if entity @s[tag=BlueFull] run tag @a[x=0] remove JoinBlue
 execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=-1..0},tag=!BlueFull] as @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute unless predicate game:game_rules/disable_team_balancing/on unless entity @s[scores={largerTeam=-1..0},tag=!BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
@@ -71,7 +71,7 @@ execute if entity @a[x=0,tag=JoinBlue] run function lobby:cancelsettings/reset
 execute as @a[x=0] if score @s joinYellow matches 1 if predicate rr:is_cubekrowd run function servermode:joinyellow
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinYellow
 execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinYellow
-execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinYellow
+execute if predicate game:game_ended run tag @a[x=0] remove JoinYellow
 execute if entity @s[tag=YellowFull] run tag @a[x=0] remove JoinYellow
 execute if score $dust CmdData matches 1 if entity @s[tag=EditedSettings,scores={largerTeam=0..1},tag=!YellowFull] as @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:yellow_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute unless predicate game:game_rules/disable_team_balancing/on unless entity @s[scores={largerTeam=0..1},tag=!YellowFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] add join_pad.show_barrier
@@ -102,7 +102,7 @@ execute if entity @a[x=0,tag=JoinYellow] run function lobby:cancelsettings/reset
 execute as @a[x=0] if score @s spectate matches 1 if predicate rr:is_cubekrowd run function servermode:spectate
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinSpec
 execute if entity @s[tag=!EditedSettings] run tag @a[x=0] remove JoinSpec
-execute if entity @s[tag=GameEnd] run tag @a[x=0] remove JoinSpec
+execute if predicate game:game_ended run tag @a[x=0] remove JoinSpec
 execute if predicate rr:is_cubekrowd if entity @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] as @a[x=0,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 tag @a[x=0,gamemode=spectator] remove JoinSpec
 execute if score $dust CmdData matches 1 as @e[x=0,type=marker,tag=join_pad.spectator,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:gray_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

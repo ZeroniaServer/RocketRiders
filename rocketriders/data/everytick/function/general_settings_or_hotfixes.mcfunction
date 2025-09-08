@@ -95,8 +95,8 @@ execute if predicate rr:force_gamemodes as @a[x=0,team=Spectator,gamemode=!spect
 execute as @a[x=0,gamemode=spectator,predicate=custom:in_void] at @s run function game:void
 
 #Blue/Yellow players can't switch out of adventure mode before game (security, disabled in servermodes)
-execute if predicate rr:force_gamemodes unless predicate game:game_started if entity @s[tag=!GameEnd] as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
-execute if predicate rr:force_gamemodes unless predicate game:game_started if entity @s[tag=!GameEnd] as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
+execute if predicate rr:force_gamemodes unless predicate game:game_started unless predicate game:game_ended as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
+execute if predicate rr:force_gamemodes unless predicate game:game_started unless predicate game:game_ended as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
 
 #Full offhand check
 tag @a[x=0] remove fullOffhand
@@ -120,12 +120,12 @@ tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect_cloud]
 
 #Fill portals before game starts
-execute unless predicate game:game_started if entity @s[predicate=game:portal_type/default,tag=!GameEnd,tag=EditedSettings] run function arenaclear:placeportals
+execute unless predicate game:game_started unless predicate game:game_ended if predicate game:portal_type/default if entity @s[tag=EditedSettings] run function arenaclear:placeportals
 
 #Disable damage gamerules if no game has started
-execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule fallDamage false
-execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule drowningDamage false
-execute unless entity @s[predicate=game:game_started,tag=!GameEnd] run gamerule fireDamage false
+execute unless entity @s[predicate=game:game_started,predicate=!game:game_ended] run gamerule fallDamage false
+execute unless entity @s[predicate=game:game_started,predicate=!game:game_ended] run gamerule drowningDamage false
+execute unless entity @s[predicate=game:game_started,predicate=!game:game_ended] run gamerule fireDamage false
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active

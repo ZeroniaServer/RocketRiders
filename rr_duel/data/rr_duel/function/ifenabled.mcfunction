@@ -9,7 +9,7 @@ function rr_duel:tip
 #game
 function rr_duel:game/gamestart
 execute if predicate game:game_started run function rr_duel:game/ingame
-execute if entity @s[tag=GameEnd] run function rr_duel:game/gameend
+execute if predicate game:game_ended run function rr_duel:game/gameend
 execute as @e[x=0,type=item] run function everytick:no_drop
 execute unless predicate game:game_started run tag @s remove CriteriaTrue
 
@@ -28,12 +28,12 @@ tag @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners (non-forfeiters) of active settings
 tag @a[x=0,tag=Forfeiter] remove informMe
-execute if entity @s[tag=EditedSettings,tag=!GameEnd] as @a[x=0,tag=informMe] run function arenaclear:notifystart
-execute if entity @s[tag=EditedSettings,tag=!noYZELO,tag=!GameEnd] run tellraw @a[x=0,tag=informMe] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Whoever wins two rounds gains XP. Loser loses XP\n"},{"text":"- XP translates to ranks, which affects gains/losses\n"},{"text":"- Players who log out forfeit and get XP penalty\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No decorations, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @s[tag=EditedSettings,tag=noYZELO,tag=!GameEnd] run tellraw @a[x=0,tag=informMe] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Leaving the game forfeits the duel and ends the game\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No decorations, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @s[tag=EditedSettings,tag=!GameEnd] if entity @a[x=0,tag=informMe] run function modifiers:informmodifiers
-execute if predicate game:game_started if entity @s[tag=!GameEnd] as @a[x=0,tag=informMe] run function rr_duel:notifyitems
-execute if entity @s[tag=EditedSettings,tag=Repeat,tag=!GameEnd] if entity @a[x=0,tag=informMe] run function gamemodes:informrepeat
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings] as @a[x=0,tag=informMe] run function arenaclear:notifystart
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!noYZELO] run tellraw @a[x=0,tag=informMe] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Whoever wins two rounds gains XP. Loser loses XP\n"},{"text":"- XP translates to ranks, which affects gains/losses\n"},{"text":"- Players who log out forfeit and get XP penalty\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No decorations, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=noYZELO] run tellraw @a[x=0,tag=informMe] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Leaving the game forfeits the duel and ends the game\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No decorations, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings] if entity @a[x=0,tag=informMe] run function modifiers:informmodifiers
+execute if predicate game:game_started unless predicate game:game_ended as @a[x=0,tag=informMe] run function rr_duel:notifyitems
+execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=Repeat] if entity @a[x=0,tag=informMe] run function gamemodes:informrepeat
 tag @a[x=0,tag=informMe] remove informMe
 
 #lock join pads

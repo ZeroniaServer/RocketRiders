@@ -28,8 +28,8 @@ execute if entity @s[tag=Sonar] as @e[x=0,predicate=entities:type/vortex/body] r
 execute if entity @s[tag=Sonar] as @e[x=0,type=armor_stand,tag=Bot] run data merge entity @s {Glowing:1b}
 
 ##Rocket Residers (anti-crossing behavior)
-execute if predicate game:modifiers/rocket_residers/on if entity @s[tag=!GameEnd] as @a[x=0,team=Blue,predicate=custom:residers] run tag @s add crosser
-execute if predicate game:modifiers/rocket_residers/on if entity @s[tag=!GameEnd] as @a[x=0,team=Yellow,predicate=custom:residers] run tag @s add crosser
+execute if predicate game:modifiers/rocket_residers/on unless predicate game:game_ended as @a[x=0,team=Blue,predicate=custom:residers] run tag @s add crosser
+execute if predicate game:modifiers/rocket_residers/on unless predicate game:game_ended as @a[x=0,team=Yellow,predicate=custom:residers] run tag @s add crosser
 #Hackfix: void works for crossers too
 execute as @a[x=0,tag=crosser] run function game:void
 tag @a[x=0] remove crosser

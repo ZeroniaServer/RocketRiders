@@ -8,7 +8,8 @@ function game:config/load {read_from:"storage rocketriders:storage config",merge
 data remove storage rocketriders:storage config
 data modify entity @s Tags set from storage rocketriders:storage Tags
 data remove storage rocketriders:storage Tags
-tag @s remove GameEnd
+scoreboard players reset $game_ended global
+
 
 scoreboard players operation @s TopDeco = $TORAGE TopDeco
 scoreboard players operation @s TopCorner = $TORAGE TopCorner

@@ -1,7 +1,7 @@
 ##Utility function for storing previous settings
 ##ONLY RUN WHILE CUSTOMIZER IS OPEN!!!
 
-tag @s remove GameEnd
+scoreboard players reset $game_ended global
 function game:config/dump {write_to:"storage rocketriders:storage config"}
 data modify storage rocketriders:storage Tags set from entity @s Tags
 

@@ -91,10 +91,10 @@ stopsound @a[x=0] ambient minecraft:ambient.cave
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:cancel_utility
 
 #Arrow pickup
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameEnd,tag=!customArrowPickup] if entity @e[x=0,type=#arrows] run function everytick:arrow_pickup
+execute unless predicate game:game_ended as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customArrowPickup] if entity @e[limit=1,x=0,type=#arrows] run function everytick:arrow_pickup
 
 #Game ending and arena clearing
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameEnd,tag=!NoModesInstalled] run function game:gameend
+execute if predicate game:game_ended as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:gameend
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SuddenDeath,tag=!SuddenDeathCustom,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
 execute if entity @e[x=0,type=marker,tag=ArenaClearChecker,tag=!Cleared,tag=!BasePlaced] run scoreboard players add $acdelay CmdData 1
 execute if score $acdelay CmdData matches 7.. run tellraw @a[x=0] {"text":"Warning: Force clearing arena since previous gamemode is unknown.","color":"red"}
@@ -102,7 +102,7 @@ execute if score $acdelay CmdData matches 7.. run tag @e[x=0,type=armor_stand,ta
 execute if score $acdelay CmdData matches 7.. run scoreboard players reset $acdelay CmdData
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced] run scoreboard players reset $acdelay CmdData
 kill @e[x=0,type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GameEnd,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
+execute unless predicate game:game_ended as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsignsquery
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=JustCleared] run scoreboard players add $justcleared CmdData 1
 execute if score $justcleared CmdData matches 10.. run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=JustCleared] remove JustCleared

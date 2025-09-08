@@ -44,12 +44,12 @@ execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedS
 
 execute unless predicate game:game_started as @a[x=0,team=Blue] run attribute @s minecraft:knockback_resistance base set 10000
 execute as @a[x=0,team=!Blue] run attribute @s minecraft:knockback_resistance base set 0.0
-execute if entity @s[scores={count=600}] unless predicate rr:is_cubekrowd as @a[x=0,team=Blue] run function rr_chase:chasegear/sabermsg
-execute if entity @s[scores={count=600}] if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
-execute if entity @s[scores={count=600},tag=!GameEnd] run function custom:set_global/game_started {bool:true}
-execute if entity @s[scores={count=600},tag=!GameEnd] run tp @a[x=0,team=Blue] 12 64 -66 0 0
-execute if entity @s[scores={count=600},tag=!GameEnd] run spawnpoint @a[x=0,team=Blue] 12 64 -66 0
-execute if entity @s[scores={count=600},tag=!GameEnd] run tag @a[x=0,team=Blue] add onBlue
-execute if entity @s[scores={count=600}] run summon marker 38 63 -66 {Tags:["airDetect"]}
-execute if entity @s[scores={count=600},tag=!GameEnd] as @a[x=0,team=Blue] run attribute @s minecraft:knockback_resistance base set 0.0
-execute if entity @s[scores={count=600},tag=!GameEnd] as @a[x=0,team=Blue] run tag @s remove fullOffhand
+execute if score @s count matches 600 unless predicate rr:is_cubekrowd as @a[x=0,team=Blue] run function rr_chase:chasegear/sabermsg
+execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
+execute unless predicate game:game_ended if score @s count matches 600 run function custom:set_global/game_started {bool:true}
+execute unless predicate game:game_ended if score @s count matches 600 run tp @a[x=0,team=Blue] 12 64 -66 0 0
+execute unless predicate game:game_ended if score @s count matches 600 run spawnpoint @a[x=0,team=Blue] 12 64 -66 0
+execute unless predicate game:game_ended if score @s count matches 600 run tag @a[x=0,team=Blue] add onBlue
+execute if score @s count matches 600 run summon marker 38 63 -66 {Tags:["airDetect"]}
+execute unless predicate game:game_ended if score @s count matches 600 as @a[x=0,team=Blue] run attribute @s minecraft:knockback_resistance base set 0.0
+execute unless predicate game:game_ended if score @s count matches 600 as @a[x=0,team=Blue] run tag @s remove fullOffhand

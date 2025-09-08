@@ -27,19 +27,19 @@ execute if entity @s[scores={count=400}] run bossbar set rr:startgame max 10
 execute unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] run function game:restartcountdown
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
-execute if entity @s[scores={count=600}] as @a[x=0,team=Blue] run function rr_duel:forfeit/calculate
-execute if entity @s[scores={count=600}] as @a[x=0,team=Yellow] run function rr_duel:forfeit/calculate
-execute if entity @s[scores={count=600}] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"dark_aqua","italic":true}]
-execute if entity @s[scores={count=600}] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
-execute if entity @s[scores={count=600}] if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"dark_aqua","italic":true}]
-execute if entity @s[scores={count=600}] if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
-execute if entity @s[scores={count=600}] run team join Blue Blue:
-execute if entity @s[scores={count=600}] run team join Yellow Yellow:
-execute if entity @s[scores={count=600}] run bossbar set rr:startgame name ["",{"text":"A 1v1 Duel match is currently in progress!","color":"dark_red"}]
-execute if entity @s[scores={count=600}] run bossbar set rr:startgame color red
-execute if entity @s[scores={count=600}] run scoreboard players set @s Rounds 1
-execute if entity @s[scores={count=600}] run tellraw @a[x=0,team=!Lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
-execute if entity @s[scores={count=600},tag=!GameEnd] run function custom:set_global/game_started {bool:true}
+execute if score @s count matches 600 as @a[x=0,team=Blue] run function rr_duel:forfeit/calculate
+execute if score @s count matches 600 as @a[x=0,team=Yellow] run function rr_duel:forfeit/calculate
+execute if score @s count matches 600 unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"dark_aqua","italic":true}]
+execute if score @s count matches 600 unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
+execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"dark_aqua","italic":true}]
+execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
+execute if score @s count matches 600 run team join Blue Blue:
+execute if score @s count matches 600 run team join Yellow Yellow:
+execute if score @s count matches 600 run bossbar set rr:startgame name ["",{"text":"A 1v1 Duel match is currently in progress!","color":"dark_red"}]
+execute if score @s count matches 600 run bossbar set rr:startgame color red
+execute if score @s count matches 600 run scoreboard players set @s Rounds 1
+execute if score @s count matches 600 run tellraw @a[x=0,team=!Lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
+execute unless predicate game:game_ended if score @s count matches 600 run function custom:set_global/game_started {bool:true}
 execute if entity @s[scores={gametime=2}] as @a[x=0,team=Yellow] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
 execute if entity @s[scores={gametime=2}] as @a[x=0,team=Blue] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
-execute if entity @s[scores={count=600}] run function rr_duel:forced_settings
+execute if score @s count matches 600 run function rr_duel:forced_settings

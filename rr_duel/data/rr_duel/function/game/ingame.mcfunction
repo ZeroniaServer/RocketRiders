@@ -68,10 +68,10 @@ scoreboard players reset @s[tag=!TimeOut] ForfeitTimeout
 tag @s[tag=!TimeOut] remove noAchievements
 
 #force win
-execute if entity @s[tag=!GameEnd,scores={ForfeitTimeout=1200..}] if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run scoreboard players set Blue: RoundsWon 2
-execute if entity @s[tag=!GameEnd,scores={ForfeitTimeout=1200..}] if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function rr_duel:game/winblue
-execute if entity @s[tag=!GameEnd,scores={ForfeitTimeout=1200..}] unless entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run scoreboard players set Yellow: RoundsWon 2
-execute if entity @s[tag=!GameEnd,scores={ForfeitTimeout=1200..}] unless entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run function rr_duel:game/winyellow
+execute unless predicate game:game_ended if score @s ForfeitTimeout matches 1200.. if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run scoreboard players set Blue: RoundsWon 2
+execute unless predicate game:game_ended if score @s ForfeitTimeout matches 1200.. if entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function rr_duel:game/winblue
+execute unless predicate game:game_ended if score @s ForfeitTimeout matches 1200.. unless entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run scoreboard players set Yellow: RoundsWon 2
+execute unless predicate game:game_ended if score @s ForfeitTimeout matches 1200.. unless entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run function rr_duel:game/winyellow
 
 ##double forfeit
 execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[x=0,team=Yellow] unless entity @a[x=0,team=Blue] run function game:forcestop

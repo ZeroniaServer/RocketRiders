@@ -23,7 +23,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-                "text": "Click to activate $(item_plain_name)",\
+                "text": "Click to activate $(item_plain_name) for 30 seconds",\
                 "color": "white"\
               }\
           },\
@@ -53,7 +53,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-                "text": "Click to activate $(item_plain_name)",\
+                "text": "Click to deactivate $(item_plain_name)",\
                 "color": "white"\
               }\
           },\

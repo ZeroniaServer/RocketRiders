@@ -38,6 +38,7 @@ execute if score @s nomicon matches 34 run function rr_powerups:items/powerup/gi
 execute if score @s nomicon matches 35 run function rr_powerups:items/powerup/giveelytra
 execute if score @s nomicon matches 36 run function rr_powerups:items/powerup/givetrident
 execute if score @s nomicon matches 37 run function items:shooting_saber/infinity_30_seconds
+execute if score @s nomicon matches 37 unless predicate custom:has_shooting_saber_in_inventory run function rr_sandbox:items/givesaber
 execute if score @s nomicon matches 37 run scoreboard players set @s nomicon 0
 execute if score @s nomicon matches 37 run return run scoreboard players set $rolls var 0
 execute if score @s nomicon matches 38 run function rr_powerups:items/arrow/giveblindarrow
@@ -59,6 +60,7 @@ execute if score @s nomicon matches 50 run loot give @s loot items:experimental/
 execute if score @s nomicon matches 51 run loot give @s loot items:experimental/jump_boost_potion
 execute if score @s nomicon matches 52 run function items:experimental/give_spectral_arrows
 execute if score @s nomicon matches 53 run function items:shooting_saber/multishot_30_seconds
+execute if score @s nomicon matches 53 unless predicate custom:has_shooting_saber_in_inventory run function rr_sandbox:items/givesaber
 execute if score @s nomicon matches 53 run scoreboard players set @s nomicon 0
 execute if score @s nomicon matches 53 run return run scoreboard players set $rolls var 0
 execute if score @s nomicon matches 54 run loot give @s loot items:experimental/building_block

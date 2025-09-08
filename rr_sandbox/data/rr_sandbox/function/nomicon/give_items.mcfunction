@@ -65,5 +65,21 @@ execute if score @s nomicon matches 53 run scoreboard players set @s nomicon 0
 execute if score @s nomicon matches 53 run return run scoreboard players set $rolls var 0
 execute if score @s nomicon matches 54 run loot give @s loot items:experimental/building_block
 
+execute if score @s nomicon matches 55 run function items:shooting_saber/infinity_permanent
+execute if score @s nomicon matches 55 unless predicate custom:has_shooting_saber_in_inventory run function rr_sandbox:items/givesaber
+execute if score @s nomicon matches 55 run scoreboard players set @s nomicon 0
+execute if score @s nomicon matches 55 run return run scoreboard players set $rolls var 0
+execute if score @s nomicon matches 56 if predicate items:shooting_saber/infinity run function items:shooting_saber/infinity_deactivate
+execute if score @s nomicon matches 56 run scoreboard players set @s nomicon 0
+execute if score @s nomicon matches 56 run return run scoreboard players set $rolls var 0
+execute if score @s nomicon matches 57 run function items:shooting_saber/multishot_permanent
+execute if score @s nomicon matches 57 unless predicate custom:has_shooting_saber_in_inventory run function rr_sandbox:items/givesaber
+execute if score @s nomicon matches 57 run scoreboard players set @s nomicon 0
+execute if score @s nomicon matches 57 run return run scoreboard players set $rolls var 0
+execute if score @s nomicon matches 58 if predicate items:shooting_saber/multishot run function items:shooting_saber/multishot_deactivate
+execute if score @s nomicon matches 58 run scoreboard players set @s nomicon 0
+execute if score @s nomicon matches 58 run return run scoreboard players set $rolls var 0
+
+
 scoreboard players remove $rolls var 1
 execute if score $rolls var matches 1.. run function rr_sandbox:nomicon/give_items

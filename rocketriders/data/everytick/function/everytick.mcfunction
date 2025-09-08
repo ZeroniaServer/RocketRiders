@@ -19,9 +19,9 @@ execute as @a[scores={time_since_attack=101..,primary_damage_origin_uuid.0=-2147
 execute as @a[scores={time_since_attack=101..,secondary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
 
 # Item timers
-scoreboard players remove @a[x=0,scores={shooting_saber.infinity_time=1..}] shooting_saber.infinity_time 1
+scoreboard players remove @a[x=0,scores={shooting_saber.infinity_time=1..2147483646}] shooting_saber.infinity_time 1
 execute as @a[x=0,scores={shooting_saber.infinity_time=..0}] run function items:shooting_saber/infinity_deactivate
-scoreboard players remove @a[x=0,scores={shooting_saber.multishot_time=1..}] shooting_saber.multishot_time 1
+scoreboard players remove @a[x=0,scores={shooting_saber.multishot_time=1..2147483646}] shooting_saber.multishot_time 1
 execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items:shooting_saber/multishot_deactivate
 
 # Process primed TNT

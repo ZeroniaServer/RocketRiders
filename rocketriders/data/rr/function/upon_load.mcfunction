@@ -78,6 +78,7 @@ scoreboard players set $100 constant 100
 scoreboard players set $300 constant 300
 scoreboard players set $400 constant 400
 scoreboard players set $1000 constant 1000
+scoreboard players set $1200 constant 1200
 scoreboard players set $24000 constant 24000
 
 scoreboard objectives add event.player_dies custom:deaths

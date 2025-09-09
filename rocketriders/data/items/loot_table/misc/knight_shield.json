@@ -19,6 +19,12 @@
                   "bold": true,
                   "color": "white"
                 },
+                "minecraft:custom_name": {
+                  "text": "Knight Shield",
+                  "bold": true,
+                  "color": "white",
+                  "italic": false
+                },
                 "minecraft:base_color": "white",
                 "minecraft:banner_patterns": [
                   {
@@ -47,11 +53,16 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Knight Shield",
-                  "italic": false,
                   "bold": true,
                   "color": "blue"
+                },
+                "minecraft:custom_name": {
+                  "text": "Knight Shield",
+                  "bold": true,
+                  "color": "blue",
+                  "italic": false
                 },
                 "minecraft:base_color": "blue",
                 "minecraft:banner_patterns": [
@@ -78,11 +89,16 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Knight Shield",
-                  "italic": false,
                   "bold": true,
                   "color": "gold"
+                },
+                "minecraft:custom_name": {
+                  "text": "Knight Shield",
+                  "bold": true,
+                  "color": "gold",
+                  "italic": false
                 },
                 "minecraft:base_color": "yellow",
                 "minecraft:banner_patterns": [

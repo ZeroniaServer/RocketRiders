@@ -37,5 +37,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "achievements:rr_zzzhard/root"
+    "parent": "achievements:rr_zzzhard/end_row1"
 }

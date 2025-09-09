@@ -75,6 +75,7 @@ scoreboard players set $26 constant 26
 scoreboard players set $60 constant 60
 scoreboard players set $64 constant 64
 scoreboard players set $100 constant 100
+scoreboard players set $300 constant 300
 scoreboard players set $400 constant 400
 scoreboard players set $1000 constant 1000
 scoreboard players set $24000 constant 24000
@@ -194,9 +195,6 @@ scoreboard objectives add MiddleDeco dummy
 scoreboard objectives add refreshsigns dummy
 scoreboard objectives add xp_level dummy
 scoreboard objectives add xp_progress dummy
-scoreboard objectives add xp_mod dummy
-scoreboard objectives add xp_mult dummy
-scoreboard objectives add xp_div dummy
 scoreboard objectives add xp_buffer dummy
 scoreboard objectives add xp_bar dummy
 scoreboard objectives add DealtDamage minecraft.custom:minecraft.damage_dealt

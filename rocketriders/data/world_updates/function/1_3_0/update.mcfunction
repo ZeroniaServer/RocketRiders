@@ -183,6 +183,9 @@ scoreboard objectives remove moleratConfirm
 scoreboard objectives remove ArmorColor
 scoreboard objectives remove Clustertime
 scoreboard objectives remove infinity
+scoreboard objectives remove xp_mult
+scoreboard objectives remove xp_mod
+scoreboard objectives remove xp_div
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

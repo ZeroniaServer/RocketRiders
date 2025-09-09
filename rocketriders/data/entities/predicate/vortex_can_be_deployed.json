@@ -2,61 +2,6 @@
   {
     "condition": "minecraft:inverted",
     "term": {
-      "condition": "minecraft:all_of",
-      "terms": [
-        {
-          "condition": "minecraft:reference",
-          "name": "game:portal_type/default"
-        },
-        {
-          "condition": "minecraft:any_of",
-          "terms": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "position": {
-                  "x": {
-                    "min": -12,
-                    "max": 37
-                  },
-                  "y": {
-                    "min": 36,
-                    "max": 65
-                  },
-                  "z": {
-                    "min": -80,
-                    "max": -67
-                  }
-                }
-              }
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "position": {
-                  "x": {
-                    "min": -12,
-                    "max": 37
-                  },
-                  "y": {
-                    "min": 36,
-                    "max": 65
-                  },
-                  "z": {
-                    "min": 68,
-                    "max": 81
-                  }
-                }
-              }
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
       "condition": "minecraft:location_check",
       "predicate": {
         "position": {

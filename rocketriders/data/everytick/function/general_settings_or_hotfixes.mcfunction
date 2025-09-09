@@ -172,7 +172,7 @@ execute as @a[team=Lobby,x=-70,y=200,z=77,dz=2] run attribute @s minecraft:gravi
 execute as @a[team=Lobby] unless entity @s[x=-70,y=200,z=77,dy=0.5,dz=2] run attribute @s minecraft:gravity modifier remove rocketriders:learning_to_swim
 
 #Make armour visible again after invisibility wears off
-execute as @a[tag=was_invisible,predicate=!custom:invisible] run function custom:update_armor
+execute as @a[tag=was_invisible,predicate=!custom:invisible] run function custom:event/player_becomes_visible/main
 tag @a[tag=was_invisible,predicate=!custom:invisible] remove was_invisible
 
 # Remove custom team colour from those not playing

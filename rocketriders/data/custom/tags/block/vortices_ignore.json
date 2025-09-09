@@ -1,6 +1,7 @@
 {
   "values": [
     "#custom:air",
+    "#custom:glasspane",
     "minecraft:moving_piston",
     "minecraft:nether_portal"
   ]

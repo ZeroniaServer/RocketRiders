@@ -1,6 +1,6 @@
 # arguments: power, modifiers
 
-$data modify storage rocketriders:main explosion set value {explosion_power:$(power),modifiers:{copy_name:false,nbt:{},run:"function custom:nothing",force_particle_emitter:true,can_crack_deepslate_bricks:true,ramp_power_near_portals:"auto",secondary_origin:""}}
+$data modify storage rocketriders:main explosion set value {explosion_power:$(power),modifiers:{copy_name:false,nbt:{},run:"function custom:nothing",force_particle_emitter:true,can_crack_deepslate_bricks:true,trigger_vortices:true,ramp_power_near_portals:"auto",secondary_origin:""}}
 $data modify storage rocketriders:main explosion.modifiers merge value $(modifiers)
 data modify storage rocketriders:main explosion.modifiers.nbt merge value {data:{explosion:{}}}
 
@@ -26,7 +26,8 @@ execute unless data storage rocketriders:main explosion.modifiers.nbt.data.damag
 execute if data storage rocketriders:main explosion.modifiers.secondary_origin unless data storage rocketriders:main explosion.modifiers{secondary_origin:""} run function custom:_explosion_/get_secondary_origin_uuid with storage rocketriders:main explosion.modifiers
 
 # Create creeper and trigger vortices
-execute store result storage rocketriders:main explosion.modifiers.vortex_trigger_radius float 1.33333 run scoreboard players get $intended_explosion_power var
+execute unless data storage rocketriders:main explosion.modifiers{trigger_vortices:true} run data modify storage rocketriders:main explosion.modifiers.vortex_trigger_radius set value 0
+execute if data storage rocketriders:main explosion.modifiers{trigger_vortices:true} store result storage rocketriders:main explosion.modifiers.vortex_trigger_radius float 1.33333 run scoreboard players get $intended_explosion_power var
 summon creeper ~ ~ ~ {Tags:["explosion.this","explosion"],data:{explosion:{}},NoGravity:true,Fuse:0,Silent:true,CustomNameVisible:false,NoAI:true,CanPickUpLoot:false,Invulnerable:true,attributes:[{id:"minecraft:scale",base:0}],active_effects:[]}
 execute as @e[distance=..0.01,type=creeper,tag=explosion.this,limit=1] if function custom:_explosion_/remove_tag run function custom:_explosion_/modify with storage rocketriders:main explosion.modifiers
 

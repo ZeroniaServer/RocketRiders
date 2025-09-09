@@ -15,6 +15,7 @@ title @s[scores={HasArrows=0},tag=!fullHotbar,predicate=items:shooting_saber/inf
 #Intelligent stacking if player already has available arrow stack in inventory
 tag @s[tag=!fullOffhand] add notFullOffhand
 execute if items entity @s[tag=!fullOffhand] container.* arrow[count~{max:63}] run tag @s add fullOffhand
+execute if predicate custom:invisible run tag @s add fullOffhand
 
 #Tries to give enough arrows to refill up to 4
 loot give @s[scores={HasArrows=0},tag=!fullHotbar,tag=fullOffhand,predicate=!items:shooting_saber/infinity] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:4}]}]}

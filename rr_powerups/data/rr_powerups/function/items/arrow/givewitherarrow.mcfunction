@@ -13,6 +13,7 @@ title @s[scores={HasTippedArrows=..3},tag=!fullHotbar] actionbar {"text":"Wither
 #Intelligent stacking if player already has available arrow stack in inventory
 tag @s[tag=!fullOffhand] add notFullOffhand
 execute if items entity @s[tag=!fullOffhand] container.* tipped_arrow[count~{max:63},custom_data~{tipped_arrow_type:"wither"}] run tag @s add fullOffhand
+execute if predicate custom:invisible run tag @s add fullOffhand
 
 loot give @s[scores={HasTippedArrows=0},tag=!fullHotbar,tag=fullOffhand] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/tipped_arrow_wither",functions:[{function:"set_count",count:4}]}]}]}
 loot give @s[scores={HasTippedArrows=1},tag=!fullHotbar,tag=fullOffhand] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/tipped_arrow_wither",functions:[{function:"set_count",count:3}]}]}]}

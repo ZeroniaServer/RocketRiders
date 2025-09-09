@@ -54,12 +54,12 @@ tag @s[tag=DefaultWorld] remove DefaultWorld
 
 ##ITEM DELAY
 execute if predicate rr:has_modification_room if entity @s[tag=Minute] run scoreboard players reset @a[x=0,team=Lobby] MaxItemSec
-execute unless predicate game:item_timer_locked as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] run function arenaclear:itemdelay/show_dialog
-execute if predicate game:item_timer_locked run tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
+execute unless predicate game:game_rules/item_delay/locked as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] run function arenaclear:itemdelay/show_dialog
+execute if predicate game:game_rules/item_delay/locked run tellraw @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,tag=ItemDelayChange] [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 tag @a[x=0,tag=ItemDelayChange] remove ItemDelayChange
-execute if predicate rr:has_modification_room unless predicate game:item_timer_locked as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-1}] run function arenaclear:itemdelay/show_dialog
-execute if predicate rr:has_modification_room unless predicate game:item_timer_locked as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-2147483648..}] unless score @s MaxItemSec matches -2..0 run function arenaclear:itemdelay
-execute if predicate rr:has_modification_room if predicate game:item_timer_locked as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-2147483648..}] unless score @s MaxItemSec matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
+execute if predicate rr:has_modification_room unless predicate game:game_rules/item_delay/locked as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-1}] run function arenaclear:itemdelay/show_dialog
+execute if predicate rr:has_modification_room unless predicate game:game_rules/item_delay/locked as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-2147483648..}] unless score @s MaxItemSec matches -2..0 run function arenaclear:itemdelay
+execute if predicate rr:has_modification_room if predicate game:game_rules/item_delay/locked as @a[x=0,team=!Yellow,team=!Blue,team=!Spectator,scores={MaxItemSec=-2147483648..}] unless score @s MaxItemSec matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 scoreboard players reset @a[x=0] MaxItemSec
 execute if predicate rr:has_modification_room if entity @s[tag=!Minute] run scoreboard players set @a[x=0] MaxItemSec -2
 execute if predicate rr:has_modification_room if entity @s[tag=!Minute] run scoreboard players enable @a[x=0,team=Lobby] MaxItemSec

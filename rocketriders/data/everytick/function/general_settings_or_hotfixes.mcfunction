@@ -182,14 +182,15 @@ execute as @a[x=0,scores={custom_team_color=1..}] unless entity @s[predicate=cus
 execute as @e[type=#arrows,scores={intangible_arrow.despawn_buffer=5..}] run function custom:kill_with_smoke_poof
 execute as @e[type=#arrows,predicate=custom:not_moving] if items entity @s contents *[intangible_projectile] run scoreboard players add @s intangible_arrow.despawn_buffer 1
 
-# Set item timer in xp bar
+# Clear the XP bar in the lobby if YZELO is disabled
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!noYZELO] as @a[x=0,predicate=!custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
 
-scoreboard players operation $item_time_progress var = @e[limit=1,x=0,type=armor_stand,tag=Selection] RandomItem
-scoreboard players operation $item_time_progress var *= $1000 constant
-data modify storage rocketriders:main item_time_progress set value {level:0}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= $1200 constant
-execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= @e[limit=1,x=0,type=armor_stand,tag=Selection] MaxItemTime
-
-execute if predicate game:game_started as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar with storage rocketriders:main item_time_progress
+# Set item timer in xp bar in-game
 execute unless predicate game:game_started as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
+execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer run scoreboard players operation $item_time_progress var = @e[limit=1,x=0,type=armor_stand,tag=Selection] RandomItem
+execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer run scoreboard players operation $item_time_progress var *= $1000 constant
+execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer run data modify storage rocketriders:main item_time_progress set value {level:0}
+execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= $1200 constant
+execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= @e[limit=1,x=0,type=armor_stand,tag=Selection] MaxItemTime
+execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar with storage rocketriders:main item_time_progress
+execute if predicate game:game_started if predicate game:gamemode_components/no_item_timer as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}

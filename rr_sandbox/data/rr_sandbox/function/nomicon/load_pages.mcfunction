@@ -1,6 +1,77 @@
 data remove storage rocketriders:nomicon dialogs
 
 ##
+## Weapons/Tools
+##
+data modify storage rocketriders:nomicon dialogs.weapons_and_tools.dialog set value {\
+  "type": "minecraft:confirmation",\
+  "title": [\
+    {\
+      "text": "Rocket",\
+      "color": "blue",\
+      "bold": true\
+    },\
+    {\
+      "text": "-",\
+      "color": "gray"\
+    },\
+    {\
+      "text": "nomicon",\
+      "color": "gold"\
+    }\
+  ],\
+  "body": [\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "underlined": true,\
+        "shadow_color": 0,\
+        "text": "                                                                "\
+      },\
+      "width": 400\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": [\
+        {\
+          "bold": true,\
+          "text": "\nWeapons/Tools\n"\
+        },\
+        {\
+          "bold": false,\
+          "underlined": true,\
+          "shadow_color": 0,\
+          "text": "\n                                                                "\
+        }\
+      ],\
+      "width": 400\
+    }\
+  ],\
+  "pause": false,\
+  "after_action": "none",\
+  "yes": {\
+    "label": "Back",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1"\
+    }\
+  },\
+  "no": {\
+    "label": "Done",\
+    "action": {\
+      "type": "run_command",\
+      "command": "trigger nomicon set 1000001"\
+    }\
+  }\
+}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 42, item_loot_table: "items:misc/shooting_saber", item_plain_name: "Shooting Saber", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 43, item_loot_table: "items:misc/piercing_pickaxe", item_plain_name: "Piercing Pickaxe", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 44, item_loot_table: "items:misc/knight_sword", item_plain_name: "Knight Sword", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 45, item_loot_table: "items:misc/knight_shield", item_plain_name: "Knight Shield", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 46, item_loot_table: "items:misc/spell_wand", item_plain_name: "Spell Wand", color: "white"}
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "weapons_and_tools", trigger_input_id: 47, item_loot_table: "rr_crusade:book_icon", item_plain_name_singular: "Spell Book", item_plain_name_plural: "Spell Books", color: "light_purple"}
+
+##
 ## Missiles
 ##
 data modify storage rocketriders:nomicon dialogs.missiles.dialog set value {\
@@ -242,77 +313,6 @@ function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "powerups", tri
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "powerups", trigger_input_id: 41, item_loot_table: "items:misc/tipped_arrow_wither", item_plain_name_singular: "Wither Arrow", item_plain_name_plural: "Wither Arrows", color: "dark_purple"}
 
 ##
-## Weapons/Tools
-##
-data modify storage rocketriders:nomicon dialogs.weapons_and_tools.dialog set value {\
-  "type": "minecraft:confirmation",\
-  "title": [\
-    {\
-      "text": "Rocket",\
-      "color": "blue",\
-      "bold": true\
-    },\
-    {\
-      "text": "-",\
-      "color": "gray"\
-    },\
-    {\
-      "text": "nomicon",\
-      "color": "gold"\
-    }\
-  ],\
-  "body": [\
-    {\
-      "type": "minecraft:plain_message",\
-      "contents": {\
-        "underlined": true,\
-        "shadow_color": 0,\
-        "text": "                                                                "\
-      },\
-      "width": 400\
-    },\
-    {\
-      "type": "minecraft:plain_message",\
-      "contents": [\
-        {\
-          "bold": true,\
-          "text": "\nWeapons/Tools\n"\
-        },\
-        {\
-          "bold": false,\
-          "underlined": true,\
-          "shadow_color": 0,\
-          "text": "\n                                                                "\
-        }\
-      ],\
-      "width": 400\
-    }\
-  ],\
-  "pause": false,\
-  "after_action": "none",\
-  "yes": {\
-    "label": "Back",\
-    "action": {\
-      "type": "run_command",\
-      "command": "trigger nomicon set 1"\
-    }\
-  },\
-  "no": {\
-    "label": "Done",\
-    "action": {\
-      "type": "run_command",\
-      "command": "trigger nomicon set 1000001"\
-    }\
-  }\
-}
-function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 42, item_loot_table: "items:misc/shooting_saber", item_plain_name: "Shooting Saber", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 43, item_loot_table: "items:misc/piercing_pickaxe", item_plain_name: "Piercing Pickaxe", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 44, item_loot_table: "items:misc/knight_sword", item_plain_name: "Knight Sword", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 45, item_loot_table: "items:misc/knight_shield", item_plain_name: "Knight Shield", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item_give_one {dialog_name: "weapons_and_tools", trigger_input_id: 46, item_loot_table: "items:misc/spell_wand", item_plain_name: "Spell Wand", color: "white"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "weapons_and_tools", trigger_input_id: 47, item_loot_table: "rr_crusade:book_icon", item_plain_name_singular: "Spell Book", item_plain_name_plural: "Spell Books", color: "light_purple"}
-
-##
 ## Experimental/Unused
 ##
 data modify storage rocketriders:nomicon dialogs.experimental.dialog set value {\
@@ -422,10 +422,10 @@ data modify storage rocketriders:nomicon dialogs.all.dialog set value {\
     }\
   }\
 }
+data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.weapons_and_tools.dialog.body[]
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.missiles.dialog.body[]
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.utilities.dialog.body[]
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.powerups.dialog.body[]
-data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.weapons_and_tools.dialog.body[]
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.experimental.dialog.body[]
 
 # Remove top separator from every section

@@ -44,6 +44,13 @@ dialog show @s {\
       }\
     },\
     {\
+      "label": "🗡 Weapons/Tools 🏹",\
+      "action": {\
+        "type": "run_command",\
+        "command": "trigger nomicon set 1000006"\
+      }\
+    },\
+    {\
       "label": "🚀 Missiles 🚀",\
       "action": {\
         "type": "run_command",\
@@ -62,13 +69,6 @@ dialog show @s {\
       "action": {\
         "type": "run_command",\
         "command": "trigger nomicon set 1000005"\
-      }\
-    },\
-    {\
-      "label": "🗡 Weapons/Tools 🏹",\
-      "action": {\
-        "type": "run_command",\
-        "command": "trigger nomicon set 1000006"\
       }\
     },\
     {\

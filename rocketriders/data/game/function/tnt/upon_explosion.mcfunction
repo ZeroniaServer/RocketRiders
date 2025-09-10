@@ -26,7 +26,7 @@ execute if predicate game:game_rules/friendly_tnt_damage/on if score $explosion_
 execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:modifiers/instant_tnt_explosions/on run data modify entity @s fuse set value 0
 
 # Crack deepslate
-execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:gamemode_components/explosions_crack_deepslate_bricks if predicate rr_crusade:tnt_near_castle run function rr_crusade:game/tnt_cracks
+execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:gamemode_components/explosions_crack_deepslate_bricks if predicate rr_crusade:tnt_near_castle run function game:explosion_deepslate_cracks_medium
 
 # Trigger nearby vortices
 execute unless predicate game:game_rules/friendly_tnt_damage/on unless predicate game:modifiers/explosive/on positioned ~ ~0.06125 ~ as @e[distance=..5.33,predicate=entities:type/vortex/brain] at @s run function entities:vortex/actions/trigger {fuse:0}

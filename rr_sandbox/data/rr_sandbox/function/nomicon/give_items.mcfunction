@@ -1,4 +1,3 @@
-execute if score @s nomicon matches 48 run function items:missile/normal/givetoma
 execute if score @s nomicon matches 2 run function items:missile/normal/giveant
 execute if score @s nomicon matches 3 run function items:missile/normal/giveblade
 execute if score @s nomicon matches 4 run function items:missile/normal/givecata
@@ -45,13 +44,28 @@ execute if score @s nomicon matches 38 run function items:give/tipped_arrow_blin
 execute if score @s nomicon matches 39 run function items:give/tipped_arrow_levitation {count:1}
 execute if score @s nomicon matches 40 run function items:give/tipped_arrow_slowness {count:1}
 execute if score @s nomicon matches 41 run function items:give/tipped_arrow_wither {count:1}
+
+execute if score @s nomicon matches 42 run clear @s *[custom_data~{id:"shooting_saber"}]
 execute if score @s nomicon matches 42 run function rr_sandbox:items/givesaber
+execute if score @s nomicon matches 42 run scoreboard players set @s nomicon 0
+execute if score @s nomicon matches 42 run return run scoreboard players set $rolls var 0
+execute if score @s nomicon matches 43 run clear @s *[custom_data~{id:"piercing_pickaxe/nomicon"}]
 execute if score @s nomicon matches 43 run function rr_sandbox:items/givepickaxe
+execute if score @s nomicon matches 43 run scoreboard players set @s nomicon 0
+execute if score @s nomicon matches 43 run return run scoreboard players set $rolls var 0
+execute if score @s nomicon matches 44 run clear @s *[custom_data~{id:"knight_sword"}]
 execute if score @s nomicon matches 44 run function rr_sandbox:items/giveknightsword
+execute if score @s nomicon matches 44 run scoreboard players set @s nomicon 0
+execute if score @s nomicon matches 44 run return run scoreboard players set $rolls var 0
 execute if score @s nomicon matches 45 run function rr_sandbox:items/giveknightshield
+execute if score @s nomicon matches 46 run clear @s *[custom_data~{id:"spell_wand"}]
 execute if score @s nomicon matches 46 run function rr_sandbox:items/givespellwand
+execute if score @s nomicon matches 46 run scoreboard players set @s nomicon 0
+execute if score @s nomicon matches 46 run return run scoreboard players set $rolls var 0
 execute if score @s nomicon matches 47 run function rr_crusade:items/util/givespellbook
+
 # 48 maps to tomatwo (used to be 1)
+execute if score @s nomicon matches 48 run function items:missile/normal/givetoma
 
 execute if score @s nomicon matches 49 if entity @s[team=Blue] run function items:surprise_blue/givesurpriseegg
 execute if score @s nomicon matches 49 if entity @s[team=Yellow] run function items:surprise_yellow/givesurpriseegg

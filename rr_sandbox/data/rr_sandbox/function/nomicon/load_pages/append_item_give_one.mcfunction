@@ -1,4 +1,4 @@
-# dialog_name, trigger_input_id, item_loot_table, item_plain_name, color
+# dialog_name, trigger_input_id, item_loot_table, indefinite_article, item_plain_name, color
 
 $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body append value \
 {\
@@ -23,11 +23,11 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           "color": "white"\
         },\
         {\
-          "text": "[1x]",\
+          "text": "[ɢɪᴠᴇ]",\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-                "text": "Click to give yourself 1 $(item_plain_name)",\
+                "text": "Click to give yourself $(indefinite_article) $(item_plain_name)",\
                 "color": "white"\
               }\
           },\

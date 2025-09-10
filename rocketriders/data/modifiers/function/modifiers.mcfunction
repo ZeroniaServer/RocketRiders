@@ -15,17 +15,17 @@ execute if predicate game:modifiers/explosive/on unless predicate game:modifiers
 execute unless entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] run effect give @s night_vision infinite 100 true
 execute if entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] run effect clear @s night_vision
 execute if entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect give @s glowing infinite 1 true
-execute if entity @s[tag=Sonar] as @e[x=0,type=#arrows] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=snowball] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=egg] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=firework_rocket] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=fireball] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=dragon_fireball] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=#custom:potion] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=tnt_minecart] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=item] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,predicate=entities:type/vortex/body] run data merge entity @s {Glowing:1b}
-execute if entity @s[tag=Sonar] as @e[x=0,type=armor_stand,tag=Bot] run data merge entity @s {Glowing:1b}
+execute if entity @s[tag=Sonar] as @e[x=0,type=#arrows,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,type=snowball,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,type=egg,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,type=firework_rocket,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,type=fireball,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,type=dragon_fireball,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,type=#custom:potion,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,type=tnt_minecart,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,type=item,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,predicate=entities:type/vortex/body,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar] as @e[x=0,type=armor_stand,tag=Bot,tag=!is_glowing] run function game:glowing/on
 
 ##Rocket Residers (anti-crossing behavior)
 execute if predicate game:modifiers/rocket_residers/on unless predicate game:game_ended as @a[x=0,team=Blue,predicate=custom:residers] run tag @s add crosser

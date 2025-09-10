@@ -65,18 +65,7 @@ execute if entity @s[scores={endtimer=570}] run function achievements:scoresrese
 execute if entity @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute if entity @s[scores={endtimer=570},tag=SpamClick] as @a[x=0] run attribute @s minecraft:attack_speed base set 4
 #Reverse Sonar glowing
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=#arrows] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=snowball] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=egg] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=firework_rocket] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=fireball] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=dragon_fireball] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=#custom:potion] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=tnt] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=tnt_minecart] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=item] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,predicate=entities:type/vortex/body] run data merge entity @s {Glowing:0b}
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,type=armor_stand,tag=Bot] run data merge entity @s {Glowing:0b}
+execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,tag=is_glowing] run function game:glowing/off
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Spectator] LeaveGame 1
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Blue] LeaveGame 1
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Yellow] LeaveGame 1

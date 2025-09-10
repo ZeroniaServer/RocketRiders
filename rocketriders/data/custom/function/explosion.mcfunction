@@ -13,11 +13,14 @@ execute if predicate game:modifiers/clutter_collector/on if predicate custom:in_
 execute if score $actual_explosion_power var matches 1.. unless predicate game:portal_type/none if data storage rocketriders:main explosion.modifiers{ramp_power_near_portals:"auto"} run function custom:_explosion_/ramp_power
 execute store result storage rocketriders:main explosion.modifiers.nbt.ExplosionRadius float 1 run scoreboard players get $actual_explosion_power var
 
-# Copy name
-execute unless data storage rocketriders:main explosion.modifiers.nbt.CustomName run data modify storage rocketriders:main explosion.modifiers.nbt.CustomName set value {text:"",extra:[{text:"",insertion:"",hover_event:{action:"show_text",value:""},extra:["an explosion"]}]}
+# Set name
+execute if data storage rocketriders:main explosion.modifiers.name run data modify storage rocketriders:main explosion.name set value {text:"",extra:[{text:"",insertion:"",hover_event:{action:"show_text",value:""},extra:["an explosion"]}]}
+execute if data storage rocketriders:main explosion.modifiers.name run data modify storage rocketriders:main explosion.name.extra[0].extra[0] set from storage rocketriders:main explosion.modifiers.name
+execute if data storage rocketriders:main explosion.modifiers{copy_name:true} run data modify storage rocketriders:main explosion.name set value {text:"",extra:[{text:"",insertion:"",hover_event:{action:"show_text",value:""},extra:["an explosion"]}]}
 execute if data storage rocketriders:main explosion.modifiers{copy_name:true} if entity @s run loot replace block 0 184 -16 container.0 loot {pools:[{rolls:1,entries:[{type:"item",name:"stone",functions:[{function:"set_name",entity:"this",name:{selector:"@s"}}]}]}]}
-execute if data storage rocketriders:main explosion.modifiers{copy_name:true} if entity @s[type=player] run data modify storage rocketriders:main explosion.modifiers.nbt.CustomName.extra[0].extra[0] set from block 0 184 -16 Items[0].components.minecraft:custom_name
-execute if data storage rocketriders:main explosion.modifiers{copy_name:true} if entity @s[type=!player] run data modify storage rocketriders:main explosion.modifiers.nbt.CustomName.extra[0].extra[0] set from block 0 184 -16 Items[0].components.minecraft:custom_name.hover_event.name
+execute if data storage rocketriders:main explosion.modifiers{copy_name:true} if entity @s[type=player] run data modify storage rocketriders:main explosion.name.extra[0].extra[0] set from block 0 184 -16 Items[0].components.minecraft:custom_name
+execute if data storage rocketriders:main explosion.modifiers{copy_name:true} if entity @s[type=!player] run data modify storage rocketriders:main explosion.name.extra[0].extra[0] set from block 0 184 -16 Items[0].components.minecraft:custom_name.hover_event.name
+data modify storage rocketriders:main explosion.modifiers.nbt.CustomName set from storage rocketriders:main explosion.name
 
 # Assign kill credit
 execute unless data storage rocketriders:main explosion.modifiers.nbt.data.damage_origin.primary on origin on origin if entity @s[type=player] run data modify storage rocketriders:main explosion.modifiers.nbt.data.damage_origin.primary set from entity @s UUID

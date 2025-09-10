@@ -20,7 +20,7 @@ execute if score @s nomicon matches 18 run function items:missile/special/givebu
 execute if score @s nomicon matches 19 run function items:missile/special/giveduplex
 execute if score @s nomicon matches 20 run function items:missile/special/givebroad
 
-execute if score @s nomicon matches 21 run function items:give/arrow {count:4}
+execute if score @s nomicon matches 21 run function items:give/arrow {count:1}
 execute if score @s nomicon matches 22 run function items:util/givecanopy
 execute if score @s nomicon matches 23 run function items:util/givefireball
 execute if score @s nomicon matches 24 run function items:util/giveclusterfireball
@@ -41,10 +41,10 @@ execute if score @s nomicon matches 37 run function items:shooting_saber/infinit
 execute if score @s nomicon matches 37 unless predicate custom:has_shooting_saber_in_inventory run function rr_sandbox:items/givesaber
 execute if score @s nomicon matches 37 run scoreboard players set @s nomicon 0
 execute if score @s nomicon matches 37 run return run scoreboard players set $rolls var 0
-execute if score @s nomicon matches 38 run function items:give/tipped_arrow_blindness {count:4}
-execute if score @s nomicon matches 39 run function items:give/tipped_arrow_levitation {count:4}
-execute if score @s nomicon matches 40 run function items:give/tipped_arrow_slowness {count:4}
-execute if score @s nomicon matches 41 run function items:give/tipped_arrow_wither {count:4}
+execute if score @s nomicon matches 38 run function items:give/tipped_arrow_blindness {count:1}
+execute if score @s nomicon matches 39 run function items:give/tipped_arrow_levitation {count:1}
+execute if score @s nomicon matches 40 run function items:give/tipped_arrow_slowness {count:1}
+execute if score @s nomicon matches 41 run function items:give/tipped_arrow_wither {count:1}
 execute if score @s nomicon matches 42 run function rr_sandbox:items/givesaber
 execute if score @s nomicon matches 43 run function rr_sandbox:items/givepickaxe
 execute if score @s nomicon matches 44 run function rr_sandbox:items/giveknightsword
@@ -58,7 +58,7 @@ execute if score @s nomicon matches 49 if entity @s[team=Yellow] run function it
 
 execute if score @s nomicon matches 50 run loot give @s loot items:experimental/invisibility_potion
 execute if score @s nomicon matches 51 run loot give @s loot items:experimental/jump_boost_potion
-execute if score @s nomicon matches 52 run function items:give/spectral_arrow {count:4}
+execute if score @s nomicon matches 52 run function items:give/spectral_arrow {count:1}
 execute if score @s nomicon matches 53 run function items:shooting_saber/multishot_30_seconds
 execute if score @s nomicon matches 53 unless predicate custom:has_shooting_saber_in_inventory run function rr_sandbox:items/givesaber
 execute if score @s nomicon matches 53 run scoreboard players set @s nomicon 0

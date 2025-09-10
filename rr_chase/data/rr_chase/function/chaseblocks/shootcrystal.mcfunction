@@ -1,10 +1,2 @@
 #Kill when shot
-execute as @e[x=0,type=end_crystal,tag=ChaseCrystal2] at @s as @e[x=0,type=#arrows,nbt={inGround:0b},distance=..4] at @s positioned ^ ^ ^2 run tag @e[type=end_crystal,tag=ChaseCrystal2,limit=1,distance=..2] add KillCrystal
-execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run kill @e[x=0,type=#arrows,nbt={inGround:0b},distance=..4,sort=nearest]
-execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run particle explosion ~ ~ ~ 0.2 0.2 0.2 0.1 4 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run playsound block.glass.break master @a[x=0] ~ ~ ~ 1 0
-execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run playsound minecraft:entity.shulker_bullet.hurt master @a[x=0] ~ ~ ~ 1 0.8
-execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run playsound minecraft:entity.explode master @a[x=0] ~ ~ ~ 1 1.3
-execute as @e[x=0,type=end_crystal,tag=KillCrystal] at @s run tag @e[type=armor_stand,tag=ChaseCrystal,distance=..2,limit=1,sort=nearest] add KillCrystal
-kill @e[x=0,type=end_crystal,tag=KillCrystal]
-kill @e[x=0,type=armor_stand,tag=KillCrystal]
+execute as @e[x=0,type=end_crystal,tag=ChaseCrystal2] at @s as @e[distance=..4,type=#arrows,predicate=!custom:not_moving] rotated as @s positioned 0 0 0 positioned ^ ^ ^2 positioned 0 0 ~ positioned ^ ^ ^-1 facing 0 0 0 facing ^ ^ ^-1 positioned as @s run function rr_chase:chaseblocks/shootcrystal/arrow_check

@@ -324,8 +324,6 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "knight_shield": "items:misc/knight_shield",\
     "knight_sword": "items:misc/knight_sword",\
     "piercing_pickaxe": "items:misc/piercing_pickaxe",\
-    "piercing_pickaxe/end": "items:misc/piercing_pickaxe_end",\
-    "piercing_pickaxe/nomicon": "items:misc/piercing_pickaxe_nomicon",\
     "shooting_saber": "items:misc/shooting_saber",\
     "shooting_saber/infinity": "items:misc/shooting_saber_infinity",\
     "shooting_saber/multishot": "items:experimental/shooting_saber_multishot",\

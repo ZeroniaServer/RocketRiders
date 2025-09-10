@@ -49,7 +49,7 @@ execute if score @s nomicon matches 42 run clear @s *[custom_data~{id:"shooting_
 execute if score @s nomicon matches 42 run function rr_sandbox:items/givesaber
 execute if score @s nomicon matches 42 run scoreboard players set @s nomicon 0
 execute if score @s nomicon matches 42 run return run scoreboard players set $rolls var 0
-execute if score @s nomicon matches 43 run clear @s *[custom_data~{id:"piercing_pickaxe/nomicon"}]
+execute if score @s nomicon matches 43 run clear @s *[custom_data~{id:"piercing_pickaxe"}]
 execute if score @s nomicon matches 43 run function rr_sandbox:items/givepickaxe
 execute if score @s nomicon matches 43 run scoreboard players set @s nomicon 0
 execute if score @s nomicon matches 43 run return run scoreboard players set $rolls var 0

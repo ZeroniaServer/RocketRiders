@@ -10,23 +10,10 @@ title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Tipped
 execute if entity @s[scores={HasTippedArrows=4..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasTippedArrows=..3},tag=!fullHotbar] actionbar {"text":"Blindness Arrows obtained.","color":"light_purple"}
 
-#Intelligent stacking if player already has available arrow stack in inventory
-tag @s[tag=!fullOffhand] add notFullOffhand
-execute if items entity @s[tag=!fullOffhand] container.* spectral_arrow[count~{max:63}] run tag @s add fullOffhand
-execute if predicate custom:invisible run tag @s add fullOffhand
-
-loot give @s[scores={HasTippedArrows=0},tag=!fullHotbar,tag=fullOffhand] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:experimental/spectral_arrow",functions:[{function:"set_count",count:4}]}]}]}
-loot give @s[scores={HasTippedArrows=1},tag=!fullHotbar,tag=fullOffhand] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:experimental/spectral_arrow",functions:[{function:"set_count",count:3}]}]}]}
-loot give @s[scores={HasTippedArrows=2},tag=!fullHotbar,tag=fullOffhand] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:experimental/spectral_arrow",functions:[{function:"set_count",count:2}]}]}]}
-loot give @s[scores={HasTippedArrows=3},tag=!fullHotbar,tag=fullOffhand] loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:experimental/spectral_arrow",functions:[{function:"set_count",count:1}]}]}]}
-loot replace entity @s[scores={HasTippedArrows=0},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:experimental/spectral_arrow",functions:[{function:"set_count",count:4}]}]}]}
-loot replace entity @s[scores={HasTippedArrows=1},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:experimental/spectral_arrow",functions:[{function:"set_count",count:3}]}]}]}
-loot replace entity @s[scores={HasTippedArrows=2},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:experimental/spectral_arrow",functions:[{function:"set_count",count:2}]}]}]}
-loot replace entity @s[scores={HasTippedArrows=3},tag=!fullHotbar,tag=!fullOffhand] weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:experimental/spectral_arrow",functions:[{function:"set_count",count:1}]}]}]}
-
-#Reset intelligent stacking
-tag @s[tag=notFullOffhand] remove fullOffhand
-tag @s[tag=notFullOffhand] remove notFullOffhand
+execute if score @s HasArrows matches 0 if entity @s[tag=!fullHotbar] run function items:give/spectral_arrow {count:4}
+execute if score @s HasArrows matches 1 if entity @s[tag=!fullHotbar] run function items:give/spectral_arrow {count:3}
+execute if score @s HasArrows matches 2 if entity @s[tag=!fullHotbar] run function items:give/spectral_arrow {count:2}
+execute if score @s HasArrows matches 3 if entity @s[tag=!fullHotbar] run function items:give/spectral_arrow {count:1}
 
 execute if entity @s[scores={HasTippedArrows=..3},tag=!fullHotbar,tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenTipped

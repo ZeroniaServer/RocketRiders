@@ -12,7 +12,6 @@ tag @s[tag=stackingWasOff] remove doStacking
 tag @s remove stackingWasOff
 tag @s remove stackingOn
 tag @s remove customSaberMsg
-tag @s remove customArrowPickup
 tag @s remove SuddenDeathCustom
 tag @s[tag=DoublePortalWasOn] add DoublePortal
 tag @s[tag=DoublePortalWasOn] remove DoublePortalWasOn

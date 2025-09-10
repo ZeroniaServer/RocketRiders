@@ -16,9 +16,6 @@ execute if predicate game:game_ended run function rr_crusade:game/gameend
 execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
 execute as @e[x=0,type=item] run function everytick:no_drop
 
-#Arrow pickup
-execute unless predicate game:game_ended if entity @e[x=0,type=#arrows] run function rr_crusade:game/arrow_pickup
-
 #kits
 execute unless predicate game:game_ended if entity @s[tag=EditedSettings] run scoreboard players enable @a[x=0,team=!Lobby,team=!Developer,team=!Spectator] crusadechange
 execute unless predicate game:game_started if predicate game:game_ended run scoreboard players reset @a[x=0] crusadechange

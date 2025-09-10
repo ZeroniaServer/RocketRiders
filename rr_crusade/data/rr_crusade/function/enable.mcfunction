@@ -5,6 +5,7 @@ scoreboard players set $config_override.clutter_collector gamemode_components -1
 scoreboard players set $config_override.hardcore gamemode_components -1
 scoreboard players set $armor/crusade_kit_dependent gamemode_components 1
 scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
+scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit gamemode_components 1
 scoreboard players set $crusade_portals gamemode_components 1
 scoreboard players set $explosions_crack_deepslate_bricks gamemode_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage gamemode_components 1
@@ -21,7 +22,6 @@ tag @s[tag=!doStacking] add stackingWasOff
 tag @s add doStacking
 tag @s add stackingOn
 tag @s add customSaberMsg
-tag @s add customArrowPickup
 tag @s add SuddenDeathCustom
 tag @s[tag=DoublePortal] add DoublePortalWasOn
 tag @s[tag=SurpriseEgg] add SurpriseEggWasOn

@@ -97,7 +97,13 @@ stopsound @a[x=0] ambient minecraft:ambient.cave
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:cancel_utility
 
 #Arrow pickup
-execute unless predicate game:game_ended as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!customArrowPickup] if entity @e[limit=1,x=0,type=#arrows] run function everytick:arrow_pickup
+execute as @e[x=0,type=#arrows,tag=!arrow.processed] at @s run function everytick:arrow/init
+execute unless predicate game:game_ended run scoreboard players set @e[x=0,type=#arrows,predicate=!custom:not_moving] entity.age -1
+execute unless predicate game:game_ended as @e[x=0,type=#arrows,predicate=custom:not_moving] at @s run function everytick:arrow/while_on_ground
+
+#Item entity pickup
+execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init
+execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit as @e[x=0,type=item,predicate=custom:item_entity_contains_any_arrow] at @s run function everytick:item_entity/while_contents_is_any_arrow
 
 #Game ending and arena clearing
 execute if predicate game:game_ended as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:gameend

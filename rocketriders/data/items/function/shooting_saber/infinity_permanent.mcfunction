@@ -9,5 +9,4 @@ function custom:update_inventory/shooting_saber
 execute at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 1.5
 
 execute unless predicate custom:has_arrow_in_inventory run function rr_powerups:items/deduct_one_arrow_item_entity
-execute unless predicate custom:has_arrow_in_inventory unless predicate custom:invisible unless items entity @s weapon.offhand * run return run loot replace entity @s weapon.offhand loot items:misc/arrow
-execute unless predicate custom:has_arrow_in_inventory run loot give @s loot items:misc/arrow
+execute unless predicate custom:has_arrow_in_inventory run function items:give/arrow {count:1}

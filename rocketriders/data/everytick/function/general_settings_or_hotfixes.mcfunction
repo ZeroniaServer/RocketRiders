@@ -178,10 +178,6 @@ tag @a[tag=was_invisible,predicate=!custom:invisible] remove was_invisible
 # Remove custom team colour from those not playing
 execute as @a[x=0,scores={custom_team_color=1..}] unless entity @s[predicate=custom:on_blue_or_yellow_team,predicate=game:gamemode_components/custom_team_colors] run scoreboard players reset @s custom_team_color
 
-# Destroy grounded intangible arrows
-execute as @e[type=#arrows,scores={intangible_arrow.despawn_buffer=5..}] run function custom:kill_with_smoke_poof
-execute as @e[type=#arrows,predicate=custom:not_moving] if items entity @s contents *[intangible_projectile] run scoreboard players add @s intangible_arrow.despawn_buffer 1
-
 # Clear the XP bar in the lobby if YZELO is disabled
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!noYZELO] as @a[x=0,predicate=!custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
 

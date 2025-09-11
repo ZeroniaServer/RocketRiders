@@ -55,3 +55,5 @@ execute if score @s count matches 600 as @a[x=0,scores={crusadekit=1}] run loot 
 execute if score @s count matches 600 run summon marker 33 63 -66 {Tags:["airDetectBlue"]}
 execute if score @s count matches 600 run summon marker 33 63 66 {Tags:["airDetectYellow"]}
 execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1
+#Hotfix for spell wands from the lobby not being usable
+execute if score @s count matches 600 as @a[x=0,predicate=rr_crusade:kit/mage] run function custom:update_inventory/spell_wand

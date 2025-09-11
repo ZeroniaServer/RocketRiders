@@ -82,6 +82,13 @@
                 {
                   "condition": "minecraft:reference",
                   "name": "game:game_ended"
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "nbt": "{Tags:['Loser']}"
+                  }
                 }
               ]
             },

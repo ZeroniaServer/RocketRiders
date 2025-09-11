@@ -319,7 +319,6 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "stinging_shield": "items:util/stinging_shield",\
     "vortex": "items:util/vortex",\
     "arrow": "items:misc/arrow",\
-    "arrow/lobby": "items:misc/arrow_lobby",\
     "elytra": "items:misc/elytra",\
     "knight_shield": "items:misc/knight_shield",\
     "knight_sword": "items:misc/knight_sword",\

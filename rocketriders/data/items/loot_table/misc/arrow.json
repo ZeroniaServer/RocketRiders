@@ -20,6 +20,21 @@
                   "Droppable": true
                 }
               }
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "lobby": true
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:game_started"
+                  }
+                }
+              ]
             }
           ]
         }

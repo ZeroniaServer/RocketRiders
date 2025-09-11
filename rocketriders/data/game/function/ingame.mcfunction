@@ -38,7 +38,7 @@ execute if predicate game:game_started if score @s gametime matches 1..2 as @a[x
 execute if predicate game:game_started if score @s gametime matches 10 if entity @s[tag=!NoFall] run gamerule fallDamage true
 
 ##Clear lobby arrows
-execute if predicate game:game_started if score @s gametime matches ..4 run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] arrow[custom_data~{Lobby:1b}]
+execute if predicate game:game_started if score @s gametime matches ..4 run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{lobby:true}]
 
 ##Remove kills
 execute if predicate game:game_started if score @s gametime matches ..4 run scoreboard players reset @a[x=0,predicate=custom:on_blue_or_yellow_team] kills

@@ -16,7 +16,6 @@ execute unless data entity @s {inGround:true} run return run tag @a[x=0,tag=arro
 
 tag @s add arrow_pickup.done
 execute unless predicate custom:intangible_arrow if items entity @s contents *[custom_data~{id:"arrow"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/arrow {count:1}
-execute unless predicate custom:intangible_arrow if items entity @s contents *[custom_data~{id:"arrow/lobby"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/arrow_lobby {count:1}
 execute unless predicate custom:intangible_arrow if items entity @s contents *[custom_data~{id:"tipped_arrow_blindness"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/tipped_arrow_blindness {count:1}
 execute unless predicate custom:intangible_arrow if items entity @s contents *[custom_data~{id:"tipped_arrow_levitation"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/tipped_arrow_levitation {count:1}
 execute unless predicate custom:intangible_arrow if items entity @s contents *[custom_data~{id:"tipped_arrow_slowness"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/tipped_arrow_slowness {count:1}

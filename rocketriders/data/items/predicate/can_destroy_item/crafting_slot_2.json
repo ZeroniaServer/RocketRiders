@@ -49,7 +49,7 @@
           "terms": [
             {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/crusade_kit_dependent"},
             {"condition":"minecraft:reference","name":"rr_crusade:kit/mage"},
-            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.2":{"items":"minecraft:writable_book"}}}}
+            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.2":{"predicates":{"minecraft:custom_data":{"id":"spell_wand"}}}}}}
           ]
         }
       ]

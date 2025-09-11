@@ -328,7 +328,6 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "shooting_saber/multishot": "items:experimental/shooting_saber_multishot",\
     "slap_fish": "items:misc/slap_fish",\
     "spell_wand": "items:misc/spell_wand",\
-    "spell_wand/end": "items:misc/spell_wand_end",\
     "tipped_arrow_blindness": "items:misc/tipped_arrow_blindness",\
     "tipped_arrow_levitation": "items:misc/tipped_arrow_levitation",\
     "tipped_arrow_slowness": "items:misc/tipped_arrow_slowness",\

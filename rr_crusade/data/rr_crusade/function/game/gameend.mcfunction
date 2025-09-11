@@ -5,11 +5,7 @@ clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_ro
 execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=rr_crusade:kit/archer] run function custom:update_inventory/shooting_saber
 
 #Replacing Spell Wands
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents writable_book run function items:killendweapon
-execute if entity @s[tag=YellowWon,scores={endtimer=1}] run clear @a[x=0,team=Blue,scores={crusadekit=3}] writable_book
-execute if entity @s[tag=YellowWon,scores={endtimer=1}] as @a[x=0,team=Blue,scores={crusadekit=3}] run loot give @s loot items:misc/spell_wand_end
-execute if entity @s[tag=BlueWon,scores={endtimer=1}] run clear @a[x=0,team=Yellow,scores={crusadekit=3}] writable_book
-execute if entity @s[tag=BlueWon,scores={endtimer=1}] as @a[x=0,team=Yellow,scores={crusadekit=3}] run loot give @s loot items:misc/spell_wand_end
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=rr_crusade:kit/mage] run function custom:update_inventory/spell_wand
 
 execute if entity @s[tag=!doTying,scores={endtimer=1}] run function game:endstats
 execute if predicate rr_crusade:yellow_portal_revealed if predicate rr_crusade:blue_portal_revealed run tag @s add couldTie

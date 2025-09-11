@@ -1,6 +1,9 @@
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run fill 6 53 -6 18 53 6 air
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run fill 5 52 -7 19 58 7 air destroy
-execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run kill @e[type=marker,x=5,y=52,z=-7,dx=14,dy=6,dz=14,tag=obsidianshield]
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run kill @e[x=5,y=52,z=-7,dx=14,dy=6,dz=14,type=marker,tag=obsidianshield]
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] as @e[x=5,y=52,z=-7,dx=14,dy=6,dz=14,predicate=entities:type/shield] run function entities:shield/actions/kill
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] as @e[x=5,y=52,z=-7,dx=14,dy=6,dz=14,predicate=entities:type/stinging_shield] run function entities:stinging_shield/actions/kill
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] as @e[x=5,y=52,z=-7,dx=14,dy=6,dz=14,predicate=entities:type/canopy/brain] run function entities:canopy/actions/kill
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a[x=0] ~ ~ ~ 3 0
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a[x=0] ~ ~ ~ 3 0.6
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a[x=0] ~ ~ ~ 3 0.7

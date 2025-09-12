@@ -33,7 +33,7 @@
                   {
                     "text": "Useful for short flights!",
                     "italic": false,
-                    "color": "dark_gray"
+                    "color": "gray"
                   },
                   "",
                   {
@@ -53,7 +53,7 @@
                     "amount": 3,
                     "slot": "chest",
                     "type": "minecraft:armor",
-                    "id": "rr_powerups:elytra"
+                    "id": "rocketriders:elytra"
                   }
                 ],
                 "minecraft:tooltip_display": {

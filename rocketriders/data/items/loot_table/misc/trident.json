@@ -13,11 +13,6 @@
                 "minecraft:custom_data": {
                   "id": "trident"
                 },
-                "minecraft:max_damage": 8,
-                "minecraft:enchantments": {
-                  "minecraft:impaling": 2,
-                  "minecraft:loyalty": 10
-                },
                 "minecraft:item_name": {
                   "text": "Trident",
                   "bold": true,
@@ -39,7 +34,31 @@
                     "color": "gray",
                     "italic": false
                   }
-                ]
+                ],
+                "minecraft:max_damage": 8,
+                "minecraft:attribute_modifiers": [
+                  {
+                    "amount": 8.0,
+                    "id": "rocketriders:trident",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_damage"
+                  },
+                  {
+                    "amount": -2.9000000953674316,
+                    "id": "rocketriders:trident",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_speed",
+                    "display": {
+                      "type": "hidden"
+                    }
+                  }
+                ],
+                "minecraft:enchantments": {
+                  "minecraft:impaling": 2,
+                  "minecraft:loyalty": 10
+                }
               }
             }
           ]

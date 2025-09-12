@@ -83,12 +83,24 @@ dialog show @s {\
     },\
     {\
       "label": {\
+        "color": "aqua",\
         "text": "Switch Team"\
       },\
-      "width": 70,\
+      "width": 90,\
       "action": {\
         "type": "run_command",\
         "command": "trigger nomicon set 2000001"\
+      }\
+    },\
+    {\
+      "label": {\
+        "color": "red",\
+        "text": "Clear Inventory"\
+      },\
+      "width": 90,\
+      "action": {\
+        "type": "run_command",\
+        "command": "trigger nomicon set 2000002"\
       }\
     }\
   ],\

@@ -14,6 +14,7 @@ execute if score @s nomicon matches 1000007 run function rr_sandbox:nomicon/page
 execute if score @s nomicon matches 1000001..1999999 run return run scoreboard players reset @s nomicon
 # Other actions
 execute if score @s nomicon matches 2000001 run function rr_sandbox:nomicon/switch_team
+execute if score @s nomicon matches 2000002 run function rr_sandbox:nomicon/clear_inventory
 execute if score @s nomicon matches 2000001..2999999 run return run scoreboard players reset @s nomicon
 
 # Give random item (100001..999999)

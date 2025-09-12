@@ -27,6 +27,7 @@
                   "color": "white"
                 },
                 "minecraft:lore": [
+                  "",
                   {
                     "translate": "A special wand, made to",
                     "italic": false

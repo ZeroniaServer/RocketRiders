@@ -19,6 +19,7 @@
                   "color": "white"
                 },
                 "minecraft:lore": [
+                  "",
                   {
                     "translate": "A weapon used for both",
                     "italic": false

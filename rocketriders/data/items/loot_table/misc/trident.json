@@ -19,6 +19,7 @@
                   "color": "dark_purple"
                 },
                 "minecraft:lore": [
+                  "",
                   {
                     "text": "Useful for strong close/ranged damage.",
                     "color": "gray",

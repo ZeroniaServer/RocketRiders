@@ -21,11 +21,13 @@
                 },
                 "minecraft:lore": [
                   {
-                    "translate": "A sharp sword, made to",
+                    "text": "A sharp sword, made to",
+                    "color": "gray",
                     "italic": false
                   },
                   {
-                    "translate": "kill the strongest enemies.",
+                    "text": "kill the strongest enemies.",
+                    "color": "gray",
                     "italic": false
                   }
                 ],

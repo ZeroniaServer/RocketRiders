@@ -20,11 +20,13 @@
                 },
                 "minecraft:lore": [
                   {
-                    "translate": "A tool used both for",
+                    "text": "A tool used both for",
+                    "color": "gray",
                     "italic": false
                   },
                   {
-                    "translate": "mining and melee attacks.",
+                    "text": "mining and melee attacks.",
+                    "color": "gray",
                     "italic": false
                   }
                 ],

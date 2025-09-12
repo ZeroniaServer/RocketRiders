@@ -38,7 +38,8 @@
                 ],
                 "minecraft:lore": [
                   {
-                    "translate": "A not-so-sturdy shield.",
+                    "text": "A not-so-sturdy shield.",
+                    "color": "gray",
                     "italic": false
                   }
                 ],

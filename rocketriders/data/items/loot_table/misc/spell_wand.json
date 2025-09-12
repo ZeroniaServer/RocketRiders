@@ -29,11 +29,13 @@
                 "minecraft:lore": [
                   "",
                   {
-                    "translate": "A special wand, made to",
+                    "text": "A special wand, made to",
+                    "color": "gray",
                     "italic": false
                   },
                   {
-                    "translate": "set enemies on fire!",
+                    "text": "set enemies on fire!",
+                    "color": "gray",
                     "italic": false
                   }
                 ],

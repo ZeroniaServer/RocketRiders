@@ -21,11 +21,13 @@
                 "minecraft:lore": [
                   "",
                   {
-                    "translate": "A weapon used for both",
+                    "text": "A weapon used for both",
+                    "color": "gray",
                     "italic": false
                   },
                   {
-                    "translate": "ranged and melee attacks",
+                    "text": "ranged and melee attacks",
+                    "color": "gray",
                     "italic": false
                   }
                 ],

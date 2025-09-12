@@ -28,17 +28,25 @@
                     "italic": false
                   }
                 ],
+                "minecraft:enchantment_glint_override": true,
                 "minecraft:unbreakable": {},
-                "minecraft:enchantments": {
-                  "minecraft:sharpness": 4
-                },
                 "minecraft:attribute_modifiers": [
                   {
                     "operation": "add_value",
                     "amount": -2.2,
                     "slot": "mainhand",
                     "type": "minecraft:attack_speed",
-                    "id": "rr_ctf:piercing_pickaxe"
+                    "id": "rocketriders:piercing_pickaxe",
+                    "display": {
+                      "type": "hidden"
+                    }
+                  },
+                  {
+                    "operation": "add_value",
+                    "amount": 2.5,
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_damage",
+                    "id": "rocketriders:piercing_pickaxe"
                   }
                 ],
                 "minecraft:tool": {
@@ -54,7 +62,7 @@
                     {
                       "blocks": "#minecraft:mineable/pickaxe",
                       "correct_for_drops": true,
-                      "speed": 9.0
+                      "speed": 9
                     }
                   ],
                   "default_mining_speed": 9
@@ -64,7 +72,6 @@
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
-                    "minecraft:attribute_modifiers",
                     "minecraft:can_break",
                     "minecraft:unbreakable"
                   ]
@@ -74,9 +81,30 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "!minecraft:enchantments": {},
-                "minecraft:enchantment_glint_override": true,
                 "!minecraft:can_break": {}
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:game_ended"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:attribute_modifiers": [
+                  {
+                    "operation": "add_value",
+                    "amount": -2.2,
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_speed",
+                    "id": "rocketriders:piercing_pickaxe",
+                    "display": {
+                      "type": "hidden"
+                    }
+                  }
+                ]
               },
               "conditions": [
                 {

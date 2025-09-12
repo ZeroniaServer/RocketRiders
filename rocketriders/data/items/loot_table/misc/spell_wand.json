@@ -36,9 +36,17 @@
                     "italic": false
                   }
                 ],
+                "minecraft:attribute_modifiers": [
+                  {
+                    "amount": 1.5,
+                    "id": "rocketriders:spell_wand",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_damage"
+                  }
+                ],
                 "minecraft:enchantments": {
-                  "minecraft:fire_aspect": 2,
-                  "minecraft:sharpness": 2
+                  "minecraft:fire_aspect": 2
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
@@ -50,9 +58,7 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:enchantments": {
-                  "minecraft:fire_aspect": 2
-                },
+                "minecraft:attribute_modifiers": [],
                 "!minecraft:consumable": {}
               },
               "conditions": [

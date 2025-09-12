@@ -29,9 +29,27 @@
                     "italic": false
                   }
                 ],
+                "minecraft:attribute_modifiers": [
+                  {
+                    "amount": 4.0,
+                    "id": "rocketriders:knight_sword",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_damage"
+                  },
+                  {
+                    "amount": -2.4,
+                    "id": "rocketriders:knight_sword",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_speed",
+                    "display": {
+                      "type": "hidden"
+                    }
+                  }
+                ],
                 "minecraft:tooltip_display": {
                   "hidden_components": [
-                    "minecraft:attribute_modifiers",
                     "minecraft:unbreakable"
                   ]
                 }

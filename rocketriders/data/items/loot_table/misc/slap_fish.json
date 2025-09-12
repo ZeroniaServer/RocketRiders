@@ -39,6 +39,22 @@
                 "minecraft:enchantments": {
                   "minecraft:knockback": 3
                 },
+                "minecraft:attribute_modifiers": [
+                  {
+                    "operation": "add_value",
+                    "amount": 0,
+                    "slot": "mainhand",
+                    "type": "minecraft:luck",
+                    "id": "rocketriders:slap_fish/fake_knockback_modifier",
+                    "display": {
+                      "type": "override",
+                      "value": {
+                        "color": "blue",
+                        "text": "+7.75 Knockback"
+                      }
+                    }
+                  }
+                ],
                 "minecraft:max_damage": 1,
                 "minecraft:max_stack_size": 1,
                 "minecraft:weapon": {

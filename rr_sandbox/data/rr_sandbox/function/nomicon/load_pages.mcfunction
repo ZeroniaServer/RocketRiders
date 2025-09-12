@@ -303,7 +303,7 @@ data modify storage rocketriders:nomicon dialogs.powerups.dialog set value {\
 }
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "powerups", trigger_input_id: 31, item_loot_table: "items:util/stinging_shield", item_plain_name_singular: "Stinging Shield", item_plain_name_plural: "Stinging Shields", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "powerups", trigger_input_id: 32, item_loot_table: "items:util/lava_splash", item_plain_name_singular: "Lava Splash", item_plain_name_plural: "Lava Splashes", color: "dark_purple"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "powerups", trigger_input_id: 33, item_loot_table: "items:misc/slap_fish", item_plain_name_singular: "Slap Fish", item_plain_name_plural: "Slap Fish", color: "dark_purple"}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "powerups", trigger_input_id: 33, item_loot_table: "items:misc/slap_fish", item_plain_name_singular: "Slap Fish", item_plain_name_plural: "Slap Fish", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "powerups", trigger_input_id: 34, item_loot_table: "items:misc/totem_of_undying", item_plain_name_singular: "Totem of Undying", item_plain_name_plural: "Totems of Undying", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_activate {dialog_name: "powerups", trigger_input_id: 35, item_loot_table: "items:misc/elytra", item_plain_name: "Elytra", color: "dark_purple"}
 function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "powerups", trigger_input_id: 36, item_loot_table: "items:misc/trident", item_plain_name_singular: "Trident", item_plain_name_plural: "Tridents", color: "dark_purple"}

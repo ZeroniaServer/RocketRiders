@@ -9,7 +9,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove forceCountdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove bossbarOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove gaveFirstItem
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] count 0
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] gametime 0
+scoreboard players set $game_duration global 0
 worldborder warning distance 0
 execute as @a[x=0] run function everytick:score_reset
 tag @e[x=0,type=armor_stand,tag=EditedSettings] remove EditedSettings

@@ -9,7 +9,7 @@ execute if score Blue SwissCheese >= SwissCheese SwissCheese run tag @a[x=0,team
 scoreboard players reset SwissCheese SwissCheese
 
 #Simple and Clean (part 1)
-execute if score Blue SwissCheese matches 0 if score @s gametime matches ..2400 run tag @a[x=0,team=Blue] add SimpleAndClean
+execute if score Blue SwissCheese matches 0 if score $game_duration global matches ..2400 run tag @a[x=0,team=Blue] add SimpleAndClean
 scoreboard players reset Blue SwissCheese
 
 #Deus Ex Machina (part 1)

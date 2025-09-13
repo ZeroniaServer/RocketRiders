@@ -91,8 +91,8 @@ execute unless block 12 63 62 obsidian run setblock 12 63 62 obsidian
 execute unless block 14 63 63 obsidian run setblock 14 63 63 obsidian
 
 #> Crystal health & bossbars
-execute if score @s gametime matches 1.. run bossbar set rr_crusade:blue players @a[x=0,team=!Lobby]
-execute if score @s gametime matches 1.. run bossbar set rr_crusade:yellow players @a[x=0,team=!Lobby]
+execute if score $game_duration global matches 1.. run bossbar set rr_crusade:blue players @a[x=0,team=!Lobby]
+execute if score $game_duration global matches 1.. run bossbar set rr_crusade:yellow players @a[x=0,team=!Lobby]
 execute store result bossbar rr_crusade:blue value run scoreboard players get $BlueShield crusadehp
 execute store result bossbar rr_crusade:yellow value run scoreboard players get $YellowShield crusadehp
 

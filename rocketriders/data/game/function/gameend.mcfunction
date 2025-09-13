@@ -54,7 +54,7 @@ execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/defaul
 execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..100}] run tag @s add SuddenDeath
 
 ##Post-tie phase and reset
-scoreboard players set @s[scores={endtimer=101}] gametime 0
+execute if entity @s[scores={endtimer=101}] run scoreboard players set $game_duration global 0
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function everytick:score_reset
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function custom:player_action/forget_all_canopies
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Blue]

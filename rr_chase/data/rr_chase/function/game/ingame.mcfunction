@@ -14,7 +14,7 @@ execute if entity @s[tag=Minute] run function items:minutemix
 execute as @e[x=0,type=marker,tag=airDetect,limit=1] at @s run function rr_chase:game/airdetect
 
 #Arrows on death - DISABLED AS OF 1.2.0
-# execute if entity @s[scores={gametime=2..}] as @a[x=0,team=Blue,scores={deathCooldown=1}] run function items:util/givearrows
+# execute if score $game_duration global matches 2.. as @a[x=0,team=Blue,scores={deathCooldown=1}] run function items:util/givearrows
 
 #Flagpole
 fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace
@@ -85,7 +85,7 @@ execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=12..22] r
 execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=0..11] run bossbar set rr_chase:lead value 10
 
 #Win
-execute positioned 12 64 65 if entity @s[scores={gametime=0..4}] run tp @a[team=Blue,distance=..2] 12 64 -66 0 0
+execute positioned 12 64 65 if score $game_duration global matches 0..4 run tp @a[team=Blue,distance=..2] 12 64 -66 0 0
 execute positioned 12 64 65 run tag @a[team=Blue,distance=..2,limit=1] add Winner
 execute as @a[x=0,team=Blue,tag=Winner,limit=1] run title @s actionbar {"text":""}
 execute if entity @a[x=0,team=Blue,tag=Winner,limit=1] run tag @a[x=0,team=Blue,tag=!Winner] add Loser

@@ -22,7 +22,7 @@ execute if predicate game:game_started unless predicate rr:is_cubekrowd as @a[x=
 execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,tag=!servermodeJoin] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
 
 #Give first item to anyone who joins within 1st second
-execute if predicate game:game_started if score @s gametime matches 3..20 run function items:givefirst
+execute if predicate game:game_started if score $game_duration global matches 3..20 run function items:givefirst
 
 #Tag Removal
 tag @a[x=0,tag=!servermodeJoin] remove JoinBlue

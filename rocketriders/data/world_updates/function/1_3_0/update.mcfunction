@@ -186,6 +186,7 @@ scoreboard objectives remove infinity
 scoreboard objectives remove xp_mult
 scoreboard objectives remove xp_mod
 scoreboard objectives remove xp_div
+scoreboard objectives remove gametime
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

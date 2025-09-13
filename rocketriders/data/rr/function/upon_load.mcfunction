@@ -120,7 +120,6 @@ scoreboard objectives add dy dummy
 scoreboard objectives add dz dummy
 scoreboard objectives add CmdData dummy
 scoreboard objectives add playerUUID dummy
-scoreboard objectives add gametime dummy
 scoreboard objectives add PlatTime dummy
 scoreboard objectives add ClearArena dummy
 scoreboard objectives add GamesPlayed dummy

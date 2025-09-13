@@ -7,7 +7,7 @@ execute if predicate game:game_started as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I
 execute if predicate game:game_started as @a[x=0,team=Yellow,nbt=!{respawn:{pos:[I;12,64,66]}}] run spawnpoint @s 12 64 66 -180
 
 #Give first item to anyone who joins within 1st second
-execute if predicate game:game_started if score @s gametime matches 3..20 run function items:givefirst
+execute if predicate game:game_started if score $game_duration global matches 3..20 run function items:givefirst
 
 #Tag Removal
 tag @a[x=0,tag=!servermodeJoin] remove JoinBlue

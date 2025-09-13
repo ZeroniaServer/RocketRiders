@@ -12,8 +12,7 @@ execute if entity @s[scores={HasBullet=1..},tag=!fullHotbar,tag=!BackBull,tag=!i
 title @s[tag=!fullHotbar,tag=!BackBull,tag=itemDeducted] actionbar {"text":"Bullet already obtained.","color":"light_purple"}
 execute if entity @s[tag=!fullHotbar,tag=!BackBull,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasBullet=0},tag=!fullHotbar,tag=!BackBull,tag=!itemDeducted] actionbar {"text":"Bullet obtained.","color":"light_purple"}
-loot give @s[scores={HasBullet=0},tag=!fullHotbar] loot items:missile/special/bullet
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasBullet=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasBullet=0},tag=!fullHotbar] run function items:give/missile/bullet {count:1}
 
 #Game tracking
 execute unless entity @s[tag=BackBull] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenBull

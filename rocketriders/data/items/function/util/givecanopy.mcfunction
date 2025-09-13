@@ -10,24 +10,21 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] 
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!canopyStack] run title @s[scores={HasPlat=1..},tag=!fullHotbar] actionbar {"text":"Canopy already obtained.","color":"aqua"}
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!canopyStack] if entity @s[scores={HasPlat=1..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!canopyStack] run title @s[scores={HasPlat=0},tag=!fullHotbar] actionbar {"text":"Canopy obtained.","color":"aqua"}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!canopyStack] run loot give @s[scores={HasPlat=0},tag=!fullHotbar] loot items:util/canopy
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!canopyStack] run playsound minecraft:entity.item.pickup player @s[scores={HasPlat=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!canopyStack] if entity @s[scores={HasPlat=0},tag=!fullHotbar] run function items:give/canopy {count:1}
 
 #With Canopy stacking
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=!CTF3stack] if entity @s[scores={HasPlat=1},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=!CTF3stack] run title @s[scores={HasPlat=2..},tag=!fullHotbar] actionbar {"text":"Canopy already obtained.","color":"aqua"}
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=!CTF3stack] if entity @s[scores={HasPlat=2..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=!CTF3stack] run title @s[scores={HasPlat=..1},tag=!fullHotbar] actionbar {"text":"Canopy obtained.","color":"aqua"}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=!CTF3stack] run loot give @s[scores={HasPlat=..1},tag=!fullHotbar] loot items:util/canopy
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=!CTF3stack] run playsound minecraft:entity.item.pickup player @s[scores={HasPlat=..1},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=!CTF3stack] if entity @s[scores={HasPlat=..1},tag=!fullHotbar] run function items:give/canopy {count:1}
 
 #CTF mode overtime
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=CTF3stack] if entity @s[scores={HasPlat=1},tag=fullHotbar] run tag @s remove fullHotbar
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=CTF3stack] run title @s[scores={HasPlat=3..},tag=!fullHotbar] actionbar {"text":"Canopy already obtained.","color":"aqua"}
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=CTF3stack] if entity @s[scores={HasPlat=3..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=CTF3stack] run title @s[scores={HasPlat=..2},tag=!fullHotbar] actionbar {"text":"Canopy obtained.","color":"aqua"}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=CTF3stack] run loot give @s[scores={HasPlat=..2},tag=!fullHotbar] loot items:util/canopy
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=CTF3stack] run playsound minecraft:entity.item.pickup player @s[scores={HasPlat=..2},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack,tag=CTF3stack] if entity @s[scores={HasPlat=..2},tag=!fullHotbar] run function items:give/canopy {count:1}
 
 #Game tracking
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenCanopy

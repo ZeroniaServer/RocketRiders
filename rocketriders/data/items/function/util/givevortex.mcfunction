@@ -12,8 +12,7 @@ execute if entity @s[scores={HasVortex=1..},tag=!fullHotbar,tag=!itemDeducted] a
 title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Vortex already obtained","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasVortex=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Vortex obtained","color":"aqua"}
-loot give @s[scores={HasVortex=0},tag=!fullHotbar] loot items:util/vortex
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasVortex=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasVortex=0},tag=!fullHotbar] run function items:give/vortex {count:1}
 
 #Game tracking
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenVortex

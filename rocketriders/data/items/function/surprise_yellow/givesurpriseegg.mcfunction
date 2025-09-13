@@ -10,5 +10,4 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!doStacking]
 title @s[scores={HasSurprise=3..},tag=!fullHotbar,tag=!BackSurprise] actionbar {"text":"Surprise Egg already obtained.","color":"aqua"}
 execute if entity @s[scores={HasSurprise=3..},tag=!fullHotbar,tag=!BackSurprise] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasSurprise=..2},tag=!fullHotbar,tag=!BackSurprise] actionbar {"text":"Surprise Egg obtained.","color":"aqua"}
-loot give @s[team=Yellow,scores={HasSurprise=..2},tag=!fullHotbar] loot items:missile/surprise/all
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasSurprise=..2},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[team=Yellow,scores={HasSurprise=..2},tag=!fullHotbar] run function items:give/surprise_missile/all {count:1}

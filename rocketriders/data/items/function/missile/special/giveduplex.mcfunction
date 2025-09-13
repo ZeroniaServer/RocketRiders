@@ -12,8 +12,7 @@ execute if entity @s[scores={HasDuplex=1..},tag=!fullHotbar,tag=!BackDuplex,tag=
 title @s[tag=!fullHotbar,tag=!BackDuplex,tag=itemDeducted] actionbar {"text":"Duplex already obtained.","color":"light_purple"}
 execute if entity @s[tag=!fullHotbar,tag=!BackDuplex,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasDuplex=0},tag=!fullHotbar,tag=!BackDuplex,tag=!itemDeducted] actionbar {"text":"Duplex obtained.","color":"light_purple"}
-loot give @s[scores={HasDuplex=0},tag=!fullHotbar] loot items:missile/special/duplex
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasDuplex=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasDuplex=0},tag=!fullHotbar] run function items:give/missile/duplex {count:1}
 
 #Game tracking
 execute unless entity @s[tag=BackDuplex] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenDuplex

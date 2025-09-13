@@ -13,8 +13,7 @@ title @s[tag=!fullHotbar,tag=!BackHyper,tag=itemDeducted] actionbar {"text":"Hyp
 execute if entity @s[tag=!fullHotbar,tag=!BackHyper,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
 title @s[scores={HasHyper=0},tag=!fullHotbar,tag=!BackHyper,tag=!itemDeducted] actionbar {"text":"Hypersonic obtained.","color":"light_purple"}
-loot give @s[scores={HasHyper=0},tag=!fullHotbar] loot items:missile/special/hypersonic
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasHyper=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasHyper=0},tag=!fullHotbar] run function items:give/missile/hypersonic {count:1}
 
 #Game tracking
 execute unless entity @s[tag=BackHyper] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenHyper

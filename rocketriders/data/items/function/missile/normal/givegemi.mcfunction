@@ -12,8 +12,7 @@ execute if entity @s[scores={HasGemi=1..},tag=!fullHotbar,tag=!BackGemi,tag=!ite
 title @s[tag=!fullHotbar,tag=!BackGemi,tag=itemDeducted] actionbar {"text":"Gemini already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackGemi,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasGemi=0},tag=!fullHotbar,tag=!BackGemi,tag=!itemDeducted] actionbar {"text":"Gemini obtained.","color":"aqua"}
-loot give @s[scores={HasGemi=0},tag=!fullHotbar] loot items:missile/normal/gemini
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasGemi=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasGemi=0},tag=!fullHotbar] run function items:give/missile/gemini {count:1}
 
 #Game tracking
 execute unless entity @s[tag=BackGemi] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenGemi

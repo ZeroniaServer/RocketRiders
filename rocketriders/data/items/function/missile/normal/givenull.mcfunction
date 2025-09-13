@@ -12,8 +12,7 @@ execute if entity @s[scores={HasNull=1..},tag=!fullHotbar,tag=!BackNull,tag=!ite
 title @s[tag=!fullHotbar,tag=!BackNull,tag=itemDeducted] actionbar {"text":"Chronullifier already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackNull,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasNull=0},tag=!fullHotbar,tag=!BackNull,tag=!itemDeducted] actionbar {"text":"Chronullifier obtained.","color":"aqua"}
-loot give @s[scores={HasNull=0},tag=!fullHotbar] loot items:missile/normal/chronullifier
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasNull=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasNull=0},tag=!fullHotbar] run function items:give/missile/chronullifier {count:1}
 
 #Game tracking
 execute unless entity @s[tag=BackNull] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenNull

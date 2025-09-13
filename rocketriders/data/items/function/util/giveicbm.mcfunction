@@ -11,7 +11,6 @@ execute if entity @s[scores={HasICBM=1..},tag=!fullHotbar,tag=!itemDeducted] at 
 title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"ICBM already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasICBM=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"ICBM obtained.","color":"aqua"}
-loot give @s[scores={HasICBM=0},tag=!fullHotbar] loot items:util/icbm
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasICBM=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasICBM=0},tag=!fullHotbar] run function items:give/icbm {count:1}
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenICBM

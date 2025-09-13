@@ -12,8 +12,7 @@ execute if entity @s[scores={HasObshield=1..},tag=!fullHotbar,tag=!BackObshield,
 title @s[tag=!fullHotbar,tag=!BackObshield,tag=itemDeducted] actionbar {"text":"Obsidian Shield already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackObshield,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasObshield=0},tag=!fullHotbar,tag=!BackObshield,tag=!itemDeducted] actionbar {"text":"Obsidian Shield obtained.","color":"aqua"}
-loot give @s[scores={HasObshield=0},tag=!fullHotbar] loot items:util/obsidian_shield
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasObshield=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasObshield=0},tag=!fullHotbar] run function items:give/obsidian_shield {count:1}
 
 #Game tracking
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenObshield

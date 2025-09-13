@@ -12,8 +12,7 @@ execute if entity @s[scores={HasBolt=1..},tag=!fullHotbar,tag=!BackBolt,tag=!ite
 title @s[tag=!fullHotbar,tag=!BackBolt,tag=itemDeducted] actionbar {"text":"Thunderbolt already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackBolt,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasBolt=0},tag=!fullHotbar,tag=!BackBolt,tag=!itemDeducted] actionbar {"text":"Thunderbolt obtained.","color":"aqua"}
-loot give @s[scores={HasBolt=0},tag=!fullHotbar] loot items:missile/lightning/thunderbolt
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasBolt=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasBolt=0},tag=!fullHotbar] run function items:give/missile/thunderbolt {count:1}
 
 #Game tracking
 execute unless entity @s[tag=BackBolt] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenBolt

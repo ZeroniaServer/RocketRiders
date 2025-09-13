@@ -12,8 +12,7 @@ execute if entity @s[scores={HasRift=1..},tag=!fullHotbar,tag=!BackRift,tag=!ite
 title @s[tag=!fullHotbar,tag=!BackRift,tag=itemDeducted] actionbar {"text":"Rifter already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackRift,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasRift=0},tag=!fullHotbar,tag=!BackRift,tag=!itemDeducted] actionbar {"text":"Rifter obtained.","color":"aqua"}
-loot give @s[scores={HasRift=0},tag=!fullHotbar] loot items:missile/heavy/rifter
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasRift=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasRift=0},tag=!fullHotbar] run function items:give/missile/rifter {count:1}
 
 #Game tracking
 execute unless entity @s[tag=BackRift] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenRift

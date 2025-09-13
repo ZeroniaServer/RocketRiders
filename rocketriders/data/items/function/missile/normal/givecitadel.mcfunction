@@ -12,8 +12,7 @@ execute if entity @s[scores={HasCitadel=1..},tag=!fullHotbar,tag=!BackCitadel,ta
 title @s[tag=!fullHotbar,tag=!BackCitadel,tag=itemDeducted] actionbar {"text":"Citadel already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackCitadel,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasCitadel=0},tag=!fullHotbar,tag=!BackCitadel,tag=!itemDeducted] actionbar {"text":"Citadel obtained.","color":"aqua"}
-loot give @s[scores={HasCitadel=0},tag=!fullHotbar] loot items:missile/normal/citadel
-execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasCitadel=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
+execute if entity @s[scores={HasCitadel=0},tag=!fullHotbar] run function items:give/missile/citadel {count:1}
 
 #Game tracking
 execute unless entity @s[tag=BackCitadel] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenCita

@@ -22,14 +22,13 @@ execute if score @s nomicon matches 100001 run function rr_sandbox:nomicon/pages
 execute if score @s nomicon matches 100001.. run return run scoreboard players reset @s nomicon
 
 # Give items (2..999_99)
-scoreboard players set $rolls var 0
-
-execute if score @s nomicon matches 0..99 run scoreboard players set $rolls var 1
-execute if score @s nomicon matches 100.. run scoreboard players operation $rolls var = @s nomicon
-execute if score @s nomicon matches 100.. run scoreboard players operation $rolls var %= $100 constant
+scoreboard players set $count var 0
+execute if score @s nomicon matches 0..99 run scoreboard players set $count var 1
+execute if score @s nomicon matches 100.. run scoreboard players operation $count var = @s nomicon
+execute if score @s nomicon matches 100.. run scoreboard players operation $count var %= $100 constant
 execute if score @s nomicon matches 100.. run scoreboard players operation @s nomicon /= $100 constant
-execute unless score $rolls var matches 1.. run scoreboard players set $rolls var 1
-execute if score $rolls var matches 100.. run scoreboard players set $rolls var 99
-
-execute if score $rolls var matches 1.. run function rr_sandbox:nomicon/give_items
+execute unless score $count var matches 1.. run scoreboard players set $count var 1
+execute if score $count var matches 100.. run scoreboard players set $count var 99
+execute if score $count var matches 1.. store result storage rocketriders:main nomicon.count int 1 run scoreboard players get $count var
+execute if score $count var matches 1.. run function rr_sandbox:nomicon/give_items
 scoreboard players reset @s nomicon

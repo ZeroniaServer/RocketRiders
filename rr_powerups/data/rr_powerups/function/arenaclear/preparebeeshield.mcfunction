@@ -23,6 +23,7 @@ execute if score $stinging_shield_count global matches 1.. run scoreboard player
 execute if score $stinging_shield_count global matches 1.. run function rr_powerups:arenaclear/preparebeeshield
 
 #End condition - clear arrays
-execute if score $stinging_shield_count global matches 0 run data remove storage rr_powerups:beeshieldpos x
-execute if score $stinging_shield_count global matches 0 run data remove storage rr_powerups:beeshieldpos y
-execute if score $stinging_shield_count global matches 0 run data remove storage rr_powerups:beeshieldpos z
+execute unless score $stinging_shield_count global matches 1.. run data remove storage rr_powerups:beeshieldpos x
+execute unless score $stinging_shield_count global matches 1.. run data remove storage rr_powerups:beeshieldpos y
+execute unless score $stinging_shield_count global matches 1.. run data remove storage rr_powerups:beeshieldpos z
+execute unless score $stinging_shield_count global matches 1.. run scoreboard players reset $stinging_shield_count global

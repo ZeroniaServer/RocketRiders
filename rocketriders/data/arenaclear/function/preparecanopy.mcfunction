@@ -24,6 +24,7 @@ scoreboard players remove $canopy_count global 1
 execute if score $canopy_count global matches 1.. run function arenaclear:preparecanopy
 
 #End condition - clear arrays
-execute if score $canopy_count global matches 0 run data remove storage rocketriders:canopypos x
-execute if score $canopy_count global matches 0 run data remove storage rocketriders:canopypos y
-execute if score $canopy_count global matches 0 run data remove storage rocketriders:canopypos z
+execute unless score $canopy_count global matches 1.. run data remove storage rocketriders:canopypos x
+execute unless score $canopy_count global matches 1.. run data remove storage rocketriders:canopypos y
+execute unless score $canopy_count global matches 1.. run data remove storage rocketriders:canopypos z
+execute unless score $canopy_count global matches 1.. run scoreboard players reset $canopy_count global

@@ -36,5 +36,7 @@ execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdispl
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay list
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * FlagDisp
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * flag_tablist_display
+execute if entity @s[scores={endtimer=569..}] run scoreboard players reset $flags_captured_by_blue global
+execute if entity @s[scores={endtimer=569..}] run scoreboard players reset $flags_captured_by_yellow global
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove CTFOvertime
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove CTF3stack

@@ -23,6 +23,7 @@ execute if score $shield_count global matches 1.. run scoreboard players remove 
 execute if score $shield_count global matches 1.. run function arenaclear:prepareshield
 
 #End condition - clear arrays
-execute if score $shield_count global matches 0 run data remove storage rocketriders:shieldpos x
-execute if score $shield_count global matches 0 run data remove storage rocketriders:shieldpos y
-execute if score $shield_count global matches 0 run data remove storage rocketriders:shieldpos z
+execute unless score $shield_count global matches 1.. run data remove storage rocketriders:shieldpos x
+execute unless score $shield_count global matches 1.. run data remove storage rocketriders:shieldpos y
+execute unless score $shield_count global matches 1.. run data remove storage rocketriders:shieldpos z
+execute unless score $shield_count global matches 1.. run scoreboard players reset $shield_count global

@@ -18,6 +18,6 @@ tag @a[x=0,tag=BreakElyMsg,predicate=custom:not_falling] remove BreakElyMsg
 execute as @a[x=0,predicate=custom:has_trident_in_inventory,predicate=custom:on_blue_or_yellow_team] run function rr_powerups:everytick/auto_riptide
 
 #trident antidupe
-tag @e[x=0,type=trident,nbt={inGround:1b},tag=!return] add return
+tag @e[x=0,type=trident,tag=!return,nbt={inGround:1b}] add return
 execute as @e[x=0,type=trident,tag=return] if items entity @s contents *[damage=7] at @s run function rr_powerups:everytick/trident_break
 execute if entity @s[tag=!doStacking] as @e[x=0,type=trident,tag=return] at @s run function rr_powerups:everytick/trident_antidupe

@@ -15,7 +15,7 @@ execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function custom:update_a
 execute if predicate game:game_started as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function items:util/givearrows
 
 #Spawnpoints
-execute if predicate game:game_started as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @s 12 64 -66 0
+execute if predicate game:game_started run spawnpoint @a[x=0,team=Blue] 12 64 -66 0
 
 #Notify Join
 execute if predicate game:game_started unless predicate rr:is_cubekrowd as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function rr_chase:chasegear/sabermsg

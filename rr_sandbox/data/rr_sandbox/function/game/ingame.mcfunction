@@ -10,8 +10,8 @@ scoreboard players set @a[x=0,team=Yellow,scores={LeaveMidgame=1}] LeaveGame 1
 tellraw @s[team=!Blue,team=!Yellow,scores={LeaveMidgame=1}] [{"text":"You are not in a match anymore.","color":"green"}]
 
 #spawnpoints
-execute as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @s 12 64 -66 0
-execute as @a[x=0,team=Yellow,nbt=!{respawn:{pos:[I;12,64,66]}}] run spawnpoint @s 12 64 66 -180
+spawnpoint @a[x=0,team=Blue] 12 64 -66 0
+spawnpoint @a[x=0,team=Yellow] 12 64 66 -180
 
 #spawnables
 function rr_powerups:everytick/spawnables

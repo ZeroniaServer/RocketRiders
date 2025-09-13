@@ -57,8 +57,8 @@ execute unless block -14 52 -40 minecraft:blue_wall_banner run setblock -14 52 -
 fill -16 51 -40 -12 47 -40 light[level=1]
 
 #Spawnpoints
-execute as @a[x=0,team=Blue,nbt=!{respawn:{pos:[I;12,64,-66]}}] run spawnpoint @s 12 64 -66 0
-execute as @a[x=0,team=Yellow,nbt=!{respawn:{pos:[I;12,64,66]}}] run spawnpoint @s 12 64 66 -180
+spawnpoint @a[x=0,team=Blue] 12 64 -66 0
+spawnpoint @a[x=0,team=Yellow] 12 64 66 -180
 
 #Suffocate players in gray glass
 execute as @a[x=0,tag=!inGlass,predicate=custom:on_blue_or_yellow_team] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run effect give @s poison infinite 4 true

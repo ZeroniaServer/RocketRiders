@@ -25,8 +25,8 @@ execute as @a[x=0,tag=CarryFlag,team=Yellow] at @s unless entity @e[type=marker,
 execute as @a[x=0,tag=CarryFlag,team=Blue] anchored eyes at @s run tp @e[x=0,type=marker,tag=FlagParticleBlue,limit=1,sort=nearest] ~ ~1 ~
 execute as @a[x=0,tag=CarryFlag,team=Yellow] anchored eyes at @s run tp @e[x=0,type=marker,tag=FlagParticleYellow,limit=1,sort=nearest] ~ ~1 ~
 
-execute as @e[x=0,type=marker,tag=FlagParticle,nbt={Rotation:[120.0f,90.0f]}] run tag @s add FPMoveOpposite
-execute as @e[x=0,type=marker,tag=FlagParticle,nbt={Rotation:[120.0f,-90.0f]}] run tag @s remove FPMoveOpposite
+execute as @e[x=0,type=marker,tag=FlagParticle,y_rotation=120,x_rotation=90] run tag @s add FPMoveOpposite
+execute as @e[x=0,type=marker,tag=FlagParticle,y_rotation=120,x_rotation=-90] run tag @s remove FPMoveOpposite
 
 execute as @e[x=0,type=marker,tag=FlagParticle,tag=!FPMoveOpposite] at @s run tp @s ~ ~ ~ ~15 ~3
 execute as @e[x=0,type=marker,tag=FlagParticle,tag=FPMoveOpposite] at @s run tp @s ~ ~ ~ ~-15 ~-3

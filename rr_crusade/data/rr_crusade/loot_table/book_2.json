@@ -44,7 +44,8 @@
                   ],
                   {
                     "text": "Click to cycle spells!",
-                    "color": "gray"
+                    "color": "gray",
+                    "italic": false
                   }
                 ],
                 "minecraft:custom_data": "{spell:2}",

@@ -1,6 +1,6 @@
 # arguments: count
 
-$execute store result score $stacks var store result score $remainder var run scoreboard players set $count var $(count)
+$scoreboard players set $count var $(count)
 execute if score $count var matches ..0 run return fail
 
 execute at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2

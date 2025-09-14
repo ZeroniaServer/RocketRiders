@@ -23,6 +23,9 @@ tag @s remove nova_rocket.this
 execute if score $collision var matches 1 on vehicle run kill @s
 execute if score $collision var matches 1 run return run kill @s
 
+# Chase Crystal Collision
+execute if entity @e[limit=1,distance=..3,type=armor_stand,tag=ChaseCrystal] run return run function entities:nova_rocket/tick/chase_crystal_collision
+
 # Movement trail
 execute if score $dust CmdData matches 1 if score @s entity.age matches 1.. if predicate entities:origin_team/blue on vehicle positioned as @s run particle minecraft:falling_dust{block_state:"minecraft:lapis_block"} ~ ~0.2 ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute if score $dust CmdData matches 1 if score @s entity.age matches 1.. if predicate entities:origin_team/yellow on vehicle positioned as @s run particle minecraft:falling_dust{block_state:"minecraft:gold_block"} ~ ~0.2 ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]

@@ -131,7 +131,7 @@ execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..,Powerup
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=35},limit=1] run summon armor_stand 13 62.2 69 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,equipment:{head:{id:"minecraft:glass"}}}
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=35},limit=1] positioned 12 64 70 run playsound minecraft:block.end_portal_frame.fill master @a[x=0] ~ ~ ~ 2 1
 
-execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=40},limit=1] run summon armor_stand 12 62.2 69 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,equipment:{head:{id:"minecraft:ghast_tear"}}}
+execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=40},limit=1] run summon armor_stand 12.5 62.3 68.75 {NoGravity:1b,Silent:1b,Tags:["PUCrystalDeco","PUCrystalEntity"],Invisible:1b,Invulnerable:1b,Marker:1b,equipment:{head:{id:"minecraft:ghast_tear"}},Pose:{Head:[90,0,0]}}
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=40},limit=1] positioned 12 64 70 run playsound minecraft:block.end_portal_frame.fill master @a[x=0] ~ ~ ~ 2 1.4
 
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=45},limit=1] run setblock 12 63 70 end_portal_frame[facing=north,eye=true]

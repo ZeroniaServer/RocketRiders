@@ -10,7 +10,6 @@ function rr_chase:tip
 function rr_chase:game/gamestart
 execute if predicate game:game_started run function rr_chase:game/ingame
 execute if predicate game:game_ended run function rr_chase:game/gameend
-execute as @e[x=0,type=item] run function everytick:no_drop
 
 #disable yellow
 tag @a[x=0] remove JoinYellow

@@ -24,6 +24,9 @@ execute as @a[x=0,scores={shooting_saber.infinity_time=..0}] run function items:
 scoreboard players remove @a[x=0,scores={shooting_saber.multishot_time=1..2147483646}] shooting_saber.multishot_time 1
 execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items:shooting_saber/multishot_deactivate
 
+# Thrown Items
+execute as @e[x=0,type=item] run function everytick:no_drop
+
 # Process primed TNT
 scoreboard players set $instant_explosion_buffer var -1
 execute as @e[x=0,type=tnt,tag=!tnt.processed] at @s run function game:tnt/init

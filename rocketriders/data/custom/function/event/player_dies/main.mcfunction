@@ -7,6 +7,12 @@ advancement revoke @s only custom:event/player_dies
 execute unless predicate game:game_started run scoreboard players remove @s deaths 1
 execute if predicate game:game_started if predicate game:game_ended run scoreboard players remove @s deaths 1
 
+## Return cursor item to the inventory
+execute in minecraft:overworld run loot replace block 0 184 -16 container.1 26 loot custom:empty
+execute in minecraft:overworld run item replace block 0 184 -16 container.0 from entity @s player.cursor
+execute in minecraft:overworld run item replace entity @s player.cursor with air
+execute in minecraft:overworld run loot give @s mine 0 184 -16 stick[custom_data={drop_contents:true}]
+
 
 ## Update statistics
 execute if predicate game:game_started unless predicate game:game_ended run function custom:event/player_dies/update_statistics

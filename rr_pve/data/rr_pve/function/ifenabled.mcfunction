@@ -10,7 +10,6 @@ function rr_pve:tip
 function rr_pve:game/gamestart
 execute if predicate game:game_started run function rr_pve:game/ingame
 execute if predicate game:game_ended run function rr_pve:game/gameend
-execute as @e[x=0,type=item] run function everytick:no_drop
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function rr_pve:arenaclear/baseplacement

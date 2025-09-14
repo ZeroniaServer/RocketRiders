@@ -10,7 +10,6 @@ function rr_duel:tip
 function rr_duel:game/gamestart
 execute if predicate game:game_started run function rr_duel:game/ingame
 execute if predicate game:game_ended run function rr_duel:game/gameend
-execute as @e[x=0,type=item] run function everytick:no_drop
 execute unless predicate game:game_started run tag @s remove CriteriaTrue
 
 #leave teams

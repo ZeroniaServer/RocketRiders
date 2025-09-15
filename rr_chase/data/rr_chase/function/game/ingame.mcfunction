@@ -71,8 +71,10 @@ tag @a[x=0,team=Blue] remove InLead
 execute unless predicate game:modifiers/hardcore/on as @a[x=0,team=Blue] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
 execute if predicate game:modifiers/hardcore/on as @a[x=0,team=Blue] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s add onBlue
 execute positioned 12 64 65 run tag @p[team=Blue,predicate=custom:belowroof,tag=!onBlue,predicate=custom:alive] add InLead
-scoreboard players display numberformat @a[tag=!InLead] flag_tablist_display blank
-scoreboard players display numberformat @a[limit=1,tag=InLead] flag_tablist_display fixed "🏁"
+scoreboard players display numberformat @a[x=0,tag=!InLead] flag_tablist_display blank
+scoreboard players display numberformat @a[limit=1,x=0,tag=InLead] flag_tablist_display fixed "🏁"
+effect clear @a[x=0,tag=!InLead] glowing
+effect give @a[limit=1,x=0,tag=InLead] glowing infinite 0 true
 execute if entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"selector":"@p[team=Blue,tag=InLead]","color":"dark_red","bold":true},{"text":" is in the lead!","color":"red"}]
 execute unless entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"red"}]
 execute unless entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead value 0

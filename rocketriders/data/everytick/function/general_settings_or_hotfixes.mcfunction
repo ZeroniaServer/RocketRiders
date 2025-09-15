@@ -193,3 +193,6 @@ execute if predicate game:game_started unless predicate game:gamemode_components
 execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches ..2 as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
 
 execute if predicate game:game_started if predicate game:gamemode_components/no_item_timer as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
+
+# Remove flowing water sounds from the lobby
+stopsound @a[predicate=custom:above_roof] ambient minecraft:block.water.ambient

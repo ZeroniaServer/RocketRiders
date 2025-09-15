@@ -1,2 +1,2 @@
-fill -81 -64 -65 -64 180 -48 air strict
+fill 143 -64 -33 160 180 -16 air strict
 scoreboard players set $chunk_clear_progress global 55

@@ -1,6 +1,9 @@
 ## Place facade
 function game:place_facade
 
+## Shedule Molerat (asynchronous)
+execute if predicate game:modifiers/molerat/on run function arenaclear:moleratplace
+
 ##Reset team balance stuff
 tag @s[tag=!onlyBlue] remove YellowFull
 tag @s[tag=!onlyBlue] remove YellowCapOverride

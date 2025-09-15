@@ -3,7 +3,7 @@ for x in range(-11, 11 +1):
     for y in range(-11, 10 +1):
         chunks.append((x,y))
 
-chunks.sort(key=(lambda x: x[0]*x[0] + x[1]*x[1] + (0 if (-3<=x[0]<=3 and -6<=x[1]<=5) else 100)))
+chunks.sort(key=(lambda x: x[0]*x[0] + x[1]*x[1] + (-10000 if (-3<=x[0]<=3 and -6<=x[1]<=5) else 0) + (1000 if not (-10<=x[0]<=11 and -2<=x[1]<=1) else 0)))
 for i, chunk in enumerate(chunks):
     if not (-3<=chunk[0]<=3 and -6<=chunk[1]<=5):
         index_of_interest = i

@@ -53,10 +53,7 @@ execute if predicate game:portal_type/default run function arenaclear:placeporta
 fill 39 64 67 -15 67 67 air replace fire
 fill 39 64 67 -15 67 67 air replace fire
 
-##Extra stuff for Modifiers
-#Molerat (asynchronous)
-execute if predicate game:modifiers/molerat/on run function arenaclear:moleratplace
-
+##Modifiers
 #Hardcore
 execute if predicate game:modifiers/hardcore/on run fill 38 63 63 -14 34 52 air
 execute if predicate game:modifiers/hardcore/on run fill -14 63 66 38 34 66 white_stained_glass

@@ -15,3 +15,5 @@ execute if entity @s[scores={endtimer=1..10}] run function rr_chase:chaseblocks/
 tag @a[x=0,team=Blue] remove InLead
 execute if entity @s[scores={endtimer=1..2}] run tp @a[x=0,team=Blue,tag=Loser] 12 64 -66 0 0
 execute if entity @s[scores={endtimer=1..2}] run tp @a[x=0,team=Blue,tag=Winner,limit=1] 12 64 64 180 0
+execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay list
+execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * flag_tablist_display

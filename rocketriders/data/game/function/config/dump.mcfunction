@@ -19,6 +19,7 @@ execute store success storage rocketriders:main "config/dump".config.unstable_tn
 execute store success storage rocketriders:main "config/dump".config.hobbits byte 1 if score $hobbits config matches 1
 execute store success storage rocketriders:main "config/dump".config.hardcore byte 1 if score $hardcore config matches 1
 execute store success storage rocketriders:main "config/dump".config.instant_tnt_explosions byte 1 if score $instant_tnt_explosions config matches 1
+execute store success storage rocketriders:main "config/dump".config.long_arms byte 1 if score $long_arms config matches 1
 
 ## Write
 $data modify $(write_to) set from storage rocketriders:main "config/dump".config

@@ -10,9 +10,11 @@ tp @s[team=Yellow] 12 64 66 -180 0
 # Reset motion
 tp @s @s
 
-# Reapply hobbit modifiers
+# Reapply modifier attribute modifiers
 execute if entity @s[tag=hobbit] unless entity @s[predicate=game:modifiers/hobbits/on,predicate=custom:on_blue_or_yellow_team] run function modifiers:hobbit/reset
 execute if entity @s[tag=hobbit] run function modifiers:hobbit/set
+execute if entity @s[tag=long_arms] unless entity @s[predicate=game:modifiers/long_arms/on,predicate=custom:on_blue_or_yellow_team] run function modifiers:long_arms/reset
+execute if entity @s[tag=long_arms] run function modifiers:long_arms/set
 
 # Put out fire
 execute if entity @s[tag=crosser,predicate=custom:is_on_fire] at @s run function game:putoutfire

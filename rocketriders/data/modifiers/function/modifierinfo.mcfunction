@@ -83,3 +83,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 #Instant TNT
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=20}] if predicate game:modifiers/instant_tnt_explosions/on run tellraw @s ["",{"text":"Instant TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Primed TNT instantly explodes.","color":"gray","italic":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=20}] unless predicate game:modifiers/instant_tnt_explosions/on run tellraw @s ["",{"text":"Instant TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+
+#Long Arms
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=21}] if predicate game:modifiers/long_arms/on run tellraw @s ["",{"text":"Long Arms","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" You can reach blocks and players from twice as far away.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=21}] unless predicate game:modifiers/long_arms/on run tellraw @s ["",{"text":"Long Arms","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]

@@ -31,5 +31,6 @@ scoreboard players reset $punchable_tnt config
 scoreboard players reset $unstable_tnt config
 scoreboard players reset $hobbits config
 scoreboard players reset $instant_tnt_explosions config
+scoreboard players reset $long_arms config
 
 function arenaclear:unlockdecos

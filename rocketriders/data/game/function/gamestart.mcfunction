@@ -47,6 +47,7 @@ execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=J
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] run function game:saberblue
 execute unless predicate game:game_started if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
 execute unless predicate game:game_started if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
+execute unless predicate game:game_started if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run function modifiers:long_arms/set
 execute unless predicate game:game_started run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
 execute unless predicate game:game_started if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
 execute unless predicate game:game_started if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
@@ -82,6 +83,7 @@ execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=J
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinYellow] run function game:saberyellow
 execute unless predicate game:game_started if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
 execute unless predicate game:game_started if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set
+execute unless predicate game:game_started if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinYellow] run function modifiers:long_arms/set
 execute unless predicate game:game_started run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
 execute unless predicate game:game_started as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
 execute unless predicate game:game_started run tellraw @a[x=0,tag=JoinYellow] {"text":"Fall off the base to return to the Lobby.","color":"gold","italic":true}

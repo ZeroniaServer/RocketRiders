@@ -21,6 +21,7 @@ execute if predicate game:modifiers/punchable_tnt/on run data modify storage roc
 execute if predicate game:modifiers/unstable_tnt/on run data modify storage rocketriders:modifiers list append value {"text":"Unstable TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Breaking TNT blocks immediately ignites them.","color":"white"}]}}
 execute if predicate game:modifiers/hobbits/on run data modify storage rocketriders:modifiers list append value {"text":"Hobbits","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players are 2/3 their normal size, and can sneak under 1-block-tall gaps.","color":"white"}]}}
 execute if predicate game:modifiers/instant_tnt_explosions/on run data modify storage rocketriders:modifiers list append value {"text":"Instant TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Primed TNT instantly explodes.","color":"white"}]}}
+execute if predicate game:modifiers/long_arms/on run data modify storage rocketriders:modifiers list append value {"text":"Long Arms","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"You can reach blocks and players from twice as far away.","color":"white"}]}}
 
 #Creates companion list of each modifier's name length
 data modify storage rocketriders:modifiers length set value []
@@ -45,6 +46,7 @@ execute if predicate game:modifiers/punchable_tnt/on run data modify storage roc
 execute if predicate game:modifiers/unstable_tnt/on run data modify storage rocketriders:modifiers length append value 12
 execute if predicate game:modifiers/hobbits/on run data modify storage rocketriders:modifiers length append value 7
 execute if predicate game:modifiers/instant_tnt_explosions/on run data modify storage rocketriders:modifiers length append value 11
+execute if predicate game:modifiers/long_arms/on run data modify storage rocketriders:modifiers length append value 9
 
 #Splits this list into lines for chat legibility
 data modify storage rocketriders:modifiers line set value []

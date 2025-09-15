@@ -10,6 +10,8 @@ execute if predicate game:game_started if predicate game:game_ended run scoreboa
 ## Return cursor item to the inventory
 execute in minecraft:overworld run loot replace block 0 184 -16 container.1 26 loot custom:empty
 execute in minecraft:overworld run item replace block 0 184 -16 container.0 from entity @s player.cursor
+execute in minecraft:overworld unless predicate custom:can_pick_up_any_item unless predicate items:can_destroy_item/cursor run item replace block 0 184 -16 container.1 from entity @s hotbar.0
+execute in minecraft:overworld unless predicate custom:can_pick_up_any_item unless predicate items:can_destroy_item/cursor run item replace entity @s hotbar.0 with air
 execute in minecraft:overworld run item replace entity @s player.cursor with air
 execute in minecraft:overworld run loot give @s mine 0 184 -16 stick[custom_data={drop_contents:true}]
 

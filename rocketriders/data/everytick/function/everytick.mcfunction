@@ -28,9 +28,8 @@ execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items
 execute as @e[x=0,type=item] run function everytick:no_drop
 
 # Process primed TNT
-execute unless predicate game:modifiers/instant_tnt_explosions/on unless predicate game:game_rules/disable_cannoning/on run scoreboard players set $maximum_tnt_explosions_per_tick global 20
+scoreboard players set $maximum_tnt_explosions_per_tick global 20
 execute if predicate game:modifiers/instant_tnt_explosions/on run scoreboard players set $maximum_tnt_explosions_per_tick global 10
-execute if predicate game:game_rules/disable_cannoning/on run scoreboard players set $maximum_tnt_explosions_per_tick global 10
 scoreboard players set $instant_explosion_buffer var -1
 execute as @e[x=0,type=tnt,tag=!tnt.processed] at @s run function game:tnt/init
 scoreboard players set $tnt_explosions_this_tick var 0

@@ -13,7 +13,9 @@ scoreboard players remove $set_game_mode dev_action 100
 execute unless score $set_game_mode dev_action matches 0..99 run scoreboard players reset * dev_action
 execute unless score $set_game_mode dev_action matches 0..99 run return run tellraw @s {color:"red",text:"Invalid game mode"}
 
-tellraw @a "Launching game..."
+tellraw @a "Quick-launching game..."
 
-execute in minecraft:overworld run function game:forcestop
+scoreboard players set $force_stop var 1
+execute unless predicate game:game_started unless predicate game:game_ended run scoreboard players set $force_stop var 0
+execute if score $force_stop var matches 1 in minecraft:overworld run function game:forcestop
 schedule function dev:_launch_game_mode_/step_2 3t

@@ -16,7 +16,7 @@ execute unless predicate game:game_started run tag @s remove CriteriaTrue
 function game:leaveteams
 
 #reset
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function rr_duel:arenaclear/baseplacement
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run tag @a[x=0] remove informMe
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started as @a[x=0] at @s run function arenaclear:notifystart
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started if entity @s[tag=!noYZELO] run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Whoever wins two rounds gains XP. Loser loses XP\n"},{"text":"- XP translates to ranks, which affects gains/losses\n"},{"text":"- Players who log out forfeit and get XP penalty\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No decorations, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]

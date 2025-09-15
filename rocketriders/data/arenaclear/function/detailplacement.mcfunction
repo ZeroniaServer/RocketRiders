@@ -10,20 +10,20 @@ tag @s remove noDetailBlue
 tag @s remove noDetailYellow
 
 #Portal detail - Blue
-execute if entity @s[scores={PortalDeco=1},tag=!portalDecosOff] run fill -11 59 -74 35 36 -74 blue_stained_glass_pane[east=true,west=true] replace #custom:air
-execute if entity @s[scores={PortalDeco=2},tag=!portalDecosOff] run fill -11 59 -73 35 36 -75 blue_stained_glass replace #custom:air
-execute if entity @s[scores={PortalDeco=3},tag=!portalDecosOff] run fill -11 59 -73 35 36 -75 end_stone replace #custom:air
-execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill -11 59 -73 34 36 -75 obsidian replace #custom:air
-execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 1 48 -73 1 47 -73 air
-execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 23 48 -73 23 47 -73 air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=1},tag=!portalDecosOff] run fill -11 59 -74 35 36 -74 blue_stained_glass_pane[east=true,west=true] replace #custom:air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=2},tag=!portalDecosOff] run fill -11 59 -73 35 36 -75 blue_stained_glass replace #custom:air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=3},tag=!portalDecosOff] run fill -11 59 -73 35 36 -75 end_stone replace #custom:air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill -11 59 -73 34 36 -75 obsidian replace #custom:air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 1 48 -73 1 47 -73 air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 23 48 -73 23 47 -73 air
 
 #Portal detail - Yellow
-execute if entity @s[scores={PortalDeco=1},tag=!portalDecosOff] run fill -11 59 74 35 36 74 yellow_stained_glass_pane[east=true,west=true] replace #custom:air
-execute if entity @s[scores={PortalDeco=2},tag=!portalDecosOff] run fill -11 59 73 35 36 75 yellow_stained_glass replace #custom:air
-execute if entity @s[scores={PortalDeco=3},tag=!portalDecosOff] run fill -11 59 73 35 36 75 end_stone replace #custom:air
-execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill -11 59 73 34 36 75 obsidian replace #custom:air
-execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 1 48 73 1 47 73 air
-execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 23 48 73 23 47 73 air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=1},tag=!portalDecosOff] run fill -11 59 74 35 36 74 yellow_stained_glass_pane[east=true,west=true] replace #custom:air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=2},tag=!portalDecosOff] run fill -11 59 73 35 36 75 yellow_stained_glass replace #custom:air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=3},tag=!portalDecosOff] run fill -11 59 73 35 36 75 end_stone replace #custom:air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill -11 59 73 34 36 75 obsidian replace #custom:air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 1 48 73 1 47 73 air
+execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 23 48 73 23 47 73 air
 
 #Obsidian placement - Blue and Yellow
 fill 14 63 66 10 63 66 obsidian

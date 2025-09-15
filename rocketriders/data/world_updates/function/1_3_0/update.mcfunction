@@ -70,6 +70,11 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MoleratStop
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove moleratConfirm
 
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WasMolerat] run scoreboard players set $was_molerat global 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WasMolerat
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WasHardcore] run scoreboard players set $was_hardcore_facade global 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WasHardcore
+
 # Updating game rules
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noTeamBalance] run scoreboard players set $disable_team_balancing config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noTeamBalance

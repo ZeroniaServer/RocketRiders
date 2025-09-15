@@ -75,6 +75,9 @@ execute if entity @s[scores={endtimer=570}] run tp @a[x=0,team=Spectator] -43 21
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] kills 0
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] deaths 0
 execute if entity @s[scores={endtimer=570}] run gamerule mobGriefing false
+#Brute Force Arena Clear
+execute if entity @s[scores={endtimer=570}] run function arenaclear:brute_force/start
+
 #Server mode specifics
 execute if entity @s[scores={endtimer=570}] if predicate rr:has_modification_room run fill -57 201 84 -70 201 72 water[level=7] replace tinted_glass strict
 execute if entity @s[scores={endtimer=570}] if predicate rr:has_modification_room run fill -57 200 84 -70 200 72 air replace #custom:modification_room_pool_blocks strict

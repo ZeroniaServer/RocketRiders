@@ -9,6 +9,7 @@ scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit gamemode_compo
 scoreboard players set $crusade_portals gamemode_components 1
 scoreboard players set $explosions_crack_deepslate_bricks gamemode_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage gamemode_components 1
+scoreboard players set $arena/no_base_details gamemode_components 1
 
 tag @s remove switchGamemodes
 function arenaclear:lockdecos

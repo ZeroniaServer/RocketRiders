@@ -23,7 +23,7 @@ execute unless predicate game:game_started if entity @s[tag=EditedSettings] posi
 execute unless predicate game:game_started if entity @s[tag=EditedSettings] positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
 
 #reset
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function rr_ctf:arenaclear/baseplacement
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if entity @s[tag=doTying,tag=!tyingOff] run data modify storage rocketriders:gamerules list[2] set value [{"text":"Overtime: ","color":"white"},{"text":"Enabled","color":"green","bold":true}]
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless entity @s[tag=doTying,tag=!tyingOff] run data modify storage rocketriders:gamerules list[2] set value [{"text":"Overtime: ","color":"white"},{"text":"Disabled","color":"red","bold":true}]
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run tag @a[x=0] remove informMe

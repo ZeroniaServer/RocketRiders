@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$arena/no_base_details"
+    },
+    "score": "gamemode_components"
+  },
+  "range": 1
+}

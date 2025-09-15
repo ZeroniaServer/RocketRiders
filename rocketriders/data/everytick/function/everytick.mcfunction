@@ -39,7 +39,7 @@ execute as @e[x=0,type=tnt] if score @s tnt.explosion_timestamp = $gametime glob
 function entities:tick
 
 # Tridents
-execute as @e[x=0,type=trident,predicate=custom:in_void,tag=!return] run data modify entity @s inGround set value true
+execute as @e[x=0,type=trident,predicate=custom:in_void,tag=!return] run data modify entity @s DealtDamage set value true
 tag @e[x=0,type=trident,tag=!return,nbt={inGround:1b}] add return
 tag @e[x=0,type=trident,tag=!return,nbt={DealtDamage:1b}] add return
 execute as @e[x=0,type=trident,tag=return] if items entity @s contents *[damage=7] at @s run function everytick:trident_entity_break

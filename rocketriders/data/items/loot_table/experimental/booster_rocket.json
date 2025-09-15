@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:firework_rocket",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "id": "booster_rocket"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "light_purple",
+                  "text": "Elytra Booster Rocket"
+                },
+                "!minecraft:fireworks": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

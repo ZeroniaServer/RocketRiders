@@ -332,6 +332,7 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "totem_of_undying": "items:misc/totem_of_undying",\
     "trident": "items:misc/trident",\
     "building_block": "items:experimental/building_block",\
+    "booster_rocket": "items:experimental/booster_rocket",\
     "invisibility_potion": "items:experimental/invisibility_potion",\
     "jump_boost_potion": "items:experimental/jump_boost_potion",\
     "spectral_arrow": "items:experimental/spectral_arrow",\

@@ -77,3 +77,4 @@ execute if score @s nomicon matches 57 run function items:shooting_saber/multish
 execute if score @s nomicon matches 57 run return run execute unless predicate custom:has_shooting_saber_in_inventory run function items:give/shooting_saber with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 58 run return run execute if predicate items:shooting_saber/multishot run function items:shooting_saber/multishot_deactivate
+execute if score @s nomicon matches 59 run return run function items:give/booster_rocket with storage rocketriders:main nomicon

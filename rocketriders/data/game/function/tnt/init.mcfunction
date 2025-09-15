@@ -24,4 +24,4 @@ scoreboard players operation @s tnt.explosion_timestamp += $gametime global
 scoreboard players remove @s tnt.explosion_timestamp 1
 
 # make punchable
-execute if predicate game:modifiers/punchable_tnt/on at @s run function entities:punchable_tnt/init
+execute if predicate game:modifiers/punchable_tnt/on unless predicate game:modifiers/instant_tnt_explosions/on at @s run function entities:punchable_tnt/init

@@ -143,9 +143,12 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnab
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $main_item/pickaxe gamemode_components 1
 
-# rename confusingly named tag
+# rename confusingly named tags
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] add customSpawnpointBlockProtection
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] remove customSpawn
+
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customObsidian] add customBaseFrames
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customObsidian] remove customObsidian
 
 ##
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install

@@ -20,20 +20,25 @@ fill -101 200 85 -99 202 84 air strict
 fill -91 200 85 -89 202 84 air strict
 fill -89 200 71 -101 201 72 air strict
 
-# Portals
-execute unless predicate game:portal_type/default run fill -101 195 97 -89 201 97 air strict
-execute if predicate game:portal_type/default run fill -101 195 97 -89 201 97 minecraft:nether_portal[axis=x] strict
-execute if predicate game:portal_type/default run fill -95 201 97 -95 195 97 minecraft:obsidian strict
+# Frames & Portals
+execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:obsidian strict
+execute if predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:bedrock strict
 execute unless predicate game:portal_type/default run fill -89 195 59 -101 201 59 air strict
 execute if predicate game:portal_type/default run fill -101 195 59 -89 201 59 minecraft:nether_portal[axis=x] strict
-execute if predicate game:portal_type/default run fill -95 195 59 -95 201 59 minecraft:obsidian strict
+execute if predicate game:portal_type/default if predicate game:gamemode_components/arena/bedrock_frame run fill -95 195 59 -95 201 59 minecraft:bedrock strict
+execute if predicate game:portal_type/default unless predicate game:gamemode_components/arena/bedrock_frame run fill -95 195 59 -95 201 59 minecraft:obsidian strict
+execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:obsidian strict
+execute if predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:bedrock strict
+execute unless predicate game:portal_type/default run fill -101 195 97 -89 201 97 air strict
+execute if predicate game:portal_type/default run fill -101 195 97 -89 201 97 minecraft:nether_portal[axis=x] strict
+execute if predicate game:portal_type/default if predicate game:gamemode_components/arena/bedrock_frame run fill -95 201 97 -95 195 97 minecraft:bedrock strict
+execute if predicate game:portal_type/default unless predicate game:gamemode_components/arena/bedrock_frame run fill -95 201 97 -95 195 97 minecraft:obsidian strict
 
-# Frame
-execute if predicate game:gamemode_components/arena/bedrock_frame run fill -102 202 97 -88 194 97 bedrock replace obsidian
-execute if predicate game:gamemode_components/arena/bedrock_frame run fill -102 202 59 -88 194 59 bedrock replace obsidian
-execute if predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 bedrock replace barrier
-execute if predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 bedrock replace barrier
-execute if predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 bedrock replace barrier
+# Bedrock Frames
+execute if predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 bedrock
+execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 barrier
+execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 barrier
 
 ## Modifiers
 # Molerat

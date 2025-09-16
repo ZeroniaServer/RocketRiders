@@ -18,7 +18,6 @@ tag @s add portalDecosOff
 tag @s add customSaberMsg
 tag @s add canopyStack
 tag @s add customPrevention
-tag @s add customObsidian
 tag @s add noSabers
 tag @s add respawnFlag
 

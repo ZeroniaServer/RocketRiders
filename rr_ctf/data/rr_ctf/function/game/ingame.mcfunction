@@ -31,20 +31,6 @@ scoreboard objectives setdisplay list flag_tablist_display
 execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
-#fill bedrock
-fill -15 64 67 39 64 67 bedrock
-fill -15 33 67 39 33 67 bedrock
-fill -15 64 -67 39 64 -67 bedrock
-fill -15 33 -67 39 33 -67 bedrock
-fill -15 63 67 -15 34 67 bedrock
-fill 39 63 67 39 34 67 bedrock
-fill -15 63 -67 -15 34 -67 bedrock
-fill 39 63 -67 39 34 -67 bedrock
-fill 10 64 67 14 64 67 obsidian
-fill 10 64 -67 14 64 -67 obsidian
-execute unless blocks 39 64 68 -15 64 69 39 183 68 all run fill 39 64 68 -15 64 69 bedrock
-execute unless blocks 39 64 -68 -15 64 -69 39 183 -68 all run fill 39 64 -68 -15 64 -69 bedrock
-
 #win
 execute if score $flags_captured_by_blue global matches 2 if score $flags_captured_by_yellow global matches 2 run function game:winboth
 execute if entity @s[tag=!BothWon] if score $flags_captured_by_blue global matches 2 run function game:winblue

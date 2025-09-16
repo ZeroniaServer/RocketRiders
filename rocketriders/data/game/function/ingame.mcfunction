@@ -71,14 +71,26 @@ execute if entity @s[tag=!customSpawnpointBlockProtection] run fill 11 65 -67 13
 execute if entity @s[tag=!customSpawnpointBlockProtection] run setblock 12 66 -67 obsidian
 
 ##Extra obsidian if necessary
-execute if entity @s[tag=!customObsidian] run fill -15 64 67 39 64 67 obsidian
-execute if entity @s[tag=!customObsidian] run fill -15 33 67 39 33 67 obsidian
-execute if entity @s[tag=!customObsidian] run fill -15 64 -67 39 64 -67 obsidian
-execute if entity @s[tag=!customObsidian] run fill -15 33 -67 39 33 -67 obsidian
-execute if entity @s[tag=!customObsidian] run fill -15 63 67 -15 34 67 obsidian
-execute if entity @s[tag=!customObsidian] run fill 39 63 67 39 34 67 obsidian
-execute if entity @s[tag=!customObsidian] run fill -15 63 -67 -15 34 -67 obsidian
-execute if entity @s[tag=!customObsidian] run fill 39 63 -67 39 34 -67 obsidian
+execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 64 67 39 64 67 obsidian
+execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 33 67 39 33 67 obsidian
+execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 64 -67 39 64 -67 obsidian
+execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 33 -67 39 33 -67 obsidian
+execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 63 67 -15 34 67 obsidian
+execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 63 67 39 34 67 obsidian
+execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 63 -67 -15 34 -67 obsidian
+execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 63 -67 39 34 -67 obsidian
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 64 67 39 64 67 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 33 67 39 33 67 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 64 -67 39 64 -67 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 33 -67 39 33 -67 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 63 67 -15 34 67 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 63 67 39 34 67 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 63 -67 -15 34 -67 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 63 -67 39 34 -67 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 10 64 67 14 64 67 obsidian
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 10 64 -67 14 64 -67 obsidian
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 64 68 -15 64 69 bedrock
+execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 64 -68 -15 64 -69 bedrock
 
 #Fix for Hole in One
 execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill -11 59 73 34 36 75 obsidian outline

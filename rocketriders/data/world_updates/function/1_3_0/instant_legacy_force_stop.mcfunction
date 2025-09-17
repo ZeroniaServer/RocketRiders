@@ -132,3 +132,7 @@ execute as @e[x=0,type=fireball,tag=endFireball] run data merge entity @s {Explo
 
 ##
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] endtimer 568
+
+
+## Brute Force Arena Clear
+function arenaclear:brute_force/start

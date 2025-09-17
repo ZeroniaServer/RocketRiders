@@ -2,6 +2,7 @@
 scoreboard players add @s fakeendtimer 1
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
+clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"booster_rocket"}]
 tag @s[scores={fakeendtimer=1}] remove gaveFirstItem
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime = @s[scores={fakeendtimer=1}] MaxItemSec
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime *= $20 constant

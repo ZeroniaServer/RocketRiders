@@ -6,7 +6,6 @@
         "minecraft:egg",
         "#minecraft:arrows",
         "minecraft:snowball",
-        "minecraft:writable_book",
-        "minecraft:firework_rocket"
+        "minecraft:writable_book"
     ]
 }

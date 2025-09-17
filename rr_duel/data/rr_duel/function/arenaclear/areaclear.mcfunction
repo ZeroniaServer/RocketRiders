@@ -61,6 +61,7 @@ execute as @a[x=0,team=Blue,predicate=custom:is_on_fire] at @s run function game
 execute as @a[x=0,team=Yellow,predicate=custom:is_on_fire] at @s run function game:putoutfire
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
+clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"booster_rocket"}]
 gamemode survival @a[x=0,team=Blue]
 gamemode survival @a[x=0,team=Yellow]
 

@@ -1,5 +1,6 @@
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
+clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"booster_rocket"}]
 
 #Replacing Shooting Sabers
 execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=rr_crusade:kit/archer] run function custom:update_inventory/shooting_saber

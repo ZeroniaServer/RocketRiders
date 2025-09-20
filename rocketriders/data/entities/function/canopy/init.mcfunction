@@ -29,7 +29,8 @@ data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
 execute on origin run function custom:player_action/forget_all_canopies
 tag @s remove canopy.forgotten_origin
 
-execute if predicate entities:origin_team/blue run place template game:bluecanopy1 ~-1 ~ ~-1
+execute if predicate entities:origin_team/blue unless predicate game:gamemode_components/red_for_blue run place template game:bluecanopy1 ~-1 ~ ~-1
+execute if predicate entities:origin_team/blue if predicate game:gamemode_components/red_for_blue run place template game:redcanopy1 ~-1 ~ ~-1
 execute if predicate entities:origin_team/yellow run place template game:yellowcanopy1 ~-1 ~ ~-1
 execute if predicate entities:origin_team/none run place template rr_chase:whitecanopy1 ~-1 ~ ~-1
 

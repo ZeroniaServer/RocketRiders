@@ -18,6 +18,19 @@
                   "bold": true,
                   "color": "white"
                 },
+                "minecraft:fireworks": {
+                  "explosions": [
+                    {
+                      "shape": "large_ball",
+                      "colors": [
+                        16777215
+                      ],
+                      "has_trail": true,
+                      "has_twinkle": true
+                    }
+                  ],
+                  "flight_duration": 3
+                },
                 "minecraft:can_place_on": {
                   "blocks": "#custom:missileandbase"
                 },
@@ -63,6 +76,57 @@
                     "condition": "minecraft:reference",
                     "name": "game:gamemode_components/custom_team_colors"
                   }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/red_for_blue"
+                  }
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "Celebratory Fireworks",
+                  "bold": true,
+                  "color": "blue"
+                },
+                "minecraft:fireworks": {
+                  "explosions": [
+                    {
+                      "shape": "large_ball",
+                      "colors": [
+                        16711680,
+                        16744319
+                      ],
+                      "has_trail": true,
+                      "has_twinkle": true
+                    }
+                  ],
+                  "flight_duration": 3
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/red_for_blue"
                 },
                 {
                   "condition": "minecraft:entity_properties",

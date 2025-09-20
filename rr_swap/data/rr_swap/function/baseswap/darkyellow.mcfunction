@@ -5,8 +5,10 @@ scoreboard players set BossbarA swapside 0
 
 function rr_swap:baseswap/observerconvert1
 
-fill -14 34 -56 38 63 -52 light_blue_stained_glass replace minecraft:blue_stained_glass
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={MiddleDeco=3}] run fill -14 34 -51 38 63 -49 light_blue_stained_glass replace minecraft:blue_stained_glass
+execute unless predicate game:gamemode_components/red_for_blue run fill -14 34 -56 38 63 -52 light_blue_stained_glass replace minecraft:blue_stained_glass
+execute if predicate game:gamemode_components/red_for_blue run fill -14 34 -56 38 63 -52 pink_stained_glass replace minecraft:red_stained_glass
+execute unless predicate game:gamemode_components/red_for_blue if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={MiddleDeco=3}] run fill -14 34 -51 38 63 -49 light_blue_stained_glass replace minecraft:blue_stained_glass
+execute if predicate game:gamemode_components/red_for_blue if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={MiddleDeco=3}] run fill -14 34 -51 38 63 -49 pink_stained_glass replace minecraft:red_stained_glass
 fill -14 34 -57 38 63 -61 white_stained_glass replace minecraft:black_stained_glass
 fill 38 34 -73 -14 63 -62 white_concrete replace minecraft:black_concrete
 
@@ -18,7 +20,8 @@ execute if predicate game:modifiers/hardcore/on run fill -14 63 73 38 34 66 blac
 execute if predicate game:modifiers/hardcore/on run fill -14 63 65 38 34 65 orange_stained_glass replace white_stained_glass
 execute if predicate game:modifiers/hardcore/on run fill -14 63 -73 38 34 -66 white_concrete replace black_concrete
 execute if predicate game:modifiers/hardcore/on run fill -14 63 -65 38 34 -65 white_stained_glass replace black_stained_glass
-execute if predicate game:modifiers/hardcore/on run fill -14 63 -64 38 34 -64 light_blue_stained_glass replace blue_stained_glass
+execute if predicate game:modifiers/hardcore/on unless predicate game:gamemode_components/red_for_blue run fill -14 63 -64 38 34 -64 light_blue_stained_glass replace blue_stained_glass
+execute if predicate game:modifiers/hardcore/on if predicate game:gamemode_components/red_for_blue run fill -14 63 -64 38 34 -64 pink_stained_glass replace red_stained_glass
 
 function rr_swap:baseswap/observerconvert2
 

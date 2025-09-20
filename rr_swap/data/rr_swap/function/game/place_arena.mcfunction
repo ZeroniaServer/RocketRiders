@@ -10,8 +10,10 @@ execute if score SwapSide swapside matches 1 run fill -14 63 57 38 34 61 white_s
 execute if score SwapSide swapside matches 1 run fill 38 34 62 -14 63 66 white_concrete replace white_stained_glass
 
 #0 = darkyellow
-execute if score SwapSide swapside matches 0 run fill -14 34 -52 38 63 -56 light_blue_stained_glass replace blue_stained_glass
-execute if score SwapSide swapside matches 0 if entity @s[scores={MiddleDeco=3}] run fill -14 34 -51 38 63 -49 light_blue_stained_glass replace blue_stained_glass
+execute if score SwapSide swapside matches 0 unless predicate game:gamemode_components/red_for_blue run fill -14 34 -52 38 63 -56 light_blue_stained_glass replace blue_stained_glass
+execute if score SwapSide swapside matches 0 if predicate game:gamemode_components/red_for_blue run fill -14 34 -52 38 63 -56 pink_stained_glass replace red_stained_glass
+execute if score SwapSide swapside matches 0 unless predicate game:gamemode_components/red_for_blue if entity @s[scores={MiddleDeco=3}] run fill -14 34 -51 38 63 -49 light_blue_stained_glass replace blue_stained_glass
+execute if score SwapSide swapside matches 0 if predicate game:gamemode_components/red_for_blue if entity @s[scores={MiddleDeco=3}] run fill -14 34 -51 38 63 -49 pink_stained_glass replace red_stained_glass
 execute if score SwapSide swapside matches 0 run fill 38 34 -61 -14 63 -57 white_stained_glass replace cyan_stained_glass
 execute if score SwapSide swapside matches 0 run fill -14 34 -62 38 63 -66 white_concrete replace white_stained_glass
 execute if score SwapSide swapside matches 0 run fill 38 34 62 -14 63 66 black_concrete replace white_stained_glass
@@ -25,7 +27,8 @@ execute if predicate game:modifiers/hardcore/on if score SwapSide swapside match
 execute if predicate game:modifiers/hardcore/on if score SwapSide swapside matches 0 run fill -14 63 66 38 34 66 black_concrete replace white_stained_glass
 execute if predicate game:modifiers/hardcore/on if score SwapSide swapside matches 0 run fill -14 63 -66 38 34 -66 white_concrete replace white_stained_glass
 execute if predicate game:modifiers/hardcore/on if score SwapSide swapside matches 0 run fill -14 63 -65 38 34 -65 white_stained_glass replace cyan_stained_glass
-execute if predicate game:modifiers/hardcore/on if score SwapSide swapside matches 0 run fill -14 63 -64 38 34 -64 light_blue_stained_glass replace blue_stained_glass
+execute if predicate game:modifiers/hardcore/on if score SwapSide swapside matches 0 unless predicate game:gamemode_components/red_for_blue run fill -14 63 -64 38 34 -64 light_blue_stained_glass replace blue_stained_glass
+execute if predicate game:modifiers/hardcore/on if score SwapSide swapside matches 0 if predicate game:gamemode_components/red_for_blue run fill -14 63 -64 38 34 -64 pink_stained_glass replace red_stained_glass
 
 #Bossbar prep
 bossbar set rr_swap:swap_progress players none

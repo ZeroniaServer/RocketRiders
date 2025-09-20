@@ -49,6 +49,18 @@
                   ]
                 }
               }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:dyed_color": 16741799
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/red_for_blue"
+                }
+              ]
             }
           ]
         }

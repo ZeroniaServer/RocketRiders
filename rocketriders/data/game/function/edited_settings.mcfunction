@@ -1,3 +1,6 @@
+## Close modification room dialogs
+dialog clear @a
+
 ## Place facade
 function game:place_facade
 

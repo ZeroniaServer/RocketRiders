@@ -11,8 +11,8 @@ team add Spectator
 team add Developer
 
 team modify Lobby color green
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run team modify Blue color blue
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run team modify Blue color dark_red
+execute unless predicate game:gamemode_components/red_for_blue run team modify Blue color blue
+execute if predicate game:gamemode_components/red_for_blue run team modify Blue color dark_red
 team modify Yellow color gold
 team modify Spectator color dark_gray
 team modify Developer color dark_green

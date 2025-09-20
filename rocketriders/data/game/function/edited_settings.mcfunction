@@ -10,6 +10,11 @@ tag @s[tag=!onlyBlue] remove YellowCapOverride
 tag @s remove BlueFull
 tag @s remove BlueCapOverride
 
+##Team color
+execute unless predicate game:gamemode_components/red_for_blue run team modify Blue color blue
+execute if predicate game:gamemode_components/red_for_blue run team modify Blue color dark_red
+
+
 tag @s add EditedSettings
 
 execute unless predicate rr:server_mode/cubekrowd_duels unless predicate rr:server_mode/cubekrowd_voting run function lobby:cancelsettings/begin

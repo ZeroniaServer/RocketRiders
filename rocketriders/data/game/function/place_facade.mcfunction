@@ -15,7 +15,6 @@ execute unless predicate game:gamemode_components/custom_team_colors if predicat
 execute if predicate game:gamemode_components/custom_team_colors run fill -82 186 66 -81 201 77 minecraft:red_terracotta replace #custom:terracotta strict
 execute if predicate game:gamemode_components/custom_team_colors run fill -83 187 70 -83 200 77 minecraft:white_concrete replace #custom:concrete strict
 execute if predicate game:gamemode_components/custom_team_colors run fill -84 190 75 -84 199 77 minecraft:red_concrete_powder replace #custom:concrete_powder strict
-
 #Lobby underside colors (yellow)
 execute unless predicate game:gamemode_components/custom_team_colors run fill -82 186 79 -81 201 90 minecraft:yellow_terracotta replace #custom:terracotta strict
 execute unless predicate game:gamemode_components/custom_team_colors run fill -83 187 79 -83 200 86 minecraft:yellow_concrete replace #custom:concrete strict
@@ -23,6 +22,8 @@ execute unless predicate game:gamemode_components/custom_team_colors run fill -8
 execute if predicate game:gamemode_components/custom_team_colors run fill -82 186 79 -81 201 90 minecraft:red_terracotta replace #custom:terracotta strict
 execute if predicate game:gamemode_components/custom_team_colors run fill -83 187 79 -83 200 86 minecraft:white_concrete replace #custom:concrete strict
 execute if predicate game:gamemode_components/custom_team_colors run fill -84 190 79 -84 199 81 minecraft:red_concrete_powder replace #custom:concrete_powder strict
+# Fix for terracotta above underside region
+fill -81 199 86 -81 198 82 minecraft:lime_terracotta replace #custom:terracotta
 
 #Clear pregame molerat
 fill -101 207 69 -89 186 87 air replace light_gray_stained_glass

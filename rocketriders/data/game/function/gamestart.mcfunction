@@ -155,7 +155,7 @@ execute unless predicate game:game_started as @a[x=-101,y=197,z=69,dx=12,dy=8,dz
 execute unless predicate game:game_started as @a[x=0,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=doing_facade_parkour] run title @s actionbar {color:"green",text:"Jump off to return to the base"}
 execute unless predicate game:game_started as @a[x=0,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=doing_facade_parkour] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] run function game:end_facade_parkour
 execute if predicate game:game_started run tag @a[x=0] remove doing_facade_parkour
-tag @a[x=0,predicate=custom:on_blue_or_yellow_team] remove doing_facade_parkour
+execute if predicate game:game_started run tag @a[x=0,predicate=custom:on_blue_or_yellow_team] remove doing_facade_parkour
 
 ##Countdown
 execute if entity @s[tag=Countdown] run function game:countdown

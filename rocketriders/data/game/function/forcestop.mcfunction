@@ -4,6 +4,7 @@ execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s #custo
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s *[custom_data~{id:"nova_rocket"}]
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s *[custom_data~{id:"booster_rocket"}]
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s
+dialog clear @a[x=0]
 scoreboard players reset $game_started global
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Countdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove forceCountdown

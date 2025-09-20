@@ -17,6 +17,9 @@ execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run clear @s *[custom
 execute as @a[x=0,team=Yellow,predicate=!custom:has_firework_rocket_in_inventory] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:update_armor
 
+##Close dialogs
+dialog clear @a[x=0]
+
 ##Effects
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect clear @s slowness
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect clear @s levitation

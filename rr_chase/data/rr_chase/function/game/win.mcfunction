@@ -18,6 +18,9 @@ execute if predicate rr:has_achievements run advancement grant @a[x=0,team=Blue,
 scoreboard players add @a[x=0,team=Blue,tag=Winner,limit=1] wins 1
 scoreboard players add @a[x=0,team=Blue,tag=Loser] losses 1
 
+##Close dialogs
+dialog clear @a[x=0]
+
 ##Effects
 execute as @a[x=0,team=Blue] run effect clear @s slowness
 execute as @a[x=0,team=Blue] run effect clear @s levitation

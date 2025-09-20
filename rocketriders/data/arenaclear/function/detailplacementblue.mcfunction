@@ -24,7 +24,7 @@ execute if entity @s[scores={TopCorner=1}] if predicate game:gamemode_components
 execute if entity @s[scores={TopCorner=1}] if predicate game:gamemode_components/red_for_blue run fill 1 59 -53 7 63 -47 minecraft:pink_stained_glass replace minecraft:cyan_stained_glass strict
 
 execute if entity @s[scores={TopDeco=1}] run place template game:blue_arch 2 64 -58 none none 1 0 strict
-execute if entity @s[scores={TopDeco=1}] if predicate game:gamemode_components/red_for_blue run setblock 12 70 -56 minecraft:red_stained_glass strict strict
+execute if entity @s[scores={TopDeco=1}] if predicate game:gamemode_components/red_for_blue run setblock 12 70 -56 minecraft:red_stained_glass strict
 execute if entity @s[scores={TopDeco=1}] if predicate game:gamemode_components/red_for_blue run fill 3 64 -57 21 70 -55 minecraft:pink_stained_glass replace minecraft:cyan_stained_glass strict
 
 #Towers - Blue

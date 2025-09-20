@@ -71,6 +71,9 @@ execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -
 # Remove Chase Flag
 setblock -95 202 95 air
 
+# Remove Chase blocks
+fill -101 195 66 -89 209 90 air replace #custom:player_heads strict
+
 ## Modifiers
 # Molerat
 execute if predicate game:modifiers/molerat/on run fill -101 207 69 -89 186 87 light_gray_stained_glass replace air

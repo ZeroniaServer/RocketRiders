@@ -31,7 +31,7 @@ fill -14 64 66 39 74 70 air replace yellow_wool
 fill -14 64 65 39 74 70 air replace oak_fence
 fill -14 64 65 39 74 70 air replace purple_stained_glass
 fill -14 64 65 39 74 70 air replace white_stained_glass
-fill -14 64 -66 39 74 -70 air replace blue_wool
+fill -14 64 -66 39 74 -70 air replace #custom:wool
 fill -14 64 -65 39 74 -70 air replace oak_fence
 fill -14 64 -65 39 74 -70 air replace purple_stained_glass
 fill -14 64 -65 39 74 -70 air replace white_stained_glass
@@ -39,7 +39,7 @@ fill -14 64 62 39 74 58 air replace yellow_wool
 fill -14 64 63 39 74 58 air replace oak_fence
 fill -14 64 63 39 74 58 air replace purple_stained_glass
 fill -14 64 63 39 74 58 air replace white_stained_glass
-fill -14 64 -63 39 74 -58 air replace blue_wool
+fill -14 64 -63 39 74 -58 air replace #custom:wool
 fill -14 64 -63 39 74 -58 air replace oak_fence
 fill -14 64 -63 39 74 -58 air replace purple_stained_glass
 fill -14 64 -63 39 74 -58 air replace white_stained_glass
@@ -73,11 +73,15 @@ execute if score FlagWave FlagScore matches 40.. if score FY1: FlagScore matches
 execute if score FlagWave FlagScore matches 20 if score FY2: FlagScore matches 30.. run place template game:yellow_flag1 -14 71 63
 execute if score FlagWave FlagScore matches 40.. if score FY2: FlagScore matches 30.. run place template game:yellow_flag2 -14 71 63
 
-execute if score FlagWave FlagScore matches 20 if score FB1: FlagScore matches 30.. run place template game:blue_flag1 -14 71 -65
-execute if score FlagWave FlagScore matches 40.. if score FB1: FlagScore matches 30.. run place template game:blue_flag2 -14 71 -65
+execute if score FlagWave FlagScore matches 20 if score FB1: FlagScore matches 30.. unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag1 -14 71 -65
+execute if score FlagWave FlagScore matches 20 if score FB1: FlagScore matches 30.. if predicate game:gamemode_components/red_for_blue run place template game:red_flag1 -14 71 -65
+execute if score FlagWave FlagScore matches 40.. if score FB1: FlagScore matches 30.. unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 -14 71 -65
+execute if score FlagWave FlagScore matches 40.. if score FB1: FlagScore matches 30.. if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 -14 71 -65
 
-execute if score FlagWave FlagScore matches 20 if score FB2: FlagScore matches 30.. run place template game:blue_flag1 30 71 -65
-execute if score FlagWave FlagScore matches 40.. if score FB2: FlagScore matches 30.. run place template game:blue_flag2 30 71 -65
+execute if score FlagWave FlagScore matches 20 if score FB2: FlagScore matches 30.. unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag1 30 71 -65
+execute if score FlagWave FlagScore matches 20 if score FB2: FlagScore matches 30.. if predicate game:gamemode_components/red_for_blue run place template game:red_flag1 30 71 -65
+execute if score FlagWave FlagScore matches 40.. if score FB2: FlagScore matches 30.. unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 30 71 -65
+execute if score FlagWave FlagScore matches 40.. if score FB2: FlagScore matches 30.. if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 30 71 -65
 
 execute if score FlagWave FlagScore matches 40.. run scoreboard players reset FlagWave FlagScore
 
@@ -190,34 +194,44 @@ execute if score FB1: FlagScore matches 0 positioned -10 65 -64 if entity @e[typ
 execute if score FB1: FlagScore matches 0 positioned -10 65 -64 if entity @e[type=player,team=Yellow,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFB1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..7,scores={MineWhiteGlass=1..,respawn=0},predicate=custom:alive] add CarryFB1
 execute if entity @e[x=0,type=player,team=Yellow,tag=CarryFB1] run scoreboard players set FB1: FlagScore -1
 
-execute if score FB1: FlagScore matches 26 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 26 run place template game:blue_flag2 -14 70 -65
-execute if score FB1: FlagScore matches 22 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 22 run place template game:blue_flag2 -14 69 -65
+execute if score FB1: FlagScore matches 26 run fill -10 64 -65 -14 72 -64 air replace #custom:wool
+execute if score FB1: FlagScore matches 26 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 -14 70 -65
+execute if score FB1: FlagScore matches 26 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 -14 70 -65
+execute if score FB1: FlagScore matches 22 run fill -10 64 -65 -14 72 -64 air replace #custom:wool
+execute if score FB1: FlagScore matches 22 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 -14 69 -65
+execute if score FB1: FlagScore matches 22 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 -14 69 -65
 execute if score FB1: FlagScore matches 22 run setblock -10 71 -64 oak_fence
-execute if score FB1: FlagScore matches 18 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 18 run place template game:blue_flag2 -14 68 -65
+execute if score FB1: FlagScore matches 18 run fill -10 64 -65 -14 72 -64 air replace #custom:wool
+execute if score FB1: FlagScore matches 18 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 -14 68 -65
+execute if score FB1: FlagScore matches 18 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 -14 68 -65
 execute if score FB1: FlagScore matches 18 run setblock -10 70 -64 oak_fence
-execute if score FB1: FlagScore matches 14 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 14 run place template game:blue_flag2 -14 67 -65
+execute if score FB1: FlagScore matches 14 run fill -10 64 -65 -14 72 -64 air replace #custom:wool
+execute if score FB1: FlagScore matches 14 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 -14 67 -65
+execute if score FB1: FlagScore matches 14 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 -14 67 -65
 execute if score FB1: FlagScore matches 14 run setblock -10 69 -64 oak_fence
-execute if score FB1: FlagScore matches 10 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 10 run place template game:blue_flag2 -14 66 -65
+execute if score FB1: FlagScore matches 10 run fill -10 64 -65 -14 72 -64 air replace #custom:wool
+execute if score FB1: FlagScore matches 10 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 -14 66 -65
+execute if score FB1: FlagScore matches 10 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 -14 66 -65
 execute if score FB1: FlagScore matches 10 run setblock -10 68 -64 oak_fence
-execute if score FB1: FlagScore matches 6 run fill -10 64 -65 -14 72 -64 air replace blue_wool
-execute if score FB1: FlagScore matches 6 run place template game:blue_flag2 -14 65 -65
+execute if score FB1: FlagScore matches 6 run fill -10 64 -65 -14 72 -64 air replace #custom:wool
+execute if score FB1: FlagScore matches 6 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 -14 65 -65
+execute if score FB1: FlagScore matches 6 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 -14 65 -65
 execute if score FB1: FlagScore matches 6 run setblock -10 65 -64 white_stained_glass
 execute if score FB1: FlagScore matches 6 run setblock -10 67 -64 oak_fence
 #END
 
 #Keep placing FB1 once flag lowered
-execute if score FB1: FlagScore matches 0 run setblock -10 66 -64 blue_wool
-execute if score FB1: FlagScore matches 0 run fill -11 66 -65 -11 65 -65 blue_wool
-execute if score FB1: FlagScore matches 0 run fill -12 66 -64 -13 65 -64 blue_wool
-execute if score FB1: FlagScore matches 0 run setblock -14 65 -64 blue_wool
+execute if score FB1: FlagScore matches 0 unless predicate game:gamemode_components/red_for_blue run setblock -10 66 -64 blue_wool
+execute if score FB1: FlagScore matches 0 unless predicate game:gamemode_components/red_for_blue run fill -11 66 -65 -11 65 -65 blue_wool
+execute if score FB1: FlagScore matches 0 unless predicate game:gamemode_components/red_for_blue run fill -12 66 -64 -13 65 -64 blue_wool
+execute if score FB1: FlagScore matches 0 unless predicate game:gamemode_components/red_for_blue run setblock -14 65 -64 blue_wool
+execute if score FB1: FlagScore matches 0 if predicate game:gamemode_components/red_for_blue run setblock -10 66 -64 red_wool
+execute if score FB1: FlagScore matches 0 if predicate game:gamemode_components/red_for_blue run fill -11 66 -65 -11 65 -65 red_wool
+execute if score FB1: FlagScore matches 0 if predicate game:gamemode_components/red_for_blue run fill -12 66 -64 -13 65 -64 red_wool
+execute if score FB1: FlagScore matches 0 if predicate game:gamemode_components/red_for_blue run setblock -14 65 -64 red_wool
 
 #No more funny flag
-execute if score FB1: FlagScore matches 0 run fill -10 67 -65 -14 72 -64 air replace blue_wool
+execute if score FB1: FlagScore matches 0 run fill -10 67 -65 -14 72 -64 air replace #custom:wool
 
 #Capture Blue Flag 2 (the flag on blue's left)
 execute as @e[x=0,type=player,team=Yellow,scores={MinePurpleGlass=1..}] positioned 34 65 -64 unless block ~ ~ ~ purple_stained_glass if entity @e[type=player,team=Yellow,scores={MinePurpleGlass=1..},distance=..7] if score FB2: FlagScore matches 30.. run tellraw @a[x=0,team=!Yellow,team=!Blue] ["","\n",{"selector":"@s","color":"gold"},{"text":" lowered a ","color":"dark_aqua"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"dark_aqua"},"\n"]
@@ -236,34 +250,44 @@ execute if score FB2: FlagScore matches 0 positioned 34 65 -64 if entity @e[type
 execute if score FB2: FlagScore matches 0 positioned 34 65 -64 if entity @e[type=player,team=Yellow,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFB2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..7,scores={MineWhiteGlass=1..,respawn=0},predicate=custom:alive] add CarryFB2
 execute if entity @e[x=0,type=player,team=Yellow,tag=CarryFB2] run scoreboard players set FB2: FlagScore -1
 
-execute if score FB2: FlagScore matches 26 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 26 run place template game:blue_flag2 30 70 -65
-execute if score FB2: FlagScore matches 22 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 22 run place template game:blue_flag2 30 69 -65
+execute if score FB2: FlagScore matches 26 run fill 30 64 -64 34 72 -65 air replace #custom:wool
+execute if score FB2: FlagScore matches 26 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 30 70 -65
+execute if score FB2: FlagScore matches 26 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 30 70 -65
+execute if score FB2: FlagScore matches 22 run fill 30 64 -64 34 72 -65 air replace #custom:wool
+execute if score FB2: FlagScore matches 22 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 30 69 -65
+execute if score FB2: FlagScore matches 22 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 30 69 -65
 execute if score FB2: FlagScore matches 22 run setblock 34 71 -64 oak_fence
-execute if score FB2: FlagScore matches 18 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 18 run place template game:blue_flag2 30 68 -65
+execute if score FB2: FlagScore matches 18 run fill 30 64 -64 34 72 -65 air replace #custom:wool
+execute if score FB2: FlagScore matches 18 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 30 68 -65
+execute if score FB2: FlagScore matches 18 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 30 68 -65
 execute if score FB2: FlagScore matches 18 run setblock 34 70 -64 oak_fence
-execute if score FB2: FlagScore matches 14 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 14 run place template game:blue_flag2 30 67 -65
+execute if score FB2: FlagScore matches 14 run fill 30 64 -64 34 72 -65 air replace #custom:wool
+execute if score FB2: FlagScore matches 14 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 30 67 -65
+execute if score FB2: FlagScore matches 14 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 30 67 -65
 execute if score FB2: FlagScore matches 14 run setblock 34 69 -64 oak_fence
-execute if score FB2: FlagScore matches 10 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 10 run place template game:blue_flag2 30 66 -65
+execute if score FB2: FlagScore matches 10 run fill 30 64 -64 34 72 -65 air replace #custom:wool
+execute if score FB2: FlagScore matches 10 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 30 66 -65
+execute if score FB2: FlagScore matches 10 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 30 66 -65
 execute if score FB2: FlagScore matches 10 run setblock 34 68 -64 oak_fence
-execute if score FB2: FlagScore matches 6 run fill 30 64 -64 34 72 -65 air replace blue_wool
-execute if score FB2: FlagScore matches 6 run place template game:blue_flag2 30 65 -65
+execute if score FB2: FlagScore matches 6 run fill 30 64 -64 34 72 -65 air replace #custom:wool
+execute if score FB2: FlagScore matches 6 unless predicate game:gamemode_components/red_for_blue run place template game:blue_flag2 30 65 -65
+execute if score FB2: FlagScore matches 6 if predicate game:gamemode_components/red_for_blue run place template game:red_flag2 30 65 -65
 execute if score FB2: FlagScore matches 6 run setblock 34 65 -64 white_stained_glass
 execute if score FB2: FlagScore matches 6 run setblock 34 67 -64 oak_fence
 #END
 
 #Keep placing FB2 once flag lowered
-execute if score FB2: FlagScore matches 0 run setblock 34 66 -64 blue_wool
-execute if score FB2: FlagScore matches 0 run fill 33 66 -65 33 65 -65 blue_wool
-execute if score FB2: FlagScore matches 0 run fill 32 66 -64 31 65 -64 blue_wool
-execute if score FB2: FlagScore matches 0 run setblock 30 65 -64 blue_wool
+execute if score FB2: FlagScore matches 0 unless predicate game:gamemode_components/red_for_blue run setblock 34 66 -64 blue_wool
+execute if score FB2: FlagScore matches 0 unless predicate game:gamemode_components/red_for_blue run fill 33 66 -65 33 65 -65 blue_wool
+execute if score FB2: FlagScore matches 0 unless predicate game:gamemode_components/red_for_blue run fill 32 66 -64 31 65 -64 blue_wool
+execute if score FB2: FlagScore matches 0 unless predicate game:gamemode_components/red_for_blue run setblock 30 65 -64 blue_wool
+execute if score FB2: FlagScore matches 0 if predicate game:gamemode_components/red_for_blue run setblock 34 66 -64 red_wool
+execute if score FB2: FlagScore matches 0 if predicate game:gamemode_components/red_for_blue run fill 33 66 -65 33 65 -65 red_wool
+execute if score FB2: FlagScore matches 0 if predicate game:gamemode_components/red_for_blue run fill 32 66 -64 31 65 -64 red_wool
+execute if score FB2: FlagScore matches 0 if predicate game:gamemode_components/red_for_blue run setblock 30 65 -64 red_wool
 
 #No more funny flag
-execute if score FB2: FlagScore matches 0 run fill 30 67 -65 34 72 -64 air replace blue_wool
+execute if score FB2: FlagScore matches 0 run fill 30 67 -65 34 72 -64 air replace #custom:wool
 
 #Add tags for flag carriers
 tag @e[x=0,type=player,team=Blue,tag=CarryFY1] add CarryFlag

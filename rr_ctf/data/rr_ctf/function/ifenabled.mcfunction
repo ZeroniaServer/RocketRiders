@@ -19,8 +19,10 @@ execute unless predicate game:game_started if entity @s[tag=EditedSettings] posi
 execute unless predicate game:game_started if entity @s[tag=EditedSettings] positioned -100 202 61 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
 execute unless predicate game:game_started if entity @s[tag=EditedSettings] positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
 execute unless predicate game:game_started if entity @s[tag=EditedSettings] positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute unless predicate game:game_started if entity @s[tag=EditedSettings] positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
-execute unless predicate game:game_started if entity @s[tag=EditedSettings] positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute unless predicate game:game_started if entity @s[tag=EditedSettings] unless predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute unless predicate game:game_started if entity @s[tag=EditedSettings] if predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
+execute unless predicate game:game_started if entity @s[tag=EditedSettings] unless predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute unless predicate game:game_started if entity @s[tag=EditedSettings] if predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings

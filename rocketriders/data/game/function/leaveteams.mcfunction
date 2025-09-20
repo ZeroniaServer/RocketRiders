@@ -8,6 +8,7 @@ tag @a[x=0,tag=LeaveTeams,team=Spectator] add LeavingSpec
 execute as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
 execute as @a[x=0,tag=LeavingSpec] run tp @s @s
 tag @a[x=0,tag=LeaveTeams,team=Lobby] add WasInLobby
+tag @a[x=0,tag=LeaveTeams] remove doing_facade_parkour
 team join Lobby @a[x=0,tag=LeaveTeams]
 title @a[x=0,tag=LeaveTeams] actionbar [""]
 title @a[x=0,tag=LeaveTeams] title [""]

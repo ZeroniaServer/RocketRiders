@@ -64,6 +64,7 @@ execute if predicate game:game_started if entity @s[tag=!customSaberMsg] if pred
 execute if predicate game:game_started run gamemode survival @a[x=0,team=Blue,gamemode=adventure]
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinBlue] resistance
 execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+execute as @a[x=0,tag=JoinBlue] run title @s actionbar ""
 #Achievement keybind tutorial
 execute if predicate rr:has_achievements if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
 execute if predicate rr:has_achievements if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
@@ -98,6 +99,7 @@ execute if predicate game:game_started if entity @s[tag=!customSaberMsg] if pred
 execute if predicate game:game_started run gamemode survival @a[x=0,team=Yellow,gamemode=adventure]
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinYellow] resistance
 execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+execute as @a[x=0,tag=JoinYellow] run title @s actionbar ""
 #Achievement keybind tutorial
 execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
 execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tag @s add achievementInformed
@@ -125,6 +127,7 @@ execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cube
 execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+execute as @a[x=0,tag=JoinSpec] run title @s actionbar ""
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
 execute if predicate rr:enable_spectator_leave_cloud run title @a[team=Spectator] actionbar {"text":"Fly into the green particle cluster to stop spectating!","color":"green","bold":true}
 execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run title @a[team=Spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]

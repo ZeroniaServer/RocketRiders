@@ -25,17 +25,17 @@ execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run setblock 
 execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run setblock ~2 ~-1 ~ orange_stained_glass_pane[west=true]
 
 #Blue panes
-execute unless predicate game:gamemode_components/neutral_utility_colors if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~1 ~2 ~ blue_stained_glass_pane[east=true]
-execute unless predicate game:gamemode_components/neutral_utility_colors if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-1 ~2 ~ blue_stained_glass_pane[west=true]
-execute unless predicate game:gamemode_components/neutral_utility_colors if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~1 ~-2 ~ blue_stained_glass_pane[east=true]
-execute unless predicate game:gamemode_components/neutral_utility_colors if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-1 ~-2 ~ blue_stained_glass_pane[west=true]
-execute unless predicate game:gamemode_components/neutral_utility_colors if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-2 ~1 ~ cyan_stained_glass_pane[east=true]
-execute unless predicate game:gamemode_components/neutral_utility_colors if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-2 ~-1 ~ cyan_stained_glass_pane[east=true]
-execute unless predicate game:gamemode_components/neutral_utility_colors if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~1 ~ cyan_stained_glass_pane[west=true]
-execute unless predicate game:gamemode_components/neutral_utility_colors if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~-1 ~ cyan_stained_glass_pane[west=true]
+execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~1 ~2 ~ blue_stained_glass_pane[east=true]
+execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-1 ~2 ~ blue_stained_glass_pane[west=true]
+execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~1 ~-2 ~ blue_stained_glass_pane[east=true]
+execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-1 ~-2 ~ blue_stained_glass_pane[west=true]
+execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-2 ~1 ~ cyan_stained_glass_pane[east=true]
+execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-2 ~-1 ~ cyan_stained_glass_pane[east=true]
+execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~1 ~ cyan_stained_glass_pane[west=true]
+execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~-1 ~ cyan_stained_glass_pane[west=true]
 
 execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run tag @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] add blueobsidianshield
 execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run tag @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] add yellowobsidianshield
 execute if entity @s[scores={shieldplacement=6}] run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 1
 execute if entity @s[scores={shieldplacement=6}] run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 1
-execute unless predicate game:gamemode_components/neutral_utility_colors run kill @s[scores={shieldplacement=6..}]
+execute unless predicate game:gamemode_components/neutral_items run kill @s[scores={shieldplacement=6..}]

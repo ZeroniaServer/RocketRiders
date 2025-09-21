@@ -4,7 +4,7 @@
     "type": "minecraft:score",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$neutral_utility_colors"
+      "name": "$neutral_items"
     },
     "score": "gamemode_components"
   },

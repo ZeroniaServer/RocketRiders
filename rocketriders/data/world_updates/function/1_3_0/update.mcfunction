@@ -123,7 +123,7 @@ execute if data storage rocketriders:storage {Tags:["Hardcore"]} run data modify
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Hardcore"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"HardcoreWasOn"}
 # Updating gamemode components
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_utility_colors gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $custom_team_colors gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] as @a[x=0,predicate=custom:on_blue_or_yellow_team,scores={ArmorColor=1..12}] run scoreboard players operation @s custom_team_color = @s ArmorColor
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customNova

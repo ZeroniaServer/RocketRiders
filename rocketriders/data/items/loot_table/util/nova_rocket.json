@@ -141,7 +141,7 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_utility_colors"
+                    "name": "game:gamemode_components/neutral_items"
                   }
                 },
                 {
@@ -211,7 +211,7 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_utility_colors"
+                    "name": "game:gamemode_components/neutral_items"
                   }
                 },
                 {
@@ -278,7 +278,7 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_utility_colors"
+                    "name": "game:gamemode_components/neutral_items"
                   }
                 },
                 {
@@ -340,7 +340,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/neutral_utility_colors"
+                  "name": "game:gamemode_components/neutral_items"
                 }
               ]
             }

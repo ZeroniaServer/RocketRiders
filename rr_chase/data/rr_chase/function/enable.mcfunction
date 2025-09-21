@@ -6,7 +6,7 @@ scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
 scoreboard players set $custom_team_colors gamemode_components 1
 scoreboard players set $no_portals gamemode_components 1
-scoreboard players set $neutral_utility_colors gamemode_components 1
+scoreboard players set $neutral_items gamemode_components 1
 scoreboard players set $red_for_blue gamemode_components 1
 scoreboard players set $one_team gamemode_components 1
 

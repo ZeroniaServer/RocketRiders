@@ -31,7 +31,7 @@ fill -81 199 86 -81 198 82 minecraft:lime_terracotta replace #custom:terracotta
 #Clear pregame molerat
 fill -101 207 69 -89 186 87 air replace light_gray_stained_glass
 
-#Clear pregame powerup platform and mini platforms and castles
+#Clear pregame powerup platform, crystal crafters, mini platforms, flags, and castles
 execute unless predicate game:gamemode_components/red_for_blue run fill -101 195 65 -89 201 64 minecraft:blue_stained_glass
 execute if predicate game:gamemode_components/red_for_blue run fill -101 195 65 -89 201 64 minecraft:red_stained_glass
 execute unless predicate game:gamemode_components/red_for_blue run fill -89 201 63 -101 195 62 minecraft:cyan_stained_glass
@@ -51,6 +51,14 @@ fill -91 200 85 -89 202 85 air strict
 fill -101 200 85 -99 202 84 air strict
 fill -91 200 85 -89 202 84 air strict
 fill -89 200 71 -101 201 72 air strict
+
+fill -97 201 98 -93 202 101 barrier
+fill -97 201 55 -93 202 58 barrier
+
+fill -90 202 95 -90 203 95 air
+fill -100 202 95 -100 203 95 air
+fill -100 202 61 -100 203 61 air
+fill -90 202 61 -90 203 61 air
 
 # Frames & Portals
 execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:obsidian strict

@@ -7,7 +7,14 @@ function #rr:upon_edited_settings
 ## Place facade
 function game:place_facade
 
-## Cancel yellow join pad
+## Initialise join pads
+tag @e[x=0,type=marker,tag=join_pad] remove join_pad.blue
+tag @e[x=0,type=marker,tag=join_pad] remove join_pad.yellow
+
+tag @e[x=0,type=marker,tag=join_pad.right] add join_pad.blue
+execute unless predicate game:gamemode_components/one_team run tag @e[x=0,type=marker,tag=join_pad.left] add join_pad.yellow
+execute if predicate game:gamemode_components/one_team run tag @e[x=0,type=marker,tag=join_pad.left] add join_pad.blue
+
 execute in minecraft:overworld run function game:uncancelpads
 execute if predicate game:gamemode_components/one_team run function game:cancelyellow
 

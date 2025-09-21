@@ -22,8 +22,4 @@ tag @s remove stackingOn
 tag @s remove antigriefOff
 tag @s remove customSaberMsg
 
-# change left spawn pad to yellow
-tag @e[x=0,type=marker,tag=join_pad.left] remove join_pad.blue
-tag @e[x=0,type=marker,tag=join_pad.left] add join_pad.yellow
-
 tag @s add switchGamemodes

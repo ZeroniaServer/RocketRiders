@@ -29,10 +29,6 @@ tag @s add antigriefOff
 tag @s add customSaberMsg
 team modify Blue friendlyFire true
 
-# change left join pad back to blue
-tag @e[x=0,type=marker,tag=join_pad.left] remove join_pad.yellow
-tag @e[x=0,type=marker,tag=join_pad.left] add join_pad.blue
-
 #enable arrows/utilities
 tag @s[tag=!rngArrows] add arrowsWasOff
 tag @s add rngArrows

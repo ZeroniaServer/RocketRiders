@@ -5,7 +5,7 @@ scoreboard players add SwapPlatformTick swapside 1
 execute if score SwapPlatformTick swapside matches 20 run scoreboard players remove SwapPlatformSec swapside 1
 execute if score SwapPlatformTick swapside matches 20 run scoreboard players set SwapPlatformTick swapside 0
 
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={SDtime=1..}] unless score QuickSwap swapside matches 1 run scoreboard players set SwapSide swapside 0
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={SDtime=1..}] unless score QuickSwap swapside matches 1 run scoreboard players set $swap_side global 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={SDtime=1..}] unless score QuickSwap swapside matches 1 run scoreboard players set SwapPlatform swapside 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={SDtime=1..}] unless score QuickSwap swapside matches 1 run scoreboard players set BossbarA swapside 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={SDtime=1..}] run scoreboard players set QuickSwap swapside 1
@@ -33,5 +33,5 @@ execute if entity @e[x=0,type=marker,tag=SwappingSides] if score QuickSwap swaps
 execute if entity @e[x=0,type=marker,tag=SwappingSides] if score QuickSwap swapside matches 1 run scoreboard players set SwapPlatformSec swapside 20
 execute if entity @e[x=0,type=marker,tag=SwappingSides] run scoreboard players set SwapPlatformTick swapside 0
 execute if entity @e[x=0,type=marker,tag=SwappingSides] as @a[x=0,team=!Lobby] at @s run playsound entity.zombie_villager.converted master @s ~ ~ ~ 1 1.2
-execute if score SwapSide swapside matches 0 as @e[x=0,type=marker,tag=SwappingSides] run function rr_swap:baseswap/lightyellow
-execute if score SwapSide swapside matches 1 as @e[x=0,type=marker,tag=SwappingSides] run function rr_swap:baseswap/darkyellow
+execute if predicate rr_swap:yellow_team_is_dark as @e[x=0,type=marker,tag=SwappingSides] run function rr_swap:baseswap/lightyellow
+execute if predicate rr_swap:yellow_team_is_light as @e[x=0,type=marker,tag=SwappingSides] run function rr_swap:baseswap/darkyellow

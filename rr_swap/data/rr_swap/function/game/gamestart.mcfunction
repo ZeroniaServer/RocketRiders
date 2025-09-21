@@ -7,8 +7,8 @@ execute if predicate game:game_started run spawnpoint @a[x=0,team=Blue] 12 64 -6
 execute if predicate game:game_started run spawnpoint @a[x=0,team=Yellow] 12 64 66 -180
 
 #Give first item to anyone who joins within 1st second
-execute if predicate game:game_started if score $game_duration global matches 3..20 if score SwapSide swapside matches 1 run function rr_swap:items/givefirstdarkblue
-execute if predicate game:game_started if score $game_duration global matches 3..20 if score SwapSide swapside matches 0 run function rr_swap:items/givefirstlightblue
+execute if predicate game:game_started if score $game_duration global matches 3..20 if predicate rr_swap:blue_team_is_dark run function rr_swap:items/givefirstdarkblue
+execute if predicate game:game_started if score $game_duration global matches 3..20 if predicate rr_swap:blue_team_is_light run function rr_swap:items/givefirstlightblue
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue

@@ -75,6 +75,7 @@ execute if entity @s[scores={endtimer=570}] run tp @a[x=0,team=Spectator] -43 21
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] kills 0
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] deaths 0
 execute if entity @s[scores={endtimer=570}] run gamerule mobGriefing false
+execute if entity @s[scores={endtimer=570}] run scoreboard players reset $swap_side global
 #Brute Force Arena Clear
 execute if entity @s[scores={endtimer=570}] run function arenaclear:brute_force/start
 

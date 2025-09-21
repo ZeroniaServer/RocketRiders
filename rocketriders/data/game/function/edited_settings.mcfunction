@@ -1,6 +1,9 @@
 ## Close modification room dialogs
 dialog clear @a
 
+## Per-gamemode upon edited settings
+function #rr:upon_edited_settings
+
 ## Place facade
 function game:place_facade
 

@@ -15,7 +15,6 @@ spawnpoint @a[x=0,team=Yellow] 12 64 66 -180
 
 #spawnables
 function rr_powerups:everytick/spawnables
-function rr_powerups:everytick/powerups
 function everytick:cluster
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team,scores={useWand=1..}] run function rr_crusade:game/usewand
 

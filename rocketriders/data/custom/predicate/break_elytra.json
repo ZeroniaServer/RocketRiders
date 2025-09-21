@@ -1,0 +1,54 @@
+[
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "chest": {
+              "predicates": {
+                "minecraft:damage": {
+                  "durability": {
+                    "max": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "team": "Blue",
+          "location": {
+            "position": {
+              "z": {
+                "min": 30,
+                "max": 85
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "team": "Yellow",
+          "location": {
+            "position": {
+              "z": {
+                "min": -85,
+                "max": -30
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+]

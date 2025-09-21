@@ -118,8 +118,6 @@ execute as @e[x=0,type=marker,tag=captureMiddle,tag=contested,tag=!BrokenPlatfor
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 1 run bossbar set rr_powerups:capture_progress name [{"text":"Blue Captured!","color":"blue","bold":true}]
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Captured!","color":"yellow","bold":true}]
 
-function rr_powerups:everytick/powerups
-
 #actionbar
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=2..}] as @a[x=0,team=Blue,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":true},{"text":" seconds!","color":"light_purple"}]
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=..1}] as @a[x=0,team=Blue,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":true},{"text":" second!","color":"light_purple"}]

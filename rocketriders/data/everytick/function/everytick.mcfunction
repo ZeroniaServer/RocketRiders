@@ -23,6 +23,7 @@ scoreboard players remove @a[x=0,scores={shooting_saber.infinity_time=1..2147483
 execute as @a[x=0,scores={shooting_saber.infinity_time=..0}] run function items:shooting_saber/infinity_deactivate
 scoreboard players remove @a[x=0,scores={shooting_saber.multishot_time=1..2147483646}] shooting_saber.multishot_time 1
 execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items:shooting_saber/multishot_deactivate
+function everytick:elytra
 
 # Thrown Items
 execute as @e[x=0,type=item] run function everytick:no_drop

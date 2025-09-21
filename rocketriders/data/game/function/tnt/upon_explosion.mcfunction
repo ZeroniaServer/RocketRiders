@@ -4,9 +4,9 @@
 execute unless entity @s[predicate=custom:tnt_can_explode] run return run kill @s
 
 # Limit number of TNT explosions in a single tick
-execute if score $tnt_explosions_this_tick var >= $maximum_tnt_explosions_per_tick global run data modify entity @s fuse set value 20
-execute if score $tnt_explosions_this_tick var >= $maximum_tnt_explosions_per_tick global store result score $delay_fuse var run random value 1..5
-execute if score $tnt_explosions_this_tick var >= $maximum_tnt_explosions_per_tick global run return run scoreboard players operation @s tnt.explosion_timestamp += $delay_fuse var
+execute if score $tnt_explosions_this_tick var >= $maximum_tnt_explosions_per_tick var run data modify entity @s fuse set value 20
+execute if score $tnt_explosions_this_tick var >= $maximum_tnt_explosions_per_tick var store result score $delay_fuse var run random value 1..5
+execute if score $tnt_explosions_this_tick var >= $maximum_tnt_explosions_per_tick var run return run scoreboard players operation @s tnt.explosion_timestamp += $delay_fuse var
 scoreboard players add $tnt_explosions_this_tick var 1
 
 # Set explosion power

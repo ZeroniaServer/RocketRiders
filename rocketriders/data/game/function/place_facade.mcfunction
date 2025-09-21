@@ -1,3 +1,6 @@
+# Kill facade entities
+kill @e[x=0,tag=facade_entity]
+
 #Join pad colors
 execute if predicate game:gamemode_components/custom_team_colors run fill -79 204 63 -81 204 61 minecraft:white_concrete replace #custom:concrete
 execute if predicate game:gamemode_components/custom_team_colors run fill -79 204 95 -81 204 93 minecraft:white_concrete replace #custom:concrete

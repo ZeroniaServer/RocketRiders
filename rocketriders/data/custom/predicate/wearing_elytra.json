@@ -4,7 +4,11 @@
   "predicate": {
     "equipment": {
       "chest": {
-        "items": "minecraft:elytra"
+        "predicates": {
+          "minecraft:custom_data": {
+            "id": "elytra"
+          }
+        }
       }
     }
   }

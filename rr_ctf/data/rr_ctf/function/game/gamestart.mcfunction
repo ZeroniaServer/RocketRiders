@@ -1,26 +1,26 @@
 #Items
-execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function custom:update_armor
-execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
+execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
+execute as @a[x=0,tag=JoinBlue] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
 
-execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function custom:update_armor
-execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
+execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
+execute as @a[x=0,tag=JoinYellow] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
 
 #Notify Join
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,tag=!servermodeJoin] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Piercing Pickaxe ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,tag=!servermodeJoin] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,tag=!servermodeJoin] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Piercing Pickaxe ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,tag=!servermodeJoin] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Piercing Pickaxe ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Piercing Pickaxe ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 
 #Score Removal
-scoreboard players reset @a[x=0,tag=JoinBlue,tag=!servermodeJoin] FlagsCaptured
-scoreboard players reset @a[x=0,tag=JoinYellow,tag=!servermodeJoin] FlagsCaptured
+scoreboard players reset @a[x=0,tag=JoinBlue] FlagsCaptured
+scoreboard players reset @a[x=0,tag=JoinYellow] FlagsCaptured
 
 #Give first item to anyone who joins within 1st second
 execute if predicate game:game_started if score $game_duration global matches 3..20 run function items:givefirst
 
 #Tag Removal
-tag @a[x=0,tag=!servermodeJoin] remove JoinBlue
-tag @a[x=0,tag=!servermodeJoin] remove JoinYellow
+tag @a[x=0] remove JoinBlue
+tag @a[x=0] remove JoinYellow
 
 #Countdown
 execute if predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown

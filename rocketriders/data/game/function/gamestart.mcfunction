@@ -166,6 +166,3 @@ execute if entity @s[tag=Countdown] run function game:countdown
 
 ##Display CancelJoin join pad barriers
 tag @e[x=0,type=marker,tag=CancelJoin] add join_pad.show_barrier
-
-##Handle servermode joins
-tag @a[x=0,tag=servermodeJoin] remove servermodeJoin

@@ -1,21 +1,21 @@
 #Items
-execute as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function custom:update_armor
-execute unless predicate game:game_started as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run loot replace entity @s hotbar.0 loot items:books/nomicon/pre_game
-execute if predicate game:game_started as @a[x=0,tag=JoinBlue,tag=!servermodeJoin] run function rr_sandbox:items/givenomicon
+execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
+execute unless predicate game:game_started as @a[x=0,tag=JoinBlue] run loot replace entity @s hotbar.0 loot items:books/nomicon/pre_game
+execute if predicate game:game_started as @a[x=0,tag=JoinBlue] run function rr_sandbox:items/givenomicon
 
-execute as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function custom:update_armor
-execute unless predicate game:game_started as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run loot replace entity @s hotbar.0 loot items:books/nomicon/pre_game
-execute if predicate game:game_started as @a[x=0,tag=JoinYellow,tag=!servermodeJoin] run function rr_sandbox:items/givenomicon
+execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
+execute unless predicate game:game_started as @a[x=0,tag=JoinYellow] run loot replace entity @s hotbar.0 loot items:books/nomicon/pre_game
+execute if predicate game:game_started as @a[x=0,tag=JoinYellow] run function rr_sandbox:items/givenomicon
 
 #Notify Join
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,tag=!servermodeJoin] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false},{"text":" to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,tag=!servermodeJoin] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,tag=!servermodeJoin] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false},{"text":" to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,tag=!servermodeJoin] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false},{"text":" to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false},{"text":" to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 
 #Tag Removal
-tag @a[x=0,tag=!servermodeJoin] remove JoinBlue
-tag @a[x=0,tag=!servermodeJoin] remove JoinYellow
+tag @a[x=0] remove JoinBlue
+tag @a[x=0] remove JoinYellow
 
 #Bossbar
 execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]

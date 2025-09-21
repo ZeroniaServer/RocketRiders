@@ -13,18 +13,6 @@ execute as @a[x=0,team=Lobby,tag=startParkour] run tag @s add inParkour
 execute as @a[x=0,team=Lobby,tag=startParkour] run tag @s remove startParkour
 execute as @a[x=0,team=Lobby] at @s positioned ~ ~1 ~ unless entity @e[type=marker,tag=parkourStart,limit=1,distance=..5] run tag @s remove keepInventory
 
-##Concrete detection
-execute as @a[x=0,team=Lobby] run tag @s remove onConcrete
-execute as @a[x=0,team=Lobby] at @s if block ~ ~-1 ~ black_concrete run tag @s[y=184,dy=16] add onConcrete
-execute as @a[x=0,team=Lobby] at @s if block ~-0.3 ~-1 ~ black_concrete run tag @s[y=184,dy=16] add onConcrete
-execute as @a[x=0,team=Lobby] at @s if block ~0.3 ~-1 ~ black_concrete run tag @s[y=184,dy=16] add onConcrete
-execute as @a[x=0,team=Lobby] at @s if block ~ ~-1 ~-0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
-execute as @a[x=0,team=Lobby] at @s if block ~ ~-1 ~0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
-execute as @a[x=0,team=Lobby] at @s if block ~0.3 ~-1 ~0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
-execute as @a[x=0,team=Lobby] at @s if block ~-0.3 ~-1 ~0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
-execute as @a[x=0,team=Lobby] at @s if block ~-0.3 ~-1 ~-0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
-execute as @a[x=0,team=Lobby] at @s if block ~0.3 ~-1 ~-0.3 black_concrete run tag @s[y=184,dy=16] add onConcrete
-
 ##Finish parkour
 execute as @a[x=0,team=Lobby,tag=finishedParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[x=0,team=Lobby,tag=finishedParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.1
@@ -49,15 +37,7 @@ execute as @a[x=0,team=Lobby,tag=inParkour] run function custom:update_armor
 effect clear @a[x=0,team=!Lobby,tag=inParkour] invisibility
 tag @a[x=0,team=!Lobby,tag=inParkour] remove inParkour
 #Don't let non-Parkour players on floor (warp back to parkour start) -- maybe remove?
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+execute as @a[x=0,team=Lobby,tag=!inParkour] run scoreboard players set @a[x=0,predicate=custom:standing_on_parkour_floor] LobbyWarp 7
 
 ##Return to Lobby Pad
 execute as @e[x=0,type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust{block_state:"minecraft:green_concrete"} ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

@@ -9,9 +9,5 @@ execute unless predicate game:gamemode_components/red_for_blue run fill -89 201 
 execute unless predicate game:gamemode_components/red_for_blue run fill -89 201 64 -101 195 65 blue_concrete
 execute if predicate game:gamemode_components/red_for_blue run fill -89 201 62 -101 195 63 pink_concrete
 execute if predicate game:gamemode_components/red_for_blue run fill -89 201 64 -101 195 65 red_concrete
-setblock -90 202 95 purple_stained_glass
-setblock -100 202 95 purple_stained_glass
-setblock -90 202 61 purple_stained_glass
-setblock -100 202 61 purple_stained_glass
 fill -89 203 97 -101 203 97 air
 fill -101 203 59 -89 203 59 air

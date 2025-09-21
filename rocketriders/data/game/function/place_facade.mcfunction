@@ -72,6 +72,18 @@ execute if predicate game:gamemode_components/arena/bedrock_frame run fill -88 2
 execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 barrier
 execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 barrier
 
+# Flags
+execute if predicate game:gamemode_components/has_flags run setblock -90 202 95 purple_stained_glass
+execute if predicate game:gamemode_components/has_flags run setblock -100 202 95 purple_stained_glass
+execute if predicate game:gamemode_components/has_flags run setblock -90 202 61 purple_stained_glass
+execute if predicate game:gamemode_components/has_flags run setblock -100 202 61 purple_stained_glass
+execute if predicate game:gamemode_components/has_flags positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:gamemode_components/has_flags positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:gamemode_components/has_flags unless predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute if predicate game:gamemode_components/has_flags if predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
+execute if predicate game:gamemode_components/has_flags unless predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute if predicate game:gamemode_components/has_flags if predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
+
 # Remove Chase Flag
 setblock -95 202 95 air
 

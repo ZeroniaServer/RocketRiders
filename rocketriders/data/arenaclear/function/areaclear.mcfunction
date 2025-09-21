@@ -62,9 +62,6 @@ tag @a[x=0] remove beenOnYellow
 tag @a[x=0] remove beenOnBlue
 tag @a[x=0] remove beenOnBoth
 
-##Remove join cancel from join pads
-schedule function game:uncancelpads_indimension 2t append
-
 ##Add flag that game just cleared (briefly locks joinpads)
 tag @s add JustCleared
 

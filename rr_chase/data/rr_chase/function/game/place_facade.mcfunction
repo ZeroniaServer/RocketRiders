@@ -91,6 +91,3 @@ execute if predicate game:modifiers/hardcore/on run fill -89 201 93 -101 195 92 
 execute if predicate game:modifiers/hardcore/on run fill -101 201 61 -89 195 61 pink_stained_glass
 execute if predicate game:modifiers/hardcore/on run fill -101 201 62 -89 195 62 red_stained_glass
 execute if predicate game:modifiers/hardcore/on run fill -89 201 63 -101 195 65 air
-
-#cancel yellow
-function game:cancelyellow

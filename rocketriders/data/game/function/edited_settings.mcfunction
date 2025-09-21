@@ -4,12 +4,16 @@ dialog clear @a
 ## Place facade
 function game:place_facade
 
+## Cancel yellow join pad
+execute in minecraft:overworld run function game:uncancelpads
+execute if predicate game:gamemode_components/one_team run function game:cancelyellow
+
 ## Shedule Molerat (asynchronous)
 execute if predicate game:modifiers/molerat/on run function arenaclear:moleratplace
 
 ##Reset team balance stuff
-tag @s[tag=!onlyBlue] remove YellowFull
-tag @s[tag=!onlyBlue] remove YellowCapOverride
+execute unless predicate game:gamemode_components/one_team run tag @s remove YellowFull
+execute unless predicate game:gamemode_components/one_team run tag @s remove YellowCapOverride
 tag @s remove BlueFull
 tag @s remove BlueCapOverride
 

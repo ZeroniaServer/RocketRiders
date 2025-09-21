@@ -19,7 +19,6 @@ tag @s remove utilWasOff
 tag @s[tag=stackingWasOff] remove doStacking
 tag @s remove stackingWasOff
 tag @s remove stackingOn
-tag @s remove onlyBlue
 tag @s remove antigriefOff
 tag @s remove customSaberMsg
 

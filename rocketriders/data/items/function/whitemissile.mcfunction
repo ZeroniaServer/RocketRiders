@@ -42,12 +42,12 @@ execute if entity @s[tag=BlueCata] run fill ~ ~ ~ ~2 ~2 ~11 white_glazed_terraco
 
 #Citadel
 execute if entity @s[tag=BlueCitadel] run fill ~ ~ ~ ~2 ~2 ~9 white_stained_glass replace blue_stained_glass strict
-execute if entity @s[tag=BlueCitadel] run fill ~ ~ ~ ~2 ~2 ~9 birch_trapdoor[facing=north,half=bottom,open=true] replace spruce_trapdoor strict
+execute if entity @s[tag=BlueCitadel] run fill ~ ~ ~ ~2 ~2 ~9 pale_oak_trapdoor[facing=north,half=bottom,open=true] replace spruce_trapdoor strict
 
 #Gemini
 execute if entity @s[tag=BlueGemi] run fill ~ ~ ~ ~2 ~1 ~9 white_stained_glass replace blue_stained_glass strict
 execute if entity @s[tag=BlueGemi] run fill ~ ~ ~ ~2 ~1 ~9 white_glazed_terracotta[facing=west] replace blue_glazed_terracotta strict
-execute if entity @s[tag=BlueGemi] run fill ~ ~ ~ ~2 ~1 ~9 birch_fence_gate[facing=south,open=true,powered=true] replace warped_fence_gate strict
+execute if entity @s[tag=BlueGemi] run fill ~ ~ ~ ~2 ~1 ~9 pale_oak_fence_gate[facing=south,open=true,powered=true] replace warped_fence_gate strict
 
 #Lifter
 execute if entity @s[tag=BlueLift] run fill ~ ~ ~ ~2 ~2 ~6 white_stained_glass replace blue_stained_glass strict

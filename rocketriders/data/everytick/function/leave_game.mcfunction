@@ -23,9 +23,9 @@ title @a[x=0,scores={LeaveGame=1..,firstJoined=2}] times 5 30 5
 title @a[x=0,scores={LeaveGame=1..,firstJoined=2}] actionbar [""]
 title @a[x=0,scores={LeaveGame=1..,firstJoined=2}] title [""]
 title @a[x=0,scores={LeaveGame=1..,firstJoined=2}] subtitle [""]
-spawnpoint @a[x=0,tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78 90
-spawnpoint @a[x=0,tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96 90
-spawnpoint @a[x=0,tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61 90
+spawnpoint @a[x=0,tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78 90 0
+spawnpoint @a[x=0,tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96 90 0
+spawnpoint @a[x=0,tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61 90 0
 clear @a[x=0,scores={LeaveGame=1..}]
 tp @a[x=0,scores={LeaveGame=1..},tag=!WasInYellow,tag=!WasInBlue] -43 211 78 90 0
 tp @a[x=0,scores={LeaveGame=1..},tag=WasInYellow] -36 211 96.0 90 0

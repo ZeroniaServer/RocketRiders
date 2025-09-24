@@ -12,7 +12,7 @@ execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run sc
 execute if entity @s[tag=Minute] run function items:minutemix
 
 #Spawnpoints
-spawnpoint @a[x=0,team=Blue] 12 64 -66 0
+spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
 
 #win
 execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon,tag=!DoublePortal] unless block 13 38 74 nether_portal unless block 13 38 -74 nether_portal run function game:winboth

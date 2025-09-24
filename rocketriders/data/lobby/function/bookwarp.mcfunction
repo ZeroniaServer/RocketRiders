@@ -26,7 +26,7 @@ tp @a[x=0,team=Lobby,scores={LobbyWarp=7}] -31 193 16 0 0
 #Sound and effects
 execute as @a[x=0,team=Lobby,scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted master @s ~ ~ ~ 1 2
 execute as @a[x=0,team=Lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[x=0,team=Lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle flash ~ ~1 ~ 0 0 0 0 5 force @s
+execute as @a[x=0,team=Lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle flash{color:0xFFFFFF} ~ ~1 ~ 0 0 0 0 5 force @s
 
 #Message about mod room (server mode)
 execute unless predicate rr:has_modification_room as @a[x=0,team=Lobby,scores={LobbyWarp=2}] run tellraw @s [{"text":"You cannot access this area.","color":"red"}]

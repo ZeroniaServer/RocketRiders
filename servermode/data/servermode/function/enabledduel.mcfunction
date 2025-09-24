@@ -30,7 +30,7 @@ function lobby:cancelsettings/reset
 setblock -57 203 78 air
 function lobby:credits/stop
 function arenaclear:hidemodroom
-fill -29 196 22 -33 196 22 air
+fill 67 208 3 63 208 3 air strict
 data modify storage rocketriders:navbook modroom set value [""]
 data modify storage rocketriders:navbook description set value {text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn 1v1 Duel Mode, players challenge each other to a best of three, one-on-one tournament with sets of 12 random items.",color:"dark_gray"}
 data modify storage rocketriders:navbook parkourtips set value [""]

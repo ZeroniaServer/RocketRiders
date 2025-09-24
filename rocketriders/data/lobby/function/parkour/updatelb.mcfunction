@@ -1,6 +1,6 @@
 ##Utility function -- updates parkour leaderboard with new player/time
 
-execute at @s store result score @e[x=0,type=area_effect_cloud,tag=ParkourTime,limit=1] bestParkourTime run scoreboard players get @s bestParkourTime
+execute at @s store result score $best_parkour_time global run scoreboard players get @s bestParkourTime
 execute at @s run data modify block -31 190 17 front_text.messages[0] set value [{"selector":"@p[tag=finishedParkour]"}]
 execute at @s run data modify entity @e[x=0,type=area_effect_cloud,tag=ParkourName,limit=1] CustomName set from block -31 190 17 front_text.messages[0]
 

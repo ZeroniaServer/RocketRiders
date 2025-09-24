@@ -83,7 +83,7 @@ execute if predicate rr:has_parkour as @a[x=0,team=Lobby,tag=finishedParkour,tag
 execute if predicate rr:has_parkour as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour,tag=firstParkour] if score @s finalParkourTime < @s bestParkourTime run scoreboard players operation @s bestParkourTime = @s finalParkourTime
 
 #Store in leaderboard
-execute if predicate rr:has_parkour as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] if score @e[x=0,type=area_effect_cloud,tag=ParkourTime,limit=1] bestParkourTime > @s finalParkourTime at @s run function lobby:parkour/updatelb
+execute if predicate rr:has_parkour as @a[x=0,team=Lobby,tag=finishedParkour,tag=!cheatedParkour] if score @s finalParkourTime < $best_parkour_time global at @s run function lobby:parkour/updatelb
 
 #Notify cheaters
 execute as @a[x=0,team=Lobby,tag=cheatedParkour] run tellraw @s ["",{"text":"You skipped a checkpoint, so your Parkour run was invalidated.","color":"red"}]
@@ -99,10 +99,10 @@ execute as @a[x=0,team=Lobby,tag=finishedParkour] run tag @s remove finishedPark
 ##Return to checkpoint
 #If you fall on the floor, you return to your last checkpoint automatically
 execute as @a[x=0,team=Lobby,tag=inParkour] run tag @a[x=0,predicate=custom:standing_on_parkour_floor] add returnCheckpoint
-execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0}] run tp @s -31 193 17 0 0
-execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=1}] run tp @s -28 196 68 0 0
-execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=2}] run tp @s -13 199 58 -90 0
-execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=3}] run tp @s -16 199 93 90 0
+execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=0}] run tp @s 65 205 -2 0 0
+execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=1}] run tp @s 68 208 49 0 0
+execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=2}] run tp @s 83 211 39 -90 0
+execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint,scores={checkpoint=3}] run tp @s 80 211 74 90 0
 execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint] at @s run playsound minecraft:entity.zombie_villager.converted master @s ~ ~ ~ 1 2
 execute as @a[x=0,team=Lobby,tag=inParkour,tag=returnCheckpoint] run tag @s remove returnCheckpoint
 
@@ -171,15 +171,7 @@ execute as @a[x=0,team=Lobby,tag=inParkour] run function custom:update_armor
 effect clear @a[x=0,team=!Lobby,tag=inParkour] invisibility
 tag @a[x=0,team=!Lobby,tag=inParkour] remove inParkour
 #Don't let non-Parkour players on floor (warp back to parkour start)
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~ black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~ ~-1 ~0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~-0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
-execute as @a[x=0,team=Lobby,tag=!inParkour] at @s if block ~0.3 ~-1 ~-0.3 black_concrete run scoreboard players set @s[y=184,dy=16] LobbyWarp 7
+scoreboard players set @a[x=0,team=Lobby,tag=!inParkour,predicate=custom:standing_on_parkour_floor] LobbyWarp 7
 
 ##Reset objectives/tags for non-parkour players
 scoreboard players reset @a[x=0,tag=!inParkour] checkpoint

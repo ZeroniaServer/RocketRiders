@@ -13,6 +13,9 @@ execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run clear @s
 execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inParkour
 
 #Teleports
+effect clear @a[x=0,team=Lobby,scores={LobbyWarp=7}] night_vision
+execute as @a[x=0,team=Lobby,scores={LobbyWarp=1..}] unless score @s LobbyWarp matches 7 run effect give @s night_vision infinite 100 true
+
 tp @a[x=0,team=Lobby,scores={LobbyWarp=1}] -43 211 78 90 0
 execute if predicate rr:has_modification_room as @a[x=0,team=Lobby,scores={LobbyWarp=2}] unless score $lockmodroom CmdData matches 1 run tp @s -64 202 78 90 0
 execute if predicate rr:has_modification_room as @a[x=0,team=Lobby,scores={LobbyWarp=2}] if score $lockmodroom CmdData matches 1 run tellraw @s [{"text":"You do not have access to the Modification Room!","color":"red"}]
@@ -21,7 +24,7 @@ tp @a[x=0,team=Lobby,scores={LobbyWarp=3}] -78 204 64 135 0
 tp @a[x=0,team=Lobby,scores={LobbyWarp=4}] -78 204 92 45 0
 tp @a[x=0,team=Lobby,scores={LobbyWarp=5}] -80 201 78 90 0
 tp @a[x=0,team=Lobby,scores={LobbyWarp=6}] 11 204 78 -90 60
-tp @a[x=0,team=Lobby,scores={LobbyWarp=7}] -31 193 16 0 0
+tp @a[x=0,team=Lobby,scores={LobbyWarp=7}] 65 205 -3 0 0
 
 #Sound and effects
 execute as @a[x=0,team=Lobby,scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted master @s ~ ~ ~ 1 2

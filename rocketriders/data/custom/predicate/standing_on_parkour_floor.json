@@ -1,17 +1,47 @@
 {
-  "condition": "minecraft:entity_properties",
-  "entity": "this",
-  "predicate": {
-    "stepping_on": {
-      "position": {
-        "y": {
-          "min": 184,
-          "max": 201
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "stepping_on": {
+          "position": {
+            "y": {
+              "min": 184,
+              "max": 201
+            }
+          },
+          "block": {
+            "blocks": "minecraft:black_concrete"
+          }
         }
-      },
-      "block": {
-        "blocks": "minecraft:black_concrete"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "stepping_on": {
+          "position": {
+            "x": {
+              "min": 37,
+              "max": 96
+            },
+            "y": {
+              "min": 187,
+              "max": 219
+            },
+            "z": {
+              "min": -5,
+              "max": 124
+            }
+          },
+          "block": {
+            "blocks": "#custom:parkour_ground_blocks"
+          }
+        }
       }
     }
-  }
+  ]
 }

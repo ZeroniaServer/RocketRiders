@@ -27,7 +27,7 @@ setblock -31 189 17 air
 function lobby:cancelsettings/reset
 setblock -57 203 78 air
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function lobby:credits/stop
-fill -29 196 22 -33 196 22 air
+fill 67 208 3 63 208 3 air strict
 function game:forcestop
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:globaldefaults
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function modifiers:disablemodifiers

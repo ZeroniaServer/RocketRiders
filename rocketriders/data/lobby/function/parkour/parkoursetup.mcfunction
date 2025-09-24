@@ -1,10 +1,11 @@
 ##Operator function -- resets parkour leaderboard/times
 
-setblock -30 196 22 spruce_stairs[half=top,facing=east]
-setblock -29 196 22 spruce_slab
-setblock -31 196 22 gold_block
-setblock -32 196 22 spruce_stairs[half=top,facing=west]
-setblock -33 196 22 spruce_slab
+setblock 67 208 3 spruce_slab[type=bottom]
+setblock 66 208 3 spruce_stairs[facing=east,half=top,shape=straight]
+setblock 65 208 3 gold_block
+setblock 64 208 3 spruce_stairs[facing=west,half=top,shape=straight]
+setblock 63 208 3 spruce_slab[type=bottom]
+
 setblock -32 190 17 black_concrete
 setblock -31 190 16 black_concrete
 setblock -31 191 17 black_concrete
@@ -15,10 +16,9 @@ setblock -31 190 17 warped_wall_sign[facing=south]
 
 kill @e[x=0,type=armor_stand,tag=ParkourLB]
 kill @e[x=0,type=area_effect_cloud,tag=ParkourLB]
-summon armor_stand -31 197 22 {Tags:["ParkourPlayer","ParkourLB"],NoGravity:1b,NoBasePlate:1b,Marker:1b,Invulnerable:1b,ShowArms:1b}
-execute positioned -31 196 21 run function custom:summon_persistent_marker_aec {modifiers:{nbt:{Tags:["ParkourLB","ParkourName"],CustomName:"?",CustomNameVisible:true}}}
-execute positioned -31 195.7 21 run function custom:summon_persistent_marker_aec {modifiers:{nbt:{Tags:["ParkourLB","ParkourTime"],CustomName:"?",CustomNameVisible:true}}}
-execute as @e[x=0,type=armor_stand,tag=ParkourPlayer] at @s run tp @s ~ ~ ~ 180 0
+summon armor_stand 65 209 3 {Tags:["ParkourPlayer","ParkourLB"],NoGravity:true,NoBasePlate:true,Marker:true,Invulnerable:true,ShowArms:true,Rotation:[180,0]}
+execute positioned 65 207.7 2 run function custom:summon_persistent_marker_aec {modifiers:{nbt:{Tags:["ParkourLB","ParkourName"],CustomName:"No players have completed",CustomNameVisible:true}}}
+execute positioned 65 207.4 2 run function custom:summon_persistent_marker_aec {modifiers:{nbt:{Tags:["ParkourLB","ParkourTime"],CustomName:"the parkour course yet",CustomNameVisible:true}}}
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.head with player_head[profile={properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM0ZTA2M2NhZmI0NjdhNWM4ZGU0M2VjNzg2MTkzOTlmMzY5ZjRhNTI0MzRkYTgwMTdhOTgzY2RkOTI1MTZhMCJ9fX0="}]}]
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.chest with leather_chestplate[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
 item replace entity @e[x=0,type=armor_stand,tag=ParkourPlayer] armor.legs with leather_leggings[dyed_color=16772430,trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
@@ -30,4 +30,4 @@ scoreboard players reset * bestParkourSecs
 scoreboard players reset * bestParkourDeci
 scoreboard players reset * bestParkourDeci2
 scoreboard players reset * bestParkourTime
-scoreboard players set @e[x=0,type=area_effect_cloud,tag=ParkourTime] bestParkourTime 2000000000
+scoreboard players set $best_parkour_time global 2147483647

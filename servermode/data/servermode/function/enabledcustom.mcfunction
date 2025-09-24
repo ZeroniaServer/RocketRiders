@@ -27,7 +27,7 @@ setblock -31 190 18 air
 setblock -30 190 17 air
 setblock -31 189 17 air
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function lobby:credits/stop
-fill -29 196 22 -33 196 22 air
+fill 67 208 3 63 208 3 air strict
 schedule function game:forcestop 2t append
 # schedule function servermode:forceclear 3t append
 function arenaclear:unhidemodroom

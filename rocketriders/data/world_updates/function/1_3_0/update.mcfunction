@@ -76,6 +76,9 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WasMolerat
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WasHardcore] run scoreboard players set $was_hardcore_facade global 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WasHardcore
 
+execute store result score $best_parkour_time global run scoreboard players get @e[x=0,type=area_effect_cloud,tag=ParkourTime,limit=1] bestParkourTime
+execute if score $best_parkour_time global matches 0 run scoreboard players set $best_parkour_time global 2147483647
+
 # Updating game rules
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noTeamBalance] run scoreboard players set $disable_team_balancing config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noTeamBalance
@@ -301,6 +304,9 @@ setblock -69 190 80 jungle_wall_sign[facing=east]{front_text:{color:"black",has_
 setblock -69 190 76 birch_wall_sign[facing=east] strict
 setblock -71 192 78 yellow_stained_glass strict
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] refreshsigns 1
+
+# Relocate parkour area
+execute unless block 36 184 -6 bedrock run function world_updates:1_3_0/move_parkour_area
 
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1304

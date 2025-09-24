@@ -1,6 +1,8 @@
 {
     "values": [
         "#custom:air",
+        "minecraft:light",
+        "minecraft:structure_void",
         "minecraft:water"
     ]
 }

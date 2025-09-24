@@ -9,9 +9,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
 scoreboard players set $realms global 0
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
-fill -57 201 84 -70 201 72 tinted_glass replace #custom:modification_room_pool_blocks strict
-fill -57 200 84 -70 200 72 water[level=8] replace #custom:modification_room_pool_blocks strict
-fill -57 198 84 -70 198 72 blackstone replace air
+function lobby:close_modification_room
 execute as @a[x=0] run function achievements:reset
 clear @a
 kill @e[x=0,type=armor_stand,tag=ParkourLB]

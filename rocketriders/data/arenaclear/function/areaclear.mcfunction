@@ -44,8 +44,7 @@ function arenaclear:superspeed
 
 ##Close off Modification Room
 execute if predicate rr:has_modification_room as @e[x=0,type=marker,tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0
-fill -57 201 84 -70 201 72 tinted_glass replace #custom:modification_room_pool_blocks strict
-fill -57 200 84 -70 200 72 water[level=8] replace #custom:modification_room_pool_blocks strict
+function lobby:close_modification_room
 
 ##Generate list of Game Rules
 function arenaclear:gamerulelist

@@ -293,9 +293,8 @@ execute at @e[x=0,type=marker,tag=join_pad.right] run summon item_display ~ ~1 ~
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
 
-fill -57 201 84 -70 201 72 water[level=7] replace #custom:modification_room_pool_blocks strict
-execute if block -63 201 78 tinted_glass run fill -57 200 84 -70 200 72 water[level=8] replace #custom:modification_room_pool_blocks strict
-execute unless block -63 201 78 tinted_glass run fill -57 200 84 -70 200 72 air replace #custom:modification_room_pool_blocks strict
+execute if predicate rr:has_modification_room run function lobby:open_modification_room
+execute unless predicate rr:has_modification_room run function lobby:close_modification_room
 
 # Modification Room redesign
 setblock -70 190 80 netherite_block strict

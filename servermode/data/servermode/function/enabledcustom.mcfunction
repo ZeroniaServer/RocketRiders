@@ -11,10 +11,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 scoreboard players set $realms global 0
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
-fill -57 201 84 -70 201 72 air replace barrier
-fill -57 201 84 -70 201 72 water[level=7] replace tinted_glass strict
-fill -57 200 84 -70 200 72 air replace #custom:modification_room_pool_blocks strict
-fill -57 198 84 -70 198 72 air replace blackstone
+function lobby:open_modification_room
 clear @a
 kill @e[x=0,type=armor_stand,tag=ParkourLB]
 kill @e[x=0,type=area_effect_cloud,tag=ParkourLB]

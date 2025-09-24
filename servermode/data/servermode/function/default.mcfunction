@@ -6,10 +6,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 scoreboard players set $realms global 0
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noFullHotbarSound
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 0
-fill -57 201 84 -70 201 72 air replace barrier
-fill -57 201 84 -70 201 72 water[level=7] replace tinted_glass strict
-fill -57 200 84 -70 200 72 air replace #custom:modification_room_pool_blocks strict
-fill -57 198 84 -70 198 72 air replace blackstone
+function lobby:open_modification_room
 execute as @a[x=0] run function achievements:roots
 clear @a
 schedule function game:forcestop 2t append

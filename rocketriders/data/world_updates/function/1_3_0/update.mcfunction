@@ -305,8 +305,12 @@ setblock -69 190 76 birch_wall_sign[facing=east] strict
 setblock -71 192 78 yellow_stained_glass strict
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] refreshsigns 1
 
-# Relocate parkour area
-execute unless block 36 184 -6 bedrock run function world_updates:1_3_0/move_parkour_area
+# Relocate parkour area, and light up all of the lobby
+execute store success score $post_lighting_fix var if block 36 184 -6 bedrock
+execute if score $post_lighting_fix var matches 0 run function world_updates:1_3_0/move_parkour_area
+execute if score $post_lighting_fix var matches 0 run fill -111 185 -5 24 247 80 light[level=15] replace air strict
+execute if score $post_lighting_fix var matches 0 run fill -111 185 81 24 247 161 light[level=15] replace air strict
+fill -57 200 84 -70 201 72 air replace light strict
 
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1304

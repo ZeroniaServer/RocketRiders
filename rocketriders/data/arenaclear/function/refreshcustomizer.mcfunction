@@ -130,14 +130,14 @@ execute unless entity @s[predicate=!game:gamemode_components/settings_locked,tag
 execute unless entity @s[predicate=!game:gamemode_components/settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[3] set value {"text":""}
 
 ##Removes existing displays
-fill -45 196 92 -55 185 64 air
-fill -45 196 92 -55 185 64 air
-fill -55 185 92 -40 206 64 air replace minecraft:orange_stained_glass
-fill -55 185 92 -40 206 64 air replace minecraft:lime_stained_glass
-fill -55 185 92 -40 206 64 air replace minecraft:pink_stained_glass
+fill -45 196 92 -55 185 64 light[level=15]
+fill -45 196 92 -55 185 64 light[level=15]
+fill -55 185 92 -40 206 64 light[level=15] replace minecraft:orange_stained_glass
+fill -55 185 92 -40 206 64 light[level=15] replace minecraft:lime_stained_glass
+fill -55 185 92 -40 206 64 light[level=15] replace minecraft:pink_stained_glass
 fill -40 196 92 -44 185 64 minecraft:white_stained_glass
-fill -42 197 71 -45 199 75 air
-fill -42 197 81 -45 199 85 air
+fill -42 197 71 -45 199 75 light[level=15]
+fill -42 197 81 -45 199 85 light[level=15]
 
 ##Top Decorations
 #New Dawn Arch
@@ -167,13 +167,13 @@ execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run place template 
 execute if entity @s[scores={MiddleDeco=2},tag=!decosLocked] run place template game:spike_mid_preview -54 191 67
 #Layered
 execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run scoreboard players set @s BottomDeco 0
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -44 196 64 -43 196 92 minecraft:black_stained_glass replace air
+execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -44 196 64 -43 196 92 minecraft:black_stained_glass replace light
 execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -45 185 92 -45 192 64 minecraft:white_stained_glass
 execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -46 185 92 -46 189 64 minecraft:white_stained_glass
 execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 185 92 -47 186 64 minecraft:white_stained_glass
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -45 193 92 -45 193 64 minecraft:black_stained_glass replace air
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -46 190 92 -46 190 64 minecraft:black_stained_glass replace air
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 187 92 -47 187 64 minecraft:black_stained_glass replace air
+execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -45 193 92 -45 193 64 minecraft:black_stained_glass replace light
+execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -46 190 92 -46 190 64 minecraft:black_stained_glass replace light
+execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 187 92 -47 187 64 minecraft:black_stained_glass replace light
 
 ##Bottom Decorations
 #New Dawn Slimepads

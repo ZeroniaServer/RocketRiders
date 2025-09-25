@@ -48,7 +48,7 @@
                     "italic": false
                   }
                 ],
-                "minecraft:custom_data": "{spell:2}",
+                "minecraft:custom_data": "{id:'spell_book',spell:2}",
                 "minecraft:consumable": {
                   "has_consume_particles": false,
                   "sound": "intentionally_empty",

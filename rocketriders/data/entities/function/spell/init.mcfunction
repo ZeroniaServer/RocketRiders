@@ -14,7 +14,7 @@ data modify entity @s data.spell set value {}
 
 data modify storage rocketriders:main spell.name set value "Spell"
 execute on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s Spell"], write_to:"storage rocketriders:main spell.name"}
-data modify entity @s CustomName set from storage rocketriders:main spell.name
+data modify entity @s[type=area_effect_cloud] CustomName set from storage rocketriders:main spell.name
 
 ## Spawn behaviour
 execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0xFF7F00} ~ ~ ~ 1 1 1 0 50

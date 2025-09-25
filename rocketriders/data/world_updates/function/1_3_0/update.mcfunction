@@ -293,8 +293,9 @@ execute at @e[x=0,type=marker,tag=join_pad.right] run summon item_display ~ ~1 ~
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
 
-execute if predicate rr:has_modification_room run function lobby:open_modification_room
-execute unless predicate rr:has_modification_room run function lobby:close_modification_room
+fill -70 201 84 -57 201 72 minecraft:black_stained_glass replace minecraft:tinted_glass strict
+function lobby:close_modification_room
+execute if predicate rr:has_modification_room unless predicate game:game_started unless predicate game:game_ended unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run function lobby:open_modification_room
 
 # Modification Room redesign
 setblock -70 190 80 netherite_block strict

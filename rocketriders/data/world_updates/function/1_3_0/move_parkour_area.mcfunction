@@ -117,11 +117,11 @@ data modify entity @e[limit=1,x=0,type=armor_stand,tag=ParkourPlayer,tag=parkour
 kill @e[x=0,type=armor_stand,tag=ParkourPlayer,tag=!parkour]
 
 summon minecraft:area_effect_cloud 65 207.7 2 {Tags:["parkour","ParkourName","ParkourLB"],ReapplicationDelay:20,Radius:0,data:{marker:true},DurationOnUse:0,Duration:0,RadiusPerTick:0,CustomName:"No players have completed",custom_particle:{block_state:{Name:"minecraft:air"},type:"minecraft:block"},RadiusOnUse:0,WaitTime:2147483647,Age:0,CustomNameVisible:true}
-data modify entity @e[limit=1,x=0,type=area_effect_cloud,tag=ParkourName,tag=parkour] CustomName set from entity @e[limit=1,x=0,type=area_effect_cloud,tag=ParkourName,tag=!parkour] CustomName
+execute as @e[limit=1,x=0,type=area_effect_cloud,tag=ParkourName,tag=!parkour] unless data entity @s {CustomName:"?"} run data modify entity @e[limit=1,x=0,type=area_effect_cloud,tag=ParkourName,tag=parkour] CustomName set from entity @s CustomName
 kill @e[x=0,type=area_effect_cloud,tag=ParkourName,tag=!parkour]
 
 summon minecraft:area_effect_cloud 65 207.4 2 {Tags:["parkour","ParkourTime","ParkourLB"],ReapplicationDelay:20,Radius:0,data:{marker:true},DurationOnUse:0,Duration:0,RadiusPerTick:0,CustomName:"the parkour course yet",custom_particle:{block_state:{Name:"minecraft:air"},type:"minecraft:block"},RadiusOnUse:0,WaitTime:2147483647,Age:0,CustomNameVisible:true}
-data modify entity @e[limit=1,x=0,type=area_effect_cloud,tag=ParkourTime,tag=parkour] CustomName set from entity @e[limit=1,x=0,type=area_effect_cloud,tag=ParkourTime,tag=!parkour] CustomName
+execute as @e[limit=1,x=0,type=area_effect_cloud,tag=ParkourTime,tag=!parkour] unless data entity @s {CustomName:"?"} run data modify entity @e[limit=1,x=0,type=area_effect_cloud,tag=ParkourTime,tag=parkour] CustomName set from entity @s CustomName
 kill @e[x=0,type=area_effect_cloud,tag=ParkourTime,tag=!parkour]
 
 kill @e[x=0,type=marker,tag=parkourStart]

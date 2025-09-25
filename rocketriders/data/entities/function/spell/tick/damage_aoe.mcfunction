@@ -7,6 +7,7 @@ execute if predicate entities:origin_team/none run tag @p[distance=..2,tag=!spel
 execute unless entity @a[limit=1,x=0,tag=spell.target] run return run execute on origin run tag @s remove spell.origin
 
 # If player is targetted, give them regeneration and face a new player
+execute on origin run damage @a[limit=1,x=0,tag=spell.target] 1 minecraft:wither by @s
 effect give @a[limit=1,x=0,tag=spell.target] wither 4 2 false
 playsound minecraft:entity.wither_skeleton.step master @a[predicate=custom:belowroof] ~ ~ ~ 1 1.5
 tag @a[limit=1,x=0,tag=spell.target] remove spell.target

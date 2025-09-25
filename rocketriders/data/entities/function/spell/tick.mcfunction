@@ -17,6 +17,12 @@ execute on origin run tag @s remove spell.origin
 # Movement (8m/s)
 execute if entity @s[type=area_effect_cloud] rotated as @s run tp @s ^ ^ ^0.3
 
+execute if entity @s[type=area_effect_cloud,tag=spell_type.health] positioned as @s unless block ~ ~ ~ #custom:nonsolid rotated as @s run execute anchored eyes run particle minecraft:instant_effect{color:0xFF007F,power:1.7} ^ ^ ^-0.3 0.3 0.3 0.3 1 20 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[type=area_effect_cloud,tag=spell_type.health] positioned as @s unless block ~ ~ ~ #custom:nonsolid rotated as @s run execute anchored eyes run particle minecraft:instant_effect{color:0x7F0000,power:1.7} ^ ^ ^-0.3 0.3 0.3 0.3 1 20 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[type=area_effect_cloud,tag=spell_type.damage] positioned as @s unless block ~ ~ ~ #custom:nonsolid rotated as @s run execute anchored eyes run particle minecraft:instant_effect{color:0x6F6F6F,power:1.7} ^ ^ ^-0.3 0.3 0.3 0.3 1 20 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[type=area_effect_cloud,tag=spell_type.damage] positioned as @s unless block ~ ~ ~ #custom:nonsolid rotated as @s run execute anchored eyes run particle minecraft:instant_effect{color:0x2F2F2F,power:1.7} ^ ^ ^-0.3 0.3 0.3 0.3 1 20 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if entity @s[type=area_effect_cloud] positioned as @s unless block ~ ~ ~ #custom:nonsolid run return run kill @s
+
 # Cloud effects
 execute if entity @s[type=area_effect_cloud,tag=spell_type.health] positioned as @s run function entities:spell/tick/health_aoe
 execute if entity @s[type=area_effect_cloud,tag=spell_type.damage] positioned as @s run function entities:spell/tick/damage_aoe

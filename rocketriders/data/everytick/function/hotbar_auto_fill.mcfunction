@@ -1,0 +1,29 @@
+loot replace block 0 184 -16 container.0 27 loot custom:empty
+
+execute if items entity @s inventory.0 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.0"}
+execute if items entity @s inventory.1 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.1"}
+execute if items entity @s inventory.2 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.2"}
+execute if items entity @s inventory.3 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.3"}
+execute if items entity @s inventory.4 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.4"}
+execute if items entity @s inventory.5 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.5"}
+execute if items entity @s inventory.6 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.6"}
+execute if items entity @s inventory.7 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.7"}
+execute if items entity @s inventory.8 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.8"}
+execute if items entity @s inventory.9 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.9"}
+execute if items entity @s inventory.10 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.10"}
+execute if items entity @s inventory.11 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.11"}
+execute if items entity @s inventory.12 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.12"}
+execute if items entity @s inventory.13 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.13"}
+execute if items entity @s inventory.14 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.14"}
+execute if items entity @s inventory.15 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.15"}
+execute if items entity @s inventory.16 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.16"}
+execute if items entity @s inventory.17 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.17"}
+execute if items entity @s inventory.18 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.18"}
+execute if items entity @s inventory.19 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.19"}
+execute if items entity @s inventory.20 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.20"}
+execute if items entity @s inventory.21 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.21"}
+execute if items entity @s inventory.22 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.22"}
+execute if items entity @s inventory.23 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.23"}
+execute if items entity @s inventory.24 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.24"}
+execute if items entity @s inventory.25 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.25"}
+execute if items entity @s inventory.26 * run return run function everytick:hotbar_auto_fill_slot {slot:"inventory.26"}

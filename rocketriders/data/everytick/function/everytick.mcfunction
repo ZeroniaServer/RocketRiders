@@ -57,6 +57,9 @@ tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 # Crafting Slots
 execute as @a[x=0,gamemode=!spectator] if items entity @s player.crafting.* * run function items:crafting/check
 
+# Hotbar auto-fill
+execute if function experimental:enabled as @a[x=0,predicate=custom:on_blue_or_yellow_team,tag=do_hotbar_auto_fill,predicate=custom:do_hotbar_auto_fill] run function everytick:hotbar_auto_fill
+
 #Server mode
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] if entity @a[x=0] run function servermode:loop
 scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ServerModeVoting] VoteServerMode

@@ -15,7 +15,12 @@ scoreboard players operation $parkour_tips var %= $10 constant
 execute if score $parkour_tips var matches 0 run tag @s add hideParkourTips
 execute if score $parkour_tips var matches 1 run tag @s remove hideParkourTips
 
-scoreboard players operation $particles var /= $10 constant
+execute store result score $do_hotbar_auto_fill var run scoreboard players operation $particles var /= $10 constant
 scoreboard players operation $particles var %= $10 constant
 execute if score $particles var matches 0 run tag @s add hideParticles
 execute if score $particles var matches 1 run tag @s remove hideParticles
+
+scoreboard players operation $do_hotbar_auto_fill var /= $10 constant
+scoreboard players operation $do_hotbar_auto_fill var %= $10 constant
+execute if score $do_hotbar_auto_fill var matches 0 run tag @s remove do_hotbar_auto_fill
+execute if score $do_hotbar_auto_fill var matches 1 run tag @s add do_hotbar_auto_fill

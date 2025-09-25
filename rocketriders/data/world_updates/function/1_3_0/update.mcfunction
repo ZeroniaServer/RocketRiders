@@ -312,5 +312,14 @@ execute if score $post_lighting_fix var matches 0 run fill -111 185 -5 24 247 80
 execute if score $post_lighting_fix var matches 0 run fill -111 185 81 24 247 161 light[level=15] replace air strict
 fill -57 200 84 -70 201 72 air replace light strict
 
+# Black box
+kill @e[x=0,tag=parkour.black_box]
+summon text_display 37.0 187.0 -5.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[21.75,-160,0],right_rotation:[0,0,0,1],scale:[290,640,1]},Rotation:[0,-90],background:0}
+summon text_display 37.0 219.0 123.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[21.75,-160,0],right_rotation:[0,0,0,1],scale:[290,640,1]},Rotation:[0,90],background:0}
+summon text_display 37.0 219.0 -5.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[21.75,-40,0],right_rotation:[0,0,0,1],scale:[290,160,1]},Rotation:[0,0],background:0}
+summon text_display 95.0 219.0 123.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[21.75,-40,0],right_rotation:[0,0,0,1],scale:[290,160,1]},Rotation:[180,0],background:0}
+summon text_display 95.0 219.0 -5.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[48,-40,0],right_rotation:[0,0,0,1],scale:[640,160,1]},Rotation:[90,0],background:0}
+summon text_display 37.0 219.0 123.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[48,-40,0],right_rotation:[0,0,0,1],scale:[640,160,1]},Rotation:[-90,0],background:0}
+
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1304

@@ -17,14 +17,14 @@ execute on origin run function custom:resolve_text_component {text_component:[""
 data modify entity @s[type=area_effect_cloud] CustomName set from storage rocketriders:main spell.name
 
 ## Spawn behaviour
-execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0xFF7F00} ~ ~ ~ 1 1 1 0 50
-execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0x7F1F00} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0xFF7F00} ~ ~ ~ 1 1 1 0 5
+execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0x7F1F00} ~ ~ ~ 1 1 1 0 5
 
-execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0xFF007F} ~ ~ ~ 1 1 1 0 50
-execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0x7F0000} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0xFF007F} ~ ~ ~ 1 1 1 0 5
+execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0x7F0000} ~ ~ ~ 1 1 1 0 5
 
-execute if entity @s[tag=spell_type.damage] run particle minecraft:instant_effect{color:0x7F7F7F} ~ ~ ~ 1 1 1 0 50
-execute if entity @s[tag=spell_type.damage] run particle minecraft:instant_effect{color:0x3F3F3F} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=spell_type.damage] run particle minecraft:instant_effect{color:0x7F7F7F} ~ ~ ~ 1 1 1 0 5
+execute if entity @s[tag=spell_type.damage] run particle minecraft:instant_effect{color:0x3F3F3F} ~ ~ ~ 1 1 1 0 5
 
-execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x7FFFFF} ~ ~ ~ 1 1 1 0 50
-execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x3F7F7F} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x7FFFFF} ~ ~ ~ 1 1 1 0 5
+execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x3F7F7F} ~ ~ ~ 1 1 1 0 5

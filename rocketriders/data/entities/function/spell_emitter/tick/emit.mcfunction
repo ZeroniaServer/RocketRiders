@@ -1,9 +1,17 @@
-# Get motion vector (1m/s)
-execute positioned 0. 0. 0. run tp @s ^ ^ ^0.05
-data modify storage rocketriders:main spell_emitter.motion set from entity @s Pos
-data modify storage rocketriders:main spell_emitter.rotation set from entity @s Rotation
-tp @s ~ ~ ~
+# Get projectile data
 data modify storage rocketriders:main spell_emitter.origin set from entity @s Owner
+data modify storage rocketriders:main spell_emitter.rotation set from entity @s Rotation
+execute positioned 0. 0. 0. run tp @s ^ ^ ^0.05
+execute if predicate custom:coin_flip positioned as @s run tp @s ^0.002 ^ ^
+execute if predicate custom:coin_flip positioned as @s run tp @s ^-0.002 ^ ^
+execute if predicate custom:coin_flip positioned as @s run tp @s ^0.002 ^ ^
+execute if predicate custom:coin_flip positioned as @s run tp @s ^-0.002 ^ ^
+execute if predicate custom:coin_flip positioned as @s run tp @s ^ ^0.002 ^
+execute if predicate custom:coin_flip positioned as @s run tp @s ^ ^-0.002 ^
+execute if predicate custom:coin_flip positioned as @s run tp @s ^ ^0.002 ^
+execute if predicate custom:coin_flip positioned as @s run tp @s ^ ^-0.002 ^
+data modify storage rocketriders:main spell_emitter.motion set from entity @s Pos
+tp @s ~ ~ ~
 
 # Return to origin position
 tp @s ~ ~ ~

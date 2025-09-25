@@ -24,7 +24,3 @@ data modify storage rocketriders:main spell.name set value "Spell Emitter"
 
 #execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x7FFFFF} ~ ~ ~ 1 1 1 0 10
 #execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x3F7F7F} ~ ~ ~ 1 1 1 0 10
-
-# Instantly change to health spell entity
-execute if entity @s[tag=spell_type.health] run data remove entity @s data.spell_emitter
-execute if entity @s[tag=spell_type.health] run return run function entities:spell/init

@@ -7,4 +7,3 @@ $item replace entity @s[gamemode=!creative] $(slot) with air
 execute at @s run playsound minecraft:entity.shulker.shoot master @s ~ ~ ~ 1 1
 execute at @s run playsound minecraft:entity.evoker.cast_spell master @s ~ ~ ~ 1 1.5
 
-scoreboard players set @s impulse_cooldown 2

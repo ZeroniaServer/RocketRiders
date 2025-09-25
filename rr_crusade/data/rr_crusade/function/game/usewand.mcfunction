@@ -2,7 +2,6 @@ scoreboard players reset @s useWand
 
 execute unless items entity @s container.* *[custom_data~{id:"spell_book"}] unless items entity @s weapon.offhand *[custom_data~{id:"spell_book"}] run playsound block.note_block.didgeridoo master @s ~ ~ ~ 1 1
 execute unless items entity @s container.* *[custom_data~{id:"spell_book"}] unless items entity @s weapon.offhand *[custom_data~{id:"spell_book"}] run title @s actionbar [{"text":"No spells to cast!","color":"red"}]
-execute unless items entity @s container.* *[custom_data~{id:"spell_book"}] unless items entity @s weapon.offhand *[custom_data~{id:"spell_book"}] run return run scoreboard players set @s impulse_cooldown 2
 
 execute if items entity @s weapon.offhand *[custom_data~{id:"spell_book"}] run return run function rr_crusade:spell/cast {slot:"weapon.offhand"}
 

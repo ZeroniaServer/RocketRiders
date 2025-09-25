@@ -12,8 +12,8 @@ execute if entity @s[tag=!Instamine] as @a[x=0] run attribute @s minecraft:block
 execute if predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
 
 ##Sonar
-execute unless entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] run effect give @s night_vision infinite 100 true
-execute if entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] run effect clear @s night_vision
+execute unless entity @s[tag=Sonar] run effect clear @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] darkness
+execute if entity @s[tag=Sonar] run effect give @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] darkness infinite 0 true
 execute if entity @s[tag=Sonar] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run effect give @s glowing infinite 1 true
 execute if entity @s[tag=Sonar] as @e[x=0,type=#arrows,tag=!is_glowing] run function game:glowing/on
 execute if entity @s[tag=Sonar] as @e[x=0,type=snowball,tag=!is_glowing] run function game:glowing/on

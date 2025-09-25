@@ -150,6 +150,3 @@ execute as @a[x=0,team=!Spectator,team=!Blue,team=!Yellow,scores={editSettings=1
 execute if predicate rr:has_modification_room if score $mcancel CmdData matches -1 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] unless entity @a[x=0,team=Blue,limit=1] unless entity @a[x=0,team=Yellow,limit=1] run function lobby:cancelsettings/resume
 execute if predicate rr:has_modification_room if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if predicate rr:has_modification_room if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-
-#Set maximum portal cooldown for all entities
-execute as @e[type=!player,predicate=custom:belowroof,tag=!set_max_portal_cooldown] run function custom:set_max_portal_cooldown

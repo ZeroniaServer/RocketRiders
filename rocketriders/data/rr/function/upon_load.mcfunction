@@ -31,6 +31,7 @@ team modify Spectator friendlyFire false
 team modify Developer friendlyFire false
 
 #Gamerules
+gamerule allowEnteringNetherUsingPortals false
 gamerule commandModificationBlockLimit 1000000
 gamerule logAdminCommands false
 gamerule playersNetherPortalCreativeDelay 2147483647

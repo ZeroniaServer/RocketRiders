@@ -38,12 +38,12 @@ execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.fire] pos
 execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.fire] positioned as @s run particle minecraft:instant_effect{color:0x7F1F00} ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.fire] positioned as @s run particle minecraft:flame ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
-execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.health] positioned as @s run particle minecraft:instant_effect{color:0xFF007F} ~ ~ ~ 0.3 0.3 0.3 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.health] positioned as @s run particle minecraft:instant_effect{color:0x7F0000} ~ ~ ~ 0.3 0.3 0.3 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.health] positioned as @s run particle minecraft:instant_effect{color:0xFF007F} ~ ~ ~ 0.3 0.3 0.3 0 1 force @a[x=0,predicate=custom:belowroof]
+execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.health] positioned as @s run particle minecraft:instant_effect{color:0x7F0000} ~ ~ ~ 0.3 0.3 0.3 0 1 force @a[x=0,predicate=custom:belowroof]
 execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.health] positioned as @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{periodic_tick:2}} run particle minecraft:heart ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
-execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.damage] positioned as @s run particle minecraft:instant_effect{color:0x6F6F6F} ~ ~ ~ 0.3 0.3 0.3 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.damage] positioned as @s run particle minecraft:instant_effect{color:0x2F2F2F} ~ ~ ~ 0.3 0.3 0.3 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.damage] positioned as @s run particle minecraft:instant_effect{color:0x6F6F6F} ~ ~ ~ 0.3 0.3 0.3 0 2 force @a[x=0,predicate=custom:belowroof]
+execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.damage] positioned as @s run particle minecraft:instant_effect{color:0x2F2F2F} ~ ~ ~ 0.3 0.3 0.3 0 2 force @a[x=0,predicate=custom:belowroof]
 execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.damage] positioned as @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{periodic_tick:2}} run particle minecraft:raid_omen ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 
 execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.wind] positioned as @s run particle minecraft:instant_effect{color:0x7FFFFF} ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]

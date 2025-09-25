@@ -4,6 +4,7 @@
         "minecraft:nether_portal",
         "minecraft:water",
         "minecraft:lava",
-        "minecraft:light"
+        "minecraft:light",
+        "minecraft:fire"
     ]
 }

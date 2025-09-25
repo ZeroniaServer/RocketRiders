@@ -1,2 +1,2 @@
 #TODO
-say cast fire
+function entities:spell_emitter/summon_fire

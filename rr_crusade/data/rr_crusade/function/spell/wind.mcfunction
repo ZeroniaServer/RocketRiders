@@ -1,2 +1,2 @@
 #TODO
-say cast wind
+function entities:spell_emitter/summon_wind

@@ -1,0 +1,30 @@
+tag @s remove spell.new
+
+# Do nothing if already processed
+execute unless entity @s[type=area_effect_cloud] unless entity @s[type=small_fireball] unless entity @s[type=wither_skull] unless entity @s[type=breeze_wind_charge] run return fail
+execute if entity @s[predicate=entities:type/spell] run return fail
+
+# Do nothing if no spell type is set
+execute if entity @s[tag=!spell_type.fire,tag=!spell_type.health,tag=!spell_type.damage,tag=!spell_type.wind] run particle minecraft:instant_effect{color:0x000000} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=!spell_type.fire,tag=!spell_type.health,tag=!spell_type.damage,tag=!spell_type.wind] run particle minecraft:instant_effect{color:0xFF00FF} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=!spell_type.fire,tag=!spell_type.health,tag=!spell_type.damage,tag=!spell_type.wind] run return run kill @s
+
+## Set up data
+data modify entity @s data.spell set value {}
+
+data modify storage rocketriders:main spell.name set value "Spell"
+execute on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s Spell"], write_to:"storage rocketriders:main spell.name"}
+data modify entity @s CustomName set from storage rocketriders:main spell.name
+
+## Spawn behaviour
+execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0xFF7F00} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0x7F1F00} ~ ~ ~ 1 1 1 0 50
+
+execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0xFF007F} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0x7F0000} ~ ~ ~ 1 1 1 0 50
+
+execute if entity @s[tag=spell_type.damage] run particle minecraft:instant_effect{color:0x7F7F7F} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=spell_type.damage] run particle minecraft:instant_effect{color:0x3F3F3F} ~ ~ ~ 1 1 1 0 50
+
+execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x7FFFFF} ~ ~ ~ 1 1 1 0 50
+execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x3F7F7F} ~ ~ ~ 1 1 1 0 50

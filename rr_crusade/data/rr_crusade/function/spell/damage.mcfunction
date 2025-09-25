@@ -1,2 +1,2 @@
 #TODO
-say cast damage
+function entities:spell_emitter/summon_damage

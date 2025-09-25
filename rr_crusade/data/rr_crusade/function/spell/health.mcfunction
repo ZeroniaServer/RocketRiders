@@ -1,2 +1,2 @@
 #TODO
-say cast health
+function entities:spell_emitter/summon_health

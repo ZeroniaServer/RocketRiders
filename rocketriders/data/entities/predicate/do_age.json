@@ -164,6 +164,29 @@
             }
           }
         }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:area_effect_cloud",
+          "predicates": {
+            "minecraft:custom_data": {
+              "spell_emitter": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "spell": {}
+            }
+          }
+        }
       }
     ]
   }

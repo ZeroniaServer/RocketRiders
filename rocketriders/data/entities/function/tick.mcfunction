@@ -41,3 +41,9 @@ execute as @e[x=0,predicate=entities:type/nova_rocket/brain] at @s run function 
 
 # Nova Attach
 execute as @e[x=0,predicate=entities:type/nova_attach/brain] at @s run function entities:nova_attach/tick
+
+# Spell Emitter
+execute as @e[x=0,predicate=entities:type/spell_emitter] at @s run function entities:spell_emitter/tick
+
+# Spells
+execute as @e[x=0,predicate=entities:type/spell] at @s run function entities:spell/tick

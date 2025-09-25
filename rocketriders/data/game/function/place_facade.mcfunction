@@ -35,7 +35,7 @@ execute if predicate game:gamemode_components/one_team if predicate game:gamemod
 execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run fill -83 187 79 -83 200 86 minecraft:red_concrete replace #custom:concrete strict
 execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run fill -84 190 79 -84 199 81 minecraft:red_concrete_powder replace #custom:concrete_powder strict
 # Fix for terracotta above underside region
-fill -81 199 86 -81 198 82 minecraft:lime_terracotta replace #custom:terracotta
+fill -81 199 86 -81 198 81 minecraft:lime_terracotta replace #custom:terracotta
 
 #Clear pregame molerat
 fill -101 207 69 -89 186 87 air replace light_gray_stained_glass

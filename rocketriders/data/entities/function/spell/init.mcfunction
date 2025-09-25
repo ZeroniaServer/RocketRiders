@@ -1,7 +1,7 @@
 tag @s remove spell.new
 
 # Do nothing if already processed
-execute unless entity @s[type=area_effect_cloud] unless entity @s[type=small_fireball] unless entity @s[type=wither_skull] unless entity @s[type=breeze_wind_charge] run return fail
+execute unless entity @s[type=area_effect_cloud] unless entity @s[type=small_fireball] unless entity @s[type=breeze_wind_charge] run return fail
 execute if entity @s[predicate=entities:type/spell] run return fail
 
 # Do nothing if no spell type is set

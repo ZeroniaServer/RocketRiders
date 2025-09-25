@@ -11,20 +11,16 @@ execute if predicate custom:coin_flip positioned as @s run tp @s ^ ^-0.002 ^
 execute if predicate custom:coin_flip positioned as @s run tp @s ^ ^0.002 ^
 execute if predicate custom:coin_flip positioned as @s run tp @s ^ ^-0.002 ^
 data modify storage rocketriders:main spell_emitter.motion set from entity @s Pos
-tp @s ~ ~ ~
 
 # Return to origin position
 tp @s ~ ~ ~
 
 # Emit projectile
-execute if score @s entity.age matches 1 if entity @s[tag=spell_type.damage] positioned as @s run function entities:spell_emitter/tick/wither_skull with storage rocketriders:main spell_emitter
 execute if score @s entity.age matches 1 if entity @s[tag=spell_type.fire] positioned as @s run function entities:spell_emitter/tick/small_fireball with storage rocketriders:main spell_emitter
 execute if score @s entity.age matches 1 if entity @s[tag=spell_type.wind] positioned as @s run function entities:spell_emitter/tick/wind_charge with storage rocketriders:main spell_emitter
 
-execute if score @s entity.age matches 6 if entity @s[tag=spell_type.damage] positioned as @s run function entities:spell_emitter/tick/wither_skull with storage rocketriders:main spell_emitter
 execute if score @s entity.age matches 6 if entity @s[tag=spell_type.fire] positioned as @s run function entities:spell_emitter/tick/small_fireball with storage rocketriders:main spell_emitter
 execute if score @s entity.age matches 6 if entity @s[tag=spell_type.wind] positioned as @s run function entities:spell_emitter/tick/wind_charge with storage rocketriders:main spell_emitter
 
-execute if score @s entity.age matches 11 if entity @s[tag=spell_type.damage] positioned as @s run function entities:spell_emitter/tick/wither_skull with storage rocketriders:main spell_emitter
 execute if score @s entity.age matches 11 if entity @s[tag=spell_type.fire] positioned as @s run function entities:spell_emitter/tick/small_fireball with storage rocketriders:main spell_emitter
 execute if score @s entity.age matches 11 if entity @s[tag=spell_type.wind] positioned as @s run function entities:spell_emitter/tick/wind_charge with storage rocketriders:main spell_emitter

@@ -7,6 +7,10 @@ tag @s remove spell_emitter.this
 execute if entity @s[tag=spell_type.health] run data remove entity @s data.spell_emitter
 execute if entity @s[tag=spell_type.health] run return run function entities:spell/init
 
+# Instantly transform into a damage spell entity if spell type is damage
+execute if entity @s[tag=spell_type.damage] run data remove entity @s data.spell_emitter
+execute if entity @s[tag=spell_type.damage] run return run function entities:spell/init
+
 # Emit projectiles
 execute positioned as @s run function entities:spell_emitter/tick/emit
 

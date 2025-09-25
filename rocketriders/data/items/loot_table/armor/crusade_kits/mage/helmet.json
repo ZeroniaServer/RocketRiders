@@ -43,6 +43,37 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/red_for_blue"
+                  }
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "Blue Mage Mask",
+                  "bold": true,
+                  "color": "blue"
+                },
+                "minecraft:item_model": "minecraft:mangrove_fence_gate"
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/red_for_blue"
+                },
+                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
@@ -59,7 +90,7 @@
                   "bold": true,
                   "color": "gold"
                 },
-                "minecraft:item_model": "minecraft:birch_fence_gate"
+                "minecraft:item_model": "minecraft:bamboo_fence_gate"
               },
               "conditions": [
                 {

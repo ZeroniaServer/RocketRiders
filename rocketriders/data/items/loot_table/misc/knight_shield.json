@@ -79,6 +79,53 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/red_for_blue"
+                  }
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "Knight Shield",
+                  "bold": true,
+                  "color": "blue"
+                },
+                "minecraft:custom_name": {
+                  "text": "Knight Shield",
+                  "bold": true,
+                  "color": "blue",
+                  "italic": false
+                },
+                "minecraft:base_color": "red",
+                "minecraft:banner_patterns": [
+                  {
+                    "pattern": "minecraft:flower",
+                    "color": "pink"
+                  },
+                  {
+                    "pattern": "minecraft:border",
+                    "color": "pink"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/red_for_blue"
+                },
+                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {

@@ -27,8 +27,10 @@ fill -101 200 84 -99 202 84 yellow_stained_glass
 fill -91 200 84 -89 202 84 yellow_stained_glass
 fill -99 200 72 -101 202 72 bedrock
 fill -91 200 72 -89 202 72 bedrock
-fill -99 200 73 -101 202 73 blue_stained_glass
-fill -91 200 73 -89 202 73 blue_stained_glass
+execute unless predicate game:gamemode_components/red_for_blue run fill -99 200 73 -101 202 73 blue_stained_glass
+execute if predicate game:gamemode_components/red_for_blue run fill -99 200 73 -101 202 73 red_stained_glass
+execute unless predicate game:gamemode_components/red_for_blue run fill -91 200 73 -89 202 73 blue_stained_glass
+execute if predicate game:gamemode_components/red_for_blue run fill -91 200 73 -89 202 73 red_stained_glass
 fill -94 198 91 -96 200 94 minecraft:crying_obsidian
 fill -96 198 65 -94 200 62 minecraft:crying_obsidian
 
@@ -52,37 +54,27 @@ execute positioned -95 204 64 run function custom:summon_persistent_marker_aec {
 execute positioned -95 204 92 run function custom:summon_persistent_marker_aec {modifiers:{nbt:{Tags:["facade_entity","CrusadeEntity","KitMessage"],CustomName:{text:"Click a sign to select a kit!"},CustomNameVisible:true}}}
 
 #kit stand items
-execute as @e[x=0,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.head with minecraft:netherite_helmet[trim={material:"minecraft:lapis",pattern:"minecraft:tide"}]
-execute as @e[x=0,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.head with minecraft:netherite_helmet[trim={material:"minecraft:gold",pattern:"minecraft:raiser"}]
-execute as @e[x=0,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
-execute as @e[x=0,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.legs with minecraft:iron_leggings[trim={material:"minecraft:lapis",pattern:"minecraft:vex"}]
-execute as @e[x=0,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.legs with minecraft:iron_leggings[trim={material:"minecraft:netherite",pattern:"minecraft:spire"}]
-execute as @e[x=0,type=armor_stand,tag=KnightStand,tag=BlueKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
-execute as @e[x=0,type=armor_stand,tag=KnightStand,tag=YellowKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=KnightStand] run item replace entity @s weapon.mainhand with stone_sword
-execute as @e[x=0,type=armor_stand,tag=KnightStand] run item replace entity @s weapon.offhand with shield
+team join Blue @e[x=0,type=armor_stand,tag=BlueKit]
+team join Yellow @e[x=0,type=armor_stand,tag=YellowKit]
 
-execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.head with minecraft:chainmail_helmet[trim={material:"minecraft:lapis",pattern:"minecraft:tide"}]
-execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.head with minecraft:chainmail_helmet[trim={material:"minecraft:gold",pattern:"minecraft:raiser"}]
-execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.chest with minecraft:chainmail_chestplate[trim={material:"minecraft:lapis",pattern:"minecraft:vex"},dyed_color=3949738]
-execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.chest with minecraft:chainmail_chestplate[trim={material:"minecraft:gold",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.legs with minecraft:leather_leggings[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
-execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.legs with minecraft:leather_leggings[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=BlueKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
-execute as @e[x=0,type=armor_stand,tag=ArcherStand,tag=YellowKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=ArcherStand] run item replace entity @s weapon.mainhand with minecraft:bow
+execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.feet loot items:armor/crusade_kits/knight/boots
+execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.legs loot items:armor/crusade_kits/knight/leggings
+execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.chest loot items:armor/crusade_kits/knight/chestplate
+execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.head loot items:armor/crusade_kits/knight/helmet
+execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s weapon.mainhand loot items:misc/knight_sword
+execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
 
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.head with minecraft:warped_fence_gate
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.head with minecraft:birch_fence_gate
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.chest with minecraft:leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.legs with minecraft:leather_leggings[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.legs with minecraft:leather_leggings[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:quartz",pattern:"minecraft:vex"},dyed_color=3949738]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s armor.feet with minecraft:leather_boots[trim={material:"minecraft:netherite",pattern:"minecraft:spire"},dyed_color=16768000]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=YellowKit] run item replace entity @s weapon.mainhand with minecraft:blaze_rod[custom_model_data={floats:[1]}]
-execute as @e[x=0,type=armor_stand,tag=MageStand,tag=BlueKit] run item replace entity @s weapon.mainhand with minecraft:breeze_rod[custom_model_data={floats:[1]}]
+execute as @e[x=0,type=armor_stand,tag=ArcherStand] run loot replace entity @s armor.feet loot items:armor/crusade_kits/archer/boots
+execute as @e[x=0,type=armor_stand,tag=ArcherStand] run loot replace entity @s armor.legs loot items:armor/crusade_kits/archer/leggings
+execute as @e[x=0,type=armor_stand,tag=ArcherStand] run loot replace entity @s armor.chest loot items:armor/crusade_kits/archer/chestplate
+execute as @e[x=0,type=armor_stand,tag=ArcherStand] run loot replace entity @s armor.head loot items:armor/crusade_kits/archer/helmet
+execute as @e[x=0,type=armor_stand,tag=ArcherStand] run loot replace entity @s weapon.mainhand loot items:misc/shooting_saber
+
+execute as @e[x=0,type=armor_stand,tag=MageStand] run loot replace entity @s armor.feet loot items:armor/crusade_kits/mage/boots
+execute as @e[x=0,type=armor_stand,tag=MageStand] run loot replace entity @s armor.legs loot items:armor/crusade_kits/mage/leggings
+execute as @e[x=0,type=armor_stand,tag=MageStand] run loot replace entity @s armor.chest loot items:armor/crusade_kits/mage/chestplate
+execute as @e[x=0,type=armor_stand,tag=MageStand] run loot replace entity @s armor.head loot items:armor/crusade_kits/mage/helmet
+execute as @e[x=0,type=armor_stand,tag=MageStand] run loot replace entity @s weapon.mainhand loot items:misc/spell_wand
 
 execute as @e[x=0,type=armor_stand,tag=KitSelect] run data merge entity @s {DisabledSlots:4144959}
 

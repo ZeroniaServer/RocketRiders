@@ -2,6 +2,7 @@
     "values": [
         "minecraft:white_concrete",
         "minecraft:light_blue_concrete",
-        "minecraft:yellow_concrete"
+        "minecraft:yellow_concrete",
+        "minecraft:red_concrete"
     ]
 }

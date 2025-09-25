@@ -14,7 +14,8 @@ execute if score $CBB crusadehp matches 1.. unless score $nodeathmessages CmdDat
 execute if score $CBB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 positioned -14 49 -37 as @e[type=player,team=!Spectator,team=!Developer,team=!Lobby,distance=..5] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" went too close to an End Crystal","color":"white"}]
 execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 run kill @a[team=!Spectator,team=!Developer,team=!Lobby,distance=..5]
 execute if score $CBB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run gamerule showDeathMessages true
-execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. run fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass
+execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. unless predicate game:gamemode_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass
+execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. if predicate game:gamemode_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:red_stained_glass
 execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],beam_target:[I;12,50,-52],ShowBottom:0b}
 execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. run fill -16 47 -35 -12 51 -39 minecraft:tinted_glass
 execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],beam_target:[I;12,50,-52],ShowBottom:0b,Invulnerable:1b}
@@ -28,7 +29,8 @@ execute if predicate rr_crusade:blue_portal_revealed run tellraw @a[x=0,team=Yel
 execute if predicate rr_crusade:blue_portal_revealed run tellraw @a[x=0,team=Blue] ["\n",{"text":"Both of our Crystals have been destroyed!","color":"blue"},{"text":"\nOur portal is no longer protected; don't let them destroy it!","color":"dark_aqua","italic":true}]
 execute if predicate rr_crusade:blue_portal_revealed run tellraw @a[x=0,team=!Yellow,team=!Blue] ["\n",{"text":"Both Blue Crystals have been destroyed!","color":"blue"}]
 execute if predicate rr_crusade:blue_portal_revealed run function rr_crusade:game/cancel_utility
-execute if predicate rr_crusade:blue_portal_revealed run fill 20 45 -52 4 55 -66 minecraft:blue_stained_glass
+execute if predicate rr_crusade:blue_portal_revealed unless predicate game:gamemode_components/red_for_blue run fill 20 45 -52 4 55 -66 minecraft:blue_stained_glass
+execute if predicate rr_crusade:blue_portal_revealed if predicate game:gamemode_components/red_for_blue run fill 20 45 -52 4 55 -66 minecraft:red_stained_glass
 execute if predicate rr_crusade:blue_portal_revealed run fill 21 44 -67 21 56 -67 minecraft:obsidian
 execute if predicate rr_crusade:blue_portal_revealed run fill 21 56 -67 3 56 -67 minecraft:obsidian
 execute if predicate rr_crusade:blue_portal_revealed run fill 3 56 -67 3 44 -67 minecraft:obsidian

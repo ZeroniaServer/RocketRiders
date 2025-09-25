@@ -62,6 +62,41 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/red_for_blue"
+                  }
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:trim": {
+                  "material": "minecraft:quartz",
+                  "pattern": "minecraft:vex"
+                },
+                "minecraft:dyed_color": 16711680,
+                "minecraft:item_name": {
+                  "text": "Blue Knight Chestplate",
+                  "bold": true,
+                  "color": "blue"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/red_for_blue"
+                },
+                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {

@@ -50,6 +50,40 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/red_for_blue"
+                  }
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "team": "Blue"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:trim": {
+                  "material": "minecraft:redstone",
+                  "pattern": "minecraft:tide"
+                },
+                "minecraft:item_name": {
+                  "text": "Blue Knight Helmet",
+                  "bold": true,
+                  "color": "blue"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/red_for_blue"
+                },
+                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {

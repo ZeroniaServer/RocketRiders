@@ -7,6 +7,14 @@
 execute store result score $gametime global run time query gametime
 scoreboard players add $gametime global 1
 
+# Global Periodic Tick
+scoreboard players add $periodic_tick.2 global 1
+scoreboard players operation $periodic_tick.2 global %= $2 constant
+scoreboard players add $periodic_tick.3 global 1
+scoreboard players operation $periodic_tick.3 global %= $3 constant
+scoreboard players add $periodic_tick.5 global 1
+scoreboard players operation $periodic_tick.5 global %= $5 constant
+
 # Handle events and flags
 execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom:event/player_respawns/main
 scoreboard players set @a[x=0] flag.is_dead 1
@@ -151,5 +159,5 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSetti
 execute as @a[x=0,team=!Lobby,team=!Developer] run trigger editSettings set 0
 execute as @a[x=0,team=!Spectator,team=!Blue,team=!Yellow,scores={editSettings=1..}] run function lobby:cancelsettings/interact
 execute if predicate rr:has_modification_room if score $mcancel CmdData matches -1 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] unless entity @a[x=0,team=Blue,limit=1] unless entity @a[x=0,team=Yellow,limit=1] run function lobby:cancelsettings/resume
-execute if predicate rr:has_modification_room if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if predicate rr:has_modification_room if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0}] if score $dust CmdData matches 1 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if predicate rr:has_modification_room if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0}] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if predicate rr:has_modification_room if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,scores={bluesCount=0,yellowsCount=0}] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

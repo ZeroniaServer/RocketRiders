@@ -79,7 +79,7 @@ execute if entity @s[tag=canopy.burn] run return run function entities:canopy/ac
 #Canopy durations
 execute if score @s entity.age matches 3.. unless block ~ ~1 ~ oak_wood run return run function entities:canopy/actions/kill
 execute if score @s entity.age matches 3.. unless block ~ ~ ~ oak_wood run return run function entities:canopy/actions/kill
-execute if score @s entity.age matches 219.. at @s if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:oak_wood"} ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if score @s entity.age matches 219.. at @s if predicate custom:periodic_tick/3 run particle minecraft:block{block_state:"minecraft:oak_wood"} ~ ~1 ~ 0.5 0.5 0.5 1 10 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
 execute if score @s entity.age matches 219 at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 0
 execute if score @s entity.age matches 224 run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 0
 execute if score @s entity.age matches 229 run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 0

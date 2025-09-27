@@ -40,5 +40,5 @@ tag @a[x=0,team=!Lobby,tag=inParkour] remove inParkour
 execute as @a[x=0,team=Lobby,tag=!inParkour] run scoreboard players set @a[x=0,predicate=custom:standing_on_parkour_floor] LobbyWarp 7
 
 ##Return to Lobby Pad
-execute as @e[x=0,type=area_effect_cloud,tag=parkourReturn] at @s if score $dust CmdData matches 1 run particle minecraft:falling_dust{block_state:"minecraft:green_concrete"} ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if predicate custom:periodic_tick/3 at @e[x=0,type=area_effect_cloud,tag=parkourReturn] run particle minecraft:falling_dust{block_state:"minecraft:green_concrete"} ~ ~2 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute as @e[x=0,type=area_effect_cloud,tag=parkourReturn] at @s positioned ~ ~ ~ as @a[team=Lobby,distance=..2] run trigger LobbyWarp set 1

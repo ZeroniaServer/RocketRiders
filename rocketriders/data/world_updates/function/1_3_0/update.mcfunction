@@ -72,12 +72,11 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MoleratStop
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove moleratConfirm
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WasMolerat
-
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WasHardcore] run scoreboard players set $was_hardcore_facade global 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WasHardcore
-
 execute store result score $best_parkour_time global run scoreboard players get @e[x=0,type=area_effect_cloud,tag=ParkourTime,limit=1] bestParkourTime
 execute if score $best_parkour_time global matches 0 run scoreboard players set $best_parkour_time global 2147483647
+scoreboard players reset $dust CmdData
 
 # Updating game rules
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noTeamBalance] run scoreboard players set $disable_team_balancing config 1

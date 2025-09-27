@@ -18,10 +18,6 @@ execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=m
 execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
 execute if predicate game:game_rules/disable_team_balancing/on run scoreboard players set @s largerTeam 0
 
-#Particle timer
-scoreboard players add $dust CmdData 1
-execute if score $dust CmdData matches 4.. run scoreboard players set $dust CmdData 1
-
 #Toggle particles
 scoreboard players enable @a[x=0] toggleParticles
 tellraw @a[x=0,scores={toggleParticles=1..},tag=!hideParticles] [{"text":"Disabled particles from Rocket Riders gameplay elements.","color":"red"}]

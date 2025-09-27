@@ -1,6 +1,5 @@
-
 #Canopy deploy animation/sounds
-execute if score @s entity.age matches 0..49 if score $dust CmdData matches 1 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 1 0 1 0.1 10
+execute if score @s entity.age matches 0..49 if predicate custom:periodic_tick/3 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 1 0 1 0.1 10
 execute if score @s entity.age matches 0 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 2
 
 execute if score @s entity.age matches 4.. run setblock ~ ~ ~ oak_wood[axis=y]

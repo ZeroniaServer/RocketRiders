@@ -9,7 +9,7 @@ execute unless predicate custom:has_vehicle if function custom:projectile_motion
 
 # Movement trail
 execute if score @s entity.age matches 1.. run playsound minecraft:block.honey_block.slide master @a[x=0] ~ ~ ~ 2 0.8
-execute if score @s entity.age matches 1.. if score $dust CmdData matches 1 run particle minecraft:block{block_state:{Name:"minecraft:honey_block"}} ~ ~ ~ 0 0 0 1 10
+execute if score @s entity.age matches 1.. if predicate custom:periodic_tick/3 run particle minecraft:block{block_state:{Name:"minecraft:honey_block"}} ~ ~ ~ 0 0 0 1 10
 
 # Break when out of bounds
 execute if predicate custom:nearvoid run return run function entities:stinging_shield_projectile/actions/break

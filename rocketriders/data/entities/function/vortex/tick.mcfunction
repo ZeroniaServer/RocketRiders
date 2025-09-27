@@ -32,7 +32,7 @@ execute if score $dust CmdData matches 1 if entity @s[tag=vortex.feathered] on v
 
 
 # Spin
-execute unless entity @s[tag=vortex.is_drifting] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{periodic_tick:5}} on vehicle rotated as @s run rotate @s ~60 0
+execute unless entity @s[tag=vortex.is_drifting] if predicate custom:entity_periodic_tick/5 on vehicle rotated as @s run rotate @s ~60 0
 
 
 ## Achievements

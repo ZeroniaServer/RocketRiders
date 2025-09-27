@@ -8,7 +8,7 @@ execute if score $dust CmdData matches 1 if entity @s[tag=vortex_decoy.is_starin
 execute if score $dust CmdData matches 1 if entity @s[tag=vortex_decoy.is_staring] run particle minecraft:dust{color:[0,0,1],scale:1} ^ ^ ^-0.75 0.5 0.5 0.5 0 2 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 
 # Spin
-execute unless entity @s[tag=vortex_decoy.is_staring] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{periodic_tick:5}} run rotate @s ~60 0
+execute unless entity @s[tag=vortex_decoy.is_staring] if predicate custom:entity_periodic_tick/5 run rotate @s ~60 0
 
 ## Movement (drift)
 execute store success score $was_staring var if entity @s[tag=vortex_decoy.is_staring]

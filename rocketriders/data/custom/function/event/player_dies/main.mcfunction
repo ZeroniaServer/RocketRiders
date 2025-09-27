@@ -82,6 +82,10 @@ tag @s remove matchOrigin
 
 function custom:player_action/forget_all_canopies
 
+tag @s add matchOrigin
+execute as @e[x=0,predicate=entities:type/spell_emitter] if function custom:match_origin run kill @s
+tag @s remove matchOrigin
+
 tag @s remove onBlue
 tag @s remove onYellow
 

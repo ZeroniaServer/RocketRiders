@@ -55,6 +55,8 @@ execute if predicate game:game_started run function game:randomsplash
 execute if predicate game:game_started as @a[x=0] at @s run playsound entity.generic.explode master @s ~ ~ ~ 100 1.2
 execute if predicate game:game_started run tp @a[x=0,team=Yellow] 12 64 66 -180 0
 execute if predicate game:game_started run tp @a[x=0,team=Blue] 12 64 -66 0 0
+execute if predicate game:game_started run gamemode spectator @a[x=0,team=Spectator]
+execute if predicate game:game_started run tp @a[x=0,team=Spectator] 12 100 0.5 90 90
 execute if predicate game:game_started run tag @a[x=0] remove doing_facade_parkour
 execute if predicate game:game_started run effect clear @a[x=0,team=Blue] resistance
 execute if predicate game:game_started run effect clear @a[x=0,team=Yellow] resistance

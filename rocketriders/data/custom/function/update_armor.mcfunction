@@ -1,12 +1,14 @@
-
 #Redirect to the overworld (if @s is in the overworld)
 execute unless dimension minecraft:overworld run return run execute at @s if dimension minecraft:overworld run function custom:update_armor
 
-#Write to container first then copy to inventory, to avoid flickering
+# Do not affect developer team
+execute if entity @s[team=Developer] run return fail
+
+# To avoid flickering: write items to container first, then copy to inventory
 loot replace block 0 184 -16 container.0 27 loot custom:empty
 
 ## Spectators
-execute if entity @s[gamemode=spectator] run return run loot replace block 0 184 -16 container.0 4 loot custom:empty
+execute unless entity @s[gamemode=!spectator,team=!Spectator] run return run loot replace block 0 184 -16 container.0 4 loot custom:empty
 
 ## Lobby
 # Parkour Boots

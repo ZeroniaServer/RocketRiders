@@ -319,5 +319,8 @@ summon text_display 95.0 219.0 123.0 {Tags:["parkour","parkour.black_box"],text:
 summon text_display 95.0 219.0 -5.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[48,-40,0],right_rotation:[0,0,0,1],scale:[640,160,1]},Rotation:[90,0],background:0}
 summon text_display 37.0 219.0 123.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[48,-40,0],right_rotation:[0,0,0,1],scale:[640,160,1]},Rotation:[-90,0],background:0}
 
+# Spectator pregame area
+fill -101 212 59 -89 212 97 minecraft:barrier strict
+
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1304

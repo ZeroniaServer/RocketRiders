@@ -85,7 +85,9 @@ execute if score $lockmodroom CmdData matches 1 as @a[team=Lobby] at @s if predi
 execute if predicate rr:force_gamemodes as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
 
 #Spectators can't switch out of spectator mode (security, disabled in servermodes)
-execute if predicate rr:force_gamemodes as @a[x=0,team=Spectator,gamemode=!spectator] run gamemode spectator
+execute if predicate rr:force_gamemodes if predicate game:game_started run gamemode spectator @a[x=0,team=Spectator,gamemode=!spectator]
+execute if predicate rr:force_gamemodes if predicate game:game_ended run gamemode spectator @a[x=0,team=Spectator,gamemode=!spectator]
+execute if predicate rr:force_gamemodes unless predicate game:game_started unless predicate game:game_ended run gamemode adventure @a[x=0,team=Spectator,gamemode=!adventure]
 
 #Spectator void
 execute as @a[x=0,gamemode=spectator,predicate=custom:in_void] at @s run function game:void

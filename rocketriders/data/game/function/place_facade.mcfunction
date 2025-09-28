@@ -109,7 +109,7 @@ fill -101 195 66 -89 209 90 air replace #custom:player_heads strict
 
 ## Modifiers
 # Molerat
-execute if predicate game:modifiers/molerat/on run fill -101 207 69 -89 186 87 light_gray_stained_glass replace air
+execute if predicate game:modifiers/molerat/on run fill -101 207 69 -89 186 87 light_gray_stained_glass replace #custom:lobby_air
 
 #Hardcore pregame queue
 execute if predicate game:modifiers/hardcore/on run fill -89 201 63 -101 195 65 air

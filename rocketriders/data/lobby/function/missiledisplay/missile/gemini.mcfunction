@@ -13,7 +13,7 @@ fill 22 202 69 15 206 87 air
 
 place template game:gemini_blue 18 203 73
 
-fill 22 202 69 15 206 87 moving_piston replace air
+fill 22 202 69 15 206 87 moving_piston replace #custom:lobby_air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 fill 22 202 69 15 206 87 white_glazed_terracotta replace blue_glazed_terracotta
 fill 22 202 69 15 206 87 birch_fence_gate[facing=south,open=true] replace warped_fence_gate

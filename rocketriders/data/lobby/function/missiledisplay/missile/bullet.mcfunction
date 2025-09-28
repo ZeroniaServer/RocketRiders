@@ -13,8 +13,8 @@ fill 22 202 69 15 206 87 air
 
 place template game:bullet_blue 18 203 72
 
-fill 22 202 69 15 206 73 moving_piston replace air
-fill 22 202 75 15 206 87 moving_piston replace air
+fill 22 202 69 15 206 73 moving_piston replace #custom:lobby_air
+fill 22 202 75 15 206 87 moving_piston replace #custom:lobby_air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 fill 22 202 69 15 206 87 white_concrete replace blue_concrete
 

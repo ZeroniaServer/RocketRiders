@@ -13,7 +13,7 @@ fill 22 202 69 15 206 87 air
 
 place template game:auxiliary_blue 18 203 73
 
-fill 22 202 69 15 206 87 moving_piston replace air
+fill 22 202 69 15 206 87 moving_piston replace #custom:lobby_air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Heavy] ","color":"red","bold":true},{"text":"Auxiliary","color":"white"}]

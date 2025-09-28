@@ -13,7 +13,7 @@ fill 22 202 69 15 206 87 air
 
 place template game:citadel_blue 18 203 73
 
-fill 22 202 69 15 206 87 moving_piston replace air
+fill 22 202 69 15 206 87 moving_piston replace #custom:lobby_air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 fill 22 202 69 15 206 87 birch_trapdoor[facing=north,half=bottom,open=true] replace spruce_trapdoor
 

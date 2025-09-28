@@ -17,8 +17,8 @@ place template game:broadsword_blue 18 203 73
 setblock 20 204 74 observer[facing=south,powered=true]
 setblock 20 204 73 tnt
 
-fill 22 202 69 15 206 73 moving_piston replace air
-fill 22 202 75 15 206 87 moving_piston replace air
+fill 22 202 69 15 206 73 moving_piston replace #custom:lobby_air
+fill 22 202 75 15 206 87 moving_piston replace #custom:lobby_air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
 fill 22 202 69 15 206 87 white_glazed_terracotta replace blue_glazed_terracotta
 

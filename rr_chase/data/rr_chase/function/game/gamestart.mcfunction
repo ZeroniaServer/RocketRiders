@@ -41,8 +41,6 @@ execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSetti
 execute unless predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if score @s bluesCount matches 1.. run tag @s add Countdown
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] if score @s bluesCount matches 0 run function game:restartcountdown
 
-execute unless predicate game:game_started as @a[x=0,team=Blue] run attribute @s minecraft:knockback_resistance base set 10000
-execute as @a[x=0,team=!Blue] run attribute @s minecraft:knockback_resistance base set 0.0
 execute if score @s count matches 600 unless predicate rr:is_cubekrowd as @a[x=0,team=Blue] run function rr_chase:chasegear/sabermsg
 execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
 execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1
@@ -50,5 +48,4 @@ execute unless predicate game:game_ended if score @s count matches 600 run tp @a
 execute unless predicate game:game_ended if score @s count matches 600 run spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
 execute unless predicate game:game_ended if score @s count matches 600 run tag @a[x=0,team=Blue] add onBlue
 execute if score @s count matches 600 run summon marker 38 63 -66 {Tags:["airDetect"]}
-execute unless predicate game:game_ended if score @s count matches 600 as @a[x=0,team=Blue] run attribute @s minecraft:knockback_resistance base set 0.0
 execute unless predicate game:game_ended if score @s count matches 600 as @a[x=0,team=Blue] run tag @s remove fullOffhand

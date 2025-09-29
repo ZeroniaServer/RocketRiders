@@ -152,7 +152,12 @@ execute if predicate game:game_started as @a[x=0,team=Spectator] if entity @s[x=
 execute unless predicate game:game_started unless predicate game:game_ended run gamemode adventure @a[x=0,team=Spectator,gamemode=adventure]
 effect give @a[x=0,team=Spectator] invisibility infinite 0 true
 
-#Keep spectators inside arena
+##Disable knockback in pre-game queue
+execute unless predicate game:game_in_progress as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] run attribute @s minecraft:knockback_resistance modifier add rocketriders:pre_game_queue 10000 add_value
+execute if predicate game:game_in_progress as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] run attribute @s minecraft:knockback_resistance modifier remove rocketriders:pre_game_queue
+execute as @a[x=0,predicate=!custom:on_blue_or_yellow_or_spectator_team] run attribute @s minecraft:knockback_resistance modifier remove rocketriders:pre_game_queue
+
+##Keep spectators inside arena
 execute as @a[x=0,team=Spectator] at @s unless predicate custom:insideborder_lenient run tag @s add leftBorder
 tp @a[x=0,team=Spectator,tag=leftBorder] 12 100 0.5 90 90
 tellraw @a[x=0,team=Spectator,tag=leftBorder] {"text":"Cannot leave world border!","color":"red"}

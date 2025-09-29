@@ -201,7 +201,7 @@ execute if entity @s[tag=BlueDuplex,tag=strict] as @e[x=0,type=marker,tag=duplex
 execute if entity @s[tag=BlueDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~1 ~-5 ~17 air strict
 execute if entity @s[tag=BlueDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~-1 ~-5 ~17 air strict
 execute if entity @s[tag=BlueDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run fill ~ ~-5 ~16 ~ ~-4 ~16 air strict
-execute if entity @s[tag=BlueDuplex] run kill @e[x=0,type=marker,tag=duplexExtraBlue,limit=1]
+execute if entity @s[tag=BlueDuplex] run kill @e[x=0,type=marker,tag=duplexExtraBlue]
 execute if entity @s[tag=YellowDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~1 ~-5 ~-17 air
 execute if entity @s[tag=YellowDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~-1 ~-5 ~-17 air
 execute if entity @s[tag=YellowDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run fill ~ ~-5 ~-16 ~ ~-4 ~-16 air
@@ -210,27 +210,27 @@ execute if entity @s[tag=YellowDuplex,tag=strict] as @e[x=0,type=marker,tag=dupl
 execute if entity @s[tag=YellowDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run setblock ~-1 ~-5 ~-17 air strict
 execute if entity @s[tag=YellowDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s run fill ~ ~-5 ~-16 ~ ~-4 ~-16 air strict
 execute if entity @s[tag=YellowDuplex,tag=strict] as @e[x=0,type=marker,tag=duplexExtraYellow,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~-20 ~ ~-5 ~-20 powered_rail[shape=north_south] replace powered_rail strict
-execute if entity @s[tag=YellowDuplex] run kill @e[x=0,type=marker,tag=duplexExtraYellow,limit=1]
+execute if entity @s[tag=YellowDuplex] run kill @e[x=0,type=marker,tag=duplexExtraYellow]
 
 #Extra for Broadsword
 execute if entity @s[tag=BlueBroad,tag=!strict] as @e[x=0,type=marker,tag=broadExtraBlue,limit=1] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] replace
 execute if entity @s[tag=BlueBroad,tag=!strict] as @e[x=0,type=marker,tag=broadExtraBlue,limit=1] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt replace
 execute if entity @s[tag=BlueBroad,tag=strict] as @e[x=0,type=marker,tag=broadExtraBlue,limit=1] at @s run fill ~1 ~-5 ~6 ~1 ~-5 ~6 observer[facing=south,powered=true] strict
 execute if entity @s[tag=BlueBroad,tag=strict] as @e[x=0,type=marker,tag=broadExtraBlue,limit=1] at @s run fill ~1 ~-5 ~5 ~1 ~-5 ~5 tnt strict
-execute if entity @s[tag=BlueBroad] run kill @e[x=0,type=marker,tag=broadExtraBlue,limit=1]
+execute if entity @s[tag=BlueBroad] run kill @e[x=0,type=marker,tag=broadExtraBlue]
 execute if entity @s[tag=YellowBroad,tag=!strict] as @e[x=0,type=marker,tag=broadExtraYellow,limit=1] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] replace
 execute if entity @s[tag=YellowBroad,tag=!strict] as @e[x=0,type=marker,tag=broadExtraYellow,limit=1] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt replace
 execute if entity @s[tag=YellowBroad,tag=strict] as @e[x=0,type=marker,tag=broadExtraYellow,limit=1] at @s run fill ~-1 ~-5 ~-6 ~-1 ~-5 ~-6 observer[facing=north,powered=true] strict
 execute if entity @s[tag=YellowBroad,tag=strict] as @e[x=0,type=marker,tag=broadExtraYellow,limit=1] at @s run fill ~-1 ~-5 ~-5 ~-1 ~-5 ~-5 tnt strict
-execute if entity @s[tag=BlueBroad] run kill @e[x=0,type=marker,tag=broadExtraYellow,limit=1]
+execute if entity @s[tag=YellowBroad] run kill @e[x=0,type=marker,tag=broadExtraYellow]
 
 #Extra for Warhead
 execute if entity @s[tag=BlueWar,tag=!strict] as @e[x=0,type=marker,tag=warExtraBlue,limit=1] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] replace
 execute if entity @s[tag=BlueWar,tag=strict] as @e[x=0,type=marker,tag=warExtraBlue,limit=1] at @s run fill ~ ~-5 ~10 ~ ~-5 ~10 observer[facing=north,powered=true] strict
-execute if entity @s[tag=BlueWar] run kill @e[x=0,type=marker,tag=warExtraBlue,limit=1]
+execute if entity @s[tag=BlueWar] run kill @e[x=0,type=marker,tag=warExtraBlue]
 execute if entity @s[tag=YellowWar,tag=!strict] as @e[x=0,type=marker,tag=warExtraYellow,limit=1] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] replace
 execute if entity @s[tag=YellowWar,tag=strict] as @e[x=0,type=marker,tag=warExtraYellow,limit=1] at @s run fill ~ ~-5 ~-10 ~ ~-5 ~-10 observer[facing=south,powered=true] strict
-execute if entity @s[tag=YellowWar] run kill @e[x=0,type=marker,tag=warExtraYellow,limit=1]
+execute if entity @s[tag=YellowWar] run kill @e[x=0,type=marker,tag=warExtraYellow]
 
 #Extra for Hypersonic
 execute if entity @s[tag=BlueHyper,tag=strict] as @e[x=0,type=marker,tag=hyperExtraBlue,tag=strict,limit=1] at @s run function items:hyperextra

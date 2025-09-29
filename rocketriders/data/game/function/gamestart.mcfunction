@@ -173,5 +173,8 @@ tag @a[x=0,predicate=!custom:on_blue_or_yellow_team] remove doing_facade_parkour
 ##Countdown
 execute if entity @s[tag=Countdown] run function game:countdown
 
+##Team Balancing
+execute unless predicate game:game_rules/disable_team_balancing/on run function everytick:team_balance
+
 ##Display CancelJoin join pad barriers
 tag @e[x=0,type=marker,tag=CancelJoin] add join_pad.show_barrier

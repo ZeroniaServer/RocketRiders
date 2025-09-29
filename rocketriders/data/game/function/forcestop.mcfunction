@@ -6,6 +6,7 @@ execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s *[cust
 execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s
 dialog clear @a[x=0]
 scoreboard players reset $game_started global
+scoreboard players reset $game_paused global
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Countdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove forceCountdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove bossbarOverride

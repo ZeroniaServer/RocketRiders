@@ -17,16 +17,13 @@ execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] blindness
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] glowing
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] speed
 execute if entity @s[scores={fakeendtimer=1}] as @a[x=0] run function everytick:score_reset
-execute if entity @s[scores={fakeendtimer=320}] run scoreboard players set @a[x=0] kills 0
-execute if entity @s[scores={fakeendtimer=320}] run scoreboard players set @a[x=0] deaths 0
-execute if entity @s[scores={fakeendtimer=320}] run tag @a[x=0] remove Winner
-execute if entity @s[scores={fakeendtimer=320}] run tag @a[x=0] remove Loser
-execute if entity @s[scores={fakeendtimer=320}] run tag @s remove BlueWon
-execute if entity @s[scores={fakeendtimer=320}] run tag @s remove YellowWon
-execute if entity @s[scores={fakeendtimer=320}] run tag @a[x=0] remove beenOnBlue
-execute if entity @s[scores={fakeendtimer=320}] run tag @a[x=0] remove beenOnYellow
-execute if entity @s[scores={fakeendtimer=320}] run tag @a[x=0] remove beenOnBoth
-execute if entity @s[scores={fakeendtimer=320}] run scoreboard players add @s Rounds 1
-execute if entity @s[scores={fakeendtimer=320}] run tellraw @a[x=0,team=!Lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
-execute if entity @s[scores={fakeendtimer=320}] as @a[x=0,team=!Lobby] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
-execute if entity @s[scores={fakeendtimer=320}] run function rr_duel:arenaclear/areaclear
+execute if entity @s[scores={fakeendtimer=240}] run scoreboard players set @a[x=0] kills 0
+execute if entity @s[scores={fakeendtimer=240}] run scoreboard players set @a[x=0] deaths 0
+execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove Winner
+execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove Loser
+execute if entity @s[scores={fakeendtimer=240}] run tag @s remove BlueWon
+execute if entity @s[scores={fakeendtimer=240}] run tag @s remove YellowWon
+execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove beenOnBlue
+execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove beenOnYellow
+execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove beenOnBoth
+execute if entity @s[scores={fakeendtimer=240}] run function rr_duel:arenaclear/areaclear

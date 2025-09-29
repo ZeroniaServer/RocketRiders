@@ -1,3 +1,13 @@
+# Unpause
+execute if predicate game:game_paused if score $chunk_clear_progress global matches 50.. run function rr_duel:game/start_new_round
+
+execute if predicate game:game_paused run bossbar add rr_duel:resetting_arena [{color:"red",text:"Resetting the arena..."}]
+execute if predicate game:game_paused run bossbar set rr_duel:resetting_arena color red
+execute if predicate game:game_paused run bossbar set rr_duel:resetting_arena max 50
+execute if predicate game:game_paused store result bossbar rr_duel:resetting_arena value run scoreboard players get $chunk_clear_progress global
+execute if predicate game:game_paused run bossbar set rr_duel:resetting_arena players @a[x=0,team=!Lobby]
+execute unless predicate game:game_paused run bossbar remove rr_duel:resetting_arena
+
 #scoreboards
 scoreboard objectives setdisplay sidebar.team.gold RoundsWon
 scoreboard objectives setdisplay sidebar.team.blue RoundsWon
@@ -14,21 +24,21 @@ function game:cancelyellow
 function game:cancelblue
 
 #Item RNG
-scoreboard players add @s RandomItem 1
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
-execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-execute if entity @s[tag=Minute] run function items:minutemix
+execute unless predicate game:game_paused run scoreboard players add @s RandomItem 1
+execute unless predicate game:game_paused if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
+execute unless predicate game:game_paused if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
+execute unless predicate game:game_paused if entity @s[tag=Minute] run function items:minutemix
 
 #Spawnpoints
 spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
 spawnpoint @a[x=0,team=Yellow] 12 64 66 -180 0
 
 #win
-execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] unless block 11 38 -74 nether_portal run function rr_duel:game/winyellow
-execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] unless block 13 38 -74 nether_portal run function rr_duel:game/winyellow
+execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] unless block 11 38 -74 nether_portal run function rr_duel:game/winyellow
+execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] unless block 13 38 -74 nether_portal run function rr_duel:game/winyellow
 
-execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 13 38 74 nether_portal run function rr_duel:game/winblue
-execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 11 38 74 nether_portal run function rr_duel:game/winblue
+execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 13 38 74 nether_portal run function rr_duel:game/winblue
+execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 11 38 74 nether_portal run function rr_duel:game/winblue
 
 #arena clear cheesing
 execute if entity @e[x=0,type=marker,tag=PlacerClear] run tag @s remove CriteriaTrue
@@ -55,11 +65,11 @@ execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInYellow,
 scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1
 execute if entity @s[tag=TimeOut] run kill @e[x=0,type=tnt]
 execute if entity @s[tag=TimeOut] if predicate game:modifiers/punchable_tnt/on run kill @e[x=0,predicate=entities:type/punchable_tnt]
-execute if entity @s[tag=TimeOut] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
-execute if entity @s[tag=TimeOut] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
-execute if entity @s[tag=TimeOut] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"booster_rocket"}]
-execute if entity @s[tag=TimeOut] run tp @a[x=0,team=Blue] 12 64 -66 0 0
-execute if entity @s[tag=TimeOut] run tp @a[x=0,team=Yellow] 12 64 66 180 0
+execute if entity @s[tag=TimeOut] unless predicate game:game_paused run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
+execute if entity @s[tag=TimeOut] unless predicate game:game_paused run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
+execute if entity @s[tag=TimeOut] unless predicate game:game_paused run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"booster_rocket"}]
+execute if entity @s[tag=TimeOut] unless predicate game:game_paused run tp @a[x=0,team=Blue] 12 64 -66 0 0
+execute if entity @s[tag=TimeOut] unless predicate game:game_paused run tp @a[x=0,team=Yellow] 12 64 66 180 0
 tag @s[tag=TimeOut] add noAchievements
 scoreboard players set @s[tag=TimeOut] RandomItem -3
 execute if entity @s[scores={ForfeitTimeout=1}] run tellraw @a[x=0] ["",{"text":"[TIMEOUT] ","bold":true,"color":"dark_red"},{"text":"Someone left the 1v1 Duel match! They have 1 minute to rejoin; otherwise, the game will end.","color":"red"}]

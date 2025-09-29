@@ -25,3 +25,5 @@ execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdispl
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset Blue: RoundsWon
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset Yellow: RoundsWon
+
+bossbar remove rr_duel:resetting_arena

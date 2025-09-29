@@ -9,6 +9,7 @@ execute if entity @s[tag=Repeat,tag=!RepeatForever] run schedule function arenac
 
 ##Appropriate tags for Arena Clear state
 scoreboard players reset $game_started global
+scoreboard players reset $game_paused global
 
 ##Summon AECs for tracking/block sweeping
 execute if score @s bMissileCount matches 1.. run function arenaclear:prepareblue

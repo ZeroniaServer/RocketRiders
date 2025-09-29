@@ -60,7 +60,7 @@ execute if predicate game:game_started if entity @s[tag=!chaseEnabled] as @a[x=0
 execute if predicate game:game_started if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg] unless predicate rr:has_achievements run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg] if predicate rr:has_achievements run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started run gamemode survival @a[x=0,team=Blue,gamemode=adventure]
+execute if predicate game:game_started unless predicate game:game_paused run gamemode survival @a[x=0,team=Blue,gamemode=adventure]
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinBlue] resistance
 execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinBlue] run title @s actionbar ""
@@ -95,7 +95,7 @@ execute if predicate game:game_started run tp @a[x=0,tag=JoinYellow] 12 64 66 18
 execute if predicate game:game_started as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 execute if predicate game:game_started if entity @s[tag=!customSaberMsg] if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started run gamemode survival @a[x=0,team=Yellow,gamemode=adventure]
+execute if predicate game:game_started unless predicate game:game_paused run gamemode survival @a[x=0,team=Yellow,gamemode=adventure]
 execute if predicate game:game_started run effect clear @a[x=0,tag=JoinYellow] resistance
 execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinYellow] run title @s actionbar ""

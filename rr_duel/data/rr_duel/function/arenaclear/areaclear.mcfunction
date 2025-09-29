@@ -1,6 +1,21 @@
 tag @s remove FakeGameEnd
 scoreboard players set @s fakeendtimer 0
 
+scoreboard players set $game_paused global 1
+function arenaclear:brute_force/start
+
+tp @a[x=0,team=Blue] -95 202 60 0 0
+tp @a[x=0,team=Yellow] -95 202 96 180 0
+tp @a[x=0,team=Spectator] -95 213 78 -90 90
+fill -89 202 66 -101 211 66 minecraft:barrier strict
+fill -89 202 90 -101 211 90 minecraft:barrier strict
+execute as @a[x=0,team=Blue,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute as @a[x=0,team=Yellow,predicate=custom:is_on_fire] at @s run function game:putoutfire
+clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run loot replace entity @s hotbar.0 loot items:misc/shooting_saber
+execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:update_armor
+gamemode adventure @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team]
+
 execute if entity @s[scores={bMissileCount=1..}] run function arenaclear:prepareblue
 execute if entity @s[scores={yMissileCount=1..}] run function arenaclear:prepareyellow
 execute if entity @s[scores={splashCount=1..}] run function arenaclear:preparesplash
@@ -57,19 +72,7 @@ kill @e[x=0,predicate=entities:type/spell]
 
 function arenaclear:superspeed
 
-tp @a[x=0,team=Blue] 12 64 -66 0 0
-tp @a[x=0,team=Yellow] 12 64 66 180 0
-execute as @a[x=0,team=Blue,predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @a[x=0,team=Yellow,predicate=custom:is_on_fire] at @s run function game:putoutfire
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"booster_rocket"}]
-gamemode survival @a[x=0,team=Blue]
-gamemode survival @a[x=0,team=Yellow]
-
 scoreboard players operation @s MaxItemTime = @s MaxItemSec
 scoreboard players operation @s MaxItemTime *= $20 constant
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
-
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:update_armor

@@ -37,6 +37,10 @@ execute if predicate game:gamemode_components/one_team if predicate game:gamemod
 # Fix for terracotta above underside region
 fill -81 199 86 -81 198 81 minecraft:lime_terracotta replace #custom:terracotta
 
+#Remove game pause barriers
+fill -89 202 90 -101 211 90 minecraft:air replace minecraft:barrier strict
+fill -89 202 66 -101 211 66 minecraft:air replace minecraft:barrier strict
+
 #Clear pregame molerat
 fill -101 207 69 -89 186 87 air replace light_gray_stained_glass
 

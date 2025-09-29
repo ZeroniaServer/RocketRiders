@@ -20,16 +20,16 @@ scoreboard players add @a[x=0,team=Yellow] kills 0
 scoreboard players add @a[x=0,team=Blue] kills 0
 
 ##Prevent players from going above the arena
-execute as @a[x=0,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow,predicate=custom:on_blue_or_yellow_team] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
+execute unless predicate game:game_paused as @a[x=0,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow,predicate=custom:on_blue_or_yellow_team] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 
 ##Player void
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team,predicate=custom:in_void] unless score @s ThrowPlat matches 1.. at @s run function game:void
+execute unless predicate game:game_paused as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team,predicate=custom:in_void] unless score @s ThrowPlat matches 1.. at @s run function game:void
 
 ##Full hotbar check
 function items:full_hotbar
 
 ##Game time
-scoreboard players add $game_duration global 1
+execute unless predicate game:game_paused run scoreboard players add $game_duration global 1
 
 ##Put out players on fire
 execute if predicate game:game_started if score $game_duration global matches 1..2 as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:is_on_fire] at @s run function game:putoutfire

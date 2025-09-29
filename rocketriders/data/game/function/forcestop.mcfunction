@@ -24,6 +24,5 @@ tag @a[x=0] remove flagschamp
 tag @a[x=0] remove killschamp
 tag @a[x=0] remove spawnchamp
 execute if predicate game:game_ended run scoreboard players set @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer 568
-setblock -57 203 78 air
 scoreboard players set $mcancel CmdData 0
 schedule clear lobby:cancelsettings/counter

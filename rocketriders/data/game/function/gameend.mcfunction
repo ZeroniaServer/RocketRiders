@@ -76,6 +76,8 @@ execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] k
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] deaths 0
 execute if entity @s[scores={endtimer=570}] run gamerule mobGriefing false
 execute if entity @s[scores={endtimer=570}] run scoreboard players reset $swap_side global
+execute if entity @s[scores={endtimer=570}] run setblock -57 203 78 air
+
 #Brute Force Arena Clear
 execute if entity @s[scores={endtimer=570}] run function arenaclear:brute_force/start
 

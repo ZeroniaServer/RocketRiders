@@ -1,5 +1,5 @@
-execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] yellowsCount matches 1.. run return run schedule clear lobby:cancelsettings/counter
-execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] bluesCount matches 1.. run return run schedule clear lobby:cancelsettings/counter
+execute if score $yellow_team_count global matches 1.. run return run schedule clear lobby:cancelsettings/counter
+execute if score $blue_team_count global matches 1.. run return run schedule clear lobby:cancelsettings/counter
 
 scoreboard players remove $mcancelcount CmdData 1
 

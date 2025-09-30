@@ -5,6 +5,7 @@ execute if score $new_team var matches 0 run team join Blue @s
 execute if score $new_team var matches 0 run tellraw @a ["",{selector:"@s"},{color:"dark_aqua",text:" switched to the blue team!"}]
 execute if score $new_team var matches 1 run team join Yellow @s
 execute if score $new_team var matches 1 run tellraw @a ["",{selector:"@s"},{color:"yellow",text:" switched to the yellow team!"}]
+function everytick:team_count
 
 function custom:update_armor
 function custom:update_inventory

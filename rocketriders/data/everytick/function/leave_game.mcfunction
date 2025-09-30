@@ -68,12 +68,13 @@ execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SM
 execute unless entity @s[predicate=!game:game_ended,tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0] remove informMeLate
 execute unless entity @s[predicate=!game:game_ended,tag=EditedSettings,tag=!SMSwitch] run scoreboard players reset @a[x=0] informMeLate
 
+#Update Armor
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:update_armor
+
 #Reset
+execute if entity @a[limit=1,x=0,scores={LeaveGame=1..}] run function everytick:team_count
 scoreboard players set @a[x=0,scores={LeaveGame=1..}] LeaveMidgame 0
 scoreboard players set @a[x=0,team=!Yellow,team=!Blue] LeaveMidgame 0
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteNum
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteServerMode
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] LeaveGame
-
-#Update Armor
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:update_armor

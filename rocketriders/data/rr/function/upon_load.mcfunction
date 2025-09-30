@@ -168,10 +168,6 @@ scoreboard objectives add ThrowSplash minecraft.used:minecraft.lingering_potion
 scoreboard objectives add count dummy
 scoreboard objectives add dropBow minecraft.dropped:minecraft.bow
 scoreboard objectives add endtimer dummy
-scoreboard objectives add origBCount dummy
-scoreboard objectives add bluesCount dummy
-scoreboard objectives add origYCount dummy
-scoreboard objectives add yellowsCount dummy
 scoreboard objectives add soulKills dummy
 scoreboard objectives add kills playerKillCount
 scoreboard objectives add jumps minecraft.custom:minecraft.jump

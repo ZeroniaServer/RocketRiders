@@ -4,7 +4,7 @@
 ######################################
 
 ##Stop games if empty (toggle)
-execute if entity @s[tag=stopIfEmpty,scores={bluesCount=0,yellowsCount=0}] run function game:forcestop
+execute if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if entity @s[tag=stopIfEmpty] run function game:forcestop
 
 ##Actionbar delay (necessary for certain action bar messages to override others)
 execute if entity @a[x=0,tag=DelayActionbar] run scoreboard players add @a[x=0,tag=DelayActionbar] actionbardelay 1

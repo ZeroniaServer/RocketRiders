@@ -80,8 +80,8 @@ execute if predicate game:game_started run scoreboard players set @a[x=0,team=Bl
 #Enabling damage gamerules
 execute if predicate game:game_started run gamerule drowningDamage true
 execute if predicate game:game_started run gamerule fireDamage true
-execute if predicate game:game_started run scoreboard players operation @s origBCount = @s bluesCount
-execute if predicate game:game_started run scoreboard players operation @s origYCount = @s yellowsCount
+execute if predicate game:game_started run scoreboard players operation $initial_blue_team_count global = $blue_team_count global
+execute if predicate game:game_started run scoreboard players operation $initial_yellow_team_count global = $yellow_team_count global
 execute if predicate game:game_started run function lobby:credits/restart
 execute if predicate game:game_started run gamerule mobGriefing true
 execute if predicate game:game_started run kill @e[x=0,type=#arrows]

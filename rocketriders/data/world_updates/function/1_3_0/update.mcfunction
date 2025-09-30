@@ -56,12 +56,11 @@ scoreboard objectives add gamemode_components dummy
 scoreboard objectives add custom_team_color dummy
 
 ## early stages of nuking Selection armour stand...
-execute store success score $realms global if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms]
+execute unless score $realms global matches 1 store success score $realms global if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms]
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove realms
 
-scoreboard players operation $server_mode global = @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms] servermode
-
-execute store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
+execute unless score $server_mode global matches 0.. run scoreboard players operation $server_mode global = @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms] servermode
+execute unless score $game_started global matches 0..1 store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches 1.. store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount matches 1.. store result score $shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount
@@ -77,6 +76,10 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WasHardcore
 execute store result score $best_parkour_time global run scoreboard players get @e[x=0,type=area_effect_cloud,tag=ParkourTime,limit=1] bestParkourTime
 execute if score $best_parkour_time global matches 0 run scoreboard players set $best_parkour_time global 2147483647
 scoreboard players reset $dust CmdData
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] bluesCount matches 1.. store result score $blue_team_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] bluesCount
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] yellowsCount matches 1.. store result score $yellow_team_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] yellowsCount
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] origBCount matches 1.. store result score $initial_blue_team_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] origBCount
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] origYCount matches 1.. store result score $initial_yellow_team_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] origYCount
 
 # Updating game rules
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noTeamBalance] run scoreboard players set $disable_team_balancing config 1
@@ -200,6 +203,10 @@ scoreboard objectives remove xp_mult
 scoreboard objectives remove xp_mod
 scoreboard objectives remove xp_div
 scoreboard objectives remove gametime
+scoreboard objectives remove bluesCount
+scoreboard objectives remove yellowsCount
+scoreboard objectives remove origBCount
+scoreboard objectives remove origYCount
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

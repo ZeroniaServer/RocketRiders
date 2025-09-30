@@ -4,3 +4,4 @@ tag @s[team=!Blue] add JoinBlue
 function game:joinwarn
 tag @s add tryJoinBlue
 team join Blue @s[tag=JoinBlue]
+function everytick:team_count

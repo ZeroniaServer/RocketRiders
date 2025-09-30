@@ -43,6 +43,7 @@ execute unless predicate game:game_rules/disable_team_balancing/on unless entity
 execute as @e[x=0,type=marker,tag=join_pad.blue] at @s as @a[distance=..1,team=Lobby,sort=random] run function game:joinblue
 execute as @a[x=0,tag=tryJoinBlue] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.blue] run tag @s remove tryJoinBlue
 team join Blue @a[x=0,tag=JoinBlue]
+execute if entity @a[limit=1,x=0,tag=JoinBlue] run function everytick:team_count
 clear @a[x=0,tag=JoinBlue]
 execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinBlue] run function game:assign_custom_team_color
 execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] run function game:saberblue

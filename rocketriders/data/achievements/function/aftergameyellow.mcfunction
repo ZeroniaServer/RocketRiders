@@ -18,10 +18,10 @@ scoreboard players add @e[x=0,type=armor_stand,tag=machinacheck] Machina 0
 execute as @e[x=0,type=armor_stand,tag=machinacheck] at @s run function achievements:machinacheckyellow
 
 #One is the Loneliest Number (part 1)
-execute if score @s yellowsCount matches 1 if score @s bluesCount matches 2.. run tag @a[x=0,team=Yellow] add Loneliest
+execute if score $yellow_team_count global matches 1 if score $blue_team_count global matches 2.. run tag @a[x=0,team=Yellow] add Loneliest
 
 #Forsaken (part 1)
-execute if score @s yellowsCount < @s origYCount run tag @a[x=0,team=Yellow] add Forsaken
+execute if score $yellow_team_count global < $initial_yellow_team_count global run tag @a[x=0,team=Yellow] add Forsaken
 
 #Ground Bound (part 1) - necessary because players can jump after game end
 tag @a[x=0,team=Yellow,scores={jumps=..0}] add GroundBound

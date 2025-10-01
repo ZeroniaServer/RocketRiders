@@ -31,6 +31,6 @@ execute if score @s largerTeamCount = @s smallerTeamCount run scoreboard players
 
 ##Checking whether teams are full
 execute if entity @s[tag=!BlueCapOverride] run tag @s remove BlueFull
-execute if entity @s[tag=!BlueCapOverride] if score @s bluesCount >= @s PlayerCap run tag @s add BlueFull
+execute if entity @s[tag=!BlueCapOverride] if score $blue_team_count global >= @s PlayerCap run tag @s add BlueFull
 execute if entity @s[tag=!YellowCapOverride] run tag @s remove YellowFull
 execute if entity @s[tag=!YellowCapOverride] if score $yellow_team_count global >= @s PlayerCap run tag @s add YellowFull

@@ -207,6 +207,11 @@ scoreboard objectives remove bluesCount
 scoreboard objectives remove yellowsCount
 scoreboard objectives remove origBCount
 scoreboard objectives remove origYCount
+scoreboard objectives remove teamDiff
+scoreboard objectives remove largerTeamCount
+scoreboard objectives remove smallerTeamCount
+scoreboard objectives remove largerTeam
+scoreboard objectives remove smallerTeam
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

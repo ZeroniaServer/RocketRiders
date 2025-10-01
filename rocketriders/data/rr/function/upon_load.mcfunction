@@ -125,7 +125,6 @@ scoreboard objectives add playerUUID dummy
 scoreboard objectives add PlatTime dummy
 scoreboard objectives add ClearArena dummy
 scoreboard objectives add GamesPlayed dummy
-scoreboard objectives add largerTeam dummy
 scoreboard objectives add LeaveMidgame trigger
 scoreboard objectives add FallDistance dummy
 scoreboard objectives add deaths deathCount
@@ -209,10 +208,6 @@ scoreboard objectives add obmove dummy
 scoreboard objectives add obshieldtime dummy
 scoreboard objectives add obshieldTick dummy
 scoreboard objectives add regenTimer dummy
-scoreboard objectives add teamDiff dummy
-scoreboard objectives add smallerTeamCount dummy
-scoreboard objectives add largerTeamCount dummy
-scoreboard objectives add smallerTeam dummy
 scoreboard objectives add splashtick dummy
 scoreboard objectives add MissilesSpawned dummy
 scoreboard objectives add creditsSet dummy

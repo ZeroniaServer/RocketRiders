@@ -16,7 +16,6 @@ execute if predicate rr:has_tutorial run function 2811iaj1:advantriggers
 execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
 execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.blue] add CancelJoin
 execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
-execute if predicate game:game_rules/disable_team_balancing/on run scoreboard players set @s largerTeam 0
 
 #Toggle particles
 scoreboard players enable @a[x=0] toggleParticles

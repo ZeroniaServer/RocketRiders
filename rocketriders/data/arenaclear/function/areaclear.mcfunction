@@ -33,6 +33,9 @@ fill -14 13 -66 38 33 -48 air
 ##Remove building blocks
 execute if data storage rocketriders:arena_clear building_block_subchunks[0] run function arenaclear:clear_building_blocks/loop with storage rocketriders:arena_clear building_block_subchunks[-1]
 
+##Remove portal frame masks
+kill @e[x=0,type=text_display,tag=portal_frame_mask]
+
 ##Clear utility structures
 execute as @e[x=0,type=marker,tag=obsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break

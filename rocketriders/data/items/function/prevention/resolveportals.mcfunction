@@ -1,14 +1,14 @@
-execute if predicate game:portal_type/default run fill -10 58 74 34 58 74 minecraft:obsidian replace #custom:basereplace strict
-execute if predicate game:portal_type/default run fill 34 58 74 34 37 74 minecraft:obsidian replace #custom:basereplace strict
-execute if predicate game:portal_type/default run fill 34 37 74 -10 37 74 minecraft:obsidian replace #custom:basereplace strict
-execute if predicate game:portal_type/default run fill 12 37 74 12 58 74 minecraft:obsidian replace #custom:basereplace strict
-execute if predicate game:portal_type/default run fill -10 37 74 -10 58 74 minecraft:obsidian replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill -10 58 74 34 58 74 minecraft:barrier replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill 34 58 74 34 37 74 minecraft:barrier replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill 34 37 74 -10 37 74 minecraft:barrier replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill 12 37 74 12 58 74 minecraft:barrier replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill -10 37 74 -10 58 74 minecraft:barrier replace #custom:basereplace strict
 
-execute if predicate game:portal_type/default run fill -10 58 -74 34 58 -74 minecraft:obsidian replace #custom:basereplace strict
-execute if predicate game:portal_type/default run fill 34 58 -74 34 37 -74 minecraft:obsidian replace #custom:basereplace strict
-execute if predicate game:portal_type/default run fill 34 37 -74 -10 37 -74 minecraft:obsidian replace #custom:basereplace strict
-execute if predicate game:portal_type/default run fill 12 37 -74 12 58 -74 minecraft:obsidian replace #custom:basereplace strict
-execute if predicate game:portal_type/default run fill -10 37 -74 -10 58 -74 minecraft:obsidian replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill -10 58 -74 34 58 -74 minecraft:barrier replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill 34 58 -74 34 37 -74 minecraft:barrier replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill 34 37 -74 -10 37 -74 minecraft:barrier replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill 12 37 -74 12 58 -74 minecraft:barrier replace #custom:basereplace strict
+execute if predicate game:portal_type/default run fill -10 37 -74 -10 58 -74 minecraft:barrier replace #custom:basereplace strict
 
 #Make sure pistons that got cloned up there don't replace portals!!
 execute if predicate game:portal_type/default run fill -10 175 74 34 178 74 air replace #custom:piston strict
@@ -32,10 +32,10 @@ scoreboard players reset $b2port var
 execute if predicate game:portal_type/crusade run fill 21 175 67 3 178 67 air replace #custom:piston strict
 execute if predicate game:portal_type/crusade run fill 21 175 -67 3 178 -67 air replace #custom:piston strict
 
-execute if predicate game:portal_type/crusade if score $yport var matches 1 run fill 21 56 67 3 44 67 obsidian strict
+execute if predicate game:portal_type/crusade if score $yport var matches 1 run fill 21 56 67 3 44 67 barrier strict
 execute if predicate game:portal_type/crusade if score $yport var matches 1 run fill 20 55 67 4 45 67 nether_portal strict
 execute if predicate game:portal_type/crusade if score $yport var matches 1 run fill 21 175 67 3 178 67 air replace #custom:piston strict
-execute if predicate game:portal_type/crusade if score $bport var matches 1 run fill 21 56 -67 3 44 -67 obsidian strict
+execute if predicate game:portal_type/crusade if score $bport var matches 1 run fill 21 56 -67 3 44 -67 barrier strict
 execute if predicate game:portal_type/crusade if score $bport var matches 1 run fill 20 55 -67 4 45 -67 nether_portal strict
 execute if predicate game:portal_type/crusade if score $bport var matches 1 run fill 21 175 -67 3 178 -67 air replace #custom:piston strict
 scoreboard players reset $yport var

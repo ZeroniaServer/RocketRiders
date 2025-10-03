@@ -1,6 +1,6 @@
-####################################################
-## GAMEEND: What events occur after the game ends ##
-####################################################
+####################################################################
+## MATCH OVER: What events occur during the aftermath of the game ##
+####################################################################
 
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1

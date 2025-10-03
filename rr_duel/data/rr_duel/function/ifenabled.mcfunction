@@ -8,8 +8,9 @@ function rr_duel:tip
 
 #game
 function rr_duel:game/gamestart
-execute if predicate game:match_in_play run function rr_duel:game/ingame
-execute if predicate game:match_over run function rr_duel:game/gameend
+execute if predicate game:game_running run function rr_duel:game/game_running
+execute if predicate game:match_in_play run function rr_duel:game/match_in_play
+execute if predicate game:match_over run function rr_duel:game/match_over
 execute unless predicate game:match_in_play run tag @s remove CriteriaTrue
 
 #leave teams

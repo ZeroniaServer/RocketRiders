@@ -19,7 +19,6 @@ execute as @e[x=0,type=end_crystal,tag=PUCrystal,scores={CmdData=5}] at @s run p
 scoreboard players reset @e[x=0,type=end_crystal,tag=PUCrystal,scores={CmdData=20..}] CmdData
 execute unless entity @e[x=0,type=end_crystal,tag=PUCrystal] run stopsound @a[x=0] master minecraft:block.beacon.ambient
 
-
 #extra stuff for obsidian border
 fill -15 64 67 10 64 67 obsidian
 fill 14 64 67 39 64 67 obsidian

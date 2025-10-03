@@ -11,8 +11,9 @@ function rr_crusade:tip
 
 #game
 function rr_crusade:game/gamestart
-execute if predicate game:match_in_play run function rr_crusade:game/ingame
-execute if predicate game:match_over run function rr_crusade:game/gameend
+execute if predicate game:game_running run function rr_crusade:game/game_running
+execute if predicate game:match_in_play run function rr_crusade:game/match_in_play
+execute if predicate game:match_over run function rr_crusade:game/match_over
 execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
 
 #kits

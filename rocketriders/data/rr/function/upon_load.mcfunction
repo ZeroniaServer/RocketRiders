@@ -74,6 +74,7 @@ scoreboard players set $15 constant 15
 scoreboard players set $16 constant 16
 scoreboard players set $20 constant 20
 scoreboard players set $26 constant 26
+scoreboard players set $40 constant 40
 scoreboard players set $60 constant 60
 scoreboard players set $64 constant 64
 scoreboard players set $100 constant 100

@@ -17,8 +17,8 @@ execute if entity @s[scores={endtimer=2..}] run tag @a[x=0] remove CarryFY2
 execute if entity @s[scores={endtimer=2..}] run tag @a[x=0] remove CarryFB1
 execute if entity @s[scores={endtimer=2..}] run tag @a[x=0] remove CarryFB2
 execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=FlagParticle]
-execute if entity @s[scores={endtimer=2..}] run scoreboard players reset * FlagScore
-execute if entity @s[scores={endtimer=2..}] run scoreboard players reset * FlagDeliver
+execute if entity @s[scores={endtimer=2..}] run scoreboard players reset @a[x=0] FlagScore
+execute if entity @s[scores={endtimer=2..}] run scoreboard players reset @a[x=0] FlagDeliver
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 players none
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_ctf:fy1 value 0
@@ -35,6 +35,8 @@ execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdispl
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.blue
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay list
+execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * FlagScore
+execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * FlagDeliver
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * FlagDisp
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset * flag_tablist_display
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset $flags_captured_by_blue global

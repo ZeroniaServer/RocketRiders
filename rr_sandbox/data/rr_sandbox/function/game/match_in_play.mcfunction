@@ -9,10 +9,6 @@ execute as @a[x=0,team=Yellow,scores={LeaveMidgame=1}] run tellraw @a[x=0] ["",{
 scoreboard players set @a[x=0,team=Yellow,scores={LeaveMidgame=1}] LeaveGame 1
 tellraw @s[team=!Blue,team=!Yellow,scores={LeaveMidgame=1}] [{"text":"You are not in a match anymore.","color":"green"}]
 
-#spawnpoints
-spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
-spawnpoint @a[x=0,team=Yellow] 12 64 66 -180 0
-
 #spawnables
 function rr_powerups:everytick/spawnables
 function everytick:cluster

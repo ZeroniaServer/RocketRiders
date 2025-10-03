@@ -8,11 +8,6 @@ execute if predicate game:game_paused store result bossbar rr_duel:resetting_are
 execute if predicate game:game_paused run bossbar set rr_duel:resetting_arena players @a[x=0,team=!Lobby]
 execute unless predicate game:game_paused run bossbar remove rr_duel:resetting_arena
 
-#scoreboards
-scoreboard objectives setdisplay sidebar.team.gold RoundsWon
-scoreboard objectives setdisplay sidebar.team.blue RoundsWon
-scoreboard objectives setdisplay sidebar.team.dark_gray RoundsWon
-
 #leave midgame
 function rr_duel:game/leavemidgame
 
@@ -28,10 +23,6 @@ execute unless predicate game:game_paused run scoreboard players add @s RandomIt
 execute unless predicate game:game_paused if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
 execute unless predicate game:game_paused if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
 execute unless predicate game:game_paused if entity @s[tag=Minute] run function items:minutemix
-
-#Spawnpoints
-spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
-spawnpoint @a[x=0,team=Yellow] 12 64 66 -180 0
 
 #win
 execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] unless block 11 38 -74 nether_portal run function rr_duel:game/winyellow

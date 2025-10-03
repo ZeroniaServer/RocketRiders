@@ -8,8 +8,9 @@ function rr_pve:tip
 
 #game
 function rr_pve:game/gamestart
-execute if predicate game:match_in_play run function rr_pve:game/ingame
-execute if predicate game:match_over run function rr_pve:game/gameend
+execute if predicate game:game_running run function rr_pve:game/game_running
+execute if predicate game:match_in_play run function rr_pve:game/match_in_play
+execute if predicate game:match_over run function rr_pve:game/match_over
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings

@@ -2,7 +2,7 @@
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:areaclear
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove needsForceClear
 tag @e[x=0,type=marker,tag=PlacerClear] add Cleared
-scoreboard players reset $game_ended global
+scoreboard players reset $match_over global
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] endtimer 0
 
 execute unless predicate game:modifiers/hardcore/on run fill -89 201 96 -101 195 95 white_stained_glass

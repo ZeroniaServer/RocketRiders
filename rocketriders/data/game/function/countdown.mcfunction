@@ -4,7 +4,7 @@
 #####################################
 
 ##Timer, bossbar, sound effects
-execute unless predicate game:game_started run scoreboard players add @s[tag=Countdown] count 1
+execute unless predicate game:match_in_play run scoreboard players add @s[tag=Countdown] count 1
 
 #Automatically go to 10 if no (non-parkour/non-vanished) lobby players are on
 execute if entity @s[scores={count=1..399}] unless entity @a[x=0,team=Lobby,tag=!inParkour,tag=!vanished] run bossbar set rr:startgame max 10
@@ -14,9 +14,9 @@ execute if entity @s[scores={count=1..598}] run bossbar set rr:startgame color g
 execute if entity @s[scores={count=599}] if score $chunk_clear_progress global matches 50.. run bossbar set rr:startgame color green
 
 #Wait for arena to clear
-execute unless predicate game:game_started if score @s count matches 599..600 unless score $chunk_clear_progress global matches 50.. run scoreboard players set @s count 598
+execute unless predicate game:match_in_play if score @s count matches 599..600 unless score $chunk_clear_progress global matches 50.. run scoreboard players set @s count 598
 scoreboard players set $waiting_for_arena_to_clear var 0
-execute unless predicate game:game_started if score @s count matches 598 unless score $chunk_clear_progress global matches 50.. run scoreboard players set $waiting_for_arena_to_clear var 1
+execute unless predicate game:match_in_play if score @s count matches 598 unless score $chunk_clear_progress global matches 50.. run scoreboard players set $waiting_for_arena_to_clear var 1
 execute if score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:startgame color red
 execute if score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:startgame max 50
 execute if score $waiting_for_arena_to_clear var matches 1 store result bossbar rr:startgame value run scoreboard players get $chunk_clear_progress global
@@ -45,49 +45,49 @@ execute if score @s count matches 580 unless score $waiting_for_arena_to_clear v
 execute if score @s count matches 599 unless score $waiting_for_arena_to_clear var matches 1 run function game:place_arena
 
 ##As the game starts, add a UUIDTracker score
-execute if predicate game:game_started run scoreboard objectives add UUIDTracker dummy
-execute if predicate game:game_started run scoreboard objectives add KillerUUID dummy
+execute if predicate game:match_in_play run scoreboard objectives add UUIDTracker dummy
+execute if predicate game:match_in_play run scoreboard objectives add KillerUUID dummy
 
 ##Right as game begins
-execute if predicate game:game_started run bossbar set rr:startgame value 30
-execute if predicate game:game_started run bossbar set rr:startgame max 30
-execute if predicate game:game_started run function game:randomsplash
-execute if predicate game:game_started as @a[x=0] at @s run playsound entity.generic.explode master @s ~ ~ ~ 100 1.2
-execute if predicate game:game_started run tp @a[x=0,team=Yellow] 12 64 66 -180 0
-execute if predicate game:game_started run tp @a[x=0,team=Blue] 12 64 -66 0 0
-execute if predicate game:game_started run gamemode spectator @a[x=0,team=Spectator]
-execute if predicate game:game_started run tp @a[x=0,team=Spectator] 12 100 0.5 90 90
-execute if predicate game:game_started run tag @a[x=0] remove doing_facade_parkour
-execute if predicate game:game_started run effect clear @a[x=0,team=Blue] resistance
-execute if predicate game:game_started run effect clear @a[x=0,team=Yellow] resistance
-execute if predicate game:game_started run effect give @a[x=0,team=Blue] fire_resistance 10 100 true
-execute if predicate game:game_started run effect give @a[x=0,team=Yellow] fire_resistance 10 100 true
-execute if predicate game:game_started run gamemode survival @a[x=0,team=Yellow]
-execute if predicate game:game_started run gamemode survival @a[x=0,team=Blue]
+execute if predicate game:match_in_play run bossbar set rr:startgame value 30
+execute if predicate game:match_in_play run bossbar set rr:startgame max 30
+execute if predicate game:match_in_play run function game:randomsplash
+execute if predicate game:match_in_play as @a[x=0] at @s run playsound entity.generic.explode master @s ~ ~ ~ 100 1.2
+execute if predicate game:match_in_play run tp @a[x=0,team=Yellow] 12 64 66 -180 0
+execute if predicate game:match_in_play run tp @a[x=0,team=Blue] 12 64 -66 0 0
+execute if predicate game:match_in_play run gamemode spectator @a[x=0,team=Spectator]
+execute if predicate game:match_in_play run tp @a[x=0,team=Spectator] 12 100 0.5 90 90
+execute if predicate game:match_in_play run tag @a[x=0] remove doing_facade_parkour
+execute if predicate game:match_in_play run effect clear @a[x=0,team=Blue] resistance
+execute if predicate game:match_in_play run effect clear @a[x=0,team=Yellow] resistance
+execute if predicate game:match_in_play run effect give @a[x=0,team=Blue] fire_resistance 10 100 true
+execute if predicate game:match_in_play run effect give @a[x=0,team=Yellow] fire_resistance 10 100 true
+execute if predicate game:match_in_play run gamemode survival @a[x=0,team=Yellow]
+execute if predicate game:match_in_play run gamemode survival @a[x=0,team=Blue]
 #Hotfix for being able to keep charging bow from queue
-execute if predicate game:game_started if entity @s[tag=!noSabers] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] bow
-execute if predicate game:game_started if entity @s[tag=!noSabers] as @a[x=0,team=Blue] run function game:saberblue
-execute if predicate game:game_started if entity @s[tag=!noSabers] as @a[x=0,team=Yellow] run function game:saberyellow
-execute if predicate game:game_started if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started if entity @s[tag=!customSaberMsg] if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started if entity @s[tag=!customSaberMsg] if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started unless predicate game:game_ended run tag @a[x=0] remove CalculateWin
-execute if predicate game:game_started unless predicate game:game_ended run tag @a[x=0] remove CalculateLoss
+execute if predicate game:match_in_play if entity @s[tag=!noSabers] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] bow
+execute if predicate game:match_in_play if entity @s[tag=!noSabers] as @a[x=0,team=Blue] run function game:saberblue
+execute if predicate game:match_in_play if entity @s[tag=!noSabers] as @a[x=0,team=Yellow] run function game:saberyellow
+execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:match_in_play unless predicate game:match_over run tag @a[x=0] remove CalculateWin
+execute if predicate game:match_in_play unless predicate game:match_over run tag @a[x=0] remove CalculateLoss
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
-execute if predicate game:game_started run scoreboard players set @a[x=0,team=Yellow] jumps 0
-execute if predicate game:game_started run scoreboard players set @a[x=0,team=Blue] jumps 0
+execute if predicate game:match_in_play run scoreboard players set @a[x=0,team=Yellow] jumps 0
+execute if predicate game:match_in_play run scoreboard players set @a[x=0,team=Blue] jumps 0
 #Enabling damage gamerules
-execute if predicate game:game_started run gamerule drowningDamage true
-execute if predicate game:game_started run gamerule fireDamage true
-execute if predicate game:game_started run scoreboard players operation $initial_blue_team_count global = $blue_team_count global
-execute if predicate game:game_started run scoreboard players operation $initial_yellow_team_count global = $yellow_team_count global
-execute if predicate game:game_started run function lobby:credits/restart
-execute if predicate game:game_started run gamerule mobGriefing true
-execute if predicate game:game_started run kill @e[x=0,type=#arrows]
-execute if predicate game:game_started run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{lobby:true}]
-execute if predicate game:game_started run scoreboard players set @s count 0
-execute if predicate game:game_started run tag @s remove bossbarOverride
+execute if predicate game:match_in_play run gamerule drowningDamage true
+execute if predicate game:match_in_play run gamerule fireDamage true
+execute if predicate game:match_in_play run scoreboard players operation $initial_blue_team_count global = $blue_team_count global
+execute if predicate game:match_in_play run scoreboard players operation $initial_yellow_team_count global = $yellow_team_count global
+execute if predicate game:match_in_play run function lobby:credits/restart
+execute if predicate game:match_in_play run gamerule mobGriefing true
+execute if predicate game:match_in_play run kill @e[x=0,type=#arrows]
+execute if predicate game:match_in_play run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{lobby:true}]
+execute if predicate game:match_in_play run scoreboard players set @s count 0
+execute if predicate game:match_in_play run tag @s remove bossbarOverride
 #The forceCountdown tag is used to override conditions that would otherwise cancel a countdown
-execute if predicate game:game_started run tag @s remove forceCountdown
-execute if predicate game:game_started run tag @s remove Countdown
+execute if predicate game:match_in_play run tag @s remove forceCountdown
+execute if predicate game:match_in_play run tag @s remove Countdown

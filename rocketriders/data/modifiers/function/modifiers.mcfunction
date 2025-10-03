@@ -4,9 +4,9 @@
 ####################################
 
 ##Instamine
-execute if entity @s[tag=Instamine] unless predicate game:game_ended unless predicate game:game_paused as @a[x=0,predicate=custom:on_blue_or_yellow_team] run attribute @s minecraft:block_break_speed modifier add rocketriders:instamine 10000000000000000000000000000000000000 add_multiplied_base
-execute if entity @s[tag=Instamine] unless predicate game:game_ended unless predicate game:game_paused as @a[x=0,predicate=!custom:on_blue_or_yellow_team] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
-execute if entity @s[tag=Instamine] if predicate game:game_ended as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
+execute if entity @s[tag=Instamine] unless predicate game:match_over unless predicate game:game_paused as @a[x=0,predicate=custom:on_blue_or_yellow_team] run attribute @s minecraft:block_break_speed modifier add rocketriders:instamine 10000000000000000000000000000000000000 add_multiplied_base
+execute if entity @s[tag=Instamine] unless predicate game:match_over unless predicate game:game_paused as @a[x=0,predicate=!custom:on_blue_or_yellow_team] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
+execute if entity @s[tag=Instamine] if predicate game:match_over as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 execute if entity @s[tag=Instamine] if predicate game:game_paused as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 execute unless entity @s[tag=Instamine] as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 
@@ -31,8 +31,8 @@ execute unless entity @s[tag=Sonar,predicate=!game:game_paused] run effect give 
 execute unless entity @s[tag=Sonar,predicate=!game:game_paused] run effect clear @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] darkness
 
 ##Rocket Residers (anti-crossing behavior)
-execute unless predicate game:game_paused if predicate game:modifiers/rocket_residers/on unless predicate game:game_ended as @a[x=0,team=Blue,predicate=custom:residers] run tag @s add crosser
-execute unless predicate game:game_paused if predicate game:modifiers/rocket_residers/on unless predicate game:game_ended as @a[x=0,team=Yellow,predicate=custom:residers] run tag @s add crosser
+execute unless predicate game:game_paused if predicate game:modifiers/rocket_residers/on unless predicate game:match_over as @a[x=0,team=Blue,predicate=custom:residers] run tag @s add crosser
+execute unless predicate game:game_paused if predicate game:modifiers/rocket_residers/on unless predicate game:match_over as @a[x=0,team=Yellow,predicate=custom:residers] run tag @s add crosser
 #Hackfix: void works for crossers too
 execute unless predicate game:game_paused as @a[x=0,tag=crosser] run function game:void
 tag @a[x=0] remove crosser

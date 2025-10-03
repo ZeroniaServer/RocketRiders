@@ -20,20 +20,20 @@ execute if entity @s[tag=Countdown] run scoreboard players set @e[x=0,type=armor
 execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
 
 #Give first item to anyone who joins within 1st second
-execute if predicate game:game_started if score $game_duration global matches 3..20 run function items:givefirst
+execute if predicate game:match_in_play if score $game_duration global matches 3..20 run function items:givefirst
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Bossbar
-execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
-execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
-execute unless predicate game:game_started if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
+execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
+execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
+execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
 
 #Countdown
-execute unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s add Countdown
+execute unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s add Countdown
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] run function game:restartcountdown
 execute if entity @s[tag=EditedSettings] unless entity @a[x=0,team=Blue] run kill @e[x=0,type=armor_stand,tag=Bot]
-execute unless predicate game:game_ended if entity @s[scores={count=590..600}] run kill @e[x=0,type=armor_stand,tag=Bot]
-execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1
+execute unless predicate game:match_over if entity @s[scores={count=590..600}] run kill @e[x=0,type=armor_stand,tag=Bot]
+execute unless predicate game:match_over if score @s count matches 600 run scoreboard players set $match_in_play global 1

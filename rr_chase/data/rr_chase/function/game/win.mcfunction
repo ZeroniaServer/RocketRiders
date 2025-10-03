@@ -2,7 +2,7 @@
 execute if predicate rr:has_achievements run function rr_chase:achievements/aftergame
 
 ##Record tags
-scoreboard players set $game_ended global 1
+scoreboard players set $match_over global 1
 
 ##Celebratory items
 clear @a[x=0,team=Blue] #custom:clear

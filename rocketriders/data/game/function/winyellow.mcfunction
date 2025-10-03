@@ -6,7 +6,7 @@
 execute if predicate rr:has_achievements if entity @s[tag=!noAchievements] run function achievements:aftergameyellow
 
 ##Record tags
-scoreboard players set $game_ended global 1
+scoreboard players set $match_over global 1
 tag @s add YellowWon
 tag @s add YellowWonFirst
 

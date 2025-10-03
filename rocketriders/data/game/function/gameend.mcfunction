@@ -6,7 +6,7 @@
 scoreboard players add @s endtimer 1
 execute as @a run function custom:player_action/forget_all_canopies
 function everytick:spawnables
-execute if score @s endtimer matches 1 run scoreboard players reset $game_started global
+execute if score @s endtimer matches 1 run scoreboard players reset $match_in_play global
 execute if score @s endtimer matches 1 run scoreboard players reset $game_paused global
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
@@ -96,7 +96,7 @@ tag @s[scores={endtimer=570..}] remove SuddenDeath
 tag @s[scores={endtimer=570..}] remove BothWon
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * invCount
 execute if entity @s[scores={endtimer=570..}] run function arenaclear:preclear
-execute if score @s endtimer matches 570.. run scoreboard players reset $game_ended global
+execute if score @s endtimer matches 570.. run scoreboard players reset $match_over global
 
 ##For repeating settings
 tag @s[scores={RepeatSettings=0},tag=!RepeatForever] remove Repeat

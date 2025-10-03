@@ -15,7 +15,7 @@ execute unless score $reloaded CmdData matches 1..100 if entity @e[x=0,type=armo
 execute unless score $reloaded CmdData matches 1..100 if entity @e[x=0,type=armor_stand,tag=gamemodeAS,tag=enabled] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoModesEnabled
 execute if score $reloaded CmdData matches 1..100 run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoModesEnabled
 
-execute unless predicate game:game_ended if score @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer matches 1.. run scoreboard players set $game_ended global 1
+execute unless predicate game:match_over if score @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer matches 1.. run scoreboard players set $match_over global 1
 
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NoModesEnabled,tag=!NoModesInstalled,scores={SetGamemode=0}] run tellraw @a[x=0] [{"text":"Warning: Tried to enable a gamemode that is not installed. Force clearing arena with a different gamemode as a rescue measure.","color":"red"}]
 scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NoModesEnabled,tag=!NoModesInstalled,scores={SetGamemode=0}] SetGamemode 1

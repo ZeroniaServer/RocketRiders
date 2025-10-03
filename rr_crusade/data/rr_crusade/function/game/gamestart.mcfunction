@@ -9,29 +9,29 @@ execute as @a[x=0,tag=JoinYellow,scores={crusadekit=2}] run function rr_crusade:
 execute as @a[x=0,tag=JoinYellow,scores={crusadekit=3}] run function rr_crusade:items/kit/give/mage
 
 #Notify Join
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=1}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=2}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=3}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Spell Wand ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=1}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Knight Sword ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=2}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=3}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Spell Wand ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:game_started if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:match_in_play unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=1}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:match_in_play unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=2}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:match_in_play unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue,scores={crusadekit=3}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Spell Wand ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:match_in_play if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:match_in_play unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=1}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Knight Sword ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:match_in_play unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=2}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:match_in_play unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow,scores={crusadekit=3}] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Spell Wand ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:match_in_play if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
 
 #Give first item to anyone who joins within 1st second
-execute if predicate game:game_started if score $game_duration global matches 3..20 run function rr_crusade:items/givefirst
+execute if predicate game:match_in_play if score $game_duration global matches 3..20 run function rr_crusade:items/givefirst
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Countdown
-execute if predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown
+execute if predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown
 execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] run function game:restartcountdown
 execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
-execute unless predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s add Countdown
-execute unless predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Yellow] run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,team=Yellow] run tag @s add Countdown
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
 execute if score @s count matches 600 unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue,scores={crusadekit=1}] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Knight Sword ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
@@ -54,6 +54,6 @@ execute if score @s count matches 600 run clear @a[x=0,team=Yellow,scores={crusa
 execute if score @s count matches 600 as @a[x=0,scores={crusadekit=1}] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
 execute if score @s count matches 600 run summon marker 33 63 -66 {Tags:["airDetectBlue"]}
 execute if score @s count matches 600 run summon marker 33 63 66 {Tags:["airDetectYellow"]}
-execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1
+execute unless predicate game:match_over if score @s count matches 600 run scoreboard players set $match_in_play global 1
 #Hotfix for spell wands from the lobby not being usable
 execute if score @s count matches 600 as @a[x=0,predicate=rr_crusade:kit/mage] run function custom:update_inventory/spell_wand

@@ -3,23 +3,23 @@ execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
 execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
 
 #Spawnpoints
-execute if predicate game:game_started run spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
-execute if predicate game:game_started run spawnpoint @a[x=0,team=Yellow] 12 64 66 -180 0
+execute if predicate game:match_in_play run spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
+execute if predicate game:match_in_play run spawnpoint @a[x=0,team=Yellow] 12 64 66 -180 0
 
 #Give first item to anyone who joins within 1st second
-execute if predicate game:game_started if score $game_duration global matches 3..20 run function items:givefirst
+execute if predicate game:match_in_play if score $game_duration global matches 3..20 run function items:givefirst
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Countdown
-execute if predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown
+execute if predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] if entity @a[x=0,team=Yellow] run tag @s add Countdown
 execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] run function game:restartcountdown
 execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
-execute unless predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s add Countdown
-execute unless predicate rr:wait_for_sufficient_players unless predicate game:game_started if entity @s[tag=EditedSettings] if entity @a[x=0,team=Yellow] run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,team=Yellow] run tag @s add Countdown
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
-execute unless predicate game:game_ended if score @s count matches 600 run scoreboard players set $game_started global 1
+execute unless predicate game:match_over if score @s count matches 600 run scoreboard players set $match_in_play global 1

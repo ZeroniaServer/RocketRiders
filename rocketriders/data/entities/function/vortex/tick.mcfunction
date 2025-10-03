@@ -43,14 +43,14 @@ execute if entity @s[tag=vortex.feathered] if predicate rr:has_achievements run 
 execute if score @s entity.vortex.fuse matches 1 on vehicle run data merge entity @s {start_interpolation:0,interpolation_duration:1,transformation:{scale:[1,1,1]},billboard:"center"}
 execute if score @s entity.vortex.fuse matches ..0 run return run function entities:vortex/actions/explode
 
-execute if predicate entities:origin_team/yellow unless score @s entity.vortex.fuse matches 0.. unless predicate game:game_ended positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,team=Blue,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
-execute if predicate entities:origin_team/blue unless score @s entity.vortex.fuse matches 0.. unless predicate game:game_ended positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,team=Yellow,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
+execute if predicate entities:origin_team/yellow unless score @s entity.vortex.fuse matches 0.. unless predicate game:match_over positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,team=Blue,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
+execute if predicate entities:origin_team/blue unless score @s entity.vortex.fuse matches 0.. unless predicate game:match_over positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,team=Yellow,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
 execute on origin run tag @s add vortex.origin
-execute if predicate entities:origin_team/none unless score @s entity.vortex.fuse matches 0.. unless predicate game:game_ended positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,tag=!vortex.origin,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
+execute if predicate entities:origin_team/none unless score @s entity.vortex.fuse matches 0.. unless predicate game:match_over positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,tag=!vortex.origin,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
 execute on origin run tag @s remove vortex.origin
 
 # feathered trigger
-execute if entity @s[tag=vortex.feathered] unless predicate game:game_ended if entity @a[distance=..3,limit=1,predicate=custom:on_blue_or_yellow_team] run return run function entities:vortex/actions/explode
+execute if entity @s[tag=vortex.feathered] unless predicate game:match_over if entity @a[distance=..3,limit=1,predicate=custom:on_blue_or_yellow_team] run return run function entities:vortex/actions/explode
 
 # block trigger
 execute unless block ~ ~ ~ #custom:vortices_ignore run return run function entities:vortex/actions/explode
@@ -67,15 +67,15 @@ execute if score $triggered_by_entity var matches 1 run return run function enti
 execute store success score $was_drifting var if entity @s[tag=vortex.is_drifting]
 tag @s remove vortex.is_drifting
 
-execute if predicate entities:origin_team/blue if score $was_drifting var matches 0 unless predicate game:game_ended on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,team=Yellow,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
-execute if predicate entities:origin_team/blue if score $was_drifting var matches 1 unless predicate game:game_ended on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,team=Yellow,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
+execute if predicate entities:origin_team/blue if score $was_drifting var matches 0 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,team=Yellow,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
+execute if predicate entities:origin_team/blue if score $was_drifting var matches 1 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,team=Yellow,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
 
-execute if predicate entities:origin_team/yellow if score $was_drifting var matches 0 unless predicate game:game_ended on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,team=Blue,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
-execute if predicate entities:origin_team/yellow if score $was_drifting var matches 1 unless predicate game:game_ended on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,team=Blue,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
+execute if predicate entities:origin_team/yellow if score $was_drifting var matches 0 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,team=Blue,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
+execute if predicate entities:origin_team/yellow if score $was_drifting var matches 1 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,team=Blue,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
 
 execute on origin run tag @s add vortex.origin
-execute if predicate entities:origin_team/none if score $was_drifting var matches 0 unless predicate game:game_ended on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,tag=!vortex.origin,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
-execute if predicate entities:origin_team/none if score $was_drifting var matches 1 unless predicate game:game_ended on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,tag=!vortex.origin,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
+execute if predicate entities:origin_team/none if score $was_drifting var matches 0 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,tag=!vortex.origin,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
+execute if predicate entities:origin_team/none if score $was_drifting var matches 1 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,tag=!vortex.origin,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
 execute on origin run tag @s remove vortex.origin
 
 execute unless entity @s[tag=vortex.feathered] if score $was_drifting var matches 1 if entity @s[tag=!vortex.is_drifting] on vehicle run data merge entity @s {teleport_duration:10,item:{id:"minecraft:ender_pearl"},start_interpolation:0,interpolation_duration:10,transformation:{scale:[0.6,0.6,0.6]}}

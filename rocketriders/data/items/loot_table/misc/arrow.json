@@ -31,7 +31,7 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:game_started"
+                    "name": "game:match_in_play"
                   }
                 }
               ]

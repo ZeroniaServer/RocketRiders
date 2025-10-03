@@ -101,7 +101,7 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] in minecraft:overworld
 #Team/inventory counting and game-related effects
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:team_count
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gamestart
-execute if predicate game:game_started as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
+execute if predicate game:match_in_play as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:ingame
 execute if predicate rr:do_custom_regen_system as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:regen_system
 execute unless predicate rr:do_custom_regen_system run gamerule naturalRegeneration true
 
@@ -118,7 +118,7 @@ scoreboard players enable @a[x=0,team=Lobby] displayinfo
 scoreboard players enable @a[x=0,team=Developer] displayinfo
 execute as @a[x=0,scores={displayinfo=1..}] at @s run function lobby:displayinfo
 execute as @a[x=0,team=Lobby] run function everytick:score_reset
-execute if loaded 25 184 -6 unless predicate game:game_in_progress run function lobby:credits/cycle
+execute if loaded 25 184 -6 unless predicate game:game_running run function lobby:credits/cycle
 execute if predicate rr:has_parkour as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function lobby:parkour/parkour
 execute unless predicate rr:has_parkour as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function lobby:parkour/parkourserver
 stopsound @a[x=0] ambient minecraft:ambient.cave
@@ -128,15 +128,15 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick
 
 #Arrow pickup
 execute as @e[x=0,type=#arrows,tag=!arrow.processed] at @s run function everytick:arrow/init
-execute unless predicate game:game_ended run scoreboard players set @e[x=0,type=#arrows,predicate=!custom:not_moving] entity.age -1
-execute unless predicate game:game_ended as @e[x=0,type=#arrows,predicate=custom:not_moving] at @s run function everytick:arrow/while_on_ground
+execute unless predicate game:match_over run scoreboard players set @e[x=0,type=#arrows,predicate=!custom:not_moving] entity.age -1
+execute unless predicate game:match_over as @e[x=0,type=#arrows,predicate=custom:not_moving] at @s run function everytick:arrow/while_on_ground
 
 #Item entity pickup
 execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init
 execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit as @e[x=0,type=item,predicate=custom:item_entity_contains_any_arrow] at @s run function everytick:item_entity/while_contents_is_any_arrow
 
 #Game ending and arena clearing
-execute if predicate game:game_ended as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:gameend
+execute if predicate game:match_over as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:gameend
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SuddenDeath,tag=!SuddenDeathCustom,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
 execute if entity @e[x=0,type=marker,tag=ArenaClearChecker,tag=!Cleared,tag=!BasePlaced] run scoreboard players add $acdelay CmdData 1
 execute if score $acdelay CmdData matches 7.. run tellraw @a[x=0] {"text":"Warning: Force clearing arena since previous gamemode is unknown.","color":"red"}
@@ -144,7 +144,7 @@ execute if score $acdelay CmdData matches 7.. run tag @e[x=0,type=armor_stand,ta
 execute if score $acdelay CmdData matches 7.. run scoreboard players reset $acdelay CmdData
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced] run scoreboard players reset $acdelay CmdData
 kill @e[x=0,type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
-execute unless predicate game:game_ended as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
+execute unless predicate game:match_over as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsignsquery
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=JustCleared] run scoreboard players add $justcleared CmdData 1
 execute if score $justcleared CmdData matches 10.. run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=JustCleared] remove JustCleared

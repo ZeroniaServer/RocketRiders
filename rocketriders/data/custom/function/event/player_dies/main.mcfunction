@@ -4,8 +4,8 @@ execute store success score $void_death var if entity @s[advancements={custom:ev
 advancement revoke @s only custom:event/player_dies
 
 # Do not count towards deaths statistic during end game phase
-execute unless predicate game:game_in_progress run scoreboard players remove @s deaths 1
-execute if predicate game:game_in_progress if predicate game:game_ended run scoreboard players remove @s deaths 1
+execute unless predicate game:game_running run scoreboard players remove @s deaths 1
+execute if predicate game:game_running if predicate game:match_over run scoreboard players remove @s deaths 1
 
 ## Return cursor item to the inventory
 execute in minecraft:overworld run loot replace block 0 184 -16 container.1 26 loot custom:empty
@@ -17,7 +17,7 @@ execute in minecraft:overworld run loot give @s mine 0 184 -16 stick[custom_data
 
 
 ## Update statistics
-execute if predicate game:game_started unless predicate game:game_ended run function custom:event/player_dies/update_statistics
+execute if predicate game:match_in_play unless predicate game:match_over run function custom:event/player_dies/update_statistics
 
 
 ## Mark projectiles as pre-death
@@ -31,7 +31,7 @@ tag @s remove matchOrigin
 
 ## Achievements
 scoreboard players set $can_grant_achievements var 0
-execute if predicate game:game_started if predicate rr:has_achievements if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run scoreboard players set $can_grant_achievements var 1
+execute if predicate game:match_in_play if predicate rr:has_achievements if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run scoreboard players set $can_grant_achievements var 1
 
 # So Close, Yet So Fall Away (if I am touching the floor of the enemy nether portal, award me)
 execute if score $can_grant_achievements var matches 1 if entity @s[team=Blue,predicate=!custom:not_falling,predicate=custom:on_yellow_half,predicate=custom:standing_on_any_portal] run advancement grant @s only achievements:rr_challenges/fall_away
@@ -66,11 +66,11 @@ tag @s remove secondary_attacker_died
 
 ## Death-Specific
 # Apply poison on respawn if the player breached the lobby
-execute if predicate game:game_started if predicate custom:on_blue_or_yellow_team run tag @s[y=181,dy=100] add on_respawn.apply_poison_effect
+execute if predicate game:match_in_play if predicate custom:on_blue_or_yellow_team run tag @s[y=181,dy=100] add on_respawn.apply_poison_effect
 
 # Handle falling into the void
-execute if predicate game:game_started if predicate custom:on_blue_or_yellow_team if score $void_death var matches 1 run scoreboard players add @s FellVoid 1
-execute if predicate game:game_started if predicate custom:on_blue_or_yellow_team run tag @s[tag=crosser] add on_respawn.apply_crosser_void_fall_effects
+execute if predicate game:match_in_play if predicate custom:on_blue_or_yellow_team if score $void_death var matches 1 run scoreboard players add @s FellVoid 1
+execute if predicate game:match_in_play if predicate custom:on_blue_or_yellow_team run tag @s[tag=crosser] add on_respawn.apply_crosser_void_fall_effects
 
 
 ## General

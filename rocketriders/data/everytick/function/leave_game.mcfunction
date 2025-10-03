@@ -59,14 +59,14 @@ scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_
 #Voting message if in voting phase
 execute if entity @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[x=0,scores={LeaveGame=1..}] run function servermode:notifyvote
 #Notify game (if already selected)
-execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={LeaveGame=1..,LeaveMidgame=0},tag=!informMeLate] add informMe
-execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run scoreboard players add @a[x=0,scores={informMeLate=1..120}] informMeLate 1
-execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run scoreboard players add @a[x=0,tag=informMeLate] informMeLate 1
-execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={informMeLate=1..}] remove informMeLate
-execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={informMeLate=120..}] add informMe
-execute unless predicate game:game_ended if entity @s[tag=EditedSettings,tag=!SMSwitch] run scoreboard players reset @a[x=0,tag=informMe] informMeLate
-execute unless entity @s[predicate=!game:game_ended,tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0] remove informMeLate
-execute unless entity @s[predicate=!game:game_ended,tag=EditedSettings,tag=!SMSwitch] run scoreboard players reset @a[x=0] informMeLate
+execute unless predicate game:match_over if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={LeaveGame=1..,LeaveMidgame=0},tag=!informMeLate] add informMe
+execute unless predicate game:match_over if entity @s[tag=EditedSettings,tag=!SMSwitch] run scoreboard players add @a[x=0,scores={informMeLate=1..120}] informMeLate 1
+execute unless predicate game:match_over if entity @s[tag=EditedSettings,tag=!SMSwitch] run scoreboard players add @a[x=0,tag=informMeLate] informMeLate 1
+execute unless predicate game:match_over if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={informMeLate=1..}] remove informMeLate
+execute unless predicate game:match_over if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={informMeLate=120..}] add informMe
+execute unless predicate game:match_over if entity @s[tag=EditedSettings,tag=!SMSwitch] run scoreboard players reset @a[x=0,tag=informMe] informMeLate
+execute unless entity @s[predicate=!game:match_over,tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0] remove informMeLate
+execute unless entity @s[predicate=!game:match_over,tag=EditedSettings,tag=!SMSwitch] run scoreboard players reset @a[x=0] informMeLate
 
 #Update Armor
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:update_armor

@@ -8,16 +8,16 @@ function rr_swap:tip
 
 #game
 function rr_swap:game/gamestart
-execute if predicate game:game_started run function rr_swap:game/ingame
-execute if predicate game:game_ended run function rr_swap:game/gameend
+execute if predicate game:match_in_play run function rr_swap:game/ingame
+execute if predicate game:match_over run function rr_swap:game/gameend
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run tag @a[x=0] remove informMe
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started as @a[x=0] at @s run function arenaclear:notifystart
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Swap","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Teams swap 'sides' between Light and Dark every minute\n"},{"text":"- Base materials and armor color change accordingly\n"},{"text":"Items:\n","color":"aqua"},{"text":"- Light team gets fast missiles and punchable utilities\n"},{"text":"- Dark team gets powerful missiles and throwable utilities\n"},{"text":"- Exclusive: Special Missiles, Cluster Fireballs, and ICBMs"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run function modifiers:notifymodifiers
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_started run tag @s add swapLast
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run tag @a[x=0] remove informMe
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play as @a[x=0] at @s run function arenaclear:notifystart
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Swap","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Teams swap 'sides' between Light and Dark every minute\n"},{"text":"- Base materials and armor color change accordingly\n"},{"text":"Items:\n","color":"aqua"},{"text":"- Light team gets fast missiles and punchable utilities\n"},{"text":"- Dark team gets powerful missiles and throwable utilities\n"},{"text":"- Exclusive: Special Missiles, Cluster Fireballs, and ICBMs"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run function modifiers:notifymodifiers
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run tag @s add swapLast
 tag @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners of active settings

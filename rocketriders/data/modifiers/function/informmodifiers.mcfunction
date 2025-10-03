@@ -10,5 +10,5 @@ execute if predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0,tag=infor
 #Also notifies about Game Rules
 execute unless entity @s[predicate=rr:server_mode/cubekrowd_voting,tag=!WindDownForce] unless predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0,tag=informMe] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Game Rules","color":"yellow","hover_event":{"action":"show_text","value":[{"storage":"rocketriders:gamerules","nbt":"list[]","interpret":true,"separator":{"text":"\n"}}]}},{"text":" (hover for info)","color":"dark_gray","italic":true}]
 
-execute if predicate rr:has_modifiers unless entity @s[tag=Repeat,tag=!RepeatForever] unless entity @s[tag=duelEnabled,predicate=game:game_started] run tellraw @a[x=0,tag=informMe] [{"text":""}]
+execute if predicate rr:has_modifiers unless entity @s[tag=Repeat,tag=!RepeatForever] unless entity @s[tag=duelEnabled,predicate=game:match_in_play] run tellraw @a[x=0,tag=informMe] [{"text":""}]
 execute if predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0,tag=informMe] [{"text":""}]

@@ -16,6 +16,6 @@ execute unless score $set_game_mode dev_action matches 0..99 run return run tell
 tellraw @a "Quick-launching game..."
 
 scoreboard players set $force_stop var 1
-execute unless predicate game:game_started unless predicate game:game_ended run scoreboard players set $force_stop var 0
+execute unless predicate game:match_in_play unless predicate game:match_over run scoreboard players set $force_stop var 0
 execute if score $force_stop var matches 1 in minecraft:overworld run function game:forcestop
 schedule function dev:_launch_game_mode_/step_2 3t

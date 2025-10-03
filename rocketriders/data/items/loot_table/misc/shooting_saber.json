@@ -79,7 +79,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:game_ended"
+                  "name": "game:match_over"
                 },
                 {
                   "condition": "minecraft:entity_properties",

@@ -60,7 +60,7 @@ execute unless score $realms global matches 1 store success score $realms global
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove realms
 
 execute unless score $server_mode global matches 0.. run scoreboard players operation $server_mode global = @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms] servermode
-execute unless score $game_started global matches 0..1 store success score $game_started global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
+execute unless score $match_in_play global matches 0..1 store success score $match_in_play global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches 1.. store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount matches 1.. store result score $shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount
@@ -306,7 +306,7 @@ tag @e[x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
 
 function lobby:close_modification_room
-execute if predicate rr:has_modification_room unless predicate game:game_started unless predicate game:game_ended unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run function lobby:open_modification_room
+execute if predicate rr:has_modification_room unless predicate game:game_running unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run function lobby:open_modification_room
 
 # Modification Room redesign
 setblock -70 190 80 netherite_block strict

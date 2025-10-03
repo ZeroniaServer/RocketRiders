@@ -7,7 +7,7 @@
         "type": "minecraft:score",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$game_started"
+          "name": "$match_in_play"
         },
         "score": "global"
       },
@@ -19,7 +19,7 @@
         "type": "minecraft:score",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$game_ended"
+          "name": "$match_over"
         },
         "score": "global"
       },

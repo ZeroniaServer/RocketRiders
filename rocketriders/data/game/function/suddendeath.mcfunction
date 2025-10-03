@@ -39,11 +39,11 @@ execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] run cle
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] as @a[x=0,team=Blue] run function game:saberblue
 execute if entity @s[scores={SDtime=1}] at @s run effect give @a[x=0] blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] at @s run effect clear @a[x=0] blindness
-execute if entity @s[scores={SDtime=1}] run scoreboard players reset $game_ended global
+execute if entity @s[scores={SDtime=1}] run scoreboard players reset $match_over global
 execute if entity @s[scores={SDtime=1}] run function achievements:scoresreset
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Blue]
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Yellow]
-execute if entity @s[scores={SDtime=1}] run scoreboard players set $game_started global 1
+execute if entity @s[scores={SDtime=1}] run scoreboard players set $match_in_play global 1
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
 execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] run function game:fixfireball
 execute if entity @s[scores={SDtime=1}] as @e[x=0,type=dragon_fireball,tag=endFireball] run function game:fixfireball

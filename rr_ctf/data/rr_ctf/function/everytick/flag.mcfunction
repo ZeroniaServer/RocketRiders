@@ -353,7 +353,7 @@ execute if predicate game:match_in_play run scoreboard players reset @a[x=0] Min
 execute if predicate game:match_in_play if entity @a[x=0,tag=CarryFlag] run function rr_ctf:everytick/carryflag
 execute if predicate game:match_in_play run tag @a[x=0,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] remove CarryFlag
 execute if predicate game:match_in_play run scoreboard players reset @a[x=0,tag=!CarryFlag] FlagScore
-execute if predicate game:match_in_play run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:on_blue_or_yellow_team] glowing
+execute if predicate game:match_in_play unless entity @s[tag=Sonar] run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:on_blue_or_yellow_team] glowing
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:on_blue_or_yellow_team] resistance
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:on_blue_or_yellow_team] strength
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:on_blue_or_yellow_team] absorption

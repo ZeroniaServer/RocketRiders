@@ -47,7 +47,7 @@ execute if predicate game:modifiers/hardcore/on as @a[x=0,team=Blue] at @s if en
 execute positioned 12 64 65 run tag @p[team=Blue,predicate=custom:belowroof,tag=!onBlue,predicate=custom:alive] add InLead
 scoreboard players display numberformat @a[x=0,tag=!InLead] flag_tablist_display blank
 scoreboard players display numberformat @a[limit=1,x=0,tag=InLead] flag_tablist_display fixed "🏁"
-effect clear @a[x=0,tag=!InLead] glowing
+execute unless entity @s[tag=Sonar] run effect clear @a[x=0,tag=!InLead] glowing
 effect give @a[limit=1,x=0,tag=InLead] glowing infinite 0 true
 execute if entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"selector":"@p[team=Blue,tag=InLead]","color":"dark_red","bold":true},{"text":" is in the lead!","color":"red"}]
 execute unless entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"red"}]

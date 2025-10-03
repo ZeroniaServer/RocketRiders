@@ -3,6 +3,10 @@
 ## a match until players are returned to the lobby.   ##
 ########################################################
 
+##Player spawnpoints
+spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
+spawnpoint @a[x=0,team=Yellow] 12 64 66 -180 0
+
 ##Prevent players from going above the arena
 execute unless predicate game:game_paused unless predicate game:match_over as @a[x=0,predicate=custom:on_blue_or_yellow_team,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
 execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,team=Blue] at @s in overworld if entity @s[y=181,dy=100] run tp @s 12 64 -66 0 0

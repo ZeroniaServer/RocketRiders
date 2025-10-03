@@ -1,10 +1,6 @@
 #general
 function rr_crusade:game/cancel_utility
 
-#Spawnpoints
-spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
-spawnpoint @a[x=0,team=Yellow] 12 64 66 -180 0
-
 #Set banners/light blocks
 #Yellow A
 execute unless block -14 53 38 minecraft:yellow_banner run setblock -14 53 38 minecraft:yellow_banner[rotation=8]{patterns:[{pattern:"minecraft:stripe_middle",color:"orange"},{pattern:"minecraft:stripe_left",color:"orange"},{pattern:"minecraft:stripe_right",color:"orange"},{pattern:"minecraft:stripe_top",color:"orange"},{pattern:"minecraft:border",color:"yellow"}]}

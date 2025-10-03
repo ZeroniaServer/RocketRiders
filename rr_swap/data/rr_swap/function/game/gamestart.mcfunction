@@ -2,10 +2,6 @@
 execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
 execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
 
-#Spawnpoints
-execute if predicate game:match_in_play run spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
-execute if predicate game:match_in_play run spawnpoint @a[x=0,team=Yellow] 12 64 66 -180 0
-
 #Give first item to anyone who joins within 1st second
 execute if predicate game:match_in_play if score $game_duration global matches 3..20 if predicate rr_swap:blue_team_is_dark run function rr_swap:items/givefirstdarkblue
 execute if predicate game:match_in_play if score $game_duration global matches 3..20 if predicate rr_swap:blue_team_is_light run function rr_swap:items/givefirstlightblue

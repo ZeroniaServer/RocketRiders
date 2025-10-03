@@ -35,9 +35,6 @@ function rr_chase:chaseblocks/pickup
 execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian.","color":"red"}]
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
-#Util overwrites
-function rr_chase:game/overwrite
-
 #Bossbar for who's in the lead
 scoreboard objectives setdisplay list flag_tablist_display
 scoreboard players add @a[x=0,team=Blue] deathCooldown 0

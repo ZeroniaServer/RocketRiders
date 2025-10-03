@@ -33,6 +33,14 @@ execute unless predicate game:gamemode_components/neutral_items if entity @s[tag
 execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-2 ~-1 ~ cyan_stained_glass_pane[east=true]
 execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~1 ~ cyan_stained_glass_pane[west=true]
 execute unless predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~-1 ~ cyan_stained_glass_pane[west=true]
+execute if predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~1 ~2 ~ white_stained_glass_pane[east=true]
+execute if predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-1 ~2 ~ white_stained_glass_pane[west=true]
+execute if predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~1 ~-2 ~ white_stained_glass_pane[east=true]
+execute if predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-1 ~-2 ~ white_stained_glass_pane[west=true]
+execute if predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-2 ~1 ~ white_stained_glass_pane[east=true]
+execute if predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~-2 ~-1 ~ white_stained_glass_pane[east=true]
+execute if predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~1 ~ white_stained_glass_pane[west=true]
+execute if predicate game:gamemode_components/neutral_items if entity @s[tag=blueobalone,scores={shieldplacement=6}] run setblock ~2 ~-1 ~ white_stained_glass_pane[west=true]
 
 execute if entity @s[tag=blueobalone,scores={shieldplacement=6}] run tag @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] add blueobsidianshield
 execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run tag @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] add yellowobsidianshield

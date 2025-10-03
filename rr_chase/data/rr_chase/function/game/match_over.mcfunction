@@ -1,7 +1,6 @@
 clear @a[x=0,team=Blue] #custom:clear
 clear @a[x=0,team=Blue] *[custom_data~{id:"nova_rocket"}]
 clear @a[x=0,team=Blue] *[custom_data~{id:"booster_rocket"}]
-function rr_chase:game/overwrite
 execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue,tag=Winner,limit=1] run function custom:update_armor
 execute if entity @s[scores={endtimer=1}] as @a[x=0,team=Blue] run function custom:update_inventory/shooting_saber
 execute if entity @s[scores={endtimer=1}] run effect give @a[x=0,team=Blue,tag=Loser] weakness infinite 100 true

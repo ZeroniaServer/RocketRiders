@@ -353,7 +353,6 @@ execute if predicate game:match_in_play run scoreboard players reset @a[x=0] Min
 execute if predicate game:match_in_play if entity @a[x=0,tag=CarryFlag] run function rr_ctf:everytick/carryflag
 execute if predicate game:match_in_play run tag @a[x=0,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] remove CarryFlag
 execute if predicate game:match_in_play run scoreboard players reset @a[x=0,tag=!CarryFlag] FlagScore
-execute if predicate game:match_in_play unless entity @s[tag=Sonar] run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:on_blue_or_yellow_team] glowing
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:on_blue_or_yellow_team] resistance
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:on_blue_or_yellow_team] strength
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:on_blue_or_yellow_team] absorption
@@ -365,6 +364,13 @@ execute if predicate game:match_in_play unless entity @e[x=0,type=player,team=Ye
 execute if predicate game:match_in_play unless entity @e[x=0,type=player,team=Yellow,tag=CarryFB1] run bossbar set rr_ctf:fb1 players none
 execute if predicate game:match_in_play unless entity @e[x=0,type=player,team=Yellow,tag=CarryFB2] run bossbar set rr_ctf:fb2 value 0
 execute if predicate game:match_in_play unless entity @e[x=0,type=player,team=Yellow,tag=CarryFB2] run bossbar set rr_ctf:fb2 players none
+
+#Glowing for flag carriers (blink if Sonar is enabled)
+execute if predicate game:match_in_play unless entity @s[tag=Sonar] run effect clear @a[x=0,tag=!CarryFlag] glowing
+execute if predicate game:match_in_play unless entity @s[tag=Sonar] run effect give @a[limit=1,x=0,tag=CarryFlag] glowing infinite 0 true
+execute if predicate game:match_in_play if entity @s[tag=Sonar] run scoreboard players operation $glowing_period var = $gametime global
+execute if predicate game:match_in_play if entity @s[tag=Sonar] run scoreboard players operation $glowing_period var %= $20 constant
+execute if predicate game:match_in_play if entity @s[tag=Sonar] if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=CarryFlag] glowing
 
 #Flip missile tags
 execute if predicate game:match_in_play run tag @a[x=0,tag=CarryFlag,tag=!FlipMissile] add FlipMissile

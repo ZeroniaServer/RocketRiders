@@ -47,8 +47,6 @@ execute if predicate game:modifiers/hardcore/on as @a[x=0,team=Blue] at @s if en
 execute positioned 12 64 65 run tag @p[team=Blue,predicate=custom:belowroof,tag=!onBlue,predicate=custom:alive] add InLead
 scoreboard players display numberformat @a[x=0,tag=!InLead] flag_tablist_display blank
 scoreboard players display numberformat @a[limit=1,x=0,tag=InLead] flag_tablist_display fixed "🏁"
-execute unless entity @s[tag=Sonar] run effect clear @a[x=0,tag=!InLead] glowing
-effect give @a[limit=1,x=0,tag=InLead] glowing infinite 0 true
 execute if entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"selector":"@p[team=Blue,tag=InLead]","color":"dark_red","bold":true},{"text":" is in the lead!","color":"red"}]
 execute unless entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"red"}]
 execute unless entity @p[team=Blue,tag=InLead] run bossbar set rr_chase:lead value 0
@@ -62,6 +60,13 @@ execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=34..44] r
 execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=23..33] run bossbar set rr_chase:lead value 8
 execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=12..22] run bossbar set rr_chase:lead value 9
 execute positioned 12 64 65 if entity @p[team=Blue,tag=InLead,distance=0..11] run bossbar set rr_chase:lead value 10
+
+#Glowing for who's in the lead (blink if Sonar is enabled)
+execute unless entity @s[tag=Sonar] run effect clear @a[x=0,tag=!InLead] glowing
+execute unless entity @s[tag=Sonar] run effect give @a[limit=1,x=0,tag=InLead] glowing infinite 0 true
+execute if entity @s[tag=Sonar] run scoreboard players operation $glowing_period var = $gametime global
+execute if entity @s[tag=Sonar] run scoreboard players operation $glowing_period var %= $20 constant
+execute if entity @s[tag=Sonar] if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=InLead] glowing
 
 #Win
 execute positioned 12 64 65 if score $game_duration global matches 0..4 run tp @a[team=Blue,distance=..2] 12 64 -66 0 0

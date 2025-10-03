@@ -20,6 +20,7 @@ execute if entity @s[tag=Sonar,predicate=!game:game_paused] run effect give @a[x
 execute if entity @s[tag=Sonar,predicate=!game:game_paused] run effect give @a[x=0,predicate=custom:on_blue_or_yellow_team] glowing infinite 1 true
 execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=#arrows,tag=!is_glowing] run function game:glowing/on
 execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=snowball,tag=!is_glowing] run function game:glowing/on
+execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=ender_pearl,tag=!is_glowing] run function game:glowing/on
 execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=egg,tag=!is_glowing] run function game:glowing/on
 execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=firework_rocket,tag=!is_glowing] run function game:glowing/on
 execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=fireball,tag=!is_glowing] run function game:glowing/on

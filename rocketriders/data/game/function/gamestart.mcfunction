@@ -125,8 +125,8 @@ scoreboard players reset @a[x=0,team=!Spectator] leaveSpec
 execute if predicate rr:enable_spectator_leave_cloud run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or fly into the green particle cluster to stop spectating!","color":"dark_green","italic":true}]
 execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" to stop spectating!","color":"dark_green","italic":true}]
-execute if predicate game:game_started run tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
-execute unless predicate game:game_started run tp @a[x=0,tag=JoinSpec] -95 213 78 -90 90
+execute if predicate game:game_in_progress run tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
+execute unless predicate game:game_in_progress run tp @a[x=0,tag=JoinSpec] -95 213 78 -90 90
 execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinSpec] run title @s actionbar ""
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
@@ -147,10 +147,10 @@ execute if predicate rr:enable_spectator_leave_cloud unless predicate game:game_
 execute if predicate rr:enable_spectator_leave_cloud unless predicate game:game_started if predicate custom:periodic_tick/3 positioned -89 213.5 78 run particle minecraft:dust{color:[0,1,0],scale:0.5} ~ ~ ~ 0.5 0.5 0.5 0.3 5 force @a[x=0,team=Spectator,predicate=!custom:belowroof]
 execute if predicate rr:enable_spectator_leave_cloud unless predicate game:game_started positioned -89 213.5 78 run tag @a[team=Spectator,distance=..1] add LeaveTeams
 
-execute unless predicate game:game_started unless predicate game:game_ended as @a[x=0,team=Spectator] unless entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s -95 213 78 -90 90
-execute if predicate game:game_started as @a[x=0,team=Spectator] if entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s 12 100 0.5 90 90
+execute unless predicate game:game_in_progress as @a[x=0,team=Spectator] unless entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s -95 213 78 -90 90
+execute if predicate game:game_in_progress as @a[x=0,team=Spectator] if entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s 12 100 0.5 90 90
 
-execute unless predicate game:game_started unless predicate game:game_ended run gamemode adventure @a[x=0,team=Spectator,gamemode=adventure]
+execute unless predicate game:game_in_progress run gamemode adventure @a[x=0,team=Spectator,gamemode=adventure]
 effect give @a[x=0,team=Spectator] invisibility infinite 0 true
 
 ##Disable knockback in pre-game queue
@@ -169,11 +169,11 @@ execute as @a[x=0,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,ta
 execute if entity @s[tag=!customLeaveHandling] run function game:leaveteams
 
 ##Facade Parkour
-execute unless predicate game:game_started as @a[x=-101,y=197,z=68,dx=12,dy=8,dz=19,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=!doing_facade_parkour,predicate=custom:stepping_on_player_head] run tag @s add doing_facade_parkour
-execute unless predicate game:game_started as @a[x=0,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=doing_facade_parkour] run title @s actionbar {color:"green",text:"Jump off to return to the base"}
-execute unless predicate game:game_started as @a[x=0,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=doing_facade_parkour] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] run function game:end_facade_parkour
-execute unless predicate game:game_started as @a[x=-101,y=202,z=60,dx=12,dy=1,dz=5,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=doing_facade_parkour] run function game:end_facade_parkour
-execute if predicate game:game_started run tag @a[x=0] remove doing_facade_parkour
+execute unless predicate game:game_in_progress as @a[x=-101,y=197,z=68,dx=12,dy=8,dz=19,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=!doing_facade_parkour,predicate=custom:stepping_on_player_head] run tag @s add doing_facade_parkour
+execute unless predicate game:game_in_progress as @a[x=0,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=doing_facade_parkour] run title @s actionbar {color:"green",text:"Jump off to return to the base"}
+execute unless predicate game:game_in_progress as @a[x=0,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=doing_facade_parkour] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] run function game:end_facade_parkour
+execute unless predicate game:game_in_progress as @a[x=-101,y=202,z=60,dx=12,dy=1,dz=5,gamemode=!spectator,predicate=custom:on_blue_or_yellow_team,tag=doing_facade_parkour] run function game:end_facade_parkour
+execute if predicate game:game_in_progress run tag @a[x=0] remove doing_facade_parkour
 tag @a[x=0,predicate=!custom:on_blue_or_yellow_team] remove doing_facade_parkour
 
 ##Countdown

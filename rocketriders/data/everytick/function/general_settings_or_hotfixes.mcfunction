@@ -67,8 +67,8 @@ scoreboard players reset @a[x=0,team=!Lobby,team=!Developer] displayinfo
 execute unless predicate rr:has_parkour run scoreboard players reset @a[x=0] toggleParkourTips
 
 #Launch pad in Modification Room
-execute unless predicate game:game_started as @a[x=-63.5,y=190.5,z=78.5,distance=..1] unless entity @s[team=!Lobby,team=!Developer] run effect give @s jump_boost 1 20 true
-execute unless predicate game:game_started as @a[x=-63.5,y=190.5,z=78.5,distance=1..10] unless entity @s[team=!Lobby,team=!Developer] run effect clear @s jump_boost
+execute if predicate rr:has_modification_room unless predicate game:game_in_progress as @a[x=-63.5,y=190.5,z=78.5,distance=..1] unless entity @s[team=!Lobby,team=!Developer] run effect give @s jump_boost 1 20 true
+execute if predicate rr:has_modification_room unless predicate game:game_in_progress as @a[x=-63.5,y=190.5,z=78.5,distance=1..10] unless entity @s[team=!Lobby,team=!Developer] run effect clear @s jump_boost
 
 #Lobby easter eggs
 function lobby:secrets/main
@@ -84,16 +84,15 @@ execute if score $lockmodroom CmdData matches 1 as @a[team=Lobby] at @s if predi
 execute if predicate rr:force_gamemodes as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
 
 #Spectators can't switch out of spectator mode (security, disabled in servermodes)
-execute if predicate rr:force_gamemodes if predicate game:game_started run gamemode spectator @a[x=0,team=Spectator,gamemode=!spectator]
-execute if predicate rr:force_gamemodes if predicate game:game_ended run gamemode spectator @a[x=0,team=Spectator,gamemode=!spectator]
-execute if predicate rr:force_gamemodes unless predicate game:game_started unless predicate game:game_ended run gamemode adventure @a[x=0,team=Spectator,gamemode=!adventure]
+execute if predicate rr:force_gamemodes if predicate game:game_in_progress run gamemode spectator @a[x=0,team=Spectator,gamemode=!spectator]
+execute if predicate rr:force_gamemodes unless predicate game:game_in_progress run gamemode adventure @a[x=0,team=Spectator,gamemode=!adventure]
 
 #Spectator void
 execute as @a[x=0,gamemode=spectator,predicate=custom:in_void] at @s run function game:void
 
 #Blue/Yellow players can't switch out of adventure mode before game (security, disabled in servermodes)
-execute if predicate rr:force_gamemodes unless predicate game:game_started unless predicate game:game_ended as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
-execute if predicate rr:force_gamemodes unless predicate game:game_started unless predicate game:game_ended as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
+execute if predicate rr:force_gamemodes unless predicate game:game_in_progress as @a[x=0,team=Blue,gamemode=!adventure] run gamemode adventure
+execute if predicate rr:force_gamemodes unless predicate game:game_in_progress as @a[x=0,team=Yellow,gamemode=!adventure] run gamemode adventure
 
 #Full offhand check
 tag @a[x=0] remove fullOffhand
@@ -117,12 +116,12 @@ tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect_cloud]
 
 #Fill portals before game starts
-execute unless predicate game:game_started unless predicate game:game_ended if predicate game:portal_type/default if entity @s[tag=EditedSettings] run function arenaclear:placeportals
+execute unless predicate game:game_in_progress if predicate game:portal_type/default if entity @s[tag=EditedSettings] run function arenaclear:placeportals
 
 #Disable damage gamerules if no game has started
-execute unless entity @s[predicate=game:game_started,predicate=!game:game_ended] run gamerule fallDamage false
-execute unless entity @s[predicate=game:game_started,predicate=!game:game_ended] run gamerule drowningDamage false
-execute unless entity @s[predicate=game:game_started,predicate=!game:game_ended] run gamerule fireDamage false
+execute unless entity @s[predicate=game:game_in_progress,predicate=!game:game_ended] run gamerule fallDamage false
+execute unless entity @s[predicate=game:game_in_progress,predicate=!game:game_ended] run gamerule drowningDamage false
+execute unless entity @s[predicate=game:game_in_progress,predicate=!game:game_ended] run gamerule fireDamage false
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active
@@ -179,17 +178,16 @@ execute as @a[x=0,scores={custom_team_color=1..}] unless entity @s[predicate=cus
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!noYZELO] as @a[x=0,predicate=!custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
 
 # Set item timer in xp bar in-game
-execute unless predicate game:game_started as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
-
-execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. run scoreboard players operation $item_time_progress var = @e[limit=1,x=0,type=armor_stand,tag=Selection] RandomItem
-execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. run scoreboard players operation $item_time_progress var *= $1000 constant
-execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. run data modify storage rocketriders:main item_time_progress set value {level:0}
-execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= $1200 constant
-execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= @e[limit=1,x=0,type=armor_stand,tag=Selection] MaxItemTime
-execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar with storage rocketriders:main item_time_progress
-execute if predicate game:game_started unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches ..2 as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
-
-execute if predicate game:game_started if predicate game:gamemode_components/no_item_timer as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
+execute unless predicate game:game_in_progress as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
+execute if predicate game:game_in_progress unless predicate game:game_ended unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. run scoreboard players operation $item_time_progress var = @e[limit=1,x=0,type=armor_stand,tag=Selection] RandomItem
+execute if predicate game:game_in_progress unless predicate game:game_ended unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. run scoreboard players operation $item_time_progress var *= $1000 constant
+execute if predicate game:game_in_progress unless predicate game:game_ended unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. run data modify storage rocketriders:main item_time_progress set value {level:0}
+execute if predicate game:game_in_progress unless predicate game:game_ended unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= $1200 constant
+execute if predicate game:game_in_progress unless predicate game:game_ended unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= @e[limit=1,x=0,type=armor_stand,tag=Selection] MaxItemTime
+execute if predicate game:game_in_progress unless predicate game:game_ended unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar with storage rocketriders:main item_time_progress
+execute if predicate game:game_in_progress unless predicate game:game_ended unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches ..2 as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
+execute if predicate game:game_in_progress unless predicate game:game_ended if predicate game:gamemode_components/no_item_timer as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
+execute if predicate game:game_in_progress if predicate game:game_ended as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
 
 # Remove flowing water sounds from the lobby
 stopsound @a[predicate=custom:above_roof] ambient minecraft:block.water.ambient

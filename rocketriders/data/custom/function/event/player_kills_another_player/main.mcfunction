@@ -14,5 +14,5 @@ execute if score $can_grant_achievements var matches 1 if predicate custom:is_on
 execute if score $can_grant_achievements var matches 1 unless predicate custom:alive run advancement grant @s only achievements:rr_challenges/revenge_from_grave
 
 # Under the Sea achievement
-execute if score $can_grant_achievements var matches 1 if predicate game:game_started if predicate custom:is_underwater run advancement grant @s only achievements:rr_challenges/under_the_sea
+execute if score $can_grant_achievements var matches 1 if predicate custom:is_underwater run advancement grant @s only achievements:rr_challenges/under_the_sea
 execute if score $can_grant_achievements var matches 1 if predicate custom:is_swimming run advancement grant @s only achievements:rr_challenges/under_the_sea

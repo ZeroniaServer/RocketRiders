@@ -68,7 +68,8 @@ execute if entity @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute
 execute if entity @s[scores={SDtime=10}] as @a[x=0,team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
 
 ##Places back portals
-execute if predicate game:portal_type/default run function arenaclear:placeportals
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,predicate=!rr_crusade:blue_portal_revealed] run function game:place_portal/blue
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,predicate=!rr_crusade:yellow_portal_revealed] run function game:place_portal/yellow
 
 ##Animated titles
 execute if entity @s[scores={SDtime=1}] unless score $skiptitles CmdData matches 1 run title @a[x=0] title ["",{"text":"It's a Tie!","color":"gray","bold":true}]

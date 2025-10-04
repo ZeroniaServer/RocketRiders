@@ -116,7 +116,8 @@ tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect_cloud]
 
 #Fill portals before game starts
-execute unless predicate game:game_running if predicate game:portal_type/default if entity @s[tag=EditedSettings] run function arenaclear:placeportals
+execute unless predicate game:game_running if entity @s[tag=EditedSettings] unless entity @s[tag=crusadeEnabled,predicate=!rr_crusade:blue_portal_revealed] run function game:place_portal/blue
+execute unless predicate game:game_running if entity @s[tag=EditedSettings] unless entity @s[tag=crusadeEnabled,predicate=!rr_crusade:yellow_portal_revealed] run function game:place_portal/yellow
 
 #Disable damage gamerules if no game has started
 execute unless entity @s[predicate=game:game_running,predicate=!game:match_over] run gamerule fallDamage false

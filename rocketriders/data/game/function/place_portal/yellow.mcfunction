@@ -1,0 +1,3 @@
+execute if predicate game:portal_type/default run function game:place_portal/default/yellow
+
+execute if predicate game:portal_type/crusade run function game:place_portal/crusade/yellow

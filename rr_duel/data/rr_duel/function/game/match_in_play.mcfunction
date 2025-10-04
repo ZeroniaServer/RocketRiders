@@ -25,11 +25,11 @@ execute unless predicate game:game_paused if score @s[tag=!Minute] RandomItem > 
 execute unless predicate game:game_paused if entity @s[tag=Minute] run function items:minutemix
 
 #win
-execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] unless block 11 38 -74 nether_portal run function rr_duel:game/winyellow
-execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] unless block 13 38 -74 nether_portal run function rr_duel:game/winyellow
+execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] if function game:check/blue_portal_broken run function rr_duel:game/winyellow
+execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] if function game:check/blue_portal_broken run function rr_duel:game/winyellow
 
-execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 13 38 74 nether_portal run function rr_duel:game/winblue
-execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] unless block 11 38 74 nether_portal run function rr_duel:game/winblue
+execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] if function game:check/yellow_portal_broken run function rr_duel:game/winblue
+execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] if function game:check/yellow_portal_broken run function rr_duel:game/winblue
 
 #arena clear cheesing
 execute if entity @e[x=0,type=marker,tag=PlacerClear] run tag @s remove CriteriaTrue

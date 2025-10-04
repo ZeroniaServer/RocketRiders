@@ -9,7 +9,7 @@
       "stepping_on": {
         "block": {
           "blocks": [
-            "minecraft:obsidian",
+            "minecraft:barrier",
             "minecraft:nether_portal",
             "minecraft:blue_stained_glass_pane",
             "minecraft:yellow_stained_glass_pane"

@@ -15,6 +15,10 @@ base_predicate = {
               "condition": "minecraft:all_of",
               "terms": [
                 {
+                  "condition": "minecraft:reference",
+                  "name": "game:blue_portal_revealed"
+                },
+                {
                   "condition": "minecraft:location_check",
                   "predicate": {
                     "position": {
@@ -50,6 +54,10 @@ base_predicate = {
             {
               "condition": "minecraft:all_of",
               "terms": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:yellow_portal_revealed"
+                },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
@@ -126,7 +134,7 @@ base_predicate = {
               "terms": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "rr_crusade:blue_portal_revealed"
+                  "name": "game:blue_portal_revealed"
                 },
                 {
                   "condition": "minecraft:location_check",
@@ -166,7 +174,7 @@ base_predicate = {
               "terms": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "rr_crusade:yellow_portal_revealed"
+                  "name": "game:yellow_portal_revealed"
                 },
                 {
                   "condition": "minecraft:location_check",

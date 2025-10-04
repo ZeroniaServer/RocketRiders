@@ -9,7 +9,7 @@ execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=rr_crusade:kit/arc
 execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=rr_crusade:kit/mage] run function custom:update_inventory/spell_wand
 
 execute if entity @s[tag=!doTying,scores={endtimer=1}] run function game:endstats
-execute if predicate rr_crusade:yellow_portal_revealed if predicate rr_crusade:blue_portal_revealed run tag @s add couldTie
+execute if predicate game:yellow_portal_revealed if predicate game:blue_portal_revealed run tag @s add couldTie
 execute if entity @s[tag=couldTie,tag=doTying,scores={endtimer=101}] run function game:endstats
 execute if entity @s[tag=!couldTie,tag=doTying,scores={endtimer=1}] run function game:endstats
 bossbar set rr_crusade:blue players none

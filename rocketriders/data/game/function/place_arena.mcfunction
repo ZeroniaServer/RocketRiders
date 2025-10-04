@@ -53,8 +53,8 @@ fill -14 34 -62 38 63 -66 minecraft:white_stained_glass replace #custom:baserepl
 
 #Set portals
 kill @e[x=0,type=text_display,tag=portal_frame_mask]
-execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,predicate=!rr_crusade:blue_portal_revealed] run function game:place_portal/blue
-execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,predicate=!rr_crusade:yellow_portal_revealed] run function game:place_portal/yellow
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,predicate=!game:blue_portal_revealed] run function game:place_portal/blue
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled,predicate=!game:yellow_portal_revealed] run function game:place_portal/yellow
 
 #Remove fire
 fill 39 64 67 -15 67 67 air replace fire

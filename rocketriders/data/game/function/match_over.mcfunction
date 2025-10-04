@@ -46,12 +46,8 @@ execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/defaul
 execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=!BothWon,scores={endtimer=101}] run title @a[x=0,team=!Lobby] actionbar {"text":""}
 
 ##System for ties (works with Double Portal modifier)
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 -74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,tag=DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 -74 nether_portal unless block 13 38 -74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 13 38 74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,tag=!DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 74 nether_portal run tag @s add SuddenDeath
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,tag=DoublePortal,scores={endtimer=1..100}] at @s unless block 11 38 74 nether_portal unless block 13 38 74 nether_portal run tag @s add SuddenDeath
+execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..100}] if function game:check/blue_portal_broken run tag @s add SuddenDeath
+execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..100}] if function game:check/yellow_portal_broken run tag @s add SuddenDeath
 execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/default,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..100}] run tag @s add SuddenDeath
 
 ##Post-tie phase and reset

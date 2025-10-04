@@ -25,7 +25,6 @@ tag @s add doStacking
 tag @s add stackingOn
 tag @s add customSaberMsg
 tag @s add SuddenDeathCustom
-tag @s[tag=DoublePortal] add DoublePortalWasOn
 tag @s[tag=SurpriseEgg] add SurpriseEggWasOn
 tag @s add SurpriseEggOff
 tag @s[tag=Chaos] add ChaosWasOn

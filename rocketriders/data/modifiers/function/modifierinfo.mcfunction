@@ -53,8 +53,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=12}] unless predicate game:modifiers/hardcore/on run tellraw @s ["",{"text":"Hardcore","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Double Portal
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=13},tag=DoublePortal] run tellraw @s ["",{"text":"Double Portal","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Both portals must be broken to win the game.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=13},tag=!DoublePortal] run tellraw @s ["",{"text":"Double Portal","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=13}] if predicate game:modifiers/double_portal/on run tellraw @s ["",{"text":"Double Portal","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Both portals must be broken to win the game.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=13}] unless predicate game:modifiers/double_portal/on run tellraw @s ["",{"text":"Double Portal","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Clutter Collector
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=14}] if predicate game:modifiers/clutter_collector/on run tellraw @s ["",{"text":"Clutter Collector","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Explosions do no block damage between the bases.","color":"gray","italic":true}]

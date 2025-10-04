@@ -13,7 +13,6 @@ scoreboard players set $red_for_blue gamemode_components 1
 tag @s remove switchGamemodes
 tag @s add chaseEnabled
 tag @s add tyingOff
-tag @s[tag=DoublePortal] add DoublePortalWasOn
 tag @s add portalDecosOff
 tag @s add preventionOff
 tag @s add customPrevention

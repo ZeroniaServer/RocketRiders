@@ -13,7 +13,7 @@ execute if entity @s[tag=SplashStreams] run data modify storage rocketriders:mod
 execute if entity @s[tag=SpamClick] run data modify storage rocketriders:modifiers list append value {"text":"Spam Click","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players have no delay between melee attacks on enemies.","color":"white"}]}}
 execute if entity @s[tag=NinjaJump] run data modify storage rocketriders:modifiers list append value {"text":"Ninja Jump","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players have increased speed and jump height.","color":"white"}]}}
 execute if predicate game:modifiers/hardcore/on run data modify storage rocketriders:modifiers list append value {"text":"Hardcore","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players have three hearts of health and bases are one block thick.","color":"white"}]}}
-execute if entity @s[tag=DoublePortal] run data modify storage rocketriders:modifiers list append value {"text":"Double Portal","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Both portals must be broken to win the game.","color":"white"}]}}
+execute if predicate game:modifiers/double_portal/on run data modify storage rocketriders:modifiers list append value {"text":"Double Portal","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Both portals must be broken to win the game.","color":"white"}]}}
 execute if predicate game:modifiers/clutter_collector/on run data modify storage rocketriders:modifiers list append value {"text":"Clutter Collector","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Explosions do no block damage between the bases.","color":"white"}]}}
 execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers list append value {"text":"Chaos","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Special Missiles are obtainable in regular gameplay.","color":"white"}]}}
 execute if predicate game:modifiers/collision_control/on run data modify storage rocketriders:modifiers list append value {"text":"Collision Control","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Missiles cannot be spawned inside the enemy base.","color":"white"}]}}
@@ -38,7 +38,7 @@ execute if entity @s[tag=SplashStreams] run data modify storage rocketriders:mod
 execute if entity @s[tag=SpamClick] run data modify storage rocketriders:modifiers length append value 10
 execute if entity @s[tag=NinjaJump] run data modify storage rocketriders:modifiers length append value 10
 execute if predicate game:modifiers/hardcore/on run data modify storage rocketriders:modifiers length append value 8
-execute if entity @s[tag=DoublePortal] run data modify storage rocketriders:modifiers length append value 13
+execute if predicate game:modifiers/double_portal/on run data modify storage rocketriders:modifiers length append value 13
 execute if predicate game:modifiers/clutter_collector/on run data modify storage rocketriders:modifiers length append value 17
 execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers length append value 5
 execute if predicate game:modifiers/collision_control/on run data modify storage rocketriders:modifiers length append value 17

@@ -11,7 +11,6 @@ scoreboard players set $no_portals gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add ctfEnabled
-tag @s[tag=DoublePortal] add DoublePortalWasOn
 function arenaclear:unlockdecos
 tag @s add preventionOff
 tag @s add portalDecosOff

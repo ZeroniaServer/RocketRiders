@@ -129,6 +129,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Hardcore
 execute if data storage rocketriders:storage {Tags:["Hardcore"]} run data modify storage rocketriders:storage config.hardcore set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Hardcore"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"HardcoreWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DoublePortal] run scoreboard players set $double_portal config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove DoublePortal
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove DoublePortal
+execute if data storage rocketriders:storage {Tags:["DoublePortal"]} run data modify storage rocketriders:storage config.double_portal set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"DoublePortal"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"DoublePortalWasOn"}
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $custom_team_colors gamemode_components 1

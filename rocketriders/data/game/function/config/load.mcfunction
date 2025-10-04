@@ -39,6 +39,14 @@ execute store result score $molerat config run data get storage rocketriders:mai
 execute unless score $molerat config matches 0..1 run scoreboard players reset $molerat config
 execute if score $molerat config matches 0 run scoreboard players reset $molerat config
 
+execute store result score $hardcore config run data get storage rocketriders:main "config/load".config.hardcore
+execute unless score $hardcore config matches 0..1 run scoreboard players reset $hardcore config
+execute if score $hardcore config matches 0 run scoreboard players reset $hardcore config
+
+execute store result score $double_portal config run data get storage rocketriders:main "config/load".config.double_portal
+execute unless score $double_portal config matches 0..1 run scoreboard players reset $double_portal config
+execute if score $double_portal config matches 0 run scoreboard players reset $double_portal config
+
 execute store result score $clutter_collector config run data get storage rocketriders:main "config/load".config.clutter_collector
 execute unless score $clutter_collector config matches 0..1 run scoreboard players reset $clutter_collector config
 execute if score $clutter_collector config matches 0 run scoreboard players reset $clutter_collector config
@@ -58,10 +66,6 @@ execute if score $unstable_tnt config matches 0 run scoreboard players reset $un
 execute store result score $hobbits config run data get storage rocketriders:main "config/load".config.hobbits
 execute unless score $hobbits config matches 0..1 run scoreboard players reset $hobbits config
 execute if score $hobbits config matches 0 run scoreboard players reset $hobbits config
-
-execute store result score $hardcore config run data get storage rocketriders:main "config/load".config.hardcore
-execute unless score $hardcore config matches 0..1 run scoreboard players reset $hardcore config
-execute if score $hardcore config matches 0 run scoreboard players reset $hardcore config
 
 execute store result score $instant_tnt_explosions config run data get storage rocketriders:main "config/load".config.instant_tnt_explosions
 execute unless score $instant_tnt_explosions config matches 0..1 run scoreboard players reset $instant_tnt_explosions config

@@ -13,8 +13,6 @@ tag @s remove stackingWasOff
 tag @s remove stackingOn
 tag @s remove customSaberMsg
 tag @s remove SuddenDeathCustom
-tag @s[tag=DoublePortalWasOn] add DoublePortal
-tag @s[tag=DoublePortalWasOn] remove DoublePortalWasOn
 tag @s remove SurpriseEggOff
 tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
 tag @s remove SurpriseEggWasOn

@@ -78,14 +78,17 @@ execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -
 execute if predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:bedrock strict
 execute unless predicate game:portal_type/default run fill -89 195 59 -101 201 59 air strict
 execute if predicate game:portal_type/default run fill -101 195 59 -89 201 59 minecraft:nether_portal[axis=x] strict
-execute if predicate game:portal_type/default if predicate game:gamemode_components/arena/bedrock_frame run fill -95 195 59 -95 201 59 minecraft:bedrock strict
-execute if predicate game:portal_type/default unless predicate game:gamemode_components/arena/bedrock_frame run fill -95 195 59 -95 201 59 minecraft:obsidian strict
+execute if predicate game:portal_type/default run fill -95 195 59 -95 201 59 minecraft:obsidian strict
+execute if predicate game:portal_type/small run fill -97 196 59 -93 199 59 minecraft:obsidian strict
+execute if predicate game:portal_type/small run fill -96 197 59 -94 198 59 minecraft:nether_portal[axis=x] strict
+
 execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:obsidian strict
 execute if predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:bedrock strict
 execute unless predicate game:portal_type/default run fill -101 195 97 -89 201 97 air strict
 execute if predicate game:portal_type/default run fill -101 195 97 -89 201 97 minecraft:nether_portal[axis=x] strict
-execute if predicate game:portal_type/default if predicate game:gamemode_components/arena/bedrock_frame run fill -95 201 97 -95 195 97 minecraft:bedrock strict
-execute if predicate game:portal_type/default unless predicate game:gamemode_components/arena/bedrock_frame run fill -95 201 97 -95 195 97 minecraft:obsidian strict
+execute if predicate game:portal_type/default run fill -95 201 97 -95 195 97 minecraft:obsidian strict
+execute if predicate game:portal_type/small run fill -97 196 97 -93 199 97 minecraft:obsidian strict
+execute if predicate game:portal_type/small run fill -96 197 97 -94 198 97 minecraft:nether_portal[axis=x] strict
 
 # Bedrock Frames
 execute if predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 bedrock

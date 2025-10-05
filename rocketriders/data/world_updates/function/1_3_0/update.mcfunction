@@ -219,6 +219,7 @@ scoreboard objectives remove smallerTeamCount
 scoreboard objectives remove largerTeam
 scoreboard objectives remove smallerTeam
 scoreboard objectives remove LaunchCrossbow
+scoreboard objectives remove respawn
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

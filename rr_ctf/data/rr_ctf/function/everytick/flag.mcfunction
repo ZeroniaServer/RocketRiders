@@ -97,8 +97,8 @@ execute if score FY1: FlagScore matches ..29 run setblock 34 65 64 white_stained
 execute positioned 34 65 64 if score FY1: FlagScore matches 1..29 run playsound entity.chicken.egg master @a[x=0] ~ ~ ~ 1 0.8
 execute if score FY1: FlagScore matches 1..29 run scoreboard players remove FY1: FlagScore 1
 
-execute if predicate game:match_in_play if score FY1: FlagScore matches 0 positioned 34 65 64 if entity @e[type=player,team=Blue,distance=..3] unless entity @a[x=0,tag=CarryFY1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..2,scores={respawn=0},predicate=custom:alive] add CarryFY1
-execute if predicate game:match_in_play if score FY1: FlagScore matches 0 positioned 34 65 64 if entity @e[type=player,team=Blue,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFY1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..7,scores={MineWhiteGlass=1..,respawn=0},predicate=custom:alive] add CarryFY1
+execute if predicate game:match_in_play if score FY1: FlagScore matches 0 positioned 34 65 64 if entity @e[type=player,team=Blue,distance=..3] unless entity @a[x=0,tag=CarryFY1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..2,predicate=custom:alive] add CarryFY1
+execute if predicate game:match_in_play if score FY1: FlagScore matches 0 positioned 34 65 64 if entity @e[type=player,team=Blue,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFY1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..7,scores={MineWhiteGlass=1..},predicate=custom:alive] add CarryFY1
 execute if predicate game:match_in_play if entity @e[x=0,type=player,team=Blue,tag=CarryFY1] run scoreboard players set FY1: FlagScore -1
 
 execute if score FY1: FlagScore matches 26 run fill 34 65 63 30 72 64 air replace yellow_wool
@@ -144,8 +144,8 @@ execute if score FY2: FlagScore matches ..29 run setblock -10 65 64 white_staine
 execute positioned -10 65 64 if score FY2: FlagScore matches ..29 if score FY2: FlagScore matches 1.. run playsound entity.chicken.egg master @a[x=0] ~ ~ ~ 1 0.8
 execute if score FY2: FlagScore matches ..29 if score FY2: FlagScore matches 1.. run scoreboard players remove FY2: FlagScore 1
 
-execute if predicate game:match_in_play if score FY2: FlagScore matches 0 positioned -10 65 64 if entity @e[type=player,team=Blue,distance=..3] unless entity @a[x=0,tag=CarryFY2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..2,scores={respawn=0},predicate=custom:alive] add CarryFY2
-execute if predicate game:match_in_play if score FY2: FlagScore matches 0 positioned -10 65 64 if entity @e[type=player,team=Blue,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFY2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..7,scores={MineWhiteGlass=1..,respawn=0},predicate=custom:alive] add CarryFY2
+execute if predicate game:match_in_play if score FY2: FlagScore matches 0 positioned -10 65 64 if entity @e[type=player,team=Blue,distance=..3] unless entity @a[x=0,tag=CarryFY2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..2,predicate=custom:alive] add CarryFY2
+execute if predicate game:match_in_play if score FY2: FlagScore matches 0 positioned -10 65 64 if entity @e[type=player,team=Blue,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFY2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Blue,distance=..7,scores={MineWhiteGlass=1..},predicate=custom:alive] add CarryFY2
 execute if predicate game:match_in_play if entity @e[x=0,type=player,team=Blue,tag=CarryFY2] run scoreboard players set FY2: FlagScore -1
 
 execute if score FY2: FlagScore matches 26 run fill -10 64 63 -14 72 64 air replace yellow_wool
@@ -191,8 +191,8 @@ execute if score FB1: FlagScore matches ..29 run setblock -10 65 -64 white_stain
 execute positioned -10 65 -64 if score FB1: FlagScore matches ..29 if score FB1: FlagScore matches 1.. run playsound entity.chicken.egg master @a[x=0] ~ ~ ~ 1 0.8
 execute if score FB1: FlagScore matches ..29 if score FB1: FlagScore matches 1.. run scoreboard players remove FB1: FlagScore 1
 
-execute if predicate game:match_in_play if score FB1: FlagScore matches 0 positioned -10 65 -64 if entity @e[type=player,team=Yellow,distance=..3] unless entity @a[x=0,tag=CarryFB1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..2,scores={respawn=0},predicate=custom:alive] add CarryFB1
-execute if predicate game:match_in_play if score FB1: FlagScore matches 0 positioned -10 65 -64 if entity @e[type=player,team=Yellow,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFB1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..7,scores={MineWhiteGlass=1..,respawn=0},predicate=custom:alive] add CarryFB1
+execute if predicate game:match_in_play if score FB1: FlagScore matches 0 positioned -10 65 -64 if entity @e[type=player,team=Yellow,distance=..3] unless entity @a[x=0,tag=CarryFB1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..2,predicate=custom:alive] add CarryFB1
+execute if predicate game:match_in_play if score FB1: FlagScore matches 0 positioned -10 65 -64 if entity @e[type=player,team=Yellow,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFB1] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..7,scores={MineWhiteGlass=1..},predicate=custom:alive] add CarryFB1
 execute if predicate game:match_in_play if entity @e[x=0,type=player,team=Yellow,tag=CarryFB1] run scoreboard players set FB1: FlagScore -1
 
 execute if score FB1: FlagScore matches 26 run fill -10 64 -65 -14 72 -64 air replace #custom:wool
@@ -248,8 +248,8 @@ execute if score FB2: FlagScore matches ..29 run setblock 34 65 -64 white_staine
 execute positioned 34 65 -64 if score FB2: FlagScore matches 1..29 run playsound entity.chicken.egg master @a[x=0] ~ ~ ~ 1 0.8
 execute if score FB2: FlagScore matches 1..29 run scoreboard players remove FB2: FlagScore 1
 
-execute if predicate game:match_in_play if score FB2: FlagScore matches 0 positioned 34 65 -64 if entity @e[type=player,team=Yellow,distance=..3] unless entity @a[x=0,tag=CarryFB2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..2,scores={respawn=0},predicate=custom:alive] add CarryFB2
-execute if predicate game:match_in_play if score FB2: FlagScore matches 0 positioned 34 65 -64 if entity @e[type=player,team=Yellow,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFB2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..7,scores={MineWhiteGlass=1..,respawn=0},predicate=custom:alive] add CarryFB2
+execute if predicate game:match_in_play if score FB2: FlagScore matches 0 positioned 34 65 -64 if entity @e[type=player,team=Yellow,distance=..3] unless entity @a[x=0,tag=CarryFB2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..2,predicate=custom:alive] add CarryFB2
+execute if predicate game:match_in_play if score FB2: FlagScore matches 0 positioned 34 65 -64 if entity @e[type=player,team=Yellow,distance=..7,scores={MineWhiteGlass=1..}] unless entity @a[x=0,tag=CarryFB2] run tag @e[type=player,limit=1,sort=nearest,tag=!CarryFlag,team=Yellow,distance=..7,scores={MineWhiteGlass=1..},predicate=custom:alive] add CarryFB2
 execute if predicate game:match_in_play if entity @e[x=0,type=player,team=Yellow,tag=CarryFB2] run scoreboard players set FB2: FlagScore -1
 
 execute if score FB2: FlagScore matches 26 run fill 30 64 -64 34 72 -65 air replace #custom:wool
@@ -375,7 +375,3 @@ execute if predicate game:match_in_play if entity @s[tag=Sonar] if score $glowin
 #Flip missile tags
 execute if predicate game:match_in_play run tag @a[x=0,tag=CarryFlag,tag=!FlipMissile] add FlipMissile
 execute if predicate game:match_in_play run tag @a[x=0,tag=!CarryFlag] remove FlipMissile
-
-#Respawn clears
-execute if predicate game:match_in_play as @e[x=0,type=marker,tag=YellowSpawnZone] at @s run scoreboard players set @a[team=Yellow,tag=!beenOnBlue,distance=..6] respawn 0
-execute if predicate game:match_in_play as @e[x=0,type=marker,tag=BlueSpawnZone] at @s run scoreboard players set @a[team=Blue,tag=!beenOnYellow,distance=..6] respawn 0

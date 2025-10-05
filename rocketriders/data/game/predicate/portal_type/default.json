@@ -9,7 +9,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/crusade_portals"
+        "name": "game:gamemode_components/small_portals"
       }
     ]
   }

@@ -28,16 +28,15 @@ scoreboard players reset $y2port var
 scoreboard players reset $b1port var
 scoreboard players reset $b2port var
 
-#Crusade Mode override behavior
-execute if predicate game:portal_type/crusade run fill 21 175 67 3 178 67 air replace #custom:piston strict
-execute if predicate game:portal_type/crusade run fill 21 175 -67 3 178 -67 air replace #custom:piston strict
+execute if predicate game:portal_type/small run fill 21 175 67 3 178 67 air replace #custom:piston strict
+execute if predicate game:portal_type/small run fill 21 175 -67 3 178 -67 air replace #custom:piston strict
 
-execute if predicate game:portal_type/crusade if score $yport var matches 1 run fill 21 56 67 3 44 67 barrier strict
-execute if predicate game:portal_type/crusade if score $yport var matches 1 run fill 20 55 67 4 45 67 nether_portal strict
-execute if predicate game:portal_type/crusade if score $yport var matches 1 run fill 21 175 67 3 178 67 air replace #custom:piston strict
-execute if predicate game:portal_type/crusade if score $bport var matches 1 run fill 21 56 -67 3 44 -67 barrier strict
-execute if predicate game:portal_type/crusade if score $bport var matches 1 run fill 20 55 -67 4 45 -67 nether_portal strict
-execute if predicate game:portal_type/crusade if score $bport var matches 1 run fill 21 175 -67 3 178 -67 air replace #custom:piston strict
+execute if predicate game:portal_type/small if score $yport var matches 1 run fill 21 56 67 3 44 67 barrier strict
+execute if predicate game:portal_type/small if score $yport var matches 1 run fill 20 55 67 4 45 67 nether_portal strict
+execute if predicate game:portal_type/small if score $yport var matches 1 run fill 21 175 67 3 178 67 air replace #custom:piston strict
+execute if predicate game:portal_type/small if score $bport var matches 1 run fill 21 56 -67 3 44 -67 barrier strict
+execute if predicate game:portal_type/small if score $bport var matches 1 run fill 20 55 -67 4 45 -67 nether_portal strict
+execute if predicate game:portal_type/small if score $bport var matches 1 run fill 21 175 -67 3 178 -67 air replace #custom:piston strict
 scoreboard players reset $yport var
 scoreboard players reset $bport var
 

@@ -6,7 +6,7 @@ scoreboard players set $config_override.clutter_collector gamemode_components -1
 scoreboard players set $config_override.hardcore gamemode_components -1
 scoreboard players set $config_override.molerat gamemode_components -1
 scoreboard players set $config_override.rocket_residers gamemode_components -1
-scoreboard players set $crusade_portals gamemode_components 1
+scoreboard players set $small_portals gamemode_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage gamemode_components 1
 scoreboard players set $explosions_crack_deepslate_bricks gamemode_components 1
 scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1

@@ -10,6 +10,6 @@ execute if predicate game:portal_type/default in minecraft:overworld unless bloc
 execute if predicate game:portal_type/default in minecraft:overworld unless block 13 38 -74 minecraft:nether_portal run return 1
 execute if predicate game:portal_type/default run return fail
 
-# Small (crusade) type
-execute if predicate game:portal_type/crusade in minecraft:overworld unless block 4 45 -67 minecraft:nether_portal run return 1
-execute if predicate game:portal_type/crusade run return fail
+# Small type
+execute if predicate game:portal_type/small in minecraft:overworld unless block 4 45 -67 minecraft:nether_portal run return 1
+execute if predicate game:portal_type/small run return fail

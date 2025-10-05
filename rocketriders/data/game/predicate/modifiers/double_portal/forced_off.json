@@ -26,28 +26,11 @@
       "range": -1
     },
     {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$crusade_portals"
-        },
-        "score": "gamemode_components"
-      },
-      "range": 1
-    },
-    {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$no_portals"
-        },
-        "score": "gamemode_components"
-      },
-      "range": 1
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:reference",
+        "name": "game:portal_type/default"
+      }
     }
   ]
 }

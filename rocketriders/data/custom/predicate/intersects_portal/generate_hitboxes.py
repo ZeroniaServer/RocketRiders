@@ -124,7 +124,7 @@ base_predicate = {
       "terms": [
         {
           "condition": "minecraft:reference",
-          "name": "game:portal_type/crusade"
+          "name": "game:portal_type/small"
         },
         {
           "condition": "minecraft:any_of",

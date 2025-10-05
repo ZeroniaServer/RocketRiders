@@ -4,7 +4,7 @@
     "type": "minecraft:score",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$crusade_portals"
+      "name": "$small_portals"
     },
     "score": "gamemode_components"
   },

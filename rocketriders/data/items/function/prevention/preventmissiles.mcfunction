@@ -9,11 +9,10 @@ execute if predicate game:portal_type/default run fill -10 58 -74 34 37 -74 resi
 execute if predicate game:portal_type/default run fill -10 58 74 34 37 74 resin_block replace barrier strict
 execute if predicate game:portal_type/default run fill -10 58 74 34 37 74 resin_bricks replace nether_portal strict
 
-#Crusade Mode override
-execute if predicate game:portal_type/crusade run fill 3 56 67 21 44 67 resin_block replace barrier strict
-execute if predicate game:portal_type/crusade run fill 3 56 67 21 44 67 resin_bricks replace nether_portal strict
-execute if predicate game:portal_type/crusade run fill 3 56 -67 21 44 -67 resin_block replace barrier strict
-execute if predicate game:portal_type/crusade run fill 3 56 -67 21 44 -67 resin_bricks replace nether_portal strict
+execute if predicate game:portal_type/small run fill 3 56 67 21 44 67 resin_block replace barrier strict
+execute if predicate game:portal_type/small run fill 3 56 67 21 44 67 resin_bricks replace nether_portal strict
+execute if predicate game:portal_type/small run fill 3 56 -67 21 44 -67 resin_block replace barrier strict
+execute if predicate game:portal_type/small run fill 3 56 -67 21 44 -67 resin_bricks replace nether_portal strict
 
 ##Individual missile detection
 #Auxiliary
@@ -102,11 +101,10 @@ execute if predicate game:portal_type/default run fill -10 58 -74 34 37 -74 neth
 execute if predicate game:portal_type/default run fill -10 58 74 34 37 74 barrier replace resin_block strict
 execute if predicate game:portal_type/default run fill -10 58 74 34 37 74 nether_portal[axis=x] replace resin_bricks strict
 
-#Crusade Mode override
-execute if predicate game:portal_type/crusade run fill 3 56 67 21 44 67 barrier replace resin_block strict
-execute if predicate game:portal_type/crusade run fill 3 56 67 21 44 67 nether_portal[axis=x] replace resin_bricks strict
-execute if predicate game:portal_type/crusade run fill 3 56 -67 21 44 -67 barrier replace resin_block strict
-execute if predicate game:portal_type/crusade run fill 3 56 -67 21 44 -67 nether_portal[axis=x] replace resin_bricks strict
+execute if predicate game:portal_type/small run fill 3 56 67 21 44 67 barrier replace resin_block strict
+execute if predicate game:portal_type/small run fill 3 56 67 21 44 67 nether_portal[axis=x] replace resin_bricks strict
+execute if predicate game:portal_type/small run fill 3 56 -67 21 44 -67 barrier replace resin_block strict
+execute if predicate game:portal_type/small run fill 3 56 -67 21 44 -67 nether_portal[axis=x] replace resin_bricks strict
 
 ##All missiles
 execute if entity @s[scores={Unable=1..}] run tag @s add strict

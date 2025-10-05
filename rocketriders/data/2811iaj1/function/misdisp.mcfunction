@@ -1,3 +1,3 @@
 ##Notify player about Missile Display room
-tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"Tutorial","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You've found the Missile Display area. You can use the lectern to view all missiles in the game and learn how everything looks.","color":"gray"}]
+tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"Tutorial","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You've found the Missile Display Area! Use the lectern to select a missile to view. Cycle through them and familiarise yourself with the layout of each missile!","color":"gray"}]
 execute at @s run playsound minecraft:block.note_block.iron_xylophone master @s ~ ~ ~ 0.5 2

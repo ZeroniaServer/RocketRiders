@@ -1,4 +1,9 @@
 scoreboard players set $chunk_clear_progress global 0
+
+# instantly clear pistons
+function arenaclear:clear_missiles/loop with storage rocketriders:arena_clear missile_regions[-1]
+
+# schedule clear of chunks
 schedule function arenaclear:brute_force/air/0 1t
 schedule function arenaclear:brute_force/air/1 2t
 schedule function arenaclear:brute_force/air/2 3t

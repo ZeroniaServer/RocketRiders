@@ -24,6 +24,10 @@ tag @s[tag=missileflip,tag=bluemissile] add wasblue
 execute if entity @s[tag=missileflip,tag=yellowmissile,tag=wasyellow] run function items:flip/flipyellow
 execute if entity @s[tag=missileflip,tag=bluemissile,tag=wasblue] run function items:flip/flipblue
 
+##Mark Chunks
+execute if entity @s[tag=bluemissile] positioned as @s positioned ~ ~-5 ~ run function items:mark_missile_regions/south
+execute if entity @s[tag=yellowmissile] positioned as @s positioned ~ ~-5 ~ run function items:mark_missile_regions/north
+
 ##Prevention
 #Void
 execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearvoid run tag @s add void

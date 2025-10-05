@@ -49,11 +49,14 @@ execute if entity @s[scores={TopCorner=2}] run place template game:blue_spikesid
 execute if entity @s[scores={TopCorner=2}] if predicate game:gamemode_components/red_for_blue run fill 20 63 -51 24 60 -47 minecraft:red_stained_glass replace minecraft:blue_stained_glass strict
 execute if entity @s[scores={TopCorner=2}] if predicate game:gamemode_components/red_for_blue run fill 19 59 -52 28 63 -43 minecraft:pink_stained_glass replace minecraft:cyan_stained_glass strict
 
+execute if entity @s[scores={BottomDeco=2}] run place template game:blue_spikebottom 8 34 -51 none none 1 0 strict
+execute if entity @s[scores={BottomDeco=2}] if predicate game:gamemode_components/red_for_blue run fill -14 34 -51 38 49 -29 minecraft:red_stained_glass replace minecraft:blue_stained_glass strict
+execute if entity @s[scores={BottomDeco=2}] if predicate game:gamemode_components/red_for_blue run fill -14 34 -51 38 49 -37 minecraft:pink_stained_glass replace minecraft:cyan_stained_glass strict
+
 execute if entity @s[scores={MiddleDeco=2}] run place template game:blue_spikemid_right 7 50 -51 none none 1 0 strict
 execute if entity @s[scores={MiddleDeco=2}] run place template game:blue_spikemid_left -14 50 -51 none none 1 0 strict
-execute if entity @s[scores={BottomDeco=2}] run place template game:blue_spikebottom 8 34 -51 none none 1 0 strict
-execute if entity @s[scores={BottomDeco=2}] if predicate game:gamemode_components/red_for_blue run fill -14 34 -51 38 56 -29 minecraft:red_stained_glass replace minecraft:blue_stained_glass strict
-execute if entity @s[scores={BottomDeco=2}] if predicate game:gamemode_components/red_for_blue run fill -14 34 -51 38 61 -37 minecraft:pink_stained_glass replace minecraft:cyan_stained_glass strict
+execute if entity @s[scores={MiddleDeco=2}] if predicate game:gamemode_components/red_for_blue run fill -14 50 -51 38 56 -29 minecraft:red_stained_glass replace minecraft:blue_stained_glass strict
+execute if entity @s[scores={MiddleDeco=2}] if predicate game:gamemode_components/red_for_blue run fill -14 50 -51 38 61 -37 minecraft:pink_stained_glass replace minecraft:cyan_stained_glass strict
 
 #Layered - Blue
 execute if entity @s[scores={MiddleDeco=3}] unless predicate game:gamemode_components/red_for_blue run fill 38 34 -49 -14 40 -51 minecraft:blue_stained_glass replace air strict

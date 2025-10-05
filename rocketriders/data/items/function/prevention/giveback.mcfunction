@@ -1,127 +1,154 @@
 ##Gives back the appropriate missile when its placement has been prevented
 
+execute as @a unless items entity @s weapon.mainhand * run tag @s add giveback.mainhand_free
+
 ##Individual missiles
 #Auxiliary
 scoreboard players remove @a[x=0,tag=BackAux,limit=1] AuxSpawned 1
 tag @a[x=0,tag=BackAux,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackAux,gamemode=!creative,limit=1] at @s run function items:missile/heavy/giveaux
+execute as @a[x=0,tag=BackAux,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/heavy/auxiliary
+execute as @a[x=0,tag=BackAux,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/heavy/auxiliary
 
 #TomaTwo
 scoreboard players remove @a[x=0,tag=BackToma,limit=1] TomaSpawned 1
 tag @a[x=0,tag=BackToma,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackToma,gamemode=!creative,limit=1] at @s run function items:missile/normal/givetoma
+execute as @a[x=0,tag=BackToma,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/tomatwo
+execute as @a[x=0,tag=BackToma,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/tomatwo
 
 #Chronullifier
 scoreboard players remove @a[x=0,tag=BackNull,limit=1] NullSpawned 1
 tag @a[x=0,tag=BackNull,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackNull,gamemode=!creative,limit=1] at @s run function items:missile/normal/givenull
+execute as @a[x=0,tag=BackNull,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/chronullifier
+execute as @a[x=0,tag=BackNull,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/chronullifier
 
 #Warhead
 scoreboard players remove @a[x=0,tag=BackWar,limit=1] WarSpawned 1
 tag @a[x=0,tag=BackWar,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackWar,gamemode=!creative,limit=1] at @s run function items:missile/heavy/givewar
+execute as @a[x=0,tag=BackWar,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/heavy/warhead
+execute as @a[x=0,tag=BackWar,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/heavy/warhead
 
 #Thunderbolt
 scoreboard players remove @a[x=0,tag=BackBolt,limit=1] ThunSpawned 1
 tag @a[x=0,tag=BackBolt,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackBolt,gamemode=!creative,limit=1] at @s run function items:missile/lightning/givethun
+execute as @a[x=0,tag=BackBolt,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/lightning/thunderbolt
+execute as @a[x=0,tag=BackBolt,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/lightning/thunderbolt
 
 #Hurricane
 scoreboard players remove @a[x=0,tag=BackHur,limit=1] HurSpawned 1
 tag @a[x=0,tag=BackHur,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackHur,gamemode=!creative,limit=1] at @s run function items:missile/lightning/givehur
+execute as @a[x=0,tag=BackHur,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/lightning/hurricane
+execute as @a[x=0,tag=BackHur,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/lightning/hurricane
 
 #Elder Guardian
 scoreboard players remove @a[x=0,tag=BackGuard,limit=1] GuardSpawned 1
 tag @a[x=0,tag=BackGuard,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackGuard,gamemode=!creative,limit=1] at @s run function items:missile/normal/giveeguard
+execute as @a[x=0,tag=BackGuard,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/elder_guardian
+execute as @a[x=0,tag=BackGuard,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/elder_guardian
 
 #A.N.T
 scoreboard players remove @a[x=0,tag=BackAnt,limit=1] AntsSpawned 1
 tag @a[x=0,tag=BackAnt,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackAnt,gamemode=!creative,limit=1] at @s run function items:missile/normal/giveant
+execute as @a[x=0,tag=BackAnt,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/ant
+execute as @a[x=0,tag=BackAnt,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/ant
 
 #Blade
 scoreboard players remove @a[x=0,tag=BackBlade,limit=1] BladeSpawned 1
 tag @a[x=0,tag=BackBlade,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackBlade,gamemode=!creative,limit=1] at @s run function items:missile/normal/giveblade
+execute as @a[x=0,tag=BackBlade,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/blade
+execute as @a[x=0,tag=BackBlade,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/blade
 
 #Rifter
 scoreboard players remove @a[x=0,tag=BackRift,limit=1] RifterSpawned 1
 tag @a[x=0,tag=BackRift,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackRift,gamemode=!creative,limit=1] at @s run function items:missile/heavy/giverift
+execute as @a[x=0,tag=BackRift,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/heavy/rifter
+execute as @a[x=0,tag=BackRift,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/heavy/rifter
 
 #Juggerbuster
 scoreboard players remove @a[x=0,tag=BackJug,limit=1] JugbSpawned 1
 tag @a[x=0,tag=BackJug,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackJug,gamemode=!creative,limit=1] at @s run function items:missile/heavy/givejbuster
+execute as @a[x=0,tag=BackJug,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/heavy/juggerbuster
+execute as @a[x=0,tag=BackJug,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/heavy/juggerbuster
 
 #Slasher
 scoreboard players remove @a[x=0,tag=BackSlash,limit=1] SlashSpawned 1
 tag @a[x=0,tag=BackSlash,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackSlash,gamemode=!creative,limit=1] at @s run function items:missile/normal/giveslash
+execute as @a[x=0,tag=BackSlash,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/slasher
+execute as @a[x=0,tag=BackSlash,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/slasher
 
 #Catapult
 scoreboard players remove @a[x=0,tag=BackCata,limit=1] CataSpawned 1
 tag @a[x=0,tag=BackCata,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackCata,gamemode=!creative,limit=1] at @s run function items:missile/normal/givecata
+execute as @a[x=0,tag=BackCata,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/catapult
+execute as @a[x=0,tag=BackCata,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/catapult
 
 #Citadel
 scoreboard players remove @a[x=0,tag=BackCita,limit=1] CitaSpawned 1
 tag @a[x=0,tag=BackCitadel,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackCitadel,gamemode=!creative,limit=1] at @s run function items:missile/normal/givecitadel
+execute as @a[x=0,tag=BackCitadel,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/citadel
+execute as @a[x=0,tag=BackCitadel,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/citadel
 
 #Gemini
 scoreboard players remove @a[x=0,tag=BackGemi,limit=1] GemiSpawned 1
 tag @a[x=0,tag=BackGemi,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackGemi,gamemode=!creative,limit=1] at @s run function items:missile/normal/givegemi
+execute as @a[x=0,tag=BackGemi,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/gemini
+execute as @a[x=0,tag=BackGemi,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/gemini
 
 #Lifter
 scoreboard players remove @a[x=0,tag=BackLift,limit=1] LifterSpawned 1
 tag @a[x=0,tag=BackLift,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackLift,gamemode=!creative,limit=1] at @s run function items:missile/normal/givelift
+execute as @a[x=0,tag=BackLift,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/normal/lifter
+execute as @a[x=0,tag=BackLift,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/normal/lifter
 
 #Hypersonic
 scoreboard players remove @a[x=0,tag=BackHyper,limit=1] HyperSpawned 1
 tag @a[x=0,tag=BackHyper,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackHyper,gamemode=!creative,limit=1] at @s run function items:missile/special/givehyper
+execute as @a[x=0,tag=BackHyper,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/special/hypersonic
+execute as @a[x=0,tag=BackHyper,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/special/hypersonic
 
 #Bullet
 scoreboard players remove @a[x=0,tag=BackBull,limit=1] BulletSpawned 1
 tag @a[x=0,tag=BackBull,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackBull,gamemode=!creative,limit=1] at @s run function items:missile/special/givebull
+execute as @a[x=0,tag=BackBull,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/special/bullet
+execute as @a[x=0,tag=BackBull,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/special/bullet
 
 #Duplex
 scoreboard players remove @a[x=0,tag=BackDuplex,limit=1] DuplexSpawned 1
 tag @a[x=0,tag=BackDuplex,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackDuplex,gamemode=!creative,limit=1] at @s run function items:missile/special/giveduplex
+execute as @a[x=0,tag=BackDuplex,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/special/duplex
+execute as @a[x=0,tag=BackDuplex,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/special/duplex
 
 #Broadsword
 scoreboard players remove @a[x=0,tag=BackBroad,limit=1] BroadSpawned 1
 tag @a[x=0,tag=BackBroad,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackBroad,gamemode=!creative,limit=1] at @s run function items:missile/special/givebroad
+execute as @a[x=0,tag=BackBroad,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/special/broadsword
+execute as @a[x=0,tag=BackBroad,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/special/broadsword
 
 #Surprise Egg
 scoreboard players remove @a[x=0,team=Blue,tag=BackSurprise,limit=1] BSurpriseSpawned 1
 scoreboard players remove @a[x=0,team=Yellow,tag=BackSurprise,limit=1] YSurpriseSpawned 1
 tag @a[x=0,tag=BackSurprise,limit=1] remove fullHotbar
-execute as @a[x=0,team=Blue,tag=BackSurprise,gamemode=!creative,limit=1] at @s run function items:surprise_blue/givesurpriseegg
-execute as @a[x=0,team=Yellow,tag=BackSurprise,gamemode=!creative,limit=1] at @s run function items:surprise_yellow/givesurpriseegg
+execute as @a[x=0,tag=BackSurprise,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/surprise/all
+execute as @a[x=0,tag=BackSurprise,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/surprise/all
 
 #Fireball
 scoreboard players remove @a[x=0,tag=BackFireball,limit=1] FireballSpawned 1
 tag @a[x=0,tag=BackFireball,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackFireball,gamemode=!creative,limit=1] at @s run function items:util/givefireball
+execute as @a[x=0,tag=BackFireball,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:util/fireball
+execute as @a[x=0,tag=BackFireball,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:util/fireball
 
 #Cluster Fireball
 scoreboard players remove @a[x=0,tag=BackClusterFireball,limit=1] FireballSpawned 1
 tag @a[x=0,tag=BackClusterFireball,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackClusterFireball,gamemode=!creative,limit=1] at @s run function items:util/giveclusterfireball
+execute as @a[x=0,tag=BackClusterFireball,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:util/cluster_fireball
+execute as @a[x=0,tag=BackClusterFireball,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:util/cluster_fireball
 
 #Obsidian Shield
 scoreboard players remove @a[x=0,tag=BackObshield,limit=1] ObshieldSpawned 1
 tag @a[x=0,tag=BackObshield,limit=1] remove fullHotbar
-execute as @a[x=0,tag=BackObshield,gamemode=!creative,limit=1] at @s run function items:util/giveobshield
+execute as @a[x=0,tag=BackObshield,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:util/obsidian_shield
+execute as @a[x=0,tag=BackObshield,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:util/obsidian_shield
+
+tag @a remove giveback.mainhand_free
 
 ##Unable message
 tag @a[x=0,tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG,tag=!roofMSGFB,tag=!voidMSGFB,tag=!roofMSGOS,tag=!voidMSGOS,limit=1] add preventionMSG

@@ -138,10 +138,10 @@ tag @a[x=0] remove JoinSpec
 tp @a[x=0,tag=AlreadySpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=AlreadySpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 tag @a[x=0] remove AlreadySpec
-execute if predicate rr:enable_spectator_leave_cloud if predicate game:match_in_play if predicate custom:periodic_tick/3 at @e[x=0,type=marker,tag=LeaveSpec] run particle minecraft:dust{color:[0,1,0],scale:4} ~ ~ ~ 0.7 0.7 0.7 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
-execute if predicate rr:enable_spectator_leave_cloud if predicate game:match_in_play if predicate custom:periodic_tick/3 at @e[x=0,type=marker,tag=LeaveSpec] run particle minecraft:dust{color:[0,1,0],scale:3} ~ ~ ~ 0.8 0.8 0.8 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
-execute if predicate rr:enable_spectator_leave_cloud if predicate game:match_in_play if predicate custom:periodic_tick/3 at @e[x=0,type=marker,tag=LeaveSpec] run particle minecraft:dust{color:[0,1,0],scale:2} ~ ~ ~ 1 1 1 0.3 10 force @a[x=0,team=Spectator,predicate=custom:belowroof]
-execute if predicate rr:enable_spectator_leave_cloud if predicate game:match_in_play at @e[x=0,type=marker,tag=LeaveSpec] run tag @a[team=Spectator,distance=..4] add LeaveTeams
+execute if predicate rr:enable_spectator_leave_cloud if predicate game:match_in_play if predicate custom:periodic_tick/3 positioned 12.5 95.0 0.5 run particle minecraft:dust{color:[0,1,0],scale:4} ~ ~ ~ 0.7 0.7 0.7 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
+execute if predicate rr:enable_spectator_leave_cloud if predicate game:match_in_play if predicate custom:periodic_tick/3 positioned 12.5 95.0 0.5 run particle minecraft:dust{color:[0,1,0],scale:3} ~ ~ ~ 0.8 0.8 0.8 0.3 5 force @a[x=0,team=Spectator,predicate=custom:belowroof]
+execute if predicate rr:enable_spectator_leave_cloud if predicate game:match_in_play if predicate custom:periodic_tick/3 positioned 12.5 95.0 0.5 run particle minecraft:dust{color:[0,1,0],scale:2} ~ ~ ~ 1 1 1 0.3 10 force @a[x=0,team=Spectator,predicate=custom:belowroof]
+execute if predicate rr:enable_spectator_leave_cloud if predicate game:match_in_play positioned 12.5 95.0 0.5 run tag @a[team=Spectator,distance=..4] add LeaveTeams
 
 execute if predicate rr:enable_spectator_leave_cloud unless predicate game:match_in_play if predicate custom:periodic_tick/3 positioned -89 213.5 78 run particle minecraft:dust{color:[0,1,0],scale:2} ~ ~ ~ 0.35 0.35 0.35 0.3 2 force @a[x=0,team=Spectator,predicate=!custom:belowroof]
 execute if predicate rr:enable_spectator_leave_cloud unless predicate game:match_in_play if predicate custom:periodic_tick/3 positioned -89 213.5 78 run particle minecraft:dust{color:[0,1,0],scale:1.5} ~ ~ ~ 0.4 0.4 0.4 0.3 2 force @a[x=0,team=Spectator,predicate=!custom:belowroof]

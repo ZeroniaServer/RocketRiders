@@ -19,8 +19,8 @@ execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=4}
 #Disable Blue Obsidian Shields near void
 execute as @e[x=0,type=marker,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Blue Obsidian Shields near spawnpoints
-execute as @e[x=0,type=marker,tag=blueobalone] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
-execute as @e[x=0,type=marker,tag=blueobalone] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
+kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_blue_spawn_zone]
+kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_yellow_spawn_zone]
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=blueobalone] shieldplacement 1
@@ -43,8 +43,8 @@ execute if predicate game:portal_type/default if entity @s[scores={PortalDeco=4}
 #Disable Yellow Obsidian Shields near void
 execute as @e[x=0,type=marker,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Yellow Obsidian Shields near spawnpoints
-execute as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
-execute as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
+kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_blue_spawn_zone]
+kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_yellow_spawn_zone]
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=yellowobalone] shieldplacement 1

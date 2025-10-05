@@ -15,8 +15,8 @@ execute store result entity @s Air short 1 run scoreboard players get $splash sp
 execute as @e[x=0,type=area_effect_cloud,predicate=custom:is_water_area_effect_cloud,tag=!splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["splash","splash_alone","SmartClearAECsplash"],custom_particle:{type:"block",block_state:"minecraft:air"}}
 
 #Kill if near spawnpoints
-execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=YellowSpawnZone,distance=..3] run kill @s
-execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if entity @e[type=marker,tag=BlueSpawnZone,distance=..3] run kill @s
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked,predicate=custom:near_blue_spawn_zone] run kill @s
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked,predicate=custom:near_yellow_spawn_zone] run kill @s
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:nonsolid run function everytick:splash_correct_position
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s run function everytick:splash_adjust_corner_position
 execute at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] rotated 0 0 run function everytick:splash_place_water

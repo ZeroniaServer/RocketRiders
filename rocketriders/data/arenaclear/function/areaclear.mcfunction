@@ -23,7 +23,9 @@ kill @e[x=0,type=marker,tag=blueobtracker]
 kill @e[x=0,type=marker,tag=yellowobtracker]
 
 ##Begin recursive SmartClear process
-function arenaclear:superspeed
+scoreboard players set @e[x=0,type=marker,tag=ArenaClearChecker] ClearArena 90
+tag @s remove Countdown
+tag @e[x=0,type=marker,tag=ArenaClearChecker] add PlacerClear
 
 ##Close off Modification Room
 execute if predicate rr:has_modification_room as @e[x=0,type=marker,tag=ControlRoom] at @s run tp @a[distance=..15] -43 211 78 90 0

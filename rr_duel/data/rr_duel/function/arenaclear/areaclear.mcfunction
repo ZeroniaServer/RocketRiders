@@ -53,7 +53,9 @@ kill @e[x=0,type=marker,tag=surprising]
 kill @e[x=0,predicate=entities:type/spell_emitter]
 kill @e[x=0,predicate=entities:type/spell]
 
-function arenaclear:superspeed
+scoreboard players set @e[x=0,type=marker,tag=ArenaClearChecker] ClearArena 90
+tag @s remove Countdown
+tag @e[x=0,type=marker,tag=ArenaClearChecker] add PlacerClear
 
 scoreboard players operation @s MaxItemTime = @s MaxItemSec
 scoreboard players operation @s MaxItemTime *= $20 constant

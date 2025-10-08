@@ -81,7 +81,7 @@ item replace entity @e[x=0,type=armor_stand,tag=HarpCredits] armor.head with pla
 item replace entity @e[x=0,type=armor_stand,tag=UniverseCredits] armor.head with player_head[profile={id:uuid("dfb3b591-6efc-410e-ab14-ce872702dbf4")}]
 item replace entity @e[x=0,type=armor_stand,tag=MichalCredits] armor.head with player_head[profile={id:uuid("203ac0ab-0c6e-4fce-abda-514af0b2f6ca")}]
 item replace entity @e[x=0,type=armor_stand,tag=RedstoneCredits] armor.head with player_head[profile={id:uuid("f24207a7-435c-45cf-97d3-93c0bc324509")}]
-item replace entity @e[x=0,type=armor_stand,tag=YankeeCredits] armor.head with player_head[profile={id:uuid("441ef803-4d61-4c68-867a-98429b2268e9 ")}]
+item replace entity @e[x=0,type=armor_stand,tag=YankeeCredits] armor.head with player_head[profile={id:uuid("441ef803-4d61-4c68-867a-98429b2268e9")}]
 item replace entity @e[x=0,type=armor_stand,tag=TallCredits] armor.head with player_head[profile={id:uuid("3767d08f-0d57-4c20-abbd-5db6e1bd3af0")}]
 item replace entity @e[x=0,type=armor_stand,tag=OceanCredits] armor.head with player_head[profile={id:uuid("cf91750f-fe1c-4b03-baca-afee376ccbf5")}]
 item replace entity @e[x=0,type=armor_stand,tag=MaeplCredits] armor.head with player_head[profile={id:uuid("15a9003d-53f4-4a29-a007-3e2e2cdccbd0")}]

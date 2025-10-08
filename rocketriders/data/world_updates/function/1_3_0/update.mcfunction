@@ -335,7 +335,7 @@ execute if score $post_lighting_fix var matches 0 run fill -111 185 -5 24 247 80
 execute if score $post_lighting_fix var matches 0 run fill -111 185 81 24 247 161 light[level=15] replace air strict
 fill -57 200 84 -70 201 72 air replace light strict
 
-# Black box
+# Parkour black box
 kill @e[x=0,tag=parkour.black_box]
 summon text_display 37.0 187.0 -5.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[21.75,-160,0],right_rotation:[0,0,0,1],scale:[290,640,1]},Rotation:[0,-90],background:0}
 summon text_display 37.0 219.0 123.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[21.75,-160,0],right_rotation:[0,0,0,1],scale:[290,640,1]},Rotation:[0,90],background:0}
@@ -343,6 +343,15 @@ summon text_display 37.0 219.0 -5.0 {Tags:["parkour","parkour.black_box"],text:{
 summon text_display 95.0 219.0 123.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[21.75,-40,0],right_rotation:[0,0,0,1],scale:[290,160,1]},Rotation:[180,0],background:0}
 summon text_display 95.0 219.0 -5.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[48,-40,0],right_rotation:[0,0,0,1],scale:[640,160,1]},Rotation:[90,0],background:0}
 summon text_display 37.0 219.0 123.0 {Tags:["parkour","parkour.black_box"],text:{sprite:"minecraft:block/black_concrete",color:"#000000"},transformation:{left_rotation:[0,0,0,1],translation:[48,-40,0],right_rotation:[0,0,0,1],scale:[640,160,1]},Rotation:[-90,0],background:0}
+
+# Lobby black box
+#kill @e[x=0,tag=lobby.black_box]
+#summon text_display -42.5 211.0 78.5 {Tags:["lobby","lobby.black_box"],text:{sprite:"block/black_concrete",color:"#000000"},transformation:{translation:[-20.875,-51,-68.5],scale:[835,500,0],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},background:0,Rotation:[-90,0]}
+#summon text_display -42.5 211.0 78.5 {Tags:["lobby","lobby.black_box"],text:{sprite:"block/black_concrete",color:"#000000"},transformation:{translation:[-16.5,-51,-83.5],scale:[680,500,0],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},background:0,Rotation:[180,0]}
+#summon text_display -42.5 211.0 78.5 {Tags:["lobby","lobby.black_box"],text:{sprite:"block/black_concrete",color:"#000000"},transformation:{translation:[-20.875,-51,-67.5],scale:[835,500,0],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},background:0,Rotation:[90,0]}
+#summon text_display -42.5 211.0 78.5 {Tags:["lobby","lobby.black_box"],text:{sprite:"block/black_concrete",color:"#000000"},transformation:{translation:[-17.5,-51,-83.5],scale:[680,500,0],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},background:0,Rotation:[0,0]}
+#summon text_display -42.5 211.0 78.5 {Tags:["lobby","lobby.black_box"],text:{sprite:"block/black_concrete",color:"#000000"},transformation:{translation:[-17.5,-125.25,-26],scale:[680,835,0],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},background:0,Rotation:[0,-90]}
+#summon text_display -42.5 211.0 78.5 {Tags:["lobby","lobby.black_box"],text:{sprite:"block/black_concrete",color:"#000000"},transformation:{translation:[-17.5,-125.25,-74],scale:[680,835,0],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},background:0,Rotation:[0,90]}
 
 # Spectator pregame area
 fill -101 212 59 -89 212 97 minecraft:barrier strict

@@ -56,7 +56,6 @@ execute as @e[x=0,type=marker,tag=obsidianshield] at @s run function everytick:o
 execute as @e[x=0,type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=yellowobtracker] at @s run function everytick:obsidian_shield_break
 execute if score $canopy_count global matches 1.. run function arenaclear:preparecanopy
-execute if score $shield_count global matches 1.. run function arenaclear:prepareshield
 kill @e[x=0,predicate=entities:type/canopy]
 kill @e[x=0,type=marker,tag=BlueObshield]
 kill @e[x=0,type=marker,tag=YellowObshield]

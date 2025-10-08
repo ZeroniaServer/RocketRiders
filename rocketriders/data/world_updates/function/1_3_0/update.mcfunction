@@ -63,7 +63,6 @@ execute unless score $server_mode global matches 0.. run scoreboard players oper
 execute unless score $match_in_play global matches 0..1 store success score $match_in_play global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches 1.. store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
-execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount matches 1.. store result score $shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] shieldCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount matches 1.. store result score $stinging_shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
@@ -223,6 +222,7 @@ scoreboard objectives remove respawn
 scoreboard objectives remove bMissileCount
 scoreboard objectives remove yMissileCount
 scoreboard objectives remove splashCount
+scoreboard objectives remove shieldCount
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

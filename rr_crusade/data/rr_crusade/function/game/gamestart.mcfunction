@@ -49,9 +49,8 @@ execute if score @s count matches 600 as @a[x=0,scores={crusadekit=2}] run tag @
 #Hotfix for being able to cast spells in queue
 execute if score @s count matches 600 run scoreboard players reset @a[x=0,predicate=custom:on_blue_or_yellow_team] useWand
 #Hotfix for losing shield in queue
-execute if score @s count matches 600 run clear @a[x=0,team=Blue,scores={crusadekit=1}] shield
-execute if score @s count matches 600 run clear @a[x=0,team=Yellow,scores={crusadekit=1}] shield
-execute if score @s count matches 600 as @a[x=0,scores={crusadekit=1}] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
+execute if score @s count matches 600 run clear @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=rr_crusade:kit/knight] *[custom_data~{id:"knight_shield"}]
+execute if score @s count matches 600 as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
 execute if score @s count matches 600 run summon marker 33 63 -66 {Tags:["airDetectBlue"]}
 execute if score @s count matches 600 run summon marker 33 63 66 {Tags:["airDetectYellow"]}
 execute unless predicate game:match_over if score @s count matches 600 run scoreboard players set $match_in_play global 1

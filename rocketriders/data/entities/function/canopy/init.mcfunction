@@ -7,8 +7,6 @@ data modify entity @s data.canopy set value {brain:{}}
 scoreboard players set @s entity.age 0
 scoreboard players set @s entity.canopy.movement_cooldown 0
 
-scoreboard players add $canopy_count global 1
-
 data modify storage rocketriders:main canopy.name set value "Canopy"
 execute on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s Canopy"], write_to:"storage rocketriders:main canopy.name"}
 data modify entity @s CustomName set from storage rocketriders:main canopy.name
@@ -21,10 +19,6 @@ execute align xyz positioned ~0.5 ~ ~0.5 run tp @s ~ ~ ~
 execute on origin run tag @s add canopy.origin
 execute at @s[tag=!canopy.small] run playsound minecraft:entity.player.teleport player @a[x=0,tag=!canopy.origin] ~ ~2 ~ 1 1
 execute on origin run tag @s remove canopy.origin
-
-data modify storage rocketriders:canopypos x prepend from entity @s Pos[0]
-data modify storage rocketriders:canopypos y prepend from entity @s Pos[1]
-data modify storage rocketriders:canopypos z prepend from entity @s Pos[2]
 
 execute on origin run function custom:player_action/forget_all_canopies
 tag @s remove canopy.forgotten_origin

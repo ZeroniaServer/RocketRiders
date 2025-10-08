@@ -60,3 +60,9 @@ execute unless block 14 64 63 obsidian run setblock 14 64 63 obsidian
 execute unless block 10 63 63 obsidian run setblock 10 63 63 obsidian
 execute unless block 12 63 62 obsidian run setblock 12 63 62 obsidian
 execute unless block 14 63 63 obsidian run setblock 14 63 63 obsidian
+
+# Prevent crystal bedrock being overwritten by utilities & missiles
+fill 41 52 -39 35 52 -37 bedrock strict
+fill -11 52 -39 -17 52 -37 bedrock strict
+fill -17 52 39 -11 52 37 bedrock strict
+fill 35 52 39 41 52 37 bedrock strict

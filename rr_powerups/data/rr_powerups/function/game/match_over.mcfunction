@@ -18,5 +18,3 @@ scoreboard players reset @a shooting_saber.multishot_time
 execute if entity @s[scores={endtimer=1}] as @a[x=0] run function custom:update_inventory/shooting_saber
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_powerups:capture_progress players none
 execute if entity @s[scores={endtimer=1..}] run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] capturePoint 0
-#Preclear
-execute if entity @s[scores={endtimer=569..}] run function rr_powerups:arenaclear/preclear

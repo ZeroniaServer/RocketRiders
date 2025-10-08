@@ -31,6 +31,3 @@ tag @s remove couldTie
 
 execute if entity @s[scores={endtimer=101..}] run kill @e[x=0,type=marker,tag=airDetectBlue,limit=1]
 execute if entity @s[scores={endtimer=101..}] run kill @e[x=0,type=marker,tag=airDetectYellow,limit=1]
-
-#Preclear
-execute if entity @s[scores={endtimer=569..}] run function rr_crusade:arenaclear/preclear

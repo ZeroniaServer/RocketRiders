@@ -11,6 +11,3 @@ execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:on_blue_or_
 scoreboard players reset @a[x=0] nomicon
 
 execute if entity @s[scores={endtimer=1}] as @a[x=0] run function custom:unequip_elytra
-
-#Preclear
-execute if entity @s[scores={endtimer=569..}] run function rr_sandbox:arenaclear/preclear

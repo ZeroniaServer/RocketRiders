@@ -17,11 +17,6 @@ summon marker 11 63 6 {Tags:["ArenaClearChecker"]}
 ##Reset Tetris progress for Item RNG
 function items:tetrisreset
 
-##Clear utility structures
-kill @e[x=0,type=marker,tag=obsidianshield]
-kill @e[x=0,type=marker,tag=blueobtracker]
-kill @e[x=0,type=marker,tag=yellowobtracker]
-
 ##Begin recursive SmartClear process
 scoreboard players set @e[x=0,type=marker,tag=ArenaClearChecker] ClearArena 90
 tag @s remove Countdown

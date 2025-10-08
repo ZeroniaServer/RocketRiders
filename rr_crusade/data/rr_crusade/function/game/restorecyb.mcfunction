@@ -11,7 +11,7 @@ execute unless score $CYB crusadehp matches 1.. as @a[x=0,team=Yellow] at @s run
 execute unless score $CYB crusadehp matches 1.. as @a[x=0,team=Yellow] at @s run playsound minecraft:block.glass.break master @s ~ ~ ~ 1 0
 
 execute if score $CYB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run gamerule showDeathMessages false
-execute if score $CYB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 positioned 38 49 37 as @e[type=player,team=!Spectator,team=!Developer,team=!Lobby,distance=..5] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" went too close to an End Crystal","color":"white"}]
+execute if score $CYB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 positioned 38 49 37 as @e[type=player,gamemode=!creative,gamemode=!spectator,team=!Spectator,team=!Developer,team=!Lobby,distance=..5] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" got too close to an End Crystal","color":"white"}]
 execute if score $CYB crusadehp matches 1.. positioned 38 49 37 run kill @a[team=!Spectator,team=!Developer,team=!Lobby,distance=..5]
 execute if score $CYB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run gamerule showDeathMessages true
 execute if score $CYB crusadehp matches 1.. unless score $CYBcd crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:yellow_stained_glass

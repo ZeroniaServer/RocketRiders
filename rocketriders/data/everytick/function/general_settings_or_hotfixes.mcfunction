@@ -164,8 +164,8 @@ execute unless predicate rr:has_modification_room as @a[x=0,team=Spectator,predi
 execute if predicate rr:server_mode/cubekrowd_duels run tag @s add duelLast
 
 # Fix for players not being able to jump up onto the slab from the modification room pool
-execute as @a[team=Lobby,x=-70,y=200,z=77,dz=2] run attribute @s minecraft:gravity modifier add rocketriders:learning_to_swim -0.75 add_multiplied_base
-execute as @a[team=Lobby] unless entity @s[x=-70,y=200,z=77,dy=0.5,dz=2] run attribute @s minecraft:gravity modifier remove rocketriders:learning_to_swim
+execute as @a[gamemode=!spectator,x=-70,y=200,z=77,dz=2] run attribute @s minecraft:gravity modifier add rocketriders:learning_to_swim -0.75 add_multiplied_base
+execute as @a unless entity @s[x=-70,y=200,z=77,dy=0.5,dz=2] run attribute @s minecraft:gravity modifier remove rocketriders:learning_to_swim
 
 #Make armour visible again after invisibility wears off
 execute as @a[tag=was_invisible,predicate=!custom:invisible] run function custom:event/player_becomes_visible/main

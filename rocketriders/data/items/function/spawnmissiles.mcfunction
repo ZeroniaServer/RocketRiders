@@ -78,15 +78,6 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function items:pre
 execute if entity @s[tag=bluemissile] if entity @e[x=0,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}
 execute if entity @s[tag=yellowmissile] if entity @e[x=0,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}
 
-##SmartClear preparation
-execute if entity @s[tag=bluemissile] run data modify storage rocketriders:bmissilepos x prepend from entity @s Pos[0]
-execute if entity @s[tag=bluemissile] run data modify storage rocketriders:bmissilepos y prepend from entity @s Pos[1]
-execute if entity @s[tag=bluemissile] run data modify storage rocketriders:bmissilepos z prepend from entity @s Pos[2]
-
-execute if entity @s[tag=yellowmissile] run data modify storage rocketriders:ymissilepos x prepend from entity @s Pos[0]
-execute if entity @s[tag=yellowmissile] run data modify storage rocketriders:ymissilepos y prepend from entity @s Pos[1]
-execute if entity @s[tag=yellowmissile] run data modify storage rocketriders:ymissilepos z prepend from entity @s Pos[2]
-
 ##Play sounds
 execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
 execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1

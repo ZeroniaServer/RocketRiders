@@ -12,8 +12,6 @@ scoreboard players reset $match_in_play global
 scoreboard players reset $game_paused global
 
 ##Summon AECs for tracking/block sweeping
-execute if score @s bMissileCount matches 1.. run function arenaclear:prepareblue
-execute if score @s yMissileCount matches 1.. run function arenaclear:prepareyellow
 execute if score @s splashCount matches 1.. run function arenaclear:preparesplash
 summon marker 11 63 6 {Tags:["ArenaClearChecker"]}
 

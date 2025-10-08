@@ -86,7 +86,3 @@ execute if entity @s[tag=YellowBroad] run place template game:broadsword_yellow
 ##CHASE MODE - Missile color conversion
 execute if predicate game:gamemode_components/neutral_items at @s positioned ~ ~2 ~ run function items:whitemissile
 execute unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue at @s positioned ~ ~2 ~ run function items:redmissile
-
-##Add 1 to appropriate missile count
-execute if entity @s[tag=bluemissile] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] bMissileCount 1
-execute if entity @s[tag=yellowmissile] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] yMissileCount 1

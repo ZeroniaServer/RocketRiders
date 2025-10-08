@@ -20,18 +20,6 @@ summon marker 11 63 6 {Tags:["ArenaClearChecker"]}
 
 function items:tetrisreset
 
-fill -14 84 66 38 64 48 air
-fill -14 84 -66 38 64 -48 air
-fill 32 63 -51 -9 37 -45 air
-fill -9 63 51 33 38 46 air
-fill -11 59 -73 35 36 -75 air
-fill -11 59 73 35 36 75 air
-fill -14 13 66 38 33 48 air
-fill -14 13 -66 38 33 -48 air
-
-#Molerat
-execute unless predicate game:modifiers/molerat/on run fill -12 36 -12 36 61 12 air
-
 kill @e[x=0,type=area_effect_cloud,predicate=custom:belowroof]
 kill @e[x=0,type=fireball]
 kill @e[x=0,type=item_display,tag=endFireballAnchor]

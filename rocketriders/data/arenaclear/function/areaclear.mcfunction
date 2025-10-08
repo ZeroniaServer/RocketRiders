@@ -17,16 +17,6 @@ summon marker 11 63 6 {Tags:["ArenaClearChecker"]}
 ##Reset Tetris progress for Item RNG
 function items:tetrisreset
 
-##Remove decorations
-fill -14 84 66 38 64 48 air
-fill -14 84 -66 38 64 -48 air
-fill 32 63 -51 -9 37 -45 air
-fill -9 63 51 33 38 46 air
-fill -11 59 -73 35 36 -75 air
-fill -11 59 73 35 36 75 air
-fill -14 13 66 38 33 48 air
-fill -14 13 -66 38 33 -48 air
-
 ##Clear utility structures
 kill @e[x=0,type=marker,tag=obsidianshield]
 kill @e[x=0,type=marker,tag=blueobtracker]

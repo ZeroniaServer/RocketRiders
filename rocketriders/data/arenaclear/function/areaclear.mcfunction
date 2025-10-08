@@ -27,9 +27,6 @@ fill -11 59 73 35 36 75 air
 fill -14 13 66 38 33 48 air
 fill -14 13 -66 38 33 -48 air
 
-##Remove building blocks
-execute if data storage rocketriders:arena_clear building_block_subchunks[0] run function arenaclear:clear_building_blocks/loop with storage rocketriders:arena_clear building_block_subchunks[-1]
-
 ##Clear utility structures
 execute as @e[x=0,type=marker,tag=obsidianshield] at @s run function everytick:obsidian_shield_break
 execute as @e[x=0,type=marker,tag=blueobtracker] at @s run function everytick:obsidian_shield_break

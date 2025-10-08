@@ -5,7 +5,7 @@ scoreboard players add @a[x=0,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash
 execute store success score $lavasplash splashtick if score $lavasplash splashtick matches 0
 execute store result entity @s Air short 1 run scoreboard players get $lavasplash splashtick
-execute as @e[x=0,type=area_effect_cloud,predicate=custom:is_awkward_area_effect_cloud,tag=!lavasplash] run data merge entity @s {Duration:2000000,Radius:0,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Tags:["lavasplash","lavasplash_alone","SmartClearAECsplash"],custom_particle:{type:"block",block_state:"minecraft:air"}}
+execute as @e[x=0,type=area_effect_cloud,predicate=custom:is_awkward_area_effect_cloud,tag=!lavasplash] run data merge entity @s {Duration:2000000,Radius:0,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Tags:["lavasplash","lavasplash_alone"],custom_particle:{type:"block",block_state:"minecraft:air"}}
 
 #Kill if near spawnpoints
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked,predicate=custom:near_blue_spawn_zone] run kill @s

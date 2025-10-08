@@ -22,6 +22,3 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!powerupsEna
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!powerupsEnabled] run fill -96 203 97 -94 203 97 barrier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!powerupsEnabled] run fill -93 204 98 -97 201 98 barrier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!powerupsEnabled] run fill -97 201 99 -93 205 101 air
-
-#remove stinging shield entities
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_powerups:arenaclear/preparebeeshield

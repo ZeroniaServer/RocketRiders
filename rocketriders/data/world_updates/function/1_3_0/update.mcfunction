@@ -62,8 +62,6 @@ tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove realms
 execute unless score $server_mode global matches 0.. run scoreboard players operation $server_mode global = @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms] servermode
 execute unless score $match_in_play global matches 0..1 store success score $match_in_play global if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
-execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount matches 1.. store result score $canopy_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] canopyCount
-execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount matches 1.. store result score $stinging_shield_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] beeShieldCount
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runvortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove vortexOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove runbeeshields

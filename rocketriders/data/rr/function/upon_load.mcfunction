@@ -150,7 +150,6 @@ scoreboard objectives add regifts dummy
 scoreboard objectives add gravShot dummy
 scoreboard objectives add useful dummy
 scoreboard objectives add RepeatSettings dummy
-scoreboard objectives add splashCount dummy
 scoreboard objectives add MaxItemTime dummy
 scoreboard objectives add MaxItemSec dummy
 scoreboard objectives add RandomItem dummy

@@ -222,6 +222,7 @@ scoreboard objectives remove LaunchCrossbow
 scoreboard objectives remove respawn
 scoreboard objectives remove bMissileCount
 scoreboard objectives remove yMissileCount
+scoreboard objectives remove splashCount
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

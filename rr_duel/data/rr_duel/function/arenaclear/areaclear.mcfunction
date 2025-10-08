@@ -16,7 +16,6 @@ execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run loot replace enti
 execute as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:update_armor
 gamemode adventure @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team]
 
-execute if entity @s[scores={splashCount=1..}] run function arenaclear:preparesplash
 summon marker 11 63 6 {Tags:["ArenaClearChecker"]}
 
 function items:tetrisreset

@@ -16,10 +16,6 @@ execute at @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked]
 execute at @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] rotated 90 0 run function rr_powerups:everytick/lava_splash_place_lava
 execute at @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] rotated 180 0 run function rr_powerups:everytick/lava_splash_place_lava
 execute at @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] rotated -90 0 run function rr_powerups:everytick/lava_splash_place_lava
-execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos x prepend from entity @s Pos[0]
-execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos y prepend from entity @s Pos[1]
-execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run data modify storage rocketriders:splashpos z prepend from entity @s Pos[2]
-execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] run scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] splashCount 1
 tag @e[x=0,type=area_effect_cloud,tag=lavasplash_alone] add splashMarked
 execute if predicate rr:has_achievements as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run data merge entity @s {Duration:100}
 execute if predicate rr:has_achievements as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ lava run tag @s add markedForDeath

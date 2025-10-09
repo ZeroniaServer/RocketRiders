@@ -5,6 +5,8 @@ fill -12 36 -75 36 59 -73 air
 fill -11 36 73 35 59 75 air
 
 #> Restore glass when game starts
+kill @e[x=0,type=marker,tag=crusadeWall]
+execute unless entity @e[x=0,type=marker,tag=crusadeWall,limit=1] run summon marker 12.5 54.0 0.0 {Tags:["crusadeWall"]}
 execute as @e[x=0,type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement
 function rr_crusade:game/glassplacement
 scoreboard players set @e[x=0,type=marker,tag=crusadeWall] CmdData 20

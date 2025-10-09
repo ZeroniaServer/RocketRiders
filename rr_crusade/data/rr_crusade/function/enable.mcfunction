@@ -14,7 +14,6 @@ scoreboard players set $portal_crystal_protection gamemode_components 1
 
 tag @s remove switchGamemodes
 function arenaclear:lockdecos
-execute unless entity @e[x=0,type=marker,tag=crusadeWall,limit=1] run summon marker 12.5 54.0 0.0 {Tags:["crusadeWall"]}
 tag @s add noSabers
 tag @s add portalDecosOff
 tag @s add customPrevention

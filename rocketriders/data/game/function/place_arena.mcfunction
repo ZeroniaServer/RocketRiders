@@ -13,10 +13,8 @@ fill 38 33 51 -14 47 29 air strict
 scoreboard players reset @e[x=0,type=marker,tag=captureMiddle] captureBlue
 scoreboard players reset @e[x=0,type=marker,tag=captureMiddle] captureYellow
 scoreboard players reset @e[x=0,type=marker,tag=captureMiddle] capturePoint
-fill 13 63 67 10 66 71 air
-fill 13 63 -67 10 66 -71 air
-fill 14 63 67 10 66 71 air
-fill -14 63 67 10 66 -71 air
+fill 10 63 67 14 66 71 air strict
+fill 10 63 -67 13 66 -71 air strict
 
 #Set Yellow Base
 fill -14 34 52 38 63 56 minecraft:yellow_stained_glass replace #custom:basereplace

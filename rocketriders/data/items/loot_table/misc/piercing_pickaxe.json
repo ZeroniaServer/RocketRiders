@@ -66,8 +66,7 @@
                       "correct_for_drops": true,
                       "speed": 9
                     }
-                  ],
-                  "default_mining_speed": 9
+                  ]
                 },
                 "minecraft:can_break": {
                   "blocks": "#custom:glass"

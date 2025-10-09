@@ -1,12 +1,12 @@
 #Clear some more decorations
 fill -14 64 -66 38 80 -52 air strict
 fill 11 74 -51 13 74 -48 air strict
-fill 38 48 -51 -14 65 -28 air strict
+fill 38 48 -51 -14 65 -29 air strict
 fill -14 33 -51 38 48 -31 air strict
 
 fill 38 64 52 -14 80 66 air strict
 fill 11 74 48 13 74 51 air strict
-fill -14 48 51 38 65 28 air strict
+fill -14 48 51 38 65 29 air strict
 fill 38 33 51 -14 47 29 air strict
 
 #Clear crystal crafters

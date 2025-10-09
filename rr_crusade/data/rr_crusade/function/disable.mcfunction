@@ -2,7 +2,6 @@ scoreboard players reset * gamemode_components
 
 tag @s remove crusadeEnabled
 function arenaclear:unlockdecos
-kill @e[x=0,type=marker,tag=crusadeWall]
 tag @s remove noSabers
 tag @s remove portalDecosOff
 tag @s remove customPrevention

@@ -102,3 +102,6 @@ execute if entity @s[predicate=game:gamemode_components/settings_locked] unless 
 function modifiers:modifierselect
 
 tag @s add SignsRefreshed
+
+##Update facade
+function game:place_facade

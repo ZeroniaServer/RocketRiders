@@ -1,5 +1,8 @@
 scoreboard players set $chunk_clear_progress global 0
 
+# Halt molerat placing progress
+function arenaclear:molerat_place/unschedule_all
+
 # instantly clear pistons
 function arenaclear:clear_missiles/schedule
 

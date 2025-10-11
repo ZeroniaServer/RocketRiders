@@ -4,9 +4,9 @@
 kill @e[x=0,type=armor_stand,tag=devcycle]
 
 #Developers
-summon armor_stand -49 216 79 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","devcycle","YZEROCredits"],Pose:{Head:[352f,5f,0f],LeftLeg:[25f,0f,0f],RightLeg:[334f,0f,0f],LeftArm:[319f,0f,0f],RightArm:[214f,73f,0f]},Silent:1b,Rotation:[90.0f,0.0f]}
-summon armor_stand -49 216 78 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","devcycle","SelectedDev","EvtemaCredits"],Silent:1b,Rotation:[90.0f,0.0f]}
-summon armor_stand -49 216 77 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["devCreditsAS","creditsAS","devcycle","ChronosCredits"],Pose:{Head:[352f,0f,0f],LeftArm:[256f,35f,0f],RightArm:[250f,347f,0f]},Silent:1b,Rotation:[90.0f,0.0f]}
+summon armor_stand -49 216 79 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["devCreditsAS","creditsAS","devcycle","YZEROCredits"],Pose:{Head:[352,5,0],LeftLeg:[25,0,0],RightLeg:[334,0,0],LeftArm:[319,0,0],RightArm:[214,73,0]},Silent:true,Rotation:[90,0]}
+summon armor_stand -49 216 78 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["devCreditsAS","creditsAS","devcycle","SelectedDev","EvtemaCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -49 216 77 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["devCreditsAS","creditsAS","devcycle","ChronosCredits"],Pose:{Head:[352,0,0],LeftArm:[256,35,0],RightArm:[250,347,0]},Silent:true,Rotation:[90,0]}
 
 item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] armor.head with player_head[profile={properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWRjNDJlYTk4ZTExNjRlNWQ4MmI5ZGM3N2M5NGNjMjJmYmY1NmRlNzg3MDNjMDQ3ZmYxNWU4NzA2N2NmNWNiYSJ9fX0="}]}]
 item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits] weapon.mainhand with slime_ball
@@ -28,16 +28,16 @@ item replace entity @e[x=0,type=armor_stand,tag=ChronosCredits] armor.legs with 
 item replace entity @e[x=0,type=armor_stand,tag=ChronosCredits] armor.feet with diamond_boots
 
 #Builders
-summon armor_stand -51 211 81 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","HugoCredits"],Silent:1b,Rotation:[90.0f,0.0f]}
-summon armor_stand -51 211 75 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","BardCredits"],Silent:1b,Rotation:[90.0f,0.0f]}
-summon armor_stand -51 211 82 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","TrekCredits"],Silent:1b,Rotation:[90.0f,0.0f]}
-summon armor_stand -51 211 74 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","BuilderCreditsAS","TypCredits"],Silent:1b,Rotation:[90.0f,0.0f]}
+summon armor_stand -51 211 81 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","devcycle","BuilderCreditsAS","HugoCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 75 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","devcycle","BuilderCreditsAS","BardCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 82 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","devcycle","BuilderCreditsAS","TrekCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 74 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","devcycle","BuilderCreditsAS","TypCredits"],Silent:true,Rotation:[90,0]}
 
 item replace entity @e[x=0,type=armor_stand,tag=BuilderCreditsAS] weapon.mainhand with netherite_pickaxe
 
 #Blocky and Toul
-summon armor_stand -51 211 73 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","ExtraCreditsAS","BlockyCredits"],Silent:1b,Rotation:[90.0f,0.0f]}
-summon armor_stand -51 211 83 {NoGravity:1b,Marker:1b,Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Tags:["creditsAS","devcycle","ExtraCreditsAS","ToulCredits"],Silent:1b,Rotation:[90.0f,0.0f]}
+summon armor_stand -51 211 73 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","devcycle","ExtraCreditsAS","BlockyCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 83 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","devcycle","ExtraCreditsAS","ToulCredits"],Silent:true,Rotation:[90,0]}
 
 item replace entity @e[x=0,type=armor_stand,tag=ToulCredits] weapon.mainhand with writable_book
 item replace entity @e[x=0,type=armor_stand,tag=BlockyCredits,limit=1] weapon.mainhand with player_head[profile={properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJmNTljYzUwYjczOWVhNDJiYmNiMDE2ODgzNWM0YTk2Mzg5YzliZjhmMWUxMzA2NWUwNjdkMjEzODgyMWNmYiJ9fX0="}]}]
@@ -62,6 +62,3 @@ item replace entity @e[x=0,type=armor_stand,tag=TrekCredits] armor.head with pla
 item replace entity @e[x=0,type=armor_stand,tag=TypCredits] armor.head with player_head[profile={properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjhkNGJjYzQxM2ZjZGZiMWZmOTc5YWQzMzg3MDZhNWE2NDBjOTk2YWE0YmU5OWUwNzZiODE5ZjFkMzQ3ZTk0OSJ9fX0="}]}]
 item replace entity @e[x=0,type=armor_stand,tag=BlockyCredits] armor.head with player_head[profile={properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTE2NDA2YjAwMjY2OTgyZjBiYTU4ZjViMjIxOWI4MGViNGEyMGRmODQ1MTE2NTk1NzE4NzZhYjE2YTM4MTI1MiJ9fX0="}]}]
 item replace entity @e[x=0,type=armor_stand,tag=ToulCredits] armor.head with player_head[profile={properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmVlM2VmOWVlMzQ5ZjA2MzgyNTc5NmIwY2Q4ZWZmNmFkNThiNzgzYjEyY2E4YjY4MDM3MWZiZTQyZmZmMjIwMiJ9fX0="}]}]
-
-#Disable slots
-execute as @e[x=0,type=armor_stand,tag=creditsAS] run data merge entity @s {DisabledSlots:4144959}

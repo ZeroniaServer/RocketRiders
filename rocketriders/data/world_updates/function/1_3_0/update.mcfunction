@@ -346,5 +346,8 @@ execute unless predicate game:gamemode_components/one_team run setblock -80 211 
 execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run setblock -80 211 94 minecraft:sea_lantern
 execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run setblock -80 211 94 minecraft:shroomlight
 
+# Remove Marker tag from credit armour stands
+execute as @e[x=0,type=armor_stand,tag=creditsAS] run data merge entity @s {Marker:false,DisabledSlots:4144959,Invulnerable:true,NoGravity:true}
+
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1304

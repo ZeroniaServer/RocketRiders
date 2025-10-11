@@ -349,5 +349,26 @@ execute if predicate game:gamemode_components/one_team if predicate game:gamemod
 # Remove Marker tag from credit armour stands
 execute as @e[x=0,type=armor_stand,tag=creditsAS] run data merge entity @s {Marker:false,DisabledSlots:4144959,Invulnerable:true,NoGravity:true}
 
+# Clear out arenaclear storages
+data remove storage rocketriders:bmissilepos x
+data remove storage rocketriders:bmissilepos y
+data remove storage rocketriders:bmissilepos z
+data remove storage rocketriders:ymissilepos x
+data remove storage rocketriders:ymissilepos y
+data remove storage rocketriders:ymissilepos z
+data remove storage rocketriders:splashpos x
+data remove storage rocketriders:splashpos y
+data remove storage rocketriders:splashpos z
+data remove storage rocketriders:shieldpos x
+data remove storage rocketriders:shieldpos y
+data remove storage rocketriders:shieldpos z
+data remove storage rocketriders:canopypos x
+data remove storage rocketriders:canopypos y
+data remove storage rocketriders:canopypos z
+data remove storage rr_powerups:beeshieldpos x
+data remove storage rr_powerups:beeshieldpos y
+data remove storage rr_powerups:beeshieldpos z
+data remove storage rocketriders:arena_clear building_block_subchunks
+
 tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.3.0","color":"green"}
 scoreboard players set $WorldVersion CmdData 1304

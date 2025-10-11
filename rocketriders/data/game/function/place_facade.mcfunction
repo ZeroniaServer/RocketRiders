@@ -3,11 +3,16 @@ kill @e[x=0,tag=facade_entity]
 
 #Join pad colors
 execute unless predicate game:gamemode_components/one_team run fill -82 204 92 -78 212 96 minecraft:yellow_concrete replace #custom:concrete strict
+execute unless predicate game:gamemode_components/one_team run setblock -80 211 94 minecraft:ochre_froglight[axis=y] strict
 execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:blue_concrete replace #custom:concrete strict
+execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run setblock -80 211 94 minecraft:sea_lantern strict
 execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run setblock -80 211 94 minecraft:shroomlight strict
 
 execute unless predicate game:gamemode_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:blue_concrete replace #custom:concrete strict
+execute unless predicate game:gamemode_components/red_for_blue run setblock -80 211 62 minecraft:sea_lantern
 execute if predicate game:gamemode_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:gamemode_components/red_for_blue run setblock -80 211 62 minecraft:shroomlight
 
 #Bridge colors
 execute unless predicate game:gamemode_components/one_team run place template lobby:left_bridge/yellow -76 200 86 none none 1 0 strict

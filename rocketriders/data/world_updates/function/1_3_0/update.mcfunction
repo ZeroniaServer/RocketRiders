@@ -310,10 +310,10 @@ tag @e[x=-82.50,y=202.00,z=78.50,distance=..1,type=marker,tag=join_pad] add join
 tag @e[x=-79.49,y=205.00,z=62.44,distance=..1,type=marker,tag=join_pad] add join_pad.right
 tp @e[x=0,type=marker,tag=join_pad.left] -79.5 205.0 94.5
 tp @e[x=0,type=marker,tag=join_pad.right] -79.5 205.0 62.5
-kill @e[type=item_display,tag=join_pad_display]
-execute at @e[x=0,type=marker,tag=join_pad.left] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.left"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
-execute at @e[x=0,type=marker,tag=join_pad.middle] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.middle"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
-execute at @e[x=0,type=marker,tag=join_pad.right] run summon item_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.right"],billboard:"vertical",Rotation:[0,-15],item_display:"fixed",item:{id:"minecraft:barrier"},brightness:{block:15,sky:15},transformation:{left_rotation:[0,0,0,1],translation:[0,0,0],right_rotation:[0,0,0,1],scale:[0,0,0]}}
+kill @e[x=0,tag=join_pad_display]
+execute at @e[x=0,type=marker,tag=join_pad.left] run summon text_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.left"],text:{sprite:"minecraft:item/barrier",color:"#EFEFEF"},width:1,height:1,transformation:{left_rotation:[0,0,0,1],translation:[-0.1875,-1.125,0],right_rotation:[0,0,0,1],scale:[7.5,7.5,0]},billboard:"center",background:0}
+execute at @e[x=0,type=marker,tag=join_pad.middle] run summon text_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.middle"],text:{sprite:"minecraft:item/barrier",color:"#EFEFEF"},width:1,height:1,transformation:{left_rotation:[0,0,0,1],translation:[-0.1875,-1.125,0],right_rotation:[0,0,0,1],scale:[7.5,7.5,0]},billboard:"center",background:0}
+execute at @e[x=0,type=marker,tag=join_pad.right] run summon text_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.right"],text:{sprite:"minecraft:item/barrier",color:"#EFEFEF"},width:1,height:1,transformation:{left_rotation:[0,0,0,1],translation:[-0.1875,-1.125,0],right_rotation:[0,0,0,1],scale:[7.5,7.5,0]},billboard:"center",background:0}
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
 

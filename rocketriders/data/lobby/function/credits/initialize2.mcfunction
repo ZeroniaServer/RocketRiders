@@ -9,48 +9,48 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPlayerCredits
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] creditsSet 1
 
 #Second half of testers/helpers
-summon armor_stand -51 211 72 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","GriffenCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 71 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","SkyCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 70 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LexCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 69 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","KadesCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 68 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","PeasntCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 67 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LizzeCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 66 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","TNTCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 65 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","RangerCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 64 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","EraCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 63 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LekroCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 62 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","DurovCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 84 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","AztechCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 85 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","XeoCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 86 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","PlayingCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 87 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","DanielCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 88 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","CarlCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 89 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","TuijCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 90 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","JagCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 91 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","MaxCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 92 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","HarpCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 93 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","UniverseCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -51 211 94 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","MichalCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 61 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","RedstoneCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 60 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","YankeeCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 59 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","TallCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 58 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","OceanCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 57 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","MaeplCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 56 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","HrapCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 55 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LimeyCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 54 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","AnonCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 53 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","MiloCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 52 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LouCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 51 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","NyxCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 95 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","RubenCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 96 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","TacoCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 97 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LPCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 98 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","SkoolCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 99 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","EnatorCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 100 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","AgroCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 101 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","NettaCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 102 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","DangerCredits"],Silent:true,Rotation:[90,0]}
-summon armor_stand -52 211 103 {NoGravity:true,DisabledSlots:4144959,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","EvieCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 72 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","GriffenCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 71 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","SkyCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 70 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LexCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 69 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","KadesCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 68 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","PeasntCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 67 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LizzeCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 66 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","TNTCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 65 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","RangerCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 64 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","EraCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 63 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LekroCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 62 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","DurovCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 84 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","AztechCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 85 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","XeoCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 86 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","PlayingCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 87 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","DanielCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 88 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","CarlCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 89 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","TuijCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 90 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","JagCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 91 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","MaxCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 92 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","HarpCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 93 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","UniverseCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -51 211 94 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","MichalCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 61 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","RedstoneCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 60 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","YankeeCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 59 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","TallCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 58 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","OceanCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 57 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","MaeplCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 56 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","HrapCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 55 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LimeyCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 54 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","AnonCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 53 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","MiloCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 52 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LouCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 51 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","NyxCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 95 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","RubenCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 96 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","TacoCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 97 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","LPCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 98 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","SkoolCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 99 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","EnatorCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 100 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","AgroCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 101 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","NettaCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 102 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","DangerCredits"],Silent:true,Rotation:[90,0]}
+summon armor_stand -52 211 103 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","EvieCredits"],Silent:true,Rotation:[90,0]}
 
 #Pose and armor
 item replace entity @e[x=0,type=armor_stand,tag=creditsAS,tag=!devCreditsAS,tag=!BuilderCreditsAS,tag=!ExtraCreditsAS] armor.chest with leather_chestplate[dyed_color=65397]
@@ -100,6 +100,9 @@ item replace entity @e[x=0,type=armor_stand,tag=AgroCredits] armor.head with pla
 item replace entity @e[x=0,type=armor_stand,tag=NettaCredits] armor.head with player_head[profile={id:uuid("9c3adf8d-a723-40c9-845b-c6e78c3ac460")}]
 item replace entity @e[x=0,type=armor_stand,tag=DangerCredits] armor.head with player_head[profile={id:uuid("88935d39-d3e1-4bcc-94f1-685439fd4014")}]
 item replace entity @e[x=0,type=armor_stand,tag=EvieCredits] armor.head with player_head[profile={id:uuid("5d3ac2d4-fb81-40b5-8844-7dc0ec89ad35")}]
+
+# Lock slots
+execute as @e[x=0,type=armor_stand,tag=creditsAS] run data modify entity @s DisabledSlots set value 4144959
 
 #Selected tags
 tag @e[x=0,type=armor_stand,tag=creditsAS] remove SelectedCredit

@@ -15,7 +15,16 @@ scoreboard players operation $periodic_tick.3 global %= $3 constant
 scoreboard players add $periodic_tick.5 global 1
 scoreboard players operation $periodic_tick.5 global %= $5 constant
 
-# Handle events and flags
+## Handle events and flags
+# Joining/leaving
+scoreboard players operation $previous_players_online var = $players_online global
+execute store result score $players_online global if entity @a[x=0,predicate=!custom:just_joined_world]
+execute store success score $players_have_left var if score $players_online global < $previous_players_online var
+execute store result score $players_online global if entity @a[x=0]
+execute if score $players_have_left var matches 1 in minecraft:overworld positioned 0.0 0.0 0.0 as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function custom:event/number_of_players_decreases/main
+execute as @a[x=0,predicate=custom:just_joined_world] at @s run function custom:event/player_joins_overworld/main
+
+#
 function everytick:team_count
 
 execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom:event/player_respawns/main

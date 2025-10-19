@@ -1,0 +1,1 @@
+function everytick:team_count

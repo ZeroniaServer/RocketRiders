@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "move_from_another_dimension_to_overworld": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "minecraft:overworld"
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom:event/player_joins_overworld_by_dimension_change/main"
+  }
+}

@@ -28,8 +28,8 @@ execute unless predicate game:match_in_play if entity @s[tag=EditedSettings] if 
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] unless entity @a[x=0,team=Yellow] run function game:restartcountdown
 
 execute if entity @s[scores={count=1..600}] run scoreboard players set @a[x=0] dropBook 0
-execute unless predicate game:match_over if score @s count matches 600 as @a[team=Blue] run function rr_sandbox:items/givenomicon
-execute unless predicate game:match_over if score @s count matches 600 as @a[team=Yellow] run function rr_sandbox:items/givenomicon
+execute unless predicate game:match_over if score @s count matches 600 as @a[x=0,team=Blue] run function rr_sandbox:items/givenomicon
+execute unless predicate game:match_over if score @s count matches 600 as @a[x=0,team=Yellow] run function rr_sandbox:items/givenomicon
 execute if score @s count matches 600 unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false},{"text":" to leave the match.","color":"dark_aqua","italic":true}]
 execute if score @s count matches 600 unless predicate rr:is_cubekrowd run tellraw @a[x=0,team=Yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false},{"text":" to leave the match.","color":"yellow","italic":true}]
 execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,team=Blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]

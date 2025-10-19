@@ -5,7 +5,7 @@ clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_ro
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"booster_rocket"}]
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #rr_powerups:clear
 clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #rr_sandbox:clear
-execute if entity @s[scores={endtimer=1}] run dialog clear @a
+execute if entity @s[scores={endtimer=1}] run dialog clear @a[x=0]
 execute if entity @s[scores={endtimer=1}] run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] written_book
 execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run loot replace entity @s hotbar.0 loot items:books/nomicon/post_game
 scoreboard players reset @a[x=0] nomicon

@@ -298,12 +298,12 @@ execute if predicate game:match_in_play run tag @e[x=0,type=player,team=Yellow,t
 execute if predicate game:match_in_play run tag @e[x=0,type=player,team=Yellow,tag=CarryFB2] add CarryFlag
 
 # Show flag carriers in tablist
-#scoreboard players set @a[tag=CarryFlag] flag_tablist_display 1
-execute if predicate game:match_in_play run scoreboard players reset @a[tag=!CarryFlag] flag_tablist_display
-execute if predicate game:match_in_play run scoreboard players display numberformat @a[tag=CarryFlag,tag=CarryFY1] flag_tablist_display fixed {color:"yellow",text:"🏴"}
-execute if predicate game:match_in_play run scoreboard players display numberformat @a[tag=CarryFlag,tag=CarryFY2] flag_tablist_display fixed {color:"yellow",text:"🏴"}
-execute if predicate game:match_in_play run scoreboard players display numberformat @a[tag=CarryFlag,tag=CarryFB1] flag_tablist_display fixed {color:"blue",text:"🏴"}
-execute if predicate game:match_in_play run scoreboard players display numberformat @a[tag=CarryFlag,tag=CarryFB2] flag_tablist_display fixed {color:"blue",text:"🏴"}
+#scoreboard players set @a[x=0,tag=CarryFlag] flag_tablist_display 1
+execute if predicate game:match_in_play run scoreboard players reset @a[x=0,tag=!CarryFlag] flag_tablist_display
+execute if predicate game:match_in_play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFY1] flag_tablist_display fixed {color:"yellow",text:"🏴"}
+execute if predicate game:match_in_play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFY2] flag_tablist_display fixed {color:"yellow",text:"🏴"}
+execute if predicate game:match_in_play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFB1] flag_tablist_display fixed {color:"blue",text:"🏴"}
+execute if predicate game:match_in_play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFB2] flag_tablist_display fixed {color:"blue",text:"🏴"}
 
 #Add scores for flag carriers
 execute if predicate game:match_in_play run scoreboard players add @a[x=0,team=Blue] FlagsCaptured 0

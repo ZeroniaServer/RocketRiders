@@ -39,10 +39,10 @@ tag @a[x=0,scores={toggleTips=1..},tag=hidTips] remove hidTips
 scoreboard players set @a[x=0] toggleTips 0
 
 # Fix for players joining with legacy canopyTP tag
-execute as @a[tag=canopyTP] run attribute @s minecraft:safe_fall_distance base reset
-execute as @a[tag=canopyTP] run attribute @s minecraft:jump_strength base reset
-execute as @a[tag=canopyTP] run attribute @s minecraft:movement_speed base reset
-tag @a[tag=canopyTP] remove canopyTP
+execute as @a[x=0,tag=canopyTP] run attribute @s minecraft:safe_fall_distance base reset
+execute as @a[x=0,tag=canopyTP] run attribute @s minecraft:jump_strength base reset
+execute as @a[x=0,tag=canopyTP] run attribute @s minecraft:movement_speed base reset
+tag @a[x=0,tag=canopyTP] remove canopyTP
 
 #Disable trigger objectives when appropriate
 scoreboard players reset @a[predicate=!custom:indimension] LeaveMidgame
@@ -78,7 +78,7 @@ execute as @a[x=0,team=Lobby] at @s if predicate custom:belowroof run tellraw @s
 execute as @a[x=0,team=Lobby] at @s if predicate custom:belowroof run scoreboard players set @s LeaveGame 1
 
 #Locked Modification Room
-execute if score $lockmodroom CmdData matches 1 as @a[team=Lobby] at @s if predicate 2811iaj1:in_modification run function game:kickout
+execute if score $lockmodroom CmdData matches 1 as @a[x=0,team=Lobby] at @s if predicate 2811iaj1:in_modification run function game:kickout
 
 #Lobby players can't switch out of adventure mode (security, disabled in servermodes)
 execute if predicate rr:force_gamemodes as @a[x=0,team=Lobby,gamemode=!adventure] run gamemode adventure
@@ -164,12 +164,12 @@ execute unless predicate rr:has_modification_room as @a[x=0,team=Spectator,predi
 execute if predicate rr:server_mode/cubekrowd_duels run tag @s add duelLast
 
 # Fix for players not being able to jump up onto the slab from the modification room pool
-execute as @a[gamemode=!spectator,x=-70,y=200,z=77,dz=2] run attribute @s minecraft:gravity modifier add rocketriders:learning_to_swim -0.75 add_multiplied_base
-execute as @a unless entity @s[x=-70,y=200,z=77,dy=0.5,dz=2] run attribute @s minecraft:gravity modifier remove rocketriders:learning_to_swim
+execute as @a[x=-70,y=200,z=77,dz=2,gamemode=!spectator] run attribute @s minecraft:gravity modifier add rocketriders:learning_to_swim -0.75 add_multiplied_base
+execute as @a[x=0] unless entity @s[x=-70,y=200,z=77,dy=0.5,dz=2] run attribute @s minecraft:gravity modifier remove rocketriders:learning_to_swim
 
 #Make armour visible again after invisibility wears off
-execute as @a[tag=was_invisible,predicate=!custom:invisible] run function custom:event/player_becomes_visible/main
-tag @a[tag=was_invisible,predicate=!custom:invisible] remove was_invisible
+execute as @a[x=0,tag=was_invisible,predicate=!custom:invisible] run function custom:event/player_becomes_visible/main
+tag @a[x=0,tag=was_invisible,predicate=!custom:invisible] remove was_invisible
 
 # Remove custom team colour from those not playing
 execute as @a[x=0,scores={custom_team_color=1..}] unless entity @s[predicate=custom:on_blue_or_yellow_team,predicate=game:gamemode_components/custom_team_colors] run scoreboard players reset @s custom_team_color
@@ -190,4 +190,4 @@ execute if predicate game:game_running unless predicate game:match_over if predi
 execute if predicate game:game_running if predicate game:match_over as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:set_xp_bar {level:0,progress:0}
 
 # Remove flowing water sounds from the lobby
-stopsound @a[predicate=custom:above_roof] ambient minecraft:block.water.ambient
+stopsound @a[x=0,predicate=custom:above_roof] ambient minecraft:block.water.ambient

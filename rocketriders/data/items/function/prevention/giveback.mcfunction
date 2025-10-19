@@ -1,6 +1,6 @@
 ##Gives back the appropriate missile when its placement has been prevented
 
-execute as @a unless items entity @s weapon.mainhand * run tag @s add giveback.mainhand_free
+execute as @a[x=0] unless items entity @s weapon.mainhand * run tag @s add giveback.mainhand_free
 
 ##Individual missiles
 #Auxiliary

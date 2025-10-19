@@ -31,11 +31,11 @@ execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom
 scoreboard players set @a[x=0] flag.is_dead 1
 scoreboard players set @e[x=0,type=player] flag.is_dead 0
 
-execute as @a[scores={event.player_uses_pig_spawn_egg=1..}] at @s run function custom:event/player_uses_pig_spawn_egg/main
-execute as @a[scores={event.player_uses_written_book=1..}] at @s run function custom:event/player_uses_written_book/main
+execute as @a[x=0,scores={event.player_uses_pig_spawn_egg=1..}] at @s run function custom:event/player_uses_pig_spawn_egg/main
+execute as @a[x=0,scores={event.player_uses_written_book=1..}] at @s run function custom:event/player_uses_written_book/main
 
-execute as @a[scores={time_since_attack=101..,primary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
-execute as @a[scores={time_since_attack=101..,secondary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
+execute as @a[x=0,scores={time_since_attack=101..,primary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
+execute as @a[x=0,scores={time_since_attack=101..,secondary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
 
 # Item timers
 scoreboard players remove @a[x=0,scores={shooting_saber.infinity_time=1..2147483646}] shooting_saber.infinity_time 1

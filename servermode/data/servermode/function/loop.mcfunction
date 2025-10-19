@@ -16,13 +16,13 @@ execute as @a[x=0,scores={VoteServerMode=1..6}] run scoreboard players operation
 execute as @a[x=0,scores={VoteServerMode=1..6}] run scoreboard players set @s VoteServerMode 0
 
 #Voting ballot
-execute if entity @s[tag=ServerModeVoting] as @a unless score @s VoteNum matches 1.. unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"},!custom_data~{voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot
-execute if entity @s[tag=ServerModeVoting] as @a[scores={VoteNum=1..}] unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot",voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot_used
-execute unless entity @s[tag=ServerModeVoting] run clear @a *[custom_data~{id:"voting_ballot"}]
+execute if entity @s[tag=ServerModeVoting] as @a[x=0] unless score @s VoteNum matches 1.. unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"},!custom_data~{voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot
+execute if entity @s[tag=ServerModeVoting] as @a[x=0,scores={VoteNum=1..}] unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot",voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot_used
+execute unless entity @s[tag=ServerModeVoting] run clear @a[x=0] *[custom_data~{id:"voting_ballot"}]
 
-execute if entity @s[tag=ServerModeVoting] as @a[tag=was_using_voting_ballot,tag=!is_using_voting_ballot] run function servermode:voting/show_dialog
-tag @a[tag=!is_using_voting_ballot] remove was_using_voting_ballot
-tag @a remove is_using_voting_ballot
+execute if entity @s[tag=ServerModeVoting] as @a[x=0,tag=was_using_voting_ballot,tag=!is_using_voting_ballot] run function servermode:voting/show_dialog
+tag @a[x=0,tag=!is_using_voting_ballot] remove was_using_voting_ballot
+tag @a[x=0] remove is_using_voting_ballot
 
 #Countdown bossbar
 execute if score @s VoteServerMode matches 1..599 run scoreboard players set $seconds VoteServerMode 619

@@ -11,7 +11,7 @@ scoreboard players set $realms global 0
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
 function lobby:open_modification_room
-clear @a
+clear @a[x=0]
 kill @e[x=0,type=armor_stand,tag=ParkourLB]
 kill @e[x=0,type=area_effect_cloud,tag=ParkourLB]
 kill @e[x=0,type=#custom:crystal,tag=CrusadeEntity]

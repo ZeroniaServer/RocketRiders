@@ -131,9 +131,9 @@ execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport mas
 execute as @a[x=0,tag=JoinSpec] run title @s actionbar ""
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
 execute if entity @s[tag=Sonar] if predicate game:game_running as @a[x=0,tag=JoinSpec] run tellraw @s [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
-execute if predicate rr:enable_spectator_leave_cloud run title @a[team=Spectator] actionbar {"text":"Fly into the green particle cluster to stop spectating!","color":"green","bold":true}
-execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run title @a[team=Spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
-execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run title @a[team=Spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/trigger leaveSpec","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
+execute if predicate rr:enable_spectator_leave_cloud run title @a[x=0,team=Spectator] actionbar {"text":"Fly into the green particle cluster to stop spectating!","color":"green","bold":true}
+execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run title @a[x=0,team=Spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
+execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run title @a[x=0,team=Spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/trigger leaveSpec","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
 tag @a[x=0] remove JoinSpec
 tp @a[x=0,tag=AlreadySpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=AlreadySpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~

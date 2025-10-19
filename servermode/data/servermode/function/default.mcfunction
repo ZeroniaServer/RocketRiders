@@ -8,7 +8,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noFullHotbarSound
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 0
 function lobby:open_modification_room
 execute as @a[x=0] run function achievements:roots
-clear @a
+clear @a[x=0]
 schedule function game:forcestop 2t append
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] store result score @s SetGamemode run scoreboard players get @e[x=0,type=armor_stand,tag=rr_normal,limit=1] gamemodeID
 # schedule function servermode:forceclear 3t append

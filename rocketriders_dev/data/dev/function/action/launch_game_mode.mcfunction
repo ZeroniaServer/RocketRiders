@@ -13,7 +13,7 @@ scoreboard players remove $set_game_mode dev_action 100
 execute unless score $set_game_mode dev_action matches 0..99 run scoreboard players reset * dev_action
 execute unless score $set_game_mode dev_action matches 0..99 run return run tellraw @s {color:"red",text:"Invalid game mode"}
 
-tellraw @a "Quick-launching game..."
+tellraw @a[x=0] "Quick-launching game..."
 
 scoreboard players set $force_stop var 1
 execute unless predicate game:match_in_play unless predicate game:match_over run scoreboard players set $force_stop var 0

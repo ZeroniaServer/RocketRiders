@@ -323,7 +323,7 @@ execute if predicate rr:has_modification_room unless predicate game:game_running
 # Modification Room redesign
 setblock -70 190 80 netherite_block strict
 setblock -70 190 76 netherite_block strict
-setblock -69 190 80 jungle_wall_sign[facing=east]{front_text:{color:"black",has_glowing_text:0b,messages:["",{bold:1b,click_event:{action:"run_command",command:"execute as @e[type=armor_stand,tag=Selection] run function arenaclear:globaldefaults"},color:"#FF0044",text:"Restore Global"},{bold:1b,click_event:{action:"run_command",command:"playsound ui.button.click master @a ~ ~ ~ 1 1"},color:"#FF0044",text:"Defaults"},""]},is_waxed:0b} strict
+setblock -69 190 80 jungle_wall_sign[facing=east]{front_text:{color:"black",has_glowing_text:0b,messages:["",{bold:1b,click_event:{action:"run_command",command:"execute as @e[type=armor_stand,tag=Selection] run function arenaclear:globaldefaults"},color:"#FF0044",text:"Restore Global"},{bold:1b,click_event:{action:"run_command",command:"playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"},color:"#FF0044",text:"Defaults"},""]},is_waxed:0b} strict
 setblock -69 190 76 birch_wall_sign[facing=east] strict
 setblock -71 192 78 yellow_stained_glass strict
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] refreshsigns 1

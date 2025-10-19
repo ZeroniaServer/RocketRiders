@@ -1,5 +1,5 @@
 ## Close modification room dialogs
-dialog clear @a
+dialog clear @a[x=0]
 
 ## Per-gamemode upon edited settings
 function #rr:upon_edited_settings

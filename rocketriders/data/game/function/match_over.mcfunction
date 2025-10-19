@@ -4,7 +4,7 @@
 
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
-execute as @a run function custom:player_action/forget_all_canopies
+execute as @a[x=0] run function custom:player_action/forget_all_canopies
 function everytick:spawnables
 execute if score @s endtimer matches 1 run scoreboard players reset $match_in_play global
 execute if score @s endtimer matches 1 run scoreboard players reset $game_paused global

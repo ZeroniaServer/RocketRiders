@@ -13,7 +13,7 @@ execute if entity @s[scores={endtimer=1..}] run bossbar set rr_chase:lead name [
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr_chase:lead value 0
 execute if entity @s[scores={endtimer=1..10}] run function rr_chase:chaseblocks/killall
 tag @a[x=0,team=Blue] remove InLead
-effect clear @a glowing
+effect clear @a[x=0] glowing
 execute if entity @s[scores={endtimer=1..2}] run tp @a[x=0,team=Blue,tag=Loser] 12 64 -66 0 0
 execute if entity @s[scores={endtimer=1..2}] run tp @a[x=0,team=Blue,tag=Winner,limit=1] 12 64 64 180 0
 execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay list

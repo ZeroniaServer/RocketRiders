@@ -55,6 +55,21 @@ scoreboard objectives add config dummy
 scoreboard objectives add gamemode_components dummy
 scoreboard objectives add custom_team_color dummy
 
+team add rocketriders.sort_000.blue "Blue"
+team add rocketriders.sort_001.yellow "Yellow"
+team add rocketriders.sort_100.spectator "Spectator"
+team add rocketriders.sort_200.lobby "Lobby"
+team add rocketriders.sort_999.developer "Developer"
+team join rocketriders.sort_000.blue @e[x=0,team=Blue]
+team join rocketriders.sort_001.yellow @e[x=0,team=Yellow]
+team join rocketriders.sort_100.spectator @e[x=0,team=Spectator]
+team join rocketriders.sort_200.lobby @e[x=0,team=Lobby]
+team remove Lobby
+team remove Blue
+team remove Yellow
+team remove Spectator
+team remove Developer
+
 ## early stages of nuking Selection armour stand...
 execute unless score $realms global matches 1 store success score $realms global if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=realms]
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove realms

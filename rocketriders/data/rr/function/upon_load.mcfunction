@@ -4,31 +4,31 @@ schedule function lobby:credits/restart_indimension 3t append
 scoreboard players add $reloaded CmdData 1
 
 #Add teams for Paper compatibility
-team add Lobby
-team add Blue
-team add Yellow
-team add Spectator
-team add Developer
+team add rocketriders.sort_000.blue "Blue"
+team add rocketriders.sort_001.yellow "Yellow"
+team add rocketriders.sort_100.spectator "Spectator"
+team add rocketriders.sort_200.lobby "Lobby"
+team add rocketriders.sort_999.developer "Developer"
 
-team modify Lobby color green
-execute unless predicate game:gamemode_components/red_for_blue run team modify Blue color blue
-execute if predicate game:gamemode_components/red_for_blue run team modify Blue color dark_red
-team modify Yellow color gold
-team modify Spectator color dark_gray
-team modify Developer color dark_green
+team modify rocketriders.sort_200.lobby color green
+execute unless predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color blue
+execute if predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color dark_red
+team modify rocketriders.sort_001.yellow color gold
+team modify rocketriders.sort_100.spectator color dark_gray
+team modify rocketriders.sort_999.developer color dark_green
 
-team modify Lobby collisionRule never
-team modify Blue collisionRule never
-team modify Yellow collisionRule never
-team modify Spectator collisionRule never
-team modify Developer collisionRule never
+team modify rocketriders.sort_200.lobby collisionRule never
+team modify rocketriders.sort_000.blue collisionRule never
+team modify rocketriders.sort_001.yellow collisionRule never
+team modify rocketriders.sort_100.spectator collisionRule never
+team modify rocketriders.sort_999.developer collisionRule never
 
-team modify Lobby friendlyFire false
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run team modify Blue friendlyFire false
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run team modify Blue friendlyFire true
-team modify Yellow friendlyFire false
-team modify Spectator friendlyFire false
-team modify Developer friendlyFire false
+team modify rocketriders.sort_200.lobby friendlyFire false
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run team modify rocketriders.sort_000.blue friendlyFire false
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run team modify rocketriders.sort_000.blue friendlyFire true
+team modify rocketriders.sort_001.yellow friendlyFire false
+team modify rocketriders.sort_100.spectator friendlyFire false
+team modify rocketriders.sort_999.developer friendlyFire false
 
 #Gamerules
 gamerule allowEnteringNetherUsingPortals false

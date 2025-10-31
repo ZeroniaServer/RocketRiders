@@ -132,8 +132,8 @@ summon armor_stand 14 65 63 {Rotation:[0.0f,0.0f],Tags:["CrusadeEntity","KitSele
 setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:1b,messages:[{"text":"Select Kit:","click_event":{"action":"run_command","command":"/trigger crusadechange set 3"},"color":"#09FF00"},{"text":"Mage","bold":true,"color":"#008805"},{"text":""},{"text":""}]}}
 
 #kit stand items
-team join Blue @e[x=0,type=armor_stand,tag=BlueKit]
-team join Yellow @e[x=0,type=armor_stand,tag=YellowKit]
+execute as @e[x=0,type=armor_stand,tag=BlueKit] run function custom:team/join_blue
+execute as @e[x=0,type=armor_stand,tag=YellowKit] run function custom:team/join_yellow
 
 execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.feet loot items:armor/crusade_kits/knight/boots
 execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.legs loot items:armor/crusade_kits/knight/leggings

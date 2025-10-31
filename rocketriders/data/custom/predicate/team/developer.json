@@ -2,6 +2,6 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "team": "Developer"
+    "team": "rocketriders.sort_999.developer"
   }
 }

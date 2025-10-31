@@ -33,8 +33,8 @@ execute if score @s count matches 600 unless predicate rr:is_cubekrowd run tellr
 execute if score @s count matches 600 unless predicate rr:is_cubekrowd run tellraw @a[x=0,predicate=custom:team/yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
 execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,predicate=custom:team/blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to forfeit the match.","color":"dark_aqua","italic":true}]
 execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,predicate=custom:team/yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to forfeit the match.","color":"yellow","italic":true}]
-execute if score @s count matches 600 run team join Blue Blue:
-execute if score @s count matches 600 run team join Yellow Yellow:
+execute if score @s count matches 600 run scoreboard players display name Blue: RoundsWon {color:"blue",text:"Blue:"}
+execute if score @s count matches 600 run scoreboard players display name Yellow: RoundsWon {color:"gold",text:"Yellow:"}
 execute if score @s count matches 600 run bossbar set rr:startgame name ["",{"text":"A 1v1 Duel match is currently in progress!","color":"dark_red"}]
 execute if score @s count matches 600 run bossbar set rr:startgame color red
 execute if score @s count matches 600 run scoreboard players set @s Rounds 1

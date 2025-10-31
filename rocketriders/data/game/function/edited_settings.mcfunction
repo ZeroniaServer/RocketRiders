@@ -28,8 +28,8 @@ tag @s remove BlueFull
 tag @s remove BlueCapOverride
 
 ##Team color
-execute unless predicate game:gamemode_components/red_for_blue run team modify Blue color blue
-execute if predicate game:gamemode_components/red_for_blue run team modify Blue color dark_red
+execute unless predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color blue
+execute if predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color dark_red
 
 
 tag @s add EditedSettings

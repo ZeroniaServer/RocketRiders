@@ -42,7 +42,7 @@ execute if predicate custom:periodic_tick/3 if predicate game:gamemode_component
 execute unless predicate game:game_rules/disable_team_balancing/on unless entity @s[predicate=!game:team_count/blue_is_larger,tag=!BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
 execute as @e[x=0,type=marker,tag=join_pad.blue] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinblue
 execute as @a[x=0,tag=tryJoinBlue] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.blue] run tag @s remove tryJoinBlue
-team join Blue @a[x=0,tag=JoinBlue]
+execute as @a[x=0,tag=JoinBlue] run function custom:team/join_blue
 execute if entity @a[limit=1,x=0,tag=JoinBlue] run function everytick:team_count
 clear @a[x=0,tag=JoinBlue]
 execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinBlue] run function game:assign_custom_team_color
@@ -117,7 +117,7 @@ execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=!CancelJoin,tag=!JustCl
 execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] run tag @a[x=0] remove JoinSpec
 execute as @e[x=0,type=marker,tag=join_pad.spectator] at @s run tag @a[predicate=custom:team/spectator,distance=..1] add AlreadySpec
 execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] run tag @a[x=0] remove AlreadySpec
-team join Spectator @a[x=0,tag=JoinSpec,gamemode=!spectator]
+execute as @a[x=0,tag=JoinSpec] run function custom:team/join_spectator
 clear @a[x=0,tag=JoinSpec]
 scoreboard players enable @a[x=0,predicate=custom:team/spectator] leaveSpec
 tag @a[x=0,scores={leaveSpec=1..}] add LeaveTeams

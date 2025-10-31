@@ -54,8 +54,8 @@ execute positioned -95 204 64 run function custom:summon_persistent_marker_aec {
 execute positioned -95 204 92 run function custom:summon_persistent_marker_aec {modifiers:{nbt:{Tags:["facade_entity","CrusadeEntity","KitMessage"],CustomName:{text:"Click a sign to select a kit!"},CustomNameVisible:true}}}
 
 #kit stand items
-team join Blue @e[x=0,type=armor_stand,tag=BlueKit]
-team join Yellow @e[x=0,type=armor_stand,tag=YellowKit]
+execute as @e[x=0,type=armor_stand,tag=BlueKit] run function custom:team/join_blue
+execute as @e[x=0,type=armor_stand,tag=YellowKit] run function custom:team/join_yellow
 
 execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.feet loot items:armor/crusade_kits/knight/boots
 execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.legs loot items:armor/crusade_kits/knight/leggings

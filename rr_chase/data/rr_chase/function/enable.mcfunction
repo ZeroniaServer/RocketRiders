@@ -26,7 +26,7 @@ tag @s add stackingOn
 tag @s add onlyBlue
 tag @s add antigriefOff
 tag @s add customSaberMsg
-team modify Blue friendlyFire true
+team modify rocketriders.sort_000.blue friendlyFire true
 
 #enable arrows/utilities
 tag @s[tag=!rngArrows] add arrowsWasOff

@@ -9,7 +9,7 @@ execute as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"t
 execute as @a[x=0,tag=LeavingSpec] run tp @s @s
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/lobby] add WasInLobby
 tag @a[x=0,tag=LeaveTeams] remove doing_facade_parkour
-team join Lobby @a[x=0,tag=LeaveTeams]
+execute as @a[x=0,tag=LeaveTeams] run function custom:team/join_lobby
 execute if entity @a[limit=1,x=0,tag=LeaveTeams] run function everytick:team_count
 title @a[x=0,tag=LeaveTeams] actionbar [""]
 title @a[x=0,tag=LeaveTeams] title [""]

@@ -3,5 +3,5 @@ execute unless predicate game:game_rules/disable_team_balancing/on run function 
 tag @s[predicate=!custom:team/yellow] add JoinYellow
 function game:joinwarn
 tag @s add tryJoinYellow
-team join Yellow @s[tag=JoinYellow]
+execute if entity @s[tag=JoinYellow] run function custom:team/join_yellow
 function everytick:team_count

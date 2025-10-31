@@ -1,9 +1,9 @@
 execute unless predicate custom:team/any_playing_team run return run tellraw @s {color:"red",text:"Cannot switch teams currently."}
 
 execute store success score $new_team var if entity @s[predicate=custom:team/blue]
-execute if score $new_team var matches 0 run team join Blue @s
+execute if score $new_team var matches 0 run function custom:team/join_blue
 execute if score $new_team var matches 0 run tellraw @a[x=0] ["",{selector:"@s"},{color:"dark_aqua",text:" switched to the blue team!"}]
-execute if score $new_team var matches 1 run team join Yellow @s
+execute if score $new_team var matches 1 run function custom:team/join_yellow
 execute if score $new_team var matches 1 run tellraw @a[x=0] ["",{selector:"@s"},{color:"yellow",text:" switched to the yellow team!"}]
 function everytick:team_count
 

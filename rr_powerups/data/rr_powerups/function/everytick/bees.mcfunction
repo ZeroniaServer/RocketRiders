@@ -1,6 +1,6 @@
 #Bees teams/angry
-execute as @e[x=0,type=bee,tag=!beeChecked,tag=BlueBee] run team join Blue
-execute as @e[x=0,type=bee,tag=!beeChecked,tag=YellowBee] run team join Yellow
+execute as @e[x=0,type=bee,tag=!beeChecked,tag=BlueBee] run function custom:team/join_blue
+execute as @e[x=0,type=bee,tag=!beeChecked,tag=YellowBee] run function custom:team/join_yellow
 execute as @e[x=0,type=bee,tag=!beeChecked] run attribute @s minecraft:follow_range base set 100
 execute as @e[x=0,type=bee,tag=!beeChecked] run data remove entity @s AngryAt
 tag @e[x=0,type=bee,tag=!beeChecked] add beeChecked

@@ -1,7 +1,7 @@
 scoreboard players set @s event.player_joins_world.state -1
 
 # Reset team
-team join Lobby
+function custom:team/join_lobby
 
 # Update is_dead flag
 execute in minecraft:overworld run scoreboard players set @a[x=0] flag.is_dead 1

@@ -25,6 +25,7 @@ tag @a[x=0,scores={toggleParticles=1..},tag=hideParticles] add hidParticles
 tag @a[x=0,scores={toggleParticles=1..},tag=hideParticles] remove hideParticles
 tag @a[x=0,scores={toggleParticles=1..},tag=!hideParticles,tag=!hidParticles] add hideParticles
 tag @a[x=0,scores={toggleParticles=1..},tag=hidParticles] remove hidParticles
+execute as @a[x=0,scores={toggleParticles=1..}] run function custom:player_action/playerdata/save
 scoreboard players set @a[x=0] toggleParticles 0
 
 #Toggle ingame tips
@@ -36,6 +37,7 @@ tag @a[x=0,scores={toggleTips=1..},tag=hideTips] add hidTips
 tag @a[x=0,scores={toggleTips=1..},tag=hideTips] remove hideTips
 tag @a[x=0,scores={toggleTips=1..},tag=!hideTips,tag=!hidTips] add hideTips
 tag @a[x=0,scores={toggleTips=1..},tag=hidTips] remove hidTips
+execute as @a[x=0,scores={toggleTips=1..}] run function custom:player_action/playerdata/save
 scoreboard players set @a[x=0] toggleTips 0
 
 # Fix for players joining with legacy canopyTP tag

@@ -1,6 +1,7 @@
 execute if entity @s[tag=!losschange] run function rr_duel:forfeit/losschange1
 tag @s[scores={XP=1..}] add hadXP
 scoreboard players remove @s[scores={ForfeitLoss=1..}] XP 1
+execute as @s[scores={ForfeitLoss=1..}] run function custom:player_action/playerdata/save
 scoreboard players remove @s[scores={ForfeitLoss=1..}] ForfeitLoss 1
 tag @s[scores={ForfeitLoss=..0}] remove ForfeitLoss
 tag @s[scores={ForfeitLoss=..0}] remove InRanked

@@ -1,0 +1,15 @@
+# arguments: UUID
+
+# Reset entry
+$data modify storage rocketriders.data:playerdata players."$(UUID)" set value {data_version:0,data:{}}
+
+# Save data into entry
+$execute if score @s wins matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.wins int 1 run scoreboard players get @s wins
+$execute if score @s losses matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.losses int 1 run scoreboard players get @s losses
+$execute if score @s GamesPlayed matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.games_played int 1 run scoreboard players get @s GamesPlayed
+$execute if score @s XP matches 1..1300 store result storage rocketriders.data:playerdata players."$(UUID)".data.xp short 1 run scoreboard players get @s XP
+$execute if score @s XP matches 1300.. run data modify storage rocketriders.data:playerdata players."$(UUID)".data.xp set value 1300s
+$execute if entity @s[tag=hideTips] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.hide_tips set value 1b
+$execute if entity @s[tag=hideParkourTips] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.hide_parkour_tips set value 1b
+$execute if entity @s[tag=hideParticles] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.hide_particles set value 1b
+$execute if entity @s[tag=do_hotbar_auto_fill] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.auto_fill_hotbar set value 1b

@@ -90,3 +90,6 @@ scoreboard players reset $Buffer XP
 scoreboard players reset $NetBlue XP
 scoreboard players reset $NetYellow XP
 scoreboard players reset $DiffBlue XP
+
+#Save XP
+function custom:player_action/playerdata/save

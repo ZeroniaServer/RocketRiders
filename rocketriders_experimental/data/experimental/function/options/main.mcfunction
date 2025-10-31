@@ -24,3 +24,6 @@ scoreboard players operation $do_hotbar_auto_fill var /= $10 constant
 scoreboard players operation $do_hotbar_auto_fill var %= $10 constant
 execute if score $do_hotbar_auto_fill var matches 0 run tag @s remove do_hotbar_auto_fill
 execute if score $do_hotbar_auto_fill var matches 1 run tag @s add do_hotbar_auto_fill
+
+# Save Options
+function custom:player_action/playerdata/save

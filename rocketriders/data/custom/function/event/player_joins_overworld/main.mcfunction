@@ -79,3 +79,6 @@ scoreboard players reset @s BSurpriseSpawned
 scoreboard players reset @s YSurpriseSpawned
 scoreboard players reset @s BowShot
 scoreboard players reset @s jumping
+
+# Load data
+function custom:player_action/playerdata/load

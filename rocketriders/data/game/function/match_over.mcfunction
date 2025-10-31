@@ -54,18 +54,15 @@ execute if entity @s[tag=doTying,tag=!tyingOff,predicate=game:portal_type/defaul
 execute if entity @s[scores={endtimer=101}] run scoreboard players set $game_duration global 0
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function everytick:score_reset
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function custom:player_action/forget_all_canopies
-execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Blue]
-execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,team=Yellow]
-execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Blue] GamesPlayed 1
-execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Yellow] GamesPlayed 1
+execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,predicate=custom:on_blue_or_yellow_team]
+execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,predicate=custom:on_blue_or_yellow_team] GamesPlayed 1
+execute if entity @s[scores={endtimer=570}] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function custom:player_action/playerdata/save
 execute if entity @s[scores={endtimer=570}] run function achievements:scoresreset
 execute if entity @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute if entity @s[scores={endtimer=570},tag=SpamClick] as @a[x=0] run attribute @s minecraft:attack_speed base set 4
 #Reverse Sonar glowing
 execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,tag=is_glowing] run function game:glowing/off
-execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Spectator] LeaveGame 1
-execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Blue] LeaveGame 1
-execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,team=Yellow] LeaveGame 1
+execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team] LeaveGame 1
 execute if entity @s[scores={endtimer=570}] run tp @a[x=0,team=Blue] -36 211 61.0 90 0
 execute if entity @s[scores={endtimer=570}] run tp @a[x=0,team=Yellow] -36 211 96.0 90 0
 execute if entity @s[scores={endtimer=570}] run tp @a[x=0,team=Spectator] -43 211 78 90 0

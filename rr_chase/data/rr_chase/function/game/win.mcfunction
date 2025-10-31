@@ -17,6 +17,8 @@ execute if predicate rr:has_achievements run advancement grant @a[x=0,team=Blue,
 
 scoreboard players add @a[x=0,team=Blue,tag=Winner,limit=1] wins 1
 scoreboard players add @a[x=0,team=Blue,tag=Loser] losses 1
+execute as @a[x=0,tag=Winner] run function custom:player_action/playerdata/save
+execute as @a[x=0,tag=Loser] run function custom:player_action/playerdata/save
 
 ##Close dialogs
 dialog clear @a[x=0]

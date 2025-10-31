@@ -1,6 +1,7 @@
 ##Refreshes signs for individual Game Modifiers (warped/crimson)
-#Reset counter
-execute unless score @s modifierID matches 0..21 run scoreboard players set @s modifierID 0
+#Wrap counter around (0-21)
+scoreboard players set $total_modifiers constant 22
+scoreboard players operation @s modifierID %= $total_modifiers constant
 
 #Instamine
 execute if entity @s[scores={modifierID=0},tag=Instamine,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]

@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "interact_with_cyclable_sign": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "lobby:inform_sign_cycling"
+  }
+}

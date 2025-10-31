@@ -4,9 +4,9 @@
 #############################################
 
 #Instamine
-execute if entity @s[scores={modifierID=0}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=0}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Instamine","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=0}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=0}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=0}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Instamine","color":"aqua"}
+execute if entity @s[scores={modifierID=0}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=0}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=0}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Instamine","color":"aqua"}
 execute if entity @s[scores={modifierID=0},tag=Instamine,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Instamine","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Instamine"}}
@@ -19,9 +19,9 @@ execute if entity @s[scores={modifierID=0},tag=!Instamine,predicate=!game:gamemo
 execute if entity @s[scores={modifierID=0},tag=!Instamine,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
 
 #No Fall
-execute if entity @s[scores={modifierID=1}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=1}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"No Fall","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=1}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=1}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=1}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"No Fall","color":"aqua"}
+execute if entity @s[scores={modifierID=1}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=1}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=1}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"No Fall","color":"aqua"}
 execute if entity @s[scores={modifierID=1},tag=NoFall,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"No Fall","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFall"}}
@@ -34,9 +34,9 @@ execute if entity @s[scores={modifierID=1},tag=!NoFall,predicate=!game:gamemode_
 execute if entity @s[scores={modifierID=1},tag=!NoFall,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
 
 #Explosive
-execute if entity @s[scores={modifierID=2}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=2}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Explosive","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=2}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=2}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=2}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Explosive","color":"aqua"}
+execute if entity @s[scores={modifierID=2}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=2}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=2}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Explosive","color":"aqua"}
 execute if entity @s[scores={modifierID=2},predicate=!game:modifiers/explosive/locked,predicate=game:modifiers/explosive/on,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Explosive","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $explosive config"}}
@@ -55,9 +55,9 @@ execute if entity @s[scores={modifierID=2},predicate=game:modifiers/explosive/lo
 execute if entity @s[scores={modifierID=2},predicate=game:modifiers/explosive/locked,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
 
 #Rocket Residers
-execute if entity @s[scores={modifierID=3}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=3}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Rocket Residers","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=3}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=3}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=3}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Rocket Residers","color":"aqua"}
+execute if entity @s[scores={modifierID=3}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=3}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=3}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Rocket Residers","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=3},predicate=!game:modifiers/rocket_residers/locked,predicate=game:modifiers/rocket_residers/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Rocket Residers","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $rocket_residers config"}}
@@ -80,9 +80,9 @@ execute unless predicate game:gamemode_components/settings_locked if entity @s[s
 execute if predicate game:modifiers/rocket_residers/incompatible_modifiers run scoreboard players reset $rocket_residers config
 
 #Sonar
-execute if entity @s[scores={modifierID=4}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=4}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Sonar","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=4}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=4}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=4}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Sonar","color":"aqua"}
+execute if entity @s[scores={modifierID=4}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=4}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=4}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Sonar","color":"aqua"}
 execute if entity @s[scores={modifierID=4},tag=Sonar,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Sonar","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Sonar"}}
@@ -95,9 +95,9 @@ execute if entity @s[scores={modifierID=4},tag=!Sonar,predicate=!game:gamemode_c
 execute if entity @s[scores={modifierID=4},tag=!Sonar,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
 
 #Molerat
-execute if entity @s[scores={modifierID=5}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=5}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Molerat","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=5}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=5}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=5}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Molerat","color":"aqua"}
+execute if entity @s[scores={modifierID=5}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=5}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=5}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Molerat","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=5},predicate=!game:modifiers/molerat/locked,predicate=game:modifiers/molerat/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Molerat","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $molerat config"}}
@@ -119,9 +119,9 @@ execute unless predicate game:gamemode_components/settings_locked if entity @s[s
 execute if predicate game:modifiers/molerat/incompatible_modifiers run scoreboard players reset $molerat config
 
 #Minute Mix
-execute if entity @s[scores={modifierID=6}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=6}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Minute Mix","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=6}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=6}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=6}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Minute Mix","color":"aqua"}
+execute if entity @s[scores={modifierID=6}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=6}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=6}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Minute Mix","color":"aqua"}
 execute if entity @s[scores={modifierID=6},tag=Minute,tag=!MinuteOff,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Minute Mix","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Minute"}}
@@ -144,9 +144,9 @@ tag @s[tag=MinuteOff] remove Minute
 tag @s[tag=WindDown] remove Minute
 
 #Surprise Eggs
-execute if entity @s[scores={modifierID=7}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=7}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Surprise Eggs","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=7}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=7}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=7}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Surprise Eggs","color":"aqua"}
+execute if entity @s[scores={modifierID=7}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=7}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=7}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Surprise Eggs","color":"aqua"}
 execute if entity @s[scores={modifierID=7},tag=SurpriseEgg,tag=!SurpriseEggOff,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Surprise Eggs","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEgg"}}
@@ -164,9 +164,9 @@ execute if entity @s[scores={modifierID=7},tag=SurpriseEggOff,predicate=!game:ga
 tag @s[tag=SurpriseEggOff] remove SurpriseEgg
 
 #Wind Down
-execute if entity @s[scores={modifierID=8}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=8}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Wind Down","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=8}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=8}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=8}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Wind Down","color":"aqua"}
+execute if entity @s[scores={modifierID=8}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=8}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=8}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Wind Down","color":"aqua"}
 execute if entity @s[scores={modifierID=8},tag=WindDown,tag=!WindDownOff,tag=!Minute,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Wind Down","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDown"}}
@@ -193,9 +193,9 @@ tag @s[tag=WindDownOff] remove WindDown
 tag @s[tag=Minute] remove WindDown
 
 #Splash Streams
-execute if entity @s[scores={modifierID=9}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=9}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Splash Streams","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=9}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=9}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=9}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Splash Streams","color":"aqua"}
+execute if entity @s[scores={modifierID=9}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=9}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=9}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Splash Streams","color":"aqua"}
 execute if entity @s[scores={modifierID=9},tag=SplashStreams,tag=!SplashStreamsOff,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Splash Streams","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SplashStreams"}}
@@ -213,9 +213,9 @@ execute if entity @s[scores={modifierID=9},tag=SplashStreamsOff,predicate=!game:
 tag @s[tag=SplashStreamsOff] remove SplashStreams
 
 #Spam Click
-execute if entity @s[scores={modifierID=10}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=10}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Spam Click","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=10}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=10}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=10}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Spam Click","color":"aqua"}
+execute if entity @s[scores={modifierID=10}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=10}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=10}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Spam Click","color":"aqua"}
 execute if entity @s[scores={modifierID=10},tag=SpamClick,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Spam Click","color":"aqua","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClick"}}
@@ -228,9 +228,9 @@ execute if entity @s[scores={modifierID=10},tag=!SpamClick,predicate=!game:gamem
 execute if entity @s[scores={modifierID=10},tag=!SpamClick,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
 
 #Ninja Jump
-execute if entity @s[scores={modifierID=11}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=11}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Ninja Jump","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=11}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=11}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=11}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Ninja Jump","color":"aqua"}
+execute if entity @s[scores={modifierID=11}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=11}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=11}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Ninja Jump","color":"aqua"}
 execute if entity @s[scores={modifierID=11},tag=NinjaJump,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Ninja Jump","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJump"}}
@@ -243,9 +243,9 @@ execute if entity @s[scores={modifierID=11},tag=!NinjaJump,predicate=!game:gamem
 execute if entity @s[scores={modifierID=11},tag=!NinjaJump,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
 
 #Hardcore
-execute if entity @s[scores={modifierID=12}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=12}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Hardcore","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=12}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=12}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=12}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Hardcore","color":"aqua"}
+execute if entity @s[scores={modifierID=12}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=12}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=12}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Hardcore","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=12},predicate=!game:modifiers/hardcore/locked,predicate=game:modifiers/hardcore/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Hardcore","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $hardcore config"}}
@@ -269,9 +269,9 @@ execute unless predicate game:gamemode_components/settings_locked if entity @s[s
 execute if predicate game:modifiers/hardcore/incompatible_modifiers run scoreboard players reset $hardcore config
 
 #Double Portal
-execute if entity @s[scores={modifierID=13}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=13}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Double Portal","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=13}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=13}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=13}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Double Portal","color":"aqua"}
+execute if entity @s[scores={modifierID=13}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=13}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=13}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Double Portal","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=13},predicate=!game:modifiers/double_portal/locked,predicate=game:modifiers/double_portal/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Double Portal","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $double_portal config"}}
@@ -291,9 +291,9 @@ execute unless predicate game:gamemode_components/settings_locked if entity @s[s
 execute if predicate game:modifiers/double_portal/incompatible_modifiers run scoreboard players reset $double_portal config
 
 #Clutter Collector
-execute if entity @s[scores={modifierID=14}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=14}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Clutter Collector","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=14}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=14}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=14}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Clutter Collector","color":"aqua"}
+execute if entity @s[scores={modifierID=14}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=14}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=14}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Clutter Collector","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=14},predicate=!game:modifiers/clutter_collector/locked,predicate=game:modifiers/clutter_collector/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Clutter Collector","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $clutter_collector config"}}
@@ -317,9 +317,9 @@ execute unless predicate game:gamemode_components/settings_locked if entity @s[s
 execute if predicate game:modifiers/clutter_collector/incompatible_modifiers run scoreboard players reset $clutter_collector config
 
 #Chaos
-execute if entity @s[scores={modifierID=15}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=15}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Chaos","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=15}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=15}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=15}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Chaos","color":"aqua"}
+execute if entity @s[scores={modifierID=15}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=15}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=15}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Chaos","color":"aqua"}
 execute if entity @s[scores={modifierID=15},tag=Chaos,tag=!ChaosOff,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Chaos","color":"aqua","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Chaos"}}
@@ -337,9 +337,9 @@ execute if entity @s[scores={modifierID=15},tag=ChaosOff,predicate=!game:gamemod
 tag @s[tag=ChaosOff] remove Chaos
 
 #Collision Control
-execute if entity @s[scores={modifierID=16}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=16}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Collision Control","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=16}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=16}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=16}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Collision Control","color":"aqua"}
+execute if entity @s[scores={modifierID=16}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=16}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=16}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Collision Control","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=16},predicate=!game:modifiers/collision_control/locked,predicate=game:modifiers/collision_control/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Collision Control","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $collision_control config"}}
@@ -361,9 +361,9 @@ execute unless predicate game:gamemode_components/settings_locked if entity @s[s
 execute if predicate game:modifiers/collision_control/incompatible_modifiers run scoreboard players reset $collision_control config
 
 #Punchable TNT
-execute if entity @s[scores={modifierID=17}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=17}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Punchable TNT","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=17}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=17}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=17}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Punchable TNT","color":"aqua"}
+execute if entity @s[scores={modifierID=17}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=17}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=17}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Punchable TNT","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=17},predicate=!game:modifiers/punchable_tnt/locked,predicate=game:modifiers/punchable_tnt/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Punchable TNT","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $punchable_tnt config"}}
@@ -384,9 +384,9 @@ execute unless predicate game:gamemode_components/settings_locked if entity @s[s
 execute if predicate game:modifiers/punchable_tnt/incompatible_modifiers run scoreboard players reset $punchable_tnt config
 
 #Unstable TNT
-execute if entity @s[scores={modifierID=18}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=18}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Unstable TNT","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=18}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=18}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=18}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Unstable TNT","color":"aqua"}
+execute if entity @s[scores={modifierID=18}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=18}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=18}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Unstable TNT","color":"aqua"}
 execute if entity @s[scores={modifierID=18},predicate=!game:modifiers/unstable_tnt/locked,predicate=game:modifiers/unstable_tnt/on,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Unstable TNT","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $unstable_tnt config"}}
@@ -405,9 +405,9 @@ execute if entity @s[scores={modifierID=18},predicate=game:modifiers/unstable_tn
 execute if entity @s[scores={modifierID=18},predicate=game:modifiers/unstable_tnt/locked,predicate=!game:gamemode_components/settings_locked] run data modify block -69 191 75 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
 
 #Instant TNT
-execute if entity @s[scores={modifierID=19}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=19}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Instant TNT","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=19}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=19}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=19}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Instant TNT","color":"aqua"}
+execute if entity @s[scores={modifierID=19}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=19}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=19}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Instant TNT","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=19},predicate=!game:modifiers/instant_tnt_explosions/locked,predicate=game:modifiers/instant_tnt_explosions/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Instant TNT","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $instant_tnt_explosions config"}}
@@ -428,9 +428,9 @@ execute unless predicate game:gamemode_components/settings_locked if entity @s[s
 execute if predicate game:modifiers/instant_tnt_explosions/incompatible_modifiers run scoreboard players reset $instant_tnt_explosions config
 
 #Hobbits
-execute if entity @s[scores={modifierID=20}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=20}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Hobbits","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=20}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=20}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=20}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Hobbits","color":"aqua"}
+execute if entity @s[scores={modifierID=20}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=20}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=20}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Hobbits","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=20},predicate=!game:modifiers/hobbits/locked,predicate=game:modifiers/hobbits/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Hobbits","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $hobbits config"}}
@@ -450,9 +450,9 @@ execute unless predicate game:gamemode_components/settings_locked if entity @s[s
 execute if predicate game:modifiers/hobbits/incompatible_modifiers run scoreboard players reset $hobbits config
 
 #Long Arms
-execute if entity @s[scores={modifierID=21}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 1"}}
-execute if entity @s[scores={modifierID=21}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Long Arms","color":"aqua","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={modifierID=21}] run data modify block -69 192 75 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshmodifiersign"}}
+execute if entity @s[scores={modifierID=21}] run data modify block -69 192 75 front_text.messages[0] set value {"text":"Modifier:","color":"dark_aqua","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_modifier_sign"}}
+execute if entity @s[scores={modifierID=21}] run data modify block -69 192 75 front_text.messages[1] set value {"text":"Long Arms","color":"aqua"}
+execute if entity @s[scores={modifierID=21}] run data modify block -69 192 75 front_text.messages[2] set value ""
 execute if entity @s[scores={modifierID=21}] run data modify block -69 192 75 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true}
 execute if entity @s[scores={modifierID=21}] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Long Arms","color":"aqua"}
 execute unless predicate game:gamemode_components/settings_locked if entity @s[scores={modifierID=21},predicate=!game:modifiers/long_arms/locked,predicate=game:modifiers/long_arms/on] run data modify block -69 191 75 front_text.messages[0] set value {"text":"Long Arms","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players reset $long_arms config"}}

@@ -137,7 +137,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     {\
       "type": "minecraft:single_option",\
       "key": "has_flags",\
-      "label": "has_flags",\
+      "label": "🔒 has_flags",\
       "width": 300,\
       "options": [\
         {\
@@ -257,7 +257,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     {\
       "type": "minecraft:single_option",\
       "key": "portal_crystal_protection",\
-      "label": "portal_crystal_protection",\
+      "label": "🔒 portal_crystal_protection",\
       "width": 300,\
       "options": [\
         {\
@@ -285,7 +285,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     {\
       "type": "minecraft:single_option",\
       "key": "settings_locked",\
-      "label": "settings_locked",\
+      "label": "🔒 settings_locked",\
       "width": 300,\
       "options": [\
         {\

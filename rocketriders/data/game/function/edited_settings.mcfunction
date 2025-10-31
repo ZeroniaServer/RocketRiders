@@ -31,9 +31,14 @@ tag @s remove BlueCapOverride
 execute unless predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color blue
 execute if predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color dark_red
 
+##Friendly Fire
+execute unless predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire false
+execute unless predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_001.yelloe friendlyFire false
+execute if predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire true
+execute if predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_001.yellow friendlyFire true
 
+##
 tag @s add EditedSettings
-
 execute unless predicate rr:server_mode/cubekrowd_duels unless predicate rr:server_mode/cubekrowd_voting run function lobby:cancelsettings/begin
 
 ##Stop all sounds

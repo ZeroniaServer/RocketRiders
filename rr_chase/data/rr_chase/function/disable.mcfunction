@@ -8,7 +8,6 @@ tag @s remove customPrevention
 tag @s remove customEnds
 tag @s remove customBossbar
 tag @s remove leaveYSpawn
-team modify rocketriders.sort_000.blue friendlyFire false
 tag @s[tag=arrowsWasOff] remove rngArrows
 tag @s remove arrowsWasOff
 tag @s[tag=utilWasOff] remove rngUtil

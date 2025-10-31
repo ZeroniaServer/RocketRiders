@@ -4,6 +4,7 @@ scoreboard players set $config_override.collision_control gamemode_components -1
 scoreboard players set $config_override.disable_team_balancing gamemode_components 1
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $custom_team_colors gamemode_components 1
+scoreboard players set $friendly_fire gamemode_components 1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
 scoreboard players set $neutral_items gamemode_components 1
 scoreboard players set $no_portals gamemode_components 1
@@ -26,7 +27,6 @@ tag @s add stackingOn
 tag @s add onlyBlue
 tag @s add antigriefOff
 tag @s add customSaberMsg
-team modify rocketriders.sort_000.blue friendlyFire true
 
 #enable arrows/utilities
 tag @s[tag=!rngArrows] add arrowsWasOff

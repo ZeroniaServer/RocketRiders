@@ -16,7 +16,9 @@ execute if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1
 execute if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:2} -68.7 190.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 
 ##GAMEMODE SELECTION
-execute if score @s SetGamemode > maxID gamemodeID run scoreboard players set @s SetGamemode 1
+scoreboard players remove @s SetGamemode 1
+scoreboard players operation @s SetGamemode %= maxID gamemodeID
+scoreboard players add @s SetGamemode 1
 
 ##RESTORE DEFAULT DETAILS
 scoreboard players set @s[tag=RestoreDefault] TopDeco 1

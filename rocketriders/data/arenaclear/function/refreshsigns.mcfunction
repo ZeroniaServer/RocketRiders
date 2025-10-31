@@ -9,10 +9,10 @@ function arenaclear:refreshitemsigns
 function arenaclear:refreshcustomizer
 
 #Temporarily block usage of Gamemode sign
-data modify block -69 192 74 front_text.messages[0] set value {"text":"Gamemode:","color":"#6b006b","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={refreshsigns=..0}] SetGamemode 1"}}
+data modify block -69 192 74 front_text.messages[0] set value {"text":"Gamemode:","color":"#6b006b","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_gamemode_sign"}}
 
 #Special gamemode sign for no modes installed/enabled
-execute unless entity @s[tag=!NoModesInstalled,tag=!NoModesEnabled] run data modify block -69 192 74 front_text.messages[1] set value {"text":"Missingno","color":"light_purple","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
+execute unless entity @s[tag=!NoModesInstalled,tag=!NoModesEnabled] run data modify block -69 192 74 front_text.messages[1] set value {"text":"Missingno","color":"light_purple"}
 
 #Refresh repeat sign
 scoreboard players set @s[tag=!Repeat,scores={RepeatSettings=0}] RepeatSettings 1

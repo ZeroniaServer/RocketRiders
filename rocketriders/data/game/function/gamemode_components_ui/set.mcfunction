@@ -1,7 +1,7 @@
 # arguments: ...
 
-execute if predicate game:game_running run tellraw @s [{color:"red",text:"You should not change gamemode components while the game is running."},{color:"yellow",text:"\nYou may change them manually if you know it is safe to do so using "},{color:"gray",text:"/scoreboard players set $<gamemode_component> gamemode_components <value>"}]
-execute if predicate game:game_running run return fail
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run tellraw @s [{color:"red",text:"You should not change gamemode components after game settings have been confirmed."},{color:"yellow",text:"\nYou can change them manually if you know it is safe to do so using "},{color:"gray",text:"/scoreboard players set $<gamemode_component> gamemode_components <value>"}]
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run return fail
 
 scoreboard players reset * gamemode_components
 

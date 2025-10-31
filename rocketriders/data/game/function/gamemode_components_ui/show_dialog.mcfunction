@@ -299,7 +299,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     "label": "Save Changes",\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:gamemode_components_ui/set_all {arena__bedrock_frame:$(arena__bedrock_frame),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),explosions_crack_deepslate_bricks:$(explosions_crack_deepslate_bricks),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue)}"\
+      "template": "function game:gamemode_components_ui/set {arena__bedrock_frame:$(arena__bedrock_frame),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),explosions_crack_deepslate_bricks:$(explosions_crack_deepslate_bricks),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue)}"\
     }\
   },\
   "no": {\

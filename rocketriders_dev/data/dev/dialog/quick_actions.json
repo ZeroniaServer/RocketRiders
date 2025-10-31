@@ -141,7 +141,7 @@
             },
             {
               "label": "Edit Gamemode Components",
-              "tooltip": "A UI for viewing and editing the current gamemode components.\n\nGamemode components cannot be edited once a game has started.\n\nSome gamemode components are tied to a particular gamemode and cannot be changed through this menu.",
+              "tooltip": "A UI for viewing and editing the current gamemode components.\n\nGamemode components cannot be edited once game settings have been confirmed.\n\nSome gamemode components are tied to a particular gamemode and cannot be changed through this menu.",
               "action": {
                 "type": "minecraft:run_command",
                 "command": "/trigger dev set 5"

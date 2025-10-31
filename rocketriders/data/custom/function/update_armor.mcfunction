@@ -53,7 +53,7 @@ execute if predicate custom:on_blue_or_yellow_team if entity @s[tag=wearing_elyt
 #set asset ID to a random string of numbers so that they can't get around the armour invisibility with a resource pack
 execute if predicate custom:on_blue_or_yellow_team if predicate custom:invisible run execute store result storage rocketriders:main update_armor.random_asset_id_1 int 1 run random value 0..2147483646
 execute if predicate custom:on_blue_or_yellow_team if predicate custom:invisible run execute store result storage rocketriders:main update_armor.random_asset_id_2 int 1 run random value 0..2147483646
-execute if predicate custom:on_blue_or_yellow_team if predicate custom:invisible run function custom:_update_armor_/make_invisible with storage rocketriders:main update_armor
+execute if predicate custom:on_blue_or_yellow_team if predicate custom:invisible run function custom:__impl__/update_armor/make_invisible with storage rocketriders:main update_armor
 
 # Game Ending
 execute if entity @s[tag=Winner] if predicate game:match_over run loot replace block 0 184 -16 container.2 loot items:ending/celebratory_elytra

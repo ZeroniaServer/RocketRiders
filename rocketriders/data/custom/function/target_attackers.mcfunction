@@ -20,4 +20,4 @@ execute if score $attacker_contains_damage_origin var matches 0 if score @s seco
 execute if score $attacker_contains_damage_origin var matches 0 if score @s secondary_damage_origin_uuid.0 matches -2147483648.. run execute store result storage rocketriders:main target_attackers.secondary[3] int 1 run scoreboard players get @s secondary_damage_origin_uuid.3
 execute if score $attacker_contains_damage_origin var matches 0 if score @s secondary_damage_origin_uuid.0 matches -2147483648.. run function custom:target_uuid {read_from:"storage rocketriders:main target_attackers.secondary",run:"tag @s[type=player] add target_attackers.this"}
 
-$execute as @a[limit=2,x=0,tag=target_attackers.this] if function custom:_target_attackers_/remove_tag run $(run)
+$execute as @a[limit=2,x=0,tag=target_attackers.this] if function custom:__impl__/target_attackers/remove_tag run $(run)

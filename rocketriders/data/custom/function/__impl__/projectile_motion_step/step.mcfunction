@@ -15,4 +15,4 @@ execute unless score @s entity.speed matches 100.. run return run tp @s ~ ~ ~
 
 ## Continue (unless step size is reached)
 scoreboard players remove @s entity.speed 100
-execute positioned ^ ^ ^0.1 run function custom:_projectile_motion_step_/step
+execute positioned ^ ^ ^0.1 run function custom:__impl__/projectile_motion_step/step

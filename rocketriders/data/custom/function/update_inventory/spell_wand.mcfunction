@@ -41,5 +41,5 @@ execute if items entity @s player.crafting.1 *[custom_data~{id:"spell_wand"}] ru
 execute if items entity @s player.crafting.2 *[custom_data~{id:"spell_wand"}] run loot replace entity @s player.crafting.2 loot items:misc/spell_wand
 execute if items entity @s player.crafting.3 *[custom_data~{id:"spell_wand"}] run loot replace entity @s player.crafting.3 loot items:misc/spell_wand
 tag @s add matchOrigin
-execute as @e[x=0,type=item] if function custom:match_origin if items entity @s contents *[custom_data~{id:"spell_wand"}] run function custom:_update_inventory_/update_slot {slot:"contents"}
+execute as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"spell_wand"}] if function custom:match_origin run function custom:__impl__/update_inventory/update_slot {slot:"contents"}
 tag @s remove matchOrigin

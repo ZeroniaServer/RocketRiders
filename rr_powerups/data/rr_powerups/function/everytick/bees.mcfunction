@@ -6,11 +6,11 @@ execute as @e[x=0,type=bee,tag=!beeChecked] run data remove entity @s AngryAt
 tag @e[x=0,type=bee,tag=!beeChecked] add beeChecked
 
 scoreboard players set @e[x=0,type=bee] CmdData 0
-execute as @e[x=0,type=bee,team=Blue] store success score @s CmdData on target if entity @s[team=Yellow]
-execute as @e[x=0,type=bee,team=Yellow] store success score @s CmdData on target if entity @s[team=Blue]
+execute as @e[x=0,type=bee,predicate=custom:team/blue] store success score @s CmdData on target if entity @s[predicate=custom:team/yellow]
+execute as @e[x=0,type=bee,predicate=custom:team/yellow] store success score @s CmdData on target if entity @s[predicate=custom:team/blue]
 execute as @e[x=0,type=bee,scores={CmdData=0}] run data remove entity @s AngryAt
-execute as @e[x=0,type=bee,team=Blue,scores={CmdData=0}] run damage @s 0.00001 arrow by @p[predicate=custom:indimension,team=Yellow]
-execute as @e[x=0,type=bee,team=Yellow,scores={CmdData=0}] run damage @s 0.00001 arrow by @p[predicate=custom:indimension,team=Blue]
+execute as @e[x=0,type=bee,predicate=custom:team/blue,scores={CmdData=0}] run damage @s 0.00001 arrow by @p[predicate=custom:indimension,predicate=custom:team/yellow]
+execute as @e[x=0,type=bee,predicate=custom:team/yellow,scores={CmdData=0}] run damage @s 0.00001 arrow by @p[predicate=custom:indimension,predicate=custom:team/blue]
 
 execute as @e[x=0,type=bee,predicate=custom:bee_anger_periodic_tick] run data merge entity @s {AngerTime:1000}
 

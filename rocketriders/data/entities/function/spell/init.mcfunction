@@ -17,7 +17,7 @@ execute on origin run function custom:resolve_text_component {text_component:[""
 data modify entity @s[type=area_effect_cloud] CustomName set from storage rocketriders:main spell.name
 
 scoreboard players set $team var -1
-execute unless predicate game:gamemode_components/neutral_items on origin if predicate custom:on_blue_or_yellow_team store success score $team var if entity @s[team=!Blue]
+execute unless predicate game:gamemode_components/neutral_items on origin if predicate custom:team/any_playing_team store success score $team var unless predicate custom:team/blue
 execute if score $team var matches -1 run data modify entity @s data.origin_team set value "none"
 execute if score $team var matches 0 run data modify entity @s data.origin_team set value "blue"
 execute if score $team var matches 1 run data modify entity @s data.origin_team set value "yellow"

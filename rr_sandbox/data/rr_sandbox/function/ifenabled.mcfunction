@@ -10,7 +10,7 @@ function rr_sandbox:tip
 function rr_sandbox:game/gamestart
 execute if predicate game:game_running run function rr_sandbox:game/game_running
 execute if predicate game:match_in_play run function rr_sandbox:game/match_in_play
-execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:on_blue_or_yellow_team] run function rr_sandbox:items/givenomicon
+execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function rr_sandbox:items/givenomicon
 execute if predicate game:match_over run function rr_sandbox:game/match_over
 
 #reset

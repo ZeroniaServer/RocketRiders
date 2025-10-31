@@ -1,9 +1,8 @@
 ##Operator function for forcing a game to end
 scoreboard players set $match_over global 1
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s #custom:clear
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s *[custom_data~{id:"nova_rocket"}]
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run clear @s *[custom_data~{id:"booster_rocket"}]
-execute as @a[x=0] unless entity @s[team=!Blue,team=!Yellow] run effect clear @s
+clear @a[x=0,predicate=custom:team/any_playing_team] #custom:clear
+clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"nova_rocket"}|custom_data~{id:"booster_rocket"}]
+effect clear @a[x=0,predicate=custom:team/any_playing_team]
 dialog clear @a[x=0]
 scoreboard players reset $match_in_play global
 scoreboard players reset $game_paused global

@@ -1,9 +1,9 @@
 # Determine Team
 scoreboard players set $team var -1
 execute unless predicate entities:origin_team/none store success score $team var unless predicate entities:origin_team/blue
-execute if score $team var matches -1 on origin on origin if entity @s[type=player] unless predicate game:gamemode_components/custom_team_colors store success score $team var if entity @s[team=!Blue]
-execute if score $team var matches -1 on origin if entity @s[type=player] unless predicate game:gamemode_components/custom_team_colors store success score $team var if entity @s[team=!Blue]
-execute if score $team var matches -1 if entity @s[type=player] unless predicate game:gamemode_components/custom_team_colors store success score $team var if entity @s[team=!Blue]
+execute if score $team var matches -1 on origin on origin if entity @s[type=player] unless predicate game:gamemode_components/custom_team_colors store success score $team var unless predicate custom:team/blue
+execute if score $team var matches -1 on origin if entity @s[type=player] unless predicate game:gamemode_components/custom_team_colors store success score $team var unless predicate custom:team/blue
+execute if score $team var matches -1 if entity @s[type=player] unless predicate game:gamemode_components/custom_team_colors store success score $team var unless predicate custom:team/blue
 
 # Check if power should be ramped (always if Snipe Portals if off, otherwise only near own team's portal)
 scoreboard players set $do_explosion_power_ramp var 0

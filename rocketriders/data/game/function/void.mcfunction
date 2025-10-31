@@ -4,14 +4,14 @@
 ##############################################
 
 # Handle Spectators
-execute if entity @s[team=Spectator] run return run tp @s 12 100 0.5 90 90
+execute if entity @s[predicate=custom:team/spectator] run return run tp @s 12 100 0.5 90 90
 
 
 # "Cry About It" achievement
 execute if entity @s[tag=CheckCry] if predicate rr:has_achievements run advancement grant @s only achievements:rr_challenges/cryaboutit
 
 # Handle non-crossers
-execute if entity @s[team=!Spectator,tag=!crosser] run return run damage @s 100.0 out_of_world
+execute if entity @s[predicate=!custom:team/spectator,tag=!crosser] run return run damage @s 100.0 out_of_world
 
 # Handle crossers (Rocket Residers)
 execute unless score $nodeathmessages CmdData matches 1 if entity @s[tag=crosser] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to leave their base"}]

@@ -1,8 +1,8 @@
-tag @a[x=0,team=!Blue,team=!Yellow] remove CarryFY1
-tag @a[x=0,team=!Blue,team=!Yellow] remove CarryFY2
-tag @a[x=0,team=!Blue,team=!Yellow] remove CarryFB1
-tag @a[x=0,team=!Blue,team=!Yellow] remove CarryFB2
-tag @a[x=0,team=!Blue,team=!Yellow] remove CarryFlag
-tag @a[x=0,team=!Blue,team=!Yellow] remove FlipMissile
-scoreboard players reset @a[x=0,team=!Blue,team=!Yellow] FlagScore
-scoreboard players reset @a[x=0,team=!Blue,team=!Yellow] FlagDeliver
+tag @a[x=0,predicate=!custom:team/any_playing_team] remove CarryFY1
+tag @a[x=0,predicate=!custom:team/any_playing_team] remove CarryFY2
+tag @a[x=0,predicate=!custom:team/any_playing_team] remove CarryFB1
+tag @a[x=0,predicate=!custom:team/any_playing_team] remove CarryFB2
+tag @a[x=0,predicate=!custom:team/any_playing_team] remove CarryFlag
+tag @a[x=0,predicate=!custom:team/any_playing_team] remove FlipMissile
+scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] FlagScore
+scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] FlagDeliver

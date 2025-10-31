@@ -1,13 +1,13 @@
 ##Handles players leaving teams
-tag @a[x=0,tag=LeaveTeams,team=Yellow] add LeavingYellow
+tag @a[x=0,tag=LeaveTeams,predicate=custom:team/yellow] add LeavingYellow
 execute as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
-tag @a[x=0,tag=LeaveTeams,team=Blue] add LeavingBlue
+tag @a[x=0,tag=LeaveTeams,predicate=custom:team/blue] add LeavingBlue
 execute unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" left the blue team!","color":"dark_aqua"}]
 execute if entity @e[x=0,type=armor_stand,tag=chaseEnabled] as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" left the game!","color":"red"}]
-tag @a[x=0,tag=LeaveTeams,team=Spectator] add LeavingSpec
+tag @a[x=0,tag=LeaveTeams,predicate=custom:team/spectator] add LeavingSpec
 execute as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
 execute as @a[x=0,tag=LeavingSpec] run tp @s @s
-tag @a[x=0,tag=LeaveTeams,team=Lobby] add WasInLobby
+tag @a[x=0,tag=LeaveTeams,predicate=custom:team/lobby] add WasInLobby
 tag @a[x=0,tag=LeaveTeams] remove doing_facade_parkour
 team join Lobby @a[x=0,tag=LeaveTeams]
 execute if entity @a[limit=1,x=0,tag=LeaveTeams] run function everytick:team_count

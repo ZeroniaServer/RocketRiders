@@ -1,7 +1,7 @@
 tag @s add missile
 
-execute if entity @a[limit=1,tag=placer,team=!Yellow] run tag @s add bluemissile
-execute if entity @a[limit=1,tag=placer,team=Yellow] run tag @s add yellowmissile
+execute if entity @a[limit=1,tag=placer,predicate=!custom:team/yellow] run tag @s add bluemissile
+execute if entity @a[limit=1,tag=placer,predicate=custom:team/yellow] run tag @s add yellowmissile
 
 execute if data storage rocketriders:main spawn_egg{missile:"ant"} run scoreboard players add @a[limit=1,tag=placer] AntsSpawned 1
 execute if data storage rocketriders:main spawn_egg{missile:"ant"} run tag @s[tag=bluemissile] add BlueAnt

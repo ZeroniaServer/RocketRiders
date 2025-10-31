@@ -3,16 +3,34 @@
     "requirement": {
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
-        "player": {
-          "team": "Blue",
-          "location": {
-            "dimension": "minecraft:overworld"
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:team/blue"
           }
-        },
-        "entity": {
-          "type": "minecraft:player",
-          "team": "Yellow"
-        }
+        ],
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:player"
+            }
+          },
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:team/yellow"
+          }
+        ]
       }
     }
   },

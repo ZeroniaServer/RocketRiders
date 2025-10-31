@@ -19,12 +19,12 @@ execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt_minecart]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=creeper]
 
 ##Preparing for Sudden Death
-execute if entity @s[scores={SDtime=1}] run title @a[x=0,team=Blue] actionbar [""]
-execute if entity @s[scores={SDtime=1}] run title @a[x=0,team=Yellow] actionbar [""]
+execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/blue] actionbar [""]
+execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/yellow] actionbar [""]
 execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
 execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
-execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Blue] 12 64 -66 0 0
-execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,team=Yellow] 12 64 66 180 0
+execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={SDtime=1}] as @a[x=0] run function custom:player_action/forget_all_canopies
 execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
 execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[x=0] armor.head with air
@@ -49,16 +49,16 @@ execute if entity @s[scores={SDtime=4}] at @s run effect clear @a[x=0] blindness
 execute if entity @s[scores={SDtime=1}] run scoreboard players reset $match_over global
 execute if entity @s[scores={SDtime=1}] run scoreboard players set $match_in_play global 1
 execute if entity @s[scores={SDtime=1}] run function achievements:scoresreset
-execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Blue]
-execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,team=Yellow]
+execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,predicate=custom:team/blue]
+execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,predicate=custom:team/yellow]
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon
 #For Premature Celebration achievement
-execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=BlueWonFirst] run advancement grant @a[x=0,team=Blue] only achievements:rr_challenges/premature
+execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=BlueWonFirst] run advancement grant @a[x=0,predicate=custom:team/blue] only achievements:rr_challenges/premature
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
-execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=YellowWonFirst] run advancement grant @a[x=0,team=Yellow] only achievements:rr_challenges/premature
+execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=YellowWonFirst] run advancement grant @a[x=0,predicate=custom:team/yellow] only achievements:rr_challenges/premature
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
 #Halves the Item Delay (more intense gameplay)
 scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /= $2 constant
@@ -66,7 +66,7 @@ scoreboard players set @s[scores={SDtime=1,MaxItemTime=..1}] MaxItemTime 2
 execute if entity @s[scores={SDtime=1}] run scoreboard players set @s RandomItem -3
 execute if entity @s[scores={SDtime=1}] run scoreboard players operation @s RandomItem += @s MaxItemTime
 execute if entity @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute] RandomItem 1197
-execute if entity @s[scores={SDtime=10}] as @a[x=0,team=!Lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
+execute if entity @s[scores={SDtime=10}] as @a[x=0,predicate=!custom:team/lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
 
 ##Places back portals
 execute if predicate game:blue_portal_revealed run function game:place_portal/blue

@@ -19,11 +19,11 @@ execute on origin run tag @s remove nova_attach.origin
 #execute positioned as @s run fill ~3.5 ~3.5 ~3.5 ~-3.5 ~-3.5 ~-3.5 air replace #custom:canopy_blocks
 
 execute on origin run tag @s add nova_attach.origin
-execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/blue at @s as @a[distance=..6.666,team=Yellow] run function entities:nova_attach/init
-execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/yellow at @s as @a[distance=..6.666,team=Blue] run function entities:nova_attach/init
+execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/blue at @s as @a[distance=..6.666,predicate=custom:team/yellow] run function entities:nova_attach/init
+execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/yellow at @s as @a[distance=..6.666,predicate=custom:team/blue] run function entities:nova_attach/init
 execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/none at @s as @a[distance=..6.666,tag=!nova_attach.origin] run function entities:nova_attach/init
-execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/blue at @s as @a[distance=..4,team=Yellow] run function entities:nova_attach/init
-execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/yellow at @s as @a[distance=..4,team=Blue] run function entities:nova_attach/init
+execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/blue at @s as @a[distance=..4,predicate=custom:team/yellow] run function entities:nova_attach/init
+execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/yellow at @s as @a[distance=..4,predicate=custom:team/blue] run function entities:nova_attach/init
 execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/none at @s as @a[distance=..4,tag=!nova_attach.origin] run function entities:nova_attach/init
 execute on origin run tag @s remove nova_attach.origin
 

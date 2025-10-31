@@ -2,21 +2,21 @@
 #For placing players where they belong based on team
 tag @a[x=0,tag=WasInYellow] remove WasInYellow
 tag @a[x=0,tag=WasInBlue] remove WasInBlue
-tag @a[x=0,team=Yellow] add WasInYellow
-tag @a[x=0,team=Blue] add WasInBlue
+tag @a[x=0,predicate=custom:team/yellow] add WasInYellow
+tag @a[x=0,predicate=custom:team/blue] add WasInBlue
 scoreboard players add @a[x=0] LeaveGame 0
 
 #Clearing effects/tags and teleporting to lobby
-tag @a[x=0,team=!Blue,team=!Yellow,tag=CarryFlag] remove CarryFlag
-tag @a[x=0,team=!Blue,team=!Yellow,tag=CarryFY1] remove CarryFY1
-tag @a[x=0,team=!Blue,team=!Yellow,tag=CarryFY2] remove CarryFY2
-tag @a[x=0,team=!Blue,team=!Yellow,tag=CarryFB1] remove CarryFB1
-tag @a[x=0,team=!Blue,team=!Yellow,tag=CarryFB2] remove CarryFB2
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFlag] remove CarryFlag
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY1] remove CarryFY1
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY2] remove CarryFY2
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFB1] remove CarryFB1
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFB2] remove CarryFB2
 effect clear @a[x=0,scores={LeaveGame=1..}]
 effect give @a[x=0,scores={LeaveGame=1..}] instant_health 1 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] resistance infinite 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] night_vision infinite 100 true
-team join Lobby @a[x=0,scores={LeaveGame=1..},team=!Lobby]
+team join Lobby @a[x=0,scores={LeaveGame=1..},predicate=!custom:team/lobby]
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode survival
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode adventure
 title @a[x=0,scores={LeaveGame=1..,firstJoined=2}] times 5 30 5
@@ -74,7 +74,7 @@ execute as @a[x=0,scores={LeaveGame=1..}] run function custom:update_armor
 #Reset
 execute if entity @a[limit=1,x=0,scores={LeaveGame=1..}] run function everytick:team_count
 scoreboard players set @a[x=0,scores={LeaveGame=1..}] LeaveMidgame 0
-scoreboard players set @a[x=0,team=!Yellow,team=!Blue] LeaveMidgame 0
+scoreboard players set @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame 0
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteNum
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteServerMode
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] LeaveGame

@@ -1,17 +1,17 @@
 #After game ends
 scoreboard players add @s fakeendtimer 1
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"booster_rocket"}]
+clear @a[x=0,predicate=custom:team/any_playing_team] #custom:clear
+clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"nova_rocket"}]
+clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"booster_rocket"}]
 tag @s[scores={fakeendtimer=1}] remove gaveFirstItem
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime = @s[scores={fakeendtimer=1}] MaxItemSec
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime *= $20 constant
 scoreboard players set @s RandomItem -3
 execute if entity @s[scores={fakeendtimer=1}] run function game:endstats
-execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,team=Blue]
-execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,team=Yellow]
-execute if entity @s[scores={fakeendtimer=1..2}] run tp @a[x=0,team=Blue] 12 64 -66 0 0
-execute if entity @s[scores={fakeendtimer=1..2}] run tp @a[x=0,team=Yellow] 12 64 66 180 0
+execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,predicate=custom:team/blue]
+execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,predicate=custom:team/yellow]
+execute if entity @s[scores={fakeendtimer=1..2}] run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+execute if entity @s[scores={fakeendtimer=1..2}] run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={fakeendtimer=1}] as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] blindness
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] glowing

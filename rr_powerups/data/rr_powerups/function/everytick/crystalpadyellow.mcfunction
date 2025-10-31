@@ -1,10 +1,10 @@
-execute unless entity @e[x=0,type=end_crystal,tag=PUCrystal,limit=1] if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=20..},limit=1] as @a[x=0,team=Yellow,predicate=rr_powerups:oncrystalyellow,limit=1] run scoreboard players add @e[x=0,type=marker,tag=captureMiddle,limit=1] PowerupCrystal 1
+execute unless entity @e[x=0,type=end_crystal,tag=PUCrystal,limit=1] if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..,PowerupCrystal=20..},limit=1] as @a[x=0,predicate=custom:team/yellow,predicate=rr_powerups:oncrystalyellow,limit=1] run scoreboard players add @e[x=0,type=marker,tag=captureMiddle,limit=1] PowerupCrystal 1
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=98..},limit=1] unless entity @s[scores={PowerupCrystal=20..}] run scoreboard players add @s PowerupCrystal 1
 
 #Destroy platforms when not captured
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=96,capturePoint=1},limit=1] run tp @a[x=0,team=Yellow,predicate=rr_powerups:oncrystalyellow] 12 64 66 -180 0
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=96,capturePoint=1},limit=1] as @a[x=0,team=Yellow] at @s run playsound minecraft:entity.ender_eye.death master @s
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=96,capturePoint=1},limit=1] run tellraw @a[x=0,team=Yellow] {"text":"Crystal Crafter Deactivated!","color":"red","bold":true}
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=96,capturePoint=1},limit=1] run tp @a[x=0,predicate=custom:team/yellow,predicate=rr_powerups:oncrystalyellow] 12 64 66 -180 0
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=96,capturePoint=1},limit=1] as @a[x=0,predicate=custom:team/yellow] at @s run playsound minecraft:entity.ender_eye.death master @s
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=96,capturePoint=1},limit=1] run tellraw @a[x=0,predicate=custom:team/yellow] {"text":"Crystal Crafter Deactivated!","color":"red","bold":true}
 scoreboard players reset @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=96},limit=1] PowerupCrystal
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=96,capturePoint=1},limit=1] run fill 14 63 68 10 66 72 air destroy
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=96,capturePoint=1},limit=1] run fill 14 63 67 10 63 67 air destroy
@@ -15,8 +15,8 @@ execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=..94}
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=..96},limit=1] run fill 11 64 67 13 64 67 obsidian
 
 #Kill entities if someone left the platform
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},limit=1] unless entity @a[x=0,team=Yellow,predicate=rr_powerups:oncrystalyellow,limit=1] run kill @e[x=0,type=armor_stand,tag=PUCrystalDeco]
-execute as @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},limit=1] unless entity @a[x=0,team=Yellow,predicate=rr_powerups:oncrystalyellow,limit=1] run scoreboard players set @s PowerupCrystal 20
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},limit=1] unless entity @a[x=0,predicate=custom:team/yellow,predicate=rr_powerups:oncrystalyellow,limit=1] run kill @e[x=0,type=armor_stand,tag=PUCrystalDeco]
+execute as @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},limit=1] unless entity @a[x=0,predicate=custom:team/yellow,predicate=rr_powerups:oncrystalyellow,limit=1] run scoreboard players set @s PowerupCrystal 20
 
 #Assemble platform - Yellow
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=1,captureBlue=98..},limit=1] run setblock 12 63 67 netherite_block
@@ -93,9 +93,9 @@ execute as @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=17,captur
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=18,captureBlue=98..},limit=1] positioned 12 63 70 run playsound minecraft:block.lava.pop master @a[x=0] ~ ~ ~ 2 2
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},limit=1] positioned 12 63 70 run playsound minecraft:block.lava.pop master @a[x=0] ~ ~ ~ 2 2
 
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},limit=1] as @a[x=0,team=Yellow] at @s run playsound minecraft:entity.ender_eye.death master @s
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},limit=1] run tellraw @a[x=0,team=Yellow] {"text":"Crystal Crafter Activated!","color":"dark_purple","bold":true}
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},limit=1] run tellraw @a[x=0,team=Yellow] {"text":"Walk behind your spawnpoint and stand on the Crystal Crafter to send Crystals to the Powerups Platform.","color":"light_purple"}
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},limit=1] as @a[x=0,predicate=custom:team/yellow] at @s run playsound minecraft:entity.ender_eye.death master @s
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},limit=1] run tellraw @a[x=0,predicate=custom:team/yellow] {"text":"Crystal Crafter Activated!","color":"dark_purple","bold":true}
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=19,captureBlue=98..},limit=1] run tellraw @a[x=0,predicate=custom:team/yellow] {"text":"Walk behind your spawnpoint and stand on the Crystal Crafter to send Crystals to the Powerups Platform.","color":"light_purple"}
 
 # pad is indestructible
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={PowerupCrystal=20..,captureBlue=98..},limit=1] run function rr_powerups:everytick/crystalpadyellow_place

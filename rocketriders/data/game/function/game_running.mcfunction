@@ -4,20 +4,20 @@
 ########################################################
 
 ##Player spawnpoints
-spawnpoint @a[x=0,team=Blue] 12 64 -66 0 0
-spawnpoint @a[x=0,team=Yellow] 12 64 66 -180 0
+spawnpoint @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+spawnpoint @a[x=0,predicate=custom:team/yellow] 12 64 66 -180 0
 
 ##Prevent players from going above the arena
-execute unless predicate game:game_paused unless predicate game:match_over as @a[x=0,predicate=custom:on_blue_or_yellow_team,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
-execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,team=Blue] at @s in overworld if entity @s[y=181,dy=100] run tp @s 12 64 -66 0 0
-execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,team=Yellow] at @s in overworld if entity @s[y=181,dy=100] run tp @s 12 64 66 180 0
-execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,team=Spectator] at @s in overworld if entity @s[y=181,dy=100] run tp @s 12 100 0.5 90 90
+execute unless predicate game:game_paused unless predicate game:match_over as @a[x=0,predicate=custom:team/any_playing_team,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[y=181,dy=100] run function game:punishbreach
+execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,predicate=custom:team/blue] at @s in overworld if entity @s[y=181,dy=100] run tp @s 12 64 -66 0 0
+execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,predicate=custom:team/yellow] at @s in overworld if entity @s[y=181,dy=100] run tp @s 12 64 66 180 0
+execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,predicate=custom:team/spectator] at @s in overworld if entity @s[y=181,dy=100] run tp @s 12 100 0.5 90 90
 
 ##Player void
-execute unless predicate game:game_paused unless predicate game:match_over as @a[x=0,predicate=custom:on_blue_or_yellow_or_spectator_team,predicate=custom:in_void] unless score @s ThrowPlat matches 1.. at @s run function game:void
-execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,team=Blue,predicate=custom:in_void] run tp @s 12 64 -66 0 0
-execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,team=Yellow,predicate=custom:in_void] run tp @s 12 64 66 180 0
-execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,team=Spectator,predicate=custom:in_void] run tp @s 12 100 0.5 90 90
+execute unless predicate game:game_paused unless predicate game:match_over as @a[x=0,predicate=custom:team/any_arena_team,predicate=custom:in_void] unless score @s ThrowPlat matches 1.. at @s run function game:void
+execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,predicate=custom:team/blue,predicate=custom:in_void] run tp @s 12 64 -66 0 0
+execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,predicate=custom:team/yellow,predicate=custom:in_void] run tp @s 12 64 66 180 0
+execute unless predicate game:game_paused if predicate game:match_over as @a[x=0,predicate=custom:team/spectator,predicate=custom:in_void] run tp @s 12 100 0.5 90 90
 
 ##General everytick commands
 function everytick:spawnables

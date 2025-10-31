@@ -1,6 +1,6 @@
 [
   {"condition":"minecraft:reference","name":"game:match_in_play"},
-  {"condition":"minecraft:reference","name":"custom:on_blue_or_yellow_team"},
+  {"condition":"minecraft:reference","name":"custom:team/any_playing_team"},
   {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"count":{"min":1}}}}},
   {
     "condition": "minecraft:inverted",

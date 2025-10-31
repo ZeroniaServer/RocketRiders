@@ -9,8 +9,8 @@ execute if score @s MaxItemSec matches ..4 run return run tellraw @s {"text":"Yo
 execute if score @s MaxItemSec matches 31.. run return run tellraw @s {"text":"You cannot make the item delay higher than 30 seconds","color":"red"}
 
 #Set new time
-execute if entity @s[team=!Yellow,team=!Blue,team=!Spectator] run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemSec = @s MaxItemSec
-execute if entity @s[team=!Yellow,team=!Blue,team=!Spectator] run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemTime *= $20 constant
+execute unless predicate custom:team/any_arena_team run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemSec = @s MaxItemSec
+execute unless predicate custom:team/any_arena_team run scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemTime *= $20 constant
 
 #Refresh options signs
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] run function arenaclear:refreshoptionssigns

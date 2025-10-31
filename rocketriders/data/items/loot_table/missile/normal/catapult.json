@@ -130,11 +130,8 @@
                   }
                 },
                 {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Blue"
-                  }
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
                 }
               ]
             },
@@ -167,11 +164,8 @@
                   }
                 },
                 {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Yellow"
-                  }
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
                 }
               ]
             }

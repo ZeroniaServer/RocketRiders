@@ -1,19 +1,19 @@
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #custom:clear
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"booster_rocket"}]
+clear @a[x=0,predicate=custom:team/any_playing_team] #custom:clear
+clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"nova_rocket"}]
+clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"booster_rocket"}]
 scoreboard players reset @s fakeendtimer
 tag @s remove FakeGameEnd
 
 #forfeit prize/loss
-execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[x=0,tag=InRanked,team=Blue] add ForfeitWon
-execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[x=0,tag=InRanked,team=Yellow] add ForfeitWon
+execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[x=0,tag=InRanked,predicate=custom:team/blue] add ForfeitWon
+execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] run tag @a[x=0,tag=InRanked,predicate=custom:team/yellow] add ForfeitWon
 execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] as @a[x=0,tag=ForfeitWon] run function rr_duel:forfeit/giveprize
 execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[x=0,tag=!InRanked] ForfeitWin
 execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[x=0,tag=!InRanked] ForfeitLoss
 
 execute if entity @s[scores={endtimer=1}] run function game:endstats
-execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,team=Blue] remove InRanked
-execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,team=Yellow] remove InRanked
+execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,predicate=custom:team/blue] remove InRanked
+execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,predicate=custom:team/yellow] remove InRanked
 scoreboard players reset @s ForfeitTimeout
 tag @s remove TimeOut
 tag @a[x=0] remove Forfeiter

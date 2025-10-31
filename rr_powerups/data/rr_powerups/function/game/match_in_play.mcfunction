@@ -54,25 +54,25 @@ execute as @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=0}] run sco
 
 #capture the point (+ optional gamemode stuff)
 tag @a[x=0,tag=onCapturePoint] remove onCapturePoint
-execute as @e[x=0,type=marker,tag=captureMiddle] at @s as @e[type=player,team=Blue,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
-execute as @e[x=0,type=marker,tag=captureMiddle] at @s as @e[type=player,team=Yellow,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
+execute as @e[x=0,type=marker,tag=captureMiddle] at @s as @e[type=player,predicate=custom:team/blue,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
+execute as @e[x=0,type=marker,tag=captureMiddle] at @s as @e[type=player,predicate=custom:team/yellow,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
 #hotfix to prevent players from falling through the platform if they break the blocks beneath them
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform] at @s as @e[type=player,tag=onCapturePoint,distance=..5.5] at @s if entity @s[y=53,dy=0.5] if block ~ ~-1 ~ air run tp @s ~ ~0.1 ~
 execute as @e[x=0,type=player,tag=onCapturePoint] at @s unless entity @s[y=54,dy=1] unless entity @e[type=marker,tag=captureMiddle,tag=!BrokenPlatform,distance=..7.1,limit=1] run tag @s remove onCapturePoint
 
-execute if entity @a[x=0,team=Blue,tag=onCapturePoint] unless entity @a[x=0,team=Yellow,tag=onCapturePoint] run scoreboard players add @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={captureYellow=0},tag=!contested] captureBlue 2
-execute if entity @a[x=0,team=Blue,tag=onCapturePoint] unless entity @a[x=0,team=Yellow,tag=onCapturePoint] run tag @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform] remove contested
+execute if entity @a[x=0,predicate=custom:team/blue,tag=onCapturePoint] unless entity @a[x=0,predicate=custom:team/yellow,tag=onCapturePoint] run scoreboard players add @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={captureYellow=0},tag=!contested] captureBlue 2
+execute if entity @a[x=0,predicate=custom:team/blue,tag=onCapturePoint] unless entity @a[x=0,predicate=custom:team/yellow,tag=onCapturePoint] run tag @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform] remove contested
 
-execute if entity @a[x=0,team=Yellow,tag=onCapturePoint] unless entity @a[x=0,team=Blue,tag=onCapturePoint] run scoreboard players add @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={captureBlue=0},tag=!contested] captureYellow 2
-execute if entity @a[x=0,team=Yellow,tag=onCapturePoint] unless entity @a[x=0,team=Blue,tag=onCapturePoint] run tag @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform] remove contested
+execute if entity @a[x=0,predicate=custom:team/yellow,tag=onCapturePoint] unless entity @a[x=0,predicate=custom:team/blue,tag=onCapturePoint] run scoreboard players add @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={captureBlue=0},tag=!contested] captureYellow 2
+execute if entity @a[x=0,predicate=custom:team/yellow,tag=onCapturePoint] unless entity @a[x=0,predicate=custom:team/blue,tag=onCapturePoint] run tag @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform] remove contested
 
 execute unless entity @a[x=0,tag=onCapturePoint] run tag @e[x=0,type=marker,tag=captureMiddle] remove contested
 
 scoreboard players set @e[x=0,type=marker,tag=captureMiddle,tag=!contested,scores={captureBlue=99..}] capturePoint 1
 scoreboard players set @e[x=0,type=marker,tag=captureMiddle,tag=!contested,scores={captureYellow=99..}] capturePoint 2
 
-execute if entity @a[x=0,team=Yellow,tag=onCapturePoint] if entity @a[x=0,team=Blue,tag=onCapturePoint] if entity @e[x=0,type=marker,tag=captureMiddle,tag=!contested] run function rr_powerups:items/tetrisreset
-execute if entity @a[x=0,team=Yellow,tag=onCapturePoint] if entity @a[x=0,team=Blue,tag=onCapturePoint] run tag @e[x=0,type=marker,tag=captureMiddle] add contested
+execute if entity @a[x=0,predicate=custom:team/yellow,tag=onCapturePoint] if entity @a[x=0,predicate=custom:team/blue,tag=onCapturePoint] if entity @e[x=0,type=marker,tag=captureMiddle,tag=!contested] run function rr_powerups:items/tetrisreset
+execute if entity @a[x=0,predicate=custom:team/yellow,tag=onCapturePoint] if entity @a[x=0,predicate=custom:team/blue,tag=onCapturePoint] run tag @e[x=0,type=marker,tag=captureMiddle] add contested
 scoreboard players remove @e[x=0,type=marker,tag=contested] captureBlue 1
 scoreboard players remove @e[x=0,type=marker,tag=contested] captureYellow 1
 
@@ -80,10 +80,10 @@ execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,tag=!contest
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,tag=!contested,scores={captureYellow=1..}] if score @s captureYellow >= @s captureBlue run function rr_powerups:game/fancyyellow
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,tag=contested] run function rr_powerups:game/fancycontested
 
-execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=99..}] if entity @a[x=0,team=Yellow,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
-execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=99..}] if entity @a[x=0,team=Blue,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
-execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=1..99}] unless entity @a[x=0,team=Blue,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
-execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=1..99}] unless entity @a[x=0,team=Yellow,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
+execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=99..}] if entity @a[x=0,predicate=custom:team/yellow,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
+execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=99..}] if entity @a[x=0,predicate=custom:team/blue,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
+execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=1..99}] unless entity @a[x=0,predicate=custom:team/blue,tag=onCapturePoint] run scoreboard players remove @s captureBlue 1
+execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=1..99}] unless entity @a[x=0,predicate=custom:team/yellow,tag=onCapturePoint] run scoreboard players remove @s captureYellow 1
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=..0,captureBlue=..0}] run scoreboard players set @s capturePoint 0
 
 #powerup platform design
@@ -100,7 +100,7 @@ function rr_powerups:everytick/platformdeplete
 
 #bossbar
 bossbar set rr_powerups:capture_progress style progress
-execute if score $game_duration global matches 1.. run bossbar set rr_powerups:capture_progress players @a[x=0,team=!Lobby]
+execute if score $game_duration global matches 1.. run bossbar set rr_powerups:capture_progress players @a[x=0,predicate=!custom:team/lobby]
 
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform] if score @s captureBlue >= @s captureYellow store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureBlue
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue > @s captureYellow run bossbar set rr_powerups:capture_progress color blue
@@ -118,10 +118,10 @@ execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatfo
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Captured!","color":"yellow","bold":true}]
 
 #actionbar
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=2..}] as @a[x=0,team=Blue,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":true},{"text":" seconds!","color":"light_purple"}]
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=..1}] as @a[x=0,team=Blue,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":true},{"text":" second!","color":"light_purple"}]
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=2..}] as @a[x=0,team=Yellow,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":true},{"text":" seconds!","color":"dark_purple"}]
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=..1}] as @a[x=0,team=Yellow,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":true},{"text":" second!","color":"dark_purple"}]
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=2..}] as @a[x=0,predicate=custom:team/blue,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":true},{"text":" seconds!","color":"light_purple"}]
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=..1}] as @a[x=0,predicate=custom:team/blue,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"light_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"dark_purple","bold":true},{"text":" second!","color":"light_purple"}]
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=2..}] as @a[x=0,predicate=custom:team/yellow,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":true},{"text":" seconds!","color":"dark_purple"}]
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=..1}] as @a[x=0,predicate=custom:team/yellow,tag=!DelayActionbar] run title @s actionbar ["",{"text":"A new Powerup will be given out in ","color":"dark_purple"},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"PowerupDisplay"},"color":"light_purple","bold":true},{"text":" second!","color":"dark_purple"}]
 
 #win
 execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon] if function game:check/blue_portal_broken if function game:check/yellow_portal_broken run function game:winbothcheck

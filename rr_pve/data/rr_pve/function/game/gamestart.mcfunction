@@ -32,8 +32,8 @@ execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=Edit
 execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
 
 #Countdown
-execute unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,team=Blue] run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,team=Blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings] unless entity @a[x=0,team=Blue] run kill @e[x=0,type=armor_stand,tag=Bot]
+execute unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/blue] run tag @s add Countdown
+execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] run function game:restartcountdown
+execute if entity @s[tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/blue] run kill @e[x=0,type=armor_stand,tag=Bot]
 execute unless predicate game:match_over if entity @s[scores={count=590..600}] run kill @e[x=0,type=armor_stand,tag=Bot]
 execute unless predicate game:match_over if score @s count matches 600 run scoreboard players set $match_in_play global 1

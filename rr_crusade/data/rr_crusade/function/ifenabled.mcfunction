@@ -17,7 +17,7 @@ execute if predicate game:match_over run function rr_crusade:game/match_over
 execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
 
 #kits
-execute unless predicate game:match_over if entity @s[tag=EditedSettings] run scoreboard players enable @a[x=0,team=!Lobby,team=!Developer,team=!Spectator] crusadechange
+execute unless predicate game:match_over if entity @s[tag=EditedSettings] run scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] crusadechange
 execute unless predicate game:match_in_play if predicate game:match_over run scoreboard players reset @a[x=0] crusadechange
 execute if predicate game:match_in_play if predicate game:match_over run scoreboard players reset @a[x=0,scores={deathCooldown=5}] crusadechange
 execute unless predicate game:match_in_play as @a[x=0,scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight

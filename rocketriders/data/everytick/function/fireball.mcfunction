@@ -24,8 +24,8 @@ execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEna
 
 execute as @e[x=0,type=fireball,tag=NormalFireball,tag=FireballBlue,tag=!Still,tag=DontPoof] at @s if entity @e[predicate=entities:type/canopy/brain,predicate=entities:origin_team/yellow,distance=..6] run tag @s remove DontPoof
 execute as @e[x=0,type=fireball,tag=NormalFireball,tag=FireballYellow,tag=!Still,tag=DontPoof] at @s if entity @e[predicate=entities:type/canopy/brain,predicate=entities:origin_team/blue,distance=..6] run tag @s remove DontPoof
-execute as @e[x=0,type=fireball,tag=NormalFireball,tag=FireballBlue,tag=!Still,tag=DontPoof] at @s if entity @a[team=Yellow,distance=..7] run tag @s remove DontPoof
-execute as @e[x=0,type=fireball,tag=NormalFireball,tag=FireballYellow,tag=!Still,tag=DontPoof] at @s if entity @a[team=Blue,distance=..7] run tag @s remove DontPoof
+execute as @e[x=0,type=fireball,tag=NormalFireball,tag=FireballBlue,tag=!Still,tag=DontPoof] at @s if entity @a[predicate=custom:team/yellow,distance=..7] run tag @s remove DontPoof
+execute as @e[x=0,type=fireball,tag=NormalFireball,tag=FireballYellow,tag=!Still,tag=DontPoof] at @s if entity @a[predicate=custom:team/blue,distance=..7] run tag @s remove DontPoof
 
 execute as @e[x=0,type=fireball,tag=NormalFireball,tag=!Still,tag=!DontPoof] at @s if entity @e[predicate=entities:type/canopy/brain,predicate=entities:origin_team/blue,distance=..2,scores={entity.age=2..399}] run tag @e[predicate=entities:canopy,predicate=entities:origin_team/blue,distance=..2,scores={entity.age=2..399}] add canopy.burn
 execute as @e[x=0,type=fireball,tag=NormalFireball,tag=!Still,tag=!DontPoof] at @s if entity @e[predicate=entities:type/canopy/brain,predicate=entities:origin_team/yellow,distance=..2,scores={entity.age=2..399}] run tag @e[predicate=entities:canopy,predicate=entities:origin_team/yellow,distance=..2,scores={entity.age=2..399}] add canopy.burn

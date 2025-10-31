@@ -20,34 +20,50 @@
         }
       },
       {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "team": "Blue",
-          "location": {
-            "position": {
-              "z": {
-                "min": 30,
-                "max": 85
+        "condition": "minecraft:all_of",
+        "terms": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "position": {
+                  "z": {
+                    "min": 30,
+                    "max": 85
+                  }
+                }
               }
             }
+          },
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:team/blue"
           }
-        }
+        ]
       },
       {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "team": "Yellow",
-          "location": {
-            "position": {
-              "z": {
-                "min": -85,
-                "max": -30
+        "condition": "minecraft:all_of",
+        "terms": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "position": {
+                  "z": {
+                    "min": -85,
+                    "max": -30
+                  }
+                }
               }
             }
+          },
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:team/yellow"
           }
-        }
+        ]
       }
     ]
   }

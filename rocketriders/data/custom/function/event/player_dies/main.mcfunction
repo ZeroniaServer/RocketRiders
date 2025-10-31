@@ -34,19 +34,19 @@ scoreboard players set $can_grant_achievements var 0
 execute if predicate game:match_in_play if predicate rr:has_achievements if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run scoreboard players set $can_grant_achievements var 1
 
 # So Close, Yet So Fall Away (if I am touching the floor of the enemy nether portal, award me)
-execute if score $can_grant_achievements var matches 1 if entity @s[team=Blue,predicate=!custom:not_falling,predicate=custom:on_yellow_half,predicate=custom:standing_on_any_portal] run advancement grant @s only achievements:rr_challenges/fall_away
-execute if score $can_grant_achievements var matches 1 if entity @s[team=Yellow,predicate=!custom:not_falling,predicate=custom:on_blue_half,predicate=custom:standing_on_any_portal] run advancement grant @s only achievements:rr_challenges/fall_away
+execute if score $can_grant_achievements var matches 1 if entity @s[predicate=custom:team/blue,predicate=!custom:not_falling,predicate=custom:on_yellow_half,predicate=custom:standing_on_any_portal] run advancement grant @s only achievements:rr_challenges/fall_away
+execute if score $can_grant_achievements var matches 1 if entity @s[predicate=custom:team/yellow,predicate=!custom:not_falling,predicate=custom:on_blue_half,predicate=custom:standing_on_any_portal] run advancement grant @s only achievements:rr_challenges/fall_away
 
 # Volcanic Hatred (if I am inside of lava, award the owners of the nearby lava splash markers)
-execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[team=Blue] if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[team=Yellow] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
-execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[team=Yellow] if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[team=Blue] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
-execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:on_blue_or_yellow_team if predicate custom:is_in_lava run tag @s add volcanic_hatred.victim
-execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:on_blue_or_yellow_team if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[tag=!volcanic_hatred.victim,predicate=custom:on_blue_or_yellow_team] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
-execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:on_blue_or_yellow_team if predicate custom:is_in_lava run tag @s remove volcanic_hatred.victim
+execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[predicate=custom:team/blue] if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[predicate=custom:team/yellow] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
+execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[predicate=custom:team/yellow] if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[predicate=custom:team/blue] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
+execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:team/any_playing_team if predicate custom:is_in_lava run tag @s add volcanic_hatred.victim
+execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:team/any_playing_team if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[tag=!volcanic_hatred.victim,predicate=custom:team/any_playing_team] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
+execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:team/any_playing_team if predicate custom:is_in_lava run tag @s remove volcanic_hatred.victim
 
 # Get Off My Lawn (if I am killed within 7 blocks of an enemy canopy, and my attacker is within 7 blocks of that same canopy, award the attacker)
-execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[team=Blue] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/yellow] on attacker if entity @s[distance=..7,team=Yellow] run advancement grant @s only achievements:rr_challenges/get_off_lawn
-execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[team=Yellow] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,team=Blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
+execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[predicate=custom:team/blue] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/yellow] on attacker if entity @s[distance=..7,predicate=custom:team/yellow] run advancement grant @s only achievements:rr_challenges/get_off_lawn
+execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[predicate=custom:team/yellow] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/blue] on attacker if entity @s[distance=..7,predicate=custom:team/blue] run advancement grant @s only achievements:rr_challenges/get_off_lawn
 execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items positioned as @n[distance=..7,predicate=entities:type/canopy/brain] on attacker if entity @s[distance=..7] run advancement grant @s only achievements:rr_challenges/get_off_lawn
 
 # Revenge from the Grave
@@ -56,8 +56,8 @@ execute if score $can_grant_achievements var matches 1 if entity @s[tag=primary_
 execute if score $can_grant_achievements var matches 1 if entity @s[tag=secondary_attacker_died] run function custom:target_attackers/secondary {run:"advancement grant @s only achievements:rr_challenges/revenge_from_grave"}
 
 tag @s add match_attacker
-execute as @e[x=0,type=player,predicate=custom:on_blue_or_yellow_team] if function custom:match_attacker/primary run tag @s add primary_attacker_died
-execute as @e[x=0,type=player,predicate=custom:on_blue_or_yellow_team] if function custom:match_attacker/secondary run tag @s add secondary_attacker_died
+execute as @e[x=0,type=player,predicate=custom:team/any_playing_team] if function custom:match_attacker/primary run tag @s add primary_attacker_died
+execute as @e[x=0,type=player,predicate=custom:team/any_playing_team] if function custom:match_attacker/secondary run tag @s add secondary_attacker_died
 tag @s remove match_attacker
 
 tag @s remove primary_attacker_died
@@ -66,11 +66,11 @@ tag @s remove secondary_attacker_died
 
 ## Death-Specific
 # Apply poison on respawn if the player breached the lobby
-execute if predicate game:match_in_play if predicate custom:on_blue_or_yellow_team run tag @s[y=181,dy=100] add on_respawn.apply_poison_effect
+execute if predicate game:match_in_play if predicate custom:team/any_playing_team run tag @s[y=181,dy=100] add on_respawn.apply_poison_effect
 
 # Handle falling into the void
-execute if predicate game:match_in_play if predicate custom:on_blue_or_yellow_team if score $void_death var matches 1 run scoreboard players add @s FellVoid 1
-execute if predicate game:match_in_play if predicate custom:on_blue_or_yellow_team run tag @s[tag=crosser] add on_respawn.apply_crosser_void_fall_effects
+execute if predicate game:match_in_play if predicate custom:team/any_playing_team if score $void_death var matches 1 run scoreboard players add @s FellVoid 1
+execute if predicate game:match_in_play if predicate custom:team/any_playing_team run tag @s[tag=crosser] add on_respawn.apply_crosser_void_fall_effects
 
 
 ## General

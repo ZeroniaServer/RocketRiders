@@ -1,6 +1,6 @@
 ##Handles elytra breaking
 
-tag @a[x=0,predicate=custom:on_blue_or_yellow_team,gamemode=!spectator,predicate=custom:wearing_elytra,predicate=custom:break_elytra] add elytra.break
+tag @a[x=0,predicate=custom:team/any_playing_team,gamemode=!spectator,predicate=custom:wearing_elytra,predicate=custom:break_elytra] add elytra.break
 
 execute as @a[x=0,tag=elytra.break,tag=!elytra.shown_break_message] run title @s title ""
 execute as @a[x=0,tag=elytra.break,tag=!elytra.shown_break_message] run title @s subtitle ["",{bold:true,color:"dark_red",italic:true,text:"Elytra "},{color:"red",text:"expired!"}]

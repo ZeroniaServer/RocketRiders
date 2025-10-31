@@ -27,6 +27,6 @@ execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacki
 
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] run function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,team=Blue,tag=getItem] run function items:surprise_blue/givesurpriseegg
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,team=Yellow,tag=getItem] run function items:surprise_yellow/givesurpriseegg
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,predicate=custom:team/blue,tag=getItem] run function items:surprise_blue/givesurpriseegg
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,predicate=custom:team/yellow,tag=getItem] run function items:surprise_yellow/givesurpriseegg
 kill @e[x=0,type=marker,tag=rng1]

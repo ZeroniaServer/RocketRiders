@@ -24,12 +24,12 @@ execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacki
 
 function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:util/givearrows
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngFireball] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:util/givefireball
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:util/giveobshield
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:util/givecanopy
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:util/giveshield
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:util/givesplash
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngVortex] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:util/givevortex
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNova] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:util/givenova
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givearrows
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngFireball] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givefireball
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/giveobshield
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givecanopy
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/giveshield
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givesplash
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngVortex] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givevortex
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNova] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givenova
 kill @e[x=0,type=marker,tag=rng2]

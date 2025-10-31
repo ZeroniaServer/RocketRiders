@@ -12,12 +12,12 @@ execute if entity @a[x=0,scores={actionbardelay=50..}] run tag @a[x=0,tag=DelayA
 execute if entity @a[x=0,scores={actionbardelay=50..}] run scoreboard players reset @a[x=0,scores={actionbardelay=50..}] actionbardelay
 
 ##Hotfix so Ground Bound achievement isn't broken
-scoreboard players add @a[x=0,team=Yellow] jumps 0
-scoreboard players add @a[x=0,team=Blue] jumps 0
+scoreboard players add @a[x=0,predicate=custom:team/yellow] jumps 0
+scoreboard players add @a[x=0,predicate=custom:team/blue] jumps 0
 
 ##Hotfix so Pacifist achievement isn't broken
-scoreboard players add @a[x=0,team=Yellow] kills 0
-scoreboard players add @a[x=0,team=Blue] kills 0
+scoreboard players add @a[x=0,predicate=custom:team/yellow] kills 0
+scoreboard players add @a[x=0,predicate=custom:team/blue] kills 0
 
 ##Full hotbar check
 function items:full_hotbar
@@ -26,16 +26,16 @@ function items:full_hotbar
 execute unless predicate game:game_paused run scoreboard players add $game_duration global 1
 
 ##Put out players on fire
-execute if score $game_duration global matches 1..2 as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute if score $game_duration global matches 1..2 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
 
 ##Enable fall damage (considers modifiers)
 execute if score $game_duration global matches 10 if entity @s[tag=!NoFall] run gamerule fallDamage true
 
 ##Clear lobby arrows
-execute if score $game_duration global matches ..4 run clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{lobby:true}]
+execute if score $game_duration global matches ..4 run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{lobby:true}]
 
 ##Remove kills
-execute if score $game_duration global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:on_blue_or_yellow_team] kills
+execute if score $game_duration global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] kills
 
 ##Achievements
 function achievements:gain

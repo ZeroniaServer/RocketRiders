@@ -1,8 +1,8 @@
 tag @s remove BOTCONTROL
 scoreboard players add @s botfireball 1
 
-execute if entity @s[tag=BlueBot,scores={botarrow=1}] at @s run tp @s ~ ~ ~ facing entity @e[x=0,team=Yellow,sort=nearest,limit=1]
-execute if entity @s[tag=YellowBot,scores={botarrow=1}] at @s run tp @s ~ ~ ~ facing entity @e[x=0,team=Blue,sort=nearest,limit=1]
+execute if entity @s[tag=BlueBot,scores={botarrow=1}] at @s run tp @s ~ ~ ~ facing entity @e[x=0,predicate=custom:team/yellow,sort=nearest,limit=1]
+execute if entity @s[tag=YellowBot,scores={botarrow=1}] at @s run tp @s ~ ~ ~ facing entity @e[x=0,predicate=custom:team/blue,sort=nearest,limit=1]
 execute if entity @s[tag=BlueBot,scores={botarrow=1}] at @s run summon marker ~ ~ ~ {Tags:["BlueFireball"]}
 execute if entity @s[tag=YellowBot,scores={botarrow=1}] at @s run summon marker ~ ~ ~ {Tags:["YellowFireball"]}
 execute if entity @s[scores={botarrow=1}] at @s run playsound minecraft:item.armor.equip_generic master @a[x=0] ~ ~ ~ 0.5 1

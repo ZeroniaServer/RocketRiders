@@ -124,8 +124,8 @@ execute as @a[x=0,tag=BackBroad,tag=giveback.mainhand_free,gamemode=!creative,li
 execute as @a[x=0,tag=BackBroad,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/special/broadsword
 
 #Surprise Egg
-scoreboard players remove @a[x=0,team=Blue,tag=BackSurprise,limit=1] BSurpriseSpawned 1
-scoreboard players remove @a[x=0,team=Yellow,tag=BackSurprise,limit=1] YSurpriseSpawned 1
+scoreboard players remove @a[x=0,predicate=custom:team/blue,tag=BackSurprise,limit=1] BSurpriseSpawned 1
+scoreboard players remove @a[x=0,predicate=custom:team/yellow,tag=BackSurprise,limit=1] YSurpriseSpawned 1
 tag @a[x=0,tag=BackSurprise,limit=1] remove fullHotbar
 execute as @a[x=0,tag=BackSurprise,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:missile/surprise/all
 execute as @a[x=0,tag=BackSurprise,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/surprise/all

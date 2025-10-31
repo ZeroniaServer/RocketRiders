@@ -4,8 +4,8 @@
 ##########################################
 
 #Enable trigger
-scoreboard players enable @a[x=0,team=Lobby] LobbyWarp
-scoreboard players reset @a[team=!Lobby] LobbyWarp
+scoreboard players enable @a[x=0,predicate=custom:team/lobby] LobbyWarp
+scoreboard players reset @a[predicate=!custom:team/lobby] LobbyWarp
 
 #Cancel parkour
 execute if predicate rr:has_parkour as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used a Lobby Warp, so your Parkour run was canceled.","color":"red"}]
@@ -13,26 +13,26 @@ execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run clear @s
 execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inParkour
 
 #Teleports
-effect clear @a[x=0,team=Lobby,scores={LobbyWarp=7}] night_vision
-execute as @a[x=0,team=Lobby,scores={LobbyWarp=1..}] unless score @s LobbyWarp matches 7 run effect give @s night_vision infinite 100 true
+effect clear @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=7}] night_vision
+execute as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=1..}] unless score @s LobbyWarp matches 7 run effect give @s night_vision infinite 100 true
 
-tp @a[x=0,team=Lobby,scores={LobbyWarp=1}] -43 211 78 90 0
-execute if predicate rr:has_modification_room as @a[x=0,team=Lobby,scores={LobbyWarp=2}] unless score $lockmodroom CmdData matches 1 run tp @s -64 202 78 90 0
-execute if predicate rr:has_modification_room as @a[x=0,team=Lobby,scores={LobbyWarp=2}] if score $lockmodroom CmdData matches 1 run tellraw @s [{"text":"You do not have access to the Modification Room!","color":"red"}]
-execute if predicate rr:has_modification_room as @a[x=0,team=Lobby,scores={LobbyWarp=2}] if score $lockmodroom CmdData matches 1 run scoreboard players reset @s LobbyWarp
-tp @a[x=0,team=Lobby,scores={LobbyWarp=3}] -78 204 64 135 0
-tp @a[x=0,team=Lobby,scores={LobbyWarp=4}] -78 204 92 45 0
-tp @a[x=0,team=Lobby,scores={LobbyWarp=5}] -80 201 78 90 0
-tp @a[x=0,team=Lobby,scores={LobbyWarp=6}] 11 204 78 -90 60
-tp @a[x=0,team=Lobby,scores={LobbyWarp=7}] 65 205 -3 0 0
+tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=1}] -43 211 78 90 0
+execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] unless score $lockmodroom CmdData matches 1 run tp @s -64 202 78 90 0
+execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] if score $lockmodroom CmdData matches 1 run tellraw @s [{"text":"You do not have access to the Modification Room!","color":"red"}]
+execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] if score $lockmodroom CmdData matches 1 run scoreboard players reset @s LobbyWarp
+tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=3}] -78 204 64 135 0
+tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=4}] -78 204 92 45 0
+tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=5}] -80 201 78 90 0
+tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=6}] 11 204 78 -90 60
+tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=7}] 65 205 -3 0 0
 
 #Sound and effects
-execute as @a[x=0,team=Lobby,scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted master @s ~ ~ ~ 1 2
-execute as @a[x=0,team=Lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[x=0,team=Lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle flash{color:0xFFFFFF} ~ ~1 ~ 0 0 0 0 5 force @s
+execute as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted master @s ~ ~ ~ 1 2
+execute as @a[x=0,predicate=custom:team/lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[x=0,predicate=custom:team/lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle flash{color:0xFFFFFF} ~ ~1 ~ 0 0 0 0 5 force @s
 
 #Message about mod room (server mode)
-execute unless predicate rr:has_modification_room as @a[x=0,team=Lobby,scores={LobbyWarp=2}] run tellraw @s [{"text":"You cannot access this area.","color":"red"}]
+execute unless predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] run tellraw @s [{"text":"You cannot access this area.","color":"red"}]
 
 #Reset score
 scoreboard players reset @a[x=0,scores={LobbyWarp=1..}] LobbyWarp

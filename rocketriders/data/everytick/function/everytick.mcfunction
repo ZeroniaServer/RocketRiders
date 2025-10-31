@@ -65,8 +65,8 @@ tag @e[x=0,type=trident,tag=!return,nbt={inGround:1b}] add return
 tag @e[x=0,type=trident,tag=!return,nbt={DealtDamage:1b}] add return
 execute as @e[x=0,type=trident,tag=return] if items entity @s contents *[damage=7] at @s run function everytick:trident_entity_break
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!doStacking] as @e[x=0,type=trident,tag=return] at @s run function everytick:trident_antidupe
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:has_broken_trident_in_inventory] at @s run function everytick:trident_item_break
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team,predicate=custom:has_trident_in_inventory] if items entity @s weapon.* trident at @s run function everytick:trident_riptide
+execute as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:has_broken_trident_in_inventory] at @s run function everytick:trident_item_break
+execute as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:has_trident_in_inventory] if items entity @s weapon.* trident at @s run function everytick:trident_riptide
 
 # Reset join pads barrier tags
 tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
@@ -77,12 +77,12 @@ tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 execute as @a[x=0,gamemode=!spectator] if items entity @s player.crafting.* * run function items:crafting/check
 
 # Hotbar auto-fill
-execute if function experimental:enabled as @a[x=0,predicate=custom:on_blue_or_yellow_team,tag=do_hotbar_auto_fill,predicate=custom:do_hotbar_auto_fill] run function everytick:hotbar_auto_fill
+execute if function experimental:enabled as @a[x=0,predicate=custom:team/any_playing_team,tag=do_hotbar_auto_fill,predicate=custom:do_hotbar_auto_fill] run function everytick:hotbar_auto_fill
 
 #Server mode
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] if entity @a[x=0] run function servermode:loop
 scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ServerModeVoting] VoteServerMode
-execute unless entity @a[x=0,team=Lobby] run scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] VoteServerMode
+execute unless entity @a[x=0,predicate=custom:team/lobby] run scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] VoteServerMode
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 0
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function game:forcestop
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:globaldefaults
@@ -93,10 +93,10 @@ execute if score $smswitch CmdData matches 5.. run tag @e[x=0,type=armor_stand,t
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless entity @s[tag=SMSwitch] run scoreboard players reset $smswitch CmdData
 
 #Player tags for plugin interaction
-tag @a[x=0,team=Yellow] add OnTeam
-tag @a[x=0,team=Blue] add OnTeam
-tag @a[x=0,team=Spectator] add OnTeam
-tag @a[x=0,team=Lobby] remove OnTeam
+tag @a[x=0,predicate=custom:team/yellow] add OnTeam
+tag @a[x=0,predicate=custom:team/blue] add OnTeam
+tag @a[x=0,predicate=custom:team/spectator] add OnTeam
+tag @a[x=0,predicate=custom:team/lobby] remove OnTeam
 
 #Handling new/lobby players and miscellaneous stuff
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:new_player
@@ -116,18 +116,18 @@ execute if predicate rr:do_custom_regen_system as @e[x=0,type=armor_stand,tag=Se
 execute unless predicate rr:do_custom_regen_system run gamerule naturalRegeneration true
 
 #Night vision/saturation and more lobby functionality
-effect give @a[x=0,team=Lobby,predicate=custom:apply_lobby_night_vision] night_vision infinite 100 true
-effect clear @a[x=0,team=Lobby,predicate=!custom:apply_lobby_night_vision] night_vision
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Sonar] run effect give @a[x=0,team=Spectator] night_vision infinite 100 true
+effect give @a[x=0,predicate=custom:team/lobby,predicate=custom:apply_lobby_night_vision] night_vision infinite 100 true
+effect clear @a[x=0,predicate=custom:team/lobby,predicate=!custom:apply_lobby_night_vision] night_vision
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Sonar] run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
 execute if predicate rr:apply_saturation_in_lobby run effect give @a[x=0] saturation infinite 0 true
 execute unless predicate rr:apply_saturation_in_lobby run effect clear @a[x=0] saturation
-execute as @a[x=0,team=Lobby,tag=hardcore] run function modifiers:hardcorereset
-execute as @a[x=0,team=Lobby,tag=hobbit] run function modifiers:hobbit/reset
+execute as @a[x=0,predicate=custom:team/lobby,tag=hardcore] run function modifiers:hardcorereset
+execute as @a[x=0,predicate=custom:team/lobby,tag=hobbit] run function modifiers:hobbit/reset
 function lobby:bookwarp
-scoreboard players enable @a[x=0,team=Lobby] displayinfo
-scoreboard players enable @a[x=0,team=Developer] displayinfo
+scoreboard players enable @a[x=0,predicate=custom:team/lobby] displayinfo
+scoreboard players enable @a[x=0,predicate=custom:team/developer] displayinfo
 execute as @a[x=0,scores={displayinfo=1..}] at @s run function lobby:displayinfo
-execute as @a[x=0,team=Lobby] run function everytick:score_reset
+execute as @a[x=0,predicate=custom:team/lobby] run function everytick:score_reset
 execute if loaded 25 184 -6 unless predicate game:game_running run function lobby:credits/cycle
 execute if predicate rr:has_parkour as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function lobby:parkour/parkour
 execute unless predicate rr:has_parkour as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function lobby:parkour/parkourserver
@@ -166,10 +166,10 @@ execute if score $reloaded CmdData matches 1..100 run scoreboard players add $re
 execute if score $reloaded CmdData matches 101 run scoreboard players reset $reloaded
 
 #Edit Settings
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players enable @a[x=0,team=!Spectator,team=!Blue,team=!Yellow] editSettings
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players enable @a[x=0,predicate=!custom:team/any_arena_team] editSettings
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] as @a[x=0] run trigger editSettings set 0
-execute as @a[x=0,team=!Lobby,team=!Developer] run trigger editSettings set 0
-execute as @a[x=0,team=!Spectator,team=!Blue,team=!Yellow,scores={editSettings=1..}] run function lobby:cancelsettings/interact
-execute if predicate rr:has_modification_room if score $mcancel CmdData matches -1 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] unless entity @a[x=0,team=Blue,limit=1] unless entity @a[x=0,team=Yellow,limit=1] run function lobby:cancelsettings/resume
+execute as @a[x=0,predicate=!custom:team/lobby,predicate=!custom:team/developer] run trigger editSettings set 0
+execute as @a[x=0,predicate=!custom:team/any_arena_team,scores={editSettings=1..}] run function lobby:cancelsettings/interact
+execute if predicate rr:has_modification_room if score $mcancel CmdData matches -1 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/blue,limit=1] unless entity @a[x=0,predicate=custom:team/yellow,limit=1] run function lobby:cancelsettings/resume
 execute if predicate rr:has_modification_room if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if predicate rr:has_modification_room if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]

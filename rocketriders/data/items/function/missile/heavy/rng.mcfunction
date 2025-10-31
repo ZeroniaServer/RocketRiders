@@ -16,8 +16,8 @@ execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacki
 
 function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAux] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/heavy/giveaux
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngRift] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/heavy/giverift
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngJbuster] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/heavy/givejbuster
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngWar] as @a[x=0,tag=getItem,predicate=custom:on_blue_or_yellow_team] run function items:missile/heavy/givewar
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAux] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/giveaux
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngRift] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/giverift
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngJbuster] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/givejbuster
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngWar] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/givewar
 kill @e[x=0,type=marker,tag=rng3]

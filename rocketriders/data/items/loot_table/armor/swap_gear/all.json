@@ -11,7 +11,10 @@
               "value": "items:armor/swap_gear/blue_dark/boots",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:blue_team_is_dark"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
               ]
             },
             {
@@ -19,7 +22,10 @@
               "value": "items:armor/swap_gear/yellow_light/boots",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:yellow_team_is_light"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
               ]
             },
             {
@@ -27,7 +33,10 @@
               "value": "items:armor/swap_gear/blue_light/boots",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:blue_team_is_light"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
               ]
             },
             {
@@ -35,7 +44,10 @@
               "value": "items:armor/swap_gear/yellow_dark/boots",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:yellow_team_is_dark"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
               ]
             }
           ]
@@ -53,7 +65,10 @@
               "value": "items:armor/swap_gear/blue_dark/leggings",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:blue_team_is_dark"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
               ]
             },
             {
@@ -61,7 +76,10 @@
               "value": "items:armor/swap_gear/yellow_light/leggings",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:yellow_team_is_light"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
               ]
             },
             {
@@ -69,7 +87,10 @@
               "value": "items:armor/swap_gear/blue_light/leggings",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:blue_team_is_light"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
               ]
             },
             {
@@ -77,7 +98,10 @@
               "value": "items:armor/swap_gear/yellow_dark/leggings",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:yellow_team_is_dark"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
               ]
             }
           ]
@@ -95,7 +119,10 @@
               "value": "items:armor/swap_gear/blue_dark/chestplate",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:blue_team_is_dark"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
               ]
             },
             {
@@ -103,7 +130,10 @@
               "value": "items:armor/swap_gear/yellow_light/chestplate",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:yellow_team_is_light"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
               ]
             },
             {
@@ -111,7 +141,10 @@
               "value": "items:armor/swap_gear/blue_light/chestplate",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:blue_team_is_light"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Blue"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
               ]
             },
             {
@@ -119,7 +152,10 @@
               "value": "items:armor/swap_gear/yellow_dark/chestplate",
               "conditions": [
                 {"condition":"minecraft:reference","name":"rr_swap:yellow_team_is_dark"},
-                {"condition":"minecraft:entity_properties","entity":"this","predicate":{"team":"Yellow"}}
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
               ]
             }
           ]

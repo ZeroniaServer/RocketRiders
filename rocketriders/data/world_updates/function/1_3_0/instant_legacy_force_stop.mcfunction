@@ -1,7 +1,7 @@
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add GameEnd
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] #world_updates:1_3_0/clear
-clear @a[x=0,predicate=custom:on_blue_or_yellow_team] *[custom_data~{id:"nova_rocket"}]
-effect clear @a[x=0,predicate=custom:on_blue_or_yellow_team]
+clear @a[x=0,predicate=custom:team/any_playing_team] #world_updates:1_3_0/clear
+clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"nova_rocket"}]
+effect clear @a[x=0,predicate=custom:team/any_playing_team]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Countdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove forceCountdown

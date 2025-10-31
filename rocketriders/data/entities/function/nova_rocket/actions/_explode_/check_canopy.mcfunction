@@ -4,8 +4,8 @@ execute if score $nova_rocket_team var matches 1 if predicate entities:origin_te
 
 # If the nova rocket shooter or one of their teammates is on the canopy, do not go boom
 tag @a[tag=nova_rocket.enemy_canopy_occupant] remove nova_rocket.enemy_canopy_occupant
-execute if score $nova_rocket_team var matches 0 run function entities:canopy/execute_as_passengers {run:"tag @s[team=Yellow] add nova_rocket.enemy_canopy_occupant"}
-execute if score $nova_rocket_team var matches 1 run function entities:canopy/execute_as_passengers {run:"tag @s[team=Blue] add nova_rocket.enemy_canopy_occupant"}
+execute if score $nova_rocket_team var matches 0 run function entities:canopy/execute_as_passengers {run:"tag @s[predicate=custom:team/yellow] add nova_rocket.enemy_canopy_occupant"}
+execute if score $nova_rocket_team var matches 1 run function entities:canopy/execute_as_passengers {run:"tag @s[predicate=custom:team/blue] add nova_rocket.enemy_canopy_occupant"}
 execute if score $nova_rocket_team var matches -1 run function entities:canopy/execute_as_passengers {run:"tag @s[tag=!nova_rocket.origin] add nova_rocket.enemy_canopy_occupant"}
 
 execute unless entity @a[limit=1,tag=nova_rocket.enemy_canopy_occupant] run return fail

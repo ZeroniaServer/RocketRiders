@@ -57,11 +57,8 @@
                   }
                 },
                 {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Blue"
-                  }
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
                 }
               ]
             },
@@ -84,11 +81,8 @@
                   "name": "game:gamemode_components/red_for_blue"
                 },
                 {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Blue"
-                  }
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
                 }
               ]
             },
@@ -107,11 +101,8 @@
               },
               "conditions": [
                 {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "team": "Yellow"
-                  }
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
                 }
               ]
             }

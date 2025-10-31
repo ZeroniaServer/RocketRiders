@@ -1,7 +1,7 @@
 ##Calculates and announces end game statistics (most missiles spawned, most kills, most deaths)
 #Counts missiles spawned
-execute as @a[x=0,team=Blue] run function everytick:missile_count
-execute as @a[x=0,team=Yellow] run function everytick:missile_count
+execute as @a[x=0,predicate=custom:team/blue] run function everytick:missile_count
+execute as @a[x=0,predicate=custom:team/yellow] run function everytick:missile_count
 
 #Calculates who has the most of each score
 tag @a[x=0] remove spawnchamp

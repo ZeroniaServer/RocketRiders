@@ -5,7 +5,7 @@ execute unless predicate rr:is_cubekrowd run function game:leavemidgame
 function everytick:cluster
 
 #platform
-bossbar set rr:startgame players @a[x=0,team=Lobby]
+bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
 function rr_swap:baseswap/platform
 
 #Item RNG

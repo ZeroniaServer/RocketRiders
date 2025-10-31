@@ -14,7 +14,7 @@ function rr_crusade:arenaclear/pathways
 
 #Item RNG
 scoreboard players add @s RandomItem 1
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,scores={crusadekit=2}] run function rr_crusade:items/util/givearrows
+execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/any_playing_team,scores={crusadekit=2}] run function rr_crusade:items/util/givearrows
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_crusade:items/giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
 execute if entity @s[tag=Minute] run function rr_crusade:items/minutemix
@@ -24,30 +24,30 @@ execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #Selected kit particles
-execute if predicate custom:periodic_tick/3 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=1}] at @s at @e[x=0,type=armor_stand,tag=KnightStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
-execute if predicate custom:periodic_tick/3 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=2}] at @s at @e[x=0,type=armor_stand,tag=ArcherStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
-execute if predicate custom:periodic_tick/3 as @a[x=0,team=!Lobby,team=!Spectator,team=!Developer,tag=!hideParticles,scores={crusadekit=3}] at @s at @e[x=0,type=armor_stand,tag=MageStand,limit=1,sort=nearest] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @s
+execute if predicate custom:periodic_tick/3 at @e[x=0,type=armor_stand,tag=KnightStand] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @a[x=0,predicate=custom:team/any_playing_team,tag=!hideParticles,scores={crusadekit=1}]
+execute if predicate custom:periodic_tick/3 at @e[x=0,type=armor_stand,tag=ArcherStand] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @a[x=0,predicate=custom:team/any_playing_team,tag=!hideParticles,scores={crusadekit=2}]
+execute if predicate custom:periodic_tick/3 at @e[x=0,type=armor_stand,tag=MageStand] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @a[x=0,predicate=custom:team/any_playing_team,tag=!hideParticles,scores={crusadekit=3}]
 
 #Mage Wand
-execute as @a[x=0,predicate=custom:on_blue_or_yellow_team,scores={useWand=1..}] run function rr_crusade:game/usewand
+execute as @a[x=0,predicate=custom:team/any_playing_team,scores={useWand=1..}] run function rr_crusade:game/usewand
 
 #Top layer regen
 execute as @e[x=0,type=marker,tag=airDetectBlue,limit=1] at @s run function rr_crusade:game/airdetectblue
 execute as @e[x=0,type=marker,tag=airDetectYellow,limit=1] at @s run function rr_crusade:game/airdetectyellow
 
 #Suffocate players in gray glass
-execute as @a[x=0,tag=!inGlass,predicate=custom:on_blue_or_yellow_team] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run effect give @s poison infinite 4 true
-execute as @a[x=0,tag=!inGlass,predicate=custom:on_blue_or_yellow_team] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run tag @s add inGlass
-execute as @a[x=0,tag=inGlass,predicate=custom:on_blue_or_yellow_team] at @s unless block ~ ~ ~ light_gray_stained_glass run tag @s add notInGlass
-execute as @a[x=0,tag=inGlass,predicate=custom:on_blue_or_yellow_team] at @s unless block ~ ~1 ~ light_gray_stained_glass run tag @s add notInGlass
+execute as @a[x=0,tag=!inGlass,predicate=custom:team/any_playing_team] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run effect give @s poison infinite 4 true
+execute as @a[x=0,tag=!inGlass,predicate=custom:team/any_playing_team] at @s if block ~ ~ ~ light_gray_stained_glass if block ~ ~1 ~ light_gray_stained_glass run tag @s add inGlass
+execute as @a[x=0,tag=inGlass,predicate=custom:team/any_playing_team] at @s unless block ~ ~ ~ light_gray_stained_glass run tag @s add notInGlass
+execute as @a[x=0,tag=inGlass,predicate=custom:team/any_playing_team] at @s unless block ~ ~1 ~ light_gray_stained_glass run tag @s add notInGlass
 effect clear @a[x=0,tag=notInGlass] poison
 tag @a[x=0,tag=notInGlass] remove inGlass
 tag @a[x=0] remove notInGlass
-tag @a[x=0,team=!Blue,team=!Yellow] remove inGlass
+tag @a[x=0,predicate=!custom:team/any_playing_team] remove inGlass
 
 #> Crystal health & bossbars
-execute if score $game_duration global matches 1.. run bossbar set rr_crusade:blue players @a[x=0,team=!Lobby]
-execute if score $game_duration global matches 1.. run bossbar set rr_crusade:yellow players @a[x=0,team=!Lobby]
+execute if score $game_duration global matches 1.. run bossbar set rr_crusade:blue players @a[x=0,predicate=!custom:team/lobby]
+execute if score $game_duration global matches 1.. run bossbar set rr_crusade:yellow players @a[x=0,predicate=!custom:team/lobby]
 execute store result bossbar rr_crusade:blue value run scoreboard players get $BlueShield crusadehp
 execute store result bossbar rr_crusade:yellow value run scoreboard players get $YellowShield crusadehp
 

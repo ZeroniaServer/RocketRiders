@@ -129,7 +129,7 @@ execute if entity @s[tag=doStacking,tag=stackingOn] run data modify block -70 19
 execute if entity @s[tag=doStacking,tag=stackingOn] run data modify block -70 191 77 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns"}}
 
 #Item Delay
-execute if entity @s[predicate=!game:gamemode_components/settings_locked,tag=!Minute] run data modify block -70 191 79 front_text.messages[0] set value {"text":"Item Delay:","color":"black","click_event":{"action":"run_command","command":"/tag @s[team=!Yellow,team=!Blue,team=!Spectator] add ItemDelayChange"}}
+execute if entity @s[predicate=!game:gamemode_components/settings_locked,tag=!Minute] run data modify block -70 191 79 front_text.messages[0] set value {"text":"Item Delay:","color":"black","click_event":{"action":"run_command","command":"/tag @s[predicate=!custom:team/any_arena_team] add ItemDelayChange"}}
 execute if entity @s[predicate=!game:gamemode_components/settings_locked,tag=!Minute] run data modify block -70 191 79 front_text.messages[1] set value [{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"MaxItemSec"},"color":"black","bold":true},{"text":" seconds","color":"black","bold":false}]
 execute if entity @s[predicate=!game:gamemode_components/settings_locked,tag=!Minute] run data modify block -70 191 79 front_text.messages[3] set value {"text":"(Click to adjust)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
 execute if entity @s[predicate=!game:gamemode_components/settings_locked,tag=Minute] run data modify block -70 191 79 front_text.messages[0] set value {"text":"Item Delay:","color":"black","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Item Delay is not adjustable with the Minute Mix Modifier.\",\"color\":\"dark_gray\",\"italic\":true}"}}
@@ -225,7 +225,7 @@ execute if entity @s[tag=noPlayerCredits] run data modify block -69 191 73 front
 execute if entity @s[tag=noPlayerCredits] run data modify block -69 191 73 front_text.messages[3] set value {"text":"(Reduces lag)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns"}}
 
 #Daytime
-data modify block -69 192 73 front_text.messages[0] set value {"text":"Daytime:","color":"dark_green","click_event":{"action":"run_command","command":"/tag @s[team=!Yellow,team=!Blue,team=!Spectator] add daytimeChange"}}
+data modify block -69 192 73 front_text.messages[0] set value {"text":"Daytime:","color":"dark_green","click_event":{"action":"run_command","command":"/tag @s[predicate=!custom:team/any_arena_team] add daytimeChange"}}
 data modify block -69 192 73 front_text.messages[3] set value {"text":"(Click to adjust)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
 execute store result score $daytime var run time query daytime
 execute if score $daytime var matches 0..100 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Sunrise","color":"green","bold":true}

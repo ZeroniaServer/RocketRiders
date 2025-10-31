@@ -26,8 +26,8 @@ kill @e[x=0,type=#arrows,tag=BArrow,scores={BotHP=50..}]
 execute as @e[x=0,type=armor_stand,tag=Bot] at @s if predicate custom:in_void run function rr_bots:bot/movement/voidfall
 
 
-execute as @e[x=0,type=armor_stand,tag=Bot] at @s unless entity @e[type=zombie,tag=BotHPZombie,distance=..3,limit=1] if entity @a[team=!Spectator,distance=..45,limit=1] run scoreboard players remove @s BotHP 1
-execute as @e[x=0,type=armor_stand,tag=Bot] at @s unless entity @e[type=zombie,tag=BotHPZombie,distance=..3,limit=1] if entity @a[team=!Spectator,distance=..45,limit=1] run summon zombie ~ ~ ~ {Tags:["BotHPZombie"],NoGravity:1b,NoAI:1b,Silent:1b}
+execute as @e[x=0,type=armor_stand,tag=Bot] at @s unless entity @e[type=zombie,tag=BotHPZombie,distance=..3,limit=1] if entity @a[predicate=!custom:team/spectator,distance=..45,limit=1] run scoreboard players remove @s BotHP 1
+execute as @e[x=0,type=armor_stand,tag=Bot] at @s unless entity @e[type=zombie,tag=BotHPZombie,distance=..3,limit=1] if entity @a[predicate=!custom:team/spectator,distance=..45,limit=1] run summon zombie ~ ~ ~ {Tags:["BotHPZombie"],NoGravity:1b,NoAI:1b,Silent:1b}
 
 execute as @e[x=0,type=armor_stand,tag=Bot] at @s if entity @e[type=zombie,tag=BotHPZombie,distance=..3,limit=1] run tp @e[type=zombie,tag=BotHPZombie,distance=..2,limit=1] @s
 
@@ -63,8 +63,8 @@ scoreboard players set @e[x=0,type=marker,tag=BotRNG] BotRNGmax 10
 execute as @e[x=0,type=marker,tag=BotRNG] store result score @s BotRNG run random value 0..9
 
 execute as @e[x=0,type=marker,tag=BotRNG,scores={BotRNG=0..3}] at @s run tag @e[type=armor_stand,tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotWalks
-execute as @e[x=0,type=marker,tag=BotRNG,tag=BlueRNG,scores={BotRNG=4..7}] at @s if entity @a[team=Yellow,distance=5..45] unless entity @e[x=0,type=armor_stand,tag=BotArrows,limit=4] run tag @e[type=armor_stand,tag=BotHasArrows,distance=..2,limit=1,sort=nearest] add BotArrows
-execute as @e[x=0,type=marker,tag=BotRNG,tag=YellowRNG,scores={BotRNG=4..7}] at @s if entity @a[team=Blue,distance=5..45] unless entity @e[x=0,type=armor_stand,tag=BotArrows,limit=4] run tag @e[type=armor_stand,tag=BotHasArrows,distance=..2,limit=1,sort=nearest] add BotArrows
+execute as @e[x=0,type=marker,tag=BotRNG,tag=BlueRNG,scores={BotRNG=4..7}] at @s if entity @a[predicate=custom:team/yellow,distance=5..45] unless entity @e[x=0,type=armor_stand,tag=BotArrows,limit=4] run tag @e[type=armor_stand,tag=BotHasArrows,distance=..2,limit=1,sort=nearest] add BotArrows
+execute as @e[x=0,type=marker,tag=BotRNG,tag=YellowRNG,scores={BotRNG=4..7}] at @s if entity @a[predicate=custom:team/blue,distance=5..45] unless entity @e[x=0,type=armor_stand,tag=BotArrows,limit=4] run tag @e[type=armor_stand,tag=BotHasArrows,distance=..2,limit=1,sort=nearest] add BotArrows
 execute as @e[x=0,type=marker,tag=BotRNG,tag=BlueRNG,scores={BotRNG=8..10}] at @s if block ~ ~-3 ~4 air if entity @e[type=armor_stand,tag=BotHasMissile,distance=..2,limit=1] run tag @e[type=armor_stand,tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotMissiles
 execute as @e[x=0,type=marker,tag=BotRNG,tag=YellowRNG,scores={BotRNG=8..10}] at @s if block ~ ~-3 ~-4 air if entity @e[type=armor_stand,tag=BotHasMissile,distance=..2,limit=1] run tag @e[type=armor_stand,tag=BOTCONTROL,distance=..2,limit=1,sort=nearest] add BotMissiles
 

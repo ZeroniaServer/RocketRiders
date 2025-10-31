@@ -5,7 +5,7 @@ data modify storage rocketriders:main spawn_egg set from entity @s data.spawn_eg
 execute unless data storage rocketriders:main spawn_egg.owner run return run kill @s
 
 tag @a[tag=placer] remove placer
-function custom:target_uuid {read_from:"storage rocketriders:main spawn_egg.owner",run:"tag @s[type=player,predicate=custom:on_blue_or_yellow_team] add placer"}
+function custom:target_uuid {read_from:"storage rocketriders:main spawn_egg.owner",run:"tag @s[type=player,predicate=custom:team/any_playing_team] add placer"}
 execute unless entity @a[limit=1,tag=placer] run return run kill @s
 
 # Get type (currently just converts to the legacy tagged marker system.)

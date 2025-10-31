@@ -14,7 +14,7 @@ execute if predicate game:match_over run function rr_chase:game/match_over
 
 #disable yellow
 tag @a[x=0] remove JoinYellow
-execute as @a[x=0,team=Yellow] run function custom:leave
+execute as @a[x=0,predicate=custom:team/yellow] run function custom:leave
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings

@@ -14,7 +14,7 @@ function rr_crusade:arenaclear/pathways
 
 #Item RNG
 scoreboard players add @s RandomItem 1
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/any_playing_team,scores={crusadekit=2}] run function rr_crusade:items/util/givearrows
+execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/archer] run function rr_crusade:items/util/givearrows
 execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_crusade:items/giverandom
 execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
 execute if entity @s[tag=Minute] run function rr_crusade:items/minutemix
@@ -24,9 +24,9 @@ execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #Selected kit particles
-execute if predicate custom:periodic_tick/3 at @e[x=0,type=armor_stand,tag=KnightStand] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @a[x=0,predicate=custom:team/any_playing_team,tag=!hideParticles,scores={crusadekit=1}]
-execute if predicate custom:periodic_tick/3 at @e[x=0,type=armor_stand,tag=ArcherStand] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @a[x=0,predicate=custom:team/any_playing_team,tag=!hideParticles,scores={crusadekit=2}]
-execute if predicate custom:periodic_tick/3 at @e[x=0,type=armor_stand,tag=MageStand] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @a[x=0,predicate=custom:team/any_playing_team,tag=!hideParticles,scores={crusadekit=3}]
+execute if predicate custom:periodic_tick/3 at @e[x=0,type=armor_stand,tag=KnightStand] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @a[x=0,predicate=custom:team/any_playing_team,tag=!hideParticles,predicate=rr_crusade:kit/knight]
+execute if predicate custom:periodic_tick/3 at @e[x=0,type=armor_stand,tag=ArcherStand] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @a[x=0,predicate=custom:team/any_playing_team,tag=!hideParticles,predicate=rr_crusade:kit/archer]
+execute if predicate custom:periodic_tick/3 at @e[x=0,type=armor_stand,tag=MageStand] run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~2.3 ~ 0 0 0 0.1 1 force @a[x=0,predicate=custom:team/any_playing_team,tag=!hideParticles,predicate=rr_crusade:kit/mage]
 
 #Mage Wand
 execute as @a[x=0,predicate=custom:team/any_playing_team,scores={useWand=1..}] run function rr_crusade:game/usewand

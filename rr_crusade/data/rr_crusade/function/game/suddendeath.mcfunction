@@ -33,9 +33,9 @@ execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] resistanc
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] weakness
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] regeneration
 
-execute if entity @s[scores={SDtime=1}] run tag @a[x=0,scores={crusadekit=1}] add kitknight
-execute if entity @s[scores={SDtime=1}] run tag @a[x=0,scores={crusadekit=2}] add kitarcher
-execute if entity @s[scores={SDtime=1}] run tag @a[x=0,scores={crusadekit=3}] add kitmage
+execute if entity @s[scores={SDtime=1}] run tag @a[x=0,predicate=rr_crusade:kit/knight] add kitknight
+execute if entity @s[scores={SDtime=1}] run tag @a[x=0,predicate=rr_crusade:kit/archer] add kitarcher
+execute if entity @s[scores={SDtime=1}] run tag @a[x=0,predicate=rr_crusade:kit/mage] add kitmage
 execute if entity @s[scores={SDtime=1}] run scoreboard players reset @a[x=0] crusadekit
 execute if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitknight] run function rr_crusade:items/kit/give/knight
 execute if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitarcher] run function rr_crusade:items/kit/give/archer

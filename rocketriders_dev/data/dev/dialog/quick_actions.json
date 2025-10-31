@@ -2,37 +2,6 @@
   "type": "minecraft:multi_action",
   "title": "RR Dev: Quick Actions",
   "external_title": "Developer Actions...",
-  "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
-      "text": "[Other Actions]",
-      "color": "#32c9e9",
-      "click_event": {
-        "action": "show_dialog",
-        "dialog": {
-          "type": "minecraft:multi_action",
-          "title": "RR Dev: Quick Actions",
-          "external_title": "Developer Actions...",
-          "exit_action": {
-            "label": "Back",
-            "action": {
-              "type": "minecraft:show_dialog",
-              "dialog": "dev:quick_actions"
-            }
-          },
-          "actions": [
-            {
-              "label": "Edit Gamemode Components",
-              "action": {
-                "type": "minecraft:run_command",
-                "command": "/trigger dev set 5"
-              }
-            }
-          ]
-        }
-      }
-    }
-  },
   "exit_action": {
     "label": "Cancel"
   },
@@ -53,7 +22,7 @@
     },
     {
       "label": "Quick Launch",
-      "tooltip": "Start the game with current game mode & settings",
+      "tooltip": "Start the game with current game mode & settings.",
       "action": {
         "type": "minecraft:run_command",
         "command": "/trigger dev set 100"
@@ -61,7 +30,7 @@
     },
     {
       "label": "Quick Launch Game Mode",
-      "tooltip": "Start the game on a specific gamemode",
+      "tooltip": "Start the game on a specific gamemode.",
       "action": {
         "type": "minecraft:show_dialog",
         "dialog": {
@@ -137,10 +106,49 @@
     },
     {
       "label": "Join/Leave Game",
-      "tooltip": "If in the lobby, automatically adds you to a team\n\nIf in-game or spectating, returns you to the lobby",
+      "tooltip": "If in the lobby, automatically adds you to a team.\n\nIf playing or spectating, returns you to the lobby.",
       "action": {
         "type": "minecraft:run_command",
         "command": "/trigger dev set 4"
+      }
+    },
+    {
+      "label": {
+        "italic": true,
+        "text": "Other Actions..."
+      },
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "RR Dev: Quick Actions",
+          "external_title": "Developer Actions...",
+          "exit_action": {
+            "label": "Back",
+            "action": {
+              "type": "minecraft:show_dialog",
+              "dialog": "dev:quick_actions"
+            }
+          },
+          "actions": [
+            {
+              "label": "Switch Team",
+              "tooltip": "Moves you to the other team.",
+              "action": {
+                "type": "minecraft:run_command",
+                "command": "/trigger dev set 6"
+              }
+            },
+            {
+              "label": "Edit Gamemode Components",
+              "tooltip": "A UI for viewing and editing the current gamemode components.\n\nGamemode components cannot be edited once a game has started.\n\nSome gamemode components are tied to a particular gamemode and cannot be changed through this menu.",
+              "action": {
+                "type": "minecraft:run_command",
+                "command": "/trigger dev set 5"
+              }
+            }
+          ]
+        }
       }
     }
   ]

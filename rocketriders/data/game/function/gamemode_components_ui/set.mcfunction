@@ -30,8 +30,8 @@ $execute if predicate {condition:"value_check",value:$(neutral_items),range:1} r
 $execute if predicate {condition:"value_check",value:$(no_item_timer),range:1} run scoreboard players set $no_item_timer gamemode_components $(no_item_timer)
 
 $scoreboard players set $portal_type var $(__portal_type)
-execute if score $portal_type var matches 1 run scoreboard players set $no_portals gamemode_components 1
-execute if score $portal_type var matches 2 run scoreboard players set $small_portals gamemode_components 1
+execute if score $portal_type var matches 1 run scoreboard players set $small_portals gamemode_components 1
+execute if score $portal_type var matches 2 run scoreboard players set $no_portals gamemode_components 1
 
 $execute if predicate {condition:"value_check",value:$(one_team),range:1} run scoreboard players set $one_team gamemode_components $(one_team)
 $execute if predicate {condition:"value_check",value:$(red_for_blue),range:1} run scoreboard players set $red_for_blue gamemode_components $(red_for_blue)

@@ -12,12 +12,6 @@ execute if entity @s[tag=vortex.feathered] run loot spawn ~ ~-0.3 ~ loot {pools:
 execute if entity @s[tag=vortex.feathered] run loot spawn ~ ~-0.4 ~ loot {pools:[{rolls:{min:5,max:10},entries:[{type:"minecraft:item",name:"minecraft:feather",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{dummy_item_entity:true},"minecraft:damage_resistant":{types:"#minecraft:is_explosion"}}}]}]}]}
 execute if entity @s[tag=vortex.feathered] as @e[distance=..1,type=item] if items entity @s contents feather run data merge entity @s {PickupDelay:32767,Age:5900}
 
-execute if entity @s[tag=!vortex.feathered] unless predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on at @s run function custom:explosion {power:3,modifiers:{copy_name:true,trigger_vortices:false}}
-execute if entity @s[tag=!vortex.feathered] if predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on at @s run function custom:explosion {power:5,modifiers:{copy_name:true,trigger_vortices:false}}
-execute if entity @s[tag=!vortex.feathered] if predicate game:modifiers/clutter_collector/on at @s run function custom:explosion {power:0,modifiers:{copy_name:true,trigger_vortices:false}}
-
-execute if entity @s[tag=vortex.feathered] unless predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on at @s run function custom:explosion {power:2,modifiers:{copy_name:true,trigger_vortices:false}}
-execute if entity @s[tag=vortex.feathered] if predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on at @s run function custom:explosion {power:4,modifiers:{copy_name:true,trigger_vortices:false}}
-execute if entity @s[tag=vortex.feathered] if predicate game:modifiers/clutter_collector/on at @s run function custom:explosion {power:0,modifiers:{copy_name:true,trigger_vortices:false}}
+function entities:vortex/tick/recursive_explosions
 
 function entities:vortex/actions/kill

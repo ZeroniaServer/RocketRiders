@@ -26,6 +26,7 @@ execute as @e[x=0,predicate=entities:type/stinging_shield] at @s run function en
 execute as @e[x=0,predicate=entities:type/vortex_projectile/brain] at @s run function entities:vortex_projectile/tick
 scoreboard players remove @e[x=0,predicate=entities:type/vortex/brain,scores={entity.vortex.fuse=1..}] entity.vortex.fuse 1
 execute as @e[x=0,predicate=entities:type/vortex/brain] at @s run function entities:vortex/tick
+execute as @e[x=0,predicate=entities:type/vortex_arm/brain] at @s run function entities:vortex_arm/tick
 
 # Vortex Decoy (lobby)
 execute as @e[x=0,predicate=entities:type/vortex_decoy] at @s run function entities:vortex_decoy/tick

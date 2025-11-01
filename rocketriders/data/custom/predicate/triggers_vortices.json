@@ -1,45 +1,62 @@
-{
-  "condition": "minecraft:any_of",
-  "terms": [
-    {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "type": [
-          "minecraft:arrow",
-          "minecraft:spectral_arrow",
-          "minecraft:fireball",
-          "minecraft:small_fireball",
-          "minecraft:breeze_wind_charge",
-          "minecraft:dragon_fireball",
-          "minecraft:snowball",
-          "minecraft:splash_potion",
-          "minecraft:lingering_potion",
-          "minecraft:ender_pearl",
-          "minecraft:trident",
-          "minecraft:firework_rocket"
-        ]
+[
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": [
+            "minecraft:arrow",
+            "minecraft:spectral_arrow",
+            "minecraft:fireball",
+            "minecraft:small_fireball",
+            "minecraft:breeze_wind_charge",
+            "minecraft:dragon_fireball",
+            "minecraft:snowball",
+            "minecraft:splash_potion",
+            "minecraft:lingering_potion",
+            "minecraft:ender_pearl",
+            "minecraft:trident",
+            "minecraft:firework_rocket"
+          ]
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:egg",
+          "predicates": {
+            "minecraft:custom_data": {
+              "icbm": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:tnt",
+          "nbt": "{fuse:2s}"
+        }
       }
-    },
-    {
+    ]
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type": "minecraft:egg",
+        "type": "minecraft:snowball",
         "predicates": {
           "minecraft:custom_data": {
-            "icbm": {}
+            "vortex_arm": {}
           }
         }
       }
-    },
-    {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "type": "minecraft:tnt",
-        "nbt": "{fuse:2s}"
-      }
     }
-  ]
-}
+  }
+]

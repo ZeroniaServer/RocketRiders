@@ -1,3 +1,5 @@
+execute on passengers run tag @s[predicate=entities:type/vortex/brain] remove vortex.settled
+
 tp @s ^ ^ ^.1 ~ ~
 
 execute if score $was_drifting var matches 0 on passengers if entity @s[predicate=entities:type/vortex/brain,tag=!vortex.feathered] on vehicle run data merge entity @s {teleport_duration:2,item:{id:"minecraft:ender_eye"},start_interpolation:0,interpolation_duration:5,transformation:{scale:[1.2,1.2,1.2]}}

@@ -79,4 +79,4 @@ execute if predicate entities:origin_team/none if score $was_drifting var matche
 execute on origin run tag @s remove vortex.origin
 
 execute unless entity @s[tag=vortex.feathered] if score $was_drifting var matches 1 if entity @s[tag=!vortex.is_drifting] on vehicle run data merge entity @s {teleport_duration:10,item:{id:"minecraft:ender_pearl"},start_interpolation:0,interpolation_duration:10,transformation:{scale:[0.6,0.6,0.6]}}
-execute if score $was_drifting var matches 0 if entity @s[tag=!vortex.is_drifting] on vehicle align xyz run tp @s ~0.5 ~0.5 ~0.5
+execute if score $was_drifting var matches 0 if entity @s[tag=!vortex.is_drifting,tag=!vortex.settled] on vehicle run function entities:vortex/tick/settle

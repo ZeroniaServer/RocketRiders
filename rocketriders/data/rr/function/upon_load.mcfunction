@@ -78,7 +78,9 @@ scoreboard players set $40 constant 40
 scoreboard players set $60 constant 60
 scoreboard players set $64 constant 64
 scoreboard players set $100 constant 100
+scoreboard players set $180 constant 180
 scoreboard players set $300 constant 300
+scoreboard players set $360 constant 360
 scoreboard players set $400 constant 400
 scoreboard players set $1000 constant 1000
 scoreboard players set $1200 constant 1200
@@ -94,6 +96,8 @@ scoreboard objectives add entity.age dummy
 scoreboard objectives add entity.speed dummy
 scoreboard objectives add entity.canopy.movement_cooldown dummy
 scoreboard objectives add entity.vortex.fuse dummy
+scoreboard objectives add entity.vortex.arms dummy
+scoreboard objectives add entity.vortex_arm.index dummy
 scoreboard objectives add time_since_tnt_punch custom:play_time
 scoreboard objectives add custom_team_color dummy
 scoreboard objectives add tnt.explosion_timestamp dummy

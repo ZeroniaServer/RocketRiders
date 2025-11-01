@@ -10,11 +10,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -26,11 +26,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -42,15 +42,15 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "generic"\
+          "display": {"color":"white","text":"generic"}\
         },\
         {\
           "id": "1",\
-          "display": "crusade_kit_dependent"\
+          "display": {"color":"white","text":"crusade_kit_dependent"}\
         },\
         {\
           "id": "2",\
-          "display": "swap"\
+          "display": {"color":"white","text":"swap"}\
         }\
       ]\
     },\
@@ -62,11 +62,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "anyone"\
+          "display": {"color":"white","text":"anyone"}\
         },\
         {\
           "id": "1",\
-          "display": "only_crusade_mode_archer_kit"\
+          "display": {"color":"white","text":"only_crusade_mode_archer_kit"}\
         }\
       ]\
     },\
@@ -78,11 +78,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"yellow","text":"true"}\
         }\
       ]\
     },\
@@ -94,11 +94,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -110,11 +110,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -126,11 +126,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -142,7 +142,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         }\
       ]\
     },\
@@ -154,11 +154,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -170,19 +170,19 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "shooting_saber"\
+          "display": {"color":"white","text":"shooting_saber"}\
         },\
         {\
           "id": "1",\
-          "display": "pickaxe"\
+          "display": {"color":"white","text":"pickaxe"}\
         },\
         {\
           "id": "2",\
-          "display": "crusade_kit_dependent"\
+          "display": {"color":"white","text":"crusade_kit_dependent"}\
         },\
         {\
           "id": "3",\
-          "display": "rocket_nomicon"\
+          "display": {"color":"white","text":"rocket_nomicon"}\
         }\
       ]\
     },\
@@ -194,11 +194,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -210,11 +210,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -226,15 +226,15 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "default"\
+          "display": {"color":"white","text":"default"}\
         },\
         {\
           "id": "1",\
-          "display": "none"\
+          "display": {"color":"white","text":"none"}\
         },\
         {\
           "id": "1",\
-          "display": "small"\
+          "display": {"color":"white","text":"small"}\
         }\
       ]\
     },\
@@ -246,11 +246,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -262,7 +262,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         }\
       ]\
     },\
@@ -274,11 +274,11 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         },\
         {\
           "id": "1",\
-          "display": "true"\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -290,7 +290,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "false"\
+          "display": {"color":"white","text":"false"}\
         }\
       ]\
     }\
@@ -307,38 +307,50 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
   }\
 }
 
+## Warn Values
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"crusade_kit_dependent"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!swapEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"swap"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arrow_pickup__"}].options[{display:{text:"only_crusade_mode_archer_kit"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!normalEnabled,tag=!powerupsEnabled,tag=!swapEnabled,tag=!chaseEnabled,tag=!duelEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"shooting_saber"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!ctfEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"pickaxe"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"crusade_kit_dependent"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"rocket_nomicon"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"no_item_timer"}].options[{display:{text:"false"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"no_item_timer"}].options[{display:{text:"true"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!ctfEnabled,tag=!chaseEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"__portal_type"}].options[{display:{text:"none"}}].display.color set value "red"
+
 ## Set initial values
-execute if predicate game:gamemode_components/arena/bedrock_frame run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arena__bedrock_frame"}].options[{display:"true"}].initial set value true
-execute if predicate game:gamemode_components/arena/no_base_details run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arena__no_base_details"}].options[{display:"true"}].initial set value true
+execute if predicate game:gamemode_components/arena/bedrock_frame run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arena__bedrock_frame"}].options[{display:{text:"true"}}].initial set value true
+execute if predicate game:gamemode_components/arena/no_base_details run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arena__no_base_details"}].options[{display:{text:"true"}}].initial set value true
 
-execute if predicate game:gamemode_components/armor/generic run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:"generic"}].initial set value true
-execute if predicate game:gamemode_components/armor/crusade_kit_dependent run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:"crusade_kit_dependent"}].initial set value true
-execute if predicate game:gamemode_components/armor/swap run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:"swap"}].initial set value true
+execute if predicate game:gamemode_components/armor/generic run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"generic"}}].initial set value true
+execute if predicate game:gamemode_components/armor/crusade_kit_dependent run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"crusade_kit_dependent"}}].initial set value true
+execute if predicate game:gamemode_components/armor/swap run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"swap"}}].initial set value true
 
-execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arrow_pickup__"}].options[{display:"only_crusade_mode_archer_kit"}].initial set value true
+execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arrow_pickup__"}].options[{display:{text:"only_crusade_mode_archer_kit"}}].initial set value true
 
-execute if predicate game:gamemode_components/custom_team_colors run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"custom_team_colors"}].options[{display:"true"}].initial set value true
-execute if predicate game:gamemode_components/decreased_shooting_saber_attack_damage run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"decreased_shooting_saber_attack_damage"}].options[{display:"true"}].initial set value true
-execute if predicate game:gamemode_components/explosions_crack_deepslate_bricks run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"explosions_crack_deepslate_bricks"}].options[{display:"true"}].initial set value true
-execute if predicate game:gamemode_components/friendly_fire run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"friendly_fire"}].options[{display:"true"}].initial set value true
+execute if predicate game:gamemode_components/custom_team_colors run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"custom_team_colors"}].options[{display:{text:"true"}}].initial set value true
+execute if predicate game:gamemode_components/decreased_shooting_saber_attack_damage run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"decreased_shooting_saber_attack_damage"}].options[{display:{text:"true"}}].initial set value true
+execute if predicate game:gamemode_components/explosions_crack_deepslate_bricks run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"explosions_crack_deepslate_bricks"}].options[{display:{text:"true"}}].initial set value true
+execute if predicate game:gamemode_components/friendly_fire run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"friendly_fire"}].options[{display:{text:"true"}}].initial set value true
 execute if predicate game:gamemode_components/has_flags run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"has_flags"}].options[0].display set value "true"
-execute if predicate game:gamemode_components/lower_void run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"lower_void"}].options[{display:"true"}].initial set value true
+execute if predicate game:gamemode_components/lower_void run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"lower_void"}].options[{display:{text:"true"}}].initial set value true
 
-execute if predicate game:gamemode_components/main_item/shooting_saber run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:"shooting_saber"}].initial set value true
-execute if predicate game:gamemode_components/main_item/pickaxe run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:"pickaxe"}].initial set value true
-execute if predicate game:gamemode_components/main_item/crusade_kit_dependent run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:"crusade_kit_dependent"}].initial set value true
-execute if predicate game:gamemode_components/main_item/rocket_nomicon run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:"rocket_nomicon"}].initial set value true
+execute if predicate game:gamemode_components/main_item/shooting_saber run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"shooting_saber"}}].initial set value true
+execute if predicate game:gamemode_components/main_item/pickaxe run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"pickaxe"}}].initial set value true
+execute if predicate game:gamemode_components/main_item/crusade_kit_dependent run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"crusade_kit_dependent"}}].initial set value true
+execute if predicate game:gamemode_components/main_item/rocket_nomicon run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"rocket_nomicon"}}].initial set value true
 
-execute if predicate game:gamemode_components/neutral_items run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"neutral_items"}].options[{display:"true"}].initial set value true
-execute if predicate game:gamemode_components/no_item_timer run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"no_item_timer"}].options[{display:"true"}].initial set value true
-execute if predicate game:gamemode_components/one_team run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"one_team"}].options[{display:"true"}].initial set value true
+execute if predicate game:gamemode_components/neutral_items run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"neutral_items"}].options[{display:{text:"true"}}].initial set value true
+execute if predicate game:gamemode_components/no_item_timer run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"no_item_timer"}].options[{display:{text:"true"}}].initial set value true
+execute if predicate game:gamemode_components/one_team run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"one_team"}].options[{display:{text:"true"}}].initial set value true
 execute if predicate game:gamemode_components/portal_crystal_protection run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"portal_crystal_protection"}].options[0].display set value "true"
 
-execute if predicate game:portal_type/default run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"__portal_type"}].options[{display:"default"}].initial set value true
-execute if predicate game:portal_type/none run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"__portal_type"}].options[{display:"none"}].initial set value true
-execute if predicate game:portal_type/small run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"__portal_type"}].options[{display:"small"}].initial set value true
+execute if predicate game:portal_type/default run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"__portal_type"}].options[{display:{text:"default"}}].initial set value true
+execute if predicate game:portal_type/none run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"__portal_type"}].options[{display:{text:"none"}}].initial set value true
+execute if predicate game:portal_type/small run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"__portal_type"}].options[{display:{text:"small"}}].initial set value true
 
-execute if predicate game:gamemode_components/red_for_blue run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"red_for_blue"}].options[{display:"true"}].initial set value true
+execute if predicate game:gamemode_components/red_for_blue run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"red_for_blue"}].options[{display:{text:"true"}}].initial set value true
 execute if predicate game:gamemode_components/settings_locked run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"settings_locked"}].options[0].display set value "true"
 
 ## Append config overridss

@@ -7,6 +7,9 @@ function custom:team/join_lobby
 execute in minecraft:overworld run scoreboard players set @a[x=0] flag.is_dead 1
 execute in minecraft:overworld run scoreboard players set @e[x=0,type=player] flag.is_dead 0
 
+# Remove tags
+tag @s remove last_dialog_opened.gamemode_components_ui
+
 # Reset triggers
 scoreboard players reset @s LeaveMidgame
 scoreboard players reset @s daytime

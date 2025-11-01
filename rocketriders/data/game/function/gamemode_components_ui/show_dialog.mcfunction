@@ -307,7 +307,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
   }\
 }
 
-## Warn Values
+## Incompatibility Warnings
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"crusade_kit_dependent"}}].display.color set value "red"
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!swapEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"swap"}}].display.color set value "red"
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arrow_pickup__"}].options[{display:{text:"only_crusade_mode_archer_kit"}}].display.color set value "red"
@@ -391,3 +391,4 @@ execute if score $config_override.unstable_tnt gamemode_components matches -1 ru
 
 ## Show Dialog
 function custom:show_dialog with storage rocketriders:main gamemode_components
+tag @s add last_dialog_opened.gamemode_components_ui

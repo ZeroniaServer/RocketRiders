@@ -45,7 +45,7 @@ execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items
 function everytick:elytra
 
 # Thrown Items
-execute as @e[x=0,type=item] run function everytick:no_drop
+execute as @e[x=0,type=item] unless items entity @s contents *[custom_data~{dummy_item_entity:true}] run function everytick:no_drop
 
 # Process primed TNT
 scoreboard players set $instant_explosion_buffer var -1

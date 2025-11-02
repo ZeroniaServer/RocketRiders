@@ -52,14 +52,18 @@ execute unless predicate game:match_in_play if predicate game:modifiers/long_arm
 execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
 execute as @a[x=0,tag=JoinBlue] run function items:give_main_item
 execute unless predicate game:match_in_play run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
-execute unless predicate game:match_in_play if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
-execute unless predicate game:match_in_play if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
-execute unless predicate game:match_in_play if entity @s[tag=!chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"blue","italic":true}
-execute unless predicate game:match_in_play if entity @s[tag=chaseEnabled] run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"red","italic":true}
+execute unless predicate game:match_in_play unless predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
+execute unless predicate game:match_in_play unless predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the blue team!","color":"red"}]
+execute unless predicate game:match_in_play if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the game!","color":"dark_aqua"}]
+execute unless predicate game:match_in_play if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
+execute unless predicate game:match_in_play unless predicate game:gamemode_components/red_for_blue run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"blue","italic":true}
+execute unless predicate game:match_in_play if predicate game:gamemode_components/red_for_blue run tellraw @a[x=0,tag=JoinBlue] {"text":"Fall off the base to return to the Lobby.","color":"red","italic":true}
 execute unless predicate game:match_in_play run effect give @a[x=0,tag=JoinBlue] resistance infinite 100 true
 execute if predicate game:match_in_play run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
-execute if predicate game:match_in_play if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"dark_aqua"}]
-execute if predicate game:match_in_play if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
+execute if predicate game:match_in_play unless predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"dark_aqua"}]
+execute if predicate game:match_in_play unless predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"red"}]
+execute if predicate game:match_in_play if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the game! A late arrival, unfortunately.","color":"dark_aqua"}]
+execute if predicate game:match_in_play if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
 execute if predicate game:match_in_play as @a[x=0,tag=JoinBlue] run function game:notify_join
 execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,predicate=custom:team/blue,gamemode=adventure]
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=JoinBlue] resistance

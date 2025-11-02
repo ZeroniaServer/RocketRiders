@@ -1,6 +1,10 @@
 data modify storage rocketriders:main gamemode_components.dialog set value {\
   "type": "minecraft:confirmation",\
   "title": "Gamemode Components UI",\
+  "body": {\
+    "type": "minecraft:plain_message",\
+    "contents": ["Gamemode: ", {"bold":true,"text":""}]\
+  },\
   "inputs": [\
     {\
       "type": "minecraft:single_option",\
@@ -310,6 +314,9 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     "label": "Cancel"\
   }\
 }
+
+## Gamemode
+data modify storage rocketriders:main gamemode_components.dialog.body.contents[1].extra append from entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=enabled] CustomName
 
 ## Incompatibility Warnings
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"crusade_kit_dependent"}}].display.color set value "red"

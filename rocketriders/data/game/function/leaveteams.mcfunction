@@ -2,8 +2,10 @@
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/yellow] add LeavingYellow
 execute as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/blue] add LeavingBlue
-execute unless entity @e[x=0,type=armor_stand,tag=chaseEnabled] as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" left the blue team!","color":"dark_aqua"}]
-execute if entity @e[x=0,type=armor_stand,tag=chaseEnabled] as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" left the game!","color":"red"}]
+execute unless predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" left the blue team!","color":"dark_aqua"}]
+execute unless predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" left the blue team!","color":"red"}]
+execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" left the game!","color":"dark_aqua"}]
+execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" left the game!","color":"red"}]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/spectator] add LeavingSpec
 execute as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is no longer spectating the game!","color":"gray"}]
 execute as @a[x=0,tag=LeavingSpec] run tp @s @s

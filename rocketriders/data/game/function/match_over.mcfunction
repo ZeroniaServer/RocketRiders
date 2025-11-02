@@ -13,8 +13,8 @@ tag @s[scores={endtimer=1}] remove gaveFirstItem
 scoreboard players reset @s[scores={endtimer=1..}] SDtime
 execute if entity @s[scores={endtimer=1}] run effect clear @a[x=0,predicate=custom:team/blue]
 execute if entity @s[scores={endtimer=1}] run effect clear @a[x=0,predicate=custom:team/yellow]
-execute if entity @s[scores={endtimer=1},tag=!noSabers] as @e[x=0,type=item] if items entity @s contents bow run kill
-execute if entity @s[scores={endtimer=1},tag=!noSabers] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_inventory/shooting_saber
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:return_thrown_items
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_inventory
 execute if entity @s[tag=BlueWon] run effect give @a[x=0,predicate=custom:team/yellow] weakness infinite 100 true
 execute if entity @s[tag=YellowWon] run effect give @a[x=0,predicate=custom:team/blue] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1..100}] run worldborder warning distance 0

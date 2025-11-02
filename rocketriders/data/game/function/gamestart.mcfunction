@@ -44,12 +44,13 @@ execute as @e[x=0,type=marker,tag=join_pad.blue] at @s as @a[distance=..1,predic
 execute as @a[x=0,tag=tryJoinBlue] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.blue] run tag @s remove tryJoinBlue
 execute as @a[x=0,tag=JoinBlue] run function custom:team/join_blue
 execute if entity @a[limit=1,x=0,tag=JoinBlue] run function everytick:team_count
-clear @a[x=0,tag=JoinBlue]
+clear @a[x=0,tag=JoinBlue] *
 execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinBlue] run function game:assign_custom_team_color
-execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinBlue] run function game:saberblue
 execute unless predicate game:match_in_play if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
 execute unless predicate game:match_in_play if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
 execute unless predicate game:match_in_play if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run function modifiers:long_arms/set
+execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
+execute as @a[x=0,tag=JoinBlue] run function items:give_main_item
 execute unless predicate game:match_in_play run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
 execute unless predicate game:match_in_play if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
 execute unless predicate game:match_in_play if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game!","color":"red"}]
@@ -59,8 +60,7 @@ execute unless predicate game:match_in_play run effect give @a[x=0,tag=JoinBlue]
 execute if predicate game:match_in_play run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
 execute if predicate game:match_in_play if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team! A late arrival, unfortunately.","color":"dark_aqua"}]
 execute if predicate game:match_in_play if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
-execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
+execute if predicate game:match_in_play as @a[x=0,tag=JoinBlue] run function game:notify_join
 execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,predicate=custom:team/blue,gamemode=adventure]
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=JoinBlue] resistance
 execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
@@ -82,20 +82,20 @@ execute if predicate custom:periodic_tick/3 if predicate game:gamemode_component
 execute unless predicate game:game_rules/disable_team_balancing/on unless entity @s[predicate=!game:team_count/yellow_is_larger,tag=!YellowFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] add join_pad.show_barrier
 execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinyellow
 execute as @a[x=0,tag=tryJoinYellow] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.yellow] run tag @s remove tryJoinYellow
-clear @a[x=0,tag=JoinYellow]
+clear @a[x=0,tag=JoinYellow] *
 execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinYellow] run function game:assign_custom_team_color
-execute if entity @s[tag=!noSabers] as @a[x=0,tag=JoinYellow] run function game:saberyellow
 execute unless predicate game:match_in_play if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
 execute unless predicate game:match_in_play if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set
 execute unless predicate game:match_in_play if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinYellow] run function modifiers:long_arms/set
+execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
+execute as @a[x=0,tag=JoinYellow] run function items:give_main_item
 execute unless predicate game:match_in_play run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
 execute unless predicate game:match_in_play as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
 execute unless predicate game:match_in_play run tellraw @a[x=0,tag=JoinYellow] {"text":"Fall off the base to return to the Lobby.","color":"gold","italic":true}
 execute unless predicate game:match_in_play run effect give @a[x=0,tag=JoinYellow] resistance infinite 100 true
 execute if predicate game:match_in_play run tp @a[x=0,tag=JoinYellow] 12 64 66 180 0
 execute if predicate game:match_in_play as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
-execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinYellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:match_in_play as @a[x=0,tag=JoinYellow] run function game:notify_join
 execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,predicate=custom:team/yellow,gamemode=adventure]
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=JoinYellow] resistance
 execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~

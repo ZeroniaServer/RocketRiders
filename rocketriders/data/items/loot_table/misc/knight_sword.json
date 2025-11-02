@@ -60,19 +60,21 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Knight Sword",
-                  "italic": false,
                   "bold": true,
                   "color": "blue"
                 },
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                }
+                "minecraft:item_model": "minecraft:breeze_rod"
               },
               "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
@@ -82,22 +84,34 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "text": "Knight Sword",
-                  "italic": false,
                   "bold": true,
                   "color": "gold"
                 },
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                }
+                "minecraft:item_model": "minecraft:blaze_rod"
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:knight_sword/set_custom_team_color",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_team_colors"
                 }
               ]
             }

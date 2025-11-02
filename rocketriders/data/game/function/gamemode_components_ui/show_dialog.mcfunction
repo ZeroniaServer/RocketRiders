@@ -82,7 +82,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
         },\
         {\
           "id": "1",\
-          "display": {"color":"yellow","text":"true"}\
+          "display": {"color":"white","text":"true"}\
         }\
       ]\
     },\
@@ -170,18 +170,22 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": {"color":"white","text":"shooting_saber"}\
+          "display": {"color":"white","text":"none"}\
         },\
         {\
           "id": "1",\
-          "display": {"color":"white","text":"pickaxe"}\
+          "display": {"color":"white","text":"shooting_saber"}\
         },\
         {\
           "id": "2",\
-          "display": {"color":"white","text":"crusade_kit_dependent"}\
+          "display": {"color":"white","text":"piercing_pickaxe"}\
         },\
         {\
           "id": "3",\
+          "display": {"color":"white","text":"crusade_kit_dependent"}\
+        },\
+        {\
+          "id": "4",\
           "display": {"color":"white","text":"rocket_nomicon"}\
         }\
       ]\
@@ -311,13 +315,12 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"crusade_kit_dependent"}}].display.color set value "red"
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!swapEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"armor__"}].options[{display:{text:"swap"}}].display.color set value "red"
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arrow_pickup__"}].options[{display:{text:"only_crusade_mode_archer_kit"}}].display.color set value "red"
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!normalEnabled,tag=!powerupsEnabled,tag=!swapEnabled,tag=!chaseEnabled,tag=!duelEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"shooting_saber"}}].display.color set value "red"
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!ctfEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"pickaxe"}}].display.color set value "red"
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"crusade_kit_dependent"}}].display.color set value "red"
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"rocket_nomicon"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"crusade_kit_dependent"}}].display.color set value "yellow"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"rocket_nomicon"}}].display.color set value "yellow"
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"no_item_timer"}].options[{display:{text:"false"}}].display.color set value "red"
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"no_item_timer"}].options[{display:{text:"true"}}].display.color set value "red"
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!ctfEnabled,tag=!chaseEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"__portal_type"}].options[{display:{text:"none"}}].display.color set value "red"
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!chaseEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"custom_team_colors"}].options[{display:{text:"true"}}].display.color set value "yellow"
 
 ## Set initial values
 execute if predicate game:gamemode_components/arena/bedrock_frame run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"arena__bedrock_frame"}].options[{display:{text:"true"}}].initial set value true
@@ -337,9 +340,10 @@ execute if predicate game:gamemode_components/has_flags run data modify storage 
 execute if predicate game:gamemode_components/lower_void run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"lower_void"}].options[{display:{text:"true"}}].initial set value true
 
 execute if predicate game:gamemode_components/main_item/shooting_saber run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"shooting_saber"}}].initial set value true
-execute if predicate game:gamemode_components/main_item/pickaxe run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"pickaxe"}}].initial set value true
+execute if predicate game:gamemode_components/main_item/piercing_pickaxe run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"piercing_pickaxe"}}].initial set value true
 execute if predicate game:gamemode_components/main_item/crusade_kit_dependent run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"crusade_kit_dependent"}}].initial set value true
 execute if predicate game:gamemode_components/main_item/rocket_nomicon run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"rocket_nomicon"}}].initial set value true
+execute unless predicate game:gamemode_components/main_item/shooting_saber unless predicate game:gamemode_components/main_item/piercing_pickaxe unless predicate game:gamemode_components/main_item/crusade_kit_dependent unless predicate game:gamemode_components/main_item/rocket_nomicon run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"none"}}].initial merge value true
 
 execute if predicate game:gamemode_components/neutral_items run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"neutral_items"}].options[{display:{text:"true"}}].initial set value true
 execute if predicate game:gamemode_components/no_item_timer run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"no_item_timer"}].options[{display:{text:"true"}}].initial set value true

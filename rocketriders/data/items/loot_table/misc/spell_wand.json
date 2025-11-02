@@ -111,6 +111,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
@@ -128,8 +135,25 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:spell_wand/set_custom_team_color",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_team_colors"
                 }
               ]
             }

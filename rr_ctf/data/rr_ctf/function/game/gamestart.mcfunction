@@ -1,10 +1,3 @@
-#Items
-execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
-execute as @a[x=0,tag=JoinBlue] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
-
-execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
-execute as @a[x=0,tag=JoinYellow] run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
-
 #Notify Join
 execute if predicate game:match_in_play unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Piercing Pickaxe ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
 execute if predicate game:match_in_play if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]

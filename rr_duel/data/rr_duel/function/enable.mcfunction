@@ -11,7 +11,6 @@ tag @s add customBossbar
 tag @s add duelEnabled
 tag @s add SurpriseEggOff
 tag @s add tyingOff
-tag @s add customSaberMsg
 tag @s add customLeaveHandling
 tag @s add featheredOff
 tag @s add WindDownForce

@@ -6,7 +6,6 @@ tag @s remove duelEnabled
 tag @s remove tyingOff
 tag @s remove SurpriseEggOff
 tag @s remove customBossbar
-tag @s remove customSaberMsg
 tag @s remove customLeaveHandling
 tag @s remove featheredOff
 tag @s remove WindDownForce

@@ -59,25 +59,18 @@ execute if predicate game:match_in_play run gamemode spectator @a[x=0,predicate=
 execute if predicate game:match_in_play if entity @s[tag=Sonar] run tellraw @a[x=0,predicate=custom:team/spectator,tag=!JoinSpec] [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
 execute if predicate game:match_in_play run tp @a[x=0,predicate=custom:team/spectator] 12 100 0.5 90 90
 execute if predicate game:match_in_play run tag @a[x=0] remove doing_facade_parkour
-execute if predicate game:match_in_play run effect clear @a[x=0,predicate=custom:team/blue] resistance
-execute if predicate game:match_in_play run effect clear @a[x=0,predicate=custom:team/yellow] resistance
-execute if predicate game:match_in_play run effect give @a[x=0,predicate=custom:team/blue] fire_resistance 10 100 true
-execute if predicate game:match_in_play run effect give @a[x=0,predicate=custom:team/yellow] fire_resistance 10 100 true
-execute if predicate game:match_in_play run gamemode survival @a[x=0,predicate=custom:team/yellow]
-execute if predicate game:match_in_play run gamemode survival @a[x=0,predicate=custom:team/blue]
-#Hotfix for being able to keep charging bow from queue
-execute if predicate game:match_in_play if entity @s[tag=!noSabers] run clear @a[x=0,predicate=custom:team/any_playing_team] bow
-execute if predicate game:match_in_play if entity @s[tag=!noSabers] as @a[x=0,predicate=custom:team/blue] run function game:saberblue
-execute if predicate game:match_in_play if entity @s[tag=!noSabers] as @a[x=0,predicate=custom:team/yellow] run function game:saberyellow
-execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,predicate=custom:team/blue] [{"text":"Drop your ","color":"dark_aqua","italic":true},{"text":"Shooting Saber ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] unless predicate rr:is_cubekrowd run tellraw @a[x=0,predicate=custom:team/yellow] [{"text":"Drop your ","color":"yellow","italic":true},{"text":"Shooting Saber ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
-execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] if predicate rr:is_cubekrowd run tellraw @a[x=0,predicate=custom:team/blue] [{"text":"Use ","color":"dark_aqua","italic":true},{"text":"/leave ","color":"blue","bold":true,"italic":false},{"text":"to leave the match.","color":"dark_aqua","italic":true}]
-execute if predicate game:match_in_play if entity @s[tag=!customSaberMsg] if predicate rr:is_cubekrowd run tellraw @a[x=0,predicate=custom:team/yellow] [{"text":"Use ","color":"yellow","italic":true},{"text":"/leave ","color":"gold","bold":true,"italic":false},{"text":"to leave the match.","color":"yellow","italic":true}]
+execute if predicate game:match_in_play run effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
+execute if predicate game:match_in_play run effect give @a[x=0,predicate=custom:team/any_playing_team] fire_resistance 10 100 true
+execute if predicate game:match_in_play run gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
+execute if predicate game:match_in_play run clear @a[x=0,predicate=custom:team/any_arena_team] *
+execute if predicate game:match_in_play as @a[x=0,predicate=custom:team/any_playing_team] run function items:give_main_item
+#Hotfix for losing shield upon game starting
+execute if predicate game:match_in_play if predicate game:gamemode_components/main_item/crusade_kit_dependent as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
+execute if predicate game:match_in_play as @a[x=0,predicate=custom:team/any_playing_team] run function game:notify_join
 execute if predicate game:match_in_play unless predicate game:match_over run tag @a[x=0] remove CalculateWin
 execute if predicate game:match_in_play unless predicate game:match_over run tag @a[x=0] remove CalculateLoss
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
-execute if predicate game:match_in_play run scoreboard players set @a[x=0,predicate=custom:team/yellow] jumps 0
-execute if predicate game:match_in_play run scoreboard players set @a[x=0,predicate=custom:team/blue] jumps 0
+execute if predicate game:match_in_play run scoreboard players set @a[x=0,predicate=custom:team/any_playing_team] jumps 0
 #Enabling damage gamerules
 execute if predicate game:match_in_play run gamerule drowningDamage true
 execute if predicate game:match_in_play run gamerule fireDamage true
@@ -86,7 +79,6 @@ execute if predicate game:match_in_play run scoreboard players operation $initia
 execute if predicate game:match_in_play run function lobby:credits/restart
 execute if predicate game:match_in_play run gamerule mobGriefing true
 execute if predicate game:match_in_play run kill @e[x=0,type=#arrows]
-execute if predicate game:match_in_play run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{lobby:true}]
 execute if predicate game:match_in_play run scoreboard players set @s count 0
 execute if predicate game:match_in_play run tag @s remove bossbarOverride
 #The forceCountdown tag is used to override conditions that would otherwise cancel a countdown

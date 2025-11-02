@@ -16,10 +16,10 @@ execute if score $armor var matches 2 run scoreboard players set $armor/swap gam
 $execute if predicate {condition:"value_check",value:$(arrow_pickup__),range:1} run scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit gamemode_components $(arrow_pickup__)
 
 $scoreboard players set $main_item var $(main_item__)
-execute if score $main_item var matches 0 run scoreboard players set $armor/shooting_saber gamemode_components 1
-execute if score $main_item var matches 1 run scoreboard players set $armor/pickaxe gamemode_components 1
-execute if score $main_item var matches 2 run scoreboard players set $armor/crusade_kit_dependent gamemode_components 1
-execute if score $main_item var matches 3 run scoreboard players set $armor/rocket_nomicon gamemode_components 1
+execute if score $main_item var matches 1 run scoreboard players set $main_item/shooting_saber gamemode_components 1
+execute if score $main_item var matches 2 run scoreboard players set $main_item/piercing_pickaxe gamemode_components 1
+execute if score $main_item var matches 3 run scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
+execute if score $main_item var matches 4 run scoreboard players set $main_item/rocket_nomicon gamemode_components 1
 
 $execute if predicate {condition:"value_check",value:$(custom_team_colors),range:1} run scoreboard players set $custom_team_colors gamemode_components $(custom_team_colors)
 $execute if predicate {condition:"value_check",value:$(decreased_shooting_saber_attack_damage),range:1} run scoreboard players set $decreased_shooting_saber_attack_damage gamemode_components $(decreased_shooting_saber_attack_damage)

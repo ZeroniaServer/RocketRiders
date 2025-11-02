@@ -124,19 +124,20 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "translate": "Piercing Pickaxe",
-                  "color": "blue",
                   "bold": true,
-                  "italic": false
-                },
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
+                  "color": "blue"
                 }
               },
               "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
@@ -146,22 +147,33 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "translate": "Piercing Pickaxe",
-                  "color": "gold",
                   "bold": true,
-                  "italic": false
-                },
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
+                  "color": "gold"
                 }
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:piercing_pickaxe/set_custom_team_color",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/custom_team_colors"
                 }
               ]
             }

@@ -16,9 +16,6 @@ execute unless entity @e[x=0,type=armor_stand,tag=Bot] if entity @s[tag=Countdow
 execute if entity @s[tag=Countdown] run scoreboard players set @e[x=0,type=armor_stand,tag=Bot] botarrowitems 20
 execute if entity @s[tag=Countdown] run scoreboard players set @e[x=0,type=armor_stand,tag=Bot] BotHP 3
 
-#Items
-execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
-
 #Give first item to anyone who joins within 1st second
 execute if predicate game:match_in_play if score $game_duration global matches 3..20 run function items:givefirst
 

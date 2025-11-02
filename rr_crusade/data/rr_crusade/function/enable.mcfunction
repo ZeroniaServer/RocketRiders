@@ -14,7 +14,6 @@ scoreboard players set $portal_crystal_protection gamemode_components 1
 
 tag @s remove switchGamemodes
 function arenaclear:lockdecos
-tag @s add noSabers
 tag @s add portalDecosOff
 tag @s add customPrevention
 tag @s add featheredOff
@@ -22,7 +21,6 @@ tag @s add arrowLimit
 tag @s[tag=!doStacking] add stackingWasOff
 tag @s add doStacking
 tag @s add stackingOn
-tag @s add customSaberMsg
 tag @s add SuddenDeathCustom
 tag @s[tag=SurpriseEgg] add SurpriseEggWasOn
 tag @s add SurpriseEggOff

@@ -7,8 +7,6 @@ scoreboard players set $no_item_timer gamemode_components 1
 function gamemodes:storesettings
 function arenaclear:enableitems
 tag @s remove switchGamemodes
-tag @s add noSabers
-tag @s add customSaberMsg
 tag @s add stackingOn
 tag @s add doStacking
 tag @s add hotbarLimitOff

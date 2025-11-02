@@ -2,7 +2,6 @@ scoreboard players reset * gamemode_components
 
 tag @s remove crusadeEnabled
 function arenaclear:unlockdecos
-tag @s remove noSabers
 tag @s remove portalDecosOff
 tag @s remove customPrevention
 tag @s remove featheredOff
@@ -10,7 +9,6 @@ tag @s remove arrowLimit
 tag @s[tag=stackingWasOff] remove doStacking
 tag @s remove stackingWasOff
 tag @s remove stackingOn
-tag @s remove customSaberMsg
 tag @s remove SuddenDeathCustom
 tag @s remove SurpriseEggOff
 tag @s[tag=SurpriseEggWasOn] add SurpriseEgg

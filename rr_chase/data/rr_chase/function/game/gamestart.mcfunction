@@ -9,13 +9,8 @@ scoreboard players operation @e[x=0,type=armor_stand,tag=rr_chase,limit=1] Playe
 execute if score $blue_team_count global >= @e[x=0,type=armor_stand,tag=rr_chase,limit=1] PlayerCap run tag @s add BlueFull
 execute if entity @s[tag=BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
 
-#Items
-execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
-execute if predicate game:match_in_play as @a[x=0,tag=JoinBlue] run function items:util/givearrows
-
-#Notify Join
-execute if predicate game:match_in_play unless predicate rr:is_cubekrowd as @a[x=0,tag=JoinBlue] run function rr_chase:chasegear/sabermsg
-execute if predicate game:match_in_play if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
+#Give arrows on join (disabled? intentional?)
+#execute if predicate game:match_in_play as @a[x=0,tag=JoinBlue] run function items:util/givearrows
 
 #Give first item to anyone who joins within 1st second
 execute if predicate game:match_in_play if score $game_duration global matches 3..20 run function items:givefirst
@@ -38,8 +33,6 @@ execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSetti
 execute unless predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if score $blue_team_count global matches 1.. run tag @s add Countdown
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] if score $blue_team_count global matches 0 run function game:restartcountdown
 
-execute if score @s count matches 600 unless predicate rr:is_cubekrowd as @a[x=0,predicate=custom:team/blue] run function rr_chase:chasegear/sabermsg
-execute if score @s count matches 600 if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinBlue] [{"text":"Use ","color":"red","italic":true},{"text":"/leave ","color":"dark_red","bold":true,"italic":false},{"text":"to leave the match.","color":"red","italic":true}]
 execute unless predicate game:match_over if score @s count matches 600 run scoreboard players set $match_in_play global 1
 execute unless predicate game:match_over if score @s count matches 600 run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute unless predicate game:match_over if score @s count matches 600 run tag @a[x=0,predicate=custom:team/blue] add onBlue

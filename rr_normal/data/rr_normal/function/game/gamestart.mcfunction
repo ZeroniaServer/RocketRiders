@@ -1,7 +1,3 @@
-#Items
-execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
-execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
-
 #Give first item to anyone who joins within 1st second
 execute if predicate game:match_in_play if score $game_duration global matches 3..20 run function items:givefirst
 

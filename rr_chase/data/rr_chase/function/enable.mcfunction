@@ -26,7 +26,6 @@ tag @s add doStacking
 tag @s add stackingOn
 tag @s add onlyBlue
 tag @s add antigriefOff
-tag @s add customSaberMsg
 
 #enable arrows/utilities
 tag @s[tag=!rngArrows] add arrowsWasOff

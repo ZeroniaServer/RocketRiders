@@ -23,22 +23,20 @@ execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/b
 execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/yellow] actionbar [""]
 execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
 execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
-execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
-execute if entity @s[scores={SDtime=1}] run execute as @a[x=0] run function custom:player_action/forget_all_canopies
+execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_all_canopies
+execute if entity @s[scores={SDtime=1..2}] run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+execute if entity @s[scores={SDtime=1..2}] run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
-execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[x=0] armor.head with air
-execute if entity @s[scores={SDtime=1}] at @s run clear @a[x=0] firework_rocket
-execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] resistance
-execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] weakness
-execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] regeneration
-execute if entity @s[scores={SDtime=1},tag=!noSabers] as @e[x=0,type=item] if items entity @s contents bow run function items:killendweapon
-execute if entity @s[scores={SDtime=1},tag=BlueWonFirst,tag=!noSabers] run clear @a[x=0,predicate=custom:team/yellow] bow
-execute if entity @s[scores={SDtime=1},tag=BlueWonFirst,tag=!noSabers] as @a[x=0,predicate=custom:team/yellow] run function game:saberyellow
-execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] run clear @a[x=0,predicate=custom:team/blue] bow
-execute if entity @s[scores={SDtime=1},tag=YellowWonFirst,tag=!noSabers] as @a[x=0,predicate=custom:team/blue] run function game:saberblue
-execute if entity @s[scores={SDtime=1}] at @s run effect give @a[x=0] blindness 1 100 true
-execute if entity @s[scores={SDtime=4}] at @s run effect clear @a[x=0] blindness
+execute if entity @s[scores={SDtime=1}] run effect clear @a[x=0] resistance
+execute if entity @s[scores={SDtime=1}] run effect clear @a[x=0] weakness
+execute if entity @s[scores={SDtime=1}] run effect clear @a[x=0] regeneration
+execute if entity @s[scores={SDtime=1}] run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"celebratory_fireworks"}]
+execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:return_thrown_items
+execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_inventory
+execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
+execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function items:give_main_item
+execute if entity @s[scores={SDtime=1}] run effect give @a[x=0,predicate=custom:team/any_arena_team] blindness 1 100 true
+execute if entity @s[scores={SDtime=4}] run effect clear @a[x=0,predicate=custom:team/any_arena_team] blindness
 execute if entity @s[scores={SDtime=1}] run scoreboard players reset $match_over global
 execute if entity @s[scores={SDtime=1}] run function achievements:scoresreset
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,predicate=custom:team/blue]

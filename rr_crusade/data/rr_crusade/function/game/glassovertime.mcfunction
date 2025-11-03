@@ -1,8 +1,8 @@
-execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -18 ~ -1 -18 ~ 1 minecraft:light_gray_stained_glass replace air 
-execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -17 ~ -3 -11 ~ 3 minecraft:light_gray_stained_glass replace air 
-execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -13 ~ -4 -15 ~ -4 minecraft:light_gray_stained_glass replace air 
-execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -15 ~ 4 -13 ~ 4 minecraft:light_gray_stained_glass replace air 
-execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -10 ~ 1 -10 ~ -1 minecraft:light_gray_stained_glass replace air 
+execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -18 ~ -1 -18 ~ 1 minecraft:light_gray_stained_glass replace air
+execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -17 ~ -3 -11 ~ 3 minecraft:light_gray_stained_glass replace air
+execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -13 ~ -4 -15 ~ -4 minecraft:light_gray_stained_glass replace air
+execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -15 ~ 4 -13 ~ 4 minecraft:light_gray_stained_glass replace air
+execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -10 ~ 1 -10 ~ -1 minecraft:light_gray_stained_glass replace air
 execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill -10 ~ 2 34 ~ -2 minecraft:light_gray_stained_glass replace air
 execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill 6 ~ 1 6 ~ -1 minecraft:light_gray_stained_glass replace air
 execute as @e[x=0,type=marker,tag=GlassSetMarker] at @s run fill 7 ~ 3 17 ~ -3 minecraft:light_gray_stained_glass replace air

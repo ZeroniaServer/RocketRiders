@@ -365,6 +365,9 @@ execute if predicate game:gamemode_components/one_team if predicate game:gamemod
 # Remove Marker tag from credit armour stands
 execute as @e[x=0,type=armor_stand,tag=creditsAS] run data merge entity @s {Marker:false,DisabledSlots:4144959,Invulnerable:true,NoGravity:true}
 
+# Update developer credits
+function lobby:credits/devinitialize
+
 # Clear out arenaclear storages
 data remove storage rocketriders:bmissilepos x
 data remove storage rocketriders:bmissilepos y

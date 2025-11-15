@@ -20,12 +20,14 @@ tag @e[x=0,type=armor_stand,tag=EvtemaCredits] add SelectedDev
 tp @e[x=0,type=armor_stand,tag=EvtemaCredits] -49 216 78 90 0
 tp @e[x=0,type=armor_stand,tag=YZEROCredits] -49 216 79 90 0
 tp @e[x=0,type=armor_stand,tag=ChronosCredits] -49 216 77 90 0
+tp @e[x=0,type=armor_stand,tag=ToulCredits] -49 216 76 90 0
+tp @e[x=0,type=armor_stand,tag=DorkOrcCredits] -49 216 80 90 0
 tp @e[x=0,type=armor_stand,tag=BardCredits] -51 211 75 90 0
 tp @e[x=0,type=armor_stand,tag=HugoCredits] -51 211 81 90 0
 tp @e[x=0,type=armor_stand,tag=TrekCredits] -51 211 82 90 0
 tp @e[x=0,type=armor_stand,tag=TypCredits] -51 211 74 90 0
+tp @e[x=0,type=armor_stand,tag=StuffyCredits] -51 211 83 90 0
 tp @e[x=0,type=armor_stand,tag=BlockyCredits] -51 211 73 90 0
-tp @e[x=0,type=armor_stand,tag=ToulCredits] -51 211 83 90 0
 
 #Reset position - first set
 tp @e[x=0,type=armor_stand,tag=KurCredits] -51 211 72 90 0

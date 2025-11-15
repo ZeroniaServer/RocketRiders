@@ -41,22 +41,26 @@ execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=6..79}] a
 execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=EvtemaCredits] at @s run particle minecraft:dust{color:[1.0,0.0,0.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=YZEROCredits] at @s run particle minecraft:dust{color:[0.0,1.0,0.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=ChronosCredits] at @s run particle minecraft:dust{color:[0.0,0.0,1.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=ToulCredits] at @s run particle minecraft:dust{color:[1.0,0.5,0.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=DorkOrcCredits] at @s run particle minecraft:dust{color:16750848,scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=BardCredits] at @s run particle minecraft:dust{color:[1.0,1.0,0.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=HugoCredits] at @s run particle minecraft:dust{color:[1.0,1.0,0.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=TrekCredits] at @s run particle minecraft:dust{color:[1.0,1.0,0.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=TypCredits] at @s run particle minecraft:dust{color:[1.0,1.0,0.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=StuffyCredits] at @s run particle minecraft:dust{color:[1.0,1.0,0.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=BlockyCredits] at @s run particle minecraft:dust{color:[1.0,0.0,1.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
-execute if predicate custom:periodic_tick/3 as @e[x=0,type=armor_stand,tag=SelectedDev,tag=ToulCredits] at @s run particle minecraft:dust{color:[1.0,0.5,0.0],scale:1} ~ ~1 ~ 0.5 0.5 0.5 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tag @s add OldDevSel
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=EvtemaCredits] -49 216 78 90 0
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=YZEROCredits] -49 216 79 90 0
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=ChronosCredits] -49 216 77 90 0
+execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=ToulCredits] -49 216 76 90 0
+execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=DorkOrcCredits] -49 216 80 90 0
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=BardCredits] -51 211 75 90 0
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=HugoCredits] -51 211 81 90 0
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=TrekCredits] -51 211 82 90 0
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=TypCredits] -51 211 74 90 0
+execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=StuffyCredits] -51 211 83 90 0
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=BlockyCredits] -51 211 73 90 0
-execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tp @s[tag=ToulCredits] -51 211 83 90 0
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tag @e[x=0,type=armor_stand,tag=devcycle,tag=!OldDevSel,limit=1,sort=nearest] add SelectedDev
 execute as @e[x=0,type=armor_stand,tag=SelectedDev,scores={CreditCycle=80..}] run tag @s remove SelectedDev
 scoreboard players reset @e[x=0,type=armor_stand,tag=OldDevSel] CreditCycle

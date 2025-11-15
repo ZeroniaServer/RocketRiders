@@ -96,6 +96,12 @@ execute as @e[x=0,type=armor_stand,tag=EvtemaCredits,scores={CreditCycle=1}] at 
 execute as @e[x=0,type=armor_stand,tag=ChronosCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Chronos22","color":"#0248e9"}}}}
 execute as @e[x=0,type=armor_stand,tag=ChronosCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1.3 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Missile Design","color":"#0248e9"}}}}
 
+execute as @e[x=0,type=armor_stand,tag=ToulCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Toul_","color":"#FF7B00"}}}}
+execute as @e[x=0,type=armor_stand,tag=ToulCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1.3 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Realms Support","color":"#FF7B00"}}}}
+
+execute as @e[x=0,type=armor_stand,tag=DorkOrcCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"DorkOrc","color":"#FF9900"}}}}
+execute as @e[x=0,type=armor_stand,tag=DorkOrcCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1.3 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Developer","color":"#FF9900"}}}}
+
 execute as @e[x=0,type=armor_stand,tag=BardCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Bardonius","color":"gold"}}}}
 execute as @e[x=0,type=armor_stand,tag=BardCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1.3 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Lobby Builder","color":"gold"}}}}
 
@@ -108,8 +114,9 @@ execute as @e[x=0,type=armor_stand,tag=TrekCredits,scores={CreditCycle=1}] at @s
 execute as @e[x=0,type=armor_stand,tag=TypCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"HolyToiletPaper","color":"gold"}}}}
 execute as @e[x=0,type=armor_stand,tag=TypCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1.3 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Lobby Builder","color":"gold"}}}}
 
+execute as @e[x=0,type=armor_stand,tag=StuffyCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Stuffy","color":"gold"}}}}
+execute as @e[x=0,type=armor_stand,tag=StuffyCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1.3 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Arena Builder","color":"gold"}}}}
+
 execute as @e[x=0,type=armor_stand,tag=BlockyCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"BlockyM_","color":"light_purple"}}}}
 execute as @e[x=0,type=armor_stand,tag=BlockyCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1.3 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Trailer Maker","color":"light_purple"}}}}
 
-execute as @e[x=0,type=armor_stand,tag=ToulCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Toul_","color":"#FF7B00"}}}}
-execute as @e[x=0,type=armor_stand,tag=ToulCredits,scores={CreditCycle=1}] at @s positioned ~-1 ~-1.3 ~ run function custom:summon_temp_marker_aec {modifiers:{nbt:{Tags:["CreditName"],WaitTime:79,CustomNameVisible:true,CustomName:{"text":"Realms Support","color":"#FF7B00"}}}}

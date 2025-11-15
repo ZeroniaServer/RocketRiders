@@ -7,7 +7,7 @@ kill @e[x=0,type=armor_stand,tag=devcycle]
 summon armor_stand -49 216 79 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["devCreditsAS","creditsAS","devcycle","YZEROCredits"],Pose:{Head:[352,5,0],LeftLeg:[25,0,0],RightLeg:[334,0,0],LeftArm:[319,0,0],RightArm:[214,73,0]},Silent:true,Rotation:[90,0]}
 summon armor_stand -49 216 78 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["devCreditsAS","creditsAS","devcycle","SelectedDev","EvtemaCredits"],Silent:true,Rotation:[90,0]}
 summon armor_stand -49 216 77 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["devCreditsAS","creditsAS","devcycle","ChronosCredits"],Pose:{Head:[352,0,0],LeftArm:[256,35,0],RightArm:[250,347,0]},Silent:true,Rotation:[90,0]}
-summon armor_stand -49 216 80 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["devCreditsAS","creditsAS","devcycle","DorkOrcCredits"],Pose:{Head:[13f,0f,0f],RightLeg:[11f,0f,0f],RightArm:[47f,176f,174f],LeftArm:[240f,0f,194f]},Silent:true,Rotation:[90,0]}
+summon armor_stand -49 216 80 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["devCreditsAS","creditsAS","devcycle","DorkOrcCredits"],Pose:{Head:[5,2,0],RightLeg:[-10,0,7],LeftLeg:[10,0,-7],RightArm:[-47,176,154],LeftArm:[240,0,10]},Silent:true,Rotation:[90,0]}
 summon armor_stand -49 216 76 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["devCreditsAS","creditsAS","devcycle","ToulCredits"],Pose:{Head:[8f,6f,2f],LeftArm:[308f,9f,8f],RightArm:[306f,0f,344f]},Silent:true,Rotation:[90,0]}
 
 item replace entity @e[x=0,type=armor_stand,tag=EvtemaCredits,limit=1] armor.head with player_head[profile={properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWRjNDJlYTk4ZTExNjRlNWQ4MmI5ZGM3N2M5NGNjMjJmYmY1NmRlNzg3MDNjMDQ3ZmYxNWU4NzA2N2NmNWNiYSJ9fX0="}]}]
@@ -35,11 +35,12 @@ item replace entity @e[x=0,type=armor_stand,tag=ToulCredits,limit=1] armor.chest
 item replace entity @e[x=0,type=armor_stand,tag=ToulCredits,limit=1] armor.legs with leather_leggings[dyed_color=1908001]
 item replace entity @e[x=0,type=armor_stand,tag=ToulCredits,limit=1] armor.feet with leather_boots[dyed_color=16351261]
 
-item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] armor.head with player_head[profile={properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzY1MzJhMzQ2MjM3OTc1MDg1ODMxNGRjYjY0MTYxZmZjMTEyNGZmYjZkMDZjN2RlYWE4YmM1M2NhNmIxYjIyZiJ9fX0="}]}]
-item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] weapon.offhand with feather
-item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] armor.chest with copper_chestplate
-item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] armor.legs with copper_leggings
-item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] armor.feet with netherite_boots
+item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] armor.head with player_head[profile={properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzlhNDIxZmExY2EwMTM0ZTgwZmE5MjA0OTIwN2NiNjA5YjgxZGYyZDk3MDEwYzlkMGFmZWMyNjk0NDA0NmFlNSJ9fX0="}]}]
+item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] weapon.mainhand with light[!block_state]
+item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] weapon.offhand with light[block_state={level:"0"}]
+item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] armor.chest with leather_chestplate[dyed_color=0xFDFDE9]
+item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] armor.legs with leather_leggings[dyed_color=0x27180A]
+item replace entity @e[x=0,type=armor_stand,tag=DorkOrcCredits,limit=1] armor.feet with leather_boots[dyed_color=0x3B4243]
 
 #Builders
 summon armor_stand -51 211 81 {NoGravity:true,Invulnerable:true,NoBasePlate:true,ShowArms:true,Tags:["creditsAS","devcycle","BuilderCreditsAS","HugoCredits"],Silent:true,Rotation:[90,0]}

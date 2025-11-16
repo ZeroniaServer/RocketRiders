@@ -1,6 +1,7 @@
 scoreboard players reset @s event.player_dies
 scoreboard players set @s flag.is_dead 1
 execute store success score $void_death var if entity @s[advancements={custom:event/player_dies={die_void=true}}]
+execute store success score $lava_death var if entity @s[advancements={custom:event/player_dies={die_lava=true}}]
 advancement revoke @s only custom:event/player_dies
 
 # Do not count towards deaths statistic during end game phase
@@ -38,11 +39,11 @@ execute if score $can_grant_achievements var matches 1 if entity @s[predicate=cu
 execute if score $can_grant_achievements var matches 1 if entity @s[predicate=custom:team/yellow,predicate=!custom:not_falling,predicate=custom:on_blue_half,predicate=custom:standing_on_any_portal] run advancement grant @s only achievements:rr_challenges/fall_away
 
 # Volcanic Hatred (if I am inside of lava, award the owners of the nearby lava splash markers)
-execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[predicate=custom:team/blue] if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[predicate=custom:team/yellow] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
-execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[predicate=custom:team/yellow] if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[predicate=custom:team/blue] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
-execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:team/any_playing_team if predicate custom:is_in_lava run tag @s add volcanic_hatred.victim
-execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:team/any_playing_team if predicate custom:is_in_lava as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[tag=!volcanic_hatred.victim,predicate=custom:team/any_playing_team] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
-execute if score $can_grant_achievements var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:team/any_playing_team if predicate custom:is_in_lava run tag @s remove volcanic_hatred.victim
+execute if score $can_grant_achievements var matches 1 if score $lava_death var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[predicate=custom:team/blue] as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[predicate=custom:team/yellow] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
+execute if score $can_grant_achievements var matches 1 if score $lava_death var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[predicate=custom:team/yellow] as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[predicate=custom:team/blue] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
+execute if score $can_grant_achievements var matches 1 if score $lava_death var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:team/any_playing_team run tag @s add volcanic_hatred.victim
+execute if score $can_grant_achievements var matches 1 if score $lava_death var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:team/any_playing_team as @e[distance=..5,type=area_effect_cloud,tag=lavasplash_alone] on origin if entity @s[tag=!volcanic_hatred.victim,predicate=custom:team/any_playing_team] run advancement grant @s only achievements:rr_challenges/volcanic_hatred
+execute if score $can_grant_achievements var matches 1 if score $lava_death var matches 1 if predicate game:gamemode_components/neutral_items if predicate custom:team/any_playing_team run tag @s remove volcanic_hatred.victim
 
 # Get Off My Lawn (if I am killed within 7 blocks of an enemy canopy, and my attacker is within 7 blocks of that same canopy, award the attacker)
 execute if score $can_grant_achievements var matches 1 unless predicate game:gamemode_components/neutral_items if entity @s[predicate=custom:team/blue] positioned as @n[distance=..7,predicate=entities:type/canopy/brain,predicate=entities:origin_team/yellow] on attacker if entity @s[distance=..7,predicate=custom:team/yellow] run advancement grant @s only achievements:rr_challenges/get_off_lawn

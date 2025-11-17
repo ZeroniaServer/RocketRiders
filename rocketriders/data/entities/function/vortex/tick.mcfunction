@@ -66,6 +66,7 @@ execute if score $triggered_by_entity var matches 1 run return run function enti
 ## Movement (drift)
 execute store success score $was_drifting var if entity @s[tag=vortex.is_drifting]
 tag @s remove vortex.is_drifting
+execute on vehicle run tag @s remove vortex.is_drifting
 
 execute if predicate entities:origin_team/blue if score $was_drifting var matches 0 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,predicate=custom:team/yellow,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
 execute if predicate entities:origin_team/blue if score $was_drifting var matches 1 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,predicate=custom:team/yellow,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift

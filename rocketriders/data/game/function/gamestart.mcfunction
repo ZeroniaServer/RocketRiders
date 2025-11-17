@@ -86,6 +86,7 @@ execute if predicate custom:periodic_tick/3 if predicate game:gamemode_component
 execute unless predicate game:game_rules/disable_team_balancing/on unless entity @s[predicate=!game:team_count/yellow_is_larger,tag=!YellowFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] add join_pad.show_barrier
 execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinyellow
 execute as @a[x=0,tag=tryJoinYellow] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.yellow] run tag @s remove tryJoinYellow
+execute as @a[x=0,tag=JoinYellow] run function custom:team/join_yellow
 clear @a[x=0,tag=JoinYellow] *
 execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinYellow] run function game:assign_custom_team_color
 execute unless predicate game:match_in_play if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset

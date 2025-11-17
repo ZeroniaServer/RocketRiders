@@ -64,8 +64,7 @@
                   "text": "Knight Sword",
                   "bold": true,
                   "color": "blue"
-                },
-                "minecraft:item_model": "minecraft:breeze_rod"
+                }
               },
               "conditions": [
                 {
@@ -88,8 +87,7 @@
                   "text": "Knight Sword",
                   "bold": true,
                   "color": "gold"
-                },
-                "minecraft:item_model": "minecraft:blaze_rod"
+                }
               },
               "conditions": [
                 {

@@ -5,7 +5,7 @@
 
 ##Splash projectile motion/effects
 execute as @e[x=0,type=#custom:potion,tag=!splash,nbt={Item:{components:{"minecraft:custom_data":{id:"splash"}}}}] run function everytick:splash_init
-execute as @e[x=0,type=#custom:potion,tag=splash] at @s if predicate custom:periodic_tick/3 run particle splash ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=#custom:potion,tag=splash] at @s if predicate custom:periodic_tick/3 run particle splash ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 scoreboard players add @a[x=0,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash
 execute store success score $splash splashtick if score $splash splashtick matches 0

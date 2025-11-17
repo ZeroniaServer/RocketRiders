@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "custom:belowroof"
+      "name": "custom:in_arena"
     }
   },
   {

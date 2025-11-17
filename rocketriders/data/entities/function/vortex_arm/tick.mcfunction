@@ -1,4 +1,4 @@
-particle dust{color:0xFF00FF,scale:0.5} ~ ~ ~ 0.1 0.1 0.1 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+particle dust{color:0xFF00FF,scale:0.5} ~ ~ ~ 0.1 0.1 0.1 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 execute if entity @s[tag=vortex_arm.transitioning] run scoreboard players remove @s entity.age 1
 execute if entity @s[tag=vortex_arm.transitioning] if score @s entity.age matches ..0 on vehicle run data merge entity @s {teleport_duration:1}

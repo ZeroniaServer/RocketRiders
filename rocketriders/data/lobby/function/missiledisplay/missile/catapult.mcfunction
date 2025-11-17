@@ -5,7 +5,7 @@ data merge entity @e[x=0,type=area_effect_cloud,tag=SpeedDisp,limit=1] {CustomNa
 loot replace entity @e[x=0,type=item_frame,tag=MisDispIF,limit=1] contents loot items:missile/normal/catapult
 
 playsound minecraft:entity.explode master @a[x=0] 19 204 78 0.5 1.75
-particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hideParticles,predicate=!custom:belowroof]
+particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 
 scoreboard players set $previous_page var 0
 

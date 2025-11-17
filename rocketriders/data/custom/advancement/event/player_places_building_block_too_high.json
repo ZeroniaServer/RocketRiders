@@ -6,7 +6,7 @@
         "location": [
           {
             "condition": "minecraft:reference",
-            "name": "custom:belowroof"
+            "name": "custom:in_arena"
           },
           {
             "condition": "minecraft:match_tool",

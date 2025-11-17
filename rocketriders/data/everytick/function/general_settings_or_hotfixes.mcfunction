@@ -76,8 +76,8 @@ execute if predicate rr:has_modification_room unless predicate game:game_running
 function lobby:secrets/main
 
 #Lobby players can't enter arena (security)
-execute as @a[x=0,predicate=custom:team/lobby] at @s if predicate custom:belowroof run tellraw @s [{"text":"You shouldn't be here!","color":"red"}]
-execute as @a[x=0,predicate=custom:team/lobby] at @s if predicate custom:belowroof run scoreboard players set @s LeaveGame 1
+execute as @a[x=0,predicate=custom:team/lobby] at @s if predicate custom:in_arena run tellraw @s [{"text":"You shouldn't be here!","color":"red"}]
+execute as @a[x=0,predicate=custom:team/lobby] at @s if predicate custom:in_arena run scoreboard players set @s LeaveGame 1
 
 #Locked Modification Room
 execute if score $lockmodroom CmdData matches 1 as @a[x=0,predicate=custom:team/lobby] at @s if predicate 2811iaj1:in_modification run function game:kickout

@@ -7,7 +7,7 @@ execute if entity @s[type=fireball] run kill @s
 execute if entity @s[type=small_fireball] run kill @s
 execute if entity @s[type=dragon_fireball] run kill @s
 
-execute if entity @s[type=breeze_wind_charge] run particle minecraft:gust_emitter_large ~ ~ ~ 0 0 0 0 1 force @a[x=0,predicate=custom:belowroof]
+execute if entity @s[type=breeze_wind_charge] run particle minecraft:gust_emitter_large ~ ~ ~ 0 0 0 0 1 force @a[x=0,predicate=custom:in_arena]
 execute if entity @s[type=breeze_wind_charge] at @s run playsound minecraft:entity.breeze.wind_burst master @a[x=0]
 execute if entity @s[type=breeze_wind_charge] run kill @s
 

@@ -42,8 +42,8 @@ execute if score @s entity.age matches 27 if predicate entities:origin_team/yell
 execute if score @s entity.age matches 29 unless predicate entities:origin_team/yellow run place template game:bees_blue_stage11 ~-2 ~-4 ~
 execute if score @s entity.age matches 29 if predicate entities:origin_team/yellow run place template game:bees_yellow_stage11 ~-2 ~-4 ~
 
-execute if score @s entity.age matches 30 run particle minecraft:block{block_state:"minecraft:tnt"} ~ ~-2 ~ 0.2 0.2 0.2 0.2 40 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
-execute if score @s entity.age matches 30 run particle minecraft:block{block_state:"minecraft:honey_block"} ~ ~-2 ~ 1 1.5 0 0.1 200 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute if score @s entity.age matches 30 run particle minecraft:block{block_state:"minecraft:tnt"} ~ ~-2 ~ 0.2 0.2 0.2 0.2 40 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if score @s entity.age matches 30 run particle minecraft:block{block_state:"minecraft:honey_block"} ~ ~-2 ~ 1 1.5 0 0.1 200 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 execute if score @s entity.age matches 31.. unless predicate entities:origin_team/yellow run place template game:bees_blue_full ~-2 ~-4 ~
 execute if score @s entity.age matches 31.. if predicate entities:origin_team/yellow run place template game:bees_yellow_full ~-2 ~-4 ~

@@ -2,5 +2,5 @@ tellraw @s ["\n",{"text":"============ ","color":"gray"},{"translate":"Zeronia",
 advancement revoke @s only lobby:zeronia_credit1
 playsound block.end_portal_frame.fill master @s ~ ~ ~ 1 1.8
 playsound block.note_block.bit master @s ~ ~ ~ 1 1
-execute at @e[x=0,type=interaction,tag=ZeroniaCredit1,limit=1] run particle block{block_state:"command_block"} ~ ~ ~ 0.2 0.2 0.2 0.1 50 normal @s[tag=!hideParticles,predicate=!custom:belowroof]
-execute at @e[x=0,type=interaction,tag=ZeroniaCredit1,limit=1] run particle end_rod ~ ~ ~ 0.2 0.2 0.2 0.1 10 normal @s[tag=!hideParticles,predicate=!custom:belowroof]
+execute at @e[x=0,type=interaction,tag=ZeroniaCredit1,limit=1] run particle block{block_state:"command_block"} ~ ~ ~ 0.2 0.2 0.2 0.1 50 normal @s[tag=!hideParticles,predicate=!custom:in_arena]
+execute at @e[x=0,type=interaction,tag=ZeroniaCredit1,limit=1] run particle end_rod ~ ~ ~ 0.2 0.2 0.2 0.1 10 normal @s[tag=!hideParticles,predicate=!custom:in_arena]

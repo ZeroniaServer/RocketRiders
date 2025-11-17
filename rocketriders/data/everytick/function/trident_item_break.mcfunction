@@ -1,4 +1,4 @@
-particle item{item:{id:"trident"}} ~ ~1 ~ 0.01 0.01 0.01 0.3 5 normal @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+particle item{item:{id:"trident"}} ~ ~1 ~ 0.01 0.01 0.01 0.3 5 normal @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 playsound entity.item.break player @a[x=0] ~ ~ ~ 1 1
 
 execute if items entity @s hotbar.0 trident[damage=7] run item replace entity @s hotbar.0 with air

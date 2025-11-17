@@ -6,4 +6,4 @@ $execute if predicate custom:periodic_tick/3 run particle minecraft:dust{color:$
 $execute if predicate custom:periodic_tick/5 run particle minecraft:dust{color:$(color),scale:3.5} ~ ~ ~ 0.6 1 0.6 1 1 force @a[x=0,tag=particle_beam.far]
 $execute if predicate custom:periodic_tick/5 run particle minecraft:dust{color:$(color),scale:4} ~ ~ ~ 0.8 1 0.8 1 1 force @a[x=0,tag=particle_beam.very_far]
 
-$execute positioned ~ ~3 ~ if predicate custom:belowroof run function rr_ctf:everytick/particle_beam/loop {color:$(color)}
+$execute positioned ~ ~3 ~ if predicate custom:in_arena run function rr_ctf:everytick/particle_beam/loop {color:$(color)}

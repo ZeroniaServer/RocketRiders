@@ -1,6 +1,6 @@
 #lavasplash
 execute as @e[x=0,type=#custom:potion,tag=!lavasplash,nbt={Item:{components:{"minecraft:custom_data":{id:"lava_splash"}}}}] run function rr_powerups:everytick/lava_splash_init
-execute as @e[x=0,type=#custom:potion,tag=lavasplash] at @s if predicate custom:periodic_tick/3 run particle lava ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute as @e[x=0,type=#custom:potion,tag=lavasplash] at @s if predicate custom:periodic_tick/3 run particle lava ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 scoreboard players add @a[x=0,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash
 execute store success score $lavasplash splashtick if score $lavasplash splashtick matches 0

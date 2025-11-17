@@ -12,7 +12,7 @@ execute if predicate entities:origin_team/yellow at @a[limit=1,tag=nova_attach.t
 execute if predicate entities:origin_team/none at @a[limit=1,tag=nova_attach.target] run tag @n[predicate=entities:type/canopy/brain,distance=..7] add canopy.kill
 execute at @a[limit=1,tag=nova_attach.target] run fill ~ ~-2 ~ ~ ~ ~ air replace oak_wood
 execute at @a[limit=1,tag=nova_attach.target] run fill ~-3 ~-2 ~-3 ~3 ~ ~3 air replace #minecraft:leaves
-execute at @a[limit=1,tag=nova_attach.target] run particle minecraft:block{block_state:"minecraft:oak_leaves"} ~ ~1 ~ 2 1 2 0.1 50 force @a[x=0,tag=!hideParticles,predicate=custom:belowroof]
+execute at @a[limit=1,tag=nova_attach.target] run particle minecraft:block{block_state:"minecraft:oak_leaves"} ~ ~1 ~ 2 1 2 0.1 50 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 execute at @a[limit=1,tag=nova_attach.target] run playsound minecraft:entity.firework_rocket.blast master @a[x=0] ~ ~ ~ 2 0
 
 execute on origin run tag @s remove nova_attach.origin

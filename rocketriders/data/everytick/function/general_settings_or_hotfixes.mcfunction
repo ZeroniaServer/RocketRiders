@@ -28,6 +28,17 @@ tag @a[x=0,scores={toggleParticles=1..},tag=hidParticles] remove hidParticles
 execute as @a[x=0,scores={toggleParticles=1..}] run function custom:player_action/playerdata/save
 scoreboard players set @a[x=0] toggleParticles 0
 
+#Toggle hotbar auto-fill
+scoreboard players enable @a[x=0] toggleHotbarAutoFill
+tag @a[x=0,scores={toggleHotbarAutoFill=1..},tag=do_hotbar_auto_fill] add disabled_do_hotbar_auto_fill
+tag @a[x=0,scores={toggleHotbarAutoFill=1..},tag=do_hotbar_auto_fill] remove do_hotbar_auto_fill
+tag @a[x=0,scores={toggleHotbarAutoFill=1..},tag=!do_hotbar_auto_fill,tag=!disabled_do_hotbar_auto_fill] add do_hotbar_auto_fill
+tag @a[x=0,scores={toggleHotbarAutoFill=1..},tag=disabled_do_hotbar_auto_fill] remove disabled_do_hotbar_auto_fill
+tellraw @a[x=0,scores={toggleHotbarAutoFill=1..},tag=!do_hotbar_auto_fill] [{"text":"Disabled automatic hotbar filling.","color":"red"}]
+tellraw @a[x=0,scores={toggleHotbarAutoFill=1..},tag=do_hotbar_auto_fill] [{"text":"Enabled automatic hotbar filling.","color":"green"}]
+execute as @a[x=0,scores={toggleHotbarAutoFill=1..}] run function custom:player_action/playerdata/save
+scoreboard players set @a[x=0] toggleHotbarAutoFill 0
+
 #Toggle ingame tips
 scoreboard players add @a[x=0] GamesPlayed 0
 scoreboard players enable @a[x=0] toggleTips
@@ -56,6 +67,7 @@ scoreboard players reset @a[predicate=!custom:indimension] displayinfo
 scoreboard players reset @a[predicate=!custom:indimension] toggleTips
 scoreboard players reset @a[predicate=!custom:indimension] toggleParticles
 scoreboard players reset @a[predicate=!custom:indimension] toggleParkourTips
+scoreboard players reset @a[predicate=!custom:indimension] toggleHotbarAutoFill
 execute as @a[x=0,predicate=!custom:team/any_playing_team] run trigger LeaveMidgame set 0
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby] MaxItemSec
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] MaxItemSec

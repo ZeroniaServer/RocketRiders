@@ -21,6 +21,7 @@ scoreboard players reset @s useWand
 scoreboard players reset @s toggleParticles
 scoreboard players reset @s toggleTips
 scoreboard players reset @s toggleParkourTips
+scoreboard players reset @s toggleHotbarAutoFill
 scoreboard players reset @s dev
 scoreboard players reset @s options
 

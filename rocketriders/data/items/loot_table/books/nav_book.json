@@ -497,6 +497,26 @@
                       "action": "run_command",
                       "command": "/trigger toggleParticles set 1"
                     }
+                  },
+                  {
+                    "text": "\n\n ",
+                    "bold": true
+                  },
+                  "  ",
+                  {
+                    "text": "[Auto-Fill Hotbar]",
+                    "color": "dark_gray",
+                    "hover_event": {
+                      "action": "show_text",
+                      "value": {
+                        "text": "Click to toggle automatic hotbar filling.",
+                        "italic": true
+                      }
+                    },
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger toggleHotbarAutoFill set 1"
+                    }
                   }
                 ],
                 [

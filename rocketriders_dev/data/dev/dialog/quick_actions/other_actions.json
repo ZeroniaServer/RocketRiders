@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "RR Dev: Quick Actions",
+  "external_title": "Developer Actions...",
+  "exit_action": {
+    "label": "Back",
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "dev:quick_actions"
+    }
+  },
+  "actions": [
+    {
+      "label": "Switch Team",
+      "tooltip": "Moves you to the other team.",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 6"
+      }
+    },
+    {
+      "label": "Edit Gamemode Components",
+      "tooltip": "A UI for viewing and editing the current gamemode components.\n\nGamemode components cannot be edited once game settings have been confirmed.\n\nSome gamemode components are tied to a particular gamemode and cannot be changed through this menu.",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 5"
+      }
+    },
+    {
+      "label": "Server Mode...",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": "dev:quick_actions/server_mode"
+      }
+    }
+  ]
+}

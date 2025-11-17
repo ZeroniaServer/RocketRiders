@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "RR Dev: Quick Actions",
+  "external_title": "Developer Actions...",
+  "exit_action": {
+    "label": "Back",
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "dev:quick_actions/other_actions"
+    }
+  },
+  "actions": [
+    {
+      "label": "Vanilla",
+      "tooltip": "As if playing the map normally from a world download.\n(Not CubeKrowd, not Realms.)",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 7"
+      }
+    },
+    {
+      "label": "Server Mode (CK)",
+      "tooltip": "As if playing on CubeKrowd.",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 8"
+      }
+    },
+    {
+      "label": "Realms Mode",
+      "tooltip": "As if playing on Realms.",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 9"
+      }
+    }
+  ]
+}

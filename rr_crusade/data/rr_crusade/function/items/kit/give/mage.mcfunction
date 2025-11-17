@@ -15,3 +15,5 @@ execute unless entity @s[predicate=rr_crusade:kit/mage] at @s[tag=!kitmage] run 
 execute unless entity @s[predicate=rr_crusade:kit/mage] run scoreboard players add $mage CmdData 1
 
 execute unless entity @s[predicate=rr_crusade:kit/mage] run scoreboard players set @s crusadekit 3
+
+function custom:player_action/playerdata/save

@@ -1,5 +1,5 @@
 # Break if near the roof
-execute if predicate custom:nearroof run return run function entities:shield_projectile/actions/break
+execute if predicate custom:near_or_above_roof run return run function entities:shield_projectile/actions/break
 
 # Store the rotation and speed of vehicle
 execute if predicate custom:has_vehicle run function custom:projectile_motion_save

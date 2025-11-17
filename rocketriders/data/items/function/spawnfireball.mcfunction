@@ -5,10 +5,10 @@ execute at @s[tag=YellowFireball,tag=!UnableSpawn] if predicate custom:nearvoid 
 execute at @s[tag=YellowFireball,tag=!UnableSpawn] if predicate custom:nearvoid run tag @s add UnableSpawn
 
 #Roof spawn prevention
-execute at @s[tag=BlueFireball,tag=!UnableSpawn] if predicate custom:verynearroof run tag @s add roof
-execute at @s[tag=BlueFireball,tag=!UnableSpawn] if predicate custom:verynearroof run tag @s add UnableSpawn
-execute at @s[tag=YellowFireball,tag=!UnableSpawn] if predicate custom:verynearroof run tag @s add roof
-execute at @s[tag=YellowFireball,tag=!UnableSpawn] if predicate custom:verynearroof run tag @s add UnableSpawn
+execute at @s[tag=BlueFireball,tag=!UnableSpawn] if predicate custom:near_or_above_roof run tag @s add roof
+execute at @s[tag=BlueFireball,tag=!UnableSpawn] if predicate custom:near_or_above_roof run tag @s add UnableSpawn
+execute at @s[tag=YellowFireball,tag=!UnableSpawn] if predicate custom:near_or_above_roof run tag @s add roof
+execute at @s[tag=YellowFireball,tag=!UnableSpawn] if predicate custom:near_or_above_roof run tag @s add UnableSpawn
 
 #Give back if prevented
 execute at @s[tag=UnableSpawn] run function items:prevention/unablefx

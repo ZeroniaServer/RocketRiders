@@ -34,8 +34,8 @@ execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearvoid run 
 execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearvoid run tag @s add UnableMissile
 
 #Roof
-execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearroof run tag @s add roof
-execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearroof run tag @s add UnableMissile
+execute if entity @s[tag=!UnableMissile] at @s if predicate custom:near_or_above_roof run tag @s add roof
+execute if entity @s[tag=!UnableMissile] at @s if predicate custom:near_or_above_roof run tag @s add UnableMissile
 
 #Pierce Prevention (Portals)
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles

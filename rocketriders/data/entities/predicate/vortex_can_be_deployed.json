@@ -62,7 +62,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "custom:above_roof"
+      "name": "custom:near_or_above_roof"
     }
   }
 ]

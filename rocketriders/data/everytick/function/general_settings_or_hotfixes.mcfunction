@@ -192,4 +192,4 @@ execute if predicate game:game_running unless predicate game:match_over if predi
 execute if predicate game:game_running if predicate game:match_over as @a[x=0,predicate=custom:team/any_playing_team] run function custom:set_xp_bar {level:0,progress:0}
 
 # Remove flowing water sounds from the lobby
-stopsound @a[x=0,predicate=custom:above_roof] ambient minecraft:block.water.ambient
+stopsound @a[x=0,predicate=!custom:in_arena] ambient minecraft:block.water.ambient

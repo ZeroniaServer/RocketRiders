@@ -13,14 +13,14 @@ execute if predicate game:portal_type/default as @e[x=0,type=fireball,tag=Fireba
 execute if predicate game:portal_type/default as @e[x=0,type=fireball,tag=FireballBlue] at @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data merge entity @s {ExplosionPower:0}
 
 #Kill everything near/above the roof
-execute as @e[x=0,type=ender_pearl,predicate=custom:above_roof] run function entities:canopy_projectile/actions/break
-execute as @e[x=0,type=snowball] at @s run kill @s[predicate=custom:above_roof]
-execute as @e[x=0,type=dragon_fireball] at @s run kill @s[predicate=custom:above_roof]
-execute as @e[x=0,type=egg] at @s run kill @s[predicate=custom:above_roof]
-execute as @e[x=0,type=fireball] at @s run kill @s[predicate=custom:above_roof]
-execute as @e[x=0,type=tnt] at @s run kill @s[predicate=custom:above_roof]
-execute as @e[x=0,type=tnt_minecart] at @s run kill @s[predicate=custom:above_roof]
-execute as @e[x=0,type=#custom:potion] at @s run kill @s[predicate=custom:above_roof]
+execute as @e[x=0,type=ender_pearl,predicate=custom:near_or_above_roof] run function entities:canopy_projectile/actions/break
+execute as @e[x=0,type=snowball] at @s run kill @s[predicate=custom:near_or_above_roof]
+execute as @e[x=0,type=dragon_fireball] at @s run kill @s[predicate=custom:near_or_above_roof]
+execute as @e[x=0,type=egg] at @s run kill @s[predicate=custom:near_or_above_roof]
+execute as @e[x=0,type=fireball] at @s run kill @s[predicate=custom:near_or_above_roof]
+execute as @e[x=0,type=tnt] at @s run kill @s[predicate=custom:near_or_above_roof]
+execute as @e[x=0,type=tnt_minecart] at @s run kill @s[predicate=custom:near_or_above_roof]
+execute as @e[x=0,type=#custom:potion] at @s run kill @s[predicate=custom:near_or_above_roof]
 
 #Kill everything below void
 kill @e[x=0,type=ender_pearl,predicate=custom:in_void]

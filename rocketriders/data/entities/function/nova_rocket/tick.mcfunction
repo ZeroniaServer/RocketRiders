@@ -5,7 +5,7 @@ execute if entity @s[tag=nova_rocket.killed] run return run kill @s
 execute if predicate custom:has_vehicle run function custom:projectile_motion_save
 
 ## Kill in invalid areas
-execute if predicate custom:above_roof run return run function entities:nova_rocket/actions/break
+execute if predicate custom:near_or_above_roof run return run function entities:nova_rocket/actions/break
 execute if predicate custom:in_void run return run function entities:nova_rocket/actions/break
 execute unless predicate custom:insideborder run return run function entities:nova_rocket/actions/break
 

@@ -88,7 +88,6 @@ tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
 tag @s[scores={endtimer=570..}] remove BothWon
 execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * invCount
-execute if entity @s[scores={endtimer=570..}] run function arenaclear:preclear
 execute if score @s endtimer matches 570.. run scoreboard players reset $match_over global
 
 ##For repeating settings

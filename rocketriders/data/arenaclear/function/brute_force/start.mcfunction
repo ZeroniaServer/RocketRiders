@@ -1,5 +1,8 @@
 scoreboard players set $chunk_clear_progress global 0
 
+# Kill entities in the arena
+function arenaclear:kill_arena_entities
+
 # Halt molerat placing progress
 function arenaclear:molerat_place/unschedule_all
 

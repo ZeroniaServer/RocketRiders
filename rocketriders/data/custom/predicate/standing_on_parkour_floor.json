@@ -5,6 +5,9 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
+        "location": {
+          "dimension": "minecraft:overworld"
+        },
         "stepping_on": {
           "position": {
             "y": {
@@ -22,6 +25,9 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
+        "location": {
+          "dimension": "minecraft:overworld"
+        },
         "stepping_on": {
           "position": {
             "x": {

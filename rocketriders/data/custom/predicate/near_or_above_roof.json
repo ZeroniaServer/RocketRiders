@@ -1,10 +1,11 @@
 {
-  "condition": "location_check",
+  "condition": "minecraft:location_check",
   "predicate": {
     "position": {
       "y": {
         "min": 160
       }
-    }
+    },
+    "dimension": "minecraft:overworld"
   }
 }

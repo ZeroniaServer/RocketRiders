@@ -5,6 +5,12 @@
       "conditions": {
         "player": [
           {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
+          {
             "condition": "minecraft:inverted",
             "term": {
               "condition": "minecraft:reference",

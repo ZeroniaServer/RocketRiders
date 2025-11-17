@@ -5,6 +5,7 @@
       "y": {
         "max": 20
       }
-    }
+    },
+    "dimension": "minecraft:overworld"
   }
 }

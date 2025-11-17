@@ -6,6 +6,7 @@
         "min": 30,
         "max": 85
       }
-    }
+    },
+    "dimension": "minecraft:overworld"
   }
 }

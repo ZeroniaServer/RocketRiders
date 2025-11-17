@@ -5,6 +5,12 @@
       "conditions": {
         "player": [
           {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
+          {
             "condition": "minecraft:reference",
             "name": "custom:alive"
           }
@@ -20,6 +26,12 @@
       "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
           {
             "condition": "minecraft:reference",
             "name": "custom:alive"
@@ -39,6 +51,14 @@
     "get_directly_killed_by_another_player": {
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          }
+        ],
         "entity": {
           "type": "minecraft:player"
         }
@@ -47,6 +67,14 @@
     "get_killed_by_mob_with_damage_origins": {
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          }
+        ],
         "entity": {
           "predicates": {
             "minecraft:custom_data": {

@@ -3,6 +3,14 @@
     "kill_player": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          }
+        ],
         "entity": {
           "type": "minecraft:player"
         }

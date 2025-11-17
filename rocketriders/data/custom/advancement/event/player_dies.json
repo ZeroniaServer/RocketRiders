@@ -5,6 +5,12 @@
       "conditions": {
         "player": [
           {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
+          {
             "condition": "minecraft:entity_scores",
             "entity": "this",
             "scores": {
@@ -35,6 +41,12 @@
       "conditions": {
         "player": [
           {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
+          {
             "condition": "minecraft:entity_scores",
             "entity": "this",
             "scores": {
@@ -60,6 +72,12 @@
       "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
           {
             "condition": "minecraft:entity_scores",
             "entity": "this",

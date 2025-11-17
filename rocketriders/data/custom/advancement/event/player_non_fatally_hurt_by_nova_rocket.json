@@ -5,6 +5,12 @@
       "conditions": {
         "player": [
           {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
+          {
             "condition": "minecraft:reference",
             "name": "custom:alive"
           },
@@ -32,6 +38,12 @@
       "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
           {
             "condition": "minecraft:reference",
             "name": "custom:alive"

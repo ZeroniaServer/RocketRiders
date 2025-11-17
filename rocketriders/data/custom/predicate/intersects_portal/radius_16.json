@@ -15,6 +15,10 @@
               "condition": "minecraft:all_of",
               "terms": [
                 {
+                  "condition": "minecraft:reference",
+                  "name": "game:blue_portal_revealed"
+                },
+                {
                   "condition": "minecraft:location_check",
                   "predicate": {
                     "position": {
@@ -30,7 +34,8 @@
                         "min": -90,
                         "max": -57
                       }
-                    }
+                    },
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
@@ -50,6 +55,10 @@
               "condition": "minecraft:all_of",
               "terms": [
                 {
+                  "condition": "minecraft:reference",
+                  "name": "game:yellow_portal_revealed"
+                },
+                {
                   "condition": "minecraft:location_check",
                   "predicate": {
                     "position": {
@@ -65,7 +74,8 @@
                         "min": 58,
                         "max": 91
                       }
-                    }
+                    },
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
@@ -140,7 +150,8 @@
                         "min": -83,
                         "max": -50
                       }
-                    }
+                    },
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
@@ -179,7 +190,8 @@
                         "min": 51,
                         "max": 84
                       }
-                    }
+                    },
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {

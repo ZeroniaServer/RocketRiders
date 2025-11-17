@@ -34,7 +34,8 @@ base_predicate = {
                         "min": -74,
                         "max": -73
                       }
-                    }
+                    },
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
@@ -74,7 +75,8 @@ base_predicate = {
                         "min": 74,
                         "max": 75
                       }
-                    }
+                    },
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
@@ -152,7 +154,8 @@ base_predicate = {
                         "min": -67,
                         "max": -66
                       }
-                    }
+                    },
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
@@ -192,7 +195,8 @@ base_predicate = {
                         "min": 67,
                         "max": 68
                       }
-                    }
+                    },
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {

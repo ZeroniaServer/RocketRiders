@@ -3,6 +3,14 @@
     "gain_invisibility_effect": {
       "trigger": "minecraft:effects_changed",
       "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          }
+        ],
         "effects": {
           "minecraft:invisibility": {}
         }

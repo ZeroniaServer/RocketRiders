@@ -8,7 +8,8 @@
           "y": {
             "max": -20
           }
-        }
+        },
+        "dimension": "minecraft:overworld"
       }
     },
     {
@@ -28,7 +29,8 @@
               "y": {
                 "max": 0
               }
-            }
+            },
+            "dimension": "minecraft:overworld"
           }
         }
       ]

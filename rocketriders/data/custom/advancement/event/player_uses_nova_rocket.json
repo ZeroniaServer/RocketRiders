@@ -3,6 +3,14 @@
     "player_uses_nova_rocket": {
       "trigger": "minecraft:shot_crossbow",
       "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          }
+        ],
         "item": {
           "predicates": {
             "minecraft:custom_data": {

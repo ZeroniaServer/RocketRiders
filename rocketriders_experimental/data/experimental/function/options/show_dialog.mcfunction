@@ -88,9 +88,15 @@ data modify storage rocketriders:main options.dialog set value {\
 	}\
 }
 
-execute if entity @s[tag=!hideTips] run data modify storage rocketriders:main options.dialog.inputs[0].options[1].initial set value true
-execute if entity @s[tag=!hideParkourTips] run data modify storage rocketriders:main options.dialog.inputs[1].options[1].initial set value true
-execute if entity @s[tag=!hideParticles] run data modify storage rocketriders:main options.dialog.inputs[2].options[1].initial set value true
-execute if entity @s[tag=do_hotbar_auto_fill] run data modify storage rocketriders:main options.dialog.inputs[3].options[1].initial set value true
+# Set current values
+execute if entity @s[tag=!hideTips] run data modify storage rocketriders:main options.dialog.inputs[{key:"tips"}].options[1].initial set value true
+execute if entity @s[tag=!hideParkourTips] run data modify storage rocketriders:main options.dialog.inputs[{key:"parkour_tips"}].options[1].initial set value true
+execute if entity @s[tag=!hideParticles] run data modify storage rocketriders:main options.dialog.inputs[{key:"particles"}].options[1].initial set value true
+execute if entity @s[tag=do_hotbar_auto_fill] run data modify storage rocketriders:main options.dialog.inputs[{key:"do_hotbar_auto_fill"}].options[1].initial set value true
 
+# Remove the parkour tips option on CK
+execute unless predicate rr:has_parkour run data remove storage rocketriders:main options.dialog.inputs[{key:"parkour_tips"}]
+execute unless predicate rr:has_parkour run data modify storage rocketriders:main options.dialog.action.action.template set value "trigger options set 100000$(do_hotbar_auto_fill)$(particles)0$(tips)"
+
+# Show dialog
 function custom:show_dialog with storage rocketriders:main options

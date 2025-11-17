@@ -2,6 +2,7 @@
 
 $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body append value \
 {\
+  "__include_in_full_list__": $(include_in_full_list)b,\
   "type": "minecraft:item",\
   "item": {\
     "id": "minecraft:barrier"\

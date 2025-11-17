@@ -26,6 +26,8 @@ tag @s add vortex_arm.this
 execute at @s summon item_display run function entities:vortex_arm/init/body
 tag @s remove vortex_arm.this
 
+execute if score $feathered var matches 1 run tag @s add vortex_arm.feathered
+
 execute on origin on origin run tag @s add vortex.origin 
 execute if score $feathered var matches 0 at @s run playsound minecraft:entity.shulker.hurt_closed master @a[x=0,tag=vortex.origin] ~ ~ ~ 0.7 0 0.25
 execute if score $feathered var matches 0 at @s run playsound minecraft:block.sculk_sensor.clicking master @a[x=0,tag=vortex.origin] ~ ~ ~ 1 1 0.25

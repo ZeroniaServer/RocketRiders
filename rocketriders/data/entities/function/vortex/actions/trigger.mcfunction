@@ -9,3 +9,5 @@ execute unless score @s entity.vortex.fuse matches 0.. if entity @s[tag=!vortex.
 $execute unless score @s entity.vortex.fuse matches ..$(fuse) run scoreboard players set @s entity.vortex.fuse $(fuse)
 
 execute if score @s entity.vortex.fuse matches ..1 on vehicle run data merge entity @s {start_interpolation:0,interpolation_duration:1,transformation:{scale:[1,1,1]},billboard:"center"}
+
+execute if predicate rr:has_achievements unless predicate game:match_over if predicate game:game_rules/impact_utilities/on if entity @s[tag=vortex.feathered] positioned as @s positioned ~ ~-1.6 ~ run advancement grant @a[distance=..3,predicate=custom:team/any_playing_team] only achievements:rr_challenges/zzzzzzhuh

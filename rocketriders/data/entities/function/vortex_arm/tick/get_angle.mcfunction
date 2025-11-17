@@ -4,7 +4,8 @@ scoreboard players operation $offset var *= @s entity.vortex_arm.index
 execute on origin run scoreboard players operation $offset var /= @s entity.vortex.arms
 execute on origin run scoreboard players operation $angle var = @s entity.age
 execute if entity @s[tag=vortex_arm.transitioning] run scoreboard players add $angle var 5
-scoreboard players set $spin_speed constant 18
+execute unless entity @s[tag=vortex_arm.feathered] run scoreboard players set $spin_speed constant 18
+execute if entity @s[tag=vortex_arm.feathered] run scoreboard players set $spin_speed constant 15
 scoreboard players operation $angle var *= $spin_speed constant
 scoreboard players operation $angle var += $offset var
 scoreboard players operation $angle var %= $360 constant

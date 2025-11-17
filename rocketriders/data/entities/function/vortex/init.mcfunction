@@ -7,6 +7,10 @@ data modify entity @s data.vortex set value {brain:{}}
 execute if score @s entity.age matches 0..19 run scoreboard players remove @s entity.age 20
 execute unless score @s entity.age matches -20..-1 run scoreboard players set @s entity.age 0
 
+execute unless predicate game:game_rules/impact_utilities/on if entity @s[tag=vortex.feathered] run tag @s add vortex.neutral_landmine
+execute if predicate game:game_rules/impact_utilities/on if predicate {condition:"minecraft:random_chance",chance:0.01} run tag @s add vortex.feathered
+execute if predicate game:game_rules/impact_utilities/on if entity @s[tag=vortex.feathered] if predicate rr:has_achievements on origin run advancement grant @s[predicate=custom:team/any_playing_team] only achievements:rr_challenges/zzzzzzhuh
+
 data modify storage rocketriders:main vortex.name set value "a Vortex"
 execute if entity @s[tag=vortex.feathered] run data modify storage rocketriders:main vortex.name set value "a... Feathery Vortex?"
 execute unless entity @s[tag=vortex.feathered] on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s Vortex"], write_to:"storage rocketriders:main vortex.name"}

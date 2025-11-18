@@ -82,6 +82,27 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:can_break": {
+                  "blocks": "#custom:glass_except_light_gray"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:modifiers/molerat/on"
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:game_running"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
                 "!minecraft:can_break": {}
               },
               "conditions": [

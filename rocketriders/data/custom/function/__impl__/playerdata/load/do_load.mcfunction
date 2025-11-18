@@ -3,6 +3,9 @@
 # Do nothing if there is no entry saved
 $execute unless data storage rocketriders.data:playerdata players."$(UUID)" run return fail
 
+# If they have an entry here, that means this is not their first join, so set firstJoined to 1 (meaning not first joined)
+scoreboard players set @s firstJoined 1
+
 # Load data
 $execute store result score @s wins run data get storage rocketriders.data:playerdata players."$(UUID)".data.wins
 $execute store result score @s losses run data get storage rocketriders.data:playerdata players."$(UUID)".data.losses

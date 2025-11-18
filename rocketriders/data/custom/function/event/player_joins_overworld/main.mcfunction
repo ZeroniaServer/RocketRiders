@@ -1,4 +1,5 @@
 scoreboard players set @s event.player_joins_overworld.state -1
+scoreboard players set @s time_since_joined_overworld 0
 
 function everytick:welcome_titles
 
@@ -88,3 +89,6 @@ scoreboard players reset @s jumping
 
 # Load data
 function custom:player_action/playerdata/load
+
+# First join
+execute unless score @s firstJoined matches 1.. run function custom:event/player_joins_overworld/new_player

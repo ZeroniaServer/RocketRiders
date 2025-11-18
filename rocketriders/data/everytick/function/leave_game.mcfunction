@@ -19,10 +19,10 @@ effect give @a[x=0,scores={LeaveGame=1..}] night_vision infinite 100 true
 execute as @a[x=0,scores={LeaveGame=1..},predicate=!custom:team/lobby] run function custom:team/join_lobby
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode survival
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode adventure
-title @a[x=0,scores={LeaveGame=1..,firstJoined=2},tag=!cancel_next_title_clear] times 5 30 5
-title @a[x=0,scores={LeaveGame=1..,firstJoined=2},tag=!cancel_next_title_clear] actionbar [""]
-title @a[x=0,scores={LeaveGame=1..,firstJoined=2},tag=!cancel_next_title_clear] title [""]
-title @a[x=0,scores={LeaveGame=1..,firstJoined=2},tag=!cancel_next_title_clear] subtitle [""]
+title @a[x=0,scores={LeaveGame=1..},tag=!cancel_next_title_clear] times 5 30 5
+title @a[x=0,scores={LeaveGame=1..},tag=!cancel_next_title_clear] actionbar [""]
+title @a[x=0,scores={LeaveGame=1..},tag=!cancel_next_title_clear] title [""]
+title @a[x=0,scores={LeaveGame=1..},tag=!cancel_next_title_clear] subtitle [""]
 tag @a[x=0,tag=cancel_next_title_clear] remove cancel_next_title_clear
 spawnpoint @a[x=0,tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78 90 0
 spawnpoint @a[x=0,tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96 90 0

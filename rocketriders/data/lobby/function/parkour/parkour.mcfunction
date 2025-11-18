@@ -9,7 +9,7 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourT
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- If you fall on the ground, you go to your last ","color":"green"},{"text":"Checkpoint","color":"dark_green"},{"text":".","color":"green"}]
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- The first pressure plate resets your time.","color":"green"}]
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the compass to ","color":"green"},{"text":"Return to Checkpoint","color":"aqua","bold":true},{"text":".","color":"green"}]
-execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the clock to ","color":"green"},{"text":"Quit to Start","color":"yellow","bold":true},{"text":".","color":"green"}]
+execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the clock to ","color":"green"},{"text":"Return to Start","color":"yellow","bold":true},{"text":".","color":"green"}]
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":true},{"text":".","color":"green"}]
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger toggleParkourTips set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop seeing parkour instructions"}}},{"text":" to no longer see these instructions.","color":"dark_green","italic":true}]
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
@@ -147,9 +147,9 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity
 scoreboard players add @a[x=0,predicate=custom:team/lobby,tag=inParkour,scores={chkpntCooldown=1..19}] chkpntCooldown 1
 scoreboard players set @a[x=0,predicate=custom:team/lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
-#Quit to start
+#Return to start
 execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.5 clock run clear @s clock
-execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name=[{"translate":"Quit to Start","color":"yellow","bold":true,"italic":false}],consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
+execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name=[{"translate":"Return to Start","color":"yellow","bold":true,"italic":false}],consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
 
 #Quit parkour
 execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run clear @s barrier

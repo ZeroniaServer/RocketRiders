@@ -19,19 +19,35 @@
       }
     },
     {
-      "label": "Server Mode (CK)",
-      "tooltip": "As if playing on CubeKrowd.",
+      "label": "Realms Mode",
+      "tooltip": "As if playing on Realms.",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 9"
+      }
+    },
+    {
+      "label": "CubeKrowd (Voting)",
+      "tooltip": "As if playing on CubeKrowd.\nNormal public lobby.",
       "action": {
         "type": "minecraft:run_command",
         "command": "/trigger dev set 8"
       }
     },
     {
-      "label": "Realms Mode",
-      "tooltip": "As if playing on Realms.",
+      "label": "CubeKrowd (Duel)",
+      "tooltip": "As if playing on CubeKrowd.\nNormal 1v1 lobby.",
       "action": {
         "type": "minecraft:run_command",
-        "command": "/trigger dev set 9"
+        "command": "/trigger dev set 10"
+      }
+    },
+    {
+      "label": "CubeKrowd (Custom)",
+      "tooltip": "As if playing on CubeKrowd.\nPrivate RR0 lobby.",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 11"
       }
     }
   ]

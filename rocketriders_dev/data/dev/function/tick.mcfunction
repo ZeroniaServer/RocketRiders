@@ -12,6 +12,8 @@ execute as @a[x=0,scores={dev=6}] run function dev:action/switch_team
 execute as @a[x=0,scores={dev=7}] run function servermode:default
 execute as @a[x=0,scores={dev=8}] run function servermode:enabled
 execute as @a[x=0,scores={dev=9}] run function servermode:realms
+execute as @a[x=0,scores={dev=10}] run function servermode:enabledduel
+execute as @a[x=0,scores={dev=11}] run function servermode:enabledcustom
 execute as @a[x=0,scores={dev=100..199}] run function dev:action/launch_game_mode
 
 execute as @a[x=0,scores={dev=1..}] run scoreboard players reset @s dev

@@ -57,8 +57,3 @@ setblock 10 63 -66 obsidian
 setblock 14 63 -66 obsidian
 execute if entity @s[tag=!customSpawnpointBlockProtection] run fill 11 65 -67 13 65 -67 obsidian
 execute if entity @s[tag=!customSpawnpointBlockProtection] run setblock 12 66 -67 obsidian
-
-#Fix for Hole in One
-execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill -11 59 73 34 36 75 obsidian outline
-execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 1 48 73 1 47 73 air
-execute if entity @s[scores={PortalDeco=4},tag=!portalDecosOff] run fill 23 48 73 23 47 73 air

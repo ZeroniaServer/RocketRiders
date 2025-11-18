@@ -24,7 +24,8 @@ execute store result score $players_online global if entity @a[x=0]
 execute if score $players_have_left var matches 1 in minecraft:overworld positioned 0.0 0.0 0.0 as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function custom:event/number_of_players_decreases/main
 execute as @a[x=0,predicate=custom:just_joined_world] at @s run function custom:event/player_joins_overworld/main
 
-#
+execute as @a[x=0,scores={time_since_joined_overworld=1}] at @s run function everytick:welcome_titles
+
 function everytick:team_count
 
 execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom:event/player_respawns/main
@@ -101,7 +102,6 @@ tag @a[x=0,predicate=custom:team/lobby] remove OnTeam
 #Handling new/lobby players and miscellaneous stuff
 scoreboard players add $curr leavecheck 1
 scoreboard players add @a[x=0] leavecheck 1
-execute as @a[x=0] unless score @s leavecheck = $curr leavecheck run tag @s add cancel_next_title_clear
 execute as @a[x=0] unless score @s leavecheck = $curr leavecheck run scoreboard players set @s LeaveGame 1
 scoreboard players operation @a[x=0] leavecheck = $curr leavecheck
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:leave_game

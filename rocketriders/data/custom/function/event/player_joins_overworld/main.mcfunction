@@ -1,8 +1,6 @@
 scoreboard players set @s event.player_joins_overworld.state -1
 scoreboard players set @s time_since_joined_overworld 0
 
-function everytick:welcome_titles
-
 # Reset team
 function custom:team/join_lobby
 

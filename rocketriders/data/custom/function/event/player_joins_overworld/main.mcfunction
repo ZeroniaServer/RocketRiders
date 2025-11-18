@@ -1,5 +1,7 @@
 scoreboard players set @s event.player_joins_world.state -1
 
+function everytick:welcome_titles
+
 # Reset team
 function custom:team/join_lobby
 

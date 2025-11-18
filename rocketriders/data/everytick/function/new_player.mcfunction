@@ -4,11 +4,6 @@ tp @a[x=0,scores={firstJoined=0}] -43 211 78 90 0
 gamemode survival @a[x=0,scores={firstJoined=0}]
 gamemode adventure @a[x=0,scores={firstJoined=0}]
 scoreboard players set @a[x=0,scores={firstJoined=0}] LeaveGame 1
-execute as @a[x=0,scores={firstJoined=0}] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 0.2
-execute as @a[x=0,scores={firstJoined=0}] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1.5
-title @a[x=0,scores={firstJoined=0}] times 10 80 20
-title @a[x=0,scores={firstJoined=0}] title [{"text":"Welcome to","color":"white"}]
-title @a[x=0,scores={firstJoined=0}] subtitle [{"text":"Rocket ","color":"blue","bold":true},{"text":"Riders","color":"gold","bold":true},{"text":" v1.3.0!","color":"green","bold":false}]
 
 #Handle achievements
 execute if predicate rr:has_achievements as @a[x=0,scores={firstJoined=0}] run function achievements:roots

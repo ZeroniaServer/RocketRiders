@@ -102,6 +102,7 @@ tag @a[x=0,predicate=custom:team/lobby] remove OnTeam
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:new_player
 scoreboard players add $curr leavecheck 1
 scoreboard players add @a[x=0] leavecheck 1
+execute as @a[x=0] unless score @s leavecheck = $curr leavecheck run tag @s add actuallyLeft
 execute as @a[x=0] unless score @s leavecheck = $curr leavecheck run scoreboard players set @s LeaveGame 1
 scoreboard players operation @a[x=0] leavecheck = $curr leavecheck
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:leave_game

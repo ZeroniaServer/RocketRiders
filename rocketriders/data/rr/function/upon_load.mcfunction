@@ -86,7 +86,7 @@ scoreboard players set $1000 constant 1000
 scoreboard players set $1200 constant 1200
 scoreboard players set $24000 constant 24000
 
-scoreboard objectives add event.player_joins_world.state custom:leave_game
+scoreboard objectives add event.player_joins_overworld.state custom:leave_game
 scoreboard objectives add event.player_dies custom:deaths
 scoreboard objectives add event.player_uses_written_book used:written_book
 scoreboard objectives add event.player_uses_pig_spawn_egg used:pig_spawn_egg

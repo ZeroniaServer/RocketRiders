@@ -1,4 +1,4 @@
-scoreboard players set @s event.player_joins_world.state -1
+scoreboard players set @s event.player_joins_overworld.state -1
 
 function everytick:welcome_titles
 

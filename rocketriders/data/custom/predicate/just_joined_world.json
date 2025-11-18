@@ -4,7 +4,7 @@
     "condition": "minecraft:entity_scores",
     "entity": "this",
     "scores": {
-      "event.player_joins_world.state": -1
+      "event.player_joins_overworld.state": -1
     }
   }
 }

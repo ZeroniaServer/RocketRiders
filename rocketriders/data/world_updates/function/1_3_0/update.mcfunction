@@ -245,6 +245,10 @@ scoreboard objectives remove last_creeper_damage_origin_uuid.1
 scoreboard objectives remove last_creeper_damage_origin_uuid.2
 scoreboard objectives remove last_creeper_damage_origin_uuid.3
 
+scoreboard objectives add event.player_joins_overworld.state custom:leave_game
+execute as @a if score @s event.player_joins_world.state = @s event.player_joins_world.state run scoreboard players operation @s event.player_joins_overworld.state = @s event.player_joins_world.state
+scoreboard objectives remove event.player_joins_world.state
+
 # Bye bye, nnhealth o7
 scoreboard objectives remove nnhealth
 scoreboard objectives remove nnhealth_mod

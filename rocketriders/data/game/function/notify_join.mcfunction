@@ -2,9 +2,9 @@ data modify storage rocketriders:main notify_join.message_ending set value " to 
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] run data modify storage rocketriders:main notify_join.message_ending set value " to forfeit the match."
 
 ## CK Mode
-execute if predicate rr:is_cubekrowd unless predicate game:gamemode_components/red_for_blue if predicate custom:team/blue run return run tellraw @s [{color:"red",italic:true,text:"Use "},{bold:true,color:"blue",italic:false,text:"/leave "},{storage:"rocketriders:main",nbt:"notify_join.message_ending",interpret:true}]
-execute if predicate rr:is_cubekrowd if predicate game:gamemode_components/red_for_blue if predicate custom:team/blue run return run tellraw @s [{color:"dark_aqua",italic:true,text:"Use "},{bold:true,color:"blue",italic:false,text:"/leave "},{storage:"rocketriders:main",nbt:"notify_join.message_ending",interpret:true}]
-execute if predicate rr:is_cubekrowd if predicate custom:team/yellow run return run tellraw @s [{color:"yellow",italic:true,text:"Use "},{bold:true,color:"gold",italic:false,text:"/leave "},{storage:"rocketriders:main",nbt:"notify_join.message_ending",interpret:true}]
+execute if predicate rr:is_cubekrowd if predicate game:gamemode_components/red_for_blue if predicate custom:team/blue run return run tellraw @s [{color:"red",italic:true,text:"Use "},{bold:true,color:"blue",italic:false,text:"/leave"},{storage:"rocketriders:main",nbt:"notify_join.message_ending",interpret:true}]
+execute if predicate rr:is_cubekrowd unless predicate game:gamemode_components/red_for_blue if predicate custom:team/blue run return run tellraw @s [{color:"dark_aqua",italic:true,text:"Use "},{bold:true,color:"blue",italic:false,text:"/leave"},{storage:"rocketriders:main",nbt:"notify_join.message_ending",interpret:true}]
+execute if predicate rr:is_cubekrowd if predicate custom:team/yellow run return run tellraw @s [{color:"yellow",italic:true,text:"Use "},{bold:true,color:"gold",italic:false,text:"/leave"},{storage:"rocketriders:main",nbt:"notify_join.message_ending",interpret:true}]
 
 ## Normal
 # Main Item Name

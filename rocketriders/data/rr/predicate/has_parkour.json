@@ -8,13 +8,6 @@
 		{
 			"condition": "minecraft:reference",
 			"name": "rr:server_mode/realms"
-		},
-		{
-			"condition": "minecraft:inverted",
-			"term": {
-				"condition": "minecraft:reference",
-				"name": "rr:is_cubekrowd"
-			}
 		}
 	]
 }

@@ -63,6 +63,7 @@ execute if predicate game:match_in_play run effect clear @a[x=0,predicate=custom
 execute if predicate game:match_in_play run effect give @a[x=0,predicate=custom:team/any_playing_team] fire_resistance 10 100 true
 execute if predicate game:match_in_play run gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
 execute if predicate game:match_in_play run clear @a[x=0,predicate=custom:team/any_arena_team] *
+execute if predicate game:match_in_play as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
 execute if predicate game:match_in_play as @a[x=0,predicate=custom:team/any_playing_team] run function items:give_main_item
 #Hotfix for losing shield upon game starting
 execute if predicate game:match_in_play if predicate game:gamemode_components/main_item/crusade_kit_dependent as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:misc/knight_shield

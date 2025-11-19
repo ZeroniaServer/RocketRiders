@@ -13,11 +13,9 @@
 	},
 	{
 		"condition": "minecraft:inverted",
-		"term": [
-			{
-				"condition": "minecraft:reference",
-				"name": "rr:server_mode/realms"
-			}
-		]
+		"term": {
+			"condition": "minecraft:reference",
+			"name": "rr:server_mode/realms"
+		}
 	}
 ]

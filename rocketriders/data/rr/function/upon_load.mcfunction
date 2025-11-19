@@ -334,9 +334,7 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "celebratory_elytra": "items:ending/celebratory_elytra",\
     "celebratory_fireworks": "items:ending/celebratory_fireworks",\
     "loser_banner": "items:ending/loser_banner",\
-    "rocket_nomicon": "items:books/nomicon/in_game",\
-    "rocket_nomicon/post_game": "items:books/nomicon/post_game",\
-    "rocket_nomicon/pre_game": "items:books/nomicon/pre_game",\
+    "rocket_nomicon": "items:misc/rocket_nomicon",\
     "missile/auxiliary": "items:missile/heavy/auxiliary",\
     "missile/juggerbuster": "items:missile/heavy/juggerbuster",\
     "missile/rifter": "items:missile/heavy/rifter",\

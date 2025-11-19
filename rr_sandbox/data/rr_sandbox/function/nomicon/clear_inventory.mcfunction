@@ -11,7 +11,7 @@ execute if score $cleared_items var matches 2.. run tellraw @s [{color:"red",tex
 execute at @s run playsound minecraft:ui.stonecutter.take_result master @s ~ ~ ~ 1 1
 
 # Clear inventory
-loot replace entity @s hotbar.0 loot items:books/nomicon/in_game
+loot replace entity @s hotbar.0 loot items:misc/rocket_nomicon
 loot replace entity @s container.1 35 loot custom:empty
 item replace entity @s weapon.offhand with air
 item replace entity @s player.cursor with air

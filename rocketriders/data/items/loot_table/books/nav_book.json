@@ -537,13 +537,13 @@
                     "underlined": true,
                     "color": "light_purple"
                   },
-                  "\n",
+                  "\n\n",
                   {
                     "text": "This game was made in ",
                     "color": "dark_gray"
                   },
                   {
-                    "text": "4+ years",
+                    "text": "8+ years",
                     "color": "light_purple"
                   },
                   {
@@ -561,7 +561,7 @@
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to check out Evtema3.",
+                        "text": "Click to check out Evtema3!",
                         "italic": true
                       }
                     },
@@ -581,7 +581,7 @@
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to check out YZEROgame.",
+                        "text": "Click to check out YZEROgame!",
                         "italic": true
                       }
                     },
@@ -601,7 +601,7 @@
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to check out Chronos22.",
+                        "text": "Click to check out Chronos22!",
                         "italic": true
                       }
                     },
@@ -616,25 +616,27 @@
                     "color": "dark_gray"
                   },
                   {
-                    "text": "All ",
-                    "color": "dark_purple"
+                    "text": "DorkOrc",
+                    "color": "#FF9900",
+                    "hover_event": {
+                      "action": "show_text",
+                      "value": {
+                        "text": "Click to check out DorkOrc!",
+                        "italic": true
+                      }
+                    },
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://github.com/DorkOrc"
+                    }
                   },
+                  "\n",
                   {
-                    "text": "80+",
-                    "underlined": true,
-                    "color": "gold"
-                  },
-                  {
-                    "text": " playtesters",
-                    "color": "dark_purple"
-                  },
-                  "\n\n",
-                  {
-                    "text": "This lobby was made by the",
+                    "text": "- ",
                     "color": "dark_gray"
                   },
                   {
-                    "text": " Cube",
+                    "text": "Cube",
                     "color": "dark_aqua",
                     "hover_event": {
                       "action": "show_text",
@@ -663,9 +665,23 @@
                       "url": "https://cubekrowd.net/"
                     }
                   },
+                  "\n",
                   {
-                    "text": "     build team.",
+                    "text": "- ",
                     "color": "dark_gray"
+                  },
+                  {
+                    "text": "All ",
+                    "color": "dark_purple"
+                  },
+                  {
+                    "text": "80+",
+                    "underlined": true,
+                    "color": "gold"
+                  },
+                  {
+                    "text": " playtesters",
+                    "color": "dark_purple"
                   }
                 ]
               ],

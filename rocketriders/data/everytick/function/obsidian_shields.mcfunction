@@ -24,7 +24,7 @@ kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_yellow_spawn_zone]
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=blueobalone] shieldplacement 1
-execute as @e[x=0,type=marker,tag=blueobalone] at @s align xyz run function everytick:obsidian_shield_place
+execute as @e[x=0,type=marker,tag=blueobalone] at @s align xyz positioned ~ ~-1 ~ run function everytick:obsidian_shield_place
 tp @e[x=0,type=marker,tag=BlueObshield] ~ ~-250 ~
 kill @e[x=0,type=marker,tag=BlueObshield]
 
@@ -48,7 +48,7 @@ kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_yellow_spawn_zon
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=yellowobalone] shieldplacement 1
-execute as @e[x=0,type=marker,tag=yellowobalone] at @s align xyz run function everytick:obsidian_shield_place
+execute as @e[x=0,type=marker,tag=yellowobalone] at @s align xyz positioned ~ ~-1 ~ run function everytick:obsidian_shield_place
 tp @e[x=0,type=marker,tag=YellowObshield] ~ ~-250 ~
 kill @e[x=0,type=marker,tag=YellowObshield]
 

@@ -1,4 +1,4 @@
-##Sub-RNG for Special Missiles spawned by Blue Surprise Eggs (used for Chaos modifier)
+##Sub-RNG for Special Missiles spawned by Blue Surprise Eggs (used for Special Treatment modifier)
 #Choose between each missile
 summon marker ~ ~ ~ {Tags:["surpriseBlueBroad","surpriseBlue2"]}
 summon marker ~ ~ ~ {Tags:["surpriseBlueBull","surpriseBlue2"]}

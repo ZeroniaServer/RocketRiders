@@ -15,7 +15,7 @@ execute if entity @s[tag=NinjaJump] run data modify storage rocketriders:modifie
 execute if predicate game:modifiers/hardcore/on run data modify storage rocketriders:modifiers list append value {"text":"Hardcore","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players have three hearts of health and bases are one block thick.","color":"white"}]}}
 execute if predicate game:modifiers/double_portal/on run data modify storage rocketriders:modifiers list append value {"text":"Double Portal","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Both portals must be broken to win the game.","color":"white"}]}}
 execute if predicate game:modifiers/clutter_collector/on run data modify storage rocketriders:modifiers list append value {"text":"Clutter Collector","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Explosions do no block damage between the bases.","color":"white"}]}}
-execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers list append value {"text":"Chaos","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Special Missiles are obtainable in regular gameplay.","color":"white"}]}}
+execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers list append value {"text":"Special Treatment","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Special Missiles are obtainable in regular gameplay.","color":"white"}]}}
 execute if predicate game:modifiers/collision_control/on run data modify storage rocketriders:modifiers list append value {"text":"Collision Control","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Missiles cannot be spawned inside the enemy base.","color":"white"}]}}
 execute if predicate game:modifiers/punchable_tnt/on run data modify storage rocketriders:modifiers list append value {"text":"Punchable TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Primed TNT can be punched forward.","color":"white"}]}}
 execute if predicate game:modifiers/unstable_tnt/on run data modify storage rocketriders:modifiers list append value {"text":"Unstable TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Breaking TNT blocks immediately ignites them.","color":"white"}]}}
@@ -40,7 +40,7 @@ execute if entity @s[tag=NinjaJump] run data modify storage rocketriders:modifie
 execute if predicate game:modifiers/hardcore/on run data modify storage rocketriders:modifiers length append value 8
 execute if predicate game:modifiers/double_portal/on run data modify storage rocketriders:modifiers length append value 13
 execute if predicate game:modifiers/clutter_collector/on run data modify storage rocketriders:modifiers length append value 17
-execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers length append value 5
+execute if entity @s[tag=Chaos] run data modify storage rocketriders:modifiers length append value 17
 execute if predicate game:modifiers/collision_control/on run data modify storage rocketriders:modifiers length append value 17
 execute if predicate game:modifiers/punchable_tnt/on run data modify storage rocketriders:modifiers length append value 13
 execute if predicate game:modifiers/unstable_tnt/on run data modify storage rocketriders:modifiers length append value 12

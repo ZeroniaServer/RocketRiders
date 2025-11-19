@@ -1,4 +1,4 @@
-##Sub-RNG for Special Missiles spawned by Yellow Surprise Eggs (used for Chaos modifier)
+##Sub-RNG for Special Missiles spawned by Yellow Surprise Eggs (used for Special Treatment modifier)
 #Choose between each missile
 summon marker ~ ~ ~ {Tags:["surpriseYellowBroad","surpriseYellow2"]}
 summon marker ~ ~ ~ {Tags:["surpriseYellowBull","surpriseYellow2"]}

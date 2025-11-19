@@ -1,4 +1,4 @@
-##Sub-sub-RNG for Special Missiles (used for Chaos modifier)
+##Sub-sub-RNG for Special Missiles (used for Special Treatment modifier)
 #Choose between each missile based on Tetris state (no enabled status)
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenBroad] run summon marker 0 0 0 {Tags:["rngBroad","rng3"]}
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenBull] run summon marker 0 0 0 {Tags:["rngBull","rng3"]}

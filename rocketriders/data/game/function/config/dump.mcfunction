@@ -15,6 +15,7 @@ execute store success storage rocketriders:main "config/dump".config.molerat byt
 execute store success storage rocketriders:main "config/dump".config.hardcore byte 1 if score $hardcore config matches 1
 execute store success storage rocketriders:main "config/dump".config.double_portal byte 1 if score $double_portal config matches 1
 execute store success storage rocketriders:main "config/dump".config.clutter_collector byte 1 if score $clutter_collector config matches 1
+execute store success storage rocketriders:main "config/dump".config.special_treatment byte 1 if score $special_treatment config matches 1
 execute store success storage rocketriders:main "config/dump".config.collision_control byte 1 if score $collision_control config matches 1
 execute store success storage rocketriders:main "config/dump".config.punchable_tnt byte 1 if score $punchable_tnt config matches 1
 execute store success storage rocketriders:main "config/dump".config.unstable_tnt byte 1 if score $unstable_tnt config matches 1

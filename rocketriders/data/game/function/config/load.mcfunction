@@ -51,6 +51,10 @@ execute store result score $clutter_collector config run data get storage rocket
 execute unless score $clutter_collector config matches 0..1 run scoreboard players reset $clutter_collector config
 execute if score $clutter_collector config matches 0 run scoreboard players reset $clutter_collector config
 
+execute store result score $special_treatment config run data get storage rocketriders:main "config/load".config.special_treatment
+execute unless score $special_treatment config matches 0..1 run scoreboard players reset $special_treatment config
+execute if score $special_treatment config matches 0 run scoreboard players reset $special_treatment config
+
 execute store result score $collision_control config run data get storage rocketriders:main "config/load".config.collision_control
 execute unless score $collision_control config matches 0..1 run scoreboard players reset $collision_control config
 execute if score $collision_control config matches 0 run scoreboard players reset $collision_control config

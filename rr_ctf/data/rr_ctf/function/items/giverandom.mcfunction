@@ -31,8 +31,8 @@ tag @s add gaveFirstItem
 execute if entity @s[tag=canopyStreaked,scores={canopyStreak=..0}] run tag @s remove canopyStreaked
 
 ##Condition for Tetris bag resetting
-execute if entity @s[tag=!Chaos,tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllUtil] run function items:tetrisreset
-execute if entity @s[tag=Chaos,tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial,tag=givenAllUtil] run function items:tetrisreset
+execute unless predicate game:modifiers/special_treatment/on if entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllUtil] run function items:tetrisreset
+execute if predicate game:modifiers/special_treatment/on if entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial,tag=givenAllUtil] run function items:tetrisreset
 
 #Kill randomizer
 kill @e[x=0,type=marker,tag=CTFRNG,limit=1]

@@ -61,8 +61,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=14}] unless predicate game:modifiers/clutter_collector/on run tellraw @s ["",{"text":"Clutter Collector","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Special Treatment
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=15},tag=Chaos] run tellraw @s ["",{"text":"Special Treatment","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Special Missiles are obtainable in regular gameplay.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=15},tag=!Chaos] run tellraw @s ["",{"text":"Special Treatment","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=15}] if predicate game:modifiers/special_treatment/on run tellraw @s ["",{"text":"Special Treatment","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Special Missiles are obtainable in regular gameplay.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=15}] unless predicate game:modifiers/special_treatment/on run tellraw @s ["",{"text":"Special Treatment","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Collision Control
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=16}] if predicate game:modifiers/collision_control/on run tellraw @s ["",{"text":"Collision Control","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Missiles cannot be spawned inside the enemy base.","color":"gray","italic":true}]

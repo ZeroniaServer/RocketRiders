@@ -23,8 +23,7 @@ tag @s remove NinjaJumpWasOn
 scoreboard players reset $hardcore config
 scoreboard players reset $double_portal config
 scoreboard players reset $clutter_collector config
-tag @s remove Chaos
-tag @s remove ChaosWasOn
+scoreboard players reset $special_treatment config
 scoreboard players reset $collision_control config
 scoreboard players reset $punchable_tnt config
 scoreboard players reset $unstable_tnt config

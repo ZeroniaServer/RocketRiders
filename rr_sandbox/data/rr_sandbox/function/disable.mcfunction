@@ -15,9 +15,6 @@ tag @s remove WindDownWasOn
 tag @s remove SurpriseEggOff
 tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
 tag @s remove SurpriseEggWasOn
-tag @s remove ChaosOff
-tag @s[tag=ChaosWasOn] add Chaos
-tag @s remove ChaosWasOn
 tag @s remove normalForce
 tag @s remove lightningForce
 tag @s remove heavyForce

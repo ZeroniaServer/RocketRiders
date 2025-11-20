@@ -6,6 +6,7 @@ scoreboard players set $config_override.clutter_collector gamemode_components -1
 scoreboard players set $config_override.hardcore gamemode_components -1
 scoreboard players set $config_override.molerat gamemode_components -1
 scoreboard players set $config_override.rocket_residers gamemode_components -1
+scoreboard players set $config_override.special_treatment gamemode_components -1
 scoreboard players set $small_portals gamemode_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage gamemode_components 1
 scoreboard players set $explosions_crack_deepslate_bricks gamemode_components 1
@@ -24,8 +25,6 @@ tag @s add stackingOn
 tag @s add SuddenDeathCustom
 tag @s[tag=SurpriseEgg] add SurpriseEggWasOn
 tag @s add SurpriseEggOff
-tag @s[tag=Chaos] add ChaosWasOn
-tag @s add ChaosOff
 tag @s add portalOverride
 tag @s add crusadeEnabled
 

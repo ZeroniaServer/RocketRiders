@@ -1,0 +1,29 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:value_check",
+      "value": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$settings_locked"
+        },
+        "score": "gamemode_components"
+      },
+      "range": 1
+    },
+    {
+      "condition": "minecraft:value_check",
+      "value": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$config_override.special_treatment"
+        },
+        "score": "gamemode_components"
+      },
+      "range": -1
+    }
+  ]
+}

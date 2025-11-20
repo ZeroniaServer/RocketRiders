@@ -52,8 +52,8 @@ execute if entity @s[scores={modifierID=10},tag=SpamClick,predicate=!game:gamemo
 execute if entity @s[scores={modifierID=10},tag=!SpamClick,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Ninja Jump
-execute if entity @s[scores={modifierID=11},tag=NinjaJump,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=11},tag=!NinjaJump,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=11},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/ninja_jump/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=11},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/ninja_jump/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Hardcore
 execute if entity @s[scores={modifierID=12},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/hardcore/on run setblock -69 191 75 warped_wall_sign[facing=east]

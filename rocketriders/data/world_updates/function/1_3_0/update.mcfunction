@@ -147,12 +147,18 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove DoublePortal
 execute if data storage rocketriders:storage {Tags:["DoublePortal"]} run data modify storage rocketriders:storage config.double_portal set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"DoublePortal"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"DoublePortalWasOn"}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Chaoes] run scoreboard players set $special_treatment config 1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Chaoes
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Chaoes
-execute if data storage rocketriders:storage {Tags:["Chaoes"]} run data modify storage rocketriders:storage config.special_treatment set value 1b
-function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Chaoes"}
-function world_updates:1_3_0/remove_tag_from_storage_list {tag:"ChaoesWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Chaos] run scoreboard players set $special_treatment config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Chaos
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Chaos
+execute if data storage rocketriders:storage {Tags:["Chaos"]} run data modify storage rocketriders:storage config.special_treatment set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Chaos"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"ChaosWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NinjaJump] run scoreboard players set $ninja_jump config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJump
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJump
+execute if data storage rocketriders:storage {Tags:["NinjaJump"]} run data modify storage rocketriders:storage config.ninja_jump set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NinjaJump"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NinjaJumpWasOn"}
 
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
@@ -171,6 +177,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] ru
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove onlyBlue
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ChaosOff] run scoreboard players set $config_override.special_treatment gamemode_components -1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ChaosOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NinjaJumpOff] run scoreboard players set $config_override.ninja_jump gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJumpOff
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

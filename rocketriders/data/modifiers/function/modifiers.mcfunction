@@ -46,8 +46,8 @@ execute if entity @s[tag=SpamClick] as @a[x=0,predicate=custom:team/lobby] run a
 execute if entity @s[tag=!SpamClick] as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:attack_speed base reset
 
 ##Ninja Jump
-execute if entity @s[tag=NinjaJump] as @a[x=0,predicate=custom:team/any_playing_team] run effect give @s speed infinite 2 true
-execute if entity @s[tag=NinjaJump] as @a[x=0,predicate=custom:team/any_playing_team] run effect give @s jump_boost infinite 2 true
+execute if predicate game:modifiers/ninja_jump/on as @a[x=0,predicate=custom:team/any_playing_team] run effect give @s speed infinite 2 true
+execute if predicate game:modifiers/ninja_jump/on as @a[x=0,predicate=custom:team/any_playing_team] run effect give @s jump_boost infinite 2 true
 
 ##Hardcore
 execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/any_playing_team] if entity @s[tag=!hardcore] run function modifiers:hardcoreset

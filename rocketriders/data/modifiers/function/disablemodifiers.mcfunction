@@ -18,8 +18,7 @@ tag @s remove SplashStreams
 tag @s remove SplashStreamsWasOn
 tag @s remove SpamClick
 tag @s remove SpamClickWasOn
-tag @s remove NinjaJump
-tag @s remove NinjaJumpWasOn
+scoreboard players reset $ninja_jump config
 scoreboard players reset $hardcore config
 scoreboard players reset $double_portal config
 scoreboard players reset $clutter_collector config

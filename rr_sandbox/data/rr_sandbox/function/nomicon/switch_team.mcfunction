@@ -11,7 +11,7 @@ function everytick:team_count
 function custom:update_armor
 function custom:update_inventory
 
-advancement grant @s only custom:event/player_dies die_not_void
+advancement grant @s only custom:event/player_dies die_other
 
 execute at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 

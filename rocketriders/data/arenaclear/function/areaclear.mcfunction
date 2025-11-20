@@ -34,7 +34,7 @@ scoreboard players operation @s MaxItemTime = @s MaxItemSec
 scoreboard players operation @s MaxItemTime *= $20 constant
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
-scoreboard players set @s[tag=Minute] RandomItem 1197
+execute if predicate game:modifiers/minute_mix/on run scoreboard players set @s RandomItem 1197
 
 ##Remove Traveler tags
 tag @a[x=0] remove beenOnYellow

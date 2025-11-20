@@ -55,7 +55,7 @@ execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function arena
 tag @s[tag=DefaultWorld] remove DefaultWorld
 
 ##ITEM DELAY
-execute if predicate rr:has_modification_room if entity @s[tag=Minute] run scoreboard players reset @a[x=0,predicate=custom:team/lobby] MaxItemSec
+execute if predicate rr:has_modification_room if predicate game:modifiers/minute_mix/on run scoreboard players reset @a[x=0,predicate=custom:team/lobby] MaxItemSec
 execute unless predicate game:game_rules/item_delay/locked as @a[x=0,predicate=!custom:team/any_arena_team,tag=ItemDelayChange] run function arenaclear:itemdelay/show_dialog
 execute if predicate game:game_rules/item_delay/locked run tellraw @a[x=0,predicate=!custom:team/any_arena_team,tag=ItemDelayChange] [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 tag @a[x=0,tag=ItemDelayChange] remove ItemDelayChange
@@ -63,8 +63,8 @@ execute if predicate rr:has_modification_room unless predicate game:game_rules/i
 execute if predicate rr:has_modification_room unless predicate game:game_rules/item_delay/locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={MaxItemSec=-2147483648..}] unless score @s MaxItemSec matches -2..0 run function arenaclear:itemdelay
 execute if predicate rr:has_modification_room if predicate game:game_rules/item_delay/locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={MaxItemSec=-2147483648..}] unless score @s MaxItemSec matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this gamemode.","color":"dark_gray","italic":true}]
 scoreboard players reset @a[x=0] MaxItemSec
-execute if predicate rr:has_modification_room if entity @s[tag=!Minute] run scoreboard players set @a[x=0] MaxItemSec -2
-execute if predicate rr:has_modification_room if entity @s[tag=!Minute] run scoreboard players enable @a[x=0,predicate=custom:team/lobby] MaxItemSec
+execute if predicate rr:has_modification_room unless predicate game:modifiers/minute_mix/on run scoreboard players set @a[x=0] MaxItemSec -2
+execute if predicate rr:has_modification_room unless predicate game:modifiers/minute_mix/on run scoreboard players enable @a[x=0,predicate=custom:team/lobby] MaxItemSec
 
 ##DAYTIME
 execute as @a[x=0,predicate=!custom:team/any_arena_team,tag=daytimeChange] run function arenaclear:daytime/show_dialog

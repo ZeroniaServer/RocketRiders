@@ -8,8 +8,7 @@ scoreboard players reset $rocket_residers config
 tag @s remove Sonar
 tag @s remove SonarWasOn
 scoreboard players reset $molerat config
-tag @s remove Minute
-tag @s remove MinuteWasOn
+scoreboard players reset $minute_mix config
 scoreboard players reset $surprise_eggs config
 tag @s remove WindDown
 tag @s remove WindDownWasOn

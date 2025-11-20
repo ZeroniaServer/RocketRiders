@@ -5,10 +5,10 @@ execute unless predicate rr:is_cubekrowd run function rr_chase:game/leavemidgame
 tag @s add givenArrows
 tag @s add givenArrowsTwice
 scoreboard players add @s RandomItem 1
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/blue] run function items:util/givearrows
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
-execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-execute if entity @s[tag=Minute] run function items:minutemix
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/blue] run function items:util/givearrows
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function items:giverandom
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
+execute if predicate game:modifiers/minute_mix/on run function items:minutemix
 
 #glass regeneration
 execute as @e[x=0,type=marker,tag=airDetect,limit=1] at @s run function rr_chase:game/airdetect

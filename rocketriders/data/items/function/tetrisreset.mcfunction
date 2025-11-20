@@ -50,6 +50,6 @@ tag @s remove givenShieldTwice
 tag @s remove givenAllUtil
 
 #Hotfix for Minute Mix giving duplicate arrows/fireballs/shields
-execute if entity @s[tag=Minute] run tag @s add givenArrows
-execute if entity @s[tag=Minute] run tag @s add givenFireball
-execute if entity @s[tag=Minute] run tag @s add givenShield
+execute if predicate game:modifiers/minute_mix/on run tag @s add givenArrows
+execute if predicate game:modifiers/minute_mix/on run tag @s add givenFireball
+execute if predicate game:modifiers/minute_mix/on run tag @s add givenShield

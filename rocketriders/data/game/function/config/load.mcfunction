@@ -39,6 +39,10 @@ execute store result score $molerat config run data get storage rocketriders:mai
 execute unless score $molerat config matches 0..1 run scoreboard players reset $molerat config
 execute if score $molerat config matches 0 run scoreboard players reset $molerat config
 
+execute store result score $minute_mix config run data get storage rocketriders:main "config/load".config.minute_mix
+execute unless score $minute_mix config matches 0..1 run scoreboard players reset $minute_mix config
+execute if score $minute_mix config matches 0 run scoreboard players reset $minute_mix config
+
 execute store result score $surprise_eggs config run data get storage rocketriders:main "config/load".config.surprise_eggs
 execute unless score $surprise_eggs config matches 0..1 run scoreboard players reset $surprise_eggs config
 execute if score $surprise_eggs config matches 0 run scoreboard players reset $surprise_eggs config

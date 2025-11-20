@@ -25,8 +25,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5}] unless predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"Molerat","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Minute Mix
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=6},tag=Minute] run tellraw @s ["",{"text":"Minute Mix","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players receive a new set of 8 items every minute.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=6},tag=!Minute] run tellraw @s ["",{"text":"Minute Mix","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=6}] if predicate game:modifiers/minute_mix/on run tellraw @s ["",{"text":"Minute Mix","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players receive a new set of 8 items every minute.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=6}] unless predicate game:modifiers/minute_mix/on run tellraw @s ["",{"text":"Minute Mix","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Surprise Eggs
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=7}] if predicate game:modifiers/special_treatment/on run tellraw @s ["",{"text":"Surprise Eggs","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players can receive a spawn egg that spawns a random missile. These can stack up to 3.","color":"gray","italic":true}]

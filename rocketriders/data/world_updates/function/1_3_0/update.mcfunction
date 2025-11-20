@@ -177,6 +177,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEggWasOn
 execute if data storage rocketriders:storage {Tags:["SurpriseEgg"]} run data modify storage rocketriders:storage config.surprise_eggs set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SurpriseEgg"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SurpriseEggWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Minute] run scoreboard players set $minute_mix config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Minute
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MinuteWasOn
+execute if data storage rocketriders:storage {Tags:["Minute"]} run data modify storage rocketriders:storage config.minute_mix set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Minute"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"MinuteWasOn"}
 
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
@@ -203,6 +209,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SplashStream
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SplashStreamsOff
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SurpriseEggOff] run scoreboard players set $config_override.surprise_eggs gamemode_components -1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEggOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=MinuteOff] run scoreboard players set $config_override.minute_mix gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MinuteOff
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

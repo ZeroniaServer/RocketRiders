@@ -6,7 +6,7 @@ execute if predicate game:modifiers/explosive/on run data modify storage rocketr
 execute if predicate game:modifiers/rocket_residers/on run data modify storage rocketriders:modifiers list append value {"text":"Rocket Residers","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players cannot leave their bases.","color":"white"}]}}
 execute if entity @s[tag=Sonar] run data modify storage rocketriders:modifiers list append value {"text":"Sonar","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players lose Night Vision so they cannot see blocks. Other players, projectiles, TNT, and utilities have glowing outlines.","color":"white"}]}}
 execute if predicate game:modifiers/molerat/on run data modify storage rocketriders:modifiers list append value {"text":"Molerat","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"A big block of glass spawns in the center of the map, which players must break through to damage the other base.","color":"white"}]}}
-execute if entity @s[tag=Minute] run data modify storage rocketriders:modifiers list append value {"text":"Minute Mix","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players receive a new set of 8 items every minute.","color":"white"}]}}
+execute if predicate game:modifiers/minute_mix/on run data modify storage rocketriders:modifiers list append value {"text":"Minute Mix","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players receive a new set of 8 items every minute.","color":"white"}]}}
 execute if predicate game:modifiers/special_treatment/on run data modify storage rocketriders:modifiers list append value {"text":"Surprise Eggs","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players can receive a spawn egg that spawns a random missile. These can stack up to 3.","color":"white"}]}}
 execute if entity @s[tag=WindDown] run data modify storage rocketriders:modifiers list append value {"text":"Wind Down","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"After every item given, the time between receiving items decreases, intensifying the game as it continues.","color":"white"}]}}
 execute if predicate game:modifiers/splash_streams/on run data modify storage rocketriders:modifiers list append value {"text":"Splash Streams","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Liquids placed by Splash bottles are permanent.","color":"white"}]}}
@@ -31,7 +31,7 @@ execute if predicate game:modifiers/explosive/on run data modify storage rocketr
 execute if predicate game:modifiers/rocket_residers/on run data modify storage rocketriders:modifiers length append value 15
 execute if entity @s[tag=Sonar] run data modify storage rocketriders:modifiers length append value 5
 execute if predicate game:modifiers/molerat/on run data modify storage rocketriders:modifiers length append value 7
-execute if entity @s[tag=Minute] run data modify storage rocketriders:modifiers length append value 10
+execute if predicate game:modifiers/minute_mix/on run data modify storage rocketriders:modifiers length append value 10
 execute if predicate game:modifiers/special_treatment/on run data modify storage rocketriders:modifiers length append value 13
 execute if entity @s[tag=WindDown] run data modify storage rocketriders:modifiers length append value 9
 execute if predicate game:modifiers/splash_streams/on run data modify storage rocketriders:modifiers length append value 14

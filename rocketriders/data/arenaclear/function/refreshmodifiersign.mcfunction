@@ -28,17 +28,17 @@ execute if entity @s[scores={modifierID=5},predicate=!game:gamemode_components/s
 execute if entity @s[scores={modifierID=5},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/molerat/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Minute Mix
-execute if entity @s[scores={modifierID=6},tag=Minute,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=6},tag=!Minute,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=6},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/minute_mix/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=6},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/minute_mix/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Surprise Eggs
 execute if entity @s[scores={modifierID=7},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/surprise_eggs/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=7},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/surprise_eggs/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Wind Down
-execute if entity @s[scores={modifierID=8},tag=WindDown,tag=!Minute,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=8},tag=!WindDown,tag=!Minute,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=8},tag=Minute,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=8},tag=WindDown,predicate=!game:modifiers/minute_mix/on,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=8},tag=!WindDown,predicate=!game:modifiers/minute_mix/on,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=8},predicate=game:modifiers/minute_mix/on,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
 execute if entity @s[scores={modifierID=8},tag=WindDown,tag=WindDownForce] run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #Splash Streams

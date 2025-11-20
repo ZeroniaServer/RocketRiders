@@ -62,7 +62,7 @@ scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /
 scoreboard players set @s[scores={SDtime=1,MaxItemTime=..1}] MaxItemTime 2
 execute if entity @s[scores={SDtime=1}] run scoreboard players set @s RandomItem -3
 execute if entity @s[scores={SDtime=1}] run scoreboard players operation @s RandomItem += @s MaxItemTime
-execute if entity @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute] RandomItem 1197
+execute if entity @s[scores={SDtime=1}] if predicate game:modifiers/minute_mix/on run scoreboard players set @s RandomItem 1197
 execute if entity @s[scores={SDtime=10}] as @a[x=0,predicate=!custom:team/lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
 
 ##Places back portals

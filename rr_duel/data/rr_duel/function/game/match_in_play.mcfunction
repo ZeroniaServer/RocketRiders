@@ -20,9 +20,9 @@ function game:cancelblue
 
 #Item RNG
 execute unless predicate game:game_paused run scoreboard players add @s RandomItem 1
-execute unless predicate game:game_paused if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
-execute unless predicate game:game_paused if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-execute unless predicate game:game_paused if entity @s[tag=Minute] run function items:minutemix
+execute unless predicate game:game_paused unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function items:giverandom
+execute unless predicate game:game_paused unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
+execute unless predicate game:game_paused if predicate game:modifiers/minute_mix/on run function items:minutemix
 
 #win
 execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] if function game:check/blue_portal_broken run function rr_duel:game/winyellow

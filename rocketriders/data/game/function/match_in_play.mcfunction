@@ -29,7 +29,7 @@ execute unless predicate game:game_paused run scoreboard players add $game_durat
 execute if score $game_duration global matches 1..2 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
 
 ##Enable fall damage (considers modifiers)
-execute if score $game_duration global matches 10 if entity @s[tag=!NoFall] run gamerule fallDamage true
+execute if score $game_duration global matches 10 if entity @s[tag=!NoFall] run gamerule minecraft:fall_damage true
 
 ##Clear lobby arrows
 execute if score $game_duration global matches ..4 run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{lobby:true}]

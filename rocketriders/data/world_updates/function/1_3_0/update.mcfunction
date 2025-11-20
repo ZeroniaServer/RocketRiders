@@ -1,4 +1,4 @@
-gamerule commandModificationBlockLimit 1000000
+gamerule minecraft:max_block_modiciations 1000000
 
 # Force stop the game
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted] run function world_updates:1_3_0/instant_legacy_force_stop

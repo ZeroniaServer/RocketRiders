@@ -26,7 +26,7 @@ execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={SDtime=1}] as @a[x=0] run function custom:player_action/forget_all_canopies
-execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule fallDamage true
+execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule minecraft:fall_damage true
 execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[x=0] armor.head with air
 execute if entity @s[scores={SDtime=1}] at @s run clear @a[x=0] firework_rocket
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] resistance

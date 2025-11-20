@@ -14,8 +14,7 @@ tag @s remove SurpriseEgg
 tag @s remove SurpriseEggWasOn
 tag @s remove WindDown
 tag @s remove WindDownWasOn
-tag @s remove SplashStreams
-tag @s remove SplashStreamsWasOn
+scoreboard players reset $splash_streams config
 scoreboard players reset $spam_click config
 scoreboard players reset $ninja_jump config
 scoreboard players reset $hardcore config

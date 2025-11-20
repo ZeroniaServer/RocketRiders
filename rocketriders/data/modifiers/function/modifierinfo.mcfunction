@@ -37,8 +37,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=8},tag=!WindDown] run tellraw @s ["",{"text":"Wind Down","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Splash Streams
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=9},tag=SplashStreams] run tellraw @s ["",{"text":"Splash Streams","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Liquids placed by Splash bottles are permanent.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=9},tag=!SplashStreams] run tellraw @s ["",{"text":"Splash Streams","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=9}] if predicate game:modifiers/splash_streams/on run tellraw @s ["",{"text":"Splash Streams","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Liquids placed by Splash bottles are permanent.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=9}] unless predicate game:modifiers/splash_streams/on run tellraw @s ["",{"text":"Splash Streams","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Spam Click
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=10}] if predicate game:modifiers/spam_click/on run tellraw @s ["",{"text":"Spam Click","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players have no delay between melee attacks on enemies.","color":"gray","italic":true}]

@@ -6,9 +6,6 @@ tag @s remove swapEnabled
 tag @s remove SurpriseEggOff
 tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
 tag @s remove SurpriseEggWasOn
-tag @s remove SplashStreamsOff
-tag @s[tag=SplashStreamsWasOn] add SplashStreams
-tag @s remove SplashStreamsWasOn
 tag @s remove respawnFlag
 
 #item enabling/disabling

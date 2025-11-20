@@ -9,7 +9,7 @@ execute if predicate game:modifiers/molerat/on run data modify storage rocketrid
 execute if entity @s[tag=Minute] run data modify storage rocketriders:modifiers list append value {"text":"Minute Mix","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players receive a new set of 8 items every minute.","color":"white"}]}}
 execute if entity @s[tag=SurpriseEgg] run data modify storage rocketriders:modifiers list append value {"text":"Surprise Eggs","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players can receive a spawn egg that spawns a random missile. These can stack up to 3.","color":"white"}]}}
 execute if entity @s[tag=WindDown] run data modify storage rocketriders:modifiers list append value {"text":"Wind Down","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"After every item given, the time between receiving items decreases, intensifying the game as it continues.","color":"white"}]}}
-execute if entity @s[tag=SplashStreams] run data modify storage rocketriders:modifiers list append value {"text":"Splash Streams","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Liquids placed by Splash bottles are permanent.","color":"white"}]}}
+execute if predicate game:modifiers/splash_streams/on run data modify storage rocketriders:modifiers list append value {"text":"Splash Streams","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Liquids placed by Splash bottles are permanent.","color":"white"}]}}
 execute if predicate game:modifiers/spam_click/on run data modify storage rocketriders:modifiers list append value {"text":"Spam Click","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players have no delay between melee attacks on enemies.","color":"white"}]}}
 execute if predicate game:modifiers/ninja_jump/on run data modify storage rocketriders:modifiers list append value {"text":"Ninja Jump","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players have increased speed and jump height.","color":"white"}]}}
 execute if predicate game:modifiers/hardcore/on run data modify storage rocketriders:modifiers list append value {"text":"Hardcore","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players have three hearts of health and bases are one block thick.","color":"white"}]}}
@@ -34,7 +34,7 @@ execute if predicate game:modifiers/molerat/on run data modify storage rocketrid
 execute if entity @s[tag=Minute] run data modify storage rocketriders:modifiers length append value 10
 execute if entity @s[tag=SurpriseEgg] run data modify storage rocketriders:modifiers length append value 13
 execute if entity @s[tag=WindDown] run data modify storage rocketriders:modifiers length append value 9
-execute if entity @s[tag=SplashStreams] run data modify storage rocketriders:modifiers length append value 14
+execute if predicate game:modifiers/splash_streams/on run data modify storage rocketriders:modifiers length append value 14
 execute if predicate game:modifiers/spam_click/on run data modify storage rocketriders:modifiers length append value 10
 execute if predicate game:modifiers/ninja_jump/on run data modify storage rocketriders:modifiers length append value 10
 execute if predicate game:modifiers/hardcore/on run data modify storage rocketriders:modifiers length append value 8

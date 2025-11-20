@@ -39,6 +39,10 @@ execute store result score $molerat config run data get storage rocketriders:mai
 execute unless score $molerat config matches 0..1 run scoreboard players reset $molerat config
 execute if score $molerat config matches 0 run scoreboard players reset $molerat config
 
+execute store result score $splash_streams config run data get storage rocketriders:main "config/load".config.splash_streams
+execute unless score $splash_streams config matches 0..1 run scoreboard players reset $splash_streams config
+execute if score $splash_streams config matches 0 run scoreboard players reset $splash_streams config
+
 execute store result score $spam_click config run data get storage rocketriders:main "config/load".config.spam_click
 execute unless score $spam_click config matches 0..1 run scoreboard players reset $spam_click config
 execute if score $spam_click config matches 0 run scoreboard players reset $spam_click config

@@ -43,9 +43,8 @@ execute if entity @s[scores={modifierID=8},tag=Minute,predicate=!game:gamemode_c
 execute if entity @s[scores={modifierID=8},tag=WindDown,tag=WindDownForce] run setblock -69 191 75 warped_wall_sign[facing=east]
 
 #Splash Streams
-execute if entity @s[scores={modifierID=9},tag=SplashStreams,tag=!SplashStreamsOff,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=9},tag=!SplashStreams,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=9},tag=SplashStreamsOff,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=9},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/splash_streams/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=9},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/splash_streams/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Spam Click
 execute if entity @s[scores={modifierID=10},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/spam_click/on run setblock -69 191 75 warped_wall_sign[facing=east]

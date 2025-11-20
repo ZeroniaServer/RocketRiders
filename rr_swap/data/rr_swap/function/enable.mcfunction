@@ -1,6 +1,7 @@
 scoreboard players reset * gamemode_components
 scoreboard players set $armor/swap gamemode_components 1
 scoreboard players set $config_override.special_treatment gamemode_components -1
+scoreboard players set $config_override.splash_streams gamemode_components -1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
 
 tag @s remove switchGamemodes
@@ -8,8 +9,6 @@ tag @s add swapEnabled
 summon marker 12 55 0 {Tags:["swapplatform"]}
 tag @s[tag=SurpriseEgg] add SurpriseEggWasOn
 tag @s add SurpriseEggOff
-tag @s[tag=SplashStreams] add SplashStreamsWasOn
-tag @s add SplashStreamsOff
 tag @s add respawnFlag
 
 #item disabling/enabling

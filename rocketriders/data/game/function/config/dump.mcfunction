@@ -12,6 +12,7 @@ execute store success storage rocketriders:main "config/dump".config.friendly_tn
 execute store success storage rocketriders:main "config/dump".config.explosive byte 1 if score $explosive config matches 1
 execute store success storage rocketriders:main "config/dump".config.rocket_residers byte 1 if score $rocket_residers config matches 1
 execute store success storage rocketriders:main "config/dump".config.molerat byte 1 if score $molerat config matches 1
+execute store success storage rocketriders:main "config/dump".config.spam_click byte 1 if score $spam_click config matches 1
 execute store success storage rocketriders:main "config/dump".config.ninja_jump byte 1 if score $ninja_jump config matches 1
 execute store success storage rocketriders:main "config/dump".config.hardcore byte 1 if score $hardcore config matches 1
 execute store success storage rocketriders:main "config/dump".config.double_portal byte 1 if score $double_portal config matches 1

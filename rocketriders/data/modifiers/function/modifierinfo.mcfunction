@@ -41,8 +41,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=9},tag=!SplashStreams] run tellraw @s ["",{"text":"Splash Streams","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Spam Click
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=10},tag=SpamClick] run tellraw @s ["",{"text":"Spam Click","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players have no delay between melee attacks on enemies.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=10},tag=!SpamClick] run tellraw @s ["",{"text":"Spam Click","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=10}] if predicate game:modifiers/spam_click/on run tellraw @s ["",{"text":"Spam Click","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players have no delay between melee attacks on enemies.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=10}] unless predicate game:modifiers/spam_click/on run tellraw @s ["",{"text":"Spam Click","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Ninja Jump
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=11}] if predicate game:modifiers/ninja_jump/on run tellraw @s ["",{"text":"Ninja Jump","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players have increased speed and jump height.","color":"gray","italic":true}]

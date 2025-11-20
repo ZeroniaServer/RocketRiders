@@ -159,6 +159,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJump
 execute if data storage rocketriders:storage {Tags:["NinjaJump"]} run data modify storage rocketriders:storage config.ninja_jump set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NinjaJump"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NinjaJumpWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SpamClick] run scoreboard players set $spam_click config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClick
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClick
+execute if data storage rocketriders:storage {Tags:["SpamClick"]} run data modify storage rocketriders:storage config.spam_click set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SpamClick"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SpamClickWasOn"}
 
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
@@ -179,6 +185,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ChaosOff] ru
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ChaosOff
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NinjaJumpOff] run scoreboard players set $config_override.ninja_jump gamemode_components -1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJumpOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SpamClickOff] run scoreboard players set $config_override.spam_click gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClickOff
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

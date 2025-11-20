@@ -16,8 +16,7 @@ tag @s remove WindDown
 tag @s remove WindDownWasOn
 tag @s remove SplashStreams
 tag @s remove SplashStreamsWasOn
-tag @s remove SpamClick
-tag @s remove SpamClickWasOn
+scoreboard players reset $spam_click config
 scoreboard players reset $ninja_jump config
 scoreboard players reset $hardcore config
 scoreboard players reset $double_portal config

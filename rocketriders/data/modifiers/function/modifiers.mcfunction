@@ -41,9 +41,9 @@ execute unless predicate game:game_paused as @a[x=0,tag=crosser] run function ga
 tag @a[x=0] remove crosser
 
 ##Spam Click
-execute if entity @s[tag=SpamClick] as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:attack_speed base set 1000
-execute if entity @s[tag=SpamClick] as @a[x=0,predicate=custom:team/lobby] run attribute @s minecraft:attack_speed base reset
-execute if entity @s[tag=!SpamClick] as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:attack_speed base reset
+execute if predicate game:modifiers/spam_click/on as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:attack_speed base set 1000
+execute if predicate game:modifiers/spam_click/on as @a[x=0,predicate=!custom:team/any_playing_team] run attribute @s minecraft:attack_speed base reset
+execute unless predicate game:modifiers/spam_click/on as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:attack_speed base reset
 
 ##Ninja Jump
 execute if predicate game:modifiers/ninja_jump/on as @a[x=0,predicate=custom:team/any_playing_team] run effect give @s speed infinite 2 true

@@ -10,8 +10,7 @@ tag @s remove SonarWasOn
 scoreboard players reset $molerat config
 tag @s remove Minute
 tag @s remove MinuteWasOn
-tag @s remove SurpriseEgg
-tag @s remove SurpriseEggWasOn
+scoreboard players reset $surprise_eggs config
 tag @s remove WindDown
 tag @s remove WindDownWasOn
 scoreboard players reset $splash_streams config

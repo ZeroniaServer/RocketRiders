@@ -10,9 +10,6 @@ tag @s[tag=stackingWasOff] remove doStacking
 tag @s remove stackingWasOff
 tag @s remove stackingOn
 tag @s remove SuddenDeathCustom
-tag @s remove SurpriseEggOff
-tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
-tag @s remove SurpriseEggWasOn
 tag @s remove portalOverride
 scoreboard players reset @a[x=0] crusadechange
 

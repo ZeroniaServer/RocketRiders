@@ -29,8 +29,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=6},tag=!Minute] run tellraw @s ["",{"text":"Minute Mix","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Surprise Eggs
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=7},tag=SurpriseEgg] run tellraw @s ["",{"text":"Surprise Eggs","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players can receive a spawn egg that spawns a random missile. These can stack up to 3.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=7},tag=!SurpriseEgg] run tellraw @s ["",{"text":"Surprise Eggs","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=7}] if predicate game:modifiers/special_treatment/on run tellraw @s ["",{"text":"Surprise Eggs","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players can receive a spawn egg that spawns a random missile. These can stack up to 3.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=7}] unless predicate game:modifiers/special_treatment/on run tellraw @s ["",{"text":"Surprise Eggs","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Wind Down
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=8},tag=WindDown] run tellraw @s ["",{"text":"Wind Down","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" After every item given, the time between receiving items decreases, intensifying the game as it continues.","color":"gray","italic":true}]

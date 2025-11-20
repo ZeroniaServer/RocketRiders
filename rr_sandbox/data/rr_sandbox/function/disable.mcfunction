@@ -12,9 +12,6 @@ tag @s remove MinuteWasOn
 tag @s remove WindDownOff
 tag @s[tag=WindDownWasOn] add WindDown
 tag @s remove WindDownWasOn
-tag @s remove SurpriseEggOff
-tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
-tag @s remove SurpriseEggWasOn
 tag @s remove normalForce
 tag @s remove lightningForce
 tag @s remove heavyForce

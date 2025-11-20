@@ -171,6 +171,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SplashStreamsWasOn
 execute if data storage rocketriders:storage {Tags:["SplashStreams"]} run data modify storage rocketriders:storage config.splash_streams set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SplashStreams"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SplashStreamsWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SurpriseEgg] run scoreboard players set $surprise_eggs config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEgg
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEggWasOn
+execute if data storage rocketriders:storage {Tags:["SurpriseEgg"]} run data modify storage rocketriders:storage config.surprise_eggs set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SurpriseEgg"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SurpriseEggWasOn"}
 
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
@@ -195,6 +201,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SpamClickOff
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClickOff
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SplashStreamsOff] run scoreboard players set $config_override.splash_streams gamemode_components -1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SplashStreamsOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SurpriseEggOff] run scoreboard players set $config_override.surprise_eggs gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEggOff
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

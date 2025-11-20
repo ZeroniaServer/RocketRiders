@@ -80,3 +80,4 @@ execute if score @s nomicon matches 57 run return run execute unless predicate c
 
 execute if score @s nomicon matches 58 run return run execute if predicate items:shooting_saber/multishot run function items:shooting_saber/multishot_deactivate
 execute if score @s nomicon matches 59 run return run function items:give/booster_rocket with storage rocketriders:main nomicon
+execute if score @s nomicon matches 60 run return run function items:give/lunging_spear with storage rocketriders:main nomicon

@@ -330,6 +330,7 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "booster_rocket": "items:experimental/booster_rocket",\
     "invisibility_potion": "items:experimental/invisibility_potion",\
     "jump_boost_potion": "items:experimental/jump_boost_potion",\
+    "lunging_spear": "items:experimental/lunging_spear",\
     "spectral_arrow": "items:experimental/spectral_arrow",\
     "celebratory_elytra": "items:ending/celebratory_elytra",\
     "celebratory_fireworks": "items:ending/celebratory_fireworks",\

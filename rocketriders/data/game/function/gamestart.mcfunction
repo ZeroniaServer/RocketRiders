@@ -135,7 +135,7 @@ execute unless predicate game:game_running run tp @a[x=0,tag=JoinSpec] -95 213 7
 execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinSpec] run title @s actionbar ""
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
-execute if entity @s[tag=Sonar] if predicate game:game_running as @a[x=0,tag=JoinSpec] run tellraw @s [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
+execute if predicate game:game_running if predicate game:modifiers/sonar/on as @a[x=0,tag=JoinSpec] run tellraw @s [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
 execute if predicate rr:enable_spectator_leave_cloud run title @a[x=0,predicate=custom:team/spectator] actionbar {"text":"Fly into the green particle cluster to stop spectating!","color":"green","bold":true}
 execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run title @a[x=0,predicate=custom:team/spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
 execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run title @a[x=0,predicate=custom:team/spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/trigger leaveSpec","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]

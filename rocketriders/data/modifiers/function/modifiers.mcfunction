@@ -14,24 +14,24 @@ execute unless entity @s[tag=Instamine] as @a[x=0] run attribute @s minecraft:bl
 execute if predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
 
 ##Sonar
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] run effect clear @a[x=0,predicate=custom:team/any_playing_team] night_vision
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] run effect give @a[x=0,predicate=custom:team/any_playing_team] darkness infinite 0 true
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] run effect give @a[x=0,predicate=custom:team/any_playing_team] glowing infinite 1 true
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=#arrows,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=snowball,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=ender_pearl,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=egg,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=firework_rocket,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=fireball,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=dragon_fireball,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=#custom:potion,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=tnt_minecart,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=item,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,predicate=entities:type/vortex/body,tag=!is_glowing] run function game:glowing/on
-execute if entity @s[tag=Sonar,predicate=!game:game_paused] as @e[x=0,type=armor_stand,tag=Bot,tag=!is_glowing] run function game:glowing/on
-execute unless entity @s[tag=Sonar,predicate=!game:game_paused] run effect give @a[x=0,predicate=custom:team/any_arena_team] night_vision infinite 100 true
-execute unless entity @s[tag=Sonar,predicate=!game:game_paused] run effect clear @a[x=0,predicate=custom:team/any_arena_team] darkness
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on run effect clear @a[x=0,predicate=custom:team/any_playing_team] night_vision
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/any_playing_team] darkness infinite 0 true
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/any_playing_team] glowing infinite 1 true
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=#arrows,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=snowball,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=ender_pearl,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=egg,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=firework_rocket,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=fireball,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=dragon_fireball,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=#custom:potion,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=tnt_minecart,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=item,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,predicate=entities:type/vortex/body,tag=!is_glowing] run function game:glowing/on
+execute unless predicate game:game_paused if predicate game:modifiers/sonar/on as @e[x=0,type=armor_stand,tag=Bot,tag=!is_glowing] run function game:glowing/on
+execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:game_paused] run effect give @a[x=0,predicate=custom:team/any_arena_team] night_vision infinite 100 true
+execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:game_paused] run effect clear @a[x=0,predicate=custom:team/any_arena_team] darkness
 
 ##Rocket Residers (anti-crossing behavior)
 execute unless predicate game:game_paused if predicate game:modifiers/rocket_residers/on unless predicate game:match_over as @a[x=0,predicate=custom:team/blue,predicate=custom:residers] run tag @s add crosser

@@ -5,8 +5,7 @@ tag @s remove NoFall
 tag @s remove NoFallWasOn
 scoreboard players reset $explosive config
 scoreboard players reset $rocket_residers config
-tag @s remove Sonar
-tag @s remove SonarWasOn
+scoreboard players reset $sonar config
 scoreboard players reset $molerat config
 scoreboard players reset $minute_mix config
 scoreboard players reset $surprise_eggs config

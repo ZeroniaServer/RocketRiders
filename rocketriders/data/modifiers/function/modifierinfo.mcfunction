@@ -17,8 +17,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=3}] unless predicate game:modifiers/rocket_residers/on run tellraw @s ["",{"text":"Rocket Residers","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Sonar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=4},tag=Sonar] run tellraw @s ["",{"text":"Sonar","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players lose Night Vision so they cannot see blocks. Other players, projectiles, TNT, and utilities have glowing outlines.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=4},tag=!Sonar] run tellraw @s ["",{"text":"Sonar","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=4}] if predicate game:modifiers/sonar/on run tellraw @s ["",{"text":"Sonar","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players lose Night Vision so they cannot see blocks. Other players, projectiles, TNT, and utilities have glowing outlines.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=4}] unless predicate game:modifiers/sonar/on run tellraw @s ["",{"text":"Sonar","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Molerat
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=5}] if predicate game:modifiers/molerat/on run tellraw @s ["",{"text":"Molerat","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" A big block of glass spawns in the center of the map, which players must break through to damage the other base.","color":"gray","italic":true}]

@@ -35,6 +35,10 @@ execute store result score $rocket_residers config run data get storage rocketri
 execute unless score $rocket_residers config matches 0..1 run scoreboard players reset $rocket_residers config
 execute if score $rocket_residers config matches 0 run scoreboard players reset $rocket_residers config
 
+execute store result score $sonar config run data get storage rocketriders:main "config/load".config.sonar
+execute unless score $sonar config matches 0..1 run scoreboard players reset $sonar config
+execute if score $sonar config matches 0 run scoreboard players reset $sonar config
+
 execute store result score $molerat config run data get storage rocketriders:main "config/load".config.molerat
 execute unless score $molerat config matches 0..1 run scoreboard players reset $molerat config
 execute if score $molerat config matches 0 run scoreboard players reset $molerat config

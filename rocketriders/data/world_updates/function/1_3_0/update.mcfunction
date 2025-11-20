@@ -183,6 +183,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MinuteWasOn
 execute if data storage rocketriders:storage {Tags:["Minute"]} run data modify storage rocketriders:storage config.minute_mix set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Minute"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"MinuteWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Sonar] run scoreboard players set $sonar config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Sonar
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SonarWasOn
+execute if data storage rocketriders:storage {Tags:["Sonar"]} run data modify storage rocketriders:storage config.sonar set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Sonar"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SonarWasOn"}
 
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
@@ -211,6 +217,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SurpriseEggO
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEggOff
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=MinuteOff] run scoreboard players set $config_override.minute_mix gamemode_components -1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MinuteOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SonarOff] run scoreboard players set $config_override.sonar gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SonarOff
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

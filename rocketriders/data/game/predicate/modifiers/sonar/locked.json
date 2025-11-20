@@ -1,0 +1,17 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/sonar/forced_on"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/sonar/forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/sonar/incompatible_modifiers"
+    }
+  ]
+}

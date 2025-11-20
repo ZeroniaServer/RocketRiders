@@ -118,7 +118,7 @@ execute unless predicate rr:do_custom_regen_system run gamerule naturalRegenerat
 #Night vision/saturation and more lobby functionality
 effect give @a[x=0,predicate=custom:team/lobby,predicate=custom:apply_lobby_night_vision] night_vision infinite 100 true
 effect clear @a[x=0,predicate=custom:team/lobby,predicate=!custom:apply_lobby_night_vision] night_vision
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Sonar] run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
+execute unless predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
 effect give @a[x=0] saturation infinite 0 true
 execute as @a[x=0,predicate=custom:team/lobby,tag=hardcore] run function modifiers:hardcorereset
 execute as @a[x=0,predicate=custom:team/lobby,tag=hobbit] run function modifiers:hobbit/reset

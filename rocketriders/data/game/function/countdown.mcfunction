@@ -56,7 +56,7 @@ execute if predicate game:match_in_play as @a[x=0] at @s run playsound entity.ge
 execute if predicate game:match_in_play run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 -180 0
 execute if predicate game:match_in_play run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute if predicate game:match_in_play run gamemode spectator @a[x=0,predicate=custom:team/spectator]
-execute if predicate game:match_in_play if entity @s[tag=Sonar] run tellraw @a[x=0,predicate=custom:team/spectator,tag=!JoinSpec] [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
+execute if predicate game:match_in_play if predicate game:modifiers/sonar/on run tellraw @a[x=0,predicate=custom:team/spectator,tag=!JoinSpec] [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
 execute if predicate game:match_in_play run tp @a[x=0,predicate=custom:team/spectator] 12 100 0.5 90 90
 execute if predicate game:match_in_play run tag @a[x=0] remove doing_facade_parkour
 execute if predicate game:match_in_play run effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance

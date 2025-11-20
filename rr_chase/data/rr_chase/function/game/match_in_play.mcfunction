@@ -62,11 +62,11 @@ execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,d
 execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=0..11] run bossbar set rr_chase:lead value 10
 
 #Glowing for who's in the lead (blink if Sonar is enabled)
-execute unless entity @s[tag=Sonar] run effect clear @a[x=0,tag=!InLead] glowing
-execute unless entity @s[tag=Sonar] run effect give @a[limit=1,x=0,tag=InLead] glowing infinite 0 true
-execute if entity @s[tag=Sonar] run scoreboard players operation $glowing_period var = $gametime global
-execute if entity @s[tag=Sonar] run scoreboard players operation $glowing_period var %= $20 constant
-execute if entity @s[tag=Sonar] if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=InLead] glowing
+execute unless predicate game:modifiers/sonar/on run effect clear @a[x=0,tag=!InLead] glowing
+execute unless predicate game:modifiers/sonar/on run effect give @a[limit=1,x=0,tag=InLead] glowing infinite 0 true
+execute if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var = $gametime global
+execute if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var %= $20 constant
+execute if predicate game:modifiers/sonar/on if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=InLead] glowing
 
 #Win
 execute positioned 12 64 65 if score $game_duration global matches 0..4 run tp @a[predicate=custom:team/blue,distance=..2] 12 64 -66 0 0

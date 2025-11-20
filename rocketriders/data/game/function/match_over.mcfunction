@@ -61,7 +61,7 @@ execute if entity @s[scores={endtimer=570}] run function achievements:scoresrese
 execute if entity @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute if entity @s[scores={endtimer=570}] if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s minecraft:attack_speed base set 4
 #Reverse Sonar glowing
-execute if entity @s[scores={endtimer=570},tag=Sonar] as @e[x=0,tag=is_glowing] run function game:glowing/off
+execute if entity @s[scores={endtimer=570}] if predicate game:modifiers/sonar/on as @e[x=0,tag=is_glowing] run function game:glowing/off
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,predicate=custom:team/any_arena_team] LeaveGame 1
 execute if entity @s[scores={endtimer=570}] run tp @a[x=0,predicate=custom:team/blue] -36 211 61.0 90 0
 execute if entity @s[scores={endtimer=570}] run tp @a[x=0,predicate=custom:team/yellow] -36 211 96.0 90 0

@@ -20,8 +20,8 @@ execute if entity @s[scores={modifierID=3},predicate=!game:gamemode_components/s
 execute if entity @s[scores={modifierID=3},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/rocket_residers/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Sonar
-execute if entity @s[scores={modifierID=4},tag=Sonar,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=4},tag=!Sonar,predicate=!game:gamemode_components/settings_locked] run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=4},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/sonar/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=4},predicate=!game:gamemode_components/settings_locked] unless predicate game:modifiers/sonar/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Molerat
 execute if entity @s[scores={modifierID=5},predicate=!game:gamemode_components/settings_locked] if predicate game:modifiers/molerat/on run setblock -69 191 75 warped_wall_sign[facing=east]

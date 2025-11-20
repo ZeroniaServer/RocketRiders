@@ -24,7 +24,6 @@ tag @s add leaveYSpawn
 tag @s[tag=!doStacking] add stackingWasOff
 tag @s add doStacking
 tag @s add stackingOn
-tag @s add onlyBlue
 tag @s add antigriefOff
 
 #enable arrows/utilities

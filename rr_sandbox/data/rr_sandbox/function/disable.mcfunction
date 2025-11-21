@@ -6,9 +6,6 @@ execute if score $sblast CmdData matches 1 run tag @s add sandboxLast
 tag @s remove sandboxEnabled
 tag @s remove stackingOn
 tag @s remove hotbarLimitOff
-tag @s remove WindDownOff
-tag @s[tag=WindDownWasOn] add WindDown
-tag @s remove WindDownWasOn
 tag @s remove normalForce
 tag @s remove lightningForce
 tag @s remove heavyForce

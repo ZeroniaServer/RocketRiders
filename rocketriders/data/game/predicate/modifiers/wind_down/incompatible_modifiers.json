@@ -3,7 +3,7 @@
   "terms": [
     {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/wind_down/on"
+      "name": "game:modifiers/minute_mix/on"
     }
   ]
 }

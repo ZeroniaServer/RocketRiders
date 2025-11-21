@@ -27,4 +27,4 @@ title @a[x=0,tag=wasFullHotbar,predicate=custom:team/any_playing_team] actionbar
 execute if entity @s[tag=!noFullHotbarSound] as @a[x=0,tag=wasFullHotbar,predicate=custom:team/any_playing_team] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
 ##Wind Down modifier - subtract two ticks from Item Delay
-scoreboard players remove @s[tag=WindDown,scores={MaxItemTime=62..}] MaxItemTime 2
+execute if predicate game:modifiers/wind_down/on run scoreboard players remove @s[scores={MaxItemTime=62..}] MaxItemTime 2

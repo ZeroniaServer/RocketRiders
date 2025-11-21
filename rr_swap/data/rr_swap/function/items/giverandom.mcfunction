@@ -18,4 +18,4 @@ execute as @a[x=0,tag=wasFullHotbar,predicate=custom:team/any_playing_team] run 
 execute if entity @s[tag=!noFullHotbarSound] as @a[x=0,tag=wasFullHotbar,predicate=custom:team/any_playing_team] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
 #wind down
-scoreboard players remove @s[tag=WindDown,scores={MaxItemTime=62..}] MaxItemTime 2
+execute if predicate game:modifiers/wind_down/on run scoreboard players remove @s[scores={MaxItemTime=62..}] MaxItemTime 2

@@ -33,8 +33,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=7}] unless predicate game:modifiers/special_treatment/on run tellraw @s ["",{"text":"Surprise Eggs","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Wind Down
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=8},tag=WindDown] run tellraw @s ["",{"text":"Wind Down","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" After every item given, the time between receiving items decreases, intensifying the game as it continues.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=8},tag=!WindDown] run tellraw @s ["",{"text":"Wind Down","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=8}] if predicate game:modifiers/wind_down/on run tellraw @s ["",{"text":"Wind Down","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" After every item given, the time between receiving items decreases, intensifying the game as it continues.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=8}] unless predicate game:modifiers/wind_down/on run tellraw @s ["",{"text":"Wind Down","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Splash Streams
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=9}] if predicate game:modifiers/splash_streams/on run tellraw @s ["",{"text":"Splash Streams","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Liquids placed by Splash bottles are permanent.","color":"gray","italic":true}]

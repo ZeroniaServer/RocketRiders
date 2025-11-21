@@ -34,7 +34,7 @@ tag @s add rngNova
 tag @s add rngCanopy
 
 #Disable modifiers
-execute if entity @s[tag=!WindDownForce] run function modifiers:disablemodifiers
+execute unless predicate game:gamemode_components/settings_locked run function modifiers:disablemodifiers
 
 #Add needed settings and modifiers
 tag @s add doPrevention

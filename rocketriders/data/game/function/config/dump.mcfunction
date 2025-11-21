@@ -17,6 +17,7 @@ execute store success storage rocketriders:main "config/dump".config.sonar byte 
 execute store success storage rocketriders:main "config/dump".config.molerat byte 1 if score $molerat config matches 1
 execute store success storage rocketriders:main "config/dump".config.minute_mix byte 1 if score $minute_mix config matches 1
 execute store success storage rocketriders:main "config/dump".config.surprise_eggs byte 1 if score $surprise_eggs config matches 1
+execute store success storage rocketriders:main "config/dump".config.wind_down byte 1 if score $wind_down config matches 1
 execute store success storage rocketriders:main "config/dump".config.splash_streams byte 1 if score $splash_streams config matches 1
 execute store success storage rocketriders:main "config/dump".config.spam_click byte 1 if score $spam_click config matches 1
 execute store success storage rocketriders:main "config/dump".config.ninja_jump byte 1 if score $ninja_jump config matches 1

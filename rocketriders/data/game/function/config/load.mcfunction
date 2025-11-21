@@ -59,6 +59,10 @@ execute store result score $surprise_eggs config run data get storage rocketride
 execute unless score $surprise_eggs config matches 0..1 run scoreboard players reset $surprise_eggs config
 execute if score $surprise_eggs config matches 0 run scoreboard players reset $surprise_eggs config
 
+execute store result score $wind_down config run data get storage rocketriders:main "config/load".config.wind_down
+execute unless score $wind_down config matches 0..1 run scoreboard players reset $wind_down config
+execute if score $wind_down config matches 0 run scoreboard players reset $wind_down config
+
 execute store result score $splash_streams config run data get storage rocketriders:main "config/load".config.splash_streams
 execute unless score $splash_streams config matches 0..1 run scoreboard players reset $splash_streams config
 execute if score $splash_streams config matches 0 run scoreboard players reset $splash_streams config

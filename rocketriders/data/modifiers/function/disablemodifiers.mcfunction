@@ -7,8 +7,7 @@ scoreboard players reset $sonar config
 scoreboard players reset $molerat config
 scoreboard players reset $minute_mix config
 scoreboard players reset $surprise_eggs config
-tag @s remove WindDown
-tag @s remove WindDownWasOn
+scoreboard players reset $wind_down config
 scoreboard players reset $splash_streams config
 scoreboard players reset $spam_click config
 scoreboard players reset $ninja_jump config

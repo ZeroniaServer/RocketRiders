@@ -7,7 +7,7 @@
         "type": "minecraft:score",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$config_override.instant_tnt_explosions"
+          "name": "$config_override.wind_down"
         },
         "score": "gamemode_components"
       },

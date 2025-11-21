@@ -58,6 +58,10 @@ execute if score $lower_void gamemode_components matches 0 run scoreboard player
 $execute store success score $neutral_items gamemode_components if predicate {condition:"value_check",value:$(neutral_items),range:1}
 execute if score $neutral_items gamemode_components matches 0 run scoreboard players reset $neutral_items gamemode_components
 
+# no_feathered_vortices
+$execute store success score $no_feathered_vortices gamemode_components if predicate {condition:"value_check",value:$(no_feathered_vortices),range:1}
+execute if score $no_feathered_vortices gamemode_components matches 0 run scoreboard players reset $no_feathered_vortices gamemode_components
+
 # no_item_timer
 $execute store success score $no_item_timer gamemode_components if predicate {condition:"value_check",value:$(no_item_timer),range:1}
 execute if score $no_item_timer gamemode_components matches 0 run scoreboard players reset $no_item_timer gamemode_components

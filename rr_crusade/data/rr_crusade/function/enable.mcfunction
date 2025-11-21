@@ -18,7 +18,6 @@ tag @s remove switchGamemodes
 function arenaclear:lockdecos
 tag @s add portalDecosOff
 tag @s add customPrevention
-tag @s add featheredOff
 tag @s add arrowLimit
 tag @s[tag=!doStacking] add stackingWasOff
 tag @s add doStacking

@@ -6,5 +6,4 @@ tag @s remove duelEnabled
 tag @s remove tyingOff
 tag @s remove customBossbar
 tag @s remove customLeaveHandling
-tag @s remove featheredOff
 tag @s add switchGamemodes

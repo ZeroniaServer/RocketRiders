@@ -212,6 +212,22 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     },\
     {\
       "type": "minecraft:single_option",\
+      "key": "no_feathered_vortices",\
+      "label": "no_feathered_vortices",\
+      "width": 300,\
+      "options": [\
+        {\
+          "id": "0",\
+          "display": {"color":"white","text":"false"}\
+        },\
+        {\
+          "id": "1",\
+          "display": {"color":"white","text":"true"}\
+        }\
+      ]\
+    },\
+    {\
+      "type": "minecraft:single_option",\
       "key": "no_item_timer",\
       "label": "no_item_timer",\
       "width": 300,\
@@ -307,7 +323,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     "label": "Save Changes",\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:gamemode_components_ui/set {arena__bedrock_frame:$(arena__bedrock_frame),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),explosions_crack_deepslate_bricks:$(explosions_crack_deepslate_bricks),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue)}"\
+      "template": "function game:gamemode_components_ui/set {arena__bedrock_frame:$(arena__bedrock_frame),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),explosions_crack_deepslate_bricks:$(explosions_crack_deepslate_bricks),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue)}"\
     }\
   },\
   "no": {\
@@ -353,6 +369,7 @@ execute if predicate game:gamemode_components/main_item/rocket_nomicon run data 
 execute unless predicate game:gamemode_components/main_item/shooting_saber unless predicate game:gamemode_components/main_item/piercing_pickaxe unless predicate game:gamemode_components/main_item/crusade_kit_dependent unless predicate game:gamemode_components/main_item/rocket_nomicon run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"main_item__"}].options[{display:{text:"none"}}].initial merge value true
 
 execute if predicate game:gamemode_components/neutral_items run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"neutral_items"}].options[{display:{text:"true"}}].initial set value true
+execute if predicate game:gamemode_components/no_feathered_vortices run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"no_feathered_vortices"}].options[{display:{text:"true"}}].initial set value true
 execute if predicate game:gamemode_components/no_item_timer run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"no_item_timer"}].options[{display:{text:"true"}}].initial set value true
 execute if predicate game:gamemode_components/one_team run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"one_team"}].options[{display:{text:"true"}}].initial set value true
 execute if predicate game:gamemode_components/portal_crystal_protection run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"portal_crystal_protection"}].options[0].display set value "true"

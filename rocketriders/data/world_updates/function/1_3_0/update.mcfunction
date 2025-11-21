@@ -246,6 +246,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WindDownForc
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDownOff
 execute if score $settings_locked gamemode_components matches 1 run scoreboard players set $duel_duel_settings_locked gamemode_components 1
 scoreboard players reset $settings_locked gamemode_components
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=featheredOff,tag=duelEnabled] run scoreboard players set $no_feathered_vortices gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove featheredOff
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

@@ -108,6 +108,18 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     },\
     {\
       "type": "minecraft:single_option",\
+      "key": "duel_settings_locked",\
+      "label": "🔒 duel_settings_locked",\
+      "width": 300,\
+      "options": [\
+        {\
+          "id": "0",\
+          "display": {"color":"white","text":"false"}\
+        }\
+      ]\
+    }\
+    {\
+      "type": "minecraft:single_option",\
       "key": "explosions_crack_deepslate_bricks",\
       "label": "explosions_crack_deepslate_bricks",\
       "width": 300,\
@@ -303,18 +315,6 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
         {\
           "id": "1",\
           "display": {"color":"white","text":"true"}\
-        }\
-      ]\
-    },\
-    {\
-      "type": "minecraft:single_option",\
-      "key": "duel_settings_locked",\
-      "label": "🔒 duel_settings_locked",\
-      "width": 300,\
-      "options": [\
-        {\
-          "id": "0",\
-          "display": {"color":"white","text":"false"}\
         }\
       ]\
     }\

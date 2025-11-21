@@ -217,7 +217,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customShield
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove custVortParticle
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] run scoreboard players set $no_portals gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPortal
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $settings_locked gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $duel_settings_locked gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customVoid] run scoreboard players set $lower_void gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customVoid
@@ -244,6 +244,8 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove InstamineOff
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WindDownOff] run scoreboard players set $config_override.wind_down gamemode_components -1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WindDownForce] run scoreboard players set $config_override.wind_down gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDownOff
+execute if score $settings_locked gamemode_components matches 1 run scoreboard players set $duel_duel_settings_locked gamemode_components 1
+scoreboard players reset $settings_locked gamemode_components
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

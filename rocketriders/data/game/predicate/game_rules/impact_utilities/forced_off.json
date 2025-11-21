@@ -10,7 +10,7 @@
             "type": "minecraft:score",
             "target": {
               "type": "minecraft:fixed",
-              "name": "$settings_locked"
+              "name": "$duel_settings_locked"
             },
             "score": "gamemode_components"
           },

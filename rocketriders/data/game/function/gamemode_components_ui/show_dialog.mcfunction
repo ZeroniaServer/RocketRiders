@@ -292,8 +292,8 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     },\
     {\
       "type": "minecraft:single_option",\
-      "key": "settings_locked",\
-      "label": "🔒 settings_locked",\
+      "key": "duel_settings_locked",\
+      "label": "🔒 duel_settings_locked",\
       "width": 300,\
       "options": [\
         {\
@@ -362,7 +362,7 @@ execute if predicate game:portal_type/none run data modify storage rocketriders:
 execute if predicate game:portal_type/small run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"__portal_type"}].options[{display:{text:"small"}}].initial set value true
 
 execute if predicate game:gamemode_components/red_for_blue run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"red_for_blue"}].options[{display:{text:"true"}}].initial set value true
-execute if predicate game:gamemode_components/settings_locked run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"settings_locked"}].options[0].display set value "true"
+execute if predicate game:gamemode_components/duel_settings_locked run data modify storage rocketriders:main gamemode_components.dialog.inputs[{key:"duel_settings_locked"}].options[0].display set value "true"
 
 ## Append config overridss
 execute if score $config_override.disable_cannoning gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_cannoning"},width:300,options:[{id:"1",display:"on"}]}

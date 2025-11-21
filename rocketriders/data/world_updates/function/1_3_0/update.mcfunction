@@ -195,6 +195,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFallWasOn
 execute if data storage rocketriders:storage {Tags:["NoFall"]} run data modify storage rocketriders:storage config.no_fall_damage set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NoFall"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NoFallWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Instamine] run scoreboard players set $instamine config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Instamine
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove InstamineWasOn
+execute if data storage rocketriders:storage {Tags:["Instamine"]} run data modify storage rocketriders:storage config.instamine set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Instamine"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"InstamineWasOn"}
 
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
@@ -225,6 +231,10 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=MinuteOff] r
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MinuteOff
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SonarOff] run scoreboard players set $config_override.sonar gamemode_components -1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SonarOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NoFallOff] run scoreboard players set $config_override.no_fall_damage gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFallOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=InstamineOff] run scoreboard players set $config_override.instamine gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove InstamineOff
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

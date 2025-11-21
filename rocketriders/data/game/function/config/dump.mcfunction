@@ -9,6 +9,7 @@ execute store success storage rocketriders:main "config/dump".config.disable_tea
 execute store success storage rocketriders:main "config/dump".config.snipe_portals byte 1 if score $snipe_portals config matches 1
 execute store success storage rocketriders:main "config/dump".config.friendly_tnt_damage byte 1 if score $friendly_tnt_damage config matches 1
 
+execute store success storage rocketriders:main "config/dump".config.instamine byte 1 if score $instamine config matches 1
 execute store success storage rocketriders:main "config/dump".config.no_fall_damage byte 1 if score $no_fall_damage config matches 1
 execute store success storage rocketriders:main "config/dump".config.explosive byte 1 if score $explosive config matches 1
 execute store success storage rocketriders:main "config/dump".config.rocket_residers byte 1 if score $rocket_residers config matches 1

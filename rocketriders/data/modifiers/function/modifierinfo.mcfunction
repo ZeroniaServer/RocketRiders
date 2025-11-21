@@ -1,8 +1,8 @@
 ##Prints info/enabled status about the selected Modifier
 
 #Instamine
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=0},tag=Instamine] run tellraw @s ["",{"text":"Instamine","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players can mine (most) blocks instantly.","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=0},tag=!Instamine] run tellraw @s ["",{"text":"Instamine","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=0}] if predicate game:modifiers/instamine/on run tellraw @s ["",{"text":"Instamine","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players can mine (most) blocks instantly.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=0}] unless predicate game:modifiers/instamine/on run tellraw @s ["",{"text":"Instamine","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #No Fall
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=1}] if predicate game:modifiers/no_fall_damage/on run tellraw @s ["",{"text":"No Fall","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players are immune to fall damage.","color":"gray","italic":true}]

@@ -4,11 +4,11 @@
 ####################################
 
 ##Instamine
-execute if entity @s[tag=Instamine] unless predicate game:match_over unless predicate game:game_paused as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:block_break_speed modifier add rocketriders:instamine 10000000000000000000000000000000000000 add_multiplied_base
-execute if entity @s[tag=Instamine] unless predicate game:match_over unless predicate game:game_paused as @a[x=0,predicate=!custom:team/any_playing_team] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
-execute if entity @s[tag=Instamine] if predicate game:match_over as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
-execute if entity @s[tag=Instamine] if predicate game:game_paused as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
-execute unless entity @s[tag=Instamine] as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
+execute if predicate game:modifiers/instamine/on unless predicate game:match_over unless predicate game:game_paused as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:block_break_speed modifier add rocketriders:instamine 10000000000000000000000000000000000000 add_multiplied_base
+execute if predicate game:modifiers/instamine/on unless predicate game:match_over unless predicate game:game_paused as @a[x=0,predicate=!custom:team/any_playing_team] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
+execute if predicate game:modifiers/instamine/on if predicate game:match_over as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
+execute if predicate game:modifiers/instamine/on if predicate game:game_paused as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
+execute unless predicate game:modifiers/instamine/on as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 
 ##Explosive
 execute if predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}

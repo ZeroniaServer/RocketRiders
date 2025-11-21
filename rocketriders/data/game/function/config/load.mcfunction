@@ -27,6 +27,10 @@ execute unless score $friendly_tnt_damage config matches 0..1 run scoreboard pla
 execute if score $friendly_tnt_damage config matches 0 run scoreboard players reset $friendly_tnt_damage config
 
 
+execute store result score $instamine config run data get storage rocketriders:main "config/load".config.instamine
+execute unless score $instamine config matches 0..1 run scoreboard players reset $instamine config
+execute if score $instamine config matches 0 run scoreboard players reset $instamine config
+
 execute store result score $no_fall_damage config run data get storage rocketriders:main "config/load".config.no_fall_damage
 execute unless score $no_fall_damage config matches 0..1 run scoreboard players reset $no_fall_damage config
 execute if score $no_fall_damage config matches 0 run scoreboard players reset $no_fall_damage config

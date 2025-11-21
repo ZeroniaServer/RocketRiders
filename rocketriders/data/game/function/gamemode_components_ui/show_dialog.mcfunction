@@ -117,7 +117,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
           "display": {"color":"white","text":"false"}\
         }\
       ]\
-    }\
+    },\
     {\
       "type": "minecraft:single_option",\
       "key": "explosions_crack_deepslate_bricks",\

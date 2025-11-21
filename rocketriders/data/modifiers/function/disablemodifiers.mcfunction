@@ -1,8 +1,7 @@
 ##Disables all Modifiers
 tag @s remove Instamine
 tag @s remove InstamineWasOn
-tag @s remove NoFall
-tag @s remove NoFallWasOn
+scoreboard players reset $no_fall_damage config
 scoreboard players reset $explosive config
 scoreboard players reset $rocket_residers config
 scoreboard players reset $sonar config

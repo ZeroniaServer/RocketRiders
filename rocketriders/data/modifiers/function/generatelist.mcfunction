@@ -1,7 +1,7 @@
 ##Generates list of modifiers as JSON text components in storage
 data modify storage rocketriders:modifiers list set value []
 execute if entity @s[tag=Instamine] run data modify storage rocketriders:modifiers list append value {"text":"Instamine","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players can mine (most) blocks instantly.","color":"white"}]}}
-execute if entity @s[tag=NoFall] run data modify storage rocketriders:modifiers list append value {"text":"No Fall","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players are immune to fall damage.","color":"white"}]}}
+execute if predicate game:modifiers/no_fall_damage/on run data modify storage rocketriders:modifiers list append value {"text":"No Fall","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players are immune to fall damage.","color":"white"}]}}
 execute if predicate game:modifiers/explosive/on run data modify storage rocketriders:modifiers list append value {"text":"Explosive","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"TNT, Fireballs, Nova Rockets, and the Vortex all do more explosion damage.","color":"white"}]}}
 execute if predicate game:modifiers/rocket_residers/on run data modify storage rocketriders:modifiers list append value {"text":"Rocket Residers","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players cannot leave their bases.","color":"white"}]}}
 execute if predicate game:modifiers/sonar/on run data modify storage rocketriders:modifiers list append value {"text":"Sonar","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players lose Night Vision so they cannot see blocks. Other players, projectiles, TNT, and utilities have glowing outlines.","color":"white"}]}}
@@ -26,7 +26,7 @@ execute if predicate game:modifiers/long_arms/on run data modify storage rocketr
 #Creates companion list of each modifier's name length
 data modify storage rocketriders:modifiers length set value []
 execute if entity @s[tag=Instamine] run data modify storage rocketriders:modifiers length append value 9
-execute if entity @s[tag=NoFall] run data modify storage rocketriders:modifiers length append value 7
+execute if predicate game:modifiers/no_fall_damage/on run data modify storage rocketriders:modifiers length append value 7
 execute if predicate game:modifiers/explosive/on run data modify storage rocketriders:modifiers length append value 9
 execute if predicate game:modifiers/rocket_residers/on run data modify storage rocketriders:modifiers length append value 15
 execute if predicate game:modifiers/sonar/on run data modify storage rocketriders:modifiers length append value 5

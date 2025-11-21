@@ -189,6 +189,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SonarWasOn
 execute if data storage rocketriders:storage {Tags:["Sonar"]} run data modify storage rocketriders:storage config.sonar set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Sonar"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SonarWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NoFall] run scoreboard players set $no_fall_damage config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFall
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFallWasOn
+execute if data storage rocketriders:storage {Tags:["NoFall"]} run data modify storage rocketriders:storage config.no_fall_damage set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NoFall"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NoFallWasOn"}
 
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1

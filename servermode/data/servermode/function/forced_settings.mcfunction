@@ -39,7 +39,7 @@ execute unless predicate game:gamemode_components/duel_settings_locked run funct
 #Add needed settings and modifiers
 tag @s add doPrevention
 tag @s add doHotbarLimit
-tag @s add doTying
+scoreboard players reset $disable_tying config
 
 #######################################################
 ## The lines below make it so 12 items are selected. ##

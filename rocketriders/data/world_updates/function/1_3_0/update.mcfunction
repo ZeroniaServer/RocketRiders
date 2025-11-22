@@ -104,6 +104,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove fbPortalsOff
 execute if data storage rocketriders:storage {Tags:["doFireballPortals"]} run data modify storage rocketriders:storage config.snipe_portals set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"doFireballPortals"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"fbPortalsOff"}
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless entity @s[tag=doTying,tag=!tyingOff] run scoreboard players set $disable_tying config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove doTying
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove tyingOff
+execute unless data storage rocketriders:storage {Tags:["doTying"]} run data modify storage rocketriders:storage config.disable_tying set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"doTying"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"tyingOff"}
 # Updating modifiers
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive] run scoreboard players set $explosive config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Explosive

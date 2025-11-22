@@ -17,25 +17,20 @@ execute if entity @s[tag=!doStacking,predicate=!game:gamemode_components/duel_se
 execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 191 77 crimson_wall_sign[facing=east]
 
 #Tie/Sudden Death
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run setblock -70 193 77 warped_wall_sign[facing=east]
-execute if entity @s[tag=!doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run setblock -70 193 77 crimson_wall_sign[facing=east]
-execute if entity @s[tag=tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run setblock -70 193 77 crimson_wall_sign[facing=east]
-execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 193 77 crimson_wall_sign[facing=east]
+execute if predicate game:game_rules/disable_tying/on run setblock -70 193 77 crimson_wall_sign[facing=east]
+execute unless predicate game:game_rules/disable_tying/on run setblock -70 193 77 warped_wall_sign[facing=east]
 
 #Snipe Portals
-execute unless predicate game:game_rules/snipe_portals/on unless entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 193 78 crimson_wall_sign[facing=east]
 execute if predicate game:game_rules/snipe_portals/on run setblock -70 193 78 warped_wall_sign[facing=east]
-execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 193 78 crimson_wall_sign[facing=east]
+execute unless predicate game:game_rules/snipe_portals/on run setblock -70 193 78 crimson_wall_sign[facing=east]
 
 #TNT Cannoning
-execute unless predicate game:game_rules/disable_cannoning/on unless entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 192 79 warped_wall_sign[facing=east]
 execute if predicate game:game_rules/disable_cannoning/on run setblock -70 192 79 crimson_wall_sign[facing=east]
-execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 192 79 crimson_wall_sign[facing=east]
+execute unless predicate game:game_rules/disable_cannoning/on run setblock -70 192 79 warped_wall_sign[facing=east]
 
 #Impact Utilities
-execute if predicate game:game_rules/impact_utilities/on unless entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 192 77 warped_wall_sign[facing=east]
+execute if predicate game:game_rules/impact_utilities/on run setblock -70 192 77 warped_wall_sign[facing=east]
 execute unless predicate game:game_rules/impact_utilities/on run setblock -70 192 77 crimson_wall_sign[facing=east]
-execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 192 77 crimson_wall_sign[facing=east]
 
 
 ##WORLD SETTINGS
@@ -142,22 +137,14 @@ execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] ru
 execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run data modify block -70 191 79 front_text.messages[3] set value {"text":"Locked","color":"black","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
 
 #Tie/Sudden Death
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[0] set value {"text":"Tie/Sudden Death","color":"white","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed,scores={refreshsigns=0}] remove doTying"}}
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[1] set value {"text":"Enabled","color":"green","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run tellraw @s [\"\",{\"text\":\"Tie/Sudden Death\",\"color\":\"white\",\"bold\":true},{\"text\":\" Disabled:\",\"color\":\"red\",\"bold\":true},{\"text\":\" Only the first team to destroy the enemy portal can win the game.\",\"color\":\"gray\",\"italic\":true}]"}}
-execute if entity @s[tag=doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns"}}
-execute if entity @s[tag=!doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[0] set value {"text":"Tie/Sudden Death","color":"white","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed,scores={refreshsigns=0}] add doTying"}}
-execute if entity @s[tag=!doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[1] set value {"text":"Disabled","color":"red","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[tag=!doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run tellraw @s [\"\",{\"text\":\"Tie/Sudden Death\",\"color\":\"white\",\"bold\":true},{\"text\":\" Enabled:\",\"color\":\"green\",\"bold\":true},{\"text\":\" Ties may occur if both portals are broken within 5 seconds of each other. This starts a Sudden Death period where the portals are restored and items are given twice as fast. Multiple ties may occur in one game, and the game only ends when one team's portal remains.\",\"color\":\"gray\",\"italic\":true}]"}}
-execute if entity @s[tag=!doTying,tag=!tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns"}}
-execute if entity @s[tag=tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[0] set value {"text":"Tie/Sudden Death","color":"white","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Tying/Sudden Death is incompatible with this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-execute if entity @s[tag=tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[1] set value {"text":"Disabled","color":"red","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[tag=tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[2] set value {"text":"Locked","color":"white","bold":true}
-execute if entity @s[tag=tyingOff,predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[3] set value {"text":""}
-execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[0] set value {"text":"Tie/Sudden Death","color":"white","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Game Rules are not adjustable in this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[2] set value {"text":""}
-execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run data modify block -70 193 77 front_text.messages[3] set value {"text":""}
+execute unless predicate game:game_rules/disable_tying/locked unless predicate game:game_rules/disable_tying/on run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"green",text:"Enabled"},"",""]
+execute unless predicate game:game_rules/disable_tying/locked if predicate game:game_rules/disable_tying/on run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"red",text:"Disabled"},"",""]
+execute if predicate game:gamemode_components/duel_settings_locked run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"white",text:"Locked"},"",""]
+execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:game_rules/disable_tying/forced_on run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
 
 #Snipe Portals
 execute unless predicate game:game_rules/snipe_portals/on if entity @s[predicate=!game:gamemode_components/duel_settings_locked] run data modify block -70 193 78 front_text.messages[0] set value {"text":"Snipe Portals","color":"white","click_event":{"action":"run_command","command":"/scoreboard players set $snipe_portals config 1"}}

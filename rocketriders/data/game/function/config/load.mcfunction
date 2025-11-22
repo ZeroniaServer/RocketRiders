@@ -26,6 +26,10 @@ execute store result score $friendly_tnt_damage config run data get storage rock
 execute unless score $friendly_tnt_damage config matches 0..1 run scoreboard players reset $friendly_tnt_damage config
 execute if score $friendly_tnt_damage config matches 0 run scoreboard players reset $friendly_tnt_damage config
 
+execute store result score $disable_tying config run data get storage rocketriders:main "config/load".config.disable_tying
+execute unless score $disable_tying config matches 0..1 run scoreboard players reset $disable_tying config
+execute if score $disable_tying config matches 0 run scoreboard players reset $disable_tying config
+
 
 execute store result score $instamine config run data get storage rocketriders:main "config/load".config.instamine
 execute unless score $instamine config matches 0..1 run scoreboard players reset $instamine config

@@ -31,7 +31,7 @@ tag @s[tag=RestoreDefault] remove RestoreDefault
 
 ##RESTORE DEFAULT GAME RULES
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!preventionOff] add doPrevention
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!tyingOff] add doTying
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_tying config
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doHotbarLimit
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!stackingOn] remove doStacking
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $snipe_portals config

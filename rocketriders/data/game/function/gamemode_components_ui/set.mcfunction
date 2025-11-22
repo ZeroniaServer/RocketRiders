@@ -1,6 +1,12 @@
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run tellraw @s [{color:"red",text:"You should not change gamemode components after game settings have been confirmed."},{color:"yellow",text:"\nYou can change them manually if you know it is safe to do so using "},{color:"gray",text:"/scoreboard players set $<gamemode_component> gamemode_components <value>"}]
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run return fail
 
+# game mode
+$scoreboard players set $game_mode var $(game_mode)
+execute unless score $game_mode var matches 1..8 run return run tellraw @s {color:"red",text:"Game mode number not recognised"}
+execute unless score $game_mode var matches 1..8 run return fail
+scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1] SetGamemode = $game_mode var
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsigns
 
 # arena/bedrock_frame
 $execute store success score $arena/bedrock_frame gamemode_components if predicate {condition:"value_check",value:$(arena__bedrock_frame),range:1}
@@ -14,8 +20,10 @@ execute if score $arena/no_base_details gamemode_components matches 0 run scoreb
 $scoreboard players set $armor var $(armor__)
 execute store success score $armor/generic gamemode_components if score $armor var matches 0
 execute if score $armor/generic gamemode_components matches 0 run scoreboard players reset $armor/generic gamemode_components
+
 execute store success score $armor/crusade_kit_dependent gamemode_components if score $armor var matches 1
 execute if score $armor/crusade_kit_dependent gamemode_components matches 0 run scoreboard players reset $armor/crusade_kit_dependent gamemode_components
+
 execute store success score $armor/swap gamemode_components if score $armor var matches 2
 execute if score $armor/swap gamemode_components matches 0 run scoreboard players reset $armor/swap gamemode_components
 
@@ -27,10 +35,13 @@ execute if score $arrow_pickup/only_crusade_mode_archer_kit gamemode_components 
 $scoreboard players set $main_item var $(main_item__)
 execute store success score $main_item/shooting_saber gamemode_components if score $main_item var matches 1
 execute if score $main_item/shooting_saber gamemode_components matches 0 run scoreboard players reset $main_item/shooting_saber gamemode_components
+
 execute store success score $main_item/piercing_pickaxe gamemode_components if score $main_item var matches 2
 execute if score $main_item/piercing_pickaxe gamemode_components matches 0 run scoreboard players reset $main_item/piercing_pickaxe gamemode_components
+
 execute store success score $main_item/crusade_kit_dependent gamemode_components if score $main_item var matches 3
 execute if score $main_item/crusade_kit_dependent gamemode_components matches 0 run scoreboard players reset $main_item/crusade_kit_dependent gamemode_components
+
 execute store success score $main_item/rocket_nomicon gamemode_components if score $main_item var matches 4
 execute if score $main_item/rocket_nomicon gamemode_components matches 0 run scoreboard players reset $main_item/rocket_nomicon gamemode_components
 

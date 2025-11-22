@@ -1,0 +1,70 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "RR Developer Actions: Quick Launch Game Mode",
+  "external_title": "Quick Launch Game Mode...",
+  "exit_action": {
+    "label": "Back",
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "dev:quick_actions"
+    }
+  },
+  "actions": [
+    {
+      "label": "Launch Normal",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 101"
+      }
+    },
+    {
+      "label": "Launch Powerups",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 102"
+      }
+    },
+    {
+      "label": "Launch Swap",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 103"
+      }
+    },
+    {
+      "label": "Launch Capture The Flag",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 104"
+      }
+    },
+    {
+      "label": "Launch Chase",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 105"
+      }
+    },
+    {
+      "label": "Launch 1v1 Duel",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 106"
+      }
+    },
+    {
+      "label": "Launch Crusade",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 107"
+      }
+    },
+    {
+      "label": "Launch Sandbox",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 108"
+      }
+    }
+  ]
+}

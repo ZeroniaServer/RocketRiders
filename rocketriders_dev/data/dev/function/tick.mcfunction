@@ -16,6 +16,7 @@ execute as @a[x=0,scores={dev=10}] run function servermode:enabledduel
 execute as @a[x=0,scores={dev=11}] run function servermode:enabledcustom
 execute as @a[x=0,scores={dev=12}] run function dev:action/toggle_dev_mode
 execute as @a[x=0,scores={dev=100..199}] run function dev:action/launch_game_mode
+execute as @a[x=0,scores={dev=200..299}] run function dev:action/feature_flag
 
 execute as @a[x=0,scores={dev=1..}] run scoreboard players reset @s dev
 scoreboard players enable @a[predicate=custom:indimension] dev

@@ -9,4 +9,4 @@ scoreboard players add @a dev_action 0
 execute in minecraft:overworld run tp @a[x=0] -82.5 202.0 78.5
 execute in minecraft:overworld run tp @a[x=0,scores={var=0}] -79.5 205.0 62.5
 execute in minecraft:overworld run tp @a[x=0,scores={var=1}] -79.5 205.0 94.5
-schedule function dev:_launch_game_mode_/step_5 2t
+schedule function dev:__impl__/launch_game_mode/step_5 2t

@@ -36,7 +36,7 @@ execute unless entity @s[tag=vortex.is_drifting] if predicate custom:periodic_ti
 
 
 ## Achievements
-execute if entity @s[tag=vortex.neutral_landmine,tag=vortex.feathered] if predicate rr:has_achievements run advancement grant @a[distance=..3,predicate=custom:team/any_playing_team] only achievements:rr_challenges/zzzzzzhuh
+execute if predicate rr:has_achievements if predicate game:match_in_play if entity @s[tag=vortex.neutral_landmine,tag=vortex.feathered] run advancement grant @a[distance=..3,predicate=custom:team/any_playing_team] only achievements:rr_challenges/zzzzzzhuh
 
 
 ## Explosion conditions

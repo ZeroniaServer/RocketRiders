@@ -9,7 +9,7 @@ execute unless score @s entity.age matches -20..-1 run scoreboard players set @s
 
 execute unless predicate game:game_rules/impact_utilities/on if entity @s[tag=vortex.feathered] run tag @s add vortex.neutral_landmine
 execute if predicate game:game_rules/impact_utilities/on unless predicate game:gamemode_components/no_feathered_vortices if predicate {condition:"minecraft:random_chance",chance:0.01} run tag @s add vortex.feathered
-execute if predicate game:game_rules/impact_utilities/on if entity @s[tag=vortex.feathered] if predicate rr:has_achievements on origin run advancement grant @s[predicate=custom:team/any_playing_team] only achievements:rr_challenges/zzzzzzhuh
+execute if predicate rr:has_achievements if predicate game:match_in_play if predicate game:game_rules/impact_utilities/on if entity @s[tag=vortex.feathered] on origin run advancement grant @s[predicate=custom:team/any_playing_team] only achievements:rr_challenges/zzzzzzhuh
 
 data modify storage rocketriders:main vortex.name set value "a Vortex"
 execute if entity @s[tag=vortex.feathered] run data modify storage rocketriders:main vortex.name set value "a... Feathery Vortex?"

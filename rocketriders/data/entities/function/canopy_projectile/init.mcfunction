@@ -10,7 +10,7 @@ execute on origin run function custom:resolve_text_component {text_component:[""
 data modify entity @s CustomName set from storage rocketriders:main canopy_projectile.name
 
 ## Achievements
-execute on origin run advancement grant @s only achievements:rr_challenges/veteran CanopySpawned
+execute if predicate rr:has_achievements on origin run advancement grant @s only achievements:rr_challenges/veteran CanopySpawned
 execute on origin run tag @s add CanopySpawned
 
 ## Summon brain

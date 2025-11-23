@@ -12,7 +12,7 @@ data modify entity @s CustomName set from storage rocketriders:main nova_rocket.
 data merge entity @s {LifeTime:30}
 
 ## Achievements
-execute on origin run advancement grant @s only achievements:rr_challenges/veteran NovaSpawned
+execute if predicate rr:has_achievements on origin run advancement grant @s only achievements:rr_challenges/veteran NovaSpawned
 execute on origin run tag @s add NovaSpawned
 
 ## Summon brain

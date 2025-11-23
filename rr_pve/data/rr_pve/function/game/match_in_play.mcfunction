@@ -1,5 +1,5 @@
 #leave midgame
-function game:leavemidgame
+execute unless predicate rr:is_cubekrowd run function game:leavemidgame
 
 #general
 function rr_pve:items/spawnitems

@@ -51,23 +51,6 @@
                     "id": "rocketriders:piercing_pickaxe"
                   }
                 ],
-                "minecraft:tool": {
-                  "rules": [
-                    {
-                      "blocks": "minecraft:obsidian",
-                      "speed": 1e-45
-                    },
-                    {
-                      "blocks": "#minecraft:incorrect_for_netherite_tool",
-                      "correct_for_drops": false
-                    },
-                    {
-                      "blocks": "#minecraft:mineable/pickaxe",
-                      "correct_for_drops": true,
-                      "speed": 9
-                    }
-                  ]
-                },
                 "minecraft:can_break": {
                   "blocks": "#custom:glass"
                 },

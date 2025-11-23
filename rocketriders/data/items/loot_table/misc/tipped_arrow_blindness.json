@@ -31,7 +31,7 @@
                     {
                       "id": "minecraft:blindness",
                       "amplifier": 0,
-                      "duration": 200,
+                      "duration": 1600,
                       "show_particles": true
                     }
                   ]

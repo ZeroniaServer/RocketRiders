@@ -18,7 +18,7 @@
         },
         {
           "condition": "minecraft:reference",
-          "name": "rr:server_mode/realms"
+          "name": "rr:default_config/impact_utilites"
         }
       ]
     },

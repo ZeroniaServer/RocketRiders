@@ -7,6 +7,7 @@ execute on vehicle if entity @s[predicate=entities:type/icbm/body] run function 
 # Create explosions
 data modify storage rocketriders:main icbm set value {power:4,modifiers:{copy_name:true,can_crack_deepslate_bricks:false}}
 execute if predicate game:modifiers/explosive/on run data modify storage rocketriders:main icbm.power set value 5
+execute if predicate custom:near_any_spawn_zone run data modify storage rocketriders:main icbm.power set value 0
 
 execute at @s positioned ~ ~ ~ run function custom:explosion with storage rocketriders:main icbm
 execute at @s positioned ~ ~ ~0.1 run function custom:explosion with storage rocketriders:main icbm

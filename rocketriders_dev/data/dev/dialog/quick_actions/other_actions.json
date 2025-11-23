@@ -47,6 +47,14 @@
         "type": "minecraft:show_dialog",
         "dialog": "dev:quick_actions/feature_flags"
       }
+    },
+    {
+      "label": "Run Update Function",
+      "tooltip": "Runs the update function for the latest Rocket Riders update, to resync world changes during development.",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 13"
+      }
     }
   ]
 }

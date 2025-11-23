@@ -31,11 +31,12 @@
                     {
                       "id": "minecraft:wither",
                       "amplifier": 2,
-                      "duration": 1200,
+                      "duration": 150,
                       "show_particles": true
                     }
                   ]
                 },
+                "!minecraft:potion_duration_scale": {},
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:potion_contents"

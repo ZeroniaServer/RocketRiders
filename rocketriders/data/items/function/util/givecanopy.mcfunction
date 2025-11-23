@@ -2,9 +2,9 @@
 #Antidupe check - Canopies are an exception for modes that require extra Canopies for travel. In this case, you can only have 2 Canopies.
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack] store result score @s HasPlat run clear @s ender_pearl 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=canopyStack] store result score @s[tag=!itemDeducted] HasPlat run clear @s ender_pearl 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasPlat %= $16 constant
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasPlat=1..15},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasPlat 0
+execute if predicate game:game_rules/item_stacking/on run scoreboard players operation @s HasPlat %= $16 constant
+execute if predicate game:game_rules/item_stacking/on if entity @s[scores={HasPlat=1..15},tag=fullHotbar] run tag @s remove fullHotbar
+execute if predicate game:game_rules/item_stacking/on run scoreboard players set @s HasPlat 0
 
 #Without Canopy stacking
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!canopyStack] run title @s[scores={HasPlat=1..},tag=!fullHotbar] actionbar {"text":"Canopy already obtained.","color":"aqua"}

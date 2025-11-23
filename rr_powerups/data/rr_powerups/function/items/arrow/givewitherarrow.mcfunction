@@ -1,9 +1,9 @@
 #Antidupe check
 execute store result score @s[tag=!itemDeducted] HasTippedArrows run clear @s tipped_arrow 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasTippedArrows %= $64 constant
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasTippedArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasTippedArrows 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!doStacking] if entity @s[scores={HasTippedArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
+execute if predicate game:game_rules/item_stacking/on run scoreboard players operation @s HasTippedArrows %= $64 constant
+execute if predicate game:game_rules/item_stacking/on if entity @s[scores={HasTippedArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if predicate game:game_rules/item_stacking/on run scoreboard players set @s HasTippedArrows 0
+execute unless predicate game:game_rules/item_stacking/on if entity @s[scores={HasTippedArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving
 title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Tipped Arrows already obtained.","color":"light_purple"}

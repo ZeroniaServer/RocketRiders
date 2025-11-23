@@ -30,6 +30,10 @@ execute store result score $disable_tying config run data get storage rocketride
 execute unless score $disable_tying config matches 0..1 run scoreboard players reset $disable_tying config
 execute if score $disable_tying config matches 0 run scoreboard players reset $disable_tying config
 
+execute store result score $item_stacking config run data get storage rocketriders:main "config/load".config.item_stacking
+execute unless score $item_stacking config matches 0..1 run scoreboard players reset $item_stacking config
+execute if score $item_stacking config matches 0 run scoreboard players reset $item_stacking config
+
 
 execute store result score $instamine config run data get storage rocketriders:main "config/load".config.instamine
 execute unless score $instamine config matches 0..1 run scoreboard players reset $instamine config

@@ -23,7 +23,7 @@ execute as @e[x=0,type=marker,tag=rngSelected,tag=rngMissile] run function items
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngUtil] run function items:util/rng
 
 ##If Surprise Egg is picked
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if items entity @s contents #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] run function items:deduct
+execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if items entity @s contents #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] run function items:deduct
 
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] run function items:full_hotbar
 

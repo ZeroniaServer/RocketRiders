@@ -9,10 +9,10 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngWar,tag=!
 tag @e[x=0,type=marker,tag=rng3,sort=random,limit=1] add rngSelected
 
 #> Kill items to prevent duplication glitches
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngAux] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/auxiliary"}] run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngRift] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/rifter"}] run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngJbuster] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/juggerbuster"}] run function items:deduct
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngWar] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/warhead"}] run function items:deduct
+execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=rngSelected,tag=rngAux] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/auxiliary"}] run function items:deduct
+execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=rngSelected,tag=rngRift] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/rifter"}] run function items:deduct
+execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=rngSelected,tag=rngJbuster] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/juggerbuster"}] run function items:deduct
+execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=rngSelected,tag=rngWar] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/warhead"}] run function items:deduct
 
 function items:full_hotbar
 

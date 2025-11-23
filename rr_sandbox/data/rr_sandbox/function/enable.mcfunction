@@ -1,6 +1,7 @@
 scoreboard players reset * gamemode_components
 scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $config_override.disable_team_balancing gamemode_components 1
+scoreboard players set $config_override.item_stacking gamemode_components 1
 scoreboard players set $config_override.minute_mix gamemode_components -1
 scoreboard players set $config_override.special_treatment gamemode_components -1
 scoreboard players set $config_override.surprise_eggs gamemode_components -1
@@ -11,8 +12,6 @@ scoreboard players set $no_item_timer gamemode_components 1
 function gamemodes:storesettings
 function arenaclear:enableitems
 tag @s remove switchGamemodes
-tag @s add stackingOn
-tag @s add doStacking
 tag @s add hotbarLimitOff
 tag @s remove doHotbarLimit
 tag @s add normalForce

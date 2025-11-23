@@ -1,9 +1,9 @@
 ##Gives executor a TomaTwo
 #Antidupe check
 execute store result score @s HasToma run clear @s *[custom_data~{id:"missile/tomatwo"}] 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasToma %= $64 constant
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasToma=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasToma 0
+execute if predicate game:game_rules/item_stacking/on run scoreboard players operation @s HasToma %= $64 constant
+execute if predicate game:game_rules/item_stacking/on if entity @s[scores={HasToma=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if predicate game:game_rules/item_stacking/on run scoreboard players set @s HasToma 0
 tag @s[tag=itemDeducted] remove fullHotbar
 
 #Title/giving

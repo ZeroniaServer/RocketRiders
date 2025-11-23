@@ -1,6 +1,6 @@
 #Antidupe check
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!doStacking] store result score @s HasTrident run clear @s trident 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasTrident 0
+execute unless predicate game:game_rules/item_stacking/on store result score @s HasTrident run clear @s trident 0
+execute if predicate game:game_rules/item_stacking/on run scoreboard players set @s HasTrident 0
 tag @s[tag=itemDeducted] remove fullHotbar
 
 #Title/giving

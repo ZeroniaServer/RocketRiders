@@ -13,9 +13,6 @@ tag @s remove arrowsWasOff
 tag @s[tag=utilWasOff] remove rngUtil
 tag @s remove utilWasOff
 # tag @s remove arrowLimit
-tag @s[tag=stackingWasOff] remove doStacking
-tag @s remove stackingWasOff
-tag @s remove stackingOn
 tag @s remove antigriefOff
 
 tag @s add switchGamemodes

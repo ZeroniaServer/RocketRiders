@@ -8,6 +8,5 @@ function modifiers:disablemodifiers
 #Add needed settings and modifiers
 tag @s add doPrevention
 tag @s add doHotbarLimit
-tag @s remove doStacking
 
 tag @s add duelLast

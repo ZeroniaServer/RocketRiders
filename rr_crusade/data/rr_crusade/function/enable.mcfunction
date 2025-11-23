@@ -4,6 +4,7 @@ scoreboard players set $armor/crusade_kit_dependent gamemode_components 1
 scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit gamemode_components 1
 scoreboard players set $config_override.clutter_collector gamemode_components -1
 scoreboard players set $config_override.hardcore gamemode_components -1
+scoreboard players set $config_override.item_stacking gamemode_components 1
 scoreboard players set $config_override.molerat gamemode_components -1
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $config_override.special_treatment gamemode_components -1
@@ -19,9 +20,6 @@ function arenaclear:lockdecos
 tag @s add portalDecosOff
 tag @s add customPrevention
 tag @s add arrowLimit
-tag @s[tag=!doStacking] add stackingWasOff
-tag @s add doStacking
-tag @s add stackingOn
 tag @s add SuddenDeathCustom
 tag @s add portalOverride
 tag @s add crusadeEnabled

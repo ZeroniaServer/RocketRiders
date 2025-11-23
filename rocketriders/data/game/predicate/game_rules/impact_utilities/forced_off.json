@@ -20,7 +20,7 @@
           "condition": "minecraft:inverted",
           "term": {
             "condition": "minecraft:reference",
-            "name": "rr:default_config/impact_utilites"
+            "name": "rr:default_config/impact_utilities"
           }
         }
       ]

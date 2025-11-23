@@ -66,7 +66,11 @@ execute if predicate game:match_in_play if predicate game:gamemode_components/on
 execute if predicate game:match_in_play if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
 execute if predicate game:match_in_play as @a[x=0,tag=JoinBlue] run function game:notify_join
 execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,predicate=custom:team/blue,gamemode=adventure]
+execute unless predicate game:match_in_play run gamemode adventure @a[x=0,tag=JoinBlue]
+execute if predicate game:match_in_play if predicate game:game_paused run gamemode adventure @a[x=0,tag=JoinBlue]
+execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,tag=JoinBlue]
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=JoinBlue] resistance
+effect clear @a[x=0,tag=JoinBlue] invisibility
 execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinBlue] run title @s actionbar ""
 #Achievement keybind tutorial
@@ -102,7 +106,11 @@ execute if predicate game:match_in_play run tp @a[x=0,tag=JoinYellow] 12 64 66 1
 execute if predicate game:match_in_play as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
 execute if predicate game:match_in_play as @a[x=0,tag=JoinYellow] run function game:notify_join
 execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,predicate=custom:team/yellow,gamemode=adventure]
+execute unless predicate game:match_in_play run gamemode adventure @a[x=0,tag=JoinYellow]
+execute if predicate game:match_in_play if predicate game:game_paused run gamemode adventure @a[x=0,tag=JoinYellow]
+execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,tag=JoinYellow]
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=JoinYellow] resistance
+effect clear @a[x=0,tag=JoinYellow] invisibility
 execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinYellow] run title @s actionbar ""
 #Achievement keybind tutorial

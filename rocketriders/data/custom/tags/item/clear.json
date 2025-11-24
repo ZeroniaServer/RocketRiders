@@ -5,7 +5,6 @@
         "minecraft:ender_pearl",
         "minecraft:egg",
         "#minecraft:arrows",
-        "minecraft:snowball",
-        "minecraft:writable_book"
+        "minecraft:snowball"
     ]
 }

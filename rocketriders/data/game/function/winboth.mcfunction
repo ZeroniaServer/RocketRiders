@@ -9,6 +9,8 @@ execute if predicate rr:has_achievements if entity @s[tag=!noAchievements] run f
 ##Record tags
 scoreboard players set $match_over global 1
 tag @s add BothWon
+tag @a[x=0,predicate=custom:team/yellow] add Winner
+tag @a[x=0,predicate=custom:team/blue] add Winner
 
 ##Celebratory items
 execute as @a[x=0,predicate=custom:team/any_playing_team] run clear @s #custom:clear
@@ -33,8 +35,6 @@ execute as @a[x=0,predicate=custom:team/yellow] at @s run playsound minecraft:ui
 execute unless score $skiptitles CmdData matches 1 run title @a[x=0,predicate=!custom:team/lobby] title ["",{"text":"Everyone Wins!","color":"green","bold":false}]
 
 ##Splashes
-tag @a[x=0,predicate=custom:team/yellow] add Winner
-tag @a[x=0,predicate=custom:team/blue] add Winner
 execute as @a[x=0,tag=Winner,limit=1,sort=random] run function game:winsplash
 
 ##Remove UUID Tracker score

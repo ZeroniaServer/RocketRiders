@@ -9,6 +9,8 @@ execute if predicate rr:has_achievements if entity @s[tag=!noAchievements] run f
 scoreboard players set $match_over global 1
 tag @s add BlueWon
 tag @s add BlueWonFirst
+tag @a[x=0,predicate=custom:team/blue] add Winner
+tag @a[x=0,predicate=custom:team/yellow] add Loser
 
 ##Celebratory items
 execute as @a[x=0,predicate=custom:team/any_playing_team] run clear @s #custom:clear
@@ -33,8 +35,6 @@ execute if entity @s[tag=!YellowWonFirst] as @a[x=0,predicate=custom:team/yellow
 execute unless score $skiptitles CmdData matches 1 run title @a[x=0,predicate=!custom:team/lobby] title ["",{"text":"Team Blue Won!","color":"blue","bold":false}]
 
 ##Splashes
-tag @a[x=0,predicate=custom:team/blue] add Winner
-tag @a[x=0,predicate=custom:team/yellow] add Loser
 execute as @a[x=0,tag=Winner,limit=1,sort=random] run function game:winsplash
 execute as @a[x=0,tag=Loser,limit=1,sort=random] run function game:losesplash
 

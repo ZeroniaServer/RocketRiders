@@ -7,6 +7,7 @@ scoreboard players set $config_override.special_treatment gamemode_components -1
 scoreboard players set $config_override.surprise_eggs gamemode_components -1
 scoreboard players set $config_override.wind_down gamemode_components -1
 scoreboard players set $main_item/rocket_nomicon gamemode_components 1
+scoreboard players set $no_achievements gamemode_components 1
 scoreboard players set $no_item_timer gamemode_components 1
 
 function gamemodes:storesettings

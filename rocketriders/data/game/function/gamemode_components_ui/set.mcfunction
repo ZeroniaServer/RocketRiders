@@ -65,6 +65,10 @@ execute if score $friendly_fire gamemode_components matches 0 run scoreboard pla
 $execute store success score $lower_void gamemode_components if predicate {condition:"value_check",value:$(lower_void),range:1}
 execute if score $lower_void gamemode_components matches 0 run scoreboard players reset $lower_void gamemode_components
 
+# no_achievements
+$execute store success score $no_achievements gamemode_components if predicate {condition:"value_check",value:$(no_achievements),range:1}
+execute if score $no_achievements gamemode_components matches 0 run scoreboard players reset $no_achievements gamemode_components
+
 # neutral_items
 $execute store success score $neutral_items gamemode_components if predicate {condition:"value_check",value:$(neutral_items),range:1}
 execute if score $neutral_items gamemode_components matches 0 run scoreboard players reset $neutral_items gamemode_components

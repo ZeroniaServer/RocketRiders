@@ -11,7 +11,7 @@ scoreboard players add Blue: RoundsWon 1
 effect give @a[x=0,predicate=custom:team/blue] instant_health 1 100
 effect give @a[x=0,predicate=custom:team/yellow] instant_health 1 100
 
-execute unless score Blue: RoundsWon matches 2.. if predicate rr:has_achievements run function achievements:aftergameblue
+execute unless score Blue: RoundsWon matches 2.. if predicate game:achievements_can_be_awarded run function achievements:aftergameblue
 execute unless score Blue: RoundsWon matches 2.. run function achievements:scoresreset
 execute unless score Blue: RoundsWon matches 2.. run kill @e[x=0,type=tnt]
 execute unless score Blue: RoundsWon matches 2.. if predicate game:modifiers/punchable_tnt/on run kill @e[x=0,predicate=entities:type/punchable_tnt]

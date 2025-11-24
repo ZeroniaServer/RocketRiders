@@ -49,11 +49,11 @@ execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon
 #For Premature Celebration achievement
-execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=BlueWonFirst] run advancement grant @a[x=0,predicate=custom:team/blue] only achievements:rr_challenges/premature
+execute if predicate game:achievements_can_be_awarded if entity @s[scores={SDtime=1},tag=BlueWonFirst] run advancement grant @a[x=0,predicate=custom:team/blue] only achievements:rr_challenges/premature
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] as @a[x=0,predicate=custom:team/blue] run function custom:update_armor
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[x=0,predicate=custom:team/yellow] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
-execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=YellowWonFirst] run advancement grant @a[x=0,predicate=custom:team/yellow] only achievements:rr_challenges/premature
+execute if predicate game:achievements_can_be_awarded if entity @s[scores={SDtime=1},tag=YellowWonFirst] run advancement grant @a[x=0,predicate=custom:team/yellow] only achievements:rr_challenges/premature
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] as @a[x=0,predicate=custom:team/yellow] run function custom:update_armor
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[x=0,predicate=custom:team/blue] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWonFirst

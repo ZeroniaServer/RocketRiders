@@ -3,7 +3,7 @@
 ########################################################
 
 ##Achievements
-execute if predicate rr:has_achievements if entity @s[tag=!noAchievements] run function achievements:aftergameblue
+execute if predicate game:achievements_can_be_awarded if entity @s[tag=!noAchievements] run function achievements:aftergameblue
 
 ##Record tags
 scoreboard players set $match_over global 1

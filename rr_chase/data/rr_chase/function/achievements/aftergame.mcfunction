@@ -1,5 +1,5 @@
 ##Any achievements to be given by the official end of the game.
-execute unless predicate rr:has_achievements run return 0
+execute unless predicate game:achievements_can_be_awarded run return 0
 
 #| || || |_
 scoreboard players add @a[x=0,predicate=custom:team/blue,tag=Winner] WinStreak 1

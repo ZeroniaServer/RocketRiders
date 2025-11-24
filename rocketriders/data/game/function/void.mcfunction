@@ -8,7 +8,7 @@ execute if entity @s[predicate=custom:team/spectator] run return run tp @s 12 10
 
 
 # "Cry About It" achievement
-execute if entity @s[tag=CheckCry] if predicate rr:has_achievements if predicate game:match_in_play run advancement grant @s only achievements:rr_challenges/cryaboutit
+execute if predicate game:achievements_can_be_awarded if entity @s[tag=CheckCry] run advancement grant @s only achievements:rr_challenges/cryaboutit
 
 # Handle non-crossers
 execute if entity @s[predicate=!custom:team/spectator,tag=!crosser] run return run damage @s 100.0 out_of_world

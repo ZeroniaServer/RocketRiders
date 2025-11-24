@@ -1,0 +1,17 @@
+[
+  {
+    "condition": "minecraft:reference",
+    "name": "rr:has_achievements"
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "game:game_running"
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:gamemode_components/no_achievements"
+    }
+  }
+]

@@ -1,5 +1,5 @@
 ##Achievements
-execute if predicate rr:has_achievements run function rr_chase:achievements/aftergame
+execute if predicate game:achievements_can_be_awarded run function rr_chase:achievements/aftergame
 
 ##Record tags
 scoreboard players set $match_over global 1
@@ -13,7 +13,7 @@ execute as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run function cu
 execute as @a[x=0] store result score @s HasFlag run clear @s #banners 0
 execute as @a[x=0,predicate=custom:team/blue,tag=Loser,scores={HasFlag=0}] run function custom:update_armor
 #I Am Speed achievement for Winner
-execute if predicate rr:has_achievements run advancement grant @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
+execute if predicate game:achievements_can_be_awarded run advancement grant @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 
 scoreboard players add @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] wins 1
 scoreboard players add @a[x=0,predicate=custom:team/blue,tag=Loser] losses 1

@@ -1,7 +1,7 @@
 ##Regifting achievement for Yellow team
 ##Detects a Yellow player damaging a player with a Blue fireball
 advancement revoke @s only achievements:rr_utility/yellow_fireball_hit
-execute unless predicate rr:has_achievements run return fail
+execute unless predicate game:achievements_can_be_awarded run return fail
 scoreboard players add @s[predicate=custom:team/yellow] regifts 1
 advancement grant @s[predicate=custom:team/yellow,scores={regifts=1..}] only achievements:rr_challenges/regifting 1
 advancement grant @s[predicate=custom:team/yellow,scores={regifts=2..}] only achievements:rr_challenges/regifting 2

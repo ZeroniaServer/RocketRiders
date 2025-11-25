@@ -37,6 +37,7 @@ data modify storage rocketriders:navbook description set value {text:"\nRocket R
 data modify storage rocketriders:navbook parkourtips set value [""]
 
 scoreboard players set $disable_cannoning config 1
+scoreboard players set $impact_utilities config 1
 
 scoreboard objectives add joinBlue dummy
 scoreboard objectives add joinYellow dummy

@@ -3,7 +3,6 @@ execute if entity @s[tag=JoinYellow,predicate=rr_crusade:kit/archer] run scorebo
 
 execute unless entity @s[predicate=rr_crusade:kit/archer] run clear @s
 execute unless entity @s[predicate=rr_crusade:kit/archer] run loot replace entity @s hotbar.0 loot items:misc/shooting_saber
-execute unless entity @s[predicate=rr_crusade:kit/archer] run function custom:update_armor
 
 execute unless entity @s[predicate=rr_crusade:kit/archer] run tag @s remove fullOffhand
 execute unless predicate game:match_in_play unless predicate game:match_over if score @e[limit=1,x=0,type=armor_stand,tag=Selection] count matches ..599 unless entity @s[predicate=rr_crusade:kit/archer] run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:20}]}]}
@@ -19,5 +18,7 @@ execute unless entity @s[predicate=rr_crusade:kit/archer] at @s[tag=!kitarcher] 
 execute unless entity @s[predicate=rr_crusade:kit/archer] run scoreboard players add $archer CmdData 1
 
 execute unless entity @s[predicate=rr_crusade:kit/archer] run scoreboard players set @s crusadekit 2
+
+function custom:update_armor
 
 function custom:player_action/playerdata/save

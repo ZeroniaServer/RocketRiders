@@ -12,8 +12,6 @@ execute on origin run function custom:resolve_text_component {text_component:[""
 data modify entity @s CustomName set from storage rocketriders:main canopy.name
 
 ## Spawn behaviour
-execute on origin run function custom:player_action/forget_nova_attach
-
 execute align xyz positioned ~0.5 ~ ~0.5 run tp @s ~ ~ ~
 
 execute on origin run tag @s add canopy.origin

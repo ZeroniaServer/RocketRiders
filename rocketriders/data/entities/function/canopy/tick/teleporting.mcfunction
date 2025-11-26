@@ -1,5 +1,5 @@
 #Canopy doesn't teleport more than once if shot by Nova Rocket
-execute if score @s entity.canopy.movement_cooldown matches 1.. on origin if predicate custom:nova_attached run return run function custom:player_action/forget_all_canopies
+execute if score @s entity.canopy.movement_cooldown matches 1.. on origin if predicate custom:nova_attached run return run function entities:canopy/tick/trigger_nova_attach
 
 execute if score @s entity.canopy.movement_cooldown matches ..39 on origin run tag @s add canopy.player
 execute if score @s entity.canopy.movement_cooldown matches ..39 on passengers run ride @a[limit=1,tag=canopy.player] mount @s[predicate=entities:type/canopy/saddle]

@@ -1,4 +1,4 @@
-#Bees teams/angry
+# Bees teams/angry
 execute as @e[x=0,type=bee,tag=!beeChecked,tag=BlueBee] run function custom:team/join_blue
 execute as @e[x=0,type=bee,tag=!beeChecked,tag=YellowBee] run function custom:team/join_yellow
 execute as @e[x=0,type=bee,tag=!beeChecked] run attribute @s minecraft:follow_range base set 100
@@ -12,8 +12,12 @@ execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/yello
 
 execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:bee_anger_periodic_tick] run data merge entity @s {AngerTime:1000}
 
-#kill bees that have stung
+# kill bees that have stung
 kill @e[x=0,type=bee,predicate=custom:in_arena,nbt={HasStung:1b}]
 
-#kill bees that are in the void
+# kill bees that are in the void
 execute as @e[x=0,type=bee,predicate=custom:in_void] run function custom:kill_mob_discretely
+
+# limit the number of bees in the arena (sandbox precaution)
+execute store result score $bee_count var if entity @e[x=0,type=bee,predicate=custom:in_arena]
+execute if score $bee_count var matches 31.. as @e[limit=1,sort=random,x=0,type=bee,predicate=custom:in_arena] run function custom:kill_mob_discretely

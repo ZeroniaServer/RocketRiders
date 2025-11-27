@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "booster_rocket"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "booster_rocket",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "light_purple",
@@ -20,6 +28,10 @@
                 },
                 "!minecraft:fireworks": {}
               }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

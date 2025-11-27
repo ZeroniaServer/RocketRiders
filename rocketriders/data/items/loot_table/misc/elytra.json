@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "elytra"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "elytra",
+                    "none"
+                  ]
+                },
                 "minecraft:equippable": {
                   "slot": "chest",
                   "damage_on_hurt": false,
@@ -63,6 +71,10 @@
                   ]
                 }
               }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

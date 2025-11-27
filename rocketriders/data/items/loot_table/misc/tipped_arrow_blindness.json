@@ -15,6 +15,14 @@
                   "Droppable": true,
                   "tipped_arrow_type": "blindness"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "tipped_arrow_blindness",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "text": "Blindness Arrow",
                   "bold": true,
@@ -38,6 +46,10 @@
                 },
                 "!minecraft:potion_duration_scale": {}
               }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

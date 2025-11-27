@@ -16,6 +16,13 @@
                     "type": "obsidian_shield"
                   }
                 },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "rocketriders",
+                    "obsidian_shield",
+                    "none"
+                  ]
+                },
                 "minecraft:entity_data": {
                   "id": "minecraft:marker"
                 },
@@ -47,11 +54,6 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                },
                 "minecraft:item_name": [
                   {
                     "text": "[Utility] ",
@@ -81,11 +83,6 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                },
                 "minecraft:item_name": [
                   {
                     "text": "[Utility] ",
@@ -111,6 +108,10 @@
                   "name": "custom:team/yellow"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

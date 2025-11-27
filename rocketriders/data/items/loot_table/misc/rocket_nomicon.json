@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "rocket_nomicon"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "rocket_nomicon",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": [
                   {
                     "text": "Rocket",
@@ -149,6 +157,10 @@
                   "name": "game:match_over"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

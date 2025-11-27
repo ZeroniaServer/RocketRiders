@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "slap_fish"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "slap_fish",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "text": "Slap Fish",
                   "bold": true,
@@ -69,6 +77,10 @@
                   ]
                 }
               }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

@@ -17,6 +17,14 @@
                     "missile": "gemini"
                   }
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "missile/gemini",
+                    "none"
+                  ]
+                },
                 "minecraft:entity_data": {
                   "id": "minecraft:marker"
                 },
@@ -99,11 +107,35 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
+                "minecraft:item_name": [
+                  {
+                    "text": "[Normal] ",
+                    "color": "green",
+                    "bold": true
+                  },
+                  {
+                    "text": "Gemini",
+                    "color": "blue"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/neutral_items"
+                  }
                 },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
                 "minecraft:item_name": [
                   {
                     "text": "[Normal] ",
@@ -131,38 +163,8 @@
               ]
             },
             {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                },
-                "minecraft:item_name": [
-                  {
-                    "text": "[Normal] ",
-                    "color": "green",
-                    "bold": true
-                  },
-                  {
-                    "text": "Gemini",
-                    "color": "blue"
-                  }
-                ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ]
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

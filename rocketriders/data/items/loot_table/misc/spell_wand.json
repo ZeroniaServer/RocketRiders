@@ -13,12 +13,15 @@
                 "minecraft:custom_data": {
                   "id": "spell_wand"
                 },
-                "minecraft:item_model": "minecraft:stick",
                 "minecraft:custom_model_data": {
-                  "floats": [
-                    1
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "spell_wand",
+                    "none"
                   ]
                 },
+                "minecraft:item_model": "minecraft:stick",
                 "!minecraft:writable_book_content": {},
                 "minecraft:use_cooldown": {
                   "seconds": 1,
@@ -157,6 +160,10 @@
                   "name": "game:gamemode_components/custom_team_colors"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

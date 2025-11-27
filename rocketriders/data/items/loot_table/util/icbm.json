@@ -13,6 +13,13 @@
                 "minecraft:custom_data": {
                   "id": "icbm"
                 },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "rocketriders",
+                    "icbm",
+                    "blue"
+                  ]
+                },
                 "minecraft:max_stack_size": 64,
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:item_name": [
@@ -101,6 +108,10 @@
                   "name": "custom:team/yellow"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

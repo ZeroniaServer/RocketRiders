@@ -14,12 +14,24 @@
                   "id": "spectral_arrow",
                   "Droppable": true
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "spectral_arrow",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "text": "Spectral Arrow",
                   "bold": true,
                   "color": "dark_purple"
                 }
               }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

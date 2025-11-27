@@ -17,16 +17,19 @@
                     "category": "normal"
                   }
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "surprise_missile/normal",
+                    "none"
+                  ]
+                },
                 "minecraft:entity_data": {
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:squid_spawn_egg",
                 "minecraft:enchantment_glint_override": true,
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    4
-                  ]
-                },
                 "minecraft:item_name": [
                   {
                     "text": "[???] ",
@@ -117,6 +120,10 @@
                   "name": "custom:team/yellow"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

@@ -1,0 +1,114 @@
+[
+  {
+    "function": "minecraft:set_custom_model_data",
+    "strings": {
+      "values": [
+        "none"
+      ],
+      "mode": "replace_section",
+      "offset": 2,
+      "size": 1
+    }
+  },
+  {
+    "function": "minecraft:set_custom_model_data",
+    "floats": {
+      "values": [
+        1
+      ],
+      "mode": "replace_all"
+    },
+    "strings": {
+      "values": [
+        "blue"
+      ],
+      "mode": "replace_section",
+      "offset": 2,
+      "size": 1
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:reference",
+        "name": "custom:team/blue"
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:gamemode_components/red_for_blue"
+        }
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:gamemode_components/neutral_items"
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_custom_model_data",
+    "floats": {
+      "values": [
+        2
+      ],
+      "mode": "replace_all"
+    },
+    "strings": {
+      "values": [
+        "yellow"
+      ],
+      "mode": "replace_section",
+      "offset": 2,
+      "size": 1
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:reference",
+        "name": "custom:team/yellow"
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:gamemode_components/neutral_items"
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_custom_model_data",
+    "floats": {
+      "values": [
+        3
+      ],
+      "mode": "replace_all"
+    },
+    "strings": {
+      "values": [
+        "red"
+      ],
+      "mode": "replace_section",
+      "offset": 2,
+      "size": 1
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:reference",
+        "name": "custom:team/blue"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:gamemode_components/red_for_blue"
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:gamemode_components/neutral_items"
+        }
+      }
+    ]
+  }
+]

@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "piercing_pickaxe"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "piercing_pickaxe",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "translate": "Piercing Pickaxe",
                   "bold": true,
@@ -180,6 +188,10 @@
                   "name": "game:gamemode_components/custom_team_colors"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

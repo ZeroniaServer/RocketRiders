@@ -17,6 +17,14 @@
                     "missile": "thunderbolt"
                   }
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "missile/thunderbolt",
+                    "none"
+                  ]
+                },
                 "minecraft:entity_data": {
                   "id": "minecraft:marker"
                 },
@@ -99,11 +107,6 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                },
                 "minecraft:item_name": [
                   {
                     "text": "[Lightning] ",
@@ -133,11 +136,6 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                },
                 "minecraft:item_name": [
                   {
                     "text": "[Lightning] ",
@@ -163,6 +161,10 @@
                   "name": "custom:team/yellow"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

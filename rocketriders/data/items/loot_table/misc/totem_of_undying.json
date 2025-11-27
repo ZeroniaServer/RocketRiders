@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "totem_of_undying"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "totem_of_undying",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "text": "Totem of Undying",
                   "bold": true,
@@ -37,6 +45,10 @@
                 ],
                 "minecraft:enchantment_glint_override": true
               }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

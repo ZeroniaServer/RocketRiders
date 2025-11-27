@@ -13,6 +13,13 @@
                 "minecraft:custom_data": {
                   "id": "nova_rocket"
                 },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "rocketriders",
+                    "nova_rocket",
+                    "none"
+                  ]
+                },
                 "minecraft:damage": 465,
                 "minecraft:item_name": [
                   {
@@ -51,10 +58,18 @@
                           "firework_rocket": true
                         }
                       },
+                      "minecraft:custom_model_data": {
+                        "floats": [],
+                        "strings": [
+                          "rocketriders",
+                          "nova_rocket/firework_rocket",
+                          "none"
+                        ]
+                      },
                       "minecraft:fireworks": {
                         "explosions": [
                           {
-                            "shape": "large_ball",
+                            "shape": "small_ball",
                             "colors": [
                               15790320
                             ],
@@ -102,6 +117,16 @@
                           "firework_rocket": true
                         }
                       },
+                      "minecraft:custom_model_data": {
+                        "floats": [
+                          1
+                        ],
+                        "strings": [
+                          "rocketriders",
+                          "nova_rocket/firework_rocket",
+                          "blue"
+                        ]
+                      },
                       "minecraft:fireworks": {
                         "explosions": [
                           {
@@ -129,12 +154,7 @@
                     "text": "Nova Rocket",
                     "color": "blue"
                   }
-                ],
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {
@@ -169,6 +189,16 @@
                           "firework_rocket": true
                         }
                       },
+                      "minecraft:custom_model_data": {
+                        "floats": [
+                          3
+                        ],
+                        "strings": [
+                          "rocketriders",
+                          "nova_rocket/firework_rocket",
+                          "red"
+                        ]
+                      },
                       "minecraft:fireworks": {
                         "explosions": [
                           {
@@ -196,12 +226,7 @@
                     "text": "Nova Rocket",
                     "color": "blue"
                   }
-                ],
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {
@@ -233,6 +258,16 @@
                           "firework_rocket": true
                         }
                       },
+                      "minecraft:custom_model_data": {
+                        "floats": [
+                          2
+                        ],
+                        "strings": [
+                          "rocketriders",
+                          "nova_rocket/firework_rocket",
+                          "yellow"
+                        ]
+                      },
                       "minecraft:fireworks": {
                         "explosions": [
                           {
@@ -260,12 +295,7 @@
                     "text": "Nova Rocket",
                     "color": "gold"
                   }
-                ],
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {
@@ -282,58 +312,8 @@
               ]
             },
             {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:charged_projectiles": [
-                  {
-                    "id": "minecraft:firework_rocket",
-                    "components": {
-                      "custom_data": {
-                        "nova_rocket": {
-                          "firework_rocket": true
-                        }
-                      },
-                      "minecraft:custom_model_data": {
-                        "floats": [
-                          3
-                        ]
-                      },
-                      "minecraft:fireworks": {
-                        "explosions": [
-                          {
-                            "shape": "small_ball",
-                            "colors": [
-                              15790320
-                            ],
-                            "fade_colors": [
-                              11743532,
-                              3887386,
-                              2437522,
-                              8073150,
-                              2651799,
-                              14188952,
-                              4312372,
-                              14602026,
-                              6719955,
-                              12801229,
-                              15435844
-                            ],
-                            "has_trail": true,
-                            "has_twinkle": true
-                          }
-                        ],
-                        "flight_duration": 2
-                      }
-                    }
-                  }
-                ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/neutral_items"
-                }
-              ]
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

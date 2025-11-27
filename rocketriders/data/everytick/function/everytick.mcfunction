@@ -16,6 +16,9 @@ scoreboard players add $periodic_tick.5 global 1
 scoreboard players operation $periodic_tick.5 global %= $5 constant
 
 ## Handle events and flags
+# force_mount tag is used by the CK plugin to prevent dismounting
+tag @a[x=0] remove force_mount
+
 # Joining/leaving
 scoreboard players operation $previous_players_online var = $players_online global
 execute store result score $players_online global if entity @a[x=0,predicate=!custom:just_joined_world]

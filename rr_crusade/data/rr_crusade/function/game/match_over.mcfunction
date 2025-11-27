@@ -1,4 +1,5 @@
 clear @a[x=0,predicate=custom:team/any_playing_team] #custom:clear
+clear @a[x=0,predicate=custom:team/any_playing_team] enchanted_book
 clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"nova_rocket"}]
 clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"booster_rocket"}]
 

@@ -1,7 +1,9 @@
 scoreboard players reset * gamemode_components
 scoreboard players set $armor/generic gamemode_components 1
-scoreboard players set $settings_locked gamemode_components 1
+scoreboard players set $config_override.wind_down gamemode_components 1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
+scoreboard players set $no_feathered_vortices gamemode_components 1
+scoreboard players set $duel_settings_locked gamemode_components 1
 
 tag @s remove switchGamemodes
 
@@ -9,12 +11,9 @@ function gamemodes:storesettings
 function modifiers:disablemodifiers
 tag @s add customBossbar
 tag @s add duelEnabled
-tag @s add SurpriseEggOff
 tag @s add tyingOff
 tag @s add customLeaveHandling
 tag @s add featheredOff
-tag @s add WindDownForce
-tag @s add WindDown
 
 #Item giving time
 scoreboard players set @s MaxItemSec 15

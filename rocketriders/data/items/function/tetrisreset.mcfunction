@@ -29,11 +29,11 @@ tag @s remove givenBolt
 tag @s remove givenAllLightning
 
 #Special
-tag @s[tag=!ChaosOff] remove givenBroad
-tag @s[tag=!ChaosOff] remove givenBull
-tag @s[tag=!ChaosOff] remove givenDuplex
-tag @s[tag=!ChaosOff] remove givenHyper
-tag @s[tag=!ChaosOff] remove givenAllSpecial
+execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenBroad
+execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenBull
+execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenDuplex
+execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenHyper
+execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenAllSpecial
 
 #Utility
 tag @s remove givenCanopy
@@ -50,6 +50,6 @@ tag @s remove givenShieldTwice
 tag @s remove givenAllUtil
 
 #Hotfix for Minute Mix giving duplicate arrows/fireballs/shields
-execute if entity @s[tag=Minute] run tag @s add givenArrows
-execute if entity @s[tag=Minute] run tag @s add givenFireball
-execute if entity @s[tag=Minute] run tag @s add givenShield
+execute if predicate game:modifiers/minute_mix/on run tag @s add givenArrows
+execute if predicate game:modifiers/minute_mix/on run tag @s add givenFireball
+execute if predicate game:modifiers/minute_mix/on run tag @s add givenShield

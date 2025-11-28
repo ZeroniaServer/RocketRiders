@@ -2,6 +2,7 @@ scoreboard players reset * gamemode_components
 scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $config_override.collision_control gamemode_components -1
 scoreboard players set $config_override.disable_team_balancing gamemode_components 1
+scoreboard players set $config_override.item_stacking gamemode_components 1
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $custom_team_colors gamemode_components 1
 scoreboard players set $friendly_fire gamemode_components 1
@@ -21,10 +22,6 @@ tag @s add customEnds
 tag @s add customBossbar
 tag @s add leaveYSpawn
 # tag @s add arrowLimit
-tag @s[tag=!doStacking] add stackingWasOff
-tag @s add doStacking
-tag @s add stackingOn
-tag @s add onlyBlue
 tag @s add antigriefOff
 
 #enable arrows/utilities

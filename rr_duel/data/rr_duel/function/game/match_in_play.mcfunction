@@ -20,9 +20,9 @@ function game:cancelblue
 
 #Item RNG
 execute unless predicate game:game_paused run scoreboard players add @s RandomItem 1
-execute unless predicate game:game_paused if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
-execute unless predicate game:game_paused if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-execute unless predicate game:game_paused if entity @s[tag=Minute] run function items:minutemix
+execute unless predicate game:game_paused unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function items:giverandom
+execute unless predicate game:game_paused unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
+execute unless predicate game:game_paused if predicate game:modifiers/minute_mix/on run function items:minutemix
 
 #win
 execute unless predicate game:game_paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] if function game:check/blue_portal_broken run function rr_duel:game/winyellow
@@ -56,9 +56,7 @@ execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInYellow,
 scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1
 execute if entity @s[tag=TimeOut] run kill @e[x=0,type=tnt]
 execute if entity @s[tag=TimeOut] if predicate game:modifiers/punchable_tnt/on run kill @e[x=0,predicate=entities:type/punchable_tnt]
-execute if entity @s[tag=TimeOut] unless predicate game:game_paused run clear @a[x=0,predicate=custom:team/any_playing_team] #custom:clear
-execute if entity @s[tag=TimeOut] unless predicate game:game_paused run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"nova_rocket"}]
-execute if entity @s[tag=TimeOut] unless predicate game:game_paused run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"booster_rocket"}]
+execute if entity @s[tag=TimeOut] unless predicate game:game_paused as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if entity @s[tag=TimeOut] unless predicate game:game_paused run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute if entity @s[tag=TimeOut] unless predicate game:game_paused run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 tag @s[tag=TimeOut] add noAchievements

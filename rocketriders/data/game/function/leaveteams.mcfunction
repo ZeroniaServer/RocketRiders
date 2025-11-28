@@ -19,7 +19,7 @@ title @a[x=0,tag=LeaveTeams] subtitle [""]
 tp @a[x=0,tag=LeavingYellow] -78 204 92 45 0
 tp @a[x=0,tag=LeavingBlue] -78 204 64 135 0
 tp @a[x=0,tag=LeavingSpec] -43 212 78 90 0
-clear @a[x=0,tag=!WasInLobby,tag=LeaveTeams]
+execute as @a[x=0,tag=!WasInLobby,tag=LeaveTeams] run function custom:reset_inventory
 effect clear @a[x=0,tag=!WasInLobby,tag=LeaveTeams]
 effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] instant_health 1 100 true
 effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] resistance infinite 100 true

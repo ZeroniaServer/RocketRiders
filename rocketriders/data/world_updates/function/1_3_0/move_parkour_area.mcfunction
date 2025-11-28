@@ -36,7 +36,9 @@ fill 70 197 99 64 197 105 minecraft:black_concrete strict
 fill 36 196 -6 95 186 123 minecraft:black_concrete hollow
 fill 37 196 -5 94 196 122 minecraft:barrier strict
 
-fill 85 203 49 88 207 61 minecraft:waxed_lightning_rod[facing=down] replace #minecraft:lightning_rods
+fill 85 203 49 88 207 61 minecraft:waxed_lightning_rod[facing=down] replace #minecraft:lightning_rods strict
+setblock 83 208 39 minecraft:waxed_lightning_rod[facing=down] strict
+setblock 79 213 69 minecraft:waxed_lightning_rod[facing=down] strict
 
 setblock 65 206 -1 minecraft:light[level=15] strict
 setblock 65 209 3 minecraft:light[level=15] strict

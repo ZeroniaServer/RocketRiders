@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
-  "title": "RR Dev: Quick Actions",
-  "external_title": "Developer Actions...",
+  "title": "RR Developer Actions: Server Mode",
+  "external_title": "Server Mode...",
   "exit_action": {
     "label": "Back",
     "action": {
@@ -19,7 +19,7 @@
       }
     },
     {
-      "label": "Realms Mode",
+      "label": "Realms",
       "tooltip": "As if playing on Realms.",
       "action": {
         "type": "minecraft:run_command",

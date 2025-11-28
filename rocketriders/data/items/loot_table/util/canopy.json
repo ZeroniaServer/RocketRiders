@@ -13,6 +13,13 @@
                 "minecraft:custom_data": {
                   "id": "canopy"
                 },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "rocketriders",
+                    "canopy",
+                    "none"
+                  ]
+                },
                 "minecraft:max_stack_size": 64,
                 "minecraft:item_name": [
                   {
@@ -57,12 +64,7 @@
                     "text": "Canopy",
                     "color": "blue"
                   }
-                ],
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    1
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {
@@ -91,12 +93,7 @@
                     "text": "Canopy",
                     "color": "gold"
                   }
-                ],
-                "minecraft:custom_model_data": {
-                  "floats": [
-                    2
-                  ]
-                }
+                ]
               },
               "conditions": [
                 {
@@ -111,6 +108,10 @@
                   "name": "custom:team/yellow"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

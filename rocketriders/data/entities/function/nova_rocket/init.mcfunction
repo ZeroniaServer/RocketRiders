@@ -12,8 +12,8 @@ data modify entity @s CustomName set from storage rocketriders:main nova_rocket.
 data merge entity @s {LifeTime:30}
 
 ## Achievements
-execute on origin run advancement grant @s only achievements:rr_challenges/veteran NovaSpawned
-execute on origin run tag @s add NovaSpawned
+execute if predicate game:achievements_can_be_awarded on origin run advancement grant @s only achievements:rr_challenges/veteran NovaSpawned
+execute if predicate game:achievements_can_be_awarded on origin run tag @s add NovaSpawned
 
 ## Summon brain
 tag @s add nova_rocket.this

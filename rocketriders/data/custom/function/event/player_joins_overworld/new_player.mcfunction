@@ -5,7 +5,7 @@ gamemode adventure @s
 scoreboard players set @s LeaveGame 1
 
 #Handle achievements
-execute if predicate rr:has_achievements run function achievements:roots
+execute if predicate game:achievements_can_be_awarded run function achievements:roots
 execute if predicate rr:server_mode/realms run advancement grant @s only 2811iaj1:root
 
 #Welcome message

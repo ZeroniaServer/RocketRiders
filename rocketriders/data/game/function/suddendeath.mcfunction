@@ -26,15 +26,12 @@ execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_all_canopies
 execute if entity @s[scores={SDtime=1..2}] run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute if entity @s[scores={SDtime=1..2}] run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
-execute if entity @s[scores={SDtime=1},tag=!NoFall] run gamerule minecraft:fall_damage true
+execute if entity @s[scores={SDtime=1}] unless predicate game:modifiers/no_fall_damage/on run gamerule minecraft:fall_damage true
 execute if entity @s[scores={SDtime=1}] run effect clear @a[x=0] resistance
 execute if entity @s[scores={SDtime=1}] run effect clear @a[x=0] weakness
 execute if entity @s[scores={SDtime=1}] run effect clear @a[x=0] regeneration
-execute if entity @s[scores={SDtime=1}] run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"celebratory_fireworks"}]
-execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:return_thrown_items
-execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_inventory
 execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
-execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function items:give_main_item
+execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if entity @s[scores={SDtime=1}] run effect give @a[x=0,predicate=custom:team/any_arena_team] blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] run effect clear @a[x=0,predicate=custom:team/any_arena_team] blindness
 execute if entity @s[scores={SDtime=1}] run scoreboard players reset $match_over global
@@ -49,11 +46,11 @@ execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon
 #For Premature Celebration achievement
-execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=BlueWonFirst] run advancement grant @a[x=0,predicate=custom:team/blue] only achievements:rr_challenges/premature
+execute if predicate game:achievements_can_be_awarded if entity @s[scores={SDtime=1},tag=BlueWonFirst] run advancement grant @a[x=0,predicate=custom:team/blue] only achievements:rr_challenges/premature
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] as @a[x=0,predicate=custom:team/blue] run function custom:update_armor
 execute if entity @s[scores={SDtime=1},tag=BlueWonFirst] run item replace entity @a[x=0,predicate=custom:team/yellow] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWonFirst
-execute if predicate rr:has_achievements if entity @s[scores={SDtime=1},tag=YellowWonFirst] run advancement grant @a[x=0,predicate=custom:team/yellow] only achievements:rr_challenges/premature
+execute if predicate game:achievements_can_be_awarded if entity @s[scores={SDtime=1},tag=YellowWonFirst] run advancement grant @a[x=0,predicate=custom:team/yellow] only achievements:rr_challenges/premature
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] as @a[x=0,predicate=custom:team/yellow] run function custom:update_armor
 execute if entity @s[scores={SDtime=1},tag=YellowWonFirst] run item replace entity @a[x=0,predicate=custom:team/blue] armor.head with air
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWonFirst
@@ -62,7 +59,7 @@ scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /
 scoreboard players set @s[scores={SDtime=1,MaxItemTime=..1}] MaxItemTime 2
 execute if entity @s[scores={SDtime=1}] run scoreboard players set @s RandomItem -3
 execute if entity @s[scores={SDtime=1}] run scoreboard players operation @s RandomItem += @s MaxItemTime
-execute if entity @s[scores={SDtime=1}] run scoreboard players set @s[tag=Minute] RandomItem 1197
+execute if entity @s[scores={SDtime=1}] if predicate game:modifiers/minute_mix/on run scoreboard players set @s RandomItem 1197
 execute if entity @s[scores={SDtime=10}] as @a[x=0,predicate=!custom:team/lobby] at @s run playsound minecraft:entity.zombie.attack_iron_door master @s ~ ~ ~ 100 1.3
 
 ##Places back portals

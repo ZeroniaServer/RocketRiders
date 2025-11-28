@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "shooting_saber"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "shooting_saber",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "translate": "Shooting Saber",
                   "bold": true,
@@ -185,6 +193,10 @@
                   "name": "items:shooting_saber/multishot"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

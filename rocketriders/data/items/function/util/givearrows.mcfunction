@@ -1,10 +1,10 @@
 ##Gives executor Arrows
 #Antidupe check - Arrows are an exception for stacking in modes that limit arrows.
 execute store result score @s[tag=!itemDeducted] HasArrows run clear @s arrow 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking,tag=!arrowLimit] run scoreboard players operation @s HasArrows %= $64 constant
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking,tag=!arrowLimit] if entity @s[scores={HasArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking,tag=!arrowLimit] run scoreboard players set @s HasArrows 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!doStacking] if entity @s[scores={HasArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
+execute if predicate game:game_rules/item_stacking/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!arrowLimit] run scoreboard players operation @s HasArrows %= $64 constant
+execute if predicate game:game_rules/item_stacking/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!arrowLimit] if entity @s[scores={HasArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if predicate game:game_rules/item_stacking/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!arrowLimit] run scoreboard players set @s HasArrows 0
+execute unless predicate game:game_rules/item_stacking/on if entity @s[scores={HasArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving
 title @s[scores={HasArrows=4..},tag=!fullHotbar,predicate=!items:shooting_saber/infinity] actionbar {"text":"Arrows already obtained.","color":"aqua"}

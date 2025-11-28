@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "celebratory_elytra"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "celebratory_elytra",
+                    "none"
+                  ]
+                },
                 "minecraft:equippable": {
                   "slot": "chest",
                   "damage_on_hurt": false,
@@ -82,6 +90,10 @@
                   "name": "custom:team/yellow"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

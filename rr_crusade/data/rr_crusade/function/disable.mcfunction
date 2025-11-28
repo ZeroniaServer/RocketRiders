@@ -4,18 +4,8 @@ tag @s remove crusadeEnabled
 function arenaclear:unlockdecos
 tag @s remove portalDecosOff
 tag @s remove customPrevention
-tag @s remove featheredOff
 tag @s remove arrowLimit
-tag @s[tag=stackingWasOff] remove doStacking
-tag @s remove stackingWasOff
-tag @s remove stackingOn
 tag @s remove SuddenDeathCustom
-tag @s remove SurpriseEggOff
-tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
-tag @s remove SurpriseEggWasOn
-tag @s remove ChaosOff
-tag @s[tag=ChaosWasOn] add Chaos
-tag @s remove ChaosWasOn
 tag @s remove portalOverride
 scoreboard players reset @a[x=0] crusadechange
 

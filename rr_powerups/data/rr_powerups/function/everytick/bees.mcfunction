@@ -1,21 +1,23 @@
-#Bees teams/angry
+# Bees teams/angry
 execute as @e[x=0,type=bee,tag=!beeChecked,tag=BlueBee] run function custom:team/join_blue
 execute as @e[x=0,type=bee,tag=!beeChecked,tag=YellowBee] run function custom:team/join_yellow
 execute as @e[x=0,type=bee,tag=!beeChecked] run attribute @s minecraft:follow_range base set 100
 execute as @e[x=0,type=bee,tag=!beeChecked] run data modify entity @s anger_end_time set value 0
 tag @e[x=0,type=bee,tag=!beeChecked] add beeChecked
 
-scoreboard players set @e[x=0,type=bee] CmdData 0
-execute as @e[x=0,type=bee,predicate=custom:team/blue] store success score @s CmdData on target if entity @s[predicate=custom:team/yellow]
-execute as @e[x=0,type=bee,predicate=custom:team/yellow] store success score @s CmdData on target if entity @s[predicate=custom:team/blue]
-execute as @e[x=0,type=bee,scores={CmdData=0}] run data modify entity @s anger_end_time set value 0
-execute as @e[x=0,type=bee,predicate=custom:team/blue,scores={CmdData=0}] run damage @s 0.00001 arrow by @p[predicate=custom:indimension,predicate=custom:team/yellow]
-execute as @e[x=0,type=bee,predicate=custom:team/yellow,scores={CmdData=0}] run damage @s 0.00001 arrow by @p[predicate=custom:indimension,predicate=custom:team/blue]
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/blue,predicate=!custom:angry_at_yellow_team] at @s run damage @s 0.00001 minecraft:player_attack by @p[predicate=custom:in_arena,predicate=custom:team/yellow]
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/yellow,predicate=!custom:angry_at_blue_team] at @s run damage @s 0.00001 minecraft:player_attack by @p[predicate=custom:in_arena,predicate=custom:team/blue]
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/blue,predicate=custom:angry_at_blue_team] run data modify entity @s anger_end_time set value 0
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/yellow,predicate=custom:angry_at_yellow_team] run data modify entity @s anger_end_time set value 0
 
-execute as @e[x=0,type=bee,predicate=custom:bee_anger_periodic_tick] run data modify entity @s anger_end_time set value 9223372036854775807L
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:bee_anger_periodic_tick] run data modify entity @s anger_end_time set value 9223372036854775807L
 
-#kill bees that have stung
-kill @e[x=0,type=bee,nbt={HasStung:1b}]
+# kill bees that have stung
+kill @e[x=0,type=bee,predicate=custom:in_arena,nbt={HasStung:1b}]
 
-#kill bees that are in the void
-execute as @e[x=0,type=bee,predicate=rr_powerups:bee_void] run function custom:kill_mob_discretely
+# kill bees that are in the void
+execute as @e[x=0,type=bee,predicate=custom:in_void] run function custom:kill_mob_discretely
+
+# limit the number of bees in the arena (sandbox precaution)
+execute store result score $bee_count var if entity @e[x=0,type=bee,predicate=custom:in_arena]
+execute if score $bee_count var matches 31.. as @e[limit=1,sort=random,x=0,type=bee,predicate=custom:in_arena] run function custom:kill_mob_discretely

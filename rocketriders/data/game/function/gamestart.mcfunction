@@ -50,7 +50,7 @@ execute unless predicate game:match_in_play if predicate game:modifiers/hardcore
 execute unless predicate game:match_in_play if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
 execute unless predicate game:match_in_play if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run function modifiers:long_arms/set
 execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
-execute as @a[x=0,tag=JoinBlue] run function items:give_main_item
+execute as @a[x=0,tag=JoinBlue] run function custom:reset_inventory
 execute unless predicate game:match_in_play run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
 execute unless predicate game:match_in_play unless predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
 execute unless predicate game:match_in_play unless predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the blue team!","color":"red"}]
@@ -66,13 +66,17 @@ execute if predicate game:match_in_play if predicate game:gamemode_components/on
 execute if predicate game:match_in_play if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the game! A late arrival, unfortunately.","color":"red"}]
 execute if predicate game:match_in_play as @a[x=0,tag=JoinBlue] run function game:notify_join
 execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,predicate=custom:team/blue,gamemode=adventure]
+execute unless predicate game:match_in_play run gamemode adventure @a[x=0,tag=JoinBlue]
+execute if predicate game:match_in_play if predicate game:game_paused run gamemode adventure @a[x=0,tag=JoinBlue]
+execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,tag=JoinBlue]
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=JoinBlue] resistance
+effect clear @a[x=0,tag=JoinBlue] invisibility
 execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinBlue] run title @s actionbar ""
 #Achievement keybind tutorial
-execute if predicate rr:has_achievements if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
-execute if predicate rr:has_achievements if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
-execute if predicate rr:has_achievements as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tag @s add achievementInformed
+execute if predicate game:achievements_can_be_awarded if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
+execute if predicate game:achievements_can_be_awarded if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
+execute if predicate game:achievements_can_be_awarded as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tag @s add achievementInformed
 execute if entity @a[x=0,tag=JoinBlue] run function lobby:cancelsettings/reset
 
 ##Yellow Join Pad
@@ -93,7 +97,7 @@ execute unless predicate game:match_in_play if predicate game:modifiers/hardcore
 execute unless predicate game:match_in_play if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set
 execute unless predicate game:match_in_play if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinYellow] run function modifiers:long_arms/set
 execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
-execute as @a[x=0,tag=JoinYellow] run function items:give_main_item
+execute as @a[x=0,tag=JoinYellow] run function custom:reset_inventory
 execute unless predicate game:match_in_play run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
 execute unless predicate game:match_in_play as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
 execute unless predicate game:match_in_play run tellraw @a[x=0,tag=JoinYellow] {"text":"Fall off the base to return to the Lobby.","color":"gold","italic":true}
@@ -102,12 +106,16 @@ execute if predicate game:match_in_play run tp @a[x=0,tag=JoinYellow] 12 64 66 1
 execute if predicate game:match_in_play as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team! A late arrival, unfortunately.","color":"yellow"}]
 execute if predicate game:match_in_play as @a[x=0,tag=JoinYellow] run function game:notify_join
 execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,predicate=custom:team/yellow,gamemode=adventure]
+execute unless predicate game:match_in_play run gamemode adventure @a[x=0,tag=JoinYellow]
+execute if predicate game:match_in_play if predicate game:game_paused run gamemode adventure @a[x=0,tag=JoinYellow]
+execute if predicate game:match_in_play unless predicate game:game_paused run gamemode survival @a[x=0,tag=JoinYellow]
 execute if predicate game:match_in_play run effect clear @a[x=0,tag=JoinYellow] resistance
+effect clear @a[x=0,tag=JoinYellow] invisibility
 execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinYellow] run title @s actionbar ""
 #Achievement keybind tutorial
-execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
-execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tag @s add achievementInformed
+execute if predicate game:achievements_can_be_awarded as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
+execute if predicate game:achievements_can_be_awarded as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tag @s add achievementInformed
 execute if entity @a[x=0,tag=JoinYellow] run function lobby:cancelsettings/reset
 
 ##Join pad + Leave pad Spectator
@@ -123,7 +131,7 @@ execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] run tag @a[
 execute as @e[x=0,type=marker,tag=join_pad.spectator] at @s run tag @a[predicate=custom:team/spectator,distance=..1] add AlreadySpec
 execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] run tag @a[x=0] remove AlreadySpec
 execute as @a[x=0,tag=JoinSpec] run function custom:team/join_spectator
-clear @a[x=0,tag=JoinSpec]
+clear @a[x=0,tag=JoinSpec] *
 scoreboard players enable @a[x=0,predicate=custom:team/spectator] leaveSpec
 tag @a[x=0,scores={leaveSpec=1..}] add LeaveTeams
 scoreboard players reset @a[x=0,predicate=!custom:team/spectator] leaveSpec
@@ -135,10 +143,12 @@ execute unless predicate game:game_running run tp @a[x=0,tag=JoinSpec] -95 213 7
 execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinSpec] run title @s actionbar ""
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the game!","color":"gray"}]
-execute if entity @s[tag=Sonar] if predicate game:game_running as @a[x=0,tag=JoinSpec] run tellraw @s [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
+execute if predicate game:game_running if predicate game:modifiers/sonar/on as @a[x=0,tag=JoinSpec] run tellraw @s [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
 execute if predicate rr:enable_spectator_leave_cloud run title @a[x=0,predicate=custom:team/spectator] actionbar {"text":"Fly into the green particle cluster to stop spectating!","color":"green","bold":true}
 execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run title @a[x=0,predicate=custom:team/spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
 execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run title @a[x=0,predicate=custom:team/spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/trigger leaveSpec","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
+execute if predicate game:game_running run gamemode spectator @a[x=0,tag=JoinSpec]
+execute unless predicate game:game_running run gamemode adventure @a[x=0,tag=JoinSpec]
 tag @a[x=0] remove JoinSpec
 tp @a[x=0,tag=AlreadySpec] 12 100 0.5 90 90
 execute as @a[x=0,tag=AlreadySpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
@@ -156,7 +166,6 @@ execute if predicate rr:enable_spectator_leave_cloud unless predicate game:match
 execute unless predicate game:game_running as @a[x=0,predicate=custom:team/spectator] unless entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s -95 213 78 -90 90
 execute if predicate game:game_running as @a[x=0,predicate=custom:team/spectator] if entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s 12 100 0.5 90 90
 
-execute unless predicate game:game_running run gamemode adventure @a[x=0,predicate=custom:team/spectator,gamemode=adventure]
 effect give @a[x=0,predicate=custom:team/spectator] invisibility infinite 0 true
 
 ##Disable knockback in pre-game queue

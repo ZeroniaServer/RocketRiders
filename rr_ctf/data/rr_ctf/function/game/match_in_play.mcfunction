@@ -4,16 +4,16 @@ execute unless predicate rr:is_cubekrowd run function rr_ctf:game/leavemidgame
 #Item RNG
 tag @s add givenCanopy
 scoreboard players add @s RandomItem 1
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_ctf:items/giverandom
-execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-execute if entity @s[tag=Minute] run function rr_ctf:items/minutemix
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function rr_ctf:items/giverandom
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
+execute if predicate game:modifiers/minute_mix/on run function rr_ctf:items/minutemix
 
 #endstone regeneration
 execute as @e[x=0,type=marker,tag=airDetectBlue,limit=1] at @s run function rr_ctf:everytick/airdetectblue
 execute as @e[x=0,type=marker,tag=airDetectYellow,limit=1] at @s run function rr_ctf:everytick/airdetectyellow
 
 #Overtime sudden death
-execute if score $game_duration global matches 36000 as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doTying] run tag @s add CTFOvertime
+execute if score $game_duration global matches 36000 unless predicate game:game_rules/disable_tying/on run tag @s add CTFOvertime
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CTFOvertime] run function rr_ctf:everytick/overtime
 
 #custom prevention message

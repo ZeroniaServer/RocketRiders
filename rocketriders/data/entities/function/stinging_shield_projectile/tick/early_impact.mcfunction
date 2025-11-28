@@ -10,9 +10,9 @@ execute if predicate custom:nearvoid run return run function entities:stinging_s
 execute if entity @s[y=175,dy=100] run return run function entities:stinging_shield_projectile/actions/break
 execute unless predicate custom:insideborder run return run function entities:stinging_shield_projectile/actions/break
 
-execute at @s unless predicate entities:stinging_shield_can_be_deployed run return run function entities:stinging_shield_projectile/actions/break
+execute at @s positioned ~ ~2 ~ unless predicate entities:stinging_shield_can_be_deployed positioned as @s run return run function entities:stinging_shield_projectile/actions/break
+execute at @s run tp ~ ~2 ~
 
 # Re-initialise as a "stinging_shield" entity
 data remove entity @s data.stinging_shield_projectile
-execute at @s run tp ~ ~2 ~
 execute at @s run function entities:stinging_shield/init

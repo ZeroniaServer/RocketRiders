@@ -104,6 +104,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove fbPortalsOff
 execute if data storage rocketriders:storage {Tags:["doFireballPortals"]} run data modify storage rocketriders:storage config.snipe_portals set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"doFireballPortals"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"fbPortalsOff"}
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] unless entity @s[tag=doTying,tag=!tyingOff] run scoreboard players set $disable_tying config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove doTying
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove tyingOff
+execute unless data storage rocketriders:storage {Tags:["doTying"]} run data modify storage rocketriders:storage config.disable_tying set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"doTying"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"tyingOff"}
 # Updating modifiers
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive] run scoreboard players set $explosive config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Explosive
@@ -137,16 +143,77 @@ function world_updates:1_3_0/remove_tag_from_storage_list {tag:"CollisionControl
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"CollisionControlWasOn"}
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Hardcore] run scoreboard players set $hardcore config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Hardcore
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Hardcore
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove HardcoreWasOn
 execute if data storage rocketriders:storage {Tags:["Hardcore"]} run data modify storage rocketriders:storage config.hardcore set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Hardcore"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"HardcoreWasOn"}
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=DoublePortal] run scoreboard players set $double_portal config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove DoublePortal
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove DoublePortal
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove DoublePortalWasOn
 execute if data storage rocketriders:storage {Tags:["DoublePortal"]} run data modify storage rocketriders:storage config.double_portal set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"DoublePortal"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"DoublePortalWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Chaos] run scoreboard players set $special_treatment config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Chaos
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ChaosWasOn
+execute if data storage rocketriders:storage {Tags:["Chaos"]} run data modify storage rocketriders:storage config.special_treatment set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Chaos"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"ChaosWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NinjaJump] run scoreboard players set $ninja_jump config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJump
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJumpWasOn
+execute if data storage rocketriders:storage {Tags:["NinjaJump"]} run data modify storage rocketriders:storage config.ninja_jump set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NinjaJump"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NinjaJumpWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SpamClick] run scoreboard players set $spam_click config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClick
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClickWasOn
+execute if data storage rocketriders:storage {Tags:["SpamClick"]} run data modify storage rocketriders:storage config.spam_click set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SpamClick"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SpamClickWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SplashStreams] run scoreboard players set $splash_streams config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SplashStreams
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SplashStreamsWasOn
+execute if data storage rocketriders:storage {Tags:["SplashStreams"]} run data modify storage rocketriders:storage config.splash_streams set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SplashStreams"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SplashStreamsWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SurpriseEgg] run scoreboard players set $surprise_eggs config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEgg
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEggWasOn
+execute if data storage rocketriders:storage {Tags:["SurpriseEgg"]} run data modify storage rocketriders:storage config.surprise_eggs set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SurpriseEgg"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SurpriseEggWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Minute] run scoreboard players set $minute_mix config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Minute
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MinuteWasOn
+execute if data storage rocketriders:storage {Tags:["Minute"]} run data modify storage rocketriders:storage config.minute_mix set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Minute"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"MinuteWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Sonar] run scoreboard players set $sonar config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Sonar
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SonarWasOn
+execute if data storage rocketriders:storage {Tags:["Sonar"]} run data modify storage rocketriders:storage config.sonar set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Sonar"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"SonarWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NoFall] run scoreboard players set $no_fall_damage config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFall
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFallWasOn
+execute if data storage rocketriders:storage {Tags:["NoFall"]} run data modify storage rocketriders:storage config.no_fall_damage set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NoFall"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"NoFallWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Instamine] run scoreboard players set $instamine config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Instamine
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove InstamineWasOn
+execute if data storage rocketriders:storage {Tags:["Instamine"]} run data modify storage rocketriders:storage config.instamine set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"Instamine"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"InstamineWasOn"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WindDown] run scoreboard players set $wind_down config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDown
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDownWasOn
+execute if data storage rocketriders:storage {Tags:["WindDown"]} run data modify storage rocketriders:storage config.wind_down set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"WindDown"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"WindDownWasOn"}
+
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $custom_team_colors gamemode_components 1
@@ -156,12 +223,37 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customShield
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove custVortParticle
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] run scoreboard players set $no_portals gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPortal
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $settings_locked gamemode_components 1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $duel_settings_locked gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customVoid] run scoreboard players set $lower_void gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customVoid
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] run scoreboard players set $one_team gamemode_components 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove onlyBlue
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ChaosOff] run scoreboard players set $config_override.special_treatment gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ChaosOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NinjaJumpOff] run scoreboard players set $config_override.ninja_jump gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJumpOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SpamClickOff] run scoreboard players set $config_override.spam_click gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClickOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SplashStreamsOff] run scoreboard players set $config_override.splash_streams gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SplashStreamsOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SurpriseEggOff] run scoreboard players set $config_override.surprise_eggs gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEggOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=MinuteOff] run scoreboard players set $config_override.minute_mix gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MinuteOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SonarOff] run scoreboard players set $config_override.sonar gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SonarOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NoFallOff] run scoreboard players set $config_override.no_fall_damage gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFallOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=InstamineOff] run scoreboard players set $config_override.instamine gamemode_components -1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove InstamineOff
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WindDownOff] run scoreboard players set $config_override.wind_down gamemode_components -1
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WindDownForce] run scoreboard players set $config_override.wind_down gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDownOff
+execute if score $settings_locked gamemode_components matches 1 run scoreboard players set $duel_duel_settings_locked gamemode_components 1
+scoreboard players reset $settings_locked gamemode_components
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=featheredOff,tag=duelEnabled] run scoreboard players set $no_feathered_vortices gamemode_components 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove featheredOff
 # New gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1

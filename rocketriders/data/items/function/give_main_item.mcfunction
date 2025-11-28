@@ -1,8 +1,4 @@
-clear @s *[custom_data~{id:"shooting_saber"}]
-clear @s *[custom_data~{id:"piercing_pickaxe"}]
-clear @s *[custom_data~{id:"rocket_nomicon"}]
-clear @s *[custom_data~{id:"knight_sword"}]
-clear @s *[custom_data~{id:"mage_wand"}]
+clear @s *[custom_data~{id:"shooting_saber"}|custom_data~{id:"piercing_pickaxe"}|custom_data~{id:"rocket_nomicon"}|custom_data~{id:"knight_sword"}|custom_data~{id:"mage_wand"}]
 
 loot replace block 0 184 -16 container.0 27 loot custom:empty
 execute if items entity @s hotbar.0 * run item replace block 0 184 -16 container.0 from entity @s hotbar.0

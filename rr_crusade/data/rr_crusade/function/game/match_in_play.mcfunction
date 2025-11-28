@@ -14,10 +14,10 @@ function rr_crusade:arenaclear/pathways
 
 #Item RNG
 scoreboard players add @s RandomItem 1
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/archer] run function rr_crusade:items/util/givearrows
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function rr_crusade:items/giverandom
-execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-execute if entity @s[tag=Minute] run function rr_crusade:items/minutemix
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/archer] run function rr_crusade:items/util/givearrows
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function rr_crusade:items/giverandom
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
+execute if predicate game:modifiers/minute_mix/on run function rr_crusade:items/minutemix
 
 #custom prevention message
 execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portal or bedrock.","color":"red"}]

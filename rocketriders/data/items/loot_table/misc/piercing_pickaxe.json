@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "piercing_pickaxe"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "piercing_pickaxe",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "translate": "Piercing Pickaxe",
                   "bold": true,
@@ -51,23 +59,6 @@
                     "id": "rocketriders:piercing_pickaxe"
                   }
                 ],
-                "minecraft:tool": {
-                  "rules": [
-                    {
-                      "blocks": "minecraft:obsidian",
-                      "speed": 1e-45
-                    },
-                    {
-                      "blocks": "#minecraft:incorrect_for_netherite_tool",
-                      "correct_for_drops": false
-                    },
-                    {
-                      "blocks": "#minecraft:mineable/pickaxe",
-                      "correct_for_drops": true,
-                      "speed": 9
-                    }
-                  ]
-                },
                 "minecraft:can_break": {
                   "blocks": "#custom:glass"
                 },
@@ -197,6 +188,10 @@
                   "name": "game:gamemode_components/custom_team_colors"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

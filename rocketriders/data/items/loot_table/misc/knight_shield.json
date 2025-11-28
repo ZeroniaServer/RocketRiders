@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "knight_shield"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "knight_shield",
+                    "none"
+                  ]
+                },
                 "minecraft:max_damage": 10,
                 "minecraft:item_name": {
                   "text": "Knight Shield",
@@ -160,6 +168,10 @@
                   "name": "custom:team/yellow"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

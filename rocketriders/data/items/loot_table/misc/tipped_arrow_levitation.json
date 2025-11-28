@@ -15,6 +15,14 @@
                   "Droppable": true,
                   "tipped_arrow_type": "levitation"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "tipped_arrow_levitation",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "text": "Levitation Arrow",
                   "bold": true,
@@ -36,12 +44,12 @@
                     }
                   ]
                 },
-                "minecraft:tooltip_display": {
-                  "hidden_components": [
-                    "minecraft:potion_contents"
-                  ]
-                }
+                "!minecraft:potion_duration_scale": {}
               }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

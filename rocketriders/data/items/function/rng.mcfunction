@@ -4,17 +4,17 @@
 #########################################
 
 ##Choose between Missile and Utility (Missile is always first item)
-execute if entity @s[tag=!Chaos] unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
-execute if entity @s[tag=!Chaos] unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
-execute if entity @s[tag=Chaos] unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
-execute if entity @s[tag=Chaos] unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
+execute unless predicate game:modifiers/special_treatment/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
+execute unless predicate game:modifiers/special_treatment/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
+execute if predicate game:modifiers/special_treatment/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
+execute if predicate game:modifiers/special_treatment/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
 execute if entity @s[tag=rngUtil,tag=!utilOff] unless entity @s[tag=givenAllUtil] unless entity @s[tag=!gaveFirstItem] run summon marker 0 0 0 {Tags:["rngUtil","rng1"]}
 
 ##Surprise Egg modifier - summons extra Missile/Utility AECs to make Surprise Eggs rarer
-execute if entity @s[tag=SurpriseEgg] run summon marker 0 0 0 {Tags:["rngSurprise","rng1"]}
-execute if entity @s[tag=SurpriseEgg,tag=!Chaos] unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
-execute if entity @s[tag=SurpriseEgg,tag=Chaos] unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=!givenAllSpecial] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
-execute if entity @s[tag=rngUtil,tag=!utilOff,tag=SurpriseEgg] unless entity @s[tag=givenAllUtil] unless entity @s[tag=!gaveFirstItem] run summon marker 0 0 0 {Tags:["rngUtil","rng1"]}
+execute if predicate game:modifiers/surprise_eggs/on run summon marker 0 0 0 {Tags:["rngSurprise","rng1"]}
+execute unless predicate game:modifiers/special_treatment/on if predicate game:modifiers/surprise_eggs/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
+execute if predicate game:modifiers/special_treatment/on if predicate game:modifiers/surprise_eggs/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=!givenAllSpecial] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
+execute if predicate game:modifiers/surprise_eggs/on if entity @s[tag=rngUtil,tag=!utilOff] unless entity @s[tag=givenAllUtil] unless entity @s[tag=!gaveFirstItem] run summon marker 0 0 0 {Tags:["rngUtil","rng1"]}
 
 ##Select item and run appropriate sub-RNG function
 tag @e[x=0,type=marker,tag=rng1,sort=random,limit=1] add rngSelected
@@ -23,7 +23,7 @@ execute as @e[x=0,type=marker,tag=rngSelected,tag=rngMissile] run function items
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngUtil] run function items:util/rng
 
 ##If Surprise Egg is picked
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if items entity @s contents #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] run function items:deduct
+execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @e[x=0,type=item] if items entity @s contents #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] run function items:deduct
 
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] run function items:full_hotbar
 

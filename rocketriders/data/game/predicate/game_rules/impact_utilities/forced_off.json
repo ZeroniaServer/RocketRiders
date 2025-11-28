@@ -10,7 +10,7 @@
             "type": "minecraft:score",
             "target": {
               "type": "minecraft:fixed",
-              "name": "$settings_locked"
+              "name": "$duel_settings_locked"
             },
             "score": "gamemode_components"
           },
@@ -20,7 +20,7 @@
           "condition": "minecraft:inverted",
           "term": {
             "condition": "minecraft:reference",
-            "name": "rr:server_mode/realms"
+            "name": "rr:default_config/impact_utilities"
           }
         }
       ]

@@ -1,0 +1,16 @@
+[
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "rr:server_mode/vanilla"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "rr:server_mode/cubekrowd_custom"
+    }
+  }
+]

@@ -1,4 +1,6 @@
 ##Any achievements to be given by the official end of the game.
+execute unless predicate game:achievements_can_be_awarded run return 0
+
 #| || || |_
 scoreboard players add @a[x=0,predicate=custom:team/blue,tag=Winner] WinStreak 1
 advancement grant @a[x=0,predicate=custom:team/blue,scores={WinStreak=10..},tag=Loser] only achievements:rr_challenges/loss

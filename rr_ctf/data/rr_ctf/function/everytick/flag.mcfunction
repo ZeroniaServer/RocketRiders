@@ -366,11 +366,11 @@ execute if predicate game:match_in_play unless entity @e[x=0,type=player,predica
 execute if predicate game:match_in_play unless entity @e[x=0,type=player,predicate=custom:team/yellow,tag=CarryFB2] run bossbar set rr_ctf:fb2 players none
 
 #Glowing for flag carriers (blink if Sonar is enabled)
-execute if predicate game:match_in_play unless entity @s[tag=Sonar] run effect clear @a[x=0,tag=!CarryFlag] glowing
-execute if predicate game:match_in_play unless entity @s[tag=Sonar] run effect give @a[limit=1,x=0,tag=CarryFlag] glowing infinite 0 true
-execute if predicate game:match_in_play if entity @s[tag=Sonar] run scoreboard players operation $glowing_period var = $gametime global
-execute if predicate game:match_in_play if entity @s[tag=Sonar] run scoreboard players operation $glowing_period var %= $20 constant
-execute if predicate game:match_in_play if entity @s[tag=Sonar] if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=CarryFlag] glowing
+execute if predicate game:match_in_play unless predicate game:modifiers/sonar/on run effect clear @a[x=0,tag=!CarryFlag] glowing
+execute if predicate game:match_in_play unless predicate game:modifiers/sonar/on run effect give @a[limit=1,x=0,tag=CarryFlag] glowing infinite 0 true
+execute if predicate game:match_in_play if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var = $gametime global
+execute if predicate game:match_in_play if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var %= $20 constant
+execute if predicate game:match_in_play if predicate game:modifiers/sonar/on if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=CarryFlag] glowing
 
 #Flip missile tags
 execute if predicate game:match_in_play run tag @a[x=0,tag=CarryFlag,tag=!FlipMissile] add FlipMissile

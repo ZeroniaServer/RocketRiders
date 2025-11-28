@@ -20,8 +20,8 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] at @s run pla
 execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour,tag=!hideParticles] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
 
 #Remove tags and clear inventory
-execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] run clear @s
 execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] run tag @s remove inParkour
+execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] run function custom:reset_inventory
 execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] run tag @s remove finishedParkour
 
 ##Invisible players within range

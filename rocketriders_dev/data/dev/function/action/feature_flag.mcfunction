@@ -1,0 +1,33 @@
+data modify storage rocketriders:main dev.dialog set value {\
+  "type": "minecraft:notice",\
+  "title": "RR Developer Actions: Feature Flags",\
+  "body": {\
+    "type": "minecraft:plain_message",\
+    "contents": [\
+      "",\
+      ["",{"bold":true,"text":"???"},"\n","Missing description.","\n"],\
+    ],\
+    "width": 400\
+  },\
+  "after_action": "wait_for_response",\
+  "exit_action": {\
+    "label": "Back",\
+    "action": {\
+      "type": "minecraft:show_dialog",\
+      "dialog": "dev:quick_actions/feature_flags"\
+    }\
+  },\
+  "action": {\
+    "label": "Back",\
+    "action": {\
+      "type": "minecraft:show_dialog",\
+      "dialog": "dev:quick_actions/feature_flags"\
+    }\
+  }\
+}
+
+# Colored Portal Frames
+function dev:__impl__/feature_flag/option {name:"Colored Portal Frames",description:"Tint the obsidian around portals to match the team color.",index:0,config_id:"colored_portal_frames"}
+
+# Show Dialog
+function custom:show_dialog with storage rocketriders:main dev

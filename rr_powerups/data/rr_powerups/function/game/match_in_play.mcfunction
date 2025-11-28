@@ -33,9 +33,9 @@ fill 39 63 -67 39 34 -67 obsidian
 
 #Item RNG
 scoreboard players add @s RandomItem 1
-execute if score @s[tag=!Minute] RandomItem = @s[tag=!Minute] MaxItemTime run function items:giverandom
-execute if score @s[tag=!Minute] RandomItem > @s[tag=!Minute] MaxItemTime run scoreboard players set @s RandomItem 1
-execute if entity @s[tag=Minute] run function items:minutemix
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function items:giverandom
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
+execute if predicate game:modifiers/minute_mix/on run function items:minutemix
 
 #powerup RNG
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=1..}] run scoreboard players add @s powerupcount 1

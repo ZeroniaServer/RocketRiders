@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "celebratory_fireworks"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "celebratory_fireworks",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "text": "Celebratory Fireworks",
                   "bold": true,
@@ -167,6 +175,10 @@
                   "name": "custom:team/yellow"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

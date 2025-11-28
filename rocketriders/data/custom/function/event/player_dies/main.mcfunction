@@ -32,7 +32,7 @@ tag @s remove matchOrigin
 
 ## Achievements
 scoreboard players set $can_grant_achievements var 0
-execute if predicate game:match_in_play if predicate rr:has_achievements if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run scoreboard players set $can_grant_achievements var 1
+execute if predicate game:match_in_play if predicate game:achievements_can_be_awarded if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run scoreboard players set $can_grant_achievements var 1
 
 # So Close, Yet So Fall Away (if I am touching the floor of the enemy nether portal, award me)
 execute if score $can_grant_achievements var matches 1 if entity @s[predicate=custom:team/blue,predicate=!custom:not_falling,predicate=custom:on_yellow_half,predicate=custom:standing_on_any_portal] run advancement grant @s only achievements:rr_challenges/fall_away

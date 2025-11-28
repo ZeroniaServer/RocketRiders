@@ -1,11 +1,6 @@
 execute if entity @s[tag=JoinBlue,predicate=rr_crusade:kit/knight] run scoreboard players reset @s crusadekit
 execute if entity @s[tag=JoinYellow,predicate=rr_crusade:kit/knight] run scoreboard players reset @s crusadekit
 
-execute unless entity @s[predicate=rr_crusade:kit/knight] run clear @s
-execute unless entity @s[predicate=rr_crusade:kit/knight] run loot replace entity @s hotbar.0 loot items:misc/knight_sword
-execute unless entity @s[predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
-execute unless entity @s[predicate=rr_crusade:kit/knight] run function custom:update_armor
-
 execute unless entity @s[predicate=rr_crusade:kit/knight] run tellraw @s[predicate=custom:team/blue,tag=!kitknight] ["",{"text":"Selected Kit: ","color":"green"},{"text":"Knight","bold":true,"color":"dark_green"},{"text":"!","color":"green"},"\n",{"text":"‣ ","color":"dark_green"},{"text":"You can obtain: ","color":"gray"},{"text":"Blade","color":"green"},{"text":", ","color":"gray"},{"text":"Gemini","color":"green"},{"text":", ","color":"gray"},{"text":"Auxiliary","color":"red"},{"text":", ","color":"gray"},{"text":"Warhead","color":"red"},{"text":", ","color":"gray"},{"text":"Juggerbuster","color":"red"},{"text":", ","color":"gray"},{"text":"Shield","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Obsidian Shield","color":"light_purple"},{"text":", ","color":"gray"},{"text":"ICBM","color":"light_purple"},"\n",{"text":"‣ ","color":"dark_green"},{"text":"Your equipment: ","color":"gray"},{"text":"Knight Sword","color":"blue"},{"text":", ","color":"gray"},{"text":"Knight Shield","color":"blue"},{"text":", ","color":"gray"},{"text":"Knight Helmet","color":"blue"},{"text":", ","color":"gray"},{"text":"Knight Chestplate","color":"blue"},{"text":", ","color":"gray"},{"text":"Knight Leggings","color":"blue"}]
 execute unless entity @s[predicate=rr_crusade:kit/knight] run tellraw @s[predicate=custom:team/yellow,tag=!kitknight] ["",{"text":"Selected Kit: ","color":"green"},{"text":"Knight","bold":true,"color":"dark_green"},{"text":"!","color":"green"},"\n",{"text":"‣ ","color":"dark_green"},{"text":"You can obtain: ","color":"gray"},{"text":"Blade","color":"green"},{"text":", ","color":"gray"},{"text":"Gemini","color":"green"},{"text":", ","color":"gray"},{"text":"Auxiliary","color":"red"},{"text":", ","color":"gray"},{"text":"Warhead","color":"red"},{"text":", ","color":"gray"},{"text":"Juggerbuster","color":"red"},{"text":", ","color":"gray"},{"text":"Shield","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Obsidian Shield","color":"light_purple"},{"text":", ","color":"gray"},{"text":"ICBM","color":"light_purple"},"\n",{"text":"‣ ","color":"dark_green"},{"text":"Your equipment: ","color":"gray"},{"text":"Knight Sword","color":"gold"},{"text":", ","color":"gray"},{"text":"Knight Shield","color":"gold"},{"text":", ","color":"gray"},{"text":"Knight Helmet","color":"gold"},{"text":", ","color":"gray"},{"text":"Knight Chestplate","color":"gold"},{"text":", ","color":"gray"},{"text":"Knight Leggings","color":"gold"}]
 
@@ -16,5 +11,8 @@ execute unless entity @s[predicate=rr_crusade:kit/knight] at @s[tag=!kitknight] 
 execute unless entity @s[predicate=rr_crusade:kit/knight] run scoreboard players add $knight CmdData 1
 
 execute unless entity @s[predicate=rr_crusade:kit/knight] run scoreboard players set @s crusadekit 1
+
+function custom:update_armor
+function custom:reset_inventory
 
 function custom:player_action/playerdata/save

@@ -10,14 +10,22 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "id": "arrow",
+                  "Droppable": true
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "arrow",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "text": "Arrow",
                   "color": "light_purple",
                   "bold": true
-                },
-                "minecraft:custom_data": {
-                  "id": "arrow",
-                  "Droppable": true
                 }
               }
             },
@@ -35,6 +43,10 @@
                   }
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

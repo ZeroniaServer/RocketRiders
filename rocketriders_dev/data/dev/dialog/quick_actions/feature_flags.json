@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "RR Developer Actions: Feature Flags",
+  "external_title": "Feature Flags...",
+  "exit_action": {
+    "label": "Back",
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "dev:quick_actions/other_actions"
+    }
+  },
+  "after_action": "wait_for_response",
+  "actions": [
+    {
+      "label": "Colored Portal Frames...",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 201"
+      }
+    }
+  ]
+}

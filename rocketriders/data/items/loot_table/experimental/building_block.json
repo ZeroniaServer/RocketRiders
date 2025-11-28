@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "building_block"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "building_block",
+                    "none"
+                  ]
+                },
                 "minecraft:item_name": {
                   "text": "Building Block",
                   "bold": true,
@@ -127,6 +135,10 @@
                   "name": "custom:team/yellow"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

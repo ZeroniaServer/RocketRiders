@@ -1,9 +1,9 @@
 ##Gives executor a Vortex
 #Antidupe check
 execute store result score @s HasVortex run clear @s *[custom_data~{id:"vortex"}] 0
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players operation @s HasVortex %= $64 constant
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] if entity @s[scores={HasVortex=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] run scoreboard players set @s HasVortex 0
+execute if predicate game:game_rules/item_stacking/on run scoreboard players operation @s HasVortex %= $64 constant
+execute if predicate game:game_rules/item_stacking/on if entity @s[scores={HasVortex=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if predicate game:game_rules/item_stacking/on run scoreboard players set @s HasVortex 0
 tag @s[tag=itemDeducted] remove fullHotbar
 
 #Title/giving

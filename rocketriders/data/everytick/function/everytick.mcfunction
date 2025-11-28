@@ -16,6 +16,9 @@ scoreboard players add $periodic_tick.5 global 1
 scoreboard players operation $periodic_tick.5 global %= $5 constant
 
 ## Handle events and flags
+# force_mount tag is used by the CK plugin to prevent dismounting
+tag @a[x=0] remove force_mount
+
 # Joining/leaving
 scoreboard players operation $previous_players_online var = $players_online global
 execute store result score $players_online global if entity @a[x=0,predicate=!custom:just_joined_world]
@@ -65,7 +68,7 @@ execute as @e[x=0,type=trident,predicate=custom:in_void,tag=!return] run data mo
 tag @e[x=0,type=trident,tag=!return,nbt={inGround:1b}] add return
 tag @e[x=0,type=trident,tag=!return,nbt={DealtDamage:1b}] add return
 execute as @e[x=0,type=trident,tag=return] if items entity @s contents *[damage=7] at @s run function everytick:trident_entity_break
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!doStacking] as @e[x=0,type=trident,tag=return] at @s run function everytick:trident_antidupe
+execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=trident,tag=return] at @s run function everytick:trident_antidupe
 execute as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:has_broken_trident_in_inventory] at @s run function everytick:trident_item_break
 execute as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:has_trident_in_inventory] if items entity @s weapon.* trident at @s run function everytick:trident_riptide
 
@@ -118,7 +121,7 @@ execute unless predicate rr:do_custom_regen_system run gamerule minecraft:natura
 #Night vision/saturation and more lobby functionality
 effect give @a[x=0,predicate=custom:team/lobby,predicate=custom:apply_lobby_night_vision] night_vision infinite 100 true
 effect clear @a[x=0,predicate=custom:team/lobby,predicate=!custom:apply_lobby_night_vision] night_vision
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!Sonar] run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
+execute unless predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
 effect give @a[x=0] saturation infinite 0 true
 execute as @a[x=0,predicate=custom:team/lobby,tag=hardcore] run function modifiers:hardcorereset
 execute as @a[x=0,predicate=custom:team/lobby,tag=hobbit] run function modifiers:hobbit/reset

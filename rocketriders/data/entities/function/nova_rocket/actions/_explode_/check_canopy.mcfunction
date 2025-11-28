@@ -10,9 +10,9 @@ execute if score $nova_rocket_team var matches -1 run function entities:canopy/e
 
 execute unless entity @a[limit=1,tag=nova_rocket.enemy_canopy_occupant] run return fail
 
+# If enemies are on the canopy, boom!
+function entities:nova_rocket/actions/_explode_/canopy_boom
+
 # Ensure enemy canopy occupants get nova attached
 execute as @a[tag=nova_rocket.enemy_canopy_occupant] run function entities:nova_attach/init
 tag @a[tag=nova_rocket.enemy_canopy_occupant] remove nova_rocket.enemy_canopy_occupant
-
-# If enemies are on the canopy, boom!
-execute at @s run function entities:canopy/actions/boom

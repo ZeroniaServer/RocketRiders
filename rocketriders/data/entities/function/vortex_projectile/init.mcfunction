@@ -17,5 +17,5 @@ tag @s remove vortex_projectile.this
 
 ## Spawn behaviour
 # Veteran achievement
-execute on origin run advancement grant @s[tag=!VortexSpawned] only achievements:rr_challenges/veteran VortexSpawned
-execute on origin run tag @s add VortexSpawned
+execute if predicate game:achievements_can_be_awarded on origin run advancement grant @s[tag=!VortexSpawned] only achievements:rr_challenges/veteran VortexSpawned
+execute if predicate game:achievements_can_be_awarded on origin run tag @s add VortexSpawned

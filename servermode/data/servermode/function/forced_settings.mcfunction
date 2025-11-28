@@ -34,12 +34,12 @@ tag @s add rngNova
 tag @s add rngCanopy
 
 #Disable modifiers
-execute if entity @s[tag=!WindDownForce] run function modifiers:disablemodifiers
+execute unless predicate game:gamemode_components/duel_settings_locked run function modifiers:disablemodifiers
 
 #Add needed settings and modifiers
 tag @s add doPrevention
 tag @s add doHotbarLimit
-tag @s add doTying
+scoreboard players reset $disable_tying config
 
 #######################################################
 ## The lines below make it so 12 items are selected. ##

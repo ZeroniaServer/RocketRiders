@@ -3,7 +3,7 @@
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngHeavy,tag=!heavyOff] run summon marker ~ ~ ~ {Tags:["surpriseYellowHeavy","surpriseYellow1"]}
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngNormal,tag=!normalOff] run summon marker ~ ~ ~ {Tags:["surpriseYellowNormal","surpriseYellow1"]}
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngLightning,tag=!lightningOff] run summon marker ~ ~ ~ {Tags:["surpriseYellowLightning","surpriseYellow1"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Chaos] run summon marker ~ ~ ~ {Tags:["surpriseYellowSpecial","surpriseYellow1"]}
+execute if predicate game:modifiers/special_treatment/on run summon marker ~ ~ ~ {Tags:["surpriseYellowSpecial","surpriseYellow1"]}
 
 #Select category and run appropriate sub-RNG function
 tag @e[type=marker,tag=surpriseYellow1,sort=random,limit=1,distance=..1] add rngSelected

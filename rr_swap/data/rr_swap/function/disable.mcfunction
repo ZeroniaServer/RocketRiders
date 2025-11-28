@@ -3,15 +3,6 @@ scoreboard players reset * gamemode_components
 kill @e[x=0,type=marker,tag=swapplatform]
 
 tag @s remove swapEnabled
-tag @s remove SurpriseEggOff
-tag @s[tag=SurpriseEggWasOn] add SurpriseEgg
-tag @s remove SurpriseEggWasOn
-tag @s remove SplashStreamsOff
-tag @s[tag=SplashStreamsWasOn] add SplashStreams
-tag @s remove SplashStreamsWasOn
-tag @s remove ChaosOff
-tag @s[tag=ChaosWasOn] add Chaos
-tag @s remove ChaosWasOn
 tag @s remove respawnFlag
 
 #item enabling/disabling

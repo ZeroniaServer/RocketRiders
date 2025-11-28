@@ -3,7 +3,7 @@
   "terms": [
     {
       "condition": "minecraft:reference",
-      "name": "game:gamemode_components/settings_locked"
+      "name": "game:gamemode_components/duel_settings_locked"
     },
     {
       "condition": "minecraft:reference",

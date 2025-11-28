@@ -24,6 +24,6 @@ execute at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] rot
 execute at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] rotated 180 0 run function everytick:splash_place_water
 execute at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] rotated -90 0 run function everytick:splash_place_water
 tag @e[x=0,type=area_effect_cloud,tag=splash_alone] add splashMarked
-execute if predicate rr:has_achievements as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run data merge entity @s {Duration:100}
-execute if predicate rr:has_achievements as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run tag @s add markedForDeath
-execute unless predicate rr:has_achievements run kill @e[x=0,type=area_effect_cloud,tag=splash_alone]
+execute if predicate game:achievements_can_be_awarded as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run data merge entity @s {Duration:100}
+execute if predicate game:achievements_can_be_awarded as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run tag @s add markedForDeath
+execute unless predicate game:achievements_can_be_awarded run kill @e[x=0,type=area_effect_cloud,tag=splash_alone]

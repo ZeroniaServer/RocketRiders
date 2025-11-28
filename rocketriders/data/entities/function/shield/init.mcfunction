@@ -12,3 +12,7 @@ data modify entity @s CustomName set from storage rocketriders:main shield.name
 
 ## Spawn behaviour
 execute align xyz run tp @s ~0.5 ~0.5 ~0.5
+execute at @s if predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:185.0}}}} run tp @s 184.5 ~ ~
+execute at @s unless predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:-160.0}}}} run tp @s -159.5 ~ ~
+execute at @s if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run tp @s ~ ~ 175.5
+execute at @s unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run tp @s ~ ~ -174.5

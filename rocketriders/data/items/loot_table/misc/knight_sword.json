@@ -13,6 +13,14 @@
                 "minecraft:custom_data": {
                   "id": "knight_sword"
                 },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "knight_sword",
+                    "none"
+                  ]
+                },
                 "minecraft:unbreakable": {},
                 "minecraft:item_name": {
                   "text": "Knight Sword",
@@ -112,6 +120,10 @@
                   "name": "game:gamemode_components/custom_team_colors"
                 }
               ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
             }
           ]
         }

@@ -1,8 +1,5 @@
-clear @a[x=0,predicate=custom:team/blue] #custom:clear
-clear @a[x=0,predicate=custom:team/blue] *[custom_data~{id:"nova_rocket"}]
-clear @a[x=0,predicate=custom:team/blue] *[custom_data~{id:"booster_rocket"}]
-execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run function custom:update_armor
-execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/blue] run function custom:update_inventory/shooting_saber
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if entity @s[scores={endtimer=1}] run effect give @a[x=0,predicate=custom:team/blue,tag=Loser] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1}] run function rr_chase:game/endstats
 scoreboard players reset * FlagScore

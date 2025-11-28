@@ -13,8 +13,8 @@ execute as @e[x=0,type=marker,tag=SelectedSwapRNG3,tag=rngArrows] run tag @e[x=0
 execute as @e[x=0,type=marker,tag=SelectedSwapRNG3,tag=rngArrows] run tag @e[x=0,type=marker,tag=swapRNGL] remove SelectedSwapRNG2
 
 #> Kill items to prevent duplication glitches
-execute if predicate rr_swap:blue_team_is_dark unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=SelectedSwapRNG2] run function rr_swap:items/darkblueantidropdupe
-execute if predicate rr_swap:blue_team_is_light unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doStacking] as @e[x=0,type=marker,tag=SelectedSwapRNG2] run function rr_swap:items/lightblueantidropdupe
+execute if predicate rr_swap:blue_team_is_dark unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=SelectedSwapRNG2] run function rr_swap:items/darkblueantidropdupe
+execute if predicate rr_swap:blue_team_is_light unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=SelectedSwapRNG2] run function rr_swap:items/lightblueantidropdupe
 
 execute if predicate rr_swap:blue_team_is_dark as @e[x=0,type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/darkblueitems
 execute if predicate rr_swap:blue_team_is_light as @e[x=0,type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/lightblueitems

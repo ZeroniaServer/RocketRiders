@@ -164,10 +164,7 @@ item replace entity @a[x=0,predicate=custom:team/lobby] armor.legs with air
 execute if function game:norankboots run item replace entity @a[x=0,predicate=custom:team/lobby,tag=!inParkour] armor.feet with air
 
 #Lobby player books + antidupe
-tag @a[x=0,predicate=custom:team/lobby] remove HasNavBook
-execute as @a[x=0,predicate=custom:team/lobby] if items entity @s hotbar.4 written_book run tag @s add HasNavBook
-clear @a[x=0,predicate=custom:team/lobby,tag=!HasNavBook] written_book
-loot replace entity @a[x=0,predicate=custom:team/lobby,tag=!HasNavBook] hotbar.4 loot items:books/nav_book
+execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
 
 #Servermode teleport out of modification room
 execute unless predicate rr:has_modification_room run tellraw @a[x=0,predicate=2811iaj1:in_modification] ["",{"text":"You shouldn't be here!","color":"red"}]
@@ -196,8 +193,8 @@ execute unless predicate game:game_running as @a[x=0,predicate=custom:team/any_p
 execute if predicate game:game_running unless predicate game:match_over unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. run scoreboard players operation $item_time_progress var = @e[limit=1,x=0,type=armor_stand,tag=Selection] RandomItem
 execute if predicate game:game_running unless predicate game:match_over unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. run scoreboard players operation $item_time_progress var *= $1000 constant
 execute if predicate game:game_running unless predicate game:match_over unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. run data modify storage rocketriders:main item_time_progress set value {level:0}
-execute if predicate game:game_running unless predicate game:match_over unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= $1200 constant
-execute if predicate game:game_running unless predicate game:match_over unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Minute] store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= @e[limit=1,x=0,type=armor_stand,tag=Selection] MaxItemTime
+execute if predicate game:game_running unless predicate game:match_over unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. if predicate game:modifiers/minute_mix/on store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= $1200 constant
+execute if predicate game:game_running unless predicate game:match_over unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. unless predicate game:modifiers/minute_mix/on store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= @e[limit=1,x=0,type=armor_stand,tag=Selection] MaxItemTime
 execute if predicate game:game_running unless predicate game:match_over unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches 3.. as @a[x=0,predicate=custom:team/any_playing_team] run function custom:set_xp_bar with storage rocketriders:main item_time_progress
 execute if predicate game:game_running unless predicate game:match_over unless predicate game:gamemode_components/no_item_timer if score $game_duration global matches ..2 as @a[x=0,predicate=custom:team/any_playing_team] run function custom:set_xp_bar {level:0,progress:0}
 execute if predicate game:game_running unless predicate game:match_over if predicate game:gamemode_components/no_item_timer as @a[x=0,predicate=custom:team/any_playing_team] run function custom:set_xp_bar {level:0,progress:0}

@@ -4,6 +4,9 @@ execute unless entity @s[predicate=entities:type/icbm/brain] run return run exec
 # Kill body and correct position
 execute on vehicle if entity @s[predicate=entities:type/icbm/body] run function custom:tp_passengers_to_self_and_die
 
+# Break if near a spawn zone
+execute positioned as @s if predicate custom:near_any_spawn_zone_lenient run return run function entities:icbm/actions/break
+
 # Create explosions
 data modify storage rocketriders:main icbm set value {power:4,modifiers:{copy_name:true,can_crack_deepslate_bricks:false}}
 execute if predicate game:modifiers/explosive/on run data modify storage rocketriders:main icbm.power set value 5

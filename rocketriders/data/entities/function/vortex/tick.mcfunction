@@ -36,7 +36,7 @@ execute unless entity @s[tag=vortex.is_drifting] if predicate custom:periodic_ti
 
 
 ## Achievements
-execute if entity @s[tag=vortex.neutral_landmine,tag=vortex.feathered] if predicate rr:has_achievements run advancement grant @a[distance=..3,predicate=custom:team/any_playing_team] only achievements:rr_challenges/zzzzzzhuh
+execute if predicate game:achievements_can_be_awarded if entity @s[tag=vortex.neutral_landmine,tag=vortex.feathered] run advancement grant @a[distance=..3,predicate=custom:team/any_playing_team] only achievements:rr_challenges/zzzzzzhuh
 
 
 ## Explosion conditions
@@ -68,16 +68,9 @@ execute store success score $was_drifting var if entity @s[tag=vortex.is_driftin
 tag @s remove vortex.is_drifting
 execute on vehicle run tag @s remove vortex.is_drifting
 
-execute if predicate entities:origin_team/blue if score $was_drifting var matches 0 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,predicate=custom:team/yellow,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
-execute if predicate entities:origin_team/blue if score $was_drifting var matches 1 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,predicate=custom:team/yellow,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
-
-execute if predicate entities:origin_team/yellow if score $was_drifting var matches 0 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,predicate=custom:team/blue,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
-execute if predicate entities:origin_team/yellow if score $was_drifting var matches 1 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,predicate=custom:team/blue,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
-
-execute on origin run tag @s add vortex.origin
-execute if predicate entities:origin_team/none if score $was_drifting var matches 0 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4,tag=!vortex.origin,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
-execute if predicate entities:origin_team/none if score $was_drifting var matches 1 unless predicate game:match_over on vehicle positioned as @s positioned ~ ~-1.6 ~ facing entity @p[distance=..4.5,tag=!vortex.origin,gamemode=!spectator] feet positioned ~ ~1.6 ~ run function entities:vortex/tick/drift
-execute on origin run tag @s remove vortex.origin
+# to prevent flickering between drifting and stationary when a player is on the border of the detection range, range is R when stationary and r+0.5 when drifting
+execute if score $was_drifting var matches 0 run function entities:vortex/tick/drift_detection_range {distance:4}
+execute if score $was_drifting var matches 1 run function entities:vortex/tick/drift_detection_range {distance:4.5}
 
 execute unless entity @s[tag=vortex.neutral_landmine] if score $was_drifting var matches 1 if entity @s[tag=!vortex.is_drifting] on vehicle run data merge entity @s {teleport_duration:10,start_interpolation:0,interpolation_duration:10,transformation:{scale:[0.6,0.6,0.6]}}
 execute unless entity @s[tag=vortex.feathered] if score $was_drifting var matches 1 if entity @s[tag=!vortex.is_drifting] on vehicle run item replace entity @s contents with minecraft:ender_pearl

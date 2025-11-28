@@ -1,8 +1,4 @@
-clear @a[x=0,predicate=custom:team/any_playing_team] #custom:clear
-clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"nova_rocket"}]
-clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"booster_rocket"}]
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=item] if items entity @s contents netherite_pickaxe run function items:killendweapon
-execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_inventory/piercing_pickaxe
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectBlue,limit=1]
 execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectYellow,limit=1]
 execute if entity @s[scores={endtimer=1..}] run fill -9 74 68 -15 64 61 moving_piston replace air

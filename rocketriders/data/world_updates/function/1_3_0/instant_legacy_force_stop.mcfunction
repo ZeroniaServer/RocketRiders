@@ -70,7 +70,7 @@ scoreboard players reset * invCount
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameEnd
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={RepeatSettings=0},tag=!RepeatForever] remove Repeat
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Repeat] unless entity @s[tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning,tag=!rngUtil] run function world_updates:1_3_0/instant_arena_clear
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Repeat] unless entity @s[tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning,tag=!rngUtil] run function arenaclear:brute_force/start
 
 bossbar set rr:startgame color red
 bossbar set rr:startgame name ["",{"text":"A game is currently ending.","color":"red"}]

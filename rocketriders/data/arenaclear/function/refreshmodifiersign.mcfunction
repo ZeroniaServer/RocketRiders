@@ -4,8 +4,8 @@ scoreboard players set $total_modifiers constant 22
 scoreboard players operation @s modifierID %= $total_modifiers constant
 
 #Instamine
-execute if entity @s[scores={modifierID=0}] if predicate game:modifiers/no_fall_damage/on run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=0}] unless predicate game:modifiers/no_fall_damage/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=0}] if predicate game:modifiers/instamine/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=0}] unless predicate game:modifiers/instamine/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #No Fall
 execute if entity @s[scores={modifierID=1}] if predicate game:modifiers/no_fall_damage/on run setblock -69 191 75 warped_wall_sign[facing=east]

@@ -14,22 +14,27 @@ execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] ru
 #Item Stacking
 execute if predicate game:game_rules/item_stacking/on run setblock -70 191 77 warped_wall_sign[facing=east]
 execute unless predicate game:game_rules/item_stacking/on run setblock -70 191 77 crimson_wall_sign[facing=east]
+execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 191 77 crimson_wall_sign[facing=east]
 
 #Tie/Sudden Death
 execute if predicate game:game_rules/disable_tying/on run setblock -70 193 77 crimson_wall_sign[facing=east]
 execute unless predicate game:game_rules/disable_tying/on run setblock -70 193 77 warped_wall_sign[facing=east]
+execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 193 77 crimson_wall_sign[facing=east]
 
 #Snipe Portals
 execute if predicate game:game_rules/snipe_portals/on run setblock -70 193 78 warped_wall_sign[facing=east]
 execute unless predicate game:game_rules/snipe_portals/on run setblock -70 193 78 crimson_wall_sign[facing=east]
+execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 193 78 crimson_wall_sign[facing=east]
 
 #TNT Cannoning
 execute if predicate game:game_rules/disable_cannoning/on run setblock -70 192 79 crimson_wall_sign[facing=east]
 execute unless predicate game:game_rules/disable_cannoning/on run setblock -70 192 79 warped_wall_sign[facing=east]
+execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 192 79 crimson_wall_sign[facing=east]
 
 #Impact Utilities
 execute if predicate game:game_rules/impact_utilities/on run setblock -70 192 77 warped_wall_sign[facing=east]
 execute unless predicate game:game_rules/impact_utilities/on run setblock -70 192 77 crimson_wall_sign[facing=east]
+execute if entity @s[predicate=game:gamemode_components/duel_settings_locked] run setblock -70 192 77 crimson_wall_sign[facing=east]
 
 
 ##WORLD SETTINGS

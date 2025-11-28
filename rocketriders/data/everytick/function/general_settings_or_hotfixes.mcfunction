@@ -164,10 +164,7 @@ item replace entity @a[x=0,predicate=custom:team/lobby] armor.legs with air
 execute if function game:norankboots run item replace entity @a[x=0,predicate=custom:team/lobby,tag=!inParkour] armor.feet with air
 
 #Lobby player books + antidupe
-tag @a[x=0,predicate=custom:team/lobby] remove HasNavBook
-execute as @a[x=0,predicate=custom:team/lobby] if items entity @s hotbar.4 written_book run tag @s add HasNavBook
-clear @a[x=0,predicate=custom:team/lobby,tag=!HasNavBook] written_book
-loot replace entity @a[x=0,predicate=custom:team/lobby,tag=!HasNavBook] hotbar.4 loot items:books/nav_book
+execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
 
 #Servermode teleport out of modification room
 execute unless predicate rr:has_modification_room run tellraw @a[x=0,predicate=2811iaj1:in_modification] ["",{"text":"You shouldn't be here!","color":"red"}]

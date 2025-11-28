@@ -11,9 +11,8 @@ fill -89 202 66 -101 211 66 minecraft:barrier strict
 fill -89 202 90 -101 211 90 minecraft:barrier strict
 execute as @a[x=0,predicate=custom:team/blue,predicate=custom:is_on_fire] at @s run function game:putoutfire
 execute as @a[x=0,predicate=custom:team/yellow,predicate=custom:is_on_fire] at @s run function game:putoutfire
-clear @a[x=0,predicate=custom:team/any_playing_team] *
-execute as @a[x=0,predicate=custom:team/any_playing_team] run loot replace entity @s hotbar.0 loot items:misc/shooting_saber
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
 
 summon marker 11 63 6 {Tags:["ArenaClearChecker"]}

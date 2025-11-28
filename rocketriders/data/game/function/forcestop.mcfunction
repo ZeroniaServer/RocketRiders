@@ -1,7 +1,6 @@
 ##Operator function for forcing a game to end
 scoreboard players set $match_over global 1
-clear @a[x=0,predicate=custom:team/any_playing_team] #custom:clear
-clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"nova_rocket"}|custom_data~{id:"booster_rocket"}]
+clear @a[x=0,predicate=custom:team/any_playing_team] *
 effect clear @a[x=0,predicate=custom:team/any_playing_team]
 dialog clear @a[x=0]
 scoreboard players reset $match_in_play global

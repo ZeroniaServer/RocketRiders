@@ -27,22 +27,12 @@ execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={SDtime=1}] as @a[x=0] run function custom:player_action/forget_all_canopies
 execute if entity @s[scores={SDtime=1}] unless predicate game:modifiers/no_fall_damage/on run gamerule fallDamage true
-execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[x=0] armor.head with air
-execute if entity @s[scores={SDtime=1}] at @s run clear @a[x=0] firework_rocket
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] resistance
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] weakness
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] regeneration
 
-execute if entity @s[scores={SDtime=1}] run tag @a[x=0,predicate=rr_crusade:kit/knight] add kitknight
-execute if entity @s[scores={SDtime=1}] run tag @a[x=0,predicate=rr_crusade:kit/archer] add kitarcher
-execute if entity @s[scores={SDtime=1}] run tag @a[x=0,predicate=rr_crusade:kit/mage] add kitmage
+execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if entity @s[scores={SDtime=1}] run scoreboard players reset @a[x=0] crusadekit
-execute if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitknight] run function rr_crusade:items/kit/give/knight
-execute if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitarcher] run function rr_crusade:items/kit/give/archer
-execute if entity @s[scores={SDtime=1}] as @a[x=0,tag=kitmage] run function rr_crusade:items/kit/give/mage
-execute if entity @s[scores={SDtime=1}] run tag @a[x=0] remove kitknight
-execute if entity @s[scores={SDtime=1}] run tag @a[x=0] remove kitarcher
-execute if entity @s[scores={SDtime=1}] run tag @a[x=0] remove kitmage
 
 execute if entity @s[scores={SDtime=1}] at @s run effect give @a[x=0] blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] at @s run effect clear @a[x=0] blindness

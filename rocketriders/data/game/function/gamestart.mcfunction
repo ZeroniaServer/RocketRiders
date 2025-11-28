@@ -50,7 +50,7 @@ execute unless predicate game:match_in_play if predicate game:modifiers/hardcore
 execute unless predicate game:match_in_play if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
 execute unless predicate game:match_in_play if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run function modifiers:long_arms/set
 execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
-execute as @a[x=0,tag=JoinBlue] run function items:give_main_item
+execute as @a[x=0,tag=JoinBlue] run function custom:reset_inventory
 execute unless predicate game:match_in_play run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
 execute unless predicate game:match_in_play unless predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" joined the blue team!","color":"dark_aqua"}]
 execute unless predicate game:match_in_play unless predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" joined the blue team!","color":"red"}]
@@ -97,7 +97,7 @@ execute unless predicate game:match_in_play if predicate game:modifiers/hardcore
 execute unless predicate game:match_in_play if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set
 execute unless predicate game:match_in_play if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinYellow] run function modifiers:long_arms/set
 execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
-execute as @a[x=0,tag=JoinYellow] run function items:give_main_item
+execute as @a[x=0,tag=JoinYellow] run function custom:reset_inventory
 execute unless predicate game:match_in_play run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
 execute unless predicate game:match_in_play as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] ["",{"selector":"@s","color":"gold"},{"text":" joined the yellow team!","color":"yellow"}]
 execute unless predicate game:match_in_play run tellraw @a[x=0,tag=JoinYellow] {"text":"Fall off the base to return to the Lobby.","color":"gold","italic":true}
@@ -131,7 +131,7 @@ execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] run tag @a[
 execute as @e[x=0,type=marker,tag=join_pad.spectator] at @s run tag @a[predicate=custom:team/spectator,distance=..1] add AlreadySpec
 execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] run tag @a[x=0] remove AlreadySpec
 execute as @a[x=0,tag=JoinSpec] run function custom:team/join_spectator
-clear @a[x=0,tag=JoinSpec]
+clear @a[x=0,tag=JoinSpec] *
 scoreboard players enable @a[x=0,predicate=custom:team/spectator] leaveSpec
 tag @a[x=0,scores={leaveSpec=1..}] add LeaveTeams
 scoreboard players reset @a[x=0,predicate=!custom:team/spectator] leaveSpec

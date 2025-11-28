@@ -1,13 +1,5 @@
-clear @a[x=0,predicate=custom:team/any_playing_team] #custom:clear
-clear @a[x=0,predicate=custom:team/any_playing_team] enchanted_book
-clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"nova_rocket"}]
-clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{id:"booster_rocket"}]
-
-#Replacing Shooting Sabers
-execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=rr_crusade:kit/archer] run function custom:update_inventory/shooting_saber
-
-#Replacing Spell Wands
-execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=rr_crusade:kit/mage] run function custom:update_inventory/spell_wand
+#Reset inventories
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 
 execute if predicate game:game_rules/disable_tying/on if entity @s[scores={endtimer=1}] run function game:endstats
 execute if predicate game:yellow_portal_revealed if predicate game:blue_portal_revealed run tag @s add couldTie

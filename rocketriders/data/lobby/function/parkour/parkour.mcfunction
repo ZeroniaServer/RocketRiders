@@ -142,18 +142,10 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour,scores={parkourSecs=
 ##Inventory controls
 #Return to last checkpoint (includes 1 second cooldown)
 scoreboard players add @a[x=0,predicate=custom:team/lobby,tag=inParkour] chkpntCooldown 0
-execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.3 compass run clear @s compass
-execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.3 compass run item replace entity @s hotbar.3 with compass[custom_name=[{"translate":"Return to Checkpoint","color":"aqua","bold":true,"italic":false}],consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
 scoreboard players add @a[x=0,predicate=custom:team/lobby,tag=inParkour,scores={chkpntCooldown=1..19}] chkpntCooldown 1
 scoreboard players set @a[x=0,predicate=custom:team/lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
-#Return to start
-execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.5 clock run clear @s clock
-execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.5 clock run item replace entity @s hotbar.5 with clock[custom_name=[{"translate":"Return to Start","color":"yellow","bold":true,"italic":false}],consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
-
-#Quit parkour
-execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run clear @s barrier
-execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] unless items entity @s hotbar.8 barrier run item replace entity @s hotbar.8 with barrier[custom_name=[{"translate":"Quit Parkour","color":"red","bold":true,"italic":false}],consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}] 1
+execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] run function custom:reset_inventory
 
 #Clear offhand (necessary for inventory controls)
 item replace entity @a[x=0,predicate=custom:team/lobby] weapon.offhand with air

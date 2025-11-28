@@ -11,10 +11,8 @@ execute if score @s endtimer matches 1 run scoreboard players reset $game_paused
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
 scoreboard players reset @s[scores={endtimer=1..}] SDtime
-execute if entity @s[scores={endtimer=1}] run effect clear @a[x=0,predicate=custom:team/blue]
-execute if entity @s[scores={endtimer=1}] run effect clear @a[x=0,predicate=custom:team/yellow]
-execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:return_thrown_items
-execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_inventory
+execute if entity @s[scores={endtimer=1}] run effect clear @a[x=0,predicate=custom:team/any_playing_team]
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if entity @s[tag=BlueWon] run effect give @a[x=0,predicate=custom:team/yellow] weakness infinite 100 true
 execute if entity @s[tag=YellowWon] run effect give @a[x=0,predicate=custom:team/blue] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1..100}] run worldborder warning distance 0

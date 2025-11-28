@@ -5,13 +5,9 @@ execute if predicate game:achievements_can_be_awarded run function rr_chase:achi
 scoreboard players set $match_over global 1
 
 ##Celebratory items
-clear @a[x=0,predicate=custom:team/blue] #custom:clear
-clear @a[x=0,predicate=custom:team/blue] *[custom_data~{id:"nova_rocket"}]
-clear @a[x=0,predicate=custom:team/blue] *[custom_data~{id:"booster_rocket"}]
-execute as @a[x=0,predicate=custom:team/blue,tag=Winner,predicate=!custom:has_firework_rocket_in_inventory,limit=1] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
-execute as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run function custom:update_armor
 execute as @a[x=0] store result score @s HasFlag run clear @s #banners 0
-execute as @a[x=0,predicate=custom:team/blue,tag=Loser,scores={HasFlag=0}] run function custom:update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 #I Am Speed achievement for Winner
 execute if predicate game:achievements_can_be_awarded run advancement grant @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 

@@ -31,9 +31,8 @@ execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] resistanc
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] weakness
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] regeneration
 
-execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
-execute if entity @s[scores={SDtime=1}] run scoreboard players reset @a[x=0] crusadekit
+execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 
 execute if entity @s[scores={SDtime=1}] at @s run effect give @a[x=0] blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] at @s run effect clear @a[x=0] blindness

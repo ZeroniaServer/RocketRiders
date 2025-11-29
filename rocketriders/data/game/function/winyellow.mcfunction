@@ -13,8 +13,8 @@ tag @a[x=0,predicate=custom:team/yellow] add Winner
 tag @a[x=0,predicate=custom:team/blue] add Loser
 
 ##Celebratory items
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 
 ##Close dialogs
 dialog clear @a[x=0]

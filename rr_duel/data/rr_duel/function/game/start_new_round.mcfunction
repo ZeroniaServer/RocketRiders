@@ -9,8 +9,8 @@ tp @a[x=0,predicate=custom:team/spectator] 12 100 0.5 90 90
 gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
 gamemode spectator @a[x=0,predicate=custom:team/spectator]
 
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 
 scoreboard players add @s Rounds 1
 tellraw @a[x=0,predicate=!custom:team/lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]

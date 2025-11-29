@@ -57,7 +57,6 @@ scoreboard players add @s[tag=TimeOut] ForfeitTimeout 1
 execute if entity @s[tag=TimeOut] run kill @e[x=0,type=tnt]
 execute if entity @s[tag=TimeOut] if predicate game:modifiers/punchable_tnt/on run kill @e[x=0,predicate=entities:type/punchable_tnt]
 execute if entity @s[tag=TimeOut] unless predicate game:game_paused as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
-execute if entity @s[tag=TimeOut] unless predicate game:game_paused as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
 execute if entity @s[tag=TimeOut] unless predicate game:game_paused run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute if entity @s[tag=TimeOut] unless predicate game:game_paused run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 tag @s[tag=TimeOut] add noAchievements

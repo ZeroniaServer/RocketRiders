@@ -1,7 +1,6 @@
 #After game ends
 scoreboard players add @s fakeendtimer 1
 execute if entity @s[scores={fakeendtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
-execute if entity @s[scores={fakeendtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
 tag @s[scores={fakeendtimer=1}] remove gaveFirstItem
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime = @s[scores={fakeendtimer=1}] MaxItemSec
 scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime *= $20 constant

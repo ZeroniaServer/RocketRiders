@@ -115,6 +115,11 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove doPrevention
 execute unless data storage rocketriders:storage {Tags:["doPrevention"]} run data modify storage rocketriders:storage config.disable_pierce_prevention set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"doPrevention"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"preventionOff"}
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doHotbarLimit] run scoreboard players set $disable_hotbar_limit config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove doHotbarLimit
+execute unless data storage rocketriders:storage {Tags:["doHotbarLimit"]} run data modify storage rocketriders:storage config.disable_hotbar_limit set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"doHotbarLimit"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"hotbarLimitOff"}
 # Updating modifiers
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive] run scoreboard players set $explosive config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Explosive

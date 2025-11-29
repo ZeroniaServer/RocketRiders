@@ -38,7 +38,7 @@ execute unless predicate game:gamemode_components/duel_settings_locked run funct
 
 #Add needed settings and modifiers
 scoreboard players reset $disable_pierce_prevention config
-tag @s add doHotbarLimit
+scoreboard players reset $disable_hotbar_limit config
 scoreboard players reset $disable_tying config
 
 #######################################################

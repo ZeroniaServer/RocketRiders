@@ -35,9 +35,6 @@ tag @s remove rngNova
 #Disable modifiers
 function modifiers:disablemodifiers
 
-#Add needed settings and modifiers
-tag @s add doHotbarLimit
-
 #######################################################
 ## The lines below make it so 12 items are selected. ##
 ##        Thanks to Llewv for the suggestion!        ##

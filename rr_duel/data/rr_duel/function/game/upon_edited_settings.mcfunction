@@ -5,7 +5,4 @@ execute if predicate game:match_in_play run function rr_duel:forced_settings
 #Disable modifiers
 function modifiers:disablemodifiers
 
-#Add needed settings and modifiers
-tag @s add doHotbarLimit
-
 tag @s add duelLast

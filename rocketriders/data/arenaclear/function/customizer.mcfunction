@@ -32,17 +32,17 @@ tag @s[tag=RestoreDefault] remove RestoreDefault
 ##RESTORE DEFAULT GAME RULES
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_pierce_prevention config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_tying config
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doHotbarLimit
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_hotbar_limit config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $item_stacking config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $snipe_portals config
 execute unless score @s MaxItemSec matches 5..30 run scoreboard players set @s MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemSec 15
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] MaxItemTime 300
 scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] RepeatSettings 1
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:server_mode/realms run scoreboard players set $disable_cannoning config 1
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:server_mode/realms run scoreboard players reset $disable_cannoning config
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:server_mode/realms run scoreboard players set $impact_utilities config 1
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:server_mode/realms run scoreboard players reset $impact_utilities config
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:default_config/disable_cannoning run scoreboard players set $disable_cannoning config 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:default_config/disable_cannoning run scoreboard players reset $disable_cannoning config
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:default_config/impact_utilities run scoreboard players set $impact_utilities config 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:default_config/impact_utilities run scoreboard players reset $impact_utilities config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultOptions] remove DefaultOptions
 

@@ -35,6 +35,13 @@ execute if score #write var matches 1 unless score $disable_pierce_prevention co
 execute if score #write var matches 1 if score $disable_pierce_prevention config matches 0 run scoreboard players reset $disable_pierce_prevention config
 
 scoreboard players set #write var 0
+execute if predicate game:game_rules/disable_hotbar_limit/forced_off run scoreboard players set #write var 1
+execute if predicate game:game_rules/disable_hotbar_limit/forced_on run scoreboard players set #write var 1
+execute if score #write var matches 1 store result score $disable_hotbar_limit config run data get storage rocketriders:main "config/load".config.disable_hotbar_limit
+execute if score #write var matches 1 unless score $disable_hotbar_limit config matches 0..1 run scoreboard players reset $disable_hotbar_limit config
+execute if score #write var matches 1 if score $disable_hotbar_limit config matches 0 run scoreboard players reset $disable_hotbar_limit config
+
+scoreboard players set #write var 0
 execute if predicate game:game_rules/snipe_portals/forced_off run scoreboard players set #write var 1
 execute if predicate game:game_rules/snipe_portals/forced_on run scoreboard players set #write var 1
 execute if score #write var matches 1 store result score $snipe_portals config run data get storage rocketriders:main "config/load".config.snipe_portals

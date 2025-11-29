@@ -12,7 +12,7 @@ execute unless entity @s[predicate=rr_crusade:kit/mage] run scoreboard players a
 
 execute unless entity @s[predicate=rr_crusade:kit/mage] run scoreboard players set @s crusadekit 3
 
-function custom:update_armor
 function custom:reset_inventory
+function custom:update_armor
 
 function custom:player_action/playerdata/save

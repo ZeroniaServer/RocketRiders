@@ -6,8 +6,8 @@ scoreboard players set $match_over global 1
 
 ##Celebratory items
 execute as @a[x=0] store result score @s HasFlag run clear @s #banners 0
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
 #I Am Speed achievement for Winner
 execute if predicate game:achievements_can_be_awarded run advancement grant @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 

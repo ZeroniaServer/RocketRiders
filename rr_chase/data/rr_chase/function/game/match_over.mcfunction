@@ -1,5 +1,5 @@
-execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
 execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
 execute if entity @s[scores={endtimer=1}] run effect give @a[x=0,predicate=custom:team/blue,tag=Loser] weakness infinite 100 true
 execute if entity @s[scores={endtimer=1}] run function rr_chase:game/endstats
 scoreboard players reset * FlagScore

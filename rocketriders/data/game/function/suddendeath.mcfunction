@@ -30,7 +30,6 @@ execute if entity @s[scores={SDtime=1}] unless predicate game:modifiers/no_fall_
 execute if entity @s[scores={SDtime=1}] run effect clear @a[x=0] resistance
 execute if entity @s[scores={SDtime=1}] run effect clear @a[x=0] weakness
 execute if entity @s[scores={SDtime=1}] run effect clear @a[x=0] regeneration
-execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
 execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if entity @s[scores={SDtime=1}] run effect give @a[x=0,predicate=custom:team/any_arena_team] blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] run effect clear @a[x=0,predicate=custom:team/any_arena_team] blindness

@@ -12,7 +12,7 @@ execute unless entity @s[predicate=rr_crusade:kit/knight] run scoreboard players
 
 execute unless entity @s[predicate=rr_crusade:kit/knight] run scoreboard players set @s crusadekit 1
 
-function custom:reset_inventory
 function custom:update_armor
+function custom:reset_inventory
 
 function custom:player_action/playerdata/save

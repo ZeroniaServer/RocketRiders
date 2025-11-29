@@ -1,5 +1,4 @@
 execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectBlue,limit=1]
-execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectBlue,limit=1]
 execute if entity @s[scores={endtimer=1..}] run kill @e[x=0,type=marker,tag=airDetectYellow,limit=1]
 execute if entity @s[scores={endtimer=1..}] run fill -9 74 68 -15 64 61 moving_piston replace air
 execute if entity @s[scores={endtimer=1..}] run fill 35 74 68 29 64 61 moving_piston replace air

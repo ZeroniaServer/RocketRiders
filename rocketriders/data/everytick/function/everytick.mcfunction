@@ -125,6 +125,7 @@ execute unless predicate game:modifiers/sonar/on run effect give @a[x=0,predicat
 effect give @a[x=0] saturation infinite 0 true
 execute as @a[x=0,predicate=custom:team/lobby,tag=hardcore] run function modifiers:hardcorereset
 execute as @a[x=0,predicate=custom:team/lobby,tag=hobbit] run function modifiers:hobbit/reset
+execute as @a[x=0,predicate=custom:team/lobby,tag=long_arms] run function modifiers:long_arms/reset
 function lobby:bookwarp
 scoreboard players enable @a[x=0,predicate=custom:team/lobby] displayinfo
 scoreboard players enable @a[x=0,predicate=custom:team/developer] displayinfo

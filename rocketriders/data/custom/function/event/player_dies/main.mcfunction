@@ -16,6 +16,8 @@ execute in minecraft:overworld unless predicate custom:can_pick_up_any_item unle
 execute in minecraft:overworld run item replace entity @s player.cursor with air
 execute in minecraft:overworld run loot give @s mine 0 184 -16 stick[custom_data={drop_contents:true}]
 
+## Remove force_mount tag (used by CK plugin)
+tag @s remove force_mount
 
 ## Update statistics
 execute if predicate game:match_in_play unless predicate game:match_over run function custom:event/player_dies/update_statistics

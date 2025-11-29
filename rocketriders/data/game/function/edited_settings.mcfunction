@@ -33,7 +33,7 @@ execute if predicate game:gamemode_components/red_for_blue run team modify rocke
 
 ##Friendly Fire
 execute unless predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire false
-execute unless predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_001.yelloe friendlyFire false
+execute unless predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_001.yellow friendlyFire false
 execute if predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire true
 execute if predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_001.yellow friendlyFire true
 

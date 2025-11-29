@@ -85,15 +85,15 @@ execute if predicate game:gamemode_components/duel_settings_locked run \
 
 #Hotbar Limit
 execute unless predicate game:game_rules/disable_hotbar_limit/locked unless predicate game:game_rules/disable_hotbar_limit/on run \
-  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Pierce Prevention"},{bold:true,color:"green",text:"Enabled"},"",""]
+  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"green",text:"Enabled"},"",""]
 execute unless predicate game:game_rules/disable_hotbar_limit/locked if predicate game:game_rules/disable_hotbar_limit/on run \
-  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Pierce Prevention"},{bold:true,color:"red",text:"Disabled"},"",""]
+  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"red",text:"Disabled"},"",""]
 execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:game_rules/disable_hotbar_limit/forced_on run \
-  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Pierce Prevention"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
+  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
 execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:game_rules/disable_hotbar_limit/forced_off run \
-  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Pierce Prevention"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
+  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:gamemode_components/duel_settings_locked run \
-  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Pierce Prevention"},{bold:true,color:"white",text:"Locked"},"",""]
+  data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"white",text:"Locked"},"",""]
 
 #Item Stacking
 execute unless predicate game:game_rules/item_stacking/locked if predicate game:game_rules/item_stacking/on run \

@@ -1,7 +1,7 @@
 ##Generates list of game rules as JSON text components
 data modify storage rocketriders:gamerules list set value []
-execute if entity @s[tag=doPrevention,tag=!preventionOff] run data modify storage rocketriders:gamerules list append value [{"text":"Pierce Prevention: ","color":"white"},{"text":"Enabled","color":"green","bold":true}]
-execute unless entity @s[tag=doPrevention,tag=!preventionOff] run data modify storage rocketriders:gamerules list append value [{"text":"Pierce Prevention: ","color":"white"},{"text":"Disabled","color":"red","bold":true}]
+execute unless predicate game:game_rules/disable_pierce_prevention/on run data modify storage rocketriders:gamerules list append value [{"text":"Pierce Prevention: ","color":"white"},{"text":"Enabled","color":"green","bold":true}]
+execute if predicate game:game_rules/disable_pierce_prevention/on run data modify storage rocketriders:gamerules list append value [{"text":"Pierce Prevention: ","color":"white"},{"text":"Disabled","color":"red","bold":true}]
 execute if predicate game:game_rules/snipe_portals/on run data modify storage rocketriders:gamerules list append value [{"text":"Snipe Portals: ","color":"white"},{"text":"Enabled","color":"green","bold":true}]
 execute unless predicate game:game_rules/snipe_portals/on run data modify storage rocketriders:gamerules list append value [{"text":"Snipe Portals: ","color":"white"},{"text":"Disabled","color":"red","bold":true}]
 execute unless predicate game:game_rules/disable_tying/on run data modify storage rocketriders:gamerules list append value [{"text":"Tying/Sudden Death: ","color":"white"},{"text":"Enabled","color":"green","bold":true}]

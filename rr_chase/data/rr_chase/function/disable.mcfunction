@@ -3,7 +3,6 @@ scoreboard players reset * gamemode_components
 tag @s remove chaseEnabled
 tag @s remove tyingOff
 tag @s remove portalDecosOff
-tag @s remove preventionOff
 tag @s remove customPrevention
 tag @s remove customEnds
 tag @s remove customBossbar

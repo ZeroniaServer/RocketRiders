@@ -1,7 +1,6 @@
 scoreboard players reset * gamemode_components
 
 tag @s remove ctfEnabled
-tag @s remove preventionOff
 tag @s remove portalDecosOff
 tag @s[tag=arrowsWasOn] add rngArrows
 tag @s remove arrowsWasOn

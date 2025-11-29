@@ -36,7 +36,6 @@ tag @s remove rngNova
 function modifiers:disablemodifiers
 
 #Add needed settings and modifiers
-tag @s add doPrevention
 tag @s add doHotbarLimit
 
 #######################################################

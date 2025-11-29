@@ -16,7 +16,6 @@ tag @s remove switchGamemodes
 tag @s add chaseEnabled
 tag @s add tyingOff
 tag @s add portalDecosOff
-tag @s add preventionOff
 tag @s add customPrevention
 tag @s add customEnds
 tag @s add customBossbar

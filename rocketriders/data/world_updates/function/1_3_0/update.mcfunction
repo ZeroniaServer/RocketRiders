@@ -110,6 +110,11 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove tyingOff
 execute unless data storage rocketriders:storage {Tags:["doTying"]} run data modify storage rocketriders:storage config.disable_tying set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"doTying"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"tyingOff"}
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doPrevention] run scoreboard players set $disable_pierce_prevention config 1
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove doPrevention
+execute unless data storage rocketriders:storage {Tags:["doPrevention"]} run data modify storage rocketriders:storage config.disable_pierce_prevention set value 1b
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"doPrevention"}
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"preventionOff"}
 # Updating modifiers
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Explosive] run scoreboard players set $explosive config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Explosive

@@ -37,7 +37,7 @@ tag @s add rngCanopy
 execute unless predicate game:gamemode_components/duel_settings_locked run function modifiers:disablemodifiers
 
 #Add needed settings and modifiers
-tag @s add doPrevention
+scoreboard players reset $disable_pierce_prevention config
 tag @s add doHotbarLimit
 scoreboard players reset $disable_tying config
 

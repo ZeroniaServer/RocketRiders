@@ -30,7 +30,7 @@ execute if entity @s[tag=RestoreDefault] run function arenaclear:refreshcustomiz
 tag @s[tag=RestoreDefault] remove RestoreDefault
 
 ##RESTORE DEFAULT GAME RULES
-tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed,tag=!preventionOff] add doPrevention
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_pierce_prevention config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_tying config
 tag @s[tag=DefaultOptions,tag=!GamemodeRefreshed] add doHotbarLimit
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $item_stacking config

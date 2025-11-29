@@ -37,8 +37,8 @@ execute if predicate game:gamemode_components/duel_settings_locked run setblock 
 
 ##WORLD SETTINGS
 #Player Credits
-execute if entity @s[tag=!noPlayerCredits] run setblock -69 191 73 warped_wall_sign[facing=east]
-execute if entity @s[tag=noPlayerCredits] run setblock -69 191 73 crimson_wall_sign[facing=east]
+execute if predicate game:world_options/show_extra_player_credits/on run setblock -69 191 73 warped_wall_sign[facing=east]
+execute unless predicate game:world_options/show_extra_player_credits/on run setblock -69 191 73 crimson_wall_sign[facing=east]
 
 
 ####RESTORE DEFAULTS####
@@ -170,14 +170,10 @@ execute if predicate game:gamemode_components/duel_settings_locked run \
 
 ####WORLD SETTINGS####
 #Player Credits
-execute if entity @s[tag=!noPlayerCredits] run data modify block -69 191 73 front_text.messages[0] set value {"text":"Player Credits","color":"white","click_event":{"action":"run_command","command":"/function lobby:credits/stop"}}
-execute if entity @s[tag=!noPlayerCredits] run data modify block -69 191 73 front_text.messages[1] set value {"text":"Enabled","color":"green","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[tag=!noPlayerCredits] run data modify block -69 191 73 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/tellraw @s [\"\",{\"text\":\"Player Credits\",\"color\":\"white\",\"bold\":true},{\"text\":\" Disabled:\",\"color\":\"red\",\"bold\":true},{\"text\":\" Credits armor stands are not visible in the Lobby.\",\"color\":\"gray\",\"italic\":true}]"}}
-execute if entity @s[tag=!noPlayerCredits] run data modify block -69 191 73 front_text.messages[3] set value {"text":"(Causes lag)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns"}}
-execute if entity @s[tag=noPlayerCredits] run data modify block -69 191 73 front_text.messages[0] set value {"text":"Player Credits","color":"white","click_event":{"action":"run_command","command":"/function lobby:credits/initialize"}}
-execute if entity @s[tag=noPlayerCredits] run data modify block -69 191 73 front_text.messages[1] set value {"text":"Disabled","color":"red","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[tag=noPlayerCredits] run data modify block -69 191 73 front_text.messages[2] set value {"text":"","click_event":{"action":"run_command","command":"/tellraw @s [\"\",{\"text\":\"Player Credits\",\"color\":\"white\",\"bold\":true},{\"text\":\" Enabled:\",\"color\":\"green\",\"bold\":true},{\"text\":\" Credits armor stands are visible in the Lobby. (This can be laggy.)\",\"color\":\"gray\",\"italic\":true}]"}}
-execute if entity @s[tag=noPlayerCredits] run data modify block -69 191 73 front_text.messages[3] set value {"text":"(Reduces lag)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns"}}
+execute if predicate game:world_options/show_extra_player_credits/on run \
+  data modify block -69 191 73 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/show_extra_player_credits"},text:"Player Credits"},{bold:true,color:"green",text:"Enabled"},"",""]
+execute unless predicate game:world_options/show_extra_player_credits/on run \
+  data modify block -69 191 73 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/show_extra_player_credits"},text:"Player Credits"},{bold:true,color:"red",text:"Disabled"},"",""]
 
 #Daytime
 data modify block -69 192 73 front_text.messages[0] set value {"text":"Daytime:","color":"dark_green","click_event":{"action":"run_command","command":"/tag @s[predicate=!custom:team/any_arena_team] add daytimeChange"}}

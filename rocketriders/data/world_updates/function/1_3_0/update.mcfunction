@@ -223,6 +223,12 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDownWasOn
 execute if data storage rocketriders:storage {Tags:["WindDown"]} run data modify storage rocketriders:storage config.wind_down set value 1b
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"WindDown"}
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"WindDownWasOn"}
+# Updating world options
+execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPlayerCredits] run scoreboard players set $show_extra_player_credits config 1
+execute if predicate game:world_options/show_extra_player_credits/on run function lobby:credits/initialize
+execute unless predicate game:world_options/show_extra_player_credits/on run function lobby:credits/stop
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPlayerCredits
+function world_updates:1_3_0/remove_tag_from_storage_list {tag:"noPlayerCredits"}
 
 # Updating gamemode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1

@@ -47,7 +47,7 @@ execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run function are
 tag @s[tag=DefaultOptions] remove DefaultOptions
 
 ##RESTORE DEFAULT WORLD OPTIONS
-tag @s[tag=DefaultWorld,tag=!GamemodeRefreshed] add noPlayerCredits
+execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run scoreboard players reset $show_extra_player_credits config
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function lobby:credits/stop
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run time set 12925t
 execute unless score @s daytime matches 0..23999 store result score @s daytime run time query daytime

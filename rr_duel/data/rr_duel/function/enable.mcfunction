@@ -25,3 +25,8 @@ scoreboard players set @s MiddleDeco 0
 scoreboard players set @s TopCorner 0
 scoreboard players set @s BottomDeco 0
 scoreboard players set @s PortalDeco 0
+
+# items
+scoreboard players set $item_pool.cluster_fireball gamemode_components -1
+scoreboard players set $item_pool.icbm gamemode_components -1
+

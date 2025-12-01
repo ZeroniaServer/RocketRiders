@@ -14,10 +14,37 @@ scoreboard players set $no_item_timer gamemode_components 1
 function gamemodes:storesettings
 function arenaclear:enableitems
 tag @s remove switchGamemodes
-tag @s add normalForce
-tag @s add lightningForce
-tag @s add heavyForce
-tag @s add utilForce
 tag @s add hasBees
 tag @s add customBossbar
 tag @s add sandboxEnabled
+
+# items
+scoreboard players set $item_pool.missile/auxiliary gamemode_components 1
+scoreboard players set $item_pool.missile/juggerbuster gamemode_components 1
+scoreboard players set $item_pool.missile/rifter gamemode_components 1
+scoreboard players set $item_pool.missile/warhead gamemode_components 1
+
+scoreboard players set $item_pool.missile/hurricane gamemode_components 1
+scoreboard players set $item_pool.missile/thunderbolt gamemode_components 1
+
+scoreboard players set $item_pool.missile/ant gamemode_components 1
+scoreboard players set $item_pool.missile/blade gamemode_components 1
+scoreboard players set $item_pool.missile/catapult gamemode_components 1
+scoreboard players set $item_pool.missile/chronullifier gamemode_components 1
+scoreboard players set $item_pool.missile/citadel gamemode_components 1
+scoreboard players set $item_pool.missile/elder_guardian gamemode_components 1
+scoreboard players set $item_pool.missile/gemini gamemode_components 1
+scoreboard players set $item_pool.missile/lifter gamemode_components 1
+scoreboard players set $item_pool.missile/slasher gamemode_components 1
+scoreboard players set $item_pool.missile/tomatwo gamemode_components 1
+
+scoreboard players set $item_pool.arrow gamemode_components 1
+scoreboard players set $item_pool.canopy gamemode_components 1
+scoreboard players set $item_pool.cluster_fireball gamemode_components 1
+scoreboard players set $item_pool.fireball gamemode_components 1
+scoreboard players set $item_pool.icbm gamemode_components 1
+scoreboard players set $item_pool.nova_rocket gamemode_components 1
+scoreboard players set $item_pool.obsidian_shield gamemode_components 1
+scoreboard players set $item_pool.shield gamemode_components 1
+scoreboard players set $item_pool.splash gamemode_components 1
+scoreboard players set $item_pool.vortex gamemode_components 1

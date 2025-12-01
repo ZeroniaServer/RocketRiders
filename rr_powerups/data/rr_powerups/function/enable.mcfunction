@@ -9,3 +9,7 @@ tag @s add powerupsEnabled
 tag @s add customBaseFrames
 tag @s add customSpawnpointBlockProtection
 execute unless entity @e[x=0,type=marker,tag=captureMiddle,limit=1] run summon marker 12.5 54.0 0.0 {Tags:["captureMiddle"]}
+
+# items
+scoreboard players set $item_pool.cluster_fireball gamemode_components -1
+scoreboard players set $item_pool.icbm gamemode_components -1

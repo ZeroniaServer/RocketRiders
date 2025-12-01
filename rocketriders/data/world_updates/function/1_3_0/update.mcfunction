@@ -393,7 +393,7 @@ kill @e[x=0,type=marker,tag=BlueSpawnZone]
 kill @e[x=0,type=marker,tag=YellowSpawnZone]
 
 setblock -69 190 78 air
-setblock -69 190 78 minecraft:cherry_wall_sign[facing=east,waterlogged=false]{back_text:{color:"black",has_glowing_text:0b,messages:["","","",""]},front_text:{color:"purple",has_glowing_text:1b,messages:["",{"bold":true,"click_event":{"action":"run_command","command":"/function arenaclear:testvalidclear"},"color":"light_purple","text":"Start"},{"bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[tag=CancelJoin,limit=1] as @e[tag=Selection,tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning] run tellraw @s {\"text\":\"You must have at least one Missile enabled to start the game\",\"color\":\"red\"}"},"color":"light_purple","text":"Game"},""]},is_waxed:0b}
+setblock -69 190 78 minecraft:cherry_wall_sign[facing=east,waterlogged=false]{front_text:{color:"purple",has_glowing_text:true,messages:["",{bold:true,click_event:{action:"run_command",command:"function arenaclear:testvalidclear"},color:"light_purple",text:"Start"},{bold:true,color:"light_purple",text:"Game"},""]},is_waxed:true}
 
 setblock -47 211 81 air
 setblock -47 211 81 minecraft:player_head[powered=false,rotation=3]{profile:{id:[I;1909544700,370756089,-1576344790,1695827449]}}

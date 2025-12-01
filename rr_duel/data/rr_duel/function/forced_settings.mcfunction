@@ -1,36 +1,33 @@
-tag @s add rngNormal
-tag @s add rngLightning
-tag @s add rngUtil
-tag @s add rngHeavy
-
-tag @s remove rngAnt
-tag @s remove rngGemi
-tag @s remove rngToma
-tag @s remove rngAux
-tag @s remove rngBlade
-tag @s remove rngEguard
-tag @s remove rngSlash
-tag @s remove rngWar
-tag @s remove rngLift
-tag @s remove rngThun
-tag @s remove rngHur
-tag @s remove rngNull
-tag @s remove rngCata
-tag @s remove rngCitadel
+scoreboard players set $item_pool.missile/ant gamemode_components -1
+scoreboard players set $item_pool.missile/gemini gamemode_components -1
+scoreboard players set $item_pool.missile/tomatwo gamemode_components -1
+scoreboard players set $item_pool.missile/auxiliary gamemode_components -1
+scoreboard players set $item_pool.missile/blade gamemode_components -1
+scoreboard players set $item_pool.missile/elder_guardian gamemode_components -1
+scoreboard players set $item_pool.missile/slasher gamemode_components -1
+scoreboard players set $item_pool.missile/warhead gamemode_components -1
+scoreboard players set $item_pool.missile/lifter gamemode_components -1
+scoreboard players set $item_pool.missile/thunderbolt gamemode_components -1
+scoreboard players set $item_pool.missile/hurricane gamemode_components -1
+scoreboard players set $item_pool.missile/chronullifier gamemode_components -1
+scoreboard players set $item_pool.missile/catapult gamemode_components -1
+scoreboard players set $item_pool.missile/citadel gamemode_components -1
 
 #Util
-tag @s add rngArrows
-tag @s add rngFireball
-tag @s add rngShield
-tag @s add rngObshield
-tag @s add rngVortex
-tag @s add rngSplash
+scoreboard players set $item_pool.arrow gamemode_components 1
+scoreboard players set $item_pool.fireball gamemode_components 1
+scoreboard players set $item_pool.cluster_fireball gamemode_components -1
+scoreboard players set $item_pool.icbm gamemode_components -1
+scoreboard players set $item_pool.shield gamemode_components 1
+scoreboard players set $item_pool.obsidian_shield gamemode_components 1
+scoreboard players set $item_pool.vortex gamemode_components 1
+scoreboard players set $item_pool.splash gamemode_components 1
 
 #Deactivated items
-tag @s remove rngJbuster
-tag @s remove rngRift
-tag @s remove rngCanopy
-tag @s remove rngNova
+scoreboard players set $item_pool.missile/juggerbuster gamemode_components -1
+scoreboard players set $item_pool.missile/rifter gamemode_components -1
+scoreboard players set $item_pool.canopy gamemode_components -1
+scoreboard players set $item_pool.nova_rocket gamemode_components -1
 
 #Disable modifiers
 function modifiers:disablemodifiers
@@ -49,20 +46,20 @@ summon marker ~ ~ ~ {CustomName:["",{color:"light_purple",hover_event:{action:"s
 tag @e[x=0,type=marker,tag=RShieldRNG,limit=1,sort=random] add SelRRNG
 
 #normal shield selected
-execute if entity @e[x=0,type=marker,tag=Shield,tag=SelRRNG] run tag @s add rngShield
-execute if entity @e[x=0,type=marker,tag=Shield,tag=SelRRNG] run tag @s remove rngObshield
+execute if entity @e[x=0,type=marker,tag=Shield,tag=SelRRNG] run scoreboard players set $item_pool.shield gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=Shield,tag=SelRRNG] run scoreboard players set $item_pool.obsidian_shield gamemode_components -1
 
 #obshield selected
-execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run tag @s add rngObshield
-execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run tag @s remove rngShield
+execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run scoreboard players set $item_pool.obsidian_shield gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run scoreboard players set $item_pool.shield gamemode_components -1
 
 ### 1 projectile type (only fireballs, novas removed)
 summon marker ~ ~ ~ {CustomName:["",{color:"light_purple",hover_event:{action:"show_text",value:""},insertion:"",text:"Fireball"}],Tags:["RankedRNG","Fireball","RProjecRNG","RUtilRNG"]}
 tag @e[x=0,type=marker,tag=RProjecRNG,limit=1,sort=random] add SelRRNG
 
 #fireball selected
-tag @s add rngFireball
-tag @s remove rngNova
+scoreboard players set $item_pool.fireball gamemode_components 1
+scoreboard players set $item_pool.nova_rocket gamemode_components -1
 
 #Announce extra utils
 tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"light_purple","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":false}]
@@ -73,12 +70,12 @@ summon marker ~ ~ ~ {Tags:["RankedRNG","Thunderbolt","RLightningRNG"]}
 tag @e[x=0,type=marker,tag=RLightningRNG,limit=1,sort=random] add SelRRNG
 
 #hurricane selected
-execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tag @s add rngHur
-execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tag @s remove rngThun
+execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run scoreboard players set $item_pool.missile/hurricane gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run scoreboard players set $item_pool.missile/thunderbolt gamemode_components -1
 
 #thunderbolt selected
-execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s add rngThun
-execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tag @s remove rngHur
+execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run scoreboard players set $item_pool.missile/thunderbolt gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run scoreboard players set $item_pool.missile/hurricane gamemode_components -1
 
 ### 6/10 non-lightning missiles
 summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"A.N.T"}],Tags:["RankedRNG","Ant","RMisRNG"]}
@@ -96,18 +93,18 @@ summon marker ~ ~ ~ {CustomName:["",{color:"red",hover_event:{action:"show_text"
 
 tag @e[x=0,type=marker,tag=RMisRNG,tag=!SelRRNG,limit=6,sort=random] add SelRRNG
 
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Ant] run tag @s add rngAnt
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Gemini] run tag @s add rngGemi
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=TomaTwo] run tag @s add rngToma
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Auxiliary] run tag @s add rngAux
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Blade] run tag @s add rngBlade
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Catapult] run tag @s add rngCata
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Slasher] run tag @s add rngSlash
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Guard] run tag @s add rngEguard
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Lifter] run tag @s add rngLift
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Nullifier] run tag @s add rngNull
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Citadel] run tag @s add rngCitadel
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Warhead] run tag @s add rngWar
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Ant] run scoreboard players set $item_pool.missile/ant gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Gemini] run scoreboard players set $item_pool.missile/gemini gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=TomaTwo] run scoreboard players set $item_pool.missile/tomatwo gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Auxiliary] run scoreboard players set $item_pool.missile/auxiliary gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Blade] run scoreboard players set $item_pool.missile/blade gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Catapult] run scoreboard players set $item_pool.missile/catapult gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Slasher] run scoreboard players set $item_pool.missile/slasher gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Guard] run scoreboard players set $item_pool.missile/elder_guardian gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Lifter] run scoreboard players set $item_pool.missile/lifter gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Nullifier] run scoreboard players set $item_pool.missile/chronullifier gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Citadel] run scoreboard players set $item_pool.missile/citadel gamemode_components 1
+execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Warhead] run scoreboard players set $item_pool.missile/warhead gamemode_components 1
 
 #Announce normals
 tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"green","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=!RHeavyRNG]","color":"green","bold":false}]
@@ -117,11 +114,10 @@ execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tellraw @a[x
 execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Thunderbolt","color":"gold","bold":false}]
 
 #Announce heavys (if any)
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!rngAux,tag=!rngWar] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
+execute if entity @e[limit=1,x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
 
 kill @e[x=0,type=marker,tag=RankedRNG]
 tellraw @a[x=0] [""]
 
 #Enable/disable heavys
-tag @s[tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] add heavyOff
-execute unless entity @s[tag=!rngWar,tag=!rngJbuster,tag=!rngAux,tag=!rngRift] run tag @s remove heavyOff
+execute if predicate game:item_pool_meta/all_heavy_missiles_disabled run scoreboard players set $config_overrides.disabled_item_category/heavy_missiles gamemode_components 1

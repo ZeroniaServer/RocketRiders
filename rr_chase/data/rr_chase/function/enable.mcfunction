@@ -23,8 +23,7 @@ tag @s add leaveYSpawn
 # tag @s add arrowLimit
 tag @s add antigriefOff
 
-#enable arrows/utilities
-tag @s[tag=!rngArrows] add arrowsWasOff
-tag @s add rngArrows
-tag @s[tag=!rngUtil] add utilWasOff
-tag @s add rngUtil
+# items
+scoreboard players set $item_pool.arrow gamemode_components 1
+scoreboard players set $item_pool.cluster_fireball gamemode_components -1
+scoreboard players set $item_pool.icbm gamemode_components -1

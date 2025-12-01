@@ -1,11 +1,12 @@
 ##Enables all Utility items
-tag @s[tag=!shieldWasOn] add rngShield
-tag @s[tag=!arrowsWasOn] add rngArrows
-tag @s[tag=!vortexWasOn] add rngVortex
-tag @s[tag=!obshieldWasOn] add rngObshield
-tag @s[tag=!splashWasOn] add rngSplash
-tag @s[tag=!canopyWasOn] add rngCanopy
-tag @s[tag=!fireballWasOn] add rngFireball
-tag @s[tag=!novaWasOn] add rngNova
-tag @s[tag=!utilWasOn] remove utilOff
+scoreboard players reset $disable_item/shield config
+scoreboard players reset $disable_item/arrow config
+scoreboard players reset $disable_item/vortex config
+scoreboard players reset $disable_item/obsidian_shield config
+scoreboard players reset $disable_item/splash config
+scoreboard players reset $disable_item/canopy config
+scoreboard players reset $disable_item/fireball config
+scoreboard players reset $disable_item/nova_rocket config
+scoreboard players reset $disable_item_category/utilities config
+
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] refreshsigns 1

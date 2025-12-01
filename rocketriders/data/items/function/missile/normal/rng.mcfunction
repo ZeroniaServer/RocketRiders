@@ -1,15 +1,15 @@
 ##Sub-sub-RNG for Normal Missiles
 #Choose between each missile based on enabled status and Tetris state
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngAnt,tag=!givenAnt] run summon marker 0 0 0 {Tags:["rngAnt","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngLift,tag=!givenLift] run summon marker 0 0 0 {Tags:["rngLift","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngBlade,tag=!givenBlade] run summon marker 0 0 0 {Tags:["rngBlade","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngCata,tag=!givenCata] run summon marker 0 0 0 {Tags:["rngCata","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngEguard,tag=!givenGuard] run summon marker 0 0 0 {Tags:["rngEguard","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngNull,tag=!givenNull] run summon marker 0 0 0 {Tags:["rngNull","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngSlash,tag=!givenSlash] run summon marker 0 0 0 {Tags:["rngSlash","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngToma,tag=!givenToma] run summon marker 0 0 0 {Tags:["rngToma","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngCitadel,tag=!givenCita] run summon marker 0 0 0 {Tags:["rngCitadel","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngGemi,tag=!givenGemi] run summon marker 0 0 0 {Tags:["rngGemi","rng3"]}
+execute if predicate game:item_pool/missile/ant if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenAnt] run summon marker 0 0 0 {Tags:["rngAnt","rng3"]}
+execute if predicate game:item_pool/missile/lifter if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenLift] run summon marker 0 0 0 {Tags:["rngLift","rng3"]}
+execute if predicate game:item_pool/missile/blade if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenBlade] run summon marker 0 0 0 {Tags:["rngBlade","rng3"]}
+execute if predicate game:item_pool/missile/catapult if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenCata] run summon marker 0 0 0 {Tags:["rngCata","rng3"]}
+execute if predicate game:item_pool/missile/elder_guardian if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenGuard] run summon marker 0 0 0 {Tags:["rngEguard","rng3"]}
+execute if predicate game:item_pool/missile/chronullifier if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenNull] run summon marker 0 0 0 {Tags:["rngNull","rng3"]}
+execute if predicate game:item_pool/missile/slasher if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenSlash] run summon marker 0 0 0 {Tags:["rngSlash","rng3"]}
+execute if predicate game:item_pool/missile/tomatwo if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenToma] run summon marker 0 0 0 {Tags:["rngToma","rng3"]}
+execute if predicate game:item_pool/missile/citadel if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenCita] run summon marker 0 0 0 {Tags:["rngCitadel","rng3"]}
+execute if predicate game:item_pool/missile/gemini if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenGemi] run summon marker 0 0 0 {Tags:["rngGemi","rng3"]}
 
 #Select a missile and run appropriate give function
 tag @e[x=0,type=marker,tag=rng3,sort=random,limit=1] add rngSelected

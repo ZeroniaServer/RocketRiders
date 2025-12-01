@@ -1,0 +1,30 @@
+[
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/disable_item/missile/elder_guardian/forced_off"
+    }
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "$disable_item/missile/elder_guardian"
+          },
+          "score": "config"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:game_rules/disable_item/missile/elder_guardian/forced_on"
+      }
+    ]
+  }
+]

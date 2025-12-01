@@ -1,9 +1,9 @@
 ##Sub-sub-RNG for Heavy Missiles
 #Choose between each missile based on enabled status and Tetris state
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngAux,tag=!givenAux] run summon marker 0 0 0 {Tags:["rngAux","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngRift,tag=!givenRift] run summon marker 0 0 0 {Tags:["rngRift","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngJbuster,tag=!givenJbust] run summon marker 0 0 0 {Tags:["rngJbuster","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngWar,tag=!givenWar] run summon marker 0 0 0 {Tags:["rngWar","rng3"]}
+execute if predicate game:item_pool/missile/auxiliary if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenAux] run summon marker 0 0 0 {Tags:["rngAux","rng3"]}
+execute if predicate game:item_pool/missile/rifter if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenRift] run summon marker 0 0 0 {Tags:["rngRift","rng3"]}
+execute if predicate game:item_pool/missile/juggerbuster if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenJbust] run summon marker 0 0 0 {Tags:["rngJbuster","rng3"]}
+execute if predicate game:item_pool/missile/warhead if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenWar] run summon marker 0 0 0 {Tags:["rngWar","rng3"]}
 
 #Select a missile and run appropriate give function
 tag @e[x=0,type=marker,tag=rng3,sort=random,limit=1] add rngSelected

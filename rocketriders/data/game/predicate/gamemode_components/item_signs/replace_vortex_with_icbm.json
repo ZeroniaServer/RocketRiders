@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$item_signs/replace_vortex_with_icbm"
+    },
+    "score": "gamemode_components"
+  },
+  "range": 1
+}

@@ -2,8 +2,7 @@
 scoreboard players add @s fakeendtimer 1
 execute if entity @s[scores={fakeendtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 tag @s[scores={fakeendtimer=1}] remove gaveFirstItem
-scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime = @s[scores={fakeendtimer=1}] MaxItemSec
-scoreboard players operation @s[scores={fakeendtimer=1}] MaxItemTime *= $20 constant
+execute store result score @s[scores={fakeendtimer=1}] MaxItemTime run function game:config/get_item_delay_ticks
 scoreboard players set @s RandomItem -3
 execute if entity @s[scores={fakeendtimer=1}] run function game:endstats
 execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,predicate=custom:team/blue]

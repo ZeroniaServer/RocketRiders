@@ -30,8 +30,7 @@ function lobby:close_modification_room
 function arenaclear:gamerulelist
 
 ##Prepare Item RNG timer for next game
-scoreboard players operation @s MaxItemTime = @s MaxItemSec
-scoreboard players operation @s MaxItemTime *= $20 constant
+execute store result score @s MaxItemTime run function game:config/get_item_delay_ticks
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 execute if predicate game:modifiers/minute_mix/on run scoreboard players set @s RandomItem 1197

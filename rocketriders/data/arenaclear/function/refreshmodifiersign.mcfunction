@@ -95,6 +95,8 @@ execute if entity @s[scores={modifierID=21}] unless predicate game:modifiers/lon
 ##MODIFIER SELECTION
 function modifiers:modifierselect
 
+function arenaclear:refreshoptionssigns
+
 tag @s add SignsRefreshed
 
 ##Update facade

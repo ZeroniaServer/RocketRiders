@@ -157,7 +157,7 @@ scoreboard objectives add gravShot dummy
 scoreboard objectives add useful dummy
 scoreboard objectives add RepeatSettings dummy
 scoreboard objectives add MaxItemTime dummy
-scoreboard objectives add MaxItemSec dummy
+scoreboard objectives add set_item_delay trigger
 scoreboard objectives add RandomItem dummy
 scoreboard objectives add UKTimer dummy
 scoreboard objectives add daytime trigger

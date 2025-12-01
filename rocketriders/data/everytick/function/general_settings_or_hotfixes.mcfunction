@@ -59,7 +59,7 @@ tag @a[x=0,tag=canopyTP] remove canopyTP
 
 #Disable trigger objectives when appropriate
 scoreboard players reset @a[predicate=!custom:indimension] LeaveMidgame
-scoreboard players reset @a[predicate=!custom:indimension] MaxItemSec
+scoreboard players reset @a[predicate=!custom:indimension] set_item_delay
 scoreboard players reset @a[predicate=!custom:indimension] VoteServerMode
 scoreboard players reset @a[predicate=!custom:indimension] daytime
 scoreboard players reset @a[predicate=!custom:indimension] leaveSpec
@@ -69,9 +69,9 @@ scoreboard players reset @a[predicate=!custom:indimension] toggleParticles
 scoreboard players reset @a[predicate=!custom:indimension] toggleParkourTips
 scoreboard players reset @a[predicate=!custom:indimension] toggleHotbarAutoFill
 execute as @a[x=0,predicate=!custom:team/any_playing_team] run trigger LeaveMidgame set 0
-scoreboard players reset @a[x=0,predicate=!custom:team/lobby] MaxItemSec
-execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] MaxItemSec
-execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] MaxItemSec
+scoreboard players reset @a[x=0,predicate=!custom:team/lobby] set_item_delay
+execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] set_item_delay
+execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] set_item_delay
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] VoteServerMode
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby] daytime
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] daytime

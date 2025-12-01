@@ -25,7 +25,6 @@ scoreboard players set @e[x=0,type=marker,tag=ArenaClearChecker] ClearArena 90
 tag @s remove Countdown
 tag @e[x=0,type=marker,tag=ArenaClearChecker] add PlacerClear
 
-scoreboard players operation @s MaxItemTime = @s MaxItemSec
-scoreboard players operation @s MaxItemTime *= $20 constant
+execute store result score @s MaxItemTime run function game:config/get_item_delay_ticks
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime

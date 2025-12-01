@@ -20,7 +20,7 @@ data modify storage rocketriders:main itemdelay.dialog set value {\
   "inputs": [\
     {\
       "type": "minecraft:number_range",\
-      "key": "itemdelay",\
+      "key": "item_delay",\
       "label": [\
         "Second",\
         {\
@@ -45,12 +45,12 @@ data modify storage rocketriders:main itemdelay.dialog set value {\
       "label": "Confirm",\
       "action": {\
         "type": "minecraft:dynamic/run_command",\
-        "template": "trigger MaxItemSec set $(itemdelay)"\
+        "template": "trigger set_item_delay set $(item_delay)"\
       }\
     }\
   ]\
 }
-execute store result storage rocketriders:main itemdelay.dialog.inputs[0].initial int 1 run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemSec
+execute store result storage rocketriders:main itemdelay.dialog.inputs[0].initial int 1 run function game:config/get_item_delay
 
 function custom:show_dialog with storage rocketriders:main itemdelay
 

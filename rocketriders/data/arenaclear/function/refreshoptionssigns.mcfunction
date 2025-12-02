@@ -171,17 +171,17 @@ execute if predicate game:world_options/show_extra_player_credits/on run \
 execute unless predicate game:world_options/show_extra_player_credits/on run \
   data modify block -69 191 73 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/show_extra_player_credits"},text:"Player Credits"},{bold:true,color:"red",text:"Disabled"},"",""]
 
-#Daytime
-data modify block -69 192 73 front_text.messages[0] set value {"text":"Daytime:","color":"dark_green","click_event":{"action":"run_command","command":"/tag @s[predicate=!custom:team/any_arena_team] add daytimeChange"}}
-data modify block -69 192 73 front_text.messages[3] set value {"text":"(Click to adjust)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute store result score $daytime var run time query daytime
-execute if score $daytime var matches 0..100 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Sunrise","color":"green","bold":true}
-execute if score $daytime var matches 1 run data modify block -69 192 73 front_text.messages[1] set value [{"text":"1","color":"dark_green","bold":true},{"text":" tick","color":"green","bold":false}]
-execute if score $daytime var matches 900..1100 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Morning","color":"green","bold":true}
-execute if score $daytime var matches 5900..6100 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Noon","color":"green","bold":true}
-execute if score $daytime var matches 12900..13100 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Sunset","color":"green","bold":true}
-execute if score $daytime var matches 17900..18100 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Midnight","color":"green","bold":true}
-execute if score $daytime var matches 23900..23999 run data modify block -69 192 73 front_text.messages[1] set value {"text":"Sunrise","color":"green","bold":true}
-execute unless score $daytime var matches 0..100 unless score $daytime var matches 1 unless score $daytime var matches 900..1100 unless score $daytime var matches 5900..6100 unless score $daytime var matches 12900..13100 unless score $daytime var matches 17900..18100 unless score $daytime var matches 23900..23999 run data modify block -69 192 73 front_text.messages[1] set value [{"score":{"name":"$daytime","objective":"var"},"color":"green","bold":true},{"text":" ticks","color":"dark_green","bold":false}]
+#Time of Day
+data modify block -69 192 73 front_text.messages[0] set value {color:"dark_green",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_time_sign"},text:"Time of Day:"}
+data modify block -69 192 73 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click to adjust)"}
+execute store result score $time_of_day var run time query daytime
+execute if score $time_of_day var matches 0..100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Sunrise"}
+execute if score $time_of_day var matches 1 run data modify block -69 192 73 front_text.messages[1] set value [{bold:true,color:"dark_green",text:"1"},{bold:false,color:"green",text:" tick"}]
+execute if score $time_of_day var matches 900..1100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Morning"}
+execute if score $time_of_day var matches 5900..6100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Noon"}
+execute if score $time_of_day var matches 12900..13100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Sunset"}
+execute if score $time_of_day var matches 17900..18100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Midnight"}
+execute if score $time_of_day var matches 23900..23999 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Sunrise"}
+execute unless score $time_of_day var matches 0..100 unless score $time_of_day var matches 1 unless score $time_of_day var matches 900..1100 unless score $time_of_day var matches 5900..6100 unless score $time_of_day var matches 12900..13100 unless score $time_of_day var matches 17900..18100 unless score $time_of_day var matches 23900..23999 run data modify block -69 192 73 front_text.messages[1] set value [{bold:true,color:"green",score:{name:"$time_of_day",objective:"var"}},{bold:false,color:"dark_green",text:" ticks"}]
 
 tag @s add SignsRefreshed

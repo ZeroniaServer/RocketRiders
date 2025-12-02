@@ -50,7 +50,7 @@ tag @s[tag=DefaultOptions] remove DefaultOptions
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run scoreboard players reset $show_extra_player_credits config
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function lobby:credits/stop
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run time set 12925t
-execute unless score @s daytime matches 0..23999 store result score @s daytime run time query daytime
+execute unless score @s set_time_of_day matches 0..23999 store result score @s set_time_of_day run time query daytime
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultWorld] remove DefaultWorld
 
@@ -63,11 +63,9 @@ scoreboard players reset @a[x=0] set_item_delay
 execute if predicate rr:has_modification_room unless predicate game:modifiers/minute_mix/on run scoreboard players set @a[x=0] set_item_delay -2
 execute if predicate rr:has_modification_room unless predicate game:modifiers/minute_mix/on run scoreboard players enable @a[x=0,predicate=custom:team/lobby] set_item_delay
 
-##DAYTIME
-execute as @a[x=0,predicate=!custom:team/any_arena_team,tag=daytimeChange] run function arenaclear:daytime/show_dialog
-tag @a[x=0,tag=daytimeChange] remove daytimeChange
-execute as @a[x=0,predicate=!custom:team/any_arena_team,scores={daytime=-1}] run function arenaclear:daytime/show_dialog
-execute as @a[x=0,predicate=!custom:team/any_arena_team,scores={daytime=-2147483648..}] unless score @s daytime matches -2..-1 run function arenaclear:daytimechange
-scoreboard players reset @a[x=0] daytime
-execute if predicate rr:has_modification_room run scoreboard players set @a[x=0,predicate=custom:team/lobby] daytime -2
-execute if predicate rr:has_modification_room run scoreboard players enable @a[x=0,predicate=custom:team/lobby] daytime
+##TIME OF DAY
+execute as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_time_of_day=-1}] run function arenaclear:time_of_day/show_dialog
+execute as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_time_of_day=-2147483648..}] unless score @s set_time_of_day matches -2..-1 run function arenaclear:set_time_of_day
+scoreboard players reset @a[x=0] set_time_of_day
+execute if predicate rr:has_modification_room run scoreboard players set @a[x=0,predicate=custom:team/lobby] set_time_of_day -2
+execute if predicate rr:has_modification_room run scoreboard players enable @a[x=0,predicate=custom:team/lobby] set_time_of_day

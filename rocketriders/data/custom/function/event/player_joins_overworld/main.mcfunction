@@ -13,7 +13,8 @@ tag @s remove last_dialog_opened.gamemode_components_ui
 
 # Reset triggers
 scoreboard players reset @s LeaveMidgame
-scoreboard players reset @s daytime
+scoreboard players reset @s set_item_delay
+scoreboard players reset @s set_time_of_day
 scoreboard players reset @s leaveSpec
 scoreboard players reset @s LobbyWarp
 scoreboard players reset @s editSettings

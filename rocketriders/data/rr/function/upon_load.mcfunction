@@ -160,7 +160,7 @@ scoreboard objectives add MaxItemTime dummy
 scoreboard objectives add set_item_delay trigger
 scoreboard objectives add RandomItem dummy
 scoreboard objectives add UKTimer dummy
-scoreboard objectives add daytime trigger
+scoreboard objectives add set_time_of_day trigger
 scoreboard objectives add leaveSpec trigger
 scoreboard objectives add LeaveGame minecraft.custom:minecraft.leave_game
 scoreboard objectives add LobbyWarp trigger

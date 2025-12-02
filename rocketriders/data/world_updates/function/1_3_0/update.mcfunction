@@ -224,10 +224,6 @@ scoreboard objectives add dropWand minecraft.dropped:minecraft.writable_book
 scoreboard objectives add useWand minecraft.used:minecraft.writable_book
 
 # Reset offline player triggers
-execute store result storage rocketriders:temp wiped_settings.daytime int 1 run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] daytime
-scoreboard players reset * daytime
-execute store result score @e[x=0,type=armor_stand,tag=Selection,limit=1] daytime run data get storage rocketriders:temp wiped_settings.daytime
-data remove storage rocketriders:temp wiped_settings
 scoreboard players reset * LeaveMidgame
 scoreboard players reset * VoteServerMode
 scoreboard players reset * leaveSpec
@@ -239,6 +235,8 @@ scoreboard players reset * toggleHotbarAutoFill
 
 scoreboard objectives remove MaxItemSec
 scoreboard objectives add set_item_delay trigger
+scoreboard objectives remove daytime
+scoreboard objectives add set_time_of_day trigger
 
 
 kill @e[x=0,type=area_effect_cloud,tag=tempobshield]

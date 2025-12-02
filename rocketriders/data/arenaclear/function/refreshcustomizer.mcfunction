@@ -63,8 +63,8 @@ execute if predicate game:arena_details/portal/glass_rim run data modify block -
 execute if predicate game:arena_details/portal/glass_cover run data modify block -58 192 73 front_text.messages[1].text set value "Glass Cover"
 execute if predicate game:arena_details/portal/end_stone_cover run data modify block -58 192 73 front_text.messages[1].text set value "End Stone Cover"
 execute if predicate game:arena_details/portal/hole_in_one run data modify block -58 192 73 front_text.messages[1].text set value "Hole in One"
-execute unless predicate game:gamemode_components/duel_settings_locked unless predicate game:gamemode_components/no_portals run data modify block -58 192 73 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
-execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:gamemode_components/no_portals run data modify block -58 192 73 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute unless predicate game:gamemode_components/duel_settings_locked if entity @s[predicate=!game:gamemode_components/arena/no_portal_details,predicate=!game:gamemode_components/no_portals] run data modify block -58 192 73 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
+execute unless predicate game:gamemode_components/duel_settings_locked unless entity @s[predicate=!game:gamemode_components/arena/no_portal_details,predicate=!game:gamemode_components/no_portals] run data modify block -58 192 73 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
 execute if predicate game:gamemode_components/duel_settings_locked run data modify block -58 192 73 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
 
 ## Removes existing displays

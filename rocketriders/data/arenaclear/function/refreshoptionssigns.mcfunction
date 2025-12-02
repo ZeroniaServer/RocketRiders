@@ -174,14 +174,21 @@ execute unless predicate game:world_options/show_extra_player_credits/on run \
 #Time of Day
 data modify block -69 192 73 front_text.messages[0] set value {color:"dark_green",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_time_sign"},text:"Time of Day:"}
 data modify block -69 192 73 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click to adjust)"}
-execute store result score $time_of_day var run time query daytime
-execute if score $time_of_day var matches 0..100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Sunrise"}
-execute if score $time_of_day var matches 1 run data modify block -69 192 73 front_text.messages[1] set value [{bold:true,color:"dark_green",text:"1"},{bold:false,color:"green",text:" tick"}]
-execute if score $time_of_day var matches 900..1100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Morning"}
-execute if score $time_of_day var matches 5900..6100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Noon"}
-execute if score $time_of_day var matches 12900..13100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Sunset"}
-execute if score $time_of_day var matches 17900..18100 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Midnight"}
-execute if score $time_of_day var matches 23900..23999 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Sunrise"}
-execute unless score $time_of_day var matches 0..100 unless score $time_of_day var matches 1 unless score $time_of_day var matches 900..1100 unless score $time_of_day var matches 5900..6100 unless score $time_of_day var matches 12900..13100 unless score $time_of_day var matches 17900..18100 unless score $time_of_day var matches 23900..23999 run data modify block -69 192 73 front_text.messages[1] set value [{bold:true,color:"green",score:{name:"$time_of_day",objective:"var"}},{bold:false,color:"dark_green",text:" ticks"}]
+execute store result score $displayed_hour var run time query daytime
+scoreboard players add $displayed_hour var 6000
+scoreboard players add $displayed_hour var 500
+scoreboard players operation $displayed_hour var %= $24000 constant
+scoreboard players operation $displayed_hour var /= $1000 constant
+scoreboard players operation $displayed_hour_o_clock var = $displayed_hour var
+scoreboard players remove $displayed_hour_o_clock var 1
+scoreboard players operation $displayed_hour_o_clock var %= $12 constant
+scoreboard players add $displayed_hour_o_clock var 1
+execute if score $displayed_hour var matches 6 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Sunrise"}
+execute if score $displayed_hour var matches 7 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Morning"}
+execute if score $displayed_hour var matches 12 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Noon"}
+execute if score $displayed_hour var matches 19 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Sunset"}
+execute if score $displayed_hour var matches 0 run data modify block -69 192 73 front_text.messages[1] set value {bold:true,color:"green",text:"Midnight"}
+execute if score $displayed_hour var matches 0..11 unless score $displayed_hour var matches 0 unless score $displayed_hour var matches 6..7 run data modify block -69 192 73 front_text.messages[1] set value [{bold:true,color:"green",score:{name:"$displayed_hour_o_clock",objective:"var"}},{bold:false,color:"dark_green",text:" A.M."}]
+execute if score $displayed_hour var matches 12..23 unless score $displayed_hour var matches 12 unless score $displayed_hour var matches 19 run data modify block -69 192 73 front_text.messages[1] set value [{bold:true,color:"green",score:{name:"$displayed_hour_o_clock",objective:"var"}},{bold:false,color:"dark_green",text:" P.M."}]
 
 tag @s add SignsRefreshed

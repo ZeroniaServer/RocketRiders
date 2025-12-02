@@ -70,6 +70,7 @@ scoreboard players set $7 constant 7
 scoreboard players set $8 constant 8
 scoreboard players set $9 constant 9
 scoreboard players set $10 constant 10
+scoreboard players set $12 constant 12
 scoreboard players set $15 constant 15
 scoreboard players set $16 constant 16
 scoreboard players set $20 constant 20
@@ -84,6 +85,7 @@ scoreboard players set $360 constant 360
 scoreboard players set $400 constant 400
 scoreboard players set $1000 constant 1000
 scoreboard players set $1200 constant 1200
+scoreboard players set $2400 constant 2400
 scoreboard players set $24000 constant 24000
 
 scoreboard objectives add event.player_joins_overworld.state custom:leave_game

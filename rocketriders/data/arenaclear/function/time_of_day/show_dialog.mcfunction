@@ -23,12 +23,12 @@ data modify storage rocketriders:main time_of_day.dialog set value {\
           "text": "[Sunrise]",\
           "click_event": {\
             "action": "run_command",\
-            "command": "trigger set_time_of_day set 24000"\
+            "command": "trigger set_time_of_day set -4200"\
           },\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-              "text": "Click to set the time of day to Sunrise (0)"\
+              "text": "Click to set the time of day to Sunrise (600)"\
             }\
           }\
         },\
@@ -37,12 +37,12 @@ data modify storage rocketriders:main time_of_day.dialog set value {\
           "text": "[Morning]",\
           "click_event": {\
             "action": "run_command",\
-            "command": "trigger set_time_of_day set 25000"\
+            "command": "trigger set_time_of_day set -4100"\
           },\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-              "text": "Click to set the time of day to Morning (1000)"\
+              "text": "Click to set the time of day to Morning (700)"\
             }\
           }\
         },\
@@ -51,12 +51,12 @@ data modify storage rocketriders:main time_of_day.dialog set value {\
           "text": "[Noon]",\
           "click_event": {\
             "action": "run_command",\
-            "command": "trigger set_time_of_day set 30000"\
+            "command": "trigger set_time_of_day set -3600"\
           },\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-              "text": "Click to set the time of day to Noon (6000)"\
+              "text": "Click to set the time of day to Noon (1200)"\
             }\
           }\
         },\
@@ -65,12 +65,12 @@ data modify storage rocketriders:main time_of_day.dialog set value {\
           "text": "[Sunset]",\
           "click_event": {\
             "action": "run_command",\
-            "command": "trigger set_time_of_day set 37000"\
+            "command": "trigger set_time_of_day set -2900"\
           },\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-              "text": "Click to set the time of day to Sunset (13000)"\
+              "text": "Click to set the time of day to Sunset (1900)"\
             }\
           }\
         },\
@@ -79,12 +79,12 @@ data modify storage rocketriders:main time_of_day.dialog set value {\
           "text": "[Midnight]",\
           "click_event": {\
             "action": "run_command",\
-            "command": "trigger set_time_of_day set 42000"\
+            "command": "trigger set_time_of_day set -4800"\
           },\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
-              "text": "Click to set the time of day to Midnight (18000)"\
+              "text": "Click to set the time of day to Midnight (0)"\
             }\
           }\
         }\
@@ -99,8 +99,8 @@ data modify storage rocketriders:main time_of_day.dialog set value {\
       "key": "time_of_day",\
       "label": "Time of Day",\
       "start": 0,\
-      "end": 23999,\
-      "step": 1,\
+      "end": 2300,\
+      "step": 100,\
       "initial": 0\
     }\
   ],\
@@ -119,7 +119,12 @@ data modify storage rocketriders:main time_of_day.dialog set value {\
     }\
   ]\
 }
-execute store result storage rocketriders:main time_of_day.dialog.inputs[0].initial int 1 run time query daytime
+
+execute store result score $displayed_hour var run time query daytime
+scoreboard players remove $displayed_hour var 18000
+scoreboard players add $displayed_hour var 500
+scoreboard players operation $displayed_hour var %= $24000 constant
+execute store result storage rocketriders:main time_of_day.dialog.inputs[0].initial int 100 run scoreboard players operation $displayed_hour var /= $1000 constant
 
 function custom:show_dialog with storage rocketriders:main time_of_day
 

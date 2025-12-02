@@ -14,7 +14,6 @@ function gamemodes:storesettings
 tag @s add customBossbar
 tag @s add duelEnabled
 tag @s add customLeaveHandling
-tag @s add featheredOff
 
 # items
 scoreboard players set $item_pool.cluster_fireball gamemode_components -1

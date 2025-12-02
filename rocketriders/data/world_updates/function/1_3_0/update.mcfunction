@@ -95,6 +95,7 @@ execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] origYCount match
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove decosLocked
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove portalDecosOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove tyingOff
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs

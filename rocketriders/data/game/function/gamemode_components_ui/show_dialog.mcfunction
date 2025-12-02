@@ -21,7 +21,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:gamemode_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),explosions_crack_deepslate_bricks:$(explosions_crack_deepslate_bricks),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue),no_achievements:$(no_achievements)}"\
+      "template": "function game:gamemode_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),explosions_crack_deepslate_bricks:$(explosions_crack_deepslate_bricks),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details)}"\
     }\
   },\
   "no": {\
@@ -55,6 +55,10 @@ execute if predicate game:gamemode_components/arena/bedrock_frame run data modif
 # arena/no_base_details
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__no_base_details",label:"arena/no_base_details",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:gamemode_components/arena/no_base_details run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[1].initial set value true
+
+# arena/no_portal_details
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__no_portal_details",label:"arena/no_portal_details",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
+execute if predicate game:gamemode_components/arena/no_portal_details run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[1].initial set value true
 
 # armor/*
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"armor__",label:"armor/*",width:300,options:[{id:"0",display:{color:"white",text:"generic"}},{id:"1",display:{color:"white",text:"crusade_kit_dependent"}},{id:"2",display:{color:"white",text:"swap"}}]}
@@ -143,8 +147,8 @@ execute if predicate game:gamemode_components/portal_crystal_protection run data
 
 # "portal_type"
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"__portal_type",label:"portal_type",width:300,options:[{id:"0",display:{color:"white",text:"none"}},{id:"1",display:{color:"white",text:"default"}},{id:"2",display:{color:"white",text:"small"}}]}
-execute if predicate game:portal_type/default run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"default"}}].initial set value true
 execute if predicate game:portal_type/none run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"none"}}].initial set value true
+execute if predicate game:portal_type/default run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"default"}}].initial set value true
 execute if predicate game:portal_type/small run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"small"}}].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!ctfEnabled,tag=!chaseEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[0].display.color set value "red"
 

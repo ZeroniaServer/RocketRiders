@@ -16,6 +16,10 @@ execute if score $arena/bedrock_frame gamemode_components matches 0 run scoreboa
 $execute store success score $arena/no_base_details gamemode_components if predicate {condition:"value_check",value:$(arena__no_base_details),range:1}
 execute if score $arena/no_base_details gamemode_components matches 0 run scoreboard players reset $arena/no_base_details gamemode_components
 
+# arena/no_portal_details
+$execute store success score $arena/no_portal_details gamemode_components if predicate {condition:"value_check",value:$(arena__no_portal_details),range:1}
+execute if score $arena/no_portal_details gamemode_components matches 0 run scoreboard players reset $arena/no_portal_details gamemode_components
+
 # armor/*
 $scoreboard players set $armor var $(armor__)
 execute store success score $armor/generic gamemode_components if score $armor var matches 0
@@ -83,9 +87,9 @@ execute if score $no_item_timer gamemode_components matches 0 run scoreboard pla
 
 # small_portals & no_portals
 $scoreboard players set $portal_type var $(__portal_type)
-execute store success score $small_portals gamemode_components if score $portal_type var matches 1
+execute store success score $small_portals gamemode_components if score $portal_type var matches 2
 execute if score $small_portals gamemode_components matches 0 run scoreboard players reset $small_portals gamemode_components
-execute store success score $no_portals gamemode_components if score $portal_type var matches 2
+execute store success score $no_portals gamemode_components if score $portal_type var matches 0
 execute if score $no_portals gamemode_components matches 0 run scoreboard players reset $no_portals gamemode_components
 
 # one_team
@@ -96,4 +100,5 @@ execute if score $one_team gamemode_components matches 0 run scoreboard players 
 $execute store success score $red_for_blue gamemode_components if predicate {condition:"value_check",value:$(red_for_blue),range:1}
 execute if score $red_for_blue gamemode_components matches 0 run scoreboard players reset $red_for_blue gamemode_components
 
+function arenaclear:refreshcheck_indimension
 function game:place_facade

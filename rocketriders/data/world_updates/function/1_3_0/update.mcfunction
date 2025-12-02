@@ -96,58 +96,37 @@ execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] origYCount match
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove decosLocked
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove portalDecosOff
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove tyingOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customNova
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customShield
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove custVortParticle
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPortal
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customVoid
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove onlyBlue
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ChaosOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJumpOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClickOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SplashStreamsOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEggOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MinuteOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SonarOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFallOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove InstamineOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDownOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove featheredOff
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs
 
-# TODO: Run enable function for the current gamemode
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $neutral_items gamemode_components 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $custom_team_colors gamemode_components 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] as @a[x=0,predicate=custom:team/any_playing_team,scores={ArmorColor=1..12}] run scoreboard players operation @s custom_team_color = @s ArmorColor
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customNova
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customShield
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove custVortParticle
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noPortal] run scoreboard players set $no_portals gamemode_components 1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPortal
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=settingsLocked] run scoreboard players set $duel_settings_locked gamemode_components 1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove settingsLocked
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customVoid] run scoreboard players set $lower_void gamemode_components 1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customVoid
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=onlyBlue] run scoreboard players set $one_team gamemode_components 1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove onlyBlue
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ChaosOff] run scoreboard players set $config_override.special_treatment gamemode_components -1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ChaosOff
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NinjaJumpOff] run scoreboard players set $config_override.ninja_jump gamemode_components -1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NinjaJumpOff
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SpamClickOff] run scoreboard players set $config_override.spam_click gamemode_components -1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SpamClickOff
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SplashStreamsOff] run scoreboard players set $config_override.splash_streams gamemode_components -1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SplashStreamsOff
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SurpriseEggOff] run scoreboard players set $config_override.surprise_eggs gamemode_components -1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SurpriseEggOff
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=MinuteOff] run scoreboard players set $config_override.minute_mix gamemode_components -1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove MinuteOff
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SonarOff] run scoreboard players set $config_override.sonar gamemode_components -1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SonarOff
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=NoFallOff] run scoreboard players set $config_override.no_fall_damage gamemode_components -1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFallOff
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=InstamineOff] run scoreboard players set $config_override.instamine gamemode_components -1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove InstamineOff
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WindDownOff] run scoreboard players set $config_override.wind_down gamemode_components -1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=WindDownForce] run scoreboard players set $config_override.wind_down gamemode_components 1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDownOff
-execute if score $settings_locked gamemode_components matches 1 run scoreboard players set $duel_duel_settings_locked gamemode_components 1
-scoreboard players reset $settings_locked gamemode_components
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=featheredOff,tag=duelEnabled] run scoreboard players set $no_feathered_vortices gamemode_components 1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove featheredOff
-# New gamemode components
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $small_portals gamemode_components 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $has_flags gamemode_components 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $config_override.hobbits gamemode_components -1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!crusadeEnabled,tag=!ctfEnabled] run scoreboard players set $main_item/shooting_saber gamemode_components 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run scoreboard players set $main_item/piercing_pickaxe gamemode_components 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run scoreboard players set $friendly_fire gamemode_components 1
+# Make sure new gamemode components system is set correctly for the currently enabled game mode
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run function rr_chase:enable
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run function rr_crusade:enable
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run function rr_ctf:enable
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=duelEnabled] run function rr_duel:enable
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalEnabled] run function rr_normal:enable
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupEnabled] run function rr_powerup:enable
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxEnabled] run function rr_sandbox:enable
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run function rr_swap:enable
 
 # rename confusingly named tags
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] add customSpawnpointBlockProtection

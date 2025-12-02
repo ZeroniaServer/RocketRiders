@@ -22,4 +22,4 @@ scoreboard players reset $hobbits config
 scoreboard players reset $instant_tnt_explosions config
 scoreboard players reset $long_arms config
 
-function arenaclear:unlockdecos
+function arenaclear:refreshcustomizer

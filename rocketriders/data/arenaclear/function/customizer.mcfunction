@@ -21,11 +21,11 @@ scoreboard players operation @s SetGamemode %= maxID gamemodeID
 scoreboard players add @s SetGamemode 1
 
 ##RESTORE DEFAULT DETAILS
-scoreboard players set @s[tag=RestoreDefault] TopDeco 1
-scoreboard players set @s[tag=RestoreDefault] TopCorner 1
-scoreboard players set @s[tag=RestoreDefault] MiddleDeco 1
-scoreboard players set @s[tag=RestoreDefault] BottomDeco 1
-scoreboard players set @s[tag=RestoreDefault] PortalDeco 1
+execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/top config 1
+execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/top_sides config 1
+execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/middle config 1
+execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/bottom config 1
+execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/portal config 1
 execute if entity @s[tag=RestoreDefault] run function arenaclear:refreshcustomizer
 tag @s[tag=RestoreDefault] remove RestoreDefault
 

@@ -10,13 +10,6 @@ data modify entity @s Tags set from storage rocketriders:storage Tags
 data remove storage rocketriders:storage Tags
 scoreboard players reset $match_over global
 
-
-scoreboard players operation @s TopDeco = $TORAGE TopDeco
-scoreboard players operation @s TopCorner = $TORAGE TopCorner
-scoreboard players operation @s MiddleDeco = $TORAGE MiddleDeco
-scoreboard players operation @s BottomDeco = $TORAGE BottomDeco
-scoreboard players operation @s PortalDeco = $TORAGE PortalDeco
-
 #EXTRA: For resetting to global defaults
 execute if entity @e[x=0,type=armor_stand,tag=rr_normal,tag=GlobalDefaults] run tag @s add RestoreDefault
 execute if entity @e[x=0,type=armor_stand,tag=rr_normal,tag=GlobalDefaults] run function modifiers:disablemodifiers

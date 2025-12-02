@@ -13,8 +13,8 @@ execute if predicate rr_swap:blue_team_is_dark run fill 38 34 62 -14 63 66 white
 #0 = darkyellow
 execute if predicate rr_swap:yellow_team_is_dark unless predicate game:gamemode_components/red_for_blue run fill -14 34 -52 38 63 -56 light_blue_stained_glass replace blue_stained_glass
 execute if predicate rr_swap:yellow_team_is_dark if predicate game:gamemode_components/red_for_blue run fill -14 34 -52 38 63 -56 pink_stained_glass replace red_stained_glass
-execute if predicate rr_swap:yellow_team_is_dark unless predicate game:gamemode_components/red_for_blue if entity @s[scores={MiddleDeco=3}] run fill -14 34 -51 38 63 -49 light_blue_stained_glass replace blue_stained_glass
-execute if predicate rr_swap:yellow_team_is_dark if predicate game:gamemode_components/red_for_blue if entity @s[scores={MiddleDeco=3}] run fill -14 34 -51 38 63 -49 pink_stained_glass replace red_stained_glass
+execute if predicate rr_swap:yellow_team_is_dark unless predicate game:gamemode_components/red_for_blue if predicate game:arena_details/middle/layered run fill -14 34 -51 38 63 -49 light_blue_stained_glass replace blue_stained_glass
+execute if predicate rr_swap:yellow_team_is_dark if predicate game:gamemode_components/red_for_blue if predicate game:arena_details/middle/layered run fill -14 34 -51 38 63 -49 pink_stained_glass replace red_stained_glass
 execute if predicate rr_swap:yellow_team_is_dark unless predicate game:gamemode_components/red_for_blue run fill 38 34 -61 -14 63 -57 white_stained_glass replace cyan_stained_glass
 execute if predicate rr_swap:yellow_team_is_dark if predicate game:gamemode_components/red_for_blue run fill 38 34 -61 -14 63 -57 white_stained_glass replace pink_stained_glass
 execute if predicate rr_swap:yellow_team_is_dark run fill -14 34 -62 38 63 -66 white_concrete replace white_stained_glass

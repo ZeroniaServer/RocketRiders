@@ -1,0 +1,28 @@
+[
+  {
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$arena_details/top_sides"
+      },
+      "score": "config"
+    },
+    "range": 1
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:gamemode_components/arena/no_base_details"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/hardcore/on"
+    }
+  }
+]

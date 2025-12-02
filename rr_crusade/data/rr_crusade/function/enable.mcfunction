@@ -1,5 +1,6 @@
 scoreboard players reset * gamemode_components
 scoreboard players set $arena/no_base_details gamemode_components 1
+scoreboard players set $arena/no_portal_details gamemode_components 1
 scoreboard players set $armor/crusade_kit_dependent gamemode_components 1
 scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit gamemode_components 1
 scoreboard players set $config_override.clutter_collector gamemode_components -1
@@ -16,8 +17,6 @@ scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
 scoreboard players set $portal_crystal_protection gamemode_components 1
 
 tag @s remove switchGamemodes
-function arenaclear:lockdecos
-tag @s add portalDecosOff
 tag @s add customPrevention
 tag @s add arrowLimit
 tag @s add SuddenDeathCustom

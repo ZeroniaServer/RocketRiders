@@ -15,13 +15,13 @@ scoreboard players set $red_for_blue gamemode_components 1
 tag @s remove switchGamemodes
 tag @s add chaseEnabled
 tag @s add tyingOff
-tag @s add portalDecosOff
 tag @s add customPrevention
 tag @s add customEnds
 tag @s add customBossbar
 tag @s add leaveYSpawn
 # tag @s add arrowLimit
 tag @s add antigriefOff
+tag @s add noDetailYellow
 
 # items
 scoreboard players set $item_pool.arrow gamemode_components 1

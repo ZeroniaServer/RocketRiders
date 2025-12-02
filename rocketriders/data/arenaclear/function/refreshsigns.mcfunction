@@ -3,10 +3,12 @@
 ## Modification Room sign text and appearance ##
 ################################################
 
+tag @s add refreshing_all_signs
 function arenaclear:refreshmodifiersign
 function arenaclear:refreshoptionssigns
 function arenaclear:refreshitemsigns
 function arenaclear:refreshcustomizer
+tag @s remove refreshing_all_signs
 
 #Temporarily block usage of Gamemode sign
 data modify block -69 192 74 front_text.messages[0] set value {"text":"Gamemode:","color":"#6b006b","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_gamemode_sign"}}

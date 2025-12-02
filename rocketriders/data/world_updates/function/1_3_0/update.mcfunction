@@ -93,6 +93,9 @@ execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] yellowsCount mat
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] origBCount matches 1.. store result score $initial_blue_team_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] origBCount
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] origYCount matches 1.. store result score $initial_yellow_team_count global run scoreboard players get @e[x=0,type=armor_stand,tag=Selection,limit=1] origYCount
 
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove decosLocked
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove portalDecosOff
+
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs
 
@@ -212,6 +215,11 @@ scoreboard objectives remove bMissileCount
 scoreboard objectives remove yMissileCount
 scoreboard objectives remove splashCount
 scoreboard objectives remove shieldCount
+scoreboard objectives remove TopDeco
+scoreboard objectives remove TopCorner
+scoreboard objectives remove MiddleDeco
+scoreboard objectives remove BottomDeco
+scoreboard objectives remove PortalDeco
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

@@ -11,8 +11,6 @@ scoreboard players set $no_portals gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add ctfEnabled
-function arenaclear:unlockdecos
-tag @s add portalDecosOff
 tag @s add canopyStack
 tag @s add customPrevention
 tag @s add respawnFlag

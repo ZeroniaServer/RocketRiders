@@ -1,5 +1,4 @@
 ## GAME RULES
-
 # noTeamBalance tag -> disable_team_balancing config
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noTeamBalance] run scoreboard players set $disable_team_balancing config 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noTeamBalance
@@ -183,3 +182,19 @@ execute if predicate game:world_options/show_extra_player_credits/on run functio
 execute unless predicate game:world_options/show_extra_player_credits/on run function lobby:credits/stop
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPlayerCredits
 function world_updates:1_3_0/remove_tag_from_storage_list {tag:"noPlayerCredits"}
+
+## BASE DECORATIONS
+# TopDeco score -> arena_details/top config
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco matches 1..3 run scoreboard players operation $arena_details/top config = @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco
+
+# TopCorner score -> arena_details/top_sides config
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner matches 1..3 run scoreboard players operation $arena_details/top_sides config = @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner
+
+# MiddleDeco score -> arena_details/middle config
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco matches 1..3 run scoreboard players operation $arena_details/middle config = @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco
+
+# BottomDeco score -> arena_details/bottom config
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco matches 1..3 run scoreboard players operation $arena_details/bottom config = @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco
+
+# PortalDeco score -> arena_details/portal config
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco matches 1..4 run scoreboard players operation $arena_details/portal config = @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco

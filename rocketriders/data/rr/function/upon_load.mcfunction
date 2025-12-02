@@ -179,7 +179,6 @@ scoreboard objectives add SetGamemode dummy
 scoreboard objectives add gamemodeID dummy
 scoreboard objectives add invCount dummy
 scoreboard objectives add actionbardelay dummy
-scoreboard objectives add PortalDeco dummy
 scoreboard objectives add FellVoid dummy
 scoreboard objectives add CreditCycle dummy
 scoreboard objectives add RNGmax dummy
@@ -187,10 +186,6 @@ scoreboard objectives add RNGscore dummy
 scoreboard objectives add PlayerCap dummy
 scoreboard objectives add WinStreak dummy
 scoreboard objectives add HasFlag dummy
-scoreboard objectives add TopDeco dummy
-scoreboard objectives add TopCorner dummy
-scoreboard objectives add BottomDeco dummy
-scoreboard objectives add MiddleDeco dummy
 scoreboard objectives add refreshsigns dummy
 scoreboard objectives add xp_level dummy
 scoreboard objectives add xp_progress dummy

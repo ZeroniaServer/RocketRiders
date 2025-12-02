@@ -3,182 +3,119 @@
 ## Base Details in the Base Customizer  ##
 ##########################################
 
-##RESET DECORATION SCORES
-scoreboard players set @s[scores={TopDeco=4..}] TopDeco 0
-scoreboard players set @s[scores={TopCorner=4..}] TopCorner 0
-scoreboard players set @s[scores={MiddleDeco=4..}] MiddleDeco 0
-scoreboard players set @s[scores={BottomDeco=4..}] BottomDeco 0
-scoreboard players set @s[scores={PortalDeco=5..}] PortalDeco 0
+## WRAP AROUND OPTIONS
+scoreboard players operation $arena_details/top config %= $4 constant
+execute if score $arena_details/top config matches 0 run scoreboard players reset $arena_details/top config
+scoreboard players operation $arena_details/top_sides config %= $4 constant
+execute if score $arena_details/top_sides config matches 0 run scoreboard players reset $arena_details/top_sides config
+scoreboard players operation $arena_details/middle config %= $4 constant
+execute if score $arena_details/middle config matches 0 run scoreboard players reset $arena_details/middle config
+scoreboard players operation $arena_details/bottom config %= $4 constant
+execute if score $arena_details/bottom config matches 0 run scoreboard players reset $arena_details/bottom config
+scoreboard players operation $arena_details/portal config %= $5 constant
+execute if score $arena_details/portal config matches 0 run scoreboard players reset $arena_details/portal config
 
-####DECORATIONS####
-##TOP DECORATION
-#New Dawn arch
-execute if entity @s[scores={TopDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[0] set value {"text":"Top Detail:","color":"dark_green","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco 1"}}
-execute if entity @s[scores={TopDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[1] set value {"text":"Arch","color":"green","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={TopDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Towers
-execute if entity @s[scores={TopDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[0] set value {"text":"Top Detail:","color":"dark_green","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco 1"}}
-execute if entity @s[scores={TopDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[1] set value {"text":"Towers","color":"green","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={TopDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Spikes
-execute if entity @s[scores={TopDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[0] set value {"text":"Top Detail:","color":"dark_green","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco 1"}}
-execute if entity @s[scores={TopDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[1] set value {"text":"Spikes","color":"green","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={TopDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#None
-execute if entity @s[scores={TopDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[0] set value {"text":"Top Detail:","color":"dark_green","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco 1"}}
-execute if entity @s[scores={TopDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[1] set value {"text":"None","color":"green","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={TopDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Locked
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[0] set value {"text":"Top Detail:","color":"dark_green","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Base Details are not adjustable in this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[1] set value {"text":"Locked","color":"black","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 76 front_text.messages[3] set value {"text":""}
+## DECORATIONS
+# TOP DECORATION
+data modify block -57 192 76 front_text.messages set value [{color:"dark_green",text:"Top Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_base_decoration_sign/top"}},{color:"green",text:"None"},"",""]
+execute if predicate game:arena_details/top/none run data modify block -57 192 76 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/top/arch run data modify block -57 192 76 front_text.messages[1].text set value "Arch"
+execute if predicate game:arena_details/top/towers run data modify block -57 192 76 front_text.messages[1].text set value "Towers"
+execute if predicate game:arena_details/top/spikes run data modify block -57 192 76 front_text.messages[1].text set value "Spikes"
+execute unless predicate game:gamemode_components/duel_settings_locked unless predicate game:gamemode_components/arena/no_base_details run data modify block -57 192 76 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
+execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:gamemode_components/arena/no_base_details run data modify block -57 192 76 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute if predicate game:gamemode_components/duel_settings_locked run data modify block -57 192 76 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
 
-##TOP SIDES
-#New Dawn Platforms
-execute if entity @s[scores={TopCorner=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[0] set value {"text":"Top Sides Detail:","color":"#0090B8","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner 1"}}
-execute if entity @s[scores={TopCorner=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[1] set value {"text":"Platform","color":"#00C8FF","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={TopCorner=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Spikes
-execute if entity @s[scores={TopCorner=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[0] set value {"text":"Top Sides Detail:","color":"#0090B8","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner 1"}}
-execute if entity @s[scores={TopCorner=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[1] set value {"text":"Spikes","color":"#00C8FF","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={TopCorner=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Cannons
-execute if entity @s[scores={TopCorner=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[0] set value {"text":"Top Sides Detail:","color":"#0090B8","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner 1"}}
-execute if entity @s[scores={TopCorner=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[1] set value {"text":"Cannons","color":"#00C8FF","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={TopCorner=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#None
-execute if entity @s[scores={TopCorner=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[0] set value {"text":"Top Sides Detail:","color":"#0090B8","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] TopCorner 1"}}
-execute if entity @s[scores={TopCorner=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[1] set value {"text":"None","color":"#00C8FF","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={TopCorner=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Locked
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[0] set value {"text":"Top Sides Detail:","color":"#0090B8","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Base Details are not adjustable in this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[1] set value {"text":"Locked","color":"black","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 71 front_text.messages[3] set value {"text":""}
+# TOP SIDES
+data modify block -58 192 71 front_text.messages set value [{color:"#0090B8",text:"Top Sides Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_base_decoration_sign/top_sides"}},{color:"#00C8FF",text:""},"",""]
+execute if predicate game:arena_details/top_sides/none run data modify block -58 192 71 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/top_sides/platform run data modify block -58 192 71 front_text.messages[1].text set value "Platform"
+execute if predicate game:arena_details/top_sides/spikes run data modify block -58 192 71 front_text.messages[1].text set value "Spikes"
+execute if predicate game:arena_details/top_sides/cannons run data modify block -58 192 71 front_text.messages[1].text set value "Cannons"
+execute unless predicate game:gamemode_components/duel_settings_locked unless predicate game:gamemode_components/arena/no_base_details run data modify block -58 192 71 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
+execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:gamemode_components/arena/no_base_details run data modify block -58 192 71 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute if predicate game:gamemode_components/duel_settings_locked run data modify block -58 192 71 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
 
-##MIDDLE DECORATION
-#New Dawn Slimepads
-execute if entity @s[scores={MiddleDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[0] set value {"text":"Middle Detail:","color":"#C55F00","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco 1"}}
-execute if entity @s[scores={MiddleDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[1] set value {"text":"Slime Pads","color":"#FF7B00","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={MiddleDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Spikes
-execute if entity @s[scores={MiddleDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[0] set value {"text":"Middle Detail:","color":"#C55F00","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco 1"}}
-execute if entity @s[scores={MiddleDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[1] set value {"text":"Spikes","color":"#FF7B00","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={MiddleDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Layered
-execute if entity @s[scores={MiddleDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[0] set value {"text":"Middle Detail:","color":"#C55F00","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco 1"}}
-execute if entity @s[scores={MiddleDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[1] set value {"text":"Layered","color":"#FF7B00","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={MiddleDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#None
-execute if entity @s[scores={MiddleDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[0] set value {"text":"Middle Detail:","color":"#C55F00","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] MiddleDeco 1"}}
-execute if entity @s[scores={MiddleDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[1] set value {"text":"None","color":"#FF7B00","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={MiddleDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Locked
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[0] set value {"text":"Middle Detail:","color":"#C55F00","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Base Details are not adjustable in this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[1] set value {"text":"Locked","color":"black","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -58 192 84 front_text.messages[3] set value {"text":""}
+# MIDDLE DECORATION
+data modify block -58 192 84 front_text.messages set value [{color:"#C55F00",text:"Top Sides Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_base_decoration_sign/middle"}},{color:"#FF7B00",text:""},"",""]
+execute if predicate game:arena_details/middle/none run data modify block -58 192 84 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/middle/slime_pads run data modify block -58 192 84 front_text.messages[1].text set value "Slime Pads"
+execute if predicate game:arena_details/middle/spikes run data modify block -58 192 84 front_text.messages[1].text set value "Spikes"
+execute if predicate game:arena_details/middle/layered run data modify block -58 192 84 front_text.messages[1].text set value "Layered"
+execute unless predicate game:gamemode_components/duel_settings_locked unless predicate game:gamemode_components/arena/no_base_details run data modify block -58 192 84 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
+execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:gamemode_components/arena/no_base_details run data modify block -58 192 84 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute if predicate game:gamemode_components/duel_settings_locked run data modify block -58 192 84 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
 
-##BOTTOM DECORATION
-#New Dawn Slimepads
-execute if entity @s[scores={BottomDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[0] set value {"text":"Bottom Detail:","color":"#BF4DB8","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco 1"}}
-execute if entity @s[scores={BottomDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[1] set value {"text":"Slime Pad","color":"#FF6AF6","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={BottomDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Spikes
-execute if entity @s[scores={BottomDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[0] set value {"text":"Bottom Detail:","color":"#BF4DB8","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco 1"}}
-execute if entity @s[scores={BottomDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[1] set value {"text":"Spikes","color":"#FF6AF6","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={BottomDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Cannon
-execute if entity @s[scores={BottomDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[0] set value {"text":"Bottom Detail:","color":"#BF4DB8","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco 1"}}
-execute if entity @s[scores={BottomDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[1] set value {"text":"Cannon","color":"#FF6AF6","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={BottomDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#None
-execute if entity @s[scores={BottomDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[0] set value {"text":"Bottom Detail:","color":"#BF4DB8","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco 1"}}
-execute if entity @s[scores={BottomDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[1] set value {"text":"None","color":"#FF6AF6","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={BottomDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Lock on Layered
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run data modify block -57 192 80 front_text.messages[0] set value {"text":"Bottom Detail:","color":"#BF4DB8","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"This setting is not compatible with the Layered Middle Detail.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run data modify block -57 192 80 front_text.messages[1] set value {"text":"Locked","color":"black","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
+# BOTTOM DECORATION
+data modify block -57 192 80 front_text.messages set value [{color:"#BF4DB8",text:"Bottom Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_base_decoration_sign/bottom"}},{color:"#FF6AF6",text:""},"",""]
+execute if predicate game:arena_details/bottom/none run data modify block -57 192 80 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/bottom/slime_pad run data modify block -57 192 80 front_text.messages[1].text set value "Slime Pad"
+execute if predicate game:arena_details/bottom/spikes run data modify block -57 192 80 front_text.messages[1].text set value "Spikes"
+execute if predicate game:arena_details/bottom/cannon run data modify block -57 192 80 front_text.messages[1].text set value "Cannon"
+execute unless predicate game:gamemode_components/duel_settings_locked if entity @s[predicate=!game:gamemode_components/arena/no_base_details,predicate=!game:arena_details/middle/layered] run data modify block -57 192 80 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
+execute unless predicate game:gamemode_components/duel_settings_locked unless entity @s[predicate=!game:gamemode_components/arena/no_base_details,predicate=!game:arena_details/middle/layered] run data modify block -57 192 80 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute if predicate game:gamemode_components/duel_settings_locked run data modify block -57 192 80 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
 
-#Locked
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[0] set value {"text":"Bottom Detail:","color":"#BF4DB8","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Base Details are not adjustable in this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[1] set value {"text":"Locked","color":"black","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!decosLocked] run data modify block -57 192 80 front_text.messages[3] set value {"text":""}
+# PORTAL DECORATION
+data modify block -58 192 73 front_text.messages set value [{color:"#5A0079",text:"Portal Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_base_decoration_sign/portal"}},{color:"#7900A4",text:""},"",""]
+execute if predicate game:arena_details/portal/none run data modify block -58 192 73 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/portal/glass_rim run data modify block -58 192 73 front_text.messages[1].text set value "Glass Rim"
+execute if predicate game:arena_details/portal/glass_cover run data modify block -58 192 73 front_text.messages[1].text set value "Glass Cover"
+execute if predicate game:arena_details/portal/end_stone_cover run data modify block -58 192 73 front_text.messages[1].text set value "End Stone Cover"
+execute if predicate game:arena_details/portal/hole_in_one run data modify block -58 192 73 front_text.messages[1].text set value "Hole in One"
+execute unless predicate game:gamemode_components/duel_settings_locked unless predicate game:gamemode_components/no_portals run data modify block -58 192 73 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
+execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:gamemode_components/no_portals run data modify block -58 192 73 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute if predicate game:gamemode_components/duel_settings_locked run data modify block -58 192 73 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
 
-##PORTAL DECORATION
-#Hole in One
-execute if entity @s[scores={PortalDeco=4},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[0] set value {"text":"Portal Detail:","color":"#5A0079","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco 1"}}
-execute if entity @s[scores={PortalDeco=4},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[1] set value {"text":"Hole in One","color":"#7900A4","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={PortalDeco=4},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#End Stone Cover
-execute if entity @s[scores={PortalDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[0] set value {"text":"Portal Detail:","color":"#5A0079","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco 1"}}
-execute if entity @s[scores={PortalDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[1] set value {"text":"End Stone Cover","color":"#7900A4","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={PortalDeco=3},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Glass Cover
-execute if entity @s[scores={PortalDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[0] set value {"text":"Portal Detail:","color":"#5A0079","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco 1"}}
-execute if entity @s[scores={PortalDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[1] set value {"text":"Glass Cover","color":"#7900A4","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={PortalDeco=2},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Glass Rim
-execute if entity @s[scores={PortalDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[0] set value {"text":"Portal Detail:","color":"#5A0079","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco 1"}}
-execute if entity @s[scores={PortalDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[1] set value {"text":"Glass Rim","color":"#7900A4","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={PortalDeco=1},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#None
-execute if entity @s[scores={PortalDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[0] set value {"text":"Portal Detail:","color":"#5A0079","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco 1"}}
-execute if entity @s[scores={PortalDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[1] set value {"text":"None","color":"#7900A4","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute if entity @s[scores={PortalDeco=0},predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[3] set value {"text":"(Click for next)","color":"gray","italic":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer"}}
-#Locked
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[0] set value {"text":"Portal Detail:","color":"#5A0079","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Portal Details are not adjustable in this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[1] set value {"text":"Locked","color":"black","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute unless entity @s[predicate=!game:gamemode_components/duel_settings_locked,tag=!portalDecosOff] run data modify block -58 192 73 front_text.messages[3] set value {"text":""}
+## Removes existing displays
+fill -45 196 92 -55 185 64 light[level=15] strict
+fill -45 196 92 -55 185 64 light[level=15] strict
+fill -55 185 92 -40 206 64 light[level=15] replace minecraft:orange_stained_glass strict
+fill -55 185 92 -40 206 64 light[level=15] replace minecraft:lime_stained_glass strict
+fill -55 185 92 -40 206 64 light[level=15] replace minecraft:pink_stained_glass strict
+fill -40 196 92 -44 185 64 minecraft:white_stained_glass strict
+fill -42 197 71 -45 199 75 light[level=15] strict
+fill -42 197 81 -45 199 85 light[level=15] strict
 
-##Removes existing displays
-fill -45 196 92 -55 185 64 light[level=15]
-fill -45 196 92 -55 185 64 light[level=15]
-fill -55 185 92 -40 206 64 light[level=15] replace minecraft:orange_stained_glass
-fill -55 185 92 -40 206 64 light[level=15] replace minecraft:lime_stained_glass
-fill -55 185 92 -40 206 64 light[level=15] replace minecraft:pink_stained_glass
-fill -40 196 92 -44 185 64 minecraft:white_stained_glass
-fill -42 197 71 -45 199 75 light[level=15]
-fill -42 197 81 -45 199 85 light[level=15]
-
-##Top Decorations
+## Top Decorations
 #New Dawn Arch
-execute if entity @s[scores={TopDeco=1},tag=!decosLocked] run place template game:archpreview -48 197 74
+execute if predicate game:arena_details/top/arch run place template game:archpreview -48 197 74 none none 1 0 strict
 #Towers
-execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run place template game:towerpreview -44 197 65
-execute if entity @s[scores={TopDeco=2},tag=!decosLocked] run place template game:towerpreview -44 197 87
+execute if predicate game:arena_details/top/towers run place template game:towerpreview -44 197 65 none none 1 0 strict
+execute if predicate game:arena_details/top/towers run place template game:towerpreview -44 197 87 none none 1 0 strict
 #Spikes
-execute if entity @s[scores={TopDeco=3},tag=!decosLocked] run place template game:spike_top_preview -45 197 71
+execute if predicate game:arena_details/top/spikes run place template game:spike_top_preview -45 197 71 none none 1 0 strict
 
-##Top Sides Decorations
+## Top Sides Decorations
 #New Dawn Platforms
-execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run place template game:topplatform_preview -50 194 71
-execute if entity @s[scores={TopCorner=1},tag=!decosLocked] run place template game:topplatform_preview -50 194 81
+execute if predicate game:arena_details/top_sides/platform run place template game:topplatform_preview -50 194 71 none none 1 0 strict
+execute if predicate game:arena_details/top_sides/platform run place template game:topplatform_preview -50 194 81 none none 1 0 strict
 #Spikes
-execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run place template game:spike_side_preview -51 193 68
-execute if entity @s[scores={TopCorner=2},tag=!decosLocked] run place template game:spike_side_preview -51 193 88 none left_right
+execute if predicate game:arena_details/top_sides/spikes run place template game:spike_side_preview -51 193 68 none none 1 0 strict
+execute if predicate game:arena_details/top_sides/spikes run place template game:spike_side_preview -51 193 88 none left_right 1 0 strict
 #Cannons
-execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run place template game:cannon_preview -45 196 72
-execute if entity @s[scores={TopCorner=3},tag=!decosLocked] run place template game:cannon_preview -45 196 82
+execute if predicate game:arena_details/top_sides/cannons run place template game:cannon_preview -45 196 72 none none 1 0 strict
+execute if predicate game:arena_details/top_sides/cannons run place template game:cannon_preview -45 196 82 none none 1 0 strict
 
 ##Middle Decorations
 #New Dawn Slimepads
-execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run place template game:midslimepad_preview -49 190 65
-execute if entity @s[scores={MiddleDeco=1},tag=!decosLocked] run place template game:midslimepad_preview -49 190 85
+execute if predicate game:arena_details/middle/slime_pads run place template game:midslimepad_preview -49 190 65 none none 1 0 strict
+execute if predicate game:arena_details/middle/slime_pads run place template game:midslimepad_preview -49 190 85 none none 1 0 strict
 #Spikes
-execute if entity @s[scores={MiddleDeco=2},tag=!decosLocked] run place template game:spike_mid_preview -54 191 67
+execute if predicate game:arena_details/middle/spikes run place template game:spike_mid_preview -54 191 67 none none 1 0 strict
 #Layered
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run scoreboard players set @s BottomDeco 0
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -44 196 64 -43 196 92 minecraft:black_stained_glass replace light
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -45 185 92 -45 192 64 minecraft:white_stained_glass
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -46 185 92 -46 189 64 minecraft:white_stained_glass
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 185 92 -47 186 64 minecraft:white_stained_glass
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -45 193 92 -45 193 64 minecraft:black_stained_glass replace light
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -46 190 92 -46 190 64 minecraft:black_stained_glass replace light
-execute if entity @s[scores={MiddleDeco=3},tag=!decosLocked] run fill -47 187 92 -47 187 64 minecraft:black_stained_glass replace light
+execute if predicate game:arena_details/middle/layered run fill -44 196 64 -43 196 92 minecraft:black_stained_glass replace light strict
+execute if predicate game:arena_details/middle/layered run fill -45 185 92 -45 192 64 minecraft:white_stained_glass strict
+execute if predicate game:arena_details/middle/layered run fill -46 185 92 -46 189 64 minecraft:white_stained_glass strict
+execute if predicate game:arena_details/middle/layered run fill -47 185 92 -47 186 64 minecraft:white_stained_glass strict
+execute if predicate game:arena_details/middle/layered run fill -45 193 92 -45 193 64 minecraft:black_stained_glass replace light strict
+execute if predicate game:arena_details/middle/layered run fill -46 190 92 -46 190 64 minecraft:black_stained_glass replace light strict
+execute if predicate game:arena_details/middle/layered run fill -47 187 92 -47 187 64 minecraft:black_stained_glass replace light strict
 
 ##Bottom Decorations
 #New Dawn Slimepads
-execute if entity @s[scores={BottomDeco=1},tag=!decosLocked] run place template game:bottomslimepad_preview -49 186 75
+execute if predicate game:arena_details/bottom/slime_pad run place template game:bottomslimepad_preview -49 186 75 none none 1 0 strict
 #Spikes
-execute if entity @s[scores={BottomDeco=2},tag=!decosLocked] run place template game:spike_bottom_preview -53 185 76
+execute if predicate game:arena_details/bottom/spikes run place template game:spike_bottom_preview -53 185 76 none none 1 0 strict
 #Cannon
-execute if entity @s[scores={BottomDeco=3},tag=!decosLocked] run place template game:bottomcannon_preview -49 187 75
+execute if predicate game:arena_details/bottom/cannon run place template game:bottomcannon_preview -49 187 75 none none 1 0 strict

@@ -35,8 +35,7 @@ execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard p
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_hotbar_limit config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $item_stacking config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $snipe_portals config
-execute unless score $item_delay config matches 5..30 run scoreboard players set $item_delay config 15
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players set $item_delay config 15
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $item_delay config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players set @s MaxItemTime 300
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $extra_match_repetitions config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:default_config/disable_cannoning run scoreboard players set $disable_cannoning config 1

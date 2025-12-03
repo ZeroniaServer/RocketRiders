@@ -12,6 +12,7 @@ execute if score @s set_item_delay matches 31.. run return run tellraw @s {"text
 
 #Set new time
 scoreboard players operation $item_delay config = @s set_item_delay
+execute if score $item_delay config matches 15 run scoreboard players reset $item_delay config
 execute store result score @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemTime run function game:config/get_item_delay_ticks
 
 #Refresh options signs

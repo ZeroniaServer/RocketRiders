@@ -25,6 +25,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove hotbarLimitOff
 
 # MaxItemSec tag -> item_delay config
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] MaxItemSec matches 5..30 run scoreboard players operation $item_delay config = @e[x=0,type=armor_stand,tag=Selection,limit=1] MaxItemSec
+execute if score $item_delay config matches 15 run scoreboard players reset $item_delay config
 
 ## MODIFIERS
 # Explosive tag -> explosive config

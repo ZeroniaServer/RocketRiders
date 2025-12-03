@@ -55,8 +55,8 @@ execute if entity @e[x=0,type=marker,tag=WonVote,tag=Set5] as @e[x=0,type=marker
 execute if entity @e[x=0,type=marker,tag=WonVote,tag=Set6] as @e[x=0,type=marker,tag=ServermodeSet6] run function servermode:selectmap
 
 # Item delay (CTF/Crusade specific difference)
+scoreboard players reset $item_delay config
 execute unless entity @e[x=0,type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set $item_delay config 10
-execute if entity @e[x=0,type=marker,tag=WonVote,tag=!CTFMode,tag=!CrusadeMode] run scoreboard players set $item_delay config 15
 
 # Global
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting

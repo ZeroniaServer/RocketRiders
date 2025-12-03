@@ -231,6 +231,10 @@ scoreboard objectives remove MiddleDeco
 scoreboard objectives remove BottomDeco
 scoreboard objectives remove PortalDeco
 scoreboard objectives remove RepeatSettings
+scoreboard objectives remove useWand
+scoreboard objectives remove dropCompass
+scoreboard objectives remove dropClock
+scoreboard objectives remove dropBarrier
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0
@@ -252,7 +256,6 @@ scoreboard objectives remove nnhealth_old
 # Crusade new objectives
 scoreboard objectives remove dropRod
 scoreboard objectives add dropWand minecraft.dropped:minecraft.writable_book
-scoreboard objectives add useWand minecraft.used:minecraft.writable_book
 
 # Reset offline player triggers
 scoreboard players reset * LeaveMidgame

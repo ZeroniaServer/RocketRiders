@@ -91,6 +91,7 @@ scoreboard players set $24000 constant 24000
 scoreboard objectives add event.player_joins_overworld.state custom:leave_game
 scoreboard objectives add time_since_joined_overworld custom:play_time
 scoreboard objectives add event.player_dies custom:deaths
+scoreboard objectives add event.player_uses_writable_book used:writable_book
 scoreboard objectives add event.player_uses_written_book used:written_book
 scoreboard objectives add event.player_uses_pig_spawn_egg used:pig_spawn_egg
 scoreboard objectives add flag.is_dead dummy
@@ -151,9 +152,6 @@ scoreboard objectives add checkpoint dummy
 scoreboard objectives add finalParkourTime dummy
 scoreboard objectives add parkourTimer dummy
 scoreboard objectives add chkpntCooldown dummy
-scoreboard objectives add dropCompass minecraft.dropped:minecraft.compass
-scoreboard objectives add dropClock minecraft.dropped:minecraft.clock
-scoreboard objectives add dropBarrier minecraft.dropped:minecraft.barrier
 scoreboard objectives add regifts dummy
 scoreboard objectives add gravShot dummy
 scoreboard objectives add useful dummy

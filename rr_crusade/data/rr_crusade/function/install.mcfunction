@@ -10,7 +10,6 @@ scoreboard objectives add crusadechange trigger
 scoreboard objectives remove dropRod
 scoreboard objectives add dropWand minecraft.dropped:minecraft.writable_book
 scoreboard objectives add dropSword minecraft.dropped:minecraft.stone_sword
-scoreboard objectives add useWand minecraft.used:minecraft.writable_book
 
 bossbar add rr_crusade:blue {"text":"Total Crystal Health","color":"white"}
 bossbar add rr_crusade:yellow ""

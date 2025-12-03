@@ -157,12 +157,12 @@ execute as @e[x=0,type=armor_stand,tag=MageStand] run loot replace entity @s wea
 execute as @e[x=0,type=armor_stand,tag=KitSelect] run data merge entity @s {DisabledSlots:4144959}
 
 #> Kit stand light blocks
-fill 15 64 -64 13 67 -62 light[level=0] replace air
-fill 13 64 -63 11 67 -61 light[level=0] replace air
-fill 11 64 -64 9 67 -62 light[level=0] replace air
-fill 15 64 64 13 67 62 light[level=0] replace air
-fill 13 64 63 11 67 61 light[level=0] replace air
-fill 11 64 64 9 67 62 light[level=0] replace air
+fill 15 64 -64 13 67 -62 light[level=0] replace #custom:air
+fill 13 64 -63 11 67 -61 light[level=0] replace #custom:air
+fill 11 64 -64 9 67 -62 light[level=0] replace #custom:air
+fill 15 64 64 13 67 62 light[level=0] replace #custom:air
+fill 13 64 63 11 67 61 light[level=0] replace #custom:air
+fill 11 64 64 9 67 62 light[level=0] replace #custom:air
 
 function rr_crusade:arenaclear/pathways
 

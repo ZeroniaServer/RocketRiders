@@ -21,13 +21,13 @@ execute if predicate game:arena_details/middle/spikes run place template game:ye
 execute if predicate game:arena_details/bottom/spikes run place template game:yellow_spikebottom 8 34 30
 
 #Layered - Yellow
-execute if predicate game:arena_details/middle/layered run fill 38 34 49 -14 40 51 minecraft:yellow_stained_glass replace air
-execute if predicate game:arena_details/middle/layered run fill 38 41 50 -14 48 51 minecraft:yellow_stained_glass replace air
-execute if predicate game:arena_details/middle/layered run fill -14 49 51 38 56 51 minecraft:yellow_stained_glass replace air
+execute if predicate game:arena_details/middle/layered run fill 38 34 49 -14 40 51 minecraft:yellow_stained_glass replace #custom:air
+execute if predicate game:arena_details/middle/layered run fill 38 41 50 -14 48 51 minecraft:yellow_stained_glass replace #custom:air
+execute if predicate game:arena_details/middle/layered run fill -14 49 51 38 56 51 minecraft:yellow_stained_glass replace #custom:air
 execute if predicate game:arena_details/middle/layered run fill 38 63 55 -14 63 52 minecraft:black_stained_glass replace minecraft:yellow_stained_glass
-execute if predicate game:arena_details/middle/layered run fill -14 57 51 38 57 51 minecraft:black_stained_glass replace air
-execute if predicate game:arena_details/middle/layered run fill 38 49 50 -14 49 50 minecraft:black_stained_glass replace air
-execute if predicate game:arena_details/middle/layered run fill -14 41 49 38 41 49 minecraft:black_stained_glass replace air
+execute if predicate game:arena_details/middle/layered run fill -14 57 51 38 57 51 minecraft:black_stained_glass replace #custom:air
+execute if predicate game:arena_details/middle/layered run fill 38 49 50 -14 49 50 minecraft:black_stained_glass replace #custom:air
+execute if predicate game:arena_details/middle/layered run fill -14 41 49 38 41 49 minecraft:black_stained_glass replace #custom:air
 
 #Cannons - Yellow
 execute if predicate game:arena_details/top_sides/cannons run place template game:yellow_cannon 18 60 51

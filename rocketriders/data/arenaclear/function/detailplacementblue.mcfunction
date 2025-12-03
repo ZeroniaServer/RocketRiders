@@ -59,17 +59,17 @@ execute if predicate game:arena_details/middle/spikes if predicate game:gamemode
 execute if predicate game:arena_details/middle/spikes if predicate game:gamemode_components/red_for_blue run fill -14 50 -51 38 61 -37 minecraft:pink_stained_glass replace minecraft:cyan_stained_glass strict
 
 #Layered - Blue
-execute if predicate game:arena_details/middle/layered unless predicate game:gamemode_components/red_for_blue run fill 38 34 -49 -14 40 -51 minecraft:blue_stained_glass replace air strict
-execute if predicate game:arena_details/middle/layered unless predicate game:gamemode_components/red_for_blue run fill -14 41 -50 38 48 -51 minecraft:blue_stained_glass replace air strict
-execute if predicate game:arena_details/middle/layered unless predicate game:gamemode_components/red_for_blue run fill 38 49 -51 -14 56 -51 minecraft:blue_stained_glass replace air strict
+execute if predicate game:arena_details/middle/layered unless predicate game:gamemode_components/red_for_blue run fill 38 34 -49 -14 40 -51 minecraft:blue_stained_glass replace #custom:air strict
+execute if predicate game:arena_details/middle/layered unless predicate game:gamemode_components/red_for_blue run fill -14 41 -50 38 48 -51 minecraft:blue_stained_glass replace #custom:air strict
+execute if predicate game:arena_details/middle/layered unless predicate game:gamemode_components/red_for_blue run fill 38 49 -51 -14 56 -51 minecraft:blue_stained_glass replace #custom:air strict
 execute if predicate game:arena_details/middle/layered unless predicate game:gamemode_components/red_for_blue run fill -14 63 -55 38 63 -52 minecraft:black_stained_glass replace minecraft:blue_stained_glass strict
-execute if predicate game:arena_details/middle/layered if predicate game:gamemode_components/red_for_blue run fill 38 34 -49 -14 40 -51 minecraft:red_stained_glass replace air strict
-execute if predicate game:arena_details/middle/layered if predicate game:gamemode_components/red_for_blue run fill -14 41 -50 38 48 -51 minecraft:red_stained_glass replace air strict
-execute if predicate game:arena_details/middle/layered if predicate game:gamemode_components/red_for_blue run fill 38 49 -51 -14 56 -51 minecraft:red_stained_glass replace air strict
+execute if predicate game:arena_details/middle/layered if predicate game:gamemode_components/red_for_blue run fill 38 34 -49 -14 40 -51 minecraft:red_stained_glass replace #custom:air strict
+execute if predicate game:arena_details/middle/layered if predicate game:gamemode_components/red_for_blue run fill -14 41 -50 38 48 -51 minecraft:red_stained_glass replace #custom:air strict
+execute if predicate game:arena_details/middle/layered if predicate game:gamemode_components/red_for_blue run fill 38 49 -51 -14 56 -51 minecraft:red_stained_glass replace #custom:air strict
 execute if predicate game:arena_details/middle/layered if predicate game:gamemode_components/red_for_blue run fill -14 63 -55 38 63 -52 minecraft:black_stained_glass replace minecraft:red_stained_glass strict
-execute if predicate game:arena_details/middle/layered run fill 38 41 -49 -14 41 -49 minecraft:black_stained_glass replace air strict
-execute if predicate game:arena_details/middle/layered run fill 38 57 -51 -14 57 -51 minecraft:black_stained_glass replace air strict
-execute if predicate game:arena_details/middle/layered run fill -14 49 -50 38 49 -50 minecraft:black_stained_glass replace air strict
+execute if predicate game:arena_details/middle/layered run fill 38 41 -49 -14 41 -49 minecraft:black_stained_glass replace #custom:air strict
+execute if predicate game:arena_details/middle/layered run fill 38 57 -51 -14 57 -51 minecraft:black_stained_glass replace #custom:air strict
+execute if predicate game:arena_details/middle/layered run fill -14 49 -50 38 49 -50 minecraft:black_stained_glass replace #custom:air strict
 
 #Cannons - Blue
 execute if predicate game:arena_details/top_sides/cannons run place template game:blue_cannon 18 60 -55 none none 1 0 strict

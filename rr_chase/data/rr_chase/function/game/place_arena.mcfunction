@@ -13,7 +13,7 @@ fill -11 36 -75 35 59 -73 air
 fill -11 36 73 35 59 75 air
 
 #Flag placement
-fill 12 64 65 12 71 65 oak_fence replace air
+fill 12 64 65 12 71 65 oak_fence replace #custom:air
 place template game:finish_flag1 8 70 63
 
 #Stair placement

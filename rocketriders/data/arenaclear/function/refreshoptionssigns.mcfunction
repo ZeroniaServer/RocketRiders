@@ -127,6 +127,7 @@ execute unless predicate game:gamemode_components/duel_settings_locked if predic
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:gamemode_components/duel_settings_locked run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"white",text:"Locked"},"",""]
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=ctfEnabled] run data modify block -70 193 77 front_text.messages[0].text set value "Overtime"
 
 #Snipe Portals
 execute unless predicate game:game_rules/snipe_portals/locked if predicate game:game_rules/snipe_portals/on run \

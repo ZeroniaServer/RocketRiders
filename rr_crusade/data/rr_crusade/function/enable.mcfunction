@@ -1,6 +1,5 @@
 scoreboard players reset * gamemode_components
 scoreboard players set $arena/no_base_details gamemode_components 1
-scoreboard players set $arena/no_portal_details gamemode_components 1
 scoreboard players set $armor/crusade_kit_dependent gamemode_components 1
 scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit gamemode_components 1
 scoreboard players set $config_override.clutter_collector gamemode_components -1

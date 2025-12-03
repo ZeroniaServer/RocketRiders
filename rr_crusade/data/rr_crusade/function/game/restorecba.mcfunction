@@ -29,9 +29,9 @@ execute if predicate game:blue_portal_revealed run tellraw @a[x=0,predicate=cust
 execute if predicate game:blue_portal_revealed run tellraw @a[x=0,predicate=custom:team/blue] ["\n",{"text":"Both of our Crystals have been destroyed!","color":"blue"},{"text":"\nOur portal is no longer protected; don't let them destroy it!","color":"dark_aqua","italic":true}]
 execute if predicate game:blue_portal_revealed run tellraw @a[x=0,predicate=!custom:team/any_playing_team] ["\n",{"text":"Both Blue Crystals have been destroyed!","color":"blue"}]
 execute if predicate game:blue_portal_revealed run function rr_crusade:game/cancel_utility
-execute if predicate game:blue_portal_revealed run function game:place_portal/blue
 execute if predicate game:blue_portal_revealed unless predicate game:gamemode_components/red_for_blue run fill 20 45 -52 4 55 -66 minecraft:blue_stained_glass strict
 execute if predicate game:blue_portal_revealed if predicate game:gamemode_components/red_for_blue run fill 20 45 -52 4 55 -66 minecraft:red_stained_glass strict
+execute if predicate game:blue_portal_revealed run function game:place_portal/blue
 
 execute unless score $CBA crusadehp matches 1.. run tellraw @a[x=0] [""]
 

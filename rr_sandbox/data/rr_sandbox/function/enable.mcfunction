@@ -11,8 +11,6 @@ scoreboard players set $main_item/rocket_nomicon gamemode_components 1
 scoreboard players set $no_achievements gamemode_components 1
 scoreboard players set $no_item_timer gamemode_components 1
 
-function gamemodes:storesettings
-function arenaclear:enableitems
 tag @s remove switchGamemodes
 tag @s add hasBees
 tag @s add customBossbar

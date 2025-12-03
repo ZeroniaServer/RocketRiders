@@ -9,8 +9,6 @@ scoreboard players set $no_feathered_vortices gamemode_components 1
 scoreboard players set $duel_settings_locked gamemode_components 1
 
 tag @s remove switchGamemodes
-
-function gamemodes:storesettings
 tag @s add customBossbar
 tag @s add duelEnabled
 tag @s add customLeaveHandling

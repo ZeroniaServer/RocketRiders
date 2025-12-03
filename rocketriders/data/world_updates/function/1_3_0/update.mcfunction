@@ -117,6 +117,8 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove featheredOff
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs
+data remove storage rocketriders:storage Tags
+data remove storage rocketriders:storage config
 
 # Make sure new gamemode components system is set correctly for the currently enabled game mode
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run function rr_chase:enable

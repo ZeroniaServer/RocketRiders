@@ -380,12 +380,11 @@ data modify storage rocketriders:nomicon dialogs.experimental.dialog set value {
   }\
 }
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 54, item_loot_table: "items:experimental/building_block", item_plain_name_singular: "Building Block", item_plain_name_plural: "Building Blocks", color: "white", include_in_full_list: true}
-function rr_sandbox:nomicon/load_pages/append_item_activate_times {dialog_name: "experimental", 30_seconds_trigger_input_id: 53, permanent_trigger_input_id: 57, deactivate_trigger_input_id: 58, item_loot_table: {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:misc/shooting_saber"}],functions:[{function:"minecraft:reference",name:"items:shooting_saber/set_multishot"}]}]}, item_plain_name: "Multishot Saber", color: "dark_purple"}
-function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 59, item_loot_table: "items:experimental/booster_rocket", item_plain_name_singular: "Elytra Booster Rocket", item_plain_name_plural: "Elytra Booster Rockets", color: "light_purple", include_in_full_list: true}
+function rr_sandbox:nomicon/load_pages/append_item_activate_times {dialog_name: "experimental", 30_seconds_trigger_input_id: 53, permanent_trigger_input_id: 57, deactivate_trigger_input_id: 58, item_loot_table: {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:misc/shooting_saber"}],functions:[{function:"minecraft:reference",name:"items:shooting_saber/set_multishot"}]}]}, item_plain_name: "Multishot Saber", color: "dark_purple", include_in_full_list: true}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 50, item_loot_table: "items:experimental/invisibility_potion", item_plain_name_singular: "Invisibility Potion", item_plain_name_plural: "Invisibility Potions", color: "dark_purple", include_in_full_list: true}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 52, item_loot_table: "items:experimental/spectral_arrow", item_plain_name_singular: "Spectral Arrow", item_plain_name_plural: "Spectral Arrows", color: "dark_purple", include_in_full_list: true}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 51, item_loot_table: "items:experimental/jump_boost_potion", item_plain_name_singular: "Jump Boost Potion", item_plain_name_plural: "Jump Boost Potions", color: "dark_purple", include_in_full_list: true}
-
+function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 59, item_loot_table: "items:experimental/booster_rocket", item_plain_name_singular: "Elytra Booster Rocket", item_plain_name_plural: "Elytra Booster Rockets", color: "light_purple", include_in_full_list: true}
 
 ##
 ## All

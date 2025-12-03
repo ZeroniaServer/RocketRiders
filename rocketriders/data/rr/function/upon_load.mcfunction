@@ -157,7 +157,6 @@ scoreboard objectives add dropBarrier minecraft.dropped:minecraft.barrier
 scoreboard objectives add regifts dummy
 scoreboard objectives add gravShot dummy
 scoreboard objectives add useful dummy
-scoreboard objectives add RepeatSettings dummy
 scoreboard objectives add MaxItemTime dummy
 scoreboard objectives add set_item_delay trigger
 scoreboard objectives add RandomItem dummy

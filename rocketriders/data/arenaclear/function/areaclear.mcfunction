@@ -4,8 +4,7 @@
 ##################################
 
 ##Repeating settings
-tag @s[scores={RepeatSettings=2..}] add Repeat
-execute if entity @s[tag=Repeat,tag=!RepeatForever] run schedule function arenaclear:notifyrepeat_indimension 3t append
+execute if score $extra_match_repetitions config matches 1.. unless score $extra_match_repetitions config matches 2147483647 run schedule function arenaclear:notifyrepeat_indimension 3t append
 
 ##Appropriate tags for Arena Clear state
 scoreboard players reset $match_in_play global

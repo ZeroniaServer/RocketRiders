@@ -87,7 +87,7 @@ execute if function experimental:enabled as @a[x=0,predicate=custom:team/any_pla
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] if entity @a[x=0] run function servermode:loop
 scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ServerModeVoting] VoteServerMode
 execute unless entity @a[x=0,predicate=custom:team/lobby] run scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] VoteServerMode
-execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 0
+execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom run scoreboard players reset $extra_match_repetitions config
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function game:forcestop
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:globaldefaults
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] run scoreboard players reset @a[x=0] VoteServerMode

@@ -7,8 +7,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 scoreboard players set $realms global 0
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
+scoreboard players reset $extra_match_repetitions config
 function lobby:close_modification_room
 execute as @a[x=0] run function achievements:reset
 function game:forcestop

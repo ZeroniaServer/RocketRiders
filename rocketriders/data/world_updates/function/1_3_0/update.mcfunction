@@ -200,6 +200,7 @@ scoreboard objectives remove TopCorner
 scoreboard objectives remove MiddleDeco
 scoreboard objectives remove BottomDeco
 scoreboard objectives remove PortalDeco
+scoreboard objectives remove RepeatSettings
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

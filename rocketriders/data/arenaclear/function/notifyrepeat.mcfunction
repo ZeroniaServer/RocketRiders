@@ -1,8 +1,10 @@
-##Notifies players that settings are being repeated for a certain game
-# tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={RepeatSettings=1}] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"(Keeping settings for ","color":"gray","italic":true},{"text":"1","color":"white","italic":true},{"text":" game!)","color":"gray","italic":true}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={RepeatSettings=2..}] run tellraw @a[x=0] ["",{"text":"| ","color":"dark_gray","bold":true},{"text":"(Keeping settings for ","color":"gray","italic":true},{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"RepeatSettings"},"color":"white","italic":true},{"text":" games!)","color":"gray","italic":true}]
-#Update repeat settings sign
-data modify block -69 190 76 front_text.messages[1] set value [{"score":{"name":"@e[x=0,type=armor_stand,tag=Selection,limit=1]","objective":"RepeatSettings"},"color":"black","bold":true},{"text":"x","color":"black","bold":false}]
-scoreboard players remove @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 1
-tellraw @a[x=0] [""]
+execute if score $extra_match_repetitions config matches 2147483647 run return 0
+
+##Notifies players that settings are being repeated for a certain game and updates settings sign
+execute if score $match_repeat_amount global matches 1 run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"| "},{color:"gray",italic:true,text:"(Keeping settings for "},{italic:true,color:"white",text:"1"},{italic:true,color:"gray",text:" more game!)"}]
+execute if score $match_repeat_amount global matches 2.. run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"| "},{color:"gray",italic:true,text:"(Keeping settings for "},{italic:true,color:"white",score:{name:"$match_repeat_amount",objective:"global"}},{color:"gray",italic:true,text:" games!)"}]
+
+#Deducts one repetition
+scoreboard players remove $match_repeat_amount global 1
+execute if score $match_repeat_amount global matches ..0 run scoreboard players reset $match_repeat_amount global
+tellraw @a[x=0] ""

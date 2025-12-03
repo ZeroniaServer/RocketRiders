@@ -5,7 +5,7 @@
 ####################################################
 
 ##Arrow pointing down into the lobby
-execute if predicate rr:has_modification_room if entity @s[tag=!Repeat] unless entity @e[type=block_display,tag=LobbyArrowDisplay] if predicate custom:periodic_tick/3 unless score $lockmodroom CmdData matches 1 run function lobby:spawnarrow
+execute if predicate rr:has_modification_room unless score $extra_match_repetitions config matches 1.. unless entity @e[type=block_display,tag=LobbyArrowDisplay] if predicate custom:periodic_tick/3 unless score $lockmodroom CmdData matches 1 run function lobby:spawnarrow
 scoreboard players add @e[type=block_display,tag=LobbyArrowDisplay] CmdData 1
 execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=1}] run function lobby:arrow_up
 execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=11}] run function lobby:arrow_down
@@ -38,7 +38,7 @@ execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard p
 execute unless score $item_delay config matches 5..30 run scoreboard players set $item_delay config 15
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players set $item_delay config 15
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players set @s MaxItemTime 300
-scoreboard players set @s[tag=DefaultOptions,tag=!GamemodeRefreshed] RepeatSettings 1
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $extra_match_repetitions config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:default_config/disable_cannoning run scoreboard players set $disable_cannoning config 1
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] unless predicate rr:default_config/disable_cannoning run scoreboard players reset $disable_cannoning config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] if predicate rr:default_config/impact_utilities run scoreboard players set $impact_utilities config 1

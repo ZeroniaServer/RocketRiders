@@ -198,3 +198,11 @@ execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] BottomDeco match
 
 # PortalDeco score -> arena_details/portal config
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco matches 1..4 run scoreboard players operation $arena_details/portal config = @e[x=0,type=armor_stand,tag=Selection,limit=1] PortalDeco
+
+## REPEAT
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings matches 1..4 run scoreboard players operation $extra_match_repetitions config = @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings
+scoreboard players remove $extra_match_repetitions config 1
+execute if score $extra_match_repetitions config matches ..0 run scoreboard players reset $extra_match_repetitions config
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Repeat
+execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=RepeatForever] run scoreboard players set $extra_match_repetitions config 2147483647
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove RepeatForever

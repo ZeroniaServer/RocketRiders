@@ -89,8 +89,8 @@ execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * inv
 execute if score @s endtimer matches 570.. run scoreboard players reset $match_over global
 
 ##For repeating settings
-tag @s[scores={RepeatSettings=0},tag=!RepeatForever] remove Repeat
-execute if entity @s[scores={endtimer=570..},tag=Repeat] unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
+execute unless score $match_repeat_amount global matches 1.. unless score $extra_match_repetitions config matches 2147483647 run scoreboard players reset $extra_match_repetitions config
+execute if entity @s[scores={endtimer=570..}] if score $extra_match_repetitions config matches 1.. unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
 
 ##Refresh modification room
 execute if entity @s[scores={endtimer=570..}] run function arenaclear:refreshsigns

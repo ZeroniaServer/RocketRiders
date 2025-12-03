@@ -114,6 +114,34 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove NoFallOff
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove InstamineOff
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove WindDownOff
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove featheredOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngAnt
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngArrows
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngAux
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngBlade
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngCanopy
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngCata
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngCitadel
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngEguard
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngFireball
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngGemi
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngHeavy
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngHur
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngJbuster
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngLift
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngLightning
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngNormal
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngNova
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngNull
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngObshield
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngRift
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngShield
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngSlash
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngSplash
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngThun
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngToma
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngUtil
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngVortex
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngWar
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs

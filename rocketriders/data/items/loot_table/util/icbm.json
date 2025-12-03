@@ -46,7 +46,7 @@
                   }
                 ],
                 "minecraft:use_cooldown": {
-                  "seconds": 1,
+                  "seconds": 0.5,
                   "cooldown_group": "rocketriders:icbm"
                 }
               }

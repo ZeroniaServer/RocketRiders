@@ -1,4 +1,4 @@
-execute if score $extra_match_repetitions config matches 2147483647 run return 0
+execute if predicate game:repeat_settings/forever run return 0
 
 ##Notifies players that settings are being repeated for a certain game and updates settings sign
 execute if score $match_repeat_amount global matches 1 run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"| "},{color:"gray",italic:true,text:"(Keeping settings for "},{italic:true,color:"white",text:"1"},{italic:true,color:"gray",text:" more game!)"}]

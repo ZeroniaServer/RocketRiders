@@ -2,7 +2,7 @@
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1
 
 # overrides
-execute if score $extra_match_repetitions config matches 2147483647 run return run tellraw @s [{color:"red",text:"Repeat Settings is not adjustable when set to "},{italic:true,text:"repeat forever"}]
+execute if predicate game:repeat_settings/forever run return run tellraw @s [{color:"red",text:"Repeat Settings is not adjustable when set to "},{italic:true,text:"repeat forever"}]
 
 # cycle options
 execute unless predicate custom:player_is_holding_shift run scoreboard players add $extra_match_repetitions config 1

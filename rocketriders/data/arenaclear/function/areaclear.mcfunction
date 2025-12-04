@@ -4,7 +4,7 @@
 ##################################
 
 ##Repeating settings
-execute if score $extra_match_repetitions config matches 1.. unless score $extra_match_repetitions config matches 2147483647 run schedule function arenaclear:notifyrepeat_indimension 3t append
+execute if predicate game:repeat_settings/finite run schedule function arenaclear:notifyrepeat_indimension 3t append
 
 ##Appropriate tags for Arena Clear state
 scoreboard players reset $match_in_play global

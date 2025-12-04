@@ -5,7 +5,7 @@
 ####################################################
 
 ##Arrow pointing down into the lobby
-execute if predicate rr:has_modification_room unless score $extra_match_repetitions config matches 1.. unless entity @e[type=block_display,tag=LobbyArrowDisplay] if predicate custom:periodic_tick/3 unless score $lockmodroom CmdData matches 1 run function lobby:spawnarrow
+execute if predicate rr:has_modification_room unless predicate game:repeat_settings/on unless entity @e[type=block_display,tag=LobbyArrowDisplay] if predicate custom:periodic_tick/3 unless score $lockmodroom CmdData matches 1 run function lobby:spawnarrow
 scoreboard players add @e[type=block_display,tag=LobbyArrowDisplay] CmdData 1
 execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=1}] run function lobby:arrow_up
 execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=11}] run function lobby:arrow_down

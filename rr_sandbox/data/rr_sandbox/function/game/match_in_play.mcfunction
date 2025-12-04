@@ -1,6 +1,3 @@
-#leave midgame
-execute unless predicate rr:is_cubekrowd run function rr_sandbox:game/leavemidgame
-
 #spawnables
 function rr_powerups:everytick/spawnables
 function everytick:cluster

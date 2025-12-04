@@ -51,7 +51,6 @@ scoreboard players reset @s time_since_attack
 
 scoreboard players reset @s ThrowPlat
 scoreboard players reset @s ThrowSplash
-scoreboard players reset @s dropBow
 scoreboard players reset @s kills
 scoreboard players reset @s jumps
 scoreboard players reset @s DealtDamage
@@ -81,7 +80,6 @@ scoreboard players reset @s BSurpriseSpawned
 scoreboard players reset @s YSurpriseSpawned
 scoreboard players reset @s BowShot
 scoreboard players reset @s jumping
-scoreboard players reset @s dropWand
 
 # Load data
 function custom:player_action/playerdata/load

@@ -8,9 +8,6 @@ execute if predicate game:game_paused store result bossbar rr_duel:resetting_are
 execute if predicate game:game_paused run bossbar set rr_duel:resetting_arena players @a[x=0,predicate=!custom:team/lobby]
 execute unless predicate game:game_paused run bossbar remove rr_duel:resetting_arena
 
-#leave midgame
-function rr_duel:game/leavemidgame
-
 #tracking players and locking join pads
 tag @a[x=0,predicate=custom:team/blue] add InRanked
 tag @a[x=0,predicate=custom:team/yellow] add InRanked

@@ -18,7 +18,6 @@ execute unless predicate rr:wait_for_sufficient_players unless predicate game:ma
 execute unless predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
 
-execute unless predicate game:match_in_play run scoreboard players set @a[x=0] dropPickaxe 0
 execute unless predicate game:match_in_play run scoreboard players set @s canopyStreak 0
 execute unless predicate game:match_in_play run scoreboard players reset @a[x=0] MineWhiteGlass
 execute unless predicate game:match_in_play run scoreboard players reset @a[x=0] MinePurpleGlass

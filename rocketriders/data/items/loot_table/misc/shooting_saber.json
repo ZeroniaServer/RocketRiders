@@ -60,6 +60,27 @@
               }
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:reference",
+                      "name": "game:gamemode_components/main_item/shooting_saber"
+                    },
+                    {
+                      "condition": "minecraft:reference",
+                      "name": "game:gamemode_components/main_item/crusade_kit_dependent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [

@@ -68,7 +68,7 @@ scoreboard players reset @a[predicate=!custom:indimension] toggleTips
 scoreboard players reset @a[predicate=!custom:indimension] toggleParticles
 scoreboard players reset @a[predicate=!custom:indimension] toggleParkourTips
 scoreboard players reset @a[predicate=!custom:indimension] toggleHotbarAutoFill
-execute as @a[x=0,predicate=!custom:team/any_playing_team] run trigger LeaveMidgame set 0
+scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby] set_item_delay
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] set_item_delay
 execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] set_item_delay

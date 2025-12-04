@@ -3,7 +3,6 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfLast] add needsForceCle
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfLast] run function rr_ctf:arenaclear/areaclear
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfLast] remove ctfLast
 execute if entity @e[x=0,type=armor_stand,tag=rr_ctf,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_ctf,limit=1]
-execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run scoreboard objectives remove dropPickaxe
 scoreboard objectives remove FlagScore
 scoreboard objectives remove FlagDeliver
 scoreboard objectives remove FlagDisp

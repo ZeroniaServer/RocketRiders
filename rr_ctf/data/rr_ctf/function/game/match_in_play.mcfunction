@@ -1,6 +1,3 @@
-#leave midgame
-execute unless predicate rr:is_cubekrowd run function rr_ctf:game/leavemidgame
-
 #Item RNG
 tag @s add givenCanopy
 scoreboard players add @s RandomItem 1

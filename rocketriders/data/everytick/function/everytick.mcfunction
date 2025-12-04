@@ -49,8 +49,9 @@ scoreboard players remove @a[x=0,scores={shooting_saber.multishot_time=1..214748
 execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items:shooting_saber/multishot_deactivate
 function everytick:elytra
 
-# Thrown Items
-execute as @e[x=0,type=item] unless items entity @s contents *[custom_data~{dummy_item_entity:true}] run function everytick:no_drop
+# Thrown items
+execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init
+execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit as @e[x=0,type=item,predicate=custom:item_entity_contains_any_arrow] at @s run function everytick:item_entity/while_contents_is_any_arrow
 
 # Process primed TNT
 scoreboard players set $instant_explosion_buffer var -1
@@ -144,10 +145,6 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick
 execute as @e[x=0,type=#arrows,tag=!arrow.processed] at @s run function everytick:arrow/init
 execute unless predicate game:match_over run scoreboard players set @e[x=0,type=#arrows,predicate=!custom:not_moving] entity.age -1
 execute unless predicate game:match_over as @e[x=0,type=#arrows,predicate=custom:not_moving] at @s run function everytick:arrow/while_on_ground
-
-#Item entity pickup
-execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init
-execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit as @e[x=0,type=item,predicate=custom:item_entity_contains_any_arrow] at @s run function everytick:item_entity/while_contents_is_any_arrow
 
 #Game ending and arena clearing
 execute if predicate game:match_over as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:match_over

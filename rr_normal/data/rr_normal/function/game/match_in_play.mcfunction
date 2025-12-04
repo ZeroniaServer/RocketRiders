@@ -1,6 +1,3 @@
-#leave midgame
-execute unless predicate rr:is_cubekrowd run function game:leavemidgame
-
 #Item RNG
 scoreboard players add @s RandomItem 1
 execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function items:giverandom

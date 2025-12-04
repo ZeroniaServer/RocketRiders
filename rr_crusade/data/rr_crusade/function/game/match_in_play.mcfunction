@@ -1,6 +1,3 @@
-#leave midgame
-execute unless predicate rr:is_cubekrowd run function rr_crusade:game/leavemidgame
-
 #middle wall
 execute as @e[x=0,type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement
 

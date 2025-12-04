@@ -167,7 +167,6 @@ scoreboard objectives add informMeLate dummy
 scoreboard objectives add ThrowPlat minecraft.used:ender_pearl
 scoreboard objectives add ThrowSplash minecraft.used:minecraft.lingering_potion
 scoreboard objectives add count dummy
-scoreboard objectives add dropBow minecraft.dropped:minecraft.bow
 scoreboard objectives add endtimer dummy
 scoreboard objectives add soulKills dummy
 scoreboard objectives add kills playerKillCount

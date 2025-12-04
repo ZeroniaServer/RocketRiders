@@ -175,7 +175,7 @@ execute if entity @s[tag=YellowBroad] run summon marker ~ ~ ~ {Tags:[broadExtraY
 execute if entity @s[tag=YellowBroad] run tp @s ~-1 ~-8 ~-16
 
 ##Pierce Prevention -- track portals
-function items:prevention/trackportals
+execute if entity @s[tag=strict] run function items:prevention/trackportals
 
 ##Place structure
 execute at @s[tag=!missileflip,tag=!strict] positioned ~ ~2 ~ run function items:placestructure

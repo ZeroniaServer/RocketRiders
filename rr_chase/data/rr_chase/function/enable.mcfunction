@@ -2,6 +2,7 @@ scoreboard players reset * gamemode_components
 scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $config_override.collision_control gamemode_components -1
 scoreboard players set $config_override.disable_team_balancing gamemode_components 1
+scoreboard players set $config_override.disable_tying gamemode_components 1
 scoreboard players set $config_override.item_stacking gamemode_components 1
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $custom_team_colors gamemode_components 1
@@ -14,18 +15,15 @@ scoreboard players set $red_for_blue gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add chaseEnabled
-tag @s add tyingOff
-tag @s add portalDecosOff
-tag @s add preventionOff
 tag @s add customPrevention
 tag @s add customEnds
 tag @s add customBossbar
 tag @s add leaveYSpawn
 # tag @s add arrowLimit
 tag @s add antigriefOff
+tag @s add noDetailYellow
 
-#enable arrows/utilities
-tag @s[tag=!rngArrows] add arrowsWasOff
-tag @s add rngArrows
-tag @s[tag=!rngUtil] add utilWasOff
-tag @s add rngUtil
+# items
+scoreboard players set $item_pool.arrow gamemode_components 1
+scoreboard players set $item_pool.cluster_fireball gamemode_components -1
+scoreboard players set $item_pool.icbm gamemode_components -1

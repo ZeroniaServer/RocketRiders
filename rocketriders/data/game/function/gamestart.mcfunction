@@ -46,9 +46,9 @@ execute as @a[x=0,tag=JoinBlue] run function custom:team/join_blue
 execute if entity @a[limit=1,x=0,tag=JoinBlue] run function everytick:team_count
 clear @a[x=0,tag=JoinBlue] *
 execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinBlue] run function game:assign_custom_team_color
-execute unless predicate game:match_in_play if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
-execute unless predicate game:match_in_play if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
-execute unless predicate game:match_in_play if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run function modifiers:long_arms/set
+execute if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
+execute if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
+execute if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run function modifiers:long_arms/set
 execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
 execute as @a[x=0,tag=JoinBlue] run function custom:reset_inventory
 execute unless predicate game:match_in_play run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
@@ -93,9 +93,9 @@ execute as @a[x=0,tag=tryJoinYellow] at @s unless entity @e[distance=..2,type=ma
 execute as @a[x=0,tag=JoinYellow] run function custom:team/join_yellow
 clear @a[x=0,tag=JoinYellow] *
 execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinYellow] run function game:assign_custom_team_color
-execute unless predicate game:match_in_play if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
-execute unless predicate game:match_in_play if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set
-execute unless predicate game:match_in_play if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinYellow] run function modifiers:long_arms/set
+execute if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
+execute if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set
+execute if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinYellow] run function modifiers:long_arms/set
 execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
 execute as @a[x=0,tag=JoinYellow] run function custom:reset_inventory
 execute unless predicate game:match_in_play run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0

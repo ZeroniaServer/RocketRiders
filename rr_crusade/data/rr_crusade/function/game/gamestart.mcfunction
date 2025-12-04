@@ -25,7 +25,6 @@ execute unless predicate rr:wait_for_sufficient_players unless predicate game:ma
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
 
 #Hotfix for being able to cast spells in queue
-execute if score @s count matches 600 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] useWand
 execute if score @s count matches 600 run summon marker 33 63 -66 {Tags:["airDetectBlue"]}
 execute if score @s count matches 600 run summon marker 33 63 66 {Tags:["airDetectYellow"]}
 execute unless predicate game:match_over if score @s count matches 600 run scoreboard players set $match_in_play global 1

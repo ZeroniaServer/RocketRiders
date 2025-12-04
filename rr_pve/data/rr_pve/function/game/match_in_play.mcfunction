@@ -1,6 +1,3 @@
-#leave midgame
-execute unless predicate rr:is_cubekrowd run function game:leavemidgame
-
 #general
 function rr_pve:items/spawnitems
 execute unless entity @e[x=0,type=armor_stand,tag=Bot] run function rr_pve:game/prepbots

@@ -22,7 +22,7 @@ setblock 35 64 64 bedrock
 setblock 34 64 65 bedrock
 setblock 33 64 64 bedrock
 setblock 34 64 64 bedrock
-fill 34 66 64 34 72 64 oak_fence replace air
+fill 34 66 64 34 72 64 oak_fence replace #custom:air
 fill 34 65 65 34 72 65 air
 
 #Yellow, left
@@ -31,7 +31,7 @@ setblock -11 64 64 bedrock
 setblock -10 64 65 bedrock
 setblock -10 64 63 bedrock
 setblock -10 64 64 bedrock
-fill -10 66 64 -10 72 64 oak_fence replace air
+fill -10 66 64 -10 72 64 oak_fence replace #custom:air
 
 #Clear behind
 fill -14 64 65 39 74 70 air replace yellow_wool
@@ -47,7 +47,7 @@ setblock -9 64 -64 bedrock
 setblock -10 64 -65 bedrock
 setblock -11 64 -64 bedrock
 setblock -10 64 -64 bedrock
-fill -10 66 -64 -10 72 -64 minecraft:oak_fence replace air
+fill -10 66 -64 -10 72 -64 minecraft:oak_fence replace #custom:air
 
 #Blue, right
 setblock 34 64 -65 bedrock
@@ -55,7 +55,7 @@ setblock 33 64 -64 bedrock
 setblock 35 64 -64 bedrock
 setblock 34 64 -63 bedrock
 setblock 34 64 -64 bedrock
-fill 34 66 -64 34 72 -64 minecraft:oak_fence replace air
+fill 34 66 -64 34 72 -64 minecraft:oak_fence replace #custom:air
 
 #Wool
 place template game:yellow_flag1 30 71 63

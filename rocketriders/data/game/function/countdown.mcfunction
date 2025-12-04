@@ -9,7 +9,6 @@ execute unless predicate game:match_in_play run scoreboard players add @s[tag=Co
 #Automatically go to 10 if no (non-parkour/non-vanished) lobby players are on
 execute if entity @s[scores={count=1..399}] unless entity @a[x=0,predicate=custom:team/lobby,tag=!inParkour,tag=!vanished] run bossbar set rr:startgame max 10
 execute if entity @s[scores={count=1..399}] unless entity @a[x=0,predicate=custom:team/lobby,tag=!inParkour,tag=!vanished] run scoreboard players set @s count 400
-execute if entity @s[scores={count=1..600}] run scoreboard players set @a[x=0] dropBow 0
 execute if entity @s[scores={count=1..598}] run bossbar set rr:startgame color green
 execute if entity @s[scores={count=599}] if score $chunk_clear_progress global matches 50.. run bossbar set rr:startgame color green
 

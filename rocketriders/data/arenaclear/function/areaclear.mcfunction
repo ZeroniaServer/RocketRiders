@@ -4,8 +4,7 @@
 ##################################
 
 ##Repeating settings
-tag @s[scores={RepeatSettings=2..}] add Repeat
-execute if entity @s[tag=Repeat,tag=!RepeatForever] run schedule function arenaclear:notifyrepeat_indimension 3t append
+execute if score $extra_match_repetitions config matches 1.. unless score $extra_match_repetitions config matches 2147483647 run schedule function arenaclear:notifyrepeat_indimension 3t append
 
 ##Appropriate tags for Arena Clear state
 scoreboard players reset $match_in_play global
@@ -30,8 +29,7 @@ function lobby:close_modification_room
 function arenaclear:gamerulelist
 
 ##Prepare Item RNG timer for next game
-scoreboard players operation @s MaxItemTime = @s MaxItemSec
-scoreboard players operation @s MaxItemTime *= $20 constant
+execute store result score @s MaxItemTime run function game:config/get_item_delay_ticks
 scoreboard players set @s RandomItem -3
 scoreboard players operation @s RandomItem += @s MaxItemTime
 execute if predicate game:modifiers/minute_mix/on run scoreboard players set @s RandomItem 1197

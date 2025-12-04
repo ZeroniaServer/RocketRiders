@@ -1,15 +1,15 @@
 ##Sub-RNG for Normal Missiles spawned by Blue Surprise Eggs
 #Choose between each missile
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngAnt] run summon marker ~ ~ ~ {Tags:["surpriseBlueAnt","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngBlade] run summon marker ~ ~ ~ {Tags:["surpriseBlueBlade","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngCata] run summon marker ~ ~ ~ {Tags:["surpriseBlueCata","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngCitadel] run summon marker ~ ~ ~ {Tags:["surpriseBlueCitadel","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngEguard] run summon marker ~ ~ ~ {Tags:["surpriseBlueEguard","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngGemi] run summon marker ~ ~ ~ {Tags:["surpriseBlueGemi","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngNull] run summon marker ~ ~ ~ {Tags:["surpriseBlueNull","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngLift] run summon marker ~ ~ ~ {Tags:["surpriseBlueLift","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngSlash] run summon marker ~ ~ ~ {Tags:["surpriseBlueSlash","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngToma] run summon marker ~ ~ ~ {Tags:["surpriseBlueToma","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/ant run summon marker ~ ~ ~ {Tags:["surpriseBlueAnt","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/blade run summon marker ~ ~ ~ {Tags:["surpriseBlueBlade","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/catapult run summon marker ~ ~ ~ {Tags:["surpriseBlueCata","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/citadel run summon marker ~ ~ ~ {Tags:["surpriseBlueCitadel","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/elder_guardian run summon marker ~ ~ ~ {Tags:["surpriseBlueEguard","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/gemini run summon marker ~ ~ ~ {Tags:["surpriseBlueGemi","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/chronullifier run summon marker ~ ~ ~ {Tags:["surpriseBlueNull","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/lifter run summon marker ~ ~ ~ {Tags:["surpriseBlueLift","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/slasher run summon marker ~ ~ ~ {Tags:["surpriseBlueSlash","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/tomatwo run summon marker ~ ~ ~ {Tags:["surpriseBlueToma","surpriseBlue2"]}
 
 #Select missile and summon appropriate entity
 tag @e[type=marker,tag=surpriseBlue2,sort=random,limit=1,distance=..1] add rngSelected

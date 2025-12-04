@@ -1,9 +1,9 @@
 ##Sub-RNG for Heavy Missiles spawned by Blue Surprise Eggs
 #Choose between each missile
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngAux] run summon marker ~ ~ ~ {Tags:["surpriseBlueAux","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngRift] run summon marker ~ ~ ~ {Tags:["surpriseBlueRift","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngJbuster] run summon marker ~ ~ ~ {Tags:["surpriseBlueJbuster","surpriseBlue2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngWar] run summon marker ~ ~ ~ {Tags:["surpriseBlueWar","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/auxiliary run summon marker ~ ~ ~ {Tags:["surpriseBlueAux","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/rifter run summon marker ~ ~ ~ {Tags:["surpriseBlueRift","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/juggerbuster run summon marker ~ ~ ~ {Tags:["surpriseBlueJbuster","surpriseBlue2"]}
+execute if predicate game:item_pool/missile/warhead run summon marker ~ ~ ~ {Tags:["surpriseBlueWar","surpriseBlue2"]}
 
 #Select missile and summon appropriate entity
 tag @e[type=marker,tag=surpriseBlue2,sort=random,limit=1,distance=..1] add rngSelected

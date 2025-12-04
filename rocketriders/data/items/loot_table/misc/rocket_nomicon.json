@@ -51,6 +51,18 @@
             {
               "function": "minecraft:set_custom_data",
               "tag": {
+                "main_item": true
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/main_item/rocket_nomicon"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": {
                 "nomicon": {}
               },
               "conditions": [

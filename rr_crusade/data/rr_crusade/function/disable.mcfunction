@@ -1,73 +1,10 @@
 scoreboard players reset * gamemode_components
 
 tag @s remove crusadeEnabled
-function arenaclear:unlockdecos
-tag @s remove portalDecosOff
 tag @s remove customPrevention
 tag @s remove arrowLimit
 tag @s remove SuddenDeathCustom
 tag @s remove portalOverride
 scoreboard players reset @a[x=0] crusadechange
-
-#item enabling/disabling
-tag @s[tag=arrowsWasOff] remove rngArrows
-tag @s remove arrowsWasOff
-tag @s[tag=fireballWasOff] remove rngFireball
-tag @s remove fireballWasOff
-tag @s[tag=vortexWasOff] remove rngVortex
-tag @s remove vortexWasOff
-tag @s[tag=obshieldWasOff] remove rngObshield
-tag @s remove obshieldWasOff
-tag @s[tag=shieldWasOff] remove rngShield
-tag @s remove shieldWasOff
-tag @s[tag=splashWasOff] remove rngSplash
-tag @s remove splashWasOff
-tag @s[tag=canopyWasOff] remove rngCanopy
-tag @s remove canopyWasOff
-tag @s[tag=novaWasOff] remove rngNova
-tag @s remove novaWasOff
-tag @s[tag=utilWasOff] remove rngUtil
-tag @s remove utilWasOff
-
-tag @s[tag=auxWasOff] remove rngAux
-tag @s remove auxWasOff
-tag @s[tag=warWasOff] remove rngWar
-tag @s remove warWasOff
-tag @s[tag=jbusterWasOff] remove rngJbuster
-tag @s remove jbusterWasOff
-tag @s[tag=riftWasOn] add rngRift
-tag @s remove riftWasOn
-tag @s[tag=heavyWasOff] remove rngHeavy
-tag @s remove heavyWasOff
-
-tag @s[tag=hurWasOff] remove rngHur
-tag @s remove hurWasOff
-tag @s[tag=thunWasOff] remove rngThun
-tag @s remove thunWasOff
-tag @s[tag=lightningWasOff] remove rngLightning
-tag @s remove lightningWasOff
-
-tag @s[tag=antWasOff] remove rngAnt
-tag @s remove antWasOff
-tag @s[tag=bladeWasOff] remove rngBlade
-tag @s remove bladeWasOff
-tag @s[tag=cataWasOff] remove rngCata
-tag @s remove cataWasOff
-tag @s[tag=citadelWasOff] remove rngCitadel
-tag @s remove citadelWasOff
-tag @s[tag=guardWasOn] add rngEguard
-tag @s remove guardWasOn
-tag @s[tag=gemiWasOff] remove rngGemi
-tag @s remove gemiWasOff
-tag @s[tag=liftWasOff] remove rngLift
-tag @s remove liftWasOff
-tag @s[tag=nullWasOff] remove rngNull
-tag @s remove nullWasOff
-tag @s[tag=slashWasOff] remove rngSlash
-tag @s remove slashWasOff
-tag @s[tag=tomaWasOff] remove rngToma
-tag @s remove tomaWasOff
-tag @s[tag=normalWasOff] remove rngNormal
-tag @s remove normalWasOff
 
 tag @s add switchGamemodes

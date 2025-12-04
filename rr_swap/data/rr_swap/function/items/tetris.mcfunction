@@ -1,16 +1,16 @@
 #game customizer compatibility
-tag @s[tag=!rngAux] add givenAux
-tag @s[tag=!rngWar] add givenWar
+execute unless predicate game:item_pool/missile/auxiliary run tag @s add givenAux
+execute unless predicate game:item_pool/missile/warhead run tag @s add givenWar
 
-tag @s[tag=!rngHur] add givenHur
-tag @s[tag=!rngThun] add givenBolt
+execute unless predicate game:item_pool/missile/hurricane run tag @s add givenHur
+execute unless predicate game:item_pool/missile/thunderbolt run tag @s add givenBolt
 
-tag @s[tag=!rngArrows] add givenArrows
-tag @s[tag=!rngFireball] add givenFireball
-tag @s[tag=!rngObshield] add givenObshield
-tag @s[tag=!rngShield] add givenShield
-tag @s[tag=!rngVortex] add givenICBM
-tag @s[tag=!rngUtil] add givenAllUtil
+execute unless predicate game:item_pool/arrow run tag @s add givenArrows
+execute unless predicate game:item_pool/fireball run tag @s add givenFireball
+execute unless predicate game:item_pool/obsidian_shield run tag @s add givenObshield
+execute unless predicate game:item_pool/shield run tag @s add givenShield
+execute unless predicate game:item_pool/vortex run tag @s add givenICBM
+execute if predicate game:item_pool_meta/all_utilities_disabled run tag @s add givenAllUtil
 
 tag @s remove givenArrowsTwice
 tag @s remove givenFireballTwice

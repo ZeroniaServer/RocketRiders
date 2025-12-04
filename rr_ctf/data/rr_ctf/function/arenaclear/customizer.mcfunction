@@ -8,24 +8,4 @@ data modify block -69 191 74 front_text.messages[1] set value {"color":"light_pu
 data modify block -69 191 74 front_text.messages[2] set value {"click_event":{"action":"run_command","command":"execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"},"text":" "}
 data modify block -69 191 74 front_text.messages[3] set value {"text":""}
 
-#lock arrows, canopies, and fireballs
-data modify block -64 193 82 front_text.messages[0] set value {"text":"Arrows","color":"light_purple","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Arrows are not compatible with this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-data modify block -64 193 82 front_text.messages[1] set value {"text":"Disabled","color":"red","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-data modify block -64 193 82 front_text.messages[2] set value {"text":"Locked","color":"white","bold":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,scores={refreshsigns=0}] run function arenaclear:refreshitemsigns"}}
-data modify block -66 192 82 front_text.messages[0] set value {"text":"Canopy","color":"light_purple","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"The Canopy is required in this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-data modify block -66 192 82 front_text.messages[1] set value {"text":"Enabled","color":"green","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-data modify block -66 192 82 front_text.messages[2] set value {"text":"Locked","color":"white","bold":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,scores={refreshsigns=0}] run function arenaclear:refreshitemsigns"}}
-data modify block -66 193 82 front_text.messages[0] set value {"text":"Fireball","color":"light_purple","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"Fireballs are required in this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-data modify block -66 193 82 front_text.messages[1] set value {"text":"Enabled","color":"green","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-data modify block -66 193 82 front_text.messages[2] set value {"text":"Locked","color":"white","bold":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,scores={refreshsigns=0}] run function arenaclear:refreshitemsigns"}}
-
-#lock utilities
-data modify block -69 193 81 front_text.messages[0] set value {"text":"Utility Items","color":"light_purple","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"The Utility Item category is not adjustable in this gamemode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-data modify block -69 193 81 front_text.messages[1] set value {"text":"Enabled","color":"green","bold":true,"click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-data modify block -69 193 81 front_text.messages[2] set value {"text":"Locked","color":"white","bold":true,"click_event":{"action":"run_command","command":"/execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,scores={refreshsigns=0}] run function arenaclear:refreshitemsigns"}}
-data modify block -69 193 81 front_text.messages[3] set value {"text":""}
-
-#overtime instead of sudden death
-data modify block -70 193 77 front_text.messages[0] set value {color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Overtime"}
-
 tag @s add GamemodeRefreshed

@@ -2,11 +2,6 @@
 
 # clear inventory
 loot replace entity @s inventory.0 27 loot custom:empty
-item replace entity @s armor.feet with air
-item replace entity @s armor.legs with air
-item replace entity @s armor.chest with air
-item replace entity @s armor.head with air
-item replace entity @s armor.body with air
 item replace entity @s player.cursor with air
 item replace entity @s player.crafting.0 with air
 item replace entity @s player.crafting.1 with air

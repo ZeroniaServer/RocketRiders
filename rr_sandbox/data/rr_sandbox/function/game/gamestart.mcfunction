@@ -12,7 +12,6 @@ execute unless predicate game:match_in_play if entity @s[tag=EditedSettings] if 
 execute unless predicate game:match_in_play if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
 
-execute if entity @s[scores={count=1..600}] run scoreboard players set @a[x=0] dropBook 0
 execute unless predicate game:match_over if score @s count matches 600 as @a[x=0,predicate=custom:team/blue] run function rr_sandbox:items/givenomicon
 execute unless predicate game:match_over if score @s count matches 600 as @a[x=0,predicate=custom:team/yellow] run function rr_sandbox:items/givenomicon
 execute unless predicate game:match_over if score @s count matches 600 run tag @s add noAchievements

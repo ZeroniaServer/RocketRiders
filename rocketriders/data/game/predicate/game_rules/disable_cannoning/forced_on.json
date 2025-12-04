@@ -33,6 +33,10 @@
         "score": "gamemode_components"
       },
       "range": 1
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/instant_tnt_explosions/on"
     }
   ]
 }

@@ -71,6 +71,18 @@
               }
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/main_item/piercing_pickaxe"
+                }
+              ]
+            },
+            {
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:can_break": {

@@ -7,10 +7,6 @@ execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forc
 scoreboard objectives add crusadekit dummy
 scoreboard objectives add crusadehp dummy
 scoreboard objectives add crusadechange trigger
-scoreboard objectives remove dropRod
-scoreboard objectives add dropWand minecraft.dropped:minecraft.writable_book
-scoreboard objectives add dropSword minecraft.dropped:minecraft.stone_sword
-scoreboard objectives add useWand minecraft.used:minecraft.writable_book
 
 bossbar add rr_crusade:blue {"text":"Total Crystal Health","color":"white"}
 bossbar add rr_crusade:yellow ""

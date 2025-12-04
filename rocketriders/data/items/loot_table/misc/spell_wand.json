@@ -24,7 +24,7 @@
                 "minecraft:item_model": "minecraft:stick",
                 "!minecraft:writable_book_content": {},
                 "minecraft:use_cooldown": {
-                  "seconds": 1,
+                  "seconds": 0.5,
                   "cooldown_group": "rocketriders:spell_wand"
                 },
                 "minecraft:unbreakable": {},
@@ -64,6 +64,18 @@
                   ]
                 }
               }
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/main_item/crusade_kit_dependent"
+                }
+              ]
             },
             {
               "function": "minecraft:set_components",

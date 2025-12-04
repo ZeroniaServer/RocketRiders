@@ -36,6 +36,7 @@ scoreboard players set @a[x=0] flag.is_dead 1
 scoreboard players set @e[x=0,type=player] flag.is_dead 0
 
 execute as @a[x=0,scores={event.player_uses_pig_spawn_egg=1..}] at @s run function custom:event/player_uses_pig_spawn_egg/main
+execute as @a[x=0,scores={event.player_uses_writable_book=1..}] at @s run function custom:event/player_uses_writable_book/main
 execute as @a[x=0,scores={event.player_uses_written_book=1..}] at @s run function custom:event/player_uses_written_book/main
 
 execute as @a[x=0,scores={time_since_attack=101..,primary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
@@ -48,8 +49,9 @@ scoreboard players remove @a[x=0,scores={shooting_saber.multishot_time=1..214748
 execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items:shooting_saber/multishot_deactivate
 function everytick:elytra
 
-# Thrown Items
-execute as @e[x=0,type=item] unless items entity @s contents *[custom_data~{dummy_item_entity:true}] run function everytick:no_drop
+# Thrown items
+execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init
+execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit as @e[x=0,type=item,predicate=custom:item_entity_contains_any_arrow] at @s run function everytick:item_entity/while_contents_is_any_arrow
 
 # Process primed TNT
 scoreboard players set $instant_explosion_buffer var -1
@@ -87,7 +89,7 @@ execute if function experimental:enabled as @a[x=0,predicate=custom:team/any_pla
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] if entity @a[x=0] run function servermode:loop
 scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ServerModeVoting] VoteServerMode
 execute unless entity @a[x=0,predicate=custom:team/lobby] run scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] VoteServerMode
-execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom run scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] RepeatSettings 0
+execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom run scoreboard players reset $extra_match_repetitions config
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function game:forcestop
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:globaldefaults
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] run scoreboard players reset @a[x=0] VoteServerMode
@@ -125,6 +127,7 @@ execute unless predicate game:modifiers/sonar/on run effect give @a[x=0,predicat
 effect give @a[x=0] saturation infinite 0 true
 execute as @a[x=0,predicate=custom:team/lobby,tag=hardcore] run function modifiers:hardcorereset
 execute as @a[x=0,predicate=custom:team/lobby,tag=hobbit] run function modifiers:hobbit/reset
+execute as @a[x=0,predicate=custom:team/lobby,tag=long_arms] run function modifiers:long_arms/reset
 function lobby:bookwarp
 scoreboard players enable @a[x=0,predicate=custom:team/lobby] displayinfo
 scoreboard players enable @a[x=0,predicate=custom:team/developer] displayinfo
@@ -142,10 +145,6 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick
 execute as @e[x=0,type=#arrows,tag=!arrow.processed] at @s run function everytick:arrow/init
 execute unless predicate game:match_over run scoreboard players set @e[x=0,type=#arrows,predicate=!custom:not_moving] entity.age -1
 execute unless predicate game:match_over as @e[x=0,type=#arrows,predicate=custom:not_moving] at @s run function everytick:arrow/while_on_ground
-
-#Item entity pickup
-execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init
-execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit as @e[x=0,type=item,predicate=custom:item_entity_contains_any_arrow] at @s run function everytick:item_entity/while_contents_is_any_arrow
 
 #Game ending and arena clearing
 execute if predicate game:match_over as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:match_over

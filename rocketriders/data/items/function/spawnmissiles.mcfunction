@@ -38,7 +38,7 @@ execute if entity @s[tag=!UnableMissile] at @s if predicate custom:near_or_above
 execute if entity @s[tag=!UnableMissile] at @s if predicate custom:near_or_above_roof run tag @s add UnableMissile
 
 #Pierce Prevention (Portals)
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=doPrevention,tag=!preventionOff] run function items:prevention/preventmissiles
+execute unless predicate game:game_rules/disable_pierce_prevention/on run function items:prevention/preventmissiles
 
 #Spawnpoint
 execute if entity @s[tag=!UnableMissile] run function items:prevention/spawnpoint
@@ -175,7 +175,7 @@ execute if entity @s[tag=YellowBroad] run summon marker ~ ~ ~ {Tags:[broadExtraY
 execute if entity @s[tag=YellowBroad] run tp @s ~-1 ~-8 ~-16
 
 ##Pierce Prevention -- track portals
-function items:prevention/trackportals
+execute if entity @s[tag=strict] run function items:prevention/trackportals
 
 ##Place structure
 execute at @s[tag=!missileflip,tag=!strict] positioned ~ ~2 ~ run function items:placestructure

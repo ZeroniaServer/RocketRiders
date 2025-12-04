@@ -1,4 +1,4 @@
-execute unless entity @a[limit=1,scores={dev_action=1}] run return run function dev:action_interrupted
+execute unless entity @a[x=0,limit=1,scores={dev_action=1}] run return run function dev:action_interrupted
 
 execute in minecraft:overworld run tp @a[limit=1,scores={dev_action=1}] -65.65 190.00 78.52 90.00 16.80
 

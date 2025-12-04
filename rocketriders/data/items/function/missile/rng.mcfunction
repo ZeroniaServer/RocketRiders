@@ -1,8 +1,8 @@
 ##Sub-RNG for Missiles
 #Choose between each category
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngHeavy,tag=!heavyOff,tag=!givenAllHeavy] run summon marker 0 0 0 {Tags:["rngHeavy","rng2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngNormal,tag=!normalOff,tag=!givenAllNormal] run summon marker 0 0 0 {Tags:["rngNormal","rng2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngLightning,tag=!lightningOff,tag=!givenAllLightning] run summon marker 0 0 0 {Tags:["rngLightning","rng2"]}
+execute unless predicate game:item_pool_meta/all_heavy_missiles_disabled if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenAllHeavy] run summon marker 0 0 0 {Tags:["rngHeavy","rng2"]}
+execute unless predicate game:item_pool_meta/all_normal_missiles_disabled if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenAllNormal] run summon marker 0 0 0 {Tags:["rngNormal","rng2"]}
+execute unless predicate game:item_pool_meta/all_lightning_missiles_disabled if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenAllLightning] run summon marker 0 0 0 {Tags:["rngLightning","rng2"]}
 execute if predicate game:modifiers/special_treatment/on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenAllSpecial] run summon marker 0 0 0 {Tags:["rngSpecial","rng2"]}
 
 #Select category and run appropriate sub-sub-RNG function

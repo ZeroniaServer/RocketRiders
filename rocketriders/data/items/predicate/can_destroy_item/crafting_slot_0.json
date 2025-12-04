@@ -2,57 +2,5 @@
   {"condition":"minecraft:reference","name":"game:match_in_play"},
   {"condition":"minecraft:reference","name":"custom:team/any_playing_team"},
   {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"count":{"min":1}}}}},
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:any_of",
-      "terms": [
-        {
-          "condition": "minecraft:all_of",
-          "terms": [
-            {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/shooting_saber"},
-            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"predicates":{"minecraft:custom_data":{"id":"shooting_saber"}}}}}}
-          ]
-        },
-        {
-          "condition": "minecraft:all_of",
-          "terms": [
-            {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/piercing_pickaxe"},
-            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"items":"#minecraft:pickaxes"}}}}
-          ]
-        },
-        {
-          "condition": "minecraft:all_of",
-          "terms": [
-            {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/rocket_nomicon"},
-            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"items":"minecraft:written_book"}}}}
-          ]
-        },
-        {
-          "condition": "minecraft:all_of",
-          "terms": [
-            {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/crusade_kit_dependent"},
-            {"condition":"minecraft:reference","name":"rr_crusade:kit/knight"},
-            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"items":"#minecraft:swords"}}}}
-          ]
-        },
-        {
-          "condition": "minecraft:all_of",
-          "terms": [
-            {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/crusade_kit_dependent"},
-            {"condition":"minecraft:reference","name":"rr_crusade:kit/archer"},
-            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"predicates":{"minecraft:custom_data":{"id":"shooting_saber"}}}}}}
-          ]
-        },
-        {
-          "condition": "minecraft:all_of",
-          "terms": [
-            {"condition":"minecraft:reference","name":"game:gamemode_components/main_item/crusade_kit_dependent"},
-            {"condition":"minecraft:reference","name":"rr_crusade:kit/mage"},
-            {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"predicates":{"minecraft:custom_data":{"id":"spell_wand"}}}}}}
-          ]
-        }
-      ]
-    }
-  }
+  {"condition":"minecraft:inverted","term":{"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"predicates":{"minecraft:custom_data":{"main_item":true}}}}}}}
 ]

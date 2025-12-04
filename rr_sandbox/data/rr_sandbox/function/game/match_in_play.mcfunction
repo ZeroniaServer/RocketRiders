@@ -1,10 +1,6 @@
-#leave midgame
-execute unless predicate rr:is_cubekrowd run function rr_sandbox:game/leavemidgame
-
 #spawnables
 function rr_powerups:everytick/spawnables
 function everytick:cluster
-execute as @a[x=0,predicate=custom:team/any_playing_team,scores={useWand=1..}] run function rr_crusade:game/usewand
 
 #nomicon
 scoreboard players enable @a[x=0,predicate=custom:can_use_nomicon] nomicon

@@ -21,7 +21,7 @@ data modify storage rocketriders:main gamemode_components.dialog set value {\
     },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:gamemode_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),explosions_crack_deepslate_bricks:$(explosions_crack_deepslate_bricks),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue),no_achievements:$(no_achievements)}"\
+      "template": "function game:gamemode_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),explosions_crack_deepslate_bricks:$(explosions_crack_deepslate_bricks),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details)}"\
     }\
   },\
   "no": {\
@@ -46,6 +46,8 @@ execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabl
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[] merge value {id:"8",display:{color:"white",text:"sandbox"}}
 
 ## Components
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:"",label_visible:false,width:200,options:[{id:"",display:{bold:true,text:"Components",underlined:true}}]}
+
 # arena/bedrock_frame
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__bedrock_frame",label:"arena/bedrock_frame",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:gamemode_components/arena/bedrock_frame run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[1].initial set value true
@@ -53,6 +55,10 @@ execute if predicate game:gamemode_components/arena/bedrock_frame run data modif
 # arena/no_base_details
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__no_base_details",label:"arena/no_base_details",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:gamemode_components/arena/no_base_details run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[1].initial set value true
+
+# arena/no_portal_details
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__no_portal_details",label:"arena/no_portal_details",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
+execute if predicate game:gamemode_components/arena/no_portal_details run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[1].initial set value true
 
 # armor/*
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"armor__",label:"armor/*",width:300,options:[{id:"0",display:{color:"white",text:"generic"}},{id:"1",display:{color:"white",text:"crusade_kit_dependent"}},{id:"2",display:{color:"white",text:"swap"}}]}
@@ -90,6 +96,14 @@ execute if predicate game:gamemode_components/friendly_fire run data modify stor
 # has_flags (locked)
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_flags",label:"🔒 has_flags",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:gamemode_components/has_flags run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
+# item_signs/replace_fireball_with_cluster_fireball (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"duel_settings_locked",label:"🔒 item_signs/replace_fireball_with_cluster_fireball",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/item_signs/replace_fireball_with_cluster_fireball run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
+# item_signs/replace_vortex_with_icbm (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"duel_settings_locked",label:"🔒 item_signs/replace_vortex_with_icbm",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/item_signs/replace_vortex_with_icbm run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
 
 # lower_void
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"lower_void",label:"lower_void",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
@@ -133,8 +147,8 @@ execute if predicate game:gamemode_components/portal_crystal_protection run data
 
 # "portal_type"
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"__portal_type",label:"portal_type",width:300,options:[{id:"0",display:{color:"white",text:"none"}},{id:"1",display:{color:"white",text:"default"}},{id:"2",display:{color:"white",text:"small"}}]}
-execute if predicate game:portal_type/default run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"default"}}].initial set value true
 execute if predicate game:portal_type/none run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"none"}}].initial set value true
+execute if predicate game:portal_type/default run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"default"}}].initial set value true
 execute if predicate game:portal_type/small run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"small"}}].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!ctfEnabled,tag=!chaseEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[0].display.color set value "red"
 
@@ -143,89 +157,190 @@ data modify storage rocketriders:main gamemode_components.dialog.inputs append v
 execute if predicate game:gamemode_components/red_for_blue run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[1].initial set value true
 
 ## Append config overridss (locked)
-execute if score $config_override.disable_cannoning gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_cannoning"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.disable_cannoning gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_cannoning"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.disable_team_balancing gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_team_balancing"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.disable_team_balancing gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_team_balancing"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.friendly_tnt_damage gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.friendly_tnt_damage"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.friendly_tnt_damage gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.friendly_tnt_damage"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.impact_utilities gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.impact_utilities"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.impact_utilities gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.impact_utilities"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.snipe_portals gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.snipe_portals"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.snipe_portals gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.snipe_portals"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.disable_tying gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_tying"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.disable_tying gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_tying"},width:300,options:[{id:"0",display:"off"}]}
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:"",label_visible:false,width:200,options:[{id:"",display:{bold:true,text:"Config Overrides",underlined:true}}]}
 
 execute if score $config_override.clutter_collector gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.clutter_collector"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.clutter_collector gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.clutter_collector"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.special_treatment gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.special_treatment"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.special_treatment gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.special_treatment"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.clutter_collector gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.clutter_collector"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.collision_control gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.collision_control"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.collision_control gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.collision_control"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.collision_control gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.collision_control"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.disable_cannoning gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_cannoning"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.disable_cannoning gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_cannoning"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.disable_hotbar_limit gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_hotbar_limit"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.disable_hotbar_limit gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_hotbar_limit"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.disable_pierce_prevention gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_pierce_prevention"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.disable_pierce_prevention gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_pierce_prevention"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.disable_team_balancing gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_team_balancing"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.disable_team_balancing gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_team_balancing"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.disable_tying gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_tying"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.disable_tying gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_tying"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.double_portal gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.double_portal"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.double_portal gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.double_portal"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.instamine gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.instamine"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.instamine gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.instamine"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.no_fall_damage gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.no_fall_damage"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.no_fall_damage gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.no_fall_damage"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.double_portal gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.double_portal"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.explosive gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.explosive"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.explosive gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.explosive"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.explosive gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.explosive"},width:300,options:[{id:"-1",display:"off"}]}
 
-execute if score $config_override.sonar gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.sonar"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.sonar gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.sonar"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.molerat gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.molerat"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.molerat gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.molerat"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.minute_mix gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.minute_mix"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.minute_mix gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.minute_mix"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.surprise_eggs gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.surprise_eggs"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.surprise_eggs gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.surprise_eggs"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.wind_down gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.wind_down"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.wind_down gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.wind_down"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.splash_streams gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.splash_streams"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.splash_streams gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.splash_streams"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.spam_click gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.spam_click"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.spam_click gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.spam_click"},width:300,options:[{id:"0",display:"off"}]}
-
-execute if score $config_override.ninja_jump gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.ninja_jump"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.ninja_jump gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.ninja_jump"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.friendly_tnt_damage gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.friendly_tnt_damage"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.friendly_tnt_damage gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.friendly_tnt_damage"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.hardcore gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.hardcore"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.hardcore gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.hardcore"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.hardcore gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.hardcore"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.hobbits gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.hobbits"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.hobbits gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.hobbits"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.hobbits gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.hobbits"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.impact_utilities gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.impact_utilities"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.impact_utilities gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.impact_utilities"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.instamine gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.instamine"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.instamine gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.instamine"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.instant_tnt_explosions gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.instant_tnt_explosions"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.instant_tnt_explosions gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.instant_tnt_explosions"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.instant_tnt_explosions gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.instant_tnt_explosions"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.long_arms gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.long_arms"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.long_arms gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.long_arms"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.long_arms gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.long_arms"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.minute_mix gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.minute_mix"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.minute_mix gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.minute_mix"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.molerat gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.molerat"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.molerat gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.molerat"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.ninja_jump gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.ninja_jump"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.ninja_jump gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.ninja_jump"},width:300,options:[{id:"-10",display:"off"}]}
+
+execute if score $config_override.no_fall_damage gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.no_fall_damage"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.no_fall_damage gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.no_fall_damage"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.punchable_tnt gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.punchable_tnt"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.punchable_tnt gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.punchable_tnt"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.punchable_tnt gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.punchable_tnt"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.rocket_residers gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.rocket_residers"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.rocket_residers gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.rocket_residers"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.rocket_residers gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.rocket_residers"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.snipe_portals gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.snipe_portals"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.snipe_portals gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.snipe_portals"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.sonar gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.sonar"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.sonar gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.sonar"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.spam_click gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.spam_click"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.spam_click gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.spam_click"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.special_treatment gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.special_treatment"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.special_treatment gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.special_treatment"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.splash_streams gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.splash_streams"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.splash_streams gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.splash_streams"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.surprise_eggs gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.surprise_eggs"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.surprise_eggs gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.surprise_eggs"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.unstable_tnt gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.unstable_tnt"},width:300,options:[{id:"1",display:"on"}]}
-execute if score $config_override.unstable_tnt gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.unstable_tnt"},width:300,options:[{id:"0",display:"off"}]}
+execute if score $config_override.unstable_tnt gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.unstable_tnt"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.wind_down gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.wind_down"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.wind_down gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.wind_down"},width:300,options:[{id:"-1",display:"off"}]}
+
+## Append item pool (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:"",label_visible:false,width:200,options:[{id:"",display:{bold:true,text:"Item Overrides",underlined:true}}]}
+
+execute if score $item_pool.arrow gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.arrow"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.arrow gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.arrow"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.canopy gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.canopy"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.canopy gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.canopy"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.cluster_fireball gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.cluster_fireball"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.cluster_fireball gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.cluster_fireball"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.fireball gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.fireball"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.fireball gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.fireball"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.icbm gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.icbm"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.icbm gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.icbm"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/ant gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/ant"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/ant gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/ant"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/auxiliary gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/auxiliary"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/auxiliary gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/auxiliary"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/blade gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/blade"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/blade gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/blade"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/broadsword gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/broadsword"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/broadsword gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/broadsword"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/bullet gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/bullet"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/bullet gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/bullet"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/catapult gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/catapult"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/catapult gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/catapult"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/chronullifier gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/chronullifier"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/chronullifier gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/chronullifier"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/citadel gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/citadel"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/citadel gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/citadel"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/duplex gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/duplex"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/duplex gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/duplex"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/elder_guardian gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/elder_guardian"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/elder_guardian gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/elder_guardian"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/gemini gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/gemini"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/gemini gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/gemini"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/hurricane gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/hurricane"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/hurricane gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/hurricane"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/hypersonic gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/hypersonic"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/hypersonic gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/hypersonic"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/juggerbuster gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/juggerbuster"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/juggerbuster gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/juggerbuster"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/lifter gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/lifter"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/lifter gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/lifter"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/rifter gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/rifter"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/rifter gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/rifter"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/slasher gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/slasher"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/slasher gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/slasher"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/thunderbolt gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/thunderbolt"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/thunderbolt gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/thunderbolt"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/tomatwo gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/tomatwo"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/tomatwo gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/tomatwo"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.missile/warhead gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/warhead"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.missile/warhead gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.missile/warhead"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.nova_rocket gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.nova_rocket"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.nova_rocket gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.nova_rocket"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.obsidian_shield gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.obsidian_shield"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.obsidian_shield gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.obsidian_shield"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.shield gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.shield"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.shield gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.shield"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.splash gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.splash"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.splash gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.splash"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $item_pool.vortex gamemode_components matches 1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.vortex"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $item_pool.vortex gamemode_components matches -1 run data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.vortex"},width:300,options:[{id:"-1",display:"off"}]}
 
 ## Show Dialog
 function custom:show_dialog with storage rocketriders:main gamemode_components

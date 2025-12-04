@@ -6,8 +6,26 @@
       "name": "game:gamemode_components/duel_settings_locked"
     },
     {
+      "condition": "minecraft:value_check",
+      "value": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$config_override.item_delay"
+        },
+        "score": "gamemode_components"
+      },
+      "range": {
+        "min": 5
+      }
+    },
+    {
       "condition": "minecraft:reference",
       "name": "game:gamemode_components/no_item_timer"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/minute_mix/on"
     }
   ]
 }

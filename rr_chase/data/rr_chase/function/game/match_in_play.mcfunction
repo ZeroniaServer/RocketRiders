@@ -1,6 +1,3 @@
-#Leave midgame
-execute unless predicate rr:is_cubekrowd run function rr_chase:game/leavemidgame
-
 #Item RNG (exception for arrows)
 tag @s add givenArrows
 tag @s add givenArrowsTwice

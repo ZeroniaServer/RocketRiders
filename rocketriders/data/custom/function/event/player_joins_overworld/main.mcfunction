@@ -13,12 +13,11 @@ tag @s remove last_dialog_opened.gamemode_components_ui
 
 # Reset triggers
 scoreboard players reset @s LeaveMidgame
-scoreboard players reset @s daytime
+scoreboard players reset @s set_item_delay
+scoreboard players reset @s set_time_of_day
 scoreboard players reset @s leaveSpec
 scoreboard players reset @s LobbyWarp
 scoreboard players reset @s editSettings
-scoreboard players reset @s dropWand
-scoreboard players reset @s useWand
 scoreboard players reset @s toggleParticles
 scoreboard players reset @s toggleTips
 scoreboard players reset @s toggleParkourTips
@@ -28,6 +27,7 @@ scoreboard players reset @s options
 
 # Reset scores
 scoreboard players reset @s event.player_dies
+scoreboard players reset @s event.player_uses_writable_book
 scoreboard players reset @s event.player_uses_written_book
 scoreboard players reset @s event.player_uses_pig_spawn_egg
 scoreboard players reset @s flag.is_nova_attached
@@ -49,12 +49,8 @@ scoreboard players reset @s secondary_damage_origin_uuid.3
 scoreboard players reset @s time_since_damage
 scoreboard players reset @s time_since_attack
 
-scoreboard players reset @s dropCompass
-scoreboard players reset @s dropClock
-scoreboard players reset @s dropBarrier
 scoreboard players reset @s ThrowPlat
 scoreboard players reset @s ThrowSplash
-scoreboard players reset @s dropBow
 scoreboard players reset @s kills
 scoreboard players reset @s jumps
 scoreboard players reset @s DealtDamage

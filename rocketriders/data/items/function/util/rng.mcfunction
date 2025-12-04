@@ -1,13 +1,13 @@
 ##Sub-RNG for Utility Items
 #Choose between each item based on enabled status and Tetris state
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngArrows,tag=!givenArrowsTwice] run summon marker 0 0 0 {Tags:["rngArrows","rng2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngFireball,tag=!givenFireballTwice] run summon marker 0 0 0 {Tags:["rngFireball","rng2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngObshield,tag=!givenObshield] run summon marker 0 0 0 {Tags:["rngObshield","rng2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngCanopy,tag=!givenCanopy] run summon marker 0 0 0 {Tags:["rngCanopy","rng2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngShield,tag=!givenShieldTwice] run summon marker 0 0 0 {Tags:["rngShield","rng2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngSplash,tag=!givenSplash] run summon marker 0 0 0 {Tags:["rngSplash","rng2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngVortex,tag=!givenVortex] run summon marker 0 0 0 {Tags:["rngVortex","rng2"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=rngNova,tag=!givenNova] run summon marker 0 0 0 {Tags:["rngNova","rng2"]}
+execute if predicate game:item_pool/arrow if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenArrowsTwice] run summon marker 0 0 0 {Tags:["rngArrows","rng2"]}
+execute if predicate game:item_pool/fireball if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenFireballTwice] run summon marker 0 0 0 {Tags:["rngFireball","rng2"]}
+execute if predicate game:item_pool/obsidian_shield if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenObshield] run summon marker 0 0 0 {Tags:["rngObshield","rng2"]}
+execute if predicate game:item_pool/canopy if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenCanopy] run summon marker 0 0 0 {Tags:["rngCanopy","rng2"]}
+execute if predicate game:item_pool/shield if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenShieldTwice] run summon marker 0 0 0 {Tags:["rngShield","rng2"]}
+execute if predicate game:item_pool/splash if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenSplash] run summon marker 0 0 0 {Tags:["rngSplash","rng2"]}
+execute if predicate game:item_pool/vortex if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenVortex] run summon marker 0 0 0 {Tags:["rngVortex","rng2"]}
+execute if predicate game:item_pool/nova_rocket if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenNova] run summon marker 0 0 0 {Tags:["rngNova","rng2"]}
 
 #Select item and run appropriate give function
 tag @e[x=0,type=marker,tag=rng2,sort=random,limit=1] add rngSelected

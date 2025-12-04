@@ -70,6 +70,7 @@ scoreboard players set $7 constant 7
 scoreboard players set $8 constant 8
 scoreboard players set $9 constant 9
 scoreboard players set $10 constant 10
+scoreboard players set $12 constant 12
 scoreboard players set $15 constant 15
 scoreboard players set $16 constant 16
 scoreboard players set $20 constant 20
@@ -84,11 +85,13 @@ scoreboard players set $360 constant 360
 scoreboard players set $400 constant 400
 scoreboard players set $1000 constant 1000
 scoreboard players set $1200 constant 1200
+scoreboard players set $2400 constant 2400
 scoreboard players set $24000 constant 24000
 
 scoreboard objectives add event.player_joins_overworld.state custom:leave_game
 scoreboard objectives add time_since_joined_overworld custom:play_time
 scoreboard objectives add event.player_dies custom:deaths
+scoreboard objectives add event.player_uses_writable_book used:writable_book
 scoreboard objectives add event.player_uses_written_book used:written_book
 scoreboard objectives add event.player_uses_pig_spawn_egg used:pig_spawn_egg
 scoreboard objectives add flag.is_dead dummy
@@ -149,18 +152,14 @@ scoreboard objectives add checkpoint dummy
 scoreboard objectives add finalParkourTime dummy
 scoreboard objectives add parkourTimer dummy
 scoreboard objectives add chkpntCooldown dummy
-scoreboard objectives add dropCompass minecraft.dropped:minecraft.compass
-scoreboard objectives add dropClock minecraft.dropped:minecraft.clock
-scoreboard objectives add dropBarrier minecraft.dropped:minecraft.barrier
 scoreboard objectives add regifts dummy
 scoreboard objectives add gravShot dummy
 scoreboard objectives add useful dummy
-scoreboard objectives add RepeatSettings dummy
 scoreboard objectives add MaxItemTime dummy
-scoreboard objectives add MaxItemSec dummy
+scoreboard objectives add set_item_delay trigger
 scoreboard objectives add RandomItem dummy
 scoreboard objectives add UKTimer dummy
-scoreboard objectives add daytime trigger
+scoreboard objectives add set_time_of_day trigger
 scoreboard objectives add leaveSpec trigger
 scoreboard objectives add LeaveGame minecraft.custom:minecraft.leave_game
 scoreboard objectives add LobbyWarp trigger
@@ -168,7 +167,6 @@ scoreboard objectives add informMeLate dummy
 scoreboard objectives add ThrowPlat minecraft.used:ender_pearl
 scoreboard objectives add ThrowSplash minecraft.used:minecraft.lingering_potion
 scoreboard objectives add count dummy
-scoreboard objectives add dropBow minecraft.dropped:minecraft.bow
 scoreboard objectives add endtimer dummy
 scoreboard objectives add soulKills dummy
 scoreboard objectives add kills playerKillCount
@@ -179,7 +177,6 @@ scoreboard objectives add SetGamemode dummy
 scoreboard objectives add gamemodeID dummy
 scoreboard objectives add invCount dummy
 scoreboard objectives add actionbardelay dummy
-scoreboard objectives add PortalDeco dummy
 scoreboard objectives add FellVoid dummy
 scoreboard objectives add CreditCycle dummy
 scoreboard objectives add RNGmax dummy
@@ -187,10 +184,6 @@ scoreboard objectives add RNGscore dummy
 scoreboard objectives add PlayerCap dummy
 scoreboard objectives add WinStreak dummy
 scoreboard objectives add HasFlag dummy
-scoreboard objectives add TopDeco dummy
-scoreboard objectives add TopCorner dummy
-scoreboard objectives add BottomDeco dummy
-scoreboard objectives add MiddleDeco dummy
 scoreboard objectives add refreshsigns dummy
 scoreboard objectives add xp_level dummy
 scoreboard objectives add xp_progress dummy

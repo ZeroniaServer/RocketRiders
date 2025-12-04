@@ -1,6 +1,3 @@
-#leave midgame
-execute unless predicate rr:is_cubekrowd run function game:leavemidgame
-
 #custom util items
 function everytick:cluster
 

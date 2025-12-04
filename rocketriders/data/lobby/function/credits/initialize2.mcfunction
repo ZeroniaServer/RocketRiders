@@ -5,7 +5,7 @@
 #Initial stuff
 kill @e[x=0,type=armor_stand,tag=creditsAS,tag=!devcycle]
 kill @e[x=0,type=area_effect_cloud,tag=CreditName]
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPlayerCredits
+scoreboard players set $show_extra_player_credits config 1
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] creditsSet 1
 
 #Second half of testers/helpers

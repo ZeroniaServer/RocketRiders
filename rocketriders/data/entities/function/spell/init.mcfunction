@@ -25,6 +25,7 @@ execute if score $team var matches 1 run data modify entity @s data.origin_team 
 ## Spawn behaviour
 execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0xFF7F00} ~ ~ ~ 1 1 1 0 5
 execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0x7F1F00} ~ ~ ~ 1 1 1 0 5
+execute if entity @s[tag=spell_type.fire,type=small_fireball] run function entities:fire_spell/init
 
 execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0xFF007F} ~ ~ ~ 1 1 1 0 5
 execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0x7F0000} ~ ~ ~ 1 1 1 0 5

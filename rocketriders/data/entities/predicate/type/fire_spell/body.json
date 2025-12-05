@@ -1,0 +1,14 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:small_fireball",
+    "predicates": {
+      "minecraft:custom_data": {
+        "fire_spell": {
+          "body": {}
+        }
+      }
+    }
+  }
+}

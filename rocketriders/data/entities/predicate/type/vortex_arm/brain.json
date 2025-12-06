@@ -2,6 +2,7 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "type": "minecraft:snowball",
     "predicates": {
       "minecraft:custom_data": {
         "vortex_arm": {

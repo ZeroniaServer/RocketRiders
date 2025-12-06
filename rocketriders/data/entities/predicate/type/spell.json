@@ -2,6 +2,7 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "type": "#entities:spell_entity_type",
     "predicates": {
       "minecraft:custom_data": {
         "spell": {}

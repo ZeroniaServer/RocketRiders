@@ -5,11 +5,11 @@
 ####################################################
 
 ##Arrow pointing down into the lobby
-execute if predicate rr:has_modification_room unless predicate game:repeat_settings/on unless entity @e[type=block_display,tag=LobbyArrowDisplay] if predicate custom:periodic_tick/3 unless score $lockmodroom CmdData matches 1 run function lobby:spawnarrow
-scoreboard players add @e[type=block_display,tag=LobbyArrowDisplay] CmdData 1
-execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=1}] run function lobby:arrow_up
-execute as @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=11}] run function lobby:arrow_down
-scoreboard players reset @e[type=block_display,tag=LobbyArrowDisplay,scores={CmdData=21..}] CmdData
+execute if predicate rr:has_modification_room unless predicate game:repeat_settings/on unless entity @e[limit=1,x=0,type=block_display,tag=lobby_arrow_display] if predicate custom:periodic_tick/3 unless score $lockmodroom CmdData matches 1 run function lobby:spawnarrow
+scoreboard players add $lobby_arrow_display global 1
+execute if score $lobby_arrow_display global matches 1 run function lobby:arrow_up
+execute if score $lobby_arrow_display global matches 11 run function lobby:arrow_down
+execute if score $lobby_arrow_display global matches 21.. run scoreboard players reset $lobby_arrow_display global
 
 ##Particles around confirm changes sign
 execute if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:2} -68.7 190.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]

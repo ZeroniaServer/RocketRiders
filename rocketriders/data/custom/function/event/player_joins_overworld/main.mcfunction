@@ -10,6 +10,7 @@ execute in minecraft:overworld run scoreboard players set @e[x=0,type=player] fl
 
 # Remove tags
 tag @s remove last_dialog_opened.gamemode_components_ui
+tag @s remove elytra.unbreakable
 
 # Reset triggers
 scoreboard players reset @s LeaveMidgame

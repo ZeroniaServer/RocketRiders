@@ -30,6 +30,7 @@ execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,predi
 execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
 execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
+execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove elytra.unbreakable
 
 #Fireballs can't be punched (credit: Miolith)
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,predicate=custom:not_moving] at @s run function game:endfireball

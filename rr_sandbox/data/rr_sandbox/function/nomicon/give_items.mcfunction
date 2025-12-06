@@ -31,9 +31,12 @@ execute if score @s nomicon matches 31 run return run function items:give/stingi
 execute if score @s nomicon matches 32 run return run function items:give/lava_splash with storage rocketriders:main nomicon
 execute if score @s nomicon matches 33 run return run function items:give/slap_fish with storage rocketriders:main nomicon
 execute if score @s nomicon matches 34 run return run function items:give/totem_of_undying with storage rocketriders:main nomicon
+
 execute if score @s nomicon matches 35 if entity @s[predicate=custom:break_elytra] run return run tellraw @s {color:"red",text:"Elytra cannot be equipped at the enemy's base"}
-execute if score @s nomicon matches 35 if items entity @s armor.chest elytra[damage=0] run return run tellraw @s {color:"red",text:"You already have elytra equipped"}
+execute if score @s nomicon matches 35 if items entity @s[tag=!elytra.unbreakable] armor.chest elytra[damage=0] run return run tellraw @s {color:"red",text:"You already have elytra equipped"}
+execute if score @s nomicon matches 35 run tag @s remove elytra.unbreakable
 execute if score @s nomicon matches 35 run return run function rr_powerups:items/powerup/giveelytra
+
 execute if score @s nomicon matches 36 run return run function items:give/trident with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 37 run function items:shooting_saber/infinity_30_seconds
@@ -80,3 +83,7 @@ execute if score @s nomicon matches 57 run return run execute unless predicate c
 
 execute if score @s nomicon matches 58 run return run execute if predicate items:shooting_saber/multishot run function items:shooting_saber/multishot_deactivate
 execute if score @s nomicon matches 59 run return run function items:give/booster_rocket with storage rocketriders:main nomicon
+
+execute if score @s nomicon matches 35 if items entity @s[tag=elytra.unbreakable] armor.chest elytra[damage=0] run return run tellraw @s {color:"red",text:"You already have elytra equipped"}
+execute if score @s nomicon matches 60 run tag @s add elytra.unbreakable
+execute if score @s nomicon matches 60 run return run function rr_powerups:items/powerup/giveelytra

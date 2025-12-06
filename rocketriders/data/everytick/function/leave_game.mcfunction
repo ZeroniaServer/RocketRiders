@@ -35,6 +35,7 @@ execute as @a[x=0,scores={LeaveGame=1..,LeaveMidgame=1}] at @s run playsound ent
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] flag.is_nova_attached
 tag @a[x=0,scores={LeaveGame=1..}] remove wearing_elytra
+tag @a[x=0,scores={LeaveGame=1..}] remove elytra.unbreakable
 
 #Parkour quit
 execute if predicate rr:has_parkour as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]

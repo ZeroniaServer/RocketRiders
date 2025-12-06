@@ -186,7 +186,7 @@ tag @a[x=0,tag=was_invisible,predicate=!custom:invisible] remove was_invisible
 execute as @a[x=0,scores={custom_team_color=1..}] unless entity @s[predicate=custom:team/any_playing_team,predicate=game:gamemode_components/custom_team_colors] run scoreboard players reset @s custom_team_color
 
 # Clear the XP bar in the lobby if YZELO is disabled
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!noYZELO] as @a[x=0,predicate=!custom:team/any_playing_team] run function custom:set_xp_bar {level:0,progress:0}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=noYZELO] as @a[x=0,predicate=!custom:team/any_playing_team] run function custom:set_xp_bar {level:0,progress:0}
 
 # Set item timer in xp bar in-game
 execute unless predicate game:game_running as @a[x=0,predicate=custom:team/any_playing_team] run function custom:set_xp_bar {level:0,progress:0}

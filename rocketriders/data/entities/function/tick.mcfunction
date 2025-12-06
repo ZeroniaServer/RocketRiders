@@ -49,3 +49,4 @@ execute as @e[x=0,predicate=entities:type/spell_emitter] at @s run function enti
 # Spells
 execute as @e[x=0,predicate=entities:type/spell] at @s run function entities:spell/tick
 execute as @e[x=0,predicate=entities:type/fire_spell/brain] at @s run function entities:fire_spell/tick
+execute as @e[x=0,predicate=entities:type/wind_spell/brain] at @s run function entities:wind_spell/tick

@@ -35,3 +35,4 @@ execute if entity @s[tag=spell_type.damage] run particle minecraft:instant_effec
 
 execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x7FFFFF} ~ ~ ~ 1 1 1 0 5
 execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x3F7F7F} ~ ~ ~ 1 1 1 0 5
+execute if entity @s[tag=spell_type.wind,type=breeze_wind_charge] run function entities:wind_spell/init

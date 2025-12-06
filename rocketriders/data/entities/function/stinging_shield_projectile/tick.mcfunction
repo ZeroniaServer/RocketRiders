@@ -17,4 +17,4 @@ execute if entity @s[y=175,dy=100] run return run function entities:stinging_shi
 execute unless predicate custom:insideborder run return run function entities:stinging_shield_projectile/actions/break
 
 # Deploy
-execute if score @s entity.age matches 20.. if predicate entities:stinging_shield_can_be_deployed run function entities:stinging_shield_projectile/actions/deploy
+execute if score @s entity.age matches 20.. on vehicle positioned as @s if predicate entities:stinging_shield_can_be_deployed run function entities:stinging_shield_projectile/actions/deploy

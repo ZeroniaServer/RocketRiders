@@ -156,6 +156,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customLeaveHandling
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SuddenDeathCustom
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noDetailBlue
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noDetailYellow
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customBossbar
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs

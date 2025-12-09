@@ -142,6 +142,23 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngToma
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngUtil
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngVortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngWar
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove respawnFlag
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove portalOverride
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove leaveBSpawn
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove leaveYSpawn
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customBaseFrames
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customEnds
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove antigriefOff
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customObsidian
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customSpawnpointBlockProtection
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customSpawn
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customLeaveHandling
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SuddenDeathCustom
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noDetailBlue
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noDetailYellow
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customBossbar
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove arrowLimit
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove canopyStack
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs
@@ -157,13 +174,6 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalEnable
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupEnabled] run function rr_powerup:enable
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxEnabled] run function rr_sandbox:enable
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run function rr_swap:enable
-
-# rename confusingly named tags
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] add customSpawnpointBlockProtection
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] remove customSpawn
-
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customObsidian] add customBaseFrames
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customObsidian] remove customObsidian
 
 ##
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
@@ -335,6 +345,8 @@ execute at @e[x=0,type=marker,tag=join_pad.middle] run summon text_display ~ ~1 
 execute at @e[x=0,type=marker,tag=join_pad.right] run summon text_display ~ ~1 ~ {Tags:["join_pad_display","join_pad_display.right"],text:{atlas:"minecraft:items",sprite:"minecraft:item/barrier",color:"#EFEFEF"},width:1,height:1,transformation:{left_rotation:[0,0,0,1],translation:[-0.1875,-1.125,0],right_rotation:[0,0,0,1],scale:[7.5,7.5,0]},billboard:"center",background:0}
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
+
+kill @e[x=0,type=block_display,tag=LobbyArrowDisplay]
 
 fill -70 201 72 -57 201 84 air replace minecraft:barrier strict
 function lobby:close_modification_room

@@ -14,4 +14,4 @@ execute if score @s entity.age matches 1.. if predicate entities:origin_team/yel
 execute if score @s entity.age matches 1.. if predicate entities:origin_team/none if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 # Deploy
-execute if score @s entity.age matches 20.. if predicate entities:shield_can_be_deployed run function entities:shield_projectile/actions/deploy
+execute if score @s entity.age matches 20.. on vehicle positioned as @s if predicate entities:shield_can_be_deployed run function entities:shield_projectile/actions/deploy

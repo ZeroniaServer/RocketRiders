@@ -1,4 +1,4 @@
-# dialog_name, trigger_input_id, item_loot_table, indefinite_article, item_plain_name, color
+# dialog_name, trigger_input_id, item_loot_table, indefinite_article, item_plain_name, color, include_in_full_list
 
 $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body append value \
 {\

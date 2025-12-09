@@ -45,16 +45,16 @@ execute if entity @s[tag=!UnableMissile] run function items:prevention/spawnpoin
 
 ##Antigrief
 #Normal antigrief - starts after 10 seconds
-execute if score $game_duration global matches 200.. if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff] if entity @s[tag=bluemissile,tag=!missileflip,x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief
-execute if score $game_duration global matches 200.. if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff] if entity @s[tag=yellowmissile,tag=!missileflip,x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief
-execute if score $game_duration global matches 200.. if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff] if entity @s[tag=yellowmissile,tag=missileflip,x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:flip/antigrief
-execute if score $game_duration global matches 200.. if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff] if entity @s[tag=bluemissile,tag=missileflip,x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:flip/antigrief
+execute if score $game_duration global matches 200.. unless predicate game:gamemode_components/disable_antigrief_system if entity @s[tag=bluemissile,tag=!missileflip,x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief
+execute if score $game_duration global matches 200.. unless predicate game:gamemode_components/disable_antigrief_system if entity @s[tag=yellowmissile,tag=!missileflip,x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief
+execute if score $game_duration global matches 200.. unless predicate game:gamemode_components/disable_antigrief_system if entity @s[tag=yellowmissile,tag=missileflip,x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:flip/antigrief
+execute if score $game_duration global matches 200.. unless predicate game:gamemode_components/disable_antigrief_system if entity @s[tag=bluemissile,tag=missileflip,x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:flip/antigrief
 
 #Stronger antigrief - starts before 10 seconds
-execute if score $game_duration global matches ..199 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff] if entity @s[tag=bluemissile,tag=!missileflip,x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
-execute if score $game_duration global matches ..199 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff] if entity @s[tag=yellowmissile,tag=!missileflip,x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
-execute if score $game_duration global matches ..199 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff] if entity @s[tag=yellowmissile,tag=missileflip,x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
-execute if score $game_duration global matches ..199 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!antigriefOff] if entity @s[tag=bluemissile,tag=missileflip,x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
+execute if score $game_duration global matches ..199 unless predicate game:gamemode_components/disable_antigrief_system if entity @s[tag=bluemissile,tag=!missileflip,x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
+execute if score $game_duration global matches ..199 unless predicate game:gamemode_components/disable_antigrief_system if entity @s[tag=yellowmissile,tag=!missileflip,x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
+execute if score $game_duration global matches ..199 unless predicate game:gamemode_components/disable_antigrief_system if entity @s[tag=yellowmissile,tag=missileflip,x=-15,dx=54,y=33,dy=40,z=-86,dz=40] run function items:prevention/antigrief_10sec
+execute if score $game_duration global matches ..199 unless predicate game:gamemode_components/disable_antigrief_system if entity @s[tag=bluemissile,tag=missileflip,x=-15,dx=54,y=33,dy=40,z=46,dz=40] run function items:prevention/antigrief_10sec
 
 #Collision Control - applies to enemy base
 execute if predicate game:modifiers/collision_control/on unless predicate game:modifiers/hardcore/on if entity @s[tag=yellowmissile,tag=!missileflip,x=-15,dx=54,y=33,dy=40,z=-67,dz=30] run function items:prevention/collisioncontrol

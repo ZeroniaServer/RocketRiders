@@ -1,4 +1,3 @@
-scoreboard players reset * gamemode_components
-
-tag @s remove normalEnabled
 tag @s add switchGamemodes
+tag @s remove normalEnabled
+scoreboard players reset * gamemode_components

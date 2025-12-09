@@ -4,4 +4,4 @@ tellraw @s ["",{"text":"\n"},{"text":"The game is ready to play! 🚀","color":"
 execute if entity @s[tag=!informMe] run tag @s add playpling
 execute if entity @s[tag=!informMe] run schedule function arenaclear:playpling_indimension 3t append
 
-kill @e[type=block_display,tag=LobbyArrowDisplay]
+kill @e[x=0,type=block_display,tag=lobby_arrow_display]

@@ -1,7 +1,7 @@
 tag @s remove spell.new
 
 # Do nothing if already processed
-execute unless entity @s[type=area_effect_cloud] unless entity @s[type=small_fireball] unless entity @s[type=breeze_wind_charge] run return fail
+execute unless entity @s[type=#entities:spell_entity_type] run return fail
 execute if entity @s[predicate=entities:type/spell] run return fail
 
 # Do nothing if no spell type is set
@@ -25,6 +25,7 @@ execute if score $team var matches 1 run data modify entity @s data.origin_team 
 ## Spawn behaviour
 execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0xFF7F00} ~ ~ ~ 1 1 1 0 5
 execute if entity @s[tag=spell_type.fire] run particle minecraft:instant_effect{color:0x7F1F00} ~ ~ ~ 1 1 1 0 5
+execute if entity @s[tag=spell_type.fire,type=small_fireball] run function entities:fire_spell/init
 
 execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0xFF007F} ~ ~ ~ 1 1 1 0 5
 execute if entity @s[tag=spell_type.health] run particle minecraft:instant_effect{color:0x7F0000} ~ ~ ~ 1 1 1 0 5
@@ -34,3 +35,4 @@ execute if entity @s[tag=spell_type.damage] run particle minecraft:instant_effec
 
 execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x7FFFFF} ~ ~ ~ 1 1 1 0 5
 execute if entity @s[tag=spell_type.wind] run particle minecraft:instant_effect{color:0x3F7F7F} ~ ~ ~ 1 1 1 0 5
+execute if entity @s[tag=spell_type.wind,type=breeze_wind_charge] run function entities:wind_spell/init

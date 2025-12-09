@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$extra_match_repetitions"
+    },
+    "score": "config"
+  },
+  "range": 2147483647
+}

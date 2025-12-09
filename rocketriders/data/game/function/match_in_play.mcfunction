@@ -49,14 +49,14 @@ fill 13 63 65 11 63 65 obsidian
 setblock 14 63 66 obsidian
 setblock 10 63 66 obsidian
 setblock 12 63 64 obsidian
-execute if entity @s[tag=!customSpawnpointBlockProtection] run fill 13 65 67 11 65 67 obsidian
-execute if entity @s[tag=!customSpawnpointBlockProtection] run setblock 12 66 67 obsidian
+execute unless predicate game:gamemode_components/custom_spawnpoint_block_protection run fill 13 65 67 11 65 67 obsidian
+execute unless predicate game:gamemode_components/custom_spawnpoint_block_protection run setblock 12 66 67 obsidian
 fill 11 63 -65 13 63 -66 obsidian
 setblock 12 63 -64 obsidian
 setblock 10 63 -66 obsidian
 setblock 14 63 -66 obsidian
-execute if entity @s[tag=!customSpawnpointBlockProtection] run fill 11 65 -67 13 65 -67 obsidian
-execute if entity @s[tag=!customSpawnpointBlockProtection] run setblock 12 66 -67 obsidian
+execute unless predicate game:gamemode_components/custom_spawnpoint_block_protection run fill 11 65 -67 13 65 -67 obsidian
+execute unless predicate game:gamemode_components/custom_spawnpoint_block_protection run setblock 12 66 -67 obsidian
 
 ## Leave Mid-Match
 execute if predicate rr:drop_main_item_to_leave_match if predicate game:match_in_play as @a[scores={LeaveMidgame=1},predicate=custom:team/any_playing_team] run function game:leave_mid_match

@@ -33,7 +33,7 @@ execute unless predicate game:match_over if entity @s[tag=EditedSettings,tag=!no
 execute unless predicate game:match_over if entity @s[tag=EditedSettings,tag=noYZELO] run tellraw @a[x=0,tag=informMe] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Leaving the game forfeits the duel and ends the game\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No base details, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
 execute unless predicate game:match_over if entity @s[tag=EditedSettings] if entity @a[x=0,tag=informMe] run function modifiers:informmodifiers
 execute if predicate game:match_in_play unless predicate game:match_over as @a[x=0,tag=informMe] run function rr_duel:notifyitems
-execute unless predicate game:match_over if entity @s[tag=EditedSettings] if score $extra_match_repetitions config matches 1.. if entity @a[x=0,tag=informMe] run function gamemodes:informrepeat
+execute unless predicate game:match_over if entity @s[tag=EditedSettings] if predicate game:repeat_settings/on if entity @a[x=0,tag=informMe] run function gamemodes:informrepeat
 tag @a[x=0,tag=informMe] remove informMe
 
 #lock join pads

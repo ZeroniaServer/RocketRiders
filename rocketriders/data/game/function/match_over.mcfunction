@@ -26,10 +26,11 @@ execute if entity @s[scores={endtimer=1}] run tag @e[x=0,type=marker,tag=join_pa
 execute if entity @s[scores={endtimer=2..3}] as @a[x=0,predicate=custom:is_on_fire,predicate=custom:team/any_playing_team] at @s run function game:putoutfire
 execute if entity @s[scores={endtimer=1..2}] run effect give @a[x=0,predicate=custom:team/any_playing_team] resistance infinite 100 true
 execute if entity @s[scores={endtimer=1..2}] run effect give @a[x=0,predicate=custom:team/any_playing_team] instant_health 1 100 true
-execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
+execute if entity @s[scores={endtimer=1..2}] unless predicate game:gamemode_components/custom_match_over_teleport_locations run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+execute if entity @s[scores={endtimer=1..2}] unless predicate game:gamemode_components/custom_match_over_teleport_locations run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
 execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
+execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove elytra.unbreakable
 
 #Fireballs can't be punched (credit: Miolith)
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,predicate=custom:not_moving] at @s run function game:endfireball
@@ -89,8 +90,8 @@ execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * inv
 execute if score @s endtimer matches 570.. run scoreboard players reset $match_over global
 
 ##For repeating settings
-execute unless score $match_repeat_amount global matches 1.. unless score $extra_match_repetitions config matches 2147483647 run scoreboard players reset $extra_match_repetitions config
-execute if entity @s[scores={endtimer=570..}] if score $extra_match_repetitions config matches 1.. unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
+execute unless score $match_repeat_amount global matches 1.. unless predicate game:repeat_settings/forever run scoreboard players reset $extra_match_repetitions config
+execute if entity @s[scores={endtimer=570..}] if predicate game:repeat_settings/on unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
 
 ##Refresh modification room
 execute if entity @s[scores={endtimer=570..}] run function arenaclear:refreshsigns

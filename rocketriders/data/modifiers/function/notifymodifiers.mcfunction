@@ -10,5 +10,5 @@ execute if predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0] ["",{"te
 #Also notifies about Game Rules
 execute unless entity @s[predicate=rr:server_mode/cubekrowd_voting,predicate=!game:gamemode_components/duel_settings_locked] unless predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Game Rules","color":"yellow","hover_event":{"action":"show_text","value":[{"storage":"rocketriders:gamerules","nbt":"list[]","interpret":true,"separator":{"text":"\n"}}]}},{"text":" (hover for info)","color":"dark_gray","italic":true}]
 
-execute if predicate rr:has_modifiers unless score $extra_match_repetitions config matches 1..2147483646 run tellraw @a[x=0] [{"text":""}]
+execute if predicate rr:has_modifiers unless predicate game:repeat_settings/finite run tellraw @a[x=0] [{"text":""}]
 execute if predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0] [{"text":""}]

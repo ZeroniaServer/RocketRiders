@@ -1,4 +1,5 @@
 scoreboard players reset * gamemode_components
+scoreboard players set $arena/no_yellow_base_details gamemode_components 1
 scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $config_override.collision_control gamemode_components -1
 scoreboard players set $config_override.disable_team_balancing gamemode_components 1
@@ -21,7 +22,6 @@ tag @s add chaseEnabled
 tag @s add customPrevention
 tag @s add customBossbar
 # tag @s add arrowLimit
-tag @s add noDetailYellow
 
 # items
 scoreboard players set $item_pool.arrow gamemode_components 1

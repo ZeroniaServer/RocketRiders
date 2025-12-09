@@ -4,10 +4,8 @@
 #########################################
 
 #Runs individual detail placement functions depending on initial tags
-execute unless predicate game:modifiers/hardcore/on if entity @s[tag=!noDetailBlue] run function arenaclear:detailplacementblue
-execute unless predicate game:modifiers/hardcore/on if entity @s[tag=!noDetailYellow] run function arenaclear:detailplacementyellow
-tag @s remove noDetailBlue
-tag @s remove noDetailYellow
+execute unless predicate game:modifiers/hardcore/on run function arenaclear:detailplacementblue
+execute unless predicate game:modifiers/hardcore/on unless predicate game:gamemode_components/arena/no_yellow_base_details run function arenaclear:detailplacementyellow
 
 #Spawnpoint obsidian placement - Blue and Yellow
 fill 14 63 66 10 63 66 obsidian

@@ -1,4 +1,3 @@
-scoreboard players reset * gamemode_components
-
-tag @s remove ctfEnabled
 tag @s add switchGamemodes
+tag @s remove ctfEnabled
+scoreboard players reset * gamemode_components

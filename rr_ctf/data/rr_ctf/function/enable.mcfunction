@@ -1,3 +1,6 @@
+tag @s remove switchGamemodes
+tag @s add ctfEnabled
+
 scoreboard players reset * gamemode_components
 scoreboard players set $additional_canopy_available gamemode_components 1
 scoreboard players set $arena/bedrock_frame gamemode_components 1
@@ -10,9 +13,6 @@ scoreboard players set $has_flags gamemode_components 1
 scoreboard players set $lower_void gamemode_components 1
 scoreboard players set $main_item/piercing_pickaxe gamemode_components 1
 scoreboard players set $no_portals gamemode_components 1
-
-tag @s remove switchGamemodes
-tag @s add ctfEnabled
 
 # items
 scoreboard players set $item_pool.arrow gamemode_components -1

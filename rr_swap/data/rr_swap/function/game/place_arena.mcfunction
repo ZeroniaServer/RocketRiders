@@ -1,5 +1,7 @@
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=swapEnabled] run return fail
 
+execute unless entity @e[limit=1,x=0,type=marker,tag=swapplatform] run summon marker 12 55 0 {Tags:["swapplatform"]}
+
 #Bases
 execute unless score $swap_side global matches 0..1 run scoreboard players set $swap_side global 0
 

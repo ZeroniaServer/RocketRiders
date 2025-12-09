@@ -1,3 +1,3 @@
-scoreboard players reset * gamemode_components
-tag @s remove duelEnabled
 tag @s add switchGamemodes
+tag @s remove duelEnabled
+scoreboard players reset * gamemode_components

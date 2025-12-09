@@ -1,3 +1,6 @@
+tag @s remove switchGamemodes
+tag @s add duelEnabled
+
 scoreboard players reset * gamemode_components
 scoreboard players set $arena/no_base_details gamemode_components 1
 scoreboard players set $armor/generic gamemode_components 1
@@ -9,9 +12,6 @@ scoreboard players set $custom_staging_bossbars gamemode_components 1
 scoreboard players set $duel_settings_locked gamemode_components 1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
 scoreboard players set $no_feathered_vortices gamemode_components 1
-
-tag @s remove switchGamemodes
-tag @s add duelEnabled
 
 # items
 scoreboard players set $item_pool.cluster_fireball gamemode_components -1

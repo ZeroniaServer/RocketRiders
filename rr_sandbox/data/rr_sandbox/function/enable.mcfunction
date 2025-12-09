@@ -1,3 +1,6 @@
+tag @s remove switchGamemodes
+tag @s add sandboxEnabled
+
 scoreboard players reset * gamemode_components
 scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $config_override.disable_hotbar_limit gamemode_components 1
@@ -11,9 +14,6 @@ scoreboard players set $custom_staging_bossbars gamemode_components 1
 scoreboard players set $main_item/rocket_nomicon gamemode_components 1
 scoreboard players set $no_achievements gamemode_components 1
 scoreboard players set $no_item_timer gamemode_components 1
-
-tag @s remove switchGamemodes
-tag @s add sandboxEnabled
 
 # items
 scoreboard players set $item_pool.missile/auxiliary gamemode_components 1

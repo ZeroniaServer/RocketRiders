@@ -20,7 +20,6 @@ scoreboard players set $red_for_blue gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add chaseEnabled
-# tag @s add arrowLimit
 
 # items
 scoreboard players set $item_pool.arrow gamemode_components 1

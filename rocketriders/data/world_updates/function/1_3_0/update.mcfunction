@@ -150,6 +150,8 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customBaseFrames
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customEnds
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove antigriefOff
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customObsidian
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customSpawnpointBlockProtection
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customSpawn
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs
@@ -165,10 +167,6 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalEnable
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupEnabled] run function rr_powerup:enable
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxEnabled] run function rr_sandbox:enable
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run function rr_swap:enable
-
-# rename confusingly named tags
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] add customSpawnpointBlockProtection
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] remove customSpawn
 
 ##
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install

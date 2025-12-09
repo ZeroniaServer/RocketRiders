@@ -26,8 +26,8 @@ execute if entity @s[scores={endtimer=1}] run tag @e[x=0,type=marker,tag=join_pa
 execute if entity @s[scores={endtimer=2..3}] as @a[x=0,predicate=custom:is_on_fire,predicate=custom:team/any_playing_team] at @s run function game:putoutfire
 execute if entity @s[scores={endtimer=1..2}] run effect give @a[x=0,predicate=custom:team/any_playing_team] resistance infinite 100 true
 execute if entity @s[scores={endtimer=1..2}] run effect give @a[x=0,predicate=custom:team/any_playing_team] instant_health 1 100 true
-execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-execute if entity @s[scores={endtimer=1..2},tag=!customEnds] run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
+execute if entity @s[scores={endtimer=1..2}] unless predicate game:gamemode_components/custom_match_over_teleport_locations run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+execute if entity @s[scores={endtimer=1..2}] unless predicate game:gamemode_components/custom_match_over_teleport_locations run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
 execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
 execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove elytra.unbreakable

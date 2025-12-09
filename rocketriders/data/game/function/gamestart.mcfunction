@@ -181,7 +181,7 @@ tag @a[x=0] remove leftBorder
 
 ##Leave Pad
 execute as @a[x=0,gamemode=!spectator,predicate=custom:team/any_playing_team,tag=!doing_facade_parkour] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] run tag @s add LeaveTeams
-execute if entity @s[tag=!customLeaveHandling] run function game:leaveteams
+execute unless predicate game:gamemode_components/custom_leave_handling run function game:leaveteams
 
 ##Facade Parkour
 execute unless predicate game:game_running as @a[x=-101,y=197,z=68,dx=12,dy=8,dz=19,gamemode=!spectator,predicate=custom:team/any_playing_team,tag=!doing_facade_parkour,predicate=custom:stepping_on_player_head] run tag @s add doing_facade_parkour

@@ -7,6 +7,7 @@ scoreboard players set $config_override.item_stacking gamemode_components 1
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $custom_match_over_teleport_locations gamemode_components 1
 scoreboard players set $custom_team_colors gamemode_components 1
+scoreboard players set $disable_antigrief_system gamemode_components 1
 scoreboard players set $friendly_fire gamemode_components 1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
 scoreboard players set $neutral_items gamemode_components 1
@@ -19,7 +20,6 @@ tag @s add chaseEnabled
 tag @s add customPrevention
 tag @s add customBossbar
 # tag @s add arrowLimit
-tag @s add antigriefOff
 tag @s add noDetailYellow
 
 # items

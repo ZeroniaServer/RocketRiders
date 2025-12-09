@@ -19,7 +19,6 @@ scoreboard players set $portal_crystal_protection gamemode_components 1
 scoreboard players set $small_portals gamemode_components 1
 
 tag @s remove switchGamemodes
-tag @s add customPrevention
 tag @s add crusadeEnabled
 
 # items

@@ -1,4 +1,5 @@
 scoreboard players reset * gamemode_components
+scoreboard players set $additional_canopy_available gamemode_components 1
 scoreboard players set $arena/bedrock_frame gamemode_components 1
 scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $config_override.collision_control gamemode_components -1
@@ -12,8 +13,6 @@ scoreboard players set $no_portals gamemode_components 1
 
 tag @s remove switchGamemodes
 tag @s add ctfEnabled
-tag @s add canopyStack
-tag @s add customPrevention
 
 # items
 scoreboard players set $item_pool.arrow gamemode_components -1

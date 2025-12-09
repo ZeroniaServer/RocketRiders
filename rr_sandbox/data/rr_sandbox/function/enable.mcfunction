@@ -12,7 +12,6 @@ scoreboard players set $no_achievements gamemode_components 1
 scoreboard players set $no_item_timer gamemode_components 1
 
 tag @s remove switchGamemodes
-tag @s add hasBees
 tag @s add customBossbar
 tag @s add sandboxEnabled
 

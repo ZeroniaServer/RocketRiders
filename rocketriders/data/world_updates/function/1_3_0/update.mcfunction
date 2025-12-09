@@ -142,6 +142,10 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngToma
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngUtil
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngVortex
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove rngWar
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove respawnFlag
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove portalOverride
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove leaveBSpawn
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove leaveYSpawn
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs

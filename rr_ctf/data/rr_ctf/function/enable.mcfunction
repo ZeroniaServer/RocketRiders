@@ -13,7 +13,6 @@ tag @s remove switchGamemodes
 tag @s add ctfEnabled
 tag @s add canopyStack
 tag @s add customPrevention
-tag @s add respawnFlag
 
 # items
 scoreboard players set $item_pool.arrow gamemode_components -1

@@ -10,7 +10,6 @@ scoreboard players set $main_item/shooting_saber gamemode_components 1
 tag @s remove switchGamemodes
 tag @s add swapEnabled
 summon marker 12 55 0 {Tags:["swapplatform"]}
-tag @s add respawnFlag
 
 # items
 scoreboard players set $config_override.disable_item_category/heavy_missiles gamemode_components -1

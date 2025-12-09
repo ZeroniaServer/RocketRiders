@@ -18,7 +18,6 @@ tag @s add chaseEnabled
 tag @s add customPrevention
 tag @s add customEnds
 tag @s add customBossbar
-tag @s add leaveYSpawn
 # tag @s add arrowLimit
 tag @s add antigriefOff
 tag @s add noDetailYellow

@@ -19,7 +19,6 @@ tag @s remove switchGamemodes
 tag @s add customPrevention
 tag @s add arrowLimit
 tag @s add SuddenDeathCustom
-tag @s add portalOverride
 tag @s add crusadeEnabled
 
 # items

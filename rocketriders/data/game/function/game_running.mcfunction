@@ -28,26 +28,26 @@ execute if entity @e[x=0,type=#arrows] run function everytick:fire_arrow
 execute if predicate game:game_rules/disable_cannoning/on as @e[x=0,type=tnt,predicate=custom:tnt_is_moving_too_fast] run function game:slow_down_tnt
 
 ##Regenerate base frames
-execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 64 67 39 64 67 obsidian
-execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 33 67 39 33 67 obsidian
-execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 64 -67 39 64 -67 obsidian
-execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 33 -67 39 33 -67 obsidian
-execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 63 67 -15 34 67 obsidian
-execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 63 67 39 34 67 obsidian
-execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 63 -67 -15 34 -67 obsidian
-execute unless predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 63 -67 39 34 -67 obsidian
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 64 67 39 64 67 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 33 67 39 33 67 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 64 -67 39 64 -67 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 33 -67 39 33 -67 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 63 67 -15 34 67 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 63 67 39 34 67 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill -15 63 -67 -15 34 -67 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 63 -67 39 34 -67 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 10 64 67 14 64 67 obsidian
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 10 64 -67 14 64 -67 obsidian
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 64 68 -15 64 69 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame unless entity @s[tag=customBaseFrames] run fill 39 64 -68 -15 64 -69 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill -15 64 67 39 64 67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill -15 33 67 39 33 67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill -15 64 -67 39 64 -67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill -15 33 -67 39 33 -67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill -15 63 67 -15 34 67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill 39 63 67 39 34 67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill -15 63 -67 -15 34 -67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill 39 63 -67 39 34 -67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill -15 64 67 39 64 67 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill -15 33 67 39 33 67 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill -15 64 -67 39 64 -67 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill -15 33 -67 39 33 -67 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill -15 63 67 -15 34 67 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill 39 63 67 39 34 67 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill -15 63 -67 -15 34 -67 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill 39 63 -67 39 34 -67 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill 10 64 67 14 64 67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill 10 64 -67 14 64 -67 obsidian
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill 39 64 68 -15 64 69 bedrock
+execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill 39 64 -68 -15 64 -69 bedrock
 
 ##Hotfix for Hypersonic
 execute as @e[x=0,type=marker,tag=hyperExtra] at @s run function items:hyperextra

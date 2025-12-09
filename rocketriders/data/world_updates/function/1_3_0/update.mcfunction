@@ -146,6 +146,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove respawnFlag
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove portalOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove leaveBSpawn
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove leaveYSpawn
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customBaseFrames
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs
@@ -165,9 +166,6 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled]
 # rename confusingly named tags
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] add customSpawnpointBlockProtection
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customSpawn] remove customSpawn
-
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customObsidian] add customBaseFrames
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=customObsidian] remove customObsidian
 
 ##
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install

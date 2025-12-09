@@ -153,6 +153,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customObsidian
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customSpawnpointBlockProtection
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customSpawn
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove customLeaveHandling
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SuddenDeathCustom
 
 # Updating game rules, modifiers, and world options
 function world_updates:1_3_0/migrate_configs

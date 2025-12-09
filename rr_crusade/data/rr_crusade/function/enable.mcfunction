@@ -10,6 +10,7 @@ scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $config_override.special_treatment gamemode_components -1
 scoreboard players set $config_override.surprise_eggs gamemode_components -1
 scoreboard players set $custom_pierce_prevention gamemode_components 1
+scoreboard players set $custom_sudden_death_handling gamemode_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage gamemode_components 1
 scoreboard players set $explosions_crack_deepslate_bricks gamemode_components 1
 scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
@@ -19,7 +20,6 @@ scoreboard players set $small_portals gamemode_components 1
 tag @s remove switchGamemodes
 tag @s add customPrevention
 tag @s add arrowLimit
-tag @s add SuddenDeathCustom
 tag @s add crusadeEnabled
 
 # items

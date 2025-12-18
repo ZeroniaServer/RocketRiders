@@ -251,6 +251,7 @@ scoreboard objectives remove dropWand
 scoreboard objectives remove dropSword
 scoreboard objectives remove dropPickaxe
 scoreboard objectives remove dropBook
+scoreboard objectives remove Machina
 
 # Remove removed-in-dev objectives
 scoreboard objectives remove last_creeper_damage_origin_uuid.0

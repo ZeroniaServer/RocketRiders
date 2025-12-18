@@ -46,7 +46,7 @@ scoreboard players set $item_pool.arrow gamemode_components 1
 scoreboard players set $item_pool.canopy gamemode_components 1
 scoreboard players set $item_pool.cluster_fireball gamemode_components -1
 scoreboard players set $item_pool.fireball gamemode_components 1
-scoreboard players set $item_pool.icbm gamemode_components -1
+scoreboard players set $item_pool.icbm gamemode_components 1
 scoreboard players set $item_pool.nova_rocket gamemode_components 1
 scoreboard players set $item_pool.obsidian_shield gamemode_components 1
 scoreboard players set $item_pool.shield gamemode_components 1

@@ -10,5 +10,6 @@ execute unless predicate custom:has_vehicle if function custom:projectile_motion
 # Movement trail
 execute if score @s entity.age matches 2.. run particle large_smoke ~ ~ ~ 0 0 0 0.1 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
-# Explode after one second
-execute if score @s entity.age matches 20.. run function entities:icbm/actions/explode
+# Explode after 1.5 seconds (1 second in Crusade mode)
+execute unless predicate game:gamemode_components/decreased_icbm_flight_duration if score @s entity.age matches 30.. run return run function entities:icbm/actions/explode
+execute if predicate game:gamemode_components/decreased_icbm_flight_duration if score @s entity.age matches 20.. run return run function entities:icbm/actions/explode

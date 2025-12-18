@@ -13,9 +13,7 @@ execute if score Blue SwissCheese matches 0 if score $game_duration global match
 scoreboard players reset Blue SwissCheese
 
 #Deus Ex Machina (part 1)
-execute if predicate game:portal_type/default run summon armor_stand 33 57 -73 {Invisible:1b,Marker:1b,NoGravity:1b,Silent:1b,Tags:["machinacheck"]}
-scoreboard players add @e[x=0,type=armor_stand,tag=machinacheck] Machina 0
-execute as @e[x=0,type=armor_stand,tag=machinacheck] at @s run function achievements:machinacheckblue
+execute if predicate game:portal_type/default if function achievements:machina_check/blue run tag @a[x=0,predicate=custom:team/blue] add DeusExMachina
 
 #One is the Loneliest Number (part 1)
 execute if score $blue_team_count global matches 1 if score $yellow_team_count global matches 2.. run tag @a[x=0,predicate=custom:team/blue] add Loneliest

@@ -12,14 +12,14 @@ tag @e[x=0,type=creeper,tag=explosion] add old_explosion
 execute if predicate game:modifiers/explosive/on run function custom:explosion {power:5,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
 execute unless predicate game:modifiers/explosive/on run function custom:explosion {power:2,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
 
-# Attempt to canopy-boom nearby enemy canopies
+# Attempt to poof nearby enemy canopies
 tag @s add nova_rocket.explode.this
 execute on origin run tag @s add nova_rocket.origin
 execute on origin run tag @s add nova_attach.origin
 execute if predicate entities:origin_team/blue run scoreboard players set $nova_rocket_team var 0
 execute if predicate entities:origin_team/yellow run scoreboard players set $nova_rocket_team var 1
 execute if predicate entities:origin_team/none run scoreboard players set $nova_rocket_team var -1
-execute positioned as @s as @e[distance=..5,predicate=entities:type/canopy/brain] run function entities:nova_rocket/actions/_explode_/check_canopy
+execute positioned as @s as @e[distance=..5,predicate=entities:type/canopy/brain] run function entities:nova_rocket/actions/__explode__/check_canopy
 execute on origin run tag @s remove nova_rocket.origin
 execute on origin run tag @s remove nova_attach.origin
 tag @s remove nova_rocket.explode.this

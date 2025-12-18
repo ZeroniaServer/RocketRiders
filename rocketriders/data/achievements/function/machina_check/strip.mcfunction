@@ -1,0 +1,23 @@
+execute unless block ^ ^ ^0 #custom:air run return fail
+execute unless block ^ ^ ^1 #custom:air run return fail
+execute unless block ^ ^ ^2 #custom:air run return fail
+execute unless block ^ ^ ^3 #custom:air run return fail
+execute unless block ^ ^ ^4 #custom:air run return fail
+execute unless block ^ ^ ^5 #custom:air run return fail
+execute unless block ^ ^ ^6 #custom:air run return fail
+execute unless block ^ ^ ^7 #custom:air run return fail
+execute unless block ^ ^ ^8 #custom:air run return fail
+execute unless block ^ ^ ^9 #custom:air run return fail
+execute unless block ^ ^ ^10 #custom:air run return fail
+execute unless block ^ ^ ^11 #custom:air run return fail
+execute unless block ^ ^ ^12 #custom:air run return fail
+execute unless block ^ ^ ^13 #custom:air run return fail
+execute unless block ^ ^ ^14 #custom:air run return fail
+execute unless block ^ ^ ^15 #custom:air run return fail
+execute unless block ^ ^ ^16 #custom:air run return fail
+execute unless block ^ ^ ^17 #custom:air run return fail
+execute unless block ^ ^ ^18 #custom:air run return fail
+execute unless block ^ ^ ^19 #custom:air run return fail
+execute unless block ^ ^ ^20 #custom:air run return fail
+execute unless block ^ ^ ^21 #custom:air run return fail
+return 1

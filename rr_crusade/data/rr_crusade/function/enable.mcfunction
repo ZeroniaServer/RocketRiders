@@ -14,6 +14,7 @@ scoreboard players set $config_override.special_treatment gamemode_components -1
 scoreboard players set $config_override.surprise_eggs gamemode_components -1
 scoreboard players set $custom_pierce_prevention gamemode_components 1
 scoreboard players set $custom_sudden_death_handling gamemode_components 1
+scoreboard players set $decreased_icbm_flight_duration gamemode_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage gamemode_components 1
 scoreboard players set $disable_arrow_stacking gamemode_components 1
 scoreboard players set $explosions_crack_deepslate_bricks gamemode_components 1

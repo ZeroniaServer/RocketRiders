@@ -53,6 +53,10 @@ execute if score $main_item/rocket_nomicon gamemode_components matches 0 run sco
 $execute store success score $custom_team_colors gamemode_components if predicate {condition:"value_check",value:$(custom_team_colors),range:1}
 execute if score $custom_team_colors gamemode_components matches 0 run scoreboard players reset $custom_team_colors gamemode_components
 
+# decreased_icbm_flight_duration
+$execute store success score $decreased_icbm_flight_duration gamemode_components if predicate {condition:"value_check",value:$(decreased_icbm_flight_duration),range:1}
+execute if score $decreased_icbm_flight_duration gamemode_components matches 0 run scoreboard players reset $decreased_icbm_flight_duration gamemode_components
+
 # decreased_shooting_saber_attack_damage
 $execute store success score $decreased_shooting_saber_attack_damage gamemode_components if predicate {condition:"value_check",value:$(decreased_shooting_saber_attack_damage),range:1}
 execute if score $decreased_shooting_saber_attack_damage gamemode_components matches 0 run scoreboard players reset $decreased_shooting_saber_attack_damage gamemode_components

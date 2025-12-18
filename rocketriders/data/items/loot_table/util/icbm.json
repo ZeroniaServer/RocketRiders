@@ -52,6 +52,45 @@
               }
             },
             {
+              "function": "minecraft:set_lore",
+              "lore": [
+                "",
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "text": "Flight Duration: 1.5 seconds"
+                }
+              ],
+              "mode": "append",
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/decreased_icbm_flight_duration"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                "",
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "text": "Flight Duration: 1 second"
+                }
+              ],
+              "mode": "append",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/decreased_icbm_flight_duration"
+                }
+              ]
+            },
+            {
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [

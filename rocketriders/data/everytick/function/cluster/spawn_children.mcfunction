@@ -3,13 +3,13 @@ data modify entity @s Pos set from storage rocketriders:main cluster_fireball.mo
 execute positioned 0. 0 0. facing entity @s feet run rotate @s ~ ~
 
 # Get children individual motion vectors
-execute rotated as @s positioned as @s run tp @s ^ ^0.1 ^
+execute rotated as @s positioned as @s run tp @s ^ ^0.02 ^
 data modify storage rocketriders:main cluster_fireball.up_motion set from entity @s Pos
-execute rotated as @s positioned as @s run tp @s ^ ^-0.2 ^
+execute rotated as @s positioned as @s run tp @s ^ ^-0.04 ^
 data modify storage rocketriders:main cluster_fireball.down_motion set from entity @s Pos
-execute rotated as @s positioned as @s run tp @s ^-0.1 ^0.1 ^
+execute rotated as @s positioned as @s run tp @s ^-0.02 ^0.02 ^
 data modify storage rocketriders:main cluster_fireball.left_motion set from entity @s Pos
-execute rotated as @s positioned as @s run tp @s ^0.2 ^ ^
+execute rotated as @s positioned as @s run tp @s ^0.04 ^ ^
 data modify storage rocketriders:main cluster_fireball.right_motion set from entity @s Pos
 
 # Summon children

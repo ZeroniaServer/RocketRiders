@@ -109,6 +109,9 @@ scoreboard objectives add intangible_arrow.despawn_buffer dummy
 scoreboard objectives add cluster_fireball.time dummy
 scoreboard objectives add flag_tablist_display dummy
 scoreboard objectives modify flag_tablist_display numberformat blank
+scoreboard objectives add default_spell dummy
+
+scoreboard objectives add change_default_spell trigger
 
 scoreboard objectives add shooting_saber.infinity_time dummy
 scoreboard objectives add shooting_saber.multishot_time dummy
@@ -289,46 +292,31 @@ execute unless data storage rocketriders:navbook modroom run data modify storage
 execute unless data storage rocketriders:navbook description run data modify storage rocketriders:navbook description set value {text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn the Modification Room, you can easily customize the game with many gamemodes, modifiers, and other settings to play with.",color:"dark_gray"}
 execute unless data storage rocketriders:navbook parkourtips run data modify storage rocketriders:navbook parkourtips set value ["\n\n     ",{text:"[Parkour Tips]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to toggle Parkour instructions.",italic:true}},click_event:{action:"run_command",command:"/trigger toggleParkourTips set 1"}}]
 
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data modify storage rocketriders:navbook default_spell_setting set value ""
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data modify storage rocketriders:navbook default_spell_setting set value ["\n\n  ",{text:"[Default Spell Book]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to change your default Spell Book in Crusade mode.",italic:true}},click_event:{action:"run_command",command:"/trigger change_default_spell set 1"}}]
+
 # Nomicon Dialog Data
 function rr_sandbox:nomicon/load_pages
 
 # Item Custom Data ID to Loot Table Map
 data modify storage rocketriders:items id_to_loot_table_map set value {\
-    "canopy": "items:util/canopy",\
-    "cluster_fireball": "items:util/cluster_fireball",\
-    "fireball": "items:util/fireball",\
-    "icbm": "items:util/icbm",\
-    "lava_splash": "items:util/lava_splash",\
-    "nova_rocket": "items:util/nova_rocket",\
-    "obsidian_shield": "items:util/obsidian_shield",\
-    "shield": "items:util/shield",\
-    "splash": "items:util/splash",\
-    "stinging_shield": "items:util/stinging_shield",\
-    "vortex": "items:util/vortex",\
     "arrow": "items:misc/arrow",\
-    "elytra": "items:misc/elytra",\
-    "knight_shield": "items:misc/knight_shield",\
-    "knight_sword": "items:misc/knight_sword",\
-    "piercing_pickaxe": "items:misc/piercing_pickaxe",\
-    "shooting_saber": "items:misc/shooting_saber",\
-    "slap_fish": "items:misc/slap_fish",\
-    "spell_wand": "items:misc/spell_wand",\
-    "tipped_arrow_blindness": "items:misc/tipped_arrow_blindness",\
-    "tipped_arrow_levitation": "items:misc/tipped_arrow_levitation",\
-    "tipped_arrow_slowness": "items:misc/tipped_arrow_slowness",\
-    "tipped_arrow_wither": "items:misc/tipped_arrow_wither",\
-    "totem_of_undying": "items:misc/totem_of_undying",\
-    "trident": "items:misc/trident",\
-    "building_block": "items:experimental/building_block",\
     "booster_rocket": "items:experimental/booster_rocket",\
-    "invisibility_potion": "items:experimental/invisibility_potion",\
-    "jump_boost_potion": "items:experimental/jump_boost_potion",\
     "lunging_spear": "items:experimental/lunging_spear",\
-    "spectral_arrow": "items:experimental/spectral_arrow",\
+    "building_block": "items:experimental/building_block",\
+    "canopy": "items:util/canopy",\
     "celebratory_elytra": "items:ending/celebratory_elytra",\
     "celebratory_fireworks": "items:ending/celebratory_fireworks",\
+    "cluster_fireball": "items:util/cluster_fireball",\
+    "elytra": "items:misc/elytra",\
+    "fireball": "items:util/fireball",\
+    "icbm": "items:util/icbm",\
+    "invisibility_potion": "items:experimental/invisibility_potion",\
+    "jump_boost_potion": "items:experimental/jump_boost_potion",\
+    "knight_shield": "items:misc/knight_shield",\
+    "knight_sword": "items:misc/knight_sword",\
+    "lava_splash": "items:util/lava_splash",\
     "loser_banner": "items:ending/loser_banner",\
-    "rocket_nomicon": "items:misc/rocket_nomicon",\
     "missile/auxiliary": "items:missile/heavy/auxiliary",\
     "missile/juggerbuster": "items:missile/heavy/juggerbuster",\
     "missile/rifter": "items:missile/heavy/rifter",\
@@ -349,9 +337,28 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "missile/bullet": "items:missile/special/bullet",\
     "missile/duplex": "items:missile/special/duplex",\
     "missile/hypersonic": "items:missile/special/hypersonic",\
+    "nova_rocket": "items:util/nova_rocket",\
+    "obsidian_shield": "items:util/obsidian_shield",\
+    "piercing_pickaxe": "items:misc/piercing_pickaxe",\
+    "rocket_nomicon": "items:misc/rocket_nomicon",\
+    "shield": "items:util/shield",\
+    "splash": "items:util/splash",\
+    "stinging_shield": "items:util/stinging_shield",\
+    "shooting_saber": "items:misc/shooting_saber",\
+    "slap_fish": "items:misc/slap_fish",\
+    "spectral_arrow": "items:experimental/spectral_arrow",\
+    "spell_book": "items:misc/spell_book",\
+    "spell_wand": "items:misc/spell_wand",\
     "surprise_missile/all": "items:missile/surprise/all",\
     "surprise_missile/heavy": "items:missile/surprise/heavy",\
     "surprise_missile/lightning": "items:missile/surprise/lightning",\
     "surprise_missile/normal": "items:missile/surprise/normal",\
     "surprise_missile/special": "items:missile/surprise/special",\
+    "tipped_arrow_blindness": "items:misc/tipped_arrow_blindness",\
+    "tipped_arrow_levitation": "items:misc/tipped_arrow_levitation",\
+    "tipped_arrow_slowness": "items:misc/tipped_arrow_slowness",\
+    "tipped_arrow_wither": "items:misc/tipped_arrow_wither",\
+    "totem_of_undying": "items:misc/totem_of_undying",\
+    "trident": "items:misc/trident",\
+    "vortex": "items:util/vortex",\
 }

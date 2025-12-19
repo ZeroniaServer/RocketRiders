@@ -20,10 +20,17 @@ scoreboard players operation $particles var %= $10 constant
 execute if score $particles var matches 0 run tag @s add hideParticles
 execute if score $particles var matches 1 run tag @s remove hideParticles
 
-scoreboard players operation $do_hotbar_auto_fill var /= $10 constant
+execute store result score $default_spell var run scoreboard players operation $do_hotbar_auto_fill var /= $10 constant
 scoreboard players operation $do_hotbar_auto_fill var %= $10 constant
 execute if score $do_hotbar_auto_fill var matches 0 run tag @s remove do_hotbar_auto_fill
 execute if score $do_hotbar_auto_fill var matches 1 run tag @s add do_hotbar_auto_fill
+
+scoreboard players operation $default_spell var /= $10 constant
+scoreboard players operation $default_spell var %= $10 constant
+execute if score $default_spell var matches 0 run scoreboard players reset @s default_spell
+execute if score $default_spell var matches 1 run scoreboard players set @s default_spell 1
+execute if score $default_spell var matches 2 run scoreboard players set @s default_spell 2
+execute if score $default_spell var matches 3 run scoreboard players set @s default_spell 3
 
 # Save Options
 function custom:player_action/playerdata/save

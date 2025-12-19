@@ -51,6 +51,21 @@ tag @a[x=0,scores={toggleTips=1..},tag=hidTips] remove hidTips
 execute as @a[x=0,scores={toggleTips=1..}] run function custom:player_action/playerdata/save
 scoreboard players set @a[x=0] toggleTips 0
 
+# change_default_spell trigger
+dialog show @a[x=0,scores={change_default_spell=1..}] {type:"minecraft:multi_action",title:"Default Spell Book",exit_action:{label:{translate:"gui.cancel"}},actions:[{label:"Fire",action:{type:"minecraft:run_command",command:"trigger change_default_spell set -1"}},{label:"Health",action:{type:"minecraft:run_command",command:"trigger change_default_spell set -2"}},{label:"Damage",action:{type:"minecraft:run_command",command:"trigger change_default_spell set -3"}},{label:"Wind",action:{type:"minecraft:run_command",command:"trigger change_default_spell set -4"}}]}
+tellraw @a[x=0,scores={change_default_spell=-1}] {color:"green",text:"You will now receive Fire spells in Crusade mode."}
+scoreboard players reset @a[x=0,scores={change_default_spell=-1}] default_spell
+tellraw @a[x=0,scores={change_default_spell=-2}] {color:"green",text:"You will now receive Health spells in Crusade mode."}
+scoreboard players set @a[x=0,scores={change_default_spell=-2}] default_spell 1
+tellraw @a[x=0,scores={change_default_spell=-3}] {color:"green",text:"You will now receive Damage spells in Crusade mode."}
+scoreboard players set @a[x=0,scores={change_default_spell=-3}] default_spell 2
+tellraw @a[x=0,scores={change_default_spell=-4}] {color:"green",text:"You will now receive Wind spells in Crusade mode."}
+scoreboard players set @a[x=0,scores={change_default_spell=-4}] default_spell 3
+execute as @a[x=0,scores={change_default_spell=-4..-1}] run function custom:player_action/playerdata/save
+tellraw @a[x=0,scores={change_default_spell=..-5}] {color:"red",text:"That is not a valid option"}
+scoreboard players reset @a change_default_spell
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run scoreboard players enable @a[x=0] change_default_spell
+
 # Fix for players joining with legacy canopyTP tag
 execute as @a[x=0,tag=canopyTP] run attribute @s minecraft:safe_fall_distance base reset
 execute as @a[x=0,tag=canopyTP] run attribute @s minecraft:jump_strength base reset

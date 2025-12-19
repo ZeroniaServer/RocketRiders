@@ -109,6 +109,9 @@ scoreboard objectives add intangible_arrow.despawn_buffer dummy
 scoreboard objectives add cluster_fireball.time dummy
 scoreboard objectives add flag_tablist_display dummy
 scoreboard objectives modify flag_tablist_display numberformat blank
+scoreboard objectives add default_spell dummy
+
+scoreboard objectives add change_default_spell trigger
 
 scoreboard objectives add shooting_saber.infinity_time dummy
 scoreboard objectives add shooting_saber.multishot_time dummy
@@ -288,6 +291,9 @@ scoreboard players add $curr leavecheck 0
 execute unless data storage rocketriders:navbook modroom run data modify storage rocketriders:navbook modroom set value ["\n",{text:"* ",color:"gray",hover_event:{action:"show_text",value:{text:"Click to teleport to the Modification Room.",italic:true}},click_event:{action:"run_command","command":"/trigger LobbyWarp set 2"}},{text:"Modification Room",color:"dark_purple",hover_event:{action:"show_text",value:{text:"Click to teleport to the Modification Room.",italic:true}},click_event:{action:"run_command","command":"/trigger LobbyWarp set 2"}}]
 execute unless data storage rocketriders:navbook description run data modify storage rocketriders:navbook description set value {text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn the Modification Room, you can easily customize the game with many gamemodes, modifiers, and other settings to play with.",color:"dark_gray"}
 execute unless data storage rocketriders:navbook parkourtips run data modify storage rocketriders:navbook parkourtips set value ["\n\n     ",{text:"[Parkour Tips]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to toggle Parkour instructions.",italic:true}},click_event:{action:"run_command",command:"/trigger toggleParkourTips set 1"}}]
+
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data modify storage rocketriders:navbook default_spell_setting set value ""
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data modify storage rocketriders:navbook default_spell_setting set value ["\n\n  ",{text:"[Default Spell Book]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to change your default Spell Book in Crusade mode.",italic:true}},click_event:{action:"run_command",command:"/trigger change_default_spell set 1"}}]
 
 # Nomicon Dialog Data
 function rr_sandbox:nomicon/load_pages

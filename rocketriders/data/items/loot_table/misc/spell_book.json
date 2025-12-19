@@ -79,6 +79,58 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {}
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:entity_scores",
+                    "entity": "this",
+                    "scores": {
+                      "default_spell": {
+                        "min": 1,
+                        "max": 3
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:spell_book/health",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "default_spell": 1
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:spell_book/damage",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "default_spell": 2
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:spell_book/wind",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "default_spell": 3
+                  }
                 }
               ]
             }

@@ -499,6 +499,11 @@
                     }
                   },
                   {
+                    "storage": "rocketriders:navbook",
+                    "nbt": "default_spell_setting",
+                    "interpret": true
+                  },
+                  {
                     "text": "\n\n ",
                     "bold": true
                   },

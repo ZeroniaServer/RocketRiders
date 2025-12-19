@@ -14,3 +14,4 @@ $execute if entity @s[tag=hideParkourTips] run data modify storage rocketriders.
 $execute if entity @s[tag=hideParticles] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.hide_particles set value 1b
 $execute if entity @s[tag=do_hotbar_auto_fill] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.auto_fill_hotbar set value 1b
 $execute if score @s crusadekit matches 2..3 store result storage rocketriders.data:playerdata players."$(UUID)".data.crusade_kit byte 1 run scoreboard players get @s crusadekit
+$execute if score @s default_spell matches 1..3 store result storage rocketriders.data:playerdata players."$(UUID)".data.default_spell byte 1 run scoreboard players get @s default_spell

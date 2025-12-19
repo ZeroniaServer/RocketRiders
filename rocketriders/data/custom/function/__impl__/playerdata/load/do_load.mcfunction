@@ -26,3 +26,6 @@ $execute if data storage rocketriders.data:playerdata players."$(UUID)".data{do_
 
 $execute store result score @s crusadekit run data get storage rocketriders.data:playerdata players."$(UUID)".data.crusadekit
 execute unless score @s crusadekit matches 1..3 run scoreboard players reset @s crusadekit
+
+$execute store result score @s default_spell run data get storage rocketriders.data:playerdata players."$(UUID)".data.default_spell
+execute unless score @s default_spell matches 1..3 run scoreboard players reset @s default_spell

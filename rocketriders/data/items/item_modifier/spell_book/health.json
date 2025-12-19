@@ -1,0 +1,50 @@
+[
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": {
+      "spell": "health"
+    }
+  },
+  {
+    "function": "minecraft:set_name",
+    "name": [
+      "",
+      {
+        "text": "Spell Book ",
+        "bold": true,
+        "color": "light_purple"
+      },
+      {
+        "translate": "[%s]",
+        "color": "dark_gray",
+        "with": [
+          {
+            "text": "❤",
+            "color": "red",
+            "bold": false
+          }
+        ]
+      }
+    ],
+    "target": "item_name"
+  },
+  {
+    "function": "minecraft:set_lore",
+    "lore": [
+      [
+        {
+          "text": "Current Spell: ",
+          "color": "white",
+          "italic": false
+        },
+        {
+          "text": "Health",
+          "color": "red"
+        }
+      ]
+    ],
+    "mode": "replace_section",
+    "offset": 0,
+    "size": 1
+  }
+]

@@ -1,7 +1,7 @@
 ##Gives executor a Spell Book
 #Title/giving
 title @s[tag=!fullHotbar] actionbar {"text":"Spell Book obtained.","color":"aqua"}
-loot give @s[tag=!fullHotbar] loot rr_crusade:book_0
+loot give @s[tag=!fullHotbar] loot items:misc/spell_book/fire
 execute at @s run playsound minecraft:entity.item.pickup player @s[tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 #Game tracking

@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$cubekrowd/disable_all_but_5_non_lightning_missiles"
+    },
+    "score": "gamemode_components"
+  },
+  "range": 1
+}

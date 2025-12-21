@@ -1,138 +1,54 @@
-#Missile
-scoreboard players reset $disable_item_category/normal_missiles config
-scoreboard players reset $disable_item_category/lightning_missiles config
-scoreboard players reset $disable_item_category/utilities config
-scoreboard players reset $disable_item_category/heavy_missiles config
+function game:config/reset
 
-scoreboard players set $item_pool.missile/ant gamemode_components -1
-scoreboard players set $item_pool.missile/auxiliary gamemode_components -1
-scoreboard players set $item_pool.missile/blade gamemode_components -1
-scoreboard players set $item_pool.missile/catapult gamemode_components -1
-scoreboard players set $item_pool.missile/chronullifier gamemode_components -1
-scoreboard players set $item_pool.missile/citadel gamemode_components -1
-scoreboard players set $item_pool.missile/elder_guardian gamemode_components -1
-scoreboard players set $item_pool.missile/gemini gamemode_components -1
-scoreboard players set $item_pool.missile/hurricane gamemode_components -1
-scoreboard players set $item_pool.missile/juggerbuster gamemode_components -1
-scoreboard players set $item_pool.missile/lifter gamemode_components -1
-scoreboard players set $item_pool.missile/rifter gamemode_components -1
-scoreboard players set $item_pool.missile/slasher gamemode_components -1
-scoreboard players set $item_pool.missile/tomatwo gamemode_components -1
-scoreboard players set $item_pool.missile/thunderbolt gamemode_components -1
-scoreboard players set $item_pool.missile/warhead gamemode_components -1
-
-#Util
-execute unless score $item_pool.arrow gamemode_components matches -1 run scoreboard players set $item_pool.arrow gamemode_components 1
-execute unless score $item_pool.fireball gamemode_components matches -1 run scoreboard players set $item_pool.fireball gamemode_components 1
-execute unless score $item_pool.shield gamemode_components matches -1 run scoreboard players set $item_pool.shield gamemode_components 1
-execute unless score $item_pool.obsidian_shield gamemode_components matches -1 run scoreboard players set $item_pool.obsidian_shield gamemode_components 1
-execute unless score $item_pool.vortex gamemode_components matches -1 run scoreboard players set $item_pool.vortex gamemode_components 1
-execute unless score $item_pool.splash gamemode_components matches -1 run scoreboard players set $item_pool.splash gamemode_components 1
-execute unless score $item_pool.nova_rocket gamemode_components matches -1 run scoreboard players set $item_pool.nova_rocket gamemode_components 1
-execute unless score $item_pool.canopy gamemode_components matches -1 run scoreboard players set $item_pool.canopy gamemode_components 1
-
-#Disable modifiers
-execute unless predicate game:gamemode_components/duel_settings_locked run function modifiers:disablemodifiers
-
-#Add needed settings and modifiers
-scoreboard players reset $disable_pierce_prevention config
-scoreboard players reset $disable_hotbar_limit config
-scoreboard players reset $disable_tying config
+# mode-specific overrides
+execute if entity @s[tag=crusadeEnabled] run return run function servermode:forced_settings/crusade_mode_override
+execute if entity @s[tag=swapEnabled] run return run function servermode:forced_settings/swap_mode_override
 
 #######################################################
 ## The lines below make it so 12 items are selected. ##
 ##        Thanks to Llewv for the suggestion!        ##
 #######################################################
 
-tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" Active Items:","color":"aqua","bold":false,"hover_event":{"action":"show_text","value":["",{"text":"A set of 12 items is randomly generated for each game.","color":"white"}]}},{"text":" (hover for info)","italic":true,"color":"dark_gray"}]
-execute if entity @s[tag=!ctfEnabled] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
-execute if entity @s[tag=ctfEnabled] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Canopy","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"aqua",text:" Active Items:",hover_event:{action:"show_text",value:"A set of 12 items is randomly generated for each game.","color":"white"}},{color:"dark_gray",italic:true,text:" (hover for info)"}]
+execute if predicate game:item_pool/arrow run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple",text:" - Arrows"},{color:"gray",text:", "},{color:"light_purple",text:"Canopy"},{color:"gray",text:", "},{color:"light_purple",text:"Splash"},{color:"gray",text:", "},{color:"light_purple",text:"Vortex"}]
+execute unless predicate game:item_pool/arrow run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple",text:" - Canopy"},{color:"gray",text:", "},{color:"light_purple",text:"Splash"},{color:"gray",text:", "},{color:"light_purple",text:"Vortex"}]
 
-### 1 shield type.
-summon marker ~ ~ ~ {CustomName:["",{color:"light_purple",hover_event:{action:"show_text",value:""},insertion:"",text:"Shield"}],Tags:["ServerRNG","Shield","RShieldRNG","RUtilRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"light_purple",hover_event:{action:"show_text",value:""},insertion:"",text:"Obsidian Shield"}],Tags:["ServerRNG","Obshield","RShieldRNG","RUtilRNG"]}
-tag @e[x=0,type=marker,tag=RShieldRNG,limit=1,sort=random] add SelRRNG
+## Utilities
+# Disable either Shield or Obsidian Shield (if required)
+execute if predicate game:gamemode_components/cubekrowd/disable_shield_or_obsidian_shield store result score $choice var run random value 0..1
+execute if predicate game:gamemode_components/cubekrowd/disable_shield_or_obsidian_shield if score $choice var matches 0 run scoreboard players set $disable_item/shield config 1
+execute if predicate game:gamemode_components/cubekrowd/disable_shield_or_obsidian_shield if score $choice var matches 1 run scoreboard players set $disable_item/obsidian_shield config 1
 
-#normal shield selected
-execute if entity @e[x=0,type=marker,tag=Shield,tag=SelRRNG] run scoreboard players set $item_pool.shield gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=Shield,tag=SelRRNG] run scoreboard players set $item_pool.obsidian_shield gamemode_components -1
+# Disable either Nova Rocket or Fireball (if required)
+execute if predicate game:gamemode_components/cubekrowd/disable_nova_rocket_or_fireball store result score $choice var run random value 0..1
+execute if predicate game:gamemode_components/cubekrowd/disable_nova_rocket_or_fireball if score $choice var matches 0 run scoreboard players set $disable_item/fireball config 1
+execute if predicate game:gamemode_components/cubekrowd/disable_nova_rocket_or_fireball if score $choice var matches 1 run scoreboard players set $disable_item/nova_rocket config 1
 
-#obshield selected
-execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run scoreboard players set $item_pool.obsidian_shield gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=Obshield,tag=SelRRNG] run scoreboard players set $item_pool.shield gamemode_components -1
+# Announce extra utils
+data modify storage rocketriders:main forced_settings.utilities set value []
+execute if predicate game:item_pool/shield run data modify storage rocketriders:main forced_settings.utilities append value {name:"Shield"}
+execute if predicate game:item_pool/obsidian_shield run data modify storage rocketriders:main forced_settings.utilities append value {name:"Obsidian Shield"}
+execute if predicate game:item_pool/fireball run data modify storage rocketriders:main forced_settings.utilities append value {name:"Fireball"}
+execute if predicate game:item_pool/nova_rocket run data modify storage rocketriders:main forced_settings.utilities append value {name:"Nova Rocket"}
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple",text:" - "},{color:"light_purple",storage:"rocketriders:main",nbt:"forced_settings.utilities[].name",interpret:true,separator:{color:"gray",text:", "}}]
 
-### 1 projectile type (except in CTF)
-summon marker ~ ~ ~ {CustomName:["",{color:"light_purple",hover_event:{action:"show_text",value:""},insertion:"",text:"Fireball"}],Tags:["ServerRNG","Fireball","RProjecRNG","RUtilRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"light_purple",hover_event:{action:"show_text",value:""},insertion:"",text:"Nova Rocket"}],Tags:["ServerRNG","Nova","RProjecRNG","RUtilRNG"]}
-execute if entity @s[tag=!ctfEnabled] run tag @e[x=0,type=marker,tag=RProjecRNG,limit=1,sort=random] add SelRRNG
-execute if entity @s[tag=ctfEnabled] run tag @e[x=0,type=marker,tag=RProjecRNG] add SelRRNG
+## Missiles
+data modify storage rocketriders:main forced_settings.missiles set value []
 
-#fireball selected
-execute if entity @e[x=0,type=marker,tag=Fireball,tag=SelRRNG] run scoreboard players set $item_pool.fireball gamemode_components 1
-execute if entity @s[tag=!ctfEnabled] if entity @e[x=0,type=marker,tag=Fireball,tag=SelRRNG] run scoreboard players set $item_pool.nova_rocket gamemode_components -1
+# Disable all but 5 non-lightning missiles (if required)
+execute if predicate game:gamemode_components/cubekrowd/disable_all_but_5_non_lightning_missiles run function servermode:forced_settings/disable_all_but_5_non_lightning_missiles
+execute unless predicate game:gamemode_components/cubekrowd/disable_all_but_5_non_lightning_missiles run function servermode:forced_settings/list_enabled_non_lightning_missiles
 
-#nova rocket selected
-execute if entity @e[x=0,type=marker,tag=Nova,tag=SelRRNG] run scoreboard players set $item_pool.nova_rocket gamemode_components 1
-execute if entity @s[tag=!ctfEnabled] if entity @e[x=0,type=marker,tag=Nova,tag=SelRRNG] run scoreboard players set $item_pool.fireball gamemode_components -1
+# Disable one lightning missile (if required)
+execute if predicate game:gamemode_components/cubekrowd/disable_one_lightning_missile store result score $choice var run random value 0..1
+execute if predicate game:gamemode_components/cubekrowd/disable_one_lightning_missile if score $choice var matches 0 run scoreboard players set $disable_item/missile/thunderbolt config 1
+execute if predicate game:gamemode_components/cubekrowd/disable_one_lightning_missile if score $choice var matches 1 run scoreboard players set $disable_item/missile/hurricane config 1
+execute if predicate game:item_pool/missile/thunderbolt run data modify storage rocketriders:main forced_settings.missiles append value {name:"Thunderbolt",category:"lightning"}
+execute if predicate game:item_pool/missile/hurricane run data modify storage rocketriders:main forced_settings.missiles append value {name:"Hurricane",category:"lightning"}
 
-#Announce extra utils
-tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"light_purple","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":false}]
+# Announce missiles
+execute if data storage rocketriders:main forced_settings.missiles[{category:"normal"}] run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"green",text:" - "},{color:"green",storage:"rocketriders:main",nbt:'forced_settings.missiles[{category:"normal"}].name',interpret:true,separator:{color:"gray",text:", "}}]
+execute if data storage rocketriders:main forced_settings.missiles[{category:"lightning"}] run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"gold",text:" - "},{color:"gold",storage:"rocketriders:main",nbt:'forced_settings.missiles[{category:"lightning"}].name',interpret:true,separator:{color:"gray",text:", "}}]
+execute if data storage rocketriders:main forced_settings.missiles[{category:"heavy"}] run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"red",text:" - "},{color:"red",storage:"rocketriders:main",nbt:'forced_settings.missiles[{category:"heavy"}].name',interpret:true,separator:{color:"gray",text:", "}}]
 
-### 1 lightning type.
-summon marker ~ ~ ~ {Tags:["ServerRNG","Hurricane","RLightningRNG"]}
-summon marker ~ ~ ~ {Tags:["ServerRNG","Thunderbolt","RLightningRNG"]}
-tag @e[x=0,type=marker,tag=RLightningRNG,limit=1,sort=random] add SelRRNG
-
-#hurricane selected
-execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run scoreboard players set $item_pool.missile/hurricane gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run scoreboard players set $item_pool.missile/thunderbolt gamemode_components -1
-
-#thunderbolt selected
-execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run scoreboard players set $item_pool.missile/thunderbolt gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run scoreboard players set $item_pool.missile/hurricane gamemode_components -1
-
-### 5/14 non-lightning missiles
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"A.N.T."}],Tags:["ServerRNG","Ant","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"red",hover_event:{action:"show_text",value:""},insertion:"",text:"Auxiliary"}],Tags:["ServerRNG","Auxiliary","RMisRNG","RHeavyRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"Blade"}],Tags:["ServerRNG","Blade","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"Catapult"}],Tags:["ServerRNG","Catapult","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"Chronullifier"}],Tags:["ServerRNG","Nullifier","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"Citadel"}],Tags:["ServerRNG","Citadel","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"Elder Guardian"}],Tags:["ServerRNG","Guard","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"Gemini"}],Tags:["ServerRNG","Gemini","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"Lifter"}],Tags:["ServerRNG","Lifter","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"red",hover_event:{action:"show_text",value:""},insertion:"",text:"Juggerbuster"}],Tags:["ServerRNG","Juggerbuster","RMisRNG","RHeavyRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"red",hover_event:{action:"show_text",value:""},insertion:"",text:"Rifter"}],Tags:["ServerRNG","Rifter","RMisRNG","RHeavyRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"Slasher"}],Tags:["ServerRNG","Slasher","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"green",hover_event:{action:"show_text",value:""},insertion:"",text:"TomaTwo"}],Tags:["ServerRNG","TomaTwo","RMisRNG"]}
-summon marker ~ ~ ~ {CustomName:["",{color:"red",hover_event:{action:"show_text",value:""},insertion:"",text:"Warhead"}],Tags:["ServerRNG","Warhead","RMisRNG","RHeavyRNG"]}
-
-tag @e[x=0,type=marker,tag=RMisRNG,tag=!SelRRNG,limit=5,sort=random] add SelRRNG
-
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Ant] run scoreboard players set $item_pool.missile/ant gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Auxiliary] run scoreboard players set $item_pool.missile/auxiliary gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Blade] run scoreboard players set $item_pool.missile/blade gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Catapult] run scoreboard players set $item_pool.missile/catapult gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Nullifier] run scoreboard players set $item_pool.missile/chronullifier gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Citadel] run scoreboard players set $item_pool.missile/citadel gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Guard] run scoreboard players set $item_pool.missile/elder_guardian gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Gemini] run scoreboard players set $item_pool.missile/gemini gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Juggerbuster] run scoreboard players set $item_pool.missile/juggerbuster gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Lifter] run scoreboard players set $item_pool.missile/lifter gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Rifter] run scoreboard players set $item_pool.missile/rifter gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Slasher] run scoreboard players set $item_pool.missile/slasher gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=TomaTwo] run scoreboard players set $item_pool.missile/tomatwo gamemode_components 1
-execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Warhead] run scoreboard players set $item_pool.missile/warhead gamemode_components 1
-
-#Announce normals
-tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"green","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=!RHeavyRNG]","color":"green","bold":false}]
-
-#Announce lightning
-execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Hurricane","color":"gold","bold":false}]
-execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Thunderbolt","color":"gold","bold":false}]
-
-#Announce heavys (if any)
-execute unless predicate game:item_pool_meta/all_heavy_missiles_disabled run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
-kill @e[x=0,type=marker,tag=ServerRNG]
-
-tellraw @a[x=0] [{"text":""}]
+tellraw @a[x=0] ""

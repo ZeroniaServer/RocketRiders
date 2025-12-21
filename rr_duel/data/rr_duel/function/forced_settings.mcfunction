@@ -29,16 +29,13 @@ scoreboard players set $item_pool.missile/rifter gamemode_components -1
 scoreboard players set $item_pool.canopy gamemode_components -1
 scoreboard players set $item_pool.nova_rocket gamemode_components -1
 
-#Disable modifiers
-function modifiers:disablemodifiers
-
 #######################################################
 ## The lines below make it so 12 items are selected. ##
 ##        Thanks to Llewv for the suggestion!        ##
 #######################################################
 
-tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" Active Items:","color":"aqua","bold":false,"hover_event":{"action":"show_text","value":["",{"text":"In 1v1 Duel Mode, a set of 12 items is randomly generated for each round.","color":"white"}]}},{"text":" (hover for info)","italic":true,"color":"dark_gray"}]
-tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Arrows","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Splash","color":"light_purple"},{"text":", ","color":"gray"},{"text":"Vortex","color":"light_purple"}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"aqua",text:" Active Items:",hover_event:{action:"show_text",value:"In 1v1 Duel Mode, a set of 12 items is randomly generated for each round."}},{color:"dark_gray",italic:true,text:" (hover for info)"}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple",text:" - Arrows"},{color:"gray",text:", "},{color:"light_purple",text:"Splash"},{color:"gray",text:", "},{color:"light_purple",text:"Vortex"}]
 
 ### 1 shield type.
 summon marker ~ ~ ~ {CustomName:["",{color:"light_purple",hover_event:{action:"show_text",value:""},insertion:"",text:"Shield"}],Tags:["RankedRNG","Shield","RShieldRNG","RUtilRNG"]}
@@ -62,7 +59,7 @@ scoreboard players set $item_pool.fireball gamemode_components 1
 scoreboard players set $item_pool.nova_rocket gamemode_components -1
 
 #Announce extra utils
-tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"light_purple","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RUtilRNG]","color":"light_purple","bold":false}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple",text:" - "},{color:"light_purple",selector:"@e[x=0,type=marker,tag=SelRRNG,tag=RUtilRNG]",separator:{color:"gray",text:", "}}]
 
 ### 1 lightning type.
 summon marker ~ ~ ~ {Tags:["RankedRNG","Hurricane","RLightningRNG"]}
@@ -107,17 +104,17 @@ execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Citadel] run scoreboard pla
 execute if entity @e[x=0,type=marker,tag=SelRRNG,tag=Warhead] run scoreboard players set $item_pool.missile/warhead gamemode_components 1
 
 #Announce normals
-tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"green","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=!RHeavyRNG]","color":"green","bold":false}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"green",text:" - "},{color:"green",selector:"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=!RHeavyRNG]",separator:{color:"gray",text:", "}}]
 
 #Announce lightning
-execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Hurricane","color":"gold","bold":false}]
-execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - Thunderbolt","color":"gold","bold":false}]
+execute if entity @e[x=0,type=marker,tag=Hurricane,tag=SelRRNG] run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"gold",text:" - Hurricane"}]
+execute if entity @e[x=0,type=marker,tag=Thunderbolt,tag=SelRRNG] run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"gold",text:" - Thunderbolt"}]
 
 #Announce heavys (if any)
-execute if entity @e[limit=1,x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG] run tellraw @a[x=0] ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
+execute if entity @e[limit=1,x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG] run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"red",text:" - "},{color:"red",selector:"@e[x=0,type=marker,tag=SelRRNG,tag=RMisRNG,tag=RHeavyRNG]",separator:{color:"gray",text:", "}}]
 
 kill @e[x=0,type=marker,tag=RankedRNG]
-tellraw @a[x=0] [""]
+tellraw @a[x=0] ""
 
 #Enable/disable heavys
 execute if predicate game:item_pool_meta/all_heavy_missiles_disabled run scoreboard players set $config_overrides.disabled_item_category/heavy_missiles gamemode_components 1

@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$cubekrowd/disable_shield_or_obsidian_shield"
+    },
+    "score": "gamemode_components"
+  },
+  "range": 1
+}

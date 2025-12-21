@@ -73,6 +73,22 @@ data modify storage rocketriders:main gamemode_components.dialog.inputs append v
 execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"only_crusade_mode_archer_kit"}}].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[{display:{text:"only_crusade_mode_archer_kit"}}].display.color set value "red"
 
+# cubekrowd/disable_all_but_5_non_lightning_missiles (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"cubekrowd__disable_all_but_5_non_lightning_missiles",label:"🔒 cubekrowd/disable_all_but_5_non_lightning_missiles",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/cubekrowd/disable_all_but_5_non_lightning_missiles run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
+# cubekrowd/disable_nova_rocket_or_fireball (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"cubekrowd__disable_nova_rocket_or_fireball",label:"🔒 cubekrowd/disable_nova_rocket_or_fireball",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/cubekrowd/disable_nova_rocket_or_fireball run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
+# cubekrowd/disable_one_lightning_missile (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"cubekrowd__disable_one_lightning_missile",label:"🔒 cubekrowd/disable_one_lightning_missile",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/cubekrowd/disable_one_lightning_missile run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
+# cubekrowd/disable_shield_or_obsidian_shield (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"cubekrowd__disable_shield_or_obsidian_shield",label:"🔒 cubekrowd/disable_shield_or_obsidian_shield",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/cubekrowd/disable_shield_or_obsidian_shield run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
 # custom_team_colors
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"custom_team_colors",label:"custom_team_colors",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:gamemode_components/custom_team_colors run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[1].initial set value true

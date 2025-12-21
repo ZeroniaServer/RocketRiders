@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$cubekrowd/disable_nova_rocket_or_fireball"
+    },
+    "score": "gamemode_components"
+  },
+  "range": 1
+}

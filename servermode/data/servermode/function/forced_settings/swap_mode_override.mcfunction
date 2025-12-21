@@ -1,0 +1,6 @@
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"aqua",text:" Active Items:",hover_event:{action:"show_text",value:"In Swap Mode, these items will always be active."}},{color:"dark_gray",italic:true,text:" (hover for info)"}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple",text:" - Arrows"},{color:"gray",text:", "},{color:"light_purple",text:"Cluster Fireball"},{color:"gray",text:", "},{color:"light_purple",text:"ICBM"},{color:"gray",text:", "},{color:"light_purple",text:"Obsidian Shield"},{color:"gray",text:", "},{color:"light_purple",text:"Shield"}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"gold",text:" - Hurricane"},{color:"gray",text:", "},{color:"gold",text:"Thunderbolt"}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"red",text:" - Auxiliary"},{color:"gray",text:", "},{color:"red",text:"Warhead"}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"#ca00ca",text:" - Broadsword"},{color:"gray",text:", "},{color:"#ca00ca",text:"Bullet"},{color:"gray",text:", "},{color:"#ca00ca",text:"Duplex"},{color:"gray",text:", "},{color:"#ca00ca",text:"Hypersonic"}]
+tellraw @a[x=0] ""

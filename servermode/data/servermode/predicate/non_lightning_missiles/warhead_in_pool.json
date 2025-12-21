@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$item_pool.missile/warhead"
+    },
+    "score": "gamemode_components"
+  },
+  "range": 0
+}

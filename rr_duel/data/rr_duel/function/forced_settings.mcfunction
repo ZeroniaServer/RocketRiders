@@ -29,9 +29,6 @@ scoreboard players set $item_pool.missile/rifter gamemode_components -1
 scoreboard players set $item_pool.canopy gamemode_components -1
 scoreboard players set $item_pool.nova_rocket gamemode_components -1
 
-#Disable modifiers
-function modifiers:disablemodifiers
-
 #######################################################
 ## The lines below make it so 12 items are selected. ##
 ##        Thanks to Llewv for the suggestion!        ##

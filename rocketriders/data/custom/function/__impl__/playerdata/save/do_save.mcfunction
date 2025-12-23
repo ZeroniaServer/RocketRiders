@@ -15,3 +15,6 @@ $execute if entity @s[tag=hideParticles] run data modify storage rocketriders.da
 $execute if entity @s[tag=do_hotbar_auto_fill] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.auto_fill_hotbar set value 1b
 $execute if score @s crusadekit matches 2..3 store result storage rocketriders.data:playerdata players."$(UUID)".data.crusade_kit byte 1 run scoreboard players get @s crusadekit
 $execute if score @s default_spell matches 1..3 store result storage rocketriders.data:playerdata players."$(UUID)".data.default_spell byte 1 run scoreboard players get @s default_spell
+$execute if score @s fireballKill matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.fireballKill int 1 run scoreboard players get @s fireballKill
+$execute if score @s minedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.minedTNT int 1 run scoreboard players get @s minedTNT
+$execute if score @s prevMinedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.prevMinedTNT int 1 run scoreboard players get @s prevMinedTNT

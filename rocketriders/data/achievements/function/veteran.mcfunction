@@ -76,6 +76,6 @@ execute if entity @s[tag=!CompletedVeteran,tag=!ArrowSpawned] if score @s BowSho
 execute if entity @s[tag=!CompletedVeteran,tag=!ArrowSpawned] if score @s BowShot matches 1.. run tag @s add ArrowSpawned
 
 #Final check
-tag @s[tag=!CompletedVeteran,tag=AuxSpawned,tag=AntsSpawned,tag=BladeSpawned,tag=BroadSpawned,tag=BulletSpawned,tag=CataSpawned,tag=CitaSpawned,tag=DuplexSpawned,tag=GemiSpawned,tag=GuardSpawned,tag=HurSpawned,tag=HyperSpawned,tag=JugbSpawned,tag=LifterSpawned,tag=NullSpawned,tag=RifterSpawned,tag=SlashSpawned,tag=ThunSpawned,tag=TomaSpawned,tag=WarSpawned,tag=FireballSpawned,tag=ObshieldSpawned,tag=CanopySpawned,tag=ShieldSpawned,tag=SplashSpawned,tag=VortexSpawned,tag=NovaSpawned,tag=ArrowSpawned] add CompletedVeteran
+tag @s[tag=!CompletedVeteran,advancements={achievements:rr_challenges/veteran=true}] add CompletedVeteran
 advancement grant @s[tag=CompletedVeteran] only achievements:rr_challenges/veteran
 execute if entity @s[tag=CompletedVeteran] run function achievements:veteranreset

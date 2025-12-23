@@ -24,7 +24,7 @@ item modify entity @s hotbar.8 {function:"minecraft:set_custom_data",tag:{delete
 item modify entity @s weapon.offhand {function:"minecraft:set_custom_data",tag:{delete:true}}
 
 # lobby players
-execute if predicate custom:team/lobby run loot replace entity @s hotbar.4 loot items:books/nav_book
+execute if predicate custom:team/lobby run function lobby:give_nav_book with storage rocketriders:navbook
 execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:game_running unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] unless score @s VoteNum matches 1.. run loot replace entity @s hotbar.0 loot servermode:voting_ballot
 execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:game_running unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] if score @s VoteNum matches 1.. run loot replace entity @s hotbar.0 loot servermode:voting_ballot_used
 execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] run item replace entity @s hotbar.3 with compass[custom_name=[{bold:true,color:"aqua",italic:false,text:"Return to Checkpoint"}],consumable={consume_seconds:2147483647,has_consume_particles:false,sound:"minecraft:intentionally_empty"}]

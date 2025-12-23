@@ -11,11 +11,11 @@ kill @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=30..}]
 tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:has_vehicle] add blueobalone
 
 #Disable Blue Obsidian Shields inside of portals
-execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
-execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
+execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=-74,dx=48,dy=25] run kill @s
+execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=74,dx=48,dy=25] run kill @s
 #Do the same but for Hole in One
-execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
-execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
+execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=-75,dx=48,dy=25,dz=2] run kill @s
+execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=73,dx=48,dy=25,dz=2] run kill @s
 #Disable Blue Obsidian Shields near void
 execute as @e[x=0,type=marker,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Blue Obsidian Shields near spawnpoints

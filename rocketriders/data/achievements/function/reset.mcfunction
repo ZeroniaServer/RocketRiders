@@ -8,7 +8,6 @@ scoreboard players reset @s WinStreak
 scoreboard players reset @s minedTNT
 scoreboard players reset @s prevMinedTNT
 scoreboard players reset @s fireballkill
-scoreboard players reset @s prevfireballkill
 scoreboard players reset @s HolyLand
 scoreboard players reset @s gravShot
 scoreboard players reset @s soulKills

@@ -280,7 +280,7 @@ scoreboard objectives add losses dummy
 scoreboard objectives add prevMinedTNT dummy
 scoreboard objectives add prevUseful dummy
 scoreboard objectives add fireballkill dummy
-scoreboard objectives add prevfireballkill dummy
+scoreboard objectives remove prevfireballkill
 scoreboard objectives add prevFellVoid dummy
 scoreboard objectives add prevKills dummy
 scoreboard objectives remove cancelMatch

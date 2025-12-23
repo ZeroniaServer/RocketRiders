@@ -5,7 +5,7 @@
       "color": "#c20000"
     },
     "description": {
-      "text": "Return an enemy Fireball back to the enemy team 5 times in one game.",
+      "text": "Return an enemy Fireball back to the enemy team 5 times in one match.",
       "color": "red"
     },
     "icon": {

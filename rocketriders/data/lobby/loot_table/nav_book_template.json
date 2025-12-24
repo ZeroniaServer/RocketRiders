@@ -1,700 +1,695 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:written_book",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:custom_data": {
+                  "navbook": true,
+                  "delete": false
+                },
                 "minecraft:item_model": "minecraft:knowledge_book",
                 "minecraft:item_name": {
-                  "translate": "Navigation Book",
                   "bold": true,
-                  "color": "dark_green"
+                  "color": "dark_green",
+                  "translate": "Navigation Book"
                 },
                 "minecraft:lore": [
-                  {
-                    "translate": "A helpful book used to gain"
-                  },
-                  {
-                    "translate": "information and teleport"
-                  },
-                  {
-                    "translate": "around the Lobby."
-                  }
+                  "A helpful book used to gain",
+                  "information and teleport",
+                  "around the Lobby."
                 ],
-                "minecraft:custom_data": {
-                  "navbook": true
-                },
                 "minecraft:written_book_content": {
-                  "title": "",
-                  "author": "Zeronia"
+                  "author": "Zeronia",
+                  "title": ""
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:set_written_book_pages",
+              "mode": "replace_all",
               "pages": [
                 [
                   "",
                   {
-                    "text": "   Rocket",
+                    "bold": true,
                     "color": "blue",
-                    "bold": true
+                    "text": "   Rocket"
                   },
                   {
-                    "text": " Riders",
+                    "bold": true,
                     "color": "gold",
-                    "bold": true
+                    "text": " Riders"
                   },
                   "\n      ",
                   {
+                    "color": "light_purple",
                     "text": "Lobby Warps",
-                    "underlined": true,
-                    "color": "light_purple"
+                    "underlined": true
                   },
                   "\n",
                   {
-                    "text": "   (Click to teleport)",
-                    "color": "gray"
+                    "color": "gray",
+                    "text": "   (Click to teleport)"
                   },
                   "\n\n",
                   {
-                    "text": "* ",
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 1"
+                    },
                     "color": "gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Lobby.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Lobby."
                       }
                     },
+                    "text": "* "
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 1"
-                    }
-                  },
-                  {
-                    "text": "Lobby",
+                    },
                     "color": "dark_purple",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Lobby.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Lobby."
                       }
                     },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 1"
-                    }
+                    "text": "Lobby"
                   },
                   "\n",
                   {
-                    "text": "* ",
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 3"
+                    },
                     "color": "gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Blue join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Blue join pad."
                       }
                     },
+                    "text": "* "
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 3"
-                    }
-                  },
-                  {
-                    "text": "Join",
+                    },
                     "color": "dark_purple",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Blue join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Blue join pad."
                       }
                     },
+                    "text": "Join"
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 3"
-                    }
-                  },
-                  {
-                    "text": " ",
+                    },
                     "color": "gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Blue join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Blue join pad."
                       }
                     },
+                    "text": " "
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 3"
-                    }
-                  },
-                  {
-                    "text": "Blue",
+                    },
                     "color": "blue",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Blue join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Blue join pad."
                       }
                     },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 3"
-                    }
+                    "text": "Blue"
                   },
                   "\n",
                   {
-                    "text": "* ",
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 4"
+                    },
                     "color": "gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Yellow join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Yellow join pad."
                       }
                     },
+                    "text": "* "
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 4"
-                    }
-                  },
-                  {
-                    "text": "Join",
+                    },
                     "color": "dark_purple",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Yellow join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Yellow join pad."
                       }
                     },
+                    "text": "Join"
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 4"
-                    }
-                  },
-                  {
-                    "text": " ",
+                    },
                     "color": "gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Yellow join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Yellow join pad."
                       }
                     },
+                    "text": " "
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 4"
-                    }
-                  },
-                  {
-                    "text": "Yellow",
+                    },
                     "color": "gold",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Yellow join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Yellow join pad."
                       }
                     },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 4"
-                    }
+                    "text": "Yellow"
                   },
                   "\n",
                   {
-                    "text": "*",
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 5"
+                    },
                     "color": "gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Spectator join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Spectator join pad."
                       }
                     },
+                    "text": "*"
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 5"
-                    }
-                  },
-                  {
-                    "text": " ",
+                    },
                     "color": "gold",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Spectator join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Spectator join pad."
                       }
                     },
+                    "text": " "
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 5"
-                    }
-                  },
-                  {
-                    "text": "Join",
+                    },
                     "color": "dark_purple",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Spectator join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Spectator join pad."
                       }
                     },
+                    "text": "Join"
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 5"
-                    }
-                  },
-                  {
-                    "text": " ",
+                    },
                     "color": "gold",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Spectator join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Spectator join pad."
                       }
                     },
+                    "text": " "
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 5"
-                    }
-                  },
-                  {
-                    "text": "Spectator",
+                    },
                     "color": "dark_gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Spectator join pad.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Spectator join pad."
                       }
                     },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 5"
-                    }
+                    "text": "Spectator"
                   },
                   {
-                    "storage": "rocketriders:navbook",
+                    "interpret": true,
                     "nbt": "modroom",
-                    "interpret": true
+                    "storage": "rocketriders:navbook"
                   },
                   "\n",
                   {
-                    "text": "* ",
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 6"
+                    },
                     "color": "gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Missile Display Area.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Missile Display Area."
                       }
                     },
+                    "text": "* "
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 6"
-                    }
-                  },
-                  {
-                    "text": "Missile Display Area",
+                    },
                     "color": "dark_purple",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Missile Display Area.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Missile Display Area."
                       }
                     },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 6"
-                    }
+                    "text": "Missile Display Area"
                   },
                   "\n",
                   {
-                    "text": "*",
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 7"
+                    },
                     "color": "gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Parkour Area.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Parkour Area."
                       }
                     },
+                    "text": "*"
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 7"
-                    }
-                  },
-                  {
-                    "text": " Parkour Area",
+                    },
                     "color": "dark_purple",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to teleport to the Parkour Area.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to teleport to the Parkour Area."
                       }
                     },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 7"
-                    }
+                    "text": " Parkour Area"
                   },
                   "\n\n      ",
                   {
-                    "text": "[How to Play]",
+                    "click_event": {
+                      "action": "change_page",
+                      "page": 2
+                    },
                     "color": "dark_gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": [
                         "",
                         {
-                          "text": "Click to learn how to play Rocket Riders.",
+                          "color": "white",
                           "italic": true,
-                          "color": "white"
+                          "text": "Click to learn how to play Rocket Riders."
                         }
                       ]
                     },
-                    "click_event": {
-                      "action": "change_page",
-                      "page": 2
-                    }
+                    "text": "[How to Play]"
                   },
                   "\n  ",
                   {
-                    "text": "[Settings]",
-                    "color": "dark_gray",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "text": "Click to configure player settings.",
-                        "italic": true
-                      }
-                    },
                     "click_event": {
                       "action": "change_page",
                       "page": 3
-                    }
+                    },
+                    "color": "dark_gray",
+                    "hover_event": {
+                      "action": "show_text",
+                      "value": {
+                        "italic": true,
+                        "text": "Click to configure player settings."
+                      }
+                    },
+                    "text": "[Settings]"
                   },
                   " ",
                   {
-                    "text": "[Credits]",
-                    "color": "dark_gray",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "text": "Click to see credits.",
-                        "italic": true
-                      }
-                    },
                     "click_event": {
                       "action": "change_page",
                       "page": 4
-                    }
+                    },
+                    "color": "dark_gray",
+                    "hover_event": {
+                      "action": "show_text",
+                      "value": {
+                        "italic": true,
+                        "text": "Click to see credits."
+                      }
+                    },
+                    "text": "[Credits]"
                   }
                 ],
                 [
                   "",
                   {
-                    "text": "   Rocket",
+                    "bold": true,
                     "color": "blue",
-                    "bold": true
+                    "text": "   Rocket"
                   },
                   {
-                    "text": " Riders",
+                    "bold": true,
                     "color": "gold",
-                    "bold": true
+                    "text": " Riders"
                   },
                   "\n       ",
                   {
+                    "color": "light_purple",
                     "text": "How to Play",
-                    "underlined": true,
-                    "color": "light_purple"
+                    "underlined": true
                   },
                   {
-                    "storage": "rocketriders:navbook",
+                    "interpret": true,
                     "nbt": "description",
-                    "interpret": true
+                    "storage": "rocketriders:navbook"
                   }
                 ],
                 [
                   "",
                   {
-                    "text": "   Rocket",
+                    "bold": true,
                     "color": "blue",
-                    "bold": true
+                    "text": "   Rocket"
                   },
                   {
-                    "text": " Riders",
+                    "bold": true,
                     "color": "gold",
-                    "bold": true
+                    "text": " Riders"
                   },
                   "\n         ",
                   {
+                    "color": "light_purple",
                     "text": "Settings",
-                    "underlined": true,
-                    "color": "light_purple"
+                    "underlined": true
                   },
                   "\n",
                   {
-                    "text": "    (Click to toggle)",
-                    "color": "gray"
+                    "color": "gray",
+                    "text": "    (Click to toggle)"
                   },
                   "\n\n      ",
                   {
-                    "text": "[Ingame Tips]",
-                    "color": "dark_gray",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "text": "Click to toggle ingame tips.",
-                        "italic": true
-                      }
-                    },
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger toggleTips set 1"
-                    }
-                  },
-                  {
-                    "storage": "rocketriders:navbook",
-                    "nbt": "parkourtips",
-                    "interpret": true
-                  },
-                  {
-                    "text": "\n\n      ",
-                    "bold": true
-                  },
-                  {
-                    "text": "[Particles]",
+                    },
                     "color": "dark_gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to toggle particles from Rocket Riders gameplay elements.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to toggle ingame tips."
                       }
                     },
+                    "text": "[Ingame Tips]"
+                  },
+                  {
+                    "interpret": true,
+                    "nbt": "parkourtips",
+                    "storage": "rocketriders:navbook"
+                  },
+                  {
+                    "bold": true,
+                    "text": "\n\n      "
+                  },
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger toggleParticles set 1"
-                    }
-                  },
-                  {
-                    "storage": "rocketriders:navbook",
-                    "nbt": "default_spell_setting",
-                    "interpret": true
-                  },
-                  {
-                    "text": "\n\n ",
-                    "bold": true
-                  },
-                  "  ",
-                  {
-                    "text": "[Auto-Fill Hotbar]",
+                    },
                     "color": "dark_gray",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to toggle automatic hotbar filling.",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to toggle particles from Rocket Riders gameplay elements."
                       }
                     },
+                    "text": "[Particles]"
+                  },
+                  {
+                    "interpret": true,
+                    "nbt": "default_spell_setting",
+                    "storage": "rocketriders:navbook"
+                  },
+                  {
+                    "bold": true,
+                    "text": "\n\n "
+                  },
+                  "  ",
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger toggleHotbarAutoFill set 1"
-                    }
+                    },
+                    "color": "dark_gray",
+                    "hover_event": {
+                      "action": "show_text",
+                      "value": {
+                        "italic": true,
+                        "text": "Click to toggle automatic hotbar filling."
+                      }
+                    },
+                    "text": "[Auto-Fill Hotbar]"
                   }
                 ],
                 [
                   "",
                   {
-                    "text": "   Rocket",
+                    "bold": true,
                     "color": "blue",
-                    "bold": true
+                    "text": "   Rocket"
                   },
                   {
-                    "text": " Riders",
+                    "bold": true,
                     "color": "gold",
-                    "bold": true
+                    "text": " Riders"
                   },
                   "\n         ",
                   {
+                    "color": "light_purple",
                     "text": "Credits",
-                    "underlined": true,
-                    "color": "light_purple"
+                    "underlined": true
                   },
                   "\n\n",
                   {
-                    "text": "This game was made in ",
-                    "color": "dark_gray"
+                    "color": "dark_gray",
+                    "text": "This game was made in "
                   },
                   {
-                    "text": "8+ years",
-                    "color": "light_purple"
+                    "color": "light_purple",
+                    "text": "8+ years"
                   },
                   {
-                    "text": "!",
-                    "color": "dark_gray"
+                    "color": "dark_gray",
+                    "text": "!"
                   },
                   "\n",
                   {
-                    "text": "\nBrought to you by:\n- ",
-                    "color": "dark_gray"
+                    "color": "dark_gray",
+                    "text": "\nBrought to you by:\n- "
                   },
                   {
-                    "text": "Evtema3",
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://www.youtube.com/Evtema3"
+                    },
                     "color": "red",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to check out Evtema3!",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to check out Evtema3!"
                       }
                     },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://www.youtube.com/Evtema3"
-                    }
+                    "text": "Evtema3"
                   },
                   "\n",
                   {
-                    "text": "- ",
-                    "color": "dark_gray"
+                    "color": "dark_gray",
+                    "text": "- "
                   },
                   {
-                    "text": "YZEROgame",
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://www.youtube.com/channel/UC7-j3tkiF9PeT2FVbI8WR4A"
+                    },
                     "color": "#00DB19",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to check out YZEROgame!",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to check out YZEROgame!"
                       }
                     },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://www.youtube.com/channel/UC7-j3tkiF9PeT2FVbI8WR4A"
-                    }
+                    "text": "YZEROgame"
                   },
                   "\n",
                   {
-                    "text": "- ",
-                    "color": "dark_gray"
+                    "color": "dark_gray",
+                    "text": "- "
                   },
                   {
-                    "text": "Chronos22",
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://www.youtube.com/channel/UCK1WeblW__mSmkjV4jJ5h-Q"
+                    },
                     "color": "#0248e9",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to check out Chronos22!",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to check out Chronos22!"
                       }
                     },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://www.youtube.com/channel/UCK1WeblW__mSmkjV4jJ5h-Q"
-                    }
+                    "text": "Chronos22"
                   },
                   "\n",
                   {
-                    "text": "- ",
-                    "color": "dark_gray"
+                    "color": "dark_gray",
+                    "text": "- "
                   },
                   {
-                    "text": "DorkOrc",
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://github.com/DorkOrc"
+                    },
                     "color": "#FF9900",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to check out DorkOrc!",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to check out DorkOrc!"
                       }
                     },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://github.com/DorkOrc"
-                    }
+                    "text": "DorkOrc"
                   },
                   "\n",
                   {
-                    "text": "- ",
-                    "color": "dark_gray"
+                    "color": "dark_gray",
+                    "text": "- "
                   },
                   {
-                    "text": "Cube",
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://cubekrowd.net/"
+                    },
                     "color": "dark_aqua",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to check out CubeKrowd!",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to check out CubeKrowd!"
                       }
                     },
+                    "text": "Cube"
+                  },
+                  {
                     "click_event": {
                       "action": "open_url",
                       "url": "https://cubekrowd.net/"
-                    }
-                  },
-                  {
-                    "text": "Krowd",
+                    },
                     "color": "gold",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "text": "Click to check out CubeKrowd!",
-                        "italic": true
+                        "italic": true,
+                        "text": "Click to check out CubeKrowd!"
                       }
                     },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://cubekrowd.net/"
-                    }
+                    "text": "Krowd"
                   },
                   "\n",
                   {
-                    "text": "- ",
-                    "color": "dark_gray"
+                    "color": "dark_gray",
+                    "text": "- "
                   },
                   {
-                    "text": "All ",
-                    "color": "dark_purple"
+                    "color": "dark_purple",
+                    "text": "All "
                   },
                   {
+                    "color": "gold",
                     "text": "80+",
-                    "underlined": true,
-                    "color": "gold"
+                    "underlined": true
                   },
                   {
-                    "text": " playtesters",
-                    "color": "dark_purple"
+                    "color": "dark_purple",
+                    "text": " playtesters"
                   }
                 ]
-              ],
-              "mode": "replace_all"
+              ]
             }
-          ]
+          ],
+          "name": "minecraft:written_book",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

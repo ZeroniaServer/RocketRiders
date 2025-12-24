@@ -16,9 +16,7 @@ function lobby:parkour/parkoursetup
 function lobby:credits/stop
 function arenaclear:unhidemodroom
 schedule function servermode:fixduel 2t append
-data modify storage rocketriders:navbook modroom set value ["\n",{text:"* ",color:"gray",click_event:{action:"run_command",command:"/trigger LobbyWarp set 2"},hover_event:{action:"show_text",value:{color:"gray",text:"Click to teleport to the Modification Room."}}},{text:"Modification Room",color:"dark_purple",hover_event:{action:"show_text",value:{text:"Click to teleport to the Modification Room.",italic:true}},click_event:{action:"run_command",command:"/trigger LobbyWarp set 2"}}]
-data modify storage rocketriders:navbook description set value {text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn the Modification Room, you can easily customize the game with many gamemodes, modifiers, and other settings to play with.",color:"dark_gray"}
-data modify storage rocketriders:navbook parkourtips set value ["\n\n     ",{text:"[Parkour Tips]",color:"dark_gray",click_event:{action:"run_command",command:"/trigger toggleParkourTips set 1"},hover_event:{action:"show_text",value:{color:"dark_gray",text:"Click to toggle Parkour instructions."}}}]
+function lobby:store_nav_book
 
 scoreboard objectives remove joinBlue
 scoreboard objectives remove joinYellow

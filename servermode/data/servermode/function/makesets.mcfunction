@@ -4,7 +4,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add ServerModeVoting
 # Kill potentially old entities
 kill @e[x=0,type=marker,tag=ServerMode]
 
-# Summon AEC's that will store all set info.
+# Summon markers that will store all set info.
 summon marker -64 191 78 {Tags:["ServerMode","Set1","ServermodeSet1","Set","NormalMode"],CustomName:["",{hover_event:{action:"show_text",value:""},insertion:"",text:"Normal Mode"}]}
 summon marker -64 191 78 {Tags:["ServerMode","Set2","ServermodeSet2","Set","PowerupsMode"],CustomName:["",{hover_event:{action:"show_text",value:""},insertion:"",text:"Powerups Mode"}]}
 summon marker -64 191 78 {Tags:["ServerMode","Set3","ServermodeSet3","Set","SwapMode"],CustomName:["",{hover_event:{action:"show_text",value:""},insertion:"",text:"Swap Mode"}]}
@@ -16,7 +16,7 @@ execute store result score $SCMChance RNGscore run random value 0..999
 execute if score $SMCChance RNGscore matches 69 run summon marker -64 191 78 {Tags:["ServerMode","Set6","ServermodeSet6","Set","ChaseMode"],CustomName:["",{hover_event:{action:"show_text",value:""},insertion:"",text:"Chase Mode"}]}
 execute if score $SMCChance RNGscore matches 69 run summon marker -64 191 78 {Tags:["ServerMode","Maps","ServermodeSet6","RandomMap"],CustomName:["",{hover_event:{action:"show_text",value:""},insertion:"",text:"Randomized map"}]}
 
-# Summon AEC's for base decos, assign 3 of them to the 3 set entities.
+# Summon markers for base decos, assign 3 of them to the 3 set entities.
 summon marker -64 191 78 {Tags:["ServerMode","Maps","DefaultMap"],CustomName:"New Dawn map"}
 summon marker -64 191 78 {Tags:["ServerMode","Maps","SpikesMap"],CustomName:"Spikes map"}
 summon marker -64 191 78 {Tags:["ServerMode","Maps","RandomMap"],CustomName:"Randomized map"}

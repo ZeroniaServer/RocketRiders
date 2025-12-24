@@ -4,7 +4,7 @@
 
 #Detecting Fireball motion
 tag @e[x=0,type=fireball,tag=NormalFireball] remove Still
-tag @e[x=0,type=fireball,tag=NormalFireball,predicate=custom:not_moving] add Still
+tag @e[x=0,type=fireball,tag=NormalFireball,predicate=!custom:is_moving] add Still
 
 #Fireball ambient sounds
 scoreboard players add $fireballsound CmdData 1

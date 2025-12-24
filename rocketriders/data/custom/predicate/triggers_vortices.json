@@ -7,8 +7,6 @@
         "entity": "this",
         "predicate": {
           "type": [
-            "minecraft:arrow",
-            "minecraft:spectral_arrow",
             "minecraft:fireball",
             "minecraft:small_fireball",
             "minecraft:breeze_wind_charge",
@@ -17,10 +15,37 @@
             "minecraft:splash_potion",
             "minecraft:lingering_potion",
             "minecraft:ender_pearl",
-            "minecraft:trident",
             "minecraft:firework_rocket"
           ]
         }
+      },
+      {
+        "condition": "minecraft:all_of",
+        "terms": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": [
+                "minecraft:arrow",
+                "minecraft:spectral_arrow",
+                "minecraft:trident"
+              ]
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "movement": {
+                  "speed": 0
+                }
+              }
+            }
+          }
+        ]
       },
       {
         "condition": "minecraft:entity_properties",

@@ -1,7 +1,6 @@
 {
     "values": [
-        "#minecraft:leaves",
-        "#minecraft:banners",
-        "minecraft:oak_wood"
+        "#custom:canopy_blocks_solid",
+        "#minecraft:banners"
     ]
 }

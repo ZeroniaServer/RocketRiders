@@ -7,10 +7,8 @@
         "entity": "this",
         "predicate": {
           "type": [
-            "minecraft:fireball",
             "minecraft:small_fireball",
             "minecraft:breeze_wind_charge",
-            "minecraft:dragon_fireball",
             "minecraft:snowball",
             "minecraft:splash_potion",
             "minecraft:lingering_potion",
@@ -29,7 +27,9 @@
               "type": [
                 "minecraft:arrow",
                 "minecraft:spectral_arrow",
-                "minecraft:trident"
+                "minecraft:trident",
+                "minecraft:fireball",
+                "minecraft:dragon_fireball"
               ]
             }
           },

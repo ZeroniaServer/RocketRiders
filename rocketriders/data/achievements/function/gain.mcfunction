@@ -18,7 +18,7 @@ execute if predicate game:achievements_can_be_awarded as @a[x=0,predicate=custom
 execute if predicate game:achievements_can_be_awarded as @a[x=0,predicate=custom:team/any_playing_team] run function achievements:lockdown
 execute if predicate game:achievements_can_be_awarded if entity @s[tag=!TimeOut] as @a[x=0,predicate=custom:team/any_playing_team] run function achievements:traveler
 execute if predicate game:achievements_can_be_awarded as @a[x=0,predicate=custom:team/any_playing_team] run function achievements:gravitationalshootout
-execute if predicate game:achievements_can_be_awarded as @a[x=0,predicate=custom:team/any_playing_team] run function achievements:veteran
+execute if predicate game:achievements_can_be_awarded if entity @a[limit=1,x=0,predicate=custom:team/any_playing_team,advancements={achievements:rr_challenges/veteran=false}] run function achievements:veteran
 execute if predicate game:achievements_can_be_awarded as @a[x=0,predicate=custom:team/any_playing_team] at @s run function achievements:useful
 execute if predicate game:achievements_can_be_awarded run tag @a[x=0,predicate=custom:team/any_playing_team,predicate=achievements:fail_moonwalker] add FailedMoon
 execute if predicate game:achievements_can_be_awarded as @a[x=0,predicate=custom:team/any_playing_team] run function achievements:sabotage

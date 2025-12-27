@@ -1,81 +1,36 @@
 ##Veteran achievement
 ##Checks for a player using every missile/utility in the game
 
-#Missiles
-execute if entity @s[tag=!CompletedVeteran,tag=!AuxSpawned] if score @s AuxSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran AuxSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!AuxSpawned] if score @s AuxSpawned matches 1.. run tag @s add AuxSpawned
+# add tag
+tag @a[x=0,advancements={achievements:rr_challenges/veteran=false}] add had_veteran_achievement
 
-execute if entity @s[tag=!CompletedVeteran,tag=!AntsSpawned] if score @s AntsSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran AntsSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!AntsSpawned] if score @s AntsSpawned matches 1.. run tag @s add AntsSpawned
+# Missiles
+advancement grant @a[scores={AuxSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran AuxSpawned
+advancement grant @a[scores={AntsSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran AntsSpawned
+advancement grant @a[scores={BladeSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran BladeSpawned
+advancement grant @a[scores={BroadSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran BroadSpawned
+advancement grant @a[scores={BulletSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran BulletSpawned
+advancement grant @a[scores={DuplexSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran DuplexSpawned
+advancement grant @a[scores={CataSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran CataSpawned
+advancement grant @a[scores={CitaSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran CitaSpawned
+advancement grant @a[scores={GemiSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran GemiSpawned
+advancement grant @a[scores={GuardSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran GuardSpawned
+advancement grant @a[scores={HurSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran HurSpawned
+advancement grant @a[scores={HyperSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran HyperSpawned
+advancement grant @a[scores={JugbSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran JugbSpawned
+advancement grant @a[scores={LifterSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran LifterSpawned
+advancement grant @a[scores={NullSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran NullSpawned
+advancement grant @a[scores={RifterSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran RifterSpawned
+advancement grant @a[scores={SlashSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran SlashSpawned
+advancement grant @a[scores={ThunSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran ThunSpawned
+advancement grant @a[scores={TomaSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran TomaSpawned
+advancement grant @a[scores={WarSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran WarSpawned
 
-execute if entity @s[tag=!CompletedVeteran,tag=!BladeSpawned] if score @s BladeSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran BladeSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!BladeSpawned] if score @s BladeSpawned matches 1.. run tag @s add BladeSpawned
+# Utilities
+advancement grant @a[scores={FireballSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran FireballSpawned
+advancement grant @a[scores={ObshieldSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran ObshieldSpawned
+advancement grant @a[scores={ThrowSplash=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran SplashSpawned
+advancement grant @a[scores={BowShot=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran ArrowSpawned
 
-execute if entity @s[tag=!CompletedVeteran,tag=!BroadSpawned] if score @s BroadSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran BroadSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!BroadSpawned] if score @s BroadSpawned matches 1.. run tag @s add BroadSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!BulletSpawned] if score @s BulletSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran BulletSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!BulletSpawned] if score @s BulletSpawned matches 1.. run tag @s add BulletSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!DuplexSpawned] if score @s DuplexSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran DuplexSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!DuplexSpawned] if score @s DuplexSpawned matches 1.. run tag @s add DuplexSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!CataSpawned] if score @s CataSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran CataSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!CataSpawned] if score @s CataSpawned matches 1.. run tag @s add CataSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!CitaSpawned] if score @s CitaSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran CitaSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!CitaSpawned] if score @s CitaSpawned matches 1.. run tag @s add CitaSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!GemiSpawned] if score @s GemiSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran GemiSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!GemiSpawned] if score @s GemiSpawned matches 1.. run tag @s add GemiSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!GuardSpawned] if score @s GuardSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran GuardSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!GuardSpawned] if score @s GuardSpawned matches 1.. run tag @s add GuardSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!HurSpawned] if score @s HurSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran HurSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!HurSpawned] if score @s HurSpawned matches 1.. run tag @s add HurSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!HyperSpawned] if score @s HyperSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran HyperSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!HyperSpawned] if score @s HyperSpawned matches 1.. run tag @s add HyperSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!JugbSpawned] if score @s JugbSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran JugbSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!JugbSpawned] if score @s JugbSpawned matches 1.. run tag @s add JugbSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!LifterSpawned] if score @s LifterSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran LifterSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!LifterSpawned] if score @s LifterSpawned matches 1.. run tag @s add LifterSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!NullSpawned] if score @s NullSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran NullSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!NullSpawned] if score @s NullSpawned matches 1.. run tag @s add NullSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!RifterSpawned] if score @s RifterSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran RifterSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!RifterSpawned] if score @s RifterSpawned matches 1.. run tag @s add RifterSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!SlashSpawned] if score @s SlashSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran SlashSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!SlashSpawned] if score @s SlashSpawned matches 1.. run tag @s add SlashSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!ThunSpawned] if score @s ThunSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran ThunSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!ThunSpawned] if score @s ThunSpawned matches 1.. run tag @s add ThunSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!TomaSpawned] if score @s TomaSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran TomaSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!TomaSpawned] if score @s TomaSpawned matches 1.. run tag @s add TomaSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!WarSpawned] if score @s WarSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran WarSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!WarSpawned] if score @s WarSpawned matches 1.. run tag @s add WarSpawned
-
-#Utilities
-execute if entity @s[tag=!CompletedVeteran,tag=!FireballSpawned] if score @s FireballSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran FireballSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!FireballSpawned] if score @s FireballSpawned matches 1.. run tag @s add FireballSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!ObshieldSpawned] if score @s ObshieldSpawned matches 1.. run advancement grant @s only achievements:rr_challenges/veteran ObshieldSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!ObshieldSpawned] if score @s ObshieldSpawned matches 1.. run tag @s add ObshieldSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!SplashSpawned] if score @s ThrowSplash matches 1.. run advancement grant @s only achievements:rr_challenges/veteran SplashSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!SplashSpawned] if score @s ThrowSplash matches 1.. run tag @s add SplashSpawned
-
-execute if entity @s[tag=!CompletedVeteran,tag=!ArrowSpawned] if score @s BowShot matches 1.. run advancement grant @s only achievements:rr_challenges/veteran ArrowSpawned
-execute if entity @s[tag=!CompletedVeteran,tag=!ArrowSpawned] if score @s BowShot matches 1.. run tag @s add ArrowSpawned
-
-#Final check
-tag @s[tag=!CompletedVeteran,advancements={achievements:rr_challenges/veteran=true}] add CompletedVeteran
-advancement grant @s[tag=CompletedVeteran] only achievements:rr_challenges/veteran
-execute if entity @s[tag=CompletedVeteran] run function achievements:veteranreset
+# remove tag
+tag @a[x=0] remove had_veteran_achievement

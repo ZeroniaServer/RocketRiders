@@ -3,10 +3,10 @@
 # Do nothing if there is no entry saved
 $execute unless data storage rocketriders.data:playerdata players."$(UUID)" run return fail
 
-# If they have an entry here, that means this is not their first join, so set firstJoined to 1 (meaning not first joined)
-scoreboard players set @s firstJoined 1
-
 # Load data
+$execute store result score @s confirmed_dev run data get storage rocketriders.data:playerdata players."$(UUID)".data.confirmed_dev
+execute unless score @s confirmed_dev matches 1 run scoreboard players reset @s confirmed_dev
+
 $execute store result score @s wins run data get storage rocketriders.data:playerdata players."$(UUID)".data.wins
 $execute store result score @s losses run data get storage rocketriders.data:playerdata players."$(UUID)".data.losses
 $execute store result score @s GamesPlayed run data get storage rocketriders.data:playerdata players."$(UUID)".data.games_played
@@ -36,3 +36,6 @@ $execute store result score @s minedTNT run data get storage rocketriders.data:p
 $execute store result score @s prevMinedTNT run data get storage rocketriders.data:playerdata players."$(UUID)".data.prevMinedTNT
 $execute store result score @s useful run data get storage rocketriders.data:playerdata players."$(UUID)".data.useful
 $execute store result score @s prevUseful run data get storage rocketriders.data:playerdata players."$(UUID)".data.prevUseful
+
+# success
+return 1

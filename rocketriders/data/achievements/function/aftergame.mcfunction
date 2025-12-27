@@ -12,25 +12,32 @@ scoreboard players reset @a[x=0,tag=Loser] WinStreak
 
 #Swiss Cheese (part 2)
 advancement grant @a[x=0,tag=SwissCheese,tag=Winner] only achievements:rr_challenges/swiss_cheese
+tag @a[x=0] remove SwissCheese
 
 #Simple And Clean (part 2)
 advancement grant @a[x=0,tag=SimpleAndClean,tag=Winner] only achievements:rr_challenges/simple_and_clean
+tag @a[x=0] remove SimpleAndClean
 
 #Deus Ex Machina (part 2)
 advancement grant @a[x=0,tag=DeusExMachina,tag=Winner] only achievements:rr_challenges/machina
+tag @a[x=0] remove DeusExMachina
 
 #I Swear I Had It (part 2)
 advancement grant @a[x=0,tag=HadIt,tag=Loser] only achievements:rr_challenges/had_it
 scoreboard players reset @a[x=0] HasMissiles
+tag @a[x=0] remove HadIt
 
 #One is the Loneliest Number (part 2)
 advancement grant @a[x=0,tag=Loneliest,tag=Winner] only achievements:rr_challenges/loneliest
+tag @a[x=0] remove Loneliest
 
 #Forsaken (part 2)
 advancement grant @a[x=0,tag=Forsaken,tag=Winner] only achievements:rr_challenges/forsaken
+tag @a[x=0] remove Forsaken
 
 #Ground Bound (part 2)
 advancement grant @a[x=0,tag=GroundBound,tag=Winner] only achievements:rr_challenges/groundbound
+tag @a[x=0] remove GroundBound
 
 #Immortal (part 2) - applies to both winners/losers but only if win/loss still stands
 execute as @a[x=0,predicate=custom:team/any_playing_team,scores={deaths=..0}] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/immortal

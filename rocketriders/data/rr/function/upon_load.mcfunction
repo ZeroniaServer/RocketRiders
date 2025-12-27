@@ -199,7 +199,6 @@ scoreboard objectives add modifierID dummy
 scoreboard objectives add testplat dummy
 scoreboard objectives add testplat2 dummy
 scoreboard objectives add canopySmoke dummy
-scoreboard objectives add firstJoined dummy
 scoreboard objectives add shieldplacement dummy
 scoreboard objectives add breakobshield dummy
 scoreboard objectives add obmove dummy

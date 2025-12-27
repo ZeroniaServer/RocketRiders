@@ -4,11 +4,12 @@
 $data modify storage rocketriders.data:playerdata players."$(UUID)" set value {data_version:0,data:{}}
 
 # Save data into entry
+$execute if score @s confirmed_dev matches 1.. run data modify storage rocketriders.data:playerdata players."$(UUID)".data.confirmed_dev set value 1b
 $execute if score @s wins matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.wins int 1 run scoreboard players get @s wins
 $execute if score @s losses matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.losses int 1 run scoreboard players get @s losses
 $execute if score @s GamesPlayed matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.games_played int 1 run scoreboard players get @s GamesPlayed
 $execute if score @s XP matches 1..1300 store result storage rocketriders.data:playerdata players."$(UUID)".data.xp short 1 run scoreboard players get @s XP
-$execute if score @s XP matches 1300.. run data modify storage rocketriders.data:playerdata players."$(UUID)".data.xp set value 1300s
+$execute if score @s XP matches 1301.. run data modify storage rocketriders.data:playerdata players."$(UUID)".data.xp set value 1300s
 $execute if entity @s[tag=hideTips] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.hide_tips set value 1b
 $execute if entity @s[tag=hideParkourTips] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.hide_parkour_tips set value 1b
 $execute if entity @s[tag=hideParticles] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.hide_particles set value 1b
@@ -18,3 +19,6 @@ $execute if score @s default_spell matches 1..3 store result storage rocketrider
 $execute if score @s fireballKill matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.fireballKill int 1 run scoreboard players get @s fireballKill
 $execute if score @s minedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.minedTNT int 1 run scoreboard players get @s minedTNT
 $execute if score @s prevMinedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.prevMinedTNT int 1 run scoreboard players get @s prevMinedTNT
+
+# success
+return 1

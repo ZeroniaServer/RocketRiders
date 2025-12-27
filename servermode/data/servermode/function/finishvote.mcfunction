@@ -24,8 +24,8 @@ execute as @e[x=0,limit=1,type=marker,tag=ServerModeVote5,tag=WonVote] run tag @
 execute as @e[x=0,limit=1,type=marker,tag=ServerModeVote6,tag=WonVote] run tag @e[x=0,type=marker,tag=ServerMode,tag=Set6,limit=1] add WonVote
 
 # Announce winner
-execute if entity @e[x=0,limit=1,type=marker,tag=ServerModeVote] run tellraw @a[x=0] ["",{"selector":"@e[x=0,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","color":"gold","bold":true},{"text":" won the vote!","color":"dark_green"}]
-execute unless entity @e[x=0,limit=1,type=marker,tag=ServerModeVote] run tellraw @a[x=0] ["",{"text":"No one voted, so ","color":"dark_green"},{"selector":"@e[x=0,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]","color":"gold","bold":true},{"text":" was randomly selected.","color":"dark_green"}]
+execute if entity @e[x=0,limit=1,type=marker,tag=ServerModeVote] run tellraw @a[x=0] ["",{bold:true,color:"gold",selector:"@e[x=0,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]"},{color:"dark_green",text:" won the vote!"}]
+execute unless entity @e[x=0,limit=1,type=marker,tag=ServerModeVote] run tellraw @a[x=0] [{color:"dark_green",text:"No one voted, so "},{bold:true,color:"gold",selector:"@e[x=0,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]"},{color:"dark_green",text:" was randomly selected."}]
 kill @e[x=0,type=marker,tag=ServerModeVote]
 
 # NORMAL MODE SELECTED
@@ -45,6 +45,9 @@ execute if entity @e[x=0,type=marker,tag=WonVote,tag=CrusadeMode] store result s
 
 # CHASE MODE SELECTED
 execute if entity @e[x=0,type=marker,tag=WonVote,tag=ChaseMode] store result score @e[x=0,type=armor_stand,tag=Selection,limit=1] SetGamemode run scoreboard players get @e[x=0,type=armor_stand,tag=rr_chase,limit=1] gamemodeID
+
+# Reset config
+function game:config/reset
 
 # Select base decorations
 execute if entity @e[x=0,type=marker,tag=WonVote,tag=Set1] as @e[x=0,type=marker,tag=ServermodeSet1] run function servermode:selectmap

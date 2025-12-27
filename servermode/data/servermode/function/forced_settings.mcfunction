@@ -1,5 +1,3 @@
-function game:config/reset
-
 # mode-specific overrides
 execute if entity @s[tag=crusadeEnabled] run return run function servermode:forced_settings/crusade_mode_override
 execute if entity @s[tag=swapEnabled] run return run function servermode:forced_settings/swap_mode_override

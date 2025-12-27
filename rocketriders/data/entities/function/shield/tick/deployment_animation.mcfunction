@@ -1,3 +1,12 @@
+execute if score @s entity.age matches 0 positioned ~-1 ~-1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 0 positioned ~-1 ~0 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 0 positioned ~-1 ~1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 0 positioned ~0 ~-1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 0 positioned ~0 ~0 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 0 positioned ~0 ~1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 0 positioned ~1 ~-1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 0 positioned ~1 ~0 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 0 positioned ~1 ~1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
 execute if score @s entity.age matches 0 if predicate entities:origin_team/yellow run place template game:yellowshield1 ~-1 ~-1 ~
 execute if score @s entity.age matches 0 if predicate entities:origin_team/blue unless predicate game:gamemode_components/red_for_blue run place template game:blueshield1 ~-1 ~-1 ~
 execute if score @s entity.age matches 0 if predicate entities:origin_team/blue if predicate game:gamemode_components/red_for_blue run place template game:redshield1 ~-1 ~-1 ~
@@ -5,6 +14,18 @@ execute if score @s entity.age matches 0 if predicate entities:origin_team/none 
 execute if score @s entity.age matches 0 run playsound block.glass.break master @a[x=0] ~ ~ ~ 2 0.6
 execute if score @s entity.age matches 0 run playsound item.shield.break master @a[x=0] ~ ~ ~ 2 2
 
+execute if score @s entity.age matches 1 positioned ~-1 ~-2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~0 ~-2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~1 ~-2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~-2 ~-1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~2 ~-1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~-2 ~0 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~2 ~0 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~-2 ~1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~2 ~1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~-1 ~2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~0 ~2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 1 positioned ~1 ~2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
 execute if score @s entity.age matches 1 if predicate entities:origin_team/yellow run place template game:yellowshield2 ~-2 ~-2 ~
 execute if score @s entity.age matches 1 if predicate entities:origin_team/blue unless predicate game:gamemode_components/red_for_blue run place template game:blueshield2 ~-2 ~-2 ~
 execute if score @s entity.age matches 1 if predicate entities:origin_team/blue if predicate game:gamemode_components/red_for_blue run place template game:redshield2 ~-2 ~-2 ~
@@ -12,6 +33,30 @@ execute if score @s entity.age matches 1 if predicate entities:origin_team/none 
 execute if score @s entity.age matches 1 run playsound block.glass.break master @a[x=0] ~ ~ ~ 2 0.6
 execute if score @s entity.age matches 1 run playsound item.shield.break master @a[x=0] ~ ~ ~ 2 2
 
+execute if score @s entity.age matches 2 positioned ~-2 ~-3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-1 ~-3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~0 ~-3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~1 ~-3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~2 ~-3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-3 ~-2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-2 ~-2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~2 ~-2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~3 ~-2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-3 ~-1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~3 ~-1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-3 ~0 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~3 ~0 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-3 ~1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~3 ~1 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-3 ~2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-2 ~2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~2 ~2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~3 ~2 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-2 ~3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~-1 ~3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~0 ~3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~1 ~3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
+execute if score @s entity.age matches 2 positioned ~2 ~3 ~ if block ~ ~ ~ minecraft:bee_nest run function custom:destroy_bee_block
 execute if score @s entity.age matches 2 if predicate entities:origin_team/yellow run place template game:yellowshield3 ~-3 ~-3 ~
 execute if score @s entity.age matches 2 if predicate entities:origin_team/blue unless predicate game:gamemode_components/red_for_blue run place template game:blueshield3 ~-3 ~-3 ~
 execute if score @s entity.age matches 2 if predicate entities:origin_team/blue if predicate game:gamemode_components/red_for_blue run place template game:redshield3 ~-3 ~-3 ~

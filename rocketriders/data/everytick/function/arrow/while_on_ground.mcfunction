@@ -12,10 +12,12 @@ execute if predicate custom:intangible_arrow run return run execute if score @s 
 
 # Item Pickup
 scoreboard players set $give_item var 0
-execute unless entity @s[tag=arrow_pickup.done] if score @s entity.age matches 6.. unless predicate custom:intangible_arrow as @a[limit=1,distance=..2,gamemode=!spectator,predicate=custom:can_pick_up_arrows] store success score $give_item var run tag @s add arrow_pickup.target
-execute unless entity @s[tag=arrow_pickup.done] if score @s entity.age matches 6.. if predicate custom:intangible_arrow as @a[limit=1,distance=..2,gamemode=creative] store success score $give_item var run tag @s add arrow_pickup.target
+execute if score @s entity.age matches 6.. unless predicate custom:intangible_arrow positioned ~-1.25 ~-1.25 ~-1.25 as @e[type=player,dx=1.5,dy=1.25,dz=1.5,predicate=custom:can_pick_up_arrows] store success score $give_item var run tag @s add arrow_pickup.target_candidate
+execute if score @s entity.age matches 6.. if predicate custom:intangible_arrow as @e[type=player,dx=1.5,dy=1.25,dz=1.5,predicate=custom:can_pick_up_arrows,gamemode=creative] store success score $give_item var run tag @s add arrow_pickup.target_candidate
 execute if score $give_item var matches 0 run return fail
-execute unless data entity @s {inGround:true} run return run tag @a[x=0,tag=arrow_pickup.target] remove arrow_pickup.target
+execute unless data entity @s {inGround:true} run return run tag @a[x=0,tag=arrow_pickup.target_candidate] remove arrow_pickup.target_candidate
+tag @p[distance=0..,tag=arrow_pickup.target_candidate] add arrow_pickup.target
+tag @a[x=0] remove arrow_pickup.target_candidate
 
 tag @s add arrow_pickup.done
 execute unless predicate custom:intangible_arrow if items entity @s contents *[custom_data~{id:"arrow"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/arrow {count:1}

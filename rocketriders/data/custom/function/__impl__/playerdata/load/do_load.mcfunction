@@ -30,7 +30,7 @@ execute unless score @s crusadekit matches 1..3 run scoreboard players reset @s 
 $execute store result score @s default_spell run data get storage rocketriders.data:playerdata players."$(UUID)".data.default_spell
 execute unless score @s default_spell matches 1..3 run scoreboard players reset @s default_spell
 
-# For all-time achievement tracking
+#for all-time achievement tracking
 $execute store result score @s fireballKill run data get storage rocketriders.data:playerdata players."$(UUID)".data.fireballKill
 $execute store result score @s minedTNT run data get storage rocketriders.data:playerdata players."$(UUID)".data.minedTNT
 $execute store result score @s prevMinedTNT run data get storage rocketriders.data:playerdata players."$(UUID)".data.prevMinedTNT

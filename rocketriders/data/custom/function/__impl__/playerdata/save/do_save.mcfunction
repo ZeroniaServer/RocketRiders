@@ -19,6 +19,8 @@ $execute if score @s default_spell matches 1..3 store result storage rocketrider
 $execute if score @s fireballKill matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.fireballKill int 1 run scoreboard players get @s fireballKill
 $execute if score @s minedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.minedTNT int 1 run scoreboard players get @s minedTNT
 $execute if score @s prevMinedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.prevMinedTNT int 1 run scoreboard players get @s prevMinedTNT
+$execute if score @s useful matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.useful int 1 run scoreboard players get @s useful
+$execute if score @s prevUseful matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.prevUseful int 1 run scoreboard players get @s prevUseful
 
 # success
 return 1

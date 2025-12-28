@@ -16,11 +16,9 @@ $execute if entity @s[tag=hideParticles] run data modify storage rocketriders.da
 $execute if entity @s[tag=do_hotbar_auto_fill] run data modify storage rocketriders.data:playerdata players."$(UUID)".data.auto_fill_hotbar set value 1b
 $execute if score @s crusadekit matches 2..3 store result storage rocketriders.data:playerdata players."$(UUID)".data.crusade_kit byte 1 run scoreboard players get @s crusadekit
 $execute if score @s default_spell matches 1..3 store result storage rocketriders.data:playerdata players."$(UUID)".data.default_spell byte 1 run scoreboard players get @s default_spell
-$execute if score @s fireballKill matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.fireballKill int 1 run scoreboard players get @s fireballKill
-$execute if score @s minedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.minedTNT int 1 run scoreboard players get @s minedTNT
-$execute if score @s prevMinedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.prevMinedTNT int 1 run scoreboard players get @s prevMinedTNT
-$execute if score @s useful matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.useful int 1 run scoreboard players get @s useful
-$execute if score @s prevUseful matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.prevUseful int 1 run scoreboard players get @s prevUseful
+$execute if score @s fireballKill matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.total_fireball_kills int 1 run scoreboard players get @s fireballKill
+$execute if score @s minedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.total_tnt_mined int 1 run scoreboard players get @s minedTNT
+$execute if score @s useful matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.total_primed_tnt_splashed int 1 run scoreboard players get @s useful
 
 # success
 return 1

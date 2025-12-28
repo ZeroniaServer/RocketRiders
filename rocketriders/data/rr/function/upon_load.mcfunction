@@ -157,7 +157,6 @@ scoreboard objectives add parkourTimer dummy
 scoreboard objectives add chkpntCooldown dummy
 scoreboard objectives add regifts dummy
 scoreboard objectives add gravShot dummy
-scoreboard objectives add useful dummy
 scoreboard objectives add MaxItemTime dummy
 scoreboard objectives add set_item_delay trigger
 scoreboard objectives add RandomItem dummy
@@ -276,10 +275,11 @@ scoreboard objectives add impulse_cooldown dummy
 scoreboard objectives add leavecheck dummy
 scoreboard objectives add wins dummy
 scoreboard objectives add losses dummy
+scoreboard objectives add minedTNT dummy
 scoreboard objectives add prevMinedTNT dummy
+scoreboard objectives add useful dummy
 scoreboard objectives add prevUseful dummy
 scoreboard objectives add fireballkill dummy
-scoreboard objectives remove prevfireballkill
 scoreboard objectives add prevFellVoid dummy
 scoreboard objectives add prevKills dummy
 scoreboard objectives remove cancelMatch

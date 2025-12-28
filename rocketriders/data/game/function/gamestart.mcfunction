@@ -3,6 +3,9 @@
 ## and make the Lobby Join/Leave Pads functional ##
 ###################################################
 
+execute if entity @s[tag=EditedSettings] unless predicate game:game_running if predicate rr:has_voting if score $players_online global matches ..1 run tag @a[predicate=custom:team/any_arena_team] add LeaveTeams
+execute if entity @s[tag=EditedSettings] unless predicate game:game_running if predicate rr:has_voting if score $players_online global matches ..1 run return run function game:forcestop
+
 ##Game Bossbar
 execute if predicate game:match_in_play run bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]

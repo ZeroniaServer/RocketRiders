@@ -2,7 +2,7 @@
 ##Checks for a player using every missile/utility in the game
 
 # add tag
-tag @a[x=0,advancements={achievements:rr_challenges/veteran=false}] add had_veteran_achievement
+tag @a[x=0,advancements={achievements:rr_challenges/veteran=true}] add had_veteran_achievement
 
 # Missiles
 advancement grant @a[scores={AuxSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran AuxSpawned

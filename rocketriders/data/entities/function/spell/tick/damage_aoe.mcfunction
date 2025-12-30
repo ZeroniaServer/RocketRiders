@@ -1,10 +1,11 @@
 execute on origin run tag @s add spell.origin
 
 # Search for player
-execute if predicate entities:origin_team/blue run tag @p[distance=..2,predicate=custom:team/yellow,tag=!spell.origin,predicate=!custom:has_wither_effect] add spell.target
-execute if predicate entities:origin_team/yellow run tag @p[distance=..2,predicate=custom:team/blue,tag=!spell.origin,predicate=!custom:has_wither_effect] add spell.target
-execute if predicate entities:origin_team/none run tag @p[distance=..2,tag=!spell.origin,predicate=!custom:has_wither_effect] add spell.target
-execute unless entity @a[limit=1,x=0,tag=spell.target] run return run execute on origin run tag @s remove spell.origin
+execute if predicate entities:origin_team/blue positioned ~-1.5 ~-1.5 ~-1.5 run tag @a[dx=3,dy=3,dz=3,predicate=custom:team/yellow,tag=!spell.origin,predicate=!custom:has_wither_effect] add spell.target_candidate
+execute if predicate entities:origin_team/yellow positioned ~-1.5 ~-1.5 ~-1.5 run tag @a[dx=3,dy=3,dz=3,predicate=custom:team/blue,tag=!spell.origin,predicate=!custom:has_wither_effect] add spell.target_candidate
+execute if predicate entities:origin_team/none positioned ~-1.5 ~-1.5 ~-1.5 run tag @a[dx=3,dy=3,dz=3,tag=!spell.origin,predicate=!custom:has_wither_effect] add spell.target_candidate
+execute unless entity @a[limit=1,x=0,tag=spell.target_candidate] run return run execute on origin run tag @s remove spell.origin
+tag @p[distance=0..,tag=spell.target_candidate] add spell.target
 
 # If player is targetted, give them regeneration and face a new player
 execute on origin run damage @a[limit=1,x=0,tag=spell.target] 1 minecraft:wither by @s

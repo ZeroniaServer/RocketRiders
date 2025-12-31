@@ -8,6 +8,7 @@
         "predicate": {
           "type": [
             "minecraft:small_fireball",
+            "minecraft:wind_charge",
             "minecraft:breeze_wind_charge",
             "minecraft:snowball",
             "minecraft:splash_potion",

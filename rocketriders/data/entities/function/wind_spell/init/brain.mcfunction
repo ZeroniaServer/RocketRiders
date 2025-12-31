@@ -1,5 +1,5 @@
 ## Mount body
-ride @s mount @e[distance=..0.01,limit=1,type=breeze_wind_charge,tag=wind_spell.this]
+ride @s mount @e[distance=..0.01,limit=1,type=#custom:wind_charge,tag=wind_spell.this]
 
 ## Set up data
 data modify entity @s data.wind_spell set value {brain:{}}

@@ -143,8 +143,8 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick
 
 #Arrow pickup
 execute as @e[x=0,type=#arrows,tag=!arrow.processed] at @s run function everytick:arrow/init
-execute unless predicate game:match_over run scoreboard players set @e[x=0,type=#arrows,predicate=!custom:not_moving] entity.age -1
-execute unless predicate game:match_over as @e[x=0,type=#arrows,predicate=custom:not_moving] at @s run function everytick:arrow/while_on_ground
+execute unless predicate game:match_over run scoreboard players set @e[x=0,type=#arrows,predicate=custom:is_moving] entity.age -1
+execute unless predicate game:match_over as @e[x=0,type=#arrows,predicate=!custom:is_moving] at @s run function everytick:arrow/while_on_ground
 
 #Game ending and arena clearing
 execute if predicate game:match_over as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:match_over

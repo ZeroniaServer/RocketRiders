@@ -3,10 +3,10 @@
 # Do nothing if there is no entry saved
 $execute unless data storage rocketriders.data:playerdata players."$(UUID)" run return fail
 
-# If they have an entry here, that means this is not their first join, so set firstJoined to 1 (meaning not first joined)
-scoreboard players set @s firstJoined 1
-
 # Load data
+$execute store result score @s confirmed_dev run data get storage rocketriders.data:playerdata players."$(UUID)".data.confirmed_dev
+execute unless score @s confirmed_dev matches 1 run scoreboard players reset @s confirmed_dev
+
 $execute store result score @s wins run data get storage rocketriders.data:playerdata players."$(UUID)".data.wins
 $execute store result score @s losses run data get storage rocketriders.data:playerdata players."$(UUID)".data.losses
 $execute store result score @s GamesPlayed run data get storage rocketriders.data:playerdata players."$(UUID)".data.games_played
@@ -29,3 +29,11 @@ execute unless score @s crusadekit matches 1..3 run scoreboard players reset @s 
 
 $execute store result score @s default_spell run data get storage rocketriders.data:playerdata players."$(UUID)".data.default_spell
 execute unless score @s default_spell matches 1..3 run scoreboard players reset @s default_spell
+
+#for all-time achievement tracking
+$execute store result score @s fireballKill run data get storage rocketriders.data:playerdata players."$(UUID)".data.total_fireball_kills
+$execute store result score @s minedTNT store result score @s prevMinedTNT run data get storage rocketriders.data:playerdata players."$(UUID)".data.total_tnt_mined
+$execute store result score @s useful store result score @s prevUseful run data get storage rocketriders.data:playerdata players."$(UUID)".data.total_primed_tnt_splashed
+
+# success
+return 1

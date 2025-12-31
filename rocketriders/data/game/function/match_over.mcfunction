@@ -33,8 +33,8 @@ execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
 execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove elytra.unbreakable
 
 #Fireballs can't be punched (credit: Miolith)
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,predicate=custom:not_moving] at @s run function game:endfireball
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=dragon_fireball,predicate=custom:not_moving] at @s run function game:endfireball
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,predicate=!custom:is_moving] at @s run function game:endfireball
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=dragon_fireball,predicate=!custom:is_moving] at @s run function game:endfireball
 
 ##Tie actionbar notifications
 execute unless predicate game:game_rules/disable_tying/on if predicate game:portal_type/default if entity @s[tag=!BothWon,scores={endtimer=1..20}] run title @a[x=0,predicate=!custom:team/lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"5","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]

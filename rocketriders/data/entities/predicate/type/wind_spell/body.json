@@ -2,7 +2,7 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "type": "minecraft:breeze_wind_charge",
+    "type": "#custom:wind_charge",
     "predicates": {
       "minecraft:custom_data": {
         "wind_spell": {

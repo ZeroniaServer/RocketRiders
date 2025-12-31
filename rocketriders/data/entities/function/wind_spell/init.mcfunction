@@ -1,5 +1,5 @@
 # Do nothing if already processed
-execute unless entity @s[type=breeze_wind_charge] run return fail
+execute unless entity @s[type=#custom:wind_charge] run return fail
 execute if entity @s[predicate=entities:type/wind_spell] run return fail
 
 ## Set up data

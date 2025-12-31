@@ -1,1 +1,45 @@
-{"display":{"title":{"text":"They're Useful!","color":"#fe6309"},"description":{"text":"Prevent 20 TNT explosions (all-time) using the Splash.","color":"gold"},"icon":{"id":"minecraft:lingering_potion","components":{"minecraft:potion_contents":{"custom_effects":[],"potion":"minecraft:water"}}},"frame":"challenge","show_toast":true,"announce_to_chat":true,"hidden":false},"criteria":{"1":{"trigger":"minecraft:impossible"},"2":{"trigger":"minecraft:impossible"},"3":{"trigger":"minecraft:impossible"},"4":{"trigger":"minecraft:impossible"},"5":{"trigger":"minecraft:impossible"},"6":{"trigger":"minecraft:impossible"},"7":{"trigger":"minecraft:impossible"},"8":{"trigger":"minecraft:impossible"},"9":{"trigger":"minecraft:impossible"},"10":{"trigger":"minecraft:impossible"},"11":{"trigger":"minecraft:impossible"},"12":{"trigger":"minecraft:impossible"},"13":{"trigger":"minecraft:impossible"},"14":{"trigger":"minecraft:impossible"},"15":{"trigger":"minecraft:impossible"},"16":{"trigger":"minecraft:impossible"},"17":{"trigger":"minecraft:impossible"},"18":{"trigger":"minecraft:impossible"},"19":{"trigger":"minecraft:impossible"},"20":{"trigger":"minecraft:impossible"}},"requirements":[ ["1"], ["2"], ["3"], ["4"], ["5"], ["6"], ["7"], ["8"], ["9"], ["10"], ["11"], ["12"], ["13"], ["14"], ["15"], ["16"], ["17"], ["18"], ["19"], ["20"]],"parent":"achievements:rr_fffmedium/root"}
+{
+  "parent": "achievements:rr_fffmedium/root",
+  "display": {
+    "title": {
+      "color": "#fe6309",
+      "text": "They're Useful!"
+    },
+    "description": {
+      "color": "gold",
+      "text": "Prevent 20 TNT explosions (all-time) using the Splash."
+    },
+    "icon": {
+      "id": "minecraft:lingering_potion",
+      "components": {
+        "minecraft:potion_contents": "minecraft:water"
+      }
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "1": {"trigger":"minecraft:impossible"},
+    "2": {"trigger":"minecraft:impossible"},
+    "3": {"trigger":"minecraft:impossible"},
+    "4": {"trigger":"minecraft:impossible"},
+    "5": {"trigger":"minecraft:impossible"},
+    "6": {"trigger":"minecraft:impossible"},
+    "7": {"trigger":"minecraft:impossible"},
+    "8": {"trigger":"minecraft:impossible"},
+    "9": {"trigger":"minecraft:impossible"},
+    "10": {"trigger":"minecraft:impossible"},
+    "11": {"trigger":"minecraft:impossible"},
+    "12": {"trigger":"minecraft:impossible"},
+    "13": {"trigger":"minecraft:impossible"},
+    "14": {"trigger":"minecraft:impossible"},
+    "15": {"trigger":"minecraft:impossible"},
+    "16": {"trigger":"minecraft:impossible"},
+    "17": {"trigger":"minecraft:impossible"},
+    "18": {"trigger":"minecraft:impossible"},
+    "19": {"trigger":"minecraft:impossible"},
+    "20": {"trigger":"minecraft:impossible"}
+  }
+}

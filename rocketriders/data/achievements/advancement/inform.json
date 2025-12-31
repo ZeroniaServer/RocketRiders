@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "inform_about_achievements": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "achievements:inform"
+  }
+}

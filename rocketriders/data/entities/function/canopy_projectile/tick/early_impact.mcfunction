@@ -16,8 +16,6 @@ execute at @s unless block ~ ~3 ~ #custom:air run tp @s ~ ~-1 ~
 execute at @s unless block ~ ~ ~ #custom:air run return run function entities:canopy_projectile/tick/early_impact_no_deploy
 execute at @s unless block ~ ~1 ~ #custom:air run return run function entities:canopy_projectile/tick/early_impact_no_deploy
 
-execute at @s run fill ~ ~1 ~ ~ ~1 ~ jungle_leaves[persistent=false] replace #custom:air
-
 execute at @s unless predicate entities:canopy_can_be_deployed run return run function entities:canopy_projectile/tick/early_impact_no_deploy
 
 # Re-initialise as a "canopy" entity

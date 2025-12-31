@@ -3,6 +3,9 @@
 ## and make the Lobby Join/Leave Pads functional ##
 ###################################################
 
+execute if entity @s[tag=EditedSettings] unless predicate game:game_running if predicate rr:has_voting if score $players_online global matches ..1 run tag @a[predicate=custom:team/any_arena_team] add LeaveTeams
+execute if entity @s[tag=EditedSettings] unless predicate game:game_running if predicate rr:has_voting if score $players_online global matches ..1 run return run function game:forcestop
+
 ##Game Bossbar
 execute if predicate game:match_in_play run bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
 execute if entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
@@ -74,9 +77,7 @@ effect clear @a[x=0,tag=JoinBlue] invisibility
 execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinBlue] run title @s actionbar ""
 #Achievement keybind tutorial
-execute if predicate game:achievements_can_be_awarded if entity @s[tag=!chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"blue"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"blue"}]
-execute if predicate game:achievements_can_be_awarded if entity @s[tag=chaseEnabled] as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"red"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"red"}]
-execute if predicate game:achievements_can_be_awarded as @a[x=0,tag=JoinBlue,tag=!achievementInformed] run tag @s add achievementInformed
+execute if predicate rr:has_achievements as @a[x=0,tag=JoinBlue] run advancement grant @s only achievements:inform
 execute if entity @a[x=0,tag=JoinBlue] run function lobby:cancelsettings/reset
 
 ##Yellow Join Pad
@@ -114,8 +115,7 @@ effect clear @a[x=0,tag=JoinYellow] invisibility
 execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinYellow] run title @s actionbar ""
 #Achievement keybind tutorial
-execute if predicate game:achievements_can_be_awarded as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tellraw @s ["",{"text":"Press ","italic":true,"color":"gold"},{"keybind":"key.advancements","italic":true,"color":"light_purple"},{"text":" to open the advancements menu and check out fun challenges!","italic":true,"color":"gold"}]
-execute if predicate game:achievements_can_be_awarded as @a[x=0,tag=JoinYellow,tag=!achievementInformed] run tag @s add achievementInformed
+execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow] run advancement grant @s only achievements:inform
 execute if entity @a[x=0,tag=JoinYellow] run function lobby:cancelsettings/reset
 
 ##Join pad + Leave pad Spectator

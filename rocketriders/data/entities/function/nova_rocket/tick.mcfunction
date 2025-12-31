@@ -10,8 +10,7 @@ execute if predicate custom:in_void run return run function entities:nova_rocket
 execute unless predicate custom:insideborder run return run function entities:nova_rocket/actions/break
 
 # Early impact
-#execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:nova_rocket/actions/explode
-execute unless predicate custom:has_vehicle positioned as @s run return run function entities:nova_rocket/actions/explode
+execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:nova_rocket/actions/explode
 
 # Collision impact
 scoreboard players set $collision var 0

@@ -1,15 +1,17 @@
 ##They're Useful achievement
-##Detects if a player successfully uses a Splash to prevent a TNT explosion
-execute if score @s useful matches 20.. run return fail
+execute if entity @s[advancements={achievements:rr_challenges/useful=true}] run return 1
+execute if score @s useful matches 20.. run return run advancement grant @s only achievements:rr_challenges/useful
+execute if score @s prevUseful = @s useful run return fail
+execute unless score @s useful matches 1.. run return fail
 
+# update count
 tag @s add matchOrigin
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone] if function custom:match_origin at @s run tag @e[type=tnt,distance=..7,tag=!useful,predicate=custom:is_underwater,nbt={fuse:1s}] add useful
 tag @s remove matchOrigin
-execute at @e[type=tnt,tag=useful] run scoreboard players add @s useful 1
+execute at @e[x=0,type=tnt,tag=useful] run scoreboard players add @s useful 1
 tag @e[x=0,type=tnt,tag=useful] remove useful
 
-execute if score @s prevUseful = @s useful run return fail
-
+# update advancement progress
 execute if score @s useful matches 1.. run advancement grant @s only achievements:rr_challenges/useful 1
 execute if score @s useful matches 2.. run advancement grant @s only achievements:rr_challenges/useful 2
 execute if score @s useful matches 3.. run advancement grant @s only achievements:rr_challenges/useful 3
@@ -31,4 +33,6 @@ execute if score @s useful matches 18.. run advancement grant @s only achievemen
 execute if score @s useful matches 19.. run advancement grant @s only achievements:rr_challenges/useful 19
 execute if score @s useful matches 20.. run advancement grant @s only achievements:rr_challenges/useful 20
 
+# save progress
+function custom:player_action/playerdata/save
 scoreboard players operation @s prevUseful = @s useful

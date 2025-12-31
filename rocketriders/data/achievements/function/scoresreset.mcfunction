@@ -19,6 +19,7 @@ tag @a[x=0] remove firstMoved
 scoreboard players set $initial_blue_team_count global 0
 scoreboard players set $initial_yellow_team_count global 0
 tag @a[x=0] remove SwissCheese
+tag @a[x=0] remove SimpleAndClean
 tag @a[x=0] remove DeusExMachina
 tag @a[x=0] remove HadIt
 tag @a[x=0] remove Loneliest

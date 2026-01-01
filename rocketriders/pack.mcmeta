@@ -1,8 +1,17 @@
 {
   "pack": {
-    "min_format": 88,
-    "max_format": 88,
+    "min_format": [94,0],
+    "max_format": [94,0],
     "description": "Rocket Riders Core Datapack."
+  },
+  "overlays": {
+    "entries": [
+      {
+        "directory": "1_21_10",
+        "min_format": [88,0],
+        "max_format": [88,0]
+      }
+    ]
   },
   "filter": {
     "block": [

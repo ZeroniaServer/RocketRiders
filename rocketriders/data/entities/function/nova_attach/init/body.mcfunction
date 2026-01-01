@@ -4,7 +4,7 @@ data modify entity @s data.nova_attach set value {body:{}}
 data modify entity @s Owner set from storage rocketriders:main nova_attach.target
 
 data modify storage rocketriders:main nova_attach.name set value "Nova Rocket"
-execute on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s Nova Rocket"], write_to:"storage rocketriders:main nova_attach.name"}
+execute as @a[limit=1,x=0,tag=nova_attach.origin] run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s Nova Rocket"], write_to:"storage rocketriders:main nova_attach.name"}
 data modify entity @s CustomName set from storage rocketriders:main nova_attach.name
 
 ## Summon body

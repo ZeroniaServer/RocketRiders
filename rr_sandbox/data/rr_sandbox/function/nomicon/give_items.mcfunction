@@ -88,4 +88,4 @@ execute if score @s nomicon matches 35 if items entity @s[tag=elytra.unbreakable
 execute if score @s nomicon matches 60 run tag @s add elytra.unbreakable
 execute if score @s nomicon matches 60 run return run function rr_powerups:items/powerup/giveelytra
 
-execute if score @s nomicon matches 61 run return run function items:give/lunging_spear with storage rocketriders:main nomicon
+execute if score @s nomicon matches 61 unless score $no_lunging_spear global matches 1 run return run function items:give/lunging_spear with storage rocketriders:main nomicon

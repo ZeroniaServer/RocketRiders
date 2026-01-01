@@ -7,7 +7,7 @@
   "overlays": {
     "entries": [
       {
-        "directory": "1_21_10",
+        "directory": "overlay-1_21_10",
         "min_format": [88,0],
         "max_format": [88,0]
       }

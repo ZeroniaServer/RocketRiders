@@ -1,0 +1,9 @@
+gamerule minecraft:allow_entering_nether_using_portals false
+gamerule minecraft:max_block_modifications 1000000
+gamerule minecraft:log_admin_commands false
+gamerule minecraft:players_nether_portal_creative_delay 2147483647
+gamerule minecraft:players_nether_portal_default_delay 2147483647
+gamerule minecraft:locator_bar false
+gamerule minecraft:water_source_conversion false
+#use freeze_damage to control ender pearl damage
+gamerule minecraft:freeze_damage false

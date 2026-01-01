@@ -1,0 +1,1 @@
+gamerule minecraft:send_command_feedback false

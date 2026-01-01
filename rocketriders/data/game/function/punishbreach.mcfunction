@@ -1,7 +1,7 @@
 ##Commands run for players who try to breach through to the lobby
 
-execute unless score $nodeathmessages CmdData matches 1 run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to breach the lobby"}]
+execute unless score $nodeathmessages CmdData matches 1 run tellraw @a[x=0] ["",{selector:"@s"}," tried to breach the lobby"]
 
-gamerule minecraft:show_death_messages false
+function custom:game_rules/show_death_messages/off
 kill @s
-execute unless score $nodeathmessages CmdData matches 1 run gamerule minecraft:show_death_messages true
+execute unless score $nodeathmessages CmdData matches 1 run function custom:game_rules/show_death_messages/on

@@ -118,7 +118,7 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,t
 execute if predicate game:game_running as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:game_running
 execute if predicate game:match_in_play as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:match_in_play
 execute if predicate rr:do_custom_regen_system as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:regen_system
-execute unless predicate rr:do_custom_regen_system run gamerule minecraft:natural_health_regeneration true
+execute unless predicate rr:do_custom_regen_system run function custom:game_rules/natural_health_regeneration/on
 
 #Night vision/saturation and more lobby functionality
 effect give @a[x=0,predicate=custom:team/lobby,predicate=custom:apply_lobby_night_vision] night_vision infinite 100 true

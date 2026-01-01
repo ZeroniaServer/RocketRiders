@@ -1,0 +1,1 @@
+gamerule minecraft:max_block_modifications 1000000

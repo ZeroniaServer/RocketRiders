@@ -1,5 +1,5 @@
 kill @s
 
-gamerule minecraft:freeze_damage true
+function custom:game_rules/freeze_damage/on
 execute unless predicate game:modifiers/no_fall_damage/on on origin run damage @s 5 minecraft:ender_pearl
-gamerule minecraft:freeze_damage false
+function custom:game_rules/freeze_damage/off

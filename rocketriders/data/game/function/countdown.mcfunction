@@ -72,12 +72,12 @@ execute if predicate game:match_in_play unless predicate game:match_over run tag
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
 execute if predicate game:match_in_play run scoreboard players set @a[x=0,predicate=custom:team/any_playing_team] jumps 0
 #Enabling damage gamerules
-execute if predicate game:match_in_play run gamerule minecraft:drowning_damage true
-execute if predicate game:match_in_play run gamerule minecraft:fire_damage true
+execute if predicate game:match_in_play run function custom:game_rules/drowning_damage/on
+execute if predicate game:match_in_play run function custom:game_rules/fire_damage/on
 execute if predicate game:match_in_play run scoreboard players operation $initial_blue_team_count global = $blue_team_count global
 execute if predicate game:match_in_play run scoreboard players operation $initial_yellow_team_count global = $yellow_team_count global
 execute if predicate game:match_in_play run function lobby:credits/restart
-execute if predicate game:match_in_play run gamerule minecraft:mob_griefing true
+execute if predicate game:match_in_play run function custom:game_rules/mob_griefing/on
 execute if predicate game:match_in_play run kill @e[x=0,type=#arrows]
 execute if predicate game:match_in_play run scoreboard players set @s count 0
 execute if predicate game:match_in_play run tag @s remove bossbarOverride

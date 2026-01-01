@@ -1,3 +1,3 @@
 scoreboard players set $nodeathmessages CmdData 1
-gamerule minecraft:show_death_messages false
-tellraw @a[x=0] [{"text":"Death messages disabled.","color":"red"}]
+function custom:game_rules/show_death_messages/off
+tellraw @a[x=0] {color:"red",text:"Death messages disabled."}

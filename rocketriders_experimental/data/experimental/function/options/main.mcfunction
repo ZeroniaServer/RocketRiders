@@ -5,7 +5,7 @@ execute if score @s options matches 101 run return run function experimental:opt
 execute unless score @s options matches 1000000000.. run return run function experimental:options/show_dialog
 
 # Set Options
-execute store result score $parkour_tips var run scoreboard players operation $tips var = @s options
+execute store result score $parkour_instructions var run scoreboard players operation $tips var = @s options
 scoreboard players operation $tips var %= $10 constant
 execute if score $tips var matches 0 run tag @s add hideTips
 execute if score $tips var matches 1 run tag @s remove hideTips

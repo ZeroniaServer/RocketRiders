@@ -25,6 +25,7 @@ execute store result score $players_online global if entity @a[x=0,predicate=!cu
 execute store success score $players_have_left var if score $players_online global < $previous_players_online var
 execute store result score $players_online global if entity @a[x=0]
 execute if score $players_have_left var matches 1 in minecraft:overworld positioned 0.0 0.0 0.0 as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function custom:event/number_of_players_decreases/main
+execute as @e[x=25,y=184,z=-6,dx=0,dy=0,dz=0,type=area_effect_cloud,tag=player_monitoring] run function everytick:player_monitoring/check
 execute as @a[x=0,predicate=custom:just_joined_world] at @s run function custom:event/player_joins_overworld/main
 
 execute as @a[x=0,scores={time_since_joined_overworld=1}] at @s run function everytick:welcome_titles

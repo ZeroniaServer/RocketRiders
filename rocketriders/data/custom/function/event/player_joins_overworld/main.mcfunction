@@ -40,3 +40,12 @@ execute if predicate rr:server_mode/realms run advancement grant @s only 2811iaj
 
 # Load data (and initialise if new player)
 execute unless function custom:player_action/playerdata/load run function custom:event/player_joins_overworld/new_player
+
+# Summon player monitor
+data modify storage rocketriders:main player_monitoring set value {entity_data:{CustomName:[{color:"gray",italic:true,text:"Player Monitor ("},"Unknown Player",")"],data:{player_monitoring:{}}}}
+function custom:resolve_text_component {text_component:{selector:"@s"},write_to:"storage rocketriders:main player_monitoring.text_component"}
+data modify storage rocketriders:main player_monitoring.entity_data.Owner set from storage rocketriders:main player_monitoring.text_component.hover_event.uuid
+data modify storage rocketriders:main player_monitoring.entity_data.data.player_monitoring.uuid set from storage rocketriders:main player_monitoring.text_component.hover_event.uuid
+data modify storage rocketriders:main player_monitoring.entity_data.data.player_monitoring.name set from storage rocketriders:main player_monitoring.text_component.hover_event.name
+data modify storage rocketriders:main player_monitoring.entity_data.CustomName[1] set from storage rocketriders:main player_monitoring.text_component.hover_event.name
+execute positioned 25.5 184.5 -5.5 run function custom:summon_persistent_marker_aec {modifiers:{nbt:{Tags:["player_monitoring"]},run:"data modify entity @s {} merge from storage rocketriders:main player_monitoring.entity_data"}}

@@ -1,8 +1,8 @@
 execute on origin run tag @s add spell.origin
 
 # Search for player
-execute if predicate entities:origin_team/blue positioned ~-2.5 ~-2.5 ~-2.5 run tag @p[dx=4,dy=4,dz=4,predicate=custom:team/blue,tag=!spell.origin,predicate=!custom:has_regeneration_effect] add spell.target_candidate
-execute if predicate entities:origin_team/yellow positioned ~-2.5 ~-2.5 ~-2.5 run tag @p[dx=4,dy=4,dz=4,predicate=custom:team/yellow,tag=!spell.origin,predicate=!custom:has_regeneration_effect] add spell.target_candidate
+execute if predicate entities:origin_team/blue positioned ~-2.5 ~-2.5 ~-2.5 run tag @a[dx=4,dy=4,dz=4,predicate=custom:team/blue,tag=!spell.origin,predicate=!custom:has_regeneration_effect] add spell.target_candidate
+execute if predicate entities:origin_team/yellow positioned ~-2.5 ~-2.5 ~-2.5 run tag @a[dx=4,dy=4,dz=4,predicate=custom:team/yellow,tag=!spell.origin,predicate=!custom:has_regeneration_effect] add spell.target_candidate
 execute unless entity @a[limit=1,x=0,tag=spell.target_candidate] run return run execute on origin run tag @s remove spell.origin
 tag @p[distance=0..,tag=spell.target_candidate] add spell.target
 tag @a[x=0] remove spell.target_candidate

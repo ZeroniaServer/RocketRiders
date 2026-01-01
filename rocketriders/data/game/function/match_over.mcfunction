@@ -67,7 +67,7 @@ execute if entity @s[scores={endtimer=570}] run tp @a[x=0,predicate=custom:team/
 execute if entity @s[scores={endtimer=570}] run tp @a[x=0,predicate=custom:team/spectator] -43 211 78 90 0
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] kills 0
 execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] deaths 0
-execute if entity @s[scores={endtimer=570}] run gamerule mobGriefing false
+execute if entity @s[scores={endtimer=570}] run gamerule minecraft:mob_griefing false
 execute if entity @s[scores={endtimer=570}] run scoreboard players reset $swap_side global
 execute if entity @s[scores={endtimer=570}] run setblock -57 203 78 air
 

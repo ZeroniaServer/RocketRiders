@@ -2,6 +2,6 @@
 
 execute unless score $nodeathmessages CmdData matches 1 run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to breach the lobby"}]
 
-gamerule showDeathMessages false
+gamerule minecraft:show_death_messages false
 kill @s
-execute unless score $nodeathmessages CmdData matches 1 run gamerule showDeathMessages true
+execute unless score $nodeathmessages CmdData matches 1 run gamerule minecraft:show_death_messages true

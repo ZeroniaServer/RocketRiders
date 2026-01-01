@@ -87,3 +87,5 @@ execute if score @s nomicon matches 59 run return run function items:give/booste
 execute if score @s nomicon matches 35 if items entity @s[tag=elytra.unbreakable] armor.chest elytra[damage=0] run return run tellraw @s {color:"red",text:"You already have elytra equipped"}
 execute if score @s nomicon matches 60 run tag @s add elytra.unbreakable
 execute if score @s nomicon matches 60 run return run function rr_powerups:items/powerup/giveelytra
+
+execute if score @s nomicon matches 61 run return run function items:give/lunging_spear with storage rocketriders:main nomicon

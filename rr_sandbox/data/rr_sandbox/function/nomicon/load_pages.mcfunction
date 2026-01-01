@@ -385,6 +385,7 @@ function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental",
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 52, item_loot_table: "items:experimental/spectral_arrow", item_plain_name_singular: "Spectral Arrow", item_plain_name_plural: "Spectral Arrows", color: "dark_purple", include_in_full_list: true}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 51, item_loot_table: "items:experimental/jump_boost_potion", item_plain_name_singular: "Jump Boost Potion", item_plain_name_plural: "Jump Boost Potions", color: "dark_purple", include_in_full_list: true}
 function rr_sandbox:nomicon/load_pages/append_item {dialog_name: "experimental", trigger_input_id: 59, item_loot_table: "items:experimental/booster_rocket", item_plain_name_singular: "Elytra Booster Rocket", item_plain_name_plural: "Elytra Booster Rockets", color: "light_purple", include_in_full_list: true}
+function rr_sandbox:nomicon/load_pages/append_item_limited {dialog_name: "experimental", trigger_input_id: 61, item_loot_table: "items:experimental/lunging_spear", item_plain_name_singular: "Lunging Spear", item_plain_name_plural: "Lunging Spears", color: "white", include_in_full_list: true}
 
 ##
 ## All

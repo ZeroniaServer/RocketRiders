@@ -64,6 +64,10 @@
                   "has_consume_particles": false,
                   "sound": "intentionally_empty",
                   "consume_seconds": 2147483647
+                },
+                "minecraft:use_effects": {
+                  "can_sprint": true,
+                  "speed_multiplier": 1
                 }
               }
             },

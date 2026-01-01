@@ -148,9 +148,9 @@ kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect
 execute unless predicate game:game_running if entity @s[tag=EditedSettings] unless predicate game:gamemode_components/portal_crystal_protection run function game:place_portal/all
 
 #Disable damage gamerules if no game has started
-execute unless entity @s[predicate=game:game_running,predicate=!game:match_over] run gamerule fallDamage false
-execute unless entity @s[predicate=game:game_running,predicate=!game:match_over] run gamerule drowningDamage false
-execute unless entity @s[predicate=game:game_running,predicate=!game:match_over] run gamerule fireDamage false
+execute unless entity @s[predicate=game:game_running,predicate=!game:match_over] run gamerule minecraft:fall_damage false
+execute unless entity @s[predicate=game:game_running,predicate=!game:match_over] run gamerule minecraft:drowning_damage false
+execute unless entity @s[predicate=game:game_running,predicate=!game:match_over] run gamerule minecraft:fire_damage false
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active

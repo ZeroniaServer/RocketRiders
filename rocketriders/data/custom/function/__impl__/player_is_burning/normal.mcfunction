@@ -1,5 +1,3 @@
-execute if predicate custom:is_on_fire run return 1
-
 # feet
 execute if block ~-0.3 ~ ~-0.3 #custom:fire run return 1
 execute if block ~-0.3 ~ ~0.3 #custom:fire run return 1

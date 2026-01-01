@@ -2,15 +2,15 @@
 execute as @e[x=0,type=bee,tag=!beeChecked,tag=BlueBee] run function custom:team/join_blue
 execute as @e[x=0,type=bee,tag=!beeChecked,tag=YellowBee] run function custom:team/join_yellow
 execute as @e[x=0,type=bee,tag=!beeChecked] run attribute @s minecraft:follow_range base set 100
-execute as @e[x=0,type=bee,tag=!beeChecked] run data remove entity @s AngryAt
+execute as @e[x=0,type=bee,tag=!beeChecked] run data modify entity @s anger_end_time set value 0
 tag @e[x=0,type=bee,tag=!beeChecked] add beeChecked
 
 execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/blue,predicate=!custom:angry_at_yellow_team] at @s run damage @s 0.00001 minecraft:player_attack by @p[predicate=custom:in_arena,predicate=custom:team/yellow]
 execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/yellow,predicate=!custom:angry_at_blue_team] at @s run damage @s 0.00001 minecraft:player_attack by @p[predicate=custom:in_arena,predicate=custom:team/blue]
-execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/blue,predicate=custom:angry_at_blue_team] run data remove entity @s AngryAt
-execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/yellow,predicate=custom:angry_at_yellow_team] run data remove entity @s AngryAt
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/blue,predicate=custom:angry_at_blue_team] run data modify entity @s anger_end_time set value 0
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/yellow,predicate=custom:angry_at_yellow_team] run data modify entity @s anger_end_time set value 0
 
-execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:bee_anger_periodic_tick] run data merge entity @s {AngerTime:1000}
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:bee_anger_periodic_tick] run data modify entity @s anger_end_time set value 9223372036854775807L
 
 # kill bees that have stung
 kill @e[x=0,type=bee,predicate=custom:in_arena,nbt={HasStung:1b}]

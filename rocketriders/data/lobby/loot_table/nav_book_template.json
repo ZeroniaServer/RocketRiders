@@ -8,7 +8,7 @@
               "components": {
                 "minecraft:custom_data": {
                   "navbook": true,
-                  "delete": false
+                  "reset_inventory/delete": false
                 },
                 "minecraft:item_model": "minecraft:knowledge_book",
                 "minecraft:item_name": {

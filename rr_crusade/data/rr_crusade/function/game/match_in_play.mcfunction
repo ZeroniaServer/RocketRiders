@@ -77,10 +77,10 @@ execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 
 execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 run fill 36 47 35 40 51 39 minecraft:yellow_stained_glass replace tinted_glass
 
 # End crystals after cooldown
-execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueA,limit=1] Invulnerable set value 0b
-execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueB,limit=1] Invulnerable set value 0b
-execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellowA,limit=1] Invulnerable set value 0b
-execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellowB,limit=1] Invulnerable set value 0b
+execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueA,limit=1] Invulnerable set value false
+execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueB,limit=1] Invulnerable set value false
+execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellowA,limit=1] Invulnerable set value false
+execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellowB,limit=1] Invulnerable set value false
 
 # Sounds after cooldown
 execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 positioned 38 49 -37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2

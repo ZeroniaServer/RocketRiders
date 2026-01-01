@@ -16,9 +16,9 @@ execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 run kill @a[ga
 execute if score $CBB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run function custom:game_rules/show_death_messages/on
 execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. unless predicate game:gamemode_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass
 execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. if predicate game:gamemode_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:red_stained_glass
-execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],beam_target:[I;12,50,-52],ShowBottom:0b}
+execute if score $CBB crusadehp matches 1.. run function rr_crusade:game/place_crystal/blue_b
 execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. run fill -16 47 -35 -12 51 -39 minecraft:tinted_glass
-execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],beam_target:[I;12,50,-52],ShowBottom:0b,Invulnerable:1b}
+execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. run data modify entity @e[limit=1,x=0,type=end_crystal,tag=CrusadeBlueB] Invulnerable set value true
 execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 run playsound minecraft:block.glass.break master @a[x=0] ~ ~ ~ 1 0.8
 execute unless score $CBBcd crusadehp matches 1.. if score $CBBprecd crusadehp matches 100.. run scoreboard players set $CBBcd crusadehp 60
 execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. positioned -14 49 -37 run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 2

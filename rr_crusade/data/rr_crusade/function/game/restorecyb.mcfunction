@@ -15,9 +15,9 @@ execute if score $CYB crusadehp matches 1.. unless score $nodeathmessages CmdDat
 execute if score $CYB crusadehp matches 1.. positioned 38 49 37 run kill @a[gamemode=!creative,gamemode=!spectator,predicate=custom:team/any_playing_team,distance=..5]
 execute if score $CYB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run function custom:game_rules/show_death_messages/on
 execute if score $CYB crusadehp matches 1.. unless score $CYBcd crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:yellow_stained_glass
-execute if score $CYB crusadehp matches 1.. unless score $CYBcd crusadehp matches 1.. run summon end_crystal 38 49 37 {Tags:["CrusadeEntity","CrusadeYellowB"],beam_target:[I;12,50,52],ShowBottom:0b}
+execute if score $CYB crusadehp matches 1.. run function rr_crusade:game/place_crystal/yellow_b
 execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:tinted_glass
-execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. run summon end_crystal 38 49 37 {Tags:["CrusadeEntity","CrusadeYellowB"],beam_target:[I;12,50,52],ShowBottom:0b,Invulnerable:1b}
+execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. run data modify entity @e[limit=1,x=0,type=end_crystal,tag=CrusadeYellowB] Invulnerable set value true
 execute if score $CYB crusadehp matches 1.. positioned 38 49 37 run playsound minecraft:block.glass.break master @a[x=0] ~ ~ ~ 1 0.8
 execute unless score $CYBcd crusadehp matches 1.. if score $CYBprecd crusadehp matches 100.. run scoreboard players set $CYBcd crusadehp 60
 execute if score $CYB crusadehp matches 1.. unless score $CYBcd crusadehp matches 1.. positioned 38 49 37 run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 2

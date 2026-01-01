@@ -64,12 +64,12 @@
                   "has_consume_particles": false,
                   "sound": "intentionally_empty",
                   "consume_seconds": 2147483647
-                },
-                "minecraft:use_effects": {
-                  "can_sprint": true,
-                  "speed_multiplier": 1
                 }
               }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:spell_book/set_use_effects"
             },
             {
               "function": "minecraft:reference",

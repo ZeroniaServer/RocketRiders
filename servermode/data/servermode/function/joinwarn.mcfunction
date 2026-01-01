@@ -57,8 +57,8 @@ execute if entity @s[predicate=custom:team/blue,tag=JoinYellow] unless predicate
 execute if entity @s[predicate=custom:team/blue,tag=JoinYellow] unless predicate game:team_count/blue_is_larger unless predicate game:team_count/yellow_is_larger run return run tag @s remove JoinYellow
 
 #Joining before settings have been confirmed
-execute if entity @s[tag=JoinYellow] unless predicate game:match_over if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run tellraw @s [{color:"dark_gray",text:"["},{bold:true,color:"red",text:"!"},{color:"dark_gray",text:"] "},{bold:true,color:"red",text:"Cannot Join Team!"},"\n",{color:"gray",text:"Wait until game settings are confirmed first."}]
-execute if entity @s[tag=JoinYellow] if predicate game:match_over if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run tellraw @s [{color:"dark_gray",text:"["},{bold:true,color:"red",text:"!"},{color:"dark_gray",text:"] "},{bold:true,color:"red",text:"Cannot Join Team!"},"\n",{color:"gray",text:"Wait until a new game has started."}]
+execute if entity @s[tag=JoinYellow] unless predicate game:phase/match/over if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run tellraw @s [{color:"dark_gray",text:"["},{bold:true,color:"red",text:"!"},{color:"dark_gray",text:"] "},{bold:true,color:"red",text:"Cannot Join Team!"},"\n",{color:"gray",text:"Wait until game settings are confirmed first."}]
+execute if entity @s[tag=JoinYellow] if predicate game:phase/match/over if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run tellraw @s [{color:"dark_gray",text:"["},{bold:true,color:"red",text:"!"},{color:"dark_gray",text:"] "},{bold:true,color:"red",text:"Cannot Join Team!"},"\n",{color:"gray",text:"Wait until a new game has started."}]
 execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run return run tag @s remove JoinYellow
 
 #Joining while joinpad is disabled

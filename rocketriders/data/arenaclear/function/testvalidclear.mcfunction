@@ -1,5 +1,5 @@
 ##Operator command - tests valid arenaclear based on enabled items
-execute if predicate game:game_running run return run tellraw @s {color:"red",text:"You can only run this when the game has ended"}
+execute if predicate game:phase/match run return run tellraw @s {color:"red",text:"You can only run this when the game has ended"}
 execute if predicate game:item_pool_meta/all_normal_missiles_disabled if predicate game:item_pool_meta/all_lightning_missiles_disabled if predicate game:item_pool_meta/all_heavy_missiles_disabled run return run tellraw @s {color:"red",text:"You must have at least one Missile enabled to start the game"}
 
 execute store result score $match_repeat_amount global run scoreboard players get $extra_match_repetitions config

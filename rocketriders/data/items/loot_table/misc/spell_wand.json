@@ -92,7 +92,7 @@
                       "condition": "minecraft:inverted",
                       "term": {
                         "condition": "minecraft:reference",
-                        "name": "game:match_in_play"
+                        "name": "game:phase/match/play"
                       }
                     },
                     {
@@ -100,7 +100,7 @@
                       "terms": [
                         {
                           "condition": "minecraft:reference",
-                          "name": "game:match_over"
+                          "name": "game:phase/match/over"
                         },
                         {
                           "condition": "minecraft:entity_properties",

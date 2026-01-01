@@ -108,7 +108,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:match_over"
+                  "name": "game:phase/match/over"
                 },
                 {
                   "condition": "minecraft:entity_properties",

@@ -36,11 +36,8 @@
               },
               "conditions": [
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:match_in_play"
-                  }
+                  "condition": "minecraft:reference",
+                  "name": "game:phase/staging"
                 }
               ]
             },

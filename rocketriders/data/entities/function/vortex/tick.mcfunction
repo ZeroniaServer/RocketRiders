@@ -43,14 +43,14 @@ execute if predicate game:achievements_can_be_awarded if entity @s[tag=vortex.ne
 execute if score @s entity.vortex.fuse matches 1 on vehicle run data merge entity @s {start_interpolation:0,interpolation_duration:1,transformation:{scale:[1,1,1]},billboard:"center"}
 execute if score @s entity.vortex.fuse matches ..0 run return run function entities:vortex/actions/explode
 
-execute if predicate entities:origin_team/yellow unless score @s entity.vortex.fuse matches 0.. unless predicate game:match_over positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,predicate=custom:team/blue,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
-execute if predicate entities:origin_team/blue unless score @s entity.vortex.fuse matches 0.. unless predicate game:match_over positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,predicate=custom:team/yellow,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
+execute if predicate entities:origin_team/yellow unless score @s entity.vortex.fuse matches 0.. unless predicate game:phase/match/over positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,predicate=custom:team/blue,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
+execute if predicate entities:origin_team/blue unless score @s entity.vortex.fuse matches 0.. unless predicate game:phase/match/over positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,predicate=custom:team/yellow,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
 execute on origin run tag @s add vortex.origin
-execute if predicate entities:origin_team/none unless score @s entity.vortex.fuse matches 0.. unless predicate game:match_over positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,tag=!vortex.origin,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
+execute if predicate entities:origin_team/none unless score @s entity.vortex.fuse matches 0.. unless predicate game:phase/match/over positioned ~ ~-1.6 ~ if entity @a[limit=1,distance=..2,tag=!vortex.origin,gamemode=!spectator] run function entities:vortex/actions/trigger {fuse:3}
 execute on origin run tag @s remove vortex.origin
 
 # Landmine trigger
-execute if entity @s[tag=vortex.neutral_landmine] unless predicate game:match_over if entity @a[distance=..3,limit=1,predicate=custom:team/any_playing_team] run return run function entities:vortex/actions/explode
+execute if entity @s[tag=vortex.neutral_landmine] unless predicate game:phase/match/over if entity @a[distance=..3,limit=1,predicate=custom:team/any_playing_team] run return run function entities:vortex/actions/explode
 
 # block trigger
 execute unless block ~ ~ ~ #custom:vortices_ignore run return run function entities:vortex/actions/explode

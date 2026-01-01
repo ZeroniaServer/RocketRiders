@@ -92,14 +92,11 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:modifiers/molerat/on"
+                  "name": "game:phase/staging"
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:game_running"
-                  }
+                  "condition": "minecraft:reference",
+                  "name": "game:modifiers/molerat/on"
                 }
               ]
             },
@@ -111,7 +108,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:match_over"
+                  "name": "game:phase/match/over"
                 }
               ]
             },
@@ -134,7 +131,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:match_over"
+                  "name": "game:phase/match/over"
                 },
                 {
                   "condition": "minecraft:entity_properties",

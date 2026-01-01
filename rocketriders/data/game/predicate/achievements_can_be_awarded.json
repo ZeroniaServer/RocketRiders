@@ -5,7 +5,7 @@
   },
   {
     "condition": "minecraft:reference",
-    "name": "game:game_running"
+    "name": "game:phase/match"
   },
   {
     "condition": "minecraft:inverted",

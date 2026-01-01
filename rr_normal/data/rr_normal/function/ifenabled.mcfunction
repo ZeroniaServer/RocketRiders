@@ -8,17 +8,17 @@ function rr_normal:tip
 
 #game
 function rr_normal:game/gamestart
-execute if predicate game:game_running run function rr_normal:game/game_running
-execute if predicate game:match_in_play run function rr_normal:game/match_in_play
-execute if predicate game:match_over run function rr_normal:game/match_over
+execute if predicate game:phase/match run function rr_normal:game/game_running
+execute if predicate game:phase/match/play run function rr_normal:game/match_in_play
+execute if predicate game:phase/match/over run function rr_normal:game/match_over
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run tag @a[x=0] remove informMe
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play as @a[x=0] at @s run function arenaclear:notifystart
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Normal","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals\n","color":"yellow"},{"text":"- Ride missiles to enemy base to destroy portals\n"},{"text":"- Protect your own team's portals\n"},{"text":"Items:","color":"aqua"},{"text":" Various missiles and utilities"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run function modifiers:notifymodifiers
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run tag @s add normalLast
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tag @a[x=0] remove informMe
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play as @a[x=0] at @s run function arenaclear:notifystart
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Normal","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals\n","color":"yellow"},{"text":"- Ride missiles to enemy base to destroy portals\n"},{"text":"- Protect your own team's portals\n"},{"text":"Items:","color":"aqua"},{"text":" Various missiles and utilities"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run function modifiers:notifymodifiers
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tag @s add normalLast
 tag @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners of active settings

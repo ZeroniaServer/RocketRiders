@@ -5,4 +5,4 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s[tag=duelEn
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=duelEnabled] run function rr_duel:ifenabled
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=duelLast] run function rr_duel:iflast
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!noYZELO] if entity @e[x=0,type=armor_stand,tag=rr_duel,limit=1] run function rr_duel:xp_ranks
-execute unless predicate game:match_in_play if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!noYZELO] as @a[x=0,predicate=!custom:team/any_playing_team,tag=InRanked] run function rr_duel:forfeit/giveloss
+execute unless predicate game:phase/match/play if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!noYZELO] as @a[x=0,predicate=!custom:team/any_playing_team,tag=InRanked] run function rr_duel:forfeit/giveloss

@@ -68,7 +68,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:match_in_play"
+                  "name": "game:phase/match/play"
                 }
               ]
             },
@@ -117,11 +117,8 @@
               },
               "conditions": [
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:game_running"
-                  }
+                  "condition": "minecraft:reference",
+                  "name": "game:phase/staging"
                 }
               ]
             },
@@ -166,7 +163,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:match_over"
+                  "name": "game:phase/match/over"
                 }
               ]
             },

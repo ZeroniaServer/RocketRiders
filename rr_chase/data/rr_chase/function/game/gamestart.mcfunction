@@ -10,31 +10,31 @@ execute if score $blue_team_count global >= @e[x=0,type=armor_stand,tag=rr_chase
 execute if entity @s[tag=BlueFull,tag=EditedSettings] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
 
 #Give arrows on join (disabled? intentional?)
-#execute if predicate game:match_in_play as @a[x=0,tag=JoinBlue] run function items:util/givearrows
+#execute if predicate game:phase/match/play as @a[x=0,tag=JoinBlue] run function items:util/givearrows
 
 #Give first item to anyone who joins within 1st second
-execute if predicate game:match_in_play if score $game_duration global matches 3..20 run function items:givefirst
+execute if predicate game:phase/match/play if score $game_duration global matches 3..20 run function items:givefirst
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue
 
 #Bossbar
-execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
-execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
-execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
-execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 1 run bossbar set rr:startgame name ["",{"text":"Awaiting more players...","color":"white"}]
-execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 1 run bossbar set rr:startgame value 15
-execute unless predicate game:match_in_play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 1 run bossbar set rr:startgame color green
+execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
+execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
+execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
+execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 1 run bossbar set rr:startgame name ["",{"text":"Awaiting more players...","color":"white"}]
+execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 1 run bossbar set rr:startgame value 15
+execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 1 run bossbar set rr:startgame color green
 
 #Countdown
-execute if predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if score $blue_team_count global matches 2.. run tag @s add Countdown
+execute if predicate rr:wait_for_sufficient_players unless predicate game:phase/match/play if entity @s[tag=EditedSettings] if score $blue_team_count global matches 2.. run tag @s add Countdown
 execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] if score $blue_team_count global matches 0..1 run function game:restartcountdown
 
-execute unless predicate rr:wait_for_sufficient_players unless predicate game:match_in_play if entity @s[tag=EditedSettings] if score $blue_team_count global matches 1.. run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players unless predicate game:phase/match/play if entity @s[tag=EditedSettings] if score $blue_team_count global matches 1.. run tag @s add Countdown
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] if score $blue_team_count global matches 0 run function game:restartcountdown
 
-execute unless predicate game:match_over if score @s count matches 600 run scoreboard players set $match_in_play global 1
-execute unless predicate game:match_over if score @s count matches 600 run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-execute unless predicate game:match_over if score @s count matches 600 run tag @a[x=0,predicate=custom:team/blue] add onBlue
+execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set $match_in_play global 1
+execute unless predicate game:phase/match/over if score @s count matches 600 run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+execute unless predicate game:phase/match/over if score @s count matches 600 run tag @a[x=0,predicate=custom:team/blue] add onBlue
 execute if score @s count matches 600 run summon marker 38 63 -66 {Tags:["airDetect"]}
-execute unless predicate game:match_over if score @s count matches 600 as @a[x=0,predicate=custom:team/blue] run tag @s remove fullOffhand
+execute unless predicate game:phase/match/over if score @s count matches 600 as @a[x=0,predicate=custom:team/blue] run tag @s remove fullOffhand

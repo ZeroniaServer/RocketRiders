@@ -8,18 +8,18 @@ function rr_sandbox:tip
 
 #game
 function rr_sandbox:game/gamestart
-execute if predicate game:game_running run function rr_sandbox:game/game_running
-execute if predicate game:match_in_play run function rr_sandbox:game/match_in_play
+execute if predicate game:phase/match run function rr_sandbox:game/game_running
+execute if predicate game:phase/match/play run function rr_sandbox:game/match_in_play
 execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function rr_sandbox:items/givenomicon
-execute if predicate game:match_over run function rr_sandbox:game/match_over
+execute if predicate game:phase/match/over run function rr_sandbox:game/match_over
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run tag @a[x=0] remove informMe
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play as @a[x=0] at @s run function arenaclear:notifystart
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Sandbox","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Mess around to your heart's content!\n","color":"yellow"},{"text":"- Use the "},{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false},{"text":" to obtain every item in the game\n"},{"text":"- Items can stack and there is no hotbar limit\n"},{"text":"- The game still ends when the portals break\n"},{"text":"- Only one player needs to join!\n"},{"text":"Items:","color":"aqua"},{"text":" Every. Single. One.","italic":true}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run function modifiers:notifymodifiers
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:match_in_play run tag @s add sandboxLast
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tag @a[x=0] remove informMe
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play as @a[x=0] at @s run function arenaclear:notifystart
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Sandbox","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Mess around to your heart's content!\n","color":"yellow"},{"text":"- Use the "},{"text":"Rocket","color":"blue","bold":true,"italic":false},{"text":"-","color":"gray","bold":true,"italic":false},{"text":"nomicon","color":"gold","bold":true,"italic":false},{"text":" to obtain every item in the game\n"},{"text":"- Items can stack and there is no hotbar limit\n"},{"text":"- The game still ends when the portals break\n"},{"text":"- Only one player needs to join!\n"},{"text":"Items:","color":"aqua"},{"text":" Every. Single. One.","italic":true}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run function modifiers:notifymodifiers
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tag @s add sandboxLast
 tag @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners of active settings

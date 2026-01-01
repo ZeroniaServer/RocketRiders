@@ -25,26 +25,26 @@ execute unless items entity @s weapon.offhand *[custom_data~{"reset_inventory/de
 
 # lobby players
 execute if predicate custom:team/lobby run function lobby:give_nav_book with storage rocketriders:navbook item
-execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:game_running unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] unless score @s VoteNum matches 1.. unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"},!custom_data~{voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot
-execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:game_running unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] if score @s VoteNum matches 1.. unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"},custom_data~{voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot_used
+execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:phase/match unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] unless score @s VoteNum matches 1.. unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"},!custom_data~{voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot
+execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:phase/match unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] if score @s VoteNum matches 1.. unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"},custom_data~{voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot_used
 execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items entity @s hotbar.3 *[custom_data~{id:"parkour/return_to_checkpoint"}] run loot replace entity @s hotbar.3 loot lobby:parkour/return_to_checkpoint
 execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items entity @s hotbar.5 *[custom_data~{id:"parkour/return_to_start"}] run loot replace entity @s hotbar.5 loot lobby:parkour/return_to_start
 execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items entity @s hotbar.8 *[custom_data~{id:"parkour/quit_parkour"}] run loot replace entity @s hotbar.8 loot lobby:parkour/quit_parkour
 
 # team players
 execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/shooting_saber run loot replace entity @s hotbar.0 loot items:misc/shooting_saber
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/shooting_saber unless predicate game:game_running run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:20}]}]}
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/shooting_saber unless predicate game:phase/match run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:20}]}]}
 execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/piercing_pickaxe run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
 execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/rocket_nomicon run loot replace entity @s hotbar.0 loot items:misc/rocket_nomicon
 execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace entity @s hotbar.0 loot items:misc/knight_sword
 execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace entity @s weapon.offhand loot items:misc/knight_shield
 execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace entity @s hotbar.0 loot items:misc/shooting_saber
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer unless predicate game:game_running run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:20}]}]}
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:match_in_play run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:4}]}]}
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer unless predicate game:phase/match run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:20}]}]}
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/match/play run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:4}]}]}
 execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace entity @s hotbar.0 loot items:misc/spell_wand
 
 # winnter's fireworks
-execute if predicate game:match_over if predicate custom:team/any_playing_team if entity @s[tag=Winner] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
+execute if predicate game:phase/match/over if predicate custom:team/any_playing_team if entity @s[tag=Winner] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
 
 # delete relevant items
 clear @s *[custom_data~{"reset_inventory/delete":true}]

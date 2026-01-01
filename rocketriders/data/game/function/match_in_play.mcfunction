@@ -23,7 +23,7 @@ scoreboard players add @a[x=0,predicate=custom:team/blue] kills 0
 function items:full_hotbar
 
 ##Game time
-execute unless predicate game:game_paused run scoreboard players add $game_duration global 1
+execute unless predicate game:phase/match/paused run scoreboard players add $game_duration global 1
 
 ##Put out players on fire
 execute if score $game_duration global matches 1..2 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
@@ -59,6 +59,6 @@ execute unless predicate game:gamemode_components/custom_spawnpoint_block_protec
 execute unless predicate game:gamemode_components/custom_spawnpoint_block_protection run setblock 12 66 -67 obsidian
 
 ## Leave Mid-Match
-execute if predicate rr:drop_main_item_to_leave_match if predicate game:match_in_play as @a[scores={LeaveMidgame=1},predicate=custom:team/any_playing_team] run function game:leave_mid_match
-execute if predicate game:match_in_play run scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] LeaveMidgame
+execute if predicate rr:drop_main_item_to_leave_match if predicate game:phase/match/play as @a[scores={LeaveMidgame=1},predicate=custom:team/any_playing_team] run function game:leave_mid_match
+execute if predicate game:phase/match/play run scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] LeaveMidgame
 scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame

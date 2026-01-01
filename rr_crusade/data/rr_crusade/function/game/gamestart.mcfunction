@@ -1,12 +1,6 @@
 #Set kit to previous upon joining
-execute as @a[x=0,tag=JoinBlue] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
-execute as @a[x=0,tag=JoinYellow] unless score @s crusadekit = @s crusadekit run scoreboard players set @s crusadekit 1
-execute as @a[x=0,tag=JoinBlue,predicate=rr_crusade:kit/knight] run function rr_crusade:items/kit/give/knight
-execute as @a[x=0,tag=JoinBlue,predicate=rr_crusade:kit/archer] run function rr_crusade:items/kit/give/archer
-execute as @a[x=0,tag=JoinBlue,predicate=rr_crusade:kit/mage] run function rr_crusade:items/kit/give/mage
-execute as @a[x=0,tag=JoinYellow,predicate=rr_crusade:kit/knight] run function rr_crusade:items/kit/give/knight
-execute as @a[x=0,tag=JoinYellow,predicate=rr_crusade:kit/archer] run function rr_crusade:items/kit/give/archer
-execute as @a[x=0,tag=JoinYellow,predicate=rr_crusade:kit/mage] run function rr_crusade:items/kit/give/mage
+execute as @a[x=0,tag=JoinBlue] run function rr_crusade:items/kit/upon_join
+execute as @a[x=0,tag=JoinYellow] run function rr_crusade:items/kit/upon_join
 
 #Give first item to anyone who joins within 1st second
 execute if predicate game:match_in_play if score $game_duration global matches 3..20 run function rr_crusade:items/givefirst

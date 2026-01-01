@@ -24,8 +24,8 @@ $execute if data storage rocketriders.data:playerdata players."$(UUID)".data{hid
 tag @s remove do_hotbar_auto_fill
 $execute if data storage rocketriders.data:playerdata players."$(UUID)".data{do_hotbar_auto_fill:1b} run tag @s add do_hotbar_auto_fill
 
-$execute store result score @s crusadekit run data get storage rocketriders.data:playerdata players."$(UUID)".data.crusadekit
-execute unless score @s crusadekit matches 1..3 run scoreboard players reset @s crusadekit
+$execute store result score @s start_as_crusade_kit run data get storage rocketriders.data:playerdata players."$(UUID)".data.crusade_kit
+execute unless score @s start_as_crusade_kit matches 1..3 run scoreboard players reset @s start_as_crusade_kit
 
 $execute store result score @s default_spell run data get storage rocketriders.data:playerdata players."$(UUID)".data.default_spell
 execute unless score @s default_spell matches 1..3 run scoreboard players reset @s default_spell

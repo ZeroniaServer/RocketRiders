@@ -1,2 +1,2 @@
-team join rocketriders.sort_999.developer
+team leave @s
 scoreboard players reset @s was_on_playing_team

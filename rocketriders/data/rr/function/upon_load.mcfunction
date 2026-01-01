@@ -325,6 +325,9 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "missile/hypersonic": "items:missile/special/hypersonic",\
     "nova_rocket": "items:util/nova_rocket",\
     "obsidian_shield": "items:util/obsidian_shield",\
+    "parkour/quit_parkour": "lobby:parkour/quit_parkour",\
+    "parkour/return_to_checkpoint": "lobby:parkour/return_to_checkpoint",\
+    "parkour/return_to_start": "lobby:parkour/return_to_start",\
     "piercing_pickaxe": "items:misc/piercing_pickaxe",\
     "rocket_nomicon": "items:misc/rocket_nomicon",\
     "shield": "items:util/shield",\

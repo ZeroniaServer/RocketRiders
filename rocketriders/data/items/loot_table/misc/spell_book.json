@@ -69,7 +69,7 @@
             },
             {
               "function": "minecraft:reference",
-              "name": "items:spell_book/set_use_effects"
+              "name": "items:set_normal_use_effects"
             },
             {
               "function": "minecraft:reference",

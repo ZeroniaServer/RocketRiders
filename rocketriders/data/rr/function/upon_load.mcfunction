@@ -280,6 +280,9 @@ scoreboard objectives remove cancelMatch
 scoreboard objectives add editSettings trigger
 scoreboard players add $curr leavecheck 0
 
+# Fix join pad sprite depending on version
+function rr:upon_load/join_pad_sprite
+
 # Nav Book Config
 function lobby:store_nav_book
 

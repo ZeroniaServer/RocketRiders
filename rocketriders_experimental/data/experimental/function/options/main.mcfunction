@@ -10,10 +10,10 @@ scoreboard players operation $tips var %= $10 constant
 execute if score $tips var matches 0 run tag @s add hideTips
 execute if score $tips var matches 1 run tag @s remove hideTips
 
-execute store result score $particles var run scoreboard players operation $parkour_tips var /= $10 constant
-scoreboard players operation $parkour_tips var %= $10 constant
-execute if predicate rr:has_parkour if score $parkour_tips var matches 0 run tag @s add hideParkourTips
-execute if predicate rr:has_parkour if score $parkour_tips var matches 1 run tag @s remove hideParkourTips
+execute store result score $particles var run scoreboard players operation $parkour_instructions var /= $10 constant
+scoreboard players operation $parkour_instructions var %= $10 constant
+execute if predicate rr:has_parkour if score $parkour_instructions var matches 0 run tag @s add hideParkourTips
+execute if predicate rr:has_parkour if score $parkour_instructions var matches 1 run tag @s remove hideParkourTips
 
 execute store result score $do_hotbar_auto_fill var run scoreboard players operation $particles var /= $10 constant
 scoreboard players operation $particles var %= $10 constant

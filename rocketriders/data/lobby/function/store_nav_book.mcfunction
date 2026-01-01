@@ -7,9 +7,9 @@ execute if predicate rr:server_mode/cubekrowd_duels run data modify storage rock
 data modify storage rocketriders:navbook modroom set value ""
 execute if predicate rr:has_modification_room run data modify storage rocketriders:navbook modroom set value ["\n",{text:"* ",color:"gray",hover_event:{action:"show_text",value:{text:"Click to teleport to the Modification Room.",italic:true}},click_event:{action:"run_command","command":"/trigger LobbyWarp set 2"}},{text:"Modification Room",color:"dark_purple",hover_event:{action:"show_text",value:{text:"Click to teleport to the Modification Room.",italic:true}},click_event:{action:"run_command","command":"/trigger LobbyWarp set 2"}}]
 
-# parkour tips
+# parkour instructions
 data modify storage rocketriders:navbook parkourtips set value ""
-execute if predicate rr:has_parkour run data modify storage rocketriders:navbook parkourtips set value ["\n\n     ",{text:"[Parkour Tips]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to toggle Parkour instructions.",italic:true}},click_event:{action:"run_command",command:"/trigger toggleParkourTips set 1"}}]
+execute if predicate rr:has_parkour run data modify storage rocketriders:navbook parkourtips set value ["\n\n",{bold:true,text:"\N{ZERO WIDTH NON-JOINER}"},[{text:"[Parkour",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to toggle Parkour instructions.",italic:true}},click_event:{action:"run_command",command:"/trigger toggleParkourTips set 1"}},{bold:true,text:"\N{ZERO WIDTH NON-JOINER}\N{ZERO WIDTH NON-JOINER}"},"Instructions]"]]
 
 # default spell setting
 data modify storage rocketriders:navbook default_spell_setting set value ""

@@ -1,12 +1,7 @@
 [
   {
-    "condition": "minecraft:entity_properties",
-    "entity": "this",
-    "predicate": {
-      "flags": {
-        "is_fall_flying": true
-      }
-    }
+    "condition": "minecraft:reference",
+    "name": "custom:is_gliding"
   },
   {
     "condition": "minecraft:inverted",

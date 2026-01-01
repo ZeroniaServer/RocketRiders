@@ -27,8 +27,6 @@ execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:
 execute if entity @s[scores={SDtime=1..2}] at @s run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={SDtime=1}] as @a[x=0] run function custom:player_action/forget_all_canopies
 execute if entity @s[scores={SDtime=1}] unless predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/on
-execute if entity @s[scores={SDtime=1}] at @s run item replace entity @a[x=0] armor.head with air
-execute if entity @s[scores={SDtime=1}] at @s run clear @a[x=0] firework_rocket
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] resistance
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] weakness
 execute if entity @s[scores={SDtime=1}] at @s run effect clear @a[x=0] regeneration

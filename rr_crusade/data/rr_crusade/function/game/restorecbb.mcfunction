@@ -10,10 +10,10 @@ execute unless score $CBB crusadehp matches 1.. as @a[x=0,predicate=custom:team/
 execute unless score $CBB crusadehp matches 1.. as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
 execute unless score $CBB crusadehp matches 1.. as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:block.glass.break master @s ~ ~ ~ 1 0
 
-execute if score $CBB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run gamerule minecraft:show_death_messages false
+execute if score $CBB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run function custom:game_rules/show_death_messages/off
 execute if score $CBB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 positioned -14 49 -37 as @e[type=player,gamemode=!creative,gamemode=!spectator,predicate=!custom:team/spectator,predicate=!custom:team/developer,predicate=!custom:team/lobby,distance=..5] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" got too close to an End Crystal","color":"white"}]
 execute if score $CBB crusadehp matches 1.. positioned -14 49 -37 run kill @a[gamemode=!creative,gamemode=!spectator,predicate=custom:team/any_playing_team,distance=..5]
-execute if score $CBB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run gamerule minecraft:show_death_messages true
+execute if score $CBB crusadehp matches 1.. unless score $nodeathmessages CmdData matches 1 run function custom:game_rules/show_death_messages/on
 execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. unless predicate game:gamemode_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass
 execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. if predicate game:gamemode_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:red_stained_glass
 execute if score $CBB crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. run summon end_crystal -14 49 -37 {Tags:["CrusadeEntity","CrusadeBlueB"],beam_target:[I;12,50,-52],ShowBottom:0b}

@@ -1,137 +1,150 @@
 data modify storage rocketriders:main options.dialog set value {\
-	"type": "minecraft:notice",\
-	"title": "Rocket Riders",\
-	"inputs": [\
-		{\
-			"type": "minecraft:single_option",\
-			"key": "tips",\
-			"label": "Show Tips",\
-			"options": [\
-				{\
-					"id": "0",\
-					"display": {\
-						"translate": "options.off"\
-					}\
-				},\
-				{\
-					"id": "1",\
-					"display": {\
-						"translate": "options.on"\
-					}\
-				}\
-			]\
-		},\
-		{\
-			"type": "minecraft:single_option",\
-			"key": "parkour_instructions",\
-			"label": "Show Parkour Instructions",\
-			"options": [\
-				{\
-					"id": "0",\
-					"display": {\
-						"translate": "options.off"\
-					}\
-				},\
-				{\
-					"id": "1",\
-					"display": {\
-						"translate": "options.on"\
-					}\
-				}\
-			]\
-		},\
-		{\
-			"type": "minecraft:single_option",\
-			"key": "particles",\
-			"label": "Particles",\
-			"options": [\
-				{\
-					"id": "0",\
-					"display": {\
-						"translate": "options.off"\
-					}\
-				},\
-				{\
-					"id": "1",\
-					"display": {\
-						"translate": "options.on"\
-					}\
-				}\
-			]\
-		},\
-		{\
-			"type": "minecraft:single_option",\
-			"key": "do_hotbar_auto_fill",\
-			"label": "Auto-Fill Hotbar",\
-			"options": [\
-				{\
-					"id": "0",\
-					"display": {\
-						"translate": "options.off"\
-					}\
-				},\
-				{\
-					"id": "1",\
-					"display": {\
-						"translate": "options.on"\
-					}\
-				}\
-			]\
-		},\
-		{\
-			"type": "minecraft:single_option",\
-			"key": "default_spell",\
-			"label": "Default Spell Book",\
-			"options": [\
-				{\
-					"id": "0",\
-					"display": "Fire"\
-				},\
-				{\
-					"id": "1",\
-					"display": "Health"\
-				},\
-				{\
-					"id": "2",\
-					"display": "Damage"\
-				},\
-				{\
-					"id": "3",\
-					"display": "Wind"\
-				}\
-			]\
-		},\
-		{\
-			"type": "minecraft:single_option",\
-			"key": "crusade_kit",\
-			"label": "Starting Crusade Kit",\
-			"options": [\
-				{\
-					"id": "0",\
-					"display": "Random"\
-				},\
-				{\
-					"id": "1",\
-					"display": "Knight"\
-				},\
-				{\
-					"id": "2",\
-					"display": "Archer"\
-				},\
-				{\
-					"id": "3",\
-					"display": "Mage"\
-				}\
-			]\
-		}\
-	],\
-	"action": {\
-		"label": "Done",\
-		"action": {\
-			"type": "minecraft:dynamic/run_command",\
-            "template": "trigger options set 1000$(crusade_kit)$(default_spell)$(do_hotbar_auto_fill)$(particles)$(parkour_instructions)$(tips)"\
-		}\
-	}\
+  "type": "minecraft:notice",\
+  "title": [\
+    "",\
+    {\
+      "bold": true,\
+      "color": "blue",\
+      "text": "Rocket"\
+    },\
+    " ",\
+    {\
+      "bold": true,\
+      "color": "gold",\
+      "text": "Riders"\
+    }\
+  ],\
+  "inputs": [\
+    {\
+      "type": "minecraft:single_option",\
+      "key": "tips",\
+      "label": "Show Tips",\
+      "options": [\
+        {\
+          "id": "0",\
+          "display": {\
+            "translate": "options.off"\
+          }\
+        },\
+        {\
+          "id": "1",\
+          "display": {\
+            "translate": "options.on"\
+          }\
+        }\
+      ]\
+    },\
+    {\
+      "type": "minecraft:single_option",\
+      "key": "parkour_instructions",\
+      "label": "Show Parkour Instructions",\
+      "options": [\
+        {\
+          "id": "0",\
+          "display": {\
+            "translate": "options.off"\
+          }\
+        },\
+        {\
+          "id": "1",\
+          "display": {\
+            "translate": "options.on"\
+          }\
+        }\
+      ]\
+    },\
+    {\
+      "type": "minecraft:single_option",\
+      "key": "particles",\
+      "label": "Particles",\
+      "options": [\
+        {\
+          "id": "0",\
+          "display": {\
+            "translate": "options.off"\
+          }\
+        },\
+        {\
+          "id": "1",\
+          "display": {\
+            "translate": "options.on"\
+          }\
+        }\
+      ]\
+    },\
+    {\
+      "type": "minecraft:single_option",\
+      "key": "do_hotbar_auto_fill",\
+      "label": "Auto-Fill Hotbar",\
+      "options": [\
+        {\
+          "id": "0",\
+          "display": {\
+            "translate": "options.off"\
+          }\
+        },\
+        {\
+          "id": "1",\
+          "display": {\
+            "translate": "options.on"\
+          }\
+        }\
+      ]\
+    },\
+    {\
+      "type": "minecraft:single_option",\
+      "key": "default_spell",\
+      "label": "Default Spell Book",\
+      "options": [\
+        {\
+          "id": "0",\
+          "display": "Fire"\
+        },\
+        {\
+          "id": "1",\
+          "display": "Health"\
+        },\
+        {\
+          "id": "2",\
+          "display": "Damage"\
+        },\
+        {\
+          "id": "3",\
+          "display": "Wind"\
+        }\
+      ]\
+    },\
+    {\
+      "type": "minecraft:single_option",\
+      "key": "crusade_kit",\
+      "label": "Starting Crusade Kit",\
+      "options": [\
+        {\
+          "id": "0",\
+          "display": "Random"\
+        },\
+        {\
+          "id": "1",\
+          "display": "Knight"\
+        },\
+        {\
+          "id": "2",\
+          "display": "Archer"\
+        },\
+        {\
+          "id": "3",\
+          "display": "Mage"\
+        }\
+      ]\
+    }\
+  ],\
+  "action": {\
+    "label": "Done",\
+    "action": {\
+      "type": "minecraft:dynamic/run_command",\
+         "template": "trigger options set 1000$(crusade_kit)$(default_spell)$(do_hotbar_auto_fill)$(particles)$(parkour_instructions)$(tips)"\
+    }\
+  }\
 }
 
 # Set current values

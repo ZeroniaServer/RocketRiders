@@ -1,7 +1,34 @@
 {
   "type": "minecraft:multi_action",
-  "title": "Rocket Riders",
-  "external_title": "Rocket Riders...",
+  "title": [
+    "",
+    {
+      "bold": true,
+      "color": "blue",
+      "text": "Rocket"
+    },
+    " ",
+    {
+      "bold": true,
+      "color": "gold",
+      "text": "Riders"
+    }
+  ],
+  "external_title": [
+    "",
+    {
+      "bold": true,
+      "color": "blue",
+      "text": "Rocket"
+    },
+    " ",
+    {
+      "bold": true,
+      "color": "gold",
+      "text": "Riders"
+    },
+    "..."
+  ],
   "pause": false,
   "actions": [
     {

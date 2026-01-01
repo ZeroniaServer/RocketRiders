@@ -106,6 +106,7 @@ scoreboard objectives add start_as_crusade_kit dummy
 scoreboard objectives add was_on_arena_team dummy
 
 scoreboard objectives add change_default_spell trigger
+scoreboard objectives add change_crusade_kit trigger
 
 scoreboard objectives add shooting_saber.infinity_time dummy
 scoreboard objectives add shooting_saber.multishot_time dummy

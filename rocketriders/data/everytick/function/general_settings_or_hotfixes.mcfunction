@@ -66,6 +66,26 @@ tellraw @a[x=0,scores={change_default_spell=..-5}] {color:"red",text:"That is no
 scoreboard players reset @a change_default_spell
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run scoreboard players enable @a[x=0] change_default_spell
 
+# change_crusade_kit trigger
+dialog show @a[x=0,scores={change_crusade_kit=1..}] {type:"minecraft:multi_action",title:"Starting Crusade Kit",exit_action:{label:{translate:"gui.cancel"}},columns:3,actions:[\
+  {label:{bold:true,color:"dark_green",text:"Knight"},tooltip:["",{color:"dark_aqua",text:"Main Weapon: "},{color:"aqua",text:"Sword & Shield"},[{color:"dark_purple",text:"\nUtilities:\n- "},{color:"light_purple",text:"Shield"},"\n- ",{color:"light_purple",text:"Obsidian Shield"},"\n- ",{color:"light_purple",text:"ICBM"}],[{color:"dark_green",text:"\nNormal Missiles:\n- "},{color:"green",text:"Blade"},"\n- ",{color:"green",text:"Gemini"}],[{color:"dark_red",text:"\nHeavy Missiles:\n- "},{color:"red",text:"Auxiliary"},"\n- ",{color:"red",text:"Warhead"},"\n- ",{color:"red",text:"Juggerbuster"}]],action:{type:"minecraft:run_command",command:"trigger change_crusade_kit set -1"}},\
+  {label:{bold:true,color:"red",text:"Archer"},tooltip:["",{color:"dark_aqua",text:"Main Weapon: "},{color:"aqua",text:"Shooting Saber"},[{color:"dark_purple",text:"\nUtilities:\n- "},{color:"light_purple",text:"Arrows"},"\n- ",{color:"light_purple",text:"Canopy"},"\n- ",{color:"light_purple",text:"Splash"}],[{color:"dark_green",text:"\nNormal Missiles:\n- "},{color:"green",text:"Citadel"},"\n- ",{color:"green",text:"Slasher"}],[{color:"gold",text:"\nLightning Missiles:\n- "},{color:"yellow",text:"Thunderbolt"},"\n- ",{color:"yellow",text:"Hurricane"}],[{color:"dark_purple",text:"\nSpecial Missiles:\n- "},{color:"dark_purple",text:"Broadsword"}]],action:{type:"minecraft:run_command",command:"trigger change_crusade_kit set -2"}},\
+  {label:{bold:true,color:"dark_purple",text:"Mage"},tooltip:["",{color:"dark_aqua",text:"Main Weapon: "},{color:"aqua",text:"Spell Wand"},[{color:"dark_purple",text:"\nUtilities:\n- "},{color:"light_purple",text:"Spell Book"},"\n- ",{color:"light_purple",text:"Nova Rocket"},"\n- ",{color:"light_purple",text:"Vortex"}],[{color:"dark_green",text:"\nNormal Missiles:\n- "},{color:"green",text:"A.N.T."},"\n- ",{color:"green",text:"TomaTwo"},"\n- ",{color:"green",text:"Catapult"},"\n- ",{color:"green",text:"Lifter"},"\n- ",{color:"green",text:"Chronullifier"}]],action:{type:"minecraft:run_command",command:"trigger change_crusade_kit set -3"}},\
+  {label:"Random",action:{type:"minecraft:run_command",command:"trigger change_crusade_kit set -4"},width:454}\
+]}
+tellraw @a[x=0,scores={change_crusade_kit=-1}] {color:"green",text:"You will now start as a Knight in Crusade mode."}
+scoreboard players set @a[x=0,scores={change_crusade_kit=-1}] start_as_crusade_kit 1
+tellraw @a[x=0,scores={change_crusade_kit=-2}] {color:"green",text:"You will now start as an Archer in Crusade mode."}
+scoreboard players set @a[x=0,scores={change_crusade_kit=-2}] start_as_crusade_kit 2
+tellraw @a[x=0,scores={change_crusade_kit=-3}] {color:"green",text:"You will now start as a Mage in Crusade mode."}
+scoreboard players set @a[x=0,scores={change_crusade_kit=-3}] start_as_crusade_kit 3
+tellraw @a[x=0,scores={change_crusade_kit=-4}] {color:"green",text:"You will now start as a Random Kit in Crusade mode."}
+scoreboard players reset @a[x=0,scores={change_crusade_kit=-4}] start_as_crusade_kit
+execute as @a[x=0,scores={change_crusade_kit=-4..-1}] run function custom:player_action/playerdata/save
+tellraw @a[x=0,scores={change_crusade_kit=..-5}] {color:"red",text:"That is not a valid option"}
+scoreboard players reset @a change_crusade_kit
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run scoreboard players enable @a[x=0] change_crusade_kit
+
 # Fix for players joining with legacy canopyTP tag
 execute as @a[x=0,tag=canopyTP] run attribute @s minecraft:safe_fall_distance base reset
 execute as @a[x=0,tag=canopyTP] run attribute @s minecraft:jump_strength base reset

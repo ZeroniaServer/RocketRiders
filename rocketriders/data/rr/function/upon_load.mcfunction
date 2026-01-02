@@ -110,6 +110,7 @@ scoreboard objectives add change_crusade_kit trigger
 
 scoreboard objectives add shooting_saber.infinity_time dummy
 scoreboard objectives add shooting_saber.multishot_time dummy
+scoreboard objectives add elytra_time dummy
 
 scoreboard objectives add primary_damage_origin_uuid.0 dummy
 scoreboard objectives add primary_damage_origin_uuid.1 dummy

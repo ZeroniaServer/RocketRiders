@@ -1,4 +1,4 @@
-# dialog_name, normal_trigger_input_id, permanent_trigger_input_id, color, include_in_full_list
+# dialog_name, normal_trigger_input_id, unbreakable_trigger_input_id, deactivate_trigger_input, color, include_in_full_list
 
 $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body append value \
 {\
@@ -20,7 +20,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           "color": "white"\
         },\
         {\
-          "text": "[ɴᴏʀᴍᴀʟ]",\
+          "text": "[Normal]",\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
@@ -35,7 +35,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
         },\
         " ",\
         {\
-          "text": "[ᴜɴʙʀᴇᴀᴋᴀʙʟᴇ]",\
+          "text": "[On]",\
           "hover_event": {\
             "action": "show_text",\
             "value": {\
@@ -45,7 +45,22 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(permanent_trigger_input_id)01"\
+            "command": "/trigger nomicon set $(unbreakable_trigger_input_id)01"\
+          }\
+        },\
+        " ",\
+        {\
+          "text": "[Off]",\
+          "hover_event": {\
+            "action": "show_text",\
+            "value": {\
+                "text": "Click to deactivate Elytra",\
+                "color": "white"\
+              }\
+          },\
+          "click_event": {\
+            "action": "run_command",\
+            "command": "/trigger nomicon set $(deactivate_trigger_input_id)01"\
           }\
         }\
     ],\

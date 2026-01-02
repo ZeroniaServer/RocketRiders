@@ -34,8 +34,9 @@ execute as @a[x=0,scores={LeaveGame=1..},predicate=custom:is_on_fire] at @s run 
 execute as @a[x=0,scores={LeaveGame=1..,LeaveMidgame=1}] at @s run playsound entity.enderman.teleport master @s ~ ~ ~ 1 1
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] flag.is_nova_attached
-tag @a[x=0,scores={LeaveGame=1..}] remove wearing_elytra
-tag @a[x=0,scores={LeaveGame=1..}] remove elytra.unbreakable
+scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/infinity] shooting_saber.infinity_time
+scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/multishot] shooting_saber.multishot_time
+scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:elytra/elytra] elytra_time
 
 #Parkour quit
 execute if predicate rr:has_parkour as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]
@@ -50,10 +51,6 @@ execute unless predicate rr:has_achievements if predicate rr:is_cubekrowd as @a[
 tag @a[x=0,scores={LeaveGame=1..}] remove beenOnYellow
 tag @a[x=0,scores={LeaveGame=1..}] remove beenOnBlue
 tag @a[x=0,scores={LeaveGame=1..}] remove beenOnBoth
-
-#Infinity/Multishot fix
-scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/infinity] shooting_saber.infinity_time
-scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/multishot] shooting_saber.multishot_time
 
 #Voting message if in voting phase
 execute if entity @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[x=0,scores={LeaveGame=1..}] run function servermode:notifyvote

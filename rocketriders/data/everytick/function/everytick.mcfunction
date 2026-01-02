@@ -48,7 +48,10 @@ scoreboard players remove @a[x=0,scores={shooting_saber.infinity_time=1..2147483
 execute as @a[x=0,scores={shooting_saber.infinity_time=..0}] run function items:shooting_saber/infinity_deactivate
 scoreboard players remove @a[x=0,scores={shooting_saber.multishot_time=1..2147483646}] shooting_saber.multishot_time 1
 execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items:shooting_saber/multishot_deactivate
-function everytick:elytra
+scoreboard players remove @a[x=0,scores={elytra_time=1..2147483646}] elytra_time 1
+execute as @a[x=0,scores={elytra_time=..0}] run function items:elytra/elytra_deactivate
+execute as @a[x=0,predicate=items:elytra/elytra,predicate=custom:team/any_playing_team,gamemode=!spectator,predicate=items:deactivate_elytra] run function items:elytra/deactivate
+
 
 # Thrown items
 execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init

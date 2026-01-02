@@ -30,7 +30,6 @@ execute if entity @s[scores={endtimer=1..2}] unless predicate game:gamemode_comp
 execute if entity @s[scores={endtimer=1..2}] unless predicate game:gamemode_components/custom_match_over_teleport_locations run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
 execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
-execute if entity @s[scores={endtimer=1}] run tag @a[x=0] remove elytra.unbreakable
 
 #Fireballs can't be punched (credit: Miolith)
 execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,predicate=!custom:is_moving] at @s run function game:endfireball
@@ -52,6 +51,9 @@ execute unless predicate game:game_rules/disable_tying/on if predicate game:port
 ##Post-tie phase and reset
 execute if entity @s[scores={endtimer=101}] run scoreboard players set $game_duration global 0
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function everytick:score_reset
+execute if entity @s[scores={endtimer=102}] run scoreboard players reset @a[x=0] shooting_saber.infinity_time
+execute if entity @s[scores={endtimer=102}] run scoreboard players reset @a[x=0] shooting_saber.multishot_time
+execute if entity @s[scores={endtimer=102}] run scoreboard players reset @a[x=0] elytra_time
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function custom:player_action/forget_all_canopies
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,predicate=custom:team/any_playing_team]
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] GamesPlayed 1

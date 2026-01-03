@@ -66,11 +66,44 @@
               }
             },
             {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:attribute_modifiers": []
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:phase/match/over"
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "nbt": "{Tags:['Loser']}"
+                  }
+                }
+              ]
+            },
+            {
               "function": "minecraft:set_custom_data",
               "tag": {
                 "main_item": true
               },
               "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/main_item/crusade_kit_dependent"
@@ -127,6 +160,13 @@
               "function": "minecraft:reference",
               "name": "items:knight_sword/set_custom_team_color",
               "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/custom_team_colors"

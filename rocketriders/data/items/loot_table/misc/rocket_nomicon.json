@@ -55,6 +55,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/main_item/rocket_nomicon"
                 }
@@ -66,6 +73,13 @@
                 "nomicon": {}
               },
               "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/play"
@@ -117,6 +131,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "game:phase/staging"
                 }
@@ -161,6 +182,13 @@
                 }
               },
               "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/over"

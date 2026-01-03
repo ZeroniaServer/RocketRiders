@@ -77,6 +77,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/main_item/piercing_pickaxe"
                 }
@@ -107,6 +114,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/over"
                 }
@@ -115,20 +129,16 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:attribute_modifiers": [
-                  {
-                    "operation": "add_value",
-                    "amount": -2.2,
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_speed",
-                    "id": "rocketriders:piercing_pickaxe",
-                    "display": {
-                      "type": "hidden"
-                    }
-                  }
-                ]
+                "minecraft:attribute_modifiers": []
               },
               "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/over"
@@ -192,6 +202,13 @@
               "function": "minecraft:reference",
               "name": "items:piercing_pickaxe/set_custom_team_color",
               "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/custom_team_colors"

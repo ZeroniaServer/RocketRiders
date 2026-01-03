@@ -72,6 +72,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/main_item/crusade_kit_dependent"
                 }
@@ -80,38 +87,49 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:attribute_modifiers": [],
+                "minecraft:attribute_modifiers": []
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:phase/match/over"
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "nbt": "{Tags:['Loser']}"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
                 "!minecraft:consumable": {},
                 "!minecraft:use_cooldown": {}
               },
               "conditions": [
                 {
-                  "condition": "minecraft:any_of",
-                  "terms": [
-                    {
-                      "condition": "minecraft:inverted",
-                      "term": {
-                        "condition": "minecraft:reference",
-                        "name": "game:phase/match/play"
-                      }
-                    },
-                    {
-                      "condition": "minecraft:all_of",
-                      "terms": [
-                        {
-                          "condition": "minecraft:reference",
-                          "name": "game:phase/match/over"
-                        },
-                        {
-                          "condition": "minecraft:entity_properties",
-                          "entity": "this",
-                          "predicate": {
-                            "nbt": "{Tags:['Loser']}"
-                          }
-                        }
-                      ]
-                    }
-                  ]
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:phase/match/play"
+                  }
                 }
               ]
             },
@@ -167,6 +185,13 @@
               "function": "minecraft:reference",
               "name": "items:spell_wand/set_custom_team_color",
               "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/custom_team_colors"

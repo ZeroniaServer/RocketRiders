@@ -66,6 +66,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
                   "condition": "minecraft:any_of",
                   "terms": [
                     {
@@ -95,6 +102,13 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/decreased_shooting_saber_attack_damage"
                 }
@@ -106,6 +120,13 @@
                 "minecraft:attribute_modifiers": []
               },
               "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/over"
@@ -169,6 +190,13 @@
               "function": "minecraft:reference",
               "name": "items:shooting_saber/set_custom_team_color",
               "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
                 {
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/custom_team_colors"

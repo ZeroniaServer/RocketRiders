@@ -64,11 +64,15 @@
               "mode": "append",
               "conditions": [
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/decreased_icbm_flight_duration"
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
                   }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/decreased_icbm_flight_duration"
                 }
               ]
             },
@@ -85,8 +89,26 @@
               "mode": "append",
               "conditions": [
                 {
-                  "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/decreased_icbm_flight_duration"
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:inverted",
+                      "term": {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                          "type": "minecraft:player"
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:inverted",
+                      "term": {
+                        "condition": "minecraft:reference",
+                        "name": "game:gamemode_components/decreased_icbm_flight_duration"
+                      }
+                    }
+                  ]
                 }
               ]
             },

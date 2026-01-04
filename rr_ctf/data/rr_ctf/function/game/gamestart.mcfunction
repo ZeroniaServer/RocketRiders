@@ -24,4 +24,4 @@ execute unless predicate game:phase/match/play run scoreboard players reset @a[x
 execute unless predicate game:phase/match run scoreboard players reset @a[x=0] FlagsCaptured
 execute if score @s count matches 600 run summon marker 38 63 -66 {Tags:["airDetectBlue"]}
 execute if score @s count matches 600 run summon marker 38 63 66 {Tags:["airDetectYellow"]}
-execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set $match_in_play global 1
+execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start

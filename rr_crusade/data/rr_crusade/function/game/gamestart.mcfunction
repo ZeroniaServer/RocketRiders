@@ -21,6 +21,6 @@ execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedS
 #Hotfix for being able to cast spells in queue
 execute if score @s count matches 600 run summon marker 33 63 -66 {Tags:["airDetectBlue"]}
 execute if score @s count matches 600 run summon marker 33 63 66 {Tags:["airDetectYellow"]}
-execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set $match_in_play global 1
+execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start
 #Hotfix for spell wands from the lobby not being usable
 execute if score @s count matches 600 as @a[x=0,predicate=rr_crusade:kit/mage] run function custom:update_inventory/spell_wand

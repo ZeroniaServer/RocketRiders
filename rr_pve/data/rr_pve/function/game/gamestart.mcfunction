@@ -33,4 +33,4 @@ execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] 
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] run function game:restartcountdown
 execute if entity @s[tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/blue] run kill @e[x=0,type=armor_stand,tag=Bot]
 execute unless predicate game:phase/match/over if entity @s[scores={count=590..600}] run kill @e[x=0,type=armor_stand,tag=Bot]
-execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set $match_in_play global 1
+execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start

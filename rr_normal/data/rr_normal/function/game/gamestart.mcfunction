@@ -14,4 +14,4 @@ execute unless predicate rr:wait_for_sufficient_players unless predicate game:ph
 execute unless predicate rr:wait_for_sufficient_players unless predicate game:phase/match/play if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
 
-execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set $match_in_play global 1
+execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start

@@ -33,7 +33,7 @@ execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSetti
 execute unless predicate rr:wait_for_sufficient_players unless predicate game:phase/match/play if entity @s[tag=EditedSettings] if score $blue_team_count global matches 1.. run tag @s add Countdown
 execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] if score $blue_team_count global matches 0 run function game:restartcountdown
 
-execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set $match_in_play global 1
+execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start
 execute unless predicate game:phase/match/over if score @s count matches 600 run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute unless predicate game:phase/match/over if score @s count matches 600 run tag @a[x=0,predicate=custom:team/blue] add onBlue
 execute if score @s count matches 600 run summon marker 38 63 -66 {Tags:["airDetect"]}

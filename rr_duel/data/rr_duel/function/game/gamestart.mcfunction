@@ -35,7 +35,7 @@ execute if score @s count matches 600 run bossbar set rr:startgame name ["",{"te
 execute if score @s count matches 600 run bossbar set rr:startgame color red
 execute if score @s count matches 600 run scoreboard players set @s Rounds 1
 execute if score @s count matches 600 run tellraw @a[x=0,predicate=!custom:team/lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
-execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set $match_in_play global 1
+execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start
 execute if score $game_duration global matches 2 as @a[x=0,predicate=custom:team/yellow] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
 execute if score $game_duration global matches 2 as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
 execute if score @s count matches 600 run function rr_duel:forced_settings

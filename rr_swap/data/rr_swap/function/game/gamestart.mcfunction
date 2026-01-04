@@ -19,4 +19,4 @@ execute unless predicate game:phase/match/over if score @s count matches 600 run
 execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set SwapPlatformSec swapside 60
 execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set SwapPlatformTick swapside 0
 execute unless predicate game:phase/match/over if score @s count matches 600 run function rr_swap:items/tetrisreset
-execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set $match_in_play global 1
+execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start

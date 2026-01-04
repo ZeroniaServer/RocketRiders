@@ -19,4 +19,4 @@ scoreboard players set @s[scores={count=1..}] PowerupDisplay 45
 execute if entity @s[scores={count=1..}] run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] captureYellow 0
 execute if entity @s[scores={count=1..}] run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] captureBlue 0
 execute if entity @s[scores={count=1..}] run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] capturePoint 0
-execute unless predicate game:phase/match/over if score @s count matches 600 run scoreboard players set $match_in_play global 1
+execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start

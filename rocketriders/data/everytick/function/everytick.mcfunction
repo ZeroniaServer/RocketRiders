@@ -28,7 +28,7 @@ execute if score $players_have_left var matches 1 in minecraft:overworld positio
 execute as @e[x=25,y=184,z=-6,dx=0,dy=0,dz=0,type=area_effect_cloud,tag=player_monitoring] run function everytick:player_monitoring/check
 execute as @a[x=0,predicate=custom:just_joined_world] at @s run function custom:event/player_joins_overworld/main
 
-execute as @a[x=0,scores={time_since_joined_overworld=1}] at @s run function everytick:welcome_titles
+execute as @a[x=0,scores={time_since_joined_overworld=1},predicate=custom:team/lobby] at @s run function everytick:welcome_titles
 
 function everytick:team_count
 

@@ -8,13 +8,6 @@ execute if predicate game:phase/match/paused store result bossbar rr_duel:resett
 execute if predicate game:phase/match/paused run bossbar set rr_duel:resetting_arena players @a[x=0,predicate=!custom:team/lobby]
 execute unless predicate game:phase/match/paused run bossbar remove rr_duel:resetting_arena
 
-#tracking players and locking join pads
-tag @a[x=0,predicate=custom:team/blue] add InRanked
-tag @a[x=0,predicate=custom:team/yellow] add InRanked
-
-function game:cancelyellow
-function game:cancelblue
-
 #Item RNG
 execute unless predicate game:phase/match/paused run scoreboard players add @s RandomItem 1
 execute unless predicate game:phase/match/paused unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function items:giverandom
@@ -38,16 +31,13 @@ scoreboard players add Yellow: RoundsWon 0
 
 ##forfeit
 #initial condition - use tag NOFORFEITS to disable forfeits
-execute unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run scoreboard players set $1v1_duel_time_out_period global 1
-execute unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[x=0,predicate=custom:team/yellow] if entity @a[x=0,predicate=custom:team/blue] run scoreboard players set $1v1_duel_time_out_period global 1
+execute unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. if entity @a[limit=1,x=0,predicate=custom:team/yellow] unless entity @a[limit=1,x=0,predicate=custom:team/blue] run scoreboard players set $1v1_duel_time_out_period global 1
+execute unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[limit=1,x=0,predicate=custom:team/yellow] if entity @a[limit=1,x=0,predicate=custom:team/blue] run scoreboard players set $1v1_duel_time_out_period global 1
 execute if predicate rr_duel:time_out_period if predicate rr:is_cubekrowd run tellraw @a[x=0] ["",{bold:true,color:"dark_red",text:"[FORFEIT] "},{color:"red",text:"Someone left the 1v1 Duel match, so it has ended."}]
 execute if predicate rr_duel:time_out_period if predicate rr:is_cubekrowd run scoreboard players set @s ForfeitTimeout 1200
 
 #adds original player back (non-servermode)
-execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInBlue,predicate=custom:team/lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,predicate=custom:team/blue] run tellraw @s {color:"red",italic:true,text:"You were added back to Blue to finish the 1v1 Duel match."}
-execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInBlue,predicate=custom:team/lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,predicate=custom:team/blue] run function game:joinblue
-execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInYellow,predicate=custom:team/lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,predicate=custom:team/yellow] run tellraw @s {color:"red",italic:true,text:"You were added back to Yellow to finish the 1v1 Duel match."}
-execute unless predicate rr:is_cubekrowd as @a[x=0,tag=InRanked,tag=WasInYellow,predicate=custom:team/lobby,tag=!Forfeiter,limit=1] unless entity @a[x=0,predicate=custom:team/yellow] run function game:joinyellow
+execute unless predicate rr:is_cubekrowd as @e[limit=2,x=-0.5,y=-0.5,z=-0.5,dx=0,dy=0,dz=0,type=area_effect_cloud,tag=1v1_duel_player_tracker] run function rr_duel:game/player_tracking/check
 
 #timeout
 execute if predicate rr_duel:time_out_period run scoreboard players add @s ForfeitTimeout 1
@@ -63,10 +53,10 @@ execute if predicate rr_duel:time_out_period if entity @a[x=0,predicate=custom:t
 execute unless predicate rr_duel:time_out_period run scoreboard players reset @s ForfeitTimeout
 
 #force win
-execute unless predicate game:phase/match/over if score @s ForfeitTimeout matches 1200.. if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run scoreboard players set Blue: RoundsWon 2
-execute unless predicate game:phase/match/over if score @s ForfeitTimeout matches 1200.. if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run function rr_duel:game/winblue
-execute unless predicate game:phase/match/over if score @s ForfeitTimeout matches 1200.. unless entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run scoreboard players set Yellow: RoundsWon 2
-execute unless predicate game:phase/match/over if score @s ForfeitTimeout matches 1200.. unless entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run function rr_duel:game/winyellow
+execute unless predicate game:phase/match/over if score @s ForfeitTimeout matches 1200.. if entity @a[limit=1,x=0,predicate=custom:team/blue] unless entity @a[limit=1,x=0,predicate=custom:team/yellow] run scoreboard players set Blue: RoundsWon 2
+execute unless predicate game:phase/match/over if score @s ForfeitTimeout matches 1200.. if entity @a[limit=1,x=0,predicate=custom:team/blue] unless entity @a[limit=1,x=0,predicate=custom:team/yellow] run function rr_duel:game/winblue
+execute unless predicate game:phase/match/over if score @s ForfeitTimeout matches 1200.. if entity @a[limit=1,x=0,predicate=custom:team/yellow] unless entity @a[limit=1,x=0,predicate=custom:team/blue] run scoreboard players set Yellow: RoundsWon 2
+execute unless predicate game:phase/match/over if score @s ForfeitTimeout matches 1200.. if entity @a[limit=1,x=0,predicate=custom:team/yellow] unless entity @a[limit=1,x=0,predicate=custom:team/blue] run function rr_duel:game/winyellow
 
 ##double forfeit
-execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run function game:forcestop
+execute unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[limit=1,x=0,predicate=custom:team/any_playing_team] run function game:forcestop

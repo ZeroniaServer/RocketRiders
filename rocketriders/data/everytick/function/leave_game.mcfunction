@@ -6,6 +6,10 @@ tag @a[x=0,predicate=custom:team/yellow] add WasInYellow
 tag @a[x=0,predicate=custom:team/blue] add WasInBlue
 scoreboard players add @a[x=0] LeaveGame 0
 
+# Tag 1v1 Duel Forfeiters
+tag @a[x=0] remove leave_game.forfeiter
+execute if predicate game:phase/match/play if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] run tag @a[x=0,scores={LeaveGame=1..},predicate=custom:team/any_playing_team] add leave_game.forfeiter
+
 #Clearing effects/tags and teleporting to lobby
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFlag] remove CarryFlag
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY1] remove CarryFY1
@@ -31,7 +35,7 @@ tp @a[x=0,scores={LeaveGame=1..},tag=!WasInYellow,tag=!WasInBlue] -43 211 78 90 
 tp @a[x=0,scores={LeaveGame=1..},tag=WasInYellow] -36 211 96.0 90 0
 tp @a[x=0,scores={LeaveGame=1..},tag=WasInBlue] -36 211 61.0 90 0
 execute as @a[x=0,scores={LeaveGame=1..},predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @a[x=0,scores={LeaveGame=1..,LeaveMidgame=1}] at @s run playsound entity.enderman.teleport master @s ~ ~ ~ 1 1
+execute as @a[x=0,scores={LeaveGame=1..,LeaveMidgame=1..}] at @s run playsound entity.enderman.teleport master @s ~ ~ ~ 1 1
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] flag.is_nova_attached
 scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/infinity] shooting_saber.infinity_time
@@ -74,3 +78,7 @@ scoreboard players set @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidg
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteNum
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteServerMode
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] LeaveGame
+
+# 1v1 Duel Forfeit
+execute if entity @a[limit=1,x=0,tag=leave_game.forfeiter] as @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] run function rr_duel:game/upon_forfeit
+tag @a[x=0] remove leave_game.forfeiter

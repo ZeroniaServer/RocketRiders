@@ -21,3 +21,4 @@ execute unless score $WorldVersion CmdData matches 1303.. run function world_upd
 execute unless score $WorldVersion CmdData matches 1304.. run function world_updates:1_3_0/update
 execute unless score $WorldVersion CmdData matches 1305.. run function world_updates:1_3_0-pre7/update
 execute unless score $WorldVersion CmdData matches 1306.. run function world_updates:1_3_0-pre9/update
+execute unless score $WorldVersion CmdData matches 1307.. run function world_updates:1_3_0-pre10/update

@@ -178,11 +178,6 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled]
 ##
 execute unless entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run function rr_sandbox:install
 
-scoreboard objectives add toggleParticles trigger
-scoreboard objectives add toggleTips trigger
-scoreboard objectives add toggleParkourTips trigger
-scoreboard objectives add toggleHotbarAutoFill trigger
-
 # Remove unused objectives
 scoreboard objectives remove servermode
 scoreboard objectives remove disableTips
@@ -276,10 +271,6 @@ scoreboard players reset * LeaveMidgame
 scoreboard players reset * VoteServerMode
 scoreboard players reset * leaveSpec
 scoreboard players reset * displayinfo
-scoreboard players reset * toggleTips
-scoreboard players reset * toggleParticles
-scoreboard players reset * toggleParkourTips
-scoreboard players reset * toggleHotbarAutoFill
 
 scoreboard objectives remove MaxItemSec
 scoreboard objectives add set_item_delay trigger

@@ -455,7 +455,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger toggleTips set 1"
+                      "command": "/trigger toggle_ingame_tips set 1"
                     },
                     "color": "dark_gray",
                     "hover_event": {
@@ -479,7 +479,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger toggleParticles set 1"
+                      "command": "/trigger toggle_particles set 1"
                     },
                     "color": "dark_gray",
                     "hover_event": {
@@ -499,7 +499,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger toggleHotbarAutoFill set 1"
+                      "command": "/trigger toggle_auto_fill_hotbar set 1"
                     },
                     "color": "dark_gray",
                     "hover_event": {

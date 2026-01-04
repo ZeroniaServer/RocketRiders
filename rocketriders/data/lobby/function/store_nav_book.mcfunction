@@ -9,7 +9,7 @@ execute if predicate rr:has_modification_room run data modify storage rocketride
 
 # parkour instructions
 data modify storage rocketriders:navbook parkourtips set value ""
-execute if predicate rr:has_parkour run data modify storage rocketriders:navbook parkourtips set value ["\n\n",{bold:true,text:"\N{ZERO WIDTH NON-JOINER}"},[{text:"[Parkour",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to toggle Parkour instructions.",italic:true}},click_event:{action:"run_command",command:"/trigger toggleParkourTips set 1"}},{bold:true,text:"\N{ZERO WIDTH NON-JOINER}\N{ZERO WIDTH NON-JOINER}"},"Instructions]"]]
+execute if predicate rr:has_parkour run data modify storage rocketriders:navbook parkourtips set value ["\n\n",{bold:true,text:"\N{ZERO WIDTH NON-JOINER}"},[{text:"[Parkour",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to toggle Parkour instructions.",italic:true}},click_event:{action:"run_command",command:"/trigger toggle_parkour_instructions set 1"}},{bold:true,text:"\N{ZERO WIDTH NON-JOINER}\N{ZERO WIDTH NON-JOINER}"},"Instructions]"]]
 
 # default spell and crusade kit settings
 data modify storage rocketriders:navbook crusade_mode_settings set value ""

@@ -105,9 +105,6 @@ scoreboard objectives add default_spell dummy
 scoreboard objectives add start_as_crusade_kit dummy
 scoreboard objectives add was_on_arena_team dummy
 
-scoreboard objectives add change_default_spell trigger
-scoreboard objectives add change_crusade_kit trigger
-
 scoreboard objectives add shooting_saber.infinity_time dummy
 scoreboard objectives add shooting_saber.multishot_time dummy
 scoreboard objectives add elytra_time dummy
@@ -123,6 +120,19 @@ scoreboard objectives add secondary_damage_origin_uuid.3 dummy
 scoreboard objectives add time_since_damage custom:play_time
 scoreboard objectives add time_since_attack custom:play_time
 
+scoreboard objectives add set_item_delay trigger
+scoreboard objectives add set_time_of_day trigger
+scoreboard objectives add editSettings trigger
+scoreboard objectives add LeaveMidgame trigger
+scoreboard objectives add leaveSpec trigger
+scoreboard objectives add LobbyWarp trigger
+scoreboard objectives add change_default_spell trigger
+scoreboard objectives add change_crusade_kit trigger
+scoreboard objectives add toggle_auto_fill_hotbar trigger
+scoreboard objectives add toggle_particles trigger
+scoreboard objectives add toggle_parkour_instructions trigger
+scoreboard objectives add toggle_ingame_tips trigger
+
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
 scoreboard objectives add z dummy
@@ -134,7 +144,6 @@ scoreboard objectives add playerUUID dummy
 scoreboard objectives add PlatTime dummy
 scoreboard objectives add ClearArena dummy
 scoreboard objectives add GamesPlayed dummy
-scoreboard objectives add LeaveMidgame trigger
 scoreboard objectives add FallDistance dummy
 scoreboard objectives add deaths deathCount
 scoreboard objectives add deathCooldown dummy
@@ -154,13 +163,9 @@ scoreboard objectives add chkpntCooldown dummy
 scoreboard objectives add regifts dummy
 scoreboard objectives add gravShot dummy
 scoreboard objectives add MaxItemTime dummy
-scoreboard objectives add set_item_delay trigger
 scoreboard objectives add RandomItem dummy
 scoreboard objectives add UKTimer dummy
-scoreboard objectives add set_time_of_day trigger
-scoreboard objectives add leaveSpec trigger
 scoreboard objectives add LeaveGame minecraft.custom:minecraft.leave_game
-scoreboard objectives add LobbyWarp trigger
 scoreboard objectives add informMeLate dummy
 scoreboard objectives add ThrowPlat minecraft.used:ender_pearl
 scoreboard objectives add ThrowSplash minecraft.used:minecraft.lingering_potion
@@ -279,7 +284,6 @@ scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevFellVoid dummy
 scoreboard objectives add prevKills dummy
 scoreboard objectives remove cancelMatch
-scoreboard objectives add editSettings trigger
 scoreboard players add $curr leavecheck 0
 
 # Fix join pad sprite depending on version

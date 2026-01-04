@@ -18,38 +18,38 @@ execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=m
 execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
 
 #Toggle particles
-scoreboard players enable @a[x=0] toggleParticles
-tellraw @a[x=0,scores={toggleParticles=1..},tag=!hideParticles] [{"text":"Disabled particles from Rocket Riders gameplay elements.","color":"red"}]
-tellraw @a[x=0,scores={toggleParticles=1..},tag=hideParticles] [{"text":"Enabled particles from Rocket Riders gameplay elements.","color":"green"}]
-tag @a[x=0,scores={toggleParticles=1..},tag=hideParticles] add hidParticles
-tag @a[x=0,scores={toggleParticles=1..},tag=hideParticles] remove hideParticles
-tag @a[x=0,scores={toggleParticles=1..},tag=!hideParticles,tag=!hidParticles] add hideParticles
-tag @a[x=0,scores={toggleParticles=1..},tag=hidParticles] remove hidParticles
-execute as @a[x=0,scores={toggleParticles=1..}] run function custom:player_action/playerdata/save
-scoreboard players set @a[x=0] toggleParticles 0
+scoreboard players enable @a[x=0] toggle_particles
+tellraw @a[x=0,scores={toggle_particles=1..},tag=!hideParticles] [{"text":"Disabled particles from Rocket Riders gameplay elements.","color":"red"}]
+tellraw @a[x=0,scores={toggle_particles=1..},tag=hideParticles] [{"text":"Enabled particles from Rocket Riders gameplay elements.","color":"green"}]
+tag @a[x=0,scores={toggle_particles=1..},tag=hideParticles] add hidParticles
+tag @a[x=0,scores={toggle_particles=1..},tag=hideParticles] remove hideParticles
+tag @a[x=0,scores={toggle_particles=1..},tag=!hideParticles,tag=!hidParticles] add hideParticles
+tag @a[x=0,scores={toggle_particles=1..},tag=hidParticles] remove hidParticles
+execute as @a[x=0,scores={toggle_particles=1..}] run function custom:player_action/playerdata/save
+scoreboard players set @a[x=0] toggle_particles 0
 
 #Toggle hotbar auto-fill
-scoreboard players enable @a[x=0] toggleHotbarAutoFill
-tag @a[x=0,scores={toggleHotbarAutoFill=1..},tag=do_hotbar_auto_fill] add disabled_do_hotbar_auto_fill
-tag @a[x=0,scores={toggleHotbarAutoFill=1..},tag=do_hotbar_auto_fill] remove do_hotbar_auto_fill
-tag @a[x=0,scores={toggleHotbarAutoFill=1..},tag=!do_hotbar_auto_fill,tag=!disabled_do_hotbar_auto_fill] add do_hotbar_auto_fill
-tag @a[x=0,scores={toggleHotbarAutoFill=1..},tag=disabled_do_hotbar_auto_fill] remove disabled_do_hotbar_auto_fill
-tellraw @a[x=0,scores={toggleHotbarAutoFill=1..},tag=!do_hotbar_auto_fill] [{"text":"Disabled automatic hotbar filling.","color":"red"}]
-tellraw @a[x=0,scores={toggleHotbarAutoFill=1..},tag=do_hotbar_auto_fill] [{"text":"Enabled automatic hotbar filling.","color":"green"}]
-execute as @a[x=0,scores={toggleHotbarAutoFill=1..}] run function custom:player_action/playerdata/save
-scoreboard players set @a[x=0] toggleHotbarAutoFill 0
+scoreboard players enable @a[x=0] toggle_auto_fill_hotbar
+tag @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=do_hotbar_auto_fill] add disabled_do_hotbar_auto_fill
+tag @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=do_hotbar_auto_fill] remove do_hotbar_auto_fill
+tag @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=!do_hotbar_auto_fill,tag=!disabled_do_hotbar_auto_fill] add do_hotbar_auto_fill
+tag @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=disabled_do_hotbar_auto_fill] remove disabled_do_hotbar_auto_fill
+tellraw @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=!do_hotbar_auto_fill] [{"text":"Disabled automatic hotbar filling.","color":"red"}]
+tellraw @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=do_hotbar_auto_fill] [{"text":"Enabled automatic hotbar filling.","color":"green"}]
+execute as @a[x=0,scores={toggle_auto_fill_hotbar=1..}] run function custom:player_action/playerdata/save
+scoreboard players set @a[x=0] toggle_auto_fill_hotbar 0
 
 #Toggle ingame tips
 scoreboard players add @a[x=0] GamesPlayed 0
-scoreboard players enable @a[x=0] toggleTips
-tellraw @a[x=0,scores={toggleTips=1..},tag=!hideTips] [{"text":"You will no longer see ingame tips.","color":"red"}]
-tellraw @a[x=0,scores={toggleTips=1..},tag=hideTips] [{"text":"You will now see ingame tips.","color":"green"}]
-tag @a[x=0,scores={toggleTips=1..},tag=hideTips] add hidTips
-tag @a[x=0,scores={toggleTips=1..},tag=hideTips] remove hideTips
-tag @a[x=0,scores={toggleTips=1..},tag=!hideTips,tag=!hidTips] add hideTips
-tag @a[x=0,scores={toggleTips=1..},tag=hidTips] remove hidTips
-execute as @a[x=0,scores={toggleTips=1..}] run function custom:player_action/playerdata/save
-scoreboard players set @a[x=0] toggleTips 0
+scoreboard players enable @a[x=0] toggle_ingame_tips
+tellraw @a[x=0,scores={toggle_ingame_tips=1..},tag=!hideTips] [{"text":"You will no longer see ingame tips.","color":"red"}]
+tellraw @a[x=0,scores={toggle_ingame_tips=1..},tag=hideTips] [{"text":"You will now see ingame tips.","color":"green"}]
+tag @a[x=0,scores={toggle_ingame_tips=1..},tag=hideTips] add hidTips
+tag @a[x=0,scores={toggle_ingame_tips=1..},tag=hideTips] remove hideTips
+tag @a[x=0,scores={toggle_ingame_tips=1..},tag=!hideTips,tag=!hidTips] add hideTips
+tag @a[x=0,scores={toggle_ingame_tips=1..},tag=hidTips] remove hidTips
+execute as @a[x=0,scores={toggle_ingame_tips=1..}] run function custom:player_action/playerdata/save
+scoreboard players set @a[x=0] toggle_ingame_tips 0
 
 # change_default_spell trigger
 dialog show @a[x=0,scores={change_default_spell=1..}] {type:"minecraft:multi_action",title:"Default Spell Book",exit_action:{label:{translate:"gui.cancel"}},actions:[{label:"Fire",action:{type:"minecraft:run_command",command:"trigger change_default_spell set -1"}},{label:"Health",action:{type:"minecraft:run_command",command:"trigger change_default_spell set -2"}},{label:"Damage",action:{type:"minecraft:run_command",command:"trigger change_default_spell set -3"}},{label:"Wind",action:{type:"minecraft:run_command",command:"trigger change_default_spell set -4"}}]}
@@ -93,16 +93,6 @@ execute as @a[x=0,tag=canopyTP] run attribute @s minecraft:movement_speed base r
 tag @a[x=0,tag=canopyTP] remove canopyTP
 
 #Disable trigger objectives when appropriate
-scoreboard players reset @a[predicate=!custom:indimension] LeaveMidgame
-scoreboard players reset @a[predicate=!custom:indimension] set_item_delay
-scoreboard players reset @a[predicate=!custom:indimension] VoteServerMode
-scoreboard players reset @a[predicate=!custom:indimension] set_time_of_day
-scoreboard players reset @a[predicate=!custom:indimension] leaveSpec
-scoreboard players reset @a[predicate=!custom:indimension] displayinfo
-scoreboard players reset @a[predicate=!custom:indimension] toggleTips
-scoreboard players reset @a[predicate=!custom:indimension] toggleParticles
-scoreboard players reset @a[predicate=!custom:indimension] toggleParkourTips
-scoreboard players reset @a[predicate=!custom:indimension] toggleHotbarAutoFill
 scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby] set_item_delay
 execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] set_item_delay
@@ -113,7 +103,7 @@ execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] se
 execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] set_time_of_day
 scoreboard players reset @a[x=0,predicate=!custom:team/spectator] leaveSpec
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby,predicate=!custom:team/developer] displayinfo
-execute unless predicate rr:has_parkour run scoreboard players reset @a[x=0] toggleParkourTips
+execute unless predicate rr:has_parkour run scoreboard players reset @a[x=0] toggle_parkour_instructions
 
 #Launch pad in Modification Room
 execute if predicate rr:has_modification_room unless predicate game:phase/match as @a[x=-63.5,y=190.5,z=78.5,distance=..1] unless entity @s[predicate=!custom:team/lobby,predicate=!custom:team/developer] run effect give @s jump_boost 1 20 true

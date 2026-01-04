@@ -1,1 +1,1 @@
-scoreboard objectives add options trigger
+scoreboard objectives add settings trigger

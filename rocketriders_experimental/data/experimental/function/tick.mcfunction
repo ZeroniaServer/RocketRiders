@@ -1,5 +1,4 @@
-scoreboard players reset @a[predicate=!custom:indimension] options
-execute as @a[scores={options=..-1}] run dialog clear @s
-execute as @a[scores={options=1..}] run function experimental:options/main
-scoreboard players reset @a options
-scoreboard players enable @a[predicate=custom:indimension] options
+dialog clear @a[scores={settings=..-1}]
+execute as @a[scores={settings=1..}] run function experimental:settings/main
+scoreboard players reset @a[x=0] settings
+execute in minecraft:overworld run scoreboard players enable @a[x=0] settings

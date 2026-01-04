@@ -1,11 +1,11 @@
 # Leave Game Button
-execute if score @s options matches 101 run return run function experimental:options/leave_game
+execute if score @s settings matches 101 run return run function experimental:settings/leave_game
 
 # Show Menu
-execute unless score @s options matches 1000000000.. run return run function experimental:options/show_dialog
+execute unless score @s settings matches 1000000000.. run return run function experimental:settings/show_dialog
 
-# Set Options
-execute store result score $parkour_instructions var run scoreboard players operation $tips var = @s options
+# Set Settings
+execute store result score $parkour_instructions var run scoreboard players operation $tips var = @s settings
 scoreboard players operation $tips var %= $10 constant
 execute if score $tips var matches 0 run tag @s add hideTips
 execute if score $tips var matches 1 run tag @s remove hideTips
@@ -39,5 +39,5 @@ execute if score $crusade_kit var matches 1 run scoreboard players set @s start_
 execute if score $crusade_kit var matches 2 run scoreboard players set @s start_as_crusade_kit 2
 execute if score $crusade_kit var matches 3 run scoreboard players set @s start_as_crusade_kit 3
 
-# Save Options
+# Save Settings
 function custom:player_action/playerdata/save

@@ -35,14 +35,14 @@
       "label": "Settings...",
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger options"
+        "command": "trigger settings"
       }
     },
     {
       "label": "Leave Match",
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger options set 101"
+        "command": "trigger settings set 101"
       }
     }
   ],
@@ -52,7 +52,7 @@
     },
     "action": {
       "type": "minecraft:run_command",
-      "command": "trigger options set -1"
+      "command": "trigger settings set -1"
     }
   },
   "after_action": "none"

@@ -3,8 +3,8 @@
 ########################################################
 
 ##Achievements
-execute if predicate game:achievements_can_be_awarded if entity @s[tag=!noAchievements] run function achievements:aftergameyellow
-execute if predicate game:achievements_can_be_awarded if entity @s[tag=!noAchievements] run function achievements:aftergameblue
+execute if predicate game:achievements_can_be_awarded run function achievements:aftergameyellow
+execute if predicate game:achievements_can_be_awarded run function achievements:aftergameblue
 
 ##Record tags
 scoreboard players set $match_over global 1

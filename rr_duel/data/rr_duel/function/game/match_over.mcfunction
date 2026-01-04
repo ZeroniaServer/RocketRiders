@@ -13,7 +13,7 @@ execute if entity @s[scores={endtimer=1}] run function game:endstats
 execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,predicate=custom:team/blue] remove InRanked
 execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,predicate=custom:team/yellow] remove InRanked
 scoreboard players reset @s ForfeitTimeout
-tag @s remove TimeOut
+scoreboard players reset $1v1_duel_time_out_period global
 tag @a[x=0] remove Forfeiter
 
 scoreboard players reset @s Rounds

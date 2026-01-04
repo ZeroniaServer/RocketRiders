@@ -23,4 +23,4 @@ execute unless score Blue: RoundsWon matches 2.. run title @a[x=0,predicate=!cus
 execute unless score Blue: RoundsWon matches 2.. run tag @s add FakeGameEnd
 
 execute if score Blue: RoundsWon matches 2.. run function game:winblue
-execute if entity @s[tag=!TimeOut,tag=!noYZELO] if score Blue: RoundsWon matches 2.. run function rr_duel:rankcalc/calcblue
+execute unless predicate rr_duel:time_out_period if entity @s[tag=!noYZELO] if score Blue: RoundsWon matches 2.. run function rr_duel:rankcalc/calcblue

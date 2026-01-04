@@ -14,5 +14,4 @@ execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,pred
 
 execute unless predicate game:phase/match/over if score @s count matches 600 as @a[x=0,predicate=custom:team/blue] run function rr_sandbox:items/givenomicon
 execute unless predicate game:phase/match/over if score @s count matches 600 as @a[x=0,predicate=custom:team/yellow] run function rr_sandbox:items/givenomicon
-execute unless predicate game:phase/match/over if score @s count matches 600 run tag @s add noAchievements
 execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start

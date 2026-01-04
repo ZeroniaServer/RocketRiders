@@ -59,7 +59,6 @@ execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,predic
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] GamesPlayed 1
 execute if entity @s[scores={endtimer=570}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/playerdata/save
 execute if entity @s[scores={endtimer=570}] run function achievements:scoresreset
-execute if entity @s[scores={endtimer=570}] run tag @s remove noAchievements
 execute if entity @s[scores={endtimer=570}] if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s minecraft:attack_speed base set 4
 #Reverse Sonar glowing
 execute if entity @s[scores={endtimer=570}] if predicate game:modifiers/sonar/on as @e[x=0,tag=is_glowing] run function game:glowing/off
@@ -88,8 +87,9 @@ tag @s[scores={endtimer=570..}] remove BlueWonFirst
 tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
 tag @s[scores={endtimer=570..}] remove BothWon
-execute if entity @s[scores={endtimer=570..}] run scoreboard players reset * invCount
+execute if score @s endtimer matches 570.. run scoreboard players reset @a[x=0] invCount
 execute if score @s endtimer matches 570.. run scoreboard players reset $match_over global
+execute if score @s endtimer matches 570.. run scoreboard players reset $1v1_duel_time_out_period global
 
 ##For repeating settings
 execute unless score $match_repeat_amount global matches 1.. unless predicate game:repeat_settings/forever run scoreboard players reset $extra_match_repetitions config

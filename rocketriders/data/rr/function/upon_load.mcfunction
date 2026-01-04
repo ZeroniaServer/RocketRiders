@@ -3,6 +3,9 @@
 schedule function lobby:credits/restart_indimension 3t append
 scoreboard players add $reloaded CmdData 1
 
+# delete "main" (volatile) storage
+function custom:delete_storage {storage_id:"rocketriders:achievements"}
+
 #Add teams for Paper compatibility
 team add rocketriders.sort_000.blue "Blue"
 team add rocketriders.sort_001.yellow "Yellow"

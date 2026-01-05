@@ -5,6 +5,7 @@
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
 execute as @a[x=0] run function custom:player_action/forget_all_canopies
+execute as @a[x=0] run function custom:player_action/forget_nova_attach
 function everytick:spawnables
 execute if score @s endtimer matches 1 run scoreboard players reset $match_in_play global
 execute if score @s endtimer matches 1 run scoreboard players reset $game_paused global
@@ -55,6 +56,7 @@ execute if entity @s[scores={endtimer=102}] run scoreboard players reset @a[x=0]
 execute if entity @s[scores={endtimer=102}] run scoreboard players reset @a[x=0] shooting_saber.multishot_time
 execute if entity @s[scores={endtimer=102}] run scoreboard players reset @a[x=0] elytra_time
 execute if entity @s[scores={endtimer=102}] as @a[x=0] run function custom:player_action/forget_all_canopies
+execute if entity @s[scores={endtimer=102}] as @a[x=0] run function custom:player_action/forget_nova_attach
 execute if entity @s[scores={endtimer=250}] run gamemode spectator @a[x=0,predicate=custom:team/any_playing_team]
 execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] GamesPlayed 1
 execute if entity @s[scores={endtimer=570}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/playerdata/save

@@ -113,6 +113,6 @@ scoreboard players set @s time_since_attack 0
 
 ## If alive, instantly trigger respawn
 tag @s add player_dies.this
-execute unless entity @e[x=0,type=player,tag=player_dies.this] run return run tag @s remove player_dies.this
+execute unless entity @e[limit=1,x=0,type=player,tag=player_dies.this] run return run tag @s remove player_dies.this
 tag @s remove player_dies.this
 function custom:event/player_respawns/main

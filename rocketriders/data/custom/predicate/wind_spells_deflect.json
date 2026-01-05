@@ -12,7 +12,6 @@
             "minecraft:egg",
             "minecraft:fireball",
             "minecraft:dragon_fireball",
-            "minecraft:snowball",
             "minecraft:splash_potion",
             "minecraft:lingering_potion",
             "minecraft:ender_pearl",
@@ -20,22 +19,43 @@
             "minecraft:firework_rocket"
           ]
         }
-      }
-    ]
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "type": "minecraft:snowball",
-        "predicates": {
-          "minecraft:custom_data": {
-            "vortex_arm": {}
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:snowball",
+          "predicates": {
+            "minecraft:custom_data": {
+              "shield": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:snowball",
+          "predicates": {
+            "minecraft:custom_data": {
+              "vortex": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:snowball",
+          "predicates": {
+            "minecraft:custom_data": {
+              "stinging_shield": {}
+            }
           }
         }
       }
-    }
+    ]
   }
 ]

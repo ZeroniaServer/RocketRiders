@@ -1,5 +1,5 @@
 ## Mount body
-ride @s mount @e[distance=..0.01,limit=1,type=egg,tag=vortex_projectile.this]
+ride @s mount @e[distance=..0.01,limit=1,type=snowball,tag=vortex_projectile.this]
 
 ## Set up data
 data modify entity @s data.vortex_projectile set value {brain:{}}

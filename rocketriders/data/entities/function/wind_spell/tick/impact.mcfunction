@@ -2,7 +2,7 @@ execute as @e[type=tnt,distance=..5] facing entity @s feet positioned as @s run 
 
 tag @s add wind_spell.this
 execute on origin run tag @s add wind_spell.origin
-execute as @a[distance=..5] run damage @s 0.00000001 minecraft:wind_charge by @e[limit=1,distance=..0.01,type=minecraft:area_effect_cloud,tag=wind_spell.this] from @a[limit=1,tag=wind_spell.origin]
+execute as @a[distance=..5,predicate=!custom:near_own_spawn_zone] run damage @s 0.00000001 minecraft:wind_charge by @e[limit=1,distance=..0.01,type=minecraft:area_effect_cloud,tag=wind_spell.this] from @a[limit=1,tag=wind_spell.origin]
 execute on origin run tag @s remove wind_spell.origin
 tag @s remove wind_spell.this
 

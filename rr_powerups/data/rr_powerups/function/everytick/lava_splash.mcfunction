@@ -11,6 +11,7 @@ execute as @e[x=0,type=area_effect_cloud,predicate=custom:is_awkward_area_effect
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked,predicate=custom:near_blue_spawn_zone] run kill @s
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked,predicate=custom:near_yellow_spawn_zone] run kill @s
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:nonsolid run function everytick:splash_correct_position
+execute at @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] unless block ~1 ~ ~ #custom:nonsolid unless block ~-1 ~ ~ #custom:nonsolid unless block ~ ~ ~1 #custom:nonsolid unless block ~ ~ ~-1 #custom:nonsolid if block ~ ~-1 ~ #custom:air run fill ~ ~ ~ ~ ~-1 ~ lava[level=8] replace #custom:air
 execute as @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] at @s run function everytick:splash_adjust_corner_position
 execute at @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] rotated 0 0 run function rr_powerups:everytick/lava_splash_place_lava
 execute at @e[x=0,type=area_effect_cloud,tag=lavasplash_alone,tag=!splashMarked] rotated 90 0 run function rr_powerups:everytick/lava_splash_place_lava

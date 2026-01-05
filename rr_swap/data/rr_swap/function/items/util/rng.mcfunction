@@ -1,4 +1,4 @@
-execute if predicate game:item_pool/vortex if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","swapRNGD"]}
+execute if predicate game:item_pool/icbm if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","swapRNGD"]}
 execute if predicate game:item_pool/shield if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenShield] run summon marker 0 0 0 {Tags:["rngShield","swapRNGD"]}
 tag @e[x=0,type=marker,tag=swapRNGD,sort=random,limit=1] add SelectedSwapRNG2
 

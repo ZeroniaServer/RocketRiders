@@ -9,7 +9,7 @@ execute unless predicate game:item_pool/arrow run tag @s add givenArrows
 execute unless predicate game:item_pool/fireball run tag @s add givenFireball
 execute unless predicate game:item_pool/obsidian_shield run tag @s add givenObshield
 execute unless predicate game:item_pool/shield run tag @s add givenShield
-execute unless predicate game:item_pool/vortex run tag @s add givenICBM
+execute unless predicate game:item_pool/icbm run tag @s add givenICBM
 execute if predicate game:item_pool_meta/all_utilities_disabled run tag @s add givenAllUtil
 
 tag @s remove givenArrowsTwice

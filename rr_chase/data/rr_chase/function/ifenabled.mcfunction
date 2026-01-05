@@ -8,9 +8,9 @@ function rr_chase:tip
 
 #game
 function rr_chase:game/gamestart
-execute if predicate game:phase/match run function rr_chase:game/game_running
-execute if predicate game:phase/match/play run function rr_chase:game/match_in_play
-execute if predicate game:phase/match/over run function rr_chase:game/match_over
+execute if predicate game:phase/match run function rr_chase:game/while_phase/match
+execute if predicate game:phase/match/play run function rr_chase:game/while_phase/match/play
+execute if predicate game:phase/match/over run function rr_chase:game/while_phase/match/over
 
 #disable yellow
 tag @a[x=0] remove JoinYellow

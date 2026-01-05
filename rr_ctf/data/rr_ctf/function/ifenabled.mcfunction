@@ -8,9 +8,9 @@ function rr_ctf:tip
 
 #game
 function rr_ctf:game/gamestart
-execute if predicate game:phase/match run function rr_ctf:game/game_running
-execute if predicate game:phase/match/play run function rr_ctf:game/match_in_play
-execute if predicate game:phase/match/over run function rr_ctf:game/match_over
+execute if predicate game:phase/match run function rr_ctf:game/while_phase/match
+execute if predicate game:phase/match/play run function rr_ctf:game/while_phase/match/play
+execute if predicate game:phase/match/over run function rr_ctf:game/while_phase/match/over
 # function rr_ctf:everytick/pickaxefix
 
 #pregame

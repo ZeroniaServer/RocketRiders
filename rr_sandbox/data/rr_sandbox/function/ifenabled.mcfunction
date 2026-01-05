@@ -8,10 +8,10 @@ function rr_sandbox:tip
 
 #game
 function rr_sandbox:game/gamestart
-execute if predicate game:phase/match run function rr_sandbox:game/game_running
-execute if predicate game:phase/match/play run function rr_sandbox:game/match_in_play
+execute if predicate game:phase/match run function rr_sandbox:game/while_phase/match
+execute if predicate game:phase/match/play run function rr_sandbox:game/while_phase/match/play
 execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function rr_sandbox:items/givenomicon
-execute if predicate game:phase/match/over run function rr_sandbox:game/match_over
+execute if predicate game:phase/match/over run function rr_sandbox:game/while_phase/match/over
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings

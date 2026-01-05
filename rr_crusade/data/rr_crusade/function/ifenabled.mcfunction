@@ -9,9 +9,9 @@ function rr_crusade:tip
 
 #game
 function rr_crusade:game/gamestart
-execute if predicate game:phase/match run function rr_crusade:game/game_running
-execute if predicate game:phase/match/play run function rr_crusade:game/match_in_play
-execute if predicate game:phase/match/over run function rr_crusade:game/match_over
+execute if predicate game:phase/match run function rr_crusade:game/while_phase/match
+execute if predicate game:phase/match/play run function rr_crusade:game/while_phase/match/play
+execute if predicate game:phase/match/over run function rr_crusade:game/while_phase/match/over
 execute if entity @s[tag=SuddenDeath] run function rr_crusade:game/suddendeath
 
 #kits

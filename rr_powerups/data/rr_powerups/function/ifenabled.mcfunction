@@ -8,9 +8,9 @@ function rr_powerups:tip
 
 #game
 function rr_powerups:game/gamestart
-execute if predicate game:phase/match run function rr_powerups:game/game_running
-execute if predicate game:phase/match/play run function rr_powerups:game/match_in_play
-execute if predicate game:phase/match/over run function rr_powerups:game/match_over
+execute if predicate game:phase/match run function rr_powerups:game/while_phase/match
+execute if predicate game:phase/match/play run function rr_powerups:game/while_phase/match/play
+execute if predicate game:phase/match/over run function rr_powerups:game/while_phase/match/over
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings

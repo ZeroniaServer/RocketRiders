@@ -5,8 +5,8 @@ execute as @e[x=0,type=bee,tag=!beeChecked] run attribute @s minecraft:follow_ra
 execute as @e[x=0,type=bee,tag=!beeChecked] run data modify entity @s anger_end_time set value 0
 tag @e[x=0,type=bee,tag=!beeChecked] add beeChecked
 
-execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/blue,predicate=!custom:angry_at_yellow_team] at @s run damage @s 0.00001 minecraft:player_attack by @p[predicate=custom:in_arena,predicate=custom:team/yellow]
-execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/yellow,predicate=!custom:angry_at_blue_team] at @s run damage @s 0.00001 minecraft:player_attack by @p[predicate=custom:in_arena,predicate=custom:team/blue]
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/blue,predicate=!custom:angry_at_yellow_team] at @s run damage @s 0.00001 minecraft:player_attack by @e[limit=1,sort=nearest,type=player,gamemode=survival,predicate=custom:team/yellow,predicate=custom:in_arena]
+execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/yellow,predicate=!custom:angry_at_blue_team] at @s run damage @s 0.00001 minecraft:player_attack by @e[limit=1,sort=nearest,type=player,gamemode=survival,predicate=custom:team/blue,predicate=custom:in_arena]
 execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/blue,predicate=custom:angry_at_blue_team] run data modify entity @s anger_end_time set value 0
 execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/yellow,predicate=custom:angry_at_yellow_team] run data modify entity @s anger_end_time set value 0
 

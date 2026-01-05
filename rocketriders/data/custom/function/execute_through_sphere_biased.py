@@ -18,12 +18,13 @@ def generate(name: str, radius: float) -> None:
                         continue
 
                     file.write(
-                        "$execute positioned ~%s ~%s ~%s if predicate {condition:\"minecraft:random_chance\",chance:{type:\"minecraft:binomial\",n:%s,p:$(p)}} run $(run)\n" % (
+                        r"$execute if predicate {condition:random_chance,chance:{type:binomial,n:%s,p:$(p)}} positioned ~%s ~%s ~%s run $(run)" % (
+                            n,
                             "" if x == 0 else str(x),
                             "" if y == 0 else str(y),
                             "" if z == 0 else str(z),
-                            n
                         )
+                        + "\n"
                     )
 
 generate("execute_through_sphere_biased_radius_2",2)

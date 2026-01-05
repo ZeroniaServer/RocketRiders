@@ -1,5 +1,5 @@
 # Do nothing if already processed
-execute unless entity @s[type=egg] run return fail
+execute unless entity @s[type=snowball] run return fail
 execute if entity @s[predicate=entities:type/icbm] run return fail
 
 ## Set up data

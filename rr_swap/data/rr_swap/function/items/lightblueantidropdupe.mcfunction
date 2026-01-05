@@ -3,7 +3,7 @@ execute if predicate game:item_pool/missile/bullet as @e[x=0,type=item] if items
 execute if predicate game:item_pool/missile/duplex as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/duplex"}] run function rr_swap:items/lightbluededuct
 execute if predicate game:item_pool/missile/auxiliary as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/auxiliary"}] run function rr_swap:items/lightbluededuct
 execute if predicate game:item_pool/missile/warhead as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/warhead"}] run function rr_swap:items/lightbluededuct
-execute if predicate game:item_pool/icbm as @e[x=0,type=item] if items entity @s contents egg run function rr_swap:items/lightbluededuct
+execute if predicate game:item_pool/icbm as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"icbm"}] run function rr_swap:items/lightbluededuct
 execute if predicate game:item_pool/shield as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"shield"}] run function rr_swap:items/lightbluededuct
 execute if predicate game:item_pool/missile/hypersonic as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/hypersonic"}] run function rr_swap:items/lightbluededuct
 execute if predicate game:item_pool/missile/broadsword as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/broadsword"}] run function rr_swap:items/lightbluededuct

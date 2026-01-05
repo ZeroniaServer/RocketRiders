@@ -1,5 +1,5 @@
 ## Mount body
-ride @s mount @e[distance=..0.01,limit=1,type=egg,tag=icbm.this]
+ride @s mount @e[distance=..0.01,limit=1,type=snowball,tag=icbm.this]
 
 ## Set up data
 data modify entity @s data.icbm set value {brain:{}}

@@ -16,7 +16,6 @@ execute if predicate game:portal_type/default as @e[x=0,type=fireball,tag=Fireba
 execute as @e[x=0,type=ender_pearl,predicate=custom:near_or_above_roof] run function entities:canopy_projectile/actions/break
 execute as @e[x=0,type=snowball] at @s run kill @s[predicate=custom:near_or_above_roof]
 execute as @e[x=0,type=dragon_fireball] at @s run kill @s[predicate=custom:near_or_above_roof]
-execute as @e[x=0,type=egg] at @s run kill @s[predicate=custom:near_or_above_roof]
 execute as @e[x=0,type=fireball] at @s run kill @s[predicate=custom:near_or_above_roof]
 execute as @e[x=0,type=tnt] at @s run kill @s[predicate=custom:near_or_above_roof]
 execute as @e[x=0,type=tnt_minecart] at @s run kill @s[predicate=custom:near_or_above_roof]
@@ -26,7 +25,6 @@ execute as @e[x=0,type=#custom:potion] at @s run kill @s[predicate=custom:near_o
 kill @e[x=0,type=ender_pearl,predicate=custom:in_void]
 kill @e[x=0,type=snowball,predicate=custom:in_void]
 kill @e[x=0,type=dragon_fireball,predicate=custom:in_void]
-kill @e[x=0,type=egg,predicate=custom:in_void]
 kill @e[x=0,type=fireball,predicate=custom:in_void]
 kill @e[x=0,type=tnt,predicate=custom:in_void]
 kill @e[x=0,type=tnt_minecart,predicate=custom:in_void]
@@ -39,7 +37,6 @@ execute as @e[x=0,type=#arrows] at @s unless predicate custom:insideborder run k
 execute as @e[x=0,type=ender_pearl] at @s unless predicate custom:insideborder run kill @s
 execute as @e[x=0,type=snowball] at @s unless predicate custom:insideborder run kill @s
 execute as @e[x=0,type=dragon_fireball] at @s unless predicate custom:insideborder run kill @s
-execute as @e[x=0,type=egg] at @s unless predicate custom:insideborder run kill @s
 execute as @e[x=0,type=fireball] at @s unless predicate custom:insideborder run kill @s
 execute as @e[x=0,type=tnt] at @s unless predicate custom:insideborder run kill @s
 execute as @e[x=0,type=tnt_minecart] at @s unless predicate custom:insideborder run kill @s

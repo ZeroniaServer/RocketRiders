@@ -9,7 +9,6 @@
           "type": [
             "minecraft:arrow",
             "minecraft:spectral_arrow",
-            "minecraft:egg",
             "minecraft:fireball",
             "minecraft:dragon_fireball",
             "minecraft:splash_potion",
@@ -40,6 +39,18 @@
           "predicates": {
             "minecraft:custom_data": {
               "vortex": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:snowball",
+          "predicates": {
+            "minecraft:custom_data": {
+              "icbm": {}
             }
           }
         }

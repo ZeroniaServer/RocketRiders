@@ -20,7 +20,6 @@ execute unless predicate game:phase/match/paused if predicate game:modifiers/son
 execute unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on as @e[x=0,type=#arrows,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on as @e[x=0,type=snowball,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on as @e[x=0,type=ender_pearl,tag=!is_glowing] run function game:glowing/on
-execute unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on as @e[x=0,type=egg,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on as @e[x=0,type=firework_rocket,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on as @e[x=0,type=fireball,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on as @e[x=0,type=dragon_fireball,tag=!is_glowing] run function game:glowing/on

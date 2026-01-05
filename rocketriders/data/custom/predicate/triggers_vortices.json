@@ -74,7 +74,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "type": "minecraft:egg",
+          "type": "minecraft:snowball",
           "predicates": {
             "minecraft:custom_data": {
               "icbm": {}

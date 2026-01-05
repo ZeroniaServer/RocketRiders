@@ -1,4 +1,5 @@
 scoreboard players set @s flag.is_dead 0
+scoreboard players set @s time_since_respawn 0
 
 # Clear game effects
 effect clear @s levitation

@@ -2,6 +2,11 @@
 execute unless entity @s[type=snowball] run return fail
 execute if entity @s[predicate=entities:type/icbm] run return fail
 
+## Return to player if used upon respawning
+scoreboard players set $return var 0
+execute on origin if score @s time_since_respawn matches ..10 run scoreboard players set $return var 1
+execute if score $return var matches 1 run return run function entities:icbm/init/return_item
+
 ## Set up data
 data modify entity @s data.icbm set value {body:{}}
 

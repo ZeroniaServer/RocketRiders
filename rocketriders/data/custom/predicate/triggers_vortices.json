@@ -10,11 +10,9 @@
             "minecraft:small_fireball",
             "minecraft:wind_charge",
             "minecraft:breeze_wind_charge",
-            "minecraft:snowball",
             "minecraft:splash_potion",
             "minecraft:lingering_potion",
-            "minecraft:ender_pearl",
-            "minecraft:firework_rocket"
+            "minecraft:ender_pearl"
           ]
         }
       },
@@ -52,6 +50,30 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
+          "type": "minecraft:snowball",
+          "predicates": {
+            "minecraft:custom_data": {
+              "shield_projectile": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:firework_rocket",
+          "predicates": {
+            "minecraft:custom_data": {
+              "nova_rocket": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
           "type": "minecraft:egg",
           "predicates": {
             "minecraft:custom_data": {
@@ -69,20 +91,5 @@
         }
       }
     ]
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "type": "minecraft:snowball",
-        "predicates": {
-          "minecraft:custom_data": {
-            "vortex_arm": {}
-          }
-        }
-      }
-    }
   }
 ]

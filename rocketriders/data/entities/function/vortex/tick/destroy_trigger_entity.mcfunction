@@ -11,12 +11,10 @@ execute if entity @s[type=#custom:wind_charge] run particle minecraft:gust_emitt
 execute if entity @s[type=#custom:wind_charge] at @s run playsound minecraft:entity.breeze.wind_burst master @a[x=0]
 execute if entity @s[type=#custom:wind_charge] run kill @s
 
-execute if entity @s[type=snowball,predicate=!entities:type/shield_projectile/body,predicate=!entities:type/stinging_shield_projectile/body] run kill @s
-execute if entity @s[type=snowball,predicate=entities:type/shield_projectile/body] run function entities:shield_projectile/actions/break
-execute if entity @s[type=snowball,predicate=entities:type/stinging_shield_projectile/body] run function entities:stinging_shield_projectile/actions/break
+execute if entity @s[type=snowball,predicate=entities:type/shield_projectile] run function entities:shield_projectile/actions/break
+execute if entity @s[type=snowball,predicate=entities:type/stinging_shield_projectile] run function entities:stinging_shield_projectile/actions/break
 
-execute if entity @s[type=egg,predicate=!entities:type/icbm/body,predicate=!entities:type/vortex_projectile/body] run kill @s
-execute if entity @s[type=egg,predicate=entities:type/icbm/body] run function entities:icbm/actions/explode
+execute if entity @s[type=egg,predicate=entities:type/icbm] run function entities:icbm/actions/explode
 
 execute if entity @s[type=lingering_potion,nbt={Item:{components:{"minecraft:potion_contents":{potion:"minecraft:water"}}}}] facing entity @s feet run summon minecraft:area_effect_cloud ^ ^ ^0.5 {potion_contents:{potion:"minecraft:water"}}
 execute if entity @s[type=lingering_potion,nbt={Item:{components:{"minecraft:potion_contents":{potion:"minecraft:awkward"}}}}] facing entity @s feet run summon minecraft:area_effect_cloud ^ ^ ^0.5 {potion_contents:{potion:"minecraft:awkward",custom_color:16747545}}

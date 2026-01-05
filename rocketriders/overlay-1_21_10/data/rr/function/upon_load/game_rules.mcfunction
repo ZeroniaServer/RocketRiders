@@ -1,4 +1,15 @@
 gamerule allowEnteringNetherUsingPortals false
+gamerule keepInventory true
+gamerule doDaylightCycle false
+gamerule doWeatherCycle false
+gamerule doTileDrops false
+gamerule doMobLoot false
+gamerule doEntityDrops false
+gamerule doMobSpawning false
+gamerule doInsomnia false
+gamerule doPatrolSpawning false
+gamerule doTraderSpawning false
+gamerule doVinesSpread false
 gamerule commandModificationBlockLimit 1000000
 gamerule logAdminCommands false
 gamerule playersNetherPortalCreativeDelay 2147483647

@@ -23,7 +23,7 @@ scoreboard players operation $u var = $sin_angle var
 scoreboard players operation $u var *= $sin_angle var
 scoreboard players add $u var 32400
 execute if score $flip var matches 1 run scoreboard players operation $sin var *= $-1 constant
-execute store result storage rocketriders:main vortex_arm.sin float 0.0005 run scoreboard players operation $sin var /= $u var
+execute store result storage rocketriders:main vortex_arm.sin float 0.00045 run scoreboard players operation $sin var /= $u var
 
 # cos
 scoreboard players operation $cos_angle var = $angle var
@@ -40,4 +40,4 @@ scoreboard players operation $u var = $cos_angle var
 scoreboard players operation $u var *= $cos_angle var
 scoreboard players add $u var 32400
 execute if score $flip var matches 1 run scoreboard players operation $cos var *= $-1 constant
-execute store result storage rocketriders:main vortex_arm.cos float 0.0005 run scoreboard players operation $cos var /= $u var
+execute store result storage rocketriders:main vortex_arm.cos float 0.00045 run scoreboard players operation $cos var /= $u var

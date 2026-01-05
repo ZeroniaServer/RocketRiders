@@ -95,6 +95,7 @@ scoreboard objectives add entity.age dummy
 scoreboard objectives add entity.speed dummy
 scoreboard objectives add entity.canopy.movement_cooldown dummy
 scoreboard objectives add entity.vortex.fuse dummy
+scoreboard objectives add entity.vortex.drifting_for_ticks dummy
 scoreboard objectives add entity.vortex.arms dummy
 scoreboard objectives add entity.vortex_arm.index dummy
 scoreboard objectives add entity.spell.bee_cooldown dummy

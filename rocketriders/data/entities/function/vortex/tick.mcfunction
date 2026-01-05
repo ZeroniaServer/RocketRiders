@@ -64,14 +64,17 @@ execute if score $triggered_by_entity var matches 1 run return run function enti
 
 
 ## Movement (drift)
-execute store success score $was_drifting var if entity @s[tag=vortex.is_drifting]
+# to prevent flickering between drifting and stationary when a player is on the border of the detection range, range is R when stationary and R+0.5 when drifting
 tag @s remove vortex.is_drifting
 execute on vehicle run tag @s remove vortex.is_drifting
+execute if score @s entity.vortex.drifting_for_ticks matches 0 run function entities:vortex/tick/drift_detection_range {distance:4}
+execute if score @s entity.vortex.drifting_for_ticks matches 1.. run function entities:vortex/tick/drift_detection_range {distance:4.5}
 
-# to prevent flickering between drifting and stationary when a player is on the border of the detection range, range is R when stationary and r+0.5 when drifting
-execute if score $was_drifting var matches 0 run function entities:vortex/tick/drift_detection_range {distance:4}
-execute if score $was_drifting var matches 1 run function entities:vortex/tick/drift_detection_range {distance:4.5}
+# revert to ender pearl and settle into the block grid when drifting stops
+execute if score @s entity.vortex.drifting_for_ticks matches 1.. if entity @s[tag=!vortex.is_drifting,tag=!vortex.neutral_landmine] on vehicle run data merge entity @s {teleport_duration:10,start_interpolation:0,interpolation_duration:10,transformation:{scale:[0.6,0.6,0.6]}}
+execute if score @s entity.vortex.drifting_for_ticks matches 1.. if entity @s[tag=!vortex.is_drifting,tag=!vortex.feathered] on vehicle run item replace entity @s contents with minecraft:ender_pearl
+execute if score @s entity.vortex.drifting_for_ticks matches 0 if entity @s[tag=!vortex.is_drifting,tag=!vortex.settled] on vehicle run function entities:vortex/tick/settle
 
-execute unless entity @s[tag=vortex.neutral_landmine] if score $was_drifting var matches 1 if entity @s[tag=!vortex.is_drifting] on vehicle run data merge entity @s {teleport_duration:10,start_interpolation:0,interpolation_duration:10,transformation:{scale:[0.6,0.6,0.6]}}
-execute unless entity @s[tag=vortex.feathered] if score $was_drifting var matches 1 if entity @s[tag=!vortex.is_drifting] on vehicle run item replace entity @s contents with minecraft:ender_pearl
-execute if score $was_drifting var matches 0 if entity @s[tag=!vortex.is_drifting,tag=!vortex.settled] on vehicle run function entities:vortex/tick/settle
+# drifting duration
+execute if entity @s[tag=vortex.is_drifting] run scoreboard players add @s entity.vortex.drifting_for_ticks 1
+execute if entity @s[tag=!vortex.is_drifting] run scoreboard players set @s entity.vortex.drifting_for_ticks 0

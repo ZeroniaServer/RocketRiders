@@ -152,7 +152,7 @@ execute unless predicate game:phase/match/over as @e[x=0,type=#arrows,predicate=
 
 #Game ending and arena clearing
 execute if predicate game:phase/match/over as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:while_phase/match/over
-execute unless predicate game:gamemode_components/custom_sudden_death_handling as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SuddenDeath,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SuddenDeath,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
 execute if entity @e[x=0,type=marker,tag=ArenaClearChecker,tag=!Cleared,tag=!BasePlaced] run scoreboard players add $acdelay CmdData 1
 execute if score $acdelay CmdData matches 7.. run tellraw @a[x=0] {"text":"Warning: Force clearing arena since previous gamemode is unknown.","color":"red"}
 execute if score $acdelay CmdData matches 7.. run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add normalLast

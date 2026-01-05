@@ -3,6 +3,9 @@
 schedule function lobby:credits/restart_indimension 3t append
 scoreboard players add $reloaded CmdData 1
 
+#Useful blocks
+setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
+
 # delete "main" (volatile) storage
 function custom:delete_storage {storage_id:"rocketriders:main"}
 
@@ -41,9 +44,6 @@ difficulty easy
 
 #Bossbars
 bossbar add rr:startgame ""
-
-#Useful blocks
-setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
 
 #Scores
 scoreboard objectives add global dummy

@@ -97,6 +97,7 @@ scoreboard objectives add entity.canopy.movement_cooldown dummy
 scoreboard objectives add entity.vortex.fuse dummy
 scoreboard objectives add entity.vortex.arms dummy
 scoreboard objectives add entity.vortex_arm.index dummy
+scoreboard objectives add entity.spell.bee_cooldown dummy
 scoreboard objectives add time_since_tnt_punch custom:play_time
 scoreboard objectives add custom_team_color dummy
 scoreboard objectives add tnt.explosion_timestamp dummy

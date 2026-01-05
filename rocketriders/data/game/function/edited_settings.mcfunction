@@ -37,6 +37,9 @@ execute unless predicate game:gamemode_components/friendly_fire run team modify 
 execute if predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire true
 execute if predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_001.yellow friendlyFire true
 
+##Navigation Book
+function lobby:store_nav_book
+
 ##
 tag @s add EditedSettings
 execute unless predicate rr:server_mode/cubekrowd_duels unless predicate rr:server_mode/cubekrowd_voting run function lobby:cancelsettings/begin

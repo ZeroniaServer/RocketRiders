@@ -1,7 +1,7 @@
 particle dust{color:0xFF00FF,scale:0.5} ~ ~ ~ 0.1 0.1 0.1 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 execute if entity @s[tag=vortex_arm.transitioning] run scoreboard players remove @s entity.age 1
-execute if entity @s[tag=vortex_arm.transitioning] if score @s entity.age matches ..0 on vehicle run data merge entity @s {teleport_duration:1}
+execute if entity @s[tag=vortex_arm.transitioning] if score @s entity.age matches ..0 on vehicle run data merge entity @s {teleport_duration:2}
 execute if entity @s[tag=vortex_arm.transitioning] if score @s entity.age matches ..0 run tag @s remove vortex_arm.transitioning
 
 execute store success score $is_drifting var on origin if entity @s[tag=vortex.is_drifting]

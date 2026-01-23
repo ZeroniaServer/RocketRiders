@@ -18,3 +18,4 @@ gamerule locatorBar false
 gamerule waterSourceConversion false
 #use freezeDamage to control ender pearl damage
 gamerule freezeDamage false
+gamerule doImmediateRespawn true

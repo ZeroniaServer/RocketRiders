@@ -36,7 +36,7 @@ execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip1,limit=1] run tag @e[x=0,t
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip2,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Most Utility items can be used to stop incoming missiles.","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip2,limit=1] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip2
 
-execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip3,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In 1v1 Duel Mode, whoever wins two out of three rounds wins the game!","color":"gray"}]
+execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip3,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In 1v1 Duel Mode, whoever wins two out of three rounds wins the match!","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip3,limit=1] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip3
 
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip4,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Obsidian Shields will break after the glass pane in the middle is broken 3 times.","color":"gray"}]
@@ -66,7 +66,7 @@ execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip11] run tag @e[x=0,type=arm
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip12] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Lightning Speed missiles are way faster than other missiles. Great for rush tactics!","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip12] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip12
 
-execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip13] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If a player logs out during a 1v1 Duel match, a one-minute timeout begins, after which the game ends in defeat for that player.","color":"gray"}]
+execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip13] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If a player logs out during a 1v1 Duel match, a one-minute timeout begins, after which the match ends in defeat for that player.","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip13] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip13
 
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip14] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If a player forfeits during a 1v1 Duel, the victory goes to the remaining player.","color":"gray"}]
@@ -78,7 +78,7 @@ execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip15] run tag @e[x=0,type=arm
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip16] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"A Vortex blows up when enemies get near it, missiles pass through it, or it gets shot by projectiles. It can also chain-react with nearby Vortex explosions.","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip16] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip16
 
-execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip17] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"As the name implies, 1v1 Duel Mode only allows one player on each team. If you're not in the game, feel free to spectate!","color":"gray"}]
+execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip17] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"As the name implies, 1v1 Duel Mode only allows one player on each team. If you're not in a match, feel free to spectate!","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip17] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip17
 
 execute if entity @s[tag=!noYZELO] as @e[x=0,type=marker,tag=SelectedTip,tag=Tip18] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Winning a 1v1 Duel gives you XP, and the more XP you earn, the higher your rank gets. Each rank comes with its own boots!","color":"gray"}]

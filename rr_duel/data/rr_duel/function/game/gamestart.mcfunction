@@ -21,7 +21,7 @@ execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=E
 #Countdown
 tag @s[scores={count=1..}] add bossbarOverride
 scoreboard players set @s[scores={count=1}] count 400
-execute if entity @s[scores={count=400}] run bossbar set rr:startgame name ["",{"text":"The game is starting in ","color":"green"},{"text":"10","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
+execute if entity @s[scores={count=400}] run bossbar set rr:startgame name ["",{"text":"The match is starting in ","color":"green"},{"text":"10","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute if entity @s[scores={count=400}] run bossbar set rr:startgame value 10
 execute if entity @s[scores={count=400}] run bossbar set rr:startgame max 10
 execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown

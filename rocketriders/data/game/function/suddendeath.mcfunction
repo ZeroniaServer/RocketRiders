@@ -1,7 +1,7 @@
-####################################
-## SUDDENDEATH: What events occur ##
-## when the game results in a tie ##
-####################################
+#####################################
+## SUDDENDEATH: What events occur  ##
+## when the match results in a tie ##
+#####################################
 
 ##Begins timer
 execute if entity @s[scores={SDtime=20..}] run scoreboard players reset @s SDtime
@@ -18,7 +18,7 @@ execute if entity @s[scores={SDtime=1..15}] if predicate game:modifiers/punchabl
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt_minecart]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=creeper]
 
-##Preparing for Sudden Death
+##Preparing for Tiebreaker
 execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/blue] actionbar [""]
 execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/yellow] actionbar [""]
 execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
@@ -69,18 +69,17 @@ execute if predicate game:yellow_portal_revealed run function game:place_portal/
 
 ##Animated titles
 execute if entity @s[scores={SDtime=1}] unless score $skiptitles CmdData matches 1 run title @a[x=0] title ["",{"text":"It's a Tie!","color":"gray","bold":true}]
-execute if entity @s[scores={SDtime=1..5}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"","bold":true,"color":"red"},{"text":"SUDDEN DEATH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=6}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"S","bold":true,"color":"red"},{"text":"UDDEN DEATH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=7}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SU","bold":true,"color":"red"},{"text":"DDEN DEATH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=8}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SUD","bold":true,"color":"red"},{"text":"DEN DEATH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=9}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SUDD","bold":true,"color":"red"},{"text":"EN DEATH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=10}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SUDDE","bold":true,"color":"red"},{"text":"N DEATH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=11}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SUDDEN","bold":true,"color":"red"},{"text":" DEATH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=12}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SUDDEN D","bold":true,"color":"red"},{"text":"EATH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=13}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SUDDEN DE","bold":true,"color":"red"},{"text":"ATH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=14}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SUDDEN DEA","bold":true,"color":"red"},{"text":"TH","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=15}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SUDDEN DEAT","bold":true,"color":"red"},{"text":"H","bold":true,"color":"white"}]
-execute if entity @s[scores={SDtime=16..}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"SUDDEN DEATH","bold":true,"color":"red"}]
+execute if entity @s[scores={SDtime=1..5}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"","bold":true,"color":"red"},{"text":"TIEBREAKER","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=6}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"T","bold":true,"color":"red"},{"text":"IEBREAKER","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=7}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TI","bold":true,"color":"red"},{"text":"EBREAKER","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=8}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TIE","bold":true,"color":"red"},{"text":"BREAKER","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=9}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TIEB","bold":true,"color":"red"},{"text":"REAKER","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=10}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TIEBR","bold":true,"color":"red"},{"text":"EAKER","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=11}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TIEBRE","bold":true,"color":"red"},{"text":"AKER","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=12}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TIEBREA","bold":true,"color":"red"},{"text":"KER","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=13}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TIEBREAK","bold":true,"color":"red"},{"text":"ER","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=14}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TIEBREAKE","bold":true,"color":"red"},{"text":"R","bold":true,"color":"white"}]
+execute if entity @s[scores={SDtime=15..}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TIEBREAKER","bold":true,"color":"red"}]
 
 ##Resets timer
 execute if entity @s[scores={SDtime=20..}] run tag @s remove SuddenDeath

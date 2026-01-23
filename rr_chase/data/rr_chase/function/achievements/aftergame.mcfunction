@@ -1,4 +1,4 @@
-##Any achievements to be given by the official end of the game.
+##Any achievements to be given by the official end of the match.
 execute unless predicate game:achievements_can_be_awarded run return 0
 
 #| || || |_

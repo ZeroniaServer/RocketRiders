@@ -1,4 +1,4 @@
-##Randomized splash messages for the winners of a game
+##Randomized splash messages for the winners of a match
 execute if score $skipsplashes CmdData matches 1 run return fail
 execute if score $skiptitles CmdData matches 1 run return fail
 

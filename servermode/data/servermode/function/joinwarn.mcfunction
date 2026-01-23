@@ -2,7 +2,7 @@
 
 ##Blue
 #Joining as yellow player, causing imbalance
-execute if entity @s[predicate=custom:team/yellow,tag=JoinBlue] unless predicate game:team_count/blue_is_larger unless predicate game:team_count/yellow_is_larger run tellraw @s [{color:"dark_gray",text:"["},{bold:true,color:"red",text:"!"},{color:"dark_gray",text:"] "},{bold:true,color:"red",text:"Teams Balanced!"},"\n",{color:"gray",text:"Stay where you are to keep the game fair."}]
+execute if entity @s[predicate=custom:team/yellow,tag=JoinBlue] unless predicate game:team_count/blue_is_larger unless predicate game:team_count/yellow_is_larger run tellraw @s [{color:"dark_gray",text:"["},{bold:true,color:"red",text:"!"},{color:"dark_gray",text:"] "},{bold:true,color:"red",text:"Teams Balanced!"},"\n",{color:"gray",text:"Stay where you are to keep the match fair."}]
 execute if entity @s[predicate=custom:team/yellow,tag=JoinBlue] unless predicate game:team_count/blue_is_larger unless predicate game:team_count/yellow_is_larger run return run tag @s remove JoinBlue
 
 #Joining before settings have been confirmed
@@ -53,7 +53,7 @@ execute if entity @s[tag=cannotJoin] run return run tag @s remove cannotJoin
 
 ##Yellow
 #Joining as blue player, causing imbalance
-execute if entity @s[predicate=custom:team/blue,tag=JoinYellow] unless predicate game:team_count/blue_is_larger unless predicate game:team_count/yellow_is_larger run tellraw @s [{color:"dark_gray",text:"["},{bold:true,color:"red",text:"!"},{color:"dark_gray",text:"] "},{bold:true,color:"red",text:"Teams Balanced!"},"\n",{color:"gray",text:"Stay where you are to keep the game fair."}]
+execute if entity @s[predicate=custom:team/blue,tag=JoinYellow] unless predicate game:team_count/blue_is_larger unless predicate game:team_count/yellow_is_larger run tellraw @s [{color:"dark_gray",text:"["},{bold:true,color:"red",text:"!"},{color:"dark_gray",text:"] "},{bold:true,color:"red",text:"Teams Balanced!"},"\n",{color:"gray",text:"Stay where you are to keep the match fair."}]
 execute if entity @s[predicate=custom:team/blue,tag=JoinYellow] unless predicate game:team_count/blue_is_larger unless predicate game:team_count/yellow_is_larger run return run tag @s remove JoinYellow
 
 #Joining before settings have been confirmed

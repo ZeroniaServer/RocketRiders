@@ -1,4 +1,4 @@
-##Runs at the end of the game to reset any ingame statistics for achievements
+##Runs at the end of the match to reset any ingame statistics for achievements
 scoreboard players reset @a[x=0] jumping
 scoreboard players reset @a[x=0] timeSinceJump
 scoreboard players reset @a[x=0] deathCooldown

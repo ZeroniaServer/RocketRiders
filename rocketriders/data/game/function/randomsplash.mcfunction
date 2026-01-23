@@ -1,4 +1,4 @@
-##Randomized splash messages for when the game begins
+##Randomized splash messages for when the match begins
 execute if score $skiptitles CmdData matches 1 run return fail
 title @a[x=0] title {color:"aqua",text:"Game Started!"}
 execute if score $skipsplashes CmdData matches 1 run return fail

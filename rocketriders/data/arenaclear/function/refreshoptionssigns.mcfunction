@@ -14,7 +14,7 @@ execute unless predicate game:gamemode_components/duel_settings_locked if predic
 execute unless predicate game:gamemode_components/duel_settings_locked unless predicate game:game_rules/item_stacking/on run setblock -70 191 77 crimson_wall_sign[facing=east]
 execute if predicate game:gamemode_components/duel_settings_locked run setblock -70 191 77 crimson_wall_sign[facing=east]
 
-#Tie/Sudden Death
+#Tiebreakers
 execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:game_rules/disable_tying/on run setblock -70 193 77 crimson_wall_sign[facing=east]
 execute unless predicate game:gamemode_components/duel_settings_locked unless predicate game:game_rules/disable_tying/on run setblock -70 193 77 warped_wall_sign[facing=east]
 execute if predicate game:gamemode_components/duel_settings_locked run setblock -70 193 77 crimson_wall_sign[facing=east]
@@ -116,17 +116,17 @@ execute if predicate game:game_rules/item_delay/locked unless predicate game:gam
 execute if predicate game:game_rules/item_delay/locked if predicate game:gamemode_components/no_item_timer run \
   data modify block -70 191 79 front_text.messages set value [{click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_delay"},text:"Item Delay:"},["",{bold:true,text:"XX"}," seconds"],"",{bold:true,text:"Locked"}]
 
-#Tie/Sudden Death
+#Tie/Tiebreakers
 execute unless predicate game:game_rules/disable_tying/locked unless predicate game:game_rules/disable_tying/on run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"green",text:"Enabled"},"",""]
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"green",text:"Enabled"},"",""]
 execute unless predicate game:game_rules/disable_tying/locked if predicate game:game_rules/disable_tying/on run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"red",text:"Disabled"},"",""]
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"red",text:"Disabled"},"",""]
 execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:game_rules/disable_tying/forced_on run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
 execute unless predicate game:gamemode_components/duel_settings_locked if predicate game:game_rules/disable_tying/forced_off run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:gamemode_components/duel_settings_locked run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tie/Sudden Death"},{bold:true,color:"white",text:"Locked"},"",""]
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"white",text:"Locked"},"",""]
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=ctfEnabled] run data modify block -70 193 77 front_text.messages[0].text set value "Overtime"
 
 #Snipe Portals

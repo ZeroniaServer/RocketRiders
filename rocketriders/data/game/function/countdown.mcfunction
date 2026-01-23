@@ -1,7 +1,7 @@
-#####################################
-## COUNTDOWN: What events occur in ##
-## the time before the game starts ##
-#####################################
+######################################
+## COUNTDOWN: What events occur in  ##
+## the time before the match starts ##
+######################################
 
 ##Timer, bossbar, sound effects
 execute unless predicate game:phase/match/play run scoreboard players add @s[tag=Countdown] count 1
@@ -25,8 +25,8 @@ execute if score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:st
 execute if score @s count matches 1..599 unless score $waiting_for_arena_to_clear var matches 1 run scoreboard players set $seconds count 619
 execute if score @s count matches 1..599 unless score $waiting_for_arena_to_clear var matches 1 run scoreboard players operation $seconds count -= @s count
 execute if score @s count matches 1..599 unless score $waiting_for_arena_to_clear var matches 1 store result bossbar rr:startgame value run scoreboard players operation $seconds count /= $ticks_per_second constant
-execute if score @s count matches 1..579 unless score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:startgame name [{color:"green",text:"The game will begin in ",color:"green"},{bold:true,color:"dark_green",score:{name:"$seconds",objective:"count"}}," seconds."]
-execute if score @s count matches 580..599 unless score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:startgame name [{color:"green",text:"The game will begin in ",color:"green"},{bold:true,color:"dark_green",text:"1"}," second."]
+execute if score @s count matches 1..579 unless score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:startgame name [{color:"green",text:"The match will begin in ",color:"green"},{bold:true,color:"dark_green",score:{name:"$seconds",objective:"count"}}," seconds."]
+execute if score @s count matches 580..599 unless score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:startgame name [{color:"green",text:"The match will begin in ",color:"green"},{bold:true,color:"dark_green",text:"1"}," second."]
 
 #Countdown dings (10 to 1)
 execute if score @s count matches 400 unless score $waiting_for_arena_to_clear var matches 1 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5
@@ -40,10 +40,10 @@ execute if score @s count matches 540 unless score $waiting_for_arena_to_clear v
 execute if score @s count matches 560 unless score $waiting_for_arena_to_clear var matches 1 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.8
 execute if score @s count matches 580 unless score $waiting_for_arena_to_clear var matches 1 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.9
 
-##Just before the game starts, place the bases
+##Just before the match starts, place the bases
 execute if score @s count matches 599 unless score $waiting_for_arena_to_clear var matches 1 run function game:place_arena
 
-##As the game starts, add a UUIDTracker score
+##As the match starts, add a UUIDTracker score
 execute if predicate game:phase/match/play run scoreboard objectives add UUIDTracker dummy
 execute if predicate game:phase/match/play run scoreboard objectives add KillerUUID dummy
 

@@ -1,6 +1,6 @@
 function world_updates:1_3_0/set_max_block_modifications
 
-# Force stop the game
+# Force stop the match
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=GameStarted] run function world_updates:1_3_0/instant_legacy_force_stop
 
 # Ensure that old game entities are killed

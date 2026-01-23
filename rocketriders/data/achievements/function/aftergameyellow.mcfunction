@@ -28,6 +28,6 @@ tag @a[x=0,predicate=custom:team/yellow,scores={jumps=..0}] add GroundBound
 execute if predicate game:portal_type/default as @a[x=0,predicate=custom:team/blue] store result score @s HasMissiles run clear @s #custom:missile 0
 execute as @a[x=0,predicate=custom:team/blue,scores={HasMissiles=1..}] at @s if entity @s[z=46,dz=28] run tag @s add HadIt
 
-#All end-game achievements (delay for Sudden Death))
+#All end-game achievements (delay for tiebreakers)
 execute unless predicate game:game_rules/disable_tying/on if predicate game:portal_type/default run schedule function achievements:aftergame_indimension 100t replace
 execute if predicate game:game_rules/disable_tying/on run function achievements:aftergame

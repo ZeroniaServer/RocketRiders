@@ -22,7 +22,7 @@
     },
     {
       "label": "Quick Launch",
-      "tooltip": "Start the game with current game mode & settings.",
+      "tooltip": "Start a match with current game mode & settings.",
       "action": {
         "type": "minecraft:run_command",
         "command": "/trigger dev set 100"
@@ -30,7 +30,7 @@
     },
     {
       "label": "Quick Launch Game Mode...",
-      "tooltip": "Start the game on a specific gamemode.",
+      "tooltip": "Start a match on a specific gamemode.",
       "action": {
         "type": "minecraft:show_dialog",
         "dialog": "dev:quick_actions/quick_launch_gamemode"

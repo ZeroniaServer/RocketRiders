@@ -5,7 +5,7 @@ tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Two play
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noYZELO] run tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Whoever wins two rounds gains XP. Loser loses XP"}]
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noYZELO] run tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- XP translates to ranks, which affects gains/losses"}]
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noYZELO] run tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Players who log out forfeit and get XP penalty"}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noYZELO] run tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Leaving the game forfeits the duel and ends the game"}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=noYZELO] run tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Leaving the match forfeits the duel and ends the match"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Wind Down modifier is always on (no others are)"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Forced settings: No decorations, no ties, etc."}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]

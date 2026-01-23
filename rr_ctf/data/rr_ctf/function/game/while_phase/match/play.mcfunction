@@ -9,7 +9,7 @@ execute if predicate game:modifiers/minute_mix/on run function rr_ctf:items/minu
 execute as @e[x=0,type=marker,tag=airDetectBlue,limit=1] at @s run function rr_ctf:everytick/airdetectblue
 execute as @e[x=0,type=marker,tag=airDetectYellow,limit=1] at @s run function rr_ctf:everytick/airdetectyellow
 
-#Overtime sudden death
+#Overtime tiebreaker
 execute if score $game_duration global matches 36000 unless predicate game:game_rules/disable_tying/on run tag @s add CTFOvertime
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CTFOvertime] run function rr_ctf:everytick/overtime
 

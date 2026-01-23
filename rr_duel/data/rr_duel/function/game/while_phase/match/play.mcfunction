@@ -47,7 +47,7 @@ execute if predicate rr_duel:time_out_period unless predicate game:phase/match/p
 execute if predicate rr_duel:time_out_period unless predicate game:phase/match/paused run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute if predicate rr_duel:time_out_period unless predicate game:phase/match/paused run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if predicate rr_duel:time_out_period run scoreboard players set @s RandomItem -3
-execute if entity @s[scores={ForfeitTimeout=1}] run tellraw @a[x=0] ["",{bold:true,color:"dark_red",text:"[TIMEOUT] "},{color:"red",text:"Someone left the 1v1 Duel match! They have 1 minute to rejoin; otherwise, the game will end."}]
+execute if entity @s[scores={ForfeitTimeout=1}] run tellraw @a[x=0] ["",{bold:true,color:"dark_red",text:"[TIMEOUT] "},{color:"red",text:"Someone left the 1v1 Duel match! They have 1 minute to rejoin; otherwise, the match will end."}]
 execute if predicate rr_duel:time_out_period if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run scoreboard players operation @s RandomItem += @s MaxItemTime
 execute if predicate rr_duel:time_out_period if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run scoreboard players reset $1v1_duel_time_out_period global
 execute unless predicate rr_duel:time_out_period run scoreboard players reset @s ForfeitTimeout

@@ -1,6 +1,6 @@
 ##############################################
 ## GAIN: The main function for achievements ##
-## to be granted when a game is in progress ##
+## that are granted when a match is in play ##
 ##############################################
 
 #Necessary for fall distance check

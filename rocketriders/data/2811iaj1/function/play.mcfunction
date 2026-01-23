@@ -1,3 +1,3 @@
-##Notify player about playing a game
+##Notify player about playing a match
 tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"Tutorial","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Spawn eggs will place missiles. Place one and jump onto it to ride to the enemy base and destroy their portals! There are four categories of missile: Normal, Heavy, Lightning, and Special. Make sure you learn how to defuse missiles by watching what TNT and slime blocks can be broken without stopping it or triggering an explosion. Good luck!","color":"gray"}]
 execute at @s run playsound minecraft:block.note_block.iron_xylophone master @s ~ ~ ~ 0.5 2

@@ -73,7 +73,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={RepeatSettings=0},tag=
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=Repeat] unless entity @s[tag=!rngNormal,tag=!rngHeavy,tag=!rngLightning,tag=!rngUtil] run function arenaclear:brute_force/start
 
 bossbar set rr:startgame color red
-bossbar set rr:startgame name ["",{"text":"A game is currently ending.","color":"red"}]
+bossbar set rr:startgame name ["",{"text":"A match is currently ending.","color":"red"}]
 
 ##
 scoreboard players reset * FlagScore

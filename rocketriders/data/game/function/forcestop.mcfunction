@@ -1,4 +1,4 @@
-##Operator function for forcing a game to end
+##Operator function for forcing a match to end
 scoreboard players set $match_over global 1
 clear @a[x=0,predicate=custom:team/any_playing_team] *
 effect clear @a[x=0,predicate=custom:team/any_playing_team]

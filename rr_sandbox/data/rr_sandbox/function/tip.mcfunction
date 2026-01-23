@@ -48,7 +48,7 @@ execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip5,limit=1] run tag @e[x=0,t
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip6,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You can use your Shooting Saber as a melee weapon too!","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip6,limit=1] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip6
 
-execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip7,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Sandbox Mode only needs one player to start the game and does not give items over time. Great for practicing tech in singleplayer!","color":"gray"}]
+execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip7,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Sandbox Mode only needs one player to start a match and does not give items over time. Great for practicing tech in singleplayer!","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip7,limit=1] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip7
 
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip8,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You can destroy any unwanted items by putting them into your crafting slots. With more inventory space comes more items!","color":"gray"}]
@@ -57,7 +57,7 @@ execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip8,limit=1] run tag @e[x=0,t
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip9] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"There are four Special missiles which you can play with in Sandbox Mode. Use them all to earn the Veteran achievement!","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip9,limit=1] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip9
 
-execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip10] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If both teams' portals break within 5 seconds, a tie occurs and a Sudden Death period begins. Whoever wins that wins the game!","color":"gray"}]
+execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip10] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"If both teams' portals break within 5 seconds, a tie occurs and a tiebreaker period begins. Whoever wins that wins the match!","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip10] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip10
 
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip11] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Items have their category (such as Normal, Lightning, Heavy or Utility) in front of their names. Be careful with what you spawn at what time.","color":"gray"}]
@@ -87,7 +87,7 @@ execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip18] run tag @e[x=0,type=arm
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip19] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Your Rocket-nomicon holds the key to every item in the entire game within its folds. Explore to your heart's content!","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip19] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip19
 
-execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip20] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"When you're done playing Sandbox Mode, destroy one of the portals to end the game.","color":"gray"}]
+execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip20] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"When you're done playing Sandbox Mode, destroy one of the portals to end the match.","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip20] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip20
 
 #Opt out message

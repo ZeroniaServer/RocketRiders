@@ -40,5 +40,5 @@ execute at @s run playsound block.grass.place master @a[x=0] ~ ~ ~ 2 0
 
 ## Summon saddle
 tag @s add canopy.this
-execute at @s positioned ~ ~0.5 ~ summon interaction positioned ~ ~-0.5 ~ run function entities:canopy/init/saddle
+execute at @s positioned ~ ~-10000 ~ summon snowball positioned ~ ~10000 ~ run function entities:canopy/init/saddle_link
 tag @s remove canopy.this

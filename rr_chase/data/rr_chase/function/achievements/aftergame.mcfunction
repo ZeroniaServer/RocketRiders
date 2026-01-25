@@ -10,7 +10,7 @@ scoreboard players reset @a[x=0,predicate=custom:team/blue,tag=Loser] WinStreak
 advancement grant @a[x=0,predicate=custom:team/blue,scores={jumps=..0},tag=Winner] only achievements:rr_challenges/groundbound
 
 #Immortal
-advancement grant @a[x=0,predicate=custom:team/blue,scores={deaths=..0}] only achievements:rr_challenges/immortal
+execute as @a[x=0,predicate=custom:team/blue] unless score @s match_statistic.deaths matches 1.. run advancement grant @s only achievements:rr_challenges/immortal
 
 #Ballet Dancer
 advancement grant @a[x=0,predicate=custom:team/blue,tag=!FailedBallet,tag=firstMoved] only achievements:rr_challenges/ballet
@@ -19,4 +19,4 @@ advancement grant @a[x=0,predicate=custom:team/blue,tag=!FailedBallet,tag=firstM
 advancement grant @a[x=0,predicate=custom:team/blue,tag=!FailedMoon,tag=firstMoved] only achievements:rr_challenges/moonwalker
 
 #Pacifist
-advancement grant @a[x=0,tag=Winner,scores={kills=..0}] only achievements:rr_challenges/pacifist
+execute as @a[x=0,tag=Winner] unless score @s match_statistic.kills matches 1.. run advancement grant @s only achievements:rr_challenges/pacifist

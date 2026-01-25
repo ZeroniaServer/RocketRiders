@@ -68,8 +68,8 @@ execute if entity @s[scores={endtimer=570}] run scoreboard players add @a[x=0,pr
 execute if entity @s[scores={endtimer=570}] run tp @a[x=0,predicate=custom:team/blue] -36 211 61.0 90 0
 execute if entity @s[scores={endtimer=570}] run tp @a[x=0,predicate=custom:team/yellow] -36 211 96.0 90 0
 execute if entity @s[scores={endtimer=570}] run tp @a[x=0,predicate=custom:team/spectator] -43 211 78 90 0
-execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] kills 0
-execute if entity @s[scores={endtimer=570}] run scoreboard players set @a[x=0] deaths 0
+execute if entity @s[scores={endtimer=570}] run scoreboard players reset @a[x=0] match_statistic.kills
+execute if entity @s[scores={endtimer=570}] run scoreboard players reset @a[x=0] match_statistic.deaths
 execute if entity @s[scores={endtimer=570}] run function custom:game_rules/mob_griefing/off
 execute if entity @s[scores={endtimer=570}] run scoreboard players reset $swap_side global
 execute if entity @s[scores={endtimer=570}] run setblock -57 203 78 air

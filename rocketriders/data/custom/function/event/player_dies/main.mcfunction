@@ -4,8 +4,8 @@ execute store success score $void_death var if entity @s[advancements={custom:ev
 execute store success score $lava_death var if entity @s[advancements={custom:event/player_dies={die_lava=true}}]
 advancement revoke @s only custom:event/player_dies
 
-# Only increment the deaths statistic during play phase
-execute unless predicate game:phase/match/play run scoreboard players remove @s deaths 1
+# Increment the deaths statistic during play phase
+execute if predicate game:phase/match/play run scoreboard players add @s match_statistic.deaths 1
 
 ## Return cursor item to the inventory
 execute in minecraft:overworld run loot replace block 0 184 -16 container.1 26 loot custom:empty

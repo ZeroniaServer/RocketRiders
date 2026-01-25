@@ -1,6 +1,4 @@
 ##Soul Collector achievement
-advancement revoke @s only achievements:rr_utility/kill
-execute if score @s soulKills matches 50.. run return fail
-scoreboard players add @s soulKills 1
-execute store result storage rocketriders:main soulcollector.val int 1 run scoreboard players get @s soulKills 
+execute if score @s match_statistic.kills matches 50.. run return run advancement grant @s only achievements:rr_challenges/soul_collector
+execute store result storage rocketriders:main soulcollector.val int 1 run scoreboard players get @s match_statistic.kills
 function achievements:soulcollector_macro with storage rocketriders:main soulcollector

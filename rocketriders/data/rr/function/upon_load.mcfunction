@@ -111,6 +111,9 @@ scoreboard objectives add default_spell dummy
 scoreboard objectives add start_as_crusade_kit dummy
 scoreboard objectives add was_on_arena_team dummy
 
+scoreboard objectives add match_statistic.deaths dummy
+scoreboard objectives add match_statistic.kills dummy
+
 scoreboard objectives add shooting_saber.infinity_time dummy
 scoreboard objectives add shooting_saber.multishot_time dummy
 scoreboard objectives add elytra_time dummy
@@ -151,7 +154,6 @@ scoreboard objectives add PlatTime dummy
 scoreboard objectives add ClearArena dummy
 scoreboard objectives add GamesPlayed dummy
 scoreboard objectives add FallDistance dummy
-scoreboard objectives add deaths deathCount
 scoreboard objectives add deathCooldown dummy
 scoreboard objectives add bestParkourMins dummy
 scoreboard objectives add bestParkourSecs dummy
@@ -177,8 +179,6 @@ scoreboard objectives add ThrowPlat minecraft.used:ender_pearl
 scoreboard objectives add ThrowSplash minecraft.used:minecraft.lingering_potion
 scoreboard objectives add count dummy
 scoreboard objectives add endtimer dummy
-scoreboard objectives add soulKills dummy
-scoreboard objectives add kills playerKillCount
 scoreboard objectives add jumps minecraft.custom:minecraft.jump
 scoreboard objectives add SDtime dummy
 scoreboard objectives add endFireball dummy
@@ -288,7 +288,6 @@ scoreboard objectives add useful dummy
 scoreboard objectives add prevUseful dummy
 scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevFellVoid dummy
-scoreboard objectives add prevKills dummy
 scoreboard objectives remove cancelMatch
 scoreboard players add $curr leavecheck 0
 

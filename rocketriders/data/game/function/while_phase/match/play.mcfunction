@@ -15,10 +15,6 @@ execute if entity @a[x=0,scores={actionbardelay=50..}] run scoreboard players re
 scoreboard players add @a[x=0,predicate=custom:team/yellow] jumps 0
 scoreboard players add @a[x=0,predicate=custom:team/blue] jumps 0
 
-##Hotfix so Pacifist achievement isn't broken
-scoreboard players add @a[x=0,predicate=custom:team/yellow] kills 0
-scoreboard players add @a[x=0,predicate=custom:team/blue] kills 0
-
 ##Full hotbar check
 function items:full_hotbar
 
@@ -35,7 +31,8 @@ execute if score $game_duration global matches 10 unless predicate game:modifier
 execute if score $game_duration global matches ..4 run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{lobby:true}]
 
 ##Remove kills
-execute if score $game_duration global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] kills
+execute if score $game_duration global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.deaths
+execute if score $game_duration global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.kills
 
 ##Achievements
 function achievements:gain

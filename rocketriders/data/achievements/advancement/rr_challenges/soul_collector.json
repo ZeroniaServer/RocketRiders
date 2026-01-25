@@ -1,1 +1,72 @@
-{"display":{"title":{"text":"Soul Collector","color":"#c20000"},"description":{"text":"Get 50 player kills in one match.","color":"red"},"icon":{"id":"minecraft:soul_sand"},"frame":"challenge","show_toast":true,"announce_to_chat":true,"hidden":false},"criteria":{"1":{"trigger":"minecraft:impossible"},"2":{"trigger":"minecraft:impossible"},"3":{"trigger":"minecraft:impossible"},"4":{"trigger":"minecraft:impossible"},"5":{"trigger":"minecraft:impossible"},"6":{"trigger":"minecraft:impossible"},"7":{"trigger":"minecraft:impossible"},"8":{"trigger":"minecraft:impossible"},"9":{"trigger":"minecraft:impossible"},"10":{"trigger":"minecraft:impossible"},"11":{"trigger":"minecraft:impossible"},"12":{"trigger":"minecraft:impossible"},"13":{"trigger":"minecraft:impossible"},"14":{"trigger":"minecraft:impossible"},"15":{"trigger":"minecraft:impossible"},"16":{"trigger":"minecraft:impossible"},"17":{"trigger":"minecraft:impossible"},"18":{"trigger":"minecraft:impossible"},"19":{"trigger":"minecraft:impossible"},"20":{"trigger":"minecraft:impossible"},"21":{"trigger":"minecraft:impossible"},"22":{"trigger":"minecraft:impossible"},"23":{"trigger":"minecraft:impossible"},"24":{"trigger":"minecraft:impossible"},"25":{"trigger":"minecraft:impossible"},"26":{"trigger":"minecraft:impossible"},"27":{"trigger":"minecraft:impossible"},"28":{"trigger":"minecraft:impossible"},"29":{"trigger":"minecraft:impossible"},"30":{"trigger":"minecraft:impossible"},"31":{"trigger":"minecraft:impossible"},"32":{"trigger":"minecraft:impossible"},"33":{"trigger":"minecraft:impossible"},"34":{"trigger":"minecraft:impossible"},"35":{"trigger":"minecraft:impossible"},"36":{"trigger":"minecraft:impossible"},"37":{"trigger":"minecraft:impossible"},"38":{"trigger":"minecraft:impossible"},"39":{"trigger":"minecraft:impossible"},"40":{"trigger":"minecraft:impossible"},"41":{"trigger":"minecraft:impossible"},"42":{"trigger":"minecraft:impossible"},"43":{"trigger":"minecraft:impossible"},"44":{"trigger":"minecraft:impossible"},"45":{"trigger":"minecraft:impossible"},"46":{"trigger":"minecraft:impossible"},"47":{"trigger":"minecraft:impossible"},"48":{"trigger":"minecraft:impossible"},"49":{"trigger":"minecraft:impossible"},"50":{"trigger":"minecraft:impossible"}},"requirements":[ ["1"], ["2"], ["3"], ["4"], ["5"], ["6"], ["7"], ["8"], ["9"], ["10"], ["11"], ["12"], ["13"], ["14"], ["15"], ["16"], ["17"], ["18"], ["19"], ["20"], ["21"], ["22"], ["23"], ["24"], ["25"], ["26"], ["27"], ["28"], ["29"], ["30"], ["31"], ["32"], ["33"], ["34"], ["35"], ["36"], ["37"], ["38"], ["39"], ["40"], ["41"], ["42"], ["43"], ["44"], ["45"], ["46"], ["47"], ["48"], ["49"], ["50"]],"rewards":{"function":"achievements:soulcollector_gain"},"parent":"achievements:rr_zzzhard/root"}
+{
+  "criteria": {
+    "1": {"trigger":"minecraft:impossible"},
+    "2": {"trigger":"minecraft:impossible"},
+    "3": {"trigger":"minecraft:impossible"},
+    "4": {"trigger":"minecraft:impossible"},
+    "5": {"trigger":"minecraft:impossible"},
+    "6": {"trigger":"minecraft:impossible"},
+    "7": {"trigger":"minecraft:impossible"},
+    "8": {"trigger":"minecraft:impossible"},
+    "9": {"trigger":"minecraft:impossible"},
+    "10": {"trigger":"minecraft:impossible"},
+    "11": {"trigger":"minecraft:impossible"},
+    "12": {"trigger":"minecraft:impossible"},
+    "13": {"trigger":"minecraft:impossible"},
+    "14": {"trigger":"minecraft:impossible"},
+    "15": {"trigger":"minecraft:impossible"},
+    "16": {"trigger":"minecraft:impossible"},
+    "17": {"trigger":"minecraft:impossible"},
+    "18": {"trigger":"minecraft:impossible"},
+    "19": {"trigger":"minecraft:impossible"},
+    "20": {"trigger":"minecraft:impossible"},
+    "21": {"trigger":"minecraft:impossible"},
+    "22": {"trigger":"minecraft:impossible"},
+    "23": {"trigger":"minecraft:impossible"},
+    "24": {"trigger":"minecraft:impossible"},
+    "25": {"trigger":"minecraft:impossible"},
+    "26": {"trigger":"minecraft:impossible"},
+    "27": {"trigger":"minecraft:impossible"},
+    "28": {"trigger":"minecraft:impossible"},
+    "29": {"trigger":"minecraft:impossible"},
+    "30": {"trigger":"minecraft:impossible"},
+    "31": {"trigger":"minecraft:impossible"},
+    "32": {"trigger":"minecraft:impossible"},
+    "33": {"trigger":"minecraft:impossible"},
+    "34": {"trigger":"minecraft:impossible"},
+    "35": {"trigger":"minecraft:impossible"},
+    "36": {"trigger":"minecraft:impossible"},
+    "37": {"trigger":"minecraft:impossible"},
+    "38": {"trigger":"minecraft:impossible"},
+    "39": {"trigger":"minecraft:impossible"},
+    "40": {"trigger":"minecraft:impossible"},
+    "41": {"trigger":"minecraft:impossible"},
+    "42": {"trigger":"minecraft:impossible"},
+    "43": {"trigger":"minecraft:impossible"},
+    "44": {"trigger":"minecraft:impossible"},
+    "45": {"trigger":"minecraft:impossible"},
+    "46": {"trigger":"minecraft:impossible"},
+    "47": {"trigger":"minecraft:impossible"},
+    "48": {"trigger":"minecraft:impossible"},
+    "49": {"trigger":"minecraft:impossible"},
+    "50": {"trigger":"minecraft:impossible"}
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "Get 50 player kills in one match.",
+      "color": "red"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:soul_sand"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#c20000",
+      "text": "Soul Collector"
+    }
+  },
+  "parent": "achievements:rr_zzzhard/root"
+}

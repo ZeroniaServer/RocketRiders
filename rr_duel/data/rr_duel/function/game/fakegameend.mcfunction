@@ -14,8 +14,8 @@ execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] blindness
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] glowing
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] speed
 execute if entity @s[scores={fakeendtimer=1}] as @a[x=0] run function everytick:score_reset
-execute if entity @s[scores={fakeendtimer=240}] run scoreboard players set @a[x=0] kills 0
-execute if entity @s[scores={fakeendtimer=240}] run scoreboard players set @a[x=0] deaths 0
+execute if entity @s[scores={fakeendtimer=240}] run scoreboard players reset @a[x=0] match_statistic.kills
+execute if entity @s[scores={fakeendtimer=240}] run scoreboard players reset @a[x=0] match_statistic.deaths
 execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove Winner
 execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove Loser
 execute if entity @s[scores={fakeendtimer=240}] run tag @s remove BlueWon

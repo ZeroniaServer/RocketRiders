@@ -5,6 +5,6 @@ execute if predicate game:gamemode_components/neutral_items run function custom:
 tag @s remove player_dies.this
 execute on attacker run tag @s remove player_dies.killer
 
-scoreboard players add @a[tag=player_dies.killer] kills 1
+execute as @a[x=0,tag=player_dies.killer] at @s run function custom:event/player_kills_another_player/main
 
 tag @a remove player_dies.killer

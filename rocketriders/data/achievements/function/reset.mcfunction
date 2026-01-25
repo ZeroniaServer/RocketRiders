@@ -8,11 +8,8 @@ scoreboard players reset @s prevMinedTNT
 scoreboard players reset @s fireballkill
 scoreboard players reset @s HolyLand
 scoreboard players reset @s gravShot
-scoreboard players reset @s soulKills
-scoreboard players reset @s prevKills
 scoreboard players reset @s regifts
 tag @s remove HolyLand
 tag @s remove RainingMen
 tag @s remove Regifting
-tag @s remove SoulCollector
 tag @s remove GravShootout

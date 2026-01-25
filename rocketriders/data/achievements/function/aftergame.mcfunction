@@ -40,7 +40,7 @@ advancement grant @a[x=0,tag=GroundBound,tag=Winner] only achievements:rr_challe
 tag @a[x=0] remove GroundBound
 
 #Immortal (part 2) - applies to both winners/losers but only if win/loss still stands
-execute as @a[x=0,predicate=custom:team/any_playing_team,scores={deaths=..0}] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/immortal
+execute as @a[x=0,predicate=custom:team/any_playing_team] unless score @s match_statistic.deaths matches 1.. unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/immortal
 
 #Ballet Dancer - applies to both winners/losers but only if win/loss still stands
 execute as @a[x=0,tag=!FailedBallet,tag=firstMoved] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/ballet
@@ -49,7 +49,7 @@ execute as @a[x=0,tag=!FailedBallet,tag=firstMoved] unless entity @s[tag=!Winner
 execute as @a[x=0,tag=!FailedMoon,tag=firstMoved] unless entity @s[tag=!Winner,tag=!Loser] run advancement grant @s only achievements:rr_challenges/moonwalker
 
 #Pacifist - works since players can't get kills after game end
-advancement grant @a[x=0,tag=Winner,scores={kills=..0}] only achievements:rr_challenges/pacifist
+execute as @a[x=0,tag=Winner] unless score @s match_statistic.kills matches 1.. run advancement grant @s only achievements:rr_challenges/pacifist
 
 #I'm Helping! - works since players can't spawn missiles after game end
 advancement grant @a[x=0,tag=Winner,scores={AuxSpawned=0,AntsSpawned=0,BladeSpawned=0,BroadSpawned=0,BSurpriseSpawned=0,BulletSpawned=0,CataSpawned=0,CitaSpawned=0,DuplexSpawned=0,GemiSpawned=0,GuardSpawned=0,HurSpawned=0,HyperSpawned=0,JugbSpawned=0,LifterSpawned=0,NullSpawned=0,RifterSpawned=0,SlashSpawned=0,ThunSpawned=0,TomaSpawned=0,WarSpawned=0,YSurpriseSpawned=0}] only achievements:rr_challenges/helping

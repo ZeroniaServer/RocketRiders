@@ -1,0 +1,10 @@
+execute if entity @s[scores={entity.age=0..39},distance=..10] run return 1
+execute if entity @s[scores={entity.age=40..79},distance=..9] run return 1
+execute if entity @s[scores={entity.age=80..119},distance=..8] run return 1
+execute if entity @s[scores={entity.age=120..159},distance=..7] run return 1
+execute if entity @s[scores={entity.age=160..199},distance=..6] run return 1
+execute if entity @s[scores={entity.age=200..239},distance=..5] run return 1
+execute if entity @s[scores={entity.age=240..279},distance=..4] run return 1
+execute if entity @s[scores={entity.age=280..319},distance=..3] run return 1
+execute if entity @s[scores={entity.age=320..359},distance=..2] run return 1
+execute if entity @s[scores={entity.age=360..399},distance=..1] run return 1

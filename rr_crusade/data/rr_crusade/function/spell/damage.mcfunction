@@ -1,2 +1,1 @@
-#TODO
 function entities:spell_emitter/summon_damage

@@ -58,3 +58,5 @@ execute as @e[x=0,type=area_effect_cloud,predicate=entities:type/spell_emitter] 
 execute as @e[x=0,type=#entities:spell_entity_type,predicate=entities:type/spell] at @s run function entities:spell/tick
 execute as @e[x=0,type=area_effect_cloud,predicate=entities:type/fire_spell/brain] at @s run function entities:fire_spell/tick
 execute as @e[x=0,type=area_effect_cloud,predicate=entities:type/wind_spell/brain] at @s run function entities:wind_spell/tick
+# health spell
+execute as @e[x=0,type=area_effect_cloud,predicate=entities:type/health_spell/brain] at @s run function entities:health_spell/tick

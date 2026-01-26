@@ -20,7 +20,7 @@
         "with": [
           {
             "text": "❤",
-            "color": "red",
+            "color": "green",
             "bold": false
           }
         ]
@@ -39,7 +39,7 @@
         },
         {
           "text": "Health",
-          "color": "red"
+          "color": "green"
         }
       ]
     ],

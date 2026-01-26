@@ -4,7 +4,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PlayerCap 6
 execute if score $server_mode global matches 2 run schedule function servermode:enabled 1t
 scoreboard players set $server_mode global 1
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
+#tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
 scoreboard players set $realms global 0
 scoreboard players reset $extra_match_repetitions config

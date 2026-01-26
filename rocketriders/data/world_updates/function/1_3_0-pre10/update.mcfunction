@@ -1,3 +1,6 @@
+# disable YZELO
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] add noYZELO
+
 scoreboard objectives remove toggleParticles
 scoreboard objectives remove toggleTips
 scoreboard objectives remove toggleParkourTips

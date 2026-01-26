@@ -5,7 +5,7 @@ scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PlayerCap 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
 scoreboard players set $server_mode global -1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
+#tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 scoreboard players set $realms global 0
 scoreboard players reset $extra_match_repetitions config

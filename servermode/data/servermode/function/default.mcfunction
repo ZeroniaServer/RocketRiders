@@ -14,7 +14,6 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] store result score @s 
 # schedule function servermode:forceclear 3t append
 function lobby:parkour/parkoursetup
 function lobby:credits/stop
-function arenaclear:unhidemodroom
 schedule function servermode:fixduel 2t append
 function lobby:store_nav_book
 

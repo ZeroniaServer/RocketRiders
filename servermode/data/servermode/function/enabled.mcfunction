@@ -30,7 +30,6 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclea
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function modifiers:disablemodifiers
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsigns
-function arenaclear:hidemodroom
 function lobby:store_nav_book
 
 scoreboard objectives add joinBlue dummy

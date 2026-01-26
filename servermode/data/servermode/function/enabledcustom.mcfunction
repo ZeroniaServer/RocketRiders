@@ -25,7 +25,6 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function lobby:cre
 fill 67 208 3 63 208 3 air strict
 schedule function game:forcestop 2t append
 # schedule function servermode:forceclear 3t append
-function arenaclear:unhidemodroom
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:globaldefaults
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function modifiers:disablemodifiers
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsigns

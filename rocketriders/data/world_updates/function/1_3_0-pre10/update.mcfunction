@@ -44,4 +44,14 @@ fill -62 193 73 -62 192 73 minecraft:yellow_concrete strict
 
 function game:place_facade
 
+kill @e[limit=1,x=0,type=area_effect_cloud,tag=NameDisp]
+kill @e[limit=1,x=0,type=area_effect_cloud,tag=TNTDisp]
+kill @e[limit=1,x=0,type=area_effect_cloud,tag=SpeedDisp]
+kill @e[limit=1,x=0,type=item_frame,tag=MisDispIF]
+kill @e[x=0,tag=missile_display_text]
+summon minecraft:text_display 15.5 203.25 78.5 {Tags:["missile_display_text","missile_display_text.body"],billboard:"vertical",background:0,shadow:true}
+summon minecraft:text_display 15.5 204.2 78.5 {Tags:["missile_display_text","missile_display_text.title"],billboard:"vertical",background:0,shadow:true,transformation:{scale:[1.5,1.5,1.5],translation:[0,0,0.01],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
+summon minecraft:item_display 15.5 205.1 78.5 {Tags:["missile_display_text","missile_display_text.icon"],billboard:"vertical",item_display:"gui",brightness:{block:15,sky:15},transformation:{scale:[-0.8,0.8,0.001],translation:[0,0,0.01],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
+function lobby:missiledisplay/missile/ant
+
 scoreboard players set $WorldVersion CmdData 1307

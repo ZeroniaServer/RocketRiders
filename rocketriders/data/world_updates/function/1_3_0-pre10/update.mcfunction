@@ -35,11 +35,13 @@ summon minecraft:text_display -68.75 194.25 82.5 {Tags:["modroomItems"],Rotation
 kill @e[x=0,tag=modroomDecos]
 summon minecraft:text_display -56.05 196.25 78.5 {Tags:["modroomDecos"],Rotation:[90,20],text:{color:"#FF7B00",text:"Base Customizer"},transformation:{scale:[1.75,1.75,1.75],left_rotation:[1,0,0,0],translation:[0,0,0],right_rotation:[1,0,0,0]}}
 kill @e[x=0,tag=modroomGoBack]
-summon minecraft:text_display -63.5 191.25 78.5 {Tags:["modroomGoBack"],billboard:center,text:{color:"gray",text:"Jump to go back!"}}
+summon minecraft:text_display -63.5 191.25 78.5 {Tags:["modroomGoBack"],billboard:"center",text:{color:"gray",text:"Jump to go back!"}}
 
 fill -64 193 83 -67 192 83 minecraft:magenta_concrete strict
 fill -62 193 83 -63 192 83 minecraft:red_concrete strict
 fill -67 193 73 -63 192 73 minecraft:lime_concrete strict
 fill -62 193 73 -62 192 73 minecraft:yellow_concrete strict
+
+function game:place_facade
 
 scoreboard players set $WorldVersion CmdData 1307

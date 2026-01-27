@@ -1,0 +1,43 @@
+{
+  "criteria": {
+    "left_click": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:interaction",
+          "predicates": {
+            "minecraft:custom_data": {
+              "zeronia_credit": {
+                "right": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "right_click": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:interaction",
+          "predicates": {
+            "minecraft:custom_data": {
+              "zeronia_credit": {
+                "right": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "left_click",
+      "right_click"
+    ]
+  ],
+  "rewards": {
+    "function": "lobby:credits/zeronia_credit_right"
+  }
+}

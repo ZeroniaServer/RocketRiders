@@ -78,4 +78,10 @@ summon minecraft:text_display 67.5 201.8 102.5 {Tags:["parkour","parkour.cake_la
 kill @e[x=0,tag=parkourReturn]
 summon minecraft:text_display 67.5 201.75 118.5 {Tags:["parkour","parkourReturn"],billboard:"center",text:{color:"dark_green",text:"Return to Lobby"},background:0,shadow:true,transformation:{scale:[1.5,1.5,1.5],translation:[0,0,0],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
 
+kill @e[x=0,tag=ZeroniaCredit1]
+kill @e[x=0,tag=ZeroniaCredit2]
+kill @e[x=0,tag=zeronia_credit]
+summon interaction -47 211 81 {width:0.75,height:0.75,response:true,Tags:["zeronia_credit","zeronia_credit.left"],data:{zeronia_credit:{left:true}}}
+summon interaction -47 211 75 {width:0.75,height:0.75,response:true,Tags:["zeronia_credit","zeronia_credit.right"],data:{zeronia_credit:{right:true}}}
+
 scoreboard players set $WorldVersion CmdData 1307

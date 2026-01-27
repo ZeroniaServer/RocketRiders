@@ -1,15 +1,19 @@
 {
-    "criteria": {
-        "use_item": {
-            "trigger": "minecraft:using_item",
-            "conditions": {
-                "item": {
-                    "items": "clock"
-                }
+  "criteria": {
+    "use_item": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "id": "parkour/return_to_start"
             }
+          }
         }
-    },
-    "rewards": {
-        "function": "lobby:parkour/useclock"
+      }
     }
+  },
+  "rewards": {
+    "function": "lobby:parkour/useclock"
+  }
 }

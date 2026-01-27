@@ -1,15 +1,19 @@
 {
-    "criteria": {
-        "use_item": {
-            "trigger": "minecraft:using_item",
-            "conditions": {
-                "item": {
-                    "items": "compass"
-                }
+  "criteria": {
+    "use_item": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "id": "parkour/return_to_checkpoint"
             }
+          }
         }
-    },
-    "rewards": {
-        "function": "lobby:parkour/usecompass"
+      }
     }
+  },
+  "rewards": {
+    "function": "lobby:parkour/usecompass"
+  }
 }

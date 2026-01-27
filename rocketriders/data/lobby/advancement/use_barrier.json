@@ -1,15 +1,19 @@
 {
-    "criteria": {
-        "use_item": {
-            "trigger": "minecraft:using_item",
-            "conditions": {
-                "item": {
-                    "items": "barrier"
-                }
+  "criteria": {
+    "use_item": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "id": "parkour/quit_parkour"
             }
+          }
         }
-    },
-    "rewards": {
-        "function": "lobby:parkour/usebarrier"
+      }
     }
+  },
+  "rewards": {
+    "function": "lobby:parkour/usebarrier"
+  }
 }

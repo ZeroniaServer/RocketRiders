@@ -1,10 +1,10 @@
 {
-    "criteria": {
-        "tick": {
-            "trigger": "minecraft:tick"
-        }
-    },
-    "rewards": {
-        "function": "lobby:parkour/compasscooldown"
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
     }
+  },
+  "rewards": {
+    "function": "lobby:parkour/compasscooldown"
+  }
 }

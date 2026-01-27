@@ -15,7 +15,7 @@ setblock -31 189 17 black_concrete
 setblock -31 190 17 warped_wall_sign[facing=south]
 
 kill @e[x=0,type=armor_stand,tag=ParkourLB]
-kill @e[x=0,type=area_effect_cloud,tag=ParkourLB]
+kill @e[x=0,type=text_display,tag=ParkourLB]
 summon armor_stand 65 209 3 {Tags:["parkour","ParkourPlayer","ParkourLB"],NoGravity:true,NoBasePlate:true,Marker:true,Invulnerable:true,ShowArms:true,Rotation:[180,0]}
 summon minecraft:text_display 65 208.45 2 {Tags:["parkour","ParkourLB","ParkourName"],billboard:"center",text:"No players have completed",background:0}
 summon minecraft:text_display 65 208.15 2 {Tags:["parkour","ParkourLB","ParkourTime"],billboard:"center",text:"the parkour course yet",background:0}

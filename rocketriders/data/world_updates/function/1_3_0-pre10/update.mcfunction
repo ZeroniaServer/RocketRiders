@@ -67,13 +67,15 @@ summon minecraft:text_display 65 208.15 2 {Tags:["parkour","ParkourLB","ParkourT
 data modify entity @e[limit=1,x=0,type=text_display,tag=parkour,tag=ParkourLB,tag=ParkourTime] text set from storage rocketriders:main update.parkour_time
 
 kill @e[x=0,tag=parkourEnd]
-summon minecraft:text_display 67.5 202.75 91.5 {Tags:["parkour","parkourEnd"],billboard:"center",text:{bold:true,color:"red",text:"Finished Parkour!"}}
+summon minecraft:text_display 67.5 202.75 91.5 {Tags:["parkour","parkourEnd"],billboard:"center",text:{bold:true,color:"red",text:"Finished Parkour!"},background:0,shadow:true}
 kill @e[x=0,tag=OldLobbyInfo1]
-summon minecraft:text_display 82.5 203.25 102.5 {Tags:["parkour","OldLobbyInfo1"],billboard:"center",text:["",{color:"blue",text:"Rocket "},{color:"gold",text:"Riders "},"c. 2017"],transformation:{scale:[1.25,1.25,1.25],translation:[0,0,0],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
+summon minecraft:text_display 82.5 203.25 102.5 {Tags:["parkour","OldLobbyInfo1"],billboard:"center",text:["",{color:"blue",text:"Rocket "},{color:"gold",text:"Riders "},"c. 2017"],background:0,shadow:true,transformation:{scale:[1.25,1.25,1.25],translation:[0,0,0],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
 kill @e[x=0,tag=OldLobbyInfo2]
-summon minecraft:text_display 52.5 203.25 102.5 {Tags:["parkour","OldLobbyInfo2"],billboard:"center",text:["",{color:"dark_green",text:"Cubehamster "},"on ",{color:"blue",text:"Rocket "},{color:"gold",text:"Riders!"}],transformation:{scale:[1.25,1.25,1.25],translation:[0,0,0],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
+summon minecraft:text_display 52.5 203.25 102.5 {Tags:["parkour","OldLobbyInfo2"],billboard:"center",text:["",{color:"dark_green",text:"Cubehamster "},"on ",{color:"blue",text:"Rocket "},{color:"gold",text:"Riders!"}],background:0,shadow:true,transformation:{scale:[1.25,1.25,1.25],translation:[0,0,0],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
 kill @e[x=67.5,y=201.5,z=102.5,distance=..1,tag=parkour]
 kill @e[x=0,tag=parkour.cake_label]
-summon minecraft:text_display 67.5 201.8 102.5 {Tags:["parkour","parkour.cake_label"],billboard:"center",text:{bold:true,text:"The Lie!"},background:0,transformation:{scale:[1.5,1.5,1.5],translation:[0,0,0],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
+summon minecraft:text_display 67.5 201.8 102.5 {Tags:["parkour","parkour.cake_label"],billboard:"center",text:{bold:true,text:"The Lie!"},background:0,shadow:true,transformation:{scale:[1.5,1.5,1.5],translation:[0,0,0],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
+kill @e[x=0,tag=parkourReturn]
+summon minecraft:text_display 67.5 201.75 118.5 {Tags:["parkour","parkourReturn"],billboard:"center",text:{color:"dark_green",text:"Return to Lobby"},background:0,shadow:true,transformation:{scale:[1.5,1.5,1.5],translation:[0,0,0],left_rotation:[1,0,0,0],right_rotation:[1,0,0,0]}}
 
 scoreboard players set $WorldVersion CmdData 1307

@@ -15,6 +15,7 @@ execute unless predicate game:phase/match/paused unless predicate game:modifiers
 execute unless predicate game:phase/match/paused if predicate game:modifiers/minute_mix/on run function items:minutemix
 
 #win
+execute unless predicate game:phase/match/paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon] if function game:check/blue_portal_broken if function game:check/yellow_portal_broken run function rr_duel:game/winboth
 execute unless predicate game:phase/match/paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] if function game:check/blue_portal_broken run function rr_duel:game/winyellow
 execute unless predicate game:phase/match/paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] if function game:check/yellow_portal_broken run function rr_duel:game/winblue
 

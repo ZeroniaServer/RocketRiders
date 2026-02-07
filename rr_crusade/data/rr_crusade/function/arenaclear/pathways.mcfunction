@@ -33,6 +33,8 @@ setblock 24 63 59 reinforced_deepslate
 setblock 28 63 59 reinforced_deepslate
 fill 12 63 58 12 63 57 bedrock
 fill 24 63 58 24 63 57 bedrock
+fill 9 63 65 9 63 64 bedrock
+fill 15 63 65 15 63 64 bedrock
 
 setblock 9 63 -66 reinforced_deepslate
 setblock 10 63 -65 reinforced_deepslate
@@ -64,3 +66,5 @@ setblock 16 63 -59 reinforced_deepslate
 setblock 24 63 -59 reinforced_deepslate
 fill 0 63 -58 0 63 -57 bedrock
 fill 12 63 -58 12 63 -57 bedrock
+fill 9 63 -65 9 63 -64 bedrock
+fill 15 63 -65 15 63 -64 bedrock

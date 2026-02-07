@@ -4,6 +4,7 @@ tag @s add duelEnabled
 scoreboard players reset * gamemode_components
 scoreboard players set $arena/no_base_details gamemode_components 1
 scoreboard players set $armor/generic gamemode_components 1
+scoreboard players set $config_override.disable_pierce_prevention gamemode_components -1
 scoreboard players set $config_override.disable_tying gamemode_components 1
 scoreboard players set $config_override.item_delay gamemode_components 15
 scoreboard players set $config_override.wind_down gamemode_components 1

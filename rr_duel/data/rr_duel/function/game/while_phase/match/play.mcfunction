@@ -16,15 +16,7 @@ execute unless predicate game:phase/match/paused if predicate game:modifiers/min
 
 #win
 execute unless predicate game:phase/match/paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] if function game:check/blue_portal_broken run function rr_duel:game/winyellow
-execute unless predicate game:phase/match/paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BlueWon] if function game:check/blue_portal_broken run function rr_duel:game/winyellow
-
 execute unless predicate game:phase/match/paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] if function game:check/yellow_portal_broken run function rr_duel:game/winblue
-execute unless predicate game:phase/match/paused unless entity @s[tag=CriteriaTrue] if entity @s[tag=!YellowWon] if function game:check/yellow_portal_broken run function rr_duel:game/winblue
-
-#arena clear cheesing
-execute if entity @e[x=0,type=marker,tag=PlacerClear] run tag @s remove CriteriaTrue
-tag @e[x=0,type=marker,tag=PlacerClear] add BasePlaced
-tag @e[x=0,type=marker,tag=PlacerClear] add Cleared
 
 scoreboard players add Blue: RoundsWon 0
 scoreboard players add Yellow: RoundsWon 0

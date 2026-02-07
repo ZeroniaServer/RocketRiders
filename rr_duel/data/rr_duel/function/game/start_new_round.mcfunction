@@ -15,3 +15,4 @@ execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:re
 scoreboard players add @s Rounds 1
 tellraw @a[x=0,predicate=!custom:team/lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
 execute as @a[x=0,predicate=!custom:team/lobby] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
+tag @s remove CriteriaTrue

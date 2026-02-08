@@ -26,9 +26,20 @@ function everytick:no_fall
 execute if entity @e[x=0,type=#arrows] run function everytick:fire_arrow
 execute if predicate game:game_rules/disable_cannoning/on as @e[x=0,type=tnt,predicate=custom:tnt_is_moving_too_fast] run function game:slow_down_tnt
 
-##Kill excessive TNT minecarts for lag reduction purposes (sorry Robo)
+##Kill excessive entities for lag reduction purposes (sorry Robo)
 execute store result score $cart_count var if entity @e[x=0,type=tnt_minecart,predicate=custom:in_arena]
 execute if score $cart_count var matches 101.. run kill @e[limit=1,sort=random,x=0,type=tnt_minecart,predicate=custom:in_arena]
+
+execute store result score $vortex_count var if entity @e[x=0,type=area_effect_cloud,predicate=entities:type/vortex/brain,predicate=custom:in_arena]
+execute store result score $vortex_projectile_count var if entity @e[x=0,type=area_effect_cloud,predicate=entities:type/vortex_projectile/brain,predicate=custom:in_arena]
+scoreboard players operation $vortex_count var += $vortex_projectile_count var
+execute if score $vortex_count var matches 101.. as @e[limit=1,sort=random,x=0,type=area_effect_cloud,predicate=entities:type/vortex/brain,predicate=custom:in_arena] on vehicle run function custom:kill_entity_and_passengers
+
+execute store result score $fireball_count var if entity @e[x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:is_moving]
+execute if score $fireball_count var matches 101.. run kill @e[limit=1,sort=random,x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:is_moving]
+
+execute store result score $obsidian_shield_projectile_count var if entity @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:is_moving]
+execute if score $obsidian_shield_projectile_count var matches 101.. run kill @e[limit=1,sort=random,x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:is_moving]
 
 ##Regenerate base frames
 execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill -15 64 67 39 64 67 obsidian

@@ -2,8 +2,8 @@ execute if score SwapPlatformSec swapside matches 2.. run bossbar set rr_swap:sw
 execute if score SwapPlatformSec swapside matches 1 run bossbar set rr_swap:swap_progress name [{"text":"Swapping in: ","bold":true},{"score":{"name":"SwapPlatformSec","objective":"swapside"}},{"text":" second"}]
 scoreboard players add SwapPlatform swapside 1
 scoreboard players add SwapPlatformTick swapside 1
-execute if score SwapPlatformTick swapside matches 20 run scoreboard players remove SwapPlatformSec swapside 1
-execute if score SwapPlatformTick swapside matches 20 run scoreboard players set SwapPlatformTick swapside 0
+execute if score SwapPlatformTick swapside matches 20.. run scoreboard players remove SwapPlatformSec swapside 1
+execute if score SwapPlatformTick swapside matches 20.. run scoreboard players set SwapPlatformTick swapside 0
 
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={SDtime=1..}] unless score QuickSwap swapside matches 1 run scoreboard players set $swap_side global 0
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={SDtime=1..}] unless score QuickSwap swapside matches 1 run scoreboard players set SwapPlatform swapside 0

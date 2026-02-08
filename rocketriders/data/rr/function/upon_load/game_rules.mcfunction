@@ -19,3 +19,5 @@ gamerule minecraft:water_source_conversion false
 #use freeze_damage to control ender pearl damage
 gamerule minecraft:freeze_damage false
 gamerule immediate_respawn true
+gamerule minecraft:max_command_sequence_length 1000000
+gamerule minecraft:max_command_forks 1000000

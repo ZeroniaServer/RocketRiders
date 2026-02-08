@@ -19,3 +19,5 @@ gamerule waterSourceConversion false
 #use freezeDamage to control ender pearl damage
 gamerule freezeDamage false
 gamerule doImmediateRespawn true
+gamerule maxCommandChainLength 1000000
+gamerule maxCommandForkCount 1000000

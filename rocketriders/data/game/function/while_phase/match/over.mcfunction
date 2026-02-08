@@ -7,8 +7,8 @@ scoreboard players add @s endtimer 1
 execute as @a[x=0] run function custom:player_action/forget_all_canopies
 execute as @a[x=0] run function custom:player_action/forget_nova_attach
 function everytick:spawnables
-execute if score @s endtimer matches 1 run scoreboard players reset $match_in_play global
-execute if score @s endtimer matches 1 run scoreboard players reset $game_paused global
+execute if score @s endtimer matches 1.. run scoreboard players reset $match_in_play global
+execute if score @s endtimer matches 1.. run scoreboard players reset $game_paused global
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
 scoreboard players reset @s[scores={endtimer=1..}] SDtime

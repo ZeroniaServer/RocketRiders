@@ -39,8 +39,8 @@ tag @a[x=0,tag=informMe] remove informMe
 #lock join pads
 execute if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/blue] run function game:cancelblue
 execute if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/yellow] run function game:cancelyellow
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/blue] run function game:uncancelblue
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/yellow] run function game:uncancelyellow
+execute unless predicate game:phase/match if entity @s[tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/blue] run function game:uncancelblue
+execute unless predicate game:phase/match if entity @s[tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/yellow] run function game:uncancelyellow
 
 #fake game end
 execute if entity @s[tag=FakeGameEnd] run function rr_duel:game/fakegameend

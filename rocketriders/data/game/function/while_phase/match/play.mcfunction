@@ -56,6 +56,6 @@ execute unless predicate game:gamemode_components/custom_spawnpoint_block_protec
 execute unless predicate game:gamemode_components/custom_spawnpoint_block_protection run setblock 12 66 -67 obsidian
 
 ## Leave Mid-Match
-execute if predicate game:phase/match/play if predicate rr:drop_main_item_to_leave_match as @a[scores={LeaveMidgame=1..},predicate=custom:team/any_playing_team] run function game:leave_mid_match
+execute if predicate game:phase/match/play as @a[scores={LeaveMidgame=1..},predicate=custom:team/any_playing_team] run function game:leave_mid_match
 execute if predicate game:phase/match/play run scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] LeaveMidgame
 scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame

@@ -1,8 +1,7 @@
 #Blue: team round wins
 tag @a[x=0] remove Winner
 tag @a[x=0] remove Loser
-tag @s add YellowWon
-tag @s add BlueWon
+tag @s add BothWon
 tag @s add CriteriaTrue
 
 effect give @a[x=0,predicate=custom:team/blue] instant_health 1 100

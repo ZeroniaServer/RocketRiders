@@ -26,7 +26,9 @@ execute if entity @a[x=0,tag=killschamp] run scoreboard players add $playercount
 execute if entity @a[x=0,tag=deathchamp] run scoreboard players add $playercount CmdData 1
 execute if entity @s[tag=YellowWon] run tellraw @a[x=0] ["",{"text":"Team Yellow Won!","color":"gold","bold":true}]
 execute if entity @s[tag=BlueWon] run tellraw @a[x=0] ["",{"text":"Team Blue Won!","color":"blue","bold":true}]
-execute if entity @s[tag=BothWon] run tellraw @a[x=0] ["",{"text":"Everyone Wins!","color":"green","bold":true}]
+# TODO: this should be driven by a gamemode component instead, probably, but this is a quick and dirty fix
+execute if entity @s[tag=BothWon,tag=!duelEnabled] run tellraw @a[x=0] ["",{"text":"Everyone Wins!","color":"green","bold":true}]
+execute if entity @s[tag=BothWon,tag=duelEnabled] run tellraw @a[x=0] ["",{"text":"It's a Draw!","color":"gray","bold":true}]
 execute if score $playercount CmdData matches 1.. run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Match Statistics:","color":"dark_green","italic":true}]
 
 execute store result score $playercount CmdData if entity @a[x=0,tag=spawnchamp]

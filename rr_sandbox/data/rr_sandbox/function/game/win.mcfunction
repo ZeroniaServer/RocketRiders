@@ -20,7 +20,8 @@ execute as @a[x=0,predicate=custom:team/any_playing_team] run effect give @s ins
 execute as @a[x=0,predicate=custom:team/blue] at @s run stopsound @s
 execute as @a[x=0,predicate=custom:team/yellow] at @s run stopsound @s
 execute as @a[x=0] at @s run playsound minecraft:entity.wither.hurt master @s ~ ~ ~ 100 1
-execute unless score $skiptitles CmdData matches 1 run title @a[x=0,predicate=!custom:team/lobby] title ["",{"text":"Sandbox Ended","color":"dark_gray","bold":false}]
+execute unless score $skiptitles CmdData matches 1 run title @a[x=0,predicate=!custom:team/lobby] title ["",{"text":"Sandbox Ended","color":"red","bold":false}]
+execute unless score $skiptitles CmdData matches 1 run tellraw @a[x=0] ["",{"text":"Sandbox Ended","color":"red","bold":true}]
 
 ##Remove UUID Tracker score
 scoreboard objectives remove UUIDTracker

@@ -22,8 +22,8 @@ scoreboard players set @s time_since_joined_overworld 0
 scoreboard players set @a[x=0] flag.is_dead 1
 scoreboard players set @e[x=0,type=player] flag.is_dead 0
 
-# Reset advancement progress for the single-match counter achievements
-function everytick:score_reset_advancements
+# Reset scoreboards for ingame statistics/advancements
+function everytick:score_reset
 
 # Join lobby
 function custom:team/join_lobby

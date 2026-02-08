@@ -2,13 +2,12 @@ execute unless entity @e[x=0,type=end_crystal,tag=PUCrystal,limit=1] if entity @
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=98..},limit=1] unless entity @s[scores={PowerupCrystal=20..}] run scoreboard players add @s PowerupCrystal 1
 
 #Destroy platforms when not captured
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] run tp @a[x=0,predicate=custom:team/yellow,predicate=rr_powerups:oncrystalyellow] 12 64 66 -180 0
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] as @a[x=0,predicate=custom:team/yellow] at @s run playsound minecraft:entity.ender_eye.death master @s
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] run tellraw @a[x=0,predicate=custom:team/yellow] {"text":"Crystal Crafter Deactivated!","color":"red","bold":true}
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] run tp @a[x=0,predicate=custom:team/blue,predicate=rr_powerups:oncrystalblue] 12 64 -66 0 0
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2,PowerupCrystal=19..},limit=1] run tp @a[x=0,predicate=custom:team/blue,predicate=rr_powerups:oncrystalblue] 12 64 -66 0 0
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2,PowerupCrystal=19..},limit=1] as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:entity.ender_eye.death master @s
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2,PowerupCrystal=19..},limit=1] run tellraw @a[x=0,predicate=custom:team/blue] {"text":"Crystal Crafter Deactivated!","color":"red","bold":true}
 scoreboard players reset @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96},limit=1] PowerupCrystal
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96},limit=1] run fill 14 63 -68 10 66 -72 air destroy
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96},limit=1] run fill 14 63 -67 10 63 -67 air destroy
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] run fill 14 63 -68 10 66 -72 air destroy
+execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] run fill 14 63 -67 10 63 -67 air destroy
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] positioned 12 66 -69 run playsound minecraft:block.respawn_anchor.deplete master @a[x=0] ~ ~ ~ 2 0
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] run kill @e[x=0,type=armor_stand,tag=PUCrystalDeco]
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=..92},limit=1] run setblock 12 66 -67 obsidian
@@ -145,8 +144,8 @@ execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=98..,Power
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55},limit=1] run summon marker 12 55 0 {Tags:["BlueCrystalSpot","NotSet","PUCrystalEntity"]}
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=98..,PowerupCrystal=55},limit=1] run scoreboard players set @s PowerupCrystal 20
 
-execute if predicate custom:periodic_tick/3 as @e[x=0,type=item_display,tag=PUCrystalAnchor,limit=1] at @s positioned ~ ~.25 ~-3 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if predicate custom:periodic_tick/3 as @e[x=0,type=item_display,tag=PUCrystalAnchor,limit=1] at @s positioned ~ ~.25 ~-3 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if predicate custom:periodic_tick/3 as @e[x=0,type=item_display,tag=PUCrystalAnchor,limit=1] at @s positioned ~ ~.25 ~-3 run particle minecraft:dust{color:[1,0,1],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if predicate custom:periodic_tick/3 as @e[x=0,type=item_display,tag=PUCrystalAnchor,limit=1] at @s positioned ~ ~.25 ~-3 run particle minecraft:dust{color:[1,0,1],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 execute as @e[x=0,type=item_display,tag=PUCrystalAnchor] unless entity @e[x=0,type=end_crystal,tag=PUCrystal] run kill @s
 execute as @e[x=0,type=marker,tag=BlueCrystalSpot] unless entity @e[x=0,type=end_crystal,tag=PUCrystal] run kill @s
@@ -170,6 +169,6 @@ execute as @e[x=0,type=item_display,tag=PUCrystalAnchor,tag=NotSet,limit=1] at @
 execute as @e[x=0,type=item_display,tag=PUCrystalAnchor,tag=NotSet,limit=1] at @s if entity @e[type=marker,tag=BlueCrystalSpot,distance=..0.5,limit=1] run kill @s
 scoreboard players add @e[x=0,type=end_crystal,tag=PUCrystal,tag=!PUCrystalPerma,tag=Set] PowerupCrystal 1
 execute as @e[x=0,type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run kill @e[type=marker,tag=BlueCrystalSpot,distance=..0.5,limit=1]
-execute as @e[x=0,type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run particle flash{color:0xFFFFFF} ~ ~ ~ 0 0 0 4 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run particle flash{color:[1,1,1,1]} ~ ~ ~ 0 0 0 4 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 execute as @e[x=0,type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}] at @s run summon item_display ~ ~ ~ {Tags:["PUCrystalEntity","PUCrystalPerma"],Passengers:[{id:"end_crystal",Invulnerable:0b,ShowBottom:0b,Tags:["PUCrystal","PUCrystalEntity","PUCrystalPerma"]}]}
 kill @e[x=0,type=end_crystal,tag=PUCrystal,tag=Set,tag=!PUCrystalPerma,limit=1,scores={PowerupCrystal=3..}]

@@ -23,9 +23,12 @@ execute unless predicate game:phase/match/paused if predicate game:phase/match/o
 function everytick:spawnables
 function everytick:clear_spawnblocks
 function everytick:no_fall
-execute if entity @e[x=0,type=tnt_minecart] run function everytick:init_kill_carts
 execute if entity @e[x=0,type=#arrows] run function everytick:fire_arrow
 execute if predicate game:game_rules/disable_cannoning/on as @e[x=0,type=tnt,predicate=custom:tnt_is_moving_too_fast] run function game:slow_down_tnt
+
+##Kill excessive TNT minecarts for lag reduction purposes (sorry Robo)
+execute store result score $cart_count var if entity @e[x=0,type=tnt_minecart,predicate=custom:in_arena]
+execute if score $cart_count var matches 101.. run kill @e[limit=1,sort=random,x=0,type=tnt_minecart,predicate=custom:in_arena]
 
 ##Regenerate base frames
 execute unless predicate game:gamemode_components/custom_base_frames unless predicate game:gamemode_components/arena/bedrock_frame run fill -15 64 67 39 64 67 obsidian

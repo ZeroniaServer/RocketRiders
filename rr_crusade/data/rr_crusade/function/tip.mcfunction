@@ -42,7 +42,7 @@ execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip3,limit=1] run tag @e[x=0,t
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip4,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"Obsidian Shields will break after the glass pane in the middle is broken 3 times.","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip4,limit=1] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip4
 
-execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip5,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"You can use the water from the Splash to prevent TNT from blowing up blocks, cancel fall damage, or put out fire.","color":"gray"}]
+execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip5,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Crusade Mode, Mages can use cast Wind Spells to launch primed TNT away before it explodes!","color":"gray"}]
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip5,limit=1] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip5
 
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip6,limit=1] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"<","color":"dark_gray"},{"text":"TIP!","bold":true,"color":"green"},{"text":"> ","color":"dark_gray"},{"text":"In Crusade Mode, players can choose between 3 kits which each receive different weapons, armor, and items. Their next selected kit is given upon respawning.","color":"gray"}]

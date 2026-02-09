@@ -1,0 +1,20 @@
+[
+  {
+    "condition": "minecraft:reference",
+    "name": "game:gamemode_components/arena/castle"
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:gamemode_components/arena/no_base_details"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/hardcore/on"
+    }
+  }
+]

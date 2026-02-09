@@ -65,12 +65,12 @@ execute unless predicate game:gamemode_components/custom_base_frames if predicat
 
 ## Castle
 # Pathways
-execute if predicate game:gamemode_components/arena/castle run function game:arena/place_castle_pathways
+execute if predicate game:arena_details/castle run function game:arena/place_castle_pathways
 # Hanging ladders
-execute if predicate game:gamemode_components/arena/castle unless block 24 62 -52 minecraft:ladder if block 24 61 -52 minecraft:ladder run setblock 24 61 -52 air destroy
-execute if predicate game:gamemode_components/arena/castle unless block 24 61 -52 minecraft:ladder if block 24 60 -52 minecraft:ladder run setblock 24 60 -52 air destroy
-execute if predicate game:gamemode_components/arena/castle unless block 0 62 52 minecraft:ladder if block 0 61 52 minecraft:ladder run setblock 0 61 52 air destroy
-execute if predicate game:gamemode_components/arena/castle unless block 0 61 52 minecraft:ladder if block 0 60 52 minecraft:ladder run setblock 0 60 52 air destroy
+execute if predicate game:arena_details/castle unless block 24 62 -52 minecraft:ladder if block 24 61 -52 minecraft:ladder run setblock 24 61 -52 air destroy
+execute if predicate game:arena_details/castle unless block 24 61 -52 minecraft:ladder if block 24 60 -52 minecraft:ladder run setblock 24 60 -52 air destroy
+execute if predicate game:arena_details/castle unless block 0 62 52 minecraft:ladder if block 0 61 52 minecraft:ladder run setblock 0 61 52 air destroy
+execute if predicate game:arena_details/castle unless block 0 61 52 minecraft:ladder if block 0 60 52 minecraft:ladder run setblock 0 60 52 air destroy
 
 ## Hole In One
 execute if predicate game:arena_details/portal/hole_in_one if predicate game:blue_portal_revealed run function game:place_hole_in_one/blue

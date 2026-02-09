@@ -20,7 +20,7 @@ execute at @s positioned ~ ~0.1 ~ run function custom:explosion with storage roc
 execute at @s positioned ~ ~-0.1 ~ run function custom:explosion with storage rocketriders:main icbm
 
 # Castle cracks
-execute if predicate game:gamemode_components/arena/castle if entity @s[predicate=custom:tnt_near_castle] run function game:explosion_deepslate_cracks/large
+execute if predicate game:arena_details/castle if entity @s[predicate=custom:tnt_near_castle] run function game:explosion_deepslate_cracks/large
 
 # Kill brain
 kill @s

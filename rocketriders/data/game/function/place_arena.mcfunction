@@ -75,10 +75,10 @@ fill -14 63 67 38 34 73 cave_air
 fill -14 63 -67 38 34 -73 cave_air
 
 ## Details
-execute unless predicate game:gamemode_components/arena/no_base_details unless predicate game:gamemode_components/arena/castle run function arenaclear:detailplacement
+execute unless predicate game:gamemode_components/arena/no_base_details unless predicate game:arena_details/castle run function arenaclear:detailplacement
 
 ## Castle
-execute if predicate game:gamemode_components/arena/castle run function game:place_arena/castle
+execute if predicate game:arena_details/castle run function game:place_arena/castle
 
 ## Gamemode-specific features
 function #rr:game/place_arena

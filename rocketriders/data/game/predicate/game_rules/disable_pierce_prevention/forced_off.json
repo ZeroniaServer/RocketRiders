@@ -7,6 +7,18 @@
         "type": "minecraft:score",
         "target": {
           "type": "minecraft:fixed",
+          "name": "$duel_settings_locked"
+        },
+        "score": "gamemode_components"
+      },
+      "range": 1
+    },
+    {
+      "condition": "minecraft:value_check",
+      "value": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
           "name": "$config_override.disable_pierce_prevention"
         },
         "score": "gamemode_components"

@@ -85,3 +85,9 @@ fill 41 52 -39 35 52 -37 bedrock strict
 fill -11 52 -39 -17 52 -37 bedrock strict
 fill -17 52 39 -11 52 37 bedrock strict
 fill 35 52 39 41 52 37 bedrock strict
+
+# Hanging ladders
+execute unless block 24 62 -52 minecraft:ladder if block 24 61 -52 minecraft:ladder run setblock 24 61 -52 air destroy
+execute unless block 24 61 -52 minecraft:ladder if block 24 60 -52 minecraft:ladder run setblock 24 60 -52 air destroy
+execute unless block 0 62 52 minecraft:ladder if block 0 61 52 minecraft:ladder run setblock 0 61 52 air destroy
+execute unless block 0 61 52 minecraft:ladder if block 0 60 52 minecraft:ladder run setblock 0 60 52 air destroy

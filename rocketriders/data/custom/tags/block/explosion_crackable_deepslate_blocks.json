@@ -1,7 +1,9 @@
 {
     "values": [
-        "minecraft:deepslate_bricks",
-        "minecraft:cracked_deepslate_bricks",
-        "minecraft:cobbled_deepslate"
+        "#custom:explosion_crackable_deepslate_blocks/convert_to_cobbled_deepslate",
+        "#custom:explosion_crackable_deepslate_blocks/convert_to_cobbled_deepslate_slab",
+        "#custom:explosion_crackable_deepslate_blocks/convert_to_cracked_deepslate_bricks",
+        "#custom:explosion_crackable_deepslate_blocks/convert_to_cracked_deepslate_tiles",
+        "#custom:explosion_crackable_deepslate_blocks/crumble"
     ]
 }

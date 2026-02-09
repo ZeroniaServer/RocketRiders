@@ -29,8 +29,9 @@ fill -14 34 57 -10 63 66 deepslate_bricks
 # fill 36 64 57 36 68 57 ladder[facing=south]
 # fill 12 64 57 12 68 57 ladder[facing=south]
 # fill -12 64 57 -12 68 57 ladder[facing=south]
-place template rr_crusade:castle 38 59 66 180
-place template rr_crusade:castle2 -10 59 66 180
+place template rr_crusade:castle 38 58 66 180 none 1 0 strict
+place template rr_crusade:castle2 -10 58 66 180 none 1 0 strict
+fill -12 66 51 36 66 51 minecraft:yellow_wall_banner[facing=north]{patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
 setblock 0 63 57 orange_stained_glass
 fill -5 63 57 -3 63 57 orange_stained_glass
 fill 11 63 57 13 63 57 orange_stained_glass
@@ -67,8 +68,10 @@ fill -14 34 -66 -10 63 -57 deepslate_bricks
 # fill 36 64 -57 36 68 -57 ladder[facing=north]
 # fill 12 64 -57 12 68 -57 ladder[facing=north]
 # fill -12 64 -57 -12 68 -57 ladder[facing=north]
-place template rr_crusade:castle -14 59 -66
-place template rr_crusade:castle2 34 59 -66
+place template rr_crusade:castle -14 58 -66 none none 1 0 strict
+place template rr_crusade:castle2 34 58 -66 none none 1 0 strict
+execute unless predicate game:gamemode_components/red_for_blue run fill -12 66 -51 36 66 -51 minecraft:blue_wall_banner[facing=south]{patterns:[{color:"light_blue",pattern:"minecraft:flower"},{color:"light_blue",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
+execute if predicate game:gamemode_components/red_for_blue run fill -12 66 -51 36 66 -51 minecraft:red_wall_banner[facing=south]{patterns:[{color:"pink",pattern:"minecraft:flower"},{color:"pink",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
 execute unless predicate game:gamemode_components/red_for_blue run fill 13 63 -57 11 63 -57 cyan_stained_glass
 execute if predicate game:gamemode_components/red_for_blue run fill 13 63 -57 11 63 -57 pink_stained_glass
 execute unless predicate game:gamemode_components/red_for_blue run setblock 24 63 -57 cyan_stained_glass
@@ -187,6 +190,8 @@ setblock 14 63 -66 obsidian
 fill 11 65 -67 13 65 -67 obsidian
 setblock 12 66 -67 obsidian
 
-# Block up the stairs, sorry Stuffy
-fill 9 59 52 6 62 55 deepslate_bricks
-fill 15 59 -52 18 62 -55 deepslate_bricks
+# secret holes in back castle towers
+fill -13 34 -65 -11 67 -63 minecraft:air strict
+fill 35 34 -65 37 68 -63 minecraft:air strict
+fill -13 34 63 -11 68 65 minecraft:air strict
+fill 35 34 63 37 34 65 minecraft:air strict

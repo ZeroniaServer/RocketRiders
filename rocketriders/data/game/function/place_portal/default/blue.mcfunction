@@ -27,7 +27,7 @@ execute unless predicate game:gamemode_components/arena/no_portal_details if pre
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/glass_cover unless predicate game:gamemode_components/red_for_blue run fill -11 59 -73 35 36 -75 blue_stained_glass strict
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/glass_cover if predicate game:gamemode_components/red_for_blue run fill -11 59 -73 35 36 -75 red_stained_glass strict
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/end_stone_cover run fill -11 59 -73 35 36 -75 end_stone strict
-execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/hole_in_one run fill -11 59 -73 34 36 -75 obsidian strict
+execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/hole_in_one run fill -11 36 -75 35 59 -73 obsidian strict
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/hole_in_one run fill 1 48 -73 1 47 -73 air replace obsidian strict
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/hole_in_one run fill 23 48 -73 23 47 -73 air replace obsidian strict
 

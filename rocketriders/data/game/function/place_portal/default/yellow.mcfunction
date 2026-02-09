@@ -25,7 +25,7 @@ execute if score $mask_already_spawned var matches 0 run summon minecraft:text_d
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/glass_rim run fill -11 59 74 35 36 74 yellow_stained_glass_pane[east=true,west=true] strict
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/glass_cover run fill -11 59 73 35 36 75 yellow_stained_glass strict
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/end_stone_cover run fill -11 59 73 35 36 75 end_stone strict
-execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/hole_in_one run fill -11 59 73 34 36 75 obsidian strict
+execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/hole_in_one run fill -11 36 73 35 59 75 obsidian strict
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/hole_in_one run fill 1 48 73 1 47 73 air replace obsidian strict
 execute unless predicate game:gamemode_components/arena/no_portal_details if predicate game:arena_details/portal/hole_in_one run fill 23 48 73 23 47 73 air replace obsidian strict
 

@@ -13,7 +13,7 @@ data modify storage rocketriders:main itemdelay.dialog set value {\
         "color": "gray",\
         "italic": true\
       },\
-      "Adjust the slider below to change the time, then press \"Confirm\".\n\n"\
+      "Adjust the slider below to change the item delay, then press \"Confirm\".\n\n"\
     ],\
     "width": 400\
   },\
@@ -21,13 +21,7 @@ data modify storage rocketriders:main itemdelay.dialog set value {\
     {\
       "type": "minecraft:number_range",\
       "key": "item_delay",\
-      "label": [\
-        "Second",\
-        {\
-          "text": "(s)",\
-          "italic": true\
-        }\
-      ],\
+      "label": "Seconds",\
       "label_format": "%2$s %1$s",\
       "start": 5,\
       "end": 30,\

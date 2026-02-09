@@ -32,6 +32,8 @@ tag @s remove CarryFB1
 tag @s remove CarryFB2
 tag @s remove CarryFlag
 
+title @s actionbar ""
+
 scoreboard players reset @s FlagDeliver
 scoreboard players reset @s FlagScore
 

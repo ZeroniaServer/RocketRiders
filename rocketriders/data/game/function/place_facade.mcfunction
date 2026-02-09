@@ -147,5 +147,8 @@ execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facad
 execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 if predicate game:gamemode_components/red_for_blue run fill -89 201 65 -101 195 64 red_stained_glass
 execute unless predicate game:modifiers/hardcore/on run scoreboard players reset $was_hardcore_facade global
 
+## castle
+execute if predicate game:gamemode_components/arena/castle run function game:place_facade/castle
+
 ## Gamemode-specific features
 function #rr:game/place_facade

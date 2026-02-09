@@ -63,5 +63,14 @@ execute unless predicate game:gamemode_components/custom_base_frames if predicat
 execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill 39 64 68 -15 64 69 bedrock
 execute unless predicate game:gamemode_components/custom_base_frames if predicate game:gamemode_components/arena/bedrock_frame run fill 39 64 -68 -15 64 -69 bedrock
 
+## Castle
+# Pathways
+execute if predicate game:gamemode_components/arena/castle run function game:arena/place_castle_pathways
+# Hanging ladders
+execute if predicate game:gamemode_components/arena/castle unless block 24 62 -52 minecraft:ladder if block 24 61 -52 minecraft:ladder run setblock 24 61 -52 air destroy
+execute if predicate game:gamemode_components/arena/castle unless block 24 61 -52 minecraft:ladder if block 24 60 -52 minecraft:ladder run setblock 24 60 -52 air destroy
+execute if predicate game:gamemode_components/arena/castle unless block 0 62 52 minecraft:ladder if block 0 61 52 minecraft:ladder run setblock 0 61 52 air destroy
+execute if predicate game:gamemode_components/arena/castle unless block 0 61 52 minecraft:ladder if block 0 60 52 minecraft:ladder run setblock 0 60 52 air destroy
+
 ##Hotfix for Hypersonic
 execute as @e[x=0,type=marker,tag=hyperExtra] at @s run function items:hyperextra

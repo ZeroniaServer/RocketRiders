@@ -4,7 +4,7 @@
     "type": "minecraft:score",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$explosions_crack_deepslate_bricks"
+      "name": "$arena/castle"
     },
     "score": "gamemode_components"
   },

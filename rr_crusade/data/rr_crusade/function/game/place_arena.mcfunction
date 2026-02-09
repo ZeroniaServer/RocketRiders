@@ -1,9 +1,5 @@
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run return fail
 
-#> Remove portals
-fill -12 36 -75 36 59 -73 air
-fill -11 36 73 35 59 75 air
-
 #> Restore glass when game starts
 kill @e[x=0,type=marker,tag=crusadeWall]
 execute unless entity @e[x=0,type=marker,tag=crusadeWall,limit=1] run summon marker 12.5 54.0 0.0 {Tags:["crusadeWall"]}
@@ -12,30 +8,6 @@ function rr_crusade:game/glassplacement
 scoreboard players set @e[x=0,type=marker,tag=crusadeWall] CmdData 20
 
 #> Yellow
-fill -14 34 52 38 63 56 deepslate_bricks
-fill 38 34 57 34 63 66 deepslate_bricks
-fill -14 34 57 -10 63 66 deepslate_bricks
-# #
-# fill 38 64 52 34 68 56 minecraft:deepslate_bricks
-# fill 30 64 52 26 68 56 deepslate_bricks
-# fill 22 64 52 18 68 56 deepslate_bricks
-# fill 14 64 52 10 68 56 minecraft:deepslate_bricks
-# fill 6 64 52 2 68 56 deepslate_bricks
-# fill -2 64 56 -6 68 52 minecraft:deepslate_bricks
-# fill -10 64 56 -14 68 52 deepslate_bricks
-# fill -10 64 62 -14 68 66 deepslate_bricks
-# fill 38 64 62 34 68 66 deepslate_bricks
-# #
-# fill 36 64 57 36 68 57 ladder[facing=south]
-# fill 12 64 57 12 68 57 ladder[facing=south]
-# fill -12 64 57 -12 68 57 ladder[facing=south]
-place template rr_crusade:castle 38 58 66 180 none 1 0 strict
-place template rr_crusade:castle2 -10 58 66 180 none 1 0 strict
-fill -12 66 51 36 66 51 minecraft:yellow_wall_banner[facing=north]{patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
-setblock 0 63 57 orange_stained_glass
-fill -5 63 57 -3 63 57 orange_stained_glass
-fill 11 63 57 13 63 57 orange_stained_glass
-
 #Objectives
 #Main
 fill 20 45 52 4 55 66 minecraft:crying_obsidian
@@ -51,34 +23,6 @@ execute if predicate game:gamemode_components/red_for_blue run fill -16 47 -35 -
 fill -16 51 -40 -12 47 -40 light[level=1]
 
 #> Blue
-fill -14 34 -52 38 63 -56 deepslate_bricks
-fill 38 34 -66 34 63 -57 deepslate_bricks
-fill -14 34 -66 -10 63 -57 deepslate_bricks
-# #
-# fill 38 64 -52 34 68 -56 deepslate_bricks
-# fill 30 64 -52 26 68 -56 deepslate_bricks
-# fill 22 64 -52 18 68 -56 deepslate_bricks
-# fill 14 64 -52 10 68 -56 deepslate_bricks
-# fill 6 64 -52 2 68 -56 deepslate_bricks
-# fill -2 64 -52 -6 68 -56 deepslate_bricks
-# fill -10 64 -52 -14 68 -56 deepslate_bricks
-# fill -10 64 -62 -14 68 -66 deepslate_bricks
-# fill 38 64 -62 34 68 -66 deepslate_bricks
-# #
-# fill 36 64 -57 36 68 -57 ladder[facing=north]
-# fill 12 64 -57 12 68 -57 ladder[facing=north]
-# fill -12 64 -57 -12 68 -57 ladder[facing=north]
-place template rr_crusade:castle -14 58 -66 none none 1 0 strict
-place template rr_crusade:castle2 34 58 -66 none none 1 0 strict
-execute unless predicate game:gamemode_components/red_for_blue run fill -12 66 -51 36 66 -51 minecraft:blue_wall_banner[facing=south]{patterns:[{color:"light_blue",pattern:"minecraft:flower"},{color:"light_blue",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
-execute if predicate game:gamemode_components/red_for_blue run fill -12 66 -51 36 66 -51 minecraft:red_wall_banner[facing=south]{patterns:[{color:"pink",pattern:"minecraft:flower"},{color:"pink",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
-execute unless predicate game:gamemode_components/red_for_blue run fill 13 63 -57 11 63 -57 cyan_stained_glass
-execute if predicate game:gamemode_components/red_for_blue run fill 13 63 -57 11 63 -57 pink_stained_glass
-execute unless predicate game:gamemode_components/red_for_blue run setblock 24 63 -57 cyan_stained_glass
-execute if predicate game:gamemode_components/red_for_blue run setblock 24 63 -57 pink_stained_glass
-execute unless predicate game:gamemode_components/red_for_blue run fill 29 63 -57 27 63 -57 cyan_stained_glass
-execute if predicate game:gamemode_components/red_for_blue run fill 29 63 -57 27 63 -57 pink_stained_glass
-
 #Objectives
 #Main
 fill 4 55 -52 20 45 -66 minecraft:crying_obsidian
@@ -189,9 +133,3 @@ setblock 10 63 -66 obsidian
 setblock 14 63 -66 obsidian
 fill 11 65 -67 13 65 -67 obsidian
 setblock 12 66 -67 obsidian
-
-# secret holes in back castle towers
-fill -13 34 -65 -11 67 -63 minecraft:air strict
-fill 35 34 -65 37 68 -63 minecraft:air strict
-fill -13 34 63 -11 68 65 minecraft:air strict
-fill 35 34 63 37 34 65 minecraft:air strict

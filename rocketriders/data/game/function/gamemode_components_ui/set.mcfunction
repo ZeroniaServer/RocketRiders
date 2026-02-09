@@ -12,6 +12,10 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclea
 $execute store success score $arena/bedrock_frame gamemode_components if predicate {condition:"value_check",value:$(arena__bedrock_frame),range:1}
 execute if score $arena/bedrock_frame gamemode_components matches 0 run scoreboard players reset $arena/bedrock_frame gamemode_components
 
+# arena/castle
+$execute store success score $arena/castle gamemode_components if predicate {condition:"value_check",value:$(arena__castle),range:1}
+execute if score $arena/castle gamemode_components matches 0 run scoreboard players reset $arena/castle gamemode_components
+
 # arena/no_base_details
 $execute store success score $arena/no_base_details gamemode_components if predicate {condition:"value_check",value:$(arena__no_base_details),range:1}
 execute if score $arena/no_base_details gamemode_components matches 0 run scoreboard players reset $arena/no_base_details gamemode_components
@@ -60,10 +64,6 @@ execute if score $decreased_icbm_flight_duration gamemode_components matches 0 r
 # decreased_shooting_saber_attack_damage
 $execute store success score $decreased_shooting_saber_attack_damage gamemode_components if predicate {condition:"value_check",value:$(decreased_shooting_saber_attack_damage),range:1}
 execute if score $decreased_shooting_saber_attack_damage gamemode_components matches 0 run scoreboard players reset $decreased_shooting_saber_attack_damage gamemode_components
-
-# explosions_crack_deepslate_bricks
-$execute store success score $explosions_crack_deepslate_bricks gamemode_components if predicate {condition:"value_check",value:$(explosions_crack_deepslate_bricks),range:1}
-execute if score $explosions_crack_deepslate_bricks gamemode_components matches 0 run scoreboard players reset $explosions_crack_deepslate_bricks gamemode_components
 
 # friendly_fire
 $execute store success score $friendly_fire gamemode_components if predicate {condition:"value_check",value:$(friendly_fire),range:1}

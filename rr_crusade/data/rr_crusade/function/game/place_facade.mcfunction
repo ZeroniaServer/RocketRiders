@@ -1,26 +1,6 @@
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run return fail
 
-#> Pregame bases
-fill -101 201 65 -89 195 64 deepslate_bricks
-fill -101 201 60 -101 195 63 deepslate_bricks
-fill -89 195 60 -89 201 63 deepslate_bricks
-setblock -89 202 62 deepslate_bricks
-setblock -89 202 65 deepslate_bricks
-setblock -92 202 65 deepslate_bricks
-setblock -95 202 65 deepslate_bricks
-setblock -98 202 65 deepslate_bricks
-setblock -101 202 65 deepslate_bricks
-setblock -101 202 62 deepslate_bricks
-fill -101 195 91 -89 201 92 deepslate_bricks
-fill -89 201 93 -89 195 96 deepslate_bricks
-fill -101 195 96 -101 201 91 deepslate_bricks
-setblock -101 202 94 deepslate_bricks
-setblock -101 202 91 deepslate_bricks
-setblock -98 202 91 deepslate_bricks
-setblock -95 202 91 deepslate_bricks
-setblock -92 202 91 deepslate_bricks
-setblock -89 202 91 deepslate_bricks
-setblock -89 202 94 deepslate_bricks
+#> Crystals
 fill -101 200 85 -99 202 85 bedrock
 fill -91 200 85 -89 202 85 bedrock
 fill -101 200 84 -99 202 84 yellow_stained_glass
@@ -31,6 +11,8 @@ execute unless predicate game:gamemode_components/red_for_blue run fill -99 200 
 execute if predicate game:gamemode_components/red_for_blue run fill -99 200 73 -101 202 73 red_stained_glass
 execute unless predicate game:gamemode_components/red_for_blue run fill -91 200 73 -89 202 73 blue_stained_glass
 execute if predicate game:gamemode_components/red_for_blue run fill -91 200 73 -89 202 73 red_stained_glass
+
+# Portal area
 fill -94 198 91 -96 200 94 minecraft:crying_obsidian
 fill -96 198 65 -94 200 62 minecraft:crying_obsidian
 
@@ -83,30 +65,3 @@ execute as @e[x=0,type=armor_stand,tag=MageStand] run loot replace entity @s arm
 execute as @e[x=0,type=armor_stand,tag=MageStand] run loot replace entity @s weapon.mainhand loot items:misc/spell_wand
 
 execute as @e[x=0,type=armor_stand,tag=KitSelect] run data merge entity @s {DisabledSlots:4144959}
-
-#Pregame indestructible pathways
-fill -96 201 96 -94 201 95 obsidian
-setblock -97 201 96 reinforced_deepslate
-setblock -96 201 95 reinforced_deepslate
-setblock -93 201 96 reinforced_deepslate
-setblock -94 201 95 reinforced_deepslate
-fill -100 201 94 -90 201 94 bedrock
-setblock -92 201 94 reinforced_deepslate
-setblock -95 201 94 reinforced_deepslate
-setblock -98 201 94 reinforced_deepslate
-setblock -98 201 93 bedrock
-setblock -95 201 93 bedrock
-setblock -92 201 93 bedrock
-
-fill -94 201 60 -96 201 61 obsidian
-setblock -93 201 60 reinforced_deepslate
-setblock -94 201 61 reinforced_deepslate
-setblock -96 201 61 reinforced_deepslate
-setblock -97 201 60 reinforced_deepslate
-fill -90 201 62 -100 201 62 bedrock
-setblock -92 201 62 reinforced_deepslate
-setblock -95 201 62 reinforced_deepslate
-setblock -98 201 62 reinforced_deepslate
-setblock -92 201 63 bedrock
-setblock -95 201 63 bedrock
-setblock -98 201 63 bedrock

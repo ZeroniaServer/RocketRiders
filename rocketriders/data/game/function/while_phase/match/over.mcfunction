@@ -87,6 +87,8 @@ tag @s[scores={endtimer=570..}] remove YellowWonFirst
 tag @s[scores={endtimer=570..}] remove SuddenDeath
 tag @s[scores={endtimer=570..}] remove BothWon
 execute if score @s endtimer matches 570.. run scoreboard players reset @a[x=0] invCount
+execute if score @s endtimer matches 570.. run scoreboard players reset $blue_single_portal var
+execute if score @s endtimer matches 570.. run scoreboard players reset $yellow_single_portal var
 execute if score @s endtimer matches 570.. run scoreboard players reset $match_over global
 execute if score @s endtimer matches 570.. run scoreboard players reset $1v1_duel_time_out_period global
 

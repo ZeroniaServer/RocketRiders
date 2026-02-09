@@ -1,0 +1,3 @@
+execute in minecraft:overworld unless block -9 38 74 minecraft:nether_portal unless score $yellow_single_portal var matches 1 store result score $yellow_single_portal var run function game:double_portal/yellow_announce
+execute in minecraft:overworld unless block 13 38 74 minecraft:nether_portal unless score $yellow_single_portal var matches 1 store result score $yellow_single_portal var run function game:double_portal/yellow_announce
+return fail

@@ -186,3 +186,7 @@ setblock 10 63 -66 obsidian
 setblock 14 63 -66 obsidian
 fill 11 65 -67 13 65 -67 obsidian
 setblock 12 66 -67 obsidian
+
+# Block up the stairs, sorry Stuffy
+fill 9 59 52 6 62 55 deepslate_bricks
+fill 15 59 -52 18 62 -55 deepslate_bricks

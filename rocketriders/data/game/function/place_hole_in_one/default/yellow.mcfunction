@@ -1,0 +1,10 @@
+fill -11 36 73 35 46 73 minecraft:obsidian strict
+fill -11 47 73 0 59 73 minecraft:obsidian strict
+fill 1 49 73 35 59 73 minecraft:obsidian strict
+fill 2 47 73 22 48 73 minecraft:obsidian strict
+fill 24 47 73 35 48 73 minecraft:obsidian strict
+fill -11 36 75 -11 59 74 minecraft:obsidian strict
+fill -10 36 75 35 59 75 minecraft:obsidian strict
+fill -10 36 74 35 36 74 minecraft:obsidian strict
+fill -10 59 74 35 59 74 minecraft:obsidian strict
+fill 35 37 74 35 58 74 minecraft:obsidian strict

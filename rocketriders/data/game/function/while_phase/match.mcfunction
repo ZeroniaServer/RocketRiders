@@ -72,5 +72,9 @@ execute if predicate game:gamemode_components/arena/castle unless block 24 61 -5
 execute if predicate game:gamemode_components/arena/castle unless block 0 62 52 minecraft:ladder if block 0 61 52 minecraft:ladder run setblock 0 61 52 air destroy
 execute if predicate game:gamemode_components/arena/castle unless block 0 61 52 minecraft:ladder if block 0 60 52 minecraft:ladder run setblock 0 60 52 air destroy
 
+## Hole In One
+execute if predicate game:arena_details/portal/hole_in_one if predicate game:blue_portal_revealed run function game:place_hole_in_one/blue
+execute if predicate game:arena_details/portal/hole_in_one if predicate game:yellow_portal_revealed run function game:place_hole_in_one/yellow
+
 ##Hotfix for Hypersonic
 execute as @e[x=0,type=marker,tag=hyperExtra] at @s run function items:hyperextra

@@ -1,0 +1,9 @@
+fill 2 43 66 22 49 66 minecraft:obsidian strict
+fill 2 50 66 11 57 66 minecraft:obsidian strict
+fill 12 52 66 22 57 66 minecraft:obsidian strict
+fill 13 50 66 22 51 66 minecraft:obsidian strict
+fill 2 43 68 2 57 67 minecraft:obsidian strict
+fill 3 43 68 22 57 68 minecraft:obsidian strict
+fill 3 57 67 22 57 67 minecraft:obsidian strict
+fill 3 43 67 22 43 67 minecraft:obsidian strict
+fill 22 44 67 22 56 67 minecraft:obsidian strict

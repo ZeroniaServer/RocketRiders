@@ -88,8 +88,8 @@ execute as @a[x=0,tag=CarryFlag,predicate=custom:team/yellow,scores={FlagScore=1
 execute as @a[x=0,tag=CarryFlag,predicate=custom:team/yellow,scores={FlagScore=1}] at @s run tellraw @a[x=0,predicate=custom:team/yellow] ["","\n",{"text":"✔ ","color":"green"},{"selector":"@s","color":"gold"},{"text":" stole a ","color":"dark_aqua"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"dark_aqua"},"\n"]
 execute as @a[x=0,tag=CarryFlag,predicate=custom:team/yellow,scores={FlagScore=1}] at @s run tellraw @a[x=0,predicate=custom:team/blue] ["","\n",{"text":"⚠ ","color":"red"},{"selector":"@s","color":"gold"},{"text":" stole your flag!","color":"dark_aqua"},"\n"]
 effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] glowing infinite 0 true
-effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] resistance 15 0 true
-effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] strength 15 0 true
+effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] resistance 20 0 false
+effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] strength 20 0 false
 effect give @a[x=0,tag=CarryFlag,scores={FlagScore=1}] absorption infinite 0 true
 
 function rr_ctf:everytick/particlebeams

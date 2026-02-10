@@ -63,6 +63,9 @@
         "rr:threads/entities_custom/health_spell",
         "rr:thread_manager/threads/entities_custom/health_spell",
 
+        "rr:threads/entities_custom/fireball_mask",
+        "rr:thread_manager/threads/entities_custom/fireball_mask",
+
         "rr:threads/entities_tridents",
         "rr:thread_manager/threads/entities_tridents",
 

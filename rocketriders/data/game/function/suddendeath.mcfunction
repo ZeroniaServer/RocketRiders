@@ -41,8 +41,7 @@ execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,predicate=c
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,predicate=custom:team/yellow]
 execute if entity @s[scores={SDtime=1}] run scoreboard players set $match_in_play global 1
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=fireball,tag=endFireball] run function game:fixfireball
-execute if entity @s[scores={SDtime=1}] as @e[x=0,type=dragon_fireball,tag=endFireball] run function game:fixfireball
+execute if entity @s[scores={SDtime=1}] as @e[x=0,type=#custom:large_fireballs] run function game:set_fireball_punchable
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove YellowWon
 execute if entity @s[scores={SDtime=1}] run tag @s remove BothWon

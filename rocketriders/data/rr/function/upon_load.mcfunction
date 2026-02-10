@@ -181,7 +181,6 @@ scoreboard objectives add count dummy
 scoreboard objectives add endtimer dummy
 scoreboard objectives add jumps minecraft.custom:minecraft.jump
 scoreboard objectives add SDtime dummy
-scoreboard objectives add endFireball dummy
 scoreboard objectives add SetGamemode dummy
 scoreboard objectives add gamemodeID dummy
 scoreboard objectives add invCount dummy

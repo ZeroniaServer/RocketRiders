@@ -1,4 +1,4 @@
-scoreboard players add @e[x=0,type=fireball,tag=Cluster,predicate=custom:is_moving,tag=!endFireball,tag=!cluster_fireball.child] cluster_fireball.time 1
+scoreboard players add @e[x=0,type=fireball,tag=Cluster,predicate=custom:is_moving,tag=!cluster_fireball.child] cluster_fireball.time 1
 execute as @e[x=0,type=fireball,tag=!cluster_fireball.child,scores={cluster_fireball.time=7}] at @s run function everytick:cluster/split
 
 #Proper explosive cluster fireballs

@@ -52,16 +52,6 @@ scoreboard players remove @a[x=0,scores={elytra_time=1..2147483646}] elytra_time
 execute as @a[x=0,scores={elytra_time=..0}] run function items:elytra/deactivate
 execute as @a[x=0,predicate=items:elytra/elytra,predicate=custom:team/any_playing_team,gamemode=!spectator,predicate=items:deactivate_elytra] run function items:elytra/deactivate
 
-
 # Thrown items
 execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init
 execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit as @e[x=0,type=item,predicate=custom:item_entity_contains_any_arrow] at @s run function everytick:item_entity/while_contents_is_any_arrow
-
-# Process primed TNT
-scoreboard players set $instant_explosion_buffer var -1
-execute as @e[x=0,type=tnt,tag=!tnt.processed] at @s run function game:tnt/init
-
-scoreboard players set $maximum_tnt_explosions_per_tick var 25
-execute if predicate game:modifiers/instant_tnt_explosions/on run scoreboard players set $maximum_tnt_explosions_per_tick var 10
-scoreboard players set $tnt_explosions_this_tick var 0
-execute as @e[x=0,type=tnt] if score @s tnt.explosion_timestamp = $gametime global at @s run function game:tnt/upon_explosion

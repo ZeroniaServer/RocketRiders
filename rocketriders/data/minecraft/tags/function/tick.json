@@ -1,7 +1,9 @@
 {
     "values": [
         "rr:threads/main_before_entities",
+        "rr:threads/entities_tnt",
         "rr:threads/entities",
+        "rr:threads/entities_tridents",
         "rr:threads/main_after_entities",
         "rr:threads/game_modes",
         "rr:threads/last"

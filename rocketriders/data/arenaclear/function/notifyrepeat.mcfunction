@@ -1,7 +1,7 @@
 execute if predicate game:repeat_settings/forever run return 0
 
 ##Notifies players that settings are being repeated for a certain game and updates settings sign
-execute if score $match_repeat_amount global matches 1 run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"| "},{color:"gray",italic:true,text:"(Keeping settings for "},{bold:true,color:"white",text:"1"},{italic:true,color:"gray",text:" more matches!)"}]
+execute if score $match_repeat_amount global matches 1 run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"| "},{color:"gray",italic:true,text:"(Keeping settings for "},{bold:true,color:"white",text:"1"},{italic:true,color:"gray",text:" more match!)"}]
 execute if score $match_repeat_amount global matches 2.. run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"| "},{color:"gray",italic:true,text:"(Keeping settings for "},{bold:true,color:"white",score:{name:"$match_repeat_amount",objective:"global"}},{color:"gray",italic:true,text:" more matches!)"}]
 
 #Deducts one repetition

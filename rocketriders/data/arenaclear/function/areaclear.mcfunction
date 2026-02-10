@@ -3,9 +3,6 @@
 ## for beginning an Arena Clear ##
 ##################################
 
-##Repeating settings
-execute if predicate game:repeat_settings/finite run schedule function arenaclear:notifyrepeat_indimension 3t append
-
 ##Appropriate tags for Arena Clear state
 scoreboard players reset $match_in_play global
 scoreboard players reset $game_paused global

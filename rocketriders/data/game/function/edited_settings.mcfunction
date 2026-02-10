@@ -18,7 +18,7 @@ execute if predicate game:gamemode_components/one_team run tag @e[x=0,type=marke
 execute in minecraft:overworld run function game:uncancelpads
 execute if predicate game:gamemode_components/one_team run function game:cancelyellow
 
-## Shedule Molerat (asynchronous)
+## Schedule Molerat (asynchronous)
 execute if predicate game:modifiers/molerat/on run function arenaclear:moleratplace
 
 ##Reset team balance stuff

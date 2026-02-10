@@ -1,5 +1,7 @@
 {
     "values": [
-        "rr:tick"
+        "rr:threads/main",
+        "rr:threads/game_modes",
+        "rr:threads/last"
     ]
 }

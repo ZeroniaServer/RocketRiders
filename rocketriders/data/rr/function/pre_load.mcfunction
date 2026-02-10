@@ -25,8 +25,9 @@ execute unless function dev:enabled run scoreboard objectives remove dev
 execute unless function dev:enabled run scoreboard objectives remove dev_action
 execute unless function dev:enabled run scoreboard objectives remove confirmed_dev
 
+# Run the start-up functions
 execute in minecraft:overworld positioned 0.0 0.0 0.0 run function rr:upon_load
 execute in minecraft:overworld positioned 0.0 0.0 0.0 run function #rr:load
 
-# Start ticking functions
+# Start ticking functions after this
 scoreboard players set $tick global 1

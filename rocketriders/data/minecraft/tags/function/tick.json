@@ -1,6 +1,8 @@
 {
     "values": [
-        "rr:threads/main",
+        "rr:threads/main_before_entities",
+        "rr:threads/entities",
+        "rr:threads/main_after_entities",
         "rr:threads/game_modes",
         "rr:threads/last"
     ]

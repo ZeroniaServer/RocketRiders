@@ -1,5 +1,4 @@
 ##Record tags
-execute unless predicate game:phase/match/over run scoreboard players set @s endtimer 249
 scoreboard players set $match_over global 1
 tag @s add BothWon
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
@@ -21,6 +20,7 @@ execute as @a[x=0,predicate=custom:team/blue] at @s run stopsound @s
 execute as @a[x=0,predicate=custom:team/yellow] at @s run stopsound @s
 execute as @a[x=0] at @s run playsound minecraft:entity.wither.hurt master @s ~ ~ ~ 100 1
 execute unless score $skiptitles CmdData matches 1 run title @a[x=0,predicate=!custom:team/lobby] title ["",{"text":"Sandbox Ended","color":"red","bold":false}]
+execute unless score $skiptitles CmdData matches 1 run title @a[x=0,predicate=!custom:team/lobby] subtitle ""
 execute unless score $skiptitles CmdData matches 1 run tellraw @a[x=0] ["",{"text":"Sandbox Ended","color":"red","bold":true}]
 
 ##Remove UUID Tracker score

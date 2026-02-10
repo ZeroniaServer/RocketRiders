@@ -4,6 +4,8 @@
 
 ##Initial timer - pre-tie phase
 scoreboard players add @s endtimer 1
+execute if score @s endtimer matches 2 if predicate game:gamemode_components/short_end_sequence run scoreboard players set @s endtimer 249
+
 execute as @a[x=0] run function custom:player_action/forget_all_canopies
 execute as @a[x=0] run function custom:player_action/forget_nova_attach
 function everytick:spawnables
@@ -32,9 +34,8 @@ execute if entity @s[scores={endtimer=1..2}] unless predicate game:gamemode_comp
 execute if entity @s[scores={endtimer=1..}] run tag @s[tag=EditedSettings] remove EditedSettings
 execute if entity @s[scores={endtimer=1..569}] run function modifiers:modifiers
 
-#Fireballs can't be punched (credit: Miolith)
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=fireball,predicate=!custom:is_moving] at @s run function game:endfireball
-execute if entity @s[scores={endtimer=1}] as @e[x=0,type=dragon_fireball,predicate=!custom:is_moving] at @s run function game:endfireball
+# Prevent fireballs from being punched
+execute if entity @s[scores={endtimer=1}] as @e[x=0,type=#custom:large_fireballs,predicate=custom:in_arena] at @s run function game:set_fireball_not_punchable
 
 ##Tie actionbar notifications
 execute unless predicate game:game_rules/disable_tying/on if predicate game:portal_type/default if entity @s[tag=!BothWon,scores={endtimer=1..20}] run title @a[x=0,predicate=!custom:team/lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"5","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]

@@ -1,5 +1,6 @@
 # Do this to be absolutely safe
 function game:forcestop
 
-# TODO: change this based on latest update function
-function world_updates:1_3_0/update
+# Run the latest update function
+scoreboard players remove $WorldVersion CmdData 1
+function world_updates:check_updates

@@ -1,29 +1,78 @@
 {
     "values": [
         "rr:threads/main_before_entities",
+        "rr:thread_manager/threads/main_before_entities",
+
         "rr:threads/entities_tnt",
+        "rr:thread_manager/threads/entities_tnt",
+
         "rr:threads/entities_custom",
+        "rr:thread_manager/threads/entities_custom",
+
         "rr:threads/entities_custom/canopy_projectile",
+        "rr:thread_manager/threads/entities_custom/canopy_projectile",
+
         "rr:threads/entities_custom/canopy",
+        "rr:thread_manager/threads/entities_custom/canopy",
+
         "rr:threads/entities_custom/shield_projectile",
+        "rr:thread_manager/threads/entities_custom/shield_projectile",
+
         "rr:threads/entities_custom/shield",
+        "rr:thread_manager/threads/entities_custom/shield",
+
         "rr:threads/entities_custom/stinging_shield_projectile",
+        "rr:thread_manager/threads/entities_custom/stinging_shield_projectile",
+
         "rr:threads/entities_custom/stinging_shield",
+        "rr:thread_manager/threads/entities_custom/stinging_shield",
+
         "rr:threads/entities_custom/vortex_projectile",
+        "rr:thread_manager/threads/entities_custom/vortex_projectile",
+
         "rr:threads/entities_custom/vortex",
+        "rr:thread_manager/threads/entities_custom/vortex",
+
         "rr:threads/entities_custom/vortex_decoy",
+        "rr:thread_manager/threads/entities_custom/vortex_decoy",
+
         "rr:threads/entities_custom/icbm",
+        "rr:thread_manager/threads/entities_custom/icbm",
+
         "rr:threads/entities_custom/punchable_tnt",
+        "rr:thread_manager/threads/entities_custom/punchable_tnt",
+
         "rr:threads/entities_custom/nova_rocket",
+        "rr:thread_manager/threads/entities_custom/nova_rocket",
+
         "rr:threads/entities_custom/nova_attach",
+        "rr:thread_manager/threads/entities_custom/nova_attach",
+
         "rr:threads/entities_custom/spell_emitter",
+        "rr:thread_manager/threads/entities_custom/spell_emitter",
+
         "rr:threads/entities_custom/spell",
+        "rr:thread_manager/threads/entities_custom/spell",
+
         "rr:threads/entities_custom/fire_spell",
+        "rr:thread_manager/threads/entities_custom/fire_spell",
+
         "rr:threads/entities_custom/wind_spell",
+        "rr:thread_manager/threads/entities_custom/wind_spell",
+
         "rr:threads/entities_custom/health_spell",
+        "rr:thread_manager/threads/entities_custom/health_spell",
+
         "rr:threads/entities_tridents",
+        "rr:thread_manager/threads/entities_tridents",
+
         "rr:threads/main_after_entities",
+        "rr:thread_manager/threads/main_after_entities",
+
         "rr:threads/game_modes",
-        "rr:threads/last"
+        "rr:thread_manager/threads/game_modes",
+        
+        "rr:threads/last",
+        "rr:thread_manager/threads/last"
     ]
 }

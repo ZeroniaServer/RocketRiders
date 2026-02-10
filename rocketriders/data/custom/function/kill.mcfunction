@@ -1,2 +1,2 @@
-kill @s 
+kill @s
 return 1

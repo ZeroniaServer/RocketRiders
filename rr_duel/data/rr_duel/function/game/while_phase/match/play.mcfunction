@@ -37,6 +37,7 @@ execute if predicate rr_duel:time_out_period run scoreboard players add @s Forfe
 execute if predicate rr_duel:time_out_period run kill @e[x=0,type=tnt]
 execute if predicate rr_duel:time_out_period if predicate game:modifiers/punchable_tnt/on run kill @e[x=0,predicate=entities:type/punchable_tnt]
 execute if predicate rr_duel:time_out_period unless predicate game:phase/match/paused as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute if predicate rr_duel:time_out_period unless predicate game:phase/match/paused run tag @a[x=0,predicate=custom:team/any_playing_team] remove force_mount
 execute if predicate rr_duel:time_out_period unless predicate game:phase/match/paused run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute if predicate rr_duel:time_out_period unless predicate game:phase/match/paused run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if predicate rr_duel:time_out_period run scoreboard players set @s RandomItem -3

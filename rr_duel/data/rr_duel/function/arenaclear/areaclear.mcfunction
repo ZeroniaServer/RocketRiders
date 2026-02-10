@@ -4,6 +4,7 @@ scoreboard players set @s fakeendtimer 0
 scoreboard players set $game_paused global 1
 function arenaclear:brute_force/start
 
+tag @a[x=0,predicate=custom:team/any_playing_team] remove force_mount
 tp @a[x=0,predicate=custom:team/blue] -95 202 60 0 0
 tp @a[x=0,predicate=custom:team/yellow] -95 202 96 180 0
 tp @a[x=0,predicate=custom:team/spectator] -95 213 78 -90 90

@@ -5,6 +5,7 @@ execute as @e[x=0,predicate=entities:type/canopy/brain] if function custom:match
 tag @s remove matchOrigin
 
 # Stand up if on canopy
+tag @s remove force_mount
 execute unless predicate custom:has_vehicle run return fail
 execute on vehicle unless entity @s[predicate=entities:type/canopy/saddle] run return fail
 execute on vehicle positioned as @s on passengers run tp @s[type=player] ~ ~ ~

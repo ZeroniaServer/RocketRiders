@@ -22,7 +22,7 @@ function items:full_hotbar
 execute unless predicate game:phase/match/paused run scoreboard players add $game_duration global 1
 
 ##Put out players on fire
-execute if score $game_duration global matches 1..2 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute if score $game_duration global matches 1..5 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
 
 ##Enable fall damage (considers modifiers)
 execute if score $game_duration global matches 10 unless predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/on

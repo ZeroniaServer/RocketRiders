@@ -1,1 +1,1 @@
-function entities:spell_emitter/summon_health
+function entities:type/spell_emitter/summon_health

@@ -1,7 +1,7 @@
 execute unless entity @s[type=player] run return fail
 
 tag @s add matchOrigin
-execute as @e[x=0,predicate=entities:type/canopy/brain] if function custom:match_origin run function entities:canopy/actions/forget
+execute as @e[x=0,predicate=entities:type/canopy/brain] if function custom:match_origin run function entities:type/canopy/actions/forget
 tag @s remove matchOrigin
 
 # Stand up if on canopy

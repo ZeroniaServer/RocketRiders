@@ -29,8 +29,8 @@ execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate gam
 execute if predicate game:arena_details/castle unless predicate game:game_rules/friendly_tnt_damage/on if predicate custom:tnt_near_castle run function game:explosion_deepslate_cracks/medium
 
 # Trigger nearby vortices
-execute unless predicate game:game_rules/friendly_tnt_damage/on unless predicate game:modifiers/explosive/on positioned ~ ~0.06125 ~ as @e[distance=..5.33,predicate=entities:type/vortex/brain] at @s run function entities:vortex/actions/trigger {fuse:0}
-execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:modifiers/explosive/on positioned ~ ~0.06125 ~ as @e[distance=..6.67,predicate=entities:type/vortex/brain] at @s run function entities:vortex/actions/trigger {fuse:0}
+execute unless predicate game:game_rules/friendly_tnt_damage/on unless predicate game:modifiers/explosive/on positioned ~ ~0.06125 ~ as @e[distance=..5.33,predicate=entities:type/vortex/brain] at @s run function entities:type/vortex/actions/trigger {fuse:0}
+execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:modifiers/explosive/on positioned ~ ~0.06125 ~ as @e[distance=..6.67,predicate=entities:type/vortex/brain] at @s run function entities:type/vortex/actions/trigger {fuse:0}
 
 # Kill nearby canopies
-execute as @e[distance=..7,predicate=entities:type/canopy/brain] at @s run function entities:canopy/actions/kill
+execute as @e[distance=..7,predicate=entities:type/canopy/brain] at @s run function entities:type/canopy/actions/kill

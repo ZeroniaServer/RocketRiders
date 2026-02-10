@@ -1,1 +1,1 @@
-function entities:spell_emitter/summon_wind
+function entities:type/spell_emitter/summon_wind

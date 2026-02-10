@@ -15,5 +15,5 @@ scoreboard players add $match_repeat_amount global 1
 
 # output
 data modify block -69 190 76 front_text.messages[1] set value [{bold:true,color:"black",score:{name:"$match_repeat_amount",objective:"global"}},{bold:false,text:"x"}]
-execute if score $match_repeat_amount global matches 1 run tellraw @s ["",{color:"gray",italic:true,text:"These settings will apply for "},{bold:true,color:"white",text:"1"},{color:"gray",italic:true,text:" game."}]
-execute unless score $match_repeat_amount global matches 1 run tellraw @s ["",{color:"gray",italic:true,text:"These settings will apply for "},{bold:true,color:"white",score:{name:"$match_repeat_amount",objective:"global"}},{color:"gray",italic:true,text:" games."}]
+execute if score $match_repeat_amount global matches 1 run tellraw @s ["",{color:"gray",italic:true,text:"These settings will apply for "},{bold:true,color:"white",text:"1"},{color:"gray",italic:true,text:" match."}]
+execute unless score $match_repeat_amount global matches 1 run tellraw @s ["",{color:"gray",italic:true,text:"These settings will apply for "},{bold:true,color:"white",score:{name:"$match_repeat_amount",objective:"global"}},{color:"gray",italic:true,text:" matches."}]

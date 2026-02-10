@@ -15,6 +15,7 @@ execute if predicate game:game_rules/disable_hotbar_limit/on run data modify sto
 execute if predicate game:game_rules/item_stacking/on run data modify storage rocketriders:gamerules list append value [{"text":"Item Stacking: ","color":"white"},{"text":"Enabled","color":"green","bold":true}]
 execute unless predicate game:game_rules/item_stacking/on run data modify storage rocketriders:gamerules list append value [{"text":"Item Stacking: ","color":"white"},{"text":"Disabled","color":"red","bold":true}]
 
-data modify storage rocketriders:gamerules list append value [{color:"white",text:"Item Delay: "},{bold:true,color:"yellow",text:""},{bold:false,color:"yellow",text:" seconds"}]
-execute store result storage rocketriders:gamerules list[-1][1].text int 1 run function game:config/get_item_delay
-data modify storage rocketriders:gamerules list[-1][1].text set string storage rocketriders:gamerules list[-1][1].text
+execute unless predicate game:gamemode_components/no_item_timer run data modify storage rocketriders:gamerules list append value [{color:"white",text:"Item Delay: "},{bold:true,color:"yellow",text:""},{bold:false,color:"yellow",text:" seconds"}]
+execute unless predicate game:gamemode_components/no_item_timer store result storage rocketriders:gamerules list[-1][1].text int 1 run function game:config/get_item_delay
+execute unless predicate game:gamemode_components/no_item_timer run data modify storage rocketriders:gamerules list[-1][1].text set string storage rocketriders:gamerules list[-1][1].text
+execute if predicate game:gamemode_components/no_item_timer run data modify storage rocketriders:gamerules list append value [{"text":"Item Delay: ","color":"white"},{"text":"N/A","color":"red","bold":true}]

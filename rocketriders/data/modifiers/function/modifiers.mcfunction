@@ -9,9 +9,6 @@ execute if predicate game:modifiers/instamine/on if predicate game:phase/match/p
 execute if predicate game:modifiers/instamine/on unless predicate game:phase/match/play as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 execute unless predicate game:modifiers/instamine/on as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 
-##Explosive
-execute if predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:3}
-
 ##Sonar
 execute unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on run effect clear @a[x=0,predicate=custom:team/any_playing_team] night_vision
 execute unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
@@ -55,6 +52,3 @@ execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:t
 execute if predicate game:modifiers/hobbits/on as @a[x=0,predicate=custom:team/any_playing_team,tag=!hobbit] run function modifiers:hobbit/set
 execute if predicate game:modifiers/hobbits/on as @a[x=0,predicate=!custom:team/any_playing_team,tag=hobbit] run function modifiers:hobbit/reset
 execute unless predicate game:modifiers/hobbits/on as @a[x=0,tag=hobbit] run function modifiers:hobbit/reset
-
-#Clutter Collector
-execute if predicate game:modifiers/clutter_collector/on as @e[x=0,type=fireball,tag=NormalFireball] run data merge entity @s {ExplosionPower:0}

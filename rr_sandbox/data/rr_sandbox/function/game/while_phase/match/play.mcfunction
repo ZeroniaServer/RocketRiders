@@ -1,6 +1,5 @@
 #spawnables
 function rr_powerups:everytick/spawnables
-function everytick:cluster
 
 #nomicon
 scoreboard players enable @a[x=0,predicate=custom:can_use_nomicon] nomicon

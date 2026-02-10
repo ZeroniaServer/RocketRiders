@@ -14,6 +14,8 @@ scoreboard players add $periodic_tick.3 global 1
 scoreboard players operation $periodic_tick.3 global %= $3 constant
 scoreboard players add $periodic_tick.5 global 1
 scoreboard players operation $periodic_tick.5 global %= $5 constant
+scoreboard players add $periodic_tick.20 global 1
+scoreboard players operation $periodic_tick.20 global %= $20 constant
 
 ## Handle events and flags
 # force_mount tag is used by the CK plugin to prevent dismounting

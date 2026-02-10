@@ -1,0 +1,5 @@
+execute if predicate entities:origin_team/blue run particle minecraft:soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if predicate entities:origin_team/yellow run particle minecraft:flame ~ ~0.5 ~ 0 0 0 0.05 5 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if predicate entities:origin_team/none run particle minecraft:flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if predicate entities:origin_team/none run particle minecraft:soul_fire_flame ~ ~0.5 ~ 0 0 0 0.05 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if predicate entities:origin_team/none run particle minecraft:electric_spark ~ ~0.5 ~ 0 0 0 0.05 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]

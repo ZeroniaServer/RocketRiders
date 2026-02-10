@@ -7,10 +7,4 @@ execute unless entity @s[tag=runobshields] if entity @e[x=0,type=marker,tag=yell
 execute if entity @s[tag=runobshields] run function everytick:obsidian_shields
 tag @s[tag=runobshields] remove runobshields
 
-execute unless entity @s[tag=runfireball] if entity @e[x=0,type=fireball] run tag @s add runfireball
-execute unless entity @s[tag=runfireball] if entity @e[x=0,type=marker,tag=BlueFireball] run tag @s add runfireball
-execute unless entity @s[tag=runfireball] if entity @e[x=0,type=marker,tag=YellowFireball] run tag @s add runfireball
-execute if entity @s[tag=runfireball] run function everytick:fireball
-tag @s[tag=runfireball] remove runfireball
-
 function everytick:splash

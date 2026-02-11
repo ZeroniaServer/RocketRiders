@@ -14,6 +14,10 @@ execute if score $team var matches -1 run data modify entity @s data.origin_team
 execute if score $team var matches 0 run data modify entity @s data.origin_team set value "blue"
 execute if score $team var matches 1 run data modify entity @s data.origin_team set value "yellow"
 
+scoreboard players set $is_cluster_parent var 0
+execute if entity @s[tag=Cluster,tag=!cluster_fireball.child] run scoreboard players set $is_cluster_parent var 1
+execute if score $is_cluster_parent var matches 1 run tag @s add fireball.is_cluster_parent
+
 ## Summon brain
 tag @s add fireball.this
 data modify storage rocketriders:main fireball.origin set from entity @s Owner

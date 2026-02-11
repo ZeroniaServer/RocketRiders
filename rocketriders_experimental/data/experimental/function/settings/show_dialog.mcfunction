@@ -98,19 +98,19 @@ data modify storage rocketriders:main settings.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "Fire"\
+          "display": {"color":"gold","text":"Fire"}\
         },\
         {\
           "id": "1",\
-          "display": "Health"\
+          "display": {"color":"green","text":"Health"}\
         },\
         {\
           "id": "2",\
-          "display": "Damage"\
+          "display": {"color":"dark_gray","text":"Damage"}\
         },\
         {\
           "id": "3",\
-          "display": "Wind"\
+          "display": {"color":"aqua","text":"Wind"}\
         }\
       ]\
     },\
@@ -121,19 +121,19 @@ data modify storage rocketriders:main settings.dialog set value {\
       "options": [\
         {\
           "id": "0",\
-          "display": "Random"\
+          "display": {"italic":true,"text":"Random"}\
         },\
         {\
           "id": "1",\
-          "display": "Knight"\
+          "display": {"color":"dark_green","text":"Knight"}\
         },\
         {\
           "id": "2",\
-          "display": "Archer"\
+          "display": {"color":"red","text":"Archer"}\
         },\
         {\
           "id": "3",\
-          "display": "Mage"\
+          "display": {"color":"dark_purple","text":"Mage"}\
         }\
       ]\
     }\

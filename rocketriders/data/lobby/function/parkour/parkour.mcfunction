@@ -145,8 +145,6 @@ scoreboard players add @a[x=0,predicate=custom:team/lobby,tag=inParkour] chkpntC
 scoreboard players add @a[x=0,predicate=custom:team/lobby,tag=inParkour,scores={chkpntCooldown=1..19}] chkpntCooldown 1
 scoreboard players set @a[x=0,predicate=custom:team/lobby,tag=inParkour,scores={chkpntCooldown=20}] chkpntCooldown 0
 
-execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] run function custom:reset_inventory
-
 #Clear offhand (necessary for inventory controls)
 item replace entity @a[x=0,predicate=custom:team/lobby] weapon.offhand with air
 

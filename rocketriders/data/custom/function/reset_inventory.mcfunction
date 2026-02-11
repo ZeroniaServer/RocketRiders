@@ -1,5 +1,7 @@
 ## Resets the inventory to what it would be at the start of the phase the player is in
 
+tag @s add resetting_inventory
+
 # clear inventory and thrown items
 loot replace entity @s inventory.0 27 loot custom:empty
 item replace entity @s player.cursor with air
@@ -95,3 +97,5 @@ execute if items block 0 184 -16 container.8 * if score $item_changed var matche
 execute unless items block 0 184 -16 container.9 * run item replace entity @s weapon.offhand with air
 execute if items block 0 184 -16 container.9 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:9b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:9b}]
 execute if items block 0 184 -16 container.9 * if score $item_changed var matches 1 run item replace entity @s weapon.offhand from block 0 184 -16 container.9
+
+tag @s remove resetting_inventory

@@ -93,6 +93,29 @@ data modify storage rocketriders:main settings.dialog set value {\
     },\
     {\
       "type": "minecraft:single_option",\
+      "key": "crusade_kit",\
+      "label": "Starting Crusade Kit",\
+      "options": [\
+        {\
+          "id": "0",\
+          "display": {"italic":true,"text":"Random"}\
+        },\
+        {\
+          "id": "1",\
+          "display": {"color":"dark_green","text":"Knight"}\
+        },\
+        {\
+          "id": "2",\
+          "display": {"color":"red","text":"Archer"}\
+        },\
+        {\
+          "id": "3",\
+          "display": {"color":"dark_purple","text":"Mage"}\
+        }\
+      ]\
+    },\
+    {\
+      "type": "minecraft:single_option",\
       "key": "default_spell",\
       "label": "Default Spell Book",\
       "options": [\
@@ -114,29 +137,6 @@ data modify storage rocketriders:main settings.dialog set value {\
         }\
       ]\
     },\
-    {\
-      "type": "minecraft:single_option",\
-      "key": "crusade_kit",\
-      "label": "Starting Crusade Kit",\
-      "options": [\
-        {\
-          "id": "0",\
-          "display": {"italic":true,"text":"Random"}\
-        },\
-        {\
-          "id": "1",\
-          "display": {"color":"dark_green","text":"Knight"}\
-        },\
-        {\
-          "id": "2",\
-          "display": {"color":"red","text":"Archer"}\
-        },\
-        {\
-          "id": "3",\
-          "display": {"color":"dark_purple","text":"Mage"}\
-        }\
-      ]\
-    }\
   ],\
   "action": {\
     "label": "Done",\

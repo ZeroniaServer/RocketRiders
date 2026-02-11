@@ -16,8 +16,7 @@
               "id": "voting_ballot",
               "voting_ballot": {
                 "used": true
-              },
-              "reset_inventory/delete": false
+              }
             },
             "minecraft:item_model": "minecraft:filled_map",
             "!minecraft:enchantment_glint_override": {}

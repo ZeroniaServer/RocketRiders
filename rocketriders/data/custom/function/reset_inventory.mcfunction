@@ -1,6 +1,6 @@
 ## Resets the inventory to what it would be at the start of the phase the player is in
 
-# clear inventory
+# clear inventory and thrown items
 loot replace entity @s inventory.0 27 loot custom:empty
 item replace entity @s player.cursor with air
 item replace entity @s player.crafting.0 with air
@@ -11,40 +11,87 @@ item replace entity @s saddle with air
 tag @s add matchOrigin
 execute as @e[x=0,type=item] unless items entity @s contents *[custom_data~{Droppable:true}] if function custom:match_origin run kill @s
 tag @s remove matchOrigin
-# only delete hotbar and offhand items if they are not replaced (to avoid the gui item stretching animation)
-execute unless items entity @s hotbar.0 *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s hotbar.0 {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
-execute unless items entity @s hotbar.1 *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s hotbar.1 {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
-execute unless items entity @s hotbar.2 *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s hotbar.2 {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
-execute unless items entity @s hotbar.3 *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s hotbar.3 {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
-execute unless items entity @s hotbar.4 *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s hotbar.4 {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
-execute unless items entity @s hotbar.5 *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s hotbar.5 {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
-execute unless items entity @s hotbar.6 *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s hotbar.6 {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
-execute unless items entity @s hotbar.7 *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s hotbar.7 {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
-execute unless items entity @s hotbar.8 *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s hotbar.8 {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
-execute unless items entity @s weapon.offhand *[custom_data~{"reset_inventory/delete":false}] run item modify entity @s weapon.offhand {function:"minecraft:set_custom_data",tag:{"reset_inventory/delete":true}}
 
+# Write hotbar and offhand items to a separate container, then update the respective player slots if the item has changed.
+# This avoid the gui item stretching animation, and the item bobbing while holding it.
+loot replace block 0 184 -16 container.0 27 loot custom:empty
+item replace block 0 184 -16 container.0 from entity @s hotbar.0
+item replace block 0 184 -16 container.1 from entity @s hotbar.1
+item replace block 0 184 -16 container.2 from entity @s hotbar.2
+item replace block 0 184 -16 container.3 from entity @s hotbar.3
+item replace block 0 184 -16 container.4 from entity @s hotbar.4
+item replace block 0 184 -16 container.5 from entity @s hotbar.5
+item replace block 0 184 -16 container.6 from entity @s hotbar.6
+item replace block 0 184 -16 container.7 from entity @s hotbar.7
+item replace block 0 184 -16 container.8 from entity @s hotbar.8
+item replace block 0 184 -16 container.9 from entity @s weapon.offhand
+data modify storage rocketriders:main reset_inventory set value {items_original:[],items_modified:[]}
+data modify storage rocketriders:main reset_inventory.items_original set from block 0 184 -16 Items
+loot replace block 0 184 -16 container.0 27 loot custom:empty
+
+## Set items
 # lobby players
-execute if predicate custom:team/lobby run function lobby:give_nav_book with storage rocketriders:navbook item
-execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:phase/match unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] unless score @s VoteNum matches 1.. unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"},!custom_data~{voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot
-execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:phase/match unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] if score @s VoteNum matches 1.. unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"},custom_data~{voting_ballot:{used:true}}] run loot replace entity @s hotbar.0 loot servermode:voting_ballot_used
-execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items entity @s hotbar.3 *[custom_data~{id:"parkour/return_to_checkpoint"}] run loot replace entity @s hotbar.3 loot lobby:parkour/return_to_checkpoint
-execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items entity @s hotbar.5 *[custom_data~{id:"parkour/return_to_start"}] run loot replace entity @s hotbar.5 loot lobby:parkour/return_to_start
-execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items entity @s hotbar.8 *[custom_data~{id:"parkour/quit_parkour"}] run loot replace entity @s hotbar.8 loot lobby:parkour/quit_parkour
+execute if predicate custom:team/lobby run function custom:__impl__/reset_inventory/give_nav_book with storage rocketriders:navbook item
+execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:phase/match unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] unless score @s VoteNum matches 1.. unless items block 0 184 -16 container.0 *[custom_data~{id:"voting_ballot"},!custom_data~{voting_ballot:{used:true}}] run loot replace block 0 184 -16 container.0 loot servermode:voting_ballot
+execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting unless predicate game:phase/match unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] if score @s VoteNum matches 1.. unless items block 0 184 -16 container.0 *[custom_data~{id:"voting_ballot"},custom_data~{voting_ballot:{used:true}}] run loot replace block 0 184 -16 container.0 loot servermode:voting_ballot_used
+execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items block 0 184 -16 container.3 *[custom_data~{id:"parkour/return_to_checkpoint"}] run loot replace block 0 184 -16 container.3 loot lobby:parkour/return_to_checkpoint
+execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items block 0 184 -16 container.5 *[custom_data~{id:"parkour/return_to_start"}] run loot replace block 0 184 -16 container.5 loot lobby:parkour/return_to_start
+execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items block 0 184 -16 container.8 *[custom_data~{id:"parkour/quit_parkour"}] run loot replace block 0 184 -16 container.8 loot lobby:parkour/quit_parkour
 
 # team players
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/shooting_saber run loot replace entity @s hotbar.0 loot items:misc/shooting_saber
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/shooting_saber unless predicate game:phase/match run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:20}]}]}
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/piercing_pickaxe run loot replace entity @s hotbar.0 loot items:misc/piercing_pickaxe
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/rocket_nomicon run loot replace entity @s hotbar.0 loot items:misc/rocket_nomicon
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace entity @s hotbar.0 loot items:misc/knight_sword
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace entity @s weapon.offhand loot items:misc/knight_shield
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace entity @s hotbar.0 loot items:misc/shooting_saber
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer unless predicate game:phase/match run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:20}]}]}
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/match/play run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:4}]}]}
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace entity @s hotbar.0 loot items:misc/spell_wand
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/shooting_saber run loot replace block 0 184 -16 container.0 loot items:misc/shooting_saber
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/shooting_saber unless predicate game:phase/match run loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:20}]}]}
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/piercing_pickaxe run loot replace block 0 184 -16 container.0 loot items:misc/piercing_pickaxe
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/rocket_nomicon run loot replace block 0 184 -16 container.0 loot items:misc/rocket_nomicon
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.0 loot items:misc/knight_sword
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.9 loot items:misc/knight_shield
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.0 loot items:misc/shooting_saber
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer unless predicate game:phase/match run loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:20}]}]}
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/match/play run loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:misc/arrow"}],functions:[{function:"set_count",count:4}]}]}
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.0 loot items:misc/spell_wand
 
-# winnter's fireworks
-execute if predicate game:phase/match/over if predicate custom:team/any_playing_team if entity @s[tag=Winner] run loot replace entity @s hotbar.1 loot items:ending/celebratory_fireworks
+# winner's fireworks
+execute if predicate game:phase/match/over if predicate custom:team/any_playing_team if entity @s[tag=Winner] run loot replace block 0 184 -16 container.1 loot items:ending/celebratory_fireworks
 
-# delete relevant items
-clear @s *[custom_data~{"reset_inventory/delete":true}]
+## Transfer and delete relevant items
+data modify storage rocketriders:main reset_inventory.items_modified set from block 0 184 -16 Items
+
+execute unless items block 0 184 -16 container.0 * run item replace entity @s hotbar.0 with air
+execute if items block 0 184 -16 container.0 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:0b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:0b}]
+execute if items block 0 184 -16 container.0 * if score $item_changed var matches 1 run item replace entity @s hotbar.0 from block 0 184 -16 container.0
+
+execute unless items block 0 184 -16 container.1 * run item replace entity @s hotbar.1 with air
+execute if items block 0 184 -16 container.1 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:1b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:1b}]
+execute if items block 0 184 -16 container.1 * if score $item_changed var matches 1 run item replace entity @s hotbar.1 from block 0 184 -16 container.1
+
+execute unless items block 0 184 -16 container.2 * run item replace entity @s hotbar.2 with air
+execute if items block 0 184 -16 container.2 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:2b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:2b}]
+execute if items block 0 184 -16 container.2 * if score $item_changed var matches 1 run item replace entity @s hotbar.2 from block 0 184 -16 container.2
+
+execute unless items block 0 184 -16 container.3 * run item replace entity @s hotbar.3 with air
+execute if items block 0 184 -16 container.3 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:3b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:3b}]
+execute if items block 0 184 -16 container.3 * if score $item_changed var matches 1 run item replace entity @s hotbar.3 from block 0 184 -16 container.3
+
+execute unless items block 0 184 -16 container.4 * run item replace entity @s hotbar.4 with air
+execute if items block 0 184 -16 container.4 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:4b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:4b}]
+execute if items block 0 184 -16 container.4 * if score $item_changed var matches 1 run item replace entity @s hotbar.4 from block 0 184 -16 container.4
+
+execute unless items block 0 184 -16 container.5 * run item replace entity @s hotbar.5 with air
+execute if items block 0 184 -16 container.5 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:5b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:5b}]
+execute if items block 0 184 -16 container.5 * if score $item_changed var matches 1 run item replace entity @s hotbar.5 from block 0 184 -16 container.5
+
+execute unless items block 0 184 -16 container.6 * run item replace entity @s hotbar.6 with air
+execute if items block 0 184 -16 container.6 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:6b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:6b}]
+execute if items block 0 184 -16 container.6 * if score $item_changed var matches 1 run item replace entity @s hotbar.6 from block 0 184 -16 container.6
+
+execute unless items block 0 184 -16 container.7 * run item replace entity @s hotbar.7 with air
+execute if items block 0 184 -16 container.7 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:7b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:7b}]
+execute if items block 0 184 -16 container.7 * if score $item_changed var matches 1 run item replace entity @s hotbar.7 from block 0 184 -16 container.7
+
+execute unless items block 0 184 -16 container.8 * run item replace entity @s hotbar.8 with air
+execute if items block 0 184 -16 container.8 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:8b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:8b}]
+execute if items block 0 184 -16 container.8 * if score $item_changed var matches 1 run item replace entity @s hotbar.8 from block 0 184 -16 container.8
+
+execute unless items block 0 184 -16 container.9 * run item replace entity @s weapon.offhand with air
+execute if items block 0 184 -16 container.9 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:9b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:9b}]
+execute if items block 0 184 -16 container.9 * if score $item_changed var matches 1 run item replace entity @s weapon.offhand from block 0 184 -16 container.9

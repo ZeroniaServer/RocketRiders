@@ -13,8 +13,7 @@
           "function": "minecraft:set_components",
           "components": {
             "minecraft:custom_data": {
-              "id": "voting_ballot",
-              "reset_inventory/delete": false
+              "id": "voting_ballot"
             },
             "minecraft:item_model": "minecraft:map",
             "minecraft:item_name": {

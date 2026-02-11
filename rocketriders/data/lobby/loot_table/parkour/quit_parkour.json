@@ -11,8 +11,7 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
-                  "id": "parkour/quit_parkour",
-                  "reset_inventory/delete": false
+                  "id": "parkour/quit_parkour"
                 },
                 "minecraft:custom_model_data": {
                   "strings": [

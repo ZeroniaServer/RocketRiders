@@ -1,23 +1,10 @@
 data modify storage rocketriders:main settings.dialog set value {\
   "type": "minecraft:notice",\
-  "title": [\
-    "",\
-    {\
-      "bold": true,\
-      "color": "blue",\
-      "text": "Rocket"\
-    },\
-    " ",\
-    {\
-      "bold": true,\
-      "color": "gold",\
-      "text": "Riders"\
-    }\
-  ],\
+  "title": "Rocket Riders Settings",\
   "inputs": [\
     {\
       "type": "minecraft:single_option",\
-      "key": "tips",\
+      "key": "show_tips",\
       "label": "Show Tips",\
       "options": [\
         {\
@@ -36,7 +23,7 @@ data modify storage rocketriders:main settings.dialog set value {\
     },\
     {\
       "type": "minecraft:single_option",\
-      "key": "parkour_instructions",\
+      "key": "show_parkour_instructions",\
       "label": "Show Parkour Instructions",\
       "options": [\
         {\
@@ -74,7 +61,7 @@ data modify storage rocketriders:main settings.dialog set value {\
     },\
     {\
       "type": "minecraft:single_option",\
-      "key": "do_hotbar_auto_fill",\
+      "key": "auto_fill_hotbar",\
       "label": "Auto-Fill Hotbar",\
       "options": [\
         {\
@@ -93,7 +80,7 @@ data modify storage rocketriders:main settings.dialog set value {\
     },\
     {\
       "type": "minecraft:single_option",\
-      "key": "crusade_kit",\
+      "key": "starting_crusade_kit",\
       "label": "Starting Crusade Kit",\
       "options": [\
         {\
@@ -116,7 +103,7 @@ data modify storage rocketriders:main settings.dialog set value {\
     },\
     {\
       "type": "minecraft:single_option",\
-      "key": "default_spell",\
+      "key": "default_spell_book",\
       "label": "Default Spell Book",\
       "options": [\
         {\
@@ -139,35 +126,37 @@ data modify storage rocketriders:main settings.dialog set value {\
     },\
   ],\
   "action": {\
-    "label": "Done",\
+    "label": {\
+      "translate": "gui.done"\
+    },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-         "template": "trigger settings set 1000$(crusade_kit)$(default_spell)$(do_hotbar_auto_fill)$(particles)$(parkour_instructions)$(tips)"\
+      "template": "trigger settings set 1000$(starting_crusade_kit)$(default_spell_book)$(auto_fill_hotbar)$(particles)$(show_parkour_instructions)$(show_tips)"\
     }\
   }\
 }
 
 # Set current values
-execute if entity @s[tag=!hideTips] run data modify storage rocketriders:main settings.dialog.inputs[{key:"tips"}].options[1].initial set value true
-execute if entity @s[tag=!hideParkourTips] run data modify storage rocketriders:main settings.dialog.inputs[{key:"parkour_instructions"}].options[1].initial set value true
+execute if entity @s[tag=!hideTips] run data modify storage rocketriders:main settings.dialog.inputs[{key:"show_tips"}].options[1].initial set value true
+execute if entity @s[tag=!hideParkourTips] run data modify storage rocketriders:main settings.dialog.inputs[{key:"show_parkour_instructions"}].options[1].initial set value true
 execute if entity @s[tag=!hideParticles] run data modify storage rocketriders:main settings.dialog.inputs[{key:"particles"}].options[1].initial set value true
-execute if entity @s[tag=do_hotbar_auto_fill] run data modify storage rocketriders:main settings.dialog.inputs[{key:"do_hotbar_auto_fill"}].options[1].initial set value true
-execute if score @s default_spell matches 1 run data modify storage rocketriders:main settings.dialog.inputs[{key:"default_spell"}].options[1].initial set value true
-execute if score @s default_spell matches 2 run data modify storage rocketriders:main settings.dialog.inputs[{key:"default_spell"}].options[2].initial set value true
-execute if score @s default_spell matches 3 run data modify storage rocketriders:main settings.dialog.inputs[{key:"default_spell"}].options[3].initial set value true
-execute if score @s start_as_crusade_kit matches 1 run data modify storage rocketriders:main settings.dialog.inputs[{key:"crusade_kit"}].options[1].initial set value true
-execute if score @s start_as_crusade_kit matches 2 run data modify storage rocketriders:main settings.dialog.inputs[{key:"crusade_kit"}].options[2].initial set value true
-execute if score @s start_as_crusade_kit matches 3 run data modify storage rocketriders:main settings.dialog.inputs[{key:"crusade_kit"}].options[3].initial set value true
+execute if entity @s[tag=do_hotbar_auto_fill] run data modify storage rocketriders:main settings.dialog.inputs[{key:"auto_fill_hotbar"}].options[1].initial set value true
+execute if score @s default_spell matches 1 run data modify storage rocketriders:main settings.dialog.inputs[{key:"default_spell_book"}].options[1].initial set value true
+execute if score @s default_spell matches 2 run data modify storage rocketriders:main settings.dialog.inputs[{key:"default_spell_book"}].options[2].initial set value true
+execute if score @s default_spell matches 3 run data modify storage rocketriders:main settings.dialog.inputs[{key:"default_spell_book"}].options[3].initial set value true
+execute if score @s start_as_crusade_kit matches 1 run data modify storage rocketriders:main settings.dialog.inputs[{key:"starting_crusade_kit"}].options[1].initial set value true
+execute if score @s start_as_crusade_kit matches 2 run data modify storage rocketriders:main settings.dialog.inputs[{key:"starting_crusade_kit"}].options[2].initial set value true
+execute if score @s start_as_crusade_kit matches 3 run data modify storage rocketriders:main settings.dialog.inputs[{key:"starting_crusade_kit"}].options[3].initial set value true
 
 # Remove the parkour tips option on CK
-execute unless predicate rr:has_parkour run data remove storage rocketriders:main settings.dialog.inputs[{key:"parkour_instructions"}]
-execute unless predicate rr:has_parkour run data modify storage rocketriders:main settings.dialog.action.action.template set value "trigger settings set 1000$(crusade_kit)$(default_spell)$(do_hotbar_auto_fill)$(particles)0$(tips)"
+execute unless predicate rr:has_parkour run data remove storage rocketriders:main settings.dialog.inputs[{key:"show_parkour_instructions"}]
+execute unless predicate rr:has_parkour run data modify storage rocketriders:main settings.dialog.action.action.template set value "trigger settings set 1000$(starting_crusade_kit)$(default_spell_book)$(auto_fill_hotbar)$(particles)0$(show_tips)"
 
 # Remove the "default spell book" and "crusade kit" settings if Crusade Mode is not installed
-execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data remove storage rocketriders:main settings.dialog.inputs[{key:"default_spell"}]
-execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data remove storage rocketriders:main settings.dialog.inputs[{key:"crusade_kit"}]
-execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run execute if predicate rr:has_parkour run data modify storage rocketriders:main settings.dialog.action.action.template set value "trigger settings set 100000$(do_hotbar_auto_fill)$(particles)$(parkour_instructions)$(tips)"
-execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run execute unless predicate rr:has_parkour run data modify storage rocketriders:main settings.dialog.action.action.template set value "trigger settings set 100000$(do_hotbar_auto_fill)$(particles)0$(tips)"
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data remove storage rocketriders:main settings.dialog.inputs[{key:"default_spell_book"}]
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data remove storage rocketriders:main settings.dialog.inputs[{key:"starting_crusade_kit"}]
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run execute if predicate rr:has_parkour run data modify storage rocketriders:main settings.dialog.action.action.template set value "trigger settings set 100000$(auto_fill_hotbar)$(particles)$(show_parkour_instructions)$(show_tips)"
+execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run execute unless predicate rr:has_parkour run data modify storage rocketriders:main settings.dialog.action.action.template set value "trigger settings set 100000$(auto_fill_hotbar)$(particles)0$(show_tips)"
 
 # Show dialog
 function custom:show_dialog with storage rocketriders:main settings

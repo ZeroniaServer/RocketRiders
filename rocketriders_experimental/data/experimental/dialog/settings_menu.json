@@ -1,19 +1,6 @@
 {
   "type": "minecraft:multi_action",
-  "title": [
-    "",
-    {
-      "bold": true,
-      "color": "blue",
-      "text": "Rocket"
-    },
-    " ",
-    {
-      "bold": true,
-      "color": "gold",
-      "text": "Riders"
-    }
-  ],
+  "title": "Rocket Riders",
   "external_title": [
     "",
     {
@@ -30,6 +17,7 @@
     "..."
   ],
   "pause": false,
+  "after_action": "none",
   "actions": [
     {
       "label": "Settings...",
@@ -54,6 +42,5 @@
       "type": "minecraft:run_command",
       "command": "trigger settings set -1"
     }
-  },
-  "after_action": "none"
+  }
 }

@@ -16,9 +16,9 @@ execute if predicate rr:has_modification_room run data modify storage rocketride
 data modify storage rocketriders:navbook parkourtips set value ""
 execute if predicate rr:has_parkour run data modify storage rocketriders:navbook parkourtips set value ["\n\n",{bold:true,text:"\N{ZERO WIDTH NON-JOINER}"},[{text:"[Parkour",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to toggle Parkour instructions.",italic:true}},click_event:{action:"run_command",command:"trigger toggle_parkour_instructions set 1"}},{bold:true,text:"\N{ZERO WIDTH NON-JOINER}\N{ZERO WIDTH NON-JOINER}"},"Instructions]"]]
 
-# default spell and crusade kit settings
+# default spell book and starting crusade kit settings
 data modify storage rocketriders:navbook crusade_mode_settings set value ""
-execute in minecraft:overworld if entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data modify storage rocketriders:navbook crusade_mode_settings set value ["\n\n  ",{text:"[Default Spell Book]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to change your default Spell Book in Crusade mode.",italic:true}},click_event:{action:"run_command",command:"trigger change_default_spell set 1"}},"\n      ",{text:"[Crusade Kit]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to change your starting kit in Crusade mode.",italic:true}},click_event:{action:"run_command",command:"trigger change_crusade_kit set 1"}}]
+execute in minecraft:overworld if entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run data modify storage rocketriders:navbook crusade_mode_settings set value ["\n\n  ",{text:"[Default Spell Book]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to change your default Spell Book in Crusade mode.",italic:true}},click_event:{action:"run_command",command:"trigger change_default_spell set 1"}},{bold:true,text:"\n\N{ZERO WIDTH NON-JOINER}\N{ZERO WIDTH NON-JOINER}"},{text:"[Starting Crusade Kit]",color:"dark_gray",hover_event:{action:"show_text",value:{text:"Click to change your starting kit in Crusade mode.",italic:true}},click_event:{action:"run_command",command:"trigger change_crusade_kit set 1"}}]
 
 # resolve
 execute in minecraft:overworld summon minecraft:item_display run function lobby:__store_nav_book__/as_entity

@@ -136,7 +136,7 @@ scoreboard objectives add LeaveMidgame trigger
 scoreboard objectives add leaveSpec trigger
 scoreboard objectives add LobbyWarp trigger
 scoreboard objectives add change_default_spell trigger
-scoreboard objectives add change_crusade_kit trigger
+scoreboard objectives add change_starting_crusade_kit trigger
 scoreboard objectives add toggle_auto_fill_hotbar trigger
 scoreboard objectives add toggle_particles trigger
 scoreboard objectives add toggle_parkour_instructions trigger

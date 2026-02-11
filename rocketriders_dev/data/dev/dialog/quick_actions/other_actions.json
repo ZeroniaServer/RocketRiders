@@ -11,20 +11,12 @@
   },
   "actions": [
     {
-      "label": "Switch Team",
-      "tooltip": "Moves you to the other team.",
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 6"
-      }
+      "label": "",
+      "tooltip": {"color":"gray","italic":true,"text":"empty because something was moved but I didn't want to break my muscle memory by changing the order"}
     },
     {
-      "label": "Toggle Developer Mode",
-      "tooltip": "Moves you to the Developer team in creative mode (to bypass gamemode restrictions) or back to the Lobby team in adventure mode.",
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 12"
-      }
+      "label": "",
+      "tooltip": {"color":"gray","italic":true,"text":"empty because something was moved but I didn't want to break my muscle memory by changing the order"}
     },
     {
       "label": "Gamemode Components...",

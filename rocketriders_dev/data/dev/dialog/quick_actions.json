@@ -37,8 +37,8 @@
       }
     },
     {
-      "label": "Join/Leave Game",
-      "tooltip": "If in the lobby, automatically adds you to a team.\n\nIf playing or spectating, returns you to the lobby.",
+      "label": "Join/Leave Match",
+      "tooltip": "If in the lobby or developer mode, automatically adds you to a team.\n\nIf playing or spectating, returns you to the lobby.",
       "action": {
         "type": "minecraft:run_command",
         "command": "/trigger dev set 4"
@@ -52,6 +52,22 @@
       "action": {
         "type": "minecraft:show_dialog",
         "dialog": "dev:quick_actions/other_actions"
+      }
+    },
+    {
+      "label": "Switch Team...",
+      "tooltip": "Choose a team to join.",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": "dev:quick_actions/switch_team"
+      }
+    },
+    {
+      "label": "Toggle Developer Mode",
+      "tooltip": "Moves you to the Developer team in creative mode (to bypass gamemode restrictions) or back to the Lobby team in adventure mode.",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 12"
       }
     }
   ]

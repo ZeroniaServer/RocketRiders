@@ -1,4 +1,4 @@
-# arguments: tag
+# arguments: id
 
 $attribute @s $(id) base reset
 execute if data storage rocketriders:main reset_attributes.attributes[-1].modifiers[0] run data modify storage rocketriders:main reset_attributes.attributes[-1].modifiers[].attribute set from storage rocketriders:main reset_attributes.attributes[-1].id

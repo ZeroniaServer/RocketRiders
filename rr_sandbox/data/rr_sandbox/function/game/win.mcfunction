@@ -1,7 +1,6 @@
 ##Record tags
 scoreboard players set $match_over global 1
 tag @s add BothWon
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 
 ##Celebratory items
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor

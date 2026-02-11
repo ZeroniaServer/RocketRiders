@@ -1,7 +1,6 @@
 function custom:team/join_blue
 execute in minecraft:overworld run tp @s 12.5 64.9 -65.5 0 0
 
-clear @s *
 function custom:reset_inventory
 function custom:update_armor
 

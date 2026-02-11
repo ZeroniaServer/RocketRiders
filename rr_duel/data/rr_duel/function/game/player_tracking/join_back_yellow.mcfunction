@@ -1,7 +1,6 @@
 function custom:team/join_yellow
 execute in minecraft:overworld run tp @s 12.5 64.0 66.5 180 0
 
-clear @s *
 function custom:reset_inventory
 function custom:update_armor
 

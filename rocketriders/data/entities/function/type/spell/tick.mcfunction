@@ -14,24 +14,27 @@ execute if entity @s[type=area_effect_cloud] run scoreboard players set $speed v
 execute if entity @s[type=area_effect_cloud] store result storage rocketriders:main spell.speed float 0.0025 run scoreboard players operation $speed var += @s entity.age
 execute if entity @s[type=area_effect_cloud] rotated as @s run function entities:type/spell/tick/velocity with storage rocketriders:main spell
 
-# Die if outside arena
-execute if entity @s[type=area_effect_cloud,predicate=!custom:insideborder,predicate=!custom:in_arena] run return run kill @s
+# Break on impact with a wall
+execute if entity @s[type=area_effect_cloud] positioned as @s unless block ~ ~ ~ #custom:nonsolid run return run function entities:type/spell/actions/damage_spell_break
 
-# Particles
-execute if entity @s[type=area_effect_cloud,tag=spell_type.damage] positioned as @s unless block ~ ~ ~ #custom:nonsolid rotated as @s run execute anchored eyes run particle minecraft:instant_effect{color:0x6F6F6F,power:1.7} ^ ^ ^-0.3 0.35 0.35 0.35 1 20 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if entity @s[type=area_effect_cloud,tag=spell_type.damage] positioned as @s unless block ~ ~ ~ #custom:nonsolid rotated as @s run execute anchored eyes run particle minecraft:instant_effect{color:0x2F2F2F,power:1.7} ^ ^ ^-0.3 0.35 0.35 0.35 1 20 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if entity @s[type=area_effect_cloud] positioned as @s unless block ~ ~ ~ #custom:nonsolid run return run kill @s
+# Die if outside arena
+execute if entity @s[type=area_effect_cloud] unless entity @s[predicate=custom:insideborder,predicate=custom:in_arena] run return run function entities:type/spell/actions/damage_spell_break
+
+# Break near spawn zones
+execute if entity @s[type=area_effect_cloud] if predicate entities:origin_team/blue if predicate custom:near_any_spawn_zone if predicate custom:on_yellow_half run return run function entities:type/spell/actions/damage_spell_break
+execute if entity @s[type=area_effect_cloud] if predicate entities:origin_team/yellow if predicate custom:near_any_spawn_zone if predicate custom:on_blue_half run return run function entities:type/spell/actions/damage_spell_break
+execute if entity @s[type=area_effect_cloud] if predicate entities:origin_team/none if predicate custom:near_any_spawn_zone run return run function entities:type/spell/actions/damage_spell_break
 
 # AOE
 execute if entity @s[type=area_effect_cloud,tag=spell_type.damage] positioned as @s run function entities:type/spell/tick/damage_aoe
 
 # TTL
-execute if score @s entity.age matches 120.. run return run kill @s[type=area_effect_cloud]
+execute if score @s entity.age matches 120.. run return run function entities:type/spell/actions/damage_spell_break
 
 ## Generic projectiles
 # Air toggling
-data modify entity @s Air set value 0
-data modify entity @s Air set value 1
+data modify entity @s[type=!area_effect_cloud] Air set value 0
+data modify entity @s[type=!area_effect_cloud] Air set value 1
 
 # Movement trail
 execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.fire] positioned as @s run particle minecraft:instant_effect{color:0xFF7F00} ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]

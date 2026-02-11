@@ -19,6 +19,11 @@ execute on vehicle positioned as @s unless predicate custom:insideborder run ret
 execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/fireball/actions/break
 execute on vehicle positioned as @s if predicate custom:in_void run return run function entities:type/fireball/actions/break
 
+# Break near enemy spawn zones
+execute if predicate entities:origin_team/blue on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_yellow_half run return run function entities:type/fireball/actions/break
+execute if predicate entities:origin_team/yellow on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_blue_half run return run function entities:type/fireball/actions/break
+execute if predicate entities:origin_team/none on vehicle positioned as @s if predicate custom:near_any_spawn_zone run return run function entities:type/fireball/actions/break
+
 #Fireballs poof Canopies
 execute on vehicle positioned as @s if predicate custom:is_moving on passengers if entity @s[predicate=entities:type/fireball/brain] run function entities:type/fireball/tick/try_poof
 

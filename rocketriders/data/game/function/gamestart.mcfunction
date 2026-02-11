@@ -140,7 +140,7 @@ execute if predicate rr:enable_spectator_leave_cloud run tellraw @a[x=0,tag=Join
 execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 execute if predicate game:phase/match run tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
-execute unless predicate game:phase/match run tp @a[x=0,tag=JoinSpec] -95 213 78 -90 90
+execute unless predicate game:phase/match run tp @a[x=0,tag=JoinSpec] -95 213 78 90 90
 execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 execute as @a[x=0,tag=JoinSpec] run title @s actionbar ""
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the match!","color":"gray"}]
@@ -164,7 +164,7 @@ execute if predicate rr:enable_spectator_leave_cloud unless predicate game:phase
 execute if predicate rr:enable_spectator_leave_cloud unless predicate game:phase/match/play if predicate custom:periodic_tick/3 positioned -89 213.5 78 run particle minecraft:dust{color:[0,1,0],scale:0.5} ~ ~ ~ 0.5 0.5 0.5 0.3 5 force @a[x=0,predicate=custom:team/spectator,predicate=!custom:in_arena]
 execute if predicate rr:enable_spectator_leave_cloud unless predicate game:phase/match/play positioned -89 213.5 78 run tag @a[predicate=custom:team/spectator,distance=..1] add LeaveTeams
 
-execute unless predicate game:phase/match as @a[x=0,predicate=custom:team/spectator] unless entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s -95 213 78 -90 90
+execute unless predicate game:phase/match as @a[x=0,predicate=custom:team/spectator] unless entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s -95 213 78 90 90
 execute if predicate game:phase/match as @a[x=0,predicate=custom:team/spectator] if entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s 12 100 0.5 90 90
 
 effect give @a[x=0,predicate=custom:team/spectator] invisibility infinite 0 true

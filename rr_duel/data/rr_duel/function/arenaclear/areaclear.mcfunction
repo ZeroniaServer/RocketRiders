@@ -7,7 +7,7 @@ function arenaclear:brute_force/start
 tag @a[x=0,predicate=custom:team/any_playing_team] remove force_mount
 tp @a[x=0,predicate=custom:team/blue] -95 202 60 0 0
 tp @a[x=0,predicate=custom:team/yellow] -95 202 96 180 0
-tp @a[x=0,predicate=custom:team/spectator] -95 213 78 -90 90
+tp @a[x=0,predicate=custom:team/spectator] -95 213 78 90 90
 fill -89 202 66 -101 211 66 minecraft:barrier strict
 fill -89 202 90 -101 211 90 minecraft:barrier strict
 execute as @a[x=0,predicate=custom:team/blue,predicate=custom:is_on_fire] at @s run function game:putoutfire

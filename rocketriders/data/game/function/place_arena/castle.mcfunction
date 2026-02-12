@@ -27,4 +27,4 @@ setblock 0 63 57 orange_stained_glass
 fill -5 63 57 -3 63 57 orange_stained_glass
 fill 11 63 57 13 63 57 orange_stained_glass
 fill -13 34 63 -11 67 65 minecraft:air strict
-fill 35 34 63 37 34 65 minecraft:air strict
+fill 35 34 63 37 67 65 minecraft:air strict

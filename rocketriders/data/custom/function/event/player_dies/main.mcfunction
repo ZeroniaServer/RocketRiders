@@ -68,7 +68,7 @@ tag @s remove secondary_attacker_died
 
 ## Death-Specific
 # Apply poison on respawn if the player breached the lobby
-execute if predicate game:phase/match/play if predicate custom:team/any_playing_team run tag @s[y=181,dy=100] add on_respawn.apply_poison_effect
+execute if predicate game:phase/match/play if predicate custom:team/any_playing_team run tag @s[predicate=custom:breaching_lobby] add on_respawn.apply_poison_effect
 
 # Handle falling into the void
 execute if predicate game:phase/match/play if predicate custom:team/any_playing_team if score $void_death var matches 1 run scoreboard players add @s FellVoid 1

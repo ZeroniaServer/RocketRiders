@@ -87,9 +87,8 @@
                   },
                   "\n",
                   {
-                    "interpret": true,
-                    "nbt": "join_teams",
-                    "storage": "rocketriders:navbook"
+                    "font": "rocketriders:replace_me",
+                    "text": "join_teams"
                   },
                   "\n",
                   {
@@ -168,9 +167,8 @@
                     "text": "Spectator"
                   },
                   {
-                    "interpret": true,
-                    "nbt": "modroom",
-                    "storage": "rocketriders:navbook"
+                    "font": "rocketriders:replace_me",
+                    "text": "modroom"
                   },
                   "\n",
                   {
@@ -306,9 +304,8 @@
                     "underlined": true
                   },
                   {
-                    "interpret": true,
-                    "nbt": "description",
-                    "storage": "rocketriders:navbook"
+                    "font": "rocketriders:replace_me",
+                    "text": "description"
                   }
                 ],
                 [
@@ -351,9 +348,8 @@
                     "text": "[Ingame Tips]"
                   },
                   {
-                    "interpret": true,
-                    "nbt": "parkourtips",
-                    "storage": "rocketriders:navbook"
+                    "font": "rocketriders:replace_me",
+                    "text": "parkourtips"
                   },
                   {
                     "bold": true,
@@ -395,9 +391,8 @@
                     "text": "[Auto-Fill Hotbar]"
                   },
                   {
-                    "interpret": true,
-                    "nbt": "crusade_mode_settings",
-                    "storage": "rocketriders:navbook"
+                    "font": "rocketriders:replace_me",
+                    "text": "crusade_mode_settings"
                   }
                 ],
                 [

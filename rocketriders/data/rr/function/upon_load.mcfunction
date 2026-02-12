@@ -98,7 +98,7 @@ scoreboard objectives add entity.vortex.fuse dummy
 scoreboard objectives add entity.vortex.drifting_for_ticks dummy
 scoreboard objectives add entity.vortex.arms dummy
 scoreboard objectives add entity.vortex_arm.index dummy
-scoreboard objectives add entity.spell.bee_cooldown dummy
+scoreboard objectives add entity.damage_spell.bee_cooldown dummy
 scoreboard objectives add time_since_tnt_punch custom:play_time
 scoreboard objectives add time_since_respawn custom:play_time
 scoreboard objectives add custom_team_color dummy

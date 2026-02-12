@@ -183,7 +183,7 @@
         "predicate": {
           "predicates": {
             "minecraft:custom_data": {
-              "spell": {}
+              "damage_spell": {}
             }
           }
         }

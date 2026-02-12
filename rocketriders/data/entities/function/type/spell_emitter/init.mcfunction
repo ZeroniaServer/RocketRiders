@@ -10,4 +10,4 @@ execute if entity @s[tag=!spell_type.fire,tag=!spell_type.health,tag=!spell_type
 ## Set up data
 data modify entity @s data.spell_emitter set value {}
 
-data modify storage rocketriders:main spell.name set value "Spell Emitter"
+data modify storage rocketriders:main spell_emitter.name set value "Spell Emitter"

@@ -5,7 +5,7 @@ tag @s remove spell_emitter.this
 
 # Instantly transform into a damage spell entity if spell type is damage
 execute if entity @s[tag=spell_type.damage] run data remove entity @s data.spell_emitter
-execute if entity @s[tag=spell_type.damage] run return run function entities:type/spell/init
+execute if entity @s[tag=spell_type.damage] run return run function entities:type/damage_spell/init
 
 # Emit projectiles
 execute if score @s entity.age matches 1 positioned as @s run function entities:type/spell_emitter/tick/emit

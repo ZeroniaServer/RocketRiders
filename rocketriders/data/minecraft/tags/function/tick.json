@@ -51,8 +51,8 @@
         "rr:threads/entities_custom/spell_emitter",
         "rr:thread_manager/threads/entities_custom/spell_emitter",
 
-        "rr:threads/entities_custom/spell",
-        "rr:thread_manager/threads/entities_custom/spell",
+        "rr:threads/entities_custom/damage_spell",
+        "rr:thread_manager/threads/entities_custom/damage_spell",
 
         "rr:threads/entities_custom/fire_spell",
         "rr:thread_manager/threads/entities_custom/fire_spell",

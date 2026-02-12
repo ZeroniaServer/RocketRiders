@@ -19,7 +19,9 @@ kill @e[x=0,type=tnt,predicate=custom:in_void]
 kill @e[x=0,type=tnt_minecart,predicate=custom:in_void]
 kill @e[x=0,type=firework_rocket,scores={novatimer=1..},predicate=custom:in_void]
 kill @e[x=0,type=#custom:potion,predicate=custom:in_void]
-kill @e[x=0,predicate=entities:type/spell,predicate=custom:in_void]
+kill @e[x=0,predicate=entities:type/damage_spell,predicate=custom:in_void]
+kill @e[x=0,predicate=entities:type/fire_spell,predicate=custom:in_void]
+kill @e[x=0,predicate=entities:type/wind_spell,predicate=custom:in_void]
 
 #Kill everything near world border
 execute as @e[x=0,type=#arrows] at @s unless predicate custom:insideborder run kill @s

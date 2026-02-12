@@ -11,7 +11,7 @@ execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=1..
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureBlue=1..}] run function rr_powerups:everytick/crystalpadyellow
 
 #Short-ranged ambient sound for crystals
-scoreboard players add @e[x=0,type=end_crystal,tag=PUCrystal] CmdData 1
+execute if predicate custom:coin_flip run scoreboard players add @e[x=0,type=end_crystal,tag=PUCrystal] CmdData 1
 execute as @e[x=0,type=end_crystal,tag=PUCrystal,scores={CmdData=5}] at @s run playsound minecraft:block.beacon.ambient master @a[x=0] ~ ~ ~ 0.45 1.4
 scoreboard players reset @e[x=0,type=end_crystal,tag=PUCrystal,scores={CmdData=20..}] CmdData
 execute unless entity @e[x=0,type=end_crystal,tag=PUCrystal] run stopsound @a[x=0] master minecraft:block.beacon.ambient

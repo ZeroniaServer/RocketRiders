@@ -3,3 +3,4 @@ scoreboard objectives remove change_crusade_kit
 scoreboard objectives remove cluster_fireball.time
 scoreboard objectives remove FireballSpawned
 scoreboard objectives remove entity.spell.bee_cooldown
+scoreboard objectives remove fireball.time_since_punched

@@ -99,12 +99,13 @@ scoreboard objectives add entity.vortex.drifting_for_ticks dummy
 scoreboard objectives add entity.vortex.arms dummy
 scoreboard objectives add entity.vortex_arm.index dummy
 scoreboard objectives add entity.damage_spell.bee_cooldown dummy
+scoreboard objectives add entity.fireball.ambient_noise_timer dummy
+scoreboard objectives add entity.fireball.time_since_punched dummy
 scoreboard objectives add time_since_tnt_punch custom:play_time
 scoreboard objectives add time_since_respawn custom:play_time
 scoreboard objectives add custom_team_color dummy
 scoreboard objectives add tnt.explosion_timestamp dummy
 scoreboard objectives add intangible_arrow.despawn_buffer dummy
-scoreboard objectives add fireball.time_since_punched dummy
 scoreboard objectives add flag_tablist_display dummy
 scoreboard objectives modify flag_tablist_display numberformat blank
 scoreboard objectives add default_spell dummy

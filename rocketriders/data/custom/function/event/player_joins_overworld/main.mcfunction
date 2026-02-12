@@ -39,6 +39,7 @@ title @s times 5 30 5
 title @s actionbar ""
 title @s title ""
 title @s subtitle ""
+function custom:reset_inventory
 
 # Advancements
 execute if predicate game:achievements_can_be_awarded run function achievements:roots

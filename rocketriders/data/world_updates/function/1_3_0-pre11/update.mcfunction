@@ -1,4 +1,6 @@
 scoreboard objectives remove endFireball
 scoreboard objectives remove change_crusade_kit
+scoreboard objectives remove cluster_fireball.time
+scoreboard objectives remove FireballSpawned
 
 scoreboard players set $WorldVersion CmdData 1308

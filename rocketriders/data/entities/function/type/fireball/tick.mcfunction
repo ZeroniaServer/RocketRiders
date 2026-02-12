@@ -1,5 +1,6 @@
 # Tick age while moving
-execute if predicate custom:vehicle_is_moving run scoreboard players add @s entity.age 1
+execute unless predicate custom:vehicle_is_moving run scoreboard players set @s fireball.time_since_punched 0
+execute if predicate custom:vehicle_is_moving run scoreboard players add @s fireball.time_since_punched 1
 
 # Store the rotation and speed of vehicle
 execute if predicate custom:has_vehicle run function custom:projectile_motion_save
@@ -49,6 +50,5 @@ execute on vehicle on origin unless entity @s[tag=fireball.current_origin] run d
 execute on origin run tag @s remove fireball.current_origin
 execute if data storage rocketriders:main fireball.origin run data modify entity @s Owner set from storage rocketriders:main fireball.origin
 
-# Cluster splitting
-execute if entity @s[tag=fireball.is_cluster_parent] if predicate custom:vehicle_is_moving run scoreboard players add @s cluster_fireball.time 1
-execute if entity @s[tag=fireball.is_cluster_parent] if score @s cluster_fireball.time matches 7 on vehicle positioned as @s run function entities:type/fireball/tick/cluster/split
+# Split after use
+execute if predicate entities:fireball/split_after_use if score @s fireball.time_since_punched matches 7.. on vehicle positioned as @s run function entities:type/fireball/tick/split_after_use/split

@@ -131,13 +131,11 @@ execute as @a[x=0,tag=BackSurprise,tag=giveback.mainhand_free,gamemode=!creative
 execute as @a[x=0,tag=BackSurprise,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:missile/surprise/all
 
 #Fireball
-scoreboard players remove @a[x=0,tag=BackFireball,limit=1] FireballSpawned 1
 tag @a[x=0,tag=BackFireball,limit=1] remove fullHotbar
 execute as @a[x=0,tag=BackFireball,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:util/fireball
 execute as @a[x=0,tag=BackFireball,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:util/fireball
 
 #Cluster Fireball
-scoreboard players remove @a[x=0,tag=BackClusterFireball,limit=1] FireballSpawned 1
 tag @a[x=0,tag=BackClusterFireball,limit=1] remove fullHotbar
 execute as @a[x=0,tag=BackClusterFireball,tag=giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot replace entity @s weapon.mainhand loot items:util/cluster_fireball
 execute as @a[x=0,tag=BackClusterFireball,tag=!giveback.mainhand_free,gamemode=!creative,limit=1] at @s run loot give @s loot items:util/cluster_fireball

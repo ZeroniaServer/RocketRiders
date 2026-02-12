@@ -10,7 +10,6 @@ scoreboard players set @s BulletSpawned 0
 scoreboard players set @s CataSpawned 0
 scoreboard players set @s CitaSpawned 0
 scoreboard players set @s DuplexSpawned 0
-scoreboard players set @s FireballSpawned 0
 scoreboard players set @s GemiSpawned 0
 scoreboard players set @s GuardSpawned 0
 scoreboard players set @s HurSpawned 0

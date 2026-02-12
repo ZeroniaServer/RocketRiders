@@ -104,7 +104,7 @@ scoreboard objectives add time_since_respawn custom:play_time
 scoreboard objectives add custom_team_color dummy
 scoreboard objectives add tnt.explosion_timestamp dummy
 scoreboard objectives add intangible_arrow.despawn_buffer dummy
-scoreboard objectives add cluster_fireball.time dummy
+scoreboard objectives add fireball.time_since_punched dummy
 scoreboard objectives add flag_tablist_display dummy
 scoreboard objectives modify flag_tablist_display numberformat blank
 scoreboard objectives add default_spell dummy
@@ -268,7 +268,6 @@ scoreboard objectives add BulletSpawned minecraft.used:minecraft.skeleton_horse_
 scoreboard objectives add DuplexSpawned minecraft.used:minecraft.parrot_spawn_egg
 scoreboard objectives add BroadSpawned minecraft.used:minecraft.magma_cube_spawn_egg
 scoreboard objectives add ObshieldSpawned minecraft.used:minecraft.enderman_spawn_egg
-scoreboard objectives add FireballSpawned minecraft.used:minecraft.blaze_spawn_egg
 scoreboard objectives add BSurpriseSpawned minecraft.used:minecraft.squid_spawn_egg
 scoreboard objectives add YSurpriseSpawned minecraft.used:minecraft.cod_spawn_egg
 scoreboard objectives add BowShot minecraft.used:minecraft.bow

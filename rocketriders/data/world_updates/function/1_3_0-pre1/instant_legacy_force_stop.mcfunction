@@ -1,7 +1,7 @@
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add GameEnd
-clear @a[x=0,predicate=world_updates:1_3_0/on_blue_or_yellow_team] #world_updates:1_3_0/clear
-clear @a[x=0,predicate=world_updates:1_3_0/on_blue_or_yellow_team] minecraft:crossbow
-effect clear @a[x=0,predicate=world_updates:1_3_0/on_blue_or_yellow_team]
+clear @a[x=0,predicate=world_updates:1_3_0-pre1/on_blue_or_yellow_team] #world_updates:1_3_0-pre1/clear
+clear @a[x=0,predicate=world_updates:1_3_0-pre1/on_blue_or_yellow_team] minecraft:crossbow
+effect clear @a[x=0,predicate=world_updates:1_3_0-pre1/on_blue_or_yellow_team]
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove GameStarted
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Countdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove forceCountdown

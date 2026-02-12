@@ -32,6 +32,3 @@ scoreboard objectives add HolyLand dummy
 scoreboard objectives add CryAboutIt dummy
 scoreboard objectives add ChaseCrystalID dummy
 execute if predicate rr:has_achievements as @a[x=0] run function achievements:roots
-
-tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.2.0","color":"green"}
-scoreboard players set $WorldVersion CmdData 1200

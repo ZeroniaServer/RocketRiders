@@ -5,6 +5,3 @@ kill @e[x=0,type=marker,tag=PowerClearChecker]
 kill @e[x=0,type=marker,tag=PlacerPowerClear]
 scoreboard players reset $ClearTime CmdData
 function world_updates:1_21_1/disable_command_feedback
-
-tellraw @a[x=0] {"text":"Successfully applied updates from Rocket Riders 1.2.1","color":"green"}
-scoreboard players set $WorldVersion CmdData 1210

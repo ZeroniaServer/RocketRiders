@@ -83,5 +83,3 @@ kill @e[x=0,tag=ZeroniaCredit2]
 kill @e[x=0,tag=zeronia_credit]
 summon interaction -47 211 81 {width:0.75,height:0.75,response:true,Tags:["zeronia_credit","zeronia_credit.left"],data:{zeronia_credit:{left:true}}}
 summon interaction -47 211 75 {width:0.75,height:0.75,response:true,Tags:["zeronia_credit","zeronia_credit.right"],data:{zeronia_credit:{right:true}}}
-
-scoreboard players set $WorldVersion CmdData 1307

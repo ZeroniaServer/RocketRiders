@@ -201,6 +201,28 @@
             }
           }
         }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "fire_spell": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "wind_spell": {}
+            }
+          }
+        }
       }
     ]
   }

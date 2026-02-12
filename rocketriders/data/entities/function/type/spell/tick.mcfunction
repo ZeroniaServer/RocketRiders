@@ -29,30 +29,14 @@ execute if entity @s[type=area_effect_cloud] if predicate entities:origin_team/n
 execute if entity @s[type=area_effect_cloud,tag=spell_type.damage] positioned as @s run function entities:type/spell/tick/damage_aoe
 
 # TTL
-execute if score @s entity.age matches 120.. run return run function entities:type/spell/actions/damage_spell_break
+execute if score @s entity.age matches 120.. if entity @s[type=area_effect_cloud,tag=spell_type.damage] run return run function entities:type/spell/actions/damage_spell_break
 
 ## Generic projectiles
-# Air toggling
-data modify entity @s[type=!area_effect_cloud] Air set value 0
-data modify entity @s[type=!area_effect_cloud] Air set value 1
-
 # Movement trail
-execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.fire] positioned as @s run particle minecraft:instant_effect{color:0xFF7F00} ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.fire] positioned as @s run particle minecraft:instant_effect{color:0x7F1F00} ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if predicate custom:periodic_tick/3 if score @s entity.age matches 2.. if entity @s[tag=spell_type.fire] positioned as @s run particle minecraft:flame ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-
 execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.damage] positioned as @s run particle minecraft:instant_effect{color:0x6F6F6F} ~ ~ ~ 0.3 0.3 0.3 0 2 force @a[x=0,predicate=custom:in_arena]
 execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.damage] positioned as @s run particle minecraft:instant_effect{color:0x2F2F2F} ~ ~ ~ 0.3 0.3 0.3 0 2 force @a[x=0,predicate=custom:in_arena]
 execute if predicate custom:periodic_tick/2 if score @s entity.age matches 2.. if entity @s[tag=spell_type.damage] positioned as @s run particle minecraft:raid_omen ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
-execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.wind] positioned as @s run particle minecraft:instant_effect{color:0x7FFFFF} ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if score @s entity.age matches 2.. if entity @s[tag=spell_type.wind] positioned as @s run particle minecraft:instant_effect{color:0x3F7F7F} ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if predicate custom:periodic_tick/2 if score @s entity.age matches 2.. if entity @s[tag=spell_type.wind] positioned as @s run particle minecraft:small_gust ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-
-execute unless entity @s[type=area_effect_cloud] unless entity @s[type=#custom:wind_charge] if score @s entity.age matches 2.. if predicate entities:origin_team/blue positioned as @s run particle minecraft:dust{color:[0.75,0.95,1],scale:1} ~ ~ ~ 0.25 0.25 0.25 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute unless entity @s[type=area_effect_cloud] if entity @s[type=#custom:wind_charge] if score @s entity.age matches 2.. if predicate entities:origin_team/blue positioned as @s run particle minecraft:dust{color:[0,0,1],scale:1} ~ ~ ~ 0.25 0.25 0.25 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute unless entity @s[type=area_effect_cloud] if score @s entity.age matches 2.. if predicate entities:origin_team/yellow positioned as @s run particle minecraft:dust{color:[1,1,0],scale:1} ~ ~ ~ 0.25 0.25 0.25 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute unless entity @s[type=area_effect_cloud] if score @s entity.age matches 2.. if predicate entities:origin_team/none positioned as @s run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~ ~ 0.25 0.25 0.25 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if predicate custom:periodic_tick/3 if entity @s[type=area_effect_cloud] if score @s entity.age matches 1.. if predicate entities:origin_team/blue positioned as @s run particle minecraft:dust{color:[0.75,0.95,1],scale:1} ~ ~ ~ 0.3 0.3 0.3 0.1 4 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if predicate custom:periodic_tick/3 if entity @s[type=area_effect_cloud] if score @s entity.age matches 1.. if predicate entities:origin_team/yellow positioned as @s run particle minecraft:dust{color:[1,1,0],scale:1} ~ ~ ~ 0.3 0.3 0.3 0.1 4 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if predicate custom:periodic_tick/3 if entity @s[type=area_effect_cloud] if score @s entity.age matches 1.. if predicate entities:origin_team/none positioned as @s run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~ ~ 0.3 0.3 0.3 0.1 4 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if predicate custom:periodic_tick/3 if entity @s[type=area_effect_cloud] if score @s entity.age matches 1.. if predicate entities:origin_team/blue positioned as @s run particle minecraft:dust{color:0x4444FF,scale:1} ~ ~ ~ 0.3 0.3 0.3 0.1 4 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if predicate custom:periodic_tick/3 if entity @s[type=area_effect_cloud] if score @s entity.age matches 1.. if predicate entities:origin_team/yellow positioned as @s run particle minecraft:dust{color:0xFFFF44,scale:1} ~ ~ ~ 0.3 0.3 0.3 0.1 4 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if predicate custom:periodic_tick/3 if entity @s[type=area_effect_cloud] if score @s entity.age matches 1.. if predicate entities:origin_team/none positioned as @s run particle minecraft:dust{color:0xFFFFFF,scale:1} ~ ~ ~ 0.3 0.3 0.3 0.1 4 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]

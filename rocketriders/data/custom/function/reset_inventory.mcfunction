@@ -27,7 +27,7 @@ item replace block 0 184 -16 container.6 from entity @s hotbar.6
 item replace block 0 184 -16 container.7 from entity @s hotbar.7
 item replace block 0 184 -16 container.8 from entity @s hotbar.8
 item replace block 0 184 -16 container.9 from entity @s weapon.offhand
-data modify storage rocketriders:main reset_inventory set value {items_original:[],items_modified:[]}
+data modify storage rocketriders:main reset_inventory set value {items_original:[],items_replace:[]}
 data modify storage rocketriders:main reset_inventory.items_original set from block 0 184 -16 Items
 loot replace block 0 184 -16 container.0 27 loot custom:empty
 
@@ -56,46 +56,56 @@ execute if predicate custom:team/any_playing_team if predicate game:gamemode_com
 execute if predicate game:phase/match/over if predicate custom:team/any_playing_team if entity @s[tag=Winner] run loot replace block 0 184 -16 container.1 loot items:ending/celebratory_fireworks
 
 ## Transfer and delete relevant items
-data modify storage rocketriders:main reset_inventory.items_modified set from block 0 184 -16 Items
+data modify storage rocketriders:main reset_inventory.items_replace set from block 0 184 -16 Items
 
 execute unless items block 0 184 -16 container.0 * run item replace entity @s hotbar.0 with air
-execute if items block 0 184 -16 container.0 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:0b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:0b}]
-execute if items block 0 184 -16 container.0 * if score $item_changed var matches 1 run item replace entity @s hotbar.0 from block 0 184 -16 container.0
+execute if items block 0 184 -16 container.0 * if items entity @s hotbar.0 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:0b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:0b}]
+execute if items block 0 184 -16 container.0 * if items entity @s hotbar.0 * if score $item_changed var matches 1 run item replace entity @s hotbar.0 from block 0 184 -16 container.0
+execute if items block 0 184 -16 container.0 * unless items entity @s hotbar.0 * run item replace entity @s hotbar.0 from block 0 184 -16 container.0
 
 execute unless items block 0 184 -16 container.1 * run item replace entity @s hotbar.1 with air
-execute if items block 0 184 -16 container.1 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:1b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:1b}]
-execute if items block 0 184 -16 container.1 * if score $item_changed var matches 1 run item replace entity @s hotbar.1 from block 0 184 -16 container.1
+execute if items block 0 184 -16 container.1 * if items entity @s hotbar.1 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:1b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:1b}]
+execute if items block 0 184 -16 container.1 * if items entity @s hotbar.1 * if score $item_changed var matches 1 run item replace entity @s hotbar.1 from block 0 184 -16 container.1
+execute if items block 0 184 -16 container.1 * unless items entity @s hotbar.1 * run item replace entity @s hotbar.1 from block 0 184 -16 container.1
 
 execute unless items block 0 184 -16 container.2 * run item replace entity @s hotbar.2 with air
-execute if items block 0 184 -16 container.2 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:2b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:2b}]
-execute if items block 0 184 -16 container.2 * if score $item_changed var matches 1 run item replace entity @s hotbar.2 from block 0 184 -16 container.2
+execute if items block 0 184 -16 container.2 * if items entity @s hotbar.2 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:2b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:2b}]
+execute if items block 0 184 -16 container.2 * if items entity @s hotbar.2 * if score $item_changed var matches 1 run item replace entity @s hotbar.2 from block 0 184 -16 container.2
+execute if items block 0 184 -16 container.2 * unless items entity @s hotbar.2 * run item replace entity @s hotbar.2 from block 0 184 -16 container.2
 
 execute unless items block 0 184 -16 container.3 * run item replace entity @s hotbar.3 with air
-execute if items block 0 184 -16 container.3 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:3b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:3b}]
-execute if items block 0 184 -16 container.3 * if score $item_changed var matches 1 run item replace entity @s hotbar.3 from block 0 184 -16 container.3
+execute if items block 0 184 -16 container.3 * if items entity @s hotbar.3 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:3b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:3b}]
+execute if items block 0 184 -16 container.3 * if items entity @s hotbar.3 * if score $item_changed var matches 1 run item replace entity @s hotbar.3 from block 0 184 -16 container.3
+execute if items block 0 184 -16 container.3 * unless items entity @s hotbar.3 * run item replace entity @s hotbar.3 from block 0 184 -16 container.3
 
 execute unless items block 0 184 -16 container.4 * run item replace entity @s hotbar.4 with air
-execute if items block 0 184 -16 container.4 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:4b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:4b}]
-execute if items block 0 184 -16 container.4 * if score $item_changed var matches 1 run item replace entity @s hotbar.4 from block 0 184 -16 container.4
+execute if items block 0 184 -16 container.4 * if items entity @s hotbar.4 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:4b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:4b}]
+execute if items block 0 184 -16 container.4 * if items entity @s hotbar.4 * if score $item_changed var matches 1 run item replace entity @s hotbar.4 from block 0 184 -16 container.4
+execute if items block 0 184 -16 container.4 * unless items entity @s hotbar.4 * run item replace entity @s hotbar.4 from block 0 184 -16 container.4
 
 execute unless items block 0 184 -16 container.5 * run item replace entity @s hotbar.5 with air
-execute if items block 0 184 -16 container.5 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:5b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:5b}]
-execute if items block 0 184 -16 container.5 * if score $item_changed var matches 1 run item replace entity @s hotbar.5 from block 0 184 -16 container.5
+execute if items block 0 184 -16 container.5 * if items entity @s hotbar.5 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:5b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:5b}]
+execute if items block 0 184 -16 container.5 * if items entity @s hotbar.5 * if score $item_changed var matches 1 run item replace entity @s hotbar.5 from block 0 184 -16 container.5
+execute if items block 0 184 -16 container.5 * unless items entity @s hotbar.5 * run item replace entity @s hotbar.5 from block 0 184 -16 container.5
 
 execute unless items block 0 184 -16 container.6 * run item replace entity @s hotbar.6 with air
-execute if items block 0 184 -16 container.6 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:6b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:6b}]
-execute if items block 0 184 -16 container.6 * if score $item_changed var matches 1 run item replace entity @s hotbar.6 from block 0 184 -16 container.6
+execute if items block 0 184 -16 container.6 * if items entity @s hotbar.6 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:6b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:6b}]
+execute if items block 0 184 -16 container.6 * if items entity @s hotbar.6 * if score $item_changed var matches 1 run item replace entity @s hotbar.6 from block 0 184 -16 container.6
+execute if items block 0 184 -16 container.6 * unless items entity @s hotbar.6 * run item replace entity @s hotbar.6 from block 0 184 -16 container.6
 
 execute unless items block 0 184 -16 container.7 * run item replace entity @s hotbar.7 with air
-execute if items block 0 184 -16 container.7 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:7b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:7b}]
-execute if items block 0 184 -16 container.7 * if score $item_changed var matches 1 run item replace entity @s hotbar.7 from block 0 184 -16 container.7
+execute if items block 0 184 -16 container.7 * if items entity @s hotbar.7 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:7b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:7b}]
+execute if items block 0 184 -16 container.7 * if items entity @s hotbar.7 * if score $item_changed var matches 1 run item replace entity @s hotbar.7 from block 0 184 -16 container.7
+execute if items block 0 184 -16 container.7 * unless items entity @s hotbar.7 * run item replace entity @s hotbar.7 from block 0 184 -16 container.7
 
 execute unless items block 0 184 -16 container.8 * run item replace entity @s hotbar.8 with air
-execute if items block 0 184 -16 container.8 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:8b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:8b}]
-execute if items block 0 184 -16 container.8 * if score $item_changed var matches 1 run item replace entity @s hotbar.8 from block 0 184 -16 container.8
+execute if items block 0 184 -16 container.8 * if items entity @s hotbar.8 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:8b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:8b}]
+execute if items block 0 184 -16 container.8 * if items entity @s hotbar.8 * if score $item_changed var matches 1 run item replace entity @s hotbar.8 from block 0 184 -16 container.8
+execute if items block 0 184 -16 container.8 * unless items entity @s hotbar.8 * run item replace entity @s hotbar.8 from block 0 184 -16 container.8
 
 execute unless items block 0 184 -16 container.9 * run item replace entity @s weapon.offhand with air
-execute if items block 0 184 -16 container.9 * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:9b}] set from storage rocketriders:main reset_inventory.items_modified[{Slot:9b}]
-execute if items block 0 184 -16 container.9 * if score $item_changed var matches 1 run item replace entity @s weapon.offhand from block 0 184 -16 container.9
+execute if items block 0 184 -16 container.9 * if items entity @s weapon.offhand * store success score $item_changed var run data modify storage rocketriders:main reset_inventory.items_original[{Slot:9b}] set from storage rocketriders:main reset_inventory.items_replace[{Slot:9b}]
+execute if items block 0 184 -16 container.9 * if items entity @s weapon.offhand * if score $item_changed var matches 1 run item replace entity @s weapon.offhand from block 0 184 -16 container.9
+execute if items block 0 184 -16 container.9 * unless items entity @s weapon.offhand * run item replace entity @s weapon.offhand from block 0 184 -16 container.9
 
 tag @s remove resetting_inventory

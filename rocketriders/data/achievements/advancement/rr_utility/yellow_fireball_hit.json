@@ -18,7 +18,12 @@
             ],
             "direct_entity": {
               "type": "minecraft:fireball",
-              "nbt": "{Tags:[\"NormalFireball\",\"FireballBlue\"]}"
+              "predicates": {
+                "minecraft:custom_data": {
+                  "fireball": {},
+                  "origin_team": "blue"
+                }
+              }
             }
           }
         }

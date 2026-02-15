@@ -61,7 +61,15 @@ tag @a[x=0,scores={LeaveGame=1..}] remove beenOnBoth
 execute if entity @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[x=0,scores={LeaveGame=1..}] run function servermode:notifyvote
 
 #Notify game (if already selected)
-execute unless predicate game:phase/match/over if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={LeaveGame=1..}] add informMe
+execute unless predicate game:phase/match/over if entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0,scores={LeaveGame=1..},tag=!informMeLate] add informMe
+
+#Do so late for new players
+execute unless predicate game:phase/match/over if entity @s[tag=EditedSettings,tag=!SMSwitch] as @a[x=0,tag=informMeLate] run scoreboard players add @s informMeLate 1
+execute unless predicate game:phase/match/over if entity @s[tag=EditedSettings,tag=!SMSwitch] as @a[x=0,tag=informMeLate,scores={informMeLate=120..}] run tag @s add informMe
+execute unless predicate game:phase/match/over if entity @s[tag=EditedSettings,tag=!SMSwitch] as @a[x=0,tag=informMeLate,scores={informMeLate=120..}] run tag @s remove informMeLate
+execute if predicate game:phase/match/over run tag @a[x=0] remove informMeLate
+execute unless entity @s[tag=EditedSettings,tag=!SMSwitch] run tag @a[x=0] remove informMeLate
+scoreboard players reset @a[x=0,tag=!informMeLate] informMeLate
 
 #Update Armor
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:update_armor

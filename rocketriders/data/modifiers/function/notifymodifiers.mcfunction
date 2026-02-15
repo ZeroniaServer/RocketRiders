@@ -13,5 +13,9 @@ execute unless entity @s[predicate=rr:server_mode/cubekrowd_voting,predicate=!ga
 #And repeat settings
 execute if predicate game:repeat_settings/finite run function arenaclear:notifyrepeat
 
+#And forced settings
+#TODO: THIS ACTUALLY INITIALIZES THEM!! Probably not the best place to do it, but it guarantees correct message order.
+execute if predicate rr:server_mode/cubekrowd_voting run function servermode:forced_settings
+
 execute if predicate rr:has_modifiers unless predicate game:repeat_settings/finite run tellraw @a[x=0] [{"text":""}]
 execute if predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0] [{"text":""}]

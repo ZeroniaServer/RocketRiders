@@ -12,6 +12,4 @@ execute if predicate rr:server_mode/cubekrowd_voting run tag @e[x=0,type=armor_s
 
 execute if predicate rr:server_mode/cubekrowd_voting run schedule function servermode:forceclear 2t
 
-execute if predicate rr:server_mode/cubekrowd_voting run schedule function servermode:init_forcedsettings 4t
-
 execute unless predicate rr:server_mode/cubekrowd_voting run tellraw @s [{"text":"Error: Incorrect server mode! Please run in server mode 1.","color":"red"}]

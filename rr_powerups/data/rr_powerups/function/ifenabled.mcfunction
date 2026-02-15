@@ -25,8 +25,6 @@ tag @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 execute if entity @s[tag=EditedSettings] as @a[x=0,tag=informMe] run function arenaclear:notifystart
 execute if entity @s[tag=EditedSettings] run tellraw @a[x=0,tag=informMe] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Powerups","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Stand on Powerup Platform for 3 seconds to capture it\n"},{"text":"- The team that controls the Platform gets Powerup Items\n"},{"text":"- Platform becomes contested if both teams are on it\n"},{"text":"- Crystal Crafters appear when enemies control the Powerup Platform\n"},{"text":"- Stand on Crystal Crafter to launch Crystals at Platform\n"},{"text":"- The Platform slowly breaks over time\n"},{"text":"- Crystals significantly speed up Platform breaking process\n"},{"text":"Powerup Items:\n","color":"dark_purple"},{"text":"Special Missiles, Tipped Arrows, Stinging Shield, Lava Splash, Trident, Elytra, Totem of Undying, Infinity Saber, Slap Fish"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
 execute if entity @s[tag=EditedSettings] if entity @a[x=0,tag=informMe] run function modifiers:informmodifiers
-execute if entity @s[tag=EditedSettings] if predicate rr:inform_late_joiners_about_items as @a[x=0,tag=informMe] run function servermode:notifyitems
-execute if entity @s[tag=EditedSettings] if predicate game:repeat_settings/on if entity @a[x=0,tag=informMe] run function gamemodes:informrepeat
 tag @a[x=0,tag=informMe] remove informMe
 
 #set bossbar max to 100

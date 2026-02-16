@@ -117,6 +117,10 @@ execute if predicate game:gamemode_components/friendly_fire run data modify stor
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_flags",label:"🔒 has_flags",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:gamemode_components/has_flags run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
 
+# has_spells (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_spells",label:"🔒 has_spells",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/has_spells run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
 # item_signs/replace_fireball_with_cluster_fireball (locked)
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"duel_settings_locked",label:"🔒 item_signs/replace_fireball_with_cluster_fireball",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:gamemode_components/item_signs/replace_fireball_with_cluster_fireball run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"

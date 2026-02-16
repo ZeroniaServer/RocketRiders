@@ -1,5 +1,8 @@
 execute if score @s time_since_respawn matches ..10 run return 0
 
+execute unless predicate game:gamemode_components/has_spells run playsound block.note_block.didgeridoo master @s ~ ~ ~ 1 1
+execute unless predicate game:gamemode_components/has_spells run return run title @s actionbar [{"text":"Spells are not enabled in this game mode!","color":"red"}]
+
 execute unless items entity @s container.* *[custom_data~{id:"spell_book"}] unless items entity @s weapon.offhand *[custom_data~{id:"spell_book"}] run playsound block.note_block.didgeridoo master @s ~ ~ ~ 1 1
 execute unless items entity @s container.* *[custom_data~{id:"spell_book"}] unless items entity @s weapon.offhand *[custom_data~{id:"spell_book"}] run title @s actionbar [{"text":"No spells to cast!","color":"red"}]
 

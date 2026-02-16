@@ -16,6 +16,7 @@ scoreboard players set $custom_pierce_prevention gamemode_components 1
 scoreboard players set $decreased_icbm_flight_duration gamemode_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage gamemode_components 1
 scoreboard players set $disable_arrow_stacking gamemode_components 1
+scoreboard players set $has_spells gamemode_components 1
 scoreboard players set $main_item/crusade_kit_dependent gamemode_components 1
 scoreboard players set $portal_crystal_protection gamemode_components 1
 scoreboard players set $small_portals gamemode_components 1

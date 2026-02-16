@@ -117,6 +117,10 @@ execute if predicate game:gamemode_components/friendly_fire run data modify stor
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_flags",label:"🔒 has_flags",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:gamemode_components/has_flags run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
 
+# has_powerups (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_powerups",label:"🔒 has_powerups",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/has_powerups run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
 # has_spells (locked)
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_spells",label:"🔒 has_spells",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:gamemode_components/has_spells run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"

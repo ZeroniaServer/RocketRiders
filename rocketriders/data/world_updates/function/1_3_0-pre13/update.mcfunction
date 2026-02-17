@@ -1,12 +1,33 @@
+# Move modification room signs
 execute unless block -67 192 83 minecraft:air run function world_updates:1_3_0-pre13/move_modroom_signs
 
-execute if score $match_in_play global matches 0..1 store success score $phase/match.play global if score $match_in_play global matches 1
+# Change how phases are tracked
+execute if score $phase/match.play global matches 1 run scoreboard players set $match_in_play global 1
+execute if score $phase/match.paused global matches 1 run scoreboard players set $match_in_play global 1
+execute if score $phase/match.paused global matches 1 run scoreboard players set $game_paused global 1
+execute if score $phase/match.over global matches 1 run scoreboard players set $match_over global 1
+scoreboard players reset $phase/match.play global
+scoreboard players reset $phase/match.paused global
+scoreboard players reset $phase/match.over global
+
+scoreboard players set $phase/game global 0
+
+execute if score $match_in_play global matches 1 run scoreboard players set $phase/game global 1
+execute if score $match_in_play global matches 1 run scoreboard players set $phase/game.match global 0
+execute if score $match_in_play global matches 1 run scoreboard players set $phase/game.match.play global 0
+
+execute if score $match_in_play global matches 1 if score $game_paused global matches 1 run scoreboard players set $phase/game global 1
+execute if score $match_in_play global matches 1 if score $game_paused global matches 1 run scoreboard players set $phase/game.match global 1
+
+execute if score $match_over global matches 1 run scoreboard players set $phase/game global 1
+execute if score $match_over global matches 1 run scoreboard players set $phase/game.match global 2
+execute if score $match_over global matches 1 run scoreboard players set $phase/game.match.over global 1
+
 scoreboard players reset $match_in_play global
-
-execute if score $match_over global matches 0..1 store success score $phase/match.over global if score $match_over global matches 1
 scoreboard players reset $match_over global
-
-execute if score $game_paused global matches 0..1 store success score $phase/match.paused global if score $game_paused global matches 1
 scoreboard players reset $game_paused global
-execute if score $phase/match.paused global matches 1 run scoreboard players reset $phase/match.play global
-execute if score $phase/match.paused global matches 1 run scoreboard players reset $phase/match.over global
+
+execute if score $phase/game global matches 0 run scoreboard players set $phase/game.staging global 0
+execute if score $phase/game global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players set $phase/game.staging global 1
+execute if score $phase/game global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players set $phase/game.staging.queue global 0
+execute if score $phase/game global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,tag=Countdown] run scoreboard players set $phase/game.staging.queue global 1

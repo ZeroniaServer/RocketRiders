@@ -1,41 +1,12 @@
 {
-  "condition": "minecraft:any_of",
-  "terms": [
-    {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$phase/match.play"
-        },
-        "score": "global"
-      },
-      "range": 1
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$phase/game"
     },
-    {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$phase/match.over"
-        },
-        "score": "global"
-      },
-      "range": 1
-    },
-    {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$phase/match.paused"
-        },
-        "score": "global"
-      },
-      "range": 1
-    }
-  ]
+    "score": "global"
+  },
+  "range": 1
 }

@@ -1,4 +1,4 @@
-execute unless predicate game:phase/match/play unless entity @n[tag=Selection,tag=EditedSettings] run return run tellraw @s {color:"red",text:"The match has not started yet."}
+execute if predicate game:phase/staging unless entity @n[tag=Selection,tag=EditedSettings] run return run tellraw @s {color:"red",text:"Teams are not open yet."}
 
 # Leave
 execute if predicate game:phase/match/play if predicate custom:team/any_playing_team run return run trigger LeaveMidgame

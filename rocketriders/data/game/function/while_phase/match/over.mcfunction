@@ -9,8 +9,7 @@ execute if score @s endtimer matches 2 if predicate game:gamemode_components/sho
 execute as @a[x=0] run function custom:player_action/forget_all_canopies
 execute as @a[x=0] run function custom:player_action/forget_nova_attach
 function everytick:spawnables
-execute if score @s endtimer matches 1.. run scoreboard players reset $match_in_play global
-execute if score @s endtimer matches 1.. run scoreboard players reset $game_paused global
+execute if score @s endtimer matches 1.. run function game:set_phase/match.over
 tag @s[scores={endtimer=1}] remove SuddenDeath
 tag @s[scores={endtimer=1}] remove gaveFirstItem
 scoreboard players reset @s[scores={endtimer=1..}] SDtime
@@ -90,8 +89,8 @@ tag @s[scores={endtimer=570..}] remove BothWon
 execute if score @s endtimer matches 570.. run scoreboard players reset @a[x=0] invCount
 execute if score @s endtimer matches 570.. run scoreboard players reset $blue_single_portal var
 execute if score @s endtimer matches 570.. run scoreboard players reset $yellow_single_portal var
-execute if score @s endtimer matches 570.. run scoreboard players reset $match_over global
 execute if score @s endtimer matches 570.. run scoreboard players reset $1v1_duel_time_out_period global
+execute if score @s endtimer matches 570.. run function game:set_phase/staging
 
 ##For repeating settings
 execute unless score $match_repeat_amount global matches 1.. unless predicate game:repeat_settings/forever run scoreboard players reset $extra_match_repetitions config

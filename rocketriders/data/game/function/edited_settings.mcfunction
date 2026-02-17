@@ -5,7 +5,7 @@ dialog clear @a[x=0]
 function #rr:upon_edited_settings
 
 ## Place facade
-execute unless predicate game:phase/match run function game:place_facade
+function game:place_facade
 
 ## Initialise join pads
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.blue

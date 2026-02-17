@@ -9,21 +9,22 @@ function rr_duel:tip
 #game
 function rr_duel:game/gamestart
 execute if predicate game:phase/match run function rr_duel:game/while_phase/match
+execute if predicate game:phase/match/paused run function rr_duel:game/while_phase/match/paused
 execute if predicate game:phase/match/play run function rr_duel:game/while_phase/match/play
 execute if predicate game:phase/match/over run function rr_duel:game/while_phase/match/over
-execute unless predicate game:phase/match/play run tag @s remove CriteriaTrue
+execute unless predicate game:phase/match/play unless predicate game:phase/match/paused run tag @s remove CriteriaTrue
 
 #leave teams
 function game:leaveteams
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tag @a[x=0] remove informMe
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play as @a[x=0] at @s run function arenaclear:notifystart
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play if entity @s[tag=!noYZELO] run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Whoever wins two rounds gains XP. Loser loses XP\n"},{"text":"- XP translates to ranks, which affects gains/losses\n"},{"text":"- Players who log out forfeit and get XP penalty\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No base details, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play if entity @s[tag=noYZELO] run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Leaving the match forfeits the duel and ends the match\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No base details, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run function modifiers:notifymodifiers
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tag @s add duelLast
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match unless predicate game:phase/match/paused run tag @a[x=0] remove informMe
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match unless predicate game:phase/match/paused as @a[x=0] at @s run function arenaclear:notifystart
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match unless predicate game:phase/match/paused if entity @s[tag=!noYZELO] run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Whoever wins two rounds gains XP. Loser loses XP\n"},{"text":"- XP translates to ranks, which affects gains/losses\n"},{"text":"- Players who log out forfeit and get XP penalty\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No base details, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match unless predicate game:phase/match/paused if entity @s[tag=noYZELO] run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"1v1 Duel","color":"red","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Two players duel each other for three rounds\n"},{"text":"- Leaving the match forfeits the duel and ends the match\n"},{"text":"- Wind Down modifier is always on (no others are)\n"},{"text":"- Forced settings: No base details, no ties, etc.\n"},{"text":"Items:","color":"aqua"},{"text":" A set of 12 random items is generated each round"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match unless predicate game:phase/match/paused run function modifiers:notifymodifiers
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match unless predicate game:phase/match/paused run tag @s add duelLast
 tag @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners (non-forfeiters) of active settings
@@ -35,10 +36,10 @@ execute unless predicate game:phase/match/over if entity @s[tag=EditedSettings] 
 tag @a[x=0,tag=informMe] remove informMe
 
 #lock join pads
-execute if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/blue] run function game:cancelblue
-execute if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/yellow] run function game:cancelyellow
-execute unless predicate game:phase/match if entity @s[tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/blue] run function game:uncancelblue
-execute unless predicate game:phase/match if entity @s[tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/yellow] run function game:uncancelyellow
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] if entity @a[limit=1,x=0,predicate=custom:team/blue] run function game:cancelblue
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] if entity @a[limit=1,x=0,predicate=custom:team/yellow] run function game:cancelyellow
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] unless entity @a[limit=1,x=0,predicate=custom:team/blue] run function game:uncancelblue
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] unless entity @a[limit=1,x=0,predicate=custom:team/yellow] run function game:uncancelyellow
 
 #fake game end
 execute if entity @s[tag=FakeGameEnd] run function rr_duel:game/fakegameend

@@ -1,7 +1,7 @@
 tag @s remove FakeGameEnd
 scoreboard players set @s fakeendtimer 0
 
-scoreboard players set $game_paused global 1
+function game:set_phase/match.paused
 function arenaclear:brute_force/start
 
 tag @a[x=0,predicate=custom:team/any_playing_team] remove force_mount

@@ -15,7 +15,7 @@ execute if predicate game:repeat_settings/finite run function gamemodes:informre
 
 #And forced settings
 execute if predicate rr:inform_late_joiners_about_items as @a[x=0,tag=informMe] run function servermode:notifyitems
-execute if entity @s[tag=duelEnabled] if predicate game:phase/match/play unless predicate game:phase/match/over as @a[x=0,tag=informMe] run function rr_duel:notifyitems
+execute if entity @s[tag=duelEnabled] if predicate game:phase/match unless predicate game:phase/match/over as @a[x=0,tag=informMe] run function rr_duel:notifyitems
 
-execute if predicate rr:has_modifiers unless predicate game:repeat_settings/finite unless entity @s[tag=duelEnabled,predicate=game:phase/match/play] run tellraw @a[x=0,tag=informMe] [{"text":""}]
+execute if predicate rr:has_modifiers unless predicate game:repeat_settings/finite unless entity @s[tag=duelEnabled,predicate=game:phase/match,predicate=!game:phase/match/over] run tellraw @a[x=0,tag=informMe] [{"text":""}]
 execute if predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0,tag=informMe] [{"text":""}]

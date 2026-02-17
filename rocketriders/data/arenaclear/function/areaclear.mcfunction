@@ -4,8 +4,8 @@
 ##################################
 
 ##Appropriate tags for Arena Clear state
-scoreboard players reset $match_in_play global
-scoreboard players reset $game_paused global
+execute if predicate game:phase/match/over run function game:set_phase/match.over
+execute unless predicate game:phase/match/over run function game:set_phase/match.staging
 
 ##Summon AECs for tracking/block sweeping
 summon marker 11 63 6 {Tags:["ArenaClearChecker"]}

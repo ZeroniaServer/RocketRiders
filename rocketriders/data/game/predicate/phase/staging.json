@@ -9,7 +9,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "$match_in_play"
+            "name": "$phase/match.play"
           },
           "score": "global"
         },
@@ -21,7 +21,19 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "$match_over"
+            "name": "$phase/match.over"
+          },
+          "score": "global"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "$phase/match.paused"
           },
           "score": "global"
         },

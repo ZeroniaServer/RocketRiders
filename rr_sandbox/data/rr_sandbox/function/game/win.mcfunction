@@ -1,5 +1,5 @@
 ##Record tags
-scoreboard players set $match_over global 1
+function game:set_phase/match.paused
 tag @s add BothWon
 
 ##Celebratory items

@@ -1,4 +1,4 @@
-scoreboard players reset $game_paused global
+function game:set_phase/match.play
 scoreboard players add $game_duration global 80
 
 function game:place_arena

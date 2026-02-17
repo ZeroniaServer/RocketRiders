@@ -342,8 +342,8 @@ tag @e[x=0,type=marker,tag=join_pad] remove join_pad.was_showing_barrier
 kill @e[x=0,type=block_display,tag=LobbyArrowDisplay]
 
 fill -70 201 72 -57 201 84 air replace minecraft:barrier strict
-function lobby:close_modification_room
-execute if predicate rr:has_modification_room unless predicate game:phase/match unless entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run function lobby:open_modification_room
+execute unless predicate rr:has_modification_room run function lobby:close_modification_room
+execute if predicate rr:has_modification_room run function lobby:open_modification_room
 
 # Modification Room redesign
 setblock -70 190 80 netherite_block strict

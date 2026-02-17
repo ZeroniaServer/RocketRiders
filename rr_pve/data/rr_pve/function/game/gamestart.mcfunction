@@ -24,13 +24,13 @@ tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Bossbar
-execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
-execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
-execute unless predicate game:phase/match/play if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
+execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
+execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
+execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
 
 #Countdown
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/blue] run tag @s add Countdown
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/blue] run tag @s add Countdown
 execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] run function game:restartcountdown
 execute if entity @s[tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/blue] run kill @e[x=0,type=armor_stand,tag=Bot]
 execute unless predicate game:phase/match/over if entity @s[scores={count=590..600}] run kill @e[x=0,type=armor_stand,tag=Bot]
-execute unless predicate game:phase/match/over if score @s count matches 600 run function game:on_match_start
+execute unless predicate game:phase/match/over if score @s count matches 600 run function game:start_match

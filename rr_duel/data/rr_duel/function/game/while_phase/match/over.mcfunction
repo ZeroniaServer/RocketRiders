@@ -26,3 +26,4 @@ execute if entity @s[scores={endtimer=569..}] run scoreboard players reset Blue:
 execute if entity @s[scores={endtimer=569..}] run scoreboard players reset Yellow: RoundsWon
 
 bossbar remove rr_duel:resetting_arena
+bossbar remove rr_duel:forfeit_timer

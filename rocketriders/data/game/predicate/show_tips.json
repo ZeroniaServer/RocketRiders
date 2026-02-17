@@ -1,0 +1,13 @@
+[
+  {
+    "condition": "minecraft:reference",
+    "name": "game:phase/match"
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:phase/match/over"
+    }
+  }
+]

@@ -2,7 +2,7 @@
 execute if predicate game:achievements_can_be_awarded run function rr_chase:achievements/aftergame
 
 ##Record tags
-scoreboard players set $match_over global 1
+function game:set_phase/match.over
 
 ##Celebratory items
 execute as @a[x=0] store result score @s HasFlag run clear @s #banners 0

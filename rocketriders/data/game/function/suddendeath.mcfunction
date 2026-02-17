@@ -19,6 +19,7 @@ execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt_minecart]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=creeper]
 
 ##Preparing for Tiebreaker
+execute if entity @s[scores={SDtime=1}] run function game:set_phase/match.play
 execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/blue] actionbar [""]
 execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/yellow] actionbar [""]
 execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
@@ -35,11 +36,9 @@ execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_play
 execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if entity @s[scores={SDtime=1}] run effect give @a[x=0,predicate=custom:team/any_arena_team] blindness 1 100 true
 execute if entity @s[scores={SDtime=4}] run effect clear @a[x=0,predicate=custom:team/any_arena_team] blindness
-execute if entity @s[scores={SDtime=1}] run scoreboard players reset $match_over global
 execute if entity @s[scores={SDtime=1}] run function achievements:scoresreset
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,predicate=custom:team/blue]
 execute if entity @s[scores={SDtime=2}] run gamemode survival @a[x=0,predicate=custom:team/yellow]
-execute if entity @s[scores={SDtime=1}] run scoreboard players set $match_in_play global 1
 execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
 execute if entity @s[scores={SDtime=1}] as @e[x=0,type=#custom:large_fireballs] run function game:set_fireball_punchable
 execute if entity @s[scores={SDtime=1}] run tag @s remove BlueWon

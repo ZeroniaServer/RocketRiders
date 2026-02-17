@@ -14,26 +14,26 @@ execute if predicate game:phase/match/over run function rr_ctf:game/while_phase/
 # function rr_ctf:everytick/pickaxefix
 
 #pregame
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] positioned -90 202 95 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] positioned -100 202 95 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] positioned -90 202 61 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] positioned -100 202 61 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] unless predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] if predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] unless predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
-execute unless predicate game:phase/match/play if entity @s[tag=EditedSettings] if predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] positioned -90 202 95 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] positioned -100 202 95 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] positioned -90 202 61 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] positioned -100 202 61 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] unless predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] if predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] unless predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute if predicate game:phase/staging if entity @s[tag=EditedSettings] if predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:game_rules/disable_tying/on run data modify storage rocketriders:gamerules list[2] set value [{"text":"Overtime: ","color":"white"},{"text":"Enabled","color":"green","bold":true}]
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:game_rules/disable_tying/on run data modify storage rocketriders:gamerules list[2] set value [{"text":"Overtime: ","color":"white"},{"text":"Disabled","color":"red","bold":true}]
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tag @a[x=0] remove informMe
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play as @a[x=0] at @s run function arenaclear:notifystart
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Capture the Flag","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Capture both enemy flags\n","color":"yellow"},{"text":"- Lower flags by breaking magenta glass at flagpoles\n"},{"text":"- Break white glass or run near lowered flags to steal them\n"},{"text":"- Capture flags by returning to own base\n"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Bases made of harder materials; no portals\n"},{"text":"- Players have Piercing Pickaxes to mine concrete\n"},{"text":"- Flag carrier's missiles travel back to own base\n"},{"text":"- Hold two Canopies at a time (three in overtime)"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run function modifiers:notifymodifiers
-execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] unless predicate game:phase/match/play run tag @s add ctfLast
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging run tag @a[x=0] remove informMe
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging as @a[x=0] at @s run function arenaclear:notifystart
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Gamemode: ","color":"#ca00ca"},{"text":"Capture the Flag","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Capture both enemy flags\n","color":"yellow"},{"text":"- Lower flags by breaking magenta glass at flagpoles\n"},{"text":"- Break white glass or run near lowered flags to steal them\n"},{"text":"- Capture flags by returning to own base\n"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Bases made of harder materials; no portals\n"},{"text":"- Players have Piercing Pickaxes to mine concrete\n"},{"text":"- Flag carrier's missiles travel back to own base\n"},{"text":"- Hold two Canopies at a time (three in overtime)"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging run function modifiers:notifymodifiers
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging run tag @s add ctfLast
 tag @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 
 #inform late joiners of active settings

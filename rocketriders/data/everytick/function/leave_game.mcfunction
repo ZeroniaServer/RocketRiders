@@ -8,7 +8,7 @@ scoreboard players add @a[x=0] LeaveGame 0
 
 # Tag 1v1 Duel Forfeiters
 tag @a[x=0] remove leave_game.forfeiter
-execute if predicate game:phase/match/play if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] run tag @a[x=0,scores={LeaveGame=1..},predicate=custom:team/any_playing_team] add leave_game.forfeiter
+execute if predicate game:phase/match unless predicate game:phase/match/over if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] run tag @a[x=0,scores={LeaveGame=1..},predicate=custom:team/any_playing_team] add leave_game.forfeiter
 
 #Clearing effects/tags and teleporting to lobby
 tag @a[x=0,scores={LeaveGame=1..}] remove force_mount

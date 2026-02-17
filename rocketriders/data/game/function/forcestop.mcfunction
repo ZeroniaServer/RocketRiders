@@ -1,10 +1,8 @@
 ##Operator function for forcing a match to end
-scoreboard players set $match_over global 1
+function game:set_phase/match.over
 clear @a[x=0,predicate=custom:team/any_playing_team] *
 effect clear @a[x=0,predicate=custom:team/any_playing_team]
 dialog clear @a[x=0]
-scoreboard players reset $match_in_play global
-scoreboard players reset $game_paused global
 scoreboard players reset $1v1_duel_time_out_period global
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Countdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove forceCountdown

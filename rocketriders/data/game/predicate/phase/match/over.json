@@ -4,7 +4,7 @@
     "type": "minecraft:score",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$match_over"
+      "name": "$phase/match.over"
     },
     "score": "global"
   },

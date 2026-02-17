@@ -1,29 +1,12 @@
-[
-  {
-    "condition": "minecraft:value_check",
-    "value": {
-      "type": "minecraft:score",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$match_in_play"
-      },
-      "score": "global"
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$phase/match.play"
     },
-    "range": 1
+    "score": "global"
   },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$match_over"
-        },
-        "score": "global"
-      },
-      "range": 1
-    }
-  }
-]
+  "range": 1
+}

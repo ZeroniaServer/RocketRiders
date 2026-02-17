@@ -74,8 +74,7 @@ fill -55 185 92 -40 206 64 light[level=15] replace minecraft:orange_stained_glas
 fill -55 185 92 -40 206 64 light[level=15] replace minecraft:lime_stained_glass strict
 fill -55 185 92 -40 206 64 light[level=15] replace minecraft:pink_stained_glass strict
 fill -40 196 92 -44 185 64 minecraft:white_stained_glass strict
-fill -42 197 71 -45 199 75 light[level=15] strict
-fill -42 197 81 -45 199 85 light[level=15] strict
+fill -44 197 64 -40 202 92 light[level=15] strict
 
 ## Top Decorations
 #New Dawn Arch
@@ -119,3 +118,6 @@ execute if predicate game:arena_details/bottom/slime_pad run place template game
 execute if predicate game:arena_details/bottom/spikes run place template game:spike_bottom_preview -53 185 76 none none 1 0 strict
 #Cannon
 execute if predicate game:arena_details/bottom/cannon run place template game:bottomcannon_preview -49 187 75 none none 1 0 strict
+
+##Castle
+execute if predicate game:gamemode_components/arena/castle run place template lobby:castle -44 185 64 none none 1 0 strict

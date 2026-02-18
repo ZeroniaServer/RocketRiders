@@ -1,5 +1,17 @@
 ##
+tag @s remove BlueWon
+tag @s remove YellowWon
+tag @s remove BothWon
 
+execute unless predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/on
+execute if predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/off
+
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_all_canopies
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_nova_attach
+tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
+tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+
+gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/play

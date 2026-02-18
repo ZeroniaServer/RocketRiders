@@ -1,5 +1,6 @@
 ##
-
+scoreboard players reset $tie_breaker_timer global
+worldborder warning distance 0
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/play/tie_breaker

@@ -1,5 +1,9 @@
 ##
+function custom:game_rules/fall_damage/off
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_all_canopies
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_nova_attach
 
+gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/play

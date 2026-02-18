@@ -5,6 +5,7 @@ scoreboard players reset * gamemode_components
 scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $config_override.disable_hotbar_limit gamemode_components 1
 scoreboard players set $config_override.disable_team_balancing gamemode_components 1
+scoreboard players set $config_override.disable_tying gamemode_components 1
 scoreboard players set $config_override.item_stacking gamemode_components 1
 scoreboard players set $config_override.minute_mix gamemode_components -1
 scoreboard players set $config_override.special_treatment gamemode_components -1

@@ -1,4 +1,5 @@
 ##
+tag @a[x=0] remove doing_facade_parkour
 
 
 ## Gamemode-specific functions

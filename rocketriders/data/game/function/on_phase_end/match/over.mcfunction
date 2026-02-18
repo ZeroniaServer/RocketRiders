@@ -1,5 +1,10 @@
 ##
+scoreboard players reset @s endtimer
+effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
+effect clear @a[x=0,predicate=custom:team/any_playing_team] weakness
+effect clear @a[x=0,predicate=custom:team/any_playing_team] regeneration
 
+execute as @e[x=0,type=#custom:large_fireballs] run function game:set_fireball_punchable
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/over

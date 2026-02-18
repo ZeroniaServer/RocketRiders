@@ -7,6 +7,9 @@
 execute store result score $gametime global run time query gametime
 scoreboard players add $gametime global 1
 
+# In case of transitioning_phase flag getting stuck while developing
+scoreboard players reset $transitioning_phase global
+
 # Global Periodic Tick
 scoreboard players add $periodic_tick.2 global 1
 scoreboard players operation $periodic_tick.2 global %= $2 constant

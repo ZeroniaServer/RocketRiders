@@ -34,3 +34,5 @@ tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove EditedSettings
 execute if score $phase/game.staging global matches 1 if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=Countdown] run scoreboard players set $phase/game.staging.queue global 1
 execute if score $phase/game.staging global matches 1 unless score $phase/game.staging.queue global matches 0..1 run scoreboard players set $phase/game.staging.queue global 0
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove Countdown
+
+scoreboard players reset $transitioning_phase global

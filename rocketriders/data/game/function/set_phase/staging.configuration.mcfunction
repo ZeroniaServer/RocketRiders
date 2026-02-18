@@ -8,4 +8,4 @@ execute unless predicate game:phase/staging run function game:set_phase/__exit/g
 execute if predicate game:phase/staging unless predicate game:phase/staging/configuration run function game:set_phase/__exit/game/staging
 
 execute if predicate game:phase/staging run return run execute if function game:set_phase/__set/staging.configuration if function game:set_phase/__finish_transition run function game:on_phase_start/staging/configuration
-return run execute if function game:set_phase/__set/staging.queue.waiting if function game:set_phase/__enter/staging if function game:set_phase/__finish_transition run function game:on_phase_start/staging/configuration
+return run execute if function game:set_phase/__set/staging.configuration if function game:set_phase/__enter/staging if function game:set_phase/__finish_transition run function game:on_phase_start/staging/configuration

@@ -1,7 +1,7 @@
 ##Utility function for changing Item Delay
 
 #Invalid access player warning
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run return run tellraw @s {"text":"You cannot modify Item Delay now","color":"red"}
+execute unless predicate game:phase/staging/configuration run return run tellraw @s {"text":"You cannot modify Item Delay now","color":"red"}
 execute if predicate custom:team/any_arena_team run return run tellraw @s {"text":"You cannot modify Item Delay while on a team","color":"red"}
 
 #Lower limit is 5 seconds
@@ -13,7 +13,7 @@ execute if score @s set_item_delay matches 31.. run return run tellraw @s {"text
 #Set new time
 scoreboard players operation $item_delay config = @s set_item_delay
 execute if score $item_delay config matches 15 run scoreboard players reset $item_delay config
-execute store result score @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] MaxItemTime run function game:config/get_item_delay_ticks
+execute store result score @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed] MaxItemTime run function game:config/get_item_delay_ticks
 
 #Refresh options signs
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed,tag=!EditedSettings] run function arenaclear:refreshoptionssigns
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns

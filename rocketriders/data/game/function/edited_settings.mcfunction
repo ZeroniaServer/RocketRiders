@@ -41,7 +41,7 @@ execute if predicate game:gamemode_components/friendly_fire run team modify rock
 function lobby:store_nav_book
 
 ##
-tag @s add EditedSettings
+function game:set_phase/staging.queue
 execute unless predicate rr:server_mode/cubekrowd_duels unless predicate rr:server_mode/cubekrowd_voting run function lobby:cancelsettings/begin
 
 ##Stop all sounds

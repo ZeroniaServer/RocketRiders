@@ -1,5 +1,5 @@
 execute if predicate custom:team/spectator run return run tellraw @s {color:"red",text:"You are already spectating this match."}
-execute if predicate game:phase/staging unless entity @e[limit=1,x=0,tag=Selection,tag=EditedSettings] run return run tellraw @s {color:"red",text:"Cannot join a team before game settings are confirmed / voting is complete."}
+execute if predicate game:phase/staging/configuration run return run tellraw @s {color:"red",text:"Cannot join a team before game settings are confirmed / voting is complete."}
 
 execute if predicate custom:team/blue unless predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{selector:"@s"},{color:"dark_aqua",text:" left the blue team!"}]
 execute if predicate custom:team/blue if predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{selector:"@s"},{color:"red",text:" left the red team!"}]

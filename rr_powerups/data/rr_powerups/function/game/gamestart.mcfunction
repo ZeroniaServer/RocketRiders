@@ -6,13 +6,13 @@ tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Countdown
-execute if predicate rr:wait_for_sufficient_players if predicate game:phase/staging if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown
-execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] run function game:restartcountdown
-execute if predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
+execute if predicate rr:wait_for_sufficient_players if predicate game:phase/staging/queue if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown
+execute if predicate rr:wait_for_sufficient_players if predicate game:phase/staging/queue if entity @s[tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] run function game:restartcountdown
+execute if predicate rr:wait_for_sufficient_players if predicate game:phase/staging/queue if entity @s[tag=Countdown] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
 
-execute unless predicate rr:wait_for_sufficient_players if predicate game:phase/staging if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/blue] run tag @s add Countdown
-execute unless predicate rr:wait_for_sufficient_players if predicate game:phase/staging if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown
-execute unless predicate rr:wait_for_sufficient_players if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
+execute unless predicate rr:wait_for_sufficient_players if predicate game:phase/staging/queue if entity @a[x=0,predicate=custom:team/blue] run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players if predicate game:phase/staging/queue if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown
+execute unless predicate rr:wait_for_sufficient_players if predicate game:phase/staging/queue if entity @s[tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
 
 scoreboard players reset @s[scores={count=1..}] powerupcount
 scoreboard players set @s[scores={count=1..}] PowerupDisplay 45

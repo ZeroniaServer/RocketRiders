@@ -2,7 +2,7 @@ execute if predicate custom:team/lobby run return run tellraw @s {color:"red",te
 
 execute if predicate game:phase/match/play if predicate custom:team/any_playing_team run return run trigger LeaveMidgame
 execute if predicate game:phase/match/play if entity @s[predicate=custom:team/spectator] run return run trigger leaveSpec
-execute unless predicate game:phase/match/play if predicate custom:team/any_arena_team if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run return run tag @s add LeaveTeams
+execute if predicate game:phase/staging/queue if predicate custom:team/any_arena_team run return run tag @s add LeaveTeams
 
 execute if predicate custom:team/blue unless predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{selector:"@s"},{color:"dark_aqua",text:" left the match!"}]
 execute if predicate custom:team/blue if predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{selector:"@s"},{color:"red",text:" left the match!"}]

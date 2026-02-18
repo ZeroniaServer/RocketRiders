@@ -19,10 +19,9 @@ execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=tnt_minecart]
 execute if entity @s[scores={SDtime=1..15}] run kill @e[x=0,type=creeper]
 
 ##Preparing for Tiebreaker
-execute if entity @s[scores={SDtime=1}] run function game:set_phase/match.play
+execute if entity @s[scores={SDtime=1}] run function game:set_phase/match.play.tie_breaker
 execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/blue] actionbar [""]
 execute if entity @s[scores={SDtime=1}] run title @a[x=0,predicate=custom:team/yellow] actionbar [""]
-execute if entity @s[scores={SDtime=1..}] run tag @s add EditedSettings
 execute if entity @s[scores={SDtime=1..}] run function game:uncancelpads
 execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_all_canopies
 execute if entity @s[scores={SDtime=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_nova_attach
@@ -80,4 +79,4 @@ execute if entity @s[scores={SDtime=14}] unless score $skiptitles CmdData matche
 execute if entity @s[scores={SDtime=15..}] unless score $skiptitles CmdData matches 1 run title @a[x=0] subtitle ["",{"text":"TIEBREAKER","bold":true,"color":"red"}]
 
 ##Resets timer
-execute if entity @s[scores={SDtime=20..}] run tag @s remove SuddenDeath
+execute if entity @s[scores={SDtime=20..}] run tag @s remove StartTieBreaker

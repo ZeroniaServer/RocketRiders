@@ -13,9 +13,9 @@ function lobby:missiledisplay/placedisp
 execute if predicate rr:has_tutorial run function 2811iaj1:advantriggers
 
 #Fix weirdness with join pads
-execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
-execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.blue] add CancelJoin
-execute if entity @s[tag=!EditedSettings,tag=!JustCleared] run tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
+execute unless predicate game:joinable_match_phase unless entity @s[tag=JustCleared] run tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
+execute unless predicate game:joinable_match_phase unless entity @s[tag=JustCleared] run tag @e[x=0,type=marker,tag=join_pad.blue] add CancelJoin
+execute unless predicate game:joinable_match_phase unless entity @s[tag=JustCleared] run tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
 
 #Toggle particles
 scoreboard players enable @a[x=0] toggle_particles
@@ -100,11 +100,11 @@ tag @a[x=0,tag=canopyTP] remove canopyTP
 #Disable trigger objectives when appropriate
 scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby] set_item_delay
-execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] set_item_delay
+execute unless predicate game:phase/staging/configuration run scoreboard players reset @a[x=0] set_item_delay
 execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] set_item_delay
-execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] VoteServerMode
+execute unless predicate game:phase/staging/configuration run scoreboard players reset @a[x=0] VoteServerMode
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby] set_time_of_day
-execute if entity @s[tag=EditedSettings] run scoreboard players reset @a[x=0] set_time_of_day
+execute unless predicate game:phase/staging/configuration run scoreboard players reset @a[x=0] set_time_of_day
 execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] set_time_of_day
 scoreboard players reset @a[x=0,predicate=!custom:team/spectator] leaveSpec
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby,predicate=!custom:team/developer] displayinfo
@@ -159,7 +159,7 @@ tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect_cloud]
 
 #Fill portals before game starts
-execute if predicate game:phase/staging if entity @s[tag=EditedSettings] unless predicate game:gamemode_components/portal_crystal_protection run function game:place_portal/all
+execute if predicate game:phase/staging/queue unless predicate game:gamemode_components/portal_crystal_protection run function game:place_portal/all
 
 #Disable damage gamerules if no game has started
 execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/over] run function custom:game_rules/fall_damage/off

@@ -17,9 +17,9 @@ execute unless predicate game:game_rules/disable_tying/on if entity @s[tag=could
 execute unless predicate game:game_rules/disable_tying/on if entity @s[tag=couldTie,tag=!BothWon,scores={endtimer=101}] run title @a[x=0,predicate=!custom:team/lobby] actionbar {"text":""}
 
 ##System for ties
-execute unless predicate game:game_rules/disable_tying/on if entity @s[tag=couldTie,tag=BlueWon,tag=!YellowWon,tag=!SuddenDeath,scores={endtimer=1..100}] at @s unless block 4 45 -67 nether_portal run tag @s add SuddenDeath
-execute unless predicate game:game_rules/disable_tying/on if entity @s[tag=couldTie,tag=YellowWon,tag=!BlueWon,tag=!SuddenDeath,scores={endtimer=1..100}] at @s unless block 4 45 67 nether_portal run tag @s add SuddenDeath
-execute unless predicate game:game_rules/disable_tying/on if entity @s[tag=couldTie,tag=YellowWon,tag=BlueWon,tag=!SuddenDeath,scores={endtimer=1..100}] run tag @s add SuddenDeath
+execute unless predicate game:game_rules/disable_tying/on if entity @s[tag=couldTie,tag=BlueWon,tag=!YellowWon,tag=!StartTieBreaker,scores={endtimer=1..100}] at @s unless block 4 45 -67 nether_portal run tag @s add StartTieBreaker
+execute unless predicate game:game_rules/disable_tying/on if entity @s[tag=couldTie,tag=YellowWon,tag=!BlueWon,tag=!StartTieBreaker,scores={endtimer=1..100}] at @s unless block 4 45 67 nether_portal run tag @s add StartTieBreaker
+execute unless predicate game:game_rules/disable_tying/on if entity @s[tag=couldTie,tag=YellowWon,tag=BlueWon,tag=!StartTieBreaker,scores={endtimer=1..100}] run tag @s add StartTieBreaker
 tag @s remove couldTie
 
 execute if entity @s[scores={endtimer=101..}] run kill @e[x=0,type=marker,tag=airDetectBlue,limit=1]

@@ -62,7 +62,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove BlueWon
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove YellowWon
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove BlueWonFirst
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove YellowWonFirst
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove SuddenDeath
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove StartTieBreaker
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove BothWon
 scoreboard players reset $highest VortexID
 scoreboard players reset $count VortexID

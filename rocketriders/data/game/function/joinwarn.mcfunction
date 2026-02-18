@@ -1,11 +1,11 @@
 ##Warns players based on which team they try to join via joinpads if the team is full/imbalanced
 ##Blue
 #Joining before settings have been confirmed
-execute if entity @s[tag=JoinBlue] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinBlue] title {bold:true,color:"red",text:"Cannot Join Team!"}
-execute if entity @s[tag=JoinBlue] unless predicate game:phase/match/over unless predicate rr:has_voting if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinBlue] subtitle {color:"gray",text:"Wait until game settings are confirmed first."}
-execute if entity @s[tag=JoinBlue] unless predicate game:phase/match/over if predicate rr:has_voting if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinBlue] subtitle {color:"gray",text:"Wait until voting has concluded first."}
-execute if entity @s[tag=JoinBlue] if predicate game:phase/match/over if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinBlue] subtitle {color:"gray",text:"Wait until a new game has started."}
-execute if entity @s[tag=JoinBlue] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run return run tag @s remove JoinBlue
+execute if entity @s[tag=JoinBlue] unless predicate game:joinable_match_phase run title @s[tag=!tryJoinBlue] title {bold:true,color:"red",text:"Cannot Join Team!"}
+execute if entity @s[tag=JoinBlue] unless predicate game:joinable_match_phase if predicate game:phase/staging/configuration unless predicate rr:has_voting run title @s[tag=!tryJoinBlue] subtitle {color:"gray",text:"Wait until game settings are confirmed first."}
+execute if entity @s[tag=JoinBlue] unless predicate game:joinable_match_phase if predicate game:phase/staging/configuration if predicate rr:has_voting run title @s[tag=!tryJoinBlue] subtitle {color:"gray",text:"Wait until voting has concluded first."}
+execute if entity @s[tag=JoinBlue] unless predicate game:joinable_match_phase if predicate game:phase/match/over run title @s[tag=!tryJoinBlue] subtitle {color:"gray",text:"Wait until a new game has started."}
+execute if entity @s[tag=JoinBlue] unless predicate game:joinable_match_phase run return run tag @s remove JoinBlue
 
 #Joining while joinpad is disabled
 execute if entity @s[tag=JoinBlue] if entity @e[x=0,type=marker,tag=join_pad.blue,tag=CancelJoin] run tag @s add cannotJoin
@@ -43,11 +43,11 @@ execute if entity @s[tag=cannotJoin] run return run tag @s remove cannotJoin
 
 ##Yellow
 #Joining before settings have been confirmed
-execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinYellow] title {bold:true,color:"red",text:"Cannot Join Team!"}
-execute if entity @s[tag=JoinYellow] unless predicate game:phase/match/over unless predicate rr:has_voting if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinYellow] subtitle {color:"gray",text:"Wait until game settings are confirmed first."}
-execute if entity @s[tag=JoinYellow] unless predicate game:phase/match/over if predicate rr:has_voting if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinYellow] subtitle {color:"gray",text:"Wait until voting has concluded first."}
-execute if entity @s[tag=JoinYellow] if predicate game:phase/match/over if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinYellow] subtitle {color:"gray",text:"Wait until a new game has started."}
-execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run return run tag @s remove JoinYellow
+execute if entity @s[tag=JoinYellow] unless predicate game:joinable_match_phase run title @s[tag=!tryJoinYellow] title {bold:true,color:"red",text:"Cannot Join Team!"}
+execute if entity @s[tag=JoinYellow] unless predicate game:joinable_match_phase if predicate game:phase/staging/configuration unless predicate rr:has_voting run title @s[tag=!tryJoinYellow] subtitle {color:"gray",text:"Wait until game settings are confirmed first."}
+execute if entity @s[tag=JoinYellow] unless predicate game:joinable_match_phase if predicate game:phase/staging/configuration if predicate rr:has_voting run title @s[tag=!tryJoinYellow] subtitle {color:"gray",text:"Wait until voting has concluded first."}
+execute if entity @s[tag=JoinYellow] unless predicate game:joinable_match_phase if predicate game:phase/match/over run title @s[tag=!tryJoinYellow] subtitle {color:"gray",text:"Wait until a new game has started."}
+execute if entity @s[tag=JoinYellow] unless predicate game:joinable_match_phase run return run tag @s remove JoinYellow
 
 #Joining while joinpad is disabled
 execute if entity @s[tag=JoinYellow] if entity @e[x=0,type=marker,tag=join_pad.yellow,tag=CancelJoin] run tag @s add cannotJoin
@@ -85,11 +85,11 @@ execute if entity @s[tag=cannotJoin] run return run tag @s remove cannotJoin
 
 ##Spectate
 #Joining before settings have been confirmed
-execute if entity @s[tag=JoinSpec] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinSpec] title {bold:true,color:"red",text:"Cannot Spectate!"}
-execute unless predicate game:phase/match/over unless predicate rr:has_voting if entity @s[tag=JoinSpec] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinSpec] subtitle {color:"gray",text:"Wait until game settings are confirmed first."}
-execute unless predicate game:phase/match/over if predicate rr:has_voting if entity @s[tag=JoinSpec] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinSpec] subtitle {color:"gray",text:"Wait until voting has concluded first."}
-execute if predicate game:phase/match/over if entity @s[tag=JoinSpec] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run title @s[tag=!tryJoinSpec] subtitle {color:"gray",text:"Wait until a new game has started."}
-execute if entity @s[tag=JoinSpec] if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] run return run tag @s remove JoinSpec
+execute if entity @s[tag=JoinSpec] unless predicate game:joinable_match_phase run title @s[tag=!tryJoinSpec] title {bold:true,color:"red",text:"Cannot Spectate!"}
+execute if entity @s[tag=JoinSpec] unless predicate game:joinable_match_phase if predicate game:phase/staging/configuration unless predicate rr:has_voting run title @s[tag=!tryJoinSpec] subtitle {color:"gray",text:"Wait until game settings are confirmed first."}
+execute if entity @s[tag=JoinSpec] unless predicate game:joinable_match_phase if predicate game:phase/staging/configuration if predicate rr:has_voting run title @s[tag=!tryJoinSpec] subtitle {color:"gray",text:"Wait until voting has concluded first."}
+execute if entity @s[tag=JoinSpec] unless predicate game:joinable_match_phase if predicate game:phase/match/over run title @s[tag=!tryJoinSpec] subtitle {color:"gray",text:"Wait until a new game has started."}
+execute if entity @s[tag=JoinSpec] unless predicate game:joinable_match_phase run return run tag @s remove JoinSpec
 
 #Joining while joinpad is disabled
 execute if entity @s[tag=JoinSpec] if entity @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] run tag @s add cannotJoin

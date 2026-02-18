@@ -73,14 +73,14 @@ execute unless predicate game:phase/match/over as @e[x=0,type=#arrows,predicate=
 
 #Game ending and arena clearing
 execute if predicate game:phase/match/over as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:while_phase/match/over
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SuddenDeath,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
+execute if predicate game:phase/match/play/tie_breaker as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=StartTieBreaker,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:suddendeath
 execute if entity @e[x=0,type=marker,tag=ArenaClearChecker,tag=!Cleared,tag=!BasePlaced] run scoreboard players add $acdelay CmdData 1
 execute if score $acdelay CmdData matches 7.. run tellraw @a[x=0] {"text":"Warning: Force clearing arena since previous gamemode is unknown.","color":"red"}
 execute if score $acdelay CmdData matches 7.. run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add normalLast
 execute if score $acdelay CmdData matches 7.. run scoreboard players reset $acdelay CmdData
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced] run scoreboard players reset $acdelay CmdData
 kill @e[x=0,type=marker,tag=PlacerClear,tag=Cleared,tag=BasePlaced]
-execute unless predicate game:phase/match/over as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
+execute if predicate game:phase/staging/configuration as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run function arenaclear:customizer
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsignsquery
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=JustCleared] run scoreboard players add $justcleared CmdData 1
 execute if score $justcleared CmdData matches 10.. run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=JustCleared] remove JustCleared
@@ -92,10 +92,10 @@ execute if score $reloaded CmdData matches 1..100 run scoreboard players add $re
 execute if score $reloaded CmdData matches 101 run scoreboard players reset $reloaded
 
 #Edit Settings
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players enable @a[x=0,predicate=!custom:team/any_arena_team] editSettings
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!EditedSettings] as @a[x=0] run trigger editSettings set 0
-execute as @a[x=0,predicate=!custom:team/lobby,predicate=!custom:team/developer] run trigger editSettings set 0
+execute unless predicate game:phase/staging/configuration run scoreboard players enable @a[x=0,predicate=!custom:team/any_arena_team] editSettings
+execute if predicate game:phase/staging/configuration run scoreboard players reset @a[x=0] editSettings
+scoreboard players reset @a[x=0,predicate=!custom:team/lobby,predicate=!custom:team/developer] editSettings
 execute as @a[x=0,predicate=!custom:team/any_arena_team,scores={editSettings=1..}] run function lobby:cancelsettings/interact
-execute if predicate rr:has_modification_room if score $mcancel CmdData matches -1 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] unless entity @a[x=0,predicate=custom:team/blue,limit=1] unless entity @a[x=0,predicate=custom:team/yellow,limit=1] run function lobby:cancelsettings/resume
-execute if predicate rr:has_modification_room if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute if predicate rr:has_modification_room if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate rr:has_modification_room if predicate game:match_cancellable_phase if score $mcancel CmdData matches -1 unless entity @a[x=0,predicate=custom:team/blue,limit=1] unless entity @a[x=0,predicate=custom:team/yellow,limit=1] run function lobby:cancelsettings/resume
+execute if predicate rr:has_modification_room if predicate game:match_cancellable_phase if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate rr:has_modification_room if predicate game:match_cancellable_phase if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]

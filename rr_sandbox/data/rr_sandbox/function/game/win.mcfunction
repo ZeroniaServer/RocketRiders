@@ -1,5 +1,5 @@
 ##Record tags
-function game:set_phase/match.paused
+function game:set_phase/match.over
 tag @s add BothWon
 
 ##Celebratory items

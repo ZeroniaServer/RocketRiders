@@ -28,6 +28,8 @@ scoreboard players reset $match_over global
 scoreboard players reset $game_paused global
 
 execute if score $phase/game global matches 0 run scoreboard players set $phase/game.staging global 0
-execute if score $phase/game global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players set $phase/game.staging global 1
-execute if score $phase/game global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] run scoreboard players set $phase/game.staging.queue global 0
-execute if score $phase/game global matches 0 if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings,tag=Countdown] run scoreboard players set $phase/game.staging.queue global 1
+execute if score $phase/game global matches 0 if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run scoreboard players set $phase/game.staging global 1
+#execute if score $phase/game global matches 0 if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run scoreboard players set $phase/game.staging.queue global 0
+#execute if score $phase/game global matches 0 if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings,tag=Countdown] run scoreboard players set $phase/game.staging.queue global 1
+
+tag @e[limit=1x=0,type=armor_stand,tag=Selection] remove EditedSettings

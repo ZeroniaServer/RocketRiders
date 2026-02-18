@@ -1,9 +1,9 @@
-execute if predicate game:phase/staging unless entity @n[tag=Selection,tag=EditedSettings] run return run tellraw @s {color:"red",text:"Teams are not open yet."}
+execute if predicate game:phase/staging/configuration run return run tellraw @s {color:"red",text:"Teams are not open yet."}
 
 # Leave
 execute if predicate game:phase/match/play if predicate custom:team/any_playing_team run return run trigger LeaveMidgame
 execute if predicate game:phase/match/play if predicate custom:team/spectator run return run trigger leaveSpec
-execute unless predicate game:phase/match/play if predicate custom:team/any_playing_team if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run return run tag @s add LeaveTeams
+execute if predicate game:phase/staging/queue if predicate custom:team/any_playing_team run return run tag @s add LeaveTeams
 
 # Join
 function custom:team/join_lobby

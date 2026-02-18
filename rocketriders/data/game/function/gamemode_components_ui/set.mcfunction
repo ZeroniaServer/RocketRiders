@@ -1,5 +1,5 @@
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run tellraw @s [{color:"red",text:"You should not change gamemode components after game settings have been confirmed."},{color:"yellow",text:"\nYou can change them manually if you know it is safe to do so using "},{color:"gray",text:"/scoreboard players set $<gamemode_component> gamemode_components <value>"}]
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=EditedSettings] run return fail
+execute unless predicate game:phase/staging/configuration run tellraw @s [{color:"red",text:"You should not change gamemode components after game settings have been confirmed."},{color:"yellow",text:"\nYou can change them manually if you know it is safe to do so using "},{color:"gray",text:"/scoreboard players set $<gamemode_component> gamemode_components <value>"}]
+execute unless predicate game:phase/staging/configuration run return fail
 
 # game mode
 $scoreboard players set $game_mode var $(game_mode)

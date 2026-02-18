@@ -1,10 +1,15 @@
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] if score $mcancelcount CmdData matches 0 run scoreboard players set $mcancel CmdData 1
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] if score $mcancelcount CmdData matches 0 run function lobby:cancelsettings/stopper
-
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] unless score $mcancel CmdData matches -1 if score $mcancelcount CmdData matches 2.. run tellraw @s [{"translate":"Cannot edit game settings right now. Try again in %s seconds.","color":"red","with":[{"score":{"name":"$mcancelcount","objective":"CmdData"},"color":"#ff8585","bold":true}]}]
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=EditedSettings] unless score $mcancel CmdData matches -1 if score $mcancelcount CmdData matches 1 run tellraw @s [{"translate":"Cannot edit game settings right now. Try again in %s second.","color":"red","with":[{"text":"1","color":"#ff8585","bold":true}]}]
-
-execute if score $mcancel CmdData matches -1 run tellraw @s [{"translate":"Cannot cancel the match. Players are currently on teams.","color":"red"}]
-
-execute positioned -57 203 78 run playsound ui.button.click master @s ~ ~ ~ 1 1
 scoreboard players reset @s editSettings
+execute positioned -57 203 78 run playsound ui.button.click master @s ~ ~ ~ 1 1
+
+execute unless predicate game:match_cancellable_phase if predicate game:phase/staging/configuration unless predicate rr:has_voting run return run tellraw @s {color:"red",text:"Cannot edit game settings right now. Confirm game settings first."}
+execute unless predicate game:match_cancellable_phase if predicate game:phase/staging/configuration if predicate rr:has_voting run return run tellraw @s {color:"red",text:"Cannot edit game settings right now. Conclude voting first."}
+execute unless predicate game:match_cancellable_phase if predicate game:phase/match/over run return run tellraw @s {color:"red",text:"Cannot edit game settings right now. A match is ending."}
+execute unless predicate game:match_cancellable_phase run return run tellraw @s {color:"red",text:"Cannot edit game settings right now."}
+
+execute if score $mcancel CmdData matches -1 run return run tellraw @s {color:"red",text:"Cannot cancel the match. Players are currently on teams."}
+
+execute if score $mcancelcount CmdData matches 2.. run return run tellraw @s [{color:"red",text:"Cannot edit game settings right now. Try again in "},{bold:true,color:"#FF8585",score:{name:"$mcancelcount",objective:"CmdData"}}," seconds."]
+execute if score $mcancelcount CmdData matches 1 run return run tellraw @s [{color:"red",text:"Cannot edit game settings right now. Try again in "},{bold:true,color:"#FF8585",text:"1"}," second."]
+
+scoreboard players set $mcancel CmdData 1
+function lobby:cancelsettings/stopper

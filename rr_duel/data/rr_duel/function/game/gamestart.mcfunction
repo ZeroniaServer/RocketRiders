@@ -7,16 +7,16 @@ tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Bossbar
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"player...","color":"white"}]
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame color blue
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame value 15
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"player...","color":"white"}]
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run bossbar set rr:startgame color yellow
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run bossbar set rr:startgame value 15
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"and ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame value 0
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame color white
-execute if predicate game:phase/staging if entity @s[tag=!Countdown,tag=EditedSettings] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame max 30
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"player...","color":"white"}]
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame color blue
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame value 15
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"player...","color":"white"}]
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run bossbar set rr:startgame color yellow
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run bossbar set rr:startgame value 15
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"and ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame value 0
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame color white
+execute if predicate game:phase/staging if predicate game:phase/staging/queue if entity @s[tag=!Countdown] unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame max 30
 
 #Countdown
 tag @s[scores={count=1..}] add bossbarOverride
@@ -24,9 +24,9 @@ scoreboard players set @s[scores={count=1}] count 400
 execute if entity @s[scores={count=400}] run bossbar set rr:startgame name ["",{"text":"The match is starting in ","color":"green"},{"text":"10","bold":true,"color":"dark_green"},{"text":" seconds.","color":"green"}]
 execute if entity @s[scores={count=400}] run bossbar set rr:startgame value 10
 execute if entity @s[scores={count=400}] run bossbar set rr:startgame max 10
-execute if predicate game:phase/staging if entity @s[tag=EditedSettings] if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown
-execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] run function game:restartcountdown
-execute if entity @s[tag=EditedSettings,tag=Countdown] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
+execute if predicate game:phase/staging/queue if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run tag @s add Countdown
+execute if predicate game:phase/staging/queue if entity @s[tag=Countdown] unless entity @a[x=0,predicate=custom:team/blue] run function game:restartcountdown
+execute if predicate game:phase/staging/queue if entity @s[tag=Countdown] unless entity @a[x=0,predicate=custom:team/yellow] run function game:restartcountdown
 execute if score @s count matches 600 as @a[x=0,predicate=custom:team/blue] run function rr_duel:forfeit/calculate
 execute if score @s count matches 600 as @a[x=0,predicate=custom:team/yellow] run function rr_duel:forfeit/calculate
 execute if score @s count matches 600 run scoreboard players display name Blue: RoundsWon {color:"blue",text:"Blue:"}

@@ -18,7 +18,6 @@ tag @e[x=0,type=marker,tag=ArenaClearChecker] add PlacerClear
 
 ##Close off Modification Room
 execute if predicate rr:has_modification_room as @e[x=0,type=marker,tag=ControlRoom] at @s run tp @a[distance=..15,predicate=!custom:team/developer] -43 211 78 90 0
-function lobby:close_modification_room
 
 ##Generate list of Game Rules
 function arenaclear:gamerulelist

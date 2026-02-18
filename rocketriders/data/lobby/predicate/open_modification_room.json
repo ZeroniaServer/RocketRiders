@@ -1,0 +1,17 @@
+[
+  {
+    "condition": "minecraft:reference",
+    "name": "game:phase/staging/configuration"
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "rr:has_modification_room"
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/lock_modification_room/on"
+    }
+  }
+]

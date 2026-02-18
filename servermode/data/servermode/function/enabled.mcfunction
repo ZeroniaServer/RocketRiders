@@ -8,7 +8,6 @@ scoreboard players set $server_mode global 1
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
 scoreboard players set $realms global 0
 scoreboard players reset $extra_match_repetitions config
-function lobby:close_modification_room
 execute as @a[x=0] run function achievements:reset
 clear @a[x=0]
 kill @e[x=0,type=armor_stand,tag=ParkourLB]

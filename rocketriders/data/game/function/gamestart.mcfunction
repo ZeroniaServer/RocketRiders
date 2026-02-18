@@ -28,8 +28,8 @@ execute if predicate game:phase/staging/queue/waiting unless predicate game:game
 execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars unless predicate rr:wait_for_sufficient_players unless entity @s[scores={endtimer=1..}] unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
 execute if predicate game:phase/staging/configuration if predicate rr:has_voting run bossbar set rr:startgame color purple
 execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room run bossbar set rr:startgame color purple
-execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room unless score $lockmodroom CmdData matches 1 run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
-execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room if score $lockmodroom CmdData matches 1 run bossbar set rr:startgame name ["",{"text":"Waiting for game settings to be confirmed...","color":"dark_purple"}]
+execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room unless predicate game:game_rules/lock_modification_room/on run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
+execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room if predicate game:game_rules/lock_modification_room/on run bossbar set rr:startgame name ["",{"text":"Waiting for game settings to be confirmed...","color":"dark_purple"}]
 execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room run bossbar set rr:startgame value 30
 execute if predicate game:phase/staging unless entity @s[scores={endtimer=1..}] run bossbar set rr:startgame players @a[x=0]
 

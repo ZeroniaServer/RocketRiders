@@ -122,7 +122,7 @@ execute as @a[x=0,predicate=custom:team/lobby] at @s if predicate custom:in_aren
 execute as @a[x=0,predicate=custom:team/lobby] at @s if predicate custom:in_arena run scoreboard players set @s LeaveGame 1
 
 #Locked Modification Room
-execute if score $lockmodroom CmdData matches 1 as @a[x=0,predicate=custom:team/lobby] at @s if predicate 2811iaj1:in_modification run function game:kickout
+execute if predicate game:game_rules/lock_modification_room/on as @a[x=0,predicate=custom:team/lobby,predicate=2811iaj1:in_modification] at @s run function game:kickout
 
 #Lobby players can't switch out of adventure mode (security, disabled in servermodes)
 execute if predicate rr:force_gamemodes as @a[x=0,predicate=custom:team/lobby,gamemode=!adventure] run gamemode adventure

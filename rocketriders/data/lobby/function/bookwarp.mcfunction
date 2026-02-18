@@ -17,9 +17,9 @@ effect clear @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=7}] night_visi
 execute as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=1..}] unless score @s LobbyWarp matches 7 run effect give @s night_vision infinite 100 true
 
 tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=1}] -43 211 78 90 0
-execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] unless score $lockmodroom CmdData matches 1 run tp @s -64 202 78 90 0
-execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] if score $lockmodroom CmdData matches 1 run tellraw @s [{"text":"You do not have access to the Modification Room!","color":"red"}]
-execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] if score $lockmodroom CmdData matches 1 run scoreboard players reset @s LobbyWarp
+execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] unless predicate game:game_rules/lock_modification_room/on run tp @s -64 202 78 90 0
+execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] if predicate game:game_rules/lock_modification_room/on run tellraw @s [{"text":"You do not have access to the Modification Room!","color":"red"}]
+execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] if predicate game:game_rules/lock_modification_room/on run scoreboard players reset @s LobbyWarp
 tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=3}] -78 204 64 135 0
 tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=4}] -78 204 92 45 0
 tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=5}] -80 201 78 90 0

@@ -99,3 +99,14 @@ execute as @a[x=0,predicate=!custom:team/any_arena_team,scores={editSettings=1..
 execute if predicate rr:has_modification_room if predicate game:match_cancellable_phase if score $mcancel CmdData matches -1 unless entity @a[x=0,predicate=custom:team/blue,limit=1] unless entity @a[x=0,predicate=custom:team/yellow,limit=1] run function lobby:cancelsettings/resume
 execute if predicate rr:has_modification_room if predicate game:match_cancellable_phase if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute if predicate rr:has_modification_room if predicate game:match_cancellable_phase if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+
+#Lobby arrow and modification room
+execute if predicate lobby:open_modification_room if predicate custom:periodic_tick/3 unless predicate game:repeat_settings/on unless entity @e[limit=1,x=0,type=block_display,tag=lobby_arrow_display] run function lobby:spawnarrow
+execute if predicate lobby:open_modification_room run scoreboard players add $lobby_arrow_display global 1
+execute if predicate lobby:open_modification_room if score $lobby_arrow_display global matches 1 run function lobby:arrow_up
+execute if predicate lobby:open_modification_room if score $lobby_arrow_display global matches 11 run function lobby:arrow_down
+execute if predicate lobby:open_modification_room if score $lobby_arrow_display global matches 21.. run scoreboard players reset $lobby_arrow_display global
+execute unless predicate lobby:open_modification_room if entity @e[limit=1,x=0,type=block_display,tag=lobby_arrow_display] run kill @e[x=0,type=block_display,tag=lobby_arrow_display]
+
+execute if predicate lobby:open_modification_room unless score $modification_room_was_open global matches 1 run function lobby:open_modification_room
+execute unless predicate lobby:open_modification_room if score $modification_room_was_open global matches 1 run function lobby:close_modification_room

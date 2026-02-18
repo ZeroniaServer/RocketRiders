@@ -8,7 +8,6 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 scoreboard players set $realms global 0
 scoreboard players reset $extra_match_repetitions config
-function lobby:close_modification_room
 execute as @a[x=0] run function achievements:reset
 function game:forcestop
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] store result score @s SetGamemode run scoreboard players get @e[x=0,type=armor_stand,tag=rr_duel,limit=1] gamemodeID

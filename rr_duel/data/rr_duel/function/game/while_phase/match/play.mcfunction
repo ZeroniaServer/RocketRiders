@@ -1,3 +1,5 @@
+execute if score $game_duration global matches 2 as @a[x=0,predicate=custom:team/any_playing_team] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
+
 #Item RNG
 scoreboard players add @s RandomItem 1
 execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function items:giverandom

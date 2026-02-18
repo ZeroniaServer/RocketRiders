@@ -3,3 +3,14 @@ execute as @a[x=0,predicate=custom:team/any_playing_team] run function rr_duel:g
 
 function game:cancelyellow
 function game:cancelblue
+
+execute as @a[x=0,predicate=custom:team/blue] run function rr_duel:forfeit/calculate
+execute as @a[x=0,predicate=custom:team/yellow] run function rr_duel:forfeit/calculate
+scoreboard players display name Blue: RoundsWon {color:"blue",text:"Blue:"}
+scoreboard players display name Yellow: RoundsWon {color:"gold",text:"Yellow:"}
+bossbar set rr:startgame name ["",{"text":"A 1v1 Duel match is currently in progress!","color":"dark_red"}]
+bossbar set rr:startgame color red
+scoreboard players set @s Rounds 1
+tellraw @a[x=0,predicate=!custom:team/lobby] [{"text":"\nBeginning Round ","color":"red"},{"score":{"name":"@s","objective":"Rounds"},"color":"dark_red","bold":true},{"text":"."}]
+
+function rr_duel:forced_settings

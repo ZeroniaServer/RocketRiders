@@ -3,7 +3,6 @@ clear @a[x=0,predicate=custom:team/any_playing_team] *
 effect clear @a[x=0,predicate=custom:team/any_playing_team]
 dialog clear @a[x=0]
 scoreboard players reset $1v1_duel_time_out_period global
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove Countdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove forceCountdown
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove bossbarOverride
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove gaveFirstItem

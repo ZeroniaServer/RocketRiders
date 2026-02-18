@@ -15,7 +15,6 @@ function items:tetrisreset
 
 ##Begin recursive SmartClear process
 scoreboard players set @e[x=0,type=marker,tag=ArenaClearChecker] ClearArena 90
-tag @s remove Countdown
 tag @e[x=0,type=marker,tag=ArenaClearChecker] add PlacerClear
 
 ##Close off Modification Room

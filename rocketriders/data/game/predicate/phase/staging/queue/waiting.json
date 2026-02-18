@@ -1,0 +1,38 @@
+[
+  {
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$phase/game"
+      },
+      "score": "global"
+    },
+    "range": 0
+  },
+  {
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$phase/game.staging"
+      },
+      "score": "global"
+    },
+    "range": 1
+  },
+  {
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$phase/game.staging.queue"
+      },
+      "score": "global"
+    },
+    "range": 0
+  }
+]

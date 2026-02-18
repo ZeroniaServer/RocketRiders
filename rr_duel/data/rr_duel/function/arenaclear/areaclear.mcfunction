@@ -23,7 +23,6 @@ function items:tetrisreset
 execute as @e[x=0,type=!player,predicate=custom:in_arena,predicate=!custom:has_vehicle] run function custom:kill_entity_and_passengers
 
 scoreboard players set @e[x=0,type=marker,tag=ArenaClearChecker] ClearArena 90
-tag @s remove Countdown
 tag @e[x=0,type=marker,tag=ArenaClearChecker] add PlacerClear
 
 execute store result score @s MaxItemTime run function game:config/get_item_delay_ticks

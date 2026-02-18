@@ -24,7 +24,7 @@ schedule clear lobby:cancelsettings/counter
 
 # during match
 execute store success score $forcestop_match var if predicate game:phase/match
-execute if score $forcestop_match var matches 1 run function game:transition_phase/match.over.outcome
+execute if score $forcestop_match var matches 1 run function game:set_phase/match.over.outcome
 execute if score $forcestop_match var matches 1 run scoreboard players set @s endtimer 568
 execute if score $forcestop_match var matches 1 run return 1
 
@@ -44,7 +44,7 @@ execute if predicate rr:has_modification_room run function lobby:open_modificati
 execute if predicate rr:server_mode/cubekrowd_voting if entity @s[tag=!forcenormal] run function servermode:makesets
 execute if predicate rr:server_mode/cubekrowd_duels run schedule function servermode:forceclear 3t
 scoreboard players reset @a[x=0] invCount
-function game:transition_phase/staging.configuration
+function game:set_phase/staging.configuration
 execute unless score $match_repeat_amount global matches 1.. unless predicate game:repeat_settings/forever run scoreboard players reset $extra_match_repetitions config
 execute if predicate game:repeat_settings/on unless score $mcancel CmdData matches 1 unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
 scoreboard players set $mcancel CmdData 0

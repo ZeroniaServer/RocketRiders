@@ -4,6 +4,9 @@ $data modify storage rocketriders:main explosion set value {explosion_power:$(po
 $data modify storage rocketriders:main explosion.modifiers merge value $(modifiers)
 data modify storage rocketriders:main explosion.modifiers.nbt merge value {data:{explosion:{}}}
 
+# Ramp explosion power towards all portals during outcome phase
+execute if predicate game:phase/match/over/outcome run data modify storage rocketriders:main explosion.modifiers.ramp_power_near_portals set value "always"
+
 # Preserve pre_death_projectile
 execute if predicate custom:pre_death_projectile run data modify storage rocketriders:main explosion.modifiers.nbt.data.pre_death_projectile set value true
 

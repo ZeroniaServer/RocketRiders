@@ -6,5 +6,4 @@ scoreboard players set @e[x=0,type=marker,tag=captureMiddle] captureBlue 0
 scoreboard players set @e[x=0,type=marker,tag=captureMiddle] captureYellow 0
 scoreboard players set @e[x=0,type=marker,tag=captureMiddle] capturePoint 0
 execute if score @s endtimer matches 1 as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
-execute if score @s endtimer matches 1.. run bossbar set rr_powerups:capture_progress players none
 execute if score @s endtimer matches 1.. run scoreboard players set @e[x=0,type=marker,tag=captureMiddle] capturePoint 0

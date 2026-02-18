@@ -114,6 +114,8 @@ execute as @e[x=0,type=marker,tag=captureMiddle,tag=contested,tag=!BrokenPlatfor
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 1 run bossbar set rr_powerups:capture_progress name [{"text":"Blue Captured!","color":"blue","bold":true}]
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Captured!","color":"yellow","bold":true}]
 
+execute unless entity @e[x=0,type=marker,tag=captureMiddle,tag=BrokenPlatform] run bossbar set rr_powerups:capture_progress max 100
+
 #actionbar
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=2..}] run title @a[x=0,predicate=custom:team/blue,tag=!DelayActionbar] actionbar [{color:"dark_purple",text:"A new "},{bold:true,text:"powerup"}," will be given out in ",{bold:true,color:"light_purple",score:{name:"@e[x=0,type=armor_stand,tag=Selection,limit=1]",objective:"PowerupDisplay"}}," seconds!"]
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=1}] if entity @s[scores={PowerupDisplay=..1}] run title @a[x=0,predicate=custom:team/blue,tag=!DelayActionbar] actionbar [{color:"dark_purple",text:"A new "},{bold:true,text:"powerup"}," will be given out in ",{bold:true,color:"light_purple",score:{name:"@e[x=0,type=armor_stand,tag=Selection,limit=1]",objective:"PowerupDisplay"}}," seconds!"]

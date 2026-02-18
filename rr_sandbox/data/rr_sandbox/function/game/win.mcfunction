@@ -1,5 +1,5 @@
 ##Record tags
-function game:set_phase/match.over
+function game:set_phase/match.over.tie_window
 tag @s add BothWon
 
 ##Celebratory items

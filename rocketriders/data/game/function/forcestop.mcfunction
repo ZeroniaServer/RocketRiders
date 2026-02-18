@@ -18,6 +18,6 @@ tag @a[x=0] remove deathchamp
 tag @a[x=0] remove flagschamp
 tag @a[x=0] remove killschamp
 tag @a[x=0] remove spawnchamp
-function game:set_phase/match.over
+function game:set_phase/match.over.outcome
 scoreboard players set @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer 568
 schedule clear lobby:cancelsettings/counter

@@ -4,7 +4,6 @@
 ##################################
 
 ##Appropriate tags for Arena Clear state
-execute if predicate game:phase/match/over run function game:set_phase/match.over
 execute unless predicate game:phase/match/over run function game:set_phase/staging.configuration
 
 ##Summon AECs for tracking/block sweeping

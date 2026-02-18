@@ -24,9 +24,9 @@ tag @a[x=0] remove JoinBlue
 tag @a[x=0] remove JoinYellow
 
 #Bossbar
-execute if predicate game:phase/staging/queue/waiting unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
-execute if predicate game:phase/staging/queue/waiting unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
-execute if predicate game:phase/staging/queue/waiting unless entity @s[scores={endtimer=1..}] if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
+execute if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
+execute if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
+execute if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
 
 #Countdown
 execute if predicate game:phase/staging/queue/waiting if entity @a[x=0,predicate=custom:team/blue] run function game:set_phase/staging.queue.countdown

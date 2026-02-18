@@ -6,7 +6,7 @@
 execute if predicate game:achievements_can_be_awarded run function achievements:aftergameblue
 
 ##Record tags
-function game:set_phase/match.over
+function game:set_phase/match.over.tie_window
 tag @s add BlueWon
 tag @s add BlueWonFirst
 tag @a[x=0,predicate=custom:team/blue] add Winner

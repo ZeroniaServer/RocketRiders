@@ -1,26 +1,35 @@
-{
-  "condition": "minecraft:any_of",
-  "terms": [
-    {
-      "condition": "minecraft:inverted",
-      "term": {
-        "condition": "minecraft:reference",
-        "name": "game:gamemode_components/portal_crystal_protection"
-      }
-    },
-    {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$YellowShield"
-        },
-        "score": "crusadehp"
-      },
-      "range": {
-        "max": 0
-      }
+[
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:portal_type/none"
     }
-  ]
-}
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:gamemode_components/portal_crystal_protection"
+        }
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "$YellowShield"
+          },
+          "score": "crusadehp"
+        },
+        "range": {
+          "max": 0
+        }
+      }
+    ]
+  }
+]

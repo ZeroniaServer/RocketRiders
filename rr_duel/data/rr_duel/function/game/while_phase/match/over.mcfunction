@@ -1,4 +1,4 @@
-execute if entity @s[scores={endtimer=1}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute if score @s endtimer matches 1 as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 scoreboard players reset @s fakeendtimer
 tag @s remove FakeGameEnd
 
@@ -10,20 +10,19 @@ execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] as @a[x=0,tag=
 execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[x=0,tag=!InRanked] ForfeitWin
 execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[x=0,tag=!InRanked] ForfeitLoss
 
-execute if entity @s[scores={endtimer=1}] run function game:endstats
-execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,predicate=custom:team/blue] remove InRanked
-execute if entity @s[scores={endtimer=2..}] run tag @a[x=0,predicate=custom:team/yellow] remove InRanked
+execute if score @s endtimer matches 2.. run tag @a[x=0,predicate=custom:team/blue] remove InRanked
+execute if score @s endtimer matches 2.. run tag @a[x=0,predicate=custom:team/yellow] remove InRanked
 scoreboard players reset @s ForfeitTimeout
 scoreboard players reset $1v1_duel_time_out_period global
 tag @a[x=0] remove Forfeiter
 
 scoreboard players reset @s Rounds
 
-execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.gold
-execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.blue
-execute if entity @s[scores={endtimer=569..}] run scoreboard objectives setdisplay sidebar.team.dark_gray
-execute if entity @s[scores={endtimer=569..}] run scoreboard players reset Blue: RoundsWon
-execute if entity @s[scores={endtimer=569..}] run scoreboard players reset Yellow: RoundsWon
+execute if score @s endtimer matches 569.. run scoreboard objectives setdisplay sidebar.team.gold
+execute if score @s endtimer matches 569.. run scoreboard objectives setdisplay sidebar.team.blue
+execute if score @s endtimer matches 569.. run scoreboard objectives setdisplay sidebar.team.dark_gray
+execute if score @s endtimer matches 569.. run scoreboard players reset Blue: RoundsWon
+execute if score @s endtimer matches 569.. run scoreboard players reset Yellow: RoundsWon
 
 bossbar remove rr_duel:resetting_arena
 bossbar remove rr_duel:forfeit_timer

@@ -25,7 +25,7 @@ schedule clear lobby:cancelsettings/counter
 # during match
 execute store success score $forcestop_match var if predicate game:phase/match
 execute if score $forcestop_match var matches 1 run function game:set_phase/match.over.outcome
-execute if score $forcestop_match var matches 1 run scoreboard players set @s endtimer 568
+execute if score $forcestop_match var matches 1 run scoreboard players set $match_over_timer global 568
 execute if score $forcestop_match var matches 1 run return 1
 
 # during staging
@@ -49,5 +49,4 @@ execute unless score $match_repeat_amount global matches 1.. unless predicate ga
 execute if predicate game:repeat_settings/on unless score $mcancel CmdData matches 1 unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
 scoreboard players set $mcancel CmdData 0
 function arenaclear:refreshsigns
-scoreboard players set @s endtimer 0
 return 1

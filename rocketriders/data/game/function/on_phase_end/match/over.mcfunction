@@ -1,5 +1,5 @@
 ##
-scoreboard players reset @s endtimer
+scoreboard players reset $match_over_timer global
 effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
 effect clear @a[x=0,predicate=custom:team/any_playing_team] weakness
 effect clear @a[x=0,predicate=custom:team/any_playing_team] regeneration

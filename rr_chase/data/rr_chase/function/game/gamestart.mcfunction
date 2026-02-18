@@ -19,12 +19,12 @@ execute if predicate game:phase/match/play if score $game_duration global matche
 tag @a[x=0] remove JoinBlue
 
 #Bossbar
-execute if predicate game:phase/staging/queue/waiting unless score @s endtimer matches 1.. if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
-execute if predicate game:phase/staging/queue/waiting unless score @s endtimer matches 1.. if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
-execute if predicate game:phase/staging/queue/waiting unless score @s endtimer matches 1.. if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
-execute if predicate game:phase/staging/queue/waiting unless score @s endtimer matches 1.. if score $blue_team_count global matches 1 run bossbar set rr:startgame name ["",{"text":"Awaiting more players...","color":"white"}]
-execute if predicate game:phase/staging/queue/waiting unless score @s endtimer matches 1.. if score $blue_team_count global matches 1 run bossbar set rr:startgame value 15
-execute if predicate game:phase/staging/queue/waiting unless score @s endtimer matches 1.. if score $blue_team_count global matches 1 run bossbar set rr:startgame color green
+execute if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 0 run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
+execute if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 0 run bossbar set rr:startgame value 0
+execute if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 0 run bossbar set rr:startgame color white
+execute if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 1 run bossbar set rr:startgame name ["",{"text":"Awaiting more players...","color":"white"}]
+execute if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 1 run bossbar set rr:startgame value 15
+execute if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 1 run bossbar set rr:startgame color green
 
 #Countdown
 execute if predicate rr:wait_for_sufficient_players if predicate game:phase/staging/queue/waiting if score $blue_team_count global matches 2.. run function game:set_phase/staging.queue.countdown

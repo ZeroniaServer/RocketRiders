@@ -59,5 +59,5 @@ execute positioned 25.5 184.5 -5.5 run function custom:summon_persistent_marker_
 
 # End game during end timer if singleplayer
 tag @s add overworld.self
-execute unless entity @a[x=0,tag=!overworld.self] as @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={endtimer=1..569}] run function game:forcestop
+execute unless entity @a[x=0,tag=!overworld.self] if score $match_over_timer global matches 1..569 as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function game:forcestop
 tag @s remove overworld.self

@@ -1,6 +1,11 @@
 # Move modification room signs
 execute unless block -67 192 83 minecraft:air run function world_updates:1_3_0-pre13/move_modroom_signs
 
+# Removed unused scoreboard objectives
+scoreboard players operation $match_over_timer global = @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer
+execute if score $match_over_timer global matches ..0 run scoreboard players reset $match_over_timer global
+scoreboard objectives remove endtimer
+
 # Change how phases are tracked
 execute if score $phase/match.play global matches 1 run scoreboard players set $match_in_play global 1
 execute if score $phase/match.paused global matches 1 run scoreboard players set $match_in_play global 1

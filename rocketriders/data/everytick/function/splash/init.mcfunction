@@ -1,7 +1,7 @@
 ## Return to player if used upon respawning
 scoreboard players set $return var 0
 execute on origin if score @s time_since_respawn matches ..10 run scoreboard players set $return var 1
-execute if score $return var matches 1 run return run function everytick:splash_return_item
+execute if score $return var matches 1 run return run function everytick:splash/return_item
 
 ## Custom Motion
 data merge entity @s {NoGravity:1b,Motion:[0.0d,0.0d,0.0d]}

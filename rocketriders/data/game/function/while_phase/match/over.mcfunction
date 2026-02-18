@@ -8,7 +8,6 @@ execute if score $match_over_timer global matches 2 if predicate game:gamemode_c
 
 execute as @a[x=0] run function custom:player_action/forget_all_canopies
 execute as @a[x=0] run function custom:player_action/forget_nova_attach
-function everytick:spawnables
 execute if score $match_over_timer global matches 1 run tag @s remove gaveFirstItem
 execute if score $match_over_timer global matches 1 run effect clear @a[x=0,predicate=custom:team/any_playing_team]
 execute if entity @s[tag=BlueWon] run effect give @a[x=0,predicate=custom:team/yellow] weakness infinite 100 true

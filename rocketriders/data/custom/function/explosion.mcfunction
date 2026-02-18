@@ -10,7 +10,8 @@ execute if predicate custom:pre_death_projectile run data modify storage rocketr
 # Set explosion power
 execute store result score $intended_explosion_power var store result score $actual_explosion_power var run data get storage rocketriders:main explosion.explosion_power
 execute if predicate game:modifiers/clutter_collector/on if predicate custom:in_clutter_collection_zone run scoreboard players set $actual_explosion_power var 0
-execute if score $actual_explosion_power var matches 1.. unless predicate game:portal_type/none if data storage rocketriders:main explosion.modifiers{ramp_power_near_portals:"auto"} run function custom:__impl__/explosion/ramp_power
+execute if score $actual_explosion_power var matches 1.. unless predicate game:portal_type/none if data storage rocketriders:main explosion.modifiers{ramp_power_near_portals:"always"} run function custom:__impl__/explosion/ramp_power
+execute if score $actual_explosion_power var matches 1.. unless predicate game:portal_type/none if data storage rocketriders:main explosion.modifiers{ramp_power_near_portals:"auto"} run function custom:__impl__/explosion/ramp_power_auto
 execute store result storage rocketriders:main explosion.modifiers.nbt.ExplosionRadius float 1 run scoreboard players get $actual_explosion_power var
 
 # Set name

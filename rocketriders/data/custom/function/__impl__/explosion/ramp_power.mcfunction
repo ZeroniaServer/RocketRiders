@@ -1,17 +1,3 @@
-# Determine Team
-scoreboard players set $team var -1
-execute unless predicate entities:origin_team/none store success score $team var unless predicate entities:origin_team/blue
-execute if score $team var matches -1 on origin on origin if entity @s[type=player] unless predicate game:gamemode_components/custom_team_colors store success score $team var unless predicate custom:team/blue
-execute if score $team var matches -1 on origin if entity @s[type=player] unless predicate game:gamemode_components/custom_team_colors store success score $team var unless predicate custom:team/blue
-execute if score $team var matches -1 if entity @s[type=player] unless predicate game:gamemode_components/custom_team_colors store success score $team var unless predicate custom:team/blue
-
-# Check if power should be ramped (always if Snipe Portals if off, otherwise only near own team's portal)
-scoreboard players set $do_explosion_power_ramp var 0
-execute unless predicate game:game_rules/snipe_portals/on run scoreboard players set $do_explosion_power_ramp var 1
-execute if score $team var matches 0 if predicate custom:on_blue_half run scoreboard players set $do_explosion_power_ramp var 1
-execute if score $team var matches 1 if predicate custom:on_yellow_half run scoreboard players set $do_explosion_power_ramp var 1
-execute if score $do_explosion_power_ramp var matches 0 run return 0
-
 # Ramp Power
 # maximum explosion radius is 1.7333 times explosion power, rounded up
 execute if score $actual_explosion_power var matches 10.. if predicate custom:intersects_portal/radius_18 run scoreboard players set $actual_explosion_power var 9

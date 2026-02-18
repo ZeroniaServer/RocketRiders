@@ -1,13 +1,6 @@
 ##Achievements
 execute if predicate game:achievements_can_be_awarded run function rr_chase:achievements/aftergame
 
-##Record tags
-function game:set_phase/match.over.tie_window
-
-##Celebratory items
-execute as @a[x=0] store result score @s HasFlag run clear @s #banners 0
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 #I Am Speed achievement for Winner
 execute if predicate game:achievements_can_be_awarded run advancement grant @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] only achievements:rr_challenges/speed
 
@@ -35,3 +28,6 @@ tellraw @a[x=0] ["",{"selector":"@a[x=0,predicate=custom:team/blue,tag=Winner,li
 ##Splashes
 execute as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1,sort=random] run function rr_chase:game/winsplash
 execute as @a[x=0,predicate=custom:team/blue,tag=Loser,limit=1,sort=random] run function rr_chase:game/losesplash
+
+##Change Phase
+function game:set_phase/match.over.tie_window

@@ -2,6 +2,9 @@
 # Prevent fireballs from being punched
 execute as @e[x=0,type=#custom:large_fireballs,predicate=custom:in_arena] at @s run function game:set_fireball_not_punchable
 
+clear @a[x=0,predicate=custom:team/any_arena_team] *
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/over

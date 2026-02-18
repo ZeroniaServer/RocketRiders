@@ -1,5 +1,3 @@
-execute if score $match_over_timer global matches 1 as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
-execute if score $match_over_timer global matches 1 as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 execute if score $match_over_timer global matches 1 run effect give @a[x=0,predicate=custom:team/blue,tag=Loser] weakness infinite 100 true
 scoreboard players reset * FlagScore
 execute if score $match_over_timer global matches 1.. run kill @e[x=0,type=marker,tag=airDetect,limit=1]

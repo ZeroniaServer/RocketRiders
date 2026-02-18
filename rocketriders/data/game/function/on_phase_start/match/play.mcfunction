@@ -13,6 +13,10 @@ tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 
 gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
 
+clear @a[x=0,predicate=custom:team/any_arena_team] *
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/play
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/match/play

@@ -7,14 +7,9 @@ execute if predicate game:achievements_can_be_awarded run function achievements:
 execute if predicate game:achievements_can_be_awarded run function achievements:aftergameblue
 
 ##Record tags
-function game:set_phase/match.over.tie_window
 tag @s add BothWon
 tag @a[x=0,predicate=custom:team/yellow] add Winner
 tag @a[x=0,predicate=custom:team/blue] add Winner
-
-##Celebratory items
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
 
 ##Close dialogs
 dialog clear @a[x=0]
@@ -37,3 +32,6 @@ execute as @a[x=0,tag=Winner,limit=1,sort=random] run function game:winsplash
 ##Remove UUID Tracker score
 scoreboard objectives remove UUIDTracker
 scoreboard objectives remove KillerUUID
+
+##Change Phase
+function game:set_phase/match.over.tie_window

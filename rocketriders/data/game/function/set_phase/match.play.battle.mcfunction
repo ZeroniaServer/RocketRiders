@@ -8,6 +8,6 @@ execute unless predicate game:phase/match run function game:set_phase/__exit/gam
 execute if predicate game:phase/match unless predicate game:phase/match/play run function game:set_phase/__exit/game/match
 execute if predicate game:phase/match/play unless predicate game:phase/match/play/battle run function game:set_phase/__exit/game/match/play
 
-execute if predicate game:phase/match/play run return run execute if function game:set_phase/__set/match.play.battle if function game:set_phase/__enter/match/play/battle run scoreboard players reset $transitioning_phase global
-execute if predicate game:phase/match run return run execute if function game:set_phase/__set/match.play.battle if function game:set_phase/__enter/match/play if function game:set_phase/__enter/match/play/battle run scoreboard players reset $transitioning_phase global
-return run execute if function game:set_phase/__set/match.play.battle if function game:set_phase/__enter/match if function game:set_phase/__enter/match/play if function game:set_phase/__enter/match/play/battle run scoreboard players reset $transitioning_phase global
+execute if predicate game:phase/match/play run return run execute if function game:set_phase/__set/match.play.battle if function game:set_phase/__finish_transition run function game:on_phase_start/match/play/battle
+execute if predicate game:phase/match run return run execute if function game:set_phase/__set/match.play.battle if function game:set_phase/__enter/match/play if function game:set_phase/__finish_transition run function game:on_phase_start/match/play/battle
+return run execute if function game:set_phase/__set/match.play.battle if function game:set_phase/__enter/match if function game:set_phase/__enter/match/play if function game:set_phase/__finish_transition run function game:on_phase_start/match/play/battle

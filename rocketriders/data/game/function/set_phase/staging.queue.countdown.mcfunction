@@ -8,6 +8,6 @@ execute unless predicate game:phase/staging run function game:set_phase/__exit/g
 execute if predicate game:phase/staging unless predicate game:phase/staging/queue run function game:set_phase/__exit/game/staging
 execute if predicate game:phase/staging/queue unless predicate game:phase/staging/queue/countdown run function game:set_phase/__exit/game/staging/queue
 
-execute if predicate game:phase/staging/queue run return run execute if function game:set_phase/__set/staging.queue.countdown if function game:set_phase/__enter/staging/queue/countdown run scoreboard players reset $transitioning_phase global
-execute if predicate game:phase/staging run return run execute if function game:set_phase/__set/staging.queue.countdown if function game:set_phase/__enter/staging/queue if function game:set_phase/__enter/staging/queue/countdown run scoreboard players reset $transitioning_phase global
-return run execute if function game:set_phase/__set/staging.queue.countdown if function game:set_phase/__enter/staging if function game:set_phase/__enter/staging/queue if function game:set_phase/__enter/staging/queue/countdown run scoreboard players reset $transitioning_phase global
+execute if predicate game:phase/staging/queue run return run execute if function game:set_phase/__set/staging.queue.countdown if function game:set_phase/__finish_transition run function game:on_phase_start/staging/queue/countdown
+execute if predicate game:phase/staging run return run execute if function game:set_phase/__set/staging.queue.countdown if function game:set_phase/__enter/staging/queue if function game:set_phase/__finish_transition run function game:on_phase_start/staging/queue/countdown
+return run execute if function game:set_phase/__set/staging.queue.countdown if function game:set_phase/__enter/staging if function game:set_phase/__enter/staging/queue if function game:set_phase/__finish_transition run function game:on_phase_start/staging/queue/countdown

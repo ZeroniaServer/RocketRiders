@@ -1,7 +1,4 @@
-###############################
-## What events occur when    ##
-## the "match" phase starts. ##
-###############################
+##
 
 scoreboard objectives add UUIDTracker dummy
 scoreboard objectives add KillerUUID dummy
@@ -41,6 +38,7 @@ scoreboard players set @s count 0
 tag @s remove bossbarOverride
 #The forceCountdown tag is used to override conditions that would otherwise cancel a countdown
 tag @s remove forceCountdown
+
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_start/match

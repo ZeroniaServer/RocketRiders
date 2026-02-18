@@ -1,7 +1,5 @@
-########################################
-## What events occur when the         ##
-## "match.over.outcome" phase starts. ##
-########################################
+##
+
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/over/outcome

@@ -1,4 +1,5 @@
 execute if predicate game:phase/staging/queue/countdown run return 1
+execute unless entity @s[type=armor_stand,tag=Selection,predicate=custom:indimension] in minecraft:overworld positioned 0.0 0.0 0.0 as @e[limit=1,x=0,type=armor_stand,tag=Selection] run return run function game:transition_phase/staging.queue.countdown
 execute if score $transitioning_phase global matches 1 run return run tellraw @a {color:"red",text:"Attempted to transition phase, but another phase transition has not completed yet"}
 scoreboard players set $transitioning_phase global 1
 

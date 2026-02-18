@@ -11,7 +11,7 @@ execute as @a[x=0] run function custom:player_action/forget_nova_attach
 function everytick:spawnables
 execute if score @s endtimer matches 1 if predicate game:phase/match/over/tie_window run scoreboard players set $skip_tie_window var 1
 execute if score @s endtimer matches 1 if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if predicate game:yellow_portal_revealed if predicate game:blue_portal_revealed unless entity @s[tag=BothWon] run scoreboard players set $skip_tie_window var 0
-execute if score @s endtimer matches 1 if predicate game:phase/match/over/tie_window if score $skip_tie_window var matches 1 run function game:start_match_over_outcome
+execute if score @s endtimer matches 1 if predicate game:phase/match/over/tie_window if score $skip_tie_window var matches 1 run function game:set_phase/match.over.outcome
 execute if score @s endtimer matches 1 run tag @s remove StartTieBreaker
 execute if score @s endtimer matches 1 run tag @s remove gaveFirstItem
 execute if score @s endtimer matches 1.. run scoreboard players reset @s SDtime
@@ -44,7 +44,7 @@ execute if predicate game:phase/match/over/tie_window unless predicate game:game
 execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score @s endtimer matches 61..80 run title @a[x=0,predicate=!custom:team/lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"2","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
 execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score @s endtimer matches 81..100 run title @a[x=0,predicate=!custom:team/lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"1","color":"dark_red","bold":true},{"text":" second","color":"red"}]
 execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score @s endtimer matches 101 run title @a[x=0,predicate=!custom:team/lobby] actionbar {"text":""}
-execute if predicate game:phase/match/over/tie_window if score @s endtimer matches 101 run function game:start_match_over_outcome
+execute if predicate game:phase/match/over/tie_window if score @s endtimer matches 101 run function game:set_phase/match.over.outcome
 
 ##System for ties (works with Double Portal modifier)
 execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score @s endtimer matches 1..100 if entity @s[tag=BlueWon,tag=!YellowWon,tag=!StartTieBreaker] if function game:check/blue_portal_broken run tag @s add StartTieBreaker

@@ -174,7 +174,7 @@ execute as @a[x=0,predicate=!custom:team/any_arena_team] run attribute @s minecr
 ##Keep spectators inside arena
 execute as @a[x=0,predicate=custom:team/spectator] at @s unless predicate custom:insideborder_lenient run tag @s add leftBorder
 tp @a[x=0,predicate=custom:team/spectator,tag=leftBorder] 12 100 0.5 90 90
-tellraw @a[x=0,predicate=custom:team/spectator,tag=leftBorder] {"text":"Cannot leave world border!","color":"red"}
+tellraw @a[x=0,predicate=custom:team/spectator,tag=leftBorder] {"text":"You cannot leave world border!","color":"red"}
 tag @a[x=0] remove leftBorder
 
 ##Leave Pad

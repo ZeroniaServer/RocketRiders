@@ -17,7 +17,7 @@ execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @
 execute if predicate game:modifiers/minute_mix/on run function rr_crusade:items/minutemix
 
 #custom prevention message
-execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of portal or bedrock.","color":"red"}]
+title @a[x=0,tag=preventionMSG] actionbar {color:"red",text:"You cannot spawn missiles inside of portals or bedrock"}
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #Selected kit particles

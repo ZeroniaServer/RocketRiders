@@ -14,7 +14,7 @@ execute if score $game_duration global matches 36000 unless predicate game:game_
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CTFOvertime] run function rr_ctf:everytick/overtime
 
 #custom prevention message
-execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian or bedrock.","color":"red"}]
+title @a[x=0,tag=preventionMSG] actionbar {color:"red",text:"You cannot spawn missiles inside of obsidian or bedrock"}
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #win

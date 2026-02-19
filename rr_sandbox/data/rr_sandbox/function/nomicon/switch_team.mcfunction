@@ -1,4 +1,4 @@
-execute unless predicate custom:team/any_playing_team run return run tellraw @s {color:"red",text:"Cannot switch teams currently."}
+execute unless predicate custom:team/any_playing_team run return run tellraw @s {color:"red",text:"You cannot switch teams currently."}
 
 execute store success score $new_team var if entity @s[predicate=custom:team/blue]
 execute if score $new_team var matches 0 run function custom:team/join_blue

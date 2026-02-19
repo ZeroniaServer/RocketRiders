@@ -29,7 +29,7 @@ execute if score $ChaseBlockCheck CmdData matches ..145 run function rr_chase:ch
 function rr_chase:chaseblocks/pickup
 
 #Custom prevention message
-execute as @a[x=0,tag=preventionMSG] run tellraw @s ["",{"text":"Unable to spawn missile inside of obsidian.","color":"red"}]
+title @a[x=0,tag=preventionMSG] actionbar {color:"red",text:"You cannot spawn missiles inside of obsidian"}
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #Bossbar for who's in the lead

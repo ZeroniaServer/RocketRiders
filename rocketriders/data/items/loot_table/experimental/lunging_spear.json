@@ -46,7 +46,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "blue",
-                  "translate": "Lunging Spear"
+                  "text": "Lunging Spear"
                 }
               },
               "conditions": [
@@ -70,7 +70,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "gold",
-                  "translate": "Lunging Spear"
+                  "text": "Lunging Spear"
                 }
               },
               "conditions": [

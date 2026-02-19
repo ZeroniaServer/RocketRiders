@@ -13,7 +13,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_green",
-                  "translate": "Navigation Book"
+                  "text": "Navigation Book"
                 },
                 "minecraft:lore": [
                   "A helpful book used to gain",

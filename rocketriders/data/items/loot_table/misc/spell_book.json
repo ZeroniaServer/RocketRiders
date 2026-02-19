@@ -31,16 +31,17 @@
                     "color": "light_purple",
                     "text": "Spell Book "
                   },
-                  {
-                    "color": "dark_gray",
-                    "translate": "[%s]",
-                    "with": [
-                      {
-                        "color": "aqua",
-                        "text": "?"
-                      }
-                    ]
-                  }
+                  [
+                    {
+                      "color": "dark_gray",
+                      "text": "["
+                    },
+                    {
+                      "color": "aqua",
+                      "text": "?"
+                    },
+                    "]"
+                  ]
                 ],
                 "minecraft:lore": [
                   [

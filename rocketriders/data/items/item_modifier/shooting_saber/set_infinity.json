@@ -4,7 +4,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "dark_purple",
-        "translate": "Infinity Saber"
+        "text": "Infinity Saber"
       }
     },
     "function": "minecraft:set_components"

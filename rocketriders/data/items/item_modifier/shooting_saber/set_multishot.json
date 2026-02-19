@@ -4,7 +4,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "dark_purple",
-        "translate": "Multishot Saber"
+        "text": "Multishot Saber"
       }
     },
     "function": "minecraft:set_components"

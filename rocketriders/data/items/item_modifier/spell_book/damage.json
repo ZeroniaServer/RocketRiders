@@ -14,17 +14,18 @@
         "color": "light_purple",
         "text": "Spell Book "
       },
-      {
-        "color": "dark_gray",
-        "translate": "[%s]",
-        "with": [
-          {
-            "bold": false,
-            "color": "gray",
-            "text": "\u00e2\u02dc\u00a0"
-          }
-        ]
-      }
+      [
+        {
+          "color": "dark_gray",
+          "text": "["
+        },
+        {
+          "bold": false,
+          "color": "gray",
+          "text": "\u2620\ufe0f"
+        },
+        "]"
+      ]
     ],
     "target": "item_name"
   },

@@ -43,7 +43,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "white",
-                  "translate": "Piercing Pickaxe"
+                  "text": "Piercing Pickaxe"
                 },
                 "minecraft:lore": [
                   {
@@ -158,7 +158,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "blue",
-                  "translate": "Piercing Pickaxe"
+                  "text": "Piercing Pickaxe"
                 }
               },
               "conditions": [
@@ -181,7 +181,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "gold",
-                  "translate": "Piercing Pickaxe"
+                  "text": "Piercing Pickaxe"
                 }
               },
               "conditions": [

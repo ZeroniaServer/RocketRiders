@@ -4,7 +4,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "blue",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -23,7 +23,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "yellow",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -42,7 +42,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "red",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -61,7 +61,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "green",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -80,7 +80,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "dark_purple",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -99,7 +99,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "light_purple",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -118,7 +118,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "gold",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -137,7 +137,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "#FF5D94",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -156,7 +156,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "#65FFD4",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -175,7 +175,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "#D4FF95",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -194,7 +194,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "#F9FF74",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [
@@ -213,7 +213,7 @@
       "minecraft:item_name": {
         "bold": true,
         "color": "#7289DA",
-        "translate": "Spell Wand"
+        "text": "Spell Wand"
       }
     },
     "conditions": [

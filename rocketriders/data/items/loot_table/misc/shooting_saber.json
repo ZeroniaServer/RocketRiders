@@ -32,7 +32,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "white",
-                  "translate": "Shooting Saber"
+                  "text": "Shooting Saber"
                 },
                 "minecraft:lore": [
                   "",
@@ -146,7 +146,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "blue",
-                  "translate": "Shooting Saber"
+                  "text": "Shooting Saber"
                 }
               },
               "conditions": [
@@ -169,7 +169,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "gold",
-                  "translate": "Shooting Saber"
+                  "text": "Shooting Saber"
                 }
               },
               "conditions": [
@@ -229,7 +229,7 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_purple",
-                  "translate": "Multishot-Infinity Saber"
+                  "text": "Multishot-Infinity Saber"
                 }
               },
               "conditions": [

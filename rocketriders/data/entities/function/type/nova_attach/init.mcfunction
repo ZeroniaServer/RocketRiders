@@ -1,7 +1,10 @@
-# Do nothing if already processed
+# Do nothing if not a player, already nova attached, or without an origin
 execute unless entity @s[type=player] run return fail
 execute if predicate custom:nova_attached run return fail
 execute unless entity @a[limit=1,tag=nova_attach.origin] run return fail
+
+# Do nothing if outside of the play phase
+execute unless predicate game:phase/match/play run return fail
 
 ## Set up data
 scoreboard players set @s flag.is_nova_attached 1

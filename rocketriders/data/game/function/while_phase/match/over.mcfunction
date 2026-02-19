@@ -6,7 +6,6 @@
 scoreboard players add $match_over_timer global 1
 execute if score $match_over_timer global matches 2 if predicate game:gamemode_components/short_end_sequence run scoreboard players set $match_over_timer global 249
 
-execute as @a[x=0] run function custom:player_action/forget_all_canopies
 execute as @a[x=0] run function custom:player_action/forget_nova_attach
 execute if score $match_over_timer global matches 1 run tag @s remove gaveFirstItem
 execute if score $match_over_timer global matches 1 run effect clear @a[x=0,predicate=custom:team/any_playing_team]

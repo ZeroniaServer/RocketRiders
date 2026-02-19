@@ -12,6 +12,7 @@ execute if predicate game:phase/match unless predicate game:phase/match/over if 
 
 #Clearing effects/tags and teleporting to lobby
 tag @a[x=0,scores={LeaveGame=1..}] remove force_mount
+execute as @a[x=0,scores={LeaveGame=1..}] run ride @s dismount
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFlag] remove CarryFlag
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY1] remove CarryFY1
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY2] remove CarryFY2

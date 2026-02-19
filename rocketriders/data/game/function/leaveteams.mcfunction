@@ -1,5 +1,6 @@
 ##Handles players leaving teams
 tag @a[x=0,tag=LeaveTeams] remove force_mount
+execute as @a[x=0,tag=LeaveTeams] run ride @s dismount
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/yellow] add LeavingYellow
 execute as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/blue] add LeavingBlue

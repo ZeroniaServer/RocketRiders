@@ -26,20 +26,6 @@ execute if score $match_over_timer global matches 1..2 unless predicate game:gam
 execute if score $match_over_timer global matches 1..2 unless predicate game:gamemode_components/custom_match_over_teleport_locations run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if score $match_over_timer global matches 1..569 run function modifiers:modifiers
 
-##Tie actionbar notifications
-execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score $match_over_timer global matches 1..20 run title @a[x=0,predicate=!custom:team/lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"5","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score $match_over_timer global matches 21..40 run title @a[x=0,predicate=!custom:team/lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"4","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score $match_over_timer global matches 41..60 run title @a[x=0,predicate=!custom:team/lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"3","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score $match_over_timer global matches 61..80 run title @a[x=0,predicate=!custom:team/lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"2","color":"dark_red","bold":true},{"text":" seconds","color":"red"}]
-execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score $match_over_timer global matches 81..100 run title @a[x=0,predicate=!custom:team/lobby] actionbar ["",{"text":"Waiting for potential tie... ","color":"red"},{"text":"1","color":"dark_red","bold":true},{"text":" second","color":"red"}]
-execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score $match_over_timer global matches 101 run title @a[x=0,predicate=!custom:team/lobby] actionbar {"text":""}
-execute if predicate game:phase/match/over/tie_window if score $match_over_timer global matches 101 run function game:set_phase/match.over.outcome
-
-##System for ties (works with Double Portal modifier)
-execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score $match_over_timer global matches 1..100 if entity @s[tag=BlueWon,tag=!YellowWon] if function game:check/blue_portal_broken run function game:set_phase/match.play.tie_breaker
-execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score $match_over_timer global matches 1..100 if entity @s[tag=YellowWon,tag=!BlueWon] if function game:check/yellow_portal_broken run function game:set_phase/match.play.tie_breaker
-execute if predicate game:phase/match/over/tie_window unless predicate game:game_rules/disable_tying/on if score $match_over_timer global matches 1..100 if entity @s[tag=YellowWon,tag=BlueWon] run function game:set_phase/match.play.tie_breaker
-
 ##Post-tie phase and reset
 execute if score $match_over_timer global matches 101 run scoreboard players set $game_duration global 0
 execute if score $match_over_timer global matches 102 as @a[x=0] run function everytick:score_reset
@@ -91,4 +77,4 @@ execute if score $match_over_timer global matches 570.. run scoreboard players s
 execute if score $match_over_timer global matches 570.. run function arenaclear:refreshsigns
 
 # Go back to configuration phase
-execute if score $match_over_timer global matches 570.. run function game:set_phase/staging.configuration
+execute if score $match_over_timer global matches 570.. run return run function game:set_phase/staging.configuration

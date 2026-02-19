@@ -56,8 +56,3 @@ data modify storage rocketriders:main player_monitoring.entity_data.data.player_
 data modify storage rocketriders:main player_monitoring.entity_data.data.player_monitoring.name set from storage rocketriders:main player_monitoring.text_component.hover_event.name
 data modify storage rocketriders:main player_monitoring.entity_data.CustomName[1] set from storage rocketriders:main player_monitoring.text_component.hover_event.name
 execute positioned 25.5 184.5 -5.5 run function custom:summon_persistent_marker_aec {modifiers:{nbt:{Tags:["player_monitoring"]},run:"data modify entity @s {} merge from storage rocketriders:main player_monitoring.entity_data"}}
-
-# End game during end timer if singleplayer
-tag @s add overworld.self
-execute unless entity @a[x=0,tag=!overworld.self] if score $match_over_timer global matches 1..569 as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function game:forcestop
-tag @s remove overworld.self

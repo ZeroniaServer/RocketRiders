@@ -19,6 +19,7 @@ execute if score $match_over_timer global matches 1 run kill @e[x=0,type=ender_p
 execute if score $match_over_timer global matches 1 run tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
 execute if score $match_over_timer global matches 1 run tag @e[x=0,type=marker,tag=join_pad.blue] add CancelJoin
 execute if score $match_over_timer global matches 1 run tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
+execute if score $match_over_timer global matches 1..567 unless entity @a[limit=1,x=0,predicate=custom:team/any_arena_team] run scoreboard players set $match_over_timer global 568
 execute if score $match_over_timer global matches 2..3 as @a[x=0,predicate=custom:is_on_fire,predicate=custom:team/any_playing_team] at @s run function game:putoutfire
 execute if score $match_over_timer global matches 1..2 run effect give @a[x=0,predicate=custom:team/any_playing_team] resistance infinite 100 true
 execute if score $match_over_timer global matches 1..2 run effect give @a[x=0,predicate=custom:team/any_playing_team] instant_health 1 100 true

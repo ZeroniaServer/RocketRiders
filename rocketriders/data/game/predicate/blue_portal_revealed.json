@@ -18,16 +18,16 @@
       },
       {
         "condition": "minecraft:value_check",
-        "value": {
-          "type": "minecraft:score",
-          "target": {
-            "type": "minecraft:fixed",
-            "name": "$BlueShield"
-          },
-          "score": "crusadehp"
-        },
         "range": {
           "max": 0
+        },
+        "value": {
+          "score": "crusadehp",
+          "target": {
+            "name": "$BlueShield",
+            "type": "minecraft:fixed"
+          },
+          "type": "minecraft:score"
         }
       }
     ]

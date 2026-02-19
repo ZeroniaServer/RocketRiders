@@ -1,29 +1,29 @@
 {
   "condition": "minecraft:value_check",
-  "value": {
-    "type": "minecraft:score",
-    "target": "this",
-    "score": "playerUUID",
-    "scale": 1
-  },
   "range": {
     "min": {
-      "type": "minecraft:score",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$tempuuid"
-      },
+      "scale": 1,
       "score": "playerUUID",
-      "scale": 1
+      "target": {
+        "name": "$tempuuid",
+        "type": "minecraft:fixed"
+      },
+      "type": "minecraft:score"
     },
     "max": {
-      "type": "minecraft:score",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$tempuuid"
-      },
+      "scale": 1,
       "score": "playerUUID",
-      "scale": 1
+      "target": {
+        "name": "$tempuuid",
+        "type": "minecraft:fixed"
+      },
+      "type": "minecraft:score"
     }
+  },
+  "value": {
+    "scale": 1,
+    "score": "playerUUID",
+    "target": "this",
+    "type": "minecraft:score"
   }
 }

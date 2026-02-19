@@ -1,44 +1,44 @@
 {
-  "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:player_head",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "hobbit_head": true
                 },
+                "minecraft:enchantment_glint_override": false,
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },
-                "minecraft:enchantment_glint_override": false,
+                "minecraft:equippable": {
+                  "dispensable": false,
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "slot": "head",
+                  "swappable": false
+                },
                 "minecraft:tooltip_display": {
-                  "hide_tooltip": true,
                   "hidden_components": [
                     "minecraft:enchantments"
-                  ]
-                },
-                "minecraft:equippable": {
-                  "slot": "head",
-                  "equip_sound": "minecraft:intentionally_empty",
-                  "dispensable": false,
-                  "swappable": false
+                  ],
+                  "hide_tooltip": true
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:fill_player_head",
-              "entity": "this"
+              "entity": "this",
+              "function": "minecraft:fill_player_head"
             }
-          ]
+          ],
+          "name": "minecraft:player_head",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
-  ]
+  ],
+  "type": "minecraft:entity"
 }

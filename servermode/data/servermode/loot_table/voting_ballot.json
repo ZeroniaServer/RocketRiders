@@ -1,31 +1,31 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:written_book"
+          "name": "minecraft:written_book",
+          "type": "minecraft:item"
         }
       ],
       "functions": [
         {
-          "function": "minecraft:set_components",
           "components": {
+            "!minecraft:written_book_content": {},
             "minecraft:custom_data": {
               "id": "voting_ballot"
             },
+            "minecraft:enchantment_glint_override": true,
             "minecraft:item_model": "minecraft:map",
             "minecraft:item_name": {
-              "text": "Voting Ballot",
               "bold": true,
-              "color": "#D586D5"
-            },
-            "minecraft:enchantment_glint_override": true,
-            "!minecraft:written_book_content": {}
-          }
+              "color": "#D586D5",
+              "text": "Voting Ballot"
+            }
+          },
+          "function": "minecraft:set_components"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

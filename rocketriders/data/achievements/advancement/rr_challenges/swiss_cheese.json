@@ -1,15 +1,18 @@
 {
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
   "display": {
-    "title": {
-      "text": "Swiss Cheese",
-      "color": "#c20000"
-    },
+    "announce_to_chat": true,
     "description": {
-      "text": "Win a match while your base is heavily damaged.",
-      "color": "red"
+      "color": "red",
+      "text": "Win a match while your base is heavily damaged."
     },
+    "frame": "task",
+    "hidden": false,
     "icon": {
-      "id": "minecraft:player_head",
       "components": {
         "minecraft:profile": {
           "properties": [
@@ -19,16 +22,13 @@
             }
           ]
         }
-      }
+      },
+      "id": "minecraft:player_head"
     },
-    "frame": "task",
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "impossible": {
-      "trigger": "minecraft:impossible"
+    "title": {
+      "color": "#c20000",
+      "text": "Swiss Cheese"
     }
   },
   "parent": "achievements:rr_challenges/moonwalker"

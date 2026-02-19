@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/elder_guardian",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "elder_guardian"
+                    "missile": "elder_guardian",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -31,91 +27,91 @@
                 "minecraft:item_model": "minecraft:elder_guardian_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Elder Guardian",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Elder Guardian"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "9",
-                      "color": "red"
+                      "color": "red",
+                      "text": "9"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "1.7m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "1.7m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "Rubix_One",
-                      "color": "red"
+                      "color": "red",
+                      "text": "Rubix_One"
                     }
                   ],
                   "",
                   {
-                    "text": "An upgrade from the original Guardian",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "An upgrade from the original Guardian"
                   },
                   {
-                    "text": "in Missile Wars, the Elder Guardian is",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "in Missile Wars, the Elder Guardian is"
                   },
                   {
-                    "text": "bigger and covers the TNT better.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "bigger and covers the TNT better."
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Elder Guardian",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Elder Guardian"
                   }
                 ]
               },
@@ -131,20 +127,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Elder Guardian",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Elder Guardian"
                   }
                 ]
               },
@@ -160,15 +156,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/duplex",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "duplex"
+                    "missile": "duplex",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -25,108 +21,108 @@
                     "none"
                   ]
                 },
+                "minecraft:enchantment_glint_override": true,
                 "minecraft:entity_data": {
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:parrot_spawn_egg",
-                "minecraft:enchantment_glint_override": true,
                 "minecraft:item_name": [
                   {
-                    "text": "[Special] ",
+                    "bold": true,
                     "color": "dark_purple",
-                    "bold": true
+                    "text": "[Special] "
                   },
                   {
-                    "text": "Duplex",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Duplex"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "16 (+4 carts)",
-                      "color": "red"
+                      "color": "red",
+                      "text": "16 (+4 carts)"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                     "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "2.0m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "2.0m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "Chronos22 & YZEROgame",
-                      "color": "red"
+                      "color": "red",
+                      "text": "Chronos22 & YZEROgame"
                     }
                   ],
                   "",
                   {
-                    "text": "The Duplex works like a ShieldBuster but it takes a",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "The Duplex works like a ShieldBuster but it takes a"
                   },
                   {
-                    "text": "more creative approach. Instead of going through",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "more creative approach. Instead of going through"
                   },
                   {
-                    "text": "a Shield, it will blow it up and keep on flying!",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "a Shield, it will blow it up and keep on flying!"
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": [
-                  {
-                    "text": "[Special] ",
-                    "color": "dark_purple",
-                    "bold": true
-                  },
-                  {
-                    "text": "Duplex",
-                    "color": "blue"
-                  }
-                ],
                 "minecraft:entity_data": {
-                  "id": "minecraft:marker",
                   "Tags": [
                     "missile",
                     "bluemissile",
                     "BlueDuplex"
-                  ]
-                }
+                  ],
+                  "id": "minecraft:marker"
+                },
+                "minecraft:item_name": [
+                  {
+                    "bold": true,
+                    "color": "dark_purple",
+                    "text": "[Special] "
+                  },
+                  {
+                    "color": "blue",
+                    "text": "Duplex"
+                  }
+                ]
               },
               "conditions": [
                 {
@@ -140,30 +136,30 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": [
-                  {
-                    "text": "[Special] ",
-                    "color": "dark_purple",
-                    "bold": true
-                  },
-                  {
-                    "text": "Duplex",
-                    "color": "gold"
-                  }
-                ],
                 "minecraft:entity_data": {
-                  "id": "minecraft:marker",
                   "Tags": [
                     "missile",
                     "yellowmissile",
                     "YellowDuplex"
-                  ]
-                }
+                  ],
+                  "id": "minecraft:marker"
+                },
+                "minecraft:item_name": [
+                  {
+                    "bold": true,
+                    "color": "dark_purple",
+                    "text": "[Special] "
+                  },
+                  {
+                    "color": "gold",
+                    "text": "Duplex"
+                  }
+                ]
               },
               "conditions": [
                 {
@@ -177,15 +173,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

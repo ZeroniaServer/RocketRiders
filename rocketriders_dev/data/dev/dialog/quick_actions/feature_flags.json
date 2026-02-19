@@ -1,22 +1,22 @@
 {
-  "type": "minecraft:multi_action",
-  "title": "RR Developer Actions: Feature Flags",
-  "external_title": "Feature Flags...",
-  "exit_action": {
-    "label": "Back",
-    "action": {
-      "type": "minecraft:show_dialog",
-      "dialog": "dev:quick_actions/other_actions"
-    }
-  },
-  "after_action": "wait_for_response",
   "actions": [
     {
-      "label": "Colored Portal Frames...",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 201"
-      }
+        "command": "/trigger dev set 201",
+        "type": "minecraft:run_command"
+      },
+      "label": "Colored Portal Frames..."
     }
-  ]
+  ],
+  "after_action": "wait_for_response",
+  "exit_action": {
+    "action": {
+      "dialog": "dev:quick_actions/other_actions",
+      "type": "minecraft:show_dialog"
+    },
+    "label": "Back"
+  },
+  "external_title": "Feature Flags...",
+  "title": "RR Developer Actions: Feature Flags",
+  "type": "minecraft:multi_action"
 }

@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Easy Challenges",
-      "color": "#00be2f"
-    },
-    "description": {
-      "text": "The Easy difficulty challenges for Rocket Riders.",
-      "color": "green"
-    },
-    "icon": {
-      "id": "minecraft:lime_concrete"
-    },
-    "frame": "task",
-    "show_toast": false,
-    "announce_to_chat": false,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "green",
+      "text": "The Easy difficulty challenges for Rocket Riders."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:lime_concrete"
+    },
+    "show_toast": false,
+    "title": {
+      "color": "#00be2f",
+      "text": "Easy Challenges"
     }
   },
   "parent": "achievements:rr_challenges/traveler"

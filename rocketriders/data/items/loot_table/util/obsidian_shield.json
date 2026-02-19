@@ -1,14 +1,10 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "obsidian_shield",
@@ -29,40 +25,40 @@
                 "minecraft:item_model": "minecraft:enderman_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Obsidian Shield",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Obsidian Shield"
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Obsidian Shield",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Obsidian Shield"
                   }
                 ]
               },
@@ -78,20 +74,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Obsidian Shield",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Obsidian Shield"
                   }
                 ]
               },
@@ -107,15 +103,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

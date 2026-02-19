@@ -1,12 +1,12 @@
 {
   "condition": "minecraft:value_check",
+  "range": 1,
   "value": {
-    "type": "minecraft:score",
+    "score": "gamemode_components",
     "target": {
-      "type": "minecraft:fixed",
-      "name": "$custom_leave_handling"
+      "name": "$custom_leave_handling",
+      "type": "minecraft:fixed"
     },
-    "score": "gamemode_components"
-  },
-  "range": 1
+    "type": "minecraft:score"
+  }
 }

@@ -1,11 +1,10 @@
 [
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "blue"
+        "color": "blue",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -16,15 +15,15 @@
           "custom_team_color": 1
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "yellow"
+        "color": "yellow",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -35,15 +34,15 @@
           "custom_team_color": 2
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "red"
+        "color": "red",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -54,15 +53,15 @@
           "custom_team_color": 3
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "green"
+        "color": "green",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -73,15 +72,15 @@
           "custom_team_color": 4
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "dark_purple"
+        "color": "dark_purple",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -92,15 +91,15 @@
           "custom_team_color": 5
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "light_purple"
+        "color": "light_purple",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -111,15 +110,15 @@
           "custom_team_color": 6
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "gold"
+        "color": "gold",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -130,15 +129,15 @@
           "custom_team_color": 7
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "#FF5D94"
+        "color": "#FF5D94",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -149,15 +148,15 @@
           "custom_team_color": 8
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "#65FFD4"
+        "color": "#65FFD4",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -168,15 +167,15 @@
           "custom_team_color": 9
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "#D4FF95"
+        "color": "#D4FF95",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -187,15 +186,15 @@
           "custom_team_color": 10
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "#F9FF74"
+        "color": "#F9FF74",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -206,15 +205,15 @@
           "custom_team_color": 11
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Piercing Pickaxe",
         "bold": true,
-        "color": "#7289DA"
+        "color": "#7289DA",
+        "translate": "Piercing Pickaxe"
       }
     },
     "conditions": [
@@ -225,6 +224,7 @@
           "custom_team_color": 12
         }
       }
-    ]
+    ],
+    "function": "minecraft:set_components"
   }
 ]

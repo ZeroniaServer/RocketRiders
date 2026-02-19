@@ -1,26 +1,26 @@
 {
-  "display": {
-    "title": {
-      "text": "Easy Challenges",
-      "bold": false,
-      "color": "#008b23"
-    },
-    "description": {
-      "text": "The Easy difficulty challenges for Rocket Riders.",
-      "color": "green"
-    },
-    "icon": {
-      "id": "minecraft:lime_concrete"
-    },
-    "frame": "task",
-    "show_toast": false,
-    "announce_to_chat": false,
-    "hidden": false,
-    "background": "minecraft:block/slime_block"
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:block/slime_block",
+    "description": {
+      "color": "green",
+      "text": "The Easy difficulty challenges for Rocket Riders."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:lime_concrete"
+    },
+    "show_toast": false,
+    "title": {
+      "bold": false,
+      "color": "#008b23",
+      "text": "Easy Challenges"
     }
   }
 }

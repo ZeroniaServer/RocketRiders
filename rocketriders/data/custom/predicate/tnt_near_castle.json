@@ -4,25 +4,25 @@
     {
       "condition": "minecraft:location_check",
       "predicate": {
+        "dimension": "minecraft:overworld",
         "position": {
           "z": {
             "min": -72,
             "max": -48
           }
-        },
-        "dimension": "minecraft:overworld"
+        }
       }
     },
     {
       "condition": "minecraft:location_check",
       "predicate": {
+        "dimension": "minecraft:overworld",
         "position": {
           "z": {
             "min": 48,
             "max": 72
           }
-        },
-        "dimension": "minecraft:overworld"
+        }
       }
     }
   ]

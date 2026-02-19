@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/hurricane",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "hurricane"
+                    "missile": "hurricane",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -31,91 +27,91 @@
                 "minecraft:item_model": "minecraft:drowned_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Lightning] ",
+                    "bold": true,
                     "color": "yellow",
-                    "bold": true
+                    "text": "[Lightning] "
                   },
                   {
-                    "text": "Hurricane",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Hurricane"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "18",
-                      "color": "red"
+                      "color": "red",
+                      "text": "18"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "3.3m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "3.3m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "HolyToiletPaper",
-                      "color": "red"
+                      "color": "red",
+                      "text": "HolyToiletPaper"
                     }
                   ],
                   "",
                   {
-                    "text": "The Hurricane bears much resemblance to the",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "The Hurricane bears much resemblance to the"
                   },
                   {
-                    "text": "Lightning, but with more TNT and a tight design.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Lightning, but with more TNT and a tight design."
                   },
                   {
-                    "text": "It might be harder to get on this one.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "It might be harder to get on this one."
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Lightning] ",
+                    "bold": true,
                     "color": "yellow",
-                    "bold": true
+                    "text": "[Lightning] "
                   },
                   {
-                    "text": "Hurricane",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Hurricane"
                   }
                 ]
               },
@@ -131,20 +127,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Lightning] ",
+                    "bold": true,
                     "color": "yellow",
-                    "bold": true
+                    "text": "[Lightning] "
                   },
                   {
-                    "text": "Hurricane",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Hurricane"
                   }
                 ]
               },
@@ -160,15 +156,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

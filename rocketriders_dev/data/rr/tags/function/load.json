@@ -1,8 +1,8 @@
 {
-	"values": [
-		{
-			"id": "dev:load",
-			"required": false
-		}
-	]
+  "values": [
+    {
+      "id": "dev:load",
+      "required": false
+    }
+  ]
 }

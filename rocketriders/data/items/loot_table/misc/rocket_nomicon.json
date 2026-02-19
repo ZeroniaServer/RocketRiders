@@ -1,15 +1,12 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:written_book",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "!minecraft:written_book_content": {},
                 "minecraft:custom_data": {
                   "id": "rocket_nomicon"
                 },
@@ -23,36 +20,32 @@
                 },
                 "minecraft:item_name": [
                   {
-                    "text": "Rocket",
                     "bold": true,
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Rocket"
                   },
                   {
-                    "text": "-",
-                    "color": "gray"
+                    "color": "gray",
+                    "text": "-"
                   },
                   {
-                    "text": "nomicon",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "nomicon"
                   }
                 ],
                 "minecraft:lore": [
                   "A helpful book used to obtain",
                   "every item in Rocket Riders!"
                 ],
-                "!minecraft:written_book_content": {},
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:written_book_content"
                   ]
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "main_item": true
-              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -65,13 +58,13 @@
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/main_item/rocket_nomicon"
                 }
-              ]
-            },
-            {
+              ],
               "function": "minecraft:set_custom_data",
               "tag": {
-                "nomicon": {}
-              },
+                "main_item": true
+              }
+            },
+            {
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -84,49 +77,52 @@
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/play"
                 }
-              ]
+              ],
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "nomicon": {}
+              }
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:written_book_content": {
+                  "author": "Zeronia",
                   "pages": [
                     [
                       "",
                       {
-                        "text": "  Rocket",
+                        "bold": true,
                         "color": "blue",
-                        "bold": true
+                        "text": "  Rocket"
                       },
                       {
-                        "text": "-",
+                        "bold": true,
                         "color": "gray",
-                        "bold": true
+                        "text": "-"
                       },
                       {
-                        "text": "nomicon",
+                        "bold": true,
                         "color": "gold",
-                        "bold": true
+                        "text": "nomicon"
                       },
                       {
-                        "text": "\nYour one-stop shop for every item in RR!",
+                        "color": "dark_gray",
                         "italic": true,
-                        "color": "dark_gray"
+                        "text": "\nYour one-stop shop for every item in RR!"
                       },
                       {
-                        "text": "\n\nNothing to see here just yet, but check this book again once the match starts!\n",
-                        "color": "dark_gray"
+                        "color": "dark_gray",
+                        "text": "\n\nNothing to see here just yet, but check this book again once the match starts!\n"
                       },
                       {
-                        "text": "\n\n\n\nSo impatient...",
                         "color": "#CCCCCC",
-                        "italic": true
+                        "italic": true,
+                        "text": "\n\n\n\nSo impatient..."
                       }
                     ]
                   ],
-                  "title": "",
-                  "author": "Zeronia",
-                  "resolved": true
+                  "resolved": true,
+                  "title": ""
                 }
               },
               "conditions": [
@@ -141,44 +137,44 @@
                   "condition": "minecraft:reference",
                   "name": "game:phase/staging"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:written_book_content": {
+                  "author": "Zeronia",
                   "pages": [
                     [
                       "",
                       {
-                        "text": "  Rocket",
+                        "bold": true,
                         "color": "blue",
-                        "bold": true
+                        "text": "  Rocket"
                       },
                       {
-                        "text": "-",
+                        "bold": true,
                         "color": "gray",
-                        "bold": true
+                        "text": "-"
                       },
                       {
-                        "text": "nomicon",
+                        "bold": true,
                         "color": "gold",
-                        "bold": true
+                        "text": "nomicon"
                       },
                       {
-                        "text": "\n\nYour one-stop shop for every item in RR!\n\nNothing to see here anymore. Check back again next game!\n",
-                        "color": "dark_gray"
+                        "color": "dark_gray",
+                        "text": "\n\nYour one-stop shop for every item in RR!\n\nNothing to see here anymore. Check back again next game!\n"
                       },
                       {
-                        "text": "\n\n\n\n\nParty's over, guys...",
                         "color": "#CCCCCC",
-                        "italic": true
+                        "italic": true,
+                        "text": "\n\n\n\n\nParty's over, guys..."
                       }
                     ]
                   ],
-                  "title": "",
-                  "author": "Zeronia",
-                  "resolved": true
+                  "resolved": true,
+                  "title": ""
                 }
               },
               "conditions": [
@@ -193,15 +189,19 @@
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/over"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:written_book",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

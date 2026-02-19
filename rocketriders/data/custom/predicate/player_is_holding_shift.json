@@ -3,10 +3,10 @@
   "entity": "this",
   "predicate": {
     "type_specific": {
-      "type": "minecraft:player",
       "input": {
         "sneak": true
-      }
+      },
+      "type": "minecraft:player"
     }
   }
 }

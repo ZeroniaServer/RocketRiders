@@ -1,8 +1,17 @@
 {
   "criteria": {
-    "die_other": {
-      "trigger": "minecraft:entity_hurt_player",
+    "die_lava": {
       "conditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "expected": true,
+                "id": "custom:lava"
+              }
+            ]
+          }
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
@@ -19,26 +28,58 @@
               }
             }
           }
-        ],
+        ]
+      },
+      "trigger": "minecraft:entity_hurt_player"
+    },
+    "die_other": {
+      "conditions": {
         "damage": {
           "type": {
             "tags": [
               {
-                "id": "custom:void",
-                "expected": false
+                "expected": false,
+                "id": "custom:void"
               },
               {
-                "id": "custom:lava",
-                "expected": false
+                "expected": false,
+                "id": "custom:lava"
               }
             ]
           }
-        }
-      }
+        },
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "event.player_dies": {
+                "min": 1
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:entity_hurt_player"
     },
     "die_void": {
-      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "expected": true,
+                "id": "custom:void"
+              }
+            ]
+          }
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
@@ -55,50 +96,9 @@
               }
             }
           }
-        ],
-        "damage": {
-          "type": {
-            "tags": [
-              {
-                "id": "custom:void",
-                "expected": true
-              }
-            ]
-          }
-        }
-      }
-    },
-    "die_lava": {
-      "trigger": "minecraft:entity_hurt_player",
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
-          },
-          {
-            "condition": "minecraft:entity_scores",
-            "entity": "this",
-            "scores": {
-              "event.player_dies": {
-                "min": 1
-              }
-            }
-          }
-        ],
-        "damage": {
-          "type": {
-            "tags": [
-              {
-                "id": "custom:lava",
-                "expected": true
-              }
-            ]
-          }
-        }
-      }
+        ]
+      },
+      "trigger": "minecraft:entity_hurt_player"
     }
   },
   "requirements": [

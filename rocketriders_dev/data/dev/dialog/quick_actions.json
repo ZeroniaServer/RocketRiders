@@ -1,74 +1,74 @@
 {
-  "type": "minecraft:multi_action",
-  "title": "RR Developer Actions",
-  "external_title": "RR Developer Actions...",
-  "exit_action": {
-    "label": "Cancel"
-  },
   "actions": [
     {
-      "label": "Force Stop",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 2"
-      }
+        "command": "/trigger dev set 2",
+        "type": "minecraft:run_command"
+      },
+      "label": "Force Stop"
     },
     {
-      "label": "Force Start",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 3"
-      }
+        "command": "/trigger dev set 3",
+        "type": "minecraft:run_command"
+      },
+      "label": "Force Start"
     },
     {
+      "action": {
+        "command": "/trigger dev set 100",
+        "type": "minecraft:run_command"
+      },
       "label": "Quick Launch",
-      "tooltip": "Start a match with current game mode & settings.",
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 100"
-      }
+      "tooltip": "Start a match with current game mode & settings."
     },
     {
+      "action": {
+        "dialog": "dev:quick_actions/quick_launch_gamemode",
+        "type": "minecraft:show_dialog"
+      },
       "label": "Quick Launch Game Mode...",
-      "tooltip": "Start a match on a specific gamemode.",
-      "action": {
-        "type": "minecraft:show_dialog",
-        "dialog": "dev:quick_actions/quick_launch_gamemode"
-      }
+      "tooltip": "Start a match on a specific gamemode."
     },
     {
+      "action": {
+        "command": "/trigger dev set 4",
+        "type": "minecraft:run_command"
+      },
       "label": "Join/Leave Match",
-      "tooltip": "If in the lobby or developer mode, automatically adds you to a team.\n\nIf playing or spectating, returns you to the lobby.",
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 4"
-      }
+      "tooltip": "If in the lobby or developer mode, automatically adds you to a team.\n\nIf playing or spectating, returns you to the lobby."
     },
     {
+      "action": {
+        "dialog": "dev:quick_actions/other_actions",
+        "type": "minecraft:show_dialog"
+      },
       "label": {
         "italic": true,
         "text": "Other Actions..."
+      }
+    },
+    {
+      "action": {
+        "dialog": "dev:quick_actions/switch_team",
+        "type": "minecraft:show_dialog"
       },
-      "action": {
-        "type": "minecraft:show_dialog",
-        "dialog": "dev:quick_actions/other_actions"
-      }
-    },
-    {
       "label": "Switch Team...",
-      "tooltip": "Choose a team to join.",
-      "action": {
-        "type": "minecraft:show_dialog",
-        "dialog": "dev:quick_actions/switch_team"
-      }
+      "tooltip": "Choose a team to join."
     },
     {
-      "label": "Toggle Developer Mode",
-      "tooltip": "Moves you to the Developer team in creative mode (to bypass gamemode restrictions) or back to the Lobby team in adventure mode.",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 12"
-      }
+        "command": "/trigger dev set 12",
+        "type": "minecraft:run_command"
+      },
+      "label": "Toggle Developer Mode",
+      "tooltip": "Moves you to the Developer team in creative mode (to bypass gamemode restrictions) or back to the Lobby team in adventure mode."
     }
-  ]
+  ],
+  "exit_action": {
+    "label": "Cancel"
+  },
+  "external_title": "RR Developer Actions...",
+  "title": "RR Developer Actions",
+  "type": "minecraft:multi_action"
 }

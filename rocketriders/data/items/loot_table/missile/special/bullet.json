@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/bullet",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "bullet"
+                    "missile": "bullet",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -25,98 +21,98 @@
                     "none"
                   ]
                 },
+                "minecraft:enchantment_glint_override": true,
                 "minecraft:entity_data": {
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:skeleton_horse_spawn_egg",
-                "minecraft:enchantment_glint_override": true,
                 "minecraft:item_name": [
                   {
-                    "text": "[Special] ",
+                    "bold": true,
                     "color": "dark_purple",
-                    "bold": true
+                    "text": "[Special] "
                   },
                   {
-                    "text": "Bullet",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Bullet"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "44",
-                      "color": "red"
+                      "color": "red",
+                      "text": "44"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "2.0m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "2.0m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "Chronos22 & Evtema3",
-                      "color": "red"
+                      "color": "red",
+                      "text": "Chronos22 & Evtema3"
                     }
                   ],
                   "",
                   {
-                    "text": "The Bullet makes all missiles look like an A.N.T.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "The Bullet makes all missiles look like an A.N.T."
                   },
                   {
-                    "text": "With 44 TNT, 12 of which being triggers, you",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "With 44 TNT, 12 of which being triggers, you"
                   },
                   {
-                    "text": "have to be very careful defusing this one!",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "have to be very careful defusing this one!"
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Special] ",
+                    "bold": true,
                     "color": "dark_purple",
-                    "bold": true
+                    "text": "[Special] "
                   },
                   {
-                    "text": "Bullet",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Bullet"
                   }
                 ]
               },
@@ -132,20 +128,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Special] ",
+                    "bold": true,
                     "color": "dark_purple",
-                    "bold": true
+                    "text": "[Special] "
                   },
                   {
-                    "text": "Bullet",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Bullet"
                   }
                 ]
               },
@@ -161,15 +157,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

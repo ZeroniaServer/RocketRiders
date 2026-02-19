@@ -1,40 +1,35 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:leather_leggings",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:equippable": {
-                  "slot": "legs",
-                  "equip_sound": "minecraft:intentionally_empty",
-                  "asset_id": "minecraft:leather"
-                },
-                "minecraft:item_name": {
-                  "text": "Archer Leggings",
-                  "bold": true,
-                  "color": "white"
-                },
-                "minecraft:dyed_color": -1,
-                "minecraft:unbreakable": {},
-                "minecraft:enchantments": {
-                  "minecraft:binding_curse": 1
-                },
-                "minecraft:enchantment_glint_override": false,
                 "minecraft:attribute_modifiers": [
                   {
-                    "id": "rocketriders:leggings",
-                    "slot": "legs",
                     "amount": 2,
+                    "id": "rocketriders:leggings",
                     "operation": "add_value",
+                    "slot": "legs",
                     "type": "armor"
                   }
                 ],
+                "minecraft:dyed_color": -1,
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:enchantments": {
+                  "minecraft:binding_curse": 1
+                },
+                "minecraft:equippable": {
+                  "asset_id": "minecraft:leather",
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "slot": "legs"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "white",
+                  "text": "Archer Leggings"
+                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:attribute_modifiers",
@@ -43,22 +38,23 @@
                     "minecraft:trim",
                     "minecraft:unbreakable"
                   ]
-                }
-              }
+                },
+                "minecraft:unbreakable": {}
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:dyed_color": 3949738,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Blue Archer Leggings"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:vex"
-                },
-                "minecraft:item_name": {
-                  "text": "Blue Archer Leggings",
-                  "bold": true,
-                  "color": "blue"
-                },
-                "minecraft:dyed_color": 3949738
+                }
               },
               "conditions": [
                 {
@@ -72,21 +68,21 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:dyed_color": 16711680,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Blue Archer Leggings"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:vex"
-                },
-                "minecraft:item_name": {
-                  "text": "Blue Archer Leggings",
-                  "bold": true,
-                  "color": "blue"
-                },
-                "minecraft:dyed_color": 16711680
+                }
               },
               "conditions": [
                 {
@@ -97,32 +93,36 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:dyed_color": 16768000,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "gold",
+                  "text": "Yellow Archer Leggings"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:netherite",
                   "pattern": "minecraft:spire"
-                },
-                "minecraft:item_name": {
-                  "text": "Yellow Archer Leggings",
-                  "bold": true,
-                  "color": "gold"
-                },
-                "minecraft:dyed_color": 16768000
+                }
               },
               "conditions": [
                 {
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             }
-          ]
+          ],
+          "name": "minecraft:leather_leggings",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

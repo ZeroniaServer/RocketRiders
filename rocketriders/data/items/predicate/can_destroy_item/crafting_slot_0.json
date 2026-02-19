@@ -1,6 +1,41 @@
 [
-  {"condition":"minecraft:reference","name":"game:phase/match/play"},
-  {"condition":"minecraft:reference","name":"custom:team/any_playing_team"},
-  {"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"count":{"min":1}}}}},
-  {"condition":"minecraft:inverted","term":{"condition":"minecraft:entity_properties","entity":"this","predicate":{"slots":{"player.crafting.0":{"predicates":{"minecraft:custom_data":{"main_item":true}}}}}}}
+  {
+    "condition": "minecraft:reference",
+    "name": "game:phase/match/play"
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "custom:team/any_playing_team"
+  },
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "slots": {
+        "player.crafting.0": {
+          "count": {
+            "min": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "player.crafting.0": {
+            "predicates": {
+              "minecraft:custom_data": {
+                "main_item": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 ]

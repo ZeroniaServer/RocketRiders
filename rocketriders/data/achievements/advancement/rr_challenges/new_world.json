@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "A Whole New World...",
-      "color": "#c20000"
-    },
-    "description": {
-      "text": "Ride a missile with another teammate at or above Y=145.",
-      "color": "red"
-    },
-    "icon": {
-      "id": "minecraft:red_carpet"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "red",
+      "text": "Ride a missile with another teammate at or above Y=145."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:red_carpet"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#c20000",
+      "text": "A Whole New World..."
     }
   },
   "parent": "achievements:rr_challenges/holyland"

@@ -1,15 +1,20 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:bow",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:attribute_modifiers": [
+                  {
+                    "amount": 3,
+                    "id": "rocketriders:saber",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "attack_damage"
+                  }
+                ],
                 "minecraft:custom_data": {
                   "id": "shooting_saber"
                 },
@@ -21,49 +26,37 @@
                     "none"
                   ]
                 },
+                "minecraft:enchantments": {
+                  "minecraft:flame": 1
+                },
                 "minecraft:item_name": {
-                  "translate": "Shooting Saber",
                   "bold": true,
-                  "color": "white"
+                  "color": "white",
+                  "translate": "Shooting Saber"
                 },
                 "minecraft:lore": [
                   "",
                   {
-                    "text": "A weapon used for both",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "A weapon used for both"
                   },
                   {
-                    "text": "ranged and melee attacks.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "ranged and melee attacks."
                   }
                 ],
-                "minecraft:unbreakable": {},
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:unbreakable"
                   ]
                 },
-                "minecraft:enchantments": {
-                  "minecraft:flame": 1
-                },
-                "minecraft:attribute_modifiers": [
-                  {
-                    "id": "rocketriders:saber",
-                    "type": "attack_damage",
-                    "amount": 3,
-                    "operation": "add_value",
-                    "slot": "mainhand"
-                  }
-                ]
-              }
+                "minecraft:unbreakable": {}
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "main_item": true
-              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -85,18 +78,21 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              }
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
-                    "id": "rocketriders:saber",
-                    "type": "attack_damage",
                     "amount": 2.5,
+                    "id": "rocketriders:saber",
                     "operation": "add_value",
-                    "slot": "mainhand"
+                    "slot": "mainhand",
+                    "type": "attack_damage"
                   }
                 ]
               },
@@ -112,10 +108,10 @@
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/decreased_shooting_saber_attack_damage"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": []
               },
@@ -135,18 +131,22 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "nbt": "{Tags:['Loser']}"
+                    "nbt": {
+                      "Tags": [
+                        "Loser"
+                      ]
+                    }
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "translate": "Shooting Saber",
                   "bold": true,
-                  "color": "blue"
+                  "color": "blue",
+                  "translate": "Shooting Saber"
                 }
               },
               "conditions": [
@@ -161,15 +161,15 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "translate": "Shooting Saber",
                   "bold": true,
-                  "color": "gold"
+                  "color": "gold",
+                  "translate": "Shooting Saber"
                 }
               },
               "conditions": [
@@ -184,11 +184,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:reference",
-              "name": "items:shooting_saber/set_custom_team_color",
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -201,35 +200,36 @@
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/custom_team_colors"
                 }
-              ]
+              ],
+              "function": "minecraft:reference",
+              "name": "items:shooting_saber/set_custom_team_color"
             },
             {
-              "function": "minecraft:reference",
-              "name": "items:shooting_saber/set_multishot",
               "conditions": [
                 {
                   "condition": "minecraft:reference",
                   "name": "items:shooting_saber/multishot"
                 }
-              ]
+              ],
+              "function": "minecraft:reference",
+              "name": "items:shooting_saber/set_multishot"
             },
             {
-              "function": "minecraft:reference",
-              "name": "items:shooting_saber/set_infinity",
               "conditions": [
                 {
                   "condition": "minecraft:reference",
                   "name": "items:shooting_saber/infinity"
                 }
-              ]
+              ],
+              "function": "minecraft:reference",
+              "name": "items:shooting_saber/set_infinity"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "translate": "Multishot-Infinity Saber",
                   "bold": true,
-                  "color": "dark_purple"
+                  "color": "dark_purple",
+                  "translate": "Multishot-Infinity Saber"
                 }
               },
               "conditions": [
@@ -241,15 +241,19 @@
                   "condition": "minecraft:reference",
                   "name": "items:shooting_saber/multishot"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:bow",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

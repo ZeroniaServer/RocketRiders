@@ -11,15 +11,15 @@
     "terms": [
       {
         "condition": "minecraft:value_check",
+        "range": 1,
         "value": {
-          "type": "minecraft:score",
+          "score": "config",
           "target": {
-            "type": "minecraft:fixed",
-            "name": "$disable_item/missile/hurricane"
+            "name": "$disable_item/missile/hurricane",
+            "type": "minecraft:fixed"
           },
-          "score": "config"
-        },
-        "range": 1
+          "type": "minecraft:score"
+        }
       },
       {
         "condition": "minecraft:reference",

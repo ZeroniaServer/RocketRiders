@@ -1,13 +1,13 @@
 {
-	"type": "minecraft:multi_action",
-	"title": "RR Dev: Authentication",
-	"actions": [
-		{
-			"label": "Confirm Operator",
-			"action": {
-				"type": "minecraft:run_command",
-				"command": "/function dev:confirm_dev"
-			}
-		}
-	]
+  "actions": [
+    {
+      "action": {
+        "command": "/function dev:confirm_dev",
+        "type": "minecraft:run_command"
+      },
+      "label": "Confirm Operator"
+    }
+  ],
+  "title": "RR Dev: Authentication",
+  "type": "minecraft:multi_action"
 }

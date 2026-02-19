@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
-                "id": "missile/blade",
-                "spawn_egg": {
-                  "type": "missile",
-                    "missile": "blade"
+                  "id": "missile/blade",
+                  "spawn_egg": {
+                    "missile": "blade",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -31,91 +27,91 @@
                 "minecraft:item_model": "minecraft:husk_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Blade",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Blade"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "15",
-                      "color": "red"
+                      "color": "red",
+                      "text": "15"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "1.7m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "1.7m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "HolyToiletPaper",
-                      "color": "red"
+                      "color": "red",
+                      "text": "HolyToiletPaper"
                     }
                   ],
                   "",
                   {
-                    "text": "The Blade is a sword-shaped missile.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "The Blade is a sword-shaped missile."
                   },
                   {
-                    "text": "Breaking the slime block on the side",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Breaking the slime block on the side"
                   },
                   {
-                    "text": "will drop down 3 bomber TNT below it.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "will drop down 3 bomber TNT below it."
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Blade",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Blade"
                   }
                 ]
               },
@@ -131,20 +127,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Blade",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Blade"
                   }
                 ]
               },
@@ -160,15 +156,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

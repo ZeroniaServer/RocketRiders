@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/rifter",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "rifter"
+                    "missile": "rifter",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -31,96 +27,96 @@
                 "minecraft:item_model": "minecraft:salmon_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Heavy] ",
+                    "bold": true,
                     "color": "dark_red",
-                    "bold": true
+                    "text": "[Heavy] "
                   },
                   {
-                    "text": "Rifter",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Rifter"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "34",
-                      "color": "red"
+                      "color": "red",
+                      "text": "34"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "2.0m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "2.0m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "YZEROgame, Chronos22,",
-                      "color": "red"
+                      "color": "red",
+                      "text": "YZEROgame, Chronos22,"
                     }
                   ],
                   {
-                    "text": "& 69thAmendment",
                     "color": "red",
-                    "italic": false
+                    "italic": false,
+                    "text": "& 69thAmendment"
                   },
                   "",
                   {
-                    "text": "The Rifter is a observer-engine",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "The Rifter is a observer-engine"
                   },
                   {
-                    "text": "missile with plenty of TNT to tear",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "missile with plenty of TNT to tear"
                   },
                   {
-                    "text": "a rift in the enemy base.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "a rift in the enemy base."
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Heavy] ",
+                    "bold": true,
                     "color": "dark_red",
-                    "bold": true
+                    "text": "[Heavy] "
                   },
                   {
-                    "text": "Rifter",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Rifter"
                   }
                 ]
               },
@@ -136,20 +132,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Heavy] ",
+                    "bold": true,
                     "color": "dark_red",
-                    "bold": true
+                    "text": "[Heavy] "
                   },
                   {
-                    "text": "Rifter",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Rifter"
                   }
                 ]
               },
@@ -165,15 +161,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

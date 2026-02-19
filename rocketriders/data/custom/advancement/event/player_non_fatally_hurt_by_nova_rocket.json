@@ -1,42 +1,17 @@
 {
   "criteria": {
     "player_non_fatally_hurt_by_nova_rocket_creeper_explosion": {
-      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
-          },
-          {
-            "condition": "minecraft:reference",
-            "name": "custom:alive"
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:reference",
-              "name": "custom:nova_attached"
-            }
-          }
-        ],
         "damage": {
           "source_entity": {
-            "type": "minecraft:creeper",
             "predicates": {
               "minecraft:custom_data": {
                 "nova_rocket_explosion": {}
               }
-            }
+            },
+            "type": "minecraft:creeper"
           }
-        }
-      }
-    },
-    "player_non_fatally_hurt_by_nova_rocket_firework_explosion": {
-      "trigger": "minecraft:entity_hurt_player",
-      "conditions": {
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
@@ -55,20 +30,45 @@
               "name": "custom:nova_attached"
             }
           }
-        ],
+        ]
+      },
+      "trigger": "minecraft:entity_hurt_player"
+    },
+    "player_non_fatally_hurt_by_nova_rocket_firework_explosion": {
+      "conditions": {
         "damage": {
           "type": {
             "direct_entity": {
-              "type": "minecraft:firework_rocket",
               "predicates": {
                 "minecraft:custom_data": {
                   "nova_rocket": {}
                 }
-              }
+              },
+              "type": "minecraft:firework_rocket"
             }
           }
-        }
-      }
+        },
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          },
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:alive"
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:reference",
+              "name": "custom:nova_attached"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:entity_hurt_player"
     }
   },
   "requirements": [

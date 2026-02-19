@@ -1,12 +1,12 @@
 {
-	"condition": "minecraft:value_check",
-	"value": {
-		"type": "minecraft:score",
-		"target": {
-			"type": "minecraft:fixed",
-			"name": "$server_mode"
-		},
-		"score": "global"
-	},
-	"range": 1
+  "condition": "minecraft:value_check",
+  "range": 1,
+  "value": {
+    "score": "global",
+    "target": {
+      "name": "$server_mode",
+      "type": "minecraft:fixed"
+    },
+    "type": "minecraft:score"
+  }
 }

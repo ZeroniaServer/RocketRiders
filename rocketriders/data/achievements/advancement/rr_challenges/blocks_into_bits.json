@@ -1,32 +1,52 @@
 {
-  "parent": "achievements:rr_challenges/soul_collector",
-  "display": {
-    "title": {
-      "color": "#c20000",
-      "text": "Blocks into Bits"
+  "criteria": {
+    "1": {
+      "trigger": "minecraft:impossible"
     },
+    "10": {
+      "trigger": "minecraft:impossible"
+    },
+    "2": {
+      "trigger": "minecraft:impossible"
+    },
+    "3": {
+      "trigger": "minecraft:impossible"
+    },
+    "4": {
+      "trigger": "minecraft:impossible"
+    },
+    "5": {
+      "trigger": "minecraft:impossible"
+    },
+    "6": {
+      "trigger": "minecraft:impossible"
+    },
+    "7": {
+      "trigger": "minecraft:impossible"
+    },
+    "8": {
+      "trigger": "minecraft:impossible"
+    },
+    "9": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
     "description": {
       "color": "red",
       "text": "Kill 10 players (all-time) by hitting them directly with a Fireball."
     },
+    "frame": "challenge",
+    "hidden": false,
     "icon": {
       "id": "minecraft:fire_charge"
     },
-    "frame": "challenge",
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
+    "title": {
+      "color": "#c20000",
+      "text": "Blocks into Bits"
+    }
   },
-  "criteria": {
-    "1": {"trigger":"minecraft:impossible"},
-    "2": {"trigger":"minecraft:impossible"},
-    "3": {"trigger":"minecraft:impossible"},
-    "4": {"trigger":"minecraft:impossible"},
-    "5": {"trigger":"minecraft:impossible"},
-    "6": {"trigger":"minecraft:impossible"},
-    "7": {"trigger":"minecraft:impossible"},
-    "8": {"trigger":"minecraft:impossible"},
-    "9": {"trigger":"minecraft:impossible"},
-    "10": {"trigger":"minecraft:impossible"}
-  }
+  "parent": "achievements:rr_challenges/soul_collector"
 }

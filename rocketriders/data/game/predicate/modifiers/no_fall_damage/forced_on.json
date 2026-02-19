@@ -3,15 +3,15 @@
   "terms": [
     {
       "condition": "minecraft:value_check",
+      "range": 1,
       "value": {
-        "type": "minecraft:score",
+        "score": "gamemode_components",
         "target": {
-          "type": "minecraft:fixed",
-          "name": "$config_override.no_fall_damage"
+          "name": "$config_override.no_fall_damage",
+          "type": "minecraft:fixed"
         },
-        "score": "gamemode_components"
-      },
-      "range": 1
+        "type": "minecraft:score"
+      }
     }
   ]
 }

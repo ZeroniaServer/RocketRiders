@@ -1,8 +1,20 @@
 {
   "criteria": {
     "punch_punchable_tnt_interaction": {
-      "trigger": "minecraft:player_hurt_entity",
       "conditions": {
+        "entity": {
+          "movement": {
+            "speed": {
+              "max": 20
+            }
+          },
+          "predicates": {
+            "minecraft:custom_data": {
+              "punchable_tnt": {}
+            }
+          },
+          "type": "minecraft:interaction"
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
@@ -14,21 +26,9 @@
             "condition": "minecraft:reference",
             "name": "game:modifiers/punchable_tnt/on"
           }
-        ],
-        "entity": {
-          "type": "minecraft:interaction",
-          "movement": {
-            "speed": {
-              "max": 20
-            }
-          },
-          "predicates": {
-            "minecraft:custom_data": {
-              "punchable_tnt": {}
-            }
-          }
-        }
-      }
+        ]
+      },
+      "trigger": "minecraft:player_hurt_entity"
     }
   },
   "rewards": {

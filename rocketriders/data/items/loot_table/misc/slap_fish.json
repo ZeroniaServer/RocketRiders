@@ -1,15 +1,28 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:cooked_salmon",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:attribute_modifiers": [
+                  {
+                    "amount": 0,
+                    "display": {
+                      "type": "override",
+                      "value": {
+                        "color": "blue",
+                        "text": "+7.75 Knockback"
+                      }
+                    },
+                    "id": "rocketriders:slap_fish/fake_knockback_modifier",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:luck"
+                  }
+                ],
+                "minecraft:break_sound": "minecraft:entity.guardian.flop",
                 "minecraft:custom_data": {
                   "id": "slap_fish"
                 },
@@ -21,70 +34,57 @@
                     "none"
                   ]
                 },
-                "minecraft:item_name": {
-                  "text": "Slap Fish",
-                  "bold": true,
-                  "color": "dark_purple"
-                },
                 "minecraft:custom_name": {
-                  "text": "Slap Fish",
                   "bold": true,
                   "color": "dark_purple",
-                  "italic": false
+                  "italic": false,
+                  "text": "Slap Fish"
                 },
-                "minecraft:lore": [
-                  {
-                    "text": "Use to slap your enemies away!",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "Only good for one use.",
-                    "color": "gray",
-                    "italic": false
-                  }
-                ],
+                "minecraft:damage": 0,
                 "minecraft:enchantments": {
                   "minecraft:knockback": 3
                 },
-                "minecraft:attribute_modifiers": [
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "dark_purple",
+                  "text": "Slap Fish"
+                },
+                "minecraft:lore": [
                   {
-                    "operation": "add_value",
-                    "amount": 0,
-                    "slot": "mainhand",
-                    "type": "minecraft:luck",
-                    "id": "rocketriders:slap_fish/fake_knockback_modifier",
-                    "display": {
-                      "type": "override",
-                      "value": {
-                        "color": "blue",
-                        "text": "+7.75 Knockback"
-                      }
-                    }
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Use to slap your enemies away!"
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Only good for one use."
                   }
                 ],
                 "minecraft:max_damage": 1,
                 "minecraft:max_stack_size": 1,
-                "minecraft:weapon": {
-                  "item_damage_per_attack": 1,
-                  "disable_blocking_for_seconds": 0.0
-                },
-                "minecraft:damage": 0,
-                "minecraft:break_sound": "minecraft:entity.guardian.flop",
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:enchantments"
                   ]
+                },
+                "minecraft:weapon": {
+                  "disable_blocking_for_seconds": 0.0,
+                  "item_damage_per_attack": 1
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:cooked_salmon",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

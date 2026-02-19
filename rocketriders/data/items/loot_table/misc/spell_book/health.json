@@ -1,19 +1,19 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:loot_table",
-          "value": "items:misc/spell_book",
           "functions": [
             {
               "function": "minecraft:reference",
               "name": "items:spell_book/health"
             }
-          ]
+          ],
+          "type": "minecraft:loot_table",
+          "value": "items:misc/spell_book"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

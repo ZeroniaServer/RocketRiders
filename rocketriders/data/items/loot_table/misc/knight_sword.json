@@ -1,15 +1,30 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:stone_sword",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:attribute_modifiers": [
+                  {
+                    "amount": 4.0,
+                    "id": "rocketriders:knight_sword",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_damage"
+                  },
+                  {
+                    "amount": -2.4,
+                    "display": {
+                      "type": "hidden"
+                    },
+                    "id": "rocketriders:knight_sword",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_speed"
+                  }
+                ],
                 "minecraft:custom_data": {
                   "id": "knight_sword"
                 },
@@ -21,52 +36,33 @@
                     "none"
                   ]
                 },
-                "minecraft:unbreakable": {},
                 "minecraft:item_name": {
-                  "text": "Knight Sword",
                   "bold": true,
-                  "color": "white"
+                  "color": "white",
+                  "text": "Knight Sword"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "A sharp sword, made to",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "A sharp sword, made to"
                   },
                   {
-                    "text": "kill the strongest enemies.",
                     "color": "gray",
-                    "italic": false
-                  }
-                ],
-                "minecraft:attribute_modifiers": [
-                  {
-                    "amount": 4.0,
-                    "id": "rocketriders:knight_sword",
-                    "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_damage"
-                  },
-                  {
-                    "amount": -2.4,
-                    "id": "rocketriders:knight_sword",
-                    "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_speed",
-                    "display": {
-                      "type": "hidden"
-                    }
+                    "italic": false,
+                    "text": "kill the strongest enemies."
                   }
                 ],
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:unbreakable"
                   ]
-                }
-              }
+                },
+                "minecraft:unbreakable": {}
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": []
               },
@@ -86,16 +82,17 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "nbt": "{Tags:['Loser']}"
+                    "nbt": {
+                      "Tags": [
+                        "Loser"
+                      ]
+                    }
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "main_item": true
-              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -108,15 +105,18 @@
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/main_item/crusade_kit_dependent"
                 }
-              ]
+              ],
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              }
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "Knight Sword",
                   "bold": true,
-                  "color": "blue"
+                  "color": "blue",
+                  "text": "Knight Sword"
                 }
               },
               "conditions": [
@@ -131,15 +131,15 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "Knight Sword",
                   "bold": true,
-                  "color": "gold"
+                  "color": "gold",
+                  "text": "Knight Sword"
                 }
               },
               "conditions": [
@@ -154,11 +154,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:reference",
-              "name": "items:knight_sword/set_custom_team_color",
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -171,15 +170,20 @@
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/custom_team_colors"
                 }
-              ]
+              ],
+              "function": "minecraft:reference",
+              "name": "items:knight_sword/set_custom_team_color"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:stone_sword",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

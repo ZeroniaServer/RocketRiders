@@ -21,6 +21,7 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
+                    "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
                         "min": -18,
@@ -34,8 +35,7 @@
                         "min": -82,
                         "max": -65
                       }
-                    },
-                    "dimension": "minecraft:overworld"
+                    }
                   }
                 },
                 {
@@ -61,6 +61,7 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
+                    "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
                         "min": -18,
@@ -74,8 +75,7 @@
                         "min": 66,
                         "max": 83
                       }
-                    },
-                    "dimension": "minecraft:overworld"
+                    }
                   }
                 },
                 {
@@ -137,6 +137,7 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
+                    "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
                         "min": -4,
@@ -150,8 +151,7 @@
                         "min": -75,
                         "max": -58
                       }
-                    },
-                    "dimension": "minecraft:overworld"
+                    }
                   }
                 },
                 {
@@ -177,6 +177,7 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
+                    "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
                         "min": -4,
@@ -190,8 +191,7 @@
                         "min": 59,
                         "max": 76
                       }
-                    },
-                    "dimension": "minecraft:overworld"
+                    }
                   }
                 },
                 {

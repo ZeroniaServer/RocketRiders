@@ -2,11 +2,11 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "type": "area_effect_cloud",
     "predicates": {
       "minecraft:custom_data": {
         "damage_spell": {}
       }
-    }
+    },
+    "type": "area_effect_cloud"
   }
 }

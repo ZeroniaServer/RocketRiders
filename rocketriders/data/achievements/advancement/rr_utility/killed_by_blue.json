@@ -1,8 +1,20 @@
 {
   "criteria": {
     "requirement": {
-      "trigger": "minecraft:entity_killed_player",
       "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:player"
+            }
+          },
+          {
+            "condition": "minecraft:reference",
+            "name": "custom:team/blue"
+          }
+        ],
         "player": [
           {
             "condition": "minecraft:entity_properties",
@@ -17,21 +29,9 @@
             "condition": "minecraft:reference",
             "name": "custom:team/yellow"
           }
-        ],
-        "entity": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "type": "minecraft:player"
-            }
-          },
-          {
-            "condition": "minecraft:reference",
-            "name": "custom:team/blue"
-          }
         ]
-      }
+      },
+      "trigger": "minecraft:entity_killed_player"
     }
   },
   "rewards": {

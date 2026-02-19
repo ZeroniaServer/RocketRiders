@@ -1,57 +1,13 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:crossbow",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_data": {
-                  "id": "nova_rocket"
-                },
-                "minecraft:custom_model_data": {
-                  "strings": [
-                    "rocketriders",
-                    "nova_rocket",
-                    "none"
-                  ]
-                },
-                "minecraft:damage": 465,
-                "minecraft:item_name": [
-                  {
-                    "text": "[Utility] ",
-                    "color": "light_purple",
-                    "bold": true
-                  },
-                  {
-                    "text": "Nova Rocket",
-                    "color": "white"
-                  }
-                ],
-                "minecraft:lore": [
-                  {
-                    "text": "Shoots a Nova Rocket where you look.",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "Launches players sky-high on impact.",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "The arch nemesis of the Canopy!",
-                    "color": "gray",
-                    "italic": false
-                  }
-                ],
                 "minecraft:charged_projectiles": [
                   {
-                    "id": "minecraft:firework_rocket",
                     "components": {
                       "custom_data": {
                         "nova_rocket": {
@@ -69,7 +25,6 @@
                       "minecraft:fireworks": {
                         "explosions": [
                           {
-                            "shape": "small_ball",
                             "colors": [
                               15790320
                             ],
@@ -87,30 +42,70 @@
                               15435844
                             ],
                             "has_trail": true,
-                            "has_twinkle": true
+                            "has_twinkle": true,
+                            "shape": "small_ball"
                           }
                         ],
                         "flight_duration": 2
                       }
-                    }
+                    },
+                    "id": "minecraft:firework_rocket"
                   }
                 ],
-                "minecraft:unbreakable": {},
+                "minecraft:custom_data": {
+                  "id": "nova_rocket"
+                },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "rocketriders",
+                    "nova_rocket",
+                    "none"
+                  ]
+                },
+                "minecraft:damage": 465,
+                "minecraft:item_name": [
+                  {
+                    "bold": true,
+                    "color": "light_purple",
+                    "text": "[Utility] "
+                  },
+                  {
+                    "color": "white",
+                    "text": "Nova Rocket"
+                  }
+                ],
+                "minecraft:lore": [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Shoots a Nova Rocket where you look."
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Launches players sky-high on impact."
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "The arch nemesis of the Canopy!"
+                  }
+                ],
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:damage",
                     "minecraft:charged_projectiles",
                     "minecraft:unbreakable"
                   ]
-                }
-              }
+                },
+                "minecraft:unbreakable": {}
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:charged_projectiles": [
                   {
-                    "id": "minecraft:firework_rocket",
                     "components": {
                       "custom_data": {
                         "nova_rocket": {
@@ -130,29 +125,30 @@
                       "minecraft:fireworks": {
                         "explosions": [
                           {
-                            "shape": "small_ball",
                             "colors": [
                               2437522,
                               2651799
                             ],
                             "has_trail": true,
-                            "has_twinkle": true
+                            "has_twinkle": true,
+                            "shape": "small_ball"
                           }
                         ],
                         "flight_duration": 3
                       }
-                    }
+                    },
+                    "id": "minecraft:firework_rocket"
                   }
                 ],
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Nova Rocket",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Nova Rocket"
                   }
                 ]
               },
@@ -175,14 +171,13 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:charged_projectiles": [
                   {
-                    "id": "minecraft:firework_rocket",
                     "components": {
                       "custom_data": {
                         "nova_rocket": {
@@ -202,29 +197,30 @@
                       "minecraft:fireworks": {
                         "explosions": [
                           {
-                            "shape": "small_ball",
                             "colors": [
                               16711680,
                               16744319
                             ],
                             "has_trail": true,
-                            "has_twinkle": true
+                            "has_twinkle": true,
+                            "shape": "small_ball"
                           }
                         ],
                         "flight_duration": 3
                       }
-                    }
+                    },
+                    "id": "minecraft:firework_rocket"
                   }
                 ],
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Nova Rocket",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Nova Rocket"
                   }
                 ]
               },
@@ -244,14 +240,13 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:charged_projectiles": [
                   {
-                    "id": "minecraft:firework_rocket",
                     "components": {
                       "custom_data": {
                         "nova_rocket": {
@@ -271,29 +266,30 @@
                       "minecraft:fireworks": {
                         "explosions": [
                           {
-                            "shape": "small_ball",
                             "colors": [
                               14602026,
                               15435844
                             ],
                             "has_trail": true,
-                            "has_twinkle": true
+                            "has_twinkle": true,
+                            "shape": "small_ball"
                           }
                         ],
                         "flight_duration": 3
                       }
-                    }
+                    },
+                    "id": "minecraft:firework_rocket"
                   }
                 ],
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Nova Rocket",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Nova Rocket"
                   }
                 ]
               },
@@ -309,15 +305,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:crossbow",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

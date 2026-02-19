@@ -1,16 +1,13 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:written_book",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:written_book_content": {
+                  "author": "Zeronia",
                   "pages": [
                     [
                       "",
@@ -27,8 +24,8 @@
                       "\n     ",
                       {
                         "color": "light_purple",
-                        "underlined": true,
-                        "text": "Missile Display"
+                        "text": "Missile Display",
+                        "underlined": true
                       },
                       "\n",
                       {
@@ -37,173 +34,173 @@
                       },
                       "\n\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 6
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "TomaTwo",
                         "click_event": {
                           "action": "change_page",
                           "page": 6
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "TomaTwo"
                       },
                       "\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 7
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "A.N.T.",
                         "click_event": {
                           "action": "change_page",
                           "page": 7
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "A.N.T."
                       },
                       "\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 8
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Blade",
                         "click_event": {
                           "action": "change_page",
                           "page": 8
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Blade"
                       },
                       "\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 9
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Catapult",
                         "click_event": {
                           "action": "change_page",
                           "page": 9
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Catapult"
                       },
                       "\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 10
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Slasher",
                         "click_event": {
                           "action": "change_page",
                           "page": 10
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Slasher"
                       },
                       "\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 11
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Lifter",
                         "click_event": {
                           "action": "change_page",
                           "page": 11
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Lifter"
                       },
                       "\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 12
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Chronullifier",
                         "click_event": {
                           "action": "change_page",
                           "page": 12
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Chronullifier"
                       },
                       "\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 13
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "ElderGuardian",
                         "click_event": {
                           "action": "change_page",
                           "page": 13
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "ElderGuardian"
                       },
                       "\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 14
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Citadel",
                         "click_event": {
                           "action": "change_page",
                           "page": 14
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Citadel"
                       },
                       "\n",
                       {
-                        "color": "green",
-                        "text": "[Normal]",
                         "click_event": {
                           "action": "change_page",
                           "page": 15
-                        }
+                        },
+                        "color": "green",
+                        "text": "[Normal]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Gemini",
                         "click_event": {
                           "action": "change_page",
                           "page": 15
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Gemini"
                       }
                     ],
                     [
@@ -221,8 +218,8 @@
                       "\n     ",
                       {
                         "color": "light_purple",
-                        "underlined": true,
-                        "text": "Missile Display"
+                        "text": "Missile Display",
+                        "underlined": true
                       },
                       "\n",
                       {
@@ -231,173 +228,173 @@
                       },
                       "\n\n",
                       {
-                        "color": "gold",
-                        "text": "[Lightning]",
                         "click_event": {
                           "action": "change_page",
                           "page": 16
-                        }
+                        },
+                        "color": "gold",
+                        "text": "[Lightning]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Thunderbolt",
                         "click_event": {
                           "action": "change_page",
                           "page": 16
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Thunderbolt"
                       },
                       "\n",
                       {
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 17
+                        },
                         "color": "gold",
-                        "text": "[Lightning]",
+                        "text": "[Lightning]"
+                      },
+                      {
                         "click_event": {
                           "action": "change_page",
                           "page": 17
-                        }
-                      },
-                      {
+                        },
                         "color": "dark_gray",
-                        "text": "Hurricane",
-                        "click_event": {
-                          "action": "change_page",
-                          "page": 17
-                        }
+                        "text": "Hurricane"
                       },
                       "\n",
                       {
-                        "color": "red",
-                        "text": "[Heavy]",
                         "click_event": {
                           "action": "change_page",
                           "page": 18
-                        }
+                        },
+                        "color": "red",
+                        "text": "[Heavy]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Auxiliary",
                         "click_event": {
                           "action": "change_page",
                           "page": 18
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Auxiliary"
                       },
                       "\n",
                       {
-                        "color": "red",
-                        "text": "[Heavy]",
                         "click_event": {
                           "action": "change_page",
                           "page": 19
-                        }
+                        },
+                        "color": "red",
+                        "text": "[Heavy]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Warhead",
                         "click_event": {
                           "action": "change_page",
                           "page": 19
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Warhead"
                       },
                       "\n",
                       {
-                        "color": "red",
-                        "text": "[Heavy]",
                         "click_event": {
                           "action": "change_page",
                           "page": 20
-                        }
+                        },
+                        "color": "red",
+                        "text": "[Heavy]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Rifter",
                         "click_event": {
                           "action": "change_page",
                           "page": 20
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Rifter"
                       },
                       "\n",
                       {
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 21
+                        },
                         "color": "red",
-                        "text": "[Heavy]",
+                        "text": "[Heavy]"
+                      },
+                      {
                         "click_event": {
                           "action": "change_page",
                           "page": 21
-                        }
-                      },
-                      {
+                        },
                         "color": "dark_gray",
-                        "text": "Juggerbuster",
-                        "click_event": {
-                          "action": "change_page",
-                          "page": 21
-                        }
+                        "text": "Juggerbuster"
                       },
                       "\n",
                       {
-                        "color": "dark_purple",
-                        "text": "[Special]",
                         "click_event": {
                           "action": "change_page",
                           "page": 22
-                        }
+                        },
+                        "color": "dark_purple",
+                        "text": "[Special]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Hypersonic",
                         "click_event": {
                           "action": "change_page",
                           "page": 22
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Hypersonic"
                       },
                       "\n",
                       {
-                        "color": "dark_purple",
-                        "text": "[Special]",
                         "click_event": {
                           "action": "change_page",
                           "page": 23
-                        }
+                        },
+                        "color": "dark_purple",
+                        "text": "[Special]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Bullet",
                         "click_event": {
                           "action": "change_page",
                           "page": 23
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Bullet"
                       },
                       "\n",
                       {
-                        "color": "dark_purple",
-                        "text": "[Special]",
                         "click_event": {
                           "action": "change_page",
                           "page": 24
-                        }
+                        },
+                        "color": "dark_purple",
+                        "text": "[Special]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Duplex",
                         "click_event": {
                           "action": "change_page",
                           "page": 24
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Duplex"
                       },
                       "\n",
                       {
-                        "color": "dark_purple",
-                        "text": "[Special]",
                         "click_event": {
                           "action": "change_page",
                           "page": 25
-                        }
+                        },
+                        "color": "dark_purple",
+                        "text": "[Special]"
                       },
                       {
-                        "color": "dark_gray",
-                        "text": "Broadsword",
                         "click_event": {
                           "action": "change_page",
                           "page": 25
-                        }
+                        },
+                        "color": "dark_gray",
+                        "text": "Broadsword"
                       }
                     ],
                     "",
@@ -424,23 +421,26 @@
                     "",
                     "",
                     {
-                      "text": " \n\n\n  Display on cooldown.\n       Please wait.",
-                      "color": "red"
+                      "color": "red",
+                      "text": " \n\n\n  Display on cooldown.\n       Please wait."
                     },
                     {
-                      "text": " \n\n\n  Display on cooldown.\n       Please wait.",
-                      "color": "red"
+                      "color": "red",
+                      "text": " \n\n\n  Display on cooldown.\n       Please wait."
                     }
                   ],
-                  "author": "Zeronia",
-                  "title": "Missile Display",
-                  "resolved": true
+                  "resolved": true,
+                  "title": "Missile Display"
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             }
-          ]
+          ],
+          "name": "minecraft:written_book",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

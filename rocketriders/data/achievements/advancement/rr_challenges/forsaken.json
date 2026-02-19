@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Forsaken",
-      "color": "#fe6309"
-    },
-    "description": {
-      "text": "Start a match with a teammate who leaves soon after and still win.",
-      "color": "gold"
-    },
-    "icon": {
-      "id": "minecraft:iron_block"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Start a match with a teammate who leaves soon after and still win."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:iron_block"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "Forsaken"
     }
   },
   "parent": "achievements:rr_challenges/loss"

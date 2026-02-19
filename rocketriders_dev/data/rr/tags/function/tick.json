@@ -1,8 +1,8 @@
 {
-	"values": [
-		{
-			"id": "dev:tick",
-			"required": false
-		}
-	]
+  "values": [
+    {
+      "id": "dev:tick",
+      "required": false
+    }
+  ]
 }

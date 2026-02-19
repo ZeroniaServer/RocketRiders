@@ -1,47 +1,47 @@
 {
-    "condition": "minecraft:any_of",
-    "terms": [
-        {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-                "slots": {
-                    "container.*": {
-                        "items": "minecraft:trident",
-                        "components": {
-                            "minecraft:damage": 7
-                        }
-                    }
-                }
-            }
-        },
-        {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-                "slots": {
-                    "weapon.offhand": {
-                        "items": "minecraft:trident",
-                        "components": {
-                            "minecraft:damage": 7
-                        }
-                    }
-                }
-            }
-        },
-        {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-                "slots": {
-                    "player.cursor": {
-                        "items": "minecraft:trident",
-                        "components": {
-                            "minecraft:damage": 7
-                        }
-                    }
-                }
-            }
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "container.*": {
+            "components": {
+              "minecraft:damage": 7
+            },
+            "items": "minecraft:trident"
+          }
         }
-    ]
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "weapon.offhand": {
+            "components": {
+              "minecraft:damage": 7
+            },
+            "items": "minecraft:trident"
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "player.cursor": {
+            "components": {
+              "minecraft:damage": 7
+            },
+            "items": "minecraft:trident"
+          }
+        }
+      }
+    }
+  ]
 }

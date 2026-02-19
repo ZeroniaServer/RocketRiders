@@ -11,13 +11,13 @@
         {
           "condition": "minecraft:location_check",
           "predicate": {
+            "dimension": "minecraft:overworld",
             "position": {
               "z": {
                 "min": -62,
                 "max": 63
               }
-            },
-            "dimension": "minecraft:overworld"
+            }
           }
         }
       ]
@@ -35,13 +35,13 @@
         {
           "condition": "minecraft:location_check",
           "predicate": {
+            "dimension": "minecraft:overworld",
             "position": {
               "z": {
                 "min": -50,
                 "max": 51
               }
-            },
-            "dimension": "minecraft:overworld"
+            }
           }
         }
       ]

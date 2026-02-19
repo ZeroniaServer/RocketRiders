@@ -1,7 +1,7 @@
 {
-	"condition": "minecraft:inverted",
-	"term": {
-		"condition": "minecraft:reference",
-		"name": "rr:server_mode/cubekrowd_custom"
-	}
+  "condition": "minecraft:inverted",
+  "term": {
+    "condition": "minecraft:reference",
+    "name": "rr:server_mode/cubekrowd_custom"
+  }
 }

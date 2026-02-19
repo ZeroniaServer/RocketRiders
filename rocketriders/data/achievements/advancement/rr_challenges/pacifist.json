@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Pacifist",
-      "color": "#00be2f"
-    },
-    "description": {
-      "text": "Win a match without killing anyone.",
-      "color": "green"
-    },
-    "icon": {
-      "id": "minecraft:shield"
-    },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "green",
+      "text": "Win a match without killing anyone."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:shield"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#00be2f",
+      "text": "Pacifist"
     }
   },
   "parent": "achievements:a17z/root"

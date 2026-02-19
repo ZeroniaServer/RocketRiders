@@ -1,14 +1,10 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:lingering_potion",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "splash"
@@ -21,89 +17,89 @@
                     "splash"
                   ]
                 },
-                "minecraft:max_stack_size": 64,
-                "minecraft:item_name": [
-                  {
-                    "text": "[Utility] ",
-                    "color": "light_purple",
-                    "bold": true
-                  },
-                  {
-                    "text": "Splash",
-                    "color": "white"
-                  }
-                ],
                 "minecraft:custom_name": [
                   {
-                    "text": "[Utility] ",
-                    "color": "light_purple",
                     "bold": true,
-                    "italic": false
+                    "color": "light_purple",
+                    "italic": false,
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Splash",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Splash"
+                  }
+                ],
+                "minecraft:item_name": [
+                  {
+                    "bold": true,
+                    "color": "light_purple",
+                    "text": "[Utility] "
+                  },
+                  {
+                    "color": "white",
+                    "text": "Splash"
                   }
                 ],
                 "minecraft:lore": [
                   {
-                    "text": "Spawns a brief water source where it",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Spawns a brief water source where it"
                   },
                   {
-                    "text": "lands. Used to restart missiles, reduce",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "lands. Used to restart missiles, reduce"
                   },
                   {
-                    "text": "explosions, or break your fall.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "explosions, or break your fall."
                   }
                 ],
+                "minecraft:max_stack_size": 64,
                 "minecraft:potion_contents": {
-                  "potion": "minecraft:water",
                   "custom_effects": [
                     {
-                      "id": "minecraft:saturation",
                       "amplifier": 0,
                       "duration": 1,
+                      "id": "minecraft:saturation",
                       "show_particles": false
                     }
-                  ]
+                  ],
+                  "potion": "minecraft:water"
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:potion_contents"
                   ]
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": [
-                  {
-                    "text": "[Utility] ",
-                    "color": "light_purple",
-                    "bold": true
-                  },
-                  {
-                    "text": "Splash",
-                    "color": "blue"
-                  }
-                ],
                 "minecraft:custom_name": [
                   {
-                    "text": "[Utility] ",
-                    "color": "light_purple",
                     "bold": true,
-                    "italic": false
+                    "color": "light_purple",
+                    "italic": false,
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Splash",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Splash"
+                  }
+                ],
+                "minecraft:item_name": [
+                  {
+                    "bold": true,
+                    "color": "light_purple",
+                    "text": "[Utility] "
+                  },
+                  {
+                    "color": "blue",
+                    "text": "Splash"
                   }
                 ]
               },
@@ -119,32 +115,32 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": [
-                  {
-                    "text": "[Utility] ",
-                    "color": "light_purple",
-                    "bold": true
-                  },
-                  {
-                    "text": "Splash",
-                    "color": "gold"
-                  }
-                ],
                 "minecraft:custom_name": [
                   {
-                    "text": "[Utility] ",
-                    "color": "light_purple",
                     "bold": true,
-                    "italic": false
+                    "color": "light_purple",
+                    "italic": false,
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Splash",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Splash"
+                  }
+                ],
+                "minecraft:item_name": [
+                  {
+                    "bold": true,
+                    "color": "light_purple",
+                    "text": "[Utility] "
+                  },
+                  {
+                    "color": "gold",
+                    "text": "Splash"
                   }
                 ]
               },
@@ -160,15 +156,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:lingering_potion",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

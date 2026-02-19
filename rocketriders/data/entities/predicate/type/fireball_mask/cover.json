@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "type": "minecraft:interaction",
     "predicates": {
       "minecraft:custom_data": {
         "fireball_mask": {
           "cover": {}
         }
       }
-    }
+    },
+    "type": "minecraft:interaction"
   }
 }

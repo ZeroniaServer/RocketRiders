@@ -1,6 +1,30 @@
 {
-  "type": "minecraft:multi_action",
-  "title": "Rocket Riders",
+  "actions": [
+    {
+      "action": {
+        "command": "trigger settings",
+        "type": "minecraft:run_command"
+      },
+      "label": "Settings..."
+    },
+    {
+      "action": {
+        "command": "trigger settings set 101",
+        "type": "minecraft:run_command"
+      },
+      "label": "Leave Match"
+    }
+  ],
+  "after_action": "none",
+  "exit_action": {
+    "action": {
+      "command": "trigger settings set -1",
+      "type": "minecraft:run_command"
+    },
+    "label": {
+      "translate": "gui.done"
+    }
+  },
   "external_title": [
     "",
     {
@@ -17,30 +41,6 @@
     "..."
   ],
   "pause": false,
-  "after_action": "none",
-  "actions": [
-    {
-      "label": "Settings...",
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger settings"
-      }
-    },
-    {
-      "label": "Leave Match",
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger settings set 101"
-      }
-    }
-  ],
-  "exit_action": {
-    "label": {
-      "translate": "gui.done"
-    },
-    "action": {
-      "type": "minecraft:run_command",
-      "command": "trigger settings set -1"
-    }
-  }
+  "title": "Rocket Riders",
+  "type": "minecraft:multi_action"
 }

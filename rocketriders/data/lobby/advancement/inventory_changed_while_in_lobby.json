@@ -1,7 +1,6 @@
 {
   "criteria": {
     "inventory_changed_while_in_lobby": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "player": [
           {
@@ -9,7 +8,8 @@
             "name": "custom:team/lobby"
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "rewards": {

@@ -1,9 +1,9 @@
 {
-  "function": "minecraft:set_components",
   "components": {
     "minecraft:use_effects": {
       "can_sprint": true,
       "speed_multiplier": 1
     }
-  }
+  },
+  "function": "minecraft:set_components"
 }

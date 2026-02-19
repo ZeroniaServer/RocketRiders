@@ -1,45 +1,85 @@
 {
-  "parent": "achievements:rr_fffmedium/root",
-  "display": {
-    "title": {
-      "color": "#fe6309",
-      "text": "They're Useful!"
+  "criteria": {
+    "1": {
+      "trigger": "minecraft:impossible"
     },
+    "10": {
+      "trigger": "minecraft:impossible"
+    },
+    "11": {
+      "trigger": "minecraft:impossible"
+    },
+    "12": {
+      "trigger": "minecraft:impossible"
+    },
+    "13": {
+      "trigger": "minecraft:impossible"
+    },
+    "14": {
+      "trigger": "minecraft:impossible"
+    },
+    "15": {
+      "trigger": "minecraft:impossible"
+    },
+    "16": {
+      "trigger": "minecraft:impossible"
+    },
+    "17": {
+      "trigger": "minecraft:impossible"
+    },
+    "18": {
+      "trigger": "minecraft:impossible"
+    },
+    "19": {
+      "trigger": "minecraft:impossible"
+    },
+    "2": {
+      "trigger": "minecraft:impossible"
+    },
+    "20": {
+      "trigger": "minecraft:impossible"
+    },
+    "3": {
+      "trigger": "minecraft:impossible"
+    },
+    "4": {
+      "trigger": "minecraft:impossible"
+    },
+    "5": {
+      "trigger": "minecraft:impossible"
+    },
+    "6": {
+      "trigger": "minecraft:impossible"
+    },
+    "7": {
+      "trigger": "minecraft:impossible"
+    },
+    "8": {
+      "trigger": "minecraft:impossible"
+    },
+    "9": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
     "description": {
       "color": "gold",
       "text": "Prevent 20 TNT explosions (all-time) using the Splash."
     },
+    "frame": "challenge",
+    "hidden": false,
     "icon": {
-      "id": "minecraft:lingering_potion",
       "components": {
         "minecraft:potion_contents": "minecraft:water"
-      }
+      },
+      "id": "minecraft:lingering_potion"
     },
-    "frame": "challenge",
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
+    "title": {
+      "color": "#fe6309",
+      "text": "They're Useful!"
+    }
   },
-  "criteria": {
-    "1": {"trigger":"minecraft:impossible"},
-    "2": {"trigger":"minecraft:impossible"},
-    "3": {"trigger":"minecraft:impossible"},
-    "4": {"trigger":"minecraft:impossible"},
-    "5": {"trigger":"minecraft:impossible"},
-    "6": {"trigger":"minecraft:impossible"},
-    "7": {"trigger":"minecraft:impossible"},
-    "8": {"trigger":"minecraft:impossible"},
-    "9": {"trigger":"minecraft:impossible"},
-    "10": {"trigger":"minecraft:impossible"},
-    "11": {"trigger":"minecraft:impossible"},
-    "12": {"trigger":"minecraft:impossible"},
-    "13": {"trigger":"minecraft:impossible"},
-    "14": {"trigger":"minecraft:impossible"},
-    "15": {"trigger":"minecraft:impossible"},
-    "16": {"trigger":"minecraft:impossible"},
-    "17": {"trigger":"minecraft:impossible"},
-    "18": {"trigger":"minecraft:impossible"},
-    "19": {"trigger":"minecraft:impossible"},
-    "20": {"trigger":"minecraft:impossible"}
-  }
+  "parent": "achievements:rr_fffmedium/root"
 }

@@ -10,18 +10,18 @@
     "name": [
       "",
       {
-        "text": "Spell Book ",
         "bold": true,
-        "color": "light_purple"
+        "color": "light_purple",
+        "text": "Spell Book "
       },
       {
-        "translate": "[%s]",
         "color": "dark_gray",
+        "translate": "[%s]",
         "with": [
           {
-            "text": "🌀",
+            "bold": false,
             "color": "aqua",
-            "bold": false
+            "text": "\ud83c\udf00"
           }
         ]
       }
@@ -33,13 +33,13 @@
     "lore": [
       [
         {
-          "text": "Current Spell: ",
           "color": "white",
-          "italic": false
+          "italic": false,
+          "text": "Current Spell: "
         },
         {
-          "text": "Wind",
-          "color": "aqua"
+          "color": "aqua",
+          "text": "Wind"
         }
       ]
     ],

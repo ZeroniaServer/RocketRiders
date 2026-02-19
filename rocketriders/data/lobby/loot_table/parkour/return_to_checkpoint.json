@@ -1,15 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:iron_nugget",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:consumable": {
+                  "consume_seconds": 2147483647,
+                  "has_consume_particles": false,
+                  "sound": "minecraft:intentionally_empty"
+                },
                 "minecraft:custom_data": {
                   "id": "parkour/return_to_checkpoint"
                 },
@@ -21,27 +22,26 @@
                   ]
                 },
                 "minecraft:item_model": "minecraft:compass",
-                "minecraft:max_stack_size": 1,
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "aqua",
                   "italic": false,
                   "text": "Return to Checkpoint"
                 },
-                "minecraft:consumable": {
-                  "consume_seconds": 2147483647,
-                  "has_consume_particles": false,
-                  "sound": "minecraft:intentionally_empty"
-                }
-              }
+                "minecraft:max_stack_size": 1
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_normal_use_effects"
             }
-          ]
+          ],
+          "name": "minecraft:iron_nugget",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

@@ -1,27 +1,30 @@
 {
-  "type": "minecraft:block",
+  "__smithed__": {
+    "priority": {
+      "stage": "early"
+    },
+    "rules": [
+      {
+        "source": {
+          "path": "pools[0].conditions[0]",
+          "type": "reference"
+        },
+        "target": "pools[0].conditions",
+        "type": "append"
+      },
+      {
+        "source": {
+          "path": "pools[1]",
+          "type": "reference"
+        },
+        "target": "pools",
+        "type": "append"
+      }
+    ]
+  },
   "pools": [
     {
-      "rolls": 1,
       "bonus_rolls": 0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:yellow_shulker_box",
-          "functions": [
-            {
-              "function": "minecraft:copy_components",
-              "source": "block_entity",
-              "include": [
-                "minecraft:custom_name",
-                "minecraft:container",
-                "minecraft:lock",
-                "minecraft:container_loot"
-              ]
-            }
-          ]
-        }
-      ],
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -36,17 +39,29 @@
             }
           }
         }
-      ]
-    },
-    {
-      "rolls": 1,
-      "bonus_rolls": 0,
+      ],
       "entries": [
         {
-          "type": "minecraft:dynamic",
-          "name": "minecraft:contents"
+          "functions": [
+            {
+              "function": "minecraft:copy_components",
+              "include": [
+                "minecraft:custom_name",
+                "minecraft:container",
+                "minecraft:lock",
+                "minecraft:container_loot"
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "minecraft:yellow_shulker_box",
+          "type": "minecraft:item"
         }
       ],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -58,31 +73,16 @@
             }
           }
         }
-      ]
+      ],
+      "entries": [
+        {
+          "name": "minecraft:contents",
+          "type": "minecraft:dynamic"
+        }
+      ],
+      "rolls": 1
     }
   ],
   "random_sequence": "minecraft:blocks/yellow_shulker_box",
-  "__smithed__": {
-    "priority": {
-      "stage": "early"
-    },
-    "rules": [
-      {
-        "type": "append",
-        "target": "pools[0].conditions",
-        "source": {
-          "type": "reference",
-          "path": "pools[0].conditions[0]"
-        }
-      },
-      {
-        "type": "append",
-        "target": "pools",
-        "source": {
-          "type": "reference",
-          "path": "pools[1]"
-        }
-      }
-    ]
-  }
+  "type": "minecraft:block"
 }

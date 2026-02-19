@@ -1,12 +1,12 @@
 {
   "condition": "minecraft:value_check",
+  "range": 1,
   "value": {
-    "type": "minecraft:score",
+    "score": "gamemode_components",
     "target": {
-      "type": "minecraft:fixed",
-      "name": "$custom_team_colors"
+      "name": "$custom_team_colors",
+      "type": "minecraft:fixed"
     },
-    "score": "gamemode_components"
-  },
-  "range": 1
+    "type": "minecraft:score"
+  }
 }

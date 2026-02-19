@@ -1,31 +1,11 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:white_banner",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_data": {
-                  "id": "loser_banner"
-                },
-                "minecraft:custom_model_data": {
-                  "floats": [],
-                  "strings": [
-                    "rocketriders",
-                    "loser_banner",
-                    "none"
-                  ]
-                },
-                "minecraft:item_name": {
-                  "text": "Flag of Shameful Loss",
-                  "bold": true,
-                  "color": "white"
-                },
                 "minecraft:banner_patterns": [
                   {
                     "color": "white",
@@ -60,22 +40,37 @@
                     "pattern": "square_top_left"
                   }
                 ],
+                "minecraft:custom_data": {
+                  "id": "loser_banner"
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "loser_banner",
+                    "none"
+                  ]
+                },
+                "minecraft:enchantment_glint_override": false,
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },
-                "minecraft:enchantment_glint_override": false,
-                "minecraft:unbreakable": {},
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "white",
+                  "text": "Flag of Shameful Loss"
+                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:banner_patterns",
                     "minecraft:enchantments"
                   ]
-                }
-              }
+                },
+                "minecraft:unbreakable": {}
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_item",
-              "item": "minecraft:blue_banner",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -88,16 +83,12 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_item",
+              "item": "minecraft:blue_banner"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": {
-                  "text": "Flag of Shameful Loss",
-                  "bold": true,
-                  "color": "blue"
-                },
                 "minecraft:banner_patterns": [
                   {
                     "color": "white",
@@ -131,7 +122,12 @@
                     "color": "white",
                     "pattern": "minecraft:square_top_left"
                   }
-                ]
+                ],
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Flag of Shameful Loss"
+                }
               },
               "conditions": [
                 {
@@ -145,11 +141,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_item",
-              "item": "minecraft:yellow_banner",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -162,16 +157,12 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_item",
+              "item": "minecraft:yellow_banner"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": {
-                  "text": "Flag of Shameful Loss",
-                  "bold": true,
-                  "color": "gold"
-                },
                 "minecraft:banner_patterns": [
                   {
                     "color": "white",
@@ -205,7 +196,12 @@
                     "color": "white",
                     "pattern": "square_top_left"
                   }
-                ]
+                ],
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "gold",
+                  "text": "Flag of Shameful Loss"
+                }
               },
               "conditions": [
                 {
@@ -219,15 +215,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:white_banner",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

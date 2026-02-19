@@ -1,14 +1,10 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "cluster_fireball",
@@ -23,64 +19,64 @@
                     "none"
                   ]
                 },
+                "minecraft:enchantment_glint_override": true,
                 "minecraft:entity_data": {
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:blaze_spawn_egg",
-                "minecraft:enchantment_glint_override": true,
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Cluster Fireball",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Cluster Fireball"
                   }
                 ],
                 "minecraft:lore": [
                   {
-                    "text": "Spawns a cluster of Fireballs. Punch or",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Spawns a cluster of Fireballs. Punch or"
                   },
                   {
-                    "text": "shoot Fireballs to quickly blow up",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "shoot Fireballs to quickly blow up"
                   },
                   {
-                    "text": "missiles, blocks, or enemy players.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "missiles, blocks, or enemy players."
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Cluster Fireball",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Cluster Fireball"
                   }
                 ]
               },
@@ -96,20 +92,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Cluster Fireball",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Cluster Fireball"
                   }
                 ]
               },
@@ -125,15 +121,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

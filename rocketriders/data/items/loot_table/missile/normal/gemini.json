@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/gemini",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "gemini"
+                    "missile": "gemini",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -31,91 +27,91 @@
                 "minecraft:item_model": "minecraft:fox_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Gemini",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Gemini"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "4",
-                      "color": "red"
+                      "color": "red",
+                      "text": "4"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "2.0m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "2.0m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "Evtema3 & samnrad",
-                      "color": "red"
+                      "color": "red",
+                      "text": "Evtema3 & samnrad"
                     }
                   ],
                   "",
                   {
-                    "text": "The Gemini is a twin missile, in that",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "The Gemini is a twin missile, in that"
                   },
                   {
-                    "text": "if one side is stopped, the other",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "if one side is stopped, the other"
                   },
                   {
-                    "text": "side of the missile will keep going.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "side of the missile will keep going."
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Gemini",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Gemini"
                   }
                 ]
               },
@@ -131,20 +127,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Gemini",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Gemini"
                   }
                 ]
               },
@@ -160,15 +156,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

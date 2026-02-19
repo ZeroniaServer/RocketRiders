@@ -1,10 +1,10 @@
 {
-    "criteria": {
-        "tick": {
-            "trigger": "minecraft:tick"
-        }
-    },
-    "rewards": {
-        "function": "rr_crusade:game/bookcooldown"
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
     }
+  },
+  "rewards": {
+    "function": "rr_crusade:game/bookcooldown"
+  }
 }

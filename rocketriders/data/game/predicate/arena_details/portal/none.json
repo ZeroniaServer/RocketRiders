@@ -13,17 +13,17 @@
       "condition": "minecraft:inverted",
       "term": {
         "condition": "minecraft:value_check",
-        "value": {
-          "type": "minecraft:score",
-          "target": {
-            "type": "minecraft:fixed",
-            "name": "$arena_details/portal"
-          },
-          "score": "config"
-        },
         "range": {
           "min": 1,
           "max": 4
+        },
+        "value": {
+          "score": "config",
+          "target": {
+            "name": "$arena_details/portal",
+            "type": "minecraft:fixed"
+          },
+          "type": "minecraft:score"
         }
       }
     }

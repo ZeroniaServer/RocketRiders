@@ -8,46 +8,46 @@
   },
   {
     "condition": "minecraft:value_check",
-    "value": {
-      "type": "minecraft:score",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$yellow_team_count"
-      },
-      "score": "global"
-    },
     "range": {
       "min": {
-        "type": "minecraft:score",
+        "score": "global",
         "target": {
-          "type": "minecraft:fixed",
-          "name": "$blue_team_count"
+          "name": "$blue_team_count",
+          "type": "minecraft:fixed"
         },
-        "score": "global"
+        "type": "minecraft:score"
       }
+    },
+    "value": {
+      "score": "global",
+      "target": {
+        "name": "$yellow_team_count",
+        "type": "minecraft:fixed"
+      },
+      "type": "minecraft:score"
     }
   },
   {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$yellow_team_count"
-        },
-        "score": "global"
-      },
       "range": {
         "max": {
-          "type": "minecraft:score",
+          "score": "global",
           "target": {
-            "type": "minecraft:fixed",
-            "name": "$blue_team_count"
+            "name": "$blue_team_count",
+            "type": "minecraft:fixed"
           },
-          "score": "global"
+          "type": "minecraft:score"
         }
+      },
+      "value": {
+        "score": "global",
+        "target": {
+          "name": "$yellow_team_count",
+          "type": "minecraft:fixed"
+        },
+        "type": "minecraft:score"
       }
     }
   }

@@ -1,18 +1,14 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:spectral_arrow",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
-                  "id": "spectral_arrow",
-                  "Droppable": true
+                  "Droppable": true,
+                  "id": "spectral_arrow"
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],
@@ -23,19 +19,23 @@
                   ]
                 },
                 "minecraft:item_name": {
-                  "text": "Spectral Arrow",
                   "bold": true,
-                  "color": "dark_purple"
+                  "color": "dark_purple",
+                  "text": "Spectral Arrow"
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:spectral_arrow",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

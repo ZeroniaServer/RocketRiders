@@ -1,14 +1,10 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:elytra",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "celebratory_elytra"
@@ -21,37 +17,37 @@
                     "none"
                   ]
                 },
-                "minecraft:equippable": {
-                  "slot": "chest",
-                  "damage_on_hurt": false,
-                  "equip_sound": "minecraft:intentionally_empty",
-                  "asset_id": "minecraft:elytra"
-                },
+                "minecraft:enchantment_glint_override": false,
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },
-                "minecraft:enchantment_glint_override": false,
-                "minecraft:unbreakable": {},
+                "minecraft:equippable": {
+                  "asset_id": "minecraft:elytra",
+                  "damage_on_hurt": false,
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "slot": "chest"
+                },
                 "minecraft:item_name": {
-                  "text": "Elytra",
                   "bold": true,
-                  "color": "white"
+                  "color": "white",
+                  "text": "Elytra"
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:enchantments",
                     "minecraft:unbreakable"
                   ]
-                }
-              }
+                },
+                "minecraft:unbreakable": {}
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "Elytra",
                   "bold": true,
-                  "color": "blue"
+                  "color": "blue",
+                  "text": "Elytra"
                 }
               },
               "conditions": [
@@ -66,15 +62,15 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "Elytra",
                   "bold": true,
-                  "color": "gold"
+                  "color": "gold",
+                  "text": "Elytra"
                 }
               },
               "conditions": [
@@ -89,15 +85,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:elytra",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

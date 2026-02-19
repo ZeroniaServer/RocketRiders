@@ -1,12 +1,12 @@
 {
   "condition": "minecraft:value_check",
-    "value": {
-    "type": "minecraft:score",
+  "range": 1,
+  "value": {
+    "score": "global",
     "target": {
-      "type": "minecraft:fixed",
-      "name": "$1v1_duel_time_out_period"
+      "name": "$1v1_duel_time_out_period",
+      "type": "minecraft:fixed"
     },
-    "score": "global"
-  },
-  "range": 1
+    "type": "minecraft:score"
+  }
 }

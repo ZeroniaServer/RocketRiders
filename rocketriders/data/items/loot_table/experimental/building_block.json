@@ -1,14 +1,10 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:white_concrete",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "building_block"
@@ -22,15 +18,14 @@
                   ]
                 },
                 "minecraft:item_name": {
-                  "text": "Building Block",
                   "bold": true,
-                  "color": "white"
+                  "color": "white",
+                  "text": "Building Block"
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_item",
-              "item": "minecraft:light_blue_concrete",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -50,11 +45,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_item",
+              "item": "minecraft:light_blue_concrete"
             },
             {
-              "function": "minecraft:set_item",
-              "item": "minecraft:red_concrete",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -71,15 +66,16 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_item",
+              "item": "minecraft:red_concrete"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "Building Block",
                   "bold": true,
-                  "color": "blue"
+                  "color": "blue",
+                  "text": "Building Block"
                 }
               },
               "conditions": [
@@ -94,11 +90,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_item",
-              "item": "minecraft:yellow_concrete",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -111,15 +106,16 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_item",
+              "item": "minecraft:yellow_concrete"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "Building Block",
                   "bold": true,
-                  "color": "gold"
+                  "color": "gold",
+                  "text": "Building Block"
                 }
               },
               "conditions": [
@@ -134,15 +130,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:white_concrete",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

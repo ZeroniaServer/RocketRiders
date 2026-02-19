@@ -1,15 +1,14 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:firework_rocket",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:can_place_on": {
+                  "blocks": "#custom:missileandbase"
+                },
                 "minecraft:custom_data": {
                   "id": "celebratory_fireworks"
                 },
@@ -21,26 +20,23 @@
                     "none"
                   ]
                 },
-                "minecraft:item_name": {
-                  "text": "Celebratory Fireworks",
-                  "bold": true,
-                  "color": "white"
-                },
                 "minecraft:fireworks": {
                   "explosions": [
                     {
-                      "shape": "large_ball",
                       "colors": [
                         16777215
                       ],
                       "has_trail": true,
-                      "has_twinkle": true
+                      "has_twinkle": true,
+                      "shape": "large_ball"
                     }
                   ],
                   "flight_duration": 3
                 },
-                "minecraft:can_place_on": {
-                  "blocks": "#custom:missileandbase"
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "white",
+                  "text": "Celebratory Fireworks"
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
@@ -48,33 +44,33 @@
                     "minecraft:fireworks"
                   ]
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_count",
-              "count": 5
+              "count": 5,
+              "function": "minecraft:set_count"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": {
-                  "text": "Celebratory Fireworks",
-                  "bold": true,
-                  "color": "blue"
-                },
                 "minecraft:fireworks": {
                   "explosions": [
                     {
-                      "shape": "large_ball",
                       "colors": [
                         2437522,
                         2651799
                       ],
                       "has_trail": true,
-                      "has_twinkle": true
+                      "has_twinkle": true,
+                      "shape": "large_ball"
                     }
                   ],
                   "flight_duration": 3
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Celebratory Fireworks"
                 }
               },
               "conditions": [
@@ -96,29 +92,29 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": {
-                  "text": "Celebratory Fireworks",
-                  "bold": true,
-                  "color": "blue"
-                },
                 "minecraft:fireworks": {
                   "explosions": [
                     {
-                      "shape": "large_ball",
                       "colors": [
                         16711680,
                         16744319
                       ],
                       "has_trail": true,
-                      "has_twinkle": true
+                      "has_twinkle": true,
+                      "shape": "large_ball"
                     }
                   ],
                   "flight_duration": 3
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Celebratory Fireworks"
                 }
               },
               "conditions": [
@@ -137,29 +133,29 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": {
-                  "text": "Celebratory Fireworks",
-                  "bold": true,
-                  "color": "gold"
-                },
                 "minecraft:fireworks": {
                   "explosions": [
                     {
-                      "shape": "large_ball",
                       "colors": [
                         14602026,
                         15435844
                       ],
                       "has_trail": true,
-                      "has_twinkle": true
+                      "has_twinkle": true,
+                      "shape": "large_ball"
                     }
                   ],
                   "flight_duration": 3
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "gold",
+                  "text": "Celebratory Fireworks"
                 }
               },
               "conditions": [
@@ -174,15 +170,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:firework_rocket",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

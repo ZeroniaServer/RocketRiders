@@ -1,8 +1,8 @@
 {
   "values": [
     {
-        "id": "experimental:load",
-        "required": false
+      "id": "experimental:load",
+      "required": false
     }
   ]
 }

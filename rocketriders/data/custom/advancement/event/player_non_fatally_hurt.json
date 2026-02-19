@@ -1,7 +1,6 @@
 {
   "criteria": {
     "player_non_fatally_hurt": {
-      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "player": [
           {
@@ -15,7 +14,8 @@
             "name": "custom:alive"
           }
         ]
-      }
+      },
+      "trigger": "minecraft:entity_hurt_player"
     }
   },
   "rewards": {

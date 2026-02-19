@@ -1,12 +1,12 @@
 {
   "condition": "minecraft:value_check",
+  "range": 0,
   "value": {
-    "type": "minecraft:score",
+    "score": "global",
     "target": {
-      "type": "minecraft:fixed",
-      "name": "$periodic_tick.5"
+      "name": "$periodic_tick.5",
+      "type": "minecraft:fixed"
     },
-    "score": "global"
-  },
-  "range": 0
+    "type": "minecraft:score"
+  }
 }

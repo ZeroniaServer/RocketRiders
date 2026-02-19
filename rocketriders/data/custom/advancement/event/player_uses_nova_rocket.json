@@ -1,8 +1,14 @@
 {
   "criteria": {
     "player_uses_nova_rocket": {
-      "trigger": "minecraft:shot_crossbow",
       "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "id": "nova_rocket"
+            }
+          }
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
@@ -10,15 +16,9 @@
               "dimension": "minecraft:overworld"
             }
           }
-        ],
-        "item": {
-          "predicates": {
-            "minecraft:custom_data": {
-              "id": "nova_rocket"
-            }
-          }
-        }
-      }
+        ]
+      },
+      "trigger": "minecraft:shot_crossbow"
     }
   },
   "rewards": {

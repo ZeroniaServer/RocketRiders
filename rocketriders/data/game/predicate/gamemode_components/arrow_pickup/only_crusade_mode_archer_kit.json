@@ -1,12 +1,12 @@
 {
   "condition": "minecraft:value_check",
+  "range": 1,
   "value": {
-    "type": "minecraft:score",
+    "score": "gamemode_components",
     "target": {
-      "type": "minecraft:fixed",
-      "name": "$arrow_pickup/only_crusade_mode_archer_kit"
+      "name": "$arrow_pickup/only_crusade_mode_archer_kit",
+      "type": "minecraft:fixed"
     },
-    "score": "gamemode_components"
-  },
-  "range": 1
+    "type": "minecraft:score"
+  }
 }

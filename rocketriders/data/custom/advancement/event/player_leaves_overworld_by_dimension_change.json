@@ -1,10 +1,10 @@
 {
   "criteria": {
     "move_from_overworld_to_another_dimension": {
-      "trigger": "minecraft:changed_dimension",
       "conditions": {
         "from": "minecraft:overworld"
-      }
+      },
+      "trigger": "minecraft:changed_dimension"
     }
   },
   "rewards": {

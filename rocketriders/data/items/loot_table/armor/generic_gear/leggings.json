@@ -1,40 +1,35 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:leather_leggings",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:equippable": {
-                  "slot": "legs",
-                  "equip_sound": "minecraft:intentionally_empty",
-                  "asset_id": "minecraft:leather"
-                },
-                "minecraft:item_name": {
-                  "text": "White Leggings",
-                  "bold": true,
-                  "color": "white"
-                },
-                "minecraft:dyed_color": -1,
-                "minecraft:unbreakable": {},
-                "minecraft:enchantments": {
-                  "minecraft:binding_curse": 1
-                },
-                "minecraft:enchantment_glint_override": false,
                 "minecraft:attribute_modifiers": [
                   {
-                    "id": "rocketriders:leggings",
-                    "slot": "legs",
                     "amount": 2,
+                    "id": "rocketriders:leggings",
                     "operation": "add_value",
+                    "slot": "legs",
                     "type": "minecraft:armor"
                   }
                 ],
+                "minecraft:dyed_color": -1,
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:enchantments": {
+                  "minecraft:binding_curse": 1
+                },
+                "minecraft:equippable": {
+                  "asset_id": "minecraft:leather",
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "slot": "legs"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "white",
+                  "text": "White Leggings"
+                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:attribute_modifiers",
@@ -43,21 +38,22 @@
                     "minecraft:trim",
                     "minecraft:unbreakable"
                   ]
-                }
-              }
+                },
+                "minecraft:unbreakable": {}
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:dyed_color": 3949738,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Blue Leggings"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:vex"
-                },
-                "minecraft:dyed_color": 3949738,
-                "minecraft:item_name": {
-                  "text": "Blue Leggings",
-                  "bold": true,
-                  "color": "blue"
                 }
               },
               "conditions": [
@@ -79,20 +75,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:dyed_color": 16711680,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Blue Leggings"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:vex"
-                },
-                "minecraft:dyed_color": 16711680,
-                "minecraft:item_name": {
-                  "text": "Blue Leggings",
-                  "bold": true,
-                  "color": "blue"
                 }
               },
               "conditions": [
@@ -111,20 +107,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:dyed_color": 16768000,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "gold",
+                  "text": "Yellow Leggings"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:netherite",
                   "pattern": "minecraft:spire"
-                },
-                "minecraft:dyed_color": 16768000,
-                "minecraft:item_name": {
-                  "text": "Yellow Leggings",
-                  "bold": true,
-                  "color": "gold"
                 }
               },
               "conditions": [
@@ -139,16 +135,16 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 3949738,
                 "minecraft:item_name": {
-                  "text": "Blue Leggings",
                   "bold": true,
-                  "color": "blue"
+                  "color": "blue",
+                  "text": "Blue Leggings"
                 }
               },
               "conditions": [
@@ -163,16 +159,16 @@
                     "custom_team_color": 1
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 16768000,
                 "minecraft:item_name": {
-                  "text": "Yellow Leggings",
                   "bold": true,
-                  "color": "yellow"
+                  "color": "yellow",
+                  "text": "Yellow Leggings"
                 }
               },
               "conditions": [
@@ -187,16 +183,16 @@
                     "custom_team_color": 2
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 16711680,
                 "minecraft:item_name": {
-                  "text": "Red Leggings",
                   "bold": true,
-                  "color": "red"
+                  "color": "red",
+                  "text": "Red Leggings"
                 }
               },
               "conditions": [
@@ -211,16 +207,16 @@
                     "custom_team_color": 3
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 65281,
                 "minecraft:item_name": {
-                  "text": "Green Leggings",
                   "bold": true,
-                  "color": "green"
+                  "color": "green",
+                  "text": "Green Leggings"
                 }
               },
               "conditions": [
@@ -235,16 +231,16 @@
                     "custom_team_color": 4
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 11796735,
                 "minecraft:item_name": {
-                  "text": "Purple Leggings",
                   "bold": true,
-                  "color": "dark_purple"
+                  "color": "dark_purple",
+                  "text": "Purple Leggings"
                 }
               },
               "conditions": [
@@ -259,16 +255,16 @@
                     "custom_team_color": 5
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 16752877,
                 "minecraft:item_name": {
-                  "text": "Pink Leggings",
                   "bold": true,
-                  "color": "light_purple"
+                  "color": "light_purple",
+                  "text": "Pink Leggings"
                 }
               },
               "conditions": [
@@ -283,16 +279,16 @@
                     "custom_team_color": 6
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 16744704,
                 "minecraft:item_name": {
-                  "text": "Orange Leggings",
                   "bold": true,
-                  "color": "gold"
+                  "color": "gold",
+                  "text": "Orange Leggings"
                 }
               },
               "conditions": [
@@ -307,16 +303,16 @@
                     "custom_team_color": 7
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 16735636,
                 "minecraft:item_name": {
-                  "text": "Strawberry Leggings",
                   "bold": true,
-                  "color": "#FF5D94"
+                  "color": "#FF5D94",
+                  "text": "Strawberry Leggings"
                 }
               },
               "conditions": [
@@ -331,16 +327,16 @@
                     "custom_team_color": 8
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 6684628,
                 "minecraft:item_name": {
-                  "text": "Mint Leggings",
                   "bold": true,
-                  "color": "#65FFD4"
+                  "color": "#65FFD4",
+                  "text": "Mint Leggings"
                 }
               },
               "conditions": [
@@ -355,16 +351,16 @@
                     "custom_team_color": 9
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 13959061,
                 "minecraft:item_name": {
-                  "text": "Apple Leggings",
                   "bold": true,
-                  "color": "#D4FF95"
+                  "color": "#D4FF95",
+                  "text": "Apple Leggings"
                 }
               },
               "conditions": [
@@ -379,16 +375,16 @@
                     "custom_team_color": 10
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 16383860,
                 "minecraft:item_name": {
-                  "text": "Banana Leggings",
                   "bold": true,
-                  "color": "#F9FF74"
+                  "color": "#F9FF74",
+                  "text": "Banana Leggings"
                 }
               },
               "conditions": [
@@ -403,16 +399,16 @@
                     "custom_team_color": 11
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 7506394,
                 "minecraft:item_name": {
-                  "text": "Blurple Leggings",
                   "bold": true,
-                  "color": "#7289DA"
+                  "color": "#7289DA",
+                  "text": "Blurple Leggings"
                 }
               },
               "conditions": [
@@ -427,11 +423,15 @@
                     "custom_team_color": 12
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             }
-          ]
+          ],
+          "name": "minecraft:leather_leggings",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

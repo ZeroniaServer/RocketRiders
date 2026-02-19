@@ -4,12 +4,12 @@
     {
       "condition": "location_check",
       "predicate": {
+        "dimension": "minecraft:overworld",
         "position": {
           "y": {
             "max": -20
           }
-        },
-        "dimension": "minecraft:overworld"
+        }
       }
     },
     {
@@ -25,12 +25,12 @@
         {
           "condition": "location_check",
           "predicate": {
+            "dimension": "minecraft:overworld",
             "position": {
               "y": {
                 "max": 0
               }
-            },
-            "dimension": "minecraft:overworld"
+            }
           }
         }
       ]

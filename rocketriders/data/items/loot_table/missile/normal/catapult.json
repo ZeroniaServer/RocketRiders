@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/catapult",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "catapult"
+                    "missile": "catapult",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -31,96 +27,96 @@
                 "minecraft:item_model": "minecraft:cave_spider_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Catapult",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Catapult"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "14",
-                      "color": "red"
+                      "color": "red",
+                      "text": "14"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "2.2m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "2.2m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "IndigoLaser",
-                      "color": "red"
+                      "color": "red",
+                      "text": "IndigoLaser"
                     }
                   ],
                   "",
                   {
-                    "text": "The Catapult does as its name suggests:",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "The Catapult does as its name suggests:"
                   },
                   {
-                    "text": "Once it contacts a wall, it launches 2 TNT",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Once it contacts a wall, it launches 2 TNT"
                   },
                   {
-                    "text": "blocks out. You can also launch TNT by",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "blocks out. You can also launch TNT by"
                   },
                   {
-                    "text": "breaking the back slime block. Watch out!",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "breaking the back slime block. Watch out!"
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Catapult",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Catapult"
                   }
                 ]
               },
@@ -136,20 +132,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "Catapult",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Catapult"
                   }
                 ]
               },
@@ -165,15 +161,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

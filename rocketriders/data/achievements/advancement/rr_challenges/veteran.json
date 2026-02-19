@@ -1,50 +1,106 @@
 {
-  "parent": "achievements:rr_challenges/pacifist",
-  "display": {
-    "title": {
-      "color": "#00be2f",
-      "text": "Veteran"
+  "criteria": {
+    "AntsSpawned": {
+      "trigger": "minecraft:impossible"
     },
+    "ArrowSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "AuxSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "BladeSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "BroadSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "BulletSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "CanopySpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "CataSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "CitaSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "DuplexSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "FireballSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "GemiSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "GuardSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "HurSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "HyperSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "JugbSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "LifterSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "NovaSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "NullSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "ObshieldSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "RifterSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "ShieldSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "SlashSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "SplashSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "ThunSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "TomaSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "VortexSpawned": {
+      "trigger": "minecraft:impossible"
+    },
+    "WarSpawned": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
     "description": {
       "color": "green",
       "text": "Use every main missile and utility item at least once. (Includes Special missiles!)"
     },
+    "frame": "goal",
+    "hidden": false,
     "icon": {
       "id": "minecraft:book"
     },
-    "frame": "goal",
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
+    "title": {
+      "color": "#00be2f",
+      "text": "Veteran"
+    }
   },
-  "criteria": {
-    "AntsSpawned": {"trigger":"minecraft:impossible"},
-    "AuxSpawned": {"trigger":"minecraft:impossible"},
-    "BladeSpawned": {"trigger":"minecraft:impossible"},
-    "BroadSpawned": {"trigger":"minecraft:impossible"},
-    "BulletSpawned": {"trigger":"minecraft:impossible"},
-    "CataSpawned": {"trigger":"minecraft:impossible"},
-    "CitaSpawned": {"trigger":"minecraft:impossible"},
-    "DuplexSpawned": {"trigger":"minecraft:impossible"},
-    "GemiSpawned": {"trigger":"minecraft:impossible"},
-    "GuardSpawned": {"trigger":"minecraft:impossible"},
-    "HurSpawned": {"trigger":"minecraft:impossible"},
-    "HyperSpawned": {"trigger":"minecraft:impossible"},
-    "JugbSpawned": {"trigger":"minecraft:impossible"},
-    "LifterSpawned": {"trigger":"minecraft:impossible"},
-    "NullSpawned": {"trigger":"minecraft:impossible"},
-    "RifterSpawned": {"trigger":"minecraft:impossible"},
-    "SlashSpawned": {"trigger":"minecraft:impossible"},
-    "ThunSpawned": {"trigger":"minecraft:impossible"},
-    "TomaSpawned": {"trigger":"minecraft:impossible"},
-    "WarSpawned": {"trigger":"minecraft:impossible"},
-    "FireballSpawned": {"trigger":"minecraft:impossible"},
-    "ObshieldSpawned": {"trigger":"minecraft:impossible"},
-    "CanopySpawned": {"trigger":"minecraft:impossible"},
-    "ShieldSpawned": {"trigger":"minecraft:impossible"},
-    "SplashSpawned": {"trigger":"minecraft:impossible"},
-    "VortexSpawned": {"trigger":"minecraft:impossible"},
-    "NovaSpawned": {"trigger":"minecraft:impossible"},
-    "ArrowSpawned": {"trigger":"minecraft:impossible"}
-  }
+  "parent": "achievements:rr_challenges/pacifist"
 }

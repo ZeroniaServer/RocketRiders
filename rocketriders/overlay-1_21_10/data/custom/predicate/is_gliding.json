@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "flags": {
-      "is_flying": true
-    },
     "equipment": {
       "chest": {
         "items": "minecraft:elytra"
       }
+    },
+    "flags": {
+      "is_flying": true
     },
     "nbt": {
       "FallFlying": true

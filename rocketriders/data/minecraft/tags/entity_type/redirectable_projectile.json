@@ -1,7 +1,7 @@
 {
-    "values": [
-        "minecraft:fireball",
-        "#custom:wind_charge",
-        "minecraft:dragon_fireball"
-    ]
+  "values": [
+    "minecraft:fireball",
+    "#custom:wind_charge",
+    "minecraft:dragon_fireball"
+  ]
 }

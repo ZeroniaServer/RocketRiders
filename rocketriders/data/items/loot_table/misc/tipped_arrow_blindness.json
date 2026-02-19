@@ -1,18 +1,15 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:tipped_arrow",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "!minecraft:potion_duration_scale": {},
                 "minecraft:custom_data": {
-                  "id": "tipped_arrow_blindness",
                   "Droppable": true,
+                  "id": "tipped_arrow_blindness",
                   "tipped_arrow_type": "blindness"
                 },
                 "minecraft:custom_model_data": {
@@ -23,37 +20,40 @@
                     "none"
                   ]
                 },
-                "minecraft:item_name": {
-                  "text": "Blindness Arrow",
-                  "bold": true,
-                  "color": "dark_purple"
-                },
                 "minecraft:custom_name": {
-                  "text": "Blindness Arrow",
                   "bold": true,
                   "color": "dark_purple",
-                  "italic": false
+                  "italic": false,
+                  "text": "Blindness Arrow"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "dark_purple",
+                  "text": "Blindness Arrow"
                 },
                 "minecraft:potion_contents": {
                   "custom_effects": [
                     {
-                      "id": "minecraft:blindness",
                       "amplifier": 0,
                       "duration": 200,
+                      "id": "minecraft:blindness",
                       "show_particles": true
                     }
                   ]
-                },
-                "!minecraft:potion_duration_scale": {}
-              }
+                }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:tipped_arrow",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

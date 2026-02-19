@@ -1,1 +1,40 @@
-{"display":{"title":{"text":"For The Holy Land!","color":"#c20000"},"description":{"text":"Lose 5 Crusade Mode games in a row.","color":"red"},"icon":{"id":"minecraft:netherite_helmet"},"frame":"goal","show_toast":true,"announce_to_chat":true,"hidden":false},"criteria":{"1":{"trigger":"minecraft:impossible"},"2":{"trigger":"minecraft:impossible"},"3":{"trigger":"minecraft:impossible"},"4":{"trigger":"minecraft:impossible"},"5":{"trigger":"minecraft:impossible"}},"requirements":[ ["1"], ["2"], ["3"], ["4"], ["5"]],"rewards":{"function":"achievements:holyland_gain"},"parent":"achievements:rr_zzzhard/root"}
+{
+  "criteria": {
+    "1": {
+      "trigger": "minecraft:impossible"
+    },
+    "2": {
+      "trigger": "minecraft:impossible"
+    },
+    "3": {
+      "trigger": "minecraft:impossible"
+    },
+    "4": {
+      "trigger": "minecraft:impossible"
+    },
+    "5": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "red",
+      "text": "Lose 5 Crusade Mode games in a row."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:netherite_helmet"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#c20000",
+      "text": "For The Holy Land!"
+    }
+  },
+  "parent": "achievements:rr_zzzhard/root",
+  "rewards": {
+    "function": "achievements:holyland_gain"
+  }
+}

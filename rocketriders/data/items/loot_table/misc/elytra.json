@@ -1,15 +1,20 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:elytra",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:attribute_modifiers": [
+                  {
+                    "amount": 3,
+                    "id": "rocketriders:elytra",
+                    "operation": "add_value",
+                    "slot": "chest",
+                    "type": "minecraft:armor"
+                  }
+                ],
                 "minecraft:custom_data": {
                   "id": "elytra"
                 },
@@ -21,64 +26,59 @@
                     "none"
                   ]
                 },
-                "minecraft:equippable": {
-                  "slot": "chest",
-                  "damage_on_hurt": false,
-                  "equip_sound": "minecraft:intentionally_empty",
-                  "asset_id": "minecraft:elytra"
-                },
+                "minecraft:enchantment_glint_override": false,
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },
-                "minecraft:enchantment_glint_override": false,
-                "minecraft:max_damage": 7,
+                "minecraft:equippable": {
+                  "asset_id": "minecraft:elytra",
+                  "damage_on_hurt": false,
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "slot": "chest"
+                },
                 "minecraft:item_name": {
-                  "text": "Elytra",
+                  "bold": true,
                   "color": "dark_purple",
-                  "bold": true
+                  "text": "Elytra"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "Useful for short flights!",
+                    "color": "gray",
                     "italic": false,
-                    "color": "gray"
+                    "text": "Useful for short flights!"
                   },
                   "",
                   {
-                    "text": "Breaks when you get near",
+                    "color": "red",
                     "italic": false,
-                    "color": "red"
+                    "text": "Breaks when you get near"
                   },
                   {
-                    "text": "the enemy base.",
+                    "color": "red",
                     "italic": false,
-                    "color": "red"
+                    "text": "the enemy base."
                   }
                 ],
-                "minecraft:attribute_modifiers": [
-                  {
-                    "operation": "add_value",
-                    "amount": 3,
-                    "slot": "chest",
-                    "type": "minecraft:armor",
-                    "id": "rocketriders:elytra"
-                  }
-                ],
+                "minecraft:max_damage": 7,
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:enchantments",
                     "minecraft:attribute_modifiers"
                   ]
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:elytra",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

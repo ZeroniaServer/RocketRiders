@@ -3,11 +3,11 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "location": {
-        "dimension": "minecraft:overworld"
-      },
       "flags": {
         "is_on_ground": true
+      },
+      "location": {
+        "dimension": "minecraft:overworld"
       },
       "stepping_on": {
         "block": {

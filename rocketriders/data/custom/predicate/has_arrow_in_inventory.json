@@ -1,38 +1,38 @@
 {
-    "condition": "minecraft:any_of",
-    "terms": [
-        {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-                "slots": {
-                    "container.*": {
-                        "items": "minecraft:arrow"
-                    }
-                }
-            }
-        },
-        {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-                "slots": {
-                    "weapon.offhand": {
-                        "items": "minecraft:arrow"
-                    }
-                }
-            }
-        },
-        {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-                "slots": {
-                    "player.cursor": {
-                        "items": "minecraft:arrow"
-                    }
-                }
-            }
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "container.*": {
+            "items": "minecraft:arrow"
+          }
         }
-    ]
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "weapon.offhand": {
+            "items": "minecraft:arrow"
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "player.cursor": {
+            "items": "minecraft:arrow"
+          }
+        }
+      }
+    }
+  ]
 }

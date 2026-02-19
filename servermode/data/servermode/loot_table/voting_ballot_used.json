@@ -1,7 +1,6 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:loot_table",
@@ -10,19 +9,20 @@
       ],
       "functions": [
         {
-          "function": "minecraft:set_components",
           "components": {
+            "!minecraft:enchantment_glint_override": {},
             "minecraft:custom_data": {
               "id": "voting_ballot",
               "voting_ballot": {
                 "used": true
               }
             },
-            "minecraft:item_model": "minecraft:filled_map",
-            "!minecraft:enchantment_glint_override": {}
-          }
+            "minecraft:item_model": "minecraft:filled_map"
+          },
+          "function": "minecraft:set_components"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

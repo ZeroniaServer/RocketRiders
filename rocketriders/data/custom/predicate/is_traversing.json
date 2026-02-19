@@ -5,13 +5,13 @@
     "entity": "this",
     "predicate": {
       "type_specific": {
-        "type": "minecraft:player",
         "input": {
-          "forward": false,
           "backward": false,
+          "forward": false,
           "left": false,
           "right": false
-        }
+        },
+        "type": "minecraft:player"
       }
     }
   }

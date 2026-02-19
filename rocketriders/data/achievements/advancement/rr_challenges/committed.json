@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Inaccurate but Committed",
-      "color": "#c20000"
-    },
-    "description": {
-      "text": "Ride a missile to the world border.",
-      "color": "red"
-    },
-    "icon": {
-      "id": "minecraft:barrier"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "red",
+      "text": "Ride a missile to the world border."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:barrier"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#c20000",
+      "text": "Inaccurate but Committed"
     }
   },
   "parent": "achievements:rr_challenges/new_world"

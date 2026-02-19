@@ -1,8 +1,10 @@
 {
   "criteria": {
     "kill_player": {
-      "trigger": "minecraft:player_killed_entity",
       "conditions": {
+        "entity": {
+          "type": "minecraft:player"
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
@@ -10,11 +12,9 @@
               "dimension": "minecraft:overworld"
             }
           }
-        ],
-        "entity": {
-          "type": "minecraft:player"
-        }
-      }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
     }
   },
   "rewards": {

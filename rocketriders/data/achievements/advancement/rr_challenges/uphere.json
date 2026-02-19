@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "I Can See My House from Here!",
-      "color": "#00be2f"
-    },
-    "description": {
-      "text": "Get launched high in the sky by a Nova Rocket.",
-      "color": "green"
-    },
-    "icon": {
-      "id": "minecraft:firework_rocket"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "green",
+      "text": "Get launched high in the sky by a Nova Rocket."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:firework_rocket"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#00be2f",
+      "text": "I Can See My House from Here!"
     }
   },
   "parent": "achievements:rr_challenges/raining_men"

@@ -1,39 +1,34 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:iron_leggings",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:equippable": {
-                  "slot": "legs",
-                  "equip_sound": "minecraft:intentionally_empty",
-                  "asset_id": "minecraft:iron"
-                },
-                "minecraft:item_name": {
-                  "text": "Knight Leggings",
-                  "bold": true,
-                  "color": "white"
-                },
-                "minecraft:unbreakable": {},
-                "minecraft:enchantments": {
-                  "minecraft:binding_curse": 1
-                },
-                "minecraft:enchantment_glint_override": false,
                 "minecraft:attribute_modifiers": [
                   {
-                    "id": "rocketriders:leggings",
-                    "slot": "legs",
                     "amount": 2,
+                    "id": "rocketriders:leggings",
                     "operation": "add_value",
+                    "slot": "legs",
                     "type": "armor"
                   }
                 ],
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:enchantments": {
+                  "minecraft:binding_curse": 1
+                },
+                "minecraft:equippable": {
+                  "asset_id": "minecraft:iron",
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "slot": "legs"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "white",
+                  "text": "Knight Leggings"
+                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:attribute_modifiers",
@@ -42,20 +37,21 @@
                     "minecraft:trim",
                     "minecraft:unbreakable"
                   ]
-                }
-              }
+                },
+                "minecraft:unbreakable": {}
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Blue Knight Leggings"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:lapis",
                   "pattern": "minecraft:vex"
-                },
-                "minecraft:item_name": {
-                  "text": "Blue Knight Leggings",
-                  "bold": true,
-                  "color": "blue"
                 }
               },
               "conditions": [
@@ -70,19 +66,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Blue Knight Leggings"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:redstone",
                   "pattern": "minecraft:vex"
-                },
-                "minecraft:item_name": {
-                  "text": "Blue Knight Leggings",
-                  "bold": true,
-                  "color": "blue"
                 }
               },
               "conditions": [
@@ -94,19 +90,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "gold",
+                  "text": "Yellow Knight Leggings"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:gold",
                   "pattern": "minecraft:spire"
-                },
-                "minecraft:item_name": {
-                  "text": "Yellow Knight Leggings",
-                  "bold": true,
-                  "color": "gold"
                 }
               },
               "conditions": [
@@ -114,11 +110,15 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             }
-          ]
+          ],
+          "name": "minecraft:iron_leggings",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

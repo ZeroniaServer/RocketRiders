@@ -1,29 +1,33 @@
 {
-    "criteria": {
-        "requirement": {
-            "trigger": "minecraft:player_hurt_entity",
-            "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "id": "minecraft:is_projectile",
-                                "expected": true
-                            }
-                        ],
-                        "direct_entity": {
-                            "type": "minecraft:arrow"
-                        }
-                    }
-                },
-                "entity": {
-                    "type": "minecraft:zombie",
-                    "nbt": "{Tags:[\"BotHPZombie\"]}"
-                }
-            }
+  "criteria": {
+    "requirement": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "minecraft:arrow"
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_projectile"
+              }
+            ]
+          }
+        },
+        "entity": {
+          "nbt": {
+            "Tags": [
+              "BotHPZombie"
+            ]
+          },
+          "type": "minecraft:zombie"
         }
-    },
-    "rewards": {
-        "function": "rr_bots:hitdetect/plingsound"
+      },
+      "trigger": "minecraft:player_hurt_entity"
     }
+  },
+  "rewards": {
+    "function": "rr_bots:hitdetect/plingsound"
+  }
 }

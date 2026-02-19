@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Complete the Parkour",
-      "color": "#d901d9"
-    },
-    "description": {
-      "text": "You've finished the Parkour!",
-      "color": "light_purple"
-    },
-    "icon": {
-      "id": "minecraft:gold_block"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": false,
-    "hidden": false
-  },
   "criteria": {
     "Impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "light_purple",
+      "text": "You've finished the Parkour!"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:gold_block"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#d901d9",
+      "text": "Complete the Parkour"
     }
   },
   "parent": "2811iaj1:parkour"

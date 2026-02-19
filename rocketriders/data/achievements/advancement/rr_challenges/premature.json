@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Premature Celebration",
-      "color": "#fe6309"
-    },
-    "description": {
-      "text": "Win a match before it becomes a tie.",
-      "color": "gold"
-    },
-    "icon": {
-      "id": "minecraft:poisonous_potato"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Win a match before it becomes a tie."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:poisonous_potato"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "Premature Celebration"
     }
   },
   "parent": "achievements:rr_challenges/under_the_sea"

@@ -3,27 +3,27 @@
   "terms": [
     {
       "condition": "minecraft:value_check",
+      "range": 1,
       "value": {
-        "type": "minecraft:score",
+        "score": "gamemode_components",
         "target": {
-          "type": "minecraft:fixed",
-          "name": "$duel_settings_locked"
+          "name": "$duel_settings_locked",
+          "type": "minecraft:fixed"
         },
-        "score": "gamemode_components"
-      },
-      "range": 1
+        "type": "minecraft:score"
+      }
     },
     {
       "condition": "minecraft:value_check",
+      "range": 1,
       "value": {
-        "type": "minecraft:score",
+        "score": "gamemode_components",
         "target": {
-          "type": "minecraft:fixed",
-          "name": "$item_pool.missile/chronullifier"
+          "name": "$item_pool.missile/chronullifier",
+          "type": "minecraft:fixed"
         },
-        "score": "gamemode_components"
-      },
-      "range": 1
+        "type": "minecraft:score"
+      }
     }
   ]
 }

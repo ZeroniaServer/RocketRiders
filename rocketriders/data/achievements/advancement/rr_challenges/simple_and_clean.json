@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Simple and Clean",
-      "color": "#fe6309"
-    },
-    "description": {
-      "text": "Win a match in under two minutes without your base taking any damage.",
-      "color": "gold"
-    },
-    "icon": {
-      "id": "minecraft:clock"
-    },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Win a match in under two minutes without your base taking any damage."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:clock"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "Simple and Clean"
     }
   },
   "parent": "achievements:rr_challenges/immortal"

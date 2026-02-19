@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "| || || |_",
-      "color": "#fe6309"
-    },
-    "description": {
-      "text": "Lose a match after having a 10-game win streak.",
-      "color": "gold"
-    },
-    "icon": {
-      "id": "minecraft:ghast_tear"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Lose a match after having a 10-game win streak."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:ghast_tear"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "| || || |_"
     }
   },
   "parent": "achievements:rr_challenges/useful"

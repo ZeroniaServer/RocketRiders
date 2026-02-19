@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/ant",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "ant"
+                    "missile": "ant",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -31,91 +27,91 @@
                 "minecraft:item_model": "minecraft:bat_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "A.N.T.",
-                    "color": "white"
+                    "color": "white",
+                    "text": "A.N.T."
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "2",
-                      "color": "red"
+                      "color": "red",
+                      "text": "2"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "2.2m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "2.2m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "Evtema3",
-                      "color": "red"
+                      "color": "red",
+                      "text": "Evtema3"
                     }
                   ],
                   "",
                   {
-                    "text": "The A.N.T stands for Almost No TNT.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "The A.N.T stands for Almost No TNT."
                   },
                   {
-                    "text": "It is one of the smallest functional",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "It is one of the smallest functional"
                   },
                   {
-                    "text": "missiles, made with only 2 TNT blocks.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "missiles, made with only 2 TNT blocks."
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "A.N.T.",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "A.N.T."
                   }
                 ]
               },
@@ -131,20 +127,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Normal] ",
+                    "bold": true,
                     "color": "green",
-                    "bold": true
+                    "text": "[Normal] "
                   },
                   {
-                    "text": "A.N.T.",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "A.N.T."
                   }
                 ]
               },
@@ -160,15 +156,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

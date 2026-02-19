@@ -1,16 +1,7 @@
 {
   "criteria": {
     "use_pig_spawn_egg_on_block": {
-      "trigger": "minecraft:item_used_on_block",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
-          }
-        ],
         "location": [
           {
             "condition": "minecraft:match_tool",
@@ -18,8 +9,17 @@
               "items": "minecraft:pig_spawn_egg"
             }
           }
+        ],
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          }
         ]
-      }
+      },
+      "trigger": "minecraft:item_used_on_block"
     }
   },
   "rewards": {

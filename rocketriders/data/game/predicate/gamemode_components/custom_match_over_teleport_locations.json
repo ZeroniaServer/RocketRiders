@@ -1,12 +1,12 @@
 {
   "condition": "minecraft:value_check",
+  "range": 1,
   "value": {
-    "type": "minecraft:score",
+    "score": "gamemode_components",
     "target": {
-      "type": "minecraft:fixed",
-      "name": "$custom_match_over_teleport_locations"
+      "name": "$custom_match_over_teleport_locations",
+      "type": "minecraft:fixed"
     },
-    "score": "gamemode_components"
-  },
-  "range": 1
+    "type": "minecraft:score"
+  }
 }

@@ -21,6 +21,7 @@ base_predicate = {
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
+                    "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
                         "min": -10,
@@ -34,8 +35,7 @@ base_predicate = {
                         "min": -74,
                         "max": -73
                       }
-                    },
-                    "dimension": "minecraft:overworld"
+                    }
                   }
                 },
                 {
@@ -62,6 +62,7 @@ base_predicate = {
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
+                    "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
                         "min": -10,
@@ -75,8 +76,7 @@ base_predicate = {
                         "min": 74,
                         "max": 75
                       }
-                    },
-                    "dimension": "minecraft:overworld"
+                    }
                   }
                 },
                 {
@@ -141,6 +141,7 @@ base_predicate = {
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
+                    "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
                         "min": 4,
@@ -154,8 +155,7 @@ base_predicate = {
                         "min": -67,
                         "max": -66
                       }
-                    },
-                    "dimension": "minecraft:overworld"
+                    }
                   }
                 },
                 {
@@ -182,6 +182,7 @@ base_predicate = {
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
+                    "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
                         "min": 4,
@@ -195,8 +196,7 @@ base_predicate = {
                         "min": 67,
                         "max": 68
                       }
-                    },
-                    "dimension": "minecraft:overworld"
+                    }
                   }
                 },
                 {

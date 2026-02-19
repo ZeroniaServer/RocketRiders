@@ -1,70 +1,70 @@
 {
-  "type": "minecraft:multi_action",
-  "title": "RR Developer Actions: Quick Launch Game Mode",
-  "external_title": "Quick Launch Game Mode...",
-  "exit_action": {
-    "label": "Back",
-    "action": {
-      "type": "minecraft:show_dialog",
-      "dialog": "dev:quick_actions"
-    }
-  },
   "actions": [
     {
-      "label": "Launch Normal",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 101"
-      }
+        "command": "/trigger dev set 101",
+        "type": "minecraft:run_command"
+      },
+      "label": "Launch Normal"
     },
     {
-      "label": "Launch Powerups",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 102"
-      }
+        "command": "/trigger dev set 102",
+        "type": "minecraft:run_command"
+      },
+      "label": "Launch Powerups"
     },
     {
-      "label": "Launch Swap",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 103"
-      }
+        "command": "/trigger dev set 103",
+        "type": "minecraft:run_command"
+      },
+      "label": "Launch Swap"
     },
     {
-      "label": "Launch Capture The Flag",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 104"
-      }
+        "command": "/trigger dev set 104",
+        "type": "minecraft:run_command"
+      },
+      "label": "Launch Capture The Flag"
     },
     {
-      "label": "Launch Chase",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 105"
-      }
+        "command": "/trigger dev set 105",
+        "type": "minecraft:run_command"
+      },
+      "label": "Launch Chase"
     },
     {
-      "label": "Launch 1v1 Duel",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 106"
-      }
+        "command": "/trigger dev set 106",
+        "type": "minecraft:run_command"
+      },
+      "label": "Launch 1v1 Duel"
     },
     {
-      "label": "Launch Crusade",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 107"
-      }
+        "command": "/trigger dev set 107",
+        "type": "minecraft:run_command"
+      },
+      "label": "Launch Crusade"
     },
     {
-      "label": "Launch Sandbox",
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 108"
-      }
+        "command": "/trigger dev set 108",
+        "type": "minecraft:run_command"
+      },
+      "label": "Launch Sandbox"
     }
-  ]
+  ],
+  "exit_action": {
+    "action": {
+      "dialog": "dev:quick_actions",
+      "type": "minecraft:show_dialog"
+    },
+    "label": "Back"
+  },
+  "external_title": "Quick Launch Game Mode...",
+  "title": "RR Developer Actions: Quick Launch Game Mode",
+  "type": "minecraft:multi_action"
 }

@@ -7,16 +7,16 @@
     },
     {
       "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$config_override.item_delay"
-        },
-        "score": "gamemode_components"
-      },
       "range": {
         "min": 5
+      },
+      "value": {
+        "score": "gamemode_components",
+        "target": {
+          "name": "$config_override.item_delay",
+          "type": "minecraft:fixed"
+        },
+        "type": "minecraft:score"
       }
     },
     {

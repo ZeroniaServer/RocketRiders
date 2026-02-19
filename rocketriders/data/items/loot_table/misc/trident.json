@@ -1,15 +1,30 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:trident",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:attribute_modifiers": [
+                  {
+                    "amount": 8.0,
+                    "id": "rocketriders:trident",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_damage"
+                  },
+                  {
+                    "amount": -2.9000000953674316,
+                    "display": {
+                      "type": "hidden"
+                    },
+                    "id": "rocketriders:trident",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_speed"
+                  }
+                ],
                 "minecraft:custom_data": {
                   "id": "trident"
                 },
@@ -21,62 +36,47 @@
                     "none"
                   ]
                 },
+                "minecraft:enchantments": {
+                  "minecraft:impaling": 2,
+                  "minecraft:loyalty": 10
+                },
                 "minecraft:item_name": {
-                  "text": "Trident",
                   "bold": true,
-                  "color": "dark_purple"
+                  "color": "dark_purple",
+                  "text": "Trident"
                 },
                 "minecraft:lore": [
                   "",
                   {
-                    "text": "Useful for strong close/ranged damage.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Useful for strong close/ranged damage."
                   },
                   {
-                    "text": "When in water, automatically gains Riptide.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "When in water, automatically gains Riptide."
                   },
                   {
-                    "text": "Otherwise, the Trident contains Loyalty.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Otherwise, the Trident contains Loyalty."
                   }
                 ],
-                "minecraft:max_damage": 8,
-                "minecraft:attribute_modifiers": [
-                  {
-                    "amount": 8.0,
-                    "id": "rocketriders:trident",
-                    "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_damage"
-                  },
-                  {
-                    "amount": -2.9000000953674316,
-                    "id": "rocketriders:trident",
-                    "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_speed",
-                    "display": {
-                      "type": "hidden"
-                    }
-                  }
-                ],
-                "minecraft:enchantments": {
-                  "minecraft:impaling": 2,
-                  "minecraft:loyalty": 10
-                }
-              }
+                "minecraft:max_damage": 8
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:trident",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

@@ -1,48 +1,48 @@
 {
-  "display": {
-    "title": {
-      "text": "I Am Speed",
-      "color": "#00be2f"
-    },
-    "description": {
-      "text": "Arrive at the Finish Flag first in Chase Mode.",
-      "color": "green"
-    },
-    "icon": {
-      "id": "minecraft:white_banner",
-      "components": {
-        "minecraft:banner_patterns": [
-          {
-            "pattern": "half_vertical_right",
-            "color": "black"
-          },
-          {
-            "pattern": "square_top_left",
-            "color": "black"
-          },
-          {
-            "pattern": "square_bottom_left",
-            "color": "black"
-          },
-          {
-            "pattern": "square_top_right",
-            "color": "white"
-          },
-          {
-            "pattern": "square_bottom_right",
-            "color": "white"
-          }
-        ]
-      }
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "green",
+      "text": "Arrive at the Finish Flag first in Chase Mode."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "components": {
+        "minecraft:banner_patterns": [
+          {
+            "color": "black",
+            "pattern": "half_vertical_right"
+          },
+          {
+            "color": "black",
+            "pattern": "square_top_left"
+          },
+          {
+            "color": "black",
+            "pattern": "square_bottom_left"
+          },
+          {
+            "color": "white",
+            "pattern": "square_top_right"
+          },
+          {
+            "color": "white",
+            "pattern": "square_bottom_right"
+          }
+        ]
+      },
+      "id": "minecraft:white_banner"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#00be2f",
+      "text": "I Am Speed"
     }
   },
   "parent": "achievements:rr_challenges/helping"

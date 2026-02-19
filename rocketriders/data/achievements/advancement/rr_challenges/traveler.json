@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Traveler",
-      "color": "#00be2f"
-    },
-    "description": {
-      "text": "Reach the enemy base and then return to your base without dying.",
-      "color": "green"
-    },
-    "icon": {
-      "id": "minecraft:saddle"
-    },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "green",
+      "text": "Reach the enemy base and then return to your base without dying."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:saddle"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#00be2f",
+      "text": "Traveler"
     }
   },
   "parent": "achievements:rr_challenges/machina"

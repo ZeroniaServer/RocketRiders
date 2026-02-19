@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "So Close, Yet So Fall Away",
-      "color": "#c20000"
-    },
-    "description": {
-      "text": "Fall on the enemy team's portal and die.",
-      "color": "red"
-    },
-    "icon": {
-      "id": "minecraft:sand"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "red",
+      "text": "Fall on the enemy team's portal and die."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:sand"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#c20000",
+      "text": "So Close, Yet So Fall Away"
     }
   },
   "parent": "achievements:rr_challenges/committed"

@@ -1,4 +1,4 @@
 {
-	"condition": "minecraft:reference",
-	"name": "rr:server_mode/cubekrowd_voting"
+  "condition": "minecraft:reference",
+  "name": "rr:server_mode/cubekrowd_voting"
 }

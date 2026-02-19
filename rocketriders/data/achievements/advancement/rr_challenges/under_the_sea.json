@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Under the Sea",
-      "color": "#fe6309"
-    },
-    "description": {
-      "text": "Kill someone while submerged in water.",
-      "color": "gold"
-    },
-    "icon": {
-      "id": "minecraft:tube_coral"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Kill someone while submerged in water."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:tube_coral"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "Under the Sea"
     }
   },
   "parent": "achievements:rr_challenges/simple_and_clean"

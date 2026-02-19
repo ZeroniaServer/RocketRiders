@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Ground Bound",
-      "color": "#c20000"
-    },
-    "description": {
-      "text": "Do not jump at all in a match and win.",
-      "color": "red"
-    },
-    "icon": {
-      "id": "minecraft:anvil"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "red",
+      "text": "Do not jump at all in a match and win."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:anvil"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#c20000",
+      "text": "Ground Bound"
     }
   },
   "parent": "achievements:rr_challenges/ballet"

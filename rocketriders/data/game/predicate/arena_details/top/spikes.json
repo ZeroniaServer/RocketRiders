@@ -1,15 +1,15 @@
 [
   {
     "condition": "minecraft:value_check",
+    "range": 3,
     "value": {
-      "type": "minecraft:score",
+      "score": "config",
       "target": {
-        "type": "minecraft:fixed",
-        "name": "$arena_details/top"
+        "name": "$arena_details/top",
+        "type": "minecraft:fixed"
       },
-      "score": "config"
-    },
-    "range": 3
+      "type": "minecraft:score"
+    }
   },
   {
     "condition": "minecraft:inverted",

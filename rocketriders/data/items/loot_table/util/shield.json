@@ -1,14 +1,10 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:snowball",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "shield"
@@ -21,44 +17,44 @@
                     "none"
                   ]
                 },
-                "minecraft:max_stack_size": 64,
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Shield",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Shield"
                   }
                 ],
                 "minecraft:lore": [
                   {
-                    "text": "Throw to spawn a glass Shield.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Throw to spawn a glass Shield."
                   },
                   {
-                    "text": "This is able to stop most missiles.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "This is able to stop most missiles."
                   }
-                ]
-              }
+                ],
+                "minecraft:max_stack_size": 64
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Shield",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Shield"
                   }
                 ]
               },
@@ -74,20 +70,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Shield",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Shield"
                   }
                 ]
               },
@@ -103,15 +99,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:snowball",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

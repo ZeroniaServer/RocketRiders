@@ -1,12 +1,12 @@
 {
   "condition": "minecraft:value_check",
+  "range": 1,
   "value": {
-    "type": "minecraft:score",
+    "score": "global",
     "target": {
-      "type": "minecraft:fixed",
-      "name": "$phase/game"
+      "name": "$phase/game",
+      "type": "minecraft:fixed"
     },
-    "score": "global"
-  },
-  "range": 1
+    "type": "minecraft:score"
+  }
 }

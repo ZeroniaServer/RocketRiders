@@ -1,7 +1,6 @@
 {
   "criteria": {
     "requirement": {
-      "trigger": "minecraft:default_block_use",
       "conditions": {
         "location": [
           {
@@ -13,7 +12,8 @@
             }
           }
         ]
-      }
+      },
+      "trigger": "minecraft:default_block_use"
     }
   },
   "rewards": {

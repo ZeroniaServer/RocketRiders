@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Ballet Dancer",
-      "color": "#c20000"
-    },
-    "description": {
-      "text": "Sprint and jump for the entire game.",
-      "color": "red"
-    },
-    "icon": {
-      "id": "minecraft:note_block"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "red",
+      "text": "Sprint and jump for the entire game."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:note_block"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#c20000",
+      "text": "Ballet Dancer"
     }
   },
   "parent": "achievements:rr_zzzhard/root"

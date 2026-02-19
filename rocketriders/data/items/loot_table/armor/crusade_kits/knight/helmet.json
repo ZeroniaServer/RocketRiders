@@ -1,51 +1,47 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:netherite_helmet",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:equippable": {
-                  "slot": "head",
-                  "equip_sound": "minecraft:intentionally_empty",
-                  "asset_id": "minecraft:netherite"
-                },
-                "minecraft:item_name": {
-                  "text": "Knight Helmet",
-                  "bold": true,
-                  "color": "white"
-                },
-                "minecraft:unbreakable": {},
+                "minecraft:attribute_modifiers": [],
+                "minecraft:enchantment_glint_override": false,
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },
-                "minecraft:enchantment_glint_override": false,
-                "minecraft:attribute_modifiers": [],
+                "minecraft:equippable": {
+                  "asset_id": "minecraft:netherite",
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "slot": "head"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "white",
+                  "text": "Knight Helmet"
+                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:enchantments",
                     "minecraft:trim",
                     "minecraft:unbreakable"
                   ]
-                }
-              }
+                },
+                "minecraft:unbreakable": {}
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Blue Knight Helmet"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:lapis",
                   "pattern": "minecraft:tide"
-                },
-                "minecraft:item_name": {
-                  "text": "Blue Knight Helmet",
-                  "bold": true,
-                  "color": "blue"
                 }
               },
               "conditions": [
@@ -60,19 +56,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Blue Knight Helmet"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:redstone",
                   "pattern": "minecraft:tide"
-                },
-                "minecraft:item_name": {
-                  "text": "Blue Knight Helmet",
-                  "bold": true,
-                  "color": "blue"
                 }
               },
               "conditions": [
@@ -84,19 +80,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "gold",
+                  "text": "Yellow Knight Helmet"
+                },
                 "minecraft:trim": {
                   "material": "minecraft:gold",
                   "pattern": "minecraft:raiser"
-                },
-                "minecraft:item_name": {
-                  "text": "Yellow Knight Helmet",
-                  "bold": true,
-                  "color": "gold"
                 }
               },
               "conditions": [
@@ -104,11 +100,15 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             }
-          ]
+          ],
+          "name": "minecraft:netherite_helmet",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

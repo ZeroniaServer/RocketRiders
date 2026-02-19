@@ -4,6 +4,7 @@
     "entity": "this",
     "predicate": {
       "location": {
+        "dimension": "minecraft:overworld",
         "position": {
           "x": {
             "min": -177,
@@ -13,8 +14,7 @@
             "min": -189,
             "max": 190
           }
-        },
-        "dimension": "minecraft:overworld"
+        }
       }
     }
   }

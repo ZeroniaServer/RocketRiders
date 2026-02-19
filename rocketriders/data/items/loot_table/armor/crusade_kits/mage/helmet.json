@@ -1,45 +1,41 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pale_oak_fence_gate",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:equippable": {
-                  "slot": "head",
-                  "equip_sound": "minecraft:intentionally_empty"
-                },
-                "minecraft:item_name": {
-                  "text": "Mage Mask",
-                  "bold": true,
-                  "color": "white"
-                },
+                "minecraft:attribute_modifiers": [],
+                "minecraft:enchantment_glint_override": false,
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },
-                "minecraft:enchantment_glint_override": false,
-                "minecraft:attribute_modifiers": [],
+                "minecraft:equippable": {
+                  "equip_sound": "minecraft:intentionally_empty",
+                  "slot": "head"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "white",
+                  "text": "Mage Mask"
+                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:enchantments"
                   ]
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_model": "minecraft:warped_fence_gate",
                 "minecraft:item_name": {
-                  "text": "Blue Mage Mask",
                   "bold": true,
-                  "color": "blue"
-                },
-                "minecraft:item_model": "minecraft:warped_fence_gate"
+                  "color": "blue",
+                  "text": "Blue Mage Mask"
+                }
               },
               "conditions": [
                 {
@@ -53,17 +49,17 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_model": "minecraft:mangrove_fence_gate",
                 "minecraft:item_name": {
-                  "text": "Blue Mage Mask",
                   "bold": true,
-                  "color": "blue"
-                },
-                "minecraft:item_model": "minecraft:mangrove_fence_gate"
+                  "color": "blue",
+                  "text": "Blue Mage Mask"
+                }
               },
               "conditions": [
                 {
@@ -74,28 +70,32 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_model": "minecraft:bamboo_fence_gate",
                 "minecraft:item_name": {
-                  "text": "Yellow Mage Mask",
                   "bold": true,
-                  "color": "gold"
-                },
-                "minecraft:item_model": "minecraft:bamboo_fence_gate"
+                  "color": "gold",
+                  "text": "Yellow Mage Mask"
+                }
               },
               "conditions": [
                 {
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             }
-          ]
+          ],
+          "name": "minecraft:pale_oak_fence_gate",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
-    "condition": "minecraft:location_check",
-    "predicate": {
-        "position": {
-            "z": {
-                "min": -61
-            }
-        }
+  "condition": "minecraft:location_check",
+  "predicate": {
+    "position": {
+      "z": {
+        "min": -61
+      }
     }
+  }
 }

@@ -1,15 +1,12 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:potion",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "!minecraft:use_remainder": {},
                 "minecraft:custom_data": {
                   "id": "jump_boost_potion"
                 },
@@ -21,36 +18,21 @@
                     "none"
                   ]
                 },
-                "minecraft:max_stack_size": 64,
-                "!minecraft:use_remainder": {},
-                "minecraft:item_name": {
-                  "text": "Jump Boost Potion",
-                  "bold": true,
-                  "color": "dark_purple"
-                },
                 "minecraft:custom_name": {
-                  "text": "Jump Boost Potion",
                   "bold": true,
                   "color": "dark_purple",
-                  "italic": false
+                  "italic": false,
+                  "text": "Jump Boost Potion"
                 },
-                "minecraft:potion_contents": {
-                  "potion": "minecraft:water",
-                  "custom_effects": [
-                    {
-                      "id": "minecraft:jump_boost",
-                      "duration": 600,
-                      "amplifier": 2
-                    }
-                  ]
-                },
-                "minecraft:tooltip_display": {
-                  "hidden_components": [
-                    "minecraft:potion_contents"
-                  ]
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "dark_purple",
+                  "text": "Jump Boost Potion"
                 },
                 "minecraft:lore": [
                   {
+                    "color": "blue",
+                    "italic": false,
                     "translate": "potion.withDuration",
                     "with": [
                       {
@@ -65,20 +47,38 @@
                         ]
                       },
                       "00:30"
-                    ],
-                    "color": "blue",
-                    "italic": false
+                    ]
                   }
-                ]
-              }
+                ],
+                "minecraft:max_stack_size": 64,
+                "minecraft:potion_contents": {
+                  "custom_effects": [
+                    {
+                      "amplifier": 2,
+                      "duration": 600,
+                      "id": "minecraft:jump_boost"
+                    }
+                  ],
+                  "potion": "minecraft:water"
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:potion_contents"
+                  ]
+                }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:potion",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

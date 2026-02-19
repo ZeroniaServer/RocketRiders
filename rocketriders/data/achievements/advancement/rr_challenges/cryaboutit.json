@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Cry About It",
-      "color": "#00be2f"
-    },
-    "description": {
-      "text": "Fall in the void after the Powerup Platform breaks beneath you.",
-      "color": "green"
-    },
-    "icon": {
-      "id": "minecraft:crying_obsidian"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "green",
+      "text": "Fall in the void after the Powerup Platform breaks beneath you."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:crying_obsidian"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#00be2f",
+      "text": "Cry About It"
     }
   },
   "parent": "achievements:rr_challenges/had_it"

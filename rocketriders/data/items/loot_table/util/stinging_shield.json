@@ -1,14 +1,10 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:snowball",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "stinging_shield"
@@ -21,45 +17,45 @@
                     "none"
                   ]
                 },
-                "minecraft:max_stack_size": 64,
+                "minecraft:item_model": "minecraft:honeycomb",
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "dark_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Stinging Shield",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Stinging Shield"
                   }
                 ],
                 "minecraft:lore": [
                   {
-                    "text": "Throw to deploy a Shield made of",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Throw to deploy a Shield made of"
                   },
                   {
-                    "text": "beehives and unstable TNT!",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "beehives and unstable TNT!"
                   }
                 ],
-                "minecraft:item_model": "minecraft:honeycomb"
-              }
+                "minecraft:max_stack_size": 64
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "dark_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Stinging Shield",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Stinging Shield"
                   }
                 ]
               },
@@ -75,20 +71,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "dark_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Stinging Shield",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Stinging Shield"
                   }
                 ]
               },
@@ -104,15 +100,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:snowball",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

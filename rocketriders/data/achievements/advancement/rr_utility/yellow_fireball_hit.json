@@ -1,33 +1,33 @@
 {
   "criteria": {
     "fireball_hit": {
-      "trigger": "minecraft:player_hurt_entity",
       "conditions": {
-        "player": {
-          "location": {
-            "dimension": "minecraft:overworld"
-          }
-        },
         "damage": {
           "type": {
-            "tags": [
-              {
-                "id": "minecraft:is_projectile",
-                "expected": true
-              }
-            ],
             "direct_entity": {
-              "type": "minecraft:fireball",
               "predicates": {
                 "minecraft:custom_data": {
                   "fireball": {},
                   "origin_team": "blue"
                 }
+              },
+              "type": "minecraft:fireball"
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_projectile"
               }
-            }
+            ]
+          }
+        },
+        "player": {
+          "location": {
+            "dimension": "minecraft:overworld"
           }
         }
-      }
+      },
+      "trigger": "minecraft:player_hurt_entity"
     }
   },
   "rewards": {

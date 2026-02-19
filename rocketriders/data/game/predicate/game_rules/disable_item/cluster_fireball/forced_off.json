@@ -3,15 +3,15 @@
   "terms": [
     {
       "condition": "minecraft:value_check",
+      "range": 1,
       "value": {
-        "type": "minecraft:score",
+        "score": "gamemode_components",
         "target": {
-          "type": "minecraft:fixed",
-          "name": "$item_pool.cluster_fireball"
+          "name": "$item_pool.cluster_fireball",
+          "type": "minecraft:fixed"
         },
-        "score": "gamemode_components"
-      },
-      "range": 1
+        "type": "minecraft:score"
+      }
     }
   ]
 }

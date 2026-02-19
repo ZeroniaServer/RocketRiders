@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Fire Within Me",
-      "color": "#fe6309"
-    },
-    "description": {
-      "text": "Get a kill while being on fire.",
-      "color": "gold"
-    },
-    "icon": {
-      "id": "minecraft:blaze_powder"
-    },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Get a kill while being on fire."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:blaze_powder"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "Fire Within Me"
     }
   },
   "parent": "achievements:rr_fffmedium/root"

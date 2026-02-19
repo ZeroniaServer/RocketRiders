@@ -1,15 +1,21 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "writable_book",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "!minecraft:writable_book_content": {},
+                "minecraft:attribute_modifiers": [
+                  {
+                    "amount": 1.5,
+                    "id": "rocketriders:spell_wand",
+                    "operation": "add_value",
+                    "slot": "mainhand",
+                    "type": "minecraft:attack_damage"
+                  }
+                ],
                 "minecraft:custom_data": {
                   "id": "spell_wand"
                 },
@@ -21,55 +27,42 @@
                     "none"
                   ]
                 },
-                "minecraft:item_model": "minecraft:stick",
-                "!minecraft:writable_book_content": {},
-                "minecraft:use_cooldown": {
-                  "seconds": 0.5,
-                  "cooldown_group": "rocketriders:spell_wand"
+                "minecraft:enchantments": {
+                  "minecraft:fire_aspect": 2
                 },
-                "minecraft:unbreakable": {},
+                "minecraft:item_model": "minecraft:stick",
                 "minecraft:item_name": {
-                  "text": "Spell Wand",
                   "bold": true,
-                  "color": "white"
+                  "color": "white",
+                  "text": "Spell Wand"
                 },
                 "minecraft:lore": [
                   "",
                   {
-                    "text": "A special wand, made to",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "A special wand, made to"
                   },
                   {
-                    "text": "set enemies on fire!",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "set enemies on fire!"
                   }
                 ],
-                "minecraft:attribute_modifiers": [
-                  {
-                    "amount": 1.5,
-                    "id": "rocketriders:spell_wand",
-                    "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_damage"
-                  }
-                ],
-                "minecraft:enchantments": {
-                  "minecraft:fire_aspect": 2
-                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:unbreakable"
                   ]
+                },
+                "minecraft:unbreakable": {},
+                "minecraft:use_cooldown": {
+                  "cooldown_group": "rocketriders:spell_wand",
+                  "seconds": 0.5
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "main_item": true
-              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -82,10 +75,13 @@
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/main_item/crusade_kit_dependent"
                 }
-              ]
+              ],
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              }
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": []
               },
@@ -105,13 +101,17 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "nbt": "{Tags:['Loser']}"
+                    "nbt": {
+                      "Tags": [
+                        "Loser"
+                      ]
+                    }
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "!minecraft:consumable": {},
                 "!minecraft:use_cooldown": {}
@@ -131,17 +131,17 @@
                     "name": "game:phase/match/play"
                   }
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_model": "minecraft:breeze_rod",
                 "minecraft:item_name": {
-                  "text": "Spell Wand",
                   "bold": true,
-                  "color": "blue"
-                },
-                "minecraft:item_model": "minecraft:breeze_rod"
+                  "color": "blue",
+                  "text": "Spell Wand"
+                }
               },
               "conditions": [
                 {
@@ -155,17 +155,17 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:item_model": "minecraft:blaze_rod",
                 "minecraft:item_name": {
-                  "text": "Spell Wand",
                   "bold": true,
-                  "color": "gold"
-                },
-                "minecraft:item_model": "minecraft:blaze_rod"
+                  "color": "gold",
+                  "text": "Spell Wand"
+                }
               },
               "conditions": [
                 {
@@ -179,11 +179,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:reference",
-              "name": "items:spell_wand/set_custom_team_color",
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -196,15 +195,20 @@
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/custom_team_colors"
                 }
-              ]
+              ],
+              "function": "minecraft:reference",
+              "name": "items:spell_wand/set_custom_team_color"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "writable_book",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

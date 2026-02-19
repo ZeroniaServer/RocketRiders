@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/juggerbuster",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "juggerbuster"
+                    "missile": "juggerbuster",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -31,91 +27,91 @@
                 "minecraft:item_model": "minecraft:zombie_horse_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Heavy] ",
+                    "bold": true,
                     "color": "dark_red",
-                    "bold": true
+                    "text": "[Heavy] "
                   },
                   {
-                    "text": "Juggerbuster",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Juggerbuster"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "32",
-                      "color": "red"
+                      "color": "red",
+                      "text": "32"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "1.7m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "1.7m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "Chronos22",
-                      "color": "red"
+                      "color": "red",
+                      "text": "Chronos22"
                     }
                   ],
                   "",
                   {
-                    "text": "This is a Juggernaut-ShieldBuster hybrid.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "This is a Juggernaut-ShieldBuster hybrid."
                   },
                   {
-                    "text": "This missile has the power of a Juggernaut",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "This missile has the power of a Juggernaut"
                   },
                   {
-                    "text": "plus the ability to bust through a Shield.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "plus the ability to bust through a Shield."
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Heavy] ",
+                    "bold": true,
                     "color": "dark_red",
-                    "bold": true
+                    "text": "[Heavy] "
                   },
                   {
-                    "text": "Juggerbuster",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Juggerbuster"
                   }
                 ]
               },
@@ -131,20 +127,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Heavy] ",
+                    "bold": true,
                     "color": "dark_red",
-                    "bold": true
+                    "text": "[Heavy] "
                   },
                   {
-                    "text": "Juggerbuster",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Juggerbuster"
                   }
                 ]
               },
@@ -160,15 +156,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

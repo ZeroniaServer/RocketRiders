@@ -1,12 +1,12 @@
 {
   "condition": "minecraft:value_check",
+  "range": 0,
   "value": {
-    "type": "minecraft:score",
+    "score": "gamemode_components",
     "target": {
-      "type": "minecraft:fixed",
-      "name": "$item_pool.missile/gemini"
+      "name": "$item_pool.missile/gemini",
+      "type": "minecraft:fixed"
     },
-    "score": "gamemode_components"
-  },
-  "range": 0
+    "type": "minecraft:score"
+  }
 }

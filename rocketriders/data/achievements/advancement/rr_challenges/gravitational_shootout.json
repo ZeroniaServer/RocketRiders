@@ -1,1 +1,37 @@
-{"display":{"title":{"text":"Gravitational Shootout","color":"#fe6309"},"description":{"text":"Land 5 shots on players while falling in one match.","color":"gold"},"icon":{"id":"minecraft:arrow"},"frame":"challenge","show_toast":true,"announce_to_chat":true,"hidden":false},"criteria":{"1":{"trigger":"minecraft:impossible"},"2":{"trigger":"minecraft:impossible"},"3":{"trigger":"minecraft:impossible"},"4":{"trigger":"minecraft:impossible"},"5":{"trigger":"minecraft:impossible"}},"requirements":[ ["1"], ["2"], ["3"], ["4"], ["5"]],"parent":"achievements:rr_challenges/pigeon"}
+{
+  "criteria": {
+    "1": {
+      "trigger": "minecraft:impossible"
+    },
+    "2": {
+      "trigger": "minecraft:impossible"
+    },
+    "3": {
+      "trigger": "minecraft:impossible"
+    },
+    "4": {
+      "trigger": "minecraft:impossible"
+    },
+    "5": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Land 5 shots on players while falling in one match."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:arrow"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "Gravitational Shootout"
+    }
+  },
+  "parent": "achievements:rr_challenges/pigeon"
+}

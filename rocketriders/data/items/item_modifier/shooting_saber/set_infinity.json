@@ -1,18 +1,18 @@
 [
   {
-    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
-        "translate": "Infinity Saber",
         "bold": true,
-        "color": "dark_purple"
+        "color": "dark_purple",
+        "translate": "Infinity Saber"
       }
-    }
+    },
+    "function": "minecraft:set_components"
   },
   {
-    "function": "minecraft:set_enchantments",
     "enchantments": {
       "minecraft:infinity": 1
-    }
+    },
+    "function": "minecraft:set_enchantments"
   }
 ]

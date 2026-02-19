@@ -1,15 +1,22 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:shield",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
+                "minecraft:banner_patterns": [
+                  {
+                    "color": "light_gray",
+                    "pattern": "minecraft:flower"
+                  },
+                  {
+                    "color": "light_gray",
+                    "pattern": "minecraft:border"
+                  }
+                ],
+                "minecraft:base_color": "white",
                 "minecraft:custom_data": {
                   "id": "knight_shield"
                 },
@@ -21,69 +28,58 @@
                     "none"
                   ]
                 },
-                "minecraft:max_damage": 10,
-                "minecraft:item_name": {
-                  "text": "Knight Shield",
-                  "bold": true,
-                  "color": "white"
-                },
                 "minecraft:custom_name": {
-                  "text": "Knight Shield",
                   "bold": true,
                   "color": "white",
-                  "italic": false
+                  "italic": false,
+                  "text": "Knight Shield"
                 },
-                "minecraft:base_color": "white",
-                "minecraft:banner_patterns": [
-                  {
-                    "pattern": "minecraft:flower",
-                    "color": "light_gray"
-                  },
-                  {
-                    "pattern": "minecraft:border",
-                    "color": "light_gray"
-                  }
-                ],
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "white",
+                  "text": "Knight Shield"
+                },
                 "minecraft:lore": [
                   {
-                    "text": "A not-so-sturdy shield.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "A not-so-sturdy shield."
                   }
                 ],
+                "minecraft:max_damage": 10,
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:base_color",
                     "minecraft:banner_patterns"
                   ]
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": {
-                  "text": "Knight Shield",
-                  "bold": true,
-                  "color": "blue"
-                },
-                "minecraft:custom_name": {
-                  "text": "Knight Shield",
-                  "bold": true,
-                  "color": "blue",
-                  "italic": false
-                },
-                "minecraft:base_color": "blue",
                 "minecraft:banner_patterns": [
                   {
-                    "pattern": "minecraft:flower",
-                    "color": "light_blue"
+                    "color": "light_blue",
+                    "pattern": "minecraft:flower"
                   },
                   {
-                    "pattern": "minecraft:border",
-                    "color": "light_blue"
+                    "color": "light_blue",
+                    "pattern": "minecraft:border"
                   }
-                ]
+                ],
+                "minecraft:base_color": "blue",
+                "minecraft:custom_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "italic": false,
+                  "text": "Knight Shield"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Knight Shield"
+                }
               },
               "conditions": [
                 {
@@ -97,33 +93,33 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": {
-                  "text": "Knight Shield",
-                  "bold": true,
-                  "color": "blue"
-                },
-                "minecraft:custom_name": {
-                  "text": "Knight Shield",
-                  "bold": true,
-                  "color": "blue",
-                  "italic": false
-                },
-                "minecraft:base_color": "red",
                 "minecraft:banner_patterns": [
                   {
-                    "pattern": "minecraft:flower",
-                    "color": "pink"
+                    "color": "pink",
+                    "pattern": "minecraft:flower"
                   },
                   {
-                    "pattern": "minecraft:border",
-                    "color": "pink"
+                    "color": "pink",
+                    "pattern": "minecraft:border"
                   }
-                ]
+                ],
+                "minecraft:base_color": "red",
+                "minecraft:custom_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "italic": false,
+                  "text": "Knight Shield"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "Knight Shield"
+                }
               },
               "conditions": [
                 {
@@ -134,48 +130,52 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": {
-                  "text": "Knight Shield",
-                  "bold": true,
-                  "color": "gold"
-                },
-                "minecraft:custom_name": {
-                  "text": "Knight Shield",
-                  "bold": true,
-                  "color": "gold",
-                  "italic": false
-                },
-                "minecraft:base_color": "yellow",
                 "minecraft:banner_patterns": [
                   {
-                    "pattern": "minecraft:flower",
-                    "color": "orange"
+                    "color": "orange",
+                    "pattern": "minecraft:flower"
                   },
                   {
-                    "pattern": "minecraft:border",
-                    "color": "orange"
+                    "color": "orange",
+                    "pattern": "minecraft:border"
                   }
-                ]
+                ],
+                "minecraft:base_color": "yellow",
+                "minecraft:custom_name": {
+                  "bold": true,
+                  "color": "gold",
+                  "italic": false,
+                  "text": "Knight Shield"
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "gold",
+                  "text": "Knight Shield"
+                }
               },
               "conditions": [
                 {
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:shield",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

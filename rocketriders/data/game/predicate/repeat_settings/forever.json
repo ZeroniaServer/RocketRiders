@@ -1,12 +1,12 @@
 {
   "condition": "minecraft:value_check",
+  "range": 2147483647,
   "value": {
-    "type": "minecraft:score",
+    "score": "config",
     "target": {
-      "type": "minecraft:fixed",
-      "name": "$extra_match_repetitions"
+      "name": "$extra_match_repetitions",
+      "type": "minecraft:fixed"
     },
-    "score": "config"
-  },
-  "range": 2147483647
+    "type": "minecraft:score"
+  }
 }

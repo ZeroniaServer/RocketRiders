@@ -2,30 +2,15 @@
   {
     "function": "minecraft:set_custom_model_data",
     "strings": {
-      "values": [
-        "none"
-      ],
       "mode": "replace_section",
       "offset": 2,
-      "size": 1
+      "size": 1,
+      "values": [
+        "none"
+      ]
     }
   },
   {
-    "function": "minecraft:set_custom_model_data",
-    "floats": {
-      "values": [
-        1
-      ],
-      "mode": "replace_all"
-    },
-    "strings": {
-      "values": [
-        "blue"
-      ],
-      "mode": "replace_section",
-      "offset": 2,
-      "size": 1
-    },
     "conditions": [
       {
         "condition": "minecraft:reference",
@@ -45,24 +30,24 @@
           "name": "game:gamemode_components/neutral_items"
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
+    ],
     "floats": {
+      "mode": "replace_all",
       "values": [
-        2
-      ],
-      "mode": "replace_all"
+        1
+      ]
     },
+    "function": "minecraft:set_custom_model_data",
     "strings": {
-      "values": [
-        "yellow"
-      ],
       "mode": "replace_section",
       "offset": 2,
-      "size": 1
-    },
+      "size": 1,
+      "values": [
+        "blue"
+      ]
+    }
+  },
+  {
     "conditions": [
       {
         "condition": "minecraft:reference",
@@ -75,24 +60,24 @@
           "name": "game:gamemode_components/neutral_items"
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
+    ],
     "floats": {
+      "mode": "replace_all",
       "values": [
-        1
-      ],
-      "mode": "replace_all"
+        2
+      ]
     },
+    "function": "minecraft:set_custom_model_data",
     "strings": {
-      "values": [
-        "red"
-      ],
       "mode": "replace_section",
       "offset": 2,
-      "size": 1
-    },
+      "size": 1,
+      "values": [
+        "yellow"
+      ]
+    }
+  },
+  {
     "conditions": [
       {
         "condition": "minecraft:reference",
@@ -109,6 +94,21 @@
           "name": "game:gamemode_components/neutral_items"
         }
       }
-    ]
+    ],
+    "floats": {
+      "mode": "replace_all",
+      "values": [
+        1
+      ]
+    },
+    "function": "minecraft:set_custom_model_data",
+    "strings": {
+      "mode": "replace_section",
+      "offset": 2,
+      "size": 1,
+      "values": [
+        "red"
+      ]
+    }
   }
 ]

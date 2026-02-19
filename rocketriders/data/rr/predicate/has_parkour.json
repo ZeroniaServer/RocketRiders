@@ -1,13 +1,13 @@
 {
-	"condition": "minecraft:any_of",
-	"terms": [
-		{
-			"condition": "minecraft:reference",
-			"name": "rr:server_mode/vanilla"
-		},
-		{
-			"condition": "minecraft:reference",
-			"name": "rr:server_mode/realms"
-		}
-	]
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "rr:server_mode/vanilla"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "rr:server_mode/realms"
+    }
+  ]
 }

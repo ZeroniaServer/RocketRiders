@@ -1,42 +1,60 @@
 {
-  "type": "minecraft:multi_action",
-  "title": "RR Developer Actions: Switch Team",
-  "external_title": "Switch Team...",
-  "exit_action": {
-    "label": "Back",
-    "action": {
-      "type": "minecraft:show_dialog",
-      "dialog": "dev:quick_actions"
-    }
-  },
   "actions": [
     {
-      "label": [{"color":"blue","text":"Blue"},{"color":"gray","text":" (or Red)"}],
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 14"
+        "command": "/trigger dev set 14",
+        "type": "minecraft:run_command"
+      },
+      "label": [
+        {
+          "color": "blue",
+          "text": "Blue"
+        },
+        {
+          "color": "gray",
+          "text": " (or Red)"
+        }
+      ]
+    },
+    {
+      "action": {
+        "command": "/trigger dev set 15",
+        "type": "minecraft:run_command"
+      },
+      "label": {
+        "color": "gold",
+        "text": "Yellow"
       }
     },
     {
-      "label": {"color":"gold","text":"Yellow"},
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 15"
+        "command": "/trigger dev set 16",
+        "type": "minecraft:run_command"
+      },
+      "label": {
+        "color": "dark_gray",
+        "text": "Spectator"
       }
     },
     {
-      "label": {"color":"dark_gray","text":"Spectator"},
       "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 16"
-      }
-    },
-    {
-      "label": {"color":"green","text":"Lobby"},
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "/trigger dev set 17"
+        "command": "/trigger dev set 17",
+        "type": "minecraft:run_command"
+      },
+      "label": {
+        "color": "green",
+        "text": "Lobby"
       }
     }
-  ]
+  ],
+  "exit_action": {
+    "action": {
+      "dialog": "dev:quick_actions",
+      "type": "minecraft:show_dialog"
+    },
+    "label": "Back"
+  },
+  "external_title": "Switch Team...",
+  "title": "RR Developer Actions: Switch Team",
+  "type": "minecraft:multi_action"
 }

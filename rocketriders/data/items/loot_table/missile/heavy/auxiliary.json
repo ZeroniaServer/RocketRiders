@@ -1,20 +1,16 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/auxiliary",
                   "spawn_egg": {
-                    "type": "missile",
-                    "missile": "auxiliary"
+                    "missile": "auxiliary",
+                    "type": "missile"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -31,91 +27,91 @@
                 "minecraft:item_model": "minecraft:mooshroom_spawn_egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Heavy] ",
+                    "bold": true,
                     "color": "dark_red",
-                    "bold": true
+                    "text": "[Heavy] "
                   },
                   {
-                    "text": "Auxiliary",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Auxiliary"
                   }
                 ],
                 "minecraft:lore": [
                   [
                     {
-                      "text": "Amount of TNT: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Amount of TNT: "
                     },
                     {
-                      "text": "25",
-                      "color": "red"
+                      "color": "red",
+                      "text": "25"
                     }
                   ],
                   [
                     {
-                      "text": "Speed: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Speed: "
                     },
                     {
-                      "text": "1.7m/s",
-                      "color": "red"
+                      "color": "red",
+                      "text": "1.7m/s"
                     }
                   ],
                   [
                     {
-                      "text": "Made by: ",
                       "color": "gray",
-                      "italic": false
+                      "italic": false,
+                      "text": "Made by: "
                     },
                     {
-                      "text": "Evtema3",
-                      "color": "red"
+                      "color": "red",
+                      "text": "Evtema3"
                     }
                   ],
                   "",
                   {
-                    "text": "The Auxiliary is a heavy missile.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "The Auxiliary is a heavy missile."
                   },
                   {
-                    "text": "This missile has 6 triggers in it,",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "This missile has 6 triggers in it,"
                   },
                   {
-                    "text": "making it risky to defuse.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "making it risky to defuse."
                   }
                 ]
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:copy_custom_data",
-              "source": "this",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "UUID",
-                  "target": "spawn_egg.owner",
-                  "op": "replace"
+                  "target": "spawn_egg.owner"
                 }
-              ]
+              ],
+              "source": "this"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Heavy] ",
+                    "bold": true,
                     "color": "dark_red",
-                    "bold": true
+                    "text": "[Heavy] "
                   },
                   {
-                    "text": "Auxiliary",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Auxiliary"
                   }
                 ]
               },
@@ -131,20 +127,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Heavy] ",
+                    "bold": true,
                     "color": "dark_red",
-                    "bold": true
+                    "text": "[Heavy] "
                   },
                   {
-                    "text": "Auxiliary",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Auxiliary"
                   }
                 ]
               },
@@ -160,15 +156,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:pig_spawn_egg",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

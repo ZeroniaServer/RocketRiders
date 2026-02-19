@@ -1,28 +1,28 @@
 {
-  "display": {
-    "title": {
-      "text": "Missile Display Area",
-      "color": "#d901d9"
-    },
-    "description": {
-      "text": "You've discovered the Missile Display Area.",
-      "color": "light_purple"
-    },
-    "icon": {
-      "id": "minecraft:tnt"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": false,
-    "hidden": false
-  },
   "criteria": {
     "Impossible": {
       "trigger": "minecraft:impossible"
     }
   },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "light_purple",
+      "text": "You've discovered the Missile Display Area."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:tnt"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#d901d9",
+      "text": "Missile Display Area"
+    }
+  },
+  "parent": "2811iaj1:root",
   "rewards": {
     "function": "2811iaj1:misdisp_indimension"
-  },
-  "parent": "2811iaj1:root"
+  }
 }

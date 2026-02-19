@@ -1,8 +1,10 @@
 {
   "criteria": {
     "gain_invisibility_effect": {
-      "trigger": "minecraft:effects_changed",
       "conditions": {
+        "effects": {
+          "minecraft:invisibility": {}
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
@@ -10,11 +12,9 @@
               "dimension": "minecraft:overworld"
             }
           }
-        ],
-        "effects": {
-          "minecraft:invisibility": {}
-        }
-      }
+        ]
+      },
+      "trigger": "minecraft:effects_changed"
     }
   },
   "rewards": {

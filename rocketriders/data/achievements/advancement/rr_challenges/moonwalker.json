@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Moonwalker",
-      "color": "#c20000"
-    },
-    "description": {
-      "text": "Walk backwards for the entire game.",
-      "color": "red"
-    },
-    "icon": {
-      "id": "minecraft:end_stone"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "red",
+      "text": "Walk backwards for the entire game."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:end_stone"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#c20000",
+      "text": "Moonwalker"
     }
   },
   "parent": "achievements:rr_challenges/groundbound"

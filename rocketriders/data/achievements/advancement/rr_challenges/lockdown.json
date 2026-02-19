@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Lockdown",
-      "color": "#fe6309"
-    },
-    "description": {
-      "text": "Keep the Powerup Platform under your team's posession for one consecutive minute.",
-      "color": "gold"
-    },
-    "icon": {
-      "id": "minecraft:iron_bars"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Keep the Powerup Platform under your team's posession for one consecutive minute."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:iron_bars"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "Lockdown"
     }
   },
   "parent": "achievements:rr_challenges/revenge_from_grave"

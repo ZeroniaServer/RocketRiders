@@ -1,14 +1,10 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:snowball",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "icbm"
@@ -20,49 +16,40 @@
                     "blue"
                   ]
                 },
-                "minecraft:max_stack_size": 64,
-                "minecraft:item_model": "minecraft:egg",
                 "minecraft:enchantment_glint_override": true,
+                "minecraft:item_model": "minecraft:egg",
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "ICBM",
-                    "color": "white"
+                    "color": "white",
+                    "text": "ICBM"
                   }
                 ],
                 "minecraft:lore": [
                   {
-                    "text": "Short for \"intercontinental ballistic missile\".",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Short for \"intercontinental ballistic missile\"."
                   },
                   {
-                    "text": "Blows up upon impact or after short flight.",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "Blows up upon impact or after short flight."
                   }
                 ],
+                "minecraft:max_stack_size": 64,
                 "minecraft:use_cooldown": {
-                  "seconds": 0.5,
-                  "cooldown_group": "rocketriders:icbm"
+                  "cooldown_group": "rocketriders:icbm",
+                  "seconds": 0.5
                 }
-              }
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_lore",
-              "lore": [
-                "",
-                {
-                  "color": "gray",
-                  "italic": false,
-                  "text": "Flight Duration: 1.5 seconds"
-                }
-              ],
-              "mode": "append",
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -75,19 +62,19 @@
                   "condition": "minecraft:reference",
                   "name": "game:gamemode_components/decreased_icbm_flight_duration"
                 }
-              ]
-            },
-            {
+              ],
               "function": "minecraft:set_lore",
               "lore": [
                 "",
                 {
                   "color": "gray",
                   "italic": false,
-                  "text": "Flight Duration: 1 second"
+                  "text": "Flight Duration: 1.5 seconds"
                 }
               ],
-              "mode": "append",
+              "mode": "append"
+            },
+            {
               "conditions": [
                 {
                   "condition": "minecraft:any_of",
@@ -111,20 +98,29 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "function": "minecraft:set_lore",
+              "lore": [
+                "",
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "text": "Flight Duration: 1 second"
+                }
+              ],
+              "mode": "append"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "ICBM",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "ICBM"
                   }
                 ]
               },
@@ -140,20 +136,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "ICBM",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "ICBM"
                   }
                 ]
               },
@@ -169,15 +165,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:snowball",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

@@ -1,60 +1,60 @@
 {
-  "display": {
-    "title": {
-      "text": "Just Give Me That L Already",
-      "color": "#fe6309"
-    },
-    "description": {
-      "text": "Get killed on your own base.",
-      "color": "gold"
-    },
-    "icon": {
-      "id": "minecraft:black_banner",
-      "components": {
-        "minecraft:banner_patterns": [
-          {
-            "pattern": "half_horizontal",
-            "color": "white"
-          },
-          {
-            "pattern": "half_horizontal_bottom",
-            "color": "white"
-          },
-          {
-            "pattern": "stripe_left",
-            "color": "black"
-          },
-          {
-            "pattern": "stripe_bottom",
-            "color": "black"
-          },
-          {
-            "pattern": "stripe_left",
-            "color": "white"
-          },
-          {
-            "pattern": "stripe_bottom",
-            "color": "white"
-          },
-          {
-            "pattern": "stripe_right",
-            "color": "white"
-          },
-          {
-            "pattern": "square_top_left",
-            "color": "white"
-          }
-        ]
-      }
-    },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Get killed on your own base."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "components": {
+        "minecraft:banner_patterns": [
+          {
+            "color": "white",
+            "pattern": "half_horizontal"
+          },
+          {
+            "color": "white",
+            "pattern": "half_horizontal_bottom"
+          },
+          {
+            "color": "black",
+            "pattern": "stripe_left"
+          },
+          {
+            "color": "black",
+            "pattern": "stripe_bottom"
+          },
+          {
+            "color": "white",
+            "pattern": "stripe_left"
+          },
+          {
+            "color": "white",
+            "pattern": "stripe_bottom"
+          },
+          {
+            "color": "white",
+            "pattern": "stripe_right"
+          },
+          {
+            "color": "white",
+            "pattern": "square_top_left"
+          }
+        ]
+      },
+      "id": "minecraft:black_banner"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "Just Give Me That L Already"
     }
   },
   "parent": "achievements:rr_challenges/get_off_lawn"

@@ -1,32 +1,32 @@
 {
-  "display": {
-    "title": {
-      "text": "Volcanic Hatred",
-      "color": "#c20000"
-    },
-    "description": {
-      "text": "Kill an enemy with a Lava Splash in Powerups Mode.",
-      "color": "red"
-    },
-    "icon": {
-      "id": "minecraft:lingering_potion",
-      "components": {
-        "minecraft:enchantment_glint_override": true,
-        "minecraft:potion_contents": {
-          "custom_effects": [],
-          "potion": "minecraft:awkward",
-          "custom_color": 16747545
-        }
-      }
-    },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "red",
+      "text": "Kill an enemy with a Lava Splash in Powerups Mode."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "components": {
+        "minecraft:enchantment_glint_override": true,
+        "minecraft:potion_contents": {
+          "custom_color": 16747545,
+          "custom_effects": [],
+          "potion": "minecraft:awkward"
+        }
+      },
+      "id": "minecraft:lingering_potion"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#c20000",
+      "text": "Volcanic Hatred"
     }
   },
   "parent": "achievements:rr_challenges/blocks_into_bits"

@@ -1,24 +1,24 @@
 {
-  "display": {
-    "title": {
-      "text": "Clay Pigeon",
-      "color": "#fe6309"
-    },
-    "description": {
-      "text": "Kill a levitating player.",
-      "color": "gold"
-    },
-    "icon": {
-      "id": "minecraft:clay_ball"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gold",
+      "text": "Kill a levitating player."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "minecraft:clay_ball"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "#fe6309",
+      "text": "Clay Pigeon"
     }
   },
   "parent": "achievements:rr_challenges/lockdown"

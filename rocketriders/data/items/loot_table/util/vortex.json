@@ -1,14 +1,10 @@
 {
   "pools": [
     {
-      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:snowball",
           "functions": [
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "vortex"
@@ -21,50 +17,50 @@
                     "none"
                   ]
                 },
-                "minecraft:max_stack_size": 64,
+                "minecraft:item_model": "minecraft:ender_eye",
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Vortex",
-                    "color": "white"
+                    "color": "white",
+                    "text": "Vortex"
                   }
                 ],
                 "minecraft:lore": [
                   {
-                    "text": "A sky-mine. Blows up when enemies get close,",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "A sky-mine. Blows up when enemies get close,"
                   },
                   {
-                    "text": "when missiles pass through it, or when it gets",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "when missiles pass through it, or when it gets"
                   },
                   {
-                    "text": "shot by projectiles. It also follows enemies!",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "text": "shot by projectiles. It also follows enemies!"
                   }
                 ],
-                "minecraft:item_model": "minecraft:ender_eye"
-              }
+                "minecraft:max_stack_size": 64
+              },
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Vortex",
-                    "color": "blue"
+                    "color": "blue",
+                    "text": "Vortex"
                   }
                 ]
               },
@@ -80,20 +76,20 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
-              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": [
                   {
-                    "text": "[Utility] ",
+                    "bold": true,
                     "color": "light_purple",
-                    "bold": true
+                    "text": "[Utility] "
                   },
                   {
-                    "text": "Vortex",
-                    "color": "gold"
+                    "color": "gold",
+                    "text": "Vortex"
                   }
                 ]
               },
@@ -109,15 +105,19 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ]
+              ],
+              "function": "minecraft:set_components"
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ]
+          ],
+          "name": "minecraft:snowball",
+          "type": "minecraft:item"
         }
-      ]
+      ],
+      "rolls": 1
     }
   ]
 }

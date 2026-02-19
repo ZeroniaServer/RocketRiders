@@ -1,8 +1,8 @@
 {
-    "env": {
-        "useFilePolling": true
-    },
-    "lint": {
-        "undeclaredSymbol": null
-    }
+  "env": {
+    "useFilePolling": true
+  },
+  "lint": {
+    "undeclaredSymbol": null
+  }
 }

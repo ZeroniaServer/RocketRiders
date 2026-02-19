@@ -1,22 +1,22 @@
 [
-	{
-		"condition": "minecraft:reference",
-		"name": "custom:insideborder"
-	},
-	{
-		"condition": "minecraft:inverted",
-		"term": {
-			"condition": "minecraft:any_of",
-			"terms": [
-				{
-					"condition": "minecraft:reference",
-					"name": "custom:in_void"
-				},
-				{
-					"condition": "minecraft:reference",
-					"name": "custom:near_or_above_roof"
-				}
-			]
-		}
-	}
+  {
+    "condition": "minecraft:reference",
+    "name": "custom:insideborder"
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "minecraft:reference",
+          "name": "custom:in_void"
+        },
+        {
+          "condition": "minecraft:reference",
+          "name": "custom:near_or_above_roof"
+        }
+      ]
+    }
+  }
 ]

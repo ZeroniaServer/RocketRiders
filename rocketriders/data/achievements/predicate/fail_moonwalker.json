@@ -11,10 +11,10 @@
         "entity": "this",
         "predicate": {
           "type_specific": {
-            "type": "minecraft:player",
             "input": {
               "forward": true
-            }
+            },
+            "type": "minecraft:player"
           }
         }
       },
@@ -23,11 +23,11 @@
         "entity": "this",
         "predicate": {
           "type_specific": {
-            "type": "minecraft:player",
             "input": {
               "backward": false,
               "left": true
-            }
+            },
+            "type": "minecraft:player"
           }
         }
       },
@@ -36,11 +36,11 @@
         "entity": "this",
         "predicate": {
           "type_specific": {
-            "type": "minecraft:player",
             "input": {
               "backward": false,
               "right": true
-            }
+            },
+            "type": "minecraft:player"
           }
         }
       }

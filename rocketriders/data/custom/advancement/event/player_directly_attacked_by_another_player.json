@@ -1,30 +1,28 @@
 {
   "criteria": {
-    "get_directly_non_fatally_attacked_by_another_player": {
-      "trigger": "minecraft:entity_hurt_player",
+    "get_directly_killed_by_another_player": {
       "conditions": {
+        "entity": {
+          "type": "minecraft:player"
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
             "predicate": {
               "dimension": "minecraft:overworld"
             }
-          },
-          {
-            "condition": "minecraft:reference",
-            "name": "custom:alive"
           }
-        ],
+        ]
+      },
+      "trigger": "minecraft:entity_killed_player"
+    },
+    "get_directly_non_fatally_attacked_by_another_player": {
+      "conditions": {
         "damage": {
           "source_entity": {
             "type": "minecraft:player"
           }
-        }
-      }
-    },
-    "get_non_fatally_hurt_by_mob_with_damage_origins": {
-      "trigger": "minecraft:entity_hurt_player",
-      "conditions": {
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
@@ -36,7 +34,32 @@
             "condition": "minecraft:reference",
             "name": "custom:alive"
           }
-        ],
+        ]
+      },
+      "trigger": "minecraft:entity_hurt_player"
+    },
+    "get_killed_by_mob_with_damage_origins": {
+      "conditions": {
+        "entity": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "damage_origin": {}
+            }
+          }
+        },
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:entity_killed_player"
+    },
+    "get_non_fatally_hurt_by_mob_with_damage_origins": {
+      "conditions": {
         "damage": {
           "source_entity": {
             "predicates": {
@@ -45,44 +68,21 @@
               }
             }
           }
-        }
-      }
-    },
-    "get_directly_killed_by_another_player": {
-      "trigger": "minecraft:entity_killed_player",
-      "conditions": {
+        },
         "player": [
           {
             "condition": "minecraft:location_check",
             "predicate": {
               "dimension": "minecraft:overworld"
             }
-          }
-        ],
-        "entity": {
-          "type": "minecraft:player"
-        }
-      }
-    },
-    "get_killed_by_mob_with_damage_origins": {
-      "trigger": "minecraft:entity_killed_player",
-      "conditions": {
-        "player": [
+          },
           {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
+            "condition": "minecraft:reference",
+            "name": "custom:alive"
           }
-        ],
-        "entity": {
-          "predicates": {
-            "minecraft:custom_data": {
-              "damage_origin": {}
-            }
-          }
-        }
-      }
+        ]
+      },
+      "trigger": "minecraft:entity_hurt_player"
     }
   },
   "requirements": [

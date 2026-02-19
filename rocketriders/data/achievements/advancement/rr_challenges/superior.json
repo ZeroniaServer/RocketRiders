@@ -1,15 +1,18 @@
 {
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
   "display": {
-    "title": {
-      "text": "Superior Players",
-      "color": "#c20000"
-    },
+    "announce_to_chat": true,
     "description": {
-      "text": "Lose to the Bots in PVE Mode.",
-      "color": "red"
+      "color": "red",
+      "text": "Lose to the Bots in PVE Mode."
     },
+    "frame": "task",
+    "hidden": true,
     "icon": {
-      "id": "minecraft:player_head",
       "components": {
         "minecraft:profile": {
           "properties": [
@@ -19,16 +22,13 @@
             }
           ]
         }
-      }
+      },
+      "id": "minecraft:player_head"
     },
-    "frame": "task",
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": true
-  },
-  "criteria": {
-    "impossible": {
-      "trigger": "minecraft:impossible"
+    "title": {
+      "color": "#c20000",
+      "text": "Superior Players"
     }
   }
 }

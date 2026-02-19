@@ -6,6 +6,10 @@ scoreboard players operation $match_over_timer global = @e[limit=1,x=0,type=armo
 execute if score $match_over_timer global matches ..0 run scoreboard players reset $match_over_timer global
 scoreboard objectives remove endtimer
 
+# Move lockmodroom CmdData to config
+execute if score $lockmodroom CmdData matches 1 unless predicate rr:is_cubekrowd run scoreboard players set $lock_modification_room config 1
+scoreboard players reset $lockmodroom CmdData
+
 # Change how phases are tracked
 execute if score $phase/match.play global matches 1 run scoreboard players set $match_in_play global 1
 execute if score $phase/match.paused global matches 1 run scoreboard players set $match_in_play global 1

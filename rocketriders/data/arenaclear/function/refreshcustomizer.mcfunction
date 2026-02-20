@@ -68,13 +68,14 @@ execute unless predicate game:gamemode_components/duel_settings_locked unless en
 execute if predicate game:gamemode_components/duel_settings_locked run data modify block -58 192 73 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
 
 ## Removes existing displays
-fill -45 196 92 -55 185 64 light[level=15] strict
-fill -45 196 92 -55 185 64 light[level=15] strict
-fill -55 185 92 -40 206 64 light[level=15] replace minecraft:orange_stained_glass strict
-fill -55 185 92 -40 206 64 light[level=15] replace minecraft:lime_stained_glass strict
-fill -55 185 92 -40 206 64 light[level=15] replace minecraft:pink_stained_glass strict
+fill -45 196 92 -55 185 64 minecraft:light[level=15] strict
+fill -45 196 92 -55 185 64 minecraft:light[level=15] strict
+fill -55 185 92 -40 206 64 minecraft:light[level=15] replace minecraft:orange_stained_glass strict
+fill -55 185 92 -40 206 64 minecraft:light[level=15] replace minecraft:lime_stained_glass strict
+fill -55 185 92 -40 206 64 minecraft:light[level=15] replace minecraft:pink_stained_glass strict
 fill -40 196 92 -44 185 64 minecraft:white_stained_glass strict
-fill -44 197 64 -40 202 92 light[level=15] strict
+fill -44 197 64 -40 202 92 minecraft:light[level=15] strict
+fill -45 197 73 -45 198 83 minecraft:light[level=15] strict
 
 ## Top Decorations
 #New Dawn Arch

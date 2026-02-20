@@ -14,5 +14,5 @@ execute if predicate game:achievements_can_be_awarded if entity @s[tag=CheckCry]
 execute if entity @s[predicate=!custom:team/spectator,tag=!crosser] run return run damage @s 100.0 out_of_world
 
 # Handle crossers (Rocket Residers)
-execute unless score $nodeathmessages CmdData matches 1 if entity @s[tag=crosser] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to leave their base"}]
+execute unless predicate game:game_rules/disable_death_messages/on if entity @s[tag=crosser] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" tried to leave their base"}]
 execute if entity @s[tag=crosser] run function custom:fake_void_death

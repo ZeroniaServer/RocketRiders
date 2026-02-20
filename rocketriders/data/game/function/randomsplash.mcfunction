@@ -1,7 +1,7 @@
 ##Randomized splash messages for when the match begins
-execute if score $skiptitles CmdData matches 1 run return fail
+execute if predicate game:game_rules/disable_titles/on run return fail
 title @a[x=0] title {color:"aqua",text:"Game Started!"}
-execute if score $skipsplashes CmdData matches 1 run return fail
+execute if predicate game:game_rules/disable_splash_messages/on run return fail
 
 #If you want to add more splashes just increase this number.
 execute store result score $startsplash CmdData run random value 0..222

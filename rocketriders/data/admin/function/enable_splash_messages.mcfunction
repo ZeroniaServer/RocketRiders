@@ -1,2 +1,2 @@
-scoreboard players set $skipsplashes CmdData 0
-tellraw @a[x=0] [{"text":"Random splash messages enabled.","color":"green"}]
+scoreboard players reset $disable_splash_messages config
+tellraw @a[x=0] {color:"green",text:"Random splash messages enabled."}

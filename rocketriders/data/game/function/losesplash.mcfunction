@@ -1,6 +1,6 @@
 ##Randomized splash messages for the losers of a match
-execute if score $skipsplashes CmdData matches 1 run return fail
-execute if score $skiptitles CmdData matches 1 run return fail
+execute if predicate game:game_rules/disable_splash_messages/on run return fail
+execute if predicate game:game_rules/disable_titles/on run return fail
 
 #If you want to add more splashes just increase this number.
 execute store result score $losssplash CmdData run random value 0..126

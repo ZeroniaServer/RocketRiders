@@ -9,6 +9,12 @@ scoreboard objectives remove endtimer
 # Move lockmodroom CmdData to config
 execute if score $lockmodroom CmdData matches 1 unless predicate rr:is_cubekrowd run scoreboard players set $lock_modification_room config 1
 scoreboard players reset $lockmodroom CmdData
+execute if score $nodeathmessages CmdData matches 1 run scoreboard players set $disable_death_messages config 1
+scoreboard players reset $nodeathmessages CmdData
+execute if score $skipsplashes CmdData matches 1 run scoreboard players set $disable_splash_messages config 1
+scoreboard players reset $skipsplashes CmdData
+execute if score $skiptitles CmdData matches 1 run scoreboard players set $disable_titles config 1
+scoreboard players reset $skiptitles CmdData
 
 # Change how phases are tracked
 execute if score $phase/match.play global matches 1 run scoreboard players set $match_in_play global 1

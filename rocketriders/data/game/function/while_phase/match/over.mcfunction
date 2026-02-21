@@ -6,7 +6,6 @@
 scoreboard players add $match_over_timer global 1
 execute if score $match_over_timer global matches 2 if predicate game:gamemode_components/short_end_sequence run scoreboard players set $match_over_timer global 249
 
-execute as @a[x=0] run function custom:player_action/forget_nova_attach
 execute if score $match_over_timer global matches 1 run tag @s remove gaveFirstItem
 execute if score $match_over_timer global matches 1 run effect clear @a[x=0,predicate=custom:team/any_playing_team]
 execute if entity @s[tag=BlueWon] run effect give @a[x=0,predicate=custom:team/yellow] weakness infinite 100 true
@@ -29,8 +28,6 @@ execute if score $match_over_timer global matches 1..569 run function modifiers:
 ##Post-tie phase and reset
 execute if score $match_over_timer global matches 101 run scoreboard players set $game_duration global 0
 execute if score $match_over_timer global matches 102 as @a[x=0] run function everytick:score_reset
-execute if score $match_over_timer global matches 102 as @a[x=0] run function custom:player_action/forget_all_canopies
-execute if score $match_over_timer global matches 102 as @a[x=0] run function custom:player_action/forget_nova_attach
 execute if score $match_over_timer global matches 250 run gamemode spectator @a[x=0,predicate=custom:team/any_playing_team]
 execute if score $match_over_timer global matches 570 run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] GamesPlayed 1
 execute if score $match_over_timer global matches 570 as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/playerdata/save

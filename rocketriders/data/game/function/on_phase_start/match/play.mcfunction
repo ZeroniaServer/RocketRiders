@@ -6,7 +6,9 @@ tag @s remove BothWon
 execute unless predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/on
 execute if predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/off
 
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_canopy
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_nova_attach
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_spell_emitter
 tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 

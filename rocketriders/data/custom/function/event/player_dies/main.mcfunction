@@ -82,11 +82,8 @@ tag @s add matchOrigin
 execute as @e[x=0,predicate=entities:type/canopy_projectile/brain] if function custom:match_origin positioned as @s run function custom:event/player_dies/withdraw_canopy
 tag @s remove matchOrigin
 
-function custom:player_action/forget_all_canopies
-
-tag @s add matchOrigin
-execute as @e[x=0,predicate=entities:type/spell_emitter] if function custom:match_origin run kill @s
-tag @s remove matchOrigin
+function custom:player_action/forget_canopy
+function custom:player_action/forget_spell_emitter
 
 tag @s remove onBlue
 tag @s remove onYellow

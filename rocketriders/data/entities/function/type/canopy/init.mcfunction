@@ -22,11 +22,11 @@ execute at @s[tag=!canopy.small] unless predicate {condition:"minecraft:location
 execute at @s[tag=!canopy.small] if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:173.0}}}} run tp @s ~ ~ 172.5
 execute at @s[tag=!canopy.small] unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-172.0}}}} run tp @s ~ ~ -171.5
 
-execute on origin run tag @s add canopy.origin
-execute at @s[tag=!canopy.small] run playsound minecraft:entity.player.teleport player @a[x=0,tag=!canopy.origin] ~ ~2 ~ 1 1
-execute on origin run tag @s remove canopy.origin
+execute if predicate game:phase/match/play on origin run tag @s add canopy.origin
+execute if predicate game:phase/match/play at @s[tag=!canopy.small] run playsound minecraft:entity.player.teleport player @a[x=0,tag=!canopy.origin] ~ ~2 ~ 1 1
+execute if predicate game:phase/match/play on origin run tag @s remove canopy.origin
 
-execute on origin run function custom:player_action/forget_all_canopies
+execute if predicate game:phase/match/play on origin run function custom:player_action/forget_canopy
 tag @s remove canopy.forgotten_origin
 
 execute if predicate entities:origin_team/blue unless predicate game:gamemode_components/red_for_blue at @s run place template game:bluecanopy1 ~-1 ~ ~-1

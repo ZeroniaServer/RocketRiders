@@ -1,7 +1,8 @@
 ##
 function custom:game_rules/fall_damage/off
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_all_canopies
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_canopy
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_nova_attach
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_spell_emitter
 
 gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 

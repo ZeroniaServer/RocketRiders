@@ -20,24 +20,24 @@ scoreboard players reset @a[x=0,tag=!InLead,scores={ChaseAlarm=1..}] ChaseAlarm
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[x=0,tag=InLead,limit=1,sort=nearest]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.20
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[x=0,tag=InLead,limit=1,sort=nearest]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.10
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ~ ~ ~ facing entity @a[x=0,tag=InLead,limit=1,sort=nearest]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run tp @s ^ ^ ^0.20
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s run function rr_chase:chaseblocks/shootcrystal
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run tp @s ~ ~ ~ facing entity @a[x=0,tag=InLead,limit=1,sort=nearest]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run tp @s ^ ^ ^0.20
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] run function rr_chase:chaseblocks/shootcrystal
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,3],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,3],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:1} ^0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s unless entity @a[tag=InLead,distance=..20] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,1],scale:1} ^-0.3 ^0.4 ^ 0 0 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 execute as @e[x=0,type=armor_stand,tag=ChaseCrystal] at @s if entity @a[tag=InLead,distance=..2] run tag @s add CrystalComplete
 execute if predicate game:achievements_can_be_awarded as @e[x=0,type=armor_stand,tag=CrystalComplete] at @s if score @s ChaseCrystalID = @a[tag=InLead,distance=..3,sort=nearest,limit=1] playerUUID run advancement grant @a[tag=InLead,distance=..3,sort=nearest,limit=1] only achievements:rr_challenges/boomerang
 execute as @e[x=0,type=armor_stand,tag=CrystalComplete] at @s if entity @a[tag=InLead,distance=..2] as @a[tag=InLead,distance=..3,sort=nearest,limit=1] at @s positioned ~ ~ ~2 run function custom:explosion {power:4,modifiers:{name:"End Crystal"}}

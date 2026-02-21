@@ -12,6 +12,10 @@ tag @e[x=0,type=creeper,tag=explosion] add old_explosion
 execute if predicate game:modifiers/explosive/on run function custom:explosion {power:5,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
 execute unless predicate game:modifiers/explosive/on run function custom:explosion {power:2,modifiers:{copy_name:true,nbt:{data:{nova_rocket_explosion:{}}}}}
 
+execute if predicate game:gamemode_components/has_chase_crystals positioned as @s positioned ~ ~-0.5 ~ as @e[distance=..5,type=minecraft:end_crystal] run data modify entity @s Invulnerable set value false
+execute if predicate game:gamemode_components/has_chase_crystals positioned as @s positioned ~ ~-0.5 ~ on origin at @e[distance=..5,type=minecraft:end_crystal] run damage @n[limit=1,distance=..0.1,type=minecraft:end_crystal] 1 minecraft:player_attack by @s
+execute if predicate game:gamemode_components/has_chase_crystals positioned as @s positioned ~ ~-0.5 ~ as @e[distance=..5,type=minecraft:end_crystal] run data modify entity @s Invulnerable set value true
+
 # Attempt to poof nearby enemy canopies
 tag @s add nova_rocket.explode.this
 execute on origin run tag @s add nova_rocket.origin

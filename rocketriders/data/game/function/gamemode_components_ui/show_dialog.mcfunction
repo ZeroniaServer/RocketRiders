@@ -113,6 +113,10 @@ execute if predicate game:gamemode_components/duel_settings_locked run data modi
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"friendly_fire",label:"friendly_fire",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:gamemode_components/friendly_fire run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[1].initial set value true
 
+# has_chase_crystals (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_chase_crystals",label:"🔒 has_chase_crystals",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/has_chase_crystals run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
 # has_flags (locked)
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_flags",label:"🔒 has_flags",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:gamemode_components/has_flags run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"

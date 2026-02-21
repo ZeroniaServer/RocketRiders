@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "range": 1,
+  "value": {
+    "score": "gamemode_components",
+    "target": {
+      "name": "$has_chase_crystals",
+      "type": "minecraft:fixed"
+    },
+    "type": "minecraft:score"
+  }
+}

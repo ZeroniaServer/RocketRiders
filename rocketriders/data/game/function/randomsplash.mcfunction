@@ -3,6 +3,8 @@ execute if predicate game:game_rules/disable_titles/on run return fail
 title @a[x=0] title {color:"aqua",text:"Game Started!"}
 execute if predicate game:game_rules/disable_splash_messages/on run return fail
 
+execute as @a[x=0] run title @s times 5 30 5
+
 #If you want to add more splashes just increase this number.
 execute store result score $startsplash CmdData run random value 0..222
 

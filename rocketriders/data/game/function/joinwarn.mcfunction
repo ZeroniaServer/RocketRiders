@@ -1,4 +1,6 @@
 ##Warns players based on which team they try to join via joinpads if the team is full/imbalanced
+title @s times 5 30 5
+
 ##Blue
 #Joining before settings have been confirmed
 execute if entity @s[tag=JoinBlue] unless predicate game:joinable_match_phase run title @s[tag=!tryJoinBlue] title {bold:true,color:"red",text:"Cannot Join Team!"}

@@ -10,7 +10,9 @@ execute if entity @e[x=0,type=armor_stand,tag=ChaseCrystal] run title @a[x=0,tag
 execute if entity @e[x=0,type=armor_stand,tag=ChaseCrystal] as @a[x=0,tag=InLead] at @s if entity @e[type=armor_stand,tag=ChaseCrystal,distance=10..] unless entity @e[type=armor_stand,tag=ChaseCrystal,distance=..7] run title @a[x=0,tag=InLead,scores={ChaseAlarm=1}] subtitle ["",{"text":"⚠","color":"red","bold":true},{"text":"End Crystal Incoming!","bold":true,"color":"dark_blue"},{"text":"⚠","color":"red","bold":true}]
 execute if entity @e[x=0,type=armor_stand,tag=ChaseCrystal] as @a[x=0,tag=InLead] at @s if entity @e[type=armor_stand,tag=ChaseCrystal,distance=10..] unless entity @e[type=armor_stand,tag=ChaseCrystal,distance=..7] run title @a[x=0,tag=InLead,scores={ChaseAlarm=5}] subtitle ["",{"text":"⚠","color":"red","bold":true},{"text":"End Crystal Incoming!","bold":true,"color":"blue"},{"text":"⚠","color":"red","bold":true}]
 execute if entity @e[x=0,type=armor_stand,tag=ChaseCrystal] as @a[x=0,tag=InLead] at @s if entity @e[type=armor_stand,tag=ChaseCrystal,distance=..9] run title @a[x=0,tag=InLead,scores={ChaseAlarm=5}] subtitle ["",{"text":"☠","color":"dark_red","bold":false},{"text":"End Crystal Incoming!","bold":true,"color":"red"},{"text":"☠","color":"dark_red","bold":false}]
+execute unless entity @e[x=0,type=armor_stand,tag=ChaseCrystal] run title @a[x=0,tag=InLead,scores={ChaseAlarm=1..}] times 5 30 5
 execute unless entity @e[x=0,type=armor_stand,tag=ChaseCrystal] run scoreboard players reset @a[x=0,tag=InLead,scores={ChaseAlarm=1..}] ChaseAlarm
+execute if entity @e[x=0,type=armor_stand,tag=ChaseCrystal] run title @a[x=0,tag=InLead,scores={ChaseAlarm=9..}] times 5 30 5
 execute if entity @e[x=0,type=armor_stand,tag=ChaseCrystal] run scoreboard players reset @a[x=0,tag=InLead,scores={ChaseAlarm=9..}] ChaseAlarm
 scoreboard players reset @a[x=0,tag=!InLead,scores={ChaseAlarm=1..}] ChaseAlarm
 

@@ -1,5 +1,5 @@
 ##Warns players based on which team they try to join via joinpads if the team is full/imbalanced
-title @s times 5 30 5
+title @s[tag=!tryJoinBlue,tag=!tryJoinYellow,tag=!tryJoinSpec] times 5 30 5
 
 ##Blue
 #Joining before settings have been confirmed

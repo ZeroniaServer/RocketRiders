@@ -10,9 +10,6 @@ execute if predicate game:modifiers/minute_mix/on run function items:minutemix
 #glass regeneration
 execute as @e[x=0,type=marker,tag=airDetect,limit=1] at @s run function rr_chase:game/airdetect
 
-#Arrows on death - DISABLED AS OF 1.2.0
-# execute if score $game_duration global matches 2.. as @a[x=0,predicate=custom:team/blue,scores={deathCooldown=1}] run function items:util/givearrows
-
 #Actionbar for who's in the lead
 execute as @p[predicate=custom:team/blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the Finish Flag to win!","color":"white","bold":true}]
 
@@ -34,7 +31,6 @@ tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #Bossbar for who's in the lead
 scoreboard objectives setdisplay list flag_tablist_display
-scoreboard players add @a[x=0,predicate=custom:team/blue] deathCooldown 0
 bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
 bossbar set rr_chase:lead players @a[x=0,predicate=!custom:team/lobby]
 bossbar set rr_chase:lead color red

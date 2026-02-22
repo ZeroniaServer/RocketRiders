@@ -57,3 +57,4 @@ scoreboard players reset $periodic_tick.2 global
 scoreboard players reset $periodic_tick.3 global
 scoreboard players reset $periodic_tick.5 global
 scoreboard players reset $periodic_tick.20 global
+scoreboard objectives remove deathCooldown

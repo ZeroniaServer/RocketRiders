@@ -31,12 +31,12 @@ tag @s remove nova_rocket.explode.this
 
 # Attach to nearby enemies
 execute on origin run tag @s add nova_attach.origin
-execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/blue at @s as @e[distance=..6.666,type=player,predicate=custom:team/yellow] run function entities:type/nova_attach/init
-execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/yellow at @s as @e[distance=..6.666,type=player,predicate=custom:team/blue] run function entities:type/nova_attach/init
-execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/none at @s as @e[distance=..6.666,type=player,tag=!nova_attach.origin] run function entities:type/nova_attach/init
-execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/blue at @s as @e[distance=..4,type=player,predicate=custom:team/yellow] run function entities:type/nova_attach/init
-execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/yellow at @s as @e[distance=..4,type=player,predicate=custom:team/blue] run function entities:type/nova_attach/init
-execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/none at @s as @e[distance=..4,type=player,tag=!nova_attach.origin] run function entities:type/nova_attach/init
+execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/blue at @s as @e[distance=..6.666,type=player,predicate=custom:team/yellow,predicate=!custom:near_own_spawn_zone] run function entities:type/nova_attach/init
+execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/yellow at @s as @e[distance=..6.666,type=player,predicate=custom:team/blue,predicate=!custom:near_own_spawn_zone] run function entities:type/nova_attach/init
+execute if predicate game:modifiers/explosive/on if predicate entities:origin_team/none at @s as @e[distance=..6.666,type=player,tag=!nova_attach.origin,predicate=!custom:near_own_spawn_zone] run function entities:type/nova_attach/init
+execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/blue at @s as @e[distance=..4,type=player,predicate=custom:team/yellow,predicate=!custom:near_own_spawn_zone] run function entities:type/nova_attach/init
+execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/yellow at @s as @e[distance=..4,type=player,predicate=custom:team/blue,predicate=!custom:near_own_spawn_zone] run function entities:type/nova_attach/init
+execute unless predicate game:modifiers/explosive/on if predicate entities:origin_team/none at @s as @e[distance=..4,type=player,tag=!nova_attach.origin,predicate=!custom:near_own_spawn_zone] run function entities:type/nova_attach/init
 execute on origin run tag @s remove nova_attach.origin
 
 # Kill entity stack

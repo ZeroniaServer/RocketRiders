@@ -32,7 +32,6 @@ execute if score $match_over_timer global matches 569.. run scoreboard objective
 execute if score $match_over_timer global matches 569.. run scoreboard players reset * FlagScore
 execute if score $match_over_timer global matches 569.. run scoreboard players reset * FlagDeliver
 execute if score $match_over_timer global matches 569.. run scoreboard players reset * FlagDisp
-execute if score $match_over_timer global matches 569.. run scoreboard players reset * flag_tablist_display
 execute if score $match_over_timer global matches 569.. run scoreboard players reset $flags_captured_by_blue global
 execute if score $match_over_timer global matches 569.. run scoreboard players reset $flags_captured_by_yellow global
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove CTFOvertime

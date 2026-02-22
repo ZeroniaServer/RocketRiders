@@ -59,3 +59,6 @@ execute unless predicate game:gamemode_components/custom_spawnpoint_block_protec
 execute as @a[scores={LeaveMidgame=1..},predicate=custom:team/any_playing_team] run function game:leave_mid_match
 scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] LeaveMidgame
 scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame
+
+## Clear tablist icon for players in non-overworld dimensions
+scoreboard players display numberformat @a[predicate=!custom:indimension] flag_tablist_display blank

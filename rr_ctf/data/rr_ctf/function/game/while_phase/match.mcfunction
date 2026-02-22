@@ -5,4 +5,3 @@ function rr_ctf:everytick/flag
 scoreboard objectives setdisplay sidebar.team.gold FlagDisp
 scoreboard objectives setdisplay sidebar.team.blue FlagDisp
 scoreboard objectives setdisplay sidebar.team.dark_gray FlagDisp
-scoreboard objectives setdisplay list flag_tablist_display

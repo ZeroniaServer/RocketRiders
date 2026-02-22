@@ -56,7 +56,6 @@ execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,d
 execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=0..11] run bossbar set rr_chase:lead value 10
 
 #Tablist icon for who's in the lead
-scoreboard players display numberformat @a[predicate=!custom:indimension] flag_tablist_display blank
 scoreboard players display numberformat @a[x=0,tag=!InLead] flag_tablist_display blank
 scoreboard players display numberformat @a[limit=1,x=0,tag=InLead] flag_tablist_display fixed "🏁"
 

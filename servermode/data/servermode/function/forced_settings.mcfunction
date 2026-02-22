@@ -9,7 +9,7 @@ execute if entity @s[tag=swapEnabled] run return 1
 ##        Thanks to Llewv for the suggestion!        ##
 #######################################################
 
-tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"aqua",text:" Active Items:",hover_event:{action:"show_text",value:"A set of 12 items is randomly generated for each game.","color":"white"}},{color:"dark_gray",italic:true,text:" (hover for info)"}]
+tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"aqua",text:" Active Items:",hover_event:{action:"show_text",value:{text:"A set of 12 items is randomly generated for each game.",color:"white"}}},{color:"dark_gray",italic:true,text:" (hover for info)"}]
 execute if predicate game:item_pool/arrow run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple",text:" - Arrows"},{color:"gray",text:", "},{color:"light_purple",text:"Canopy"},{color:"gray",text:", "},{color:"light_purple",text:"Splash"},{color:"gray",text:", "},{color:"light_purple",text:"Vortex"}]
 execute unless predicate game:item_pool/arrow run tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple",text:" - Canopy"},{color:"gray",text:", "},{color:"light_purple",text:"Splash"},{color:"gray",text:", "},{color:"light_purple",text:"Vortex"}]
 

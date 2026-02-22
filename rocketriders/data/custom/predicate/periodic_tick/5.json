@@ -4,7 +4,7 @@
   "value": {
     "score": "global",
     "target": {
-      "name": "$periodic_tick.5",
+      "name": "#periodic_tick.5",
       "type": "minecraft:fixed"
     },
     "type": "minecraft:score"

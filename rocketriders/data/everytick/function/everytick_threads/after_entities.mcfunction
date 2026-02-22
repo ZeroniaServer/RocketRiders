@@ -107,6 +107,7 @@ execute if predicate lobby:open_modification_room run scoreboard players add $lo
 execute if predicate lobby:open_modification_room if score $lobby_arrow_display global matches 1 run function lobby:arrow_up
 execute if predicate lobby:open_modification_room if score $lobby_arrow_display global matches 11 run function lobby:arrow_down
 execute if predicate lobby:open_modification_room if score $lobby_arrow_display global matches 21.. run scoreboard players reset $lobby_arrow_display global
+execute unless predicate lobby:open_modification_room run scoreboard players reset $lobby_arrow_display global
 execute unless predicate lobby:open_modification_room if entity @e[limit=1,x=0,type=block_display,tag=lobby_arrow_display] run kill @e[x=0,type=block_display,tag=lobby_arrow_display]
 
 execute if predicate lobby:open_modification_room unless score $modification_room_was_open global matches 1 run function lobby:open_modification_room

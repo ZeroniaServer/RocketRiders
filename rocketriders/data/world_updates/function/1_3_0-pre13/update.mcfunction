@@ -51,3 +51,9 @@ execute if score $phase/game.staging global matches 1 unless score $phase/game.s
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove Countdown
 
 scoreboard players reset $transitioning_phase global
+
+## Misc
+scoreboard players reset $periodic_tick.2 global
+scoreboard players reset $periodic_tick.3 global
+scoreboard players reset $periodic_tick.5 global
+scoreboard players reset $periodic_tick.20 global

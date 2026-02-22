@@ -11,14 +11,14 @@ scoreboard players add $gametime global 1
 scoreboard players reset $transitioning_phase global
 
 # Global Periodic Tick
-scoreboard players add $periodic_tick.2 global 1
-scoreboard players operation $periodic_tick.2 global %= $2 constant
-scoreboard players add $periodic_tick.3 global 1
-scoreboard players operation $periodic_tick.3 global %= $3 constant
-scoreboard players add $periodic_tick.5 global 1
-scoreboard players operation $periodic_tick.5 global %= $5 constant
-scoreboard players add $periodic_tick.20 global 1
-scoreboard players operation $periodic_tick.20 global %= $20 constant
+scoreboard players add #periodic_tick.2 global 1
+scoreboard players operation #periodic_tick.2 global %= $2 constant
+scoreboard players add #periodic_tick.3 global 1
+scoreboard players operation #periodic_tick.3 global %= $3 constant
+scoreboard players add #periodic_tick.5 global 1
+scoreboard players operation #periodic_tick.5 global %= $5 constant
+scoreboard players add #periodic_tick.20 global 1
+scoreboard players operation #periodic_tick.20 global %= $20 constant
 
 ## Handle events and flags
 # force_mount tag is used by the CK plugin to prevent dismounting

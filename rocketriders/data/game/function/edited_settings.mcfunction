@@ -7,6 +7,10 @@ function #rr:upon_edited_settings
 ## Place facade
 function game:place_facade
 
+## Update nav book
+function lobby:store_nav_book
+execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
+
 ## Initialise join pads
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.blue
 tag @e[x=0,type=marker,tag=join_pad] remove join_pad.yellow

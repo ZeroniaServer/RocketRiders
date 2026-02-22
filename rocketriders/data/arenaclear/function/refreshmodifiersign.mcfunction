@@ -102,3 +102,7 @@ tag @s add SignsRefreshed
 
 ##Update facade
 function game:place_facade
+
+##Update nav book
+function lobby:store_nav_book
+execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory

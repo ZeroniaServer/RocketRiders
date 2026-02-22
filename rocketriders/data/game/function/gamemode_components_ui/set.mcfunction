@@ -106,5 +106,5 @@ execute if score $red_for_blue gamemode_components matches 0 run scoreboard play
 
 function arenaclear:refreshcheck_indimension
 function game:place_facade
-function lobby:store_nav_book
+function lobby:update_nav_book
 execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory

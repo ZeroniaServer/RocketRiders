@@ -28,7 +28,7 @@ schedule function game:forcestop 2t append
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:globaldefaults
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function modifiers:disablemodifiers
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsigns
-function lobby:store_nav_book
+function lobby:update_nav_book
 
 scoreboard objectives add joinBlue dummy
 scoreboard objectives add joinYellow dummy

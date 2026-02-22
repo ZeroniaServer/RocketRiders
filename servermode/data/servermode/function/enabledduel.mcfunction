@@ -26,7 +26,7 @@ function lobby:cancelsettings/reset
 setblock -57 203 78 air
 function lobby:credits/stop
 fill 67 208 3 63 208 3 air strict
-function lobby:store_nav_book
+function lobby:update_nav_book
 
 scoreboard objectives add joinBlue dummy
 scoreboard objectives add joinYellow dummy

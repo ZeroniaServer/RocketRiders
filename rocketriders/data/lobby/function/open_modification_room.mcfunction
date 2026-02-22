@@ -6,4 +6,5 @@ fill -70 199 72 -57 199 84 minecraft:light[level=15] replace minecraft:blackston
 fill -70 197 72 -57 197 84 minecraft:light[level=15] replace minecraft:black_stained_glass strict
 fill -70 195 72 -57 195 84 minecraft:light[level=15] replace minecraft:black_concrete strict
 
+execute unless score $modification_room_was_open global matches 1 run function lobby:update_nav_book
 scoreboard players set $modification_room_was_open global 1

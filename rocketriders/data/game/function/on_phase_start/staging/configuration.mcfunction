@@ -1,5 +1,6 @@
 ##
-
+function lobby:update_nav_book
+execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_start/staging/configuration

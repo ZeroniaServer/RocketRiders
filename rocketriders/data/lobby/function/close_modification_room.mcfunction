@@ -7,4 +7,5 @@ fill -70 195 72 -57 195 84 minecraft:black_concrete replace #custom:modification
 
 execute unless predicate rr:has_modification_room run fill -57 199 84 -70 199 72 minecraft:blackstone replace minecraft:black_stained_glass
 
+execute if score $modification_room_was_open global matches 1 run function lobby:update_nav_book
 scoreboard players reset $modification_room_was_open global

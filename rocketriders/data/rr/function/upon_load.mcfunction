@@ -293,7 +293,7 @@ scoreboard players add $curr leavecheck 0
 function rr:upon_load/join_pad_sprite
 
 # Nav Book Config
-function lobby:store_nav_book
+function lobby:__update_nav_book/update_with_template
 
 # Nomicon Dialog Data
 function rr_sandbox:nomicon/load_pages

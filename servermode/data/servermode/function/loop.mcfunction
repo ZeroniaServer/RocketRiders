@@ -13,8 +13,8 @@ scoreboard players set @a[x=0] VoteServerMode 0
 scoreboard players enable @a[x=0] VoteServerMode
 
 #Voting ballot
-execute if entity @s[tag=ServerModeVoting] as @a[x=0,predicate=custom:team/lobby] unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"}] run function custom:reset_inventory
-execute unless entity @s[tag=ServerModeVoting] as @a[x=0,predicate=custom:team/lobby] if items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"}] run function custom:reset_inventory
+execute if predicate rr:has_voting as @a[x=0,predicate=custom:team/lobby] unless items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"}] run function custom:reset_inventory
+execute unless predicate rr:has_voting as @a[x=0,predicate=custom:team/lobby] if items entity @s hotbar.0 *[custom_data~{id:"voting_ballot"}] run function custom:reset_inventory
 
 #Countdown bossbar
 execute if score @s VoteServerMode matches 1..599 run scoreboard players set $seconds VoteServerMode 619

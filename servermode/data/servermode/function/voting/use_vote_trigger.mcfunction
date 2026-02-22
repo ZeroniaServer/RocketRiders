@@ -9,6 +9,7 @@ execute if score @s VoteNum = @s VoteServerMode run return run tellraw @s [{colo
 
 # Cast vote
 scoreboard players operation @s VoteNum = @s VoteServerMode
+function custom:reset_inventory
 function servermode:voting/get_voted_option_name
 tellraw @s [{color:"dark_aqua",text:"You have voted for "},{bold:true,color:"gold",storage:"rocketriders:main",nbt:"voting.voted_option_name",interpret:true},"! You may change your vote if you wish, or wait for the voting period to end.\n"]
 execute at @s run playsound minecraft:ui.cartography_table.take_result master @s ~ ~ ~ 0.4 1.5

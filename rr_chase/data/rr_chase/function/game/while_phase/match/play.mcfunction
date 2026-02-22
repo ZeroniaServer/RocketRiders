@@ -29,19 +29,20 @@ function rr_chase:chaseblocks/pickup
 title @a[x=0,tag=preventionMSG] actionbar {color:"red",text:"You cannot spawn missiles inside of obsidian"}
 tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
+#Tag who's in the lead
+execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=28] run tag @s add onBlue
+execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=10] run tag @s add onBlue
+tag @a[x=0,predicate=custom:team/blue] remove InLead
+execute positioned 12 64 65 run tag @p[predicate=custom:team/blue,predicate=custom:in_arena,tag=!onBlue,predicate=custom:alive] add InLead
+execute unless predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{location:{position:{z:{max:-45}}}}} run tag @s remove InLead
+execute if predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{location:{position:{z:{max:-63}}}}} run tag @s remove InLead
+
 #Bossbar for who's in the lead
-scoreboard objectives setdisplay list flag_tablist_display
 bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
 bossbar set rr_chase:lead players @a[x=0,predicate=!custom:team/lobby]
 bossbar set rr_chase:lead color red
-tag @a[x=0,predicate=custom:team/blue] remove InLead
-execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=28] run tag @s add onBlue
-execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,dx=54,y=33,dy=40,z=-74,dz=10] run tag @s add onBlue
-execute positioned 12 64 65 run tag @p[predicate=custom:team/blue,predicate=custom:in_arena,tag=!onBlue,predicate=custom:alive] add InLead
-scoreboard players display numberformat @a[x=0,tag=!InLead] flag_tablist_display blank
-scoreboard players display numberformat @a[limit=1,x=0,tag=InLead] flag_tablist_display fixed "🏁"
-execute if entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"selector":"@p[predicate=custom:team/blue,tag=InLead]","color":"dark_red","bold":true},{"text":" is in the lead!","color":"red"}]
-execute unless entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"red"}]
+execute if entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name [{color:"red",text:""},{bold:true,color:"dark_red",selector:"@p[predicate=custom:team/blue,tag=InLead]"}," is in the lead!"]
+execute unless entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name {color:"red",text:"No one is in the lead!"}
 execute unless entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead value 0
 execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=100..110] run bossbar set rr_chase:lead value 1
 execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=89..99] run bossbar set rr_chase:lead value 2
@@ -53,6 +54,11 @@ execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,d
 execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=23..33] run bossbar set rr_chase:lead value 8
 execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=12..22] run bossbar set rr_chase:lead value 9
 execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=0..11] run bossbar set rr_chase:lead value 10
+
+#Tablist icon for who's in the lead
+scoreboard players display numberformat @a[predicate=!custom:indimension] flag_tablist_display blank
+scoreboard players display numberformat @a[x=0,tag=!InLead] flag_tablist_display blank
+scoreboard players display numberformat @a[limit=1,x=0,tag=InLead] flag_tablist_display fixed "🏁"
 
 #Glowing for who's in the lead (blink if Sonar is enabled)
 execute unless predicate game:modifiers/sonar/on run effect clear @a[x=0,tag=!InLead] glowing

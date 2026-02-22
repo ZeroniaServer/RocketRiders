@@ -159,8 +159,10 @@ title @a[x=0,tag=spawnpointMSG,limit=1] actionbar {color:"red",text:"You cannot 
 title @a[x=0,tag=collisionMSG] actionbar [{color:"red",text:"You cannot spawn missiles inside the enemy's base "},{italic:true,text:"[Collision Control]"}]
 title @a[x=0,tag=roofMSGFB,limit=1] actionbar {color:"red",text:"You cannot spawn fireballs at this height"}
 title @a[x=0,tag=voidMSGFB,limit=1] actionbar {color:"red",text:"You cannot spawn fireballs at this height"}
+title @a[x=0,tag=spawnzoneMSGFB,limit=1] actionbar {color:"red",text:"You cannot spawn fireballs near an enemy's spawnpoint"}
 title @a[x=0,tag=roofMSGCFB,limit=1] actionbar {color:"red",text:"You cannot spawn cluster fireballs at this height"}
 title @a[x=0,tag=voidMSGCFB,limit=1] actionbar {color:"red",text:"You cannot spawn cluster fireballs at this height"}
+title @a[x=0,tag=spawnzoneMSGCFB,limit=1] actionbar {color:"red",text:"You cannot spawn cluster fireballs near an enemy's spawnpoint"}
 title @a[x=0,tag=roofMSGOS,limit=1] actionbar {color:"red",text:"You cannot spawn obsidian shields at this height"}
 title @a[x=0,tag=voidMSGOS,limit=1] actionbar {color:"red",text:"You cannot spawn obsidian shields at this height"}
 
@@ -171,8 +173,10 @@ tag @a[x=0,tag=voidMSG,limit=1] remove voidMSG
 tag @a[x=0,tag=roofMSGFB,limit=1] remove roofMSGFB
 tag @a[x=0,tag=voidMSGFB,limit=1] remove voidMSGFB
 tag @a[x=0,tag=roofMSGCFB,limit=1] remove roofMSGCFB
+tag @a[x=0,tag=spawnzoneMSGFB,limit=1] remove spawnzoneMSGFB
 tag @a[x=0,tag=voidMSGCFB,limit=1] remove voidMSGCFB
 tag @a[x=0,tag=roofMSGOS,limit=1] remove roofMSGOS
+tag @a[x=0,tag=spawnzoneMSGCFB,limit=1] remove spawnzoneMSGCFB
 tag @a[x=0,tag=voidMSGOS,limit=1] remove voidMSGOS
 tag @a[x=0,tag=antigriefMSG,limit=1] remove antigriefMSG
 tag @a[x=0,tag=spawnpointMSG,limit=1] remove spawnpointMSG

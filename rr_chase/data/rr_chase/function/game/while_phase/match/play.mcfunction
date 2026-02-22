@@ -25,10 +25,6 @@ execute if score $ChaseBlockCheck CmdData matches ..145 run function rr_chase:ch
 #Chase Blocks
 function rr_chase:chaseblocks/pickup
 
-#Custom prevention message
-title @a[x=0,tag=preventionMSG] actionbar {color:"red",text:"You cannot spawn missiles inside of obsidian"}
-tag @a[x=0,tag=preventionMSG] remove preventionMSG
-
 #Tag who's in the lead
 execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=28] run tag @s add onBlue
 execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=10] run tag @s add onBlue

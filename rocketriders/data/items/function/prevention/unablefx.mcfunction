@@ -135,6 +135,8 @@ execute if entity @s[tag=YellowFireball,tag=void] run tag @a[x=0,predicate=custo
 execute if entity @s[tag=BlueFireball,tag=void] run tag @a[x=0,predicate=custom:team/blue,tag=MissiMSG,limit=1] add voidMSGFB
 execute if entity @s[tag=YellowFireball,tag=roof] run tag @a[x=0,predicate=custom:team/yellow,tag=MissiMSG,limit=1] add roofMSGFB
 execute if entity @s[tag=BlueFireball,tag=roof] run tag @a[x=0,predicate=custom:team/blue,tag=MissiMSG,limit=1] add roofMSGFB
+execute if entity @s[tag=YellowFireball,tag=prevention_reason.near_spawn_zone] run tag @a[x=0,predicate=custom:team/yellow,tag=MissiMSG,limit=1] add spawnzoneMSGFB
+execute if entity @s[tag=BlueFireball,tag=prevention_reason.near_spawn_zone] run tag @a[x=0,predicate=custom:team/blue,tag=MissiMSG,limit=1] add spawnzoneMSGFB
 execute if entity @s[tag=YellowObshield,tag=void] run tag @a[x=0,predicate=custom:team/yellow,tag=MissiMSG,limit=1] add voidMSGOS
 execute if entity @s[tag=BlueObshield,tag=void] run tag @a[x=0,predicate=custom:team/blue,tag=MissiMSG,limit=1] add voidMSGOS
 execute if entity @s[tag=YellowObshield,tag=roof] run tag @a[x=0,predicate=custom:team/yellow,tag=MissiMSG,limit=1] add roofMSGOS

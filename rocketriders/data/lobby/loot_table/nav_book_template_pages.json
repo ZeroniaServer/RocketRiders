@@ -33,6 +33,35 @@
                   },
                   "\n\n",
                   {
+                    "interpret": true,
+                    "nbt": "join_teams",
+                    "storage": "rocketriders:navbook"
+                  },
+                  "\n",
+                  [
+                    {
+                      "click_event": {
+                        "action": "run_command",
+                        "command": "/trigger LobbyWarp set 5"
+                      },
+                      "color": "gray",
+                      "hover_event": {
+                        "action": "show_text",
+                        "value": {
+                          "italic": true,
+                          "text": "Click to teleport to the Spectator join pad."
+                        }
+                      },
+                      "text": "* "
+                    },
+                    {
+                      "bold": true,
+                      "color": "gray",
+                      "text": "Spectate"
+                    }
+                  ],
+                  "\n",
+                  {
                     "click_event": {
                       "action": "run_command",
                       "command": "/trigger LobbyWarp set 1"
@@ -61,88 +90,6 @@
                       }
                     },
                     "text": "Lobby"
-                  },
-                  "\n",
-                  {
-                    "interpret": true,
-                    "nbt": "join_teams",
-                    "storage": "rocketriders:navbook"
-                  },
-                  "\n",
-                  {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 5"
-                    },
-                    "color": "gray",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Spectator join pad."
-                      }
-                    },
-                    "text": "*"
-                  },
-                  {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 5"
-                    },
-                    "color": "gold",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Spectator join pad."
-                      }
-                    },
-                    "text": " "
-                  },
-                  {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 5"
-                    },
-                    "color": "dark_purple",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Spectator join pad."
-                      }
-                    },
-                    "text": "Join"
-                  },
-                  {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 5"
-                    },
-                    "color": "gold",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Spectator join pad."
-                      }
-                    },
-                    "text": " "
-                  },
-                  {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 5"
-                    },
-                    "color": "dark_gray",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Spectator join pad."
-                      }
-                    },
-                    "text": "Spectator"
                   },
                   {
                     "interpret": true,
@@ -211,7 +158,12 @@
                     },
                     "text": " Parkour Area"
                   },
-                  "\n\n      ",
+                  {
+                    "interpret": true,
+                    "nbt": "first_page_spacing",
+                    "storage": "rocketriders:navbook"
+                  },
+                  "\n      ",
                   {
                     "click_event": {
                       "action": "change_page",

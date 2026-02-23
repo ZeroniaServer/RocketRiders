@@ -10,7 +10,7 @@ scoreboard players set $previous_page var 1
 
 fill 22 202 69 15 206 87 air
 
-place template game:bullet_blue 18 203 72
+place template game:missile/south/blue/bullet 18 203 72
 
 fill 22 202 69 15 206 73 moving_piston replace #custom:lobby_air
 fill 22 202 75 15 206 87 moving_piston replace #custom:lobby_air

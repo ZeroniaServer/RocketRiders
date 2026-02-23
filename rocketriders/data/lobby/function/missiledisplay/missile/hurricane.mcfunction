@@ -10,7 +10,7 @@ scoreboard players set $previous_page var 1
 
 fill 22 202 69 15 206 87 air
 
-place template game:hurricane_blue 18 203 74
+place template game:missile/south/blue/hurricane 18 203 74
 
 fill 22 202 69 15 206 87 moving_piston replace #custom:lobby_air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass

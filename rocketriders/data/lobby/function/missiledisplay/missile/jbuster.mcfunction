@@ -10,7 +10,7 @@ scoreboard players set $previous_page var 1
 
 fill 22 202 69 15 206 87 air
 
-place template game:juggerbuster_blue 18 203 70
+place template game:missile/south/blue/juggerbuster 18 203 70
 
 fill 22 202 69 15 206 79 moving_piston replace #custom:lobby_air
 fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass

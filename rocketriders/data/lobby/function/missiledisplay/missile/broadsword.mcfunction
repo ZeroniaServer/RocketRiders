@@ -10,7 +10,7 @@ scoreboard players set $previous_page var 1
 
 fill 22 202 69 15 206 87 air
 
-place template game:broadsword_blue 18 203 73
+place template game:missile/south/blue/broadsword 18 203 73
 
 #Extra for Broadsword trigger
 setblock 20 204 74 observer[facing=south,powered=true]

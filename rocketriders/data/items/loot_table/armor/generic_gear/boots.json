@@ -83,8 +83,8 @@
                 "minecraft:dyed_color": 16711680,
                 "minecraft:item_name": {
                   "bold": true,
-                  "color": "blue",
-                  "text": "Blue Boots"
+                  "color": "dark_red",
+                  "text": "Red Boots"
                 },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",

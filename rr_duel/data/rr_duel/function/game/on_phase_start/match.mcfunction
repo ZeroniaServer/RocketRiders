@@ -3,7 +3,8 @@ execute as @a[x=0,predicate=custom:team/any_playing_team] run function rr_duel:g
 
 execute as @a[x=0,predicate=custom:team/blue] run function rr_duel:forfeit/calculate
 execute as @a[x=0,predicate=custom:team/yellow] run function rr_duel:forfeit/calculate
-scoreboard players display name Blue: RoundsWon {color:"blue",text:"Blue:"}
+execute unless predicate game:gamemode_components/red_for_blue run scoreboard players display name Blue: RoundsWon {color:"blue",text:"Blue:"}
+execute if predicate game:gamemode_components/red_for_blue run scoreboard players display name Blue: RoundsWon {color:"dark_red",text:"Red:"}
 scoreboard players display name Yellow: RoundsWon {color:"gold",text:"Yellow:"}
 bossbar set rr:startgame name ["",{"text":"A 1v1 Duel match is currently in progress!","color":"dark_red"}]
 bossbar set rr:startgame color red

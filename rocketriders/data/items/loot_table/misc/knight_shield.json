@@ -111,13 +111,13 @@
                 "minecraft:base_color": "red",
                 "minecraft:custom_name": {
                   "bold": true,
-                  "color": "blue",
+                  "color": "dark_red",
                   "italic": false,
                   "text": "Knight Shield"
                 },
                 "minecraft:item_name": {
                   "bold": true,
-                  "color": "blue",
+                  "color": "dark_red",
                   "text": "Knight Shield"
                 }
               },

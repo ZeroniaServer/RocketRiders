@@ -128,6 +128,40 @@
                   }
                 },
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/red_for_blue"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
+              ],
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "dark_red",
+                  "text": "Knight Sword"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/custom_team_colors"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/red_for_blue"
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }

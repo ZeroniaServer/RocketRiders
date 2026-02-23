@@ -108,10 +108,13 @@ bossbar set rr_ctf:fy2 players none
 bossbar set rr_ctf:fy2 name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
 bossbar set rr_ctf:fy2 value 0
 bossbar set rr_ctf:fb1 players none
-bossbar set rr_ctf:fb1 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+execute unless predicate game:gamemode_components/red_for_blue run bossbar set rr_ctf:fb1 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+execute if predicate game:gamemode_components/red_for_blue run bossbar set rr_ctf:fb1 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Red","color":"dark_red"},{"text":" flag!","color":"yellow"}]
 bossbar set rr_ctf:fb1 value 0
 bossbar set rr_ctf:fb2 players none
 bossbar set rr_ctf:fb2 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+execute unless predicate game:gamemode_components/red_for_blue run bossbar set rr_ctf:fb2 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+execute if predicate game:gamemode_components/red_for_blue run bossbar set rr_ctf:fb2 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Red","color":"dark_red"},{"text":" flag!","color":"yellow"}]
 bossbar set rr_ctf:fb2 value 0
 scoreboard players reset * FlagDisp
 

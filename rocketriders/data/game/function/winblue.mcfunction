@@ -24,7 +24,8 @@ execute as @a[x=0,predicate=custom:team/blue] at @s run stopsound @s
 execute as @a[x=0,predicate=custom:team/yellow] at @s run stopsound @s
 execute if entity @s[tag=!YellowWonFirst] as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
 execute if entity @s[tag=!YellowWonFirst] as @a[x=0,predicate=custom:team/yellow] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2
-execute unless predicate game:game_rules/disable_titles/on run title @a[x=0,predicate=!custom:team/lobby] title ["",{"text":"Team Blue Won!","color":"blue","bold":false}]
+execute unless predicate game:game_rules/disable_titles/on unless predicate game:gamemode_components/red_for_blue run title @a[x=0,predicate=!custom:team/lobby] title ["",{"text":"Team Red Won!","color":"red","bold":false}]
+execute unless predicate game:game_rules/disable_titles/on if predicate game:gamemode_components/red_for_blue run title @a[x=0,predicate=!custom:team/lobby] title ["",{"text":"Team Blue Won!","color":"blue","bold":false}]
 
 ##Splashes
 execute as @a[x=0,tag=Winner,limit=1,sort=random] run function game:winsplash

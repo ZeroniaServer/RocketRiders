@@ -63,8 +63,8 @@
               "components": {
                 "minecraft:item_name": {
                   "bold": true,
-                  "color": "blue",
-                  "text": "Blue Archer Helmet"
+                  "color": "dark_red",
+                  "text": "Red Archer Helmet"
                 },
                 "minecraft:trim": {
                   "material": "minecraft:redstone",

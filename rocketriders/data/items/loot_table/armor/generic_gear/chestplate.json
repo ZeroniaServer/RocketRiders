@@ -83,8 +83,8 @@
                 "minecraft:dyed_color": 16711680,
                 "minecraft:item_name": {
                   "bold": true,
-                  "color": "blue",
-                  "text": "Blue Chestplate"
+                  "color": "dark_red",
+                  "text": "Red Chestplate"
                 },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",

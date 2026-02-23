@@ -12,6 +12,7 @@ execute unless entity @s[tag=cannotJoin] run data modify storage rocketriders:jo
 tag @s add cannotJoin
 
 ## Resolution
-execute if predicate game:teams/blue_is_joinable run return run data modify storage rocketriders:joinwarn subtitle set value [{"text":"Join ","color":"dark_aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"dark_aqua","bold":false}]
+execute if predicate game:teams/blue_is_joinable unless predicate game:gamemode_components/red_for_blue run return run data modify storage rocketriders:joinwarn subtitle set value [{"text":"Join ","color":"dark_aqua","bold":false},{"text":"Blue","color":"blue","bold":true},{"text":" instead.","color":"dark_aqua","bold":false}]
+execute if predicate game:teams/blue_is_joinable if predicate game:gamemode_components/red_for_blue run return run data modify storage rocketriders:joinwarn subtitle set value [{"text":"Join ","color":"dark_aqua","bold":false},{"text":"Red","color":"dark_red","bold":true},{"text":" instead.","color":"dark_aqua","bold":false}]
 execute if predicate game:teams/spectator_is_joinable run return run data modify storage rocketriders:joinwarn subtitle set value {"text":"Feel free to spectate instead.","color":"gray","bold":false}
 data modify storage rocketriders:joinwarn subtitle set value {"text":"Feel free to explore the lobby while you wait!","color":"gray","bold":false}

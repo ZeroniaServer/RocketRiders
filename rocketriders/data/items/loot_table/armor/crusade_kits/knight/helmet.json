@@ -63,8 +63,8 @@
               "components": {
                 "minecraft:item_name": {
                   "bold": true,
-                  "color": "blue",
-                  "text": "Blue Knight Helmet"
+                  "color": "dark_red",
+                  "text": "Red Knight Helmet"
                 },
                 "minecraft:trim": {
                   "material": "minecraft:redstone",

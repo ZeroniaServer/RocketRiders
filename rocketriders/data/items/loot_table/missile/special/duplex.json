@@ -133,6 +133,54 @@
                   }
                 },
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/red_for_blue"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
+              ],
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:entity_data": {
+                  "Tags": [
+                    "missile",
+                    "bluemissile",
+                    "BlueDuplex"
+                  ],
+                  "id": "minecraft:marker"
+                },
+                "minecraft:item_name": [
+                  {
+                    "bold": true,
+                    "color": "dark_purple",
+                    "text": "[Special] "
+                  },
+                  {
+                    "color": "dark_red",
+                    "text": "Duplex"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:gamemode_components/neutral_items"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:gamemode_components/red_for_blue"
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }

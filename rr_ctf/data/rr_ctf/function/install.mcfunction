@@ -6,22 +6,22 @@ scoreboard objectives add MinePurpleGlass minecraft.mined:minecraft.purple_stain
 scoreboard objectives add canopyStreak dummy
 scoreboard objectives add FlagsCaptured dummy
 
-bossbar add rr_ctf:fy1 ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
+bossbar add rr_ctf:fy1 ""
 bossbar set rr_ctf:fy1 color blue
 bossbar set rr_ctf:fy1 style notched_10
 bossbar set rr_ctf:fy1 max 10
 
-bossbar add rr_ctf:fy2 ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
+bossbar add rr_ctf:fy2 ""
 bossbar set rr_ctf:fy2 color blue
 bossbar set rr_ctf:fy2 style notched_10
 bossbar set rr_ctf:fy2 max 10
 
-bossbar add rr_ctf:fb1 ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+bossbar add rr_ctf:fb1 ""
 bossbar set rr_ctf:fb1 color yellow
 bossbar set rr_ctf:fb1 style notched_10
 bossbar set rr_ctf:fb1 max 10
 
-bossbar add rr_ctf:fb2 ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+bossbar add rr_ctf:fb2 ""
 bossbar set rr_ctf:fb2 color yellow
 bossbar set rr_ctf:fb2 style notched_10
 bossbar set rr_ctf:fb2 max 10

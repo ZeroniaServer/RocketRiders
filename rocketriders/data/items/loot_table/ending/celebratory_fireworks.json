@@ -113,7 +113,7 @@
                 },
                 "minecraft:item_name": {
                   "bold": true,
-                  "color": "blue",
+                  "color": "dark_red",
                   "text": "Celebratory Fireworks"
                 }
               },

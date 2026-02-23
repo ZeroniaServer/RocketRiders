@@ -73,8 +73,8 @@
               "components": {
                 "minecraft:item_name": {
                   "bold": true,
-                  "color": "blue",
-                  "text": "Blue Knight Leggings"
+                  "color": "dark_red",
+                  "text": "Red Knight Leggings"
                 },
                 "minecraft:trim": {
                   "material": "minecraft:redstone",

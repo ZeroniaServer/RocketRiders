@@ -6,15 +6,11 @@ effect clear @a[x=0,predicate=custom:team/any_playing_team]
 dialog clear @a[x=0]
 scoreboard players reset $1v1_duel_time_out_period global
 tag @s remove forceCountdown
-tag @s remove bossbarOverride
 tag @s remove gaveFirstItem
 scoreboard players set @s count 0
 scoreboard players set $game_duration global 0
 worldborder warning distance 0
 execute as @a[x=0] run function everytick:score_reset
-tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
-tag @e[x=0,type=marker,tag=join_pad.blue] add CancelJoin
-tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
 bossbar set rr:startgame max 30
 tag @a[x=0] remove deathchamp
 tag @a[x=0] remove flagschamp

@@ -9,6 +9,8 @@ scoreboard players set $config_override.surprise_eggs gamemode_components -1
 scoreboard players set $item_signs/replace_fireball_with_cluster_fireball gamemode_components 1
 scoreboard players set $item_signs/replace_vortex_with_icbm gamemode_components 1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
+scoreboard players set $max_players_per_team gamemode_components 2147483647
+scoreboard players set $min_players_per_team gamemode_components 1
 
 # items
 scoreboard players set $config_override.disable_item_category/heavy_missiles gamemode_components -1

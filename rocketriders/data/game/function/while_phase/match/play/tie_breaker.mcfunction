@@ -7,7 +7,6 @@
 scoreboard players add $tie_breaker_timer global 1
 
 ##Preparing for Tiebreaker
-execute if score $tie_breaker_timer global matches 1..20 run function game:uncancelpads
 execute if score $tie_breaker_timer global matches 1..2 run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute if score $tie_breaker_timer global matches 1..2 run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 execute if score $tie_breaker_timer global matches 1 run effect give @a[x=0,predicate=custom:team/any_arena_team] blindness 1 100 true

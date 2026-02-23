@@ -1,0 +1,29 @@
+{
+  "condition": "minecraft:value_check",
+  "range": {
+    "max": {
+      "score": "global",
+      "target": {
+        "name": "$yellow_team_count",
+        "type": "minecraft:fixed"
+      },
+      "type": "minecraft:score"
+    },
+    "min": {
+      "score": "global",
+      "target": {
+        "name": "$yellow_team_count",
+        "type": "minecraft:fixed"
+      },
+      "type": "minecraft:score"
+    }
+  },
+  "value": {
+    "score": "global",
+    "target": {
+      "name": "$blue_team_count",
+      "type": "minecraft:fixed"
+    },
+    "type": "minecraft:score"
+  }
+}

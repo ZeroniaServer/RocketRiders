@@ -12,6 +12,8 @@ scoreboard players set $custom_pierce_prevention gamemode_components 1
 scoreboard players set $has_flags gamemode_components 1
 scoreboard players set $lower_void gamemode_components 1
 scoreboard players set $main_item/piercing_pickaxe gamemode_components 1
+scoreboard players set $max_players_per_team gamemode_components 2147483647
+scoreboard players set $min_players_per_team gamemode_components 1
 scoreboard players set $no_portals gamemode_components 1
 
 # items

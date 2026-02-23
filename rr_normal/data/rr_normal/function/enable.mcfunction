@@ -4,6 +4,8 @@ tag @s add normalEnabled
 scoreboard players reset * gamemode_components
 scoreboard players set $armor/generic gamemode_components 1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
+scoreboard players set $max_players_per_team gamemode_components 2147483647
+scoreboard players set $min_players_per_team gamemode_components 1
 
 # items
 scoreboard players set $item_pool.cluster_fireball gamemode_components -1

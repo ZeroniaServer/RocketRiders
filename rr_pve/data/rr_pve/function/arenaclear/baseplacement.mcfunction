@@ -1,3 +1,2 @@
 function arenaclear:baseplacement
 function arenaclear:detailplacement
-function game:cancelyellow

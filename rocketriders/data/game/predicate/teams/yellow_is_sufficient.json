@@ -1,0 +1,30 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "game:gamemode_components/one_team"
+    },
+    {
+      "condition": "minecraft:value_check",
+      "range": {
+        "min": {
+          "score": "gamemode_components",
+          "target": {
+            "name": "$min_players_per_team",
+            "type": "minecraft:fixed"
+          },
+          "type": "minecraft:score"
+        }
+      },
+      "value": {
+        "score": "global",
+        "target": {
+          "name": "$yellow_team_count",
+          "type": "minecraft:fixed"
+        },
+        "type": "minecraft:score"
+      }
+    }
+  ]
+}

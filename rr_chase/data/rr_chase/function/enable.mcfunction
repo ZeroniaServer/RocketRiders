@@ -11,12 +11,13 @@ scoreboard players set $config_override.item_stacking gamemode_components 1
 scoreboard players set $config_override.rocket_residers gamemode_components -1
 scoreboard players set $custom_match_over_teleport_locations gamemode_components 1
 scoreboard players set $custom_pierce_prevention gamemode_components 1
-scoreboard players set $custom_staging_bossbars gamemode_components 1
 scoreboard players set $custom_team_colors gamemode_components 1
 scoreboard players set $disable_antigrief_system gamemode_components 1
 scoreboard players set $friendly_fire gamemode_components 1
 scoreboard players set $has_chase_crystals gamemode_components 1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
+scoreboard players set $max_players_per_team gamemode_components 2147483647
+scoreboard players set $min_players_per_team gamemode_components 2
 scoreboard players set $neutral_items gamemode_components 1
 scoreboard players set $no_portals gamemode_components 1
 scoreboard players set $one_team gamemode_components 1

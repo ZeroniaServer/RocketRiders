@@ -1,0 +1,55 @@
+[
+  {
+    "condition": "minecraft:reference",
+    "name": "game:joinable_match_phase"
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:reference",
+          "name": "game:phase/match"
+        },
+        {
+          "condition": "minecraft:reference",
+          "name": "game:gamemode_components/lock_playing_teams_during_match"
+        }
+      ]
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:teams/yellow_is_full"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:gamemode_components/one_team"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:reference",
+            "name": "game:game_rules/disable_team_balancing/on"
+          }
+        },
+        {
+          "condition": "minecraft:reference",
+          "name": "game:teams/yellow_is_larger"
+        }
+      ]
+    }
+  }
+]

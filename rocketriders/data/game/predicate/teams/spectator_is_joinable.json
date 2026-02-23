@@ -1,0 +1,4 @@
+{
+  "condition": "minecraft:reference",
+  "name": "game:joinable_match_phase"
+}

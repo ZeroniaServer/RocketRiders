@@ -7,41 +7,49 @@ execute if predicate game:phase/staging/queue if predicate rr:has_voting if scor
 execute if predicate game:phase/staging/queue if predicate rr:has_voting if score $players_online global matches ..1 run return run function game:forcestop
 
 ##Game Bossbar
-execute if predicate game:phase/match unless predicate game:phase/match/over unless predicate game:phase/match/play/tie_breaker if entity @s[tag=!bossbarOverride] unless entity @s[tag=YellowFull,tag=BlueFull] run bossbar set rr:startgame name ["",{"text":"A match is currently in progress. Feel free to join in!","color":"dark_green"}]
-execute if predicate game:phase/match unless predicate game:phase/match/over unless predicate game:phase/match/play/tie_breaker if entity @s[tag=!bossbarOverride,tag=YellowFull,tag=BlueFull] run bossbar set rr:startgame name ["",{"text":"The match is full, but feel free to spectate!","color":"dark_green"}]
-execute if predicate game:phase/match/play/tie_breaker if entity @s[tag=!bossbarOverride] unless entity @s[tag=YellowFull,tag=BlueFull] run bossbar set rr:startgame name ["",{"text":"A tiebreaker is currently progress. Feel free to join in!","color":"dark_red"}]
-execute if predicate game:phase/match/play/tie_breaker if entity @s[tag=!bossbarOverride,tag=YellowFull,tag=BlueFull] run bossbar set rr:startgame name ["",{"text":"The match is full, but feel free to spectate!","color":"dark_red"}]
+execute if predicate game:phase/match unless predicate game:phase/match/over unless predicate game:phase/match/play/tie_breaker if predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_green",text:"A match is currently in progress. Feel free to join in!"}
+execute if predicate game:phase/match unless predicate game:phase/match/over unless predicate game:phase/match/play/tie_breaker unless predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_green",text:"The match is full, but feel free to spectate!"}
+execute if predicate game:phase/match/play/tie_breaker if predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_red",text:"A tiebreaker is currently progress. Feel free to join in!"}
+execute if predicate game:phase/match/play/tie_breaker unless predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_red",text:"The match is full, but feel free to spectate!"}
+execute if predicate game:phase/match unless predicate game:phase/match/over run bossbar set rr:startgame color green
 execute if predicate game:phase/match/over run bossbar set rr:startgame color red
-execute if predicate game:phase/match/over run bossbar set rr:startgame name ["",{"text":"A match is currently ending.","color":"red"}]
+execute if predicate game:phase/match/over run bossbar set rr:startgame name {color:"red",text:"A match is currently ending."}
 execute if predicate game:phase/match run bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
 
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars run bossbar set rr:startgame max 30
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars if predicate rr:wait_for_sufficient_players if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"players...","color":"white"}]
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars if predicate rr:wait_for_sufficient_players if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame color blue
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars if predicate rr:wait_for_sufficient_players if entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame value 15
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars if predicate rr:wait_for_sufficient_players if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars if predicate rr:wait_for_sufficient_players if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run bossbar set rr:startgame color yellow
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars if predicate rr:wait_for_sufficient_players if entity @a[x=0,predicate=custom:team/yellow] unless entity @a[x=0,predicate=custom:team/blue] run bossbar set rr:startgame value 15
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars if predicate rr:wait_for_sufficient_players unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting ","color":"white"},{"text":"Yellow ","color":"gold"},{"text":"and ","color":"white"},{"text":"Blue ","color":"blue"},{"text":"players...","color":"white"}]
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame value 0
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame color white
-execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/custom_staging_bossbars unless predicate rr:wait_for_sufficient_players unless entity @a[x=0,predicate=custom:team/blue] unless entity @a[x=0,predicate=custom:team/yellow] run bossbar set rr:startgame name ["",{"text":"Awaiting players...","color":"white"}]
-execute if predicate game:phase/staging/configuration if predicate rr:has_voting run bossbar set rr:startgame color purple
-execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room run bossbar set rr:startgame color purple
-execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room unless predicate game:game_rules/lock_modification_room/on run bossbar set rr:startgame name ["",{"text":"Please confirm game settings in the Modification Room!","color":"dark_purple"}]
-execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room if predicate game:game_rules/lock_modification_room/on run bossbar set rr:startgame name ["",{"text":"Waiting for game settings to be confirmed...","color":"dark_purple"}]
-execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room run bossbar set rr:startgame value 30
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty if predicate game:teams/yellow_is_sufficient if predicate game:teams/blue_is_sufficient run function game:set_phase/staging.queue.countdown
+execute if predicate game:phase/staging/queue/waiting unless predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty run function game:set_phase/staging.queue.countdown
+execute if predicate game:phase/staging/queue/waiting run scoreboard players operation $min_players var = $min_players_per_team gamemode_components
+execute if predicate game:phase/staging/queue/waiting unless predicate game:gamemode_components/one_team run scoreboard players operation $min_players var += $min_players_per_team gamemode_components
+execute if predicate game:phase/staging/queue/waiting if score $min_players var matches ..0 run scoreboard players set $min_players var 1
+execute if predicate game:phase/staging/queue/waiting store result bossbar rr:startgame max run scoreboard players get $min_players var
+execute if predicate game:phase/staging/queue/waiting store result bossbar rr:startgame value run scoreboard players get $playing_teams_count global
+execute if predicate game:phase/staging/queue/waiting if predicate game:teams/playing_teams_are_empty run bossbar set rr:startgame color white
+execute if predicate game:phase/staging/queue/waiting if predicate game:teams/playing_teams_are_empty run bossbar set rr:startgame name "Awaiting players..."
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty if predicate game:gamemode_components/one_team unless predicate game:teams/blue_is_sufficient run bossbar set rr:startgame name "Awaiting more players..."
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty if predicate game:gamemode_components/one_team unless predicate game:teams/blue_is_sufficient run bossbar set rr:startgame color white
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty unless predicate game:gamemode_components/one_team unless predicate game:teams/blue_is_sufficient unless predicate game:teams/yellow_is_sufficient unless predicate game:gamemode_components/red_for_blue run bossbar set rr:startgame name ["Awaiting ",{color:"gold",text:"Yellow "},"and ",{color:"blue",text:"Blue "},"players..."]
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty unless predicate game:gamemode_components/one_team unless predicate game:teams/blue_is_sufficient unless predicate game:teams/yellow_is_sufficient if predicate game:gamemode_components/red_for_blue run bossbar set rr:startgame name ["Awaiting ",{color:"gold",text:"Yellow "},"and ",{color:"red",text:"Red "},"players..."]
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty unless predicate game:gamemode_components/one_team unless predicate game:teams/blue_is_sufficient unless predicate game:teams/yellow_is_sufficient run bossbar set rr:startgame color white
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty unless predicate game:gamemode_components/one_team unless predicate game:teams/blue_is_sufficient if predicate game:teams/yellow_is_sufficient unless predicate game:gamemode_components/red_for_blue run bossbar set rr:startgame name ["Awaiting ",{color:"blue",text:"Blue "},"players..."]
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty unless predicate game:gamemode_components/one_team unless predicate game:teams/blue_is_sufficient if predicate game:teams/yellow_is_sufficient if predicate game:gamemode_components/red_for_blue run bossbar set rr:startgame name ["Awaiting ",{color:"dark_red",text:"Red "},"players..."]
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty unless predicate game:gamemode_components/one_team unless predicate game:teams/blue_is_sufficient if predicate game:teams/yellow_is_sufficient run bossbar set rr:startgame color yellow
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty unless predicate game:gamemode_components/one_team if predicate game:teams/blue_is_sufficient unless predicate game:teams/yellow_is_sufficient run bossbar set rr:startgame name ["Awaiting ",{color:"gold",text:"Yellow "},"players..."]
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty unless predicate game:gamemode_components/one_team if predicate game:teams/blue_is_sufficient unless predicate game:teams/yellow_is_sufficient unless predicate game:gamemode_components/red_for_blue run bossbar set rr:startgame color blue
+execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty unless predicate game:gamemode_components/one_team if predicate game:teams/blue_is_sufficient unless predicate game:teams/yellow_is_sufficient if predicate game:gamemode_components/red_for_blue run bossbar set rr:startgame color red
+
+execute if predicate game:phase/staging/configuration run bossbar set rr:startgame color purple
+execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room unless predicate game:game_rules/lock_modification_room/on run bossbar set rr:startgame name {color:"dark_purple",text:"Please confirm game settings in the Modification Room!"}
+execute if predicate game:phase/staging/configuration if predicate rr:has_modification_room if predicate game:game_rules/lock_modification_room/on run bossbar set rr:startgame name {color:"dark_purple",text:"Waiting for game settings to be confirmed..."}
+
 execute if predicate game:phase/staging run bossbar set rr:startgame players @a[x=0]
 
 ##Blue Join Pad
 execute as @a[x=0] if score @s joinBlue matches 1 if predicate rr:is_cubekrowd run function servermode:joinblue
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinBlue
-execute unless predicate game:joinable_match_phase run tag @a[x=0] remove JoinBlue
-execute if entity @s[tag=BlueFull] run tag @a[x=0] remove JoinBlue
-execute if predicate custom:periodic_tick/3 unless predicate game:gamemode_components/red_for_blue if predicate game:joinable_match_phase if entity @s[predicate=!game:team_count/blue_is_larger,tag=!BlueFull] as @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute if predicate custom:periodic_tick/3 if predicate game:gamemode_components/red_for_blue if predicate game:joinable_match_phase if entity @s[predicate=!game:team_count/blue_is_larger,tag=!BlueFull] as @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:red_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute if predicate custom:periodic_tick/3 if predicate game:gamemode_components/neutral_items if predicate game:joinable_match_phase if entity @s[predicate=!game:team_count/blue_is_larger,tag=!BlueFull] as @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:white_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 2 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute unless predicate game:game_rules/disable_team_balancing/on unless entity @s[predicate=!game:team_count/blue_is_larger,tag=!BlueFull,predicate=game:joinable_match_phase] run tag @e[x=0,type=marker,tag=join_pad.blue,tag=!CancelJoin] add join_pad.show_barrier
+execute unless predicate game:teams/blue_is_joinable run tag @a[x=0] remove JoinBlue
+execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable unless predicate game:gamemode_components/red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable if predicate game:gamemode_components/red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:red_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable if predicate game:gamemode_components/neutral_items at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:white_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 2 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute as @e[x=0,type=marker,tag=join_pad.blue] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinblue
 execute as @a[x=0,tag=tryJoinBlue] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.blue] run tag @s remove tryJoinBlue
 execute as @a[x=0,tag=JoinBlue] run function custom:team/join_blue
@@ -83,11 +91,9 @@ execute if entity @a[x=0,tag=JoinBlue] run function lobby:cancelsettings/reset
 ##Yellow Join Pad
 execute as @a[x=0] if score @s joinYellow matches 1 if predicate rr:is_cubekrowd run function servermode:joinyellow
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinYellow
-execute unless predicate game:joinable_match_phase run tag @a[x=0] remove JoinYellow
-execute if entity @s[tag=YellowFull] run tag @a[x=0] remove JoinYellow
-execute if predicate custom:periodic_tick/3 if predicate game:joinable_match_phase if entity @s[predicate=!game:team_count/yellow_is_larger,tag=!YellowFull] as @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:yellow_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute if predicate custom:periodic_tick/3 if predicate game:gamemode_components/neutral_items if predicate game:joinable_match_phase if entity @s[predicate=!game:team_count/yellow_is_larger,tag=!YellowFull] as @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:white_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 2 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute unless predicate game:game_rules/disable_team_balancing/on unless entity @s[predicate=!game:team_count/yellow_is_larger,tag=!YellowFull,predicate=game:joinable_match_phase] run tag @e[x=0,type=marker,tag=join_pad.yellow,tag=!CancelJoin] add join_pad.show_barrier
+execute unless predicate game:teams/yellow_is_joinable run tag @a[x=0] remove JoinYellow
+execute if predicate custom:periodic_tick/3 if predicate game:teams/yellow_is_joinable at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:yellow_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:gamemode_components/neutral_items if predicate game:teams/yellow_is_joinable at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:white_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 2 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinyellow
 execute as @a[x=0,tag=tryJoinYellow] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.yellow] run tag @s remove tryJoinYellow
 execute as @a[x=0,tag=JoinYellow] run function custom:team/join_yellow
@@ -120,15 +126,15 @@ execute if entity @a[x=0,tag=JoinYellow] run function lobby:cancelsettings/reset
 ##Join pad + Leave pad Spectator
 execute as @a[x=0] if score @s spectate matches 1 if predicate rr:is_cubekrowd run function servermode:spectate
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinSpec
-execute unless predicate game:joinable_match_phase run tag @a[x=0] remove JoinSpec
-execute if predicate rr:is_cubekrowd if entity @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] as @a[x=0,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
+execute if predicate rr:is_cubekrowd unless predicate game:teams/spectator_is_joinable as @a[x=0,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
+execute unless predicate game:teams/spectator_is_joinable run tag @a[x=0] remove JoinSpec
 tag @a[x=0,gamemode=spectator] remove JoinSpec
-execute if predicate custom:periodic_tick/3 as @e[x=0,type=marker,tag=join_pad.spectator,tag=!CancelJoin] at @s run particle minecraft:falling_dust{block_state:"minecraft:gray_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/spectator_is_joinable at @e[x=0,type=marker,tag=join_pad.spectator] run particle minecraft:falling_dust{block_state:"minecraft:gray_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute as @e[x=0,type=marker,tag=join_pad.spectator] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinspec
 execute as @a[x=0,tag=tryJoinSpec] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.spectator] run tag @s remove tryJoinSpec
-execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] run tag @a[x=0] remove JoinSpec
+execute unless predicate game:teams/spectator_is_joinable run tag @a[x=0] remove JoinSpec
 execute as @e[x=0,type=marker,tag=join_pad.spectator] at @s run tag @a[predicate=custom:team/spectator,distance=..1] add AlreadySpec
-execute as @e[x=0,type=marker,tag=join_pad.spectator,tag=CancelJoin] run tag @a[x=0] remove AlreadySpec
+execute unless predicate game:teams/spectator_is_joinable run tag @a[x=0] remove AlreadySpec
 execute as @a[x=0,tag=JoinSpec] run function custom:team/join_spectator
 clear @a[x=0,tag=JoinSpec] *
 scoreboard players enable @a[x=0,predicate=custom:team/spectator] leaveSpec
@@ -191,10 +197,9 @@ execute if predicate game:phase/match run tag @a[x=0] remove doing_facade_parkou
 tag @a[x=0,predicate=!custom:team/any_playing_team] remove doing_facade_parkour
 
 ##Countdown
-execute if predicate game:phase/staging/queue/countdown run function game:countdown
+execute if predicate game:phase/staging/queue/countdown run function game:while_phase/staging/queue/countdown
 
-##Team Balancing
-execute unless predicate game:game_rules/disable_team_balancing/on run function everytick:team_balance
-
-##Display CancelJoin join pad barriers
-tag @e[x=0,type=marker,tag=CancelJoin] add join_pad.show_barrier
+##Display non-joinable join pad barriers
+execute unless predicate game:teams/blue_is_joinable run tag @e[x=0,type=marker,tag=join_pad.blue] add join_pad.show_barrier
+execute unless predicate game:teams/yellow_is_joinable run tag @e[x=0,type=marker,tag=join_pad.yellow] add join_pad.show_barrier
+execute unless predicate game:teams/spectator_is_joinable run tag @e[x=0,type=marker,tag=join_pad.spectator] add join_pad.show_barrier

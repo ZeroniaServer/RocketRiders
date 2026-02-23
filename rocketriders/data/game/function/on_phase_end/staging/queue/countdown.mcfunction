@@ -1,5 +1,5 @@
 ##
-
+scoreboard players reset @s count
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_end/staging/queue/countdown

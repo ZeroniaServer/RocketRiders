@@ -12,11 +12,6 @@ function lobby:missiledisplay/placedisp
 #Tutorial advancements
 execute if predicate rr:has_tutorial run function 2811iaj1:advantriggers
 
-#Fix weirdness with join pads
-execute unless predicate game:joinable_match_phase unless entity @s[tag=JustCleared] run tag @e[x=0,type=marker,tag=join_pad.yellow] add CancelJoin
-execute unless predicate game:joinable_match_phase unless entity @s[tag=JustCleared] run tag @e[x=0,type=marker,tag=join_pad.blue] add CancelJoin
-execute unless predicate game:joinable_match_phase unless entity @s[tag=JustCleared] run tag @e[x=0,type=marker,tag=join_pad.spectator] add CancelJoin
-
 #Toggle particles
 scoreboard players enable @a[x=0] toggle_particles
 tellraw @a[x=0,scores={toggle_particles=1..},tag=!hideParticles] [{"text":"Disabled particles from Rocket Riders gameplay elements.","color":"red"}]

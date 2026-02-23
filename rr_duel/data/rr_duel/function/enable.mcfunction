@@ -9,9 +9,11 @@ scoreboard players set $config_override.disable_tying gamemode_components 1
 scoreboard players set $config_override.item_delay gamemode_components 15
 scoreboard players set $config_override.wind_down gamemode_components 1
 scoreboard players set $custom_leave_handling gamemode_components 1
-scoreboard players set $custom_staging_bossbars gamemode_components 1
 scoreboard players set $duel_settings_locked gamemode_components 1
+scoreboard players set $lock_playing_teams_during_match gamemode_components 1
 scoreboard players set $main_item/shooting_saber gamemode_components 1
+scoreboard players set $max_players_per_team gamemode_components 1
+scoreboard players set $min_players_per_team gamemode_components 1
 scoreboard players set $no_feathered_vortices gamemode_components 1
 
 # items

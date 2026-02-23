@@ -1,0 +1,22 @@
+[
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:reference",
+        "name": "game:teams/yellow_is_larger"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:game_rules/disable_team_balancing/on"
+      }
+    ]
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:teams/blue_is_full"
+    }
+  }
+]

@@ -137,6 +137,10 @@ execute if predicate game:gamemode_components/item_signs/replace_fireball_with_c
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"duel_settings_locked",label:"🔒 item_signs/replace_vortex_with_icbm",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:gamemode_components/item_signs/replace_vortex_with_icbm run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
 
+# lock_playing_teams_during_match (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"lock_playing_teams_during_match",label:"🔒 lock_playing_teams_during_match",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:gamemode_components/lock_playing_teams_during_match run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set value "true"
+
 # lower_void
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"lower_void",label:"lower_void",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:gamemode_components/lower_void run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[1].initial set value true
@@ -150,6 +154,16 @@ execute if predicate game:gamemode_components/main_item/rocket_nomicon run data 
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[3].display.color set value "red"
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.color set value "red"
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[4].display.color set value "white"
+
+# max_players_per_team (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"max_players_per_team",label:"🔒 max_players_per_team",width:300,options:[{id:"",display:{color:"white",text:"0"}}]}
+execute store result storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text int 1 run scoreboard players get $max_players_per_team gamemode_components
+data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set string storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text
+
+# min_players_per_team (locked)
+data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"min_players_per_team",label:"🔒 min_players_per_team",width:300,options:[{id:"",display:{color:"white",text:"0"}}]}
+execute store result storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text int 1 run scoreboard players get $min_players_per_team gamemode_components
+data modify storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text set string storage rocketriders:main gamemode_components.dialog.inputs[-1].options[].display.text
 
 # neutral_items
 data modify storage rocketriders:main gamemode_components.dialog.inputs append value {type:"minecraft:single_option",key:"neutral_items",label:"neutral_items",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}

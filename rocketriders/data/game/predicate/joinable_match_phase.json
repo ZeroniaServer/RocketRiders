@@ -1,16 +1,25 @@
-[
-  {
-    "condition": "minecraft:inverted",
-    "term": {
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
       "condition": "minecraft:reference",
-      "name": "game:phase/staging/configuration"
+      "name": "game:phase/staging/queue"
+    },
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:reference",
+          "name": "game:phase/match"
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:reference",
+            "name": "game:phase/match/over"
+          }
+        }
+      ]
     }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:phase/match/over"
-    }
-  }
-]
+  ]
+}

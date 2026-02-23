@@ -1,4 +1,7 @@
 ##
+bossbar set rr:startgame max 30
+bossbar set rr:startgame value 30
+
 function lobby:update_nav_book
 execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
 

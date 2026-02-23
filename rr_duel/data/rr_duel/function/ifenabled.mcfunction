@@ -35,11 +35,5 @@ execute unless predicate game:phase/match/over if predicate game:joinable_match_
 execute unless predicate game:phase/match/over if predicate game:joinable_match_phase if entity @a[x=0,tag=informMe] run function modifiers:informmodifiers
 tag @a[x=0,tag=informMe] remove informMe
 
-#lock join pads
-execute if predicate game:phase/staging if predicate game:joinable_match_phase if entity @a[limit=1,x=0,predicate=custom:team/blue] run function game:cancelblue
-execute if predicate game:phase/staging if predicate game:joinable_match_phase if entity @a[limit=1,x=0,predicate=custom:team/yellow] run function game:cancelyellow
-execute if predicate game:phase/staging if predicate game:joinable_match_phase unless entity @a[limit=1,x=0,predicate=custom:team/blue] run function game:uncancelblue
-execute if predicate game:phase/staging if predicate game:joinable_match_phase unless entity @a[limit=1,x=0,predicate=custom:team/yellow] run function game:uncancelyellow
-
 #fake game end
 execute if entity @s[tag=FakeGameEnd] run function rr_duel:game/fakegameend

@@ -1,5 +1,7 @@
 ##
-
+scoreboard players set @s count 0
+bossbar set rr:startgame max 30
+bossbar set rr:startgame color green
 
 ## Gamemode-specific functions
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run function rr_chase:game/on_phase_start/staging/queue/countdown

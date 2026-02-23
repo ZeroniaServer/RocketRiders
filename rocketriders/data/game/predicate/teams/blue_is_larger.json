@@ -1,12 +1,5 @@
 [
   {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:game_rules/disable_team_balancing/on"
-    }
-  },
-  {
     "condition": "minecraft:value_check",
     "range": {
       "min": {

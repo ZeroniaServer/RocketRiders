@@ -1,9 +1,6 @@
 #tracking players and locking join pads
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function rr_duel:game/player_tracking/add_tracker
 
-function game:cancelyellow
-function game:cancelblue
-
 execute as @a[x=0,predicate=custom:team/blue] run function rr_duel:forfeit/calculate
 execute as @a[x=0,predicate=custom:team/yellow] run function rr_duel:forfeit/calculate
 scoreboard players display name Blue: RoundsWon {color:"blue",text:"Blue:"}

@@ -13,6 +13,13 @@
         "type": "minecraft:run_command"
       },
       "label": "Leave Match"
+    },
+    {
+      "action": {
+        "dialog": "experimental:settings_menu/achievements",
+        "type": "minecraft:show_dialog"
+      },
+      "label": "Achievements..."
     }
   ],
   "after_action": "none",

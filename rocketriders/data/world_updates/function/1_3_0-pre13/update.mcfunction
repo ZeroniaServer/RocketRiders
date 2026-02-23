@@ -1,12 +1,13 @@
-# Move modification room signs
+## Move modification room signs
 execute unless block -67 192 83 minecraft:air run function world_updates:1_3_0-pre13/move_modroom_signs
 
-# Removed unused scoreboard objectives
+## Removed unused scoreboard objectives
 scoreboard players operation $match_over_timer global = @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer
 execute if score $match_over_timer global matches ..0 run scoreboard players reset $match_over_timer global
 scoreboard objectives remove endtimer
+scoreboard objectives remove deathCooldown
 
-# Move lockmodroom CmdData to config
+## Move lockmodroom CmdData to config
 execute if score $lockmodroom CmdData matches 1 unless predicate rr:is_cubekrowd run scoreboard players set $lock_modification_room config 1
 scoreboard players reset $lockmodroom CmdData
 execute if score $nodeathmessages CmdData matches 1 run scoreboard players set $disable_death_messages config 1
@@ -16,7 +17,7 @@ scoreboard players reset $skipsplashes CmdData
 execute if score $skiptitles CmdData matches 1 run scoreboard players set $disable_titles config 1
 scoreboard players reset $skiptitles CmdData
 
-# Change how phases are tracked
+## Change how phases are tracked
 execute if score $phase/match.play global matches 1 run scoreboard players set $match_in_play global 1
 execute if score $phase/match.paused global matches 1 run scoreboard players set $match_in_play global 1
 execute if score $phase/match.paused global matches 1 run scoreboard players set $game_paused global 1
@@ -52,9 +53,15 @@ tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove Countdown
 
 scoreboard players reset $transitioning_phase global
 
+## Place in barrier border
+#forceload add -176 176 191 191
+fill -164 -64 -176 188 181 -176 barrier strict
+fill 188 -64 -176 188 181 176 barrier strict
+fill 188 -64 176 -164 181 176 barrier strict
+fill -164 -64 176 -164 181 -176 barrier strict
+
 ## Misc
 scoreboard players reset $periodic_tick.2 global
 scoreboard players reset $periodic_tick.3 global
 scoreboard players reset $periodic_tick.5 global
 scoreboard players reset $periodic_tick.20 global
-scoreboard objectives remove deathCooldown

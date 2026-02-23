@@ -245,10 +245,14 @@ execute as @e[x=0,type=marker,tag=surp] at @s run function items:spawnmissiles
 
 ## Clear any blocks that are outside the world border
 # south border
-execute positioned ~ ~ ~30 if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run fill ~-5 ~-10 176 ~5 ~5 ~ air strict
+execute positioned ~ ~ ~30 if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run fill ~-5 ~-10 177 ~5 ~5 ~ minecraft:air strict
+execute positioned ~ ~ ~30 if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run fill ~-5 ~-10 176 ~5 ~5 176 minecraft:barrier strict
 # north border
-execute positioned ~ ~ ~-30 unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run fill ~-5 ~-10 ~ ~5 ~5 -176 air strict
+execute positioned ~ ~ ~-30 unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run fill ~-5 ~-10 ~ ~5 ~5 -177 minecraft:air strict
+execute positioned ~ ~ ~-30 unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run fill ~-5 ~-10 -176 ~5 ~5 -176 minecraft:barrier strict
 # east border
-execute positioned ~5 ~ ~ if predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:188.0}}}} run fill 188 ~-10 ~-30 ~ ~5 ~30 air strict
+execute positioned ~5 ~ ~ if predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:188.0}}}} run fill 189 ~-10 ~-30 ~ ~5 ~30 minecraft:air strict
+execute positioned ~5 ~ ~ if predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:188.0}}}} run fill 188 ~-10 ~-30 188 ~5 ~30 minecraft:barrier strict
 # west border
-execute positioned ~-5 ~ ~ unless predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:-163.0}}}} run fill ~ ~-10 ~-30 -164 ~5 ~30 air strict
+execute positioned ~-5 ~ ~ unless predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:-163.0}}}} run fill ~ ~-10 ~-30 -165 ~5 ~30 minecraft:air strict
+execute positioned ~-5 ~ ~ unless predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:-163.0}}}} run fill -164 ~-10 ~-30 -164 ~5 ~30 minecraft:barrier strict

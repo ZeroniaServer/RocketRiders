@@ -5,7 +5,7 @@ clear @a[x=0,predicate=custom:team/any_playing_team] *
 effect clear @a[x=0,predicate=custom:team/any_playing_team]
 dialog clear @a[x=0]
 scoreboard players reset $1v1_duel_time_out_period global
-tag @s remove forceCountdown
+scoreboard players reset $force_countdown global
 tag @s remove gaveFirstItem
 scoreboard players set @s count 0
 scoreboard players set $game_duration global 0

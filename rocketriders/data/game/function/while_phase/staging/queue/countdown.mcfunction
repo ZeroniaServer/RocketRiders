@@ -7,9 +7,9 @@
 scoreboard players add @s count 1
 
 #Return to waiting if players per team become insufficient
-execute if predicate game:teams/playing_teams_are_empty run return run function game:set_phase/staging.queue.waiting
-execute if predicate rr:wait_for_sufficient_players unless predicate game:teams/blue_is_sufficient run return run function game:set_phase/staging.queue.waiting
-execute if predicate rr:wait_for_sufficient_players unless predicate game:teams/yellow_is_sufficient run return run function game:set_phase/staging.queue.waiting
+execute unless score $force_countdown global matches 1 if predicate game:teams/playing_teams_are_empty run return run function game:set_phase/staging.queue.waiting
+execute unless score $force_countdown global matches 1 if predicate rr:wait_for_sufficient_players unless predicate game:teams/blue_is_sufficient run return run function game:set_phase/staging.queue.waiting
+execute unless score $force_countdown global matches 1 if predicate rr:wait_for_sufficient_players unless predicate game:teams/yellow_is_sufficient run return run function game:set_phase/staging.queue.waiting
 
 #Wait for arena to clear
 execute if score @s count matches 599..600 unless score $chunk_clear_progress global matches 50.. run scoreboard players set @s count 598

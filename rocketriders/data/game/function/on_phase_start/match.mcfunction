@@ -31,8 +31,7 @@ function lobby:credits/restart
 function custom:game_rules/mob_griefing/on
 kill @e[x=0,type=#arrows]
 scoreboard players set @s count 0
-#The forceCountdown tag is used to override conditions that would otherwise cancel a countdown
-tag @s remove forceCountdown
+scoreboard players reset $force_countdown global
 
 
 ## Gamemode-specific functions

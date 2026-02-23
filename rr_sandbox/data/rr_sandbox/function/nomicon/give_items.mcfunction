@@ -59,7 +59,7 @@ execute if score @s nomicon matches 45 run return run function items:give/knight
 execute if score @s nomicon matches 46 run clear @s *[custom_data~{id:"spell_wand"}]
 execute if score @s nomicon matches 46 run return run function items:give/spell_wand with storage rocketriders:main nomicon
 
-execute if score @s nomicon matches 47 run return run function items:give/spell_book with storage rocketriders:main nomicon
+execute if score @s nomicon matches 47 run return run function items:give/spell_book/fire with storage rocketriders:main nomicon
 execute if score @s nomicon matches 48 run return run function items:give/missile/tomatwo with storage rocketriders:main nomicon
 execute if score @s nomicon matches 49 run return run function items:give/surprise_missile/all with storage rocketriders:main nomicon
 execute if score @s nomicon matches 50 run return run function items:give/invisibility_potion with storage rocketriders:main nomicon
@@ -88,3 +88,7 @@ execute if score @s nomicon matches 60 run return run function items:elytra/unbr
 execute if score @s nomicon matches 61 unless score $no_lunging_spear global matches 1 run return run function items:give/lunging_spear with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 62 run return run execute if predicate items:elytra/elytra run function items:elytra/deactivate
+
+execute if score @s nomicon matches 63 run return run function items:give/spell_book/health with storage rocketriders:main nomicon
+execute if score @s nomicon matches 64 run return run function items:give/spell_book/damage with storage rocketriders:main nomicon
+execute if score @s nomicon matches 65 run return run function items:give/spell_book/wind with storage rocketriders:main nomicon

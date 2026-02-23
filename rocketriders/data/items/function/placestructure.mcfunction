@@ -4,85 +4,141 @@
 ################################################
 
 #Auxiliary
-execute if entity @s[tag=BlueAux] run place template game:auxiliary_blue
-execute if entity @s[tag=YellowAux] run place template game:auxiliary_yellow
+execute if entity @s[tag=BlueAux] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/auxiliary
+execute if entity @s[tag=BlueAux] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/auxiliary
+execute if entity @s[tag=BlueAux] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/auxiliary
+execute if entity @s[tag=YellowAux] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/auxiliary
+execute if entity @s[tag=YellowAux] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/auxiliary
 
 #TomaTwo
-execute if entity @s[tag=BlueToma] run place template game:tomatwo_blue
-execute if entity @s[tag=YellowToma] run place template game:tomatwo_yellow
+execute if entity @s[tag=BlueToma] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/tomatwo
+execute if entity @s[tag=BlueToma] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/tomatwo
+execute if entity @s[tag=BlueToma] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/tomatwo
+execute if entity @s[tag=YellowToma] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/tomatwo
+execute if entity @s[tag=YellowToma] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/tomatwo
 
 #Chronullifier
-execute if entity @s[tag=BlueNull] run place template game:chronullifier_blue
-execute if entity @s[tag=YellowNull] run place template game:chronullifier_yellow
+execute if entity @s[tag=BlueNull] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/chronullifier
+execute if entity @s[tag=BlueNull] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/chronullifier
+execute if entity @s[tag=BlueNull] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/chronullifier
+execute if entity @s[tag=YellowNull] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/chronullifier
+execute if entity @s[tag=YellowNull] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/chronullifier
 
 #Warhead
-execute if entity @s[tag=BlueWar] run place template game:warhead_blue
-execute if entity @s[tag=YellowWar] run place template game:warhead_yellow
+execute if entity @s[tag=BlueWar] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/warhead
+execute if entity @s[tag=BlueWar] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/warhead
+execute if entity @s[tag=BlueWar] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/warhead
+execute if entity @s[tag=YellowWar] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/warhead
+execute if entity @s[tag=YellowWar] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/warhead
 
 #Thunderbolt
-execute if entity @s[tag=BlueBolt] run place template game:thunderbolt_blue
-execute if entity @s[tag=YellowBolt] run place template game:thunderbolt_yellow
+execute if entity @s[tag=BlueBolt] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/thunderbolt
+execute if entity @s[tag=BlueBolt] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/thunderbolt
+execute if entity @s[tag=BlueBolt] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/thunderbolt
+execute if entity @s[tag=YellowBolt] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/thunderbolt
+execute if entity @s[tag=YellowBolt] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/thunderbolt
 
 #Hurricane
-execute if entity @s[tag=BlueHur] run place template game:hurricane_blue
-execute if entity @s[tag=YellowHur] run place template game:hurricane_yellow
+execute if entity @s[tag=BlueHur] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/hurricane
+execute if entity @s[tag=BlueHur] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/hurricane
+execute if entity @s[tag=BlueHur] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/hurricane
+execute if entity @s[tag=YellowHur] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/hurricane
+execute if entity @s[tag=YellowHur] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/hurricane
 
 #Elder Guardian
-execute if entity @s[tag=BlueGuard] run place template game:elderguard_blue
-execute if entity @s[tag=YellowGuard] run place template game:elderguard_yellow
+execute if entity @s[tag=BlueGuard] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/elderguard
+execute if entity @s[tag=BlueGuard] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/elderguard
+execute if entity @s[tag=BlueGuard] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/elderguard
+execute if entity @s[tag=YellowGuard] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/elderguard
+execute if entity @s[tag=YellowGuard] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/elderguard
 
 #A.N.T.
-execute if entity @s[tag=BlueAnt] run place template game:ant_blue
-execute if entity @s[tag=YellowAnt] run place template game:ant_yellow
+execute if entity @s[tag=BlueAnt] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/ant
+execute if entity @s[tag=BlueAnt] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/ant
+execute if entity @s[tag=BlueAnt] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/ant
+execute if entity @s[tag=YellowAnt] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/ant
+execute if entity @s[tag=YellowAnt] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/ant
 
 #Blade
-execute if entity @s[tag=BlueBlade] run place template game:blade_blue
-execute if entity @s[tag=YellowBlade] run place template game:blade_yellow
+execute if entity @s[tag=BlueBlade] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/blade
+execute if entity @s[tag=BlueBlade] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/blade
+execute if entity @s[tag=BlueBlade] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/blade
+execute if entity @s[tag=YellowBlade] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/blade
+execute if entity @s[tag=YellowBlade] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/blade
 
 #Rifter
-execute if entity @s[tag=BlueRift] run place template game:rifter_blue
-execute if entity @s[tag=YellowRift] run place template game:rifter_yellow
+execute if entity @s[tag=BlueRift] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/rifter
+execute if entity @s[tag=BlueRift] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/rifter
+execute if entity @s[tag=BlueRift] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/rifter
+execute if entity @s[tag=YellowRift] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/rifter
+execute if entity @s[tag=YellowRift] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/rifter
 
 #Juggerbuster
-execute if entity @s[tag=BlueJug] run place template game:juggerbuster_blue
-execute if entity @s[tag=YellowJug] run place template game:juggerbuster_yellow
+execute if entity @s[tag=BlueJug] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/juggerbuster
+execute if entity @s[tag=BlueJug] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/juggerbuster
+execute if entity @s[tag=BlueJug] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/juggerbuster
+execute if entity @s[tag=YellowJug] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/juggerbuster
+execute if entity @s[tag=YellowJug] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/juggerbuster
 
 #Slasher
-execute if entity @s[tag=BlueSlash] run place template game:slasher_blue
-execute if entity @s[tag=YellowSlash] run place template game:slasher_yellow
+execute if entity @s[tag=BlueSlash] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/slasher
+execute if entity @s[tag=BlueSlash] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/slasher
+execute if entity @s[tag=BlueSlash] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/slasher
+execute if entity @s[tag=YellowSlash] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/slasher
+execute if entity @s[tag=YellowSlash] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/slasher
 
 #Catapult
-execute if entity @s[tag=BlueCata] run place template game:catapult_blue
-execute if entity @s[tag=YellowCata] run place template game:catapult_yellow
+execute if entity @s[tag=BlueCata] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/catapult
+execute if entity @s[tag=BlueCata] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/catapult
+execute if entity @s[tag=BlueCata] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/catapult
+execute if entity @s[tag=YellowCata] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/catapult
+execute if entity @s[tag=YellowCata] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/catapult
 
 #Citadel
-execute if entity @s[tag=BlueCitadel] run place template game:citadel_blue
-execute if entity @s[tag=YellowCitadel] run place template game:citadel_yellow
+execute if entity @s[tag=BlueCitadel] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/citadel
+execute if entity @s[tag=BlueCitadel] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/citadel
+execute if entity @s[tag=BlueCitadel] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/citadel
+execute if entity @s[tag=YellowCitadel] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/citadel
+execute if entity @s[tag=YellowCitadel] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/citadel
 
 #Gemini
-execute if entity @s[tag=BlueGemi] run place template game:gemini_blue
-execute if entity @s[tag=YellowGemi] run place template game:gemini_yellow
+execute if entity @s[tag=BlueGemi] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/gemini
+execute if entity @s[tag=BlueGemi] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/gemini
+execute if entity @s[tag=BlueGemi] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/gemini
+execute if entity @s[tag=YellowGemi] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/gemini
+execute if entity @s[tag=YellowGemi] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/gemini
 
 #Lifter
-execute if entity @s[tag=BlueLift] run place template game:lifter_blue
-execute if entity @s[tag=YellowLift] run place template game:lifter_yellow
+execute if entity @s[tag=BlueLift] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/lifter
+execute if entity @s[tag=BlueLift] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/lifter
+execute if entity @s[tag=BlueLift] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/lifter
+execute if entity @s[tag=YellowLift] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/lifter
+execute if entity @s[tag=YellowLift] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/lifter
 
 #Hypersonic
-execute if entity @s[tag=BlueHyper] run place template game:hypersonic_blue
-execute if entity @s[tag=YellowHyper] run place template game:hypersonic_yellow
+execute if entity @s[tag=BlueHyper] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/hypersonic
+execute if entity @s[tag=BlueHyper] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/hypersonic
+execute if entity @s[tag=BlueHyper] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/hypersonic
+execute if entity @s[tag=YellowHyper] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/hypersonic
+execute if entity @s[tag=YellowHyper] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/hypersonic
 
 #Bullet
-execute if entity @s[tag=BlueBull] run place template game:bullet_blue
-execute if entity @s[tag=YellowBull] run place template game:bullet_yellow
+execute if entity @s[tag=BlueBull] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/bullet
+execute if entity @s[tag=BlueBull] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/bullet
+execute if entity @s[tag=BlueBull] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/bullet
+execute if entity @s[tag=YellowBull] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/bullet
+execute if entity @s[tag=YellowBull] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/bullet
 
 #Duplex
-execute if entity @s[tag=BlueDuplex] run place template game:duplex_blue
-execute if entity @s[tag=YellowDuplex] run place template game:duplex_yellow
+execute if entity @s[tag=BlueDuplex] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/duplex
+execute if entity @s[tag=BlueDuplex] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/duplex
+execute if entity @s[tag=BlueDuplex] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/duplex
+execute if entity @s[tag=YellowDuplex] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/duplex
+execute if entity @s[tag=YellowDuplex] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/duplex
 
 #Broadsword
-execute if entity @s[tag=BlueBroad] run place template game:broadsword_blue
-execute if entity @s[tag=YellowBroad] run place template game:broadsword_yellow
-
-##CHASE MODE - Missile color conversion
-execute if predicate game:gamemode_components/neutral_items at @s positioned ~ ~2 ~ run function items:whitemissile
-execute unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue at @s positioned ~ ~2 ~ run function items:redmissile
+execute if entity @s[tag=BlueBroad] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/broadsword
+execute if entity @s[tag=BlueBroad] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/broadsword
+execute if entity @s[tag=BlueBroad] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/broadsword
+execute if entity @s[tag=YellowBroad] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/broadsword
+execute if entity @s[tag=YellowBroad] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/broadsword

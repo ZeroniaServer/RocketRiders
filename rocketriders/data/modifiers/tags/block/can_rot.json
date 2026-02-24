@@ -1,0 +1,30 @@
+{
+  "values": [
+    "#custom:canopy_blocks_solid",
+    "#custom:concrete",
+    "#custom:terracotta",
+    "#custom:glazed_terracotta",
+    "#custom:glass_except_light_gray",
+    "#custom:glasspane",
+    "#minecraft:fence_gates",
+    "#minecraft:planks",
+    "#minecraft:trapdoors",
+    "minecraft:glass",
+    "minecraft:tnt",
+    "minecraft:slime_block",
+    "minecraft:honey_block",
+    "minecraft:piston",
+    "minecraft:sticky_piston",
+    "minecraft:piston_head",
+    "minecraft:redstone_block",
+    "minecraft:observer",
+    "minecraft:stone",
+    "minecraft:cobblestone",
+    "minecraft:end_stone",
+    "minecraft:end_stone_brick_wall",
+    "minecraft:powered_rail",
+    "minecraft:target",
+    "minecraft:oak_wood",
+    "minecraft:crying_obsidian"
+  ]
+}

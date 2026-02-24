@@ -1,0 +1,14 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "predicates": {
+      "minecraft:custom_data": {
+        "rot": {
+          "brain": {}
+        }
+      }
+    },
+    "type": "#entities:rot_brain_entity_type"
+  }
+}

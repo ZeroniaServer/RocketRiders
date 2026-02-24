@@ -1,0 +1,64 @@
+[
+  {
+    "condition": "minecraft:location_check",
+    "predicate": {
+      "dimension": "minecraft:overworld",
+      "position": {
+        "x": {
+          "min": -22,
+          "max": 47
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:all_of",
+        "terms": [
+          {
+            "condition": "minecraft:reference",
+            "name": "game:modifiers/hardcore/on"
+          },
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld",
+              "position": {
+                "z": {
+                  "min": -52,
+                  "max": 53
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "condition": "minecraft:all_of",
+        "terms": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:reference",
+              "name": "game:modifiers/hardcore/on"
+            }
+          },
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:overworld",
+              "position": {
+                "z": {
+                  "min": -40,
+                  "max": 41
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

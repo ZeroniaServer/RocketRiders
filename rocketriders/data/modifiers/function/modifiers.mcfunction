@@ -52,3 +52,27 @@ execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:t
 execute if predicate game:modifiers/hobbits/on as @a[x=0,predicate=custom:team/any_playing_team,tag=!hobbit] run function modifiers:hobbit/set
 execute if predicate game:modifiers/hobbits/on as @a[x=0,predicate=!custom:team/any_playing_team,tag=hobbit] run function modifiers:hobbit/reset
 execute unless predicate game:modifiers/hobbits/on as @a[x=0,tag=hobbit] run function modifiers:hobbit/reset
+
+##Rotting
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location

@@ -23,7 +23,6 @@ execute if score $match_over_timer global matches 1..2 unless predicate game:gam
 execute if score $match_over_timer global matches 1..569 run function modifiers:modifiers
 
 ##Post-tie phase and reset
-execute if score $match_over_timer global matches 101 run scoreboard players set $game_duration global 0
 execute if score $match_over_timer global matches 102 as @a[x=0] run function everytick:score_reset
 execute if score $match_over_timer global matches 250 run gamemode spectator @a[x=0,predicate=custom:team/any_playing_team]
 execute if score $match_over_timer global matches 570 run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] GamesPlayed 1

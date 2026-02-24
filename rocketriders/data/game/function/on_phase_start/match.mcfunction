@@ -1,4 +1,5 @@
 ##
+scoreboard players set $match_play_time global 0
 
 scoreboard objectives add UUIDTracker dummy
 scoreboard objectives add KillerUUID dummy

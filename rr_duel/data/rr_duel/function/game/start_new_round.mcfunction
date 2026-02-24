@@ -1,5 +1,5 @@
 function game:set_phase/match.play.battle
-scoreboard players add $game_duration global 80
+scoreboard players add $match_play_time global 80
 
 function game:place_arena
 

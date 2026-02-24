@@ -153,8 +153,8 @@ tag @a[x=0,tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpo
 execute unless predicate game:gamemode_components/custom_pierce_prevention run title @a[x=0,tag=preventionMSG,limit=1] actionbar {color:"red",text:"You cannot spawn missiles inside of portals"}
 title @a[x=0,tag=roofMSG,limit=1] actionbar {color:"red",text:"You cannot spawn missiles at this height"}
 title @a[x=0,tag=voidMSG,limit=1] actionbar {color:"red",text:"You cannot spawn missiles at this height"}
-execute if score $game_duration global matches 200.. unless predicate game:gamemode_components/disable_antigrief_system run title @a[x=0,tag=antigriefMSG,limit=1] actionbar {color:"red",text:"You cannot spawn missiles inside your own base"}
-execute if score $game_duration global matches ..199 unless predicate game:gamemode_components/disable_antigrief_system run title @a[x=0,tag=antigriefMSG,limit=1] actionbar {color:"red",text:"You cannot collide missiles for the first 10 seconds of a match"}
+execute if score $match_play_time global matches 200.. unless predicate game:gamemode_components/disable_antigrief_system run title @a[x=0,tag=antigriefMSG,limit=1] actionbar {color:"red",text:"You cannot spawn missiles inside your own base"}
+execute if score $match_play_time global matches ..199 unless predicate game:gamemode_components/disable_antigrief_system run title @a[x=0,tag=antigriefMSG,limit=1] actionbar {color:"red",text:"You cannot collide missiles for the first 10 seconds of a match"}
 title @a[x=0,tag=spawnpointMSG,limit=1] actionbar {color:"red",text:"You cannot spawn missiles inside a team's spawnpoint"}
 title @a[x=0,tag=collisionMSG] actionbar [{color:"red",text:"You cannot spawn missiles inside the enemy's base "},{italic:true,text:"[Collision Control]"}]
 title @a[x=0,tag=roofMSGFB,limit=1] actionbar {color:"red",text:"You cannot spawn fireballs at this height"}

@@ -4,7 +4,7 @@ execute if predicate game:phase/staging/queue/countdown run scoreboard players s
 execute if predicate game:phase/staging/queue/countdown run scoreboard players set @e[x=0,type=armor_stand,tag=Bot] BotHP 3
 
 #Give first item to anyone who joins within 1st second
-execute if predicate game:phase/match/play if score $game_duration global matches 3..20 run function items:givefirst
+execute if predicate game:phase/match/play if score $match_play_time global matches 3..20 run function items:givefirst
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue

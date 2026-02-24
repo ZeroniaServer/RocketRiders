@@ -19,20 +19,20 @@ scoreboard players add @a[x=0,predicate=custom:team/blue] jumps 0
 function items:full_hotbar
 
 ##Game time
-scoreboard players add $game_duration global 1
+scoreboard players add $match_play_time global 1
 
 ##Put out players on fire
-execute if score $game_duration global matches 1..5 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute if score $match_play_time global matches 1..5 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
 
 ##Enable fall damage (considers modifiers)
-execute if score $game_duration global matches 10 unless predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/on
+execute if score $match_play_time global matches 10 unless predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/on
 
 ##Clear lobby arrows
-execute if score $game_duration global matches ..4 run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{lobby:true}]
+execute if score $match_play_time global matches ..4 run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{lobby:true}]
 
 ##Remove kills
-execute if score $game_duration global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.deaths
-execute if score $game_duration global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.kills
+execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.deaths
+execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.kills
 
 ##Achievements
 function achievements:gain

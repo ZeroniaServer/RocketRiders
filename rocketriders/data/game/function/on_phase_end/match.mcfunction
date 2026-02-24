@@ -1,5 +1,5 @@
 ##
-
+scoreboard players reset $match_play_time global
 
 ## Gamemode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match

@@ -65,3 +65,8 @@ scoreboard players reset $periodic_tick.2 global
 scoreboard players reset $periodic_tick.3 global
 scoreboard players reset $periodic_tick.5 global
 scoreboard players reset $periodic_tick.20 global
+
+scoreboard players operaton $match_play_time global = $game_duration global
+scoreboard players reset $game_duration global
+execute unless predicate game:phase/match run scoreboard players reset $match_play_time global
+execute if score $match_play_time global matches ..-1 run scoreboard players set $match_play_time global 0

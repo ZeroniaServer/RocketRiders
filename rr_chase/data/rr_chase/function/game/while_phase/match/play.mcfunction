@@ -63,7 +63,7 @@ execute if predicate game:modifiers/sonar/on run scoreboard players operation $g
 execute if predicate game:modifiers/sonar/on if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=InLead] glowing
 
 #Win
-execute positioned 12 64 65 if score $game_duration global matches 0..4 run tp @a[predicate=custom:team/blue,distance=..2] 12 64 -66 0 0
+execute positioned 12 64 65 if score $match_play_time global matches 0..4 run tp @a[predicate=custom:team/blue,distance=..2] 12 64 -66 0 0
 execute positioned 12 64 65 run tag @a[predicate=custom:team/blue,distance=..2,limit=1] add Winner
 execute as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run title @s actionbar {"text":""}
 execute if entity @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run tag @a[x=0,predicate=custom:team/blue,tag=!Winner] add Loser

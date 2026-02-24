@@ -78,3 +78,6 @@ execute if predicate game:arena_details/portal/hole_in_one if predicate game:yel
 
 ##Hotfix for Hypersonic
 execute as @e[x=0,type=marker,tag=hyperExtra] at @s run function items:hyperextra
+
+##Modifiers
+execute unless predicate game:phase/match/paused run function modifiers:modifiers

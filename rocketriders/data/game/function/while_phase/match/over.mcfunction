@@ -20,54 +20,10 @@ execute if score $match_over_timer global matches 1..2 run effect give @a[x=0,pr
 execute if score $match_over_timer global matches 1..2 run effect give @a[x=0,predicate=custom:team/any_playing_team] instant_health 1 100 true
 execute if score $match_over_timer global matches 1..2 unless predicate game:gamemode_components/custom_match_over_teleport_locations run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute if score $match_over_timer global matches 1..2 unless predicate game:gamemode_components/custom_match_over_teleport_locations run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
-execute if score $match_over_timer global matches 1..569 run function modifiers:modifiers
 
 ##Post-tie phase and reset
 execute if score $match_over_timer global matches 102 as @a[x=0] run function everytick:score_reset
 execute if score $match_over_timer global matches 250 run gamemode spectator @a[x=0,predicate=custom:team/any_playing_team]
-execute if score $match_over_timer global matches 570 run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] GamesPlayed 1
-execute if score $match_over_timer global matches 570 as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/playerdata/save
-execute if score $match_over_timer global matches 570 run function achievements:scoresreset
-execute if score $match_over_timer global matches 570 if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s minecraft:attack_speed base set 4
-#Reverse Sonar glowing
-execute if score $match_over_timer global matches 570 if predicate game:modifiers/sonar/on as @e[x=0,tag=is_glowing] run function game:glowing/off
-execute if score $match_over_timer global matches 570 run scoreboard players add @a[x=0,predicate=custom:team/any_arena_team] LeaveGame 1
-execute if score $match_over_timer global matches 570 run tp @a[x=0,predicate=custom:team/blue] -36 211 61.0 90 0
-execute if score $match_over_timer global matches 570 run tp @a[x=0,predicate=custom:team/yellow] -36 211 96.0 90 0
-execute if score $match_over_timer global matches 570 run tp @a[x=0,predicate=custom:team/spectator] -43 211 78 90 0
-execute if score $match_over_timer global matches 570 run scoreboard players reset @a[x=0] match_statistic.kills
-execute if score $match_over_timer global matches 570 run scoreboard players reset @a[x=0] match_statistic.deaths
-execute if score $match_over_timer global matches 570 run function custom:game_rules/mob_griefing/off
-execute if score $match_over_timer global matches 570 run scoreboard players reset $swap_side global
-execute if score $match_over_timer global matches 570 run setblock -57 203 78 air
-
-#Brute Force Arena Clear
-execute if score $match_over_timer global matches 570 run function arenaclear:brute_force/start
-
-#Server mode specifics
-execute if score $match_over_timer global matches 570 if predicate rr:has_modification_room run function lobby:open_modification_room
-execute if score $match_over_timer global matches 570 if predicate rr:server_mode/cubekrowd_voting if entity @s[tag=!forcenormal] run function servermode:makesets
-execute if score $match_over_timer global matches 570 if predicate rr:server_mode/cubekrowd_duels run schedule function servermode:forceclear 3t
-execute if score $match_over_timer global matches 570.. run tag @a[x=0] remove Winner
-execute if score $match_over_timer global matches 570.. run tag @a[x=0] remove Loser
-execute if score $match_over_timer global matches 570.. run tag @s remove BlueWon
-execute if score $match_over_timer global matches 570.. run tag @s remove YellowWon
-execute if score $match_over_timer global matches 570.. run tag @s remove BlueWonFirst
-execute if score $match_over_timer global matches 570.. run tag @s remove YellowWonFirst
-execute if score $match_over_timer global matches 570.. run tag @s remove BothWon
-execute if score $match_over_timer global matches 570.. run scoreboard players reset @a[x=0] invCount
-execute if score $match_over_timer global matches 570.. run scoreboard players reset $blue_single_portal var
-execute if score $match_over_timer global matches 570.. run scoreboard players reset $yellow_single_portal var
-execute if score $match_over_timer global matches 570.. run scoreboard players reset $1v1_duel_time_out_period global
-
-##For repeating settings
-execute unless score $match_repeat_amount global matches 1.. unless predicate game:repeat_settings/forever run scoreboard players reset $extra_match_repetitions config
-execute if score $match_over_timer global matches 570.. if predicate game:repeat_settings/on unless score $mcancel CmdData matches 1 unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
-
-execute if score $match_over_timer global matches 570.. run scoreboard players set $mcancel CmdData 0
-
-##Refresh modification room
-execute if score $match_over_timer global matches 570.. run function arenaclear:refreshsigns
 
 # Go back to configuration phase
 execute if score $match_over_timer global matches 570.. run return run function game:set_phase/staging.configuration

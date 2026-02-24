@@ -15,8 +15,6 @@ tag @a[x=0] remove onYellow
 tag @a[x=0] remove FailedMoon
 tag @a[x=0] remove FailedBallet
 tag @a[x=0] remove firstMoved
-scoreboard players set $initial_blue_team_count global 0
-scoreboard players set $initial_yellow_team_count global 0
 tag @a[x=0] remove SwissCheese
 tag @a[x=0] remove SimpleAndClean
 tag @a[x=0] remove DeusExMachina

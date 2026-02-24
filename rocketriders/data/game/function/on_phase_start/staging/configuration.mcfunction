@@ -1,4 +1,6 @@
 ##
+function arenaclear:refreshsigns
+
 bossbar set rr:startgame max 30
 bossbar set rr:startgame value 30
 

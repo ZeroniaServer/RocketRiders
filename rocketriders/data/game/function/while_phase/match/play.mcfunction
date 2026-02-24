@@ -37,9 +37,6 @@ execute if score $match_play_time global matches ..4 run scoreboard players rese
 ##Achievements
 function achievements:gain
 
-##Modifiers
-function modifiers:modifiers
-
 ##Spawn trap hotfix
 fill 14 63 66 10 63 66 obsidian
 fill 13 63 65 11 63 65 obsidian

@@ -25,7 +25,7 @@ execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.
 
 #> Expose Portals
 execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=custom:team/blue] ["\n",{"text":"Both Yellow Crystals have been destroyed!","color":"gold"},{"text":"\nA portal has been exposed; destroy it to win!","color":"yellow","italic":true}]
-execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=custom:team/yellow] ["\n",{"text":"Both of our Crystals have been destroyed!","color":"gold"},{"text":"\nOur portal is no longer protected; don't let them destroy it!","color":"yellow","italic":true}]
+execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=custom:team/yellow] ["\n",{"text":"Both of your Crystals have been destroyed!","color":"gold"},{"text":"\nYour portal is no longer protected; don't let it get destroyed!","color":"yellow","italic":true}]
 execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=!custom:team/any_playing_team] ["\n",{"text":"Both Yellow Crystals have been destroyed!","color":"gold"}]
 execute if predicate game:yellow_portal_revealed run function rr_crusade:game/cancel_utility
 execute if predicate game:yellow_portal_revealed run fill 4 45 52 20 55 66 minecraft:yellow_stained_glass strict

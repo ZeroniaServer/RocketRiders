@@ -21,7 +21,6 @@ tag @s remove force_mount
 ## Update statistics
 execute if predicate game:phase/match/play run function custom:event/player_dies/update_statistics
 
-
 ## Mark projectiles as pre-death
 tag @s add matchOrigin
 execute as @e[type=#arrows] if function custom:match_origin run data modify entity @s data.pre_death_projectile set value true

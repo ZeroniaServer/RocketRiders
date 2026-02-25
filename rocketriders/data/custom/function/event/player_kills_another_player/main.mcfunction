@@ -1,5 +1,3 @@
-advancement revoke @s only custom:event/player_kills_another_player
-
 ## Statistics
 execute if predicate game:phase/match/play run scoreboard players add @s match_statistic.kills 1
 

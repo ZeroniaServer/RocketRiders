@@ -1,6 +1,7 @@
 # Break the block with fx
 execute at @s align xyz run particle minecraft:squid_ink ~0.5 ~0.5 ~0.5 0.3 0.3 0.3 0 5
 execute at @s if block ~ ~ ~ tnt run function custom:ignite_tnt
+execute at @s if block ~ ~ ~ piston_head run function entities:type/rot/tick/rot_away_piston_head
 execute at @s run setblock ~ ~ ~ air destroy
 execute at @s run playsound minecraft:block.sculk.break block @a[x=0,predicate=custom:in_arena] ~ ~ ~ 0.25 0
 function entities:type/rot/actions/die

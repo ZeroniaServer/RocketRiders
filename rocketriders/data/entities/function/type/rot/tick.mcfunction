@@ -32,15 +32,15 @@ execute if score @s entity.age matches 100.. run return run function entities:ty
 execute if score @s entity.age matches 20.. if entity @s[tag=rot.brain.block_is_piston_base] if block ~ ~ ~ #custom:piston[extended=true] run return run function entities:type/rot/actions/rot_away
 
 # Block cracks increase over time.
-execute if score @s entity.age matches 10 on passengers run data modify entity @s text set value {atlas:"minecraft:blocks",sprite:"block/destroy_stage_1",color:"#390077"}
-execute if score @s entity.age matches 20 on passengers run data modify entity @s text set value {atlas:"minecraft:blocks",sprite:"block/destroy_stage_2",color:"#390077"}
-execute if score @s entity.age matches 30 on passengers run data modify entity @s text set value {atlas:"minecraft:blocks",sprite:"block/destroy_stage_3",color:"#390077"}
-execute if score @s entity.age matches 40 on passengers run data modify entity @s text set value {atlas:"minecraft:blocks",sprite:"block/destroy_stage_4",color:"#390077"}
-execute if score @s entity.age matches 50 on passengers run data modify entity @s text set value {atlas:"minecraft:blocks",sprite:"block/destroy_stage_5",color:"#390077"}
-execute if score @s entity.age matches 60 on passengers run data modify entity @s text set value {atlas:"minecraft:blocks",sprite:"block/destroy_stage_6",color:"#390077"}
-execute if score @s entity.age matches 70 on passengers run data modify entity @s text set value {atlas:"minecraft:blocks",sprite:"block/destroy_stage_7",color:"#390077"}
-execute if score @s entity.age matches 80 on passengers run data modify entity @s text set value {atlas:"minecraft:blocks",sprite:"block/destroy_stage_8",color:"#390077"}
-execute if score @s entity.age matches 90 on passengers run data modify entity @s text set value {atlas:"minecraft:blocks",sprite:"block/destroy_stage_9",color:"#390077"}
+execute if score @s entity.age matches 10 on passengers run data modify entity @s text.sprite set value "minecraft:block/destroy_stage_1"
+execute if score @s entity.age matches 20 on passengers run data modify entity @s text.sprite set value "minecraft:block/destroy_stage_2"
+execute if score @s entity.age matches 30 on passengers run data modify entity @s text.sprite set value "minecraft:block/destroy_stage_3"
+execute if score @s entity.age matches 40 on passengers run data modify entity @s text.sprite set value "minecraft:block/destroy_stage_4"
+execute if score @s entity.age matches 50 on passengers run data modify entity @s text.sprite set value "minecraft:block/destroy_stage_5"
+execute if score @s entity.age matches 60 on passengers run data modify entity @s text.sprite set value "minecraft:block/destroy_stage_6"
+execute if score @s entity.age matches 70 on passengers run data modify entity @s text.sprite set value "minecraft:block/destroy_stage_7"
+execute if score @s entity.age matches 80 on passengers run data modify entity @s text.sprite set value "minecraft:block/destroy_stage_8"
+execute if score @s entity.age matches 90 on passengers run data modify entity @s text.sprite set value "minecraft:block/destroy_stage_9"
 
 # If on a piston block, move front face to inside texture if extended
 execute if entity @s[tag=rot.brain.block_is_piston_base,tag=rot.brain.block_was_extended_piston] if block ~ ~ ~ #custom:piston[extended=false] on passengers if entity @s[tag=rot.face.is_piston_face] run data modify entity @s transformation.translation[2] set value 0.5

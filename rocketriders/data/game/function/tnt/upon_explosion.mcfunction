@@ -22,10 +22,10 @@ execute if predicate game:game_rules/friendly_tnt_damage/on if score $explosion_
 execute if predicate game:game_rules/friendly_tnt_damage/on if score $explosion_power var matches 5 positioned ~ ~0.06125 ~ run function custom:explosion {power:5,modifiers:{ramp_power_near_portals:"never"}}
 execute if predicate game:game_rules/friendly_tnt_damage/on if score $explosion_power var matches 4..5 run kill @s
 
-# If in match.over.outcome phase, ramp explosion power towards portals
-execute if predicate game:phase/match/over/outcome if score $explosion_power var matches 4 positioned ~ ~0.06125 ~ run function custom:explosion {power:4,modifiers:{ramp_power_near_portals:"always"}}
-execute if predicate game:phase/match/over/outcome if score $explosion_power var matches 5 positioned ~ ~0.06125 ~ run function custom:explosion {power:5,modifiers:{ramp_power_near_portals:"always"}}
-execute if predicate game:phase/match/over/outcome run kill @s
+# If in match.closing.outcome phase, ramp explosion power towards portals
+execute if predicate game:phase/match/closing/outcome if score $explosion_power var matches 4 positioned ~ ~0.06125 ~ run function custom:explosion {power:4,modifiers:{ramp_power_near_portals:"always"}}
+execute if predicate game:phase/match/closing/outcome if score $explosion_power var matches 5 positioned ~ ~0.06125 ~ run function custom:explosion {power:5,modifiers:{ramp_power_near_portals:"always"}}
+execute if predicate game:phase/match/closing/outcome run kill @s
 
 # Force explosion if necessary
 execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:modifiers/instant_tnt_explosions/on run data modify entity @s fuse set value 0

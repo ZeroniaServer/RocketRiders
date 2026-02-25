@@ -29,7 +29,7 @@
     "value": {
       "score": "global",
       "target": {
-        "name": "$phase/game.match.over",
+        "name": "$phase/game.match.closing",
         "type": "minecraft:fixed"
       },
       "type": "minecraft:score"

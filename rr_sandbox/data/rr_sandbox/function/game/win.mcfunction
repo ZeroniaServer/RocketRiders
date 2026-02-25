@@ -22,4 +22,4 @@ scoreboard objectives remove UUIDTracker
 scoreboard objectives remove KillerUUID
 
 ##Change Phase
-function game:set_phase/match.over.tie_window
+function game:set_phase/match.closing.tie_window

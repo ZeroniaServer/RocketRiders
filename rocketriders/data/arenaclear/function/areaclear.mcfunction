@@ -4,7 +4,7 @@
 ##################################
 
 ##Appropriate tags for Arena Clear state
-execute unless predicate game:phase/match/over run function game:set_phase/staging.configuration
+execute unless predicate game:phase/match/closing run function game:set_phase/staging.configuration
 
 ##Summon AECs for tracking/block sweeping
 summon marker 11 63 6 {Tags:["ArenaClearChecker"]}

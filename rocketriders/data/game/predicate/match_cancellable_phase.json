@@ -10,7 +10,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:phase/match/over"
+      "name": "game:phase/match/closing"
     }
   }
 ]

@@ -53,7 +53,7 @@ execute if predicate custom:team/any_playing_team if predicate game:gamemode_com
 execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/main_item/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.0 loot items:misc/spell_wand
 
 # winner's fireworks
-execute if predicate game:phase/match/over if predicate custom:team/any_playing_team if entity @s[tag=Winner] run loot replace block 0 184 -16 container.1 loot items:ending/celebratory_fireworks
+execute if predicate game:phase/match/closing if predicate custom:team/any_playing_team if entity @s[tag=Winner] run loot replace block 0 184 -16 container.1 loot items:ending/celebratory_fireworks
 
 ## Transfer and delete relevant items
 data modify storage rocketriders:main reset_inventory.items_replace set from block 0 184 -16 Items

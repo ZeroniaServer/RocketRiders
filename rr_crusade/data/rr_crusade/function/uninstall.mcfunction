@@ -4,7 +4,7 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeLast] run fu
 execute if entity @e[x=0,type=armor_stand,tag=rr_crusade,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_crusade,limit=1]
 scoreboard players reset * gamemodeID
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeLast] unless entity @e[x=0,type=marker,tag=PlacerClear] run function rr_crusade:game/while_phase/match/over
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeLast] unless entity @e[x=0,type=marker,tag=PlacerClear] run function rr_crusade:game/while_phase/match/closing
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeLast] remove crusadeLast
 execute unless entity @e[x=0,type=armor_stand,tag=rr_crusade,limit=1] run tellraw @s {"text":"Crusade Mode uninstalled.","color":"red","bold":true}
 execute unless entity @e[x=0,type=armor_stand,tag=rr_crusade,limit=1] run tellraw @s {"text":"Click here to disable the Crusade Mode datapack (recommended).","color":"red","underlined":true,"click_event":{"action":"run_command","command":"/datapack disable 'file/rr_crusade'"},"hover_event":{"action":"show_text","value":{"color":"red","text":"Click to disable the Crusade Mode datapack"}}}

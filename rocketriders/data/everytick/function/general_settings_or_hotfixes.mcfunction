@@ -157,9 +157,9 @@ kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect
 execute if predicate game:phase/staging/queue unless predicate game:gamemode_components/portal_crystal_protection run function game:place_portal/all
 
 #Disable damage gamerules if no game has started
-execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/over] run function custom:game_rules/fall_damage/off
-execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/over] run function custom:game_rules/drowning_damage/off
-execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/over] run function custom:game_rules/fire_damage/off
+execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run function custom:game_rules/fall_damage/off
+execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run function custom:game_rules/drowning_damage/off
+execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run function custom:game_rules/fire_damage/off
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active

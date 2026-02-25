@@ -57,8 +57,8 @@ execute if predicate custom:team/any_playing_team if predicate game:phase/match/
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:gamemode_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFY1] run item replace block 0 184 -16 container.3 with minecraft:yellow_banner[item_name={bold:true,color:"yellow",text:"Yellow Flag"},enchantments={binding_curse:1},tooltip_display={hidden_components:["enchantments"]}]
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:gamemode_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFY2] run item replace block 0 184 -16 container.3 with minecraft:yellow_banner[item_name={bold:true,color:"yellow",text:"Yellow Flag"},enchantments={binding_curse:1},tooltip_display={hidden_components:["enchantments"]}]
 # Game Ending
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/over if entity @s[tag=Winner] run loot replace block 0 184 -16 container.2 loot items:ending/celebratory_elytra
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/over if entity @s[tag=Loser] run loot replace block 0 184 -16 container.3 loot items:ending/loser_banner
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Winner] run loot replace block 0 184 -16 container.2 loot items:ending/celebratory_elytra
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Loser] run loot replace block 0 184 -16 container.3 loot items:ending/loser_banner
 
 # Apply changes
 loot replace entity @s armor.feet 4 mine 0 184 -16 stick[custom_data={drop_contents:true}]

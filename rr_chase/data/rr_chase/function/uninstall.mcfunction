@@ -10,7 +10,7 @@ scoreboard objectives remove BreakCBPurple
 scoreboard objectives remove BreakCBTint
 scoreboard objectives remove ChaseAlarm
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseLast] unless entity @e[x=0,type=marker,tag=PlacerClear] run function rr_chase:game/while_phase/match/over
+execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseLast] unless entity @e[x=0,type=marker,tag=PlacerClear] run function rr_chase:game/while_phase/match/closing
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseLast] remove chaseLast
 execute unless entity @e[x=0,type=armor_stand,tag=rr_chase,limit=1] run tellraw @s {"text":"Chase Mode uninstalled.","color":"red","bold":true}
 execute unless entity @e[x=0,type=armor_stand,tag=rr_chase,limit=1] run tellraw @s {"text":"Click here to disable the Chase Mode datapack (recommended).","color":"red","underlined":true,"click_event":{"action":"run_command","command":"/datapack disable 'file/rr_chase'"},"hover_event":{"action":"show_text","value":{"color":"red","text":"Click to disable the Chase Mode datapack"}}}

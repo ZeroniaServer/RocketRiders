@@ -10,7 +10,7 @@ function rr_swap:tip
 function rr_swap:game/gamestart
 execute if predicate game:phase/match run function rr_swap:game/while_phase/match
 execute if predicate game:phase/match/play run function rr_swap:game/while_phase/match/play
-execute if predicate game:phase/match/over run function rr_swap:game/while_phase/match/over
+execute if predicate game:phase/match/closing run function rr_swap:game/while_phase/match/closing
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings

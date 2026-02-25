@@ -9,7 +9,7 @@ scoreboard players set $config_override.disable_team_balancing gamemode_componen
 scoreboard players set $config_override.disable_tying gamemode_components 1
 scoreboard players set $config_override.item_stacking gamemode_components 1
 scoreboard players set $config_override.rocket_residers gamemode_components -1
-scoreboard players set $custom_match_over_teleport_locations gamemode_components 1
+scoreboard players set $custom_match_closing_teleport_locations gamemode_components 1
 scoreboard players set $custom_pierce_prevention gamemode_components 1
 scoreboard players set $custom_team_colors gamemode_components 1
 scoreboard players set $disable_antigrief_system gamemode_components 1

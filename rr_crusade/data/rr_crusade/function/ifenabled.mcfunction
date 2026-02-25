@@ -11,11 +11,11 @@ function rr_crusade:tip
 function rr_crusade:game/gamestart
 execute if predicate game:phase/match run function rr_crusade:game/while_phase/match
 execute if predicate game:phase/match/play run function rr_crusade:game/while_phase/match/play
-execute if predicate game:phase/match/over run function rr_crusade:game/while_phase/match/over
+execute if predicate game:phase/match/closing run function rr_crusade:game/while_phase/match/closing
 
 #kits
 execute if predicate game:joinable_match_phase run scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] crusadechange
-execute if predicate game:phase/match/over run scoreboard players reset @a[x=0] crusadechange
+execute if predicate game:phase/match/closing run scoreboard players reset @a[x=0] crusadechange
 execute if predicate game:phase/staging as @a[x=0,scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
 execute if predicate game:phase/staging as @a[x=0,scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
 execute if predicate game:phase/staging as @a[x=0,scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage

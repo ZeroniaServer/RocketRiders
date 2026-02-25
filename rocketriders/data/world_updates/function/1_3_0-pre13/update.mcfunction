@@ -2,9 +2,13 @@
 execute unless block -67 192 83 minecraft:air run function world_updates:1_3_0-pre13/move_modroom_signs
 
 ## Removed unused scoreboard objectives
-scoreboard players operation $match_over_timer global = @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer
-execute if score $match_over_timer global matches ..0 run scoreboard players reset $match_over_timer global
+execute if score @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer matches 1.. run scoreboard players operation $closing_timer global = @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer
 scoreboard objectives remove endtimer
+execute if score $match_over_timer global matches 1.. run scoreboard players operation $closing_timer global = $match_over_timer global
+scoreboard players reset $match_over_timer global
+execute if score $closing_timer global matches ..0 run scoreboard players reset $closing_timer global
+execute unless predicate game:phase/match/closing run scoreboard players reset $closing_timer global
+
 scoreboard objectives remove deathCooldown
 
 ## Move lockmodroom CmdData to config
@@ -25,6 +29,8 @@ execute if score $phase/match.over global matches 1 run scoreboard players set $
 scoreboard players reset $phase/match.play global
 scoreboard players reset $phase/match.paused global
 scoreboard players reset $phase/match.over global
+execute if score $phase/game.match.over global matches 1 run scoreboard players set $phase/game.match.closing global 1
+scoreboard players reset $phase/game.match.over global
 
 scoreboard players set $phase/game global 0
 
@@ -37,7 +43,7 @@ execute if score $match_in_play global matches 1 if score $game_paused global ma
 
 execute if score $match_over global matches 1 run scoreboard players set $phase/game global 1
 execute if score $match_over global matches 1 run scoreboard players set $phase/game.match global 2
-execute if score $match_over global matches 1 run scoreboard players set $phase/game.match.over global 1
+execute if score $match_over global matches 1 run scoreboard players set $phase/game.match.closing global 1
 
 scoreboard players reset $match_in_play global
 scoreboard players reset $match_over global

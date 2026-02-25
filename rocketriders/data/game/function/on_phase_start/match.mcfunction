@@ -19,8 +19,8 @@ gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
 #Hotfix for losing shield upon game starting
 execute if predicate game:gamemode_components/main_item/crusade_kit_dependent as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function game:notify_join
-execute unless predicate game:phase/match/over run tag @a[x=0] remove CalculateWin
-execute unless predicate game:phase/match/over run tag @a[x=0] remove CalculateLoss
+execute unless predicate game:phase/match/closing run tag @a[x=0] remove CalculateWin
+execute unless predicate game:phase/match/closing run tag @a[x=0] remove CalculateLoss
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
 scoreboard players set @a[x=0,predicate=custom:team/any_playing_team] jumps 0
 #Enabling damage gamerules

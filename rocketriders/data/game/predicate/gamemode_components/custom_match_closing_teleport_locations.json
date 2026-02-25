@@ -4,7 +4,7 @@
   "value": {
     "score": "gamemode_components",
     "target": {
-      "name": "$custom_match_over_teleport_locations",
+      "name": "$custom_match_closing_teleport_locations",
       "type": "minecraft:fixed"
     },
     "type": "minecraft:score"

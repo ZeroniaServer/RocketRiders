@@ -125,7 +125,7 @@
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:phase/match/over"
+                  "name": "game:phase/match/closing"
                 },
                 {
                   "condition": "minecraft:entity_properties",

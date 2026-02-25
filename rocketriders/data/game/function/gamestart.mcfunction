@@ -7,13 +7,13 @@ execute if predicate game:phase/staging/queue if predicate rr:has_voting if scor
 execute if predicate game:phase/staging/queue if predicate rr:has_voting if score $players_online global matches ..1 run return run function game:forcestop
 
 ##Game Bossbar
-execute if predicate game:phase/match unless predicate game:phase/match/over unless predicate game:phase/match/play/tie_breaker if predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_green",text:"A match is currently in progress. Feel free to join in!"}
-execute if predicate game:phase/match unless predicate game:phase/match/over unless predicate game:phase/match/play/tie_breaker unless predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_green",text:"The match is full, but feel free to spectate!"}
+execute if predicate game:phase/match unless predicate game:phase/match/closing unless predicate game:phase/match/play/tie_breaker if predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_green",text:"A match is currently in progress. Feel free to join in!"}
+execute if predicate game:phase/match unless predicate game:phase/match/closing unless predicate game:phase/match/play/tie_breaker unless predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_green",text:"The match is full, but feel free to spectate!"}
 execute if predicate game:phase/match/play/tie_breaker if predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_red",text:"A tiebreaker is currently progress. Feel free to join in!"}
 execute if predicate game:phase/match/play/tie_breaker unless predicate game:teams/any_playing_team_is_joinable run bossbar set rr:startgame name {color:"dark_red",text:"The match is full, but feel free to spectate!"}
-execute if predicate game:phase/match unless predicate game:phase/match/over run bossbar set rr:startgame color green
-execute if predicate game:phase/match/over run bossbar set rr:startgame color red
-execute if predicate game:phase/match/over run bossbar set rr:startgame name {color:"red",text:"A match is currently ending."}
+execute if predicate game:phase/match unless predicate game:phase/match/closing run bossbar set rr:startgame color green
+execute if predicate game:phase/match/closing run bossbar set rr:startgame color red
+execute if predicate game:phase/match/closing run bossbar set rr:startgame name {color:"red",text:"A match is currently ending."}
 execute if predicate game:phase/match run bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
 
 execute if predicate game:phase/staging/queue/waiting if predicate rr:wait_for_sufficient_players unless predicate game:teams/playing_teams_are_empty if predicate game:teams/yellow_is_sufficient if predicate game:teams/blue_is_sufficient run function game:set_phase/staging.queue.countdown

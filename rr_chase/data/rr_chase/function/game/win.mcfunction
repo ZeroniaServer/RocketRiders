@@ -30,4 +30,4 @@ execute as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1,sort=random] run
 execute as @a[x=0,predicate=custom:team/blue,tag=Loser,limit=1,sort=random] run function rr_chase:game/losesplash
 
 ##Change Phase
-function game:set_phase/match.over.tie_window
+function game:set_phase/match.closing.tie_window

@@ -187,7 +187,7 @@
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:phase/match/over"
+                  "name": "game:phase/match/closing"
                 }
               ],
               "function": "minecraft:set_components"

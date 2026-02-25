@@ -16,10 +16,12 @@ execute align xyz run tp @s ~0.5 ~0.5 ~0.5
 
 ## Summon faces
 tag @s add rot.awake_brain
-execute positioned as @s rotated 0 0 summon text_display run function entities:type/rot/init/face
-execute positioned as @s rotated 90 0 summon text_display run function entities:type/rot/init/face
-execute positioned as @s rotated 180 0 summon text_display run function entities:type/rot/init/face
-execute positioned as @s rotated -90 0 summon text_display run function entities:type/rot/init/face
-execute positioned as @s rotated 0 -90 summon text_display run function entities:type/rot/init/face
-execute positioned as @s rotated 0 90 summon text_display run function entities:type/rot/init/face
+execute positioned as @s rotated 0 0 summon text_display run function entities:type/rot/init/__face_south
+execute positioned as @s rotated 90 0 summon text_display run function entities:type/rot/init/__face_west
+execute positioned as @s rotated 180 0 summon text_display run function entities:type/rot/init/__face_north
+execute positioned as @s rotated -90 0 summon text_display run function entities:type/rot/init/__face_east
+execute positioned as @s rotated 0 -90 summon text_display run function entities:type/rot/init/__face_up
+execute positioned as @s rotated 0 90 summon text_display run function entities:type/rot/init/__face_down
 tag @s remove rot.awake_brain
+
+execute if block ~ ~ ~ #custom:piston run tag @s add rot.brain.block_is_piston_base

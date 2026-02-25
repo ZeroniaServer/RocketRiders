@@ -4,8 +4,12 @@ execute if score $transitioning_phase global matches 1 run return run tellraw @a
 scoreboard players set $transitioning_phase global 1
 
 ## Transition
-execute unless predicate game:phase/staging run function game:set_phase/__exit/game
-execute if predicate game:phase/staging unless predicate game:phase/staging/configuration run function game:set_phase/__exit/game/staging
+function game:set_phase/__reset
+scoreboard players set $phase/game global 0
+scoreboard players set $phase/game.staging global 0
 
-execute if predicate game:phase/staging run return run execute if function game:set_phase/__set/staging.configuration if function game:set_phase/__finish_transition run function game:on_phase_start/staging/configuration
-return run execute if function game:set_phase/__set/staging.configuration if function game:set_phase/__enter/staging if function game:set_phase/__finish_transition run function game:on_phase_start/staging/configuration
+execute unless predicate game:phase_last/staging run function game:set_phase/__exit/game
+execute if predicate game:phase_last/staging unless predicate game:phase_last/staging/configuration run function game:set_phase/__exit/game/staging
+
+execute if predicate game:phase_last/staging run return run execute if function game:set_phase/__finish_transition run function game:on_phase_start/staging/configuration
+return run execute if function game:set_phase/__enter/staging if function game:set_phase/__finish_transition run function game:on_phase_start/staging/configuration

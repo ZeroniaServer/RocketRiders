@@ -4,10 +4,15 @@ execute if score $transitioning_phase global matches 1 run return run tellraw @a
 scoreboard players set $transitioning_phase global 1
 
 ## Transition
-execute unless predicate game:phase/staging run function game:set_phase/__exit/game
-execute if predicate game:phase/staging unless predicate game:phase/staging/queue run function game:set_phase/__exit/game/staging
-execute if predicate game:phase/staging/queue unless predicate game:phase/staging/queue/countdown run function game:set_phase/__exit/game/staging/queue
+function game:set_phase/__reset
+scoreboard players set $phase/game global 0
+scoreboard players set $phase/game.staging global 1
+scoreboard players set $phase/game.staging.queue global 1
 
-execute if predicate game:phase/staging/queue run return run execute if function game:set_phase/__set/staging.queue.countdown if function game:set_phase/__finish_transition run function game:on_phase_start/staging/queue/countdown
-execute if predicate game:phase/staging run return run execute if function game:set_phase/__set/staging.queue.countdown if function game:set_phase/__enter/staging/queue if function game:set_phase/__finish_transition run function game:on_phase_start/staging/queue/countdown
-return run execute if function game:set_phase/__set/staging.queue.countdown if function game:set_phase/__enter/staging if function game:set_phase/__enter/staging/queue if function game:set_phase/__finish_transition run function game:on_phase_start/staging/queue/countdown
+execute unless predicate game:phase_last/staging run function game:set_phase/__exit/game
+execute if predicate game:phase_last/staging unless predicate game:phase_last/staging/queue run function game:set_phase/__exit/game/staging
+execute if predicate game:phase_last/staging/queue unless predicate game:phase_last/staging/queue/countdown run function game:set_phase/__exit/game/staging/queue
+
+execute if predicate game:phase_last/staging/queue run return run execute if function game:set_phase/__finish_transition run function game:on_phase_start/staging/queue/countdown
+execute if predicate game:phase_last/staging run return run execute if function game:set_phase/__enter/staging/queue if function game:set_phase/__finish_transition run function game:on_phase_start/staging/queue/countdown
+return run execute if function game:set_phase/__enter/staging if function game:set_phase/__enter/staging/queue if function game:set_phase/__finish_transition run function game:on_phase_start/staging/queue/countdown

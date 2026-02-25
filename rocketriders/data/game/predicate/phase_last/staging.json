@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "range": 0,
+  "value": {
+    "score": "global",
+    "target": {
+      "name": "$phase_last/game",
+      "type": "minecraft:fixed"
+    },
+    "type": "minecraft:score"
+  }
+}

@@ -4,11 +4,17 @@ execute if score $transitioning_phase global matches 1 run return run tellraw @a
 scoreboard players set $transitioning_phase global 1
 
 ## Transition
-execute unless predicate game:phase/match run function game:set_phase/__exit/game
-execute if predicate game:phase/match unless predicate game:phase/match/closing run function game:set_phase/__exit/game/match
-execute if predicate game:phase/match/closing unless predicate game:phase/match/closing/outcome run function game:set_phase/__exit/game/match/closing
+function game:set_phase/__reset
+scoreboard players set $phase/game global 1
+scoreboard players set $phase/game.match global 2
+scoreboard players set $phase/game.match.closing global 1
+scoreboard players set $phase/game.match.closing.outcome global 1
 
-execute if predicate game:phase/match/closing/outcome run return run execute if function game:set_phase/__set/match.closing.outcome.review if function game:set_phase/__finish_transition run function game:on_phase_start/match/closing/outcome/review
-execute if predicate game:phase/match/closing run return run execute if function game:set_phase/__set/match.closing.outcome.review if function game:set_phase/__enter/match/closing/outcome if function game:set_phase/__finish_transition run function game:on_phase_start/match/closing/outcome/review
-execute if predicate game:phase/match run return run execute if function game:set_phase/__set/match.closing.outcome.review if function game:set_phase/__enter/match/closing if function game:set_phase/__enter/match/closing/outcome if function game:set_phase/__finish_transition run function game:on_phase_start/match/closing/outcome/review
-return run execute if function game:set_phase/__set/match.closing.outcome.review if function game:set_phase/__enter/match if function game:set_phase/__enter/match/closing if function game:set_phase/__enter/match/closing/outcome if function game:set_phase/__finish_transition run function game:on_phase_start/match/closing/outcome/review
+execute unless predicate game:phase_last/match run function game:set_phase/__exit/game
+execute if predicate game:phase_last/match unless predicate game:phase_last/match/closing run function game:set_phase/__exit/game/match
+execute if predicate game:phase_last/match/closing unless predicate game:phase_last/match/closing/outcome run function game:set_phase/__exit/game/match/closing
+
+execute if predicate game:phase_last/match/closing/outcome run return run execute if function game:set_phase/__finish_transition run function game:on_phase_start/match/closing/outcome/review
+execute if predicate game:phase_last/match/closing run return run execute if function game:set_phase/__enter/match/closing/outcome if function game:set_phase/__finish_transition run function game:on_phase_start/match/closing/outcome/review
+execute if predicate game:phase_last/match run return run execute if function game:set_phase/__enter/match/closing if function game:set_phase/__enter/match/closing/outcome if function game:set_phase/__finish_transition run function game:on_phase_start/match/closing/outcome/review
+return run execute if function game:set_phase/__enter/match if function game:set_phase/__enter/match/closing if function game:set_phase/__enter/match/closing/outcome if function game:set_phase/__finish_transition run function game:on_phase_start/match/closing/outcome/review

@@ -1,7 +1,0 @@
-function game:set_phase/__set/__reset
-
-scoreboard players set $phase/game global 0
-scoreboard players set $phase/game.staging global 1
-scoreboard players set $phase/game.staging.queue global 1
-
-return 1

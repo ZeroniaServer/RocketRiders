@@ -1,7 +1,7 @@
 execute positioned as @s unless block ~ ~ ~ #custom:vortices_ignore run function entities:type/vortex_projectile/tick/early_impact/move_out_of_block
 execute positioned as @s unless predicate entities:vortex_can_be_deployed run return run function entities:type/vortex_projectile/actions/break
 
-execute positioned as @s if predicate game:game_rules/impact_utilities/on run return run function entities:type/vortex_projectile/tick/early_impact/deploy
+execute positioned as @s if predicate game:game_rules/impact_utilities/on run return run function entities:type/vortex_projectile/actions/deploy
 
 # 6.25% chance of creating a feathered vortex landmine
 execute positioned as @s if predicate game:gamemode_components/no_feathered_vortices run return run function entities:type/vortex_projectile/actions/break

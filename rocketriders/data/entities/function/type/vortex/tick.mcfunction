@@ -1,9 +1,10 @@
 # Wait
 execute if score @s entity.age matches ..-1 run return run particle minecraft:dragon_breath ~ ~ ~ 0.25 0.25 0.25 0 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
-# Grow
+# Appear after waiting
 execute unless entity @s[tag=vortex.feathered] if score @s entity.age matches 1 on vehicle run data merge entity @s {start_interpolation:0,interpolation_duration:10,transformation:{scale:[0.6,0.6,0.6]}}
 execute if entity @s[tag=vortex.feathered] if score @s entity.age matches 1 on vehicle run data merge entity @s {start_interpolation:0,interpolation_duration:10,transformation:{scale:[1,1,1]}}
+execute if score @s entity.age matches 1 on vehicle run function entities:type/vortex/tick/favor_above_or_below
 
 # Particles
 execute if predicate custom:periodic_tick/3 unless entity @s[tag=vortex.neutral_landmine] if predicate entities:origin_team/blue unless entity @s[tag=vortex.is_drifting] run particle minecraft:dragon_breath ~ ~-0.2 ~ 0.5 0.5 0 0 5 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]

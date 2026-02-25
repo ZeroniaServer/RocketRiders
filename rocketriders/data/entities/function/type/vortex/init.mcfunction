@@ -22,7 +22,7 @@ execute align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~
 
 execute store success score $feathered var if entity @s[tag=vortex.feathered]
 tag @s add vortex.this
-execute at @s summon item_display run function entities:type/vortex/init/body
+execute positioned as @s summon item_display run function entities:type/vortex/init/body
 tag @s remove vortex.this
 
 execute on origin run tag @s add vortex.origin 

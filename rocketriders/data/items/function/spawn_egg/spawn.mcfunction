@@ -1,4 +1,4 @@
-execute positioned as @s if block ~ ~ ~ #minecraft:stairs run tp @s ~ ~1 ~
+execute positioned as @s align xyz positioned ~0.5 ~ ~0.5 if block ~ ~ ~ #minecraft:stairs run tp @s ~ ~1 ~
 
 data modify storage rocketriders:main spawn_egg set value {}
 data modify storage rocketriders:main spawn_egg set from entity @s data.spawn_egg

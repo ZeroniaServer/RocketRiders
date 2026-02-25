@@ -2,7 +2,7 @@
 execute unless block -67 192 83 minecraft:air run function world_updates:1_3_0-pre13/move_modroom_signs
 
 ## Removed unused scoreboard objectives
-execute if score @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer matches 1.. run scoreboard players operation $closing_timer global = @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer
+execute if predicate game:phase/match/closing if score @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer matches 1.. run scoreboard players operation $closing_timer global = @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer
 scoreboard objectives remove endtimer
 execute if score $match_over_timer global matches 1.. run scoreboard players operation $closing_timer global = $match_over_timer global
 scoreboard players reset $match_over_timer global
@@ -10,6 +10,9 @@ execute if score $closing_timer global matches ..0 run scoreboard players reset 
 execute unless predicate game:phase/match/closing run scoreboard players reset $closing_timer global
 
 scoreboard objectives remove deathCooldown
+
+execute if predicate game:phase/staging/queue/countdown if score @e[limit=1,x=0,type=armor_stand,tag=Selection] count matches 1.. run scoreboard players operation $queue_countdown_timer global = @e[limit=1,x=0,type=armor_stand,tag=Selection] count
+scoreboard objectives remove count
 
 ## Move lockmodroom CmdData to config
 execute if score $lockmodroom CmdData matches 1 unless predicate rr:is_cubekrowd run scoreboard players set $lock_modification_room config 1

@@ -1,5 +1,5 @@
 ##
-scoreboard players reset @s count
+scoreboard players reset $queue_countdown_timer global
 
 ## Gamemode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/staging/queue/countdown

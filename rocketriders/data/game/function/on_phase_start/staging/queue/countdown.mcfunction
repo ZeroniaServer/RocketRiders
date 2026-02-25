@@ -1,5 +1,6 @@
 ##
-scoreboard players set @s count 0
+scoreboard players set $queue_countdown_timer global 0
+
 bossbar set rr:startgame max 30
 bossbar set rr:startgame color green
 

@@ -7,7 +7,6 @@ dialog clear @a[x=0]
 scoreboard players reset $1v1_duel_time_out_period global
 scoreboard players reset $force_countdown global
 tag @s remove gaveFirstItem
-scoreboard players set @s count 0
 worldborder warning distance 0
 execute as @a[x=0] run function everytick:score_reset
 bossbar set rr:startgame max 30

@@ -32,7 +32,6 @@ scoreboard players operation $initial_yellow_team_count global = $yellow_team_co
 function lobby:credits/restart
 function custom:game_rules/mob_griefing/on
 kill @e[x=0,type=#arrows]
-scoreboard players set @s count 0
 scoreboard players reset $force_countdown global
 
 

@@ -177,7 +177,6 @@ scoreboard objectives add LeaveGame minecraft.custom:minecraft.leave_game
 scoreboard objectives add informMeLate dummy
 scoreboard objectives add ThrowPlat minecraft.used:ender_pearl
 scoreboard objectives add ThrowSplash minecraft.used:minecraft.lingering_potion
-scoreboard objectives add count dummy
 scoreboard objectives add jumps minecraft.custom:minecraft.jump
 scoreboard objectives add SDtime dummy
 scoreboard objectives add SetGamemode dummy

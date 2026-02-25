@@ -1,4 +1,7 @@
 ##
+gamemode spectator @a[x=0,predicate=custom:team/spectator]
+gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
+
 scoreboard players set $match_play_time global 0
 
 scoreboard objectives add UUIDTracker dummy
@@ -10,12 +13,10 @@ function game:randomsplash
 execute as @a[x=0] at @s run playsound entity.generic.explode master @s ~ ~ ~ 100 1.2
 tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-gamemode spectator @a[x=0,predicate=custom:team/spectator]
 execute if predicate game:modifiers/sonar/on run tellraw @a[x=0,predicate=custom:team/spectator,tag=!JoinSpec] [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
 tp @a[x=0,predicate=custom:team/spectator] 12 100 0.5 90 90
 effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
 effect give @a[x=0,predicate=custom:team/any_playing_team] fire_resistance 10 100 true
-gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
 #Hotfix for losing shield upon game starting
 execute if predicate game:gamemode_components/main_item/crusade_kit_dependent as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function game:notify_join

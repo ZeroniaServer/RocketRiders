@@ -12,4 +12,4 @@ execute if entity @s[tag=swapEnabled] run function rr_swap:game/on_phase_start/m
 ## Skip straight to outcome if there is no tie window
 scoreboard players set $skip_tie_window var 1
 execute if predicate game:phase/match/closing/tie_window unless predicate game:game_rules/disable_tying/on if predicate game:yellow_portal_revealed if predicate game:blue_portal_revealed unless entity @s[tag=BothWon] run scoreboard players set $skip_tie_window var 0
-execute if predicate game:phase/match/closing/tie_window if score $skip_tie_window var matches 1 run function game:set_phase/match.closing.outcome
+execute if predicate game:phase/match/closing/tie_window if score $skip_tie_window var matches 1 run function game:set_phase/match.closing.outcome.celebration

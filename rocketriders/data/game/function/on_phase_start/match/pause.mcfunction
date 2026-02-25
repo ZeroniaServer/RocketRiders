@@ -1,4 +1,6 @@
 ##
+gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
+
 clear @a[x=0,predicate=custom:team/any_arena_team] *
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory

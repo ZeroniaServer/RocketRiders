@@ -1,4 +1,6 @@
 ##
+gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
+
 scoreboard players reset $closing_timer global
 effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
 effect clear @a[x=0,predicate=custom:team/any_playing_team] weakness

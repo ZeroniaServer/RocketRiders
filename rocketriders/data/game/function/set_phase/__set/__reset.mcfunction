@@ -4,3 +4,4 @@ scoreboard players reset $phase/game.staging.queue global
 scoreboard players reset $phase/game.match global
 scoreboard players reset $phase/game.match.play global
 scoreboard players reset $phase/game.match.closing global
+scoreboard players reset $phase/game.match.closing.outcome global

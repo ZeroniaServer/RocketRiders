@@ -1,0 +1,50 @@
+[
+  {
+    "condition": "minecraft:value_check",
+    "range": 1,
+    "value": {
+      "score": "global",
+      "target": {
+        "name": "$phase/game",
+        "type": "minecraft:fixed"
+      },
+      "type": "minecraft:score"
+    }
+  },
+  {
+    "condition": "minecraft:value_check",
+    "range": 2,
+    "value": {
+      "score": "global",
+      "target": {
+        "name": "$phase/game.match",
+        "type": "minecraft:fixed"
+      },
+      "type": "minecraft:score"
+    }
+  },
+  {
+    "condition": "minecraft:value_check",
+    "range": 1,
+    "value": {
+      "score": "global",
+      "target": {
+        "name": "$phase/game.match.closing",
+        "type": "minecraft:fixed"
+      },
+      "type": "minecraft:score"
+    }
+  },
+  {
+    "condition": "minecraft:value_check",
+    "range": 1,
+    "value": {
+      "score": "global",
+      "target": {
+        "name": "$phase/game.match.closing.outcome",
+        "type": "minecraft:fixed"
+      },
+      "type": "minecraft:score"
+    }
+  }
+]

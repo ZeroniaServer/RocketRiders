@@ -1,4 +1,6 @@
 ##
+gamemode adventure @a[x=0,predicate=!custom:team/developer]
+
 function lobby:update_nav_book
 
 ## Gamemode-specific functions

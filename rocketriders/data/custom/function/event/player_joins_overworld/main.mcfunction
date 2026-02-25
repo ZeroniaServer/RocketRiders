@@ -27,7 +27,6 @@ function everytick:score_reset
 
 # Join lobby
 function custom:team/join_lobby
-gamemode survival @s
 gamemode adventure @s
 tp @s -43 211 78 90 0
 tp @s @s

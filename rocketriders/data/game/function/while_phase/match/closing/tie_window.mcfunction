@@ -1,4 +1,4 @@
-execute if predicate game:game_rules/disable_tying/on run return run function game:set_phase/match.closing.outcome
+execute if predicate game:game_rules/disable_tying/on run return run function game:set_phase/match.closing.outcome.celebration
 
 ##Tie actionbar notifications
 execute if score $closing_timer global matches 1..20 run title @a[x=0,predicate=!custom:team/lobby] actionbar [{color:"red",text:"Waiting for potential tie... "},{bold:true,color:"dark_red",text:"5"}," seconds"]
@@ -7,7 +7,7 @@ execute if score $closing_timer global matches 41..60 run title @a[x=0,predicate
 execute if score $closing_timer global matches 61..80 run title @a[x=0,predicate=!custom:team/lobby] actionbar [{color:"red",text:"Waiting for potential tie... "},{bold:true,color:"dark_red",text:"2"}," seconds"]
 execute if score $closing_timer global matches 81..100 run title @a[x=0,predicate=!custom:team/lobby] actionbar [{color:"red",text:"Waiting for potential tie... "},{bold:true,color:"dark_red",text:"1"}," second"]
 execute if score $closing_timer global matches 101 run title @a[x=0,predicate=!custom:team/lobby] actionbar ""
-execute if score $closing_timer global matches 101 run return run function game:set_phase/match.closing.outcome
+execute if score $closing_timer global matches 101 run return run function game:set_phase/match.closing.outcome.celebration
 
 ##System for ties (works with Double Portal modifier)
 execute if entity @s[tag=BlueWon,tag=!YellowWon] if function game:check/blue_portal_broken run return run function game:set_phase/match.play.tie_breaker

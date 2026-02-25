@@ -1,4 +1,6 @@
 ##
+gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
+
 # Prevent fireballs from being punched
 execute as @e[x=0,type=#custom:large_fireballs,predicate=custom:in_arena] at @s run function game:set_fireball_not_punchable
 

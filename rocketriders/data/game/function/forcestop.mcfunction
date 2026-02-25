@@ -19,7 +19,7 @@ schedule clear lobby:cancelsettings/counter
 
 # during match
 execute store success score $forcestop_match var if predicate game:phase/match
-execute if score $forcestop_match var matches 1 run function game:set_phase/match.closing.outcome
+execute if score $forcestop_match var matches 1 run function game:set_phase/match.closing.outcome.review
 execute if score $forcestop_match var matches 1 run scoreboard players set $closing_timer global 568
 execute if score $forcestop_match var matches 1 run return 1
 

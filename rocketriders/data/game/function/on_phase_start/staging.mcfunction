@@ -1,5 +1,5 @@
 ##
-
+gamemode adventure @a[x=0,predicate=!custom:team/developer]
 
 ## Gamemode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/staging

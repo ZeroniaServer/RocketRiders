@@ -1,4 +1,6 @@
 ##
+gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
+
 tag @s remove BlueWon
 tag @s remove YellowWon
 tag @s remove BothWon
@@ -11,8 +13,6 @@ execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:pl
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_spell_emitter
 tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-
-gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
 
 clear @a[x=0,predicate=custom:team/any_arena_team] *
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor

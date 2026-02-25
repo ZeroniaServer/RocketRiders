@@ -119,18 +119,14 @@ execute as @a[x=0,predicate=custom:team/lobby] at @s if predicate custom:in_aren
 #Locked Modification Room
 execute if predicate game:game_rules/lock_modification_room/on as @a[x=0,predicate=custom:team/lobby,predicate=2811iaj1:in_modification] at @s run function game:kickout
 
-#Lobby players can't switch out of adventure mode (security, disabled in servermodes)
-execute if predicate rr:force_gamemodes as @a[x=0,predicate=custom:team/lobby,gamemode=!adventure] run gamemode adventure
-
-#Spectators can't switch out of spectator mode (security, disabled in servermodes)
-execute if predicate rr:force_gamemodes if predicate game:phase/match run gamemode spectator @a[x=0,predicate=custom:team/spectator,gamemode=!spectator]
-execute if predicate rr:force_gamemodes if predicate game:phase/staging run gamemode adventure @a[x=0,predicate=custom:team/spectator,gamemode=!adventure]
+#Players can't switch out of their gamemode while in the lobby or spectating (security, disabled in servermodes)
+execute if predicate rr:force_gamemodes run gamemode adventure @a[x=0,predicate=custom:team/lobby]
+execute if predicate rr:force_gamemodes if predicate game:phase/staging run gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
+execute if predicate rr:force_gamemodes if predicate game:phase/match unless predicate game:phase/match/pause run gamemode spectator @a[x=0,predicate=custom:team/spectator]
+execute if predicate rr:force_gamemodes if predicate game:phase/match/pause run gamemode adventure @a[x=0,predicate=custom:team/spectator]
 
 #Spectator void
 execute as @a[x=0,gamemode=spectator,predicate=custom:in_void] at @s run function game:void
-
-#Blue/Yellow players can't switch out of adventure mode before game (security, disabled in servermodes)
-execute if predicate rr:force_gamemodes if predicate game:phase/staging as @a[x=0,predicate=custom:team/any_playing_team,gamemode=!adventure] run gamemode adventure
 
 #Full offhand check
 tag @a[x=0] remove fullOffhand

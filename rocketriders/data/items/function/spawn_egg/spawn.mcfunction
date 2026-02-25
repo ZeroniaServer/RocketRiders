@@ -1,3 +1,5 @@
+execute positioned as @s if block ~ ~ ~ #minecraft:stairs run tp @s ~ ~1 ~
+
 data modify storage rocketriders:main spawn_egg set value {}
 data modify storage rocketriders:main spawn_egg set from entity @s data.spawn_egg
 
@@ -12,12 +14,12 @@ execute unless entity @a[limit=1,x=0,tag=placer] run return run kill @s
 execute unless data storage rocketriders:main spawn_egg.type run return run function items:spawn_egg/fail_to_spawn
 
 # Summon
-execute if data storage rocketriders:main spawn_egg{type:"fireball"} at @s run function items:spawnfireball
-execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} at @s run function items:spawnfireball
+execute if data storage rocketriders:main spawn_egg{type:"fireball"} positioned as @s run function items:spawnfireball
+execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} positioned as @s run function items:spawnfireball
 ## TODO: Refactor spawning system to use updated format. Until then, just convert the marker into the legacy format.
-execute if data storage rocketriders:main spawn_egg{type:"obsidian_shield"} at @s run function items:spawn_egg/convert_to_legacy_obsidian_shield
-execute if data storage rocketriders:main spawn_egg{type:"missile"} at @s run function items:spawn_egg/convert_to_legacy_missile
-execute if data storage rocketriders:main spawn_egg{type:"surprise_missile"} at @s run function items:spawn_egg/convert_to_legacy_surprise_missile
+execute if data storage rocketriders:main spawn_egg{type:"obsidian_shield"} positioned as @s run function items:spawn_egg/convert_to_legacy_obsidian_shield
+execute if data storage rocketriders:main spawn_egg{type:"missile"} positioned as @s run function items:spawn_egg/convert_to_legacy_missile
+execute if data storage rocketriders:main spawn_egg{type:"surprise_missile"} positioned as @s run function items:spawn_egg/convert_to_legacy_surprise_missile
 
 tag @a[x=0,tag=placer] remove placer
 kill @s

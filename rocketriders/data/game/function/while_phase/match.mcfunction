@@ -80,4 +80,4 @@ execute if predicate game:arena_details/portal/hole_in_one if predicate game:yel
 execute as @e[x=0,type=marker,tag=hyperExtra] at @s run function items:hyperextra
 
 ##Modifiers
-execute unless predicate game:phase/match/paused run function modifiers:modifiers
+execute unless predicate game:phase/match/pause run function modifiers:modifiers

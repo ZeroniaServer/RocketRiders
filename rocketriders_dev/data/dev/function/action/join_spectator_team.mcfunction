@@ -15,8 +15,8 @@ execute if predicate game:phase/staging run return run execute positioned -82.5 
 execute if predicate game:phase/match run tellraw @a[x=0] ["",{selector:"@s",color:"dark_gray"},{color:"gray",text:" is now spectating the match!"}]
 execute if predicate game:phase/match run function custom:team/join_spectator
 execute if predicate game:phase/match run function everytick:team_count
-execute if predicate game:phase/match if predicate game:phase/match/paused run gamemode adventure @s[gamemode=!adventure]
-execute if predicate game:phase/match unless predicate game:phase/match/paused run gamemode spectator @s[gamemode=!spectator]
+execute if predicate game:phase/match if predicate game:phase/match/pause run gamemode adventure @s[gamemode=!adventure]
+execute if predicate game:phase/match unless predicate game:phase/match/pause run gamemode spectator @s[gamemode=!spectator]
 execute if predicate game:phase/match run function custom:update_inventory
 execute if predicate game:phase/match run function custom:update_armor
 execute if predicate game:phase/match run return run execute unless predicate custom:in_arena positioned 12.5 100.0 0.5 rotated 90 90 run function custom:teleport_with_sound

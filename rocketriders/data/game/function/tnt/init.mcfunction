@@ -5,7 +5,7 @@ tag @s add tnt.processed
 data modify storage rocketriders:main tnt.entity_data set from entity @s {}
 
 # Set glowing
-execute if predicate game:phase/match unless predicate game:phase/match/paused if predicate game:modifiers/sonar/on run function game:glowing/on
+execute if predicate game:phase/match unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run function game:glowing/on
 
 # correct creeper owner
 scoreboard players set $player_owner_exists var 0

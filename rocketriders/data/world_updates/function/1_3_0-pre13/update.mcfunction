@@ -27,10 +27,12 @@ execute if score $phase/match.paused global matches 1 run scoreboard players set
 execute if score $phase/match.paused global matches 1 run scoreboard players set $game_paused global 1
 execute if score $phase/match.over global matches 1 run scoreboard players set $match_over global 1
 scoreboard players reset $phase/match.play global
-scoreboard players reset $phase/match.paused global
+scoreboard players reset $phase/match.pause global
 scoreboard players reset $phase/match.over global
 execute if score $phase/game.match.over global matches 1 run scoreboard players set $phase/game.match.closing global 1
 scoreboard players reset $phase/game.match.over global
+execute if score $phase/game.match.paused global matches 1 run scoreboard players set $phase/game.match.pause global 1
+scoreboard players reset $phase/game.match.paused global
 
 scoreboard players set $phase/game global 0
 

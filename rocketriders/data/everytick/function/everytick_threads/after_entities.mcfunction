@@ -41,7 +41,7 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:gamestart
 execute if predicate game:phase/match as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:while_phase/match
 execute if predicate game:phase/match/play as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:while_phase/match/play
-execute if predicate game:phase/match/paused as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:while_phase/match/paused
+execute if predicate game:phase/match/pause as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] at @s run function game:while_phase/match/pause
 execute if predicate rr:do_custom_regen_system as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick:regen_system
 execute unless predicate rr:do_custom_regen_system run function custom:game_rules/natural_health_regeneration/on
 

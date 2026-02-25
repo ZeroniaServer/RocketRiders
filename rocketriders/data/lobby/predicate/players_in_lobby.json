@@ -43,7 +43,7 @@
       "terms": [
         {
           "condition": "minecraft:reference",
-          "name": "game:phase/match/paused"
+          "name": "game:phase/match/pause"
         },
         {
           "condition": "minecraft:value_check",

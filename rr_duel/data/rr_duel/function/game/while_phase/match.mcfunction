@@ -6,7 +6,7 @@ scoreboard objectives setdisplay sidebar.team.dark_gray RoundsWon
 scoreboard players add Blue: RoundsWon 0
 scoreboard players add Yellow: RoundsWon 0
 
-execute unless predicate game:phase/match/paused run bossbar remove rr_duel:resetting_arena
+execute unless predicate game:phase/match/pause run bossbar remove rr_duel:resetting_arena
 
 ##forfeit
 #initial condition - use tag NOFORFEITS to disable forfeits

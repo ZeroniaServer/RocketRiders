@@ -59,3 +59,6 @@ scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMi
 
 ## Clear tablist icon for players in non-overworld dimensions
 scoreboard players display numberformat @a[predicate=!custom:indimension] flag_tablist_display blank
+
+## Damage players standing inside a portal during Hole In One
+execute if predicate game:arena_details/portal/hole_in_one as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:standing_on_any_portal] positioned as @s if block ~ ~ ~ minecraft:nether_portal run damage @s 4 minecraft:outside_border

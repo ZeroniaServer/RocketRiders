@@ -30,9 +30,9 @@ execute at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute at @s run playsound minecraft:item.flintandsteel.use master @a[distance=..6] ~ ~ ~ 1 1
 execute at @s run playsound minecraft:entity.blaze.shoot master @a[distance=..6] ~ ~ ~ 0.5 1.25
 
-execute if data storage rocketriders:main spawn_egg{type:"fireball"} if score $team var matches -1 run summon fireball ~ ~1.2 ~ {data:{origin_team:"none"},ExplosionPower:1}
-execute if data storage rocketriders:main spawn_egg{type:"fireball"} if score $team var matches 0 run summon fireball ~ ~1.2 ~ {data:{origin_team:"blue"},ExplosionPower:1}
-execute if data storage rocketriders:main spawn_egg{type:"fireball"} if score $team var matches 1 run summon fireball ~ ~1.2 ~ {data:{origin_team:"yellow"},ExplosionPower:1}
-execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} if score $team var matches -1 run summon fireball ~ ~1.2 ~ {data:{origin_team:"none","fireball/split_after_use":{}},ExplosionPower:1,Item:{id:"minecraft:blaze_powder"}}
-execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} if score $team var matches 0 run summon fireball ~ ~1.2 ~ {data:{origin_team:"blue","fireball/split_after_use":{}},ExplosionPower:1,Item:{id:"minecraft:blaze_powder"}}
-execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} if score $team var matches 1 run summon fireball ~ ~1.2 ~ {data:{origin_team:"yellow","fireball/split_after_use":{}},ExplosionPower:1,Item:{id:"minecraft:blaze_powder"}}
+execute if data storage rocketriders:main spawn_egg{type:"fireball"} if score $team var matches -1 run summon fireball ~ ~1.2 ~ {data:{origin_team:"none"},ExplosionPower:1,acceleration_power:0}
+execute if data storage rocketriders:main spawn_egg{type:"fireball"} if score $team var matches 0 run summon fireball ~ ~1.2 ~ {data:{origin_team:"blue"},ExplosionPower:1,acceleration_power:0}
+execute if data storage rocketriders:main spawn_egg{type:"fireball"} if score $team var matches 1 run summon fireball ~ ~1.2 ~ {data:{origin_team:"yellow"},ExplosionPower:1,acceleration_power:0}
+execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} if score $team var matches -1 run summon fireball ~ ~1.2 ~ {data:{origin_team:"none","fireball/split_after_use":{}},ExplosionPower:1,Item:{id:"minecraft:blaze_powder"},acceleration_power:0}
+execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} if score $team var matches 0 run summon fireball ~ ~1.2 ~ {data:{origin_team:"blue","fireball/split_after_use":{}},ExplosionPower:1,Item:{id:"minecraft:blaze_powder"},acceleration_power:0}
+execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} if score $team var matches 1 run summon fireball ~ ~1.2 ~ {data:{origin_team:"yellow","fireball/split_after_use":{}},ExplosionPower:1,Item:{id:"minecraft:blaze_powder"},acceleration_power:0}

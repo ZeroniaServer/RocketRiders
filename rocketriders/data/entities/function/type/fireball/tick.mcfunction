@@ -1,12 +1,23 @@
+# Break when out of bounds
+execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/fireball/actions/break
+execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:moving_up run return run function entities:type/fireball/actions/break
+execute on vehicle positioned as @s unless predicate custom:insideborder run return run function entities:type/fireball/actions/break
+execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/fireball/actions/break
+
+# Break when near an enemy spawn point
+execute if predicate entities:origin_team/blue on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_yellow_half run return run function entities:type/fireball/actions/break
+execute if predicate entities:origin_team/yellow on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_blue_half run return run function entities:type/fireball/actions/break
+execute if predicate entities:origin_team/none on vehicle positioned as @s if predicate custom:near_any_spawn_zone run return run function entities:type/fireball/actions/break
+
 # Tick age while moving
 execute unless predicate custom:vehicle_is_moving run scoreboard players set @s entity.fireball.time_since_punched 0
 execute if predicate custom:vehicle_is_moving run scoreboard players add @s entity.fireball.time_since_punched 1
 
-# Store the rotation and speed of vehicle
-execute if predicate custom:has_vehicle run function custom:projectile_motion_save
-
 # Early impact
 execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/fireball/tick/impact
+
+# Store the rotation and speed of vehicle
+execute if predicate custom:has_vehicle run function custom:projectile_motion_save
 
 # Movement trail
 execute if predicate custom:periodic_tick/3 on vehicle positioned as @s if predicate custom:is_moving run function entities:type/fireball/tick/particle
@@ -15,17 +26,6 @@ execute if predicate custom:periodic_tick/3 on vehicle positioned as @s if predi
 execute if predicate custom:coin_flip if predicate custom:coin_flip run scoreboard players add @s entity.fireball.ambient_noise_timer 1
 execute if score @s entity.fireball.ambient_noise_timer matches 20.. on vehicle positioned as @s run playsound minecraft:block.fire.ambient master @a[distance=..6] ~ ~ ~ 0.45 0 0.1
 execute if score @s entity.fireball.ambient_noise_timer matches 20.. run scoreboard players set @s entity.fireball.ambient_noise_timer 0
-
-# Die when out of bounds
-execute on vehicle positioned as @s if predicate custom:nearvoid run return run function entities:type/fireball/actions/break
-execute on vehicle positioned as @s unless predicate custom:insideborder run return run function entities:type/fireball/actions/break
-execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/fireball/actions/break
-execute on vehicle positioned as @s if predicate custom:in_void run return run function entities:type/fireball/actions/break
-
-# Break near enemy spawn zones
-execute if predicate entities:origin_team/blue on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_yellow_half run return run function entities:type/fireball/actions/break
-execute if predicate entities:origin_team/yellow on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_blue_half run return run function entities:type/fireball/actions/break
-execute if predicate entities:origin_team/none on vehicle positioned as @s if predicate custom:near_any_spawn_zone run return run function entities:type/fireball/actions/break
 
 #Fireballs poof Canopies
 execute if predicate custom:vehicle_is_moving on vehicle positioned as @s run function entities:type/fireball/tick/try_poof

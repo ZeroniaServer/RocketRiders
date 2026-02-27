@@ -1,16 +1,17 @@
 execute if entity @s[tag=nova_rocket.killed] on vehicle run kill @s
 execute if entity @s[tag=nova_rocket.killed] run return run kill @s
 
-# Store the rotation and speed of vehicle
-execute if predicate custom:has_vehicle run function custom:projectile_motion_save
-
-## Kill in invalid areas
-execute if predicate custom:near_or_above_roof run return run function entities:type/nova_rocket/actions/break
-execute if predicate custom:in_void run return run function entities:type/nova_rocket/actions/break
-execute unless predicate custom:insideborder run return run function entities:type/nova_rocket/actions/break
+# Break when out of bounds
+execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/nova_rocket/actions/break
+execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:moving_up run return run function entities:type/nova_rocket/actions/break
+execute on vehicle positioned as @s unless predicate custom:insideborder run return run function entities:type/nova_rocket/actions/break
+execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/nova_rocket/actions/break
 
 # Early impact
 execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/nova_rocket/actions/explode
+
+# Store the rotation and speed of vehicle
+execute if predicate custom:has_vehicle run function custom:projectile_motion_save
 
 # Collision impact
 scoreboard players set $collision var 0

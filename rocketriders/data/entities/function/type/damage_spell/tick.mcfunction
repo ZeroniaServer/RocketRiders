@@ -1,3 +1,14 @@
+# Break when out of bounds
+execute if predicate custom:near_or_above_roof run return run function entities:type/damage_spell/actions/break
+execute if predicate custom:in_void unless predicate custom:moving_up run return run function entities:type/damage_spell/actions/break
+execute unless predicate custom:insideborder run return run function entities:type/damage_spell/actions/break
+execute unless predicate custom:in_arena run return run function entities:type/damage_spell/actions/break
+
+# Break when near an enemy spawn point
+execute if predicate entities:origin_team/blue if predicate custom:near_yellow_spawn_zone run return run function entities:type/damage_spell/actions/break
+execute if predicate entities:origin_team/yellow if predicate custom:near_blue_spawn_zone run return run function entities:type/damage_spell/actions/break
+execute if predicate entities:origin_team/none if predicate custom:near_any_spawn_zone run return run function entities:type/damage_spell/actions/break
+
 ## Magic Clouds
 # Home onto enemy (prioritise near players without the wither or regeneration effect)
 execute on origin run tag @s add damage_spell.origin
@@ -15,21 +26,13 @@ execute store result storage rocketriders:main damage_spell.speed float 0.0025 r
 execute rotated as @s run function entities:type/damage_spell/tick/velocity with storage rocketriders:main damage_spell
 
 # Break on impact with a wall
-execute positioned as @s unless block ~ ~ ~ #custom:nonsolid run return run function entities:type/damage_spell/actions/damage_spell_break
-
-# Die if outside arena
-execute unless entity @s[predicate=custom:insideborder,predicate=custom:in_arena] run return run function entities:type/damage_spell/actions/damage_spell_break
-
-# Break near spawn zones
-execute if predicate entities:origin_team/blue if predicate custom:near_any_spawn_zone if predicate custom:on_yellow_half run return run function entities:type/damage_spell/actions/damage_spell_break
-execute if predicate entities:origin_team/yellow if predicate custom:near_any_spawn_zone if predicate custom:on_blue_half run return run function entities:type/damage_spell/actions/damage_spell_break
-execute if predicate entities:origin_team/none if predicate custom:near_any_spawn_zone run return run function entities:type/damage_spell/actions/damage_spell_break
+execute positioned as @s unless block ~ ~ ~ #custom:nonsolid run return run function entities:type/damage_spell/actions/break
 
 # AOE
 execute positioned as @s run function entities:type/damage_spell/tick/damage_aoe
 
 # TTL
-execute if score @s entity.age matches 120.. run return run function entities:type/damage_spell/actions/damage_spell_break
+execute if score @s entity.age matches 120.. run return run function entities:type/damage_spell/actions/break
 
 ## Generic projectiles
 # Movement trail

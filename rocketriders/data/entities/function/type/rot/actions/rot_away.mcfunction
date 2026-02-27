@@ -1,5 +1,7 @@
 # Break the block with fx
 execute at @s align xyz run particle minecraft:squid_ink ~0.5 ~0.5 ~0.5 0.3 0.3 0.3 0 5
+execute at @s if block ~ ~ ~ beehive run function custom:destroy_bee_block
+execute at @s if block ~ ~ ~ bee_nest run function custom:destroy_bee_block
 execute at @s if block ~ ~ ~ tnt run function custom:ignite_tnt
 execute at @s if block ~ ~ ~ piston_head run function entities:type/rot/tick/rot_away_piston_head
 execute at @s run setblock ~ ~ ~ air destroy

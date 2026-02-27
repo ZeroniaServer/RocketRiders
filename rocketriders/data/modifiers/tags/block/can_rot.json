@@ -25,6 +25,8 @@
     "minecraft:powered_rail",
     "minecraft:target",
     "minecraft:oak_wood",
-    "minecraft:crying_obsidian"
+    "minecraft:crying_obsidian",
+    "minecraft:beehive",
+    "minecraft:bee_nest"
   ]
 }

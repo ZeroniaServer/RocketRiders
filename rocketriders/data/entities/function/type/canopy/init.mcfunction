@@ -29,10 +29,10 @@ execute if predicate game:phase/match/play on origin run tag @s remove canopy.or
 execute if predicate game:phase/match/play on origin run function custom:player_action/forget_canopy
 tag @s remove canopy.forgotten_origin
 
-execute if predicate entities:origin_team/blue unless predicate game:gamemode_components/red_for_blue at @s run place template game:bluecanopy1 ~-1 ~ ~-1
-execute if predicate entities:origin_team/blue if predicate game:gamemode_components/red_for_blue at @s run place template game:redcanopy1 ~-1 ~ ~-1
-execute if predicate entities:origin_team/yellow at @s run place template game:yellowcanopy1 ~-1 ~ ~-1
-execute if predicate entities:origin_team/none at @s run place template rr_chase:whitecanopy1 ~-1 ~ ~-1
+execute if predicate entities:origin_team/blue unless predicate game:gamemode_components/red_for_blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:bluecanopy1",x_length:3,y_length:2,z_length:3}
+execute if predicate entities:origin_team/blue if predicate game:gamemode_components/red_for_blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:redcanopy1",x_length:3,y_length:2,z_length:3}
+execute if predicate entities:origin_team/yellow at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:yellowcanopy1",x_length:3,y_length:2,z_length:3}
+execute if predicate entities:origin_team/none at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"rr_chase:whitecanopy1",x_length:3,y_length:2,z_length:3}
 
 execute at @s run playsound ui.stonecutter.take_result master @a[x=0] ~ ~ ~ 2 0
 execute at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 1

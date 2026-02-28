@@ -88,7 +88,7 @@ tag @a[x=0,tag=BackHyper,limit=1] add MissiMSG
 #Bullet
 execute if entity @s[tag=BlueBull,tag=!surp] run tag @a[x=0,predicate=custom:team/blue,tag=placer,limit=1] add BackBull
 execute if entity @s[tag=YellowBull,tag=!surp] run tag @a[x=0,predicate=custom:team/yellow,tag=placer,limit=1] add BackBull
-tag @a[x=0,tag=BackBul,limit=1] add MissiMSG
+tag @a[x=0,tag=BackBull,limit=1] add MissiMSG
 
 #Duplex
 execute if entity @s[tag=BlueDuplex,tag=!surp] run tag @a[x=0,predicate=custom:team/blue,tag=placer,limit=1] add BackDuplex

@@ -46,11 +46,11 @@ execute if entity @s[tag=YellowHur] unless predicate game:gamemode_components/ne
 execute if entity @s[tag=YellowHur] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/hurricane
 
 #Elder Guardian
-execute if entity @s[tag=BlueGuard] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/elderguard
-execute if entity @s[tag=BlueGuard] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/elderguard
-execute if entity @s[tag=BlueGuard] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/elderguard
-execute if entity @s[tag=YellowGuard] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/elderguard
-execute if entity @s[tag=YellowGuard] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/elderguard
+execute if entity @s[tag=BlueGuard] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/elder_guardian
+execute if entity @s[tag=BlueGuard] unless predicate game:gamemode_components/neutral_items if predicate game:gamemode_components/red_for_blue run place template game:missile/south/red/elder_guardian
+execute if entity @s[tag=BlueGuard] if predicate game:gamemode_components/neutral_items run place template game:missile/south/white/elder_guardian
+execute if entity @s[tag=YellowGuard] unless predicate game:gamemode_components/neutral_items run place template game:missile/north/yellow/elder_guardian
+execute if entity @s[tag=YellowGuard] if predicate game:gamemode_components/neutral_items run place template game:missile/north/white/elder_guardian
 
 #A.N.T.
 execute if entity @s[tag=BlueAnt] unless predicate game:gamemode_components/neutral_items unless predicate game:gamemode_components/red_for_blue run place template game:missile/south/blue/ant

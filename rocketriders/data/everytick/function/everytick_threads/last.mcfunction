@@ -13,7 +13,7 @@ execute if score $update_nav_book global matches 1 run function lobby:__update_n
 scoreboard players reset $update_nav_book global
 
 ## Sub-tick shenanigans
-kill @e[x=0,tag=subtick_hackery.mob]
+execute as @e[x=0,type=villager,tag=subtick_hackery.mob] run data merge entity @s {DeathTime:19,Health:0}
 data modify storage rocketriders:main subtick_hackery.entity_data set value {Tags:["subtick_hackery.mob"],data:{subtick_hackery:{}},ConversionTime:0}
 data modify storage rocketriders:main subtick_hackery.entity_data.ConversionPlayer set from entity @a[limit=1,x=0] UUID
 scoreboard players set $subtick_hackery_done global 0

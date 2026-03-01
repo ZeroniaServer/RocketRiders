@@ -275,7 +275,6 @@ scoreboard objectives add timeSinceJump dummy
 scoreboard objectives add jumping minecraft.custom:minecraft.jump
 scoreboard objectives add movement dummy
 scoreboard objectives add impulse_cooldown dummy
-scoreboard objectives remove leavecheck
 scoreboard objectives add wins dummy
 scoreboard objectives add losses dummy
 scoreboard objectives add minedTNT dummy
@@ -284,7 +283,6 @@ scoreboard objectives add useful dummy
 scoreboard objectives add prevUseful dummy
 scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevFellVoid dummy
-scoreboard objectives remove cancelMatch
 
 # Fix join pad sprite depending on version
 function rr:upon_load/join_pad_sprite

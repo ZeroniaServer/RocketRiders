@@ -1,0 +1,2 @@
+scoreboard objectives remove leavecheck
+scoreboard objectives remove cancelMatch

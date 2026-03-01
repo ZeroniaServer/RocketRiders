@@ -14,7 +14,4 @@ scoreboard players reset $update_nav_book global
 
 ## Sub-tick shenanigans
 execute as @e[x=0,type=villager,tag=subtick_hackery.mob] run data merge entity @s {DeathTime:19,Health:0}
-data modify storage rocketriders:main subtick_hackery.entity_data set value {Tags:["subtick_hackery.mob"],data:{subtick_hackery:{}},ConversionTime:0}
-data modify storage rocketriders:main subtick_hackery.entity_data.ConversionPlayer set from entity @a[limit=1,x=0] UUID
-scoreboard players set $subtick_hackery_done global 0
-execute if entity @a[limit=1,x=0] positioned 0 -1000 0 summon minecraft:zombie_villager run data modify entity @s {} merge from storage rocketriders:main subtick_hackery.entity_data
+execute if entity @a[limit=1,x=0] run function everytick:subtick_hackery/start

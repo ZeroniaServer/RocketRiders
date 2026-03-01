@@ -1,0 +1,16 @@
+execute unless predicate game:phase/match run return 0
+execute if predicate game:phase/match/pause run return 0
+
+execute if predicate game:gamemode_components/has_chase_blocks as @e[x=0,type=marker,tag=ChaseBlock,tag=MissileBlock,tag=!KillChaseblock] at @s unless block ~ ~ ~ red_stained_glass run tag @s add KillChaseblock
+execute if predicate game:gamemode_components/has_chase_blocks as @e[x=0,type=marker,tag=ChaseBlock,tag=UtilBlock,tag=!KillChaseblock2] at @s unless block ~ ~ ~ purple_stained_glass run tag @s add KillChaseblock2
+execute if predicate game:gamemode_components/has_chase_blocks as @e[x=0,type=marker,tag=ChaseBlock,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @s add KillChaseblock3
+execute if predicate game:gamemode_components/has_chase_blocks as @e[x=0,type=marker,tag=ChaseBlock,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass run tag @s add KillChaseblock4
+
+execute if predicate game:gamemode_components/has_flags if score FY1: FlagScore matches 30.. run setblock 34 65 64 purple_stained_glass
+execute if predicate game:gamemode_components/has_flags if score FY1: FlagScore matches ..29 run setblock 34 65 64 white_stained_glass
+execute if predicate game:gamemode_components/has_flags if score FY2: FlagScore matches 30.. run setblock -10 65 64 purple_stained_glass
+execute if predicate game:gamemode_components/has_flags if score FY2: FlagScore matches ..29 run setblock -10 65 64 white_stained_glass
+execute if predicate game:gamemode_components/has_flags if score FB1: FlagScore matches 30.. run setblock -10 65 -64 purple_stained_glass
+execute if predicate game:gamemode_components/has_flags if score FB1: FlagScore matches ..29 run setblock -10 65 -64 white_stained_glass
+execute if predicate game:gamemode_components/has_flags if score FB2: FlagScore matches 30.. run setblock 34 65 -64 purple_stained_glass
+execute if predicate game:gamemode_components/has_flags if score FB2: FlagScore matches ..29 run setblock 34 65 -64 white_stained_glass

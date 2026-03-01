@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "cured_zombie_villager": {
+      "trigger": "minecraft:cured_zombie_villager",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:value_check",
+            "value": {
+              "type": "minecraft:score",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$subtick_hackery_done"
+              },
+              "score": "global"
+            },
+            "range": 0
+          }
+        ],
+        "zombie": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "subtick_hackery": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "everytick:subtick_hackery/trigger"
+  }
+}

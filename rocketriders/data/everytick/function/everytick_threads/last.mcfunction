@@ -11,3 +11,10 @@ execute if entity @e[limit=1,x=0,type=marker,tag=join_pad.right,tag=!join_pad.sh
 ## Navigation book
 execute if score $update_nav_book global matches 1 run function lobby:__update_nav_book/update_with_template
 scoreboard players reset $update_nav_book global
+
+## Sub-tick shenanigans
+kill @e[x=0,tag=subtick_hackery.mob]
+data modify storage rocketriders:main subtick_hackery.entity_data set value {Tags:["subtick_hackery.mob"],data:{subtick_hackery:{}},ConversionTime:0}
+data modify storage rocketriders:main subtick_hackery.entity_data.ConversionPlayer set from entity @a[limit=1,x=0] UUID
+scoreboard players set $subtick_hackery_done global 0
+execute if entity @a[limit=1,x=0] positioned 0 -1000 0 summon minecraft:zombie_villager run data modify entity @s {} merge from storage rocketriders:main subtick_hackery.entity_data

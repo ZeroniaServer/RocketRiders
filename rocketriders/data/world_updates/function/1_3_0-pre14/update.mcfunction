@@ -17,3 +17,6 @@ setblock -63 208 57 minecraft:cyan_stained_glass_pane[east=true,north=false,sout
 setblock -59 208 57 minecraft:cyan_stained_glass_pane[east=true,north=false,south=false,waterlogged=false,west=true] strict
 setblock -62 207 57 minecraft:blue_stained_glass_pane[east=true,north=false,south=false,waterlogged=false,west=true] strict
 setblock -60 207 57 minecraft:blue_stained_glass_pane[east=true,north=false,south=false,waterlogged=false,west=true] strict
+
+# will get automatically reopened if needed, this just fixes the water issue 
+function lobby:close_modification_room

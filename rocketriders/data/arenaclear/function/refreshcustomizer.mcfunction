@@ -79,30 +79,30 @@ fill -45 197 73 -45 198 83 minecraft:light[level=15] strict
 
 ## Top Decorations
 #New Dawn Arch
-execute if predicate game:arena_details/top/arch run place template game:archpreview -48 197 74 none none 1 0 strict
+execute if predicate game:arena_details/top/arch run place template game:base_detail_previews/arch -48 197 74 none none 1 0 strict
 #Towers
-execute if predicate game:arena_details/top/towers run place template game:towerpreview -44 197 65 none none 1 0 strict
-execute if predicate game:arena_details/top/towers run place template game:towerpreview -44 197 87 none none 1 0 strict
+execute if predicate game:arena_details/top/towers run place template game:base_detail_previews/tower -44 197 65 none none 1 0 strict
+execute if predicate game:arena_details/top/towers run place template game:base_detail_previews/tower -44 197 87 none none 1 0 strict
 #Spikes
-execute if predicate game:arena_details/top/spikes run place template game:spike_top_preview -45 197 71 none none 1 0 strict
+execute if predicate game:arena_details/top/spikes run place template game:base_detail_previews/spike_top -45 197 71 none none 1 0 strict
 
 ## Top Sides Decorations
 #New Dawn Platforms
-execute if predicate game:arena_details/top_sides/platform run place template game:topplatform_preview -50 194 71 none none 1 0 strict
-execute if predicate game:arena_details/top_sides/platform run place template game:topplatform_preview -50 194 81 none none 1 0 strict
+execute if predicate game:arena_details/top_sides/platform run place template game:base_detail_previews/top_platform -50 194 71 none none 1 0 strict
+execute if predicate game:arena_details/top_sides/platform run place template game:base_detail_previews/top_platform -50 194 81 none none 1 0 strict
 #Spikes
-execute if predicate game:arena_details/top_sides/spikes run place template game:spike_side_preview -51 193 68 none none 1 0 strict
-execute if predicate game:arena_details/top_sides/spikes run place template game:spike_side_preview -51 193 88 none left_right 1 0 strict
+execute if predicate game:arena_details/top_sides/spikes run place template game:base_detail_previews/spike_side -51 193 68 none none 1 0 strict
+execute if predicate game:arena_details/top_sides/spikes run place template game:base_detail_previews/spike_side -51 193 88 none left_right 1 0 strict
 #Cannons
-execute if predicate game:arena_details/top_sides/cannons run place template game:cannon_preview -45 196 72 none none 1 0 strict
-execute if predicate game:arena_details/top_sides/cannons run place template game:cannon_preview -45 196 82 none none 1 0 strict
+execute if predicate game:arena_details/top_sides/cannons run place template game:base_detail_previews/cannon -45 196 72 none none 1 0 strict
+execute if predicate game:arena_details/top_sides/cannons run place template game:base_detail_previews/cannon -45 196 82 none none 1 0 strict
 
 ##Middle Decorations
 #New Dawn Slimepads
-execute if predicate game:arena_details/middle/slime_pads run place template game:midslimepad_preview -49 190 65 none none 1 0 strict
-execute if predicate game:arena_details/middle/slime_pads run place template game:midslimepad_preview -49 190 85 none none 1 0 strict
+execute if predicate game:arena_details/middle/slime_pads run place template game:base_detail_previews/slime_pad_middle -49 190 65 none none 1 0 strict
+execute if predicate game:arena_details/middle/slime_pads run place template game:base_detail_previews/slime_pad_middle -49 190 85 none none 1 0 strict
 #Spikes
-execute if predicate game:arena_details/middle/spikes run place template game:spike_mid_preview -54 191 67 none none 1 0 strict
+execute if predicate game:arena_details/middle/spikes run place template game:base_detail_previews/spike_middle -54 191 67 none none 1 0 strict
 #Layered
 execute if predicate game:arena_details/middle/layered run fill -44 196 64 -43 196 92 minecraft:black_stained_glass replace light strict
 execute if predicate game:arena_details/middle/layered run fill -45 185 92 -45 192 64 minecraft:white_stained_glass strict
@@ -114,11 +114,11 @@ execute if predicate game:arena_details/middle/layered run fill -47 187 92 -47 1
 
 ##Bottom Decorations
 #New Dawn Slimepads
-execute if predicate game:arena_details/bottom/slime_pad run place template game:bottomslimepad_preview -49 186 75 none none 1 0 strict
+execute if predicate game:arena_details/bottom/slime_pad run place template game:base_detail_previews/slime_pad_bottom -49 186 75 none none 1 0 strict
 #Spikes
-execute if predicate game:arena_details/bottom/spikes run place template game:spike_bottom_preview -53 185 76 none none 1 0 strict
+execute if predicate game:arena_details/bottom/spikes run place template game:base_detail_previews/spike_bottom -53 185 76 none none 1 0 strict
 #Cannon
-execute if predicate game:arena_details/bottom/cannon run place template game:bottomcannon_preview -49 187 75 none none 1 0 strict
+execute if predicate game:arena_details/bottom/cannon run place template game:base_detail_previews/cannon_bottom -49 187 75 none none 1 0 strict
 
 ##Castle
 execute if predicate game:gamemode_components/arena/castle run place template lobby:castle -44 185 64 none none 1 0 strict

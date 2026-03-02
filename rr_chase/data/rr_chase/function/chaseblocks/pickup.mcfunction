@@ -1,5 +1,6 @@
 function rr_chase:chaseblocks/displaynear
-function rr_chase:chaseblocks/destroyunder
+execute unless predicate game:modifiers/hobbits/on run function rr_chase:chaseblocks/destroyunder_normal
+execute if predicate game:modifiers/hobbits/on run function rr_chase:chaseblocks/destroyunder_hobbit
 
 execute as @e[x=0,type=marker,tag=ChaseBlock] at @s if block ~ ~ ~-2 moving_piston run setblock ~ ~ ~ air destroy
 execute as @e[x=0,type=marker,tag=ChaseBlock] at @s if block ~ ~ ~-1 moving_piston run setblock ~ ~ ~ air destroy

@@ -20,3 +20,6 @@ setblock -60 207 57 minecraft:blue_stained_glass_pane[east=true,north=false,sout
 
 # will get automatically reopened if needed, this just fixes the water issue 
 function lobby:close_modification_room
+
+# ensure brute force clear happens when updating from older versions
+function arenaclear:brute_force/start

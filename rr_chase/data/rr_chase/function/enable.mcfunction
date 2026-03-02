@@ -25,6 +25,5 @@ scoreboard players set $one_team gamemode_components 1
 scoreboard players set $red_for_blue gamemode_components 1
 
 # items
-scoreboard players set $item_pool.arrow gamemode_components 1
 scoreboard players set $item_pool.cluster_fireball gamemode_components -1
 scoreboard players set $item_pool.icbm gamemode_components -1

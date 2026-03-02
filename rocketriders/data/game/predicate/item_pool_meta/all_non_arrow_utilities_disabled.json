@@ -1,0 +1,44 @@
+{
+  "condition": "minecraft:inverted",
+  "term": {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:reference",
+        "name": "game:item_pool/canopy"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:item_pool/cluster_fireball"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:item_pool/fireball"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:item_pool/icbm"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:item_pool/nova_rocket"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:item_pool/obsidian_shield"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:item_pool/shield"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:item_pool/splash"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:item_pool/vortex"
+      }
+    ]
+  }
+}

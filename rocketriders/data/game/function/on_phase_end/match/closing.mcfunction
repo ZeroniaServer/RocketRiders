@@ -1,7 +1,11 @@
 ##
+scoreboard players reset $closing_timer global
+scoreboard players reset $closing_timer.max_tie_window_time global
+scoreboard players reset $closing_timer.max_time_before_review global
+scoreboard players reset $closing_timer.max_review_time global
+
 gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 
-scoreboard players reset $closing_timer global
 effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
 effect clear @a[x=0,predicate=custom:team/any_playing_team] weakness
 effect clear @a[x=0,predicate=custom:team/any_playing_team] regeneration

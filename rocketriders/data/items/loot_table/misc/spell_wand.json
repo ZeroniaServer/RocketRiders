@@ -31,11 +31,6 @@
                   "minecraft:fire_aspect": 2
                 },
                 "minecraft:item_model": "minecraft:stick",
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "white",
-                  "text": "Spell Wand"
-                },
                 "minecraft:lore": [
                   "",
                   {
@@ -135,13 +130,29 @@
               "function": "minecraft:set_components"
             },
             {
-              "components": {
-                "minecraft:item_model": "minecraft:breeze_rod",
-                "minecraft:item_name": {
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
                   "bold": true,
-                  "color": "blue",
-                  "text": "Spell Wand"
-                }
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Spell Wand"
+                ]
+              ]
+            },
+            {
+              "components": {
+                "minecraft:item_model": "minecraft:breeze_rod"
               },
               "conditions": [
                 {
@@ -167,12 +178,7 @@
             },
             {
               "components": {
-                "minecraft:item_model": "minecraft:stick",
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_red",
-                  "text": "Spell Wand"
-                }
+                "minecraft:item_model": "minecraft:stick"
               },
               "conditions": [
                 {
@@ -195,12 +201,7 @@
             },
             {
               "components": {
-                "minecraft:item_model": "minecraft:blaze_rod",
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "gold",
-                  "text": "Spell Wand"
-                }
+                "minecraft:item_model": "minecraft:blaze_rod"
               },
               "conditions": [
                 {
@@ -216,23 +217,6 @@
                 }
               ],
               "function": "minecraft:set_components"
-            },
-            {
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/custom_team_colors"
-                }
-              ],
-              "function": "minecraft:reference",
-              "name": "items:spell_wand/set_custom_team_color"
             },
             {
               "function": "minecraft:reference",

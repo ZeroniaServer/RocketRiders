@@ -14,6 +14,8 @@ execute if predicate game:modifiers/molerat/on run function arenaclear:moleratpl
 execute unless predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color blue
 execute if predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color dark_red
 
+function custom:update_player_text/all
+
 ##Friendly Fire
 execute unless predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire false
 execute unless predicate game:gamemode_components/friendly_fire run team modify rocketriders.sort_001.yellow friendlyFire false

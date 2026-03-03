@@ -25,9 +25,10 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "slot": "legs"
                 },
-                "minecraft:item_name": {
+                "minecraft:custom_name": {
                   "bold": true,
                   "color": "#FFFCB1",
+                  "italic": false,
                   "text": "Light Yellow Leggings"
                 },
                 "minecraft:tooltip_display": {

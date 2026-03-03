@@ -26,11 +26,6 @@
                   "italic": false,
                   "text": "Wither Arrow"
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_purple",
-                  "text": "Wither Arrow"
-                },
                 "minecraft:potion_contents": {
                   "custom_effects": [
                     {

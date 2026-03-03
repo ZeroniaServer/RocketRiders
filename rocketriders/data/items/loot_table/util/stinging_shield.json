@@ -18,17 +18,6 @@
                   ]
                 },
                 "minecraft:item_model": "minecraft:honeycomb",
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "dark_purple",
-                    "text": "[Utility] "
-                  },
-                  {
-                    "color": "white",
-                    "text": "Stinging Shield"
-                  }
-                ],
                 "minecraft:lore": [
                   {
                     "color": "gray",
@@ -46,102 +35,30 @@
               "function": "minecraft:set_components"
             },
             {
-              "components": {
-                "minecraft:item_name": [
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "light_purple",
+                  "text": "[Utility] "
+                },
+                [
                   {
-                    "bold": true,
-                    "color": "dark_purple",
-                    "text": "[Utility] "
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
                   },
-                  {
-                    "color": "blue",
-                    "text": "Stinging Shield"
-                  }
+                  "Stinging Shield"
                 ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/red_for_blue"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ],
-              "function": "minecraft:set_components"
-            },
-            {
-              "components": {
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "dark_purple",
-                    "text": "[Utility] "
-                  },
-                  {
-                    "color": "dark_red",
-                    "text": "Stinging Shield"
-                  }
-                ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/red_for_blue"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ],
-              "function": "minecraft:set_components"
-            },
-            {
-              "components": {
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "dark_purple",
-                    "text": "[Utility] "
-                  },
-                  {
-                    "color": "gold",
-                    "text": "Stinging Shield"
-                  }
-                ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/yellow"
-                }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
               "function": "minecraft:reference",

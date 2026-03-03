@@ -10,9 +10,10 @@
                   "navbook": true
                 },
                 "minecraft:item_model": "minecraft:knowledge_book",
-                "minecraft:item_name": {
+                "minecraft:custom_name": {
                   "bold": true,
                   "color": "dark_green",
+                  "italic": false,
                   "text": "Navigation Book"
                 },
                 "minecraft:lore": [

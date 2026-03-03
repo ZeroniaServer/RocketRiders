@@ -25,17 +25,6 @@
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:cave_spider_spawn_egg",
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "green",
-                    "text": "[Normal] "
-                  },
-                  {
-                    "color": "white",
-                    "text": "Catapult"
-                  }
-                ],
                 "minecraft:lore": [
                   [
                     {
@@ -107,102 +96,30 @@
               "source": "this"
             },
             {
-              "components": {
-                "minecraft:item_name": [
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "green",
+                  "text": "[Normal] "
+                },
+                [
                   {
-                    "bold": true,
-                    "color": "green",
-                    "text": "[Normal] "
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
                   },
-                  {
-                    "color": "blue",
-                    "text": "Catapult"
-                  }
+                  "Catapult"
                 ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/red_for_blue"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ],
-              "function": "minecraft:set_components"
-            },
-            {
-              "components": {
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "green",
-                    "text": "[Normal] "
-                  },
-                  {
-                    "color": "dark_red",
-                    "text": "Catapult"
-                  }
-                ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/red_for_blue"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ],
-              "function": "minecraft:set_components"
-            },
-            {
-              "components": {
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "green",
-                    "text": "[Normal] "
-                  },
-                  {
-                    "color": "gold",
-                    "text": "Catapult"
-                  }
-                ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/yellow"
-                }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
               "function": "minecraft:reference",

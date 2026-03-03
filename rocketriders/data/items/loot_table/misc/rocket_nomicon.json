@@ -18,10 +18,11 @@
                     "none"
                   ]
                 },
-                "minecraft:item_name": [
+                "minecraft:custom_name": [
                   {
                     "bold": true,
                     "color": "blue",
+                    "italic": false,
                     "text": "Rocket"
                   },
                   {

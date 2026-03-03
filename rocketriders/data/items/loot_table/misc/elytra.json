@@ -36,9 +36,10 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "slot": "chest"
                 },
-                "minecraft:item_name": {
+                "minecraft:custom_name": {
                   "bold": true,
                   "color": "dark_purple",
+                  "italic": false,
                   "text": "Elytra"
                 },
                 "minecraft:lore": [

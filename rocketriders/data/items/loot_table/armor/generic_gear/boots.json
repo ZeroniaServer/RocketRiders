@@ -25,11 +25,6 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "slot": "feet"
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "white",
-                  "text": "White Boots"
-                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:attribute_modifiers",
@@ -46,11 +41,6 @@
             {
               "components": {
                 "minecraft:dyed_color": 3949738,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "blue",
-                  "text": "Blue Boots"
-                },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:vex"
@@ -81,11 +71,6 @@
             {
               "components": {
                 "minecraft:dyed_color": 16711680,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_red",
-                  "text": "Red Boots"
-                },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:vex"
@@ -113,11 +98,6 @@
             {
               "components": {
                 "minecraft:dyed_color": 16768000,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "gold",
-                  "text": "Yellow Boots"
-                },
                 "minecraft:trim": {
                   "material": "minecraft:netherite",
                   "pattern": "minecraft:spire"
@@ -140,12 +120,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 3949738,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "blue",
-                  "text": "Blue Boots"
-                }
+                "minecraft:dyed_color": 3949738
               },
               "conditions": [
                 {
@@ -164,12 +139,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 16768000,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "yellow",
-                  "text": "Yellow Boots"
-                }
+                "minecraft:dyed_color": 16768000
               },
               "conditions": [
                 {
@@ -188,12 +158,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 16711680,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "red",
-                  "text": "Red Boots"
-                }
+                "minecraft:dyed_color": 16711680
               },
               "conditions": [
                 {
@@ -212,12 +177,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 65281,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "green",
-                  "text": "Green Boots"
-                }
+                "minecraft:dyed_color": 65281
               },
               "conditions": [
                 {
@@ -236,12 +196,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 11796735,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_purple",
-                  "text": "Purple Boots"
-                }
+                "minecraft:dyed_color": 11796735
               },
               "conditions": [
                 {
@@ -260,12 +215,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 16752877,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "light_purple",
-                  "text": "Pink Boots"
-                }
+                "minecraft:dyed_color": 16752877
               },
               "conditions": [
                 {
@@ -284,12 +234,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 16744704,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "gold",
-                  "text": "Orange Boots"
-                }
+                "minecraft:dyed_color": 16744704
               },
               "conditions": [
                 {
@@ -308,12 +253,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 16735636,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "#FF5D94",
-                  "text": "Strawberry Boots"
-                }
+                "minecraft:dyed_color": 16735636
               },
               "conditions": [
                 {
@@ -332,12 +272,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 6684628,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "#65FFD4",
-                  "text": "Mint Boots"
-                }
+                "minecraft:dyed_color": 6684628
               },
               "conditions": [
                 {
@@ -356,12 +291,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 13959061,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "#D4FF95",
-                  "text": "Apple Boots"
-                }
+                "minecraft:dyed_color": 13959061
               },
               "conditions": [
                 {
@@ -380,12 +310,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 16383860,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "#F9FF74",
-                  "text": "Banana Boots"
-                }
+                "minecraft:dyed_color": 16383860
               },
               "conditions": [
                 {
@@ -404,12 +329,7 @@
             },
             {
               "components": {
-                "minecraft:dyed_color": 7506394,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "#7289DA",
-                  "text": "Blurple Boots"
-                }
+                "minecraft:dyed_color": 7506394
               },
               "conditions": [
                 {
@@ -425,6 +345,33 @@
                 }
               ],
               "function": "minecraft:set_components"
+            },
+            {
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.team_name"
+                    }
+                  },
+                  " Boots"
+                ]
+              ]
             }
           ],
           "name": "minecraft:leather_boots",

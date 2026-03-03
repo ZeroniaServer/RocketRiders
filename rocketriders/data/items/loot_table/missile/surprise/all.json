@@ -26,17 +26,6 @@
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:squid_spawn_egg",
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "light_purple",
-                    "text": "[???] "
-                  },
-                  {
-                    "color": "white",
-                    "text": "Surprise Egg"
-                  }
-                ],
                 "minecraft:lore": [
                   {
                     "color": "gray",
@@ -60,18 +49,7 @@
             },
             {
               "components": {
-                "minecraft:item_model": "minecraft:squid_spawn_egg",
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "light_purple",
-                    "text": "[???] "
-                  },
-                  {
-                    "color": "blue",
-                    "text": "Surprise Egg"
-                  }
-                ]
+                "minecraft:item_model": "minecraft:squid_spawn_egg"
               },
               "conditions": [
                 {
@@ -97,18 +75,7 @@
             },
             {
               "components": {
-                "minecraft:item_model": "minecraft:squid_spawn_egg",
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "light_purple",
-                    "text": "[???] "
-                  },
-                  {
-                    "color": "dark_red",
-                    "text": "Surprise Egg"
-                  }
-                ]
+                "minecraft:item_model": "minecraft:squid_spawn_egg"
               },
               "conditions": [
                 {
@@ -131,18 +98,7 @@
             },
             {
               "components": {
-                "minecraft:item_model": "minecraft:cod_spawn_egg",
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "light_purple",
-                    "text": "[???] "
-                  },
-                  {
-                    "color": "gold",
-                    "text": "Surprise Egg"
-                  }
-                ]
+                "minecraft:item_model": "minecraft:cod_spawn_egg"
               },
               "conditions": [
                 {
@@ -158,6 +114,32 @@
                 }
               ],
               "function": "minecraft:set_components"
+            },
+            {
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "light_purple",
+                  "text": "[???] "
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Surprise Egg"
+                ]
+              ]
             },
             {
               "function": "minecraft:reference",

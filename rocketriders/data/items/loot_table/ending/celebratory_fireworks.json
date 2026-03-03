@@ -33,11 +33,6 @@
                   ],
                   "flight_duration": 3
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "white",
-                  "text": "Celebratory Fireworks"
-                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:can_place_on",
@@ -66,11 +61,6 @@
                     }
                   ],
                   "flight_duration": 3
-                },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "blue",
-                  "text": "Celebratory Fireworks"
                 }
               },
               "conditions": [
@@ -110,11 +100,6 @@
                     }
                   ],
                   "flight_duration": 3
-                },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_red",
-                  "text": "Celebratory Fireworks"
                 }
               },
               "conditions": [
@@ -151,11 +136,6 @@
                     }
                   ],
                   "flight_duration": 3
-                },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "gold",
-                  "text": "Celebratory Fireworks"
                 }
               },
               "conditions": [
@@ -172,6 +152,27 @@
                 }
               ],
               "function": "minecraft:set_components"
+            },
+            {
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Celebratory Fireworks"
+                ]
+              ]
             },
             {
               "function": "minecraft:reference",

@@ -26,11 +26,6 @@
                   "italic": false,
                   "text": "Slowness Arrow"
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_purple",
-                  "text": "Slowness Arrow"
-                },
                 "minecraft:potion_contents": {
                   "custom_effects": [
                     {

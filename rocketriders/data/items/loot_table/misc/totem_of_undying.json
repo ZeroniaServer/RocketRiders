@@ -18,9 +18,10 @@
                   ]
                 },
                 "minecraft:enchantment_glint_override": true,
-                "minecraft:item_name": {
+                "minecraft:custom_name": {
                   "bold": true,
                   "color": "dark_purple",
+                  "italic": false,
                   "text": "Totem of Undying"
                 },
                 "minecraft:lore": [

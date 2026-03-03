@@ -24,11 +24,6 @@
                   "italic": false,
                   "text": "Invisibility Potion"
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_purple",
-                  "text": "Invisibility Potion"
-                },
                 "minecraft:lore": [
                   {
                     "color": "blue",

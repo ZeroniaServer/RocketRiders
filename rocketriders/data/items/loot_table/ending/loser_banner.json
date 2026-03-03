@@ -55,11 +55,6 @@
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "white",
-                  "text": "Flag of Shameful Loss"
-                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:banner_patterns",
@@ -129,12 +124,7 @@
                     "color": "white",
                     "pattern": "minecraft:square_top_left"
                   }
-                ],
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "blue",
-                  "text": "Flag of Shameful Loss"
-                }
+                ]
               },
               "conditions": [
                 {
@@ -214,12 +204,7 @@
                     "color": "white",
                     "pattern": "minecraft:square_top_left"
                   }
-                ],
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_red",
-                  "text": "Flag of Shameful Loss"
-                }
+                ]
               },
               "conditions": [
                 {
@@ -292,12 +277,7 @@
                     "color": "white",
                     "pattern": "square_top_left"
                   }
-                ],
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "gold",
-                  "text": "Flag of Shameful Loss"
-                }
+                ]
               },
               "conditions": [
                 {
@@ -313,6 +293,27 @@
                 }
               ],
               "function": "minecraft:set_components"
+            },
+            {
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Flag of Shameful Loss"
+                ]
+              ]
             },
             {
               "function": "minecraft:reference",

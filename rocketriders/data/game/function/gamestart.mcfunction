@@ -55,7 +55,6 @@ execute as @a[x=0,tag=tryJoinBlue] at @s unless entity @e[distance=..2,type=mark
 execute as @a[x=0,tag=JoinBlue] run function custom:team/join_blue
 execute if entity @a[limit=1,x=0,tag=JoinBlue] run function everytick:team_count
 clear @a[x=0,tag=JoinBlue] *
-execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinBlue] run function game:assign_custom_team_color
 execute if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
 execute if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
 execute if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run function modifiers:long_arms/set
@@ -96,7 +95,6 @@ execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s as @a[distance=..1,pred
 execute as @a[x=0,tag=tryJoinYellow] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.yellow] run tag @s remove tryJoinYellow
 execute as @a[x=0,tag=JoinYellow] run function custom:team/join_yellow
 clear @a[x=0,tag=JoinYellow] *
-execute if predicate game:gamemode_components/custom_team_colors as @a[x=0,tag=JoinYellow] run function game:assign_custom_team_color
 execute if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
 execute if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set
 execute if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinYellow] run function modifiers:long_arms/set

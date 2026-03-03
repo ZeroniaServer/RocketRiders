@@ -63,17 +63,6 @@
                   ]
                 },
                 "minecraft:damage": 465,
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "light_purple",
-                    "text": "[Utility] "
-                  },
-                  {
-                    "color": "white",
-                    "text": "Nova Rocket"
-                  }
-                ],
                 "minecraft:lore": [
                   {
                     "color": "gray",
@@ -139,17 +128,6 @@
                     },
                     "id": "minecraft:firework_rocket"
                   }
-                ],
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "light_purple",
-                    "text": "[Utility] "
-                  },
-                  {
-                    "color": "blue",
-                    "text": "Nova Rocket"
-                  }
                 ]
               },
               "conditions": [
@@ -211,17 +189,6 @@
                     },
                     "id": "minecraft:firework_rocket"
                   }
-                ],
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "light_purple",
-                    "text": "[Utility] "
-                  },
-                  {
-                    "color": "dark_red",
-                    "text": "Nova Rocket"
-                  }
                 ]
               },
               "conditions": [
@@ -280,17 +247,6 @@
                     },
                     "id": "minecraft:firework_rocket"
                   }
-                ],
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "light_purple",
-                    "text": "[Utility] "
-                  },
-                  {
-                    "color": "gold",
-                    "text": "Nova Rocket"
-                  }
                 ]
               },
               "conditions": [
@@ -307,6 +263,32 @@
                 }
               ],
               "function": "minecraft:set_components"
+            },
+            {
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "light_purple",
+                  "text": "[Utility] "
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Nova Rocket"
+                ]
+              ]
             },
             {
               "function": "minecraft:reference",

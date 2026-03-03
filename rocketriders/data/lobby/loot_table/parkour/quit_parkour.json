@@ -22,7 +22,7 @@
                   ]
                 },
                 "minecraft:item_model": "minecraft:barrier",
-                "minecraft:item_name": {
+                "minecraft:custom_name": {
                   "bold": true,
                   "color": "red",
                   "italic": false,

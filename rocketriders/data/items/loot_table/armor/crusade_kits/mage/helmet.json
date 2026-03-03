@@ -15,11 +15,6 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "slot": "head"
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "white",
-                  "text": "Mage Mask"
-                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:enchantments"
@@ -30,12 +25,7 @@
             },
             {
               "components": {
-                "minecraft:item_model": "minecraft:warped_fence_gate",
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "blue",
-                  "text": "Blue Mage Mask"
-                }
+                "minecraft:item_model": "minecraft:warped_fence_gate"
               },
               "conditions": [
                 {
@@ -54,12 +44,7 @@
             },
             {
               "components": {
-                "minecraft:item_model": "minecraft:mangrove_fence_gate",
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_red",
-                  "text": "Red Mage Mask"
-                }
+                "minecraft:item_model": "minecraft:mangrove_fence_gate"
               },
               "conditions": [
                 {
@@ -75,12 +60,7 @@
             },
             {
               "components": {
-                "minecraft:item_model": "minecraft:bamboo_fence_gate",
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "gold",
-                  "text": "Yellow Mage Mask"
-                }
+                "minecraft:item_model": "minecraft:bamboo_fence_gate"
               },
               "conditions": [
                 {
@@ -89,6 +69,33 @@
                 }
               ],
               "function": "minecraft:set_components"
+            },
+            {
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.team_name"
+                    }
+                  },
+                  " Mage Mask"
+                ]
+              ]
             }
           ],
           "name": "minecraft:pale_oak_fence_gate",

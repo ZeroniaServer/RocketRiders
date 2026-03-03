@@ -16,11 +16,6 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "slot": "chest"
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "white",
-                  "text": "Archer Chestplate"
-                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:enchantments",
@@ -34,11 +29,6 @@
             },
             {
               "components": {
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "blue",
-                  "text": "Blue Archer Chestplate"
-                },
                 "minecraft:trim": {
                   "material": "minecraft:lapis",
                   "pattern": "minecraft:vex"
@@ -61,11 +51,6 @@
             },
             {
               "components": {
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_red",
-                  "text": "Red Archer Chestplate"
-                },
                 "minecraft:trim": {
                   "material": "minecraft:redstone",
                   "pattern": "minecraft:vex"
@@ -85,11 +70,6 @@
             },
             {
               "components": {
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "gold",
-                  "text": "Yellow Archer Chestplate"
-                },
                 "minecraft:trim": {
                   "material": "minecraft:gold",
                   "pattern": "minecraft:spire"
@@ -102,6 +82,33 @@
                 }
               ],
               "function": "minecraft:set_components"
+            },
+            {
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.team_name"
+                    }
+                  },
+                  " Archer Chestplate"
+                ]
+              ]
             }
           ],
           "name": "minecraft:chainmail_chestplate",

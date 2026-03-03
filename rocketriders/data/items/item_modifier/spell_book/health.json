@@ -8,7 +8,10 @@
   {
     "function": "minecraft:set_name",
     "name": [
-      "",
+      {
+        "italic": false,
+        "text": ""
+      },
       {
         "bold": true,
         "color": "light_purple",
@@ -26,8 +29,7 @@
         },
         "]"
       ]
-    ],
-    "target": "item_name"
+    ]
   },
   {
     "function": "minecraft:set_lore",

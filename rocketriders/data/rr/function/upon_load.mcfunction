@@ -130,6 +130,15 @@ scoreboard objectives add secondary_damage_origin_uuid.3 dummy
 scoreboard objectives add time_since_damage custom:play_time
 scoreboard objectives add time_since_attack custom:play_time
 
+scoreboard objectives add text.team_name dummy
+scoreboard objectives modify text.team_name numberformat fixed ""
+scoreboard objectives add text.team_name_lowercase dummy
+scoreboard objectives modify text.team_name_lowercase numberformat fixed ""
+scoreboard objectives add text.main_color dummy
+scoreboard objectives modify text.main_color numberformat fixed ""
+scoreboard objectives add text.accent_color dummy
+scoreboard objectives modify text.accent_color numberformat fixed ""
+
 scoreboard objectives add set_item_delay trigger
 scoreboard objectives add set_time_of_day trigger
 scoreboard objectives add editSettings trigger

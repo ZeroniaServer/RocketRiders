@@ -26,11 +26,6 @@
                   "italic": false,
                   "text": "Blindness Arrow"
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_purple",
-                  "text": "Blindness Arrow"
-                },
                 "minecraft:potion_contents": {
                   "custom_effects": [
                     {

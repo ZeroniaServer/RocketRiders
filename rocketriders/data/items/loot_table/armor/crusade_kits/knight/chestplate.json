@@ -25,11 +25,6 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "slot": "chest"
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "white",
-                  "text": "Mage Chestplate"
-                },
                 "minecraft:tooltip_display": {
                   "hidden_components": [
                     "minecraft:attribute_modifiers",
@@ -46,11 +41,6 @@
             {
               "components": {
                 "minecraft:dyed_color": 3949738,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "blue",
-                  "text": "Blue Knight Chestplate"
-                },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:vex"
@@ -74,11 +64,6 @@
             {
               "components": {
                 "minecraft:dyed_color": 16711680,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_red",
-                  "text": "Red Knight Chestplate"
-                },
                 "minecraft:trim": {
                   "material": "minecraft:quartz",
                   "pattern": "minecraft:vex"
@@ -99,11 +84,6 @@
             {
               "components": {
                 "minecraft:dyed_color": 16768000,
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "gold",
-                  "text": "Yellow Knight Chestplate"
-                },
                 "minecraft:trim": {
                   "material": "minecraft:netherite",
                   "pattern": "minecraft:spire"
@@ -116,6 +96,33 @@
                 }
               ],
               "function": "minecraft:set_components"
+            },
+            {
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.team_name"
+                    }
+                  },
+                  " Knight Chestplate"
+                ]
+              ]
             }
           ],
           "name": "minecraft:leather_chestplate",

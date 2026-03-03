@@ -11,9 +11,10 @@
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },
-                "minecraft:item_name": {
+                "minecraft:custom_name": {
                   "bold": true,
                   "color": "dark_green",
+                  "italic": false,
                   "text": "Parkour Boots"
                 },
                 "minecraft:tooltip_display": {

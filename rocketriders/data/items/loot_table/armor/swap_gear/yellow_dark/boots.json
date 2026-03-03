@@ -25,9 +25,10 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "slot": "feet"
                 },
-                "minecraft:item_name": {
+                "minecraft:custom_name": {
                   "bold": true,
                   "color": "#918C00",
+                  "italic": false,
                   "text": "Dark Yellow Boots"
                 },
                 "minecraft:tooltip_display": {

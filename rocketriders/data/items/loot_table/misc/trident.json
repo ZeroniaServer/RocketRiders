@@ -40,9 +40,10 @@
                   "minecraft:impaling": 2,
                   "minecraft:loyalty": 10
                 },
-                "minecraft:item_name": {
+                "minecraft:custom_name": {
                   "bold": true,
                   "color": "dark_purple",
+                  "italic": false,
                   "text": "Trident"
                 },
                 "minecraft:lore": [

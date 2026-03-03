@@ -44,11 +44,6 @@
                 "minecraft:enchantments": {
                   "minecraft:knockback": 3
                 },
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_purple",
-                  "text": "Slap Fish"
-                },
                 "minecraft:lore": [
                   {
                     "color": "gray",

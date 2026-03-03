@@ -25,17 +25,6 @@
                   "id": "minecraft:marker"
                 },
                 "minecraft:item_model": "minecraft:salmon_spawn_egg",
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "dark_red",
-                    "text": "[Heavy] "
-                  },
-                  {
-                    "color": "white",
-                    "text": "Rifter"
-                  }
-                ],
                 "minecraft:lore": [
                   [
                     {
@@ -107,102 +96,30 @@
               "source": "this"
             },
             {
-              "components": {
-                "minecraft:item_name": [
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "dark_red",
+                  "text": "[Heavy] "
+                },
+                [
                   {
-                    "bold": true,
-                    "color": "dark_red",
-                    "text": "[Heavy] "
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
                   },
-                  {
-                    "color": "blue",
-                    "text": "Rifter"
-                  }
+                  "Rifter"
                 ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/red_for_blue"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ],
-              "function": "minecraft:set_components"
-            },
-            {
-              "components": {
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "dark_red",
-                    "text": "[Heavy] "
-                  },
-                  {
-                    "color": "dark_red",
-                    "text": "Rifter"
-                  }
-                ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/red_for_blue"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ],
-              "function": "minecraft:set_components"
-            },
-            {
-              "components": {
-                "minecraft:item_name": [
-                  {
-                    "bold": true,
-                    "color": "dark_red",
-                    "text": "[Heavy] "
-                  },
-                  {
-                    "color": "gold",
-                    "text": "Rifter"
-                  }
-                ]
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/yellow"
-                }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
               "function": "minecraft:reference",

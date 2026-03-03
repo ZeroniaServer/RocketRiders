@@ -1,9 +1,10 @@
 [
   {
     "components": {
-      "minecraft:item_name": {
+      "minecraft:custom_name": {
         "bold": true,
         "color": "dark_purple",
+        "italic": false,
         "text": "Infinity Saber"
       }
     },

@@ -18,9 +18,10 @@
                     "none"
                   ]
                 },
-                "minecraft:item_name": {
+                "minecraft:custom_name": {
                   "bold": true,
                   "color": "light_purple",
+                  "italic": false,
                   "text": "Elytra Booster Rocket"
                 }
               },

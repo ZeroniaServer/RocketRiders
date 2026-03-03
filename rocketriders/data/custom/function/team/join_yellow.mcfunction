@@ -1,4 +1,7 @@
-execute store success score $was_in_lobby var if entity @s[predicate=custom:team/lobby]
+execute store success score $was_in_lobby var if predicate custom:team/lobby
 team join rocketriders.sort_001.yellow
+execute if predicate game:gamemode_components/custom_team_colors run function game:assign_custom_team_color
+execute unless predicate game:gamemode_components/custom_team_colors run scoreboard players reset @s custom_team_color
+function custom:update_player_text/self
 scoreboard players set @s was_on_arena_team 2
 execute if score $was_in_lobby var matches 1 store result score $players_in_lobby global if entity @a[x=0,predicate=custom:team/lobby]

@@ -28,7 +28,7 @@ execute if entity @s[tag=YellowWon] run tellraw @a[x=0] ["",{"text":"Team Yellow
 execute if entity @s[tag=BlueWon] unless predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{"text":"Team Blue Won!","color":"blue","bold":true}]
 execute if entity @s[tag=BlueWon] if predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{"text":"Team Red Won!","color":"red","bold":true}]
 # TODO: this should be driven by a gamemode component instead, probably, but this is a quick and dirty fix
-execute if entity @s[tag=BothWon,tag=!duelEnabled] run tellraw @a[x=0] ["",{"text":"Everyone Wins!","color":"green","bold":true}]
+execute if entity @s[tag=BothWon,tag=!duelEnabled,tag=!sandboxEnabled] run tellraw @a[x=0] ["",{"text":"Everyone Wins!","color":"green","bold":true}]
 execute if entity @s[tag=BothWon,tag=duelEnabled] run tellraw @a[x=0] ["",{"text":"It's a Draw!","color":"gray","bold":true}]
 execute if score $playercount CmdData matches 1.. run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Match Statistics:","color":"dark_green","italic":true}]
 

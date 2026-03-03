@@ -40,4 +40,4 @@ tag @s add JustCleared
 function game:tipreset
 
 ##Reset creeper explosion origin uuid map
-data modify storage rocketriders:explosions creeper_to_player_map set value {}
+data remove storage rocketriders:explosions creeper_to_player_map

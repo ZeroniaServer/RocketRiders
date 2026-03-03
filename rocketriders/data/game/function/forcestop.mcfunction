@@ -17,10 +17,7 @@ tag @a[x=0] remove spawnchamp
 schedule clear lobby:cancelsettings/counter
 
 # during match
-execute store success score $forcestop_match var if predicate game:phase/match
-execute if score $forcestop_match var matches 1 run function game:set_phase/match.closing.outcome.review
-execute if score $forcestop_match var matches 1 run scoreboard players set $closing_timer global 568
-execute if score $forcestop_match var matches 1 run return 1
+execute if predicate game:phase/match run return run function game:set_phase/staging.configuration
 
 # during staging
 scoreboard players reset $swap_side global

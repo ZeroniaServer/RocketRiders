@@ -69,7 +69,7 @@
                 {
                   "color": "gray",
                   "italic": false,
-                  "text": "Flight Duration: 1.5 seconds"
+                  "text": "Flight Duration: 1 seconds"
                 }
               ],
               "mode": "append"
@@ -105,7 +105,7 @@
                 {
                   "color": "gray",
                   "italic": false,
-                  "text": "Flight Duration: 1 second"
+                  "text": "Flight Duration: 1.5 second"
                 }
               ],
               "mode": "append"

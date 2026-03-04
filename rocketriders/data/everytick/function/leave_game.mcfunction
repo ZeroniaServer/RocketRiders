@@ -23,6 +23,7 @@ effect give @a[x=0,scores={LeaveGame=1..}] instant_health 1 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] resistance infinite 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] night_vision infinite 100 true
 execute as @a[x=0,scores={LeaveGame=1..},predicate=!custom:team/lobby] run function custom:team/join_lobby
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:reset_inventory
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode survival
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode adventure
 title @a[x=0,scores={LeaveGame=1..}] times 5 30 5

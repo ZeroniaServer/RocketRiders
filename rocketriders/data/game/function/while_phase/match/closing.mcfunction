@@ -16,8 +16,3 @@ execute if score $closing_timer global >= $closing_timer.max_time_before_review 
 scoreboard players operation $max_closing_time var = $closing_timer.max_review_time global
 scoreboard players operation $max_closing_time var += $closing_timer.max_time_before_review global
 execute if score $closing_timer global >= $max_closing_time var run return run function game:set_phase/staging.configuration
-
-## Leave Mid-Match
-execute as @a[scores={LeaveMidgame=1..},predicate=custom:team/any_playing_team] run function game:leave_mid_match
-scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] LeaveMidgame
-scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame

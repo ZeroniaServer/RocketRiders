@@ -3,24 +3,40 @@ execute if score @s entity.age matches 0..49 if predicate custom:periodic_tick/3
 execute if score @s entity.age matches 0 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 2
 
 execute if score @s entity.age matches 4.. positioned ~ ~ ~ unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_wood[axis=y]
+execute if score @s entity.age matches 4 positioned ~ ~ ~-1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 4 positioned ~ ~ ~1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 4.. positioned ~ ~ ~-1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
 execute if score @s entity.age matches 4.. positioned ~ ~ ~1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
 execute if score @s entity.age matches 4 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 2
 
+execute if score @s entity.age matches 9 positioned ~ ~ ~-2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 9 positioned ~ ~ ~2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 9.. positioned ~ ~ ~-2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] replace
 execute if score @s entity.age matches 9.. positioned ~ ~ ~2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] replace
 execute if score @s entity.age matches 9 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 2
 
+execute if score @s entity.age matches 14 positioned ~ ~ ~-3 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 14 positioned ~ ~ ~3 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 14.. positioned ~ ~ ~-3 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
 execute if score @s entity.age matches 14.. positioned ~ ~ ~3 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
 execute if score @s entity.age matches 14 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 1
 
+execute if score @s entity.age matches 19 positioned ~1 ~ ~-1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 19 positioned ~1 ~ ~-2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 19 positioned ~-1 ~ ~1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 19 positioned ~-1 ~ ~2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 19.. positioned ~1 ~ ~-1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
 execute if score @s entity.age matches 19.. positioned ~1 ~ ~-2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 19.. positioned ~-1 ~ ~1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
 execute if score @s entity.age matches 19.. positioned ~-1 ~ ~2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 19 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 1
 
+execute if score @s entity.age matches 24 positioned ~1 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 24 positioned ~2 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 24 positioned ~-1 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 24 positioned ~-2 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 24 positioned ~1 ~ ~-3 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 24 positioned ~-1 ~ ~3 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 24.. positioned ~1 ~ ~ unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
 execute if score @s entity.age matches 24.. positioned ~2 ~ ~ unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] replace
 execute if score @s entity.age matches 24.. positioned ~-1 ~ ~ unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
@@ -29,36 +45,56 @@ execute if score @s entity.age matches 24.. positioned ~1 ~ ~-3 unless block ~ ~
 execute if score @s entity.age matches 24.. positioned ~-1 ~ ~3 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 24 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 1
 
+execute if score @s entity.age matches 29 positioned ~1 ~ ~1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 29 positioned ~2 ~ ~1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 29 positioned ~-1 ~ ~-1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 29 positioned ~-2 ~ ~-1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 29.. positioned ~1 ~ ~1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
 execute if score @s entity.age matches 29.. positioned ~2 ~ ~1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 29.. positioned ~-1 ~ ~-1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
 execute if score @s entity.age matches 29.. positioned ~-2 ~ ~-1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 29 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 1
 
+execute if score @s entity.age matches 34 positioned ~-1 ~ ~-2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 34 positioned ~1 ~ ~2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 34.. positioned ~-1 ~ ~-2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 34.. positioned ~1 ~ ~2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 34 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 1
 
+execute if score @s entity.age matches 39 positioned ~2 ~ ~-1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 39 positioned ~-2 ~ ~1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 39.. positioned ~2 ~ ~-1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 39.. positioned ~-2 ~ ~1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 39 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 1
 
+execute if score @s entity.age matches 44 positioned ~2 ~ ~-2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 44 positioned ~-2 ~ ~2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 44.. positioned ~2 ~ ~-2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
 execute if score @s entity.age matches 44.. positioned ~-2 ~ ~2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
 execute if score @s entity.age matches 44 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 0.6
 
+execute if score @s entity.age matches 49 positioned ~2 ~ ~2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 49 positioned ~-2 ~ ~-2 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 49 positioned ~3 ~ ~-1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 49 positioned ~-3 ~ ~1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 49.. positioned ~2 ~ ~2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
 execute if score @s entity.age matches 49.. positioned ~-2 ~ ~-2 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
 execute if score @s entity.age matches 49.. positioned ~3 ~ ~-1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 49.. positioned ~-3 ~ ~1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 49 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 0.6
 
+execute if score @s entity.age matches 54 positioned ~1 ~ ~3 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 54 positioned ~-1 ~ ~-3 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 54 positioned ~3 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 54 positioned ~-3 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 54.. positioned ~1 ~ ~3 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 54.. positioned ~-1 ~ ~-3 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true] replace
 execute if score @s entity.age matches 54.. positioned ~3 ~ ~ unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
 execute if score @s entity.age matches 54.. positioned ~-3 ~ ~ unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
 execute if score @s entity.age matches 54 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 0
 
+execute if score @s entity.age matches 55 positioned ~3 ~ ~1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if score @s entity.age matches 55 positioned ~-3 ~ ~-1 if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if score @s entity.age matches 55.. positioned ~3 ~ ~1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true]
 execute if score @s entity.age matches 55.. positioned ~-3 ~ ~-1 unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_leaves[persistent=true]
 execute if score @s entity.age matches 55.. run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~2 ~ 1 1 1 1 300

@@ -1,9 +1,4 @@
-## If empty, just say "Waiting for players..."
-execute if predicate game:teams/playing_teams_are_empty run bossbar set rr:startgame color white
-execute if predicate game:teams/playing_teams_are_empty run bossbar set rr:startgame value 0
-execute if predicate game:teams/playing_teams_are_empty run return run bossbar set rr:startgame name "Waiting for players..."
-
-## Otherwise, create a well-worded sentence indicating how many more players are required for each team.
+## Generate a well-worded sentence indicating how many more players are required for each team.
 # calculate bossbar fill amount
 scoreboard players operation $min_players var = $min_players_per_team gamemode_components
 execute unless predicate game:gamemode_components/one_team run scoreboard players operation $min_players var += $min_players_per_team gamemode_components
@@ -40,6 +35,10 @@ execute if predicate game:gamemode_components/one_team if predicate game:gamemod
 execute if predicate game:gamemode_components/one_team run return run bossbar set rr:startgame color blue
 
 ## Two teams
+# Both are empty
+execute if predicate game:teams/playing_teams_are_empty run bossbar set rr:startgame name ["Waiting for",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,score:{name:"$missing_blue_players",objective:"var"}}," ",{score:{name:"$blue_missing_plural",objective:"var"}}, " in each team..."]
+execute if predicate game:teams/playing_teams_are_empty run return run bossbar set rr:startgame color white
+
 # Neither is sufficient
 execute unless predicate game:teams/blue_is_sufficient unless predicate game:teams/yellow_is_sufficient run bossbar set rr:startgame name ["Waiting for",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,score:{name:"$missing_yellow_players",objective:"var"}},{score:{name:"$yellow_more",objective:"var"}}," ",[{score:{name:"#yellow",objective:"text.main_color"}},{score:{name:"#yellow",objective:"text.team_name"}}]," ",{score:{name:"$yellow_missing_plural",objective:"var"}}," and",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,score:{name:"$missing_blue_players",objective:"var"}},{score:{name:"$blue_more",objective:"var"}}," ",[{score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}]," ",{score:{name:"$blue_missing_plural",objective:"var"}},"..."]
 execute unless predicate game:teams/blue_is_sufficient unless predicate game:teams/yellow_is_sufficient run return run bossbar set rr:startgame color white

@@ -2,11 +2,6 @@
 execute unless predicate game:game_rules/impact_utilities/on run return run function entities:type/canopy_projectile/tick/early_impact_no_deploy
 
 ## If impact_utilities is ON
-# Move to the player's position
-tag @s add canopy_projectile.early_impact.this
-execute on origin at @s run tp @e[limit=1,tag=canopy_projectile.early_impact.this] ~ ~ ~
-tag @s remove canopy_projectile.early_impact.this
-
 execute at @s unless block ~ ~-1 ~ #custom:air run return run function entities:type/canopy_projectile/tick/early_impact_no_deploy
 execute at @s if block ~ ~-1 ~ #custom:air run tp @s ~ ~-1 ~
 execute at @s if block ~ ~-1 ~ #custom:air run tp @s ~ ~-1 ~

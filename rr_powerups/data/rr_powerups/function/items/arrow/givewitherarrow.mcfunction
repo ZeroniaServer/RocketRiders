@@ -10,10 +10,10 @@ title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Tipped
 execute if entity @s[scores={HasTippedArrows=4..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[scores={HasTippedArrows=..3},tag=!fullHotbar] actionbar {"text":"Wither Arrows obtained.","color":"light_purple"}
 
-execute if score @s HasArrows matches 0 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_wither {count:4}
-execute if score @s HasArrows matches 1 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_wither {count:3}
-execute if score @s HasArrows matches 2 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_wither {count:2}
-execute if score @s HasArrows matches 3 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_wither {count:1}
+execute if score @s HasTippedArrows matches 0 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_wither {count:4}
+execute if score @s HasTippedArrows matches 1 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_wither {count:3}
+execute if score @s HasTippedArrows matches 2 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_wither {count:2}
+execute if score @s HasTippedArrows matches 3 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_wither {count:1}
 
 execute if entity @s[scores={HasTippedArrows=..3},tag=!fullHotbar,tag=!fullOffhand] at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenTipped

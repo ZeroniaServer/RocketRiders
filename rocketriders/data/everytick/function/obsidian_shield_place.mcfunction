@@ -8,16 +8,40 @@ execute if entity @s[scores={shieldplacement=1}] unless entity @e[type=marker,ta
 execute if entity @s[scores={shieldplacement=1}] run scoreboard players set @e[type=marker,tag=obsidianshield,tag=!blueobsidianshield,tag=!yellowobsidianshield,sort=nearest,limit=1,distance=..0.5] breakobshield 0
 
 #Obsidian Shield deploy animation + sounds
+execute if entity @s[scores={shieldplacement=2}] positioned ~ ~-1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=2}] positioned ~ ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=2}] positioned ~ ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=2}] positioned ~-1 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=2}] positioned ~1 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if entity @s[scores={shieldplacement=2}] run fill ~ ~1 ~ ~ ~-1 ~ crying_obsidian
 execute if entity @s[scores={shieldplacement=2}] run fill ~1 ~ ~ ~-1 ~ ~ crying_obsidian
 execute if entity @s[scores={shieldplacement=2}] run setblock ~ ~ ~ purple_stained_glass_pane[east=true,west=true]
 execute if entity @s[scores={shieldplacement=2}] run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 1
+
+execute if entity @s[scores={shieldplacement=4}] positioned ~-1 ~-1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=4}] positioned ~-1 ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=4}] positioned ~1 ~-1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=4}] positioned ~1 ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if entity @s[scores={shieldplacement=4}] run fill ~1 ~1 ~ ~-1 ~-1 ~ crying_obsidian
 execute if entity @s[scores={shieldplacement=4}] run setblock ~ ~ ~ purple_stained_glass_pane[east=true,west=true]
 execute if entity @s[scores={shieldplacement=4}] run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 1
+
+execute if entity @s[scores={shieldplacement=6}] positioned ~ ~-2 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~ ~2 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~-2 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~2 ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute if entity @s[scores={shieldplacement=6}] run fill ~ ~2 ~ ~ ~-2 ~ crying_obsidian
 execute if entity @s[scores={shieldplacement=6}] run fill ~2 ~ ~ ~-2 ~ ~ crying_obsidian
 execute if entity @s[scores={shieldplacement=6}] run setblock ~ ~ ~ purple_stained_glass_pane[east=true,west=true]
+
+execute if entity @s[scores={shieldplacement=6}] positioned ~-1 ~-2 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~1 ~-2 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~-2 ~-1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~2 ~-1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~-2 ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~2 ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~-1 ~2 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute if entity @s[scores={shieldplacement=6}] positioned ~1 ~2 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 
 #Yellow panes
 execute if entity @s[tag=yellowobalone,scores={shieldplacement=6}] run setblock ~1 ~2 ~ yellow_stained_glass_pane[east=true,west=true]

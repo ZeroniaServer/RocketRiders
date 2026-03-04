@@ -36,7 +36,8 @@ execute if predicate game:gamemode_components/one_team run return run bossbar se
 
 ## Two teams
 # Both are empty
-execute if predicate game:teams/playing_teams_are_empty run bossbar set rr:startgame name ["Waiting for",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,score:{name:"$missing_blue_players",objective:"var"}}," ",{score:{name:"$blue_missing_plural",objective:"var"}}, " in each team..."]
+execute if predicate game:teams/playing_teams_are_empty if score $min_players_per_team gamemode_components matches 1.. run bossbar set rr:startgame name ["Waiting for",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,score:{name:"$missing_blue_players",objective:"var"}}," ",{score:{name:"$blue_missing_plural",objective:"var"}}, " in each team..."]
+execute if predicate game:teams/playing_teams_are_empty unless score $min_players_per_team gamemode_components matches 1.. run bossbar set rr:startgame name ["Waiting for at least one player to join any team..."]
 execute if predicate game:teams/playing_teams_are_empty run return run bossbar set rr:startgame color white
 
 # Neither is sufficient

@@ -8,11 +8,6 @@ scoreboard players reset @s text.accent_color
 
 execute unless predicate custom:team/any_arena_team run return 0
 
-#Main Item
-
-#Custom team colors
-execute if predicate game:gamemode_components/custom_team_colors run return run function custom:update_player_text/self/custom_auto
-
 #Normal team colors
 execute if predicate custom:team/blue run scoreboard players display numberformat @s text.team_name fixed {storage:"rocketriders:teams",nbt:"blue.text.team_name",interpret:true}
 execute if predicate custom:team/yellow run scoreboard players display numberformat @s text.team_name fixed {storage:"rocketriders:teams",nbt:"yellow.text.team_name",interpret:true}
@@ -29,3 +24,7 @@ execute if predicate custom:team/spectator run scoreboard players display number
 execute if predicate custom:team/blue run scoreboard players display numberformat @s text.accent_color fixed {storage:"rocketriders:teams",nbt:"blue.text.accent_color",interpret:true}
 execute if predicate custom:team/yellow run scoreboard players display numberformat @s text.accent_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.accent_color",interpret:true}
 execute if predicate custom:team/spectator run scoreboard players display numberformat @s text.accent_color fixed {color:"gray",text:""}
+
+#Custom team colors
+execute if predicate game:gamemode_components/custom_team_colors run return run function custom:update_player_text/self/custom_auto
+

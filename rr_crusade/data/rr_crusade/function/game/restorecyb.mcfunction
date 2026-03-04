@@ -2,9 +2,9 @@ execute if score $CYBcd crusadehp matches 1.. run scoreboard players set $CYBcd 
 execute unless score $CYBcd crusadehp matches 1.. run scoreboard players remove $CYB crusadehp 5
 execute unless score $CYBcd crusadehp matches 1.. run scoreboard players remove $YellowShield crusadehp 5
 execute unless score $CYBcd crusadehp matches 1.. run scoreboard players add $CYBprecd crusadehp 25
-execute unless score $CYB crusadehp matches 1.. run tellraw @a[x=0,predicate=custom:team/blue] ["\n",{"text":"✔ ","color":"green"},{"text":"Yellow Crystal ","color":"gold"},{"text":"B","bold":true,"color":"yellow"},{"text":" has been destroyed!","color":"gold"}]
-execute unless score $CYB crusadehp matches 1.. run tellraw @a[x=0,predicate=custom:team/yellow] ["\n",{"text":"⚠ ","color":"red"},{"text":"Yellow Crystal ","color":"gold"},{"text":"B","bold":true,"color":"yellow"},{"text":" has been destroyed!","color":"gold"}]
-execute unless score $CYB crusadehp matches 1.. run tellraw @a[x=0,predicate=!custom:team/any_playing_team] ["\n",{"text":"Yellow Crystal ","color":"gold"},{"text":"B","bold":true,"color":"yellow"},{"text":" has been destroyed!","color":"gold"}]
+execute unless score $CYB crusadehp matches 1.. run tellraw @a[x=0,predicate=custom:team/blue] [{score:{name:"#yellow",objective:"text.main_color"}},"\n",{color:"green",text:"✔ "},{score:{name:"#yellow",objective:"text.team_name"}}," Crystal ",[{bold:true,score:{name:"#yellow",objective:"text.accent_color"}},"B"]," has been destroyed!"]
+execute unless score $CYB crusadehp matches 1.. run tellraw @a[x=0,predicate=custom:team/yellow] [{score:{name:"#yellow",objective:"text.main_color"}},"\n",{color:"red",text:"⚠ "},{score:{name:"#yellow",objective:"text.team_name"}}," Crystal ",[{bold:true,score:{name:"#yellow",objective:"text.accent_color"}},"B"]," has been destroyed!"]
+execute unless score $CYB crusadehp matches 1.. run tellraw @a[x=0,predicate=!custom:team/any_playing_team] [{score:{name:"#yellow",objective:"text.main_color"}},"\n",{score:{name:"#yellow",objective:"text.team_name"}}," Crystal ",[{bold:true,score:{name:"#yellow",objective:"text.accent_color"}},"B"]," has been destroyed!"]
 execute unless score $CYB crusadehp matches 1.. as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0
 execute unless score $CYB crusadehp matches 1.. as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:block.glass.break master @s ~ ~ ~ 1 2
 execute unless score $CYB crusadehp matches 1.. as @a[x=0,predicate=custom:team/yellow] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
@@ -24,9 +24,9 @@ execute if score $CYB crusadehp matches 1.. unless score $CYBcd crusadehp matche
 execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. positioned 38 49 37 run playsound minecraft:block.respawn_anchor.deplete master @a[x=0] ~ ~ ~ 2 2
 
 #> Expose Portals
-execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=custom:team/blue] ["\n",{"text":"Both Yellow Crystals have been destroyed!","color":"gold"},{"text":"\nA portal has been exposed; destroy it to win!","color":"yellow","italic":true}]
-execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=custom:team/yellow] ["\n",{"text":"Both of your Crystals have been destroyed!","color":"gold"},{"text":"\nYour portal is no longer protected; don't let it get destroyed!","color":"yellow","italic":true}]
-execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=!custom:team/any_playing_team] ["\n",{"text":"Both Yellow Crystals have been destroyed!","color":"gold"}]
+execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=custom:team/blue] [{score:{name:"#yellow",objective:"text.accent_color"}},"\n",[{score:{name:"#yellow",objective:"text.main_color"}},"Both ",{score:{name:"#yellow",objective:"text.team_name"}}," Crystals have been destroyed!"],{text:"\nA portal has been exposed; destroy it to win!","italic":true}]
+execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=custom:team/yellow] [{score:{name:"#yellow",objective:"text.accent_color"}},"\n",[{score:{name:"#yellow",objective:"text.main_color"}},"Both of your Crystals have been destroyed!"],{text:"\nYour portal is no longer protected; don't let it get destroyed!","italic":true}]
+execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=!custom:team/any_playing_team] [{score:{name:"#yellow",objective:"text.main_color"}},"\nBoth ",{score:{name:"#yellow",objective:"text.team_name"}}," Crystals have been destroyed!"]
 execute if predicate game:yellow_portal_revealed run function rr_crusade:game/cancel_utility
 execute if predicate game:yellow_portal_revealed run fill 4 45 52 20 55 66 minecraft:yellow_stained_glass strict
 execute if predicate game:yellow_portal_revealed run function game:place_portal/yellow

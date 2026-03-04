@@ -1,11 +1,10 @@
 scoreboard players set $flags_captured_by_blue global 0
 scoreboard players set $flags_captured_by_yellow global 0
 scoreboard players set Blue: FlagDisp 0
-execute unless predicate game:gamemode_components/red_for_blue run scoreboard players display name Blue: FlagDisp [{color:"blue",text:"Blue"},{color:"white",text:" has captured 0"}]
-execute if predicate game:gamemode_components/red_for_blue run scoreboard players display name Blue: FlagDisp [{color:"dark_red",text:"Red"},{color:"white",text:" has captured 0"}]
+scoreboard players display name Blue: FlagDisp ["",[{score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}]," has captured 0"]
 scoreboard players display numberformat Blue: FlagDisp blank
 scoreboard players set Yellow: FlagDisp 0
-scoreboard players display name Yellow: FlagDisp [{color:"gold",text:"Yellow"},{color:"white",text:" has captured 0"}]
+scoreboard players display name Yellow: FlagDisp ["",[{score:{name:"#yellow",objective:"text.main_color"}},{score:{name:"#yellow",objective:"text.team_name"}}]," has captured 0"]
 scoreboard players display numberformat Yellow: FlagDisp blank
 scoreboard players set FY1: FlagScore 30
 scoreboard players set FY2: FlagScore 30

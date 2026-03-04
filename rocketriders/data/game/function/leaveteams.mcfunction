@@ -2,12 +2,10 @@
 tag @a[x=0,tag=LeaveTeams] remove force_mount
 execute as @a[x=0,tag=LeaveTeams] run ride @s dismount
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/yellow] add LeavingYellow
-execute as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" left the yellow team!","color":"yellow"}]
+execute as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the yellow team!"]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/blue] add LeavingBlue
-execute unless predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" left the blue team!","color":"dark_aqua"}]
-execute unless predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" left the red team!","color":"red"}]
-execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"blue"},{"text":" left the match!","color":"dark_aqua"}]
-execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] ["",{"selector":"@s","color":"dark_red"},{"text":" left the match!","color":"red"}]
+execute unless predicate game:gamemode_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the blue team!"]
+execute if predicate game:gamemode_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the match!"]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/spectator] add LeavingSpec
 execute as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is no longer spectating the match!","color":"gray"}]
 execute as @a[x=0,tag=LeavingSpec] run tp @s @s

@@ -18,9 +18,8 @@ execute unless score Yellow: RoundsWon matches 2.. if predicate game:modifiers/p
 execute unless score Yellow: RoundsWon matches 2.. as @a[x=0,predicate=custom:team/blue] at @s run stopsound @s
 execute unless score Yellow: RoundsWon matches 2.. as @a[x=0,predicate=custom:team/yellow] at @s run stopsound @s
 execute unless score Yellow: RoundsWon matches 2.. as @a[x=0] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 100 0
-execute unless score Yellow: RoundsWon matches 2.. run title @a[x=0,predicate=!custom:team/lobby] title [{"text":"Team Yellow","bold":false,"color":"gold"},{"text":" scored!","bold":false,"color":"green"}]
-execute unless score Yellow: RoundsWon matches 2.. unless predicate game:gamemode_components/red_for_blue run title @a[x=0,predicate=!custom:team/lobby] subtitle [{"score":{"name":"Yellow:","objective":"RoundsWon"},"bold":true,"color":"gold"},{"text":" - ","bold":true,"color":"green"},{"score":{"name":"Blue:","objective":"RoundsWon"},"bold":true,"color":"blue"}]
-execute unless score Yellow: RoundsWon matches 2.. if predicate game:gamemode_components/red_for_blue run title @a[x=0,predicate=!custom:team/lobby] subtitle [{"score":{"name":"Yellow:","objective":"RoundsWon"},"bold":true,"color":"gold"},{"text":" - ","bold":true,"color":"green"},{"score":{"name":"Blue:","objective":"RoundsWon"},"bold":true,"color":"dark_red"}]
+execute unless score Yellow: RoundsWon matches 2.. run title @a[x=0,predicate=!custom:team/lobby] title [[{score:{name:"#yellow",objective:"text.main_color"}},"Team ",{score:{name:"#yellow",objective:"text.team_name"}}],{color:"green",text:" scored!"}]
+execute unless score Yellow: RoundsWon matches 2.. run title @a[x=0,predicate=!custom:team/lobby] subtitle [{bold:true,color:"green",text:""},[{score:{name:"#yellow",objective:"text.main_color"}},{bold:true,score:{name:"Yellow:",objective:"RoundsWon"}}]," - ",[{score:{name:"#blue",objective:"text.main_color"}},{bold:true,score:{name:"Blue:",objective:"RoundsWon"}}]]
 execute unless score Yellow: RoundsWon matches 2.. run tag @s add FakeGameEnd
 
 execute if score Yellow: RoundsWon matches 2.. run function game:winyellow

@@ -13,7 +13,6 @@ execute if predicate game:modifiers/punchable_tnt/on run kill @e[x=0,predicate=e
 execute as @a[x=0,predicate=custom:team/blue] at @s run stopsound @s
 execute as @a[x=0,predicate=custom:team/yellow] at @s run stopsound @s
 execute as @a[x=0] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 100 0
-title @a[x=0,predicate=!custom:team/lobby] title [{"text":"It's a Draw!","bold":false,"color":"gray"}]
-execute unless predicate game:gamemode_components/red_for_blue run title @a[x=0,predicate=!custom:team/lobby] subtitle [{"score":{"name":"Blue:","objective":"RoundsWon"},"bold":true,"color":"blue"},{"text":" - ","bold":true,"color":"green"},{"score":{"name":"Yellow:","objective":"RoundsWon"},"bold":true,"color":"gold"}]
-execute if predicate game:gamemode_components/red_for_blue run title @a[x=0,predicate=!custom:team/lobby] subtitle [{"score":{"name":"Blue:","objective":"RoundsWon"},"bold":true,"color":"dark_red"},{"text":" - ","bold":true,"color":"green"},{"score":{"name":"Yellow:","objective":"RoundsWon"},"bold":true,"color":"gold"}]
+title @a[x=0,predicate=!custom:team/lobby] title {color:"gray",text:"It's a Draw!"}
+title @a[x=0,predicate=!custom:team/lobby] subtitle [{bold:true,color:"green",text:""},[{score:{name:"#blue",objective:"text.main_color"}},{bold:true,score:{name:"Blue:",objective:"RoundsWon"}}]," - ",[{score:{name:"#yellow",objective:"text.main_color"}},{bold:true,score:{name:"Yellow:",objective:"RoundsWon"}}]]
 tag @s add FakeGameEnd

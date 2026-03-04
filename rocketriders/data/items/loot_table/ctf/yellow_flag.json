@@ -1,0 +1,62 @@
+{
+  "pools": [
+    {
+      "entries": [
+        {
+          "functions": [
+            {
+              "components": {
+                "minecraft:custom_name": {
+                  "bold": true,
+                  "color": "gold",
+                  "italic": false,
+                  "text": "Yellow Flag"
+                },
+                "minecraft:enchantments": {
+                  "minecraft:binding_curse": 1
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:enchantments"
+                  ]
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {}
+                }
+              ],
+              "entity": "this",
+              "function": "minecraft:set_name",
+              "name": [
+                {
+                  "bold": true,
+                  "italic": false,
+                  "score": {
+                    "name": "#yellow",
+                    "objective": "text.main_color"
+                  }
+                },
+                {
+                  "score": {
+                    "name": "#yellow",
+                    "objective": "text.team_name"
+                  }
+                },
+                " Flag"
+              ]
+            }
+          ],
+          "name": "minecraft:yellow_banner",
+          "type": "minecraft:item"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

@@ -1,5 +1,4 @@
-execute unless predicate game:gamemode_components/red_for_blue run title @a[x=0,predicate=custom:team/any_arena_team] title {text:"Blue Portal Broken!",color:"blue"}
-execute if predicate game:gamemode_components/red_for_blue run title @a[x=0,predicate=custom:team/any_arena_team] title {text:"Red Portal Broken!",color:"dark_red"}
+title @a[x=0,predicate=custom:team/any_arena_team] title [{score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}," Portal Broken!"]
 title @a[x=0,predicate=custom:team/blue] subtitle {text:"Protect your last portal!",color:red}
 title @a[x=0,predicate=custom:team/yellow] subtitle {text:"Destroy their last portal!",color:green}
 title @a[x=0,predicate=custom:team/any_arena_team,predicate=!custom:team/any_playing_team] subtitle ""

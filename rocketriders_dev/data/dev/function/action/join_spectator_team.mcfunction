@@ -1,9 +1,8 @@
 execute if predicate custom:team/spectator run return run tellraw @s {color:"red",text:"You are already spectating this match."}
 execute if predicate game:phase/staging/configuration run return run tellraw @s {color:"red",text:"You cannot join a team before game settings are confirmed / voting is complete."}
 
-execute if predicate custom:team/blue unless predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{selector:"@s"},{color:"dark_aqua",text:" left the blue team!"}]
-execute if predicate custom:team/blue if predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{selector:"@s"},{color:"red",text:" left the red team!"}]
-execute if predicate custom:team/yellow run tellraw @a[x=0] ["",{selector:"@s"},{color:"yellow",text:" left the yellow team!"}]
+execute if predicate custom:team/any_playing_team unless predicate game:gamemode_components/one_team run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
+execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/one_team run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the match!"]
 
 execute if predicate game:phase/staging run function custom:team/join_lobby
 execute if predicate game:phase/staging run function everytick:team_count

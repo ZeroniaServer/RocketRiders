@@ -24,9 +24,8 @@ scoreboard players add $playercount CmdData 0
 execute if entity @a[x=0,tag=spawnchamp] run scoreboard players add $playercount CmdData 1
 execute if entity @a[x=0,tag=killschamp] run scoreboard players add $playercount CmdData 1
 execute if entity @a[x=0,tag=deathchamp] run scoreboard players add $playercount CmdData 1
-execute if entity @s[tag=YellowWon] run tellraw @a[x=0] ["",{"text":"Team Yellow Won!","color":"gold","bold":true}]
-execute if entity @s[tag=BlueWon] unless predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{"text":"Team Blue Won!","color":"blue","bold":true}]
-execute if entity @s[tag=BlueWon] if predicate game:gamemode_components/red_for_blue run tellraw @a[x=0] ["",{"text":"Team Red Won!","color":"red","bold":true}]
+execute if entity @s[tag=YellowWon] run tellraw @a[x=0] [{bold:true,score:{name:"#yellow",objective:"text.main_color"}},"Team ",{score:{name:"#yellow",objective:"text.team_name"}}," Won!"]
+execute if entity @s[tag=BlueWon] run tellraw @a[x=0] [{bold:true,score:{name:"#blue",objective:"text.main_color"}},"Team ",{score:{name:"#blue",objective:"text.team_name"}}," Won!"]
 # TODO: this should be driven by a gamemode component instead, probably, but this is a quick and dirty fix
 execute if entity @s[tag=BothWon,tag=!duelEnabled,tag=!sandboxEnabled] run tellraw @a[x=0] ["",{"text":"Everyone Wins!","color":"green","bold":true}]
 execute if entity @s[tag=BothWon,tag=duelEnabled] run tellraw @a[x=0] ["",{"text":"It's a Draw!","color":"gray","bold":true}]

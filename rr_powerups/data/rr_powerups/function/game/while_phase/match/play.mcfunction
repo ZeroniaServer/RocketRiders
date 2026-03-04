@@ -107,13 +107,13 @@ execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatfo
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress color white
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=contested,tag=!BrokenPlatform] run bossbar set rr_powerups:capture_progress color red
 
-execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 0 if score @s captureBlue >= @s captureYellow if score @s captureBlue matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Blue Capturing...","color":"blue","bold":true}]
-execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 0 if score @s captureYellow >= @s captureBlue if score @s captureYellow matches 1.. run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Capturing...","color":"yellow","bold":true}]
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 0 if score @s captureBlue >= @s captureYellow if score @s captureBlue matches 1.. run bossbar set rr_powerups:capture_progress name [{bold:true,score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}," Capturing..."]
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 0 if score @s captureYellow >= @s captureBlue if score @s captureYellow matches 1.. run bossbar set rr_powerups:capture_progress name [{bold:true,score:{name:"#yellow",objective:"text.main_color"}},{score:{name:"#yellow",objective:"text.team_name"}}," Capturing..."]
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 0 if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress name [{"text":"Capture Progress","color":"white","bold":true}]
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=contested,tag=!BrokenPlatform] run bossbar set rr_powerups:capture_progress name [{"text":"Contested!","color":"dark_red","bold":true}]
 
-execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 1 run bossbar set rr_powerups:capture_progress name [{"text":"Blue Captured!","color":"blue","bold":true}]
-execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{"text":"Yellow Captured!","color":"yellow","bold":true}]
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 1 run bossbar set rr_powerups:capture_progress name [{bold:true,score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}," Captured!"]
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform,limit=1] if score @s capturePoint matches 2 run bossbar set rr_powerups:capture_progress name [{bold:true,score:{name:"#yellow",objective:"text.main_color"}},{score:{name:"#yellow",objective:"text.team_name"}}," Captured!"]
 
 execute unless entity @e[x=0,type=marker,tag=captureMiddle,tag=BrokenPlatform] run bossbar set rr_powerups:capture_progress max 100
 

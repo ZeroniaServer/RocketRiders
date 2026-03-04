@@ -3,6 +3,7 @@ execute as @e[x=0,type=bee,tag=!beeChecked,tag=BlueBee] run function custom:team
 execute as @e[x=0,type=bee,tag=!beeChecked,tag=YellowBee] run function custom:team/join_yellow
 execute as @e[x=0,type=bee,tag=!beeChecked] run attribute @s minecraft:follow_range base set 100
 execute as @e[x=0,type=bee,tag=!beeChecked] run data modify entity @s anger_end_time set value 0
+execute as @e[x=0,type=bee,tag=!beeChecked] run data modify entity @s CannotEnterHiveTicks set value 2147483647
 tag @e[x=0,type=bee,tag=!beeChecked] add beeChecked
 
 execute as @e[x=0,type=bee,predicate=custom:in_arena,predicate=custom:team/blue,predicate=!custom:angry_at_yellow_team] if entity @e[limit=1,type=player,gamemode=survival,predicate=custom:team/yellow,predicate=custom:in_arena] at @s run damage @s 0.00001 minecraft:player_attack by @e[limit=1,sort=nearest,type=player,gamemode=survival,predicate=custom:team/yellow,predicate=custom:in_arena]

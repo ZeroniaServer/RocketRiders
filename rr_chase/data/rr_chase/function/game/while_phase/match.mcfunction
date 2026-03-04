@@ -12,8 +12,8 @@ fill -14 64 63 39 74 58 air replace oak_fence
 #Make flag wave around
 scoreboard players add FlagWave FlagScore 1
 
-execute if score FlagWave FlagScore matches 20 run place template game:flag/chequered/stage_1 8 70 63
-execute if score FlagWave FlagScore matches 40.. run place template game:flag/chequered/stage_2 8 70 63
+execute if score FlagWave FlagScore matches 20 run place template game:flag/checkered/stage_1 8 70 63
+execute if score FlagWave FlagScore matches 40.. run place template game:flag/checkered/stage_2 8 70 63
 execute if score FlagWave FlagScore matches 40.. run scoreboard players reset FlagWave FlagScore
 
 #Place stairs

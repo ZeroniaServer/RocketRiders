@@ -14,7 +14,7 @@ fill -11 36 73 35 59 75 air
 
 #Flag placement
 fill 12 64 65 12 71 65 oak_fence replace #custom:air
-place template game:flag/chequered/stage_1 8 70 63
+place template game:flag/checkered/stage_1 8 70 63
 
 #Stair placement
 kill @e[x=0,type=marker,tag=chaseStairs]

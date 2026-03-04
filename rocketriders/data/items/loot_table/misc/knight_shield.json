@@ -9,7 +9,7 @@
                 "minecraft:banner_patterns": [
                   {
                     "color": "light_gray",
-                    "pattern": "minecraft:flower"
+                    "pattern": "minecraft:creeper"
                   },
                   {
                     "color": "light_gray",
@@ -50,7 +50,7 @@
                 "minecraft:banner_patterns": [
                   {
                     "color": "light_blue",
-                    "pattern": "minecraft:flower"
+                    "pattern": "minecraft:flow"
                   },
                   {
                     "color": "light_blue",
@@ -79,7 +79,7 @@
                 "minecraft:banner_patterns": [
                   {
                     "color": "pink",
-                    "pattern": "minecraft:flower"
+                    "pattern": "minecraft:flow"
                   },
                   {
                     "color": "pink",

@@ -4,8 +4,8 @@ fill 38 34 -66 34 63 -57 deepslate_bricks
 fill -14 34 -66 -10 63 -57 deepslate_bricks
 place template game:arena/castle_part_1 -14 58 -66 none none 1 0 strict
 place template game:arena/castle_part_2 34 58 -66 none none 1 0 strict
-execute unless predicate game:gamemode_components/red_for_blue run fill -12 66 -51 36 66 -51 minecraft:blue_wall_banner[facing=south]{patterns:[{color:"light_blue",pattern:"minecraft:flower"},{color:"light_blue",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
-execute if predicate game:gamemode_components/red_for_blue run fill -12 66 -51 36 66 -51 minecraft:red_wall_banner[facing=south]{patterns:[{color:"pink",pattern:"minecraft:flower"},{color:"pink",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
+execute unless predicate game:gamemode_components/red_for_blue run fill -12 66 -51 36 66 -51 minecraft:blue_wall_banner[facing=south]{patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
+execute if predicate game:gamemode_components/red_for_blue run fill -12 66 -51 36 66 -51 minecraft:red_wall_banner[facing=south]{patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]} replace minecraft:white_wall_banner strict
 execute unless predicate game:gamemode_components/red_for_blue run fill 13 63 -57 11 63 -57 cyan_stained_glass
 execute if predicate game:gamemode_components/red_for_blue run fill 13 63 -57 11 63 -57 pink_stained_glass
 execute unless predicate game:gamemode_components/red_for_blue run setblock 24 63 -57 cyan_stained_glass

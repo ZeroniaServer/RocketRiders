@@ -6,10 +6,12 @@ execute if score @s entity.canopy.movement_cooldown matches ..39 if predicate ga
 execute if score @s entity.canopy.movement_cooldown matches ..39 if predicate game:phase/match/play on passengers on origin run ride @a[limit=1,tag=canopy.player] mount @s[predicate=entities:type/canopy/saddle]
 execute if score @s entity.canopy.movement_cooldown matches ..39 if predicate game:phase/match/play on origin run tag @s remove canopy.player
 execute if score @s entity.canopy.movement_cooldown matches ..39 if predicate game:phase/match/play on origin run tag @s[type=player,predicate=custom:alive] add force_mount
+execute if score @s entity.canopy.movement_cooldown matches ..39 if predicate game:phase/match/play on origin run attribute @s minecraft:block_interaction_range modifier add rocketriders:canopy_rider_penalty -1 add_multiplied_total
 
 execute if score @s entity.canopy.movement_cooldown matches 0 on origin run title @s actionbar ""
 
 execute if score @s entity.canopy.movement_cooldown matches 0 at @s[tag=!canopy.small] on origin run playsound minecraft:entity.player.teleport player @s ~ ~2 ~ 1 1 1
+execute if score @s entity.canopy.movement_cooldown matches 40.. on origin run attribute @s minecraft:block_interaction_range modifier remove rocketriders:canopy_rider_penalty
 execute if score @s entity.canopy.movement_cooldown matches 40.. on origin run tag @s remove force_mount
 execute if score @s entity.canopy.movement_cooldown matches 40.. on origin run tp @s ~ ~2 ~
 execute if score @s entity.canopy.movement_cooldown matches 40.. on origin run tp @s @s

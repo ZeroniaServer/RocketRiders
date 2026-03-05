@@ -1,0 +1,31 @@
+[
+  {
+    "components": {
+      "minecraft:dyed_color": 16777215
+    },
+    "function": "minecraft:set_components"
+  },
+  {
+    "conditions": [
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:gamemode_components/custom_team_colors"
+        }
+      }
+    ],
+    "function": "minecraft:reference",
+    "name": "items:set_dye/team"
+  },
+  {
+    "conditions": [
+      {
+        "condition": "minecraft:reference",
+        "name": "game:gamemode_components/custom_team_colors"
+      }
+    ],
+    "function": "minecraft:reference",
+    "name": "items:set_dye/custom_team_colors"
+  }
+]

@@ -19,8 +19,7 @@ execute if predicate game:portal_type/default if predicate game:arena_details/po
 #Disable Blue Obsidian Shields near void
 execute as @e[x=0,type=marker,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Blue Obsidian Shields near spawnpoints
-kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_blue_spawn_zone]
-kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_yellow_spawn_zone]
+kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_any_spawn_zone_lenient]
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=blueobalone] shieldplacement 1
@@ -43,8 +42,7 @@ execute if predicate game:portal_type/default if predicate game:arena_details/po
 #Disable Yellow Obsidian Shields near void
 execute as @e[x=0,type=marker,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
 #Disable Yellow Obsidian Shields near spawnpoints
-kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_blue_spawn_zone]
-kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_yellow_spawn_zone]
+kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_any_spawn_zone_lenient]
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=yellowobalone] shieldplacement 1

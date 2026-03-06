@@ -5,7 +5,6 @@ tag @s remove BlueWon
 tag @s remove YellowWon
 tag @s remove BothWon
 
-execute unless predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/on
 execute if predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/off
 
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_canopy

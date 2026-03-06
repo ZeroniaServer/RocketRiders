@@ -16,3 +16,6 @@ execute if predicate game:phase/staging run tp @a[predicate=custom:team/yellow] 
 execute at @s run playsound entity.enderman.teleport master @s ~ ~ ~
 
 dialog clear @s
+
+execute if score $new_team var matches 0 run tag @s remove JoinBlue
+execute if score $new_team var matches 1 run tag @s remove JoinYellow

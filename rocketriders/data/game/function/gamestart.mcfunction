@@ -30,9 +30,9 @@ execute if predicate game:phase/staging run bossbar set rr:startgame players @a[
 execute as @a[x=0] if score @s joinBlue matches 1 if predicate rr:is_cubekrowd run function servermode:joinblue
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinBlue
 execute unless predicate game:teams/blue_is_joinable run tag @a[x=0] remove JoinBlue
-execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable unless predicate game:gamemode_components/red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable if predicate game:gamemode_components/red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:red_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable if predicate game:gamemode_components/neutral_items at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:white_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 2 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable unless predicate game:match_components/red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable if predicate game:match_components/red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:red_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable if predicate game:match_components/neutral_items at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:white_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 2 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute as @e[x=0,type=marker,tag=join_pad.blue] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinblue
 execute as @a[x=0,tag=tryJoinBlue] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.blue] run tag @s remove tryJoinBlue
 execute as @a[x=0,tag=JoinBlue] run function custom:team/join_blue
@@ -44,13 +44,13 @@ execute if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run fun
 execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
 execute as @a[x=0,tag=JoinBlue] run function custom:reset_inventory
 execute if predicate game:phase/staging run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
-execute if predicate game:phase/staging unless predicate game:gamemode_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
-execute if predicate game:phase/staging if predicate game:gamemode_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the match!"]
+execute if predicate game:phase/staging unless predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
+execute if predicate game:phase/staging if predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the match!"]
 execute if predicate game:phase/staging run tellraw @a[x=0,tag=JoinBlue] [{italic:true,score:{name:"*",objective:"text.accent_color"}},"Fall off the base to return to the Lobby."]
 execute if predicate game:phase/staging run effect give @a[x=0,tag=JoinBlue] resistance infinite 100 true
 execute if predicate game:phase/match run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
-execute if predicate game:phase/match unless predicate game:gamemode_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team! A late arrival, unfortunately."]
-execute if predicate game:phase/match if predicate game:gamemode_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the match! A late arrival, unfortunately."]
+execute if predicate game:phase/match unless predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team! A late arrival, unfortunately."]
+execute if predicate game:phase/match if predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the match! A late arrival, unfortunately."]
 execute if predicate game:phase/match as @a[x=0,tag=JoinBlue] run function game:notify_join
 gamemode adventure @a[x=0,tag=JoinBlue]
 execute if predicate game:phase/match/play run gamemode survival @a[x=0,tag=JoinBlue]
@@ -68,7 +68,7 @@ execute as @a[x=0] if score @s joinYellow matches 1 if predicate rr:is_cubekrowd
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinYellow
 execute unless predicate game:teams/yellow_is_joinable run tag @a[x=0] remove JoinYellow
 execute if predicate custom:periodic_tick/3 if predicate game:teams/yellow_is_joinable at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:yellow_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute if predicate custom:periodic_tick/3 if predicate game:gamemode_components/neutral_items if predicate game:teams/yellow_is_joinable at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:white_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 2 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:match_components/neutral_items if predicate game:teams/yellow_is_joinable at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:white_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 2 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinyellow
 execute as @a[x=0,tag=tryJoinYellow] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.yellow] run tag @s remove tryJoinYellow
 execute as @a[x=0,tag=JoinYellow] run function custom:team/join_yellow
@@ -160,7 +160,7 @@ tag @a[x=0] remove leftBorder
 
 ##Leave Pad
 execute as @a[x=0,gamemode=!spectator,predicate=custom:team/any_playing_team,tag=!doing_facade_parkour] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] run tag @s add LeaveTeams
-execute unless predicate game:gamemode_components/custom_leave_handling run function game:leaveteams
+execute unless predicate game:match_components/custom_leave_handling run function game:leaveteams
 
 ##Facade Parkour
 execute if predicate game:phase/staging as @a[x=-101,y=197,z=68,dx=12,dy=8,dz=19,gamemode=!spectator,predicate=custom:team/any_playing_team,tag=!doing_facade_parkour,predicate=custom:stepping_on_player_head] run tag @s add doing_facade_parkour

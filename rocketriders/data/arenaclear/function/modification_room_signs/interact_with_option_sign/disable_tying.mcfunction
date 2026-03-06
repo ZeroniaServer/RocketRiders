@@ -2,7 +2,7 @@
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1
 
 # overrides
-execute if predicate game:gamemode_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Game Rules are not adjustable in this gamemode."}
+execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Game Rules are not adjustable in this gamemode."}
 execute if predicate game:game_rules/disable_tying/forced_on if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run return run tellraw @s {color:"dark_gray",italic:true,text:"Overtime is incompatible with this gamemode."}
 execute if predicate game:game_rules/disable_tying/forced_on run return run tellraw @s {color:"dark_gray",italic:true,text:"Tiebreakers are incompatible with this gamemode."}
 execute if predicate game:game_rules/disable_tying/forced_off if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run return run tellraw @s {color:"dark_gray",italic:true,text:"Overtime is required in this gamemode."}

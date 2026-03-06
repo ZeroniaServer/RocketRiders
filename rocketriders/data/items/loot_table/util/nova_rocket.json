@@ -135,14 +135,14 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
+                    "name": "game:match_components/neutral_items"
                   }
                 },
                 {
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/red_for_blue"
+                    "name": "game:match_components/red_for_blue"
                   }
                 },
                 {
@@ -196,12 +196,12 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
+                    "name": "game:match_components/neutral_items"
                   }
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/red_for_blue"
+                  "name": "game:match_components/red_for_blue"
                 },
                 {
                   "condition": "minecraft:reference",
@@ -254,7 +254,7 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/neutral_items"
+                    "name": "game:match_components/neutral_items"
                   }
                 },
                 {

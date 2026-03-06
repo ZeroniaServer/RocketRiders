@@ -11,7 +11,7 @@ tag @s[tag=runobshields] remove runobshields
 function everytick:splash/simulate
 
 # lava splash
-execute if predicate game:gamemode_components/has_powerups run function everytick:lava_splash/simulate
+execute if predicate game:match_components/has_powerups run function everytick:lava_splash/simulate
 
 # bees
-execute if predicate game:gamemode_components/has_powerups if entity @e[limit=1,x=0,type=bee] run function everytick:bees
+execute if predicate game:match_components/has_powerups if entity @e[limit=1,x=0,type=bee] run function everytick:bees

@@ -10,7 +10,7 @@ execute if score @s dev matches 1 at @s run function custom:show_dialog {dialog:
 execute if score @s dev matches 2 at @s run function dev:action/force_stop
 execute if score @s dev matches 3 at @s run function dev:action/force_start
 execute if score @s dev matches 4 at @s run function dev:action/join_or_leave
-execute if score @s dev matches 5 at @s run function game:gamemode_components_ui/show_dialog
+execute if score @s dev matches 5 at @s run function game:match_components_ui/show_dialog
 #execute if score @s dev matches 6 at @s run dialog show @s dev:quick_actions/switch_team
 execute if score @s dev matches 7 at @s run function servermode:default
 execute if score @s dev matches 8 at @s run function servermode:enabled

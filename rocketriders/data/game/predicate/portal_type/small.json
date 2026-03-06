@@ -1,13 +1,13 @@
 [
   {
     "condition": "minecraft:reference",
-    "name": "game:gamemode_components/small_portals"
+    "name": "game:match_components/small_portals"
   },
   {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:gamemode_components/no_portals"
+      "name": "game:match_components/no_portals"
     }
   }
 ]

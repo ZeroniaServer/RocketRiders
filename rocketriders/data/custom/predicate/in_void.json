@@ -19,7 +19,7 @@
           "condition": "minecraft:inverted",
           "term": {
             "condition": "minecraft:reference",
-            "name": "game:gamemode_components/lower_void"
+            "name": "game:match_components/lower_void"
           }
         },
         {

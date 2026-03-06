@@ -23,7 +23,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:gamemode_components/one_team"
+      "name": "game:match_components/one_team"
     }
   }
 ]

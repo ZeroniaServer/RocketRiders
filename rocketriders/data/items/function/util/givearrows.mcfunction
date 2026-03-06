@@ -1,9 +1,9 @@
 ##Gives executor Arrows
 #Antidupe check - Arrows are an exception for stacking in modes that limit arrows (disable_arrow_stacking).
 execute store result score @s[tag=!itemDeducted] HasArrows run clear @s arrow 0
-execute if predicate game:game_rules/item_stacking/on unless predicate game:gamemode_components/disable_arrow_stacking run scoreboard players operation @s HasArrows %= $64 constant
-execute if predicate game:game_rules/item_stacking/on unless predicate game:gamemode_components/disable_arrow_stacking if entity @s[scores={HasArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
-execute if predicate game:game_rules/item_stacking/on unless predicate game:gamemode_components/disable_arrow_stacking run scoreboard players set @s HasArrows 0
+execute if predicate game:game_rules/item_stacking/on unless predicate game:match_components/disable_arrow_stacking run scoreboard players operation @s HasArrows %= $64 constant
+execute if predicate game:game_rules/item_stacking/on unless predicate game:match_components/disable_arrow_stacking if entity @s[scores={HasArrows=1..63},tag=fullHotbar] run tag @s remove fullHotbar
+execute if predicate game:game_rules/item_stacking/on unless predicate game:match_components/disable_arrow_stacking run scoreboard players set @s HasArrows 0
 execute unless predicate game:game_rules/item_stacking/on if entity @s[scores={HasArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving

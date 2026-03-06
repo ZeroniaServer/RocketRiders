@@ -27,7 +27,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/red_for_blue"
+                  "name": "game:match_components/red_for_blue"
                 }
               ],
               "function": "minecraft:set_item",

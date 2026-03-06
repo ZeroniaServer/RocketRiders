@@ -64,7 +64,7 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/red_for_blue"
+                    "name": "game:match_components/red_for_blue"
                   }
                 },
                 {
@@ -91,7 +91,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/red_for_blue"
+                  "name": "game:match_components/red_for_blue"
                 },
                 {
                   "condition": "minecraft:reference",

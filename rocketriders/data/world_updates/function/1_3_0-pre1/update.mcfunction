@@ -365,11 +365,11 @@ fill -101 212 59 -89 212 97 minecraft:barrier strict
 
 # Join pad lighting blocks
 setblock -83 208 78 minecraft:pearlescent_froglight[axis=y]
-execute unless predicate game:gamemode_components/red_for_blue run setblock -80 211 62 minecraft:sea_lantern
-execute if predicate game:gamemode_components/red_for_blue run setblock -80 211 62 minecraft:shroomlight
-execute unless predicate game:gamemode_components/one_team run setblock -80 211 94 minecraft:ochre_froglight[axis=y]
-execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run setblock -80 211 94 minecraft:sea_lantern
-execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run setblock -80 211 94 minecraft:shroomlight
+execute unless score $red_for_blue gamemode_components matches 1 run setblock -80 211 62 minecraft:sea_lantern
+execute if score $red_for_blue gamemode_components matches 1 run setblock -80 211 62 minecraft:shroomlight
+execute unless score $one_team gamemode_components matches 1 run setblock -80 211 94 minecraft:ochre_froglight[axis=y]
+execute if score $one_team gamemode_components matches 1 unless score $red_for_blue gamemode_components matches 1 run setblock -80 211 94 minecraft:sea_lantern
+execute if score $one_team gamemode_components matches 1 if score $red_for_blue gamemode_components matches 1 run setblock -80 211 94 minecraft:shroomlight
 
 # Remove Marker tag from credit armour stands
 execute as @e[x=0,type=armor_stand,tag=creditsAS] run data merge entity @s {Marker:false,DisabledSlots:4144959,Invulnerable:true,NoGravity:true}

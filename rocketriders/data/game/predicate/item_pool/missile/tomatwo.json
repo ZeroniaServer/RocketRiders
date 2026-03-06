@@ -5,7 +5,7 @@
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
-        "score": "gamemode_components",
+        "score": "match_components",
         "target": {
           "name": "$item_pool.missile/tomatwo",
           "type": "minecraft:fixed"
@@ -20,7 +20,7 @@
           "condition": "minecraft:value_check",
           "range": 0,
           "value": {
-            "score": "gamemode_components",
+            "score": "match_components",
             "target": {
               "name": "$item_pool.missile/tomatwo",
               "type": "minecraft:fixed"

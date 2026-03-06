@@ -8,9 +8,9 @@ execute unless entity @s[tag=UnableSpawn] if predicate custom:near_or_above_roof
 execute unless entity @s[tag=UnableSpawn] if predicate custom:near_or_above_roof run tag @s add UnableSpawn
 
 #Enemy spawn zone prevention
-execute unless predicate game:gamemode_components/neutral_items if entity @a[limit=1,tag=placer,predicate=custom:team/blue] positioned ~ ~1.2 ~ if predicate custom:near_yellow_spawn_zone run tag @s add prevention_reason.near_spawn_zone
-execute unless predicate game:gamemode_components/neutral_items if entity @a[limit=1,tag=placer,predicate=custom:team/yellow] positioned ~ ~1.2 ~ if predicate custom:near_blue_spawn_zone run tag @s add prevention_reason.near_spawn_zone
-execute if predicate game:gamemode_components/neutral_items positioned ~ ~1.2 ~ if predicate custom:near_blue_spawn_zone run tag @s add prevention_reason.near_spawn_zone
+execute unless predicate game:match_components/neutral_items if entity @a[limit=1,tag=placer,predicate=custom:team/blue] positioned ~ ~1.2 ~ if predicate custom:near_yellow_spawn_zone run tag @s add prevention_reason.near_spawn_zone
+execute unless predicate game:match_components/neutral_items if entity @a[limit=1,tag=placer,predicate=custom:team/yellow] positioned ~ ~1.2 ~ if predicate custom:near_blue_spawn_zone run tag @s add prevention_reason.near_spawn_zone
+execute if predicate game:match_components/neutral_items positioned ~ ~1.2 ~ if predicate custom:near_blue_spawn_zone run tag @s add prevention_reason.near_spawn_zone
 execute if entity @s[tag=prevention_reason.near_spawn_zone] run tag @s add UnableSpawn
 
 #Give back if prevented
@@ -24,7 +24,7 @@ execute at @s[tag=UnableSpawn] run return run function items:prevention/giveback
 execute if predicate game:achievements_can_be_awarded run advancement grant @a[limit=1,tag=placer,tag=!had_veteran_achievement] only achievements:rr_challenges/veteran FireballSpawned
 
 scoreboard players set $team var -1
-execute unless predicate game:gamemode_components/neutral_items as @a[limit=1,x=0,tag=placer] if predicate custom:team/any_playing_team store success score $team var unless predicate custom:team/blue
+execute unless predicate game:match_components/neutral_items as @a[limit=1,x=0,tag=placer] if predicate custom:team/any_playing_team store success score $team var unless predicate custom:team/blue
 
 execute at @s unless block ~ ~ ~ #custom:nonsolid run tp @s ~ ~1 ~
 execute at @s run playsound minecraft:item.flintandsteel.use master @a[distance=..6] ~ ~ ~ 1 1

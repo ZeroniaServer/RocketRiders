@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "range": 1,
+  "value": {
+    "score": "match_components",
+    "target": {
+      "name": "$portal_crystal_protection",
+      "type": "minecraft:fixed"
+    },
+    "type": "minecraft:score"
+  }
+}

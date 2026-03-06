@@ -64,4 +64,4 @@ execute as @a[x=0,predicate=items:elytra/elytra,predicate=custom:team/any_playin
 
 # Thrown items
 execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init
-execute if predicate game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit as @e[x=0,type=item,predicate=custom:item_entity_contains_any_arrow] at @s run function everytick:item_entity/while_contents_is_any_arrow
+execute if predicate game:match_components/arrow_pickup/only_crusade_mode_archer_kit as @e[x=0,type=item,predicate=custom:item_entity_contains_any_arrow] at @s run function everytick:item_entity/while_contents_is_any_arrow

@@ -17,8 +17,8 @@ team add rocketriders.sort_200.lobby "Lobby"
 team add rocketriders.sort_999.developer "Developer"
 
 team modify rocketriders.sort_200.lobby color green
-execute unless predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color blue
-execute if predicate game:gamemode_components/red_for_blue run team modify rocketriders.sort_000.blue color dark_red
+execute unless predicate game:match_components/red_for_blue run team modify rocketriders.sort_000.blue color blue
+execute if predicate game:match_components/red_for_blue run team modify rocketriders.sort_000.blue color dark_red
 team modify rocketriders.sort_001.yellow color gold
 team modify rocketriders.sort_100.spectator color dark_gray
 team modify rocketriders.sort_999.developer color dark_green
@@ -50,7 +50,7 @@ scoreboard objectives add global dummy
 scoreboard objectives add var dummy
 
 scoreboard objectives add config dummy
-scoreboard objectives add gamemode_components dummy
+scoreboard objectives add match_components dummy
 
 scoreboard objectives add constant dummy
 scoreboard players set $ticks_per_second constant 20

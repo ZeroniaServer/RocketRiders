@@ -8,8 +8,8 @@ execute if predicate game:modifiers/explosive/on unless predicate game:modifiers
 execute if predicate game:modifiers/clutter_collector/on run data modify entity @s ExplosionPower set value 0
 
 scoreboard players set $team var -1
-execute unless predicate game:gamemode_components/neutral_items if predicate entities:origin_team/blue run scoreboard players set $team var 0
-execute unless predicate game:gamemode_components/neutral_items if predicate entities:origin_team/yellow run scoreboard players set $team var 1
+execute unless predicate game:match_components/neutral_items if predicate entities:origin_team/blue run scoreboard players set $team var 0
+execute unless predicate game:match_components/neutral_items if predicate entities:origin_team/yellow run scoreboard players set $team var 1
 execute if score $team var matches -1 unless predicate entities:origin_team/none run data modify entity @s data.origin_team set value "none"
 
 ## Summon brain

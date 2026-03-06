@@ -7,10 +7,10 @@ fill -101 200 84 -99 202 84 yellow_stained_glass
 fill -91 200 84 -89 202 84 yellow_stained_glass
 fill -99 200 72 -101 202 72 bedrock
 fill -91 200 72 -89 202 72 bedrock
-execute unless predicate game:gamemode_components/red_for_blue run fill -99 200 73 -101 202 73 blue_stained_glass
-execute if predicate game:gamemode_components/red_for_blue run fill -99 200 73 -101 202 73 red_stained_glass
-execute unless predicate game:gamemode_components/red_for_blue run fill -91 200 73 -89 202 73 blue_stained_glass
-execute if predicate game:gamemode_components/red_for_blue run fill -91 200 73 -89 202 73 red_stained_glass
+execute unless predicate game:match_components/red_for_blue run fill -99 200 73 -101 202 73 blue_stained_glass
+execute if predicate game:match_components/red_for_blue run fill -99 200 73 -101 202 73 red_stained_glass
+execute unless predicate game:match_components/red_for_blue run fill -91 200 73 -89 202 73 blue_stained_glass
+execute if predicate game:match_components/red_for_blue run fill -91 200 73 -89 202 73 red_stained_glass
 
 # Portal area
 fill -94 198 91 -96 200 94 minecraft:crying_obsidian

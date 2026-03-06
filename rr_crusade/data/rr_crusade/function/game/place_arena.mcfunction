@@ -13,13 +13,13 @@ scoreboard players set @e[x=0,type=marker,tag=crusadeWall] CmdData 20
 fill 20 45 52 4 55 66 minecraft:crying_obsidian
 #A
 fill 41 52 -39 35 52 -37 bedrock
-execute unless predicate game:gamemode_components/red_for_blue run fill 36 47 -39 40 51 -35 minecraft:blue_stained_glass
-execute if predicate game:gamemode_components/red_for_blue run fill 36 47 -39 40 51 -35 minecraft:red_stained_glass
+execute unless predicate game:match_components/red_for_blue run fill 36 47 -39 40 51 -35 minecraft:blue_stained_glass
+execute if predicate game:match_components/red_for_blue run fill 36 47 -39 40 51 -35 minecraft:red_stained_glass
 fill 36 51 -40 40 47 -40 light[level=1]
 #B
 fill -11 52 -39 -17 52 -37 bedrock
-execute unless predicate game:gamemode_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass
-execute if predicate game:gamemode_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:red_stained_glass
+execute unless predicate game:match_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass
+execute if predicate game:match_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:red_stained_glass
 fill -16 51 -40 -12 47 -40 light[level=1]
 
 #> Blue

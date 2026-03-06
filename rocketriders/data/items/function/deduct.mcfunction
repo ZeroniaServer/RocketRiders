@@ -6,8 +6,8 @@ execute if items entity @s contents arrow on origin store result score @s[tag=!i
 execute if items entity @s contents arrow on origin run scoreboard players operation @s HasArrows += $itemcount CmdData
 
 #Extra for Canopies since they can stack to 2 or 3 in CTF
-execute if predicate game:gamemode_components/additional_canopy_available if items entity @s contents ender_pearl as @a[x=0,predicate=custom:matches_uuid,tag=!itemDeducted] store result score @s HasPlat run clear @s ender_pearl 0
-execute if predicate game:gamemode_components/additional_canopy_available if items entity @s contents ender_pearl run scoreboard players operation @p[predicate=custom:matches_uuid] HasPlat += $itemcount CmdData
+execute if predicate game:match_components/additional_canopy_available if items entity @s contents ender_pearl as @a[x=0,predicate=custom:matches_uuid,tag=!itemDeducted] store result score @s HasPlat run clear @s ender_pearl 0
+execute if predicate game:match_components/additional_canopy_available if items entity @s contents ender_pearl run scoreboard players operation @p[predicate=custom:matches_uuid] HasPlat += $itemcount CmdData
 
 #Extra for Surprise Eggs since they can stack to 3
 execute if items entity @s contents #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] on origin store result score @s[tag=!itemDeducted] HasSurprise run clear @s #custom:missile[custom_data~{spawn_egg:{type:"surprise_missile"}}] 0

@@ -7,9 +7,9 @@ execute as @a[x=0,tag=Winner] run title @s times 5 30 5
 #If you want to add more splashes just increase this number.
 execute store result score $winsplash CmdData run random value 0..81
 
-execute if score $winsplash CmdData matches 18 if predicate game:gamemode_components/one_team run scoreboard players set $winsplash CmdData 0
-execute if score $winsplash CmdData matches 29 if predicate game:gamemode_components/one_team run scoreboard players set $winsplash CmdData 0
-execute if score $winsplash CmdData matches 38 if predicate game:gamemode_components/one_team run scoreboard players set $winsplash CmdData 0
+execute if score $winsplash CmdData matches 18 if predicate game:match_components/one_team run scoreboard players set $winsplash CmdData 0
+execute if score $winsplash CmdData matches 29 if predicate game:match_components/one_team run scoreboard players set $winsplash CmdData 0
+execute if score $winsplash CmdData matches 38 if predicate game:match_components/one_team run scoreboard players set $winsplash CmdData 0
 execute if score $winsplash CmdData matches 57 if entity Evtema3 run scoreboard players set $winsplash CmdData 0
 
 #Add splashes here (just copy paste the line and change the score)

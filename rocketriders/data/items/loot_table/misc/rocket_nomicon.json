@@ -57,7 +57,7 @@
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/main_item/rocket_nomicon"
+                  "name": "game:match_components/main_item/rocket_nomicon"
                 }
               ],
               "function": "minecraft:set_custom_data",

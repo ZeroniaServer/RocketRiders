@@ -8,7 +8,7 @@
           "condition": "minecraft:value_check",
           "range": 1,
           "value": {
-            "score": "gamemode_components",
+            "score": "match_components",
             "target": {
               "name": "$duel_settings_locked",
               "type": "minecraft:fixed"
@@ -26,7 +26,7 @@
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
-        "score": "gamemode_components",
+        "score": "match_components",
         "target": {
           "name": "$config_override.impact_utilities",
           "type": "minecraft:fixed"

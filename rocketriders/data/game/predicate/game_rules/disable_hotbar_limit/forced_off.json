@@ -5,7 +5,7 @@
       "condition": "minecraft:value_check",
       "range": -1,
       "value": {
-        "score": "gamemode_components",
+        "score": "match_components",
         "target": {
           "name": "$config_override.disable_hotbar_limit",
           "type": "minecraft:fixed"

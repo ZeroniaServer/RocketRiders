@@ -14,7 +14,7 @@
         },
         {
           "condition": "minecraft:reference",
-          "name": "game:gamemode_components/lock_playing_teams_during_match"
+          "name": "game:match_components/lock_playing_teams_during_match"
         }
       ]
     }
@@ -42,7 +42,7 @@
           "condition": "minecraft:inverted",
           "term": {
             "condition": "minecraft:reference",
-            "name": "game:gamemode_components/one_team"
+            "name": "game:match_components/one_team"
           }
         },
         {

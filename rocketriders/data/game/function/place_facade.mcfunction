@@ -2,43 +2,43 @@
 kill @e[x=0,tag=facade_entity]
 
 #Join pad colors
-execute unless predicate game:gamemode_components/one_team run fill -82 204 92 -78 212 96 minecraft:yellow_concrete replace #custom:concrete strict
-execute unless predicate game:gamemode_components/one_team run setblock -80 211 94 minecraft:ochre_froglight[axis=y] strict
-execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:blue_concrete replace #custom:concrete strict
-execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run setblock -80 211 94 minecraft:sea_lantern strict
-execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run setblock -80 211 94 minecraft:shroomlight strict
+execute unless predicate game:match_components/one_team run fill -82 204 92 -78 212 96 minecraft:yellow_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/one_team run setblock -80 211 94 minecraft:ochre_froglight[axis=y] strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:blue_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run setblock -80 211 94 minecraft:sea_lantern strict
+execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run setblock -80 211 94 minecraft:shroomlight strict
 
-execute unless predicate game:gamemode_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:blue_concrete replace #custom:concrete strict
-execute unless predicate game:gamemode_components/red_for_blue run setblock -80 211 62 minecraft:sea_lantern
-execute if predicate game:gamemode_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:gamemode_components/red_for_blue run setblock -80 211 62 minecraft:shroomlight
+execute unless predicate game:match_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:blue_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/red_for_blue run setblock -80 211 62 minecraft:sea_lantern
+execute if predicate game:match_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:match_components/red_for_blue run setblock -80 211 62 minecraft:shroomlight
 
 #Bridge colors
-execute unless predicate game:gamemode_components/one_team run place template lobby:left_bridge/yellow -76 200 86 none none 1 0 strict
-execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run place template lobby:left_bridge/blue -76 200 86 none none 1 0 strict
-execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run place template lobby:left_bridge/red -76 200 86 none none 1 0 strict
+execute unless predicate game:match_components/one_team run place template lobby:left_bridge/yellow -76 200 86 none none 1 0 strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run place template lobby:left_bridge/blue -76 200 86 none none 1 0 strict
+execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run place template lobby:left_bridge/red -76 200 86 none none 1 0 strict
 
-execute unless predicate game:gamemode_components/red_for_blue run place template lobby:right_bridge/blue -76 200 64 none none 1 0 strict
-execute if predicate game:gamemode_components/red_for_blue run place template lobby:right_bridge/red -76 200 64 none none 1 0 strict
+execute unless predicate game:match_components/red_for_blue run place template lobby:right_bridge/blue -76 200 64 none none 1 0 strict
+execute if predicate game:match_components/red_for_blue run place template lobby:right_bridge/red -76 200 64 none none 1 0 strict
 
 #Lobby underside colors (blue)
-execute unless predicate game:gamemode_components/red_for_blue run fill -82 186 66 -81 201 77 minecraft:blue_terracotta replace #custom:terracotta strict
-execute unless predicate game:gamemode_components/red_for_blue run fill -83 187 70 -83 200 77 minecraft:blue_concrete replace #custom:concrete strict
-execute unless predicate game:gamemode_components/red_for_blue run fill -84 190 75 -84 199 77 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
-execute if predicate game:gamemode_components/red_for_blue run fill -82 186 66 -81 201 77 minecraft:red_terracotta replace #custom:terracotta strict
-execute if predicate game:gamemode_components/red_for_blue run fill -83 187 70 -83 200 77 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:gamemode_components/red_for_blue run fill -84 190 75 -84 199 77 minecraft:red_concrete_powder replace #custom:concrete_powder strict
+execute unless predicate game:match_components/red_for_blue run fill -82 186 66 -81 201 77 minecraft:blue_terracotta replace #custom:terracotta strict
+execute unless predicate game:match_components/red_for_blue run fill -83 187 70 -83 200 77 minecraft:blue_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/red_for_blue run fill -84 190 75 -84 199 77 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
+execute if predicate game:match_components/red_for_blue run fill -82 186 66 -81 201 77 minecraft:red_terracotta replace #custom:terracotta strict
+execute if predicate game:match_components/red_for_blue run fill -83 187 70 -83 200 77 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:match_components/red_for_blue run fill -84 190 75 -84 199 77 minecraft:red_concrete_powder replace #custom:concrete_powder strict
 #Lobby underside colors (yellow)
-execute unless predicate game:gamemode_components/one_team run fill -82 186 79 -81 201 90 minecraft:yellow_terracotta replace #custom:terracotta strict
-execute unless predicate game:gamemode_components/one_team run fill -83 187 79 -83 200 86 minecraft:yellow_concrete replace #custom:concrete strict
-execute unless predicate game:gamemode_components/one_team run fill -84 190 79 -84 199 81 minecraft:yellow_concrete_powder replace #custom:concrete_powder strict
-execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run fill -82 186 79 -81 201 90 minecraft:blue_terracotta replace #custom:terracotta strict
-execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run fill -83 187 79 -83 200 86 minecraft:blue_concrete replace #custom:concrete strict
-execute if predicate game:gamemode_components/one_team unless predicate game:gamemode_components/red_for_blue run fill -84 190 79 -84 199 81 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
-execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run fill -82 186 79 -81 201 90 minecraft:red_terracotta replace #custom:terracotta strict
-execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run fill -83 187 79 -83 200 86 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:gamemode_components/one_team if predicate game:gamemode_components/red_for_blue run fill -84 190 79 -84 199 81 minecraft:red_concrete_powder replace #custom:concrete_powder strict
+execute unless predicate game:match_components/one_team run fill -82 186 79 -81 201 90 minecraft:yellow_terracotta replace #custom:terracotta strict
+execute unless predicate game:match_components/one_team run fill -83 187 79 -83 200 86 minecraft:yellow_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/one_team run fill -84 190 79 -84 199 81 minecraft:yellow_concrete_powder replace #custom:concrete_powder strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -82 186 79 -81 201 90 minecraft:blue_terracotta replace #custom:terracotta strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -83 187 79 -83 200 86 minecraft:blue_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -84 190 79 -84 199 81 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
+execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run fill -82 186 79 -81 201 90 minecraft:red_terracotta replace #custom:terracotta strict
+execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run fill -83 187 79 -83 200 86 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run fill -84 190 79 -84 199 81 minecraft:red_concrete_powder replace #custom:concrete_powder strict
 # Fix for terracotta above underside region
 fill -81 199 86 -81 198 81 minecraft:lime_terracotta replace #custom:terracotta
 
@@ -50,10 +50,10 @@ fill -89 202 66 -101 211 66 minecraft:air replace minecraft:barrier strict
 fill -101 207 69 -89 186 87 air replace light_gray_stained_glass
 
 #Clear pregame powerup platform, crystal crafters, mini platforms, flags, and castles
-execute unless predicate game:gamemode_components/red_for_blue run fill -101 195 65 -89 201 64 minecraft:blue_stained_glass
-execute if predicate game:gamemode_components/red_for_blue run fill -101 195 65 -89 201 64 minecraft:red_stained_glass
-execute unless predicate game:gamemode_components/red_for_blue run fill -89 201 63 -101 195 62 minecraft:cyan_stained_glass
-execute if predicate game:gamemode_components/red_for_blue run fill -89 201 63 -101 195 62 minecraft:pink_stained_glass
+execute unless predicate game:match_components/red_for_blue run fill -101 195 65 -89 201 64 minecraft:blue_stained_glass
+execute if predicate game:match_components/red_for_blue run fill -101 195 65 -89 201 64 minecraft:red_stained_glass
+execute unless predicate game:match_components/red_for_blue run fill -89 201 63 -101 195 62 minecraft:cyan_stained_glass
+execute if predicate game:match_components/red_for_blue run fill -89 201 63 -101 195 62 minecraft:pink_stained_glass
 fill -101 201 60 -89 195 61 minecraft:white_stained_glass
 fill -89 195 91 -101 201 92 minecraft:yellow_stained_glass
 fill -101 201 93 -89 195 94 minecraft:orange_stained_glass
@@ -79,16 +79,16 @@ fill -100 202 61 -100 203 61 air
 fill -90 202 61 -90 203 61 air
 
 # Frames & Portals
-execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:obsidian strict
-execute if predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:bedrock strict
+execute unless predicate game:match_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:obsidian strict
+execute if predicate game:match_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:bedrock strict
 execute unless predicate game:portal_type/default run fill -89 195 59 -101 201 59 air strict
 execute if predicate game:portal_type/default run fill -101 195 59 -89 201 59 minecraft:nether_portal[axis=x] strict
 execute if predicate game:portal_type/default run fill -95 195 59 -95 201 59 minecraft:obsidian strict
 execute if predicate game:portal_type/small run fill -97 196 59 -93 199 59 minecraft:obsidian strict
 execute if predicate game:portal_type/small run fill -96 197 59 -94 198 59 minecraft:nether_portal[axis=x] strict
 
-execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:obsidian strict
-execute if predicate game:gamemode_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:bedrock strict
+execute unless predicate game:match_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:obsidian strict
+execute if predicate game:match_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:bedrock strict
 execute unless predicate game:portal_type/default run fill -101 195 97 -89 201 97 air strict
 execute if predicate game:portal_type/default run fill -101 195 97 -89 201 97 minecraft:nether_portal[axis=x] strict
 execute if predicate game:portal_type/default run fill -95 201 97 -95 195 97 minecraft:obsidian strict
@@ -96,22 +96,22 @@ execute if predicate game:portal_type/small run fill -97 196 97 -93 199 97 minec
 execute if predicate game:portal_type/small run fill -96 197 97 -94 198 97 minecraft:nether_portal[axis=x] strict
 
 # Bedrock Frames
-execute if predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 bedrock
-execute if predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 bedrock
-execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 barrier
-execute unless predicate game:gamemode_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 barrier
+execute if predicate game:match_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 bedrock
+execute if predicate game:match_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 bedrock
+execute unless predicate game:match_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 barrier
+execute unless predicate game:match_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 barrier
 
 # Flags
-execute if predicate game:gamemode_components/has_flags run setblock -90 202 95 purple_stained_glass
-execute if predicate game:gamemode_components/has_flags run setblock -100 202 95 purple_stained_glass
-execute if predicate game:gamemode_components/has_flags run setblock -90 202 61 purple_stained_glass
-execute if predicate game:gamemode_components/has_flags run setblock -100 202 61 purple_stained_glass
-execute if predicate game:gamemode_components/has_flags positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute if predicate game:gamemode_components/has_flags positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute if predicate game:gamemode_components/has_flags unless predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
-execute if predicate game:gamemode_components/has_flags if predicate game:gamemode_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
-execute if predicate game:gamemode_components/has_flags unless predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
-execute if predicate game:gamemode_components/has_flags if predicate game:gamemode_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
+execute if predicate game:match_components/has_flags run setblock -90 202 95 purple_stained_glass
+execute if predicate game:match_components/has_flags run setblock -100 202 95 purple_stained_glass
+execute if predicate game:match_components/has_flags run setblock -90 202 61 purple_stained_glass
+execute if predicate game:match_components/has_flags run setblock -100 202 61 purple_stained_glass
+execute if predicate game:match_components/has_flags positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:match_components/has_flags positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:match_components/has_flags unless predicate game:match_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute if predicate game:match_components/has_flags if predicate game:match_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
+execute if predicate game:match_components/has_flags unless predicate game:match_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute if predicate game:match_components/has_flags if predicate game:match_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
 
 # Remove Chase Flag
 setblock -95 202 95 air
@@ -126,10 +126,10 @@ execute if predicate game:modifiers/molerat/on run fill -101 207 69 -89 186 87 l
 #Hardcore pregame queue
 execute if predicate game:modifiers/hardcore/on run fill -89 201 63 -101 195 65 air
 execute if predicate game:modifiers/hardcore/on run fill -89 201 93 -101 195 91 air
-execute if predicate game:modifiers/hardcore/on unless predicate game:gamemode_components/red_for_blue run fill -89 201 62 -101 195 62 blue_stained_glass
-execute if predicate game:modifiers/hardcore/on if predicate game:gamemode_components/red_for_blue run fill -89 201 62 -101 195 62 red_stained_glass
-execute if predicate game:modifiers/hardcore/on unless predicate game:gamemode_components/red_for_blue run fill -89 201 61 -101 195 61 cyan_stained_glass
-execute if predicate game:modifiers/hardcore/on if predicate game:gamemode_components/red_for_blue run fill -89 201 61 -101 195 61 pink_stained_glass
+execute if predicate game:modifiers/hardcore/on unless predicate game:match_components/red_for_blue run fill -89 201 62 -101 195 62 blue_stained_glass
+execute if predicate game:modifiers/hardcore/on if predicate game:match_components/red_for_blue run fill -89 201 62 -101 195 62 red_stained_glass
+execute if predicate game:modifiers/hardcore/on unless predicate game:match_components/red_for_blue run fill -89 201 61 -101 195 61 cyan_stained_glass
+execute if predicate game:modifiers/hardcore/on if predicate game:match_components/red_for_blue run fill -89 201 61 -101 195 61 pink_stained_glass
 execute if predicate game:modifiers/hardcore/on run fill -89 201 60 -101 195 60 white_stained_glass
 execute if predicate game:modifiers/hardcore/on run fill -89 201 94 -101 195 94 yellow_stained_glass
 execute if predicate game:modifiers/hardcore/on run fill -89 201 95 -101 195 95 orange_stained_glass
@@ -141,10 +141,10 @@ execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facad
 execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 run fill -89 201 94 -101 195 93 orange_stained_glass
 execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 run fill -89 201 91 -101 195 92 yellow_stained_glass
 execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 run fill -89 201 60 -101 195 61 white_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 unless predicate game:gamemode_components/red_for_blue run fill -89 201 62 -101 195 63 cyan_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 if predicate game:gamemode_components/red_for_blue run fill -89 201 62 -101 195 63 pink_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 unless predicate game:gamemode_components/red_for_blue run fill -89 201 65 -101 195 64 blue_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 if predicate game:gamemode_components/red_for_blue run fill -89 201 65 -101 195 64 red_stained_glass
+execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 unless predicate game:match_components/red_for_blue run fill -89 201 62 -101 195 63 cyan_stained_glass
+execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 if predicate game:match_components/red_for_blue run fill -89 201 62 -101 195 63 pink_stained_glass
+execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 unless predicate game:match_components/red_for_blue run fill -89 201 65 -101 195 64 blue_stained_glass
+execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 if predicate game:match_components/red_for_blue run fill -89 201 65 -101 195 64 red_stained_glass
 execute unless predicate game:modifiers/hardcore/on run scoreboard players reset $was_hardcore_facade global
 
 ## Castle

@@ -3,7 +3,7 @@
   "terms": [
     {
       "condition": "minecraft:reference",
-      "name": "game:gamemode_components/duel_settings_locked"
+      "name": "game:match_components/duel_settings_locked"
     },
     {
       "condition": "minecraft:value_check",
@@ -11,7 +11,7 @@
         "min": 5
       },
       "value": {
-        "score": "gamemode_components",
+        "score": "match_components",
         "target": {
           "name": "$config_override.item_delay",
           "type": "minecraft:fixed"
@@ -21,7 +21,7 @@
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:gamemode_components/no_item_timer"
+      "name": "game:match_components/no_item_timer"
     },
     {
       "condition": "minecraft:reference",

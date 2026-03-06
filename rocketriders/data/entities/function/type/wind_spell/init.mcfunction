@@ -8,7 +8,7 @@ execute if entity @s[predicate=entities:type/wind_spell] run return fail
 data modify entity @s data.wind_spell set value {body:{}}
 
 scoreboard players set $team var -1
-execute unless predicate game:gamemode_components/neutral_items on origin if predicate custom:team/any_playing_team store success score $team var unless predicate custom:team/blue
+execute unless predicate game:match_components/neutral_items on origin if predicate custom:team/any_playing_team store success score $team var unless predicate custom:team/blue
 execute if score $team var matches -1 run data modify entity @s data.origin_team set value "none"
 execute if score $team var matches 0 run data modify entity @s data.origin_team set value "blue"
 execute if score $team var matches 1 run data modify entity @s data.origin_team set value "yellow"

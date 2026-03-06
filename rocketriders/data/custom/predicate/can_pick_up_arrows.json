@@ -33,7 +33,7 @@
         "condition": "minecraft:inverted",
         "term": {
           "condition": "minecraft:reference",
-          "name": "game:gamemode_components/arrow_pickup/only_crusade_mode_archer_kit"
+          "name": "game:match_components/arrow_pickup/only_crusade_mode_archer_kit"
         }
       },
       {

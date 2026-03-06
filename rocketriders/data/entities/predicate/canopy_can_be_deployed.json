@@ -67,7 +67,7 @@
           "condition": "minecraft:inverted",
           "term": {
             "condition": "minecraft:reference",
-            "name": "game:gamemode_components/neutral_items"
+            "name": "game:match_components/neutral_items"
           }
         }
       ]

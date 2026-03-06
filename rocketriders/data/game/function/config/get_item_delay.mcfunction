@@ -1,8 +1,8 @@
-execute if predicate game:gamemode_components/duel_settings_locked run return 15
+execute if predicate game:match_components/duel_settings_locked run return 15
 
-execute if predicate game:gamemode_components/no_item_timer run return 31536000
+execute if predicate game:match_components/no_item_timer run return 31536000
 
-execute if score $config_override.item_delay gamemode_components matches 5.. run return run scoreboard players get $config_override.item_delay gamemode_components
+execute if score $config_override.item_delay match_components matches 5.. run return run scoreboard players get $config_override.item_delay match_components
 
 execute if predicate game:modifiers/minute_mix/on run return 60
 

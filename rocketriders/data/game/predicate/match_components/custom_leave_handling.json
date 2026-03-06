@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "range": 1,
+  "value": {
+    "score": "match_components",
+    "target": {
+      "name": "$custom_leave_handling",
+      "type": "minecraft:fixed"
+    },
+    "type": "minecraft:score"
+  }
+}

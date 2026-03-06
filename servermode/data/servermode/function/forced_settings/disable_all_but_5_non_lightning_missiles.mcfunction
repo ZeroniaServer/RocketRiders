@@ -1,18 +1,18 @@
 # List missiles that are forcibly enabled
-execute if score $item_pool.missile/ant gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"ant",name:"A.N.T.",category:"normal"}
-execute if score $item_pool.missile/blade gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"blade",name:"Blade",category:"normal"}
-execute if score $item_pool.missile/catapult gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"catapult",name:"Catapult",category:"normal"}
-execute if score $item_pool.missile/chronullifier gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"chronullifier",name:"Chronullifier",category:"normal"}
-execute if score $item_pool.missile/citadel gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"citadel",name:"Citadel",category:"normal"}
-execute if score $item_pool.missile/elder_guardian gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"elder_guardian",name:"Elder Guardian",category:"normal"}
-execute if score $item_pool.missile/gemini gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"gemini",name:"Gemini",category:"normal"}
-execute if score $item_pool.missile/lifter gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"lifter",name:"Lifter",category:"normal"}
-execute if score $item_pool.missile/slasher gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"slasher",name:"Slasher",category:"normal"}
-execute if score $item_pool.missile/tomatwo gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"tomatwo",name:"TomaTwo",category:"normal"}
-execute if score $item_pool.missile/auxiliary gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"auxiliary",name:"Auxiliary",category:"heavy"}
-execute if score $item_pool.missile/juggerbuster gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"juggerbuster",name:"Juggerbuster",category:"heavy"}
-execute if score $item_pool.missile/rifter gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"rifter",name:"Rifter",category:"heavy"}
-execute if score $item_pool.missile/warhead gamemode_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"warhead",name:"Warhead",category:"heavy"}
+execute if score $item_pool.missile/ant match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"ant",name:"A.N.T.",category:"normal"}
+execute if score $item_pool.missile/blade match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"blade",name:"Blade",category:"normal"}
+execute if score $item_pool.missile/catapult match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"catapult",name:"Catapult",category:"normal"}
+execute if score $item_pool.missile/chronullifier match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"chronullifier",name:"Chronullifier",category:"normal"}
+execute if score $item_pool.missile/citadel match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"citadel",name:"Citadel",category:"normal"}
+execute if score $item_pool.missile/elder_guardian match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"elder_guardian",name:"Elder Guardian",category:"normal"}
+execute if score $item_pool.missile/gemini match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"gemini",name:"Gemini",category:"normal"}
+execute if score $item_pool.missile/lifter match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"lifter",name:"Lifter",category:"normal"}
+execute if score $item_pool.missile/slasher match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"slasher",name:"Slasher",category:"normal"}
+execute if score $item_pool.missile/tomatwo match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"tomatwo",name:"TomaTwo",category:"normal"}
+execute if score $item_pool.missile/auxiliary match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"auxiliary",name:"Auxiliary",category:"heavy"}
+execute if score $item_pool.missile/juggerbuster match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"juggerbuster",name:"Juggerbuster",category:"heavy"}
+execute if score $item_pool.missile/rifter match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"rifter",name:"Rifter",category:"heavy"}
+execute if score $item_pool.missile/warhead match_components matches 1 run data modify storage rocketriders:main forced_settings.missiles append value {id:"warhead",name:"Warhead",category:"heavy"}
 
 # If there are already 5 or more, stop here
 execute store result score $missiles_force_enabled var if data storage rocketriders:main forced_settings.missiles[]

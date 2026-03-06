@@ -11,7 +11,7 @@
         "condition": "minecraft:inverted",
         "term": {
           "condition": "minecraft:reference",
-          "name": "game:gamemode_components/custom_team_colors"
+          "name": "game:match_components/custom_team_colors"
         }
       }
     ],
@@ -22,7 +22,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       }
     ],
     "function": "minecraft:reference",

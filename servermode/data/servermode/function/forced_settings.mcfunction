@@ -15,14 +15,14 @@ execute unless predicate game:item_pool/arrow run tellraw @a[x=0] ["",{bold:true
 
 ## Utilities
 # Disable either Shield or Obsidian Shield (if required)
-execute if predicate game:gamemode_components/cubekrowd/disable_shield_or_obsidian_shield store result score $choice var run random value 0..1
-execute if predicate game:gamemode_components/cubekrowd/disable_shield_or_obsidian_shield if score $choice var matches 0 run scoreboard players set $disable_item/shield config 1
-execute if predicate game:gamemode_components/cubekrowd/disable_shield_or_obsidian_shield if score $choice var matches 1 run scoreboard players set $disable_item/obsidian_shield config 1
+execute if predicate game:match_components/cubekrowd/disable_shield_or_obsidian_shield store result score $choice var run random value 0..1
+execute if predicate game:match_components/cubekrowd/disable_shield_or_obsidian_shield if score $choice var matches 0 run scoreboard players set $disable_item/shield config 1
+execute if predicate game:match_components/cubekrowd/disable_shield_or_obsidian_shield if score $choice var matches 1 run scoreboard players set $disable_item/obsidian_shield config 1
 
 # Disable either Nova Rocket or Fireball (if required)
-execute if predicate game:gamemode_components/cubekrowd/disable_nova_rocket_or_fireball store result score $choice var run random value 0..1
-execute if predicate game:gamemode_components/cubekrowd/disable_nova_rocket_or_fireball if score $choice var matches 0 run scoreboard players set $disable_item/fireball config 1
-execute if predicate game:gamemode_components/cubekrowd/disable_nova_rocket_or_fireball if score $choice var matches 1 run scoreboard players set $disable_item/nova_rocket config 1
+execute if predicate game:match_components/cubekrowd/disable_nova_rocket_or_fireball store result score $choice var run random value 0..1
+execute if predicate game:match_components/cubekrowd/disable_nova_rocket_or_fireball if score $choice var matches 0 run scoreboard players set $disable_item/fireball config 1
+execute if predicate game:match_components/cubekrowd/disable_nova_rocket_or_fireball if score $choice var matches 1 run scoreboard players set $disable_item/nova_rocket config 1
 
 # Announce extra utils
 data modify storage rocketriders:main forced_settings.utilities set value []
@@ -36,13 +36,13 @@ tellraw @a[x=0] ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple"
 data modify storage rocketriders:main forced_settings.missiles set value []
 
 # Disable all but 5 non-lightning missiles (if required)
-execute if predicate game:gamemode_components/cubekrowd/disable_all_but_5_non_lightning_missiles run function servermode:forced_settings/disable_all_but_5_non_lightning_missiles
-execute unless predicate game:gamemode_components/cubekrowd/disable_all_but_5_non_lightning_missiles run function servermode:forced_settings/list_enabled_non_lightning_missiles
+execute if predicate game:match_components/cubekrowd/disable_all_but_5_non_lightning_missiles run function servermode:forced_settings/disable_all_but_5_non_lightning_missiles
+execute unless predicate game:match_components/cubekrowd/disable_all_but_5_non_lightning_missiles run function servermode:forced_settings/list_enabled_non_lightning_missiles
 
 # Disable one lightning missile (if required)
-execute if predicate game:gamemode_components/cubekrowd/disable_one_lightning_missile store result score $choice var run random value 0..1
-execute if predicate game:gamemode_components/cubekrowd/disable_one_lightning_missile if score $choice var matches 0 run scoreboard players set $disable_item/missile/thunderbolt config 1
-execute if predicate game:gamemode_components/cubekrowd/disable_one_lightning_missile if score $choice var matches 1 run scoreboard players set $disable_item/missile/hurricane config 1
+execute if predicate game:match_components/cubekrowd/disable_one_lightning_missile store result score $choice var run random value 0..1
+execute if predicate game:match_components/cubekrowd/disable_one_lightning_missile if score $choice var matches 0 run scoreboard players set $disable_item/missile/thunderbolt config 1
+execute if predicate game:match_components/cubekrowd/disable_one_lightning_missile if score $choice var matches 1 run scoreboard players set $disable_item/missile/hurricane config 1
 execute if predicate game:item_pool/missile/thunderbolt run data modify storage rocketriders:main forced_settings.missiles append value {name:"Thunderbolt",category:"lightning"}
 execute if predicate game:item_pool/missile/hurricane run data modify storage rocketriders:main forced_settings.missiles append value {name:"Hurricane",category:"lightning"}
 

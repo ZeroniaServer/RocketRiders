@@ -1,4 +1,4 @@
-execute if predicate game:gamemode_components/red_for_blue run return run function rr_powerups:everytick/red_for_blue_platform
+execute if predicate game:match_components/red_for_blue run return run function rr_powerups:everytick/red_for_blue_platform
 
 setblock ~ ~-1 ~ sea_lantern
 

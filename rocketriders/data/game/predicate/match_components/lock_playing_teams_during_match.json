@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "range": 1,
+  "value": {
+    "score": "match_components",
+    "target": {
+      "name": "$lock_playing_teams_during_match",
+      "type": "minecraft:fixed"
+    },
+    "type": "minecraft:score"
+  }
+}

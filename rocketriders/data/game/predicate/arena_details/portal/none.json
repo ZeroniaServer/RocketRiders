@@ -3,11 +3,11 @@
   "terms": [
     {
       "condition": "minecraft:reference",
-      "name": "game:gamemode_components/arena/no_portal_details"
+      "name": "game:match_components/arena/no_portal_details"
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:gamemode_components/no_portals"
+      "name": "game:match_components/no_portals"
     },
     {
       "condition": "minecraft:inverted",

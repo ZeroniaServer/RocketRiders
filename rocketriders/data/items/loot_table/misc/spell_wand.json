@@ -68,7 +68,7 @@
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/main_item/crusade_kit_dependent"
+                  "name": "game:match_components/main_item/crusade_kit_dependent"
                 }
               ],
               "function": "minecraft:set_custom_data",
@@ -159,14 +159,14 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/custom_team_colors"
+                    "name": "game:match_components/custom_team_colors"
                   }
                 },
                 {
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/red_for_blue"
+                    "name": "game:match_components/red_for_blue"
                   }
                 },
                 {
@@ -185,12 +185,12 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/custom_team_colors"
+                    "name": "game:match_components/custom_team_colors"
                   }
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/red_for_blue"
+                  "name": "game:match_components/red_for_blue"
                 },
                 {
                   "condition": "minecraft:reference",
@@ -208,7 +208,7 @@
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:gamemode_components/custom_team_colors"
+                    "name": "game:match_components/custom_team_colors"
                   }
                 },
                 {

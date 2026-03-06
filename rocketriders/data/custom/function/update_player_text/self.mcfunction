@@ -26,5 +26,5 @@ execute if predicate custom:team/yellow run scoreboard players display numberfor
 execute if predicate custom:team/spectator run scoreboard players display numberformat @s text.accent_color fixed {color:"gray",text:""}
 
 #Custom team colors
-execute if predicate game:gamemode_components/custom_team_colors run return run function custom:update_player_text/self/custom_auto
+execute if predicate game:match_components/custom_team_colors run return run function custom:update_player_text/self/custom_auto
 

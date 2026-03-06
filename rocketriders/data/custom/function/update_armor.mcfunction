@@ -19,24 +19,24 @@ execute if predicate custom:team/lobby run return run loot replace entity @s arm
 # Hobbit Modifier
 execute if predicate custom:team/any_playing_team if predicate game:modifiers/hobbits/on unless predicate custom:invisible run loot replace block 0 184 -16 container.3 loot modifiers:hobbit_head
 # Generic Gear
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/generic run loot replace block 0 184 -16 container.0 loot items:armor/generic_gear/boots
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/generic run loot replace block 0 184 -16 container.1 loot items:armor/generic_gear/leggings
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/generic run loot replace block 0 184 -16 container.2 loot items:armor/generic_gear/chestplate
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/generic run loot replace block 0 184 -16 container.0 loot items:armor/generic_gear/boots
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/generic run loot replace block 0 184 -16 container.1 loot items:armor/generic_gear/leggings
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/generic run loot replace block 0 184 -16 container.2 loot items:armor/generic_gear/chestplate
 # Swap Gear
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/swap run loot replace block 0 184 -16 container.0 3 loot items:armor/swap_gear/all
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/swap run loot replace block 0 184 -16 container.0 3 loot items:armor/swap_gear/all
 # Crusade Gear
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/archer/boots
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/archer/leggings
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/archer/chestplate
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/archer/helmet
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/knight/boots
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/knight/leggings
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/knight/chestplate
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/knight/helmet
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/mage/boots
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/mage/leggings
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/mage/chestplate
-execute if predicate custom:team/any_playing_team if predicate game:gamemode_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/mage/helmet
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/archer/boots
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/archer/leggings
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/archer/chestplate
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/archer/helmet
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/knight/boots
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/knight/leggings
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/knight/chestplate
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/knight/helmet
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/mage/boots
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/mage/leggings
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/mage/chestplate
+execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/mage/helmet
 
 # Rank Boots
 execute unless function game:norankboots run loot replace block 0 184 -16 container.0 loot items:armor/rank_boots
@@ -50,10 +50,10 @@ execute if predicate custom:team/any_playing_team if predicate game:phase/match/
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:invisible run execute store result storage rocketriders:main update_armor.random_asset_id_2 int 1 run random value 0..2147483646
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:invisible run function custom:__impl__/update_armor/make_invisible with storage rocketriders:main update_armor
 # CTF Flag
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:gamemode_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFB1] run loot replace block 0 184 -16 container.3 loot items:ctf/blue_flag
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:gamemode_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFB2] run loot replace block 0 184 -16 container.3 loot items:ctf/blue_flag
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:gamemode_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFY1] run loot replace block 0 184 -16 container.3 loot items:ctf/yellow_flag
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:gamemode_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFY2] run loot replace block 0 184 -16 container.3 loot items:ctf/yellow_flag
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFB1] run loot replace block 0 184 -16 container.3 loot items:ctf/blue_flag
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFB2] run loot replace block 0 184 -16 container.3 loot items:ctf/blue_flag
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFY1] run loot replace block 0 184 -16 container.3 loot items:ctf/yellow_flag
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFY2] run loot replace block 0 184 -16 container.3 loot items:ctf/yellow_flag
 # Game Ending
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Winner] run loot replace block 0 184 -16 container.2 loot items:ending/celebratory_elytra
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Loser] run loot replace block 0 184 -16 container.3 loot items:ending/loser_banner

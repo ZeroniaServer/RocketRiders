@@ -6,7 +6,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -25,7 +25,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -44,7 +44,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -63,7 +63,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -82,7 +82,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -101,7 +101,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -120,7 +120,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -139,7 +139,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -158,7 +158,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -177,7 +177,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -196,7 +196,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",
@@ -215,7 +215,7 @@
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "game:gamemode_components/custom_team_colors"
+        "name": "game:match_components/custom_team_colors"
       },
       {
         "condition": "minecraft:entity_scores",

@@ -49,7 +49,7 @@
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/decreased_icbm_flight_duration"
+                  "name": "game:match_components/decreased_icbm_flight_duration"
                 }
               ],
               "function": "minecraft:set_lore",
@@ -82,7 +82,7 @@
                       "condition": "minecraft:inverted",
                       "term": {
                         "condition": "minecraft:reference",
-                        "name": "game:gamemode_components/decreased_icbm_flight_duration"
+                        "name": "game:match_components/decreased_icbm_flight_duration"
                       }
                     }
                   ]

@@ -1,6 +1,6 @@
 execute if predicate custom:team/yellow run return run tellraw @s [{color:"red",text:"You are already on the "},{score:{name:"@s",objective:"text.team_name_lowercase"}}," team"]
 execute if predicate game:phase/staging/configuration run return run tellraw @s {color:"red",text:"You cannot join a team before game settings are confirmed / voting is complete."}
-execute if predicate game:gamemode_components/one_team run return run tellraw @s {color:"red",text:"There is no yellow team in this game mode."}
+execute if predicate game:match_components/one_team run return run tellraw @s {color:"red",text:"There is no yellow team in this game mode."}
 
 execute if predicate custom:team/blue run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
 execute if predicate custom:team/spectator run tellraw @a[x=0] ["",{selector:"@s"},{color:"gray",text:" is no longer spectating the match!"}]

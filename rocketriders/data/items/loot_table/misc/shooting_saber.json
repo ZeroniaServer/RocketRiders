@@ -65,11 +65,11 @@
                   "terms": [
                     {
                       "condition": "minecraft:reference",
-                      "name": "game:gamemode_components/main_item/shooting_saber"
+                      "name": "game:match_components/main_item/shooting_saber"
                     },
                     {
                       "condition": "minecraft:reference",
-                      "name": "game:gamemode_components/main_item/crusade_kit_dependent"
+                      "name": "game:match_components/main_item/crusade_kit_dependent"
                     }
                   ]
                 }
@@ -101,7 +101,7 @@
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:gamemode_components/decreased_shooting_saber_attack_damage"
+                  "name": "game:match_components/decreased_shooting_saber_attack_damage"
                 }
               ],
               "function": "minecraft:set_components"

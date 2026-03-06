@@ -3,6 +3,8 @@ execute if score $server_mode global matches 2 run return run tellraw @s [{"text
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
 execute unless score $server_mode global matches 2 run schedule function game:forcestop 2t append
 scoreboard players set $server_mode global 2
+scoreboard players set $max_players config 2
+function game:config/reset
 #tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add noYZELO
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add stopIfEmpty
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting

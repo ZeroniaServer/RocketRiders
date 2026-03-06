@@ -1,7 +1,6 @@
 execute if score $server_mode global matches 1 run return run tellraw @s [{"text":"Vote Server Mode is already enabled!","color":"red"}]
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PlayerCap 6
 execute if score $server_mode global matches 2 run schedule function servermode:enabled 1t
 scoreboard players set $server_mode global 1
 scoreboard players set $max_players config 12

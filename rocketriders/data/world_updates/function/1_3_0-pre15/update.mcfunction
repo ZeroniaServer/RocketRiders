@@ -15,3 +15,6 @@ execute if predicate rr:server_mode/cubekrowd_custom run scoreboard players set 
 scoreboard objectives remove gamemode_components
 scoreboard objectives add match_components dummy
 function game:reset_match_components
+
+# remove unused scoreboard objectives
+scoreboard objectives remove PlayerCap

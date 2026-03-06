@@ -1,5 +1,4 @@
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add SMSwitch
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] PlayerCap 6
 scoreboard players set $server_mode global 0
 scoreboard players reset $max_players config
 function game:config/reset

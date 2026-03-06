@@ -196,7 +196,6 @@ scoreboard objectives add FellVoid dummy
 scoreboard objectives add CreditCycle dummy
 scoreboard objectives add RNGmax dummy
 scoreboard objectives add RNGscore dummy
-scoreboard objectives add PlayerCap dummy
 scoreboard objectives add WinStreak dummy
 scoreboard objectives add HasFlag dummy
 scoreboard objectives add refreshsigns dummy

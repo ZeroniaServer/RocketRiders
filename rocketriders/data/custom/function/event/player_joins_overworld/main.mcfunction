@@ -55,3 +55,7 @@ data modify storage rocketriders:main player_monitoring.entity_data.data.player_
 data modify storage rocketriders:main player_monitoring.entity_data.data.player_monitoring.name set from storage rocketriders:main player_monitoring.text_component.hover_event.name
 data modify storage rocketriders:main player_monitoring.entity_data.CustomName[1] set from storage rocketriders:main player_monitoring.text_component.hover_event.name
 execute positioned 25.5 184.5 -5.5 run function custom:summon_persistent_marker_aec {modifiers:{nbt:{Tags:["player_monitoring"]},run:"data modify entity @s {} merge from storage rocketriders:main player_monitoring.entity_data"}}
+
+# Set play time saving delays
+scoreboard players set #last play_time_save_cooldown -1
+execute in minecraft:overworld as @a[x=0] store result score @s play_time_save_cooldown run scoreboard players add #last play_time_save_cooldown 1

@@ -20,5 +20,37 @@ $execute if score @s fireballKill matches 1.. store result storage rocketriders.
 $execute if score @s minedTNT matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.total_tnt_mined int 1 run scoreboard players get @s minedTNT
 $execute if score @s useful matches 1.. store result storage rocketriders.data:playerdata players."$(UUID)".data.total_primed_tnt_splashed int 1 run scoreboard players get @s useful
 
+$execute if score @s player_statistics.chase_play_time matches 20..2559 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.chase byte 0.05 run scoreboard players get @s player_statistics.chase_play_time
+$execute if score @s player_statistics.chase_play_time matches 2560..655359 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.chase short 0.05 run scoreboard players get @s player_statistics.chase_play_time
+$execute if score @s player_statistics.chase_play_time matches 655360.. store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.chase int 0.05 run scoreboard players get @s player_statistics.chase_play_time
+
+$execute if score @s player_statistics.crusade_play_time matches 20..2559 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.crusade byte 0.05 run scoreboard players get @s player_statistics.crusade_play_time
+$execute if score @s player_statistics.crusade_play_time matches 2560..655359 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.crusade short 0.05 run scoreboard players get @s player_statistics.crusade_play_time
+$execute if score @s player_statistics.crusade_play_time matches 655360.. store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.crusade int 0.05 run scoreboard players get @s player_statistics.crusade_play_time
+
+$execute if score @s player_statistics.ctf_play_time matches 20..2559 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.ctf byte 0.05 run scoreboard players get @s player_statistics.ctf_play_time
+$execute if score @s player_statistics.ctf_play_time matches 2560..655359 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.ctf short 0.05 run scoreboard players get @s player_statistics.ctf_play_time
+$execute if score @s player_statistics.ctf_play_time matches 655360.. store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.ctf int 0.05 run scoreboard players get @s player_statistics.ctf_play_time
+
+$execute if score @s player_statistics.duel_play_time matches 20..2559 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.duel byte 0.05 run scoreboard players get @s player_statistics.duel_play_time
+$execute if score @s player_statistics.duel_play_time matches 2560..655359 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.duel short 0.05 run scoreboard players get @s player_statistics.duel_play_time
+$execute if score @s player_statistics.duel_play_time matches 655360.. store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.duel int 0.05 run scoreboard players get @s player_statistics.duel_play_time
+
+$execute if score @s player_statistics.normal_play_time matches 20..2559 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.normal byte 0.05 run scoreboard players get @s player_statistics.normal_play_time
+$execute if score @s player_statistics.normal_play_time matches 2560..655359 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.normal short 0.05 run scoreboard players get @s player_statistics.normal_play_time
+$execute if score @s player_statistics.normal_play_time matches 655360.. store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.normal int 0.05 run scoreboard players get @s player_statistics.normal_play_time
+
+$execute if score @s player_statistics.powerups_play_time matches 20..2559 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.powerups byte 0.05 run scoreboard players get @s player_statistics.powerups_play_time
+$execute if score @s player_statistics.powerups_play_time matches 2560..655359 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.powerups short 0.05 run scoreboard players get @s player_statistics.powerups_play_time
+$execute if score @s player_statistics.powerups_play_time matches 655360.. store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.powerups int 0.05 run scoreboard players get @s player_statistics.powerups_play_time
+
+$execute if score @s player_statistics.sandbox_play_time matches 20..2559 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.sandbox byte 0.05 run scoreboard players get @s player_statistics.sandbox_play_time
+$execute if score @s player_statistics.sandbox_play_time matches 2560..655359 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.sandbox short 0.05 run scoreboard players get @s player_statistics.sandbox_play_time
+$execute if score @s player_statistics.sandbox_play_time matches 655360.. store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.sandbox int 0.05 run scoreboard players get @s player_statistics.sandbox_play_time
+
+$execute if score @s player_statistics.swap_play_time matches 20..2559 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.swap byte 0.05 run scoreboard players get @s player_statistics.swap_play_time
+$execute if score @s player_statistics.swap_play_time matches 2560..655359 store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.swap short 0.05 run scoreboard players get @s player_statistics.swap_play_time
+$execute if score @s player_statistics.swap_play_time matches 655360.. store result storage rocketriders.data:playerdata players."$(UUID)".data.play_time.swap int 0.05 run scoreboard players get @s player_statistics.swap_play_time
+
 # success
 return 1

@@ -152,6 +152,16 @@ scoreboard objectives add toggle_particles trigger
 scoreboard objectives add toggle_parkour_instructions trigger
 scoreboard objectives add toggle_ingame_tips trigger
 
+scoreboard objectives add play_time_save_cooldown custom:play_time
+scoreboard objectives add player_statistics.chase_play_time dummy
+scoreboard objectives add player_statistics.crusade_play_time dummy
+scoreboard objectives add player_statistics.ctf_play_time dummy
+scoreboard objectives add player_statistics.duel_play_time dummy
+scoreboard objectives add player_statistics.normal_play_time dummy
+scoreboard objectives add player_statistics.powerups_play_time dummy
+scoreboard objectives add player_statistics.sandbox_play_time dummy
+scoreboard objectives add player_statistics.swap_play_time dummy
+
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
 scoreboard objectives add z dummy

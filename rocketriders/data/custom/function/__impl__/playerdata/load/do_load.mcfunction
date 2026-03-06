@@ -35,5 +35,15 @@ $execute store result score @s fireballKill run data get storage rocketriders.da
 $execute store result score @s minedTNT store result score @s prevMinedTNT run data get storage rocketriders.data:playerdata players."$(UUID)".data.total_tnt_mined
 $execute store result score @s useful store result score @s prevUseful run data get storage rocketriders.data:playerdata players."$(UUID)".data.total_primed_tnt_splashed
 
+#for all-time statistics
+$execute store result score @s player_statistics.chase_play_time run data get storage rocketriders.data:playerdata players."$(UUID)".data.play_time.chase 20
+$execute store result score @s player_statistics.crusade_play_time run data get storage rocketriders.data:playerdata players."$(UUID)".data.play_time.crusade 20
+$execute store result score @s player_statistics.ctf_play_time run data get storage rocketriders.data:playerdata players."$(UUID)".data.play_time.ctf 20
+$execute store result score @s player_statistics.duel_play_time run data get storage rocketriders.data:playerdata players."$(UUID)".data.play_time.duel 20
+$execute store result score @s player_statistics.normal_play_time run data get storage rocketriders.data:playerdata players."$(UUID)".data.play_time.normal 20
+$execute store result score @s player_statistics.powerups_play_time run data get storage rocketriders.data:playerdata players."$(UUID)".data.play_time.powerups 20
+$execute store result score @s player_statistics.sandbox_play_time run data get storage rocketriders.data:playerdata players."$(UUID)".data.play_time.sandbox 20
+$execute store result score @s player_statistics.swap_play_time run data get storage rocketriders.data:playerdata players."$(UUID)".data.play_time.swap 20
+
 # success
 return 1

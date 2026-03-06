@@ -6,7 +6,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabl
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run function rr_ctf:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=duelEnabled] run function rr_duel:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalEnabled] run function rr_normal:set_base_match_components
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerusEnabled] run function rr_powerup:set_base_match_components
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsEnabled] run function rr_powerups:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxEnabled] run function rr_sandbox:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run function rr_swap:set_base_match_components
 

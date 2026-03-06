@@ -5,7 +5,6 @@ scoreboard players set $custom_base_frames match_components 1
 scoreboard players set $custom_spawnpoint_block_protection match_components 1
 scoreboard players set $has_powerups match_components 1
 scoreboard players set $main_item/shooting_saber match_components 1
-scoreboard players set $max_players_per_team match_components 2147483647
 scoreboard players set $min_players_per_team match_components 1
 
 # items

@@ -1,5 +1,6 @@
 ##
 function lobby:update_nav_book
+function everytick:resolve_max_players_per_team
 
 ## Gamemode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/staging/configuration

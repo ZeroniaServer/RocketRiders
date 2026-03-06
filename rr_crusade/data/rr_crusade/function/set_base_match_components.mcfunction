@@ -14,7 +14,6 @@ scoreboard players set $decreased_shooting_saber_attack_damage match_components 
 scoreboard players set $disable_arrow_stacking match_components 1
 scoreboard players set $has_spells match_components 1
 scoreboard players set $main_item/crusade_kit_dependent match_components 1
-scoreboard players set $max_players_per_team match_components 2147483647
 scoreboard players set $min_players_per_team match_components 1
 scoreboard players set $portal_crystal_protection match_components 1
 scoreboard players set $small_portals match_components 1

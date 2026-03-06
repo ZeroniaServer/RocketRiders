@@ -8,7 +8,6 @@ scoreboard players set $custom_pierce_prevention match_components 1
 scoreboard players set $has_flags match_components 1
 scoreboard players set $lower_void match_components 1
 scoreboard players set $main_item/piercing_pickaxe match_components 1
-scoreboard players set $max_players_per_team match_components 2147483647
 scoreboard players set $min_players_per_team match_components 1
 scoreboard players set $no_portals match_components 1
 

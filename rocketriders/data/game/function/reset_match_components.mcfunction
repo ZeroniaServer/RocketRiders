@@ -9,3 +9,6 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalEnable
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupEnabled] run function rr_powerup:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxEnabled] run function rr_sandbox:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run function rr_swap:set_base_match_components
+
+# Instantly resolve `$max_players_per_team global` score.
+function everytick:resolve_max_players_per_team

@@ -11,7 +11,6 @@ scoreboard players set $config_override.disable_tying match_components 1
 scoreboard players set $has_powerups match_components 1
 scoreboard players set $has_spells match_components 1
 scoreboard players set $main_item/rocket_nomicon match_components 1
-scoreboard players set $max_players_per_team match_components 2147483647
 scoreboard players set $min_players_per_team match_components 0
 scoreboard players set $no_achievements match_components 1
 scoreboard players set $no_item_timer match_components 1

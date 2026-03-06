@@ -1,6 +1,5 @@
 scoreboard players set $armor/generic match_components 1
 scoreboard players set $main_item/shooting_saber match_components 1
-scoreboard players set $max_players_per_team match_components 2147483647
 scoreboard players set $min_players_per_team match_components 1
 
 # items

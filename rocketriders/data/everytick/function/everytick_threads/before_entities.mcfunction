@@ -10,6 +10,9 @@ scoreboard players add $gametime global 1
 # In case of transitioning_phase flag getting stuck while developing
 scoreboard players reset $transitioning_phase global
 
+# Resolve `$max_players_per_team global` score in case config scoreboard is edited manually.
+function everytick:resolve_max_players_per_team
+
 # Global Periodic Tick
 scoreboard players add #periodic_tick.2 global 1
 scoreboard players operation #periodic_tick.2 global %= $2 constant

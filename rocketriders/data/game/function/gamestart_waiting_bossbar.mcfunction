@@ -1,4 +1,11 @@
 ## Generate a well-worded sentence indicating how many more players are required for each team.
+# If wait_for_sufficient_players is off (RR0), expect only one player to join
+execute unless predicate rr:wait_for_sufficient_players unless predicate game:match_components/one_team run bossbar set rr:startgame name ["Waiting for at least one player to join any team..."]
+execute unless predicate rr:wait_for_sufficient_players if predicate game:match_components/one_team run bossbar set rr:startgame name ["Waiting for at least one player to join..."]
+execute unless predicate rr:wait_for_sufficient_players run bossbar set rr:startgame max 1
+execute unless predicate rr:wait_for_sufficient_players run bossbar set rr:startgame value 0
+execute unless predicate rr:wait_for_sufficient_players run return run bossbar set rr:startgame color white
+
 # calculate bossbar fill amount
 scoreboard players operation $min_players var = $min_players_per_team match_components
 execute unless predicate game:match_components/one_team run scoreboard players operation $min_players var += $min_players_per_team match_components

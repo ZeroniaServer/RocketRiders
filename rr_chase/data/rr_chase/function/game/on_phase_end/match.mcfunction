@@ -1,0 +1,1 @@
+scoreboard players reset $checkered_flag_waving_animation_timer global

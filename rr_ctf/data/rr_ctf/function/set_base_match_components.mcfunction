@@ -1,3 +1,5 @@
+data modify storage rocketriders:match components."arena/base_materials" set value {front:"concrete",middle:"concrete",back:"end_stone"}
+
 scoreboard players set $additional_canopy_available match_components 1
 scoreboard players set $arena/bedrock_frame match_components 1
 scoreboard players set $armor/generic match_components 1

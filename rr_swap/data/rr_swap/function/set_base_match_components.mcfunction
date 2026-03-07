@@ -1,3 +1,6 @@
+data modify storage rocketriders:match components."arena/base_materials" set value {front:"stained_glass",middle:"stained_glass",back:"concrete"}
+data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"dark",middle:"black",back:"black"},yellow:{front:"light",middle:"white",back:"white"}}
+
 scoreboard players set $armor/swap match_components 1
 scoreboard players set $config_override.special_treatment match_components -1
 scoreboard players set $config_override.splash_streams match_components -1

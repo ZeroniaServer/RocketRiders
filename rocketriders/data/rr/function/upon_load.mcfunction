@@ -305,6 +305,9 @@ scoreboard objectives add prevFellVoid dummy
 # Fix join pad sprite depending on version
 function rr:upon_load/join_pad_sprite
 
+# Update team text
+function custom:update_player_text/all
+
 # Nav Book Config
 function lobby:__update_nav_book/update_with_template
 

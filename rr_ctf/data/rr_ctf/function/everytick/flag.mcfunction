@@ -73,7 +73,7 @@ execute if score $flag_wave var matches 20..39 if score FY1: FlagScore matches 3
 execute if score $flag_wave var matches 0..19 if score FY2: FlagScore matches 30.. run place template game:flag/yellow/stage_2 -14 71 63
 execute if score $flag_wave var matches 20..39 if score FY2: FlagScore matches 30.. run place template game:flag/yellow/stage_1 -14 71 63
 
-execute if score $flag_wave var matches 0..19 if score FB1: FlagScore matches 30.. unless predicate game:match_components/red_for_blue run place template game:flag/red/stage_2 -14 71 -65
+execute if score $flag_wave var matches 0..19 if score FB1: FlagScore matches 30.. unless predicate game:match_components/red_for_blue run place template game:flag/blue/stage_2 -14 71 -65
 execute if score $flag_wave var matches 0..19 if score FB1: FlagScore matches 30.. if predicate game:match_components/red_for_blue run place template game:flag/red/stage_2 -14 71 -65
 execute if score $flag_wave var matches 20..39 if score FB1: FlagScore matches 30.. unless predicate game:match_components/red_for_blue run place template game:flag/blue/stage_1 -14 71 -65
 execute if score $flag_wave var matches 20..39 if score FB1: FlagScore matches 30.. if predicate game:match_components/red_for_blue run place template game:flag/red/stage_1 -14 71 -65

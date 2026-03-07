@@ -149,9 +149,6 @@ tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 #Remove dragon breath
 kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect_cloud]
 
-#Fill portals before game starts
-execute if predicate game:phase/staging/queue unless predicate game:match_components/portal_crystal_protection run function game:place_portal/all
-
 #Disable damage gamerules if no game has started
 execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run function custom:game_rules/fall_damage/off
 execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run function custom:game_rules/drowning_damage/off

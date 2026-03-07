@@ -29,19 +29,20 @@
     {
       "condition": "minecraft:value_check",
       "range": {
-        "min": {
-          "score": "config",
+        "min": 1,
+        "max": {
+          "score": "global",
           "target": {
-            "name": "$max_players",
+            "name": "$playing_teams_count",
             "type": "minecraft:fixed"
           },
           "type": "minecraft:score"
         }
       },
       "value": {
-        "score": "global",
+        "score": "config",
         "target": {
-          "name": "$playing_teams_count",
+          "name": "$max_players",
           "type": "minecraft:fixed"
         },
         "type": "minecraft:score"

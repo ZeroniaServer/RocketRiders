@@ -10,6 +10,8 @@ $execute if score @s dev matches 2$(index)1 run data modify storage rocketriders
 
 $execute if score @s dev matches 2$(index)2 run scoreboard players reset $$(config_id) config
 $execute if score @s dev matches 2$(index)2 run data modify storage rocketriders:main dev.dialog.body.contents append value [{color:"gray",text:"\nYou turned this feature "},{color:"red",translate:"options.off"}]
+$execute if score @s dev matches 2$(index)2 run function dev:__impl__/feature_flag/$(config_id)/off
 
 $execute if score @s dev matches 2$(index)3 run scoreboard players set $$(config_id) config 1
 $execute if score @s dev matches 2$(index)3 run data modify storage rocketriders:main dev.dialog.body.contents append value [{color:"gray",text:"\nYou turned this feature "},{color:"green",translate:"options.on"}]
+$execute if score @s dev matches 2$(index)2 run function dev:__impl__/feature_flag/$(config_id)/on

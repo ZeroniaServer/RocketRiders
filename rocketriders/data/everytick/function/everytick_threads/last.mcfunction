@@ -17,4 +17,4 @@ execute as @e[x=0,type=villager,tag=subtick_hackery.mob] run data merge entity @
 execute if entity @a[limit=1,x=0] run function everytick:subtick_hackery/start
 
 ## Remove canopy rider penalty
-execute as @a[x=0,tag=had_canopy_rider_penalty,predicate=!custom:has_vehicle] run attribute @s minecraft:block_interaction_range modifier remove rocketriders:canopy_rider_penalty
+execute as @a[x=0,predicate=!custom:has_vehicle] run attribute @s minecraft:block_interaction_range modifier remove rocketriders:canopy_rider_penalty

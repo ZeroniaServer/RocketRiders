@@ -1,5 +1,9 @@
 [
   {
+    "condition": "minecraft:reference",
+    "name": "game:feature_flags/rotting_modifier"
+  },
+  {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",

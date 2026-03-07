@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "range": 1,
+  "value": {
+    "score": "config",
+    "target": {
+      "name": "$rotting_modifier",
+      "type": "minecraft:fixed"
+    },
+    "type": "minecraft:score"
+  }
+}

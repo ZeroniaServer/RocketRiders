@@ -87,3 +87,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 #Long Arms
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=21}] if predicate game:modifiers/long_arms/on run tellraw @s ["",{"text":"Long Arms","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" You can reach blocks and players from twice as far away.","color":"gray","italic":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=21}] unless predicate game:modifiers/long_arms/on run tellraw @s ["",{"text":"Long Arms","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+
+#Rotting
+execute if predicate game:feature_flags/rotting_modifier if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=22}] if predicate game:modifiers/rotting/on run tellraw @s ["",{"text":"Rotting","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Blocks left between the bases will slowly be consumed by rot.","color":"gray","italic":true}]
+execute if predicate game:feature_flags/rotting_modifier if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=22}] unless predicate game:modifiers/rotting/on run tellraw @s ["",{"text":"Rotting","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]

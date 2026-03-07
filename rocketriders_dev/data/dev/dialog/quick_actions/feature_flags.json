@@ -6,6 +6,13 @@
         "type": "minecraft:run_command"
       },
       "label": "Colored Portal Frames..."
+    },
+    {
+      "action": {
+        "command": "/trigger dev set 211",
+        "type": "minecraft:run_command"
+      },
+      "label": "Rotting Modifier..."
     }
   ],
   "after_action": "wait_for_response",

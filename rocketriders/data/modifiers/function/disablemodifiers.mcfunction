@@ -21,5 +21,6 @@ scoreboard players reset $unstable_tnt config
 scoreboard players reset $hobbits config
 scoreboard players reset $instant_tnt_explosions config
 scoreboard players reset $long_arms config
+execute if predicate game:feature_flags/rotting_modifier run scoreboard players reset $rotting config
 
 function arenaclear:refreshcustomizer

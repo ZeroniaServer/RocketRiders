@@ -64,6 +64,18 @@
         "predicate": {
           "predicates": {
             "minecraft:custom_data": {
+              "stinging_shield_projectile": {}
+            }
+          },
+          "type": "minecraft:snowball"
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "predicates": {
+            "minecraft:custom_data": {
               "nova_rocket": {}
             }
           },

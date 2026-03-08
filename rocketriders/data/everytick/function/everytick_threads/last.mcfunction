@@ -16,5 +16,9 @@ scoreboard players reset $update_nav_book global
 execute as @e[x=0,type=villager,tag=subtick_hackery.mob] run data merge entity @s {DeathTime:19,Health:0}
 execute if entity @a[limit=1,x=0] run function everytick:subtick_hackery/start
 
-## Remove canopy rider penalty
+## Remove canopy rider penalty (hotfix for broken CK death handling, but also probably other cases where it isn't removed correctly)
 execute as @a[x=0,predicate=!custom:has_vehicle] run attribute @s minecraft:block_interaction_range modifier remove rocketriders:canopy_rider_penalty
+
+## Clear out data storage rocketriders:joinwarn
+data remove storage rocketriders:joinwarn title
+data remove storage rocketriders:joinwarn subtitle

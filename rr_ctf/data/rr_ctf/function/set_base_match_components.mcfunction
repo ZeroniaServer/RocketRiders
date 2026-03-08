@@ -5,7 +5,6 @@ scoreboard players set $arena/bedrock_frame match_components 1
 scoreboard players set $arena/regenerate_back_layer match_components 1
 scoreboard players set $armor/generic match_components 1
 scoreboard players set $config_override.collision_control match_components -1
-scoreboard players set $config_override.hardcore match_components -1
 scoreboard players set $config_override.rocket_residers match_components -1
 scoreboard players set $custom_pierce_prevention match_components 1
 scoreboard players set $has_flags match_components 1

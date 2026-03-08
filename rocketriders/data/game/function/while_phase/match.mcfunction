@@ -3,6 +3,9 @@
 ## a match until players are returned to the lobby.   ##
 ########################################################
 
+##Game time
+scoreboard players add $match_time global 1
+
 ##Player spawnpoints
 spawnpoint @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 spawnpoint @a[x=0,predicate=custom:team/yellow] 12 64 66 -180 0
@@ -94,3 +97,6 @@ execute unless predicate game:phase/match/pause run function modifiers:modifiers
 execute as @a[scores={LeaveMidgame=1..},predicate=custom:team/any_playing_team] run function game:leave_mid_match
 scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] LeaveMidgame
 scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame
+
+## Regenerate back layer
+execute unless predicate game:phase/match/pause if predicate game:match_components/arena/regenerate_back_layer run function game:regenerate_back_layer/tick

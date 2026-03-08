@@ -2,6 +2,7 @@ data modify storage rocketriders:match components."arena/base_materials" set val
 
 scoreboard players set $additional_canopy_available match_components 1
 scoreboard players set $arena/bedrock_frame match_components 1
+scoreboard players set $arena/regenerate_back_layer match_components 1
 scoreboard players set $armor/generic match_components 1
 scoreboard players set $config_override.collision_control match_components -1
 scoreboard players set $config_override.hardcore match_components -1

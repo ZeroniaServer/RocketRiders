@@ -7,9 +7,6 @@ execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @
 execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
 execute if predicate game:modifiers/minute_mix/on run function items:minutemix
 
-#glass regeneration
-execute as @e[x=0,type=marker,tag=airDetect,limit=1] at @s run function rr_chase:game/airdetect
-
 #Actionbar for who's in the lead
 execute as @p[predicate=custom:team/blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the Finish Flag to win!","color":"white","bold":true}]
 
